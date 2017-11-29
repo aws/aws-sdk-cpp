@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/model/TaskOverride.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ecs/model/LaunchType.h>
 #include <aws/ecs/model/NetworkConfiguration.h>
 #include <aws/ecs/model/PlacementConstraint.h>
 #include <aws/ecs/model/PlacementStrategy.h>
@@ -101,57 +102,57 @@ namespace Model
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to run. If a <code>revision</code> is not specified, the latest
-     * <code>ACTIVE</code> revision is used.</p>
+     * (<code>family:revision</code>) or full ARN of the task definition to run. If a
+     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     * is used.</p>
      */
     inline const Aws::String& GetTaskDefinition() const{ return m_taskDefinition; }
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to run. If a <code>revision</code> is not specified, the latest
-     * <code>ACTIVE</code> revision is used.</p>
+     * (<code>family:revision</code>) or full ARN of the task definition to run. If a
+     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     * is used.</p>
      */
     inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to run. If a <code>revision</code> is not specified, the latest
-     * <code>ACTIVE</code> revision is used.</p>
+     * (<code>family:revision</code>) or full ARN of the task definition to run. If a
+     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     * is used.</p>
      */
     inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::move(value); }
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to run. If a <code>revision</code> is not specified, the latest
-     * <code>ACTIVE</code> revision is used.</p>
+     * (<code>family:revision</code>) or full ARN of the task definition to run. If a
+     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     * is used.</p>
      */
     inline void SetTaskDefinition(const char* value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition.assign(value); }
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to run. If a <code>revision</code> is not specified, the latest
-     * <code>ACTIVE</code> revision is used.</p>
+     * (<code>family:revision</code>) or full ARN of the task definition to run. If a
+     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     * is used.</p>
      */
     inline RunTaskRequest& WithTaskDefinition(const Aws::String& value) { SetTaskDefinition(value); return *this;}
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to run. If a <code>revision</code> is not specified, the latest
-     * <code>ACTIVE</code> revision is used.</p>
+     * (<code>family:revision</code>) or full ARN of the task definition to run. If a
+     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     * is used.</p>
      */
     inline RunTaskRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(std::move(value)); return *this;}
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to run. If a <code>revision</code> is not specified, the latest
-     * <code>ACTIVE</code> revision is used.</p>
+     * (<code>family:revision</code>) or full ARN of the task definition to run. If a
+     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     * is used.</p>
      */
     inline RunTaskRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
 
@@ -428,45 +429,114 @@ namespace Model
 
     /**
      * <p>The placement strategy objects to use for the task. You can specify a maximum
-     * of 5 strategy rules per task.</p>
+     * of five strategy rules per task.</p>
      */
     inline const Aws::Vector<PlacementStrategy>& GetPlacementStrategy() const{ return m_placementStrategy; }
 
     /**
      * <p>The placement strategy objects to use for the task. You can specify a maximum
-     * of 5 strategy rules per task.</p>
+     * of five strategy rules per task.</p>
      */
     inline void SetPlacementStrategy(const Aws::Vector<PlacementStrategy>& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = value; }
 
     /**
      * <p>The placement strategy objects to use for the task. You can specify a maximum
-     * of 5 strategy rules per task.</p>
+     * of five strategy rules per task.</p>
      */
     inline void SetPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = std::move(value); }
 
     /**
      * <p>The placement strategy objects to use for the task. You can specify a maximum
-     * of 5 strategy rules per task.</p>
+     * of five strategy rules per task.</p>
      */
     inline RunTaskRequest& WithPlacementStrategy(const Aws::Vector<PlacementStrategy>& value) { SetPlacementStrategy(value); return *this;}
 
     /**
      * <p>The placement strategy objects to use for the task. You can specify a maximum
-     * of 5 strategy rules per task.</p>
+     * of five strategy rules per task.</p>
      */
     inline RunTaskRequest& WithPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { SetPlacementStrategy(std::move(value)); return *this;}
 
     /**
      * <p>The placement strategy objects to use for the task. You can specify a maximum
-     * of 5 strategy rules per task.</p>
+     * of five strategy rules per task.</p>
      */
     inline RunTaskRequest& AddPlacementStrategy(const PlacementStrategy& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(value); return *this; }
 
     /**
      * <p>The placement strategy objects to use for the task. You can specify a maximum
-     * of 5 strategy rules per task.</p>
+     * of five strategy rules per task.</p>
      */
     inline RunTaskRequest& AddPlacementStrategy(PlacementStrategy&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The launch type on which to run your task.</p>
+     */
+    inline const LaunchType& GetLaunchType() const{ return m_launchType; }
+
+    /**
+     * <p>The launch type on which to run your task.</p>
+     */
+    inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
+
+    /**
+     * <p>The launch type on which to run your task.</p>
+     */
+    inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
+
+    /**
+     * <p>The launch type on which to run your task.</p>
+     */
+    inline RunTaskRequest& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
+
+    /**
+     * <p>The launch type on which to run your task.</p>
+     */
+    inline RunTaskRequest& WithLaunchType(LaunchType&& value) { SetLaunchType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The platform version on which to run your task. If one is not specified, the
+     * latest version is used by default.</p>
+     */
+    inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
+
+    /**
+     * <p>The platform version on which to run your task. If one is not specified, the
+     * latest version is used by default.</p>
+     */
+    inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
+
+    /**
+     * <p>The platform version on which to run your task. If one is not specified, the
+     * latest version is used by default.</p>
+     */
+    inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
+
+    /**
+     * <p>The platform version on which to run your task. If one is not specified, the
+     * latest version is used by default.</p>
+     */
+    inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
+
+    /**
+     * <p>The platform version on which to run your task. If one is not specified, the
+     * latest version is used by default.</p>
+     */
+    inline RunTaskRequest& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
+
+    /**
+     * <p>The platform version on which to run your task. If one is not specified, the
+     * latest version is used by default.</p>
+     */
+    inline RunTaskRequest& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The platform version on which to run your task. If one is not specified, the
+     * latest version is used by default.</p>
+     */
+    inline RunTaskRequest& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
 
 
     /**
@@ -474,8 +544,9 @@ namespace Model
      * definitions that use the <code>awsvpc</code> network mode to receive their own
      * Elastic Network Interface, and it is not supported for other network modes. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
-     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * Networking</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
 
@@ -484,8 +555,9 @@ namespace Model
      * definitions that use the <code>awsvpc</code> network mode to receive their own
      * Elastic Network Interface, and it is not supported for other network modes. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
-     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * Networking</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
 
@@ -494,8 +566,9 @@ namespace Model
      * definitions that use the <code>awsvpc</code> network mode to receive their own
      * Elastic Network Interface, and it is not supported for other network modes. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
-     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * Networking</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
 
@@ -504,8 +577,9 @@ namespace Model
      * definitions that use the <code>awsvpc</code> network mode to receive their own
      * Elastic Network Interface, and it is not supported for other network modes. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
-     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * Networking</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline RunTaskRequest& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
 
@@ -514,8 +588,9 @@ namespace Model
      * definitions that use the <code>awsvpc</code> network mode to receive their own
      * Elastic Network Interface, and it is not supported for other network modes. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
-     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * Networking</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline RunTaskRequest& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
 
@@ -544,6 +619,12 @@ namespace Model
 
     Aws::Vector<PlacementStrategy> m_placementStrategy;
     bool m_placementStrategyHasBeenSet;
+
+    LaunchType m_launchType;
+    bool m_launchTypeHasBeenSet;
+
+    Aws::String m_platformVersion;
+    bool m_platformVersionHasBeenSet;
 
     NetworkConfiguration m_networkConfiguration;
     bool m_networkConfigurationHasBeenSet;

@@ -35,6 +35,9 @@
 #include <aws/greengrass/model/CreateGroupVersionResult.h>
 #include <aws/greengrass/model/CreateLoggerDefinitionResult.h>
 #include <aws/greengrass/model/CreateLoggerDefinitionVersionResult.h>
+#include <aws/greengrass/model/CreateResourceDefinitionResult.h>
+#include <aws/greengrass/model/CreateResourceDefinitionVersionResult.h>
+#include <aws/greengrass/model/CreateSoftwareUpdateJobResult.h>
 #include <aws/greengrass/model/CreateSubscriptionDefinitionResult.h>
 #include <aws/greengrass/model/CreateSubscriptionDefinitionVersionResult.h>
 #include <aws/greengrass/model/DeleteCoreDefinitionResult.h>
@@ -42,6 +45,7 @@
 #include <aws/greengrass/model/DeleteFunctionDefinitionResult.h>
 #include <aws/greengrass/model/DeleteGroupResult.h>
 #include <aws/greengrass/model/DeleteLoggerDefinitionResult.h>
+#include <aws/greengrass/model/DeleteResourceDefinitionResult.h>
 #include <aws/greengrass/model/DeleteSubscriptionDefinitionResult.h>
 #include <aws/greengrass/model/DisassociateRoleFromGroupResult.h>
 #include <aws/greengrass/model/DisassociateServiceRoleFromAccountResult.h>
@@ -60,6 +64,8 @@
 #include <aws/greengrass/model/GetGroupVersionResult.h>
 #include <aws/greengrass/model/GetLoggerDefinitionResult.h>
 #include <aws/greengrass/model/GetLoggerDefinitionVersionResult.h>
+#include <aws/greengrass/model/GetResourceDefinitionResult.h>
+#include <aws/greengrass/model/GetResourceDefinitionVersionResult.h>
 #include <aws/greengrass/model/GetServiceRoleForAccountResult.h>
 #include <aws/greengrass/model/GetSubscriptionDefinitionResult.h>
 #include <aws/greengrass/model/GetSubscriptionDefinitionVersionResult.h>
@@ -75,6 +81,8 @@
 #include <aws/greengrass/model/ListGroupsResult.h>
 #include <aws/greengrass/model/ListLoggerDefinitionVersionsResult.h>
 #include <aws/greengrass/model/ListLoggerDefinitionsResult.h>
+#include <aws/greengrass/model/ListResourceDefinitionVersionsResult.h>
+#include <aws/greengrass/model/ListResourceDefinitionsResult.h>
 #include <aws/greengrass/model/ListSubscriptionDefinitionVersionsResult.h>
 #include <aws/greengrass/model/ListSubscriptionDefinitionsResult.h>
 #include <aws/greengrass/model/ResetDeploymentsResult.h>
@@ -85,6 +93,7 @@
 #include <aws/greengrass/model/UpdateGroupResult.h>
 #include <aws/greengrass/model/UpdateGroupCertificateConfigurationResult.h>
 #include <aws/greengrass/model/UpdateLoggerDefinitionResult.h>
+#include <aws/greengrass/model/UpdateResourceDefinitionResult.h>
 #include <aws/greengrass/model/UpdateSubscriptionDefinitionResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -145,6 +154,9 @@ namespace Model
         class CreateGroupVersionRequest;
         class CreateLoggerDefinitionRequest;
         class CreateLoggerDefinitionVersionRequest;
+        class CreateResourceDefinitionRequest;
+        class CreateResourceDefinitionVersionRequest;
+        class CreateSoftwareUpdateJobRequest;
         class CreateSubscriptionDefinitionRequest;
         class CreateSubscriptionDefinitionVersionRequest;
         class DeleteCoreDefinitionRequest;
@@ -152,6 +164,7 @@ namespace Model
         class DeleteFunctionDefinitionRequest;
         class DeleteGroupRequest;
         class DeleteLoggerDefinitionRequest;
+        class DeleteResourceDefinitionRequest;
         class DeleteSubscriptionDefinitionRequest;
         class DisassociateRoleFromGroupRequest;
         class DisassociateServiceRoleFromAccountRequest;
@@ -170,6 +183,8 @@ namespace Model
         class GetGroupVersionRequest;
         class GetLoggerDefinitionRequest;
         class GetLoggerDefinitionVersionRequest;
+        class GetResourceDefinitionRequest;
+        class GetResourceDefinitionVersionRequest;
         class GetServiceRoleForAccountRequest;
         class GetSubscriptionDefinitionRequest;
         class GetSubscriptionDefinitionVersionRequest;
@@ -185,6 +200,8 @@ namespace Model
         class ListGroupsRequest;
         class ListLoggerDefinitionVersionsRequest;
         class ListLoggerDefinitionsRequest;
+        class ListResourceDefinitionVersionsRequest;
+        class ListResourceDefinitionsRequest;
         class ListSubscriptionDefinitionVersionsRequest;
         class ListSubscriptionDefinitionsRequest;
         class ResetDeploymentsRequest;
@@ -195,6 +212,7 @@ namespace Model
         class UpdateGroupRequest;
         class UpdateGroupCertificateConfigurationRequest;
         class UpdateLoggerDefinitionRequest;
+        class UpdateResourceDefinitionRequest;
         class UpdateSubscriptionDefinitionRequest;
 
         typedef Aws::Utils::Outcome<AssociateRoleToGroupResult, Aws::Client::AWSError<GreengrassErrors>> AssociateRoleToGroupOutcome;
@@ -211,6 +229,9 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateGroupVersionResult, Aws::Client::AWSError<GreengrassErrors>> CreateGroupVersionOutcome;
         typedef Aws::Utils::Outcome<CreateLoggerDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> CreateLoggerDefinitionOutcome;
         typedef Aws::Utils::Outcome<CreateLoggerDefinitionVersionResult, Aws::Client::AWSError<GreengrassErrors>> CreateLoggerDefinitionVersionOutcome;
+        typedef Aws::Utils::Outcome<CreateResourceDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> CreateResourceDefinitionOutcome;
+        typedef Aws::Utils::Outcome<CreateResourceDefinitionVersionResult, Aws::Client::AWSError<GreengrassErrors>> CreateResourceDefinitionVersionOutcome;
+        typedef Aws::Utils::Outcome<CreateSoftwareUpdateJobResult, Aws::Client::AWSError<GreengrassErrors>> CreateSoftwareUpdateJobOutcome;
         typedef Aws::Utils::Outcome<CreateSubscriptionDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> CreateSubscriptionDefinitionOutcome;
         typedef Aws::Utils::Outcome<CreateSubscriptionDefinitionVersionResult, Aws::Client::AWSError<GreengrassErrors>> CreateSubscriptionDefinitionVersionOutcome;
         typedef Aws::Utils::Outcome<DeleteCoreDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> DeleteCoreDefinitionOutcome;
@@ -218,6 +239,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteFunctionDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> DeleteFunctionDefinitionOutcome;
         typedef Aws::Utils::Outcome<DeleteGroupResult, Aws::Client::AWSError<GreengrassErrors>> DeleteGroupOutcome;
         typedef Aws::Utils::Outcome<DeleteLoggerDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> DeleteLoggerDefinitionOutcome;
+        typedef Aws::Utils::Outcome<DeleteResourceDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> DeleteResourceDefinitionOutcome;
         typedef Aws::Utils::Outcome<DeleteSubscriptionDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> DeleteSubscriptionDefinitionOutcome;
         typedef Aws::Utils::Outcome<DisassociateRoleFromGroupResult, Aws::Client::AWSError<GreengrassErrors>> DisassociateRoleFromGroupOutcome;
         typedef Aws::Utils::Outcome<DisassociateServiceRoleFromAccountResult, Aws::Client::AWSError<GreengrassErrors>> DisassociateServiceRoleFromAccountOutcome;
@@ -236,6 +258,8 @@ namespace Model
         typedef Aws::Utils::Outcome<GetGroupVersionResult, Aws::Client::AWSError<GreengrassErrors>> GetGroupVersionOutcome;
         typedef Aws::Utils::Outcome<GetLoggerDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> GetLoggerDefinitionOutcome;
         typedef Aws::Utils::Outcome<GetLoggerDefinitionVersionResult, Aws::Client::AWSError<GreengrassErrors>> GetLoggerDefinitionVersionOutcome;
+        typedef Aws::Utils::Outcome<GetResourceDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> GetResourceDefinitionOutcome;
+        typedef Aws::Utils::Outcome<GetResourceDefinitionVersionResult, Aws::Client::AWSError<GreengrassErrors>> GetResourceDefinitionVersionOutcome;
         typedef Aws::Utils::Outcome<GetServiceRoleForAccountResult, Aws::Client::AWSError<GreengrassErrors>> GetServiceRoleForAccountOutcome;
         typedef Aws::Utils::Outcome<GetSubscriptionDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> GetSubscriptionDefinitionOutcome;
         typedef Aws::Utils::Outcome<GetSubscriptionDefinitionVersionResult, Aws::Client::AWSError<GreengrassErrors>> GetSubscriptionDefinitionVersionOutcome;
@@ -251,6 +275,8 @@ namespace Model
         typedef Aws::Utils::Outcome<ListGroupsResult, Aws::Client::AWSError<GreengrassErrors>> ListGroupsOutcome;
         typedef Aws::Utils::Outcome<ListLoggerDefinitionVersionsResult, Aws::Client::AWSError<GreengrassErrors>> ListLoggerDefinitionVersionsOutcome;
         typedef Aws::Utils::Outcome<ListLoggerDefinitionsResult, Aws::Client::AWSError<GreengrassErrors>> ListLoggerDefinitionsOutcome;
+        typedef Aws::Utils::Outcome<ListResourceDefinitionVersionsResult, Aws::Client::AWSError<GreengrassErrors>> ListResourceDefinitionVersionsOutcome;
+        typedef Aws::Utils::Outcome<ListResourceDefinitionsResult, Aws::Client::AWSError<GreengrassErrors>> ListResourceDefinitionsOutcome;
         typedef Aws::Utils::Outcome<ListSubscriptionDefinitionVersionsResult, Aws::Client::AWSError<GreengrassErrors>> ListSubscriptionDefinitionVersionsOutcome;
         typedef Aws::Utils::Outcome<ListSubscriptionDefinitionsResult, Aws::Client::AWSError<GreengrassErrors>> ListSubscriptionDefinitionsOutcome;
         typedef Aws::Utils::Outcome<ResetDeploymentsResult, Aws::Client::AWSError<GreengrassErrors>> ResetDeploymentsOutcome;
@@ -261,6 +287,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateGroupResult, Aws::Client::AWSError<GreengrassErrors>> UpdateGroupOutcome;
         typedef Aws::Utils::Outcome<UpdateGroupCertificateConfigurationResult, Aws::Client::AWSError<GreengrassErrors>> UpdateGroupCertificateConfigurationOutcome;
         typedef Aws::Utils::Outcome<UpdateLoggerDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> UpdateLoggerDefinitionOutcome;
+        typedef Aws::Utils::Outcome<UpdateResourceDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> UpdateResourceDefinitionOutcome;
         typedef Aws::Utils::Outcome<UpdateSubscriptionDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> UpdateSubscriptionDefinitionOutcome;
 
         typedef std::future<AssociateRoleToGroupOutcome> AssociateRoleToGroupOutcomeCallable;
@@ -277,6 +304,9 @@ namespace Model
         typedef std::future<CreateGroupVersionOutcome> CreateGroupVersionOutcomeCallable;
         typedef std::future<CreateLoggerDefinitionOutcome> CreateLoggerDefinitionOutcomeCallable;
         typedef std::future<CreateLoggerDefinitionVersionOutcome> CreateLoggerDefinitionVersionOutcomeCallable;
+        typedef std::future<CreateResourceDefinitionOutcome> CreateResourceDefinitionOutcomeCallable;
+        typedef std::future<CreateResourceDefinitionVersionOutcome> CreateResourceDefinitionVersionOutcomeCallable;
+        typedef std::future<CreateSoftwareUpdateJobOutcome> CreateSoftwareUpdateJobOutcomeCallable;
         typedef std::future<CreateSubscriptionDefinitionOutcome> CreateSubscriptionDefinitionOutcomeCallable;
         typedef std::future<CreateSubscriptionDefinitionVersionOutcome> CreateSubscriptionDefinitionVersionOutcomeCallable;
         typedef std::future<DeleteCoreDefinitionOutcome> DeleteCoreDefinitionOutcomeCallable;
@@ -284,6 +314,7 @@ namespace Model
         typedef std::future<DeleteFunctionDefinitionOutcome> DeleteFunctionDefinitionOutcomeCallable;
         typedef std::future<DeleteGroupOutcome> DeleteGroupOutcomeCallable;
         typedef std::future<DeleteLoggerDefinitionOutcome> DeleteLoggerDefinitionOutcomeCallable;
+        typedef std::future<DeleteResourceDefinitionOutcome> DeleteResourceDefinitionOutcomeCallable;
         typedef std::future<DeleteSubscriptionDefinitionOutcome> DeleteSubscriptionDefinitionOutcomeCallable;
         typedef std::future<DisassociateRoleFromGroupOutcome> DisassociateRoleFromGroupOutcomeCallable;
         typedef std::future<DisassociateServiceRoleFromAccountOutcome> DisassociateServiceRoleFromAccountOutcomeCallable;
@@ -302,6 +333,8 @@ namespace Model
         typedef std::future<GetGroupVersionOutcome> GetGroupVersionOutcomeCallable;
         typedef std::future<GetLoggerDefinitionOutcome> GetLoggerDefinitionOutcomeCallable;
         typedef std::future<GetLoggerDefinitionVersionOutcome> GetLoggerDefinitionVersionOutcomeCallable;
+        typedef std::future<GetResourceDefinitionOutcome> GetResourceDefinitionOutcomeCallable;
+        typedef std::future<GetResourceDefinitionVersionOutcome> GetResourceDefinitionVersionOutcomeCallable;
         typedef std::future<GetServiceRoleForAccountOutcome> GetServiceRoleForAccountOutcomeCallable;
         typedef std::future<GetSubscriptionDefinitionOutcome> GetSubscriptionDefinitionOutcomeCallable;
         typedef std::future<GetSubscriptionDefinitionVersionOutcome> GetSubscriptionDefinitionVersionOutcomeCallable;
@@ -317,6 +350,8 @@ namespace Model
         typedef std::future<ListGroupsOutcome> ListGroupsOutcomeCallable;
         typedef std::future<ListLoggerDefinitionVersionsOutcome> ListLoggerDefinitionVersionsOutcomeCallable;
         typedef std::future<ListLoggerDefinitionsOutcome> ListLoggerDefinitionsOutcomeCallable;
+        typedef std::future<ListResourceDefinitionVersionsOutcome> ListResourceDefinitionVersionsOutcomeCallable;
+        typedef std::future<ListResourceDefinitionsOutcome> ListResourceDefinitionsOutcomeCallable;
         typedef std::future<ListSubscriptionDefinitionVersionsOutcome> ListSubscriptionDefinitionVersionsOutcomeCallable;
         typedef std::future<ListSubscriptionDefinitionsOutcome> ListSubscriptionDefinitionsOutcomeCallable;
         typedef std::future<ResetDeploymentsOutcome> ResetDeploymentsOutcomeCallable;
@@ -327,6 +362,7 @@ namespace Model
         typedef std::future<UpdateGroupOutcome> UpdateGroupOutcomeCallable;
         typedef std::future<UpdateGroupCertificateConfigurationOutcome> UpdateGroupCertificateConfigurationOutcomeCallable;
         typedef std::future<UpdateLoggerDefinitionOutcome> UpdateLoggerDefinitionOutcomeCallable;
+        typedef std::future<UpdateResourceDefinitionOutcome> UpdateResourceDefinitionOutcomeCallable;
         typedef std::future<UpdateSubscriptionDefinitionOutcome> UpdateSubscriptionDefinitionOutcomeCallable;
 } // namespace Model
 
@@ -346,6 +382,9 @@ namespace Model
     typedef std::function<void(const GreengrassClient*, const Model::CreateGroupVersionRequest&, const Model::CreateGroupVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGroupVersionResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::CreateLoggerDefinitionRequest&, const Model::CreateLoggerDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLoggerDefinitionResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::CreateLoggerDefinitionVersionRequest&, const Model::CreateLoggerDefinitionVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLoggerDefinitionVersionResponseReceivedHandler;
+    typedef std::function<void(const GreengrassClient*, const Model::CreateResourceDefinitionRequest&, const Model::CreateResourceDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateResourceDefinitionResponseReceivedHandler;
+    typedef std::function<void(const GreengrassClient*, const Model::CreateResourceDefinitionVersionRequest&, const Model::CreateResourceDefinitionVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateResourceDefinitionVersionResponseReceivedHandler;
+    typedef std::function<void(const GreengrassClient*, const Model::CreateSoftwareUpdateJobRequest&, const Model::CreateSoftwareUpdateJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSoftwareUpdateJobResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::CreateSubscriptionDefinitionRequest&, const Model::CreateSubscriptionDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSubscriptionDefinitionResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::CreateSubscriptionDefinitionVersionRequest&, const Model::CreateSubscriptionDefinitionVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSubscriptionDefinitionVersionResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::DeleteCoreDefinitionRequest&, const Model::DeleteCoreDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCoreDefinitionResponseReceivedHandler;
@@ -353,6 +392,7 @@ namespace Model
     typedef std::function<void(const GreengrassClient*, const Model::DeleteFunctionDefinitionRequest&, const Model::DeleteFunctionDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFunctionDefinitionResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::DeleteGroupRequest&, const Model::DeleteGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGroupResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::DeleteLoggerDefinitionRequest&, const Model::DeleteLoggerDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLoggerDefinitionResponseReceivedHandler;
+    typedef std::function<void(const GreengrassClient*, const Model::DeleteResourceDefinitionRequest&, const Model::DeleteResourceDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourceDefinitionResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::DeleteSubscriptionDefinitionRequest&, const Model::DeleteSubscriptionDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSubscriptionDefinitionResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::DisassociateRoleFromGroupRequest&, const Model::DisassociateRoleFromGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateRoleFromGroupResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::DisassociateServiceRoleFromAccountRequest&, const Model::DisassociateServiceRoleFromAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateServiceRoleFromAccountResponseReceivedHandler;
@@ -371,6 +411,8 @@ namespace Model
     typedef std::function<void(const GreengrassClient*, const Model::GetGroupVersionRequest&, const Model::GetGroupVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGroupVersionResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::GetLoggerDefinitionRequest&, const Model::GetLoggerDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLoggerDefinitionResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::GetLoggerDefinitionVersionRequest&, const Model::GetLoggerDefinitionVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLoggerDefinitionVersionResponseReceivedHandler;
+    typedef std::function<void(const GreengrassClient*, const Model::GetResourceDefinitionRequest&, const Model::GetResourceDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceDefinitionResponseReceivedHandler;
+    typedef std::function<void(const GreengrassClient*, const Model::GetResourceDefinitionVersionRequest&, const Model::GetResourceDefinitionVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceDefinitionVersionResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::GetServiceRoleForAccountRequest&, const Model::GetServiceRoleForAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceRoleForAccountResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::GetSubscriptionDefinitionRequest&, const Model::GetSubscriptionDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSubscriptionDefinitionResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::GetSubscriptionDefinitionVersionRequest&, const Model::GetSubscriptionDefinitionVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSubscriptionDefinitionVersionResponseReceivedHandler;
@@ -386,6 +428,8 @@ namespace Model
     typedef std::function<void(const GreengrassClient*, const Model::ListGroupsRequest&, const Model::ListGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGroupsResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::ListLoggerDefinitionVersionsRequest&, const Model::ListLoggerDefinitionVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLoggerDefinitionVersionsResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::ListLoggerDefinitionsRequest&, const Model::ListLoggerDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLoggerDefinitionsResponseReceivedHandler;
+    typedef std::function<void(const GreengrassClient*, const Model::ListResourceDefinitionVersionsRequest&, const Model::ListResourceDefinitionVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceDefinitionVersionsResponseReceivedHandler;
+    typedef std::function<void(const GreengrassClient*, const Model::ListResourceDefinitionsRequest&, const Model::ListResourceDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceDefinitionsResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::ListSubscriptionDefinitionVersionsRequest&, const Model::ListSubscriptionDefinitionVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSubscriptionDefinitionVersionsResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::ListSubscriptionDefinitionsRequest&, const Model::ListSubscriptionDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSubscriptionDefinitionsResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::ResetDeploymentsRequest&, const Model::ResetDeploymentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetDeploymentsResponseReceivedHandler;
@@ -396,6 +440,7 @@ namespace Model
     typedef std::function<void(const GreengrassClient*, const Model::UpdateGroupRequest&, const Model::UpdateGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGroupResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::UpdateGroupCertificateConfigurationRequest&, const Model::UpdateGroupCertificateConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGroupCertificateConfigurationResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::UpdateLoggerDefinitionRequest&, const Model::UpdateLoggerDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLoggerDefinitionResponseReceivedHandler;
+    typedef std::function<void(const GreengrassClient*, const Model::UpdateResourceDefinitionRequest&, const Model::UpdateResourceDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResourceDefinitionResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::UpdateSubscriptionDefinitionRequest&, const Model::UpdateSubscriptionDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSubscriptionDefinitionResponseReceivedHandler;
 
   /**
@@ -861,6 +906,96 @@ namespace Model
         virtual void CreateLoggerDefinitionVersionAsync(const Model::CreateLoggerDefinitionVersionRequest& request, const CreateLoggerDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Creates a resource definition which contains a list of resources to be used in a
+         * group. You can create an initial version of the definition by providing a list
+         * of resources now, or use ``CreateResourceDefinitionVersion`` later.<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateResourceDefinitionOutcome CreateResourceDefinition(const Model::CreateResourceDefinitionRequest& request) const;
+
+        /**
+         * Creates a resource definition which contains a list of resources to be used in a
+         * group. You can create an initial version of the definition by providing a list
+         * of resources now, or use ``CreateResourceDefinitionVersion`` later.<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinition">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateResourceDefinitionOutcomeCallable CreateResourceDefinitionCallable(const Model::CreateResourceDefinitionRequest& request) const;
+
+        /**
+         * Creates a resource definition which contains a list of resources to be used in a
+         * group. You can create an initial version of the definition by providing a list
+         * of resources now, or use ``CreateResourceDefinitionVersion`` later.<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinition">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateResourceDefinitionAsync(const Model::CreateResourceDefinitionRequest& request, const CreateResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Create a version of a resource definition that has already been
+         * defined.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinitionVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateResourceDefinitionVersionOutcome CreateResourceDefinitionVersion(const Model::CreateResourceDefinitionVersionRequest& request) const;
+
+        /**
+         * Create a version of a resource definition that has already been
+         * defined.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinitionVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateResourceDefinitionVersionOutcomeCallable CreateResourceDefinitionVersionCallable(const Model::CreateResourceDefinitionVersionRequest& request) const;
+
+        /**
+         * Create a version of a resource definition that has already been
+         * defined.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinitionVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateResourceDefinitionVersionAsync(const Model::CreateResourceDefinitionVersionRequest& request, const CreateResourceDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Creates an Iot Job that will trigger your Greengrass Cores to update the
+         * software they are running.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSoftwareUpdateJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateSoftwareUpdateJobOutcome CreateSoftwareUpdateJob(const Model::CreateSoftwareUpdateJobRequest& request) const;
+
+        /**
+         * Creates an Iot Job that will trigger your Greengrass Cores to update the
+         * software they are running.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSoftwareUpdateJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateSoftwareUpdateJobOutcomeCallable CreateSoftwareUpdateJobCallable(const Model::CreateSoftwareUpdateJobRequest& request) const;
+
+        /**
+         * Creates an Iot Job that will trigger your Greengrass Cores to update the
+         * software they are running.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSoftwareUpdateJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateSoftwareUpdateJobAsync(const Model::CreateSoftwareUpdateJobRequest& request, const CreateSoftwareUpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Creates a subscription definition. You may optionally provide the initial
          * version of the subscription definition or use
          * ``CreateSubscriptionDefinitionVersion`` at a later time.<p><h3>See Also:</h3>  
@@ -1061,6 +1196,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteLoggerDefinitionAsync(const Model::DeleteLoggerDefinitionRequest& request, const DeleteLoggerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Deletes a resource definition.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteResourceDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteResourceDefinitionOutcome DeleteResourceDefinition(const Model::DeleteResourceDefinitionRequest& request) const;
+
+        /**
+         * Deletes a resource definition.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteResourceDefinition">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteResourceDefinitionOutcomeCallable DeleteResourceDefinitionCallable(const Model::DeleteResourceDefinitionRequest& request) const;
+
+        /**
+         * Deletes a resource definition.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteResourceDefinition">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteResourceDefinitionAsync(const Model::DeleteResourceDefinitionRequest& request, const DeleteResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Deletes a subscription definition. The subscription definition must not have
@@ -1540,6 +1700,62 @@ namespace Model
         virtual void GetLoggerDefinitionVersionAsync(const Model::GetLoggerDefinitionVersionRequest& request, const GetLoggerDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Retrieves information about a resource definition, such as its creation time and
+         * latest version.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResourceDefinitionOutcome GetResourceDefinition(const Model::GetResourceDefinitionRequest& request) const;
+
+        /**
+         * Retrieves information about a resource definition, such as its creation time and
+         * latest version.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinition">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetResourceDefinitionOutcomeCallable GetResourceDefinitionCallable(const Model::GetResourceDefinitionRequest& request) const;
+
+        /**
+         * Retrieves information about a resource definition, such as its creation time and
+         * latest version.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinition">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetResourceDefinitionAsync(const Model::GetResourceDefinitionRequest& request, const GetResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Retrieves information about a resource definition version, such as which
+         * resources are included in the version.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinitionVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResourceDefinitionVersionOutcome GetResourceDefinitionVersion(const Model::GetResourceDefinitionVersionRequest& request) const;
+
+        /**
+         * Retrieves information about a resource definition version, such as which
+         * resources are included in the version.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinitionVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetResourceDefinitionVersionOutcomeCallable GetResourceDefinitionVersionCallable(const Model::GetResourceDefinitionVersionRequest& request) const;
+
+        /**
+         * Retrieves information about a resource definition version, such as which
+         * resources are included in the version.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinitionVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetResourceDefinitionVersionAsync(const Model::GetResourceDefinitionVersionRequest& request, const GetResourceDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Retrieves the service role that is attached to the account.<p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetServiceRoleForAccount">AWS
@@ -1921,6 +2137,56 @@ namespace Model
         virtual void ListLoggerDefinitionsAsync(const Model::ListLoggerDefinitionsRequest& request, const ListLoggerDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Lists the versions of a resource definition.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListResourceDefinitionVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListResourceDefinitionVersionsOutcome ListResourceDefinitionVersions(const Model::ListResourceDefinitionVersionsRequest& request) const;
+
+        /**
+         * Lists the versions of a resource definition.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListResourceDefinitionVersions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListResourceDefinitionVersionsOutcomeCallable ListResourceDefinitionVersionsCallable(const Model::ListResourceDefinitionVersionsRequest& request) const;
+
+        /**
+         * Lists the versions of a resource definition.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListResourceDefinitionVersions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListResourceDefinitionVersionsAsync(const Model::ListResourceDefinitionVersionsRequest& request, const ListResourceDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Retrieves a list of resource definitions.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListResourceDefinitions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListResourceDefinitionsOutcome ListResourceDefinitions(const Model::ListResourceDefinitionsRequest& request) const;
+
+        /**
+         * Retrieves a list of resource definitions.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListResourceDefinitions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListResourceDefinitionsOutcomeCallable ListResourceDefinitionsCallable(const Model::ListResourceDefinitionsRequest& request) const;
+
+        /**
+         * Retrieves a list of resource definitions.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListResourceDefinitions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListResourceDefinitionsAsync(const Model::ListResourceDefinitionsRequest& request, const ListResourceDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Lists the versions of a subscription definition.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListSubscriptionDefinitionVersions">AWS
          * API Reference</a></p>
@@ -2177,6 +2443,31 @@ namespace Model
         virtual void UpdateLoggerDefinitionAsync(const Model::UpdateLoggerDefinitionRequest& request, const UpdateLoggerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Updates a resource definition.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateResourceDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateResourceDefinitionOutcome UpdateResourceDefinition(const Model::UpdateResourceDefinitionRequest& request) const;
+
+        /**
+         * Updates a resource definition.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateResourceDefinition">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateResourceDefinitionOutcomeCallable UpdateResourceDefinitionCallable(const Model::UpdateResourceDefinitionRequest& request) const;
+
+        /**
+         * Updates a resource definition.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateResourceDefinition">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateResourceDefinitionAsync(const Model::UpdateResourceDefinitionRequest& request, const UpdateResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Updates a subscription definition.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateSubscriptionDefinition">AWS
          * API Reference</a></p>
@@ -2220,6 +2511,9 @@ namespace Model
         void CreateGroupVersionAsyncHelper(const Model::CreateGroupVersionRequest& request, const CreateGroupVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLoggerDefinitionAsyncHelper(const Model::CreateLoggerDefinitionRequest& request, const CreateLoggerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLoggerDefinitionVersionAsyncHelper(const Model::CreateLoggerDefinitionVersionRequest& request, const CreateLoggerDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateResourceDefinitionAsyncHelper(const Model::CreateResourceDefinitionRequest& request, const CreateResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateResourceDefinitionVersionAsyncHelper(const Model::CreateResourceDefinitionVersionRequest& request, const CreateResourceDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateSoftwareUpdateJobAsyncHelper(const Model::CreateSoftwareUpdateJobRequest& request, const CreateSoftwareUpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSubscriptionDefinitionAsyncHelper(const Model::CreateSubscriptionDefinitionRequest& request, const CreateSubscriptionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSubscriptionDefinitionVersionAsyncHelper(const Model::CreateSubscriptionDefinitionVersionRequest& request, const CreateSubscriptionDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCoreDefinitionAsyncHelper(const Model::DeleteCoreDefinitionRequest& request, const DeleteCoreDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2227,6 +2521,7 @@ namespace Model
         void DeleteFunctionDefinitionAsyncHelper(const Model::DeleteFunctionDefinitionRequest& request, const DeleteFunctionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteGroupAsyncHelper(const Model::DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteLoggerDefinitionAsyncHelper(const Model::DeleteLoggerDefinitionRequest& request, const DeleteLoggerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteResourceDefinitionAsyncHelper(const Model::DeleteResourceDefinitionRequest& request, const DeleteResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSubscriptionDefinitionAsyncHelper(const Model::DeleteSubscriptionDefinitionRequest& request, const DeleteSubscriptionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateRoleFromGroupAsyncHelper(const Model::DisassociateRoleFromGroupRequest& request, const DisassociateRoleFromGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateServiceRoleFromAccountAsyncHelper(const Model::DisassociateServiceRoleFromAccountRequest& request, const DisassociateServiceRoleFromAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2245,6 +2540,8 @@ namespace Model
         void GetGroupVersionAsyncHelper(const Model::GetGroupVersionRequest& request, const GetGroupVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLoggerDefinitionAsyncHelper(const Model::GetLoggerDefinitionRequest& request, const GetLoggerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLoggerDefinitionVersionAsyncHelper(const Model::GetLoggerDefinitionVersionRequest& request, const GetLoggerDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetResourceDefinitionAsyncHelper(const Model::GetResourceDefinitionRequest& request, const GetResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetResourceDefinitionVersionAsyncHelper(const Model::GetResourceDefinitionVersionRequest& request, const GetResourceDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetServiceRoleForAccountAsyncHelper(const Model::GetServiceRoleForAccountRequest& request, const GetServiceRoleForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSubscriptionDefinitionAsyncHelper(const Model::GetSubscriptionDefinitionRequest& request, const GetSubscriptionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSubscriptionDefinitionVersionAsyncHelper(const Model::GetSubscriptionDefinitionVersionRequest& request, const GetSubscriptionDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2260,6 +2557,8 @@ namespace Model
         void ListGroupsAsyncHelper(const Model::ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLoggerDefinitionVersionsAsyncHelper(const Model::ListLoggerDefinitionVersionsRequest& request, const ListLoggerDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLoggerDefinitionsAsyncHelper(const Model::ListLoggerDefinitionsRequest& request, const ListLoggerDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListResourceDefinitionVersionsAsyncHelper(const Model::ListResourceDefinitionVersionsRequest& request, const ListResourceDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListResourceDefinitionsAsyncHelper(const Model::ListResourceDefinitionsRequest& request, const ListResourceDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSubscriptionDefinitionVersionsAsyncHelper(const Model::ListSubscriptionDefinitionVersionsRequest& request, const ListSubscriptionDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSubscriptionDefinitionsAsyncHelper(const Model::ListSubscriptionDefinitionsRequest& request, const ListSubscriptionDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResetDeploymentsAsyncHelper(const Model::ResetDeploymentsRequest& request, const ResetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2270,6 +2569,7 @@ namespace Model
         void UpdateGroupAsyncHelper(const Model::UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGroupCertificateConfigurationAsyncHelper(const Model::UpdateGroupCertificateConfigurationRequest& request, const UpdateGroupCertificateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateLoggerDefinitionAsyncHelper(const Model::UpdateLoggerDefinitionRequest& request, const UpdateLoggerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateResourceDefinitionAsyncHelper(const Model::UpdateResourceDefinitionRequest& request, const UpdateResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSubscriptionDefinitionAsyncHelper(const Model::UpdateSubscriptionDefinitionRequest& request, const UpdateSubscriptionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

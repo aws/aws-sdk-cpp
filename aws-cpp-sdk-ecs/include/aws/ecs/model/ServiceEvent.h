@@ -84,27 +84,27 @@ namespace Model
 
 
     /**
-     * <p>The Unix timestamp for when the event was triggered.</p>
+     * <p>The Unix time stamp for when the event was triggered.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The Unix timestamp for when the event was triggered.</p>
+     * <p>The Unix time stamp for when the event was triggered.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The Unix timestamp for when the event was triggered.</p>
+     * <p>The Unix time stamp for when the event was triggered.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The Unix timestamp for when the event was triggered.</p>
+     * <p>The Unix time stamp for when the event was triggered.</p>
      */
     inline ServiceEvent& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The Unix timestamp for when the event was triggered.</p>
+     * <p>The Unix time stamp for when the event was triggered.</p>
      */
     inline ServiceEvent& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 

@@ -222,7 +222,7 @@ namespace Model
      * <code>ItemCollectionMetrics</code> element consists of:</p> <ul> <li> <p>
      * <code>ItemCollectionKey</code> - The partition key value of the item collection.
      * This is the same as the partition key value of the item itself.</p> </li> <li>
-     * <p> <code>SizeEstimateRange</code> - An estimate of item collection size, in
+     * <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in
      * gigabytes. This value is a two-element array containing a lower bound and an
      * upper bound for the estimate. The estimate includes the size of all the items in
      * the table, plus the size of all attributes projected into all of the local
@@ -242,7 +242,7 @@ namespace Model
      * <code>ItemCollectionMetrics</code> element consists of:</p> <ul> <li> <p>
      * <code>ItemCollectionKey</code> - The partition key value of the item collection.
      * This is the same as the partition key value of the item itself.</p> </li> <li>
-     * <p> <code>SizeEstimateRange</code> - An estimate of item collection size, in
+     * <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in
      * gigabytes. This value is a two-element array containing a lower bound and an
      * upper bound for the estimate. The estimate includes the size of all the items in
      * the table, plus the size of all attributes projected into all of the local
@@ -262,7 +262,7 @@ namespace Model
      * <code>ItemCollectionMetrics</code> element consists of:</p> <ul> <li> <p>
      * <code>ItemCollectionKey</code> - The partition key value of the item collection.
      * This is the same as the partition key value of the item itself.</p> </li> <li>
-     * <p> <code>SizeEstimateRange</code> - An estimate of item collection size, in
+     * <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in
      * gigabytes. This value is a two-element array containing a lower bound and an
      * upper bound for the estimate. The estimate includes the size of all the items in
      * the table, plus the size of all attributes projected into all of the local
@@ -282,7 +282,7 @@ namespace Model
      * <code>ItemCollectionMetrics</code> element consists of:</p> <ul> <li> <p>
      * <code>ItemCollectionKey</code> - The partition key value of the item collection.
      * This is the same as the partition key value of the item itself.</p> </li> <li>
-     * <p> <code>SizeEstimateRange</code> - An estimate of item collection size, in
+     * <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in
      * gigabytes. This value is a two-element array containing a lower bound and an
      * upper bound for the estimate. The estimate includes the size of all the items in
      * the table, plus the size of all attributes projected into all of the local
@@ -302,7 +302,7 @@ namespace Model
      * <code>ItemCollectionMetrics</code> element consists of:</p> <ul> <li> <p>
      * <code>ItemCollectionKey</code> - The partition key value of the item collection.
      * This is the same as the partition key value of the item itself.</p> </li> <li>
-     * <p> <code>SizeEstimateRange</code> - An estimate of item collection size, in
+     * <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in
      * gigabytes. This value is a two-element array containing a lower bound and an
      * upper bound for the estimate. The estimate includes the size of all the items in
      * the table, plus the size of all attributes projected into all of the local

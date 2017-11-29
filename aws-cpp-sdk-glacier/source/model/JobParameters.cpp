@@ -36,7 +36,9 @@ JobParameters::JobParameters() :
     m_sNSTopicHasBeenSet(false),
     m_retrievalByteRangeHasBeenSet(false),
     m_tierHasBeenSet(false),
-    m_inventoryRetrievalParametersHasBeenSet(false)
+    m_inventoryRetrievalParametersHasBeenSet(false),
+    m_selectParametersHasBeenSet(false),
+    m_outputLocationHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ JobParameters::JobParameters(const JsonValue& jsonValue) :
     m_sNSTopicHasBeenSet(false),
     m_retrievalByteRangeHasBeenSet(false),
     m_tierHasBeenSet(false),
-    m_inventoryRetrievalParametersHasBeenSet(false)
+    m_inventoryRetrievalParametersHasBeenSet(false),
+    m_selectParametersHasBeenSet(false),
+    m_outputLocationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -111,6 +115,20 @@ JobParameters& JobParameters::operator =(const JsonValue& jsonValue)
     m_inventoryRetrievalParametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SelectParameters"))
+  {
+    m_selectParameters = jsonValue.GetObject("SelectParameters");
+
+    m_selectParametersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OutputLocation"))
+  {
+    m_outputLocation = jsonValue.GetObject("OutputLocation");
+
+    m_outputLocationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -163,6 +181,18 @@ JsonValue JobParameters::Jsonize() const
   if(m_inventoryRetrievalParametersHasBeenSet)
   {
    payload.WithObject("InventoryRetrievalParameters", m_inventoryRetrievalParameters.Jsonize());
+
+  }
+
+  if(m_selectParametersHasBeenSet)
+  {
+   payload.WithObject("SelectParameters", m_selectParameters.Jsonize());
+
+  }
+
+  if(m_outputLocationHasBeenSet)
+  {
+   payload.WithObject("OutputLocation", m_outputLocation.Jsonize());
 
   }
 

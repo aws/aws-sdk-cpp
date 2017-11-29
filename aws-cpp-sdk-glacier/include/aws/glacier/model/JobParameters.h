@@ -17,6 +17,8 @@
 #include <aws/glacier/Glacier_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glacier/model/InventoryRetrievalJobInput.h>
+#include <aws/glacier/model/SelectParameters.h>
+#include <aws/glacier/model/OutputLocation.h>
 #include <utility>
 
 namespace Aws
@@ -105,101 +107,108 @@ namespace Model
 
 
     /**
-     * <p>The job type. You can initiate a job to retrieve an archive or get an
-     * inventory of a vault. Valid values are "archive-retrieval" and
-     * "inventory-retrieval".</p>
+     * <p>The job type. You can initiate a job to perform a select query on an archive,
+     * retrieve an archive, or get an inventory of a vault. Valid values are "select",
+     * "archive-retrieval" and "inventory-retrieval".</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The job type. You can initiate a job to retrieve an archive or get an
-     * inventory of a vault. Valid values are "archive-retrieval" and
-     * "inventory-retrieval".</p>
+     * <p>The job type. You can initiate a job to perform a select query on an archive,
+     * retrieve an archive, or get an inventory of a vault. Valid values are "select",
+     * "archive-retrieval" and "inventory-retrieval".</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The job type. You can initiate a job to retrieve an archive or get an
-     * inventory of a vault. Valid values are "archive-retrieval" and
-     * "inventory-retrieval".</p>
+     * <p>The job type. You can initiate a job to perform a select query on an archive,
+     * retrieve an archive, or get an inventory of a vault. Valid values are "select",
+     * "archive-retrieval" and "inventory-retrieval".</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The job type. You can initiate a job to retrieve an archive or get an
-     * inventory of a vault. Valid values are "archive-retrieval" and
-     * "inventory-retrieval".</p>
+     * <p>The job type. You can initiate a job to perform a select query on an archive,
+     * retrieve an archive, or get an inventory of a vault. Valid values are "select",
+     * "archive-retrieval" and "inventory-retrieval".</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The job type. You can initiate a job to retrieve an archive or get an
-     * inventory of a vault. Valid values are "archive-retrieval" and
-     * "inventory-retrieval".</p>
+     * <p>The job type. You can initiate a job to perform a select query on an archive,
+     * retrieve an archive, or get an inventory of a vault. Valid values are "select",
+     * "archive-retrieval" and "inventory-retrieval".</p>
      */
     inline JobParameters& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The job type. You can initiate a job to retrieve an archive or get an
-     * inventory of a vault. Valid values are "archive-retrieval" and
-     * "inventory-retrieval".</p>
+     * <p>The job type. You can initiate a job to perform a select query on an archive,
+     * retrieve an archive, or get an inventory of a vault. Valid values are "select",
+     * "archive-retrieval" and "inventory-retrieval".</p>
      */
     inline JobParameters& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The job type. You can initiate a job to retrieve an archive or get an
-     * inventory of a vault. Valid values are "archive-retrieval" and
-     * "inventory-retrieval".</p>
+     * <p>The job type. You can initiate a job to perform a select query on an archive,
+     * retrieve an archive, or get an inventory of a vault. Valid values are "select",
+     * "archive-retrieval" and "inventory-retrieval".</p>
      */
     inline JobParameters& WithType(const char* value) { SetType(value); return *this;}
 
 
     /**
      * <p>The ID of the archive that you want to retrieve. This field is required only
-     * if <code>Type</code> is set to archive-retrieval. An error occurs if you specify
-     * this request parameter for an inventory retrieval job request. </p>
+     * if <code>Type</code> is set to <code>select</code> or
+     * <code>archive-retrieval</code>code&gt;. An error occurs if you specify this
+     * request parameter for an inventory retrieval job request. </p>
      */
     inline const Aws::String& GetArchiveId() const{ return m_archiveId; }
 
     /**
      * <p>The ID of the archive that you want to retrieve. This field is required only
-     * if <code>Type</code> is set to archive-retrieval. An error occurs if you specify
-     * this request parameter for an inventory retrieval job request. </p>
+     * if <code>Type</code> is set to <code>select</code> or
+     * <code>archive-retrieval</code>code&gt;. An error occurs if you specify this
+     * request parameter for an inventory retrieval job request. </p>
      */
     inline void SetArchiveId(const Aws::String& value) { m_archiveIdHasBeenSet = true; m_archiveId = value; }
 
     /**
      * <p>The ID of the archive that you want to retrieve. This field is required only
-     * if <code>Type</code> is set to archive-retrieval. An error occurs if you specify
-     * this request parameter for an inventory retrieval job request. </p>
+     * if <code>Type</code> is set to <code>select</code> or
+     * <code>archive-retrieval</code>code&gt;. An error occurs if you specify this
+     * request parameter for an inventory retrieval job request. </p>
      */
     inline void SetArchiveId(Aws::String&& value) { m_archiveIdHasBeenSet = true; m_archiveId = std::move(value); }
 
     /**
      * <p>The ID of the archive that you want to retrieve. This field is required only
-     * if <code>Type</code> is set to archive-retrieval. An error occurs if you specify
-     * this request parameter for an inventory retrieval job request. </p>
+     * if <code>Type</code> is set to <code>select</code> or
+     * <code>archive-retrieval</code>code&gt;. An error occurs if you specify this
+     * request parameter for an inventory retrieval job request. </p>
      */
     inline void SetArchiveId(const char* value) { m_archiveIdHasBeenSet = true; m_archiveId.assign(value); }
 
     /**
      * <p>The ID of the archive that you want to retrieve. This field is required only
-     * if <code>Type</code> is set to archive-retrieval. An error occurs if you specify
-     * this request parameter for an inventory retrieval job request. </p>
+     * if <code>Type</code> is set to <code>select</code> or
+     * <code>archive-retrieval</code>code&gt;. An error occurs if you specify this
+     * request parameter for an inventory retrieval job request. </p>
      */
     inline JobParameters& WithArchiveId(const Aws::String& value) { SetArchiveId(value); return *this;}
 
     /**
      * <p>The ID of the archive that you want to retrieve. This field is required only
-     * if <code>Type</code> is set to archive-retrieval. An error occurs if you specify
-     * this request parameter for an inventory retrieval job request. </p>
+     * if <code>Type</code> is set to <code>select</code> or
+     * <code>archive-retrieval</code>code&gt;. An error occurs if you specify this
+     * request parameter for an inventory retrieval job request. </p>
      */
     inline JobParameters& WithArchiveId(Aws::String&& value) { SetArchiveId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the archive that you want to retrieve. This field is required only
-     * if <code>Type</code> is set to archive-retrieval. An error occurs if you specify
-     * this request parameter for an inventory retrieval job request. </p>
+     * if <code>Type</code> is set to <code>select</code> or
+     * <code>archive-retrieval</code>code&gt;. An error occurs if you specify this
+     * request parameter for an inventory retrieval job request. </p>
      */
     inline JobParameters& WithArchiveId(const char* value) { SetArchiveId(value); return *this;}
 
@@ -397,50 +406,50 @@ namespace Model
 
 
     /**
-     * <p>The retrieval option to use for the archive retrieval. Valid values are
-     * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
+     * <p>The retrieval option to use for a select or archive retrieval job. Valid
+     * values are <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
      * <code>Standard</code> is the default.</p>
      */
     inline const Aws::String& GetTier() const{ return m_tier; }
 
     /**
-     * <p>The retrieval option to use for the archive retrieval. Valid values are
-     * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
+     * <p>The retrieval option to use for a select or archive retrieval job. Valid
+     * values are <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
      * <code>Standard</code> is the default.</p>
      */
     inline void SetTier(const Aws::String& value) { m_tierHasBeenSet = true; m_tier = value; }
 
     /**
-     * <p>The retrieval option to use for the archive retrieval. Valid values are
-     * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
+     * <p>The retrieval option to use for a select or archive retrieval job. Valid
+     * values are <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
      * <code>Standard</code> is the default.</p>
      */
     inline void SetTier(Aws::String&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
 
     /**
-     * <p>The retrieval option to use for the archive retrieval. Valid values are
-     * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
+     * <p>The retrieval option to use for a select or archive retrieval job. Valid
+     * values are <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
      * <code>Standard</code> is the default.</p>
      */
     inline void SetTier(const char* value) { m_tierHasBeenSet = true; m_tier.assign(value); }
 
     /**
-     * <p>The retrieval option to use for the archive retrieval. Valid values are
-     * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
+     * <p>The retrieval option to use for a select or archive retrieval job. Valid
+     * values are <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
      * <code>Standard</code> is the default.</p>
      */
     inline JobParameters& WithTier(const Aws::String& value) { SetTier(value); return *this;}
 
     /**
-     * <p>The retrieval option to use for the archive retrieval. Valid values are
-     * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
+     * <p>The retrieval option to use for a select or archive retrieval job. Valid
+     * values are <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
      * <code>Standard</code> is the default.</p>
      */
     inline JobParameters& WithTier(Aws::String&& value) { SetTier(std::move(value)); return *this;}
 
     /**
-     * <p>The retrieval option to use for the archive retrieval. Valid values are
-     * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
+     * <p>The retrieval option to use for a select or archive retrieval job. Valid
+     * values are <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
      * <code>Standard</code> is the default.</p>
      */
     inline JobParameters& WithTier(const char* value) { SetTier(value); return *this;}
@@ -471,6 +480,63 @@ namespace Model
      */
     inline JobParameters& WithInventoryRetrievalParameters(InventoryRetrievalJobInput&& value) { SetInventoryRetrievalParameters(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains the parameters that define a job.</p>
+     */
+    inline const SelectParameters& GetSelectParameters() const{ return m_selectParameters; }
+
+    /**
+     * <p>Contains the parameters that define a job.</p>
+     */
+    inline void SetSelectParameters(const SelectParameters& value) { m_selectParametersHasBeenSet = true; m_selectParameters = value; }
+
+    /**
+     * <p>Contains the parameters that define a job.</p>
+     */
+    inline void SetSelectParameters(SelectParameters&& value) { m_selectParametersHasBeenSet = true; m_selectParameters = std::move(value); }
+
+    /**
+     * <p>Contains the parameters that define a job.</p>
+     */
+    inline JobParameters& WithSelectParameters(const SelectParameters& value) { SetSelectParameters(value); return *this;}
+
+    /**
+     * <p>Contains the parameters that define a job.</p>
+     */
+    inline JobParameters& WithSelectParameters(SelectParameters&& value) { SetSelectParameters(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Contains information about the location where the select job results are
+     * stored.</p>
+     */
+    inline const OutputLocation& GetOutputLocation() const{ return m_outputLocation; }
+
+    /**
+     * <p>Contains information about the location where the select job results are
+     * stored.</p>
+     */
+    inline void SetOutputLocation(const OutputLocation& value) { m_outputLocationHasBeenSet = true; m_outputLocation = value; }
+
+    /**
+     * <p>Contains information about the location where the select job results are
+     * stored.</p>
+     */
+    inline void SetOutputLocation(OutputLocation&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::move(value); }
+
+    /**
+     * <p>Contains information about the location where the select job results are
+     * stored.</p>
+     */
+    inline JobParameters& WithOutputLocation(const OutputLocation& value) { SetOutputLocation(value); return *this;}
+
+    /**
+     * <p>Contains information about the location where the select job results are
+     * stored.</p>
+     */
+    inline JobParameters& WithOutputLocation(OutputLocation&& value) { SetOutputLocation(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_format;
@@ -496,6 +562,12 @@ namespace Model
 
     InventoryRetrievalJobInput m_inventoryRetrievalParameters;
     bool m_inventoryRetrievalParametersHasBeenSet;
+
+    SelectParameters m_selectParameters;
+    bool m_selectParametersHasBeenSet;
+
+    OutputLocation m_outputLocation;
+    bool m_outputLocationHasBeenSet;
   };
 
 } // namespace Model

@@ -155,39 +155,75 @@ namespace Model
 
 
     /**
-     * Logger definitionv ersion arn for this group.
+     * Logger definition version arn for this group.
      */
     inline const Aws::String& GetLoggerDefinitionVersionArn() const{ return m_loggerDefinitionVersionArn; }
 
     /**
-     * Logger definitionv ersion arn for this group.
+     * Logger definition version arn for this group.
      */
     inline void SetLoggerDefinitionVersionArn(const Aws::String& value) { m_loggerDefinitionVersionArnHasBeenSet = true; m_loggerDefinitionVersionArn = value; }
 
     /**
-     * Logger definitionv ersion arn for this group.
+     * Logger definition version arn for this group.
      */
     inline void SetLoggerDefinitionVersionArn(Aws::String&& value) { m_loggerDefinitionVersionArnHasBeenSet = true; m_loggerDefinitionVersionArn = std::move(value); }
 
     /**
-     * Logger definitionv ersion arn for this group.
+     * Logger definition version arn for this group.
      */
     inline void SetLoggerDefinitionVersionArn(const char* value) { m_loggerDefinitionVersionArnHasBeenSet = true; m_loggerDefinitionVersionArn.assign(value); }
 
     /**
-     * Logger definitionv ersion arn for this group.
+     * Logger definition version arn for this group.
      */
     inline GroupVersion& WithLoggerDefinitionVersionArn(const Aws::String& value) { SetLoggerDefinitionVersionArn(value); return *this;}
 
     /**
-     * Logger definitionv ersion arn for this group.
+     * Logger definition version arn for this group.
      */
     inline GroupVersion& WithLoggerDefinitionVersionArn(Aws::String&& value) { SetLoggerDefinitionVersionArn(std::move(value)); return *this;}
 
     /**
-     * Logger definitionv ersion arn for this group.
+     * Logger definition version arn for this group.
      */
     inline GroupVersion& WithLoggerDefinitionVersionArn(const char* value) { SetLoggerDefinitionVersionArn(value); return *this;}
+
+
+    /**
+     * Resource definition version arn for this group.
+     */
+    inline const Aws::String& GetResourceDefinitionVersionArn() const{ return m_resourceDefinitionVersionArn; }
+
+    /**
+     * Resource definition version arn for this group.
+     */
+    inline void SetResourceDefinitionVersionArn(const Aws::String& value) { m_resourceDefinitionVersionArnHasBeenSet = true; m_resourceDefinitionVersionArn = value; }
+
+    /**
+     * Resource definition version arn for this group.
+     */
+    inline void SetResourceDefinitionVersionArn(Aws::String&& value) { m_resourceDefinitionVersionArnHasBeenSet = true; m_resourceDefinitionVersionArn = std::move(value); }
+
+    /**
+     * Resource definition version arn for this group.
+     */
+    inline void SetResourceDefinitionVersionArn(const char* value) { m_resourceDefinitionVersionArnHasBeenSet = true; m_resourceDefinitionVersionArn.assign(value); }
+
+    /**
+     * Resource definition version arn for this group.
+     */
+    inline GroupVersion& WithResourceDefinitionVersionArn(const Aws::String& value) { SetResourceDefinitionVersionArn(value); return *this;}
+
+    /**
+     * Resource definition version arn for this group.
+     */
+    inline GroupVersion& WithResourceDefinitionVersionArn(Aws::String&& value) { SetResourceDefinitionVersionArn(std::move(value)); return *this;}
+
+    /**
+     * Resource definition version arn for this group.
+     */
+    inline GroupVersion& WithResourceDefinitionVersionArn(const char* value) { SetResourceDefinitionVersionArn(value); return *this;}
 
 
     /**
@@ -238,6 +274,9 @@ namespace Model
 
     Aws::String m_loggerDefinitionVersionArn;
     bool m_loggerDefinitionVersionArnHasBeenSet;
+
+    Aws::String m_resourceDefinitionVersionArn;
+    bool m_resourceDefinitionVersionArnHasBeenSet;
 
     Aws::String m_subscriptionDefinitionVersionArn;
     bool m_subscriptionDefinitionVersionArnHasBeenSet;

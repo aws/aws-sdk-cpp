@@ -229,17 +229,22 @@ namespace Model
     typedef std::function<void(const ECSClient*, const Model::UpdateServiceRequest&, const Model::UpdateServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServiceResponseReceivedHandler;
 
   /**
-   * <p>Amazon EC2 Container Service (Amazon ECS) is a highly scalable, fast,
+   * <p>Amazon Elastic Container Service (Amazon ECS) is a highly scalable, fast,
    * container management service that makes it easy to run, stop, and manage Docker
-   * containers on a cluster of EC2 instances. Amazon ECS lets you launch and stop
-   * container-enabled applications with simple API calls, allows you to get the
-   * state of your cluster from a centralized service, and gives you access to many
-   * familiar Amazon EC2 features like security groups, Amazon EBS volumes, and IAM
-   * roles.</p> <p>You can use Amazon ECS to schedule the placement of containers
+   * containers on a cluster. You can host your cluster on a serverless
+   * infrastructure that is managed by Amazon ECS by launching your services or tasks
+   * using the Fargate launch type. For more control, you can host your tasks on a
+   * cluster of Amazon Elastic Compute Cloud (Amazon EC2) instances that you manage
+   * by using the EC2 launch type. For more information about launch types, see <a
+   * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidelaunch_types.html">Amazon
+   * ECS Launch Types</a>.</p> <p>Amazon ECS lets you launch and stop container-based
+   * applications with simple API calls, allows you to get the state of your cluster
+   * from a centralized service, and gives you access to many familiar Amazon EC2
+   * features.</p> <p>You can use Amazon ECS to schedule the placement of containers
    * across your cluster based on your resource needs, isolation policies, and
-   * availability requirements. Amazon EC2 Container Service eliminates the need for
-   * you to operate your own cluster management and configuration management systems
-   * or worry about scaling your management infrastructure.</p>
+   * availability requirements. Amazon ECS eliminates the need for you to operate
+   * your own cluster management and configuration management systems or worry about
+   * scaling your management infrastructure.</p>
    */
   class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient
   {
@@ -280,9 +285,9 @@ namespace Model
          * services can be managed on your behalf. However, if the IAM user that makes the
          * call does not have permissions to create the service-linked role, it is not
          * created. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
-         * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service
-         * Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+         * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
+         * Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">AWS
          * API Reference</a></p>
          */
@@ -298,9 +303,9 @@ namespace Model
          * services can be managed on your behalf. However, if the IAM user that makes the
          * call does not have permissions to create the service-linked role, it is not
          * created. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
-         * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service
-         * Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+         * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
+         * Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">AWS
          * API Reference</a></p>
          *
@@ -318,9 +323,9 @@ namespace Model
          * services can be managed on your behalf. However, if the IAM user that makes the
          * call does not have permissions to create the service-linked role, it is not
          * created. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
-         * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service
-         * Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+         * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
+         * Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">AWS
          * API Reference</a></p>
          *
@@ -338,47 +343,48 @@ namespace Model
          * distributes traffic across the tasks that are associated with the service. For
          * more information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-         * Load Balancing</a> in the <i>Amazon EC2 Container Service Developer
+         * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can optionally specify a deployment configuration for your
-         * service. During a deployment (which is triggered by changing the task definition
-         * or the desired count of a service with an <a>UpdateService</a> operation), the
-         * service scheduler uses the <code>minimumHealthyPercent</code> and
-         * <code>maximumPercent</code> parameters to determine the deployment strategy.</p>
-         * <p>The <code>minimumHealthyPercent</code> represents a lower limit on the number
-         * of your service's tasks that must remain in the <code>RUNNING</code> state
-         * during a deployment, as a percentage of the <code>desiredCount</code> (rounded
-         * up to the nearest integer). This parameter enables you to deploy without using
-         * additional cluster capacity. For example, if your service has a
-         * <code>desiredCount</code> of four tasks and a <code>minimumHealthyPercent</code>
-         * of 50%, the scheduler can stop two existing tasks to free up cluster capacity
-         * before starting two new tasks. Tasks for services that <i>do not</i> use a load
-         * balancer are considered healthy if they are in the <code>RUNNING</code> state.
-         * Tasks for services that <i>do</i> use a load balancer are considered healthy if
-         * they are in the <code>RUNNING</code> state and the container instance they are
-         * hosted on is reported as healthy by the load balancer. The default value for
-         * <code>minimumHealthyPercent</code> is 50% in the console and 100% for the AWS
-         * CLI, the AWS SDKs, and the APIs.</p> <p>The <code>maximumPercent</code>
-         * parameter represents an upper limit on the number of your service's tasks that
-         * are allowed in the <code>RUNNING</code> or <code>PENDING</code> state during a
-         * deployment, as a percentage of the <code>desiredCount</code> (rounded down to
-         * the nearest integer). This parameter enables you to define the deployment batch
-         * size. For example, if your service has a <code>desiredCount</code> of four tasks
-         * and a <code>maximumPercent</code> value of 200%, the scheduler can start four
-         * new tasks before stopping the four older tasks (provided that the cluster
-         * resources required to do this are available). The default value for
-         * <code>maximumPercent</code> is 200%.</p> <p>When the service scheduler launches
-         * new tasks, it determines task placement in your cluster using the following
-         * logic:</p> <ul> <li> <p>Determine which of the container instances in your
-         * cluster can support your service's task definition (for example, they have the
-         * required CPU, memory, ports, and container instance attributes).</p> </li> <li>
-         * <p>By default, the service scheduler attempts to balance tasks across
-         * Availability Zones in this manner (although you can choose a different placement
-         * strategy) with the <code>placementStrategy</code> parameter):</p> <ul> <li>
-         * <p>Sort the valid container instances by the fewest number of running tasks for
-         * this service in the same Availability Zone as the instance. For example, if zone
-         * A has one running service task and zones B and C each have zero, valid container
-         * instances in either zone B or C are considered optimal for placement.</p> </li>
-         * <li> <p>Place the new service task on a valid container instance in an optimal
+         * service. During a deployment, the service scheduler uses the
+         * <code>minimumHealthyPercent</code> and <code>maximumPercent</code> parameters to
+         * determine the deployment strategy. The deployment is triggered by changing the
+         * task definition or the desired count of a service with an <a>UpdateService</a>
+         * operation.</p> <p>The <code>minimumHealthyPercent</code> represents a lower
+         * limit on the number of your service's tasks that must remain in the
+         * <code>RUNNING</code> state during a deployment, as a percentage of the
+         * <code>desiredCount</code> (rounded up to the nearest integer). This parameter
+         * enables you to deploy without using additional cluster capacity. For example, if
+         * your service has a <code>desiredCount</code> of four tasks and a
+         * <code>minimumHealthyPercent</code> of 50%, the scheduler can stop two existing
+         * tasks to free up cluster capacity before starting two new tasks. Tasks for
+         * services that <i>do not</i> use a load balancer are considered healthy if they
+         * are in the <code>RUNNING</code> state. Tasks for services that <i>do</i> use a
+         * load balancer are considered healthy if they are in the <code>RUNNING</code>
+         * state and the container instance they are hosted on is reported as healthy by
+         * the load balancer. The default value for <code>minimumHealthyPercent</code> is
+         * 50% in the console and 100% for the AWS CLI, the AWS SDKs, and the APIs.</p>
+         * <p>The <code>maximumPercent</code> parameter represents an upper limit on the
+         * number of your service's tasks that are allowed in the <code>RUNNING</code> or
+         * <code>PENDING</code> state during a deployment, as a percentage of the
+         * <code>desiredCount</code> (rounded down to the nearest integer). This parameter
+         * enables you to define the deployment batch size. For example, if your service
+         * has a <code>desiredCount</code> of four tasks and a <code>maximumPercent</code>
+         * value of 200%, the scheduler can start four new tasks before stopping the four
+         * older tasks (provided that the cluster resources required to do this are
+         * available). The default value for <code>maximumPercent</code> is 200%.</p>
+         * <p>When the service scheduler launches new tasks, it determines task placement
+         * in your cluster using the following logic:</p> <ul> <li> <p>Determine which of
+         * the container instances in your cluster can support your service's task
+         * definition (for example, they have the required CPU, memory, ports, and
+         * container instance attributes).</p> </li> <li> <p>By default, the service
+         * scheduler attempts to balance tasks across Availability Zones in this manner
+         * (although you can choose a different placement strategy) with the
+         * <code>placementStrategy</code> parameter):</p> <ul> <li> <p>Sort the valid
+         * container instances by the fewest number of running tasks for this service in
+         * the same Availability Zone as the instance. For example, if zone A has one
+         * running service task and zones B and C each have zero, valid container instances
+         * in either zone B or C are considered optimal for placement.</p> </li> <li>
+         * <p>Place the new service task on a valid container instance in an optimal
          * Availability Zone (based on the previous steps), favoring container instances
          * with the fewest number of running tasks for this service.</p> </li> </ul> </li>
          * </ul><p><h3>See Also:</h3>   <a
@@ -397,47 +403,48 @@ namespace Model
          * distributes traffic across the tasks that are associated with the service. For
          * more information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-         * Load Balancing</a> in the <i>Amazon EC2 Container Service Developer
+         * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can optionally specify a deployment configuration for your
-         * service. During a deployment (which is triggered by changing the task definition
-         * or the desired count of a service with an <a>UpdateService</a> operation), the
-         * service scheduler uses the <code>minimumHealthyPercent</code> and
-         * <code>maximumPercent</code> parameters to determine the deployment strategy.</p>
-         * <p>The <code>minimumHealthyPercent</code> represents a lower limit on the number
-         * of your service's tasks that must remain in the <code>RUNNING</code> state
-         * during a deployment, as a percentage of the <code>desiredCount</code> (rounded
-         * up to the nearest integer). This parameter enables you to deploy without using
-         * additional cluster capacity. For example, if your service has a
-         * <code>desiredCount</code> of four tasks and a <code>minimumHealthyPercent</code>
-         * of 50%, the scheduler can stop two existing tasks to free up cluster capacity
-         * before starting two new tasks. Tasks for services that <i>do not</i> use a load
-         * balancer are considered healthy if they are in the <code>RUNNING</code> state.
-         * Tasks for services that <i>do</i> use a load balancer are considered healthy if
-         * they are in the <code>RUNNING</code> state and the container instance they are
-         * hosted on is reported as healthy by the load balancer. The default value for
-         * <code>minimumHealthyPercent</code> is 50% in the console and 100% for the AWS
-         * CLI, the AWS SDKs, and the APIs.</p> <p>The <code>maximumPercent</code>
-         * parameter represents an upper limit on the number of your service's tasks that
-         * are allowed in the <code>RUNNING</code> or <code>PENDING</code> state during a
-         * deployment, as a percentage of the <code>desiredCount</code> (rounded down to
-         * the nearest integer). This parameter enables you to define the deployment batch
-         * size. For example, if your service has a <code>desiredCount</code> of four tasks
-         * and a <code>maximumPercent</code> value of 200%, the scheduler can start four
-         * new tasks before stopping the four older tasks (provided that the cluster
-         * resources required to do this are available). The default value for
-         * <code>maximumPercent</code> is 200%.</p> <p>When the service scheduler launches
-         * new tasks, it determines task placement in your cluster using the following
-         * logic:</p> <ul> <li> <p>Determine which of the container instances in your
-         * cluster can support your service's task definition (for example, they have the
-         * required CPU, memory, ports, and container instance attributes).</p> </li> <li>
-         * <p>By default, the service scheduler attempts to balance tasks across
-         * Availability Zones in this manner (although you can choose a different placement
-         * strategy) with the <code>placementStrategy</code> parameter):</p> <ul> <li>
-         * <p>Sort the valid container instances by the fewest number of running tasks for
-         * this service in the same Availability Zone as the instance. For example, if zone
-         * A has one running service task and zones B and C each have zero, valid container
-         * instances in either zone B or C are considered optimal for placement.</p> </li>
-         * <li> <p>Place the new service task on a valid container instance in an optimal
+         * service. During a deployment, the service scheduler uses the
+         * <code>minimumHealthyPercent</code> and <code>maximumPercent</code> parameters to
+         * determine the deployment strategy. The deployment is triggered by changing the
+         * task definition or the desired count of a service with an <a>UpdateService</a>
+         * operation.</p> <p>The <code>minimumHealthyPercent</code> represents a lower
+         * limit on the number of your service's tasks that must remain in the
+         * <code>RUNNING</code> state during a deployment, as a percentage of the
+         * <code>desiredCount</code> (rounded up to the nearest integer). This parameter
+         * enables you to deploy without using additional cluster capacity. For example, if
+         * your service has a <code>desiredCount</code> of four tasks and a
+         * <code>minimumHealthyPercent</code> of 50%, the scheduler can stop two existing
+         * tasks to free up cluster capacity before starting two new tasks. Tasks for
+         * services that <i>do not</i> use a load balancer are considered healthy if they
+         * are in the <code>RUNNING</code> state. Tasks for services that <i>do</i> use a
+         * load balancer are considered healthy if they are in the <code>RUNNING</code>
+         * state and the container instance they are hosted on is reported as healthy by
+         * the load balancer. The default value for <code>minimumHealthyPercent</code> is
+         * 50% in the console and 100% for the AWS CLI, the AWS SDKs, and the APIs.</p>
+         * <p>The <code>maximumPercent</code> parameter represents an upper limit on the
+         * number of your service's tasks that are allowed in the <code>RUNNING</code> or
+         * <code>PENDING</code> state during a deployment, as a percentage of the
+         * <code>desiredCount</code> (rounded down to the nearest integer). This parameter
+         * enables you to define the deployment batch size. For example, if your service
+         * has a <code>desiredCount</code> of four tasks and a <code>maximumPercent</code>
+         * value of 200%, the scheduler can start four new tasks before stopping the four
+         * older tasks (provided that the cluster resources required to do this are
+         * available). The default value for <code>maximumPercent</code> is 200%.</p>
+         * <p>When the service scheduler launches new tasks, it determines task placement
+         * in your cluster using the following logic:</p> <ul> <li> <p>Determine which of
+         * the container instances in your cluster can support your service's task
+         * definition (for example, they have the required CPU, memory, ports, and
+         * container instance attributes).</p> </li> <li> <p>By default, the service
+         * scheduler attempts to balance tasks across Availability Zones in this manner
+         * (although you can choose a different placement strategy) with the
+         * <code>placementStrategy</code> parameter):</p> <ul> <li> <p>Sort the valid
+         * container instances by the fewest number of running tasks for this service in
+         * the same Availability Zone as the instance. For example, if zone A has one
+         * running service task and zones B and C each have zero, valid container instances
+         * in either zone B or C are considered optimal for placement.</p> </li> <li>
+         * <p>Place the new service task on a valid container instance in an optimal
          * Availability Zone (based on the previous steps), favoring container instances
          * with the fewest number of running tasks for this service.</p> </li> </ul> </li>
          * </ul><p><h3>See Also:</h3>   <a
@@ -458,47 +465,48 @@ namespace Model
          * distributes traffic across the tasks that are associated with the service. For
          * more information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-         * Load Balancing</a> in the <i>Amazon EC2 Container Service Developer
+         * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can optionally specify a deployment configuration for your
-         * service. During a deployment (which is triggered by changing the task definition
-         * or the desired count of a service with an <a>UpdateService</a> operation), the
-         * service scheduler uses the <code>minimumHealthyPercent</code> and
-         * <code>maximumPercent</code> parameters to determine the deployment strategy.</p>
-         * <p>The <code>minimumHealthyPercent</code> represents a lower limit on the number
-         * of your service's tasks that must remain in the <code>RUNNING</code> state
-         * during a deployment, as a percentage of the <code>desiredCount</code> (rounded
-         * up to the nearest integer). This parameter enables you to deploy without using
-         * additional cluster capacity. For example, if your service has a
-         * <code>desiredCount</code> of four tasks and a <code>minimumHealthyPercent</code>
-         * of 50%, the scheduler can stop two existing tasks to free up cluster capacity
-         * before starting two new tasks. Tasks for services that <i>do not</i> use a load
-         * balancer are considered healthy if they are in the <code>RUNNING</code> state.
-         * Tasks for services that <i>do</i> use a load balancer are considered healthy if
-         * they are in the <code>RUNNING</code> state and the container instance they are
-         * hosted on is reported as healthy by the load balancer. The default value for
-         * <code>minimumHealthyPercent</code> is 50% in the console and 100% for the AWS
-         * CLI, the AWS SDKs, and the APIs.</p> <p>The <code>maximumPercent</code>
-         * parameter represents an upper limit on the number of your service's tasks that
-         * are allowed in the <code>RUNNING</code> or <code>PENDING</code> state during a
-         * deployment, as a percentage of the <code>desiredCount</code> (rounded down to
-         * the nearest integer). This parameter enables you to define the deployment batch
-         * size. For example, if your service has a <code>desiredCount</code> of four tasks
-         * and a <code>maximumPercent</code> value of 200%, the scheduler can start four
-         * new tasks before stopping the four older tasks (provided that the cluster
-         * resources required to do this are available). The default value for
-         * <code>maximumPercent</code> is 200%.</p> <p>When the service scheduler launches
-         * new tasks, it determines task placement in your cluster using the following
-         * logic:</p> <ul> <li> <p>Determine which of the container instances in your
-         * cluster can support your service's task definition (for example, they have the
-         * required CPU, memory, ports, and container instance attributes).</p> </li> <li>
-         * <p>By default, the service scheduler attempts to balance tasks across
-         * Availability Zones in this manner (although you can choose a different placement
-         * strategy) with the <code>placementStrategy</code> parameter):</p> <ul> <li>
-         * <p>Sort the valid container instances by the fewest number of running tasks for
-         * this service in the same Availability Zone as the instance. For example, if zone
-         * A has one running service task and zones B and C each have zero, valid container
-         * instances in either zone B or C are considered optimal for placement.</p> </li>
-         * <li> <p>Place the new service task on a valid container instance in an optimal
+         * service. During a deployment, the service scheduler uses the
+         * <code>minimumHealthyPercent</code> and <code>maximumPercent</code> parameters to
+         * determine the deployment strategy. The deployment is triggered by changing the
+         * task definition or the desired count of a service with an <a>UpdateService</a>
+         * operation.</p> <p>The <code>minimumHealthyPercent</code> represents a lower
+         * limit on the number of your service's tasks that must remain in the
+         * <code>RUNNING</code> state during a deployment, as a percentage of the
+         * <code>desiredCount</code> (rounded up to the nearest integer). This parameter
+         * enables you to deploy without using additional cluster capacity. For example, if
+         * your service has a <code>desiredCount</code> of four tasks and a
+         * <code>minimumHealthyPercent</code> of 50%, the scheduler can stop two existing
+         * tasks to free up cluster capacity before starting two new tasks. Tasks for
+         * services that <i>do not</i> use a load balancer are considered healthy if they
+         * are in the <code>RUNNING</code> state. Tasks for services that <i>do</i> use a
+         * load balancer are considered healthy if they are in the <code>RUNNING</code>
+         * state and the container instance they are hosted on is reported as healthy by
+         * the load balancer. The default value for <code>minimumHealthyPercent</code> is
+         * 50% in the console and 100% for the AWS CLI, the AWS SDKs, and the APIs.</p>
+         * <p>The <code>maximumPercent</code> parameter represents an upper limit on the
+         * number of your service's tasks that are allowed in the <code>RUNNING</code> or
+         * <code>PENDING</code> state during a deployment, as a percentage of the
+         * <code>desiredCount</code> (rounded down to the nearest integer). This parameter
+         * enables you to define the deployment batch size. For example, if your service
+         * has a <code>desiredCount</code> of four tasks and a <code>maximumPercent</code>
+         * value of 200%, the scheduler can start four new tasks before stopping the four
+         * older tasks (provided that the cluster resources required to do this are
+         * available). The default value for <code>maximumPercent</code> is 200%.</p>
+         * <p>When the service scheduler launches new tasks, it determines task placement
+         * in your cluster using the following logic:</p> <ul> <li> <p>Determine which of
+         * the container instances in your cluster can support your service's task
+         * definition (for example, they have the required CPU, memory, ports, and
+         * container instance attributes).</p> </li> <li> <p>By default, the service
+         * scheduler attempts to balance tasks across Availability Zones in this manner
+         * (although you can choose a different placement strategy) with the
+         * <code>placementStrategy</code> parameter):</p> <ul> <li> <p>Sort the valid
+         * container instances by the fewest number of running tasks for this service in
+         * the same Availability Zone as the instance. For example, if zone A has one
+         * running service task and zones B and C each have zero, valid container instances
+         * in either zone B or C are considered optimal for placement.</p> </li> <li>
+         * <p>Place the new service task on a valid container instance in an optimal
          * Availability Zone (based on the previous steps), favoring container instances
          * with the fewest number of running tasks for this service.</p> </li> </ul> </li>
          * </ul><p><h3>See Also:</h3>   <a
@@ -583,9 +591,9 @@ namespace Model
          * have stopped, then the service status moves from <code>DRAINING</code> to
          * <code>INACTIVE</code>. Services in the <code>DRAINING</code> or
          * <code>INACTIVE</code> status can still be viewed with <a>DescribeServices</a>
-         * API operations; however, in the future, <code>INACTIVE</code> services may be
+         * API operations. However, in the future, <code>INACTIVE</code> services may be
          * cleaned up and purged from Amazon ECS record keeping, and
-         * <a>DescribeServices</a> API operations on those services will return a
+         * <a>DescribeServices</a> API operations on those services return a
          * <code>ServiceNotFoundException</code> error.</p> </note><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService">AWS
@@ -605,9 +613,9 @@ namespace Model
          * have stopped, then the service status moves from <code>DRAINING</code> to
          * <code>INACTIVE</code>. Services in the <code>DRAINING</code> or
          * <code>INACTIVE</code> status can still be viewed with <a>DescribeServices</a>
-         * API operations; however, in the future, <code>INACTIVE</code> services may be
+         * API operations. However, in the future, <code>INACTIVE</code> services may be
          * cleaned up and purged from Amazon ECS record keeping, and
-         * <a>DescribeServices</a> API operations on those services will return a
+         * <a>DescribeServices</a> API operations on those services return a
          * <code>ServiceNotFoundException</code> error.</p> </note><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService">AWS
@@ -629,9 +637,9 @@ namespace Model
          * have stopped, then the service status moves from <code>DRAINING</code> to
          * <code>INACTIVE</code>. Services in the <code>DRAINING</code> or
          * <code>INACTIVE</code> status can still be viewed with <a>DescribeServices</a>
-         * API operations; however, in the future, <code>INACTIVE</code> services may be
+         * API operations. However, in the future, <code>INACTIVE</code> services may be
          * cleaned up and purged from Amazon ECS record keeping, and
-         * <a>DescribeServices</a> API operations on those services will return a
+         * <a>DescribeServices</a> API operations on those services return a
          * <code>ServiceNotFoundException</code> error.</p> </note><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService">AWS
@@ -645,8 +653,8 @@ namespace Model
          * <p>Deregisters an Amazon ECS container instance from the specified cluster. This
          * instance is no longer available to run tasks.</p> <p>If you intend to use the
          * container instance for some other purpose after deregistration, you should stop
-         * all of the tasks running on the container instance before deregistration to
-         * avoid any orphaned tasks from consuming resources.</p> <p>Deregistering a
+         * all of the tasks running on the container instance before deregistration. That
+         * prevents any orphaned tasks from consuming resources.</p> <p>Deregistering a
          * container instance removes the instance from a cluster, but it does not
          * terminate the EC2 instance; if you are finished using the instance, be sure to
          * terminate it in the Amazon EC2 console to stop billing.</p> <note> <p>If you
@@ -663,8 +671,8 @@ namespace Model
          * <p>Deregisters an Amazon ECS container instance from the specified cluster. This
          * instance is no longer available to run tasks.</p> <p>If you intend to use the
          * container instance for some other purpose after deregistration, you should stop
-         * all of the tasks running on the container instance before deregistration to
-         * avoid any orphaned tasks from consuming resources.</p> <p>Deregistering a
+         * all of the tasks running on the container instance before deregistration. That
+         * prevents any orphaned tasks from consuming resources.</p> <p>Deregistering a
          * container instance removes the instance from a cluster, but it does not
          * terminate the EC2 instance; if you are finished using the instance, be sure to
          * terminate it in the Amazon EC2 console to stop billing.</p> <note> <p>If you
@@ -683,8 +691,8 @@ namespace Model
          * <p>Deregisters an Amazon ECS container instance from the specified cluster. This
          * instance is no longer available to run tasks.</p> <p>If you intend to use the
          * container instance for some other purpose after deregistration, you should stop
-         * all of the tasks running on the container instance before deregistration to
-         * avoid any orphaned tasks from consuming resources.</p> <p>Deregistering a
+         * all of the tasks running on the container instance before deregistration. That
+         * prevents any orphaned tasks from consuming resources.</p> <p>Deregistering a
          * container instance removes the instance from a cluster, but it does not
          * terminate the EC2 instance; if you are finished using the instance, be sure to
          * terminate it in the Amazon EC2 console to stop billing.</p> <note> <p>If you
@@ -708,13 +716,13 @@ namespace Model
          * the service's desired count.</p> <p>You cannot use an <code>INACTIVE</code> task
          * definition to run new tasks or create new services, and you cannot update an
          * existing service to reference an <code>INACTIVE</code> task definition (although
-         * there may be up to a 10 minute window following deregistration where these
+         * there may be up to a 10-minute window following deregistration where these
          * restrictions have not yet taken effect).</p> <note> <p>At this time,
          * <code>INACTIVE</code> task definitions remain discoverable in your account
          * indefinitely; however, this behavior is subject to change in the future, so you
          * should not rely on <code>INACTIVE</code> task definitions persisting beyond the
-         * life cycle of any associated tasks and services.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * lifecycle of any associated tasks and services.</p> </note><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition">AWS
          * API Reference</a></p>
          */
@@ -729,13 +737,13 @@ namespace Model
          * the service's desired count.</p> <p>You cannot use an <code>INACTIVE</code> task
          * definition to run new tasks or create new services, and you cannot update an
          * existing service to reference an <code>INACTIVE</code> task definition (although
-         * there may be up to a 10 minute window following deregistration where these
+         * there may be up to a 10-minute window following deregistration where these
          * restrictions have not yet taken effect).</p> <note> <p>At this time,
          * <code>INACTIVE</code> task definitions remain discoverable in your account
          * indefinitely; however, this behavior is subject to change in the future, so you
          * should not rely on <code>INACTIVE</code> task definitions persisting beyond the
-         * life cycle of any associated tasks and services.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * lifecycle of any associated tasks and services.</p> </note><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition">AWS
          * API Reference</a></p>
          *
@@ -752,13 +760,13 @@ namespace Model
          * the service's desired count.</p> <p>You cannot use an <code>INACTIVE</code> task
          * definition to run new tasks or create new services, and you cannot update an
          * existing service to reference an <code>INACTIVE</code> task definition (although
-         * there may be up to a 10 minute window following deregistration where these
+         * there may be up to a 10-minute window following deregistration where these
          * restrictions have not yet taken effect).</p> <note> <p>At this time,
          * <code>INACTIVE</code> task definitions remain discoverable in your account
          * indefinitely; however, this behavior is subject to change in the future, so you
          * should not rely on <code>INACTIVE</code> task definitions persisting beyond the
-         * life cycle of any associated tasks and services.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * lifecycle of any associated tasks and services.</p> </note><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition">AWS
          * API Reference</a></p>
          *
@@ -792,8 +800,8 @@ namespace Model
         virtual void DescribeClustersAsync(const Model::DescribeClustersRequest& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes Amazon EC2 Container Service container instances. Returns metadata
-         * about registered and remaining resources on each container instance
+         * <p>Describes Amazon Elastic Container Service container instances. Returns
+         * metadata about registered and remaining resources on each container instance
          * requested.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances">AWS
          * API Reference</a></p>
@@ -801,8 +809,8 @@ namespace Model
         virtual Model::DescribeContainerInstancesOutcome DescribeContainerInstances(const Model::DescribeContainerInstancesRequest& request) const;
 
         /**
-         * <p>Describes Amazon EC2 Container Service container instances. Returns metadata
-         * about registered and remaining resources on each container instance
+         * <p>Describes Amazon Elastic Container Service container instances. Returns
+         * metadata about registered and remaining resources on each container instance
          * requested.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances">AWS
          * API Reference</a></p>
@@ -812,8 +820,8 @@ namespace Model
         virtual Model::DescribeContainerInstancesOutcomeCallable DescribeContainerInstancesCallable(const Model::DescribeContainerInstancesRequest& request) const;
 
         /**
-         * <p>Describes Amazon EC2 Container Service container instances. Returns metadata
-         * about registered and remaining resources on each container instance
+         * <p>Describes Amazon Elastic Container Service container instances. Returns
+         * metadata about registered and remaining resources on each container instance
          * requested.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances">AWS
          * API Reference</a></p>
@@ -916,20 +924,18 @@ namespace Model
         virtual void DescribeTasksAsync(const Model::DescribeTasksRequest& request, const DescribeTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This action is only used by the Amazon EC2 Container Service agent,
-         * and it is not intended for use outside of the agent.</p> </note> <p>Returns an
-         * endpoint for the Amazon EC2 Container Service agent to poll for
-         * updates.</p><p><h3>See Also:</h3>   <a
+         * <note> <p>This action is only used by the Amazon ECS agent, and it is not
+         * intended for use outside of the agent.</p> </note> <p>Returns an endpoint for
+         * the Amazon ECS agent to poll for updates.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DiscoverPollEndpoint">AWS
          * API Reference</a></p>
          */
         virtual Model::DiscoverPollEndpointOutcome DiscoverPollEndpoint(const Model::DiscoverPollEndpointRequest& request) const;
 
         /**
-         * <note> <p>This action is only used by the Amazon EC2 Container Service agent,
-         * and it is not intended for use outside of the agent.</p> </note> <p>Returns an
-         * endpoint for the Amazon EC2 Container Service agent to poll for
-         * updates.</p><p><h3>See Also:</h3>   <a
+         * <note> <p>This action is only used by the Amazon ECS agent, and it is not
+         * intended for use outside of the agent.</p> </note> <p>Returns an endpoint for
+         * the Amazon ECS agent to poll for updates.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DiscoverPollEndpoint">AWS
          * API Reference</a></p>
          *
@@ -938,10 +944,9 @@ namespace Model
         virtual Model::DiscoverPollEndpointOutcomeCallable DiscoverPollEndpointCallable(const Model::DiscoverPollEndpointRequest& request) const;
 
         /**
-         * <note> <p>This action is only used by the Amazon EC2 Container Service agent,
-         * and it is not intended for use outside of the agent.</p> </note> <p>Returns an
-         * endpoint for the Amazon EC2 Container Service agent to poll for
-         * updates.</p><p><h3>See Also:</h3>   <a
+         * <note> <p>This action is only used by the Amazon ECS agent, and it is not
+         * intended for use outside of the agent.</p> </note> <p>Returns an endpoint for
+         * the Amazon ECS agent to poll for updates.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DiscoverPollEndpoint">AWS
          * API Reference</a></p>
          *
@@ -1026,7 +1031,7 @@ namespace Model
          * query language statements inside the <code>filter</code> parameter. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-         * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+         * Query Language</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances">AWS
          * API Reference</a></p>
@@ -1039,7 +1044,7 @@ namespace Model
          * query language statements inside the <code>filter</code> parameter. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-         * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+         * Query Language</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances">AWS
          * API Reference</a></p>
@@ -1054,7 +1059,7 @@ namespace Model
          * query language statements inside the <code>filter</code> parameter. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-         * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+         * Query Language</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances">AWS
          * API Reference</a></p>
@@ -1172,7 +1177,7 @@ namespace Model
          * <p>Returns a list of tasks for a specified cluster. You can filter the results
          * by family name, by a particular container instance, or by the desired status of
          * the task with the <code>family</code>, <code>containerInstance</code>, and
-         * <code>desiredStatus</code> parameters.</p> <p>Recently-stopped tasks might
+         * <code>desiredStatus</code> parameters.</p> <p>Recently stopped tasks might
          * appear in the returned results. Currently, stopped tasks appear in the returned
          * results for at least one hour. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">AWS API
@@ -1184,7 +1189,7 @@ namespace Model
          * <p>Returns a list of tasks for a specified cluster. You can filter the results
          * by family name, by a particular container instance, or by the desired status of
          * the task with the <code>family</code>, <code>containerInstance</code>, and
-         * <code>desiredStatus</code> parameters.</p> <p>Recently-stopped tasks might
+         * <code>desiredStatus</code> parameters.</p> <p>Recently stopped tasks might
          * appear in the returned results. Currently, stopped tasks appear in the returned
          * results for at least one hour. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">AWS API
@@ -1198,7 +1203,7 @@ namespace Model
          * <p>Returns a list of tasks for a specified cluster. You can filter the results
          * by family name, by a particular container instance, or by the desired status of
          * the task with the <code>family</code>, <code>containerInstance</code>, and
-         * <code>desiredStatus</code> parameters.</p> <p>Recently-stopped tasks might
+         * <code>desiredStatus</code> parameters.</p> <p>Recently stopped tasks might
          * appear in the returned results. Currently, stopped tasks appear in the returned
          * results for at least one hour. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">AWS API
@@ -1214,7 +1219,7 @@ namespace Model
          * with the specified value. To delete an attribute, use <a>DeleteAttributes</a>.
          * For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
-         * in the <i>Amazon EC2 Container Service Developer Guide</i>.</p><p><h3>See
+         * in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes">AWS
          * API Reference</a></p>
@@ -1227,7 +1232,7 @@ namespace Model
          * with the specified value. To delete an attribute, use <a>DeleteAttributes</a>.
          * For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
-         * in the <i>Amazon EC2 Container Service Developer Guide</i>.</p><p><h3>See
+         * in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes">AWS
          * API Reference</a></p>
@@ -1242,7 +1247,7 @@ namespace Model
          * with the specified value. To delete an attribute, use <a>DeleteAttributes</a>.
          * For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
-         * in the <i>Amazon EC2 Container Service Developer Guide</i>.</p><p><h3>See
+         * in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes">AWS
          * API Reference</a></p>
@@ -1252,20 +1257,20 @@ namespace Model
         virtual void PutAttributesAsync(const Model::PutAttributesRequest& request, const PutAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This action is only used by the Amazon EC2 Container Service agent,
-         * and it is not intended for use outside of the agent.</p> </note> <p>Registers an
-         * EC2 instance into the specified cluster. This instance becomes available to
-         * place containers on.</p><p><h3>See Also:</h3>   <a
+         * <note> <p>This action is only used by the Amazon ECS agent, and it is not
+         * intended for use outside of the agent.</p> </note> <p>Registers an EC2 instance
+         * into the specified cluster. This instance becomes available to place containers
+         * on.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterContainerInstance">AWS
          * API Reference</a></p>
          */
         virtual Model::RegisterContainerInstanceOutcome RegisterContainerInstance(const Model::RegisterContainerInstanceRequest& request) const;
 
         /**
-         * <note> <p>This action is only used by the Amazon EC2 Container Service agent,
-         * and it is not intended for use outside of the agent.</p> </note> <p>Registers an
-         * EC2 instance into the specified cluster. This instance becomes available to
-         * place containers on.</p><p><h3>See Also:</h3>   <a
+         * <note> <p>This action is only used by the Amazon ECS agent, and it is not
+         * intended for use outside of the agent.</p> </note> <p>Registers an EC2 instance
+         * into the specified cluster. This instance becomes available to place containers
+         * on.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterContainerInstance">AWS
          * API Reference</a></p>
          *
@@ -1274,10 +1279,10 @@ namespace Model
         virtual Model::RegisterContainerInstanceOutcomeCallable RegisterContainerInstanceCallable(const Model::RegisterContainerInstanceRequest& request) const;
 
         /**
-         * <note> <p>This action is only used by the Amazon EC2 Container Service agent,
-         * and it is not intended for use outside of the agent.</p> </note> <p>Registers an
-         * EC2 instance into the specified cluster. This instance becomes available to
-         * place containers on.</p><p><h3>See Also:</h3>   <a
+         * <note> <p>This action is only used by the Amazon ECS agent, and it is not
+         * intended for use outside of the agent.</p> </note> <p>Registers an EC2 instance
+         * into the specified cluster. This instance becomes available to place containers
+         * on.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterContainerInstance">AWS
          * API Reference</a></p>
          *
@@ -1291,19 +1296,25 @@ namespace Model
          * containers with the <code>volumes</code> parameter. For more information about
          * task definition parameters and defaults, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
-         * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer
+         * ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can specify an IAM role for your task with the
          * <code>taskRoleArn</code> parameter. When you specify an IAM role for a task, its
          * containers can then use the latest versions of the AWS CLI or SDKs to make API
          * requests to the AWS services that are specified in the IAM policy associated
          * with the role. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
-         * Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer
+         * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can specify a Docker networking mode for the containers in
          * your task definition with the <code>networkMode</code> parameter. The available
          * network modes correspond to those described in <a
          * href="https://docs.docker.com/engine/reference/run/#/network-settings">Network
-         * settings</a> in the Docker run reference.</p><p><h3>See Also:</h3>   <a
+         * settings</a> in the Docker run reference. If you specify the <code>awsvpc</code>
+         * network mode, the task is allocated an Elastic Network Interface, and you must
+         * specify a <a>NetworkConfiguration</a> when you create a service or run a task
+         * with the task definition. For more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+         * Networking</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition">AWS
          * API Reference</a></p>
          */
@@ -1315,19 +1326,25 @@ namespace Model
          * containers with the <code>volumes</code> parameter. For more information about
          * task definition parameters and defaults, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
-         * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer
+         * ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can specify an IAM role for your task with the
          * <code>taskRoleArn</code> parameter. When you specify an IAM role for a task, its
          * containers can then use the latest versions of the AWS CLI or SDKs to make API
          * requests to the AWS services that are specified in the IAM policy associated
          * with the role. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
-         * Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer
+         * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can specify a Docker networking mode for the containers in
          * your task definition with the <code>networkMode</code> parameter. The available
          * network modes correspond to those described in <a
          * href="https://docs.docker.com/engine/reference/run/#/network-settings">Network
-         * settings</a> in the Docker run reference.</p><p><h3>See Also:</h3>   <a
+         * settings</a> in the Docker run reference. If you specify the <code>awsvpc</code>
+         * network mode, the task is allocated an Elastic Network Interface, and you must
+         * specify a <a>NetworkConfiguration</a> when you create a service or run a task
+         * with the task definition. For more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+         * Networking</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition">AWS
          * API Reference</a></p>
          *
@@ -1341,19 +1358,25 @@ namespace Model
          * containers with the <code>volumes</code> parameter. For more information about
          * task definition parameters and defaults, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
-         * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer
+         * ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can specify an IAM role for your task with the
          * <code>taskRoleArn</code> parameter. When you specify an IAM role for a task, its
          * containers can then use the latest versions of the AWS CLI or SDKs to make API
          * requests to the AWS services that are specified in the IAM policy associated
          * with the role. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
-         * Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer
+         * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can specify a Docker networking mode for the containers in
          * your task definition with the <code>networkMode</code> parameter. The available
          * network modes correspond to those described in <a
          * href="https://docs.docker.com/engine/reference/run/#/network-settings">Network
-         * settings</a> in the Docker run reference.</p><p><h3>See Also:</h3>   <a
+         * settings</a> in the Docker run reference. If you specify the <code>awsvpc</code>
+         * network mode, the task is allocated an Elastic Network Interface, and you must
+         * specify a <a>NetworkConfiguration</a> when you create a service or run a task
+         * with the task definition. For more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+         * Networking</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition">AWS
          * API Reference</a></p>
          *
@@ -1367,7 +1390,7 @@ namespace Model
          * tasks using placement constraints and placement strategies. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
-         * Tasks</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+         * Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
          * <p>Alternatively, you can use <a>StartTask</a> to use your own scheduler or
          * place tasks manually on specific container instances.</p><p><h3>See Also:</h3>  
          * <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask">AWS API
@@ -1381,7 +1404,7 @@ namespace Model
          * tasks using placement constraints and placement strategies. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
-         * Tasks</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+         * Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
          * <p>Alternatively, you can use <a>StartTask</a> to use your own scheduler or
          * place tasks manually on specific container instances.</p><p><h3>See Also:</h3>  
          * <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask">AWS API
@@ -1397,7 +1420,7 @@ namespace Model
          * tasks using placement constraints and placement strategies. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
-         * Tasks</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+         * Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
          * <p>Alternatively, you can use <a>StartTask</a> to use your own scheduler or
          * place tasks manually on specific container instances.</p><p><h3>See Also:</h3>  
          * <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask">AWS API
@@ -1412,7 +1435,7 @@ namespace Model
          * container instance or instances.</p> <p>Alternatively, you can use
          * <a>RunTask</a> to place tasks for you. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
-         * Tasks</a> in the <i>Amazon EC2 Container Service Developer
+         * Tasks</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">AWS API
          * Reference</a></p>
@@ -1424,7 +1447,7 @@ namespace Model
          * container instance or instances.</p> <p>Alternatively, you can use
          * <a>RunTask</a> to place tasks for you. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
-         * Tasks</a> in the <i>Amazon EC2 Container Service Developer
+         * Tasks</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">AWS API
          * Reference</a></p>
@@ -1438,7 +1461,7 @@ namespace Model
          * container instance or instances.</p> <p>Alternatively, you can use
          * <a>RunTask</a> to place tasks for you. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
-         * Tasks</a> in the <i>Amazon EC2 Container Service Developer
+         * Tasks</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">AWS API
          * Reference</a></p>
@@ -1458,7 +1481,7 @@ namespace Model
          * Amazon ECS container agent with the <code>ECS_CONTAINER_STOP_TIMEOUT</code>
          * variable. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
-         * ECS Container Agent Configuration</a> in the <i>Amazon EC2 Container Service
+         * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
          * Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask">AWS API
          * Reference</a></p>
@@ -1476,7 +1499,7 @@ namespace Model
          * Amazon ECS container agent with the <code>ECS_CONTAINER_STOP_TIMEOUT</code>
          * variable. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
-         * ECS Container Agent Configuration</a> in the <i>Amazon EC2 Container Service
+         * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
          * Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask">AWS API
          * Reference</a></p>
@@ -1496,7 +1519,7 @@ namespace Model
          * Amazon ECS container agent with the <code>ECS_CONTAINER_STOP_TIMEOUT</code>
          * variable. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
-         * ECS Container Agent Configuration</a> in the <i>Amazon EC2 Container Service
+         * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
          * Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask">AWS API
          * Reference</a></p>
@@ -1506,18 +1529,18 @@ namespace Model
         virtual void StopTaskAsync(const Model::StopTaskRequest& request, const StopTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This action is only used by the Amazon EC2 Container Service agent,
-         * and it is not intended for use outside of the agent.</p> </note> <p>Sent to
-         * acknowledge that a container changed states.</p><p><h3>See Also:</h3>   <a
+         * <note> <p>This action is only used by the Amazon ECS agent, and it is not
+         * intended for use outside of the agent.</p> </note> <p>Sent to acknowledge that a
+         * container changed states.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitContainerStateChange">AWS
          * API Reference</a></p>
          */
         virtual Model::SubmitContainerStateChangeOutcome SubmitContainerStateChange(const Model::SubmitContainerStateChangeRequest& request) const;
 
         /**
-         * <note> <p>This action is only used by the Amazon EC2 Container Service agent,
-         * and it is not intended for use outside of the agent.</p> </note> <p>Sent to
-         * acknowledge that a container changed states.</p><p><h3>See Also:</h3>   <a
+         * <note> <p>This action is only used by the Amazon ECS agent, and it is not
+         * intended for use outside of the agent.</p> </note> <p>Sent to acknowledge that a
+         * container changed states.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitContainerStateChange">AWS
          * API Reference</a></p>
          *
@@ -1526,9 +1549,9 @@ namespace Model
         virtual Model::SubmitContainerStateChangeOutcomeCallable SubmitContainerStateChangeCallable(const Model::SubmitContainerStateChangeRequest& request) const;
 
         /**
-         * <note> <p>This action is only used by the Amazon EC2 Container Service agent,
-         * and it is not intended for use outside of the agent.</p> </note> <p>Sent to
-         * acknowledge that a container changed states.</p><p><h3>See Also:</h3>   <a
+         * <note> <p>This action is only used by the Amazon ECS agent, and it is not
+         * intended for use outside of the agent.</p> </note> <p>Sent to acknowledge that a
+         * container changed states.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitContainerStateChange">AWS
          * API Reference</a></p>
          *
@@ -1537,18 +1560,18 @@ namespace Model
         virtual void SubmitContainerStateChangeAsync(const Model::SubmitContainerStateChangeRequest& request, const SubmitContainerStateChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This action is only used by the Amazon EC2 Container Service agent,
-         * and it is not intended for use outside of the agent.</p> </note> <p>Sent to
-         * acknowledge that a task changed states.</p><p><h3>See Also:</h3>   <a
+         * <note> <p>This action is only used by the Amazon ECS agent, and it is not
+         * intended for use outside of the agent.</p> </note> <p>Sent to acknowledge that a
+         * task changed states.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitTaskStateChange">AWS
          * API Reference</a></p>
          */
         virtual Model::SubmitTaskStateChangeOutcome SubmitTaskStateChange(const Model::SubmitTaskStateChangeRequest& request) const;
 
         /**
-         * <note> <p>This action is only used by the Amazon EC2 Container Service agent,
-         * and it is not intended for use outside of the agent.</p> </note> <p>Sent to
-         * acknowledge that a task changed states.</p><p><h3>See Also:</h3>   <a
+         * <note> <p>This action is only used by the Amazon ECS agent, and it is not
+         * intended for use outside of the agent.</p> </note> <p>Sent to acknowledge that a
+         * task changed states.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitTaskStateChange">AWS
          * API Reference</a></p>
          *
@@ -1557,9 +1580,9 @@ namespace Model
         virtual Model::SubmitTaskStateChangeOutcomeCallable SubmitTaskStateChangeCallable(const Model::SubmitTaskStateChangeRequest& request) const;
 
         /**
-         * <note> <p>This action is only used by the Amazon EC2 Container Service agent,
-         * and it is not intended for use outside of the agent.</p> </note> <p>Sent to
-         * acknowledge that a task changed states.</p><p><h3>See Also:</h3>   <a
+         * <note> <p>This action is only used by the Amazon ECS agent, and it is not
+         * intended for use outside of the agent.</p> </note> <p>Sent to acknowledge that a
+         * task changed states.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitTaskStateChange">AWS
          * API Reference</a></p>
          *
@@ -1577,7 +1600,7 @@ namespace Model
          * Amazon Linux with the <code>ecs-init</code> service installed and running. For
          * help updating the Amazon ECS container agent on other operating systems, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually
-         * Updating the Amazon ECS Container Agent</a> in the <i>Amazon EC2 Container
+         * Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container
          * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">AWS
          * API Reference</a></p>
@@ -1594,7 +1617,7 @@ namespace Model
          * Amazon Linux with the <code>ecs-init</code> service installed and running. For
          * help updating the Amazon ECS container agent on other operating systems, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually
-         * Updating the Amazon ECS Container Agent</a> in the <i>Amazon EC2 Container
+         * Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container
          * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">AWS
          * API Reference</a></p>
@@ -1613,7 +1636,7 @@ namespace Model
          * Amazon Linux with the <code>ecs-init</code> service installed and running. For
          * help updating the Amazon ECS container agent on other operating systems, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually
-         * Updating the Amazon ECS Container Agent</a> in the <i>Amazon EC2 Container
+         * Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container
          * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">AWS
          * API Reference</a></p>
@@ -1633,9 +1656,9 @@ namespace Model
          * are available. Service tasks on the container instance that are in the
          * <code>PENDING</code> state are stopped immediately.</p> <p>Service tasks on the
          * container instance that are in the <code>RUNNING</code> state are stopped and
-         * replaced according the service's deployment configuration parameters,
-         * <code>minimumHealthyPercent</code> and <code>maximumPercent</code>. Note that
-         * you can change the deployment configuration of your service using
+         * replaced according to the service's deployment configuration parameters,
+         * <code>minimumHealthyPercent</code> and <code>maximumPercent</code>. You can
+         * change the deployment configuration of your service using
          * <a>UpdateService</a>.</p> <ul> <li> <p>If <code>minimumHealthyPercent</code> is
          * below 100%, the scheduler can ignore <code>desiredCount</code> temporarily
          * during task replacement. For example, <code>desiredCount</code> is four tasks, a
@@ -1676,9 +1699,9 @@ namespace Model
          * are available. Service tasks on the container instance that are in the
          * <code>PENDING</code> state are stopped immediately.</p> <p>Service tasks on the
          * container instance that are in the <code>RUNNING</code> state are stopped and
-         * replaced according the service's deployment configuration parameters,
-         * <code>minimumHealthyPercent</code> and <code>maximumPercent</code>. Note that
-         * you can change the deployment configuration of your service using
+         * replaced according to the service's deployment configuration parameters,
+         * <code>minimumHealthyPercent</code> and <code>maximumPercent</code>. You can
+         * change the deployment configuration of your service using
          * <a>UpdateService</a>.</p> <ul> <li> <p>If <code>minimumHealthyPercent</code> is
          * below 100%, the scheduler can ignore <code>desiredCount</code> temporarily
          * during task replacement. For example, <code>desiredCount</code> is four tasks, a
@@ -1721,9 +1744,9 @@ namespace Model
          * are available. Service tasks on the container instance that are in the
          * <code>PENDING</code> state are stopped immediately.</p> <p>Service tasks on the
          * container instance that are in the <code>RUNNING</code> state are stopped and
-         * replaced according the service's deployment configuration parameters,
-         * <code>minimumHealthyPercent</code> and <code>maximumPercent</code>. Note that
-         * you can change the deployment configuration of your service using
+         * replaced according to the service's deployment configuration parameters,
+         * <code>minimumHealthyPercent</code> and <code>maximumPercent</code>. You can
+         * change the deployment configuration of your service using
          * <a>UpdateService</a>.</p> <ul> <li> <p>If <code>minimumHealthyPercent</code> is
          * below 100%, the scheduler can ignore <code>desiredCount</code> temporarily
          * during task replacement. For example, <code>desiredCount</code> is four tasks, a

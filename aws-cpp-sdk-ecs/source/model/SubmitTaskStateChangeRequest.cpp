@@ -28,7 +28,10 @@ SubmitTaskStateChangeRequest::SubmitTaskStateChangeRequest() :
     m_statusHasBeenSet(false),
     m_reasonHasBeenSet(false),
     m_containersHasBeenSet(false),
-    m_attachmentsHasBeenSet(false)
+    m_attachmentsHasBeenSet(false),
+    m_pullStartedAtHasBeenSet(false),
+    m_pullStoppedAtHasBeenSet(false),
+    m_executionStoppedAtHasBeenSet(false)
 {
 }
 
@@ -80,6 +83,21 @@ Aws::String SubmitTaskStateChangeRequest::SerializePayload() const
    }
    payload.WithArray("attachments", std::move(attachmentsJsonList));
 
+  }
+
+  if(m_pullStartedAtHasBeenSet)
+  {
+   payload.WithDouble("pullStartedAt", m_pullStartedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_pullStoppedAtHasBeenSet)
+  {
+   payload.WithDouble("pullStoppedAt", m_pullStoppedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_executionStoppedAtHasBeenSet)
+  {
+   payload.WithDouble("executionStoppedAt", m_executionStoppedAt.SecondsWithMSPrecision());
   }
 
   return payload.WriteReadable();

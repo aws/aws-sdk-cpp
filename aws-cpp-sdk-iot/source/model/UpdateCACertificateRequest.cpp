@@ -30,13 +30,30 @@ UpdateCACertificateRequest::UpdateCACertificateRequest() :
     m_newStatus(CACertificateStatus::NOT_SET),
     m_newStatusHasBeenSet(false),
     m_newAutoRegistrationStatus(AutoRegistrationStatus::NOT_SET),
-    m_newAutoRegistrationStatusHasBeenSet(false)
+    m_newAutoRegistrationStatusHasBeenSet(false),
+    m_registrationConfigHasBeenSet(false),
+    m_removeAutoRegistration(false),
+    m_removeAutoRegistrationHasBeenSet(false)
 {
 }
 
 Aws::String UpdateCACertificateRequest::SerializePayload() const
 {
-  return "";
+  JsonValue payload;
+
+  if(m_registrationConfigHasBeenSet)
+  {
+   payload.WithObject("registrationConfig", m_registrationConfig.Jsonize());
+
+  }
+
+  if(m_removeAutoRegistrationHasBeenSet)
+  {
+   payload.WithBool("removeAutoRegistration", m_removeAutoRegistration);
+
+  }
+
+  return payload.WriteReadable();
 }
 
 void UpdateCACertificateRequest::AddQueryStringParameters(URI& uri) const

@@ -29,7 +29,10 @@ UpdateServiceRequest::UpdateServiceRequest() :
     m_desiredCountHasBeenSet(false),
     m_taskDefinitionHasBeenSet(false),
     m_deploymentConfigurationHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false)
+    m_networkConfigurationHasBeenSet(false),
+    m_platformVersionHasBeenSet(false),
+    m_forceNewDeployment(false),
+    m_forceNewDeploymentHasBeenSet(false)
 {
 }
 
@@ -70,6 +73,18 @@ Aws::String UpdateServiceRequest::SerializePayload() const
   if(m_networkConfigurationHasBeenSet)
   {
    payload.WithObject("networkConfiguration", m_networkConfiguration.Jsonize());
+
+  }
+
+  if(m_platformVersionHasBeenSet)
+  {
+   payload.WithString("platformVersion", m_platformVersion);
+
+  }
+
+  if(m_forceNewDeploymentHasBeenSet)
+  {
+   payload.WithBool("forceNewDeployment", m_forceNewDeployment);
 
   }
 

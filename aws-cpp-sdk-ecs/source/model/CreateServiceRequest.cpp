@@ -30,6 +30,9 @@ CreateServiceRequest::CreateServiceRequest() :
     m_desiredCount(0),
     m_desiredCountHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
+    m_launchType(LaunchType::NOT_SET),
+    m_launchTypeHasBeenSet(false),
+    m_platformVersionHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_deploymentConfigurationHasBeenSet(false),
     m_placementConstraintsHasBeenSet(false),
@@ -80,6 +83,17 @@ Aws::String CreateServiceRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
+
+  }
+
+  if(m_launchTypeHasBeenSet)
+  {
+   payload.WithString("launchType", LaunchTypeMapper::GetNameForLaunchType(m_launchType));
+  }
+
+  if(m_platformVersionHasBeenSet)
+  {
+   payload.WithString("platformVersion", m_platformVersion);
 
   }
 

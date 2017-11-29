@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     ArchiveRetrieval,
-    InventoryRetrieval
+    InventoryRetrieval,
+    Select
   };
 
 namespace ActionCodeMapper

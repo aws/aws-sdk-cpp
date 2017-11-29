@@ -44,58 +44,44 @@ namespace Model
 
 
     /**
-     * <p>An array of labels for explicit or suggestive adult content found in the
-     * image. The list includes the top-level label and each second-level label
-     * detected in the image. This is useful for filtering specific categories of
-     * content. </p>
+     * <p>Array of detected Moderation labels and the time, in millseconds from the
+     * start of the video, they were detected.</p>
      */
     inline const Aws::Vector<ModerationLabel>& GetModerationLabels() const{ return m_moderationLabels; }
 
     /**
-     * <p>An array of labels for explicit or suggestive adult content found in the
-     * image. The list includes the top-level label and each second-level label
-     * detected in the image. This is useful for filtering specific categories of
-     * content. </p>
+     * <p>Array of detected Moderation labels and the time, in millseconds from the
+     * start of the video, they were detected.</p>
      */
     inline void SetModerationLabels(const Aws::Vector<ModerationLabel>& value) { m_moderationLabels = value; }
 
     /**
-     * <p>An array of labels for explicit or suggestive adult content found in the
-     * image. The list includes the top-level label and each second-level label
-     * detected in the image. This is useful for filtering specific categories of
-     * content. </p>
+     * <p>Array of detected Moderation labels and the time, in millseconds from the
+     * start of the video, they were detected.</p>
      */
     inline void SetModerationLabels(Aws::Vector<ModerationLabel>&& value) { m_moderationLabels = std::move(value); }
 
     /**
-     * <p>An array of labels for explicit or suggestive adult content found in the
-     * image. The list includes the top-level label and each second-level label
-     * detected in the image. This is useful for filtering specific categories of
-     * content. </p>
+     * <p>Array of detected Moderation labels and the time, in millseconds from the
+     * start of the video, they were detected.</p>
      */
     inline DetectModerationLabelsResult& WithModerationLabels(const Aws::Vector<ModerationLabel>& value) { SetModerationLabels(value); return *this;}
 
     /**
-     * <p>An array of labels for explicit or suggestive adult content found in the
-     * image. The list includes the top-level label and each second-level label
-     * detected in the image. This is useful for filtering specific categories of
-     * content. </p>
+     * <p>Array of detected Moderation labels and the time, in millseconds from the
+     * start of the video, they were detected.</p>
      */
     inline DetectModerationLabelsResult& WithModerationLabels(Aws::Vector<ModerationLabel>&& value) { SetModerationLabels(std::move(value)); return *this;}
 
     /**
-     * <p>An array of labels for explicit or suggestive adult content found in the
-     * image. The list includes the top-level label and each second-level label
-     * detected in the image. This is useful for filtering specific categories of
-     * content. </p>
+     * <p>Array of detected Moderation labels and the time, in millseconds from the
+     * start of the video, they were detected.</p>
      */
     inline DetectModerationLabelsResult& AddModerationLabels(const ModerationLabel& value) { m_moderationLabels.push_back(value); return *this; }
 
     /**
-     * <p>An array of labels for explicit or suggestive adult content found in the
-     * image. The list includes the top-level label and each second-level label
-     * detected in the image. This is useful for filtering specific categories of
-     * content. </p>
+     * <p>Array of detected Moderation labels and the time, in millseconds from the
+     * start of the video, they were detected.</p>
      */
     inline DetectModerationLabelsResult& AddModerationLabels(ModerationLabel&& value) { m_moderationLabels.push_back(std::move(value)); return *this; }
 

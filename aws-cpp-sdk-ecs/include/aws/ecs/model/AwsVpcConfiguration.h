@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ecs/model/AssignPublicIp.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -34,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the subnets and security groups for a task or
+   * <p>An object representing the networking details for a task or
    * service.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/AwsVpcConfiguration">AWS
    * API Reference</a></p>
@@ -137,6 +138,37 @@ namespace Model
      */
     inline AwsVpcConfiguration& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
+
+    /**
+     * <p>Specifies whether or not the task's elastic network interface receives a
+     * public IP address.</p>
+     */
+    inline const AssignPublicIp& GetAssignPublicIp() const{ return m_assignPublicIp; }
+
+    /**
+     * <p>Specifies whether or not the task's elastic network interface receives a
+     * public IP address.</p>
+     */
+    inline void SetAssignPublicIp(const AssignPublicIp& value) { m_assignPublicIpHasBeenSet = true; m_assignPublicIp = value; }
+
+    /**
+     * <p>Specifies whether or not the task's elastic network interface receives a
+     * public IP address.</p>
+     */
+    inline void SetAssignPublicIp(AssignPublicIp&& value) { m_assignPublicIpHasBeenSet = true; m_assignPublicIp = std::move(value); }
+
+    /**
+     * <p>Specifies whether or not the task's elastic network interface receives a
+     * public IP address.</p>
+     */
+    inline AwsVpcConfiguration& WithAssignPublicIp(const AssignPublicIp& value) { SetAssignPublicIp(value); return *this;}
+
+    /**
+     * <p>Specifies whether or not the task's elastic network interface receives a
+     * public IP address.</p>
+     */
+    inline AwsVpcConfiguration& WithAssignPublicIp(AssignPublicIp&& value) { SetAssignPublicIp(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_subnets;
@@ -144,6 +176,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_securityGroups;
     bool m_securityGroupsHasBeenSet;
+
+    AssignPublicIp m_assignPublicIp;
+    bool m_assignPublicIpHasBeenSet;
   };
 
 } // namespace Model

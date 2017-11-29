@@ -32,7 +32,9 @@ ListTasksRequest::ListTasksRequest() :
     m_startedByHasBeenSet(false),
     m_serviceNameHasBeenSet(false),
     m_desiredStatus(DesiredStatus::NOT_SET),
-    m_desiredStatusHasBeenSet(false)
+    m_desiredStatusHasBeenSet(false),
+    m_launchType(LaunchType::NOT_SET),
+    m_launchTypeHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,11 @@ Aws::String ListTasksRequest::SerializePayload() const
   if(m_desiredStatusHasBeenSet)
   {
    payload.WithString("desiredStatus", DesiredStatusMapper::GetNameForDesiredStatus(m_desiredStatus));
+  }
+
+  if(m_launchTypeHasBeenSet)
+  {
+   payload.WithString("launchType", LaunchTypeMapper::GetNameForLaunchType(m_launchType));
   }
 
   return payload.WriteReadable();

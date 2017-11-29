@@ -34,10 +34,11 @@ namespace Model
 {
 
   /**
-   * <p>An object representing a constraint on task placement in the task definition.
-   * For more information, see <a
+   * <p>An object representing a constraint on task placement in the task
+   * definition.</p> <p>If you are using the Fargate launch type, task placement
+   * contraints are not supported.</p> <p>For more information, see <a
    * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task
-   * Placement Constraints</a> in the <i>Amazon EC2 Container Service Developer
+   * Placement Constraints</a> in the <i>Amazon Elastic Container Service Developer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/TaskDefinitionPlacementConstraint">AWS
    * API Reference</a></p>
@@ -96,7 +97,7 @@ namespace Model
      * <p>A cluster query language expression to apply to the constraint. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline const Aws::String& GetExpression() const{ return m_expression; }
@@ -105,7 +106,7 @@ namespace Model
      * <p>A cluster query language expression to apply to the constraint. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
@@ -114,7 +115,7 @@ namespace Model
      * <p>A cluster query language expression to apply to the constraint. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
@@ -123,7 +124,7 @@ namespace Model
      * <p>A cluster query language expression to apply to the constraint. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
@@ -132,7 +133,7 @@ namespace Model
      * <p>A cluster query language expression to apply to the constraint. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline TaskDefinitionPlacementConstraint& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
@@ -141,7 +142,7 @@ namespace Model
      * <p>A cluster query language expression to apply to the constraint. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline TaskDefinitionPlacementConstraint& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
@@ -150,7 +151,7 @@ namespace Model
      * <p>A cluster query language expression to apply to the constraint. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline TaskDefinitionPlacementConstraint& WithExpression(const char* value) { SetExpression(value); return *this;}

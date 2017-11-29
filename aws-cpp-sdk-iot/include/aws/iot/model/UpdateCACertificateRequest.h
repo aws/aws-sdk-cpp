@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/CACertificateStatus.h>
 #include <aws/iot/model/AutoRegistrationStatus.h>
+#include <aws/iot/model/RegistrationConfig.h>
 #include <utility>
 
 namespace Aws
@@ -150,6 +151,48 @@ namespace Model
      */
     inline UpdateCACertificateRequest& WithNewAutoRegistrationStatus(AutoRegistrationStatus&& value) { SetNewAutoRegistrationStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information about the registration configuration.</p>
+     */
+    inline const RegistrationConfig& GetRegistrationConfig() const{ return m_registrationConfig; }
+
+    /**
+     * <p>Information about the registration configuration.</p>
+     */
+    inline void SetRegistrationConfig(const RegistrationConfig& value) { m_registrationConfigHasBeenSet = true; m_registrationConfig = value; }
+
+    /**
+     * <p>Information about the registration configuration.</p>
+     */
+    inline void SetRegistrationConfig(RegistrationConfig&& value) { m_registrationConfigHasBeenSet = true; m_registrationConfig = std::move(value); }
+
+    /**
+     * <p>Information about the registration configuration.</p>
+     */
+    inline UpdateCACertificateRequest& WithRegistrationConfig(const RegistrationConfig& value) { SetRegistrationConfig(value); return *this;}
+
+    /**
+     * <p>Information about the registration configuration.</p>
+     */
+    inline UpdateCACertificateRequest& WithRegistrationConfig(RegistrationConfig&& value) { SetRegistrationConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>If true, remove auto registration.</p>
+     */
+    inline bool GetRemoveAutoRegistration() const{ return m_removeAutoRegistration; }
+
+    /**
+     * <p>If true, remove auto registration.</p>
+     */
+    inline void SetRemoveAutoRegistration(bool value) { m_removeAutoRegistrationHasBeenSet = true; m_removeAutoRegistration = value; }
+
+    /**
+     * <p>If true, remove auto registration.</p>
+     */
+    inline UpdateCACertificateRequest& WithRemoveAutoRegistration(bool value) { SetRemoveAutoRegistration(value); return *this;}
+
   private:
 
     Aws::String m_certificateId;
@@ -160,6 +203,12 @@ namespace Model
 
     AutoRegistrationStatus m_newAutoRegistrationStatus;
     bool m_newAutoRegistrationStatusHasBeenSet;
+
+    RegistrationConfig m_registrationConfig;
+    bool m_registrationConfigHasBeenSet;
+
+    bool m_removeAutoRegistration;
+    bool m_removeAutoRegistrationHasBeenSet;
   };
 
 } // namespace Model

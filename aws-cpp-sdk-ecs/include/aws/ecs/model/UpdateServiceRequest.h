@@ -153,78 +153,71 @@ namespace Model
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to run in your service. If a <code>revision</code> is not specified,
-     * the latest <code>ACTIVE</code> revision is used. If you modify the task
-     * definition with <code>UpdateService</code>, Amazon ECS spawns a task with the
-     * new version of the task definition and then stops an old task after the new
-     * version is running.</p>
+     * (<code>family:revision</code>) or full ARN of the task definition to run in your
+     * service. If a <code>revision</code> is not specified, the latest
+     * <code>ACTIVE</code> revision is used. If you modify the task definition with
+     * <code>UpdateService</code>, Amazon ECS spawns a task with the new version of the
+     * task definition and then stops an old task after the new version is running.</p>
      */
     inline const Aws::String& GetTaskDefinition() const{ return m_taskDefinition; }
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to run in your service. If a <code>revision</code> is not specified,
-     * the latest <code>ACTIVE</code> revision is used. If you modify the task
-     * definition with <code>UpdateService</code>, Amazon ECS spawns a task with the
-     * new version of the task definition and then stops an old task after the new
-     * version is running.</p>
+     * (<code>family:revision</code>) or full ARN of the task definition to run in your
+     * service. If a <code>revision</code> is not specified, the latest
+     * <code>ACTIVE</code> revision is used. If you modify the task definition with
+     * <code>UpdateService</code>, Amazon ECS spawns a task with the new version of the
+     * task definition and then stops an old task after the new version is running.</p>
      */
     inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to run in your service. If a <code>revision</code> is not specified,
-     * the latest <code>ACTIVE</code> revision is used. If you modify the task
-     * definition with <code>UpdateService</code>, Amazon ECS spawns a task with the
-     * new version of the task definition and then stops an old task after the new
-     * version is running.</p>
+     * (<code>family:revision</code>) or full ARN of the task definition to run in your
+     * service. If a <code>revision</code> is not specified, the latest
+     * <code>ACTIVE</code> revision is used. If you modify the task definition with
+     * <code>UpdateService</code>, Amazon ECS spawns a task with the new version of the
+     * task definition and then stops an old task after the new version is running.</p>
      */
     inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::move(value); }
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to run in your service. If a <code>revision</code> is not specified,
-     * the latest <code>ACTIVE</code> revision is used. If you modify the task
-     * definition with <code>UpdateService</code>, Amazon ECS spawns a task with the
-     * new version of the task definition and then stops an old task after the new
-     * version is running.</p>
+     * (<code>family:revision</code>) or full ARN of the task definition to run in your
+     * service. If a <code>revision</code> is not specified, the latest
+     * <code>ACTIVE</code> revision is used. If you modify the task definition with
+     * <code>UpdateService</code>, Amazon ECS spawns a task with the new version of the
+     * task definition and then stops an old task after the new version is running.</p>
      */
     inline void SetTaskDefinition(const char* value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition.assign(value); }
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to run in your service. If a <code>revision</code> is not specified,
-     * the latest <code>ACTIVE</code> revision is used. If you modify the task
-     * definition with <code>UpdateService</code>, Amazon ECS spawns a task with the
-     * new version of the task definition and then stops an old task after the new
-     * version is running.</p>
+     * (<code>family:revision</code>) or full ARN of the task definition to run in your
+     * service. If a <code>revision</code> is not specified, the latest
+     * <code>ACTIVE</code> revision is used. If you modify the task definition with
+     * <code>UpdateService</code>, Amazon ECS spawns a task with the new version of the
+     * task definition and then stops an old task after the new version is running.</p>
      */
     inline UpdateServiceRequest& WithTaskDefinition(const Aws::String& value) { SetTaskDefinition(value); return *this;}
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to run in your service. If a <code>revision</code> is not specified,
-     * the latest <code>ACTIVE</code> revision is used. If you modify the task
-     * definition with <code>UpdateService</code>, Amazon ECS spawns a task with the
-     * new version of the task definition and then stops an old task after the new
-     * version is running.</p>
+     * (<code>family:revision</code>) or full ARN of the task definition to run in your
+     * service. If a <code>revision</code> is not specified, the latest
+     * <code>ACTIVE</code> revision is used. If you modify the task definition with
+     * <code>UpdateService</code>, Amazon ECS spawns a task with the new version of the
+     * task definition and then stops an old task after the new version is running.</p>
      */
     inline UpdateServiceRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(std::move(value)); return *this;}
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to run in your service. If a <code>revision</code> is not specified,
-     * the latest <code>ACTIVE</code> revision is used. If you modify the task
-     * definition with <code>UpdateService</code>, Amazon ECS spawns a task with the
-     * new version of the task definition and then stops an old task after the new
-     * version is running.</p>
+     * (<code>family:revision</code>) or full ARN of the task definition to run in your
+     * service. If a <code>revision</code> is not specified, the latest
+     * <code>ACTIVE</code> revision is used. If you modify the task definition with
+     * <code>UpdateService</code>, Amazon ECS spawns a task with the new version of the
+     * task definition and then stops an old task after the new version is running.</p>
      */
     inline UpdateServiceRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
 
@@ -265,13 +258,13 @@ namespace Model
      * task definitions that use the <code>awsvpc</code> network mode to receive their
      * own Elastic Network Interface, and it is not supported for other network modes.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
-     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
-     * <note> <p>Updating a service to add a subnet to a list of existing subnets does
-     * not trigger a service deployment. For example, if your network configuration
-     * change is to keep the existing subnets and simply add another subnet to the
-     * network configuration, this does not trigger a new service deployment.</p>
-     * </note>
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * Networking</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p> <note> <p>Updating a service to add a subnet to a list of
+     * existing subnets does not trigger a service deployment. For example, if your
+     * network configuration change is to keep the existing subnets and simply add
+     * another subnet to the network configuration, this does not trigger a new service
+     * deployment.</p> </note>
      */
     inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
 
@@ -280,13 +273,13 @@ namespace Model
      * task definitions that use the <code>awsvpc</code> network mode to receive their
      * own Elastic Network Interface, and it is not supported for other network modes.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
-     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
-     * <note> <p>Updating a service to add a subnet to a list of existing subnets does
-     * not trigger a service deployment. For example, if your network configuration
-     * change is to keep the existing subnets and simply add another subnet to the
-     * network configuration, this does not trigger a new service deployment.</p>
-     * </note>
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * Networking</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p> <note> <p>Updating a service to add a subnet to a list of
+     * existing subnets does not trigger a service deployment. For example, if your
+     * network configuration change is to keep the existing subnets and simply add
+     * another subnet to the network configuration, this does not trigger a new service
+     * deployment.</p> </note>
      */
     inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
 
@@ -295,13 +288,13 @@ namespace Model
      * task definitions that use the <code>awsvpc</code> network mode to receive their
      * own Elastic Network Interface, and it is not supported for other network modes.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
-     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
-     * <note> <p>Updating a service to add a subnet to a list of existing subnets does
-     * not trigger a service deployment. For example, if your network configuration
-     * change is to keep the existing subnets and simply add another subnet to the
-     * network configuration, this does not trigger a new service deployment.</p>
-     * </note>
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * Networking</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p> <note> <p>Updating a service to add a subnet to a list of
+     * existing subnets does not trigger a service deployment. For example, if your
+     * network configuration change is to keep the existing subnets and simply add
+     * another subnet to the network configuration, this does not trigger a new service
+     * deployment.</p> </note>
      */
     inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
 
@@ -310,13 +303,13 @@ namespace Model
      * task definitions that use the <code>awsvpc</code> network mode to receive their
      * own Elastic Network Interface, and it is not supported for other network modes.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
-     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
-     * <note> <p>Updating a service to add a subnet to a list of existing subnets does
-     * not trigger a service deployment. For example, if your network configuration
-     * change is to keep the existing subnets and simply add another subnet to the
-     * network configuration, this does not trigger a new service deployment.</p>
-     * </note>
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * Networking</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p> <note> <p>Updating a service to add a subnet to a list of
+     * existing subnets does not trigger a service deployment. For example, if your
+     * network configuration change is to keep the existing subnets and simply add
+     * another subnet to the network configuration, this does not trigger a new service
+     * deployment.</p> </note>
      */
     inline UpdateServiceRequest& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
 
@@ -325,15 +318,67 @@ namespace Model
      * task definitions that use the <code>awsvpc</code> network mode to receive their
      * own Elastic Network Interface, and it is not supported for other network modes.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
-     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
-     * <note> <p>Updating a service to add a subnet to a list of existing subnets does
-     * not trigger a service deployment. For example, if your network configuration
-     * change is to keep the existing subnets and simply add another subnet to the
-     * network configuration, this does not trigger a new service deployment.</p>
-     * </note>
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * Networking</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p> <note> <p>Updating a service to add a subnet to a list of
+     * existing subnets does not trigger a service deployment. For example, if your
+     * network configuration change is to keep the existing subnets and simply add
+     * another subnet to the network configuration, this does not trigger a new service
+     * deployment.</p> </note>
      */
     inline UpdateServiceRequest& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The platform version you want to update your service to run.</p>
+     */
+    inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
+
+    /**
+     * <p>The platform version you want to update your service to run.</p>
+     */
+    inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
+
+    /**
+     * <p>The platform version you want to update your service to run.</p>
+     */
+    inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
+
+    /**
+     * <p>The platform version you want to update your service to run.</p>
+     */
+    inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
+
+    /**
+     * <p>The platform version you want to update your service to run.</p>
+     */
+    inline UpdateServiceRequest& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
+
+    /**
+     * <p>The platform version you want to update your service to run.</p>
+     */
+    inline UpdateServiceRequest& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The platform version you want to update your service to run.</p>
+     */
+    inline UpdateServiceRequest& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
+
+
+    /**
+     * <p>Whether or not to force a new deployment of the service.</p>
+     */
+    inline bool GetForceNewDeployment() const{ return m_forceNewDeployment; }
+
+    /**
+     * <p>Whether or not to force a new deployment of the service.</p>
+     */
+    inline void SetForceNewDeployment(bool value) { m_forceNewDeploymentHasBeenSet = true; m_forceNewDeployment = value; }
+
+    /**
+     * <p>Whether or not to force a new deployment of the service.</p>
+     */
+    inline UpdateServiceRequest& WithForceNewDeployment(bool value) { SetForceNewDeployment(value); return *this;}
 
   private:
 
@@ -354,6 +399,12 @@ namespace Model
 
     NetworkConfiguration m_networkConfiguration;
     bool m_networkConfigurationHasBeenSet;
+
+    Aws::String m_platformVersion;
+    bool m_platformVersionHasBeenSet;
+
+    bool m_forceNewDeployment;
+    bool m_forceNewDeploymentHasBeenSet;
   };
 
 } // namespace Model

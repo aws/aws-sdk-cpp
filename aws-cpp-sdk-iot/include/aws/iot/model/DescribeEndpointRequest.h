@@ -16,9 +16,15 @@
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/IoTRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace IoT
 {
 namespace Model
@@ -42,6 +48,48 @@ namespace Model
 
     Aws::String SerializePayload() const override;
 
+    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+
+    /**
+     * <p>The endpoint type.</p>
+     */
+    inline const Aws::String& GetEndpointType() const{ return m_endpointType; }
+
+    /**
+     * <p>The endpoint type.</p>
+     */
+    inline void SetEndpointType(const Aws::String& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
+
+    /**
+     * <p>The endpoint type.</p>
+     */
+    inline void SetEndpointType(Aws::String&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
+
+    /**
+     * <p>The endpoint type.</p>
+     */
+    inline void SetEndpointType(const char* value) { m_endpointTypeHasBeenSet = true; m_endpointType.assign(value); }
+
+    /**
+     * <p>The endpoint type.</p>
+     */
+    inline DescribeEndpointRequest& WithEndpointType(const Aws::String& value) { SetEndpointType(value); return *this;}
+
+    /**
+     * <p>The endpoint type.</p>
+     */
+    inline DescribeEndpointRequest& WithEndpointType(Aws::String&& value) { SetEndpointType(std::move(value)); return *this;}
+
+    /**
+     * <p>The endpoint type.</p>
+     */
+    inline DescribeEndpointRequest& WithEndpointType(const char* value) { SetEndpointType(value); return *this;}
+
+  private:
+
+    Aws::String m_endpointType;
+    bool m_endpointTypeHasBeenSet;
   };
 
 } // namespace Model

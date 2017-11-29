@@ -53,6 +53,12 @@ InitiateJobResult& InitiateJobResult::operator =(const Aws::AmazonWebServiceResu
     m_jobId = jobIdIter->second;
   }
 
+  const auto& jobOutputPathIter = headers.find("x-amz-job-output-path");
+  if(jobOutputPathIter != headers.end())
+  {
+    m_jobOutputPath = jobOutputPathIter->second;
+  }
+
 
   return *this;
 }

@@ -86,6 +86,78 @@ namespace Model
 
 
     /**
+     * <p>The thing type ID.</p>
+     */
+    inline const Aws::String& GetThingTypeId() const{ return m_thingTypeId; }
+
+    /**
+     * <p>The thing type ID.</p>
+     */
+    inline void SetThingTypeId(const Aws::String& value) { m_thingTypeId = value; }
+
+    /**
+     * <p>The thing type ID.</p>
+     */
+    inline void SetThingTypeId(Aws::String&& value) { m_thingTypeId = std::move(value); }
+
+    /**
+     * <p>The thing type ID.</p>
+     */
+    inline void SetThingTypeId(const char* value) { m_thingTypeId.assign(value); }
+
+    /**
+     * <p>The thing type ID.</p>
+     */
+    inline DescribeThingTypeResult& WithThingTypeId(const Aws::String& value) { SetThingTypeId(value); return *this;}
+
+    /**
+     * <p>The thing type ID.</p>
+     */
+    inline DescribeThingTypeResult& WithThingTypeId(Aws::String&& value) { SetThingTypeId(std::move(value)); return *this;}
+
+    /**
+     * <p>The thing type ID.</p>
+     */
+    inline DescribeThingTypeResult& WithThingTypeId(const char* value) { SetThingTypeId(value); return *this;}
+
+
+    /**
+     * <p>The thing type ARN.</p>
+     */
+    inline const Aws::String& GetThingTypeArn() const{ return m_thingTypeArn; }
+
+    /**
+     * <p>The thing type ARN.</p>
+     */
+    inline void SetThingTypeArn(const Aws::String& value) { m_thingTypeArn = value; }
+
+    /**
+     * <p>The thing type ARN.</p>
+     */
+    inline void SetThingTypeArn(Aws::String&& value) { m_thingTypeArn = std::move(value); }
+
+    /**
+     * <p>The thing type ARN.</p>
+     */
+    inline void SetThingTypeArn(const char* value) { m_thingTypeArn.assign(value); }
+
+    /**
+     * <p>The thing type ARN.</p>
+     */
+    inline DescribeThingTypeResult& WithThingTypeArn(const Aws::String& value) { SetThingTypeArn(value); return *this;}
+
+    /**
+     * <p>The thing type ARN.</p>
+     */
+    inline DescribeThingTypeResult& WithThingTypeArn(Aws::String&& value) { SetThingTypeArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The thing type ARN.</p>
+     */
+    inline DescribeThingTypeResult& WithThingTypeArn(const char* value) { SetThingTypeArn(value); return *this;}
+
+
+    /**
      * <p>The ThingTypeProperties contains information about the thing type including
      * description, and a list of searchable thing attribute names.</p>
      */
@@ -154,6 +226,10 @@ namespace Model
   private:
 
     Aws::String m_thingTypeName;
+
+    Aws::String m_thingTypeId;
+
+    Aws::String m_thingTypeArn;
 
     ThingTypeProperties m_thingTypeProperties;
 

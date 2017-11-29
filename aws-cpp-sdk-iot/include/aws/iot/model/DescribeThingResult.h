@@ -121,6 +121,78 @@ namespace Model
 
 
     /**
+     * <p>The ID of the thing to describe.</p>
+     */
+    inline const Aws::String& GetThingId() const{ return m_thingId; }
+
+    /**
+     * <p>The ID of the thing to describe.</p>
+     */
+    inline void SetThingId(const Aws::String& value) { m_thingId = value; }
+
+    /**
+     * <p>The ID of the thing to describe.</p>
+     */
+    inline void SetThingId(Aws::String&& value) { m_thingId = std::move(value); }
+
+    /**
+     * <p>The ID of the thing to describe.</p>
+     */
+    inline void SetThingId(const char* value) { m_thingId.assign(value); }
+
+    /**
+     * <p>The ID of the thing to describe.</p>
+     */
+    inline DescribeThingResult& WithThingId(const Aws::String& value) { SetThingId(value); return *this;}
+
+    /**
+     * <p>The ID of the thing to describe.</p>
+     */
+    inline DescribeThingResult& WithThingId(Aws::String&& value) { SetThingId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the thing to describe.</p>
+     */
+    inline DescribeThingResult& WithThingId(const char* value) { SetThingId(value); return *this;}
+
+
+    /**
+     * <p>The ARN of the thing to describe.</p>
+     */
+    inline const Aws::String& GetThingArn() const{ return m_thingArn; }
+
+    /**
+     * <p>The ARN of the thing to describe.</p>
+     */
+    inline void SetThingArn(const Aws::String& value) { m_thingArn = value; }
+
+    /**
+     * <p>The ARN of the thing to describe.</p>
+     */
+    inline void SetThingArn(Aws::String&& value) { m_thingArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the thing to describe.</p>
+     */
+    inline void SetThingArn(const char* value) { m_thingArn.assign(value); }
+
+    /**
+     * <p>The ARN of the thing to describe.</p>
+     */
+    inline DescribeThingResult& WithThingArn(const Aws::String& value) { SetThingArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the thing to describe.</p>
+     */
+    inline DescribeThingResult& WithThingArn(Aws::String&& value) { SetThingArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the thing to describe.</p>
+     */
+    inline DescribeThingResult& WithThingArn(const char* value) { SetThingArn(value); return *this;}
+
+
+    /**
      * <p>The thing type name.</p>
      */
     inline const Aws::String& GetThingTypeName() const{ return m_thingTypeName; }
@@ -246,6 +318,10 @@ namespace Model
     Aws::String m_defaultClientId;
 
     Aws::String m_thingName;
+
+    Aws::String m_thingId;
+
+    Aws::String m_thingArn;
 
     Aws::String m_thingTypeName;
 

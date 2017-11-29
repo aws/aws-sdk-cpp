@@ -28,15 +28,20 @@ namespace ECS
 namespace ECSErrorMapper
 {
 
+static const int PLATFORM_TASK_DEFINITION_INCOMPATIBILITY_HASH = HashingUtils::HashString("PlatformTaskDefinitionIncompatibilityException");
 static const int MISSING_VERSION_HASH = HashingUtils::HashString("MissingVersionException");
 static const int SERVER_HASH = HashingUtils::HashString("ServerException");
 static const int NO_UPDATE_AVAILABLE_HASH = HashingUtils::HashString("NoUpdateAvailableException");
+static const int UNSUPPORTED_FEATURE_HASH = HashingUtils::HashString("UnsupportedFeatureException");
 static const int TARGET_NOT_FOUND_HASH = HashingUtils::HashString("TargetNotFoundException");
+static const int BLOCKED_HASH = HashingUtils::HashString("BlockedException");
 static const int CLUSTER_CONTAINS_CONTAINER_INSTANCES_HASH = HashingUtils::HashString("ClusterContainsContainerInstancesException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
+static const int PLATFORM_UNKNOWN_HASH = HashingUtils::HashString("PlatformUnknownException");
 static const int SERVICE_NOT_ACTIVE_HASH = HashingUtils::HashString("ServiceNotActiveException");
 static const int CLUSTER_NOT_FOUND_HASH = HashingUtils::HashString("ClusterNotFoundException");
 static const int CLUSTER_CONTAINS_SERVICES_HASH = HashingUtils::HashString("ClusterContainsServicesException");
+static const int CLUSTER_CONTAINS_TASKS_HASH = HashingUtils::HashString("ClusterContainsTasksException");
 static const int UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("UpdateInProgressException");
 static const int SERVICE_NOT_FOUND_HASH = HashingUtils::HashString("ServiceNotFoundException");
 static const int ATTRIBUTE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AttributeLimitExceededException");
@@ -47,7 +52,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == MISSING_VERSION_HASH)
+  if (hashCode == PLATFORM_TASK_DEFINITION_INCOMPATIBILITY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::PLATFORM_TASK_DEFINITION_INCOMPATIBILITY), false);
+  }
+  else if (hashCode == MISSING_VERSION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::MISSING_VERSION), false);
   }
@@ -59,9 +68,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::NO_UPDATE_AVAILABLE), false);
   }
+  else if (hashCode == UNSUPPORTED_FEATURE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::UNSUPPORTED_FEATURE), false);
+  }
   else if (hashCode == TARGET_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::TARGET_NOT_FOUND), false);
+  }
+  else if (hashCode == BLOCKED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::BLOCKED), false);
   }
   else if (hashCode == CLUSTER_CONTAINS_CONTAINER_INSTANCES_HASH)
   {
@@ -70,6 +87,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_PARAMETER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::INVALID_PARAMETER), false);
+  }
+  else if (hashCode == PLATFORM_UNKNOWN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::PLATFORM_UNKNOWN), false);
   }
   else if (hashCode == SERVICE_NOT_ACTIVE_HASH)
   {
@@ -82,6 +103,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == CLUSTER_CONTAINS_SERVICES_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::CLUSTER_CONTAINS_SERVICES), false);
+  }
+  else if (hashCode == CLUSTER_CONTAINS_TASKS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::CLUSTER_CONTAINS_TASKS), false);
   }
   else if (hashCode == UPDATE_IN_PROGRESS_HASH)
   {

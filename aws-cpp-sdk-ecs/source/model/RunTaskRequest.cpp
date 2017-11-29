@@ -32,6 +32,9 @@ RunTaskRequest::RunTaskRequest() :
     m_groupHasBeenSet(false),
     m_placementConstraintsHasBeenSet(false),
     m_placementStrategyHasBeenSet(false),
+    m_launchType(LaunchType::NOT_SET),
+    m_launchTypeHasBeenSet(false),
+    m_platformVersionHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false)
 {
 }
@@ -95,6 +98,17 @@ Aws::String RunTaskRequest::SerializePayload() const
      placementStrategyJsonList[placementStrategyIndex].AsObject(m_placementStrategy[placementStrategyIndex].Jsonize());
    }
    payload.WithArray("placementStrategy", std::move(placementStrategyJsonList));
+
+  }
+
+  if(m_launchTypeHasBeenSet)
+  {
+   payload.WithString("launchType", LaunchTypeMapper::GetNameForLaunchType(m_launchType));
+  }
+
+  if(m_platformVersionHasBeenSet)
+  {
+   payload.WithString("platformVersion", m_platformVersion);
 
   }
 

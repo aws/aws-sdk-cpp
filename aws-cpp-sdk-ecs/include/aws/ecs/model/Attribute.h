@@ -38,7 +38,7 @@ namespace Model
    * Attributes enable you to extend the Amazon ECS data model by adding custom
    * metadata to your resources. For more information, see <a
    * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
-   * in the <i>Amazon EC2 Container Service Developer Guide</i>.</p><p><h3>See
+   * in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Attribute">AWS API
    * Reference</a></p>
@@ -147,36 +147,36 @@ namespace Model
 
     /**
      * <p>The type of the target with which to attach the attribute. This parameter is
-     * required if you use the short form ID for a resource instead of the full Amazon
-     * Resource Name (ARN).</p>
+     * required if you use the short form ID for a resource instead of the full
+     * ARN.</p>
      */
     inline const TargetType& GetTargetType() const{ return m_targetType; }
 
     /**
      * <p>The type of the target with which to attach the attribute. This parameter is
-     * required if you use the short form ID for a resource instead of the full Amazon
-     * Resource Name (ARN).</p>
+     * required if you use the short form ID for a resource instead of the full
+     * ARN.</p>
      */
     inline void SetTargetType(const TargetType& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
 
     /**
      * <p>The type of the target with which to attach the attribute. This parameter is
-     * required if you use the short form ID for a resource instead of the full Amazon
-     * Resource Name (ARN).</p>
+     * required if you use the short form ID for a resource instead of the full
+     * ARN.</p>
      */
     inline void SetTargetType(TargetType&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
 
     /**
      * <p>The type of the target with which to attach the attribute. This parameter is
-     * required if you use the short form ID for a resource instead of the full Amazon
-     * Resource Name (ARN).</p>
+     * required if you use the short form ID for a resource instead of the full
+     * ARN.</p>
      */
     inline Attribute& WithTargetType(const TargetType& value) { SetTargetType(value); return *this;}
 
     /**
      * <p>The type of the target with which to attach the attribute. This parameter is
-     * required if you use the short form ID for a resource instead of the full Amazon
-     * Resource Name (ARN).</p>
+     * required if you use the short form ID for a resource instead of the full
+     * ARN.</p>
      */
     inline Attribute& WithTargetType(TargetType&& value) { SetTargetType(std::move(value)); return *this;}
 

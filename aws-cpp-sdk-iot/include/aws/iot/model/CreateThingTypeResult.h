@@ -118,11 +118,49 @@ namespace Model
      */
     inline CreateThingTypeResult& WithThingTypeArn(const char* value) { SetThingTypeArn(value); return *this;}
 
+
+    /**
+     * <p>The thing type ID.</p>
+     */
+    inline const Aws::String& GetThingTypeId() const{ return m_thingTypeId; }
+
+    /**
+     * <p>The thing type ID.</p>
+     */
+    inline void SetThingTypeId(const Aws::String& value) { m_thingTypeId = value; }
+
+    /**
+     * <p>The thing type ID.</p>
+     */
+    inline void SetThingTypeId(Aws::String&& value) { m_thingTypeId = std::move(value); }
+
+    /**
+     * <p>The thing type ID.</p>
+     */
+    inline void SetThingTypeId(const char* value) { m_thingTypeId.assign(value); }
+
+    /**
+     * <p>The thing type ID.</p>
+     */
+    inline CreateThingTypeResult& WithThingTypeId(const Aws::String& value) { SetThingTypeId(value); return *this;}
+
+    /**
+     * <p>The thing type ID.</p>
+     */
+    inline CreateThingTypeResult& WithThingTypeId(Aws::String&& value) { SetThingTypeId(std::move(value)); return *this;}
+
+    /**
+     * <p>The thing type ID.</p>
+     */
+    inline CreateThingTypeResult& WithThingTypeId(const char* value) { SetThingTypeId(value); return *this;}
+
   private:
 
     Aws::String m_thingTypeName;
 
     Aws::String m_thingTypeArn;
+
+    Aws::String m_thingTypeId;
   };
 
 } // namespace Model

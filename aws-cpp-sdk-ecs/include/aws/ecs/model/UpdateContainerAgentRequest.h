@@ -95,51 +95,44 @@ namespace Model
 
 
     /**
-     * <p>The container instance ID or full Amazon Resource Name (ARN) entries for the
-     * container instance on which you would like to update the Amazon ECS container
-     * agent.</p>
+     * <p>The container instance ID or full ARN entries for the container instance on
+     * which you would like to update the Amazon ECS container agent.</p>
      */
     inline const Aws::String& GetContainerInstance() const{ return m_containerInstance; }
 
     /**
-     * <p>The container instance ID or full Amazon Resource Name (ARN) entries for the
-     * container instance on which you would like to update the Amazon ECS container
-     * agent.</p>
+     * <p>The container instance ID or full ARN entries for the container instance on
+     * which you would like to update the Amazon ECS container agent.</p>
      */
     inline void SetContainerInstance(const Aws::String& value) { m_containerInstanceHasBeenSet = true; m_containerInstance = value; }
 
     /**
-     * <p>The container instance ID or full Amazon Resource Name (ARN) entries for the
-     * container instance on which you would like to update the Amazon ECS container
-     * agent.</p>
+     * <p>The container instance ID or full ARN entries for the container instance on
+     * which you would like to update the Amazon ECS container agent.</p>
      */
     inline void SetContainerInstance(Aws::String&& value) { m_containerInstanceHasBeenSet = true; m_containerInstance = std::move(value); }
 
     /**
-     * <p>The container instance ID or full Amazon Resource Name (ARN) entries for the
-     * container instance on which you would like to update the Amazon ECS container
-     * agent.</p>
+     * <p>The container instance ID or full ARN entries for the container instance on
+     * which you would like to update the Amazon ECS container agent.</p>
      */
     inline void SetContainerInstance(const char* value) { m_containerInstanceHasBeenSet = true; m_containerInstance.assign(value); }
 
     /**
-     * <p>The container instance ID or full Amazon Resource Name (ARN) entries for the
-     * container instance on which you would like to update the Amazon ECS container
-     * agent.</p>
+     * <p>The container instance ID or full ARN entries for the container instance on
+     * which you would like to update the Amazon ECS container agent.</p>
      */
     inline UpdateContainerAgentRequest& WithContainerInstance(const Aws::String& value) { SetContainerInstance(value); return *this;}
 
     /**
-     * <p>The container instance ID or full Amazon Resource Name (ARN) entries for the
-     * container instance on which you would like to update the Amazon ECS container
-     * agent.</p>
+     * <p>The container instance ID or full ARN entries for the container instance on
+     * which you would like to update the Amazon ECS container agent.</p>
      */
     inline UpdateContainerAgentRequest& WithContainerInstance(Aws::String&& value) { SetContainerInstance(std::move(value)); return *this;}
 
     /**
-     * <p>The container instance ID or full Amazon Resource Name (ARN) entries for the
-     * container instance on which you would like to update the Amazon ECS container
-     * agent.</p>
+     * <p>The container instance ID or full ARN entries for the container instance on
+     * which you would like to update the Amazon ECS container agent.</p>
      */
     inline UpdateContainerAgentRequest& WithContainerInstance(const char* value) { SetContainerInstance(value); return *this;}
 

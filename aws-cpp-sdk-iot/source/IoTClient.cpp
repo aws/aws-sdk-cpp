@@ -28,62 +28,115 @@
 #include <aws/iot/IoTEndpoint.h>
 #include <aws/iot/IoTErrorMarshaller.h>
 #include <aws/iot/model/AcceptCertificateTransferRequest.h>
-#include <aws/iot/model/AttachPrincipalPolicyRequest.h>
+#include <aws/iot/model/AddThingToThingGroupRequest.h>
+#include <aws/iot/model/AssociateTargetsWithJobRequest.h>
+#include <aws/iot/model/AttachPolicyRequest.h>
 #include <aws/iot/model/AttachThingPrincipalRequest.h>
 #include <aws/iot/model/CancelCertificateTransferRequest.h>
+#include <aws/iot/model/CancelJobRequest.h>
+#include <aws/iot/model/ClearDefaultAuthorizerRequest.h>
+#include <aws/iot/model/CreateAuthorizerRequest.h>
 #include <aws/iot/model/CreateCertificateFromCsrRequest.h>
+#include <aws/iot/model/CreateJobRequest.h>
 #include <aws/iot/model/CreateKeysAndCertificateRequest.h>
 #include <aws/iot/model/CreatePolicyRequest.h>
 #include <aws/iot/model/CreatePolicyVersionRequest.h>
+#include <aws/iot/model/CreateRoleAliasRequest.h>
 #include <aws/iot/model/CreateThingRequest.h>
+#include <aws/iot/model/CreateThingGroupRequest.h>
 #include <aws/iot/model/CreateThingTypeRequest.h>
 #include <aws/iot/model/CreateTopicRuleRequest.h>
+#include <aws/iot/model/DeleteAuthorizerRequest.h>
 #include <aws/iot/model/DeleteCACertificateRequest.h>
 #include <aws/iot/model/DeleteCertificateRequest.h>
 #include <aws/iot/model/DeletePolicyRequest.h>
 #include <aws/iot/model/DeletePolicyVersionRequest.h>
 #include <aws/iot/model/DeleteRegistrationCodeRequest.h>
+#include <aws/iot/model/DeleteRoleAliasRequest.h>
 #include <aws/iot/model/DeleteThingRequest.h>
+#include <aws/iot/model/DeleteThingGroupRequest.h>
 #include <aws/iot/model/DeleteThingTypeRequest.h>
 #include <aws/iot/model/DeleteTopicRuleRequest.h>
+#include <aws/iot/model/DeleteV2LoggingLevelRequest.h>
 #include <aws/iot/model/DeprecateThingTypeRequest.h>
+#include <aws/iot/model/DescribeAuthorizerRequest.h>
 #include <aws/iot/model/DescribeCACertificateRequest.h>
 #include <aws/iot/model/DescribeCertificateRequest.h>
+#include <aws/iot/model/DescribeDefaultAuthorizerRequest.h>
 #include <aws/iot/model/DescribeEndpointRequest.h>
+#include <aws/iot/model/DescribeEventConfigurationsRequest.h>
+#include <aws/iot/model/DescribeIndexRequest.h>
+#include <aws/iot/model/DescribeJobRequest.h>
+#include <aws/iot/model/DescribeJobExecutionRequest.h>
+#include <aws/iot/model/DescribeRoleAliasRequest.h>
 #include <aws/iot/model/DescribeThingRequest.h>
+#include <aws/iot/model/DescribeThingGroupRequest.h>
+#include <aws/iot/model/DescribeThingRegistrationTaskRequest.h>
 #include <aws/iot/model/DescribeThingTypeRequest.h>
-#include <aws/iot/model/DetachPrincipalPolicyRequest.h>
+#include <aws/iot/model/DetachPolicyRequest.h>
 #include <aws/iot/model/DetachThingPrincipalRequest.h>
 #include <aws/iot/model/DisableTopicRuleRequest.h>
 #include <aws/iot/model/EnableTopicRuleRequest.h>
+#include <aws/iot/model/GetEffectivePoliciesRequest.h>
+#include <aws/iot/model/GetIndexingConfigurationRequest.h>
+#include <aws/iot/model/GetJobDocumentRequest.h>
 #include <aws/iot/model/GetLoggingOptionsRequest.h>
 #include <aws/iot/model/GetPolicyRequest.h>
 #include <aws/iot/model/GetPolicyVersionRequest.h>
 #include <aws/iot/model/GetRegistrationCodeRequest.h>
 #include <aws/iot/model/GetTopicRuleRequest.h>
+#include <aws/iot/model/GetV2LoggingOptionsRequest.h>
+#include <aws/iot/model/ListAttachedPoliciesRequest.h>
+#include <aws/iot/model/ListAuthorizersRequest.h>
 #include <aws/iot/model/ListCACertificatesRequest.h>
 #include <aws/iot/model/ListCertificatesRequest.h>
 #include <aws/iot/model/ListCertificatesByCARequest.h>
+#include <aws/iot/model/ListIndicesRequest.h>
+#include <aws/iot/model/ListJobExecutionsForJobRequest.h>
+#include <aws/iot/model/ListJobExecutionsForThingRequest.h>
+#include <aws/iot/model/ListJobsRequest.h>
 #include <aws/iot/model/ListOutgoingCertificatesRequest.h>
 #include <aws/iot/model/ListPoliciesRequest.h>
-#include <aws/iot/model/ListPolicyPrincipalsRequest.h>
 #include <aws/iot/model/ListPolicyVersionsRequest.h>
-#include <aws/iot/model/ListPrincipalPoliciesRequest.h>
 #include <aws/iot/model/ListPrincipalThingsRequest.h>
+#include <aws/iot/model/ListRoleAliasesRequest.h>
+#include <aws/iot/model/ListTargetsForPolicyRequest.h>
+#include <aws/iot/model/ListThingGroupsRequest.h>
+#include <aws/iot/model/ListThingGroupsForThingRequest.h>
 #include <aws/iot/model/ListThingPrincipalsRequest.h>
+#include <aws/iot/model/ListThingRegistrationTaskReportsRequest.h>
+#include <aws/iot/model/ListThingRegistrationTasksRequest.h>
 #include <aws/iot/model/ListThingTypesRequest.h>
 #include <aws/iot/model/ListThingsRequest.h>
+#include <aws/iot/model/ListThingsInThingGroupRequest.h>
 #include <aws/iot/model/ListTopicRulesRequest.h>
+#include <aws/iot/model/ListV2LoggingLevelsRequest.h>
 #include <aws/iot/model/RegisterCACertificateRequest.h>
 #include <aws/iot/model/RegisterCertificateRequest.h>
+#include <aws/iot/model/RegisterThingRequest.h>
 #include <aws/iot/model/RejectCertificateTransferRequest.h>
+#include <aws/iot/model/RemoveThingFromThingGroupRequest.h>
 #include <aws/iot/model/ReplaceTopicRuleRequest.h>
+#include <aws/iot/model/SearchIndexRequest.h>
+#include <aws/iot/model/SetDefaultAuthorizerRequest.h>
 #include <aws/iot/model/SetDefaultPolicyVersionRequest.h>
 #include <aws/iot/model/SetLoggingOptionsRequest.h>
+#include <aws/iot/model/SetV2LoggingLevelRequest.h>
+#include <aws/iot/model/SetV2LoggingOptionsRequest.h>
+#include <aws/iot/model/StartThingRegistrationTaskRequest.h>
+#include <aws/iot/model/StopThingRegistrationTaskRequest.h>
+#include <aws/iot/model/TestAuthorizationRequest.h>
+#include <aws/iot/model/TestInvokeAuthorizerRequest.h>
 #include <aws/iot/model/TransferCertificateRequest.h>
+#include <aws/iot/model/UpdateAuthorizerRequest.h>
 #include <aws/iot/model/UpdateCACertificateRequest.h>
 #include <aws/iot/model/UpdateCertificateRequest.h>
+#include <aws/iot/model/UpdateEventConfigurationsRequest.h>
+#include <aws/iot/model/UpdateIndexingConfigurationRequest.h>
+#include <aws/iot/model/UpdateRoleAliasRequest.h>
 #include <aws/iot/model/UpdateThingRequest.h>
+#include <aws/iot/model/UpdateThingGroupRequest.h>
+#include <aws/iot/model/UpdateThingGroupsForThingRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -185,40 +238,112 @@ void IoTClient::AcceptCertificateTransferAsyncHelper(const AcceptCertificateTran
   handler(this, request, AcceptCertificateTransfer(request), context);
 }
 
-AttachPrincipalPolicyOutcome IoTClient::AttachPrincipalPolicy(const AttachPrincipalPolicyRequest& request) const
+AddThingToThingGroupOutcome IoTClient::AddThingToThingGroup(const AddThingToThingGroupRequest& request) const
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/principal-policies/";
-  ss << request.GetPolicyName();
+  ss << "/thing-groups/addThingToThingGroup";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
-    return AttachPrincipalPolicyOutcome(NoResult());
+    return AddThingToThingGroupOutcome(AddThingToThingGroupResult(outcome.GetResult()));
   }
   else
   {
-    return AttachPrincipalPolicyOutcome(outcome.GetError());
+    return AddThingToThingGroupOutcome(outcome.GetError());
   }
 }
 
-AttachPrincipalPolicyOutcomeCallable IoTClient::AttachPrincipalPolicyCallable(const AttachPrincipalPolicyRequest& request) const
+AddThingToThingGroupOutcomeCallable IoTClient::AddThingToThingGroupCallable(const AddThingToThingGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AttachPrincipalPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AttachPrincipalPolicy(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< AddThingToThingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddThingToThingGroup(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void IoTClient::AttachPrincipalPolicyAsync(const AttachPrincipalPolicyRequest& request, const AttachPrincipalPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::AddThingToThingGroupAsync(const AddThingToThingGroupRequest& request, const AddThingToThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AttachPrincipalPolicyAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->AddThingToThingGroupAsyncHelper( request, handler, context ); } );
 }
 
-void IoTClient::AttachPrincipalPolicyAsyncHelper(const AttachPrincipalPolicyRequest& request, const AttachPrincipalPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::AddThingToThingGroupAsyncHelper(const AddThingToThingGroupRequest& request, const AddThingToThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AttachPrincipalPolicy(request), context);
+  handler(this, request, AddThingToThingGroup(request), context);
+}
+
+AssociateTargetsWithJobOutcome IoTClient::AssociateTargetsWithJob(const AssociateTargetsWithJobRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/jobs/";
+  ss << request.GetJobId();
+  ss << "/targets";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return AssociateTargetsWithJobOutcome(AssociateTargetsWithJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AssociateTargetsWithJobOutcome(outcome.GetError());
+  }
+}
+
+AssociateTargetsWithJobOutcomeCallable IoTClient::AssociateTargetsWithJobCallable(const AssociateTargetsWithJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateTargetsWithJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateTargetsWithJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::AssociateTargetsWithJobAsync(const AssociateTargetsWithJobRequest& request, const AssociateTargetsWithJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateTargetsWithJobAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::AssociateTargetsWithJobAsyncHelper(const AssociateTargetsWithJobRequest& request, const AssociateTargetsWithJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateTargetsWithJob(request), context);
+}
+
+AttachPolicyOutcome IoTClient::AttachPolicy(const AttachPolicyRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/target-policies/";
+  ss << request.GetPolicyName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return AttachPolicyOutcome(NoResult());
+  }
+  else
+  {
+    return AttachPolicyOutcome(outcome.GetError());
+  }
+}
+
+AttachPolicyOutcomeCallable IoTClient::AttachPolicyCallable(const AttachPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AttachPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AttachPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::AttachPolicyAsync(const AttachPolicyRequest& request, const AttachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AttachPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::AttachPolicyAsyncHelper(const AttachPolicyRequest& request, const AttachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AttachPolicy(request), context);
 }
 
 AttachThingPrincipalOutcome IoTClient::AttachThingPrincipal(const AttachThingPrincipalRequest& request) const
@@ -294,6 +419,114 @@ void IoTClient::CancelCertificateTransferAsyncHelper(const CancelCertificateTran
   handler(this, request, CancelCertificateTransfer(request), context);
 }
 
+CancelJobOutcome IoTClient::CancelJob(const CancelJobRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/jobs/";
+  ss << request.GetJobId();
+  ss << "/cancel";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CancelJobOutcome(CancelJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CancelJobOutcome(outcome.GetError());
+  }
+}
+
+CancelJobOutcomeCallable IoTClient::CancelJobCallable(const CancelJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CancelJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::CancelJobAsync(const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CancelJobAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::CancelJobAsyncHelper(const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CancelJob(request), context);
+}
+
+ClearDefaultAuthorizerOutcome IoTClient::ClearDefaultAuthorizer(const ClearDefaultAuthorizerRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/default-authorizer";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ClearDefaultAuthorizerOutcome(ClearDefaultAuthorizerResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ClearDefaultAuthorizerOutcome(outcome.GetError());
+  }
+}
+
+ClearDefaultAuthorizerOutcomeCallable IoTClient::ClearDefaultAuthorizerCallable(const ClearDefaultAuthorizerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ClearDefaultAuthorizerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ClearDefaultAuthorizer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ClearDefaultAuthorizerAsync(const ClearDefaultAuthorizerRequest& request, const ClearDefaultAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ClearDefaultAuthorizerAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ClearDefaultAuthorizerAsyncHelper(const ClearDefaultAuthorizerRequest& request, const ClearDefaultAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ClearDefaultAuthorizer(request), context);
+}
+
+CreateAuthorizerOutcome IoTClient::CreateAuthorizer(const CreateAuthorizerRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/authorizer/";
+  ss << request.GetAuthorizerName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateAuthorizerOutcome(CreateAuthorizerResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateAuthorizerOutcome(outcome.GetError());
+  }
+}
+
+CreateAuthorizerOutcomeCallable IoTClient::CreateAuthorizerCallable(const CreateAuthorizerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateAuthorizerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAuthorizer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::CreateAuthorizerAsync(const CreateAuthorizerRequest& request, const CreateAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateAuthorizerAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::CreateAuthorizerAsyncHelper(const CreateAuthorizerRequest& request, const CreateAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateAuthorizer(request), context);
+}
+
 CreateCertificateFromCsrOutcome IoTClient::CreateCertificateFromCsr(const CreateCertificateFromCsrRequest& request) const
 {
   Aws::StringStream ss;
@@ -327,6 +560,42 @@ void IoTClient::CreateCertificateFromCsrAsync(const CreateCertificateFromCsrRequ
 void IoTClient::CreateCertificateFromCsrAsyncHelper(const CreateCertificateFromCsrRequest& request, const CreateCertificateFromCsrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateCertificateFromCsr(request), context);
+}
+
+CreateJobOutcome IoTClient::CreateJob(const CreateJobRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/jobs/";
+  ss << request.GetJobId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateJobOutcome(CreateJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateJobOutcome(outcome.GetError());
+  }
+}
+
+CreateJobOutcomeCallable IoTClient::CreateJobCallable(const CreateJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::CreateJobAsync(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateJobAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::CreateJobAsyncHelper(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateJob(request), context);
 }
 
 CreateKeysAndCertificateOutcome IoTClient::CreateKeysAndCertificate(const CreateKeysAndCertificateRequest& request) const
@@ -437,6 +706,42 @@ void IoTClient::CreatePolicyVersionAsyncHelper(const CreatePolicyVersionRequest&
   handler(this, request, CreatePolicyVersion(request), context);
 }
 
+CreateRoleAliasOutcome IoTClient::CreateRoleAlias(const CreateRoleAliasRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/role-aliases/";
+  ss << request.GetRoleAlias();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateRoleAliasOutcome(CreateRoleAliasResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateRoleAliasOutcome(outcome.GetError());
+  }
+}
+
+CreateRoleAliasOutcomeCallable IoTClient::CreateRoleAliasCallable(const CreateRoleAliasRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateRoleAliasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRoleAlias(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::CreateRoleAliasAsync(const CreateRoleAliasRequest& request, const CreateRoleAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateRoleAliasAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::CreateRoleAliasAsyncHelper(const CreateRoleAliasRequest& request, const CreateRoleAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateRoleAlias(request), context);
+}
+
 CreateThingOutcome IoTClient::CreateThing(const CreateThingRequest& request) const
 {
   Aws::StringStream ss;
@@ -471,6 +776,42 @@ void IoTClient::CreateThingAsync(const CreateThingRequest& request, const Create
 void IoTClient::CreateThingAsyncHelper(const CreateThingRequest& request, const CreateThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateThing(request), context);
+}
+
+CreateThingGroupOutcome IoTClient::CreateThingGroup(const CreateThingGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/thing-groups/";
+  ss << request.GetThingGroupName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateThingGroupOutcome(CreateThingGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateThingGroupOutcome(outcome.GetError());
+  }
+}
+
+CreateThingGroupOutcomeCallable IoTClient::CreateThingGroupCallable(const CreateThingGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateThingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateThingGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::CreateThingGroupAsync(const CreateThingGroupRequest& request, const CreateThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateThingGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::CreateThingGroupAsyncHelper(const CreateThingGroupRequest& request, const CreateThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateThingGroup(request), context);
 }
 
 CreateThingTypeOutcome IoTClient::CreateThingType(const CreateThingTypeRequest& request) const
@@ -543,6 +884,42 @@ void IoTClient::CreateTopicRuleAsync(const CreateTopicRuleRequest& request, cons
 void IoTClient::CreateTopicRuleAsyncHelper(const CreateTopicRuleRequest& request, const CreateTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateTopicRule(request), context);
+}
+
+DeleteAuthorizerOutcome IoTClient::DeleteAuthorizer(const DeleteAuthorizerRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/authorizer/";
+  ss << request.GetAuthorizerName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteAuthorizerOutcome(DeleteAuthorizerResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteAuthorizerOutcome(outcome.GetError());
+  }
+}
+
+DeleteAuthorizerOutcomeCallable IoTClient::DeleteAuthorizerCallable(const DeleteAuthorizerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAuthorizerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAuthorizer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DeleteAuthorizerAsync(const DeleteAuthorizerRequest& request, const DeleteAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAuthorizerAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DeleteAuthorizerAsyncHelper(const DeleteAuthorizerRequest& request, const DeleteAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAuthorizer(request), context);
 }
 
 DeleteCACertificateOutcome IoTClient::DeleteCACertificate(const DeleteCACertificateRequest& request) const
@@ -726,6 +1103,42 @@ void IoTClient::DeleteRegistrationCodeAsyncHelper(const DeleteRegistrationCodeRe
   handler(this, request, DeleteRegistrationCode(request), context);
 }
 
+DeleteRoleAliasOutcome IoTClient::DeleteRoleAlias(const DeleteRoleAliasRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/role-aliases/";
+  ss << request.GetRoleAlias();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteRoleAliasOutcome(DeleteRoleAliasResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteRoleAliasOutcome(outcome.GetError());
+  }
+}
+
+DeleteRoleAliasOutcomeCallable IoTClient::DeleteRoleAliasCallable(const DeleteRoleAliasRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRoleAliasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRoleAlias(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DeleteRoleAliasAsync(const DeleteRoleAliasRequest& request, const DeleteRoleAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteRoleAliasAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DeleteRoleAliasAsyncHelper(const DeleteRoleAliasRequest& request, const DeleteRoleAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteRoleAlias(request), context);
+}
+
 DeleteThingOutcome IoTClient::DeleteThing(const DeleteThingRequest& request) const
 {
   Aws::StringStream ss;
@@ -760,6 +1173,42 @@ void IoTClient::DeleteThingAsync(const DeleteThingRequest& request, const Delete
 void IoTClient::DeleteThingAsyncHelper(const DeleteThingRequest& request, const DeleteThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteThing(request), context);
+}
+
+DeleteThingGroupOutcome IoTClient::DeleteThingGroup(const DeleteThingGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/thing-groups/";
+  ss << request.GetThingGroupName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteThingGroupOutcome(DeleteThingGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteThingGroupOutcome(outcome.GetError());
+  }
+}
+
+DeleteThingGroupOutcomeCallable IoTClient::DeleteThingGroupCallable(const DeleteThingGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteThingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteThingGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DeleteThingGroupAsync(const DeleteThingGroupRequest& request, const DeleteThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteThingGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DeleteThingGroupAsyncHelper(const DeleteThingGroupRequest& request, const DeleteThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteThingGroup(request), context);
 }
 
 DeleteThingTypeOutcome IoTClient::DeleteThingType(const DeleteThingTypeRequest& request) const
@@ -834,6 +1283,41 @@ void IoTClient::DeleteTopicRuleAsyncHelper(const DeleteTopicRuleRequest& request
   handler(this, request, DeleteTopicRule(request), context);
 }
 
+DeleteV2LoggingLevelOutcome IoTClient::DeleteV2LoggingLevel(const DeleteV2LoggingLevelRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v2LoggingLevel";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteV2LoggingLevelOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteV2LoggingLevelOutcome(outcome.GetError());
+  }
+}
+
+DeleteV2LoggingLevelOutcomeCallable IoTClient::DeleteV2LoggingLevelCallable(const DeleteV2LoggingLevelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteV2LoggingLevelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteV2LoggingLevel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DeleteV2LoggingLevelAsync(const DeleteV2LoggingLevelRequest& request, const DeleteV2LoggingLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteV2LoggingLevelAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DeleteV2LoggingLevelAsyncHelper(const DeleteV2LoggingLevelRequest& request, const DeleteV2LoggingLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteV2LoggingLevel(request), context);
+}
+
 DeprecateThingTypeOutcome IoTClient::DeprecateThingType(const DeprecateThingTypeRequest& request) const
 {
   Aws::StringStream ss;
@@ -869,6 +1353,42 @@ void IoTClient::DeprecateThingTypeAsync(const DeprecateThingTypeRequest& request
 void IoTClient::DeprecateThingTypeAsyncHelper(const DeprecateThingTypeRequest& request, const DeprecateThingTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeprecateThingType(request), context);
+}
+
+DescribeAuthorizerOutcome IoTClient::DescribeAuthorizer(const DescribeAuthorizerRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/authorizer/";
+  ss << request.GetAuthorizerName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeAuthorizerOutcome(DescribeAuthorizerResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeAuthorizerOutcome(outcome.GetError());
+  }
+}
+
+DescribeAuthorizerOutcomeCallable IoTClient::DescribeAuthorizerCallable(const DescribeAuthorizerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAuthorizerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAuthorizer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DescribeAuthorizerAsync(const DescribeAuthorizerRequest& request, const DescribeAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAuthorizerAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DescribeAuthorizerAsyncHelper(const DescribeAuthorizerRequest& request, const DescribeAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAuthorizer(request), context);
 }
 
 DescribeCACertificateOutcome IoTClient::DescribeCACertificate(const DescribeCACertificateRequest& request) const
@@ -943,6 +1463,41 @@ void IoTClient::DescribeCertificateAsyncHelper(const DescribeCertificateRequest&
   handler(this, request, DescribeCertificate(request), context);
 }
 
+DescribeDefaultAuthorizerOutcome IoTClient::DescribeDefaultAuthorizer(const DescribeDefaultAuthorizerRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/default-authorizer";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeDefaultAuthorizerOutcome(DescribeDefaultAuthorizerResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeDefaultAuthorizerOutcome(outcome.GetError());
+  }
+}
+
+DescribeDefaultAuthorizerOutcomeCallable IoTClient::DescribeDefaultAuthorizerCallable(const DescribeDefaultAuthorizerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDefaultAuthorizerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDefaultAuthorizer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DescribeDefaultAuthorizerAsync(const DescribeDefaultAuthorizerRequest& request, const DescribeDefaultAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDefaultAuthorizerAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DescribeDefaultAuthorizerAsyncHelper(const DescribeDefaultAuthorizerRequest& request, const DescribeDefaultAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeDefaultAuthorizer(request), context);
+}
+
 DescribeEndpointOutcome IoTClient::DescribeEndpoint(const DescribeEndpointRequest& request) const
 {
   Aws::StringStream ss;
@@ -976,6 +1531,187 @@ void IoTClient::DescribeEndpointAsync(const DescribeEndpointRequest& request, co
 void IoTClient::DescribeEndpointAsyncHelper(const DescribeEndpointRequest& request, const DescribeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeEndpoint(request), context);
+}
+
+DescribeEventConfigurationsOutcome IoTClient::DescribeEventConfigurations(const DescribeEventConfigurationsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/event-configurations";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeEventConfigurationsOutcome(DescribeEventConfigurationsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeEventConfigurationsOutcome(outcome.GetError());
+  }
+}
+
+DescribeEventConfigurationsOutcomeCallable IoTClient::DescribeEventConfigurationsCallable(const DescribeEventConfigurationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeEventConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEventConfigurations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DescribeEventConfigurationsAsync(const DescribeEventConfigurationsRequest& request, const DescribeEventConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventConfigurationsAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DescribeEventConfigurationsAsyncHelper(const DescribeEventConfigurationsRequest& request, const DescribeEventConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeEventConfigurations(request), context);
+}
+
+DescribeIndexOutcome IoTClient::DescribeIndex(const DescribeIndexRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/indices/";
+  ss << request.GetIndexName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeIndexOutcome(DescribeIndexResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeIndexOutcome(outcome.GetError());
+  }
+}
+
+DescribeIndexOutcomeCallable IoTClient::DescribeIndexCallable(const DescribeIndexRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeIndexOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeIndex(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DescribeIndexAsync(const DescribeIndexRequest& request, const DescribeIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeIndexAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DescribeIndexAsyncHelper(const DescribeIndexRequest& request, const DescribeIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeIndex(request), context);
+}
+
+DescribeJobOutcome IoTClient::DescribeJob(const DescribeJobRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/jobs/";
+  ss << request.GetJobId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeJobOutcome(DescribeJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeJobOutcome(outcome.GetError());
+  }
+}
+
+DescribeJobOutcomeCallable IoTClient::DescribeJobCallable(const DescribeJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DescribeJobAsync(const DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeJobAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DescribeJobAsyncHelper(const DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeJob(request), context);
+}
+
+DescribeJobExecutionOutcome IoTClient::DescribeJobExecution(const DescribeJobExecutionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/things/";
+  ss << request.GetThingName();
+  ss << "/jobs/";
+  ss << request.GetJobId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeJobExecutionOutcome(DescribeJobExecutionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeJobExecutionOutcome(outcome.GetError());
+  }
+}
+
+DescribeJobExecutionOutcomeCallable IoTClient::DescribeJobExecutionCallable(const DescribeJobExecutionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeJobExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeJobExecution(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DescribeJobExecutionAsync(const DescribeJobExecutionRequest& request, const DescribeJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeJobExecutionAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DescribeJobExecutionAsyncHelper(const DescribeJobExecutionRequest& request, const DescribeJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeJobExecution(request), context);
+}
+
+DescribeRoleAliasOutcome IoTClient::DescribeRoleAlias(const DescribeRoleAliasRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/role-aliases/";
+  ss << request.GetRoleAlias();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeRoleAliasOutcome(DescribeRoleAliasResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeRoleAliasOutcome(outcome.GetError());
+  }
+}
+
+DescribeRoleAliasOutcomeCallable IoTClient::DescribeRoleAliasCallable(const DescribeRoleAliasRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeRoleAliasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRoleAlias(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DescribeRoleAliasAsync(const DescribeRoleAliasRequest& request, const DescribeRoleAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeRoleAliasAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DescribeRoleAliasAsyncHelper(const DescribeRoleAliasRequest& request, const DescribeRoleAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeRoleAlias(request), context);
 }
 
 DescribeThingOutcome IoTClient::DescribeThing(const DescribeThingRequest& request) const
@@ -1014,6 +1750,78 @@ void IoTClient::DescribeThingAsyncHelper(const DescribeThingRequest& request, co
   handler(this, request, DescribeThing(request), context);
 }
 
+DescribeThingGroupOutcome IoTClient::DescribeThingGroup(const DescribeThingGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/thing-groups/";
+  ss << request.GetThingGroupName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeThingGroupOutcome(DescribeThingGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeThingGroupOutcome(outcome.GetError());
+  }
+}
+
+DescribeThingGroupOutcomeCallable IoTClient::DescribeThingGroupCallable(const DescribeThingGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeThingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeThingGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DescribeThingGroupAsync(const DescribeThingGroupRequest& request, const DescribeThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeThingGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DescribeThingGroupAsyncHelper(const DescribeThingGroupRequest& request, const DescribeThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeThingGroup(request), context);
+}
+
+DescribeThingRegistrationTaskOutcome IoTClient::DescribeThingRegistrationTask(const DescribeThingRegistrationTaskRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/thing-registration-tasks/";
+  ss << request.GetTaskId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeThingRegistrationTaskOutcome(DescribeThingRegistrationTaskResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeThingRegistrationTaskOutcome(outcome.GetError());
+  }
+}
+
+DescribeThingRegistrationTaskOutcomeCallable IoTClient::DescribeThingRegistrationTaskCallable(const DescribeThingRegistrationTaskRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeThingRegistrationTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeThingRegistrationTask(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DescribeThingRegistrationTaskAsync(const DescribeThingRegistrationTaskRequest& request, const DescribeThingRegistrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeThingRegistrationTaskAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DescribeThingRegistrationTaskAsyncHelper(const DescribeThingRegistrationTaskRequest& request, const DescribeThingRegistrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeThingRegistrationTask(request), context);
+}
+
 DescribeThingTypeOutcome IoTClient::DescribeThingType(const DescribeThingTypeRequest& request) const
 {
   Aws::StringStream ss;
@@ -1050,40 +1858,40 @@ void IoTClient::DescribeThingTypeAsyncHelper(const DescribeThingTypeRequest& req
   handler(this, request, DescribeThingType(request), context);
 }
 
-DetachPrincipalPolicyOutcome IoTClient::DetachPrincipalPolicy(const DetachPrincipalPolicyRequest& request) const
+DetachPolicyOutcome IoTClient::DetachPolicy(const DetachPolicyRequest& request) const
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/principal-policies/";
+  ss << "/target-policies/";
   ss << request.GetPolicyName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
-    return DetachPrincipalPolicyOutcome(NoResult());
+    return DetachPolicyOutcome(NoResult());
   }
   else
   {
-    return DetachPrincipalPolicyOutcome(outcome.GetError());
+    return DetachPolicyOutcome(outcome.GetError());
   }
 }
 
-DetachPrincipalPolicyOutcomeCallable IoTClient::DetachPrincipalPolicyCallable(const DetachPrincipalPolicyRequest& request) const
+DetachPolicyOutcomeCallable IoTClient::DetachPolicyCallable(const DetachPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DetachPrincipalPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DetachPrincipalPolicy(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DetachPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DetachPolicy(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void IoTClient::DetachPrincipalPolicyAsync(const DetachPrincipalPolicyRequest& request, const DetachPrincipalPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DetachPolicyAsync(const DetachPolicyRequest& request, const DetachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetachPrincipalPolicyAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->DetachPolicyAsyncHelper( request, handler, context ); } );
 }
 
-void IoTClient::DetachPrincipalPolicyAsyncHelper(const DetachPrincipalPolicyRequest& request, const DetachPrincipalPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTClient::DetachPolicyAsyncHelper(const DetachPolicyRequest& request, const DetachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetachPrincipalPolicy(request), context);
+  handler(this, request, DetachPolicy(request), context);
 }
 
 DetachThingPrincipalOutcome IoTClient::DetachThingPrincipal(const DetachThingPrincipalRequest& request) const
@@ -1195,6 +2003,113 @@ void IoTClient::EnableTopicRuleAsync(const EnableTopicRuleRequest& request, cons
 void IoTClient::EnableTopicRuleAsyncHelper(const EnableTopicRuleRequest& request, const EnableTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, EnableTopicRule(request), context);
+}
+
+GetEffectivePoliciesOutcome IoTClient::GetEffectivePolicies(const GetEffectivePoliciesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/effective-policies";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetEffectivePoliciesOutcome(GetEffectivePoliciesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetEffectivePoliciesOutcome(outcome.GetError());
+  }
+}
+
+GetEffectivePoliciesOutcomeCallable IoTClient::GetEffectivePoliciesCallable(const GetEffectivePoliciesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetEffectivePoliciesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEffectivePolicies(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::GetEffectivePoliciesAsync(const GetEffectivePoliciesRequest& request, const GetEffectivePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetEffectivePoliciesAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::GetEffectivePoliciesAsyncHelper(const GetEffectivePoliciesRequest& request, const GetEffectivePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetEffectivePolicies(request), context);
+}
+
+GetIndexingConfigurationOutcome IoTClient::GetIndexingConfiguration(const GetIndexingConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/indexing/config";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetIndexingConfigurationOutcome(GetIndexingConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetIndexingConfigurationOutcome(outcome.GetError());
+  }
+}
+
+GetIndexingConfigurationOutcomeCallable IoTClient::GetIndexingConfigurationCallable(const GetIndexingConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetIndexingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetIndexingConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::GetIndexingConfigurationAsync(const GetIndexingConfigurationRequest& request, const GetIndexingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetIndexingConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::GetIndexingConfigurationAsyncHelper(const GetIndexingConfigurationRequest& request, const GetIndexingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetIndexingConfiguration(request), context);
+}
+
+GetJobDocumentOutcome IoTClient::GetJobDocument(const GetJobDocumentRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/jobs/";
+  ss << request.GetJobId();
+  ss << "/job-document";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetJobDocumentOutcome(GetJobDocumentResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetJobDocumentOutcome(outcome.GetError());
+  }
+}
+
+GetJobDocumentOutcomeCallable IoTClient::GetJobDocumentCallable(const GetJobDocumentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetJobDocumentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetJobDocument(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::GetJobDocumentAsync(const GetJobDocumentRequest& request, const GetJobDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetJobDocumentAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::GetJobDocumentAsyncHelper(const GetJobDocumentRequest& request, const GetJobDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetJobDocument(request), context);
 }
 
 GetLoggingOptionsOutcome IoTClient::GetLoggingOptions(const GetLoggingOptionsRequest& request) const
@@ -1377,6 +2292,112 @@ void IoTClient::GetTopicRuleAsyncHelper(const GetTopicRuleRequest& request, cons
   handler(this, request, GetTopicRule(request), context);
 }
 
+GetV2LoggingOptionsOutcome IoTClient::GetV2LoggingOptions(const GetV2LoggingOptionsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v2LoggingOptions";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetV2LoggingOptionsOutcome(GetV2LoggingOptionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetV2LoggingOptionsOutcome(outcome.GetError());
+  }
+}
+
+GetV2LoggingOptionsOutcomeCallable IoTClient::GetV2LoggingOptionsCallable(const GetV2LoggingOptionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetV2LoggingOptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetV2LoggingOptions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::GetV2LoggingOptionsAsync(const GetV2LoggingOptionsRequest& request, const GetV2LoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetV2LoggingOptionsAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::GetV2LoggingOptionsAsyncHelper(const GetV2LoggingOptionsRequest& request, const GetV2LoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetV2LoggingOptions(request), context);
+}
+
+ListAttachedPoliciesOutcome IoTClient::ListAttachedPolicies(const ListAttachedPoliciesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/attached-policies/";
+  ss << request.GetTarget();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListAttachedPoliciesOutcome(ListAttachedPoliciesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListAttachedPoliciesOutcome(outcome.GetError());
+  }
+}
+
+ListAttachedPoliciesOutcomeCallable IoTClient::ListAttachedPoliciesCallable(const ListAttachedPoliciesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAttachedPoliciesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAttachedPolicies(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ListAttachedPoliciesAsync(const ListAttachedPoliciesRequest& request, const ListAttachedPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAttachedPoliciesAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ListAttachedPoliciesAsyncHelper(const ListAttachedPoliciesRequest& request, const ListAttachedPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAttachedPolicies(request), context);
+}
+
+ListAuthorizersOutcome IoTClient::ListAuthorizers(const ListAuthorizersRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/authorizers/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListAuthorizersOutcome(ListAuthorizersResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListAuthorizersOutcome(outcome.GetError());
+  }
+}
+
+ListAuthorizersOutcomeCallable IoTClient::ListAuthorizersCallable(const ListAuthorizersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAuthorizersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAuthorizers(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ListAuthorizersAsync(const ListAuthorizersRequest& request, const ListAuthorizersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAuthorizersAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ListAuthorizersAsyncHelper(const ListAuthorizersRequest& request, const ListAuthorizersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAuthorizers(request), context);
+}
+
 ListCACertificatesOutcome IoTClient::ListCACertificates(const ListCACertificatesRequest& request) const
 {
   Aws::StringStream ss;
@@ -1483,6 +2504,150 @@ void IoTClient::ListCertificatesByCAAsyncHelper(const ListCertificatesByCAReques
   handler(this, request, ListCertificatesByCA(request), context);
 }
 
+ListIndicesOutcome IoTClient::ListIndices(const ListIndicesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/indices";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListIndicesOutcome(ListIndicesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListIndicesOutcome(outcome.GetError());
+  }
+}
+
+ListIndicesOutcomeCallable IoTClient::ListIndicesCallable(const ListIndicesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListIndicesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListIndices(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ListIndicesAsync(const ListIndicesRequest& request, const ListIndicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListIndicesAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ListIndicesAsyncHelper(const ListIndicesRequest& request, const ListIndicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListIndices(request), context);
+}
+
+ListJobExecutionsForJobOutcome IoTClient::ListJobExecutionsForJob(const ListJobExecutionsForJobRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/jobs/";
+  ss << request.GetJobId();
+  ss << "/things";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListJobExecutionsForJobOutcome(ListJobExecutionsForJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListJobExecutionsForJobOutcome(outcome.GetError());
+  }
+}
+
+ListJobExecutionsForJobOutcomeCallable IoTClient::ListJobExecutionsForJobCallable(const ListJobExecutionsForJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListJobExecutionsForJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListJobExecutionsForJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ListJobExecutionsForJobAsync(const ListJobExecutionsForJobRequest& request, const ListJobExecutionsForJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListJobExecutionsForJobAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ListJobExecutionsForJobAsyncHelper(const ListJobExecutionsForJobRequest& request, const ListJobExecutionsForJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListJobExecutionsForJob(request), context);
+}
+
+ListJobExecutionsForThingOutcome IoTClient::ListJobExecutionsForThing(const ListJobExecutionsForThingRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/things/";
+  ss << request.GetThingName();
+  ss << "/jobs";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListJobExecutionsForThingOutcome(ListJobExecutionsForThingResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListJobExecutionsForThingOutcome(outcome.GetError());
+  }
+}
+
+ListJobExecutionsForThingOutcomeCallable IoTClient::ListJobExecutionsForThingCallable(const ListJobExecutionsForThingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListJobExecutionsForThingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListJobExecutionsForThing(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ListJobExecutionsForThingAsync(const ListJobExecutionsForThingRequest& request, const ListJobExecutionsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListJobExecutionsForThingAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ListJobExecutionsForThingAsyncHelper(const ListJobExecutionsForThingRequest& request, const ListJobExecutionsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListJobExecutionsForThing(request), context);
+}
+
+ListJobsOutcome IoTClient::ListJobs(const ListJobsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/jobs";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListJobsOutcome(ListJobsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListJobsOutcome(outcome.GetError());
+  }
+}
+
+ListJobsOutcomeCallable IoTClient::ListJobsCallable(const ListJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ListJobsAsync(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListJobsAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ListJobsAsyncHelper(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListJobs(request), context);
+}
+
 ListOutgoingCertificatesOutcome IoTClient::ListOutgoingCertificates(const ListOutgoingCertificatesRequest& request) const
 {
   Aws::StringStream ss;
@@ -1553,41 +2718,6 @@ void IoTClient::ListPoliciesAsyncHelper(const ListPoliciesRequest& request, cons
   handler(this, request, ListPolicies(request), context);
 }
 
-ListPolicyPrincipalsOutcome IoTClient::ListPolicyPrincipals(const ListPolicyPrincipalsRequest& request) const
-{
-  Aws::StringStream ss;
-  Aws::Http::URI uri = m_uri;
-  ss << "/policy-principals";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListPolicyPrincipalsOutcome(ListPolicyPrincipalsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListPolicyPrincipalsOutcome(outcome.GetError());
-  }
-}
-
-ListPolicyPrincipalsOutcomeCallable IoTClient::ListPolicyPrincipalsCallable(const ListPolicyPrincipalsRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< ListPolicyPrincipalsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPolicyPrincipals(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void IoTClient::ListPolicyPrincipalsAsync(const ListPolicyPrincipalsRequest& request, const ListPolicyPrincipalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->ListPolicyPrincipalsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTClient::ListPolicyPrincipalsAsyncHelper(const ListPolicyPrincipalsRequest& request, const ListPolicyPrincipalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListPolicyPrincipals(request), context);
-}
-
 ListPolicyVersionsOutcome IoTClient::ListPolicyVersions(const ListPolicyVersionsRequest& request) const
 {
   Aws::StringStream ss;
@@ -1625,41 +2755,6 @@ void IoTClient::ListPolicyVersionsAsyncHelper(const ListPolicyVersionsRequest& r
   handler(this, request, ListPolicyVersions(request), context);
 }
 
-ListPrincipalPoliciesOutcome IoTClient::ListPrincipalPolicies(const ListPrincipalPoliciesRequest& request) const
-{
-  Aws::StringStream ss;
-  Aws::Http::URI uri = m_uri;
-  ss << "/principal-policies";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListPrincipalPoliciesOutcome(ListPrincipalPoliciesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListPrincipalPoliciesOutcome(outcome.GetError());
-  }
-}
-
-ListPrincipalPoliciesOutcomeCallable IoTClient::ListPrincipalPoliciesCallable(const ListPrincipalPoliciesRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< ListPrincipalPoliciesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPrincipalPolicies(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void IoTClient::ListPrincipalPoliciesAsync(const ListPrincipalPoliciesRequest& request, const ListPrincipalPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->ListPrincipalPoliciesAsyncHelper( request, handler, context ); } );
-}
-
-void IoTClient::ListPrincipalPoliciesAsyncHelper(const ListPrincipalPoliciesRequest& request, const ListPrincipalPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListPrincipalPolicies(request), context);
-}
-
 ListPrincipalThingsOutcome IoTClient::ListPrincipalThings(const ListPrincipalThingsRequest& request) const
 {
   Aws::StringStream ss;
@@ -1693,6 +2788,149 @@ void IoTClient::ListPrincipalThingsAsync(const ListPrincipalThingsRequest& reque
 void IoTClient::ListPrincipalThingsAsyncHelper(const ListPrincipalThingsRequest& request, const ListPrincipalThingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListPrincipalThings(request), context);
+}
+
+ListRoleAliasesOutcome IoTClient::ListRoleAliases(const ListRoleAliasesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/role-aliases";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListRoleAliasesOutcome(ListRoleAliasesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListRoleAliasesOutcome(outcome.GetError());
+  }
+}
+
+ListRoleAliasesOutcomeCallable IoTClient::ListRoleAliasesCallable(const ListRoleAliasesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListRoleAliasesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRoleAliases(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ListRoleAliasesAsync(const ListRoleAliasesRequest& request, const ListRoleAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListRoleAliasesAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ListRoleAliasesAsyncHelper(const ListRoleAliasesRequest& request, const ListRoleAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListRoleAliases(request), context);
+}
+
+ListTargetsForPolicyOutcome IoTClient::ListTargetsForPolicy(const ListTargetsForPolicyRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/policy-targets/";
+  ss << request.GetPolicyName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListTargetsForPolicyOutcome(ListTargetsForPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTargetsForPolicyOutcome(outcome.GetError());
+  }
+}
+
+ListTargetsForPolicyOutcomeCallable IoTClient::ListTargetsForPolicyCallable(const ListTargetsForPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTargetsForPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTargetsForPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ListTargetsForPolicyAsync(const ListTargetsForPolicyRequest& request, const ListTargetsForPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTargetsForPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ListTargetsForPolicyAsyncHelper(const ListTargetsForPolicyRequest& request, const ListTargetsForPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTargetsForPolicy(request), context);
+}
+
+ListThingGroupsOutcome IoTClient::ListThingGroups(const ListThingGroupsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/thing-groups";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListThingGroupsOutcome(ListThingGroupsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListThingGroupsOutcome(outcome.GetError());
+  }
+}
+
+ListThingGroupsOutcomeCallable IoTClient::ListThingGroupsCallable(const ListThingGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListThingGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListThingGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ListThingGroupsAsync(const ListThingGroupsRequest& request, const ListThingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListThingGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ListThingGroupsAsyncHelper(const ListThingGroupsRequest& request, const ListThingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListThingGroups(request), context);
+}
+
+ListThingGroupsForThingOutcome IoTClient::ListThingGroupsForThing(const ListThingGroupsForThingRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/things/";
+  ss << request.GetThingName();
+  ss << "/thing-groups";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListThingGroupsForThingOutcome(ListThingGroupsForThingResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListThingGroupsForThingOutcome(outcome.GetError());
+  }
+}
+
+ListThingGroupsForThingOutcomeCallable IoTClient::ListThingGroupsForThingCallable(const ListThingGroupsForThingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListThingGroupsForThingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListThingGroupsForThing(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ListThingGroupsForThingAsync(const ListThingGroupsForThingRequest& request, const ListThingGroupsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListThingGroupsForThingAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ListThingGroupsForThingAsyncHelper(const ListThingGroupsForThingRequest& request, const ListThingGroupsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListThingGroupsForThing(request), context);
 }
 
 ListThingPrincipalsOutcome IoTClient::ListThingPrincipals(const ListThingPrincipalsRequest& request) const
@@ -1730,6 +2968,78 @@ void IoTClient::ListThingPrincipalsAsync(const ListThingPrincipalsRequest& reque
 void IoTClient::ListThingPrincipalsAsyncHelper(const ListThingPrincipalsRequest& request, const ListThingPrincipalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListThingPrincipals(request), context);
+}
+
+ListThingRegistrationTaskReportsOutcome IoTClient::ListThingRegistrationTaskReports(const ListThingRegistrationTaskReportsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/thing-registration-tasks/";
+  ss << request.GetTaskId();
+  ss << "/reports";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListThingRegistrationTaskReportsOutcome(ListThingRegistrationTaskReportsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListThingRegistrationTaskReportsOutcome(outcome.GetError());
+  }
+}
+
+ListThingRegistrationTaskReportsOutcomeCallable IoTClient::ListThingRegistrationTaskReportsCallable(const ListThingRegistrationTaskReportsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListThingRegistrationTaskReportsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListThingRegistrationTaskReports(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ListThingRegistrationTaskReportsAsync(const ListThingRegistrationTaskReportsRequest& request, const ListThingRegistrationTaskReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListThingRegistrationTaskReportsAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ListThingRegistrationTaskReportsAsyncHelper(const ListThingRegistrationTaskReportsRequest& request, const ListThingRegistrationTaskReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListThingRegistrationTaskReports(request), context);
+}
+
+ListThingRegistrationTasksOutcome IoTClient::ListThingRegistrationTasks(const ListThingRegistrationTasksRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/thing-registration-tasks";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListThingRegistrationTasksOutcome(ListThingRegistrationTasksResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListThingRegistrationTasksOutcome(outcome.GetError());
+  }
+}
+
+ListThingRegistrationTasksOutcomeCallable IoTClient::ListThingRegistrationTasksCallable(const ListThingRegistrationTasksRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListThingRegistrationTasksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListThingRegistrationTasks(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ListThingRegistrationTasksAsync(const ListThingRegistrationTasksRequest& request, const ListThingRegistrationTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListThingRegistrationTasksAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ListThingRegistrationTasksAsyncHelper(const ListThingRegistrationTasksRequest& request, const ListThingRegistrationTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListThingRegistrationTasks(request), context);
 }
 
 ListThingTypesOutcome IoTClient::ListThingTypes(const ListThingTypesRequest& request) const
@@ -1802,6 +3112,43 @@ void IoTClient::ListThingsAsyncHelper(const ListThingsRequest& request, const Li
   handler(this, request, ListThings(request), context);
 }
 
+ListThingsInThingGroupOutcome IoTClient::ListThingsInThingGroup(const ListThingsInThingGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/thing-groups/";
+  ss << request.GetThingGroupName();
+  ss << "/things";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListThingsInThingGroupOutcome(ListThingsInThingGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListThingsInThingGroupOutcome(outcome.GetError());
+  }
+}
+
+ListThingsInThingGroupOutcomeCallable IoTClient::ListThingsInThingGroupCallable(const ListThingsInThingGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListThingsInThingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListThingsInThingGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ListThingsInThingGroupAsync(const ListThingsInThingGroupRequest& request, const ListThingsInThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListThingsInThingGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ListThingsInThingGroupAsyncHelper(const ListThingsInThingGroupRequest& request, const ListThingsInThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListThingsInThingGroup(request), context);
+}
+
 ListTopicRulesOutcome IoTClient::ListTopicRules(const ListTopicRulesRequest& request) const
 {
   Aws::StringStream ss;
@@ -1835,6 +3182,41 @@ void IoTClient::ListTopicRulesAsync(const ListTopicRulesRequest& request, const 
 void IoTClient::ListTopicRulesAsyncHelper(const ListTopicRulesRequest& request, const ListTopicRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTopicRules(request), context);
+}
+
+ListV2LoggingLevelsOutcome IoTClient::ListV2LoggingLevels(const ListV2LoggingLevelsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v2LoggingLevel";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListV2LoggingLevelsOutcome(ListV2LoggingLevelsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListV2LoggingLevelsOutcome(outcome.GetError());
+  }
+}
+
+ListV2LoggingLevelsOutcomeCallable IoTClient::ListV2LoggingLevelsCallable(const ListV2LoggingLevelsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListV2LoggingLevelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListV2LoggingLevels(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ListV2LoggingLevelsAsync(const ListV2LoggingLevelsRequest& request, const ListV2LoggingLevelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListV2LoggingLevelsAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ListV2LoggingLevelsAsyncHelper(const ListV2LoggingLevelsRequest& request, const ListV2LoggingLevelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListV2LoggingLevels(request), context);
 }
 
 RegisterCACertificateOutcome IoTClient::RegisterCACertificate(const RegisterCACertificateRequest& request) const
@@ -1907,6 +3289,41 @@ void IoTClient::RegisterCertificateAsyncHelper(const RegisterCertificateRequest&
   handler(this, request, RegisterCertificate(request), context);
 }
 
+RegisterThingOutcome IoTClient::RegisterThing(const RegisterThingRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/things";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return RegisterThingOutcome(RegisterThingResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RegisterThingOutcome(outcome.GetError());
+  }
+}
+
+RegisterThingOutcomeCallable IoTClient::RegisterThingCallable(const RegisterThingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RegisterThingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterThing(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::RegisterThingAsync(const RegisterThingRequest& request, const RegisterThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RegisterThingAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::RegisterThingAsyncHelper(const RegisterThingRequest& request, const RegisterThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RegisterThing(request), context);
+}
+
 RejectCertificateTransferOutcome IoTClient::RejectCertificateTransfer(const RejectCertificateTransferRequest& request) const
 {
   Aws::StringStream ss;
@@ -1943,6 +3360,41 @@ void IoTClient::RejectCertificateTransferAsyncHelper(const RejectCertificateTran
   handler(this, request, RejectCertificateTransfer(request), context);
 }
 
+RemoveThingFromThingGroupOutcome IoTClient::RemoveThingFromThingGroup(const RemoveThingFromThingGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/thing-groups/removeThingFromThingGroup";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return RemoveThingFromThingGroupOutcome(RemoveThingFromThingGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RemoveThingFromThingGroupOutcome(outcome.GetError());
+  }
+}
+
+RemoveThingFromThingGroupOutcomeCallable IoTClient::RemoveThingFromThingGroupCallable(const RemoveThingFromThingGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RemoveThingFromThingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveThingFromThingGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::RemoveThingFromThingGroupAsync(const RemoveThingFromThingGroupRequest& request, const RemoveThingFromThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RemoveThingFromThingGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::RemoveThingFromThingGroupAsyncHelper(const RemoveThingFromThingGroupRequest& request, const RemoveThingFromThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RemoveThingFromThingGroup(request), context);
+}
+
 ReplaceTopicRuleOutcome IoTClient::ReplaceTopicRule(const ReplaceTopicRuleRequest& request) const
 {
   Aws::StringStream ss;
@@ -1977,6 +3429,76 @@ void IoTClient::ReplaceTopicRuleAsync(const ReplaceTopicRuleRequest& request, co
 void IoTClient::ReplaceTopicRuleAsyncHelper(const ReplaceTopicRuleRequest& request, const ReplaceTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ReplaceTopicRule(request), context);
+}
+
+SearchIndexOutcome IoTClient::SearchIndex(const SearchIndexRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/indices/search";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return SearchIndexOutcome(SearchIndexResult(outcome.GetResult()));
+  }
+  else
+  {
+    return SearchIndexOutcome(outcome.GetError());
+  }
+}
+
+SearchIndexOutcomeCallable IoTClient::SearchIndexCallable(const SearchIndexRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SearchIndexOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchIndex(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::SearchIndexAsync(const SearchIndexRequest& request, const SearchIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SearchIndexAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::SearchIndexAsyncHelper(const SearchIndexRequest& request, const SearchIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SearchIndex(request), context);
+}
+
+SetDefaultAuthorizerOutcome IoTClient::SetDefaultAuthorizer(const SetDefaultAuthorizerRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/default-authorizer";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return SetDefaultAuthorizerOutcome(SetDefaultAuthorizerResult(outcome.GetResult()));
+  }
+  else
+  {
+    return SetDefaultAuthorizerOutcome(outcome.GetError());
+  }
+}
+
+SetDefaultAuthorizerOutcomeCallable IoTClient::SetDefaultAuthorizerCallable(const SetDefaultAuthorizerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SetDefaultAuthorizerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetDefaultAuthorizer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::SetDefaultAuthorizerAsync(const SetDefaultAuthorizerRequest& request, const SetDefaultAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SetDefaultAuthorizerAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::SetDefaultAuthorizerAsyncHelper(const SetDefaultAuthorizerRequest& request, const SetDefaultAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SetDefaultAuthorizer(request), context);
 }
 
 SetDefaultPolicyVersionOutcome IoTClient::SetDefaultPolicyVersion(const SetDefaultPolicyVersionRequest& request) const
@@ -2052,6 +3574,220 @@ void IoTClient::SetLoggingOptionsAsyncHelper(const SetLoggingOptionsRequest& req
   handler(this, request, SetLoggingOptions(request), context);
 }
 
+SetV2LoggingLevelOutcome IoTClient::SetV2LoggingLevel(const SetV2LoggingLevelRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v2LoggingLevel";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return SetV2LoggingLevelOutcome(NoResult());
+  }
+  else
+  {
+    return SetV2LoggingLevelOutcome(outcome.GetError());
+  }
+}
+
+SetV2LoggingLevelOutcomeCallable IoTClient::SetV2LoggingLevelCallable(const SetV2LoggingLevelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SetV2LoggingLevelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetV2LoggingLevel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::SetV2LoggingLevelAsync(const SetV2LoggingLevelRequest& request, const SetV2LoggingLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SetV2LoggingLevelAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::SetV2LoggingLevelAsyncHelper(const SetV2LoggingLevelRequest& request, const SetV2LoggingLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SetV2LoggingLevel(request), context);
+}
+
+SetV2LoggingOptionsOutcome IoTClient::SetV2LoggingOptions(const SetV2LoggingOptionsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v2LoggingOptions";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return SetV2LoggingOptionsOutcome(NoResult());
+  }
+  else
+  {
+    return SetV2LoggingOptionsOutcome(outcome.GetError());
+  }
+}
+
+SetV2LoggingOptionsOutcomeCallable IoTClient::SetV2LoggingOptionsCallable(const SetV2LoggingOptionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SetV2LoggingOptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetV2LoggingOptions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::SetV2LoggingOptionsAsync(const SetV2LoggingOptionsRequest& request, const SetV2LoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SetV2LoggingOptionsAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::SetV2LoggingOptionsAsyncHelper(const SetV2LoggingOptionsRequest& request, const SetV2LoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SetV2LoggingOptions(request), context);
+}
+
+StartThingRegistrationTaskOutcome IoTClient::StartThingRegistrationTask(const StartThingRegistrationTaskRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/thing-registration-tasks";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StartThingRegistrationTaskOutcome(StartThingRegistrationTaskResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartThingRegistrationTaskOutcome(outcome.GetError());
+  }
+}
+
+StartThingRegistrationTaskOutcomeCallable IoTClient::StartThingRegistrationTaskCallable(const StartThingRegistrationTaskRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartThingRegistrationTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartThingRegistrationTask(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::StartThingRegistrationTaskAsync(const StartThingRegistrationTaskRequest& request, const StartThingRegistrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartThingRegistrationTaskAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::StartThingRegistrationTaskAsyncHelper(const StartThingRegistrationTaskRequest& request, const StartThingRegistrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartThingRegistrationTask(request), context);
+}
+
+StopThingRegistrationTaskOutcome IoTClient::StopThingRegistrationTask(const StopThingRegistrationTaskRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/thing-registration-tasks/";
+  ss << request.GetTaskId();
+  ss << "/cancel";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StopThingRegistrationTaskOutcome(StopThingRegistrationTaskResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StopThingRegistrationTaskOutcome(outcome.GetError());
+  }
+}
+
+StopThingRegistrationTaskOutcomeCallable IoTClient::StopThingRegistrationTaskCallable(const StopThingRegistrationTaskRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopThingRegistrationTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopThingRegistrationTask(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::StopThingRegistrationTaskAsync(const StopThingRegistrationTaskRequest& request, const StopThingRegistrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopThingRegistrationTaskAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::StopThingRegistrationTaskAsyncHelper(const StopThingRegistrationTaskRequest& request, const StopThingRegistrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopThingRegistrationTask(request), context);
+}
+
+TestAuthorizationOutcome IoTClient::TestAuthorization(const TestAuthorizationRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/test-authorization";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return TestAuthorizationOutcome(TestAuthorizationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return TestAuthorizationOutcome(outcome.GetError());
+  }
+}
+
+TestAuthorizationOutcomeCallable IoTClient::TestAuthorizationCallable(const TestAuthorizationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TestAuthorizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TestAuthorization(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::TestAuthorizationAsync(const TestAuthorizationRequest& request, const TestAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TestAuthorizationAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::TestAuthorizationAsyncHelper(const TestAuthorizationRequest& request, const TestAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TestAuthorization(request), context);
+}
+
+TestInvokeAuthorizerOutcome IoTClient::TestInvokeAuthorizer(const TestInvokeAuthorizerRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/authorizer/";
+  ss << request.GetAuthorizerName();
+  ss << "/test";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return TestInvokeAuthorizerOutcome(TestInvokeAuthorizerResult(outcome.GetResult()));
+  }
+  else
+  {
+    return TestInvokeAuthorizerOutcome(outcome.GetError());
+  }
+}
+
+TestInvokeAuthorizerOutcomeCallable IoTClient::TestInvokeAuthorizerCallable(const TestInvokeAuthorizerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TestInvokeAuthorizerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TestInvokeAuthorizer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::TestInvokeAuthorizerAsync(const TestInvokeAuthorizerRequest& request, const TestInvokeAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TestInvokeAuthorizerAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::TestInvokeAuthorizerAsyncHelper(const TestInvokeAuthorizerRequest& request, const TestInvokeAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TestInvokeAuthorizer(request), context);
+}
+
 TransferCertificateOutcome IoTClient::TransferCertificate(const TransferCertificateRequest& request) const
 {
   Aws::StringStream ss;
@@ -2086,6 +3822,42 @@ void IoTClient::TransferCertificateAsync(const TransferCertificateRequest& reque
 void IoTClient::TransferCertificateAsyncHelper(const TransferCertificateRequest& request, const TransferCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, TransferCertificate(request), context);
+}
+
+UpdateAuthorizerOutcome IoTClient::UpdateAuthorizer(const UpdateAuthorizerRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/authorizer/";
+  ss << request.GetAuthorizerName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateAuthorizerOutcome(UpdateAuthorizerResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateAuthorizerOutcome(outcome.GetError());
+  }
+}
+
+UpdateAuthorizerOutcomeCallable IoTClient::UpdateAuthorizerCallable(const UpdateAuthorizerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAuthorizerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAuthorizer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::UpdateAuthorizerAsync(const UpdateAuthorizerRequest& request, const UpdateAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAuthorizerAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::UpdateAuthorizerAsyncHelper(const UpdateAuthorizerRequest& request, const UpdateAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateAuthorizer(request), context);
 }
 
 UpdateCACertificateOutcome IoTClient::UpdateCACertificate(const UpdateCACertificateRequest& request) const
@@ -2160,6 +3932,112 @@ void IoTClient::UpdateCertificateAsyncHelper(const UpdateCertificateRequest& req
   handler(this, request, UpdateCertificate(request), context);
 }
 
+UpdateEventConfigurationsOutcome IoTClient::UpdateEventConfigurations(const UpdateEventConfigurationsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/event-configurations";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateEventConfigurationsOutcome(UpdateEventConfigurationsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateEventConfigurationsOutcome(outcome.GetError());
+  }
+}
+
+UpdateEventConfigurationsOutcomeCallable IoTClient::UpdateEventConfigurationsCallable(const UpdateEventConfigurationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateEventConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateEventConfigurations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::UpdateEventConfigurationsAsync(const UpdateEventConfigurationsRequest& request, const UpdateEventConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateEventConfigurationsAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::UpdateEventConfigurationsAsyncHelper(const UpdateEventConfigurationsRequest& request, const UpdateEventConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateEventConfigurations(request), context);
+}
+
+UpdateIndexingConfigurationOutcome IoTClient::UpdateIndexingConfiguration(const UpdateIndexingConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/indexing/config";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateIndexingConfigurationOutcome(UpdateIndexingConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateIndexingConfigurationOutcome(outcome.GetError());
+  }
+}
+
+UpdateIndexingConfigurationOutcomeCallable IoTClient::UpdateIndexingConfigurationCallable(const UpdateIndexingConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateIndexingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateIndexingConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::UpdateIndexingConfigurationAsync(const UpdateIndexingConfigurationRequest& request, const UpdateIndexingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateIndexingConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::UpdateIndexingConfigurationAsyncHelper(const UpdateIndexingConfigurationRequest& request, const UpdateIndexingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateIndexingConfiguration(request), context);
+}
+
+UpdateRoleAliasOutcome IoTClient::UpdateRoleAlias(const UpdateRoleAliasRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/role-aliases/";
+  ss << request.GetRoleAlias();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateRoleAliasOutcome(UpdateRoleAliasResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateRoleAliasOutcome(outcome.GetError());
+  }
+}
+
+UpdateRoleAliasOutcomeCallable IoTClient::UpdateRoleAliasCallable(const UpdateRoleAliasRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateRoleAliasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRoleAlias(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::UpdateRoleAliasAsync(const UpdateRoleAliasRequest& request, const UpdateRoleAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateRoleAliasAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::UpdateRoleAliasAsyncHelper(const UpdateRoleAliasRequest& request, const UpdateRoleAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateRoleAlias(request), context);
+}
+
 UpdateThingOutcome IoTClient::UpdateThing(const UpdateThingRequest& request) const
 {
   Aws::StringStream ss;
@@ -2194,5 +4072,76 @@ void IoTClient::UpdateThingAsync(const UpdateThingRequest& request, const Update
 void IoTClient::UpdateThingAsyncHelper(const UpdateThingRequest& request, const UpdateThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateThing(request), context);
+}
+
+UpdateThingGroupOutcome IoTClient::UpdateThingGroup(const UpdateThingGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/thing-groups/";
+  ss << request.GetThingGroupName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateThingGroupOutcome(UpdateThingGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateThingGroupOutcome(outcome.GetError());
+  }
+}
+
+UpdateThingGroupOutcomeCallable IoTClient::UpdateThingGroupCallable(const UpdateThingGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateThingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateThingGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::UpdateThingGroupAsync(const UpdateThingGroupRequest& request, const UpdateThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateThingGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::UpdateThingGroupAsyncHelper(const UpdateThingGroupRequest& request, const UpdateThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateThingGroup(request), context);
+}
+
+UpdateThingGroupsForThingOutcome IoTClient::UpdateThingGroupsForThing(const UpdateThingGroupsForThingRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/thing-groups/updateThingGroupsForThing";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateThingGroupsForThingOutcome(UpdateThingGroupsForThingResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateThingGroupsForThingOutcome(outcome.GetError());
+  }
+}
+
+UpdateThingGroupsForThingOutcomeCallable IoTClient::UpdateThingGroupsForThingCallable(const UpdateThingGroupsForThingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateThingGroupsForThingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateThingGroupsForThing(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::UpdateThingGroupsForThingAsync(const UpdateThingGroupsForThingRequest& request, const UpdateThingGroupsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateThingGroupsForThingAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::UpdateThingGroupsForThingAsyncHelper(const UpdateThingGroupsForThingRequest& request, const UpdateThingGroupsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateThingGroupsForThing(request), context);
 }
 

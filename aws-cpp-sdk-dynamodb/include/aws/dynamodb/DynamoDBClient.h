@@ -23,18 +23,28 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/dynamodb/model/BatchGetItemResult.h>
 #include <aws/dynamodb/model/BatchWriteItemResult.h>
+#include <aws/dynamodb/model/CreateBackupResult.h>
+#include <aws/dynamodb/model/CreateGlobalTableResult.h>
 #include <aws/dynamodb/model/CreateTableResult.h>
+#include <aws/dynamodb/model/DeleteBackupResult.h>
 #include <aws/dynamodb/model/DeleteItemResult.h>
 #include <aws/dynamodb/model/DeleteTableResult.h>
+#include <aws/dynamodb/model/DescribeBackupResult.h>
+#include <aws/dynamodb/model/DescribeContinuousBackupsResult.h>
+#include <aws/dynamodb/model/DescribeGlobalTableResult.h>
 #include <aws/dynamodb/model/DescribeLimitsResult.h>
 #include <aws/dynamodb/model/DescribeTableResult.h>
 #include <aws/dynamodb/model/DescribeTimeToLiveResult.h>
 #include <aws/dynamodb/model/GetItemResult.h>
+#include <aws/dynamodb/model/ListBackupsResult.h>
+#include <aws/dynamodb/model/ListGlobalTablesResult.h>
 #include <aws/dynamodb/model/ListTablesResult.h>
 #include <aws/dynamodb/model/ListTagsOfResourceResult.h>
 #include <aws/dynamodb/model/PutItemResult.h>
 #include <aws/dynamodb/model/QueryResult.h>
+#include <aws/dynamodb/model/RestoreTableFromBackupResult.h>
 #include <aws/dynamodb/model/ScanResult.h>
+#include <aws/dynamodb/model/UpdateGlobalTableResult.h>
 #include <aws/dynamodb/model/UpdateItemResult.h>
 #include <aws/dynamodb/model/UpdateTableResult.h>
 #include <aws/dynamodb/model/UpdateTimeToLiveResult.h>
@@ -86,60 +96,90 @@ namespace Model
 {
         class BatchGetItemRequest;
         class BatchWriteItemRequest;
+        class CreateBackupRequest;
+        class CreateGlobalTableRequest;
         class CreateTableRequest;
+        class DeleteBackupRequest;
         class DeleteItemRequest;
         class DeleteTableRequest;
+        class DescribeBackupRequest;
+        class DescribeContinuousBackupsRequest;
+        class DescribeGlobalTableRequest;
         class DescribeLimitsRequest;
         class DescribeTableRequest;
         class DescribeTimeToLiveRequest;
         class GetItemRequest;
+        class ListBackupsRequest;
+        class ListGlobalTablesRequest;
         class ListTablesRequest;
         class ListTagsOfResourceRequest;
         class PutItemRequest;
         class QueryRequest;
+        class RestoreTableFromBackupRequest;
         class ScanRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
+        class UpdateGlobalTableRequest;
         class UpdateItemRequest;
         class UpdateTableRequest;
         class UpdateTimeToLiveRequest;
 
         typedef Aws::Utils::Outcome<BatchGetItemResult, Aws::Client::AWSError<DynamoDBErrors>> BatchGetItemOutcome;
         typedef Aws::Utils::Outcome<BatchWriteItemResult, Aws::Client::AWSError<DynamoDBErrors>> BatchWriteItemOutcome;
+        typedef Aws::Utils::Outcome<CreateBackupResult, Aws::Client::AWSError<DynamoDBErrors>> CreateBackupOutcome;
+        typedef Aws::Utils::Outcome<CreateGlobalTableResult, Aws::Client::AWSError<DynamoDBErrors>> CreateGlobalTableOutcome;
         typedef Aws::Utils::Outcome<CreateTableResult, Aws::Client::AWSError<DynamoDBErrors>> CreateTableOutcome;
+        typedef Aws::Utils::Outcome<DeleteBackupResult, Aws::Client::AWSError<DynamoDBErrors>> DeleteBackupOutcome;
         typedef Aws::Utils::Outcome<DeleteItemResult, Aws::Client::AWSError<DynamoDBErrors>> DeleteItemOutcome;
         typedef Aws::Utils::Outcome<DeleteTableResult, Aws::Client::AWSError<DynamoDBErrors>> DeleteTableOutcome;
+        typedef Aws::Utils::Outcome<DescribeBackupResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeBackupOutcome;
+        typedef Aws::Utils::Outcome<DescribeContinuousBackupsResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeContinuousBackupsOutcome;
+        typedef Aws::Utils::Outcome<DescribeGlobalTableResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeGlobalTableOutcome;
         typedef Aws::Utils::Outcome<DescribeLimitsResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeLimitsOutcome;
         typedef Aws::Utils::Outcome<DescribeTableResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeTableOutcome;
         typedef Aws::Utils::Outcome<DescribeTimeToLiveResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeTimeToLiveOutcome;
         typedef Aws::Utils::Outcome<GetItemResult, Aws::Client::AWSError<DynamoDBErrors>> GetItemOutcome;
+        typedef Aws::Utils::Outcome<ListBackupsResult, Aws::Client::AWSError<DynamoDBErrors>> ListBackupsOutcome;
+        typedef Aws::Utils::Outcome<ListGlobalTablesResult, Aws::Client::AWSError<DynamoDBErrors>> ListGlobalTablesOutcome;
         typedef Aws::Utils::Outcome<ListTablesResult, Aws::Client::AWSError<DynamoDBErrors>> ListTablesOutcome;
         typedef Aws::Utils::Outcome<ListTagsOfResourceResult, Aws::Client::AWSError<DynamoDBErrors>> ListTagsOfResourceOutcome;
         typedef Aws::Utils::Outcome<PutItemResult, Aws::Client::AWSError<DynamoDBErrors>> PutItemOutcome;
         typedef Aws::Utils::Outcome<QueryResult, Aws::Client::AWSError<DynamoDBErrors>> QueryOutcome;
+        typedef Aws::Utils::Outcome<RestoreTableFromBackupResult, Aws::Client::AWSError<DynamoDBErrors>> RestoreTableFromBackupOutcome;
         typedef Aws::Utils::Outcome<ScanResult, Aws::Client::AWSError<DynamoDBErrors>> ScanOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DynamoDBErrors>> TagResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DynamoDBErrors>> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateGlobalTableResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateGlobalTableOutcome;
         typedef Aws::Utils::Outcome<UpdateItemResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateItemOutcome;
         typedef Aws::Utils::Outcome<UpdateTableResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateTableOutcome;
         typedef Aws::Utils::Outcome<UpdateTimeToLiveResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateTimeToLiveOutcome;
 
         typedef std::future<BatchGetItemOutcome> BatchGetItemOutcomeCallable;
         typedef std::future<BatchWriteItemOutcome> BatchWriteItemOutcomeCallable;
+        typedef std::future<CreateBackupOutcome> CreateBackupOutcomeCallable;
+        typedef std::future<CreateGlobalTableOutcome> CreateGlobalTableOutcomeCallable;
         typedef std::future<CreateTableOutcome> CreateTableOutcomeCallable;
+        typedef std::future<DeleteBackupOutcome> DeleteBackupOutcomeCallable;
         typedef std::future<DeleteItemOutcome> DeleteItemOutcomeCallable;
         typedef std::future<DeleteTableOutcome> DeleteTableOutcomeCallable;
+        typedef std::future<DescribeBackupOutcome> DescribeBackupOutcomeCallable;
+        typedef std::future<DescribeContinuousBackupsOutcome> DescribeContinuousBackupsOutcomeCallable;
+        typedef std::future<DescribeGlobalTableOutcome> DescribeGlobalTableOutcomeCallable;
         typedef std::future<DescribeLimitsOutcome> DescribeLimitsOutcomeCallable;
         typedef std::future<DescribeTableOutcome> DescribeTableOutcomeCallable;
         typedef std::future<DescribeTimeToLiveOutcome> DescribeTimeToLiveOutcomeCallable;
         typedef std::future<GetItemOutcome> GetItemOutcomeCallable;
+        typedef std::future<ListBackupsOutcome> ListBackupsOutcomeCallable;
+        typedef std::future<ListGlobalTablesOutcome> ListGlobalTablesOutcomeCallable;
         typedef std::future<ListTablesOutcome> ListTablesOutcomeCallable;
         typedef std::future<ListTagsOfResourceOutcome> ListTagsOfResourceOutcomeCallable;
         typedef std::future<PutItemOutcome> PutItemOutcomeCallable;
         typedef std::future<QueryOutcome> QueryOutcomeCallable;
+        typedef std::future<RestoreTableFromBackupOutcome> RestoreTableFromBackupOutcomeCallable;
         typedef std::future<ScanOutcome> ScanOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+        typedef std::future<UpdateGlobalTableOutcome> UpdateGlobalTableOutcomeCallable;
         typedef std::future<UpdateItemOutcome> UpdateItemOutcomeCallable;
         typedef std::future<UpdateTableOutcome> UpdateTableOutcomeCallable;
         typedef std::future<UpdateTimeToLiveOutcome> UpdateTimeToLiveOutcomeCallable;
@@ -149,20 +189,30 @@ namespace Model
 
     typedef std::function<void(const DynamoDBClient*, const Model::BatchGetItemRequest&, const Model::BatchGetItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetItemResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::BatchWriteItemRequest&, const Model::BatchWriteItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchWriteItemResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::CreateBackupRequest&, const Model::CreateBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBackupResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::CreateGlobalTableRequest&, const Model::CreateGlobalTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGlobalTableResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::CreateTableRequest&, const Model::CreateTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTableResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::DeleteBackupRequest&, const Model::DeleteBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBackupResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DeleteItemRequest&, const Model::DeleteItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteItemResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DeleteTableRequest&, const Model::DeleteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTableResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::DescribeBackupRequest&, const Model::DescribeBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBackupResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::DescribeContinuousBackupsRequest&, const Model::DescribeContinuousBackupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContinuousBackupsResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::DescribeGlobalTableRequest&, const Model::DescribeGlobalTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGlobalTableResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeLimitsRequest&, const Model::DescribeLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLimitsResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeTableRequest&, const Model::DescribeTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTableResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeTimeToLiveRequest&, const Model::DescribeTimeToLiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTimeToLiveResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::GetItemRequest&, const Model::GetItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetItemResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::ListBackupsRequest&, const Model::ListBackupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBackupsResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::ListGlobalTablesRequest&, const Model::ListGlobalTablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGlobalTablesResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::ListTablesRequest&, const Model::ListTablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTablesResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::ListTagsOfResourceRequest&, const Model::ListTagsOfResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsOfResourceResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::PutItemRequest&, const Model::PutItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutItemResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::QueryRequest&, const Model::QueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > QueryResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::RestoreTableFromBackupRequest&, const Model::RestoreTableFromBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreTableFromBackupResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::ScanRequest&, const Model::ScanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ScanResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::UpdateGlobalTableRequest&, const Model::UpdateGlobalTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGlobalTableResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::UpdateItemRequest&, const Model::UpdateItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateItemResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::UpdateTableRequest&, const Model::UpdateTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTableResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::UpdateTimeToLiveRequest&, const Model::UpdateTimeToLiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTimeToLiveResponseReceivedHandler;
@@ -562,6 +612,134 @@ namespace Model
         virtual void BatchWriteItemAsync(const Model::BatchWriteItemRequest& request, const BatchWriteItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a backup for an existing table.</p> <p> Each time you create an
+         * On-Demand Backup, the entire table data is backed up. There is no limit to the
+         * number of on-demand backups that can be taken. </p> <p>You can call
+         * <code>CreateBackup</code> at a maximum rate of 50 times per second.</p> <p>All
+         * backups in DynamoDB work without consuming any provisioned throughput on the
+         * table. This results in a fast, low-cost, and scalable backup process. In
+         * general, the larger the table, the more time it takes to back up. The backup is
+         * stored in an S3 data store that is maintained and managed by DynamoDB.</p>
+         * <p>Backups incorporate all writes (delete, put, update) that were completed
+         * within the last minute before the backup request was initiated. Backups might
+         * include some writes (delete, put, update) that were completed before the backup
+         * request was finished.</p> <p> For example, if you submit the backup request on
+         * 2018-12-14 at 14:25:00, the backup is guaranteed to contain all data committed
+         * to the table up to 14:24:00, and data committed after 14:26:00 will not be. The
+         * backup may or may not contain data modifications made between 14:24:00 and
+         * 14:26:00. On-Demand Backup does not support causal consistency. </p> <p> Along
+         * with data, the following are also included on the backups: </p> <ul> <li>
+         * <p>Global secondary indexes (GSIs)</p> </li> <li> <p>Local secondary indexes
+         * (LSIs)</p> </li> <li> <p>Streams</p> </li> <li> <p>Provisioned read and write
+         * capacity</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateBackup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateBackupOutcome CreateBackup(const Model::CreateBackupRequest& request) const;
+
+        /**
+         * <p>Creates a backup for an existing table.</p> <p> Each time you create an
+         * On-Demand Backup, the entire table data is backed up. There is no limit to the
+         * number of on-demand backups that can be taken. </p> <p>You can call
+         * <code>CreateBackup</code> at a maximum rate of 50 times per second.</p> <p>All
+         * backups in DynamoDB work without consuming any provisioned throughput on the
+         * table. This results in a fast, low-cost, and scalable backup process. In
+         * general, the larger the table, the more time it takes to back up. The backup is
+         * stored in an S3 data store that is maintained and managed by DynamoDB.</p>
+         * <p>Backups incorporate all writes (delete, put, update) that were completed
+         * within the last minute before the backup request was initiated. Backups might
+         * include some writes (delete, put, update) that were completed before the backup
+         * request was finished.</p> <p> For example, if you submit the backup request on
+         * 2018-12-14 at 14:25:00, the backup is guaranteed to contain all data committed
+         * to the table up to 14:24:00, and data committed after 14:26:00 will not be. The
+         * backup may or may not contain data modifications made between 14:24:00 and
+         * 14:26:00. On-Demand Backup does not support causal consistency. </p> <p> Along
+         * with data, the following are also included on the backups: </p> <ul> <li>
+         * <p>Global secondary indexes (GSIs)</p> </li> <li> <p>Local secondary indexes
+         * (LSIs)</p> </li> <li> <p>Streams</p> </li> <li> <p>Provisioned read and write
+         * capacity</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateBackup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateBackupOutcomeCallable CreateBackupCallable(const Model::CreateBackupRequest& request) const;
+
+        /**
+         * <p>Creates a backup for an existing table.</p> <p> Each time you create an
+         * On-Demand Backup, the entire table data is backed up. There is no limit to the
+         * number of on-demand backups that can be taken. </p> <p>You can call
+         * <code>CreateBackup</code> at a maximum rate of 50 times per second.</p> <p>All
+         * backups in DynamoDB work without consuming any provisioned throughput on the
+         * table. This results in a fast, low-cost, and scalable backup process. In
+         * general, the larger the table, the more time it takes to back up. The backup is
+         * stored in an S3 data store that is maintained and managed by DynamoDB.</p>
+         * <p>Backups incorporate all writes (delete, put, update) that were completed
+         * within the last minute before the backup request was initiated. Backups might
+         * include some writes (delete, put, update) that were completed before the backup
+         * request was finished.</p> <p> For example, if you submit the backup request on
+         * 2018-12-14 at 14:25:00, the backup is guaranteed to contain all data committed
+         * to the table up to 14:24:00, and data committed after 14:26:00 will not be. The
+         * backup may or may not contain data modifications made between 14:24:00 and
+         * 14:26:00. On-Demand Backup does not support causal consistency. </p> <p> Along
+         * with data, the following are also included on the backups: </p> <ul> <li>
+         * <p>Global secondary indexes (GSIs)</p> </li> <li> <p>Local secondary indexes
+         * (LSIs)</p> </li> <li> <p>Streams</p> </li> <li> <p>Provisioned read and write
+         * capacity</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateBackup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateBackupAsync(const Model::CreateBackupRequest& request, const CreateBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a global table from an existing table. A global table creates a
+         * replication relationship between two or more DynamoDB tables with the same table
+         * name in the provided regions. </p> <p> Tables can only be added as the replicas
+         * of a global table group under the following conditions: </p> <ul> <li> <p> The
+         * tables must have the same name. </p> </li> <li> <p> The tables must contain no
+         * items. </p> </li> <li> <p> The tables must have the same hash key and sort key
+         * (if present). </p> </li> <li> <p> The tables must have DynamoDB Streams enabled
+         * (NEW_AND_OLD_IMAGES). </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateGlobalTableOutcome CreateGlobalTable(const Model::CreateGlobalTableRequest& request) const;
+
+        /**
+         * <p>Creates a global table from an existing table. A global table creates a
+         * replication relationship between two or more DynamoDB tables with the same table
+         * name in the provided regions. </p> <p> Tables can only be added as the replicas
+         * of a global table group under the following conditions: </p> <ul> <li> <p> The
+         * tables must have the same name. </p> </li> <li> <p> The tables must contain no
+         * items. </p> </li> <li> <p> The tables must have the same hash key and sort key
+         * (if present). </p> </li> <li> <p> The tables must have DynamoDB Streams enabled
+         * (NEW_AND_OLD_IMAGES). </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateGlobalTableOutcomeCallable CreateGlobalTableCallable(const Model::CreateGlobalTableRequest& request) const;
+
+        /**
+         * <p>Creates a global table from an existing table. A global table creates a
+         * replication relationship between two or more DynamoDB tables with the same table
+         * name in the provided regions. </p> <p> Tables can only be added as the replicas
+         * of a global table group under the following conditions: </p> <ul> <li> <p> The
+         * tables must have the same name. </p> </li> <li> <p> The tables must contain no
+         * items. </p> </li> <li> <p> The tables must have the same hash key and sort key
+         * (if present). </p> </li> <li> <p> The tables must have DynamoDB Streams enabled
+         * (NEW_AND_OLD_IMAGES). </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateGlobalTableAsync(const Model::CreateGlobalTableRequest& request, const CreateGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>The <code>CreateTable</code> operation adds a new table to your account. In
          * an AWS account, table names must be unique within each region. That is, you can
          * have two tables with same name if you create the tables in different
@@ -627,6 +805,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateTableAsync(const Model::CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an existing backup of a table.</p> <p>You can call
+         * <code>DeleteBackup</code> at a maximum rate of 10 times per
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteBackup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteBackupOutcome DeleteBackup(const Model::DeleteBackupRequest& request) const;
+
+        /**
+         * <p>Deletes an existing backup of a table.</p> <p>You can call
+         * <code>DeleteBackup</code> at a maximum rate of 10 times per
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteBackup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteBackupOutcomeCallable DeleteBackupCallable(const Model::DeleteBackupRequest& request) const;
+
+        /**
+         * <p>Deletes an existing backup of a table.</p> <p>You can call
+         * <code>DeleteBackup</code> at a maximum rate of 10 times per
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteBackup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteBackupAsync(const Model::DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a single item in a table by primary key. You can perform a
@@ -752,6 +961,96 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteTableAsync(const Model::DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes an existing backup of a table.</p> <p>You can call
+         * <code>DescribeBackup</code> at a maximum rate of 10 times per
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeBackup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeBackupOutcome DescribeBackup(const Model::DescribeBackupRequest& request) const;
+
+        /**
+         * <p>Describes an existing backup of a table.</p> <p>You can call
+         * <code>DescribeBackup</code> at a maximum rate of 10 times per
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeBackup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeBackupOutcomeCallable DescribeBackupCallable(const Model::DescribeBackupRequest& request) const;
+
+        /**
+         * <p>Describes an existing backup of a table.</p> <p>You can call
+         * <code>DescribeBackup</code> at a maximum rate of 10 times per
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeBackup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeBackupAsync(const Model::DescribeBackupRequest& request, const DescribeBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Checks the status of the backup restore settings on the specified table. If
+         * backups are enabled, <code>ContinuousBackupsStatus</code> will bet set to
+         * ENABLED.</p> <p>You can call <code>DescribeContinuousBackups</code> at a maximum
+         * rate of 10 times per second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContinuousBackups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeContinuousBackupsOutcome DescribeContinuousBackups(const Model::DescribeContinuousBackupsRequest& request) const;
+
+        /**
+         * <p>Checks the status of the backup restore settings on the specified table. If
+         * backups are enabled, <code>ContinuousBackupsStatus</code> will bet set to
+         * ENABLED.</p> <p>You can call <code>DescribeContinuousBackups</code> at a maximum
+         * rate of 10 times per second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContinuousBackups">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeContinuousBackupsOutcomeCallable DescribeContinuousBackupsCallable(const Model::DescribeContinuousBackupsRequest& request) const;
+
+        /**
+         * <p>Checks the status of the backup restore settings on the specified table. If
+         * backups are enabled, <code>ContinuousBackupsStatus</code> will bet set to
+         * ENABLED.</p> <p>You can call <code>DescribeContinuousBackups</code> at a maximum
+         * rate of 10 times per second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContinuousBackups">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeContinuousBackupsAsync(const Model::DescribeContinuousBackupsRequest& request, const DescribeContinuousBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about the global table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTable">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeGlobalTableOutcome DescribeGlobalTable(const Model::DescribeGlobalTableRequest& request) const;
+
+        /**
+         * <p>Returns information about the global table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTable">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeGlobalTableOutcomeCallable DescribeGlobalTableCallable(const Model::DescribeGlobalTableRequest& request) const;
+
+        /**
+         * <p>Returns information about the global table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTable">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeGlobalTableAsync(const Model::DescribeGlobalTableRequest& request, const DescribeGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the current provisioned-capacity limits for your AWS account in a
@@ -1020,6 +1319,80 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetItemAsync(const Model::GetItemRequest& request, const GetItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>List backups associated with an AWS account. To list backups for a given
+         * table, specify <code>TableName</code>. <code>ListBackups</code> returns a
+         * paginated list of results with at most 1MB worth of items in a page. You can
+         * also specify a limit for the maximum number of entries to be returned in a page.
+         * </p> <p>In the request, start time is inclusive but end time is exclusive. Note
+         * that these limits are for the time at which the original backup was
+         * requested.</p> <p>You can call <code>ListBackups</code> a maximum of 5 times per
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBackups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListBackupsOutcome ListBackups(const Model::ListBackupsRequest& request) const;
+
+        /**
+         * <p>List backups associated with an AWS account. To list backups for a given
+         * table, specify <code>TableName</code>. <code>ListBackups</code> returns a
+         * paginated list of results with at most 1MB worth of items in a page. You can
+         * also specify a limit for the maximum number of entries to be returned in a page.
+         * </p> <p>In the request, start time is inclusive but end time is exclusive. Note
+         * that these limits are for the time at which the original backup was
+         * requested.</p> <p>You can call <code>ListBackups</code> a maximum of 5 times per
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBackups">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListBackupsOutcomeCallable ListBackupsCallable(const Model::ListBackupsRequest& request) const;
+
+        /**
+         * <p>List backups associated with an AWS account. To list backups for a given
+         * table, specify <code>TableName</code>. <code>ListBackups</code> returns a
+         * paginated list of results with at most 1MB worth of items in a page. You can
+         * also specify a limit for the maximum number of entries to be returned in a page.
+         * </p> <p>In the request, start time is inclusive but end time is exclusive. Note
+         * that these limits are for the time at which the original backup was
+         * requested.</p> <p>You can call <code>ListBackups</code> a maximum of 5 times per
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBackups">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListBackupsAsync(const Model::ListBackupsRequest& request, const ListBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists all the global tables. Only those global tables that have replicas in
+         * the region specified as input are returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListGlobalTables">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListGlobalTablesOutcome ListGlobalTables(const Model::ListGlobalTablesRequest& request) const;
+
+        /**
+         * <p>Lists all the global tables. Only those global tables that have replicas in
+         * the region specified as input are returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListGlobalTables">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListGlobalTablesOutcomeCallable ListGlobalTablesCallable(const Model::ListGlobalTablesRequest& request) const;
+
+        /**
+         * <p>Lists all the global tables. Only those global tables that have replicas in
+         * the region specified as input are returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListGlobalTables">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListGlobalTablesAsync(const Model::ListGlobalTablesRequest& request, const ListGlobalTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an array of table names associated with the current account and
@@ -1392,6 +1765,49 @@ namespace Model
         virtual void QueryAsync(const Model::QueryRequest& request, const QueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a new table from an existing backup. Any number of users can execute
+         * up to 10 concurrent restores in a given account. </p> <p>You can call
+         * <code>RestoreTableFromBackup</code> at a maximum rate of 10 times per
+         * second.</p> <p>You must manually set up the following on the restored table:</p>
+         * <ul> <li> <p>Auto scaling policies</p> </li> <li> <p>IAM policies</p> </li> <li>
+         * <p>Cloudwatch metrics and alarms</p> </li> <li> <p>Tags</p> </li> <li> <p>Time
+         * to Live (TTL) settings</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableFromBackup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RestoreTableFromBackupOutcome RestoreTableFromBackup(const Model::RestoreTableFromBackupRequest& request) const;
+
+        /**
+         * <p>Creates a new table from an existing backup. Any number of users can execute
+         * up to 10 concurrent restores in a given account. </p> <p>You can call
+         * <code>RestoreTableFromBackup</code> at a maximum rate of 10 times per
+         * second.</p> <p>You must manually set up the following on the restored table:</p>
+         * <ul> <li> <p>Auto scaling policies</p> </li> <li> <p>IAM policies</p> </li> <li>
+         * <p>Cloudwatch metrics and alarms</p> </li> <li> <p>Tags</p> </li> <li> <p>Time
+         * to Live (TTL) settings</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableFromBackup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RestoreTableFromBackupOutcomeCallable RestoreTableFromBackupCallable(const Model::RestoreTableFromBackupRequest& request) const;
+
+        /**
+         * <p>Creates a new table from an existing backup. Any number of users can execute
+         * up to 10 concurrent restores in a given account. </p> <p>You can call
+         * <code>RestoreTableFromBackup</code> at a maximum rate of 10 times per
+         * second.</p> <p>You must manually set up the following on the restored table:</p>
+         * <ul> <li> <p>Auto scaling policies</p> </li> <li> <p>IAM policies</p> </li> <li>
+         * <p>Cloudwatch metrics and alarms</p> </li> <li> <p>Tags</p> </li> <li> <p>Time
+         * to Live (TTL) settings</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableFromBackup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RestoreTableFromBackupAsync(const Model::RestoreTableFromBackupRequest& request, const RestoreTableFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>The <code>Scan</code> operation returns one or more items and item attributes
          * by accessing every item in a table or a secondary index. To have DynamoDB return
          * fewer items, you can provide a <code>FilterExpression</code> operation.</p>
@@ -1579,6 +1995,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds or removes replicas to the specified global table. The global table
+         * should already exist to be able to use this operation. Currently, the replica to
+         * be added should be empty. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTable">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateGlobalTableOutcome UpdateGlobalTable(const Model::UpdateGlobalTableRequest& request) const;
+
+        /**
+         * <p>Adds or removes replicas to the specified global table. The global table
+         * should already exist to be able to use this operation. Currently, the replica to
+         * be added should be empty. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTable">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateGlobalTableOutcomeCallable UpdateGlobalTableCallable(const Model::UpdateGlobalTableRequest& request) const;
+
+        /**
+         * <p>Adds or removes replicas to the specified global table. The global table
+         * should already exist to be able to use this operation. Currently, the replica to
+         * be added should be empty. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTable">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateGlobalTableAsync(const Model::UpdateGlobalTableRequest& request, const UpdateGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Edits an existing item's attributes, or adds a new item to the table if it
@@ -1779,20 +2226,30 @@ namespace Model
         /**Async helpers**/
         void BatchGetItemAsyncHelper(const Model::BatchGetItemRequest& request, const BatchGetItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchWriteItemAsyncHelper(const Model::BatchWriteItemRequest& request, const BatchWriteItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateBackupAsyncHelper(const Model::CreateBackupRequest& request, const CreateBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateGlobalTableAsyncHelper(const Model::CreateGlobalTableRequest& request, const CreateGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTableAsyncHelper(const Model::CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteBackupAsyncHelper(const Model::DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteItemAsyncHelper(const Model::DeleteItemRequest& request, const DeleteItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTableAsyncHelper(const Model::DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeBackupAsyncHelper(const Model::DescribeBackupRequest& request, const DescribeBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeContinuousBackupsAsyncHelper(const Model::DescribeContinuousBackupsRequest& request, const DescribeContinuousBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeGlobalTableAsyncHelper(const Model::DescribeGlobalTableRequest& request, const DescribeGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLimitsAsyncHelper(const Model::DescribeLimitsRequest& request, const DescribeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTableAsyncHelper(const Model::DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTimeToLiveAsyncHelper(const Model::DescribeTimeToLiveRequest& request, const DescribeTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetItemAsyncHelper(const Model::GetItemRequest& request, const GetItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListBackupsAsyncHelper(const Model::ListBackupsRequest& request, const ListBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListGlobalTablesAsyncHelper(const Model::ListGlobalTablesRequest& request, const ListGlobalTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTablesAsyncHelper(const Model::ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsOfResourceAsyncHelper(const Model::ListTagsOfResourceRequest& request, const ListTagsOfResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutItemAsyncHelper(const Model::PutItemRequest& request, const PutItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void QueryAsyncHelper(const Model::QueryRequest& request, const QueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RestoreTableFromBackupAsyncHelper(const Model::RestoreTableFromBackupRequest& request, const RestoreTableFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ScanAsyncHelper(const Model::ScanRequest& request, const ScanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateGlobalTableAsyncHelper(const Model::UpdateGlobalTableRequest& request, const UpdateGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateItemAsyncHelper(const Model::UpdateItemRequest& request, const UpdateItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTableAsyncHelper(const Model::UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTimeToLiveAsyncHelper(const Model::UpdateTimeToLiveRequest& request, const UpdateTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

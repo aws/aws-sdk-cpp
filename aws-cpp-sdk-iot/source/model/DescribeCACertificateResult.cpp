@@ -44,6 +44,12 @@ DescribeCACertificateResult& DescribeCACertificateResult::operator =(const Aws::
 
   }
 
+  if(jsonValue.ValueExists("registrationConfig"))
+  {
+    m_registrationConfig = jsonValue.GetObject("registrationConfig");
+
+  }
+
 
 
   return *this;

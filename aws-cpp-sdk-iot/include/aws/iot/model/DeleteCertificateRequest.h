@@ -21,6 +21,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace IoT
 {
 namespace Model
@@ -43,6 +47,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "DeleteCertificate"; }
 
     Aws::String SerializePayload() const override;
+
+    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -80,10 +86,29 @@ namespace Model
      */
     inline DeleteCertificateRequest& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
 
+
+    /**
+     * <p>Forces a certificate request to be deleted.</p>
+     */
+    inline bool GetForceDelete() const{ return m_forceDelete; }
+
+    /**
+     * <p>Forces a certificate request to be deleted.</p>
+     */
+    inline void SetForceDelete(bool value) { m_forceDeleteHasBeenSet = true; m_forceDelete = value; }
+
+    /**
+     * <p>Forces a certificate request to be deleted.</p>
+     */
+    inline DeleteCertificateRequest& WithForceDelete(bool value) { SetForceDelete(value); return *this;}
+
   private:
 
     Aws::String m_certificateId;
     bool m_certificateIdHasBeenSet;
+
+    bool m_forceDelete;
+    bool m_forceDeleteHasBeenSet;
   };
 
 } // namespace Model

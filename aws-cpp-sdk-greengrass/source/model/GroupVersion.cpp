@@ -33,6 +33,7 @@ GroupVersion::GroupVersion() :
     m_deviceDefinitionVersionArnHasBeenSet(false),
     m_functionDefinitionVersionArnHasBeenSet(false),
     m_loggerDefinitionVersionArnHasBeenSet(false),
+    m_resourceDefinitionVersionArnHasBeenSet(false),
     m_subscriptionDefinitionVersionArnHasBeenSet(false)
 {
 }
@@ -42,6 +43,7 @@ GroupVersion::GroupVersion(const JsonValue& jsonValue) :
     m_deviceDefinitionVersionArnHasBeenSet(false),
     m_functionDefinitionVersionArnHasBeenSet(false),
     m_loggerDefinitionVersionArnHasBeenSet(false),
+    m_resourceDefinitionVersionArnHasBeenSet(false),
     m_subscriptionDefinitionVersionArnHasBeenSet(false)
 {
   *this = jsonValue;
@@ -75,6 +77,13 @@ GroupVersion& GroupVersion::operator =(const JsonValue& jsonValue)
     m_loggerDefinitionVersionArn = jsonValue.GetString("LoggerDefinitionVersionArn");
 
     m_loggerDefinitionVersionArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ResourceDefinitionVersionArn"))
+  {
+    m_resourceDefinitionVersionArn = jsonValue.GetString("ResourceDefinitionVersionArn");
+
+    m_resourceDefinitionVersionArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SubscriptionDefinitionVersionArn"))
@@ -112,6 +121,12 @@ JsonValue GroupVersion::Jsonize() const
   if(m_loggerDefinitionVersionArnHasBeenSet)
   {
    payload.WithString("LoggerDefinitionVersionArn", m_loggerDefinitionVersionArn);
+
+  }
+
+  if(m_resourceDefinitionVersionArnHasBeenSet)
+  {
+   payload.WithString("ResourceDefinitionVersionArn", m_resourceDefinitionVersionArn);
 
   }
 

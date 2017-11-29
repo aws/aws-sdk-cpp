@@ -29,6 +29,8 @@ namespace IoTErrorMapper
 {
 
 static const int TRANSFER_ALREADY_COMPLETED_HASH = HashingUtils::HashString("TransferAlreadyCompletedException");
+static const int NOT_CONFIGURED_HASH = HashingUtils::HashString("NotConfiguredException");
+static const int CONFLICTING_RESOURCE_UPDATE_HASH = HashingUtils::HashString("ConflictingResourceUpdateException");
 static const int SQL_PARSE_HASH = HashingUtils::HashString("SqlParseException");
 static const int VERSION_CONFLICT_HASH = HashingUtils::HashString("VersionConflictException");
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
@@ -38,12 +40,16 @@ static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
 static const int MALFORMED_POLICY_HASH = HashingUtils::HashString("MalformedPolicyException");
 static const int VERSIONS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("VersionsLimitExceededException");
 static const int TRANSFER_CONFLICT_HASH = HashingUtils::HashString("TransferConflictException");
+static const int INDEX_NOT_READY_HASH = HashingUtils::HashString("IndexNotReadyException");
 static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
+static const int RESOURCE_REGISTRATION_FAILURE_HASH = HashingUtils::HashString("ResourceRegistrationFailureException");
 static const int DELETE_CONFLICT_HASH = HashingUtils::HashString("DeleteConflictException");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int CERTIFICATE_STATE_HASH = HashingUtils::HashString("CertificateStateException");
+static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 static const int CERTIFICATE_VALIDATION_HASH = HashingUtils::HashString("CertificateValidationException");
+static const int INVALID_RESPONSE_HASH = HashingUtils::HashString("InvalidResponseException");
+static const int INVALID_QUERY_HASH = HashingUtils::HashString("InvalidQueryException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -53,6 +59,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == TRANSFER_ALREADY_COMPLETED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::TRANSFER_ALREADY_COMPLETED), false);
+  }
+  else if (hashCode == NOT_CONFIGURED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::NOT_CONFIGURED), false);
+  }
+  else if (hashCode == CONFLICTING_RESOURCE_UPDATE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::CONFLICTING_RESOURCE_UPDATE), false);
   }
   else if (hashCode == SQL_PARSE_HASH)
   {
@@ -90,17 +104,21 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::TRANSFER_CONFLICT), false);
   }
+  else if (hashCode == INDEX_NOT_READY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::INDEX_NOT_READY), false);
+  }
   else if (hashCode == UNAUTHORIZED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::UNAUTHORIZED), false);
   }
+  else if (hashCode == RESOURCE_REGISTRATION_FAILURE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::RESOURCE_REGISTRATION_FAILURE), false);
+  }
   else if (hashCode == DELETE_CONFLICT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::DELETE_CONFLICT), false);
-  }
-  else if (hashCode == INVALID_REQUEST_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::INVALID_REQUEST), false);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
@@ -110,9 +128,21 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::CERTIFICATE_STATE), false);
   }
+  else if (hashCode == INVALID_REQUEST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::INVALID_REQUEST), false);
+  }
   else if (hashCode == CERTIFICATE_VALIDATION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::CERTIFICATE_VALIDATION), false);
+  }
+  else if (hashCode == INVALID_RESPONSE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::INVALID_RESPONSE), false);
+  }
+  else if (hashCode == INVALID_QUERY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::INVALID_QUERY), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

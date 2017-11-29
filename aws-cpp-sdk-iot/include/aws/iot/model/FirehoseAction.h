@@ -48,37 +48,37 @@ namespace Model
 
 
     /**
-     * <p>The IAM role that grants access to the Amazon Kinesis Firehost stream.</p>
+     * <p>The IAM role that grants access to the Amazon Kinesis Firehose stream.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The IAM role that grants access to the Amazon Kinesis Firehost stream.</p>
+     * <p>The IAM role that grants access to the Amazon Kinesis Firehose stream.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The IAM role that grants access to the Amazon Kinesis Firehost stream.</p>
+     * <p>The IAM role that grants access to the Amazon Kinesis Firehose stream.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The IAM role that grants access to the Amazon Kinesis Firehost stream.</p>
+     * <p>The IAM role that grants access to the Amazon Kinesis Firehose stream.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The IAM role that grants access to the Amazon Kinesis Firehost stream.</p>
+     * <p>The IAM role that grants access to the Amazon Kinesis Firehose stream.</p>
      */
     inline FirehoseAction& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The IAM role that grants access to the Amazon Kinesis Firehost stream.</p>
+     * <p>The IAM role that grants access to the Amazon Kinesis Firehose stream.</p>
      */
     inline FirehoseAction& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM role that grants access to the Amazon Kinesis Firehost stream.</p>
+     * <p>The IAM role that grants access to the Amazon Kinesis Firehose stream.</p>
      */
     inline FirehoseAction& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

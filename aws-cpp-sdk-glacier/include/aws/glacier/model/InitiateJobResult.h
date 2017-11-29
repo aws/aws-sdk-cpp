@@ -119,11 +119,49 @@ namespace Model
      */
     inline InitiateJobResult& WithJobId(const char* value) { SetJobId(value); return *this;}
 
+
+    /**
+     * <p>The path to the location of where the select results are stored.</p>
+     */
+    inline const Aws::String& GetJobOutputPath() const{ return m_jobOutputPath; }
+
+    /**
+     * <p>The path to the location of where the select results are stored.</p>
+     */
+    inline void SetJobOutputPath(const Aws::String& value) { m_jobOutputPath = value; }
+
+    /**
+     * <p>The path to the location of where the select results are stored.</p>
+     */
+    inline void SetJobOutputPath(Aws::String&& value) { m_jobOutputPath = std::move(value); }
+
+    /**
+     * <p>The path to the location of where the select results are stored.</p>
+     */
+    inline void SetJobOutputPath(const char* value) { m_jobOutputPath.assign(value); }
+
+    /**
+     * <p>The path to the location of where the select results are stored.</p>
+     */
+    inline InitiateJobResult& WithJobOutputPath(const Aws::String& value) { SetJobOutputPath(value); return *this;}
+
+    /**
+     * <p>The path to the location of where the select results are stored.</p>
+     */
+    inline InitiateJobResult& WithJobOutputPath(Aws::String&& value) { SetJobOutputPath(std::move(value)); return *this;}
+
+    /**
+     * <p>The path to the location of where the select results are stored.</p>
+     */
+    inline InitiateJobResult& WithJobOutputPath(const char* value) { SetJobOutputPath(value); return *this;}
+
   private:
 
     Aws::String m_location;
 
     Aws::String m_jobId;
+
+    Aws::String m_jobOutputPath;
   };
 
 } // namespace Model

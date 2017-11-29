@@ -86,37 +86,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task.</p>
+     * <p>The ARN of the task.</p>
      */
     inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task.</p>
+     * <p>The ARN of the task.</p>
      */
     inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task.</p>
+     * <p>The ARN of the task.</p>
      */
     inline void SetTaskArn(Aws::String&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task.</p>
+     * <p>The ARN of the task.</p>
      */
     inline void SetTaskArn(const char* value) { m_taskArnHasBeenSet = true; m_taskArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task.</p>
+     * <p>The ARN of the task.</p>
      */
     inline Container& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task.</p>
+     * <p>The ARN of the task.</p>
      */
     inline Container& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task.</p>
+     * <p>The ARN of the task.</p>
      */
     inline Container& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
 

@@ -123,50 +123,50 @@ namespace Model
 
     /**
      * <p>The explicit permissions to provide to the container for the device. By
-     * default, the container will be able to <code>read</code>, <code>write</code>,
-     * and <code>mknod</code> the device.</p>
+     * default, the container has permissions for <code>read</code>,
+     * <code>write</code>, and <code>mknod</code> for the device.</p>
      */
     inline const Aws::Vector<DeviceCgroupPermission>& GetPermissions() const{ return m_permissions; }
 
     /**
      * <p>The explicit permissions to provide to the container for the device. By
-     * default, the container will be able to <code>read</code>, <code>write</code>,
-     * and <code>mknod</code> the device.</p>
+     * default, the container has permissions for <code>read</code>,
+     * <code>write</code>, and <code>mknod</code> for the device.</p>
      */
     inline void SetPermissions(const Aws::Vector<DeviceCgroupPermission>& value) { m_permissionsHasBeenSet = true; m_permissions = value; }
 
     /**
      * <p>The explicit permissions to provide to the container for the device. By
-     * default, the container will be able to <code>read</code>, <code>write</code>,
-     * and <code>mknod</code> the device.</p>
+     * default, the container has permissions for <code>read</code>,
+     * <code>write</code>, and <code>mknod</code> for the device.</p>
      */
     inline void SetPermissions(Aws::Vector<DeviceCgroupPermission>&& value) { m_permissionsHasBeenSet = true; m_permissions = std::move(value); }
 
     /**
      * <p>The explicit permissions to provide to the container for the device. By
-     * default, the container will be able to <code>read</code>, <code>write</code>,
-     * and <code>mknod</code> the device.</p>
+     * default, the container has permissions for <code>read</code>,
+     * <code>write</code>, and <code>mknod</code> for the device.</p>
      */
     inline Device& WithPermissions(const Aws::Vector<DeviceCgroupPermission>& value) { SetPermissions(value); return *this;}
 
     /**
      * <p>The explicit permissions to provide to the container for the device. By
-     * default, the container will be able to <code>read</code>, <code>write</code>,
-     * and <code>mknod</code> the device.</p>
+     * default, the container has permissions for <code>read</code>,
+     * <code>write</code>, and <code>mknod</code> for the device.</p>
      */
     inline Device& WithPermissions(Aws::Vector<DeviceCgroupPermission>&& value) { SetPermissions(std::move(value)); return *this;}
 
     /**
      * <p>The explicit permissions to provide to the container for the device. By
-     * default, the container will be able to <code>read</code>, <code>write</code>,
-     * and <code>mknod</code> the device.</p>
+     * default, the container has permissions for <code>read</code>,
+     * <code>write</code>, and <code>mknod</code> for the device.</p>
      */
     inline Device& AddPermissions(const DeviceCgroupPermission& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(value); return *this; }
 
     /**
      * <p>The explicit permissions to provide to the container for the device. By
-     * default, the container will be able to <code>read</code>, <code>write</code>,
-     * and <code>mknod</code> the device.</p>
+     * default, the container has permissions for <code>read</code>,
+     * <code>write</code>, and <code>mknod</code> for the device.</p>
      */
     inline Device& AddPermissions(DeviceCgroupPermission&& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(std::move(value)); return *this; }
 

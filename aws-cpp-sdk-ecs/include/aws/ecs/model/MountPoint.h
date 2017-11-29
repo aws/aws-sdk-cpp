@@ -48,37 +48,44 @@ namespace Model
 
 
     /**
-     * <p>The name of the volume to mount.</p>
+     * <p>The name of the volume to mount. If using the Fargate launch type, the
+     * <code>sourceVolume</code> parameter is not supported.</p>
      */
     inline const Aws::String& GetSourceVolume() const{ return m_sourceVolume; }
 
     /**
-     * <p>The name of the volume to mount.</p>
+     * <p>The name of the volume to mount. If using the Fargate launch type, the
+     * <code>sourceVolume</code> parameter is not supported.</p>
      */
     inline void SetSourceVolume(const Aws::String& value) { m_sourceVolumeHasBeenSet = true; m_sourceVolume = value; }
 
     /**
-     * <p>The name of the volume to mount.</p>
+     * <p>The name of the volume to mount. If using the Fargate launch type, the
+     * <code>sourceVolume</code> parameter is not supported.</p>
      */
     inline void SetSourceVolume(Aws::String&& value) { m_sourceVolumeHasBeenSet = true; m_sourceVolume = std::move(value); }
 
     /**
-     * <p>The name of the volume to mount.</p>
+     * <p>The name of the volume to mount. If using the Fargate launch type, the
+     * <code>sourceVolume</code> parameter is not supported.</p>
      */
     inline void SetSourceVolume(const char* value) { m_sourceVolumeHasBeenSet = true; m_sourceVolume.assign(value); }
 
     /**
-     * <p>The name of the volume to mount.</p>
+     * <p>The name of the volume to mount. If using the Fargate launch type, the
+     * <code>sourceVolume</code> parameter is not supported.</p>
      */
     inline MountPoint& WithSourceVolume(const Aws::String& value) { SetSourceVolume(value); return *this;}
 
     /**
-     * <p>The name of the volume to mount.</p>
+     * <p>The name of the volume to mount. If using the Fargate launch type, the
+     * <code>sourceVolume</code> parameter is not supported.</p>
      */
     inline MountPoint& WithSourceVolume(Aws::String&& value) { SetSourceVolume(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the volume to mount.</p>
+     * <p>The name of the volume to mount. If using the Fargate launch type, the
+     * <code>sourceVolume</code> parameter is not supported.</p>
      */
     inline MountPoint& WithSourceVolume(const char* value) { SetSourceVolume(value); return *this;}
 

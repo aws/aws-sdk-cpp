@@ -50,6 +50,12 @@ CreateThingResult& CreateThingResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
+  if(jsonValue.ValueExists("thingId"))
+  {
+    m_thingId = jsonValue.GetString("thingId");
+
+  }
+
 
 
   return *this;

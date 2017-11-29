@@ -17,6 +17,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ecs/model/LaunchType.h>
 #include <aws/ecs/model/DeploymentConfiguration.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/ecs/model/NetworkConfiguration.h>
@@ -56,9 +57,9 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the service. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the region of the service,
-     * the AWS account ID of the service owner, the <code>service</code> namespace, and
+     * <p>The ARN that identifies the service. The ARN contains the
+     * <code>arn:aws:ecs</code> namespace, followed by the region of the service, the
+     * AWS account ID of the service owner, the <code>service</code> namespace, and
      * then the service name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
      * </code>.</p>
@@ -66,9 +67,9 @@ namespace Model
     inline const Aws::String& GetServiceArn() const{ return m_serviceArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the service. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the region of the service,
-     * the AWS account ID of the service owner, the <code>service</code> namespace, and
+     * <p>The ARN that identifies the service. The ARN contains the
+     * <code>arn:aws:ecs</code> namespace, followed by the region of the service, the
+     * AWS account ID of the service owner, the <code>service</code> namespace, and
      * then the service name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
      * </code>.</p>
@@ -76,9 +77,9 @@ namespace Model
     inline void SetServiceArn(const Aws::String& value) { m_serviceArnHasBeenSet = true; m_serviceArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the service. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the region of the service,
-     * the AWS account ID of the service owner, the <code>service</code> namespace, and
+     * <p>The ARN that identifies the service. The ARN contains the
+     * <code>arn:aws:ecs</code> namespace, followed by the region of the service, the
+     * AWS account ID of the service owner, the <code>service</code> namespace, and
      * then the service name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
      * </code>.</p>
@@ -86,9 +87,9 @@ namespace Model
     inline void SetServiceArn(Aws::String&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the service. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the region of the service,
-     * the AWS account ID of the service owner, the <code>service</code> namespace, and
+     * <p>The ARN that identifies the service. The ARN contains the
+     * <code>arn:aws:ecs</code> namespace, followed by the region of the service, the
+     * AWS account ID of the service owner, the <code>service</code> namespace, and
      * then the service name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
      * </code>.</p>
@@ -96,9 +97,9 @@ namespace Model
     inline void SetServiceArn(const char* value) { m_serviceArnHasBeenSet = true; m_serviceArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the service. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the region of the service,
-     * the AWS account ID of the service owner, the <code>service</code> namespace, and
+     * <p>The ARN that identifies the service. The ARN contains the
+     * <code>arn:aws:ecs</code> namespace, followed by the region of the service, the
+     * AWS account ID of the service owner, the <code>service</code> namespace, and
      * then the service name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
      * </code>.</p>
@@ -106,9 +107,9 @@ namespace Model
     inline Service& WithServiceArn(const Aws::String& value) { SetServiceArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the service. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the region of the service,
-     * the AWS account ID of the service owner, the <code>service</code> namespace, and
+     * <p>The ARN that identifies the service. The ARN contains the
+     * <code>arn:aws:ecs</code> namespace, followed by the region of the service, the
+     * AWS account ID of the service owner, the <code>service</code> namespace, and
      * then the service name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
      * </code>.</p>
@@ -116,9 +117,9 @@ namespace Model
     inline Service& WithServiceArn(Aws::String&& value) { SetServiceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the service. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the region of the service,
-     * the AWS account ID of the service owner, the <code>service</code> namespace, and
+     * <p>The ARN that identifies the service. The ARN contains the
+     * <code>arn:aws:ecs</code> namespace, followed by the region of the service, the
+     * AWS account ID of the service owner, the <code>service</code> namespace, and
      * then the service name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
      * </code>.</p>
@@ -373,6 +374,96 @@ namespace Model
 
 
     /**
+     * <p>The launch type on which your service is running.</p>
+     */
+    inline const LaunchType& GetLaunchType() const{ return m_launchType; }
+
+    /**
+     * <p>The launch type on which your service is running.</p>
+     */
+    inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
+
+    /**
+     * <p>The launch type on which your service is running.</p>
+     */
+    inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
+
+    /**
+     * <p>The launch type on which your service is running.</p>
+     */
+    inline Service& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
+
+    /**
+     * <p>The launch type on which your service is running.</p>
+     */
+    inline Service& WithLaunchType(LaunchType&& value) { SetLaunchType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The platform version on which your task is running. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
+    inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
+
+    /**
+     * <p>The platform version on which your task is running. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
+    inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
+
+    /**
+     * <p>The platform version on which your task is running. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
+    inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
+
+    /**
+     * <p>The platform version on which your task is running. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
+    inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
+
+    /**
+     * <p>The platform version on which your task is running. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
+    inline Service& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
+
+    /**
+     * <p>The platform version on which your task is running. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
+    inline Service& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The platform version on which your task is running. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
+    inline Service& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
+
+
+    /**
      * <p>The task definition to use for tasks in the service. This value is specified
      * when the service is created with <a>CreateService</a>, and it can be modified
      * with <a>UpdateService</a>.</p>
@@ -490,51 +581,51 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role associated with the service
-     * that allows the Amazon ECS container agent to register container instances with
-     * an Elastic Load Balancing load balancer.</p>
+     * <p>The ARN of the IAM role associated with the service that allows the Amazon
+     * ECS container agent to register container instances with an Elastic Load
+     * Balancing load balancer.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role associated with the service
-     * that allows the Amazon ECS container agent to register container instances with
-     * an Elastic Load Balancing load balancer.</p>
+     * <p>The ARN of the IAM role associated with the service that allows the Amazon
+     * ECS container agent to register container instances with an Elastic Load
+     * Balancing load balancer.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role associated with the service
-     * that allows the Amazon ECS container agent to register container instances with
-     * an Elastic Load Balancing load balancer.</p>
+     * <p>The ARN of the IAM role associated with the service that allows the Amazon
+     * ECS container agent to register container instances with an Elastic Load
+     * Balancing load balancer.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role associated with the service
-     * that allows the Amazon ECS container agent to register container instances with
-     * an Elastic Load Balancing load balancer.</p>
+     * <p>The ARN of the IAM role associated with the service that allows the Amazon
+     * ECS container agent to register container instances with an Elastic Load
+     * Balancing load balancer.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role associated with the service
-     * that allows the Amazon ECS container agent to register container instances with
-     * an Elastic Load Balancing load balancer.</p>
+     * <p>The ARN of the IAM role associated with the service that allows the Amazon
+     * ECS container agent to register container instances with an Elastic Load
+     * Balancing load balancer.</p>
      */
     inline Service& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role associated with the service
-     * that allows the Amazon ECS container agent to register container instances with
-     * an Elastic Load Balancing load balancer.</p>
+     * <p>The ARN of the IAM role associated with the service that allows the Amazon
+     * ECS container agent to register container instances with an Elastic Load
+     * Balancing load balancer.</p>
      */
     inline Service& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role associated with the service
-     * that allows the Amazon ECS container agent to register container instances with
-     * an Elastic Load Balancing load balancer.</p>
+     * <p>The ARN of the IAM role associated with the service that allows the Amazon
+     * ECS container agent to register container instances with an Elastic Load
+     * Balancing load balancer.</p>
      */
     inline Service& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -583,27 +674,27 @@ namespace Model
 
 
     /**
-     * <p>The Unix timestamp for when the service was created.</p>
+     * <p>The Unix time stamp for when the service was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The Unix timestamp for when the service was created.</p>
+     * <p>The Unix time stamp for when the service was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The Unix timestamp for when the service was created.</p>
+     * <p>The Unix time stamp for when the service was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The Unix timestamp for when the service was created.</p>
+     * <p>The Unix time stamp for when the service was created.</p>
      */
     inline Service& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The Unix timestamp for when the service was created.</p>
+     * <p>The Unix time stamp for when the service was created.</p>
      */
     inline Service& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
@@ -747,6 +838,12 @@ namespace Model
 
     int m_pendingCount;
     bool m_pendingCountHasBeenSet;
+
+    LaunchType m_launchType;
+    bool m_launchTypeHasBeenSet;
+
+    Aws::String m_platformVersion;
+    bool m_platformVersionHasBeenSet;
 
     Aws::String m_taskDefinition;
     bool m_taskDefinitionHasBeenSet;

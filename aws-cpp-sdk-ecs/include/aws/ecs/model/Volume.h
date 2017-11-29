@@ -109,7 +109,8 @@ namespace Model
      * volume persists on the host container instance and where it is stored. If the
      * host parameter is empty, then the Docker daemon assigns a host path for your
      * data volume, but the data is not guaranteed to persist after the containers
-     * associated with it stop running.</p>
+     * associated with it stop running.</p> <p>If you are using the Fargate launch
+     * type, the <code>host</code> parameter is not supported.</p>
      */
     inline const HostVolumeProperties& GetHost() const{ return m_host; }
 
@@ -118,7 +119,8 @@ namespace Model
      * volume persists on the host container instance and where it is stored. If the
      * host parameter is empty, then the Docker daemon assigns a host path for your
      * data volume, but the data is not guaranteed to persist after the containers
-     * associated with it stop running.</p>
+     * associated with it stop running.</p> <p>If you are using the Fargate launch
+     * type, the <code>host</code> parameter is not supported.</p>
      */
     inline void SetHost(const HostVolumeProperties& value) { m_hostHasBeenSet = true; m_host = value; }
 
@@ -127,7 +129,8 @@ namespace Model
      * volume persists on the host container instance and where it is stored. If the
      * host parameter is empty, then the Docker daemon assigns a host path for your
      * data volume, but the data is not guaranteed to persist after the containers
-     * associated with it stop running.</p>
+     * associated with it stop running.</p> <p>If you are using the Fargate launch
+     * type, the <code>host</code> parameter is not supported.</p>
      */
     inline void SetHost(HostVolumeProperties&& value) { m_hostHasBeenSet = true; m_host = std::move(value); }
 
@@ -136,7 +139,8 @@ namespace Model
      * volume persists on the host container instance and where it is stored. If the
      * host parameter is empty, then the Docker daemon assigns a host path for your
      * data volume, but the data is not guaranteed to persist after the containers
-     * associated with it stop running.</p>
+     * associated with it stop running.</p> <p>If you are using the Fargate launch
+     * type, the <code>host</code> parameter is not supported.</p>
      */
     inline Volume& WithHost(const HostVolumeProperties& value) { SetHost(value); return *this;}
 
@@ -145,7 +149,8 @@ namespace Model
      * volume persists on the host container instance and where it is stored. If the
      * host parameter is empty, then the Docker daemon assigns a host path for your
      * data volume, but the data is not guaranteed to persist after the containers
-     * associated with it stop running.</p>
+     * associated with it stop running.</p> <p>If you are using the Fargate launch
+     * type, the <code>host</code> parameter is not supported.</p>
      */
     inline Volume& WithHost(HostVolumeProperties&& value) { SetHost(std::move(value)); return *this;}
 

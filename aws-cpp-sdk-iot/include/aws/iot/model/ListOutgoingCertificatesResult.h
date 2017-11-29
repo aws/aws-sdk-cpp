@@ -51,37 +51,37 @@ namespace Model
 
 
     /**
-     * <p>The certificates that are being transfered but not yet accepted.</p>
+     * <p>The certificates that are being transferred but not yet accepted.</p>
      */
     inline const Aws::Vector<OutgoingCertificate>& GetOutgoingCertificates() const{ return m_outgoingCertificates; }
 
     /**
-     * <p>The certificates that are being transfered but not yet accepted.</p>
+     * <p>The certificates that are being transferred but not yet accepted.</p>
      */
     inline void SetOutgoingCertificates(const Aws::Vector<OutgoingCertificate>& value) { m_outgoingCertificates = value; }
 
     /**
-     * <p>The certificates that are being transfered but not yet accepted.</p>
+     * <p>The certificates that are being transferred but not yet accepted.</p>
      */
     inline void SetOutgoingCertificates(Aws::Vector<OutgoingCertificate>&& value) { m_outgoingCertificates = std::move(value); }
 
     /**
-     * <p>The certificates that are being transfered but not yet accepted.</p>
+     * <p>The certificates that are being transferred but not yet accepted.</p>
      */
     inline ListOutgoingCertificatesResult& WithOutgoingCertificates(const Aws::Vector<OutgoingCertificate>& value) { SetOutgoingCertificates(value); return *this;}
 
     /**
-     * <p>The certificates that are being transfered but not yet accepted.</p>
+     * <p>The certificates that are being transferred but not yet accepted.</p>
      */
     inline ListOutgoingCertificatesResult& WithOutgoingCertificates(Aws::Vector<OutgoingCertificate>&& value) { SetOutgoingCertificates(std::move(value)); return *this;}
 
     /**
-     * <p>The certificates that are being transfered but not yet accepted.</p>
+     * <p>The certificates that are being transferred but not yet accepted.</p>
      */
     inline ListOutgoingCertificatesResult& AddOutgoingCertificates(const OutgoingCertificate& value) { m_outgoingCertificates.push_back(value); return *this; }
 
     /**
-     * <p>The certificates that are being transfered but not yet accepted.</p>
+     * <p>The certificates that are being transferred but not yet accepted.</p>
      */
     inline ListOutgoingCertificatesResult& AddOutgoingCertificates(OutgoingCertificate&& value) { m_outgoingCertificates.push_back(std::move(value)); return *this; }
 

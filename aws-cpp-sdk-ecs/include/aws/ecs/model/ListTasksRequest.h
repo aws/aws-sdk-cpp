@@ -18,6 +18,7 @@
 #include <aws/ecs/ECSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/model/DesiredStatus.h>
+#include <aws/ecs/model/LaunchType.h>
 #include <utility>
 
 namespace Aws
@@ -96,56 +97,56 @@ namespace Model
 
 
     /**
-     * <p>The container instance ID or full Amazon Resource Name (ARN) of the container
-     * instance with which to filter the <code>ListTasks</code> results. Specifying a
+     * <p>The container instance ID or full ARN of the container instance with which to
+     * filter the <code>ListTasks</code> results. Specifying a
      * <code>containerInstance</code> limits the results to tasks that belong to that
      * container instance.</p>
      */
     inline const Aws::String& GetContainerInstance() const{ return m_containerInstance; }
 
     /**
-     * <p>The container instance ID or full Amazon Resource Name (ARN) of the container
-     * instance with which to filter the <code>ListTasks</code> results. Specifying a
+     * <p>The container instance ID or full ARN of the container instance with which to
+     * filter the <code>ListTasks</code> results. Specifying a
      * <code>containerInstance</code> limits the results to tasks that belong to that
      * container instance.</p>
      */
     inline void SetContainerInstance(const Aws::String& value) { m_containerInstanceHasBeenSet = true; m_containerInstance = value; }
 
     /**
-     * <p>The container instance ID or full Amazon Resource Name (ARN) of the container
-     * instance with which to filter the <code>ListTasks</code> results. Specifying a
+     * <p>The container instance ID or full ARN of the container instance with which to
+     * filter the <code>ListTasks</code> results. Specifying a
      * <code>containerInstance</code> limits the results to tasks that belong to that
      * container instance.</p>
      */
     inline void SetContainerInstance(Aws::String&& value) { m_containerInstanceHasBeenSet = true; m_containerInstance = std::move(value); }
 
     /**
-     * <p>The container instance ID or full Amazon Resource Name (ARN) of the container
-     * instance with which to filter the <code>ListTasks</code> results. Specifying a
+     * <p>The container instance ID or full ARN of the container instance with which to
+     * filter the <code>ListTasks</code> results. Specifying a
      * <code>containerInstance</code> limits the results to tasks that belong to that
      * container instance.</p>
      */
     inline void SetContainerInstance(const char* value) { m_containerInstanceHasBeenSet = true; m_containerInstance.assign(value); }
 
     /**
-     * <p>The container instance ID or full Amazon Resource Name (ARN) of the container
-     * instance with which to filter the <code>ListTasks</code> results. Specifying a
+     * <p>The container instance ID or full ARN of the container instance with which to
+     * filter the <code>ListTasks</code> results. Specifying a
      * <code>containerInstance</code> limits the results to tasks that belong to that
      * container instance.</p>
      */
     inline ListTasksRequest& WithContainerInstance(const Aws::String& value) { SetContainerInstance(value); return *this;}
 
     /**
-     * <p>The container instance ID or full Amazon Resource Name (ARN) of the container
-     * instance with which to filter the <code>ListTasks</code> results. Specifying a
+     * <p>The container instance ID or full ARN of the container instance with which to
+     * filter the <code>ListTasks</code> results. Specifying a
      * <code>containerInstance</code> limits the results to tasks that belong to that
      * container instance.</p>
      */
     inline ListTasksRequest& WithContainerInstance(Aws::String&& value) { SetContainerInstance(std::move(value)); return *this;}
 
     /**
-     * <p>The container instance ID or full Amazon Resource Name (ARN) of the container
-     * instance with which to filter the <code>ListTasks</code> results. Specifying a
+     * <p>The container instance ID or full ARN of the container instance with which to
+     * filter the <code>ListTasks</code> results. Specifying a
      * <code>containerInstance</code> limits the results to tasks that belong to that
      * container instance.</p>
      */
@@ -206,11 +207,10 @@ namespace Model
      * <p>The <code>nextToken</code> value returned from a previous paginated
      * <code>ListTasks</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
-     * of the previous results that returned the <code>nextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p> <note>
-     * <p>This token should be treated as an opaque identifier that is only used to
-     * retrieve the next items in a list and not for other programmatic purposes.</p>
-     * </note>
+     * of the previous results that returned the <code>nextToken</code> value.</p>
+     * <note> <p>This token should be treated as an opaque identifier that is only used
+     * to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> </note>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -218,11 +218,10 @@ namespace Model
      * <p>The <code>nextToken</code> value returned from a previous paginated
      * <code>ListTasks</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
-     * of the previous results that returned the <code>nextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p> <note>
-     * <p>This token should be treated as an opaque identifier that is only used to
-     * retrieve the next items in a list and not for other programmatic purposes.</p>
-     * </note>
+     * of the previous results that returned the <code>nextToken</code> value.</p>
+     * <note> <p>This token should be treated as an opaque identifier that is only used
+     * to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> </note>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
@@ -230,11 +229,10 @@ namespace Model
      * <p>The <code>nextToken</code> value returned from a previous paginated
      * <code>ListTasks</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
-     * of the previous results that returned the <code>nextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p> <note>
-     * <p>This token should be treated as an opaque identifier that is only used to
-     * retrieve the next items in a list and not for other programmatic purposes.</p>
-     * </note>
+     * of the previous results that returned the <code>nextToken</code> value.</p>
+     * <note> <p>This token should be treated as an opaque identifier that is only used
+     * to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> </note>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
@@ -242,11 +240,10 @@ namespace Model
      * <p>The <code>nextToken</code> value returned from a previous paginated
      * <code>ListTasks</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
-     * of the previous results that returned the <code>nextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p> <note>
-     * <p>This token should be treated as an opaque identifier that is only used to
-     * retrieve the next items in a list and not for other programmatic purposes.</p>
-     * </note>
+     * of the previous results that returned the <code>nextToken</code> value.</p>
+     * <note> <p>This token should be treated as an opaque identifier that is only used
+     * to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> </note>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
@@ -254,11 +251,10 @@ namespace Model
      * <p>The <code>nextToken</code> value returned from a previous paginated
      * <code>ListTasks</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
-     * of the previous results that returned the <code>nextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p> <note>
-     * <p>This token should be treated as an opaque identifier that is only used to
-     * retrieve the next items in a list and not for other programmatic purposes.</p>
-     * </note>
+     * of the previous results that returned the <code>nextToken</code> value.</p>
+     * <note> <p>This token should be treated as an opaque identifier that is only used
+     * to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> </note>
      */
     inline ListTasksRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -266,11 +262,10 @@ namespace Model
      * <p>The <code>nextToken</code> value returned from a previous paginated
      * <code>ListTasks</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
-     * of the previous results that returned the <code>nextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p> <note>
-     * <p>This token should be treated as an opaque identifier that is only used to
-     * retrieve the next items in a list and not for other programmatic purposes.</p>
-     * </note>
+     * of the previous results that returned the <code>nextToken</code> value.</p>
+     * <note> <p>This token should be treated as an opaque identifier that is only used
+     * to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> </note>
      */
     inline ListTasksRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -278,11 +273,10 @@ namespace Model
      * <p>The <code>nextToken</code> value returned from a previous paginated
      * <code>ListTasks</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
-     * of the previous results that returned the <code>nextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p> <note>
-     * <p>This token should be treated as an opaque identifier that is only used to
-     * retrieve the next items in a list and not for other programmatic purposes.</p>
-     * </note>
+     * of the previous results that returned the <code>nextToken</code> value.</p>
+     * <note> <p>This token should be treated as an opaque identifier that is only used
+     * to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> </note>
      */
     inline ListTasksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
@@ -427,72 +421,103 @@ namespace Model
     /**
      * <p>The task desired status with which to filter the <code>ListTasks</code>
      * results. Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits
-     * the results to tasks that ECS has set the desired status to
+     * the results to tasks that Amazon ECS has set the desired status to
      * <code>STOPPED</code>, which can be useful for debugging tasks that are not
      * starting properly or have died or finished. The default status filter is
-     * <code>RUNNING</code>, which shows tasks that ECS has set the desired status to
-     * <code>RUNNING</code>.</p> <note> <p>Although you can filter results based on a
-     * desired status of <code>PENDING</code>, this will not return any results because
-     * ECS never sets the desired status of a task to that value (only a task's
-     * <code>lastStatus</code> may have a value of <code>PENDING</code>).</p> </note>
+     * <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired
+     * status to <code>RUNNING</code>.</p> <note> <p>Although you can filter results
+     * based on a desired status of <code>PENDING</code>, this does not return any
+     * results because Amazon ECS never sets the desired status of a task to that value
+     * (only a task's <code>lastStatus</code> may have a value of
+     * <code>PENDING</code>).</p> </note>
      */
     inline const DesiredStatus& GetDesiredStatus() const{ return m_desiredStatus; }
 
     /**
      * <p>The task desired status with which to filter the <code>ListTasks</code>
      * results. Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits
-     * the results to tasks that ECS has set the desired status to
+     * the results to tasks that Amazon ECS has set the desired status to
      * <code>STOPPED</code>, which can be useful for debugging tasks that are not
      * starting properly or have died or finished. The default status filter is
-     * <code>RUNNING</code>, which shows tasks that ECS has set the desired status to
-     * <code>RUNNING</code>.</p> <note> <p>Although you can filter results based on a
-     * desired status of <code>PENDING</code>, this will not return any results because
-     * ECS never sets the desired status of a task to that value (only a task's
-     * <code>lastStatus</code> may have a value of <code>PENDING</code>).</p> </note>
+     * <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired
+     * status to <code>RUNNING</code>.</p> <note> <p>Although you can filter results
+     * based on a desired status of <code>PENDING</code>, this does not return any
+     * results because Amazon ECS never sets the desired status of a task to that value
+     * (only a task's <code>lastStatus</code> may have a value of
+     * <code>PENDING</code>).</p> </note>
      */
     inline void SetDesiredStatus(const DesiredStatus& value) { m_desiredStatusHasBeenSet = true; m_desiredStatus = value; }
 
     /**
      * <p>The task desired status with which to filter the <code>ListTasks</code>
      * results. Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits
-     * the results to tasks that ECS has set the desired status to
+     * the results to tasks that Amazon ECS has set the desired status to
      * <code>STOPPED</code>, which can be useful for debugging tasks that are not
      * starting properly or have died or finished. The default status filter is
-     * <code>RUNNING</code>, which shows tasks that ECS has set the desired status to
-     * <code>RUNNING</code>.</p> <note> <p>Although you can filter results based on a
-     * desired status of <code>PENDING</code>, this will not return any results because
-     * ECS never sets the desired status of a task to that value (only a task's
-     * <code>lastStatus</code> may have a value of <code>PENDING</code>).</p> </note>
+     * <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired
+     * status to <code>RUNNING</code>.</p> <note> <p>Although you can filter results
+     * based on a desired status of <code>PENDING</code>, this does not return any
+     * results because Amazon ECS never sets the desired status of a task to that value
+     * (only a task's <code>lastStatus</code> may have a value of
+     * <code>PENDING</code>).</p> </note>
      */
     inline void SetDesiredStatus(DesiredStatus&& value) { m_desiredStatusHasBeenSet = true; m_desiredStatus = std::move(value); }
 
     /**
      * <p>The task desired status with which to filter the <code>ListTasks</code>
      * results. Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits
-     * the results to tasks that ECS has set the desired status to
+     * the results to tasks that Amazon ECS has set the desired status to
      * <code>STOPPED</code>, which can be useful for debugging tasks that are not
      * starting properly or have died or finished. The default status filter is
-     * <code>RUNNING</code>, which shows tasks that ECS has set the desired status to
-     * <code>RUNNING</code>.</p> <note> <p>Although you can filter results based on a
-     * desired status of <code>PENDING</code>, this will not return any results because
-     * ECS never sets the desired status of a task to that value (only a task's
-     * <code>lastStatus</code> may have a value of <code>PENDING</code>).</p> </note>
+     * <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired
+     * status to <code>RUNNING</code>.</p> <note> <p>Although you can filter results
+     * based on a desired status of <code>PENDING</code>, this does not return any
+     * results because Amazon ECS never sets the desired status of a task to that value
+     * (only a task's <code>lastStatus</code> may have a value of
+     * <code>PENDING</code>).</p> </note>
      */
     inline ListTasksRequest& WithDesiredStatus(const DesiredStatus& value) { SetDesiredStatus(value); return *this;}
 
     /**
      * <p>The task desired status with which to filter the <code>ListTasks</code>
      * results. Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits
-     * the results to tasks that ECS has set the desired status to
+     * the results to tasks that Amazon ECS has set the desired status to
      * <code>STOPPED</code>, which can be useful for debugging tasks that are not
      * starting properly or have died or finished. The default status filter is
-     * <code>RUNNING</code>, which shows tasks that ECS has set the desired status to
-     * <code>RUNNING</code>.</p> <note> <p>Although you can filter results based on a
-     * desired status of <code>PENDING</code>, this will not return any results because
-     * ECS never sets the desired status of a task to that value (only a task's
-     * <code>lastStatus</code> may have a value of <code>PENDING</code>).</p> </note>
+     * <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired
+     * status to <code>RUNNING</code>.</p> <note> <p>Although you can filter results
+     * based on a desired status of <code>PENDING</code>, this does not return any
+     * results because Amazon ECS never sets the desired status of a task to that value
+     * (only a task's <code>lastStatus</code> may have a value of
+     * <code>PENDING</code>).</p> </note>
      */
     inline ListTasksRequest& WithDesiredStatus(DesiredStatus&& value) { SetDesiredStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The launch type for services you want to list.</p>
+     */
+    inline const LaunchType& GetLaunchType() const{ return m_launchType; }
+
+    /**
+     * <p>The launch type for services you want to list.</p>
+     */
+    inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
+
+    /**
+     * <p>The launch type for services you want to list.</p>
+     */
+    inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
+
+    /**
+     * <p>The launch type for services you want to list.</p>
+     */
+    inline ListTasksRequest& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
+
+    /**
+     * <p>The launch type for services you want to list.</p>
+     */
+    inline ListTasksRequest& WithLaunchType(LaunchType&& value) { SetLaunchType(std::move(value)); return *this;}
 
   private:
 
@@ -519,6 +544,9 @@ namespace Model
 
     DesiredStatus m_desiredStatus;
     bool m_desiredStatusHasBeenSet;
+
+    LaunchType m_launchType;
+    bool m_launchTypeHasBeenSet;
   };
 
 } // namespace Model

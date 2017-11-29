@@ -31,7 +31,8 @@ RegisterCACertificateRequest::RegisterCACertificateRequest() :
     m_setAsActive(false),
     m_setAsActiveHasBeenSet(false),
     m_allowAutoRegistration(false),
-    m_allowAutoRegistrationHasBeenSet(false)
+    m_allowAutoRegistrationHasBeenSet(false),
+    m_registrationConfigHasBeenSet(false)
 {
 }
 
@@ -48,6 +49,12 @@ Aws::String RegisterCACertificateRequest::SerializePayload() const
   if(m_verificationCertificateHasBeenSet)
   {
    payload.WithString("verificationCertificate", m_verificationCertificate);
+
+  }
+
+  if(m_registrationConfigHasBeenSet)
+  {
+   payload.WithObject("registrationConfig", m_registrationConfig.Jsonize());
 
   }
 

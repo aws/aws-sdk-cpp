@@ -44,50 +44,42 @@ namespace Model
 
 
     /**
-     * <p>The list of task Amazon Resource Name (ARN) entries for the
-     * <code>ListTasks</code> request.</p>
+     * <p>The list of task ARN entries for the <code>ListTasks</code> request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTaskArns() const{ return m_taskArns; }
 
     /**
-     * <p>The list of task Amazon Resource Name (ARN) entries for the
-     * <code>ListTasks</code> request.</p>
+     * <p>The list of task ARN entries for the <code>ListTasks</code> request.</p>
      */
     inline void SetTaskArns(const Aws::Vector<Aws::String>& value) { m_taskArns = value; }
 
     /**
-     * <p>The list of task Amazon Resource Name (ARN) entries for the
-     * <code>ListTasks</code> request.</p>
+     * <p>The list of task ARN entries for the <code>ListTasks</code> request.</p>
      */
     inline void SetTaskArns(Aws::Vector<Aws::String>&& value) { m_taskArns = std::move(value); }
 
     /**
-     * <p>The list of task Amazon Resource Name (ARN) entries for the
-     * <code>ListTasks</code> request.</p>
+     * <p>The list of task ARN entries for the <code>ListTasks</code> request.</p>
      */
     inline ListTasksResult& WithTaskArns(const Aws::Vector<Aws::String>& value) { SetTaskArns(value); return *this;}
 
     /**
-     * <p>The list of task Amazon Resource Name (ARN) entries for the
-     * <code>ListTasks</code> request.</p>
+     * <p>The list of task ARN entries for the <code>ListTasks</code> request.</p>
      */
     inline ListTasksResult& WithTaskArns(Aws::Vector<Aws::String>&& value) { SetTaskArns(std::move(value)); return *this;}
 
     /**
-     * <p>The list of task Amazon Resource Name (ARN) entries for the
-     * <code>ListTasks</code> request.</p>
+     * <p>The list of task ARN entries for the <code>ListTasks</code> request.</p>
      */
     inline ListTasksResult& AddTaskArns(const Aws::String& value) { m_taskArns.push_back(value); return *this; }
 
     /**
-     * <p>The list of task Amazon Resource Name (ARN) entries for the
-     * <code>ListTasks</code> request.</p>
+     * <p>The list of task ARN entries for the <code>ListTasks</code> request.</p>
      */
     inline ListTasksResult& AddTaskArns(Aws::String&& value) { m_taskArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of task Amazon Resource Name (ARN) entries for the
-     * <code>ListTasks</code> request.</p>
+     * <p>The list of task ARN entries for the <code>ListTasks</code> request.</p>
      */
     inline ListTasksResult& AddTaskArns(const char* value) { m_taskArns.push_back(value); return *this; }
 

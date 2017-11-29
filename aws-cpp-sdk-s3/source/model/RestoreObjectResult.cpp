@@ -53,5 +53,11 @@ RestoreObjectResult& RestoreObjectResult::operator =(const Aws::AmazonWebService
     m_requestCharged = RequestChargedMapper::GetRequestChargedForName(requestChargedIter->second);
   }
 
+  const auto& restoreOutputPathIter = headers.find("x-amz-restore-output-path");
+  if(restoreOutputPathIter != headers.end())
+  {
+    m_restoreOutputPath = restoreOutputPathIter->second;
+  }
+
   return *this;
 }

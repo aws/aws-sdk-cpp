@@ -96,42 +96,42 @@ namespace Model
 
 
     /**
-     * <p>A list of up to 100 task IDs or full Amazon Resource Name (ARN) entries.</p>
+     * <p>A list of up to 100 task IDs or full ARN entries.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTasks() const{ return m_tasks; }
 
     /**
-     * <p>A list of up to 100 task IDs or full Amazon Resource Name (ARN) entries.</p>
+     * <p>A list of up to 100 task IDs or full ARN entries.</p>
      */
     inline void SetTasks(const Aws::Vector<Aws::String>& value) { m_tasksHasBeenSet = true; m_tasks = value; }
 
     /**
-     * <p>A list of up to 100 task IDs or full Amazon Resource Name (ARN) entries.</p>
+     * <p>A list of up to 100 task IDs or full ARN entries.</p>
      */
     inline void SetTasks(Aws::Vector<Aws::String>&& value) { m_tasksHasBeenSet = true; m_tasks = std::move(value); }
 
     /**
-     * <p>A list of up to 100 task IDs or full Amazon Resource Name (ARN) entries.</p>
+     * <p>A list of up to 100 task IDs or full ARN entries.</p>
      */
     inline DescribeTasksRequest& WithTasks(const Aws::Vector<Aws::String>& value) { SetTasks(value); return *this;}
 
     /**
-     * <p>A list of up to 100 task IDs or full Amazon Resource Name (ARN) entries.</p>
+     * <p>A list of up to 100 task IDs or full ARN entries.</p>
      */
     inline DescribeTasksRequest& WithTasks(Aws::Vector<Aws::String>&& value) { SetTasks(std::move(value)); return *this;}
 
     /**
-     * <p>A list of up to 100 task IDs or full Amazon Resource Name (ARN) entries.</p>
+     * <p>A list of up to 100 task IDs or full ARN entries.</p>
      */
     inline DescribeTasksRequest& AddTasks(const Aws::String& value) { m_tasksHasBeenSet = true; m_tasks.push_back(value); return *this; }
 
     /**
-     * <p>A list of up to 100 task IDs or full Amazon Resource Name (ARN) entries.</p>
+     * <p>A list of up to 100 task IDs or full ARN entries.</p>
      */
     inline DescribeTasksRequest& AddTasks(Aws::String&& value) { m_tasksHasBeenSet = true; m_tasks.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of up to 100 task IDs or full Amazon Resource Name (ARN) entries.</p>
+     * <p>A list of up to 100 task IDs or full ARN entries.</p>
      */
     inline DescribeTasksRequest& AddTasks(const char* value) { m_tasksHasBeenSet = true; m_tasks.push_back(value); return *this; }
 
