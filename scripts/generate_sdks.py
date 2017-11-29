@@ -52,7 +52,8 @@ def ParseArguments():
 
 serviceNameRemaps = {
     "runtime.lex" : "lex",
-    "entitlement.marketplace" : "marketplace-entitlement"
+    "entitlement.marketplace" : "marketplace-entitlement",
+    "runtime.sagemaker" : "sagemaker-runtime"
 }
 
 def DiscoverAllAvailableSDKs(discoveryPath):
