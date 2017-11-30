@@ -18,6 +18,7 @@
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/DocumentType.h>
+#include <aws/ssm/model/DocumentFormat.h>
 #include <utility>
 
 namespace Aws
@@ -46,37 +47,37 @@ namespace Model
 
 
     /**
-     * <p>A valid JSON string.</p>
+     * <p>A valid JSON or YAML string.</p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
 
     /**
-     * <p>A valid JSON string.</p>
+     * <p>A valid JSON or YAML string.</p>
      */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
-     * <p>A valid JSON string.</p>
+     * <p>A valid JSON or YAML string.</p>
      */
     inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
     /**
-     * <p>A valid JSON string.</p>
+     * <p>A valid JSON or YAML string.</p>
      */
     inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
 
     /**
-     * <p>A valid JSON string.</p>
+     * <p>A valid JSON or YAML string.</p>
      */
     inline CreateDocumentRequest& WithContent(const Aws::String& value) { SetContent(value); return *this;}
 
     /**
-     * <p>A valid JSON string.</p>
+     * <p>A valid JSON or YAML string.</p>
      */
     inline CreateDocumentRequest& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
     /**
-     * <p>A valid JSON string.</p>
+     * <p>A valid JSON or YAML string.</p>
      */
     inline CreateDocumentRequest& WithContent(const char* value) { SetContent(value); return *this;}
 
@@ -147,6 +148,115 @@ namespace Model
      */
     inline CreateDocumentRequest& WithDocumentType(DocumentType&& value) { SetDocumentType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specify the document format for the request. The document format can be
+     * either JSON or YAML. JSON is the default format.</p>
+     */
+    inline const DocumentFormat& GetDocumentFormat() const{ return m_documentFormat; }
+
+    /**
+     * <p>Specify the document format for the request. The document format can be
+     * either JSON or YAML. JSON is the default format.</p>
+     */
+    inline void SetDocumentFormat(const DocumentFormat& value) { m_documentFormatHasBeenSet = true; m_documentFormat = value; }
+
+    /**
+     * <p>Specify the document format for the request. The document format can be
+     * either JSON or YAML. JSON is the default format.</p>
+     */
+    inline void SetDocumentFormat(DocumentFormat&& value) { m_documentFormatHasBeenSet = true; m_documentFormat = std::move(value); }
+
+    /**
+     * <p>Specify the document format for the request. The document format can be
+     * either JSON or YAML. JSON is the default format.</p>
+     */
+    inline CreateDocumentRequest& WithDocumentFormat(const DocumentFormat& value) { SetDocumentFormat(value); return *this;}
+
+    /**
+     * <p>Specify the document format for the request. The document format can be
+     * either JSON or YAML. JSON is the default format.</p>
+     */
+    inline CreateDocumentRequest& WithDocumentFormat(DocumentFormat&& value) { SetDocumentFormat(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specify a target type to define the kinds of resources the document can run
+     * on. For example, to run a document on EC2 instances, specify the following
+     * value: /AWS::EC2::Instance. If you specify a value of '/' the document can run
+     * on all types of resources. If you don't specify a value, the document can't run
+     * on any resources. For a list of valid resource types, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     */
+    inline const Aws::String& GetTargetType() const{ return m_targetType; }
+
+    /**
+     * <p>Specify a target type to define the kinds of resources the document can run
+     * on. For example, to run a document on EC2 instances, specify the following
+     * value: /AWS::EC2::Instance. If you specify a value of '/' the document can run
+     * on all types of resources. If you don't specify a value, the document can't run
+     * on any resources. For a list of valid resource types, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     */
+    inline void SetTargetType(const Aws::String& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
+
+    /**
+     * <p>Specify a target type to define the kinds of resources the document can run
+     * on. For example, to run a document on EC2 instances, specify the following
+     * value: /AWS::EC2::Instance. If you specify a value of '/' the document can run
+     * on all types of resources. If you don't specify a value, the document can't run
+     * on any resources. For a list of valid resource types, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     */
+    inline void SetTargetType(Aws::String&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
+
+    /**
+     * <p>Specify a target type to define the kinds of resources the document can run
+     * on. For example, to run a document on EC2 instances, specify the following
+     * value: /AWS::EC2::Instance. If you specify a value of '/' the document can run
+     * on all types of resources. If you don't specify a value, the document can't run
+     * on any resources. For a list of valid resource types, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     */
+    inline void SetTargetType(const char* value) { m_targetTypeHasBeenSet = true; m_targetType.assign(value); }
+
+    /**
+     * <p>Specify a target type to define the kinds of resources the document can run
+     * on. For example, to run a document on EC2 instances, specify the following
+     * value: /AWS::EC2::Instance. If you specify a value of '/' the document can run
+     * on all types of resources. If you don't specify a value, the document can't run
+     * on any resources. For a list of valid resource types, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     */
+    inline CreateDocumentRequest& WithTargetType(const Aws::String& value) { SetTargetType(value); return *this;}
+
+    /**
+     * <p>Specify a target type to define the kinds of resources the document can run
+     * on. For example, to run a document on EC2 instances, specify the following
+     * value: /AWS::EC2::Instance. If you specify a value of '/' the document can run
+     * on all types of resources. If you don't specify a value, the document can't run
+     * on any resources. For a list of valid resource types, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     */
+    inline CreateDocumentRequest& WithTargetType(Aws::String&& value) { SetTargetType(std::move(value)); return *this;}
+
+    /**
+     * <p>Specify a target type to define the kinds of resources the document can run
+     * on. For example, to run a document on EC2 instances, specify the following
+     * value: /AWS::EC2::Instance. If you specify a value of '/' the document can run
+     * on all types of resources. If you don't specify a value, the document can't run
+     * on any resources. For a list of valid resource types, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     */
+    inline CreateDocumentRequest& WithTargetType(const char* value) { SetTargetType(value); return *this;}
+
   private:
 
     Aws::String m_content;
@@ -157,6 +267,12 @@ namespace Model
 
     DocumentType m_documentType;
     bool m_documentTypeHasBeenSet;
+
+    DocumentFormat m_documentFormat;
+    bool m_documentFormatHasBeenSet;
+
+    Aws::String m_targetType;
+    bool m_targetTypeHasBeenSet;
   };
 
 } // namespace Model

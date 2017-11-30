@@ -34,6 +34,7 @@ AutoScalingGroup::AutoScalingGroup() :
     m_autoScalingGroupNameHasBeenSet(false),
     m_autoScalingGroupARNHasBeenSet(false),
     m_launchConfigurationNameHasBeenSet(false),
+    m_launchTemplateHasBeenSet(false),
     m_minSize(0),
     m_minSizeHasBeenSet(false),
     m_maxSize(0),
@@ -66,6 +67,7 @@ AutoScalingGroup::AutoScalingGroup(const XmlNode& xmlNode) :
     m_autoScalingGroupNameHasBeenSet(false),
     m_autoScalingGroupARNHasBeenSet(false),
     m_launchConfigurationNameHasBeenSet(false),
+    m_launchTemplateHasBeenSet(false),
     m_minSize(0),
     m_minSizeHasBeenSet(false),
     m_maxSize(0),
@@ -118,6 +120,12 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
     {
       m_launchConfigurationName = StringUtils::Trim(launchConfigurationNameNode.GetText().c_str());
       m_launchConfigurationNameHasBeenSet = true;
+    }
+    XmlNode launchTemplateNode = resultNode.FirstChild("LaunchTemplate");
+    if(!launchTemplateNode.IsNull())
+    {
+      m_launchTemplate = launchTemplateNode;
+      m_launchTemplateHasBeenSet = true;
     }
     XmlNode minSizeNode = resultNode.FirstChild("MinSize");
     if(!minSizeNode.IsNull())
@@ -303,6 +311,13 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
   }
 
+  if(m_launchTemplateHasBeenSet)
+  {
+      Aws::StringStream launchTemplateLocationAndMemberSs;
+      launchTemplateLocationAndMemberSs << location << index << locationValue << ".LaunchTemplate";
+      m_launchTemplate.OutputToStream(oStream, launchTemplateLocationAndMemberSs.str().c_str());
+  }
+
   if(m_minSizeHasBeenSet)
   {
       oStream << location << index << locationValue << ".MinSize=" << m_minSize << "&";
@@ -453,6 +468,12 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_launchConfigurationNameHasBeenSet)
   {
       oStream << location << ".LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
+  }
+  if(m_launchTemplateHasBeenSet)
+  {
+      Aws::String launchTemplateLocationAndMember(location);
+      launchTemplateLocationAndMember += ".LaunchTemplate";
+      m_launchTemplate.OutputToStream(oStream, launchTemplateLocationAndMember.c_str());
   }
   if(m_minSizeHasBeenSet)
   {

@@ -23,7 +23,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 StopAutomationExecutionRequest::StopAutomationExecutionRequest() : 
-    m_automationExecutionIdHasBeenSet(false)
+    m_automationExecutionIdHasBeenSet(false),
+    m_type(StopType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -35,6 +37,11 @@ Aws::String StopAutomationExecutionRequest::SerializePayload() const
   {
    payload.WithString("AutomationExecutionId", m_automationExecutionId);
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("Type", StopTypeMapper::GetNameForStopType(m_type));
   }
 
   return payload.WriteReadable();

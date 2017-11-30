@@ -204,56 +204,49 @@ namespace Model
     /**
      * <p>Defines the action the Auto Scaling group should take when the lifecycle hook
      * timeout elapses or if an unexpected failure occurs. The valid values are
-     * <code>CONTINUE</code> and <code>ABANDON</code>. The default value is
-     * <code>CONTINUE</code>.</p>
+     * <code>CONTINUE</code> and <code>ABANDON</code>.</p>
      */
     inline const Aws::String& GetDefaultResult() const{ return m_defaultResult; }
 
     /**
      * <p>Defines the action the Auto Scaling group should take when the lifecycle hook
      * timeout elapses or if an unexpected failure occurs. The valid values are
-     * <code>CONTINUE</code> and <code>ABANDON</code>. The default value is
-     * <code>CONTINUE</code>.</p>
+     * <code>CONTINUE</code> and <code>ABANDON</code>.</p>
      */
     inline void SetDefaultResult(const Aws::String& value) { m_defaultResultHasBeenSet = true; m_defaultResult = value; }
 
     /**
      * <p>Defines the action the Auto Scaling group should take when the lifecycle hook
      * timeout elapses or if an unexpected failure occurs. The valid values are
-     * <code>CONTINUE</code> and <code>ABANDON</code>. The default value is
-     * <code>CONTINUE</code>.</p>
+     * <code>CONTINUE</code> and <code>ABANDON</code>.</p>
      */
     inline void SetDefaultResult(Aws::String&& value) { m_defaultResultHasBeenSet = true; m_defaultResult = std::move(value); }
 
     /**
      * <p>Defines the action the Auto Scaling group should take when the lifecycle hook
      * timeout elapses or if an unexpected failure occurs. The valid values are
-     * <code>CONTINUE</code> and <code>ABANDON</code>. The default value is
-     * <code>CONTINUE</code>.</p>
+     * <code>CONTINUE</code> and <code>ABANDON</code>.</p>
      */
     inline void SetDefaultResult(const char* value) { m_defaultResultHasBeenSet = true; m_defaultResult.assign(value); }
 
     /**
      * <p>Defines the action the Auto Scaling group should take when the lifecycle hook
      * timeout elapses or if an unexpected failure occurs. The valid values are
-     * <code>CONTINUE</code> and <code>ABANDON</code>. The default value is
-     * <code>CONTINUE</code>.</p>
+     * <code>CONTINUE</code> and <code>ABANDON</code>.</p>
      */
     inline LifecycleHookSpecification& WithDefaultResult(const Aws::String& value) { SetDefaultResult(value); return *this;}
 
     /**
      * <p>Defines the action the Auto Scaling group should take when the lifecycle hook
      * timeout elapses or if an unexpected failure occurs. The valid values are
-     * <code>CONTINUE</code> and <code>ABANDON</code>. The default value is
-     * <code>CONTINUE</code>.</p>
+     * <code>CONTINUE</code> and <code>ABANDON</code>.</p>
      */
     inline LifecycleHookSpecification& WithDefaultResult(Aws::String&& value) { SetDefaultResult(std::move(value)); return *this;}
 
     /**
      * <p>Defines the action the Auto Scaling group should take when the lifecycle hook
      * timeout elapses or if an unexpected failure occurs. The valid values are
-     * <code>CONTINUE</code> and <code>ABANDON</code>. The default value is
-     * <code>CONTINUE</code>.</p>
+     * <code>CONTINUE</code> and <code>ABANDON</code>.</p>
      */
     inline LifecycleHookSpecification& WithDefaultResult(const char* value) { SetDefaultResult(value); return *this;}
 

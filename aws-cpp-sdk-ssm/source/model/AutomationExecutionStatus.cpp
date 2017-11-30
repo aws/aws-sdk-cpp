@@ -35,6 +35,7 @@ namespace Aws
         static const int Waiting_HASH = HashingUtils::HashString("Waiting");
         static const int Success_HASH = HashingUtils::HashString("Success");
         static const int TimedOut_HASH = HashingUtils::HashString("TimedOut");
+        static const int Cancelling_HASH = HashingUtils::HashString("Cancelling");
         static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
         static const int Failed_HASH = HashingUtils::HashString("Failed");
 
@@ -61,6 +62,10 @@ namespace Aws
           else if (hashCode == TimedOut_HASH)
           {
             return AutomationExecutionStatus::TimedOut;
+          }
+          else if (hashCode == Cancelling_HASH)
+          {
+            return AutomationExecutionStatus::Cancelling;
           }
           else if (hashCode == Cancelled_HASH)
           {
@@ -94,6 +99,8 @@ namespace Aws
             return "Success";
           case AutomationExecutionStatus::TimedOut:
             return "TimedOut";
+          case AutomationExecutionStatus::Cancelling:
+            return "Cancelling";
           case AutomationExecutionStatus::Cancelled:
             return "Cancelled";
           case AutomationExecutionStatus::Failed:

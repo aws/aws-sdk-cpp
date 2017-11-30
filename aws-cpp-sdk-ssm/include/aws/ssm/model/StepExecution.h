@@ -132,6 +132,77 @@ namespace Model
 
 
     /**
+     * <p>The timeout seconds of the step.</p>
+     */
+    inline long long GetTimeoutSeconds() const{ return m_timeoutSeconds; }
+
+    /**
+     * <p>The timeout seconds of the step.</p>
+     */
+    inline void SetTimeoutSeconds(long long value) { m_timeoutSecondsHasBeenSet = true; m_timeoutSeconds = value; }
+
+    /**
+     * <p>The timeout seconds of the step.</p>
+     */
+    inline StepExecution& WithTimeoutSeconds(long long value) { SetTimeoutSeconds(value); return *this;}
+
+
+    /**
+     * <p>The action to take if the step fails. The default value is Abort.</p>
+     */
+    inline const Aws::String& GetOnFailure() const{ return m_onFailure; }
+
+    /**
+     * <p>The action to take if the step fails. The default value is Abort.</p>
+     */
+    inline void SetOnFailure(const Aws::String& value) { m_onFailureHasBeenSet = true; m_onFailure = value; }
+
+    /**
+     * <p>The action to take if the step fails. The default value is Abort.</p>
+     */
+    inline void SetOnFailure(Aws::String&& value) { m_onFailureHasBeenSet = true; m_onFailure = std::move(value); }
+
+    /**
+     * <p>The action to take if the step fails. The default value is Abort.</p>
+     */
+    inline void SetOnFailure(const char* value) { m_onFailureHasBeenSet = true; m_onFailure.assign(value); }
+
+    /**
+     * <p>The action to take if the step fails. The default value is Abort.</p>
+     */
+    inline StepExecution& WithOnFailure(const Aws::String& value) { SetOnFailure(value); return *this;}
+
+    /**
+     * <p>The action to take if the step fails. The default value is Abort.</p>
+     */
+    inline StepExecution& WithOnFailure(Aws::String&& value) { SetOnFailure(std::move(value)); return *this;}
+
+    /**
+     * <p>The action to take if the step fails. The default value is Abort.</p>
+     */
+    inline StepExecution& WithOnFailure(const char* value) { SetOnFailure(value); return *this;}
+
+
+    /**
+     * <p>The maximum number of tries to run the action of the step. The default value
+     * is 1.</p>
+     */
+    inline int GetMaxAttempts() const{ return m_maxAttempts; }
+
+    /**
+     * <p>The maximum number of tries to run the action of the step. The default value
+     * is 1.</p>
+     */
+    inline void SetMaxAttempts(int value) { m_maxAttemptsHasBeenSet = true; m_maxAttempts = value; }
+
+    /**
+     * <p>The maximum number of tries to run the action of the step. The default value
+     * is 1.</p>
+     */
+    inline StepExecution& WithMaxAttempts(int value) { SetMaxAttempts(value); return *this;}
+
+
+    /**
      * <p>If a step has begun execution, this contains the time the step started. If
      * the step is in Pending status, this field is not populated.</p>
      */
@@ -474,6 +545,98 @@ namespace Model
      */
     inline StepExecution& WithFailureDetails(FailureDetails&& value) { SetFailureDetails(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The unique ID of a step execution.</p>
+     */
+    inline const Aws::String& GetStepExecutionId() const{ return m_stepExecutionId; }
+
+    /**
+     * <p>The unique ID of a step execution.</p>
+     */
+    inline void SetStepExecutionId(const Aws::String& value) { m_stepExecutionIdHasBeenSet = true; m_stepExecutionId = value; }
+
+    /**
+     * <p>The unique ID of a step execution.</p>
+     */
+    inline void SetStepExecutionId(Aws::String&& value) { m_stepExecutionIdHasBeenSet = true; m_stepExecutionId = std::move(value); }
+
+    /**
+     * <p>The unique ID of a step execution.</p>
+     */
+    inline void SetStepExecutionId(const char* value) { m_stepExecutionIdHasBeenSet = true; m_stepExecutionId.assign(value); }
+
+    /**
+     * <p>The unique ID of a step execution.</p>
+     */
+    inline StepExecution& WithStepExecutionId(const Aws::String& value) { SetStepExecutionId(value); return *this;}
+
+    /**
+     * <p>The unique ID of a step execution.</p>
+     */
+    inline StepExecution& WithStepExecutionId(Aws::String&& value) { SetStepExecutionId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique ID of a step execution.</p>
+     */
+    inline StepExecution& WithStepExecutionId(const char* value) { SetStepExecutionId(value); return *this;}
+
+
+    /**
+     * <p>A user-specified list of parameters to override when executing a step.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetOverriddenParameters() const{ return m_overriddenParameters; }
+
+    /**
+     * <p>A user-specified list of parameters to override when executing a step.</p>
+     */
+    inline void SetOverriddenParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_overriddenParametersHasBeenSet = true; m_overriddenParameters = value; }
+
+    /**
+     * <p>A user-specified list of parameters to override when executing a step.</p>
+     */
+    inline void SetOverriddenParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_overriddenParametersHasBeenSet = true; m_overriddenParameters = std::move(value); }
+
+    /**
+     * <p>A user-specified list of parameters to override when executing a step.</p>
+     */
+    inline StepExecution& WithOverriddenParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetOverriddenParameters(value); return *this;}
+
+    /**
+     * <p>A user-specified list of parameters to override when executing a step.</p>
+     */
+    inline StepExecution& WithOverriddenParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetOverriddenParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>A user-specified list of parameters to override when executing a step.</p>
+     */
+    inline StepExecution& AddOverriddenParameters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_overriddenParametersHasBeenSet = true; m_overriddenParameters.emplace(key, value); return *this; }
+
+    /**
+     * <p>A user-specified list of parameters to override when executing a step.</p>
+     */
+    inline StepExecution& AddOverriddenParameters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_overriddenParametersHasBeenSet = true; m_overriddenParameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A user-specified list of parameters to override when executing a step.</p>
+     */
+    inline StepExecution& AddOverriddenParameters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_overriddenParametersHasBeenSet = true; m_overriddenParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A user-specified list of parameters to override when executing a step.</p>
+     */
+    inline StepExecution& AddOverriddenParameters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_overriddenParametersHasBeenSet = true; m_overriddenParameters.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A user-specified list of parameters to override when executing a step.</p>
+     */
+    inline StepExecution& AddOverriddenParameters(const char* key, Aws::Vector<Aws::String>&& value) { m_overriddenParametersHasBeenSet = true; m_overriddenParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A user-specified list of parameters to override when executing a step.</p>
+     */
+    inline StepExecution& AddOverriddenParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_overriddenParametersHasBeenSet = true; m_overriddenParameters.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_stepName;
@@ -481,6 +644,15 @@ namespace Model
 
     Aws::String m_action;
     bool m_actionHasBeenSet;
+
+    long long m_timeoutSeconds;
+    bool m_timeoutSecondsHasBeenSet;
+
+    Aws::String m_onFailure;
+    bool m_onFailureHasBeenSet;
+
+    int m_maxAttempts;
+    bool m_maxAttemptsHasBeenSet;
 
     Aws::Utils::DateTime m_executionStartTime;
     bool m_executionStartTimeHasBeenSet;
@@ -508,6 +680,12 @@ namespace Model
 
     FailureDetails m_failureDetails;
     bool m_failureDetailsHasBeenSet;
+
+    Aws::String m_stepExecutionId;
+    bool m_stepExecutionIdHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_overriddenParameters;
+    bool m_overriddenParametersHasBeenSet;
   };
 
 } // namespace Model

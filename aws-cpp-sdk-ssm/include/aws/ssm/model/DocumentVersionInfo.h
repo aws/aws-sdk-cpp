@@ -17,6 +17,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/ssm/model/DocumentFormat.h>
 #include <utility>
 
 namespace Aws
@@ -160,6 +161,32 @@ namespace Model
      */
     inline DocumentVersionInfo& WithIsDefaultVersion(bool value) { SetIsDefaultVersion(value); return *this;}
 
+
+    /**
+     * <p>The document format, either JSON or YAML.</p>
+     */
+    inline const DocumentFormat& GetDocumentFormat() const{ return m_documentFormat; }
+
+    /**
+     * <p>The document format, either JSON or YAML.</p>
+     */
+    inline void SetDocumentFormat(const DocumentFormat& value) { m_documentFormatHasBeenSet = true; m_documentFormat = value; }
+
+    /**
+     * <p>The document format, either JSON or YAML.</p>
+     */
+    inline void SetDocumentFormat(DocumentFormat&& value) { m_documentFormatHasBeenSet = true; m_documentFormat = std::move(value); }
+
+    /**
+     * <p>The document format, either JSON or YAML.</p>
+     */
+    inline DocumentVersionInfo& WithDocumentFormat(const DocumentFormat& value) { SetDocumentFormat(value); return *this;}
+
+    /**
+     * <p>The document format, either JSON or YAML.</p>
+     */
+    inline DocumentVersionInfo& WithDocumentFormat(DocumentFormat&& value) { SetDocumentFormat(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -173,6 +200,9 @@ namespace Model
 
     bool m_isDefaultVersion;
     bool m_isDefaultVersionHasBeenSet;
+
+    DocumentFormat m_documentFormat;
+    bool m_documentFormatHasBeenSet;
   };
 
 } // namespace Model

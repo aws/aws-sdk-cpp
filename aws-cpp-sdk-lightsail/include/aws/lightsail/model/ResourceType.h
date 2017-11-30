@@ -32,6 +32,8 @@ namespace Model
     InstanceSnapshot,
     Domain,
     PeeredVpc,
+    LoadBalancer,
+    LoadBalancerTlsCertificate,
     Disk,
     DiskSnapshot
   };

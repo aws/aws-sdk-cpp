@@ -17,6 +17,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/DocumentType.h>
+#include <aws/ssm/model/DocumentFormat.h>
 #include <utility>
 
 namespace Aws
@@ -176,6 +177,32 @@ namespace Model
      */
     inline GetDocumentResult& WithDocumentType(DocumentType&& value) { SetDocumentType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The document format, either JSON or YAML.</p>
+     */
+    inline const DocumentFormat& GetDocumentFormat() const{ return m_documentFormat; }
+
+    /**
+     * <p>The document format, either JSON or YAML.</p>
+     */
+    inline void SetDocumentFormat(const DocumentFormat& value) { m_documentFormat = value; }
+
+    /**
+     * <p>The document format, either JSON or YAML.</p>
+     */
+    inline void SetDocumentFormat(DocumentFormat&& value) { m_documentFormat = std::move(value); }
+
+    /**
+     * <p>The document format, either JSON or YAML.</p>
+     */
+    inline GetDocumentResult& WithDocumentFormat(const DocumentFormat& value) { SetDocumentFormat(value); return *this;}
+
+    /**
+     * <p>The document format, either JSON or YAML.</p>
+     */
+    inline GetDocumentResult& WithDocumentFormat(DocumentFormat&& value) { SetDocumentFormat(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -185,6 +212,8 @@ namespace Model
     Aws::String m_content;
 
     DocumentType m_documentType;
+
+    DocumentFormat m_documentFormat;
   };
 
 } // namespace Model

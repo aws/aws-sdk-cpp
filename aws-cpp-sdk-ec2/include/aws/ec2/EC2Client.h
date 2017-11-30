@@ -115,6 +115,7 @@
 #include <aws/ec2/model/DescribeImportImageTasksResponse.h>
 #include <aws/ec2/model/DescribeImportSnapshotTasksResponse.h>
 #include <aws/ec2/model/DescribeInstanceAttributeResponse.h>
+#include <aws/ec2/model/DescribeInstanceCreditSpecificationsResponse.h>
 #include <aws/ec2/model/DescribeInstanceStatusResponse.h>
 #include <aws/ec2/model/DescribeInstancesResponse.h>
 #include <aws/ec2/model/DescribeInternetGatewaysResponse.h>
@@ -189,6 +190,7 @@
 #include <aws/ec2/model/ImportVolumeResponse.h>
 #include <aws/ec2/model/ModifyFpgaImageAttributeResponse.h>
 #include <aws/ec2/model/ModifyHostsResponse.h>
+#include <aws/ec2/model/ModifyInstanceCreditSpecificationResponse.h>
 #include <aws/ec2/model/ModifyInstancePlacementResponse.h>
 #include <aws/ec2/model/ModifyLaunchTemplateResponse.h>
 #include <aws/ec2/model/ModifyReservedInstancesResponse.h>
@@ -396,6 +398,7 @@ namespace Model
         class DescribeImportImageTasksRequest;
         class DescribeImportSnapshotTasksRequest;
         class DescribeInstanceAttributeRequest;
+        class DescribeInstanceCreditSpecificationsRequest;
         class DescribeInstanceStatusRequest;
         class DescribeInstancesRequest;
         class DescribeInternetGatewaysRequest;
@@ -482,6 +485,7 @@ namespace Model
         class ModifyIdentityIdFormatRequest;
         class ModifyImageAttributeRequest;
         class ModifyInstanceAttributeRequest;
+        class ModifyInstanceCreditSpecificationRequest;
         class ModifyInstancePlacementRequest;
         class ModifyLaunchTemplateRequest;
         class ModifyNetworkInterfaceAttributeRequest;
@@ -661,6 +665,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeImportImageTasksResponse, Aws::Client::AWSError<EC2Errors>> DescribeImportImageTasksOutcome;
         typedef Aws::Utils::Outcome<DescribeImportSnapshotTasksResponse, Aws::Client::AWSError<EC2Errors>> DescribeImportSnapshotTasksOutcome;
         typedef Aws::Utils::Outcome<DescribeInstanceAttributeResponse, Aws::Client::AWSError<EC2Errors>> DescribeInstanceAttributeOutcome;
+        typedef Aws::Utils::Outcome<DescribeInstanceCreditSpecificationsResponse, Aws::Client::AWSError<EC2Errors>> DescribeInstanceCreditSpecificationsOutcome;
         typedef Aws::Utils::Outcome<DescribeInstanceStatusResponse, Aws::Client::AWSError<EC2Errors>> DescribeInstanceStatusOutcome;
         typedef Aws::Utils::Outcome<DescribeInstancesResponse, Aws::Client::AWSError<EC2Errors>> DescribeInstancesOutcome;
         typedef Aws::Utils::Outcome<DescribeInternetGatewaysResponse, Aws::Client::AWSError<EC2Errors>> DescribeInternetGatewaysOutcome;
@@ -747,6 +752,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ModifyIdentityIdFormatOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ModifyImageAttributeOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ModifyInstanceAttributeOutcome;
+        typedef Aws::Utils::Outcome<ModifyInstanceCreditSpecificationResponse, Aws::Client::AWSError<EC2Errors>> ModifyInstanceCreditSpecificationOutcome;
         typedef Aws::Utils::Outcome<ModifyInstancePlacementResponse, Aws::Client::AWSError<EC2Errors>> ModifyInstancePlacementOutcome;
         typedef Aws::Utils::Outcome<ModifyLaunchTemplateResponse, Aws::Client::AWSError<EC2Errors>> ModifyLaunchTemplateOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ModifyNetworkInterfaceAttributeOutcome;
@@ -926,6 +932,7 @@ namespace Model
         typedef std::future<DescribeImportImageTasksOutcome> DescribeImportImageTasksOutcomeCallable;
         typedef std::future<DescribeImportSnapshotTasksOutcome> DescribeImportSnapshotTasksOutcomeCallable;
         typedef std::future<DescribeInstanceAttributeOutcome> DescribeInstanceAttributeOutcomeCallable;
+        typedef std::future<DescribeInstanceCreditSpecificationsOutcome> DescribeInstanceCreditSpecificationsOutcomeCallable;
         typedef std::future<DescribeInstanceStatusOutcome> DescribeInstanceStatusOutcomeCallable;
         typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
         typedef std::future<DescribeInternetGatewaysOutcome> DescribeInternetGatewaysOutcomeCallable;
@@ -1012,6 +1019,7 @@ namespace Model
         typedef std::future<ModifyIdentityIdFormatOutcome> ModifyIdentityIdFormatOutcomeCallable;
         typedef std::future<ModifyImageAttributeOutcome> ModifyImageAttributeOutcomeCallable;
         typedef std::future<ModifyInstanceAttributeOutcome> ModifyInstanceAttributeOutcomeCallable;
+        typedef std::future<ModifyInstanceCreditSpecificationOutcome> ModifyInstanceCreditSpecificationOutcomeCallable;
         typedef std::future<ModifyInstancePlacementOutcome> ModifyInstancePlacementOutcomeCallable;
         typedef std::future<ModifyLaunchTemplateOutcome> ModifyLaunchTemplateOutcomeCallable;
         typedef std::future<ModifyNetworkInterfaceAttributeOutcome> ModifyNetworkInterfaceAttributeOutcomeCallable;
@@ -1194,6 +1202,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DescribeImportImageTasksRequest&, const Model::DescribeImportImageTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImportImageTasksResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeImportSnapshotTasksRequest&, const Model::DescribeImportSnapshotTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImportSnapshotTasksResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceAttributeRequest&, const Model::DescribeInstanceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceAttributeResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeInstanceCreditSpecificationsRequest&, const Model::DescribeInstanceCreditSpecificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceCreditSpecificationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceStatusRequest&, const Model::DescribeInstanceStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceStatusResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstancesRequest&, const Model::DescribeInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInternetGatewaysRequest&, const Model::DescribeInternetGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInternetGatewaysResponseReceivedHandler;
@@ -1280,6 +1289,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ModifyIdentityIdFormatRequest&, const Model::ModifyIdentityIdFormatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyIdentityIdFormatResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyImageAttributeRequest&, const Model::ModifyImageAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyImageAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyInstanceAttributeRequest&, const Model::ModifyInstanceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceAttributeResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ModifyInstanceCreditSpecificationRequest&, const Model::ModifyInstanceCreditSpecificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceCreditSpecificationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyInstancePlacementRequest&, const Model::ModifyInstancePlacementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstancePlacementResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyLaunchTemplateRequest&, const Model::ModifyLaunchTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyLaunchTemplateResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyNetworkInterfaceAttributeRequest&, const Model::ModifyNetworkInterfaceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyNetworkInterfaceAttributeResponseReceivedHandler;
@@ -6883,6 +6893,76 @@ namespace Model
         virtual void DescribeInstanceAttributeAsync(const Model::DescribeInstanceAttributeRequest& request, const DescribeInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes the credit option for CPU usage of one or more of your T2
+         * instances. The credit options are <code>standard</code> and
+         * <code>unlimited</code>.</p> <p>If you do not specify an instance ID, Amazon EC2
+         * returns only the T2 instances with the <code>unlimited</code> credit option. If
+         * you specify one or more instance IDs, Amazon EC2 returns the credit option
+         * (<code>standard</code> or <code>unlimited</code>) of those instances. If you
+         * specify an instance ID that is not valid, such as an instance that is not a T2
+         * instance, an error is returned.</p> <p>Recently terminated instances might
+         * appear in the returned results. This interval is usually less than one hour.</p>
+         * <p>If an Availability Zone is experiencing a service disruption and you specify
+         * instance IDs in the affected zone, or do not specify any instance IDs at all,
+         * the call fails. If you specify only instance IDs in an unaffected zone, the call
+         * works normally.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceCreditSpecifications">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeInstanceCreditSpecificationsOutcome DescribeInstanceCreditSpecifications(const Model::DescribeInstanceCreditSpecificationsRequest& request) const;
+
+        /**
+         * <p>Describes the credit option for CPU usage of one or more of your T2
+         * instances. The credit options are <code>standard</code> and
+         * <code>unlimited</code>.</p> <p>If you do not specify an instance ID, Amazon EC2
+         * returns only the T2 instances with the <code>unlimited</code> credit option. If
+         * you specify one or more instance IDs, Amazon EC2 returns the credit option
+         * (<code>standard</code> or <code>unlimited</code>) of those instances. If you
+         * specify an instance ID that is not valid, such as an instance that is not a T2
+         * instance, an error is returned.</p> <p>Recently terminated instances might
+         * appear in the returned results. This interval is usually less than one hour.</p>
+         * <p>If an Availability Zone is experiencing a service disruption and you specify
+         * instance IDs in the affected zone, or do not specify any instance IDs at all,
+         * the call fails. If you specify only instance IDs in an unaffected zone, the call
+         * works normally.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceCreditSpecifications">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeInstanceCreditSpecificationsOutcomeCallable DescribeInstanceCreditSpecificationsCallable(const Model::DescribeInstanceCreditSpecificationsRequest& request) const;
+
+        /**
+         * <p>Describes the credit option for CPU usage of one or more of your T2
+         * instances. The credit options are <code>standard</code> and
+         * <code>unlimited</code>.</p> <p>If you do not specify an instance ID, Amazon EC2
+         * returns only the T2 instances with the <code>unlimited</code> credit option. If
+         * you specify one or more instance IDs, Amazon EC2 returns the credit option
+         * (<code>standard</code> or <code>unlimited</code>) of those instances. If you
+         * specify an instance ID that is not valid, such as an instance that is not a T2
+         * instance, an error is returned.</p> <p>Recently terminated instances might
+         * appear in the returned results. This interval is usually less than one hour.</p>
+         * <p>If an Availability Zone is experiencing a service disruption and you specify
+         * instance IDs in the affected zone, or do not specify any instance IDs at all,
+         * the call fails. If you specify only instance IDs in an unaffected zone, the call
+         * works normally.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceCreditSpecifications">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeInstanceCreditSpecificationsAsync(const Model::DescribeInstanceCreditSpecificationsRequest& request, const DescribeInstanceCreditSpecificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes the status of one or more instances. By default, only running
          * instances are described, unless you specifically indicate to return the status
          * of all instances.</p> <p>Instance status includes the following components:</p>
@@ -10437,6 +10517,46 @@ namespace Model
         virtual void ModifyInstanceAttributeAsync(const Model::ModifyInstanceAttributeRequest& request, const ModifyInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Modifies the credit option for CPU usage on a running or stopped T2 instance.
+         * The credit options are <code>standard</code> and <code>unlimited</code>.</p>
+         * <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCreditSpecification">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyInstanceCreditSpecificationOutcome ModifyInstanceCreditSpecification(const Model::ModifyInstanceCreditSpecificationRequest& request) const;
+
+        /**
+         * <p>Modifies the credit option for CPU usage on a running or stopped T2 instance.
+         * The credit options are <code>standard</code> and <code>unlimited</code>.</p>
+         * <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCreditSpecification">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyInstanceCreditSpecificationOutcomeCallable ModifyInstanceCreditSpecificationCallable(const Model::ModifyInstanceCreditSpecificationRequest& request) const;
+
+        /**
+         * <p>Modifies the credit option for CPU usage on a running or stopped T2 instance.
+         * The credit options are <code>standard</code> and <code>unlimited</code>.</p>
+         * <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCreditSpecification">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyInstanceCreditSpecificationAsync(const Model::ModifyInstanceCreditSpecificationRequest& request, const ModifyInstanceCreditSpecificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Set the instance affinity value for a specific stopped instance and modify
          * the instance tenancy setting.</p> <p>Instance affinity is disabled by default.
          * When instance affinity is <code>host</code> and it is not associated with a
@@ -13235,6 +13355,7 @@ namespace Model
         void DescribeImportImageTasksAsyncHelper(const Model::DescribeImportImageTasksRequest& request, const DescribeImportImageTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeImportSnapshotTasksAsyncHelper(const Model::DescribeImportSnapshotTasksRequest& request, const DescribeImportSnapshotTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstanceAttributeAsyncHelper(const Model::DescribeInstanceAttributeRequest& request, const DescribeInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeInstanceCreditSpecificationsAsyncHelper(const Model::DescribeInstanceCreditSpecificationsRequest& request, const DescribeInstanceCreditSpecificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstanceStatusAsyncHelper(const Model::DescribeInstanceStatusRequest& request, const DescribeInstanceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstancesAsyncHelper(const Model::DescribeInstancesRequest& request, const DescribeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInternetGatewaysAsyncHelper(const Model::DescribeInternetGatewaysRequest& request, const DescribeInternetGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -13321,6 +13442,7 @@ namespace Model
         void ModifyIdentityIdFormatAsyncHelper(const Model::ModifyIdentityIdFormatRequest& request, const ModifyIdentityIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyImageAttributeAsyncHelper(const Model::ModifyImageAttributeRequest& request, const ModifyImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyInstanceAttributeAsyncHelper(const Model::ModifyInstanceAttributeRequest& request, const ModifyInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyInstanceCreditSpecificationAsyncHelper(const Model::ModifyInstanceCreditSpecificationRequest& request, const ModifyInstanceCreditSpecificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyInstancePlacementAsyncHelper(const Model::ModifyInstancePlacementRequest& request, const ModifyInstancePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyLaunchTemplateAsyncHelper(const Model::ModifyLaunchTemplateRequest& request, const ModifyLaunchTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyNetworkInterfaceAttributeAsyncHelper(const Model::ModifyNetworkInterfaceAttributeRequest& request, const ModifyNetworkInterfaceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

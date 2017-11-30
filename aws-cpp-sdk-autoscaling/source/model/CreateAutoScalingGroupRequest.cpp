@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 CreateAutoScalingGroupRequest::CreateAutoScalingGroupRequest() : 
     m_autoScalingGroupNameHasBeenSet(false),
     m_launchConfigurationNameHasBeenSet(false),
+    m_launchTemplateHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_minSize(0),
     m_minSizeHasBeenSet(false),
@@ -60,6 +61,11 @@ Aws::String CreateAutoScalingGroupRequest::SerializePayload() const
   if(m_launchConfigurationNameHasBeenSet)
   {
     ss << "LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
+  }
+
+  if(m_launchTemplateHasBeenSet)
+  {
+    m_launchTemplate.OutputToStream(ss, "LaunchTemplate");
   }
 
   if(m_instanceIdHasBeenSet)

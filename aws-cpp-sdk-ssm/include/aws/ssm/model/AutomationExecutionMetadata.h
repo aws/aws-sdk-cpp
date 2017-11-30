@@ -19,7 +19,10 @@
 #include <aws/ssm/model/AutomationExecutionStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/ssm/model/ExecutionMode.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm/model/ResolvedTargets.h>
+#include <aws/ssm/model/Target.h>
 #include <utility>
 
 namespace Aws
@@ -373,6 +376,389 @@ namespace Model
      */
     inline AutomationExecutionMetadata& AddOutputs(const char* key, const Aws::Vector<Aws::String>& value) { m_outputsHasBeenSet = true; m_outputs.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The Automation execution mode.</p>
+     */
+    inline const ExecutionMode& GetMode() const{ return m_mode; }
+
+    /**
+     * <p>The Automation execution mode.</p>
+     */
+    inline void SetMode(const ExecutionMode& value) { m_modeHasBeenSet = true; m_mode = value; }
+
+    /**
+     * <p>The Automation execution mode.</p>
+     */
+    inline void SetMode(ExecutionMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
+
+    /**
+     * <p>The Automation execution mode.</p>
+     */
+    inline AutomationExecutionMetadata& WithMode(const ExecutionMode& value) { SetMode(value); return *this;}
+
+    /**
+     * <p>The Automation execution mode.</p>
+     */
+    inline AutomationExecutionMetadata& WithMode(ExecutionMode&& value) { SetMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The ExecutionId of the parent Automation.</p>
+     */
+    inline const Aws::String& GetParentAutomationExecutionId() const{ return m_parentAutomationExecutionId; }
+
+    /**
+     * <p>The ExecutionId of the parent Automation.</p>
+     */
+    inline void SetParentAutomationExecutionId(const Aws::String& value) { m_parentAutomationExecutionIdHasBeenSet = true; m_parentAutomationExecutionId = value; }
+
+    /**
+     * <p>The ExecutionId of the parent Automation.</p>
+     */
+    inline void SetParentAutomationExecutionId(Aws::String&& value) { m_parentAutomationExecutionIdHasBeenSet = true; m_parentAutomationExecutionId = std::move(value); }
+
+    /**
+     * <p>The ExecutionId of the parent Automation.</p>
+     */
+    inline void SetParentAutomationExecutionId(const char* value) { m_parentAutomationExecutionIdHasBeenSet = true; m_parentAutomationExecutionId.assign(value); }
+
+    /**
+     * <p>The ExecutionId of the parent Automation.</p>
+     */
+    inline AutomationExecutionMetadata& WithParentAutomationExecutionId(const Aws::String& value) { SetParentAutomationExecutionId(value); return *this;}
+
+    /**
+     * <p>The ExecutionId of the parent Automation.</p>
+     */
+    inline AutomationExecutionMetadata& WithParentAutomationExecutionId(Aws::String&& value) { SetParentAutomationExecutionId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ExecutionId of the parent Automation.</p>
+     */
+    inline AutomationExecutionMetadata& WithParentAutomationExecutionId(const char* value) { SetParentAutomationExecutionId(value); return *this;}
+
+
+    /**
+     * <p>The name of the currently executing step.</p>
+     */
+    inline const Aws::String& GetCurrentStepName() const{ return m_currentStepName; }
+
+    /**
+     * <p>The name of the currently executing step.</p>
+     */
+    inline void SetCurrentStepName(const Aws::String& value) { m_currentStepNameHasBeenSet = true; m_currentStepName = value; }
+
+    /**
+     * <p>The name of the currently executing step.</p>
+     */
+    inline void SetCurrentStepName(Aws::String&& value) { m_currentStepNameHasBeenSet = true; m_currentStepName = std::move(value); }
+
+    /**
+     * <p>The name of the currently executing step.</p>
+     */
+    inline void SetCurrentStepName(const char* value) { m_currentStepNameHasBeenSet = true; m_currentStepName.assign(value); }
+
+    /**
+     * <p>The name of the currently executing step.</p>
+     */
+    inline AutomationExecutionMetadata& WithCurrentStepName(const Aws::String& value) { SetCurrentStepName(value); return *this;}
+
+    /**
+     * <p>The name of the currently executing step.</p>
+     */
+    inline AutomationExecutionMetadata& WithCurrentStepName(Aws::String&& value) { SetCurrentStepName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the currently executing step.</p>
+     */
+    inline AutomationExecutionMetadata& WithCurrentStepName(const char* value) { SetCurrentStepName(value); return *this;}
+
+
+    /**
+     * <p>The action of the currently executing step.</p>
+     */
+    inline const Aws::String& GetCurrentAction() const{ return m_currentAction; }
+
+    /**
+     * <p>The action of the currently executing step.</p>
+     */
+    inline void SetCurrentAction(const Aws::String& value) { m_currentActionHasBeenSet = true; m_currentAction = value; }
+
+    /**
+     * <p>The action of the currently executing step.</p>
+     */
+    inline void SetCurrentAction(Aws::String&& value) { m_currentActionHasBeenSet = true; m_currentAction = std::move(value); }
+
+    /**
+     * <p>The action of the currently executing step.</p>
+     */
+    inline void SetCurrentAction(const char* value) { m_currentActionHasBeenSet = true; m_currentAction.assign(value); }
+
+    /**
+     * <p>The action of the currently executing step.</p>
+     */
+    inline AutomationExecutionMetadata& WithCurrentAction(const Aws::String& value) { SetCurrentAction(value); return *this;}
+
+    /**
+     * <p>The action of the currently executing step.</p>
+     */
+    inline AutomationExecutionMetadata& WithCurrentAction(Aws::String&& value) { SetCurrentAction(std::move(value)); return *this;}
+
+    /**
+     * <p>The action of the currently executing step.</p>
+     */
+    inline AutomationExecutionMetadata& WithCurrentAction(const char* value) { SetCurrentAction(value); return *this;}
+
+
+    /**
+     * <p>The list of execution outputs as defined in the Automation document.</p>
+     */
+    inline const Aws::String& GetFailureMessage() const{ return m_failureMessage; }
+
+    /**
+     * <p>The list of execution outputs as defined in the Automation document.</p>
+     */
+    inline void SetFailureMessage(const Aws::String& value) { m_failureMessageHasBeenSet = true; m_failureMessage = value; }
+
+    /**
+     * <p>The list of execution outputs as defined in the Automation document.</p>
+     */
+    inline void SetFailureMessage(Aws::String&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::move(value); }
+
+    /**
+     * <p>The list of execution outputs as defined in the Automation document.</p>
+     */
+    inline void SetFailureMessage(const char* value) { m_failureMessageHasBeenSet = true; m_failureMessage.assign(value); }
+
+    /**
+     * <p>The list of execution outputs as defined in the Automation document.</p>
+     */
+    inline AutomationExecutionMetadata& WithFailureMessage(const Aws::String& value) { SetFailureMessage(value); return *this;}
+
+    /**
+     * <p>The list of execution outputs as defined in the Automation document.</p>
+     */
+    inline AutomationExecutionMetadata& WithFailureMessage(Aws::String&& value) { SetFailureMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of execution outputs as defined in the Automation document.</p>
+     */
+    inline AutomationExecutionMetadata& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
+
+
+    /**
+     * <p>The list of execution outputs as defined in the Automation document.</p>
+     */
+    inline const Aws::String& GetTargetParameterName() const{ return m_targetParameterName; }
+
+    /**
+     * <p>The list of execution outputs as defined in the Automation document.</p>
+     */
+    inline void SetTargetParameterName(const Aws::String& value) { m_targetParameterNameHasBeenSet = true; m_targetParameterName = value; }
+
+    /**
+     * <p>The list of execution outputs as defined in the Automation document.</p>
+     */
+    inline void SetTargetParameterName(Aws::String&& value) { m_targetParameterNameHasBeenSet = true; m_targetParameterName = std::move(value); }
+
+    /**
+     * <p>The list of execution outputs as defined in the Automation document.</p>
+     */
+    inline void SetTargetParameterName(const char* value) { m_targetParameterNameHasBeenSet = true; m_targetParameterName.assign(value); }
+
+    /**
+     * <p>The list of execution outputs as defined in the Automation document.</p>
+     */
+    inline AutomationExecutionMetadata& WithTargetParameterName(const Aws::String& value) { SetTargetParameterName(value); return *this;}
+
+    /**
+     * <p>The list of execution outputs as defined in the Automation document.</p>
+     */
+    inline AutomationExecutionMetadata& WithTargetParameterName(Aws::String&& value) { SetTargetParameterName(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of execution outputs as defined in the Automation document.</p>
+     */
+    inline AutomationExecutionMetadata& WithTargetParameterName(const char* value) { SetTargetParameterName(value); return *this;}
+
+
+    /**
+     * <p>The targets defined by the user when starting the Automation.</p>
+     */
+    inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
+
+    /**
+     * <p>The targets defined by the user when starting the Automation.</p>
+     */
+    inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
+
+    /**
+     * <p>The targets defined by the user when starting the Automation.</p>
+     */
+    inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
+
+    /**
+     * <p>The targets defined by the user when starting the Automation.</p>
+     */
+    inline AutomationExecutionMetadata& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
+
+    /**
+     * <p>The targets defined by the user when starting the Automation.</p>
+     */
+    inline AutomationExecutionMetadata& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
+
+    /**
+     * <p>The targets defined by the user when starting the Automation.</p>
+     */
+    inline AutomationExecutionMetadata& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
+
+    /**
+     * <p>The targets defined by the user when starting the Automation.</p>
+     */
+    inline AutomationExecutionMetadata& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A list of targets that resolved during the execution.</p>
+     */
+    inline const ResolvedTargets& GetResolvedTargets() const{ return m_resolvedTargets; }
+
+    /**
+     * <p>A list of targets that resolved during the execution.</p>
+     */
+    inline void SetResolvedTargets(const ResolvedTargets& value) { m_resolvedTargetsHasBeenSet = true; m_resolvedTargets = value; }
+
+    /**
+     * <p>A list of targets that resolved during the execution.</p>
+     */
+    inline void SetResolvedTargets(ResolvedTargets&& value) { m_resolvedTargetsHasBeenSet = true; m_resolvedTargets = std::move(value); }
+
+    /**
+     * <p>A list of targets that resolved during the execution.</p>
+     */
+    inline AutomationExecutionMetadata& WithResolvedTargets(const ResolvedTargets& value) { SetResolvedTargets(value); return *this;}
+
+    /**
+     * <p>A list of targets that resolved during the execution.</p>
+     */
+    inline AutomationExecutionMetadata& WithResolvedTargets(ResolvedTargets&& value) { SetResolvedTargets(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The MaxConcurrency value specified by the user when starting the
+     * Automation.</p>
+     */
+    inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
+
+    /**
+     * <p>The MaxConcurrency value specified by the user when starting the
+     * Automation.</p>
+     */
+    inline void SetMaxConcurrency(const Aws::String& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
+
+    /**
+     * <p>The MaxConcurrency value specified by the user when starting the
+     * Automation.</p>
+     */
+    inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = std::move(value); }
+
+    /**
+     * <p>The MaxConcurrency value specified by the user when starting the
+     * Automation.</p>
+     */
+    inline void SetMaxConcurrency(const char* value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency.assign(value); }
+
+    /**
+     * <p>The MaxConcurrency value specified by the user when starting the
+     * Automation.</p>
+     */
+    inline AutomationExecutionMetadata& WithMaxConcurrency(const Aws::String& value) { SetMaxConcurrency(value); return *this;}
+
+    /**
+     * <p>The MaxConcurrency value specified by the user when starting the
+     * Automation.</p>
+     */
+    inline AutomationExecutionMetadata& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(std::move(value)); return *this;}
+
+    /**
+     * <p>The MaxConcurrency value specified by the user when starting the
+     * Automation.</p>
+     */
+    inline AutomationExecutionMetadata& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
+
+
+    /**
+     * <p>The MaxErrors value specified by the user when starting the Automation.</p>
+     */
+    inline const Aws::String& GetMaxErrors() const{ return m_maxErrors; }
+
+    /**
+     * <p>The MaxErrors value specified by the user when starting the Automation.</p>
+     */
+    inline void SetMaxErrors(const Aws::String& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = value; }
+
+    /**
+     * <p>The MaxErrors value specified by the user when starting the Automation.</p>
+     */
+    inline void SetMaxErrors(Aws::String&& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = std::move(value); }
+
+    /**
+     * <p>The MaxErrors value specified by the user when starting the Automation.</p>
+     */
+    inline void SetMaxErrors(const char* value) { m_maxErrorsHasBeenSet = true; m_maxErrors.assign(value); }
+
+    /**
+     * <p>The MaxErrors value specified by the user when starting the Automation.</p>
+     */
+    inline AutomationExecutionMetadata& WithMaxErrors(const Aws::String& value) { SetMaxErrors(value); return *this;}
+
+    /**
+     * <p>The MaxErrors value specified by the user when starting the Automation.</p>
+     */
+    inline AutomationExecutionMetadata& WithMaxErrors(Aws::String&& value) { SetMaxErrors(std::move(value)); return *this;}
+
+    /**
+     * <p>The MaxErrors value specified by the user when starting the Automation.</p>
+     */
+    inline AutomationExecutionMetadata& WithMaxErrors(const char* value) { SetMaxErrors(value); return *this;}
+
+
+    /**
+     * <p>The list of execution outputs as defined in the Automation document.</p>
+     */
+    inline const Aws::String& GetTarget() const{ return m_target; }
+
+    /**
+     * <p>The list of execution outputs as defined in the Automation document.</p>
+     */
+    inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
+
+    /**
+     * <p>The list of execution outputs as defined in the Automation document.</p>
+     */
+    inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
+
+    /**
+     * <p>The list of execution outputs as defined in the Automation document.</p>
+     */
+    inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
+
+    /**
+     * <p>The list of execution outputs as defined in the Automation document.</p>
+     */
+    inline AutomationExecutionMetadata& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
+
+    /**
+     * <p>The list of execution outputs as defined in the Automation document.</p>
+     */
+    inline AutomationExecutionMetadata& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of execution outputs as defined in the Automation document.</p>
+     */
+    inline AutomationExecutionMetadata& WithTarget(const char* value) { SetTarget(value); return *this;}
+
   private:
 
     Aws::String m_automationExecutionId;
@@ -401,6 +787,39 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_outputs;
     bool m_outputsHasBeenSet;
+
+    ExecutionMode m_mode;
+    bool m_modeHasBeenSet;
+
+    Aws::String m_parentAutomationExecutionId;
+    bool m_parentAutomationExecutionIdHasBeenSet;
+
+    Aws::String m_currentStepName;
+    bool m_currentStepNameHasBeenSet;
+
+    Aws::String m_currentAction;
+    bool m_currentActionHasBeenSet;
+
+    Aws::String m_failureMessage;
+    bool m_failureMessageHasBeenSet;
+
+    Aws::String m_targetParameterName;
+    bool m_targetParameterNameHasBeenSet;
+
+    Aws::Vector<Target> m_targets;
+    bool m_targetsHasBeenSet;
+
+    ResolvedTargets m_resolvedTargets;
+    bool m_resolvedTargetsHasBeenSet;
+
+    Aws::String m_maxConcurrency;
+    bool m_maxConcurrencyHasBeenSet;
+
+    Aws::String m_maxErrors;
+    bool m_maxErrorsHasBeenSet;
+
+    Aws::String m_target;
+    bool m_targetHasBeenSet;
   };
 
 } // namespace Model

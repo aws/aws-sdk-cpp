@@ -25,6 +25,7 @@
 #include <aws/ec2/model/ShutdownBehavior.h>
 #include <aws/ec2/model/LaunchTemplateSpecification.h>
 #include <aws/ec2/model/InstanceMarketOptionsRequest.h>
+#include <aws/ec2/model/CreditSpecificationRequest.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
 #include <aws/ec2/model/InstanceIpv6Address.h>
 #include <aws/ec2/model/InstanceNetworkInterfaceSpecification.h>
@@ -1323,6 +1324,62 @@ namespace Model
      */
     inline RunInstancesRequest& WithInstanceMarketOptions(InstanceMarketOptionsRequest&& value) { SetInstanceMarketOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The credit option for CPU usage of the instance. Valid values are
+     * <code>standard</code> and <code>unlimited</code>. To change this attribute after
+     * launch, use <a>ModifyInstanceCreditSpecification</a>. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>Default: <code>standard</code> </p>
+     */
+    inline const CreditSpecificationRequest& GetCreditSpecification() const{ return m_creditSpecification; }
+
+    /**
+     * <p>The credit option for CPU usage of the instance. Valid values are
+     * <code>standard</code> and <code>unlimited</code>. To change this attribute after
+     * launch, use <a>ModifyInstanceCreditSpecification</a>. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>Default: <code>standard</code> </p>
+     */
+    inline void SetCreditSpecification(const CreditSpecificationRequest& value) { m_creditSpecificationHasBeenSet = true; m_creditSpecification = value; }
+
+    /**
+     * <p>The credit option for CPU usage of the instance. Valid values are
+     * <code>standard</code> and <code>unlimited</code>. To change this attribute after
+     * launch, use <a>ModifyInstanceCreditSpecification</a>. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>Default: <code>standard</code> </p>
+     */
+    inline void SetCreditSpecification(CreditSpecificationRequest&& value) { m_creditSpecificationHasBeenSet = true; m_creditSpecification = std::move(value); }
+
+    /**
+     * <p>The credit option for CPU usage of the instance. Valid values are
+     * <code>standard</code> and <code>unlimited</code>. To change this attribute after
+     * launch, use <a>ModifyInstanceCreditSpecification</a>. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>Default: <code>standard</code> </p>
+     */
+    inline RunInstancesRequest& WithCreditSpecification(const CreditSpecificationRequest& value) { SetCreditSpecification(value); return *this;}
+
+    /**
+     * <p>The credit option for CPU usage of the instance. Valid values are
+     * <code>standard</code> and <code>unlimited</code>. To change this attribute after
+     * launch, use <a>ModifyInstanceCreditSpecification</a>. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>Default: <code>standard</code> </p>
+     */
+    inline RunInstancesRequest& WithCreditSpecification(CreditSpecificationRequest&& value) { SetCreditSpecification(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
@@ -1411,6 +1468,9 @@ namespace Model
 
     InstanceMarketOptionsRequest m_instanceMarketOptions;
     bool m_instanceMarketOptionsHasBeenSet;
+
+    CreditSpecificationRequest m_creditSpecification;
+    bool m_creditSpecificationHasBeenSet;
   };
 
 } // namespace Model

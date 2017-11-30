@@ -67,6 +67,7 @@ enum class WAFRegionalErrors
   W_A_F_NON_EMPTY_ENTITY,
   W_A_F_REFERENCED_ITEM,
   W_A_F_STALE_DATA,
+  W_A_F_SUBSCRIPTION_NOT_FOUND,
   W_A_F_UNAVAILABLE_ENTITY
 };
 namespace WAFRegionalErrorMapper

@@ -32,6 +32,11 @@ namespace Aws
 
         static const int DocumentNamePrefix_HASH = HashingUtils::HashString("DocumentNamePrefix");
         static const int ExecutionStatus_HASH = HashingUtils::HashString("ExecutionStatus");
+        static const int ExecutionId_HASH = HashingUtils::HashString("ExecutionId");
+        static const int ParentExecutionId_HASH = HashingUtils::HashString("ParentExecutionId");
+        static const int CurrentAction_HASH = HashingUtils::HashString("CurrentAction");
+        static const int StartTimeBefore_HASH = HashingUtils::HashString("StartTimeBefore");
+        static const int StartTimeAfter_HASH = HashingUtils::HashString("StartTimeAfter");
 
 
         AutomationExecutionFilterKey GetAutomationExecutionFilterKeyForName(const Aws::String& name)
@@ -44,6 +49,26 @@ namespace Aws
           else if (hashCode == ExecutionStatus_HASH)
           {
             return AutomationExecutionFilterKey::ExecutionStatus;
+          }
+          else if (hashCode == ExecutionId_HASH)
+          {
+            return AutomationExecutionFilterKey::ExecutionId;
+          }
+          else if (hashCode == ParentExecutionId_HASH)
+          {
+            return AutomationExecutionFilterKey::ParentExecutionId;
+          }
+          else if (hashCode == CurrentAction_HASH)
+          {
+            return AutomationExecutionFilterKey::CurrentAction;
+          }
+          else if (hashCode == StartTimeBefore_HASH)
+          {
+            return AutomationExecutionFilterKey::StartTimeBefore;
+          }
+          else if (hashCode == StartTimeAfter_HASH)
+          {
+            return AutomationExecutionFilterKey::StartTimeAfter;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +88,16 @@ namespace Aws
             return "DocumentNamePrefix";
           case AutomationExecutionFilterKey::ExecutionStatus:
             return "ExecutionStatus";
+          case AutomationExecutionFilterKey::ExecutionId:
+            return "ExecutionId";
+          case AutomationExecutionFilterKey::ParentExecutionId:
+            return "ParentExecutionId";
+          case AutomationExecutionFilterKey::CurrentAction:
+            return "CurrentAction";
+          case AutomationExecutionFilterKey::StartTimeBefore:
+            return "StartTimeBefore";
+          case AutomationExecutionFilterKey::StartTimeAfter:
+            return "StartTimeAfter";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -275,7 +275,7 @@ namespace Model
 
     /**
      * <p>A launch script you can create that configures a server with additional user
-     * data. For example, you might want to run <code>apt-get –y update</code>.</p>
+     * data. For example, you might want to run <code>apt-get -y update</code>.</p>
      * <note> <p>Depending on the machine image you choose, the command to get software
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
@@ -287,7 +287,7 @@ namespace Model
 
     /**
      * <p>A launch script you can create that configures a server with additional user
-     * data. For example, you might want to run <code>apt-get –y update</code>.</p>
+     * data. For example, you might want to run <code>apt-get -y update</code>.</p>
      * <note> <p>Depending on the machine image you choose, the command to get software
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
@@ -299,7 +299,7 @@ namespace Model
 
     /**
      * <p>A launch script you can create that configures a server with additional user
-     * data. For example, you might want to run <code>apt-get –y update</code>.</p>
+     * data. For example, you might want to run <code>apt-get -y update</code>.</p>
      * <note> <p>Depending on the machine image you choose, the command to get software
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
@@ -311,7 +311,7 @@ namespace Model
 
     /**
      * <p>A launch script you can create that configures a server with additional user
-     * data. For example, you might want to run <code>apt-get –y update</code>.</p>
+     * data. For example, you might want to run <code>apt-get -y update</code>.</p>
      * <note> <p>Depending on the machine image you choose, the command to get software
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
@@ -323,7 +323,7 @@ namespace Model
 
     /**
      * <p>A launch script you can create that configures a server with additional user
-     * data. For example, you might want to run <code>apt-get –y update</code>.</p>
+     * data. For example, you might want to run <code>apt-get -y update</code>.</p>
      * <note> <p>Depending on the machine image you choose, the command to get software
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
@@ -335,7 +335,7 @@ namespace Model
 
     /**
      * <p>A launch script you can create that configures a server with additional user
-     * data. For example, you might want to run <code>apt-get –y update</code>.</p>
+     * data. For example, you might want to run <code>apt-get -y update</code>.</p>
      * <note> <p>Depending on the machine image you choose, the command to get software
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
@@ -347,7 +347,7 @@ namespace Model
 
     /**
      * <p>A launch script you can create that configures a server with additional user
-     * data. For example, you might want to run <code>apt-get –y update</code>.</p>
+     * data. For example, you might want to run <code>apt-get -y update</code>.</p>
      * <note> <p>Depending on the machine image you choose, the command to get software
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a

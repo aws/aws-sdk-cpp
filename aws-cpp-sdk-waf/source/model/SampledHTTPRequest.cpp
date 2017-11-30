@@ -33,7 +33,8 @@ SampledHTTPRequest::SampledHTTPRequest() :
     m_weight(0),
     m_weightHasBeenSet(false),
     m_timestampHasBeenSet(false),
-    m_actionHasBeenSet(false)
+    m_actionHasBeenSet(false),
+    m_ruleWithinRuleGroupHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ SampledHTTPRequest::SampledHTTPRequest(const JsonValue& jsonValue) :
     m_weight(0),
     m_weightHasBeenSet(false),
     m_timestampHasBeenSet(false),
-    m_actionHasBeenSet(false)
+    m_actionHasBeenSet(false),
+    m_ruleWithinRuleGroupHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -77,6 +79,13 @@ SampledHTTPRequest& SampledHTTPRequest::operator =(const JsonValue& jsonValue)
     m_actionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RuleWithinRuleGroup"))
+  {
+    m_ruleWithinRuleGroup = jsonValue.GetString("RuleWithinRuleGroup");
+
+    m_ruleWithinRuleGroupHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -104,6 +113,12 @@ JsonValue SampledHTTPRequest::Jsonize() const
   if(m_actionHasBeenSet)
   {
    payload.WithString("Action", m_action);
+
+  }
+
+  if(m_ruleWithinRuleGroupHasBeenSet)
+  {
+   payload.WithString("RuleWithinRuleGroup", m_ruleWithinRuleGroup);
 
   }
 

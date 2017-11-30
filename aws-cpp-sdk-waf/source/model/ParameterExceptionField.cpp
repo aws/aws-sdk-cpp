@@ -32,6 +32,7 @@ namespace Aws
 
         static const int CHANGE_ACTION_HASH = HashingUtils::HashString("CHANGE_ACTION");
         static const int WAF_ACTION_HASH = HashingUtils::HashString("WAF_ACTION");
+        static const int WAF_OVERRIDE_ACTION_HASH = HashingUtils::HashString("WAF_OVERRIDE_ACTION");
         static const int PREDICATE_TYPE_HASH = HashingUtils::HashString("PREDICATE_TYPE");
         static const int IPSET_TYPE_HASH = HashingUtils::HashString("IPSET_TYPE");
         static const int BYTE_MATCH_FIELD_TYPE_HASH = HashingUtils::HashString("BYTE_MATCH_FIELD_TYPE");
@@ -56,6 +57,10 @@ namespace Aws
           else if (hashCode == WAF_ACTION_HASH)
           {
             return ParameterExceptionField::WAF_ACTION;
+          }
+          else if (hashCode == WAF_OVERRIDE_ACTION_HASH)
+          {
+            return ParameterExceptionField::WAF_OVERRIDE_ACTION;
           }
           else if (hashCode == PREDICATE_TYPE_HASH)
           {
@@ -123,6 +128,8 @@ namespace Aws
             return "CHANGE_ACTION";
           case ParameterExceptionField::WAF_ACTION:
             return "WAF_ACTION";
+          case ParameterExceptionField::WAF_OVERRIDE_ACTION:
+            return "WAF_OVERRIDE_ACTION";
           case ParameterExceptionField::PREDICATE_TYPE:
             return "PREDICATE_TYPE";
           case ParameterExceptionField::IPSET_TYPE:

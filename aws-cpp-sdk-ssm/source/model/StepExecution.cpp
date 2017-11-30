@@ -31,6 +31,11 @@ namespace Model
 StepExecution::StepExecution() : 
     m_stepNameHasBeenSet(false),
     m_actionHasBeenSet(false),
+    m_timeoutSeconds(0),
+    m_timeoutSecondsHasBeenSet(false),
+    m_onFailureHasBeenSet(false),
+    m_maxAttempts(0),
+    m_maxAttemptsHasBeenSet(false),
     m_executionStartTimeHasBeenSet(false),
     m_executionEndTimeHasBeenSet(false),
     m_stepStatus(AutomationExecutionStatus::NOT_SET),
@@ -40,13 +45,20 @@ StepExecution::StepExecution() :
     m_outputsHasBeenSet(false),
     m_responseHasBeenSet(false),
     m_failureMessageHasBeenSet(false),
-    m_failureDetailsHasBeenSet(false)
+    m_failureDetailsHasBeenSet(false),
+    m_stepExecutionIdHasBeenSet(false),
+    m_overriddenParametersHasBeenSet(false)
 {
 }
 
 StepExecution::StepExecution(const JsonValue& jsonValue) : 
     m_stepNameHasBeenSet(false),
     m_actionHasBeenSet(false),
+    m_timeoutSeconds(0),
+    m_timeoutSecondsHasBeenSet(false),
+    m_onFailureHasBeenSet(false),
+    m_maxAttempts(0),
+    m_maxAttemptsHasBeenSet(false),
     m_executionStartTimeHasBeenSet(false),
     m_executionEndTimeHasBeenSet(false),
     m_stepStatus(AutomationExecutionStatus::NOT_SET),
@@ -56,7 +68,9 @@ StepExecution::StepExecution(const JsonValue& jsonValue) :
     m_outputsHasBeenSet(false),
     m_responseHasBeenSet(false),
     m_failureMessageHasBeenSet(false),
-    m_failureDetailsHasBeenSet(false)
+    m_failureDetailsHasBeenSet(false),
+    m_stepExecutionIdHasBeenSet(false),
+    m_overriddenParametersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -75,6 +89,27 @@ StepExecution& StepExecution::operator =(const JsonValue& jsonValue)
     m_action = jsonValue.GetString("Action");
 
     m_actionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TimeoutSeconds"))
+  {
+    m_timeoutSeconds = jsonValue.GetInt64("TimeoutSeconds");
+
+    m_timeoutSecondsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OnFailure"))
+  {
+    m_onFailure = jsonValue.GetString("OnFailure");
+
+    m_onFailureHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MaxAttempts"))
+  {
+    m_maxAttempts = jsonValue.GetInteger("MaxAttempts");
+
+    m_maxAttemptsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ExecutionStartTime"))
@@ -153,6 +188,30 @@ StepExecution& StepExecution::operator =(const JsonValue& jsonValue)
     m_failureDetailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StepExecutionId"))
+  {
+    m_stepExecutionId = jsonValue.GetString("StepExecutionId");
+
+    m_stepExecutionIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OverriddenParameters"))
+  {
+    Aws::Map<Aws::String, JsonValue> overriddenParametersJsonMap = jsonValue.GetObject("OverriddenParameters").GetAllObjects();
+    for(auto& overriddenParametersItem : overriddenParametersJsonMap)
+    {
+      Array<JsonValue> automationParameterValueListJsonList = overriddenParametersItem.second.AsArray();
+      Aws::Vector<Aws::String> automationParameterValueListList;
+      automationParameterValueListList.reserve((size_t)automationParameterValueListJsonList.GetLength());
+      for(unsigned automationParameterValueListIndex = 0; automationParameterValueListIndex < automationParameterValueListJsonList.GetLength(); ++automationParameterValueListIndex)
+      {
+        automationParameterValueListList.push_back(automationParameterValueListJsonList[automationParameterValueListIndex].AsString());
+      }
+      m_overriddenParameters[overriddenParametersItem.first] = std::move(automationParameterValueListList);
+    }
+    m_overriddenParametersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -169,6 +228,24 @@ JsonValue StepExecution::Jsonize() const
   if(m_actionHasBeenSet)
   {
    payload.WithString("Action", m_action);
+
+  }
+
+  if(m_timeoutSecondsHasBeenSet)
+  {
+   payload.WithInt64("TimeoutSeconds", m_timeoutSeconds);
+
+  }
+
+  if(m_onFailureHasBeenSet)
+  {
+   payload.WithString("OnFailure", m_onFailure);
+
+  }
+
+  if(m_maxAttemptsHasBeenSet)
+  {
+   payload.WithInteger("MaxAttempts", m_maxAttempts);
 
   }
 
@@ -235,6 +312,28 @@ JsonValue StepExecution::Jsonize() const
   if(m_failureDetailsHasBeenSet)
   {
    payload.WithObject("FailureDetails", m_failureDetails.Jsonize());
+
+  }
+
+  if(m_stepExecutionIdHasBeenSet)
+  {
+   payload.WithString("StepExecutionId", m_stepExecutionId);
+
+  }
+
+  if(m_overriddenParametersHasBeenSet)
+  {
+   JsonValue overriddenParametersJsonMap;
+   for(auto& overriddenParametersItem : m_overriddenParameters)
+   {
+     Array<JsonValue> automationParameterValueListJsonList(overriddenParametersItem.second.size());
+     for(unsigned automationParameterValueListIndex = 0; automationParameterValueListIndex < automationParameterValueListJsonList.GetLength(); ++automationParameterValueListIndex)
+     {
+       automationParameterValueListJsonList[automationParameterValueListIndex].AsString(overriddenParametersItem.second[automationParameterValueListIndex]);
+     }
+     overriddenParametersJsonMap.WithArray(overriddenParametersItem.first, std::move(automationParameterValueListJsonList));
+   }
+   payload.WithObject("OverriddenParameters", std::move(overriddenParametersJsonMap));
 
   }
 

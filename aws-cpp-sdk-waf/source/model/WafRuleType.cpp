@@ -32,6 +32,7 @@ namespace Aws
 
         static const int REGULAR_HASH = HashingUtils::HashString("REGULAR");
         static const int RATE_BASED_HASH = HashingUtils::HashString("RATE_BASED");
+        static const int GROUP_HASH = HashingUtils::HashString("GROUP");
 
 
         WafRuleType GetWafRuleTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == RATE_BASED_HASH)
           {
             return WafRuleType::RATE_BASED;
+          }
+          else if (hashCode == GROUP_HASH)
+          {
+            return WafRuleType::GROUP;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "REGULAR";
           case WafRuleType::RATE_BASED:
             return "RATE_BASED";
+          case WafRuleType::GROUP:
+            return "GROUP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

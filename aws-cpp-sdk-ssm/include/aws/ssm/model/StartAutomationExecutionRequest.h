@@ -18,7 +18,9 @@
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/ssm/model/ExecutionMode.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm/model/Target.h>
 #include <utility>
 
 namespace Aws
@@ -227,6 +229,293 @@ namespace Model
      */
     inline StartAutomationExecutionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
+    /**
+     * <p>The execution mode of the automation. Valid modes include the following: Auto
+     * and Interactive. The default mode is Auto.</p>
+     */
+    inline const ExecutionMode& GetMode() const{ return m_mode; }
+
+    /**
+     * <p>The execution mode of the automation. Valid modes include the following: Auto
+     * and Interactive. The default mode is Auto.</p>
+     */
+    inline void SetMode(const ExecutionMode& value) { m_modeHasBeenSet = true; m_mode = value; }
+
+    /**
+     * <p>The execution mode of the automation. Valid modes include the following: Auto
+     * and Interactive. The default mode is Auto.</p>
+     */
+    inline void SetMode(ExecutionMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
+
+    /**
+     * <p>The execution mode of the automation. Valid modes include the following: Auto
+     * and Interactive. The default mode is Auto.</p>
+     */
+    inline StartAutomationExecutionRequest& WithMode(const ExecutionMode& value) { SetMode(value); return *this;}
+
+    /**
+     * <p>The execution mode of the automation. Valid modes include the following: Auto
+     * and Interactive. The default mode is Auto.</p>
+     */
+    inline StartAutomationExecutionRequest& WithMode(ExecutionMode&& value) { SetMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The name of the parameter used as the target resource for the rate-controlled
+     * execution. Required if you specify Targets.</p>
+     */
+    inline const Aws::String& GetTargetParameterName() const{ return m_targetParameterName; }
+
+    /**
+     * <p>The name of the parameter used as the target resource for the rate-controlled
+     * execution. Required if you specify Targets.</p>
+     */
+    inline void SetTargetParameterName(const Aws::String& value) { m_targetParameterNameHasBeenSet = true; m_targetParameterName = value; }
+
+    /**
+     * <p>The name of the parameter used as the target resource for the rate-controlled
+     * execution. Required if you specify Targets.</p>
+     */
+    inline void SetTargetParameterName(Aws::String&& value) { m_targetParameterNameHasBeenSet = true; m_targetParameterName = std::move(value); }
+
+    /**
+     * <p>The name of the parameter used as the target resource for the rate-controlled
+     * execution. Required if you specify Targets.</p>
+     */
+    inline void SetTargetParameterName(const char* value) { m_targetParameterNameHasBeenSet = true; m_targetParameterName.assign(value); }
+
+    /**
+     * <p>The name of the parameter used as the target resource for the rate-controlled
+     * execution. Required if you specify Targets.</p>
+     */
+    inline StartAutomationExecutionRequest& WithTargetParameterName(const Aws::String& value) { SetTargetParameterName(value); return *this;}
+
+    /**
+     * <p>The name of the parameter used as the target resource for the rate-controlled
+     * execution. Required if you specify Targets.</p>
+     */
+    inline StartAutomationExecutionRequest& WithTargetParameterName(Aws::String&& value) { SetTargetParameterName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the parameter used as the target resource for the rate-controlled
+     * execution. Required if you specify Targets.</p>
+     */
+    inline StartAutomationExecutionRequest& WithTargetParameterName(const char* value) { SetTargetParameterName(value); return *this;}
+
+
+    /**
+     * <p>A key-value mapping to target resources. Required if you specify
+     * TargetParameterName.</p>
+     */
+    inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
+
+    /**
+     * <p>A key-value mapping to target resources. Required if you specify
+     * TargetParameterName.</p>
+     */
+    inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
+
+    /**
+     * <p>A key-value mapping to target resources. Required if you specify
+     * TargetParameterName.</p>
+     */
+    inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
+
+    /**
+     * <p>A key-value mapping to target resources. Required if you specify
+     * TargetParameterName.</p>
+     */
+    inline StartAutomationExecutionRequest& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
+
+    /**
+     * <p>A key-value mapping to target resources. Required if you specify
+     * TargetParameterName.</p>
+     */
+    inline StartAutomationExecutionRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
+
+    /**
+     * <p>A key-value mapping to target resources. Required if you specify
+     * TargetParameterName.</p>
+     */
+    inline StartAutomationExecutionRequest& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
+
+    /**
+     * <p>A key-value mapping to target resources. Required if you specify
+     * TargetParameterName.</p>
+     */
+    inline StartAutomationExecutionRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The maximum number of targets allowed to run this task in parallel. You can
+     * specify a number, such as 10, or a percentage, such as 10%. The default value is
+     * 10.</p>
+     */
+    inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
+
+    /**
+     * <p>The maximum number of targets allowed to run this task in parallel. You can
+     * specify a number, such as 10, or a percentage, such as 10%. The default value is
+     * 10.</p>
+     */
+    inline void SetMaxConcurrency(const Aws::String& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
+
+    /**
+     * <p>The maximum number of targets allowed to run this task in parallel. You can
+     * specify a number, such as 10, or a percentage, such as 10%. The default value is
+     * 10.</p>
+     */
+    inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = std::move(value); }
+
+    /**
+     * <p>The maximum number of targets allowed to run this task in parallel. You can
+     * specify a number, such as 10, or a percentage, such as 10%. The default value is
+     * 10.</p>
+     */
+    inline void SetMaxConcurrency(const char* value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency.assign(value); }
+
+    /**
+     * <p>The maximum number of targets allowed to run this task in parallel. You can
+     * specify a number, such as 10, or a percentage, such as 10%. The default value is
+     * 10.</p>
+     */
+    inline StartAutomationExecutionRequest& WithMaxConcurrency(const Aws::String& value) { SetMaxConcurrency(value); return *this;}
+
+    /**
+     * <p>The maximum number of targets allowed to run this task in parallel. You can
+     * specify a number, such as 10, or a percentage, such as 10%. The default value is
+     * 10.</p>
+     */
+    inline StartAutomationExecutionRequest& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(std::move(value)); return *this;}
+
+    /**
+     * <p>The maximum number of targets allowed to run this task in parallel. You can
+     * specify a number, such as 10, or a percentage, such as 10%. The default value is
+     * 10.</p>
+     */
+    inline StartAutomationExecutionRequest& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
+
+
+    /**
+     * <p>The number of errors that are allowed before the system stops running the
+     * automation on additional targets. You can specify either an absolute number of
+     * errors, for example 10, or a percentage of the target set, for example 10%. If
+     * you specify 3, for example, the system stops running the automation when the
+     * fourth error is received. If you specify 0, then the system stops running the
+     * automation on additional targets after the first error result is returned. If
+     * you run an automation on 50 resources and set max-errors to 10%, then the system
+     * stops running the automation on additional targets when the sixth error is
+     * received.</p> <p>Executions that are already running an automation when
+     * max-errors is reached are allowed to complete, but some of these executions may
+     * fail as well. If you need to ensure that there won't be more than max-errors
+     * failed executions, set max-concurrency to 1 so the executions proceed one at a
+     * time.</p>
+     */
+    inline const Aws::String& GetMaxErrors() const{ return m_maxErrors; }
+
+    /**
+     * <p>The number of errors that are allowed before the system stops running the
+     * automation on additional targets. You can specify either an absolute number of
+     * errors, for example 10, or a percentage of the target set, for example 10%. If
+     * you specify 3, for example, the system stops running the automation when the
+     * fourth error is received. If you specify 0, then the system stops running the
+     * automation on additional targets after the first error result is returned. If
+     * you run an automation on 50 resources and set max-errors to 10%, then the system
+     * stops running the automation on additional targets when the sixth error is
+     * received.</p> <p>Executions that are already running an automation when
+     * max-errors is reached are allowed to complete, but some of these executions may
+     * fail as well. If you need to ensure that there won't be more than max-errors
+     * failed executions, set max-concurrency to 1 so the executions proceed one at a
+     * time.</p>
+     */
+    inline void SetMaxErrors(const Aws::String& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = value; }
+
+    /**
+     * <p>The number of errors that are allowed before the system stops running the
+     * automation on additional targets. You can specify either an absolute number of
+     * errors, for example 10, or a percentage of the target set, for example 10%. If
+     * you specify 3, for example, the system stops running the automation when the
+     * fourth error is received. If you specify 0, then the system stops running the
+     * automation on additional targets after the first error result is returned. If
+     * you run an automation on 50 resources and set max-errors to 10%, then the system
+     * stops running the automation on additional targets when the sixth error is
+     * received.</p> <p>Executions that are already running an automation when
+     * max-errors is reached are allowed to complete, but some of these executions may
+     * fail as well. If you need to ensure that there won't be more than max-errors
+     * failed executions, set max-concurrency to 1 so the executions proceed one at a
+     * time.</p>
+     */
+    inline void SetMaxErrors(Aws::String&& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = std::move(value); }
+
+    /**
+     * <p>The number of errors that are allowed before the system stops running the
+     * automation on additional targets. You can specify either an absolute number of
+     * errors, for example 10, or a percentage of the target set, for example 10%. If
+     * you specify 3, for example, the system stops running the automation when the
+     * fourth error is received. If you specify 0, then the system stops running the
+     * automation on additional targets after the first error result is returned. If
+     * you run an automation on 50 resources and set max-errors to 10%, then the system
+     * stops running the automation on additional targets when the sixth error is
+     * received.</p> <p>Executions that are already running an automation when
+     * max-errors is reached are allowed to complete, but some of these executions may
+     * fail as well. If you need to ensure that there won't be more than max-errors
+     * failed executions, set max-concurrency to 1 so the executions proceed one at a
+     * time.</p>
+     */
+    inline void SetMaxErrors(const char* value) { m_maxErrorsHasBeenSet = true; m_maxErrors.assign(value); }
+
+    /**
+     * <p>The number of errors that are allowed before the system stops running the
+     * automation on additional targets. You can specify either an absolute number of
+     * errors, for example 10, or a percentage of the target set, for example 10%. If
+     * you specify 3, for example, the system stops running the automation when the
+     * fourth error is received. If you specify 0, then the system stops running the
+     * automation on additional targets after the first error result is returned. If
+     * you run an automation on 50 resources and set max-errors to 10%, then the system
+     * stops running the automation on additional targets when the sixth error is
+     * received.</p> <p>Executions that are already running an automation when
+     * max-errors is reached are allowed to complete, but some of these executions may
+     * fail as well. If you need to ensure that there won't be more than max-errors
+     * failed executions, set max-concurrency to 1 so the executions proceed one at a
+     * time.</p>
+     */
+    inline StartAutomationExecutionRequest& WithMaxErrors(const Aws::String& value) { SetMaxErrors(value); return *this;}
+
+    /**
+     * <p>The number of errors that are allowed before the system stops running the
+     * automation on additional targets. You can specify either an absolute number of
+     * errors, for example 10, or a percentage of the target set, for example 10%. If
+     * you specify 3, for example, the system stops running the automation when the
+     * fourth error is received. If you specify 0, then the system stops running the
+     * automation on additional targets after the first error result is returned. If
+     * you run an automation on 50 resources and set max-errors to 10%, then the system
+     * stops running the automation on additional targets when the sixth error is
+     * received.</p> <p>Executions that are already running an automation when
+     * max-errors is reached are allowed to complete, but some of these executions may
+     * fail as well. If you need to ensure that there won't be more than max-errors
+     * failed executions, set max-concurrency to 1 so the executions proceed one at a
+     * time.</p>
+     */
+    inline StartAutomationExecutionRequest& WithMaxErrors(Aws::String&& value) { SetMaxErrors(std::move(value)); return *this;}
+
+    /**
+     * <p>The number of errors that are allowed before the system stops running the
+     * automation on additional targets. You can specify either an absolute number of
+     * errors, for example 10, or a percentage of the target set, for example 10%. If
+     * you specify 3, for example, the system stops running the automation when the
+     * fourth error is received. If you specify 0, then the system stops running the
+     * automation on additional targets after the first error result is returned. If
+     * you run an automation on 50 resources and set max-errors to 10%, then the system
+     * stops running the automation on additional targets when the sixth error is
+     * received.</p> <p>Executions that are already running an automation when
+     * max-errors is reached are allowed to complete, but some of these executions may
+     * fail as well. If you need to ensure that there won't be more than max-errors
+     * failed executions, set max-concurrency to 1 so the executions proceed one at a
+     * time.</p>
+     */
+    inline StartAutomationExecutionRequest& WithMaxErrors(const char* value) { SetMaxErrors(value); return *this;}
+
   private:
 
     Aws::String m_documentName;
@@ -240,6 +529,21 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
+    ExecutionMode m_mode;
+    bool m_modeHasBeenSet;
+
+    Aws::String m_targetParameterName;
+    bool m_targetParameterNameHasBeenSet;
+
+    Aws::Vector<Target> m_targets;
+    bool m_targetsHasBeenSet;
+
+    Aws::String m_maxConcurrency;
+    bool m_maxConcurrencyHasBeenSet;
+
+    Aws::String m_maxErrors;
+    bool m_maxErrorsHasBeenSet;
   };
 
 } // namespace Model

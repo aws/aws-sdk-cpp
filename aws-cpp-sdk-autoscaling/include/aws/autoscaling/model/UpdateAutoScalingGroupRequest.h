@@ -17,6 +17,7 @@
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/autoscaling/AutoScalingRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/autoscaling/model/LaunchTemplateSpecification.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
@@ -84,39 +85,77 @@ namespace Model
 
 
     /**
-     * <p>The name of the launch configuration.</p>
+     * <p>The name of the launch configuration. You must specify either a launch
+     * configuration or a launch template.</p>
      */
     inline const Aws::String& GetLaunchConfigurationName() const{ return m_launchConfigurationName; }
 
     /**
-     * <p>The name of the launch configuration.</p>
+     * <p>The name of the launch configuration. You must specify either a launch
+     * configuration or a launch template.</p>
      */
     inline void SetLaunchConfigurationName(const Aws::String& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = value; }
 
     /**
-     * <p>The name of the launch configuration.</p>
+     * <p>The name of the launch configuration. You must specify either a launch
+     * configuration or a launch template.</p>
      */
     inline void SetLaunchConfigurationName(Aws::String&& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = std::move(value); }
 
     /**
-     * <p>The name of the launch configuration.</p>
+     * <p>The name of the launch configuration. You must specify either a launch
+     * configuration or a launch template.</p>
      */
     inline void SetLaunchConfigurationName(const char* value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName.assign(value); }
 
     /**
-     * <p>The name of the launch configuration.</p>
+     * <p>The name of the launch configuration. You must specify either a launch
+     * configuration or a launch template.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithLaunchConfigurationName(const Aws::String& value) { SetLaunchConfigurationName(value); return *this;}
 
     /**
-     * <p>The name of the launch configuration.</p>
+     * <p>The name of the launch configuration. You must specify either a launch
+     * configuration or a launch template.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithLaunchConfigurationName(Aws::String&& value) { SetLaunchConfigurationName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the launch configuration.</p>
+     * <p>The name of the launch configuration. You must specify either a launch
+     * configuration or a launch template.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithLaunchConfigurationName(const char* value) { SetLaunchConfigurationName(value); return *this;}
+
+
+    /**
+     * <p>The launch template to use to specify the updates. You must specify a launch
+     * configuration or a launch template.</p>
+     */
+    inline const LaunchTemplateSpecification& GetLaunchTemplate() const{ return m_launchTemplate; }
+
+    /**
+     * <p>The launch template to use to specify the updates. You must specify a launch
+     * configuration or a launch template.</p>
+     */
+    inline void SetLaunchTemplate(const LaunchTemplateSpecification& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
+
+    /**
+     * <p>The launch template to use to specify the updates. You must specify a launch
+     * configuration or a launch template.</p>
+     */
+    inline void SetLaunchTemplate(LaunchTemplateSpecification&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
+
+    /**
+     * <p>The launch template to use to specify the updates. You must specify a launch
+     * configuration or a launch template.</p>
+     */
+    inline UpdateAutoScalingGroupRequest& WithLaunchTemplate(const LaunchTemplateSpecification& value) { SetLaunchTemplate(value); return *this;}
+
+    /**
+     * <p>The launch template to use to specify the updates. You must specify a launch
+     * configuration or a launch template.</p>
+     */
+    inline UpdateAutoScalingGroupRequest& WithLaunchTemplate(LaunchTemplateSpecification&& value) { SetLaunchTemplate(std::move(value)); return *this;}
 
 
     /**
@@ -554,6 +593,9 @@ namespace Model
 
     Aws::String m_launchConfigurationName;
     bool m_launchConfigurationNameHasBeenSet;
+
+    LaunchTemplateSpecification m_launchTemplate;
+    bool m_launchTemplateHasBeenSet;
 
     int m_minSize;
     bool m_minSizeHasBeenSet;

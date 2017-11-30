@@ -120,7 +120,17 @@ namespace Model
     d2_4xlarge,
     d2_8xlarge,
     f1_2xlarge,
-    f1_16xlarge
+    f1_16xlarge,
+    m5_large,
+    m5_xlarge,
+    m5_2xlarge,
+    m5_4xlarge,
+    m5_12xlarge,
+    m5_24xlarge,
+    h1_2xlarge,
+    h1_4xlarge,
+    h1_8xlarge,
+    h1_16xlarge
   };
 
 namespace InstanceTypeMapper

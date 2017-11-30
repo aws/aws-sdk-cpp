@@ -57,7 +57,8 @@ RunInstancesRequest::RunInstancesRequest() :
     m_elasticGpuSpecificationHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false),
     m_launchTemplateHasBeenSet(false),
-    m_instanceMarketOptionsHasBeenSet(false)
+    m_instanceMarketOptionsHasBeenSet(false),
+    m_creditSpecificationHasBeenSet(false)
 {
 }
 
@@ -245,6 +246,11 @@ Aws::String RunInstancesRequest::SerializePayload() const
   if(m_instanceMarketOptionsHasBeenSet)
   {
     m_instanceMarketOptions.OutputToStream(ss, "InstanceMarketOptions");
+  }
+
+  if(m_creditSpecificationHasBeenSet)
+  {
+    m_creditSpecification.OutputToStream(ss, "CreditSpecification");
   }
 
   ss << "Version=2016-11-15";

@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     REGULAR,
-    RATE_BASED
+    RATE_BASED,
+    GROUP
   };
 
 namespace WafRuleTypeMapper

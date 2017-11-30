@@ -17,6 +17,7 @@
 #include <aws/waf-regional/WAFRegional_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/waf-regional/model/WafAction.h>
+#include <aws/waf-regional/model/WafOverrideAction.h>
 #include <aws/waf-regional/model/WafRuleType.h>
 #include <utility>
 
@@ -169,7 +170,11 @@ namespace Model
      * <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status
      * code.</p> </li> <li> <p> <code>COUNT</code>: AWS WAF increments a counter of
      * requests that match the conditions in the rule and then continues to inspect the
-     * web request based on the remaining rules in the web ACL. </p> </li> </ul>
+     * web request based on the remaining rules in the web ACL. </p> </li> </ul> <p>The
+     * <code>Action</code> data type within <code>ActivatedRule</code> is used only
+     * when submitting an <code>UpdateWebACL</code> request.
+     * <code>ActivatedRule|Action</code> is not applicable and therefore not available
+     * for <code>UpdateRuleGroup</code>.</p>
      */
     inline const WafAction& GetAction() const{ return m_action; }
 
@@ -181,7 +186,11 @@ namespace Model
      * <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status
      * code.</p> </li> <li> <p> <code>COUNT</code>: AWS WAF increments a counter of
      * requests that match the conditions in the rule and then continues to inspect the
-     * web request based on the remaining rules in the web ACL. </p> </li> </ul>
+     * web request based on the remaining rules in the web ACL. </p> </li> </ul> <p>The
+     * <code>Action</code> data type within <code>ActivatedRule</code> is used only
+     * when submitting an <code>UpdateWebACL</code> request.
+     * <code>ActivatedRule|Action</code> is not applicable and therefore not available
+     * for <code>UpdateRuleGroup</code>.</p>
      */
     inline void SetAction(const WafAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
@@ -193,7 +202,11 @@ namespace Model
      * <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status
      * code.</p> </li> <li> <p> <code>COUNT</code>: AWS WAF increments a counter of
      * requests that match the conditions in the rule and then continues to inspect the
-     * web request based on the remaining rules in the web ACL. </p> </li> </ul>
+     * web request based on the remaining rules in the web ACL. </p> </li> </ul> <p>The
+     * <code>Action</code> data type within <code>ActivatedRule</code> is used only
+     * when submitting an <code>UpdateWebACL</code> request.
+     * <code>ActivatedRule|Action</code> is not applicable and therefore not available
+     * for <code>UpdateRuleGroup</code>.</p>
      */
     inline void SetAction(WafAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
@@ -205,7 +218,11 @@ namespace Model
      * <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status
      * code.</p> </li> <li> <p> <code>COUNT</code>: AWS WAF increments a counter of
      * requests that match the conditions in the rule and then continues to inspect the
-     * web request based on the remaining rules in the web ACL. </p> </li> </ul>
+     * web request based on the remaining rules in the web ACL. </p> </li> </ul> <p>The
+     * <code>Action</code> data type within <code>ActivatedRule</code> is used only
+     * when submitting an <code>UpdateWebACL</code> request.
+     * <code>ActivatedRule|Action</code> is not applicable and therefore not available
+     * for <code>UpdateRuleGroup</code>.</p>
      */
     inline ActivatedRule& WithAction(const WafAction& value) { SetAction(value); return *this;}
 
@@ -217,58 +234,158 @@ namespace Model
      * <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status
      * code.</p> </li> <li> <p> <code>COUNT</code>: AWS WAF increments a counter of
      * requests that match the conditions in the rule and then continues to inspect the
-     * web request based on the remaining rules in the web ACL. </p> </li> </ul>
+     * web request based on the remaining rules in the web ACL. </p> </li> </ul> <p>The
+     * <code>Action</code> data type within <code>ActivatedRule</code> is used only
+     * when submitting an <code>UpdateWebACL</code> request.
+     * <code>ActivatedRule|Action</code> is not applicable and therefore not available
+     * for <code>UpdateRuleGroup</code>.</p>
      */
     inline ActivatedRule& WithAction(WafAction&& value) { SetAction(std::move(value)); return *this;}
 
 
     /**
-     * <p>The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or
-     * <code>RATE_BASED</code>, as defined by <a>RateBasedRule</a>. The default is
-     * REGULAR. Although this field is optional, be aware that if you try to add a
-     * RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a>
-     * request will fail because the request tries to add a REGULAR rule with the
-     * specified ID, which does not exist. </p>
+     * <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
+     * <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you
+     * set the <code>OverrideAction</code> to <code>None</code>, the
+     * <code>RuleGroup</code> will block a request if any individual rule in the
+     * <code>RuleGroup</code> matches the request and is configured to block that
+     * request. However if you first want to test the <code>RuleGroup</code>, set the
+     * <code>OverrideAction</code> to <code>Count</code>. The <code>RuleGroup</code>
+     * will then override any block action specified by individual rules contained
+     * within the group. Instead of blocking matching requests, those requests will be
+     * counted. You can view a record of counted requests using
+     * <a>GetSampledRequests</a>. </p> <p>The <code>OverrideAction</code> data type
+     * within <code>ActivatedRule</code> is used only when submitting an
+     * <code>UpdateRuleGroup</code> request. <code>ActivatedRule|OverrideAction</code>
+     * is not applicable and therefore not available for <code>UpdateWebACL</code>.</p>
+     */
+    inline const WafOverrideAction& GetOverrideAction() const{ return m_overrideAction; }
+
+    /**
+     * <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
+     * <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you
+     * set the <code>OverrideAction</code> to <code>None</code>, the
+     * <code>RuleGroup</code> will block a request if any individual rule in the
+     * <code>RuleGroup</code> matches the request and is configured to block that
+     * request. However if you first want to test the <code>RuleGroup</code>, set the
+     * <code>OverrideAction</code> to <code>Count</code>. The <code>RuleGroup</code>
+     * will then override any block action specified by individual rules contained
+     * within the group. Instead of blocking matching requests, those requests will be
+     * counted. You can view a record of counted requests using
+     * <a>GetSampledRequests</a>. </p> <p>The <code>OverrideAction</code> data type
+     * within <code>ActivatedRule</code> is used only when submitting an
+     * <code>UpdateRuleGroup</code> request. <code>ActivatedRule|OverrideAction</code>
+     * is not applicable and therefore not available for <code>UpdateWebACL</code>.</p>
+     */
+    inline void SetOverrideAction(const WafOverrideAction& value) { m_overrideActionHasBeenSet = true; m_overrideAction = value; }
+
+    /**
+     * <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
+     * <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you
+     * set the <code>OverrideAction</code> to <code>None</code>, the
+     * <code>RuleGroup</code> will block a request if any individual rule in the
+     * <code>RuleGroup</code> matches the request and is configured to block that
+     * request. However if you first want to test the <code>RuleGroup</code>, set the
+     * <code>OverrideAction</code> to <code>Count</code>. The <code>RuleGroup</code>
+     * will then override any block action specified by individual rules contained
+     * within the group. Instead of blocking matching requests, those requests will be
+     * counted. You can view a record of counted requests using
+     * <a>GetSampledRequests</a>. </p> <p>The <code>OverrideAction</code> data type
+     * within <code>ActivatedRule</code> is used only when submitting an
+     * <code>UpdateRuleGroup</code> request. <code>ActivatedRule|OverrideAction</code>
+     * is not applicable and therefore not available for <code>UpdateWebACL</code>.</p>
+     */
+    inline void SetOverrideAction(WafOverrideAction&& value) { m_overrideActionHasBeenSet = true; m_overrideAction = std::move(value); }
+
+    /**
+     * <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
+     * <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you
+     * set the <code>OverrideAction</code> to <code>None</code>, the
+     * <code>RuleGroup</code> will block a request if any individual rule in the
+     * <code>RuleGroup</code> matches the request and is configured to block that
+     * request. However if you first want to test the <code>RuleGroup</code>, set the
+     * <code>OverrideAction</code> to <code>Count</code>. The <code>RuleGroup</code>
+     * will then override any block action specified by individual rules contained
+     * within the group. Instead of blocking matching requests, those requests will be
+     * counted. You can view a record of counted requests using
+     * <a>GetSampledRequests</a>. </p> <p>The <code>OverrideAction</code> data type
+     * within <code>ActivatedRule</code> is used only when submitting an
+     * <code>UpdateRuleGroup</code> request. <code>ActivatedRule|OverrideAction</code>
+     * is not applicable and therefore not available for <code>UpdateWebACL</code>.</p>
+     */
+    inline ActivatedRule& WithOverrideAction(const WafOverrideAction& value) { SetOverrideAction(value); return *this;}
+
+    /**
+     * <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
+     * <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you
+     * set the <code>OverrideAction</code> to <code>None</code>, the
+     * <code>RuleGroup</code> will block a request if any individual rule in the
+     * <code>RuleGroup</code> matches the request and is configured to block that
+     * request. However if you first want to test the <code>RuleGroup</code>, set the
+     * <code>OverrideAction</code> to <code>Count</code>. The <code>RuleGroup</code>
+     * will then override any block action specified by individual rules contained
+     * within the group. Instead of blocking matching requests, those requests will be
+     * counted. You can view a record of counted requests using
+     * <a>GetSampledRequests</a>. </p> <p>The <code>OverrideAction</code> data type
+     * within <code>ActivatedRule</code> is used only when submitting an
+     * <code>UpdateRuleGroup</code> request. <code>ActivatedRule|OverrideAction</code>
+     * is not applicable and therefore not available for <code>UpdateWebACL</code>.</p>
+     */
+    inline ActivatedRule& WithOverrideAction(WafOverrideAction&& value) { SetOverrideAction(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>,
+     * <code>RATE_BASED</code>, as defined by <a>RateBasedRule</a>, or
+     * <code>GROUP</code>, as defined by <a>RuleGroup</a>. The default is REGULAR.
+     * Although this field is optional, be aware that if you try to add a RATE_BASED
+     * rule to a web ACL without setting the type, the <a>UpdateWebACL</a> request will
+     * fail because the request tries to add a REGULAR rule with the specified ID,
+     * which does not exist. </p>
      */
     inline const WafRuleType& GetType() const{ return m_type; }
 
     /**
-     * <p>The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or
-     * <code>RATE_BASED</code>, as defined by <a>RateBasedRule</a>. The default is
-     * REGULAR. Although this field is optional, be aware that if you try to add a
-     * RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a>
-     * request will fail because the request tries to add a REGULAR rule with the
-     * specified ID, which does not exist. </p>
+     * <p>The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>,
+     * <code>RATE_BASED</code>, as defined by <a>RateBasedRule</a>, or
+     * <code>GROUP</code>, as defined by <a>RuleGroup</a>. The default is REGULAR.
+     * Although this field is optional, be aware that if you try to add a RATE_BASED
+     * rule to a web ACL without setting the type, the <a>UpdateWebACL</a> request will
+     * fail because the request tries to add a REGULAR rule with the specified ID,
+     * which does not exist. </p>
      */
     inline void SetType(const WafRuleType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or
-     * <code>RATE_BASED</code>, as defined by <a>RateBasedRule</a>. The default is
-     * REGULAR. Although this field is optional, be aware that if you try to add a
-     * RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a>
-     * request will fail because the request tries to add a REGULAR rule with the
-     * specified ID, which does not exist. </p>
+     * <p>The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>,
+     * <code>RATE_BASED</code>, as defined by <a>RateBasedRule</a>, or
+     * <code>GROUP</code>, as defined by <a>RuleGroup</a>. The default is REGULAR.
+     * Although this field is optional, be aware that if you try to add a RATE_BASED
+     * rule to a web ACL without setting the type, the <a>UpdateWebACL</a> request will
+     * fail because the request tries to add a REGULAR rule with the specified ID,
+     * which does not exist. </p>
      */
     inline void SetType(WafRuleType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or
-     * <code>RATE_BASED</code>, as defined by <a>RateBasedRule</a>. The default is
-     * REGULAR. Although this field is optional, be aware that if you try to add a
-     * RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a>
-     * request will fail because the request tries to add a REGULAR rule with the
-     * specified ID, which does not exist. </p>
+     * <p>The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>,
+     * <code>RATE_BASED</code>, as defined by <a>RateBasedRule</a>, or
+     * <code>GROUP</code>, as defined by <a>RuleGroup</a>. The default is REGULAR.
+     * Although this field is optional, be aware that if you try to add a RATE_BASED
+     * rule to a web ACL without setting the type, the <a>UpdateWebACL</a> request will
+     * fail because the request tries to add a REGULAR rule with the specified ID,
+     * which does not exist. </p>
      */
     inline ActivatedRule& WithType(const WafRuleType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or
-     * <code>RATE_BASED</code>, as defined by <a>RateBasedRule</a>. The default is
-     * REGULAR. Although this field is optional, be aware that if you try to add a
-     * RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a>
-     * request will fail because the request tries to add a REGULAR rule with the
-     * specified ID, which does not exist. </p>
+     * <p>The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>,
+     * <code>RATE_BASED</code>, as defined by <a>RateBasedRule</a>, or
+     * <code>GROUP</code>, as defined by <a>RuleGroup</a>. The default is REGULAR.
+     * Although this field is optional, be aware that if you try to add a RATE_BASED
+     * rule to a web ACL without setting the type, the <a>UpdateWebACL</a> request will
+     * fail because the request tries to add a REGULAR rule with the specified ID,
+     * which does not exist. </p>
      */
     inline ActivatedRule& WithType(WafRuleType&& value) { SetType(std::move(value)); return *this;}
 
@@ -282,6 +399,9 @@ namespace Model
 
     WafAction m_action;
     bool m_actionHasBeenSet;
+
+    WafOverrideAction m_overrideAction;
+    bool m_overrideActionHasBeenSet;
 
     WafRuleType m_type;
     bool m_typeHasBeenSet;

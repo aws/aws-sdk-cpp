@@ -33,7 +33,9 @@ DocumentVersionInfo::DocumentVersionInfo() :
     m_documentVersionHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_isDefaultVersion(false),
-    m_isDefaultVersionHasBeenSet(false)
+    m_isDefaultVersionHasBeenSet(false),
+    m_documentFormat(DocumentFormat::NOT_SET),
+    m_documentFormatHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ DocumentVersionInfo::DocumentVersionInfo(const JsonValue& jsonValue) :
     m_documentVersionHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_isDefaultVersion(false),
-    m_isDefaultVersionHasBeenSet(false)
+    m_isDefaultVersionHasBeenSet(false),
+    m_documentFormat(DocumentFormat::NOT_SET),
+    m_documentFormatHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -77,6 +81,13 @@ DocumentVersionInfo& DocumentVersionInfo::operator =(const JsonValue& jsonValue)
     m_isDefaultVersionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DocumentFormat"))
+  {
+    m_documentFormat = DocumentFormatMapper::GetDocumentFormatForName(jsonValue.GetString("DocumentFormat"));
+
+    m_documentFormatHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -105,6 +116,11 @@ JsonValue DocumentVersionInfo::Jsonize() const
   {
    payload.WithBool("IsDefaultVersion", m_isDefaultVersion);
 
+  }
+
+  if(m_documentFormatHasBeenSet)
+  {
+   payload.WithString("DocumentFormat", DocumentFormatMapper::GetNameForDocumentFormat(m_documentFormat));
   }
 
   return payload;

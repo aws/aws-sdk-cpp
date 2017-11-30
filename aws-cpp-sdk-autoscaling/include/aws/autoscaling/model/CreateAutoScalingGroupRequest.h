@@ -17,6 +17,7 @@
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/autoscaling/AutoScalingRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/autoscaling/model/LaunchTemplateSpecification.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/autoscaling/model/LifecycleHookSpecification.h>
 #include <aws/autoscaling/model/Tag.h>
@@ -50,98 +51,129 @@ namespace Model
   public:
 
     /**
-     * <p>The name of the group. This name must be unique within the scope of your AWS
-     * account.</p>
+     * <p>The name of the Auto Scaling group. This name must be unique within the scope
+     * of your AWS account.</p>
      */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
 
     /**
-     * <p>The name of the group. This name must be unique within the scope of your AWS
-     * account.</p>
+     * <p>The name of the Auto Scaling group. This name must be unique within the scope
+     * of your AWS account.</p>
      */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /**
-     * <p>The name of the group. This name must be unique within the scope of your AWS
-     * account.</p>
+     * <p>The name of the Auto Scaling group. This name must be unique within the scope
+     * of your AWS account.</p>
      */
     inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
 
     /**
-     * <p>The name of the group. This name must be unique within the scope of your AWS
-     * account.</p>
+     * <p>The name of the Auto Scaling group. This name must be unique within the scope
+     * of your AWS account.</p>
      */
     inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
 
     /**
-     * <p>The name of the group. This name must be unique within the scope of your AWS
-     * account.</p>
+     * <p>The name of the Auto Scaling group. This name must be unique within the scope
+     * of your AWS account.</p>
      */
     inline CreateAutoScalingGroupRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
 
     /**
-     * <p>The name of the group. This name must be unique within the scope of your AWS
-     * account.</p>
+     * <p>The name of the Auto Scaling group. This name must be unique within the scope
+     * of your AWS account.</p>
      */
     inline CreateAutoScalingGroupRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the group. This name must be unique within the scope of your AWS
-     * account.</p>
+     * <p>The name of the Auto Scaling group. This name must be unique within the scope
+     * of your AWS account.</p>
      */
     inline CreateAutoScalingGroupRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
 
 
     /**
-     * <p>The name of the launch configuration. Alternatively, specify an EC2 instance
-     * instead of a launch configuration.</p>
+     * <p>The name of the launch configuration. You must specify one of the following:
+     * a launch configuration, a launch template, or an EC2 instance.</p>
      */
     inline const Aws::String& GetLaunchConfigurationName() const{ return m_launchConfigurationName; }
 
     /**
-     * <p>The name of the launch configuration. Alternatively, specify an EC2 instance
-     * instead of a launch configuration.</p>
+     * <p>The name of the launch configuration. You must specify one of the following:
+     * a launch configuration, a launch template, or an EC2 instance.</p>
      */
     inline void SetLaunchConfigurationName(const Aws::String& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = value; }
 
     /**
-     * <p>The name of the launch configuration. Alternatively, specify an EC2 instance
-     * instead of a launch configuration.</p>
+     * <p>The name of the launch configuration. You must specify one of the following:
+     * a launch configuration, a launch template, or an EC2 instance.</p>
      */
     inline void SetLaunchConfigurationName(Aws::String&& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = std::move(value); }
 
     /**
-     * <p>The name of the launch configuration. Alternatively, specify an EC2 instance
-     * instead of a launch configuration.</p>
+     * <p>The name of the launch configuration. You must specify one of the following:
+     * a launch configuration, a launch template, or an EC2 instance.</p>
      */
     inline void SetLaunchConfigurationName(const char* value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName.assign(value); }
 
     /**
-     * <p>The name of the launch configuration. Alternatively, specify an EC2 instance
-     * instead of a launch configuration.</p>
+     * <p>The name of the launch configuration. You must specify one of the following:
+     * a launch configuration, a launch template, or an EC2 instance.</p>
      */
     inline CreateAutoScalingGroupRequest& WithLaunchConfigurationName(const Aws::String& value) { SetLaunchConfigurationName(value); return *this;}
 
     /**
-     * <p>The name of the launch configuration. Alternatively, specify an EC2 instance
-     * instead of a launch configuration.</p>
+     * <p>The name of the launch configuration. You must specify one of the following:
+     * a launch configuration, a launch template, or an EC2 instance.</p>
      */
     inline CreateAutoScalingGroupRequest& WithLaunchConfigurationName(Aws::String&& value) { SetLaunchConfigurationName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the launch configuration. Alternatively, specify an EC2 instance
-     * instead of a launch configuration.</p>
+     * <p>The name of the launch configuration. You must specify one of the following:
+     * a launch configuration, a launch template, or an EC2 instance.</p>
      */
     inline CreateAutoScalingGroupRequest& WithLaunchConfigurationName(const char* value) { SetLaunchConfigurationName(value); return *this;}
 
 
     /**
+     * <p>The launch template to use to launch instances. You must specify one of the
+     * following: a launch template, a launch configuration, or an EC2 instance.</p>
+     */
+    inline const LaunchTemplateSpecification& GetLaunchTemplate() const{ return m_launchTemplate; }
+
+    /**
+     * <p>The launch template to use to launch instances. You must specify one of the
+     * following: a launch template, a launch configuration, or an EC2 instance.</p>
+     */
+    inline void SetLaunchTemplate(const LaunchTemplateSpecification& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
+
+    /**
+     * <p>The launch template to use to launch instances. You must specify one of the
+     * following: a launch template, a launch configuration, or an EC2 instance.</p>
+     */
+    inline void SetLaunchTemplate(LaunchTemplateSpecification&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
+
+    /**
+     * <p>The launch template to use to launch instances. You must specify one of the
+     * following: a launch template, a launch configuration, or an EC2 instance.</p>
+     */
+    inline CreateAutoScalingGroupRequest& WithLaunchTemplate(const LaunchTemplateSpecification& value) { SetLaunchTemplate(value); return *this;}
+
+    /**
+     * <p>The launch template to use to launch instances. You must specify one of the
+     * following: a launch template, a launch configuration, or an EC2 instance.</p>
+     */
+    inline CreateAutoScalingGroupRequest& WithLaunchTemplate(LaunchTemplateSpecification&& value) { SetLaunchTemplate(std::move(value)); return *this;}
+
+
+    /**
      * <p>The ID of the instance used to create a launch configuration for the group.
-     * Alternatively, specify a launch configuration instead of an EC2 instance.</p>
-     * <p>When you specify an ID of an instance, Auto Scaling creates a new launch
-     * configuration and associates it with the group. This launch configuration
-     * derives its attributes from the specified instance, with the exception of the
-     * block device mapping.</p> <p>For more information, see <a
+     * You must specify one of the following: an EC2 instance, a launch configuration,
+     * or a launch template.</p> <p>When you specify an ID of an instance, Auto Scaling
+     * creates a new launch configuration and associates it with the group. This launch
+     * configuration derives its attributes from the specified instance, with the
+     * exception of the block device mapping.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Create
      * an Auto Scaling Group Using an EC2 Instance</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
@@ -150,11 +182,11 @@ namespace Model
 
     /**
      * <p>The ID of the instance used to create a launch configuration for the group.
-     * Alternatively, specify a launch configuration instead of an EC2 instance.</p>
-     * <p>When you specify an ID of an instance, Auto Scaling creates a new launch
-     * configuration and associates it with the group. This launch configuration
-     * derives its attributes from the specified instance, with the exception of the
-     * block device mapping.</p> <p>For more information, see <a
+     * You must specify one of the following: an EC2 instance, a launch configuration,
+     * or a launch template.</p> <p>When you specify an ID of an instance, Auto Scaling
+     * creates a new launch configuration and associates it with the group. This launch
+     * configuration derives its attributes from the specified instance, with the
+     * exception of the block device mapping.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Create
      * an Auto Scaling Group Using an EC2 Instance</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
@@ -163,11 +195,11 @@ namespace Model
 
     /**
      * <p>The ID of the instance used to create a launch configuration for the group.
-     * Alternatively, specify a launch configuration instead of an EC2 instance.</p>
-     * <p>When you specify an ID of an instance, Auto Scaling creates a new launch
-     * configuration and associates it with the group. This launch configuration
-     * derives its attributes from the specified instance, with the exception of the
-     * block device mapping.</p> <p>For more information, see <a
+     * You must specify one of the following: an EC2 instance, a launch configuration,
+     * or a launch template.</p> <p>When you specify an ID of an instance, Auto Scaling
+     * creates a new launch configuration and associates it with the group. This launch
+     * configuration derives its attributes from the specified instance, with the
+     * exception of the block device mapping.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Create
      * an Auto Scaling Group Using an EC2 Instance</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
@@ -176,11 +208,11 @@ namespace Model
 
     /**
      * <p>The ID of the instance used to create a launch configuration for the group.
-     * Alternatively, specify a launch configuration instead of an EC2 instance.</p>
-     * <p>When you specify an ID of an instance, Auto Scaling creates a new launch
-     * configuration and associates it with the group. This launch configuration
-     * derives its attributes from the specified instance, with the exception of the
-     * block device mapping.</p> <p>For more information, see <a
+     * You must specify one of the following: an EC2 instance, a launch configuration,
+     * or a launch template.</p> <p>When you specify an ID of an instance, Auto Scaling
+     * creates a new launch configuration and associates it with the group. This launch
+     * configuration derives its attributes from the specified instance, with the
+     * exception of the block device mapping.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Create
      * an Auto Scaling Group Using an EC2 Instance</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
@@ -189,11 +221,11 @@ namespace Model
 
     /**
      * <p>The ID of the instance used to create a launch configuration for the group.
-     * Alternatively, specify a launch configuration instead of an EC2 instance.</p>
-     * <p>When you specify an ID of an instance, Auto Scaling creates a new launch
-     * configuration and associates it with the group. This launch configuration
-     * derives its attributes from the specified instance, with the exception of the
-     * block device mapping.</p> <p>For more information, see <a
+     * You must specify one of the following: an EC2 instance, a launch configuration,
+     * or a launch template.</p> <p>When you specify an ID of an instance, Auto Scaling
+     * creates a new launch configuration and associates it with the group. This launch
+     * configuration derives its attributes from the specified instance, with the
+     * exception of the block device mapping.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Create
      * an Auto Scaling Group Using an EC2 Instance</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
@@ -202,11 +234,11 @@ namespace Model
 
     /**
      * <p>The ID of the instance used to create a launch configuration for the group.
-     * Alternatively, specify a launch configuration instead of an EC2 instance.</p>
-     * <p>When you specify an ID of an instance, Auto Scaling creates a new launch
-     * configuration and associates it with the group. This launch configuration
-     * derives its attributes from the specified instance, with the exception of the
-     * block device mapping.</p> <p>For more information, see <a
+     * You must specify one of the following: an EC2 instance, a launch configuration,
+     * or a launch template.</p> <p>When you specify an ID of an instance, Auto Scaling
+     * creates a new launch configuration and associates it with the group. This launch
+     * configuration derives its attributes from the specified instance, with the
+     * exception of the block device mapping.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Create
      * an Auto Scaling Group Using an EC2 Instance</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
@@ -215,11 +247,11 @@ namespace Model
 
     /**
      * <p>The ID of the instance used to create a launch configuration for the group.
-     * Alternatively, specify a launch configuration instead of an EC2 instance.</p>
-     * <p>When you specify an ID of an instance, Auto Scaling creates a new launch
-     * configuration and associates it with the group. This launch configuration
-     * derives its attributes from the specified instance, with the exception of the
-     * block device mapping.</p> <p>For more information, see <a
+     * You must specify one of the following: an EC2 instance, a launch configuration,
+     * or a launch template.</p> <p>When you specify an ID of an instance, Auto Scaling
+     * creates a new launch configuration and associates it with the group. This launch
+     * configuration derives its attributes from the specified instance, with the
+     * exception of the block device mapping.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Create
      * an Auto Scaling Group Using an EC2 Instance</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
@@ -900,6 +932,9 @@ namespace Model
 
     Aws::String m_launchConfigurationName;
     bool m_launchConfigurationNameHasBeenSet;
+
+    LaunchTemplateSpecification m_launchTemplate;
+    bool m_launchTemplateHasBeenSet;
 
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;

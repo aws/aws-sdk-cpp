@@ -27,7 +27,10 @@ namespace Model
   {
     NOT_SET,
     Approve,
-    Reject
+    Reject,
+    StartStep,
+    StopStep,
+    Resume
   };
 
 namespace SignalTypeMapper

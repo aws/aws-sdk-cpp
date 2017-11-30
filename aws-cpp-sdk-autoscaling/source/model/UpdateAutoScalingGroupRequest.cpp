@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 UpdateAutoScalingGroupRequest::UpdateAutoScalingGroupRequest() : 
     m_autoScalingGroupNameHasBeenSet(false),
     m_launchConfigurationNameHasBeenSet(false),
+    m_launchTemplateHasBeenSet(false),
     m_minSize(0),
     m_minSizeHasBeenSet(false),
     m_maxSize(0),
@@ -55,6 +56,11 @@ Aws::String UpdateAutoScalingGroupRequest::SerializePayload() const
   if(m_launchConfigurationNameHasBeenSet)
   {
     ss << "LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
+  }
+
+  if(m_launchTemplateHasBeenSet)
+  {
+    m_launchTemplate.OutputToStream(ss, "LaunchTemplate");
   }
 
   if(m_minSizeHasBeenSet)

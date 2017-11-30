@@ -32,8 +32,9 @@ DomainEntry::DomainEntry() :
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_targetHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_optionsHasBeenSet(false)
+    m_isAlias(false),
+    m_isAliasHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -41,8 +42,9 @@ DomainEntry::DomainEntry(const JsonValue& jsonValue) :
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_targetHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_optionsHasBeenSet(false)
+    m_isAlias(false),
+    m_isAliasHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -70,21 +72,18 @@ DomainEntry& DomainEntry::operator =(const JsonValue& jsonValue)
     m_targetHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("isAlias"))
+  {
+    m_isAlias = jsonValue.GetBool("isAlias");
+
+    m_isAliasHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
 
     m_typeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("options"))
-  {
-    Aws::Map<Aws::String, JsonValue> optionsJsonMap = jsonValue.GetObject("options").GetAllObjects();
-    for(auto& optionsItem : optionsJsonMap)
-    {
-      m_options[optionsItem.first] = optionsItem.second.AsString();
-    }
-    m_optionsHasBeenSet = true;
   }
 
   return *this;
@@ -112,20 +111,15 @@ JsonValue DomainEntry::Jsonize() const
 
   }
 
-  if(m_typeHasBeenSet)
+  if(m_isAliasHasBeenSet)
   {
-   payload.WithString("type", m_type);
+   payload.WithBool("isAlias", m_isAlias);
 
   }
 
-  if(m_optionsHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   JsonValue optionsJsonMap;
-   for(auto& optionsItem : m_options)
-   {
-     optionsJsonMap.WithString(optionsItem.first, optionsItem.second);
-   }
-   payload.WithObject("options", std::move(optionsJsonMap));
+   payload.WithString("type", m_type);
 
   }
 

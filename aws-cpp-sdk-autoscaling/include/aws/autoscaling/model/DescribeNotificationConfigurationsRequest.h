@@ -48,42 +48,42 @@ namespace Model
   public:
 
     /**
-     * <p>The name of the group.</p>
+     * <p>The name of the Auto Scaling group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAutoScalingGroupNames() const{ return m_autoScalingGroupNames; }
 
     /**
-     * <p>The name of the group.</p>
+     * <p>The name of the Auto Scaling group.</p>
      */
     inline void SetAutoScalingGroupNames(const Aws::Vector<Aws::String>& value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames = value; }
 
     /**
-     * <p>The name of the group.</p>
+     * <p>The name of the Auto Scaling group.</p>
      */
     inline void SetAutoScalingGroupNames(Aws::Vector<Aws::String>&& value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames = std::move(value); }
 
     /**
-     * <p>The name of the group.</p>
+     * <p>The name of the Auto Scaling group.</p>
      */
     inline DescribeNotificationConfigurationsRequest& WithAutoScalingGroupNames(const Aws::Vector<Aws::String>& value) { SetAutoScalingGroupNames(value); return *this;}
 
     /**
-     * <p>The name of the group.</p>
+     * <p>The name of the Auto Scaling group.</p>
      */
     inline DescribeNotificationConfigurationsRequest& WithAutoScalingGroupNames(Aws::Vector<Aws::String>&& value) { SetAutoScalingGroupNames(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the group.</p>
+     * <p>The name of the Auto Scaling group.</p>
      */
     inline DescribeNotificationConfigurationsRequest& AddAutoScalingGroupNames(const Aws::String& value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames.push_back(value); return *this; }
 
     /**
-     * <p>The name of the group.</p>
+     * <p>The name of the Auto Scaling group.</p>
      */
     inline DescribeNotificationConfigurationsRequest& AddAutoScalingGroupNames(Aws::String&& value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The name of the group.</p>
+     * <p>The name of the Auto Scaling group.</p>
      */
     inline DescribeNotificationConfigurationsRequest& AddAutoScalingGroupNames(const char* value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames.push_back(value); return *this; }
 

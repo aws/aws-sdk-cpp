@@ -26,7 +26,13 @@ StartAutomationExecutionRequest::StartAutomationExecutionRequest() :
     m_documentNameHasBeenSet(false),
     m_documentVersionHasBeenSet(false),
     m_parametersHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_clientTokenHasBeenSet(false),
+    m_mode(ExecutionMode::NOT_SET),
+    m_modeHasBeenSet(false),
+    m_targetParameterNameHasBeenSet(false),
+    m_targetsHasBeenSet(false),
+    m_maxConcurrencyHasBeenSet(false),
+    m_maxErrorsHasBeenSet(false)
 {
 }
 
@@ -65,6 +71,40 @@ Aws::String StartAutomationExecutionRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("ClientToken", m_clientToken);
+
+  }
+
+  if(m_modeHasBeenSet)
+  {
+   payload.WithString("Mode", ExecutionModeMapper::GetNameForExecutionMode(m_mode));
+  }
+
+  if(m_targetParameterNameHasBeenSet)
+  {
+   payload.WithString("TargetParameterName", m_targetParameterName);
+
+  }
+
+  if(m_targetsHasBeenSet)
+  {
+   Array<JsonValue> targetsJsonList(m_targets.size());
+   for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
+   {
+     targetsJsonList[targetsIndex].AsObject(m_targets[targetsIndex].Jsonize());
+   }
+   payload.WithArray("Targets", std::move(targetsJsonList));
+
+  }
+
+  if(m_maxConcurrencyHasBeenSet)
+  {
+   payload.WithString("MaxConcurrency", m_maxConcurrency);
+
+  }
+
+  if(m_maxErrorsHasBeenSet)
+  {
+   payload.WithString("MaxErrors", m_maxErrors);
 
   }
 
