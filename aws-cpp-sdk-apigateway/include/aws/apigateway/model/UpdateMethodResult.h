@@ -392,7 +392,7 @@ namespace Model
 
     /**
      * <p>A key-value map defining required or optional method request parameters that
-     * can be accepted by Amazon API Gateway. A key is a method request parameter name
+     * can be accepted by API Gateway. A key is a method request parameter name
      * matching the pattern of <code>method.request.{location}.{name}</code>, where
      * <code>location</code> is <code>querystring</code>, <code>path</code>, or
      * <code>header</code> and <code>name</code> is a valid and unique parameter name.
@@ -405,7 +405,7 @@ namespace Model
 
     /**
      * <p>A key-value map defining required or optional method request parameters that
-     * can be accepted by Amazon API Gateway. A key is a method request parameter name
+     * can be accepted by API Gateway. A key is a method request parameter name
      * matching the pattern of <code>method.request.{location}.{name}</code>, where
      * <code>location</code> is <code>querystring</code>, <code>path</code>, or
      * <code>header</code> and <code>name</code> is a valid and unique parameter name.
@@ -418,7 +418,7 @@ namespace Model
 
     /**
      * <p>A key-value map defining required or optional method request parameters that
-     * can be accepted by Amazon API Gateway. A key is a method request parameter name
+     * can be accepted by API Gateway. A key is a method request parameter name
      * matching the pattern of <code>method.request.{location}.{name}</code>, where
      * <code>location</code> is <code>querystring</code>, <code>path</code>, or
      * <code>header</code> and <code>name</code> is a valid and unique parameter name.
@@ -431,7 +431,7 @@ namespace Model
 
     /**
      * <p>A key-value map defining required or optional method request parameters that
-     * can be accepted by Amazon API Gateway. A key is a method request parameter name
+     * can be accepted by API Gateway. A key is a method request parameter name
      * matching the pattern of <code>method.request.{location}.{name}</code>, where
      * <code>location</code> is <code>querystring</code>, <code>path</code>, or
      * <code>header</code> and <code>name</code> is a valid and unique parameter name.
@@ -444,7 +444,7 @@ namespace Model
 
     /**
      * <p>A key-value map defining required or optional method request parameters that
-     * can be accepted by Amazon API Gateway. A key is a method request parameter name
+     * can be accepted by API Gateway. A key is a method request parameter name
      * matching the pattern of <code>method.request.{location}.{name}</code>, where
      * <code>location</code> is <code>querystring</code>, <code>path</code>, or
      * <code>header</code> and <code>name</code> is a valid and unique parameter name.
@@ -457,7 +457,7 @@ namespace Model
 
     /**
      * <p>A key-value map defining required or optional method request parameters that
-     * can be accepted by Amazon API Gateway. A key is a method request parameter name
+     * can be accepted by API Gateway. A key is a method request parameter name
      * matching the pattern of <code>method.request.{location}.{name}</code>, where
      * <code>location</code> is <code>querystring</code>, <code>path</code>, or
      * <code>header</code> and <code>name</code> is a valid and unique parameter name.
@@ -470,7 +470,7 @@ namespace Model
 
     /**
      * <p>A key-value map defining required or optional method request parameters that
-     * can be accepted by Amazon API Gateway. A key is a method request parameter name
+     * can be accepted by API Gateway. A key is a method request parameter name
      * matching the pattern of <code>method.request.{location}.{name}</code>, where
      * <code>location</code> is <code>querystring</code>, <code>path</code>, or
      * <code>header</code> and <code>name</code> is a valid and unique parameter name.
@@ -483,7 +483,7 @@ namespace Model
 
     /**
      * <p>A key-value map defining required or optional method request parameters that
-     * can be accepted by Amazon API Gateway. A key is a method request parameter name
+     * can be accepted by API Gateway. A key is a method request parameter name
      * matching the pattern of <code>method.request.{location}.{name}</code>, where
      * <code>location</code> is <code>querystring</code>, <code>path</code>, or
      * <code>header</code> and <code>name</code> is a valid and unique parameter name.

@@ -372,11 +372,10 @@ namespace Model
      * use the Python runtime v3.6, set the value to "python3.6".</p> <note> <p>Node
      * v0.10.42 is currently marked as deprecated. You must migrate existing functions
      * to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or
-     * nodejs6.10) as soon as possible. You can request a one-time extension until June
-     * 30, 2017 by going to the Lambda console and following the instructions provided.
-     * Failure to do so will result in an invalid parameter error being returned. Note
-     * that you will have to follow this procedure for each region that contains
-     * functions written in the Node v0.10.42 runtime.</p> </note>
+     * nodejs6.10) as soon as possible. Failure to do so will result in an invalid
+     * parameter error being returned. Note that you will have to follow this procedure
+     * for each region that contains functions written in the Node v0.10.42
+     * runtime.</p> </note>
      */
     inline const Runtime& GetRuntime() const{ return m_runtime; }
 
@@ -388,11 +387,10 @@ namespace Model
      * use the Python runtime v3.6, set the value to "python3.6".</p> <note> <p>Node
      * v0.10.42 is currently marked as deprecated. You must migrate existing functions
      * to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or
-     * nodejs6.10) as soon as possible. You can request a one-time extension until June
-     * 30, 2017 by going to the Lambda console and following the instructions provided.
-     * Failure to do so will result in an invalid parameter error being returned. Note
-     * that you will have to follow this procedure for each region that contains
-     * functions written in the Node v0.10.42 runtime.</p> </note>
+     * nodejs6.10) as soon as possible. Failure to do so will result in an invalid
+     * parameter error being returned. Note that you will have to follow this procedure
+     * for each region that contains functions written in the Node v0.10.42
+     * runtime.</p> </note>
      */
     inline void SetRuntime(const Runtime& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
 
@@ -404,11 +402,10 @@ namespace Model
      * use the Python runtime v3.6, set the value to "python3.6".</p> <note> <p>Node
      * v0.10.42 is currently marked as deprecated. You must migrate existing functions
      * to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or
-     * nodejs6.10) as soon as possible. You can request a one-time extension until June
-     * 30, 2017 by going to the Lambda console and following the instructions provided.
-     * Failure to do so will result in an invalid parameter error being returned. Note
-     * that you will have to follow this procedure for each region that contains
-     * functions written in the Node v0.10.42 runtime.</p> </note>
+     * nodejs6.10) as soon as possible. Failure to do so will result in an invalid
+     * parameter error being returned. Note that you will have to follow this procedure
+     * for each region that contains functions written in the Node v0.10.42
+     * runtime.</p> </note>
      */
     inline void SetRuntime(Runtime&& value) { m_runtimeHasBeenSet = true; m_runtime = std::move(value); }
 
@@ -420,11 +417,10 @@ namespace Model
      * use the Python runtime v3.6, set the value to "python3.6".</p> <note> <p>Node
      * v0.10.42 is currently marked as deprecated. You must migrate existing functions
      * to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or
-     * nodejs6.10) as soon as possible. You can request a one-time extension until June
-     * 30, 2017 by going to the Lambda console and following the instructions provided.
-     * Failure to do so will result in an invalid parameter error being returned. Note
-     * that you will have to follow this procedure for each region that contains
-     * functions written in the Node v0.10.42 runtime.</p> </note>
+     * nodejs6.10) as soon as possible. Failure to do so will result in an invalid
+     * parameter error being returned. Note that you will have to follow this procedure
+     * for each region that contains functions written in the Node v0.10.42
+     * runtime.</p> </note>
      */
     inline UpdateFunctionConfigurationRequest& WithRuntime(const Runtime& value) { SetRuntime(value); return *this;}
 
@@ -436,11 +432,10 @@ namespace Model
      * use the Python runtime v3.6, set the value to "python3.6".</p> <note> <p>Node
      * v0.10.42 is currently marked as deprecated. You must migrate existing functions
      * to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or
-     * nodejs6.10) as soon as possible. You can request a one-time extension until June
-     * 30, 2017 by going to the Lambda console and following the instructions provided.
-     * Failure to do so will result in an invalid parameter error being returned. Note
-     * that you will have to follow this procedure for each region that contains
-     * functions written in the Node v0.10.42 runtime.</p> </note>
+     * nodejs6.10) as soon as possible. Failure to do so will result in an invalid
+     * parameter error being returned. Note that you will have to follow this procedure
+     * for each region that contains functions written in the Node v0.10.42
+     * runtime.</p> </note>
      */
     inline UpdateFunctionConfigurationRequest& WithRuntime(Runtime&& value) { SetRuntime(std::move(value)); return *this;}
 

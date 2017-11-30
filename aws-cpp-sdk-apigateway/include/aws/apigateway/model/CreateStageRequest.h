@@ -30,7 +30,7 @@ namespace Model
 {
 
   /**
-   * <p>Requests Amazon API Gateway to create a <a>Stage</a> resource.</p><p><h3>See
+   * <p>Requests API Gateway to create a <a>Stage</a> resource.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateStageRequest">AWS
    * API Reference</a></p>
@@ -86,37 +86,37 @@ namespace Model
 
 
     /**
-     * <p>{Required] The name for the <a>Stage</a> resource.</p>
+     * <p>[Required] The name for the <a>Stage</a> resource.</p>
      */
     inline const Aws::String& GetStageName() const{ return m_stageName; }
 
     /**
-     * <p>{Required] The name for the <a>Stage</a> resource.</p>
+     * <p>[Required] The name for the <a>Stage</a> resource.</p>
      */
     inline void SetStageName(const Aws::String& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
 
     /**
-     * <p>{Required] The name for the <a>Stage</a> resource.</p>
+     * <p>[Required] The name for the <a>Stage</a> resource.</p>
      */
     inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
 
     /**
-     * <p>{Required] The name for the <a>Stage</a> resource.</p>
+     * <p>[Required] The name for the <a>Stage</a> resource.</p>
      */
     inline void SetStageName(const char* value) { m_stageNameHasBeenSet = true; m_stageName.assign(value); }
 
     /**
-     * <p>{Required] The name for the <a>Stage</a> resource.</p>
+     * <p>[Required] The name for the <a>Stage</a> resource.</p>
      */
     inline CreateStageRequest& WithStageName(const Aws::String& value) { SetStageName(value); return *this;}
 
     /**
-     * <p>{Required] The name for the <a>Stage</a> resource.</p>
+     * <p>[Required] The name for the <a>Stage</a> resource.</p>
      */
     inline CreateStageRequest& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
 
     /**
-     * <p>{Required] The name for the <a>Stage</a> resource.</p>
+     * <p>[Required] The name for the <a>Stage</a> resource.</p>
      */
     inline CreateStageRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
 

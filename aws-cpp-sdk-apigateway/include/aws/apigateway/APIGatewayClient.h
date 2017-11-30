@@ -35,6 +35,7 @@
 #include <aws/apigateway/model/CreateStageResult.h>
 #include <aws/apigateway/model/CreateUsagePlanResult.h>
 #include <aws/apigateway/model/CreateUsagePlanKeyResult.h>
+#include <aws/apigateway/model/CreateVpcLinkResult.h>
 #include <aws/apigateway/model/GenerateClientCertificateResult.h>
 #include <aws/apigateway/model/GetAccountResult.h>
 #include <aws/apigateway/model/GetApiKeyResult.h>
@@ -79,6 +80,8 @@
 #include <aws/apigateway/model/GetUsagePlanKeyResult.h>
 #include <aws/apigateway/model/GetUsagePlanKeysResult.h>
 #include <aws/apigateway/model/GetUsagePlansResult.h>
+#include <aws/apigateway/model/GetVpcLinkResult.h>
+#include <aws/apigateway/model/GetVpcLinksResult.h>
 #include <aws/apigateway/model/ImportApiKeysResult.h>
 #include <aws/apigateway/model/ImportDocumentationPartsResult.h>
 #include <aws/apigateway/model/ImportRestApiResult.h>
@@ -111,6 +114,7 @@
 #include <aws/apigateway/model/UpdateStageResult.h>
 #include <aws/apigateway/model/UpdateUsageResult.h>
 #include <aws/apigateway/model/UpdateUsagePlanResult.h>
+#include <aws/apigateway/model/UpdateVpcLinkResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -171,6 +175,7 @@ namespace Model
         class CreateStageRequest;
         class CreateUsagePlanRequest;
         class CreateUsagePlanKeyRequest;
+        class CreateVpcLinkRequest;
         class DeleteApiKeyRequest;
         class DeleteAuthorizerRequest;
         class DeleteBasePathMappingRequest;
@@ -191,6 +196,7 @@ namespace Model
         class DeleteStageRequest;
         class DeleteUsagePlanRequest;
         class DeleteUsagePlanKeyRequest;
+        class DeleteVpcLinkRequest;
         class FlushStageAuthorizersCacheRequest;
         class FlushStageCacheRequest;
         class GenerateClientCertificateRequest;
@@ -237,6 +243,8 @@ namespace Model
         class GetUsagePlanKeyRequest;
         class GetUsagePlanKeysRequest;
         class GetUsagePlansRequest;
+        class GetVpcLinkRequest;
+        class GetVpcLinksRequest;
         class ImportApiKeysRequest;
         class ImportDocumentationPartsRequest;
         class ImportRestApiRequest;
@@ -269,6 +277,7 @@ namespace Model
         class UpdateStageRequest;
         class UpdateUsageRequest;
         class UpdateUsagePlanRequest;
+        class UpdateVpcLinkRequest;
 
         typedef Aws::Utils::Outcome<CreateApiKeyResult, Aws::Client::AWSError<APIGatewayErrors>> CreateApiKeyOutcome;
         typedef Aws::Utils::Outcome<CreateAuthorizerResult, Aws::Client::AWSError<APIGatewayErrors>> CreateAuthorizerOutcome;
@@ -284,6 +293,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateStageResult, Aws::Client::AWSError<APIGatewayErrors>> CreateStageOutcome;
         typedef Aws::Utils::Outcome<CreateUsagePlanResult, Aws::Client::AWSError<APIGatewayErrors>> CreateUsagePlanOutcome;
         typedef Aws::Utils::Outcome<CreateUsagePlanKeyResult, Aws::Client::AWSError<APIGatewayErrors>> CreateUsagePlanKeyOutcome;
+        typedef Aws::Utils::Outcome<CreateVpcLinkResult, Aws::Client::AWSError<APIGatewayErrors>> CreateVpcLinkOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<APIGatewayErrors>> DeleteApiKeyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<APIGatewayErrors>> DeleteAuthorizerOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<APIGatewayErrors>> DeleteBasePathMappingOutcome;
@@ -304,6 +314,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<APIGatewayErrors>> DeleteStageOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<APIGatewayErrors>> DeleteUsagePlanOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<APIGatewayErrors>> DeleteUsagePlanKeyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<APIGatewayErrors>> DeleteVpcLinkOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<APIGatewayErrors>> FlushStageAuthorizersCacheOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<APIGatewayErrors>> FlushStageCacheOutcome;
         typedef Aws::Utils::Outcome<GenerateClientCertificateResult, Aws::Client::AWSError<APIGatewayErrors>> GenerateClientCertificateOutcome;
@@ -350,6 +361,8 @@ namespace Model
         typedef Aws::Utils::Outcome<GetUsagePlanKeyResult, Aws::Client::AWSError<APIGatewayErrors>> GetUsagePlanKeyOutcome;
         typedef Aws::Utils::Outcome<GetUsagePlanKeysResult, Aws::Client::AWSError<APIGatewayErrors>> GetUsagePlanKeysOutcome;
         typedef Aws::Utils::Outcome<GetUsagePlansResult, Aws::Client::AWSError<APIGatewayErrors>> GetUsagePlansOutcome;
+        typedef Aws::Utils::Outcome<GetVpcLinkResult, Aws::Client::AWSError<APIGatewayErrors>> GetVpcLinkOutcome;
+        typedef Aws::Utils::Outcome<GetVpcLinksResult, Aws::Client::AWSError<APIGatewayErrors>> GetVpcLinksOutcome;
         typedef Aws::Utils::Outcome<ImportApiKeysResult, Aws::Client::AWSError<APIGatewayErrors>> ImportApiKeysOutcome;
         typedef Aws::Utils::Outcome<ImportDocumentationPartsResult, Aws::Client::AWSError<APIGatewayErrors>> ImportDocumentationPartsOutcome;
         typedef Aws::Utils::Outcome<ImportRestApiResult, Aws::Client::AWSError<APIGatewayErrors>> ImportRestApiOutcome;
@@ -382,6 +395,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateStageResult, Aws::Client::AWSError<APIGatewayErrors>> UpdateStageOutcome;
         typedef Aws::Utils::Outcome<UpdateUsageResult, Aws::Client::AWSError<APIGatewayErrors>> UpdateUsageOutcome;
         typedef Aws::Utils::Outcome<UpdateUsagePlanResult, Aws::Client::AWSError<APIGatewayErrors>> UpdateUsagePlanOutcome;
+        typedef Aws::Utils::Outcome<UpdateVpcLinkResult, Aws::Client::AWSError<APIGatewayErrors>> UpdateVpcLinkOutcome;
 
         typedef std::future<CreateApiKeyOutcome> CreateApiKeyOutcomeCallable;
         typedef std::future<CreateAuthorizerOutcome> CreateAuthorizerOutcomeCallable;
@@ -397,6 +411,7 @@ namespace Model
         typedef std::future<CreateStageOutcome> CreateStageOutcomeCallable;
         typedef std::future<CreateUsagePlanOutcome> CreateUsagePlanOutcomeCallable;
         typedef std::future<CreateUsagePlanKeyOutcome> CreateUsagePlanKeyOutcomeCallable;
+        typedef std::future<CreateVpcLinkOutcome> CreateVpcLinkOutcomeCallable;
         typedef std::future<DeleteApiKeyOutcome> DeleteApiKeyOutcomeCallable;
         typedef std::future<DeleteAuthorizerOutcome> DeleteAuthorizerOutcomeCallable;
         typedef std::future<DeleteBasePathMappingOutcome> DeleteBasePathMappingOutcomeCallable;
@@ -417,6 +432,7 @@ namespace Model
         typedef std::future<DeleteStageOutcome> DeleteStageOutcomeCallable;
         typedef std::future<DeleteUsagePlanOutcome> DeleteUsagePlanOutcomeCallable;
         typedef std::future<DeleteUsagePlanKeyOutcome> DeleteUsagePlanKeyOutcomeCallable;
+        typedef std::future<DeleteVpcLinkOutcome> DeleteVpcLinkOutcomeCallable;
         typedef std::future<FlushStageAuthorizersCacheOutcome> FlushStageAuthorizersCacheOutcomeCallable;
         typedef std::future<FlushStageCacheOutcome> FlushStageCacheOutcomeCallable;
         typedef std::future<GenerateClientCertificateOutcome> GenerateClientCertificateOutcomeCallable;
@@ -463,6 +479,8 @@ namespace Model
         typedef std::future<GetUsagePlanKeyOutcome> GetUsagePlanKeyOutcomeCallable;
         typedef std::future<GetUsagePlanKeysOutcome> GetUsagePlanKeysOutcomeCallable;
         typedef std::future<GetUsagePlansOutcome> GetUsagePlansOutcomeCallable;
+        typedef std::future<GetVpcLinkOutcome> GetVpcLinkOutcomeCallable;
+        typedef std::future<GetVpcLinksOutcome> GetVpcLinksOutcomeCallable;
         typedef std::future<ImportApiKeysOutcome> ImportApiKeysOutcomeCallable;
         typedef std::future<ImportDocumentationPartsOutcome> ImportDocumentationPartsOutcomeCallable;
         typedef std::future<ImportRestApiOutcome> ImportRestApiOutcomeCallable;
@@ -495,6 +513,7 @@ namespace Model
         typedef std::future<UpdateStageOutcome> UpdateStageOutcomeCallable;
         typedef std::future<UpdateUsageOutcome> UpdateUsageOutcomeCallable;
         typedef std::future<UpdateUsagePlanOutcome> UpdateUsagePlanOutcomeCallable;
+        typedef std::future<UpdateVpcLinkOutcome> UpdateVpcLinkOutcomeCallable;
 } // namespace Model
 
   class APIGatewayClient;
@@ -513,6 +532,7 @@ namespace Model
     typedef std::function<void(const APIGatewayClient*, const Model::CreateStageRequest&, const Model::CreateStageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStageResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::CreateUsagePlanRequest&, const Model::CreateUsagePlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUsagePlanResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::CreateUsagePlanKeyRequest&, const Model::CreateUsagePlanKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUsagePlanKeyResponseReceivedHandler;
+    typedef std::function<void(const APIGatewayClient*, const Model::CreateVpcLinkRequest&, const Model::CreateVpcLinkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVpcLinkResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::DeleteApiKeyRequest&, const Model::DeleteApiKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApiKeyResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::DeleteAuthorizerRequest&, const Model::DeleteAuthorizerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAuthorizerResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::DeleteBasePathMappingRequest&, const Model::DeleteBasePathMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBasePathMappingResponseReceivedHandler;
@@ -533,6 +553,7 @@ namespace Model
     typedef std::function<void(const APIGatewayClient*, const Model::DeleteStageRequest&, const Model::DeleteStageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStageResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::DeleteUsagePlanRequest&, const Model::DeleteUsagePlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUsagePlanResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::DeleteUsagePlanKeyRequest&, const Model::DeleteUsagePlanKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUsagePlanKeyResponseReceivedHandler;
+    typedef std::function<void(const APIGatewayClient*, const Model::DeleteVpcLinkRequest&, const Model::DeleteVpcLinkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVpcLinkResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::FlushStageAuthorizersCacheRequest&, const Model::FlushStageAuthorizersCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > FlushStageAuthorizersCacheResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::FlushStageCacheRequest&, const Model::FlushStageCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > FlushStageCacheResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::GenerateClientCertificateRequest&, const Model::GenerateClientCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GenerateClientCertificateResponseReceivedHandler;
@@ -579,6 +600,8 @@ namespace Model
     typedef std::function<void(const APIGatewayClient*, const Model::GetUsagePlanKeyRequest&, const Model::GetUsagePlanKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUsagePlanKeyResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::GetUsagePlanKeysRequest&, const Model::GetUsagePlanKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUsagePlanKeysResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::GetUsagePlansRequest&, const Model::GetUsagePlansOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUsagePlansResponseReceivedHandler;
+    typedef std::function<void(const APIGatewayClient*, const Model::GetVpcLinkRequest&, const Model::GetVpcLinkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVpcLinkResponseReceivedHandler;
+    typedef std::function<void(const APIGatewayClient*, const Model::GetVpcLinksRequest&, const Model::GetVpcLinksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVpcLinksResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::ImportApiKeysRequest&, const Model::ImportApiKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportApiKeysResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::ImportDocumentationPartsRequest&, const Model::ImportDocumentationPartsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportDocumentationPartsResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::ImportRestApiRequest&, const Model::ImportRestApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportRestApiResponseReceivedHandler;
@@ -611,13 +634,14 @@ namespace Model
     typedef std::function<void(const APIGatewayClient*, const Model::UpdateStageRequest&, const Model::UpdateStageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStageResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::UpdateUsageRequest&, const Model::UpdateUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUsageResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::UpdateUsagePlanRequest&, const Model::UpdateUsagePlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUsagePlanResponseReceivedHandler;
+    typedef std::function<void(const APIGatewayClient*, const Model::UpdateVpcLinkRequest&, const Model::UpdateVpcLinkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVpcLinkResponseReceivedHandler;
 
   /**
    * <fullname>Amazon API Gateway</fullname> <p>Amazon API Gateway helps developers
-   * deliver robust, secure, and scalable mobile and web application back ends.
-   * Amazon API Gateway allows developers to securely connect mobile and web
-   * applications to APIs that run on AWS Lambda, Amazon EC2, or other publicly
-   * addressable web services that are hosted outside of AWS.</p>
+   * deliver robust, secure, and scalable mobile and web application back ends. API
+   * Gateway allows developers to securely connect mobile and web applications to
+   * APIs that run on AWS Lambda, Amazon EC2, or other publicly addressable web
+   * services that are hosted outside of AWS.</p>
    */
   class AWS_APIGATEWAY_API APIGatewayClient : public Aws::Client::AWSJsonClient
   {
@@ -1018,6 +1042,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateUsagePlanKeyAsync(const Model::CreateUsagePlanKeyRequest& request, const CreateUsagePlanKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a VPC link, under the caller's account in a selected region, in an
+         * asynchronous operation that typically takes 2-4 minutes to complete and become
+         * operational. The caller must have permissions to create and update VPC Endpoint
+         * services.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateVpcLink">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateVpcLinkOutcome CreateVpcLink(const Model::CreateVpcLinkRequest& request) const;
+
+        /**
+         * <p>Creates a VPC link, under the caller's account in a selected region, in an
+         * asynchronous operation that typically takes 2-4 minutes to complete and become
+         * operational. The caller must have permissions to create and update VPC Endpoint
+         * services.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateVpcLink">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateVpcLinkOutcomeCallable CreateVpcLinkCallable(const Model::CreateVpcLinkRequest& request) const;
+
+        /**
+         * <p>Creates a VPC link, under the caller's account in a selected region, in an
+         * asynchronous operation that typically takes 2-4 minutes to complete and become
+         * operational. The caller must have permissions to create and update VPC Endpoint
+         * services.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateVpcLink">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateVpcLinkAsync(const Model::CreateVpcLinkRequest& request, const CreateVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the <a>ApiKey</a> resource.</p><p><h3>See Also:</h3>   <a
@@ -1533,6 +1591,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteUsagePlanKeyAsync(const Model::DeleteUsagePlanKeyRequest& request, const DeleteUsagePlanKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an existing <a>VpcLink</a> of a specified identifier.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteVpcLink">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteVpcLinkOutcome DeleteVpcLink(const Model::DeleteVpcLinkRequest& request) const;
+
+        /**
+         * <p>Deletes an existing <a>VpcLink</a> of a specified identifier.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteVpcLink">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteVpcLinkOutcomeCallable DeleteVpcLinkCallable(const Model::DeleteVpcLinkRequest& request) const;
+
+        /**
+         * <p>Deletes an existing <a>VpcLink</a> of a specified identifier.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteVpcLink">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteVpcLinkAsync(const Model::DeleteVpcLinkRequest& request, const DeleteVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Flushes all authorizer cache entries on a stage.</p><p><h3>See Also:</h3>  
@@ -2114,8 +2200,8 @@ namespace Model
         /**
          * <p>Gets the <a>GatewayResponses</a> collection on the given <a>RestApi</a>. If
          * an API developer has not added any definitions for gateway responses, the result
-         * will be the Amazon API Gateway-generated default <a>GatewayResponses</a>
-         * collection for the supported response types.</p><p><h3>See Also:</h3>   <a
+         * will be the API Gateway-generated default <a>GatewayResponses</a> collection for
+         * the supported response types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetGatewayResponses">AWS
          * API Reference</a></p>
          */
@@ -2124,8 +2210,8 @@ namespace Model
         /**
          * <p>Gets the <a>GatewayResponses</a> collection on the given <a>RestApi</a>. If
          * an API developer has not added any definitions for gateway responses, the result
-         * will be the Amazon API Gateway-generated default <a>GatewayResponses</a>
-         * collection for the supported response types.</p><p><h3>See Also:</h3>   <a
+         * will be the API Gateway-generated default <a>GatewayResponses</a> collection for
+         * the supported response types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetGatewayResponses">AWS
          * API Reference</a></p>
          *
@@ -2136,8 +2222,8 @@ namespace Model
         /**
          * <p>Gets the <a>GatewayResponses</a> collection on the given <a>RestApi</a>. If
          * an API developer has not added any definitions for gateway responses, the result
-         * will be the Amazon API Gateway-generated default <a>GatewayResponses</a>
-         * collection for the supported response types.</p><p><h3>See Also:</h3>   <a
+         * will be the API Gateway-generated default <a>GatewayResponses</a> collection for
+         * the supported response types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetGatewayResponses">AWS
          * API Reference</a></p>
          *
@@ -2751,6 +2837,62 @@ namespace Model
         virtual void GetUsagePlansAsync(const Model::GetUsagePlansRequest& request, const GetUsagePlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets a specified VPC link under the caller's account in a
+         * region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetVpcLink">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetVpcLinkOutcome GetVpcLink(const Model::GetVpcLinkRequest& request) const;
+
+        /**
+         * <p>Gets a specified VPC link under the caller's account in a
+         * region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetVpcLink">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetVpcLinkOutcomeCallable GetVpcLinkCallable(const Model::GetVpcLinkRequest& request) const;
+
+        /**
+         * <p>Gets a specified VPC link under the caller's account in a
+         * region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetVpcLink">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetVpcLinkAsync(const Model::GetVpcLinkRequest& request, const GetVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the <a>VpcLinks</a> collection under the caller's account in a selected
+         * region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetVpcLinks">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetVpcLinksOutcome GetVpcLinks(const Model::GetVpcLinksRequest& request) const;
+
+        /**
+         * <p>Gets the <a>VpcLinks</a> collection under the caller's account in a selected
+         * region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetVpcLinks">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetVpcLinksOutcomeCallable GetVpcLinksCallable(const Model::GetVpcLinksRequest& request) const;
+
+        /**
+         * <p>Gets the <a>VpcLinks</a> collection under the caller's account in a selected
+         * region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetVpcLinks">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetVpcLinksAsync(const Model::GetVpcLinksRequest& request, const GetVpcLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Import API keys from an external source, such as a CSV-formatted
          * file.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportApiKeys">AWS
@@ -2798,16 +2940,16 @@ namespace Model
         virtual void ImportDocumentationPartsAsync(const Model::ImportDocumentationPartsRequest& request, const ImportDocumentationPartsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>A feature of the Amazon API Gateway control service for creating a new API
-         * from an external API definition file.</p><p><h3>See Also:</h3>   <a
+         * <p>A feature of the API Gateway control service for creating a new API from an
+         * external API definition file.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportRestApi">AWS
          * API Reference</a></p>
          */
         virtual Model::ImportRestApiOutcome ImportRestApi(const Model::ImportRestApiRequest& request) const;
 
         /**
-         * <p>A feature of the Amazon API Gateway control service for creating a new API
-         * from an external API definition file.</p><p><h3>See Also:</h3>   <a
+         * <p>A feature of the API Gateway control service for creating a new API from an
+         * external API definition file.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportRestApi">AWS
          * API Reference</a></p>
          *
@@ -2816,8 +2958,8 @@ namespace Model
         virtual Model::ImportRestApiOutcomeCallable ImportRestApiCallable(const Model::ImportRestApiRequest& request) const;
 
         /**
-         * <p>A feature of the Amazon API Gateway control service for creating a new API
-         * from an external API definition file.</p><p><h3>See Also:</h3>   <a
+         * <p>A feature of the API Gateway control service for creating a new API from an
+         * external API definition file.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportRestApi">AWS
          * API Reference</a></p>
          *
@@ -2960,8 +3102,8 @@ namespace Model
         virtual void PutMethodResponseAsync(const Model::PutMethodResponseRequest& request, const PutMethodResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>A feature of the Amazon API Gateway control service for updating an existing
-         * API with an input of external API definitions. The update can take the form of
+         * <p>A feature of the API Gateway control service for updating an existing API
+         * with an input of external API definitions. The update can take the form of
          * merging the supplied definition into the existing API or overwriting the
          * existing API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutRestApi">AWS
@@ -2970,8 +3112,8 @@ namespace Model
         virtual Model::PutRestApiOutcome PutRestApi(const Model::PutRestApiRequest& request) const;
 
         /**
-         * <p>A feature of the Amazon API Gateway control service for updating an existing
-         * API with an input of external API definitions. The update can take the form of
+         * <p>A feature of the API Gateway control service for updating an existing API
+         * with an input of external API definitions. The update can take the form of
          * merging the supplied definition into the existing API or overwriting the
          * existing API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutRestApi">AWS
@@ -2982,8 +3124,8 @@ namespace Model
         virtual Model::PutRestApiOutcomeCallable PutRestApiCallable(const Model::PutRestApiRequest& request) const;
 
         /**
-         * <p>A feature of the Amazon API Gateway control service for updating an existing
-         * API with an input of external API definitions. The update can take the form of
+         * <p>A feature of the API Gateway control service for updating an existing API
+         * with an input of external API definitions. The update can take the form of
          * merging the supplied definition into the existing API or overwriting the
          * existing API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutRestApi">AWS
@@ -3610,6 +3752,34 @@ namespace Model
          */
         virtual void UpdateUsagePlanAsync(const Model::UpdateUsagePlanRequest& request, const UpdateUsagePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Updates an existing <a>VpcLink</a> of a specified identifier.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateVpcLink">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateVpcLinkOutcome UpdateVpcLink(const Model::UpdateVpcLinkRequest& request) const;
+
+        /**
+         * <p>Updates an existing <a>VpcLink</a> of a specified identifier.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateVpcLink">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateVpcLinkOutcomeCallable UpdateVpcLinkCallable(const Model::UpdateVpcLinkRequest& request) const;
+
+        /**
+         * <p>Updates an existing <a>VpcLink</a> of a specified identifier.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateVpcLink">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateVpcLinkAsync(const Model::UpdateVpcLinkRequest& request, const UpdateVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
@@ -3629,6 +3799,7 @@ namespace Model
         void CreateStageAsyncHelper(const Model::CreateStageRequest& request, const CreateStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUsagePlanAsyncHelper(const Model::CreateUsagePlanRequest& request, const CreateUsagePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUsagePlanKeyAsyncHelper(const Model::CreateUsagePlanKeyRequest& request, const CreateUsagePlanKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateVpcLinkAsyncHelper(const Model::CreateVpcLinkRequest& request, const CreateVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteApiKeyAsyncHelper(const Model::DeleteApiKeyRequest& request, const DeleteApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAuthorizerAsyncHelper(const Model::DeleteAuthorizerRequest& request, const DeleteAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBasePathMappingAsyncHelper(const Model::DeleteBasePathMappingRequest& request, const DeleteBasePathMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3649,6 +3820,7 @@ namespace Model
         void DeleteStageAsyncHelper(const Model::DeleteStageRequest& request, const DeleteStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUsagePlanAsyncHelper(const Model::DeleteUsagePlanRequest& request, const DeleteUsagePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUsagePlanKeyAsyncHelper(const Model::DeleteUsagePlanKeyRequest& request, const DeleteUsagePlanKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteVpcLinkAsyncHelper(const Model::DeleteVpcLinkRequest& request, const DeleteVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void FlushStageAuthorizersCacheAsyncHelper(const Model::FlushStageAuthorizersCacheRequest& request, const FlushStageAuthorizersCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void FlushStageCacheAsyncHelper(const Model::FlushStageCacheRequest& request, const FlushStageCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GenerateClientCertificateAsyncHelper(const Model::GenerateClientCertificateRequest& request, const GenerateClientCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3695,6 +3867,8 @@ namespace Model
         void GetUsagePlanKeyAsyncHelper(const Model::GetUsagePlanKeyRequest& request, const GetUsagePlanKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUsagePlanKeysAsyncHelper(const Model::GetUsagePlanKeysRequest& request, const GetUsagePlanKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUsagePlansAsyncHelper(const Model::GetUsagePlansRequest& request, const GetUsagePlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetVpcLinkAsyncHelper(const Model::GetVpcLinkRequest& request, const GetVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetVpcLinksAsyncHelper(const Model::GetVpcLinksRequest& request, const GetVpcLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportApiKeysAsyncHelper(const Model::ImportApiKeysRequest& request, const ImportApiKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportDocumentationPartsAsyncHelper(const Model::ImportDocumentationPartsRequest& request, const ImportDocumentationPartsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportRestApiAsyncHelper(const Model::ImportRestApiRequest& request, const ImportRestApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3727,6 +3901,7 @@ namespace Model
         void UpdateStageAsyncHelper(const Model::UpdateStageRequest& request, const UpdateStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateUsageAsyncHelper(const Model::UpdateUsageRequest& request, const UpdateUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateUsagePlanAsyncHelper(const Model::UpdateUsagePlanRequest& request, const UpdateUsagePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateVpcLinkAsyncHelper(const Model::UpdateVpcLinkRequest& request, const UpdateVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;

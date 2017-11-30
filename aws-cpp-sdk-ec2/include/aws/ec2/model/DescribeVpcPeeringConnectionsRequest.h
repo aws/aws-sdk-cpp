@@ -54,11 +54,11 @@ namespace Model
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the peer
+     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter
      * VPC.</p> </li> <li> <p> <code>accepter-vpc-info.owner-id</code> - The AWS
-     * account ID of the owner of the peer VPC.</p> </li> <li> <p>
-     * <code>accepter-vpc-info.vpc-id</code> - The ID of the peer VPC.</p> </li> <li>
-     * <p> <code>expiration-time</code> - The expiration date and time for the VPC
+     * account ID of the owner of the accepter VPC.</p> </li> <li> <p>
+     * <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.</p> </li>
+     * <li> <p> <code>expiration-time</code> - The expiration date and time for the VPC
      * peering connection.</p> </li> <li> <p>
      * <code>requester-vpc-info.cidr-block</code> - The IPv4 CIDR block of the
      * requester's VPC.</p> </li> <li> <p> <code>requester-vpc-info.owner-id</code> -
@@ -66,10 +66,10 @@ namespace Model
      * <code>requester-vpc-info.vpc-id</code> - The ID of the requester VPC.</p> </li>
      * <li> <p> <code>status-code</code> - The status of the VPC peering connection
      * (<code>pending-acceptance</code> | <code>failed</code> | <code>expired</code> |
-     * <code>provisioning</code> | <code>active</code> | <code>deleted</code> |
-     * <code>rejected</code>).</p> </li> <li> <p> <code>status-message</code> - A
-     * message that provides more information about the status of the VPC peering
-     * connection, if applicable.</p> </li> <li> <p>
+     * <code>provisioning</code> | <code>active</code> | <code>deleting</code> |
+     * <code>deleted</code> | <code>rejected</code>).</p> </li> <li> <p>
+     * <code>status-message</code> - A message that provides more information about the
+     * status of the VPC peering connection, if applicable.</p> </li> <li> <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
      * assigned to the resource. Specify the key of the tag in the filter name and the
      * value of the tag in the filter value. For example, for the tag Purpose=X,
@@ -90,11 +90,11 @@ namespace Model
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the peer
+     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter
      * VPC.</p> </li> <li> <p> <code>accepter-vpc-info.owner-id</code> - The AWS
-     * account ID of the owner of the peer VPC.</p> </li> <li> <p>
-     * <code>accepter-vpc-info.vpc-id</code> - The ID of the peer VPC.</p> </li> <li>
-     * <p> <code>expiration-time</code> - The expiration date and time for the VPC
+     * account ID of the owner of the accepter VPC.</p> </li> <li> <p>
+     * <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.</p> </li>
+     * <li> <p> <code>expiration-time</code> - The expiration date and time for the VPC
      * peering connection.</p> </li> <li> <p>
      * <code>requester-vpc-info.cidr-block</code> - The IPv4 CIDR block of the
      * requester's VPC.</p> </li> <li> <p> <code>requester-vpc-info.owner-id</code> -
@@ -102,10 +102,10 @@ namespace Model
      * <code>requester-vpc-info.vpc-id</code> - The ID of the requester VPC.</p> </li>
      * <li> <p> <code>status-code</code> - The status of the VPC peering connection
      * (<code>pending-acceptance</code> | <code>failed</code> | <code>expired</code> |
-     * <code>provisioning</code> | <code>active</code> | <code>deleted</code> |
-     * <code>rejected</code>).</p> </li> <li> <p> <code>status-message</code> - A
-     * message that provides more information about the status of the VPC peering
-     * connection, if applicable.</p> </li> <li> <p>
+     * <code>provisioning</code> | <code>active</code> | <code>deleting</code> |
+     * <code>deleted</code> | <code>rejected</code>).</p> </li> <li> <p>
+     * <code>status-message</code> - A message that provides more information about the
+     * status of the VPC peering connection, if applicable.</p> </li> <li> <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
      * assigned to the resource. Specify the key of the tag in the filter name and the
      * value of the tag in the filter value. For example, for the tag Purpose=X,
@@ -126,11 +126,11 @@ namespace Model
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the peer
+     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter
      * VPC.</p> </li> <li> <p> <code>accepter-vpc-info.owner-id</code> - The AWS
-     * account ID of the owner of the peer VPC.</p> </li> <li> <p>
-     * <code>accepter-vpc-info.vpc-id</code> - The ID of the peer VPC.</p> </li> <li>
-     * <p> <code>expiration-time</code> - The expiration date and time for the VPC
+     * account ID of the owner of the accepter VPC.</p> </li> <li> <p>
+     * <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.</p> </li>
+     * <li> <p> <code>expiration-time</code> - The expiration date and time for the VPC
      * peering connection.</p> </li> <li> <p>
      * <code>requester-vpc-info.cidr-block</code> - The IPv4 CIDR block of the
      * requester's VPC.</p> </li> <li> <p> <code>requester-vpc-info.owner-id</code> -
@@ -138,10 +138,10 @@ namespace Model
      * <code>requester-vpc-info.vpc-id</code> - The ID of the requester VPC.</p> </li>
      * <li> <p> <code>status-code</code> - The status of the VPC peering connection
      * (<code>pending-acceptance</code> | <code>failed</code> | <code>expired</code> |
-     * <code>provisioning</code> | <code>active</code> | <code>deleted</code> |
-     * <code>rejected</code>).</p> </li> <li> <p> <code>status-message</code> - A
-     * message that provides more information about the status of the VPC peering
-     * connection, if applicable.</p> </li> <li> <p>
+     * <code>provisioning</code> | <code>active</code> | <code>deleting</code> |
+     * <code>deleted</code> | <code>rejected</code>).</p> </li> <li> <p>
+     * <code>status-message</code> - A message that provides more information about the
+     * status of the VPC peering connection, if applicable.</p> </li> <li> <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
      * assigned to the resource. Specify the key of the tag in the filter name and the
      * value of the tag in the filter value. For example, for the tag Purpose=X,
@@ -162,11 +162,11 @@ namespace Model
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the peer
+     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter
      * VPC.</p> </li> <li> <p> <code>accepter-vpc-info.owner-id</code> - The AWS
-     * account ID of the owner of the peer VPC.</p> </li> <li> <p>
-     * <code>accepter-vpc-info.vpc-id</code> - The ID of the peer VPC.</p> </li> <li>
-     * <p> <code>expiration-time</code> - The expiration date and time for the VPC
+     * account ID of the owner of the accepter VPC.</p> </li> <li> <p>
+     * <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.</p> </li>
+     * <li> <p> <code>expiration-time</code> - The expiration date and time for the VPC
      * peering connection.</p> </li> <li> <p>
      * <code>requester-vpc-info.cidr-block</code> - The IPv4 CIDR block of the
      * requester's VPC.</p> </li> <li> <p> <code>requester-vpc-info.owner-id</code> -
@@ -174,10 +174,10 @@ namespace Model
      * <code>requester-vpc-info.vpc-id</code> - The ID of the requester VPC.</p> </li>
      * <li> <p> <code>status-code</code> - The status of the VPC peering connection
      * (<code>pending-acceptance</code> | <code>failed</code> | <code>expired</code> |
-     * <code>provisioning</code> | <code>active</code> | <code>deleted</code> |
-     * <code>rejected</code>).</p> </li> <li> <p> <code>status-message</code> - A
-     * message that provides more information about the status of the VPC peering
-     * connection, if applicable.</p> </li> <li> <p>
+     * <code>provisioning</code> | <code>active</code> | <code>deleting</code> |
+     * <code>deleted</code> | <code>rejected</code>).</p> </li> <li> <p>
+     * <code>status-message</code> - A message that provides more information about the
+     * status of the VPC peering connection, if applicable.</p> </li> <li> <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
      * assigned to the resource. Specify the key of the tag in the filter name and the
      * value of the tag in the filter value. For example, for the tag Purpose=X,
@@ -198,11 +198,11 @@ namespace Model
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the peer
+     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter
      * VPC.</p> </li> <li> <p> <code>accepter-vpc-info.owner-id</code> - The AWS
-     * account ID of the owner of the peer VPC.</p> </li> <li> <p>
-     * <code>accepter-vpc-info.vpc-id</code> - The ID of the peer VPC.</p> </li> <li>
-     * <p> <code>expiration-time</code> - The expiration date and time for the VPC
+     * account ID of the owner of the accepter VPC.</p> </li> <li> <p>
+     * <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.</p> </li>
+     * <li> <p> <code>expiration-time</code> - The expiration date and time for the VPC
      * peering connection.</p> </li> <li> <p>
      * <code>requester-vpc-info.cidr-block</code> - The IPv4 CIDR block of the
      * requester's VPC.</p> </li> <li> <p> <code>requester-vpc-info.owner-id</code> -
@@ -210,10 +210,10 @@ namespace Model
      * <code>requester-vpc-info.vpc-id</code> - The ID of the requester VPC.</p> </li>
      * <li> <p> <code>status-code</code> - The status of the VPC peering connection
      * (<code>pending-acceptance</code> | <code>failed</code> | <code>expired</code> |
-     * <code>provisioning</code> | <code>active</code> | <code>deleted</code> |
-     * <code>rejected</code>).</p> </li> <li> <p> <code>status-message</code> - A
-     * message that provides more information about the status of the VPC peering
-     * connection, if applicable.</p> </li> <li> <p>
+     * <code>provisioning</code> | <code>active</code> | <code>deleting</code> |
+     * <code>deleted</code> | <code>rejected</code>).</p> </li> <li> <p>
+     * <code>status-message</code> - A message that provides more information about the
+     * status of the VPC peering connection, if applicable.</p> </li> <li> <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
      * assigned to the resource. Specify the key of the tag in the filter name and the
      * value of the tag in the filter value. For example, for the tag Purpose=X,
@@ -234,11 +234,11 @@ namespace Model
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the peer
+     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter
      * VPC.</p> </li> <li> <p> <code>accepter-vpc-info.owner-id</code> - The AWS
-     * account ID of the owner of the peer VPC.</p> </li> <li> <p>
-     * <code>accepter-vpc-info.vpc-id</code> - The ID of the peer VPC.</p> </li> <li>
-     * <p> <code>expiration-time</code> - The expiration date and time for the VPC
+     * account ID of the owner of the accepter VPC.</p> </li> <li> <p>
+     * <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.</p> </li>
+     * <li> <p> <code>expiration-time</code> - The expiration date and time for the VPC
      * peering connection.</p> </li> <li> <p>
      * <code>requester-vpc-info.cidr-block</code> - The IPv4 CIDR block of the
      * requester's VPC.</p> </li> <li> <p> <code>requester-vpc-info.owner-id</code> -
@@ -246,10 +246,10 @@ namespace Model
      * <code>requester-vpc-info.vpc-id</code> - The ID of the requester VPC.</p> </li>
      * <li> <p> <code>status-code</code> - The status of the VPC peering connection
      * (<code>pending-acceptance</code> | <code>failed</code> | <code>expired</code> |
-     * <code>provisioning</code> | <code>active</code> | <code>deleted</code> |
-     * <code>rejected</code>).</p> </li> <li> <p> <code>status-message</code> - A
-     * message that provides more information about the status of the VPC peering
-     * connection, if applicable.</p> </li> <li> <p>
+     * <code>provisioning</code> | <code>active</code> | <code>deleting</code> |
+     * <code>deleted</code> | <code>rejected</code>).</p> </li> <li> <p>
+     * <code>status-message</code> - A message that provides more information about the
+     * status of the VPC peering connection, if applicable.</p> </li> <li> <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
      * assigned to the resource. Specify the key of the tag in the filter name and the
      * value of the tag in the filter value. For example, for the tag Purpose=X,
@@ -270,11 +270,11 @@ namespace Model
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the peer
+     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter
      * VPC.</p> </li> <li> <p> <code>accepter-vpc-info.owner-id</code> - The AWS
-     * account ID of the owner of the peer VPC.</p> </li> <li> <p>
-     * <code>accepter-vpc-info.vpc-id</code> - The ID of the peer VPC.</p> </li> <li>
-     * <p> <code>expiration-time</code> - The expiration date and time for the VPC
+     * account ID of the owner of the accepter VPC.</p> </li> <li> <p>
+     * <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.</p> </li>
+     * <li> <p> <code>expiration-time</code> - The expiration date and time for the VPC
      * peering connection.</p> </li> <li> <p>
      * <code>requester-vpc-info.cidr-block</code> - The IPv4 CIDR block of the
      * requester's VPC.</p> </li> <li> <p> <code>requester-vpc-info.owner-id</code> -
@@ -282,10 +282,10 @@ namespace Model
      * <code>requester-vpc-info.vpc-id</code> - The ID of the requester VPC.</p> </li>
      * <li> <p> <code>status-code</code> - The status of the VPC peering connection
      * (<code>pending-acceptance</code> | <code>failed</code> | <code>expired</code> |
-     * <code>provisioning</code> | <code>active</code> | <code>deleted</code> |
-     * <code>rejected</code>).</p> </li> <li> <p> <code>status-message</code> - A
-     * message that provides more information about the status of the VPC peering
-     * connection, if applicable.</p> </li> <li> <p>
+     * <code>provisioning</code> | <code>active</code> | <code>deleting</code> |
+     * <code>deleted</code> | <code>rejected</code>).</p> </li> <li> <p>
+     * <code>status-message</code> - A message that provides more information about the
+     * status of the VPC peering connection, if applicable.</p> </li> <li> <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
      * assigned to the resource. Specify the key of the tag in the filter name and the
      * value of the tag in the filter value. For example, for the tag Purpose=X,

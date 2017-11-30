@@ -76,37 +76,44 @@ namespace Model
 
 
     /**
-     * <p>The ID of the VPC peering connection.</p>
+     * <p>The ID of the VPC peering connection. You must specify this parameter in the
+     * request.</p>
      */
     inline const Aws::String& GetVpcPeeringConnectionId() const{ return m_vpcPeeringConnectionId; }
 
     /**
-     * <p>The ID of the VPC peering connection.</p>
+     * <p>The ID of the VPC peering connection. You must specify this parameter in the
+     * request.</p>
      */
     inline void SetVpcPeeringConnectionId(const Aws::String& value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId = value; }
 
     /**
-     * <p>The ID of the VPC peering connection.</p>
+     * <p>The ID of the VPC peering connection. You must specify this parameter in the
+     * request.</p>
      */
     inline void SetVpcPeeringConnectionId(Aws::String&& value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId = std::move(value); }
 
     /**
-     * <p>The ID of the VPC peering connection.</p>
+     * <p>The ID of the VPC peering connection. You must specify this parameter in the
+     * request.</p>
      */
     inline void SetVpcPeeringConnectionId(const char* value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId.assign(value); }
 
     /**
-     * <p>The ID of the VPC peering connection.</p>
+     * <p>The ID of the VPC peering connection. You must specify this parameter in the
+     * request.</p>
      */
     inline AcceptVpcPeeringConnectionRequest& WithVpcPeeringConnectionId(const Aws::String& value) { SetVpcPeeringConnectionId(value); return *this;}
 
     /**
-     * <p>The ID of the VPC peering connection.</p>
+     * <p>The ID of the VPC peering connection. You must specify this parameter in the
+     * request.</p>
      */
     inline AcceptVpcPeeringConnectionRequest& WithVpcPeeringConnectionId(Aws::String&& value) { SetVpcPeeringConnectionId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the VPC peering connection.</p>
+     * <p>The ID of the VPC peering connection. You must specify this parameter in the
+     * request.</p>
      */
     inline AcceptVpcPeeringConnectionRequest& WithVpcPeeringConnectionId(const char* value) { SetVpcPeeringConnectionId(value); return *this;}
 

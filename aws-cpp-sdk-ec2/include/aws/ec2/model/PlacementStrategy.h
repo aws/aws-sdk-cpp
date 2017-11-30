@@ -26,7 +26,8 @@ namespace Model
   enum class PlacementStrategy
   {
     NOT_SET,
-    cluster
+    cluster,
+    spread
   };
 
 namespace PlacementStrategyMapper

@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Requests Amazon API Gateway to delete a <a>Stage</a> resource.</p><p><h3>See
+   * <p>Requests API Gateway to delete a <a>Stage</a> resource.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteStageRequest">AWS
    * API Reference</a></p>

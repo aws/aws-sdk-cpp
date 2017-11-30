@@ -28,6 +28,7 @@ using namespace Aws;
 
 UpdateIntegrationResult::UpdateIntegrationResult() : 
     m_type(IntegrationType::NOT_SET),
+    m_connectionType(ConnectionType::NOT_SET),
     m_contentHandling(ContentHandlingStrategy::NOT_SET),
     m_timeoutInMillis(0)
 {
@@ -35,6 +36,7 @@ UpdateIntegrationResult::UpdateIntegrationResult() :
 
 UpdateIntegrationResult::UpdateIntegrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_type(IntegrationType::NOT_SET),
+    m_connectionType(ConnectionType::NOT_SET),
     m_contentHandling(ContentHandlingStrategy::NOT_SET),
     m_timeoutInMillis(0)
 {
@@ -59,6 +61,18 @@ UpdateIntegrationResult& UpdateIntegrationResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("uri"))
   {
     m_uri = jsonValue.GetString("uri");
+
+  }
+
+  if(jsonValue.ValueExists("connectionType"))
+  {
+    m_connectionType = ConnectionTypeMapper::GetConnectionTypeForName(jsonValue.GetString("connectionType"));
+
+  }
+
+  if(jsonValue.ValueExists("connectionId"))
+  {
+    m_connectionId = jsonValue.GetString("connectionId");
 
   }
 

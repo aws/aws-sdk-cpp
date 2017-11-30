@@ -384,58 +384,58 @@ namespace Model
 
 
     /**
-     * <p>Specifies the required credentials as an IAM role for Amazon API Gateway to
-     * invoke the authorizer. To specify an IAM role for Amazon API Gateway to assume,
-     * use the role's Amazon Resource Name (ARN). To use resource-based permissions on
-     * the Lambda function, specify null.</p>
+     * <p>Specifies the required credentials as an IAM role for API Gateway to invoke
+     * the authorizer. To specify an IAM role for API Gateway to assume, use the role's
+     * Amazon Resource Name (ARN). To use resource-based permissions on the Lambda
+     * function, specify null.</p>
      */
     inline const Aws::String& GetAuthorizerCredentials() const{ return m_authorizerCredentials; }
 
     /**
-     * <p>Specifies the required credentials as an IAM role for Amazon API Gateway to
-     * invoke the authorizer. To specify an IAM role for Amazon API Gateway to assume,
-     * use the role's Amazon Resource Name (ARN). To use resource-based permissions on
-     * the Lambda function, specify null.</p>
+     * <p>Specifies the required credentials as an IAM role for API Gateway to invoke
+     * the authorizer. To specify an IAM role for API Gateway to assume, use the role's
+     * Amazon Resource Name (ARN). To use resource-based permissions on the Lambda
+     * function, specify null.</p>
      */
     inline void SetAuthorizerCredentials(const Aws::String& value) { m_authorizerCredentialsHasBeenSet = true; m_authorizerCredentials = value; }
 
     /**
-     * <p>Specifies the required credentials as an IAM role for Amazon API Gateway to
-     * invoke the authorizer. To specify an IAM role for Amazon API Gateway to assume,
-     * use the role's Amazon Resource Name (ARN). To use resource-based permissions on
-     * the Lambda function, specify null.</p>
+     * <p>Specifies the required credentials as an IAM role for API Gateway to invoke
+     * the authorizer. To specify an IAM role for API Gateway to assume, use the role's
+     * Amazon Resource Name (ARN). To use resource-based permissions on the Lambda
+     * function, specify null.</p>
      */
     inline void SetAuthorizerCredentials(Aws::String&& value) { m_authorizerCredentialsHasBeenSet = true; m_authorizerCredentials = std::move(value); }
 
     /**
-     * <p>Specifies the required credentials as an IAM role for Amazon API Gateway to
-     * invoke the authorizer. To specify an IAM role for Amazon API Gateway to assume,
-     * use the role's Amazon Resource Name (ARN). To use resource-based permissions on
-     * the Lambda function, specify null.</p>
+     * <p>Specifies the required credentials as an IAM role for API Gateway to invoke
+     * the authorizer. To specify an IAM role for API Gateway to assume, use the role's
+     * Amazon Resource Name (ARN). To use resource-based permissions on the Lambda
+     * function, specify null.</p>
      */
     inline void SetAuthorizerCredentials(const char* value) { m_authorizerCredentialsHasBeenSet = true; m_authorizerCredentials.assign(value); }
 
     /**
-     * <p>Specifies the required credentials as an IAM role for Amazon API Gateway to
-     * invoke the authorizer. To specify an IAM role for Amazon API Gateway to assume,
-     * use the role's Amazon Resource Name (ARN). To use resource-based permissions on
-     * the Lambda function, specify null.</p>
+     * <p>Specifies the required credentials as an IAM role for API Gateway to invoke
+     * the authorizer. To specify an IAM role for API Gateway to assume, use the role's
+     * Amazon Resource Name (ARN). To use resource-based permissions on the Lambda
+     * function, specify null.</p>
      */
     inline CreateAuthorizerRequest& WithAuthorizerCredentials(const Aws::String& value) { SetAuthorizerCredentials(value); return *this;}
 
     /**
-     * <p>Specifies the required credentials as an IAM role for Amazon API Gateway to
-     * invoke the authorizer. To specify an IAM role for Amazon API Gateway to assume,
-     * use the role's Amazon Resource Name (ARN). To use resource-based permissions on
-     * the Lambda function, specify null.</p>
+     * <p>Specifies the required credentials as an IAM role for API Gateway to invoke
+     * the authorizer. To specify an IAM role for API Gateway to assume, use the role's
+     * Amazon Resource Name (ARN). To use resource-based permissions on the Lambda
+     * function, specify null.</p>
      */
     inline CreateAuthorizerRequest& WithAuthorizerCredentials(Aws::String&& value) { SetAuthorizerCredentials(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the required credentials as an IAM role for Amazon API Gateway to
-     * invoke the authorizer. To specify an IAM role for Amazon API Gateway to assume,
-     * use the role's Amazon Resource Name (ARN). To use resource-based permissions on
-     * the Lambda function, specify null.</p>
+     * <p>Specifies the required credentials as an IAM role for API Gateway to invoke
+     * the authorizer. To specify an IAM role for API Gateway to assume, use the role's
+     * Amazon Resource Name (ARN). To use resource-based permissions on the Lambda
+     * function, specify null.</p>
      */
     inline CreateAuthorizerRequest& WithAuthorizerCredentials(const char* value) { SetAuthorizerCredentials(value); return *this;}
 
@@ -618,78 +618,78 @@ namespace Model
 
     /**
      * <p>A validation expression for the incoming identity token. For
-     * <code>TOKEN</code> authorizers, this value is a regular expression. Amazon API
-     * Gateway will match the incoming token from the client against the specified
-     * regular expression. It will invoke the authorizer's Lambda function there is a
-     * match. Otherwise, it will return a 401 Unauthorized response without calling the
-     * Lambda function. The validation expression does not apply to the
-     * <code>REQUEST</code> authorizer.</p>
+     * <code>TOKEN</code> authorizers, this value is a regular expression. API Gateway
+     * will match the incoming token from the client against the specified regular
+     * expression. It will invoke the authorizer's Lambda function there is a match.
+     * Otherwise, it will return a 401 Unauthorized response without calling the Lambda
+     * function. The validation expression does not apply to the <code>REQUEST</code>
+     * authorizer.</p>
      */
     inline const Aws::String& GetIdentityValidationExpression() const{ return m_identityValidationExpression; }
 
     /**
      * <p>A validation expression for the incoming identity token. For
-     * <code>TOKEN</code> authorizers, this value is a regular expression. Amazon API
-     * Gateway will match the incoming token from the client against the specified
-     * regular expression. It will invoke the authorizer's Lambda function there is a
-     * match. Otherwise, it will return a 401 Unauthorized response without calling the
-     * Lambda function. The validation expression does not apply to the
-     * <code>REQUEST</code> authorizer.</p>
+     * <code>TOKEN</code> authorizers, this value is a regular expression. API Gateway
+     * will match the incoming token from the client against the specified regular
+     * expression. It will invoke the authorizer's Lambda function there is a match.
+     * Otherwise, it will return a 401 Unauthorized response without calling the Lambda
+     * function. The validation expression does not apply to the <code>REQUEST</code>
+     * authorizer.</p>
      */
     inline void SetIdentityValidationExpression(const Aws::String& value) { m_identityValidationExpressionHasBeenSet = true; m_identityValidationExpression = value; }
 
     /**
      * <p>A validation expression for the incoming identity token. For
-     * <code>TOKEN</code> authorizers, this value is a regular expression. Amazon API
-     * Gateway will match the incoming token from the client against the specified
-     * regular expression. It will invoke the authorizer's Lambda function there is a
-     * match. Otherwise, it will return a 401 Unauthorized response without calling the
-     * Lambda function. The validation expression does not apply to the
-     * <code>REQUEST</code> authorizer.</p>
+     * <code>TOKEN</code> authorizers, this value is a regular expression. API Gateway
+     * will match the incoming token from the client against the specified regular
+     * expression. It will invoke the authorizer's Lambda function there is a match.
+     * Otherwise, it will return a 401 Unauthorized response without calling the Lambda
+     * function. The validation expression does not apply to the <code>REQUEST</code>
+     * authorizer.</p>
      */
     inline void SetIdentityValidationExpression(Aws::String&& value) { m_identityValidationExpressionHasBeenSet = true; m_identityValidationExpression = std::move(value); }
 
     /**
      * <p>A validation expression for the incoming identity token. For
-     * <code>TOKEN</code> authorizers, this value is a regular expression. Amazon API
-     * Gateway will match the incoming token from the client against the specified
-     * regular expression. It will invoke the authorizer's Lambda function there is a
-     * match. Otherwise, it will return a 401 Unauthorized response without calling the
-     * Lambda function. The validation expression does not apply to the
-     * <code>REQUEST</code> authorizer.</p>
+     * <code>TOKEN</code> authorizers, this value is a regular expression. API Gateway
+     * will match the incoming token from the client against the specified regular
+     * expression. It will invoke the authorizer's Lambda function there is a match.
+     * Otherwise, it will return a 401 Unauthorized response without calling the Lambda
+     * function. The validation expression does not apply to the <code>REQUEST</code>
+     * authorizer.</p>
      */
     inline void SetIdentityValidationExpression(const char* value) { m_identityValidationExpressionHasBeenSet = true; m_identityValidationExpression.assign(value); }
 
     /**
      * <p>A validation expression for the incoming identity token. For
-     * <code>TOKEN</code> authorizers, this value is a regular expression. Amazon API
-     * Gateway will match the incoming token from the client against the specified
-     * regular expression. It will invoke the authorizer's Lambda function there is a
-     * match. Otherwise, it will return a 401 Unauthorized response without calling the
-     * Lambda function. The validation expression does not apply to the
-     * <code>REQUEST</code> authorizer.</p>
+     * <code>TOKEN</code> authorizers, this value is a regular expression. API Gateway
+     * will match the incoming token from the client against the specified regular
+     * expression. It will invoke the authorizer's Lambda function there is a match.
+     * Otherwise, it will return a 401 Unauthorized response without calling the Lambda
+     * function. The validation expression does not apply to the <code>REQUEST</code>
+     * authorizer.</p>
      */
     inline CreateAuthorizerRequest& WithIdentityValidationExpression(const Aws::String& value) { SetIdentityValidationExpression(value); return *this;}
 
     /**
      * <p>A validation expression for the incoming identity token. For
-     * <code>TOKEN</code> authorizers, this value is a regular expression. Amazon API
-     * Gateway will match the incoming token from the client against the specified
-     * regular expression. It will invoke the authorizer's Lambda function there is a
-     * match. Otherwise, it will return a 401 Unauthorized response without calling the
-     * Lambda function. The validation expression does not apply to the
-     * <code>REQUEST</code> authorizer.</p>
+     * <code>TOKEN</code> authorizers, this value is a regular expression. API Gateway
+     * will match the incoming token from the client against the specified regular
+     * expression. It will invoke the authorizer's Lambda function there is a match.
+     * Otherwise, it will return a 401 Unauthorized response without calling the Lambda
+     * function. The validation expression does not apply to the <code>REQUEST</code>
+     * authorizer.</p>
      */
     inline CreateAuthorizerRequest& WithIdentityValidationExpression(Aws::String&& value) { SetIdentityValidationExpression(std::move(value)); return *this;}
 
     /**
      * <p>A validation expression for the incoming identity token. For
-     * <code>TOKEN</code> authorizers, this value is a regular expression. Amazon API
-     * Gateway will match the incoming token from the client against the specified
-     * regular expression. It will invoke the authorizer's Lambda function there is a
-     * match. Otherwise, it will return a 401 Unauthorized response without calling the
-     * Lambda function. The validation expression does not apply to the
-     * <code>REQUEST</code> authorizer.</p>
+     * <code>TOKEN</code> authorizers, this value is a regular expression. API Gateway
+     * will match the incoming token from the client against the specified regular
+     * expression. It will invoke the authorizer's Lambda function there is a match.
+     * Otherwise, it will return a 401 Unauthorized response without calling the Lambda
+     * function. The validation expression does not apply to the <code>REQUEST</code>
+     * authorizer.</p>
      */
     inline CreateAuthorizerRequest& WithIdentityValidationExpression(const char* value) { SetIdentityValidationExpression(value); return *this;}
 

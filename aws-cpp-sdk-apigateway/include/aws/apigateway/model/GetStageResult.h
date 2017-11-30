@@ -131,43 +131,43 @@ namespace Model
 
     /**
      * <p>The name of the stage is the first path segment in the Uniform Resource
-     * Identifier (URI) of a call to Amazon API Gateway.</p>
+     * Identifier (URI) of a call to API Gateway.</p>
      */
     inline const Aws::String& GetStageName() const{ return m_stageName; }
 
     /**
      * <p>The name of the stage is the first path segment in the Uniform Resource
-     * Identifier (URI) of a call to Amazon API Gateway.</p>
+     * Identifier (URI) of a call to API Gateway.</p>
      */
     inline void SetStageName(const Aws::String& value) { m_stageName = value; }
 
     /**
      * <p>The name of the stage is the first path segment in the Uniform Resource
-     * Identifier (URI) of a call to Amazon API Gateway.</p>
+     * Identifier (URI) of a call to API Gateway.</p>
      */
     inline void SetStageName(Aws::String&& value) { m_stageName = std::move(value); }
 
     /**
      * <p>The name of the stage is the first path segment in the Uniform Resource
-     * Identifier (URI) of a call to Amazon API Gateway.</p>
+     * Identifier (URI) of a call to API Gateway.</p>
      */
     inline void SetStageName(const char* value) { m_stageName.assign(value); }
 
     /**
      * <p>The name of the stage is the first path segment in the Uniform Resource
-     * Identifier (URI) of a call to Amazon API Gateway.</p>
+     * Identifier (URI) of a call to API Gateway.</p>
      */
     inline GetStageResult& WithStageName(const Aws::String& value) { SetStageName(value); return *this;}
 
     /**
      * <p>The name of the stage is the first path segment in the Uniform Resource
-     * Identifier (URI) of a call to Amazon API Gateway.</p>
+     * Identifier (URI) of a call to API Gateway.</p>
      */
     inline GetStageResult& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the stage is the first path segment in the Uniform Resource
-     * Identifier (URI) of a call to Amazon API Gateway.</p>
+     * Identifier (URI) of a call to API Gateway.</p>
      */
     inline GetStageResult& WithStageName(const char* value) { SetStageName(value); return *this;}
 

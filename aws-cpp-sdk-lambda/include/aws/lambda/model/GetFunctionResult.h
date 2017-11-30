@@ -18,6 +18,7 @@
 #include <aws/lambda/model/FunctionConfiguration.h>
 #include <aws/lambda/model/FunctionCodeLocation.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/lambda/model/Concurrency.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -143,6 +144,32 @@ namespace Model
      */
     inline GetFunctionResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The concurrent execution limit set for this function.</p>
+     */
+    inline const Concurrency& GetConcurrency() const{ return m_concurrency; }
+
+    /**
+     * <p>The concurrent execution limit set for this function.</p>
+     */
+    inline void SetConcurrency(const Concurrency& value) { m_concurrency = value; }
+
+    /**
+     * <p>The concurrent execution limit set for this function.</p>
+     */
+    inline void SetConcurrency(Concurrency&& value) { m_concurrency = std::move(value); }
+
+    /**
+     * <p>The concurrent execution limit set for this function.</p>
+     */
+    inline GetFunctionResult& WithConcurrency(const Concurrency& value) { SetConcurrency(value); return *this;}
+
+    /**
+     * <p>The concurrent execution limit set for this function.</p>
+     */
+    inline GetFunctionResult& WithConcurrency(Concurrency&& value) { SetConcurrency(std::move(value)); return *this;}
+
   private:
 
     FunctionConfiguration m_configuration;
@@ -150,6 +177,8 @@ namespace Model
     FunctionCodeLocation m_code;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    Concurrency m_concurrency;
   };
 
 } // namespace Model

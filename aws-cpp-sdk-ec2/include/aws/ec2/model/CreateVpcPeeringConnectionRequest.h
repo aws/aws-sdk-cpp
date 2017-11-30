@@ -76,118 +76,182 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the owner of the peer VPC.</p> <p>Default: Your AWS
+     * <p>The AWS account ID of the owner of the accepter VPC.</p> <p>Default: Your AWS
      * account ID</p>
      */
     inline const Aws::String& GetPeerOwnerId() const{ return m_peerOwnerId; }
 
     /**
-     * <p>The AWS account ID of the owner of the peer VPC.</p> <p>Default: Your AWS
+     * <p>The AWS account ID of the owner of the accepter VPC.</p> <p>Default: Your AWS
      * account ID</p>
      */
     inline void SetPeerOwnerId(const Aws::String& value) { m_peerOwnerIdHasBeenSet = true; m_peerOwnerId = value; }
 
     /**
-     * <p>The AWS account ID of the owner of the peer VPC.</p> <p>Default: Your AWS
+     * <p>The AWS account ID of the owner of the accepter VPC.</p> <p>Default: Your AWS
      * account ID</p>
      */
     inline void SetPeerOwnerId(Aws::String&& value) { m_peerOwnerIdHasBeenSet = true; m_peerOwnerId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the peer VPC.</p> <p>Default: Your AWS
+     * <p>The AWS account ID of the owner of the accepter VPC.</p> <p>Default: Your AWS
      * account ID</p>
      */
     inline void SetPeerOwnerId(const char* value) { m_peerOwnerIdHasBeenSet = true; m_peerOwnerId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the peer VPC.</p> <p>Default: Your AWS
+     * <p>The AWS account ID of the owner of the accepter VPC.</p> <p>Default: Your AWS
      * account ID</p>
      */
     inline CreateVpcPeeringConnectionRequest& WithPeerOwnerId(const Aws::String& value) { SetPeerOwnerId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the peer VPC.</p> <p>Default: Your AWS
+     * <p>The AWS account ID of the owner of the accepter VPC.</p> <p>Default: Your AWS
      * account ID</p>
      */
     inline CreateVpcPeeringConnectionRequest& WithPeerOwnerId(Aws::String&& value) { SetPeerOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the peer VPC.</p> <p>Default: Your AWS
+     * <p>The AWS account ID of the owner of the accepter VPC.</p> <p>Default: Your AWS
      * account ID</p>
      */
     inline CreateVpcPeeringConnectionRequest& WithPeerOwnerId(const char* value) { SetPeerOwnerId(value); return *this;}
 
 
     /**
-     * <p>The ID of the VPC with which you are creating the VPC peering connection.</p>
+     * <p>The ID of the VPC with which you are creating the VPC peering connection. You
+     * must specify this parameter in the request.</p>
      */
     inline const Aws::String& GetPeerVpcId() const{ return m_peerVpcId; }
 
     /**
-     * <p>The ID of the VPC with which you are creating the VPC peering connection.</p>
+     * <p>The ID of the VPC with which you are creating the VPC peering connection. You
+     * must specify this parameter in the request.</p>
      */
     inline void SetPeerVpcId(const Aws::String& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = value; }
 
     /**
-     * <p>The ID of the VPC with which you are creating the VPC peering connection.</p>
+     * <p>The ID of the VPC with which you are creating the VPC peering connection. You
+     * must specify this parameter in the request.</p>
      */
     inline void SetPeerVpcId(Aws::String&& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = std::move(value); }
 
     /**
-     * <p>The ID of the VPC with which you are creating the VPC peering connection.</p>
+     * <p>The ID of the VPC with which you are creating the VPC peering connection. You
+     * must specify this parameter in the request.</p>
      */
     inline void SetPeerVpcId(const char* value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId.assign(value); }
 
     /**
-     * <p>The ID of the VPC with which you are creating the VPC peering connection.</p>
+     * <p>The ID of the VPC with which you are creating the VPC peering connection. You
+     * must specify this parameter in the request.</p>
      */
     inline CreateVpcPeeringConnectionRequest& WithPeerVpcId(const Aws::String& value) { SetPeerVpcId(value); return *this;}
 
     /**
-     * <p>The ID of the VPC with which you are creating the VPC peering connection.</p>
+     * <p>The ID of the VPC with which you are creating the VPC peering connection. You
+     * must specify this parameter in the request.</p>
      */
     inline CreateVpcPeeringConnectionRequest& WithPeerVpcId(Aws::String&& value) { SetPeerVpcId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the VPC with which you are creating the VPC peering connection.</p>
+     * <p>The ID of the VPC with which you are creating the VPC peering connection. You
+     * must specify this parameter in the request.</p>
      */
     inline CreateVpcPeeringConnectionRequest& WithPeerVpcId(const char* value) { SetPeerVpcId(value); return *this;}
 
 
     /**
-     * <p>The ID of the requester VPC.</p>
+     * <p>The ID of the requester VPC. You must specify this parameter in the
+     * request.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p>The ID of the requester VPC.</p>
+     * <p>The ID of the requester VPC. You must specify this parameter in the
+     * request.</p>
      */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p>The ID of the requester VPC.</p>
+     * <p>The ID of the requester VPC. You must specify this parameter in the
+     * request.</p>
      */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
-     * <p>The ID of the requester VPC.</p>
+     * <p>The ID of the requester VPC. You must specify this parameter in the
+     * request.</p>
      */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /**
-     * <p>The ID of the requester VPC.</p>
+     * <p>The ID of the requester VPC. You must specify this parameter in the
+     * request.</p>
      */
     inline CreateVpcPeeringConnectionRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>The ID of the requester VPC.</p>
+     * <p>The ID of the requester VPC. You must specify this parameter in the
+     * request.</p>
      */
     inline CreateVpcPeeringConnectionRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the requester VPC.</p>
+     * <p>The ID of the requester VPC. You must specify this parameter in the
+     * request.</p>
      */
     inline CreateVpcPeeringConnectionRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+
+
+    /**
+     * <p>The region code for the accepter VPC, if the accepter VPC is located in a
+     * region other than the region in which you make the request.</p> <p>Default: The
+     * region in which you make the request.</p>
+     */
+    inline const Aws::String& GetPeerRegion() const{ return m_peerRegion; }
+
+    /**
+     * <p>The region code for the accepter VPC, if the accepter VPC is located in a
+     * region other than the region in which you make the request.</p> <p>Default: The
+     * region in which you make the request.</p>
+     */
+    inline void SetPeerRegion(const Aws::String& value) { m_peerRegionHasBeenSet = true; m_peerRegion = value; }
+
+    /**
+     * <p>The region code for the accepter VPC, if the accepter VPC is located in a
+     * region other than the region in which you make the request.</p> <p>Default: The
+     * region in which you make the request.</p>
+     */
+    inline void SetPeerRegion(Aws::String&& value) { m_peerRegionHasBeenSet = true; m_peerRegion = std::move(value); }
+
+    /**
+     * <p>The region code for the accepter VPC, if the accepter VPC is located in a
+     * region other than the region in which you make the request.</p> <p>Default: The
+     * region in which you make the request.</p>
+     */
+    inline void SetPeerRegion(const char* value) { m_peerRegionHasBeenSet = true; m_peerRegion.assign(value); }
+
+    /**
+     * <p>The region code for the accepter VPC, if the accepter VPC is located in a
+     * region other than the region in which you make the request.</p> <p>Default: The
+     * region in which you make the request.</p>
+     */
+    inline CreateVpcPeeringConnectionRequest& WithPeerRegion(const Aws::String& value) { SetPeerRegion(value); return *this;}
+
+    /**
+     * <p>The region code for the accepter VPC, if the accepter VPC is located in a
+     * region other than the region in which you make the request.</p> <p>Default: The
+     * region in which you make the request.</p>
+     */
+    inline CreateVpcPeeringConnectionRequest& WithPeerRegion(Aws::String&& value) { SetPeerRegion(std::move(value)); return *this;}
+
+    /**
+     * <p>The region code for the accepter VPC, if the accepter VPC is located in a
+     * region other than the region in which you make the request.</p> <p>Default: The
+     * region in which you make the request.</p>
+     */
+    inline CreateVpcPeeringConnectionRequest& WithPeerRegion(const char* value) { SetPeerRegion(value); return *this;}
 
   private:
 
@@ -202,6 +266,9 @@ namespace Model
 
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
+    Aws::String m_peerRegion;
+    bool m_peerRegionHasBeenSet;
   };
 
 } // namespace Model

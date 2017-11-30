@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>Requests Amazon API Gateway to get information about a <a>Deployments</a>
+   * <p>Requests API Gateway to get information about a <a>Deployments</a>
    * collection.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDeploymentsRequest">AWS
    * API Reference</a></p>

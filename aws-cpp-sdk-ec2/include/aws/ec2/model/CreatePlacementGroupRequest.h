@@ -77,44 +77,44 @@ namespace Model
 
 
     /**
-     * <p>A name for the placement group.</p> <p>Constraints: Up to 255 ASCII
-     * characters</p>
+     * <p>A name for the placement group. Must be unique within the scope of your
+     * account for the region.</p> <p>Constraints: Up to 255 ASCII characters</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
     /**
-     * <p>A name for the placement group.</p> <p>Constraints: Up to 255 ASCII
-     * characters</p>
+     * <p>A name for the placement group. Must be unique within the scope of your
+     * account for the region.</p> <p>Constraints: Up to 255 ASCII characters</p>
      */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
-     * <p>A name for the placement group.</p> <p>Constraints: Up to 255 ASCII
-     * characters</p>
+     * <p>A name for the placement group. Must be unique within the scope of your
+     * account for the region.</p> <p>Constraints: Up to 255 ASCII characters</p>
      */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
-     * <p>A name for the placement group.</p> <p>Constraints: Up to 255 ASCII
-     * characters</p>
+     * <p>A name for the placement group. Must be unique within the scope of your
+     * account for the region.</p> <p>Constraints: Up to 255 ASCII characters</p>
      */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
     /**
-     * <p>A name for the placement group.</p> <p>Constraints: Up to 255 ASCII
-     * characters</p>
+     * <p>A name for the placement group. Must be unique within the scope of your
+     * account for the region.</p> <p>Constraints: Up to 255 ASCII characters</p>
      */
     inline CreatePlacementGroupRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
     /**
-     * <p>A name for the placement group.</p> <p>Constraints: Up to 255 ASCII
-     * characters</p>
+     * <p>A name for the placement group. Must be unique within the scope of your
+     * account for the region.</p> <p>Constraints: Up to 255 ASCII characters</p>
      */
     inline CreatePlacementGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>A name for the placement group.</p> <p>Constraints: Up to 255 ASCII
-     * characters</p>
+     * <p>A name for the placement group. Must be unique within the scope of your
+     * account for the region.</p> <p>Constraints: Up to 255 ASCII characters</p>
      */
     inline CreatePlacementGroupRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 

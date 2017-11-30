@@ -37,8 +37,8 @@ namespace APIGateway
 namespace Model
 {
   /**
-   * <p>Represents an AWS account that is associated with Amazon API Gateway.</p>
-   * <div class="remarks"> <p>To view the account info, call <code>GET</code> on this
+   * <p>Represents an AWS account that is associated with API Gateway.</p> <div
+   * class="remarks"> <p>To view the account info, call <code>GET</code> on this
    * resource.</p> <h4>Error Codes</h4> <p>The following exception may be thrown when
    * the request fails.</p> <ul> <li>UnauthorizedException</li>
    * <li>NotFoundException</li> <li>TooManyRequestsException</li> </ul> <p>For

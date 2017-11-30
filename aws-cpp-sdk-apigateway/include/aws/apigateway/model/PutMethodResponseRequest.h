@@ -192,11 +192,11 @@ namespace Model
 
 
     /**
-     * <p>A key-value map specifying required or optional response parameters that
-     * Amazon API Gateway can send back to the caller. A key defines a method response
-     * header name and the associated value is a Boolean flag indicating whether the
-     * method response parameter is required or not. The method response header names
-     * must match the pattern of <code>method.response.header.{name}</code>, where
+     * <p>A key-value map specifying required or optional response parameters that API
+     * Gateway can send back to the caller. A key defines a method response header name
+     * and the associated value is a Boolean flag indicating whether the method
+     * response parameter is required or not. The method response header names must
+     * match the pattern of <code>method.response.header.{name}</code>, where
      * <code>name</code> is a valid and unique header name. The response parameter
      * names defined here are available in the integration response to be mapped from
      * an integration response header expressed in
@@ -210,11 +210,11 @@ namespace Model
     inline const Aws::Map<Aws::String, bool>& GetResponseParameters() const{ return m_responseParameters; }
 
     /**
-     * <p>A key-value map specifying required or optional response parameters that
-     * Amazon API Gateway can send back to the caller. A key defines a method response
-     * header name and the associated value is a Boolean flag indicating whether the
-     * method response parameter is required or not. The method response header names
-     * must match the pattern of <code>method.response.header.{name}</code>, where
+     * <p>A key-value map specifying required or optional response parameters that API
+     * Gateway can send back to the caller. A key defines a method response header name
+     * and the associated value is a Boolean flag indicating whether the method
+     * response parameter is required or not. The method response header names must
+     * match the pattern of <code>method.response.header.{name}</code>, where
      * <code>name</code> is a valid and unique header name. The response parameter
      * names defined here are available in the integration response to be mapped from
      * an integration response header expressed in
@@ -228,11 +228,11 @@ namespace Model
     inline void SetResponseParameters(const Aws::Map<Aws::String, bool>& value) { m_responseParametersHasBeenSet = true; m_responseParameters = value; }
 
     /**
-     * <p>A key-value map specifying required or optional response parameters that
-     * Amazon API Gateway can send back to the caller. A key defines a method response
-     * header name and the associated value is a Boolean flag indicating whether the
-     * method response parameter is required or not. The method response header names
-     * must match the pattern of <code>method.response.header.{name}</code>, where
+     * <p>A key-value map specifying required or optional response parameters that API
+     * Gateway can send back to the caller. A key defines a method response header name
+     * and the associated value is a Boolean flag indicating whether the method
+     * response parameter is required or not. The method response header names must
+     * match the pattern of <code>method.response.header.{name}</code>, where
      * <code>name</code> is a valid and unique header name. The response parameter
      * names defined here are available in the integration response to be mapped from
      * an integration response header expressed in
@@ -246,11 +246,11 @@ namespace Model
     inline void SetResponseParameters(Aws::Map<Aws::String, bool>&& value) { m_responseParametersHasBeenSet = true; m_responseParameters = std::move(value); }
 
     /**
-     * <p>A key-value map specifying required or optional response parameters that
-     * Amazon API Gateway can send back to the caller. A key defines a method response
-     * header name and the associated value is a Boolean flag indicating whether the
-     * method response parameter is required or not. The method response header names
-     * must match the pattern of <code>method.response.header.{name}</code>, where
+     * <p>A key-value map specifying required or optional response parameters that API
+     * Gateway can send back to the caller. A key defines a method response header name
+     * and the associated value is a Boolean flag indicating whether the method
+     * response parameter is required or not. The method response header names must
+     * match the pattern of <code>method.response.header.{name}</code>, where
      * <code>name</code> is a valid and unique header name. The response parameter
      * names defined here are available in the integration response to be mapped from
      * an integration response header expressed in
@@ -264,11 +264,11 @@ namespace Model
     inline PutMethodResponseRequest& WithResponseParameters(const Aws::Map<Aws::String, bool>& value) { SetResponseParameters(value); return *this;}
 
     /**
-     * <p>A key-value map specifying required or optional response parameters that
-     * Amazon API Gateway can send back to the caller. A key defines a method response
-     * header name and the associated value is a Boolean flag indicating whether the
-     * method response parameter is required or not. The method response header names
-     * must match the pattern of <code>method.response.header.{name}</code>, where
+     * <p>A key-value map specifying required or optional response parameters that API
+     * Gateway can send back to the caller. A key defines a method response header name
+     * and the associated value is a Boolean flag indicating whether the method
+     * response parameter is required or not. The method response header names must
+     * match the pattern of <code>method.response.header.{name}</code>, where
      * <code>name</code> is a valid and unique header name. The response parameter
      * names defined here are available in the integration response to be mapped from
      * an integration response header expressed in
@@ -282,11 +282,11 @@ namespace Model
     inline PutMethodResponseRequest& WithResponseParameters(Aws::Map<Aws::String, bool>&& value) { SetResponseParameters(std::move(value)); return *this;}
 
     /**
-     * <p>A key-value map specifying required or optional response parameters that
-     * Amazon API Gateway can send back to the caller. A key defines a method response
-     * header name and the associated value is a Boolean flag indicating whether the
-     * method response parameter is required or not. The method response header names
-     * must match the pattern of <code>method.response.header.{name}</code>, where
+     * <p>A key-value map specifying required or optional response parameters that API
+     * Gateway can send back to the caller. A key defines a method response header name
+     * and the associated value is a Boolean flag indicating whether the method
+     * response parameter is required or not. The method response header names must
+     * match the pattern of <code>method.response.header.{name}</code>, where
      * <code>name</code> is a valid and unique header name. The response parameter
      * names defined here are available in the integration response to be mapped from
      * an integration response header expressed in
@@ -300,11 +300,11 @@ namespace Model
     inline PutMethodResponseRequest& AddResponseParameters(const Aws::String& key, bool value) { m_responseParametersHasBeenSet = true; m_responseParameters.emplace(key, value); return *this; }
 
     /**
-     * <p>A key-value map specifying required or optional response parameters that
-     * Amazon API Gateway can send back to the caller. A key defines a method response
-     * header name and the associated value is a Boolean flag indicating whether the
-     * method response parameter is required or not. The method response header names
-     * must match the pattern of <code>method.response.header.{name}</code>, where
+     * <p>A key-value map specifying required or optional response parameters that API
+     * Gateway can send back to the caller. A key defines a method response header name
+     * and the associated value is a Boolean flag indicating whether the method
+     * response parameter is required or not. The method response header names must
+     * match the pattern of <code>method.response.header.{name}</code>, where
      * <code>name</code> is a valid and unique header name. The response parameter
      * names defined here are available in the integration response to be mapped from
      * an integration response header expressed in
@@ -318,11 +318,11 @@ namespace Model
     inline PutMethodResponseRequest& AddResponseParameters(Aws::String&& key, bool value) { m_responseParametersHasBeenSet = true; m_responseParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A key-value map specifying required or optional response parameters that
-     * Amazon API Gateway can send back to the caller. A key defines a method response
-     * header name and the associated value is a Boolean flag indicating whether the
-     * method response parameter is required or not. The method response header names
-     * must match the pattern of <code>method.response.header.{name}</code>, where
+     * <p>A key-value map specifying required or optional response parameters that API
+     * Gateway can send back to the caller. A key defines a method response header name
+     * and the associated value is a Boolean flag indicating whether the method
+     * response parameter is required or not. The method response header names must
+     * match the pattern of <code>method.response.header.{name}</code>, where
      * <code>name</code> is a valid and unique header name. The response parameter
      * names defined here are available in the integration response to be mapped from
      * an integration response header expressed in

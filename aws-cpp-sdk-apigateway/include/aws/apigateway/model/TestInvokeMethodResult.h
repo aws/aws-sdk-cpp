@@ -165,37 +165,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon API Gateway execution log for the test invoke request.</p>
+     * <p>The API Gateway execution log for the test invoke request.</p>
      */
     inline const Aws::String& GetLog() const{ return m_log; }
 
     /**
-     * <p>The Amazon API Gateway execution log for the test invoke request.</p>
+     * <p>The API Gateway execution log for the test invoke request.</p>
      */
     inline void SetLog(const Aws::String& value) { m_log = value; }
 
     /**
-     * <p>The Amazon API Gateway execution log for the test invoke request.</p>
+     * <p>The API Gateway execution log for the test invoke request.</p>
      */
     inline void SetLog(Aws::String&& value) { m_log = std::move(value); }
 
     /**
-     * <p>The Amazon API Gateway execution log for the test invoke request.</p>
+     * <p>The API Gateway execution log for the test invoke request.</p>
      */
     inline void SetLog(const char* value) { m_log.assign(value); }
 
     /**
-     * <p>The Amazon API Gateway execution log for the test invoke request.</p>
+     * <p>The API Gateway execution log for the test invoke request.</p>
      */
     inline TestInvokeMethodResult& WithLog(const Aws::String& value) { SetLog(value); return *this;}
 
     /**
-     * <p>The Amazon API Gateway execution log for the test invoke request.</p>
+     * <p>The API Gateway execution log for the test invoke request.</p>
      */
     inline TestInvokeMethodResult& WithLog(Aws::String&& value) { SetLog(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon API Gateway execution log for the test invoke request.</p>
+     * <p>The API Gateway execution log for the test invoke request.</p>
      */
     inline TestInvokeMethodResult& WithLog(const char* value) { SetLog(value); return *this;}
 

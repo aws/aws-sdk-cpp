@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-MarketplaceEntitlementService;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.3.20170111.13;
+        version : 1.3.20170111.14;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Marketplace Entitlement Service);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.3.13
+            AWSSDKCPP-Core/1.3.14
        }
     }
 

@@ -25,7 +25,8 @@ CreateVpcPeeringConnectionRequest::CreateVpcPeeringConnectionRequest() :
     m_dryRunHasBeenSet(false),
     m_peerOwnerIdHasBeenSet(false),
     m_peerVpcIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_peerRegionHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,11 @@ Aws::String CreateVpcPeeringConnectionRequest::SerializePayload() const
   if(m_vpcIdHasBeenSet)
   {
     ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+  }
+
+  if(m_peerRegionHasBeenSet)
+  {
+    ss << "PeerRegion=" << StringUtils::URLEncode(m_peerRegion.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";
