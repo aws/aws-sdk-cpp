@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-ElasticTranscoder;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.3.20120925.14;
+        version : 1.3.20120925.15;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Elastic Transcoder);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.3.14
+            AWSSDKCPP-Core/1.3.15
        }
     }
 
