@@ -623,7 +623,8 @@ namespace Aws
                     handle->SetVersionId(headObjectOutcome.GetResult().GetVersionId());
                 }
 
-                std::size_t partCount = ( downloadSize + bufferSize - 1 ) / bufferSize;
+                // For empty file, we create 1 part here to make downloading behaviors consistent for files with different size.
+                std::size_t partCount = (std::max)((downloadSize + bufferSize - 1) / bufferSize, static_cast<std::size_t>(1));
                 handle->SetIsMultipart(partCount > 1);    // doesn't make a difference but let's be accurate
 
                 for(std::size_t i = 0; i < partCount; ++i)
