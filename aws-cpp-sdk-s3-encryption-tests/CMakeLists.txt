@@ -41,6 +41,9 @@ else()
     add_executable(aws-cpp-sdk-s3-encryption-tests ${S3ENCRYPTION_TEST_SRC})
 endif()
 
+set_compiler_flags(${PROJECT_NAME})
+set_compiler_warnings(${PROJECT_NAME})
+
 target_link_libraries(aws-cpp-sdk-s3-encryption-tests ${PROJECT_LIBS})
 copyDlls(aws-cpp-sdk-s3-encryption-tests ${PROJECT_LIBS})
 

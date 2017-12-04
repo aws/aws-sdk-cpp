@@ -99,6 +99,9 @@ endif()
 add_library(${PROJECT_NAME} ${LIBTYPE} ${TestingResources_SRC})
 add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
+set_compiler_flags(${PROJECT_NAME})
+set_compiler_warnings(${PROJECT_NAME})
+
 if(PLATFORM_CUSTOM)
   add_custom_testing_target_compile_definitions()
 endif()
