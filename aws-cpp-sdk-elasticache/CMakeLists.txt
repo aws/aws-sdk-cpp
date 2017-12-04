@@ -52,6 +52,9 @@ set(ELASTICACHE_INCLUDES
 add_library(${PROJECT_NAME} ${LIBTYPE} ${ELASTICACHE_SRC})
 add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
+set_compiler_flags(${PROJECT_NAME})
+set_compiler_warnings(${PROJECT_NAME})
+
 if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
     target_compile_definitions(${PROJECT_NAME} PRIVATE "AWS_ELASTICACHE_EXPORTS")
 endif()
