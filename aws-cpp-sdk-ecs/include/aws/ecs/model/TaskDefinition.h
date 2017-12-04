@@ -309,7 +309,7 @@ namespace Model
      * the task is allocated an Elastic Network Interface, and you must specify a
      * <a>NetworkConfiguration</a> when you create a service or run a task with the
      * task definition. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the network mode is <code>host</code>, you can't run
      * multiple instantiations of the same task on a single container instance when
@@ -338,7 +338,7 @@ namespace Model
      * the task is allocated an Elastic Network Interface, and you must specify a
      * <a>NetworkConfiguration</a> when you create a service or run a task with the
      * task definition. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the network mode is <code>host</code>, you can't run
      * multiple instantiations of the same task on a single container instance when
@@ -367,7 +367,7 @@ namespace Model
      * the task is allocated an Elastic Network Interface, and you must specify a
      * <a>NetworkConfiguration</a> when you create a service or run a task with the
      * task definition. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the network mode is <code>host</code>, you can't run
      * multiple instantiations of the same task on a single container instance when
@@ -396,7 +396,7 @@ namespace Model
      * the task is allocated an Elastic Network Interface, and you must specify a
      * <a>NetworkConfiguration</a> when you create a service or run a task with the
      * task definition. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the network mode is <code>host</code>, you can't run
      * multiple instantiations of the same task on a single container instance when
@@ -425,7 +425,7 @@ namespace Model
      * the task is allocated an Elastic Network Interface, and you must specify a
      * <a>NetworkConfiguration</a> when you create a service or run a task with the
      * task definition. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the network mode is <code>host</code>, you can't run
      * multiple instantiations of the same task on a single container instance when
