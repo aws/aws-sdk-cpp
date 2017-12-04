@@ -1051,16 +1051,15 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryUploadTest)
     bool completedPartsStayedCompletedDuringRetry = true;
     bool completionCheckDone = false;
     const char uuid[] = "Bjarne Stroustrup!";
-    bool contextFound = false;
 
     TransferManagerConfiguration transferManagerConfig(m_executor.get());
     transferManagerConfig.transferStatusUpdatedCallback = 
         [&](const TransferManager*, const std::shared_ptr<const TransferHandle>& handle)
         {
-            if(handle->GetContext())
+            if (handle->GetTransferDirection() == TransferDirection::UPLOAD)
             {
+                ASSERT_NE(nullptr, handle->GetContext());
                 ASSERT_STREQ(uuid, handle->GetContext()->GetUUID().c_str());
-                contextFound = true;
             }
 
             if (!retryInProgress && handle->GetCompletedParts().size() >= 15 &&  handle->GetStatus() != TransferStatus::CANCELED)
@@ -1081,8 +1080,8 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryUploadTest)
     transferManagerConfig.s3Client = m_s3Client;
     auto transferManager = TransferManager::Create(transferManagerConfig);
 
-    std::shared_ptr<TransferHandle> requestPtr = transferManager->UploadFile(cancelTestFileName, GetTestBucketName(), CANCEL_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
-    requestPtr->SetContext(Aws::MakeShared<Aws::Client::AsyncCallerContext>(ALLOCATION_TAG, uuid));
+    std::shared_ptr<TransferHandle> requestPtr = transferManager->UploadFile(cancelTestFileName, GetTestBucketName(), CANCEL_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>(),
+        Aws::MakeShared<Aws::Client::AsyncCallerContext>(ALLOCATION_TAG, uuid));
 
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
     ASSERT_EQ(fileSize, CANCEL_TEST_SIZE / testStrLen * testStrLen);
@@ -1100,7 +1099,6 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryUploadTest)
     ASSERT_EQ(0u, requestPtr->GetPendingParts().size());
     ASSERT_TRUE(15u >= requestPtr->GetFailedParts().size() && requestPtr->GetFailedParts().size() >= 13u); //some may have been in flight at cancelation time.
     ASSERT_STREQ("text/plain", requestPtr->GetContentType().c_str());
-    ASSERT_TRUE(contextFound);
 
     ListMultipartUploadsOutcome listMultipartOutcome = m_s3Client->ListMultipartUploads(listMultipartRequest);
 
@@ -1475,12 +1473,16 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryDownloadTest)
         bool retryInProgress = false;
         bool completedPartsStayedCompletedDuringRetry = true;
         bool completionCheckDone = false;
+        const char uuid[] = "Bjarne Stroustrup!";
 
         TransferManagerConfiguration downloadConfig(m_executor.get());
         downloadConfig.s3Client = m_s3Client;
         downloadConfig.transferStatusUpdatedCallback = 
             [&](const TransferManager*, const std::shared_ptr<const TransferHandle>& handle)
             {
+                ASSERT_NE(nullptr, handle->GetContext());
+                ASSERT_STREQ(uuid, handle->GetContext()->GetUUID().c_str());
+
                 ASSERT_EQ(downloadFileName, handle->GetTargetFilePath());
                 if (!retryInProgress && handle->GetCompletedParts().size() >= 15 &&  handle->GetStatus() != TransferStatus::CANCELED)
                 {
@@ -1498,7 +1500,8 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryDownloadTest)
             };
 
         auto transferManager = TransferManager::Create(downloadConfig);
-        std::shared_ptr<TransferHandle> requestPtr = transferManager->DownloadFile(GetTestBucketName(), CANCEL_FILE_KEY, downloadFileName);
+        std::shared_ptr<TransferHandle> requestPtr = transferManager->DownloadFile(GetTestBucketName(), CANCEL_FILE_KEY, downloadFileName, DownloadConfiguration(),
+            Aws::MakeShared<Aws::Client::AsyncCallerContext>(ALLOCATION_TAG, uuid));
 
         requestPtr->WaitUntilFinished();
 
