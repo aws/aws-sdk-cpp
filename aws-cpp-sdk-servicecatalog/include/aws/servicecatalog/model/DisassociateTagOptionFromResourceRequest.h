@@ -45,73 +45,73 @@ namespace Model
 
 
     /**
-     * <p>Identifier of the resource from which to disassociate the TagOption.</p>
+     * <p>The resource identifier.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>Identifier of the resource from which to disassociate the TagOption.</p>
+     * <p>The resource identifier.</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>Identifier of the resource from which to disassociate the TagOption.</p>
+     * <p>The resource identifier.</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p>Identifier of the resource from which to disassociate the TagOption.</p>
+     * <p>The resource identifier.</p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>Identifier of the resource from which to disassociate the TagOption.</p>
+     * <p>The resource identifier.</p>
      */
     inline DisassociateTagOptionFromResourceRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>Identifier of the resource from which to disassociate the TagOption.</p>
+     * <p>The resource identifier.</p>
      */
     inline DisassociateTagOptionFromResourceRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>Identifier of the resource from which to disassociate the TagOption.</p>
+     * <p>The resource identifier.</p>
      */
     inline DisassociateTagOptionFromResourceRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
 
     /**
-     * <p>Identifier of the TagOption to disassociate from the resource.</p>
+     * <p>The TagOption identifier.</p>
      */
     inline const Aws::String& GetTagOptionId() const{ return m_tagOptionId; }
 
     /**
-     * <p>Identifier of the TagOption to disassociate from the resource.</p>
+     * <p>The TagOption identifier.</p>
      */
     inline void SetTagOptionId(const Aws::String& value) { m_tagOptionIdHasBeenSet = true; m_tagOptionId = value; }
 
     /**
-     * <p>Identifier of the TagOption to disassociate from the resource.</p>
+     * <p>The TagOption identifier.</p>
      */
     inline void SetTagOptionId(Aws::String&& value) { m_tagOptionIdHasBeenSet = true; m_tagOptionId = std::move(value); }
 
     /**
-     * <p>Identifier of the TagOption to disassociate from the resource.</p>
+     * <p>The TagOption identifier.</p>
      */
     inline void SetTagOptionId(const char* value) { m_tagOptionIdHasBeenSet = true; m_tagOptionId.assign(value); }
 
     /**
-     * <p>Identifier of the TagOption to disassociate from the resource.</p>
+     * <p>The TagOption identifier.</p>
      */
     inline DisassociateTagOptionFromResourceRequest& WithTagOptionId(const Aws::String& value) { SetTagOptionId(value); return *this;}
 
     /**
-     * <p>Identifier of the TagOption to disassociate from the resource.</p>
+     * <p>The TagOption identifier.</p>
      */
     inline DisassociateTagOptionFromResourceRequest& WithTagOptionId(Aws::String&& value) { SetTagOptionId(std::move(value)); return *this;}
 
     /**
-     * <p>Identifier of the TagOption to disassociate from the resource.</p>
+     * <p>The TagOption identifier.</p>
      */
     inline DisassociateTagOptionFromResourceRequest& WithTagOptionId(const char* value) { SetTagOptionId(value); return *this;}
 

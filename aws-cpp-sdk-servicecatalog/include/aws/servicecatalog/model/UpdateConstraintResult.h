@@ -45,63 +45,63 @@ namespace Model
 
 
     /**
-     * <p>The resulting detailed constraint information.</p>
+     * <p>Information about the constraint.</p>
      */
     inline const ConstraintDetail& GetConstraintDetail() const{ return m_constraintDetail; }
 
     /**
-     * <p>The resulting detailed constraint information.</p>
+     * <p>Information about the constraint.</p>
      */
     inline void SetConstraintDetail(const ConstraintDetail& value) { m_constraintDetail = value; }
 
     /**
-     * <p>The resulting detailed constraint information.</p>
+     * <p>Information about the constraint.</p>
      */
     inline void SetConstraintDetail(ConstraintDetail&& value) { m_constraintDetail = std::move(value); }
 
     /**
-     * <p>The resulting detailed constraint information.</p>
+     * <p>Information about the constraint.</p>
      */
     inline UpdateConstraintResult& WithConstraintDetail(const ConstraintDetail& value) { SetConstraintDetail(value); return *this;}
 
     /**
-     * <p>The resulting detailed constraint information.</p>
+     * <p>Information about the constraint.</p>
      */
     inline UpdateConstraintResult& WithConstraintDetail(ConstraintDetail&& value) { SetConstraintDetail(std::move(value)); return *this;}
 
 
     /**
-     * <p>The resulting updated constraint parameters.</p>
+     * <p>The constraint parameters.</p>
      */
     inline const Aws::String& GetConstraintParameters() const{ return m_constraintParameters; }
 
     /**
-     * <p>The resulting updated constraint parameters.</p>
+     * <p>The constraint parameters.</p>
      */
     inline void SetConstraintParameters(const Aws::String& value) { m_constraintParameters = value; }
 
     /**
-     * <p>The resulting updated constraint parameters.</p>
+     * <p>The constraint parameters.</p>
      */
     inline void SetConstraintParameters(Aws::String&& value) { m_constraintParameters = std::move(value); }
 
     /**
-     * <p>The resulting updated constraint parameters.</p>
+     * <p>The constraint parameters.</p>
      */
     inline void SetConstraintParameters(const char* value) { m_constraintParameters.assign(value); }
 
     /**
-     * <p>The resulting updated constraint parameters.</p>
+     * <p>The constraint parameters.</p>
      */
     inline UpdateConstraintResult& WithConstraintParameters(const Aws::String& value) { SetConstraintParameters(value); return *this;}
 
     /**
-     * <p>The resulting updated constraint parameters.</p>
+     * <p>The constraint parameters.</p>
      */
     inline UpdateConstraintResult& WithConstraintParameters(Aws::String&& value) { SetConstraintParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The resulting updated constraint parameters.</p>
+     * <p>The constraint parameters.</p>
      */
     inline UpdateConstraintResult& WithConstraintParameters(const char* value) { SetConstraintParameters(value); return *this;}
 

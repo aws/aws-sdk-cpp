@@ -81,44 +81,44 @@ namespace Model
 
 
     /**
-     * <p>The page token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
+     * <p>The page token to use to retrieve the next set of results. If there are no
+     * additional results, this value is null.</p>
      */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
 
     /**
-     * <p>The page token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
+     * <p>The page token to use to retrieve the next set of results. If there are no
+     * additional results, this value is null.</p>
      */
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
 
     /**
-     * <p>The page token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
+     * <p>The page token to use to retrieve the next set of results. If there are no
+     * additional results, this value is null.</p>
      */
     inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
 
     /**
-     * <p>The page token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
+     * <p>The page token to use to retrieve the next set of results. If there are no
+     * additional results, this value is null.</p>
      */
     inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
 
     /**
-     * <p>The page token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
+     * <p>The page token to use to retrieve the next set of results. If there are no
+     * additional results, this value is null.</p>
      */
     inline ListPrincipalsForPortfolioResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
 
     /**
-     * <p>The page token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
+     * <p>The page token to use to retrieve the next set of results. If there are no
+     * additional results, this value is null.</p>
      */
     inline ListPrincipalsForPortfolioResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
-     * <p>The page token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
+     * <p>The page token to use to retrieve the next set of results. If there are no
+     * additional results, this value is null.</p>
      */
     inline ListPrincipalsForPortfolioResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 

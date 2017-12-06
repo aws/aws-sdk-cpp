@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information indicating the ways in which a product can be
-   * provisioned.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about a provisioning artifact. A provisioning artifact is also
+   * known as a product version.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisioningArtifact">AWS
    * API Reference</a></p>
    */
@@ -49,116 +49,109 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the artifact. This is sometimes referred to as the product
-     * version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The identifier for the artifact. This is sometimes referred to as the product
-     * version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The identifier for the artifact. This is sometimes referred to as the product
-     * version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The identifier for the artifact. This is sometimes referred to as the product
-     * version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The identifier for the artifact. This is sometimes referred to as the product
-     * version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline ProvisioningArtifact& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The identifier for the artifact. This is sometimes referred to as the product
-     * version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline ProvisioningArtifact& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the artifact. This is sometimes referred to as the product
-     * version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline ProvisioningArtifact& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * <p>The name of the artifact.</p>
+     * <p>The name of the provisioning artifact.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the artifact.</p>
+     * <p>The name of the provisioning artifact.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the artifact.</p>
+     * <p>The name of the provisioning artifact.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the artifact.</p>
+     * <p>The name of the provisioning artifact.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the artifact.</p>
+     * <p>The name of the provisioning artifact.</p>
      */
     inline ProvisioningArtifact& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the artifact.</p>
+     * <p>The name of the provisioning artifact.</p>
      */
     inline ProvisioningArtifact& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the artifact.</p>
+     * <p>The name of the provisioning artifact.</p>
      */
     inline ProvisioningArtifact& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The text description of the artifact.</p>
+     * <p>The description of the provisioning artifact.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The text description of the artifact.</p>
+     * <p>The description of the provisioning artifact.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The text description of the artifact.</p>
+     * <p>The description of the provisioning artifact.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The text description of the artifact.</p>
+     * <p>The description of the provisioning artifact.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The text description of the artifact.</p>
+     * <p>The description of the provisioning artifact.</p>
      */
     inline ProvisioningArtifact& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The text description of the artifact.</p>
+     * <p>The description of the provisioning artifact.</p>
      */
     inline ProvisioningArtifact& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The text description of the artifact.</p>
+     * <p>The description of the provisioning artifact.</p>
      */
     inline ProvisioningArtifact& WithDescription(const char* value) { SetDescription(value); return *this;}
 

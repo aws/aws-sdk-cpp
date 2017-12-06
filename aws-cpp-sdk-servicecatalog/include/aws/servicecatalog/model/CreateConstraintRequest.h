@@ -168,201 +168,236 @@ namespace Model
 
 
     /**
-     * <p>The constraint parameters. Expected values vary depending on which
-     * <b>Type</b> is specified. For more information, see the Examples section.</p>
-     * <p>For Type <code>LAUNCH</code>, the <code>RoleArn</code> property is required.
-     * </p> <p>For Type <code>NOTIFICATION</code>, the <code>NotificationArns</code>
-     * property is required.</p> <p>For Type <code>TEMPLATE</code>, the
-     * <code>Rules</code> property is required.</p>
+     * <p>The constraint parameters, in JSON format. The syntax depends on the
+     * constraint type as follows:</p> <dl> <dt>LAUNCH</dt> <dd> <p>Specify the
+     * <code>RoleArn</code> property as follows:</p> <p>\"RoleArn\" :
+     * \"arn:aws:iam::123456789012:role/LaunchRole\"</p> </dd> <dt>NOTIFICATION</dt>
+     * <dd> <p>Specify the <code>NotificationArns</code> property as follows:</p>
+     * <p>\"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]</p>
+     * </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the <code>Rules</code> property. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
+     * Constraint Rules</a>.</p> </dd> </dl>
      */
     inline const Aws::String& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>The constraint parameters. Expected values vary depending on which
-     * <b>Type</b> is specified. For more information, see the Examples section.</p>
-     * <p>For Type <code>LAUNCH</code>, the <code>RoleArn</code> property is required.
-     * </p> <p>For Type <code>NOTIFICATION</code>, the <code>NotificationArns</code>
-     * property is required.</p> <p>For Type <code>TEMPLATE</code>, the
-     * <code>Rules</code> property is required.</p>
+     * <p>The constraint parameters, in JSON format. The syntax depends on the
+     * constraint type as follows:</p> <dl> <dt>LAUNCH</dt> <dd> <p>Specify the
+     * <code>RoleArn</code> property as follows:</p> <p>\"RoleArn\" :
+     * \"arn:aws:iam::123456789012:role/LaunchRole\"</p> </dd> <dt>NOTIFICATION</dt>
+     * <dd> <p>Specify the <code>NotificationArns</code> property as follows:</p>
+     * <p>\"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]</p>
+     * </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the <code>Rules</code> property. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
+     * Constraint Rules</a>.</p> </dd> </dl>
      */
     inline void SetParameters(const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>The constraint parameters. Expected values vary depending on which
-     * <b>Type</b> is specified. For more information, see the Examples section.</p>
-     * <p>For Type <code>LAUNCH</code>, the <code>RoleArn</code> property is required.
-     * </p> <p>For Type <code>NOTIFICATION</code>, the <code>NotificationArns</code>
-     * property is required.</p> <p>For Type <code>TEMPLATE</code>, the
-     * <code>Rules</code> property is required.</p>
+     * <p>The constraint parameters, in JSON format. The syntax depends on the
+     * constraint type as follows:</p> <dl> <dt>LAUNCH</dt> <dd> <p>Specify the
+     * <code>RoleArn</code> property as follows:</p> <p>\"RoleArn\" :
+     * \"arn:aws:iam::123456789012:role/LaunchRole\"</p> </dd> <dt>NOTIFICATION</dt>
+     * <dd> <p>Specify the <code>NotificationArns</code> property as follows:</p>
+     * <p>\"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]</p>
+     * </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the <code>Rules</code> property. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
+     * Constraint Rules</a>.</p> </dd> </dl>
      */
     inline void SetParameters(Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>The constraint parameters. Expected values vary depending on which
-     * <b>Type</b> is specified. For more information, see the Examples section.</p>
-     * <p>For Type <code>LAUNCH</code>, the <code>RoleArn</code> property is required.
-     * </p> <p>For Type <code>NOTIFICATION</code>, the <code>NotificationArns</code>
-     * property is required.</p> <p>For Type <code>TEMPLATE</code>, the
-     * <code>Rules</code> property is required.</p>
+     * <p>The constraint parameters, in JSON format. The syntax depends on the
+     * constraint type as follows:</p> <dl> <dt>LAUNCH</dt> <dd> <p>Specify the
+     * <code>RoleArn</code> property as follows:</p> <p>\"RoleArn\" :
+     * \"arn:aws:iam::123456789012:role/LaunchRole\"</p> </dd> <dt>NOTIFICATION</dt>
+     * <dd> <p>Specify the <code>NotificationArns</code> property as follows:</p>
+     * <p>\"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]</p>
+     * </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the <code>Rules</code> property. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
+     * Constraint Rules</a>.</p> </dd> </dl>
      */
     inline void SetParameters(const char* value) { m_parametersHasBeenSet = true; m_parameters.assign(value); }
 
     /**
-     * <p>The constraint parameters. Expected values vary depending on which
-     * <b>Type</b> is specified. For more information, see the Examples section.</p>
-     * <p>For Type <code>LAUNCH</code>, the <code>RoleArn</code> property is required.
-     * </p> <p>For Type <code>NOTIFICATION</code>, the <code>NotificationArns</code>
-     * property is required.</p> <p>For Type <code>TEMPLATE</code>, the
-     * <code>Rules</code> property is required.</p>
+     * <p>The constraint parameters, in JSON format. The syntax depends on the
+     * constraint type as follows:</p> <dl> <dt>LAUNCH</dt> <dd> <p>Specify the
+     * <code>RoleArn</code> property as follows:</p> <p>\"RoleArn\" :
+     * \"arn:aws:iam::123456789012:role/LaunchRole\"</p> </dd> <dt>NOTIFICATION</dt>
+     * <dd> <p>Specify the <code>NotificationArns</code> property as follows:</p>
+     * <p>\"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]</p>
+     * </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the <code>Rules</code> property. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
+     * Constraint Rules</a>.</p> </dd> </dl>
      */
     inline CreateConstraintRequest& WithParameters(const Aws::String& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>The constraint parameters. Expected values vary depending on which
-     * <b>Type</b> is specified. For more information, see the Examples section.</p>
-     * <p>For Type <code>LAUNCH</code>, the <code>RoleArn</code> property is required.
-     * </p> <p>For Type <code>NOTIFICATION</code>, the <code>NotificationArns</code>
-     * property is required.</p> <p>For Type <code>TEMPLATE</code>, the
-     * <code>Rules</code> property is required.</p>
+     * <p>The constraint parameters, in JSON format. The syntax depends on the
+     * constraint type as follows:</p> <dl> <dt>LAUNCH</dt> <dd> <p>Specify the
+     * <code>RoleArn</code> property as follows:</p> <p>\"RoleArn\" :
+     * \"arn:aws:iam::123456789012:role/LaunchRole\"</p> </dd> <dt>NOTIFICATION</dt>
+     * <dd> <p>Specify the <code>NotificationArns</code> property as follows:</p>
+     * <p>\"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]</p>
+     * </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the <code>Rules</code> property. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
+     * Constraint Rules</a>.</p> </dd> </dl>
      */
     inline CreateConstraintRequest& WithParameters(Aws::String&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The constraint parameters. Expected values vary depending on which
-     * <b>Type</b> is specified. For more information, see the Examples section.</p>
-     * <p>For Type <code>LAUNCH</code>, the <code>RoleArn</code> property is required.
-     * </p> <p>For Type <code>NOTIFICATION</code>, the <code>NotificationArns</code>
-     * property is required.</p> <p>For Type <code>TEMPLATE</code>, the
-     * <code>Rules</code> property is required.</p>
+     * <p>The constraint parameters, in JSON format. The syntax depends on the
+     * constraint type as follows:</p> <dl> <dt>LAUNCH</dt> <dd> <p>Specify the
+     * <code>RoleArn</code> property as follows:</p> <p>\"RoleArn\" :
+     * \"arn:aws:iam::123456789012:role/LaunchRole\"</p> </dd> <dt>NOTIFICATION</dt>
+     * <dd> <p>Specify the <code>NotificationArns</code> property as follows:</p>
+     * <p>\"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]</p>
+     * </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the <code>Rules</code> property. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
+     * Constraint Rules</a>.</p> </dd> </dl>
      */
     inline CreateConstraintRequest& WithParameters(const char* value) { SetParameters(value); return *this;}
 
 
     /**
-     * <p>The type of the constraint. Case-sensitive valid values are:
-     * <code>LAUNCH</code>, <code>NOTIFICATION</code>, or <code>TEMPLATE</code>. </p>
+     * <p>The type of constraint.</p> <ul> <li> <p> <code>LAUNCH</code> </p> </li> <li>
+     * <p> <code>NOTIFICATION</code> </p> </li> <li> <p> <code>TEMPLATE</code> </p>
+     * </li> </ul>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the constraint. Case-sensitive valid values are:
-     * <code>LAUNCH</code>, <code>NOTIFICATION</code>, or <code>TEMPLATE</code>. </p>
+     * <p>The type of constraint.</p> <ul> <li> <p> <code>LAUNCH</code> </p> </li> <li>
+     * <p> <code>NOTIFICATION</code> </p> </li> <li> <p> <code>TEMPLATE</code> </p>
+     * </li> </ul>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the constraint. Case-sensitive valid values are:
-     * <code>LAUNCH</code>, <code>NOTIFICATION</code>, or <code>TEMPLATE</code>. </p>
+     * <p>The type of constraint.</p> <ul> <li> <p> <code>LAUNCH</code> </p> </li> <li>
+     * <p> <code>NOTIFICATION</code> </p> </li> <li> <p> <code>TEMPLATE</code> </p>
+     * </li> </ul>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the constraint. Case-sensitive valid values are:
-     * <code>LAUNCH</code>, <code>NOTIFICATION</code>, or <code>TEMPLATE</code>. </p>
+     * <p>The type of constraint.</p> <ul> <li> <p> <code>LAUNCH</code> </p> </li> <li>
+     * <p> <code>NOTIFICATION</code> </p> </li> <li> <p> <code>TEMPLATE</code> </p>
+     * </li> </ul>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The type of the constraint. Case-sensitive valid values are:
-     * <code>LAUNCH</code>, <code>NOTIFICATION</code>, or <code>TEMPLATE</code>. </p>
+     * <p>The type of constraint.</p> <ul> <li> <p> <code>LAUNCH</code> </p> </li> <li>
+     * <p> <code>NOTIFICATION</code> </p> </li> <li> <p> <code>TEMPLATE</code> </p>
+     * </li> </ul>
      */
     inline CreateConstraintRequest& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the constraint. Case-sensitive valid values are:
-     * <code>LAUNCH</code>, <code>NOTIFICATION</code>, or <code>TEMPLATE</code>. </p>
+     * <p>The type of constraint.</p> <ul> <li> <p> <code>LAUNCH</code> </p> </li> <li>
+     * <p> <code>NOTIFICATION</code> </p> </li> <li> <p> <code>TEMPLATE</code> </p>
+     * </li> </ul>
      */
     inline CreateConstraintRequest& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of the constraint. Case-sensitive valid values are:
-     * <code>LAUNCH</code>, <code>NOTIFICATION</code>, or <code>TEMPLATE</code>. </p>
+     * <p>The type of constraint.</p> <ul> <li> <p> <code>LAUNCH</code> </p> </li> <li>
+     * <p> <code>NOTIFICATION</code> </p> </li> <li> <p> <code>TEMPLATE</code> </p>
+     * </li> </ul>
      */
     inline CreateConstraintRequest& WithType(const char* value) { SetType(value); return *this;}
 
 
     /**
-     * <p>The text description of the constraint.</p>
+     * <p>The description of the constraint.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The text description of the constraint.</p>
+     * <p>The description of the constraint.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The text description of the constraint.</p>
+     * <p>The description of the constraint.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The text description of the constraint.</p>
+     * <p>The description of the constraint.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The text description of the constraint.</p>
+     * <p>The description of the constraint.</p>
      */
     inline CreateConstraintRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The text description of the constraint.</p>
+     * <p>The description of the constraint.</p>
      */
     inline CreateConstraintRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The text description of the constraint.</p>
+     * <p>The description of the constraint.</p>
      */
     inline CreateConstraintRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline CreateConstraintRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline CreateConstraintRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline CreateConstraintRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 

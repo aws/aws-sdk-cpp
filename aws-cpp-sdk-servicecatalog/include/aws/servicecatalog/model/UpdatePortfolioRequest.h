@@ -97,37 +97,37 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the portfolio for the update request.</p>
+     * <p>The portfolio identifier.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The identifier of the portfolio for the update request.</p>
+     * <p>The portfolio identifier.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The identifier of the portfolio for the update request.</p>
+     * <p>The portfolio identifier.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The identifier of the portfolio for the update request.</p>
+     * <p>The portfolio identifier.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The identifier of the portfolio for the update request.</p>
+     * <p>The portfolio identifier.</p>
      */
     inline UpdatePortfolioRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The identifier of the portfolio for the update request.</p>
+     * <p>The portfolio identifier.</p>
      */
     inline UpdatePortfolioRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the portfolio for the update request.</p>
+     * <p>The portfolio identifier.</p>
      */
     inline UpdatePortfolioRequest& WithId(const char* value) { SetId(value); return *this;}
 
@@ -169,37 +169,37 @@ namespace Model
 
 
     /**
-     * <p>The updated text description of the portfolio.</p>
+     * <p>The updated description of the portfolio.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The updated text description of the portfolio.</p>
+     * <p>The updated description of the portfolio.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The updated text description of the portfolio.</p>
+     * <p>The updated description of the portfolio.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The updated text description of the portfolio.</p>
+     * <p>The updated description of the portfolio.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The updated text description of the portfolio.</p>
+     * <p>The updated description of the portfolio.</p>
      */
     inline UpdatePortfolioRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The updated text description of the portfolio.</p>
+     * <p>The updated description of the portfolio.</p>
      */
     inline UpdatePortfolioRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The updated text description of the portfolio.</p>
+     * <p>The updated description of the portfolio.</p>
      */
     inline UpdatePortfolioRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -241,86 +241,78 @@ namespace Model
 
 
     /**
-     * <p>Tags to add to the existing list of tags associated with the portfolio.</p>
+     * <p>The tags to add.</p>
      */
     inline const Aws::Vector<Tag>& GetAddTags() const{ return m_addTags; }
 
     /**
-     * <p>Tags to add to the existing list of tags associated with the portfolio.</p>
+     * <p>The tags to add.</p>
      */
     inline void SetAddTags(const Aws::Vector<Tag>& value) { m_addTagsHasBeenSet = true; m_addTags = value; }
 
     /**
-     * <p>Tags to add to the existing list of tags associated with the portfolio.</p>
+     * <p>The tags to add.</p>
      */
     inline void SetAddTags(Aws::Vector<Tag>&& value) { m_addTagsHasBeenSet = true; m_addTags = std::move(value); }
 
     /**
-     * <p>Tags to add to the existing list of tags associated with the portfolio.</p>
+     * <p>The tags to add.</p>
      */
     inline UpdatePortfolioRequest& WithAddTags(const Aws::Vector<Tag>& value) { SetAddTags(value); return *this;}
 
     /**
-     * <p>Tags to add to the existing list of tags associated with the portfolio.</p>
+     * <p>The tags to add.</p>
      */
     inline UpdatePortfolioRequest& WithAddTags(Aws::Vector<Tag>&& value) { SetAddTags(std::move(value)); return *this;}
 
     /**
-     * <p>Tags to add to the existing list of tags associated with the portfolio.</p>
+     * <p>The tags to add.</p>
      */
     inline UpdatePortfolioRequest& AddAddTags(const Tag& value) { m_addTagsHasBeenSet = true; m_addTags.push_back(value); return *this; }
 
     /**
-     * <p>Tags to add to the existing list of tags associated with the portfolio.</p>
+     * <p>The tags to add.</p>
      */
     inline UpdatePortfolioRequest& AddAddTags(Tag&& value) { m_addTagsHasBeenSet = true; m_addTags.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Tags to remove from the existing list of tags associated with the
-     * portfolio.</p>
+     * <p>The tags to remove.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRemoveTags() const{ return m_removeTags; }
 
     /**
-     * <p>Tags to remove from the existing list of tags associated with the
-     * portfolio.</p>
+     * <p>The tags to remove.</p>
      */
     inline void SetRemoveTags(const Aws::Vector<Aws::String>& value) { m_removeTagsHasBeenSet = true; m_removeTags = value; }
 
     /**
-     * <p>Tags to remove from the existing list of tags associated with the
-     * portfolio.</p>
+     * <p>The tags to remove.</p>
      */
     inline void SetRemoveTags(Aws::Vector<Aws::String>&& value) { m_removeTagsHasBeenSet = true; m_removeTags = std::move(value); }
 
     /**
-     * <p>Tags to remove from the existing list of tags associated with the
-     * portfolio.</p>
+     * <p>The tags to remove.</p>
      */
     inline UpdatePortfolioRequest& WithRemoveTags(const Aws::Vector<Aws::String>& value) { SetRemoveTags(value); return *this;}
 
     /**
-     * <p>Tags to remove from the existing list of tags associated with the
-     * portfolio.</p>
+     * <p>The tags to remove.</p>
      */
     inline UpdatePortfolioRequest& WithRemoveTags(Aws::Vector<Aws::String>&& value) { SetRemoveTags(std::move(value)); return *this;}
 
     /**
-     * <p>Tags to remove from the existing list of tags associated with the
-     * portfolio.</p>
+     * <p>The tags to remove.</p>
      */
     inline UpdatePortfolioRequest& AddRemoveTags(const Aws::String& value) { m_removeTagsHasBeenSet = true; m_removeTags.push_back(value); return *this; }
 
     /**
-     * <p>Tags to remove from the existing list of tags associated with the
-     * portfolio.</p>
+     * <p>The tags to remove.</p>
      */
     inline UpdatePortfolioRequest& AddRemoveTags(Aws::String&& value) { m_removeTagsHasBeenSet = true; m_removeTags.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Tags to remove from the existing list of tags associated with the
-     * portfolio.</p>
+     * <p>The tags to remove.</p>
      */
     inline UpdatePortfolioRequest& AddRemoveTags(const char* value) { m_removeTagsHasBeenSet = true; m_removeTags.push_back(value); return *this; }
 

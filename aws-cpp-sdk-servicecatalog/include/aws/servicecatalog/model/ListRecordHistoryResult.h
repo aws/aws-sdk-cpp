@@ -45,80 +45,80 @@ namespace Model
 
 
     /**
-     * <p>A list of record detail objects, listed in reverse chronological order.</p>
+     * <p>The records, in reverse chronological order.</p>
      */
     inline const Aws::Vector<RecordDetail>& GetRecordDetails() const{ return m_recordDetails; }
 
     /**
-     * <p>A list of record detail objects, listed in reverse chronological order.</p>
+     * <p>The records, in reverse chronological order.</p>
      */
     inline void SetRecordDetails(const Aws::Vector<RecordDetail>& value) { m_recordDetails = value; }
 
     /**
-     * <p>A list of record detail objects, listed in reverse chronological order.</p>
+     * <p>The records, in reverse chronological order.</p>
      */
     inline void SetRecordDetails(Aws::Vector<RecordDetail>&& value) { m_recordDetails = std::move(value); }
 
     /**
-     * <p>A list of record detail objects, listed in reverse chronological order.</p>
+     * <p>The records, in reverse chronological order.</p>
      */
     inline ListRecordHistoryResult& WithRecordDetails(const Aws::Vector<RecordDetail>& value) { SetRecordDetails(value); return *this;}
 
     /**
-     * <p>A list of record detail objects, listed in reverse chronological order.</p>
+     * <p>The records, in reverse chronological order.</p>
      */
     inline ListRecordHistoryResult& WithRecordDetails(Aws::Vector<RecordDetail>&& value) { SetRecordDetails(std::move(value)); return *this;}
 
     /**
-     * <p>A list of record detail objects, listed in reverse chronological order.</p>
+     * <p>The records, in reverse chronological order.</p>
      */
     inline ListRecordHistoryResult& AddRecordDetails(const RecordDetail& value) { m_recordDetails.push_back(value); return *this; }
 
     /**
-     * <p>A list of record detail objects, listed in reverse chronological order.</p>
+     * <p>The records, in reverse chronological order.</p>
      */
     inline ListRecordHistoryResult& AddRecordDetails(RecordDetail&& value) { m_recordDetails.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The page token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
+     * <p>The page token to use to retrieve the next set of results. If there are no
+     * additional results, this value is null.</p>
      */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
 
     /**
-     * <p>The page token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
+     * <p>The page token to use to retrieve the next set of results. If there are no
+     * additional results, this value is null.</p>
      */
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
 
     /**
-     * <p>The page token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
+     * <p>The page token to use to retrieve the next set of results. If there are no
+     * additional results, this value is null.</p>
      */
     inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
 
     /**
-     * <p>The page token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
+     * <p>The page token to use to retrieve the next set of results. If there are no
+     * additional results, this value is null.</p>
      */
     inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
 
     /**
-     * <p>The page token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
+     * <p>The page token to use to retrieve the next set of results. If there are no
+     * additional results, this value is null.</p>
      */
     inline ListRecordHistoryResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
 
     /**
-     * <p>The page token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
+     * <p>The page token to use to retrieve the next set of results. If there are no
+     * additional results, this value is null.</p>
      */
     inline ListRecordHistoryResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
-     * <p>The page token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
+     * <p>The page token to use to retrieve the next set of results. If there are no
+     * additional results, this value is null.</p>
      */
     inline ListRecordHistoryResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 

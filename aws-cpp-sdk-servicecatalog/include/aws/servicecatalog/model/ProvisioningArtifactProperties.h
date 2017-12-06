@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Provisioning artifact properties. For example request JSON, see
-   * <a>CreateProvisioningArtifact</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about a provisioning artifact (also known as a version) for a
+   * product.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisioningArtifactProperties">AWS
    * API Reference</a></p>
    */
@@ -50,199 +50,218 @@ namespace Model
 
 
     /**
-     * <p>The name assigned to the provisioning artifact properties.</p>
+     * <p>The name of the provisioning artifact (for example, v1 v2beta). No spaces are
+     * allowed.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name assigned to the provisioning artifact properties.</p>
+     * <p>The name of the provisioning artifact (for example, v1 v2beta). No spaces are
+     * allowed.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name assigned to the provisioning artifact properties.</p>
+     * <p>The name of the provisioning artifact (for example, v1 v2beta). No spaces are
+     * allowed.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name assigned to the provisioning artifact properties.</p>
+     * <p>The name of the provisioning artifact (for example, v1 v2beta). No spaces are
+     * allowed.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name assigned to the provisioning artifact properties.</p>
+     * <p>The name of the provisioning artifact (for example, v1 v2beta). No spaces are
+     * allowed.</p>
      */
     inline ProvisioningArtifactProperties& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name assigned to the provisioning artifact properties.</p>
+     * <p>The name of the provisioning artifact (for example, v1 v2beta). No spaces are
+     * allowed.</p>
      */
     inline ProvisioningArtifactProperties& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name assigned to the provisioning artifact properties.</p>
+     * <p>The name of the provisioning artifact (for example, v1 v2beta). No spaces are
+     * allowed.</p>
      */
     inline ProvisioningArtifactProperties& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The text description of the provisioning artifact properties.</p>
+     * <p>The description of the provisioning artifact, including how it differs from
+     * the previous provisioning artifact.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The text description of the provisioning artifact properties.</p>
+     * <p>The description of the provisioning artifact, including how it differs from
+     * the previous provisioning artifact.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The text description of the provisioning artifact properties.</p>
+     * <p>The description of the provisioning artifact, including how it differs from
+     * the previous provisioning artifact.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The text description of the provisioning artifact properties.</p>
+     * <p>The description of the provisioning artifact, including how it differs from
+     * the previous provisioning artifact.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The text description of the provisioning artifact properties.</p>
+     * <p>The description of the provisioning artifact, including how it differs from
+     * the previous provisioning artifact.</p>
      */
     inline ProvisioningArtifactProperties& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The text description of the provisioning artifact properties.</p>
+     * <p>The description of the provisioning artifact, including how it differs from
+     * the previous provisioning artifact.</p>
      */
     inline ProvisioningArtifactProperties& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The text description of the provisioning artifact properties.</p>
+     * <p>The description of the provisioning artifact, including how it differs from
+     * the previous provisioning artifact.</p>
      */
     inline ProvisioningArtifactProperties& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>Additional information about the provisioning artifact properties. When using
-     * this element in a request, you must specify <code>LoadTemplateFromURL</code>.
-     * For more information, see <a>CreateProvisioningArtifact</a>.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON
+     * format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetInfo() const{ return m_info; }
 
     /**
-     * <p>Additional information about the provisioning artifact properties. When using
-     * this element in a request, you must specify <code>LoadTemplateFromURL</code>.
-     * For more information, see <a>CreateProvisioningArtifact</a>.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON
+     * format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
      */
     inline void SetInfo(const Aws::Map<Aws::String, Aws::String>& value) { m_infoHasBeenSet = true; m_info = value; }
 
     /**
-     * <p>Additional information about the provisioning artifact properties. When using
-     * this element in a request, you must specify <code>LoadTemplateFromURL</code>.
-     * For more information, see <a>CreateProvisioningArtifact</a>.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON
+     * format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
      */
     inline void SetInfo(Aws::Map<Aws::String, Aws::String>&& value) { m_infoHasBeenSet = true; m_info = std::move(value); }
 
     /**
-     * <p>Additional information about the provisioning artifact properties. When using
-     * this element in a request, you must specify <code>LoadTemplateFromURL</code>.
-     * For more information, see <a>CreateProvisioningArtifact</a>.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON
+     * format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
      */
     inline ProvisioningArtifactProperties& WithInfo(const Aws::Map<Aws::String, Aws::String>& value) { SetInfo(value); return *this;}
 
     /**
-     * <p>Additional information about the provisioning artifact properties. When using
-     * this element in a request, you must specify <code>LoadTemplateFromURL</code>.
-     * For more information, see <a>CreateProvisioningArtifact</a>.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON
+     * format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
      */
     inline ProvisioningArtifactProperties& WithInfo(Aws::Map<Aws::String, Aws::String>&& value) { SetInfo(std::move(value)); return *this;}
 
     /**
-     * <p>Additional information about the provisioning artifact properties. When using
-     * this element in a request, you must specify <code>LoadTemplateFromURL</code>.
-     * For more information, see <a>CreateProvisioningArtifact</a>.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON
+     * format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
      */
     inline ProvisioningArtifactProperties& AddInfo(const Aws::String& key, const Aws::String& value) { m_infoHasBeenSet = true; m_info.emplace(key, value); return *this; }
 
     /**
-     * <p>Additional information about the provisioning artifact properties. When using
-     * this element in a request, you must specify <code>LoadTemplateFromURL</code>.
-     * For more information, see <a>CreateProvisioningArtifact</a>.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON
+     * format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
      */
     inline ProvisioningArtifactProperties& AddInfo(Aws::String&& key, const Aws::String& value) { m_infoHasBeenSet = true; m_info.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Additional information about the provisioning artifact properties. When using
-     * this element in a request, you must specify <code>LoadTemplateFromURL</code>.
-     * For more information, see <a>CreateProvisioningArtifact</a>.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON
+     * format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
      */
     inline ProvisioningArtifactProperties& AddInfo(const Aws::String& key, Aws::String&& value) { m_infoHasBeenSet = true; m_info.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Additional information about the provisioning artifact properties. When using
-     * this element in a request, you must specify <code>LoadTemplateFromURL</code>.
-     * For more information, see <a>CreateProvisioningArtifact</a>.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON
+     * format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
      */
     inline ProvisioningArtifactProperties& AddInfo(Aws::String&& key, Aws::String&& value) { m_infoHasBeenSet = true; m_info.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Additional information about the provisioning artifact properties. When using
-     * this element in a request, you must specify <code>LoadTemplateFromURL</code>.
-     * For more information, see <a>CreateProvisioningArtifact</a>.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON
+     * format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
      */
     inline ProvisioningArtifactProperties& AddInfo(const char* key, Aws::String&& value) { m_infoHasBeenSet = true; m_info.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Additional information about the provisioning artifact properties. When using
-     * this element in a request, you must specify <code>LoadTemplateFromURL</code>.
-     * For more information, see <a>CreateProvisioningArtifact</a>.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON
+     * format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
      */
     inline ProvisioningArtifactProperties& AddInfo(Aws::String&& key, const char* value) { m_infoHasBeenSet = true; m_info.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Additional information about the provisioning artifact properties. When using
-     * this element in a request, you must specify <code>LoadTemplateFromURL</code>.
-     * For more information, see <a>CreateProvisioningArtifact</a>.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON
+     * format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
      */
     inline ProvisioningArtifactProperties& AddInfo(const char* key, const char* value) { m_infoHasBeenSet = true; m_info.emplace(key, value); return *this; }
 
 
     /**
-     * <p>The type of the provisioning artifact properties. The following provisioning
-     * artifact property types are used by AWS Marketplace products:</p> <p>
-     * <code>MARKETPLACE_AMI</code> - AMI products.</p> <p>
-     * <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.</p>
+     * <p>The type of provisioning artifact.</p> <ul> <li> <p>
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p> </li>
+     * <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li> <li> <p>
+     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p>
+     * </li> </ul>
      */
     inline const ProvisioningArtifactType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the provisioning artifact properties. The following provisioning
-     * artifact property types are used by AWS Marketplace products:</p> <p>
-     * <code>MARKETPLACE_AMI</code> - AMI products.</p> <p>
-     * <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.</p>
+     * <p>The type of provisioning artifact.</p> <ul> <li> <p>
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p> </li>
+     * <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li> <li> <p>
+     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p>
+     * </li> </ul>
      */
     inline void SetType(const ProvisioningArtifactType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the provisioning artifact properties. The following provisioning
-     * artifact property types are used by AWS Marketplace products:</p> <p>
-     * <code>MARKETPLACE_AMI</code> - AMI products.</p> <p>
-     * <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.</p>
+     * <p>The type of provisioning artifact.</p> <ul> <li> <p>
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p> </li>
+     * <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li> <li> <p>
+     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p>
+     * </li> </ul>
      */
     inline void SetType(ProvisioningArtifactType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the provisioning artifact properties. The following provisioning
-     * artifact property types are used by AWS Marketplace products:</p> <p>
-     * <code>MARKETPLACE_AMI</code> - AMI products.</p> <p>
-     * <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.</p>
+     * <p>The type of provisioning artifact.</p> <ul> <li> <p>
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p> </li>
+     * <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li> <li> <p>
+     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p>
+     * </li> </ul>
      */
     inline ProvisioningArtifactProperties& WithType(const ProvisioningArtifactType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the provisioning artifact properties. The following provisioning
-     * artifact property types are used by AWS Marketplace products:</p> <p>
-     * <code>MARKETPLACE_AMI</code> - AMI products.</p> <p>
-     * <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.</p>
+     * <p>The type of provisioning artifact.</p> <ul> <li> <p>
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p> </li>
+     * <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li> <li> <p>
+     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p>
+     * </li> </ul>
      */
     inline ProvisioningArtifactProperties& WithType(ProvisioningArtifactType&& value) { SetType(std::move(value)); return *this;}
 

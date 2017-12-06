@@ -43,27 +43,27 @@ namespace Model
 
 
     /**
-     * <p>Detailed provisioned product information.</p>
+     * <p>Information about the provisioned product.</p>
      */
     inline const ProvisionedProductDetail& GetProvisionedProductDetail() const{ return m_provisionedProductDetail; }
 
     /**
-     * <p>Detailed provisioned product information.</p>
+     * <p>Information about the provisioned product.</p>
      */
     inline void SetProvisionedProductDetail(const ProvisionedProductDetail& value) { m_provisionedProductDetail = value; }
 
     /**
-     * <p>Detailed provisioned product information.</p>
+     * <p>Information about the provisioned product.</p>
      */
     inline void SetProvisionedProductDetail(ProvisionedProductDetail&& value) { m_provisionedProductDetail = std::move(value); }
 
     /**
-     * <p>Detailed provisioned product information.</p>
+     * <p>Information about the provisioned product.</p>
      */
     inline DescribeProvisionedProductResult& WithProvisionedProductDetail(const ProvisionedProductDetail& value) { SetProvisionedProductDetail(value); return *this;}
 
     /**
-     * <p>Detailed provisioned product information.</p>
+     * <p>Information about the provisioned product.</p>
      */
     inline DescribeProvisionedProductResult& WithProvisionedProductDetail(ProvisionedProductDetail&& value) { SetProvisionedProductDetail(std::move(value)); return *this;}
 

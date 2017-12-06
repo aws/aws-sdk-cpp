@@ -70,37 +70,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the copied product.</p>
+     * <p>The identifier of the copied product.</p>
      */
     inline const Aws::String& GetTargetProductId() const{ return m_targetProductId; }
 
     /**
-     * <p>The ID of the copied product.</p>
+     * <p>The identifier of the copied product.</p>
      */
     inline void SetTargetProductId(const Aws::String& value) { m_targetProductId = value; }
 
     /**
-     * <p>The ID of the copied product.</p>
+     * <p>The identifier of the copied product.</p>
      */
     inline void SetTargetProductId(Aws::String&& value) { m_targetProductId = std::move(value); }
 
     /**
-     * <p>The ID of the copied product.</p>
+     * <p>The identifier of the copied product.</p>
      */
     inline void SetTargetProductId(const char* value) { m_targetProductId.assign(value); }
 
     /**
-     * <p>The ID of the copied product.</p>
+     * <p>The identifier of the copied product.</p>
      */
     inline DescribeCopyProductStatusResult& WithTargetProductId(const Aws::String& value) { SetTargetProductId(value); return *this;}
 
     /**
-     * <p>The ID of the copied product.</p>
+     * <p>The identifier of the copied product.</p>
      */
     inline DescribeCopyProductStatusResult& WithTargetProductId(Aws::String&& value) { SetTargetProductId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the copied product.</p>
+     * <p>The identifier of the copied product.</p>
      */
     inline DescribeCopyProductStatusResult& WithTargetProductId(const char* value) { SetTargetProductId(value); return *this;}
 

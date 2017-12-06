@@ -95,73 +95,73 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the constraint to update.</p>
+     * <p>The identifier of the constraint.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The identifier of the constraint to update.</p>
+     * <p>The identifier of the constraint.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The identifier of the constraint to update.</p>
+     * <p>The identifier of the constraint.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The identifier of the constraint to update.</p>
+     * <p>The identifier of the constraint.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The identifier of the constraint to update.</p>
+     * <p>The identifier of the constraint.</p>
      */
     inline UpdateConstraintRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The identifier of the constraint to update.</p>
+     * <p>The identifier of the constraint.</p>
      */
     inline UpdateConstraintRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the constraint to update.</p>
+     * <p>The identifier of the constraint.</p>
      */
     inline UpdateConstraintRequest& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * <p>The updated text description of the constraint.</p>
+     * <p>The updated description of the constraint.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The updated text description of the constraint.</p>
+     * <p>The updated description of the constraint.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The updated text description of the constraint.</p>
+     * <p>The updated description of the constraint.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The updated text description of the constraint.</p>
+     * <p>The updated description of the constraint.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The updated text description of the constraint.</p>
+     * <p>The updated description of the constraint.</p>
      */
     inline UpdateConstraintRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The updated text description of the constraint.</p>
+     * <p>The updated description of the constraint.</p>
      */
     inline UpdateConstraintRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The updated text description of the constraint.</p>
+     * <p>The updated description of the constraint.</p>
      */
     inline UpdateConstraintRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 

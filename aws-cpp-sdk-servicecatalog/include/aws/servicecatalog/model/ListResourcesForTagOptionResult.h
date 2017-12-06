@@ -45,80 +45,80 @@ namespace Model
 
 
     /**
-     * <p>The resulting detailed resource information.</p>
+     * <p>Information about the resources.</p>
      */
     inline const Aws::Vector<ResourceDetail>& GetResourceDetails() const{ return m_resourceDetails; }
 
     /**
-     * <p>The resulting detailed resource information.</p>
+     * <p>Information about the resources.</p>
      */
     inline void SetResourceDetails(const Aws::Vector<ResourceDetail>& value) { m_resourceDetails = value; }
 
     /**
-     * <p>The resulting detailed resource information.</p>
+     * <p>Information about the resources.</p>
      */
     inline void SetResourceDetails(Aws::Vector<ResourceDetail>&& value) { m_resourceDetails = std::move(value); }
 
     /**
-     * <p>The resulting detailed resource information.</p>
+     * <p>Information about the resources.</p>
      */
     inline ListResourcesForTagOptionResult& WithResourceDetails(const Aws::Vector<ResourceDetail>& value) { SetResourceDetails(value); return *this;}
 
     /**
-     * <p>The resulting detailed resource information.</p>
+     * <p>Information about the resources.</p>
      */
     inline ListResourcesForTagOptionResult& WithResourceDetails(Aws::Vector<ResourceDetail>&& value) { SetResourceDetails(std::move(value)); return *this;}
 
     /**
-     * <p>The resulting detailed resource information.</p>
+     * <p>Information about the resources.</p>
      */
     inline ListResourcesForTagOptionResult& AddResourceDetails(const ResourceDetail& value) { m_resourceDetails.push_back(value); return *this; }
 
     /**
-     * <p>The resulting detailed resource information.</p>
+     * <p>Information about the resources.</p>
      */
     inline ListResourcesForTagOptionResult& AddResourceDetails(ResourceDetail&& value) { m_resourceDetails.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline const Aws::String& GetPageToken() const{ return m_pageToken; }
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline void SetPageToken(const Aws::String& value) { m_pageToken = value; }
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline void SetPageToken(Aws::String&& value) { m_pageToken = std::move(value); }
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline void SetPageToken(const char* value) { m_pageToken.assign(value); }
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline ListResourcesForTagOptionResult& WithPageToken(const Aws::String& value) { SetPageToken(value); return *this;}
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline ListResourcesForTagOptionResult& WithPageToken(Aws::String&& value) { SetPageToken(std::move(value)); return *this;}
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline ListResourcesForTagOptionResult& WithPageToken(const char* value) { SetPageToken(value); return *this;}
 

@@ -45,63 +45,63 @@ namespace Model
 
 
     /**
-     * <p>The resulting detailed product view information.</p>
+     * <p>Information about the product view.</p>
      */
     inline const ProductViewDetail& GetProductViewDetail() const{ return m_productViewDetail; }
 
     /**
-     * <p>The resulting detailed product view information.</p>
+     * <p>Information about the product view.</p>
      */
     inline void SetProductViewDetail(const ProductViewDetail& value) { m_productViewDetail = value; }
 
     /**
-     * <p>The resulting detailed product view information.</p>
+     * <p>Information about the product view.</p>
      */
     inline void SetProductViewDetail(ProductViewDetail&& value) { m_productViewDetail = std::move(value); }
 
     /**
-     * <p>The resulting detailed product view information.</p>
+     * <p>Information about the product view.</p>
      */
     inline UpdateProductResult& WithProductViewDetail(const ProductViewDetail& value) { SetProductViewDetail(value); return *this;}
 
     /**
-     * <p>The resulting detailed product view information.</p>
+     * <p>Information about the product view.</p>
      */
     inline UpdateProductResult& WithProductViewDetail(ProductViewDetail&& value) { SetProductViewDetail(std::move(value)); return *this;}
 
 
     /**
-     * <p>Tags associated with the product.</p>
+     * <p>Information about the tags associated with the product.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Tags associated with the product.</p>
+     * <p>Information about the tags associated with the product.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
 
     /**
-     * <p>Tags associated with the product.</p>
+     * <p>Information about the tags associated with the product.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>Tags associated with the product.</p>
+     * <p>Information about the tags associated with the product.</p>
      */
     inline UpdateProductResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Tags associated with the product.</p>
+     * <p>Information about the tags associated with the product.</p>
      */
     inline UpdateProductResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Tags associated with the product.</p>
+     * <p>Information about the tags associated with the product.</p>
      */
     inline UpdateProductResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Tags associated with the product.</p>
+     * <p>Information about the tags associated with the product.</p>
      */
     inline UpdateProductResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 

@@ -46,89 +46,89 @@ namespace Model
 
 
     /**
-     * <p>The resulting detailed product view information.</p>
+     * <p>Information about the product view.</p>
      */
     inline const ProductViewDetail& GetProductViewDetail() const{ return m_productViewDetail; }
 
     /**
-     * <p>The resulting detailed product view information.</p>
+     * <p>Information about the product view.</p>
      */
     inline void SetProductViewDetail(const ProductViewDetail& value) { m_productViewDetail = value; }
 
     /**
-     * <p>The resulting detailed product view information.</p>
+     * <p>Information about the product view.</p>
      */
     inline void SetProductViewDetail(ProductViewDetail&& value) { m_productViewDetail = std::move(value); }
 
     /**
-     * <p>The resulting detailed product view information.</p>
+     * <p>Information about the product view.</p>
      */
     inline CreateProductResult& WithProductViewDetail(const ProductViewDetail& value) { SetProductViewDetail(value); return *this;}
 
     /**
-     * <p>The resulting detailed product view information.</p>
+     * <p>Information about the product view.</p>
      */
     inline CreateProductResult& WithProductViewDetail(ProductViewDetail&& value) { SetProductViewDetail(std::move(value)); return *this;}
 
 
     /**
-     * <p>The resulting detailed provisioning artifact information.</p>
+     * <p>Information about the provisioning artifact.</p>
      */
     inline const ProvisioningArtifactDetail& GetProvisioningArtifactDetail() const{ return m_provisioningArtifactDetail; }
 
     /**
-     * <p>The resulting detailed provisioning artifact information.</p>
+     * <p>Information about the provisioning artifact.</p>
      */
     inline void SetProvisioningArtifactDetail(const ProvisioningArtifactDetail& value) { m_provisioningArtifactDetail = value; }
 
     /**
-     * <p>The resulting detailed provisioning artifact information.</p>
+     * <p>Information about the provisioning artifact.</p>
      */
     inline void SetProvisioningArtifactDetail(ProvisioningArtifactDetail&& value) { m_provisioningArtifactDetail = std::move(value); }
 
     /**
-     * <p>The resulting detailed provisioning artifact information.</p>
+     * <p>Information about the provisioning artifact.</p>
      */
     inline CreateProductResult& WithProvisioningArtifactDetail(const ProvisioningArtifactDetail& value) { SetProvisioningArtifactDetail(value); return *this;}
 
     /**
-     * <p>The resulting detailed provisioning artifact information.</p>
+     * <p>Information about the provisioning artifact.</p>
      */
     inline CreateProductResult& WithProvisioningArtifactDetail(ProvisioningArtifactDetail&& value) { SetProvisioningArtifactDetail(std::move(value)); return *this;}
 
 
     /**
-     * <p>Tags successfully associated with the new product.</p>
+     * <p>Information about the tags associated with the product.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Tags successfully associated with the new product.</p>
+     * <p>Information about the tags associated with the product.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
 
     /**
-     * <p>Tags successfully associated with the new product.</p>
+     * <p>Information about the tags associated with the product.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>Tags successfully associated with the new product.</p>
+     * <p>Information about the tags associated with the product.</p>
      */
     inline CreateProductResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Tags successfully associated with the new product.</p>
+     * <p>Information about the tags associated with the product.</p>
      */
     inline CreateProductResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Tags successfully associated with the new product.</p>
+     * <p>Information about the tags associated with the product.</p>
      */
     inline CreateProductResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Tags successfully associated with the new product.</p>
+     * <p>Information about the tags associated with the product.</p>
      */
     inline CreateProductResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 

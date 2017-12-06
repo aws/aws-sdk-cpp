@@ -1718,16 +1718,16 @@ namespace Model
         virtual void DescribeCACertificateAsync(const Model::DescribeCACertificateRequest& request, const DescribeCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about the specified certificate. You may specify the
-         * certificate using either its ID or PEM.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about the specified certificate.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCertificate">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeCertificateOutcome DescribeCertificate(const Model::DescribeCertificateRequest& request) const;
 
         /**
-         * <p>Gets information about the specified certificate. You may specify the
-         * certificate using either its ID or PEM.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about the specified certificate.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCertificate">AWS
          * API Reference</a></p>
          *
@@ -1736,8 +1736,8 @@ namespace Model
         virtual Model::DescribeCertificateOutcomeCallable DescribeCertificateCallable(const Model::DescribeCertificateRequest& request) const;
 
         /**
-         * <p>Gets information about the specified certificate. You may specify the
-         * certificate using either its ID or PEM.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about the specified certificate.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCertificate">AWS
          * API Reference</a></p>
          *

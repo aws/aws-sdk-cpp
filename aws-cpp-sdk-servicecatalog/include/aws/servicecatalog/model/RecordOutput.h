@@ -33,9 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>An output for the specified Product object created as the result of a
-   * request. For example, a CloudFormation-backed product that creates an S3 bucket
-   * would have an output for the S3 bucket URL.</p><p><h3>See Also:</h3>   <a
+   * <p>The output for the product created as the result of a request. For example,
+   * the output for a CloudFormation-backed product that creates an S3 bucket would
+   * include the S3 bucket URL.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/RecordOutput">AWS
    * API Reference</a></p>
    */
@@ -121,37 +121,37 @@ namespace Model
 
 
     /**
-     * <p>The text description of the output.</p>
+     * <p>The description of the output.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The text description of the output.</p>
+     * <p>The description of the output.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The text description of the output.</p>
+     * <p>The description of the output.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The text description of the output.</p>
+     * <p>The description of the output.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The text description of the output.</p>
+     * <p>The description of the output.</p>
      */
     inline RecordOutput& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The text description of the output.</p>
+     * <p>The description of the output.</p>
      */
     inline RecordOutput& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The text description of the output.</p>
+     * <p>The description of the output.</p>
      */
     inline RecordOutput& WithDescription(const char* value) { SetDescription(value); return *this;}
 

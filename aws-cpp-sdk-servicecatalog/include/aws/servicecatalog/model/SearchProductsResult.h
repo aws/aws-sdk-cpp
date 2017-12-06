@@ -47,136 +47,136 @@ namespace Model
 
 
     /**
-     * <p>A list of the product view summary objects.</p>
+     * <p>Information about the product views.</p>
      */
     inline const Aws::Vector<ProductViewSummary>& GetProductViewSummaries() const{ return m_productViewSummaries; }
 
     /**
-     * <p>A list of the product view summary objects.</p>
+     * <p>Information about the product views.</p>
      */
     inline void SetProductViewSummaries(const Aws::Vector<ProductViewSummary>& value) { m_productViewSummaries = value; }
 
     /**
-     * <p>A list of the product view summary objects.</p>
+     * <p>Information about the product views.</p>
      */
     inline void SetProductViewSummaries(Aws::Vector<ProductViewSummary>&& value) { m_productViewSummaries = std::move(value); }
 
     /**
-     * <p>A list of the product view summary objects.</p>
+     * <p>Information about the product views.</p>
      */
     inline SearchProductsResult& WithProductViewSummaries(const Aws::Vector<ProductViewSummary>& value) { SetProductViewSummaries(value); return *this;}
 
     /**
-     * <p>A list of the product view summary objects.</p>
+     * <p>Information about the product views.</p>
      */
     inline SearchProductsResult& WithProductViewSummaries(Aws::Vector<ProductViewSummary>&& value) { SetProductViewSummaries(std::move(value)); return *this;}
 
     /**
-     * <p>A list of the product view summary objects.</p>
+     * <p>Information about the product views.</p>
      */
     inline SearchProductsResult& AddProductViewSummaries(const ProductViewSummary& value) { m_productViewSummaries.push_back(value); return *this; }
 
     /**
-     * <p>A list of the product view summary objects.</p>
+     * <p>Information about the product views.</p>
      */
     inline SearchProductsResult& AddProductViewSummaries(ProductViewSummary&& value) { m_productViewSummaries.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A list of the product view aggregation value objects.</p>
+     * <p>The product view aggregations.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<ProductViewAggregationValue>>& GetProductViewAggregations() const{ return m_productViewAggregations; }
 
     /**
-     * <p>A list of the product view aggregation value objects.</p>
+     * <p>The product view aggregations.</p>
      */
     inline void SetProductViewAggregations(const Aws::Map<Aws::String, Aws::Vector<ProductViewAggregationValue>>& value) { m_productViewAggregations = value; }
 
     /**
-     * <p>A list of the product view aggregation value objects.</p>
+     * <p>The product view aggregations.</p>
      */
     inline void SetProductViewAggregations(Aws::Map<Aws::String, Aws::Vector<ProductViewAggregationValue>>&& value) { m_productViewAggregations = std::move(value); }
 
     /**
-     * <p>A list of the product view aggregation value objects.</p>
+     * <p>The product view aggregations.</p>
      */
     inline SearchProductsResult& WithProductViewAggregations(const Aws::Map<Aws::String, Aws::Vector<ProductViewAggregationValue>>& value) { SetProductViewAggregations(value); return *this;}
 
     /**
-     * <p>A list of the product view aggregation value objects.</p>
+     * <p>The product view aggregations.</p>
      */
     inline SearchProductsResult& WithProductViewAggregations(Aws::Map<Aws::String, Aws::Vector<ProductViewAggregationValue>>&& value) { SetProductViewAggregations(std::move(value)); return *this;}
 
     /**
-     * <p>A list of the product view aggregation value objects.</p>
+     * <p>The product view aggregations.</p>
      */
     inline SearchProductsResult& AddProductViewAggregations(const Aws::String& key, const Aws::Vector<ProductViewAggregationValue>& value) { m_productViewAggregations.emplace(key, value); return *this; }
 
     /**
-     * <p>A list of the product view aggregation value objects.</p>
+     * <p>The product view aggregations.</p>
      */
     inline SearchProductsResult& AddProductViewAggregations(Aws::String&& key, const Aws::Vector<ProductViewAggregationValue>& value) { m_productViewAggregations.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A list of the product view aggregation value objects.</p>
+     * <p>The product view aggregations.</p>
      */
     inline SearchProductsResult& AddProductViewAggregations(const Aws::String& key, Aws::Vector<ProductViewAggregationValue>&& value) { m_productViewAggregations.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A list of the product view aggregation value objects.</p>
+     * <p>The product view aggregations.</p>
      */
     inline SearchProductsResult& AddProductViewAggregations(Aws::String&& key, Aws::Vector<ProductViewAggregationValue>&& value) { m_productViewAggregations.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A list of the product view aggregation value objects.</p>
+     * <p>The product view aggregations.</p>
      */
     inline SearchProductsResult& AddProductViewAggregations(const char* key, Aws::Vector<ProductViewAggregationValue>&& value) { m_productViewAggregations.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A list of the product view aggregation value objects.</p>
+     * <p>The product view aggregations.</p>
      */
     inline SearchProductsResult& AddProductViewAggregations(const char* key, const Aws::Vector<ProductViewAggregationValue>& value) { m_productViewAggregations.emplace(key, value); return *this; }
 
 
     /**
-     * <p>The page token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
+     * <p>The page token to use to retrieve the next set of results. If there are no
+     * additional results, this value is null.</p>
      */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
 
     /**
-     * <p>The page token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
+     * <p>The page token to use to retrieve the next set of results. If there are no
+     * additional results, this value is null.</p>
      */
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
 
     /**
-     * <p>The page token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
+     * <p>The page token to use to retrieve the next set of results. If there are no
+     * additional results, this value is null.</p>
      */
     inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
 
     /**
-     * <p>The page token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
+     * <p>The page token to use to retrieve the next set of results. If there are no
+     * additional results, this value is null.</p>
      */
     inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
 
     /**
-     * <p>The page token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
+     * <p>The page token to use to retrieve the next set of results. If there are no
+     * additional results, this value is null.</p>
      */
     inline SearchProductsResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
 
     /**
-     * <p>The page token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
+     * <p>The page token to use to retrieve the next set of results. If there are no
+     * additional results, this value is null.</p>
      */
     inline SearchProductsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
-     * <p>The page token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
+     * <p>The page token to use to retrieve the next set of results. If there are no
+     * additional results, this value is null.</p>
      */
     inline SearchProductsResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 

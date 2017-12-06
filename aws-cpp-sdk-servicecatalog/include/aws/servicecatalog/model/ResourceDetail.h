@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Detailed resource information.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about a resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ResourceDetail">AWS
    * API Reference</a></p>
    */
@@ -48,171 +48,171 @@ namespace Model
 
 
     /**
-     * <p>Identifier of the resource.</p>
+     * <p>The identifier of the resource.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>Identifier of the resource.</p>
+     * <p>The identifier of the resource.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>Identifier of the resource.</p>
+     * <p>The identifier of the resource.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>Identifier of the resource.</p>
+     * <p>The identifier of the resource.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>Identifier of the resource.</p>
+     * <p>The identifier of the resource.</p>
      */
     inline ResourceDetail& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>Identifier of the resource.</p>
+     * <p>The identifier of the resource.</p>
      */
     inline ResourceDetail& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>Identifier of the resource.</p>
+     * <p>The identifier of the resource.</p>
      */
     inline ResourceDetail& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * <p>ARN of the resource.</p>
+     * <p>The ARN of the resource.</p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
 
     /**
-     * <p>ARN of the resource.</p>
+     * <p>The ARN of the resource.</p>
      */
     inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
 
     /**
-     * <p>ARN of the resource.</p>
+     * <p>The ARN of the resource.</p>
      */
     inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
 
     /**
-     * <p>ARN of the resource.</p>
+     * <p>The ARN of the resource.</p>
      */
     inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
 
     /**
-     * <p>ARN of the resource.</p>
+     * <p>The ARN of the resource.</p>
      */
     inline ResourceDetail& WithARN(const Aws::String& value) { SetARN(value); return *this;}
 
     /**
-     * <p>ARN of the resource.</p>
+     * <p>The ARN of the resource.</p>
      */
     inline ResourceDetail& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
 
     /**
-     * <p>ARN of the resource.</p>
+     * <p>The ARN of the resource.</p>
      */
     inline ResourceDetail& WithARN(const char* value) { SetARN(value); return *this;}
 
 
     /**
-     * <p>Name of the resource.</p>
+     * <p>The name of the resource.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Name of the resource.</p>
+     * <p>The name of the resource.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Name of the resource.</p>
+     * <p>The name of the resource.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Name of the resource.</p>
+     * <p>The name of the resource.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Name of the resource.</p>
+     * <p>The name of the resource.</p>
      */
     inline ResourceDetail& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Name of the resource.</p>
+     * <p>The name of the resource.</p>
      */
     inline ResourceDetail& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the resource.</p>
+     * <p>The name of the resource.</p>
      */
     inline ResourceDetail& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>Description of the resource.</p>
+     * <p>The description of the resource.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>Description of the resource.</p>
+     * <p>The description of the resource.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>Description of the resource.</p>
+     * <p>The description of the resource.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>Description of the resource.</p>
+     * <p>The description of the resource.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>Description of the resource.</p>
+     * <p>The description of the resource.</p>
      */
     inline ResourceDetail& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>Description of the resource.</p>
+     * <p>The description of the resource.</p>
      */
     inline ResourceDetail& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>Description of the resource.</p>
+     * <p>The description of the resource.</p>
      */
     inline ResourceDetail& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>Creation time of the resource.</p>
+     * <p>The creation time of the resource.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
 
     /**
-     * <p>Creation time of the resource.</p>
+     * <p>The creation time of the resource.</p>
      */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
-     * <p>Creation time of the resource.</p>
+     * <p>The creation time of the resource.</p>
      */
     inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
 
     /**
-     * <p>Creation time of the resource.</p>
+     * <p>The creation time of the resource.</p>
      */
     inline ResourceDetail& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
 
     /**
-     * <p>Creation time of the resource.</p>
+     * <p>The creation time of the resource.</p>
      */
     inline ResourceDetail& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 

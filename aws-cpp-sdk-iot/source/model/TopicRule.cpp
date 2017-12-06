@@ -36,7 +36,8 @@ TopicRule::TopicRule() :
     m_actionsHasBeenSet(false),
     m_ruleDisabled(false),
     m_ruleDisabledHasBeenSet(false),
-    m_awsIotSqlVersionHasBeenSet(false)
+    m_awsIotSqlVersionHasBeenSet(false),
+    m_errorActionHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ TopicRule::TopicRule(const JsonValue& jsonValue) :
     m_actionsHasBeenSet(false),
     m_ruleDisabled(false),
     m_ruleDisabledHasBeenSet(false),
-    m_awsIotSqlVersionHasBeenSet(false)
+    m_awsIotSqlVersionHasBeenSet(false),
+    m_errorActionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -107,6 +109,13 @@ TopicRule& TopicRule::operator =(const JsonValue& jsonValue)
     m_awsIotSqlVersionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("errorAction"))
+  {
+    m_errorAction = jsonValue.GetObject("errorAction");
+
+    m_errorActionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -157,6 +166,12 @@ JsonValue TopicRule::Jsonize() const
   if(m_awsIotSqlVersionHasBeenSet)
   {
    payload.WithString("awsIotSqlVersion", m_awsIotSqlVersion);
+
+  }
+
+  if(m_errorActionHasBeenSet)
+  {
+   payload.WithObject("errorAction", m_errorAction.Jsonize());
 
   }
 

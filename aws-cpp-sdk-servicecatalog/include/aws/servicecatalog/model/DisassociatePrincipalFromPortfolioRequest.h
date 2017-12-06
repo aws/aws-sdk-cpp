@@ -131,37 +131,37 @@ namespace Model
 
 
     /**
-     * <p>The ARN representing the principal (IAM user, role, or group).</p>
+     * <p>The ARN of the principal (IAM user, role, or group).</p>
      */
     inline const Aws::String& GetPrincipalARN() const{ return m_principalARN; }
 
     /**
-     * <p>The ARN representing the principal (IAM user, role, or group).</p>
+     * <p>The ARN of the principal (IAM user, role, or group).</p>
      */
     inline void SetPrincipalARN(const Aws::String& value) { m_principalARNHasBeenSet = true; m_principalARN = value; }
 
     /**
-     * <p>The ARN representing the principal (IAM user, role, or group).</p>
+     * <p>The ARN of the principal (IAM user, role, or group).</p>
      */
     inline void SetPrincipalARN(Aws::String&& value) { m_principalARNHasBeenSet = true; m_principalARN = std::move(value); }
 
     /**
-     * <p>The ARN representing the principal (IAM user, role, or group).</p>
+     * <p>The ARN of the principal (IAM user, role, or group).</p>
      */
     inline void SetPrincipalARN(const char* value) { m_principalARNHasBeenSet = true; m_principalARN.assign(value); }
 
     /**
-     * <p>The ARN representing the principal (IAM user, role, or group).</p>
+     * <p>The ARN of the principal (IAM user, role, or group).</p>
      */
     inline DisassociatePrincipalFromPortfolioRequest& WithPrincipalARN(const Aws::String& value) { SetPrincipalARN(value); return *this;}
 
     /**
-     * <p>The ARN representing the principal (IAM user, role, or group).</p>
+     * <p>The ARN of the principal (IAM user, role, or group).</p>
      */
     inline DisassociatePrincipalFromPortfolioRequest& WithPrincipalARN(Aws::String&& value) { SetPrincipalARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN representing the principal (IAM user, role, or group).</p>
+     * <p>The ARN of the principal (IAM user, role, or group).</p>
      */
     inline DisassociatePrincipalFromPortfolioRequest& WithPrincipalARN(const char* value) { SetPrincipalARN(value); return *this;}
 

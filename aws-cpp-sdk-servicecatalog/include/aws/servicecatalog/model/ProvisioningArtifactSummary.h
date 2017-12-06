@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Stores summary information about a provisioning artifact.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Summary information about a provisioning artifact (also known as a version)
+   * for a product.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisioningArtifactSummary">AWS
    * API Reference</a></p>
    */
@@ -184,74 +184,74 @@ namespace Model
 
 
     /**
-     * <p>The provisioning artifact metadata. This data is used with products created
-     * by AWS Marketplace.</p>
+     * <p>The metadata for the provisioning artifact. This is used with AWS Marketplace
+     * products.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetProvisioningArtifactMetadata() const{ return m_provisioningArtifactMetadata; }
 
     /**
-     * <p>The provisioning artifact metadata. This data is used with products created
-     * by AWS Marketplace.</p>
+     * <p>The metadata for the provisioning artifact. This is used with AWS Marketplace
+     * products.</p>
      */
     inline void SetProvisioningArtifactMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_provisioningArtifactMetadataHasBeenSet = true; m_provisioningArtifactMetadata = value; }
 
     /**
-     * <p>The provisioning artifact metadata. This data is used with products created
-     * by AWS Marketplace.</p>
+     * <p>The metadata for the provisioning artifact. This is used with AWS Marketplace
+     * products.</p>
      */
     inline void SetProvisioningArtifactMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_provisioningArtifactMetadataHasBeenSet = true; m_provisioningArtifactMetadata = std::move(value); }
 
     /**
-     * <p>The provisioning artifact metadata. This data is used with products created
-     * by AWS Marketplace.</p>
+     * <p>The metadata for the provisioning artifact. This is used with AWS Marketplace
+     * products.</p>
      */
     inline ProvisioningArtifactSummary& WithProvisioningArtifactMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetProvisioningArtifactMetadata(value); return *this;}
 
     /**
-     * <p>The provisioning artifact metadata. This data is used with products created
-     * by AWS Marketplace.</p>
+     * <p>The metadata for the provisioning artifact. This is used with AWS Marketplace
+     * products.</p>
      */
     inline ProvisioningArtifactSummary& WithProvisioningArtifactMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetProvisioningArtifactMetadata(std::move(value)); return *this;}
 
     /**
-     * <p>The provisioning artifact metadata. This data is used with products created
-     * by AWS Marketplace.</p>
+     * <p>The metadata for the provisioning artifact. This is used with AWS Marketplace
+     * products.</p>
      */
     inline ProvisioningArtifactSummary& AddProvisioningArtifactMetadata(const Aws::String& key, const Aws::String& value) { m_provisioningArtifactMetadataHasBeenSet = true; m_provisioningArtifactMetadata.emplace(key, value); return *this; }
 
     /**
-     * <p>The provisioning artifact metadata. This data is used with products created
-     * by AWS Marketplace.</p>
+     * <p>The metadata for the provisioning artifact. This is used with AWS Marketplace
+     * products.</p>
      */
     inline ProvisioningArtifactSummary& AddProvisioningArtifactMetadata(Aws::String&& key, const Aws::String& value) { m_provisioningArtifactMetadataHasBeenSet = true; m_provisioningArtifactMetadata.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The provisioning artifact metadata. This data is used with products created
-     * by AWS Marketplace.</p>
+     * <p>The metadata for the provisioning artifact. This is used with AWS Marketplace
+     * products.</p>
      */
     inline ProvisioningArtifactSummary& AddProvisioningArtifactMetadata(const Aws::String& key, Aws::String&& value) { m_provisioningArtifactMetadataHasBeenSet = true; m_provisioningArtifactMetadata.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The provisioning artifact metadata. This data is used with products created
-     * by AWS Marketplace.</p>
+     * <p>The metadata for the provisioning artifact. This is used with AWS Marketplace
+     * products.</p>
      */
     inline ProvisioningArtifactSummary& AddProvisioningArtifactMetadata(Aws::String&& key, Aws::String&& value) { m_provisioningArtifactMetadataHasBeenSet = true; m_provisioningArtifactMetadata.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The provisioning artifact metadata. This data is used with products created
-     * by AWS Marketplace.</p>
+     * <p>The metadata for the provisioning artifact. This is used with AWS Marketplace
+     * products.</p>
      */
     inline ProvisioningArtifactSummary& AddProvisioningArtifactMetadata(const char* key, Aws::String&& value) { m_provisioningArtifactMetadataHasBeenSet = true; m_provisioningArtifactMetadata.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The provisioning artifact metadata. This data is used with products created
-     * by AWS Marketplace.</p>
+     * <p>The metadata for the provisioning artifact. This is used with AWS Marketplace
+     * products.</p>
      */
     inline ProvisioningArtifactSummary& AddProvisioningArtifactMetadata(Aws::String&& key, const char* value) { m_provisioningArtifactMetadataHasBeenSet = true; m_provisioningArtifactMetadata.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The provisioning artifact metadata. This data is used with products created
-     * by AWS Marketplace.</p>
+     * <p>The metadata for the provisioning artifact. This is used with AWS Marketplace
+     * products.</p>
      */
     inline ProvisioningArtifactSummary& AddProvisioningArtifactMetadata(const char* key, const char* value) { m_provisioningArtifactMetadataHasBeenSet = true; m_provisioningArtifactMetadata.emplace(key, value); return *this; }
 

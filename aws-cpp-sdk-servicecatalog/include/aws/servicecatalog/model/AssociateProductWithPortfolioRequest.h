@@ -167,37 +167,37 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the source portfolio to use with this association.</p>
+     * <p>The identifier of the source portfolio.</p>
      */
     inline const Aws::String& GetSourcePortfolioId() const{ return m_sourcePortfolioId; }
 
     /**
-     * <p>The identifier of the source portfolio to use with this association.</p>
+     * <p>The identifier of the source portfolio.</p>
      */
     inline void SetSourcePortfolioId(const Aws::String& value) { m_sourcePortfolioIdHasBeenSet = true; m_sourcePortfolioId = value; }
 
     /**
-     * <p>The identifier of the source portfolio to use with this association.</p>
+     * <p>The identifier of the source portfolio.</p>
      */
     inline void SetSourcePortfolioId(Aws::String&& value) { m_sourcePortfolioIdHasBeenSet = true; m_sourcePortfolioId = std::move(value); }
 
     /**
-     * <p>The identifier of the source portfolio to use with this association.</p>
+     * <p>The identifier of the source portfolio.</p>
      */
     inline void SetSourcePortfolioId(const char* value) { m_sourcePortfolioIdHasBeenSet = true; m_sourcePortfolioId.assign(value); }
 
     /**
-     * <p>The identifier of the source portfolio to use with this association.</p>
+     * <p>The identifier of the source portfolio.</p>
      */
     inline AssociateProductWithPortfolioRequest& WithSourcePortfolioId(const Aws::String& value) { SetSourcePortfolioId(value); return *this;}
 
     /**
-     * <p>The identifier of the source portfolio to use with this association.</p>
+     * <p>The identifier of the source portfolio.</p>
      */
     inline AssociateProductWithPortfolioRequest& WithSourcePortfolioId(Aws::String&& value) { SetSourcePortfolioId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the source portfolio to use with this association.</p>
+     * <p>The identifier of the source portfolio.</p>
      */
     inline AssociateProductWithPortfolioRequest& WithSourcePortfolioId(const char* value) { SetSourcePortfolioId(value); return *this;}
 

@@ -96,97 +96,91 @@ namespace Model
 
 
     /**
-     * <p>The access level for obtaining results. If left unspecified,
-     * <code>User</code> level access is used.</p>
+     * <p>The access level to use to obtain results. The default is
+     * <code>User</code>.</p>
      */
     inline const AccessLevelFilter& GetAccessLevelFilter() const{ return m_accessLevelFilter; }
 
     /**
-     * <p>The access level for obtaining results. If left unspecified,
-     * <code>User</code> level access is used.</p>
+     * <p>The access level to use to obtain results. The default is
+     * <code>User</code>.</p>
      */
     inline void SetAccessLevelFilter(const AccessLevelFilter& value) { m_accessLevelFilterHasBeenSet = true; m_accessLevelFilter = value; }
 
     /**
-     * <p>The access level for obtaining results. If left unspecified,
-     * <code>User</code> level access is used.</p>
+     * <p>The access level to use to obtain results. The default is
+     * <code>User</code>.</p>
      */
     inline void SetAccessLevelFilter(AccessLevelFilter&& value) { m_accessLevelFilterHasBeenSet = true; m_accessLevelFilter = std::move(value); }
 
     /**
-     * <p>The access level for obtaining results. If left unspecified,
-     * <code>User</code> level access is used.</p>
+     * <p>The access level to use to obtain results. The default is
+     * <code>User</code>.</p>
      */
     inline ScanProvisionedProductsRequest& WithAccessLevelFilter(const AccessLevelFilter& value) { SetAccessLevelFilter(value); return *this;}
 
     /**
-     * <p>The access level for obtaining results. If left unspecified,
-     * <code>User</code> level access is used.</p>
+     * <p>The access level to use to obtain results. The default is
+     * <code>User</code>.</p>
      */
     inline ScanProvisionedProductsRequest& WithAccessLevelFilter(AccessLevelFilter&& value) { SetAccessLevelFilter(std::move(value)); return *this;}
 
 
     /**
-     * <p>The maximum number of items to return in the results. If more results exist
-     * than fit in the specified <code>PageSize</code>, the value of
-     * <code>NextPageToken</code> in the response is non-null.</p>
+     * <p>The maximum number of items to return with this call.</p>
      */
     inline int GetPageSize() const{ return m_pageSize; }
 
     /**
-     * <p>The maximum number of items to return in the results. If more results exist
-     * than fit in the specified <code>PageSize</code>, the value of
-     * <code>NextPageToken</code> in the response is non-null.</p>
+     * <p>The maximum number of items to return with this call.</p>
      */
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
 
     /**
-     * <p>The maximum number of items to return in the results. If more results exist
-     * than fit in the specified <code>PageSize</code>, the value of
-     * <code>NextPageToken</code> in the response is non-null.</p>
+     * <p>The maximum number of items to return with this call.</p>
      */
     inline ScanProvisionedProductsRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
 
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline const Aws::String& GetPageToken() const{ return m_pageToken; }
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline void SetPageToken(const Aws::String& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::move(value); }
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline void SetPageToken(const char* value) { m_pageTokenHasBeenSet = true; m_pageToken.assign(value); }
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline ScanProvisionedProductsRequest& WithPageToken(const Aws::String& value) { SetPageToken(value); return *this;}
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline ScanProvisionedProductsRequest& WithPageToken(Aws::String&& value) { SetPageToken(std::move(value)); return *this;}
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline ScanProvisionedProductsRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
 

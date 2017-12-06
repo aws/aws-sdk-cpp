@@ -33,10 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>The parameter key-value pair used to update a ProvisionedProduct object. If
-   * <code>UsePreviousValue</code> is set to true, <code>Value</code> is ignored and
-   * the value for <code>Key</code> is kept as previously set (current
-   * value).</p><p><h3>See Also:</h3>   <a
+   * <p>The parameter key-value pair used to update a provisioned
+   * product.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisioningParameter">AWS
    * API Reference</a></p>
    */
@@ -50,113 +48,92 @@ namespace Model
 
 
     /**
-     * <p>The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from
-     * <a>DescribeProvisioningParameters</a>.</p>
+     * <p>The parameter key.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p>The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from
-     * <a>DescribeProvisioningParameters</a>.</p>
+     * <p>The parameter key.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from
-     * <a>DescribeProvisioningParameters</a>.</p>
+     * <p>The parameter key.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p>The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from
-     * <a>DescribeProvisioningParameters</a>.</p>
+     * <p>The parameter key.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p>The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from
-     * <a>DescribeProvisioningParameters</a>.</p>
+     * <p>The parameter key.</p>
      */
     inline UpdateProvisioningParameter& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p>The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from
-     * <a>DescribeProvisioningParameters</a>.</p>
+     * <p>The parameter key.</p>
      */
     inline UpdateProvisioningParameter& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from
-     * <a>DescribeProvisioningParameters</a>.</p>
+     * <p>The parameter key.</p>
      */
     inline UpdateProvisioningParameter& WithKey(const char* value) { SetKey(value); return *this;}
 
 
     /**
-     * <p>The value to use for updating the product provisioning. Any constraints on
-     * this value can be found in the <code>ProvisioningArtifactParameter</code>
-     * parameter for <code>Key</code>.</p>
+     * <p>The parameter value.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>The value to use for updating the product provisioning. Any constraints on
-     * this value can be found in the <code>ProvisioningArtifactParameter</code>
-     * parameter for <code>Key</code>.</p>
+     * <p>The parameter value.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The value to use for updating the product provisioning. Any constraints on
-     * this value can be found in the <code>ProvisioningArtifactParameter</code>
-     * parameter for <code>Key</code>.</p>
+     * <p>The parameter value.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>The value to use for updating the product provisioning. Any constraints on
-     * this value can be found in the <code>ProvisioningArtifactParameter</code>
-     * parameter for <code>Key</code>.</p>
+     * <p>The parameter value.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>The value to use for updating the product provisioning. Any constraints on
-     * this value can be found in the <code>ProvisioningArtifactParameter</code>
-     * parameter for <code>Key</code>.</p>
+     * <p>The parameter value.</p>
      */
     inline UpdateProvisioningParameter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The value to use for updating the product provisioning. Any constraints on
-     * this value can be found in the <code>ProvisioningArtifactParameter</code>
-     * parameter for <code>Key</code>.</p>
+     * <p>The parameter value.</p>
      */
     inline UpdateProvisioningParameter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>The value to use for updating the product provisioning. Any constraints on
-     * this value can be found in the <code>ProvisioningArtifactParameter</code>
-     * parameter for <code>Key</code>.</p>
+     * <p>The parameter value.</p>
      */
     inline UpdateProvisioningParameter& WithValue(const char* value) { SetValue(value); return *this;}
 
 
     /**
-     * <p>If true, uses the currently set value for <code>Key</code>, ignoring
-     * <code>UpdateProvisioningParameter.Value</code>.</p>
+     * <p>If set to true, <code>Value</code> is ignored and the previous parameter
+     * value is kept.</p>
      */
     inline bool GetUsePreviousValue() const{ return m_usePreviousValue; }
 
     /**
-     * <p>If true, uses the currently set value for <code>Key</code>, ignoring
-     * <code>UpdateProvisioningParameter.Value</code>.</p>
+     * <p>If set to true, <code>Value</code> is ignored and the previous parameter
+     * value is kept.</p>
      */
     inline void SetUsePreviousValue(bool value) { m_usePreviousValueHasBeenSet = true; m_usePreviousValue = value; }
 
     /**
-     * <p>If true, uses the currently set value for <code>Key</code>, ignoring
-     * <code>UpdateProvisioningParameter.Value</code>.</p>
+     * <p>If set to true, <code>Value</code> is ignored and the previous parameter
+     * value is kept.</p>
      */
     inline UpdateProvisioningParameter& WithUsePreviousValue(bool value) { SetUsePreviousValue(value); return *this;}
 

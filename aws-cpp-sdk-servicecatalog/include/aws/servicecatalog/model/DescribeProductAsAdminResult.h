@@ -47,135 +47,142 @@ namespace Model
 
 
     /**
-     * <p>Detailed product view information.</p>
+     * <p>Information about the product view.</p>
      */
     inline const ProductViewDetail& GetProductViewDetail() const{ return m_productViewDetail; }
 
     /**
-     * <p>Detailed product view information.</p>
+     * <p>Information about the product view.</p>
      */
     inline void SetProductViewDetail(const ProductViewDetail& value) { m_productViewDetail = value; }
 
     /**
-     * <p>Detailed product view information.</p>
+     * <p>Information about the product view.</p>
      */
     inline void SetProductViewDetail(ProductViewDetail&& value) { m_productViewDetail = std::move(value); }
 
     /**
-     * <p>Detailed product view information.</p>
+     * <p>Information about the product view.</p>
      */
     inline DescribeProductAsAdminResult& WithProductViewDetail(const ProductViewDetail& value) { SetProductViewDetail(value); return *this;}
 
     /**
-     * <p>Detailed product view information.</p>
+     * <p>Information about the product view.</p>
      */
     inline DescribeProductAsAdminResult& WithProductViewDetail(ProductViewDetail&& value) { SetProductViewDetail(std::move(value)); return *this;}
 
 
     /**
-     * <p>A list of provisioning artifact summaries for the product.</p>
+     * <p>Information about the provisioning artifacts (also known as versions) for the
+     * specified product.</p>
      */
     inline const Aws::Vector<ProvisioningArtifactSummary>& GetProvisioningArtifactSummaries() const{ return m_provisioningArtifactSummaries; }
 
     /**
-     * <p>A list of provisioning artifact summaries for the product.</p>
+     * <p>Information about the provisioning artifacts (also known as versions) for the
+     * specified product.</p>
      */
     inline void SetProvisioningArtifactSummaries(const Aws::Vector<ProvisioningArtifactSummary>& value) { m_provisioningArtifactSummaries = value; }
 
     /**
-     * <p>A list of provisioning artifact summaries for the product.</p>
+     * <p>Information about the provisioning artifacts (also known as versions) for the
+     * specified product.</p>
      */
     inline void SetProvisioningArtifactSummaries(Aws::Vector<ProvisioningArtifactSummary>&& value) { m_provisioningArtifactSummaries = std::move(value); }
 
     /**
-     * <p>A list of provisioning artifact summaries for the product.</p>
+     * <p>Information about the provisioning artifacts (also known as versions) for the
+     * specified product.</p>
      */
     inline DescribeProductAsAdminResult& WithProvisioningArtifactSummaries(const Aws::Vector<ProvisioningArtifactSummary>& value) { SetProvisioningArtifactSummaries(value); return *this;}
 
     /**
-     * <p>A list of provisioning artifact summaries for the product.</p>
+     * <p>Information about the provisioning artifacts (also known as versions) for the
+     * specified product.</p>
      */
     inline DescribeProductAsAdminResult& WithProvisioningArtifactSummaries(Aws::Vector<ProvisioningArtifactSummary>&& value) { SetProvisioningArtifactSummaries(std::move(value)); return *this;}
 
     /**
-     * <p>A list of provisioning artifact summaries for the product.</p>
+     * <p>Information about the provisioning artifacts (also known as versions) for the
+     * specified product.</p>
      */
     inline DescribeProductAsAdminResult& AddProvisioningArtifactSummaries(const ProvisioningArtifactSummary& value) { m_provisioningArtifactSummaries.push_back(value); return *this; }
 
     /**
-     * <p>A list of provisioning artifact summaries for the product.</p>
+     * <p>Information about the provisioning artifacts (also known as versions) for the
+     * specified product.</p>
      */
     inline DescribeProductAsAdminResult& AddProvisioningArtifactSummaries(ProvisioningArtifactSummary&& value) { m_provisioningArtifactSummaries.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Tags associated with the product.</p>
+     * <p>Information about the tags associated with the product.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Tags associated with the product.</p>
+     * <p>Information about the tags associated with the product.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
 
     /**
-     * <p>Tags associated with the product.</p>
+     * <p>Information about the tags associated with the product.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>Tags associated with the product.</p>
+     * <p>Information about the tags associated with the product.</p>
      */
     inline DescribeProductAsAdminResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Tags associated with the product.</p>
+     * <p>Information about the tags associated with the product.</p>
      */
     inline DescribeProductAsAdminResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Tags associated with the product.</p>
+     * <p>Information about the tags associated with the product.</p>
      */
     inline DescribeProductAsAdminResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Tags associated with the product.</p>
+     * <p>Information about the tags associated with the product.</p>
      */
     inline DescribeProductAsAdminResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>List of TagOptions associated with the product.</p>
+     * <p>Information about the TagOptions associated with the product.</p>
      */
     inline const Aws::Vector<TagOptionDetail>& GetTagOptions() const{ return m_tagOptions; }
 
     /**
-     * <p>List of TagOptions associated with the product.</p>
+     * <p>Information about the TagOptions associated with the product.</p>
      */
     inline void SetTagOptions(const Aws::Vector<TagOptionDetail>& value) { m_tagOptions = value; }
 
     /**
-     * <p>List of TagOptions associated with the product.</p>
+     * <p>Information about the TagOptions associated with the product.</p>
      */
     inline void SetTagOptions(Aws::Vector<TagOptionDetail>&& value) { m_tagOptions = std::move(value); }
 
     /**
-     * <p>List of TagOptions associated with the product.</p>
+     * <p>Information about the TagOptions associated with the product.</p>
      */
     inline DescribeProductAsAdminResult& WithTagOptions(const Aws::Vector<TagOptionDetail>& value) { SetTagOptions(value); return *this;}
 
     /**
-     * <p>List of TagOptions associated with the product.</p>
+     * <p>Information about the TagOptions associated with the product.</p>
      */
     inline DescribeProductAsAdminResult& WithTagOptions(Aws::Vector<TagOptionDetail>&& value) { SetTagOptions(std::move(value)); return *this;}
 
     /**
-     * <p>List of TagOptions associated with the product.</p>
+     * <p>Information about the TagOptions associated with the product.</p>
      */
     inline DescribeProductAsAdminResult& AddTagOptions(const TagOptionDetail& value) { m_tagOptions.push_back(value); return *this; }
 
     /**
-     * <p>List of TagOptions associated with the product.</p>
+     * <p>Information about the TagOptions associated with the product.</p>
      */
     inline DescribeProductAsAdminResult& AddTagOptions(TagOptionDetail&& value) { m_tagOptions.push_back(std::move(value)); return *this; }
 

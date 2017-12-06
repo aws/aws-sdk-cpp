@@ -95,37 +95,37 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the portfolio for the delete request.</p>
+     * <p>The portfolio identifier.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The identifier of the portfolio for the delete request.</p>
+     * <p>The portfolio identifier.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The identifier of the portfolio for the delete request.</p>
+     * <p>The portfolio identifier.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The identifier of the portfolio for the delete request.</p>
+     * <p>The portfolio identifier.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The identifier of the portfolio for the delete request.</p>
+     * <p>The portfolio identifier.</p>
      */
     inline DeletePortfolioRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The identifier of the portfolio for the delete request.</p>
+     * <p>The portfolio identifier.</p>
      */
     inline DeletePortfolioRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the portfolio for the delete request.</p>
+     * <p>The portfolio identifier.</p>
      */
     inline DeletePortfolioRequest& WithId(const char* value) { SetId(value); return *this;}
 

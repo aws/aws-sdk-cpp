@@ -95,37 +95,37 @@ namespace Model
 
 
     /**
-     * <p>The <code>ProductViewId</code> of the product to describe.</p>
+     * <p>The product view identifier.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The <code>ProductViewId</code> of the product to describe.</p>
+     * <p>The product view identifier.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The <code>ProductViewId</code> of the product to describe.</p>
+     * <p>The product view identifier.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The <code>ProductViewId</code> of the product to describe.</p>
+     * <p>The product view identifier.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The <code>ProductViewId</code> of the product to describe.</p>
+     * <p>The product view identifier.</p>
      */
     inline DescribeProductViewRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The <code>ProductViewId</code> of the product to describe.</p>
+     * <p>The product view identifier.</p>
      */
     inline DescribeProductViewRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>ProductViewId</code> of the product to describe.</p>
+     * <p>The product view identifier.</p>
      */
     inline DescribeProductViewRequest& WithId(const char* value) { SetId(value); return *this;}
 

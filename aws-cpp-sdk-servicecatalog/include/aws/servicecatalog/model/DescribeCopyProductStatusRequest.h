@@ -95,44 +95,44 @@ namespace Model
 
 
     /**
-     * <p>The token returned from the call to <code>CopyProduct</code> that initiated
-     * the operation.</p>
+     * <p>The token for the copy product operation. This token is returned by
+     * <a>CopyProduct</a>.</p>
      */
     inline const Aws::String& GetCopyProductToken() const{ return m_copyProductToken; }
 
     /**
-     * <p>The token returned from the call to <code>CopyProduct</code> that initiated
-     * the operation.</p>
+     * <p>The token for the copy product operation. This token is returned by
+     * <a>CopyProduct</a>.</p>
      */
     inline void SetCopyProductToken(const Aws::String& value) { m_copyProductTokenHasBeenSet = true; m_copyProductToken = value; }
 
     /**
-     * <p>The token returned from the call to <code>CopyProduct</code> that initiated
-     * the operation.</p>
+     * <p>The token for the copy product operation. This token is returned by
+     * <a>CopyProduct</a>.</p>
      */
     inline void SetCopyProductToken(Aws::String&& value) { m_copyProductTokenHasBeenSet = true; m_copyProductToken = std::move(value); }
 
     /**
-     * <p>The token returned from the call to <code>CopyProduct</code> that initiated
-     * the operation.</p>
+     * <p>The token for the copy product operation. This token is returned by
+     * <a>CopyProduct</a>.</p>
      */
     inline void SetCopyProductToken(const char* value) { m_copyProductTokenHasBeenSet = true; m_copyProductToken.assign(value); }
 
     /**
-     * <p>The token returned from the call to <code>CopyProduct</code> that initiated
-     * the operation.</p>
+     * <p>The token for the copy product operation. This token is returned by
+     * <a>CopyProduct</a>.</p>
      */
     inline DescribeCopyProductStatusRequest& WithCopyProductToken(const Aws::String& value) { SetCopyProductToken(value); return *this;}
 
     /**
-     * <p>The token returned from the call to <code>CopyProduct</code> that initiated
-     * the operation.</p>
+     * <p>The token for the copy product operation. This token is returned by
+     * <a>CopyProduct</a>.</p>
      */
     inline DescribeCopyProductStatusRequest& WithCopyProductToken(Aws::String&& value) { SetCopyProductToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token returned from the call to <code>CopyProduct</code> that initiated
-     * the operation.</p>
+     * <p>The token for the copy product operation. This token is returned by
+     * <a>CopyProduct</a>.</p>
      */
     inline DescribeCopyProductStatusRequest& WithCopyProductToken(const char* value) { SetCopyProductToken(value); return *this;}
 
