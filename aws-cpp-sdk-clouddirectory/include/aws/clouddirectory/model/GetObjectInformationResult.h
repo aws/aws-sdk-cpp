@@ -45,37 +45,51 @@ namespace Model
 
 
     /**
-     * <p>The facets attached to the specified object.</p>
+     * <p>The facets attached to the specified object. Although the response does not
+     * include minor version information, the most recently applied minor version of
+     * each Facet is in effect. See <a>GetAppliedSchemaVersion</a> for details.</p>
      */
     inline const Aws::Vector<SchemaFacet>& GetSchemaFacets() const{ return m_schemaFacets; }
 
     /**
-     * <p>The facets attached to the specified object.</p>
+     * <p>The facets attached to the specified object. Although the response does not
+     * include minor version information, the most recently applied minor version of
+     * each Facet is in effect. See <a>GetAppliedSchemaVersion</a> for details.</p>
      */
     inline void SetSchemaFacets(const Aws::Vector<SchemaFacet>& value) { m_schemaFacets = value; }
 
     /**
-     * <p>The facets attached to the specified object.</p>
+     * <p>The facets attached to the specified object. Although the response does not
+     * include minor version information, the most recently applied minor version of
+     * each Facet is in effect. See <a>GetAppliedSchemaVersion</a> for details.</p>
      */
     inline void SetSchemaFacets(Aws::Vector<SchemaFacet>&& value) { m_schemaFacets = std::move(value); }
 
     /**
-     * <p>The facets attached to the specified object.</p>
+     * <p>The facets attached to the specified object. Although the response does not
+     * include minor version information, the most recently applied minor version of
+     * each Facet is in effect. See <a>GetAppliedSchemaVersion</a> for details.</p>
      */
     inline GetObjectInformationResult& WithSchemaFacets(const Aws::Vector<SchemaFacet>& value) { SetSchemaFacets(value); return *this;}
 
     /**
-     * <p>The facets attached to the specified object.</p>
+     * <p>The facets attached to the specified object. Although the response does not
+     * include minor version information, the most recently applied minor version of
+     * each Facet is in effect. See <a>GetAppliedSchemaVersion</a> for details.</p>
      */
     inline GetObjectInformationResult& WithSchemaFacets(Aws::Vector<SchemaFacet>&& value) { SetSchemaFacets(std::move(value)); return *this;}
 
     /**
-     * <p>The facets attached to the specified object.</p>
+     * <p>The facets attached to the specified object. Although the response does not
+     * include minor version information, the most recently applied minor version of
+     * each Facet is in effect. See <a>GetAppliedSchemaVersion</a> for details.</p>
      */
     inline GetObjectInformationResult& AddSchemaFacets(const SchemaFacet& value) { m_schemaFacets.push_back(value); return *this; }
 
     /**
-     * <p>The facets attached to the specified object.</p>
+     * <p>The facets attached to the specified object. Although the response does not
+     * include minor version information, the most recently applied minor version of
+     * each Facet is in effect. See <a>GetAppliedSchemaVersion</a> for details.</p>
      */
     inline GetObjectInformationResult& AddSchemaFacets(SchemaFacet&& value) { m_schemaFacets.push_back(std::move(value)); return *this; }
 

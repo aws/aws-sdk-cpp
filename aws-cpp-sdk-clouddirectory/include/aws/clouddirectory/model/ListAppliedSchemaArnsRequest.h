@@ -79,6 +79,49 @@ namespace Model
 
 
     /**
+     * <p>The response for <code>ListAppliedSchemaArns</code> when this parameter is
+     * used will list all minor version ARNs for a major version.</p>
+     */
+    inline const Aws::String& GetSchemaArn() const{ return m_schemaArn; }
+
+    /**
+     * <p>The response for <code>ListAppliedSchemaArns</code> when this parameter is
+     * used will list all minor version ARNs for a major version.</p>
+     */
+    inline void SetSchemaArn(const Aws::String& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
+
+    /**
+     * <p>The response for <code>ListAppliedSchemaArns</code> when this parameter is
+     * used will list all minor version ARNs for a major version.</p>
+     */
+    inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::move(value); }
+
+    /**
+     * <p>The response for <code>ListAppliedSchemaArns</code> when this parameter is
+     * used will list all minor version ARNs for a major version.</p>
+     */
+    inline void SetSchemaArn(const char* value) { m_schemaArnHasBeenSet = true; m_schemaArn.assign(value); }
+
+    /**
+     * <p>The response for <code>ListAppliedSchemaArns</code> when this parameter is
+     * used will list all minor version ARNs for a major version.</p>
+     */
+    inline ListAppliedSchemaArnsRequest& WithSchemaArn(const Aws::String& value) { SetSchemaArn(value); return *this;}
+
+    /**
+     * <p>The response for <code>ListAppliedSchemaArns</code> when this parameter is
+     * used will list all minor version ARNs for a major version.</p>
+     */
+    inline ListAppliedSchemaArnsRequest& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The response for <code>ListAppliedSchemaArns</code> when this parameter is
+     * used will list all minor version ARNs for a major version.</p>
+     */
+    inline ListAppliedSchemaArnsRequest& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
+
+
+    /**
      * <p>The pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -133,6 +176,9 @@ namespace Model
 
     Aws::String m_directoryArn;
     bool m_directoryArnHasBeenSet;
+
+    Aws::String m_schemaArn;
+    bool m_schemaArnHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

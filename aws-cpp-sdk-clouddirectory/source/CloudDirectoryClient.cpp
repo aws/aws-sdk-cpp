@@ -52,6 +52,7 @@
 #include <aws/clouddirectory/model/DetachTypedLinkRequest.h>
 #include <aws/clouddirectory/model/DisableDirectoryRequest.h>
 #include <aws/clouddirectory/model/EnableDirectoryRequest.h>
+#include <aws/clouddirectory/model/GetAppliedSchemaVersionRequest.h>
 #include <aws/clouddirectory/model/GetDirectoryRequest.h>
 #include <aws/clouddirectory/model/GetFacetRequest.h>
 #include <aws/clouddirectory/model/GetObjectInformationRequest.h>
@@ -86,6 +87,8 @@
 #include <aws/clouddirectory/model/UpdateObjectAttributesRequest.h>
 #include <aws/clouddirectory/model/UpdateSchemaRequest.h>
 #include <aws/clouddirectory/model/UpdateTypedLinkFacetRequest.h>
+#include <aws/clouddirectory/model/UpgradeAppliedSchemaRequest.h>
+#include <aws/clouddirectory/model/UpgradePublishedSchemaRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -1024,6 +1027,41 @@ void CloudDirectoryClient::EnableDirectoryAsync(const EnableDirectoryRequest& re
 void CloudDirectoryClient::EnableDirectoryAsyncHelper(const EnableDirectoryRequest& request, const EnableDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, EnableDirectory(request), context);
+}
+
+GetAppliedSchemaVersionOutcome CloudDirectoryClient::GetAppliedSchemaVersion(const GetAppliedSchemaVersionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/schema/getappliedschema";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetAppliedSchemaVersionOutcome(GetAppliedSchemaVersionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetAppliedSchemaVersionOutcome(outcome.GetError());
+  }
+}
+
+GetAppliedSchemaVersionOutcomeCallable CloudDirectoryClient::GetAppliedSchemaVersionCallable(const GetAppliedSchemaVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAppliedSchemaVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAppliedSchemaVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudDirectoryClient::GetAppliedSchemaVersionAsync(const GetAppliedSchemaVersionRequest& request, const GetAppliedSchemaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAppliedSchemaVersionAsyncHelper( request, handler, context ); } );
+}
+
+void CloudDirectoryClient::GetAppliedSchemaVersionAsyncHelper(const GetAppliedSchemaVersionRequest& request, const GetAppliedSchemaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAppliedSchemaVersion(request), context);
 }
 
 GetDirectoryOutcome CloudDirectoryClient::GetDirectory(const GetDirectoryRequest& request) const
@@ -2214,5 +2252,75 @@ void CloudDirectoryClient::UpdateTypedLinkFacetAsync(const UpdateTypedLinkFacetR
 void CloudDirectoryClient::UpdateTypedLinkFacetAsyncHelper(const UpdateTypedLinkFacetRequest& request, const UpdateTypedLinkFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateTypedLinkFacet(request), context);
+}
+
+UpgradeAppliedSchemaOutcome CloudDirectoryClient::UpgradeAppliedSchema(const UpgradeAppliedSchemaRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/schema/upgradeapplied";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpgradeAppliedSchemaOutcome(UpgradeAppliedSchemaResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpgradeAppliedSchemaOutcome(outcome.GetError());
+  }
+}
+
+UpgradeAppliedSchemaOutcomeCallable CloudDirectoryClient::UpgradeAppliedSchemaCallable(const UpgradeAppliedSchemaRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpgradeAppliedSchemaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpgradeAppliedSchema(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudDirectoryClient::UpgradeAppliedSchemaAsync(const UpgradeAppliedSchemaRequest& request, const UpgradeAppliedSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpgradeAppliedSchemaAsyncHelper( request, handler, context ); } );
+}
+
+void CloudDirectoryClient::UpgradeAppliedSchemaAsyncHelper(const UpgradeAppliedSchemaRequest& request, const UpgradeAppliedSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpgradeAppliedSchema(request), context);
+}
+
+UpgradePublishedSchemaOutcome CloudDirectoryClient::UpgradePublishedSchema(const UpgradePublishedSchemaRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/schema/upgradepublished";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpgradePublishedSchemaOutcome(UpgradePublishedSchemaResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpgradePublishedSchemaOutcome(outcome.GetError());
+  }
+}
+
+UpgradePublishedSchemaOutcomeCallable CloudDirectoryClient::UpgradePublishedSchemaCallable(const UpgradePublishedSchemaRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpgradePublishedSchemaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpgradePublishedSchema(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudDirectoryClient::UpgradePublishedSchemaAsync(const UpgradePublishedSchemaRequest& request, const UpgradePublishedSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpgradePublishedSchemaAsyncHelper( request, handler, context ); } );
+}
+
+void CloudDirectoryClient::UpgradePublishedSchemaAsyncHelper(const UpgradePublishedSchemaRequest& request, const UpgradePublishedSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpgradePublishedSchema(request), context);
 }
 

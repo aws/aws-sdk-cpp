@@ -23,6 +23,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListPublishedSchemaArnsRequest::ListPublishedSchemaArnsRequest() : 
+    m_schemaArnHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false)
@@ -32,6 +33,12 @@ ListPublishedSchemaArnsRequest::ListPublishedSchemaArnsRequest() :
 Aws::String ListPublishedSchemaArnsRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_schemaArnHasBeenSet)
+  {
+   payload.WithString("SchemaArn", m_schemaArn);
+
+  }
 
   if(m_nextTokenHasBeenSet)
   {

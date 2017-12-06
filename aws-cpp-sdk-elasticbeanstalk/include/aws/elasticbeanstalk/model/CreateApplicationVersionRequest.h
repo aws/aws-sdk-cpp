@@ -328,23 +328,38 @@ namespace Model
 
 
     /**
-     * <p>Preprocesses and validates the environment manifest and configuration files
-     * in the source bundle. Validating configuration files can identify issues prior
-     * to deploying the application version to an environment.</p>
+     * <p>Preprocesses and validates the environment manifest (<code>env.yaml</code>)
+     * and configuration files (<code>*.config</code> files in the
+     * <code>.ebextensions</code> folder) in the source bundle. Validating
+     * configuration files can identify issues prior to deploying the application
+     * version to an environment.</p> <note> <p>The <code>Process</code> option
+     * validates Elastic Beanstalk configuration files. It doesn't validate your
+     * application's configuration files, like proxy server or Docker
+     * configuration.</p> </note>
      */
     inline bool GetProcess() const{ return m_process; }
 
     /**
-     * <p>Preprocesses and validates the environment manifest and configuration files
-     * in the source bundle. Validating configuration files can identify issues prior
-     * to deploying the application version to an environment.</p>
+     * <p>Preprocesses and validates the environment manifest (<code>env.yaml</code>)
+     * and configuration files (<code>*.config</code> files in the
+     * <code>.ebextensions</code> folder) in the source bundle. Validating
+     * configuration files can identify issues prior to deploying the application
+     * version to an environment.</p> <note> <p>The <code>Process</code> option
+     * validates Elastic Beanstalk configuration files. It doesn't validate your
+     * application's configuration files, like proxy server or Docker
+     * configuration.</p> </note>
      */
     inline void SetProcess(bool value) { m_processHasBeenSet = true; m_process = value; }
 
     /**
-     * <p>Preprocesses and validates the environment manifest and configuration files
-     * in the source bundle. Validating configuration files can identify issues prior
-     * to deploying the application version to an environment.</p>
+     * <p>Preprocesses and validates the environment manifest (<code>env.yaml</code>)
+     * and configuration files (<code>*.config</code> files in the
+     * <code>.ebextensions</code> folder) in the source bundle. Validating
+     * configuration files can identify issues prior to deploying the application
+     * version to an environment.</p> <note> <p>The <code>Process</code> option
+     * validates Elastic Beanstalk configuration files. It doesn't validate your
+     * application's configuration files, like proxy server or Docker
+     * configuration.</p> </note>
      */
     inline CreateApplicationVersionRequest& WithProcess(bool value) { SetProcess(value); return *this;}
 

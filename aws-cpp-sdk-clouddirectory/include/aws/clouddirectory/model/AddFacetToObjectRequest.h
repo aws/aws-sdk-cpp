@@ -92,27 +92,32 @@ namespace Model
 
 
     /**
-     * <p>Identifiers for the facet that you are adding to the object.</p>
+     * <p>Identifiers for the facet that you are adding to the object. See
+     * <a>SchemaFacet</a> for details.</p>
      */
     inline const SchemaFacet& GetSchemaFacet() const{ return m_schemaFacet; }
 
     /**
-     * <p>Identifiers for the facet that you are adding to the object.</p>
+     * <p>Identifiers for the facet that you are adding to the object. See
+     * <a>SchemaFacet</a> for details.</p>
      */
     inline void SetSchemaFacet(const SchemaFacet& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet = value; }
 
     /**
-     * <p>Identifiers for the facet that you are adding to the object.</p>
+     * <p>Identifiers for the facet that you are adding to the object. See
+     * <a>SchemaFacet</a> for details.</p>
      */
     inline void SetSchemaFacet(SchemaFacet&& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet = std::move(value); }
 
     /**
-     * <p>Identifiers for the facet that you are adding to the object.</p>
+     * <p>Identifiers for the facet that you are adding to the object. See
+     * <a>SchemaFacet</a> for details.</p>
      */
     inline AddFacetToObjectRequest& WithSchemaFacet(const SchemaFacet& value) { SetSchemaFacet(value); return *this;}
 
     /**
-     * <p>Identifiers for the facet that you are adding to the object.</p>
+     * <p>Identifiers for the facet that you are adding to the object. See
+     * <a>SchemaFacet</a> for details.</p>
      */
     inline AddFacetToObjectRequest& WithSchemaFacet(SchemaFacet&& value) { SetSchemaFacet(std::move(value)); return *this;}
 

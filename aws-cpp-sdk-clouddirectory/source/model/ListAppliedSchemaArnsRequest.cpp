@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 
 ListAppliedSchemaArnsRequest::ListAppliedSchemaArnsRequest() : 
     m_directoryArnHasBeenSet(false),
+    m_schemaArnHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false)
@@ -37,6 +38,12 @@ Aws::String ListAppliedSchemaArnsRequest::SerializePayload() const
   if(m_directoryArnHasBeenSet)
   {
    payload.WithString("DirectoryArn", m_directoryArn);
+
+  }
+
+  if(m_schemaArnHasBeenSet)
+  {
+   payload.WithString("SchemaArn", m_schemaArn);
 
   }
 

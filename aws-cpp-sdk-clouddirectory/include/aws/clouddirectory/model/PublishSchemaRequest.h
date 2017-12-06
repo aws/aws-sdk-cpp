@@ -88,39 +88,96 @@ namespace Model
 
 
     /**
-     * <p>The version under which the schema will be published.</p>
+     * <p>The major version under which the schema will be published. Schemas have both
+     * a major and minor version associated with them.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>The version under which the schema will be published.</p>
+     * <p>The major version under which the schema will be published. Schemas have both
+     * a major and minor version associated with them.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>The version under which the schema will be published.</p>
+     * <p>The major version under which the schema will be published. Schemas have both
+     * a major and minor version associated with them.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>The version under which the schema will be published.</p>
+     * <p>The major version under which the schema will be published. Schemas have both
+     * a major and minor version associated with them.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>The version under which the schema will be published.</p>
+     * <p>The major version under which the schema will be published. Schemas have both
+     * a major and minor version associated with them.</p>
      */
     inline PublishSchemaRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The version under which the schema will be published.</p>
+     * <p>The major version under which the schema will be published. Schemas have both
+     * a major and minor version associated with them.</p>
      */
     inline PublishSchemaRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version under which the schema will be published.</p>
+     * <p>The major version under which the schema will be published. Schemas have both
+     * a major and minor version associated with them.</p>
      */
     inline PublishSchemaRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
+
+
+    /**
+     * <p>The minor version under which the schema will be published. This parameter is
+     * recommended. Schemas have both a major and minor version associated with
+     * them.</p>
+     */
+    inline const Aws::String& GetMinorVersion() const{ return m_minorVersion; }
+
+    /**
+     * <p>The minor version under which the schema will be published. This parameter is
+     * recommended. Schemas have both a major and minor version associated with
+     * them.</p>
+     */
+    inline void SetMinorVersion(const Aws::String& value) { m_minorVersionHasBeenSet = true; m_minorVersion = value; }
+
+    /**
+     * <p>The minor version under which the schema will be published. This parameter is
+     * recommended. Schemas have both a major and minor version associated with
+     * them.</p>
+     */
+    inline void SetMinorVersion(Aws::String&& value) { m_minorVersionHasBeenSet = true; m_minorVersion = std::move(value); }
+
+    /**
+     * <p>The minor version under which the schema will be published. This parameter is
+     * recommended. Schemas have both a major and minor version associated with
+     * them.</p>
+     */
+    inline void SetMinorVersion(const char* value) { m_minorVersionHasBeenSet = true; m_minorVersion.assign(value); }
+
+    /**
+     * <p>The minor version under which the schema will be published. This parameter is
+     * recommended. Schemas have both a major and minor version associated with
+     * them.</p>
+     */
+    inline PublishSchemaRequest& WithMinorVersion(const Aws::String& value) { SetMinorVersion(value); return *this;}
+
+    /**
+     * <p>The minor version under which the schema will be published. This parameter is
+     * recommended. Schemas have both a major and minor version associated with
+     * them.</p>
+     */
+    inline PublishSchemaRequest& WithMinorVersion(Aws::String&& value) { SetMinorVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The minor version under which the schema will be published. This parameter is
+     * recommended. Schemas have both a major and minor version associated with
+     * them.</p>
+     */
+    inline PublishSchemaRequest& WithMinorVersion(const char* value) { SetMinorVersion(value); return *this;}
 
 
     /**
@@ -172,6 +229,9 @@ namespace Model
 
     Aws::String m_version;
     bool m_versionHasBeenSet;
+
+    Aws::String m_minorVersion;
+    bool m_minorVersionHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
