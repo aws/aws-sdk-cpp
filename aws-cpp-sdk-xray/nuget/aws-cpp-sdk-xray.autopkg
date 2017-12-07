@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-XRay;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.3.20160412.18;
+        version : 1.3.20160412.19;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS X-Ray);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.3.18
+            AWSSDKCPP-Core/1.3.19
        }
     }
 

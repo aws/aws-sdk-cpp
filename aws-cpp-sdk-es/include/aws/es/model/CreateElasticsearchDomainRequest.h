@@ -21,6 +21,7 @@
 #include <aws/es/model/EBSOptions.h>
 #include <aws/es/model/SnapshotOptions.h>
 #include <aws/es/model/VPCOptions.h>
+#include <aws/es/model/EncryptionAtRestOptions.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/es/model/LogType.h>
 #include <aws/es/model/LogPublishingOption.h>
@@ -346,6 +347,32 @@ namespace Model
 
 
     /**
+     * <p>Specifies the Encryption At Rest Options.</p>
+     */
+    inline const EncryptionAtRestOptions& GetEncryptionAtRestOptions() const{ return m_encryptionAtRestOptions; }
+
+    /**
+     * <p>Specifies the Encryption At Rest Options.</p>
+     */
+    inline void SetEncryptionAtRestOptions(const EncryptionAtRestOptions& value) { m_encryptionAtRestOptionsHasBeenSet = true; m_encryptionAtRestOptions = value; }
+
+    /**
+     * <p>Specifies the Encryption At Rest Options.</p>
+     */
+    inline void SetEncryptionAtRestOptions(EncryptionAtRestOptions&& value) { m_encryptionAtRestOptionsHasBeenSet = true; m_encryptionAtRestOptions = std::move(value); }
+
+    /**
+     * <p>Specifies the Encryption At Rest Options.</p>
+     */
+    inline CreateElasticsearchDomainRequest& WithEncryptionAtRestOptions(const EncryptionAtRestOptions& value) { SetEncryptionAtRestOptions(value); return *this;}
+
+    /**
+     * <p>Specifies the Encryption At Rest Options.</p>
+     */
+    inline CreateElasticsearchDomainRequest& WithEncryptionAtRestOptions(EncryptionAtRestOptions&& value) { SetEncryptionAtRestOptions(std::move(value)); return *this;}
+
+
+    /**
      * <p> Option to allow references to indices in an HTTP request body. Must be
      * <code>false</code> when configuring access to individual sub-resources. By
      * default, the value is <code>true</code>. See <a
@@ -530,6 +557,9 @@ namespace Model
 
     VPCOptions m_vPCOptions;
     bool m_vPCOptionsHasBeenSet;
+
+    EncryptionAtRestOptions m_encryptionAtRestOptions;
+    bool m_encryptionAtRestOptionsHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_advancedOptions;
     bool m_advancedOptionsHasBeenSet;

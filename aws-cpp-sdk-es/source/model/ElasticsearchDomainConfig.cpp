@@ -35,6 +35,7 @@ ElasticsearchDomainConfig::ElasticsearchDomainConfig() :
     m_accessPoliciesHasBeenSet(false),
     m_snapshotOptionsHasBeenSet(false),
     m_vPCOptionsHasBeenSet(false),
+    m_encryptionAtRestOptionsHasBeenSet(false),
     m_advancedOptionsHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false)
 {
@@ -47,6 +48,7 @@ ElasticsearchDomainConfig::ElasticsearchDomainConfig(const JsonValue& jsonValue)
     m_accessPoliciesHasBeenSet(false),
     m_snapshotOptionsHasBeenSet(false),
     m_vPCOptionsHasBeenSet(false),
+    m_encryptionAtRestOptionsHasBeenSet(false),
     m_advancedOptionsHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false)
 {
@@ -95,6 +97,13 @@ ElasticsearchDomainConfig& ElasticsearchDomainConfig::operator =(const JsonValue
     m_vPCOptions = jsonValue.GetObject("VPCOptions");
 
     m_vPCOptionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EncryptionAtRestOptions"))
+  {
+    m_encryptionAtRestOptions = jsonValue.GetObject("EncryptionAtRestOptions");
+
+    m_encryptionAtRestOptionsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AdvancedOptions"))
@@ -151,6 +160,12 @@ JsonValue ElasticsearchDomainConfig::Jsonize() const
   if(m_vPCOptionsHasBeenSet)
   {
    payload.WithObject("VPCOptions", m_vPCOptions.Jsonize());
+
+  }
+
+  if(m_encryptionAtRestOptionsHasBeenSet)
+  {
+   payload.WithObject("EncryptionAtRestOptions", m_encryptionAtRestOptions.Jsonize());
 
   }
 
