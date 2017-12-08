@@ -57,6 +57,8 @@ MetricAlarm::MetricAlarm() :
     m_unitHasBeenSet(false),
     m_evaluationPeriods(0),
     m_evaluationPeriodsHasBeenSet(false),
+    m_datapointsToAlarm(0),
+    m_datapointsToAlarmHasBeenSet(false),
     m_threshold(0.0),
     m_thresholdHasBeenSet(false),
     m_comparisonOperator(ComparisonOperator::NOT_SET),
@@ -93,6 +95,8 @@ MetricAlarm::MetricAlarm(const XmlNode& xmlNode) :
     m_unitHasBeenSet(false),
     m_evaluationPeriods(0),
     m_evaluationPeriodsHasBeenSet(false),
+    m_datapointsToAlarm(0),
+    m_datapointsToAlarmHasBeenSet(false),
     m_threshold(0.0),
     m_thresholdHasBeenSet(false),
     m_comparisonOperator(ComparisonOperator::NOT_SET),
@@ -253,6 +257,12 @@ MetricAlarm& MetricAlarm::operator =(const XmlNode& xmlNode)
       m_evaluationPeriods = StringUtils::ConvertToInt32(StringUtils::Trim(evaluationPeriodsNode.GetText().c_str()).c_str());
       m_evaluationPeriodsHasBeenSet = true;
     }
+    XmlNode datapointsToAlarmNode = resultNode.FirstChild("DatapointsToAlarm");
+    if(!datapointsToAlarmNode.IsNull())
+    {
+      m_datapointsToAlarm = StringUtils::ConvertToInt32(StringUtils::Trim(datapointsToAlarmNode.GetText().c_str()).c_str());
+      m_datapointsToAlarmHasBeenSet = true;
+    }
     XmlNode thresholdNode = resultNode.FirstChild("Threshold");
     if(!thresholdNode.IsNull())
     {
@@ -402,6 +412,11 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".EvaluationPeriods=" << m_evaluationPeriods << "&";
   }
 
+  if(m_datapointsToAlarmHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DatapointsToAlarm=" << m_datapointsToAlarm << "&";
+  }
+
   if(m_thresholdHasBeenSet)
   {
         oStream << location << index << locationValue << ".Threshold=" << StringUtils::URLEncode(m_threshold) << "&";
@@ -523,6 +538,10 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_evaluationPeriodsHasBeenSet)
   {
       oStream << location << ".EvaluationPeriods=" << m_evaluationPeriods << "&";
+  }
+  if(m_datapointsToAlarmHasBeenSet)
+  {
+      oStream << location << ".DatapointsToAlarm=" << m_datapointsToAlarm << "&";
   }
   if(m_thresholdHasBeenSet)
   {

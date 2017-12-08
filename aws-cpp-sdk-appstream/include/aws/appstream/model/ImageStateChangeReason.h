@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the reason why the last state change occurred.</p><p><h3>See
+   * <p>Describes the reason why the last image state change occurred.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ImageStateChangeReason">AWS
    * API Reference</a></p>

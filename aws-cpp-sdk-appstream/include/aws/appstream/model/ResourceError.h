@@ -34,6 +34,11 @@ namespace AppStream
 namespace Model
 {
 
+  /**
+   * <p>Describes a resource error.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ResourceError">AWS
+   * API Reference</a></p>
+   */
   class AWS_APPSTREAM_API ResourceError
   {
   public:
@@ -43,57 +48,91 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>The error code.</p>
+     */
     inline const FleetErrorCode& GetErrorCode() const{ return m_errorCode; }
 
-    
+    /**
+     * <p>The error code.</p>
+     */
     inline void SetErrorCode(const FleetErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
-    
+    /**
+     * <p>The error code.</p>
+     */
     inline void SetErrorCode(FleetErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
-    
+    /**
+     * <p>The error code.</p>
+     */
     inline ResourceError& WithErrorCode(const FleetErrorCode& value) { SetErrorCode(value); return *this;}
 
-    
+    /**
+     * <p>The error code.</p>
+     */
     inline ResourceError& WithErrorCode(FleetErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The error message.</p>
+     */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
 
-    
+    /**
+     * <p>The error message.</p>
+     */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
 
-    
+    /**
+     * <p>The error message.</p>
+     */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
 
-    
+    /**
+     * <p>The error message.</p>
+     */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
 
-    
+    /**
+     * <p>The error message.</p>
+     */
     inline ResourceError& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
 
-    
+    /**
+     * <p>The error message.</p>
+     */
     inline ResourceError& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The error message.</p>
+     */
     inline ResourceError& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 
 
-    
+    /**
+     * <p>The time the error occurred.</p>
+     */
     inline const Aws::Utils::DateTime& GetErrorTimestamp() const{ return m_errorTimestamp; }
 
-    
+    /**
+     * <p>The time the error occurred.</p>
+     */
     inline void SetErrorTimestamp(const Aws::Utils::DateTime& value) { m_errorTimestampHasBeenSet = true; m_errorTimestamp = value; }
 
-    
+    /**
+     * <p>The time the error occurred.</p>
+     */
     inline void SetErrorTimestamp(Aws::Utils::DateTime&& value) { m_errorTimestampHasBeenSet = true; m_errorTimestamp = std::move(value); }
 
-    
+    /**
+     * <p>The time the error occurred.</p>
+     */
     inline ResourceError& WithErrorTimestamp(const Aws::Utils::DateTime& value) { SetErrorTimestamp(value); return *this;}
 
-    
+    /**
+     * <p>The time the error occurred.</p>
+     */
     inline ResourceError& WithErrorTimestamp(Aws::Utils::DateTime&& value) { SetErrorTimestamp(std::move(value)); return *this;}
 
   private:

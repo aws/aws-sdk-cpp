@@ -109,8 +109,12 @@ namespace Model
      * volume persists on the host container instance and where it is stored. If the
      * host parameter is empty, then the Docker daemon assigns a host path for your
      * data volume, but the data is not guaranteed to persist after the containers
-     * associated with it stop running.</p> <p>If you are using the Fargate launch
-     * type, the <code>host</code> parameter is not supported.</p>
+     * associated with it stop running.</p> <p>Windows containers can mount whole
+     * directories on the same drive as <code>$env:ProgramData</code>. Windows
+     * containers cannot mount directories on a different drive, and mount point cannot
+     * be across drives. For example, you can mount <code>C:\my\path:C:\my\path</code>
+     * and <code>D:\:D:\</code>, but not <code>D:\my\path:C:\my\path</code> or
+     * <code>D:\:C:\my\path</code>.</p>
      */
     inline const HostVolumeProperties& GetHost() const{ return m_host; }
 
@@ -119,8 +123,12 @@ namespace Model
      * volume persists on the host container instance and where it is stored. If the
      * host parameter is empty, then the Docker daemon assigns a host path for your
      * data volume, but the data is not guaranteed to persist after the containers
-     * associated with it stop running.</p> <p>If you are using the Fargate launch
-     * type, the <code>host</code> parameter is not supported.</p>
+     * associated with it stop running.</p> <p>Windows containers can mount whole
+     * directories on the same drive as <code>$env:ProgramData</code>. Windows
+     * containers cannot mount directories on a different drive, and mount point cannot
+     * be across drives. For example, you can mount <code>C:\my\path:C:\my\path</code>
+     * and <code>D:\:D:\</code>, but not <code>D:\my\path:C:\my\path</code> or
+     * <code>D:\:C:\my\path</code>.</p>
      */
     inline void SetHost(const HostVolumeProperties& value) { m_hostHasBeenSet = true; m_host = value; }
 
@@ -129,8 +137,12 @@ namespace Model
      * volume persists on the host container instance and where it is stored. If the
      * host parameter is empty, then the Docker daemon assigns a host path for your
      * data volume, but the data is not guaranteed to persist after the containers
-     * associated with it stop running.</p> <p>If you are using the Fargate launch
-     * type, the <code>host</code> parameter is not supported.</p>
+     * associated with it stop running.</p> <p>Windows containers can mount whole
+     * directories on the same drive as <code>$env:ProgramData</code>. Windows
+     * containers cannot mount directories on a different drive, and mount point cannot
+     * be across drives. For example, you can mount <code>C:\my\path:C:\my\path</code>
+     * and <code>D:\:D:\</code>, but not <code>D:\my\path:C:\my\path</code> or
+     * <code>D:\:C:\my\path</code>.</p>
      */
     inline void SetHost(HostVolumeProperties&& value) { m_hostHasBeenSet = true; m_host = std::move(value); }
 
@@ -139,8 +151,12 @@ namespace Model
      * volume persists on the host container instance and where it is stored. If the
      * host parameter is empty, then the Docker daemon assigns a host path for your
      * data volume, but the data is not guaranteed to persist after the containers
-     * associated with it stop running.</p> <p>If you are using the Fargate launch
-     * type, the <code>host</code> parameter is not supported.</p>
+     * associated with it stop running.</p> <p>Windows containers can mount whole
+     * directories on the same drive as <code>$env:ProgramData</code>. Windows
+     * containers cannot mount directories on a different drive, and mount point cannot
+     * be across drives. For example, you can mount <code>C:\my\path:C:\my\path</code>
+     * and <code>D:\:D:\</code>, but not <code>D:\my\path:C:\my\path</code> or
+     * <code>D:\:C:\my\path</code>.</p>
      */
     inline Volume& WithHost(const HostVolumeProperties& value) { SetHost(value); return *this;}
 
@@ -149,8 +165,12 @@ namespace Model
      * volume persists on the host container instance and where it is stored. If the
      * host parameter is empty, then the Docker daemon assigns a host path for your
      * data volume, but the data is not guaranteed to persist after the containers
-     * associated with it stop running.</p> <p>If you are using the Fargate launch
-     * type, the <code>host</code> parameter is not supported.</p>
+     * associated with it stop running.</p> <p>Windows containers can mount whole
+     * directories on the same drive as <code>$env:ProgramData</code>. Windows
+     * containers cannot mount directories on a different drive, and mount point cannot
+     * be across drives. For example, you can mount <code>C:\my\path:C:\my\path</code>
+     * and <code>D:\:D:\</code>, but not <code>D:\my\path:C:\my\path</code> or
+     * <code>D:\:C:\my\path</code>.</p>
      */
     inline Volume& WithHost(HostVolumeProperties&& value) { SetHost(std::move(value)); return *this;}
 

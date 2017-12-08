@@ -361,23 +361,18 @@ namespace Model
 
 
     /**
-     * <p>The number of <code>cpu</code> units reserved for the container. If your
-     * containers will be part of a task using the Fargate launch type, this field is
-     * optional and the only requirement is that the total amount of CPU reserved for
-     * all containers within a task be lower than the task <code>cpu</code> value.</p>
-     * <p>For containers that will be part of a task using the EC2 launch type, a
-     * container instance has 1,024 <code>cpu</code> units for every CPU core. This
-     * parameter specifies the minimum amount of CPU to reserve for a container, and
-     * containers share unallocated CPU units with other containers on the instance
-     * with the same ratio as their allocated amount. This parameter maps to
-     * <code>CpuShares</code> in the <a
+     * <p>The number of <code>cpu</code> units reserved for the container. This
+     * parameter maps to <code>CpuShares</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--cpu-shares</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
-     * <p>You can determine the number of CPU units that are available per EC2 instance
-     * type by multiplying the vCPUs listed for that instance type on the <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>This
+     * field is optional for tasks using the Fargate launch type, and the only
+     * requirement is that the total amount of CPU reserved for all containers within a
+     * task be lower than the task-level <code>cpu</code> value.</p> <note> <p>You can
+     * determine the number of CPU units that are available per EC2 instance type by
+     * multiplying the vCPUs listed for that instance type on the <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instances</a> detail
      * page by 1,024.</p> </note> <p>For example, if you run a single-container task on
      * a single-core instance type with 512 CPU units specified for that container, and
@@ -387,12 +382,22 @@ namespace Model
      * guaranteed a minimum of 512 CPU units when needed, and each container could
      * float to higher CPU usage if the other container was not using it, but if both
      * tasks were 100% active all of the time, they would be limited to 512 CPU
-     * units.</p> <p>The Docker daemon on the container instance uses the CPU value to
+     * units.</p> <p>Linux containers share unallocated CPU units with other containers
+     * on the container instance with the same ratio as their allocated amount. For
+     * example, if you run a single-container task on a single-core instance type with
+     * 512 CPU units specified for that container, and that is the only task running on
+     * the container instance, that container could use the full 1,024 CPU unit share
+     * at any given time. However, if you launched another copy of the same task on
+     * that container instance, each task would be guaranteed a minimum of 512 CPU
+     * units when needed, and each container could float to higher CPU usage if the
+     * other container was not using it, but if both tasks were 100% active all of the
+     * time, they would be limited to 512 CPU units.</p> <p>On Linux container
+     * instances, the Docker daemon on the container instance uses the CPU value to
      * calculate the relative CPU share ratios for running containers. For more
      * information, see <a
      * href="https://docs.docker.com/engine/reference/run/#cpu-share-constraint">CPU
      * share constraint</a> in the Docker documentation. The minimum valid CPU share
-     * value that the Linux kernel allows is 2; however, the CPU parameter is not
+     * value that the Linux kernel will allow is 2; however, the CPU parameter is not
      * required, and you can use CPU values below 2 in your container definitions. For
      * CPU values below 2 (including null), the behavior varies based on your Amazon
      * ECS container agent version:</p> <ul> <li> <p> <b>Agent versions less than or
@@ -400,28 +405,26 @@ namespace Model
      * Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker
      * as 1, which the Linux kernel converts to 2 CPU shares.</p> </li> <li> <p>
      * <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values
-     * of 1 are passed to Docker as 2.</p> </li> </ul>
+     * of 1 are passed to Docker as 2.</p> </li> </ul> <p>On Windows container
+     * instances, the CPU limit is enforced as an absolute limit, or a quota. Windows
+     * containers only have access to the specified amount of CPU that is described in
+     * the task definition.</p>
      */
     inline int GetCpu() const{ return m_cpu; }
 
     /**
-     * <p>The number of <code>cpu</code> units reserved for the container. If your
-     * containers will be part of a task using the Fargate launch type, this field is
-     * optional and the only requirement is that the total amount of CPU reserved for
-     * all containers within a task be lower than the task <code>cpu</code> value.</p>
-     * <p>For containers that will be part of a task using the EC2 launch type, a
-     * container instance has 1,024 <code>cpu</code> units for every CPU core. This
-     * parameter specifies the minimum amount of CPU to reserve for a container, and
-     * containers share unallocated CPU units with other containers on the instance
-     * with the same ratio as their allocated amount. This parameter maps to
-     * <code>CpuShares</code> in the <a
+     * <p>The number of <code>cpu</code> units reserved for the container. This
+     * parameter maps to <code>CpuShares</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--cpu-shares</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
-     * <p>You can determine the number of CPU units that are available per EC2 instance
-     * type by multiplying the vCPUs listed for that instance type on the <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>This
+     * field is optional for tasks using the Fargate launch type, and the only
+     * requirement is that the total amount of CPU reserved for all containers within a
+     * task be lower than the task-level <code>cpu</code> value.</p> <note> <p>You can
+     * determine the number of CPU units that are available per EC2 instance type by
+     * multiplying the vCPUs listed for that instance type on the <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instances</a> detail
      * page by 1,024.</p> </note> <p>For example, if you run a single-container task on
      * a single-core instance type with 512 CPU units specified for that container, and
@@ -431,12 +434,22 @@ namespace Model
      * guaranteed a minimum of 512 CPU units when needed, and each container could
      * float to higher CPU usage if the other container was not using it, but if both
      * tasks were 100% active all of the time, they would be limited to 512 CPU
-     * units.</p> <p>The Docker daemon on the container instance uses the CPU value to
+     * units.</p> <p>Linux containers share unallocated CPU units with other containers
+     * on the container instance with the same ratio as their allocated amount. For
+     * example, if you run a single-container task on a single-core instance type with
+     * 512 CPU units specified for that container, and that is the only task running on
+     * the container instance, that container could use the full 1,024 CPU unit share
+     * at any given time. However, if you launched another copy of the same task on
+     * that container instance, each task would be guaranteed a minimum of 512 CPU
+     * units when needed, and each container could float to higher CPU usage if the
+     * other container was not using it, but if both tasks were 100% active all of the
+     * time, they would be limited to 512 CPU units.</p> <p>On Linux container
+     * instances, the Docker daemon on the container instance uses the CPU value to
      * calculate the relative CPU share ratios for running containers. For more
      * information, see <a
      * href="https://docs.docker.com/engine/reference/run/#cpu-share-constraint">CPU
      * share constraint</a> in the Docker documentation. The minimum valid CPU share
-     * value that the Linux kernel allows is 2; however, the CPU parameter is not
+     * value that the Linux kernel will allow is 2; however, the CPU parameter is not
      * required, and you can use CPU values below 2 in your container definitions. For
      * CPU values below 2 (including null), the behavior varies based on your Amazon
      * ECS container agent version:</p> <ul> <li> <p> <b>Agent versions less than or
@@ -444,28 +457,26 @@ namespace Model
      * Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker
      * as 1, which the Linux kernel converts to 2 CPU shares.</p> </li> <li> <p>
      * <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values
-     * of 1 are passed to Docker as 2.</p> </li> </ul>
+     * of 1 are passed to Docker as 2.</p> </li> </ul> <p>On Windows container
+     * instances, the CPU limit is enforced as an absolute limit, or a quota. Windows
+     * containers only have access to the specified amount of CPU that is described in
+     * the task definition.</p>
      */
     inline void SetCpu(int value) { m_cpuHasBeenSet = true; m_cpu = value; }
 
     /**
-     * <p>The number of <code>cpu</code> units reserved for the container. If your
-     * containers will be part of a task using the Fargate launch type, this field is
-     * optional and the only requirement is that the total amount of CPU reserved for
-     * all containers within a task be lower than the task <code>cpu</code> value.</p>
-     * <p>For containers that will be part of a task using the EC2 launch type, a
-     * container instance has 1,024 <code>cpu</code> units for every CPU core. This
-     * parameter specifies the minimum amount of CPU to reserve for a container, and
-     * containers share unallocated CPU units with other containers on the instance
-     * with the same ratio as their allocated amount. This parameter maps to
-     * <code>CpuShares</code> in the <a
+     * <p>The number of <code>cpu</code> units reserved for the container. This
+     * parameter maps to <code>CpuShares</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--cpu-shares</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
-     * <p>You can determine the number of CPU units that are available per EC2 instance
-     * type by multiplying the vCPUs listed for that instance type on the <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>This
+     * field is optional for tasks using the Fargate launch type, and the only
+     * requirement is that the total amount of CPU reserved for all containers within a
+     * task be lower than the task-level <code>cpu</code> value.</p> <note> <p>You can
+     * determine the number of CPU units that are available per EC2 instance type by
+     * multiplying the vCPUs listed for that instance type on the <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instances</a> detail
      * page by 1,024.</p> </note> <p>For example, if you run a single-container task on
      * a single-core instance type with 512 CPU units specified for that container, and
@@ -475,12 +486,22 @@ namespace Model
      * guaranteed a minimum of 512 CPU units when needed, and each container could
      * float to higher CPU usage if the other container was not using it, but if both
      * tasks were 100% active all of the time, they would be limited to 512 CPU
-     * units.</p> <p>The Docker daemon on the container instance uses the CPU value to
+     * units.</p> <p>Linux containers share unallocated CPU units with other containers
+     * on the container instance with the same ratio as their allocated amount. For
+     * example, if you run a single-container task on a single-core instance type with
+     * 512 CPU units specified for that container, and that is the only task running on
+     * the container instance, that container could use the full 1,024 CPU unit share
+     * at any given time. However, if you launched another copy of the same task on
+     * that container instance, each task would be guaranteed a minimum of 512 CPU
+     * units when needed, and each container could float to higher CPU usage if the
+     * other container was not using it, but if both tasks were 100% active all of the
+     * time, they would be limited to 512 CPU units.</p> <p>On Linux container
+     * instances, the Docker daemon on the container instance uses the CPU value to
      * calculate the relative CPU share ratios for running containers. For more
      * information, see <a
      * href="https://docs.docker.com/engine/reference/run/#cpu-share-constraint">CPU
      * share constraint</a> in the Docker documentation. The minimum valid CPU share
-     * value that the Linux kernel allows is 2; however, the CPU parameter is not
+     * value that the Linux kernel will allow is 2; however, the CPU parameter is not
      * required, and you can use CPU values below 2 in your container definitions. For
      * CPU values below 2 (including null), the behavior varies based on your Amazon
      * ECS container agent version:</p> <ul> <li> <p> <b>Agent versions less than or
@@ -488,7 +509,10 @@ namespace Model
      * Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker
      * as 1, which the Linux kernel converts to 2 CPU shares.</p> </li> <li> <p>
      * <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values
-     * of 1 are passed to Docker as 2.</p> </li> </ul>
+     * of 1 are passed to Docker as 2.</p> </li> </ul> <p>On Windows container
+     * instances, the CPU limit is enforced as an absolute limit, or a quota. Windows
+     * containers only have access to the specified amount of CPU that is described in
+     * the task definition.</p>
      */
     inline ContainerDefinition& WithCpu(int value) { SetCpu(value); return *this;}
 
@@ -653,185 +677,185 @@ namespace Model
 
     /**
      * <p>The <code>link</code> parameter allows containers to communicate with each
-     * other without the need for port mappings, using the <code>name</code> parameter
-     * and optionally, an <code>alias</code> for the link. This construct is analogous
-     * to <code>name:alias</code> in Docker links. This field is not valid for
-     * containers in tasks using the Fargate launch type. Up to 255 letters (uppercase
-     * and lowercase), numbers, hyphens, and underscores are allowed for each
-     * <code>name</code> and <code>alias</code>. For more information on linking Docker
-     * containers, see <a
+     * other without the need for port mappings. Only supported if the network mode of
+     * a task definition is set to <code>bridge</code>. The
+     * <code>name:internalName</code> construct is analogous to <code>name:alias</code>
+     * in Docker links. Up to 255 letters (uppercase and lowercase), numbers, hyphens,
+     * and underscores are allowed. For more information about linking Docker
+     * containers, go to <a
      * href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/">https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>.
      * This parameter maps to <code>Links</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     * <important> <p>Containers that are collocated on a single container instance may
-     * be able to communicate with each other without requiring links or host port
-     * mappings. Network isolation is achieved on the container instance using security
-     * groups and VPC settings.</p> </important>
+     * href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker
+     * run</code> </a>.</p> <note> <p>This parameter is not supported for Windows
+     * containers.</p> </note> <important> <p>Containers that are collocated on a
+     * single container instance may be able to communicate with each other without
+     * requiring links or host port mappings. Network isolation is achieved on the
+     * container instance using security groups and VPC settings.</p> </important>
      */
     inline const Aws::Vector<Aws::String>& GetLinks() const{ return m_links; }
 
     /**
      * <p>The <code>link</code> parameter allows containers to communicate with each
-     * other without the need for port mappings, using the <code>name</code> parameter
-     * and optionally, an <code>alias</code> for the link. This construct is analogous
-     * to <code>name:alias</code> in Docker links. This field is not valid for
-     * containers in tasks using the Fargate launch type. Up to 255 letters (uppercase
-     * and lowercase), numbers, hyphens, and underscores are allowed for each
-     * <code>name</code> and <code>alias</code>. For more information on linking Docker
-     * containers, see <a
+     * other without the need for port mappings. Only supported if the network mode of
+     * a task definition is set to <code>bridge</code>. The
+     * <code>name:internalName</code> construct is analogous to <code>name:alias</code>
+     * in Docker links. Up to 255 letters (uppercase and lowercase), numbers, hyphens,
+     * and underscores are allowed. For more information about linking Docker
+     * containers, go to <a
      * href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/">https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>.
      * This parameter maps to <code>Links</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     * <important> <p>Containers that are collocated on a single container instance may
-     * be able to communicate with each other without requiring links or host port
-     * mappings. Network isolation is achieved on the container instance using security
-     * groups and VPC settings.</p> </important>
+     * href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker
+     * run</code> </a>.</p> <note> <p>This parameter is not supported for Windows
+     * containers.</p> </note> <important> <p>Containers that are collocated on a
+     * single container instance may be able to communicate with each other without
+     * requiring links or host port mappings. Network isolation is achieved on the
+     * container instance using security groups and VPC settings.</p> </important>
      */
     inline void SetLinks(const Aws::Vector<Aws::String>& value) { m_linksHasBeenSet = true; m_links = value; }
 
     /**
      * <p>The <code>link</code> parameter allows containers to communicate with each
-     * other without the need for port mappings, using the <code>name</code> parameter
-     * and optionally, an <code>alias</code> for the link. This construct is analogous
-     * to <code>name:alias</code> in Docker links. This field is not valid for
-     * containers in tasks using the Fargate launch type. Up to 255 letters (uppercase
-     * and lowercase), numbers, hyphens, and underscores are allowed for each
-     * <code>name</code> and <code>alias</code>. For more information on linking Docker
-     * containers, see <a
+     * other without the need for port mappings. Only supported if the network mode of
+     * a task definition is set to <code>bridge</code>. The
+     * <code>name:internalName</code> construct is analogous to <code>name:alias</code>
+     * in Docker links. Up to 255 letters (uppercase and lowercase), numbers, hyphens,
+     * and underscores are allowed. For more information about linking Docker
+     * containers, go to <a
      * href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/">https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>.
      * This parameter maps to <code>Links</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     * <important> <p>Containers that are collocated on a single container instance may
-     * be able to communicate with each other without requiring links or host port
-     * mappings. Network isolation is achieved on the container instance using security
-     * groups and VPC settings.</p> </important>
+     * href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker
+     * run</code> </a>.</p> <note> <p>This parameter is not supported for Windows
+     * containers.</p> </note> <important> <p>Containers that are collocated on a
+     * single container instance may be able to communicate with each other without
+     * requiring links or host port mappings. Network isolation is achieved on the
+     * container instance using security groups and VPC settings.</p> </important>
      */
     inline void SetLinks(Aws::Vector<Aws::String>&& value) { m_linksHasBeenSet = true; m_links = std::move(value); }
 
     /**
      * <p>The <code>link</code> parameter allows containers to communicate with each
-     * other without the need for port mappings, using the <code>name</code> parameter
-     * and optionally, an <code>alias</code> for the link. This construct is analogous
-     * to <code>name:alias</code> in Docker links. This field is not valid for
-     * containers in tasks using the Fargate launch type. Up to 255 letters (uppercase
-     * and lowercase), numbers, hyphens, and underscores are allowed for each
-     * <code>name</code> and <code>alias</code>. For more information on linking Docker
-     * containers, see <a
+     * other without the need for port mappings. Only supported if the network mode of
+     * a task definition is set to <code>bridge</code>. The
+     * <code>name:internalName</code> construct is analogous to <code>name:alias</code>
+     * in Docker links. Up to 255 letters (uppercase and lowercase), numbers, hyphens,
+     * and underscores are allowed. For more information about linking Docker
+     * containers, go to <a
      * href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/">https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>.
      * This parameter maps to <code>Links</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     * <important> <p>Containers that are collocated on a single container instance may
-     * be able to communicate with each other without requiring links or host port
-     * mappings. Network isolation is achieved on the container instance using security
-     * groups and VPC settings.</p> </important>
+     * href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker
+     * run</code> </a>.</p> <note> <p>This parameter is not supported for Windows
+     * containers.</p> </note> <important> <p>Containers that are collocated on a
+     * single container instance may be able to communicate with each other without
+     * requiring links or host port mappings. Network isolation is achieved on the
+     * container instance using security groups and VPC settings.</p> </important>
      */
     inline ContainerDefinition& WithLinks(const Aws::Vector<Aws::String>& value) { SetLinks(value); return *this;}
 
     /**
      * <p>The <code>link</code> parameter allows containers to communicate with each
-     * other without the need for port mappings, using the <code>name</code> parameter
-     * and optionally, an <code>alias</code> for the link. This construct is analogous
-     * to <code>name:alias</code> in Docker links. This field is not valid for
-     * containers in tasks using the Fargate launch type. Up to 255 letters (uppercase
-     * and lowercase), numbers, hyphens, and underscores are allowed for each
-     * <code>name</code> and <code>alias</code>. For more information on linking Docker
-     * containers, see <a
+     * other without the need for port mappings. Only supported if the network mode of
+     * a task definition is set to <code>bridge</code>. The
+     * <code>name:internalName</code> construct is analogous to <code>name:alias</code>
+     * in Docker links. Up to 255 letters (uppercase and lowercase), numbers, hyphens,
+     * and underscores are allowed. For more information about linking Docker
+     * containers, go to <a
      * href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/">https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>.
      * This parameter maps to <code>Links</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     * <important> <p>Containers that are collocated on a single container instance may
-     * be able to communicate with each other without requiring links or host port
-     * mappings. Network isolation is achieved on the container instance using security
-     * groups and VPC settings.</p> </important>
+     * href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker
+     * run</code> </a>.</p> <note> <p>This parameter is not supported for Windows
+     * containers.</p> </note> <important> <p>Containers that are collocated on a
+     * single container instance may be able to communicate with each other without
+     * requiring links or host port mappings. Network isolation is achieved on the
+     * container instance using security groups and VPC settings.</p> </important>
      */
     inline ContainerDefinition& WithLinks(Aws::Vector<Aws::String>&& value) { SetLinks(std::move(value)); return *this;}
 
     /**
      * <p>The <code>link</code> parameter allows containers to communicate with each
-     * other without the need for port mappings, using the <code>name</code> parameter
-     * and optionally, an <code>alias</code> for the link. This construct is analogous
-     * to <code>name:alias</code> in Docker links. This field is not valid for
-     * containers in tasks using the Fargate launch type. Up to 255 letters (uppercase
-     * and lowercase), numbers, hyphens, and underscores are allowed for each
-     * <code>name</code> and <code>alias</code>. For more information on linking Docker
-     * containers, see <a
+     * other without the need for port mappings. Only supported if the network mode of
+     * a task definition is set to <code>bridge</code>. The
+     * <code>name:internalName</code> construct is analogous to <code>name:alias</code>
+     * in Docker links. Up to 255 letters (uppercase and lowercase), numbers, hyphens,
+     * and underscores are allowed. For more information about linking Docker
+     * containers, go to <a
      * href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/">https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>.
      * This parameter maps to <code>Links</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     * <important> <p>Containers that are collocated on a single container instance may
-     * be able to communicate with each other without requiring links or host port
-     * mappings. Network isolation is achieved on the container instance using security
-     * groups and VPC settings.</p> </important>
+     * href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker
+     * run</code> </a>.</p> <note> <p>This parameter is not supported for Windows
+     * containers.</p> </note> <important> <p>Containers that are collocated on a
+     * single container instance may be able to communicate with each other without
+     * requiring links or host port mappings. Network isolation is achieved on the
+     * container instance using security groups and VPC settings.</p> </important>
      */
     inline ContainerDefinition& AddLinks(const Aws::String& value) { m_linksHasBeenSet = true; m_links.push_back(value); return *this; }
 
     /**
      * <p>The <code>link</code> parameter allows containers to communicate with each
-     * other without the need for port mappings, using the <code>name</code> parameter
-     * and optionally, an <code>alias</code> for the link. This construct is analogous
-     * to <code>name:alias</code> in Docker links. This field is not valid for
-     * containers in tasks using the Fargate launch type. Up to 255 letters (uppercase
-     * and lowercase), numbers, hyphens, and underscores are allowed for each
-     * <code>name</code> and <code>alias</code>. For more information on linking Docker
-     * containers, see <a
+     * other without the need for port mappings. Only supported if the network mode of
+     * a task definition is set to <code>bridge</code>. The
+     * <code>name:internalName</code> construct is analogous to <code>name:alias</code>
+     * in Docker links. Up to 255 letters (uppercase and lowercase), numbers, hyphens,
+     * and underscores are allowed. For more information about linking Docker
+     * containers, go to <a
      * href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/">https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>.
      * This parameter maps to <code>Links</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     * <important> <p>Containers that are collocated on a single container instance may
-     * be able to communicate with each other without requiring links or host port
-     * mappings. Network isolation is achieved on the container instance using security
-     * groups and VPC settings.</p> </important>
+     * href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker
+     * run</code> </a>.</p> <note> <p>This parameter is not supported for Windows
+     * containers.</p> </note> <important> <p>Containers that are collocated on a
+     * single container instance may be able to communicate with each other without
+     * requiring links or host port mappings. Network isolation is achieved on the
+     * container instance using security groups and VPC settings.</p> </important>
      */
     inline ContainerDefinition& AddLinks(Aws::String&& value) { m_linksHasBeenSet = true; m_links.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The <code>link</code> parameter allows containers to communicate with each
-     * other without the need for port mappings, using the <code>name</code> parameter
-     * and optionally, an <code>alias</code> for the link. This construct is analogous
-     * to <code>name:alias</code> in Docker links. This field is not valid for
-     * containers in tasks using the Fargate launch type. Up to 255 letters (uppercase
-     * and lowercase), numbers, hyphens, and underscores are allowed for each
-     * <code>name</code> and <code>alias</code>. For more information on linking Docker
-     * containers, see <a
+     * other without the need for port mappings. Only supported if the network mode of
+     * a task definition is set to <code>bridge</code>. The
+     * <code>name:internalName</code> construct is analogous to <code>name:alias</code>
+     * in Docker links. Up to 255 letters (uppercase and lowercase), numbers, hyphens,
+     * and underscores are allowed. For more information about linking Docker
+     * containers, go to <a
      * href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/">https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>.
      * This parameter maps to <code>Links</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     * <important> <p>Containers that are collocated on a single container instance may
-     * be able to communicate with each other without requiring links or host port
-     * mappings. Network isolation is achieved on the container instance using security
-     * groups and VPC settings.</p> </important>
+     * href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker
+     * run</code> </a>.</p> <note> <p>This parameter is not supported for Windows
+     * containers.</p> </note> <important> <p>Containers that are collocated on a
+     * single container instance may be able to communicate with each other without
+     * requiring links or host port mappings. Network isolation is achieved on the
+     * container instance using security groups and VPC settings.</p> </important>
      */
     inline ContainerDefinition& AddLinks(const char* value) { m_linksHasBeenSet = true; m_links.push_back(value); return *this; }
 
@@ -839,10 +863,14 @@ namespace Model
     /**
      * <p>The list of port mappings for the container. Port mappings allow containers
      * to access ports on the host container instance to send or receive traffic.</p>
-     * <p>If using containers in a task with the Fargate, exposed ports should be
-     * specified using <code>containerPort</code>. The <code>hostPort</code> can be
-     * left blank or it must be the same value as the <code>containerPort</code>.</p>
-     * <p>This parameter maps to <code>PortBindings</code> in the <a
+     * <p>For task definitions that use the <code>awsvpc</code> network mode, you
+     * should only specify the <code>containerPort</code>. The <code>hostPort</code>
+     * can be left blank or it must be the same value as the
+     * <code>containerPort</code>.</p> <p>Port mappings on Windows use the
+     * <code>NetNAT</code> gateway address rather than <code>localhost</code>. There is
+     * no loopback for port mappings on Windows, so you cannot access a container's
+     * mapped port from the host itself. </p> <p>This parameter maps to
+     * <code>PortBindings</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
@@ -862,10 +890,14 @@ namespace Model
     /**
      * <p>The list of port mappings for the container. Port mappings allow containers
      * to access ports on the host container instance to send or receive traffic.</p>
-     * <p>If using containers in a task with the Fargate, exposed ports should be
-     * specified using <code>containerPort</code>. The <code>hostPort</code> can be
-     * left blank or it must be the same value as the <code>containerPort</code>.</p>
-     * <p>This parameter maps to <code>PortBindings</code> in the <a
+     * <p>For task definitions that use the <code>awsvpc</code> network mode, you
+     * should only specify the <code>containerPort</code>. The <code>hostPort</code>
+     * can be left blank or it must be the same value as the
+     * <code>containerPort</code>.</p> <p>Port mappings on Windows use the
+     * <code>NetNAT</code> gateway address rather than <code>localhost</code>. There is
+     * no loopback for port mappings on Windows, so you cannot access a container's
+     * mapped port from the host itself. </p> <p>This parameter maps to
+     * <code>PortBindings</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
@@ -885,10 +917,14 @@ namespace Model
     /**
      * <p>The list of port mappings for the container. Port mappings allow containers
      * to access ports on the host container instance to send or receive traffic.</p>
-     * <p>If using containers in a task with the Fargate, exposed ports should be
-     * specified using <code>containerPort</code>. The <code>hostPort</code> can be
-     * left blank or it must be the same value as the <code>containerPort</code>.</p>
-     * <p>This parameter maps to <code>PortBindings</code> in the <a
+     * <p>For task definitions that use the <code>awsvpc</code> network mode, you
+     * should only specify the <code>containerPort</code>. The <code>hostPort</code>
+     * can be left blank or it must be the same value as the
+     * <code>containerPort</code>.</p> <p>Port mappings on Windows use the
+     * <code>NetNAT</code> gateway address rather than <code>localhost</code>. There is
+     * no loopback for port mappings on Windows, so you cannot access a container's
+     * mapped port from the host itself. </p> <p>This parameter maps to
+     * <code>PortBindings</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
@@ -908,10 +944,14 @@ namespace Model
     /**
      * <p>The list of port mappings for the container. Port mappings allow containers
      * to access ports on the host container instance to send or receive traffic.</p>
-     * <p>If using containers in a task with the Fargate, exposed ports should be
-     * specified using <code>containerPort</code>. The <code>hostPort</code> can be
-     * left blank or it must be the same value as the <code>containerPort</code>.</p>
-     * <p>This parameter maps to <code>PortBindings</code> in the <a
+     * <p>For task definitions that use the <code>awsvpc</code> network mode, you
+     * should only specify the <code>containerPort</code>. The <code>hostPort</code>
+     * can be left blank or it must be the same value as the
+     * <code>containerPort</code>.</p> <p>Port mappings on Windows use the
+     * <code>NetNAT</code> gateway address rather than <code>localhost</code>. There is
+     * no loopback for port mappings on Windows, so you cannot access a container's
+     * mapped port from the host itself. </p> <p>This parameter maps to
+     * <code>PortBindings</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
@@ -931,10 +971,14 @@ namespace Model
     /**
      * <p>The list of port mappings for the container. Port mappings allow containers
      * to access ports on the host container instance to send or receive traffic.</p>
-     * <p>If using containers in a task with the Fargate, exposed ports should be
-     * specified using <code>containerPort</code>. The <code>hostPort</code> can be
-     * left blank or it must be the same value as the <code>containerPort</code>.</p>
-     * <p>This parameter maps to <code>PortBindings</code> in the <a
+     * <p>For task definitions that use the <code>awsvpc</code> network mode, you
+     * should only specify the <code>containerPort</code>. The <code>hostPort</code>
+     * can be left blank or it must be the same value as the
+     * <code>containerPort</code>.</p> <p>Port mappings on Windows use the
+     * <code>NetNAT</code> gateway address rather than <code>localhost</code>. There is
+     * no loopback for port mappings on Windows, so you cannot access a container's
+     * mapped port from the host itself. </p> <p>This parameter maps to
+     * <code>PortBindings</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
@@ -954,10 +998,14 @@ namespace Model
     /**
      * <p>The list of port mappings for the container. Port mappings allow containers
      * to access ports on the host container instance to send or receive traffic.</p>
-     * <p>If using containers in a task with the Fargate, exposed ports should be
-     * specified using <code>containerPort</code>. The <code>hostPort</code> can be
-     * left blank or it must be the same value as the <code>containerPort</code>.</p>
-     * <p>This parameter maps to <code>PortBindings</code> in the <a
+     * <p>For task definitions that use the <code>awsvpc</code> network mode, you
+     * should only specify the <code>containerPort</code>. The <code>hostPort</code>
+     * can be left blank or it must be the same value as the
+     * <code>containerPort</code>.</p> <p>Port mappings on Windows use the
+     * <code>NetNAT</code> gateway address rather than <code>localhost</code>. There is
+     * no loopback for port mappings on Windows, so you cannot access a container's
+     * mapped port from the host itself. </p> <p>This parameter maps to
+     * <code>PortBindings</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
@@ -977,10 +1025,14 @@ namespace Model
     /**
      * <p>The list of port mappings for the container. Port mappings allow containers
      * to access ports on the host container instance to send or receive traffic.</p>
-     * <p>If using containers in a task with the Fargate, exposed ports should be
-     * specified using <code>containerPort</code>. The <code>hostPort</code> can be
-     * left blank or it must be the same value as the <code>containerPort</code>.</p>
-     * <p>This parameter maps to <code>PortBindings</code> in the <a
+     * <p>For task definitions that use the <code>awsvpc</code> network mode, you
+     * should only specify the <code>containerPort</code>. The <code>hostPort</code>
+     * can be left blank or it must be the same value as the
+     * <code>containerPort</code>.</p> <p>Port mappings on Windows use the
+     * <code>NetNAT</code> gateway address rather than <code>localhost</code>. There is
+     * no loopback for port mappings on Windows, so you cannot access a container's
+     * mapped port from the host itself. </p> <p>This parameter maps to
+     * <code>PortBindings</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
@@ -1385,86 +1437,100 @@ namespace Model
 
 
     /**
-     * <p>The mount points for data volumes in your container.</p> <p>If using the
-     * Fargate launch type, the <code>sourceVolume</code> parameter is not
-     * supported.</p> <p>This parameter maps to <code>Volumes</code> in the <a
+     * <p>The mount points for data volumes in your container.</p> <p>This parameter
+     * maps to <code>Volumes</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--volume</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * <p>Windows containers can mount whole directories on the same drive as
+     * <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
+     * different drive, and mount point cannot be across drives.</p>
      */
     inline const Aws::Vector<MountPoint>& GetMountPoints() const{ return m_mountPoints; }
 
     /**
-     * <p>The mount points for data volumes in your container.</p> <p>If using the
-     * Fargate launch type, the <code>sourceVolume</code> parameter is not
-     * supported.</p> <p>This parameter maps to <code>Volumes</code> in the <a
+     * <p>The mount points for data volumes in your container.</p> <p>This parameter
+     * maps to <code>Volumes</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--volume</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * <p>Windows containers can mount whole directories on the same drive as
+     * <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
+     * different drive, and mount point cannot be across drives.</p>
      */
     inline void SetMountPoints(const Aws::Vector<MountPoint>& value) { m_mountPointsHasBeenSet = true; m_mountPoints = value; }
 
     /**
-     * <p>The mount points for data volumes in your container.</p> <p>If using the
-     * Fargate launch type, the <code>sourceVolume</code> parameter is not
-     * supported.</p> <p>This parameter maps to <code>Volumes</code> in the <a
+     * <p>The mount points for data volumes in your container.</p> <p>This parameter
+     * maps to <code>Volumes</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--volume</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * <p>Windows containers can mount whole directories on the same drive as
+     * <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
+     * different drive, and mount point cannot be across drives.</p>
      */
     inline void SetMountPoints(Aws::Vector<MountPoint>&& value) { m_mountPointsHasBeenSet = true; m_mountPoints = std::move(value); }
 
     /**
-     * <p>The mount points for data volumes in your container.</p> <p>If using the
-     * Fargate launch type, the <code>sourceVolume</code> parameter is not
-     * supported.</p> <p>This parameter maps to <code>Volumes</code> in the <a
+     * <p>The mount points for data volumes in your container.</p> <p>This parameter
+     * maps to <code>Volumes</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--volume</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * <p>Windows containers can mount whole directories on the same drive as
+     * <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
+     * different drive, and mount point cannot be across drives.</p>
      */
     inline ContainerDefinition& WithMountPoints(const Aws::Vector<MountPoint>& value) { SetMountPoints(value); return *this;}
 
     /**
-     * <p>The mount points for data volumes in your container.</p> <p>If using the
-     * Fargate launch type, the <code>sourceVolume</code> parameter is not
-     * supported.</p> <p>This parameter maps to <code>Volumes</code> in the <a
+     * <p>The mount points for data volumes in your container.</p> <p>This parameter
+     * maps to <code>Volumes</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--volume</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * <p>Windows containers can mount whole directories on the same drive as
+     * <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
+     * different drive, and mount point cannot be across drives.</p>
      */
     inline ContainerDefinition& WithMountPoints(Aws::Vector<MountPoint>&& value) { SetMountPoints(std::move(value)); return *this;}
 
     /**
-     * <p>The mount points for data volumes in your container.</p> <p>If using the
-     * Fargate launch type, the <code>sourceVolume</code> parameter is not
-     * supported.</p> <p>This parameter maps to <code>Volumes</code> in the <a
+     * <p>The mount points for data volumes in your container.</p> <p>This parameter
+     * maps to <code>Volumes</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--volume</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * <p>Windows containers can mount whole directories on the same drive as
+     * <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
+     * different drive, and mount point cannot be across drives.</p>
      */
     inline ContainerDefinition& AddMountPoints(const MountPoint& value) { m_mountPointsHasBeenSet = true; m_mountPoints.push_back(value); return *this; }
 
     /**
-     * <p>The mount points for data volumes in your container.</p> <p>If using the
-     * Fargate launch type, the <code>sourceVolume</code> parameter is not
-     * supported.</p> <p>This parameter maps to <code>Volumes</code> in the <a
+     * <p>The mount points for data volumes in your container.</p> <p>This parameter
+     * maps to <code>Volumes</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--volume</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * <p>Windows containers can mount whole directories on the same drive as
+     * <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
+     * different drive, and mount point cannot be across drives.</p>
      */
     inline ContainerDefinition& AddMountPoints(MountPoint&& value) { m_mountPointsHasBeenSet = true; m_mountPoints.push_back(std::move(value)); return *this; }
 
@@ -1549,36 +1615,36 @@ namespace Model
 
     /**
      * <p>Linux-specific modifications that are applied to the container, such as Linux
-     * <a>KernelCapabilities</a>. This field is not valid for containers in tasks using
-     * the Fargate launch type.</p>
+     * <a>KernelCapabilities</a>.</p> <note> <p>This parameter is not supported for
+     * Windows containers or tasks using the Fargate launch type.</p> </note>
      */
     inline const LinuxParameters& GetLinuxParameters() const{ return m_linuxParameters; }
 
     /**
      * <p>Linux-specific modifications that are applied to the container, such as Linux
-     * <a>KernelCapabilities</a>. This field is not valid for containers in tasks using
-     * the Fargate launch type.</p>
+     * <a>KernelCapabilities</a>.</p> <note> <p>This parameter is not supported for
+     * Windows containers or tasks using the Fargate launch type.</p> </note>
      */
     inline void SetLinuxParameters(const LinuxParameters& value) { m_linuxParametersHasBeenSet = true; m_linuxParameters = value; }
 
     /**
      * <p>Linux-specific modifications that are applied to the container, such as Linux
-     * <a>KernelCapabilities</a>. This field is not valid for containers in tasks using
-     * the Fargate launch type.</p>
+     * <a>KernelCapabilities</a>.</p> <note> <p>This parameter is not supported for
+     * Windows containers or tasks using the Fargate launch type.</p> </note>
      */
     inline void SetLinuxParameters(LinuxParameters&& value) { m_linuxParametersHasBeenSet = true; m_linuxParameters = std::move(value); }
 
     /**
      * <p>Linux-specific modifications that are applied to the container, such as Linux
-     * <a>KernelCapabilities</a>. This field is not valid for containers in tasks using
-     * the Fargate launch type.</p>
+     * <a>KernelCapabilities</a>.</p> <note> <p>This parameter is not supported for
+     * Windows containers or tasks using the Fargate launch type.</p> </note>
      */
     inline ContainerDefinition& WithLinuxParameters(const LinuxParameters& value) { SetLinuxParameters(value); return *this;}
 
     /**
      * <p>Linux-specific modifications that are applied to the container, such as Linux
-     * <a>KernelCapabilities</a>. This field is not valid for containers in tasks using
-     * the Fargate launch type.</p>
+     * <a>KernelCapabilities</a>.</p> <note> <p>This parameter is not supported for
+     * Windows containers or tasks using the Fargate launch type.</p> </note>
      */
     inline ContainerDefinition& WithLinuxParameters(LinuxParameters&& value) { SetLinuxParameters(std::move(value)); return *this;}
 
@@ -1668,7 +1734,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--user</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers.</p> </note>
      */
     inline const Aws::String& GetUser() const{ return m_user; }
 
@@ -1679,7 +1746,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--user</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers.</p> </note>
      */
     inline void SetUser(const Aws::String& value) { m_userHasBeenSet = true; m_user = value; }
 
@@ -1690,7 +1758,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--user</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers.</p> </note>
      */
     inline void SetUser(Aws::String&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
 
@@ -1701,7 +1770,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--user</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers.</p> </note>
      */
     inline void SetUser(const char* value) { m_userHasBeenSet = true; m_user.assign(value); }
 
@@ -1712,7 +1782,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--user</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers.</p> </note>
      */
     inline ContainerDefinition& WithUser(const Aws::String& value) { SetUser(value); return *this;}
 
@@ -1723,7 +1794,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--user</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers.</p> </note>
      */
     inline ContainerDefinition& WithUser(Aws::String&& value) { SetUser(std::move(value)); return *this;}
 
@@ -1734,7 +1806,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--user</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers.</p> </note>
      */
     inline ContainerDefinition& WithUser(const char* value) { SetUser(value); return *this;}
 
@@ -1823,7 +1896,8 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
-     * Remote API</a>.</p>
+     * Remote API</a>.</p> <note> <p>This parameter is not supported for Windows
+     * containers.</p> </note>
      */
     inline bool GetDisableNetworking() const{ return m_disableNetworking; }
 
@@ -1833,7 +1907,8 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
-     * Remote API</a>.</p>
+     * Remote API</a>.</p> <note> <p>This parameter is not supported for Windows
+     * containers.</p> </note>
      */
     inline void SetDisableNetworking(bool value) { m_disableNetworkingHasBeenSet = true; m_disableNetworking = value; }
 
@@ -1843,7 +1918,8 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
-     * Remote API</a>.</p>
+     * Remote API</a>.</p> <note> <p>This parameter is not supported for Windows
+     * containers.</p> </note>
      */
     inline ContainerDefinition& WithDisableNetworking(bool value) { SetDisableNetworking(value); return *this;}
 
@@ -1856,7 +1932,9 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--privileged</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers or tasks using the
+     * Fargate launch type.</p> </note>
      */
     inline bool GetPrivileged() const{ return m_privileged; }
 
@@ -1868,7 +1946,9 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--privileged</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers or tasks using the
+     * Fargate launch type.</p> </note>
      */
     inline void SetPrivileged(bool value) { m_privilegedHasBeenSet = true; m_privileged = value; }
 
@@ -1880,7 +1960,9 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--privileged</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers or tasks using the
+     * Fargate launch type.</p> </note>
      */
     inline ContainerDefinition& WithPrivileged(bool value) { SetPrivileged(value); return *this;}
 
@@ -1892,7 +1974,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--read-only</code> option to <code>docker
-     * run</code>.</p>
+     * run</code>.</p> <note> <p>This parameter is not supported for Windows
+     * containers.</p> </note>
      */
     inline bool GetReadonlyRootFilesystem() const{ return m_readonlyRootFilesystem; }
 
@@ -1903,7 +1986,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--read-only</code> option to <code>docker
-     * run</code>.</p>
+     * run</code>.</p> <note> <p>This parameter is not supported for Windows
+     * containers.</p> </note>
      */
     inline void SetReadonlyRootFilesystem(bool value) { m_readonlyRootFilesystemHasBeenSet = true; m_readonlyRootFilesystem = value; }
 
@@ -1914,7 +1998,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--read-only</code> option to <code>docker
-     * run</code>.</p>
+     * run</code>.</p> <note> <p>This parameter is not supported for Windows
+     * containers.</p> </note>
      */
     inline ContainerDefinition& WithReadonlyRootFilesystem(bool value) { SetReadonlyRootFilesystem(value); return *this;}
 
@@ -1926,7 +2011,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers.</p> </note>
      */
     inline const Aws::Vector<Aws::String>& GetDnsServers() const{ return m_dnsServers; }
 
@@ -1937,7 +2023,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers.</p> </note>
      */
     inline void SetDnsServers(const Aws::Vector<Aws::String>& value) { m_dnsServersHasBeenSet = true; m_dnsServers = value; }
 
@@ -1948,7 +2035,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers.</p> </note>
      */
     inline void SetDnsServers(Aws::Vector<Aws::String>&& value) { m_dnsServersHasBeenSet = true; m_dnsServers = std::move(value); }
 
@@ -1959,7 +2047,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers.</p> </note>
      */
     inline ContainerDefinition& WithDnsServers(const Aws::Vector<Aws::String>& value) { SetDnsServers(value); return *this;}
 
@@ -1970,7 +2059,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers.</p> </note>
      */
     inline ContainerDefinition& WithDnsServers(Aws::Vector<Aws::String>&& value) { SetDnsServers(std::move(value)); return *this;}
 
@@ -1981,7 +2071,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers.</p> </note>
      */
     inline ContainerDefinition& AddDnsServers(const Aws::String& value) { m_dnsServersHasBeenSet = true; m_dnsServers.push_back(value); return *this; }
 
@@ -1992,7 +2083,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers.</p> </note>
      */
     inline ContainerDefinition& AddDnsServers(Aws::String&& value) { m_dnsServersHasBeenSet = true; m_dnsServers.push_back(std::move(value)); return *this; }
 
@@ -2003,7 +2095,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers.</p> </note>
      */
     inline ContainerDefinition& AddDnsServers(const char* value) { m_dnsServersHasBeenSet = true; m_dnsServers.push_back(value); return *this; }
 
@@ -2015,7 +2108,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns-search</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers.</p> </note>
      */
     inline const Aws::Vector<Aws::String>& GetDnsSearchDomains() const{ return m_dnsSearchDomains; }
 
@@ -2026,7 +2120,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns-search</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers.</p> </note>
      */
     inline void SetDnsSearchDomains(const Aws::Vector<Aws::String>& value) { m_dnsSearchDomainsHasBeenSet = true; m_dnsSearchDomains = value; }
 
@@ -2037,7 +2132,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns-search</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers.</p> </note>
      */
     inline void SetDnsSearchDomains(Aws::Vector<Aws::String>&& value) { m_dnsSearchDomainsHasBeenSet = true; m_dnsSearchDomains = std::move(value); }
 
@@ -2048,7 +2144,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns-search</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers.</p> </note>
      */
     inline ContainerDefinition& WithDnsSearchDomains(const Aws::Vector<Aws::String>& value) { SetDnsSearchDomains(value); return *this;}
 
@@ -2059,7 +2156,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns-search</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers.</p> </note>
      */
     inline ContainerDefinition& WithDnsSearchDomains(Aws::Vector<Aws::String>&& value) { SetDnsSearchDomains(std::move(value)); return *this;}
 
@@ -2070,7 +2168,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns-search</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers.</p> </note>
      */
     inline ContainerDefinition& AddDnsSearchDomains(const Aws::String& value) { m_dnsSearchDomainsHasBeenSet = true; m_dnsSearchDomains.push_back(value); return *this; }
 
@@ -2081,7 +2180,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns-search</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers.</p> </note>
      */
     inline ContainerDefinition& AddDnsSearchDomains(Aws::String&& value) { m_dnsSearchDomainsHasBeenSet = true; m_dnsSearchDomains.push_back(std::move(value)); return *this; }
 
@@ -2092,7 +2192,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns-search</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers.</p> </note>
      */
     inline ContainerDefinition& AddDnsSearchDomains(const char* value) { m_dnsSearchDomainsHasBeenSet = true; m_dnsSearchDomains.push_back(value); return *this; }
 
@@ -2106,7 +2207,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--add-host</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers.</p> </note>
      */
     inline const Aws::Vector<HostEntry>& GetExtraHosts() const{ return m_extraHosts; }
 
@@ -2119,7 +2221,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--add-host</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers.</p> </note>
      */
     inline void SetExtraHosts(const Aws::Vector<HostEntry>& value) { m_extraHostsHasBeenSet = true; m_extraHosts = value; }
 
@@ -2132,7 +2235,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--add-host</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers.</p> </note>
      */
     inline void SetExtraHosts(Aws::Vector<HostEntry>&& value) { m_extraHostsHasBeenSet = true; m_extraHosts = std::move(value); }
 
@@ -2145,7 +2249,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--add-host</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers.</p> </note>
      */
     inline ContainerDefinition& WithExtraHosts(const Aws::Vector<HostEntry>& value) { SetExtraHosts(value); return *this;}
 
@@ -2158,7 +2263,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--add-host</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers.</p> </note>
      */
     inline ContainerDefinition& WithExtraHosts(Aws::Vector<HostEntry>&& value) { SetExtraHosts(std::move(value)); return *this;}
 
@@ -2171,7 +2277,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--add-host</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers.</p> </note>
      */
     inline ContainerDefinition& AddExtraHosts(const HostEntry& value) { m_extraHostsHasBeenSet = true; m_extraHosts.push_back(value); return *this; }
 
@@ -2184,7 +2291,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--add-host</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>This parameter is not supported for Windows containers.</p> </note>
      */
     inline ContainerDefinition& AddExtraHosts(HostEntry&& value) { m_extraHostsHasBeenSet = true; m_extraHosts.push_back(std::move(value)); return *this; }
 
@@ -2206,7 +2314,8 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p> </note>
+     * Developer Guide</i>.</p> <p>This parameter is not supported for Windows
+     * containers.</p> </note>
      */
     inline const Aws::Vector<Aws::String>& GetDockerSecurityOptions() const{ return m_dockerSecurityOptions; }
 
@@ -2227,7 +2336,8 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p> </note>
+     * Developer Guide</i>.</p> <p>This parameter is not supported for Windows
+     * containers.</p> </note>
      */
     inline void SetDockerSecurityOptions(const Aws::Vector<Aws::String>& value) { m_dockerSecurityOptionsHasBeenSet = true; m_dockerSecurityOptions = value; }
 
@@ -2248,7 +2358,8 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p> </note>
+     * Developer Guide</i>.</p> <p>This parameter is not supported for Windows
+     * containers.</p> </note>
      */
     inline void SetDockerSecurityOptions(Aws::Vector<Aws::String>&& value) { m_dockerSecurityOptionsHasBeenSet = true; m_dockerSecurityOptions = std::move(value); }
 
@@ -2269,7 +2380,8 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p> </note>
+     * Developer Guide</i>.</p> <p>This parameter is not supported for Windows
+     * containers.</p> </note>
      */
     inline ContainerDefinition& WithDockerSecurityOptions(const Aws::Vector<Aws::String>& value) { SetDockerSecurityOptions(value); return *this;}
 
@@ -2290,7 +2402,8 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p> </note>
+     * Developer Guide</i>.</p> <p>This parameter is not supported for Windows
+     * containers.</p> </note>
      */
     inline ContainerDefinition& WithDockerSecurityOptions(Aws::Vector<Aws::String>&& value) { SetDockerSecurityOptions(std::move(value)); return *this;}
 
@@ -2311,7 +2424,8 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p> </note>
+     * Developer Guide</i>.</p> <p>This parameter is not supported for Windows
+     * containers.</p> </note>
      */
     inline ContainerDefinition& AddDockerSecurityOptions(const Aws::String& value) { m_dockerSecurityOptionsHasBeenSet = true; m_dockerSecurityOptions.push_back(value); return *this; }
 
@@ -2332,7 +2446,8 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p> </note>
+     * Developer Guide</i>.</p> <p>This parameter is not supported for Windows
+     * containers.</p> </note>
      */
     inline ContainerDefinition& AddDockerSecurityOptions(Aws::String&& value) { m_dockerSecurityOptionsHasBeenSet = true; m_dockerSecurityOptions.push_back(std::move(value)); return *this; }
 
@@ -2353,7 +2468,8 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p> </note>
+     * Developer Guide</i>.</p> <p>This parameter is not supported for Windows
+     * containers.</p> </note>
      */
     inline ContainerDefinition& AddDockerSecurityOptions(const char* value) { m_dockerSecurityOptionsHasBeenSet = true; m_dockerSecurityOptions.push_back(value); return *this; }
 
@@ -2551,7 +2667,8 @@ namespace Model
      * requires version 1.18 of the Docker Remote API or greater on your container
      * instance. To check the Docker Remote API version on your container instance, log
      * in to your container instance and run the following command: <code>sudo docker
-     * version | grep "Server API version"</code> </p>
+     * version | grep "Server API version"</code> </p> <note> <p>This parameter is not
+     * supported for Windows containers.</p> </note>
      */
     inline const Aws::Vector<Ulimit>& GetUlimits() const{ return m_ulimits; }
 
@@ -2567,7 +2684,8 @@ namespace Model
      * requires version 1.18 of the Docker Remote API or greater on your container
      * instance. To check the Docker Remote API version on your container instance, log
      * in to your container instance and run the following command: <code>sudo docker
-     * version | grep "Server API version"</code> </p>
+     * version | grep "Server API version"</code> </p> <note> <p>This parameter is not
+     * supported for Windows containers.</p> </note>
      */
     inline void SetUlimits(const Aws::Vector<Ulimit>& value) { m_ulimitsHasBeenSet = true; m_ulimits = value; }
 
@@ -2583,7 +2701,8 @@ namespace Model
      * requires version 1.18 of the Docker Remote API or greater on your container
      * instance. To check the Docker Remote API version on your container instance, log
      * in to your container instance and run the following command: <code>sudo docker
-     * version | grep "Server API version"</code> </p>
+     * version | grep "Server API version"</code> </p> <note> <p>This parameter is not
+     * supported for Windows containers.</p> </note>
      */
     inline void SetUlimits(Aws::Vector<Ulimit>&& value) { m_ulimitsHasBeenSet = true; m_ulimits = std::move(value); }
 
@@ -2599,7 +2718,8 @@ namespace Model
      * requires version 1.18 of the Docker Remote API or greater on your container
      * instance. To check the Docker Remote API version on your container instance, log
      * in to your container instance and run the following command: <code>sudo docker
-     * version | grep "Server API version"</code> </p>
+     * version | grep "Server API version"</code> </p> <note> <p>This parameter is not
+     * supported for Windows containers.</p> </note>
      */
     inline ContainerDefinition& WithUlimits(const Aws::Vector<Ulimit>& value) { SetUlimits(value); return *this;}
 
@@ -2615,7 +2735,8 @@ namespace Model
      * requires version 1.18 of the Docker Remote API or greater on your container
      * instance. To check the Docker Remote API version on your container instance, log
      * in to your container instance and run the following command: <code>sudo docker
-     * version | grep "Server API version"</code> </p>
+     * version | grep "Server API version"</code> </p> <note> <p>This parameter is not
+     * supported for Windows containers.</p> </note>
      */
     inline ContainerDefinition& WithUlimits(Aws::Vector<Ulimit>&& value) { SetUlimits(std::move(value)); return *this;}
 
@@ -2631,7 +2752,8 @@ namespace Model
      * requires version 1.18 of the Docker Remote API or greater on your container
      * instance. To check the Docker Remote API version on your container instance, log
      * in to your container instance and run the following command: <code>sudo docker
-     * version | grep "Server API version"</code> </p>
+     * version | grep "Server API version"</code> </p> <note> <p>This parameter is not
+     * supported for Windows containers.</p> </note>
      */
     inline ContainerDefinition& AddUlimits(const Ulimit& value) { m_ulimitsHasBeenSet = true; m_ulimits.push_back(value); return *this; }
 
@@ -2647,7 +2769,8 @@ namespace Model
      * requires version 1.18 of the Docker Remote API or greater on your container
      * instance. To check the Docker Remote API version on your container instance, log
      * in to your container instance and run the following command: <code>sudo docker
-     * version | grep "Server API version"</code> </p>
+     * version | grep "Server API version"</code> </p> <note> <p>This parameter is not
+     * supported for Windows containers.</p> </note>
      */
     inline ContainerDefinition& AddUlimits(Ulimit&& value) { m_ulimitsHasBeenSet = true; m_ulimits.push_back(std::move(value)); return *this; }
 

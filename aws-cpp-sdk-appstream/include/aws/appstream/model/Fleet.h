@@ -127,109 +127,109 @@ namespace Model
 
 
     /**
-     * <p>The fleet name displayed to end users.</p>
+     * <p>The fleet name for display.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * <p>The fleet name displayed to end users.</p>
+     * <p>The fleet name for display.</p>
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
-     * <p>The fleet name displayed to end users.</p>
+     * <p>The fleet name for display.</p>
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
-     * <p>The fleet name displayed to end users.</p>
+     * <p>The fleet name for display.</p>
      */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
-     * <p>The fleet name displayed to end users.</p>
+     * <p>The fleet name for display.</p>
      */
     inline Fleet& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>The fleet name displayed to end users.</p>
+     * <p>The fleet name for display.</p>
      */
     inline Fleet& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
-     * <p>The fleet name displayed to end users.</p>
+     * <p>The fleet name for display.</p>
      */
     inline Fleet& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
 
     /**
-     * <p>The description displayed to end users.</p>
+     * <p>The description for display.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description displayed to end users.</p>
+     * <p>The description for display.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description displayed to end users.</p>
+     * <p>The description for display.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description displayed to end users.</p>
+     * <p>The description for display.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description displayed to end users.</p>
+     * <p>The description for display.</p>
      */
     inline Fleet& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description displayed to end users.</p>
+     * <p>The description for display.</p>
      */
     inline Fleet& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description displayed to end users.</p>
+     * <p>The description for display.</p>
      */
     inline Fleet& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>The image used by the fleet.</p>
+     * <p>The name of the image used to create the fleet.</p>
      */
     inline const Aws::String& GetImageName() const{ return m_imageName; }
 
     /**
-     * <p>The image used by the fleet.</p>
+     * <p>The name of the image used to create the fleet.</p>
      */
     inline void SetImageName(const Aws::String& value) { m_imageNameHasBeenSet = true; m_imageName = value; }
 
     /**
-     * <p>The image used by the fleet.</p>
+     * <p>The name of the image used to create the fleet.</p>
      */
     inline void SetImageName(Aws::String&& value) { m_imageNameHasBeenSet = true; m_imageName = std::move(value); }
 
     /**
-     * <p>The image used by the fleet.</p>
+     * <p>The name of the image used to create the fleet.</p>
      */
     inline void SetImageName(const char* value) { m_imageNameHasBeenSet = true; m_imageName.assign(value); }
 
     /**
-     * <p>The image used by the fleet.</p>
+     * <p>The name of the image used to create the fleet.</p>
      */
     inline Fleet& WithImageName(const Aws::String& value) { SetImageName(value); return *this;}
 
     /**
-     * <p>The image used by the fleet.</p>
+     * <p>The name of the image used to create the fleet.</p>
      */
     inline Fleet& WithImageName(Aws::String&& value) { SetImageName(std::move(value)); return *this;}
 
     /**
-     * <p>The image used by the fleet.</p>
+     * <p>The name of the image used to create the fleet.</p>
      */
     inline Fleet& WithImageName(const char* value) { SetImageName(value); return *this;}
 
@@ -270,19 +270,59 @@ namespace Model
     inline Fleet& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
 
-    
+    /**
+     * <p>The fleet type.</p> <dl> <dt>ALWAYS_ON</dt> <dd> <p>Provides users with
+     * instant-on access to their apps. You are charged for all running instances in
+     * your fleet, even if no users are streaming apps.</p> </dd> <dt>ON_DEMAND</dt>
+     * <dd> <p>Provide users with access to applications after they connect, which
+     * takes one to two minutes. You are charged for instance streaming when users are
+     * connected and a small hourly fee for instances that are not streaming apps.</p>
+     * </dd> </dl>
+     */
     inline const FleetType& GetFleetType() const{ return m_fleetType; }
 
-    
+    /**
+     * <p>The fleet type.</p> <dl> <dt>ALWAYS_ON</dt> <dd> <p>Provides users with
+     * instant-on access to their apps. You are charged for all running instances in
+     * your fleet, even if no users are streaming apps.</p> </dd> <dt>ON_DEMAND</dt>
+     * <dd> <p>Provide users with access to applications after they connect, which
+     * takes one to two minutes. You are charged for instance streaming when users are
+     * connected and a small hourly fee for instances that are not streaming apps.</p>
+     * </dd> </dl>
+     */
     inline void SetFleetType(const FleetType& value) { m_fleetTypeHasBeenSet = true; m_fleetType = value; }
 
-    
+    /**
+     * <p>The fleet type.</p> <dl> <dt>ALWAYS_ON</dt> <dd> <p>Provides users with
+     * instant-on access to their apps. You are charged for all running instances in
+     * your fleet, even if no users are streaming apps.</p> </dd> <dt>ON_DEMAND</dt>
+     * <dd> <p>Provide users with access to applications after they connect, which
+     * takes one to two minutes. You are charged for instance streaming when users are
+     * connected and a small hourly fee for instances that are not streaming apps.</p>
+     * </dd> </dl>
+     */
     inline void SetFleetType(FleetType&& value) { m_fleetTypeHasBeenSet = true; m_fleetType = std::move(value); }
 
-    
+    /**
+     * <p>The fleet type.</p> <dl> <dt>ALWAYS_ON</dt> <dd> <p>Provides users with
+     * instant-on access to their apps. You are charged for all running instances in
+     * your fleet, even if no users are streaming apps.</p> </dd> <dt>ON_DEMAND</dt>
+     * <dd> <p>Provide users with access to applications after they connect, which
+     * takes one to two minutes. You are charged for instance streaming when users are
+     * connected and a small hourly fee for instances that are not streaming apps.</p>
+     * </dd> </dl>
+     */
     inline Fleet& WithFleetType(const FleetType& value) { SetFleetType(value); return *this;}
 
-    
+    /**
+     * <p>The fleet type.</p> <dl> <dt>ALWAYS_ON</dt> <dd> <p>Provides users with
+     * instant-on access to their apps. You are charged for all running instances in
+     * your fleet, even if no users are streaming apps.</p> </dd> <dt>ON_DEMAND</dt>
+     * <dd> <p>Provide users with access to applications after they connect, which
+     * takes one to two minutes. You are charged for instance streaming when users are
+     * connected and a small hourly fee for instances that are not streaming apps.</p>
+     * </dd> </dl>
+     */
     inline Fleet& WithFleetType(FleetType&& value) { SetFleetType(std::move(value)); return *this;}
 
 
@@ -487,27 +527,27 @@ namespace Model
 
 
     /**
-     * <p>The information needed for streaming instances to join a domain.</p>
+     * <p>The information needed to join a Microsoft Active Directory domain.</p>
      */
     inline const DomainJoinInfo& GetDomainJoinInfo() const{ return m_domainJoinInfo; }
 
     /**
-     * <p>The information needed for streaming instances to join a domain.</p>
+     * <p>The information needed to join a Microsoft Active Directory domain.</p>
      */
     inline void SetDomainJoinInfo(const DomainJoinInfo& value) { m_domainJoinInfoHasBeenSet = true; m_domainJoinInfo = value; }
 
     /**
-     * <p>The information needed for streaming instances to join a domain.</p>
+     * <p>The information needed to join a Microsoft Active Directory domain.</p>
      */
     inline void SetDomainJoinInfo(DomainJoinInfo&& value) { m_domainJoinInfoHasBeenSet = true; m_domainJoinInfo = std::move(value); }
 
     /**
-     * <p>The information needed for streaming instances to join a domain.</p>
+     * <p>The information needed to join a Microsoft Active Directory domain.</p>
      */
     inline Fleet& WithDomainJoinInfo(const DomainJoinInfo& value) { SetDomainJoinInfo(value); return *this;}
 
     /**
-     * <p>The information needed for streaming instances to join a domain.</p>
+     * <p>The information needed to join a Microsoft Active Directory domain.</p>
      */
     inline Fleet& WithDomainJoinInfo(DomainJoinInfo&& value) { SetDomainJoinInfo(std::move(value)); return *this;}
 

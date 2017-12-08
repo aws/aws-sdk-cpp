@@ -43,41 +43,65 @@ namespace Model
     CreateImageBuilderStreamingURLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The URL to start the AppStream 2.0 streaming session.</p>
+     */
     inline const Aws::String& GetStreamingURL() const{ return m_streamingURL; }
 
-    
+    /**
+     * <p>The URL to start the AppStream 2.0 streaming session.</p>
+     */
     inline void SetStreamingURL(const Aws::String& value) { m_streamingURL = value; }
 
-    
+    /**
+     * <p>The URL to start the AppStream 2.0 streaming session.</p>
+     */
     inline void SetStreamingURL(Aws::String&& value) { m_streamingURL = std::move(value); }
 
-    
+    /**
+     * <p>The URL to start the AppStream 2.0 streaming session.</p>
+     */
     inline void SetStreamingURL(const char* value) { m_streamingURL.assign(value); }
 
-    
+    /**
+     * <p>The URL to start the AppStream 2.0 streaming session.</p>
+     */
     inline CreateImageBuilderStreamingURLResult& WithStreamingURL(const Aws::String& value) { SetStreamingURL(value); return *this;}
 
-    
+    /**
+     * <p>The URL to start the AppStream 2.0 streaming session.</p>
+     */
     inline CreateImageBuilderStreamingURLResult& WithStreamingURL(Aws::String&& value) { SetStreamingURL(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The URL to start the AppStream 2.0 streaming session.</p>
+     */
     inline CreateImageBuilderStreamingURLResult& WithStreamingURL(const char* value) { SetStreamingURL(value); return *this;}
 
 
-    
+    /**
+     * <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
+     */
     inline const Aws::Utils::DateTime& GetExpires() const{ return m_expires; }
 
-    
+    /**
+     * <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
+     */
     inline void SetExpires(const Aws::Utils::DateTime& value) { m_expires = value; }
 
-    
+    /**
+     * <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
+     */
     inline void SetExpires(Aws::Utils::DateTime&& value) { m_expires = std::move(value); }
 
-    
+    /**
+     * <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
+     */
     inline CreateImageBuilderStreamingURLResult& WithExpires(const Aws::Utils::DateTime& value) { SetExpires(value); return *this;}
 
-    
+    /**
+     * <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
+     */
     inline CreateImageBuilderStreamingURLResult& WithExpires(Aws::Utils::DateTime&& value) { SetExpires(std::move(value)); return *this;}
 
   private:

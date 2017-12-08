@@ -42,19 +42,29 @@ namespace Model
     DeleteImageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>Information about the image.</p>
+     */
     inline const Image& GetImage() const{ return m_image; }
 
-    
+    /**
+     * <p>Information about the image.</p>
+     */
     inline void SetImage(const Image& value) { m_image = value; }
 
-    
+    /**
+     * <p>Information about the image.</p>
+     */
     inline void SetImage(Image&& value) { m_image = std::move(value); }
 
-    
+    /**
+     * <p>Information about the image.</p>
+     */
     inline DeleteImageResult& WithImage(const Image& value) { SetImage(value); return *this;}
 
-    
+    /**
+     * <p>Information about the image.</p>
+     */
     inline DeleteImageResult& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
 
   private:

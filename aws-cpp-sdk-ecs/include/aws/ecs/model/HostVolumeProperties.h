@@ -54,8 +54,8 @@ namespace Model
      * container instance until you delete it manually. If the <code>sourcePath</code>
      * value does not exist on the host container instance, the Docker daemon creates
      * it. If the location does exist, the contents of the source path folder are
-     * exported.</p> <p>If you are using the Fargate launch type, the <code>host</code>
-     * parameter is not supported.</p>
+     * exported.</p> <p>If you are using the Fargate launch type, the
+     * <code>sourcePath</code> parameter is not supported.</p>
      */
     inline const Aws::String& GetSourcePath() const{ return m_sourcePath; }
 
@@ -67,8 +67,8 @@ namespace Model
      * container instance until you delete it manually. If the <code>sourcePath</code>
      * value does not exist on the host container instance, the Docker daemon creates
      * it. If the location does exist, the contents of the source path folder are
-     * exported.</p> <p>If you are using the Fargate launch type, the <code>host</code>
-     * parameter is not supported.</p>
+     * exported.</p> <p>If you are using the Fargate launch type, the
+     * <code>sourcePath</code> parameter is not supported.</p>
      */
     inline void SetSourcePath(const Aws::String& value) { m_sourcePathHasBeenSet = true; m_sourcePath = value; }
 
@@ -80,8 +80,8 @@ namespace Model
      * container instance until you delete it manually. If the <code>sourcePath</code>
      * value does not exist on the host container instance, the Docker daemon creates
      * it. If the location does exist, the contents of the source path folder are
-     * exported.</p> <p>If you are using the Fargate launch type, the <code>host</code>
-     * parameter is not supported.</p>
+     * exported.</p> <p>If you are using the Fargate launch type, the
+     * <code>sourcePath</code> parameter is not supported.</p>
      */
     inline void SetSourcePath(Aws::String&& value) { m_sourcePathHasBeenSet = true; m_sourcePath = std::move(value); }
 
@@ -93,8 +93,8 @@ namespace Model
      * container instance until you delete it manually. If the <code>sourcePath</code>
      * value does not exist on the host container instance, the Docker daemon creates
      * it. If the location does exist, the contents of the source path folder are
-     * exported.</p> <p>If you are using the Fargate launch type, the <code>host</code>
-     * parameter is not supported.</p>
+     * exported.</p> <p>If you are using the Fargate launch type, the
+     * <code>sourcePath</code> parameter is not supported.</p>
      */
     inline void SetSourcePath(const char* value) { m_sourcePathHasBeenSet = true; m_sourcePath.assign(value); }
 
@@ -106,8 +106,8 @@ namespace Model
      * container instance until you delete it manually. If the <code>sourcePath</code>
      * value does not exist on the host container instance, the Docker daemon creates
      * it. If the location does exist, the contents of the source path folder are
-     * exported.</p> <p>If you are using the Fargate launch type, the <code>host</code>
-     * parameter is not supported.</p>
+     * exported.</p> <p>If you are using the Fargate launch type, the
+     * <code>sourcePath</code> parameter is not supported.</p>
      */
     inline HostVolumeProperties& WithSourcePath(const Aws::String& value) { SetSourcePath(value); return *this;}
 
@@ -119,8 +119,8 @@ namespace Model
      * container instance until you delete it manually. If the <code>sourcePath</code>
      * value does not exist on the host container instance, the Docker daemon creates
      * it. If the location does exist, the contents of the source path folder are
-     * exported.</p> <p>If you are using the Fargate launch type, the <code>host</code>
-     * parameter is not supported.</p>
+     * exported.</p> <p>If you are using the Fargate launch type, the
+     * <code>sourcePath</code> parameter is not supported.</p>
      */
     inline HostVolumeProperties& WithSourcePath(Aws::String&& value) { SetSourcePath(std::move(value)); return *this;}
 
@@ -132,8 +132,8 @@ namespace Model
      * container instance until you delete it manually. If the <code>sourcePath</code>
      * value does not exist on the host container instance, the Docker daemon creates
      * it. If the location does exist, the contents of the source path folder are
-     * exported.</p> <p>If you are using the Fargate launch type, the <code>host</code>
-     * parameter is not supported.</p>
+     * exported.</p> <p>If you are using the Fargate launch type, the
+     * <code>sourcePath</code> parameter is not supported.</p>
      */
     inline HostVolumeProperties& WithSourcePath(const char* value) { SetSourcePath(value); return *this;}
 

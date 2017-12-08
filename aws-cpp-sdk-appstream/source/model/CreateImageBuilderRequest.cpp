@@ -31,7 +31,8 @@ CreateImageBuilderRequest::CreateImageBuilderRequest() :
     m_vpcConfigHasBeenSet(false),
     m_enableDefaultInternetAccess(false),
     m_enableDefaultInternetAccessHasBeenSet(false),
-    m_domainJoinInfoHasBeenSet(false)
+    m_domainJoinInfoHasBeenSet(false),
+    m_appstreamAgentVersionHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,12 @@ Aws::String CreateImageBuilderRequest::SerializePayload() const
   if(m_domainJoinInfoHasBeenSet)
   {
    payload.WithObject("DomainJoinInfo", m_domainJoinInfo.Jsonize());
+
+  }
+
+  if(m_appstreamAgentVersionHasBeenSet)
+  {
+   payload.WithString("AppstreamAgentVersion", m_appstreamAgentVersion);
 
   }
 
