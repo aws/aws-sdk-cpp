@@ -19,6 +19,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/lex-models/model/ChannelType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/lex-models/model/ChannelStatus.h>
 #include <utility>
 
 namespace Aws
@@ -349,6 +350,100 @@ namespace Model
      */
     inline BotChannelAssociation& AddBotConfiguration(const char* key, const char* value) { m_botConfigurationHasBeenSet = true; m_botConfiguration.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The status of the bot channel. </p> <ul> <li> <p> <code>CREATED</code> - The
+     * channel has been created and is ready for use.</p> </li> <li> <p>
+     * <code>IN_PROGRESS</code> - Channel creation is in progress.</p> </li> <li> <p>
+     * <code>FAILED</code> - There was an error creating the channel. For information
+     * about the reason for the failure, see the <code>failureReason</code> field.</p>
+     * </li> </ul>
+     */
+    inline const ChannelStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the bot channel. </p> <ul> <li> <p> <code>CREATED</code> - The
+     * channel has been created and is ready for use.</p> </li> <li> <p>
+     * <code>IN_PROGRESS</code> - Channel creation is in progress.</p> </li> <li> <p>
+     * <code>FAILED</code> - There was an error creating the channel. For information
+     * about the reason for the failure, see the <code>failureReason</code> field.</p>
+     * </li> </ul>
+     */
+    inline void SetStatus(const ChannelStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The status of the bot channel. </p> <ul> <li> <p> <code>CREATED</code> - The
+     * channel has been created and is ready for use.</p> </li> <li> <p>
+     * <code>IN_PROGRESS</code> - Channel creation is in progress.</p> </li> <li> <p>
+     * <code>FAILED</code> - There was an error creating the channel. For information
+     * about the reason for the failure, see the <code>failureReason</code> field.</p>
+     * </li> </ul>
+     */
+    inline void SetStatus(ChannelStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>The status of the bot channel. </p> <ul> <li> <p> <code>CREATED</code> - The
+     * channel has been created and is ready for use.</p> </li> <li> <p>
+     * <code>IN_PROGRESS</code> - Channel creation is in progress.</p> </li> <li> <p>
+     * <code>FAILED</code> - There was an error creating the channel. For information
+     * about the reason for the failure, see the <code>failureReason</code> field.</p>
+     * </li> </ul>
+     */
+    inline BotChannelAssociation& WithStatus(const ChannelStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The status of the bot channel. </p> <ul> <li> <p> <code>CREATED</code> - The
+     * channel has been created and is ready for use.</p> </li> <li> <p>
+     * <code>IN_PROGRESS</code> - Channel creation is in progress.</p> </li> <li> <p>
+     * <code>FAILED</code> - There was an error creating the channel. For information
+     * about the reason for the failure, see the <code>failureReason</code> field.</p>
+     * </li> </ul>
+     */
+    inline BotChannelAssociation& WithStatus(ChannelStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason
+     * that it failed to create the association.</p>
+     */
+    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+
+    /**
+     * <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason
+     * that it failed to create the association.</p>
+     */
+    inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
+
+    /**
+     * <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason
+     * that it failed to create the association.</p>
+     */
+    inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
+
+    /**
+     * <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason
+     * that it failed to create the association.</p>
+     */
+    inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
+
+    /**
+     * <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason
+     * that it failed to create the association.</p>
+     */
+    inline BotChannelAssociation& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
+
+    /**
+     * <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason
+     * that it failed to create the association.</p>
+     */
+    inline BotChannelAssociation& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
+
+    /**
+     * <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason
+     * that it failed to create the association.</p>
+     */
+    inline BotChannelAssociation& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -371,6 +466,12 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_botConfiguration;
     bool m_botConfigurationHasBeenSet;
+
+    ChannelStatus m_status;
+    bool m_statusHasBeenSet;
+
+    Aws::String m_failureReason;
+    bool m_failureReasonHasBeenSet;
   };
 
 } // namespace Model

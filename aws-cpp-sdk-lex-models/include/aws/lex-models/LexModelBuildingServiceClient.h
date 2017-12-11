@@ -789,7 +789,7 @@ namespace Model
          * <p>Deletes stored utterances.</p> <p>Amazon Lex stores the utterances that users
          * send to your bot unless the <code>childDirected</code> field in the bot is set
          * to <code>true</code>. Utterances are stored for 15 days for use with the
-         * <a>GetUtterancesView</a> operation, and then stored indefinately for use in
+         * <a>GetUtterancesView</a> operation, and then stored indefinitely for use in
          * improving the ability of your bot to respond to user input.</p> <p>Use the
          * <code>DeleteStoredUtterances</code> operation to manually delete stored
          * utterances for a specific user.</p> <p>This operation requires permissions for
@@ -803,7 +803,7 @@ namespace Model
          * <p>Deletes stored utterances.</p> <p>Amazon Lex stores the utterances that users
          * send to your bot unless the <code>childDirected</code> field in the bot is set
          * to <code>true</code>. Utterances are stored for 15 days for use with the
-         * <a>GetUtterancesView</a> operation, and then stored indefinately for use in
+         * <a>GetUtterancesView</a> operation, and then stored indefinitely for use in
          * improving the ability of your bot to respond to user input.</p> <p>Use the
          * <code>DeleteStoredUtterances</code> operation to manually delete stored
          * utterances for a specific user.</p> <p>This operation requires permissions for
@@ -819,7 +819,7 @@ namespace Model
          * <p>Deletes stored utterances.</p> <p>Amazon Lex stores the utterances that users
          * send to your bot unless the <code>childDirected</code> field in the bot is set
          * to <code>true</code>. Utterances are stored for 15 days for use with the
-         * <a>GetUtterancesView</a> operation, and then stored indefinately for use in
+         * <a>GetUtterancesView</a> operation, and then stored indefinitely for use in
          * improving the ability of your bot to respond to user input.</p> <p>Use the
          * <code>DeleteStoredUtterances</code> operation to manually delete stored
          * utterances for a specific user.</p> <p>This operation requires permissions for
@@ -1670,11 +1670,14 @@ namespace Model
          * that asks the user for additional activity. For example, asking "Do you want to
          * order a drink with your pizza?"</p> </li> </ul> <p>If you specify an existing
          * intent name to update the intent, Amazon Lex replaces the values in the
-         * <code>$LATEST</code> version of the slot type with the values in the request.
+         * <code>$LATEST</code> version of the intent with the values in the request.
          * Amazon Lex removes fields that you don't provide in the request. If you don't
-         * specify the required fields, Amazon Lex throws an exception.</p> <p>For more
-         * information, see <a>how-it-works</a>.</p> <p>This operation requires permissions
-         * for the <code>lex:PutIntent</code> action.</p><p><h3>See Also:</h3>   <a
+         * specify the required fields, Amazon Lex throws an exception. When you update the
+         * <code>$LATEST</code> version of an intent, the <code>status</code> field of any
+         * bot that uses the <code>$LATEST</code> version of the intent is set to
+         * <code>NOT_BUILT</code>.</p> <p>For more information, see
+         * <a>how-it-works</a>.</p> <p>This operation requires permissions for the
+         * <code>lex:PutIntent</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutIntent">AWS
          * API Reference</a></p>
          */
@@ -1704,11 +1707,14 @@ namespace Model
          * that asks the user for additional activity. For example, asking "Do you want to
          * order a drink with your pizza?"</p> </li> </ul> <p>If you specify an existing
          * intent name to update the intent, Amazon Lex replaces the values in the
-         * <code>$LATEST</code> version of the slot type with the values in the request.
+         * <code>$LATEST</code> version of the intent with the values in the request.
          * Amazon Lex removes fields that you don't provide in the request. If you don't
-         * specify the required fields, Amazon Lex throws an exception.</p> <p>For more
-         * information, see <a>how-it-works</a>.</p> <p>This operation requires permissions
-         * for the <code>lex:PutIntent</code> action.</p><p><h3>See Also:</h3>   <a
+         * specify the required fields, Amazon Lex throws an exception. When you update the
+         * <code>$LATEST</code> version of an intent, the <code>status</code> field of any
+         * bot that uses the <code>$LATEST</code> version of the intent is set to
+         * <code>NOT_BUILT</code>.</p> <p>For more information, see
+         * <a>how-it-works</a>.</p> <p>This operation requires permissions for the
+         * <code>lex:PutIntent</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutIntent">AWS
          * API Reference</a></p>
          *
@@ -1740,11 +1746,14 @@ namespace Model
          * that asks the user for additional activity. For example, asking "Do you want to
          * order a drink with your pizza?"</p> </li> </ul> <p>If you specify an existing
          * intent name to update the intent, Amazon Lex replaces the values in the
-         * <code>$LATEST</code> version of the slot type with the values in the request.
+         * <code>$LATEST</code> version of the intent with the values in the request.
          * Amazon Lex removes fields that you don't provide in the request. If you don't
-         * specify the required fields, Amazon Lex throws an exception.</p> <p>For more
-         * information, see <a>how-it-works</a>.</p> <p>This operation requires permissions
-         * for the <code>lex:PutIntent</code> action.</p><p><h3>See Also:</h3>   <a
+         * specify the required fields, Amazon Lex throws an exception. When you update the
+         * <code>$LATEST</code> version of an intent, the <code>status</code> field of any
+         * bot that uses the <code>$LATEST</code> version of the intent is set to
+         * <code>NOT_BUILT</code>.</p> <p>For more information, see
+         * <a>how-it-works</a>.</p> <p>This operation requires permissions for the
+         * <code>lex:PutIntent</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutIntent">AWS
          * API Reference</a></p>
          *
@@ -1760,8 +1769,11 @@ namespace Model
          * an existing slot type, the fields in the request replace the existing values in
          * the <code>$LATEST</code> version of the slot type. Amazon Lex removes the fields
          * that you don't provide in the request. If you don't specify required fields,
-         * Amazon Lex throws an exception.</p> <p>This operation requires permissions for
-         * the <code>lex:PutSlotType</code> action.</p><p><h3>See Also:</h3>   <a
+         * Amazon Lex throws an exception. When you update the <code>$LATEST</code> version
+         * of a slot type, if a bot uses the <code>$LATEST</code> version of an intent that
+         * contains the slot type, the bot's <code>status</code> field is set to
+         * <code>NOT_BUILT</code>.</p> <p>This operation requires permissions for the
+         * <code>lex:PutSlotType</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutSlotType">AWS
          * API Reference</a></p>
          */
@@ -1775,8 +1787,11 @@ namespace Model
          * an existing slot type, the fields in the request replace the existing values in
          * the <code>$LATEST</code> version of the slot type. Amazon Lex removes the fields
          * that you don't provide in the request. If you don't specify required fields,
-         * Amazon Lex throws an exception.</p> <p>This operation requires permissions for
-         * the <code>lex:PutSlotType</code> action.</p><p><h3>See Also:</h3>   <a
+         * Amazon Lex throws an exception. When you update the <code>$LATEST</code> version
+         * of a slot type, if a bot uses the <code>$LATEST</code> version of an intent that
+         * contains the slot type, the bot's <code>status</code> field is set to
+         * <code>NOT_BUILT</code>.</p> <p>This operation requires permissions for the
+         * <code>lex:PutSlotType</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutSlotType">AWS
          * API Reference</a></p>
          *
@@ -1792,8 +1807,11 @@ namespace Model
          * an existing slot type, the fields in the request replace the existing values in
          * the <code>$LATEST</code> version of the slot type. Amazon Lex removes the fields
          * that you don't provide in the request. If you don't specify required fields,
-         * Amazon Lex throws an exception.</p> <p>This operation requires permissions for
-         * the <code>lex:PutSlotType</code> action.</p><p><h3>See Also:</h3>   <a
+         * Amazon Lex throws an exception. When you update the <code>$LATEST</code> version
+         * of a slot type, if a bot uses the <code>$LATEST</code> version of an intent that
+         * contains the slot type, the bot's <code>status</code> field is set to
+         * <code>NOT_BUILT</code>.</p> <p>This operation requires permissions for the
+         * <code>lex:PutSlotType</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutSlotType">AWS
          * API Reference</a></p>
          *

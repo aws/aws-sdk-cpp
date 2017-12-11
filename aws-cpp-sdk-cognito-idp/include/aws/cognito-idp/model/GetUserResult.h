@@ -173,50 +173,80 @@ namespace Model
     inline GetUserResult& AddMFAOptions(MFAOptionType&& value) { m_mFAOptions.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * <p>The user's preferred MFA setting.</p>
+     */
     inline const Aws::String& GetPreferredMfaSetting() const{ return m_preferredMfaSetting; }
 
-    
+    /**
+     * <p>The user's preferred MFA setting.</p>
+     */
     inline void SetPreferredMfaSetting(const Aws::String& value) { m_preferredMfaSetting = value; }
 
-    
+    /**
+     * <p>The user's preferred MFA setting.</p>
+     */
     inline void SetPreferredMfaSetting(Aws::String&& value) { m_preferredMfaSetting = std::move(value); }
 
-    
+    /**
+     * <p>The user's preferred MFA setting.</p>
+     */
     inline void SetPreferredMfaSetting(const char* value) { m_preferredMfaSetting.assign(value); }
 
-    
+    /**
+     * <p>The user's preferred MFA setting.</p>
+     */
     inline GetUserResult& WithPreferredMfaSetting(const Aws::String& value) { SetPreferredMfaSetting(value); return *this;}
 
-    
+    /**
+     * <p>The user's preferred MFA setting.</p>
+     */
     inline GetUserResult& WithPreferredMfaSetting(Aws::String&& value) { SetPreferredMfaSetting(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The user's preferred MFA setting.</p>
+     */
     inline GetUserResult& WithPreferredMfaSetting(const char* value) { SetPreferredMfaSetting(value); return *this;}
 
 
-    
+    /**
+     * <p>The list of the user's MFA settings.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetUserMFASettingList() const{ return m_userMFASettingList; }
 
-    
+    /**
+     * <p>The list of the user's MFA settings.</p>
+     */
     inline void SetUserMFASettingList(const Aws::Vector<Aws::String>& value) { m_userMFASettingList = value; }
 
-    
+    /**
+     * <p>The list of the user's MFA settings.</p>
+     */
     inline void SetUserMFASettingList(Aws::Vector<Aws::String>&& value) { m_userMFASettingList = std::move(value); }
 
-    
+    /**
+     * <p>The list of the user's MFA settings.</p>
+     */
     inline GetUserResult& WithUserMFASettingList(const Aws::Vector<Aws::String>& value) { SetUserMFASettingList(value); return *this;}
 
-    
+    /**
+     * <p>The list of the user's MFA settings.</p>
+     */
     inline GetUserResult& WithUserMFASettingList(Aws::Vector<Aws::String>&& value) { SetUserMFASettingList(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The list of the user's MFA settings.</p>
+     */
     inline GetUserResult& AddUserMFASettingList(const Aws::String& value) { m_userMFASettingList.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The list of the user's MFA settings.</p>
+     */
     inline GetUserResult& AddUserMFASettingList(Aws::String&& value) { m_userMFASettingList.push_back(std::move(value)); return *this; }
 
-    
+    /**
+     * <p>The list of the user's MFA settings.</p>
+     */
     inline GetUserResult& AddUserMFASettingList(const char* value) { m_userMFASettingList.push_back(value); return *this; }
 
   private:

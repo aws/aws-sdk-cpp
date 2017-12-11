@@ -904,6 +904,42 @@ namespace Model
 
 
     /**
+     * <p>Holds the domain prefix if the user pool has a domain associated with it.</p>
+     */
+    inline const Aws::String& GetDomain() const{ return m_domain; }
+
+    /**
+     * <p>Holds the domain prefix if the user pool has a domain associated with it.</p>
+     */
+    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
+
+    /**
+     * <p>Holds the domain prefix if the user pool has a domain associated with it.</p>
+     */
+    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
+
+    /**
+     * <p>Holds the domain prefix if the user pool has a domain associated with it.</p>
+     */
+    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
+
+    /**
+     * <p>Holds the domain prefix if the user pool has a domain associated with it.</p>
+     */
+    inline UserPoolType& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
+
+    /**
+     * <p>Holds the domain prefix if the user pool has a domain associated with it.</p>
+     */
+    inline UserPoolType& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
+
+    /**
+     * <p>Holds the domain prefix if the user pool has a domain associated with it.</p>
+     */
+    inline UserPoolType& WithDomain(const char* value) { SetDomain(value); return *this;}
+
+
+    /**
      * <p>The configuration for <code>AdminCreateUser</code> requests.</p>
      */
     inline const AdminCreateUserConfigType& GetAdminCreateUserConfig() const{ return m_adminCreateUserConfig; }
@@ -1027,6 +1063,9 @@ namespace Model
 
     Aws::String m_emailConfigurationFailure;
     bool m_emailConfigurationFailureHasBeenSet;
+
+    Aws::String m_domain;
+    bool m_domainHasBeenSet;
 
     AdminCreateUserConfigType m_adminCreateUserConfig;
     bool m_adminCreateUserConfigHasBeenSet;
