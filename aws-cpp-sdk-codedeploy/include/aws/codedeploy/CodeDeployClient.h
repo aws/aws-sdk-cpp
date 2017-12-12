@@ -284,21 +284,21 @@ namespace Model
    * Auto Scaling groups, or both. </p> </li> <li> <p> <b>Deployment
    * configuration</b>: A set of deployment rules and deployment success and failure
    * conditions used by AWS CodeDeploy during a deployment.</p> </li> <li> <p>
-   * <b>Deployment</b>: The process, and the components involved in the process, of
+   * <b>Deployment</b>: The process and the components used in the process of
    * updating a Lambda function or of installing content on one or more instances.
-   * </p> </li> <li> <p> <b>Application revisions</b>: For an AWS Lambda deployment
+   * </p> </li> <li> <p> <b>Application revisions</b>: For an AWS Lambda deployment,
    * this is an AppSpec file that specifies the Lambda function to update and one or
    * more functions to validate deployment lifecycle events. For an EC2/On-premises
    * deployment, this is an archive file containing source content—source code, web
-   * pages, executable files, and deployment scripts—along with an application
-   * specification file (AppSpec file). Revisions are stored in Amazon S3 buckets or
-   * GitHub repositories. For Amazon S3, a revision is uniquely identified by its
-   * Amazon S3 object key and its ETag, version, or both. For GitHub, a revision is
-   * uniquely identified by its commit ID.</p> </li> </ul> <p>This guide also
-   * contains information to help you get details about the instances in your
-   * deployments, to make on-premises instances available for AWS CodeDeploy
-   * deployments, and to get details about a Lambda function deployment.</p> <p>
-   * <b>AWS CodeDeploy Information Resources</b> </p> <ul> <li> <p> <a
+   * pages, executable files, and deployment scripts—along with an AppSpec file.
+   * Revisions are stored in Amazon S3 buckets or GitHub repositories. For Amazon S3,
+   * a revision is uniquely identified by its Amazon S3 object key and its ETag,
+   * version, or both. For GitHub, a revision is uniquely identified by its commit
+   * ID.</p> </li> </ul> <p>This guide also contains information to help you get
+   * details about the instances in your deployments, to make on-premises instances
+   * available for AWS CodeDeploy deployments, and to get details about a Lambda
+   * function deployment.</p> <p> <b>AWS CodeDeploy Information Resources</b> </p>
+   * <ul> <li> <p> <a
    * href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
    * User Guide</a> </p> </li> <li> <p> <a
    * href="http://docs.aws.amazon.com/codedeploy/latest/APIReference/">AWS CodeDeploy

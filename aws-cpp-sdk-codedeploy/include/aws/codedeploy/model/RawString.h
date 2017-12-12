@@ -50,50 +50,50 @@ namespace Model
 
     /**
      * <p>The YAML-formatted or JSON-formatted revision string. It includes information
-     * about what Lambda function to update and optional Lambda functions that validate
-     * deployment lifecycle events.</p>
+     * about which Lambda function to update and optional Lambda functions that
+     * validate deployment lifecycle events.</p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
 
     /**
      * <p>The YAML-formatted or JSON-formatted revision string. It includes information
-     * about what Lambda function to update and optional Lambda functions that validate
-     * deployment lifecycle events.</p>
+     * about which Lambda function to update and optional Lambda functions that
+     * validate deployment lifecycle events.</p>
      */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
      * <p>The YAML-formatted or JSON-formatted revision string. It includes information
-     * about what Lambda function to update and optional Lambda functions that validate
-     * deployment lifecycle events.</p>
+     * about which Lambda function to update and optional Lambda functions that
+     * validate deployment lifecycle events.</p>
      */
     inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
     /**
      * <p>The YAML-formatted or JSON-formatted revision string. It includes information
-     * about what Lambda function to update and optional Lambda functions that validate
-     * deployment lifecycle events.</p>
+     * about which Lambda function to update and optional Lambda functions that
+     * validate deployment lifecycle events.</p>
      */
     inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
 
     /**
      * <p>The YAML-formatted or JSON-formatted revision string. It includes information
-     * about what Lambda function to update and optional Lambda functions that validate
-     * deployment lifecycle events.</p>
+     * about which Lambda function to update and optional Lambda functions that
+     * validate deployment lifecycle events.</p>
      */
     inline RawString& WithContent(const Aws::String& value) { SetContent(value); return *this;}
 
     /**
      * <p>The YAML-formatted or JSON-formatted revision string. It includes information
-     * about what Lambda function to update and optional Lambda functions that validate
-     * deployment lifecycle events.</p>
+     * about which Lambda function to update and optional Lambda functions that
+     * validate deployment lifecycle events.</p>
      */
     inline RawString& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
     /**
      * <p>The YAML-formatted or JSON-formatted revision string. It includes information
-     * about what Lambda function to update and optional Lambda functions that validate
-     * deployment lifecycle events.</p>
+     * about which Lambda function to update and optional Lambda functions that
+     * validate deployment lifecycle events.</p>
      */
     inline RawString& WithContent(const char* value) { SetContent(value); return *this;}
 

@@ -93,31 +93,31 @@ namespace Model
 
 
     /**
-     * <p>The destination platform type for the deployment <code>Lambda</code> or
+     * <p> The destination platform type for the deployment (<code>Lambda</code> or
      * <code>Server</code>).</p>
      */
     inline const ComputePlatform& GetComputePlatform() const{ return m_computePlatform; }
 
     /**
-     * <p>The destination platform type for the deployment <code>Lambda</code> or
+     * <p> The destination platform type for the deployment (<code>Lambda</code> or
      * <code>Server</code>).</p>
      */
     inline void SetComputePlatform(const ComputePlatform& value) { m_computePlatformHasBeenSet = true; m_computePlatform = value; }
 
     /**
-     * <p>The destination platform type for the deployment <code>Lambda</code> or
+     * <p> The destination platform type for the deployment (<code>Lambda</code> or
      * <code>Server</code>).</p>
      */
     inline void SetComputePlatform(ComputePlatform&& value) { m_computePlatformHasBeenSet = true; m_computePlatform = std::move(value); }
 
     /**
-     * <p>The destination platform type for the deployment <code>Lambda</code> or
+     * <p> The destination platform type for the deployment (<code>Lambda</code> or
      * <code>Server</code>).</p>
      */
     inline CreateApplicationRequest& WithComputePlatform(const ComputePlatform& value) { SetComputePlatform(value); return *this;}
 
     /**
-     * <p>The destination platform type for the deployment <code>Lambda</code> or
+     * <p> The destination platform type for the deployment (<code>Lambda</code> or
      * <code>Server</code>).</p>
      */
     inline CreateApplicationRequest& WithComputePlatform(ComputePlatform&& value) { SetComputePlatform(std::move(value)); return *this;}

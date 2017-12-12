@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>The configuration specifying how traffic is shifted from one version of a
+   * <p>The configuration that specifies how traffic is shifted from one version of a
    * Lambda function to another version during an AWS Lambda
    * deployment.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/TrafficRoutingConfig">AWS
@@ -51,32 +51,32 @@ namespace Model
 
 
     /**
-     * <p>The type of traffic shifting a deployment configuration uses
-     * (<code>TimeBasedCanary</code> or <code>TimeBasedLinear</code>).</p>
+     * <p>The type of traffic shifting (<code>TimeBasedCanary</code> or
+     * <code>TimeBasedLinear</code>) used by a deployment configuration .</p>
      */
     inline const TrafficRoutingType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of traffic shifting a deployment configuration uses
-     * (<code>TimeBasedCanary</code> or <code>TimeBasedLinear</code>).</p>
+     * <p>The type of traffic shifting (<code>TimeBasedCanary</code> or
+     * <code>TimeBasedLinear</code>) used by a deployment configuration .</p>
      */
     inline void SetType(const TrafficRoutingType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of traffic shifting a deployment configuration uses
-     * (<code>TimeBasedCanary</code> or <code>TimeBasedLinear</code>).</p>
+     * <p>The type of traffic shifting (<code>TimeBasedCanary</code> or
+     * <code>TimeBasedLinear</code>) used by a deployment configuration .</p>
      */
     inline void SetType(TrafficRoutingType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of traffic shifting a deployment configuration uses
-     * (<code>TimeBasedCanary</code> or <code>TimeBasedLinear</code>).</p>
+     * <p>The type of traffic shifting (<code>TimeBasedCanary</code> or
+     * <code>TimeBasedLinear</code>) used by a deployment configuration .</p>
      */
     inline TrafficRoutingConfig& WithType(const TrafficRoutingType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of traffic shifting a deployment configuration uses
-     * (<code>TimeBasedCanary</code> or <code>TimeBasedLinear</code>).</p>
+     * <p>The type of traffic shifting (<code>TimeBasedCanary</code> or
+     * <code>TimeBasedLinear</code>) used by a deployment configuration .</p>
      */
     inline TrafficRoutingConfig& WithType(TrafficRoutingType&& value) { SetType(std::move(value)); return *this;}
 
