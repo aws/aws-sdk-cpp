@@ -150,6 +150,7 @@ list(APPEND C2J_LIST "waf:2015-08-24")
 list(APPEND C2J_LIST "waf-regional:2016-11-28")
 list(APPEND C2J_LIST "workspaces:2015-04-08")
 list(APPEND C2J_LIST "workdocs:2016-05-01")
+list(APPEND C2J_LIST "workmail:2017-10-01")
 list(APPEND C2J_LIST "xray:2016-04-12")
 
 set(HIGH_LEVEL_SDK_LIST "")
