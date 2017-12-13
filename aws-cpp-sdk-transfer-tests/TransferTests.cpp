@@ -95,7 +95,8 @@ static const unsigned PARTS_IN_BIG_TEST = 15;
 static const unsigned BIG_TEST_SIZE = MB5 * PARTS_IN_BIG_TEST;
 static const char* testString = "S3 MultiPart upload Test File ";
 static const uint32_t testStrLen = static_cast<uint32_t>(strlen(testString));
-static const uint32_t TEST_WAIT_TIMEOUT = 10;
+static const std::chrono::seconds TEST_WAIT_TIMEOUT = std::chrono::seconds(10);
+static const unsigned WAIT_MAX_RETRIES = 10;
 
 static const char* NONSENSE_FILE_NAME = "blahblahblahblaherfsadf";
 
@@ -318,13 +319,54 @@ protected:
         CreateBucketRequest createBucket;
         createBucket.WithBucket(GetTestBucketName())
             .WithACL(BucketCannedACL::private_);
-        
+
         auto createBucketOutcome = m_s3Client->CreateBucket(createBucket);
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
+
+        WaitForBucketToPropagate(GetTestBucketName());
 
         auto testDirectory = GetTestFilesDirectory();
 
         Aws::FileSystem::DeepDeleteDirectory(GetTestFilesDirectory().c_str());
+    }
+
+    static bool WaitForBucketToPropagate(const Aws::String& bucketName)
+    {
+        unsigned timeoutCount = 0;
+        while (timeoutCount++ < WAIT_MAX_RETRIES)
+        {
+            HeadBucketRequest headBucketRequest;
+            headBucketRequest.SetBucket(bucketName);
+            HeadBucketOutcome headBucketOutcome = m_s3Client->HeadBucket(headBucketRequest);
+            if (headBucketOutcome.IsSuccess())
+            {
+                return true;
+            }
+
+            std::this_thread::sleep_for(std::chrono::seconds(10));
+        }
+
+        return false;
+    }
+
+    static bool WaitForObjectToPropagate(const Aws::String& bucketName, const char* objectKey)
+    {
+        unsigned timeoutCount = 0;
+        while (timeoutCount++ < WAIT_MAX_RETRIES)
+        {
+            HeadObjectRequest headObjectRequest;
+            headObjectRequest.SetBucket(bucketName);
+            headObjectRequest.SetKey(objectKey);
+            HeadObjectOutcome headObjectOutcome = m_s3Client->HeadObject(headObjectRequest);
+            if (headObjectOutcome.IsSuccess())
+            {
+                return true;
+            }
+
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+        }
+
+        return false;
     }
 
     static bool EmptyBucket(const Aws::String& bucketName)
@@ -376,7 +418,7 @@ protected:
         listObjectsRequest.SetBucket(bucketName);
 
         unsigned checkForObjectsCount = 0;
-        while (checkForObjectsCount++ < TEST_WAIT_TIMEOUT)
+        while (checkForObjectsCount++ < WAIT_MAX_RETRIES)
         {
             ListObjectsOutcome listObjectsOutcome = m_s3Client->ListObjects(listObjectsRequest);
 
@@ -430,7 +472,7 @@ protected:
     static void TearDownTestCase()
     {
         // Most of our tests try to clean stuff out, let's just make sure everything propagated so we don't throw out pointless errors
-        std::this_thread::sleep_for(std::chrono::seconds(TEST_WAIT_TIMEOUT));
+        std::this_thread::sleep_for(TEST_WAIT_TIMEOUT);
         AbortMultiPartUpload(GetTestBucketName(), BIG_FILE_KEY);
         DeleteBucket(GetTestBucketName());
 
@@ -521,6 +563,8 @@ TEST_F(TransferTests, TransferManager_SinglePartUploadTest)
     ASSERT_EQ(fileSize, (MB5 / testStrLen * testStrLen));
     ASSERT_EQ(fileSize, requestPtr->GetBytesTransferred());
 
+    ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), TEST_FILE_KEY));
+
     HeadObjectRequest headObjectRequest;
     headObjectRequest.WithBucket(GetTestBucketName())
         .WithKey(TEST_FILE_KEY);
@@ -580,6 +624,8 @@ TEST_F(TransferTests, TransferManager_EmptyFileTest)
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
     ASSERT_EQ(0u, fileSize);
     ASSERT_EQ(fileSize, requestPtr->GetBytesTransferred());
+
+    ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), EMPTY_FILE_KEY));
 
     HeadObjectRequest headObjectRequest;
     headObjectRequest.WithBucket(GetTestBucketName())
@@ -644,6 +690,8 @@ TEST_F(TransferTests, TransferManager_SmallTest)
     ASSERT_EQ(fileSize, (SMALL_TEST_SIZE / testStrLen * testStrLen));
     ASSERT_EQ(fileSize, requestPtr->GetBytesTransferred());
 
+    ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), SMALL_FILE_KEY));
+
     HeadObjectRequest headObjectRequest;
     headObjectRequest.WithBucket(GetTestBucketName())
         .WithKey(SMALL_FILE_KEY);
@@ -704,6 +752,8 @@ TEST_F(TransferTests, TransferManager_ContentTest)
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
     ASSERT_EQ(fileSize, strlen(CONTENT_TEST_FILE_TEXT));
     ASSERT_EQ(fileSize, requestPtr->GetBytesTransferred());
+
+    ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), CONTENT_FILE_KEY));
 
     HeadObjectRequest headObjectRequest;
     headObjectRequest.WithBucket(GetTestBucketName())
@@ -794,6 +844,8 @@ TEST_F(TransferTests, TransferManager_DirectoryUploadAndDownloadTest)
         ASSERT_EQ(TransferDirection::UPLOAD, handle->GetTransferDirection());
         handle->WaitUntilFinished();
         ASSERT_EQ(TransferStatus::COMPLETED, handle->GetStatus());
+
+        ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), handle->GetKey().c_str()));
 
         HeadObjectRequest headObjectRequest;
         headObjectRequest.WithBucket(GetTestBucketName())
@@ -889,6 +941,8 @@ TEST_F(TransferTests, TransferManager_MediumTest)
     ASSERT_EQ(fileSize, MEDIUM_TEST_SIZE / testStrLen * testStrLen);
     ASSERT_EQ(fileSize, requestPtr->GetBytesTransferred());
 
+    ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), MEDIUM_FILE_KEY));
+
     HeadObjectRequest headObjectRequest;
     headObjectRequest.WithBucket(GetTestBucketName())
         .WithKey(MEDIUM_FILE_KEY);
@@ -954,6 +1008,8 @@ TEST_F(TransferTests, TransferManager_BigTest)
     ASSERT_EQ(fileSize, BIG_TEST_SIZE / testStrLen * testStrLen);
     ASSERT_EQ(fileSize, requestPtr->GetBytesTransferred());
 
+    ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), BIG_FILE_KEY));
+
     HeadObjectRequest headObjectRequest;
     headObjectRequest.WithBucket(GetTestBucketName())
         .WithKey(BIG_FILE_KEY);
@@ -1017,6 +1073,8 @@ TEST_F(TransferTests, TransferManager_UnicodeFileNameTest)
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
     ASSERT_EQ(fileSize, MEDIUM_TEST_SIZE / testStrLen * testStrLen);
     ASSERT_EQ(fileSize, requestPtr->GetBytesTransferred());
+
+    ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), UNICODE_FILE_KEY));
 
     HeadObjectRequest headObjectRequest;
     headObjectRequest.WithBucket(GetTestBucketName())
@@ -1136,6 +1194,8 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryUploadTest)
     EXPECT_TRUE(listMultipartOutcome.IsSuccess());
     ASSERT_EQ(0u, listMultipartOutcome.GetResult().GetUploads().size());
 
+    ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), CANCEL_FILE_KEY));
+
     headObjectRequest.WithBucket(GetTestBucketName())
         .WithKey(CANCEL_FILE_KEY);
 
@@ -1241,6 +1301,8 @@ TEST_F(TransferTests, TransferManager_AbortAndRetryUploadTest)
     ASSERT_FALSE(completedPartsStayedCompletedDuringRetry);
     ASSERT_EQ(fileSize, requestPtr->GetBytesTransferred());
 
+    ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), CANCEL_FILE_KEY));
+
     headObjectRequest.WithBucket(GetTestBucketName())
         .WithKey(CANCEL_FILE_KEY);
 
@@ -1331,6 +1393,8 @@ TEST_F(TransferTests, TransferManager_SinglePartUploadWithMetadataTest)
     requestPtr->WaitUntilFinished();
     ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
     ASSERT_EQ(requestPtr->GetBytesTotalSize(), requestPtr->GetBytesTransferred());
+    
+    ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), TEST_FILE_KEY));
 
     // Check the metadata matches
     HeadObjectRequest headObjectRequest;
@@ -1396,6 +1460,8 @@ TEST_F(TransferTests, MultipartUploadWithMetadataTest)
     }
     ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
     ASSERT_EQ(requestPtr->GetBytesTotalSize(), requestPtr->GetBytesTransferred());
+
+    ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), MEDIUM_FILE_KEY));
 
     // Check the metadata matches
     HeadObjectRequest headObjectRequest;
@@ -1606,6 +1672,8 @@ TEST_F(TransferTests, TransferManager_MediumVersionedTest)
         uint64_t fileSize = requestPtr->GetBytesTotalSize();
         ASSERT_EQ(fileSize, MEDIUM_TEST_SIZE / testStrLen * testStrLen);
         ASSERT_EQ(fileSize, requestPtr->GetBytesTransferred());
+
+        ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), MEDIUM_FILE_KEY));
 
         HeadObjectRequest headObjectRequest;
         headObjectRequest.WithBucket(GetTestBucketName())

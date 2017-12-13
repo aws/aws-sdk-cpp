@@ -21,6 +21,7 @@
 #include <aws/cognito-identity/model/CreateIdentityPoolRequest.h>
 #include <aws/cognito-identity/model/DeleteIdentityPoolRequest.h>
 #include <aws/cognito-identity/model/DescribeIdentityPoolRequest.h>
+#include <aws/cognito-identity/model/GetIdentityPoolRolesRequest.h>
 #include <aws/cognito-identity/model/UpdateIdentityPoolRequest.h>
 #include <aws/cognito-identity/model/ListIdentityPoolsRequest.h>
 #include <aws/cognito-identity/model/GetCredentialsForIdentityRequest.h>
@@ -73,6 +74,27 @@ protected:
     void TearDown()
     {
         client = nullptr;
+    }
+
+    static bool WaitForIdentitiesToBeActive(const Aws::String& identityPoolId, const std::shared_ptr<CognitoIdentityClient>& client)
+    {
+        unsigned timeoutCount = 0;
+        const unsigned maxRetries = 10;
+        while (timeoutCount++ < maxRetries)
+        {
+            GetIdentityPoolRolesRequest getIdentityPoolRolesRequest;
+            getIdentityPoolRolesRequest.SetIdentityPoolId(identityPoolId);
+
+            GetIdentityPoolRolesOutcome getIdentityPoolRolesOutcome = client->GetIdentityPoolRoles(getIdentityPoolRolesRequest);
+            if (getIdentityPoolRolesOutcome.IsSuccess())
+            {
+                return true;
+            }
+
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+        }
+
+        return false;
     }
 
     void CleanupPreviousFailedTests()
@@ -221,6 +243,8 @@ TEST_F(IdentityPoolOperationTest, TestIdentityActions)
     GetCredentialsForIdentityOutcome getCredentialsOutcome = client->GetCredentialsForIdentity(getCredentialsRequest);
     EXPECT_FALSE(getCredentialsOutcome.IsSuccess());
     EXPECT_EQ(CognitoIdentityErrors::INVALID_IDENTITY_POOL_CONFIGURATION, getCredentialsOutcome.GetError().GetErrorType());
+
+    EXPECT_TRUE(WaitForIdentitiesToBeActive(identityPoolId, client));
 
     ListIdentitiesRequest listIdentitiesRequest;
     listIdentitiesRequest.WithIdentityPoolId(createIdentityPoolOutcome.GetResult().GetIdentityPoolId()).WithMaxResults(10);

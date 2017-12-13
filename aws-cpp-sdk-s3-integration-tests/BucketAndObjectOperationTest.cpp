@@ -222,7 +222,7 @@ namespace
             ASSERT_EQ(ss.str(), outcome.GetResult().GetETag());
         }
 
-        static bool WaitForBucketToPropagate(const Aws::String& bucketName, const std::shared_ptr<S3Client> client = Client)
+        static bool WaitForBucketToPropagate(const Aws::String& bucketName, const std::shared_ptr<S3Client>& client = Client)
         {
             unsigned timeoutCount = 0;
             while (timeoutCount++ < TIMEOUT_MAX)
