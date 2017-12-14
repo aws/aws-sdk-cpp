@@ -127,10 +127,10 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
 }
 
 AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
-    Aws::UniquePtr<Aws::Auth::AWSAuthSignerProvider> signerProvider,
+    const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
     m_httpClient(CreateHttpClient(configuration)),
-    m_signerProvider(std::move(signerProvider)),
+    m_signerProvider(signerProvider),
     m_errorMarshaller(errorMarshaller),
     m_retryStrategy(configuration.retryStrategy),
     m_writeRateLimiter(configuration.writeRateLimiter),
@@ -550,9 +550,9 @@ AWSJsonClient::AWSJsonClient(const Aws::Client::ClientConfiguration& configurati
 }
 
 AWSJsonClient::AWSJsonClient(const Aws::Client::ClientConfiguration& configuration,
-    Aws::UniquePtr<Aws::Auth::AWSAuthSignerProvider> signerProvider,
+    const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
-    BASECLASS(configuration, std::move(signerProvider), errorMarshaller)
+    BASECLASS(configuration, signerProvider, errorMarshaller)
 {
 }
 
@@ -657,9 +657,9 @@ AWSXMLClient::AWSXMLClient(const Aws::Client::ClientConfiguration& configuration
 }
 
 AWSXMLClient::AWSXMLClient(const Aws::Client::ClientConfiguration& configuration,
-    Aws::UniquePtr<Aws::Auth::AWSAuthSignerProvider> signerProvider,
+    const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
-    BASECLASS(configuration, std::move(signerProvider), errorMarshaller)
+    BASECLASS(configuration, signerProvider, errorMarshaller)
 {
 }
 

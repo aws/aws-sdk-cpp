@@ -108,7 +108,7 @@ namespace Aws
              * SigV4 signer. errorMarshaller tells the client how to convert error payloads into AWSError objects.
              */
             AWSClient(const Aws::Client::ClientConfiguration& configuration,
-                Aws::UniquePtr<Aws::Auth::AWSAuthSignerProvider> signerProvider,
+                const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
                 const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller);
 
             virtual ~AWSClient();
@@ -243,7 +243,7 @@ namespace Aws
                 Aws::Http::HttpMethod method, const Aws::Http::QueryStringParameterCollection& extraParams) const;
 
             std::shared_ptr<Aws::Http::HttpClient> m_httpClient;
-            Aws::UniquePtr<Aws::Auth::AWSAuthSignerProvider> m_signerProvider;
+            std::shared_ptr<Aws::Auth::AWSAuthSignerProvider> m_signerProvider;
             std::shared_ptr<AWSErrorMarshaller> m_errorMarshaller;
             std::shared_ptr<RetryStrategy> m_retryStrategy;
             std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> m_writeRateLimiter;
@@ -276,7 +276,7 @@ namespace Aws
              * Simply calls AWSClient constructor.
              */
             AWSJsonClient(const Aws::Client::ClientConfiguration& configuration,
-                    Aws::UniquePtr<Aws::Auth::AWSAuthSignerProvider> signerProvider,
+                    const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
                     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller);
 
             virtual ~AWSJsonClient() = default;
@@ -327,7 +327,7 @@ namespace Aws
                 const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller);
 
             AWSXMLClient(const Aws::Client::ClientConfiguration& configuration,
-                Aws::UniquePtr<Aws::Auth::AWSAuthSignerProvider> signerProvider,
+                const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
                 const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller);
 
             virtual ~AWSXMLClient() = default;
