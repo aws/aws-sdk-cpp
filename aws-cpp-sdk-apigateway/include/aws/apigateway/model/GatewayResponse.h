@@ -42,7 +42,7 @@ namespace Model
    * Response Types Supported by API Gateway</a> <div class="example"> <h4>Example:
    * Get a Gateway Response of a given response type</h4> <h5>Request</h5> <p>This
    * example shows how to get a gateway response of the
-   * <code>MISSING_AUTHNETICATION_TOKEN</code> type.</p> <pre><code>GET
+   * <code>MISSING_AUTHENTICATION_TOKEN</code> type.</p> <pre><code>GET
    * /restapis/o81lxisefl/gatewayresponses/MISSING_AUTHENTICATION_TOKEN HTTP/1.1
    * Host: beta-apigateway.us-east-1.amazonaws.com Content-Type: application/json
    * X-Amz-Date: 20170503T202516Z Authorization: AWS4-HMAC-SHA256

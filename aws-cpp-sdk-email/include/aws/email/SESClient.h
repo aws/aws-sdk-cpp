@@ -2417,26 +2417,30 @@ namespace Model
         virtual void SendBulkTemplatedEmailAsync(const Model::SendBulkTemplatedEmailRequest& request, const SendBulkTemplatedEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sends a custom verification email to a specified recipient. Verification
-         * emails sent using this operation are counted against your 24-hour sending quota
-         * and per-second sending rate.</p> <p>For more information about custom
-         * verification email templates, see <a
+         * <p>Adds an email address to the list of identities for your Amazon SES account
+         * and attempts to verify it. As a result of executing this operation, a customized
+         * verification email is sent to the specified address.</p> <p>To use this
+         * operation, you must first create a custom verification email template. For more
+         * information about creating and using custom verification email templates, see <a
          * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
          * Custom Verification Email Templates</a> in the <i>Amazon SES Developer
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p>You can execute this operation no more than once per
+         * second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendCustomVerificationEmail">AWS
          * API Reference</a></p>
          */
         virtual Model::SendCustomVerificationEmailOutcome SendCustomVerificationEmail(const Model::SendCustomVerificationEmailRequest& request) const;
 
         /**
-         * <p>Sends a custom verification email to a specified recipient. Verification
-         * emails sent using this operation are counted against your 24-hour sending quota
-         * and per-second sending rate.</p> <p>For more information about custom
-         * verification email templates, see <a
+         * <p>Adds an email address to the list of identities for your Amazon SES account
+         * and attempts to verify it. As a result of executing this operation, a customized
+         * verification email is sent to the specified address.</p> <p>To use this
+         * operation, you must first create a custom verification email template. For more
+         * information about creating and using custom verification email templates, see <a
          * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
          * Custom Verification Email Templates</a> in the <i>Amazon SES Developer
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p>You can execute this operation no more than once per
+         * second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendCustomVerificationEmail">AWS
          * API Reference</a></p>
          *
@@ -2445,13 +2449,15 @@ namespace Model
         virtual Model::SendCustomVerificationEmailOutcomeCallable SendCustomVerificationEmailCallable(const Model::SendCustomVerificationEmailRequest& request) const;
 
         /**
-         * <p>Sends a custom verification email to a specified recipient. Verification
-         * emails sent using this operation are counted against your 24-hour sending quota
-         * and per-second sending rate.</p> <p>For more information about custom
-         * verification email templates, see <a
+         * <p>Adds an email address to the list of identities for your Amazon SES account
+         * and attempts to verify it. As a result of executing this operation, a customized
+         * verification email is sent to the specified address.</p> <p>To use this
+         * operation, you must first create a custom verification email template. For more
+         * information about creating and using custom verification email templates, see <a
          * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
          * Custom Verification Email Templates</a> in the <i>Amazon SES Developer
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p>You can execute this operation no more than once per
+         * second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendCustomVerificationEmail">AWS
          * API Reference</a></p>
          *
@@ -3701,9 +3707,9 @@ namespace Model
 
         /**
          * <p>Adds an email address to the list of identities for your Amazon SES account
-         * and attempts to verify it. This operation causes a confirmation email message to
-         * be sent to the specified address.</p> <p>You can execute this operation no more
-         * than once per second.</p><p><h3>See Also:</h3>   <a
+         * and attempts to verify it. As a result of executing this operation, a
+         * verification email is sent to the specified address.</p> <p>You can execute this
+         * operation no more than once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyEmailIdentity">AWS
          * API Reference</a></p>
          */
@@ -3711,9 +3717,9 @@ namespace Model
 
         /**
          * <p>Adds an email address to the list of identities for your Amazon SES account
-         * and attempts to verify it. This operation causes a confirmation email message to
-         * be sent to the specified address.</p> <p>You can execute this operation no more
-         * than once per second.</p><p><h3>See Also:</h3>   <a
+         * and attempts to verify it. As a result of executing this operation, a
+         * verification email is sent to the specified address.</p> <p>You can execute this
+         * operation no more than once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyEmailIdentity">AWS
          * API Reference</a></p>
          *
@@ -3723,9 +3729,9 @@ namespace Model
 
         /**
          * <p>Adds an email address to the list of identities for your Amazon SES account
-         * and attempts to verify it. This operation causes a confirmation email message to
-         * be sent to the specified address.</p> <p>You can execute this operation no more
-         * than once per second.</p><p><h3>See Also:</h3>   <a
+         * and attempts to verify it. As a result of executing this operation, a
+         * verification email is sent to the specified address.</p> <p>You can execute this
+         * operation no more than once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyEmailIdentity">AWS
          * API Reference</a></p>
          *

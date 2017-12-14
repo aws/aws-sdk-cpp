@@ -39,7 +39,8 @@ Method::Method() :
     m_requestParametersHasBeenSet(false),
     m_requestModelsHasBeenSet(false),
     m_methodResponsesHasBeenSet(false),
-    m_methodIntegrationHasBeenSet(false)
+    m_methodIntegrationHasBeenSet(false),
+    m_authorizationScopesHasBeenSet(false)
 {
 }
 
@@ -54,7 +55,8 @@ Method::Method(const JsonValue& jsonValue) :
     m_requestParametersHasBeenSet(false),
     m_requestModelsHasBeenSet(false),
     m_methodResponsesHasBeenSet(false),
-    m_methodIntegrationHasBeenSet(false)
+    m_methodIntegrationHasBeenSet(false),
+    m_authorizationScopesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -140,6 +142,16 @@ Method& Method::operator =(const JsonValue& jsonValue)
     m_methodIntegrationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("authorizationScopes"))
+  {
+    Array<JsonValue> authorizationScopesJsonList = jsonValue.GetArray("authorizationScopes");
+    for(unsigned authorizationScopesIndex = 0; authorizationScopesIndex < authorizationScopesJsonList.GetLength(); ++authorizationScopesIndex)
+    {
+      m_authorizationScopes.push_back(authorizationScopesJsonList[authorizationScopesIndex].AsString());
+    }
+    m_authorizationScopesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -219,6 +231,17 @@ JsonValue Method::Jsonize() const
   if(m_methodIntegrationHasBeenSet)
   {
    payload.WithObject("methodIntegration", m_methodIntegration.Jsonize());
+
+  }
+
+  if(m_authorizationScopesHasBeenSet)
+  {
+   Array<JsonValue> authorizationScopesJsonList(m_authorizationScopes.size());
+   for(unsigned authorizationScopesIndex = 0; authorizationScopesIndex < authorizationScopesJsonList.GetLength(); ++authorizationScopesIndex)
+   {
+     authorizationScopesJsonList[authorizationScopesIndex].AsString(m_authorizationScopes[authorizationScopesIndex]);
+   }
+   payload.WithArray("authorizationScopes", std::move(authorizationScopesJsonList));
 
   }
 

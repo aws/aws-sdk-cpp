@@ -247,8 +247,8 @@ namespace Model
      * <a href="http://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a
      * href="http://aws.amazon.com/sdk-for-ruby/">AWS Ruby SDK</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
-     * S3 Developer Guide</a>.</p> </important>
+     * href="AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer
+     * Guide</a>.</p> </important>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
 
@@ -280,8 +280,8 @@ namespace Model
      * <a href="http://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a
      * href="http://aws.amazon.com/sdk-for-ruby/">AWS Ruby SDK</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
-     * S3 Developer Guide</a>.</p> </important>
+     * href="AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer
+     * Guide</a>.</p> </important>
      */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
 
@@ -313,8 +313,8 @@ namespace Model
      * <a href="http://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a
      * href="http://aws.amazon.com/sdk-for-ruby/">AWS Ruby SDK</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
-     * S3 Developer Guide</a>.</p> </important>
+     * href="AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer
+     * Guide</a>.</p> </important>
      */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
 
@@ -346,8 +346,8 @@ namespace Model
      * <a href="http://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a
      * href="http://aws.amazon.com/sdk-for-ruby/">AWS Ruby SDK</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
-     * S3 Developer Guide</a>.</p> </important>
+     * href="AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer
+     * Guide</a>.</p> </important>
      */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
 
@@ -379,8 +379,8 @@ namespace Model
      * <a href="http://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a
      * href="http://aws.amazon.com/sdk-for-ruby/">AWS Ruby SDK</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
-     * S3 Developer Guide</a>.</p> </important>
+     * href="AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer
+     * Guide</a>.</p> </important>
      */
     inline S3Action& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
 
@@ -412,8 +412,8 @@ namespace Model
      * <a href="http://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a
      * href="http://aws.amazon.com/sdk-for-ruby/">AWS Ruby SDK</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
-     * S3 Developer Guide</a>.</p> </important>
+     * href="AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer
+     * Guide</a>.</p> </important>
      */
     inline S3Action& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
 
@@ -445,8 +445,8 @@ namespace Model
      * <a href="http://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a
      * href="http://aws.amazon.com/sdk-for-ruby/">AWS Ruby SDK</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
-     * S3 Developer Guide</a>.</p> </important>
+     * href="AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer
+     * Guide</a>.</p> </important>
      */
     inline S3Action& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
 

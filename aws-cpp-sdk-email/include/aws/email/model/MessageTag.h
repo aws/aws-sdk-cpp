@@ -55,101 +55,101 @@ namespace Model
 
 
     /**
-     * <p>The name of the tag. The name must:</p> <ul> <li> <p>Contain only ASCII
-     * letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-     * <li> <p>Contain less than 256 characters.</p> </li> </ul>
+     * <p>The name of the tag. The name must:</p> <ul> <li> <p>This value can only
+     * contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes
+     * (-).</p> </li> <li> <p>Contain less than 256 characters.</p> </li> </ul>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the tag. The name must:</p> <ul> <li> <p>Contain only ASCII
-     * letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-     * <li> <p>Contain less than 256 characters.</p> </li> </ul>
+     * <p>The name of the tag. The name must:</p> <ul> <li> <p>This value can only
+     * contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes
+     * (-).</p> </li> <li> <p>Contain less than 256 characters.</p> </li> </ul>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the tag. The name must:</p> <ul> <li> <p>Contain only ASCII
-     * letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-     * <li> <p>Contain less than 256 characters.</p> </li> </ul>
+     * <p>The name of the tag. The name must:</p> <ul> <li> <p>This value can only
+     * contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes
+     * (-).</p> </li> <li> <p>Contain less than 256 characters.</p> </li> </ul>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the tag. The name must:</p> <ul> <li> <p>Contain only ASCII
-     * letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-     * <li> <p>Contain less than 256 characters.</p> </li> </ul>
+     * <p>The name of the tag. The name must:</p> <ul> <li> <p>This value can only
+     * contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes
+     * (-).</p> </li> <li> <p>Contain less than 256 characters.</p> </li> </ul>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the tag. The name must:</p> <ul> <li> <p>Contain only ASCII
-     * letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-     * <li> <p>Contain less than 256 characters.</p> </li> </ul>
+     * <p>The name of the tag. The name must:</p> <ul> <li> <p>This value can only
+     * contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes
+     * (-).</p> </li> <li> <p>Contain less than 256 characters.</p> </li> </ul>
      */
     inline MessageTag& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the tag. The name must:</p> <ul> <li> <p>Contain only ASCII
-     * letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-     * <li> <p>Contain less than 256 characters.</p> </li> </ul>
+     * <p>The name of the tag. The name must:</p> <ul> <li> <p>This value can only
+     * contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes
+     * (-).</p> </li> <li> <p>Contain less than 256 characters.</p> </li> </ul>
      */
     inline MessageTag& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the tag. The name must:</p> <ul> <li> <p>Contain only ASCII
-     * letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-     * <li> <p>Contain less than 256 characters.</p> </li> </ul>
+     * <p>The name of the tag. The name must:</p> <ul> <li> <p>This value can only
+     * contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes
+     * (-).</p> </li> <li> <p>Contain less than 256 characters.</p> </li> </ul>
      */
     inline MessageTag& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The value of the tag. The value must:</p> <ul> <li> <p>Contain only ASCII
-     * letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-     * <li> <p>Contain less than 256 characters.</p> </li> </ul>
+     * <p>The value of the tag. The value must:</p> <ul> <li> <p>This value can only
+     * contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes
+     * (-).</p> </li> <li> <p>Contain less than 256 characters.</p> </li> </ul>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>The value of the tag. The value must:</p> <ul> <li> <p>Contain only ASCII
-     * letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-     * <li> <p>Contain less than 256 characters.</p> </li> </ul>
+     * <p>The value of the tag. The value must:</p> <ul> <li> <p>This value can only
+     * contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes
+     * (-).</p> </li> <li> <p>Contain less than 256 characters.</p> </li> </ul>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The value of the tag. The value must:</p> <ul> <li> <p>Contain only ASCII
-     * letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-     * <li> <p>Contain less than 256 characters.</p> </li> </ul>
+     * <p>The value of the tag. The value must:</p> <ul> <li> <p>This value can only
+     * contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes
+     * (-).</p> </li> <li> <p>Contain less than 256 characters.</p> </li> </ul>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>The value of the tag. The value must:</p> <ul> <li> <p>Contain only ASCII
-     * letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-     * <li> <p>Contain less than 256 characters.</p> </li> </ul>
+     * <p>The value of the tag. The value must:</p> <ul> <li> <p>This value can only
+     * contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes
+     * (-).</p> </li> <li> <p>Contain less than 256 characters.</p> </li> </ul>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>The value of the tag. The value must:</p> <ul> <li> <p>Contain only ASCII
-     * letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-     * <li> <p>Contain less than 256 characters.</p> </li> </ul>
+     * <p>The value of the tag. The value must:</p> <ul> <li> <p>This value can only
+     * contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes
+     * (-).</p> </li> <li> <p>Contain less than 256 characters.</p> </li> </ul>
      */
     inline MessageTag& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The value of the tag. The value must:</p> <ul> <li> <p>Contain only ASCII
-     * letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-     * <li> <p>Contain less than 256 characters.</p> </li> </ul>
+     * <p>The value of the tag. The value must:</p> <ul> <li> <p>This value can only
+     * contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes
+     * (-).</p> </li> <li> <p>Contain less than 256 characters.</p> </li> </ul>
      */
     inline MessageTag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>The value of the tag. The value must:</p> <ul> <li> <p>Contain only ASCII
-     * letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-     * <li> <p>Contain less than 256 characters.</p> </li> </ul>
+     * <p>The value of the tag. The value must:</p> <ul> <li> <p>This value can only
+     * contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes
+     * (-).</p> </li> <li> <p>Contain less than 256 characters.</p> </li> </ul>
      */
     inline MessageTag& WithValue(const char* value) { SetValue(value); return *this;}
 

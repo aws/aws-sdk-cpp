@@ -55,51 +55,44 @@ namespace Model
   public:
 
     /**
-     * <p>A token returned from a previous call to
-     * <code>ListCustomVerificationEmailTemplates</code> to indicate the position in
-     * the list of email templates.</p>
+     * <p>An array the contains the name and creation time stamp for each template in
+     * your Amazon SES account.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>A token returned from a previous call to
-     * <code>ListCustomVerificationEmailTemplates</code> to indicate the position in
-     * the list of email templates.</p>
+     * <p>An array the contains the name and creation time stamp for each template in
+     * your Amazon SES account.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>A token returned from a previous call to
-     * <code>ListCustomVerificationEmailTemplates</code> to indicate the position in
-     * the list of email templates.</p>
+     * <p>An array the contains the name and creation time stamp for each template in
+     * your Amazon SES account.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>A token returned from a previous call to
-     * <code>ListCustomVerificationEmailTemplates</code> to indicate the position in
-     * the list of email templates.</p>
+     * <p>An array the contains the name and creation time stamp for each template in
+     * your Amazon SES account.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>A token returned from a previous call to
-     * <code>ListCustomVerificationEmailTemplates</code> to indicate the position in
-     * the list of email templates.</p>
+     * <p>An array the contains the name and creation time stamp for each template in
+     * your Amazon SES account.</p>
      */
     inline ListCustomVerificationEmailTemplatesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A token returned from a previous call to
-     * <code>ListCustomVerificationEmailTemplates</code> to indicate the position in
-     * the list of email templates.</p>
+     * <p>An array the contains the name and creation time stamp for each template in
+     * your Amazon SES account.</p>
      */
     inline ListCustomVerificationEmailTemplatesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token returned from a previous call to
-     * <code>ListCustomVerificationEmailTemplates</code> to indicate the position in
-     * the list of email templates.</p>
+     * <p>An array the contains the name and creation time stamp for each template in
+     * your Amazon SES account.</p>
      */
     inline ListCustomVerificationEmailTemplatesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/apigateway/model/Integration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/apigateway/model/MethodResponse.h>
 #include <utility>
 
@@ -1181,6 +1182,95 @@ namespace Model
      */
     inline Method& WithMethodIntegration(Integration&& value) { SetMethodIntegration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A list authorization scopes configured on the method used with a
+     * <code>COGNITO_USER_POOL</code> authorizer to authorize the method invocation by
+     * matching them against the scopes parsed from the access token in the incoming
+     * request. The method invocation is authorized if any method scopes matches a
+     * claimed scope in the access token. Otherwise, the invocation is not authorized.
+     * When the method scope is configured, the client must provide an access token
+     * instead of an identity token for authorizatinon purposes.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAuthorizationScopes() const{ return m_authorizationScopes; }
+
+    /**
+     * <p>A list authorization scopes configured on the method used with a
+     * <code>COGNITO_USER_POOL</code> authorizer to authorize the method invocation by
+     * matching them against the scopes parsed from the access token in the incoming
+     * request. The method invocation is authorized if any method scopes matches a
+     * claimed scope in the access token. Otherwise, the invocation is not authorized.
+     * When the method scope is configured, the client must provide an access token
+     * instead of an identity token for authorizatinon purposes.</p>
+     */
+    inline void SetAuthorizationScopes(const Aws::Vector<Aws::String>& value) { m_authorizationScopesHasBeenSet = true; m_authorizationScopes = value; }
+
+    /**
+     * <p>A list authorization scopes configured on the method used with a
+     * <code>COGNITO_USER_POOL</code> authorizer to authorize the method invocation by
+     * matching them against the scopes parsed from the access token in the incoming
+     * request. The method invocation is authorized if any method scopes matches a
+     * claimed scope in the access token. Otherwise, the invocation is not authorized.
+     * When the method scope is configured, the client must provide an access token
+     * instead of an identity token for authorizatinon purposes.</p>
+     */
+    inline void SetAuthorizationScopes(Aws::Vector<Aws::String>&& value) { m_authorizationScopesHasBeenSet = true; m_authorizationScopes = std::move(value); }
+
+    /**
+     * <p>A list authorization scopes configured on the method used with a
+     * <code>COGNITO_USER_POOL</code> authorizer to authorize the method invocation by
+     * matching them against the scopes parsed from the access token in the incoming
+     * request. The method invocation is authorized if any method scopes matches a
+     * claimed scope in the access token. Otherwise, the invocation is not authorized.
+     * When the method scope is configured, the client must provide an access token
+     * instead of an identity token for authorizatinon purposes.</p>
+     */
+    inline Method& WithAuthorizationScopes(const Aws::Vector<Aws::String>& value) { SetAuthorizationScopes(value); return *this;}
+
+    /**
+     * <p>A list authorization scopes configured on the method used with a
+     * <code>COGNITO_USER_POOL</code> authorizer to authorize the method invocation by
+     * matching them against the scopes parsed from the access token in the incoming
+     * request. The method invocation is authorized if any method scopes matches a
+     * claimed scope in the access token. Otherwise, the invocation is not authorized.
+     * When the method scope is configured, the client must provide an access token
+     * instead of an identity token for authorizatinon purposes.</p>
+     */
+    inline Method& WithAuthorizationScopes(Aws::Vector<Aws::String>&& value) { SetAuthorizationScopes(std::move(value)); return *this;}
+
+    /**
+     * <p>A list authorization scopes configured on the method used with a
+     * <code>COGNITO_USER_POOL</code> authorizer to authorize the method invocation by
+     * matching them against the scopes parsed from the access token in the incoming
+     * request. The method invocation is authorized if any method scopes matches a
+     * claimed scope in the access token. Otherwise, the invocation is not authorized.
+     * When the method scope is configured, the client must provide an access token
+     * instead of an identity token for authorizatinon purposes.</p>
+     */
+    inline Method& AddAuthorizationScopes(const Aws::String& value) { m_authorizationScopesHasBeenSet = true; m_authorizationScopes.push_back(value); return *this; }
+
+    /**
+     * <p>A list authorization scopes configured on the method used with a
+     * <code>COGNITO_USER_POOL</code> authorizer to authorize the method invocation by
+     * matching them against the scopes parsed from the access token in the incoming
+     * request. The method invocation is authorized if any method scopes matches a
+     * claimed scope in the access token. Otherwise, the invocation is not authorized.
+     * When the method scope is configured, the client must provide an access token
+     * instead of an identity token for authorizatinon purposes.</p>
+     */
+    inline Method& AddAuthorizationScopes(Aws::String&& value) { m_authorizationScopesHasBeenSet = true; m_authorizationScopes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list authorization scopes configured on the method used with a
+     * <code>COGNITO_USER_POOL</code> authorizer to authorize the method invocation by
+     * matching them against the scopes parsed from the access token in the incoming
+     * request. The method invocation is authorized if any method scopes matches a
+     * claimed scope in the access token. Otherwise, the invocation is not authorized.
+     * When the method scope is configured, the client must provide an access token
+     * instead of an identity token for authorizatinon purposes.</p>
+     */
+    inline Method& AddAuthorizationScopes(const char* value) { m_authorizationScopesHasBeenSet = true; m_authorizationScopes.push_back(value); return *this; }
+
   private:
 
     Aws::String m_httpMethod;
@@ -1212,6 +1302,9 @@ namespace Model
 
     Integration m_methodIntegration;
     bool m_methodIntegrationHasBeenSet;
+
+    Aws::Vector<Aws::String> m_authorizationScopes;
+    bool m_authorizationScopesHasBeenSet;
   };
 
 } // namespace Model

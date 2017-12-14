@@ -65,51 +65,51 @@ namespace Model
 
 
     /**
-     * <p>The name of the event destination. The name must:</p> <ul> <li> <p>Contain
-     * only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes
-     * (-).</p> </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
+     * <p>The name of the event destination. The name must:</p> <ul> <li> <p>This value
+     * can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or
+     * dashes (-).</p> </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the event destination. The name must:</p> <ul> <li> <p>Contain
-     * only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes
-     * (-).</p> </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
+     * <p>The name of the event destination. The name must:</p> <ul> <li> <p>This value
+     * can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or
+     * dashes (-).</p> </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the event destination. The name must:</p> <ul> <li> <p>Contain
-     * only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes
-     * (-).</p> </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
+     * <p>The name of the event destination. The name must:</p> <ul> <li> <p>This value
+     * can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or
+     * dashes (-).</p> </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the event destination. The name must:</p> <ul> <li> <p>Contain
-     * only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes
-     * (-).</p> </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
+     * <p>The name of the event destination. The name must:</p> <ul> <li> <p>This value
+     * can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or
+     * dashes (-).</p> </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the event destination. The name must:</p> <ul> <li> <p>Contain
-     * only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes
-     * (-).</p> </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
+     * <p>The name of the event destination. The name must:</p> <ul> <li> <p>This value
+     * can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or
+     * dashes (-).</p> </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
      */
     inline EventDestination& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the event destination. The name must:</p> <ul> <li> <p>Contain
-     * only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes
-     * (-).</p> </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
+     * <p>The name of the event destination. The name must:</p> <ul> <li> <p>This value
+     * can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or
+     * dashes (-).</p> </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
      */
     inline EventDestination& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the event destination. The name must:</p> <ul> <li> <p>Contain
-     * only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes
-     * (-).</p> </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
+     * <p>The name of the event destination. The name must:</p> <ul> <li> <p>This value
+     * can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or
+     * dashes (-).</p> </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
      */
     inline EventDestination& WithName(const char* value) { SetName(value); return *this;}
 

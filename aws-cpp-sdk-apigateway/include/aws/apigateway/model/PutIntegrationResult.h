@@ -460,7 +460,7 @@ namespace Model
      * <p>The type of the network connection to the integration endpoint. The valid
      * value is <code>INTERNET</code> for connections through the public routable
      * internet or <code>VPC_LINK</code> for private connections between API Gateway
-     * and an network load balancer in a VPC. The default value is
+     * and a network load balancer in a VPC. The default value is
      * <code>INTERNET</code>.</p>
      */
     inline const ConnectionType& GetConnectionType() const{ return m_connectionType; }
@@ -469,7 +469,7 @@ namespace Model
      * <p>The type of the network connection to the integration endpoint. The valid
      * value is <code>INTERNET</code> for connections through the public routable
      * internet or <code>VPC_LINK</code> for private connections between API Gateway
-     * and an network load balancer in a VPC. The default value is
+     * and a network load balancer in a VPC. The default value is
      * <code>INTERNET</code>.</p>
      */
     inline void SetConnectionType(const ConnectionType& value) { m_connectionType = value; }
@@ -478,7 +478,7 @@ namespace Model
      * <p>The type of the network connection to the integration endpoint. The valid
      * value is <code>INTERNET</code> for connections through the public routable
      * internet or <code>VPC_LINK</code> for private connections between API Gateway
-     * and an network load balancer in a VPC. The default value is
+     * and a network load balancer in a VPC. The default value is
      * <code>INTERNET</code>.</p>
      */
     inline void SetConnectionType(ConnectionType&& value) { m_connectionType = std::move(value); }
@@ -487,7 +487,7 @@ namespace Model
      * <p>The type of the network connection to the integration endpoint. The valid
      * value is <code>INTERNET</code> for connections through the public routable
      * internet or <code>VPC_LINK</code> for private connections between API Gateway
-     * and an network load balancer in a VPC. The default value is
+     * and a network load balancer in a VPC. The default value is
      * <code>INTERNET</code>.</p>
      */
     inline PutIntegrationResult& WithConnectionType(const ConnectionType& value) { SetConnectionType(value); return *this;}
@@ -496,7 +496,7 @@ namespace Model
      * <p>The type of the network connection to the integration endpoint. The valid
      * value is <code>INTERNET</code> for connections through the public routable
      * internet or <code>VPC_LINK</code> for private connections between API Gateway
-     * and an network load balancer in a VPC. The default value is
+     * and a network load balancer in a VPC. The default value is
      * <code>INTERNET</code>.</p>
      */
     inline PutIntegrationResult& WithConnectionType(ConnectionType&& value) { SetConnectionType(std::move(value)); return *this;}

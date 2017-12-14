@@ -56,57 +56,57 @@ namespace Model
 
     /**
      * <p>The name of an Amazon CloudWatch dimension associated with an email sending
-     * metric. The name must:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z),
-     * numbers (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Contain less
-     * than 256 characters.</p> </li> </ul>
+     * metric. The name must:</p> <ul> <li> <p>This value can only contain ASCII
+     * letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+     * <li> <p>Contain less than 256 characters.</p> </li> </ul>
      */
     inline const Aws::String& GetDimensionName() const{ return m_dimensionName; }
 
     /**
      * <p>The name of an Amazon CloudWatch dimension associated with an email sending
-     * metric. The name must:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z),
-     * numbers (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Contain less
-     * than 256 characters.</p> </li> </ul>
+     * metric. The name must:</p> <ul> <li> <p>This value can only contain ASCII
+     * letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+     * <li> <p>Contain less than 256 characters.</p> </li> </ul>
      */
     inline void SetDimensionName(const Aws::String& value) { m_dimensionNameHasBeenSet = true; m_dimensionName = value; }
 
     /**
      * <p>The name of an Amazon CloudWatch dimension associated with an email sending
-     * metric. The name must:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z),
-     * numbers (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Contain less
-     * than 256 characters.</p> </li> </ul>
+     * metric. The name must:</p> <ul> <li> <p>This value can only contain ASCII
+     * letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+     * <li> <p>Contain less than 256 characters.</p> </li> </ul>
      */
     inline void SetDimensionName(Aws::String&& value) { m_dimensionNameHasBeenSet = true; m_dimensionName = std::move(value); }
 
     /**
      * <p>The name of an Amazon CloudWatch dimension associated with an email sending
-     * metric. The name must:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z),
-     * numbers (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Contain less
-     * than 256 characters.</p> </li> </ul>
+     * metric. The name must:</p> <ul> <li> <p>This value can only contain ASCII
+     * letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+     * <li> <p>Contain less than 256 characters.</p> </li> </ul>
      */
     inline void SetDimensionName(const char* value) { m_dimensionNameHasBeenSet = true; m_dimensionName.assign(value); }
 
     /**
      * <p>The name of an Amazon CloudWatch dimension associated with an email sending
-     * metric. The name must:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z),
-     * numbers (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Contain less
-     * than 256 characters.</p> </li> </ul>
+     * metric. The name must:</p> <ul> <li> <p>This value can only contain ASCII
+     * letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+     * <li> <p>Contain less than 256 characters.</p> </li> </ul>
      */
     inline CloudWatchDimensionConfiguration& WithDimensionName(const Aws::String& value) { SetDimensionName(value); return *this;}
 
     /**
      * <p>The name of an Amazon CloudWatch dimension associated with an email sending
-     * metric. The name must:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z),
-     * numbers (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Contain less
-     * than 256 characters.</p> </li> </ul>
+     * metric. The name must:</p> <ul> <li> <p>This value can only contain ASCII
+     * letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+     * <li> <p>Contain less than 256 characters.</p> </li> </ul>
      */
     inline CloudWatchDimensionConfiguration& WithDimensionName(Aws::String&& value) { SetDimensionName(std::move(value)); return *this;}
 
     /**
      * <p>The name of an Amazon CloudWatch dimension associated with an email sending
-     * metric. The name must:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z),
-     * numbers (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Contain less
-     * than 256 characters.</p> </li> </ul>
+     * metric. The name must:</p> <ul> <li> <p>This value can only contain ASCII
+     * letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+     * <li> <p>Contain less than 256 characters.</p> </li> </ul>
      */
     inline CloudWatchDimensionConfiguration& WithDimensionName(const char* value) { SetDimensionName(value); return *this;}
 
@@ -165,63 +165,63 @@ namespace Model
     /**
      * <p>The default value of the dimension that is published to Amazon CloudWatch if
      * you do not provide the value of the dimension when you send an email. The
-     * default value must:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z),
-     * numbers (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Contain less
-     * than 256 characters.</p> </li> </ul>
+     * default value must:</p> <ul> <li> <p>This value can only contain ASCII letters
+     * (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li> <li>
+     * <p>Contain less than 256 characters.</p> </li> </ul>
      */
     inline const Aws::String& GetDefaultDimensionValue() const{ return m_defaultDimensionValue; }
 
     /**
      * <p>The default value of the dimension that is published to Amazon CloudWatch if
      * you do not provide the value of the dimension when you send an email. The
-     * default value must:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z),
-     * numbers (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Contain less
-     * than 256 characters.</p> </li> </ul>
+     * default value must:</p> <ul> <li> <p>This value can only contain ASCII letters
+     * (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li> <li>
+     * <p>Contain less than 256 characters.</p> </li> </ul>
      */
     inline void SetDefaultDimensionValue(const Aws::String& value) { m_defaultDimensionValueHasBeenSet = true; m_defaultDimensionValue = value; }
 
     /**
      * <p>The default value of the dimension that is published to Amazon CloudWatch if
      * you do not provide the value of the dimension when you send an email. The
-     * default value must:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z),
-     * numbers (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Contain less
-     * than 256 characters.</p> </li> </ul>
+     * default value must:</p> <ul> <li> <p>This value can only contain ASCII letters
+     * (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li> <li>
+     * <p>Contain less than 256 characters.</p> </li> </ul>
      */
     inline void SetDefaultDimensionValue(Aws::String&& value) { m_defaultDimensionValueHasBeenSet = true; m_defaultDimensionValue = std::move(value); }
 
     /**
      * <p>The default value of the dimension that is published to Amazon CloudWatch if
      * you do not provide the value of the dimension when you send an email. The
-     * default value must:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z),
-     * numbers (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Contain less
-     * than 256 characters.</p> </li> </ul>
+     * default value must:</p> <ul> <li> <p>This value can only contain ASCII letters
+     * (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li> <li>
+     * <p>Contain less than 256 characters.</p> </li> </ul>
      */
     inline void SetDefaultDimensionValue(const char* value) { m_defaultDimensionValueHasBeenSet = true; m_defaultDimensionValue.assign(value); }
 
     /**
      * <p>The default value of the dimension that is published to Amazon CloudWatch if
      * you do not provide the value of the dimension when you send an email. The
-     * default value must:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z),
-     * numbers (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Contain less
-     * than 256 characters.</p> </li> </ul>
+     * default value must:</p> <ul> <li> <p>This value can only contain ASCII letters
+     * (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li> <li>
+     * <p>Contain less than 256 characters.</p> </li> </ul>
      */
     inline CloudWatchDimensionConfiguration& WithDefaultDimensionValue(const Aws::String& value) { SetDefaultDimensionValue(value); return *this;}
 
     /**
      * <p>The default value of the dimension that is published to Amazon CloudWatch if
      * you do not provide the value of the dimension when you send an email. The
-     * default value must:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z),
-     * numbers (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Contain less
-     * than 256 characters.</p> </li> </ul>
+     * default value must:</p> <ul> <li> <p>This value can only contain ASCII letters
+     * (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li> <li>
+     * <p>Contain less than 256 characters.</p> </li> </ul>
      */
     inline CloudWatchDimensionConfiguration& WithDefaultDimensionValue(Aws::String&& value) { SetDefaultDimensionValue(std::move(value)); return *this;}
 
     /**
      * <p>The default value of the dimension that is published to Amazon CloudWatch if
      * you do not provide the value of the dimension when you send an email. The
-     * default value must:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z),
-     * numbers (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Contain less
-     * than 256 characters.</p> </li> </ul>
+     * default value must:</p> <ul> <li> <p>This value can only contain ASCII letters
+     * (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li> <li>
+     * <p>Contain less than 256 characters.</p> </li> </ul>
      */
     inline CloudWatchDimensionConfiguration& WithDefaultDimensionValue(const char* value) { SetDefaultDimensionValue(value); return *this;}
 

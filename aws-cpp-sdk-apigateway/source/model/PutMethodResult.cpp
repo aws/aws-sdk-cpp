@@ -109,6 +109,15 @@ PutMethodResult& PutMethodResult::operator =(const Aws::AmazonWebServiceResult<J
 
   }
 
+  if(jsonValue.ValueExists("authorizationScopes"))
+  {
+    Array<JsonValue> authorizationScopesJsonList = jsonValue.GetArray("authorizationScopes");
+    for(unsigned authorizationScopesIndex = 0; authorizationScopesIndex < authorizationScopesJsonList.GetLength(); ++authorizationScopesIndex)
+    {
+      m_authorizationScopes.push_back(authorizationScopesJsonList[authorizationScopesIndex].AsString());
+    }
+  }
+
 
 
   return *this;
