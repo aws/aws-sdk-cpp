@@ -153,6 +153,9 @@ TEST_F(IdentityPoolOperationTest, TestCreateGetUpdateDeleteOperations)
     EXPECT_EQ(createIdentityPoolRequest.GetSupportedLoginProviders().find("www.amazon.com")->second,
         createIdentityPoolOutcome.GetResult().GetSupportedLoginProviders().find("www.amazon.com")->second);
 
+    Aws::String identityPoolId = createIdentityPoolOutcome.GetResult().GetIdentityPoolId();
+    EXPECT_TRUE(WaitForIdentitiesToBeActive(identityPoolId, client));
+
     DescribeIdentityPoolRequest describeIdentityPoolRequest;
     describeIdentityPoolRequest.WithIdentityPoolId(createIdentityPoolOutcome.GetResult().GetIdentityPoolId());
 
