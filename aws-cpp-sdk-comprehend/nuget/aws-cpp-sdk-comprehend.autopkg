@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-Comprehend;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.3.20171127.23;
+        version : 1.3.20171127.24;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Comprehend);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.3.23
+            AWSSDKCPP-Core/1.3.24
        }
     }
 

@@ -43,10 +43,13 @@
 #include <aws/appstream/model/ExpireSessionResult.h>
 #include <aws/appstream/model/ListAssociatedFleetsResult.h>
 #include <aws/appstream/model/ListAssociatedStacksResult.h>
+#include <aws/appstream/model/ListTagsForResourceResult.h>
 #include <aws/appstream/model/StartFleetResult.h>
 #include <aws/appstream/model/StartImageBuilderResult.h>
 #include <aws/appstream/model/StopFleetResult.h>
 #include <aws/appstream/model/StopImageBuilderResult.h>
+#include <aws/appstream/model/TagResourceResult.h>
+#include <aws/appstream/model/UntagResourceResult.h>
 #include <aws/appstream/model/UpdateDirectoryConfigResult.h>
 #include <aws/appstream/model/UpdateFleetResult.h>
 #include <aws/appstream/model/UpdateStackResult.h>
@@ -117,10 +120,13 @@ namespace Model
         class ExpireSessionRequest;
         class ListAssociatedFleetsRequest;
         class ListAssociatedStacksRequest;
+        class ListTagsForResourceRequest;
         class StartFleetRequest;
         class StartImageBuilderRequest;
         class StopFleetRequest;
         class StopImageBuilderRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UpdateDirectoryConfigRequest;
         class UpdateFleetRequest;
         class UpdateStackRequest;
@@ -147,10 +153,13 @@ namespace Model
         typedef Aws::Utils::Outcome<ExpireSessionResult, Aws::Client::AWSError<AppStreamErrors>> ExpireSessionOutcome;
         typedef Aws::Utils::Outcome<ListAssociatedFleetsResult, Aws::Client::AWSError<AppStreamErrors>> ListAssociatedFleetsOutcome;
         typedef Aws::Utils::Outcome<ListAssociatedStacksResult, Aws::Client::AWSError<AppStreamErrors>> ListAssociatedStacksOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<AppStreamErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<StartFleetResult, Aws::Client::AWSError<AppStreamErrors>> StartFleetOutcome;
         typedef Aws::Utils::Outcome<StartImageBuilderResult, Aws::Client::AWSError<AppStreamErrors>> StartImageBuilderOutcome;
         typedef Aws::Utils::Outcome<StopFleetResult, Aws::Client::AWSError<AppStreamErrors>> StopFleetOutcome;
         typedef Aws::Utils::Outcome<StopImageBuilderResult, Aws::Client::AWSError<AppStreamErrors>> StopImageBuilderOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<AppStreamErrors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<AppStreamErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateDirectoryConfigResult, Aws::Client::AWSError<AppStreamErrors>> UpdateDirectoryConfigOutcome;
         typedef Aws::Utils::Outcome<UpdateFleetResult, Aws::Client::AWSError<AppStreamErrors>> UpdateFleetOutcome;
         typedef Aws::Utils::Outcome<UpdateStackResult, Aws::Client::AWSError<AppStreamErrors>> UpdateStackOutcome;
@@ -177,10 +186,13 @@ namespace Model
         typedef std::future<ExpireSessionOutcome> ExpireSessionOutcomeCallable;
         typedef std::future<ListAssociatedFleetsOutcome> ListAssociatedFleetsOutcomeCallable;
         typedef std::future<ListAssociatedStacksOutcome> ListAssociatedStacksOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<StartFleetOutcome> StartFleetOutcomeCallable;
         typedef std::future<StartImageBuilderOutcome> StartImageBuilderOutcomeCallable;
         typedef std::future<StopFleetOutcome> StopFleetOutcomeCallable;
         typedef std::future<StopImageBuilderOutcome> StopImageBuilderOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateDirectoryConfigOutcome> UpdateDirectoryConfigOutcomeCallable;
         typedef std::future<UpdateFleetOutcome> UpdateFleetOutcomeCallable;
         typedef std::future<UpdateStackOutcome> UpdateStackOutcomeCallable;
@@ -210,10 +222,13 @@ namespace Model
     typedef std::function<void(const AppStreamClient*, const Model::ExpireSessionRequest&, const Model::ExpireSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExpireSessionResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::ListAssociatedFleetsRequest&, const Model::ListAssociatedFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociatedFleetsResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::ListAssociatedStacksRequest&, const Model::ListAssociatedStacksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociatedStacksResponseReceivedHandler;
+    typedef std::function<void(const AppStreamClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::StartFleetRequest&, const Model::StartFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartFleetResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::StartImageBuilderRequest&, const Model::StartImageBuilderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartImageBuilderResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::StopFleetRequest&, const Model::StopFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopFleetResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::StopImageBuilderRequest&, const Model::StopImageBuilderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopImageBuilderResponseReceivedHandler;
+    typedef std::function<void(const AppStreamClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const AppStreamClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::UpdateDirectoryConfigRequest&, const Model::UpdateDirectoryConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDirectoryConfigResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::UpdateFleetRequest&, const Model::UpdateFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFleetResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::UpdateStackRequest&, const Model::UpdateStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStackResponseReceivedHandler;
@@ -866,6 +881,46 @@ namespace Model
         virtual void ListAssociatedStacksAsync(const Model::ListAssociatedStacksRequest& request, const ListAssociatedStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the tags for the specified AppStream 2.0 resource. You can tag
+         * AppStream 2.0 image builders, images, fleets, and stacks.</p> <p>For more
+         * information about tags, see <a
+         * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic">Tagging
+         * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Lists the tags for the specified AppStream 2.0 resource. You can tag
+         * AppStream 2.0 image builders, images, fleets, and stacks.</p> <p>For more
+         * information about tags, see <a
+         * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic">Tagging
+         * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Lists the tags for the specified AppStream 2.0 resource. You can tag
+         * AppStream 2.0 image builders, images, fleets, and stacks.</p> <p>For more
+         * information about tags, see <a
+         * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic">Tagging
+         * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Starts the specified fleet.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet">AWS
          * API Reference</a></p>
@@ -964,6 +1019,98 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StopImageBuilderAsync(const Model::StopImageBuilderRequest& request, const StopImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds or overwrites one or more tags for the specified AppStream 2.0 resource.
+         * You can tag AppStream 2.0 image builders, images, fleets, and stacks.</p>
+         * <p>Each tag consists of a key and an optional value. If a resource already has a
+         * tag with the same key, this operation updates its value.</p> <p>To list the
+         * current tags for your resources, use <a>ListTagsForResource</a>. To disassociate
+         * tags from your resources, use <a>UntagResource</a>.</p> <p>For more information
+         * about tags, see <a
+         * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic">Tagging
+         * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds or overwrites one or more tags for the specified AppStream 2.0 resource.
+         * You can tag AppStream 2.0 image builders, images, fleets, and stacks.</p>
+         * <p>Each tag consists of a key and an optional value. If a resource already has a
+         * tag with the same key, this operation updates its value.</p> <p>To list the
+         * current tags for your resources, use <a>ListTagsForResource</a>. To disassociate
+         * tags from your resources, use <a>UntagResource</a>.</p> <p>For more information
+         * about tags, see <a
+         * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic">Tagging
+         * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds or overwrites one or more tags for the specified AppStream 2.0 resource.
+         * You can tag AppStream 2.0 image builders, images, fleets, and stacks.</p>
+         * <p>Each tag consists of a key and an optional value. If a resource already has a
+         * tag with the same key, this operation updates its value.</p> <p>To list the
+         * current tags for your resources, use <a>ListTagsForResource</a>. To disassociate
+         * tags from your resources, use <a>UntagResource</a>.</p> <p>For more information
+         * about tags, see <a
+         * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic">Tagging
+         * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Disassociates the specified tags from the specified AppStream 2.0
+         * resource.</p> <p>To list the current tags for your resources, use
+         * <a>ListTagsForResource</a>.</p> <p>For more information about tags, see <a
+         * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic">Tagging
+         * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Disassociates the specified tags from the specified AppStream 2.0
+         * resource.</p> <p>To list the current tags for your resources, use
+         * <a>ListTagsForResource</a>.</p> <p>For more information about tags, see <a
+         * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic">Tagging
+         * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Disassociates the specified tags from the specified AppStream 2.0
+         * resource.</p> <p>To list the current tags for your resources, use
+         * <a>ListTagsForResource</a>.</p> <p>For more information about tags, see <a
+         * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic">Tagging
+         * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified directory configuration.</p><p><h3>See Also:</h3>   <a
@@ -1082,10 +1229,13 @@ namespace Model
         void ExpireSessionAsyncHelper(const Model::ExpireSessionRequest& request, const ExpireSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAssociatedFleetsAsyncHelper(const Model::ListAssociatedFleetsRequest& request, const ListAssociatedFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAssociatedStacksAsyncHelper(const Model::ListAssociatedStacksRequest& request, const ListAssociatedStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartFleetAsyncHelper(const Model::StartFleetRequest& request, const StartFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartImageBuilderAsyncHelper(const Model::StartImageBuilderRequest& request, const StartImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopFleetAsyncHelper(const Model::StopFleetRequest& request, const StopFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopImageBuilderAsyncHelper(const Model::StopImageBuilderRequest& request, const StopImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDirectoryConfigAsyncHelper(const Model::UpdateDirectoryConfigRequest& request, const UpdateDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFleetAsyncHelper(const Model::UpdateFleetRequest& request, const UpdateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateStackAsyncHelper(const Model::UpdateStackRequest& request, const UpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

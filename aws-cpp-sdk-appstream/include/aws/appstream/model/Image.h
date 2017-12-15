@@ -458,43 +458,43 @@ namespace Model
 
     /**
      * <p>The version of the AppStream 2.0 agent to use for instances that are launched
-     * from this image.</p>
+     * from this image. </p>
      */
     inline const Aws::String& GetAppstreamAgentVersion() const{ return m_appstreamAgentVersion; }
 
     /**
      * <p>The version of the AppStream 2.0 agent to use for instances that are launched
-     * from this image.</p>
+     * from this image. </p>
      */
     inline void SetAppstreamAgentVersion(const Aws::String& value) { m_appstreamAgentVersionHasBeenSet = true; m_appstreamAgentVersion = value; }
 
     /**
      * <p>The version of the AppStream 2.0 agent to use for instances that are launched
-     * from this image.</p>
+     * from this image. </p>
      */
     inline void SetAppstreamAgentVersion(Aws::String&& value) { m_appstreamAgentVersionHasBeenSet = true; m_appstreamAgentVersion = std::move(value); }
 
     /**
      * <p>The version of the AppStream 2.0 agent to use for instances that are launched
-     * from this image.</p>
+     * from this image. </p>
      */
     inline void SetAppstreamAgentVersion(const char* value) { m_appstreamAgentVersionHasBeenSet = true; m_appstreamAgentVersion.assign(value); }
 
     /**
      * <p>The version of the AppStream 2.0 agent to use for instances that are launched
-     * from this image.</p>
+     * from this image. </p>
      */
     inline Image& WithAppstreamAgentVersion(const Aws::String& value) { SetAppstreamAgentVersion(value); return *this;}
 
     /**
      * <p>The version of the AppStream 2.0 agent to use for instances that are launched
-     * from this image.</p>
+     * from this image. </p>
      */
     inline Image& WithAppstreamAgentVersion(Aws::String&& value) { SetAppstreamAgentVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the AppStream 2.0 agent to use for instances that are launched
-     * from this image.</p>
+     * from this image. </p>
      */
     inline Image& WithAppstreamAgentVersion(const char* value) { SetAppstreamAgentVersion(value); return *this;}
 
