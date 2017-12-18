@@ -47,7 +47,7 @@ namespace Aws
 
         static const char* HTTP_CLIENT_FACTORY_ALLOCATION_TAG = "HttpClientFactory";
 
-#if ENABLE_CURL_CLIENT
+#if ENABLE_CURL_CLIENT && !defined(_WIN32)
         static void LogAndSwallowHandler(int signal)
         {
             switch(signal)
@@ -113,10 +113,12 @@ namespace Aws
                 {
                     CurlHttpClient::InitGlobalState();
                 }
+#if !defined (_WIN32)
                 if(s_InstallSigPipeHandler)
                 {
                     ::signal(SIGPIPE, LogAndSwallowHandler);
                 }
+#endif
 #elif ENABLE_WINDOWS_IXML_HTTP_REQUEST_2_CLIENT
                 IXmlHttpRequest2HttpClient::InitCOM();
 #endif
