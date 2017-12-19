@@ -14,43 +14,28 @@
 */
 
 #pragma once
-#include <aws/route53/Route53_EXPORTS.h>
+#include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace Route53
+namespace APIGateway
 {
 namespace Model
 {
-  enum class ResourceRecordSetRegion
+  enum class ApiKeySourceType
   {
     NOT_SET,
-    us_east_1,
-    us_east_2,
-    us_west_1,
-    us_west_2,
-    ca_central_1,
-    eu_west_1,
-    eu_west_2,
-    eu_west_3,
-    eu_central_1,
-    ap_southeast_1,
-    ap_southeast_2,
-    ap_northeast_1,
-    ap_northeast_2,
-    sa_east_1,
-    cn_north_1,
-    cn_northwest_1,
-    ap_south_1
+    HEADER,
+    AUTHORIZER
   };
 
-namespace ResourceRecordSetRegionMapper
+namespace ApiKeySourceTypeMapper
 {
-AWS_ROUTE53_API ResourceRecordSetRegion GetResourceRecordSetRegionForName(const Aws::String& name);
+AWS_APIGATEWAY_API ApiKeySourceType GetApiKeySourceTypeForName(const Aws::String& name);
 
-AWS_ROUTE53_API Aws::String GetNameForResourceRecordSetRegion(ResourceRecordSetRegion value);
-} // namespace ResourceRecordSetRegionMapper
+AWS_APIGATEWAY_API Aws::String GetNameForApiKeySourceType(ApiKeySourceType value);
+} // namespace ApiKeySourceTypeMapper
 } // namespace Model
-} // namespace Route53
+} // namespace APIGateway
 } // namespace Aws
