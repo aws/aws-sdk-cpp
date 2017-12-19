@@ -28,6 +28,10 @@ CreateRestApiRequest::CreateRestApiRequest() :
     m_versionHasBeenSet(false),
     m_cloneFromHasBeenSet(false),
     m_binaryMediaTypesHasBeenSet(false),
+    m_minimumCompressionSize(0),
+    m_minimumCompressionSizeHasBeenSet(false),
+    m_apiKeySource(ApiKeySourceType::NOT_SET),
+    m_apiKeySourceHasBeenSet(false),
     m_endpointConfigurationHasBeenSet(false)
 {
 }
@@ -69,6 +73,17 @@ Aws::String CreateRestApiRequest::SerializePayload() const
    }
    payload.WithArray("binaryMediaTypes", std::move(binaryMediaTypesJsonList));
 
+  }
+
+  if(m_minimumCompressionSizeHasBeenSet)
+  {
+   payload.WithInteger("minimumCompressionSize", m_minimumCompressionSize);
+
+  }
+
+  if(m_apiKeySourceHasBeenSet)
+  {
+   payload.WithString("apiKeySource", ApiKeySourceTypeMapper::GetNameForApiKeySourceType(m_apiKeySource));
   }
 
   if(m_endpointConfigurationHasBeenSet)

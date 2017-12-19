@@ -104,6 +104,7 @@
 #include <aws/apigateway/model/GetSdkTypesRequest.h>
 #include <aws/apigateway/model/GetStageRequest.h>
 #include <aws/apigateway/model/GetStagesRequest.h>
+#include <aws/apigateway/model/GetTagsRequest.h>
 #include <aws/apigateway/model/GetUsageRequest.h>
 #include <aws/apigateway/model/GetUsagePlanRequest.h>
 #include <aws/apigateway/model/GetUsagePlanKeyRequest.h>
@@ -120,8 +121,10 @@
 #include <aws/apigateway/model/PutMethodRequest.h>
 #include <aws/apigateway/model/PutMethodResponseRequest.h>
 #include <aws/apigateway/model/PutRestApiRequest.h>
+#include <aws/apigateway/model/TagResourceRequest.h>
 #include <aws/apigateway/model/TestInvokeAuthorizerRequest.h>
 #include <aws/apigateway/model/TestInvokeMethodRequest.h>
+#include <aws/apigateway/model/UntagResourceRequest.h>
 #include <aws/apigateway/model/UpdateAccountRequest.h>
 #include <aws/apigateway/model/UpdateApiKeyRequest.h>
 #include <aws/apigateway/model/UpdateAuthorizerRequest.h>
@@ -3091,6 +3094,42 @@ void APIGatewayClient::GetStagesAsyncHelper(const GetStagesRequest& request, con
   handler(this, request, GetStages(request), context);
 }
 
+GetTagsOutcome APIGatewayClient::GetTags(const GetTagsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/tags/";
+  ss << request.GetResourceArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetTagsOutcome(GetTagsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetTagsOutcome(outcome.GetError());
+  }
+}
+
+GetTagsOutcomeCallable APIGatewayClient::GetTagsCallable(const GetTagsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTags(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void APIGatewayClient::GetTagsAsync(const GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetTagsAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::GetTagsAsyncHelper(const GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetTags(request), context);
+}
+
 GetUsageOutcome APIGatewayClient::GetUsage(const GetUsageRequest& request) const
 {
   Aws::StringStream ss;
@@ -3695,6 +3734,42 @@ void APIGatewayClient::PutRestApiAsyncHelper(const PutRestApiRequest& request, c
   handler(this, request, PutRestApi(request), context);
 }
 
+TagResourceOutcome APIGatewayClient::TagResource(const TagResourceRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/tags/";
+  ss << request.GetResourceArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return TagResourceOutcome(NoResult());
+  }
+  else
+  {
+    return TagResourceOutcome(outcome.GetError());
+  }
+}
+
+TagResourceOutcomeCallable APIGatewayClient::TagResourceCallable(const TagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void APIGatewayClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TagResource(request), context);
+}
+
 TestInvokeAuthorizerOutcome APIGatewayClient::TestInvokeAuthorizer(const TestInvokeAuthorizerRequest& request) const
 {
   Aws::StringStream ss;
@@ -3771,6 +3846,42 @@ void APIGatewayClient::TestInvokeMethodAsync(const TestInvokeMethodRequest& requ
 void APIGatewayClient::TestInvokeMethodAsyncHelper(const TestInvokeMethodRequest& request, const TestInvokeMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, TestInvokeMethod(request), context);
+}
+
+UntagResourceOutcome APIGatewayClient::UntagResource(const UntagResourceRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/tags/";
+  ss << request.GetResourceArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UntagResourceOutcome(NoResult());
+  }
+  else
+  {
+    return UntagResourceOutcome(outcome.GetError());
+  }
+}
+
+UntagResourceOutcomeCallable APIGatewayClient::UntagResourceCallable(const UntagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void APIGatewayClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UntagResource(request), context);
 }
 
 UpdateAccountOutcome APIGatewayClient::UpdateAccount(const UpdateAccountRequest& request) const

@@ -158,16 +158,16 @@ namespace Model
         virtual void DeleteObjectAsync(const Model::DeleteObjectRequest& request, const DeleteObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the header for an object at the specified path.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Gets the headers for an object at the specified path.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/DescribeObject">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeObjectOutcome DescribeObject(const Model::DescribeObjectRequest& request) const;
 
         /**
-         * <p>Gets the header for an object at the specified path.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Gets the headers for an object at the specified path.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/DescribeObject">AWS
          * API Reference</a></p>
          *
@@ -176,8 +176,8 @@ namespace Model
         virtual Model::DescribeObjectOutcomeCallable DescribeObjectCallable(const Model::DescribeObjectRequest& request) const;
 
         /**
-         * <p>Gets the header for an object at the specified path.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Gets the headers for an object at the specified path.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/DescribeObject">AWS
          * API Reference</a></p>
          *

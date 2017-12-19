@@ -37,6 +37,7 @@ namespace Aws
         static const int ca_central_1_HASH = HashingUtils::HashString("ca-central-1");
         static const int eu_west_1_HASH = HashingUtils::HashString("eu-west-1");
         static const int eu_west_2_HASH = HashingUtils::HashString("eu-west-2");
+        static const int eu_west_3_HASH = HashingUtils::HashString("eu-west-3");
         static const int eu_central_1_HASH = HashingUtils::HashString("eu-central-1");
         static const int ap_southeast_1_HASH = HashingUtils::HashString("ap-southeast-1");
         static const int ap_southeast_2_HASH = HashingUtils::HashString("ap-southeast-2");
@@ -44,6 +45,7 @@ namespace Aws
         static const int ap_northeast_2_HASH = HashingUtils::HashString("ap-northeast-2");
         static const int sa_east_1_HASH = HashingUtils::HashString("sa-east-1");
         static const int cn_north_1_HASH = HashingUtils::HashString("cn-north-1");
+        static const int cn_northwest_1_HASH = HashingUtils::HashString("cn-northwest-1");
         static const int ap_south_1_HASH = HashingUtils::HashString("ap-south-1");
 
 
@@ -78,6 +80,10 @@ namespace Aws
           {
             return ResourceRecordSetRegion::eu_west_2;
           }
+          else if (hashCode == eu_west_3_HASH)
+          {
+            return ResourceRecordSetRegion::eu_west_3;
+          }
           else if (hashCode == eu_central_1_HASH)
           {
             return ResourceRecordSetRegion::eu_central_1;
@@ -105,6 +111,10 @@ namespace Aws
           else if (hashCode == cn_north_1_HASH)
           {
             return ResourceRecordSetRegion::cn_north_1;
+          }
+          else if (hashCode == cn_northwest_1_HASH)
+          {
+            return ResourceRecordSetRegion::cn_northwest_1;
           }
           else if (hashCode == ap_south_1_HASH)
           {
@@ -138,6 +148,8 @@ namespace Aws
             return "eu-west-1";
           case ResourceRecordSetRegion::eu_west_2:
             return "eu-west-2";
+          case ResourceRecordSetRegion::eu_west_3:
+            return "eu-west-3";
           case ResourceRecordSetRegion::eu_central_1:
             return "eu-central-1";
           case ResourceRecordSetRegion::ap_southeast_1:
@@ -152,6 +164,8 @@ namespace Aws
             return "sa-east-1";
           case ResourceRecordSetRegion::cn_north_1:
             return "cn-north-1";
+          case ResourceRecordSetRegion::cn_northwest_1:
+            return "cn-northwest-1";
           case ResourceRecordSetRegion::ap_south_1:
             return "ap-south-1";
           default:

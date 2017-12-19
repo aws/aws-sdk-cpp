@@ -33,7 +33,8 @@ CreateStageRequest::CreateStageRequest() :
     m_cacheClusterSizeHasBeenSet(false),
     m_variablesHasBeenSet(false),
     m_documentationVersionHasBeenSet(false),
-    m_canarySettingsHasBeenSet(false)
+    m_canarySettingsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,17 @@ Aws::String CreateStageRequest::SerializePayload() const
   if(m_canarySettingsHasBeenSet)
   {
    payload.WithObject("canarySettings", m_canarySettings.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

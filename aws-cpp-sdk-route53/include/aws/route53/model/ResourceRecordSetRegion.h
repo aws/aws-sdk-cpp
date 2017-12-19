@@ -33,6 +33,7 @@ namespace Model
     ca_central_1,
     eu_west_1,
     eu_west_2,
+    eu_west_3,
     eu_central_1,
     ap_southeast_1,
     ap_southeast_2,
@@ -40,6 +41,7 @@ namespace Model
     ap_northeast_2,
     sa_east_1,
     cn_north_1,
+    cn_northwest_1,
     ap_south_1
   };
 

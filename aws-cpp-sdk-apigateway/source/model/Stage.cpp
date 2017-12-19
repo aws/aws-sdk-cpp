@@ -44,6 +44,7 @@ Stage::Stage() :
     m_documentationVersionHasBeenSet(false),
     m_accessLogSettingsHasBeenSet(false),
     m_canarySettingsHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_lastUpdatedDateHasBeenSet(false)
 {
@@ -65,6 +66,7 @@ Stage::Stage(const JsonValue& jsonValue) :
     m_documentationVersionHasBeenSet(false),
     m_accessLogSettingsHasBeenSet(false),
     m_canarySettingsHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_lastUpdatedDateHasBeenSet(false)
 {
@@ -161,6 +163,16 @@ Stage& Stage::operator =(const JsonValue& jsonValue)
     m_canarySettings = jsonValue.GetObject("canarySettings");
 
     m_canarySettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonValue> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("createdDate"))
@@ -261,6 +273,17 @@ JsonValue Stage::Jsonize() const
   if(m_canarySettingsHasBeenSet)
   {
    payload.WithObject("canarySettings", m_canarySettings.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 
