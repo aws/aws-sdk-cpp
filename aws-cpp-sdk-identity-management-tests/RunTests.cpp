@@ -25,10 +25,7 @@ int main(int argc, char** argv)
     Aws::SDKOptions options;
 
     Aws::Testing::InitPlatformTest(options);
-    if(argc > 1)
-    {
-        Aws::Testing::SetAwsResourcePrefix(argv[1]);
-    }
+    Aws::Testing::ParseArgs(argc, argv);
 
     options.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Trace;
     Aws::InitAPI(options);

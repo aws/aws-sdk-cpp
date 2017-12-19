@@ -60,5 +60,21 @@ const Aws::String& GetAwsResourcePrefix()
     return s_resourcePrefix;
 }
 
+void ParseArgs(int argc, char** argv)
+{
+    // std::string rather than Aws::String since this happens before the memory manager is initialized
+    const std::string resourcePrefixOption = "--aws_resource_prefix=";
+    // list other options here
+    for(int i = 1; i < argc; i++)
+    {
+        std::string arg = argv[i];
+        if(arg.find(resourcePrefixOption) == 0)
+        {
+            arg = arg.substr(resourcePrefixOption.length()); // get whatever value after the '='
+            Aws::Testing::SetAwsResourcePrefix(arg.c_str());
+        }
+    }
+}
+
 } // namespace Testing
 } // namespace Aws

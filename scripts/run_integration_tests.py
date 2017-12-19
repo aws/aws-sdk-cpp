@@ -61,7 +61,7 @@ def Main():
 
     for testName in testList:
         testExe = arguments["buildDir"] + "/" + testName + "/" + configDir + "/" + testName + exeExtension
-        prefix = platform.system().lower()
+        prefix = "--aws_resource_prefix=" + platform.system().lower()
         print("testExe = " + testExe)
         print("prefix = " + prefix)
         AddExecutableBit(testExe)

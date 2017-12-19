@@ -26,11 +26,7 @@ int main(int argc, char** argv)
     options.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Trace;
 
     Aws::Testing::InitPlatformTest(options);
-    if(argc > 1)
-    {
-        std::cout << "Resource prefix: " << argv[1] << std::endl;
-        Aws::Testing::SetAwsResourcePrefix(argv[1]);
-    }
+    Aws::Testing::ParseArgs(argc, argv);
 
     Aws::InitAPI(options);
     ::testing::InitGoogleTest(&argc, argv);
