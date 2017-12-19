@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-SMS;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.3.20161024.25;
+        version : 1.3.20161024.26;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Server Migration Service);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.3.25
+            AWSSDKCPP-Core/1.3.26
        }
     }
 
