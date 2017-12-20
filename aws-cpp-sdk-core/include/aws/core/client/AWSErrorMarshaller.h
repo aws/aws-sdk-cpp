@@ -75,6 +75,11 @@ namespace Aws
              * and AWSError with CoreErrors::UNKNOWN as the error type.
              */
             AWSError<CoreErrors> Marshall(const Aws::Http::HttpResponse& response) const override;
+
+            /**
+             * Determines if a given response contains an error that can be marshalled.
+             */
+            static bool ContainsError(const Aws::Http::HttpResponse& response);
         };
 
     } // namespace Client

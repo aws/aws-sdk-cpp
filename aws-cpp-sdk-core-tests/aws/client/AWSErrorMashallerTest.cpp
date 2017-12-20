@@ -112,17 +112,31 @@ static std::unique_ptr<Aws::Http::HttpResponse> BuildHttpXmlResponse(const Aws::
     return response;
 }
 
+static Aws::UniquePtr<Aws::Http::HttpResponse> BuildEmptyHttpResponse()
+{
+    using namespace Aws::Http;
+    using namespace Aws::Http::Standard;
+    StandardHttpRequest fakeRequest("/some/uri", HttpMethod::HTTP_GET);
+    auto ss = Aws::New<Aws::StringStream>("EmptyHttpResponseTag");
+    fakeRequest.SetResponseStreamFactory([=] { return ss; });
+    return Aws::UniquePtr<Aws::Http::HttpResponse>(Aws::New<StandardHttpResponse>("StandardHttpRequestTag", fakeRequest));
+}
+
 TEST(XmlErrorMarshallerTest, TestXmlErrorPayload)
 {
     XmlErrorMarshaller awsErrorMarshaller;
     Aws::String message = "Test Message";
-    AWSError<CoreErrors> error = awsErrorMarshaller.Marshall(*BuildHttpXmlResponse("IncompleteSignatureException", message));
+    auto response = BuildHttpXmlResponse("IncompleteSignatureException", message);
+    ASSERT_TRUE(XmlErrorMarshaller::ContainsError(*response));
+    AWSError<CoreErrors> error = awsErrorMarshaller.Marshall(*response);
     ASSERT_EQ(CoreErrors::INCOMPLETE_SIGNATURE, error.GetErrorType());
     ASSERT_EQ("IncompleteSignatureException", error.GetExceptionName());
     ASSERT_EQ(message, error.GetMessage());
     ASSERT_FALSE(error.ShouldRetry());
 
-    error = awsErrorMarshaller.Marshall(*BuildHttpXmlResponse("IncompleteSignatureException", message, PluralErrorNode));
+    response = BuildHttpXmlResponse("IncompleteSignatureException", message, PluralErrorNode);
+    ASSERT_TRUE(XmlErrorMarshaller::ContainsError(*response));
+    error = awsErrorMarshaller.Marshall(*response);
     ASSERT_EQ(CoreErrors::INCOMPLETE_SIGNATURE, error.GetErrorType());
     ASSERT_EQ("IncompleteSignatureException", error.GetExceptionName());
     ASSERT_EQ(message, error.GetMessage());
@@ -133,6 +147,8 @@ TEST(XmlErrorMarshallerTest, TestXmlErrorPayload)
     ASSERT_EQ("", error.GetExceptionName());
     ASSERT_EQ("", error.GetMessage());
     ASSERT_TRUE(error.ShouldRetry());
+
+    ASSERT_FALSE(XmlErrorMarshaller::ContainsError(*BuildEmptyHttpResponse()));
 }
 
 TEST(JsonErrorMashallerTest, TestCombinationsOfJsonErrorPayload)

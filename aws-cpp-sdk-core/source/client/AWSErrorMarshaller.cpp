@@ -109,6 +109,29 @@ AWSError<CoreErrors> XmlErrorMarshaller::Marshall(const Aws::Http::HttpResponse&
     return error;
 }
 
+bool XmlErrorMarshaller::ContainsError(const Aws::Http::HttpResponse& httpResponse)
+{ 
+    auto readPointer = httpResponse.GetResponseBody().tellg();
+    XmlDocument doc = XmlDocument::CreateFromXmlStream(httpResponse.GetResponseBody());
+    if (!doc.WasParseSuccessful())
+    {
+        httpResponse.GetResponseBody().seekg(readPointer);
+        return false;
+    }
+
+    if (doc.GetRootElement().GetName() == "Error"           ||
+        doc.GetRootElement().GetName() == "Errors"          ||
+        !doc.GetRootElement().FirstChild("Error").IsNull()  ||
+        !doc.GetRootElement().FirstChild("Errors").IsNull())
+    {
+        httpResponse.GetResponseBody().seekg(readPointer);
+        return true;
+    }
+
+    httpResponse.GetResponseBody().seekg(readPointer);
+    return false;
+}
+
 AWSError<CoreErrors> AWSErrorMarshaller::Marshall(const Aws::String& exceptionName, const Aws::String& message) const
 {
     if(exceptionName.empty())
