@@ -67,7 +67,15 @@ namespace Model
     AWS_AutoScaling_LaunchConfiguration,
     AWS_AutoScaling_ScalingPolicy,
     AWS_AutoScaling_ScheduledAction,
-    AWS_CodeBuild_Project
+    AWS_CodeBuild_Project,
+    AWS_WAF_RateBasedRule,
+    AWS_WAF_Rule,
+    AWS_WAF_WebACL,
+    AWS_WAFRegional_RateBasedRule,
+    AWS_WAFRegional_Rule,
+    AWS_WAFRegional_WebACL,
+    AWS_CloudFront_Distribution,
+    AWS_CloudFront_StreamingDistribution
   };
 
 namespace ResourceTypeMapper

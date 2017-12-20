@@ -72,6 +72,14 @@ namespace Aws
         static const int AWS_AutoScaling_ScalingPolicy_HASH = HashingUtils::HashString("AWS::AutoScaling::ScalingPolicy");
         static const int AWS_AutoScaling_ScheduledAction_HASH = HashingUtils::HashString("AWS::AutoScaling::ScheduledAction");
         static const int AWS_CodeBuild_Project_HASH = HashingUtils::HashString("AWS::CodeBuild::Project");
+        static const int AWS_WAF_RateBasedRule_HASH = HashingUtils::HashString("AWS::WAF::RateBasedRule");
+        static const int AWS_WAF_Rule_HASH = HashingUtils::HashString("AWS::WAF::Rule");
+        static const int AWS_WAF_WebACL_HASH = HashingUtils::HashString("AWS::WAF::WebACL");
+        static const int AWS_WAFRegional_RateBasedRule_HASH = HashingUtils::HashString("AWS::WAFRegional::RateBasedRule");
+        static const int AWS_WAFRegional_Rule_HASH = HashingUtils::HashString("AWS::WAFRegional::Rule");
+        static const int AWS_WAFRegional_WebACL_HASH = HashingUtils::HashString("AWS::WAFRegional::WebACL");
+        static const int AWS_CloudFront_Distribution_HASH = HashingUtils::HashString("AWS::CloudFront::Distribution");
+        static const int AWS_CloudFront_StreamingDistribution_HASH = HashingUtils::HashString("AWS::CloudFront::StreamingDistribution");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -245,6 +253,38 @@ namespace Aws
           {
             return ResourceType::AWS_CodeBuild_Project;
           }
+          else if (hashCode == AWS_WAF_RateBasedRule_HASH)
+          {
+            return ResourceType::AWS_WAF_RateBasedRule;
+          }
+          else if (hashCode == AWS_WAF_Rule_HASH)
+          {
+            return ResourceType::AWS_WAF_Rule;
+          }
+          else if (hashCode == AWS_WAF_WebACL_HASH)
+          {
+            return ResourceType::AWS_WAF_WebACL;
+          }
+          else if (hashCode == AWS_WAFRegional_RateBasedRule_HASH)
+          {
+            return ResourceType::AWS_WAFRegional_RateBasedRule;
+          }
+          else if (hashCode == AWS_WAFRegional_Rule_HASH)
+          {
+            return ResourceType::AWS_WAFRegional_Rule;
+          }
+          else if (hashCode == AWS_WAFRegional_WebACL_HASH)
+          {
+            return ResourceType::AWS_WAFRegional_WebACL;
+          }
+          else if (hashCode == AWS_CloudFront_Distribution_HASH)
+          {
+            return ResourceType::AWS_CloudFront_Distribution;
+          }
+          else if (hashCode == AWS_CloudFront_StreamingDistribution_HASH)
+          {
+            return ResourceType::AWS_CloudFront_StreamingDistribution;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -343,6 +383,22 @@ namespace Aws
             return "AWS::AutoScaling::ScheduledAction";
           case ResourceType::AWS_CodeBuild_Project:
             return "AWS::CodeBuild::Project";
+          case ResourceType::AWS_WAF_RateBasedRule:
+            return "AWS::WAF::RateBasedRule";
+          case ResourceType::AWS_WAF_Rule:
+            return "AWS::WAF::Rule";
+          case ResourceType::AWS_WAF_WebACL:
+            return "AWS::WAF::WebACL";
+          case ResourceType::AWS_WAFRegional_RateBasedRule:
+            return "AWS::WAFRegional::RateBasedRule";
+          case ResourceType::AWS_WAFRegional_Rule:
+            return "AWS::WAFRegional::Rule";
+          case ResourceType::AWS_WAFRegional_WebACL:
+            return "AWS::WAFRegional::WebACL";
+          case ResourceType::AWS_CloudFront_Distribution:
+            return "AWS::CloudFront::Distribution";
+          case ResourceType::AWS_CloudFront_StreamingDistribution:
+            return "AWS::CloudFront::StreamingDistribution";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -39,9 +39,11 @@
 #include <aws/iot/model/CreateCertificateFromCsrRequest.h>
 #include <aws/iot/model/CreateJobRequest.h>
 #include <aws/iot/model/CreateKeysAndCertificateRequest.h>
+#include <aws/iot/model/CreateOTAUpdateRequest.h>
 #include <aws/iot/model/CreatePolicyRequest.h>
 #include <aws/iot/model/CreatePolicyVersionRequest.h>
 #include <aws/iot/model/CreateRoleAliasRequest.h>
+#include <aws/iot/model/CreateStreamRequest.h>
 #include <aws/iot/model/CreateThingRequest.h>
 #include <aws/iot/model/CreateThingGroupRequest.h>
 #include <aws/iot/model/CreateThingTypeRequest.h>
@@ -49,10 +51,12 @@
 #include <aws/iot/model/DeleteAuthorizerRequest.h>
 #include <aws/iot/model/DeleteCACertificateRequest.h>
 #include <aws/iot/model/DeleteCertificateRequest.h>
+#include <aws/iot/model/DeleteOTAUpdateRequest.h>
 #include <aws/iot/model/DeletePolicyRequest.h>
 #include <aws/iot/model/DeletePolicyVersionRequest.h>
 #include <aws/iot/model/DeleteRegistrationCodeRequest.h>
 #include <aws/iot/model/DeleteRoleAliasRequest.h>
+#include <aws/iot/model/DeleteStreamRequest.h>
 #include <aws/iot/model/DeleteThingRequest.h>
 #include <aws/iot/model/DeleteThingGroupRequest.h>
 #include <aws/iot/model/DeleteThingTypeRequest.h>
@@ -69,6 +73,7 @@
 #include <aws/iot/model/DescribeJobRequest.h>
 #include <aws/iot/model/DescribeJobExecutionRequest.h>
 #include <aws/iot/model/DescribeRoleAliasRequest.h>
+#include <aws/iot/model/DescribeStreamRequest.h>
 #include <aws/iot/model/DescribeThingRequest.h>
 #include <aws/iot/model/DescribeThingGroupRequest.h>
 #include <aws/iot/model/DescribeThingRegistrationTaskRequest.h>
@@ -81,6 +86,7 @@
 #include <aws/iot/model/GetIndexingConfigurationRequest.h>
 #include <aws/iot/model/GetJobDocumentRequest.h>
 #include <aws/iot/model/GetLoggingOptionsRequest.h>
+#include <aws/iot/model/GetOTAUpdateRequest.h>
 #include <aws/iot/model/GetPolicyRequest.h>
 #include <aws/iot/model/GetPolicyVersionRequest.h>
 #include <aws/iot/model/GetRegistrationCodeRequest.h>
@@ -95,11 +101,13 @@
 #include <aws/iot/model/ListJobExecutionsForJobRequest.h>
 #include <aws/iot/model/ListJobExecutionsForThingRequest.h>
 #include <aws/iot/model/ListJobsRequest.h>
+#include <aws/iot/model/ListOTAUpdatesRequest.h>
 #include <aws/iot/model/ListOutgoingCertificatesRequest.h>
 #include <aws/iot/model/ListPoliciesRequest.h>
 #include <aws/iot/model/ListPolicyVersionsRequest.h>
 #include <aws/iot/model/ListPrincipalThingsRequest.h>
 #include <aws/iot/model/ListRoleAliasesRequest.h>
+#include <aws/iot/model/ListStreamsRequest.h>
 #include <aws/iot/model/ListTargetsForPolicyRequest.h>
 #include <aws/iot/model/ListThingGroupsRequest.h>
 #include <aws/iot/model/ListThingGroupsForThingRequest.h>
@@ -134,6 +142,7 @@
 #include <aws/iot/model/UpdateEventConfigurationsRequest.h>
 #include <aws/iot/model/UpdateIndexingConfigurationRequest.h>
 #include <aws/iot/model/UpdateRoleAliasRequest.h>
+#include <aws/iot/model/UpdateStreamRequest.h>
 #include <aws/iot/model/UpdateThingRequest.h>
 #include <aws/iot/model/UpdateThingGroupRequest.h>
 #include <aws/iot/model/UpdateThingGroupsForThingRequest.h>
@@ -633,6 +642,42 @@ void IoTClient::CreateKeysAndCertificateAsyncHelper(const CreateKeysAndCertifica
   handler(this, request, CreateKeysAndCertificate(request), context);
 }
 
+CreateOTAUpdateOutcome IoTClient::CreateOTAUpdate(const CreateOTAUpdateRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/otaUpdates/";
+  ss << request.GetOtaUpdateId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateOTAUpdateOutcome(CreateOTAUpdateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateOTAUpdateOutcome(outcome.GetError());
+  }
+}
+
+CreateOTAUpdateOutcomeCallable IoTClient::CreateOTAUpdateCallable(const CreateOTAUpdateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateOTAUpdateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateOTAUpdate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::CreateOTAUpdateAsync(const CreateOTAUpdateRequest& request, const CreateOTAUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateOTAUpdateAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::CreateOTAUpdateAsyncHelper(const CreateOTAUpdateRequest& request, const CreateOTAUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateOTAUpdate(request), context);
+}
+
 CreatePolicyOutcome IoTClient::CreatePolicy(const CreatePolicyRequest& request) const
 {
   Aws::StringStream ss;
@@ -740,6 +785,42 @@ void IoTClient::CreateRoleAliasAsync(const CreateRoleAliasRequest& request, cons
 void IoTClient::CreateRoleAliasAsyncHelper(const CreateRoleAliasRequest& request, const CreateRoleAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateRoleAlias(request), context);
+}
+
+CreateStreamOutcome IoTClient::CreateStream(const CreateStreamRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/streams/";
+  ss << request.GetStreamId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateStreamOutcome(CreateStreamResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateStreamOutcome(outcome.GetError());
+  }
+}
+
+CreateStreamOutcomeCallable IoTClient::CreateStreamCallable(const CreateStreamRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateStream(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::CreateStreamAsync(const CreateStreamRequest& request, const CreateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateStreamAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::CreateStreamAsyncHelper(const CreateStreamRequest& request, const CreateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateStream(request), context);
 }
 
 CreateThingOutcome IoTClient::CreateThing(const CreateThingRequest& request) const
@@ -994,6 +1075,42 @@ void IoTClient::DeleteCertificateAsyncHelper(const DeleteCertificateRequest& req
   handler(this, request, DeleteCertificate(request), context);
 }
 
+DeleteOTAUpdateOutcome IoTClient::DeleteOTAUpdate(const DeleteOTAUpdateRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/otaUpdates/";
+  ss << request.GetOtaUpdateId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteOTAUpdateOutcome(DeleteOTAUpdateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteOTAUpdateOutcome(outcome.GetError());
+  }
+}
+
+DeleteOTAUpdateOutcomeCallable IoTClient::DeleteOTAUpdateCallable(const DeleteOTAUpdateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteOTAUpdateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteOTAUpdate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DeleteOTAUpdateAsync(const DeleteOTAUpdateRequest& request, const DeleteOTAUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteOTAUpdateAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DeleteOTAUpdateAsyncHelper(const DeleteOTAUpdateRequest& request, const DeleteOTAUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteOTAUpdate(request), context);
+}
+
 DeletePolicyOutcome IoTClient::DeletePolicy(const DeletePolicyRequest& request) const
 {
   Aws::StringStream ss;
@@ -1137,6 +1254,42 @@ void IoTClient::DeleteRoleAliasAsync(const DeleteRoleAliasRequest& request, cons
 void IoTClient::DeleteRoleAliasAsyncHelper(const DeleteRoleAliasRequest& request, const DeleteRoleAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteRoleAlias(request), context);
+}
+
+DeleteStreamOutcome IoTClient::DeleteStream(const DeleteStreamRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/streams/";
+  ss << request.GetStreamId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteStreamOutcome(DeleteStreamResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteStreamOutcome(outcome.GetError());
+  }
+}
+
+DeleteStreamOutcomeCallable IoTClient::DeleteStreamCallable(const DeleteStreamRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteStream(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DeleteStreamAsync(const DeleteStreamRequest& request, const DeleteStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteStreamAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DeleteStreamAsyncHelper(const DeleteStreamRequest& request, const DeleteStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteStream(request), context);
 }
 
 DeleteThingOutcome IoTClient::DeleteThing(const DeleteThingRequest& request) const
@@ -1714,6 +1867,42 @@ void IoTClient::DescribeRoleAliasAsyncHelper(const DescribeRoleAliasRequest& req
   handler(this, request, DescribeRoleAlias(request), context);
 }
 
+DescribeStreamOutcome IoTClient::DescribeStream(const DescribeStreamRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/streams/";
+  ss << request.GetStreamId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeStreamOutcome(DescribeStreamResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeStreamOutcome(outcome.GetError());
+  }
+}
+
+DescribeStreamOutcomeCallable IoTClient::DescribeStreamCallable(const DescribeStreamRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeStream(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DescribeStreamAsync(const DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeStreamAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DescribeStreamAsyncHelper(const DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeStream(request), context);
+}
+
 DescribeThingOutcome IoTClient::DescribeThing(const DescribeThingRequest& request) const
 {
   Aws::StringStream ss;
@@ -2145,6 +2334,42 @@ void IoTClient::GetLoggingOptionsAsync(const GetLoggingOptionsRequest& request, 
 void IoTClient::GetLoggingOptionsAsyncHelper(const GetLoggingOptionsRequest& request, const GetLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetLoggingOptions(request), context);
+}
+
+GetOTAUpdateOutcome IoTClient::GetOTAUpdate(const GetOTAUpdateRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/otaUpdates/";
+  ss << request.GetOtaUpdateId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetOTAUpdateOutcome(GetOTAUpdateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetOTAUpdateOutcome(outcome.GetError());
+  }
+}
+
+GetOTAUpdateOutcomeCallable IoTClient::GetOTAUpdateCallable(const GetOTAUpdateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetOTAUpdateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetOTAUpdate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::GetOTAUpdateAsync(const GetOTAUpdateRequest& request, const GetOTAUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetOTAUpdateAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::GetOTAUpdateAsyncHelper(const GetOTAUpdateRequest& request, const GetOTAUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetOTAUpdate(request), context);
 }
 
 GetPolicyOutcome IoTClient::GetPolicy(const GetPolicyRequest& request) const
@@ -2648,6 +2873,41 @@ void IoTClient::ListJobsAsyncHelper(const ListJobsRequest& request, const ListJo
   handler(this, request, ListJobs(request), context);
 }
 
+ListOTAUpdatesOutcome IoTClient::ListOTAUpdates(const ListOTAUpdatesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/otaUpdates";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListOTAUpdatesOutcome(ListOTAUpdatesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListOTAUpdatesOutcome(outcome.GetError());
+  }
+}
+
+ListOTAUpdatesOutcomeCallable IoTClient::ListOTAUpdatesCallable(const ListOTAUpdatesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListOTAUpdatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListOTAUpdates(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ListOTAUpdatesAsync(const ListOTAUpdatesRequest& request, const ListOTAUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListOTAUpdatesAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ListOTAUpdatesAsyncHelper(const ListOTAUpdatesRequest& request, const ListOTAUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListOTAUpdates(request), context);
+}
+
 ListOutgoingCertificatesOutcome IoTClient::ListOutgoingCertificates(const ListOutgoingCertificatesRequest& request) const
 {
   Aws::StringStream ss;
@@ -2823,6 +3083,41 @@ void IoTClient::ListRoleAliasesAsync(const ListRoleAliasesRequest& request, cons
 void IoTClient::ListRoleAliasesAsyncHelper(const ListRoleAliasesRequest& request, const ListRoleAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListRoleAliases(request), context);
+}
+
+ListStreamsOutcome IoTClient::ListStreams(const ListStreamsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/streams";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListStreamsOutcome(ListStreamsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListStreamsOutcome(outcome.GetError());
+  }
+}
+
+ListStreamsOutcomeCallable IoTClient::ListStreamsCallable(const ListStreamsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListStreamsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStreams(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ListStreamsAsync(const ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListStreamsAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ListStreamsAsyncHelper(const ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListStreams(request), context);
 }
 
 ListTargetsForPolicyOutcome IoTClient::ListTargetsForPolicy(const ListTargetsForPolicyRequest& request) const
@@ -4036,6 +4331,42 @@ void IoTClient::UpdateRoleAliasAsync(const UpdateRoleAliasRequest& request, cons
 void IoTClient::UpdateRoleAliasAsyncHelper(const UpdateRoleAliasRequest& request, const UpdateRoleAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateRoleAlias(request), context);
+}
+
+UpdateStreamOutcome IoTClient::UpdateStream(const UpdateStreamRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/streams/";
+  ss << request.GetStreamId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateStreamOutcome(UpdateStreamResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateStreamOutcome(outcome.GetError());
+  }
+}
+
+UpdateStreamOutcomeCallable IoTClient::UpdateStreamCallable(const UpdateStreamRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateStream(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::UpdateStreamAsync(const UpdateStreamRequest& request, const UpdateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateStreamAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::UpdateStreamAsyncHelper(const UpdateStreamRequest& request, const UpdateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateStream(request), context);
 }
 
 UpdateThingOutcome IoTClient::UpdateThing(const UpdateThingRequest& request) const
