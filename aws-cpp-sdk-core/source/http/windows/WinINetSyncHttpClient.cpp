@@ -93,7 +93,8 @@ WinINetSyncHttpClient::WinINetSyncHttpClient(const ClientConfiguration& config) 
 
 WinINetSyncHttpClient::~WinINetSyncHttpClient()
 {
-    InternetCloseHandle(GetOpenHandle());   
+    InternetCloseHandle(GetOpenHandle());
+    SetOpenHandle(nullptr);  // the handle is already closed, annul it to avoid double-closing the handle (in the base class' destructor)
 }
 
 void* WinINetSyncHttpClient::OpenRequest(const Aws::Http::HttpRequest& request, void* connection, const Aws::StringStream& ss) const
