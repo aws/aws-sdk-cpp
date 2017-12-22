@@ -190,53 +190,53 @@ namespace Model
 
 
     /**
-     * <p>Timestamp when the application version was created.</p>
+     * <p>Time stamp when the application version was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateTimestamp() const{ return m_createTimestamp; }
 
     /**
-     * <p>Timestamp when the application version was created.</p>
+     * <p>Time stamp when the application version was created.</p>
      */
     inline void SetCreateTimestamp(const Aws::Utils::DateTime& value) { m_createTimestampHasBeenSet = true; m_createTimestamp = value; }
 
     /**
-     * <p>Timestamp when the application version was created.</p>
+     * <p>Time stamp when the application version was created.</p>
      */
     inline void SetCreateTimestamp(Aws::Utils::DateTime&& value) { m_createTimestampHasBeenSet = true; m_createTimestamp = std::move(value); }
 
     /**
-     * <p>Timestamp when the application version was created.</p>
+     * <p>Time stamp when the application version was created.</p>
      */
     inline ApplicationDetail& WithCreateTimestamp(const Aws::Utils::DateTime& value) { SetCreateTimestamp(value); return *this;}
 
     /**
-     * <p>Timestamp when the application version was created.</p>
+     * <p>Time stamp when the application version was created.</p>
      */
     inline ApplicationDetail& WithCreateTimestamp(Aws::Utils::DateTime&& value) { SetCreateTimestamp(std::move(value)); return *this;}
 
 
     /**
-     * <p>Timestamp when the application was last updated.</p>
+     * <p>Time stamp when the application was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdateTimestamp() const{ return m_lastUpdateTimestamp; }
 
     /**
-     * <p>Timestamp when the application was last updated.</p>
+     * <p>Time stamp when the application was last updated.</p>
      */
     inline void SetLastUpdateTimestamp(const Aws::Utils::DateTime& value) { m_lastUpdateTimestampHasBeenSet = true; m_lastUpdateTimestamp = value; }
 
     /**
-     * <p>Timestamp when the application was last updated.</p>
+     * <p>Time stamp when the application was last updated.</p>
      */
     inline void SetLastUpdateTimestamp(Aws::Utils::DateTime&& value) { m_lastUpdateTimestampHasBeenSet = true; m_lastUpdateTimestamp = std::move(value); }
 
     /**
-     * <p>Timestamp when the application was last updated.</p>
+     * <p>Time stamp when the application was last updated.</p>
      */
     inline ApplicationDetail& WithLastUpdateTimestamp(const Aws::Utils::DateTime& value) { SetLastUpdateTimestamp(value); return *this;}
 
     /**
-     * <p>Timestamp when the application was last updated.</p>
+     * <p>Time stamp when the application was last updated.</p>
      */
     inline ApplicationDetail& WithLastUpdateTimestamp(Aws::Utils::DateTime&& value) { SetLastUpdateTimestamp(std::move(value)); return *this;}
 

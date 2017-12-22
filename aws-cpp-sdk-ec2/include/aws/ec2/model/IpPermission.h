@@ -256,7 +256,7 @@ namespace Model
 
 
     /**
-     * <p>(Valid for <a>AuthorizeSecurityGroupEgress</a>,
+     * <p>(EC2-VPC only; valid for <a>AuthorizeSecurityGroupEgress</a>,
      * <a>RevokeSecurityGroupEgress</a> and <a>DescribeSecurityGroups</a> only) One or
      * more prefix list IDs for an AWS service. In an
      * <a>AuthorizeSecurityGroupEgress</a> request, this is the AWS service that you
@@ -266,7 +266,7 @@ namespace Model
     inline const Aws::Vector<PrefixListId>& GetPrefixListIds() const{ return m_prefixListIds; }
 
     /**
-     * <p>(Valid for <a>AuthorizeSecurityGroupEgress</a>,
+     * <p>(EC2-VPC only; valid for <a>AuthorizeSecurityGroupEgress</a>,
      * <a>RevokeSecurityGroupEgress</a> and <a>DescribeSecurityGroups</a> only) One or
      * more prefix list IDs for an AWS service. In an
      * <a>AuthorizeSecurityGroupEgress</a> request, this is the AWS service that you
@@ -276,7 +276,7 @@ namespace Model
     inline void SetPrefixListIds(const Aws::Vector<PrefixListId>& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds = value; }
 
     /**
-     * <p>(Valid for <a>AuthorizeSecurityGroupEgress</a>,
+     * <p>(EC2-VPC only; valid for <a>AuthorizeSecurityGroupEgress</a>,
      * <a>RevokeSecurityGroupEgress</a> and <a>DescribeSecurityGroups</a> only) One or
      * more prefix list IDs for an AWS service. In an
      * <a>AuthorizeSecurityGroupEgress</a> request, this is the AWS service that you
@@ -286,7 +286,7 @@ namespace Model
     inline void SetPrefixListIds(Aws::Vector<PrefixListId>&& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds = std::move(value); }
 
     /**
-     * <p>(Valid for <a>AuthorizeSecurityGroupEgress</a>,
+     * <p>(EC2-VPC only; valid for <a>AuthorizeSecurityGroupEgress</a>,
      * <a>RevokeSecurityGroupEgress</a> and <a>DescribeSecurityGroups</a> only) One or
      * more prefix list IDs for an AWS service. In an
      * <a>AuthorizeSecurityGroupEgress</a> request, this is the AWS service that you
@@ -296,7 +296,7 @@ namespace Model
     inline IpPermission& WithPrefixListIds(const Aws::Vector<PrefixListId>& value) { SetPrefixListIds(value); return *this;}
 
     /**
-     * <p>(Valid for <a>AuthorizeSecurityGroupEgress</a>,
+     * <p>(EC2-VPC only; valid for <a>AuthorizeSecurityGroupEgress</a>,
      * <a>RevokeSecurityGroupEgress</a> and <a>DescribeSecurityGroups</a> only) One or
      * more prefix list IDs for an AWS service. In an
      * <a>AuthorizeSecurityGroupEgress</a> request, this is the AWS service that you
@@ -306,7 +306,7 @@ namespace Model
     inline IpPermission& WithPrefixListIds(Aws::Vector<PrefixListId>&& value) { SetPrefixListIds(std::move(value)); return *this;}
 
     /**
-     * <p>(Valid for <a>AuthorizeSecurityGroupEgress</a>,
+     * <p>(EC2-VPC only; valid for <a>AuthorizeSecurityGroupEgress</a>,
      * <a>RevokeSecurityGroupEgress</a> and <a>DescribeSecurityGroups</a> only) One or
      * more prefix list IDs for an AWS service. In an
      * <a>AuthorizeSecurityGroupEgress</a> request, this is the AWS service that you
@@ -316,7 +316,7 @@ namespace Model
     inline IpPermission& AddPrefixListIds(const PrefixListId& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds.push_back(value); return *this; }
 
     /**
-     * <p>(Valid for <a>AuthorizeSecurityGroupEgress</a>,
+     * <p>(EC2-VPC only; valid for <a>AuthorizeSecurityGroupEgress</a>,
      * <a>RevokeSecurityGroupEgress</a> and <a>DescribeSecurityGroups</a> only) One or
      * more prefix list IDs for an AWS service. In an
      * <a>AuthorizeSecurityGroupEgress</a> request, this is the AWS service that you

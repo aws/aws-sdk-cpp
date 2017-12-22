@@ -98,50 +98,50 @@ namespace Model
 
     /**
      * <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option
-     * to delete. You can use the <a>DescribeApplication</a> operation to get the
-     * <code>CloudWatchLoggingOptionId</code>. </p>
+     * to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the
+     * <a>DescribeApplication</a> operation. </p>
      */
     inline const Aws::String& GetCloudWatchLoggingOptionId() const{ return m_cloudWatchLoggingOptionId; }
 
     /**
      * <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option
-     * to delete. You can use the <a>DescribeApplication</a> operation to get the
-     * <code>CloudWatchLoggingOptionId</code>. </p>
+     * to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the
+     * <a>DescribeApplication</a> operation. </p>
      */
     inline void SetCloudWatchLoggingOptionId(const Aws::String& value) { m_cloudWatchLoggingOptionIdHasBeenSet = true; m_cloudWatchLoggingOptionId = value; }
 
     /**
      * <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option
-     * to delete. You can use the <a>DescribeApplication</a> operation to get the
-     * <code>CloudWatchLoggingOptionId</code>. </p>
+     * to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the
+     * <a>DescribeApplication</a> operation. </p>
      */
     inline void SetCloudWatchLoggingOptionId(Aws::String&& value) { m_cloudWatchLoggingOptionIdHasBeenSet = true; m_cloudWatchLoggingOptionId = std::move(value); }
 
     /**
      * <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option
-     * to delete. You can use the <a>DescribeApplication</a> operation to get the
-     * <code>CloudWatchLoggingOptionId</code>. </p>
+     * to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the
+     * <a>DescribeApplication</a> operation. </p>
      */
     inline void SetCloudWatchLoggingOptionId(const char* value) { m_cloudWatchLoggingOptionIdHasBeenSet = true; m_cloudWatchLoggingOptionId.assign(value); }
 
     /**
      * <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option
-     * to delete. You can use the <a>DescribeApplication</a> operation to get the
-     * <code>CloudWatchLoggingOptionId</code>. </p>
+     * to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the
+     * <a>DescribeApplication</a> operation. </p>
      */
     inline DeleteApplicationCloudWatchLoggingOptionRequest& WithCloudWatchLoggingOptionId(const Aws::String& value) { SetCloudWatchLoggingOptionId(value); return *this;}
 
     /**
      * <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option
-     * to delete. You can use the <a>DescribeApplication</a> operation to get the
-     * <code>CloudWatchLoggingOptionId</code>. </p>
+     * to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the
+     * <a>DescribeApplication</a> operation. </p>
      */
     inline DeleteApplicationCloudWatchLoggingOptionRequest& WithCloudWatchLoggingOptionId(Aws::String&& value) { SetCloudWatchLoggingOptionId(std::move(value)); return *this;}
 
     /**
      * <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option
-     * to delete. You can use the <a>DescribeApplication</a> operation to get the
-     * <code>CloudWatchLoggingOptionId</code>. </p>
+     * to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the
+     * <a>DescribeApplication</a> operation. </p>
      */
     inline DeleteApplicationCloudWatchLoggingOptionRequest& WithCloudWatchLoggingOptionId(const char* value) { SetCloudWatchLoggingOptionId(value); return *this;}
 

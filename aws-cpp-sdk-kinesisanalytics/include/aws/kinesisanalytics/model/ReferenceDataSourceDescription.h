@@ -183,19 +183,34 @@ namespace Model
     inline ReferenceDataSourceDescription& WithS3ReferenceDataSourceDescription(S3ReferenceDataSourceDescription&& value) { SetS3ReferenceDataSourceDescription(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Describes the format of the data in the streaming source, and how each data
+     * element maps to corresponding columns created in the in-application stream.</p>
+     */
     inline const SourceSchema& GetReferenceSchema() const{ return m_referenceSchema; }
 
-    
+    /**
+     * <p>Describes the format of the data in the streaming source, and how each data
+     * element maps to corresponding columns created in the in-application stream.</p>
+     */
     inline void SetReferenceSchema(const SourceSchema& value) { m_referenceSchemaHasBeenSet = true; m_referenceSchema = value; }
 
-    
+    /**
+     * <p>Describes the format of the data in the streaming source, and how each data
+     * element maps to corresponding columns created in the in-application stream.</p>
+     */
     inline void SetReferenceSchema(SourceSchema&& value) { m_referenceSchemaHasBeenSet = true; m_referenceSchema = std::move(value); }
 
-    
+    /**
+     * <p>Describes the format of the data in the streaming source, and how each data
+     * element maps to corresponding columns created in the in-application stream.</p>
+     */
     inline ReferenceDataSourceDescription& WithReferenceSchema(const SourceSchema& value) { SetReferenceSchema(value); return *this;}
 
-    
+    /**
+     * <p>Describes the format of the data in the streaming source, and how each data
+     * element maps to corresponding columns created in the in-application stream.</p>
+     */
     inline ReferenceDataSourceDescription& WithReferenceSchema(SourceSchema&& value) { SetReferenceSchema(std::move(value)); return *this;}
 
   private:

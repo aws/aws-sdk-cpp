@@ -48,80 +48,94 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the new <a href="https://aws.amazon.com/documentation/lambda/">AWS
-     * Lambda</a> function that is used to preprocess the records in the stream.</p>
+     * <p>The Amazon Resource Name (ARN) of the new <a
+     * href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that
+     * is used to preprocess the records in the stream.</p>
      */
     inline const Aws::String& GetResourceARNUpdate() const{ return m_resourceARNUpdate; }
 
     /**
-     * <p>The ARN of the new <a href="https://aws.amazon.com/documentation/lambda/">AWS
-     * Lambda</a> function that is used to preprocess the records in the stream.</p>
+     * <p>The Amazon Resource Name (ARN) of the new <a
+     * href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that
+     * is used to preprocess the records in the stream.</p>
      */
     inline void SetResourceARNUpdate(const Aws::String& value) { m_resourceARNUpdateHasBeenSet = true; m_resourceARNUpdate = value; }
 
     /**
-     * <p>The ARN of the new <a href="https://aws.amazon.com/documentation/lambda/">AWS
-     * Lambda</a> function that is used to preprocess the records in the stream.</p>
+     * <p>The Amazon Resource Name (ARN) of the new <a
+     * href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that
+     * is used to preprocess the records in the stream.</p>
      */
     inline void SetResourceARNUpdate(Aws::String&& value) { m_resourceARNUpdateHasBeenSet = true; m_resourceARNUpdate = std::move(value); }
 
     /**
-     * <p>The ARN of the new <a href="https://aws.amazon.com/documentation/lambda/">AWS
-     * Lambda</a> function that is used to preprocess the records in the stream.</p>
+     * <p>The Amazon Resource Name (ARN) of the new <a
+     * href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that
+     * is used to preprocess the records in the stream.</p>
      */
     inline void SetResourceARNUpdate(const char* value) { m_resourceARNUpdateHasBeenSet = true; m_resourceARNUpdate.assign(value); }
 
     /**
-     * <p>The ARN of the new <a href="https://aws.amazon.com/documentation/lambda/">AWS
-     * Lambda</a> function that is used to preprocess the records in the stream.</p>
+     * <p>The Amazon Resource Name (ARN) of the new <a
+     * href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that
+     * is used to preprocess the records in the stream.</p>
      */
     inline InputLambdaProcessorUpdate& WithResourceARNUpdate(const Aws::String& value) { SetResourceARNUpdate(value); return *this;}
 
     /**
-     * <p>The ARN of the new <a href="https://aws.amazon.com/documentation/lambda/">AWS
-     * Lambda</a> function that is used to preprocess the records in the stream.</p>
+     * <p>The Amazon Resource Name (ARN) of the new <a
+     * href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that
+     * is used to preprocess the records in the stream.</p>
      */
     inline InputLambdaProcessorUpdate& WithResourceARNUpdate(Aws::String&& value) { SetResourceARNUpdate(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the new <a href="https://aws.amazon.com/documentation/lambda/">AWS
-     * Lambda</a> function that is used to preprocess the records in the stream.</p>
+     * <p>The Amazon Resource Name (ARN) of the new <a
+     * href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that
+     * is used to preprocess the records in the stream.</p>
      */
     inline InputLambdaProcessorUpdate& WithResourceARNUpdate(const char* value) { SetResourceARNUpdate(value); return *this;}
 
 
     /**
-     * <p>The ARN of the new IAM role used to access the AWS Lambda function.</p>
+     * <p>The ARN of the new IAM role that is used to access the AWS Lambda
+     * function.</p>
      */
     inline const Aws::String& GetRoleARNUpdate() const{ return m_roleARNUpdate; }
 
     /**
-     * <p>The ARN of the new IAM role used to access the AWS Lambda function.</p>
+     * <p>The ARN of the new IAM role that is used to access the AWS Lambda
+     * function.</p>
      */
     inline void SetRoleARNUpdate(const Aws::String& value) { m_roleARNUpdateHasBeenSet = true; m_roleARNUpdate = value; }
 
     /**
-     * <p>The ARN of the new IAM role used to access the AWS Lambda function.</p>
+     * <p>The ARN of the new IAM role that is used to access the AWS Lambda
+     * function.</p>
      */
     inline void SetRoleARNUpdate(Aws::String&& value) { m_roleARNUpdateHasBeenSet = true; m_roleARNUpdate = std::move(value); }
 
     /**
-     * <p>The ARN of the new IAM role used to access the AWS Lambda function.</p>
+     * <p>The ARN of the new IAM role that is used to access the AWS Lambda
+     * function.</p>
      */
     inline void SetRoleARNUpdate(const char* value) { m_roleARNUpdateHasBeenSet = true; m_roleARNUpdate.assign(value); }
 
     /**
-     * <p>The ARN of the new IAM role used to access the AWS Lambda function.</p>
+     * <p>The ARN of the new IAM role that is used to access the AWS Lambda
+     * function.</p>
      */
     inline InputLambdaProcessorUpdate& WithRoleARNUpdate(const Aws::String& value) { SetRoleARNUpdate(value); return *this;}
 
     /**
-     * <p>The ARN of the new IAM role used to access the AWS Lambda function.</p>
+     * <p>The ARN of the new IAM role that is used to access the AWS Lambda
+     * function.</p>
      */
     inline InputLambdaProcessorUpdate& WithRoleARNUpdate(Aws::String&& value) { SetRoleARNUpdate(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the new IAM role used to access the AWS Lambda function.</p>
+     * <p>The ARN of the new IAM role that is used to access the AWS Lambda
+     * function.</p>
      */
     inline InputLambdaProcessorUpdate& WithRoleARNUpdate(const char* value) { SetRoleARNUpdate(value); return *this;}
 

@@ -158,68 +158,63 @@ namespace Model
 
 
     /**
-     * <p>If a Amazon Kinesis stream is the streaming source to be updated, provides an
-     * updated stream ARN and IAM role ARN.</p>
+     * <p>If an Amazon Kinesis stream is the streaming source to be updated, provides
+     * an updated stream Amazon Resource Name (ARN) and IAM role ARN.</p>
      */
     inline const KinesisStreamsInputUpdate& GetKinesisStreamsInputUpdate() const{ return m_kinesisStreamsInputUpdate; }
 
     /**
-     * <p>If a Amazon Kinesis stream is the streaming source to be updated, provides an
-     * updated stream ARN and IAM role ARN.</p>
+     * <p>If an Amazon Kinesis stream is the streaming source to be updated, provides
+     * an updated stream Amazon Resource Name (ARN) and IAM role ARN.</p>
      */
     inline void SetKinesisStreamsInputUpdate(const KinesisStreamsInputUpdate& value) { m_kinesisStreamsInputUpdateHasBeenSet = true; m_kinesisStreamsInputUpdate = value; }
 
     /**
-     * <p>If a Amazon Kinesis stream is the streaming source to be updated, provides an
-     * updated stream ARN and IAM role ARN.</p>
+     * <p>If an Amazon Kinesis stream is the streaming source to be updated, provides
+     * an updated stream Amazon Resource Name (ARN) and IAM role ARN.</p>
      */
     inline void SetKinesisStreamsInputUpdate(KinesisStreamsInputUpdate&& value) { m_kinesisStreamsInputUpdateHasBeenSet = true; m_kinesisStreamsInputUpdate = std::move(value); }
 
     /**
-     * <p>If a Amazon Kinesis stream is the streaming source to be updated, provides an
-     * updated stream ARN and IAM role ARN.</p>
+     * <p>If an Amazon Kinesis stream is the streaming source to be updated, provides
+     * an updated stream Amazon Resource Name (ARN) and IAM role ARN.</p>
      */
     inline InputUpdate& WithKinesisStreamsInputUpdate(const KinesisStreamsInputUpdate& value) { SetKinesisStreamsInputUpdate(value); return *this;}
 
     /**
-     * <p>If a Amazon Kinesis stream is the streaming source to be updated, provides an
-     * updated stream ARN and IAM role ARN.</p>
+     * <p>If an Amazon Kinesis stream is the streaming source to be updated, provides
+     * an updated stream Amazon Resource Name (ARN) and IAM role ARN.</p>
      */
     inline InputUpdate& WithKinesisStreamsInputUpdate(KinesisStreamsInputUpdate&& value) { SetKinesisStreamsInputUpdate(std::move(value)); return *this;}
 
 
     /**
      * <p>If an Amazon Kinesis Firehose delivery stream is the streaming source to be
-     * updated, provides an updated stream Amazon Resource Name (ARN) and IAM role
-     * ARN.</p>
+     * updated, provides an updated stream ARN and IAM role ARN.</p>
      */
     inline const KinesisFirehoseInputUpdate& GetKinesisFirehoseInputUpdate() const{ return m_kinesisFirehoseInputUpdate; }
 
     /**
      * <p>If an Amazon Kinesis Firehose delivery stream is the streaming source to be
-     * updated, provides an updated stream Amazon Resource Name (ARN) and IAM role
-     * ARN.</p>
+     * updated, provides an updated stream ARN and IAM role ARN.</p>
      */
     inline void SetKinesisFirehoseInputUpdate(const KinesisFirehoseInputUpdate& value) { m_kinesisFirehoseInputUpdateHasBeenSet = true; m_kinesisFirehoseInputUpdate = value; }
 
     /**
      * <p>If an Amazon Kinesis Firehose delivery stream is the streaming source to be
-     * updated, provides an updated stream Amazon Resource Name (ARN) and IAM role
-     * ARN.</p>
+     * updated, provides an updated stream ARN and IAM role ARN.</p>
      */
     inline void SetKinesisFirehoseInputUpdate(KinesisFirehoseInputUpdate&& value) { m_kinesisFirehoseInputUpdateHasBeenSet = true; m_kinesisFirehoseInputUpdate = std::move(value); }
 
     /**
      * <p>If an Amazon Kinesis Firehose delivery stream is the streaming source to be
-     * updated, provides an updated stream Amazon Resource Name (ARN) and IAM role
-     * ARN.</p>
+     * updated, provides an updated stream ARN and IAM role ARN.</p>
      */
     inline InputUpdate& WithKinesisFirehoseInputUpdate(const KinesisFirehoseInputUpdate& value) { SetKinesisFirehoseInputUpdate(value); return *this;}
 
     /**
      * <p>If an Amazon Kinesis Firehose delivery stream is the streaming source to be
-     * updated, provides an updated stream Amazon Resource Name (ARN) and IAM role
-     * ARN.</p>
+     * updated, provides an updated stream ARN and IAM role ARN.</p>
      */
     inline InputUpdate& WithKinesisFirehoseInputUpdate(KinesisFirehoseInputUpdate&& value) { SetKinesisFirehoseInputUpdate(std::move(value)); return *this;}
 
