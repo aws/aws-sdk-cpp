@@ -32,6 +32,7 @@ namespace Aws
 
         static const int HEALTHY_HASH = HashingUtils::HashString("HEALTHY");
         static const int UNHEALTHY_HASH = HashingUtils::HashString("UNHEALTHY");
+        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
 
 
         AgentHealth GetAgentHealthForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == UNHEALTHY_HASH)
           {
             return AgentHealth::UNHEALTHY;
+          }
+          else if (hashCode == UNKNOWN_HASH)
+          {
+            return AgentHealth::UNKNOWN;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "HEALTHY";
           case AgentHealth::UNHEALTHY:
             return "UNHEALTHY";
+          case AgentHealth::UNKNOWN:
+            return "UNKNOWN";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

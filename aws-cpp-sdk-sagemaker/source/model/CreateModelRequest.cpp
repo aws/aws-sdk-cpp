@@ -25,7 +25,6 @@ using namespace Aws::Utils;
 CreateModelRequest::CreateModelRequest() : 
     m_modelNameHasBeenSet(false),
     m_primaryContainerHasBeenSet(false),
-    m_supplementalContainersHasBeenSet(false),
     m_executionRoleArnHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -44,17 +43,6 @@ Aws::String CreateModelRequest::SerializePayload() const
   if(m_primaryContainerHasBeenSet)
   {
    payload.WithObject("PrimaryContainer", m_primaryContainer.Jsonize());
-
-  }
-
-  if(m_supplementalContainersHasBeenSet)
-  {
-   Array<JsonValue> supplementalContainersJsonList(m_supplementalContainers.size());
-   for(unsigned supplementalContainersIndex = 0; supplementalContainersIndex < supplementalContainersJsonList.GetLength(); ++supplementalContainersIndex)
-   {
-     supplementalContainersJsonList[supplementalContainersIndex].AsObject(m_supplementalContainers[supplementalContainersIndex].Jsonize());
-   }
-   payload.WithArray("SupplementalContainers", std::move(supplementalContainersJsonList));
 
   }
 

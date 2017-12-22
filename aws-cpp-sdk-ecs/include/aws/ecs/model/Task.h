@@ -301,7 +301,7 @@ namespace Model
      * Fargate launch type, this field is required and you must use one of the
      * following values, which determines your range of valid values for the
      * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
-     * <code>memory</code> values: 512MB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
+     * <code>memory</code> values: 0.5GB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
      * Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB</p> </li> <li> <p>1024
      * (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB,
      * 8GB</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
@@ -317,7 +317,7 @@ namespace Model
      * Fargate launch type, this field is required and you must use one of the
      * following values, which determines your range of valid values for the
      * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
-     * <code>memory</code> values: 512MB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
+     * <code>memory</code> values: 0.5GB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
      * Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB</p> </li> <li> <p>1024
      * (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB,
      * 8GB</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
@@ -333,7 +333,7 @@ namespace Model
      * Fargate launch type, this field is required and you must use one of the
      * following values, which determines your range of valid values for the
      * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
-     * <code>memory</code> values: 512MB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
+     * <code>memory</code> values: 0.5GB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
      * Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB</p> </li> <li> <p>1024
      * (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB,
      * 8GB</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
@@ -349,7 +349,7 @@ namespace Model
      * Fargate launch type, this field is required and you must use one of the
      * following values, which determines your range of valid values for the
      * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
-     * <code>memory</code> values: 512MB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
+     * <code>memory</code> values: 0.5GB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
      * Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB</p> </li> <li> <p>1024
      * (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB,
      * 8GB</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
@@ -365,7 +365,7 @@ namespace Model
      * Fargate launch type, this field is required and you must use one of the
      * following values, which determines your range of valid values for the
      * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
-     * <code>memory</code> values: 512MB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
+     * <code>memory</code> values: 0.5GB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
      * Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB</p> </li> <li> <p>1024
      * (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB,
      * 8GB</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
@@ -381,7 +381,7 @@ namespace Model
      * Fargate launch type, this field is required and you must use one of the
      * following values, which determines your range of valid values for the
      * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
-     * <code>memory</code> values: 512MB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
+     * <code>memory</code> values: 0.5GB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
      * Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB</p> </li> <li> <p>1024
      * (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB,
      * 8GB</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
@@ -397,7 +397,7 @@ namespace Model
      * Fargate launch type, this field is required and you must use one of the
      * following values, which determines your range of valid values for the
      * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
-     * <code>memory</code> values: 512MB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
+     * <code>memory</code> values: 0.5GB, 1GB, 2GB</p> </li> <li> <p>512 (.5 vCPU) -
      * Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB</p> </li> <li> <p>1024
      * (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB,
      * 8GB</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
@@ -413,7 +413,7 @@ namespace Model
      * this field is optional and any value can be used. If using the Fargate launch
      * type, this field is required and you must use one of the following values, which
      * determines your range of valid values for the <code>cpu</code> parameter:</p>
-     * <ul> <li> <p>512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25
+     * <ul> <li> <p>0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25
      * vCPU)</p> </li> <li> <p>1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values:
      * 512 (.5 vCPU)</p> </li> <li> <p>2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available
      * <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4GB and 16GB in
@@ -428,7 +428,7 @@ namespace Model
      * this field is optional and any value can be used. If using the Fargate launch
      * type, this field is required and you must use one of the following values, which
      * determines your range of valid values for the <code>cpu</code> parameter:</p>
-     * <ul> <li> <p>512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25
+     * <ul> <li> <p>0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25
      * vCPU)</p> </li> <li> <p>1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values:
      * 512 (.5 vCPU)</p> </li> <li> <p>2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available
      * <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4GB and 16GB in
@@ -443,7 +443,7 @@ namespace Model
      * this field is optional and any value can be used. If using the Fargate launch
      * type, this field is required and you must use one of the following values, which
      * determines your range of valid values for the <code>cpu</code> parameter:</p>
-     * <ul> <li> <p>512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25
+     * <ul> <li> <p>0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25
      * vCPU)</p> </li> <li> <p>1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values:
      * 512 (.5 vCPU)</p> </li> <li> <p>2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available
      * <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4GB and 16GB in
@@ -458,7 +458,7 @@ namespace Model
      * this field is optional and any value can be used. If using the Fargate launch
      * type, this field is required and you must use one of the following values, which
      * determines your range of valid values for the <code>cpu</code> parameter:</p>
-     * <ul> <li> <p>512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25
+     * <ul> <li> <p>0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25
      * vCPU)</p> </li> <li> <p>1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values:
      * 512 (.5 vCPU)</p> </li> <li> <p>2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available
      * <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4GB and 16GB in
@@ -473,7 +473,7 @@ namespace Model
      * this field is optional and any value can be used. If using the Fargate launch
      * type, this field is required and you must use one of the following values, which
      * determines your range of valid values for the <code>cpu</code> parameter:</p>
-     * <ul> <li> <p>512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25
+     * <ul> <li> <p>0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25
      * vCPU)</p> </li> <li> <p>1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values:
      * 512 (.5 vCPU)</p> </li> <li> <p>2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available
      * <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4GB and 16GB in
@@ -488,7 +488,7 @@ namespace Model
      * this field is optional and any value can be used. If using the Fargate launch
      * type, this field is required and you must use one of the following values, which
      * determines your range of valid values for the <code>cpu</code> parameter:</p>
-     * <ul> <li> <p>512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25
+     * <ul> <li> <p>0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25
      * vCPU)</p> </li> <li> <p>1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values:
      * 512 (.5 vCPU)</p> </li> <li> <p>2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available
      * <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4GB and 16GB in
@@ -503,7 +503,7 @@ namespace Model
      * this field is optional and any value can be used. If using the Fargate launch
      * type, this field is required and you must use one of the following values, which
      * determines your range of valid values for the <code>cpu</code> parameter:</p>
-     * <ul> <li> <p>512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25
+     * <ul> <li> <p>0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25
      * vCPU)</p> </li> <li> <p>1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values:
      * 512 (.5 vCPU)</p> </li> <li> <p>2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available
      * <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4GB and 16GB in

@@ -17,7 +17,6 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/ContainerDefinition.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -115,49 +114,6 @@ namespace Model
      * </p>
      */
     inline DescribeModelResult& WithPrimaryContainer(ContainerDefinition&& value) { SetPrimaryContainer(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The description of additional optional containers that you defined when
-     * creating the model.</p>
-     */
-    inline const Aws::Vector<ContainerDefinition>& GetSupplementalContainers() const{ return m_supplementalContainers; }
-
-    /**
-     * <p>The description of additional optional containers that you defined when
-     * creating the model.</p>
-     */
-    inline void SetSupplementalContainers(const Aws::Vector<ContainerDefinition>& value) { m_supplementalContainers = value; }
-
-    /**
-     * <p>The description of additional optional containers that you defined when
-     * creating the model.</p>
-     */
-    inline void SetSupplementalContainers(Aws::Vector<ContainerDefinition>&& value) { m_supplementalContainers = std::move(value); }
-
-    /**
-     * <p>The description of additional optional containers that you defined when
-     * creating the model.</p>
-     */
-    inline DescribeModelResult& WithSupplementalContainers(const Aws::Vector<ContainerDefinition>& value) { SetSupplementalContainers(value); return *this;}
-
-    /**
-     * <p>The description of additional optional containers that you defined when
-     * creating the model.</p>
-     */
-    inline DescribeModelResult& WithSupplementalContainers(Aws::Vector<ContainerDefinition>&& value) { SetSupplementalContainers(std::move(value)); return *this;}
-
-    /**
-     * <p>The description of additional optional containers that you defined when
-     * creating the model.</p>
-     */
-    inline DescribeModelResult& AddSupplementalContainers(const ContainerDefinition& value) { m_supplementalContainers.push_back(value); return *this; }
-
-    /**
-     * <p>The description of additional optional containers that you defined when
-     * creating the model.</p>
-     */
-    inline DescribeModelResult& AddSupplementalContainers(ContainerDefinition&& value) { m_supplementalContainers.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -269,8 +225,6 @@ namespace Model
     Aws::String m_modelName;
 
     ContainerDefinition m_primaryContainer;
-
-    Aws::Vector<ContainerDefinition> m_supplementalContainers;
 
     Aws::String m_executionRoleArn;
 

@@ -50,15 +50,6 @@ DescribeModelResult& DescribeModelResult::operator =(const Aws::AmazonWebService
 
   }
 
-  if(jsonValue.ValueExists("SupplementalContainers"))
-  {
-    Array<JsonValue> supplementalContainersJsonList = jsonValue.GetArray("SupplementalContainers");
-    for(unsigned supplementalContainersIndex = 0; supplementalContainersIndex < supplementalContainersJsonList.GetLength(); ++supplementalContainersIndex)
-    {
-      m_supplementalContainers.push_back(supplementalContainersJsonList[supplementalContainersIndex].AsObject());
-    }
-  }
-
   if(jsonValue.ValueExists("ExecutionRoleArn"))
   {
     m_executionRoleArn = jsonValue.GetString("ExecutionRoleArn");

@@ -113,7 +113,7 @@ Address& Address::operator =(const XmlNode& xmlNode)
       m_privateIpAddress = StringUtils::Trim(privateIpAddressNode.GetText().c_str());
       m_privateIpAddressHasBeenSet = true;
     }
-    XmlNode tagsNode = resultNode.FirstChild("tags");
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
@@ -178,7 +178,7 @@ void Address::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".Tags." << tagsIdx++;
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -225,7 +225,7 @@ void Address::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".Tags." << tagsIdx++;
+        tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

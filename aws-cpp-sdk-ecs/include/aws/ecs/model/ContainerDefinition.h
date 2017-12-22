@@ -614,7 +614,9 @@ namespace Model
      * <code>memoryReservation</code> of 128 MiB, and a <code>memory</code> hard limit
      * of 300 MiB. This configuration would allow the container to only reserve 128 MiB
      * of memory from the remaining resources on the container instance, but also allow
-     * the container to consume more memory resources when needed.</p>
+     * the container to consume more memory resources when needed.</p> <p>The Docker
+     * daemon reserves a minimum of 4 MiB of memory for a container, so you should not
+     * specify fewer than 4 MiB of memory for your containers. </p>
      */
     inline int GetMemoryReservation() const{ return m_memoryReservation; }
 
@@ -642,7 +644,9 @@ namespace Model
      * <code>memoryReservation</code> of 128 MiB, and a <code>memory</code> hard limit
      * of 300 MiB. This configuration would allow the container to only reserve 128 MiB
      * of memory from the remaining resources on the container instance, but also allow
-     * the container to consume more memory resources when needed.</p>
+     * the container to consume more memory resources when needed.</p> <p>The Docker
+     * daemon reserves a minimum of 4 MiB of memory for a container, so you should not
+     * specify fewer than 4 MiB of memory for your containers. </p>
      */
     inline void SetMemoryReservation(int value) { m_memoryReservationHasBeenSet = true; m_memoryReservation = value; }
 
@@ -670,7 +674,9 @@ namespace Model
      * <code>memoryReservation</code> of 128 MiB, and a <code>memory</code> hard limit
      * of 300 MiB. This configuration would allow the container to only reserve 128 MiB
      * of memory from the remaining resources on the container instance, but also allow
-     * the container to consume more memory resources when needed.</p>
+     * the container to consume more memory resources when needed.</p> <p>The Docker
+     * daemon reserves a minimum of 4 MiB of memory for a container, so you should not
+     * specify fewer than 4 MiB of memory for your containers. </p>
      */
     inline ContainerDefinition& WithMemoryReservation(int value) { SetMemoryReservation(value); return *this;}
 

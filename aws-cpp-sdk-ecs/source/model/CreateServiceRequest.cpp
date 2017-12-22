@@ -37,7 +37,9 @@ CreateServiceRequest::CreateServiceRequest() :
     m_deploymentConfigurationHasBeenSet(false),
     m_placementConstraintsHasBeenSet(false),
     m_placementStrategyHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false)
+    m_networkConfigurationHasBeenSet(false),
+    m_healthCheckGracePeriodSeconds(0),
+    m_healthCheckGracePeriodSecondsHasBeenSet(false)
 {
 }
 
@@ -134,6 +136,12 @@ Aws::String CreateServiceRequest::SerializePayload() const
   if(m_networkConfigurationHasBeenSet)
   {
    payload.WithObject("networkConfiguration", m_networkConfiguration.Jsonize());
+
+  }
+
+  if(m_healthCheckGracePeriodSecondsHasBeenSet)
+  {
+   payload.WithInteger("healthCheckGracePeriodSeconds", m_healthCheckGracePeriodSeconds);
 
   }
 

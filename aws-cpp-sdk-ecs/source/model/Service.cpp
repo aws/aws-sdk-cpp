@@ -51,7 +51,9 @@ Service::Service() :
     m_createdAtHasBeenSet(false),
     m_placementConstraintsHasBeenSet(false),
     m_placementStrategyHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false)
+    m_networkConfigurationHasBeenSet(false),
+    m_healthCheckGracePeriodSeconds(0),
+    m_healthCheckGracePeriodSecondsHasBeenSet(false)
 {
 }
 
@@ -78,7 +80,9 @@ Service::Service(const JsonValue& jsonValue) :
     m_createdAtHasBeenSet(false),
     m_placementConstraintsHasBeenSet(false),
     m_placementStrategyHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false)
+    m_networkConfigurationHasBeenSet(false),
+    m_healthCheckGracePeriodSeconds(0),
+    m_healthCheckGracePeriodSecondsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -233,6 +237,13 @@ Service& Service::operator =(const JsonValue& jsonValue)
     m_networkConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("healthCheckGracePeriodSeconds"))
+  {
+    m_healthCheckGracePeriodSeconds = jsonValue.GetInteger("healthCheckGracePeriodSeconds");
+
+    m_healthCheckGracePeriodSecondsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -374,6 +385,12 @@ JsonValue Service::Jsonize() const
   if(m_networkConfigurationHasBeenSet)
   {
    payload.WithObject("networkConfiguration", m_networkConfiguration.Jsonize());
+
+  }
+
+  if(m_healthCheckGracePeriodSecondsHasBeenSet)
+  {
+   payload.WithInteger("healthCheckGracePeriodSeconds", m_healthCheckGracePeriodSeconds);
 
   }
 

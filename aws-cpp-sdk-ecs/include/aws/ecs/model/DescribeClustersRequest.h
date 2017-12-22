@@ -98,7 +98,7 @@ namespace Model
     /**
      * <p>Additional information about your clusters to be separated by launch type,
      * including:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
-     * <p>RunningFargateTasksCount</p> </li> <li> <p>pendingEC2TasksCount</p> </li>
+     * <p>runningFargateTasksCount</p> </li> <li> <p>pendingEC2TasksCount</p> </li>
      * <li> <p>pendingFargateTasksCount</p> </li> <li> <p>activeEC2ServiceCount</p>
      * </li> <li> <p>activeFargateServiceCount</p> </li> <li>
      * <p>drainingEC2ServiceCount</p> </li> <li> <p>drainingFargateServiceCount</p>
@@ -109,7 +109,7 @@ namespace Model
     /**
      * <p>Additional information about your clusters to be separated by launch type,
      * including:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
-     * <p>RunningFargateTasksCount</p> </li> <li> <p>pendingEC2TasksCount</p> </li>
+     * <p>runningFargateTasksCount</p> </li> <li> <p>pendingEC2TasksCount</p> </li>
      * <li> <p>pendingFargateTasksCount</p> </li> <li> <p>activeEC2ServiceCount</p>
      * </li> <li> <p>activeFargateServiceCount</p> </li> <li>
      * <p>drainingEC2ServiceCount</p> </li> <li> <p>drainingFargateServiceCount</p>
@@ -120,7 +120,7 @@ namespace Model
     /**
      * <p>Additional information about your clusters to be separated by launch type,
      * including:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
-     * <p>RunningFargateTasksCount</p> </li> <li> <p>pendingEC2TasksCount</p> </li>
+     * <p>runningFargateTasksCount</p> </li> <li> <p>pendingEC2TasksCount</p> </li>
      * <li> <p>pendingFargateTasksCount</p> </li> <li> <p>activeEC2ServiceCount</p>
      * </li> <li> <p>activeFargateServiceCount</p> </li> <li>
      * <p>drainingEC2ServiceCount</p> </li> <li> <p>drainingFargateServiceCount</p>
@@ -131,7 +131,7 @@ namespace Model
     /**
      * <p>Additional information about your clusters to be separated by launch type,
      * including:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
-     * <p>RunningFargateTasksCount</p> </li> <li> <p>pendingEC2TasksCount</p> </li>
+     * <p>runningFargateTasksCount</p> </li> <li> <p>pendingEC2TasksCount</p> </li>
      * <li> <p>pendingFargateTasksCount</p> </li> <li> <p>activeEC2ServiceCount</p>
      * </li> <li> <p>activeFargateServiceCount</p> </li> <li>
      * <p>drainingEC2ServiceCount</p> </li> <li> <p>drainingFargateServiceCount</p>
@@ -142,7 +142,7 @@ namespace Model
     /**
      * <p>Additional information about your clusters to be separated by launch type,
      * including:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
-     * <p>RunningFargateTasksCount</p> </li> <li> <p>pendingEC2TasksCount</p> </li>
+     * <p>runningFargateTasksCount</p> </li> <li> <p>pendingEC2TasksCount</p> </li>
      * <li> <p>pendingFargateTasksCount</p> </li> <li> <p>activeEC2ServiceCount</p>
      * </li> <li> <p>activeFargateServiceCount</p> </li> <li>
      * <p>drainingEC2ServiceCount</p> </li> <li> <p>drainingFargateServiceCount</p>
@@ -153,7 +153,7 @@ namespace Model
     /**
      * <p>Additional information about your clusters to be separated by launch type,
      * including:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
-     * <p>RunningFargateTasksCount</p> </li> <li> <p>pendingEC2TasksCount</p> </li>
+     * <p>runningFargateTasksCount</p> </li> <li> <p>pendingEC2TasksCount</p> </li>
      * <li> <p>pendingFargateTasksCount</p> </li> <li> <p>activeEC2ServiceCount</p>
      * </li> <li> <p>activeFargateServiceCount</p> </li> <li>
      * <p>drainingEC2ServiceCount</p> </li> <li> <p>drainingFargateServiceCount</p>
@@ -164,7 +164,7 @@ namespace Model
     /**
      * <p>Additional information about your clusters to be separated by launch type,
      * including:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
-     * <p>RunningFargateTasksCount</p> </li> <li> <p>pendingEC2TasksCount</p> </li>
+     * <p>runningFargateTasksCount</p> </li> <li> <p>pendingEC2TasksCount</p> </li>
      * <li> <p>pendingFargateTasksCount</p> </li> <li> <p>activeEC2ServiceCount</p>
      * </li> <li> <p>activeFargateServiceCount</p> </li> <li>
      * <p>drainingEC2ServiceCount</p> </li> <li> <p>drainingFargateServiceCount</p>

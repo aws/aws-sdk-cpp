@@ -120,42 +120,6 @@ namespace Model
 
 
     /**
-     * <p>The additional optional containers to deploy.</p>
-     */
-    inline const Aws::Vector<ContainerDefinition>& GetSupplementalContainers() const{ return m_supplementalContainers; }
-
-    /**
-     * <p>The additional optional containers to deploy.</p>
-     */
-    inline void SetSupplementalContainers(const Aws::Vector<ContainerDefinition>& value) { m_supplementalContainersHasBeenSet = true; m_supplementalContainers = value; }
-
-    /**
-     * <p>The additional optional containers to deploy.</p>
-     */
-    inline void SetSupplementalContainers(Aws::Vector<ContainerDefinition>&& value) { m_supplementalContainersHasBeenSet = true; m_supplementalContainers = std::move(value); }
-
-    /**
-     * <p>The additional optional containers to deploy.</p>
-     */
-    inline CreateModelRequest& WithSupplementalContainers(const Aws::Vector<ContainerDefinition>& value) { SetSupplementalContainers(value); return *this;}
-
-    /**
-     * <p>The additional optional containers to deploy.</p>
-     */
-    inline CreateModelRequest& WithSupplementalContainers(Aws::Vector<ContainerDefinition>&& value) { SetSupplementalContainers(std::move(value)); return *this;}
-
-    /**
-     * <p>The additional optional containers to deploy.</p>
-     */
-    inline CreateModelRequest& AddSupplementalContainers(const ContainerDefinition& value) { m_supplementalContainersHasBeenSet = true; m_supplementalContainers.push_back(value); return *this; }
-
-    /**
-     * <p>The additional optional containers to deploy.</p>
-     */
-    inline CreateModelRequest& AddSupplementalContainers(ContainerDefinition&& value) { m_supplementalContainersHasBeenSet = true; m_supplementalContainers.push_back(std::move(value)); return *this; }
-
-
-    /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
      * assume to access model artifacts and docker image for deployment on ML compute
      * instances. Deploying on ML compute instances is part of model hosting. For more
@@ -289,9 +253,6 @@ namespace Model
 
     ContainerDefinition m_primaryContainer;
     bool m_primaryContainerHasBeenSet;
-
-    Aws::Vector<ContainerDefinition> m_supplementalContainers;
-    bool m_supplementalContainersHasBeenSet;
 
     Aws::String m_executionRoleArn;
     bool m_executionRoleArnHasBeenSet;

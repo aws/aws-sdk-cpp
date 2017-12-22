@@ -813,6 +813,28 @@ namespace Model
      */
     inline Service& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores
+     * unhealthy Elastic Load Balancing target health checks after a task has first
+     * started.</p>
+     */
+    inline int GetHealthCheckGracePeriodSeconds() const{ return m_healthCheckGracePeriodSeconds; }
+
+    /**
+     * <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores
+     * unhealthy Elastic Load Balancing target health checks after a task has first
+     * started.</p>
+     */
+    inline void SetHealthCheckGracePeriodSeconds(int value) { m_healthCheckGracePeriodSecondsHasBeenSet = true; m_healthCheckGracePeriodSeconds = value; }
+
+    /**
+     * <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores
+     * unhealthy Elastic Load Balancing target health checks after a task has first
+     * started.</p>
+     */
+    inline Service& WithHealthCheckGracePeriodSeconds(int value) { SetHealthCheckGracePeriodSeconds(value); return *this;}
+
   private:
 
     Aws::String m_serviceArn;
@@ -871,6 +893,9 @@ namespace Model
 
     NetworkConfiguration m_networkConfiguration;
     bool m_networkConfigurationHasBeenSet;
+
+    int m_healthCheckGracePeriodSeconds;
+    bool m_healthCheckGracePeriodSecondsHasBeenSet;
   };
 
 } // namespace Model

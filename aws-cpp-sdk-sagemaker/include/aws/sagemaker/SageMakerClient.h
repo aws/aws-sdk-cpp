@@ -446,15 +446,13 @@ namespace Model
          * configuration with the <code>CreateEndpointConfig</code> API, and then create an
          * endpoint with the <code>CreateEndpoint</code> API. </p> <p>Amazon SageMaker then
          * deploys all of the containers that you defined for the model in the hosting
-         * environment. </p> <p>In the <code>CreateModel</code> request, you must define at
-         * least one container with the <code>PrimaryContainer</code> parameter. You can
-         * optionally specify additional containers with the
-         * <code>SupplementalContainers</code> parameter. </p> <p>In the request, you also
-         * provide an IAM role that Amazon SageMaker can assume to access model artifacts
-         * and docker image for deployment on ML compute hosting instances. In addition,
-         * you also use the IAM role to manage permissions the inference code needs. For
-         * example, if the inference code access any other AWS resources, you grant
-         * necessary permissions via this role.</p><p><h3>See Also:</h3>   <a
+         * environment. </p> <p>In the <code>CreateModel</code> request, you must define a
+         * container with the <code>PrimaryContainer</code> parameter. </p> <p>In the
+         * request, you also provide an IAM role that Amazon SageMaker can assume to access
+         * model artifacts and docker image for deployment on ML compute hosting instances.
+         * In addition, you also use the IAM role to manage permissions the inference code
+         * needs. For example, if the inference code access any other AWS resources, you
+         * grant necessary permissions via this role.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModel">AWS
          * API Reference</a></p>
          */
@@ -470,15 +468,13 @@ namespace Model
          * configuration with the <code>CreateEndpointConfig</code> API, and then create an
          * endpoint with the <code>CreateEndpoint</code> API. </p> <p>Amazon SageMaker then
          * deploys all of the containers that you defined for the model in the hosting
-         * environment. </p> <p>In the <code>CreateModel</code> request, you must define at
-         * least one container with the <code>PrimaryContainer</code> parameter. You can
-         * optionally specify additional containers with the
-         * <code>SupplementalContainers</code> parameter. </p> <p>In the request, you also
-         * provide an IAM role that Amazon SageMaker can assume to access model artifacts
-         * and docker image for deployment on ML compute hosting instances. In addition,
-         * you also use the IAM role to manage permissions the inference code needs. For
-         * example, if the inference code access any other AWS resources, you grant
-         * necessary permissions via this role.</p><p><h3>See Also:</h3>   <a
+         * environment. </p> <p>In the <code>CreateModel</code> request, you must define a
+         * container with the <code>PrimaryContainer</code> parameter. </p> <p>In the
+         * request, you also provide an IAM role that Amazon SageMaker can assume to access
+         * model artifacts and docker image for deployment on ML compute hosting instances.
+         * In addition, you also use the IAM role to manage permissions the inference code
+         * needs. For example, if the inference code access any other AWS resources, you
+         * grant necessary permissions via this role.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModel">AWS
          * API Reference</a></p>
          *
@@ -496,15 +492,13 @@ namespace Model
          * configuration with the <code>CreateEndpointConfig</code> API, and then create an
          * endpoint with the <code>CreateEndpoint</code> API. </p> <p>Amazon SageMaker then
          * deploys all of the containers that you defined for the model in the hosting
-         * environment. </p> <p>In the <code>CreateModel</code> request, you must define at
-         * least one container with the <code>PrimaryContainer</code> parameter. You can
-         * optionally specify additional containers with the
-         * <code>SupplementalContainers</code> parameter. </p> <p>In the request, you also
-         * provide an IAM role that Amazon SageMaker can assume to access model artifacts
-         * and docker image for deployment on ML compute hosting instances. In addition,
-         * you also use the IAM role to manage permissions the inference code needs. For
-         * example, if the inference code access any other AWS resources, you grant
-         * necessary permissions via this role.</p><p><h3>See Also:</h3>   <a
+         * environment. </p> <p>In the <code>CreateModel</code> request, you must define a
+         * container with the <code>PrimaryContainer</code> parameter. </p> <p>In the
+         * request, you also provide an IAM role that Amazon SageMaker can assume to access
+         * model artifacts and docker image for deployment on ML compute hosting instances.
+         * In addition, you also use the IAM role to manage permissions the inference code
+         * needs. For example, if the inference code access any other AWS resources, you
+         * grant necessary permissions via this role.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModel">AWS
          * API Reference</a></p>
          *
@@ -1225,9 +1219,8 @@ namespace Model
          * <p>Launches an ML compute instance with the latest version of the libraries and
          * attaches your ML storage volume. After configuring the notebook instance, Amazon
          * SageMaker sets the notebook instance status to <code>InService</code>. A
-         * notebook instance's status must be <code>InService</code> (is this same as
-         * "Running" in the console?) before you can connect to your Jupyter notebook.
-         * </p><p><h3>See Also:</h3>   <a
+         * notebook instance's status must be <code>InService</code> before you can connect
+         * to your Jupyter notebook. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartNotebookInstance">AWS
          * API Reference</a></p>
          */
@@ -1237,9 +1230,8 @@ namespace Model
          * <p>Launches an ML compute instance with the latest version of the libraries and
          * attaches your ML storage volume. After configuring the notebook instance, Amazon
          * SageMaker sets the notebook instance status to <code>InService</code>. A
-         * notebook instance's status must be <code>InService</code> (is this same as
-         * "Running" in the console?) before you can connect to your Jupyter notebook.
-         * </p><p><h3>See Also:</h3>   <a
+         * notebook instance's status must be <code>InService</code> before you can connect
+         * to your Jupyter notebook. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartNotebookInstance">AWS
          * API Reference</a></p>
          *
@@ -1251,9 +1243,8 @@ namespace Model
          * <p>Launches an ML compute instance with the latest version of the libraries and
          * attaches your ML storage volume. After configuring the notebook instance, Amazon
          * SageMaker sets the notebook instance status to <code>InService</code>. A
-         * notebook instance's status must be <code>InService</code> (is this same as
-         * "Running" in the console?) before you can connect to your Jupyter notebook.
-         * </p><p><h3>See Also:</h3>   <a
+         * notebook instance's status must be <code>InService</code> before you can connect
+         * to your Jupyter notebook. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartNotebookInstance">AWS
          * API Reference</a></p>
          *
