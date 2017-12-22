@@ -323,13 +323,13 @@ namespace Model
          * <p>Adds an external destination to your Amazon Kinesis Analytics
          * application.</p> <p>If you want Amazon Kinesis Analytics to deliver data from an
          * in-application stream within your application to an external destination (such
-         * as an Amazon Kinesis stream or a Firehose delivery stream), you add the relevant
-         * configuration to your application using this operation. You can configure one or
-         * more outputs for your application. Each output configuration maps an
-         * in-application stream and an external destination.</p> <p> You can use one of
-         * the output configurations to deliver data from your in-application error stream
-         * to an external destination so that you can analyze the errors. For conceptual
-         * information, see <a
+         * as an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an
+         * Amazon Lambda function), you add the relevant configuration to your application
+         * using this operation. You can configure one or more outputs for your
+         * application. Each output configuration maps an in-application stream and an
+         * external destination.</p> <p> You can use one of the output configurations to
+         * deliver data from your in-application error stream to an external destination so
+         * that you can analyze the errors. For conceptual information, see <a
          * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Understanding
          * Application Output (Destination)</a>. </p> <p> Note that any configuration
          * update, including adding a streaming source using this operation, results in a
@@ -349,13 +349,13 @@ namespace Model
          * <p>Adds an external destination to your Amazon Kinesis Analytics
          * application.</p> <p>If you want Amazon Kinesis Analytics to deliver data from an
          * in-application stream within your application to an external destination (such
-         * as an Amazon Kinesis stream or a Firehose delivery stream), you add the relevant
-         * configuration to your application using this operation. You can configure one or
-         * more outputs for your application. Each output configuration maps an
-         * in-application stream and an external destination.</p> <p> You can use one of
-         * the output configurations to deliver data from your in-application error stream
-         * to an external destination so that you can analyze the errors. For conceptual
-         * information, see <a
+         * as an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an
+         * Amazon Lambda function), you add the relevant configuration to your application
+         * using this operation. You can configure one or more outputs for your
+         * application. Each output configuration maps an in-application stream and an
+         * external destination.</p> <p> You can use one of the output configurations to
+         * deliver data from your in-application error stream to an external destination so
+         * that you can analyze the errors. For conceptual information, see <a
          * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Understanding
          * Application Output (Destination)</a>. </p> <p> Note that any configuration
          * update, including adding a streaming source using this operation, results in a
@@ -377,13 +377,13 @@ namespace Model
          * <p>Adds an external destination to your Amazon Kinesis Analytics
          * application.</p> <p>If you want Amazon Kinesis Analytics to deliver data from an
          * in-application stream within your application to an external destination (such
-         * as an Amazon Kinesis stream or a Firehose delivery stream), you add the relevant
-         * configuration to your application using this operation. You can configure one or
-         * more outputs for your application. Each output configuration maps an
-         * in-application stream and an external destination.</p> <p> You can use one of
-         * the output configurations to deliver data from your in-application error stream
-         * to an external destination so that you can analyze the errors. For conceptual
-         * information, see <a
+         * as an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an
+         * Amazon Lambda function), you add the relevant configuration to your application
+         * using this operation. You can configure one or more outputs for your
+         * application. Each output configuration maps an in-application stream and an
+         * external destination.</p> <p> You can use one of the output configurations to
+         * deliver data from your in-application error stream to an external destination so
+         * that you can analyze the errors. For conceptual information, see <a
          * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Understanding
          * Application Output (Destination)</a>. </p> <p> Note that any configuration
          * update, including adding a streaming source using this operation, results in a
@@ -468,9 +468,8 @@ namespace Model
         /**
          * <p> Creates an Amazon Kinesis Analytics application. You can configure each
          * application with one streaming source as input, application code to process the
-         * input, and up to five streaming destinations where you want Amazon Kinesis
-         * Analytics to write the output data from your application. For an overview, see
-         * <a
+         * input, and up to three destinations where you want Amazon Kinesis Analytics to
+         * write the output data from your application. For an overview, see <a
          * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works.html">How
          * it Works</a>. </p> <p>In the input configuration, you map the streaming source
          * to an in-application stream, which you can think of as a constantly updating
@@ -480,7 +479,7 @@ namespace Model
          * that read input data, transform it, and generate output. Your application code
          * can create one or more SQL artifacts like SQL streams or pumps.</p> <p>In the
          * output configuration, you can configure the application to write data from
-         * in-application streams created in your applications to up to five streaming
+         * in-application streams created in your applications to up to three
          * destinations.</p> <p> To read data from your source stream or write data to
          * destination streams, Amazon Kinesis Analytics needs your permissions. You grant
          * these permissions by creating IAM roles. This operation requires permissions to
@@ -496,9 +495,8 @@ namespace Model
         /**
          * <p> Creates an Amazon Kinesis Analytics application. You can configure each
          * application with one streaming source as input, application code to process the
-         * input, and up to five streaming destinations where you want Amazon Kinesis
-         * Analytics to write the output data from your application. For an overview, see
-         * <a
+         * input, and up to three destinations where you want Amazon Kinesis Analytics to
+         * write the output data from your application. For an overview, see <a
          * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works.html">How
          * it Works</a>. </p> <p>In the input configuration, you map the streaming source
          * to an in-application stream, which you can think of as a constantly updating
@@ -508,7 +506,7 @@ namespace Model
          * that read input data, transform it, and generate output. Your application code
          * can create one or more SQL artifacts like SQL streams or pumps.</p> <p>In the
          * output configuration, you can configure the application to write data from
-         * in-application streams created in your applications to up to five streaming
+         * in-application streams created in your applications to up to three
          * destinations.</p> <p> To read data from your source stream or write data to
          * destination streams, Amazon Kinesis Analytics needs your permissions. You grant
          * these permissions by creating IAM roles. This operation requires permissions to
@@ -526,9 +524,8 @@ namespace Model
         /**
          * <p> Creates an Amazon Kinesis Analytics application. You can configure each
          * application with one streaming source as input, application code to process the
-         * input, and up to five streaming destinations where you want Amazon Kinesis
-         * Analytics to write the output data from your application. For an overview, see
-         * <a
+         * input, and up to three destinations where you want Amazon Kinesis Analytics to
+         * write the output data from your application. For an overview, see <a
          * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works.html">How
          * it Works</a>. </p> <p>In the input configuration, you map the streaming source
          * to an in-application stream, which you can think of as a constantly updating
@@ -538,7 +535,7 @@ namespace Model
          * that read input data, transform it, and generate output. Your application code
          * can create one or more SQL artifacts like SQL streams or pumps.</p> <p>In the
          * output configuration, you can configure the application to write data from
-         * in-application streams created in your applications to up to five streaming
+         * in-application streams created in your applications to up to three
          * destinations.</p> <p> To read data from your source stream or write data to
          * destination streams, Amazon Kinesis Analytics needs your permissions. You grant
          * these permissions by creating IAM roles. This operation requires permissions to
@@ -789,11 +786,11 @@ namespace Model
 
         /**
          * <p>Infers a schema by evaluating sample records on the specified streaming
-         * source (Amazon Kinesis stream or Amazon Kinesis Firehose delivery stream). In
-         * the response, the operation returns the inferred schema and also the sample
-         * records that the operation used to infer the schema.</p> <p> You can use the
-         * inferred schema when configuring a streaming source for your application. For
-         * conceptual information, see <a
+         * source (Amazon Kinesis stream or Amazon Kinesis Firehose delivery stream) or S3
+         * object. In the response, the operation returns the inferred schema and also the
+         * sample records that the operation used to infer the schema.</p> <p> You can use
+         * the inferred schema when configuring a streaming source for your application.
+         * For conceptual information, see <a
          * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
          * Application Input</a>. Note that when you create an application using the Amazon
          * Kinesis Analytics console, the console uses this operation to infer a schema and
@@ -807,11 +804,11 @@ namespace Model
 
         /**
          * <p>Infers a schema by evaluating sample records on the specified streaming
-         * source (Amazon Kinesis stream or Amazon Kinesis Firehose delivery stream). In
-         * the response, the operation returns the inferred schema and also the sample
-         * records that the operation used to infer the schema.</p> <p> You can use the
-         * inferred schema when configuring a streaming source for your application. For
-         * conceptual information, see <a
+         * source (Amazon Kinesis stream or Amazon Kinesis Firehose delivery stream) or S3
+         * object. In the response, the operation returns the inferred schema and also the
+         * sample records that the operation used to infer the schema.</p> <p> You can use
+         * the inferred schema when configuring a streaming source for your application.
+         * For conceptual information, see <a
          * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
          * Application Input</a>. Note that when you create an application using the Amazon
          * Kinesis Analytics console, the console uses this operation to infer a schema and
@@ -827,11 +824,11 @@ namespace Model
 
         /**
          * <p>Infers a schema by evaluating sample records on the specified streaming
-         * source (Amazon Kinesis stream or Amazon Kinesis Firehose delivery stream). In
-         * the response, the operation returns the inferred schema and also the sample
-         * records that the operation used to infer the schema.</p> <p> You can use the
-         * inferred schema when configuring a streaming source for your application. For
-         * conceptual information, see <a
+         * source (Amazon Kinesis stream or Amazon Kinesis Firehose delivery stream) or S3
+         * object. In the response, the operation returns the inferred schema and also the
+         * sample records that the operation used to infer the schema.</p> <p> You can use
+         * the inferred schema when configuring a streaming source for your application.
+         * For conceptual information, see <a
          * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
          * Application Input</a>. Note that when you create an application using the Amazon
          * Kinesis Analytics console, the console uses this operation to infer a schema and

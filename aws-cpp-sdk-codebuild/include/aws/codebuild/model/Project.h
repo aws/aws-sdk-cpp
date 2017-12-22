@@ -529,42 +529,27 @@ namespace Model
 
 
     /**
-     * <p>If your AWS CodeBuild project accesses resources in an Amazon VPC, you
-     * provide this parameter that identifies the VPC ID and the list of security group
-     * IDs and subnet IDs. The security groups and subnets must belong to the same VPC.
-     * You must provide at least one security group and one subnet ID.</p>
+     * <p>Information about the VPC configuration that AWS CodeBuild will access.</p>
      */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
 
     /**
-     * <p>If your AWS CodeBuild project accesses resources in an Amazon VPC, you
-     * provide this parameter that identifies the VPC ID and the list of security group
-     * IDs and subnet IDs. The security groups and subnets must belong to the same VPC.
-     * You must provide at least one security group and one subnet ID.</p>
+     * <p>Information about the VPC configuration that AWS CodeBuild will access.</p>
      */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
 
     /**
-     * <p>If your AWS CodeBuild project accesses resources in an Amazon VPC, you
-     * provide this parameter that identifies the VPC ID and the list of security group
-     * IDs and subnet IDs. The security groups and subnets must belong to the same VPC.
-     * You must provide at least one security group and one subnet ID.</p>
+     * <p>Information about the VPC configuration that AWS CodeBuild will access.</p>
      */
     inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
 
     /**
-     * <p>If your AWS CodeBuild project accesses resources in an Amazon VPC, you
-     * provide this parameter that identifies the VPC ID and the list of security group
-     * IDs and subnet IDs. The security groups and subnets must belong to the same VPC.
-     * You must provide at least one security group and one subnet ID.</p>
+     * <p>Information about the VPC configuration that AWS CodeBuild will access.</p>
      */
     inline Project& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
 
     /**
-     * <p>If your AWS CodeBuild project accesses resources in an Amazon VPC, you
-     * provide this parameter that identifies the VPC ID and the list of security group
-     * IDs and subnet IDs. The security groups and subnets must belong to the same VPC.
-     * You must provide at least one security group and one subnet ID.</p>
+     * <p>Information about the VPC configuration that AWS CodeBuild will access.</p>
      */
     inline Project& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 

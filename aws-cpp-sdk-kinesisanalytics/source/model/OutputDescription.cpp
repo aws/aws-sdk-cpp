@@ -33,6 +33,7 @@ OutputDescription::OutputDescription() :
     m_nameHasBeenSet(false),
     m_kinesisStreamsOutputDescriptionHasBeenSet(false),
     m_kinesisFirehoseOutputDescriptionHasBeenSet(false),
+    m_lambdaOutputDescriptionHasBeenSet(false),
     m_destinationSchemaHasBeenSet(false)
 {
 }
@@ -42,6 +43,7 @@ OutputDescription::OutputDescription(const JsonValue& jsonValue) :
     m_nameHasBeenSet(false),
     m_kinesisStreamsOutputDescriptionHasBeenSet(false),
     m_kinesisFirehoseOutputDescriptionHasBeenSet(false),
+    m_lambdaOutputDescriptionHasBeenSet(false),
     m_destinationSchemaHasBeenSet(false)
 {
   *this = jsonValue;
@@ -75,6 +77,13 @@ OutputDescription& OutputDescription::operator =(const JsonValue& jsonValue)
     m_kinesisFirehoseOutputDescription = jsonValue.GetObject("KinesisFirehoseOutputDescription");
 
     m_kinesisFirehoseOutputDescriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LambdaOutputDescription"))
+  {
+    m_lambdaOutputDescription = jsonValue.GetObject("LambdaOutputDescription");
+
+    m_lambdaOutputDescriptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DestinationSchema"))
@@ -112,6 +121,12 @@ JsonValue OutputDescription::Jsonize() const
   if(m_kinesisFirehoseOutputDescriptionHasBeenSet)
   {
    payload.WithObject("KinesisFirehoseOutputDescription", m_kinesisFirehoseOutputDescription.Jsonize());
+
+  }
+
+  if(m_lambdaOutputDescriptionHasBeenSet)
+  {
+   payload.WithObject("LambdaOutputDescription", m_lambdaOutputDescription.Jsonize());
 
   }
 

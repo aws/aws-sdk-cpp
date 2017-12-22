@@ -114,50 +114,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the input configuration to which to add the input configuration.
-     * You can get a list of the input IDs for an application using the
+     * <p>The ID of the input configuration to add the input processing configuration
+     * to. You can get a list of the input IDs for an application using the
      * <a>DescribeApplication</a> operation.</p>
      */
     inline const Aws::String& GetInputId() const{ return m_inputId; }
 
     /**
-     * <p>The ID of the input configuration to which to add the input configuration.
-     * You can get a list of the input IDs for an application using the
+     * <p>The ID of the input configuration to add the input processing configuration
+     * to. You can get a list of the input IDs for an application using the
      * <a>DescribeApplication</a> operation.</p>
      */
     inline void SetInputId(const Aws::String& value) { m_inputIdHasBeenSet = true; m_inputId = value; }
 
     /**
-     * <p>The ID of the input configuration to which to add the input configuration.
-     * You can get a list of the input IDs for an application using the
+     * <p>The ID of the input configuration to add the input processing configuration
+     * to. You can get a list of the input IDs for an application using the
      * <a>DescribeApplication</a> operation.</p>
      */
     inline void SetInputId(Aws::String&& value) { m_inputIdHasBeenSet = true; m_inputId = std::move(value); }
 
     /**
-     * <p>The ID of the input configuration to which to add the input configuration.
-     * You can get a list of the input IDs for an application using the
+     * <p>The ID of the input configuration to add the input processing configuration
+     * to. You can get a list of the input IDs for an application using the
      * <a>DescribeApplication</a> operation.</p>
      */
     inline void SetInputId(const char* value) { m_inputIdHasBeenSet = true; m_inputId.assign(value); }
 
     /**
-     * <p>The ID of the input configuration to which to add the input configuration.
-     * You can get a list of the input IDs for an application using the
+     * <p>The ID of the input configuration to add the input processing configuration
+     * to. You can get a list of the input IDs for an application using the
      * <a>DescribeApplication</a> operation.</p>
      */
     inline AddApplicationInputProcessingConfigurationRequest& WithInputId(const Aws::String& value) { SetInputId(value); return *this;}
 
     /**
-     * <p>The ID of the input configuration to which to add the input configuration.
-     * You can get a list of the input IDs for an application using the
+     * <p>The ID of the input configuration to add the input processing configuration
+     * to. You can get a list of the input IDs for an application using the
      * <a>DescribeApplication</a> operation.</p>
      */
     inline AddApplicationInputProcessingConfigurationRequest& WithInputId(Aws::String&& value) { SetInputId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the input configuration to which to add the input configuration.
-     * You can get a list of the input IDs for an application using the
+     * <p>The ID of the input configuration to add the input processing configuration
+     * to. You can get a list of the input IDs for an application using the
      * <a>DescribeApplication</a> operation.</p>
      */
     inline AddApplicationInputProcessingConfigurationRequest& WithInputId(const char* value) { SetInputId(value); return *this;}

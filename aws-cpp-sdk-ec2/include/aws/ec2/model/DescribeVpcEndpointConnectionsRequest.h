@@ -74,86 +74,86 @@ namespace Model
 
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>customer-account-id</code> - The
-     * AWS account number of the owner of the endpoint.</p> </li> <li> <p>
-     * <code>endpoint-connection-state</code> - The state of the endpoint
-     * (<code>PendingAcceptance</code> | <code>Pending</code> | <code>Available</code>
-     * | <code>Deleting</code> | <code>Deleted</code> | <code>Rejected</code> |
-     * <code>Failed</code>).</p> </li> <li> <p> <code>vpc-endpoint-id</code> - The ID
-     * of the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-service-id</code> - The
-     * ID of the service.</p> </li> </ul>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>service-id</code> - The ID of
+     * the service.</p> </li> <li> <p> <code>vpc-endpoint-owner</code> - The AWS
+     * account number of the owner of the endpoint.</p> </li> <li> <p>
+     * <code>vpc-endpoint-state</code> - The state of the endpoint
+     * (<code>pendingAcceptance</code> | <code>pending</code> | <code>available</code>
+     * | <code>deleting</code> | <code>deleted</code> | <code>rejected</code> |
+     * <code>failed</code>).</p> </li> <li> <p> <code>vpc-endpoint-id</code> - The ID
+     * of the endpoint.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>customer-account-id</code> - The
-     * AWS account number of the owner of the endpoint.</p> </li> <li> <p>
-     * <code>endpoint-connection-state</code> - The state of the endpoint
-     * (<code>PendingAcceptance</code> | <code>Pending</code> | <code>Available</code>
-     * | <code>Deleting</code> | <code>Deleted</code> | <code>Rejected</code> |
-     * <code>Failed</code>).</p> </li> <li> <p> <code>vpc-endpoint-id</code> - The ID
-     * of the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-service-id</code> - The
-     * ID of the service.</p> </li> </ul>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>service-id</code> - The ID of
+     * the service.</p> </li> <li> <p> <code>vpc-endpoint-owner</code> - The AWS
+     * account number of the owner of the endpoint.</p> </li> <li> <p>
+     * <code>vpc-endpoint-state</code> - The state of the endpoint
+     * (<code>pendingAcceptance</code> | <code>pending</code> | <code>available</code>
+     * | <code>deleting</code> | <code>deleted</code> | <code>rejected</code> |
+     * <code>failed</code>).</p> </li> <li> <p> <code>vpc-endpoint-id</code> - The ID
+     * of the endpoint.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>customer-account-id</code> - The
-     * AWS account number of the owner of the endpoint.</p> </li> <li> <p>
-     * <code>endpoint-connection-state</code> - The state of the endpoint
-     * (<code>PendingAcceptance</code> | <code>Pending</code> | <code>Available</code>
-     * | <code>Deleting</code> | <code>Deleted</code> | <code>Rejected</code> |
-     * <code>Failed</code>).</p> </li> <li> <p> <code>vpc-endpoint-id</code> - The ID
-     * of the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-service-id</code> - The
-     * ID of the service.</p> </li> </ul>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>service-id</code> - The ID of
+     * the service.</p> </li> <li> <p> <code>vpc-endpoint-owner</code> - The AWS
+     * account number of the owner of the endpoint.</p> </li> <li> <p>
+     * <code>vpc-endpoint-state</code> - The state of the endpoint
+     * (<code>pendingAcceptance</code> | <code>pending</code> | <code>available</code>
+     * | <code>deleting</code> | <code>deleted</code> | <code>rejected</code> |
+     * <code>failed</code>).</p> </li> <li> <p> <code>vpc-endpoint-id</code> - The ID
+     * of the endpoint.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>customer-account-id</code> - The
-     * AWS account number of the owner of the endpoint.</p> </li> <li> <p>
-     * <code>endpoint-connection-state</code> - The state of the endpoint
-     * (<code>PendingAcceptance</code> | <code>Pending</code> | <code>Available</code>
-     * | <code>Deleting</code> | <code>Deleted</code> | <code>Rejected</code> |
-     * <code>Failed</code>).</p> </li> <li> <p> <code>vpc-endpoint-id</code> - The ID
-     * of the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-service-id</code> - The
-     * ID of the service.</p> </li> </ul>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>service-id</code> - The ID of
+     * the service.</p> </li> <li> <p> <code>vpc-endpoint-owner</code> - The AWS
+     * account number of the owner of the endpoint.</p> </li> <li> <p>
+     * <code>vpc-endpoint-state</code> - The state of the endpoint
+     * (<code>pendingAcceptance</code> | <code>pending</code> | <code>available</code>
+     * | <code>deleting</code> | <code>deleted</code> | <code>rejected</code> |
+     * <code>failed</code>).</p> </li> <li> <p> <code>vpc-endpoint-id</code> - The ID
+     * of the endpoint.</p> </li> </ul>
      */
     inline DescribeVpcEndpointConnectionsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>customer-account-id</code> - The
-     * AWS account number of the owner of the endpoint.</p> </li> <li> <p>
-     * <code>endpoint-connection-state</code> - The state of the endpoint
-     * (<code>PendingAcceptance</code> | <code>Pending</code> | <code>Available</code>
-     * | <code>Deleting</code> | <code>Deleted</code> | <code>Rejected</code> |
-     * <code>Failed</code>).</p> </li> <li> <p> <code>vpc-endpoint-id</code> - The ID
-     * of the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-service-id</code> - The
-     * ID of the service.</p> </li> </ul>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>service-id</code> - The ID of
+     * the service.</p> </li> <li> <p> <code>vpc-endpoint-owner</code> - The AWS
+     * account number of the owner of the endpoint.</p> </li> <li> <p>
+     * <code>vpc-endpoint-state</code> - The state of the endpoint
+     * (<code>pendingAcceptance</code> | <code>pending</code> | <code>available</code>
+     * | <code>deleting</code> | <code>deleted</code> | <code>rejected</code> |
+     * <code>failed</code>).</p> </li> <li> <p> <code>vpc-endpoint-id</code> - The ID
+     * of the endpoint.</p> </li> </ul>
      */
     inline DescribeVpcEndpointConnectionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>customer-account-id</code> - The
-     * AWS account number of the owner of the endpoint.</p> </li> <li> <p>
-     * <code>endpoint-connection-state</code> - The state of the endpoint
-     * (<code>PendingAcceptance</code> | <code>Pending</code> | <code>Available</code>
-     * | <code>Deleting</code> | <code>Deleted</code> | <code>Rejected</code> |
-     * <code>Failed</code>).</p> </li> <li> <p> <code>vpc-endpoint-id</code> - The ID
-     * of the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-service-id</code> - The
-     * ID of the service.</p> </li> </ul>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>service-id</code> - The ID of
+     * the service.</p> </li> <li> <p> <code>vpc-endpoint-owner</code> - The AWS
+     * account number of the owner of the endpoint.</p> </li> <li> <p>
+     * <code>vpc-endpoint-state</code> - The state of the endpoint
+     * (<code>pendingAcceptance</code> | <code>pending</code> | <code>available</code>
+     * | <code>deleting</code> | <code>deleted</code> | <code>rejected</code> |
+     * <code>failed</code>).</p> </li> <li> <p> <code>vpc-endpoint-id</code> - The ID
+     * of the endpoint.</p> </li> </ul>
      */
     inline DescribeVpcEndpointConnectionsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>customer-account-id</code> - The
-     * AWS account number of the owner of the endpoint.</p> </li> <li> <p>
-     * <code>endpoint-connection-state</code> - The state of the endpoint
-     * (<code>PendingAcceptance</code> | <code>Pending</code> | <code>Available</code>
-     * | <code>Deleting</code> | <code>Deleted</code> | <code>Rejected</code> |
-     * <code>Failed</code>).</p> </li> <li> <p> <code>vpc-endpoint-id</code> - The ID
-     * of the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-service-id</code> - The
-     * ID of the service.</p> </li> </ul>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>service-id</code> - The ID of
+     * the service.</p> </li> <li> <p> <code>vpc-endpoint-owner</code> - The AWS
+     * account number of the owner of the endpoint.</p> </li> <li> <p>
+     * <code>vpc-endpoint-state</code> - The state of the endpoint
+     * (<code>pendingAcceptance</code> | <code>pending</code> | <code>available</code>
+     * | <code>deleting</code> | <code>deleted</code> | <code>rejected</code> |
+     * <code>failed</code>).</p> </li> <li> <p> <code>vpc-endpoint-id</code> - The ID
+     * of the endpoint.</p> </li> </ul>
      */
     inline DescribeVpcEndpointConnectionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

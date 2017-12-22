@@ -33,10 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>An object that contains the ARN of the <a
+   * <p>An object that contains the Amazon Resource Name (ARN) of the <a
    * href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that
-   * is used to preprocess records in the stream, and the ARN of the IAM role used to
-   * access the AWS Lambda expression.</p><p><h3>See Also:</h3>   <a
+   * is used to preprocess records in the stream, and the ARN of the IAM role that is
+   * used to access the AWS Lambda expression.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/InputLambdaProcessorDescription">AWS
    * API Reference</a></p>
    */
@@ -93,37 +93,37 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the IAM role used to access the AWS Lambda function.</p>
+     * <p>The ARN of the IAM role that is used to access the AWS Lambda function.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
-     * <p>The ARN of the IAM role used to access the AWS Lambda function.</p>
+     * <p>The ARN of the IAM role that is used to access the AWS Lambda function.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
-     * <p>The ARN of the IAM role used to access the AWS Lambda function.</p>
+     * <p>The ARN of the IAM role that is used to access the AWS Lambda function.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
-     * <p>The ARN of the IAM role used to access the AWS Lambda function.</p>
+     * <p>The ARN of the IAM role that is used to access the AWS Lambda function.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
-     * <p>The ARN of the IAM role used to access the AWS Lambda function.</p>
+     * <p>The ARN of the IAM role that is used to access the AWS Lambda function.</p>
      */
     inline InputLambdaProcessorDescription& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
-     * <p>The ARN of the IAM role used to access the AWS Lambda function.</p>
+     * <p>The ARN of the IAM role that is used to access the AWS Lambda function.</p>
      */
     inline InputLambdaProcessorDescription& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the IAM role used to access the AWS Lambda function.</p>
+     * <p>The ARN of the IAM role that is used to access the AWS Lambda function.</p>
      */
     inline InputLambdaProcessorDescription& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 

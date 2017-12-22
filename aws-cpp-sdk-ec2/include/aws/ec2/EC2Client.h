@@ -11948,8 +11948,8 @@ namespace Model
          * create a subnet, it's automatically associated with the default network ACL. For
          * more information about network ACLs, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
-         * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>This is
+         * an idempotent operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclAssociation">AWS
          * API Reference</a></p>
          */
@@ -11960,8 +11960,8 @@ namespace Model
          * create a subnet, it's automatically associated with the default network ACL. For
          * more information about network ACLs, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
-         * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>This is
+         * an idempotent operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclAssociation">AWS
          * API Reference</a></p>
          *
@@ -11974,8 +11974,8 @@ namespace Model
          * create a subnet, it's automatically associated with the default network ACL. For
          * more information about network ACLs, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
-         * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>This is
+         * an idempotent operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclAssociation">AWS
          * API Reference</a></p>
          *

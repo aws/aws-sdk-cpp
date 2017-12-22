@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kinesisanalytics/model/KinesisStreamsOutputUpdate.h>
 #include <aws/kinesisanalytics/model/KinesisFirehoseOutputUpdate.h>
+#include <aws/kinesisanalytics/model/LambdaOutputUpdate.h>
 #include <aws/kinesisanalytics/model/DestinationSchema.h>
 #include <utility>
 
@@ -156,49 +157,100 @@ namespace Model
 
 
     /**
-     * <p>Describes a Amazon Kinesis Firehose delivery stream as the destination for
+     * <p>Describes an Amazon Kinesis Firehose delivery stream as the destination for
      * the output.</p>
      */
     inline const KinesisFirehoseOutputUpdate& GetKinesisFirehoseOutputUpdate() const{ return m_kinesisFirehoseOutputUpdate; }
 
     /**
-     * <p>Describes a Amazon Kinesis Firehose delivery stream as the destination for
+     * <p>Describes an Amazon Kinesis Firehose delivery stream as the destination for
      * the output.</p>
      */
     inline void SetKinesisFirehoseOutputUpdate(const KinesisFirehoseOutputUpdate& value) { m_kinesisFirehoseOutputUpdateHasBeenSet = true; m_kinesisFirehoseOutputUpdate = value; }
 
     /**
-     * <p>Describes a Amazon Kinesis Firehose delivery stream as the destination for
+     * <p>Describes an Amazon Kinesis Firehose delivery stream as the destination for
      * the output.</p>
      */
     inline void SetKinesisFirehoseOutputUpdate(KinesisFirehoseOutputUpdate&& value) { m_kinesisFirehoseOutputUpdateHasBeenSet = true; m_kinesisFirehoseOutputUpdate = std::move(value); }
 
     /**
-     * <p>Describes a Amazon Kinesis Firehose delivery stream as the destination for
+     * <p>Describes an Amazon Kinesis Firehose delivery stream as the destination for
      * the output.</p>
      */
     inline OutputUpdate& WithKinesisFirehoseOutputUpdate(const KinesisFirehoseOutputUpdate& value) { SetKinesisFirehoseOutputUpdate(value); return *this;}
 
     /**
-     * <p>Describes a Amazon Kinesis Firehose delivery stream as the destination for
+     * <p>Describes an Amazon Kinesis Firehose delivery stream as the destination for
      * the output.</p>
      */
     inline OutputUpdate& WithKinesisFirehoseOutputUpdate(KinesisFirehoseOutputUpdate&& value) { SetKinesisFirehoseOutputUpdate(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Describes an AWS Lambda function as the destination for the output.</p>
+     */
+    inline const LambdaOutputUpdate& GetLambdaOutputUpdate() const{ return m_lambdaOutputUpdate; }
+
+    /**
+     * <p>Describes an AWS Lambda function as the destination for the output.</p>
+     */
+    inline void SetLambdaOutputUpdate(const LambdaOutputUpdate& value) { m_lambdaOutputUpdateHasBeenSet = true; m_lambdaOutputUpdate = value; }
+
+    /**
+     * <p>Describes an AWS Lambda function as the destination for the output.</p>
+     */
+    inline void SetLambdaOutputUpdate(LambdaOutputUpdate&& value) { m_lambdaOutputUpdateHasBeenSet = true; m_lambdaOutputUpdate = std::move(value); }
+
+    /**
+     * <p>Describes an AWS Lambda function as the destination for the output.</p>
+     */
+    inline OutputUpdate& WithLambdaOutputUpdate(const LambdaOutputUpdate& value) { SetLambdaOutputUpdate(value); return *this;}
+
+    /**
+     * <p>Describes an AWS Lambda function as the destination for the output.</p>
+     */
+    inline OutputUpdate& WithLambdaOutputUpdate(LambdaOutputUpdate&& value) { SetLambdaOutputUpdate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Describes the data format when records are written to the destination. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     * Application Output</a>.</p>
+     */
     inline const DestinationSchema& GetDestinationSchemaUpdate() const{ return m_destinationSchemaUpdate; }
 
-    
+    /**
+     * <p>Describes the data format when records are written to the destination. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     * Application Output</a>.</p>
+     */
     inline void SetDestinationSchemaUpdate(const DestinationSchema& value) { m_destinationSchemaUpdateHasBeenSet = true; m_destinationSchemaUpdate = value; }
 
-    
+    /**
+     * <p>Describes the data format when records are written to the destination. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     * Application Output</a>.</p>
+     */
     inline void SetDestinationSchemaUpdate(DestinationSchema&& value) { m_destinationSchemaUpdateHasBeenSet = true; m_destinationSchemaUpdate = std::move(value); }
 
-    
+    /**
+     * <p>Describes the data format when records are written to the destination. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     * Application Output</a>.</p>
+     */
     inline OutputUpdate& WithDestinationSchemaUpdate(const DestinationSchema& value) { SetDestinationSchemaUpdate(value); return *this;}
 
-    
+    /**
+     * <p>Describes the data format when records are written to the destination. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     * Application Output</a>.</p>
+     */
     inline OutputUpdate& WithDestinationSchemaUpdate(DestinationSchema&& value) { SetDestinationSchemaUpdate(std::move(value)); return *this;}
 
   private:
@@ -214,6 +266,9 @@ namespace Model
 
     KinesisFirehoseOutputUpdate m_kinesisFirehoseOutputUpdate;
     bool m_kinesisFirehoseOutputUpdateHasBeenSet;
+
+    LambdaOutputUpdate m_lambdaOutputUpdate;
+    bool m_lambdaOutputUpdateHasBeenSet;
 
     DestinationSchema m_destinationSchemaUpdate;
     bool m_destinationSchemaUpdateHasBeenSet;
