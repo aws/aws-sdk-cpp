@@ -118,11 +118,13 @@ namespace Aws
                         // fall through
                     case PROFILE_FOUND:
                     {
-                        auto keyValuePair = StringUtils::Split(line, EQ);
-                        if (keyValuePair.size() == 2)
+                        auto equalsPos = line.find(EQ);
+                        if (equalsPos != std::string::npos)
                         {
-                            m_profileKeyValuePairs[StringUtils::Trim(keyValuePair[0].c_str())] =
-                                    StringUtils::Trim(keyValuePair[1].c_str());
+                            auto key = line.substr(0, equalsPos);
+                            auto value = line.substr(equalsPos + 1);
+                            m_profileKeyValuePairs[StringUtils::Trim(key.c_str())] =
+                                    StringUtils::Trim(value.c_str());
                             m_parserState = PROFILE_KEY_VALUE_FOUND;
                         }
 
