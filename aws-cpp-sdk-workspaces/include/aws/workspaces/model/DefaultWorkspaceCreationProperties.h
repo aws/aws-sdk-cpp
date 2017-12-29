@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains default WorkSpace creation information.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Information about defaults used to create a WorkSpace.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DefaultWorkspaceCreationProperties">AWS
    * API Reference</a></p>
    */
@@ -48,138 +48,141 @@ namespace Model
 
 
     /**
-     * <p>Specifies if the directory is enabled for Amazon WorkDocs.</p>
+     * <p>Indicates whether the directory is enabled for Amazon WorkDocs.</p>
      */
     inline bool GetEnableWorkDocs() const{ return m_enableWorkDocs; }
 
     /**
-     * <p>Specifies if the directory is enabled for Amazon WorkDocs.</p>
+     * <p>Indicates whether the directory is enabled for Amazon WorkDocs.</p>
      */
     inline void SetEnableWorkDocs(bool value) { m_enableWorkDocsHasBeenSet = true; m_enableWorkDocs = value; }
 
     /**
-     * <p>Specifies if the directory is enabled for Amazon WorkDocs.</p>
+     * <p>Indicates whether the directory is enabled for Amazon WorkDocs.</p>
      */
     inline DefaultWorkspaceCreationProperties& WithEnableWorkDocs(bool value) { SetEnableWorkDocs(value); return *this;}
 
 
     /**
-     * <p>A public IP address will be attached to all WorkSpaces that are created or
+     * <p>The public IP address to attach to all WorkSpaces that are created or
      * rebuilt.</p>
      */
     inline bool GetEnableInternetAccess() const{ return m_enableInternetAccess; }
 
     /**
-     * <p>A public IP address will be attached to all WorkSpaces that are created or
+     * <p>The public IP address to attach to all WorkSpaces that are created or
      * rebuilt.</p>
      */
     inline void SetEnableInternetAccess(bool value) { m_enableInternetAccessHasBeenSet = true; m_enableInternetAccess = value; }
 
     /**
-     * <p>A public IP address will be attached to all WorkSpaces that are created or
+     * <p>The public IP address to attach to all WorkSpaces that are created or
      * rebuilt.</p>
      */
     inline DefaultWorkspaceCreationProperties& WithEnableInternetAccess(bool value) { SetEnableInternetAccess(value); return *this;}
 
 
     /**
-     * <p>The organizational unit (OU) in the directory that the WorkSpace machine
-     * accounts are placed in.</p>
+     * <p>The organizational unit (OU) in the directory for the WorkSpace machine
+     * accounts.</p>
      */
     inline const Aws::String& GetDefaultOu() const{ return m_defaultOu; }
 
     /**
-     * <p>The organizational unit (OU) in the directory that the WorkSpace machine
-     * accounts are placed in.</p>
+     * <p>The organizational unit (OU) in the directory for the WorkSpace machine
+     * accounts.</p>
      */
     inline void SetDefaultOu(const Aws::String& value) { m_defaultOuHasBeenSet = true; m_defaultOu = value; }
 
     /**
-     * <p>The organizational unit (OU) in the directory that the WorkSpace machine
-     * accounts are placed in.</p>
+     * <p>The organizational unit (OU) in the directory for the WorkSpace machine
+     * accounts.</p>
      */
     inline void SetDefaultOu(Aws::String&& value) { m_defaultOuHasBeenSet = true; m_defaultOu = std::move(value); }
 
     /**
-     * <p>The organizational unit (OU) in the directory that the WorkSpace machine
-     * accounts are placed in.</p>
+     * <p>The organizational unit (OU) in the directory for the WorkSpace machine
+     * accounts.</p>
      */
     inline void SetDefaultOu(const char* value) { m_defaultOuHasBeenSet = true; m_defaultOu.assign(value); }
 
     /**
-     * <p>The organizational unit (OU) in the directory that the WorkSpace machine
-     * accounts are placed in.</p>
+     * <p>The organizational unit (OU) in the directory for the WorkSpace machine
+     * accounts.</p>
      */
     inline DefaultWorkspaceCreationProperties& WithDefaultOu(const Aws::String& value) { SetDefaultOu(value); return *this;}
 
     /**
-     * <p>The organizational unit (OU) in the directory that the WorkSpace machine
-     * accounts are placed in.</p>
+     * <p>The organizational unit (OU) in the directory for the WorkSpace machine
+     * accounts.</p>
      */
     inline DefaultWorkspaceCreationProperties& WithDefaultOu(Aws::String&& value) { SetDefaultOu(std::move(value)); return *this;}
 
     /**
-     * <p>The organizational unit (OU) in the directory that the WorkSpace machine
-     * accounts are placed in.</p>
+     * <p>The organizational unit (OU) in the directory for the WorkSpace machine
+     * accounts.</p>
      */
     inline DefaultWorkspaceCreationProperties& WithDefaultOu(const char* value) { SetDefaultOu(value); return *this;}
 
 
     /**
-     * <p>The identifier of any custom security groups that are applied to the
-     * WorkSpaces when they are created.</p>
+     * <p>The identifier of any security groups to apply to WorkSpaces when they are
+     * created.</p>
      */
     inline const Aws::String& GetCustomSecurityGroupId() const{ return m_customSecurityGroupId; }
 
     /**
-     * <p>The identifier of any custom security groups that are applied to the
-     * WorkSpaces when they are created.</p>
+     * <p>The identifier of any security groups to apply to WorkSpaces when they are
+     * created.</p>
      */
     inline void SetCustomSecurityGroupId(const Aws::String& value) { m_customSecurityGroupIdHasBeenSet = true; m_customSecurityGroupId = value; }
 
     /**
-     * <p>The identifier of any custom security groups that are applied to the
-     * WorkSpaces when they are created.</p>
+     * <p>The identifier of any security groups to apply to WorkSpaces when they are
+     * created.</p>
      */
     inline void SetCustomSecurityGroupId(Aws::String&& value) { m_customSecurityGroupIdHasBeenSet = true; m_customSecurityGroupId = std::move(value); }
 
     /**
-     * <p>The identifier of any custom security groups that are applied to the
-     * WorkSpaces when they are created.</p>
+     * <p>The identifier of any security groups to apply to WorkSpaces when they are
+     * created.</p>
      */
     inline void SetCustomSecurityGroupId(const char* value) { m_customSecurityGroupIdHasBeenSet = true; m_customSecurityGroupId.assign(value); }
 
     /**
-     * <p>The identifier of any custom security groups that are applied to the
-     * WorkSpaces when they are created.</p>
+     * <p>The identifier of any security groups to apply to WorkSpaces when they are
+     * created.</p>
      */
     inline DefaultWorkspaceCreationProperties& WithCustomSecurityGroupId(const Aws::String& value) { SetCustomSecurityGroupId(value); return *this;}
 
     /**
-     * <p>The identifier of any custom security groups that are applied to the
-     * WorkSpaces when they are created.</p>
+     * <p>The identifier of any security groups to apply to WorkSpaces when they are
+     * created.</p>
      */
     inline DefaultWorkspaceCreationProperties& WithCustomSecurityGroupId(Aws::String&& value) { SetCustomSecurityGroupId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of any custom security groups that are applied to the
-     * WorkSpaces when they are created.</p>
+     * <p>The identifier of any security groups to apply to WorkSpaces when they are
+     * created.</p>
      */
     inline DefaultWorkspaceCreationProperties& WithCustomSecurityGroupId(const char* value) { SetCustomSecurityGroupId(value); return *this;}
 
 
     /**
-     * <p>The WorkSpace user is an administrator on the WorkSpace.</p>
+     * <p>Indicates whether the WorkSpace user is an administrator on the
+     * WorkSpace.</p>
      */
     inline bool GetUserEnabledAsLocalAdministrator() const{ return m_userEnabledAsLocalAdministrator; }
 
     /**
-     * <p>The WorkSpace user is an administrator on the WorkSpace.</p>
+     * <p>Indicates whether the WorkSpace user is an administrator on the
+     * WorkSpace.</p>
      */
     inline void SetUserEnabledAsLocalAdministrator(bool value) { m_userEnabledAsLocalAdministratorHasBeenSet = true; m_userEnabledAsLocalAdministrator = value; }
 
     /**
-     * <p>The WorkSpace user is an administrator on the WorkSpace.</p>
+     * <p>Indicates whether the WorkSpace user is an administrator on the
+     * WorkSpace.</p>
      */
     inline DefaultWorkspaceCreationProperties& WithUserEnabledAsLocalAdministrator(bool value) { SetUserEnabledAsLocalAdministrator(value); return *this;}
 

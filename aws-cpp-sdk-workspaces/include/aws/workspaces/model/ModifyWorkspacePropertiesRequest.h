@@ -82,27 +82,27 @@ namespace Model
 
 
     /**
-     * <p>The WorkSpace properties of the request.</p>
+     * <p>The properties of the WorkSpace.</p>
      */
     inline const WorkspaceProperties& GetWorkspaceProperties() const{ return m_workspaceProperties; }
 
     /**
-     * <p>The WorkSpace properties of the request.</p>
+     * <p>The properties of the WorkSpace.</p>
      */
     inline void SetWorkspaceProperties(const WorkspaceProperties& value) { m_workspacePropertiesHasBeenSet = true; m_workspaceProperties = value; }
 
     /**
-     * <p>The WorkSpace properties of the request.</p>
+     * <p>The properties of the WorkSpace.</p>
      */
     inline void SetWorkspaceProperties(WorkspaceProperties&& value) { m_workspacePropertiesHasBeenSet = true; m_workspaceProperties = std::move(value); }
 
     /**
-     * <p>The WorkSpace properties of the request.</p>
+     * <p>The properties of the WorkSpace.</p>
      */
     inline ModifyWorkspacePropertiesRequest& WithWorkspaceProperties(const WorkspaceProperties& value) { SetWorkspaceProperties(value); return *this;}
 
     /**
-     * <p>The WorkSpace properties of the request.</p>
+     * <p>The properties of the WorkSpace.</p>
      */
     inline ModifyWorkspacePropertiesRequest& WithWorkspaceProperties(WorkspaceProperties&& value) { SetWorkspaceProperties(std::move(value)); return *this;}
 

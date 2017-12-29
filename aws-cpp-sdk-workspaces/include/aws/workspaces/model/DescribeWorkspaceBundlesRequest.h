@@ -28,10 +28,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the inputs for the <a>DescribeWorkspaceBundles</a>
-   * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceBundlesRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_WORKSPACES_API DescribeWorkspaceBundlesRequest : public WorkSpacesRequest
   {
@@ -50,157 +46,143 @@ namespace Model
 
 
     /**
-     * <p>An array of strings that contains the identifiers of the bundles to retrieve.
-     * This parameter cannot be combined with any other filter parameter.</p>
+     * <p>The IDs of the bundles. This parameter cannot be combined with any other
+     * filter.</p>
      */
     inline const Aws::Vector<Aws::String>& GetBundleIds() const{ return m_bundleIds; }
 
     /**
-     * <p>An array of strings that contains the identifiers of the bundles to retrieve.
-     * This parameter cannot be combined with any other filter parameter.</p>
+     * <p>The IDs of the bundles. This parameter cannot be combined with any other
+     * filter.</p>
      */
     inline void SetBundleIds(const Aws::Vector<Aws::String>& value) { m_bundleIdsHasBeenSet = true; m_bundleIds = value; }
 
     /**
-     * <p>An array of strings that contains the identifiers of the bundles to retrieve.
-     * This parameter cannot be combined with any other filter parameter.</p>
+     * <p>The IDs of the bundles. This parameter cannot be combined with any other
+     * filter.</p>
      */
     inline void SetBundleIds(Aws::Vector<Aws::String>&& value) { m_bundleIdsHasBeenSet = true; m_bundleIds = std::move(value); }
 
     /**
-     * <p>An array of strings that contains the identifiers of the bundles to retrieve.
-     * This parameter cannot be combined with any other filter parameter.</p>
+     * <p>The IDs of the bundles. This parameter cannot be combined with any other
+     * filter.</p>
      */
     inline DescribeWorkspaceBundlesRequest& WithBundleIds(const Aws::Vector<Aws::String>& value) { SetBundleIds(value); return *this;}
 
     /**
-     * <p>An array of strings that contains the identifiers of the bundles to retrieve.
-     * This parameter cannot be combined with any other filter parameter.</p>
+     * <p>The IDs of the bundles. This parameter cannot be combined with any other
+     * filter.</p>
      */
     inline DescribeWorkspaceBundlesRequest& WithBundleIds(Aws::Vector<Aws::String>&& value) { SetBundleIds(std::move(value)); return *this;}
 
     /**
-     * <p>An array of strings that contains the identifiers of the bundles to retrieve.
-     * This parameter cannot be combined with any other filter parameter.</p>
+     * <p>The IDs of the bundles. This parameter cannot be combined with any other
+     * filter.</p>
      */
     inline DescribeWorkspaceBundlesRequest& AddBundleIds(const Aws::String& value) { m_bundleIdsHasBeenSet = true; m_bundleIds.push_back(value); return *this; }
 
     /**
-     * <p>An array of strings that contains the identifiers of the bundles to retrieve.
-     * This parameter cannot be combined with any other filter parameter.</p>
+     * <p>The IDs of the bundles. This parameter cannot be combined with any other
+     * filter.</p>
      */
     inline DescribeWorkspaceBundlesRequest& AddBundleIds(Aws::String&& value) { m_bundleIdsHasBeenSet = true; m_bundleIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array of strings that contains the identifiers of the bundles to retrieve.
-     * This parameter cannot be combined with any other filter parameter.</p>
+     * <p>The IDs of the bundles. This parameter cannot be combined with any other
+     * filter.</p>
      */
     inline DescribeWorkspaceBundlesRequest& AddBundleIds(const char* value) { m_bundleIdsHasBeenSet = true; m_bundleIds.push_back(value); return *this; }
 
 
     /**
-     * <p>The owner of the bundles to retrieve. This parameter cannot be combined with
-     * any other filter parameter.</p> <p>This contains one of the following
-     * values:</p> <ul> <li> <p>null- Retrieves the bundles that belong to the account
-     * making the call.</p> </li> <li> <p> <code>AMAZON</code>- Retrieves the bundles
-     * that are provided by AWS.</p> </li> </ul>
+     * <p>The owner of the bundles. This parameter cannot be combined with any other
+     * filter.</p> <p>Specify <code>AMAZON</code> to describe the bundles provided by
+     * AWS or null to describe the bundles that belong to your account.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
 
     /**
-     * <p>The owner of the bundles to retrieve. This parameter cannot be combined with
-     * any other filter parameter.</p> <p>This contains one of the following
-     * values:</p> <ul> <li> <p>null- Retrieves the bundles that belong to the account
-     * making the call.</p> </li> <li> <p> <code>AMAZON</code>- Retrieves the bundles
-     * that are provided by AWS.</p> </li> </ul>
+     * <p>The owner of the bundles. This parameter cannot be combined with any other
+     * filter.</p> <p>Specify <code>AMAZON</code> to describe the bundles provided by
+     * AWS or null to describe the bundles that belong to your account.</p>
      */
     inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
-     * <p>The owner of the bundles to retrieve. This parameter cannot be combined with
-     * any other filter parameter.</p> <p>This contains one of the following
-     * values:</p> <ul> <li> <p>null- Retrieves the bundles that belong to the account
-     * making the call.</p> </li> <li> <p> <code>AMAZON</code>- Retrieves the bundles
-     * that are provided by AWS.</p> </li> </ul>
+     * <p>The owner of the bundles. This parameter cannot be combined with any other
+     * filter.</p> <p>Specify <code>AMAZON</code> to describe the bundles provided by
+     * AWS or null to describe the bundles that belong to your account.</p>
      */
     inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
-     * <p>The owner of the bundles to retrieve. This parameter cannot be combined with
-     * any other filter parameter.</p> <p>This contains one of the following
-     * values:</p> <ul> <li> <p>null- Retrieves the bundles that belong to the account
-     * making the call.</p> </li> <li> <p> <code>AMAZON</code>- Retrieves the bundles
-     * that are provided by AWS.</p> </li> </ul>
+     * <p>The owner of the bundles. This parameter cannot be combined with any other
+     * filter.</p> <p>Specify <code>AMAZON</code> to describe the bundles provided by
+     * AWS or null to describe the bundles that belong to your account.</p>
      */
     inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
 
     /**
-     * <p>The owner of the bundles to retrieve. This parameter cannot be combined with
-     * any other filter parameter.</p> <p>This contains one of the following
-     * values:</p> <ul> <li> <p>null- Retrieves the bundles that belong to the account
-     * making the call.</p> </li> <li> <p> <code>AMAZON</code>- Retrieves the bundles
-     * that are provided by AWS.</p> </li> </ul>
+     * <p>The owner of the bundles. This parameter cannot be combined with any other
+     * filter.</p> <p>Specify <code>AMAZON</code> to describe the bundles provided by
+     * AWS or null to describe the bundles that belong to your account.</p>
      */
     inline DescribeWorkspaceBundlesRequest& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
 
     /**
-     * <p>The owner of the bundles to retrieve. This parameter cannot be combined with
-     * any other filter parameter.</p> <p>This contains one of the following
-     * values:</p> <ul> <li> <p>null- Retrieves the bundles that belong to the account
-     * making the call.</p> </li> <li> <p> <code>AMAZON</code>- Retrieves the bundles
-     * that are provided by AWS.</p> </li> </ul>
+     * <p>The owner of the bundles. This parameter cannot be combined with any other
+     * filter.</p> <p>Specify <code>AMAZON</code> to describe the bundles provided by
+     * AWS or null to describe the bundles that belong to your account.</p>
      */
     inline DescribeWorkspaceBundlesRequest& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The owner of the bundles to retrieve. This parameter cannot be combined with
-     * any other filter parameter.</p> <p>This contains one of the following
-     * values:</p> <ul> <li> <p>null- Retrieves the bundles that belong to the account
-     * making the call.</p> </li> <li> <p> <code>AMAZON</code>- Retrieves the bundles
-     * that are provided by AWS.</p> </li> </ul>
+     * <p>The owner of the bundles. This parameter cannot be combined with any other
+     * filter.</p> <p>Specify <code>AMAZON</code> to describe the bundles provided by
+     * AWS or null to describe the bundles that belong to your account.</p>
      */
     inline DescribeWorkspaceBundlesRequest& WithOwner(const char* value) { SetOwner(value); return *this;}
 
 
     /**
-     * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
-     * null if this is the first call.</p>
+     * <p>The token for the next set of results. (You received this token from a
+     * previous call.)</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
-     * null if this is the first call.</p>
+     * <p>The token for the next set of results. (You received this token from a
+     * previous call.)</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
-     * null if this is the first call.</p>
+     * <p>The token for the next set of results. (You received this token from a
+     * previous call.)</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
-     * null if this is the first call.</p>
+     * <p>The token for the next set of results. (You received this token from a
+     * previous call.)</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
-     * null if this is the first call.</p>
+     * <p>The token for the next set of results. (You received this token from a
+     * previous call.)</p>
      */
     inline DescribeWorkspaceBundlesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
-     * null if this is the first call.</p>
+     * <p>The token for the next set of results. (You received this token from a
+     * previous call.)</p>
      */
     inline DescribeWorkspaceBundlesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
-     * null if this is the first call.</p>
+     * <p>The token for the next set of results. (You received this token from a
+     * previous call.)</p>
      */
     inline DescribeWorkspaceBundlesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

@@ -46,37 +46,37 @@ namespace Model
 
 
     /**
-     * <p>The requests.</p>
+     * <p>The WorkSpaces to stop.</p>
      */
     inline const Aws::Vector<StopRequest>& GetStopWorkspaceRequests() const{ return m_stopWorkspaceRequests; }
 
     /**
-     * <p>The requests.</p>
+     * <p>The WorkSpaces to stop.</p>
      */
     inline void SetStopWorkspaceRequests(const Aws::Vector<StopRequest>& value) { m_stopWorkspaceRequestsHasBeenSet = true; m_stopWorkspaceRequests = value; }
 
     /**
-     * <p>The requests.</p>
+     * <p>The WorkSpaces to stop.</p>
      */
     inline void SetStopWorkspaceRequests(Aws::Vector<StopRequest>&& value) { m_stopWorkspaceRequestsHasBeenSet = true; m_stopWorkspaceRequests = std::move(value); }
 
     /**
-     * <p>The requests.</p>
+     * <p>The WorkSpaces to stop.</p>
      */
     inline StopWorkspacesRequest& WithStopWorkspaceRequests(const Aws::Vector<StopRequest>& value) { SetStopWorkspaceRequests(value); return *this;}
 
     /**
-     * <p>The requests.</p>
+     * <p>The WorkSpaces to stop.</p>
      */
     inline StopWorkspacesRequest& WithStopWorkspaceRequests(Aws::Vector<StopRequest>&& value) { SetStopWorkspaceRequests(std::move(value)); return *this;}
 
     /**
-     * <p>The requests.</p>
+     * <p>The WorkSpaces to stop.</p>
      */
     inline StopWorkspacesRequest& AddStopWorkspaceRequests(const StopRequest& value) { m_stopWorkspaceRequestsHasBeenSet = true; m_stopWorkspaceRequests.push_back(value); return *this; }
 
     /**
-     * <p>The requests.</p>
+     * <p>The WorkSpaces to stop.</p>
      */
     inline StopWorkspacesRequest& AddStopWorkspaceRequests(StopRequest&& value) { m_stopWorkspaceRequestsHasBeenSet = true; m_stopWorkspaceRequests.push_back(std::move(value)); return *this; }
 

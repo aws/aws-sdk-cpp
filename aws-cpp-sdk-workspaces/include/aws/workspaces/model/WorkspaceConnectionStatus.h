@@ -85,32 +85,32 @@ namespace Model
 
 
     /**
-     * <p>The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in
-     * a Stopped state.</p>
+     * <p>The connection state of the WorkSpace. The connection state is unknown if the
+     * WorkSpace is stopped.</p>
      */
     inline const ConnectionState& GetConnectionState() const{ return m_connectionState; }
 
     /**
-     * <p>The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in
-     * a Stopped state.</p>
+     * <p>The connection state of the WorkSpace. The connection state is unknown if the
+     * WorkSpace is stopped.</p>
      */
     inline void SetConnectionState(const ConnectionState& value) { m_connectionStateHasBeenSet = true; m_connectionState = value; }
 
     /**
-     * <p>The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in
-     * a Stopped state.</p>
+     * <p>The connection state of the WorkSpace. The connection state is unknown if the
+     * WorkSpace is stopped.</p>
      */
     inline void SetConnectionState(ConnectionState&& value) { m_connectionStateHasBeenSet = true; m_connectionState = std::move(value); }
 
     /**
-     * <p>The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in
-     * a Stopped state.</p>
+     * <p>The connection state of the WorkSpace. The connection state is unknown if the
+     * WorkSpace is stopped.</p>
      */
     inline WorkspaceConnectionStatus& WithConnectionState(const ConnectionState& value) { SetConnectionState(value); return *this;}
 
     /**
-     * <p>The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in
-     * a Stopped state.</p>
+     * <p>The connection state of the WorkSpace. The connection state is unknown if the
+     * WorkSpace is stopped.</p>
      */
     inline WorkspaceConnectionStatus& WithConnectionState(ConnectionState&& value) { SetConnectionState(std::move(value)); return *this;}
 

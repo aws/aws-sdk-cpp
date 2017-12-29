@@ -33,6 +33,7 @@ WorkspaceBundle::WorkspaceBundle() :
     m_nameHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_rootStorageHasBeenSet(false),
     m_userStorageHasBeenSet(false),
     m_computeTypeHasBeenSet(false)
 {
@@ -43,6 +44,7 @@ WorkspaceBundle::WorkspaceBundle(const JsonValue& jsonValue) :
     m_nameHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_rootStorageHasBeenSet(false),
     m_userStorageHasBeenSet(false),
     m_computeTypeHasBeenSet(false)
 {
@@ -77,6 +79,13 @@ WorkspaceBundle& WorkspaceBundle::operator =(const JsonValue& jsonValue)
     m_description = jsonValue.GetString("Description");
 
     m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RootStorage"))
+  {
+    m_rootStorage = jsonValue.GetObject("RootStorage");
+
+    m_rootStorageHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("UserStorage"))
@@ -121,6 +130,12 @@ JsonValue WorkspaceBundle::Jsonize() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
+
+  }
+
+  if(m_rootStorageHasBeenSet)
+  {
+   payload.WithObject("RootStorage", m_rootStorage.Jsonize());
 
   }
 

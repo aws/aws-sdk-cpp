@@ -2471,6 +2471,8 @@ namespace Aws
         Aws::String GeneratePresignedUrl(const Aws::String& bucketName, const Aws::String& key, Http::HttpMethod method, long long expirationInSeconds = MAX_EXPIRATION_SECONDS);
         virtual bool MultipartUploadSupported() const;
 
+    protected:
+        bool DoesResponseGenerateError(const std::shared_ptr<Aws::Http::HttpResponse>& response) const override;
     private:
         void init(const Client::ClientConfiguration& clientConfiguration);
         Aws::String ComputeEndpointString(const Aws::String& bucket) const;

@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the start request.</p><p><h3>See Also:</h3>   <a
+   * <p>Information used to start a WorkSpace.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StartRequest">AWS
    * API Reference</a></p>
    */

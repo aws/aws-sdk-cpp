@@ -41,6 +41,7 @@ namespace Aws
         static const int TERMINATING_HASH = HashingUtils::HashString("TERMINATING");
         static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
         static const int SUSPENDED_HASH = HashingUtils::HashString("SUSPENDED");
+        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
         static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
         static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
         static const int ERROR__HASH = HashingUtils::HashString("ERROR");
@@ -93,6 +94,10 @@ namespace Aws
           {
             return WorkspaceState::SUSPENDED;
           }
+          else if (hashCode == UPDATING_HASH)
+          {
+            return WorkspaceState::UPDATING;
+          }
           else if (hashCode == STOPPING_HASH)
           {
             return WorkspaceState::STOPPING;
@@ -141,6 +146,8 @@ namespace Aws
             return "TERMINATED";
           case WorkspaceState::SUSPENDED:
             return "SUSPENDED";
+          case WorkspaceState::UPDATING:
+            return "UPDATING";
           case WorkspaceState::STOPPING:
             return "STOPPING";
           case WorkspaceState::STOPPED:

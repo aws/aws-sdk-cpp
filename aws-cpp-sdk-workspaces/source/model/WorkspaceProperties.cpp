@@ -32,7 +32,13 @@ WorkspaceProperties::WorkspaceProperties() :
     m_runningMode(RunningMode::NOT_SET),
     m_runningModeHasBeenSet(false),
     m_runningModeAutoStopTimeoutInMinutes(0),
-    m_runningModeAutoStopTimeoutInMinutesHasBeenSet(false)
+    m_runningModeAutoStopTimeoutInMinutesHasBeenSet(false),
+    m_rootVolumeSizeGib(0),
+    m_rootVolumeSizeGibHasBeenSet(false),
+    m_userVolumeSizeGib(0),
+    m_userVolumeSizeGibHasBeenSet(false),
+    m_computeTypeName(Compute::NOT_SET),
+    m_computeTypeNameHasBeenSet(false)
 {
 }
 
@@ -40,7 +46,13 @@ WorkspaceProperties::WorkspaceProperties(const JsonValue& jsonValue) :
     m_runningMode(RunningMode::NOT_SET),
     m_runningModeHasBeenSet(false),
     m_runningModeAutoStopTimeoutInMinutes(0),
-    m_runningModeAutoStopTimeoutInMinutesHasBeenSet(false)
+    m_runningModeAutoStopTimeoutInMinutesHasBeenSet(false),
+    m_rootVolumeSizeGib(0),
+    m_rootVolumeSizeGibHasBeenSet(false),
+    m_userVolumeSizeGib(0),
+    m_userVolumeSizeGibHasBeenSet(false),
+    m_computeTypeName(Compute::NOT_SET),
+    m_computeTypeNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -61,6 +73,27 @@ WorkspaceProperties& WorkspaceProperties::operator =(const JsonValue& jsonValue)
     m_runningModeAutoStopTimeoutInMinutesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RootVolumeSizeGib"))
+  {
+    m_rootVolumeSizeGib = jsonValue.GetInteger("RootVolumeSizeGib");
+
+    m_rootVolumeSizeGibHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UserVolumeSizeGib"))
+  {
+    m_userVolumeSizeGib = jsonValue.GetInteger("UserVolumeSizeGib");
+
+    m_userVolumeSizeGibHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ComputeTypeName"))
+  {
+    m_computeTypeName = ComputeMapper::GetComputeForName(jsonValue.GetString("ComputeTypeName"));
+
+    m_computeTypeNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -77,6 +110,23 @@ JsonValue WorkspaceProperties::Jsonize() const
   {
    payload.WithInteger("RunningModeAutoStopTimeoutInMinutes", m_runningModeAutoStopTimeoutInMinutes);
 
+  }
+
+  if(m_rootVolumeSizeGibHasBeenSet)
+  {
+   payload.WithInteger("RootVolumeSizeGib", m_rootVolumeSizeGib);
+
+  }
+
+  if(m_userVolumeSizeGibHasBeenSet)
+  {
+   payload.WithInteger("UserVolumeSizeGib", m_userVolumeSizeGib);
+
+  }
+
+  if(m_computeTypeNameHasBeenSet)
+  {
+   payload.WithString("ComputeTypeName", ComputeMapper::GetNameForCompute(m_computeTypeName));
   }
 
   return payload;

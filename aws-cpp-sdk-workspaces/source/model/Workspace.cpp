@@ -45,7 +45,8 @@ Workspace::Workspace() :
     m_userVolumeEncryptionEnabledHasBeenSet(false),
     m_rootVolumeEncryptionEnabled(false),
     m_rootVolumeEncryptionEnabledHasBeenSet(false),
-    m_workspacePropertiesHasBeenSet(false)
+    m_workspacePropertiesHasBeenSet(false),
+    m_modificationStatesHasBeenSet(false)
 {
 }
 
@@ -66,7 +67,8 @@ Workspace::Workspace(const JsonValue& jsonValue) :
     m_userVolumeEncryptionEnabledHasBeenSet(false),
     m_rootVolumeEncryptionEnabled(false),
     m_rootVolumeEncryptionEnabledHasBeenSet(false),
-    m_workspacePropertiesHasBeenSet(false)
+    m_workspacePropertiesHasBeenSet(false),
+    m_modificationStatesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -171,6 +173,16 @@ Workspace& Workspace::operator =(const JsonValue& jsonValue)
     m_workspacePropertiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ModificationStates"))
+  {
+    Array<JsonValue> modificationStatesJsonList = jsonValue.GetArray("ModificationStates");
+    for(unsigned modificationStatesIndex = 0; modificationStatesIndex < modificationStatesJsonList.GetLength(); ++modificationStatesIndex)
+    {
+      m_modificationStates.push_back(modificationStatesJsonList[modificationStatesIndex].AsObject());
+    }
+    m_modificationStatesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -258,6 +270,17 @@ JsonValue Workspace::Jsonize() const
   if(m_workspacePropertiesHasBeenSet)
   {
    payload.WithObject("WorkspaceProperties", m_workspaceProperties.Jsonize());
+
+  }
+
+  if(m_modificationStatesHasBeenSet)
+  {
+   Array<JsonValue> modificationStatesJsonList(m_modificationStates.size());
+   for(unsigned modificationStatesIndex = 0; modificationStatesIndex < modificationStatesJsonList.GetLength(); ++modificationStatesIndex)
+   {
+     modificationStatesJsonList[modificationStatesIndex].AsObject(m_modificationStates[modificationStatesIndex].Jsonize());
+   }
+   payload.WithArray("ModificationStates", std::move(modificationStatesJsonList));
 
   }
 

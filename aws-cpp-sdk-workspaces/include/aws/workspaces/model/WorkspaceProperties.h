@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/workspaces/model/RunningMode.h>
+#include <aws/workspaces/model/Compute.h>
 #include <utility>
 
 namespace Aws
@@ -33,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the properties of a WorkSpace.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about a WorkSpace.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspaceProperties">AWS
    * API Reference</a></p>
    */
@@ -47,37 +48,37 @@ namespace Model
 
 
     /**
-     * <p>The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly.
-     * AutoStop WorkSpaces are billed by the hour and stopped when no longer being used
-     * in order to save on costs.</p>
+     * <p>The running mode. For more information, see <a
+     * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
+     * the WorkSpace Running Mode</a>.</p>
      */
     inline const RunningMode& GetRunningMode() const{ return m_runningMode; }
 
     /**
-     * <p>The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly.
-     * AutoStop WorkSpaces are billed by the hour and stopped when no longer being used
-     * in order to save on costs.</p>
+     * <p>The running mode. For more information, see <a
+     * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
+     * the WorkSpace Running Mode</a>.</p>
      */
     inline void SetRunningMode(const RunningMode& value) { m_runningModeHasBeenSet = true; m_runningMode = value; }
 
     /**
-     * <p>The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly.
-     * AutoStop WorkSpaces are billed by the hour and stopped when no longer being used
-     * in order to save on costs.</p>
+     * <p>The running mode. For more information, see <a
+     * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
+     * the WorkSpace Running Mode</a>.</p>
      */
     inline void SetRunningMode(RunningMode&& value) { m_runningModeHasBeenSet = true; m_runningMode = std::move(value); }
 
     /**
-     * <p>The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly.
-     * AutoStop WorkSpaces are billed by the hour and stopped when no longer being used
-     * in order to save on costs.</p>
+     * <p>The running mode. For more information, see <a
+     * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
+     * the WorkSpace Running Mode</a>.</p>
      */
     inline WorkspaceProperties& WithRunningMode(const RunningMode& value) { SetRunningMode(value); return *this;}
 
     /**
-     * <p>The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly.
-     * AutoStop WorkSpaces are billed by the hour and stopped when no longer being used
-     * in order to save on costs.</p>
+     * <p>The running mode. For more information, see <a
+     * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
+     * the WorkSpace Running Mode</a>.</p>
      */
     inline WorkspaceProperties& WithRunningMode(RunningMode&& value) { SetRunningMode(std::move(value)); return *this;}
 
@@ -100,6 +101,74 @@ namespace Model
      */
     inline WorkspaceProperties& WithRunningModeAutoStopTimeoutInMinutes(int value) { SetRunningModeAutoStopTimeoutInMinutes(value); return *this;}
 
+
+    /**
+     * <p>The size of the root volume.</p>
+     */
+    inline int GetRootVolumeSizeGib() const{ return m_rootVolumeSizeGib; }
+
+    /**
+     * <p>The size of the root volume.</p>
+     */
+    inline void SetRootVolumeSizeGib(int value) { m_rootVolumeSizeGibHasBeenSet = true; m_rootVolumeSizeGib = value; }
+
+    /**
+     * <p>The size of the root volume.</p>
+     */
+    inline WorkspaceProperties& WithRootVolumeSizeGib(int value) { SetRootVolumeSizeGib(value); return *this;}
+
+
+    /**
+     * <p>The size of the user storage.</p>
+     */
+    inline int GetUserVolumeSizeGib() const{ return m_userVolumeSizeGib; }
+
+    /**
+     * <p>The size of the user storage.</p>
+     */
+    inline void SetUserVolumeSizeGib(int value) { m_userVolumeSizeGibHasBeenSet = true; m_userVolumeSizeGib = value; }
+
+    /**
+     * <p>The size of the user storage.</p>
+     */
+    inline WorkspaceProperties& WithUserVolumeSizeGib(int value) { SetUserVolumeSizeGib(value); return *this;}
+
+
+    /**
+     * <p>The compute type. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon
+     * WorkSpaces Bundles</a>.</p>
+     */
+    inline const Compute& GetComputeTypeName() const{ return m_computeTypeName; }
+
+    /**
+     * <p>The compute type. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon
+     * WorkSpaces Bundles</a>.</p>
+     */
+    inline void SetComputeTypeName(const Compute& value) { m_computeTypeNameHasBeenSet = true; m_computeTypeName = value; }
+
+    /**
+     * <p>The compute type. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon
+     * WorkSpaces Bundles</a>.</p>
+     */
+    inline void SetComputeTypeName(Compute&& value) { m_computeTypeNameHasBeenSet = true; m_computeTypeName = std::move(value); }
+
+    /**
+     * <p>The compute type. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon
+     * WorkSpaces Bundles</a>.</p>
+     */
+    inline WorkspaceProperties& WithComputeTypeName(const Compute& value) { SetComputeTypeName(value); return *this;}
+
+    /**
+     * <p>The compute type. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon
+     * WorkSpaces Bundles</a>.</p>
+     */
+    inline WorkspaceProperties& WithComputeTypeName(Compute&& value) { SetComputeTypeName(std::move(value)); return *this;}
+
   private:
 
     RunningMode m_runningMode;
@@ -107,6 +176,15 @@ namespace Model
 
     int m_runningModeAutoStopTimeoutInMinutes;
     bool m_runningModeAutoStopTimeoutInMinutesHasBeenSet;
+
+    int m_rootVolumeSizeGib;
+    bool m_rootVolumeSizeGibHasBeenSet;
+
+    int m_userVolumeSizeGib;
+    bool m_userVolumeSizeGibHasBeenSet;
+
+    Compute m_computeTypeName;
+    bool m_computeTypeNameHasBeenSet;
   };
 
 } // namespace Model

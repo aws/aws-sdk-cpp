@@ -28,10 +28,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the inputs for the <a>RebuildWorkspaces</a> operation.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebuildWorkspacesRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_WORKSPACES_API RebuildWorkspacesRequest : public WorkSpacesRequest
   {
@@ -50,37 +46,37 @@ namespace Model
 
 
     /**
-     * <p>An array of structures that specify the WorkSpaces to rebuild.</p>
+     * <p>The WorkSpaces to rebuild.</p>
      */
     inline const Aws::Vector<RebuildRequest>& GetRebuildWorkspaceRequests() const{ return m_rebuildWorkspaceRequests; }
 
     /**
-     * <p>An array of structures that specify the WorkSpaces to rebuild.</p>
+     * <p>The WorkSpaces to rebuild.</p>
      */
     inline void SetRebuildWorkspaceRequests(const Aws::Vector<RebuildRequest>& value) { m_rebuildWorkspaceRequestsHasBeenSet = true; m_rebuildWorkspaceRequests = value; }
 
     /**
-     * <p>An array of structures that specify the WorkSpaces to rebuild.</p>
+     * <p>The WorkSpaces to rebuild.</p>
      */
     inline void SetRebuildWorkspaceRequests(Aws::Vector<RebuildRequest>&& value) { m_rebuildWorkspaceRequestsHasBeenSet = true; m_rebuildWorkspaceRequests = std::move(value); }
 
     /**
-     * <p>An array of structures that specify the WorkSpaces to rebuild.</p>
+     * <p>The WorkSpaces to rebuild.</p>
      */
     inline RebuildWorkspacesRequest& WithRebuildWorkspaceRequests(const Aws::Vector<RebuildRequest>& value) { SetRebuildWorkspaceRequests(value); return *this;}
 
     /**
-     * <p>An array of structures that specify the WorkSpaces to rebuild.</p>
+     * <p>The WorkSpaces to rebuild.</p>
      */
     inline RebuildWorkspacesRequest& WithRebuildWorkspaceRequests(Aws::Vector<RebuildRequest>&& value) { SetRebuildWorkspaceRequests(std::move(value)); return *this;}
 
     /**
-     * <p>An array of structures that specify the WorkSpaces to rebuild.</p>
+     * <p>The WorkSpaces to rebuild.</p>
      */
     inline RebuildWorkspacesRequest& AddRebuildWorkspaceRequests(const RebuildRequest& value) { m_rebuildWorkspaceRequestsHasBeenSet = true; m_rebuildWorkspaceRequests.push_back(value); return *this; }
 
     /**
-     * <p>An array of structures that specify the WorkSpaces to rebuild.</p>
+     * <p>The WorkSpaces to rebuild.</p>
      */
     inline RebuildWorkspacesRequest& AddRebuildWorkspaceRequests(RebuildRequest&& value) { m_rebuildWorkspaceRequestsHasBeenSet = true; m_rebuildWorkspaceRequests.push_back(std::move(value)); return *this; }
 

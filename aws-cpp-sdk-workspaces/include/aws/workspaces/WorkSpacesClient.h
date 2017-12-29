@@ -144,8 +144,8 @@ namespace Model
     typedef std::function<void(const WorkSpacesClient*, const Model::TerminateWorkspacesRequest&, const Model::TerminateWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TerminateWorkspacesResponseReceivedHandler;
 
   /**
-   * <fullname>Amazon WorkSpaces Service</fullname> <p>This reference provides
-   * detailed information about the Amazon WorkSpaces operations.</p>
+   * <fullname>Amazon WorkSpaces Service</fullname> <p>Amazon WorkSpaces enables you
+   * to provision virtual, cloud-based Microsoft Windows desktops for your users.</p>
    */
   class AWS_WORKSPACES_API WorkSpacesClient : public Aws::Client::AWSJsonClient
   {
@@ -177,14 +177,14 @@ namespace Model
 
 
         /**
-         * <p>Creates tags for a WorkSpace.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates tags for the specified WorkSpace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateTags">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateTagsOutcome CreateTags(const Model::CreateTagsRequest& request) const;
 
         /**
-         * <p>Creates tags for a WorkSpace.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates tags for the specified WorkSpace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateTags">AWS
          * API Reference</a></p>
          *
@@ -193,7 +193,7 @@ namespace Model
         virtual Model::CreateTagsOutcomeCallable CreateTagsCallable(const Model::CreateTagsRequest& request) const;
 
         /**
-         * <p>Creates tags for a WorkSpace.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates tags for the specified WorkSpace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateTags">AWS
          * API Reference</a></p>
          *
@@ -202,18 +202,16 @@ namespace Model
         virtual void CreateTagsAsync(const Model::CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates one or more WorkSpaces.</p> <note> <p>This operation is asynchronous
-         * and returns before the WorkSpaces are created.</p> </note><p><h3>See Also:</h3> 
-         * <a
+         * <p>Creates one or more WorkSpaces.</p> <p>This operation is asynchronous and
+         * returns before the WorkSpaces are created.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaces">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateWorkspacesOutcome CreateWorkspaces(const Model::CreateWorkspacesRequest& request) const;
 
         /**
-         * <p>Creates one or more WorkSpaces.</p> <note> <p>This operation is asynchronous
-         * and returns before the WorkSpaces are created.</p> </note><p><h3>See Also:</h3> 
-         * <a
+         * <p>Creates one or more WorkSpaces.</p> <p>This operation is asynchronous and
+         * returns before the WorkSpaces are created.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaces">AWS
          * API Reference</a></p>
          *
@@ -222,9 +220,8 @@ namespace Model
         virtual Model::CreateWorkspacesOutcomeCallable CreateWorkspacesCallable(const Model::CreateWorkspacesRequest& request) const;
 
         /**
-         * <p>Creates one or more WorkSpaces.</p> <note> <p>This operation is asynchronous
-         * and returns before the WorkSpaces are created.</p> </note><p><h3>See Also:</h3> 
-         * <a
+         * <p>Creates one or more WorkSpaces.</p> <p>This operation is asynchronous and
+         * returns before the WorkSpaces are created.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaces">AWS
          * API Reference</a></p>
          *
@@ -233,14 +230,14 @@ namespace Model
         virtual void CreateWorkspacesAsync(const Model::CreateWorkspacesRequest& request, const CreateWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes tags from a WorkSpace.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified tags from a WorkSpace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteTags">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteTagsOutcome DeleteTags(const Model::DeleteTagsRequest& request) const;
 
         /**
-         * <p>Deletes tags from a WorkSpace.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified tags from a WorkSpace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteTags">AWS
          * API Reference</a></p>
          *
@@ -249,7 +246,7 @@ namespace Model
         virtual Model::DeleteTagsOutcomeCallable DeleteTagsCallable(const Model::DeleteTagsRequest& request) const;
 
         /**
-         * <p>Deletes tags from a WorkSpace.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified tags from a WorkSpace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteTags">AWS
          * API Reference</a></p>
          *
@@ -258,14 +255,14 @@ namespace Model
         virtual void DeleteTagsAsync(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes tags for a WorkSpace.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the tags for the specified WorkSpace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeTags">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeTagsOutcome DescribeTags(const Model::DescribeTagsRequest& request) const;
 
         /**
-         * <p>Describes tags for a WorkSpace.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the tags for the specified WorkSpace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeTags">AWS
          * API Reference</a></p>
          *
@@ -274,7 +271,7 @@ namespace Model
         virtual Model::DescribeTagsOutcomeCallable DescribeTagsCallable(const Model::DescribeTagsRequest& request) const;
 
         /**
-         * <p>Describes tags for a WorkSpace.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the tags for the specified WorkSpace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeTags">AWS
          * API Reference</a></p>
          *
@@ -283,28 +280,16 @@ namespace Model
         virtual void DescribeTagsAsync(const Model::DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Obtains information about the WorkSpace bundles that are available to your
-         * account in the specified region.</p> <p>You can filter the results with either
-         * the <code>BundleIds</code> parameter, or the <code>Owner</code> parameter, but
-         * not both.</p> <p>This operation supports pagination with the use of the
-         * <code>NextToken</code> request and response parameters. If more results are
-         * available, the <code>NextToken</code> response member contains a token that you
-         * pass in the next call to this operation to retrieve the next set of
-         * items.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the available WorkSpace bundles.</p> <p>You can filter the results
+         * using either bundle ID or owner, but not both.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceBundles">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeWorkspaceBundlesOutcome DescribeWorkspaceBundles(const Model::DescribeWorkspaceBundlesRequest& request) const;
 
         /**
-         * <p>Obtains information about the WorkSpace bundles that are available to your
-         * account in the specified region.</p> <p>You can filter the results with either
-         * the <code>BundleIds</code> parameter, or the <code>Owner</code> parameter, but
-         * not both.</p> <p>This operation supports pagination with the use of the
-         * <code>NextToken</code> request and response parameters. If more results are
-         * available, the <code>NextToken</code> response member contains a token that you
-         * pass in the next call to this operation to retrieve the next set of
-         * items.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the available WorkSpace bundles.</p> <p>You can filter the results
+         * using either bundle ID or owner, but not both.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceBundles">AWS
          * API Reference</a></p>
          *
@@ -313,14 +298,8 @@ namespace Model
         virtual Model::DescribeWorkspaceBundlesOutcomeCallable DescribeWorkspaceBundlesCallable(const Model::DescribeWorkspaceBundlesRequest& request) const;
 
         /**
-         * <p>Obtains information about the WorkSpace bundles that are available to your
-         * account in the specified region.</p> <p>You can filter the results with either
-         * the <code>BundleIds</code> parameter, or the <code>Owner</code> parameter, but
-         * not both.</p> <p>This operation supports pagination with the use of the
-         * <code>NextToken</code> request and response parameters. If more results are
-         * available, the <code>NextToken</code> response member contains a token that you
-         * pass in the next call to this operation to retrieve the next set of
-         * items.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the available WorkSpace bundles.</p> <p>You can filter the results
+         * using either bundle ID or owner, but not both.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceBundles">AWS
          * API Reference</a></p>
          *
@@ -329,26 +308,16 @@ namespace Model
         virtual void DescribeWorkspaceBundlesAsync(const Model::DescribeWorkspaceBundlesRequest& request, const DescribeWorkspaceBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about the AWS Directory Service directories in the
-         * region that are registered with Amazon WorkSpaces and are available to your
-         * account.</p> <p>This operation supports pagination with the use of the
-         * <code>NextToken</code> request and response parameters. If more results are
-         * available, the <code>NextToken</code> response member contains a token that you
-         * pass in the next call to this operation to retrieve the next set of
-         * items.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the available AWS Directory Service directories that are registered
+         * with Amazon WorkSpaces.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceDirectories">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeWorkspaceDirectoriesOutcome DescribeWorkspaceDirectories(const Model::DescribeWorkspaceDirectoriesRequest& request) const;
 
         /**
-         * <p>Retrieves information about the AWS Directory Service directories in the
-         * region that are registered with Amazon WorkSpaces and are available to your
-         * account.</p> <p>This operation supports pagination with the use of the
-         * <code>NextToken</code> request and response parameters. If more results are
-         * available, the <code>NextToken</code> response member contains a token that you
-         * pass in the next call to this operation to retrieve the next set of
-         * items.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the available AWS Directory Service directories that are registered
+         * with Amazon WorkSpaces.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceDirectories">AWS
          * API Reference</a></p>
          *
@@ -357,13 +326,8 @@ namespace Model
         virtual Model::DescribeWorkspaceDirectoriesOutcomeCallable DescribeWorkspaceDirectoriesCallable(const Model::DescribeWorkspaceDirectoriesRequest& request) const;
 
         /**
-         * <p>Retrieves information about the AWS Directory Service directories in the
-         * region that are registered with Amazon WorkSpaces and are available to your
-         * account.</p> <p>This operation supports pagination with the use of the
-         * <code>NextToken</code> request and response parameters. If more results are
-         * available, the <code>NextToken</code> response member contains a token that you
-         * pass in the next call to this operation to retrieve the next set of
-         * items.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the available AWS Directory Service directories that are registered
+         * with Amazon WorkSpaces.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceDirectories">AWS
          * API Reference</a></p>
          *
@@ -372,26 +336,18 @@ namespace Model
         virtual void DescribeWorkspaceDirectoriesAsync(const Model::DescribeWorkspaceDirectoriesRequest& request, const DescribeWorkspaceDirectoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Obtains information about the specified WorkSpaces.</p> <p>Only one of the
-         * filter parameters, such as <code>BundleId</code>, <code>DirectoryId</code>, or
-         * <code>WorkspaceIds</code>, can be specified at a time.</p> <p>This operation
-         * supports pagination with the use of the <code>NextToken</code> request and
-         * response parameters. If more results are available, the <code>NextToken</code>
-         * response member contains a token that you pass in the next call to this
-         * operation to retrieve the next set of items.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified WorkSpaces.</p> <p>You can filter the results using
+         * bundle ID, directory ID, or owner, but you can specify only one filter at a
+         * time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaces">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeWorkspacesOutcome DescribeWorkspaces(const Model::DescribeWorkspacesRequest& request) const;
 
         /**
-         * <p>Obtains information about the specified WorkSpaces.</p> <p>Only one of the
-         * filter parameters, such as <code>BundleId</code>, <code>DirectoryId</code>, or
-         * <code>WorkspaceIds</code>, can be specified at a time.</p> <p>This operation
-         * supports pagination with the use of the <code>NextToken</code> request and
-         * response parameters. If more results are available, the <code>NextToken</code>
-         * response member contains a token that you pass in the next call to this
-         * operation to retrieve the next set of items.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified WorkSpaces.</p> <p>You can filter the results using
+         * bundle ID, directory ID, or owner, but you can specify only one filter at a
+         * time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaces">AWS
          * API Reference</a></p>
          *
@@ -400,13 +356,9 @@ namespace Model
         virtual Model::DescribeWorkspacesOutcomeCallable DescribeWorkspacesCallable(const Model::DescribeWorkspacesRequest& request) const;
 
         /**
-         * <p>Obtains information about the specified WorkSpaces.</p> <p>Only one of the
-         * filter parameters, such as <code>BundleId</code>, <code>DirectoryId</code>, or
-         * <code>WorkspaceIds</code>, can be specified at a time.</p> <p>This operation
-         * supports pagination with the use of the <code>NextToken</code> request and
-         * response parameters. If more results are available, the <code>NextToken</code>
-         * response member contains a token that you pass in the next call to this
-         * operation to retrieve the next set of items.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified WorkSpaces.</p> <p>You can filter the results using
+         * bundle ID, directory ID, or owner, but you can specify only one filter at a
+         * time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaces">AWS
          * API Reference</a></p>
          *
@@ -415,7 +367,7 @@ namespace Model
         virtual void DescribeWorkspacesAsync(const Model::DescribeWorkspacesRequest& request, const DescribeWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the connection status of a specified WorkSpace.</p><p><h3>See
+         * <p>Describes the connection status of the specified WorkSpaces.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspacesConnectionStatus">AWS
          * API Reference</a></p>
@@ -423,7 +375,7 @@ namespace Model
         virtual Model::DescribeWorkspacesConnectionStatusOutcome DescribeWorkspacesConnectionStatus(const Model::DescribeWorkspacesConnectionStatusRequest& request) const;
 
         /**
-         * <p>Describes the connection status of a specified WorkSpace.</p><p><h3>See
+         * <p>Describes the connection status of the specified WorkSpaces.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspacesConnectionStatus">AWS
          * API Reference</a></p>
@@ -433,7 +385,7 @@ namespace Model
         virtual Model::DescribeWorkspacesConnectionStatusOutcomeCallable DescribeWorkspacesConnectionStatusCallable(const Model::DescribeWorkspacesConnectionStatusRequest& request) const;
 
         /**
-         * <p>Describes the connection status of a specified WorkSpace.</p><p><h3>See
+         * <p>Describes the connection status of the specified WorkSpaces.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspacesConnectionStatus">AWS
          * API Reference</a></p>
@@ -443,16 +395,14 @@ namespace Model
         virtual void DescribeWorkspacesConnectionStatusAsync(const Model::DescribeWorkspacesConnectionStatusRequest& request, const DescribeWorkspacesConnectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the WorkSpace properties, including the running mode and AutoStop
-         * time.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the specified WorkSpace properties.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceProperties">AWS
          * API Reference</a></p>
          */
         virtual Model::ModifyWorkspacePropertiesOutcome ModifyWorkspaceProperties(const Model::ModifyWorkspacePropertiesRequest& request) const;
 
         /**
-         * <p>Modifies the WorkSpace properties, including the running mode and AutoStop
-         * time.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the specified WorkSpace properties.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceProperties">AWS
          * API Reference</a></p>
          *
@@ -461,8 +411,7 @@ namespace Model
         virtual Model::ModifyWorkspacePropertiesOutcomeCallable ModifyWorkspacePropertiesCallable(const Model::ModifyWorkspacePropertiesRequest& request) const;
 
         /**
-         * <p>Modifies the WorkSpace properties, including the running mode and AutoStop
-         * time.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the specified WorkSpace properties.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceProperties">AWS
          * API Reference</a></p>
          *
@@ -471,22 +420,20 @@ namespace Model
         virtual void ModifyWorkspacePropertiesAsync(const Model::ModifyWorkspacePropertiesRequest& request, const ModifyWorkspacePropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Reboots the specified WorkSpaces.</p> <p>To be able to reboot a WorkSpace,
-         * the WorkSpace must have a <b>State</b> of <code>AVAILABLE</code>,
-         * <code>IMPAIRED</code>, or <code>INOPERABLE</code>.</p> <note> <p>This operation
-         * is asynchronous and returns before the WorkSpaces have rebooted.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p>Reboots the specified WorkSpaces.</p> <p>You cannot reboot a WorkSpace unless
+         * its state is <code>AVAILABLE</code>, <code>IMPAIRED</code>, or
+         * <code>INOPERABLE</code>.</p> <p>This operation is asynchronous and returns
+         * before the WorkSpaces have rebooted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebootWorkspaces">AWS
          * API Reference</a></p>
          */
         virtual Model::RebootWorkspacesOutcome RebootWorkspaces(const Model::RebootWorkspacesRequest& request) const;
 
         /**
-         * <p>Reboots the specified WorkSpaces.</p> <p>To be able to reboot a WorkSpace,
-         * the WorkSpace must have a <b>State</b> of <code>AVAILABLE</code>,
-         * <code>IMPAIRED</code>, or <code>INOPERABLE</code>.</p> <note> <p>This operation
-         * is asynchronous and returns before the WorkSpaces have rebooted.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p>Reboots the specified WorkSpaces.</p> <p>You cannot reboot a WorkSpace unless
+         * its state is <code>AVAILABLE</code>, <code>IMPAIRED</code>, or
+         * <code>INOPERABLE</code>.</p> <p>This operation is asynchronous and returns
+         * before the WorkSpaces have rebooted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebootWorkspaces">AWS
          * API Reference</a></p>
          *
@@ -495,11 +442,10 @@ namespace Model
         virtual Model::RebootWorkspacesOutcomeCallable RebootWorkspacesCallable(const Model::RebootWorkspacesRequest& request) const;
 
         /**
-         * <p>Reboots the specified WorkSpaces.</p> <p>To be able to reboot a WorkSpace,
-         * the WorkSpace must have a <b>State</b> of <code>AVAILABLE</code>,
-         * <code>IMPAIRED</code>, or <code>INOPERABLE</code>.</p> <note> <p>This operation
-         * is asynchronous and returns before the WorkSpaces have rebooted.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p>Reboots the specified WorkSpaces.</p> <p>You cannot reboot a WorkSpace unless
+         * its state is <code>AVAILABLE</code>, <code>IMPAIRED</code>, or
+         * <code>INOPERABLE</code>.</p> <p>This operation is asynchronous and returns
+         * before the WorkSpaces have rebooted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebootWorkspaces">AWS
          * API Reference</a></p>
          *
@@ -508,38 +454,26 @@ namespace Model
         virtual void RebootWorkspacesAsync(const Model::RebootWorkspacesRequest& request, const RebootWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Rebuilds the specified WorkSpaces.</p> <p>Rebuilding a WorkSpace is a
-         * potentially destructive action that can result in the loss of data. Rebuilding a
-         * WorkSpace causes the following to occur:</p> <ul> <li> <p>The system is restored
-         * to the image of the bundle that the WorkSpace is created from. Any applications
-         * that have been installed, or system settings that have been made since the
-         * WorkSpace was created will be lost.</p> </li> <li> <p>The data drive (D drive)
-         * is re-created from the last automatic snapshot taken of the data drive. The
-         * current contents of the data drive are overwritten. Automatic snapshots of the
-         * data drive are taken every 12 hours, so the snapshot can be as much as 12 hours
-         * old.</p> </li> </ul> <p>To be able to rebuild a WorkSpace, the WorkSpace must
-         * have a <b>State</b> of <code>AVAILABLE</code> or <code>ERROR</code>.</p> <note>
-         * <p>This operation is asynchronous and returns before the WorkSpaces have been
-         * completely rebuilt.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Rebuilds the specified WorkSpaces.</p> <p>You cannot rebuild a WorkSpace
+         * unless its state is <code>AVAILABLE</code> or <code>ERROR</code>.</p>
+         * <p>Rebuilding a WorkSpace is a potentially destructive action that can result in
+         * the loss of data. For more information, see <a
+         * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html">Rebuild
+         * a WorkSpace</a>.</p> <p>This operation is asynchronous and returns before the
+         * WorkSpaces have been completely rebuilt.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebuildWorkspaces">AWS
          * API Reference</a></p>
          */
         virtual Model::RebuildWorkspacesOutcome RebuildWorkspaces(const Model::RebuildWorkspacesRequest& request) const;
 
         /**
-         * <p>Rebuilds the specified WorkSpaces.</p> <p>Rebuilding a WorkSpace is a
-         * potentially destructive action that can result in the loss of data. Rebuilding a
-         * WorkSpace causes the following to occur:</p> <ul> <li> <p>The system is restored
-         * to the image of the bundle that the WorkSpace is created from. Any applications
-         * that have been installed, or system settings that have been made since the
-         * WorkSpace was created will be lost.</p> </li> <li> <p>The data drive (D drive)
-         * is re-created from the last automatic snapshot taken of the data drive. The
-         * current contents of the data drive are overwritten. Automatic snapshots of the
-         * data drive are taken every 12 hours, so the snapshot can be as much as 12 hours
-         * old.</p> </li> </ul> <p>To be able to rebuild a WorkSpace, the WorkSpace must
-         * have a <b>State</b> of <code>AVAILABLE</code> or <code>ERROR</code>.</p> <note>
-         * <p>This operation is asynchronous and returns before the WorkSpaces have been
-         * completely rebuilt.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Rebuilds the specified WorkSpaces.</p> <p>You cannot rebuild a WorkSpace
+         * unless its state is <code>AVAILABLE</code> or <code>ERROR</code>.</p>
+         * <p>Rebuilding a WorkSpace is a potentially destructive action that can result in
+         * the loss of data. For more information, see <a
+         * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html">Rebuild
+         * a WorkSpace</a>.</p> <p>This operation is asynchronous and returns before the
+         * WorkSpaces have been completely rebuilt.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebuildWorkspaces">AWS
          * API Reference</a></p>
          *
@@ -548,19 +482,13 @@ namespace Model
         virtual Model::RebuildWorkspacesOutcomeCallable RebuildWorkspacesCallable(const Model::RebuildWorkspacesRequest& request) const;
 
         /**
-         * <p>Rebuilds the specified WorkSpaces.</p> <p>Rebuilding a WorkSpace is a
-         * potentially destructive action that can result in the loss of data. Rebuilding a
-         * WorkSpace causes the following to occur:</p> <ul> <li> <p>The system is restored
-         * to the image of the bundle that the WorkSpace is created from. Any applications
-         * that have been installed, or system settings that have been made since the
-         * WorkSpace was created will be lost.</p> </li> <li> <p>The data drive (D drive)
-         * is re-created from the last automatic snapshot taken of the data drive. The
-         * current contents of the data drive are overwritten. Automatic snapshots of the
-         * data drive are taken every 12 hours, so the snapshot can be as much as 12 hours
-         * old.</p> </li> </ul> <p>To be able to rebuild a WorkSpace, the WorkSpace must
-         * have a <b>State</b> of <code>AVAILABLE</code> or <code>ERROR</code>.</p> <note>
-         * <p>This operation is asynchronous and returns before the WorkSpaces have been
-         * completely rebuilt.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Rebuilds the specified WorkSpaces.</p> <p>You cannot rebuild a WorkSpace
+         * unless its state is <code>AVAILABLE</code> or <code>ERROR</code>.</p>
+         * <p>Rebuilding a WorkSpace is a potentially destructive action that can result in
+         * the loss of data. For more information, see <a
+         * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html">Rebuild
+         * a WorkSpace</a>.</p> <p>This operation is asynchronous and returns before the
+         * WorkSpaces have been completely rebuilt.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebuildWorkspaces">AWS
          * API Reference</a></p>
          *
@@ -569,16 +497,18 @@ namespace Model
         virtual void RebuildWorkspacesAsync(const Model::RebuildWorkspacesRequest& request, const RebuildWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts the specified WorkSpaces. The WorkSpaces must have a running mode of
-         * AutoStop and a state of STOPPED.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts the specified WorkSpaces.</p> <p>You cannot start a WorkSpace unless
+         * it has a running mode of <code>AutoStop</code> and a state of
+         * <code>STOPPED</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StartWorkspaces">AWS
          * API Reference</a></p>
          */
         virtual Model::StartWorkspacesOutcome StartWorkspaces(const Model::StartWorkspacesRequest& request) const;
 
         /**
-         * <p>Starts the specified WorkSpaces. The WorkSpaces must have a running mode of
-         * AutoStop and a state of STOPPED.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts the specified WorkSpaces.</p> <p>You cannot start a WorkSpace unless
+         * it has a running mode of <code>AutoStop</code> and a state of
+         * <code>STOPPED</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StartWorkspaces">AWS
          * API Reference</a></p>
          *
@@ -587,8 +517,9 @@ namespace Model
         virtual Model::StartWorkspacesOutcomeCallable StartWorkspacesCallable(const Model::StartWorkspacesRequest& request) const;
 
         /**
-         * <p>Starts the specified WorkSpaces. The WorkSpaces must have a running mode of
-         * AutoStop and a state of STOPPED.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts the specified WorkSpaces.</p> <p>You cannot start a WorkSpace unless
+         * it has a running mode of <code>AutoStop</code> and a state of
+         * <code>STOPPED</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StartWorkspaces">AWS
          * API Reference</a></p>
          *
@@ -597,18 +528,20 @@ namespace Model
         virtual void StartWorkspacesAsync(const Model::StartWorkspacesRequest& request, const StartWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Stops the specified WorkSpaces. The WorkSpaces must have a running mode of
-         * AutoStop and a state of AVAILABLE, IMPAIRED, UNHEALTHY, or ERROR.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p> Stops the specified WorkSpaces.</p> <p>You cannot stop a WorkSpace unless it
+         * has a running mode of <code>AutoStop</code> and a state of
+         * <code>AVAILABLE</code>, <code>IMPAIRED</code>, <code>UNHEALTHY</code>, or
+         * <code>ERROR</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StopWorkspaces">AWS
          * API Reference</a></p>
          */
         virtual Model::StopWorkspacesOutcome StopWorkspaces(const Model::StopWorkspacesRequest& request) const;
 
         /**
-         * <p> Stops the specified WorkSpaces. The WorkSpaces must have a running mode of
-         * AutoStop and a state of AVAILABLE, IMPAIRED, UNHEALTHY, or ERROR.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p> Stops the specified WorkSpaces.</p> <p>You cannot stop a WorkSpace unless it
+         * has a running mode of <code>AutoStop</code> and a state of
+         * <code>AVAILABLE</code>, <code>IMPAIRED</code>, <code>UNHEALTHY</code>, or
+         * <code>ERROR</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StopWorkspaces">AWS
          * API Reference</a></p>
          *
@@ -617,9 +550,10 @@ namespace Model
         virtual Model::StopWorkspacesOutcomeCallable StopWorkspacesCallable(const Model::StopWorkspacesRequest& request) const;
 
         /**
-         * <p> Stops the specified WorkSpaces. The WorkSpaces must have a running mode of
-         * AutoStop and a state of AVAILABLE, IMPAIRED, UNHEALTHY, or ERROR.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p> Stops the specified WorkSpaces.</p> <p>You cannot stop a WorkSpace unless it
+         * has a running mode of <code>AutoStop</code> and a state of
+         * <code>AVAILABLE</code>, <code>IMPAIRED</code>, <code>UNHEALTHY</code>, or
+         * <code>ERROR</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StopWorkspaces">AWS
          * API Reference</a></p>
          *
@@ -629,12 +563,11 @@ namespace Model
 
         /**
          * <p>Terminates the specified WorkSpaces.</p> <p>Terminating a WorkSpace is a
-         * permanent action and cannot be undone. The user's data is not maintained and
-         * will be destroyed. If you need to archive any user data, contact Amazon Web
-         * Services before terminating the WorkSpace.</p> <p>You can terminate a WorkSpace
-         * that is in any state except <code>SUSPENDED</code>.</p> <note> <p>This operation
-         * is asynchronous and returns before the WorkSpaces have been completely
-         * terminated.</p> </note><p><h3>See Also:</h3>   <a
+         * permanent action and cannot be undone. The user's data is destroyed. If you need
+         * to archive any user data, contact Amazon Web Services before terminating the
+         * WorkSpace.</p> <p>You can terminate a WorkSpace that is in any state except
+         * <code>SUSPENDED</code>.</p> <p>This operation is asynchronous and returns before
+         * the WorkSpaces have been completely terminated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspaces">AWS
          * API Reference</a></p>
          */
@@ -642,12 +575,11 @@ namespace Model
 
         /**
          * <p>Terminates the specified WorkSpaces.</p> <p>Terminating a WorkSpace is a
-         * permanent action and cannot be undone. The user's data is not maintained and
-         * will be destroyed. If you need to archive any user data, contact Amazon Web
-         * Services before terminating the WorkSpace.</p> <p>You can terminate a WorkSpace
-         * that is in any state except <code>SUSPENDED</code>.</p> <note> <p>This operation
-         * is asynchronous and returns before the WorkSpaces have been completely
-         * terminated.</p> </note><p><h3>See Also:</h3>   <a
+         * permanent action and cannot be undone. The user's data is destroyed. If you need
+         * to archive any user data, contact Amazon Web Services before terminating the
+         * WorkSpace.</p> <p>You can terminate a WorkSpace that is in any state except
+         * <code>SUSPENDED</code>.</p> <p>This operation is asynchronous and returns before
+         * the WorkSpaces have been completely terminated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspaces">AWS
          * API Reference</a></p>
          *
@@ -657,12 +589,11 @@ namespace Model
 
         /**
          * <p>Terminates the specified WorkSpaces.</p> <p>Terminating a WorkSpace is a
-         * permanent action and cannot be undone. The user's data is not maintained and
-         * will be destroyed. If you need to archive any user data, contact Amazon Web
-         * Services before terminating the WorkSpace.</p> <p>You can terminate a WorkSpace
-         * that is in any state except <code>SUSPENDED</code>.</p> <note> <p>This operation
-         * is asynchronous and returns before the WorkSpaces have been completely
-         * terminated.</p> </note><p><h3>See Also:</h3>   <a
+         * permanent action and cannot be undone. The user's data is destroyed. If you need
+         * to archive any user data, contact Amazon Web Services before terminating the
+         * WorkSpace.</p> <p>You can terminate a WorkSpace that is in any state except
+         * <code>SUSPENDED</code>.</p> <p>This operation is asynchronous and returns before
+         * the WorkSpaces have been completely terminated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspaces">AWS
          * API Reference</a></p>
          *

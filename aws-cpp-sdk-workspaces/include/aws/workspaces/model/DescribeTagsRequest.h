@@ -27,10 +27,6 @@ namespace Model
 {
 
   /**
-   * <p>The request of the <a>DescribeTags</a> operation.</p><p><h3>See Also:</h3>  
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeTagsRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_WORKSPACES_API DescribeTagsRequest : public WorkSpacesRequest
   {
@@ -49,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>The resource ID of the request.</p>
+     * <p>The ID of the resource.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>The resource ID of the request.</p>
+     * <p>The ID of the resource.</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>The resource ID of the request.</p>
+     * <p>The ID of the resource.</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p>The resource ID of the request.</p>
+     * <p>The ID of the resource.</p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>The resource ID of the request.</p>
+     * <p>The ID of the resource.</p>
      */
     inline DescribeTagsRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>The resource ID of the request.</p>
+     * <p>The ID of the resource.</p>
      */
     inline DescribeTagsRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The resource ID of the request.</p>
+     * <p>The ID of the resource.</p>
      */
     inline DescribeTagsRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 

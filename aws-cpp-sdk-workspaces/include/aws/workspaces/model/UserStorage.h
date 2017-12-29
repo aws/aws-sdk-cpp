@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the user storage for a WorkSpace
-   * bundle.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about the user storage for a WorkSpace bundle.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UserStorage">AWS
    * API Reference</a></p>
    */
@@ -48,37 +48,37 @@ namespace Model
 
 
     /**
-     * <p>The amount of user storage for the bundle.</p>
+     * <p>The size of the user storage.</p>
      */
     inline const Aws::String& GetCapacity() const{ return m_capacity; }
 
     /**
-     * <p>The amount of user storage for the bundle.</p>
+     * <p>The size of the user storage.</p>
      */
     inline void SetCapacity(const Aws::String& value) { m_capacityHasBeenSet = true; m_capacity = value; }
 
     /**
-     * <p>The amount of user storage for the bundle.</p>
+     * <p>The size of the user storage.</p>
      */
     inline void SetCapacity(Aws::String&& value) { m_capacityHasBeenSet = true; m_capacity = std::move(value); }
 
     /**
-     * <p>The amount of user storage for the bundle.</p>
+     * <p>The size of the user storage.</p>
      */
     inline void SetCapacity(const char* value) { m_capacityHasBeenSet = true; m_capacity.assign(value); }
 
     /**
-     * <p>The amount of user storage for the bundle.</p>
+     * <p>The size of the user storage.</p>
      */
     inline UserStorage& WithCapacity(const Aws::String& value) { SetCapacity(value); return *this;}
 
     /**
-     * <p>The amount of user storage for the bundle.</p>
+     * <p>The size of the user storage.</p>
      */
     inline UserStorage& WithCapacity(Aws::String&& value) { SetCapacity(std::move(value)); return *this;}
 
     /**
-     * <p>The amount of user storage for the bundle.</p>
+     * <p>The size of the user storage.</p>
      */
     inline UserStorage& WithCapacity(const char* value) { SetCapacity(value); return *this;}
 

@@ -28,10 +28,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the inputs for the <a>CreateWorkspaces</a> operation.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspacesRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_WORKSPACES_API CreateWorkspacesRequest : public WorkSpacesRequest
   {
@@ -50,37 +46,37 @@ namespace Model
 
 
     /**
-     * <p>An array of structures that specify the WorkSpaces to create.</p>
+     * <p>Information about the WorkSpaces to create.</p>
      */
     inline const Aws::Vector<WorkspaceRequest>& GetWorkspaces() const{ return m_workspaces; }
 
     /**
-     * <p>An array of structures that specify the WorkSpaces to create.</p>
+     * <p>Information about the WorkSpaces to create.</p>
      */
     inline void SetWorkspaces(const Aws::Vector<WorkspaceRequest>& value) { m_workspacesHasBeenSet = true; m_workspaces = value; }
 
     /**
-     * <p>An array of structures that specify the WorkSpaces to create.</p>
+     * <p>Information about the WorkSpaces to create.</p>
      */
     inline void SetWorkspaces(Aws::Vector<WorkspaceRequest>&& value) { m_workspacesHasBeenSet = true; m_workspaces = std::move(value); }
 
     /**
-     * <p>An array of structures that specify the WorkSpaces to create.</p>
+     * <p>Information about the WorkSpaces to create.</p>
      */
     inline CreateWorkspacesRequest& WithWorkspaces(const Aws::Vector<WorkspaceRequest>& value) { SetWorkspaces(value); return *this;}
 
     /**
-     * <p>An array of structures that specify the WorkSpaces to create.</p>
+     * <p>Information about the WorkSpaces to create.</p>
      */
     inline CreateWorkspacesRequest& WithWorkspaces(Aws::Vector<WorkspaceRequest>&& value) { SetWorkspaces(std::move(value)); return *this;}
 
     /**
-     * <p>An array of structures that specify the WorkSpaces to create.</p>
+     * <p>Information about the WorkSpaces to create.</p>
      */
     inline CreateWorkspacesRequest& AddWorkspaces(const WorkspaceRequest& value) { m_workspacesHasBeenSet = true; m_workspaces.push_back(value); return *this; }
 
     /**
-     * <p>An array of structures that specify the WorkSpaces to create.</p>
+     * <p>Information about the WorkSpaces to create.</p>
      */
     inline CreateWorkspacesRequest& AddWorkspaces(WorkspaceRequest&& value) { m_workspacesHasBeenSet = true; m_workspaces.push_back(std::move(value)); return *this; }
 

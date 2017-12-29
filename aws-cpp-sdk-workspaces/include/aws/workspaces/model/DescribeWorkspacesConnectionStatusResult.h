@@ -45,73 +45,80 @@ namespace Model
 
 
     /**
-     * <p>The connection status of the WorkSpace.</p>
+     * <p>Information about the connection status of the WorkSpace.</p>
      */
     inline const Aws::Vector<WorkspaceConnectionStatus>& GetWorkspacesConnectionStatus() const{ return m_workspacesConnectionStatus; }
 
     /**
-     * <p>The connection status of the WorkSpace.</p>
+     * <p>Information about the connection status of the WorkSpace.</p>
      */
     inline void SetWorkspacesConnectionStatus(const Aws::Vector<WorkspaceConnectionStatus>& value) { m_workspacesConnectionStatus = value; }
 
     /**
-     * <p>The connection status of the WorkSpace.</p>
+     * <p>Information about the connection status of the WorkSpace.</p>
      */
     inline void SetWorkspacesConnectionStatus(Aws::Vector<WorkspaceConnectionStatus>&& value) { m_workspacesConnectionStatus = std::move(value); }
 
     /**
-     * <p>The connection status of the WorkSpace.</p>
+     * <p>Information about the connection status of the WorkSpace.</p>
      */
     inline DescribeWorkspacesConnectionStatusResult& WithWorkspacesConnectionStatus(const Aws::Vector<WorkspaceConnectionStatus>& value) { SetWorkspacesConnectionStatus(value); return *this;}
 
     /**
-     * <p>The connection status of the WorkSpace.</p>
+     * <p>Information about the connection status of the WorkSpace.</p>
      */
     inline DescribeWorkspacesConnectionStatusResult& WithWorkspacesConnectionStatus(Aws::Vector<WorkspaceConnectionStatus>&& value) { SetWorkspacesConnectionStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The connection status of the WorkSpace.</p>
+     * <p>Information about the connection status of the WorkSpace.</p>
      */
     inline DescribeWorkspacesConnectionStatusResult& AddWorkspacesConnectionStatus(const WorkspaceConnectionStatus& value) { m_workspacesConnectionStatus.push_back(value); return *this; }
 
     /**
-     * <p>The connection status of the WorkSpace.</p>
+     * <p>Information about the connection status of the WorkSpace.</p>
      */
     inline DescribeWorkspacesConnectionStatusResult& AddWorkspacesConnectionStatus(WorkspaceConnectionStatus&& value) { m_workspacesConnectionStatus.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The next token of the result.</p>
+     * <p>The token to use to retrieve the next set of results, or null if there are no
+     * more results available.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The next token of the result.</p>
+     * <p>The token to use to retrieve the next set of results, or null if there are no
+     * more results available.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The next token of the result.</p>
+     * <p>The token to use to retrieve the next set of results, or null if there are no
+     * more results available.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>The next token of the result.</p>
+     * <p>The token to use to retrieve the next set of results, or null if there are no
+     * more results available.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The next token of the result.</p>
+     * <p>The token to use to retrieve the next set of results, or null if there are no
+     * more results available.</p>
      */
     inline DescribeWorkspacesConnectionStatusResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The next token of the result.</p>
+     * <p>The token to use to retrieve the next set of results, or null if there are no
+     * more results available.</p>
      */
     inline DescribeWorkspacesConnectionStatusResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The next token of the result.</p>
+     * <p>The token to use to retrieve the next set of results, or null if there are no
+     * more results available.</p>
      */
     inline DescribeWorkspacesConnectionStatusResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
