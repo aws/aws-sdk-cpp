@@ -115,7 +115,7 @@ assert ScanContent("\"cn-north-1 is in BJS\"") != None;
 assert ScanContent("\"cn-north-2 doesn't exist\"") == None;
 
 ###################Test End######################################
-
+print "Start checking hard coded endpoints in source files...";
 exitCode = 0;
 RootDir = os.path.dirname(os.path.dirname(os.path.realpath(__file__)));
 for root, dirnames, fileNames in os.walk(RootDir):
@@ -123,4 +123,5 @@ for root, dirnames, fileNames in os.walk(RootDir):
         if fileName.endswith(('.h', '.cpp')):
             targetFile = os.path.join(root, fileName);
             exitCode |= CheckFile(targetFile);
+print "Finished checking hard coded endpoints in source files with exit code",exitCode,".";
 exit(exitCode);
