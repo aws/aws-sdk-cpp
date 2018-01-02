@@ -382,17 +382,17 @@ namespace Model
 
 
     /**
-     * <p>Specifies the allocated storage size specified in gigabytes.</p>
+     * <p>Specifies the allocated storage size specified in gibibytes.</p>
      */
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
-     * <p>Specifies the allocated storage size specified in gigabytes.</p>
+     * <p>Specifies the allocated storage size specified in gibibytes.</p>
      */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
-     * <p>Specifies the allocated storage size specified in gigabytes.</p>
+     * <p>Specifies the allocated storage size specified in gibibytes.</p>
      */
     inline DBInstance& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 

@@ -92,37 +92,37 @@ namespace Model
 
 
     /**
-     * <p>The valid range of storage in gigabytes. For example, 100 to 6144. </p>
+     * <p>The valid range of storage in gibibytes. For example, 100 to 16384. </p>
      */
     inline const Aws::Vector<Range>& GetStorageSize() const{ return m_storageSize; }
 
     /**
-     * <p>The valid range of storage in gigabytes. For example, 100 to 6144. </p>
+     * <p>The valid range of storage in gibibytes. For example, 100 to 16384. </p>
      */
     inline void SetStorageSize(const Aws::Vector<Range>& value) { m_storageSizeHasBeenSet = true; m_storageSize = value; }
 
     /**
-     * <p>The valid range of storage in gigabytes. For example, 100 to 6144. </p>
+     * <p>The valid range of storage in gibibytes. For example, 100 to 16384. </p>
      */
     inline void SetStorageSize(Aws::Vector<Range>&& value) { m_storageSizeHasBeenSet = true; m_storageSize = std::move(value); }
 
     /**
-     * <p>The valid range of storage in gigabytes. For example, 100 to 6144. </p>
+     * <p>The valid range of storage in gibibytes. For example, 100 to 16384. </p>
      */
     inline ValidStorageOptions& WithStorageSize(const Aws::Vector<Range>& value) { SetStorageSize(value); return *this;}
 
     /**
-     * <p>The valid range of storage in gigabytes. For example, 100 to 6144. </p>
+     * <p>The valid range of storage in gibibytes. For example, 100 to 16384. </p>
      */
     inline ValidStorageOptions& WithStorageSize(Aws::Vector<Range>&& value) { SetStorageSize(std::move(value)); return *this;}
 
     /**
-     * <p>The valid range of storage in gigabytes. For example, 100 to 6144. </p>
+     * <p>The valid range of storage in gibibytes. For example, 100 to 16384. </p>
      */
     inline ValidStorageOptions& AddStorageSize(const Range& value) { m_storageSizeHasBeenSet = true; m_storageSize.push_back(value); return *this; }
 
     /**
-     * <p>The valid range of storage in gigabytes. For example, 100 to 6144. </p>
+     * <p>The valid range of storage in gibibytes. For example, 100 to 16384. </p>
      */
     inline ValidStorageOptions& AddStorageSize(Range&& value) { m_storageSizeHasBeenSet = true; m_storageSize.push_back(std::move(value)); return *this; }
 
@@ -164,49 +164,49 @@ namespace Model
 
 
     /**
-     * <p>The valid range of Provisioned IOPS to gigabytes of storage multiplier. For
+     * <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For
      * example, 3-10, which means that provisioned IOPS can be between 3 and 10 times
      * storage. </p>
      */
     inline const Aws::Vector<DoubleRange>& GetIopsToStorageRatio() const{ return m_iopsToStorageRatio; }
 
     /**
-     * <p>The valid range of Provisioned IOPS to gigabytes of storage multiplier. For
+     * <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For
      * example, 3-10, which means that provisioned IOPS can be between 3 and 10 times
      * storage. </p>
      */
     inline void SetIopsToStorageRatio(const Aws::Vector<DoubleRange>& value) { m_iopsToStorageRatioHasBeenSet = true; m_iopsToStorageRatio = value; }
 
     /**
-     * <p>The valid range of Provisioned IOPS to gigabytes of storage multiplier. For
+     * <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For
      * example, 3-10, which means that provisioned IOPS can be between 3 and 10 times
      * storage. </p>
      */
     inline void SetIopsToStorageRatio(Aws::Vector<DoubleRange>&& value) { m_iopsToStorageRatioHasBeenSet = true; m_iopsToStorageRatio = std::move(value); }
 
     /**
-     * <p>The valid range of Provisioned IOPS to gigabytes of storage multiplier. For
+     * <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For
      * example, 3-10, which means that provisioned IOPS can be between 3 and 10 times
      * storage. </p>
      */
     inline ValidStorageOptions& WithIopsToStorageRatio(const Aws::Vector<DoubleRange>& value) { SetIopsToStorageRatio(value); return *this;}
 
     /**
-     * <p>The valid range of Provisioned IOPS to gigabytes of storage multiplier. For
+     * <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For
      * example, 3-10, which means that provisioned IOPS can be between 3 and 10 times
      * storage. </p>
      */
     inline ValidStorageOptions& WithIopsToStorageRatio(Aws::Vector<DoubleRange>&& value) { SetIopsToStorageRatio(std::move(value)); return *this;}
 
     /**
-     * <p>The valid range of Provisioned IOPS to gigabytes of storage multiplier. For
+     * <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For
      * example, 3-10, which means that provisioned IOPS can be between 3 and 10 times
      * storage. </p>
      */
     inline ValidStorageOptions& AddIopsToStorageRatio(const DoubleRange& value) { m_iopsToStorageRatioHasBeenSet = true; m_iopsToStorageRatio.push_back(value); return *this; }
 
     /**
-     * <p>The valid range of Provisioned IOPS to gigabytes of storage multiplier. For
+     * <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For
      * example, 3-10, which means that provisioned IOPS can be between 3 and 10 times
      * storage. </p>
      */

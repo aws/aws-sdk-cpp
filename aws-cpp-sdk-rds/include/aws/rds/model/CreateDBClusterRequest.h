@@ -531,19 +531,22 @@ namespace Model
 
     /**
      * <p>The port number on which the instances in the DB cluster accept
-     * connections.</p> <p> Default: <code>3306</code> </p>
+     * connections.</p> <p> Default: <code>3306</code> if engine is set as aurora or
+     * <code>5432</code> if set to aurora-postgresql. </p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
      * <p>The port number on which the instances in the DB cluster accept
-     * connections.</p> <p> Default: <code>3306</code> </p>
+     * connections.</p> <p> Default: <code>3306</code> if engine is set as aurora or
+     * <code>5432</code> if set to aurora-postgresql. </p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>The port number on which the instances in the DB cluster accept
-     * connections.</p> <p> Default: <code>3306</code> </p>
+     * connections.</p> <p> Default: <code>3306</code> if engine is set as aurora or
+     * <code>5432</code> if set to aurora-postgresql. </p>
      */
     inline CreateDBClusterRequest& WithPort(int value) { SetPort(value); return *this;}
 

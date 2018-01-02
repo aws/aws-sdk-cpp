@@ -341,29 +341,29 @@ namespace Model
 
 
     /**
-     * <p>The amount of storage (in gigabytes) to be initially allocated for the DB
-     * instance.</p> <p>Type: Integer</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. Aurora cluster volumes automatically grow as the amount of data in
-     * your database increases, though you are only charged for the space that you use
-     * in an Aurora cluster volume.</p> <p> <b>MySQL</b> </p> <p>Constraints to the
-     * amount of storage for each storage type are the following: </p> <ul> <li>
-     * <p>General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.</p>
-     * </li> <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to
-     * 6144.</p> </li> <li> <p>Magnetic storage (standard): Must be an integer from 5
-     * to 3072.</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>Constraints to the amount of
+     * <p>The amount of storage (in gibibytes) to allocate for the DB instance.</p>
+     * <p>Type: Integer</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Aurora
+     * cluster volumes automatically grow as the amount of data in your database
+     * increases, though you are only charged for the space that you use in an Aurora
+     * cluster volume.</p> <p> <b>MySQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.</p>
+     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
+     * 3072.</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>Constraints to the amount of
+     * storage for each storage type are the following: </p> <ul> <li> <p>General
+     * Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>Oracle</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 10 to 6144.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 10 to 16384.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 10 to
      * 3072.</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
@@ -380,29 +380,29 @@ namespace Model
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
-     * <p>The amount of storage (in gigabytes) to be initially allocated for the DB
-     * instance.</p> <p>Type: Integer</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. Aurora cluster volumes automatically grow as the amount of data in
-     * your database increases, though you are only charged for the space that you use
-     * in an Aurora cluster volume.</p> <p> <b>MySQL</b> </p> <p>Constraints to the
-     * amount of storage for each storage type are the following: </p> <ul> <li>
-     * <p>General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.</p>
-     * </li> <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to
-     * 6144.</p> </li> <li> <p>Magnetic storage (standard): Must be an integer from 5
-     * to 3072.</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>Constraints to the amount of
+     * <p>The amount of storage (in gibibytes) to allocate for the DB instance.</p>
+     * <p>Type: Integer</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Aurora
+     * cluster volumes automatically grow as the amount of data in your database
+     * increases, though you are only charged for the space that you use in an Aurora
+     * cluster volume.</p> <p> <b>MySQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.</p>
+     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
+     * 3072.</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>Constraints to the amount of
+     * storage for each storage type are the following: </p> <ul> <li> <p>General
+     * Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>Oracle</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 10 to 6144.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 10 to 16384.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 10 to
      * 3072.</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
@@ -419,29 +419,29 @@ namespace Model
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
-     * <p>The amount of storage (in gigabytes) to be initially allocated for the DB
-     * instance.</p> <p>Type: Integer</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. Aurora cluster volumes automatically grow as the amount of data in
-     * your database increases, though you are only charged for the space that you use
-     * in an Aurora cluster volume.</p> <p> <b>MySQL</b> </p> <p>Constraints to the
-     * amount of storage for each storage type are the following: </p> <ul> <li>
-     * <p>General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.</p>
-     * </li> <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to
-     * 6144.</p> </li> <li> <p>Magnetic storage (standard): Must be an integer from 5
-     * to 3072.</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>Constraints to the amount of
+     * <p>The amount of storage (in gibibytes) to allocate for the DB instance.</p>
+     * <p>Type: Integer</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Aurora
+     * cluster volumes automatically grow as the amount of data in your database
+     * increases, though you are only charged for the space that you use in an Aurora
+     * cluster volume.</p> <p> <b>MySQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.</p>
+     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
+     * 3072.</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>Constraints to the amount of
+     * storage for each storage type are the following: </p> <ul> <li> <p>General
+     * Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>Oracle</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 10 to 6144.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 10 to 16384.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 10 to
      * 3072.</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
@@ -1558,24 +1558,29 @@ namespace Model
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The version number of the database
      * engine to be used by the DB instance is managed by the DB cluster. For more
      * information, see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <ul> <li>
-     * <p> <code>10.1.23</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <p> <code>10.1.26</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.1.23</code> (supported in all AWS Regions)</p> </li> <li> <p>
      * <code>10.1.19</code> (supported in all AWS Regions)</p> </li> <li> <p>
      * <code>10.1.14</code> (supported in all AWS Regions except us-east-2)</p> </li>
-     * </ul> <p/> <ul> <li> <p> <code>10.0.31</code> (supported in all AWS Regions)</p>
-     * </li> <li> <p> <code>10.0.28</code> (supported in all AWS Regions)</p> </li>
-     * <li> <p> <code>10.0.24</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * </ul> <p/> <ul> <li> <p> <code>10.0.32</code> (supported in all AWS Regions)</p>
+     * </li> <li> <p> <code>10.0.31</code> (supported in all AWS Regions)</p> </li>
+     * <li> <p> <code>10.0.28</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.0.24</code> (supported in all AWS Regions)</p> </li> <li> <p>
      * <code>10.0.17</code> (supported in all AWS Regions except us-east-2,
-     * ca-central-1, eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b>
-     * </p> <ul> <li> <p> <code>13.00.4422.0.v1</code> (supported for all editions, and
-     * all AWS Regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code> (supported for
-     * all editions, and all AWS Regions)</p> </li> </ul> <p> <b>Microsoft SQL Server
-     * 2014</b> </p> <ul> <li> <p> <code>12.00.5546.0.v1</code> (supported for all
-     * editions, and all AWS Regions)</p> </li> <li> <p> <code>12.00.5000.0.v1</code>
+     * ca-central-1, eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2017</b>
+     * </p> <ul> <li> <p> <code>14.00.1000.169.v1</code> (supported for all editions,
+     * and all AWS Regions)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b> </p>
+     * <ul> <li> <p> <code>13.00.4451.0.v1</code> (supported for all editions, and all
+     * AWS Regions)</p> </li> <li> <p> <code>13.00.4422.0.v1</code> (supported for all
+     * editions, and all AWS Regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code>
+     * (supported for all editions, and all AWS Regions)</p> </li> </ul> <p>
+     * <b>Microsoft SQL Server 2014</b> </p> <ul> <li> <p> <code>12.00.5546.0.v1</code>
      * (supported for all editions, and all AWS Regions)</p> </li> <li> <p>
-     * <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise
-     * Edition, and all AWS Regions except ca-central-1 and eu-west-2)</p> </li> </ul>
-     * <p> <b>Microsoft SQL Server 2012</b> </p> <ul> <li> <p>
-     * <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS
+     * <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS
+     * Regions)</p> </li> <li> <p> <code>12.00.4422.0.v1</code> (supported for all
+     * editions except Enterprise Edition, and all AWS Regions except ca-central-1 and
+     * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2012</b> </p> <ul> <li>
+     * <p> <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS
      * Regions)</p> </li> <li> <p> <code>11.00.6020.0.v1</code> (supported for all
      * editions, and all AWS Regions)</p> </li> <li> <p> <code>11.00.5058.0.v1</code>
      * (supported for all editions, and all AWS Regions except us-east-2, ca-central-1,
@@ -1648,24 +1653,29 @@ namespace Model
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The version number of the database
      * engine to be used by the DB instance is managed by the DB cluster. For more
      * information, see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <ul> <li>
-     * <p> <code>10.1.23</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <p> <code>10.1.26</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.1.23</code> (supported in all AWS Regions)</p> </li> <li> <p>
      * <code>10.1.19</code> (supported in all AWS Regions)</p> </li> <li> <p>
      * <code>10.1.14</code> (supported in all AWS Regions except us-east-2)</p> </li>
-     * </ul> <p/> <ul> <li> <p> <code>10.0.31</code> (supported in all AWS Regions)</p>
-     * </li> <li> <p> <code>10.0.28</code> (supported in all AWS Regions)</p> </li>
-     * <li> <p> <code>10.0.24</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * </ul> <p/> <ul> <li> <p> <code>10.0.32</code> (supported in all AWS Regions)</p>
+     * </li> <li> <p> <code>10.0.31</code> (supported in all AWS Regions)</p> </li>
+     * <li> <p> <code>10.0.28</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.0.24</code> (supported in all AWS Regions)</p> </li> <li> <p>
      * <code>10.0.17</code> (supported in all AWS Regions except us-east-2,
-     * ca-central-1, eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b>
-     * </p> <ul> <li> <p> <code>13.00.4422.0.v1</code> (supported for all editions, and
-     * all AWS Regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code> (supported for
-     * all editions, and all AWS Regions)</p> </li> </ul> <p> <b>Microsoft SQL Server
-     * 2014</b> </p> <ul> <li> <p> <code>12.00.5546.0.v1</code> (supported for all
-     * editions, and all AWS Regions)</p> </li> <li> <p> <code>12.00.5000.0.v1</code>
+     * ca-central-1, eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2017</b>
+     * </p> <ul> <li> <p> <code>14.00.1000.169.v1</code> (supported for all editions,
+     * and all AWS Regions)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b> </p>
+     * <ul> <li> <p> <code>13.00.4451.0.v1</code> (supported for all editions, and all
+     * AWS Regions)</p> </li> <li> <p> <code>13.00.4422.0.v1</code> (supported for all
+     * editions, and all AWS Regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code>
+     * (supported for all editions, and all AWS Regions)</p> </li> </ul> <p>
+     * <b>Microsoft SQL Server 2014</b> </p> <ul> <li> <p> <code>12.00.5546.0.v1</code>
      * (supported for all editions, and all AWS Regions)</p> </li> <li> <p>
-     * <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise
-     * Edition, and all AWS Regions except ca-central-1 and eu-west-2)</p> </li> </ul>
-     * <p> <b>Microsoft SQL Server 2012</b> </p> <ul> <li> <p>
-     * <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS
+     * <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS
+     * Regions)</p> </li> <li> <p> <code>12.00.4422.0.v1</code> (supported for all
+     * editions except Enterprise Edition, and all AWS Regions except ca-central-1 and
+     * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2012</b> </p> <ul> <li>
+     * <p> <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS
      * Regions)</p> </li> <li> <p> <code>11.00.6020.0.v1</code> (supported for all
      * editions, and all AWS Regions)</p> </li> <li> <p> <code>11.00.5058.0.v1</code>
      * (supported for all editions, and all AWS Regions except us-east-2, ca-central-1,
@@ -1738,24 +1748,29 @@ namespace Model
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The version number of the database
      * engine to be used by the DB instance is managed by the DB cluster. For more
      * information, see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <ul> <li>
-     * <p> <code>10.1.23</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <p> <code>10.1.26</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.1.23</code> (supported in all AWS Regions)</p> </li> <li> <p>
      * <code>10.1.19</code> (supported in all AWS Regions)</p> </li> <li> <p>
      * <code>10.1.14</code> (supported in all AWS Regions except us-east-2)</p> </li>
-     * </ul> <p/> <ul> <li> <p> <code>10.0.31</code> (supported in all AWS Regions)</p>
-     * </li> <li> <p> <code>10.0.28</code> (supported in all AWS Regions)</p> </li>
-     * <li> <p> <code>10.0.24</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * </ul> <p/> <ul> <li> <p> <code>10.0.32</code> (supported in all AWS Regions)</p>
+     * </li> <li> <p> <code>10.0.31</code> (supported in all AWS Regions)</p> </li>
+     * <li> <p> <code>10.0.28</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.0.24</code> (supported in all AWS Regions)</p> </li> <li> <p>
      * <code>10.0.17</code> (supported in all AWS Regions except us-east-2,
-     * ca-central-1, eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b>
-     * </p> <ul> <li> <p> <code>13.00.4422.0.v1</code> (supported for all editions, and
-     * all AWS Regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code> (supported for
-     * all editions, and all AWS Regions)</p> </li> </ul> <p> <b>Microsoft SQL Server
-     * 2014</b> </p> <ul> <li> <p> <code>12.00.5546.0.v1</code> (supported for all
-     * editions, and all AWS Regions)</p> </li> <li> <p> <code>12.00.5000.0.v1</code>
+     * ca-central-1, eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2017</b>
+     * </p> <ul> <li> <p> <code>14.00.1000.169.v1</code> (supported for all editions,
+     * and all AWS Regions)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b> </p>
+     * <ul> <li> <p> <code>13.00.4451.0.v1</code> (supported for all editions, and all
+     * AWS Regions)</p> </li> <li> <p> <code>13.00.4422.0.v1</code> (supported for all
+     * editions, and all AWS Regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code>
+     * (supported for all editions, and all AWS Regions)</p> </li> </ul> <p>
+     * <b>Microsoft SQL Server 2014</b> </p> <ul> <li> <p> <code>12.00.5546.0.v1</code>
      * (supported for all editions, and all AWS Regions)</p> </li> <li> <p>
-     * <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise
-     * Edition, and all AWS Regions except ca-central-1 and eu-west-2)</p> </li> </ul>
-     * <p> <b>Microsoft SQL Server 2012</b> </p> <ul> <li> <p>
-     * <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS
+     * <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS
+     * Regions)</p> </li> <li> <p> <code>12.00.4422.0.v1</code> (supported for all
+     * editions except Enterprise Edition, and all AWS Regions except ca-central-1 and
+     * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2012</b> </p> <ul> <li>
+     * <p> <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS
      * Regions)</p> </li> <li> <p> <code>11.00.6020.0.v1</code> (supported for all
      * editions, and all AWS Regions)</p> </li> <li> <p> <code>11.00.5058.0.v1</code>
      * (supported for all editions, and all AWS Regions except us-east-2, ca-central-1,
@@ -1828,24 +1843,29 @@ namespace Model
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The version number of the database
      * engine to be used by the DB instance is managed by the DB cluster. For more
      * information, see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <ul> <li>
-     * <p> <code>10.1.23</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <p> <code>10.1.26</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.1.23</code> (supported in all AWS Regions)</p> </li> <li> <p>
      * <code>10.1.19</code> (supported in all AWS Regions)</p> </li> <li> <p>
      * <code>10.1.14</code> (supported in all AWS Regions except us-east-2)</p> </li>
-     * </ul> <p/> <ul> <li> <p> <code>10.0.31</code> (supported in all AWS Regions)</p>
-     * </li> <li> <p> <code>10.0.28</code> (supported in all AWS Regions)</p> </li>
-     * <li> <p> <code>10.0.24</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * </ul> <p/> <ul> <li> <p> <code>10.0.32</code> (supported in all AWS Regions)</p>
+     * </li> <li> <p> <code>10.0.31</code> (supported in all AWS Regions)</p> </li>
+     * <li> <p> <code>10.0.28</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.0.24</code> (supported in all AWS Regions)</p> </li> <li> <p>
      * <code>10.0.17</code> (supported in all AWS Regions except us-east-2,
-     * ca-central-1, eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b>
-     * </p> <ul> <li> <p> <code>13.00.4422.0.v1</code> (supported for all editions, and
-     * all AWS Regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code> (supported for
-     * all editions, and all AWS Regions)</p> </li> </ul> <p> <b>Microsoft SQL Server
-     * 2014</b> </p> <ul> <li> <p> <code>12.00.5546.0.v1</code> (supported for all
-     * editions, and all AWS Regions)</p> </li> <li> <p> <code>12.00.5000.0.v1</code>
+     * ca-central-1, eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2017</b>
+     * </p> <ul> <li> <p> <code>14.00.1000.169.v1</code> (supported for all editions,
+     * and all AWS Regions)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b> </p>
+     * <ul> <li> <p> <code>13.00.4451.0.v1</code> (supported for all editions, and all
+     * AWS Regions)</p> </li> <li> <p> <code>13.00.4422.0.v1</code> (supported for all
+     * editions, and all AWS Regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code>
+     * (supported for all editions, and all AWS Regions)</p> </li> </ul> <p>
+     * <b>Microsoft SQL Server 2014</b> </p> <ul> <li> <p> <code>12.00.5546.0.v1</code>
      * (supported for all editions, and all AWS Regions)</p> </li> <li> <p>
-     * <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise
-     * Edition, and all AWS Regions except ca-central-1 and eu-west-2)</p> </li> </ul>
-     * <p> <b>Microsoft SQL Server 2012</b> </p> <ul> <li> <p>
-     * <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS
+     * <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS
+     * Regions)</p> </li> <li> <p> <code>12.00.4422.0.v1</code> (supported for all
+     * editions except Enterprise Edition, and all AWS Regions except ca-central-1 and
+     * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2012</b> </p> <ul> <li>
+     * <p> <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS
      * Regions)</p> </li> <li> <p> <code>11.00.6020.0.v1</code> (supported for all
      * editions, and all AWS Regions)</p> </li> <li> <p> <code>11.00.5058.0.v1</code>
      * (supported for all editions, and all AWS Regions except us-east-2, ca-central-1,
@@ -1918,24 +1938,29 @@ namespace Model
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The version number of the database
      * engine to be used by the DB instance is managed by the DB cluster. For more
      * information, see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <ul> <li>
-     * <p> <code>10.1.23</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <p> <code>10.1.26</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.1.23</code> (supported in all AWS Regions)</p> </li> <li> <p>
      * <code>10.1.19</code> (supported in all AWS Regions)</p> </li> <li> <p>
      * <code>10.1.14</code> (supported in all AWS Regions except us-east-2)</p> </li>
-     * </ul> <p/> <ul> <li> <p> <code>10.0.31</code> (supported in all AWS Regions)</p>
-     * </li> <li> <p> <code>10.0.28</code> (supported in all AWS Regions)</p> </li>
-     * <li> <p> <code>10.0.24</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * </ul> <p/> <ul> <li> <p> <code>10.0.32</code> (supported in all AWS Regions)</p>
+     * </li> <li> <p> <code>10.0.31</code> (supported in all AWS Regions)</p> </li>
+     * <li> <p> <code>10.0.28</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.0.24</code> (supported in all AWS Regions)</p> </li> <li> <p>
      * <code>10.0.17</code> (supported in all AWS Regions except us-east-2,
-     * ca-central-1, eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b>
-     * </p> <ul> <li> <p> <code>13.00.4422.0.v1</code> (supported for all editions, and
-     * all AWS Regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code> (supported for
-     * all editions, and all AWS Regions)</p> </li> </ul> <p> <b>Microsoft SQL Server
-     * 2014</b> </p> <ul> <li> <p> <code>12.00.5546.0.v1</code> (supported for all
-     * editions, and all AWS Regions)</p> </li> <li> <p> <code>12.00.5000.0.v1</code>
+     * ca-central-1, eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2017</b>
+     * </p> <ul> <li> <p> <code>14.00.1000.169.v1</code> (supported for all editions,
+     * and all AWS Regions)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b> </p>
+     * <ul> <li> <p> <code>13.00.4451.0.v1</code> (supported for all editions, and all
+     * AWS Regions)</p> </li> <li> <p> <code>13.00.4422.0.v1</code> (supported for all
+     * editions, and all AWS Regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code>
+     * (supported for all editions, and all AWS Regions)</p> </li> </ul> <p>
+     * <b>Microsoft SQL Server 2014</b> </p> <ul> <li> <p> <code>12.00.5546.0.v1</code>
      * (supported for all editions, and all AWS Regions)</p> </li> <li> <p>
-     * <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise
-     * Edition, and all AWS Regions except ca-central-1 and eu-west-2)</p> </li> </ul>
-     * <p> <b>Microsoft SQL Server 2012</b> </p> <ul> <li> <p>
-     * <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS
+     * <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS
+     * Regions)</p> </li> <li> <p> <code>12.00.4422.0.v1</code> (supported for all
+     * editions except Enterprise Edition, and all AWS Regions except ca-central-1 and
+     * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2012</b> </p> <ul> <li>
+     * <p> <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS
      * Regions)</p> </li> <li> <p> <code>11.00.6020.0.v1</code> (supported for all
      * editions, and all AWS Regions)</p> </li> <li> <p> <code>11.00.5058.0.v1</code>
      * (supported for all editions, and all AWS Regions except us-east-2, ca-central-1,
@@ -2008,24 +2033,29 @@ namespace Model
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The version number of the database
      * engine to be used by the DB instance is managed by the DB cluster. For more
      * information, see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <ul> <li>
-     * <p> <code>10.1.23</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <p> <code>10.1.26</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.1.23</code> (supported in all AWS Regions)</p> </li> <li> <p>
      * <code>10.1.19</code> (supported in all AWS Regions)</p> </li> <li> <p>
      * <code>10.1.14</code> (supported in all AWS Regions except us-east-2)</p> </li>
-     * </ul> <p/> <ul> <li> <p> <code>10.0.31</code> (supported in all AWS Regions)</p>
-     * </li> <li> <p> <code>10.0.28</code> (supported in all AWS Regions)</p> </li>
-     * <li> <p> <code>10.0.24</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * </ul> <p/> <ul> <li> <p> <code>10.0.32</code> (supported in all AWS Regions)</p>
+     * </li> <li> <p> <code>10.0.31</code> (supported in all AWS Regions)</p> </li>
+     * <li> <p> <code>10.0.28</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.0.24</code> (supported in all AWS Regions)</p> </li> <li> <p>
      * <code>10.0.17</code> (supported in all AWS Regions except us-east-2,
-     * ca-central-1, eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b>
-     * </p> <ul> <li> <p> <code>13.00.4422.0.v1</code> (supported for all editions, and
-     * all AWS Regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code> (supported for
-     * all editions, and all AWS Regions)</p> </li> </ul> <p> <b>Microsoft SQL Server
-     * 2014</b> </p> <ul> <li> <p> <code>12.00.5546.0.v1</code> (supported for all
-     * editions, and all AWS Regions)</p> </li> <li> <p> <code>12.00.5000.0.v1</code>
+     * ca-central-1, eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2017</b>
+     * </p> <ul> <li> <p> <code>14.00.1000.169.v1</code> (supported for all editions,
+     * and all AWS Regions)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b> </p>
+     * <ul> <li> <p> <code>13.00.4451.0.v1</code> (supported for all editions, and all
+     * AWS Regions)</p> </li> <li> <p> <code>13.00.4422.0.v1</code> (supported for all
+     * editions, and all AWS Regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code>
+     * (supported for all editions, and all AWS Regions)</p> </li> </ul> <p>
+     * <b>Microsoft SQL Server 2014</b> </p> <ul> <li> <p> <code>12.00.5546.0.v1</code>
      * (supported for all editions, and all AWS Regions)</p> </li> <li> <p>
-     * <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise
-     * Edition, and all AWS Regions except ca-central-1 and eu-west-2)</p> </li> </ul>
-     * <p> <b>Microsoft SQL Server 2012</b> </p> <ul> <li> <p>
-     * <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS
+     * <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS
+     * Regions)</p> </li> <li> <p> <code>12.00.4422.0.v1</code> (supported for all
+     * editions except Enterprise Edition, and all AWS Regions except ca-central-1 and
+     * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2012</b> </p> <ul> <li>
+     * <p> <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS
      * Regions)</p> </li> <li> <p> <code>11.00.6020.0.v1</code> (supported for all
      * editions, and all AWS Regions)</p> </li> <li> <p> <code>11.00.5058.0.v1</code>
      * (supported for all editions, and all AWS Regions except us-east-2, ca-central-1,
@@ -2098,24 +2128,29 @@ namespace Model
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The version number of the database
      * engine to be used by the DB instance is managed by the DB cluster. For more
      * information, see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <ul> <li>
-     * <p> <code>10.1.23</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <p> <code>10.1.26</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.1.23</code> (supported in all AWS Regions)</p> </li> <li> <p>
      * <code>10.1.19</code> (supported in all AWS Regions)</p> </li> <li> <p>
      * <code>10.1.14</code> (supported in all AWS Regions except us-east-2)</p> </li>
-     * </ul> <p/> <ul> <li> <p> <code>10.0.31</code> (supported in all AWS Regions)</p>
-     * </li> <li> <p> <code>10.0.28</code> (supported in all AWS Regions)</p> </li>
-     * <li> <p> <code>10.0.24</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * </ul> <p/> <ul> <li> <p> <code>10.0.32</code> (supported in all AWS Regions)</p>
+     * </li> <li> <p> <code>10.0.31</code> (supported in all AWS Regions)</p> </li>
+     * <li> <p> <code>10.0.28</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.0.24</code> (supported in all AWS Regions)</p> </li> <li> <p>
      * <code>10.0.17</code> (supported in all AWS Regions except us-east-2,
-     * ca-central-1, eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b>
-     * </p> <ul> <li> <p> <code>13.00.4422.0.v1</code> (supported for all editions, and
-     * all AWS Regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code> (supported for
-     * all editions, and all AWS Regions)</p> </li> </ul> <p> <b>Microsoft SQL Server
-     * 2014</b> </p> <ul> <li> <p> <code>12.00.5546.0.v1</code> (supported for all
-     * editions, and all AWS Regions)</p> </li> <li> <p> <code>12.00.5000.0.v1</code>
+     * ca-central-1, eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2017</b>
+     * </p> <ul> <li> <p> <code>14.00.1000.169.v1</code> (supported for all editions,
+     * and all AWS Regions)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b> </p>
+     * <ul> <li> <p> <code>13.00.4451.0.v1</code> (supported for all editions, and all
+     * AWS Regions)</p> </li> <li> <p> <code>13.00.4422.0.v1</code> (supported for all
+     * editions, and all AWS Regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code>
+     * (supported for all editions, and all AWS Regions)</p> </li> </ul> <p>
+     * <b>Microsoft SQL Server 2014</b> </p> <ul> <li> <p> <code>12.00.5546.0.v1</code>
      * (supported for all editions, and all AWS Regions)</p> </li> <li> <p>
-     * <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise
-     * Edition, and all AWS Regions except ca-central-1 and eu-west-2)</p> </li> </ul>
-     * <p> <b>Microsoft SQL Server 2012</b> </p> <ul> <li> <p>
-     * <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS
+     * <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS
+     * Regions)</p> </li> <li> <p> <code>12.00.4422.0.v1</code> (supported for all
+     * editions except Enterprise Edition, and all AWS Regions except ca-central-1 and
+     * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2012</b> </p> <ul> <li>
+     * <p> <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS
      * Regions)</p> </li> <li> <p> <code>11.00.6020.0.v1</code> (supported for all
      * editions, and all AWS Regions)</p> </li> <li> <p> <code>11.00.5058.0.v1</code>
      * (supported for all editions, and all AWS Regions except us-east-2, ca-central-1,
@@ -2257,9 +2292,9 @@ namespace Model
      * values, see see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS Storage to Improve Performance</a>. </p> <p>Constraints:
-     * Must be a multiple between 3 and 10 of the storage amount for the DB instance.
+     * Must be a multiple between 1 and 50 of the storage amount for the DB instance.
      * Must also be an integer multiple of 1000. For example, if the size of your DB
-     * instance is 500 GB, then your <code>Iops</code> value can be 2000, 3000, 4000,
+     * instance is 500 GiB, then your <code>Iops</code> value can be 2000, 3000, 4000,
      * or 5000. </p>
      */
     inline int GetIops() const{ return m_iops; }
@@ -2270,9 +2305,9 @@ namespace Model
      * values, see see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS Storage to Improve Performance</a>. </p> <p>Constraints:
-     * Must be a multiple between 3 and 10 of the storage amount for the DB instance.
+     * Must be a multiple between 1 and 50 of the storage amount for the DB instance.
      * Must also be an integer multiple of 1000. For example, if the size of your DB
-     * instance is 500 GB, then your <code>Iops</code> value can be 2000, 3000, 4000,
+     * instance is 500 GiB, then your <code>Iops</code> value can be 2000, 3000, 4000,
      * or 5000. </p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
@@ -2283,9 +2318,9 @@ namespace Model
      * values, see see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS Storage to Improve Performance</a>. </p> <p>Constraints:
-     * Must be a multiple between 3 and 10 of the storage amount for the DB instance.
+     * Must be a multiple between 1 and 50 of the storage amount for the DB instance.
      * Must also be an integer multiple of 1000. For example, if the size of your DB
-     * instance is 500 GB, then your <code>Iops</code> value can be 2000, 3000, 4000,
+     * instance is 500 GiB, then your <code>Iops</code> value can be 2000, 3000, 4000,
      * or 5000. </p>
      */
     inline CreateDBInstanceRequest& WithIops(int value) { SetIops(value); return *this;}
