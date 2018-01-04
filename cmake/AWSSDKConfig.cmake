@@ -38,6 +38,12 @@ endif()
 include(${CMAKE_CURRENT_LIST_DIR}/AWSSDKConfigVersion.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/sdksCommon.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/platformDeps.cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/resolve_platform.cmake)
+include(CMakePackageConfigHelpers)
+include(${CMAKE_CURRENT_LIST_DIR}/initialize_project_version.cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/compiler_settings.cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/utilities.cmake)
+
 
 if (NOT AWSSDK_INSTALL_LIBDIR)
     set(AWSSDK_INSTALL_LIBDIR "lib")
@@ -63,6 +69,10 @@ get_filename_component(AWSSDK_DEFAULT_ROOT_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH
 get_filename_component(AWSSDK_DEFAULT_ROOT_DIR "${AWSSDK_DEFAULT_ROOT_DIR}" PATH)
 get_filename_component(AWSSDK_DEFAULT_ROOT_DIR "${AWSSDK_DEFAULT_ROOT_DIR}" PATH)
 get_filename_component(AWSSDK_DEFAULT_ROOT_DIR "${AWSSDK_DEFAULT_ROOT_DIR}" PATH)
+get_filename_component(AWS_NATIVE_SDK_ROOT "${CMAKE_CURRENT_SOURCE_DIR}" ABSOLUTE)
+
+set(CPP_STANDARD "11" CACHE STRING "Flag to upgrade the C++ standard used. The default is 11. The minimum is 11.")
+
 if(AWSSDK_DEFAULT_ROOT_DIR STREQUAL "/")
   set(AWSSDK_DEFAULT_ROOT_DIR "")
 endif()

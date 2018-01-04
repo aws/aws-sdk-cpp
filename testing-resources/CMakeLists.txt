@@ -119,3 +119,12 @@ if(COMMAND add_custom_testing_target_compile_definitions)
     add_custom_testing_target_compile_definitions()
 endif()
 
+setup_install()
+
+install (FILES ${AWS_TESTING_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/testing)
+install (FILES ${AWS_TESTING_EXTERNAL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/external)
+install (FILES ${AWS_TESTING_PLATFORM_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/testing/platform)
+install (FILES ${AWS_TESTING_AUTH_MOCKS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/testing/mocks/aws/auth)
+install (FILES ${AWS_TESTING_HTTP_MOCKS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/testing/mocks/http)
+ 
+do_packaging()

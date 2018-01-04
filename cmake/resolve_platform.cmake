@@ -51,14 +51,14 @@ string(TOLOWER ${TARGET_ARCH} __LOWER_ARCH)
 
 # default settings is unix platform
 if(PLATFORM_LINUX OR PLATFORM_APPLE OR PLATFORM_ANDROID)
-    include(platform/unix)
+    include(${CMAKE_CURRENT_LIST_DIR}/platform/unix.cmake)
 endif()
 
 # if not specified to custom platform, settings above will be reset by specific platform settings
 if(NOT PLATFORM_CUSTOM)
-    include(platform/${__LOWER_ARCH})
+    include(${CMAKE_CURRENT_LIST_DIR}/platform/${__LOWER_ARCH}.cmake)
 else()
-    include(platform/custom)
+    include(${CMAKE_CURRENT_LIST_DIR}/platform/custom.cmake)
 endif()
 
 # only usable in .cpp files
