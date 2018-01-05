@@ -48,50 +48,57 @@ namespace Model
 
     /**
      * <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/)
-     * and end with the parameter name. A hierarchy can have a maximum of five levels.
-     * For example: <code>/Finance/Prod/IAD/WinServ2016/license15</code> </p>
+     * and end with the parameter name. A hierarchy can have a maximum of 15 levels.
+     * Here is an example of a hierarchy:
+     * <code>/Finance/Prod/IAD/WinServ2016/license33</code> </p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
     /**
      * <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/)
-     * and end with the parameter name. A hierarchy can have a maximum of five levels.
-     * For example: <code>/Finance/Prod/IAD/WinServ2016/license15</code> </p>
+     * and end with the parameter name. A hierarchy can have a maximum of 15 levels.
+     * Here is an example of a hierarchy:
+     * <code>/Finance/Prod/IAD/WinServ2016/license33</code> </p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
      * <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/)
-     * and end with the parameter name. A hierarchy can have a maximum of five levels.
-     * For example: <code>/Finance/Prod/IAD/WinServ2016/license15</code> </p>
+     * and end with the parameter name. A hierarchy can have a maximum of 15 levels.
+     * Here is an example of a hierarchy:
+     * <code>/Finance/Prod/IAD/WinServ2016/license33</code> </p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
      * <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/)
-     * and end with the parameter name. A hierarchy can have a maximum of five levels.
-     * For example: <code>/Finance/Prod/IAD/WinServ2016/license15</code> </p>
+     * and end with the parameter name. A hierarchy can have a maximum of 15 levels.
+     * Here is an example of a hierarchy:
+     * <code>/Finance/Prod/IAD/WinServ2016/license33</code> </p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
     /**
      * <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/)
-     * and end with the parameter name. A hierarchy can have a maximum of five levels.
-     * For example: <code>/Finance/Prod/IAD/WinServ2016/license15</code> </p>
+     * and end with the parameter name. A hierarchy can have a maximum of 15 levels.
+     * Here is an example of a hierarchy:
+     * <code>/Finance/Prod/IAD/WinServ2016/license33</code> </p>
      */
     inline GetParametersByPathRequest& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
     /**
      * <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/)
-     * and end with the parameter name. A hierarchy can have a maximum of five levels.
-     * For example: <code>/Finance/Prod/IAD/WinServ2016/license15</code> </p>
+     * and end with the parameter name. A hierarchy can have a maximum of 15 levels.
+     * Here is an example of a hierarchy:
+     * <code>/Finance/Prod/IAD/WinServ2016/license33</code> </p>
      */
     inline GetParametersByPathRequest& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
      * <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/)
-     * and end with the parameter name. A hierarchy can have a maximum of five levels.
-     * For example: <code>/Finance/Prod/IAD/WinServ2016/license15</code> </p>
+     * and end with the parameter name. A hierarchy can have a maximum of 15 levels.
+     * Here is an example of a hierarchy:
+     * <code>/Finance/Prod/IAD/WinServ2016/license33</code> </p>
      */
     inline GetParametersByPathRequest& WithPath(const char* value) { SetPath(value); return *this;}
 

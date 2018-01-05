@@ -160,37 +160,37 @@ namespace Model
 
 
     /**
-     * <p>The ID for the address that you want the cluster shipped to.&gt;</p>
+     * <p>The ID for the address that you want the cluster shipped to.</p>
      */
     inline const Aws::String& GetAddressId() const{ return m_addressId; }
 
     /**
-     * <p>The ID for the address that you want the cluster shipped to.&gt;</p>
+     * <p>The ID for the address that you want the cluster shipped to.</p>
      */
     inline void SetAddressId(const Aws::String& value) { m_addressIdHasBeenSet = true; m_addressId = value; }
 
     /**
-     * <p>The ID for the address that you want the cluster shipped to.&gt;</p>
+     * <p>The ID for the address that you want the cluster shipped to.</p>
      */
     inline void SetAddressId(Aws::String&& value) { m_addressIdHasBeenSet = true; m_addressId = std::move(value); }
 
     /**
-     * <p>The ID for the address that you want the cluster shipped to.&gt;</p>
+     * <p>The ID for the address that you want the cluster shipped to.</p>
      */
     inline void SetAddressId(const char* value) { m_addressIdHasBeenSet = true; m_addressId.assign(value); }
 
     /**
-     * <p>The ID for the address that you want the cluster shipped to.&gt;</p>
+     * <p>The ID for the address that you want the cluster shipped to.</p>
      */
     inline CreateClusterRequest& WithAddressId(const Aws::String& value) { SetAddressId(value); return *this;}
 
     /**
-     * <p>The ID for the address that you want the cluster shipped to.&gt;</p>
+     * <p>The ID for the address that you want the cluster shipped to.</p>
      */
     inline CreateClusterRequest& WithAddressId(Aws::String&& value) { SetAddressId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the address that you want the cluster shipped to.&gt;</p>
+     * <p>The ID for the address that you want the cluster shipped to.</p>
      */
     inline CreateClusterRequest& WithAddressId(const char* value) { SetAddressId(value); return *this;}
 

@@ -273,6 +273,75 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the most recent assessment run associated
+     * with this assessment template. This value exists only when the value of
+     * assessmentRunCount is greater than zero.</p>
+     */
+    inline const Aws::String& GetLastAssessmentRunArn() const{ return m_lastAssessmentRunArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the most recent assessment run associated
+     * with this assessment template. This value exists only when the value of
+     * assessmentRunCount is greater than zero.</p>
+     */
+    inline void SetLastAssessmentRunArn(const Aws::String& value) { m_lastAssessmentRunArnHasBeenSet = true; m_lastAssessmentRunArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the most recent assessment run associated
+     * with this assessment template. This value exists only when the value of
+     * assessmentRunCount is greater than zero.</p>
+     */
+    inline void SetLastAssessmentRunArn(Aws::String&& value) { m_lastAssessmentRunArnHasBeenSet = true; m_lastAssessmentRunArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the most recent assessment run associated
+     * with this assessment template. This value exists only when the value of
+     * assessmentRunCount is greater than zero.</p>
+     */
+    inline void SetLastAssessmentRunArn(const char* value) { m_lastAssessmentRunArnHasBeenSet = true; m_lastAssessmentRunArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the most recent assessment run associated
+     * with this assessment template. This value exists only when the value of
+     * assessmentRunCount is greater than zero.</p>
+     */
+    inline AssessmentTemplate& WithLastAssessmentRunArn(const Aws::String& value) { SetLastAssessmentRunArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the most recent assessment run associated
+     * with this assessment template. This value exists only when the value of
+     * assessmentRunCount is greater than zero.</p>
+     */
+    inline AssessmentTemplate& WithLastAssessmentRunArn(Aws::String&& value) { SetLastAssessmentRunArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the most recent assessment run associated
+     * with this assessment template. This value exists only when the value of
+     * assessmentRunCount is greater than zero.</p>
+     */
+    inline AssessmentTemplate& WithLastAssessmentRunArn(const char* value) { SetLastAssessmentRunArn(value); return *this;}
+
+
+    /**
+     * <p>The number of existing assessment runs associated with this assessment
+     * template. This value can be zero or a positive integer.</p>
+     */
+    inline int GetAssessmentRunCount() const{ return m_assessmentRunCount; }
+
+    /**
+     * <p>The number of existing assessment runs associated with this assessment
+     * template. This value can be zero or a positive integer.</p>
+     */
+    inline void SetAssessmentRunCount(int value) { m_assessmentRunCountHasBeenSet = true; m_assessmentRunCount = value; }
+
+    /**
+     * <p>The number of existing assessment runs associated with this assessment
+     * template. This value can be zero or a positive integer.</p>
+     */
+    inline AssessmentTemplate& WithAssessmentRunCount(int value) { SetAssessmentRunCount(value); return *this;}
+
+
+    /**
      * <p>The time at which the assessment template is created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
@@ -316,6 +385,12 @@ namespace Model
 
     Aws::Vector<Attribute> m_userAttributesForFindings;
     bool m_userAttributesForFindingsHasBeenSet;
+
+    Aws::String m_lastAssessmentRunArn;
+    bool m_lastAssessmentRunArnHasBeenSet;
+
+    int m_assessmentRunCount;
+    bool m_assessmentRunCountHasBeenSet;
 
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;

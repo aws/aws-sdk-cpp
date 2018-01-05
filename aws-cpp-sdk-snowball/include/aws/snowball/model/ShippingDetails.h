@@ -126,62 +126,62 @@ namespace Model
 
     /**
      * <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball
-     * being delivered to the address that you specified for a particular job.</p>
+     * being returned to AWS for a particular job.</p>
      */
     inline const Shipment& GetInboundShipment() const{ return m_inboundShipment; }
 
     /**
      * <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball
-     * being delivered to the address that you specified for a particular job.</p>
+     * being returned to AWS for a particular job.</p>
      */
     inline void SetInboundShipment(const Shipment& value) { m_inboundShipmentHasBeenSet = true; m_inboundShipment = value; }
 
     /**
      * <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball
-     * being delivered to the address that you specified for a particular job.</p>
+     * being returned to AWS for a particular job.</p>
      */
     inline void SetInboundShipment(Shipment&& value) { m_inboundShipmentHasBeenSet = true; m_inboundShipment = std::move(value); }
 
     /**
      * <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball
-     * being delivered to the address that you specified for a particular job.</p>
+     * being returned to AWS for a particular job.</p>
      */
     inline ShippingDetails& WithInboundShipment(const Shipment& value) { SetInboundShipment(value); return *this;}
 
     /**
      * <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball
-     * being delivered to the address that you specified for a particular job.</p>
+     * being returned to AWS for a particular job.</p>
      */
     inline ShippingDetails& WithInboundShipment(Shipment&& value) { SetInboundShipment(std::move(value)); return *this;}
 
 
     /**
      * <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball
-     * being returned to AWS for a particular job.</p>
+     * being delivered to the address that you specified for a particular job.</p>
      */
     inline const Shipment& GetOutboundShipment() const{ return m_outboundShipment; }
 
     /**
      * <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball
-     * being returned to AWS for a particular job.</p>
+     * being delivered to the address that you specified for a particular job.</p>
      */
     inline void SetOutboundShipment(const Shipment& value) { m_outboundShipmentHasBeenSet = true; m_outboundShipment = value; }
 
     /**
      * <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball
-     * being returned to AWS for a particular job.</p>
+     * being delivered to the address that you specified for a particular job.</p>
      */
     inline void SetOutboundShipment(Shipment&& value) { m_outboundShipmentHasBeenSet = true; m_outboundShipment = std::move(value); }
 
     /**
      * <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball
-     * being returned to AWS for a particular job.</p>
+     * being delivered to the address that you specified for a particular job.</p>
      */
     inline ShippingDetails& WithOutboundShipment(const Shipment& value) { SetOutboundShipment(value); return *this;}
 
     /**
      * <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball
-     * being returned to AWS for a particular job.</p>
+     * being delivered to the address that you specified for a particular job.</p>
      */
     inline ShippingDetails& WithOutboundShipment(Shipment&& value) { SetOutboundShipment(std::move(value)); return *this;}
 

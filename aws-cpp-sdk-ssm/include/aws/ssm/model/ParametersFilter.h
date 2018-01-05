@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>One or more filters. Use a filter to return a more specific list of
-   * results.</p><p><h3>See Also:</h3>   <a
+   * <p>This data type is deprecated. Instead, use
+   * <a>ParameterStringFilter</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ParametersFilter">AWS
    * API Reference</a></p>
    */
