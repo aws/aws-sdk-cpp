@@ -81,6 +81,10 @@ DefaultUnderlyingStream::DefaultUnderlyingStream() :
     Base( Aws::New< DefaultStreamBufType >( DEFAULT_STREAM_TAG ) )
 {}
 
+DefaultUnderlyingStream::DefaultUnderlyingStream(Aws::UniquePtr<std::streambuf> buf) :
+    Base(buf.release())
+{}
+
 DefaultUnderlyingStream::~DefaultUnderlyingStream()
 {
     if( rdbuf() )

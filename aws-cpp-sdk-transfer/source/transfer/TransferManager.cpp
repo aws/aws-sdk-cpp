@@ -688,8 +688,8 @@ namespace Aws
 
                 CreateDownloadStreamCallback responseStreamFunction = [partState, buffer, rangeEnd, rangeStart]() 
                 {                    
-                    auto streamBuf = Aws::New<Aws::Utils::Stream::PreallocatedStreamBuf>(CLASS_TAG, buffer, rangeEnd - rangeStart + 1);
-                    auto bufferStream = Aws::New<Aws::IOStream>(CLASS_TAG, streamBuf);
+                    auto bufferStream = Aws::New<Aws::Utils::Stream::DefaultUnderlyingStream>(CLASS_TAG, 
+                            Aws::MakeUnique<Aws::Utils::Stream::PreallocatedStreamBuf>(CLASS_TAG, buffer, rangeEnd - rangeStart + 1));
                     partState->SetDownloadPartStream(bufferStream);
                     return bufferStream;
                 };

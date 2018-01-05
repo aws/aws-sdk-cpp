@@ -68,11 +68,11 @@ static const char* ALLOCATION_TAG = "TableOperationTest";
 
 namespace {
 
-Aws::String DYNAMODB_INTEGRATION_TEST_ID = "";
+static std::string DYNAMODB_INTEGRATION_TEST_ID;
 
 Aws::String GetTablePrefix()
 {
-    return Aws::Testing::GetAwsResourcePrefix() + TEST_TABLE_PREFIX + DYNAMODB_INTEGRATION_TEST_ID + "_";
+    return Aws::Testing::GetAwsResourcePrefix() + TEST_TABLE_PREFIX + DYNAMODB_INTEGRATION_TEST_ID.c_str() + "_";
 }
 
 Aws::String BuildTableName(const char* baseName)
@@ -191,7 +191,7 @@ protected:
     {
         m_limiter = Aws::MakeShared<Aws::Utils::RateLimits::DefaultRateLimiter<>>(ALLOCATION_TAG, 200000);
         SetUpClient(Aws::Http::TransferLibType::DEFAULT_CLIENT);
-        DYNAMODB_INTEGRATION_TEST_ID = Aws::Utils::UUID::RandomUUID();
+        DYNAMODB_INTEGRATION_TEST_ID = Aws::String(Aws::Utils::UUID::RandomUUID()).c_str();
         // delete all tables, just in case
         DeleteAllTables();
     }
@@ -199,7 +199,6 @@ protected:
     static void TearDownTestCase()
     {
         DeleteAllTables();
-
         m_limiter = nullptr;
         m_client = nullptr;
     }

@@ -203,8 +203,8 @@ protected:
 
     static Aws::String GetTestBucketName()
     {
-        static const Aws::String suffix = Aws::Utils::UUID::RandomUUID();
-        return Aws::Testing::GetAwsResourcePrefix() + TEST_BUCKET_NAME_BASE + suffix;
+        static const std::string suffix = Aws::String(Aws::Utils::UUID::RandomUUID()).c_str();
+        return Aws::Testing::GetAwsResourcePrefix() + TEST_BUCKET_NAME_BASE + suffix.c_str();
     }
 
     static bool AreFilesSame(const Aws::String& fileName, const Aws::String& fileName2)

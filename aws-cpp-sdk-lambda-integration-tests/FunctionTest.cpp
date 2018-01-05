@@ -93,7 +93,7 @@ public:
     static std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> m_limiter;
     static std::shared_ptr<Aws::IAM::Model::Role> m_role;
     static std::shared_ptr<Aws::AccessManagement::AccessManagementClient> m_accessManagementClient;
-    static Aws::Map<Aws::String, Aws::String> functionArnMapping;
+    static std::map<Aws::String, Aws::String> functionArnMapping;
 
 protected:
 
@@ -145,7 +145,9 @@ protected:
         DeleteAllFunctions();
         DeleteKinesisStream();
         DeleteIAMRole();
-
+        // Return the memory claimed for static variables to memory manager before shutting down memory manager.
+        // Otherwise there will be double free crash.
+        functionArnMapping.clear();
         m_limiter = nullptr;
         m_client = nullptr;
         m_kinesis_client = nullptr;
@@ -381,7 +383,7 @@ std::shared_ptr<KinesisClient> FunctionTest::m_kinesis_client(nullptr);
 std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> FunctionTest::m_limiter(nullptr);
 std::shared_ptr<Aws::IAM::Model::Role> FunctionTest::m_role(nullptr);
 std::shared_ptr< Aws::AccessManagement::AccessManagementClient > FunctionTest::m_accessManagementClient(nullptr);
-Aws::Map<Aws::String, Aws::String> FunctionTest::functionArnMapping;
+std::map<Aws::String, Aws::String> FunctionTest::functionArnMapping;
 
 
 TEST_F(FunctionTest, TestListFunction)

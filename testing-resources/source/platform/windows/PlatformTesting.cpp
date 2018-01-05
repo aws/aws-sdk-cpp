@@ -28,7 +28,7 @@ int SetEnv(const char* name, const char* value, int overwrite)
 {
     AWS_UNREFERENCED_PARAM(overwrite);
 
-    Aws::StringStream ss;
+    std::stringstream ss;
     ss << name << "=" << value;
     return _putenv(ss.str().c_str());
 }

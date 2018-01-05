@@ -16,6 +16,7 @@
 #pragma once
 
 #include <aws/core/Core_EXPORTS.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 
 namespace Aws
@@ -72,6 +73,7 @@ namespace Aws
                 using Base = Aws::IOStream;
 
                 DefaultUnderlyingStream();
+                DefaultUnderlyingStream(Aws::UniquePtr<std::streambuf> buf);
                 virtual ~DefaultUnderlyingStream();
             };
 
