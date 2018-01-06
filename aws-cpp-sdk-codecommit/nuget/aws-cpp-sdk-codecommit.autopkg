@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-CodeCommit;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.3.20150413.32;
+        version : 1.3.20150413.33;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS CodeCommit);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.3.32
+            AWSSDKCPP-Core/1.3.33
        }
     }
 
