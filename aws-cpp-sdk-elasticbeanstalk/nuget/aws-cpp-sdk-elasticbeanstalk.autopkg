@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-ElasticBeanstalk;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.3.20101201.35;
+        version : 1.3.20101201.36;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Elastic Beanstalk);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.3.35
+            AWSSDKCPP-Core/1.3.36
        }
     }
 
