@@ -27,7 +27,9 @@ CreateMicrosoftADRequest::CreateMicrosoftADRequest() :
     m_shortNameHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_vpcSettingsHasBeenSet(false)
+    m_vpcSettingsHasBeenSet(false),
+    m_edition(DirectoryEdition::NOT_SET),
+    m_editionHasBeenSet(false)
 {
 }
 
@@ -63,6 +65,11 @@ Aws::String CreateMicrosoftADRequest::SerializePayload() const
   {
    payload.WithObject("VpcSettings", m_vpcSettings.Jsonize());
 
+  }
+
+  if(m_editionHasBeenSet)
+  {
+   payload.WithString("Edition", DirectoryEditionMapper::GetNameForDirectoryEdition(m_edition));
   }
 
   return payload.WriteReadable();

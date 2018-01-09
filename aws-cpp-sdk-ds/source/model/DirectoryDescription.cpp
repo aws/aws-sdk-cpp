@@ -34,6 +34,8 @@ DirectoryDescription::DirectoryDescription() :
     m_shortNameHasBeenSet(false),
     m_size(DirectorySize::NOT_SET),
     m_sizeHasBeenSet(false),
+    m_edition(DirectoryEdition::NOT_SET),
+    m_editionHasBeenSet(false),
     m_aliasHasBeenSet(false),
     m_accessUrlHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -63,6 +65,8 @@ DirectoryDescription::DirectoryDescription(const JsonValue& jsonValue) :
     m_shortNameHasBeenSet(false),
     m_size(DirectorySize::NOT_SET),
     m_sizeHasBeenSet(false),
+    m_edition(DirectoryEdition::NOT_SET),
+    m_editionHasBeenSet(false),
     m_aliasHasBeenSet(false),
     m_accessUrlHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -115,6 +119,13 @@ DirectoryDescription& DirectoryDescription::operator =(const JsonValue& jsonValu
     m_size = DirectorySizeMapper::GetDirectorySizeForName(jsonValue.GetString("Size"));
 
     m_sizeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Edition"))
+  {
+    m_edition = DirectoryEditionMapper::GetDirectoryEditionForName(jsonValue.GetString("Edition"));
+
+    m_editionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Alias"))
@@ -253,6 +264,11 @@ JsonValue DirectoryDescription::Jsonize() const
   if(m_sizeHasBeenSet)
   {
    payload.WithString("Size", DirectorySizeMapper::GetNameForDirectorySize(m_size));
+  }
+
+  if(m_editionHasBeenSet)
+  {
+   payload.WithString("Edition", DirectoryEditionMapper::GetNameForDirectoryEdition(m_edition));
   }
 
   if(m_aliasHasBeenSet)
