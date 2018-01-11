@@ -27,6 +27,8 @@ CreateDBInstanceReadReplicaRequest::CreateDBInstanceReadReplicaRequest() :
     m_availabilityZoneHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
+    m_multiAZ(false),
+    m_multiAZHasBeenSet(false),
     m_autoMinorVersionUpgrade(false),
     m_autoMinorVersionUpgradeHasBeenSet(false),
     m_iops(0),
@@ -79,6 +81,11 @@ Aws::String CreateDBInstanceReadReplicaRequest::SerializePayload() const
   if(m_portHasBeenSet)
   {
     ss << "Port=" << m_port << "&";
+  }
+
+  if(m_multiAZHasBeenSet)
+  {
+    ss << "MultiAZ=" << std::boolalpha << m_multiAZ << "&";
   }
 
   if(m_autoMinorVersionUpgradeHasBeenSet)

@@ -383,6 +383,22 @@ namespace Model
 
 
     /**
+     * <p>Specifies whether the read replica is in a Multi-AZ deployment. </p>
+     */
+    inline bool GetMultiAZ() const{ return m_multiAZ; }
+
+    /**
+     * <p>Specifies whether the read replica is in a Multi-AZ deployment. </p>
+     */
+    inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
+
+    /**
+     * <p>Specifies whether the read replica is in a Multi-AZ deployment. </p>
+     */
+    inline CreateDBInstanceReadReplicaRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
+
+
+    /**
      * <p>Indicates that minor engine upgrades are applied automatically to the Read
      * Replica during the maintenance window.</p> <p>Default: Inherits from the source
      * DB instance</p>
@@ -1362,6 +1378,9 @@ namespace Model
 
     int m_port;
     bool m_portHasBeenSet;
+
+    bool m_multiAZ;
+    bool m_multiAZHasBeenSet;
 
     bool m_autoMinorVersionUpgrade;
     bool m_autoMinorVersionUpgradeHasBeenSet;

@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-DAX;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.3.20170419.36;
+        version : 1.3.20170419.37;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon DynamoDB Accelerator (DAX));
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.3.36
+            AWSSDKCPP-Core/1.3.37
        }
     }
 

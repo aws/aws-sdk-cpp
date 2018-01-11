@@ -1038,29 +1038,26 @@ namespace Model
 
 
     /**
-     * <p> Specifies if the DB instance is a Multi-AZ deployment. Changing this
+     * <p>Specifies if the DB instance is a Multi-AZ deployment. Changing this
      * parameter does not result in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. </p> <p>Constraints: Cannot be specified if
-     * the DB instance is a Read Replica.</p>
+     * <code>true</code> for this request. </p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
-     * <p> Specifies if the DB instance is a Multi-AZ deployment. Changing this
+     * <p>Specifies if the DB instance is a Multi-AZ deployment. Changing this
      * parameter does not result in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. </p> <p>Constraints: Cannot be specified if
-     * the DB instance is a Read Replica.</p>
+     * <code>true</code> for this request. </p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
-     * <p> Specifies if the DB instance is a Multi-AZ deployment. Changing this
+     * <p>Specifies if the DB instance is a Multi-AZ deployment. Changing this
      * parameter does not result in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. </p> <p>Constraints: Cannot be specified if
-     * the DB instance is a Read Replica.</p>
+     * <code>true</code> for this request. </p>
      */
     inline ModifyDBInstanceRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 

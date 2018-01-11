@@ -46,6 +46,7 @@ static const int CERTIFICATE_NOT_FOUND_HASH = HashingUtils::HashString("Certific
 static const int INVALID_SCHEME_HASH = HashingUtils::HashString("InvalidScheme");
 static const int DEPENDENCY_THROTTLE_HASH = HashingUtils::HashString("DependencyThrottle");
 static const int POLICY_TYPE_NOT_FOUND_HASH = HashingUtils::HashString("PolicyTypeNotFound");
+static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OperationNotPermitted");
 static const int DUPLICATE_TAG_KEYS_HASH = HashingUtils::HashString("DuplicateTagKeys");
 static const int LISTENER_NOT_FOUND_HASH = HashingUtils::HashString("ListenerNotFound");
 static const int INVALID_SECURITY_GROUP_HASH = HashingUtils::HashString("InvalidSecurityGroup");
@@ -126,6 +127,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == POLICY_TYPE_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::POLICY_TYPE_NOT_FOUND), false);
+  }
+  else if (hashCode == OPERATION_NOT_PERMITTED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::OPERATION_NOT_PERMITTED), false);
   }
   else if (hashCode == DUPLICATE_TAG_KEYS_HASH)
   {

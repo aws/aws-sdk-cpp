@@ -106,8 +106,7 @@ namespace Model
      * <p>The IDs of the subnets to attach to the load balancer. You can specify only
      * one subnet per Availability Zone. You must specify either subnets or subnet
      * mappings.</p> <p>[Application Load Balancers] You must specify subnets from at
-     * least two Availability Zones.</p> <p>[Network Load Balancers] You can specify
-     * subnets from one or more Availability Zones.</p>
+     * least two Availability Zones.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
 
@@ -115,8 +114,7 @@ namespace Model
      * <p>The IDs of the subnets to attach to the load balancer. You can specify only
      * one subnet per Availability Zone. You must specify either subnets or subnet
      * mappings.</p> <p>[Application Load Balancers] You must specify subnets from at
-     * least two Availability Zones.</p> <p>[Network Load Balancers] You can specify
-     * subnets from one or more Availability Zones.</p>
+     * least two Availability Zones.</p>
      */
     inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
 
@@ -124,8 +122,7 @@ namespace Model
      * <p>The IDs of the subnets to attach to the load balancer. You can specify only
      * one subnet per Availability Zone. You must specify either subnets or subnet
      * mappings.</p> <p>[Application Load Balancers] You must specify subnets from at
-     * least two Availability Zones.</p> <p>[Network Load Balancers] You can specify
-     * subnets from one or more Availability Zones.</p>
+     * least two Availability Zones.</p>
      */
     inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
 
@@ -133,8 +130,7 @@ namespace Model
      * <p>The IDs of the subnets to attach to the load balancer. You can specify only
      * one subnet per Availability Zone. You must specify either subnets or subnet
      * mappings.</p> <p>[Application Load Balancers] You must specify subnets from at
-     * least two Availability Zones.</p> <p>[Network Load Balancers] You can specify
-     * subnets from one or more Availability Zones.</p>
+     * least two Availability Zones.</p>
      */
     inline CreateLoadBalancerRequest& WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
 
@@ -142,8 +138,7 @@ namespace Model
      * <p>The IDs of the subnets to attach to the load balancer. You can specify only
      * one subnet per Availability Zone. You must specify either subnets or subnet
      * mappings.</p> <p>[Application Load Balancers] You must specify subnets from at
-     * least two Availability Zones.</p> <p>[Network Load Balancers] You can specify
-     * subnets from one or more Availability Zones.</p>
+     * least two Availability Zones.</p>
      */
     inline CreateLoadBalancerRequest& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(std::move(value)); return *this;}
 
@@ -151,8 +146,7 @@ namespace Model
      * <p>The IDs of the subnets to attach to the load balancer. You can specify only
      * one subnet per Availability Zone. You must specify either subnets or subnet
      * mappings.</p> <p>[Application Load Balancers] You must specify subnets from at
-     * least two Availability Zones.</p> <p>[Network Load Balancers] You can specify
-     * subnets from one or more Availability Zones.</p>
+     * least two Availability Zones.</p>
      */
     inline CreateLoadBalancerRequest& AddSubnets(const Aws::String& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
@@ -160,8 +154,7 @@ namespace Model
      * <p>The IDs of the subnets to attach to the load balancer. You can specify only
      * one subnet per Availability Zone. You must specify either subnets or subnet
      * mappings.</p> <p>[Application Load Balancers] You must specify subnets from at
-     * least two Availability Zones.</p> <p>[Network Load Balancers] You can specify
-     * subnets from one or more Availability Zones.</p>
+     * least two Availability Zones.</p>
      */
     inline CreateLoadBalancerRequest& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
 
@@ -169,8 +162,7 @@ namespace Model
      * <p>The IDs of the subnets to attach to the load balancer. You can specify only
      * one subnet per Availability Zone. You must specify either subnets or subnet
      * mappings.</p> <p>[Application Load Balancers] You must specify subnets from at
-     * least two Availability Zones.</p> <p>[Network Load Balancers] You can specify
-     * subnets from one or more Availability Zones.</p>
+     * least two Availability Zones.</p>
      */
     inline CreateLoadBalancerRequest& AddSubnets(const char* value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
@@ -178,70 +170,63 @@ namespace Model
     /**
      * <p>The IDs of the subnets to attach to the load balancer. You can specify only
      * one subnet per Availability Zone. You must specify either subnets or subnet
-     * mappings.</p> <p>[Application Load Balancers] You must specify subnets from at
-     * least two Availability Zones. You cannot specify Elastic IP addresses for your
-     * subnets.</p> <p>[Network Load Balancers] You can specify subnets from one or
-     * more Availability Zones. You can specify one Elastic IP address per subnet.</p>
+     * mappings.</p> <p>[Network Load Balancers] You can specify one Elastic IP address
+     * per subnet.</p> <p>[Application Load Balancers] You cannot specify Elastic IP
+     * addresses for your subnets.</p>
      */
     inline const Aws::Vector<SubnetMapping>& GetSubnetMappings() const{ return m_subnetMappings; }
 
     /**
      * <p>The IDs of the subnets to attach to the load balancer. You can specify only
      * one subnet per Availability Zone. You must specify either subnets or subnet
-     * mappings.</p> <p>[Application Load Balancers] You must specify subnets from at
-     * least two Availability Zones. You cannot specify Elastic IP addresses for your
-     * subnets.</p> <p>[Network Load Balancers] You can specify subnets from one or
-     * more Availability Zones. You can specify one Elastic IP address per subnet.</p>
+     * mappings.</p> <p>[Network Load Balancers] You can specify one Elastic IP address
+     * per subnet.</p> <p>[Application Load Balancers] You cannot specify Elastic IP
+     * addresses for your subnets.</p>
      */
     inline void SetSubnetMappings(const Aws::Vector<SubnetMapping>& value) { m_subnetMappingsHasBeenSet = true; m_subnetMappings = value; }
 
     /**
      * <p>The IDs of the subnets to attach to the load balancer. You can specify only
      * one subnet per Availability Zone. You must specify either subnets or subnet
-     * mappings.</p> <p>[Application Load Balancers] You must specify subnets from at
-     * least two Availability Zones. You cannot specify Elastic IP addresses for your
-     * subnets.</p> <p>[Network Load Balancers] You can specify subnets from one or
-     * more Availability Zones. You can specify one Elastic IP address per subnet.</p>
+     * mappings.</p> <p>[Network Load Balancers] You can specify one Elastic IP address
+     * per subnet.</p> <p>[Application Load Balancers] You cannot specify Elastic IP
+     * addresses for your subnets.</p>
      */
     inline void SetSubnetMappings(Aws::Vector<SubnetMapping>&& value) { m_subnetMappingsHasBeenSet = true; m_subnetMappings = std::move(value); }
 
     /**
      * <p>The IDs of the subnets to attach to the load balancer. You can specify only
      * one subnet per Availability Zone. You must specify either subnets or subnet
-     * mappings.</p> <p>[Application Load Balancers] You must specify subnets from at
-     * least two Availability Zones. You cannot specify Elastic IP addresses for your
-     * subnets.</p> <p>[Network Load Balancers] You can specify subnets from one or
-     * more Availability Zones. You can specify one Elastic IP address per subnet.</p>
+     * mappings.</p> <p>[Network Load Balancers] You can specify one Elastic IP address
+     * per subnet.</p> <p>[Application Load Balancers] You cannot specify Elastic IP
+     * addresses for your subnets.</p>
      */
     inline CreateLoadBalancerRequest& WithSubnetMappings(const Aws::Vector<SubnetMapping>& value) { SetSubnetMappings(value); return *this;}
 
     /**
      * <p>The IDs of the subnets to attach to the load balancer. You can specify only
      * one subnet per Availability Zone. You must specify either subnets or subnet
-     * mappings.</p> <p>[Application Load Balancers] You must specify subnets from at
-     * least two Availability Zones. You cannot specify Elastic IP addresses for your
-     * subnets.</p> <p>[Network Load Balancers] You can specify subnets from one or
-     * more Availability Zones. You can specify one Elastic IP address per subnet.</p>
+     * mappings.</p> <p>[Network Load Balancers] You can specify one Elastic IP address
+     * per subnet.</p> <p>[Application Load Balancers] You cannot specify Elastic IP
+     * addresses for your subnets.</p>
      */
     inline CreateLoadBalancerRequest& WithSubnetMappings(Aws::Vector<SubnetMapping>&& value) { SetSubnetMappings(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of the subnets to attach to the load balancer. You can specify only
      * one subnet per Availability Zone. You must specify either subnets or subnet
-     * mappings.</p> <p>[Application Load Balancers] You must specify subnets from at
-     * least two Availability Zones. You cannot specify Elastic IP addresses for your
-     * subnets.</p> <p>[Network Load Balancers] You can specify subnets from one or
-     * more Availability Zones. You can specify one Elastic IP address per subnet.</p>
+     * mappings.</p> <p>[Network Load Balancers] You can specify one Elastic IP address
+     * per subnet.</p> <p>[Application Load Balancers] You cannot specify Elastic IP
+     * addresses for your subnets.</p>
      */
     inline CreateLoadBalancerRequest& AddSubnetMappings(const SubnetMapping& value) { m_subnetMappingsHasBeenSet = true; m_subnetMappings.push_back(value); return *this; }
 
     /**
      * <p>The IDs of the subnets to attach to the load balancer. You can specify only
      * one subnet per Availability Zone. You must specify either subnets or subnet
-     * mappings.</p> <p>[Application Load Balancers] You must specify subnets from at
-     * least two Availability Zones. You cannot specify Elastic IP addresses for your
-     * subnets.</p> <p>[Network Load Balancers] You can specify subnets from one or
-     * more Availability Zones. You can specify one Elastic IP address per subnet.</p>
+     * mappings.</p> <p>[Network Load Balancers] You can specify one Elastic IP address
+     * per subnet.</p> <p>[Application Load Balancers] You cannot specify Elastic IP
+     * addresses for your subnets.</p>
      */
     inline CreateLoadBalancerRequest& AddSubnetMappings(SubnetMapping&& value) { m_subnetMappingsHasBeenSet = true; m_subnetMappings.push_back(std::move(value)); return *this; }
 
