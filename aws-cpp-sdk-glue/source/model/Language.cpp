@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/glue/model/Logical.h>
+#include <aws/glue/model/Language.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -27,42 +27,42 @@ namespace Aws
   {
     namespace Model
     {
-      namespace LogicalMapper
+      namespace LanguageMapper
       {
 
-        static const int AND_HASH = HashingUtils::HashString("AND");
-        static const int ANY_HASH = HashingUtils::HashString("ANY");
+        static const int PYTHON_HASH = HashingUtils::HashString("PYTHON");
+        static const int SCALA_HASH = HashingUtils::HashString("SCALA");
 
 
-        Logical GetLogicalForName(const Aws::String& name)
+        Language GetLanguageForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == AND_HASH)
+          if (hashCode == PYTHON_HASH)
           {
-            return Logical::AND;
+            return Language::PYTHON;
           }
-          else if (hashCode == ANY_HASH)
+          else if (hashCode == SCALA_HASH)
           {
-            return Logical::ANY;
+            return Language::SCALA;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<Logical>(hashCode);
+            return static_cast<Language>(hashCode);
           }
 
-          return Logical::NOT_SET;
+          return Language::NOT_SET;
         }
 
-        Aws::String GetNameForLogical(Logical enumValue)
+        Aws::String GetNameForLanguage(Language enumValue)
         {
           switch(enumValue)
           {
-          case Logical::AND:
-            return "AND";
-          case Logical::ANY:
-            return "ANY";
+          case Language::PYTHON:
+            return "PYTHON";
+          case Language::SCALA:
+            return "SCALA";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -74,7 +74,7 @@ namespace Aws
           }
         }
 
-      } // namespace LogicalMapper
+      } // namespace LanguageMapper
     } // namespace Model
   } // namespace Glue
 } // namespace Aws

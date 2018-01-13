@@ -17,6 +17,7 @@
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/GlueRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/glue/model/Language.h>
 #include <aws/glue/model/CodeGenNode.h>
 #include <aws/glue/model/CodeGenEdge.h>
 #include <utility>
@@ -117,6 +118,32 @@ namespace Model
      */
     inline CreateScriptRequest& AddDagEdges(CodeGenEdge&& value) { m_dagEdgesHasBeenSet = true; m_dagEdges.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The programming language of the resulting code from the DAG.</p>
+     */
+    inline const Language& GetLanguage() const{ return m_language; }
+
+    /**
+     * <p>The programming language of the resulting code from the DAG.</p>
+     */
+    inline void SetLanguage(const Language& value) { m_languageHasBeenSet = true; m_language = value; }
+
+    /**
+     * <p>The programming language of the resulting code from the DAG.</p>
+     */
+    inline void SetLanguage(Language&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
+
+    /**
+     * <p>The programming language of the resulting code from the DAG.</p>
+     */
+    inline CreateScriptRequest& WithLanguage(const Language& value) { SetLanguage(value); return *this;}
+
+    /**
+     * <p>The programming language of the resulting code from the DAG.</p>
+     */
+    inline CreateScriptRequest& WithLanguage(Language&& value) { SetLanguage(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<CodeGenNode> m_dagNodes;
@@ -124,6 +151,9 @@ namespace Model
 
     Aws::Vector<CodeGenEdge> m_dagEdges;
     bool m_dagEdgesHasBeenSet;
+
+    Language m_language;
+    bool m_languageHasBeenSet;
   };
 
 } // namespace Model

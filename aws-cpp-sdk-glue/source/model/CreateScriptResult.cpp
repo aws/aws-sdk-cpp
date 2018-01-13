@@ -44,6 +44,12 @@ CreateScriptResult& CreateScriptResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("ScalaCode"))
+  {
+    m_scalaCode = jsonValue.GetString("ScalaCode");
+
+  }
+
 
 
   return *this;

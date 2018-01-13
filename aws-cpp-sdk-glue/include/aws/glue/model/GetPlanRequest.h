@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/model/CatalogEntry.h>
 #include <aws/glue/model/Location.h>
+#include <aws/glue/model/Language.h>
 #include <aws/glue/model/MappingEntry.h>
 #include <utility>
 
@@ -170,6 +171,32 @@ namespace Model
      */
     inline GetPlanRequest& WithLocation(Location&& value) { SetLocation(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The programming language of the code to perform the mapping.</p>
+     */
+    inline const Language& GetLanguage() const{ return m_language; }
+
+    /**
+     * <p>The programming language of the code to perform the mapping.</p>
+     */
+    inline void SetLanguage(const Language& value) { m_languageHasBeenSet = true; m_language = value; }
+
+    /**
+     * <p>The programming language of the code to perform the mapping.</p>
+     */
+    inline void SetLanguage(Language&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
+
+    /**
+     * <p>The programming language of the code to perform the mapping.</p>
+     */
+    inline GetPlanRequest& WithLanguage(const Language& value) { SetLanguage(value); return *this;}
+
+    /**
+     * <p>The programming language of the code to perform the mapping.</p>
+     */
+    inline GetPlanRequest& WithLanguage(Language&& value) { SetLanguage(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<MappingEntry> m_mapping;
@@ -183,6 +210,9 @@ namespace Model
 
     Location m_location;
     bool m_locationHasBeenSet;
+
+    Language m_language;
+    bool m_languageHasBeenSet;
   };
 
 } // namespace Model

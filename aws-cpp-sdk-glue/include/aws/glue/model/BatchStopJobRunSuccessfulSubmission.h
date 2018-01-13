@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>Details about the job run which is submitted successfully for
-   * stopping.</p><p><h3>See Also:</h3>   <a
+   * <p>Records a successful request to stop a specified JobRun.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchStopJobRunSuccessfulSubmission">AWS
    * API Reference</a></p>
    */
@@ -48,73 +48,73 @@ namespace Model
 
 
     /**
-     * <p>The name of the job.</p>
+     * <p>The Name of the Job in question.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
 
     /**
-     * <p>The name of the job.</p>
+     * <p>The Name of the Job in question.</p>
      */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
 
     /**
-     * <p>The name of the job.</p>
+     * <p>The Name of the Job in question.</p>
      */
     inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
 
     /**
-     * <p>The name of the job.</p>
+     * <p>The Name of the Job in question.</p>
      */
     inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
 
     /**
-     * <p>The name of the job.</p>
+     * <p>The Name of the Job in question.</p>
      */
     inline BatchStopJobRunSuccessfulSubmission& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
 
     /**
-     * <p>The name of the job.</p>
+     * <p>The Name of the Job in question.</p>
      */
     inline BatchStopJobRunSuccessfulSubmission& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the job.</p>
+     * <p>The Name of the Job in question.</p>
      */
     inline BatchStopJobRunSuccessfulSubmission& WithJobName(const char* value) { SetJobName(value); return *this;}
 
 
     /**
-     * <p>The job run Id.</p>
+     * <p>The JobRunId of the JobRun in question.</p>
      */
     inline const Aws::String& GetJobRunId() const{ return m_jobRunId; }
 
     /**
-     * <p>The job run Id.</p>
+     * <p>The JobRunId of the JobRun in question.</p>
      */
     inline void SetJobRunId(const Aws::String& value) { m_jobRunIdHasBeenSet = true; m_jobRunId = value; }
 
     /**
-     * <p>The job run Id.</p>
+     * <p>The JobRunId of the JobRun in question.</p>
      */
     inline void SetJobRunId(Aws::String&& value) { m_jobRunIdHasBeenSet = true; m_jobRunId = std::move(value); }
 
     /**
-     * <p>The job run Id.</p>
+     * <p>The JobRunId of the JobRun in question.</p>
      */
     inline void SetJobRunId(const char* value) { m_jobRunIdHasBeenSet = true; m_jobRunId.assign(value); }
 
     /**
-     * <p>The job run Id.</p>
+     * <p>The JobRunId of the JobRun in question.</p>
      */
     inline BatchStopJobRunSuccessfulSubmission& WithJobRunId(const Aws::String& value) { SetJobRunId(value); return *this;}
 
     /**
-     * <p>The job run Id.</p>
+     * <p>The JobRunId of the JobRun in question.</p>
      */
     inline BatchStopJobRunSuccessfulSubmission& WithJobRunId(Aws::String&& value) { SetJobRunId(std::move(value)); return *this;}
 
     /**
-     * <p>The job run Id.</p>
+     * <p>The JobRunId of the JobRun in question.</p>
      */
     inline BatchStopJobRunSuccessfulSubmission& WithJobRunId(const char* value) { SetJobRunId(value); return *this;}
 

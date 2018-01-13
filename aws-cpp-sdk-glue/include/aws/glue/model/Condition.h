@@ -75,63 +75,75 @@ namespace Model
 
 
     /**
-     * <p>The name of the job in question.</p>
+     * <p>The name of the Job to whose JobRuns this condition applies and on which this
+     * trigger waits.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
 
     /**
-     * <p>The name of the job in question.</p>
+     * <p>The name of the Job to whose JobRuns this condition applies and on which this
+     * trigger waits.</p>
      */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
 
     /**
-     * <p>The name of the job in question.</p>
+     * <p>The name of the Job to whose JobRuns this condition applies and on which this
+     * trigger waits.</p>
      */
     inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
 
     /**
-     * <p>The name of the job in question.</p>
+     * <p>The name of the Job to whose JobRuns this condition applies and on which this
+     * trigger waits.</p>
      */
     inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
 
     /**
-     * <p>The name of the job in question.</p>
+     * <p>The name of the Job to whose JobRuns this condition applies and on which this
+     * trigger waits.</p>
      */
     inline Condition& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
 
     /**
-     * <p>The name of the job in question.</p>
+     * <p>The name of the Job to whose JobRuns this condition applies and on which this
+     * trigger waits.</p>
      */
     inline Condition& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the job in question.</p>
+     * <p>The name of the Job to whose JobRuns this condition applies and on which this
+     * trigger waits.</p>
      */
     inline Condition& WithJobName(const char* value) { SetJobName(value); return *this;}
 
 
     /**
-     * <p>The condition state.</p>
+     * <p>The condition state. Currently, the values supported are SUCCEEDED, STOPPED
+     * and FAILED.</p>
      */
     inline const JobRunState& GetState() const{ return m_state; }
 
     /**
-     * <p>The condition state.</p>
+     * <p>The condition state. Currently, the values supported are SUCCEEDED, STOPPED
+     * and FAILED.</p>
      */
     inline void SetState(const JobRunState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The condition state.</p>
+     * <p>The condition state. Currently, the values supported are SUCCEEDED, STOPPED
+     * and FAILED.</p>
      */
     inline void SetState(JobRunState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The condition state.</p>
+     * <p>The condition state. Currently, the values supported are SUCCEEDED, STOPPED
+     * and FAILED.</p>
      */
     inline Condition& WithState(const JobRunState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The condition state.</p>
+     * <p>The condition state. Currently, the values supported are SUCCEEDED, STOPPED
+     * and FAILED.</p>
      */
     inline Condition& WithState(JobRunState&& value) { SetState(std::move(value)); return *this;}
 

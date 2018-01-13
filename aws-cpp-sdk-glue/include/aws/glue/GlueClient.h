@@ -616,14 +616,14 @@ namespace Model
         virtual void BatchGetPartitionAsync(const Model::BatchGetPartitionRequest& request, const BatchGetPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stops a batch of job runs for a given job.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops one or more job runs for a specified Job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchStopJobRun">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchStopJobRunOutcome BatchStopJobRun(const Model::BatchStopJobRunRequest& request) const;
 
         /**
-         * <p>Stops a batch of job runs for a given job.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops one or more job runs for a specified Job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchStopJobRun">AWS
          * API Reference</a></p>
          *
@@ -632,7 +632,7 @@ namespace Model
         virtual Model::BatchStopJobRunOutcomeCallable BatchStopJobRunCallable(const Model::BatchStopJobRunRequest& request) const;
 
         /**
-         * <p>Stops a batch of job runs for a given job.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops one or more job runs for a specified Job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchStopJobRun">AWS
          * API Reference</a></p>
          *
@@ -831,16 +831,16 @@ namespace Model
         virtual void CreatePartitionAsync(const Model::CreatePartitionRequest& request, const CreatePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Transforms a directed acyclic graph (DAG) into a Python script.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Transforms a directed acyclic graph (DAG) into code.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateScript">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateScriptOutcome CreateScript(const Model::CreateScriptRequest& request) const;
 
         /**
-         * <p>Transforms a directed acyclic graph (DAG) into a Python script.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Transforms a directed acyclic graph (DAG) into code.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateScript">AWS
          * API Reference</a></p>
          *
@@ -849,8 +849,8 @@ namespace Model
         virtual Model::CreateScriptOutcomeCallable CreateScriptCallable(const Model::CreateScriptRequest& request) const;
 
         /**
-         * <p>Transforms a directed acyclic graph (DAG) into a Python script.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Transforms a directed acyclic graph (DAG) into code.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateScript">AWS
          * API Reference</a></p>
          *
@@ -1068,14 +1068,16 @@ namespace Model
         virtual void DeleteDevEndpointAsync(const Model::DeleteDevEndpointRequest& request, const DeleteDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a specified job.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a specified job. If the job is not found, no exception is
+         * thrown.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteJob">AWS API
          * Reference</a></p>
          */
         virtual Model::DeleteJobOutcome DeleteJob(const Model::DeleteJobRequest& request) const;
 
         /**
-         * <p>Deletes a specified job.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a specified job. If the job is not found, no exception is
+         * thrown.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteJob">AWS API
          * Reference</a></p>
          *
@@ -1084,7 +1086,8 @@ namespace Model
         virtual Model::DeleteJobOutcomeCallable DeleteJobCallable(const Model::DeleteJobRequest& request) const;
 
         /**
-         * <p>Deletes a specified job.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a specified job. If the job is not found, no exception is
+         * thrown.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteJob">AWS API
          * Reference</a></p>
          *
@@ -1143,14 +1146,16 @@ namespace Model
         virtual void DeleteTableAsync(const Model::DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a specified trigger.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a specified trigger. If the trigger is not found, no exception is
+         * thrown.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTrigger">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteTriggerOutcome DeleteTrigger(const Model::DeleteTriggerRequest& request) const;
 
         /**
-         * <p>Deletes a specified trigger.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a specified trigger. If the trigger is not found, no exception is
+         * thrown.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTrigger">AWS
          * API Reference</a></p>
          *
@@ -1159,7 +1164,8 @@ namespace Model
         virtual Model::DeleteTriggerOutcomeCallable DeleteTriggerCallable(const Model::DeleteTriggerRequest& request) const;
 
         /**
-         * <p>Deletes a specified trigger.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a specified trigger. If the trigger is not found, no exception is
+         * thrown.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTrigger">AWS
          * API Reference</a></p>
          *
@@ -1726,15 +1732,15 @@ namespace Model
         virtual void GetPartitionsAsync(const Model::GetPartitionsRequest& request, const GetPartitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a Python script to perform a specified mapping.</p><p><h3>See Also:</h3>
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPlan">AWS API
+         * <p>Gets code to perform a specified mapping.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPlan">AWS API
          * Reference</a></p>
          */
         virtual Model::GetPlanOutcome GetPlan(const Model::GetPlanRequest& request) const;
 
         /**
-         * <p>Gets a Python script to perform a specified mapping.</p><p><h3>See Also:</h3>
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPlan">AWS API
+         * <p>Gets code to perform a specified mapping.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPlan">AWS API
          * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1742,8 +1748,8 @@ namespace Model
         virtual Model::GetPlanOutcomeCallable GetPlanCallable(const Model::GetPlanRequest& request) const;
 
         /**
-         * <p>Gets a Python script to perform a specified mapping.</p><p><h3>See Also:</h3>
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPlan">AWS API
+         * <p>Gets code to perform a specified mapping.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPlan">AWS API
          * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -2078,14 +2084,20 @@ namespace Model
         virtual void StartJobRunAsync(const Model::StartJobRunRequest& request, const StartJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts an existing trigger.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts an existing trigger. See <a
+         * href="http://docs.aws.amazon.com/glue/latest/dg/trigger-job.html">Triggering
+         * Jobs</a> for information about how different types of trigger are
+         * started.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartTrigger">AWS
          * API Reference</a></p>
          */
         virtual Model::StartTriggerOutcome StartTrigger(const Model::StartTriggerRequest& request) const;
 
         /**
-         * <p>Starts an existing trigger.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts an existing trigger. See <a
+         * href="http://docs.aws.amazon.com/glue/latest/dg/trigger-job.html">Triggering
+         * Jobs</a> for information about how different types of trigger are
+         * started.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartTrigger">AWS
          * API Reference</a></p>
          *
@@ -2094,7 +2106,10 @@ namespace Model
         virtual Model::StartTriggerOutcomeCallable StartTriggerCallable(const Model::StartTriggerRequest& request) const;
 
         /**
-         * <p>Starts an existing trigger.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts an existing trigger. See <a
+         * href="http://docs.aws.amazon.com/glue/latest/dg/trigger-job.html">Triggering
+         * Jobs</a> for information about how different types of trigger are
+         * started.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartTrigger">AWS
          * API Reference</a></p>
          *

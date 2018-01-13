@@ -45,17 +45,23 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of concurrent runs allowed for a job.</p>
+     * <p>The maximum number of concurrent runs allowed for a job. The default is 1. An
+     * error is returned when this threshold is reached. The maximum value you can
+     * specify is controlled by a service limit.</p>
      */
     inline int GetMaxConcurrentRuns() const{ return m_maxConcurrentRuns; }
 
     /**
-     * <p>The maximum number of concurrent runs allowed for a job.</p>
+     * <p>The maximum number of concurrent runs allowed for a job. The default is 1. An
+     * error is returned when this threshold is reached. The maximum value you can
+     * specify is controlled by a service limit.</p>
      */
     inline void SetMaxConcurrentRuns(int value) { m_maxConcurrentRunsHasBeenSet = true; m_maxConcurrentRuns = value; }
 
     /**
-     * <p>The maximum number of concurrent runs allowed for a job.</p>
+     * <p>The maximum number of concurrent runs allowed for a job. The default is 1. An
+     * error is returned when this threshold is reached. The maximum value you can
+     * specify is controlled by a service limit.</p>
      */
     inline ExecutionProperty& WithMaxConcurrentRuns(int value) { SetMaxConcurrentRuns(value); return *this;}
 

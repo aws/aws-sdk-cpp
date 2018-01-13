@@ -117,17 +117,17 @@ namespace Model
 
 
     /**
-     * <p>A list of the predecessor runs to return as well.</p>
+     * <p>True if a list of predecessor runs should be returned.</p>
      */
     inline bool GetPredecessorsIncluded() const{ return m_predecessorsIncluded; }
 
     /**
-     * <p>A list of the predecessor runs to return as well.</p>
+     * <p>True if a list of predecessor runs should be returned.</p>
      */
     inline void SetPredecessorsIncluded(bool value) { m_predecessorsIncludedHasBeenSet = true; m_predecessorsIncluded = value; }
 
     /**
-     * <p>A list of the predecessor runs to return as well.</p>
+     * <p>True if a list of predecessor runs should be returned.</p>
      */
     inline GetJobRunRequest& WithPredecessorsIncluded(bool value) { SetPredecessorsIncluded(value); return *this;}
 

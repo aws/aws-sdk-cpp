@@ -23,19 +23,19 @@ namespace Glue
 {
 namespace Model
 {
-  enum class Logical
+  enum class Language
   {
     NOT_SET,
-    AND,
-    ANY
+    PYTHON,
+    SCALA
   };
 
-namespace LogicalMapper
+namespace LanguageMapper
 {
-AWS_GLUE_API Logical GetLogicalForName(const Aws::String& name);
+AWS_GLUE_API Language GetLanguageForName(const Aws::String& name);
 
-AWS_GLUE_API Aws::String GetNameForLogical(Logical value);
-} // namespace LogicalMapper
+AWS_GLUE_API Aws::String GetNameForLanguage(Language value);
+} // namespace LanguageMapper
 } // namespace Model
 } // namespace Glue
 } // namespace Aws

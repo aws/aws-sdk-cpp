@@ -46,78 +46,78 @@ namespace Model
 
 
     /**
-     * <p>The name of the job whose job runs are to be stopped.</p>
+     * <p>The name of the Job in question.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
 
     /**
-     * <p>The name of the job whose job runs are to be stopped.</p>
+     * <p>The name of the Job in question.</p>
      */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
 
     /**
-     * <p>The name of the job whose job runs are to be stopped.</p>
+     * <p>The name of the Job in question.</p>
      */
     inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
 
     /**
-     * <p>The name of the job whose job runs are to be stopped.</p>
+     * <p>The name of the Job in question.</p>
      */
     inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
 
     /**
-     * <p>The name of the job whose job runs are to be stopped.</p>
+     * <p>The name of the Job in question.</p>
      */
     inline BatchStopJobRunRequest& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
 
     /**
-     * <p>The name of the job whose job runs are to be stopped.</p>
+     * <p>The name of the Job in question.</p>
      */
     inline BatchStopJobRunRequest& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the job whose job runs are to be stopped.</p>
+     * <p>The name of the Job in question.</p>
      */
     inline BatchStopJobRunRequest& WithJobName(const char* value) { SetJobName(value); return *this;}
 
 
     /**
-     * <p>A list of job run Ids of the given job to be stopped.</p>
+     * <p>A list of the JobRunIds that should be stopped for that Job.</p>
      */
     inline const Aws::Vector<Aws::String>& GetJobRunIds() const{ return m_jobRunIds; }
 
     /**
-     * <p>A list of job run Ids of the given job to be stopped.</p>
+     * <p>A list of the JobRunIds that should be stopped for that Job.</p>
      */
     inline void SetJobRunIds(const Aws::Vector<Aws::String>& value) { m_jobRunIdsHasBeenSet = true; m_jobRunIds = value; }
 
     /**
-     * <p>A list of job run Ids of the given job to be stopped.</p>
+     * <p>A list of the JobRunIds that should be stopped for that Job.</p>
      */
     inline void SetJobRunIds(Aws::Vector<Aws::String>&& value) { m_jobRunIdsHasBeenSet = true; m_jobRunIds = std::move(value); }
 
     /**
-     * <p>A list of job run Ids of the given job to be stopped.</p>
+     * <p>A list of the JobRunIds that should be stopped for that Job.</p>
      */
     inline BatchStopJobRunRequest& WithJobRunIds(const Aws::Vector<Aws::String>& value) { SetJobRunIds(value); return *this;}
 
     /**
-     * <p>A list of job run Ids of the given job to be stopped.</p>
+     * <p>A list of the JobRunIds that should be stopped for that Job.</p>
      */
     inline BatchStopJobRunRequest& WithJobRunIds(Aws::Vector<Aws::String>&& value) { SetJobRunIds(std::move(value)); return *this;}
 
     /**
-     * <p>A list of job run Ids of the given job to be stopped.</p>
+     * <p>A list of the JobRunIds that should be stopped for that Job.</p>
      */
     inline BatchStopJobRunRequest& AddJobRunIds(const Aws::String& value) { m_jobRunIdsHasBeenSet = true; m_jobRunIds.push_back(value); return *this; }
 
     /**
-     * <p>A list of job run Ids of the given job to be stopped.</p>
+     * <p>A list of the JobRunIds that should be stopped for that Job.</p>
      */
     inline BatchStopJobRunRequest& AddJobRunIds(Aws::String&& value) { m_jobRunIdsHasBeenSet = true; m_jobRunIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of job run Ids of the given job to be stopped.</p>
+     * <p>A list of the JobRunIds that should be stopped for that Job.</p>
      */
     inline BatchStopJobRunRequest& AddJobRunIds(const char* value) { m_jobRunIdsHasBeenSet = true; m_jobRunIds.push_back(value); return *this; }
 

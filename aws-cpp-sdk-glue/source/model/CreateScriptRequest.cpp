@@ -24,7 +24,9 @@ using namespace Aws::Utils;
 
 CreateScriptRequest::CreateScriptRequest() : 
     m_dagNodesHasBeenSet(false),
-    m_dagEdgesHasBeenSet(false)
+    m_dagEdgesHasBeenSet(false),
+    m_language(Language::NOT_SET),
+    m_languageHasBeenSet(false)
 {
 }
 
@@ -52,6 +54,11 @@ Aws::String CreateScriptRequest::SerializePayload() const
    }
    payload.WithArray("DagEdges", std::move(dagEdgesJsonList));
 
+  }
+
+  if(m_languageHasBeenSet)
+  {
+   payload.WithString("Language", LanguageMapper::GetNameForLanguage(m_language));
   }
 
   return payload.WriteReadable();
