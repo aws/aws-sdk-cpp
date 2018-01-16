@@ -43,53 +43,63 @@ namespace Model
 
 
     /**
-     * <p>The name of the function you are setting concurrent execution limits on.</p>
+     * <p>The name of the function you are setting concurrent execution limits on. For
+     * more information, see <a>concurrent-executions</a>.</p>
      */
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
     /**
-     * <p>The name of the function you are setting concurrent execution limits on.</p>
+     * <p>The name of the function you are setting concurrent execution limits on. For
+     * more information, see <a>concurrent-executions</a>.</p>
      */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
-     * <p>The name of the function you are setting concurrent execution limits on.</p>
+     * <p>The name of the function you are setting concurrent execution limits on. For
+     * more information, see <a>concurrent-executions</a>.</p>
      */
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
-     * <p>The name of the function you are setting concurrent execution limits on.</p>
+     * <p>The name of the function you are setting concurrent execution limits on. For
+     * more information, see <a>concurrent-executions</a>.</p>
      */
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
     /**
-     * <p>The name of the function you are setting concurrent execution limits on.</p>
+     * <p>The name of the function you are setting concurrent execution limits on. For
+     * more information, see <a>concurrent-executions</a>.</p>
      */
     inline PutFunctionConcurrencyRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
     /**
-     * <p>The name of the function you are setting concurrent execution limits on.</p>
+     * <p>The name of the function you are setting concurrent execution limits on. For
+     * more information, see <a>concurrent-executions</a>.</p>
      */
     inline PutFunctionConcurrencyRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the function you are setting concurrent execution limits on.</p>
+     * <p>The name of the function you are setting concurrent execution limits on. For
+     * more information, see <a>concurrent-executions</a>.</p>
      */
     inline PutFunctionConcurrencyRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
 
     /**
-     * <p>The concurrent execution limit reserved for this function.</p>
+     * <p>The concurrent execution limit reserved for this function. For more
+     * information, see <a>concurrent-executions</a>.</p>
      */
     inline int GetReservedConcurrentExecutions() const{ return m_reservedConcurrentExecutions; }
 
     /**
-     * <p>The concurrent execution limit reserved for this function.</p>
+     * <p>The concurrent execution limit reserved for this function. For more
+     * information, see <a>concurrent-executions</a>.</p>
      */
     inline void SetReservedConcurrentExecutions(int value) { m_reservedConcurrentExecutionsHasBeenSet = true; m_reservedConcurrentExecutions = value; }
 
     /**
-     * <p>The concurrent execution limit reserved for this function.</p>
+     * <p>The concurrent execution limit reserved for this function. For more
+     * information, see <a>concurrent-executions</a>.</p>
      */
     inline PutFunctionConcurrencyRequest& WithReservedConcurrentExecutions(int value) { SetReservedConcurrentExecutions(value); return *this;}
 
