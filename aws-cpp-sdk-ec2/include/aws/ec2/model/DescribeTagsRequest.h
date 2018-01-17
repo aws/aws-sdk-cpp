@@ -80,14 +80,16 @@ namespace Model
      * <p>One or more filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p>
      * </li> <li> <p> <code>resource-id</code> - The resource ID.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
-     * <code>dhcp-options</code> | <code>image</code> | <code>instance</code> |
-     * <code>internet-gateway</code> | <code>network-acl</code> |
-     * <code>network-interface</code> | <code>reserved-instances</code> |
-     * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
+     * <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fpga-image</code> |
+     * <code>image</code> | <code>instance</code> | <code>internet-gateway</code> |
+     * <code>launch-template</code> | <code>natgateway</code> |
+     * <code>network-acl</code> | <code>network-interface</code> |
+     * <code>reserved-instances</code> | <code>route-table</code> |
+     * <code>security-group</code> | <code>snapshot</code> |
      * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code>
-     * | <code>vpc</code> | <code>vpn-connection</code> |
-     * <code>vpn-gateway</code>).</p> </li> <li> <p> <code>value</code> - The tag
-     * value.</p> </li> </ul>
+     * | <code>vpc</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>).</p> </li> <li> <p>
+     * <code>value</code> - The tag value.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -95,14 +97,16 @@ namespace Model
      * <p>One or more filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p>
      * </li> <li> <p> <code>resource-id</code> - The resource ID.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
-     * <code>dhcp-options</code> | <code>image</code> | <code>instance</code> |
-     * <code>internet-gateway</code> | <code>network-acl</code> |
-     * <code>network-interface</code> | <code>reserved-instances</code> |
-     * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
+     * <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fpga-image</code> |
+     * <code>image</code> | <code>instance</code> | <code>internet-gateway</code> |
+     * <code>launch-template</code> | <code>natgateway</code> |
+     * <code>network-acl</code> | <code>network-interface</code> |
+     * <code>reserved-instances</code> | <code>route-table</code> |
+     * <code>security-group</code> | <code>snapshot</code> |
      * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code>
-     * | <code>vpc</code> | <code>vpn-connection</code> |
-     * <code>vpn-gateway</code>).</p> </li> <li> <p> <code>value</code> - The tag
-     * value.</p> </li> </ul>
+     * | <code>vpc</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>).</p> </li> <li> <p>
+     * <code>value</code> - The tag value.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -110,14 +114,16 @@ namespace Model
      * <p>One or more filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p>
      * </li> <li> <p> <code>resource-id</code> - The resource ID.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
-     * <code>dhcp-options</code> | <code>image</code> | <code>instance</code> |
-     * <code>internet-gateway</code> | <code>network-acl</code> |
-     * <code>network-interface</code> | <code>reserved-instances</code> |
-     * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
+     * <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fpga-image</code> |
+     * <code>image</code> | <code>instance</code> | <code>internet-gateway</code> |
+     * <code>launch-template</code> | <code>natgateway</code> |
+     * <code>network-acl</code> | <code>network-interface</code> |
+     * <code>reserved-instances</code> | <code>route-table</code> |
+     * <code>security-group</code> | <code>snapshot</code> |
      * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code>
-     * | <code>vpc</code> | <code>vpn-connection</code> |
-     * <code>vpn-gateway</code>).</p> </li> <li> <p> <code>value</code> - The tag
-     * value.</p> </li> </ul>
+     * | <code>vpc</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>).</p> </li> <li> <p>
+     * <code>value</code> - The tag value.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -125,14 +131,16 @@ namespace Model
      * <p>One or more filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p>
      * </li> <li> <p> <code>resource-id</code> - The resource ID.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
-     * <code>dhcp-options</code> | <code>image</code> | <code>instance</code> |
-     * <code>internet-gateway</code> | <code>network-acl</code> |
-     * <code>network-interface</code> | <code>reserved-instances</code> |
-     * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
+     * <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fpga-image</code> |
+     * <code>image</code> | <code>instance</code> | <code>internet-gateway</code> |
+     * <code>launch-template</code> | <code>natgateway</code> |
+     * <code>network-acl</code> | <code>network-interface</code> |
+     * <code>reserved-instances</code> | <code>route-table</code> |
+     * <code>security-group</code> | <code>snapshot</code> |
      * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code>
-     * | <code>vpc</code> | <code>vpn-connection</code> |
-     * <code>vpn-gateway</code>).</p> </li> <li> <p> <code>value</code> - The tag
-     * value.</p> </li> </ul>
+     * | <code>vpc</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>).</p> </li> <li> <p>
+     * <code>value</code> - The tag value.</p> </li> </ul>
      */
     inline DescribeTagsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -140,14 +148,16 @@ namespace Model
      * <p>One or more filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p>
      * </li> <li> <p> <code>resource-id</code> - The resource ID.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
-     * <code>dhcp-options</code> | <code>image</code> | <code>instance</code> |
-     * <code>internet-gateway</code> | <code>network-acl</code> |
-     * <code>network-interface</code> | <code>reserved-instances</code> |
-     * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
+     * <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fpga-image</code> |
+     * <code>image</code> | <code>instance</code> | <code>internet-gateway</code> |
+     * <code>launch-template</code> | <code>natgateway</code> |
+     * <code>network-acl</code> | <code>network-interface</code> |
+     * <code>reserved-instances</code> | <code>route-table</code> |
+     * <code>security-group</code> | <code>snapshot</code> |
      * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code>
-     * | <code>vpc</code> | <code>vpn-connection</code> |
-     * <code>vpn-gateway</code>).</p> </li> <li> <p> <code>value</code> - The tag
-     * value.</p> </li> </ul>
+     * | <code>vpc</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>).</p> </li> <li> <p>
+     * <code>value</code> - The tag value.</p> </li> </ul>
      */
     inline DescribeTagsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -155,14 +165,16 @@ namespace Model
      * <p>One or more filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p>
      * </li> <li> <p> <code>resource-id</code> - The resource ID.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
-     * <code>dhcp-options</code> | <code>image</code> | <code>instance</code> |
-     * <code>internet-gateway</code> | <code>network-acl</code> |
-     * <code>network-interface</code> | <code>reserved-instances</code> |
-     * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
+     * <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fpga-image</code> |
+     * <code>image</code> | <code>instance</code> | <code>internet-gateway</code> |
+     * <code>launch-template</code> | <code>natgateway</code> |
+     * <code>network-acl</code> | <code>network-interface</code> |
+     * <code>reserved-instances</code> | <code>route-table</code> |
+     * <code>security-group</code> | <code>snapshot</code> |
      * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code>
-     * | <code>vpc</code> | <code>vpn-connection</code> |
-     * <code>vpn-gateway</code>).</p> </li> <li> <p> <code>value</code> - The tag
-     * value.</p> </li> </ul>
+     * | <code>vpc</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>).</p> </li> <li> <p>
+     * <code>value</code> - The tag value.</p> </li> </ul>
      */
     inline DescribeTagsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -170,14 +182,16 @@ namespace Model
      * <p>One or more filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p>
      * </li> <li> <p> <code>resource-id</code> - The resource ID.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
-     * <code>dhcp-options</code> | <code>image</code> | <code>instance</code> |
-     * <code>internet-gateway</code> | <code>network-acl</code> |
-     * <code>network-interface</code> | <code>reserved-instances</code> |
-     * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
+     * <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fpga-image</code> |
+     * <code>image</code> | <code>instance</code> | <code>internet-gateway</code> |
+     * <code>launch-template</code> | <code>natgateway</code> |
+     * <code>network-acl</code> | <code>network-interface</code> |
+     * <code>reserved-instances</code> | <code>route-table</code> |
+     * <code>security-group</code> | <code>snapshot</code> |
      * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code>
-     * | <code>vpc</code> | <code>vpn-connection</code> |
-     * <code>vpn-gateway</code>).</p> </li> <li> <p> <code>value</code> - The tag
-     * value.</p> </li> </ul>
+     * | <code>vpc</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>).</p> </li> <li> <p>
+     * <code>value</code> - The tag value.</p> </li> </ul>
      */
     inline DescribeTagsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

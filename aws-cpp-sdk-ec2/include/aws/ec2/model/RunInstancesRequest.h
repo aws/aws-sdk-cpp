@@ -121,37 +121,51 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>.</p>
+     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI
+     * is required to launch an instance and must be specified here or in a launch
+     * template.</p>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
 
     /**
-     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>.</p>
+     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI
+     * is required to launch an instance and must be specified here or in a launch
+     * template.</p>
      */
     inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
 
     /**
-     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>.</p>
+     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI
+     * is required to launch an instance and must be specified here or in a launch
+     * template.</p>
      */
     inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
 
     /**
-     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>.</p>
+     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI
+     * is required to launch an instance and must be specified here or in a launch
+     * template.</p>
      */
     inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
 
     /**
-     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>.</p>
+     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI
+     * is required to launch an instance and must be specified here or in a launch
+     * template.</p>
      */
     inline RunInstancesRequest& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
 
     /**
-     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>.</p>
+     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI
+     * is required to launch an instance and must be specified here or in a launch
+     * template.</p>
      */
     inline RunInstancesRequest& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>.</p>
+     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI
+     * is required to launch an instance and must be specified here or in a launch
+     * template.</p>
      */
     inline RunInstancesRequest& WithImageId(const char* value) { SetImageId(value); return *this;}
 
