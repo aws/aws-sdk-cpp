@@ -383,17 +383,35 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the read replica is in a Multi-AZ deployment. </p>
+     * <p>Specifies whether the read replica is in a Multi-AZ deployment. </p> <p>You
+     * can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of
+     * your replica in another Availability Zone for failover support for the replica.
+     * Creating your Read Replica as a Multi-AZ DB instance is independent of whether
+     * the source database is a Multi-AZ DB instance. </p> <note> <p>Currently
+     * PostgreSQL Read Replicas can only be created as single-AZ DB instances.</p>
+     * </note>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
-     * <p>Specifies whether the read replica is in a Multi-AZ deployment. </p>
+     * <p>Specifies whether the read replica is in a Multi-AZ deployment. </p> <p>You
+     * can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of
+     * your replica in another Availability Zone for failover support for the replica.
+     * Creating your Read Replica as a Multi-AZ DB instance is independent of whether
+     * the source database is a Multi-AZ DB instance. </p> <note> <p>Currently
+     * PostgreSQL Read Replicas can only be created as single-AZ DB instances.</p>
+     * </note>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
-     * <p>Specifies whether the read replica is in a Multi-AZ deployment. </p>
+     * <p>Specifies whether the read replica is in a Multi-AZ deployment. </p> <p>You
+     * can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of
+     * your replica in another Availability Zone for failover support for the replica.
+     * Creating your Read Replica as a Multi-AZ DB instance is independent of whether
+     * the source database is a Multi-AZ DB instance. </p> <note> <p>Currently
+     * PostgreSQL Read Replicas can only be created as single-AZ DB instances.</p>
+     * </note>
      */
     inline CreateDBInstanceReadReplicaRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
@@ -1362,6 +1380,55 @@ namespace Model
      */
     inline CreateDBInstanceReadReplicaRequest& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
+
+    /**
+     * <p>The list of logs that the new DB instance is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
+
+    /**
+     * <p>The list of logs that the new DB instance is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline void SetEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = value; }
+
+    /**
+     * <p>The list of logs that the new DB instance is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline void SetEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = std::move(value); }
+
+    /**
+     * <p>The list of logs that the new DB instance is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline CreateDBInstanceReadReplicaRequest& WithEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnableCloudwatchLogsExports(value); return *this;}
+
+    /**
+     * <p>The list of logs that the new DB instance is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline CreateDBInstanceReadReplicaRequest& WithEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnableCloudwatchLogsExports(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of logs that the new DB instance is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline CreateDBInstanceReadReplicaRequest& AddEnableCloudwatchLogsExports(const Aws::String& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
+
+    /**
+     * <p>The list of logs that the new DB instance is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline CreateDBInstanceReadReplicaRequest& AddEnableCloudwatchLogsExports(Aws::String&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The list of logs that the new DB instance is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline CreateDBInstanceReadReplicaRequest& AddEnableCloudwatchLogsExports(const char* value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -1426,6 +1493,9 @@ namespace Model
 
     Aws::String m_performanceInsightsKMSKeyId;
     bool m_performanceInsightsKMSKeyIdHasBeenSet;
+
+    Aws::Vector<Aws::String> m_enableCloudwatchLogsExports;
+    bool m_enableCloudwatchLogsExportsHasBeenSet;
   };
 
 } // namespace Model

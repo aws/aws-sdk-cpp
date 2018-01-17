@@ -94,7 +94,8 @@ DBInstance::DBInstance() :
     m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
     m_performanceInsightsEnabled(false),
     m_performanceInsightsEnabledHasBeenSet(false),
-    m_performanceInsightsKMSKeyIdHasBeenSet(false)
+    m_performanceInsightsKMSKeyIdHasBeenSet(false),
+    m_enabledCloudwatchLogsExportsHasBeenSet(false)
 {
 }
 
@@ -162,7 +163,8 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
     m_performanceInsightsEnabled(false),
     m_performanceInsightsEnabledHasBeenSet(false),
-    m_performanceInsightsKMSKeyIdHasBeenSet(false)
+    m_performanceInsightsKMSKeyIdHasBeenSet(false),
+    m_enabledCloudwatchLogsExportsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -527,6 +529,18 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_performanceInsightsKMSKeyId = StringUtils::Trim(performanceInsightsKMSKeyIdNode.GetText().c_str());
       m_performanceInsightsKMSKeyIdHasBeenSet = true;
     }
+    XmlNode enabledCloudwatchLogsExportsNode = resultNode.FirstChild("EnabledCloudwatchLogsExports");
+    if(!enabledCloudwatchLogsExportsNode.IsNull())
+    {
+      XmlNode enabledCloudwatchLogsExportsMember = enabledCloudwatchLogsExportsNode.FirstChild("member");
+      while(!enabledCloudwatchLogsExportsMember.IsNull())
+      {
+        m_enabledCloudwatchLogsExports.push_back(StringUtils::Trim(enabledCloudwatchLogsExportsMember.GetText().c_str()));
+        enabledCloudwatchLogsExportsMember = enabledCloudwatchLogsExportsMember.NextNode("member");
+      }
+
+      m_enabledCloudwatchLogsExportsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -839,6 +853,15 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".PerformanceInsightsKMSKeyId=" << StringUtils::URLEncode(m_performanceInsightsKMSKeyId.c_str()) << "&";
   }
 
+  if(m_enabledCloudwatchLogsExportsHasBeenSet)
+  {
+      unsigned enabledCloudwatchLogsExportsIdx = 1;
+      for(auto& item : m_enabledCloudwatchLogsExports)
+      {
+        oStream << location << index << locationValue << ".EnabledCloudwatchLogsExports.member." << enabledCloudwatchLogsExportsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1096,6 +1119,14 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_performanceInsightsKMSKeyIdHasBeenSet)
   {
       oStream << location << ".PerformanceInsightsKMSKeyId=" << StringUtils::URLEncode(m_performanceInsightsKMSKeyId.c_str()) << "&";
+  }
+  if(m_enabledCloudwatchLogsExportsHasBeenSet)
+  {
+      unsigned enabledCloudwatchLogsExportsIdx = 1;
+      for(auto& item : m_enabledCloudwatchLogsExports)
+      {
+        oStream << location << ".EnabledCloudwatchLogsExports.member." << enabledCloudwatchLogsExportsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
 }
 

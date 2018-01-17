@@ -48,7 +48,8 @@ PendingModifiedValues::PendingModifiedValues() :
     m_dBInstanceIdentifierHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
     m_cACertificateIdentifierHasBeenSet(false),
-    m_dBSubnetGroupNameHasBeenSet(false)
+    m_dBSubnetGroupNameHasBeenSet(false),
+    m_pendingCloudwatchLogsExportsHasBeenSet(false)
 {
 }
 
@@ -70,7 +71,8 @@ PendingModifiedValues::PendingModifiedValues(const XmlNode& xmlNode) :
     m_dBInstanceIdentifierHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
     m_cACertificateIdentifierHasBeenSet(false),
-    m_dBSubnetGroupNameHasBeenSet(false)
+    m_dBSubnetGroupNameHasBeenSet(false),
+    m_pendingCloudwatchLogsExportsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -159,6 +161,12 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
       m_dBSubnetGroupName = StringUtils::Trim(dBSubnetGroupNameNode.GetText().c_str());
       m_dBSubnetGroupNameHasBeenSet = true;
     }
+    XmlNode pendingCloudwatchLogsExportsNode = resultNode.FirstChild("PendingCloudwatchLogsExports");
+    if(!pendingCloudwatchLogsExportsNode.IsNull())
+    {
+      m_pendingCloudwatchLogsExports = pendingCloudwatchLogsExportsNode;
+      m_pendingCloudwatchLogsExportsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -231,6 +239,13 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << index << locationValue << ".DBSubnetGroupName=" << StringUtils::URLEncode(m_dBSubnetGroupName.c_str()) << "&";
   }
 
+  if(m_pendingCloudwatchLogsExportsHasBeenSet)
+  {
+      Aws::StringStream pendingCloudwatchLogsExportsLocationAndMemberSs;
+      pendingCloudwatchLogsExportsLocationAndMemberSs << location << index << locationValue << ".PendingCloudwatchLogsExports";
+      m_pendingCloudwatchLogsExports.OutputToStream(oStream, pendingCloudwatchLogsExportsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -286,6 +301,12 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
   if(m_dBSubnetGroupNameHasBeenSet)
   {
       oStream << location << ".DBSubnetGroupName=" << StringUtils::URLEncode(m_dBSubnetGroupName.c_str()) << "&";
+  }
+  if(m_pendingCloudwatchLogsExportsHasBeenSet)
+  {
+      Aws::String pendingCloudwatchLogsExportsLocationAndMember(location);
+      pendingCloudwatchLogsExportsLocationAndMember += ".PendingCloudwatchLogsExports";
+      m_pendingCloudwatchLogsExports.OutputToStream(oStream, pendingCloudwatchLogsExportsLocationAndMember.c_str());
   }
 }
 

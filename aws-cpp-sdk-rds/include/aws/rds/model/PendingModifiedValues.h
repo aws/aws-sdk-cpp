@@ -17,6 +17,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rds/model/PendingCloudwatchLogsExports.h>
 #include <utility>
 
 namespace Aws
@@ -464,6 +465,22 @@ namespace Model
      */
     inline PendingModifiedValues& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 
+
+    
+    inline const PendingCloudwatchLogsExports& GetPendingCloudwatchLogsExports() const{ return m_pendingCloudwatchLogsExports; }
+
+    
+    inline void SetPendingCloudwatchLogsExports(const PendingCloudwatchLogsExports& value) { m_pendingCloudwatchLogsExportsHasBeenSet = true; m_pendingCloudwatchLogsExports = value; }
+
+    
+    inline void SetPendingCloudwatchLogsExports(PendingCloudwatchLogsExports&& value) { m_pendingCloudwatchLogsExportsHasBeenSet = true; m_pendingCloudwatchLogsExports = std::move(value); }
+
+    
+    inline PendingModifiedValues& WithPendingCloudwatchLogsExports(const PendingCloudwatchLogsExports& value) { SetPendingCloudwatchLogsExports(value); return *this;}
+
+    
+    inline PendingModifiedValues& WithPendingCloudwatchLogsExports(PendingCloudwatchLogsExports&& value) { SetPendingCloudwatchLogsExports(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_dBInstanceClass;
@@ -504,6 +521,9 @@ namespace Model
 
     Aws::String m_dBSubnetGroupName;
     bool m_dBSubnetGroupNameHasBeenSet;
+
+    PendingCloudwatchLogsExports m_pendingCloudwatchLogsExports;
+    bool m_pendingCloudwatchLogsExportsHasBeenSet;
   };
 
 } // namespace Model

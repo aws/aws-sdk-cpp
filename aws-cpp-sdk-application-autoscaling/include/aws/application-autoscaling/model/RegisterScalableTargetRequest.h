@@ -379,122 +379,123 @@ namespace Model
 
     /**
      * <p>The minimum value to scale to in response to a scale in event. This parameter
-     * is required if you are registering a scalable target and optional if you are
-     * updating one.</p>
+     * is required if you are registering a scalable target.</p>
      */
     inline int GetMinCapacity() const{ return m_minCapacity; }
 
     /**
      * <p>The minimum value to scale to in response to a scale in event. This parameter
-     * is required if you are registering a scalable target and optional if you are
-     * updating one.</p>
+     * is required if you are registering a scalable target.</p>
      */
     inline void SetMinCapacity(int value) { m_minCapacityHasBeenSet = true; m_minCapacity = value; }
 
     /**
      * <p>The minimum value to scale to in response to a scale in event. This parameter
-     * is required if you are registering a scalable target and optional if you are
-     * updating one.</p>
+     * is required if you are registering a scalable target.</p>
      */
     inline RegisterScalableTargetRequest& WithMinCapacity(int value) { SetMinCapacity(value); return *this;}
 
 
     /**
      * <p>The maximum value to scale to in response to a scale out event. This
-     * parameter is required if you are registering a scalable target and optional if
-     * you are updating one.</p>
+     * parameter is required if you are registering a scalable target.</p>
      */
     inline int GetMaxCapacity() const{ return m_maxCapacity; }
 
     /**
      * <p>The maximum value to scale to in response to a scale out event. This
-     * parameter is required if you are registering a scalable target and optional if
-     * you are updating one.</p>
+     * parameter is required if you are registering a scalable target.</p>
      */
     inline void SetMaxCapacity(int value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
 
     /**
      * <p>The maximum value to scale to in response to a scale out event. This
-     * parameter is required if you are registering a scalable target and optional if
-     * you are updating one.</p>
+     * parameter is required if you are registering a scalable target.</p>
      */
     inline RegisterScalableTargetRequest& WithMaxCapacity(int value) { SetMaxCapacity(value); return *this;}
 
 
     /**
-     * <p>The ARN of an IAM role that allows Application Auto Scaling to modify the
-     * scalable target on your behalf.</p> <p>With Amazon RDS resources, permissions
-     * are granted using a service-linked role. For more information, see <a
+     * <p>Application Auto Scaling creates a service-linked role that grants it
+     * permissions to modify the scalable target on your behalf. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/application-autoscaling-service-linked-roles.html">Service-Linked
      * Roles for Application Auto Scaling</a>.</p> <p>For resources that are not
-     * supported using a service-linked role, this parameter is required when you
-     * register a scalable target and optional when you update one.</p>
+     * supported using a service-linked role, this parameter is required and must
+     * specify the ARN of an IAM role that allows Application Auto Scaling to modify
+     * the scalable target on your behalf.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
-     * <p>The ARN of an IAM role that allows Application Auto Scaling to modify the
-     * scalable target on your behalf.</p> <p>With Amazon RDS resources, permissions
-     * are granted using a service-linked role. For more information, see <a
+     * <p>Application Auto Scaling creates a service-linked role that grants it
+     * permissions to modify the scalable target on your behalf. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/application-autoscaling-service-linked-roles.html">Service-Linked
      * Roles for Application Auto Scaling</a>.</p> <p>For resources that are not
-     * supported using a service-linked role, this parameter is required when you
-     * register a scalable target and optional when you update one.</p>
+     * supported using a service-linked role, this parameter is required and must
+     * specify the ARN of an IAM role that allows Application Auto Scaling to modify
+     * the scalable target on your behalf.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
-     * <p>The ARN of an IAM role that allows Application Auto Scaling to modify the
-     * scalable target on your behalf.</p> <p>With Amazon RDS resources, permissions
-     * are granted using a service-linked role. For more information, see <a
+     * <p>Application Auto Scaling creates a service-linked role that grants it
+     * permissions to modify the scalable target on your behalf. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/application-autoscaling-service-linked-roles.html">Service-Linked
      * Roles for Application Auto Scaling</a>.</p> <p>For resources that are not
-     * supported using a service-linked role, this parameter is required when you
-     * register a scalable target and optional when you update one.</p>
+     * supported using a service-linked role, this parameter is required and must
+     * specify the ARN of an IAM role that allows Application Auto Scaling to modify
+     * the scalable target on your behalf.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
-     * <p>The ARN of an IAM role that allows Application Auto Scaling to modify the
-     * scalable target on your behalf.</p> <p>With Amazon RDS resources, permissions
-     * are granted using a service-linked role. For more information, see <a
+     * <p>Application Auto Scaling creates a service-linked role that grants it
+     * permissions to modify the scalable target on your behalf. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/application-autoscaling-service-linked-roles.html">Service-Linked
      * Roles for Application Auto Scaling</a>.</p> <p>For resources that are not
-     * supported using a service-linked role, this parameter is required when you
-     * register a scalable target and optional when you update one.</p>
+     * supported using a service-linked role, this parameter is required and must
+     * specify the ARN of an IAM role that allows Application Auto Scaling to modify
+     * the scalable target on your behalf.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
-     * <p>The ARN of an IAM role that allows Application Auto Scaling to modify the
-     * scalable target on your behalf.</p> <p>With Amazon RDS resources, permissions
-     * are granted using a service-linked role. For more information, see <a
+     * <p>Application Auto Scaling creates a service-linked role that grants it
+     * permissions to modify the scalable target on your behalf. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/application-autoscaling-service-linked-roles.html">Service-Linked
      * Roles for Application Auto Scaling</a>.</p> <p>For resources that are not
-     * supported using a service-linked role, this parameter is required when you
-     * register a scalable target and optional when you update one.</p>
+     * supported using a service-linked role, this parameter is required and must
+     * specify the ARN of an IAM role that allows Application Auto Scaling to modify
+     * the scalable target on your behalf.</p>
      */
     inline RegisterScalableTargetRequest& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
-     * <p>The ARN of an IAM role that allows Application Auto Scaling to modify the
-     * scalable target on your behalf.</p> <p>With Amazon RDS resources, permissions
-     * are granted using a service-linked role. For more information, see <a
+     * <p>Application Auto Scaling creates a service-linked role that grants it
+     * permissions to modify the scalable target on your behalf. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/application-autoscaling-service-linked-roles.html">Service-Linked
      * Roles for Application Auto Scaling</a>.</p> <p>For resources that are not
-     * supported using a service-linked role, this parameter is required when you
-     * register a scalable target and optional when you update one.</p>
+     * supported using a service-linked role, this parameter is required and must
+     * specify the ARN of an IAM role that allows Application Auto Scaling to modify
+     * the scalable target on your behalf.</p>
      */
     inline RegisterScalableTargetRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of an IAM role that allows Application Auto Scaling to modify the
-     * scalable target on your behalf.</p> <p>With Amazon RDS resources, permissions
-     * are granted using a service-linked role. For more information, see <a
+     * <p>Application Auto Scaling creates a service-linked role that grants it
+     * permissions to modify the scalable target on your behalf. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/application-autoscaling-service-linked-roles.html">Service-Linked
      * Roles for Application Auto Scaling</a>.</p> <p>For resources that are not
-     * supported using a service-linked role, this parameter is required when you
-     * register a scalable target and optional when you update one.</p>
+     * supported using a service-linked role, this parameter is required and must
+     * specify the ARN of an IAM role that allows Application Auto Scaling to modify
+     * the scalable target on your behalf.</p>
      */
     inline RegisterScalableTargetRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 

@@ -69,7 +69,8 @@ ModifyDBInstanceRequest::ModifyDBInstanceRequest() :
     m_enableIAMDatabaseAuthenticationHasBeenSet(false),
     m_enablePerformanceInsights(false),
     m_enablePerformanceInsightsHasBeenSet(false),
-    m_performanceInsightsKMSKeyIdHasBeenSet(false)
+    m_performanceInsightsKMSKeyIdHasBeenSet(false),
+    m_cloudwatchLogsExportConfigurationHasBeenSet(false)
 {
 }
 
@@ -262,6 +263,11 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
   if(m_performanceInsightsKMSKeyIdHasBeenSet)
   {
     ss << "PerformanceInsightsKMSKeyId=" << StringUtils::URLEncode(m_performanceInsightsKMSKeyId.c_str()) << "&";
+  }
+
+  if(m_cloudwatchLogsExportConfigurationHasBeenSet)
+  {
+    m_cloudwatchLogsExportConfiguration.OutputToStream(ss, "CloudwatchLogsExportConfiguration");
   }
 
   ss << "Version=2014-10-31";
