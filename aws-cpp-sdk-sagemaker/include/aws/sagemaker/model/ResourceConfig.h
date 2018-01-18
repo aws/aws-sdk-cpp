@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/TrainingInstanceType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -128,6 +129,56 @@ namespace Model
      */
     inline ResourceConfig& WithVolumeSizeInGB(int value) { SetVolumeSizeInGB(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that
+     * Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
+     * compute instance(s) that run the training job.</p>
+     */
+    inline const Aws::String& GetVolumeKmsKeyId() const{ return m_volumeKmsKeyId; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that
+     * Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
+     * compute instance(s) that run the training job.</p>
+     */
+    inline void SetVolumeKmsKeyId(const Aws::String& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that
+     * Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
+     * compute instance(s) that run the training job.</p>
+     */
+    inline void SetVolumeKmsKeyId(Aws::String&& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that
+     * Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
+     * compute instance(s) that run the training job.</p>
+     */
+    inline void SetVolumeKmsKeyId(const char* value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that
+     * Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
+     * compute instance(s) that run the training job.</p>
+     */
+    inline ResourceConfig& WithVolumeKmsKeyId(const Aws::String& value) { SetVolumeKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that
+     * Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
+     * compute instance(s) that run the training job.</p>
+     */
+    inline ResourceConfig& WithVolumeKmsKeyId(Aws::String&& value) { SetVolumeKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that
+     * Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
+     * compute instance(s) that run the training job.</p>
+     */
+    inline ResourceConfig& WithVolumeKmsKeyId(const char* value) { SetVolumeKmsKeyId(value); return *this;}
+
   private:
 
     TrainingInstanceType m_instanceType;
@@ -138,6 +189,9 @@ namespace Model
 
     int m_volumeSizeInGB;
     bool m_volumeSizeInGBHasBeenSet;
+
+    Aws::String m_volumeKmsKeyId;
+    bool m_volumeKmsKeyIdHasBeenSet;
   };
 
 } // namespace Model

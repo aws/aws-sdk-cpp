@@ -25,7 +25,8 @@ using namespace Aws::Utils;
 CreateEndpointConfigRequest::CreateEndpointConfigRequest() : 
     m_endpointConfigNameHasBeenSet(false),
     m_productionVariantsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,12 @@ Aws::String CreateEndpointConfigRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+   payload.WithString("KmsKeyId", m_kmsKeyId);
 
   }
 

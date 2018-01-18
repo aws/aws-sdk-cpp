@@ -34,7 +34,8 @@ ResourceConfig::ResourceConfig() :
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
     m_volumeSizeInGB(0),
-    m_volumeSizeInGBHasBeenSet(false)
+    m_volumeSizeInGBHasBeenSet(false),
+    m_volumeKmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ ResourceConfig::ResourceConfig(const JsonValue& jsonValue) :
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
     m_volumeSizeInGB(0),
-    m_volumeSizeInGBHasBeenSet(false)
+    m_volumeSizeInGBHasBeenSet(false),
+    m_volumeKmsKeyIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -72,6 +74,13 @@ ResourceConfig& ResourceConfig::operator =(const JsonValue& jsonValue)
     m_volumeSizeInGBHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VolumeKmsKeyId"))
+  {
+    m_volumeKmsKeyId = jsonValue.GetString("VolumeKmsKeyId");
+
+    m_volumeKmsKeyIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +102,12 @@ JsonValue ResourceConfig::Jsonize() const
   if(m_volumeSizeInGBHasBeenSet)
   {
    payload.WithInteger("VolumeSizeInGB", m_volumeSizeInGB);
+
+  }
+
+  if(m_volumeKmsKeyIdHasBeenSet)
+  {
+   payload.WithString("VolumeKmsKeyId", m_volumeKmsKeyId);
 
   }
 

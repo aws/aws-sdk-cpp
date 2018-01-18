@@ -196,6 +196,56 @@ namespace Model
      */
     inline CreateEndpointConfigRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that
+     * Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
+     * compute instance that hosts the endpoint.</p>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that
+     * Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
+     * compute instance that hosts the endpoint.</p>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that
+     * Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
+     * compute instance that hosts the endpoint.</p>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that
+     * Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
+     * compute instance that hosts the endpoint.</p>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that
+     * Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
+     * compute instance that hosts the endpoint.</p>
+     */
+    inline CreateEndpointConfigRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that
+     * Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
+     * compute instance that hosts the endpoint.</p>
+     */
+    inline CreateEndpointConfigRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that
+     * Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
+     * compute instance that hosts the endpoint.</p>
+     */
+    inline CreateEndpointConfigRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
   private:
 
     Aws::String m_endpointConfigName;
@@ -206,6 +256,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet;
   };
 
 } // namespace Model
