@@ -39,7 +39,10 @@ DBEngineVersion::DBEngineVersion() :
     m_defaultCharacterSetHasBeenSet(false),
     m_supportedCharacterSetsHasBeenSet(false),
     m_validUpgradeTargetHasBeenSet(false),
-    m_supportedTimezonesHasBeenSet(false)
+    m_supportedTimezonesHasBeenSet(false),
+    m_exportableLogTypesHasBeenSet(false),
+    m_supportsLogExportsToCloudwatchLogs(false),
+    m_supportsLogExportsToCloudwatchLogsHasBeenSet(false)
 {
 }
 
@@ -52,7 +55,10 @@ DBEngineVersion::DBEngineVersion(const XmlNode& xmlNode) :
     m_defaultCharacterSetHasBeenSet(false),
     m_supportedCharacterSetsHasBeenSet(false),
     m_validUpgradeTargetHasBeenSet(false),
-    m_supportedTimezonesHasBeenSet(false)
+    m_supportedTimezonesHasBeenSet(false),
+    m_exportableLogTypesHasBeenSet(false),
+    m_supportsLogExportsToCloudwatchLogs(false),
+    m_supportsLogExportsToCloudwatchLogsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -135,6 +141,24 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
 
       m_supportedTimezonesHasBeenSet = true;
     }
+    XmlNode exportableLogTypesNode = resultNode.FirstChild("ExportableLogTypes");
+    if(!exportableLogTypesNode.IsNull())
+    {
+      XmlNode exportableLogTypesMember = exportableLogTypesNode.FirstChild("member");
+      while(!exportableLogTypesMember.IsNull())
+      {
+        m_exportableLogTypes.push_back(StringUtils::Trim(exportableLogTypesMember.GetText().c_str()));
+        exportableLogTypesMember = exportableLogTypesMember.NextNode("member");
+      }
+
+      m_exportableLogTypesHasBeenSet = true;
+    }
+    XmlNode supportsLogExportsToCloudwatchLogsNode = resultNode.FirstChild("SupportsLogExportsToCloudwatchLogs");
+    if(!supportsLogExportsToCloudwatchLogsNode.IsNull())
+    {
+      m_supportsLogExportsToCloudwatchLogs = StringUtils::ConvertToBool(StringUtils::Trim(supportsLogExportsToCloudwatchLogsNode.GetText().c_str()).c_str());
+      m_supportsLogExportsToCloudwatchLogsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -207,6 +231,20 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       }
   }
 
+  if(m_exportableLogTypesHasBeenSet)
+  {
+      unsigned exportableLogTypesIdx = 1;
+      for(auto& item : m_exportableLogTypes)
+      {
+        oStream << location << index << locationValue << ".ExportableLogTypes.member." << exportableLogTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
+  if(m_supportsLogExportsToCloudwatchLogsHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsLogExportsToCloudwatchLogs=" << std::boolalpha << m_supportsLogExportsToCloudwatchLogs << "&";
+  }
+
 }
 
 void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -266,6 +304,18 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
         supportedTimezonesSs << location <<  ".Timezone." << supportedTimezonesIdx++;
         item.OutputToStream(oStream, supportedTimezonesSs.str().c_str());
       }
+  }
+  if(m_exportableLogTypesHasBeenSet)
+  {
+      unsigned exportableLogTypesIdx = 1;
+      for(auto& item : m_exportableLogTypes)
+      {
+        oStream << location << ".ExportableLogTypes.member." << exportableLogTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+  if(m_supportsLogExportsToCloudwatchLogsHasBeenSet)
+  {
+      oStream << location << ".SupportsLogExportsToCloudwatchLogs=" << std::boolalpha << m_supportsLogExportsToCloudwatchLogs << "&";
   }
 }
 

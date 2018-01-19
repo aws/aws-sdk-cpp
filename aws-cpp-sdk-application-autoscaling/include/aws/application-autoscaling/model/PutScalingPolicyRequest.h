@@ -412,42 +412,47 @@ namespace Model
 
 
     /**
-     * <p>The policy type. If you are creating a new policy, this parameter is
-     * required. If you are updating a policy, this parameter is not required.</p>
-     * <p>For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For any
-     * other service, only <code>StepScaling</code> is supported.</p>
+     * <p>The policy type. This parameter is required if you are creating a policy.</p>
+     * <p>For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For
+     * Amazon ECS, Spot Fleet, and Amazon RDS, both <code>StepScaling</code> and
+     * <code>TargetTrackingScaling</code> are supported. For any other service, only
+     * <code>StepScaling</code> is supported.</p>
      */
     inline const PolicyType& GetPolicyType() const{ return m_policyType; }
 
     /**
-     * <p>The policy type. If you are creating a new policy, this parameter is
-     * required. If you are updating a policy, this parameter is not required.</p>
-     * <p>For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For any
-     * other service, only <code>StepScaling</code> is supported.</p>
+     * <p>The policy type. This parameter is required if you are creating a policy.</p>
+     * <p>For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For
+     * Amazon ECS, Spot Fleet, and Amazon RDS, both <code>StepScaling</code> and
+     * <code>TargetTrackingScaling</code> are supported. For any other service, only
+     * <code>StepScaling</code> is supported.</p>
      */
     inline void SetPolicyType(const PolicyType& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
     /**
-     * <p>The policy type. If you are creating a new policy, this parameter is
-     * required. If you are updating a policy, this parameter is not required.</p>
-     * <p>For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For any
-     * other service, only <code>StepScaling</code> is supported.</p>
+     * <p>The policy type. This parameter is required if you are creating a policy.</p>
+     * <p>For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For
+     * Amazon ECS, Spot Fleet, and Amazon RDS, both <code>StepScaling</code> and
+     * <code>TargetTrackingScaling</code> are supported. For any other service, only
+     * <code>StepScaling</code> is supported.</p>
      */
     inline void SetPolicyType(PolicyType&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
 
     /**
-     * <p>The policy type. If you are creating a new policy, this parameter is
-     * required. If you are updating a policy, this parameter is not required.</p>
-     * <p>For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For any
-     * other service, only <code>StepScaling</code> is supported.</p>
+     * <p>The policy type. This parameter is required if you are creating a policy.</p>
+     * <p>For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For
+     * Amazon ECS, Spot Fleet, and Amazon RDS, both <code>StepScaling</code> and
+     * <code>TargetTrackingScaling</code> are supported. For any other service, only
+     * <code>StepScaling</code> is supported.</p>
      */
     inline PutScalingPolicyRequest& WithPolicyType(const PolicyType& value) { SetPolicyType(value); return *this;}
 
     /**
-     * <p>The policy type. If you are creating a new policy, this parameter is
-     * required. If you are updating a policy, this parameter is not required.</p>
-     * <p>For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For any
-     * other service, only <code>StepScaling</code> is supported.</p>
+     * <p>The policy type. This parameter is required if you are creating a policy.</p>
+     * <p>For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For
+     * Amazon ECS, Spot Fleet, and Amazon RDS, both <code>StepScaling</code> and
+     * <code>TargetTrackingScaling</code> are supported. For any other service, only
+     * <code>StepScaling</code> is supported.</p>
      */
     inline PutScalingPolicyRequest& WithPolicyType(PolicyType&& value) { SetPolicyType(std::move(value)); return *this;}
 
@@ -485,36 +490,31 @@ namespace Model
 
     /**
      * <p>A target tracking policy.</p> <p>This parameter is required if you are
-     * creating a new policy and the policy type is
-     * <code>TargetTrackingScaling</code>.</p>
+     * creating a policy and the policy type is <code>TargetTrackingScaling</code>.</p>
      */
     inline const TargetTrackingScalingPolicyConfiguration& GetTargetTrackingScalingPolicyConfiguration() const{ return m_targetTrackingScalingPolicyConfiguration; }
 
     /**
      * <p>A target tracking policy.</p> <p>This parameter is required if you are
-     * creating a new policy and the policy type is
-     * <code>TargetTrackingScaling</code>.</p>
+     * creating a policy and the policy type is <code>TargetTrackingScaling</code>.</p>
      */
     inline void SetTargetTrackingScalingPolicyConfiguration(const TargetTrackingScalingPolicyConfiguration& value) { m_targetTrackingScalingPolicyConfigurationHasBeenSet = true; m_targetTrackingScalingPolicyConfiguration = value; }
 
     /**
      * <p>A target tracking policy.</p> <p>This parameter is required if you are
-     * creating a new policy and the policy type is
-     * <code>TargetTrackingScaling</code>.</p>
+     * creating a policy and the policy type is <code>TargetTrackingScaling</code>.</p>
      */
     inline void SetTargetTrackingScalingPolicyConfiguration(TargetTrackingScalingPolicyConfiguration&& value) { m_targetTrackingScalingPolicyConfigurationHasBeenSet = true; m_targetTrackingScalingPolicyConfiguration = std::move(value); }
 
     /**
      * <p>A target tracking policy.</p> <p>This parameter is required if you are
-     * creating a new policy and the policy type is
-     * <code>TargetTrackingScaling</code>.</p>
+     * creating a policy and the policy type is <code>TargetTrackingScaling</code>.</p>
      */
     inline PutScalingPolicyRequest& WithTargetTrackingScalingPolicyConfiguration(const TargetTrackingScalingPolicyConfiguration& value) { SetTargetTrackingScalingPolicyConfiguration(value); return *this;}
 
     /**
      * <p>A target tracking policy.</p> <p>This parameter is required if you are
-     * creating a new policy and the policy type is
-     * <code>TargetTrackingScaling</code>.</p>
+     * creating a policy and the policy type is <code>TargetTrackingScaling</code>.</p>
      */
     inline PutScalingPolicyRequest& WithTargetTrackingScalingPolicyConfiguration(TargetTrackingScalingPolicyConfiguration&& value) { SetTargetTrackingScalingPolicyConfiguration(std::move(value)); return *this;}
 

@@ -622,16 +622,16 @@ namespace Model
         virtual void DeleteFunctionAsync(const Model::DeleteFunctionRequest& request, const DeleteFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes concurrent execution limits from this function.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes concurrent execution limits from this function. For more information,
+         * see <a>concurrent-executions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionConcurrency">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteFunctionConcurrencyOutcome DeleteFunctionConcurrency(const Model::DeleteFunctionConcurrencyRequest& request) const;
 
         /**
-         * <p>Removes concurrent execution limits from this function.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes concurrent execution limits from this function. For more information,
+         * see <a>concurrent-executions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionConcurrency">AWS
          * API Reference</a></p>
          *
@@ -640,8 +640,8 @@ namespace Model
         virtual Model::DeleteFunctionConcurrencyOutcomeCallable DeleteFunctionConcurrencyCallable(const Model::DeleteFunctionConcurrencyRequest& request) const;
 
         /**
-         * <p>Removes concurrent execution limits from this function.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes concurrent execution limits from this function. For more information,
+         * see <a>concurrent-executions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionConcurrency">AWS
          * API Reference</a></p>
          *
@@ -938,8 +938,15 @@ namespace Model
          * versioning feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:InvokeFunction</code> action.</p><p><h3>See
-         * Also:</h3>   <a
+         * permission for the <code>lambda:InvokeFunction</code> action.</p> <note> <p>The
+         * <code>TooManyRequestsException</code> noted below will return the following:
+         * <code>ConcurrentInvocationLimitExceeded</code> will be returned if you have no
+         * functions with reserved concurrency and have exceeded your account concurrent
+         * limit or if a function without reserved concurrency exceeds the account's
+         * unreserved concurrency limit.
+         * <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> will be returned
+         * when a function with reserved concurrency exceeds its configured concurrency
+         * limit. </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke">AWS API
          * Reference</a></p>
          */
@@ -958,8 +965,15 @@ namespace Model
          * versioning feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:InvokeFunction</code> action.</p><p><h3>See
-         * Also:</h3>   <a
+         * permission for the <code>lambda:InvokeFunction</code> action.</p> <note> <p>The
+         * <code>TooManyRequestsException</code> noted below will return the following:
+         * <code>ConcurrentInvocationLimitExceeded</code> will be returned if you have no
+         * functions with reserved concurrency and have exceeded your account concurrent
+         * limit or if a function without reserved concurrency exceeds the account's
+         * unreserved concurrency limit.
+         * <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> will be returned
+         * when a function with reserved concurrency exceeds its configured concurrency
+         * limit. </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke">AWS API
          * Reference</a></p>
          *
@@ -980,8 +994,15 @@ namespace Model
          * versioning feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:InvokeFunction</code> action.</p><p><h3>See
-         * Also:</h3>   <a
+         * permission for the <code>lambda:InvokeFunction</code> action.</p> <note> <p>The
+         * <code>TooManyRequestsException</code> noted below will return the following:
+         * <code>ConcurrentInvocationLimitExceeded</code> will be returned if you have no
+         * functions with reserved concurrency and have exceeded your account concurrent
+         * limit or if a function without reserved concurrency exceeds the account's
+         * unreserved concurrency limit.
+         * <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> will be returned
+         * when a function with reserved concurrency exceeds its configured concurrency
+         * limit. </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke">AWS API
          * Reference</a></p>
          *
@@ -1247,7 +1268,8 @@ namespace Model
          * region. Note that Lambda automatically reserves a buffer of 100 concurrent
          * executions for functions without any reserved concurrency limit. This means if
          * your account limit is 1000, you have a total of 900 available to allocate to
-         * individual functions.</p><p><h3>See Also:</h3>   <a
+         * individual functions. For more information, see
+         * <a>concurrent-executions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionConcurrency">AWS
          * API Reference</a></p>
          */
@@ -1259,7 +1281,8 @@ namespace Model
          * region. Note that Lambda automatically reserves a buffer of 100 concurrent
          * executions for functions without any reserved concurrency limit. This means if
          * your account limit is 1000, you have a total of 900 available to allocate to
-         * individual functions.</p><p><h3>See Also:</h3>   <a
+         * individual functions. For more information, see
+         * <a>concurrent-executions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionConcurrency">AWS
          * API Reference</a></p>
          *
@@ -1273,7 +1296,8 @@ namespace Model
          * region. Note that Lambda automatically reserves a buffer of 100 concurrent
          * executions for functions without any reserved concurrency limit. This means if
          * your account limit is 1000, you have a total of 900 available to allocate to
-         * individual functions.</p><p><h3>See Also:</h3>   <a
+         * individual functions. For more information, see
+         * <a>concurrent-executions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionConcurrency">AWS
          * API Reference</a></p>
          *

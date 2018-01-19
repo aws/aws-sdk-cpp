@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>The list of scalable targets that matches the request parameters.</p>
+     * <p>The scalable targets that match the request parameters.</p>
      */
     inline const Aws::Vector<ScalableTarget>& GetScalableTargets() const{ return m_scalableTargets; }
 
     /**
-     * <p>The list of scalable targets that matches the request parameters.</p>
+     * <p>The scalable targets that match the request parameters.</p>
      */
     inline void SetScalableTargets(const Aws::Vector<ScalableTarget>& value) { m_scalableTargets = value; }
 
     /**
-     * <p>The list of scalable targets that matches the request parameters.</p>
+     * <p>The scalable targets that match the request parameters.</p>
      */
     inline void SetScalableTargets(Aws::Vector<ScalableTarget>&& value) { m_scalableTargets = std::move(value); }
 
     /**
-     * <p>The list of scalable targets that matches the request parameters.</p>
+     * <p>The scalable targets that match the request parameters.</p>
      */
     inline DescribeScalableTargetsResult& WithScalableTargets(const Aws::Vector<ScalableTarget>& value) { SetScalableTargets(value); return *this;}
 
     /**
-     * <p>The list of scalable targets that matches the request parameters.</p>
+     * <p>The scalable targets that match the request parameters.</p>
      */
     inline DescribeScalableTargetsResult& WithScalableTargets(Aws::Vector<ScalableTarget>&& value) { SetScalableTargets(std::move(value)); return *this;}
 
     /**
-     * <p>The list of scalable targets that matches the request parameters.</p>
+     * <p>The scalable targets that match the request parameters.</p>
      */
     inline DescribeScalableTargetsResult& AddScalableTargets(const ScalableTarget& value) { m_scalableTargets.push_back(value); return *this; }
 
     /**
-     * <p>The list of scalable targets that matches the request parameters.</p>
+     * <p>The scalable targets that match the request parameters.</p>
      */
     inline DescribeScalableTargetsResult& AddScalableTargets(ScalableTarget&& value) { m_scalableTargets.push_back(std::move(value)); return *this; }
 

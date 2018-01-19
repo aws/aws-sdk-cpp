@@ -70,7 +70,8 @@ RestoreDBInstanceFromS3Request::RestoreDBInstanceFromS3Request() :
     m_s3IngestionRoleArnHasBeenSet(false),
     m_enablePerformanceInsights(false),
     m_enablePerformanceInsightsHasBeenSet(false),
-    m_performanceInsightsKMSKeyIdHasBeenSet(false)
+    m_performanceInsightsKMSKeyIdHasBeenSet(false),
+    m_enableCloudwatchLogsExportsHasBeenSet(false)
 {
 }
 
@@ -283,6 +284,17 @@ Aws::String RestoreDBInstanceFromS3Request::SerializePayload() const
   if(m_performanceInsightsKMSKeyIdHasBeenSet)
   {
     ss << "PerformanceInsightsKMSKeyId=" << StringUtils::URLEncode(m_performanceInsightsKMSKeyId.c_str()) << "&";
+  }
+
+  if(m_enableCloudwatchLogsExportsHasBeenSet)
+  {
+    unsigned enableCloudwatchLogsExportsCount = 1;
+    for(auto& item : m_enableCloudwatchLogsExports)
+    {
+      ss << "EnableCloudwatchLogsExports.member." << enableCloudwatchLogsExportsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      enableCloudwatchLogsExportsCount++;
+    }
   }
 
   ss << "Version=2014-10-31";

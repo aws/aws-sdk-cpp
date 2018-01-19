@@ -412,6 +412,74 @@ namespace Model
      */
     inline DBEngineVersion& AddSupportedTimezones(Timezone&& value) { m_supportedTimezonesHasBeenSet = true; m_supportedTimezones.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The types of logs that the database engine has available for export to
+     * CloudWatch Logs.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetExportableLogTypes() const{ return m_exportableLogTypes; }
+
+    /**
+     * <p>The types of logs that the database engine has available for export to
+     * CloudWatch Logs.</p>
+     */
+    inline void SetExportableLogTypes(const Aws::Vector<Aws::String>& value) { m_exportableLogTypesHasBeenSet = true; m_exportableLogTypes = value; }
+
+    /**
+     * <p>The types of logs that the database engine has available for export to
+     * CloudWatch Logs.</p>
+     */
+    inline void SetExportableLogTypes(Aws::Vector<Aws::String>&& value) { m_exportableLogTypesHasBeenSet = true; m_exportableLogTypes = std::move(value); }
+
+    /**
+     * <p>The types of logs that the database engine has available for export to
+     * CloudWatch Logs.</p>
+     */
+    inline DBEngineVersion& WithExportableLogTypes(const Aws::Vector<Aws::String>& value) { SetExportableLogTypes(value); return *this;}
+
+    /**
+     * <p>The types of logs that the database engine has available for export to
+     * CloudWatch Logs.</p>
+     */
+    inline DBEngineVersion& WithExportableLogTypes(Aws::Vector<Aws::String>&& value) { SetExportableLogTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The types of logs that the database engine has available for export to
+     * CloudWatch Logs.</p>
+     */
+    inline DBEngineVersion& AddExportableLogTypes(const Aws::String& value) { m_exportableLogTypesHasBeenSet = true; m_exportableLogTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The types of logs that the database engine has available for export to
+     * CloudWatch Logs.</p>
+     */
+    inline DBEngineVersion& AddExportableLogTypes(Aws::String&& value) { m_exportableLogTypesHasBeenSet = true; m_exportableLogTypes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The types of logs that the database engine has available for export to
+     * CloudWatch Logs.</p>
+     */
+    inline DBEngineVersion& AddExportableLogTypes(const char* value) { m_exportableLogTypesHasBeenSet = true; m_exportableLogTypes.push_back(value); return *this; }
+
+
+    /**
+     * <p>A value that indicates whether the engine version supports exporting the log
+     * types specified by ExportableLogTypes to CloudWatch Logs.</p>
+     */
+    inline bool GetSupportsLogExportsToCloudwatchLogs() const{ return m_supportsLogExportsToCloudwatchLogs; }
+
+    /**
+     * <p>A value that indicates whether the engine version supports exporting the log
+     * types specified by ExportableLogTypes to CloudWatch Logs.</p>
+     */
+    inline void SetSupportsLogExportsToCloudwatchLogs(bool value) { m_supportsLogExportsToCloudwatchLogsHasBeenSet = true; m_supportsLogExportsToCloudwatchLogs = value; }
+
+    /**
+     * <p>A value that indicates whether the engine version supports exporting the log
+     * types specified by ExportableLogTypes to CloudWatch Logs.</p>
+     */
+    inline DBEngineVersion& WithSupportsLogExportsToCloudwatchLogs(bool value) { SetSupportsLogExportsToCloudwatchLogs(value); return *this;}
+
   private:
 
     Aws::String m_engine;
@@ -440,6 +508,12 @@ namespace Model
 
     Aws::Vector<Timezone> m_supportedTimezones;
     bool m_supportedTimezonesHasBeenSet;
+
+    Aws::Vector<Aws::String> m_exportableLogTypes;
+    bool m_exportableLogTypesHasBeenSet;
+
+    bool m_supportsLogExportsToCloudwatchLogs;
+    bool m_supportsLogExportsToCloudwatchLogsHasBeenSet;
   };
 
 } // namespace Model

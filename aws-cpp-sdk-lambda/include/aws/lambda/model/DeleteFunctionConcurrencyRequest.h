@@ -43,44 +43,44 @@ namespace Model
 
 
     /**
-     * <p>The name of the function you are removing concurrent execution limits
-     * from.</p>
+     * <p>The name of the function you are removing concurrent execution limits from.
+     * For more information, see <a>concurrent-executions</a>.</p>
      */
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
     /**
-     * <p>The name of the function you are removing concurrent execution limits
-     * from.</p>
+     * <p>The name of the function you are removing concurrent execution limits from.
+     * For more information, see <a>concurrent-executions</a>.</p>
      */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
-     * <p>The name of the function you are removing concurrent execution limits
-     * from.</p>
+     * <p>The name of the function you are removing concurrent execution limits from.
+     * For more information, see <a>concurrent-executions</a>.</p>
      */
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
-     * <p>The name of the function you are removing concurrent execution limits
-     * from.</p>
+     * <p>The name of the function you are removing concurrent execution limits from.
+     * For more information, see <a>concurrent-executions</a>.</p>
      */
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
     /**
-     * <p>The name of the function you are removing concurrent execution limits
-     * from.</p>
+     * <p>The name of the function you are removing concurrent execution limits from.
+     * For more information, see <a>concurrent-executions</a>.</p>
      */
     inline DeleteFunctionConcurrencyRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
     /**
-     * <p>The name of the function you are removing concurrent execution limits
-     * from.</p>
+     * <p>The name of the function you are removing concurrent execution limits from.
+     * For more information, see <a>concurrent-executions</a>.</p>
      */
     inline DeleteFunctionConcurrencyRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the function you are removing concurrent execution limits
-     * from.</p>
+     * <p>The name of the function you are removing concurrent execution limits from.
+     * For more information, see <a>concurrent-executions</a>.</p>
      */
     inline DeleteFunctionConcurrencyRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 

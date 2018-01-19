@@ -18,6 +18,7 @@
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rds/model/CloudwatchLogsExportConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -2278,6 +2279,37 @@ namespace Model
      */
     inline ModifyDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
+
+    /**
+     * <p>The configuration setting for the log types to be enabled for export to
+     * CloudWatch Logs for a specific DB instance or DB cluster.</p>
+     */
+    inline const CloudwatchLogsExportConfiguration& GetCloudwatchLogsExportConfiguration() const{ return m_cloudwatchLogsExportConfiguration; }
+
+    /**
+     * <p>The configuration setting for the log types to be enabled for export to
+     * CloudWatch Logs for a specific DB instance or DB cluster.</p>
+     */
+    inline void SetCloudwatchLogsExportConfiguration(const CloudwatchLogsExportConfiguration& value) { m_cloudwatchLogsExportConfigurationHasBeenSet = true; m_cloudwatchLogsExportConfiguration = value; }
+
+    /**
+     * <p>The configuration setting for the log types to be enabled for export to
+     * CloudWatch Logs for a specific DB instance or DB cluster.</p>
+     */
+    inline void SetCloudwatchLogsExportConfiguration(CloudwatchLogsExportConfiguration&& value) { m_cloudwatchLogsExportConfigurationHasBeenSet = true; m_cloudwatchLogsExportConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration setting for the log types to be enabled for export to
+     * CloudWatch Logs for a specific DB instance or DB cluster.</p>
+     */
+    inline ModifyDBInstanceRequest& WithCloudwatchLogsExportConfiguration(const CloudwatchLogsExportConfiguration& value) { SetCloudwatchLogsExportConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration setting for the log types to be enabled for export to
+     * CloudWatch Logs for a specific DB instance or DB cluster.</p>
+     */
+    inline ModifyDBInstanceRequest& WithCloudwatchLogsExportConfiguration(CloudwatchLogsExportConfiguration&& value) { SetCloudwatchLogsExportConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -2384,6 +2416,9 @@ namespace Model
 
     Aws::String m_performanceInsightsKMSKeyId;
     bool m_performanceInsightsKMSKeyIdHasBeenSet;
+
+    CloudwatchLogsExportConfiguration m_cloudwatchLogsExportConfiguration;
+    bool m_cloudwatchLogsExportConfigurationHasBeenSet;
   };
 
 } // namespace Model

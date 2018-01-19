@@ -161,6 +161,49 @@ namespace Model
 
 
     /**
+     * <p>AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the
+     * ML storage volume attached to the instance.</p>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the
+     * ML storage volume attached to the instance.</p>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
+
+    /**
+     * <p>AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the
+     * ML storage volume attached to the instance.</p>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p>AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the
+     * ML storage volume attached to the instance.</p>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
+
+    /**
+     * <p>AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the
+     * ML storage volume attached to the instance.</p>
+     */
+    inline DescribeEndpointConfigResult& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p>AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the
+     * ML storage volume attached to the instance.</p>
+     */
+    inline DescribeEndpointConfigResult& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the
+     * ML storage volume attached to the instance.</p>
+     */
+    inline DescribeEndpointConfigResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
+
+    /**
      * <p>A timestamp that shows when the endpoint configuration was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
@@ -192,6 +235,8 @@ namespace Model
     Aws::String m_endpointConfigArn;
 
     Aws::Vector<ProductionVariant> m_productionVariants;
+
+    Aws::String m_kmsKeyId;
 
     Aws::Utils::DateTime m_creationTime;
   };

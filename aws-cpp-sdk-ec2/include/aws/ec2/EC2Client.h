@@ -1346,9 +1346,9 @@ namespace Model
 
   /**
    * <fullname>Amazon Elastic Compute Cloud</fullname> <p>Amazon Elastic Compute
-   * Cloud (Amazon EC2) provides resizable computing capacity in the Amazon Web
-   * Services (AWS) cloud. Using Amazon EC2 eliminates your need to invest in
-   * hardware up front, so you can develop and deploy applications faster.</p>
+   * Cloud (Amazon EC2) provides resizable computing capacity in the AWS Cloud. Using
+   * Amazon EC2 eliminates your need to invest in hardware up front, so you can
+   * develop and deploy applications faster.</p>
    */
   class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient
   {
@@ -4697,12 +4697,15 @@ namespace Model
          * own and an accepter VPC with which to create the connection. The accepter VPC
          * can belong to another AWS account and can be in a different region to the
          * requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR
-         * blocks.</p> <p>The owner of the accepter VPC must accept the peering request to
-         * activate the peering connection. The VPC peering connection request expires
-         * after 7 days, after which it cannot be accepted or rejected.</p> <p>If you
-         * create a VPC peering connection request between VPCs with overlapping CIDR
-         * blocks, the VPC peering connection has a status of
-         * <code>failed</code>.</p><p><h3>See Also:</h3>   <a
+         * blocks.</p> <note> <p>Limitations and rules apply to a VPC peering connection.
+         * For more information, see the <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/vpc-peering-basics.html#vpc-peering-limitations">limitations</a>
+         * section in the <i>VPC Peering Guide</i>.</p> </note> <p>The owner of the
+         * accepter VPC must accept the peering request to activate the peering connection.
+         * The VPC peering connection request expires after 7 days, after which it cannot
+         * be accepted or rejected.</p> <p>If you create a VPC peering connection request
+         * between VPCs with overlapping CIDR blocks, the VPC peering connection has a
+         * status of <code>failed</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcPeeringConnection">AWS
          * API Reference</a></p>
          */
@@ -4713,12 +4716,15 @@ namespace Model
          * own and an accepter VPC with which to create the connection. The accepter VPC
          * can belong to another AWS account and can be in a different region to the
          * requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR
-         * blocks.</p> <p>The owner of the accepter VPC must accept the peering request to
-         * activate the peering connection. The VPC peering connection request expires
-         * after 7 days, after which it cannot be accepted or rejected.</p> <p>If you
-         * create a VPC peering connection request between VPCs with overlapping CIDR
-         * blocks, the VPC peering connection has a status of
-         * <code>failed</code>.</p><p><h3>See Also:</h3>   <a
+         * blocks.</p> <note> <p>Limitations and rules apply to a VPC peering connection.
+         * For more information, see the <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/vpc-peering-basics.html#vpc-peering-limitations">limitations</a>
+         * section in the <i>VPC Peering Guide</i>.</p> </note> <p>The owner of the
+         * accepter VPC must accept the peering request to activate the peering connection.
+         * The VPC peering connection request expires after 7 days, after which it cannot
+         * be accepted or rejected.</p> <p>If you create a VPC peering connection request
+         * between VPCs with overlapping CIDR blocks, the VPC peering connection has a
+         * status of <code>failed</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcPeeringConnection">AWS
          * API Reference</a></p>
          *
@@ -4731,12 +4737,15 @@ namespace Model
          * own and an accepter VPC with which to create the connection. The accepter VPC
          * can belong to another AWS account and can be in a different region to the
          * requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR
-         * blocks.</p> <p>The owner of the accepter VPC must accept the peering request to
-         * activate the peering connection. The VPC peering connection request expires
-         * after 7 days, after which it cannot be accepted or rejected.</p> <p>If you
-         * create a VPC peering connection request between VPCs with overlapping CIDR
-         * blocks, the VPC peering connection has a status of
-         * <code>failed</code>.</p><p><h3>See Also:</h3>   <a
+         * blocks.</p> <note> <p>Limitations and rules apply to a VPC peering connection.
+         * For more information, see the <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/vpc-peering-basics.html#vpc-peering-limitations">limitations</a>
+         * section in the <i>VPC Peering Guide</i>.</p> </note> <p>The owner of the
+         * accepter VPC must accept the peering request to activate the peering connection.
+         * The VPC peering connection request expires after 7 days, after which it cannot
+         * be accepted or rejected.</p> <p>If you create a VPC peering connection request
+         * between VPCs with overlapping CIDR blocks, the VPC peering connection has a
+         * status of <code>failed</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcPeeringConnection">AWS
          * API Reference</a></p>
          *
@@ -11209,18 +11218,22 @@ namespace Model
         virtual void ModifyVpcEndpointServiceConfigurationAsync(const Model::ModifyVpcEndpointServiceConfigurationRequest& request, const ModifyVpcEndpointServiceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the permissions for your VPC endpoint service. You can add or remove
-         * permissions for service consumers (IAM users, IAM roles, and AWS accounts) to
-         * discover your endpoint service.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the permissions for your <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC
+         * endpoint service</a>. You can add or remove permissions for service consumers
+         * (IAM users, IAM roles, and AWS accounts) to connect to your endpoint
+         * service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServicePermissions">AWS
          * API Reference</a></p>
          */
         virtual Model::ModifyVpcEndpointServicePermissionsOutcome ModifyVpcEndpointServicePermissions(const Model::ModifyVpcEndpointServicePermissionsRequest& request) const;
 
         /**
-         * <p>Modifies the permissions for your VPC endpoint service. You can add or remove
-         * permissions for service consumers (IAM users, IAM roles, and AWS accounts) to
-         * discover your endpoint service.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the permissions for your <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC
+         * endpoint service</a>. You can add or remove permissions for service consumers
+         * (IAM users, IAM roles, and AWS accounts) to connect to your endpoint
+         * service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServicePermissions">AWS
          * API Reference</a></p>
          *
@@ -11229,9 +11242,11 @@ namespace Model
         virtual Model::ModifyVpcEndpointServicePermissionsOutcomeCallable ModifyVpcEndpointServicePermissionsCallable(const Model::ModifyVpcEndpointServicePermissionsRequest& request) const;
 
         /**
-         * <p>Modifies the permissions for your VPC endpoint service. You can add or remove
-         * permissions for service consumers (IAM users, IAM roles, and AWS accounts) to
-         * discover your endpoint service.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the permissions for your <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC
+         * endpoint service</a>. You can add or remove permissions for service consumers
+         * (IAM users, IAM roles, and AWS accounts) to connect to your endpoint
+         * service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServicePermissions">AWS
          * API Reference</a></p>
          *

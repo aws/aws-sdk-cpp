@@ -33,7 +33,9 @@ namespace Model
     python2_7,
     python3_6,
     dotnetcore1_0,
-    nodejs4_3_edge
+    dotnetcore2_0,
+    nodejs4_3_edge,
+    go1_x
   };
 
 namespace RuntimeMapper

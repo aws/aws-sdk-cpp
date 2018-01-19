@@ -59,6 +59,12 @@ DescribeEndpointConfigResult& DescribeEndpointConfigResult::operator =(const Aws
     }
   }
 
+  if(jsonValue.ValueExists("KmsKeyId"))
+  {
+    m_kmsKeyId = jsonValue.GetString("KmsKeyId");
+
+  }
+
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");

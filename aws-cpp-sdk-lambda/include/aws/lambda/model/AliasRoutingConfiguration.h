@@ -50,58 +50,66 @@ namespace Model
 
 
     /**
-     * <p>Set this property value to dictate what percentage of traffic will invoke the
-     * updated function version. If set to an empty string, 100 percent of traffic will
-     * invoke <code>function-version</code>.</p>
+     * <p>Set this value to dictate what percentage of traffic will invoke the updated
+     * function version. If set to an empty string, 100 percent of traffic will invoke
+     * <code>function-version</code>. For more information, see
+     * <a>lambda-traffic-shifting-using-aliases</a>.</p>
      */
     inline const Aws::Map<Aws::String, double>& GetAdditionalVersionWeights() const{ return m_additionalVersionWeights; }
 
     /**
-     * <p>Set this property value to dictate what percentage of traffic will invoke the
-     * updated function version. If set to an empty string, 100 percent of traffic will
-     * invoke <code>function-version</code>.</p>
+     * <p>Set this value to dictate what percentage of traffic will invoke the updated
+     * function version. If set to an empty string, 100 percent of traffic will invoke
+     * <code>function-version</code>. For more information, see
+     * <a>lambda-traffic-shifting-using-aliases</a>.</p>
      */
     inline void SetAdditionalVersionWeights(const Aws::Map<Aws::String, double>& value) { m_additionalVersionWeightsHasBeenSet = true; m_additionalVersionWeights = value; }
 
     /**
-     * <p>Set this property value to dictate what percentage of traffic will invoke the
-     * updated function version. If set to an empty string, 100 percent of traffic will
-     * invoke <code>function-version</code>.</p>
+     * <p>Set this value to dictate what percentage of traffic will invoke the updated
+     * function version. If set to an empty string, 100 percent of traffic will invoke
+     * <code>function-version</code>. For more information, see
+     * <a>lambda-traffic-shifting-using-aliases</a>.</p>
      */
     inline void SetAdditionalVersionWeights(Aws::Map<Aws::String, double>&& value) { m_additionalVersionWeightsHasBeenSet = true; m_additionalVersionWeights = std::move(value); }
 
     /**
-     * <p>Set this property value to dictate what percentage of traffic will invoke the
-     * updated function version. If set to an empty string, 100 percent of traffic will
-     * invoke <code>function-version</code>.</p>
+     * <p>Set this value to dictate what percentage of traffic will invoke the updated
+     * function version. If set to an empty string, 100 percent of traffic will invoke
+     * <code>function-version</code>. For more information, see
+     * <a>lambda-traffic-shifting-using-aliases</a>.</p>
      */
     inline AliasRoutingConfiguration& WithAdditionalVersionWeights(const Aws::Map<Aws::String, double>& value) { SetAdditionalVersionWeights(value); return *this;}
 
     /**
-     * <p>Set this property value to dictate what percentage of traffic will invoke the
-     * updated function version. If set to an empty string, 100 percent of traffic will
-     * invoke <code>function-version</code>.</p>
+     * <p>Set this value to dictate what percentage of traffic will invoke the updated
+     * function version. If set to an empty string, 100 percent of traffic will invoke
+     * <code>function-version</code>. For more information, see
+     * <a>lambda-traffic-shifting-using-aliases</a>.</p>
      */
     inline AliasRoutingConfiguration& WithAdditionalVersionWeights(Aws::Map<Aws::String, double>&& value) { SetAdditionalVersionWeights(std::move(value)); return *this;}
 
     /**
-     * <p>Set this property value to dictate what percentage of traffic will invoke the
-     * updated function version. If set to an empty string, 100 percent of traffic will
-     * invoke <code>function-version</code>.</p>
+     * <p>Set this value to dictate what percentage of traffic will invoke the updated
+     * function version. If set to an empty string, 100 percent of traffic will invoke
+     * <code>function-version</code>. For more information, see
+     * <a>lambda-traffic-shifting-using-aliases</a>.</p>
      */
     inline AliasRoutingConfiguration& AddAdditionalVersionWeights(const Aws::String& key, double value) { m_additionalVersionWeightsHasBeenSet = true; m_additionalVersionWeights.emplace(key, value); return *this; }
 
     /**
-     * <p>Set this property value to dictate what percentage of traffic will invoke the
-     * updated function version. If set to an empty string, 100 percent of traffic will
-     * invoke <code>function-version</code>.</p>
+     * <p>Set this value to dictate what percentage of traffic will invoke the updated
+     * function version. If set to an empty string, 100 percent of traffic will invoke
+     * <code>function-version</code>. For more information, see
+     * <a>lambda-traffic-shifting-using-aliases</a>.</p>
      */
     inline AliasRoutingConfiguration& AddAdditionalVersionWeights(Aws::String&& key, double value) { m_additionalVersionWeightsHasBeenSet = true; m_additionalVersionWeights.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Set this property value to dictate what percentage of traffic will invoke the
-     * updated function version. If set to an empty string, 100 percent of traffic will
-     * invoke <code>function-version</code>.</p>
+     * <p>Set this value to dictate what percentage of traffic will invoke the updated
+     * function version. If set to an empty string, 100 percent of traffic will invoke
+     * <code>function-version</code>. For more information, see
+     * <a>lambda-traffic-shifting-using-aliases</a>.</p>
      */
     inline AliasRoutingConfiguration& AddAdditionalVersionWeights(const char* key, double value) { m_additionalVersionWeightsHasBeenSet = true; m_additionalVersionWeights.emplace(key, value); return *this; }
 

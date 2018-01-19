@@ -1400,12 +1400,11 @@ namespace Model
         virtual void UpdateEndpointAsync(const Model::UpdateEndpointRequest& request, const UpdateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates variant weight, capacity, or both of one or more variants associated
-         * with an endpoint. This operation updates weight, capacity, or both for the
-         * previously provisioned endpoint. When it receives the request, Amazon SageMaker
-         * sets the endpoint status to <code>Updating</code>. After updating the endpoint,
-         * it sets the status to <code>InService</code>. To check the status of an
-         * endpoint, use the <a
+         * <p>Updates variant weight of one or more variants associated with an existing
+         * endpoint, or capacity of one variant associated with an existing endpoint. When
+         * it receives the request, Amazon SageMaker sets the endpoint status to
+         * <code>Updating</code>. After updating the endpoint, it sets the status to
+         * <code>InService</code>. To check the status of an endpoint, use the <a
          * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
          * API. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpointWeightsAndCapacities">AWS
@@ -1414,12 +1413,11 @@ namespace Model
         virtual Model::UpdateEndpointWeightsAndCapacitiesOutcome UpdateEndpointWeightsAndCapacities(const Model::UpdateEndpointWeightsAndCapacitiesRequest& request) const;
 
         /**
-         * <p>Updates variant weight, capacity, or both of one or more variants associated
-         * with an endpoint. This operation updates weight, capacity, or both for the
-         * previously provisioned endpoint. When it receives the request, Amazon SageMaker
-         * sets the endpoint status to <code>Updating</code>. After updating the endpoint,
-         * it sets the status to <code>InService</code>. To check the status of an
-         * endpoint, use the <a
+         * <p>Updates variant weight of one or more variants associated with an existing
+         * endpoint, or capacity of one variant associated with an existing endpoint. When
+         * it receives the request, Amazon SageMaker sets the endpoint status to
+         * <code>Updating</code>. After updating the endpoint, it sets the status to
+         * <code>InService</code>. To check the status of an endpoint, use the <a
          * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
          * API. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpointWeightsAndCapacities">AWS
@@ -1430,12 +1428,11 @@ namespace Model
         virtual Model::UpdateEndpointWeightsAndCapacitiesOutcomeCallable UpdateEndpointWeightsAndCapacitiesCallable(const Model::UpdateEndpointWeightsAndCapacitiesRequest& request) const;
 
         /**
-         * <p>Updates variant weight, capacity, or both of one or more variants associated
-         * with an endpoint. This operation updates weight, capacity, or both for the
-         * previously provisioned endpoint. When it receives the request, Amazon SageMaker
-         * sets the endpoint status to <code>Updating</code>. After updating the endpoint,
-         * it sets the status to <code>InService</code>. To check the status of an
-         * endpoint, use the <a
+         * <p>Updates variant weight of one or more variants associated with an existing
+         * endpoint, or capacity of one variant associated with an existing endpoint. When
+         * it receives the request, Amazon SageMaker sets the endpoint status to
+         * <code>Updating</code>. After updating the endpoint, it sets the status to
+         * <code>InService</code>. To check the status of an endpoint, use the <a
          * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
          * API. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpointWeightsAndCapacities">AWS

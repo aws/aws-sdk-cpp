@@ -1949,6 +1949,55 @@ namespace Model
      */
     inline DBInstance& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
+
+    /**
+     * <p>A list of log types that this DB instance is configured to export to
+     * CloudWatch Logs.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetEnabledCloudwatchLogsExports() const{ return m_enabledCloudwatchLogsExports; }
+
+    /**
+     * <p>A list of log types that this DB instance is configured to export to
+     * CloudWatch Logs.</p>
+     */
+    inline void SetEnabledCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports = value; }
+
+    /**
+     * <p>A list of log types that this DB instance is configured to export to
+     * CloudWatch Logs.</p>
+     */
+    inline void SetEnabledCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports = std::move(value); }
+
+    /**
+     * <p>A list of log types that this DB instance is configured to export to
+     * CloudWatch Logs.</p>
+     */
+    inline DBInstance& WithEnabledCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnabledCloudwatchLogsExports(value); return *this;}
+
+    /**
+     * <p>A list of log types that this DB instance is configured to export to
+     * CloudWatch Logs.</p>
+     */
+    inline DBInstance& WithEnabledCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnabledCloudwatchLogsExports(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of log types that this DB instance is configured to export to
+     * CloudWatch Logs.</p>
+     */
+    inline DBInstance& AddEnabledCloudwatchLogsExports(const Aws::String& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(value); return *this; }
+
+    /**
+     * <p>A list of log types that this DB instance is configured to export to
+     * CloudWatch Logs.</p>
+     */
+    inline DBInstance& AddEnabledCloudwatchLogsExports(Aws::String&& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of log types that this DB instance is configured to export to
+     * CloudWatch Logs.</p>
+     */
+    inline DBInstance& AddEnabledCloudwatchLogsExports(const char* value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(value); return *this; }
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -2103,6 +2152,9 @@ namespace Model
 
     Aws::String m_performanceInsightsKMSKeyId;
     bool m_performanceInsightsKMSKeyIdHasBeenSet;
+
+    Aws::Vector<Aws::String> m_enabledCloudwatchLogsExports;
+    bool m_enabledCloudwatchLogsExportsHasBeenSet;
   };
 
 } // namespace Model

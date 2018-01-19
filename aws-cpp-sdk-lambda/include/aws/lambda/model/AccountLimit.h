@@ -135,19 +135,22 @@ namespace Model
 
     /**
      * <p>The number of concurrent executions available to functions that do not have
-     * concurrency limits set.</p>
+     * concurrency limits set. For more information, see
+     * <a>concurrent-executions</a>.</p>
      */
     inline int GetUnreservedConcurrentExecutions() const{ return m_unreservedConcurrentExecutions; }
 
     /**
      * <p>The number of concurrent executions available to functions that do not have
-     * concurrency limits set.</p>
+     * concurrency limits set. For more information, see
+     * <a>concurrent-executions</a>.</p>
      */
     inline void SetUnreservedConcurrentExecutions(int value) { m_unreservedConcurrentExecutionsHasBeenSet = true; m_unreservedConcurrentExecutions = value; }
 
     /**
      * <p>The number of concurrent executions available to functions that do not have
-     * concurrency limits set.</p>
+     * concurrency limits set. For more information, see
+     * <a>concurrent-executions</a>.</p>
      */
     inline AccountLimit& WithUnreservedConcurrentExecutions(int value) { SetUnreservedConcurrentExecutions(value); return *this;}
 

@@ -146,27 +146,32 @@ namespace Model
 
 
     /**
-     * <p>The concurrent execution limit set for this function.</p>
+     * <p>The concurrent execution limit set for this function. For more information,
+     * see <a>concurrent-executions</a>.</p>
      */
     inline const Concurrency& GetConcurrency() const{ return m_concurrency; }
 
     /**
-     * <p>The concurrent execution limit set for this function.</p>
+     * <p>The concurrent execution limit set for this function. For more information,
+     * see <a>concurrent-executions</a>.</p>
      */
     inline void SetConcurrency(const Concurrency& value) { m_concurrency = value; }
 
     /**
-     * <p>The concurrent execution limit set for this function.</p>
+     * <p>The concurrent execution limit set for this function. For more information,
+     * see <a>concurrent-executions</a>.</p>
      */
     inline void SetConcurrency(Concurrency&& value) { m_concurrency = std::move(value); }
 
     /**
-     * <p>The concurrent execution limit set for this function.</p>
+     * <p>The concurrent execution limit set for this function. For more information,
+     * see <a>concurrent-executions</a>.</p>
      */
     inline GetFunctionResult& WithConcurrency(const Concurrency& value) { SetConcurrency(value); return *this;}
 
     /**
-     * <p>The concurrent execution limit set for this function.</p>
+     * <p>The concurrent execution limit set for this function. For more information,
+     * see <a>concurrent-executions</a>.</p>
      */
     inline GetFunctionResult& WithConcurrency(Concurrency&& value) { SetConcurrency(std::move(value)); return *this;}
 

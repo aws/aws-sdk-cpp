@@ -140,43 +140,50 @@ namespace Model
 
     /**
      * <p>The service name. To get a list of available services, use the
-     * <a>DescribeVpcEndpointServices</a> request.</p>
+     * <a>DescribeVpcEndpointServices</a> request, or get the name from the service
+     * provider.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
     /**
      * <p>The service name. To get a list of available services, use the
-     * <a>DescribeVpcEndpointServices</a> request.</p>
+     * <a>DescribeVpcEndpointServices</a> request, or get the name from the service
+     * provider.</p>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
      * <p>The service name. To get a list of available services, use the
-     * <a>DescribeVpcEndpointServices</a> request.</p>
+     * <a>DescribeVpcEndpointServices</a> request, or get the name from the service
+     * provider.</p>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
      * <p>The service name. To get a list of available services, use the
-     * <a>DescribeVpcEndpointServices</a> request.</p>
+     * <a>DescribeVpcEndpointServices</a> request, or get the name from the service
+     * provider.</p>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
     /**
      * <p>The service name. To get a list of available services, use the
-     * <a>DescribeVpcEndpointServices</a> request.</p>
+     * <a>DescribeVpcEndpointServices</a> request, or get the name from the service
+     * provider.</p>
      */
     inline CreateVpcEndpointRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
     /**
      * <p>The service name. To get a list of available services, use the
-     * <a>DescribeVpcEndpointServices</a> request.</p>
+     * <a>DescribeVpcEndpointServices</a> request, or get the name from the service
+     * provider.</p>
      */
     inline CreateVpcEndpointRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
      * <p>The service name. To get a list of available services, use the
-     * <a>DescribeVpcEndpointServices</a> request.</p>
+     * <a>DescribeVpcEndpointServices</a> request, or get the name from the service
+     * provider.</p>
      */
     inline CreateVpcEndpointRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 
