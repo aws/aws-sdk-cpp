@@ -29,7 +29,8 @@ namespace Aws
         enum class Scheme
         {
             HTTP,
-            HTTPS
+            HTTPS,
+            SOCKS5
         };
 
         namespace SchemeMapper

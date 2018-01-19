@@ -35,6 +35,8 @@ namespace SchemeMapper
                 return "http";
             case Scheme::HTTPS:
                 return "https";
+            case Scheme::SOCKS5:
+                return "socks5";
             default:
                 return "http";
         }
@@ -55,6 +57,11 @@ namespace SchemeMapper
         {
             return Scheme::HTTPS;
         }
+        else if (loweredTrimmedString == "socks5")
+        {
+            return Scheme::SOCKS5;
+        }
+
 
         return Scheme::HTTPS;
     }
