@@ -89,37 +89,44 @@ namespace Model
 
 
     /**
-     * <p>The name of the metadata database to update in the catalog.</p>
+     * <p>The name of the database to update in the catalog. For Hive compatibility,
+     * this is folded to lowercase.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the metadata database to update in the catalog.</p>
+     * <p>The name of the database to update in the catalog. For Hive compatibility,
+     * this is folded to lowercase.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the metadata database to update in the catalog.</p>
+     * <p>The name of the database to update in the catalog. For Hive compatibility,
+     * this is folded to lowercase.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the metadata database to update in the catalog.</p>
+     * <p>The name of the database to update in the catalog. For Hive compatibility,
+     * this is folded to lowercase.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the metadata database to update in the catalog.</p>
+     * <p>The name of the database to update in the catalog. For Hive compatibility,
+     * this is folded to lowercase.</p>
      */
     inline UpdateDatabaseRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the metadata database to update in the catalog.</p>
+     * <p>The name of the database to update in the catalog. For Hive compatibility,
+     * this is folded to lowercase.</p>
      */
     inline UpdateDatabaseRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the metadata database to update in the catalog.</p>
+     * <p>The name of the database to update in the catalog. For Hive compatibility,
+     * this is folded to lowercase.</p>
      */
     inline UpdateDatabaseRequest& WithName(const char* value) { SetName(value); return *this;}
 

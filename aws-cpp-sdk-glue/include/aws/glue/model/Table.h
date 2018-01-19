@@ -53,73 +53,87 @@ namespace Model
 
 
     /**
-     * <p>Name of the table.</p>
+     * <p>Name of the table. For Hive compatibility, this must be entirely
+     * lowercase.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Name of the table.</p>
+     * <p>Name of the table. For Hive compatibility, this must be entirely
+     * lowercase.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Name of the table.</p>
+     * <p>Name of the table. For Hive compatibility, this must be entirely
+     * lowercase.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Name of the table.</p>
+     * <p>Name of the table. For Hive compatibility, this must be entirely
+     * lowercase.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Name of the table.</p>
+     * <p>Name of the table. For Hive compatibility, this must be entirely
+     * lowercase.</p>
      */
     inline Table& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Name of the table.</p>
+     * <p>Name of the table. For Hive compatibility, this must be entirely
+     * lowercase.</p>
      */
     inline Table& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the table.</p>
+     * <p>Name of the table. For Hive compatibility, this must be entirely
+     * lowercase.</p>
      */
     inline Table& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>Name of the metadata database where the table metadata resides.</p>
+     * <p>Name of the metadata database where the table metadata resides. For Hive
+     * compatibility, this must be all lowercase.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
 
     /**
-     * <p>Name of the metadata database where the table metadata resides.</p>
+     * <p>Name of the metadata database where the table metadata resides. For Hive
+     * compatibility, this must be all lowercase.</p>
      */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /**
-     * <p>Name of the metadata database where the table metadata resides.</p>
+     * <p>Name of the metadata database where the table metadata resides. For Hive
+     * compatibility, this must be all lowercase.</p>
      */
     inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
 
     /**
-     * <p>Name of the metadata database where the table metadata resides.</p>
+     * <p>Name of the metadata database where the table metadata resides. For Hive
+     * compatibility, this must be all lowercase.</p>
      */
     inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
 
     /**
-     * <p>Name of the metadata database where the table metadata resides.</p>
+     * <p>Name of the metadata database where the table metadata resides. For Hive
+     * compatibility, this must be all lowercase.</p>
      */
     inline Table& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
 
     /**
-     * <p>Name of the metadata database where the table metadata resides.</p>
+     * <p>Name of the metadata database where the table metadata resides. For Hive
+     * compatibility, this must be all lowercase.</p>
      */
     inline Table& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the metadata database where the table metadata resides.</p>
+     * <p>Name of the metadata database where the table metadata resides. For Hive
+     * compatibility, this must be all lowercase.</p>
      */
     inline Table& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 

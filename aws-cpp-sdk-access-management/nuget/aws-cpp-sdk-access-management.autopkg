@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-AccessManagement;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.3.42;
+        version : 1.3.43;
 
         // Display name for package.
         title: AWS SDK for C++ (Access Management);
@@ -48,9 +48,9 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.3.42,
-            AWSSDKCPP-CognitoIdentity/1.3.20140630.42,
-            AWSSDKCPP-IAM/1.3.20100508.42
+            AWSSDKCPP-Core/1.3.43,
+            AWSSDKCPP-CognitoIdentity/1.3.20140630.43,
+            AWSSDKCPP-IAM/1.3.20100508.43
        }
     }
 

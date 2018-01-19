@@ -25,7 +25,9 @@ using namespace Aws::Utils;
 UpdateTableRequest::UpdateTableRequest() : 
     m_catalogIdHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
-    m_tableInputHasBeenSet(false)
+    m_tableInputHasBeenSet(false),
+    m_skipArchive(false),
+    m_skipArchiveHasBeenSet(false)
 {
 }
 
@@ -48,6 +50,12 @@ Aws::String UpdateTableRequest::SerializePayload() const
   if(m_tableInputHasBeenSet)
   {
    payload.WithObject("TableInput", m_tableInput.Jsonize());
+
+  }
+
+  if(m_skipArchiveHasBeenSet)
+  {
+   payload.WithBool("SkipArchive", m_skipArchive);
 
   }
 

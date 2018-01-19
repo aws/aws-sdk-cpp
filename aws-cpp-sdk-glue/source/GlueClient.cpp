@@ -31,6 +31,7 @@
 #include <aws/glue/model/BatchDeleteConnectionRequest.h>
 #include <aws/glue/model/BatchDeletePartitionRequest.h>
 #include <aws/glue/model/BatchDeleteTableRequest.h>
+#include <aws/glue/model/BatchDeleteTableVersionRequest.h>
 #include <aws/glue/model/BatchGetPartitionRequest.h>
 #include <aws/glue/model/BatchStopJobRunRequest.h>
 #include <aws/glue/model/CreateClassifierRequest.h>
@@ -52,6 +53,7 @@
 #include <aws/glue/model/DeleteJobRequest.h>
 #include <aws/glue/model/DeletePartitionRequest.h>
 #include <aws/glue/model/DeleteTableRequest.h>
+#include <aws/glue/model/DeleteTableVersionRequest.h>
 #include <aws/glue/model/DeleteTriggerRequest.h>
 #include <aws/glue/model/DeleteUserDefinedFunctionRequest.h>
 #include <aws/glue/model/GetCatalogImportStatusRequest.h>
@@ -76,6 +78,7 @@
 #include <aws/glue/model/GetPartitionsRequest.h>
 #include <aws/glue/model/GetPlanRequest.h>
 #include <aws/glue/model/GetTableRequest.h>
+#include <aws/glue/model/GetTableVersionRequest.h>
 #include <aws/glue/model/GetTableVersionsRequest.h>
 #include <aws/glue/model/GetTablesRequest.h>
 #include <aws/glue/model/GetTriggerRequest.h>
@@ -305,6 +308,41 @@ void GlueClient::BatchDeleteTableAsync(const BatchDeleteTableRequest& request, c
 void GlueClient::BatchDeleteTableAsyncHelper(const BatchDeleteTableRequest& request, const BatchDeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, BatchDeleteTable(request), context);
+}
+
+BatchDeleteTableVersionOutcome GlueClient::BatchDeleteTableVersion(const BatchDeleteTableVersionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return BatchDeleteTableVersionOutcome(BatchDeleteTableVersionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return BatchDeleteTableVersionOutcome(outcome.GetError());
+  }
+}
+
+BatchDeleteTableVersionOutcomeCallable GlueClient::BatchDeleteTableVersionCallable(const BatchDeleteTableVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchDeleteTableVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDeleteTableVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::BatchDeleteTableVersionAsync(const BatchDeleteTableVersionRequest& request, const BatchDeleteTableVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchDeleteTableVersionAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::BatchDeleteTableVersionAsyncHelper(const BatchDeleteTableVersionRequest& request, const BatchDeleteTableVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchDeleteTableVersion(request), context);
 }
 
 BatchGetPartitionOutcome GlueClient::BatchGetPartition(const BatchGetPartitionRequest& request) const
@@ -1040,6 +1078,41 @@ void GlueClient::DeleteTableAsync(const DeleteTableRequest& request, const Delet
 void GlueClient::DeleteTableAsyncHelper(const DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteTable(request), context);
+}
+
+DeleteTableVersionOutcome GlueClient::DeleteTableVersion(const DeleteTableVersionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteTableVersionOutcome(DeleteTableVersionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteTableVersionOutcome(outcome.GetError());
+  }
+}
+
+DeleteTableVersionOutcomeCallable GlueClient::DeleteTableVersionCallable(const DeleteTableVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteTableVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTableVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::DeleteTableVersionAsync(const DeleteTableVersionRequest& request, const DeleteTableVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteTableVersionAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::DeleteTableVersionAsyncHelper(const DeleteTableVersionRequest& request, const DeleteTableVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteTableVersion(request), context);
 }
 
 DeleteTriggerOutcome GlueClient::DeleteTrigger(const DeleteTriggerRequest& request) const
@@ -1880,6 +1953,41 @@ void GlueClient::GetTableAsync(const GetTableRequest& request, const GetTableRes
 void GlueClient::GetTableAsyncHelper(const GetTableRequest& request, const GetTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetTable(request), context);
+}
+
+GetTableVersionOutcome GlueClient::GetTableVersion(const GetTableVersionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetTableVersionOutcome(GetTableVersionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetTableVersionOutcome(outcome.GetError());
+  }
+}
+
+GetTableVersionOutcomeCallable GlueClient::GetTableVersionCallable(const GetTableVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetTableVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTableVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::GetTableVersionAsync(const GetTableVersionRequest& request, const GetTableVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetTableVersionAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::GetTableVersionAsyncHelper(const GetTableVersionRequest& request, const GetTableVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetTableVersion(request), context);
 }
 
 GetTableVersionsOutcome GlueClient::GetTableVersions(const GetTableVersionsRequest& request) const

@@ -88,73 +88,87 @@ namespace Model
 
 
     /**
-     * <p>The database in the catalog in which the table resides.</p>
+     * <p>The database in the catalog in which the table resides. For Hive
+     * compatibility, this name is entirely lowercase.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
 
     /**
-     * <p>The database in the catalog in which the table resides.</p>
+     * <p>The database in the catalog in which the table resides. For Hive
+     * compatibility, this name is entirely lowercase.</p>
      */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /**
-     * <p>The database in the catalog in which the table resides.</p>
+     * <p>The database in the catalog in which the table resides. For Hive
+     * compatibility, this name is entirely lowercase.</p>
      */
     inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
 
     /**
-     * <p>The database in the catalog in which the table resides.</p>
+     * <p>The database in the catalog in which the table resides. For Hive
+     * compatibility, this name is entirely lowercase.</p>
      */
     inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
 
     /**
-     * <p>The database in the catalog in which the table resides.</p>
+     * <p>The database in the catalog in which the table resides. For Hive
+     * compatibility, this name is entirely lowercase.</p>
      */
     inline GetTableVersionsRequest& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
 
     /**
-     * <p>The database in the catalog in which the table resides.</p>
+     * <p>The database in the catalog in which the table resides. For Hive
+     * compatibility, this name is entirely lowercase.</p>
      */
     inline GetTableVersionsRequest& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
 
     /**
-     * <p>The database in the catalog in which the table resides.</p>
+     * <p>The database in the catalog in which the table resides. For Hive
+     * compatibility, this name is entirely lowercase.</p>
      */
     inline GetTableVersionsRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 
 
     /**
-     * <p>The name of the table.</p>
+     * <p>The name of the table. For Hive compatibility, this name is entirely
+     * lowercase.</p>
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
 
     /**
-     * <p>The name of the table.</p>
+     * <p>The name of the table. For Hive compatibility, this name is entirely
+     * lowercase.</p>
      */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
-     * <p>The name of the table.</p>
+     * <p>The name of the table. For Hive compatibility, this name is entirely
+     * lowercase.</p>
      */
     inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
 
     /**
-     * <p>The name of the table.</p>
+     * <p>The name of the table. For Hive compatibility, this name is entirely
+     * lowercase.</p>
      */
     inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
 
     /**
-     * <p>The name of the table.</p>
+     * <p>The name of the table. For Hive compatibility, this name is entirely
+     * lowercase.</p>
      */
     inline GetTableVersionsRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
 
     /**
-     * <p>The name of the table.</p>
+     * <p>The name of the table. For Hive compatibility, this name is entirely
+     * lowercase.</p>
      */
     inline GetTableVersionsRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the table.</p>
+     * <p>The name of the table. For Hive compatibility, this name is entirely
+     * lowercase.</p>
      */
     inline GetTableVersionsRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
 

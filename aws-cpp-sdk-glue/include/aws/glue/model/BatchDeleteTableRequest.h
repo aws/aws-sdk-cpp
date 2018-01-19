@@ -89,37 +89,44 @@ namespace Model
 
 
     /**
-     * <p>The name of the catalog database where the tables to delete reside.</p>
+     * <p>The name of the catalog database where the tables to delete reside. For Hive
+     * compatibility, this name is entirely lowercase.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
 
     /**
-     * <p>The name of the catalog database where the tables to delete reside.</p>
+     * <p>The name of the catalog database where the tables to delete reside. For Hive
+     * compatibility, this name is entirely lowercase.</p>
      */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /**
-     * <p>The name of the catalog database where the tables to delete reside.</p>
+     * <p>The name of the catalog database where the tables to delete reside. For Hive
+     * compatibility, this name is entirely lowercase.</p>
      */
     inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
 
     /**
-     * <p>The name of the catalog database where the tables to delete reside.</p>
+     * <p>The name of the catalog database where the tables to delete reside. For Hive
+     * compatibility, this name is entirely lowercase.</p>
      */
     inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
 
     /**
-     * <p>The name of the catalog database where the tables to delete reside.</p>
+     * <p>The name of the catalog database where the tables to delete reside. For Hive
+     * compatibility, this name is entirely lowercase.</p>
      */
     inline BatchDeleteTableRequest& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
 
     /**
-     * <p>The name of the catalog database where the tables to delete reside.</p>
+     * <p>The name of the catalog database where the tables to delete reside. For Hive
+     * compatibility, this name is entirely lowercase.</p>
      */
     inline BatchDeleteTableRequest& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the catalog database where the tables to delete reside.</p>
+     * <p>The name of the catalog database where the tables to delete reside. For Hive
+     * compatibility, this name is entirely lowercase.</p>
      */
     inline BatchDeleteTableRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 
