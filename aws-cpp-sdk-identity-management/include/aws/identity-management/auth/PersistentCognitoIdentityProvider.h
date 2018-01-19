@@ -42,6 +42,7 @@ namespace Aws
         class AWS_IDENTITY_MANAGEMENT_API PersistentCognitoIdentityProvider
         {
         public:
+            virtual ~PersistentCognitoIdentityProvider() = default;
             virtual bool HasIdentityId() const = 0;
             virtual bool HasLogins() const = 0;
             virtual Aws::String GetIdentityId() const = 0;
