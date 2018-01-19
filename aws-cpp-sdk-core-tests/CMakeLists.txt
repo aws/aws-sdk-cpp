@@ -22,6 +22,7 @@ file(GLOB UTILS_XML_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/memory/*.cpp")
 
 file(GLOB AWS_CPP_SDK_CORE_TESTS_SRC
   "${CMAKE_CURRENT_SOURCE_DIR}/RunTests.cpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/VersionTests.cpp"
   ${AWS_SRC}
   ${AWS_AUTH_SRC}
   ${AWS_CONFIG_SRC}
