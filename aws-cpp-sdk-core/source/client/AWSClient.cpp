@@ -265,12 +265,12 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri, Ht
     }
 }
 
-bool AWSClient::DoesResponseGenerateError(const std::shared_ptr<HttpResponse>& response) const
+static bool DoesResponseGenerateError(const std::shared_ptr<HttpResponse>& response)
 {
     if (!response) return true;
 
     int responseCode = static_cast<int>(response->GetResponseCode());
-    return responseCode < SUCCESS_RESPONSE_MIN || responseCode > SUCCESS_RESPONSE_MAX;
+    return response == nullptr || responseCode < SUCCESS_RESPONSE_MIN || responseCode > SUCCESS_RESPONSE_MAX;
 
 }
 

@@ -232,11 +232,6 @@ namespace Aws
              */
             Aws::Client::AWSAuthSigner* GetSignerByName(const char* name) const;
 
-            /**
-             * Determines if a given http response is an error
-             */
-            virtual bool DoesResponseGenerateError(const std::shared_ptr<Aws::Http::HttpResponse>& response) const;
-
         private:
             void AddHeadersToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest, const Http::HeaderValueCollection& headerValues) const;
             void AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest,
