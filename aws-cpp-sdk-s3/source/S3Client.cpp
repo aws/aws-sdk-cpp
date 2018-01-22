@@ -2786,16 +2786,3 @@ bool S3Client::MultipartUploadSupported() const
 {
     return true;
 }
-
-bool S3Client::DoesResponseGenerateError(const std::shared_ptr<HttpResponse>& response) const
-{
-    if(AWSClient::DoesResponseGenerateError(response))
-    {
-       return true;
-    }
-
-    // CompleteMultipartUpload can return 200 OK with an error in the response body.
-    // therefore, we have to inspect the response body in case of a success http status code
-    // For more information see http://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadComplete.html
-    return XmlErrorMarshaller::ContainsError(*response);
-}

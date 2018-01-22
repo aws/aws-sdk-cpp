@@ -188,6 +188,38 @@ namespace Model
      */
     inline CostTypes& WithIncludeSupport(bool value) { SetIncludeSupport(value); return *this;}
 
+
+    /**
+     * A boolean value whether to include discounts in the cost budget.
+     */
+    inline bool GetIncludeDiscount() const{ return m_includeDiscount; }
+
+    /**
+     * A boolean value whether to include discounts in the cost budget.
+     */
+    inline void SetIncludeDiscount(bool value) { m_includeDiscountHasBeenSet = true; m_includeDiscount = value; }
+
+    /**
+     * A boolean value whether to include discounts in the cost budget.
+     */
+    inline CostTypes& WithIncludeDiscount(bool value) { SetIncludeDiscount(value); return *this;}
+
+
+    /**
+     * A boolean value whether to include amortized costs in the cost budget.
+     */
+    inline bool GetUseAmortized() const{ return m_useAmortized; }
+
+    /**
+     * A boolean value whether to include amortized costs in the cost budget.
+     */
+    inline void SetUseAmortized(bool value) { m_useAmortizedHasBeenSet = true; m_useAmortized = value; }
+
+    /**
+     * A boolean value whether to include amortized costs in the cost budget.
+     */
+    inline CostTypes& WithUseAmortized(bool value) { SetUseAmortized(value); return *this;}
+
   private:
 
     bool m_includeTax;
@@ -216,6 +248,12 @@ namespace Model
 
     bool m_includeSupport;
     bool m_includeSupportHasBeenSet;
+
+    bool m_includeDiscount;
+    bool m_includeDiscountHasBeenSet;
+
+    bool m_useAmortized;
+    bool m_useAmortizedHasBeenSet;
   };
 
 } // namespace Model

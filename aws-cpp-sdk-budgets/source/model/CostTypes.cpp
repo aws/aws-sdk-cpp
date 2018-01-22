@@ -46,7 +46,11 @@ CostTypes::CostTypes() :
     m_includeOtherSubscription(false),
     m_includeOtherSubscriptionHasBeenSet(false),
     m_includeSupport(false),
-    m_includeSupportHasBeenSet(false)
+    m_includeSupportHasBeenSet(false),
+    m_includeDiscount(false),
+    m_includeDiscountHasBeenSet(false),
+    m_useAmortized(false),
+    m_useAmortizedHasBeenSet(false)
 {
 }
 
@@ -68,7 +72,11 @@ CostTypes::CostTypes(const JsonValue& jsonValue) :
     m_includeOtherSubscription(false),
     m_includeOtherSubscriptionHasBeenSet(false),
     m_includeSupport(false),
-    m_includeSupportHasBeenSet(false)
+    m_includeSupportHasBeenSet(false),
+    m_includeDiscount(false),
+    m_includeDiscountHasBeenSet(false),
+    m_useAmortized(false),
+    m_useAmortizedHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -138,6 +146,20 @@ CostTypes& CostTypes::operator =(const JsonValue& jsonValue)
     m_includeSupportHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IncludeDiscount"))
+  {
+    m_includeDiscount = jsonValue.GetBool("IncludeDiscount");
+
+    m_includeDiscountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UseAmortized"))
+  {
+    m_useAmortized = jsonValue.GetBool("UseAmortized");
+
+    m_useAmortizedHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -196,6 +218,18 @@ JsonValue CostTypes::Jsonize() const
   if(m_includeSupportHasBeenSet)
   {
    payload.WithBool("IncludeSupport", m_includeSupport);
+
+  }
+
+  if(m_includeDiscountHasBeenSet)
+  {
+   payload.WithBool("IncludeDiscount", m_includeDiscount);
+
+  }
+
+  if(m_useAmortizedHasBeenSet)
+  {
+   payload.WithBool("UseAmortized", m_useAmortized);
 
   }
 
