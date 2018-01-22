@@ -155,6 +155,13 @@ namespace Aws
 
         protected:
             /**
+             * Validates HttpResponse body in cases where it's possible to get 200 response code,
+             * but the request failed and the body contains an error (e.g. Complete multipart upload)
+             */
+            HttpResponseOutcome GetHttpOutcome(const std::shared_ptr<Http::HttpRequest>& httpRequest,
+                const std::shared_ptr<Http::HttpResponse>& httpResponse) const;
+
+            /**
              * Calls AttemptOnRequest until it either, succeeds, runs out of retries from the retry strategy,
              * or encounters and error that is not retryable.
              */

@@ -274,7 +274,34 @@ bool AWSClient::DoesResponseGenerateError(const std::shared_ptr<HttpResponse>& r
 
 }
 
-HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::Http::URI& uri,
+HttpResponseOutcome AWSClient::GetHttpOutcome(const std::shared_ptr<Http::HttpRequest>& httpRequest,
+    const std::shared_ptr<Http::HttpResponse>& httpResponse) const
+{
+    if (httpRequest->GetMethod() != HttpMethod::HTTP_GET && 
+            httpResponse->GetContentType() == "application/xml") {
+        // Don't just trust the response status code; check the response body
+        // See http://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadComplete.html
+        XmlDocument doc = XmlDocument::CreateFromXmlStream(httpResponse->GetResponseBody());
+        if (doc.WasParseSuccessful()) {
+            XmlNode errorNode = doc.GetRootElement();
+            if (errorNode.IsNull()) {
+                return HttpResponseOutcome(BuildAWSError(nullptr));
+            }
+
+            if (errorNode.GetName() == "Error") {
+                AWS_LOG_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
+                return HttpResponseOutcome(BuildAWSError(httpResponse));
+            }
+        }
+
+    }
+
+    AWS_LOG_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned successful response.");
+    return HttpResponseOutcome(httpResponse);
+}
+
+
+HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::String& uri,
     const Aws::AmazonWebServiceRequest& request,
     HttpMethod method,
     const char* signerName) const
@@ -298,9 +325,7 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::Http::URI& uri,
         return HttpResponseOutcome(BuildAWSError(httpResponse));
     }
 
-    AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned successful response.");
-
-    return HttpResponseOutcome(httpResponse);
+    return GetHttpOutcome(httpRequest, httpResponse);
 }
 
 HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::Http::URI& uri, HttpMethod method, const char* signerName, const char* requestName) const
@@ -328,9 +353,7 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::Http::URI& uri, Http
         return HttpResponseOutcome(BuildAWSError(httpResponse));
     }
 
-    AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned successful response.");
-
-    return HttpResponseOutcome(httpResponse);
+    return GetHttpOutcome(httpRequest, httpResponse);
 }
 
 StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::Http::URI& uri,
