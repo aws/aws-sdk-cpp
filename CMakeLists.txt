@@ -54,6 +54,7 @@ option(ANDROID_BUILD_CURL "When building for Android, should curl be built as we
 option(ANDROID_BUILD_OPENSSL "When building for Android, should Openssl be built as well" ON)
 option(ANDROID_BUILD_ZLIB "When building for Android, should Zlib be built as well" ON)
 option(FORCE_CURL "Forces usage of the Curl client rather than the default OS-specific api" OFF)
+option(ENABLE_ADDRESS_SANITIZER "Flags to enable/disable Address Sanitizer for gcc or clang" OFF)
 
 set(BUILD_ONLY "" CACHE STRING "A semi-colon delimited list of the projects to build")
 set(CPP_STANDARD "11" CACHE STRING "Flag to upgrade the C++ standard used. The default is 11. The minimum is 11.")
@@ -166,6 +167,10 @@ if(BUILD_SHARED_LIBS)
     set(ARCHIVE_DIRECTORY "${BINARY_DIRECTORY}")
 else()
     set(ARCHIVE_DIRECTORY "${LIBRARY_DIRECTORY}")
+endif()
+
+if (ENABLE_ADDRESS_SANITIZER)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address -g -fno-omit-frame-pointer")
 endif()
 
 add_sdks()

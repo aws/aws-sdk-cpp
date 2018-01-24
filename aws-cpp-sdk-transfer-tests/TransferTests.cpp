@@ -160,9 +160,12 @@ class MockS3Client : public S3Client
 {
 public:
     MockS3Client(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration()):
-        S3Client(clientConfiguration), listObjectsV2RequestCount(0) 
+        S3Client(clientConfiguration), executor(clientConfiguration.executor), listObjectsV2RequestCount(0) 
+    {}
+
+    ~MockS3Client() 
     {
-        executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOCATION_TAG, 4);
+        executor = nullptr;
     }
 
     // Override this function to do verification.
@@ -197,8 +200,13 @@ public:
         m_executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOCATION_TAG, 4);
     }
 
-protected:
+    void TearDown()
+    {
+        m_executor = nullptr;
+    }
 
+protected:
+    // Executor used by transferManager
     std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
 
     static Aws::String GetTestBucketName()
@@ -311,7 +319,8 @@ protected:
         config.scheme = Scheme::HTTP;
         config.connectTimeoutMs = 3000;
         config.requestTimeoutMs = 60000;
-
+        // executor used for s3Client
+        config.executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOCATION_TAG, 5);
         m_s3Client = Aws::MakeShared<MockS3Client>(ALLOCATION_TAG, config);
 
         DeleteBucket(GetTestBucketName());
@@ -1109,6 +1118,7 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryUploadTest)
     bool completedPartsStayedCompletedDuringRetry = true;
     bool completionCheckDone = false;
     const char uuid[] = "Bjarne Stroustrup!";
+    std::atomic<bool> cancelHasBeenCalled(false);
 
     TransferManagerConfiguration transferManagerConfig(m_executor.get());
     transferManagerConfig.transferStatusUpdatedCallback = 
@@ -1119,8 +1129,8 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryUploadTest)
                 ASSERT_NE(nullptr, handle->GetContext());
                 ASSERT_STREQ(uuid, handle->GetContext()->GetUUID().c_str());
             }
-
-            if (!retryInProgress && handle->GetCompletedParts().size() >= 15 &&  handle->GetStatus() != TransferStatus::CANCELED)
+            bool expected = false;
+            if (handle->GetCompletedParts().size() >= 15 && cancelHasBeenCalled.compare_exchange_strong(expected, true))
             {
                 std::const_pointer_cast<TransferHandle>(handle)->Cancel();
             }
@@ -1225,6 +1235,7 @@ TEST_F(TransferTests, TransferManager_AbortAndRetryUploadTest)
     bool retryInProgress = false;
     bool completedPartsStayedCompletedDuringRetry = true;
     bool completionCheckDone = false;
+    std::atomic<bool> cancelHasBeenCalled(false);
 
     std::shared_ptr<TransferHandle> requestPtr(nullptr);
 
@@ -1232,7 +1243,8 @@ TEST_F(TransferTests, TransferManager_AbortAndRetryUploadTest)
     transferManagerConfig.transferStatusUpdatedCallback =
         [&](const TransferManager* manager, const std::shared_ptr<const TransferHandle>& handle)
         {
-            if (!retryInProgress && handle->GetCompletedParts().size() >= 15 && handle->GetStatus() != TransferStatus::CANCELED)
+            bool expected = false;
+            if (handle->GetCompletedParts().size() >= 15 && cancelHasBeenCalled.compare_exchange_strong(expected, true))
             {
                 const_cast<TransferManager*>(manager)->AbortMultipartUpload(std::const_pointer_cast<TransferHandle>(handle));
             }
@@ -1273,6 +1285,15 @@ TEST_F(TransferTests, TransferManager_AbortAndRetryUploadTest)
     ListMultipartUploadsOutcome listMultipartOutcome = m_s3Client->ListMultipartUploads(listMultipartRequest);
 
     EXPECT_TRUE(listMultipartOutcome.IsSuccess());
+    // S3 has eventual consistency, even thought we called AbortMultiPartUpload and get successful return,
+    // following call of listMultiPartUpload will not gurantee to return 0.
+    size_t retries = 0;
+    while (listMultipartOutcome.GetResult().GetUploads().size() != 0u && retries++ < 5)
+    {
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        listMultipartOutcome = m_s3Client->ListMultipartUploads(listMultipartRequest);
+        EXPECT_TRUE(listMultipartOutcome.IsSuccess());
+    }
     ASSERT_EQ(0u, listMultipartOutcome.GetResult().GetUploads().size());
 
     HeadObjectRequest headObjectRequest;
@@ -1287,7 +1308,7 @@ TEST_F(TransferTests, TransferManager_AbortAndRetryUploadTest)
     ASSERT_NE(requestPtr, tempPtr);
     requestPtr->WaitUntilFinished();
 
-    size_t retries = 0;
+    retries = 0;
     //just make sure we don't fail because an upload part failed. (e.g. network problems or interuptions)
     while (requestPtr->GetStatus() == TransferStatus::FAILED && retries++ < 5)
     {
@@ -1540,6 +1561,7 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryDownloadTest)
         bool completedPartsStayedCompletedDuringRetry = true;
         bool completionCheckDone = false;
         const char uuid[] = "Bjarne Stroustrup!";
+        std::atomic<bool> cancelHasBeenCalled(false);
 
         TransferManagerConfiguration downloadConfig(m_executor.get());
         downloadConfig.s3Client = m_s3Client;
@@ -1550,7 +1572,8 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryDownloadTest)
                 ASSERT_STREQ(uuid, handle->GetContext()->GetUUID().c_str());
 
                 ASSERT_EQ(downloadFileName, handle->GetTargetFilePath());
-                if (!retryInProgress && handle->GetCompletedParts().size() >= 15 &&  handle->GetStatus() != TransferStatus::CANCELED)
+                bool expected = false;
+                if (handle->GetCompletedParts().size() >= 15u && cancelHasBeenCalled.compare_exchange_strong(expected, true))
                 {
                     std::const_pointer_cast<TransferHandle>(handle)->Cancel();
                 }
@@ -1578,7 +1601,12 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryDownloadTest)
             requestPtr->WaitUntilFinished();
         }
 
-        ASSERT_EQ(TransferStatus::CANCELED, requestPtr->GetStatus());    
+        // call Cancel() in TransferStatusUpdateCallback function will not set status to CANCELED immediately.
+        // It only set up m_cancel to true, status will be updated by following UpdateStatus() call.
+        while (requestPtr->GetStatus() != TransferStatus::CANCELED) 
+        {
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+        }
         ASSERT_TRUE(15u <= requestPtr->GetCompletedParts().size()); 
         ASSERT_EQ(0u, requestPtr->GetPendingParts().size());
         ASSERT_TRUE(15u >= requestPtr->GetFailedParts().size()); //some may have been in flight at cancelation time.

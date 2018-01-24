@@ -51,7 +51,7 @@ namespace Aws
 
         TextToSpeechManager::TextToSpeechManager(const std::shared_ptr<Polly::PollyClient>& pollyClient, 
             const std::shared_ptr<PCMOutputDriverFactory>& driverFactory) 
-            : m_pollyClient(pollyClient), m_activeVoice(VoiceId::Kimberly)
+            : m_pollyClient(pollyClient.get()), m_activeVoice(VoiceId::Kimberly)
         {
             m_drivers = (driverFactory ? driverFactory : DefaultPCMOutputDriverFactoryInitFn())->LoadDrivers();
         }

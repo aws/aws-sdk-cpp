@@ -434,8 +434,15 @@ namespace Aws
 
             if (outcome.IsSuccess())
             {
-                transferContext->handle->ChangePartToCompleted(transferContext->partState, outcome.GetResult().GetETag());
-                TriggerUploadProgressCallback(transferContext->handle);
+                if (transferContext->handle->ShouldContinue())
+                {
+                    transferContext->handle->ChangePartToCompleted(transferContext->partState, outcome.GetResult().GetETag());
+                    TriggerUploadProgressCallback(transferContext->handle);
+                }
+                else
+                {
+                    transferContext->handle->ChangePartToFailed(transferContext->partState);
+                }
             }
             else
             {
@@ -485,9 +492,8 @@ namespace Aws
                 {
                     transferContext->handle->UpdateStatus(DetermineIfFailedOrCanceled(*transferContext->handle));
                 }
+                TriggerTransferStatusUpdatedCallback(transferContext->handle);
             }
-
-            TriggerTransferStatusUpdatedCallback(transferContext->handle);
         }
 
         void TransferManager::HandlePutObjectResponse(const Aws::S3::S3Client*, const Aws::S3::Model::PutObjectRequest& request,
@@ -503,8 +509,16 @@ namespace Aws
 
             if (outcome.IsSuccess())
             {
-                transferContext->handle->ChangePartToCompleted(transferContext->partState, outcome.GetResult().GetETag());
-                transferContext->handle->UpdateStatus(TransferStatus::COMPLETED);
+                if (transferContext->handle->ShouldContinue())
+                {
+                    transferContext->handle->ChangePartToCompleted(transferContext->partState, outcome.GetResult().GetETag());
+                    transferContext->handle->UpdateStatus(TransferStatus::COMPLETED);
+                }
+                else
+                {
+                    transferContext->handle->ChangePartToFailed(transferContext->partState);
+                    transferContext->handle->UpdateStatus(DetermineIfFailedOrCanceled(*transferContext->handle));
+                }
             }
             else
             {
@@ -776,6 +790,7 @@ namespace Aws
                 if(transferContext->handle->ShouldContinue())
                 {
                     Aws::IOStream* bufferStream = transferContext->partState->GetDownloadPartStream();
+                    assert(bufferStream);
                     transferContext->handle->WritePartToDownloadStream(bufferStream, transferContext->partState->GetRangeBegin());
                     transferContext->handle->ChangePartToCompleted(transferContext->partState, outcome.GetResult().GetETag());
                 }
@@ -807,9 +822,9 @@ namespace Aws
                 {
                     transferContext->handle->UpdateStatus(DetermineIfFailedOrCanceled(*transferContext->handle));
                 }
+                TriggerTransferStatusUpdatedCallback(transferContext->handle);
             }
-
-            TriggerTransferStatusUpdatedCallback(transferContext->handle);
+            transferContext->partState->SetDownloadPartStream(nullptr);
         }
 
         void TransferManager::WaitForCancellationAndAbortUpload(const std::shared_ptr<TransferHandle>& canceledHandle)
@@ -833,6 +848,10 @@ namespace Aws
                     canceledHandle->SetError(abortOutcome.GetError());
                     TriggerErrorCallback(canceledHandle, abortOutcome.GetError());
                 }
+            }
+            else
+            {
+                AWS_LOGSTREAM_TRACE(CLASS_TAG, "Transfer status changed to " << static_cast<int>(canceledHandle->GetStatus()) << " when waiting for cancel status");
             }
         }
 
