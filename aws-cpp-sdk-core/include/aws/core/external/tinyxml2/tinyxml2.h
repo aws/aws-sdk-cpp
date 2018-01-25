@@ -81,10 +81,11 @@ This file has been modified from its original version by Amazon:
     #endif // USE_IMPORT_EXPORT
 #elif __GNUC__ >= 4
     #define TINYXML2_LIB __attribute__((visibility("default")))
-#else
-    #define TINYXML2_LIB
 #endif // _WIN32
 
+#ifndef TINYXML2_LIB
+    #define TINYXML2_LIB
+#endif // TINYXML2_LIB
 
 #if defined(DEBUG)
 #   if defined(_MSC_VER)
