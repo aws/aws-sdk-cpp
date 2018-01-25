@@ -56,7 +56,7 @@ namespace Aws
                 StopPolling();
             }
 
-            virtual MESSAGE_TYPE Top() const = 0;
+            virtual bool Top(MESSAGE_TYPE&) const = 0;
             virtual void Delete(const MESSAGE_TYPE&) = 0;
             virtual void Push(const MESSAGE_TYPE&) = 0;
 
@@ -121,15 +121,21 @@ namespace Aws
 
                     while(m_continue)
                     {
-                        MESSAGE_TYPE topMessage = Top();
+                        MESSAGE_TYPE topMessage;
+                        bool messageReceived = Top(topMessage);
                         bool deleteMessage = false;
 
-                        if (receivedHandler)
+                        if(!messageReceived)
+                        {
+                            break;
+                        }
+
+                        if(receivedHandler)
                         {
                             receivedHandler(this, topMessage, deleteMessage);
                         }
 
-                        if (deleteMessage)
+                        if(deleteMessage)
                         {
                             Delete(topMessage);
                         }

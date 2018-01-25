@@ -54,7 +54,7 @@ SQSQueue::SQSQueue(const std::shared_ptr<SQSClient>& client, const char* queueNa
 {
 }
 
-Message SQSQueue::Top() const
+bool SQSQueue::Top(Message& message) const
 {
     if(IsInitialized())
     {
@@ -71,7 +71,8 @@ Message SQSQueue::Top() const
             if (receiveMessageOutcome.IsSuccess() && receiveMessageOutcome.GetResult().GetMessages().size() > 0)
             {
                 AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Message found, returning");
-                return receiveMessageOutcome.GetResult().GetMessages()[0];
+                message = receiveMessageOutcome.GetResult().GetMessages()[0];
+                return true;
             }
             else if (!receiveMessageOutcome.IsSuccess())
             {
@@ -87,7 +88,7 @@ Message SQSQueue::Top() const
         AWS_LOGSTREAM_ERROR(CLASS_TAG, "Queue is not initialized, not polling. Call EnsureQueueIsInitialized before calling this method.");
     }
 
-    return Message();
+    return false;
 }
 
 void SQSQueue::Delete(const Message& message)

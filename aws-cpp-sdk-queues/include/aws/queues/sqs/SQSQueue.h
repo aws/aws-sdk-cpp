@@ -89,7 +89,7 @@ namespace Aws
                 /**
                  * Will continue polling until a message is received or StopPolling is called.
                  */
-                Aws::SQS::Model::Message Top() const override;
+                bool Top(Aws::SQS::Model::Message&) const override;
 
                 /**
                  * Does not block. Register for notifications of success or failure with the appropriate handlers.
