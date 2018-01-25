@@ -27,6 +27,8 @@ StartBuildRequest::StartBuildRequest() :
     m_sourceVersionHasBeenSet(false),
     m_artifactsOverrideHasBeenSet(false),
     m_environmentVariablesOverrideHasBeenSet(false),
+    m_gitCloneDepthOverride(0),
+    m_gitCloneDepthOverrideHasBeenSet(false),
     m_buildspecOverrideHasBeenSet(false),
     m_timeoutInMinutesOverride(0),
     m_timeoutInMinutesOverrideHasBeenSet(false)
@@ -63,6 +65,12 @@ Aws::String StartBuildRequest::SerializePayload() const
      environmentVariablesOverrideJsonList[environmentVariablesOverrideIndex].AsObject(m_environmentVariablesOverride[environmentVariablesOverrideIndex].Jsonize());
    }
    payload.WithArray("environmentVariablesOverride", std::move(environmentVariablesOverrideJsonList));
+
+  }
+
+  if(m_gitCloneDepthOverrideHasBeenSet)
+  {
+   payload.WithInteger("gitCloneDepthOverride", m_gitCloneDepthOverride);
 
   }
 

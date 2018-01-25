@@ -68,6 +68,12 @@ CreateAliasResult& CreateAliasResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
+  if(jsonValue.ValueExists("RevisionId"))
+  {
+    m_revisionId = jsonValue.GetString("RevisionId");
+
+  }
+
 
 
   return *this;

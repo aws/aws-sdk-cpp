@@ -17,6 +17,7 @@
 #include <aws/alexaforbusiness/AlexaForBusiness_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/alexaforbusiness/model/DeviceStatus.h>
+#include <aws/alexaforbusiness/model/DeviceStatusInfo.h>
 #include <utility>
 
 namespace Aws
@@ -360,6 +361,32 @@ namespace Model
      */
     inline DeviceData& WithRoomName(const char* value) { SetRoomName(value); return *this;}
 
+
+    /**
+     * <p>Detailed information about a device's status.</p>
+     */
+    inline const DeviceStatusInfo& GetDeviceStatusInfo() const{ return m_deviceStatusInfo; }
+
+    /**
+     * <p>Detailed information about a device's status.</p>
+     */
+    inline void SetDeviceStatusInfo(const DeviceStatusInfo& value) { m_deviceStatusInfoHasBeenSet = true; m_deviceStatusInfo = value; }
+
+    /**
+     * <p>Detailed information about a device's status.</p>
+     */
+    inline void SetDeviceStatusInfo(DeviceStatusInfo&& value) { m_deviceStatusInfoHasBeenSet = true; m_deviceStatusInfo = std::move(value); }
+
+    /**
+     * <p>Detailed information about a device's status.</p>
+     */
+    inline DeviceData& WithDeviceStatusInfo(const DeviceStatusInfo& value) { SetDeviceStatusInfo(value); return *this;}
+
+    /**
+     * <p>Detailed information about a device's status.</p>
+     */
+    inline DeviceData& WithDeviceStatusInfo(DeviceStatusInfo&& value) { SetDeviceStatusInfo(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_deviceArn;
@@ -388,6 +415,9 @@ namespace Model
 
     Aws::String m_roomName;
     bool m_roomNameHasBeenSet;
+
+    DeviceStatusInfo m_deviceStatusInfo;
+    bool m_deviceStatusInfoHasBeenSet;
   };
 
 } // namespace Model

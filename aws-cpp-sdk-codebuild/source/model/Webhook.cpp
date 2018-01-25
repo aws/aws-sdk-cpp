@@ -29,12 +29,16 @@ namespace Model
 {
 
 Webhook::Webhook() : 
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_payloadUrlHasBeenSet(false),
+    m_secretHasBeenSet(false)
 {
 }
 
 Webhook::Webhook(const JsonValue& jsonValue) : 
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_payloadUrlHasBeenSet(false),
+    m_secretHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +52,20 @@ Webhook& Webhook::operator =(const JsonValue& jsonValue)
     m_urlHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("payloadUrl"))
+  {
+    m_payloadUrl = jsonValue.GetString("payloadUrl");
+
+    m_payloadUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("secret"))
+  {
+    m_secret = jsonValue.GetString("secret");
+
+    m_secretHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +76,18 @@ JsonValue Webhook::Jsonize() const
   if(m_urlHasBeenSet)
   {
    payload.WithString("url", m_url);
+
+  }
+
+  if(m_payloadUrlHasBeenSet)
+  {
+   payload.WithString("payloadUrl", m_payloadUrl);
+
+  }
+
+  if(m_secretHasBeenSet)
+  {
+   payload.WithString("secret", m_secret);
 
   }
 

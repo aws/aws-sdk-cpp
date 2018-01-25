@@ -36,7 +36,8 @@ ProjectEnvironment::ProjectEnvironment() :
     m_computeTypeHasBeenSet(false),
     m_environmentVariablesHasBeenSet(false),
     m_privilegedMode(false),
-    m_privilegedModeHasBeenSet(false)
+    m_privilegedModeHasBeenSet(false),
+    m_certificateHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ ProjectEnvironment::ProjectEnvironment(const JsonValue& jsonValue) :
     m_computeTypeHasBeenSet(false),
     m_environmentVariablesHasBeenSet(false),
     m_privilegedMode(false),
-    m_privilegedModeHasBeenSet(false)
+    m_privilegedModeHasBeenSet(false),
+    m_certificateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -93,6 +95,13 @@ ProjectEnvironment& ProjectEnvironment::operator =(const JsonValue& jsonValue)
     m_privilegedModeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("certificate"))
+  {
+    m_certificate = jsonValue.GetString("certificate");
+
+    m_certificateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -130,6 +139,12 @@ JsonValue ProjectEnvironment::Jsonize() const
   if(m_privilegedModeHasBeenSet)
   {
    payload.WithBool("privilegedMode", m_privilegedMode);
+
+  }
+
+  if(m_certificateHasBeenSet)
+  {
+   payload.WithString("certificate", m_certificate);
 
   }
 

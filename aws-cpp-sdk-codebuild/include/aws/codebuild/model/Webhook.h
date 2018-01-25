@@ -82,10 +82,102 @@ namespace Model
      */
     inline Webhook& WithUrl(const char* value) { SetUrl(value); return *this;}
 
+
+    /**
+     * <p>This is the server endpoint that will receive the webhook payload.</p>
+     */
+    inline const Aws::String& GetPayloadUrl() const{ return m_payloadUrl; }
+
+    /**
+     * <p>This is the server endpoint that will receive the webhook payload.</p>
+     */
+    inline void SetPayloadUrl(const Aws::String& value) { m_payloadUrlHasBeenSet = true; m_payloadUrl = value; }
+
+    /**
+     * <p>This is the server endpoint that will receive the webhook payload.</p>
+     */
+    inline void SetPayloadUrl(Aws::String&& value) { m_payloadUrlHasBeenSet = true; m_payloadUrl = std::move(value); }
+
+    /**
+     * <p>This is the server endpoint that will receive the webhook payload.</p>
+     */
+    inline void SetPayloadUrl(const char* value) { m_payloadUrlHasBeenSet = true; m_payloadUrl.assign(value); }
+
+    /**
+     * <p>This is the server endpoint that will receive the webhook payload.</p>
+     */
+    inline Webhook& WithPayloadUrl(const Aws::String& value) { SetPayloadUrl(value); return *this;}
+
+    /**
+     * <p>This is the server endpoint that will receive the webhook payload.</p>
+     */
+    inline Webhook& WithPayloadUrl(Aws::String&& value) { SetPayloadUrl(std::move(value)); return *this;}
+
+    /**
+     * <p>This is the server endpoint that will receive the webhook payload.</p>
+     */
+    inline Webhook& WithPayloadUrl(const char* value) { SetPayloadUrl(value); return *this;}
+
+
+    /**
+     * <p>Use this secret while creating a webhook in GitHub for Enterprise. The secret
+     * allows webhook requests sent by GitHub for Enterprise to be authenticated by AWS
+     * CodeBuild.</p>
+     */
+    inline const Aws::String& GetSecret() const{ return m_secret; }
+
+    /**
+     * <p>Use this secret while creating a webhook in GitHub for Enterprise. The secret
+     * allows webhook requests sent by GitHub for Enterprise to be authenticated by AWS
+     * CodeBuild.</p>
+     */
+    inline void SetSecret(const Aws::String& value) { m_secretHasBeenSet = true; m_secret = value; }
+
+    /**
+     * <p>Use this secret while creating a webhook in GitHub for Enterprise. The secret
+     * allows webhook requests sent by GitHub for Enterprise to be authenticated by AWS
+     * CodeBuild.</p>
+     */
+    inline void SetSecret(Aws::String&& value) { m_secretHasBeenSet = true; m_secret = std::move(value); }
+
+    /**
+     * <p>Use this secret while creating a webhook in GitHub for Enterprise. The secret
+     * allows webhook requests sent by GitHub for Enterprise to be authenticated by AWS
+     * CodeBuild.</p>
+     */
+    inline void SetSecret(const char* value) { m_secretHasBeenSet = true; m_secret.assign(value); }
+
+    /**
+     * <p>Use this secret while creating a webhook in GitHub for Enterprise. The secret
+     * allows webhook requests sent by GitHub for Enterprise to be authenticated by AWS
+     * CodeBuild.</p>
+     */
+    inline Webhook& WithSecret(const Aws::String& value) { SetSecret(value); return *this;}
+
+    /**
+     * <p>Use this secret while creating a webhook in GitHub for Enterprise. The secret
+     * allows webhook requests sent by GitHub for Enterprise to be authenticated by AWS
+     * CodeBuild.</p>
+     */
+    inline Webhook& WithSecret(Aws::String&& value) { SetSecret(std::move(value)); return *this;}
+
+    /**
+     * <p>Use this secret while creating a webhook in GitHub for Enterprise. The secret
+     * allows webhook requests sent by GitHub for Enterprise to be authenticated by AWS
+     * CodeBuild.</p>
+     */
+    inline Webhook& WithSecret(const char* value) { SetSecret(value); return *this;}
+
   private:
 
     Aws::String m_url;
     bool m_urlHasBeenSet;
+
+    Aws::String m_payloadUrl;
+    bool m_payloadUrlHasBeenSet;
+
+    Aws::String m_secret;
+    bool m_secretHasBeenSet;
   };
 
 } // namespace Model

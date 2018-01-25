@@ -154,6 +154,12 @@ PublishVersionResult& PublishVersionResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("RevisionId"))
+  {
+    m_revisionId = jsonValue.GetString("RevisionId");
+
+  }
+
 
 
   return *this;

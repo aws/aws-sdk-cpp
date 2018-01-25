@@ -390,6 +390,22 @@ namespace Model
 
 
     /**
+     * <p>Information about the git clone depth for the build project.</p>
+     */
+    inline int GetGitCloneDepth() const{ return m_gitCloneDepth; }
+
+    /**
+     * <p>Information about the git clone depth for the build project.</p>
+     */
+    inline void SetGitCloneDepth(int value) { m_gitCloneDepthHasBeenSet = true; m_gitCloneDepth = value; }
+
+    /**
+     * <p>Information about the git clone depth for the build project.</p>
+     */
+    inline ProjectSource& WithGitCloneDepth(int value) { SetGitCloneDepth(value); return *this;}
+
+
+    /**
      * <p>The build spec declaration to use for the builds in this build project.</p>
      * <p>If this value is not specified, a build spec must be included along with the
      * source code to be built.</p>
@@ -484,6 +500,25 @@ namespace Model
      */
     inline ProjectSource& WithAuth(SourceAuth&& value) { SetAuth(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Enable this flag to ignore SSL warnings while connecting to the project
+     * source code.</p>
+     */
+    inline bool GetInsecureSsl() const{ return m_insecureSsl; }
+
+    /**
+     * <p>Enable this flag to ignore SSL warnings while connecting to the project
+     * source code.</p>
+     */
+    inline void SetInsecureSsl(bool value) { m_insecureSslHasBeenSet = true; m_insecureSsl = value; }
+
+    /**
+     * <p>Enable this flag to ignore SSL warnings while connecting to the project
+     * source code.</p>
+     */
+    inline ProjectSource& WithInsecureSsl(bool value) { SetInsecureSsl(value); return *this;}
+
   private:
 
     SourceType m_type;
@@ -492,11 +527,17 @@ namespace Model
     Aws::String m_location;
     bool m_locationHasBeenSet;
 
+    int m_gitCloneDepth;
+    bool m_gitCloneDepthHasBeenSet;
+
     Aws::String m_buildspec;
     bool m_buildspecHasBeenSet;
 
     SourceAuth m_auth;
     bool m_authHasBeenSet;
+
+    bool m_insecureSsl;
+    bool m_insecureSslHasBeenSet;
   };
 
 } // namespace Model

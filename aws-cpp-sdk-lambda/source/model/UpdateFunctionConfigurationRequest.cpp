@@ -37,7 +37,8 @@ UpdateFunctionConfigurationRequest::UpdateFunctionConfigurationRequest() :
     m_runtimeHasBeenSet(false),
     m_deadLetterConfigHasBeenSet(false),
     m_kMSKeyArnHasBeenSet(false),
-    m_tracingConfigHasBeenSet(false)
+    m_tracingConfigHasBeenSet(false),
+    m_revisionIdHasBeenSet(false)
 {
 }
 
@@ -107,6 +108,12 @@ Aws::String UpdateFunctionConfigurationRequest::SerializePayload() const
   if(m_tracingConfigHasBeenSet)
   {
    payload.WithObject("TracingConfig", m_tracingConfig.Jsonize());
+
+  }
+
+  if(m_revisionIdHasBeenSet)
+  {
+   payload.WithString("RevisionId", m_revisionId);
 
   }
 

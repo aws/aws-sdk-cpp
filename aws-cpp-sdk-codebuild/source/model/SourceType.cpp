@@ -35,6 +35,7 @@ namespace Aws
         static const int GITHUB_HASH = HashingUtils::HashString("GITHUB");
         static const int S3_HASH = HashingUtils::HashString("S3");
         static const int BITBUCKET_HASH = HashingUtils::HashString("BITBUCKET");
+        static const int GITHUB_ENTERPRISE_HASH = HashingUtils::HashString("GITHUB_ENTERPRISE");
 
 
         SourceType GetSourceTypeForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return SourceType::BITBUCKET;
           }
+          else if (hashCode == GITHUB_ENTERPRISE_HASH)
+          {
+            return SourceType::GITHUB_ENTERPRISE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -84,6 +89,8 @@ namespace Aws
             return "S3";
           case SourceType::BITBUCKET:
             return "BITBUCKET";
+          case SourceType::GITHUB_ENTERPRISE:
+            return "GITHUB_ENTERPRISE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

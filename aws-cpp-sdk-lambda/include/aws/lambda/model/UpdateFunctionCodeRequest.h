@@ -360,6 +360,70 @@ namespace Model
      */
     inline UpdateFunctionCodeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>An optional value you can use to ensure you are updating the latest update of
+     * the function version or alias. If the <code>RevisionID</code> you pass doesn't
+     * match the latest <code>RevisionId</code> of the function or alias, it will fail
+     * with an error message, advising you to retrieve the latest function version or
+     * alias <code>RevisionID</code> using either or .</p>
+     */
+    inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
+
+    /**
+     * <p>An optional value you can use to ensure you are updating the latest update of
+     * the function version or alias. If the <code>RevisionID</code> you pass doesn't
+     * match the latest <code>RevisionId</code> of the function or alias, it will fail
+     * with an error message, advising you to retrieve the latest function version or
+     * alias <code>RevisionID</code> using either or .</p>
+     */
+    inline void SetRevisionId(const Aws::String& value) { m_revisionIdHasBeenSet = true; m_revisionId = value; }
+
+    /**
+     * <p>An optional value you can use to ensure you are updating the latest update of
+     * the function version or alias. If the <code>RevisionID</code> you pass doesn't
+     * match the latest <code>RevisionId</code> of the function or alias, it will fail
+     * with an error message, advising you to retrieve the latest function version or
+     * alias <code>RevisionID</code> using either or .</p>
+     */
+    inline void SetRevisionId(Aws::String&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::move(value); }
+
+    /**
+     * <p>An optional value you can use to ensure you are updating the latest update of
+     * the function version or alias. If the <code>RevisionID</code> you pass doesn't
+     * match the latest <code>RevisionId</code> of the function or alias, it will fail
+     * with an error message, advising you to retrieve the latest function version or
+     * alias <code>RevisionID</code> using either or .</p>
+     */
+    inline void SetRevisionId(const char* value) { m_revisionIdHasBeenSet = true; m_revisionId.assign(value); }
+
+    /**
+     * <p>An optional value you can use to ensure you are updating the latest update of
+     * the function version or alias. If the <code>RevisionID</code> you pass doesn't
+     * match the latest <code>RevisionId</code> of the function or alias, it will fail
+     * with an error message, advising you to retrieve the latest function version or
+     * alias <code>RevisionID</code> using either or .</p>
+     */
+    inline UpdateFunctionCodeRequest& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
+
+    /**
+     * <p>An optional value you can use to ensure you are updating the latest update of
+     * the function version or alias. If the <code>RevisionID</code> you pass doesn't
+     * match the latest <code>RevisionId</code> of the function or alias, it will fail
+     * with an error message, advising you to retrieve the latest function version or
+     * alias <code>RevisionID</code> using either or .</p>
+     */
+    inline UpdateFunctionCodeRequest& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional value you can use to ensure you are updating the latest update of
+     * the function version or alias. If the <code>RevisionID</code> you pass doesn't
+     * match the latest <code>RevisionId</code> of the function or alias, it will fail
+     * with an error message, advising you to retrieve the latest function version or
+     * alias <code>RevisionID</code> using either or .</p>
+     */
+    inline UpdateFunctionCodeRequest& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
+
   private:
 
     Aws::String m_functionName;
@@ -382,6 +446,9 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
+    Aws::String m_revisionId;
+    bool m_revisionIdHasBeenSet;
   };
 
 } // namespace Model
