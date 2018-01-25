@@ -117,18 +117,22 @@ namespace Aws
                 while(m_continue)
                 {
                     auto start = std::chrono::system_clock::now();
-                    MESSAGE_TYPE topMessage = Top();
-                    bool deleteMessage = false;
-                    
                     auto& receivedHandler = GetMessageReceivedEventHandler();
-                    if (receivedHandler)
-                    {
-                        receivedHandler(this, topMessage, deleteMessage);
-                    }
 
-                    if (deleteMessage)
+                    while(m_continue)
                     {
-                        Delete(topMessage);
+                        MESSAGE_TYPE topMessage = Top();
+                        bool deleteMessage = false;
+
+                        if (receivedHandler)
+                        {
+                            receivedHandler(this, topMessage, deleteMessage);
+                        }
+
+                        if (deleteMessage)
+                        {
+                            Delete(topMessage);
+                        }
                     }
 
                     if(m_continue)
