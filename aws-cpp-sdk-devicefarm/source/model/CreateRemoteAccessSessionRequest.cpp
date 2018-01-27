@@ -28,9 +28,14 @@ CreateRemoteAccessSessionRequest::CreateRemoteAccessSessionRequest() :
     m_sshPublicKeyHasBeenSet(false),
     m_remoteDebugEnabled(false),
     m_remoteDebugEnabledHasBeenSet(false),
+    m_remoteRecordEnabled(false),
+    m_remoteRecordEnabledHasBeenSet(false),
+    m_remoteRecordAppArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_clientIdHasBeenSet(false),
-    m_configurationHasBeenSet(false)
+    m_configurationHasBeenSet(false),
+    m_interactionMode(InteractionMode::NOT_SET),
+    m_interactionModeHasBeenSet(false)
 {
 }
 
@@ -62,6 +67,18 @@ Aws::String CreateRemoteAccessSessionRequest::SerializePayload() const
 
   }
 
+  if(m_remoteRecordEnabledHasBeenSet)
+  {
+   payload.WithBool("remoteRecordEnabled", m_remoteRecordEnabled);
+
+  }
+
+  if(m_remoteRecordAppArnHasBeenSet)
+  {
+   payload.WithString("remoteRecordAppArn", m_remoteRecordAppArn);
+
+  }
+
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
@@ -78,6 +95,11 @@ Aws::String CreateRemoteAccessSessionRequest::SerializePayload() const
   {
    payload.WithObject("configuration", m_configuration.Jsonize());
 
+  }
+
+  if(m_interactionModeHasBeenSet)
+  {
+   payload.WithString("interactionMode", InteractionModeMapper::GetNameForInteractionMode(m_interactionMode));
   }
 
   return payload.WriteReadable();

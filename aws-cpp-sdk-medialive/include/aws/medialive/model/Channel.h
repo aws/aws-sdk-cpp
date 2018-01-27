@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/medialive/model/EncoderSettings.h>
+#include <aws/medialive/model/InputSpecification.h>
 #include <aws/medialive/model/ChannelState.h>
 #include <aws/medialive/model/OutputDestination.h>
 #include <aws/medialive/model/ChannelEgressEndpoint.h>
@@ -283,6 +284,22 @@ one destination per
     inline Channel& AddInputAttachments(InputAttachment&& value) { m_inputAttachmentsHasBeenSet = true; m_inputAttachments.push_back(std::move(value)); return *this; }
 
 
+    
+    inline const InputSpecification& GetInputSpecification() const{ return m_inputSpecification; }
+
+    
+    inline void SetInputSpecification(const InputSpecification& value) { m_inputSpecificationHasBeenSet = true; m_inputSpecification = value; }
+
+    
+    inline void SetInputSpecification(InputSpecification&& value) { m_inputSpecificationHasBeenSet = true; m_inputSpecification = std::move(value); }
+
+    
+    inline Channel& WithInputSpecification(const InputSpecification& value) { SetInputSpecification(value); return *this;}
+
+    
+    inline Channel& WithInputSpecification(InputSpecification&& value) { SetInputSpecification(std::move(value)); return *this;}
+
+
     /**
      * The name of the channel. (user-mutable)
      */
@@ -405,6 +422,9 @@ one destination per
 
     Aws::Vector<InputAttachment> m_inputAttachments;
     bool m_inputAttachmentsHasBeenSet;
+
+    InputSpecification m_inputSpecification;
+    bool m_inputSpecificationHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

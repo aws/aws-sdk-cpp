@@ -26,6 +26,7 @@ CreateChannelRequest::CreateChannelRequest() :
     m_destinationsHasBeenSet(false),
     m_encoderSettingsHasBeenSet(false),
     m_inputAttachmentsHasBeenSet(false),
+    m_inputSpecificationHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_requestId(Aws::Utils::UUID::RandomUUID()),
     m_requestIdHasBeenSet(true),
@@ -63,6 +64,12 @@ Aws::String CreateChannelRequest::SerializePayload() const
      inputAttachmentsJsonList[inputAttachmentsIndex].AsObject(m_inputAttachments[inputAttachmentsIndex].Jsonize());
    }
    payload.WithArray("inputAttachments", std::move(inputAttachmentsJsonList));
+
+  }
+
+  if(m_inputSpecificationHasBeenSet)
+  {
+   payload.WithObject("inputSpecification", m_inputSpecification.Jsonize());
 
   }
 

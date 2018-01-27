@@ -18,6 +18,7 @@
 #include <aws/medialive/MediaLiveRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/medialive/model/EncoderSettings.h>
+#include <aws/medialive/model/InputSpecification.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medialive/model/OutputDestination.h>
 #include <aws/medialive/model/InputAttachment.h>
@@ -122,6 +123,32 @@ namespace Model
      * List of input attachments for channel.
      */
     inline CreateChannelRequest& AddInputAttachments(InputAttachment&& value) { m_inputAttachmentsHasBeenSet = true; m_inputAttachments.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     */
+    inline const InputSpecification& GetInputSpecification() const{ return m_inputSpecification; }
+
+    /**
+     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     */
+    inline void SetInputSpecification(const InputSpecification& value) { m_inputSpecificationHasBeenSet = true; m_inputSpecification = value; }
+
+    /**
+     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     */
+    inline void SetInputSpecification(InputSpecification&& value) { m_inputSpecificationHasBeenSet = true; m_inputSpecification = std::move(value); }
+
+    /**
+     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     */
+    inline CreateChannelRequest& WithInputSpecification(const InputSpecification& value) { SetInputSpecification(value); return *this;}
+
+    /**
+     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     */
+    inline CreateChannelRequest& WithInputSpecification(InputSpecification&& value) { SetInputSpecification(std::move(value)); return *this;}
 
 
     /**
@@ -305,6 +332,9 @@ creating multiple resources.
 
     Aws::Vector<InputAttachment> m_inputAttachments;
     bool m_inputAttachmentsHasBeenSet;
+
+    InputSpecification m_inputSpecification;
+    bool m_inputSpecificationHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

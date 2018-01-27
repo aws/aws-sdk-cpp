@@ -46,44 +46,44 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the project that you wish to update network
-     * profile settings.</p>
+     * <p>The Amazon Resource Name (ARN) of the project for which you want to update
+     * network profile settings.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the project that you wish to update network
-     * profile settings.</p>
+     * <p>The Amazon Resource Name (ARN) of the project for which you want to update
+     * network profile settings.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the project that you wish to update network
-     * profile settings.</p>
+     * <p>The Amazon Resource Name (ARN) of the project for which you want to update
+     * network profile settings.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the project that you wish to update network
-     * profile settings.</p>
+     * <p>The Amazon Resource Name (ARN) of the project for which you want to update
+     * network profile settings.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the project that you wish to update network
-     * profile settings.</p>
+     * <p>The Amazon Resource Name (ARN) of the project for which you want to update
+     * network profile settings.</p>
      */
     inline UpdateNetworkProfileRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the project that you wish to update network
-     * profile settings.</p>
+     * <p>The Amazon Resource Name (ARN) of the project for which you want to update
+     * network profile settings.</p>
      */
     inline UpdateNetworkProfileRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the project that you wish to update network
-     * profile settings.</p>
+     * <p>The Amazon Resource Name (ARN) of the project for which you want to update
+     * network profile settings.</p>
      */
     inline UpdateNetworkProfileRequest& WithArn(const char* value) { SetArn(value); return *this;}
 

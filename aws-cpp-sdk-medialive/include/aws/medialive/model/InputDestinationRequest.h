@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * Endpoint settings for a PUSH type input<p><h3>See Also:</h3>   <a
+   * Endpoint settings for a PUSH type input.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/InputDestinationRequest">AWS
    * API Reference</a></p>
    */

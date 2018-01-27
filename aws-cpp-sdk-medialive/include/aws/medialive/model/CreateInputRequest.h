@@ -51,72 +51,37 @@ namespace Model
 
 
     /**
-     * settings required for PUSH-type inputs; one per redundancy group.
-Only one of
-     * sources and destinations can be specified.
-Note: there are currently no settings
-     * required for PUSH-type inputs
-
+     * Destination settings for PUSH type inputs.
      */
     inline const Aws::Vector<InputDestinationRequest>& GetDestinations() const{ return m_destinations; }
 
     /**
-     * settings required for PUSH-type inputs; one per redundancy group.
-Only one of
-     * sources and destinations can be specified.
-Note: there are currently no settings
-     * required for PUSH-type inputs
-
+     * Destination settings for PUSH type inputs.
      */
     inline void SetDestinations(const Aws::Vector<InputDestinationRequest>& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
 
     /**
-     * settings required for PUSH-type inputs; one per redundancy group.
-Only one of
-     * sources and destinations can be specified.
-Note: there are currently no settings
-     * required for PUSH-type inputs
-
+     * Destination settings for PUSH type inputs.
      */
     inline void SetDestinations(Aws::Vector<InputDestinationRequest>&& value) { m_destinationsHasBeenSet = true; m_destinations = std::move(value); }
 
     /**
-     * settings required for PUSH-type inputs; one per redundancy group.
-Only one of
-     * sources and destinations can be specified.
-Note: there are currently no settings
-     * required for PUSH-type inputs
-
+     * Destination settings for PUSH type inputs.
      */
     inline CreateInputRequest& WithDestinations(const Aws::Vector<InputDestinationRequest>& value) { SetDestinations(value); return *this;}
 
     /**
-     * settings required for PUSH-type inputs; one per redundancy group.
-Only one of
-     * sources and destinations can be specified.
-Note: there are currently no settings
-     * required for PUSH-type inputs
-
+     * Destination settings for PUSH type inputs.
      */
     inline CreateInputRequest& WithDestinations(Aws::Vector<InputDestinationRequest>&& value) { SetDestinations(std::move(value)); return *this;}
 
     /**
-     * settings required for PUSH-type inputs; one per redundancy group.
-Only one of
-     * sources and destinations can be specified.
-Note: there are currently no settings
-     * required for PUSH-type inputs
-
+     * Destination settings for PUSH type inputs.
      */
     inline CreateInputRequest& AddDestinations(const InputDestinationRequest& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
 
     /**
-     * settings required for PUSH-type inputs; one per redundancy group.
-Only one of
-     * sources and destinations can be specified.
-Note: there are currently no settings
-     * required for PUSH-type inputs
-
+     * Destination settings for PUSH type inputs.
      */
     inline CreateInputRequest& AddDestinations(InputDestinationRequest&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(std::move(value)); return *this; }
 
@@ -201,7 +166,7 @@ Note: there are currently no settings
     /**
      * Unique identifier of the request to ensure the request is handled
 exactly once
-     * in case of retries
+     * in case of retries.
 
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
@@ -209,7 +174,7 @@ exactly once
     /**
      * Unique identifier of the request to ensure the request is handled
 exactly once
-     * in case of retries
+     * in case of retries.
 
      */
     inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
@@ -217,7 +182,7 @@ exactly once
     /**
      * Unique identifier of the request to ensure the request is handled
 exactly once
-     * in case of retries
+     * in case of retries.
 
      */
     inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
@@ -225,7 +190,7 @@ exactly once
     /**
      * Unique identifier of the request to ensure the request is handled
 exactly once
-     * in case of retries
+     * in case of retries.
 
      */
     inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
@@ -233,7 +198,7 @@ exactly once
     /**
      * Unique identifier of the request to ensure the request is handled
 exactly once
-     * in case of retries
+     * in case of retries.
 
      */
     inline CreateInputRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
@@ -241,7 +206,7 @@ exactly once
     /**
      * Unique identifier of the request to ensure the request is handled
 exactly once
-     * in case of retries
+     * in case of retries.
 
      */
     inline CreateInputRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
@@ -249,64 +214,78 @@ exactly once
     /**
      * Unique identifier of the request to ensure the request is handled
 exactly once
-     * in case of retries
+     * in case of retries.
 
      */
     inline CreateInputRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
 
     /**
-     * settings required for PULL-type inputs; one per redundancy group
-Only one of
-     * sources and destinations can be specified
+     * The source URLs for a PULL-type input. Every PULL type input needs
+exactly two
+     * source URLs for redundancy.
+Only specify sources for PULL type Inputs. Leave
+     * Destinations empty.
 
      */
     inline const Aws::Vector<InputSourceRequest>& GetSources() const{ return m_sources; }
 
     /**
-     * settings required for PULL-type inputs; one per redundancy group
-Only one of
-     * sources and destinations can be specified
+     * The source URLs for a PULL-type input. Every PULL type input needs
+exactly two
+     * source URLs for redundancy.
+Only specify sources for PULL type Inputs. Leave
+     * Destinations empty.
 
      */
     inline void SetSources(const Aws::Vector<InputSourceRequest>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
 
     /**
-     * settings required for PULL-type inputs; one per redundancy group
-Only one of
-     * sources and destinations can be specified
+     * The source URLs for a PULL-type input. Every PULL type input needs
+exactly two
+     * source URLs for redundancy.
+Only specify sources for PULL type Inputs. Leave
+     * Destinations empty.
 
      */
     inline void SetSources(Aws::Vector<InputSourceRequest>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
 
     /**
-     * settings required for PULL-type inputs; one per redundancy group
-Only one of
-     * sources and destinations can be specified
+     * The source URLs for a PULL-type input. Every PULL type input needs
+exactly two
+     * source URLs for redundancy.
+Only specify sources for PULL type Inputs. Leave
+     * Destinations empty.
 
      */
     inline CreateInputRequest& WithSources(const Aws::Vector<InputSourceRequest>& value) { SetSources(value); return *this;}
 
     /**
-     * settings required for PULL-type inputs; one per redundancy group
-Only one of
-     * sources and destinations can be specified
+     * The source URLs for a PULL-type input. Every PULL type input needs
+exactly two
+     * source URLs for redundancy.
+Only specify sources for PULL type Inputs. Leave
+     * Destinations empty.
 
      */
     inline CreateInputRequest& WithSources(Aws::Vector<InputSourceRequest>&& value) { SetSources(std::move(value)); return *this;}
 
     /**
-     * settings required for PULL-type inputs; one per redundancy group
-Only one of
-     * sources and destinations can be specified
+     * The source URLs for a PULL-type input. Every PULL type input needs
+exactly two
+     * source URLs for redundancy.
+Only specify sources for PULL type Inputs. Leave
+     * Destinations empty.
 
      */
     inline CreateInputRequest& AddSources(const InputSourceRequest& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
 
     /**
-     * settings required for PULL-type inputs; one per redundancy group
-Only one of
-     * sources and destinations can be specified
+     * The source URLs for a PULL-type input. Every PULL type input needs
+exactly two
+     * source URLs for redundancy.
+Only specify sources for PULL type Inputs. Leave
+     * Destinations empty.
 
      */
     inline CreateInputRequest& AddSources(InputSourceRequest&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }

@@ -28,6 +28,7 @@ namespace Model
     NOT_SET,
     BUILTIN_FUZZ,
     BUILTIN_EXPLORER,
+    WEB_PERFORMANCE_PROFILE,
     APPIUM_JAVA_JUNIT,
     APPIUM_JAVA_TESTNG,
     APPIUM_PYTHON,
@@ -39,7 +40,9 @@ namespace Model
     UIAUTOMATION,
     UIAUTOMATOR,
     XCTEST,
-    XCTEST_UI
+    XCTEST_UI,
+    REMOTE_ACCESS_RECORD,
+    REMOTE_ACCESS_REPLAY
   };
 
 namespace TestTypeMapper

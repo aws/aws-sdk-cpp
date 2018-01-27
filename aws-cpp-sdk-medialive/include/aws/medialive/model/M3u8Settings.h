@@ -116,58 +116,37 @@ namespace Model
 
 
     /**
-     * ThePlatform-protected transport streams using 'microsoft' as Target Client
-     * include an ECM stream. This ECM stream contains the size, IV, and PTS of every
-     * sample in the transport stream.  This stream PID is specified here. This PID has
-     * no effect on non ThePlatform-protected streams.
+     * This parameter is unused and deprecated.
      */
     inline const Aws::String& GetEcmPid() const{ return m_ecmPid; }
 
     /**
-     * ThePlatform-protected transport streams using 'microsoft' as Target Client
-     * include an ECM stream. This ECM stream contains the size, IV, and PTS of every
-     * sample in the transport stream.  This stream PID is specified here. This PID has
-     * no effect on non ThePlatform-protected streams.
+     * This parameter is unused and deprecated.
      */
     inline void SetEcmPid(const Aws::String& value) { m_ecmPidHasBeenSet = true; m_ecmPid = value; }
 
     /**
-     * ThePlatform-protected transport streams using 'microsoft' as Target Client
-     * include an ECM stream. This ECM stream contains the size, IV, and PTS of every
-     * sample in the transport stream.  This stream PID is specified here. This PID has
-     * no effect on non ThePlatform-protected streams.
+     * This parameter is unused and deprecated.
      */
     inline void SetEcmPid(Aws::String&& value) { m_ecmPidHasBeenSet = true; m_ecmPid = std::move(value); }
 
     /**
-     * ThePlatform-protected transport streams using 'microsoft' as Target Client
-     * include an ECM stream. This ECM stream contains the size, IV, and PTS of every
-     * sample in the transport stream.  This stream PID is specified here. This PID has
-     * no effect on non ThePlatform-protected streams.
+     * This parameter is unused and deprecated.
      */
     inline void SetEcmPid(const char* value) { m_ecmPidHasBeenSet = true; m_ecmPid.assign(value); }
 
     /**
-     * ThePlatform-protected transport streams using 'microsoft' as Target Client
-     * include an ECM stream. This ECM stream contains the size, IV, and PTS of every
-     * sample in the transport stream.  This stream PID is specified here. This PID has
-     * no effect on non ThePlatform-protected streams.
+     * This parameter is unused and deprecated.
      */
     inline M3u8Settings& WithEcmPid(const Aws::String& value) { SetEcmPid(value); return *this;}
 
     /**
-     * ThePlatform-protected transport streams using 'microsoft' as Target Client
-     * include an ECM stream. This ECM stream contains the size, IV, and PTS of every
-     * sample in the transport stream.  This stream PID is specified here. This PID has
-     * no effect on non ThePlatform-protected streams.
+     * This parameter is unused and deprecated.
      */
     inline M3u8Settings& WithEcmPid(Aws::String&& value) { SetEcmPid(std::move(value)); return *this;}
 
     /**
-     * ThePlatform-protected transport streams using 'microsoft' as Target Client
-     * include an ECM stream. This ECM stream contains the size, IV, and PTS of every
-     * sample in the transport stream.  This stream PID is specified here. This PID has
-     * no effect on non ThePlatform-protected streams.
+     * This parameter is unused and deprecated.
      */
     inline M3u8Settings& WithEcmPid(const char* value) { SetEcmPid(value); return *this;}
 

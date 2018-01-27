@@ -35,6 +35,7 @@ Channel::Channel() :
     m_encoderSettingsHasBeenSet(false),
     m_idHasBeenSet(false),
     m_inputAttachmentsHasBeenSet(false),
+    m_inputSpecificationHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_pipelinesRunningCount(0),
     m_pipelinesRunningCountHasBeenSet(false),
@@ -51,6 +52,7 @@ Channel::Channel(const JsonValue& jsonValue) :
     m_encoderSettingsHasBeenSet(false),
     m_idHasBeenSet(false),
     m_inputAttachmentsHasBeenSet(false),
+    m_inputSpecificationHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_pipelinesRunningCount(0),
     m_pipelinesRunningCountHasBeenSet(false),
@@ -112,6 +114,13 @@ Channel& Channel::operator =(const JsonValue& jsonValue)
       m_inputAttachments.push_back(inputAttachmentsJsonList[inputAttachmentsIndex].AsObject());
     }
     m_inputAttachmentsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("inputSpecification"))
+  {
+    m_inputSpecification = jsonValue.GetObject("inputSpecification");
+
+    m_inputSpecificationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -197,6 +206,12 @@ JsonValue Channel::Jsonize() const
      inputAttachmentsJsonList[inputAttachmentsIndex].AsObject(m_inputAttachments[inputAttachmentsIndex].Jsonize());
    }
    payload.WithArray("inputAttachments", std::move(inputAttachmentsJsonList));
+
+  }
+
+  if(m_inputSpecificationHasBeenSet)
+  {
+   payload.WithObject("inputSpecification", m_inputSpecification.Jsonize());
 
   }
 

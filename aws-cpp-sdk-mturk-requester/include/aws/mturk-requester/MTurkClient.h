@@ -1015,7 +1015,11 @@ namespace Model
          * generated the instant the GetFileUploadURL operation is called, and is valid for
          * 60 seconds. You can get a temporary file upload URL any time until the HIT is
          * disposed. After the HIT is disposed, any uploaded files are deleted, and cannot
-         * be retrieved. </p><p><h3>See Also:</h3>   <a
+         * be retrieved. Pending Deprecation on December 12, 2017. The Answer Specification
+         * structure will no longer support the <code>FileUploadAnswer</code> element to be
+         * used for the QuestionForm data structure. Instead, we recommend that Requesters
+         * who want to create HITs asking Workers to upload files to use Amazon S3.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetFileUploadURL">AWS
          * API Reference</a></p>
          */
@@ -1028,7 +1032,11 @@ namespace Model
          * generated the instant the GetFileUploadURL operation is called, and is valid for
          * 60 seconds. You can get a temporary file upload URL any time until the HIT is
          * disposed. After the HIT is disposed, any uploaded files are deleted, and cannot
-         * be retrieved. </p><p><h3>See Also:</h3>   <a
+         * be retrieved. Pending Deprecation on December 12, 2017. The Answer Specification
+         * structure will no longer support the <code>FileUploadAnswer</code> element to be
+         * used for the QuestionForm data structure. Instead, we recommend that Requesters
+         * who want to create HITs asking Workers to upload files to use Amazon S3.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetFileUploadURL">AWS
          * API Reference</a></p>
          *
@@ -1043,7 +1051,11 @@ namespace Model
          * generated the instant the GetFileUploadURL operation is called, and is valid for
          * 60 seconds. You can get a temporary file upload URL any time until the HIT is
          * disposed. After the HIT is disposed, any uploaded files are deleted, and cannot
-         * be retrieved. </p><p><h3>See Also:</h3>   <a
+         * be retrieved. Pending Deprecation on December 12, 2017. The Answer Specification
+         * structure will no longer support the <code>FileUploadAnswer</code> element to be
+         * used for the QuestionForm data structure. Instead, we recommend that Requesters
+         * who want to create HITs asking Workers to upload files to use Amazon S3.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetFileUploadURL">AWS
          * API Reference</a></p>
          *

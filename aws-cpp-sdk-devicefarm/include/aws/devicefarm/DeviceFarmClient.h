@@ -1104,14 +1104,16 @@ namespace Model
         virtual void ListDevicesAsync(const Model::ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about jobs.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about jobs for a given test run.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListJobs">AWS
          * API Reference</a></p>
          */
         virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request) const;
 
         /**
-         * <p>Gets information about jobs.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about jobs for a given test run.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListJobs">AWS
          * API Reference</a></p>
          *
@@ -1120,7 +1122,8 @@ namespace Model
         virtual Model::ListJobsOutcomeCallable ListJobsCallable(const Model::ListJobsRequest& request) const;
 
         /**
-         * <p>Gets information about jobs.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about jobs for a given test run.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListJobs">AWS
          * API Reference</a></p>
          *
@@ -1395,14 +1398,16 @@ namespace Model
         virtual void ListSamplesAsync(const Model::ListSamplesRequest& request, const ListSamplesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about suites.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about test suites for a given job.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSuites">AWS
          * API Reference</a></p>
          */
         virtual Model::ListSuitesOutcome ListSuites(const Model::ListSuitesRequest& request) const;
 
         /**
-         * <p>Gets information about suites.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about test suites for a given job.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSuites">AWS
          * API Reference</a></p>
          *
@@ -1411,7 +1416,8 @@ namespace Model
         virtual Model::ListSuitesOutcomeCallable ListSuitesCallable(const Model::ListSuitesRequest& request) const;
 
         /**
-         * <p>Gets information about suites.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about test suites for a given job.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSuites">AWS
          * API Reference</a></p>
          *
@@ -1420,14 +1426,16 @@ namespace Model
         virtual void ListSuitesAsync(const Model::ListSuitesRequest& request, const ListSuitesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about tests.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about tests in a given test suite.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTests">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTestsOutcome ListTests(const Model::ListTestsRequest& request) const;
 
         /**
-         * <p>Gets information about tests.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about tests in a given test suite.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTests">AWS
          * API Reference</a></p>
          *
@@ -1436,7 +1444,8 @@ namespace Model
         virtual Model::ListTestsOutcomeCallable ListTestsCallable(const Model::ListTestsRequest& request) const;
 
         /**
-         * <p>Gets information about tests.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about tests in a given test suite.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTests">AWS
          * API Reference</a></p>
          *

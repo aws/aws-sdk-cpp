@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * Settings for a PUSH type input<p><h3>See Also:</h3>   <a
+   * The settings for a PUSH type input.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/InputDestination">AWS
    * API Reference</a></p>
    */
@@ -47,94 +47,94 @@ namespace Model
 
 
     /**
-     * system-generated static IP address of endpoint.
-Remains fixed for the lifetime
-     * of the input
+     * The system-generated static IP address of endpoint.
+It remains fixed for the
+     * lifetime of the input.
 
      */
     inline const Aws::String& GetIp() const{ return m_ip; }
 
     /**
-     * system-generated static IP address of endpoint.
-Remains fixed for the lifetime
-     * of the input
+     * The system-generated static IP address of endpoint.
+It remains fixed for the
+     * lifetime of the input.
 
      */
     inline void SetIp(const Aws::String& value) { m_ipHasBeenSet = true; m_ip = value; }
 
     /**
-     * system-generated static IP address of endpoint.
-Remains fixed for the lifetime
-     * of the input
+     * The system-generated static IP address of endpoint.
+It remains fixed for the
+     * lifetime of the input.
 
      */
     inline void SetIp(Aws::String&& value) { m_ipHasBeenSet = true; m_ip = std::move(value); }
 
     /**
-     * system-generated static IP address of endpoint.
-Remains fixed for the lifetime
-     * of the input
+     * The system-generated static IP address of endpoint.
+It remains fixed for the
+     * lifetime of the input.
 
      */
     inline void SetIp(const char* value) { m_ipHasBeenSet = true; m_ip.assign(value); }
 
     /**
-     * system-generated static IP address of endpoint.
-Remains fixed for the lifetime
-     * of the input
+     * The system-generated static IP address of endpoint.
+It remains fixed for the
+     * lifetime of the input.
 
      */
     inline InputDestination& WithIp(const Aws::String& value) { SetIp(value); return *this;}
 
     /**
-     * system-generated static IP address of endpoint.
-Remains fixed for the lifetime
-     * of the input
+     * The system-generated static IP address of endpoint.
+It remains fixed for the
+     * lifetime of the input.
 
      */
     inline InputDestination& WithIp(Aws::String&& value) { SetIp(std::move(value)); return *this;}
 
     /**
-     * system-generated static IP address of endpoint.
-Remains fixed for the lifetime
-     * of the input
+     * The system-generated static IP address of endpoint.
+It remains fixed for the
+     * lifetime of the input.
 
      */
     inline InputDestination& WithIp(const char* value) { SetIp(value); return *this;}
 
 
     /**
-     * port for input
+     * The port number for the input.
      */
     inline const Aws::String& GetPort() const{ return m_port; }
 
     /**
-     * port for input
+     * The port number for the input.
      */
     inline void SetPort(const Aws::String& value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
-     * port for input
+     * The port number for the input.
      */
     inline void SetPort(Aws::String&& value) { m_portHasBeenSet = true; m_port = std::move(value); }
 
     /**
-     * port for input
+     * The port number for the input.
      */
     inline void SetPort(const char* value) { m_portHasBeenSet = true; m_port.assign(value); }
 
     /**
-     * port for input
+     * The port number for the input.
      */
     inline InputDestination& WithPort(const Aws::String& value) { SetPort(value); return *this;}
 
     /**
-     * port for input
+     * The port number for the input.
      */
     inline InputDestination& WithPort(Aws::String&& value) { SetPort(std::move(value)); return *this;}
 
     /**
-     * port for input
+     * The port number for the input.
      */
     inline InputDestination& WithPort(const char* value) { SetPort(value); return *this;}
 

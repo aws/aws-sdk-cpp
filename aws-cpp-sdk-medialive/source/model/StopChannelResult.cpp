@@ -87,6 +87,12 @@ StopChannelResult& StopChannelResult::operator =(const Aws::AmazonWebServiceResu
     }
   }
 
+  if(jsonValue.ValueExists("inputSpecification"))
+  {
+    m_inputSpecification = jsonValue.GetObject("inputSpecification");
+
+  }
+
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
