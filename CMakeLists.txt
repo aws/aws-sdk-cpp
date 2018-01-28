@@ -174,6 +174,4 @@ add_sdks()
 include(setup_cmake_find_module)
 
 # for generating make unstaill target
-if (NOT TARGET uninstall)
-    ADD_CUSTOM_TARGET(uninstall "${CMAKE_COMMAND}" -P "${AWS_NATIVE_SDK_ROOT}/cmake/make_uninstall.cmake")
-endif()
+ADD_CUSTOM_TARGET(uninstall-awssdk "${CMAKE_COMMAND}" -P "${AWS_NATIVE_SDK_ROOT}/cmake/make_uninstall.cmake")
