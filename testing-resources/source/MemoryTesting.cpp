@@ -28,6 +28,17 @@
 #define alignof __alignof
 #endif
 
+
+namespace {
+#if defined(__GNUC__) && __GNUC__ == 4 && __GNUC_MINOR__ <= 8
+    // GCC 4.8 has `max_align_t` defined in global namespace
+    using ::max_align_t;
+#else
+    using std::max_align_t;
+#endif
+}
+
+
 BaseTestMemorySystem::BaseTestMemorySystem() :
     m_currentBytesAllocated(0),
     m_maxBytesAllocated(0),
@@ -59,11 +70,11 @@ void* BaseTestMemorySystem::AllocateMemory(std::size_t blockSize, std::size_t al
     // To record the malloc size and keep returned address align with 16, instead of malloc extra 8 bytes,  
     // we end up with malloc extra 16 bytes.
     
-    char* rawMemory = reinterpret_cast<char*>(malloc(blockSize + alignof(std::max_align_t)));
+    char* rawMemory = reinterpret_cast<char*>(malloc(blockSize + alignof(max_align_t)));
     std::size_t *pointerToSize = reinterpret_cast<std::size_t*>(reinterpret_cast<void*>(rawMemory));
     *pointerToSize = blockSize;
 
-    return reinterpret_cast<void*>(rawMemory + alignof(std::max_align_t));
+    return reinterpret_cast<void*>(rawMemory + alignof(max_align_t));
 }
 
 void BaseTestMemorySystem::FreeMemory(void* memoryPtr) 
@@ -74,7 +85,7 @@ void BaseTestMemorySystem::FreeMemory(void* memoryPtr)
         --m_currentOutstandingAllocations;
     }
 
-    std::size_t *pointerToSize = reinterpret_cast<std::size_t*>(reinterpret_cast<char*>(memoryPtr) - alignof(std::max_align_t));
+    std::size_t *pointerToSize = reinterpret_cast<std::size_t*>(reinterpret_cast<char*>(memoryPtr) - alignof(max_align_t));
     std::size_t blockSize = *pointerToSize;
 
     ASSERT_GE(m_currentBytesAllocated, blockSize);
