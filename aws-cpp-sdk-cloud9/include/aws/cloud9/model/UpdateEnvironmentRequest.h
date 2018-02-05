@@ -81,37 +81,37 @@ namespace Model
 
 
     /**
-     * <p>Any replacement name for the environment.</p>
+     * <p>A replacement name for the environment.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Any replacement name for the environment.</p>
+     * <p>A replacement name for the environment.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Any replacement name for the environment.</p>
+     * <p>A replacement name for the environment.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Any replacement name for the environment.</p>
+     * <p>A replacement name for the environment.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Any replacement name for the environment.</p>
+     * <p>A replacement name for the environment.</p>
      */
     inline UpdateEnvironmentRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Any replacement name for the environment.</p>
+     * <p>A replacement name for the environment.</p>
      */
     inline UpdateEnvironmentRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Any replacement name for the environment.</p>
+     * <p>A replacement name for the environment.</p>
      */
     inline UpdateEnvironmentRequest& WithName(const char* value) { SetName(value); return *this;}
 

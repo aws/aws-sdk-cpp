@@ -181,43 +181,43 @@ namespace Model
 
 
     /**
-     * <p>The type of instance to host the environment on (for example,
+     * <p>The type of instance to connect to the environment (for example,
      * <code>t2.micro</code>).</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The type of instance to host the environment on (for example,
+     * <p>The type of instance to connect to the environment (for example,
      * <code>t2.micro</code>).</p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The type of instance to host the environment on (for example,
+     * <p>The type of instance to connect to the environment (for example,
      * <code>t2.micro</code>).</p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The type of instance to host the environment on (for example,
+     * <p>The type of instance to connect to the environment (for example,
      * <code>t2.micro</code>).</p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
-     * <p>The type of instance to host the environment on (for example,
+     * <p>The type of instance to connect to the environment (for example,
      * <code>t2.micro</code>).</p>
      */
     inline CreateEnvironmentEC2Request& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The type of instance to host the environment on (for example,
+     * <p>The type of instance to connect to the environment (for example,
      * <code>t2.micro</code>).</p>
      */
     inline CreateEnvironmentEC2Request& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of instance to host the environment on (for example,
+     * <p>The type of instance to connect to the environment (for example,
      * <code>t2.micro</code>).</p>
      */
     inline CreateEnvironmentEC2Request& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}

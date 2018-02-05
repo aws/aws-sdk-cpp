@@ -56,6 +56,7 @@ enum class KinesisErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   EXPIRED_ITERATOR= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  EXPIRED_NEXT_TOKEN,
   INVALID_ARGUMENT,
   K_M_S_ACCESS_DENIED,
   K_M_S_DISABLED,

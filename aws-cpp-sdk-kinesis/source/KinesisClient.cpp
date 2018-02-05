@@ -39,6 +39,7 @@
 #include <aws/kinesis/model/GetRecordsRequest.h>
 #include <aws/kinesis/model/GetShardIteratorRequest.h>
 #include <aws/kinesis/model/IncreaseStreamRetentionPeriodRequest.h>
+#include <aws/kinesis/model/ListShardsRequest.h>
 #include <aws/kinesis/model/ListStreamsRequest.h>
 #include <aws/kinesis/model/ListTagsForStreamRequest.h>
 #include <aws/kinesis/model/MergeShardsRequest.h>
@@ -532,6 +533,41 @@ void KinesisClient::IncreaseStreamRetentionPeriodAsync(const IncreaseStreamReten
 void KinesisClient::IncreaseStreamRetentionPeriodAsyncHelper(const IncreaseStreamRetentionPeriodRequest& request, const IncreaseStreamRetentionPeriodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, IncreaseStreamRetentionPeriod(request), context);
+}
+
+ListShardsOutcome KinesisClient::ListShards(const ListShardsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListShardsOutcome(ListShardsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListShardsOutcome(outcome.GetError());
+  }
+}
+
+ListShardsOutcomeCallable KinesisClient::ListShardsCallable(const ListShardsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListShardsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListShards(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KinesisClient::ListShardsAsync(const ListShardsRequest& request, const ListShardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListShardsAsyncHelper( request, handler, context ); } );
+}
+
+void KinesisClient::ListShardsAsyncHelper(const ListShardsRequest& request, const ListShardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListShards(request), context);
 }
 
 ListStreamsOutcome KinesisClient::ListStreams(const ListStreamsRequest& request) const

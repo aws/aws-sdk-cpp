@@ -57,6 +57,8 @@ InstancesCount::InstancesCount() :
     m_shuttingDownHasBeenSet(false),
     m_startFailed(0),
     m_startFailedHasBeenSet(false),
+    m_stopFailed(0),
+    m_stopFailedHasBeenSet(false),
     m_stopped(0),
     m_stoppedHasBeenSet(false),
     m_stopping(0),
@@ -99,6 +101,8 @@ InstancesCount::InstancesCount(const JsonValue& jsonValue) :
     m_shuttingDownHasBeenSet(false),
     m_startFailed(0),
     m_startFailedHasBeenSet(false),
+    m_stopFailed(0),
+    m_stopFailedHasBeenSet(false),
     m_stopped(0),
     m_stoppedHasBeenSet(false),
     m_stopping(0),
@@ -211,6 +215,13 @@ InstancesCount& InstancesCount::operator =(const JsonValue& jsonValue)
     m_startFailed = jsonValue.GetInteger("StartFailed");
 
     m_startFailedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StopFailed"))
+  {
+    m_stopFailed = jsonValue.GetInteger("StopFailed");
+
+    m_stopFailedHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Stopped"))
@@ -336,6 +347,12 @@ JsonValue InstancesCount::Jsonize() const
   if(m_startFailedHasBeenSet)
   {
    payload.WithInteger("StartFailed", m_startFailed);
+
+  }
+
+  if(m_stopFailedHasBeenSet)
+  {
+   payload.WithInteger("StopFailed", m_stopFailed);
 
   }
 

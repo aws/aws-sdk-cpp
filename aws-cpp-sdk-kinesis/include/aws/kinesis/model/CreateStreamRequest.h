@@ -50,64 +50,64 @@ namespace Model
 
     /**
      * <p>A name to identify the stream. The stream name is scoped to the AWS account
-     * used by the application that creates the stream. It is also scoped by region.
-     * That is, two streams in two different AWS accounts can have the same name. Two
-     * streams in the same AWS account but in two different regions can also have the
-     * same name.</p>
+     * used by the application that creates the stream. It is also scoped by AWS
+     * Region. That is, two streams in two different AWS accounts can have the same
+     * name. Two streams in the same AWS account but in two different Regions can also
+     * have the same name.</p>
      */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
 
     /**
      * <p>A name to identify the stream. The stream name is scoped to the AWS account
-     * used by the application that creates the stream. It is also scoped by region.
-     * That is, two streams in two different AWS accounts can have the same name. Two
-     * streams in the same AWS account but in two different regions can also have the
-     * same name.</p>
+     * used by the application that creates the stream. It is also scoped by AWS
+     * Region. That is, two streams in two different AWS accounts can have the same
+     * name. Two streams in the same AWS account but in two different Regions can also
+     * have the same name.</p>
      */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**
      * <p>A name to identify the stream. The stream name is scoped to the AWS account
-     * used by the application that creates the stream. It is also scoped by region.
-     * That is, two streams in two different AWS accounts can have the same name. Two
-     * streams in the same AWS account but in two different regions can also have the
-     * same name.</p>
+     * used by the application that creates the stream. It is also scoped by AWS
+     * Region. That is, two streams in two different AWS accounts can have the same
+     * name. Two streams in the same AWS account but in two different Regions can also
+     * have the same name.</p>
      */
     inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
 
     /**
      * <p>A name to identify the stream. The stream name is scoped to the AWS account
-     * used by the application that creates the stream. It is also scoped by region.
-     * That is, two streams in two different AWS accounts can have the same name. Two
-     * streams in the same AWS account but in two different regions can also have the
-     * same name.</p>
+     * used by the application that creates the stream. It is also scoped by AWS
+     * Region. That is, two streams in two different AWS accounts can have the same
+     * name. Two streams in the same AWS account but in two different Regions can also
+     * have the same name.</p>
      */
     inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
 
     /**
      * <p>A name to identify the stream. The stream name is scoped to the AWS account
-     * used by the application that creates the stream. It is also scoped by region.
-     * That is, two streams in two different AWS accounts can have the same name. Two
-     * streams in the same AWS account but in two different regions can also have the
-     * same name.</p>
+     * used by the application that creates the stream. It is also scoped by AWS
+     * Region. That is, two streams in two different AWS accounts can have the same
+     * name. Two streams in the same AWS account but in two different Regions can also
+     * have the same name.</p>
      */
     inline CreateStreamRequest& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
 
     /**
      * <p>A name to identify the stream. The stream name is scoped to the AWS account
-     * used by the application that creates the stream. It is also scoped by region.
-     * That is, two streams in two different AWS accounts can have the same name. Two
-     * streams in the same AWS account but in two different regions can also have the
-     * same name.</p>
+     * used by the application that creates the stream. It is also scoped by AWS
+     * Region. That is, two streams in two different AWS accounts can have the same
+     * name. Two streams in the same AWS account but in two different Regions can also
+     * have the same name.</p>
      */
     inline CreateStreamRequest& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
 
     /**
      * <p>A name to identify the stream. The stream name is scoped to the AWS account
-     * used by the application that creates the stream. It is also scoped by region.
-     * That is, two streams in two different AWS accounts can have the same name. Two
-     * streams in the same AWS account but in two different regions can also have the
-     * same name.</p>
+     * used by the application that creates the stream. It is also scoped by AWS
+     * Region. That is, two streams in two different AWS accounts can have the same
+     * name. Two streams in the same AWS account but in two different Regions can also
+     * have the same name.</p>
      */
     inline CreateStreamRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
 
