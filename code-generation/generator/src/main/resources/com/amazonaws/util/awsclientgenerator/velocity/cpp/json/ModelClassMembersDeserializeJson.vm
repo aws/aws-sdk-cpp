@@ -33,7 +33,12 @@
 #elseif($member.shape.blob)
   ${spaces}${memberVarName} = HashingUtils::Base64Decode(jsonValue.GetString("${memberName}"));
 #else
-  ${spaces}${memberVarName} = jsonValue.Get${CppViewHelper.computeJsonCppType($member.shape)}("${memberName}");
+#if($member.shape.getName() == $shape.getName())
+#set($singleElementVector = '[0]')
+#else
+#set($singleElementVector = '')
+#end
+  ${spaces}${memberVarName}${singleElementVector} = jsonValue.Get${CppViewHelper.computeJsonCppType($member.shape)}("${memberName}");
 
 #end
 #if(!$member.required)

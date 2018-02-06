@@ -3,6 +3,11 @@
 #set($moveValueType = '')
 #set($keyMoveType = '')
 #set($keyValueType = '')
+#if($member.value.shape.getName() == $shape.getName())
+#set($singleElementVector = '[0]')
+#else
+#set($singleElementVector = '')
+#end
 #if(!((($shape.payload && ($shape.payload == $member.key && !$member.value.shape.structure && !$member.value.shape.list)) || $member.value.streaming) && $shape.request))
 #set($memberDocumentation = '')
 #if($member.value.documentation)
@@ -37,7 +42,7 @@
 #set($override = " override ")
 #end
     $memberDocumentation
-    inline ${cppType} Get${memberKeyWithFirstLetterCapitalized}() const$override{ return ${memberVariableName}; }
+    inline ${cppType} Get${memberKeyWithFirstLetterCapitalized}() const$override{ return ${memberVariableName}${singleElementVector}; }
 
 #end
 #if(!$isStream)
@@ -46,11 +51,11 @@
 #set ($required = "${CppViewHelper.computeVariableHasBeenSetName($member.key)} = true; ")
 #end
     $memberDocumentation
-    inline void Set${memberKeyWithFirstLetterCapitalized}(${cppType} value) { ${required}${memberVariableName} = value; }
+    inline void Set${memberKeyWithFirstLetterCapitalized}(${cppType} value) { ${required}${memberVariableName}${singleElementVector} = value; }
 
 #if(!$subShape.primitive)
     $memberDocumentation
-    inline void Set${memberKeyWithFirstLetterCapitalized}(${moveType} value) { ${required}${memberVariableName} = std::move(value); }
+    inline void Set${memberKeyWithFirstLetterCapitalized}(${moveType} value) { ${required}${memberVariableName}${singleElementVector} = std::move(value); }
 
 #end
 #if($member.value.shape.string)
@@ -159,7 +164,11 @@
   Aws::Utils::Stream::ResponseStream $CppViewHelper.computeMemberVariableName($member.key);
 #elseif(($shape.payload && ($shape.payload == $member.key && !$member.value.shape.structure && !$member.value.shape.list)) && $shape.request)
 #else
+#if($member.value.shape.getName() == $shape.getName())
+    Aws::Vector<$CppViewHelper.computeCppType($member.value.shape)> $CppViewHelper.computeMemberVariableName($member.key);
+#else
     $CppViewHelper.computeCppType($member.value.shape) $CppViewHelper.computeMemberVariableName($member.key);
+#end
 #if(!$member.value.required && $useRequiredField)
     bool ${CppViewHelper.computeVariableHasBeenSetName($member.key)};
 #end
