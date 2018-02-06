@@ -30,7 +30,7 @@
 
 
 namespace {
-#if defined(__GNUC__) && __GNUC__ == 4 && __GNUC_MINOR__ <= 8
+#if defined(__GNUC__) && __GNUC__ == 4 && __GNUC_MINOR__ <= 8 && !defined(__clang__)
     // GCC 4.8 has `max_align_t` defined in global namespace
     using ::max_align_t;
 #else
