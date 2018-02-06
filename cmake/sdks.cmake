@@ -1,5 +1,7 @@
 include(sdksCommon)
 
+set(SDK_DEPENDENCY_BUILD_LIST "")
+
 if(REGENERATE_CLIENTS)
     message(STATUS "Checking for SDK generation requirements")
     include(FindJava)
