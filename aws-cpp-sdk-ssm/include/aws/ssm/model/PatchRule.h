@@ -127,6 +127,28 @@ namespace Model
      */
     inline PatchRule& WithApproveAfterDays(int value) { SetApproveAfterDays(value); return *this;}
 
+
+    /**
+     * <p>For instances identified by the approval rule filters, enables a patch
+     * baseline to apply non-security updates available in the specified repository.
+     * The default value is 'false'. Applies to Linux instances only.</p>
+     */
+    inline bool GetEnableNonSecurity() const{ return m_enableNonSecurity; }
+
+    /**
+     * <p>For instances identified by the approval rule filters, enables a patch
+     * baseline to apply non-security updates available in the specified repository.
+     * The default value is 'false'. Applies to Linux instances only.</p>
+     */
+    inline void SetEnableNonSecurity(bool value) { m_enableNonSecurityHasBeenSet = true; m_enableNonSecurity = value; }
+
+    /**
+     * <p>For instances identified by the approval rule filters, enables a patch
+     * baseline to apply non-security updates available in the specified repository.
+     * The default value is 'false'. Applies to Linux instances only.</p>
+     */
+    inline PatchRule& WithEnableNonSecurity(bool value) { SetEnableNonSecurity(value); return *this;}
+
   private:
 
     PatchFilterGroup m_patchFilterGroup;
@@ -137,6 +159,9 @@ namespace Model
 
     int m_approveAfterDays;
     bool m_approveAfterDaysHasBeenSet;
+
+    bool m_enableNonSecurity;
+    bool m_enableNonSecurityHasBeenSet;
   };
 
 } // namespace Model

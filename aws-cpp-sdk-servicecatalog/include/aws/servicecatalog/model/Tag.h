@@ -33,9 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about a tag. A tag is a key-value pair. Tags are entirely
-   * discretionary and are propagated to the resources created when provisioning a
-   * product.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about a tag. A tag is a key-value pair. Tags are propagated to
+   * the resources created when provisioning a product.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/Tag">AWS
    * API Reference</a></p>
    */

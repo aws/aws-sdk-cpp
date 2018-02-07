@@ -43,27 +43,27 @@ namespace Model
 
 
     /**
-     * <p>Information about the result of <a>ProvisionProduct</a>.</p>
+     * <p>Information about the result of provisioning the product.</p>
      */
     inline const RecordDetail& GetRecordDetail() const{ return m_recordDetail; }
 
     /**
-     * <p>Information about the result of <a>ProvisionProduct</a>.</p>
+     * <p>Information about the result of provisioning the product.</p>
      */
     inline void SetRecordDetail(const RecordDetail& value) { m_recordDetail = value; }
 
     /**
-     * <p>Information about the result of <a>ProvisionProduct</a>.</p>
+     * <p>Information about the result of provisioning the product.</p>
      */
     inline void SetRecordDetail(RecordDetail&& value) { m_recordDetail = std::move(value); }
 
     /**
-     * <p>Information about the result of <a>ProvisionProduct</a>.</p>
+     * <p>Information about the result of provisioning the product.</p>
      */
     inline ProvisionProductResult& WithRecordDetail(const RecordDetail& value) { SetRecordDetail(value); return *this;}
 
     /**
-     * <p>Information about the result of <a>ProvisionProduct</a>.</p>
+     * <p>Information about the result of provisioning the product.</p>
      */
     inline ProvisionProductResult& WithRecordDetail(RecordDetail&& value) { SetRecordDetail(std::move(value)); return *this;}
 

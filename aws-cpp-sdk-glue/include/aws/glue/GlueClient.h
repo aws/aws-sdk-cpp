@@ -684,18 +684,20 @@ namespace Model
         virtual void BatchStopJobRunAsync(const Model::BatchStopJobRunRequest& request, const BatchStopJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a classifier in the user's account. This may be either a
-         * <code>GrokClassifier</code> or an <code>XMLClassifier</code>. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a classifier in the user's account. This may be a
+         * <code>GrokClassifier</code>, an <code>XMLClassifier</code>, or abbrev
+         * <code>JsonClassifier</code>, depending on which field of the request is
+         * present.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateClassifier">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateClassifierOutcome CreateClassifier(const Model::CreateClassifierRequest& request) const;
 
         /**
-         * <p>Creates a classifier in the user's account. This may be either a
-         * <code>GrokClassifier</code> or an <code>XMLClassifier</code>. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a classifier in the user's account. This may be a
+         * <code>GrokClassifier</code>, an <code>XMLClassifier</code>, or abbrev
+         * <code>JsonClassifier</code>, depending on which field of the request is
+         * present.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateClassifier">AWS
          * API Reference</a></p>
          *
@@ -704,9 +706,10 @@ namespace Model
         virtual Model::CreateClassifierOutcomeCallable CreateClassifierCallable(const Model::CreateClassifierRequest& request) const;
 
         /**
-         * <p>Creates a classifier in the user's account. This may be either a
-         * <code>GrokClassifier</code> or an <code>XMLClassifier</code>. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a classifier in the user's account. This may be a
+         * <code>GrokClassifier</code>, an <code>XMLClassifier</code>, or abbrev
+         * <code>JsonClassifier</code>, depending on which field of the request is
+         * present.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateClassifier">AWS
          * API Reference</a></p>
          *
@@ -2295,16 +2298,18 @@ namespace Model
         virtual void StopTriggerAsync(const Model::StopTriggerRequest& request, const StopTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies an existing classifier (either a <code>GrokClassifier</code> or an
-         * <code>XMLClassifier</code>).</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies an existing classifier (a <code>GrokClassifier</code>,
+         * <code>XMLClassifier</code>, or <code>JsonClassifier</code>, depending on which
+         * field is present).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateClassifier">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateClassifierOutcome UpdateClassifier(const Model::UpdateClassifierRequest& request) const;
 
         /**
-         * <p>Modifies an existing classifier (either a <code>GrokClassifier</code> or an
-         * <code>XMLClassifier</code>).</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies an existing classifier (a <code>GrokClassifier</code>,
+         * <code>XMLClassifier</code>, or <code>JsonClassifier</code>, depending on which
+         * field is present).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateClassifier">AWS
          * API Reference</a></p>
          *
@@ -2313,8 +2318,9 @@ namespace Model
         virtual Model::UpdateClassifierOutcomeCallable UpdateClassifierCallable(const Model::UpdateClassifierRequest& request) const;
 
         /**
-         * <p>Modifies an existing classifier (either a <code>GrokClassifier</code> or an
-         * <code>XMLClassifier</code>).</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies an existing classifier (a <code>GrokClassifier</code>,
+         * <code>XMLClassifier</code>, or <code>JsonClassifier</code>, depending on which
+         * field is present).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateClassifier">AWS
          * API Reference</a></p>
          *

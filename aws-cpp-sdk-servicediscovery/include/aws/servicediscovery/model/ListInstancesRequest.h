@@ -147,24 +147,21 @@ namespace Model
     /**
      * <p>The maximum number of instances that you want Amazon Route 53 to return in
      * the response to a <code>ListInstances</code> request. If you don't specify a
-     * value for <code>MaxResults</code>, Amazon Route 53 returns up to 100
-     * instances.</p>
+     * value for <code>MaxResults</code>, Route 53 returns up to 100 instances.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of instances that you want Amazon Route 53 to return in
      * the response to a <code>ListInstances</code> request. If you don't specify a
-     * value for <code>MaxResults</code>, Amazon Route 53 returns up to 100
-     * instances.</p>
+     * value for <code>MaxResults</code>, Route 53 returns up to 100 instances.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of instances that you want Amazon Route 53 to return in
      * the response to a <code>ListInstances</code> request. If you don't specify a
-     * value for <code>MaxResults</code>, Amazon Route 53 returns up to 100
-     * instances.</p>
+     * value for <code>MaxResults</code>, Route 53 returns up to 100 instances.</p>
      */
     inline ListInstancesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

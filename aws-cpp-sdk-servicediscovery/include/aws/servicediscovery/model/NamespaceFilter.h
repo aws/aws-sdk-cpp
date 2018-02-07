@@ -149,7 +149,8 @@ namespace Model
      * namespaces or private namespaces, but not both. <code>EQ</code> is the default
      * condition and can be omitted.</p> </li> <li> <p> <code>IN</code>: When you
      * specify <code>IN</code> for the condition, you can choose to list public
-     * namespaces, private namespaces, or both. </p> </li> </ul>
+     * namespaces, private namespaces, or both. </p> </li> <li> <p>
+     * <code>BETWEEN</code>: Not applicable</p> </li> </ul>
      */
     inline const FilterCondition& GetCondition() const{ return m_condition; }
 
@@ -161,7 +162,8 @@ namespace Model
      * namespaces or private namespaces, but not both. <code>EQ</code> is the default
      * condition and can be omitted.</p> </li> <li> <p> <code>IN</code>: When you
      * specify <code>IN</code> for the condition, you can choose to list public
-     * namespaces, private namespaces, or both. </p> </li> </ul>
+     * namespaces, private namespaces, or both. </p> </li> <li> <p>
+     * <code>BETWEEN</code>: Not applicable</p> </li> </ul>
      */
     inline void SetCondition(const FilterCondition& value) { m_conditionHasBeenSet = true; m_condition = value; }
 
@@ -173,7 +175,8 @@ namespace Model
      * namespaces or private namespaces, but not both. <code>EQ</code> is the default
      * condition and can be omitted.</p> </li> <li> <p> <code>IN</code>: When you
      * specify <code>IN</code> for the condition, you can choose to list public
-     * namespaces, private namespaces, or both. </p> </li> </ul>
+     * namespaces, private namespaces, or both. </p> </li> <li> <p>
+     * <code>BETWEEN</code>: Not applicable</p> </li> </ul>
      */
     inline void SetCondition(FilterCondition&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
 
@@ -185,7 +188,8 @@ namespace Model
      * namespaces or private namespaces, but not both. <code>EQ</code> is the default
      * condition and can be omitted.</p> </li> <li> <p> <code>IN</code>: When you
      * specify <code>IN</code> for the condition, you can choose to list public
-     * namespaces, private namespaces, or both. </p> </li> </ul>
+     * namespaces, private namespaces, or both. </p> </li> <li> <p>
+     * <code>BETWEEN</code>: Not applicable</p> </li> </ul>
      */
     inline NamespaceFilter& WithCondition(const FilterCondition& value) { SetCondition(value); return *this;}
 
@@ -197,7 +201,8 @@ namespace Model
      * namespaces or private namespaces, but not both. <code>EQ</code> is the default
      * condition and can be omitted.</p> </li> <li> <p> <code>IN</code>: When you
      * specify <code>IN</code> for the condition, you can choose to list public
-     * namespaces, private namespaces, or both. </p> </li> </ul>
+     * namespaces, private namespaces, or both. </p> </li> <li> <p>
+     * <code>BETWEEN</code>: Not applicable</p> </li> </ul>
      */
     inline NamespaceFilter& WithCondition(FilterCondition&& value) { SetCondition(std::move(value)); return *this;}
 

@@ -88,65 +88,86 @@ namespace Model
 
 
     /**
-     * <p>If more than <code>MaxResults</code> operations match the specified criteria,
-     * the value of <code>NextToken</code> is the first service in the next group of
-     * services that were created by the current AWS account. To get the next group,
-     * specify the value of <code>NextToken</code> from the previous response in the
-     * next request.</p>
+     * <p>If the response contains <code>NextToken</code>, submit another
+     * <code>ListServices</code> request to get the next group of results. Specify the
+     * value of <code>NextToken</code> from the previous response in the next
+     * request.</p> <note> <p>Route 53 gets <code>MaxResults</code> services and then
+     * filters them based on the specified criteria. It's possible that no services in
+     * the first <code>MaxResults</code> services matched the specified criteria but
+     * that subsequent groups of <code>MaxResults</code> services do contain services
+     * that match the criteria.</p> </note>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>If more than <code>MaxResults</code> operations match the specified criteria,
-     * the value of <code>NextToken</code> is the first service in the next group of
-     * services that were created by the current AWS account. To get the next group,
-     * specify the value of <code>NextToken</code> from the previous response in the
-     * next request.</p>
+     * <p>If the response contains <code>NextToken</code>, submit another
+     * <code>ListServices</code> request to get the next group of results. Specify the
+     * value of <code>NextToken</code> from the previous response in the next
+     * request.</p> <note> <p>Route 53 gets <code>MaxResults</code> services and then
+     * filters them based on the specified criteria. It's possible that no services in
+     * the first <code>MaxResults</code> services matched the specified criteria but
+     * that subsequent groups of <code>MaxResults</code> services do contain services
+     * that match the criteria.</p> </note>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>If more than <code>MaxResults</code> operations match the specified criteria,
-     * the value of <code>NextToken</code> is the first service in the next group of
-     * services that were created by the current AWS account. To get the next group,
-     * specify the value of <code>NextToken</code> from the previous response in the
-     * next request.</p>
+     * <p>If the response contains <code>NextToken</code>, submit another
+     * <code>ListServices</code> request to get the next group of results. Specify the
+     * value of <code>NextToken</code> from the previous response in the next
+     * request.</p> <note> <p>Route 53 gets <code>MaxResults</code> services and then
+     * filters them based on the specified criteria. It's possible that no services in
+     * the first <code>MaxResults</code> services matched the specified criteria but
+     * that subsequent groups of <code>MaxResults</code> services do contain services
+     * that match the criteria.</p> </note>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>If more than <code>MaxResults</code> operations match the specified criteria,
-     * the value of <code>NextToken</code> is the first service in the next group of
-     * services that were created by the current AWS account. To get the next group,
-     * specify the value of <code>NextToken</code> from the previous response in the
-     * next request.</p>
+     * <p>If the response contains <code>NextToken</code>, submit another
+     * <code>ListServices</code> request to get the next group of results. Specify the
+     * value of <code>NextToken</code> from the previous response in the next
+     * request.</p> <note> <p>Route 53 gets <code>MaxResults</code> services and then
+     * filters them based on the specified criteria. It's possible that no services in
+     * the first <code>MaxResults</code> services matched the specified criteria but
+     * that subsequent groups of <code>MaxResults</code> services do contain services
+     * that match the criteria.</p> </note>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>If more than <code>MaxResults</code> operations match the specified criteria,
-     * the value of <code>NextToken</code> is the first service in the next group of
-     * services that were created by the current AWS account. To get the next group,
-     * specify the value of <code>NextToken</code> from the previous response in the
-     * next request.</p>
+     * <p>If the response contains <code>NextToken</code>, submit another
+     * <code>ListServices</code> request to get the next group of results. Specify the
+     * value of <code>NextToken</code> from the previous response in the next
+     * request.</p> <note> <p>Route 53 gets <code>MaxResults</code> services and then
+     * filters them based on the specified criteria. It's possible that no services in
+     * the first <code>MaxResults</code> services matched the specified criteria but
+     * that subsequent groups of <code>MaxResults</code> services do contain services
+     * that match the criteria.</p> </note>
      */
     inline ListServicesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>If more than <code>MaxResults</code> operations match the specified criteria,
-     * the value of <code>NextToken</code> is the first service in the next group of
-     * services that were created by the current AWS account. To get the next group,
-     * specify the value of <code>NextToken</code> from the previous response in the
-     * next request.</p>
+     * <p>If the response contains <code>NextToken</code>, submit another
+     * <code>ListServices</code> request to get the next group of results. Specify the
+     * value of <code>NextToken</code> from the previous response in the next
+     * request.</p> <note> <p>Route 53 gets <code>MaxResults</code> services and then
+     * filters them based on the specified criteria. It's possible that no services in
+     * the first <code>MaxResults</code> services matched the specified criteria but
+     * that subsequent groups of <code>MaxResults</code> services do contain services
+     * that match the criteria.</p> </note>
      */
     inline ListServicesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>If more than <code>MaxResults</code> operations match the specified criteria,
-     * the value of <code>NextToken</code> is the first service in the next group of
-     * services that were created by the current AWS account. To get the next group,
-     * specify the value of <code>NextToken</code> from the previous response in the
-     * next request.</p>
+     * <p>If the response contains <code>NextToken</code>, submit another
+     * <code>ListServices</code> request to get the next group of results. Specify the
+     * value of <code>NextToken</code> from the previous response in the next
+     * request.</p> <note> <p>Route 53 gets <code>MaxResults</code> services and then
+     * filters them based on the specified criteria. It's possible that no services in
+     * the first <code>MaxResults</code> services matched the specified criteria but
+     * that subsequent groups of <code>MaxResults</code> services do contain services
+     * that match the criteria.</p> </note>
      */
     inline ListServicesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

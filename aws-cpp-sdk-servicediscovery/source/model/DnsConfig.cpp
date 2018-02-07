@@ -30,12 +30,16 @@ namespace Model
 
 DnsConfig::DnsConfig() : 
     m_namespaceIdHasBeenSet(false),
+    m_routingPolicy(RoutingPolicy::NOT_SET),
+    m_routingPolicyHasBeenSet(false),
     m_dnsRecordsHasBeenSet(false)
 {
 }
 
 DnsConfig::DnsConfig(const JsonValue& jsonValue) : 
     m_namespaceIdHasBeenSet(false),
+    m_routingPolicy(RoutingPolicy::NOT_SET),
+    m_routingPolicyHasBeenSet(false),
     m_dnsRecordsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -48,6 +52,13 @@ DnsConfig& DnsConfig::operator =(const JsonValue& jsonValue)
     m_namespaceId = jsonValue.GetString("NamespaceId");
 
     m_namespaceIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RoutingPolicy"))
+  {
+    m_routingPolicy = RoutingPolicyMapper::GetRoutingPolicyForName(jsonValue.GetString("RoutingPolicy"));
+
+    m_routingPolicyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DnsRecords"))
@@ -71,6 +82,11 @@ JsonValue DnsConfig::Jsonize() const
   {
    payload.WithString("NamespaceId", m_namespaceId);
 
+  }
+
+  if(m_routingPolicyHasBeenSet)
+  {
+   payload.WithString("RoutingPolicy", RoutingPolicyMapper::GetNameForRoutingPolicy(m_routingPolicy));
   }
 
   if(m_dnsRecordsHasBeenSet)

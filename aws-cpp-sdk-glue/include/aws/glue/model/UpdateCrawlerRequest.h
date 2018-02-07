@@ -413,7 +413,7 @@ namespace Model
      * partitions to inherit metadata such as classification, input format, output
      * format, serde information, and schema from their parent table, rather than
      * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p> <p>Example:  <code>'{ "Version": 1.0,
+     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
      * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
      * }'</code> </p>
      */
@@ -425,7 +425,7 @@ namespace Model
      * partitions to inherit metadata such as classification, input format, output
      * format, serde information, and schema from their parent table, rather than
      * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p> <p>Example:  <code>'{ "Version": 1.0,
+     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
      * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
      * }'</code> </p>
      */
@@ -437,7 +437,7 @@ namespace Model
      * partitions to inherit metadata such as classification, input format, output
      * format, serde information, and schema from their parent table, rather than
      * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p> <p>Example:  <code>'{ "Version": 1.0,
+     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
      * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
      * }'</code> </p>
      */
@@ -449,7 +449,7 @@ namespace Model
      * partitions to inherit metadata such as classification, input format, output
      * format, serde information, and schema from their parent table, rather than
      * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p> <p>Example:  <code>'{ "Version": 1.0,
+     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
      * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
      * }'</code> </p>
      */
@@ -461,7 +461,7 @@ namespace Model
      * partitions to inherit metadata such as classification, input format, output
      * format, serde information, and schema from their parent table, rather than
      * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p> <p>Example:  <code>'{ "Version": 1.0,
+     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
      * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
      * }'</code> </p>
      */
@@ -473,7 +473,7 @@ namespace Model
      * partitions to inherit metadata such as classification, input format, output
      * format, serde information, and schema from their parent table, rather than
      * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p> <p>Example:  <code>'{ "Version": 1.0,
+     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
      * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
      * }'</code> </p>
      */
@@ -485,7 +485,7 @@ namespace Model
      * partitions to inherit metadata such as classification, input format, output
      * format, serde information, and schema from their parent table, rather than
      * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p> <p>Example:  <code>'{ "Version": 1.0,
+     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
      * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
      * }'</code> </p>
      */

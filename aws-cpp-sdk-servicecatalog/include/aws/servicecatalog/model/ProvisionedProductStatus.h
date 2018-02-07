@@ -29,7 +29,8 @@ namespace Model
     AVAILABLE,
     UNDER_CHANGE,
     TAINTED,
-    ERROR_
+    ERROR_,
+    PLAN_IN_PROGRESS
   };
 
 namespace ProvisionedProductStatusMapper

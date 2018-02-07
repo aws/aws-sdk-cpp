@@ -159,12 +159,12 @@ namespace Model
     typedef std::function<void(const ServiceDiscoveryClient*, const Model::UpdateServiceRequest&, const Model::UpdateServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServiceResponseReceivedHandler;
 
   /**
-   * <p>Amazon Route 53 autonaming lets you configure public or private namespaces
+   * <p>Amazon Route 53 auto naming lets you configure public or private namespaces
    * that your microservice applications run in. When instances of the service become
-   * available, you can call the autonaming API to register the instance, and Amazon
-   * Route 53 automatically creates up to five DNS records and an optional health
-   * check. Clients that submit DNS queries for the service receive an answer that
-   * contains up to eight healthy records.</p>
+   * available, you can call the auto naming API to register the instance, and Route
+   * 53 automatically creates up to five DNS records and an optional health check.
+   * Clients that submit DNS queries for the service receive an answer that contains
+   * up to eight healthy records.</p>
    */
   class AWS_SERVICEDISCOVERY_API ServiceDiscoveryClient : public Aws::Client::AWSJsonClient
   {
@@ -276,22 +276,24 @@ namespace Model
         virtual void CreatePublicDnsNamespaceAsync(const Model::CreatePublicDnsNamespaceRequest& request, const CreatePublicDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a service, which defines a template for the following entities:</p>
-         * <ul> <li> <p>One to five resource record sets</p> </li> <li> <p>Optionally, a
-         * health check</p> </li> </ul> <p>After you create the service, you can submit a
-         * <a>RegisterInstance</a> request, and Amazon Route 53 uses the values in the
-         * template to create the specified entities. </p><p><h3>See Also:</h3>   <a
+         * <p>Creates a service, which defines the configuration for the following
+         * entities:</p> <ul> <li> <p>Up to three records (A, AAAA, and SRV) or one CNAME
+         * record</p> </li> <li> <p>Optionally, a health check</p> </li> </ul> <p>After you
+         * create the service, you can submit a <a>RegisterInstance</a> request, and Amazon
+         * Route 53 uses the values in the configuration to create the specified entities.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreateService">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateServiceOutcome CreateService(const Model::CreateServiceRequest& request) const;
 
         /**
-         * <p>Creates a service, which defines a template for the following entities:</p>
-         * <ul> <li> <p>One to five resource record sets</p> </li> <li> <p>Optionally, a
-         * health check</p> </li> </ul> <p>After you create the service, you can submit a
-         * <a>RegisterInstance</a> request, and Amazon Route 53 uses the values in the
-         * template to create the specified entities. </p><p><h3>See Also:</h3>   <a
+         * <p>Creates a service, which defines the configuration for the following
+         * entities:</p> <ul> <li> <p>Up to three records (A, AAAA, and SRV) or one CNAME
+         * record</p> </li> <li> <p>Optionally, a health check</p> </li> </ul> <p>After you
+         * create the service, you can submit a <a>RegisterInstance</a> request, and Amazon
+         * Route 53 uses the values in the configuration to create the specified entities.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreateService">AWS
          * API Reference</a></p>
          *
@@ -300,11 +302,12 @@ namespace Model
         virtual Model::CreateServiceOutcomeCallable CreateServiceCallable(const Model::CreateServiceRequest& request) const;
 
         /**
-         * <p>Creates a service, which defines a template for the following entities:</p>
-         * <ul> <li> <p>One to five resource record sets</p> </li> <li> <p>Optionally, a
-         * health check</p> </li> </ul> <p>After you create the service, you can submit a
-         * <a>RegisterInstance</a> request, and Amazon Route 53 uses the values in the
-         * template to create the specified entities. </p><p><h3>See Also:</h3>   <a
+         * <p>Creates a service, which defines the configuration for the following
+         * entities:</p> <ul> <li> <p>Up to three records (A, AAAA, and SRV) or one CNAME
+         * record</p> </li> <li> <p>Optionally, a health check</p> </li> </ul> <p>After you
+         * create the service, you can submit a <a>RegisterInstance</a> request, and Amazon
+         * Route 53 uses the values in the configuration to create the specified entities.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreateService">AWS
          * API Reference</a></p>
          *
@@ -369,16 +372,16 @@ namespace Model
         virtual void DeleteServiceAsync(const Model::DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the resource record sets and the health check, if any, that Amazon
-         * Route 53 created for the specified instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the records and the health check, if any, that Amazon Route 53
+         * created for the specified instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DeregisterInstance">AWS
          * API Reference</a></p>
          */
         virtual Model::DeregisterInstanceOutcome DeregisterInstance(const Model::DeregisterInstanceRequest& request) const;
 
         /**
-         * <p>Deletes the resource record sets and the health check, if any, that Amazon
-         * Route 53 created for the specified instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the records and the health check, if any, that Amazon Route 53
+         * created for the specified instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DeregisterInstance">AWS
          * API Reference</a></p>
          *
@@ -387,8 +390,8 @@ namespace Model
         virtual Model::DeregisterInstanceOutcomeCallable DeregisterInstanceCallable(const Model::DeregisterInstanceRequest& request) const;
 
         /**
-         * <p>Deletes the resource record sets and the health check, if any, that Amazon
-         * Route 53 created for the specified instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the records and the health check, if any, that Amazon Route 53
+         * created for the specified instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DeregisterInstance">AWS
          * API Reference</a></p>
          *
@@ -424,7 +427,9 @@ namespace Model
         /**
          * <p>Gets the current health status (<code>Healthy</code>, <code>Unhealthy</code>,
          * or <code>Unknown</code>) of one or more instances that are associated with a
-         * specified service.</p><p><h3>See Also:</h3>   <a
+         * specified service.</p> <note> <p>There is a brief delay between when you
+         * register an instance and when the health status for the instance is available.
+         * </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/GetInstancesHealthStatus">AWS
          * API Reference</a></p>
          */
@@ -433,7 +438,9 @@ namespace Model
         /**
          * <p>Gets the current health status (<code>Healthy</code>, <code>Unhealthy</code>,
          * or <code>Unknown</code>) of one or more instances that are associated with a
-         * specified service.</p><p><h3>See Also:</h3>   <a
+         * specified service.</p> <note> <p>There is a brief delay between when you
+         * register an instance and when the health status for the instance is available.
+         * </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/GetInstancesHealthStatus">AWS
          * API Reference</a></p>
          *
@@ -444,7 +451,9 @@ namespace Model
         /**
          * <p>Gets the current health status (<code>Healthy</code>, <code>Unhealthy</code>,
          * or <code>Unknown</code>) of one or more instances that are associated with a
-         * specified service.</p><p><h3>See Also:</h3>   <a
+         * specified service.</p> <note> <p>There is a brief delay between when you
+         * register an instance and when the health status for the instance is available.
+         * </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/GetInstancesHealthStatus">AWS
          * API Reference</a></p>
          *
@@ -479,9 +488,9 @@ namespace Model
 
         /**
          * <p>Gets information about any operation that returns an operation ID in the
-         * response, such as a <code>CreateService</code> request. To get a list of
-         * operations that match specified criteria, see
-         * <a>ListOperations</a>.</p><p><h3>See Also:</h3>   <a
+         * response, such as a <code>CreateService</code> request.</p> <note> <p>To get a
+         * list of operations that match specified criteria, see <a>ListOperations</a>.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/GetOperation">AWS
          * API Reference</a></p>
          */
@@ -489,9 +498,9 @@ namespace Model
 
         /**
          * <p>Gets information about any operation that returns an operation ID in the
-         * response, such as a <code>CreateService</code> request. To get a list of
-         * operations that match specified criteria, see
-         * <a>ListOperations</a>.</p><p><h3>See Also:</h3>   <a
+         * response, such as a <code>CreateService</code> request.</p> <note> <p>To get a
+         * list of operations that match specified criteria, see <a>ListOperations</a>.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/GetOperation">AWS
          * API Reference</a></p>
          *
@@ -501,9 +510,9 @@ namespace Model
 
         /**
          * <p>Gets information about any operation that returns an operation ID in the
-         * response, such as a <code>CreateService</code> request. To get a list of
-         * operations that match specified criteria, see
-         * <a>ListOperations</a>.</p><p><h3>See Also:</h3>   <a
+         * response, such as a <code>CreateService</code> request.</p> <note> <p>To get a
+         * list of operations that match specified criteria, see <a>ListOperations</a>.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/GetOperation">AWS
          * API Reference</a></p>
          *
@@ -537,7 +546,7 @@ namespace Model
         virtual void GetServiceAsync(const Model::GetServiceRequest& request, const GetServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets summary information about the instances that you created by using a
+         * <p>Lists summary information about the instances that you registered by using a
          * specified service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListInstances">AWS
          * API Reference</a></p>
@@ -545,7 +554,7 @@ namespace Model
         virtual Model::ListInstancesOutcome ListInstances(const Model::ListInstancesRequest& request) const;
 
         /**
-         * <p>Gets summary information about the instances that you created by using a
+         * <p>Lists summary information about the instances that you registered by using a
          * specified service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListInstances">AWS
          * API Reference</a></p>
@@ -555,7 +564,7 @@ namespace Model
         virtual Model::ListInstancesOutcomeCallable ListInstancesCallable(const Model::ListInstancesRequest& request) const;
 
         /**
-         * <p>Gets summary information about the instances that you created by using a
+         * <p>Lists summary information about the instances that you registered by using a
          * specified service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListInstances">AWS
          * API Reference</a></p>
@@ -565,16 +574,16 @@ namespace Model
         virtual void ListInstancesAsync(const Model::ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about the namespaces that were created by the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists summary information about the namespaces that were created by the
+         * current AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListNamespaces">AWS
          * API Reference</a></p>
          */
         virtual Model::ListNamespacesOutcome ListNamespaces(const Model::ListNamespacesRequest& request) const;
 
         /**
-         * <p>Gets information about the namespaces that were created by the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists summary information about the namespaces that were created by the
+         * current AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListNamespaces">AWS
          * API Reference</a></p>
          *
@@ -583,8 +592,8 @@ namespace Model
         virtual Model::ListNamespacesOutcomeCallable ListNamespacesCallable(const Model::ListNamespacesRequest& request) const;
 
         /**
-         * <p>Gets information about the namespaces that were created by the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists summary information about the namespaces that were created by the
+         * current AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListNamespaces">AWS
          * API Reference</a></p>
          *
@@ -621,16 +630,16 @@ namespace Model
         virtual void ListOperationsAsync(const Model::ListOperationsRequest& request, const ListOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets settings for all the services that are associated with one or more
-         * specified namespaces.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists summary information for all the services that are associated with one
+         * or more specified namespaces.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListServices">AWS
          * API Reference</a></p>
          */
         virtual Model::ListServicesOutcome ListServices(const Model::ListServicesRequest& request) const;
 
         /**
-         * <p>Gets settings for all the services that are associated with one or more
-         * specified namespaces.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists summary information for all the services that are associated with one
+         * or more specified namespaces.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListServices">AWS
          * API Reference</a></p>
          *
@@ -639,8 +648,8 @@ namespace Model
         virtual Model::ListServicesOutcomeCallable ListServicesCallable(const Model::ListServicesRequest& request) const;
 
         /**
-         * <p>Gets settings for all the services that are associated with one or more
-         * specified namespaces.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists summary information for all the services that are associated with one
+         * or more specified namespaces.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListServices">AWS
          * API Reference</a></p>
          *
@@ -649,44 +658,48 @@ namespace Model
         virtual void ListServicesAsync(const Model::ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates one or more resource record sets and optionally a health check based
-         * on the settings in a specified service. When you submit a
+         * <p>Creates or updates one or more records and optionally a health check based on
+         * the settings in a specified service. When you submit a
          * <code>RegisterInstance</code> request, Amazon Route 53 does the following:</p>
-         * <ul> <li> <p>Creates a resource record set for each resource record set template
-         * in the service</p> </li> <li> <p>Creates a health check based on the settings in
-         * the health check template in the service, if any</p> </li> <li> <p>Associates
-         * the health check, if any, with each of the resource record sets</p> </li> </ul>
-         * <important> <p>One <code>RegisterInstance</code> request must complete before
-         * you can submit another request and specify the same service and instance ID.</p>
-         * </important> <p>For more information, see <a>CreateService</a>.</p> <p>When
-         * Amazon Route 53 receives a DNS query for the specified DNS name, it returns the
-         * applicable value:</p> <ul> <li> <p> <b>If the health check is healthy</b>:
-         * returns all the resource record sets</p> </li> <li> <p> <b>If the health check
-         * is unhealthy</b>: returns the IP address of the last healthy instance</p> </li>
-         * <li> <p> <b>If you didn't specify a health check template</b>: returns all the
-         * resource record sets</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <ul> <li> <p>For each DNS record that you define in the service specified by
+         * <code>ServiceId</code>, creates or updates a record in the hosted zone that is
+         * associated with the corresponding namespace</p> </li> <li> <p>Creates or updates
+         * a health check based on the settings in the health check configuration, if any,
+         * for the service</p> </li> <li> <p>Associates the health check, if any, with each
+         * of the records</p> </li> </ul> <important> <p>One <code>RegisterInstance</code>
+         * request must complete before you can submit another request and specify the same
+         * service ID and instance ID.</p> </important> <p>For more information, see
+         * <a>CreateService</a>.</p> <p>When Route 53 receives a DNS query for the
+         * specified DNS name, it returns the applicable value:</p> <ul> <li> <p> <b>If the
+         * health check is healthy</b>: returns all the records</p> </li> <li> <p> <b>If
+         * the health check is unhealthy</b>: returns the IP address of the last healthy
+         * instance</p> </li> <li> <p> <b>If you didn't specify a health check
+         * configuration</b>: returns all the records</p> </li> </ul><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/RegisterInstance">AWS
          * API Reference</a></p>
          */
         virtual Model::RegisterInstanceOutcome RegisterInstance(const Model::RegisterInstanceRequest& request) const;
 
         /**
-         * <p>Creates one or more resource record sets and optionally a health check based
-         * on the settings in a specified service. When you submit a
+         * <p>Creates or updates one or more records and optionally a health check based on
+         * the settings in a specified service. When you submit a
          * <code>RegisterInstance</code> request, Amazon Route 53 does the following:</p>
-         * <ul> <li> <p>Creates a resource record set for each resource record set template
-         * in the service</p> </li> <li> <p>Creates a health check based on the settings in
-         * the health check template in the service, if any</p> </li> <li> <p>Associates
-         * the health check, if any, with each of the resource record sets</p> </li> </ul>
-         * <important> <p>One <code>RegisterInstance</code> request must complete before
-         * you can submit another request and specify the same service and instance ID.</p>
-         * </important> <p>For more information, see <a>CreateService</a>.</p> <p>When
-         * Amazon Route 53 receives a DNS query for the specified DNS name, it returns the
-         * applicable value:</p> <ul> <li> <p> <b>If the health check is healthy</b>:
-         * returns all the resource record sets</p> </li> <li> <p> <b>If the health check
-         * is unhealthy</b>: returns the IP address of the last healthy instance</p> </li>
-         * <li> <p> <b>If you didn't specify a health check template</b>: returns all the
-         * resource record sets</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <ul> <li> <p>For each DNS record that you define in the service specified by
+         * <code>ServiceId</code>, creates or updates a record in the hosted zone that is
+         * associated with the corresponding namespace</p> </li> <li> <p>Creates or updates
+         * a health check based on the settings in the health check configuration, if any,
+         * for the service</p> </li> <li> <p>Associates the health check, if any, with each
+         * of the records</p> </li> </ul> <important> <p>One <code>RegisterInstance</code>
+         * request must complete before you can submit another request and specify the same
+         * service ID and instance ID.</p> </important> <p>For more information, see
+         * <a>CreateService</a>.</p> <p>When Route 53 receives a DNS query for the
+         * specified DNS name, it returns the applicable value:</p> <ul> <li> <p> <b>If the
+         * health check is healthy</b>: returns all the records</p> </li> <li> <p> <b>If
+         * the health check is unhealthy</b>: returns the IP address of the last healthy
+         * instance</p> </li> <li> <p> <b>If you didn't specify a health check
+         * configuration</b>: returns all the records</p> </li> </ul><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/RegisterInstance">AWS
          * API Reference</a></p>
          *
@@ -695,22 +708,24 @@ namespace Model
         virtual Model::RegisterInstanceOutcomeCallable RegisterInstanceCallable(const Model::RegisterInstanceRequest& request) const;
 
         /**
-         * <p>Creates one or more resource record sets and optionally a health check based
-         * on the settings in a specified service. When you submit a
+         * <p>Creates or updates one or more records and optionally a health check based on
+         * the settings in a specified service. When you submit a
          * <code>RegisterInstance</code> request, Amazon Route 53 does the following:</p>
-         * <ul> <li> <p>Creates a resource record set for each resource record set template
-         * in the service</p> </li> <li> <p>Creates a health check based on the settings in
-         * the health check template in the service, if any</p> </li> <li> <p>Associates
-         * the health check, if any, with each of the resource record sets</p> </li> </ul>
-         * <important> <p>One <code>RegisterInstance</code> request must complete before
-         * you can submit another request and specify the same service and instance ID.</p>
-         * </important> <p>For more information, see <a>CreateService</a>.</p> <p>When
-         * Amazon Route 53 receives a DNS query for the specified DNS name, it returns the
-         * applicable value:</p> <ul> <li> <p> <b>If the health check is healthy</b>:
-         * returns all the resource record sets</p> </li> <li> <p> <b>If the health check
-         * is unhealthy</b>: returns the IP address of the last healthy instance</p> </li>
-         * <li> <p> <b>If you didn't specify a health check template</b>: returns all the
-         * resource record sets</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <ul> <li> <p>For each DNS record that you define in the service specified by
+         * <code>ServiceId</code>, creates or updates a record in the hosted zone that is
+         * associated with the corresponding namespace</p> </li> <li> <p>Creates or updates
+         * a health check based on the settings in the health check configuration, if any,
+         * for the service</p> </li> <li> <p>Associates the health check, if any, with each
+         * of the records</p> </li> </ul> <important> <p>One <code>RegisterInstance</code>
+         * request must complete before you can submit another request and specify the same
+         * service ID and instance ID.</p> </important> <p>For more information, see
+         * <a>CreateService</a>.</p> <p>When Route 53 receives a DNS query for the
+         * specified DNS name, it returns the applicable value:</p> <ul> <li> <p> <b>If the
+         * health check is healthy</b>: returns all the records</p> </li> <li> <p> <b>If
+         * the health check is unhealthy</b>: returns the IP address of the last healthy
+         * instance</p> </li> <li> <p> <b>If you didn't specify a health check
+         * configuration</b>: returns all the records</p> </li> </ul><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/RegisterInstance">AWS
          * API Reference</a></p>
          *
@@ -719,28 +734,36 @@ namespace Model
         virtual void RegisterInstanceAsync(const Model::RegisterInstanceRequest& request, const RegisterInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the TTL setting for a specified service. You must specify all the
-         * resource record set templates (and, optionally, a health check template) that
-         * you want to appear in the updated service. Any current resource record set
-         * templates (or health check template) that don't appear in an
-         * <code>UpdateService</code> request are deleted.</p> <p>When you update the TTL
-         * setting for a service, Amazon Route 53 also updates the corresponding settings
-         * in all the resource record sets and health checks that were created by using the
-         * specified service.</p><p><h3>See Also:</h3>   <a
+         * <p>Submits a request to perform the following operations:</p> <ul> <li> <p>Add
+         * or delete <code>DnsRecords</code> configurations</p> </li> <li> <p>Update the
+         * TTL setting for existing <code>DnsRecords</code> configurations</p> </li> <li>
+         * <p>Add, update, or delete <code>HealthCheckConfig</code> for a specified
+         * service</p> </li> <li> <p/> </li> </ul> <p>You must specify all
+         * <code>DnsRecords</code> configurations (and, optionally,
+         * <code>HealthCheckConfig</code>) that you want to appear in the updated service.
+         * Any current configurations that don't appear in an <code>UpdateService</code>
+         * request are deleted.</p> <p>When you update the TTL setting for a service,
+         * Amazon Route 53 also updates the corresponding settings in all the records and
+         * health checks that were created by using the specified service.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdateService">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateServiceOutcome UpdateService(const Model::UpdateServiceRequest& request) const;
 
         /**
-         * <p>Updates the TTL setting for a specified service. You must specify all the
-         * resource record set templates (and, optionally, a health check template) that
-         * you want to appear in the updated service. Any current resource record set
-         * templates (or health check template) that don't appear in an
-         * <code>UpdateService</code> request are deleted.</p> <p>When you update the TTL
-         * setting for a service, Amazon Route 53 also updates the corresponding settings
-         * in all the resource record sets and health checks that were created by using the
-         * specified service.</p><p><h3>See Also:</h3>   <a
+         * <p>Submits a request to perform the following operations:</p> <ul> <li> <p>Add
+         * or delete <code>DnsRecords</code> configurations</p> </li> <li> <p>Update the
+         * TTL setting for existing <code>DnsRecords</code> configurations</p> </li> <li>
+         * <p>Add, update, or delete <code>HealthCheckConfig</code> for a specified
+         * service</p> </li> <li> <p/> </li> </ul> <p>You must specify all
+         * <code>DnsRecords</code> configurations (and, optionally,
+         * <code>HealthCheckConfig</code>) that you want to appear in the updated service.
+         * Any current configurations that don't appear in an <code>UpdateService</code>
+         * request are deleted.</p> <p>When you update the TTL setting for a service,
+         * Amazon Route 53 also updates the corresponding settings in all the records and
+         * health checks that were created by using the specified service.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdateService">AWS
          * API Reference</a></p>
          *
@@ -749,14 +772,18 @@ namespace Model
         virtual Model::UpdateServiceOutcomeCallable UpdateServiceCallable(const Model::UpdateServiceRequest& request) const;
 
         /**
-         * <p>Updates the TTL setting for a specified service. You must specify all the
-         * resource record set templates (and, optionally, a health check template) that
-         * you want to appear in the updated service. Any current resource record set
-         * templates (or health check template) that don't appear in an
-         * <code>UpdateService</code> request are deleted.</p> <p>When you update the TTL
-         * setting for a service, Amazon Route 53 also updates the corresponding settings
-         * in all the resource record sets and health checks that were created by using the
-         * specified service.</p><p><h3>See Also:</h3>   <a
+         * <p>Submits a request to perform the following operations:</p> <ul> <li> <p>Add
+         * or delete <code>DnsRecords</code> configurations</p> </li> <li> <p>Update the
+         * TTL setting for existing <code>DnsRecords</code> configurations</p> </li> <li>
+         * <p>Add, update, or delete <code>HealthCheckConfig</code> for a specified
+         * service</p> </li> <li> <p/> </li> </ul> <p>You must specify all
+         * <code>DnsRecords</code> configurations (and, optionally,
+         * <code>HealthCheckConfig</code>) that you want to appear in the updated service.
+         * Any current configurations that don't appear in an <code>UpdateService</code>
+         * request are deleted.</p> <p>When you update the TTL setting for a service,
+         * Amazon Route 53 also updates the corresponding settings in all the records and
+         * health checks that were created by using the specified service.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdateService">AWS
          * API Reference</a></p>
          *

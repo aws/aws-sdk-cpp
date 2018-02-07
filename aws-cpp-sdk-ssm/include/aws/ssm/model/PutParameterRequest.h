@@ -48,70 +48,98 @@ namespace Model
     /**
      * <p>The fully qualified name of the parameter that you want to add to the system.
      * The fully qualified name includes the complete hierarchy of the parameter path
-     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <note>
-     * <p>The maximum length constraint listed below includes capacity for additional
-     * system attributes that are not part of the name. The maximum length for the
-     * fully qualified parameter name is 1011 characters. </p> </note>
+     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>For
+     * information about parameter name requirements and restrictions, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html#sysman-paramstore-su-create-about">About
+     * Creating Systems Manager Parameters</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
+     * capacity for additional system attributes that are not part of the name. The
+     * maximum length for the fully qualified parameter name is 1011 characters. </p>
+     * </note>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p>The fully qualified name of the parameter that you want to add to the system.
      * The fully qualified name includes the complete hierarchy of the parameter path
-     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <note>
-     * <p>The maximum length constraint listed below includes capacity for additional
-     * system attributes that are not part of the name. The maximum length for the
-     * fully qualified parameter name is 1011 characters. </p> </note>
+     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>For
+     * information about parameter name requirements and restrictions, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html#sysman-paramstore-su-create-about">About
+     * Creating Systems Manager Parameters</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
+     * capacity for additional system attributes that are not part of the name. The
+     * maximum length for the fully qualified parameter name is 1011 characters. </p>
+     * </note>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>The fully qualified name of the parameter that you want to add to the system.
      * The fully qualified name includes the complete hierarchy of the parameter path
-     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <note>
-     * <p>The maximum length constraint listed below includes capacity for additional
-     * system attributes that are not part of the name. The maximum length for the
-     * fully qualified parameter name is 1011 characters. </p> </note>
+     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>For
+     * information about parameter name requirements and restrictions, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html#sysman-paramstore-su-create-about">About
+     * Creating Systems Manager Parameters</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
+     * capacity for additional system attributes that are not part of the name. The
+     * maximum length for the fully qualified parameter name is 1011 characters. </p>
+     * </note>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The fully qualified name of the parameter that you want to add to the system.
      * The fully qualified name includes the complete hierarchy of the parameter path
-     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <note>
-     * <p>The maximum length constraint listed below includes capacity for additional
-     * system attributes that are not part of the name. The maximum length for the
-     * fully qualified parameter name is 1011 characters. </p> </note>
+     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>For
+     * information about parameter name requirements and restrictions, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html#sysman-paramstore-su-create-about">About
+     * Creating Systems Manager Parameters</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
+     * capacity for additional system attributes that are not part of the name. The
+     * maximum length for the fully qualified parameter name is 1011 characters. </p>
+     * </note>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p>The fully qualified name of the parameter that you want to add to the system.
      * The fully qualified name includes the complete hierarchy of the parameter path
-     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <note>
-     * <p>The maximum length constraint listed below includes capacity for additional
-     * system attributes that are not part of the name. The maximum length for the
-     * fully qualified parameter name is 1011 characters. </p> </note>
+     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>For
+     * information about parameter name requirements and restrictions, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html#sysman-paramstore-su-create-about">About
+     * Creating Systems Manager Parameters</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
+     * capacity for additional system attributes that are not part of the name. The
+     * maximum length for the fully qualified parameter name is 1011 characters. </p>
+     * </note>
      */
     inline PutParameterRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p>The fully qualified name of the parameter that you want to add to the system.
      * The fully qualified name includes the complete hierarchy of the parameter path
-     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <note>
-     * <p>The maximum length constraint listed below includes capacity for additional
-     * system attributes that are not part of the name. The maximum length for the
-     * fully qualified parameter name is 1011 characters. </p> </note>
+     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>For
+     * information about parameter name requirements and restrictions, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html#sysman-paramstore-su-create-about">About
+     * Creating Systems Manager Parameters</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
+     * capacity for additional system attributes that are not part of the name. The
+     * maximum length for the fully qualified parameter name is 1011 characters. </p>
+     * </note>
      */
     inline PutParameterRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The fully qualified name of the parameter that you want to add to the system.
      * The fully qualified name includes the complete hierarchy of the parameter path
-     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <note>
-     * <p>The maximum length constraint listed below includes capacity for additional
-     * system attributes that are not part of the name. The maximum length for the
-     * fully qualified parameter name is 1011 characters. </p> </note>
+     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>For
+     * information about parameter name requirements and restrictions, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html#sysman-paramstore-su-create-about">About
+     * Creating Systems Manager Parameters</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
+     * capacity for additional system attributes that are not part of the name. The
+     * maximum length for the fully qualified parameter name is 1011 characters. </p>
+     * </note>
      */
     inline PutParameterRequest& WithName(const char* value) { SetName(value); return *this;}
 

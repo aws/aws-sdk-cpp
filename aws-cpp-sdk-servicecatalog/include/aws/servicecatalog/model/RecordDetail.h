@@ -190,27 +190,27 @@ namespace Model
 
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The UTC time stamp of the creation time.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The UTC time stamp of the creation time.</p>
      */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The UTC time stamp of the creation time.</p>
      */
     inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The UTC time stamp of the creation time.</p>
      */
     inline RecordDetail& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The UTC time stamp of the creation time.</p>
      */
     inline RecordDetail& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
@@ -285,57 +285,50 @@ namespace Model
 
 
     /**
-     * <p>The record type for this record.</p> <ul> <li> <p>
-     * <code>PROVISION_PRODUCT</code> </p> </li> <li> <p>
-     * <code>UPDATE_PROVISIONED_PRODUCT</code> </p> </li> <li> <p>
+     * <p>The record type.</p> <ul> <li> <p> <code>PROVISION_PRODUCT</code> </p> </li>
+     * <li> <p> <code>UPDATE_PROVISIONED_PRODUCT</code> </p> </li> <li> <p>
      * <code>TERMINATE_PROVISIONED_PRODUCT</code> </p> </li> </ul>
      */
     inline const Aws::String& GetRecordType() const{ return m_recordType; }
 
     /**
-     * <p>The record type for this record.</p> <ul> <li> <p>
-     * <code>PROVISION_PRODUCT</code> </p> </li> <li> <p>
-     * <code>UPDATE_PROVISIONED_PRODUCT</code> </p> </li> <li> <p>
+     * <p>The record type.</p> <ul> <li> <p> <code>PROVISION_PRODUCT</code> </p> </li>
+     * <li> <p> <code>UPDATE_PROVISIONED_PRODUCT</code> </p> </li> <li> <p>
      * <code>TERMINATE_PROVISIONED_PRODUCT</code> </p> </li> </ul>
      */
     inline void SetRecordType(const Aws::String& value) { m_recordTypeHasBeenSet = true; m_recordType = value; }
 
     /**
-     * <p>The record type for this record.</p> <ul> <li> <p>
-     * <code>PROVISION_PRODUCT</code> </p> </li> <li> <p>
-     * <code>UPDATE_PROVISIONED_PRODUCT</code> </p> </li> <li> <p>
+     * <p>The record type.</p> <ul> <li> <p> <code>PROVISION_PRODUCT</code> </p> </li>
+     * <li> <p> <code>UPDATE_PROVISIONED_PRODUCT</code> </p> </li> <li> <p>
      * <code>TERMINATE_PROVISIONED_PRODUCT</code> </p> </li> </ul>
      */
     inline void SetRecordType(Aws::String&& value) { m_recordTypeHasBeenSet = true; m_recordType = std::move(value); }
 
     /**
-     * <p>The record type for this record.</p> <ul> <li> <p>
-     * <code>PROVISION_PRODUCT</code> </p> </li> <li> <p>
-     * <code>UPDATE_PROVISIONED_PRODUCT</code> </p> </li> <li> <p>
+     * <p>The record type.</p> <ul> <li> <p> <code>PROVISION_PRODUCT</code> </p> </li>
+     * <li> <p> <code>UPDATE_PROVISIONED_PRODUCT</code> </p> </li> <li> <p>
      * <code>TERMINATE_PROVISIONED_PRODUCT</code> </p> </li> </ul>
      */
     inline void SetRecordType(const char* value) { m_recordTypeHasBeenSet = true; m_recordType.assign(value); }
 
     /**
-     * <p>The record type for this record.</p> <ul> <li> <p>
-     * <code>PROVISION_PRODUCT</code> </p> </li> <li> <p>
-     * <code>UPDATE_PROVISIONED_PRODUCT</code> </p> </li> <li> <p>
+     * <p>The record type.</p> <ul> <li> <p> <code>PROVISION_PRODUCT</code> </p> </li>
+     * <li> <p> <code>UPDATE_PROVISIONED_PRODUCT</code> </p> </li> <li> <p>
      * <code>TERMINATE_PROVISIONED_PRODUCT</code> </p> </li> </ul>
      */
     inline RecordDetail& WithRecordType(const Aws::String& value) { SetRecordType(value); return *this;}
 
     /**
-     * <p>The record type for this record.</p> <ul> <li> <p>
-     * <code>PROVISION_PRODUCT</code> </p> </li> <li> <p>
-     * <code>UPDATE_PROVISIONED_PRODUCT</code> </p> </li> <li> <p>
+     * <p>The record type.</p> <ul> <li> <p> <code>PROVISION_PRODUCT</code> </p> </li>
+     * <li> <p> <code>UPDATE_PROVISIONED_PRODUCT</code> </p> </li> <li> <p>
      * <code>TERMINATE_PROVISIONED_PRODUCT</code> </p> </li> </ul>
      */
     inline RecordDetail& WithRecordType(Aws::String&& value) { SetRecordType(std::move(value)); return *this;}
 
     /**
-     * <p>The record type for this record.</p> <ul> <li> <p>
-     * <code>PROVISION_PRODUCT</code> </p> </li> <li> <p>
-     * <code>UPDATE_PROVISIONED_PRODUCT</code> </p> </li> <li> <p>
+     * <p>The record type.</p> <ul> <li> <p> <code>PROVISION_PRODUCT</code> </p> </li>
+     * <li> <p> <code>UPDATE_PROVISIONED_PRODUCT</code> </p> </li> <li> <p>
      * <code>TERMINATE_PROVISIONED_PRODUCT</code> </p> </li> </ul>
      */
     inline RecordDetail& WithRecordType(const char* value) { SetRecordType(value); return *this;}
@@ -486,73 +479,73 @@ namespace Model
 
 
     /**
-     * <p>The errors that occurred while processing the request.</p>
+     * <p>The errors that occurred.</p>
      */
     inline const Aws::Vector<RecordError>& GetRecordErrors() const{ return m_recordErrors; }
 
     /**
-     * <p>The errors that occurred while processing the request.</p>
+     * <p>The errors that occurred.</p>
      */
     inline void SetRecordErrors(const Aws::Vector<RecordError>& value) { m_recordErrorsHasBeenSet = true; m_recordErrors = value; }
 
     /**
-     * <p>The errors that occurred while processing the request.</p>
+     * <p>The errors that occurred.</p>
      */
     inline void SetRecordErrors(Aws::Vector<RecordError>&& value) { m_recordErrorsHasBeenSet = true; m_recordErrors = std::move(value); }
 
     /**
-     * <p>The errors that occurred while processing the request.</p>
+     * <p>The errors that occurred.</p>
      */
     inline RecordDetail& WithRecordErrors(const Aws::Vector<RecordError>& value) { SetRecordErrors(value); return *this;}
 
     /**
-     * <p>The errors that occurred while processing the request.</p>
+     * <p>The errors that occurred.</p>
      */
     inline RecordDetail& WithRecordErrors(Aws::Vector<RecordError>&& value) { SetRecordErrors(std::move(value)); return *this;}
 
     /**
-     * <p>The errors that occurred while processing the request.</p>
+     * <p>The errors that occurred.</p>
      */
     inline RecordDetail& AddRecordErrors(const RecordError& value) { m_recordErrorsHasBeenSet = true; m_recordErrors.push_back(value); return *this; }
 
     /**
-     * <p>The errors that occurred while processing the request.</p>
+     * <p>The errors that occurred.</p>
      */
     inline RecordDetail& AddRecordErrors(RecordError&& value) { m_recordErrorsHasBeenSet = true; m_recordErrors.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The tags associated with this record.</p>
+     * <p>One or more tags.</p>
      */
     inline const Aws::Vector<RecordTag>& GetRecordTags() const{ return m_recordTags; }
 
     /**
-     * <p>The tags associated with this record.</p>
+     * <p>One or more tags.</p>
      */
     inline void SetRecordTags(const Aws::Vector<RecordTag>& value) { m_recordTagsHasBeenSet = true; m_recordTags = value; }
 
     /**
-     * <p>The tags associated with this record.</p>
+     * <p>One or more tags.</p>
      */
     inline void SetRecordTags(Aws::Vector<RecordTag>&& value) { m_recordTagsHasBeenSet = true; m_recordTags = std::move(value); }
 
     /**
-     * <p>The tags associated with this record.</p>
+     * <p>One or more tags.</p>
      */
     inline RecordDetail& WithRecordTags(const Aws::Vector<RecordTag>& value) { SetRecordTags(value); return *this;}
 
     /**
-     * <p>The tags associated with this record.</p>
+     * <p>One or more tags.</p>
      */
     inline RecordDetail& WithRecordTags(Aws::Vector<RecordTag>&& value) { SetRecordTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags associated with this record.</p>
+     * <p>One or more tags.</p>
      */
     inline RecordDetail& AddRecordTags(const RecordTag& value) { m_recordTagsHasBeenSet = true; m_recordTags.push_back(value); return *this; }
 
     /**
-     * <p>The tags associated with this record.</p>
+     * <p>One or more tags.</p>
      */
     inline RecordDetail& AddRecordTags(RecordTag&& value) { m_recordTagsHasBeenSet = true; m_recordTags.push_back(std::move(value)); return *this; }
 

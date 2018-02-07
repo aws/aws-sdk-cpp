@@ -48,80 +48,80 @@ namespace Model
 
 
     /**
-     * <p>The ID that Amazon Route 53 assigned to the service when you created it.</p>
+     * <p>The ID that Route 53 assigned to the service when you created it.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The ID that Amazon Route 53 assigned to the service when you created it.</p>
+     * <p>The ID that Route 53 assigned to the service when you created it.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The ID that Amazon Route 53 assigned to the service when you created it.</p>
+     * <p>The ID that Route 53 assigned to the service when you created it.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The ID that Amazon Route 53 assigned to the service when you created it.</p>
+     * <p>The ID that Route 53 assigned to the service when you created it.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The ID that Amazon Route 53 assigned to the service when you created it.</p>
+     * <p>The ID that Route 53 assigned to the service when you created it.</p>
      */
     inline ServiceSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The ID that Amazon Route 53 assigned to the service when you created it.</p>
+     * <p>The ID that Route 53 assigned to the service when you created it.</p>
      */
     inline ServiceSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID that Amazon Route 53 assigned to the service when you created it.</p>
+     * <p>The ID that Route 53 assigned to the service when you created it.</p>
      */
     inline ServiceSummary& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Amazon Route 53 assigns to the service
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the service when you
+     * create it.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Amazon Route 53 assigns to the service
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the service when you
+     * create it.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Amazon Route 53 assigns to the service
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the service when you
+     * create it.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Amazon Route 53 assigns to the service
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the service when you
+     * create it.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Amazon Route 53 assigns to the service
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the service when you
+     * create it.</p>
      */
     inline ServiceSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Amazon Route 53 assigns to the service
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the service when you
+     * create it.</p>
      */
     inline ServiceSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Amazon Route 53 assigns to the service
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the service when you
+     * create it.</p>
      */
     inline ServiceSummary& WithArn(const char* value) { SetArn(value); return *this;}
 

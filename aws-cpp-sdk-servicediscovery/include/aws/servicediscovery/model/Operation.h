@@ -117,7 +117,7 @@ namespace Model
     /**
      * <p>The status of the operation. Values include the following:</p> <ul> <li> <p>
      * <b>SUBMITTED</b>: This is the initial state immediately after you submit a
-     * request.</p> </li> <li> <p> <b>PENDING</b>: Amazon Route 53 is performing the
+     * request.</p> </li> <li> <p> <b>PENDING</b>: Route 53 is performing the
      * operation.</p> </li> <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
      * <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see
      * <code>ErrorMessage</code>.</p> </li> </ul>
@@ -127,7 +127,7 @@ namespace Model
     /**
      * <p>The status of the operation. Values include the following:</p> <ul> <li> <p>
      * <b>SUBMITTED</b>: This is the initial state immediately after you submit a
-     * request.</p> </li> <li> <p> <b>PENDING</b>: Amazon Route 53 is performing the
+     * request.</p> </li> <li> <p> <b>PENDING</b>: Route 53 is performing the
      * operation.</p> </li> <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
      * <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see
      * <code>ErrorMessage</code>.</p> </li> </ul>
@@ -137,7 +137,7 @@ namespace Model
     /**
      * <p>The status of the operation. Values include the following:</p> <ul> <li> <p>
      * <b>SUBMITTED</b>: This is the initial state immediately after you submit a
-     * request.</p> </li> <li> <p> <b>PENDING</b>: Amazon Route 53 is performing the
+     * request.</p> </li> <li> <p> <b>PENDING</b>: Route 53 is performing the
      * operation.</p> </li> <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
      * <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see
      * <code>ErrorMessage</code>.</p> </li> </ul>
@@ -147,7 +147,7 @@ namespace Model
     /**
      * <p>The status of the operation. Values include the following:</p> <ul> <li> <p>
      * <b>SUBMITTED</b>: This is the initial state immediately after you submit a
-     * request.</p> </li> <li> <p> <b>PENDING</b>: Amazon Route 53 is performing the
+     * request.</p> </li> <li> <p> <b>PENDING</b>: Route 53 is performing the
      * operation.</p> </li> <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
      * <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see
      * <code>ErrorMessage</code>.</p> </li> </ul>
@@ -157,7 +157,7 @@ namespace Model
     /**
      * <p>The status of the operation. Values include the following:</p> <ul> <li> <p>
      * <b>SUBMITTED</b>: This is the initial state immediately after you submit a
-     * request.</p> </li> <li> <p> <b>PENDING</b>: Amazon Route 53 is performing the
+     * request.</p> </li> <li> <p> <b>PENDING</b>: Route 53 is performing the
      * operation.</p> </li> <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
      * <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see
      * <code>ErrorMessage</code>.</p> </li> </ul>
@@ -209,104 +209,180 @@ namespace Model
 
 
     /**
-     * <p>The code associated with <code>ErrorMessage</code>.</p>
+     * <p>The code associated with <code>ErrorMessage</code>. Values for
+     * <code>ErrorCode</code> include the following:</p> <ul> <li> <p>
+     * <code>ACCESS_DENIED</code> </p> </li> <li> <p>
+     * <code>CANNOT_CREATE_HOSTED_ZONE</code> </p> </li> <li> <p>
+     * <code>EXPIRED_TOKEN</code> </p> </li> <li> <p>
+     * <code>HOSTED_ZONE_NOT_FOUND</code> </p> </li> <li> <p>
+     * <code>INTERNAL_FAILURE</code> </p> </li> <li> <p>
+     * <code>INVALID_CHANGE_BATCH</code> </p> </li> <li> <p>
+     * <code>THROTTLED_REQUEST</code> </p> </li> </ul>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
 
     /**
-     * <p>The code associated with <code>ErrorMessage</code>.</p>
+     * <p>The code associated with <code>ErrorMessage</code>. Values for
+     * <code>ErrorCode</code> include the following:</p> <ul> <li> <p>
+     * <code>ACCESS_DENIED</code> </p> </li> <li> <p>
+     * <code>CANNOT_CREATE_HOSTED_ZONE</code> </p> </li> <li> <p>
+     * <code>EXPIRED_TOKEN</code> </p> </li> <li> <p>
+     * <code>HOSTED_ZONE_NOT_FOUND</code> </p> </li> <li> <p>
+     * <code>INTERNAL_FAILURE</code> </p> </li> <li> <p>
+     * <code>INVALID_CHANGE_BATCH</code> </p> </li> <li> <p>
+     * <code>THROTTLED_REQUEST</code> </p> </li> </ul>
      */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
-     * <p>The code associated with <code>ErrorMessage</code>.</p>
+     * <p>The code associated with <code>ErrorMessage</code>. Values for
+     * <code>ErrorCode</code> include the following:</p> <ul> <li> <p>
+     * <code>ACCESS_DENIED</code> </p> </li> <li> <p>
+     * <code>CANNOT_CREATE_HOSTED_ZONE</code> </p> </li> <li> <p>
+     * <code>EXPIRED_TOKEN</code> </p> </li> <li> <p>
+     * <code>HOSTED_ZONE_NOT_FOUND</code> </p> </li> <li> <p>
+     * <code>INTERNAL_FAILURE</code> </p> </li> <li> <p>
+     * <code>INVALID_CHANGE_BATCH</code> </p> </li> <li> <p>
+     * <code>THROTTLED_REQUEST</code> </p> </li> </ul>
      */
     inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
     /**
-     * <p>The code associated with <code>ErrorMessage</code>.</p>
+     * <p>The code associated with <code>ErrorMessage</code>. Values for
+     * <code>ErrorCode</code> include the following:</p> <ul> <li> <p>
+     * <code>ACCESS_DENIED</code> </p> </li> <li> <p>
+     * <code>CANNOT_CREATE_HOSTED_ZONE</code> </p> </li> <li> <p>
+     * <code>EXPIRED_TOKEN</code> </p> </li> <li> <p>
+     * <code>HOSTED_ZONE_NOT_FOUND</code> </p> </li> <li> <p>
+     * <code>INTERNAL_FAILURE</code> </p> </li> <li> <p>
+     * <code>INVALID_CHANGE_BATCH</code> </p> </li> <li> <p>
+     * <code>THROTTLED_REQUEST</code> </p> </li> </ul>
      */
     inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
 
     /**
-     * <p>The code associated with <code>ErrorMessage</code>.</p>
+     * <p>The code associated with <code>ErrorMessage</code>. Values for
+     * <code>ErrorCode</code> include the following:</p> <ul> <li> <p>
+     * <code>ACCESS_DENIED</code> </p> </li> <li> <p>
+     * <code>CANNOT_CREATE_HOSTED_ZONE</code> </p> </li> <li> <p>
+     * <code>EXPIRED_TOKEN</code> </p> </li> <li> <p>
+     * <code>HOSTED_ZONE_NOT_FOUND</code> </p> </li> <li> <p>
+     * <code>INTERNAL_FAILURE</code> </p> </li> <li> <p>
+     * <code>INVALID_CHANGE_BATCH</code> </p> </li> <li> <p>
+     * <code>THROTTLED_REQUEST</code> </p> </li> </ul>
      */
     inline Operation& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
 
     /**
-     * <p>The code associated with <code>ErrorMessage</code>.</p>
+     * <p>The code associated with <code>ErrorMessage</code>. Values for
+     * <code>ErrorCode</code> include the following:</p> <ul> <li> <p>
+     * <code>ACCESS_DENIED</code> </p> </li> <li> <p>
+     * <code>CANNOT_CREATE_HOSTED_ZONE</code> </p> </li> <li> <p>
+     * <code>EXPIRED_TOKEN</code> </p> </li> <li> <p>
+     * <code>HOSTED_ZONE_NOT_FOUND</code> </p> </li> <li> <p>
+     * <code>INTERNAL_FAILURE</code> </p> </li> <li> <p>
+     * <code>INVALID_CHANGE_BATCH</code> </p> </li> <li> <p>
+     * <code>THROTTLED_REQUEST</code> </p> </li> </ul>
      */
     inline Operation& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
 
     /**
-     * <p>The code associated with <code>ErrorMessage</code>.</p>
+     * <p>The code associated with <code>ErrorMessage</code>. Values for
+     * <code>ErrorCode</code> include the following:</p> <ul> <li> <p>
+     * <code>ACCESS_DENIED</code> </p> </li> <li> <p>
+     * <code>CANNOT_CREATE_HOSTED_ZONE</code> </p> </li> <li> <p>
+     * <code>EXPIRED_TOKEN</code> </p> </li> <li> <p>
+     * <code>HOSTED_ZONE_NOT_FOUND</code> </p> </li> <li> <p>
+     * <code>INTERNAL_FAILURE</code> </p> </li> <li> <p>
+     * <code>INVALID_CHANGE_BATCH</code> </p> </li> <li> <p>
+     * <code>THROTTLED_REQUEST</code> </p> </li> </ul>
      */
     inline Operation& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
 
 
     /**
      * <p>The date and time that the request was submitted, in Unix date/time format
-     * and Coordinated Universal Time (UTC).</p>
+     * and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is
+     * accurate to milliseconds. For example, the value <code>1516925490.087</code>
+     * represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
 
     /**
      * <p>The date and time that the request was submitted, in Unix date/time format
-     * and Coordinated Universal Time (UTC).</p>
+     * and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is
+     * accurate to milliseconds. For example, the value <code>1516925490.087</code>
+     * represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
 
     /**
      * <p>The date and time that the request was submitted, in Unix date/time format
-     * and Coordinated Universal Time (UTC).</p>
+     * and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is
+     * accurate to milliseconds. For example, the value <code>1516925490.087</code>
+     * represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
 
     /**
      * <p>The date and time that the request was submitted, in Unix date/time format
-     * and Coordinated Universal Time (UTC).</p>
+     * and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is
+     * accurate to milliseconds. For example, the value <code>1516925490.087</code>
+     * represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline Operation& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
 
     /**
      * <p>The date and time that the request was submitted, in Unix date/time format
-     * and Coordinated Universal Time (UTC).</p>
+     * and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is
+     * accurate to milliseconds. For example, the value <code>1516925490.087</code>
+     * represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline Operation& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
 
 
     /**
      * <p>The date and time that the value of <code>Status</code> changed to the
-     * current value, in Unix date/time format and Coordinated Universal Time
-     * (UTC).</p>
+     * current value, in Unix date/time format and Coordinated Universal Time (UTC).
+     * The value of <code>UpdateDate</code> is accurate to milliseconds. For example,
+     * the value <code>1516925490.087</code> represents Friday, January 26, 2018
+     * 12:11:30.087 AM.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdateDate() const{ return m_updateDate; }
 
     /**
      * <p>The date and time that the value of <code>Status</code> changed to the
-     * current value, in Unix date/time format and Coordinated Universal Time
-     * (UTC).</p>
+     * current value, in Unix date/time format and Coordinated Universal Time (UTC).
+     * The value of <code>UpdateDate</code> is accurate to milliseconds. For example,
+     * the value <code>1516925490.087</code> represents Friday, January 26, 2018
+     * 12:11:30.087 AM.</p>
      */
     inline void SetUpdateDate(const Aws::Utils::DateTime& value) { m_updateDateHasBeenSet = true; m_updateDate = value; }
 
     /**
      * <p>The date and time that the value of <code>Status</code> changed to the
-     * current value, in Unix date/time format and Coordinated Universal Time
-     * (UTC).</p>
+     * current value, in Unix date/time format and Coordinated Universal Time (UTC).
+     * The value of <code>UpdateDate</code> is accurate to milliseconds. For example,
+     * the value <code>1516925490.087</code> represents Friday, January 26, 2018
+     * 12:11:30.087 AM.</p>
      */
     inline void SetUpdateDate(Aws::Utils::DateTime&& value) { m_updateDateHasBeenSet = true; m_updateDate = std::move(value); }
 
     /**
      * <p>The date and time that the value of <code>Status</code> changed to the
-     * current value, in Unix date/time format and Coordinated Universal Time
-     * (UTC).</p>
+     * current value, in Unix date/time format and Coordinated Universal Time (UTC).
+     * The value of <code>UpdateDate</code> is accurate to milliseconds. For example,
+     * the value <code>1516925490.087</code> represents Friday, January 26, 2018
+     * 12:11:30.087 AM.</p>
      */
     inline Operation& WithUpdateDate(const Aws::Utils::DateTime& value) { SetUpdateDate(value); return *this;}
 
     /**
      * <p>The date and time that the value of <code>Status</code> changed to the
-     * current value, in Unix date/time format and Coordinated Universal Time
-     * (UTC).</p>
+     * current value, in Unix date/time format and Coordinated Universal Time (UTC).
+     * The value of <code>UpdateDate</code> is accurate to milliseconds. For example,
+     * the value <code>1516925490.087</code> represents Friday, January 26, 2018
+     * 12:11:30.087 AM.</p>
      */
     inline Operation& WithUpdateDate(Aws::Utils::DateTime&& value) { SetUpdateDate(std::move(value)); return *this;}
 

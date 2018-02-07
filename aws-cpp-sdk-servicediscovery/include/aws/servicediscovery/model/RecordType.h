@@ -28,7 +28,8 @@ namespace Model
     NOT_SET,
     SRV,
     A,
-    AAAA
+    AAAA,
+    CNAME
   };
 
 namespace RecordTypeMapper

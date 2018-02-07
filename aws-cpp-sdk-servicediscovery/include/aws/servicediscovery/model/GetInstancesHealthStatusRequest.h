@@ -83,97 +83,105 @@ namespace Model
 
     /**
      * <p>An array that contains the IDs of all the instances that you want to get the
-     * health status for. To get the IDs for the instances that you've created by using
-     * a specified service, submit a <a>ListInstances</a> request.</p> <p>If you omit
-     * <code>Instances</code>, Amazon Route 53 returns the health status for all the
-     * instances that are associated with the specified service.</p>
+     * health status for.</p> <p>If you omit <code>Instances</code>, Amazon Route 53
+     * returns the health status for all the instances that are associated with the
+     * specified service.</p> <note> <p>To get the IDs for the instances that you've
+     * registered by using a specified service, submit a <a>ListInstances</a>
+     * request.</p> </note>
      */
     inline const Aws::Vector<Aws::String>& GetInstances() const{ return m_instances; }
 
     /**
      * <p>An array that contains the IDs of all the instances that you want to get the
-     * health status for. To get the IDs for the instances that you've created by using
-     * a specified service, submit a <a>ListInstances</a> request.</p> <p>If you omit
-     * <code>Instances</code>, Amazon Route 53 returns the health status for all the
-     * instances that are associated with the specified service.</p>
+     * health status for.</p> <p>If you omit <code>Instances</code>, Amazon Route 53
+     * returns the health status for all the instances that are associated with the
+     * specified service.</p> <note> <p>To get the IDs for the instances that you've
+     * registered by using a specified service, submit a <a>ListInstances</a>
+     * request.</p> </note>
      */
     inline void SetInstances(const Aws::Vector<Aws::String>& value) { m_instancesHasBeenSet = true; m_instances = value; }
 
     /**
      * <p>An array that contains the IDs of all the instances that you want to get the
-     * health status for. To get the IDs for the instances that you've created by using
-     * a specified service, submit a <a>ListInstances</a> request.</p> <p>If you omit
-     * <code>Instances</code>, Amazon Route 53 returns the health status for all the
-     * instances that are associated with the specified service.</p>
+     * health status for.</p> <p>If you omit <code>Instances</code>, Amazon Route 53
+     * returns the health status for all the instances that are associated with the
+     * specified service.</p> <note> <p>To get the IDs for the instances that you've
+     * registered by using a specified service, submit a <a>ListInstances</a>
+     * request.</p> </note>
      */
     inline void SetInstances(Aws::Vector<Aws::String>&& value) { m_instancesHasBeenSet = true; m_instances = std::move(value); }
 
     /**
      * <p>An array that contains the IDs of all the instances that you want to get the
-     * health status for. To get the IDs for the instances that you've created by using
-     * a specified service, submit a <a>ListInstances</a> request.</p> <p>If you omit
-     * <code>Instances</code>, Amazon Route 53 returns the health status for all the
-     * instances that are associated with the specified service.</p>
+     * health status for.</p> <p>If you omit <code>Instances</code>, Amazon Route 53
+     * returns the health status for all the instances that are associated with the
+     * specified service.</p> <note> <p>To get the IDs for the instances that you've
+     * registered by using a specified service, submit a <a>ListInstances</a>
+     * request.</p> </note>
      */
     inline GetInstancesHealthStatusRequest& WithInstances(const Aws::Vector<Aws::String>& value) { SetInstances(value); return *this;}
 
     /**
      * <p>An array that contains the IDs of all the instances that you want to get the
-     * health status for. To get the IDs for the instances that you've created by using
-     * a specified service, submit a <a>ListInstances</a> request.</p> <p>If you omit
-     * <code>Instances</code>, Amazon Route 53 returns the health status for all the
-     * instances that are associated with the specified service.</p>
+     * health status for.</p> <p>If you omit <code>Instances</code>, Amazon Route 53
+     * returns the health status for all the instances that are associated with the
+     * specified service.</p> <note> <p>To get the IDs for the instances that you've
+     * registered by using a specified service, submit a <a>ListInstances</a>
+     * request.</p> </note>
      */
     inline GetInstancesHealthStatusRequest& WithInstances(Aws::Vector<Aws::String>&& value) { SetInstances(std::move(value)); return *this;}
 
     /**
      * <p>An array that contains the IDs of all the instances that you want to get the
-     * health status for. To get the IDs for the instances that you've created by using
-     * a specified service, submit a <a>ListInstances</a> request.</p> <p>If you omit
-     * <code>Instances</code>, Amazon Route 53 returns the health status for all the
-     * instances that are associated with the specified service.</p>
+     * health status for.</p> <p>If you omit <code>Instances</code>, Amazon Route 53
+     * returns the health status for all the instances that are associated with the
+     * specified service.</p> <note> <p>To get the IDs for the instances that you've
+     * registered by using a specified service, submit a <a>ListInstances</a>
+     * request.</p> </note>
      */
     inline GetInstancesHealthStatusRequest& AddInstances(const Aws::String& value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
 
     /**
      * <p>An array that contains the IDs of all the instances that you want to get the
-     * health status for. To get the IDs for the instances that you've created by using
-     * a specified service, submit a <a>ListInstances</a> request.</p> <p>If you omit
-     * <code>Instances</code>, Amazon Route 53 returns the health status for all the
-     * instances that are associated with the specified service.</p>
+     * health status for.</p> <p>If you omit <code>Instances</code>, Amazon Route 53
+     * returns the health status for all the instances that are associated with the
+     * specified service.</p> <note> <p>To get the IDs for the instances that you've
+     * registered by using a specified service, submit a <a>ListInstances</a>
+     * request.</p> </note>
      */
     inline GetInstancesHealthStatusRequest& AddInstances(Aws::String&& value) { m_instancesHasBeenSet = true; m_instances.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array that contains the IDs of all the instances that you want to get the
-     * health status for. To get the IDs for the instances that you've created by using
-     * a specified service, submit a <a>ListInstances</a> request.</p> <p>If you omit
-     * <code>Instances</code>, Amazon Route 53 returns the health status for all the
-     * instances that are associated with the specified service.</p>
+     * health status for.</p> <p>If you omit <code>Instances</code>, Amazon Route 53
+     * returns the health status for all the instances that are associated with the
+     * specified service.</p> <note> <p>To get the IDs for the instances that you've
+     * registered by using a specified service, submit a <a>ListInstances</a>
+     * request.</p> </note>
      */
     inline GetInstancesHealthStatusRequest& AddInstances(const char* value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
 
 
     /**
-     * <p>The maximum number of instances that you want Amazon Route 53 to return in
-     * the response to a <code>GetInstancesHealthStatus</code> request. If you don't
-     * specify a value for <code>MaxResults</code>, Amazon Route 53 returns up to 100
+     * <p>The maximum number of instances that you want Route 53 to return in the
+     * response to a <code>GetInstancesHealthStatus</code> request. If you don't
+     * specify a value for <code>MaxResults</code>, Route 53 returns up to 100
      * instances.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of instances that you want Amazon Route 53 to return in
-     * the response to a <code>GetInstancesHealthStatus</code> request. If you don't
-     * specify a value for <code>MaxResults</code>, Amazon Route 53 returns up to 100
+     * <p>The maximum number of instances that you want Route 53 to return in the
+     * response to a <code>GetInstancesHealthStatus</code> request. If you don't
+     * specify a value for <code>MaxResults</code>, Route 53 returns up to 100
      * instances.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of instances that you want Amazon Route 53 to return in
-     * the response to a <code>GetInstancesHealthStatus</code> request. If you don't
-     * specify a value for <code>MaxResults</code>, Amazon Route 53 returns up to 100
+     * <p>The maximum number of instances that you want Route 53 to return in the
+     * response to a <code>GetInstancesHealthStatus</code> request. If you don't
+     * specify a value for <code>MaxResults</code>, Route 53 returns up to 100
      * instances.</p>
      */
     inline GetInstancesHealthStatusRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}

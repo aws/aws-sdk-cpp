@@ -36,12 +36,14 @@
 #include <aws/servicecatalog/model/CreatePortfolioRequest.h>
 #include <aws/servicecatalog/model/CreatePortfolioShareRequest.h>
 #include <aws/servicecatalog/model/CreateProductRequest.h>
+#include <aws/servicecatalog/model/CreateProvisionedProductPlanRequest.h>
 #include <aws/servicecatalog/model/CreateProvisioningArtifactRequest.h>
 #include <aws/servicecatalog/model/CreateTagOptionRequest.h>
 #include <aws/servicecatalog/model/DeleteConstraintRequest.h>
 #include <aws/servicecatalog/model/DeletePortfolioRequest.h>
 #include <aws/servicecatalog/model/DeletePortfolioShareRequest.h>
 #include <aws/servicecatalog/model/DeleteProductRequest.h>
+#include <aws/servicecatalog/model/DeleteProvisionedProductPlanRequest.h>
 #include <aws/servicecatalog/model/DeleteProvisioningArtifactRequest.h>
 #include <aws/servicecatalog/model/DescribeConstraintRequest.h>
 #include <aws/servicecatalog/model/DescribeCopyProductStatusRequest.h>
@@ -50,6 +52,7 @@
 #include <aws/servicecatalog/model/DescribeProductAsAdminRequest.h>
 #include <aws/servicecatalog/model/DescribeProductViewRequest.h>
 #include <aws/servicecatalog/model/DescribeProvisionedProductRequest.h>
+#include <aws/servicecatalog/model/DescribeProvisionedProductPlanRequest.h>
 #include <aws/servicecatalog/model/DescribeProvisioningArtifactRequest.h>
 #include <aws/servicecatalog/model/DescribeProvisioningParametersRequest.h>
 #include <aws/servicecatalog/model/DescribeRecordRequest.h>
@@ -57,6 +60,7 @@
 #include <aws/servicecatalog/model/DisassociatePrincipalFromPortfolioRequest.h>
 #include <aws/servicecatalog/model/DisassociateProductFromPortfolioRequest.h>
 #include <aws/servicecatalog/model/DisassociateTagOptionFromResourceRequest.h>
+#include <aws/servicecatalog/model/ExecuteProvisionedProductPlanRequest.h>
 #include <aws/servicecatalog/model/ListAcceptedPortfolioSharesRequest.h>
 #include <aws/servicecatalog/model/ListConstraintsForPortfolioRequest.h>
 #include <aws/servicecatalog/model/ListLaunchPathsRequest.h>
@@ -64,6 +68,7 @@
 #include <aws/servicecatalog/model/ListPortfoliosRequest.h>
 #include <aws/servicecatalog/model/ListPortfoliosForProductRequest.h>
 #include <aws/servicecatalog/model/ListPrincipalsForPortfolioRequest.h>
+#include <aws/servicecatalog/model/ListProvisionedProductPlansRequest.h>
 #include <aws/servicecatalog/model/ListProvisioningArtifactsRequest.h>
 #include <aws/servicecatalog/model/ListRecordHistoryRequest.h>
 #include <aws/servicecatalog/model/ListResourcesForTagOptionRequest.h>
@@ -73,6 +78,7 @@
 #include <aws/servicecatalog/model/ScanProvisionedProductsRequest.h>
 #include <aws/servicecatalog/model/SearchProductsRequest.h>
 #include <aws/servicecatalog/model/SearchProductsAsAdminRequest.h>
+#include <aws/servicecatalog/model/SearchProvisionedProductsRequest.h>
 #include <aws/servicecatalog/model/TerminateProvisionedProductRequest.h>
 #include <aws/servicecatalog/model/UpdateConstraintRequest.h>
 #include <aws/servicecatalog/model/UpdatePortfolioRequest.h>
@@ -460,6 +466,41 @@ void ServiceCatalogClient::CreateProductAsyncHelper(const CreateProductRequest& 
   handler(this, request, CreateProduct(request), context);
 }
 
+CreateProvisionedProductPlanOutcome ServiceCatalogClient::CreateProvisionedProductPlan(const CreateProvisionedProductPlanRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateProvisionedProductPlanOutcome(CreateProvisionedProductPlanResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateProvisionedProductPlanOutcome(outcome.GetError());
+  }
+}
+
+CreateProvisionedProductPlanOutcomeCallable ServiceCatalogClient::CreateProvisionedProductPlanCallable(const CreateProvisionedProductPlanRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateProvisionedProductPlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateProvisionedProductPlan(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceCatalogClient::CreateProvisionedProductPlanAsync(const CreateProvisionedProductPlanRequest& request, const CreateProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateProvisionedProductPlanAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceCatalogClient::CreateProvisionedProductPlanAsyncHelper(const CreateProvisionedProductPlanRequest& request, const CreateProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateProvisionedProductPlan(request), context);
+}
+
 CreateProvisioningArtifactOutcome ServiceCatalogClient::CreateProvisioningArtifact(const CreateProvisioningArtifactRequest& request) const
 {
   Aws::StringStream ss;
@@ -668,6 +709,41 @@ void ServiceCatalogClient::DeleteProductAsync(const DeleteProductRequest& reques
 void ServiceCatalogClient::DeleteProductAsyncHelper(const DeleteProductRequest& request, const DeleteProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteProduct(request), context);
+}
+
+DeleteProvisionedProductPlanOutcome ServiceCatalogClient::DeleteProvisionedProductPlan(const DeleteProvisionedProductPlanRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteProvisionedProductPlanOutcome(DeleteProvisionedProductPlanResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteProvisionedProductPlanOutcome(outcome.GetError());
+  }
+}
+
+DeleteProvisionedProductPlanOutcomeCallable ServiceCatalogClient::DeleteProvisionedProductPlanCallable(const DeleteProvisionedProductPlanRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteProvisionedProductPlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteProvisionedProductPlan(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceCatalogClient::DeleteProvisionedProductPlanAsync(const DeleteProvisionedProductPlanRequest& request, const DeleteProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteProvisionedProductPlanAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceCatalogClient::DeleteProvisionedProductPlanAsyncHelper(const DeleteProvisionedProductPlanRequest& request, const DeleteProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteProvisionedProductPlan(request), context);
 }
 
 DeleteProvisioningArtifactOutcome ServiceCatalogClient::DeleteProvisioningArtifact(const DeleteProvisioningArtifactRequest& request) const
@@ -950,6 +1026,41 @@ void ServiceCatalogClient::DescribeProvisionedProductAsyncHelper(const DescribeP
   handler(this, request, DescribeProvisionedProduct(request), context);
 }
 
+DescribeProvisionedProductPlanOutcome ServiceCatalogClient::DescribeProvisionedProductPlan(const DescribeProvisionedProductPlanRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeProvisionedProductPlanOutcome(DescribeProvisionedProductPlanResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeProvisionedProductPlanOutcome(outcome.GetError());
+  }
+}
+
+DescribeProvisionedProductPlanOutcomeCallable ServiceCatalogClient::DescribeProvisionedProductPlanCallable(const DescribeProvisionedProductPlanRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeProvisionedProductPlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeProvisionedProductPlan(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceCatalogClient::DescribeProvisionedProductPlanAsync(const DescribeProvisionedProductPlanRequest& request, const DescribeProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeProvisionedProductPlanAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceCatalogClient::DescribeProvisionedProductPlanAsyncHelper(const DescribeProvisionedProductPlanRequest& request, const DescribeProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeProvisionedProductPlan(request), context);
+}
+
 DescribeProvisioningArtifactOutcome ServiceCatalogClient::DescribeProvisioningArtifact(const DescribeProvisioningArtifactRequest& request) const
 {
   Aws::StringStream ss;
@@ -1195,6 +1306,41 @@ void ServiceCatalogClient::DisassociateTagOptionFromResourceAsyncHelper(const Di
   handler(this, request, DisassociateTagOptionFromResource(request), context);
 }
 
+ExecuteProvisionedProductPlanOutcome ServiceCatalogClient::ExecuteProvisionedProductPlan(const ExecuteProvisionedProductPlanRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ExecuteProvisionedProductPlanOutcome(ExecuteProvisionedProductPlanResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ExecuteProvisionedProductPlanOutcome(outcome.GetError());
+  }
+}
+
+ExecuteProvisionedProductPlanOutcomeCallable ServiceCatalogClient::ExecuteProvisionedProductPlanCallable(const ExecuteProvisionedProductPlanRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ExecuteProvisionedProductPlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExecuteProvisionedProductPlan(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceCatalogClient::ExecuteProvisionedProductPlanAsync(const ExecuteProvisionedProductPlanRequest& request, const ExecuteProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ExecuteProvisionedProductPlanAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceCatalogClient::ExecuteProvisionedProductPlanAsyncHelper(const ExecuteProvisionedProductPlanRequest& request, const ExecuteProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ExecuteProvisionedProductPlan(request), context);
+}
+
 ListAcceptedPortfolioSharesOutcome ServiceCatalogClient::ListAcceptedPortfolioShares(const ListAcceptedPortfolioSharesRequest& request) const
 {
   Aws::StringStream ss;
@@ -1438,6 +1584,41 @@ void ServiceCatalogClient::ListPrincipalsForPortfolioAsync(const ListPrincipalsF
 void ServiceCatalogClient::ListPrincipalsForPortfolioAsyncHelper(const ListPrincipalsForPortfolioRequest& request, const ListPrincipalsForPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListPrincipalsForPortfolio(request), context);
+}
+
+ListProvisionedProductPlansOutcome ServiceCatalogClient::ListProvisionedProductPlans(const ListProvisionedProductPlansRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListProvisionedProductPlansOutcome(ListProvisionedProductPlansResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListProvisionedProductPlansOutcome(outcome.GetError());
+  }
+}
+
+ListProvisionedProductPlansOutcomeCallable ServiceCatalogClient::ListProvisionedProductPlansCallable(const ListProvisionedProductPlansRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListProvisionedProductPlansOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListProvisionedProductPlans(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceCatalogClient::ListProvisionedProductPlansAsync(const ListProvisionedProductPlansRequest& request, const ListProvisionedProductPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListProvisionedProductPlansAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceCatalogClient::ListProvisionedProductPlansAsyncHelper(const ListProvisionedProductPlansRequest& request, const ListProvisionedProductPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListProvisionedProductPlans(request), context);
 }
 
 ListProvisioningArtifactsOutcome ServiceCatalogClient::ListProvisioningArtifacts(const ListProvisioningArtifactsRequest& request) const
@@ -1753,6 +1934,41 @@ void ServiceCatalogClient::SearchProductsAsAdminAsync(const SearchProductsAsAdmi
 void ServiceCatalogClient::SearchProductsAsAdminAsyncHelper(const SearchProductsAsAdminRequest& request, const SearchProductsAsAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SearchProductsAsAdmin(request), context);
+}
+
+SearchProvisionedProductsOutcome ServiceCatalogClient::SearchProvisionedProducts(const SearchProvisionedProductsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return SearchProvisionedProductsOutcome(SearchProvisionedProductsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return SearchProvisionedProductsOutcome(outcome.GetError());
+  }
+}
+
+SearchProvisionedProductsOutcomeCallable ServiceCatalogClient::SearchProvisionedProductsCallable(const SearchProvisionedProductsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SearchProvisionedProductsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchProvisionedProducts(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceCatalogClient::SearchProvisionedProductsAsync(const SearchProvisionedProductsRequest& request, const SearchProvisionedProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SearchProvisionedProductsAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceCatalogClient::SearchProvisionedProductsAsyncHelper(const SearchProvisionedProductsRequest& request, const SearchProvisionedProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SearchProvisionedProducts(request), context);
 }
 
 TerminateProvisionedProductOutcome ServiceCatalogClient::TerminateProvisionedProduct(const TerminateProvisionedProductRequest& request) const

@@ -86,32 +86,32 @@ namespace Model
 
 
     /**
-     * <p>A complex type that contains information about the resource record sets that
-     * you want Amazon Route 53 to create when you register an instance.</p>
+     * <p>A complex type that contains information about the records that you want
+     * Route 53 to create when you register an instance.</p>
      */
     inline const DnsConfigChange& GetDnsConfig() const{ return m_dnsConfig; }
 
     /**
-     * <p>A complex type that contains information about the resource record sets that
-     * you want Amazon Route 53 to create when you register an instance.</p>
+     * <p>A complex type that contains information about the records that you want
+     * Route 53 to create when you register an instance.</p>
      */
     inline void SetDnsConfig(const DnsConfigChange& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = value; }
 
     /**
-     * <p>A complex type that contains information about the resource record sets that
-     * you want Amazon Route 53 to create when you register an instance.</p>
+     * <p>A complex type that contains information about the records that you want
+     * Route 53 to create when you register an instance.</p>
      */
     inline void SetDnsConfig(DnsConfigChange&& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = std::move(value); }
 
     /**
-     * <p>A complex type that contains information about the resource record sets that
-     * you want Amazon Route 53 to create when you register an instance.</p>
+     * <p>A complex type that contains information about the records that you want
+     * Route 53 to create when you register an instance.</p>
      */
     inline ServiceChange& WithDnsConfig(const DnsConfigChange& value) { SetDnsConfig(value); return *this;}
 
     /**
-     * <p>A complex type that contains information about the resource record sets that
-     * you want Amazon Route 53 to create when you register an instance.</p>
+     * <p>A complex type that contains information about the records that you want
+     * Route 53 to create when you register an instance.</p>
      */
     inline ServiceChange& WithDnsConfig(DnsConfigChange&& value) { SetDnsConfig(std::move(value)); return *this;}
 

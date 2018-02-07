@@ -96,51 +96,58 @@ namespace Model
 
 
     /**
-     * <p>An optional parameter that you can use to resolve concurrent creation
-     * requests. <code>CreatorRequestId</code> helps to determine if a specific client
-     * owns the namespace.</p>
+     * <p>A unique string that identifies the request and that allows failed
+     * <code>CreatePrivateDnsNamespace</code> requests to be retried without the risk
+     * of executing the operation twice. <code>CreatorRequestId</code> can be any
+     * unique string, for example, a date/time stamp.</p>
      */
     inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
 
     /**
-     * <p>An optional parameter that you can use to resolve concurrent creation
-     * requests. <code>CreatorRequestId</code> helps to determine if a specific client
-     * owns the namespace.</p>
+     * <p>A unique string that identifies the request and that allows failed
+     * <code>CreatePrivateDnsNamespace</code> requests to be retried without the risk
+     * of executing the operation twice. <code>CreatorRequestId</code> can be any
+     * unique string, for example, a date/time stamp.</p>
      */
     inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = value; }
 
     /**
-     * <p>An optional parameter that you can use to resolve concurrent creation
-     * requests. <code>CreatorRequestId</code> helps to determine if a specific client
-     * owns the namespace.</p>
+     * <p>A unique string that identifies the request and that allows failed
+     * <code>CreatePrivateDnsNamespace</code> requests to be retried without the risk
+     * of executing the operation twice. <code>CreatorRequestId</code> can be any
+     * unique string, for example, a date/time stamp.</p>
      */
     inline void SetCreatorRequestId(Aws::String&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::move(value); }
 
     /**
-     * <p>An optional parameter that you can use to resolve concurrent creation
-     * requests. <code>CreatorRequestId</code> helps to determine if a specific client
-     * owns the namespace.</p>
+     * <p>A unique string that identifies the request and that allows failed
+     * <code>CreatePrivateDnsNamespace</code> requests to be retried without the risk
+     * of executing the operation twice. <code>CreatorRequestId</code> can be any
+     * unique string, for example, a date/time stamp.</p>
      */
     inline void SetCreatorRequestId(const char* value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId.assign(value); }
 
     /**
-     * <p>An optional parameter that you can use to resolve concurrent creation
-     * requests. <code>CreatorRequestId</code> helps to determine if a specific client
-     * owns the namespace.</p>
+     * <p>A unique string that identifies the request and that allows failed
+     * <code>CreatePrivateDnsNamespace</code> requests to be retried without the risk
+     * of executing the operation twice. <code>CreatorRequestId</code> can be any
+     * unique string, for example, a date/time stamp.</p>
      */
     inline CreatePrivateDnsNamespaceRequest& WithCreatorRequestId(const Aws::String& value) { SetCreatorRequestId(value); return *this;}
 
     /**
-     * <p>An optional parameter that you can use to resolve concurrent creation
-     * requests. <code>CreatorRequestId</code> helps to determine if a specific client
-     * owns the namespace.</p>
+     * <p>A unique string that identifies the request and that allows failed
+     * <code>CreatePrivateDnsNamespace</code> requests to be retried without the risk
+     * of executing the operation twice. <code>CreatorRequestId</code> can be any
+     * unique string, for example, a date/time stamp.</p>
      */
     inline CreatePrivateDnsNamespaceRequest& WithCreatorRequestId(Aws::String&& value) { SetCreatorRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>An optional parameter that you can use to resolve concurrent creation
-     * requests. <code>CreatorRequestId</code> helps to determine if a specific client
-     * owns the namespace.</p>
+     * <p>A unique string that identifies the request and that allows failed
+     * <code>CreatePrivateDnsNamespace</code> requests to be retried without the risk
+     * of executing the operation twice. <code>CreatorRequestId</code> can be any
+     * unique string, for example, a date/time stamp.</p>
      */
     inline CreatePrivateDnsNamespaceRequest& WithCreatorRequestId(const char* value) { SetCreatorRequestId(value); return *this;}
 

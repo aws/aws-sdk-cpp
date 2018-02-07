@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains the ID for the hosted zone that Amazon Route 53
-   * creates when you create a namespace.</p><p><h3>See Also:</h3>   <a
+   * <p>A complex type that contains the ID for the hosted zone that Route 53 creates
+   * when you create a namespace.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DnsProperties">AWS
    * API Reference</a></p>
    */
@@ -48,43 +48,43 @@ namespace Model
 
 
     /**
-     * <p>The ID for the hosted zone that Amazon Route 53 creates when you create a
+     * <p>The ID for the hosted zone that Route 53 creates when you create a
      * namespace.</p>
      */
     inline const Aws::String& GetHostedZoneId() const{ return m_hostedZoneId; }
 
     /**
-     * <p>The ID for the hosted zone that Amazon Route 53 creates when you create a
+     * <p>The ID for the hosted zone that Route 53 creates when you create a
      * namespace.</p>
      */
     inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
 
     /**
-     * <p>The ID for the hosted zone that Amazon Route 53 creates when you create a
+     * <p>The ID for the hosted zone that Route 53 creates when you create a
      * namespace.</p>
      */
     inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::move(value); }
 
     /**
-     * <p>The ID for the hosted zone that Amazon Route 53 creates when you create a
+     * <p>The ID for the hosted zone that Route 53 creates when you create a
      * namespace.</p>
      */
     inline void SetHostedZoneId(const char* value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId.assign(value); }
 
     /**
-     * <p>The ID for the hosted zone that Amazon Route 53 creates when you create a
+     * <p>The ID for the hosted zone that Route 53 creates when you create a
      * namespace.</p>
      */
     inline DnsProperties& WithHostedZoneId(const Aws::String& value) { SetHostedZoneId(value); return *this;}
 
     /**
-     * <p>The ID for the hosted zone that Amazon Route 53 creates when you create a
+     * <p>The ID for the hosted zone that Route 53 creates when you create a
      * namespace.</p>
      */
     inline DnsProperties& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the hosted zone that Amazon Route 53 creates when you create a
+     * <p>The ID for the hosted zone that Route 53 creates when you create a
      * namespace.</p>
      */
     inline DnsProperties& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}

@@ -157,27 +157,27 @@ namespace Model
 
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The UTC time stamp of the creation time.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The UTC time stamp of the creation time.</p>
      */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The UTC time stamp of the creation time.</p>
      */
     inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The UTC time stamp of the creation time.</p>
      */
     inline ProvisioningArtifact& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The UTC time stamp of the creation time.</p>
      */
     inline ProvisioningArtifact& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 

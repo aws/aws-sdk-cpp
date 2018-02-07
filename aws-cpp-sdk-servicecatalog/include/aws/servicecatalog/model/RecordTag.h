@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>A tag associated with the record, stored as a key-value pair.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Information about a tag, which is a key-value pair.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/RecordTag">AWS
    * API Reference</a></p>
    */

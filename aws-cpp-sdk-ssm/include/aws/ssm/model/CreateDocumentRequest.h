@@ -83,37 +83,65 @@ namespace Model
 
 
     /**
-     * <p>A name for the Systems Manager document.</p>
+     * <p>A name for the Systems Manager document.</p> <important> <p>Do not use the
+     * following to begin the names of documents you create. They are reserved by AWS
+     * for use as document prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
+     * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
+     * </important>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>A name for the Systems Manager document.</p>
+     * <p>A name for the Systems Manager document.</p> <important> <p>Do not use the
+     * following to begin the names of documents you create. They are reserved by AWS
+     * for use as document prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
+     * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
+     * </important>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>A name for the Systems Manager document.</p>
+     * <p>A name for the Systems Manager document.</p> <important> <p>Do not use the
+     * following to begin the names of documents you create. They are reserved by AWS
+     * for use as document prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
+     * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
+     * </important>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>A name for the Systems Manager document.</p>
+     * <p>A name for the Systems Manager document.</p> <important> <p>Do not use the
+     * following to begin the names of documents you create. They are reserved by AWS
+     * for use as document prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
+     * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
+     * </important>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>A name for the Systems Manager document.</p>
+     * <p>A name for the Systems Manager document.</p> <important> <p>Do not use the
+     * following to begin the names of documents you create. They are reserved by AWS
+     * for use as document prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
+     * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
+     * </important>
      */
     inline CreateDocumentRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>A name for the Systems Manager document.</p>
+     * <p>A name for the Systems Manager document.</p> <important> <p>Do not use the
+     * following to begin the names of documents you create. They are reserved by AWS
+     * for use as document prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
+     * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
+     * </important>
      */
     inline CreateDocumentRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>A name for the Systems Manager document.</p>
+     * <p>A name for the Systems Manager document.</p> <important> <p>Do not use the
+     * following to begin the names of documents you create. They are reserved by AWS
+     * for use as document prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
+     * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
+     * </important>
      */
     inline CreateDocumentRequest& WithName(const char* value) { SetName(value); return *this;}
 

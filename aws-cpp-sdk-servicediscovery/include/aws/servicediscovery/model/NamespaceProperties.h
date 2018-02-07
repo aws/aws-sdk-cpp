@@ -48,32 +48,32 @@ namespace Model
 
 
     /**
-     * <p>A complex type that contains the ID for the hosted zone that Amazon Route 53
-     * creates when you create a namespace.</p>
+     * <p>A complex type that contains the ID for the hosted zone that Route 53 creates
+     * when you create a namespace.</p>
      */
     inline const DnsProperties& GetDnsProperties() const{ return m_dnsProperties; }
 
     /**
-     * <p>A complex type that contains the ID for the hosted zone that Amazon Route 53
-     * creates when you create a namespace.</p>
+     * <p>A complex type that contains the ID for the hosted zone that Route 53 creates
+     * when you create a namespace.</p>
      */
     inline void SetDnsProperties(const DnsProperties& value) { m_dnsPropertiesHasBeenSet = true; m_dnsProperties = value; }
 
     /**
-     * <p>A complex type that contains the ID for the hosted zone that Amazon Route 53
-     * creates when you create a namespace.</p>
+     * <p>A complex type that contains the ID for the hosted zone that Route 53 creates
+     * when you create a namespace.</p>
      */
     inline void SetDnsProperties(DnsProperties&& value) { m_dnsPropertiesHasBeenSet = true; m_dnsProperties = std::move(value); }
 
     /**
-     * <p>A complex type that contains the ID for the hosted zone that Amazon Route 53
-     * creates when you create a namespace.</p>
+     * <p>A complex type that contains the ID for the hosted zone that Route 53 creates
+     * when you create a namespace.</p>
      */
     inline NamespaceProperties& WithDnsProperties(const DnsProperties& value) { SetDnsProperties(value); return *this;}
 
     /**
-     * <p>A complex type that contains the ID for the hosted zone that Amazon Route 53
-     * creates when you create a namespace.</p>
+     * <p>A complex type that contains the ID for the hosted zone that Route 53 creates
+     * when you create a namespace.</p>
      */
     inline NamespaceProperties& WithDnsProperties(DnsProperties&& value) { SetDnsProperties(std::move(value)); return *this;}
 

@@ -87,44 +87,44 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Amazon Route 53 assigns to the namespace
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the namespace when
+     * you create it.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Amazon Route 53 assigns to the namespace
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the namespace when
+     * you create it.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Amazon Route 53 assigns to the namespace
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the namespace when
+     * you create it.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Amazon Route 53 assigns to the namespace
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the namespace when
+     * you create it.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Amazon Route 53 assigns to the namespace
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the namespace when
+     * you create it.</p>
      */
     inline Namespace& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Amazon Route 53 assigns to the namespace
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the namespace when
+     * you create it.</p>
      */
     inline Namespace& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Amazon Route 53 assigns to the namespace
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the namespace when
+     * you create it.</p>
      */
     inline Namespace& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -281,81 +281,84 @@ namespace Model
 
     /**
      * <p>The date that the namespace was created, in Unix date/time format and
-     * Coordinated Universal Time (UTC).</p>
+     * Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is
+     * accurate to milliseconds. For example, the value <code>1516925490.087</code>
+     * represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
 
     /**
      * <p>The date that the namespace was created, in Unix date/time format and
-     * Coordinated Universal Time (UTC).</p>
+     * Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is
+     * accurate to milliseconds. For example, the value <code>1516925490.087</code>
+     * represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
 
     /**
      * <p>The date that the namespace was created, in Unix date/time format and
-     * Coordinated Universal Time (UTC).</p>
+     * Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is
+     * accurate to milliseconds. For example, the value <code>1516925490.087</code>
+     * represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
 
     /**
      * <p>The date that the namespace was created, in Unix date/time format and
-     * Coordinated Universal Time (UTC).</p>
+     * Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is
+     * accurate to milliseconds. For example, the value <code>1516925490.087</code>
+     * represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline Namespace& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
 
     /**
      * <p>The date that the namespace was created, in Unix date/time format and
-     * Coordinated Universal Time (UTC).</p>
+     * Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is
+     * accurate to milliseconds. For example, the value <code>1516925490.087</code>
+     * represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline Namespace& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
 
 
     /**
-     * <p>An optional parameter that you can use to resolve concurrent creation
-     * requests. <code>CreatorRequestId</code> helps to determine if a specific client
-     * owns the namespace.</p>
+     * <p>A unique string that identifies the request and that allows failed requests
+     * to be retried without the risk of executing an operation twice. </p>
      */
     inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
 
     /**
-     * <p>An optional parameter that you can use to resolve concurrent creation
-     * requests. <code>CreatorRequestId</code> helps to determine if a specific client
-     * owns the namespace.</p>
+     * <p>A unique string that identifies the request and that allows failed requests
+     * to be retried without the risk of executing an operation twice. </p>
      */
     inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = value; }
 
     /**
-     * <p>An optional parameter that you can use to resolve concurrent creation
-     * requests. <code>CreatorRequestId</code> helps to determine if a specific client
-     * owns the namespace.</p>
+     * <p>A unique string that identifies the request and that allows failed requests
+     * to be retried without the risk of executing an operation twice. </p>
      */
     inline void SetCreatorRequestId(Aws::String&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::move(value); }
 
     /**
-     * <p>An optional parameter that you can use to resolve concurrent creation
-     * requests. <code>CreatorRequestId</code> helps to determine if a specific client
-     * owns the namespace.</p>
+     * <p>A unique string that identifies the request and that allows failed requests
+     * to be retried without the risk of executing an operation twice. </p>
      */
     inline void SetCreatorRequestId(const char* value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId.assign(value); }
 
     /**
-     * <p>An optional parameter that you can use to resolve concurrent creation
-     * requests. <code>CreatorRequestId</code> helps to determine if a specific client
-     * owns the namespace.</p>
+     * <p>A unique string that identifies the request and that allows failed requests
+     * to be retried without the risk of executing an operation twice. </p>
      */
     inline Namespace& WithCreatorRequestId(const Aws::String& value) { SetCreatorRequestId(value); return *this;}
 
     /**
-     * <p>An optional parameter that you can use to resolve concurrent creation
-     * requests. <code>CreatorRequestId</code> helps to determine if a specific client
-     * owns the namespace.</p>
+     * <p>A unique string that identifies the request and that allows failed requests
+     * to be retried without the risk of executing an operation twice. </p>
      */
     inline Namespace& WithCreatorRequestId(Aws::String&& value) { SetCreatorRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>An optional parameter that you can use to resolve concurrent creation
-     * requests. <code>CreatorRequestId</code> helps to determine if a specific client
-     * owns the namespace.</p>
+     * <p>A unique string that identifies the request and that allows failed requests
+     * to be retried without the risk of executing an operation twice. </p>
      */
     inline Namespace& WithCreatorRequestId(const char* value) { SetCreatorRequestId(value); return *this;}
 
