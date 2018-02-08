@@ -1984,7 +1984,7 @@ using ::std::tuple_size;
 // gtest/internal/custom/gtest-port.h
 #ifndef GTEST_API_
 
-#ifdef _MSC_VER
+#if defined(_MSC_VER) || defined(OS_WINDOWS_SHARED_LIBRARY_SEMANTICS)
 # if GTEST_LINKED_AS_SHARED_LIBRARY
 #  define GTEST_API_ __declspec(dllimport)
 # elif GTEST_CREATE_SHARED_LIBRARY
@@ -3408,7 +3408,11 @@ inline bool IsDir(const StatStruct& st) {
 typedef struct stat StatStruct;
 
 inline int FileNo(FILE* file) { return fileno(file); }
+
+#if !defined(OS_NO_ISATTY)
 inline int IsATTY(int fd) { return isatty(fd); }
+#endif // !OS_NO_ISATTY
+
 inline int Stat(const char* path, StatStruct* buf) { return stat(path, buf); }
 inline int StrCaseCmp(const char* s1, const char* s2) {
   return strcasecmp(s1, s2);
@@ -3431,7 +3435,8 @@ inline const char* StrNCpy(char* dest, const char* src, size_t n) {
 // StrError() aren't needed on Windows CE at this time and thus not
 // defined there.
 
-#if !GTEST_OS_WINDOWS_MOBILE && !GTEST_OS_WINDOWS_PHONE && !GTEST_OS_WINDOWS_RT
+#if !GTEST_OS_WINDOWS_MOBILE && !GTEST_OS_WINDOWS_PHONE && !GTEST_OS_WINDOWS_RT && \
+    !OS_NO_CHDIR
 inline int ChDir(const char* dir) { return chdir(dir); }
 #endif
 inline FILE* FOpen(const char* path, const char* mode) {
@@ -3455,7 +3460,8 @@ inline int Close(int fd) { return close(fd); }
 inline const char* StrError(int errnum) { return strerror(errnum); }
 #endif
 inline const char* GetEnv(const char* name) {
-#if GTEST_OS_WINDOWS_MOBILE || GTEST_OS_WINDOWS_PHONE || GTEST_OS_WINDOWS_RT
+#if GTEST_OS_WINDOWS_MOBILE || GTEST_OS_WINDOWS_PHONE || GTEST_OS_WINDOWS_RT || \
+    OS_NO_ENVIRONMENT_VARIABLES
   // We are on Windows CE, which has no environment variables.
   static_cast<void>(name);  // To prevent 'unused argument' warning.
   return NULL;

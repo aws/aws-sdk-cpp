@@ -109,6 +109,8 @@
 /*
 This file has been modified from its original version by Amazon:
   (1) #includes all use <>
+  (2) Using a set of macros to support console build:
+      OS_NO_ISATTY, OS_NO_ENVIRONMENT_VARIABLES, OS_NO_CHDIR, OS_NO_GETCWD, OS_WINDOWS_SHARED_LIBRARY_SEMANTICS
 */
 
 #ifndef GTEST_INCLUDE_GTEST_GTEST_SPI_H_
@@ -4422,7 +4424,7 @@ static void ColoredPrintf(GTestColor color, const char* fmt, ...) {
   va_start(args, fmt);
 
 #if GTEST_OS_WINDOWS_MOBILE || GTEST_OS_SYMBIAN || GTEST_OS_ZOS || \
-    GTEST_OS_IOS || GTEST_OS_WINDOWS_PHONE || GTEST_OS_WINDOWS_RT
+    GTEST_OS_IOS || GTEST_OS_WINDOWS_PHONE || GTEST_OS_WINDOWS_RT || OS_NO_ISATTY
   const bool use_color = AlwaysFalse();
 #else
   static const bool in_color_mode =
@@ -5013,35 +5015,30 @@ std::string FormatTimeInMillisAsSeconds(TimeInMillis ms) {
   return ss.str();
 }
 
-static bool PortableLocaltime(time_t seconds, struct tm* out) {
-#if defined(_MSC_VER)
-  return localtime_s(out, &seconds) == 0;
-#elif defined(__MINGW32__) || defined(__MINGW64__)
-  // MINGW <time.h> provides neither localtime_r nor localtime_s, but uses
-  // Windows' localtime(), which has a thread-local tm buffer.
-  struct tm* tm_ptr = localtime(&seconds);  // NOLINT
-  if (tm_ptr == NULL)
-    return false;
-  *out = *tm_ptr;
-  return true;
-#else
-  return localtime_r(&seconds, out) != NULL;
-#endif
-}
-
 // Converts the given epoch time in milliseconds to a date string in the ISO
 // 8601 format, without the timezone information.
 std::string FormatEpochTimeInMillisAsIso8601(TimeInMillis ms) {
-  struct tm time_struct;
-  if (!PortableLocaltime(static_cast<time_t>(ms / 1000), &time_struct))
-    return "";
+  // Using non-reentrant version as localtime_r is not portable.
+  time_t seconds = static_cast<time_t>(ms / 1000);
+#ifdef _MSC_VER
+# pragma warning(push)          // Saves the current warning state.
+# pragma warning(disable:4996)  // Temporarily disables warning 4996
+                                // (function or variable may be unsafe).
+  const struct tm* const time_struct = localtime(&seconds);  // NOLINT
+# pragma warning(pop)           // Restores the warning state again.
+#else
+  const struct tm* const time_struct = localtime(&seconds);  // NOLINT
+#endif
+  if (time_struct == NULL)
+    return "";  // Invalid ms value
+
   // YYYY-MM-DDThh:mm:ss
-  return StreamableToString(time_struct.tm_year + 1900) + "-" +
-      String::FormatIntWidth2(time_struct.tm_mon + 1) + "-" +
-      String::FormatIntWidth2(time_struct.tm_mday) + "T" +
-      String::FormatIntWidth2(time_struct.tm_hour) + ":" +
-      String::FormatIntWidth2(time_struct.tm_min) + ":" +
-      String::FormatIntWidth2(time_struct.tm_sec);
+  return StreamableToString(time_struct->tm_year + 1900) + "-" +
+      String::FormatIntWidth2(time_struct->tm_mon + 1) + "-" +
+      String::FormatIntWidth2(time_struct->tm_mday) + "T" +
+      String::FormatIntWidth2(time_struct->tm_hour) + ":" +
+      String::FormatIntWidth2(time_struct->tm_min) + ":" +
+      String::FormatIntWidth2(time_struct->tm_sec);
 }
 
 // Streams an XML CDATA section, escaping invalid CDATA sequences as needed.
@@ -7817,11 +7814,13 @@ static int ExecDeathTestChildMain(void* child_arg) {
   const char* const original_dir =
       UnitTest::GetInstance()->original_working_dir();
   // We can safely call chdir() as it's a direct system call.
+#if !defined(OS_NO_CHDIR)
   if (chdir(original_dir) != 0) {
     DeathTestAbort(std::string("chdir(\"") + original_dir + "\") failed: " +
                    GetLastErrnoDescription());
     return EXIT_FAILURE;
   }
+#endif
 
   // We can safely call execve() as it's a direct system call.  We
   // cannot use execvp() as it's a libc function and thus potentially
@@ -8285,7 +8284,8 @@ static bool IsPathSeparator(char c) {
 
 // Returns the current working directory, or "" if unsuccessful.
 FilePath FilePath::GetCurrentDir() {
-#if GTEST_OS_WINDOWS_MOBILE || GTEST_OS_WINDOWS_PHONE || GTEST_OS_WINDOWS_RT
+#if GTEST_OS_WINDOWS_MOBILE || GTEST_OS_WINDOWS_PHONE || GTEST_OS_WINDOWS_RT || \
+    OS_NO_GETCWD
   // Windows CE doesn't have a current directory, so we just return
   // something reasonable.
   return FilePath(kCurrentDirectoryString);
@@ -8640,6 +8640,7 @@ void FilePath::Normalize() {
 namespace testing {
 namespace internal {
 
+#if GTEST_HAS_STREAM_REDIRECTION
 #if defined(_MSC_VER) || defined(__BORLANDC__)
 // MSVC and C++Builder do not provide a definition of STDERR_FILENO.
 const int kStdOutFileno = 1;
@@ -8648,6 +8649,7 @@ const int kStdErrFileno = 2;
 const int kStdOutFileno = STDOUT_FILENO;
 const int kStdErrFileno = STDERR_FILENO;
 #endif  // _MSC_VER
+#endif // GTEST_HAS_STREAM_REDIRECTION
 
 #if GTEST_OS_LINUX
 
