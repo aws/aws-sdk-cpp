@@ -173,50 +173,50 @@ namespace Model
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndPointType, include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3,
-     * DYNAMODB, MONGODB, SYBASE, and SQLSERVER.</p>
+     * EndPointType, include mysql, oracle, postgres, mariadb, aurora, redshift, S3,
+     * sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndPointType, include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3,
-     * DYNAMODB, MONGODB, SYBASE, and SQLSERVER.</p>
+     * EndPointType, include mysql, oracle, postgres, mariadb, aurora, redshift, S3,
+     * sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndPointType, include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3,
-     * DYNAMODB, MONGODB, SYBASE, and SQLSERVER.</p>
+     * EndPointType, include mysql, oracle, postgres, mariadb, aurora, redshift, S3,
+     * sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndPointType, include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3,
-     * DYNAMODB, MONGODB, SYBASE, and SQLSERVER.</p>
+     * EndPointType, include mysql, oracle, postgres, mariadb, aurora, redshift, S3,
+     * sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndPointType, include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3,
-     * DYNAMODB, MONGODB, SYBASE, and SQLSERVER.</p>
+     * EndPointType, include mysql, oracle, postgres, mariadb, aurora, redshift, S3,
+     * sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline ModifyEndpointRequest& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndPointType, include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3,
-     * DYNAMODB, MONGODB, SYBASE, and SQLSERVER.</p>
+     * EndPointType, include mysql, oracle, postgres, mariadb, aurora, redshift, S3,
+     * sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline ModifyEndpointRequest& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndPointType, include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3,
-     * DYNAMODB, MONGODB, SYBASE, and SQLSERVER.</p>
+     * EndPointType, include mysql, oracle, postgres, mariadb, aurora, redshift, S3,
+     * sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline ModifyEndpointRequest& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 

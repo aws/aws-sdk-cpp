@@ -30,7 +30,6 @@ CreateChannelRequest::CreateChannelRequest() :
     m_nameHasBeenSet(false),
     m_requestId(Aws::Utils::UUID::RandomUUID()),
     m_requestIdHasBeenSet(true),
-    m_reservedHasBeenSet(false),
     m_roleArnHasBeenSet(false)
 {
 }
@@ -82,12 +81,6 @@ Aws::String CreateChannelRequest::SerializePayload() const
   if(m_requestIdHasBeenSet)
   {
    payload.WithString("requestId", m_requestId);
-
-  }
-
-  if(m_reservedHasBeenSet)
-  {
-   payload.WithString("reserved", m_reserved);
 
   }
 

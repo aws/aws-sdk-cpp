@@ -245,42 +245,6 @@ creating multiple resources.
 
 
     /**
-     * Reserved for future use.
-     */
-    inline const Aws::String& GetReserved() const{ return m_reserved; }
-
-    /**
-     * Reserved for future use.
-     */
-    inline void SetReserved(const Aws::String& value) { m_reservedHasBeenSet = true; m_reserved = value; }
-
-    /**
-     * Reserved for future use.
-     */
-    inline void SetReserved(Aws::String&& value) { m_reservedHasBeenSet = true; m_reserved = std::move(value); }
-
-    /**
-     * Reserved for future use.
-     */
-    inline void SetReserved(const char* value) { m_reservedHasBeenSet = true; m_reserved.assign(value); }
-
-    /**
-     * Reserved for future use.
-     */
-    inline CreateChannelRequest& WithReserved(const Aws::String& value) { SetReserved(value); return *this;}
-
-    /**
-     * Reserved for future use.
-     */
-    inline CreateChannelRequest& WithReserved(Aws::String&& value) { SetReserved(std::move(value)); return *this;}
-
-    /**
-     * Reserved for future use.
-     */
-    inline CreateChannelRequest& WithReserved(const char* value) { SetReserved(value); return *this;}
-
-
-    /**
      * An optional Amazon Resource Name (ARN) of the role to assume when running the
      * Channel.
      */
@@ -341,9 +305,6 @@ creating multiple resources.
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet;
-
-    Aws::String m_reserved;
-    bool m_reservedHasBeenSet;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;

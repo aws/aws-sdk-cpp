@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * Request of UpdateBudget<p><h3>See Also:</h3>   <a
+   * <p> Request of UpdateBudget </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateBudgetRequest">AWS
    * API Reference</a></p>
    */
@@ -48,41 +48,72 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /**
+     * <p>The <code>accountId</code> that is associated with the budget that you want
+     * to update.</p>
+     */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
-    
+    /**
+     * <p>The <code>accountId</code> that is associated with the budget that you want
+     * to update.</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
-    
+    /**
+     * <p>The <code>accountId</code> that is associated with the budget that you want
+     * to update.</p>
+     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
-    
+    /**
+     * <p>The <code>accountId</code> that is associated with the budget that you want
+     * to update.</p>
+     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
-    
+    /**
+     * <p>The <code>accountId</code> that is associated with the budget that you want
+     * to update.</p>
+     */
     inline UpdateBudgetRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
-    
+    /**
+     * <p>The <code>accountId</code> that is associated with the budget that you want
+     * to update.</p>
+     */
     inline UpdateBudgetRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The <code>accountId</code> that is associated with the budget that you want
+     * to update.</p>
+     */
     inline UpdateBudgetRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
 
-    
+    /**
+     * <p>The budget that you want to update your budget to.</p>
+     */
     inline const Budget& GetNewBudget() const{ return m_newBudget; }
 
-    
+    /**
+     * <p>The budget that you want to update your budget to.</p>
+     */
     inline void SetNewBudget(const Budget& value) { m_newBudgetHasBeenSet = true; m_newBudget = value; }
 
-    
+    /**
+     * <p>The budget that you want to update your budget to.</p>
+     */
     inline void SetNewBudget(Budget&& value) { m_newBudgetHasBeenSet = true; m_newBudget = std::move(value); }
 
-    
+    /**
+     * <p>The budget that you want to update your budget to.</p>
+     */
     inline UpdateBudgetRequest& WithNewBudget(const Budget& value) { SetNewBudget(value); return *this;}
 
-    
+    /**
+     * <p>The budget that you want to update your budget to.</p>
+     */
     inline UpdateBudgetRequest& WithNewBudget(Budget&& value) { SetNewBudget(std::move(value)); return *this;}
 
   private:

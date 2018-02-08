@@ -147,13 +147,14 @@ namespace Model
      * contain one or multiple conditions. Each condition consists of the
      * following:</p> <ul> <li> <p> <b>Operand</b> -- Name of a game session attribute.
      * Valid values are <code>gameSessionName</code>, <code>gameSessionId</code>,
+     * <code>gameSessionProperties</code>, <code>maximumSessions</code>,
      * <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     * <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.</p> </li>
-     * <li> <p> <b>Comparator</b> -- Valid comparators are: <code>=</code>,
-     * <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>,
-     * <code>&gt;=</code>. </p> </li> <li> <p> <b>Value</b> -- Value to be searched
-     * for. Values can be numbers, boolean values (true/false) or strings. String
-     * values are case sensitive, enclosed in single quotes. Special characters must be
+     * <code>hasAvailablePlayerSessions</code>.</p> </li> <li> <p> <b>Comparator</b> --
+     * Valid comparators are: <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>,
+     * <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>. </p> </li> <li> <p>
+     * <b>Value</b> -- Value to be searched for. Values may be numbers, boolean values
+     * (true/false) or strings depending on the operand. String values are case
+     * sensitive and must be enclosed in single quotes. Special characters must be
      * escaped. Boolean and string values can only be used with the comparators
      * <code>=</code> and <code>&lt;&gt;</code>. For example, the following filter
      * expression searches on <code>gameSessionName</code>: "<code>FilterExpression":
@@ -179,13 +180,14 @@ namespace Model
      * contain one or multiple conditions. Each condition consists of the
      * following:</p> <ul> <li> <p> <b>Operand</b> -- Name of a game session attribute.
      * Valid values are <code>gameSessionName</code>, <code>gameSessionId</code>,
+     * <code>gameSessionProperties</code>, <code>maximumSessions</code>,
      * <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     * <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.</p> </li>
-     * <li> <p> <b>Comparator</b> -- Valid comparators are: <code>=</code>,
-     * <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>,
-     * <code>&gt;=</code>. </p> </li> <li> <p> <b>Value</b> -- Value to be searched
-     * for. Values can be numbers, boolean values (true/false) or strings. String
-     * values are case sensitive, enclosed in single quotes. Special characters must be
+     * <code>hasAvailablePlayerSessions</code>.</p> </li> <li> <p> <b>Comparator</b> --
+     * Valid comparators are: <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>,
+     * <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>. </p> </li> <li> <p>
+     * <b>Value</b> -- Value to be searched for. Values may be numbers, boolean values
+     * (true/false) or strings depending on the operand. String values are case
+     * sensitive and must be enclosed in single quotes. Special characters must be
      * escaped. Boolean and string values can only be used with the comparators
      * <code>=</code> and <code>&lt;&gt;</code>. For example, the following filter
      * expression searches on <code>gameSessionName</code>: "<code>FilterExpression":
@@ -211,13 +213,14 @@ namespace Model
      * contain one or multiple conditions. Each condition consists of the
      * following:</p> <ul> <li> <p> <b>Operand</b> -- Name of a game session attribute.
      * Valid values are <code>gameSessionName</code>, <code>gameSessionId</code>,
+     * <code>gameSessionProperties</code>, <code>maximumSessions</code>,
      * <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     * <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.</p> </li>
-     * <li> <p> <b>Comparator</b> -- Valid comparators are: <code>=</code>,
-     * <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>,
-     * <code>&gt;=</code>. </p> </li> <li> <p> <b>Value</b> -- Value to be searched
-     * for. Values can be numbers, boolean values (true/false) or strings. String
-     * values are case sensitive, enclosed in single quotes. Special characters must be
+     * <code>hasAvailablePlayerSessions</code>.</p> </li> <li> <p> <b>Comparator</b> --
+     * Valid comparators are: <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>,
+     * <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>. </p> </li> <li> <p>
+     * <b>Value</b> -- Value to be searched for. Values may be numbers, boolean values
+     * (true/false) or strings depending on the operand. String values are case
+     * sensitive and must be enclosed in single quotes. Special characters must be
      * escaped. Boolean and string values can only be used with the comparators
      * <code>=</code> and <code>&lt;&gt;</code>. For example, the following filter
      * expression searches on <code>gameSessionName</code>: "<code>FilterExpression":
@@ -243,13 +246,14 @@ namespace Model
      * contain one or multiple conditions. Each condition consists of the
      * following:</p> <ul> <li> <p> <b>Operand</b> -- Name of a game session attribute.
      * Valid values are <code>gameSessionName</code>, <code>gameSessionId</code>,
+     * <code>gameSessionProperties</code>, <code>maximumSessions</code>,
      * <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     * <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.</p> </li>
-     * <li> <p> <b>Comparator</b> -- Valid comparators are: <code>=</code>,
-     * <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>,
-     * <code>&gt;=</code>. </p> </li> <li> <p> <b>Value</b> -- Value to be searched
-     * for. Values can be numbers, boolean values (true/false) or strings. String
-     * values are case sensitive, enclosed in single quotes. Special characters must be
+     * <code>hasAvailablePlayerSessions</code>.</p> </li> <li> <p> <b>Comparator</b> --
+     * Valid comparators are: <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>,
+     * <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>. </p> </li> <li> <p>
+     * <b>Value</b> -- Value to be searched for. Values may be numbers, boolean values
+     * (true/false) or strings depending on the operand. String values are case
+     * sensitive and must be enclosed in single quotes. Special characters must be
      * escaped. Boolean and string values can only be used with the comparators
      * <code>=</code> and <code>&lt;&gt;</code>. For example, the following filter
      * expression searches on <code>gameSessionName</code>: "<code>FilterExpression":
@@ -275,13 +279,14 @@ namespace Model
      * contain one or multiple conditions. Each condition consists of the
      * following:</p> <ul> <li> <p> <b>Operand</b> -- Name of a game session attribute.
      * Valid values are <code>gameSessionName</code>, <code>gameSessionId</code>,
+     * <code>gameSessionProperties</code>, <code>maximumSessions</code>,
      * <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     * <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.</p> </li>
-     * <li> <p> <b>Comparator</b> -- Valid comparators are: <code>=</code>,
-     * <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>,
-     * <code>&gt;=</code>. </p> </li> <li> <p> <b>Value</b> -- Value to be searched
-     * for. Values can be numbers, boolean values (true/false) or strings. String
-     * values are case sensitive, enclosed in single quotes. Special characters must be
+     * <code>hasAvailablePlayerSessions</code>.</p> </li> <li> <p> <b>Comparator</b> --
+     * Valid comparators are: <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>,
+     * <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>. </p> </li> <li> <p>
+     * <b>Value</b> -- Value to be searched for. Values may be numbers, boolean values
+     * (true/false) or strings depending on the operand. String values are case
+     * sensitive and must be enclosed in single quotes. Special characters must be
      * escaped. Boolean and string values can only be used with the comparators
      * <code>=</code> and <code>&lt;&gt;</code>. For example, the following filter
      * expression searches on <code>gameSessionName</code>: "<code>FilterExpression":
@@ -307,13 +312,14 @@ namespace Model
      * contain one or multiple conditions. Each condition consists of the
      * following:</p> <ul> <li> <p> <b>Operand</b> -- Name of a game session attribute.
      * Valid values are <code>gameSessionName</code>, <code>gameSessionId</code>,
+     * <code>gameSessionProperties</code>, <code>maximumSessions</code>,
      * <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     * <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.</p> </li>
-     * <li> <p> <b>Comparator</b> -- Valid comparators are: <code>=</code>,
-     * <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>,
-     * <code>&gt;=</code>. </p> </li> <li> <p> <b>Value</b> -- Value to be searched
-     * for. Values can be numbers, boolean values (true/false) or strings. String
-     * values are case sensitive, enclosed in single quotes. Special characters must be
+     * <code>hasAvailablePlayerSessions</code>.</p> </li> <li> <p> <b>Comparator</b> --
+     * Valid comparators are: <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>,
+     * <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>. </p> </li> <li> <p>
+     * <b>Value</b> -- Value to be searched for. Values may be numbers, boolean values
+     * (true/false) or strings depending on the operand. String values are case
+     * sensitive and must be enclosed in single quotes. Special characters must be
      * escaped. Boolean and string values can only be used with the comparators
      * <code>=</code> and <code>&lt;&gt;</code>. For example, the following filter
      * expression searches on <code>gameSessionName</code>: "<code>FilterExpression":
@@ -339,13 +345,14 @@ namespace Model
      * contain one or multiple conditions. Each condition consists of the
      * following:</p> <ul> <li> <p> <b>Operand</b> -- Name of a game session attribute.
      * Valid values are <code>gameSessionName</code>, <code>gameSessionId</code>,
+     * <code>gameSessionProperties</code>, <code>maximumSessions</code>,
      * <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     * <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.</p> </li>
-     * <li> <p> <b>Comparator</b> -- Valid comparators are: <code>=</code>,
-     * <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>,
-     * <code>&gt;=</code>. </p> </li> <li> <p> <b>Value</b> -- Value to be searched
-     * for. Values can be numbers, boolean values (true/false) or strings. String
-     * values are case sensitive, enclosed in single quotes. Special characters must be
+     * <code>hasAvailablePlayerSessions</code>.</p> </li> <li> <p> <b>Comparator</b> --
+     * Valid comparators are: <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>,
+     * <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>. </p> </li> <li> <p>
+     * <b>Value</b> -- Value to be searched for. Values may be numbers, boolean values
+     * (true/false) or strings depending on the operand. String values are case
+     * sensitive and must be enclosed in single quotes. Special characters must be
      * escaped. Boolean and string values can only be used with the comparators
      * <code>=</code> and <code>&lt;&gt;</code>. For example, the following filter
      * expression searches on <code>gameSessionName</code>: "<code>FilterExpression":
@@ -370,14 +377,14 @@ namespace Model
      * included, the request returns results in random order. A sort expression
      * consists of the following elements:</p> <ul> <li> <p> <b>Operand</b> -- Name of
      * a game session attribute. Valid values are <code>gameSessionName</code>,
-     * <code>gameSessionId</code>, <code>creationTimeMillis</code>,
-     * <code>playerSessionCount</code>, <code>maximumSessions</code>,
-     * <code>hasAvailablePlayerSessions</code>.</p> </li> <li> <p> <b>Order</b> --
-     * Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code>
-     * (descending).</p> </li> </ul> <p>For example, this sort expression returns the
-     * oldest active sessions first: <code>"SortExpression": "creationTimeMillis
-     * ASC"</code>. Results with a null value for the sort operand are returned at the
-     * end of the list.</p>
+     * <code>gameSessionId</code>, <code>gameSessionProperties</code>,
+     * <code>maximumSessions</code>, <code>creationTimeMillis</code>,
+     * <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.</p>
+     * </li> <li> <p> <b>Order</b> -- Valid sort orders are <code>ASC</code>
+     * (ascending) and <code>DESC</code> (descending).</p> </li> </ul> <p>For example,
+     * this sort expression returns the oldest active sessions first:
+     * <code>"SortExpression": "creationTimeMillis ASC"</code>. Results with a null
+     * value for the sort operand are returned at the end of the list.</p>
      */
     inline const Aws::String& GetSortExpression() const{ return m_sortExpression; }
 
@@ -386,14 +393,14 @@ namespace Model
      * included, the request returns results in random order. A sort expression
      * consists of the following elements:</p> <ul> <li> <p> <b>Operand</b> -- Name of
      * a game session attribute. Valid values are <code>gameSessionName</code>,
-     * <code>gameSessionId</code>, <code>creationTimeMillis</code>,
-     * <code>playerSessionCount</code>, <code>maximumSessions</code>,
-     * <code>hasAvailablePlayerSessions</code>.</p> </li> <li> <p> <b>Order</b> --
-     * Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code>
-     * (descending).</p> </li> </ul> <p>For example, this sort expression returns the
-     * oldest active sessions first: <code>"SortExpression": "creationTimeMillis
-     * ASC"</code>. Results with a null value for the sort operand are returned at the
-     * end of the list.</p>
+     * <code>gameSessionId</code>, <code>gameSessionProperties</code>,
+     * <code>maximumSessions</code>, <code>creationTimeMillis</code>,
+     * <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.</p>
+     * </li> <li> <p> <b>Order</b> -- Valid sort orders are <code>ASC</code>
+     * (ascending) and <code>DESC</code> (descending).</p> </li> </ul> <p>For example,
+     * this sort expression returns the oldest active sessions first:
+     * <code>"SortExpression": "creationTimeMillis ASC"</code>. Results with a null
+     * value for the sort operand are returned at the end of the list.</p>
      */
     inline void SetSortExpression(const Aws::String& value) { m_sortExpressionHasBeenSet = true; m_sortExpression = value; }
 
@@ -402,14 +409,14 @@ namespace Model
      * included, the request returns results in random order. A sort expression
      * consists of the following elements:</p> <ul> <li> <p> <b>Operand</b> -- Name of
      * a game session attribute. Valid values are <code>gameSessionName</code>,
-     * <code>gameSessionId</code>, <code>creationTimeMillis</code>,
-     * <code>playerSessionCount</code>, <code>maximumSessions</code>,
-     * <code>hasAvailablePlayerSessions</code>.</p> </li> <li> <p> <b>Order</b> --
-     * Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code>
-     * (descending).</p> </li> </ul> <p>For example, this sort expression returns the
-     * oldest active sessions first: <code>"SortExpression": "creationTimeMillis
-     * ASC"</code>. Results with a null value for the sort operand are returned at the
-     * end of the list.</p>
+     * <code>gameSessionId</code>, <code>gameSessionProperties</code>,
+     * <code>maximumSessions</code>, <code>creationTimeMillis</code>,
+     * <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.</p>
+     * </li> <li> <p> <b>Order</b> -- Valid sort orders are <code>ASC</code>
+     * (ascending) and <code>DESC</code> (descending).</p> </li> </ul> <p>For example,
+     * this sort expression returns the oldest active sessions first:
+     * <code>"SortExpression": "creationTimeMillis ASC"</code>. Results with a null
+     * value for the sort operand are returned at the end of the list.</p>
      */
     inline void SetSortExpression(Aws::String&& value) { m_sortExpressionHasBeenSet = true; m_sortExpression = std::move(value); }
 
@@ -418,14 +425,14 @@ namespace Model
      * included, the request returns results in random order. A sort expression
      * consists of the following elements:</p> <ul> <li> <p> <b>Operand</b> -- Name of
      * a game session attribute. Valid values are <code>gameSessionName</code>,
-     * <code>gameSessionId</code>, <code>creationTimeMillis</code>,
-     * <code>playerSessionCount</code>, <code>maximumSessions</code>,
-     * <code>hasAvailablePlayerSessions</code>.</p> </li> <li> <p> <b>Order</b> --
-     * Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code>
-     * (descending).</p> </li> </ul> <p>For example, this sort expression returns the
-     * oldest active sessions first: <code>"SortExpression": "creationTimeMillis
-     * ASC"</code>. Results with a null value for the sort operand are returned at the
-     * end of the list.</p>
+     * <code>gameSessionId</code>, <code>gameSessionProperties</code>,
+     * <code>maximumSessions</code>, <code>creationTimeMillis</code>,
+     * <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.</p>
+     * </li> <li> <p> <b>Order</b> -- Valid sort orders are <code>ASC</code>
+     * (ascending) and <code>DESC</code> (descending).</p> </li> </ul> <p>For example,
+     * this sort expression returns the oldest active sessions first:
+     * <code>"SortExpression": "creationTimeMillis ASC"</code>. Results with a null
+     * value for the sort operand are returned at the end of the list.</p>
      */
     inline void SetSortExpression(const char* value) { m_sortExpressionHasBeenSet = true; m_sortExpression.assign(value); }
 
@@ -434,14 +441,14 @@ namespace Model
      * included, the request returns results in random order. A sort expression
      * consists of the following elements:</p> <ul> <li> <p> <b>Operand</b> -- Name of
      * a game session attribute. Valid values are <code>gameSessionName</code>,
-     * <code>gameSessionId</code>, <code>creationTimeMillis</code>,
-     * <code>playerSessionCount</code>, <code>maximumSessions</code>,
-     * <code>hasAvailablePlayerSessions</code>.</p> </li> <li> <p> <b>Order</b> --
-     * Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code>
-     * (descending).</p> </li> </ul> <p>For example, this sort expression returns the
-     * oldest active sessions first: <code>"SortExpression": "creationTimeMillis
-     * ASC"</code>. Results with a null value for the sort operand are returned at the
-     * end of the list.</p>
+     * <code>gameSessionId</code>, <code>gameSessionProperties</code>,
+     * <code>maximumSessions</code>, <code>creationTimeMillis</code>,
+     * <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.</p>
+     * </li> <li> <p> <b>Order</b> -- Valid sort orders are <code>ASC</code>
+     * (ascending) and <code>DESC</code> (descending).</p> </li> </ul> <p>For example,
+     * this sort expression returns the oldest active sessions first:
+     * <code>"SortExpression": "creationTimeMillis ASC"</code>. Results with a null
+     * value for the sort operand are returned at the end of the list.</p>
      */
     inline SearchGameSessionsRequest& WithSortExpression(const Aws::String& value) { SetSortExpression(value); return *this;}
 
@@ -450,14 +457,14 @@ namespace Model
      * included, the request returns results in random order. A sort expression
      * consists of the following elements:</p> <ul> <li> <p> <b>Operand</b> -- Name of
      * a game session attribute. Valid values are <code>gameSessionName</code>,
-     * <code>gameSessionId</code>, <code>creationTimeMillis</code>,
-     * <code>playerSessionCount</code>, <code>maximumSessions</code>,
-     * <code>hasAvailablePlayerSessions</code>.</p> </li> <li> <p> <b>Order</b> --
-     * Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code>
-     * (descending).</p> </li> </ul> <p>For example, this sort expression returns the
-     * oldest active sessions first: <code>"SortExpression": "creationTimeMillis
-     * ASC"</code>. Results with a null value for the sort operand are returned at the
-     * end of the list.</p>
+     * <code>gameSessionId</code>, <code>gameSessionProperties</code>,
+     * <code>maximumSessions</code>, <code>creationTimeMillis</code>,
+     * <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.</p>
+     * </li> <li> <p> <b>Order</b> -- Valid sort orders are <code>ASC</code>
+     * (ascending) and <code>DESC</code> (descending).</p> </li> </ul> <p>For example,
+     * this sort expression returns the oldest active sessions first:
+     * <code>"SortExpression": "creationTimeMillis ASC"</code>. Results with a null
+     * value for the sort operand are returned at the end of the list.</p>
      */
     inline SearchGameSessionsRequest& WithSortExpression(Aws::String&& value) { SetSortExpression(std::move(value)); return *this;}
 
@@ -466,14 +473,14 @@ namespace Model
      * included, the request returns results in random order. A sort expression
      * consists of the following elements:</p> <ul> <li> <p> <b>Operand</b> -- Name of
      * a game session attribute. Valid values are <code>gameSessionName</code>,
-     * <code>gameSessionId</code>, <code>creationTimeMillis</code>,
-     * <code>playerSessionCount</code>, <code>maximumSessions</code>,
-     * <code>hasAvailablePlayerSessions</code>.</p> </li> <li> <p> <b>Order</b> --
-     * Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code>
-     * (descending).</p> </li> </ul> <p>For example, this sort expression returns the
-     * oldest active sessions first: <code>"SortExpression": "creationTimeMillis
-     * ASC"</code>. Results with a null value for the sort operand are returned at the
-     * end of the list.</p>
+     * <code>gameSessionId</code>, <code>gameSessionProperties</code>,
+     * <code>maximumSessions</code>, <code>creationTimeMillis</code>,
+     * <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.</p>
+     * </li> <li> <p> <b>Order</b> -- Valid sort orders are <code>ASC</code>
+     * (ascending) and <code>DESC</code> (descending).</p> </li> </ul> <p>For example,
+     * this sort expression returns the oldest active sessions first:
+     * <code>"SortExpression": "creationTimeMillis ASC"</code>. Results with a null
+     * value for the sort operand are returned at the end of the list.</p>
      */
     inline SearchGameSessionsRequest& WithSortExpression(const char* value) { SetSortExpression(value); return *this;}
 

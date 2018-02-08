@@ -49,20 +49,20 @@ namespace Model
 
 
     /**
-     * Channel to insert closed captions.  Each channel mapping must have a unique
-     * channel number (maximum of 4)
+     * The closed caption channel being described by this CaptionLanguageMapping.  Each
+     * channel mapping must have a unique channel number (maximum of 4)
      */
     inline int GetCaptionChannel() const{ return m_captionChannel; }
 
     /**
-     * Channel to insert closed captions.  Each channel mapping must have a unique
-     * channel number (maximum of 4)
+     * The closed caption channel being described by this CaptionLanguageMapping.  Each
+     * channel mapping must have a unique channel number (maximum of 4)
      */
     inline void SetCaptionChannel(int value) { m_captionChannelHasBeenSet = true; m_captionChannel = value; }
 
     /**
-     * Channel to insert closed captions.  Each channel mapping must have a unique
-     * channel number (maximum of 4)
+     * The closed caption channel being described by this CaptionLanguageMapping.  Each
+     * channel mapping must have a unique channel number (maximum of 4)
      */
     inline CaptionLanguageMapping& WithCaptionChannel(int value) { SetCaptionChannel(value); return *this;}
 

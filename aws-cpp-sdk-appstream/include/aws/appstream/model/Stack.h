@@ -257,6 +257,42 @@ namespace Model
 
 
     /**
+     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     */
+    inline const Aws::String& GetRedirectURL() const{ return m_redirectURL; }
+
+    /**
+     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     */
+    inline void SetRedirectURL(const Aws::String& value) { m_redirectURLHasBeenSet = true; m_redirectURL = value; }
+
+    /**
+     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     */
+    inline void SetRedirectURL(Aws::String&& value) { m_redirectURLHasBeenSet = true; m_redirectURL = std::move(value); }
+
+    /**
+     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     */
+    inline void SetRedirectURL(const char* value) { m_redirectURLHasBeenSet = true; m_redirectURL.assign(value); }
+
+    /**
+     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     */
+    inline Stack& WithRedirectURL(const Aws::String& value) { SetRedirectURL(value); return *this;}
+
+    /**
+     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     */
+    inline Stack& WithRedirectURL(Aws::String&& value) { SetRedirectURL(std::move(value)); return *this;}
+
+    /**
+     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     */
+    inline Stack& WithRedirectURL(const char* value) { SetRedirectURL(value); return *this;}
+
+
+    /**
      * <p>The errors for the stack.</p>
      */
     inline const Aws::Vector<StackError>& GetStackErrors() const{ return m_stackErrors; }
@@ -310,6 +346,9 @@ namespace Model
 
     Aws::Vector<StorageConnector> m_storageConnectors;
     bool m_storageConnectorsHasBeenSet;
+
+    Aws::String m_redirectURL;
+    bool m_redirectURLHasBeenSet;
 
     Aws::Vector<StackError> m_stackErrors;
     bool m_stackErrorsHasBeenSet;

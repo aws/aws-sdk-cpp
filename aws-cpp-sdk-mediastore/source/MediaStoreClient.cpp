@@ -30,10 +30,13 @@
 #include <aws/mediastore/model/CreateContainerRequest.h>
 #include <aws/mediastore/model/DeleteContainerRequest.h>
 #include <aws/mediastore/model/DeleteContainerPolicyRequest.h>
+#include <aws/mediastore/model/DeleteCorsPolicyRequest.h>
 #include <aws/mediastore/model/DescribeContainerRequest.h>
 #include <aws/mediastore/model/GetContainerPolicyRequest.h>
+#include <aws/mediastore/model/GetCorsPolicyRequest.h>
 #include <aws/mediastore/model/ListContainersRequest.h>
 #include <aws/mediastore/model/PutContainerPolicyRequest.h>
+#include <aws/mediastore/model/PutCorsPolicyRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -204,6 +207,41 @@ void MediaStoreClient::DeleteContainerPolicyAsyncHelper(const DeleteContainerPol
   handler(this, request, DeleteContainerPolicy(request), context);
 }
 
+DeleteCorsPolicyOutcome MediaStoreClient::DeleteCorsPolicy(const DeleteCorsPolicyRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteCorsPolicyOutcome(DeleteCorsPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteCorsPolicyOutcome(outcome.GetError());
+  }
+}
+
+DeleteCorsPolicyOutcomeCallable MediaStoreClient::DeleteCorsPolicyCallable(const DeleteCorsPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteCorsPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCorsPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaStoreClient::DeleteCorsPolicyAsync(const DeleteCorsPolicyRequest& request, const DeleteCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteCorsPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void MediaStoreClient::DeleteCorsPolicyAsyncHelper(const DeleteCorsPolicyRequest& request, const DeleteCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteCorsPolicy(request), context);
+}
+
 DescribeContainerOutcome MediaStoreClient::DescribeContainer(const DescribeContainerRequest& request) const
 {
   Aws::StringStream ss;
@@ -274,6 +312,41 @@ void MediaStoreClient::GetContainerPolicyAsyncHelper(const GetContainerPolicyReq
   handler(this, request, GetContainerPolicy(request), context);
 }
 
+GetCorsPolicyOutcome MediaStoreClient::GetCorsPolicy(const GetCorsPolicyRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetCorsPolicyOutcome(GetCorsPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetCorsPolicyOutcome(outcome.GetError());
+  }
+}
+
+GetCorsPolicyOutcomeCallable MediaStoreClient::GetCorsPolicyCallable(const GetCorsPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetCorsPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCorsPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaStoreClient::GetCorsPolicyAsync(const GetCorsPolicyRequest& request, const GetCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetCorsPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void MediaStoreClient::GetCorsPolicyAsyncHelper(const GetCorsPolicyRequest& request, const GetCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetCorsPolicy(request), context);
+}
+
 ListContainersOutcome MediaStoreClient::ListContainers(const ListContainersRequest& request) const
 {
   Aws::StringStream ss;
@@ -342,5 +415,40 @@ void MediaStoreClient::PutContainerPolicyAsync(const PutContainerPolicyRequest& 
 void MediaStoreClient::PutContainerPolicyAsyncHelper(const PutContainerPolicyRequest& request, const PutContainerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutContainerPolicy(request), context);
+}
+
+PutCorsPolicyOutcome MediaStoreClient::PutCorsPolicy(const PutCorsPolicyRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutCorsPolicyOutcome(PutCorsPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutCorsPolicyOutcome(outcome.GetError());
+  }
+}
+
+PutCorsPolicyOutcomeCallable MediaStoreClient::PutCorsPolicyCallable(const PutCorsPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutCorsPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutCorsPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaStoreClient::PutCorsPolicyAsync(const PutCorsPolicyRequest& request, const PutCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutCorsPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void MediaStoreClient::PutCorsPolicyAsyncHelper(const PutCorsPolicyRequest& request, const PutCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutCorsPolicy(request), context);
 }
 

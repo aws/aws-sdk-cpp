@@ -47,7 +47,8 @@ GameSessionPlacement::GameSessionPlacement() :
     m_port(0),
     m_portHasBeenSet(false),
     m_placedPlayerSessionsHasBeenSet(false),
-    m_gameSessionDataHasBeenSet(false)
+    m_gameSessionDataHasBeenSet(false),
+    m_matchmakerDataHasBeenSet(false)
 {
 }
 
@@ -70,7 +71,8 @@ GameSessionPlacement::GameSessionPlacement(const JsonValue& jsonValue) :
     m_port(0),
     m_portHasBeenSet(false),
     m_placedPlayerSessionsHasBeenSet(false),
-    m_gameSessionDataHasBeenSet(false)
+    m_gameSessionDataHasBeenSet(false),
+    m_matchmakerDataHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -198,6 +200,13 @@ GameSessionPlacement& GameSessionPlacement::operator =(const JsonValue& jsonValu
     m_gameSessionDataHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MatchmakerData"))
+  {
+    m_matchmakerData = jsonValue.GetString("MatchmakerData");
+
+    m_matchmakerDataHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -310,6 +319,12 @@ JsonValue GameSessionPlacement::Jsonize() const
   if(m_gameSessionDataHasBeenSet)
   {
    payload.WithString("GameSessionData", m_gameSessionData);
+
+  }
+
+  if(m_matchmakerDataHasBeenSet)
+  {
+   payload.WithString("MatchmakerData", m_matchmakerData);
 
   }
 

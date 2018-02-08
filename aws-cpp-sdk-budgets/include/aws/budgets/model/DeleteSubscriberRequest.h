@@ -29,7 +29,7 @@ namespace Model
 {
 
   /**
-   * Request of DeleteSubscriber<p><h3>See Also:</h3>   <a
+   * <p> Request of DeleteSubscriber </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteSubscriberRequest">AWS
    * API Reference</a></p>
    */
@@ -49,79 +49,134 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /**
+     * <p>The <code>accountId</code> that is associated with the budget whose
+     * subscriber you want to delete.</p>
+     */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
-    
+    /**
+     * <p>The <code>accountId</code> that is associated with the budget whose
+     * subscriber you want to delete.</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
-    
+    /**
+     * <p>The <code>accountId</code> that is associated with the budget whose
+     * subscriber you want to delete.</p>
+     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
-    
+    /**
+     * <p>The <code>accountId</code> that is associated with the budget whose
+     * subscriber you want to delete.</p>
+     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
-    
+    /**
+     * <p>The <code>accountId</code> that is associated with the budget whose
+     * subscriber you want to delete.</p>
+     */
     inline DeleteSubscriberRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
-    
+    /**
+     * <p>The <code>accountId</code> that is associated with the budget whose
+     * subscriber you want to delete.</p>
+     */
     inline DeleteSubscriberRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The <code>accountId</code> that is associated with the budget whose
+     * subscriber you want to delete.</p>
+     */
     inline DeleteSubscriberRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
 
-    
+    /**
+     * <p>The name of the budget whose subscriber you want to delete.</p>
+     */
     inline const Aws::String& GetBudgetName() const{ return m_budgetName; }
 
-    
+    /**
+     * <p>The name of the budget whose subscriber you want to delete.</p>
+     */
     inline void SetBudgetName(const Aws::String& value) { m_budgetNameHasBeenSet = true; m_budgetName = value; }
 
-    
+    /**
+     * <p>The name of the budget whose subscriber you want to delete.</p>
+     */
     inline void SetBudgetName(Aws::String&& value) { m_budgetNameHasBeenSet = true; m_budgetName = std::move(value); }
 
-    
+    /**
+     * <p>The name of the budget whose subscriber you want to delete.</p>
+     */
     inline void SetBudgetName(const char* value) { m_budgetNameHasBeenSet = true; m_budgetName.assign(value); }
 
-    
+    /**
+     * <p>The name of the budget whose subscriber you want to delete.</p>
+     */
     inline DeleteSubscriberRequest& WithBudgetName(const Aws::String& value) { SetBudgetName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the budget whose subscriber you want to delete.</p>
+     */
     inline DeleteSubscriberRequest& WithBudgetName(Aws::String&& value) { SetBudgetName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The name of the budget whose subscriber you want to delete.</p>
+     */
     inline DeleteSubscriberRequest& WithBudgetName(const char* value) { SetBudgetName(value); return *this;}
 
 
-    
+    /**
+     * <p>The notification whose subscriber you want to delete.</p>
+     */
     inline const Notification& GetNotification() const{ return m_notification; }
 
-    
+    /**
+     * <p>The notification whose subscriber you want to delete.</p>
+     */
     inline void SetNotification(const Notification& value) { m_notificationHasBeenSet = true; m_notification = value; }
 
-    
+    /**
+     * <p>The notification whose subscriber you want to delete.</p>
+     */
     inline void SetNotification(Notification&& value) { m_notificationHasBeenSet = true; m_notification = std::move(value); }
 
-    
+    /**
+     * <p>The notification whose subscriber you want to delete.</p>
+     */
     inline DeleteSubscriberRequest& WithNotification(const Notification& value) { SetNotification(value); return *this;}
 
-    
+    /**
+     * <p>The notification whose subscriber you want to delete.</p>
+     */
     inline DeleteSubscriberRequest& WithNotification(Notification&& value) { SetNotification(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The subscriber that you want to delete.</p>
+     */
     inline const Subscriber& GetSubscriber() const{ return m_subscriber; }
 
-    
+    /**
+     * <p>The subscriber that you want to delete.</p>
+     */
     inline void SetSubscriber(const Subscriber& value) { m_subscriberHasBeenSet = true; m_subscriber = value; }
 
-    
+    /**
+     * <p>The subscriber that you want to delete.</p>
+     */
     inline void SetSubscriber(Subscriber&& value) { m_subscriberHasBeenSet = true; m_subscriber = std::move(value); }
 
-    
+    /**
+     * <p>The subscriber that you want to delete.</p>
+     */
     inline DeleteSubscriberRequest& WithSubscriber(const Subscriber& value) { SetSubscriber(value); return *this;}
 
-    
+    /**
+     * <p>The subscriber that you want to delete.</p>
+     */
     inline DeleteSubscriberRequest& WithSubscriber(Subscriber&& value) { SetSubscriber(std::move(value)); return *this;}
 
   private:

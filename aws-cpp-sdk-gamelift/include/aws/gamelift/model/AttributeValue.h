@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Values for use in <a>Player</a> attribute type:value pairs. This object lets
+   * <p>Values for use in <a>Player</a> attribute key:value pairs. This object lets
    * you specify an attribute value using any of the valid data types: string,
    * number, string array or data map. Each <code>AttributeValue</code> object can
    * use only one of the available properties.</p><p><h3>See Also:</h3>   <a
@@ -161,50 +161,50 @@ namespace Model
 
 
     /**
-     * <p>For a map of up to 10 type:value pairs. Maximum length for each string value
-     * is 100 characters. </p>
+     * <p>For a map of up to 10 data type:value pairs. Maximum length for each string
+     * value is 100 characters. </p>
      */
     inline const Aws::Map<Aws::String, double>& GetSDM() const{ return m_sDM; }
 
     /**
-     * <p>For a map of up to 10 type:value pairs. Maximum length for each string value
-     * is 100 characters. </p>
+     * <p>For a map of up to 10 data type:value pairs. Maximum length for each string
+     * value is 100 characters. </p>
      */
     inline void SetSDM(const Aws::Map<Aws::String, double>& value) { m_sDMHasBeenSet = true; m_sDM = value; }
 
     /**
-     * <p>For a map of up to 10 type:value pairs. Maximum length for each string value
-     * is 100 characters. </p>
+     * <p>For a map of up to 10 data type:value pairs. Maximum length for each string
+     * value is 100 characters. </p>
      */
     inline void SetSDM(Aws::Map<Aws::String, double>&& value) { m_sDMHasBeenSet = true; m_sDM = std::move(value); }
 
     /**
-     * <p>For a map of up to 10 type:value pairs. Maximum length for each string value
-     * is 100 characters. </p>
+     * <p>For a map of up to 10 data type:value pairs. Maximum length for each string
+     * value is 100 characters. </p>
      */
     inline AttributeValue& WithSDM(const Aws::Map<Aws::String, double>& value) { SetSDM(value); return *this;}
 
     /**
-     * <p>For a map of up to 10 type:value pairs. Maximum length for each string value
-     * is 100 characters. </p>
+     * <p>For a map of up to 10 data type:value pairs. Maximum length for each string
+     * value is 100 characters. </p>
      */
     inline AttributeValue& WithSDM(Aws::Map<Aws::String, double>&& value) { SetSDM(std::move(value)); return *this;}
 
     /**
-     * <p>For a map of up to 10 type:value pairs. Maximum length for each string value
-     * is 100 characters. </p>
+     * <p>For a map of up to 10 data type:value pairs. Maximum length for each string
+     * value is 100 characters. </p>
      */
     inline AttributeValue& AddSDM(const Aws::String& key, double value) { m_sDMHasBeenSet = true; m_sDM.emplace(key, value); return *this; }
 
     /**
-     * <p>For a map of up to 10 type:value pairs. Maximum length for each string value
-     * is 100 characters. </p>
+     * <p>For a map of up to 10 data type:value pairs. Maximum length for each string
+     * value is 100 characters. </p>
      */
     inline AttributeValue& AddSDM(Aws::String&& key, double value) { m_sDMHasBeenSet = true; m_sDM.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>For a map of up to 10 type:value pairs. Maximum length for each string value
-     * is 100 characters. </p>
+     * <p>For a map of up to 10 data type:value pairs. Maximum length for each string
+     * value is 100 characters. </p>
      */
     inline AttributeValue& AddSDM(const char* key, double value) { m_sDMHasBeenSet = true; m_sDM.emplace(key, value); return *this; }
 

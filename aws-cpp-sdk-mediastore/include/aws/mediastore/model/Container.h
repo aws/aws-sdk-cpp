@@ -50,51 +50,58 @@ namespace Model
 
 
     /**
-     * <p>The DNS endpoint of the container. Use from 1 to 255 characters. Use this
-     * endpoint to identify this container when sending requests to the data plane.
-     * </p>
+     * <p>The DNS endpoint of the container. Use the endpoint to identify the specific
+     * container when sending requests to the data plane. The service assigns this
+     * value when the container is created. Once the value has been assigned, it does
+     * not change.</p>
      */
     inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
 
     /**
-     * <p>The DNS endpoint of the container. Use from 1 to 255 characters. Use this
-     * endpoint to identify this container when sending requests to the data plane.
-     * </p>
+     * <p>The DNS endpoint of the container. Use the endpoint to identify the specific
+     * container when sending requests to the data plane. The service assigns this
+     * value when the container is created. Once the value has been assigned, it does
+     * not change.</p>
      */
     inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
 
     /**
-     * <p>The DNS endpoint of the container. Use from 1 to 255 characters. Use this
-     * endpoint to identify this container when sending requests to the data plane.
-     * </p>
+     * <p>The DNS endpoint of the container. Use the endpoint to identify the specific
+     * container when sending requests to the data plane. The service assigns this
+     * value when the container is created. Once the value has been assigned, it does
+     * not change.</p>
      */
     inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
 
     /**
-     * <p>The DNS endpoint of the container. Use from 1 to 255 characters. Use this
-     * endpoint to identify this container when sending requests to the data plane.
-     * </p>
+     * <p>The DNS endpoint of the container. Use the endpoint to identify the specific
+     * container when sending requests to the data plane. The service assigns this
+     * value when the container is created. Once the value has been assigned, it does
+     * not change.</p>
      */
     inline void SetEndpoint(const char* value) { m_endpointHasBeenSet = true; m_endpoint.assign(value); }
 
     /**
-     * <p>The DNS endpoint of the container. Use from 1 to 255 characters. Use this
-     * endpoint to identify this container when sending requests to the data plane.
-     * </p>
+     * <p>The DNS endpoint of the container. Use the endpoint to identify the specific
+     * container when sending requests to the data plane. The service assigns this
+     * value when the container is created. Once the value has been assigned, it does
+     * not change.</p>
      */
     inline Container& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
 
     /**
-     * <p>The DNS endpoint of the container. Use from 1 to 255 characters. Use this
-     * endpoint to identify this container when sending requests to the data plane.
-     * </p>
+     * <p>The DNS endpoint of the container. Use the endpoint to identify the specific
+     * container when sending requests to the data plane. The service assigns this
+     * value when the container is created. Once the value has been assigned, it does
+     * not change.</p>
      */
     inline Container& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
 
     /**
-     * <p>The DNS endpoint of the container. Use from 1 to 255 characters. Use this
-     * endpoint to identify this container when sending requests to the data plane.
-     * </p>
+     * <p>The DNS endpoint of the container. Use the endpoint to identify the specific
+     * container when sending requests to the data plane. The service assigns this
+     * value when the container is created. Once the value has been assigned, it does
+     * not change.</p>
      */
     inline Container& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
 

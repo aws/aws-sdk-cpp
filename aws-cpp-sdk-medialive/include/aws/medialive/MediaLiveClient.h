@@ -35,6 +35,7 @@
 #include <aws/medialive/model/ListInputsResult.h>
 #include <aws/medialive/model/StartChannelResult.h>
 #include <aws/medialive/model/StopChannelResult.h>
+#include <aws/medialive/model/UpdateChannelResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -94,6 +95,7 @@ namespace Model
         class ListInputsRequest;
         class StartChannelRequest;
         class StopChannelRequest;
+        class UpdateChannelRequest;
 
         typedef Aws::Utils::Outcome<CreateChannelResult, Aws::Client::AWSError<MediaLiveErrors>> CreateChannelOutcome;
         typedef Aws::Utils::Outcome<CreateInputResult, Aws::Client::AWSError<MediaLiveErrors>> CreateInputOutcome;
@@ -109,6 +111,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListInputsResult, Aws::Client::AWSError<MediaLiveErrors>> ListInputsOutcome;
         typedef Aws::Utils::Outcome<StartChannelResult, Aws::Client::AWSError<MediaLiveErrors>> StartChannelOutcome;
         typedef Aws::Utils::Outcome<StopChannelResult, Aws::Client::AWSError<MediaLiveErrors>> StopChannelOutcome;
+        typedef Aws::Utils::Outcome<UpdateChannelResult, Aws::Client::AWSError<MediaLiveErrors>> UpdateChannelOutcome;
 
         typedef std::future<CreateChannelOutcome> CreateChannelOutcomeCallable;
         typedef std::future<CreateInputOutcome> CreateInputOutcomeCallable;
@@ -124,6 +127,7 @@ namespace Model
         typedef std::future<ListInputsOutcome> ListInputsOutcomeCallable;
         typedef std::future<StartChannelOutcome> StartChannelOutcomeCallable;
         typedef std::future<StopChannelOutcome> StopChannelOutcomeCallable;
+        typedef std::future<UpdateChannelOutcome> UpdateChannelOutcomeCallable;
 } // namespace Model
 
   class MediaLiveClient;
@@ -142,6 +146,7 @@ namespace Model
     typedef std::function<void(const MediaLiveClient*, const Model::ListInputsRequest&, const Model::ListInputsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInputsResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::StartChannelRequest&, const Model::StartChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartChannelResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::StopChannelRequest&, const Model::StopChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopChannelResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::UpdateChannelRequest&, const Model::UpdateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateChannelResponseReceivedHandler;
 
   /**
    * API for AWS Elemental MediaLive
@@ -531,6 +536,31 @@ namespace Model
          */
         virtual void StopChannelAsync(const Model::StopChannelRequest& request, const StopChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * Updates a channel.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateChannel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateChannelOutcome UpdateChannel(const Model::UpdateChannelRequest& request) const;
+
+        /**
+         * Updates a channel.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateChannel">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateChannelOutcomeCallable UpdateChannelCallable(const Model::UpdateChannelRequest& request) const;
+
+        /**
+         * Updates a channel.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateChannel">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateChannelAsync(const Model::UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
@@ -550,6 +580,7 @@ namespace Model
         void ListInputsAsyncHelper(const Model::ListInputsRequest& request, const ListInputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartChannelAsyncHelper(const Model::StartChannelRequest& request, const StartChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopChannelAsyncHelper(const Model::StopChannelRequest& request, const StopChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateChannelAsyncHelper(const Model::UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;

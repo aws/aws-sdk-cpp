@@ -1046,12 +1046,12 @@ namespace Model
     /**
      * <p>The condition that specifies the key value(s) for items to be retrieved by
      * the <code>Query</code> action.</p> <p>The condition must perform an equality
-     * test on a single partition key value. The condition can also perform one of
-     * several comparison tests on a single sort key value. <code>Query</code> can use
-     * <code>KeyConditionExpression</code> to retrieve one item with a given partition
-     * key value and sort key value, or several items that have the same partition key
-     * value but different sort key values.</p> <p>The partition key equality test is
-     * required, and must be specified in the following format:</p> <p>
+     * test on a single partition key value.</p> <p>The condition can optionally
+     * perform one of several comparison tests on a single sort key value. This allows
+     * <code>Query</code> to retrieve one item with a given partition key value and
+     * sort key value, or several items that have the same partition key value but
+     * different sort key values.</p> <p>The partition key equality test is required,
+     * and must be specified in the following format:</p> <p>
      * <code>partitionKeyName</code> <i>=</i> <code>:partitionkeyval</code> </p> <p>If
      * you also want to provide a condition for the sort key, it must be combined using
      * <code>AND</code> with the condition for the sort key. Following is an example,
@@ -1104,12 +1104,12 @@ namespace Model
     /**
      * <p>The condition that specifies the key value(s) for items to be retrieved by
      * the <code>Query</code> action.</p> <p>The condition must perform an equality
-     * test on a single partition key value. The condition can also perform one of
-     * several comparison tests on a single sort key value. <code>Query</code> can use
-     * <code>KeyConditionExpression</code> to retrieve one item with a given partition
-     * key value and sort key value, or several items that have the same partition key
-     * value but different sort key values.</p> <p>The partition key equality test is
-     * required, and must be specified in the following format:</p> <p>
+     * test on a single partition key value.</p> <p>The condition can optionally
+     * perform one of several comparison tests on a single sort key value. This allows
+     * <code>Query</code> to retrieve one item with a given partition key value and
+     * sort key value, or several items that have the same partition key value but
+     * different sort key values.</p> <p>The partition key equality test is required,
+     * and must be specified in the following format:</p> <p>
      * <code>partitionKeyName</code> <i>=</i> <code>:partitionkeyval</code> </p> <p>If
      * you also want to provide a condition for the sort key, it must be combined using
      * <code>AND</code> with the condition for the sort key. Following is an example,
@@ -1162,12 +1162,12 @@ namespace Model
     /**
      * <p>The condition that specifies the key value(s) for items to be retrieved by
      * the <code>Query</code> action.</p> <p>The condition must perform an equality
-     * test on a single partition key value. The condition can also perform one of
-     * several comparison tests on a single sort key value. <code>Query</code> can use
-     * <code>KeyConditionExpression</code> to retrieve one item with a given partition
-     * key value and sort key value, or several items that have the same partition key
-     * value but different sort key values.</p> <p>The partition key equality test is
-     * required, and must be specified in the following format:</p> <p>
+     * test on a single partition key value.</p> <p>The condition can optionally
+     * perform one of several comparison tests on a single sort key value. This allows
+     * <code>Query</code> to retrieve one item with a given partition key value and
+     * sort key value, or several items that have the same partition key value but
+     * different sort key values.</p> <p>The partition key equality test is required,
+     * and must be specified in the following format:</p> <p>
      * <code>partitionKeyName</code> <i>=</i> <code>:partitionkeyval</code> </p> <p>If
      * you also want to provide a condition for the sort key, it must be combined using
      * <code>AND</code> with the condition for the sort key. Following is an example,
@@ -1220,12 +1220,12 @@ namespace Model
     /**
      * <p>The condition that specifies the key value(s) for items to be retrieved by
      * the <code>Query</code> action.</p> <p>The condition must perform an equality
-     * test on a single partition key value. The condition can also perform one of
-     * several comparison tests on a single sort key value. <code>Query</code> can use
-     * <code>KeyConditionExpression</code> to retrieve one item with a given partition
-     * key value and sort key value, or several items that have the same partition key
-     * value but different sort key values.</p> <p>The partition key equality test is
-     * required, and must be specified in the following format:</p> <p>
+     * test on a single partition key value.</p> <p>The condition can optionally
+     * perform one of several comparison tests on a single sort key value. This allows
+     * <code>Query</code> to retrieve one item with a given partition key value and
+     * sort key value, or several items that have the same partition key value but
+     * different sort key values.</p> <p>The partition key equality test is required,
+     * and must be specified in the following format:</p> <p>
      * <code>partitionKeyName</code> <i>=</i> <code>:partitionkeyval</code> </p> <p>If
      * you also want to provide a condition for the sort key, it must be combined using
      * <code>AND</code> with the condition for the sort key. Following is an example,
@@ -1278,12 +1278,12 @@ namespace Model
     /**
      * <p>The condition that specifies the key value(s) for items to be retrieved by
      * the <code>Query</code> action.</p> <p>The condition must perform an equality
-     * test on a single partition key value. The condition can also perform one of
-     * several comparison tests on a single sort key value. <code>Query</code> can use
-     * <code>KeyConditionExpression</code> to retrieve one item with a given partition
-     * key value and sort key value, or several items that have the same partition key
-     * value but different sort key values.</p> <p>The partition key equality test is
-     * required, and must be specified in the following format:</p> <p>
+     * test on a single partition key value.</p> <p>The condition can optionally
+     * perform one of several comparison tests on a single sort key value. This allows
+     * <code>Query</code> to retrieve one item with a given partition key value and
+     * sort key value, or several items that have the same partition key value but
+     * different sort key values.</p> <p>The partition key equality test is required,
+     * and must be specified in the following format:</p> <p>
      * <code>partitionKeyName</code> <i>=</i> <code>:partitionkeyval</code> </p> <p>If
      * you also want to provide a condition for the sort key, it must be combined using
      * <code>AND</code> with the condition for the sort key. Following is an example,
@@ -1336,12 +1336,12 @@ namespace Model
     /**
      * <p>The condition that specifies the key value(s) for items to be retrieved by
      * the <code>Query</code> action.</p> <p>The condition must perform an equality
-     * test on a single partition key value. The condition can also perform one of
-     * several comparison tests on a single sort key value. <code>Query</code> can use
-     * <code>KeyConditionExpression</code> to retrieve one item with a given partition
-     * key value and sort key value, or several items that have the same partition key
-     * value but different sort key values.</p> <p>The partition key equality test is
-     * required, and must be specified in the following format:</p> <p>
+     * test on a single partition key value.</p> <p>The condition can optionally
+     * perform one of several comparison tests on a single sort key value. This allows
+     * <code>Query</code> to retrieve one item with a given partition key value and
+     * sort key value, or several items that have the same partition key value but
+     * different sort key values.</p> <p>The partition key equality test is required,
+     * and must be specified in the following format:</p> <p>
      * <code>partitionKeyName</code> <i>=</i> <code>:partitionkeyval</code> </p> <p>If
      * you also want to provide a condition for the sort key, it must be combined using
      * <code>AND</code> with the condition for the sort key. Following is an example,
@@ -1394,12 +1394,12 @@ namespace Model
     /**
      * <p>The condition that specifies the key value(s) for items to be retrieved by
      * the <code>Query</code> action.</p> <p>The condition must perform an equality
-     * test on a single partition key value. The condition can also perform one of
-     * several comparison tests on a single sort key value. <code>Query</code> can use
-     * <code>KeyConditionExpression</code> to retrieve one item with a given partition
-     * key value and sort key value, or several items that have the same partition key
-     * value but different sort key values.</p> <p>The partition key equality test is
-     * required, and must be specified in the following format:</p> <p>
+     * test on a single partition key value.</p> <p>The condition can optionally
+     * perform one of several comparison tests on a single sort key value. This allows
+     * <code>Query</code> to retrieve one item with a given partition key value and
+     * sort key value, or several items that have the same partition key value but
+     * different sort key values.</p> <p>The partition key equality test is required,
+     * and must be specified in the following format:</p> <p>
      * <code>partitionKeyName</code> <i>=</i> <code>:partitionkeyval</code> </p> <p>If
      * you also want to provide a condition for the sort key, it must be combined using
      * <code>AND</code> with the condition for the sort key. Following is an example,

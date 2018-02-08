@@ -32,6 +32,7 @@ static const int CONTAINER_IN_USE_HASH = HashingUtils::HashString("ContainerInUs
 static const int POLICY_NOT_FOUND_HASH = HashingUtils::HashString("PolicyNotFoundException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int CONTAINER_NOT_FOUND_HASH = HashingUtils::HashString("ContainerNotFoundException");
+static const int CORS_POLICY_NOT_FOUND_HASH = HashingUtils::HashString("CorsPolicyNotFoundException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -53,6 +54,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == CONTAINER_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaStoreErrors::CONTAINER_NOT_FOUND), false);
+  }
+  else if (hashCode == CORS_POLICY_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaStoreErrors::CORS_POLICY_NOT_FOUND), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -427,10 +427,9 @@ namespace Model
 
 
     /**
-     * <p>Set of developer-defined properties for a game session, formatted as a set of
-     * type:value pairs. These properties are included in the <a>GameSession</a>
-     * object, which is passed to the game server with a request to start a new game
-     * session (see <a
+     * <p>Set of custom properties for a game session, formatted as key:value pairs.
+     * These properties are passed to a game server process in the <a>GameSession</a>
+     * object with a request to start a new game session (see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>). This information is added to the new <a>GameSession</a>
      * object that is created for a successful match. </p>
@@ -438,10 +437,9 @@ namespace Model
     inline const Aws::Vector<GameProperty>& GetGameProperties() const{ return m_gameProperties; }
 
     /**
-     * <p>Set of developer-defined properties for a game session, formatted as a set of
-     * type:value pairs. These properties are included in the <a>GameSession</a>
-     * object, which is passed to the game server with a request to start a new game
-     * session (see <a
+     * <p>Set of custom properties for a game session, formatted as key:value pairs.
+     * These properties are passed to a game server process in the <a>GameSession</a>
+     * object with a request to start a new game session (see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>). This information is added to the new <a>GameSession</a>
      * object that is created for a successful match. </p>
@@ -449,10 +447,9 @@ namespace Model
     inline void SetGameProperties(const Aws::Vector<GameProperty>& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = value; }
 
     /**
-     * <p>Set of developer-defined properties for a game session, formatted as a set of
-     * type:value pairs. These properties are included in the <a>GameSession</a>
-     * object, which is passed to the game server with a request to start a new game
-     * session (see <a
+     * <p>Set of custom properties for a game session, formatted as key:value pairs.
+     * These properties are passed to a game server process in the <a>GameSession</a>
+     * object with a request to start a new game session (see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>). This information is added to the new <a>GameSession</a>
      * object that is created for a successful match. </p>
@@ -460,10 +457,9 @@ namespace Model
     inline void SetGameProperties(Aws::Vector<GameProperty>&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = std::move(value); }
 
     /**
-     * <p>Set of developer-defined properties for a game session, formatted as a set of
-     * type:value pairs. These properties are included in the <a>GameSession</a>
-     * object, which is passed to the game server with a request to start a new game
-     * session (see <a
+     * <p>Set of custom properties for a game session, formatted as key:value pairs.
+     * These properties are passed to a game server process in the <a>GameSession</a>
+     * object with a request to start a new game session (see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>). This information is added to the new <a>GameSession</a>
      * object that is created for a successful match. </p>
@@ -471,10 +467,9 @@ namespace Model
     inline CreateMatchmakingConfigurationRequest& WithGameProperties(const Aws::Vector<GameProperty>& value) { SetGameProperties(value); return *this;}
 
     /**
-     * <p>Set of developer-defined properties for a game session, formatted as a set of
-     * type:value pairs. These properties are included in the <a>GameSession</a>
-     * object, which is passed to the game server with a request to start a new game
-     * session (see <a
+     * <p>Set of custom properties for a game session, formatted as key:value pairs.
+     * These properties are passed to a game server process in the <a>GameSession</a>
+     * object with a request to start a new game session (see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>). This information is added to the new <a>GameSession</a>
      * object that is created for a successful match. </p>
@@ -482,10 +477,9 @@ namespace Model
     inline CreateMatchmakingConfigurationRequest& WithGameProperties(Aws::Vector<GameProperty>&& value) { SetGameProperties(std::move(value)); return *this;}
 
     /**
-     * <p>Set of developer-defined properties for a game session, formatted as a set of
-     * type:value pairs. These properties are included in the <a>GameSession</a>
-     * object, which is passed to the game server with a request to start a new game
-     * session (see <a
+     * <p>Set of custom properties for a game session, formatted as key:value pairs.
+     * These properties are passed to a game server process in the <a>GameSession</a>
+     * object with a request to start a new game session (see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>). This information is added to the new <a>GameSession</a>
      * object that is created for a successful match. </p>
@@ -493,10 +487,9 @@ namespace Model
     inline CreateMatchmakingConfigurationRequest& AddGameProperties(const GameProperty& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(value); return *this; }
 
     /**
-     * <p>Set of developer-defined properties for a game session, formatted as a set of
-     * type:value pairs. These properties are included in the <a>GameSession</a>
-     * object, which is passed to the game server with a request to start a new game
-     * session (see <a
+     * <p>Set of custom properties for a game session, formatted as key:value pairs.
+     * These properties are passed to a game server process in the <a>GameSession</a>
+     * object with a request to start a new game session (see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>). This information is added to the new <a>GameSession</a>
      * object that is created for a successful match. </p>
@@ -505,9 +498,9 @@ namespace Model
 
 
     /**
-     * <p>Set of developer-defined game session properties, formatted as a single
-     * string value. This data is included in the <a>GameSession</a> object, which is
-     * passed to the game server with a request to start a new game session (see <a
+     * <p>Set of custom game session properties, formatted as a single string value.
+     * This data is passed to a game server process in the <a>GameSession</a> object
+     * with a request to start a new game session (see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>). This information is added to the new <a>GameSession</a>
      * object that is created for a successful match.</p>
@@ -515,9 +508,9 @@ namespace Model
     inline const Aws::String& GetGameSessionData() const{ return m_gameSessionData; }
 
     /**
-     * <p>Set of developer-defined game session properties, formatted as a single
-     * string value. This data is included in the <a>GameSession</a> object, which is
-     * passed to the game server with a request to start a new game session (see <a
+     * <p>Set of custom game session properties, formatted as a single string value.
+     * This data is passed to a game server process in the <a>GameSession</a> object
+     * with a request to start a new game session (see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>). This information is added to the new <a>GameSession</a>
      * object that is created for a successful match.</p>
@@ -525,9 +518,9 @@ namespace Model
     inline void SetGameSessionData(const Aws::String& value) { m_gameSessionDataHasBeenSet = true; m_gameSessionData = value; }
 
     /**
-     * <p>Set of developer-defined game session properties, formatted as a single
-     * string value. This data is included in the <a>GameSession</a> object, which is
-     * passed to the game server with a request to start a new game session (see <a
+     * <p>Set of custom game session properties, formatted as a single string value.
+     * This data is passed to a game server process in the <a>GameSession</a> object
+     * with a request to start a new game session (see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>). This information is added to the new <a>GameSession</a>
      * object that is created for a successful match.</p>
@@ -535,9 +528,9 @@ namespace Model
     inline void SetGameSessionData(Aws::String&& value) { m_gameSessionDataHasBeenSet = true; m_gameSessionData = std::move(value); }
 
     /**
-     * <p>Set of developer-defined game session properties, formatted as a single
-     * string value. This data is included in the <a>GameSession</a> object, which is
-     * passed to the game server with a request to start a new game session (see <a
+     * <p>Set of custom game session properties, formatted as a single string value.
+     * This data is passed to a game server process in the <a>GameSession</a> object
+     * with a request to start a new game session (see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>). This information is added to the new <a>GameSession</a>
      * object that is created for a successful match.</p>
@@ -545,9 +538,9 @@ namespace Model
     inline void SetGameSessionData(const char* value) { m_gameSessionDataHasBeenSet = true; m_gameSessionData.assign(value); }
 
     /**
-     * <p>Set of developer-defined game session properties, formatted as a single
-     * string value. This data is included in the <a>GameSession</a> object, which is
-     * passed to the game server with a request to start a new game session (see <a
+     * <p>Set of custom game session properties, formatted as a single string value.
+     * This data is passed to a game server process in the <a>GameSession</a> object
+     * with a request to start a new game session (see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>). This information is added to the new <a>GameSession</a>
      * object that is created for a successful match.</p>
@@ -555,9 +548,9 @@ namespace Model
     inline CreateMatchmakingConfigurationRequest& WithGameSessionData(const Aws::String& value) { SetGameSessionData(value); return *this;}
 
     /**
-     * <p>Set of developer-defined game session properties, formatted as a single
-     * string value. This data is included in the <a>GameSession</a> object, which is
-     * passed to the game server with a request to start a new game session (see <a
+     * <p>Set of custom game session properties, formatted as a single string value.
+     * This data is passed to a game server process in the <a>GameSession</a> object
+     * with a request to start a new game session (see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>). This information is added to the new <a>GameSession</a>
      * object that is created for a successful match.</p>
@@ -565,9 +558,9 @@ namespace Model
     inline CreateMatchmakingConfigurationRequest& WithGameSessionData(Aws::String&& value) { SetGameSessionData(std::move(value)); return *this;}
 
     /**
-     * <p>Set of developer-defined game session properties, formatted as a single
-     * string value. This data is included in the <a>GameSession</a> object, which is
-     * passed to the game server with a request to start a new game session (see <a
+     * <p>Set of custom game session properties, formatted as a single string value.
+     * This data is passed to a game server process in the <a>GameSession</a> object
+     * with a request to start a new game session (see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>). This information is added to the new <a>GameSession</a>
      * object that is created for a successful match.</p>

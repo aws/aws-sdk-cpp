@@ -136,57 +136,52 @@ namespace Model
 
 
     /**
-     * <p>Amazon S3 location of the game build files to be uploaded. The S3 bucket must
-     * be owned by the same AWS account that you're using to manage Amazon GameLift. It
-     * also must in the same region that you want to create a new build in. Before
-     * calling <code>CreateBuild</code> with this location, you must allow Amazon
-     * GameLift to access your Amazon S3 bucket (see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">Create
-     * a Build with Files in Amazon S3</a>).</p>
+     * <p>Information indicating where your game build files are stored. Use this
+     * parameter only when creating a build with files stored in an Amazon S3 bucket
+     * that you own. The storage location must specify an Amazon S3 bucket name and
+     * key, as well as a role ARN that you set up to allow Amazon GameLift to access
+     * your Amazon S3 bucket. The S3 bucket must be in the same region that you want to
+     * create a new build in.</p>
      */
     inline const S3Location& GetStorageLocation() const{ return m_storageLocation; }
 
     /**
-     * <p>Amazon S3 location of the game build files to be uploaded. The S3 bucket must
-     * be owned by the same AWS account that you're using to manage Amazon GameLift. It
-     * also must in the same region that you want to create a new build in. Before
-     * calling <code>CreateBuild</code> with this location, you must allow Amazon
-     * GameLift to access your Amazon S3 bucket (see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">Create
-     * a Build with Files in Amazon S3</a>).</p>
+     * <p>Information indicating where your game build files are stored. Use this
+     * parameter only when creating a build with files stored in an Amazon S3 bucket
+     * that you own. The storage location must specify an Amazon S3 bucket name and
+     * key, as well as a role ARN that you set up to allow Amazon GameLift to access
+     * your Amazon S3 bucket. The S3 bucket must be in the same region that you want to
+     * create a new build in.</p>
      */
     inline void SetStorageLocation(const S3Location& value) { m_storageLocationHasBeenSet = true; m_storageLocation = value; }
 
     /**
-     * <p>Amazon S3 location of the game build files to be uploaded. The S3 bucket must
-     * be owned by the same AWS account that you're using to manage Amazon GameLift. It
-     * also must in the same region that you want to create a new build in. Before
-     * calling <code>CreateBuild</code> with this location, you must allow Amazon
-     * GameLift to access your Amazon S3 bucket (see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">Create
-     * a Build with Files in Amazon S3</a>).</p>
+     * <p>Information indicating where your game build files are stored. Use this
+     * parameter only when creating a build with files stored in an Amazon S3 bucket
+     * that you own. The storage location must specify an Amazon S3 bucket name and
+     * key, as well as a role ARN that you set up to allow Amazon GameLift to access
+     * your Amazon S3 bucket. The S3 bucket must be in the same region that you want to
+     * create a new build in.</p>
      */
     inline void SetStorageLocation(S3Location&& value) { m_storageLocationHasBeenSet = true; m_storageLocation = std::move(value); }
 
     /**
-     * <p>Amazon S3 location of the game build files to be uploaded. The S3 bucket must
-     * be owned by the same AWS account that you're using to manage Amazon GameLift. It
-     * also must in the same region that you want to create a new build in. Before
-     * calling <code>CreateBuild</code> with this location, you must allow Amazon
-     * GameLift to access your Amazon S3 bucket (see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">Create
-     * a Build with Files in Amazon S3</a>).</p>
+     * <p>Information indicating where your game build files are stored. Use this
+     * parameter only when creating a build with files stored in an Amazon S3 bucket
+     * that you own. The storage location must specify an Amazon S3 bucket name and
+     * key, as well as a role ARN that you set up to allow Amazon GameLift to access
+     * your Amazon S3 bucket. The S3 bucket must be in the same region that you want to
+     * create a new build in.</p>
      */
     inline CreateBuildRequest& WithStorageLocation(const S3Location& value) { SetStorageLocation(value); return *this;}
 
     /**
-     * <p>Amazon S3 location of the game build files to be uploaded. The S3 bucket must
-     * be owned by the same AWS account that you're using to manage Amazon GameLift. It
-     * also must in the same region that you want to create a new build in. Before
-     * calling <code>CreateBuild</code> with this location, you must allow Amazon
-     * GameLift to access your Amazon S3 bucket (see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">Create
-     * a Build with Files in Amazon S3</a>).</p>
+     * <p>Information indicating where your game build files are stored. Use this
+     * parameter only when creating a build with files stored in an Amazon S3 bucket
+     * that you own. The storage location must specify an Amazon S3 bucket name and
+     * key, as well as a role ARN that you set up to allow Amazon GameLift to access
+     * your Amazon S3 bucket. The S3 bucket must be in the same region that you want to
+     * create a new build in.</p>
      */
     inline CreateBuildRequest& WithStorageLocation(S3Location&& value) { SetStorageLocation(std::move(value)); return *this;}
 
@@ -195,7 +190,9 @@ namespace Model
      * <p>Operating system that the game server binaries are built to run on. This
      * value determines the type of fleet resources that you can use for this build. If
      * your game build contains multiple executables, they all must run on the same
-     * operating system.</p>
+     * operating system. If an operating system is not specified when creating a build,
+     * Amazon GameLift uses the default value (WINDOWS_2012). This value cannot be
+     * changed later.</p>
      */
     inline const OperatingSystem& GetOperatingSystem() const{ return m_operatingSystem; }
 
@@ -203,7 +200,9 @@ namespace Model
      * <p>Operating system that the game server binaries are built to run on. This
      * value determines the type of fleet resources that you can use for this build. If
      * your game build contains multiple executables, they all must run on the same
-     * operating system.</p>
+     * operating system. If an operating system is not specified when creating a build,
+     * Amazon GameLift uses the default value (WINDOWS_2012). This value cannot be
+     * changed later.</p>
      */
     inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
 
@@ -211,7 +210,9 @@ namespace Model
      * <p>Operating system that the game server binaries are built to run on. This
      * value determines the type of fleet resources that you can use for this build. If
      * your game build contains multiple executables, they all must run on the same
-     * operating system.</p>
+     * operating system. If an operating system is not specified when creating a build,
+     * Amazon GameLift uses the default value (WINDOWS_2012). This value cannot be
+     * changed later.</p>
      */
     inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::move(value); }
 
@@ -219,7 +220,9 @@ namespace Model
      * <p>Operating system that the game server binaries are built to run on. This
      * value determines the type of fleet resources that you can use for this build. If
      * your game build contains multiple executables, they all must run on the same
-     * operating system.</p>
+     * operating system. If an operating system is not specified when creating a build,
+     * Amazon GameLift uses the default value (WINDOWS_2012). This value cannot be
+     * changed later.</p>
      */
     inline CreateBuildRequest& WithOperatingSystem(const OperatingSystem& value) { SetOperatingSystem(value); return *this;}
 
@@ -227,7 +230,9 @@ namespace Model
      * <p>Operating system that the game server binaries are built to run on. This
      * value determines the type of fleet resources that you can use for this build. If
      * your game build contains multiple executables, they all must run on the same
-     * operating system.</p>
+     * operating system. If an operating system is not specified when creating a build,
+     * Amazon GameLift uses the default value (WINDOWS_2012). This value cannot be
+     * changed later.</p>
      */
     inline CreateBuildRequest& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
 
