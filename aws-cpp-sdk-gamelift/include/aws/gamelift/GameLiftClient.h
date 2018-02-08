@@ -68,6 +68,7 @@
 #include <aws/gamelift/model/ResolveAliasResult.h>
 #include <aws/gamelift/model/SearchGameSessionsResult.h>
 #include <aws/gamelift/model/StartGameSessionPlacementResult.h>
+#include <aws/gamelift/model/StartMatchBackfillResult.h>
 #include <aws/gamelift/model/StartMatchmakingResult.h>
 #include <aws/gamelift/model/StopGameSessionPlacementResult.h>
 #include <aws/gamelift/model/StopMatchmakingResult.h>
@@ -178,6 +179,7 @@ namespace Model
         class ResolveAliasRequest;
         class SearchGameSessionsRequest;
         class StartGameSessionPlacementRequest;
+        class StartMatchBackfillRequest;
         class StartMatchmakingRequest;
         class StopGameSessionPlacementRequest;
         class StopMatchmakingRequest;
@@ -243,6 +245,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ResolveAliasResult, Aws::Client::AWSError<GameLiftErrors>> ResolveAliasOutcome;
         typedef Aws::Utils::Outcome<SearchGameSessionsResult, Aws::Client::AWSError<GameLiftErrors>> SearchGameSessionsOutcome;
         typedef Aws::Utils::Outcome<StartGameSessionPlacementResult, Aws::Client::AWSError<GameLiftErrors>> StartGameSessionPlacementOutcome;
+        typedef Aws::Utils::Outcome<StartMatchBackfillResult, Aws::Client::AWSError<GameLiftErrors>> StartMatchBackfillOutcome;
         typedef Aws::Utils::Outcome<StartMatchmakingResult, Aws::Client::AWSError<GameLiftErrors>> StartMatchmakingOutcome;
         typedef Aws::Utils::Outcome<StopGameSessionPlacementResult, Aws::Client::AWSError<GameLiftErrors>> StopGameSessionPlacementOutcome;
         typedef Aws::Utils::Outcome<StopMatchmakingResult, Aws::Client::AWSError<GameLiftErrors>> StopMatchmakingOutcome;
@@ -308,6 +311,7 @@ namespace Model
         typedef std::future<ResolveAliasOutcome> ResolveAliasOutcomeCallable;
         typedef std::future<SearchGameSessionsOutcome> SearchGameSessionsOutcomeCallable;
         typedef std::future<StartGameSessionPlacementOutcome> StartGameSessionPlacementOutcomeCallable;
+        typedef std::future<StartMatchBackfillOutcome> StartMatchBackfillOutcomeCallable;
         typedef std::future<StartMatchmakingOutcome> StartMatchmakingOutcomeCallable;
         typedef std::future<StopGameSessionPlacementOutcome> StopGameSessionPlacementOutcomeCallable;
         typedef std::future<StopMatchmakingOutcome> StopMatchmakingOutcomeCallable;
@@ -376,6 +380,7 @@ namespace Model
     typedef std::function<void(const GameLiftClient*, const Model::ResolveAliasRequest&, const Model::ResolveAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResolveAliasResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::SearchGameSessionsRequest&, const Model::SearchGameSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchGameSessionsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::StartGameSessionPlacementRequest&, const Model::StartGameSessionPlacementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartGameSessionPlacementResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::StartMatchBackfillRequest&, const Model::StartMatchBackfillOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMatchBackfillResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::StartMatchmakingRequest&, const Model::StartMatchmakingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMatchmakingResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::StopGameSessionPlacementRequest&, const Model::StopGameSessionPlacementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopGameSessionPlacementResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::StopMatchmakingRequest&, const Model::StopMatchmakingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopMatchmakingResponseReceivedHandler;
@@ -393,16 +398,16 @@ namespace Model
   /**
    * <fullname>Amazon GameLift Service</fullname> <p> Amazon GameLift is a managed
    * service for developers who need a scalable, dedicated server solution for their
-   * multiplayer games. Amazon GameLift provides tools for the following tasks: (1)
-   * acquire computing resources and deploy game servers, (2) scale game server
-   * capacity to meet player demand, (3) host game sessions and manage player access,
-   * and (4) track in-depth metrics on player usage and server performance.</p>
-   * <p>The Amazon GameLift service API includes two important function sets:</p>
-   * <ul> <li> <p> <b>Manage game sessions and player access</b> -- Retrieve
-   * information on available game sessions; create new game sessions; send player
-   * requests to join a game session.</p> </li> <li> <p> <b>Configure and manage game
-   * server resources</b> -- Manage builds, fleets, queues, and aliases; set
-   * autoscaling policies; retrieve logs and metrics.</p> </li> </ul> <p>This
+   * multiplayer games. Use Amazon GameLift for these tasks: (1) set up computing
+   * resources and deploy your game servers, (2) run game sessions and get players
+   * into games, (3) automatically scale your resources to meet player demand and
+   * manage costs, and (4) track in-depth metrics on game server performance and
+   * player usage.</p> <p>The Amazon GameLift service API includes two important
+   * function sets:</p> <ul> <li> <p> <b>Manage game sessions and player access</b>
+   * -- Retrieve information on available game sessions; create new game sessions;
+   * send player requests to join a game session.</p> </li> <li> <p> <b>Configure and
+   * manage game server resources</b> -- Manage builds, fleets, queues, and aliases;
+   * set autoscaling policies; retrieve logs and metrics.</p> </li> </ul> <p>This
    * reference guide describes the low-level service API for Amazon GameLift. You can
    * use the API functionality with these tools: </p> <ul> <li> <p>The Amazon Web
    * Services software development kit (<a
@@ -423,43 +428,44 @@ namespace Model
    * deploying it on the service. This tools supports a subset of key API actions,
    * which can be called from either the AWS CLI or programmatically. See <a
    * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/integration-testing-local.html">Testing
-   * an Integration</a>.</p> </li> </ul> <p> <b>MORE RESOURCES</b> </p> <ul> <li> <p>
-   * <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon
-   * GameLift Developer Guide</a> -- Learn more about Amazon GameLift features and
-   * how to use them. </p> </li> <li> <p> <a
-   * href="https://gamedev.amazon.com/forums/tutorials">Lumberyard and Amazon
-   * GameLift Tutorials</a> -- Get started fast with walkthroughs and sample
-   * projects.</p> </li> <li> <p> <a
+   * an Integration</a>.</p> </li> </ul> <p> <b>Learn more</b> </p> <ul> <li> <p> <a
+   * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/"> Developer
+   * Guide</a> -- Read about Amazon GameLift features and how to use them. </p> </li>
+   * <li> <p> <a href="https://gamedev.amazon.com/forums/tutorials">Tutorials</a> --
+   * Get started fast with walkthroughs and sample projects.</p> </li> <li> <p> <a
    * href="http://aws.amazon.com/blogs/gamedev/">GameDev Blog</a> -- Stay up to date
    * with new features and techniques.</p> </li> <li> <p> <a
    * href="https://gamedev.amazon.com/forums/spaces/123/gamelift-discussion.html">GameDev
    * Forums</a> -- Connect with the GameDev community.</p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html">Amazon
-   * GameLift Document History</a> -- See changes to the Amazon GameLift service,
-   * SDKs, and documentation, as well as links to release notes. </p> </li> </ul> <p>
-   * <b>API SUMMARY</b> </p> <p>This list offers a functional overview of the Amazon
-   * GameLift service API.</p> <p> <b>Managing Games and Players</b> </p> <p>Use
-   * these actions to start new game sessions, find existing game sessions, track
-   * game session status and other information, and enable player access to game
-   * sessions.</p> <ul> <li> <p> <b>Discover existing game sessions</b> </p> <ul>
-   * <li> <p> <a>SearchGameSessions</a> -- Retrieve all available game sessions or
-   * search for game sessions that match a set of criteria. </p> </li> </ul> </li>
-   * <li> <p> <b>Start new game sessions</b> </p> <ul> <li> <p>Start new games with
-   * Queues to find the best available hosting resources across multiple regions,
-   * minimize player latency, and balance game session activity for efficiency and
-   * cost effectiveness. </p> <ul> <li> <p> <a>StartGameSessionPlacement</a> --
-   * Request a new game session placement and add one or more players to it.</p>
-   * </li> <li> <p> <a>DescribeGameSessionPlacement</a> -- Get details on a placement
-   * request, including status.</p> </li> <li> <p> <a>StopGameSessionPlacement</a> --
-   * Cancel a placement request. </p> </li> </ul> </li> <li> <p>
-   * <a>CreateGameSession</a> -- Start a new game session on a specific fleet.
-   * <i>Available in Amazon GameLift Local.</i> </p> </li> </ul> </li> <li> <p>
-   * <b>Start new game sessions with FlexMatch matchmaking</b> </p> <ul> <li> <p>
-   * <a>StartMatchmaking</a> -- Request matchmaking for one players or a group who
-   * want to play together. </p> </li> <li> <p> <a>DescribeMatchmaking</a> -- Get
-   * details on a matchmaking request, including status.</p> </li> <li> <p>
-   * <a>AcceptMatch</a> -- Register that a player accepts a proposed match, for
-   * matches that require player acceptance. </p> </li> <li> <p>
+   * href="http://aws.amazon.com/releasenotes/Amazon-GameLift/">Release notes</a> and
+   * <a
+   * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html">document
+   * history</a> -- Stay current with updates to the Amazon GameLift service, SDKs,
+   * and documentation. </p> </li> </ul> <p> <b>API SUMMARY</b> </p> <p>This list
+   * offers a functional overview of the Amazon GameLift service API.</p> <p>
+   * <b>Managing Games and Players</b> </p> <p>Use these actions to start new game
+   * sessions, find existing game sessions, track game session status and other
+   * information, and enable player access to game sessions.</p> <ul> <li> <p>
+   * <b>Discover existing game sessions</b> </p> <ul> <li> <p>
+   * <a>SearchGameSessions</a> -- Retrieve all available game sessions or search for
+   * game sessions that match a set of criteria. </p> </li> </ul> </li> <li> <p>
+   * <b>Start new game sessions</b> </p> <ul> <li> <p>Start new games with Queues to
+   * find the best available hosting resources across multiple regions, minimize
+   * player latency, and balance game session activity for efficiency and cost
+   * effectiveness. </p> <ul> <li> <p> <a>StartGameSessionPlacement</a> -- Request a
+   * new game session placement and add one or more players to it.</p> </li> <li> <p>
+   * <a>DescribeGameSessionPlacement</a> -- Get details on a placement request,
+   * including status.</p> </li> <li> <p> <a>StopGameSessionPlacement</a> -- Cancel a
+   * placement request. </p> </li> </ul> </li> <li> <p> <a>CreateGameSession</a> --
+   * Start a new game session on a specific fleet. <i>Available in Amazon GameLift
+   * Local.</i> </p> </li> </ul> </li> <li> <p> <b>Start new game sessions with
+   * FlexMatch matchmaking</b> </p> <ul> <li> <p> <a>StartMatchmaking</a> -- Request
+   * matchmaking for one players or a group who want to play together. </p> </li>
+   * <li> <p> <a>DescribeMatchmaking</a> -- Get details on a matchmaking request,
+   * including status.</p> </li> <li> <p> <a>AcceptMatch</a> -- Register that a
+   * player accepts a proposed match, for matches that require player acceptance.
+   * </p> </li> <li> <p> <a>StartMatchBackfill</a> - Request additional player
+   * matches to fill empty slots in an existing game session. </p> </li> <li> <p>
    * <a>StopMatchmaking</a> -- Cancel a matchmaking request. </p> </li> </ul> </li>
    * <li> <p> <b>Manage game session data</b> </p> <ul> <li> <p>
    * <a>DescribeGameSessions</a> -- Retrieve metadata for one or more game sessions,
@@ -485,10 +491,9 @@ namespace Model
    * scale capacity to meet player demand, access performance and utilization
    * metrics, and more.</p> <ul> <li> <p> <b>Manage game builds</b> </p> <ul> <li>
    * <p> <a>CreateBuild</a> -- Create a new build using files stored in an Amazon S3
-   * bucket. (Update uploading permissions with <a>RequestUploadCredentials</a>.) To
-   * create a build and upload files from a local path, use the AWS CLI command
-   * <code>upload-build</code>.</p> </li> <li> <p> <a>ListBuilds</a> -- Get a list of
-   * all builds uploaded to a Amazon GameLift region.</p> </li> <li> <p>
+   * bucket. To create a build and upload files from a local path, use the AWS CLI
+   * command <code>upload-build</code>.</p> </li> <li> <p> <a>ListBuilds</a> -- Get a
+   * list of all builds uploaded to a Amazon GameLift region.</p> </li> <li> <p>
    * <a>DescribeBuild</a> -- Retrieve information associated with a build.</p> </li>
    * <li> <p> <a>UpdateBuild</a> -- Change build metadata, including build name and
    * version.</p> </li> <li> <p> <a>DeleteBuild</a> -- Remove a build from Amazon
@@ -765,56 +770,86 @@ namespace Model
         virtual void CreateAliasAsync(const Model::CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new Amazon GameLift build from a set of game server binary files
-         * stored in an Amazon Simple Storage Service (Amazon S3) location. To use this API
-         * call, create a <code>.zip</code> file containing all of the files for the build
-         * and store it in an Amazon S3 bucket under your AWS account. For help on
-         * packaging your build files and creating a build, see <a
+         * <p>Creates a new Amazon GameLift build record for your game server binary files
+         * and points to the location of your game server build files in an Amazon Simple
+         * Storage Service (Amazon S3) location. </p> <p>Game server binaries must be
+         * combined into a <code>.zip</code> file for use with Amazon GameLift. See <a
          * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
-         * Your Game to Amazon GameLift</a>.</p> <important> <p>Use this API action ONLY if
-         * you are storing your game build files in an Amazon S3 bucket. To create a build
-         * using files stored locally, use the CLI command <a
-         * href="http://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">
-         * <code>upload-build</code> </a>, which uploads the build files from a file
-         * location you specify.</p> </important> <p>To create a new build using
-         * <code>CreateBuild</code>, identify the storage location and operating system of
-         * your game build. You also have the option of specifying a build name and
-         * version. If successful, this action creates a new build record with an unique
-         * build ID and in <code>INITIALIZED</code> status. Use the API call
+         * Your Game</a> for more information. </p> <important> <p>To create new builds
+         * quickly and easily, use the AWS CLI command <b> <a
+         * href="http://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
+         * </b>. This helper command uploads your build and creates a new build record in
+         * one step, and automatically handles the necessary permissions. See <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html">
+         * Upload Build Files to Amazon GameLift</a> for more help.</p> </important> <p>The
+         * <code>CreateBuild</code> operation should be used only when you need to manually
+         * upload your build files, as in the following scenarios:</p> <ul> <li> <p>Store a
+         * build file in an Amazon S3 bucket under your own AWS account. To use this
+         * option, you must first give Amazon GameLift access to that Amazon S3 bucket. See
+         * <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">
+         * Create a Build with Files in Amazon S3</a> for detailed help. To create a new
+         * build record using files in your Amazon S3 bucket, call <code>CreateBuild</code>
+         * and specify a build name, operating system, and the storage location of your
+         * game build.</p> </li> <li> <p>Upload a build file directly to Amazon GameLift's
+         * Amazon S3 account. To use this option, you first call <code>CreateBuild</code>
+         * with a build name and operating system. This action creates a new build record
+         * and returns an Amazon S3 storage location (bucket and key only) and temporary
+         * access credentials. Use the credentials to manually upload your build file to
+         * the storage location (see the Amazon S3 topic <a
+         * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
+         * Objects</a>). You can upload files to a location only once. </p> </li> </ul>
+         * <p>If successful, this operation creates a new build record with a unique build
+         * ID and places it in <code>INITIALIZED</code> status. You can use
          * <a>DescribeBuild</a> to check the status of your build. A build must be in
-         * <code>READY</code> status before it can be used to create fleets to host your
-         * game.</p> <p>Build-related operations include:</p> <ul> <li> <p>
-         * <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p>
-         * <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p>
-         * <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <code>READY</code> status before it can be used to create fleets.</p>
+         * <p>Build-related operations include:</p> <ul> <li> <p> <a>CreateBuild</a> </p>
+         * </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p>
+         * </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateBuild">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateBuildOutcome CreateBuild(const Model::CreateBuildRequest& request) const;
 
         /**
-         * <p>Creates a new Amazon GameLift build from a set of game server binary files
-         * stored in an Amazon Simple Storage Service (Amazon S3) location. To use this API
-         * call, create a <code>.zip</code> file containing all of the files for the build
-         * and store it in an Amazon S3 bucket under your AWS account. For help on
-         * packaging your build files and creating a build, see <a
+         * <p>Creates a new Amazon GameLift build record for your game server binary files
+         * and points to the location of your game server build files in an Amazon Simple
+         * Storage Service (Amazon S3) location. </p> <p>Game server binaries must be
+         * combined into a <code>.zip</code> file for use with Amazon GameLift. See <a
          * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
-         * Your Game to Amazon GameLift</a>.</p> <important> <p>Use this API action ONLY if
-         * you are storing your game build files in an Amazon S3 bucket. To create a build
-         * using files stored locally, use the CLI command <a
-         * href="http://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">
-         * <code>upload-build</code> </a>, which uploads the build files from a file
-         * location you specify.</p> </important> <p>To create a new build using
-         * <code>CreateBuild</code>, identify the storage location and operating system of
-         * your game build. You also have the option of specifying a build name and
-         * version. If successful, this action creates a new build record with an unique
-         * build ID and in <code>INITIALIZED</code> status. Use the API call
+         * Your Game</a> for more information. </p> <important> <p>To create new builds
+         * quickly and easily, use the AWS CLI command <b> <a
+         * href="http://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
+         * </b>. This helper command uploads your build and creates a new build record in
+         * one step, and automatically handles the necessary permissions. See <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html">
+         * Upload Build Files to Amazon GameLift</a> for more help.</p> </important> <p>The
+         * <code>CreateBuild</code> operation should be used only when you need to manually
+         * upload your build files, as in the following scenarios:</p> <ul> <li> <p>Store a
+         * build file in an Amazon S3 bucket under your own AWS account. To use this
+         * option, you must first give Amazon GameLift access to that Amazon S3 bucket. See
+         * <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">
+         * Create a Build with Files in Amazon S3</a> for detailed help. To create a new
+         * build record using files in your Amazon S3 bucket, call <code>CreateBuild</code>
+         * and specify a build name, operating system, and the storage location of your
+         * game build.</p> </li> <li> <p>Upload a build file directly to Amazon GameLift's
+         * Amazon S3 account. To use this option, you first call <code>CreateBuild</code>
+         * with a build name and operating system. This action creates a new build record
+         * and returns an Amazon S3 storage location (bucket and key only) and temporary
+         * access credentials. Use the credentials to manually upload your build file to
+         * the storage location (see the Amazon S3 topic <a
+         * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
+         * Objects</a>). You can upload files to a location only once. </p> </li> </ul>
+         * <p>If successful, this operation creates a new build record with a unique build
+         * ID and places it in <code>INITIALIZED</code> status. You can use
          * <a>DescribeBuild</a> to check the status of your build. A build must be in
-         * <code>READY</code> status before it can be used to create fleets to host your
-         * game.</p> <p>Build-related operations include:</p> <ul> <li> <p>
-         * <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p>
-         * <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p>
-         * <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <code>READY</code> status before it can be used to create fleets.</p>
+         * <p>Build-related operations include:</p> <ul> <li> <p> <a>CreateBuild</a> </p>
+         * </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p>
+         * </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateBuild">AWS
          * API Reference</a></p>
          *
@@ -823,28 +858,43 @@ namespace Model
         virtual Model::CreateBuildOutcomeCallable CreateBuildCallable(const Model::CreateBuildRequest& request) const;
 
         /**
-         * <p>Creates a new Amazon GameLift build from a set of game server binary files
-         * stored in an Amazon Simple Storage Service (Amazon S3) location. To use this API
-         * call, create a <code>.zip</code> file containing all of the files for the build
-         * and store it in an Amazon S3 bucket under your AWS account. For help on
-         * packaging your build files and creating a build, see <a
+         * <p>Creates a new Amazon GameLift build record for your game server binary files
+         * and points to the location of your game server build files in an Amazon Simple
+         * Storage Service (Amazon S3) location. </p> <p>Game server binaries must be
+         * combined into a <code>.zip</code> file for use with Amazon GameLift. See <a
          * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
-         * Your Game to Amazon GameLift</a>.</p> <important> <p>Use this API action ONLY if
-         * you are storing your game build files in an Amazon S3 bucket. To create a build
-         * using files stored locally, use the CLI command <a
-         * href="http://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">
-         * <code>upload-build</code> </a>, which uploads the build files from a file
-         * location you specify.</p> </important> <p>To create a new build using
-         * <code>CreateBuild</code>, identify the storage location and operating system of
-         * your game build. You also have the option of specifying a build name and
-         * version. If successful, this action creates a new build record with an unique
-         * build ID and in <code>INITIALIZED</code> status. Use the API call
+         * Your Game</a> for more information. </p> <important> <p>To create new builds
+         * quickly and easily, use the AWS CLI command <b> <a
+         * href="http://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
+         * </b>. This helper command uploads your build and creates a new build record in
+         * one step, and automatically handles the necessary permissions. See <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html">
+         * Upload Build Files to Amazon GameLift</a> for more help.</p> </important> <p>The
+         * <code>CreateBuild</code> operation should be used only when you need to manually
+         * upload your build files, as in the following scenarios:</p> <ul> <li> <p>Store a
+         * build file in an Amazon S3 bucket under your own AWS account. To use this
+         * option, you must first give Amazon GameLift access to that Amazon S3 bucket. See
+         * <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">
+         * Create a Build with Files in Amazon S3</a> for detailed help. To create a new
+         * build record using files in your Amazon S3 bucket, call <code>CreateBuild</code>
+         * and specify a build name, operating system, and the storage location of your
+         * game build.</p> </li> <li> <p>Upload a build file directly to Amazon GameLift's
+         * Amazon S3 account. To use this option, you first call <code>CreateBuild</code>
+         * with a build name and operating system. This action creates a new build record
+         * and returns an Amazon S3 storage location (bucket and key only) and temporary
+         * access credentials. Use the credentials to manually upload your build file to
+         * the storage location (see the Amazon S3 topic <a
+         * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
+         * Objects</a>). You can upload files to a location only once. </p> </li> </ul>
+         * <p>If successful, this operation creates a new build record with a unique build
+         * ID and places it in <code>INITIALIZED</code> status. You can use
          * <a>DescribeBuild</a> to check the status of your build. A build must be in
-         * <code>READY</code> status before it can be used to create fleets to host your
-         * game.</p> <p>Build-related operations include:</p> <ul> <li> <p>
-         * <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p>
-         * <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p>
-         * <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <code>READY</code> status before it can be used to create fleets.</p>
+         * <p>Build-related operations include:</p> <ul> <li> <p> <a>CreateBuild</a> </p>
+         * </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p>
+         * </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateBuild">AWS
          * API Reference</a></p>
          *
@@ -2356,8 +2406,8 @@ namespace Model
         virtual void DescribeAliasAsync(const Model::DescribeAliasRequest& request, const DescribeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves properties for a build. To get a build record, specify a build ID.
-         * If successful, an object containing the build properties is returned.</p>
+         * <p>Retrieves properties for a build. To request a build record, specify a build
+         * ID. If successful, an object containing the build properties is returned.</p>
          * <p>Build-related operations include:</p> <ul> <li> <p> <a>CreateBuild</a> </p>
          * </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p>
          * </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p>
@@ -2368,8 +2418,8 @@ namespace Model
         virtual Model::DescribeBuildOutcome DescribeBuild(const Model::DescribeBuildRequest& request) const;
 
         /**
-         * <p>Retrieves properties for a build. To get a build record, specify a build ID.
-         * If successful, an object containing the build properties is returned.</p>
+         * <p>Retrieves properties for a build. To request a build record, specify a build
+         * ID. If successful, an object containing the build properties is returned.</p>
          * <p>Build-related operations include:</p> <ul> <li> <p> <a>CreateBuild</a> </p>
          * </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p>
          * </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p>
@@ -2382,8 +2432,8 @@ namespace Model
         virtual Model::DescribeBuildOutcomeCallable DescribeBuildCallable(const Model::DescribeBuildRequest& request) const;
 
         /**
-         * <p>Retrieves properties for a build. To get a build record, specify a build ID.
-         * If successful, an object containing the build properties is returned.</p>
+         * <p>Retrieves properties for a build. To request a build record, specify a build
+         * ID. If successful, an object containing the build properties is returned.</p>
          * <p>Build-related operations include:</p> <ul> <li> <p> <a>CreateBuild</a> </p>
          * </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p>
          * </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p>
@@ -3274,38 +3324,36 @@ namespace Model
         virtual void DescribeInstancesAsync(const Model::DescribeInstancesRequest& request, const DescribeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a set of one or more matchmaking tickets. Use this operation to
-         * retrieve ticket information, including status and--once a successful match is
+         * <p>Retrieves one or more matchmaking tickets. Use this operation to retrieve
+         * ticket information, including status and--once a successful match is
          * made--acquire connection information for the resulting new game session. </p>
          * <p>You can use this operation to track the progress of matchmaking requests
          * (through polling) as an alternative to using event notifications. See more
          * details on tracking matchmaking requests through polling or notifications in
-         * <a>StartMatchmaking</a>. </p> <p>You can request data for a one or a list of
-         * ticket IDs. If the request is successful, a ticket object is returned for each
-         * requested ID. When specifying a list of ticket IDs, objects are returned only
-         * for tickets that currently exist. </p> <p>Matchmaking-related operations
-         * include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li> <p>
-         * <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p> </li>
-         * <li> <p> <a>AcceptMatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>StartMatchmaking</a>. </p> <p>To request matchmaking tickets, provide a list
+         * of up to 10 ticket IDs. If the request is successful, a ticket object is
+         * returned for each requested ID that currently exists.</p> <p>Matchmaking-related
+         * operations include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li>
+         * <p> <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p>
+         * </li> <li> <p> <a>AcceptMatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmaking">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeMatchmakingOutcome DescribeMatchmaking(const Model::DescribeMatchmakingRequest& request) const;
 
         /**
-         * <p>Retrieves a set of one or more matchmaking tickets. Use this operation to
-         * retrieve ticket information, including status and--once a successful match is
+         * <p>Retrieves one or more matchmaking tickets. Use this operation to retrieve
+         * ticket information, including status and--once a successful match is
          * made--acquire connection information for the resulting new game session. </p>
          * <p>You can use this operation to track the progress of matchmaking requests
          * (through polling) as an alternative to using event notifications. See more
          * details on tracking matchmaking requests through polling or notifications in
-         * <a>StartMatchmaking</a>. </p> <p>You can request data for a one or a list of
-         * ticket IDs. If the request is successful, a ticket object is returned for each
-         * requested ID. When specifying a list of ticket IDs, objects are returned only
-         * for tickets that currently exist. </p> <p>Matchmaking-related operations
-         * include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li> <p>
-         * <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p> </li>
-         * <li> <p> <a>AcceptMatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>StartMatchmaking</a>. </p> <p>To request matchmaking tickets, provide a list
+         * of up to 10 ticket IDs. If the request is successful, a ticket object is
+         * returned for each requested ID that currently exists.</p> <p>Matchmaking-related
+         * operations include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li>
+         * <p> <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p>
+         * </li> <li> <p> <a>AcceptMatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmaking">AWS
          * API Reference</a></p>
          *
@@ -3314,19 +3362,18 @@ namespace Model
         virtual Model::DescribeMatchmakingOutcomeCallable DescribeMatchmakingCallable(const Model::DescribeMatchmakingRequest& request) const;
 
         /**
-         * <p>Retrieves a set of one or more matchmaking tickets. Use this operation to
-         * retrieve ticket information, including status and--once a successful match is
+         * <p>Retrieves one or more matchmaking tickets. Use this operation to retrieve
+         * ticket information, including status and--once a successful match is
          * made--acquire connection information for the resulting new game session. </p>
          * <p>You can use this operation to track the progress of matchmaking requests
          * (through polling) as an alternative to using event notifications. See more
          * details on tracking matchmaking requests through polling or notifications in
-         * <a>StartMatchmaking</a>. </p> <p>You can request data for a one or a list of
-         * ticket IDs. If the request is successful, a ticket object is returned for each
-         * requested ID. When specifying a list of ticket IDs, objects are returned only
-         * for tickets that currently exist. </p> <p>Matchmaking-related operations
-         * include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li> <p>
-         * <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p> </li>
-         * <li> <p> <a>AcceptMatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>StartMatchmaking</a>. </p> <p>To request matchmaking tickets, provide a list
+         * of up to 10 ticket IDs. If the request is successful, a ticket object is
+         * returned for each requested ID that currently exists.</p> <p>Matchmaking-related
+         * operations include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li>
+         * <p> <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p>
+         * </li> <li> <p> <a>AcceptMatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmaking">AWS
          * API Reference</a></p>
          *
@@ -4260,20 +4307,24 @@ namespace Model
         virtual void PutScalingPolicyAsync(const Model::PutScalingPolicyRequest& request, const PutScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> <i>This API call is not currently in use. </i> Retrieves a fresh set of
-         * upload credentials and the assigned Amazon S3 storage location for a specific
-         * build. Valid credentials are required to upload your game build files to Amazon
-         * S3.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a fresh set of credentials for use when uploading a new set of game
+         * build files to Amazon GameLift's Amazon S3. This is done as part of the build
+         * creation process; see <a>CreateBuild</a>.</p> <p>To request new credentials,
+         * specify the build ID as returned with an initial <code>CreateBuild</code>
+         * request. If successful, a new set of credentials are returned, along with the S3
+         * storage location associated with the build ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentials">AWS
          * API Reference</a></p>
          */
         virtual Model::RequestUploadCredentialsOutcome RequestUploadCredentials(const Model::RequestUploadCredentialsRequest& request) const;
 
         /**
-         * <p> <i>This API call is not currently in use. </i> Retrieves a fresh set of
-         * upload credentials and the assigned Amazon S3 storage location for a specific
-         * build. Valid credentials are required to upload your game build files to Amazon
-         * S3.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a fresh set of credentials for use when uploading a new set of game
+         * build files to Amazon GameLift's Amazon S3. This is done as part of the build
+         * creation process; see <a>CreateBuild</a>.</p> <p>To request new credentials,
+         * specify the build ID as returned with an initial <code>CreateBuild</code>
+         * request. If successful, a new set of credentials are returned, along with the S3
+         * storage location associated with the build ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentials">AWS
          * API Reference</a></p>
          *
@@ -4282,10 +4333,12 @@ namespace Model
         virtual Model::RequestUploadCredentialsOutcomeCallable RequestUploadCredentialsCallable(const Model::RequestUploadCredentialsRequest& request) const;
 
         /**
-         * <p> <i>This API call is not currently in use. </i> Retrieves a fresh set of
-         * upload credentials and the assigned Amazon S3 storage location for a specific
-         * build. Valid credentials are required to upload your game build files to Amazon
-         * S3.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a fresh set of credentials for use when uploading a new set of game
+         * build files to Amazon GameLift's Amazon S3. This is done as part of the build
+         * creation process; see <a>CreateBuild</a>.</p> <p>To request new credentials,
+         * specify the build ID as returned with an initial <code>CreateBuild</code>
+         * request. If successful, a new set of credentials are returned, along with the S3
+         * storage location associated with the build ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentials">AWS
          * API Reference</a></p>
          *
@@ -4331,46 +4384,52 @@ namespace Model
         virtual void ResolveAliasAsync(const Model::ResolveAliasRequest& request, const ResolveAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a set of game sessions that match a set of search criteria and
-         * sorts them in a specified order. A game session search is limited to a single
-         * fleet. Search results include only game sessions that are in <code>ACTIVE</code>
-         * status. If you need to retrieve game sessions with a status other than active,
-         * use <a>DescribeGameSessions</a>. If you need to retrieve the protection policy
-         * for each game session, use <a>DescribeGameSessionDetails</a>.</p> <p>You can
-         * search or sort by the following game session attributes:</p> <ul> <li> <p>
-         * <b>gameSessionId</b> -- Unique identifier for the game session. You can use
-         * either a <code>GameSessionId</code> or <code>GameSessionArn</code> value. </p>
-         * </li> <li> <p> <b>gameSessionName</b> -- Name assigned to a game session. This
-         * value is set when requesting a new game session with <a>CreateGameSession</a> or
-         * updating with <a>UpdateGameSession</a>. Game session names do not need to be
-         * unique to a game session.</p> </li> <li> <p> <b>creationTimeMillis</b> -- Value
+         * <p>Retrieves all active game sessions that match a set of search criteria and
+         * sorts them in a specified order. You can search or sort by the following game
+         * session attributes:</p> <ul> <li> <p> <b>gameSessionId</b> -- Unique identifier
+         * for the game session. You can use either a <code>GameSessionId</code> or
+         * <code>GameSessionArn</code> value. </p> </li> <li> <p> <b>gameSessionName</b> --
+         * Name assigned to a game session. This value is set when requesting a new game
+         * session with <a>CreateGameSession</a> or updating with <a>UpdateGameSession</a>.
+         * Game session names do not need to be unique to a game session.</p> </li> <li>
+         * <p> <b>gameSessionProperties</b> -- Custom data defined in a game session's
+         * <code>GameProperty</code> parameter. <code>GameProperty</code> values are stored
+         * as key:value pairs; the filter expression must indicate the key and a string to
+         * search the data values for. For example, to search for game sessions with custom
+         * data containing the key:value pair "gameMode:brawl", specify the following:
+         * gameSessionProperties.gameMode = "brawl". All custom data values are searched as
+         * strings.</p> </li> <li> <p> <b>maximumSessions</b> -- Maximum number of player
+         * sessions allowed for a game session. This value is set when requesting a new
+         * game session with <a>CreateGameSession</a> or updating with
+         * <a>UpdateGameSession</a>.</p> </li> <li> <p> <b>creationTimeMillis</b> -- Value
          * indicating when a game session was created. It is expressed in Unix time as
          * milliseconds.</p> </li> <li> <p> <b>playerSessionCount</b> -- Number of players
          * currently connected to a game session. This value changes rapidly as players
-         * join the session or drop out.</p> </li> <li> <p> <b>maximumSessions</b> --
-         * Maximum number of player sessions allowed for a game session. This value is set
-         * when requesting a new game session with <a>CreateGameSession</a> or updating
-         * with <a>UpdateGameSession</a>.</p> </li> <li> <p>
+         * join the session or drop out.</p> </li> <li> <p>
          * <b>hasAvailablePlayerSessions</b> -- Boolean value indicating whether a game
-         * session has reached its maximum number of players. When searching with this
-         * attribute, the search value must be <code>true</code> or <code>false</code>. It
-         * is highly recommended that all search requests include this filter attribute to
-         * optimize search performance and return only sessions that players can join. </p>
-         * </li> </ul> <p>To search or sort, specify either a fleet ID or an alias ID, and
-         * provide a search filter expression, a sort expression, or both. Use the
-         * pagination parameters to retrieve results as a set of sequential pages. If
-         * successful, a collection of <a>GameSession</a> objects matching the request is
-         * returned.</p> <note> <p>Returned values for <code>playerSessionCount</code> and
+         * session has reached its maximum number of players. It is highly recommended that
+         * all search requests include this filter attribute to optimize search performance
+         * and return only sessions that players can join. </p> </li> </ul> <note>
+         * <p>Returned values for <code>playerSessionCount</code> and
          * <code>hasAvailablePlayerSessions</code> change quickly as players join sessions
          * and others drop out. Results should be considered a snapshot in time. Be sure to
          * refresh search results often, and handle sessions that fill up before a player
-         * can join. </p> </note> <p>Game-session-related operations include:</p> <ul> <li>
-         * <p> <a>CreateGameSession</a> </p> </li> <li> <p> <a>DescribeGameSessions</a>
-         * </p> </li> <li> <p> <a>DescribeGameSessionDetails</a> </p> </li> <li> <p>
-         * <a>SearchGameSessions</a> </p> </li> <li> <p> <a>UpdateGameSession</a> </p>
-         * </li> <li> <p> <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session
-         * placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li>
-         * <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
+         * can join. </p> </note> <p>To search or sort, specify either a fleet ID or an
+         * alias ID, and provide a search filter expression, a sort expression, or both. If
+         * successful, a collection of <a>GameSession</a> objects matching the request is
+         * returned. Use the pagination parameters to retrieve results as a set of
+         * sequential pages. </p> <p>You can search for game sessions one fleet at a time
+         * only. To find game sessions across multiple fleets, you must search each fleet
+         * separately and combine the results. This search feature finds only game sessions
+         * that are in <code>ACTIVE</code> status. To locate games in statuses other than
+         * active, use <a>DescribeGameSessionDetails</a>.</p> <p>Game-session-related
+         * operations include:</p> <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li>
+         * <p> <a>DescribeGameSessions</a> </p> </li> <li> <p>
+         * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
+         * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
+         * <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul>
+         * <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
+         * <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
          * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessions">AWS
@@ -4379,46 +4438,52 @@ namespace Model
         virtual Model::SearchGameSessionsOutcome SearchGameSessions(const Model::SearchGameSessionsRequest& request) const;
 
         /**
-         * <p>Retrieves a set of game sessions that match a set of search criteria and
-         * sorts them in a specified order. A game session search is limited to a single
-         * fleet. Search results include only game sessions that are in <code>ACTIVE</code>
-         * status. If you need to retrieve game sessions with a status other than active,
-         * use <a>DescribeGameSessions</a>. If you need to retrieve the protection policy
-         * for each game session, use <a>DescribeGameSessionDetails</a>.</p> <p>You can
-         * search or sort by the following game session attributes:</p> <ul> <li> <p>
-         * <b>gameSessionId</b> -- Unique identifier for the game session. You can use
-         * either a <code>GameSessionId</code> or <code>GameSessionArn</code> value. </p>
-         * </li> <li> <p> <b>gameSessionName</b> -- Name assigned to a game session. This
-         * value is set when requesting a new game session with <a>CreateGameSession</a> or
-         * updating with <a>UpdateGameSession</a>. Game session names do not need to be
-         * unique to a game session.</p> </li> <li> <p> <b>creationTimeMillis</b> -- Value
+         * <p>Retrieves all active game sessions that match a set of search criteria and
+         * sorts them in a specified order. You can search or sort by the following game
+         * session attributes:</p> <ul> <li> <p> <b>gameSessionId</b> -- Unique identifier
+         * for the game session. You can use either a <code>GameSessionId</code> or
+         * <code>GameSessionArn</code> value. </p> </li> <li> <p> <b>gameSessionName</b> --
+         * Name assigned to a game session. This value is set when requesting a new game
+         * session with <a>CreateGameSession</a> or updating with <a>UpdateGameSession</a>.
+         * Game session names do not need to be unique to a game session.</p> </li> <li>
+         * <p> <b>gameSessionProperties</b> -- Custom data defined in a game session's
+         * <code>GameProperty</code> parameter. <code>GameProperty</code> values are stored
+         * as key:value pairs; the filter expression must indicate the key and a string to
+         * search the data values for. For example, to search for game sessions with custom
+         * data containing the key:value pair "gameMode:brawl", specify the following:
+         * gameSessionProperties.gameMode = "brawl". All custom data values are searched as
+         * strings.</p> </li> <li> <p> <b>maximumSessions</b> -- Maximum number of player
+         * sessions allowed for a game session. This value is set when requesting a new
+         * game session with <a>CreateGameSession</a> or updating with
+         * <a>UpdateGameSession</a>.</p> </li> <li> <p> <b>creationTimeMillis</b> -- Value
          * indicating when a game session was created. It is expressed in Unix time as
          * milliseconds.</p> </li> <li> <p> <b>playerSessionCount</b> -- Number of players
          * currently connected to a game session. This value changes rapidly as players
-         * join the session or drop out.</p> </li> <li> <p> <b>maximumSessions</b> --
-         * Maximum number of player sessions allowed for a game session. This value is set
-         * when requesting a new game session with <a>CreateGameSession</a> or updating
-         * with <a>UpdateGameSession</a>.</p> </li> <li> <p>
+         * join the session or drop out.</p> </li> <li> <p>
          * <b>hasAvailablePlayerSessions</b> -- Boolean value indicating whether a game
-         * session has reached its maximum number of players. When searching with this
-         * attribute, the search value must be <code>true</code> or <code>false</code>. It
-         * is highly recommended that all search requests include this filter attribute to
-         * optimize search performance and return only sessions that players can join. </p>
-         * </li> </ul> <p>To search or sort, specify either a fleet ID or an alias ID, and
-         * provide a search filter expression, a sort expression, or both. Use the
-         * pagination parameters to retrieve results as a set of sequential pages. If
-         * successful, a collection of <a>GameSession</a> objects matching the request is
-         * returned.</p> <note> <p>Returned values for <code>playerSessionCount</code> and
+         * session has reached its maximum number of players. It is highly recommended that
+         * all search requests include this filter attribute to optimize search performance
+         * and return only sessions that players can join. </p> </li> </ul> <note>
+         * <p>Returned values for <code>playerSessionCount</code> and
          * <code>hasAvailablePlayerSessions</code> change quickly as players join sessions
          * and others drop out. Results should be considered a snapshot in time. Be sure to
          * refresh search results often, and handle sessions that fill up before a player
-         * can join. </p> </note> <p>Game-session-related operations include:</p> <ul> <li>
-         * <p> <a>CreateGameSession</a> </p> </li> <li> <p> <a>DescribeGameSessions</a>
-         * </p> </li> <li> <p> <a>DescribeGameSessionDetails</a> </p> </li> <li> <p>
-         * <a>SearchGameSessions</a> </p> </li> <li> <p> <a>UpdateGameSession</a> </p>
-         * </li> <li> <p> <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session
-         * placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li>
-         * <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
+         * can join. </p> </note> <p>To search or sort, specify either a fleet ID or an
+         * alias ID, and provide a search filter expression, a sort expression, or both. If
+         * successful, a collection of <a>GameSession</a> objects matching the request is
+         * returned. Use the pagination parameters to retrieve results as a set of
+         * sequential pages. </p> <p>You can search for game sessions one fleet at a time
+         * only. To find game sessions across multiple fleets, you must search each fleet
+         * separately and combine the results. This search feature finds only game sessions
+         * that are in <code>ACTIVE</code> status. To locate games in statuses other than
+         * active, use <a>DescribeGameSessionDetails</a>.</p> <p>Game-session-related
+         * operations include:</p> <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li>
+         * <p> <a>DescribeGameSessions</a> </p> </li> <li> <p>
+         * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
+         * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
+         * <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul>
+         * <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
+         * <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
          * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessions">AWS
@@ -4429,46 +4494,52 @@ namespace Model
         virtual Model::SearchGameSessionsOutcomeCallable SearchGameSessionsCallable(const Model::SearchGameSessionsRequest& request) const;
 
         /**
-         * <p>Retrieves a set of game sessions that match a set of search criteria and
-         * sorts them in a specified order. A game session search is limited to a single
-         * fleet. Search results include only game sessions that are in <code>ACTIVE</code>
-         * status. If you need to retrieve game sessions with a status other than active,
-         * use <a>DescribeGameSessions</a>. If you need to retrieve the protection policy
-         * for each game session, use <a>DescribeGameSessionDetails</a>.</p> <p>You can
-         * search or sort by the following game session attributes:</p> <ul> <li> <p>
-         * <b>gameSessionId</b> -- Unique identifier for the game session. You can use
-         * either a <code>GameSessionId</code> or <code>GameSessionArn</code> value. </p>
-         * </li> <li> <p> <b>gameSessionName</b> -- Name assigned to a game session. This
-         * value is set when requesting a new game session with <a>CreateGameSession</a> or
-         * updating with <a>UpdateGameSession</a>. Game session names do not need to be
-         * unique to a game session.</p> </li> <li> <p> <b>creationTimeMillis</b> -- Value
+         * <p>Retrieves all active game sessions that match a set of search criteria and
+         * sorts them in a specified order. You can search or sort by the following game
+         * session attributes:</p> <ul> <li> <p> <b>gameSessionId</b> -- Unique identifier
+         * for the game session. You can use either a <code>GameSessionId</code> or
+         * <code>GameSessionArn</code> value. </p> </li> <li> <p> <b>gameSessionName</b> --
+         * Name assigned to a game session. This value is set when requesting a new game
+         * session with <a>CreateGameSession</a> or updating with <a>UpdateGameSession</a>.
+         * Game session names do not need to be unique to a game session.</p> </li> <li>
+         * <p> <b>gameSessionProperties</b> -- Custom data defined in a game session's
+         * <code>GameProperty</code> parameter. <code>GameProperty</code> values are stored
+         * as key:value pairs; the filter expression must indicate the key and a string to
+         * search the data values for. For example, to search for game sessions with custom
+         * data containing the key:value pair "gameMode:brawl", specify the following:
+         * gameSessionProperties.gameMode = "brawl". All custom data values are searched as
+         * strings.</p> </li> <li> <p> <b>maximumSessions</b> -- Maximum number of player
+         * sessions allowed for a game session. This value is set when requesting a new
+         * game session with <a>CreateGameSession</a> or updating with
+         * <a>UpdateGameSession</a>.</p> </li> <li> <p> <b>creationTimeMillis</b> -- Value
          * indicating when a game session was created. It is expressed in Unix time as
          * milliseconds.</p> </li> <li> <p> <b>playerSessionCount</b> -- Number of players
          * currently connected to a game session. This value changes rapidly as players
-         * join the session or drop out.</p> </li> <li> <p> <b>maximumSessions</b> --
-         * Maximum number of player sessions allowed for a game session. This value is set
-         * when requesting a new game session with <a>CreateGameSession</a> or updating
-         * with <a>UpdateGameSession</a>.</p> </li> <li> <p>
+         * join the session or drop out.</p> </li> <li> <p>
          * <b>hasAvailablePlayerSessions</b> -- Boolean value indicating whether a game
-         * session has reached its maximum number of players. When searching with this
-         * attribute, the search value must be <code>true</code> or <code>false</code>. It
-         * is highly recommended that all search requests include this filter attribute to
-         * optimize search performance and return only sessions that players can join. </p>
-         * </li> </ul> <p>To search or sort, specify either a fleet ID or an alias ID, and
-         * provide a search filter expression, a sort expression, or both. Use the
-         * pagination parameters to retrieve results as a set of sequential pages. If
-         * successful, a collection of <a>GameSession</a> objects matching the request is
-         * returned.</p> <note> <p>Returned values for <code>playerSessionCount</code> and
+         * session has reached its maximum number of players. It is highly recommended that
+         * all search requests include this filter attribute to optimize search performance
+         * and return only sessions that players can join. </p> </li> </ul> <note>
+         * <p>Returned values for <code>playerSessionCount</code> and
          * <code>hasAvailablePlayerSessions</code> change quickly as players join sessions
          * and others drop out. Results should be considered a snapshot in time. Be sure to
          * refresh search results often, and handle sessions that fill up before a player
-         * can join. </p> </note> <p>Game-session-related operations include:</p> <ul> <li>
-         * <p> <a>CreateGameSession</a> </p> </li> <li> <p> <a>DescribeGameSessions</a>
-         * </p> </li> <li> <p> <a>DescribeGameSessionDetails</a> </p> </li> <li> <p>
-         * <a>SearchGameSessions</a> </p> </li> <li> <p> <a>UpdateGameSession</a> </p>
-         * </li> <li> <p> <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session
-         * placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li>
-         * <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
+         * can join. </p> </note> <p>To search or sort, specify either a fleet ID or an
+         * alias ID, and provide a search filter expression, a sort expression, or both. If
+         * successful, a collection of <a>GameSession</a> objects matching the request is
+         * returned. Use the pagination parameters to retrieve results as a set of
+         * sequential pages. </p> <p>You can search for game sessions one fleet at a time
+         * only. To find game sessions across multiple fleets, you must search each fleet
+         * separately and combine the results. This search feature finds only game sessions
+         * that are in <code>ACTIVE</code> status. To locate games in statuses other than
+         * active, use <a>DescribeGameSessionDetails</a>.</p> <p>Game-session-related
+         * operations include:</p> <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li>
+         * <p> <a>DescribeGameSessions</a> </p> </li> <li> <p>
+         * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
+         * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
+         * <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul>
+         * <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
+         * <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
          * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessions">AWS
@@ -4610,6 +4681,109 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartGameSessionPlacementAsync(const Model::StartGameSessionPlacementRequest& request, const StartGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Finds new players to fill open slots in an existing game session. This
+         * operation can be used to add players to matched games that start with fewer than
+         * the maximum number of players or to replace players when they drop out. By
+         * backfilling with the same matchmaker used to create the original match, you
+         * ensure that new players meet the match criteria and maintain a consistent
+         * experience throughout the game session. You can backfill a match anytime after a
+         * game session has been created. </p> <p>To request a match backfill, specify a
+         * unique ticket ID, the existing game session's ARN, a matchmaking configuration,
+         * and a set of data that describes all current players in the game session. If
+         * successful, a match backfill ticket is created and returned with status set to
+         * QUEUED. The ticket is placed in the matchmaker's ticket pool and processed.
+         * Track the status of the ticket to respond as needed. For more detail how to set
+         * up backfilling, see <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-backfill.html">
+         * Set up Match Backfilling</a>. </p> <p>The process of finding backfill matches is
+         * essentially identical to the initial matchmaking process. The matchmaker
+         * searches the pool and groups tickets together to form potential matches,
+         * allowing only one backfill ticket per potential match. Once the a match is
+         * formed, the matchmaker creates player sessions for the new players. All tickets
+         * in the match are updated with the game session's connection information, and the
+         * <a>GameSession</a> object is updated to include matchmaker data on the new
+         * players. For more detail on how match backfill requests are processed, see <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
+         * How Amazon GameLift FlexMatch Works</a>. </p> <p>Matchmaking-related operations
+         * include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p> </li>
+         * <li> <p> <a>AcceptMatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchBackfill">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartMatchBackfillOutcome StartMatchBackfill(const Model::StartMatchBackfillRequest& request) const;
+
+        /**
+         * <p>Finds new players to fill open slots in an existing game session. This
+         * operation can be used to add players to matched games that start with fewer than
+         * the maximum number of players or to replace players when they drop out. By
+         * backfilling with the same matchmaker used to create the original match, you
+         * ensure that new players meet the match criteria and maintain a consistent
+         * experience throughout the game session. You can backfill a match anytime after a
+         * game session has been created. </p> <p>To request a match backfill, specify a
+         * unique ticket ID, the existing game session's ARN, a matchmaking configuration,
+         * and a set of data that describes all current players in the game session. If
+         * successful, a match backfill ticket is created and returned with status set to
+         * QUEUED. The ticket is placed in the matchmaker's ticket pool and processed.
+         * Track the status of the ticket to respond as needed. For more detail how to set
+         * up backfilling, see <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-backfill.html">
+         * Set up Match Backfilling</a>. </p> <p>The process of finding backfill matches is
+         * essentially identical to the initial matchmaking process. The matchmaker
+         * searches the pool and groups tickets together to form potential matches,
+         * allowing only one backfill ticket per potential match. Once the a match is
+         * formed, the matchmaker creates player sessions for the new players. All tickets
+         * in the match are updated with the game session's connection information, and the
+         * <a>GameSession</a> object is updated to include matchmaker data on the new
+         * players. For more detail on how match backfill requests are processed, see <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
+         * How Amazon GameLift FlexMatch Works</a>. </p> <p>Matchmaking-related operations
+         * include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p> </li>
+         * <li> <p> <a>AcceptMatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchBackfill">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartMatchBackfillOutcomeCallable StartMatchBackfillCallable(const Model::StartMatchBackfillRequest& request) const;
+
+        /**
+         * <p>Finds new players to fill open slots in an existing game session. This
+         * operation can be used to add players to matched games that start with fewer than
+         * the maximum number of players or to replace players when they drop out. By
+         * backfilling with the same matchmaker used to create the original match, you
+         * ensure that new players meet the match criteria and maintain a consistent
+         * experience throughout the game session. You can backfill a match anytime after a
+         * game session has been created. </p> <p>To request a match backfill, specify a
+         * unique ticket ID, the existing game session's ARN, a matchmaking configuration,
+         * and a set of data that describes all current players in the game session. If
+         * successful, a match backfill ticket is created and returned with status set to
+         * QUEUED. The ticket is placed in the matchmaker's ticket pool and processed.
+         * Track the status of the ticket to respond as needed. For more detail how to set
+         * up backfilling, see <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-backfill.html">
+         * Set up Match Backfilling</a>. </p> <p>The process of finding backfill matches is
+         * essentially identical to the initial matchmaking process. The matchmaker
+         * searches the pool and groups tickets together to form potential matches,
+         * allowing only one backfill ticket per potential match. Once the a match is
+         * formed, the matchmaker creates player sessions for the new players. All tickets
+         * in the match are updated with the game session's connection information, and the
+         * <a>GameSession</a> object is updated to include matchmaker data on the new
+         * players. For more detail on how match backfill requests are processed, see <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
+         * How Amazon GameLift FlexMatch Works</a>. </p> <p>Matchmaking-related operations
+         * include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p> </li>
+         * <li> <p> <a>AcceptMatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchBackfill">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartMatchBackfillAsync(const Model::StartMatchBackfillRequest& request, const StartMatchBackfillResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Uses FlexMatch to create a game match for a group of players based on custom
@@ -5658,6 +5832,7 @@ namespace Model
         void ResolveAliasAsyncHelper(const Model::ResolveAliasRequest& request, const ResolveAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchGameSessionsAsyncHelper(const Model::SearchGameSessionsRequest& request, const SearchGameSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartGameSessionPlacementAsyncHelper(const Model::StartGameSessionPlacementRequest& request, const StartGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartMatchBackfillAsyncHelper(const Model::StartMatchBackfillRequest& request, const StartMatchBackfillResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartMatchmakingAsyncHelper(const Model::StartMatchmakingRequest& request, const StartMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopGameSessionPlacementAsyncHelper(const Model::StopGameSessionPlacementRequest& request, const StopGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopMatchmakingAsyncHelper(const Model::StopMatchmakingRequest& request, const StopMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

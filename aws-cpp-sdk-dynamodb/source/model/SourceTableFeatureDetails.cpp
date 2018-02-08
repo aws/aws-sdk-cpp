@@ -32,7 +32,8 @@ SourceTableFeatureDetails::SourceTableFeatureDetails() :
     m_localSecondaryIndexesHasBeenSet(false),
     m_globalSecondaryIndexesHasBeenSet(false),
     m_streamDescriptionHasBeenSet(false),
-    m_timeToLiveDescriptionHasBeenSet(false)
+    m_timeToLiveDescriptionHasBeenSet(false),
+    m_sSEDescriptionHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ SourceTableFeatureDetails::SourceTableFeatureDetails(const JsonValue& jsonValue)
     m_localSecondaryIndexesHasBeenSet(false),
     m_globalSecondaryIndexesHasBeenSet(false),
     m_streamDescriptionHasBeenSet(false),
-    m_timeToLiveDescriptionHasBeenSet(false)
+    m_timeToLiveDescriptionHasBeenSet(false),
+    m_sSEDescriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -81,6 +83,13 @@ SourceTableFeatureDetails& SourceTableFeatureDetails::operator =(const JsonValue
     m_timeToLiveDescriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SSEDescription"))
+  {
+    m_sSEDescription = jsonValue.GetObject("SSEDescription");
+
+    m_sSEDescriptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -119,6 +128,12 @@ JsonValue SourceTableFeatureDetails::Jsonize() const
   if(m_timeToLiveDescriptionHasBeenSet)
   {
    payload.WithObject("TimeToLiveDescription", m_timeToLiveDescription.Jsonize());
+
+  }
+
+  if(m_sSEDescriptionHasBeenSet)
+  {
+   payload.WithObject("SSEDescription", m_sSEDescription.Jsonize());
 
   }
 

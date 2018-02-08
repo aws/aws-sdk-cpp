@@ -35,7 +35,7 @@ namespace Budgets
 namespace Model
 {
   /**
-   * Response of DescribeBudget<p><h3>See Also:</h3>   <a
+   * <p> Response of DescribeBudget </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetResponse">AWS
    * API Reference</a></p>
    */
@@ -47,19 +47,29 @@ namespace Model
     DescribeBudgetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The description of the budget.</p>
+     */
     inline const Budget& GetBudget() const{ return m_budget; }
 
-    
+    /**
+     * <p>The description of the budget.</p>
+     */
     inline void SetBudget(const Budget& value) { m_budget = value; }
 
-    
+    /**
+     * <p>The description of the budget.</p>
+     */
     inline void SetBudget(Budget&& value) { m_budget = std::move(value); }
 
-    
+    /**
+     * <p>The description of the budget.</p>
+     */
     inline DescribeBudgetResult& WithBudget(const Budget& value) { SetBudget(value); return *this;}
 
-    
+    /**
+     * <p>The description of the budget.</p>
+     */
     inline DescribeBudgetResult& WithBudget(Budget&& value) { SetBudget(std::move(value)); return *this;}
 
   private:

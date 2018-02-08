@@ -47,7 +47,8 @@ TableDescription::TableDescription() :
     m_streamSpecificationHasBeenSet(false),
     m_latestStreamLabelHasBeenSet(false),
     m_latestStreamArnHasBeenSet(false),
-    m_restoreSummaryHasBeenSet(false)
+    m_restoreSummaryHasBeenSet(false),
+    m_sSEDescriptionHasBeenSet(false)
 {
 }
 
@@ -70,7 +71,8 @@ TableDescription::TableDescription(const JsonValue& jsonValue) :
     m_streamSpecificationHasBeenSet(false),
     m_latestStreamLabelHasBeenSet(false),
     m_latestStreamArnHasBeenSet(false),
-    m_restoreSummaryHasBeenSet(false)
+    m_restoreSummaryHasBeenSet(false),
+    m_sSEDescriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -201,6 +203,13 @@ TableDescription& TableDescription::operator =(const JsonValue& jsonValue)
     m_restoreSummaryHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SSEDescription"))
+  {
+    m_sSEDescription = jsonValue.GetObject("SSEDescription");
+
+    m_sSEDescriptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -319,6 +328,12 @@ JsonValue TableDescription::Jsonize() const
   if(m_restoreSummaryHasBeenSet)
   {
    payload.WithObject("RestoreSummary", m_restoreSummary.Jsonize());
+
+  }
+
+  if(m_sSEDescriptionHasBeenSet)
+  {
+   payload.WithObject("SSEDescription", m_sSEDescription.Jsonize());
 
   }
 

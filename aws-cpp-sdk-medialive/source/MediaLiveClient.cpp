@@ -41,6 +41,7 @@
 #include <aws/medialive/model/ListInputsRequest.h>
 #include <aws/medialive/model/StartChannelRequest.h>
 #include <aws/medialive/model/StopChannelRequest.h>
+#include <aws/medialive/model/UpdateChannelRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -604,5 +605,41 @@ void MediaLiveClient::StopChannelAsync(const StopChannelRequest& request, const 
 void MediaLiveClient::StopChannelAsyncHelper(const StopChannelRequest& request, const StopChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StopChannel(request), context);
+}
+
+UpdateChannelOutcome MediaLiveClient::UpdateChannel(const UpdateChannelRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/prod/channels/";
+  ss << request.GetChannelId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateChannelOutcome(UpdateChannelResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateChannelOutcome(outcome.GetError());
+  }
+}
+
+UpdateChannelOutcomeCallable MediaLiveClient::UpdateChannelCallable(const UpdateChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaLiveClient::UpdateChannelAsync(const UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateChannelAsyncHelper( request, handler, context ); } );
+}
+
+void MediaLiveClient::UpdateChannelAsyncHelper(const UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateChannel(request), context);
 }
 

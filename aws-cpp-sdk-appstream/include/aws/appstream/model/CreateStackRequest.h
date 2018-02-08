@@ -189,6 +189,42 @@ namespace Model
      */
     inline CreateStackRequest& AddStorageConnectors(StorageConnector&& value) { m_storageConnectorsHasBeenSet = true; m_storageConnectors.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     */
+    inline const Aws::String& GetRedirectURL() const{ return m_redirectURL; }
+
+    /**
+     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     */
+    inline void SetRedirectURL(const Aws::String& value) { m_redirectURLHasBeenSet = true; m_redirectURL = value; }
+
+    /**
+     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     */
+    inline void SetRedirectURL(Aws::String&& value) { m_redirectURLHasBeenSet = true; m_redirectURL = std::move(value); }
+
+    /**
+     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     */
+    inline void SetRedirectURL(const char* value) { m_redirectURLHasBeenSet = true; m_redirectURL.assign(value); }
+
+    /**
+     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     */
+    inline CreateStackRequest& WithRedirectURL(const Aws::String& value) { SetRedirectURL(value); return *this;}
+
+    /**
+     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     */
+    inline CreateStackRequest& WithRedirectURL(Aws::String&& value) { SetRedirectURL(std::move(value)); return *this;}
+
+    /**
+     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     */
+    inline CreateStackRequest& WithRedirectURL(const char* value) { SetRedirectURL(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -202,6 +238,9 @@ namespace Model
 
     Aws::Vector<StorageConnector> m_storageConnectors;
     bool m_storageConnectorsHasBeenSet;
+
+    Aws::String m_redirectURL;
+    bool m_redirectURLHasBeenSet;
   };
 
 } // namespace Model

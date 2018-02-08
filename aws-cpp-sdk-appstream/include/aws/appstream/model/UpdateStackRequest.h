@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/appstream/model/StorageConnector.h>
+#include <aws/appstream/model/StackAttribute.h>
 #include <utility>
 
 namespace Aws
@@ -191,19 +192,75 @@ namespace Model
 
 
     /**
-     * <p>Deletes the storage connectors currently enabled for the stack.</p>
+     * <p>The URL the user is redirected to after the streaming session ends.</p>
      */
-    inline bool GetDeleteStorageConnectors() const{ return m_deleteStorageConnectors; }
+    inline const Aws::String& GetRedirectURL() const{ return m_redirectURL; }
 
     /**
-     * <p>Deletes the storage connectors currently enabled for the stack.</p>
+     * <p>The URL the user is redirected to after the streaming session ends.</p>
      */
-    inline void SetDeleteStorageConnectors(bool value) { m_deleteStorageConnectorsHasBeenSet = true; m_deleteStorageConnectors = value; }
+    inline void SetRedirectURL(const Aws::String& value) { m_redirectURLHasBeenSet = true; m_redirectURL = value; }
 
     /**
-     * <p>Deletes the storage connectors currently enabled for the stack.</p>
+     * <p>The URL the user is redirected to after the streaming session ends.</p>
      */
-    inline UpdateStackRequest& WithDeleteStorageConnectors(bool value) { SetDeleteStorageConnectors(value); return *this;}
+    inline void SetRedirectURL(Aws::String&& value) { m_redirectURLHasBeenSet = true; m_redirectURL = std::move(value); }
+
+    /**
+     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     */
+    inline void SetRedirectURL(const char* value) { m_redirectURLHasBeenSet = true; m_redirectURL.assign(value); }
+
+    /**
+     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     */
+    inline UpdateStackRequest& WithRedirectURL(const Aws::String& value) { SetRedirectURL(value); return *this;}
+
+    /**
+     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     */
+    inline UpdateStackRequest& WithRedirectURL(Aws::String&& value) { SetRedirectURL(std::move(value)); return *this;}
+
+    /**
+     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     */
+    inline UpdateStackRequest& WithRedirectURL(const char* value) { SetRedirectURL(value); return *this;}
+
+
+    /**
+     * <p>The stack attributes to delete.</p>
+     */
+    inline const Aws::Vector<StackAttribute>& GetAttributesToDelete() const{ return m_attributesToDelete; }
+
+    /**
+     * <p>The stack attributes to delete.</p>
+     */
+    inline void SetAttributesToDelete(const Aws::Vector<StackAttribute>& value) { m_attributesToDeleteHasBeenSet = true; m_attributesToDelete = value; }
+
+    /**
+     * <p>The stack attributes to delete.</p>
+     */
+    inline void SetAttributesToDelete(Aws::Vector<StackAttribute>&& value) { m_attributesToDeleteHasBeenSet = true; m_attributesToDelete = std::move(value); }
+
+    /**
+     * <p>The stack attributes to delete.</p>
+     */
+    inline UpdateStackRequest& WithAttributesToDelete(const Aws::Vector<StackAttribute>& value) { SetAttributesToDelete(value); return *this;}
+
+    /**
+     * <p>The stack attributes to delete.</p>
+     */
+    inline UpdateStackRequest& WithAttributesToDelete(Aws::Vector<StackAttribute>&& value) { SetAttributesToDelete(std::move(value)); return *this;}
+
+    /**
+     * <p>The stack attributes to delete.</p>
+     */
+    inline UpdateStackRequest& AddAttributesToDelete(const StackAttribute& value) { m_attributesToDeleteHasBeenSet = true; m_attributesToDelete.push_back(value); return *this; }
+
+    /**
+     * <p>The stack attributes to delete.</p>
+     */
+    inline UpdateStackRequest& AddAttributesToDelete(StackAttribute&& value) { m_attributesToDeleteHasBeenSet = true; m_attributesToDelete.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -219,8 +276,11 @@ namespace Model
     Aws::Vector<StorageConnector> m_storageConnectors;
     bool m_storageConnectorsHasBeenSet;
 
-    bool m_deleteStorageConnectors;
-    bool m_deleteStorageConnectorsHasBeenSet;
+    Aws::String m_redirectURL;
+    bool m_redirectURLHasBeenSet;
+
+    Aws::Vector<StackAttribute> m_attributesToDelete;
+    bool m_attributesToDeleteHasBeenSet;
   };
 
 } // namespace Model

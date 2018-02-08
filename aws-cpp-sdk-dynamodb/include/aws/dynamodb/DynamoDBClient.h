@@ -614,24 +614,22 @@ namespace Model
         /**
          * <p>Creates a backup for an existing table.</p> <p> Each time you create an
          * On-Demand Backup, the entire table data is backed up. There is no limit to the
-         * number of on-demand backups that can be taken. </p> <p>You can call
+         * number of on-demand backups that can be taken. </p> <p> When you create an
+         * On-Demand Backup, a time marker of the request is cataloged, and the backup is
+         * created asynchronously, by applying all changes until the time of the request to
+         * the last full table snapshot. Backup requests are processed instantaneously and
+         * become available for restore within minutes. </p> <p>You can call
          * <code>CreateBackup</code> at a maximum rate of 50 times per second.</p> <p>All
          * backups in DynamoDB work without consuming any provisioned throughput on the
-         * table. This results in a fast, low-cost, and scalable backup process. In
-         * general, the larger the table, the more time it takes to back up. The backup is
-         * stored in an S3 data store that is maintained and managed by DynamoDB.</p>
-         * <p>Backups incorporate all writes (delete, put, update) that were completed
-         * within the last minute before the backup request was initiated. Backups might
-         * include some writes (delete, put, update) that were completed before the backup
-         * request was finished.</p> <p> For example, if you submit the backup request on
-         * 2018-12-14 at 14:25:00, the backup is guaranteed to contain all data committed
-         * to the table up to 14:24:00, and data committed after 14:26:00 will not be. The
-         * backup may or may not contain data modifications made between 14:24:00 and
-         * 14:26:00. On-Demand Backup does not support causal consistency. </p> <p> Along
-         * with data, the following are also included on the backups: </p> <ul> <li>
-         * <p>Global secondary indexes (GSIs)</p> </li> <li> <p>Local secondary indexes
-         * (LSIs)</p> </li> <li> <p>Streams</p> </li> <li> <p>Provisioned read and write
-         * capacity</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * table.</p> <p> If you submit a backup request on 2018-12-14 at 14:25:00, the
+         * backup is guaranteed to contain all data committed to the table up to 14:24:00,
+         * and data committed after 14:26:00 will not be. The backup may or may not contain
+         * data modifications made between 14:24:00 and 14:26:00. On-Demand Backup does not
+         * support causal consistency. </p> <p> Along with data, the following are also
+         * included on the backups: </p> <ul> <li> <p>Global secondary indexes (GSIs)</p>
+         * </li> <li> <p>Local secondary indexes (LSIs)</p> </li> <li> <p>Streams</p> </li>
+         * <li> <p>Provisioned read and write capacity</p> </li> </ul><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateBackup">AWS
          * API Reference</a></p>
          */
@@ -640,24 +638,22 @@ namespace Model
         /**
          * <p>Creates a backup for an existing table.</p> <p> Each time you create an
          * On-Demand Backup, the entire table data is backed up. There is no limit to the
-         * number of on-demand backups that can be taken. </p> <p>You can call
+         * number of on-demand backups that can be taken. </p> <p> When you create an
+         * On-Demand Backup, a time marker of the request is cataloged, and the backup is
+         * created asynchronously, by applying all changes until the time of the request to
+         * the last full table snapshot. Backup requests are processed instantaneously and
+         * become available for restore within minutes. </p> <p>You can call
          * <code>CreateBackup</code> at a maximum rate of 50 times per second.</p> <p>All
          * backups in DynamoDB work without consuming any provisioned throughput on the
-         * table. This results in a fast, low-cost, and scalable backup process. In
-         * general, the larger the table, the more time it takes to back up. The backup is
-         * stored in an S3 data store that is maintained and managed by DynamoDB.</p>
-         * <p>Backups incorporate all writes (delete, put, update) that were completed
-         * within the last minute before the backup request was initiated. Backups might
-         * include some writes (delete, put, update) that were completed before the backup
-         * request was finished.</p> <p> For example, if you submit the backup request on
-         * 2018-12-14 at 14:25:00, the backup is guaranteed to contain all data committed
-         * to the table up to 14:24:00, and data committed after 14:26:00 will not be. The
-         * backup may or may not contain data modifications made between 14:24:00 and
-         * 14:26:00. On-Demand Backup does not support causal consistency. </p> <p> Along
-         * with data, the following are also included on the backups: </p> <ul> <li>
-         * <p>Global secondary indexes (GSIs)</p> </li> <li> <p>Local secondary indexes
-         * (LSIs)</p> </li> <li> <p>Streams</p> </li> <li> <p>Provisioned read and write
-         * capacity</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * table.</p> <p> If you submit a backup request on 2018-12-14 at 14:25:00, the
+         * backup is guaranteed to contain all data committed to the table up to 14:24:00,
+         * and data committed after 14:26:00 will not be. The backup may or may not contain
+         * data modifications made between 14:24:00 and 14:26:00. On-Demand Backup does not
+         * support causal consistency. </p> <p> Along with data, the following are also
+         * included on the backups: </p> <ul> <li> <p>Global secondary indexes (GSIs)</p>
+         * </li> <li> <p>Local secondary indexes (LSIs)</p> </li> <li> <p>Streams</p> </li>
+         * <li> <p>Provisioned read and write capacity</p> </li> </ul><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateBackup">AWS
          * API Reference</a></p>
          *
@@ -668,24 +664,22 @@ namespace Model
         /**
          * <p>Creates a backup for an existing table.</p> <p> Each time you create an
          * On-Demand Backup, the entire table data is backed up. There is no limit to the
-         * number of on-demand backups that can be taken. </p> <p>You can call
+         * number of on-demand backups that can be taken. </p> <p> When you create an
+         * On-Demand Backup, a time marker of the request is cataloged, and the backup is
+         * created asynchronously, by applying all changes until the time of the request to
+         * the last full table snapshot. Backup requests are processed instantaneously and
+         * become available for restore within minutes. </p> <p>You can call
          * <code>CreateBackup</code> at a maximum rate of 50 times per second.</p> <p>All
          * backups in DynamoDB work without consuming any provisioned throughput on the
-         * table. This results in a fast, low-cost, and scalable backup process. In
-         * general, the larger the table, the more time it takes to back up. The backup is
-         * stored in an S3 data store that is maintained and managed by DynamoDB.</p>
-         * <p>Backups incorporate all writes (delete, put, update) that were completed
-         * within the last minute before the backup request was initiated. Backups might
-         * include some writes (delete, put, update) that were completed before the backup
-         * request was finished.</p> <p> For example, if you submit the backup request on
-         * 2018-12-14 at 14:25:00, the backup is guaranteed to contain all data committed
-         * to the table up to 14:24:00, and data committed after 14:26:00 will not be. The
-         * backup may or may not contain data modifications made between 14:24:00 and
-         * 14:26:00. On-Demand Backup does not support causal consistency. </p> <p> Along
-         * with data, the following are also included on the backups: </p> <ul> <li>
-         * <p>Global secondary indexes (GSIs)</p> </li> <li> <p>Local secondary indexes
-         * (LSIs)</p> </li> <li> <p>Streams</p> </li> <li> <p>Provisioned read and write
-         * capacity</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * table.</p> <p> If you submit a backup request on 2018-12-14 at 14:25:00, the
+         * backup is guaranteed to contain all data committed to the table up to 14:24:00,
+         * and data committed after 14:26:00 will not be. The backup may or may not contain
+         * data modifications made between 14:24:00 and 14:26:00. On-Demand Backup does not
+         * support causal consistency. </p> <p> Along with data, the following are also
+         * included on the backups: </p> <ul> <li> <p>Global secondary indexes (GSIs)</p>
+         * </li> <li> <p>Local secondary indexes (LSIs)</p> </li> <li> <p>Streams</p> </li>
+         * <li> <p>Provisioned read and write capacity</p> </li> </ul><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateBackup">AWS
          * API Reference</a></p>
          *
@@ -1028,14 +1022,16 @@ namespace Model
         virtual void DescribeContinuousBackupsAsync(const Model::DescribeContinuousBackupsRequest& request, const DescribeContinuousBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about the global table.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about the specified global table.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTable">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeGlobalTableOutcome DescribeGlobalTable(const Model::DescribeGlobalTableRequest& request) const;
 
         /**
-         * <p>Returns information about the global table.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about the specified global table.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTable">AWS
          * API Reference</a></p>
          *
@@ -1044,7 +1040,8 @@ namespace Model
         virtual Model::DescribeGlobalTableOutcomeCallable DescribeGlobalTableCallable(const Model::DescribeGlobalTableRequest& request) const;
 
         /**
-         * <p>Returns information about the global table.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about the specified global table.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTable">AWS
          * API Reference</a></p>
          *
@@ -1367,16 +1364,16 @@ namespace Model
         virtual void ListBackupsAsync(const Model::ListBackupsRequest& request, const ListBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all the global tables. Only those global tables that have replicas in
-         * the region specified as input are returned.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all global tables that have a replica in the specified
+         * region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListGlobalTables">AWS
          * API Reference</a></p>
          */
         virtual Model::ListGlobalTablesOutcome ListGlobalTables(const Model::ListGlobalTablesRequest& request) const;
 
         /**
-         * <p>Lists all the global tables. Only those global tables that have replicas in
-         * the region specified as input are returned.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all global tables that have a replica in the specified
+         * region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListGlobalTables">AWS
          * API Reference</a></p>
          *
@@ -1385,8 +1382,8 @@ namespace Model
         virtual Model::ListGlobalTablesOutcomeCallable ListGlobalTablesCallable(const Model::ListGlobalTablesRequest& request) const;
 
         /**
-         * <p>Lists all the global tables. Only those global tables that have replicas in
-         * the region specified as input are returned.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all global tables that have a replica in the specified
+         * region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListGlobalTables">AWS
          * API Reference</a></p>
          *
@@ -1770,8 +1767,9 @@ namespace Model
          * <code>RestoreTableFromBackup</code> at a maximum rate of 10 times per
          * second.</p> <p>You must manually set up the following on the restored table:</p>
          * <ul> <li> <p>Auto scaling policies</p> </li> <li> <p>IAM policies</p> </li> <li>
-         * <p>Cloudwatch metrics and alarms</p> </li> <li> <p>Tags</p> </li> <li> <p>Time
-         * to Live (TTL) settings</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Cloudwatch metrics and alarms</p> </li> <li> <p>Tags</p> </li> <li> <p>Stream
+         * settings</p> </li> <li> <p>Time to Live (TTL) settings</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableFromBackup">AWS
          * API Reference</a></p>
          */
@@ -1783,8 +1781,9 @@ namespace Model
          * <code>RestoreTableFromBackup</code> at a maximum rate of 10 times per
          * second.</p> <p>You must manually set up the following on the restored table:</p>
          * <ul> <li> <p>Auto scaling policies</p> </li> <li> <p>IAM policies</p> </li> <li>
-         * <p>Cloudwatch metrics and alarms</p> </li> <li> <p>Tags</p> </li> <li> <p>Time
-         * to Live (TTL) settings</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Cloudwatch metrics and alarms</p> </li> <li> <p>Tags</p> </li> <li> <p>Stream
+         * settings</p> </li> <li> <p>Time to Live (TTL) settings</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableFromBackup">AWS
          * API Reference</a></p>
          *
@@ -1798,8 +1797,9 @@ namespace Model
          * <code>RestoreTableFromBackup</code> at a maximum rate of 10 times per
          * second.</p> <p>You must manually set up the following on the restored table:</p>
          * <ul> <li> <p>Auto scaling policies</p> </li> <li> <p>IAM policies</p> </li> <li>
-         * <p>Cloudwatch metrics and alarms</p> </li> <li> <p>Tags</p> </li> <li> <p>Time
-         * to Live (TTL) settings</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Cloudwatch metrics and alarms</p> </li> <li> <p>Tags</p> </li> <li> <p>Stream
+         * settings</p> </li> <li> <p>Time to Live (TTL) settings</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableFromBackup">AWS
          * API Reference</a></p>
          *
@@ -1997,18 +1997,28 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds or removes replicas to the specified global table. The global table
-         * should already exist to be able to use this operation. Currently, the replica to
-         * be added should be empty. </p><p><h3>See Also:</h3>   <a
+         * <p>Adds or removes replicas in the specified global table. The global table must
+         * already exist to be able to use this operation. Any replica to be added must be
+         * empty, must have the same name as the global table, must have the same key
+         * schema, must have DynamoDB Streams enabled, and cannot have any local secondary
+         * indexes (LSIs).</p> <note> <p>Although you can use
+         * <code>UpdateGlobalTable</code> to add replicas and remove replicas in a single
+         * request, for simplicity we recommend that you issue separate requests for adding
+         * or removing replicas.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTable">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateGlobalTableOutcome UpdateGlobalTable(const Model::UpdateGlobalTableRequest& request) const;
 
         /**
-         * <p>Adds or removes replicas to the specified global table. The global table
-         * should already exist to be able to use this operation. Currently, the replica to
-         * be added should be empty. </p><p><h3>See Also:</h3>   <a
+         * <p>Adds or removes replicas in the specified global table. The global table must
+         * already exist to be able to use this operation. Any replica to be added must be
+         * empty, must have the same name as the global table, must have the same key
+         * schema, must have DynamoDB Streams enabled, and cannot have any local secondary
+         * indexes (LSIs).</p> <note> <p>Although you can use
+         * <code>UpdateGlobalTable</code> to add replicas and remove replicas in a single
+         * request, for simplicity we recommend that you issue separate requests for adding
+         * or removing replicas.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTable">AWS
          * API Reference</a></p>
          *
@@ -2017,9 +2027,14 @@ namespace Model
         virtual Model::UpdateGlobalTableOutcomeCallable UpdateGlobalTableCallable(const Model::UpdateGlobalTableRequest& request) const;
 
         /**
-         * <p>Adds or removes replicas to the specified global table. The global table
-         * should already exist to be able to use this operation. Currently, the replica to
-         * be added should be empty. </p><p><h3>See Also:</h3>   <a
+         * <p>Adds or removes replicas in the specified global table. The global table must
+         * already exist to be able to use this operation. Any replica to be added must be
+         * empty, must have the same name as the global table, must have the same key
+         * schema, must have DynamoDB Streams enabled, and cannot have any local secondary
+         * indexes (LSIs).</p> <note> <p>Although you can use
+         * <code>UpdateGlobalTable</code> to add replicas and remove replicas in a single
+         * request, for simplicity we recommend that you issue separate requests for adding
+         * or removing replicas.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTable">AWS
          * API Reference</a></p>
          *

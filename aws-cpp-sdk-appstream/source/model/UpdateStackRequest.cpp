@@ -27,8 +27,8 @@ UpdateStackRequest::UpdateStackRequest() :
     m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_storageConnectorsHasBeenSet(false),
-    m_deleteStorageConnectors(false),
-    m_deleteStorageConnectorsHasBeenSet(false)
+    m_redirectURLHasBeenSet(false),
+    m_attributesToDeleteHasBeenSet(false)
 {
 }
 
@@ -65,9 +65,20 @@ Aws::String UpdateStackRequest::SerializePayload() const
 
   }
 
-  if(m_deleteStorageConnectorsHasBeenSet)
+  if(m_redirectURLHasBeenSet)
   {
-   payload.WithBool("DeleteStorageConnectors", m_deleteStorageConnectors);
+   payload.WithString("RedirectURL", m_redirectURL);
+
+  }
+
+  if(m_attributesToDeleteHasBeenSet)
+  {
+   Array<JsonValue> attributesToDeleteJsonList(m_attributesToDelete.size());
+   for(unsigned attributesToDeleteIndex = 0; attributesToDeleteIndex < attributesToDeleteJsonList.GetLength(); ++attributesToDeleteIndex)
+   {
+     attributesToDeleteJsonList[attributesToDeleteIndex].AsString(StackAttributeMapper::GetNameForStackAttribute(m_attributesToDelete[attributesToDeleteIndex]));
+   }
+   payload.WithArray("AttributesToDelete", std::move(attributesToDeleteJsonList));
 
   }
 
