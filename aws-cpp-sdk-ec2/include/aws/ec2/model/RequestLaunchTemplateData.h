@@ -591,79 +591,72 @@ namespace Model
 
 
     /**
-     * <p>The user data to make available to the instance. For more information, see <a
+     * <p>The Base64-encoded user data to make available to the instance. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
      * Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows). If you are using a command line tool, base64-encoding
-     * is performed for you and you can load the text from a file. Otherwise, you must
-     * provide base64-encoded text.</p>
+     * User Data</a> (Windows).</p>
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
 
     /**
-     * <p>The user data to make available to the instance. For more information, see <a
+     * <p>The Base64-encoded user data to make available to the instance. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
      * Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows). If you are using a command line tool, base64-encoding
-     * is performed for you and you can load the text from a file. Otherwise, you must
-     * provide base64-encoded text.</p>
+     * User Data</a> (Windows).</p>
      */
     inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
-     * <p>The user data to make available to the instance. For more information, see <a
+     * <p>The Base64-encoded user data to make available to the instance. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
      * Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows). If you are using a command line tool, base64-encoding
-     * is performed for you and you can load the text from a file. Otherwise, you must
-     * provide base64-encoded text.</p>
+     * User Data</a> (Windows).</p>
      */
     inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
 
     /**
-     * <p>The user data to make available to the instance. For more information, see <a
+     * <p>The Base64-encoded user data to make available to the instance. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
      * Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows). If you are using a command line tool, base64-encoding
-     * is performed for you and you can load the text from a file. Otherwise, you must
-     * provide base64-encoded text.</p>
+     * User Data</a> (Windows).</p>
      */
     inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
 
     /**
-     * <p>The user data to make available to the instance. For more information, see <a
+     * <p>The Base64-encoded user data to make available to the instance. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
      * Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows). If you are using a command line tool, base64-encoding
-     * is performed for you and you can load the text from a file. Otherwise, you must
-     * provide base64-encoded text.</p>
+     * User Data</a> (Windows).</p>
      */
     inline RequestLaunchTemplateData& WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
 
     /**
-     * <p>The user data to make available to the instance. For more information, see <a
+     * <p>The Base64-encoded user data to make available to the instance. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
      * Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows). If you are using a command line tool, base64-encoding
-     * is performed for you and you can load the text from a file. Otherwise, you must
-     * provide base64-encoded text.</p>
+     * User Data</a> (Windows).</p>
      */
     inline RequestLaunchTemplateData& WithUserData(Aws::String&& value) { SetUserData(std::move(value)); return *this;}
 
     /**
-     * <p>The user data to make available to the instance. For more information, see <a
+     * <p>The Base64-encoded user data to make available to the instance. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
      * Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows). If you are using a command line tool, base64-encoding
-     * is performed for you and you can load the text from a file. Otherwise, you must
-     * provide base64-encoded text.</p>
+     * User Data</a> (Windows).</p>
      */
     inline RequestLaunchTemplateData& WithUserData(const char* value) { SetUserData(value); return *this;}
 

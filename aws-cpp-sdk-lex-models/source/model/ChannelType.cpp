@@ -33,6 +33,7 @@ namespace Aws
         static const int Facebook_HASH = HashingUtils::HashString("Facebook");
         static const int Slack_HASH = HashingUtils::HashString("Slack");
         static const int Twilio_Sms_HASH = HashingUtils::HashString("Twilio-Sms");
+        static const int Kik_HASH = HashingUtils::HashString("Kik");
 
 
         ChannelType GetChannelTypeForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == Twilio_Sms_HASH)
           {
             return ChannelType::Twilio_Sms;
+          }
+          else if (hashCode == Kik_HASH)
+          {
+            return ChannelType::Kik;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +75,8 @@ namespace Aws
             return "Slack";
           case ChannelType::Twilio_Sms:
             return "Twilio-Sms";
+          case ChannelType::Kik:
+            return "Kik";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

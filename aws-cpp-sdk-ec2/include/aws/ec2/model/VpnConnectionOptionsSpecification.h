@@ -53,21 +53,24 @@ namespace Model
     /**
      * <p>Indicate whether the VPN connection uses static routes only. If you are
      * creating a VPN connection for a device that does not support BGP, you must
-     * specify <code>true</code>.</p> <p>Default: <code>false</code> </p>
+     * specify <code>true</code>. Use <a>CreateVpnConnectionRoute</a> to create a
+     * static route.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetStaticRoutesOnly() const{ return m_staticRoutesOnly; }
 
     /**
      * <p>Indicate whether the VPN connection uses static routes only. If you are
      * creating a VPN connection for a device that does not support BGP, you must
-     * specify <code>true</code>.</p> <p>Default: <code>false</code> </p>
+     * specify <code>true</code>. Use <a>CreateVpnConnectionRoute</a> to create a
+     * static route.</p> <p>Default: <code>false</code> </p>
      */
     inline void SetStaticRoutesOnly(bool value) { m_staticRoutesOnlyHasBeenSet = true; m_staticRoutesOnly = value; }
 
     /**
      * <p>Indicate whether the VPN connection uses static routes only. If you are
      * creating a VPN connection for a device that does not support BGP, you must
-     * specify <code>true</code>.</p> <p>Default: <code>false</code> </p>
+     * specify <code>true</code>. Use <a>CreateVpnConnectionRoute</a> to create a
+     * static route.</p> <p>Default: <code>false</code> </p>
      */
     inline VpnConnectionOptionsSpecification& WithStaticRoutesOnly(bool value) { SetStaticRoutesOnly(value); return *this;}
 

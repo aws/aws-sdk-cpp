@@ -394,37 +394,27 @@ namespace Model
 
 
     /**
-     * <p>The user data to make available to the instance. If you are using an AWS SDK
-     * or command line tool, Base64-encoding is performed for you, and you can load the
-     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
+     * <p>The Base64-encoded user data to make available to the instance.</p>
      */
     inline const UserData& GetUserData() const{ return m_userData; }
 
     /**
-     * <p>The user data to make available to the instance. If you are using an AWS SDK
-     * or command line tool, Base64-encoding is performed for you, and you can load the
-     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
+     * <p>The Base64-encoded user data to make available to the instance.</p>
      */
     inline void SetUserData(const UserData& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
-     * <p>The user data to make available to the instance. If you are using an AWS SDK
-     * or command line tool, Base64-encoding is performed for you, and you can load the
-     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
+     * <p>The Base64-encoded user data to make available to the instance.</p>
      */
     inline void SetUserData(UserData&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
 
     /**
-     * <p>The user data to make available to the instance. If you are using an AWS SDK
-     * or command line tool, Base64-encoding is performed for you, and you can load the
-     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
+     * <p>The Base64-encoded user data to make available to the instance.</p>
      */
     inline ImportInstanceLaunchSpecification& WithUserData(const UserData& value) { SetUserData(value); return *this;}
 
     /**
-     * <p>The user data to make available to the instance. If you are using an AWS SDK
-     * or command line tool, Base64-encoding is performed for you, and you can load the
-     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
+     * <p>The Base64-encoded user data to make available to the instance.</p>
      */
     inline ImportInstanceLaunchSpecification& WithUserData(UserData&& value) { SetUserData(std::move(value)); return *this;}
 

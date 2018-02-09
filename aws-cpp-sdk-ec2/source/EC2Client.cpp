@@ -129,6 +129,7 @@
 #include <aws/ec2/model/DeregisterImageRequest.h>
 #include <aws/ec2/model/DescribeAccountAttributesRequest.h>
 #include <aws/ec2/model/DescribeAddressesRequest.h>
+#include <aws/ec2/model/DescribeAggregateIdFormatRequest.h>
 #include <aws/ec2/model/DescribeAvailabilityZonesRequest.h>
 #include <aws/ec2/model/DescribeBundleTasksRequest.h>
 #include <aws/ec2/model/DescribeClassicLinkInstancesRequest.h>
@@ -167,6 +168,7 @@
 #include <aws/ec2/model/DescribeNetworkInterfacesRequest.h>
 #include <aws/ec2/model/DescribePlacementGroupsRequest.h>
 #include <aws/ec2/model/DescribePrefixListsRequest.h>
+#include <aws/ec2/model/DescribePrincipalIdFormatRequest.h>
 #include <aws/ec2/model/DescribeRegionsRequest.h>
 #include <aws/ec2/model/DescribeReservedInstancesRequest.h>
 #include <aws/ec2/model/DescribeReservedInstancesListingsRequest.h>
@@ -3929,6 +3931,41 @@ void EC2Client::DescribeAddressesAsyncHelper(const DescribeAddressesRequest& req
   handler(this, request, DescribeAddresses(request), context);
 }
 
+DescribeAggregateIdFormatOutcome EC2Client::DescribeAggregateIdFormat(const DescribeAggregateIdFormatRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeAggregateIdFormatOutcome(DescribeAggregateIdFormatResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeAggregateIdFormatOutcome(outcome.GetError());
+  }
+}
+
+DescribeAggregateIdFormatOutcomeCallable EC2Client::DescribeAggregateIdFormatCallable(const DescribeAggregateIdFormatRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAggregateIdFormatOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAggregateIdFormat(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DescribeAggregateIdFormatAsync(const DescribeAggregateIdFormatRequest& request, const DescribeAggregateIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAggregateIdFormatAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DescribeAggregateIdFormatAsyncHelper(const DescribeAggregateIdFormatRequest& request, const DescribeAggregateIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAggregateIdFormat(request), context);
+}
+
 DescribeAvailabilityZonesOutcome EC2Client::DescribeAvailabilityZones(const DescribeAvailabilityZonesRequest& request) const
 {
   Aws::StringStream ss;
@@ -5257,6 +5294,41 @@ void EC2Client::DescribePrefixListsAsync(const DescribePrefixListsRequest& reque
 void EC2Client::DescribePrefixListsAsyncHelper(const DescribePrefixListsRequest& request, const DescribePrefixListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribePrefixLists(request), context);
+}
+
+DescribePrincipalIdFormatOutcome EC2Client::DescribePrincipalIdFormat(const DescribePrincipalIdFormatRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribePrincipalIdFormatOutcome(DescribePrincipalIdFormatResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribePrincipalIdFormatOutcome(outcome.GetError());
+  }
+}
+
+DescribePrincipalIdFormatOutcomeCallable EC2Client::DescribePrincipalIdFormatCallable(const DescribePrincipalIdFormatRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribePrincipalIdFormatOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePrincipalIdFormat(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DescribePrincipalIdFormatAsync(const DescribePrincipalIdFormatRequest& request, const DescribePrincipalIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribePrincipalIdFormatAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DescribePrincipalIdFormatAsyncHelper(const DescribePrincipalIdFormatRequest& request, const DescribePrincipalIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribePrincipalIdFormat(request), context);
 }
 
 DescribeRegionsOutcome EC2Client::DescribeRegions(const DescribeRegionsRequest& request) const

@@ -109,6 +109,28 @@ namespace Model
      */
     inline Message& WithContent(const char* value) { SetContent(value); return *this;}
 
+
+    /**
+     * <p>Identifies the message group that the message belongs to. When a group is
+     * assigned to a message, Amazon Lex returns one message from each group in the
+     * response.</p>
+     */
+    inline int GetGroupNumber() const{ return m_groupNumber; }
+
+    /**
+     * <p>Identifies the message group that the message belongs to. When a group is
+     * assigned to a message, Amazon Lex returns one message from each group in the
+     * response.</p>
+     */
+    inline void SetGroupNumber(int value) { m_groupNumberHasBeenSet = true; m_groupNumber = value; }
+
+    /**
+     * <p>Identifies the message group that the message belongs to. When a group is
+     * assigned to a message, Amazon Lex returns one message from each group in the
+     * response.</p>
+     */
+    inline Message& WithGroupNumber(int value) { SetGroupNumber(value); return *this;}
+
   private:
 
     ContentType m_contentType;
@@ -116,6 +138,9 @@ namespace Model
 
     Aws::String m_content;
     bool m_contentHasBeenSet;
+
+    int m_groupNumber;
+    bool m_groupNumberHasBeenSet;
   };
 
 } // namespace Model

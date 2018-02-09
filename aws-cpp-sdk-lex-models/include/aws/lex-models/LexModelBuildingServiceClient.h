@@ -787,8 +787,7 @@ namespace Model
 
         /**
          * <p>Deletes stored utterances.</p> <p>Amazon Lex stores the utterances that users
-         * send to your bot unless the <code>childDirected</code> field in the bot is set
-         * to <code>true</code>. Utterances are stored for 15 days for use with the
+         * send to your bot. Utterances are stored for 15 days for use with the
          * <a>GetUtterancesView</a> operation, and then stored indefinitely for use in
          * improving the ability of your bot to respond to user input.</p> <p>Use the
          * <code>DeleteStoredUtterances</code> operation to manually delete stored
@@ -801,8 +800,7 @@ namespace Model
 
         /**
          * <p>Deletes stored utterances.</p> <p>Amazon Lex stores the utterances that users
-         * send to your bot unless the <code>childDirected</code> field in the bot is set
-         * to <code>true</code>. Utterances are stored for 15 days for use with the
+         * send to your bot. Utterances are stored for 15 days for use with the
          * <a>GetUtterancesView</a> operation, and then stored indefinitely for use in
          * improving the ability of your bot to respond to user input.</p> <p>Use the
          * <code>DeleteStoredUtterances</code> operation to manually delete stored
@@ -817,8 +815,7 @@ namespace Model
 
         /**
          * <p>Deletes stored utterances.</p> <p>Amazon Lex stores the utterances that users
-         * send to your bot unless the <code>childDirected</code> field in the bot is set
-         * to <code>true</code>. Utterances are stored for 15 days for use with the
+         * send to your bot. Utterances are stored for 15 days for use with the
          * <a>GetUtterancesView</a> operation, and then stored indefinitely for use in
          * improving the ability of your bot to respond to user input.</p> <p>Use the
          * <code>DeleteStoredUtterances</code> operation to manually delete stored
@@ -1477,13 +1474,11 @@ namespace Model
          * to the <code>OrderFlowers</code> intent so that your bot recognizes that
          * utterance.</p> <p>After you publish a new version of a bot, you can get
          * information about the old version and the new so that you can compare the
-         * performance across the two versions. </p> <p>Data is available for the last 15
-         * days. You can request information for up to 5 versions in each request. The
-         * response contains information about a maximum of 100 utterances for each
-         * version.</p> <p>If the bot's <code>childDirected</code> field is set to
-         * <code>true</code>, utterances for the bot are not stored and cannot be retrieved
-         * with the <code>GetUtterancesView</code> operation. For more information, see
-         * <a>PutBot</a>.</p> <p>This operation requires permissions for the
+         * performance across the two versions. </p> <note> <p>Utterance statistics are
+         * generated once a day. Data is available for the last 15 days. You can request
+         * information for up to 5 versions in each request. The response contains
+         * information about a maximum of 100 utterances for each version.</p> </note>
+         * <p>This operation requires permissions for the
          * <code>lex:GetUtterancesView</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetUtterancesView">AWS
          * API Reference</a></p>
@@ -1501,13 +1496,11 @@ namespace Model
          * to the <code>OrderFlowers</code> intent so that your bot recognizes that
          * utterance.</p> <p>After you publish a new version of a bot, you can get
          * information about the old version and the new so that you can compare the
-         * performance across the two versions. </p> <p>Data is available for the last 15
-         * days. You can request information for up to 5 versions in each request. The
-         * response contains information about a maximum of 100 utterances for each
-         * version.</p> <p>If the bot's <code>childDirected</code> field is set to
-         * <code>true</code>, utterances for the bot are not stored and cannot be retrieved
-         * with the <code>GetUtterancesView</code> operation. For more information, see
-         * <a>PutBot</a>.</p> <p>This operation requires permissions for the
+         * performance across the two versions. </p> <note> <p>Utterance statistics are
+         * generated once a day. Data is available for the last 15 days. You can request
+         * information for up to 5 versions in each request. The response contains
+         * information about a maximum of 100 utterances for each version.</p> </note>
+         * <p>This operation requires permissions for the
          * <code>lex:GetUtterancesView</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetUtterancesView">AWS
          * API Reference</a></p>
@@ -1527,13 +1520,11 @@ namespace Model
          * to the <code>OrderFlowers</code> intent so that your bot recognizes that
          * utterance.</p> <p>After you publish a new version of a bot, you can get
          * information about the old version and the new so that you can compare the
-         * performance across the two versions. </p> <p>Data is available for the last 15
-         * days. You can request information for up to 5 versions in each request. The
-         * response contains information about a maximum of 100 utterances for each
-         * version.</p> <p>If the bot's <code>childDirected</code> field is set to
-         * <code>true</code>, utterances for the bot are not stored and cannot be retrieved
-         * with the <code>GetUtterancesView</code> operation. For more information, see
-         * <a>PutBot</a>.</p> <p>This operation requires permissions for the
+         * performance across the two versions. </p> <note> <p>Utterance statistics are
+         * generated once a day. Data is available for the last 15 days. You can request
+         * information for up to 5 versions in each request. The response contains
+         * information about a maximum of 100 utterances for each version.</p> </note>
+         * <p>This operation requires permissions for the
          * <code>lex:GetUtterancesView</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetUtterancesView">AWS
          * API Reference</a></p>
@@ -1544,9 +1535,10 @@ namespace Model
 
         /**
          * <p>Creates an Amazon Lex conversational bot or replaces an existing bot. When
-         * you create or update a bot you are only required to specify a name. You can use
-         * this to add intents later, or to remove intents from an existing bot. When you
-         * create a bot with a name only, the bot is created or updated but Amazon Lex
+         * you create or update a bot you are only required to specify a name, a locale,
+         * and whether the bot is directed toward children under age 13. You can use this
+         * to add intents later, or to remove intents from an existing bot. When you create
+         * a bot with the minimum information, the bot is created or updated but Amazon Lex
          * returns the <code/> response <code>FAILED</code>. You can build the bot after
          * you add one or more intents. For more information about Amazon Lex bots, see
          * <a>how-it-works</a>. </p> <p>If you specify the name of an existing bot, the
@@ -1565,9 +1557,10 @@ namespace Model
 
         /**
          * <p>Creates an Amazon Lex conversational bot or replaces an existing bot. When
-         * you create or update a bot you are only required to specify a name. You can use
-         * this to add intents later, or to remove intents from an existing bot. When you
-         * create a bot with a name only, the bot is created or updated but Amazon Lex
+         * you create or update a bot you are only required to specify a name, a locale,
+         * and whether the bot is directed toward children under age 13. You can use this
+         * to add intents later, or to remove intents from an existing bot. When you create
+         * a bot with the minimum information, the bot is created or updated but Amazon Lex
          * returns the <code/> response <code>FAILED</code>. You can build the bot after
          * you add one or more intents. For more information about Amazon Lex bots, see
          * <a>how-it-works</a>. </p> <p>If you specify the name of an existing bot, the
@@ -1588,9 +1581,10 @@ namespace Model
 
         /**
          * <p>Creates an Amazon Lex conversational bot or replaces an existing bot. When
-         * you create or update a bot you are only required to specify a name. You can use
-         * this to add intents later, or to remove intents from an existing bot. When you
-         * create a bot with a name only, the bot is created or updated but Amazon Lex
+         * you create or update a bot you are only required to specify a name, a locale,
+         * and whether the bot is directed toward children under age 13. You can use this
+         * to add intents later, or to remove intents from an existing bot. When you create
+         * a bot with the minimum information, the bot is created or updated but Amazon Lex
          * returns the <code/> response <code>FAILED</code>. You can build the bot after
          * you add one or more intents. For more information about Amazon Lex bots, see
          * <a>how-it-works</a>. </p> <p>If you specify the name of an existing bot, the

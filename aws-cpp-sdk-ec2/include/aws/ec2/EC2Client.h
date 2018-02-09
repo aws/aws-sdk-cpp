@@ -92,6 +92,7 @@
 #include <aws/ec2/model/DeleteVpcPeeringConnectionResponse.h>
 #include <aws/ec2/model/DescribeAccountAttributesResponse.h>
 #include <aws/ec2/model/DescribeAddressesResponse.h>
+#include <aws/ec2/model/DescribeAggregateIdFormatResponse.h>
 #include <aws/ec2/model/DescribeAvailabilityZonesResponse.h>
 #include <aws/ec2/model/DescribeBundleTasksResponse.h>
 #include <aws/ec2/model/DescribeClassicLinkInstancesResponse.h>
@@ -130,6 +131,7 @@
 #include <aws/ec2/model/DescribeNetworkInterfacesResponse.h>
 #include <aws/ec2/model/DescribePlacementGroupsResponse.h>
 #include <aws/ec2/model/DescribePrefixListsResponse.h>
+#include <aws/ec2/model/DescribePrincipalIdFormatResponse.h>
 #include <aws/ec2/model/DescribeRegionsResponse.h>
 #include <aws/ec2/model/DescribeReservedInstancesResponse.h>
 #include <aws/ec2/model/DescribeReservedInstancesListingsResponse.h>
@@ -375,6 +377,7 @@ namespace Model
         class DeregisterImageRequest;
         class DescribeAccountAttributesRequest;
         class DescribeAddressesRequest;
+        class DescribeAggregateIdFormatRequest;
         class DescribeAvailabilityZonesRequest;
         class DescribeBundleTasksRequest;
         class DescribeClassicLinkInstancesRequest;
@@ -413,6 +416,7 @@ namespace Model
         class DescribeNetworkInterfacesRequest;
         class DescribePlacementGroupsRequest;
         class DescribePrefixListsRequest;
+        class DescribePrincipalIdFormatRequest;
         class DescribeRegionsRequest;
         class DescribeReservedInstancesRequest;
         class DescribeReservedInstancesListingsRequest;
@@ -642,6 +646,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeregisterImageOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountAttributesResponse, Aws::Client::AWSError<EC2Errors>> DescribeAccountAttributesOutcome;
         typedef Aws::Utils::Outcome<DescribeAddressesResponse, Aws::Client::AWSError<EC2Errors>> DescribeAddressesOutcome;
+        typedef Aws::Utils::Outcome<DescribeAggregateIdFormatResponse, Aws::Client::AWSError<EC2Errors>> DescribeAggregateIdFormatOutcome;
         typedef Aws::Utils::Outcome<DescribeAvailabilityZonesResponse, Aws::Client::AWSError<EC2Errors>> DescribeAvailabilityZonesOutcome;
         typedef Aws::Utils::Outcome<DescribeBundleTasksResponse, Aws::Client::AWSError<EC2Errors>> DescribeBundleTasksOutcome;
         typedef Aws::Utils::Outcome<DescribeClassicLinkInstancesResponse, Aws::Client::AWSError<EC2Errors>> DescribeClassicLinkInstancesOutcome;
@@ -680,6 +685,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeNetworkInterfacesResponse, Aws::Client::AWSError<EC2Errors>> DescribeNetworkInterfacesOutcome;
         typedef Aws::Utils::Outcome<DescribePlacementGroupsResponse, Aws::Client::AWSError<EC2Errors>> DescribePlacementGroupsOutcome;
         typedef Aws::Utils::Outcome<DescribePrefixListsResponse, Aws::Client::AWSError<EC2Errors>> DescribePrefixListsOutcome;
+        typedef Aws::Utils::Outcome<DescribePrincipalIdFormatResponse, Aws::Client::AWSError<EC2Errors>> DescribePrincipalIdFormatOutcome;
         typedef Aws::Utils::Outcome<DescribeRegionsResponse, Aws::Client::AWSError<EC2Errors>> DescribeRegionsOutcome;
         typedef Aws::Utils::Outcome<DescribeReservedInstancesResponse, Aws::Client::AWSError<EC2Errors>> DescribeReservedInstancesOutcome;
         typedef Aws::Utils::Outcome<DescribeReservedInstancesListingsResponse, Aws::Client::AWSError<EC2Errors>> DescribeReservedInstancesListingsOutcome;
@@ -909,6 +915,7 @@ namespace Model
         typedef std::future<DeregisterImageOutcome> DeregisterImageOutcomeCallable;
         typedef std::future<DescribeAccountAttributesOutcome> DescribeAccountAttributesOutcomeCallable;
         typedef std::future<DescribeAddressesOutcome> DescribeAddressesOutcomeCallable;
+        typedef std::future<DescribeAggregateIdFormatOutcome> DescribeAggregateIdFormatOutcomeCallable;
         typedef std::future<DescribeAvailabilityZonesOutcome> DescribeAvailabilityZonesOutcomeCallable;
         typedef std::future<DescribeBundleTasksOutcome> DescribeBundleTasksOutcomeCallable;
         typedef std::future<DescribeClassicLinkInstancesOutcome> DescribeClassicLinkInstancesOutcomeCallable;
@@ -947,6 +954,7 @@ namespace Model
         typedef std::future<DescribeNetworkInterfacesOutcome> DescribeNetworkInterfacesOutcomeCallable;
         typedef std::future<DescribePlacementGroupsOutcome> DescribePlacementGroupsOutcomeCallable;
         typedef std::future<DescribePrefixListsOutcome> DescribePrefixListsOutcomeCallable;
+        typedef std::future<DescribePrincipalIdFormatOutcome> DescribePrincipalIdFormatOutcomeCallable;
         typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
         typedef std::future<DescribeReservedInstancesOutcome> DescribeReservedInstancesOutcomeCallable;
         typedef std::future<DescribeReservedInstancesListingsOutcome> DescribeReservedInstancesListingsOutcomeCallable;
@@ -1179,6 +1187,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DeregisterImageRequest&, const Model::DeregisterImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterImageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeAccountAttributesRequest&, const Model::DescribeAccountAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountAttributesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeAddressesRequest&, const Model::DescribeAddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAddressesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeAggregateIdFormatRequest&, const Model::DescribeAggregateIdFormatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAggregateIdFormatResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeAvailabilityZonesRequest&, const Model::DescribeAvailabilityZonesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAvailabilityZonesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeBundleTasksRequest&, const Model::DescribeBundleTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBundleTasksResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeClassicLinkInstancesRequest&, const Model::DescribeClassicLinkInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClassicLinkInstancesResponseReceivedHandler;
@@ -1217,6 +1226,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DescribeNetworkInterfacesRequest&, const Model::DescribeNetworkInterfacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNetworkInterfacesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribePlacementGroupsRequest&, const Model::DescribePlacementGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePlacementGroupsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribePrefixListsRequest&, const Model::DescribePrefixListsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePrefixListsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribePrincipalIdFormatRequest&, const Model::DescribePrincipalIdFormatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePrincipalIdFormatResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeRegionsRequest&, const Model::DescribeRegionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRegionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeReservedInstancesRequest&, const Model::DescribeReservedInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReservedInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeReservedInstancesListingsRequest&, const Model::DescribeReservedInstancesListingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReservedInstancesListingsResponseReceivedHandler;
@@ -6087,6 +6097,79 @@ namespace Model
         virtual void DescribeAddressesAsync(const Model::DescribeAddressesRequest& request, const DescribeAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes the longer ID format settings for all resource types in a specific
+         * region. This request is useful for performing a quick audit to determine whether
+         * a specific region is fully opted in for longer IDs (17-character IDs).</p>
+         * <p>This request only returns information about resource types that support
+         * longer IDs.</p> <p>The following resource types support longer IDs:
+         * <code>bundle</code> | <code>conversion-task</code> | <code>dhcp-options</code> |
+         * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+         * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+         * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code>
+         * | <code>network-acl</code> | <code>network-acl-association</code> |
+         * <code>network-interface</code> | <code>network-interface-attachment</code> |
+         * <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+         * <code>route-table-association</code> | <code>security-group</code> |
+         * <code>snapshot</code> | <code>subnet</code> |
+         * <code>subnet-cidr-block-association</code> | <code>volume</code> |
+         * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+         * <code>vpc-peering-connection</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAggregateIdFormat">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAggregateIdFormatOutcome DescribeAggregateIdFormat(const Model::DescribeAggregateIdFormatRequest& request) const;
+
+        /**
+         * <p>Describes the longer ID format settings for all resource types in a specific
+         * region. This request is useful for performing a quick audit to determine whether
+         * a specific region is fully opted in for longer IDs (17-character IDs).</p>
+         * <p>This request only returns information about resource types that support
+         * longer IDs.</p> <p>The following resource types support longer IDs:
+         * <code>bundle</code> | <code>conversion-task</code> | <code>dhcp-options</code> |
+         * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+         * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+         * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code>
+         * | <code>network-acl</code> | <code>network-acl-association</code> |
+         * <code>network-interface</code> | <code>network-interface-attachment</code> |
+         * <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+         * <code>route-table-association</code> | <code>security-group</code> |
+         * <code>snapshot</code> | <code>subnet</code> |
+         * <code>subnet-cidr-block-association</code> | <code>volume</code> |
+         * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+         * <code>vpc-peering-connection</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAggregateIdFormat">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAggregateIdFormatOutcomeCallable DescribeAggregateIdFormatCallable(const Model::DescribeAggregateIdFormatRequest& request) const;
+
+        /**
+         * <p>Describes the longer ID format settings for all resource types in a specific
+         * region. This request is useful for performing a quick audit to determine whether
+         * a specific region is fully opted in for longer IDs (17-character IDs).</p>
+         * <p>This request only returns information about resource types that support
+         * longer IDs.</p> <p>The following resource types support longer IDs:
+         * <code>bundle</code> | <code>conversion-task</code> | <code>dhcp-options</code> |
+         * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+         * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+         * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code>
+         * | <code>network-acl</code> | <code>network-acl-association</code> |
+         * <code>network-interface</code> | <code>network-interface-attachment</code> |
+         * <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+         * <code>route-table-association</code> | <code>security-group</code> |
+         * <code>snapshot</code> | <code>subnet</code> |
+         * <code>subnet-cidr-block-association</code> | <code>volume</code> |
+         * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+         * <code>vpc-peering-connection</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAggregateIdFormat">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAggregateIdFormatAsync(const Model::DescribeAggregateIdFormatRequest& request, const DescribeAggregateIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes one or more of the Availability Zones that are available to you.
          * The results include zones only for the region you're currently using. If there
          * is an event impacting an Availability Zone, you can use this request to view the
@@ -6641,15 +6724,26 @@ namespace Model
          * for example, to view which resource types are enabled for longer IDs. This
          * request only returns information about resource types whose ID formats can be
          * modified; it does not return information about other resource types.</p> <p>The
-         * following resource types support longer IDs: <code>instance</code> |
-         * <code>reservation</code> | <code>snapshot</code> | <code>volume</code>. </p>
-         * <p>These settings apply to the IAM user who makes the request; they do not apply
-         * to the entire AWS account. By default, an IAM user defaults to the same settings
-         * as the root user, unless they explicitly override the settings by running the
-         * <a>ModifyIdFormat</a> command. Resources created with longer IDs are visible to
-         * all IAM users, regardless of these settings and provided that they have
-         * permission to use the relevant <code>Describe</code> command for the resource
-         * type.</p><p><h3>See Also:</h3>   <a
+         * following resource types support longer IDs: <code>bundle</code> |
+         * <code>conversion-task</code> | <code>dhcp-options</code> |
+         * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+         * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+         * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code>
+         * | <code>network-acl</code> | <code>network-acl-association</code> |
+         * <code>network-interface</code> | <code>network-interface-attachment</code> |
+         * <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+         * <code>route-table-association</code> | <code>security-group</code> |
+         * <code>snapshot</code> | <code>subnet</code> |
+         * <code>subnet-cidr-block-association</code> | <code>volume</code> |
+         * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+         * <code>vpc-peering-connection</code>. </p> <p>These settings apply to the IAM
+         * user who makes the request; they do not apply to the entire AWS account. By
+         * default, an IAM user defaults to the same settings as the root user, unless they
+         * explicitly override the settings by running the <a>ModifyIdFormat</a> command.
+         * Resources created with longer IDs are visible to all IAM users, regardless of
+         * these settings and provided that they have permission to use the relevant
+         * <code>Describe</code> command for the resource type.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIdFormat">AWS
          * API Reference</a></p>
          */
@@ -6660,15 +6754,26 @@ namespace Model
          * for example, to view which resource types are enabled for longer IDs. This
          * request only returns information about resource types whose ID formats can be
          * modified; it does not return information about other resource types.</p> <p>The
-         * following resource types support longer IDs: <code>instance</code> |
-         * <code>reservation</code> | <code>snapshot</code> | <code>volume</code>. </p>
-         * <p>These settings apply to the IAM user who makes the request; they do not apply
-         * to the entire AWS account. By default, an IAM user defaults to the same settings
-         * as the root user, unless they explicitly override the settings by running the
-         * <a>ModifyIdFormat</a> command. Resources created with longer IDs are visible to
-         * all IAM users, regardless of these settings and provided that they have
-         * permission to use the relevant <code>Describe</code> command for the resource
-         * type.</p><p><h3>See Also:</h3>   <a
+         * following resource types support longer IDs: <code>bundle</code> |
+         * <code>conversion-task</code> | <code>dhcp-options</code> |
+         * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+         * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+         * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code>
+         * | <code>network-acl</code> | <code>network-acl-association</code> |
+         * <code>network-interface</code> | <code>network-interface-attachment</code> |
+         * <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+         * <code>route-table-association</code> | <code>security-group</code> |
+         * <code>snapshot</code> | <code>subnet</code> |
+         * <code>subnet-cidr-block-association</code> | <code>volume</code> |
+         * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+         * <code>vpc-peering-connection</code>. </p> <p>These settings apply to the IAM
+         * user who makes the request; they do not apply to the entire AWS account. By
+         * default, an IAM user defaults to the same settings as the root user, unless they
+         * explicitly override the settings by running the <a>ModifyIdFormat</a> command.
+         * Resources created with longer IDs are visible to all IAM users, regardless of
+         * these settings and provided that they have permission to use the relevant
+         * <code>Describe</code> command for the resource type.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIdFormat">AWS
          * API Reference</a></p>
          *
@@ -6681,15 +6786,26 @@ namespace Model
          * for example, to view which resource types are enabled for longer IDs. This
          * request only returns information about resource types whose ID formats can be
          * modified; it does not return information about other resource types.</p> <p>The
-         * following resource types support longer IDs: <code>instance</code> |
-         * <code>reservation</code> | <code>snapshot</code> | <code>volume</code>. </p>
-         * <p>These settings apply to the IAM user who makes the request; they do not apply
-         * to the entire AWS account. By default, an IAM user defaults to the same settings
-         * as the root user, unless they explicitly override the settings by running the
-         * <a>ModifyIdFormat</a> command. Resources created with longer IDs are visible to
-         * all IAM users, regardless of these settings and provided that they have
-         * permission to use the relevant <code>Describe</code> command for the resource
-         * type.</p><p><h3>See Also:</h3>   <a
+         * following resource types support longer IDs: <code>bundle</code> |
+         * <code>conversion-task</code> | <code>dhcp-options</code> |
+         * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+         * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+         * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code>
+         * | <code>network-acl</code> | <code>network-acl-association</code> |
+         * <code>network-interface</code> | <code>network-interface-attachment</code> |
+         * <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+         * <code>route-table-association</code> | <code>security-group</code> |
+         * <code>snapshot</code> | <code>subnet</code> |
+         * <code>subnet-cidr-block-association</code> | <code>volume</code> |
+         * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+         * <code>vpc-peering-connection</code>. </p> <p>These settings apply to the IAM
+         * user who makes the request; they do not apply to the entire AWS account. By
+         * default, an IAM user defaults to the same settings as the root user, unless they
+         * explicitly override the settings by running the <a>ModifyIdFormat</a> command.
+         * Resources created with longer IDs are visible to all IAM users, regardless of
+         * these settings and provided that they have permission to use the relevant
+         * <code>Describe</code> command for the resource type.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIdFormat">AWS
          * API Reference</a></p>
          *
@@ -6705,10 +6821,21 @@ namespace Model
          * other resource types. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
          * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p> <p>The
-         * following resource types support longer IDs: <code>instance</code> |
-         * <code>reservation</code> | <code>snapshot</code> | <code>volume</code>. </p>
-         * <p>These settings apply to the principal specified in the request. They do not
-         * apply to the principal that makes the request.</p><p><h3>See Also:</h3>   <a
+         * following resource types support longer IDs: <code>bundle</code> |
+         * <code>conversion-task</code> | <code>dhcp-options</code> |
+         * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+         * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+         * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code>
+         * | <code>network-acl</code> | <code>network-acl-association</code> |
+         * <code>network-interface</code> | <code>network-interface-attachment</code> |
+         * <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+         * <code>route-table-association</code> | <code>security-group</code> |
+         * <code>snapshot</code> | <code>subnet</code> |
+         * <code>subnet-cidr-block-association</code> | <code>volume</code> |
+         * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+         * <code>vpc-peering-connection</code>. </p> <p>These settings apply to the
+         * principal specified in the request. They do not apply to the principal that
+         * makes the request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIdentityIdFormat">AWS
          * API Reference</a></p>
          */
@@ -6722,10 +6849,21 @@ namespace Model
          * other resource types. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
          * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p> <p>The
-         * following resource types support longer IDs: <code>instance</code> |
-         * <code>reservation</code> | <code>snapshot</code> | <code>volume</code>. </p>
-         * <p>These settings apply to the principal specified in the request. They do not
-         * apply to the principal that makes the request.</p><p><h3>See Also:</h3>   <a
+         * following resource types support longer IDs: <code>bundle</code> |
+         * <code>conversion-task</code> | <code>dhcp-options</code> |
+         * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+         * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+         * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code>
+         * | <code>network-acl</code> | <code>network-acl-association</code> |
+         * <code>network-interface</code> | <code>network-interface-attachment</code> |
+         * <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+         * <code>route-table-association</code> | <code>security-group</code> |
+         * <code>snapshot</code> | <code>subnet</code> |
+         * <code>subnet-cidr-block-association</code> | <code>volume</code> |
+         * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+         * <code>vpc-peering-connection</code>. </p> <p>These settings apply to the
+         * principal specified in the request. They do not apply to the principal that
+         * makes the request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIdentityIdFormat">AWS
          * API Reference</a></p>
          *
@@ -6741,10 +6879,21 @@ namespace Model
          * other resource types. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
          * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p> <p>The
-         * following resource types support longer IDs: <code>instance</code> |
-         * <code>reservation</code> | <code>snapshot</code> | <code>volume</code>. </p>
-         * <p>These settings apply to the principal specified in the request. They do not
-         * apply to the principal that makes the request.</p><p><h3>See Also:</h3>   <a
+         * following resource types support longer IDs: <code>bundle</code> |
+         * <code>conversion-task</code> | <code>dhcp-options</code> |
+         * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+         * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+         * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code>
+         * | <code>network-acl</code> | <code>network-acl-association</code> |
+         * <code>network-interface</code> | <code>network-interface-attachment</code> |
+         * <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+         * <code>route-table-association</code> | <code>security-group</code> |
+         * <code>snapshot</code> | <code>subnet</code> |
+         * <code>subnet-cidr-block-association</code> | <code>volume</code> |
+         * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+         * <code>vpc-peering-connection</code>. </p> <p>These settings apply to the
+         * principal specified in the request. They do not apply to the principal that
+         * makes the request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIdentityIdFormat">AWS
          * API Reference</a></p>
          *
@@ -7506,6 +7655,82 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribePrefixListsAsync(const Model::DescribePrefixListsRequest& request, const DescribePrefixListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the ID format settings for the root user and all IAM roles and IAM
+         * users that have explicitly specified a longer ID (17-character ID) preference.
+         * </p> <p>By default, all IAM roles and IAM users default to the same ID settings
+         * as the root user, unless they explicitly override the settings. This request is
+         * useful for identifying those IAM users and IAM roles that have overridden the
+         * default ID settings.</p> <p>The following resource types support longer IDs:
+         * <code>bundle</code> | <code>conversion-task</code> | <code>dhcp-options</code> |
+         * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+         * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+         * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code>
+         * | <code>network-acl</code> | <code>network-acl-association</code> |
+         * <code>network-interface</code> | <code>network-interface-attachment</code> |
+         * <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+         * <code>route-table-association</code> | <code>security-group</code> |
+         * <code>snapshot</code> | <code>subnet</code> |
+         * <code>subnet-cidr-block-association</code> | <code>volume</code> |
+         * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+         * <code>vpc-peering-connection</code>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrincipalIdFormat">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribePrincipalIdFormatOutcome DescribePrincipalIdFormat(const Model::DescribePrincipalIdFormatRequest& request) const;
+
+        /**
+         * <p>Describes the ID format settings for the root user and all IAM roles and IAM
+         * users that have explicitly specified a longer ID (17-character ID) preference.
+         * </p> <p>By default, all IAM roles and IAM users default to the same ID settings
+         * as the root user, unless they explicitly override the settings. This request is
+         * useful for identifying those IAM users and IAM roles that have overridden the
+         * default ID settings.</p> <p>The following resource types support longer IDs:
+         * <code>bundle</code> | <code>conversion-task</code> | <code>dhcp-options</code> |
+         * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+         * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+         * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code>
+         * | <code>network-acl</code> | <code>network-acl-association</code> |
+         * <code>network-interface</code> | <code>network-interface-attachment</code> |
+         * <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+         * <code>route-table-association</code> | <code>security-group</code> |
+         * <code>snapshot</code> | <code>subnet</code> |
+         * <code>subnet-cidr-block-association</code> | <code>volume</code> |
+         * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+         * <code>vpc-peering-connection</code>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrincipalIdFormat">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribePrincipalIdFormatOutcomeCallable DescribePrincipalIdFormatCallable(const Model::DescribePrincipalIdFormatRequest& request) const;
+
+        /**
+         * <p>Describes the ID format settings for the root user and all IAM roles and IAM
+         * users that have explicitly specified a longer ID (17-character ID) preference.
+         * </p> <p>By default, all IAM roles and IAM users default to the same ID settings
+         * as the root user, unless they explicitly override the settings. This request is
+         * useful for identifying those IAM users and IAM roles that have overridden the
+         * default ID settings.</p> <p>The following resource types support longer IDs:
+         * <code>bundle</code> | <code>conversion-task</code> | <code>dhcp-options</code> |
+         * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+         * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+         * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code>
+         * | <code>network-acl</code> | <code>network-acl-association</code> |
+         * <code>network-interface</code> | <code>network-interface-attachment</code> |
+         * <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+         * <code>route-table-association</code> | <code>security-group</code> |
+         * <code>snapshot</code> | <code>subnet</code> |
+         * <code>subnet-cidr-block-association</code> | <code>volume</code> |
+         * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+         * <code>vpc-peering-connection</code>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrincipalIdFormat">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribePrincipalIdFormatAsync(const Model::DescribePrincipalIdFormatRequest& request, const DescribePrincipalIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more regions that are currently available to you.</p> <p>For
@@ -10323,14 +10548,25 @@ namespace Model
         /**
          * <p>Modifies the ID format for the specified resource on a per-region basis. You
          * can specify that resources should receive longer IDs (17-character IDs) when
-         * they are created. The following resource types support longer IDs:
-         * <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
-         * <code>volume</code>.</p> <p>This setting applies to the IAM user who makes the
-         * request; it does not apply to the entire AWS account. By default, an IAM user
-         * defaults to the same settings as the root user. If you're using this action as
-         * the root user, then these settings apply to the entire account, unless an IAM
-         * user explicitly overrides these settings for themselves. For more information,
-         * see <a
+         * they are created.</p> <p>This request can only be used to modify longer ID
+         * settings for resource types that are within the opt-in period. Resources
+         * currently in their opt-in period include: <code>bundle</code> |
+         * <code>conversion-task</code> | <code>dhcp-options</code> |
+         * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+         * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+         * <code>import-task</code> | <code>internet-gateway</code> |
+         * <code>network-acl</code> | <code>network-acl-association</code> |
+         * <code>network-interface</code> | <code>network-interface-attachment</code> |
+         * <code>prefix-list</code> | <code>route-table</code> |
+         * <code>route-table-association</code> | <code>security-group</code> |
+         * <code>subnet</code> | <code>subnet-cidr-block-association</code> |
+         * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+         * <code>vpc-peering-connection</code>.</p> <p>This setting applies to the IAM user
+         * who makes the request; it does not apply to the entire AWS account. By default,
+         * an IAM user defaults to the same settings as the root user. If you're using this
+         * action as the root user, then these settings apply to the entire account, unless
+         * an IAM user explicitly overrides these settings for themselves. For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
          * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p> <p>Resources
          * created with longer IDs are visible to all IAM roles and users, regardless of
@@ -10345,14 +10581,25 @@ namespace Model
         /**
          * <p>Modifies the ID format for the specified resource on a per-region basis. You
          * can specify that resources should receive longer IDs (17-character IDs) when
-         * they are created. The following resource types support longer IDs:
-         * <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
-         * <code>volume</code>.</p> <p>This setting applies to the IAM user who makes the
-         * request; it does not apply to the entire AWS account. By default, an IAM user
-         * defaults to the same settings as the root user. If you're using this action as
-         * the root user, then these settings apply to the entire account, unless an IAM
-         * user explicitly overrides these settings for themselves. For more information,
-         * see <a
+         * they are created.</p> <p>This request can only be used to modify longer ID
+         * settings for resource types that are within the opt-in period. Resources
+         * currently in their opt-in period include: <code>bundle</code> |
+         * <code>conversion-task</code> | <code>dhcp-options</code> |
+         * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+         * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+         * <code>import-task</code> | <code>internet-gateway</code> |
+         * <code>network-acl</code> | <code>network-acl-association</code> |
+         * <code>network-interface</code> | <code>network-interface-attachment</code> |
+         * <code>prefix-list</code> | <code>route-table</code> |
+         * <code>route-table-association</code> | <code>security-group</code> |
+         * <code>subnet</code> | <code>subnet-cidr-block-association</code> |
+         * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+         * <code>vpc-peering-connection</code>.</p> <p>This setting applies to the IAM user
+         * who makes the request; it does not apply to the entire AWS account. By default,
+         * an IAM user defaults to the same settings as the root user. If you're using this
+         * action as the root user, then these settings apply to the entire account, unless
+         * an IAM user explicitly overrides these settings for themselves. For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
          * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p> <p>Resources
          * created with longer IDs are visible to all IAM roles and users, regardless of
@@ -10369,14 +10616,25 @@ namespace Model
         /**
          * <p>Modifies the ID format for the specified resource on a per-region basis. You
          * can specify that resources should receive longer IDs (17-character IDs) when
-         * they are created. The following resource types support longer IDs:
-         * <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
-         * <code>volume</code>.</p> <p>This setting applies to the IAM user who makes the
-         * request; it does not apply to the entire AWS account. By default, an IAM user
-         * defaults to the same settings as the root user. If you're using this action as
-         * the root user, then these settings apply to the entire account, unless an IAM
-         * user explicitly overrides these settings for themselves. For more information,
-         * see <a
+         * they are created.</p> <p>This request can only be used to modify longer ID
+         * settings for resource types that are within the opt-in period. Resources
+         * currently in their opt-in period include: <code>bundle</code> |
+         * <code>conversion-task</code> | <code>dhcp-options</code> |
+         * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+         * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+         * <code>import-task</code> | <code>internet-gateway</code> |
+         * <code>network-acl</code> | <code>network-acl-association</code> |
+         * <code>network-interface</code> | <code>network-interface-attachment</code> |
+         * <code>prefix-list</code> | <code>route-table</code> |
+         * <code>route-table-association</code> | <code>security-group</code> |
+         * <code>subnet</code> | <code>subnet-cidr-block-association</code> |
+         * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+         * <code>vpc-peering-connection</code>.</p> <p>This setting applies to the IAM user
+         * who makes the request; it does not apply to the entire AWS account. By default,
+         * an IAM user defaults to the same settings as the root user. If you're using this
+         * action as the root user, then these settings apply to the entire account, unless
+         * an IAM user explicitly overrides these settings for themselves. For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
          * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p> <p>Resources
          * created with longer IDs are visible to all IAM roles and users, regardless of
@@ -10394,9 +10652,20 @@ namespace Model
          * <p>Modifies the ID format of a resource for a specified IAM user, IAM role, or
          * the root user for an account; or all IAM users, IAM roles, and the root user for
          * an account. You can specify that resources should receive longer IDs
-         * (17-character IDs) when they are created. </p> <p>The following resource types
-         * support longer IDs: <code>instance</code> | <code>reservation</code> |
-         * <code>snapshot</code> | <code>volume</code>. For more information, see <a
+         * (17-character IDs) when they are created. </p> <p>This request can only be used
+         * to modify longer ID settings for resource types that are within the opt-in
+         * period. Resources currently in their opt-in period include: <code>bundle</code>
+         * | <code>conversion-task</code> | <code>dhcp-options</code> |
+         * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+         * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+         * <code>import-task</code> | <code>internet-gateway</code> |
+         * <code>network-acl</code> | <code>network-acl-association</code> |
+         * <code>network-interface</code> | <code>network-interface-attachment</code> |
+         * <code>prefix-list</code> | <code>route-table</code> |
+         * <code>route-table-association</code> | <code>security-group</code> |
+         * <code>subnet</code> | <code>subnet-cidr-block-association</code> |
+         * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+         * <code>vpc-peering-connection</code>.. </p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
          * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p> <p>This
          * setting applies to the principal specified in the request; it does not apply to
@@ -10413,9 +10682,20 @@ namespace Model
          * <p>Modifies the ID format of a resource for a specified IAM user, IAM role, or
          * the root user for an account; or all IAM users, IAM roles, and the root user for
          * an account. You can specify that resources should receive longer IDs
-         * (17-character IDs) when they are created. </p> <p>The following resource types
-         * support longer IDs: <code>instance</code> | <code>reservation</code> |
-         * <code>snapshot</code> | <code>volume</code>. For more information, see <a
+         * (17-character IDs) when they are created. </p> <p>This request can only be used
+         * to modify longer ID settings for resource types that are within the opt-in
+         * period. Resources currently in their opt-in period include: <code>bundle</code>
+         * | <code>conversion-task</code> | <code>dhcp-options</code> |
+         * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+         * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+         * <code>import-task</code> | <code>internet-gateway</code> |
+         * <code>network-acl</code> | <code>network-acl-association</code> |
+         * <code>network-interface</code> | <code>network-interface-attachment</code> |
+         * <code>prefix-list</code> | <code>route-table</code> |
+         * <code>route-table-association</code> | <code>security-group</code> |
+         * <code>subnet</code> | <code>subnet-cidr-block-association</code> |
+         * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+         * <code>vpc-peering-connection</code>.. </p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
          * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p> <p>This
          * setting applies to the principal specified in the request; it does not apply to
@@ -10434,9 +10714,20 @@ namespace Model
          * <p>Modifies the ID format of a resource for a specified IAM user, IAM role, or
          * the root user for an account; or all IAM users, IAM roles, and the root user for
          * an account. You can specify that resources should receive longer IDs
-         * (17-character IDs) when they are created. </p> <p>The following resource types
-         * support longer IDs: <code>instance</code> | <code>reservation</code> |
-         * <code>snapshot</code> | <code>volume</code>. For more information, see <a
+         * (17-character IDs) when they are created. </p> <p>This request can only be used
+         * to modify longer ID settings for resource types that are within the opt-in
+         * period. Resources currently in their opt-in period include: <code>bundle</code>
+         * | <code>conversion-task</code> | <code>dhcp-options</code> |
+         * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+         * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+         * <code>import-task</code> | <code>internet-gateway</code> |
+         * <code>network-acl</code> | <code>network-acl-association</code> |
+         * <code>network-interface</code> | <code>network-interface-attachment</code> |
+         * <code>prefix-list</code> | <code>route-table</code> |
+         * <code>route-table-association</code> | <code>security-group</code> |
+         * <code>subnet</code> | <code>subnet-cidr-block-association</code> |
+         * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+         * <code>vpc-peering-connection</code>.. </p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
          * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p> <p>This
          * setting applies to the principal specified in the request; it does not apply to
@@ -13362,6 +13653,7 @@ namespace Model
         void DeregisterImageAsyncHelper(const Model::DeregisterImageRequest& request, const DeregisterImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccountAttributesAsyncHelper(const Model::DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAddressesAsyncHelper(const Model::DescribeAddressesRequest& request, const DescribeAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeAggregateIdFormatAsyncHelper(const Model::DescribeAggregateIdFormatRequest& request, const DescribeAggregateIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAvailabilityZonesAsyncHelper(const Model::DescribeAvailabilityZonesRequest& request, const DescribeAvailabilityZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBundleTasksAsyncHelper(const Model::DescribeBundleTasksRequest& request, const DescribeBundleTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeClassicLinkInstancesAsyncHelper(const Model::DescribeClassicLinkInstancesRequest& request, const DescribeClassicLinkInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -13400,6 +13692,7 @@ namespace Model
         void DescribeNetworkInterfacesAsyncHelper(const Model::DescribeNetworkInterfacesRequest& request, const DescribeNetworkInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePlacementGroupsAsyncHelper(const Model::DescribePlacementGroupsRequest& request, const DescribePlacementGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePrefixListsAsyncHelper(const Model::DescribePrefixListsRequest& request, const DescribePrefixListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribePrincipalIdFormatAsyncHelper(const Model::DescribePrincipalIdFormatRequest& request, const DescribePrincipalIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRegionsAsyncHelper(const Model::DescribeRegionsRequest& request, const DescribeRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeReservedInstancesAsyncHelper(const Model::DescribeReservedInstancesRequest& request, const DescribeReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeReservedInstancesListingsAsyncHelper(const Model::DescribeReservedInstancesListingsRequest& request, const DescribeReservedInstancesListingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
