@@ -126,26 +126,71 @@ namespace Model
 
     /**
      * <p>The Lambda trigger configuration information for the new user pool.</p>
+     * <note> <p>In a push model, event sources (such as Amazon S3 and custom
+     * applications) need permission to invoke a function. So you will need to make an
+     * extra call to add permission for these event sources to invoke your Lambda
+     * function.</p> <p/> <p>For more information on using the Lambda API to add
+     * permission, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
+     * AddPermission </a>. </p> <p>For adding permission using the AWS CLI, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
+     * add-permission </a>.</p> </note>
      */
     inline const LambdaConfigType& GetLambdaConfig() const{ return m_lambdaConfig; }
 
     /**
      * <p>The Lambda trigger configuration information for the new user pool.</p>
+     * <note> <p>In a push model, event sources (such as Amazon S3 and custom
+     * applications) need permission to invoke a function. So you will need to make an
+     * extra call to add permission for these event sources to invoke your Lambda
+     * function.</p> <p/> <p>For more information on using the Lambda API to add
+     * permission, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
+     * AddPermission </a>. </p> <p>For adding permission using the AWS CLI, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
+     * add-permission </a>.</p> </note>
      */
     inline void SetLambdaConfig(const LambdaConfigType& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = value; }
 
     /**
      * <p>The Lambda trigger configuration information for the new user pool.</p>
+     * <note> <p>In a push model, event sources (such as Amazon S3 and custom
+     * applications) need permission to invoke a function. So you will need to make an
+     * extra call to add permission for these event sources to invoke your Lambda
+     * function.</p> <p/> <p>For more information on using the Lambda API to add
+     * permission, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
+     * AddPermission </a>. </p> <p>For adding permission using the AWS CLI, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
+     * add-permission </a>.</p> </note>
      */
     inline void SetLambdaConfig(LambdaConfigType&& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = std::move(value); }
 
     /**
      * <p>The Lambda trigger configuration information for the new user pool.</p>
+     * <note> <p>In a push model, event sources (such as Amazon S3 and custom
+     * applications) need permission to invoke a function. So you will need to make an
+     * extra call to add permission for these event sources to invoke your Lambda
+     * function.</p> <p/> <p>For more information on using the Lambda API to add
+     * permission, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
+     * AddPermission </a>. </p> <p>For adding permission using the AWS CLI, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
+     * add-permission </a>.</p> </note>
      */
     inline CreateUserPoolRequest& WithLambdaConfig(const LambdaConfigType& value) { SetLambdaConfig(value); return *this;}
 
     /**
      * <p>The Lambda trigger configuration information for the new user pool.</p>
+     * <note> <p>In a push model, event sources (such as Amazon S3 and custom
+     * applications) need permission to invoke a function. So you will need to make an
+     * extra call to add permission for these event sources to invoke your Lambda
+     * function.</p> <p/> <p>For more information on using the Lambda API to add
+     * permission, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
+     * AddPermission </a>. </p> <p>For adding permission using the AWS CLI, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
+     * add-permission </a>.</p> </note>
      */
     inline CreateUserPoolRequest& WithLambdaConfig(LambdaConfigType&& value) { SetLambdaConfig(std::move(value)); return *this;}
 

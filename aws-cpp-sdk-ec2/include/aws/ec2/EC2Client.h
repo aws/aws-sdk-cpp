@@ -1357,7 +1357,7 @@ namespace Model
   /**
    * <fullname>Amazon Elastic Compute Cloud</fullname> <p>Amazon Elastic Compute
    * Cloud (Amazon EC2) provides resizable computing capacity in the AWS Cloud. Using
-   * Amazon EC2 eliminates your need to invest in hardware up front, so you can
+   * Amazon EC2 eliminates the need to invest in hardware up front, so you can
    * develop and deploy applications faster.</p>
    */
   class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient
@@ -6001,7 +6001,7 @@ namespace Model
          * Indicates whether your account can launch instances into EC2-Classic and
          * EC2-VPC, or only into EC2-VPC.</p> </li> <li> <p> <code>default-vpc</code>: The
          * ID of the default VPC for your account, or <code>none</code>.</p> </li> <li> <p>
-         * <code>max-instances</code>: The maximum number of On-Demand instances that you
+         * <code>max-instances</code>: The maximum number of On-Demand Instances that you
          * can run.</p> </li> <li> <p> <code>vpc-max-security-groups-per-interface</code>:
          * The maximum number of security groups that you can assign to a network
          * interface.</p> </li> <li> <p> <code>max-elastic-ips</code>: The maximum number
@@ -6020,7 +6020,7 @@ namespace Model
          * Indicates whether your account can launch instances into EC2-Classic and
          * EC2-VPC, or only into EC2-VPC.</p> </li> <li> <p> <code>default-vpc</code>: The
          * ID of the default VPC for your account, or <code>none</code>.</p> </li> <li> <p>
-         * <code>max-instances</code>: The maximum number of On-Demand instances that you
+         * <code>max-instances</code>: The maximum number of On-Demand Instances that you
          * can run.</p> </li> <li> <p> <code>vpc-max-security-groups-per-interface</code>:
          * The maximum number of security groups that you can assign to a network
          * interface.</p> </li> <li> <p> <code>max-elastic-ips</code>: The maximum number
@@ -6041,7 +6041,7 @@ namespace Model
          * Indicates whether your account can launch instances into EC2-Classic and
          * EC2-VPC, or only into EC2-VPC.</p> </li> <li> <p> <code>default-vpc</code>: The
          * ID of the default VPC for your account, or <code>none</code>.</p> </li> <li> <p>
-         * <code>max-instances</code>: The maximum number of On-Demand instances that you
+         * <code>max-instances</code>: The maximum number of On-Demand Instances that you
          * can run.</p> </li> <li> <p> <code>vpc-max-security-groups-per-interface</code>:
          * The maximum number of security groups that you can assign to a network
          * interface.</p> </li> <li> <p> <code>max-elastic-ips</code>: The maximum number

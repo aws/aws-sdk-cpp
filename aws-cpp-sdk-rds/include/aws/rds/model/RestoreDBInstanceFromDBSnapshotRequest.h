@@ -573,15 +573,14 @@ namespace Model
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source. For
      * example, you can restore a MariaDB 10.1 DB instance from a MySQL 5.6
-     * snapshot.</p> <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li>
-     * <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code>
-     * </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * snapshot.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li>
+     * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
+     * </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
+     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
+     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
+     * </li> </ul>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
@@ -589,15 +588,14 @@ namespace Model
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source. For
      * example, you can restore a MariaDB 10.1 DB instance from a MySQL 5.6
-     * snapshot.</p> <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li>
-     * <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code>
-     * </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * snapshot.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li>
+     * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
+     * </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
+     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
+     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
+     * </li> </ul>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
@@ -605,15 +603,14 @@ namespace Model
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source. For
      * example, you can restore a MariaDB 10.1 DB instance from a MySQL 5.6
-     * snapshot.</p> <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li>
-     * <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code>
-     * </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * snapshot.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li>
+     * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
+     * </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
+     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
+     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
+     * </li> </ul>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
@@ -621,15 +618,14 @@ namespace Model
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source. For
      * example, you can restore a MariaDB 10.1 DB instance from a MySQL 5.6
-     * snapshot.</p> <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li>
-     * <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code>
-     * </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * snapshot.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li>
+     * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
+     * </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
+     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
+     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
+     * </li> </ul>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
@@ -637,15 +633,14 @@ namespace Model
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source. For
      * example, you can restore a MariaDB 10.1 DB instance from a MySQL 5.6
-     * snapshot.</p> <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li>
-     * <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code>
-     * </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * snapshot.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li>
+     * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
+     * </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
+     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
+     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
+     * </li> </ul>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
@@ -653,15 +648,14 @@ namespace Model
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source. For
      * example, you can restore a MariaDB 10.1 DB instance from a MySQL 5.6
-     * snapshot.</p> <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li>
-     * <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code>
-     * </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * snapshot.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li>
+     * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
+     * </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
+     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
+     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
+     * </li> </ul>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
@@ -669,15 +663,14 @@ namespace Model
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source. For
      * example, you can restore a MariaDB 10.1 DB instance from a MySQL 5.6
-     * snapshot.</p> <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li>
-     * <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code>
-     * </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * snapshot.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li>
+     * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
+     * </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
+     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
+     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
+     * </li> </ul>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -1057,8 +1050,7 @@ namespace Model
      * to database accounts, and otherwise false.</p> <p>You can enable IAM database
      * authentication for the following database engines</p> <ul> <li> <p>For MySQL
      * 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor
-     * version 5.7.16 or higher</p> </li> <li> <p>Aurora 5.6 or higher.</p> </li> </ul>
-     * <p>Default: <code>false</code> </p>
+     * version 5.7.16 or higher</p> </li> </ul> <p>Default: <code>false</code> </p>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
@@ -1067,8 +1059,7 @@ namespace Model
      * to database accounts, and otherwise false.</p> <p>You can enable IAM database
      * authentication for the following database engines</p> <ul> <li> <p>For MySQL
      * 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor
-     * version 5.7.16 or higher</p> </li> <li> <p>Aurora 5.6 or higher.</p> </li> </ul>
-     * <p>Default: <code>false</code> </p>
+     * version 5.7.16 or higher</p> </li> </ul> <p>Default: <code>false</code> </p>
      */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
@@ -1077,8 +1068,7 @@ namespace Model
      * to database accounts, and otherwise false.</p> <p>You can enable IAM database
      * authentication for the following database engines</p> <ul> <li> <p>For MySQL
      * 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor
-     * version 5.7.16 or higher</p> </li> <li> <p>Aurora 5.6 or higher.</p> </li> </ul>
-     * <p>Default: <code>false</code> </p>
+     * version 5.7.16 or higher</p> </li> </ul> <p>Default: <code>false</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 

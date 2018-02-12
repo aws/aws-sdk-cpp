@@ -19,6 +19,7 @@
 #include <aws/guardduty/model/AwsApiCallAction.h>
 #include <aws/guardduty/model/DnsRequestAction.h>
 #include <aws/guardduty/model/NetworkConnectionAction.h>
+#include <aws/guardduty/model/PortProbeAction.h>
 #include <utility>
 
 namespace Aws
@@ -162,6 +163,32 @@ namespace Model
      */
     inline Action& WithNetworkConnectionAction(NetworkConnectionAction&& value) { SetNetworkConnectionAction(std::move(value)); return *this;}
 
+
+    /**
+     * Information about the PORT_PROBE action described in this finding.
+     */
+    inline const PortProbeAction& GetPortProbeAction() const{ return m_portProbeAction; }
+
+    /**
+     * Information about the PORT_PROBE action described in this finding.
+     */
+    inline void SetPortProbeAction(const PortProbeAction& value) { m_portProbeActionHasBeenSet = true; m_portProbeAction = value; }
+
+    /**
+     * Information about the PORT_PROBE action described in this finding.
+     */
+    inline void SetPortProbeAction(PortProbeAction&& value) { m_portProbeActionHasBeenSet = true; m_portProbeAction = std::move(value); }
+
+    /**
+     * Information about the PORT_PROBE action described in this finding.
+     */
+    inline Action& WithPortProbeAction(const PortProbeAction& value) { SetPortProbeAction(value); return *this;}
+
+    /**
+     * Information about the PORT_PROBE action described in this finding.
+     */
+    inline Action& WithPortProbeAction(PortProbeAction&& value) { SetPortProbeAction(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_actionType;
@@ -175,6 +202,9 @@ namespace Model
 
     NetworkConnectionAction m_networkConnectionAction;
     bool m_networkConnectionActionHasBeenSet;
+
+    PortProbeAction m_portProbeAction;
+    bool m_portProbeActionHasBeenSet;
   };
 
 } // namespace Model

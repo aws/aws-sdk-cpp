@@ -383,35 +383,32 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the read replica is in a Multi-AZ deployment. </p> <p>You
+     * <p>Specifies whether the Read Replica is in a Multi-AZ deployment. </p> <p>You
      * can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of
      * your replica in another Availability Zone for failover support for the replica.
      * Creating your Read Replica as a Multi-AZ DB instance is independent of whether
-     * the source database is a Multi-AZ DB instance. </p> <note> <p>Currently
-     * PostgreSQL Read Replicas can only be created as single-AZ DB instances.</p>
-     * </note>
+     * the source database is a Multi-AZ DB instance. </p> <note> <p>Currently, you
+     * can't create PostgreSQL Read Replicas as Multi-AZ DB instances.</p> </note>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
-     * <p>Specifies whether the read replica is in a Multi-AZ deployment. </p> <p>You
+     * <p>Specifies whether the Read Replica is in a Multi-AZ deployment. </p> <p>You
      * can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of
      * your replica in another Availability Zone for failover support for the replica.
      * Creating your Read Replica as a Multi-AZ DB instance is independent of whether
-     * the source database is a Multi-AZ DB instance. </p> <note> <p>Currently
-     * PostgreSQL Read Replicas can only be created as single-AZ DB instances.</p>
-     * </note>
+     * the source database is a Multi-AZ DB instance. </p> <note> <p>Currently, you
+     * can't create PostgreSQL Read Replicas as Multi-AZ DB instances.</p> </note>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
-     * <p>Specifies whether the read replica is in a Multi-AZ deployment. </p> <p>You
+     * <p>Specifies whether the Read Replica is in a Multi-AZ deployment. </p> <p>You
      * can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of
      * your replica in another Availability Zone for failover support for the replica.
      * Creating your Read Replica as a Multi-AZ DB instance is independent of whether
-     * the source database is a Multi-AZ DB instance. </p> <note> <p>Currently
-     * PostgreSQL Read Replicas can only be created as single-AZ DB instances.</p>
-     * </note>
+     * the source database is a Multi-AZ DB instance. </p> <note> <p>Currently, you
+     * can't create PostgreSQL Read Replicas as Multi-AZ DB instances.</p> </note>
      */
     inline CreateDBInstanceReadReplicaRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 

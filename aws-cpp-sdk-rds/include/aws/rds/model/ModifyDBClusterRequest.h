@@ -396,7 +396,7 @@ namespace Model
 
     /**
      * <p>A value that indicates that the DB cluster should be associated with the
-     * specified option group. Changing this parameter does not result in an outage
+     * specified option group. Changing this parameter doesn't result in an outage
      * except in the following case, and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request. If the parameter change results in an option
@@ -410,7 +410,7 @@ namespace Model
 
     /**
      * <p>A value that indicates that the DB cluster should be associated with the
-     * specified option group. Changing this parameter does not result in an outage
+     * specified option group. Changing this parameter doesn't result in an outage
      * except in the following case, and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request. If the parameter change results in an option
@@ -424,7 +424,7 @@ namespace Model
 
     /**
      * <p>A value that indicates that the DB cluster should be associated with the
-     * specified option group. Changing this parameter does not result in an outage
+     * specified option group. Changing this parameter doesn't result in an outage
      * except in the following case, and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request. If the parameter change results in an option
@@ -438,7 +438,7 @@ namespace Model
 
     /**
      * <p>A value that indicates that the DB cluster should be associated with the
-     * specified option group. Changing this parameter does not result in an outage
+     * specified option group. Changing this parameter doesn't result in an outage
      * except in the following case, and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request. If the parameter change results in an option
@@ -452,7 +452,7 @@ namespace Model
 
     /**
      * <p>A value that indicates that the DB cluster should be associated with the
-     * specified option group. Changing this parameter does not result in an outage
+     * specified option group. Changing this parameter doesn't result in an outage
      * except in the following case, and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request. If the parameter change results in an option
@@ -466,7 +466,7 @@ namespace Model
 
     /**
      * <p>A value that indicates that the DB cluster should be associated with the
-     * specified option group. Changing this parameter does not result in an outage
+     * specified option group. Changing this parameter doesn't result in an outage
      * except in the following case, and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request. If the parameter change results in an option
@@ -480,7 +480,7 @@ namespace Model
 
     /**
      * <p>A value that indicates that the DB cluster should be associated with the
-     * specified option group. Changing this parameter does not result in an outage
+     * specified option group. Changing this parameter doesn't result in an outage
      * except in the following case, and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request. If the parameter change results in an option

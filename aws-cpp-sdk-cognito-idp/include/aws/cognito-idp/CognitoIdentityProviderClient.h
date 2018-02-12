@@ -69,6 +69,7 @@
 #include <aws/cognito-idp/model/GetDeviceResult.h>
 #include <aws/cognito-idp/model/GetGroupResult.h>
 #include <aws/cognito-idp/model/GetIdentityProviderByIdentifierResult.h>
+#include <aws/cognito-idp/model/GetSigningCertificateResult.h>
 #include <aws/cognito-idp/model/GetUICustomizationResult.h>
 #include <aws/cognito-idp/model/GetUserResult.h>
 #include <aws/cognito-idp/model/GetUserAttributeVerificationCodeResult.h>
@@ -209,6 +210,7 @@ namespace Model
         class GetDeviceRequest;
         class GetGroupRequest;
         class GetIdentityProviderByIdentifierRequest;
+        class GetSigningCertificateRequest;
         class GetUICustomizationRequest;
         class GetUserRequest;
         class GetUserAttributeVerificationCodeRequest;
@@ -304,6 +306,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetDeviceResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetDeviceOutcome;
         typedef Aws::Utils::Outcome<GetGroupResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetGroupOutcome;
         typedef Aws::Utils::Outcome<GetIdentityProviderByIdentifierResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetIdentityProviderByIdentifierOutcome;
+        typedef Aws::Utils::Outcome<GetSigningCertificateResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetSigningCertificateOutcome;
         typedef Aws::Utils::Outcome<GetUICustomizationResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetUICustomizationOutcome;
         typedef Aws::Utils::Outcome<GetUserResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetUserOutcome;
         typedef Aws::Utils::Outcome<GetUserAttributeVerificationCodeResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetUserAttributeVerificationCodeOutcome;
@@ -399,6 +402,7 @@ namespace Model
         typedef std::future<GetDeviceOutcome> GetDeviceOutcomeCallable;
         typedef std::future<GetGroupOutcome> GetGroupOutcomeCallable;
         typedef std::future<GetIdentityProviderByIdentifierOutcome> GetIdentityProviderByIdentifierOutcomeCallable;
+        typedef std::future<GetSigningCertificateOutcome> GetSigningCertificateOutcomeCallable;
         typedef std::future<GetUICustomizationOutcome> GetUICustomizationOutcomeCallable;
         typedef std::future<GetUserOutcome> GetUserOutcomeCallable;
         typedef std::future<GetUserAttributeVerificationCodeOutcome> GetUserAttributeVerificationCodeOutcomeCallable;
@@ -497,6 +501,7 @@ namespace Model
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetDeviceRequest&, const Model::GetDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeviceResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetGroupRequest&, const Model::GetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGroupResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetIdentityProviderByIdentifierRequest&, const Model::GetIdentityProviderByIdentifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIdentityProviderByIdentifierResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetSigningCertificateRequest&, const Model::GetSigningCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSigningCertificateResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetUICustomizationRequest&, const Model::GetUICustomizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUICustomizationResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetUserRequest&, const Model::GetUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetUserAttributeVerificationCodeRequest&, const Model::GetUserAttributeVerificationCodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserAttributeVerificationCodeResponseReceivedHandler;
@@ -2384,6 +2389,34 @@ namespace Model
         virtual void GetIdentityProviderByIdentifierAsync(const Model::GetIdentityProviderByIdentifierRequest& request, const GetIdentityProviderByIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>This method takes a user pool ID, and returns the signing
+         * certificate.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetSigningCertificate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSigningCertificateOutcome GetSigningCertificate(const Model::GetSigningCertificateRequest& request) const;
+
+        /**
+         * <p>This method takes a user pool ID, and returns the signing
+         * certificate.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetSigningCertificate">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetSigningCertificateOutcomeCallable GetSigningCertificateCallable(const Model::GetSigningCertificateRequest& request) const;
+
+        /**
+         * <p>This method takes a user pool ID, and returns the signing
+         * certificate.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetSigningCertificate">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetSigningCertificateAsync(const Model::GetSigningCertificateRequest& request, const GetSigningCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets the UI Customization information for a particular app client's app UI,
          * if there is something set. If nothing is set for the particular client, but
          * there is an existing pool level customization (app <code>clientId</code> will be
@@ -3454,6 +3487,7 @@ namespace Model
         void GetDeviceAsyncHelper(const Model::GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetGroupAsyncHelper(const Model::GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIdentityProviderByIdentifierAsyncHelper(const Model::GetIdentityProviderByIdentifierRequest& request, const GetIdentityProviderByIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetSigningCertificateAsyncHelper(const Model::GetSigningCertificateRequest& request, const GetSigningCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUICustomizationAsyncHelper(const Model::GetUICustomizationRequest& request, const GetUICustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUserAsyncHelper(const Model::GetUserRequest& request, const GetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUserAttributeVerificationCodeAsyncHelper(const Model::GetUserAttributeVerificationCodeRequest& request, const GetUserAttributeVerificationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

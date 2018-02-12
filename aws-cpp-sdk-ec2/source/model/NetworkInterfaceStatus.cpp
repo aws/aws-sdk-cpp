@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int available_HASH = HashingUtils::HashString("available");
+        static const int associated_HASH = HashingUtils::HashString("associated");
         static const int attaching_HASH = HashingUtils::HashString("attaching");
         static const int in_use_HASH = HashingUtils::HashString("in-use");
         static const int detaching_HASH = HashingUtils::HashString("detaching");
@@ -42,6 +43,10 @@ namespace Aws
           if (hashCode == available_HASH)
           {
             return NetworkInterfaceStatus::available;
+          }
+          else if (hashCode == associated_HASH)
+          {
+            return NetworkInterfaceStatus::associated;
           }
           else if (hashCode == attaching_HASH)
           {
@@ -71,6 +76,8 @@ namespace Aws
           {
           case NetworkInterfaceStatus::available:
             return "available";
+          case NetworkInterfaceStatus::associated:
+            return "associated";
           case NetworkInterfaceStatus::attaching:
             return "attaching";
           case NetworkInterfaceStatus::in_use:

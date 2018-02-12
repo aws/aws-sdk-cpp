@@ -37,7 +37,8 @@ LambdaConfigType::LambdaConfigType() :
     m_defineAuthChallengeHasBeenSet(false),
     m_createAuthChallengeHasBeenSet(false),
     m_verifyAuthChallengeResponseHasBeenSet(false),
-    m_preTokenGenerationHasBeenSet(false)
+    m_preTokenGenerationHasBeenSet(false),
+    m_userMigrationHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ LambdaConfigType::LambdaConfigType(const JsonValue& jsonValue) :
     m_defineAuthChallengeHasBeenSet(false),
     m_createAuthChallengeHasBeenSet(false),
     m_verifyAuthChallengeResponseHasBeenSet(false),
-    m_preTokenGenerationHasBeenSet(false)
+    m_preTokenGenerationHasBeenSet(false),
+    m_userMigrationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -120,6 +122,13 @@ LambdaConfigType& LambdaConfigType::operator =(const JsonValue& jsonValue)
     m_preTokenGenerationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UserMigration"))
+  {
+    m_userMigration = jsonValue.GetString("UserMigration");
+
+    m_userMigrationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -178,6 +187,12 @@ JsonValue LambdaConfigType::Jsonize() const
   if(m_preTokenGenerationHasBeenSet)
   {
    payload.WithString("PreTokenGeneration", m_preTokenGeneration);
+
+  }
+
+  if(m_userMigrationHasBeenSet)
+  {
+   payload.WithString("UserMigration", m_userMigration);
 
   }
 

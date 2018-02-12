@@ -445,86 +445,107 @@ namespace Model
 
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
-     * Values: <code>aurora</code>, <code>aurora-postgresql</code> </p>
+     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and
+     * <code>aurora-postgresql</code> </p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
-     * Values: <code>aurora</code>, <code>aurora-postgresql</code> </p>
+     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and
+     * <code>aurora-postgresql</code> </p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
-     * Values: <code>aurora</code>, <code>aurora-postgresql</code> </p>
+     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and
+     * <code>aurora-postgresql</code> </p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
-     * Values: <code>aurora</code>, <code>aurora-postgresql</code> </p>
+     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and
+     * <code>aurora-postgresql</code> </p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
-     * Values: <code>aurora</code>, <code>aurora-postgresql</code> </p>
+     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and
+     * <code>aurora-postgresql</code> </p>
      */
     inline CreateDBClusterRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
-     * Values: <code>aurora</code>, <code>aurora-postgresql</code> </p>
+     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and
+     * <code>aurora-postgresql</code> </p>
      */
     inline CreateDBClusterRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
-     * Values: <code>aurora</code>, <code>aurora-postgresql</code> </p>
+     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and
+     * <code>aurora-postgresql</code> </p>
      */
     inline CreateDBClusterRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
 
     /**
-     * <p>The version number of the database engine to use.</p> <p> <b>Aurora</b> </p>
-     * <p>Example: <code>5.6.10a</code> </p>
+     * <p>The version number of the database engine to use.</p> <p> <b>Aurora MySQL</b>
+     * </p> <p>Example: <code>5.6.10a</code>, <code>5.7.12</code> </p> <p> <b>Aurora
+     * PostgreSQL</b> </p> <p>Example: <code>9.6.3</code> </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p>The version number of the database engine to use.</p> <p> <b>Aurora</b> </p>
-     * <p>Example: <code>5.6.10a</code> </p>
+     * <p>The version number of the database engine to use.</p> <p> <b>Aurora MySQL</b>
+     * </p> <p>Example: <code>5.6.10a</code>, <code>5.7.12</code> </p> <p> <b>Aurora
+     * PostgreSQL</b> </p> <p>Example: <code>9.6.3</code> </p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p>The version number of the database engine to use.</p> <p> <b>Aurora</b> </p>
-     * <p>Example: <code>5.6.10a</code> </p>
+     * <p>The version number of the database engine to use.</p> <p> <b>Aurora MySQL</b>
+     * </p> <p>Example: <code>5.6.10a</code>, <code>5.7.12</code> </p> <p> <b>Aurora
+     * PostgreSQL</b> </p> <p>Example: <code>9.6.3</code> </p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
-     * <p>The version number of the database engine to use.</p> <p> <b>Aurora</b> </p>
-     * <p>Example: <code>5.6.10a</code> </p>
+     * <p>The version number of the database engine to use.</p> <p> <b>Aurora MySQL</b>
+     * </p> <p>Example: <code>5.6.10a</code>, <code>5.7.12</code> </p> <p> <b>Aurora
+     * PostgreSQL</b> </p> <p>Example: <code>9.6.3</code> </p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p>The version number of the database engine to use.</p> <p> <b>Aurora</b> </p>
-     * <p>Example: <code>5.6.10a</code> </p>
+     * <p>The version number of the database engine to use.</p> <p> <b>Aurora MySQL</b>
+     * </p> <p>Example: <code>5.6.10a</code>, <code>5.7.12</code> </p> <p> <b>Aurora
+     * PostgreSQL</b> </p> <p>Example: <code>9.6.3</code> </p>
      */
     inline CreateDBClusterRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The version number of the database engine to use.</p> <p> <b>Aurora</b> </p>
-     * <p>Example: <code>5.6.10a</code> </p>
+     * <p>The version number of the database engine to use.</p> <p> <b>Aurora MySQL</b>
+     * </p> <p>Example: <code>5.6.10a</code>, <code>5.7.12</code> </p> <p> <b>Aurora
+     * PostgreSQL</b> </p> <p>Example: <code>9.6.3</code> </p>
      */
     inline CreateDBClusterRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version number of the database engine to use.</p> <p> <b>Aurora</b> </p>
-     * <p>Example: <code>5.6.10a</code> </p>
+     * <p>The version number of the database engine to use.</p> <p> <b>Aurora MySQL</b>
+     * </p> <p>Example: <code>5.6.10a</code>, <code>5.7.12</code> </p> <p> <b>Aurora
+     * PostgreSQL</b> </p> <p>Example: <code>9.6.3</code> </p>
      */
     inline CreateDBClusterRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
