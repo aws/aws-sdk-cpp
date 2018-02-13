@@ -29,7 +29,7 @@ def GetBuildEnvironments():
              'nmake' : { 'global_build_call' : [ "nmake" ],
                          'parallel_option' : '' },
              'jom' : { 'global_build_call' : [ "jom" ],
-                       'parallel_option' : '' } }
+                       'parallel_option' : '-j??' } }
 
 def GetPlatformEnvironments():
     return { 'Windows' : { 'default_install_directory' : 'C:\\temp\\AWSNativeSDK' },
