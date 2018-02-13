@@ -131,43 +131,43 @@ namespace Model
 
     /**
      * <p>Optional. If the encryption type is <code>aws:kms</code>, you can use this
-     * value to specify the encryption context for the restore results.</p>
+     * value to specify the encryption context for the job results.</p>
      */
     inline const Aws::String& GetKMSContext() const{ return m_kMSContext; }
 
     /**
      * <p>Optional. If the encryption type is <code>aws:kms</code>, you can use this
-     * value to specify the encryption context for the restore results.</p>
+     * value to specify the encryption context for the job results.</p>
      */
     inline void SetKMSContext(const Aws::String& value) { m_kMSContextHasBeenSet = true; m_kMSContext = value; }
 
     /**
      * <p>Optional. If the encryption type is <code>aws:kms</code>, you can use this
-     * value to specify the encryption context for the restore results.</p>
+     * value to specify the encryption context for the job results.</p>
      */
     inline void SetKMSContext(Aws::String&& value) { m_kMSContextHasBeenSet = true; m_kMSContext = std::move(value); }
 
     /**
      * <p>Optional. If the encryption type is <code>aws:kms</code>, you can use this
-     * value to specify the encryption context for the restore results.</p>
+     * value to specify the encryption context for the job results.</p>
      */
     inline void SetKMSContext(const char* value) { m_kMSContextHasBeenSet = true; m_kMSContext.assign(value); }
 
     /**
      * <p>Optional. If the encryption type is <code>aws:kms</code>, you can use this
-     * value to specify the encryption context for the restore results.</p>
+     * value to specify the encryption context for the job results.</p>
      */
     inline Encryption& WithKMSContext(const Aws::String& value) { SetKMSContext(value); return *this;}
 
     /**
      * <p>Optional. If the encryption type is <code>aws:kms</code>, you can use this
-     * value to specify the encryption context for the restore results.</p>
+     * value to specify the encryption context for the job results.</p>
      */
     inline Encryption& WithKMSContext(Aws::String&& value) { SetKMSContext(std::move(value)); return *this;}
 
     /**
      * <p>Optional. If the encryption type is <code>aws:kms</code>, you can use this
-     * value to specify the encryption context for the restore results.</p>
+     * value to specify the encryption context for the job results.</p>
      */
     inline Encryption& WithKMSContext(const char* value) { SetKMSContext(value); return *this;}
 

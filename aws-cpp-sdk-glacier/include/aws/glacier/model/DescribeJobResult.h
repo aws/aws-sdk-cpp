@@ -722,49 +722,49 @@ namespace Model
 
 
     /**
-     * <p>The retrieval option to use for the archive retrieval. Valid values are
+     * <p>The tier to use for a select or an archive retrieval. Valid values are
      * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
      * <code>Standard</code> is the default.</p>
      */
     inline const Aws::String& GetTier() const{ return m_tier; }
 
     /**
-     * <p>The retrieval option to use for the archive retrieval. Valid values are
+     * <p>The tier to use for a select or an archive retrieval. Valid values are
      * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
      * <code>Standard</code> is the default.</p>
      */
     inline void SetTier(const Aws::String& value) { m_tier = value; }
 
     /**
-     * <p>The retrieval option to use for the archive retrieval. Valid values are
+     * <p>The tier to use for a select or an archive retrieval. Valid values are
      * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
      * <code>Standard</code> is the default.</p>
      */
     inline void SetTier(Aws::String&& value) { m_tier = std::move(value); }
 
     /**
-     * <p>The retrieval option to use for the archive retrieval. Valid values are
+     * <p>The tier to use for a select or an archive retrieval. Valid values are
      * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
      * <code>Standard</code> is the default.</p>
      */
     inline void SetTier(const char* value) { m_tier.assign(value); }
 
     /**
-     * <p>The retrieval option to use for the archive retrieval. Valid values are
+     * <p>The tier to use for a select or an archive retrieval. Valid values are
      * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
      * <code>Standard</code> is the default.</p>
      */
     inline DescribeJobResult& WithTier(const Aws::String& value) { SetTier(value); return *this;}
 
     /**
-     * <p>The retrieval option to use for the archive retrieval. Valid values are
+     * <p>The tier to use for a select or an archive retrieval. Valid values are
      * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
      * <code>Standard</code> is the default.</p>
      */
     inline DescribeJobResult& WithTier(Aws::String&& value) { SetTier(std::move(value)); return *this;}
 
     /**
-     * <p>The retrieval option to use for the archive retrieval. Valid values are
+     * <p>The tier to use for a select or an archive retrieval. Valid values are
      * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
      * <code>Standard</code> is the default.</p>
      */
@@ -834,27 +834,27 @@ namespace Model
 
 
     /**
-     * <p>Contains the parameters that define a select job.</p>
+     * <p>Contains the parameters used for a select.</p>
      */
     inline const SelectParameters& GetSelectParameters() const{ return m_selectParameters; }
 
     /**
-     * <p>Contains the parameters that define a select job.</p>
+     * <p>Contains the parameters used for a select.</p>
      */
     inline void SetSelectParameters(const SelectParameters& value) { m_selectParameters = value; }
 
     /**
-     * <p>Contains the parameters that define a select job.</p>
+     * <p>Contains the parameters used for a select.</p>
      */
     inline void SetSelectParameters(SelectParameters&& value) { m_selectParameters = std::move(value); }
 
     /**
-     * <p>Contains the parameters that define a select job.</p>
+     * <p>Contains the parameters used for a select.</p>
      */
     inline DescribeJobResult& WithSelectParameters(const SelectParameters& value) { SetSelectParameters(value); return *this;}
 
     /**
-     * <p>Contains the parameters that define a select job.</p>
+     * <p>Contains the parameters used for a select.</p>
      */
     inline DescribeJobResult& WithSelectParameters(SelectParameters&& value) { SetSelectParameters(std::move(value)); return *this;}
 
