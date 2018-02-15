@@ -26,11 +26,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutIntentResult::PutIntentResult()
+PutIntentResult::PutIntentResult() : 
+    m_createVersion(false)
 {
 }
 
-PutIntentResult::PutIntentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+PutIntentResult::PutIntentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_createVersion(false)
 {
   *this = result;
 }
@@ -131,6 +133,12 @@ PutIntentResult& PutIntentResult::operator =(const Aws::AmazonWebServiceResult<J
   if(jsonValue.ValueExists("checksum"))
   {
     m_checksum = jsonValue.GetString("checksum");
+
+  }
+
+  if(jsonValue.ValueExists("createVersion"))
+  {
+    m_createVersion = jsonValue.GetBool("createVersion");
 
   }
 

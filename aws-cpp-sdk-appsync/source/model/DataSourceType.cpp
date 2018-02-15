@@ -33,6 +33,7 @@ namespace Aws
         static const int AWS_LAMBDA_HASH = HashingUtils::HashString("AWS_LAMBDA");
         static const int AMAZON_DYNAMODB_HASH = HashingUtils::HashString("AMAZON_DYNAMODB");
         static const int AMAZON_ELASTICSEARCH_HASH = HashingUtils::HashString("AMAZON_ELASTICSEARCH");
+        static const int NONE_HASH = HashingUtils::HashString("NONE");
 
 
         DataSourceType GetDataSourceTypeForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == AMAZON_ELASTICSEARCH_HASH)
           {
             return DataSourceType::AMAZON_ELASTICSEARCH;
+          }
+          else if (hashCode == NONE_HASH)
+          {
+            return DataSourceType::NONE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +75,8 @@ namespace Aws
             return "AMAZON_DYNAMODB";
           case DataSourceType::AMAZON_ELASTICSEARCH:
             return "AMAZON_ELASTICSEARCH";
+          case DataSourceType::NONE:
+            return "NONE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

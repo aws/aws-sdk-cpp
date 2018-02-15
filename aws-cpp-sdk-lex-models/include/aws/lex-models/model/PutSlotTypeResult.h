@@ -327,6 +327,16 @@ namespace Model
      */
     inline PutSlotTypeResult& WithValueSelectionStrategy(SlotValueSelectionStrategy&& value) { SetValueSelectionStrategy(std::move(value)); return *this;}
 
+
+    
+    inline bool GetCreateVersion() const{ return m_createVersion; }
+
+    
+    inline void SetCreateVersion(bool value) { m_createVersion = value; }
+
+    
+    inline PutSlotTypeResult& WithCreateVersion(bool value) { SetCreateVersion(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -344,6 +354,8 @@ namespace Model
     Aws::String m_checksum;
 
     SlotValueSelectionStrategy m_valueSelectionStrategy;
+
+    bool m_createVersion;
   };
 
 } // namespace Model

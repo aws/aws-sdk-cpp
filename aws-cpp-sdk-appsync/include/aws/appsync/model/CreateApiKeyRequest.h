@@ -113,6 +113,28 @@ namespace Model
      */
     inline CreateApiKeyRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    /**
+     * <p>The time after which the API key expires. The date is represented as seconds
+     * since the epoch, rounded down to the nearest hour. The default value for this
+     * parameter is 7 days from creation time.</p>
+     */
+    inline long long GetExpires() const{ return m_expires; }
+
+    /**
+     * <p>The time after which the API key expires. The date is represented as seconds
+     * since the epoch, rounded down to the nearest hour. The default value for this
+     * parameter is 7 days from creation time.</p>
+     */
+    inline void SetExpires(long long value) { m_expiresHasBeenSet = true; m_expires = value; }
+
+    /**
+     * <p>The time after which the API key expires. The date is represented as seconds
+     * since the epoch, rounded down to the nearest hour. The default value for this
+     * parameter is 7 days from creation time.</p>
+     */
+    inline CreateApiKeyRequest& WithExpires(long long value) { SetExpires(value); return *this;}
+
   private:
 
     Aws::String m_apiId;
@@ -120,6 +142,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    long long m_expires;
+    bool m_expiresHasBeenSet;
   };
 
 } // namespace Model

@@ -34,7 +34,9 @@ PutIntentRequest::PutIntentRequest() :
     m_dialogCodeHookHasBeenSet(false),
     m_fulfillmentActivityHasBeenSet(false),
     m_parentIntentSignatureHasBeenSet(false),
-    m_checksumHasBeenSet(false)
+    m_checksumHasBeenSet(false),
+    m_createVersion(false),
+    m_createVersionHasBeenSet(false)
 {
 }
 
@@ -115,6 +117,12 @@ Aws::String PutIntentRequest::SerializePayload() const
   if(m_checksumHasBeenSet)
   {
    payload.WithString("checksum", m_checksum);
+
+  }
+
+  if(m_createVersionHasBeenSet)
+  {
+   payload.WithBool("createVersion", m_createVersion);
 
   }
 

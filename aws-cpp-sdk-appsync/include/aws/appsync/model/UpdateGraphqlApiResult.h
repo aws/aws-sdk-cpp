@@ -43,27 +43,27 @@ namespace Model
 
 
     /**
-     * <p>The udpated <code>GraphqlApi</code> object.</p>
+     * <p>The updated <code>GraphqlApi</code> object.</p>
      */
     inline const GraphqlApi& GetGraphqlApi() const{ return m_graphqlApi; }
 
     /**
-     * <p>The udpated <code>GraphqlApi</code> object.</p>
+     * <p>The updated <code>GraphqlApi</code> object.</p>
      */
     inline void SetGraphqlApi(const GraphqlApi& value) { m_graphqlApi = value; }
 
     /**
-     * <p>The udpated <code>GraphqlApi</code> object.</p>
+     * <p>The updated <code>GraphqlApi</code> object.</p>
      */
     inline void SetGraphqlApi(GraphqlApi&& value) { m_graphqlApi = std::move(value); }
 
     /**
-     * <p>The udpated <code>GraphqlApi</code> object.</p>
+     * <p>The updated <code>GraphqlApi</code> object.</p>
      */
     inline UpdateGraphqlApiResult& WithGraphqlApi(const GraphqlApi& value) { SetGraphqlApi(value); return *this;}
 
     /**
-     * <p>The udpated <code>GraphqlApi</code> object.</p>
+     * <p>The updated <code>GraphqlApi</code> object.</p>
      */
     inline UpdateGraphqlApiResult& WithGraphqlApi(GraphqlApi&& value) { SetGraphqlApi(std::move(value)); return *this;}
 

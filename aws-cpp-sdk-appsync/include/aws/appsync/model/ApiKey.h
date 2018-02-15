@@ -119,17 +119,20 @@ namespace Model
 
 
     /**
-     * <p>The time when the API key expires.</p>
+     * <p>The time after which the API key expires. The date is represented as seconds
+     * since the epoch, rounded down to the nearest hour.</p>
      */
     inline long long GetExpires() const{ return m_expires; }
 
     /**
-     * <p>The time when the API key expires.</p>
+     * <p>The time after which the API key expires. The date is represented as seconds
+     * since the epoch, rounded down to the nearest hour.</p>
      */
     inline void SetExpires(long long value) { m_expiresHasBeenSet = true; m_expires = value; }
 
     /**
-     * <p>The time when the API key expires.</p>
+     * <p>The time after which the API key expires. The date is represented as seconds
+     * since the epoch, rounded down to the nearest hour.</p>
      */
     inline ApiKey& WithExpires(long long value) { SetExpires(value); return *this;}
 

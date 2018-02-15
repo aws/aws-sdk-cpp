@@ -159,27 +159,57 @@ namespace Model
 
 
     /**
-     * <p>The type of the data source.</p>
+     * <p>The type of the data source.</p> <ul> <li> <p> <b>AMAZON_DYNAMODB</b>: The
+     * data source is an Amazon DynamoDB table.</p> </li> <li> <p>
+     * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service
+     * domain.</p> </li> <li> <p> <b>AWS_LAMBDA</b>: The data source is an AWS Lambda
+     * function.</p> </li> <li> <p> <b>NONE</b>: There is no data source. This type is
+     * used when the required information can be computed on the fly without connecting
+     * to a back-end data source.</p> </li> </ul>
      */
     inline const DataSourceType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the data source.</p>
+     * <p>The type of the data source.</p> <ul> <li> <p> <b>AMAZON_DYNAMODB</b>: The
+     * data source is an Amazon DynamoDB table.</p> </li> <li> <p>
+     * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service
+     * domain.</p> </li> <li> <p> <b>AWS_LAMBDA</b>: The data source is an AWS Lambda
+     * function.</p> </li> <li> <p> <b>NONE</b>: There is no data source. This type is
+     * used when the required information can be computed on the fly without connecting
+     * to a back-end data source.</p> </li> </ul>
      */
     inline void SetType(const DataSourceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the data source.</p>
+     * <p>The type of the data source.</p> <ul> <li> <p> <b>AMAZON_DYNAMODB</b>: The
+     * data source is an Amazon DynamoDB table.</p> </li> <li> <p>
+     * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service
+     * domain.</p> </li> <li> <p> <b>AWS_LAMBDA</b>: The data source is an AWS Lambda
+     * function.</p> </li> <li> <p> <b>NONE</b>: There is no data source. This type is
+     * used when the required information can be computed on the fly without connecting
+     * to a back-end data source.</p> </li> </ul>
      */
     inline void SetType(DataSourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the data source.</p>
+     * <p>The type of the data source.</p> <ul> <li> <p> <b>AMAZON_DYNAMODB</b>: The
+     * data source is an Amazon DynamoDB table.</p> </li> <li> <p>
+     * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service
+     * domain.</p> </li> <li> <p> <b>AWS_LAMBDA</b>: The data source is an AWS Lambda
+     * function.</p> </li> <li> <p> <b>NONE</b>: There is no data source. This type is
+     * used when the required information can be computed on the fly without connecting
+     * to a back-end data source.</p> </li> </ul>
      */
     inline DataSource& WithType(const DataSourceType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the data source.</p>
+     * <p>The type of the data source.</p> <ul> <li> <p> <b>AMAZON_DYNAMODB</b>: The
+     * data source is an Amazon DynamoDB table.</p> </li> <li> <p>
+     * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service
+     * domain.</p> </li> <li> <p> <b>AWS_LAMBDA</b>: The data source is an AWS Lambda
+     * function.</p> </li> <li> <p> <b>NONE</b>: There is no data source. This type is
+     * used when the required information can be computed on the fly without connecting
+     * to a back-end data source.</p> </li> </ul>
      */
     inline DataSource& WithType(DataSourceType&& value) { SetType(std::move(value)); return *this;}
 

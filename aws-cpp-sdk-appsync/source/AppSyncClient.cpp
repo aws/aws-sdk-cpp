@@ -49,6 +49,7 @@
 #include <aws/appsync/model/ListResolversRequest.h>
 #include <aws/appsync/model/ListTypesRequest.h>
 #include <aws/appsync/model/StartSchemaCreationRequest.h>
+#include <aws/appsync/model/UpdateApiKeyRequest.h>
 #include <aws/appsync/model/UpdateDataSourceRequest.h>
 #include <aws/appsync/model/UpdateGraphqlApiRequest.h>
 #include <aws/appsync/model/UpdateResolverRequest.h>
@@ -939,6 +940,44 @@ void AppSyncClient::StartSchemaCreationAsync(const StartSchemaCreationRequest& r
 void AppSyncClient::StartSchemaCreationAsyncHelper(const StartSchemaCreationRequest& request, const StartSchemaCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StartSchemaCreation(request), context);
+}
+
+UpdateApiKeyOutcome AppSyncClient::UpdateApiKey(const UpdateApiKeyRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apis/";
+  ss << request.GetApiId();
+  ss << "/apikeys/";
+  ss << request.GetId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateApiKeyOutcome(UpdateApiKeyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateApiKeyOutcome(outcome.GetError());
+  }
+}
+
+UpdateApiKeyOutcomeCallable AppSyncClient::UpdateApiKeyCallable(const UpdateApiKeyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateApiKeyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateApiKey(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppSyncClient::UpdateApiKeyAsync(const UpdateApiKeyRequest& request, const UpdateApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateApiKeyAsyncHelper( request, handler, context ); } );
+}
+
+void AppSyncClient::UpdateApiKeyAsyncHelper(const UpdateApiKeyRequest& request, const UpdateApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateApiKey(request), context);
 }
 
 UpdateDataSourceOutcome AppSyncClient::UpdateDataSource(const UpdateDataSourceRequest& request) const

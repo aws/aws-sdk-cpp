@@ -26,7 +26,9 @@ namespace Model
   enum class ResourceType
   {
     NOT_SET,
-    BOT
+    BOT,
+    INTENT,
+    SLOT_TYPE
   };
 
 namespace ResourceTypeMapper

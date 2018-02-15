@@ -35,6 +35,7 @@
 #include <aws/lex-models/model/GetBuiltinIntentsResult.h>
 #include <aws/lex-models/model/GetBuiltinSlotTypesResult.h>
 #include <aws/lex-models/model/GetExportResult.h>
+#include <aws/lex-models/model/GetImportResult.h>
 #include <aws/lex-models/model/GetIntentResult.h>
 #include <aws/lex-models/model/GetIntentVersionsResult.h>
 #include <aws/lex-models/model/GetIntentsResult.h>
@@ -46,6 +47,7 @@
 #include <aws/lex-models/model/PutBotAliasResult.h>
 #include <aws/lex-models/model/PutIntentResult.h>
 #include <aws/lex-models/model/PutSlotTypeResult.h>
+#include <aws/lex-models/model/StartImportResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -115,6 +117,7 @@ namespace Model
         class GetBuiltinIntentsRequest;
         class GetBuiltinSlotTypesRequest;
         class GetExportRequest;
+        class GetImportRequest;
         class GetIntentRequest;
         class GetIntentVersionsRequest;
         class GetIntentsRequest;
@@ -126,6 +129,7 @@ namespace Model
         class PutBotAliasRequest;
         class PutIntentRequest;
         class PutSlotTypeRequest;
+        class StartImportRequest;
 
         typedef Aws::Utils::Outcome<CreateBotVersionResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> CreateBotVersionOutcome;
         typedef Aws::Utils::Outcome<CreateIntentVersionResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> CreateIntentVersionOutcome;
@@ -150,6 +154,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetBuiltinIntentsResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetBuiltinIntentsOutcome;
         typedef Aws::Utils::Outcome<GetBuiltinSlotTypesResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetBuiltinSlotTypesOutcome;
         typedef Aws::Utils::Outcome<GetExportResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetExportOutcome;
+        typedef Aws::Utils::Outcome<GetImportResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetImportOutcome;
         typedef Aws::Utils::Outcome<GetIntentResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetIntentOutcome;
         typedef Aws::Utils::Outcome<GetIntentVersionsResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetIntentVersionsOutcome;
         typedef Aws::Utils::Outcome<GetIntentsResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetIntentsOutcome;
@@ -161,6 +166,7 @@ namespace Model
         typedef Aws::Utils::Outcome<PutBotAliasResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> PutBotAliasOutcome;
         typedef Aws::Utils::Outcome<PutIntentResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> PutIntentOutcome;
         typedef Aws::Utils::Outcome<PutSlotTypeResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> PutSlotTypeOutcome;
+        typedef Aws::Utils::Outcome<StartImportResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> StartImportOutcome;
 
         typedef std::future<CreateBotVersionOutcome> CreateBotVersionOutcomeCallable;
         typedef std::future<CreateIntentVersionOutcome> CreateIntentVersionOutcomeCallable;
@@ -185,6 +191,7 @@ namespace Model
         typedef std::future<GetBuiltinIntentsOutcome> GetBuiltinIntentsOutcomeCallable;
         typedef std::future<GetBuiltinSlotTypesOutcome> GetBuiltinSlotTypesOutcomeCallable;
         typedef std::future<GetExportOutcome> GetExportOutcomeCallable;
+        typedef std::future<GetImportOutcome> GetImportOutcomeCallable;
         typedef std::future<GetIntentOutcome> GetIntentOutcomeCallable;
         typedef std::future<GetIntentVersionsOutcome> GetIntentVersionsOutcomeCallable;
         typedef std::future<GetIntentsOutcome> GetIntentsOutcomeCallable;
@@ -196,6 +203,7 @@ namespace Model
         typedef std::future<PutBotAliasOutcome> PutBotAliasOutcomeCallable;
         typedef std::future<PutIntentOutcome> PutIntentOutcomeCallable;
         typedef std::future<PutSlotTypeOutcome> PutSlotTypeOutcomeCallable;
+        typedef std::future<StartImportOutcome> StartImportOutcomeCallable;
 } // namespace Model
 
   class LexModelBuildingServiceClient;
@@ -223,6 +231,7 @@ namespace Model
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::GetBuiltinIntentsRequest&, const Model::GetBuiltinIntentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBuiltinIntentsResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::GetBuiltinSlotTypesRequest&, const Model::GetBuiltinSlotTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBuiltinSlotTypesResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::GetExportRequest&, const Model::GetExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetExportResponseReceivedHandler;
+    typedef std::function<void(const LexModelBuildingServiceClient*, const Model::GetImportRequest&, const Model::GetImportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetImportResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::GetIntentRequest&, const Model::GetIntentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIntentResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::GetIntentVersionsRequest&, const Model::GetIntentVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIntentVersionsResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::GetIntentsRequest&, const Model::GetIntentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIntentsResponseReceivedHandler;
@@ -234,6 +243,7 @@ namespace Model
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::PutBotAliasRequest&, const Model::PutBotAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBotAliasResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::PutIntentRequest&, const Model::PutIntentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutIntentResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::PutSlotTypeRequest&, const Model::PutSlotTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSlotTypeResponseReceivedHandler;
+    typedef std::function<void(const LexModelBuildingServiceClient*, const Model::StartImportRequest&, const Model::StartImportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartImportResponseReceivedHandler;
 
   /**
    * <fullname>Amazon Lex Build-Time Actions</fullname> <p> Amazon Lex is an AWS
@@ -1212,6 +1222,34 @@ namespace Model
         virtual void GetExportAsync(const Model::GetExportRequest& request, const GetExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets information about an import job started with the
+         * <code>StartImport</code> operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetImport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetImportOutcome GetImport(const Model::GetImportRequest& request) const;
+
+        /**
+         * <p>Gets information about an import job started with the
+         * <code>StartImport</code> operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetImport">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetImportOutcomeCallable GetImportCallable(const Model::GetImportRequest& request) const;
+
+        /**
+         * <p>Gets information about an import job started with the
+         * <code>StartImport</code> operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetImport">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetImportAsync(const Model::GetImportRequest& request, const GetImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Returns information about an intent. In addition to the intent name, you
          * must specify the intent version. </p> <p> This operation requires permissions to
          * perform the <code>lex:GetIntent</code> action. </p><p><h3>See Also:</h3>   <a
@@ -1813,6 +1851,34 @@ namespace Model
          */
         virtual void PutSlotTypeAsync(const Model::PutSlotTypeRequest& request, const PutSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Starts a job to import a resource to Amazon Lex.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/StartImport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartImportOutcome StartImport(const Model::StartImportRequest& request) const;
+
+        /**
+         * <p>Starts a job to import a resource to Amazon Lex.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/StartImport">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartImportOutcomeCallable StartImportCallable(const Model::StartImportRequest& request) const;
+
+        /**
+         * <p>Starts a job to import a resource to Amazon Lex.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/StartImport">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartImportAsync(const Model::StartImportRequest& request, const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
@@ -1841,6 +1907,7 @@ namespace Model
         void GetBuiltinIntentsAsyncHelper(const Model::GetBuiltinIntentsRequest& request, const GetBuiltinIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBuiltinSlotTypesAsyncHelper(const Model::GetBuiltinSlotTypesRequest& request, const GetBuiltinSlotTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetExportAsyncHelper(const Model::GetExportRequest& request, const GetExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetImportAsyncHelper(const Model::GetImportRequest& request, const GetImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIntentAsyncHelper(const Model::GetIntentRequest& request, const GetIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIntentVersionsAsyncHelper(const Model::GetIntentVersionsRequest& request, const GetIntentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIntentsAsyncHelper(const Model::GetIntentsRequest& request, const GetIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1852,6 +1919,7 @@ namespace Model
         void PutBotAliasAsyncHelper(const Model::PutBotAliasRequest& request, const PutBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutIntentAsyncHelper(const Model::PutIntentRequest& request, const PutIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutSlotTypeAsyncHelper(const Model::PutSlotTypeRequest& request, const PutSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartImportAsyncHelper(const Model::StartImportRequest& request, const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;

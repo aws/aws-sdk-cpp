@@ -28,7 +28,8 @@ namespace Model
     NOT_SET,
     AWS_LAMBDA,
     AMAZON_DYNAMODB,
-    AMAZON_ELASTICSEARCH
+    AMAZON_ELASTICSEARCH,
+    NONE
   };
 
 namespace DataSourceTypeMapper

@@ -635,6 +635,16 @@ namespace Model
      */
     inline PutBotResult& WithChildDirected(bool value) { SetChildDirected(value); return *this;}
 
+
+    
+    inline bool GetCreateVersion() const{ return m_createVersion; }
+
+    
+    inline void SetCreateVersion(bool value) { m_createVersion = value; }
+
+    
+    inline PutBotResult& WithCreateVersion(bool value) { SetCreateVersion(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -666,6 +676,8 @@ namespace Model
     Locale m_locale;
 
     bool m_childDirected;
+
+    bool m_createVersion;
   };
 
 } // namespace Model
