@@ -40,6 +40,8 @@ GameSession::GameSession() :
     m_maximumPlayerSessionCountHasBeenSet(false),
     m_status(GameSessionStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_statusReason(GameSessionStatusReason::NOT_SET),
+    m_statusReasonHasBeenSet(false),
     m_gamePropertiesHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
     m_port(0),
@@ -64,6 +66,8 @@ GameSession::GameSession(const JsonValue& jsonValue) :
     m_maximumPlayerSessionCountHasBeenSet(false),
     m_status(GameSessionStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_statusReason(GameSessionStatusReason::NOT_SET),
+    m_statusReasonHasBeenSet(false),
     m_gamePropertiesHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
     m_port(0),
@@ -133,6 +137,13 @@ GameSession& GameSession::operator =(const JsonValue& jsonValue)
     m_status = GameSessionStatusMapper::GetGameSessionStatusForName(jsonValue.GetString("Status"));
 
     m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StatusReason"))
+  {
+    m_statusReason = GameSessionStatusReasonMapper::GetGameSessionStatusReasonForName(jsonValue.GetString("StatusReason"));
+
+    m_statusReasonHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("GameProperties"))
@@ -237,6 +248,11 @@ JsonValue GameSession::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("Status", GameSessionStatusMapper::GetNameForGameSessionStatus(m_status));
+  }
+
+  if(m_statusReasonHasBeenSet)
+  {
+   payload.WithString("StatusReason", GameSessionStatusReasonMapper::GetNameForGameSessionStatusReason(m_statusReason));
   }
 
   if(m_gamePropertiesHasBeenSet)

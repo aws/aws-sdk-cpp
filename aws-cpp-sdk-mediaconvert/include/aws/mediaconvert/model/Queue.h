@@ -228,31 +228,31 @@ namespace Model
 
 
     /**
-     * A queue can be of two types: system or custom. System or built-in queues can’t
+     * A queue can be of two types: system or custom. System or built-in queues can't
      * be modified or deleted by the user.
      */
     inline const Type& GetType() const{ return m_type; }
 
     /**
-     * A queue can be of two types: system or custom. System or built-in queues can’t
+     * A queue can be of two types: system or custom. System or built-in queues can't
      * be modified or deleted by the user.
      */
     inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * A queue can be of two types: system or custom. System or built-in queues can’t
+     * A queue can be of two types: system or custom. System or built-in queues can't
      * be modified or deleted by the user.
      */
     inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * A queue can be of two types: system or custom. System or built-in queues can’t
+     * A queue can be of two types: system or custom. System or built-in queues can't
      * be modified or deleted by the user.
      */
     inline Queue& WithType(const Type& value) { SetType(value); return *this;}
 
     /**
-     * A queue can be of two types: system or custom. System or built-in queues can’t
+     * A queue can be of two types: system or custom. System or built-in queues can't
      * be modified or deleted by the user.
      */
     inline Queue& WithType(Type&& value) { SetType(std::move(value)); return *this;}

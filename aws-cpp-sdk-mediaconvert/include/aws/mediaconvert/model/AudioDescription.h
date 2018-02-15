@@ -52,29 +52,19 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    /**
-     * Settings for Audio Normalization
-     */
+    
     inline const AudioNormalizationSettings& GetAudioNormalizationSettings() const{ return m_audioNormalizationSettings; }
 
-    /**
-     * Settings for Audio Normalization
-     */
+    
     inline void SetAudioNormalizationSettings(const AudioNormalizationSettings& value) { m_audioNormalizationSettingsHasBeenSet = true; m_audioNormalizationSettings = value; }
 
-    /**
-     * Settings for Audio Normalization
-     */
+    
     inline void SetAudioNormalizationSettings(AudioNormalizationSettings&& value) { m_audioNormalizationSettingsHasBeenSet = true; m_audioNormalizationSettings = std::move(value); }
 
-    /**
-     * Settings for Audio Normalization
-     */
+    
     inline AudioDescription& WithAudioNormalizationSettings(const AudioNormalizationSettings& value) { SetAudioNormalizationSettings(value); return *this;}
 
-    /**
-     * Settings for Audio Normalization
-     */
+    
     inline AudioDescription& WithAudioNormalizationSettings(AudioNormalizationSettings&& value) { SetAudioNormalizationSettings(std::move(value)); return *this;}
 
 

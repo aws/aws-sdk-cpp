@@ -314,31 +314,31 @@ namespace Model
 
     /**
      * A job template can be of two types: system or custom. System or built-in job
-     * templates can’t be modified or deleted by the user.
+     * templates can't be modified or deleted by the user.
      */
     inline const Type& GetType() const{ return m_type; }
 
     /**
      * A job template can be of two types: system or custom. System or built-in job
-     * templates can’t be modified or deleted by the user.
+     * templates can't be modified or deleted by the user.
      */
     inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * A job template can be of two types: system or custom. System or built-in job
-     * templates can’t be modified or deleted by the user.
+     * templates can't be modified or deleted by the user.
      */
     inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * A job template can be of two types: system or custom. System or built-in job
-     * templates can’t be modified or deleted by the user.
+     * templates can't be modified or deleted by the user.
      */
     inline JobTemplate& WithType(const Type& value) { SetType(value); return *this;}
 
     /**
      * A job template can be of two types: system or custom. System or built-in job
-     * templates can’t be modified or deleted by the user.
+     * templates can't be modified or deleted by the user.
      */
     inline JobTemplate& WithType(Type&& value) { SetType(std::move(value)); return *this;}
 

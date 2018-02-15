@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/gamelift/model/GameSessionStatus.h>
+#include <aws/gamelift/model/GameSessionStatusReason.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/gamelift/model/PlayerSessionCreationPolicy.h>
 #include <aws/gamelift/model/GameProperty.h>
@@ -324,6 +325,47 @@ namespace Model
      * <code>ACTIVE</code> status to have player sessions.</p>
      */
     inline GameSession& WithStatus(GameSessionStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Provides additional information about game session status.
+     * <code>INTERRUPTED</code> indicates that the game session was hosted on a spot
+     * instance that was reclaimed, causing the active game session to be
+     * terminated.</p>
+     */
+    inline const GameSessionStatusReason& GetStatusReason() const{ return m_statusReason; }
+
+    /**
+     * <p>Provides additional information about game session status.
+     * <code>INTERRUPTED</code> indicates that the game session was hosted on a spot
+     * instance that was reclaimed, causing the active game session to be
+     * terminated.</p>
+     */
+    inline void SetStatusReason(const GameSessionStatusReason& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
+
+    /**
+     * <p>Provides additional information about game session status.
+     * <code>INTERRUPTED</code> indicates that the game session was hosted on a spot
+     * instance that was reclaimed, causing the active game session to be
+     * terminated.</p>
+     */
+    inline void SetStatusReason(GameSessionStatusReason&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
+
+    /**
+     * <p>Provides additional information about game session status.
+     * <code>INTERRUPTED</code> indicates that the game session was hosted on a spot
+     * instance that was reclaimed, causing the active game session to be
+     * terminated.</p>
+     */
+    inline GameSession& WithStatusReason(const GameSessionStatusReason& value) { SetStatusReason(value); return *this;}
+
+    /**
+     * <p>Provides additional information about game session status.
+     * <code>INTERRUPTED</code> indicates that the game session was hosted on a spot
+     * instance that was reclaimed, causing the active game session to be
+     * terminated.</p>
+     */
+    inline GameSession& WithStatusReason(GameSessionStatusReason&& value) { SetStatusReason(std::move(value)); return *this;}
 
 
     /**
@@ -715,6 +757,9 @@ namespace Model
 
     GameSessionStatus m_status;
     bool m_statusHasBeenSet;
+
+    GameSessionStatusReason m_statusReason;
+    bool m_statusReasonHasBeenSet;
 
     Aws::Vector<GameProperty> m_gameProperties;
     bool m_gamePropertiesHasBeenSet;

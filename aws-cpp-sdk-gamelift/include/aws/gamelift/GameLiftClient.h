@@ -458,16 +458,16 @@ namespace Model
    * including status.</p> </li> <li> <p> <a>StopGameSessionPlacement</a> -- Cancel a
    * placement request. </p> </li> </ul> </li> <li> <p> <a>CreateGameSession</a> --
    * Start a new game session on a specific fleet. <i>Available in Amazon GameLift
-   * Local.</i> </p> </li> </ul> </li> <li> <p> <b>Start new game sessions with
-   * FlexMatch matchmaking</b> </p> <ul> <li> <p> <a>StartMatchmaking</a> -- Request
-   * matchmaking for one players or a group who want to play together. </p> </li>
-   * <li> <p> <a>DescribeMatchmaking</a> -- Get details on a matchmaking request,
-   * including status.</p> </li> <li> <p> <a>AcceptMatch</a> -- Register that a
-   * player accepts a proposed match, for matches that require player acceptance.
-   * </p> </li> <li> <p> <a>StartMatchBackfill</a> - Request additional player
-   * matches to fill empty slots in an existing game session. </p> </li> <li> <p>
-   * <a>StopMatchmaking</a> -- Cancel a matchmaking request. </p> </li> </ul> </li>
-   * <li> <p> <b>Manage game session data</b> </p> <ul> <li> <p>
+   * Local.</i> </p> </li> </ul> </li> <li> <p> <b>Match players to game sessions
+   * with FlexMatch matchmaking</b> </p> <ul> <li> <p> <a>StartMatchmaking</a> --
+   * Request matchmaking for one players or a group who want to play together. </p>
+   * </li> <li> <p> <a>StartMatchBackfill</a> - Request additional player matches to
+   * fill empty slots in an existing game session. </p> </li> <li> <p>
+   * <a>DescribeMatchmaking</a> -- Get details on a matchmaking request, including
+   * status.</p> </li> <li> <p> <a>AcceptMatch</a> -- Register that a player accepts
+   * a proposed match, for matches that require player acceptance. </p> </li> <li>
+   * <p> <a>StopMatchmaking</a> -- Cancel a matchmaking request. </p> </li> </ul>
+   * </li> <li> <p> <b>Manage game session data</b> </p> <ul> <li> <p>
    * <a>DescribeGameSessions</a> -- Retrieve metadata for one or more game sessions,
    * including length of time active and current player count. <i>Available in Amazon
    * GameLift Local.</i> </p> </li> <li> <p> <a>DescribeGameSessionDetails</a> --
@@ -624,7 +624,8 @@ namespace Model
          * these players can be submitted as needed. </p> <p>Matchmaking-related operations
          * include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li> <p>
          * <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p> </li>
-         * <li> <p> <a>AcceptMatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <li> <p> <a>AcceptMatch</a> </p> </li> <li> <p> <a>StartMatchBackfill</a> </p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AcceptMatch">AWS
          * API Reference</a></p>
          */
@@ -652,7 +653,8 @@ namespace Model
          * these players can be submitted as needed. </p> <p>Matchmaking-related operations
          * include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li> <p>
          * <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p> </li>
-         * <li> <p> <a>AcceptMatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <li> <p> <a>AcceptMatch</a> </p> </li> <li> <p> <a>StartMatchBackfill</a> </p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AcceptMatch">AWS
          * API Reference</a></p>
          *
@@ -682,7 +684,8 @@ namespace Model
          * these players can be submitted as needed. </p> <p>Matchmaking-related operations
          * include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li> <p>
          * <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p> </li>
-         * <li> <p> <a>AcceptMatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <li> <p> <a>AcceptMatch</a> </p> </li> <li> <p> <a>StartMatchBackfill</a> </p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AcceptMatch">AWS
          * API Reference</a></p>
          *
@@ -905,41 +908,41 @@ namespace Model
         /**
          * <p>Creates a new fleet to run your game servers. A fleet is a set of Amazon
          * Elastic Compute Cloud (Amazon EC2) instances, each of which can run multiple
-         * server processes to host game sessions. You configure a fleet to create
-         * instances with certain hardware specifications (see <a
+         * server processes to host game sessions. You set up a fleet to use instances with
+         * certain hardware specifications (see <a
          * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
-         * for more information), and deploy a specified game build to each instance. A
-         * newly created fleet passes through several statuses; once it reaches the
-         * <code>ACTIVE</code> status, it can begin hosting game sessions.</p> <p>To create
-         * a new fleet, you must specify the following: (1) fleet name, (2) build ID of an
-         * uploaded game build, (3) an EC2 instance type, and (4) a run-time configuration
-         * that describes which server processes to run on each instance in the fleet.
-         * (Although the run-time configuration is not a required parameter, the fleet
-         * cannot be successfully activated without it.)</p> <p>You can also configure the
-         * new fleet with the following settings:</p> <ul> <li> <p>Fleet description</p>
-         * </li> <li> <p>Access permissions for inbound traffic</p> </li> <li>
-         * <p>Fleet-wide game session protection</p> </li> <li> <p>Resource creation
-         * limit</p> </li> </ul> <p>If you use Amazon CloudWatch for metrics, you can add
-         * the new fleet to a metric group. This allows you to view aggregated metrics for
-         * a set of fleets. Once you specify a metric group, the new fleet's metrics are
-         * included in the metric group's data.</p> <p>You have the option of creating a
-         * VPC peering connection with the new fleet. For more information, see <a
+         * for more information), and deploy your game build to run on each instance. </p>
+         * <p>To create a new fleet, you must specify the following: (1) a fleet name, (2)
+         * the build ID of a successfully uploaded game build, (3) an EC2 instance type,
+         * and (4) a run-time configuration, which describes the server processes to run on
+         * each instance in the fleet. If you don't specify a fleet type (on-demand or
+         * spot), the new fleet uses on-demand instances by default.</p> <p>You can also
+         * configure the new fleet with the following settings:</p> <ul> <li> <p>Fleet
+         * description</p> </li> <li> <p>Access permissions for inbound traffic</p> </li>
+         * <li> <p>Fleet-wide game session protection</p> </li> <li> <p>Resource usage
+         * limits</p> </li> </ul> <ul> <li> <p>VPC peering connection (see <a
          * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-         * Peering with Amazon GameLift Fleets</a>.</p> <p>If the CreateFleet call is
-         * successful, Amazon GameLift performs the following tasks:</p> <ul> <li>
-         * <p>Creates a fleet record and sets the status to <code>NEW</code> (followed by
-         * other statuses as the fleet is activated).</p> </li> <li> <p>Sets the fleet's
-         * target capacity to 1 (desired instances), which causes Amazon GameLift to start
-         * one new EC2 instance.</p> </li> <li> <p>Starts launching server processes on the
-         * instance. If the fleet is configured to run multiple server processes per
-         * instance, Amazon GameLift staggers each launch by a few seconds.</p> </li> <li>
+         * Peering with Amazon GameLift Fleets</a>)</p> </li> </ul> <p>If you use Amazon
+         * CloudWatch for metrics, you can add the new fleet to a metric group. By adding
+         * multiple fleets to a metric group, you can view aggregated metrics for all the
+         * fleets in the group. </p> <p>If the <code>CreateFleet</code> call is successful,
+         * Amazon GameLift performs the following tasks. You can track the process of a
+         * fleet by checking the fleet status or by monitoring fleet creation events:</p>
+         * <ul> <li> <p>Creates a fleet record. Status: <code>NEW</code>.</p> </li> <li>
          * <p>Begins writing events to the fleet event log, which can be accessed in the
-         * Amazon GameLift console.</p> </li> <li> <p>Sets the fleet's status to
-         * <code>ACTIVE</code> as soon as one server process in the fleet is ready to host
-         * a game session.</p> </li> </ul> <p>Fleet-related operations include:</p> <ul>
-         * <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li>
-         * <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p>
-         * </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * Amazon GameLift console.</p> <p>Sets the fleet's target capacity to 1 (desired
+         * instances), which triggers Amazon GameLift to start one new EC2 instance.</p>
+         * </li> <li> <p>Downloads the game build to the new instance and installs it.
+         * Statuses: <code>DOWNLOADING</code>, <code>VALIDATING</code>,
+         * <code>BUILDING</code>. </p> </li> <li> <p>Starts launching server processes on
+         * the instance. If the fleet is configured to run multiple server processes per
+         * instance, Amazon GameLift staggers each launch by a few seconds. Status:
+         * <code>ACTIVATING</code>.</p> </li> <li> <p>Sets the fleet's status to
+         * <code>ACTIVE</code> as soon as one server process is ready to host a game
+         * session.</p> </li> </ul> <p>Fleet-related operations include:</p> <ul> <li> <p>
+         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li>
+         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
@@ -961,41 +964,41 @@ namespace Model
         /**
          * <p>Creates a new fleet to run your game servers. A fleet is a set of Amazon
          * Elastic Compute Cloud (Amazon EC2) instances, each of which can run multiple
-         * server processes to host game sessions. You configure a fleet to create
-         * instances with certain hardware specifications (see <a
+         * server processes to host game sessions. You set up a fleet to use instances with
+         * certain hardware specifications (see <a
          * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
-         * for more information), and deploy a specified game build to each instance. A
-         * newly created fleet passes through several statuses; once it reaches the
-         * <code>ACTIVE</code> status, it can begin hosting game sessions.</p> <p>To create
-         * a new fleet, you must specify the following: (1) fleet name, (2) build ID of an
-         * uploaded game build, (3) an EC2 instance type, and (4) a run-time configuration
-         * that describes which server processes to run on each instance in the fleet.
-         * (Although the run-time configuration is not a required parameter, the fleet
-         * cannot be successfully activated without it.)</p> <p>You can also configure the
-         * new fleet with the following settings:</p> <ul> <li> <p>Fleet description</p>
-         * </li> <li> <p>Access permissions for inbound traffic</p> </li> <li>
-         * <p>Fleet-wide game session protection</p> </li> <li> <p>Resource creation
-         * limit</p> </li> </ul> <p>If you use Amazon CloudWatch for metrics, you can add
-         * the new fleet to a metric group. This allows you to view aggregated metrics for
-         * a set of fleets. Once you specify a metric group, the new fleet's metrics are
-         * included in the metric group's data.</p> <p>You have the option of creating a
-         * VPC peering connection with the new fleet. For more information, see <a
+         * for more information), and deploy your game build to run on each instance. </p>
+         * <p>To create a new fleet, you must specify the following: (1) a fleet name, (2)
+         * the build ID of a successfully uploaded game build, (3) an EC2 instance type,
+         * and (4) a run-time configuration, which describes the server processes to run on
+         * each instance in the fleet. If you don't specify a fleet type (on-demand or
+         * spot), the new fleet uses on-demand instances by default.</p> <p>You can also
+         * configure the new fleet with the following settings:</p> <ul> <li> <p>Fleet
+         * description</p> </li> <li> <p>Access permissions for inbound traffic</p> </li>
+         * <li> <p>Fleet-wide game session protection</p> </li> <li> <p>Resource usage
+         * limits</p> </li> </ul> <ul> <li> <p>VPC peering connection (see <a
          * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-         * Peering with Amazon GameLift Fleets</a>.</p> <p>If the CreateFleet call is
-         * successful, Amazon GameLift performs the following tasks:</p> <ul> <li>
-         * <p>Creates a fleet record and sets the status to <code>NEW</code> (followed by
-         * other statuses as the fleet is activated).</p> </li> <li> <p>Sets the fleet's
-         * target capacity to 1 (desired instances), which causes Amazon GameLift to start
-         * one new EC2 instance.</p> </li> <li> <p>Starts launching server processes on the
-         * instance. If the fleet is configured to run multiple server processes per
-         * instance, Amazon GameLift staggers each launch by a few seconds.</p> </li> <li>
+         * Peering with Amazon GameLift Fleets</a>)</p> </li> </ul> <p>If you use Amazon
+         * CloudWatch for metrics, you can add the new fleet to a metric group. By adding
+         * multiple fleets to a metric group, you can view aggregated metrics for all the
+         * fleets in the group. </p> <p>If the <code>CreateFleet</code> call is successful,
+         * Amazon GameLift performs the following tasks. You can track the process of a
+         * fleet by checking the fleet status or by monitoring fleet creation events:</p>
+         * <ul> <li> <p>Creates a fleet record. Status: <code>NEW</code>.</p> </li> <li>
          * <p>Begins writing events to the fleet event log, which can be accessed in the
-         * Amazon GameLift console.</p> </li> <li> <p>Sets the fleet's status to
-         * <code>ACTIVE</code> as soon as one server process in the fleet is ready to host
-         * a game session.</p> </li> </ul> <p>Fleet-related operations include:</p> <ul>
-         * <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li>
-         * <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p>
-         * </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * Amazon GameLift console.</p> <p>Sets the fleet's target capacity to 1 (desired
+         * instances), which triggers Amazon GameLift to start one new EC2 instance.</p>
+         * </li> <li> <p>Downloads the game build to the new instance and installs it.
+         * Statuses: <code>DOWNLOADING</code>, <code>VALIDATING</code>,
+         * <code>BUILDING</code>. </p> </li> <li> <p>Starts launching server processes on
+         * the instance. If the fleet is configured to run multiple server processes per
+         * instance, Amazon GameLift staggers each launch by a few seconds. Status:
+         * <code>ACTIVATING</code>.</p> </li> <li> <p>Sets the fleet's status to
+         * <code>ACTIVE</code> as soon as one server process is ready to host a game
+         * session.</p> </li> </ul> <p>Fleet-related operations include:</p> <ul> <li> <p>
+         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li>
+         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
@@ -1019,41 +1022,41 @@ namespace Model
         /**
          * <p>Creates a new fleet to run your game servers. A fleet is a set of Amazon
          * Elastic Compute Cloud (Amazon EC2) instances, each of which can run multiple
-         * server processes to host game sessions. You configure a fleet to create
-         * instances with certain hardware specifications (see <a
+         * server processes to host game sessions. You set up a fleet to use instances with
+         * certain hardware specifications (see <a
          * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
-         * for more information), and deploy a specified game build to each instance. A
-         * newly created fleet passes through several statuses; once it reaches the
-         * <code>ACTIVE</code> status, it can begin hosting game sessions.</p> <p>To create
-         * a new fleet, you must specify the following: (1) fleet name, (2) build ID of an
-         * uploaded game build, (3) an EC2 instance type, and (4) a run-time configuration
-         * that describes which server processes to run on each instance in the fleet.
-         * (Although the run-time configuration is not a required parameter, the fleet
-         * cannot be successfully activated without it.)</p> <p>You can also configure the
-         * new fleet with the following settings:</p> <ul> <li> <p>Fleet description</p>
-         * </li> <li> <p>Access permissions for inbound traffic</p> </li> <li>
-         * <p>Fleet-wide game session protection</p> </li> <li> <p>Resource creation
-         * limit</p> </li> </ul> <p>If you use Amazon CloudWatch for metrics, you can add
-         * the new fleet to a metric group. This allows you to view aggregated metrics for
-         * a set of fleets. Once you specify a metric group, the new fleet's metrics are
-         * included in the metric group's data.</p> <p>You have the option of creating a
-         * VPC peering connection with the new fleet. For more information, see <a
+         * for more information), and deploy your game build to run on each instance. </p>
+         * <p>To create a new fleet, you must specify the following: (1) a fleet name, (2)
+         * the build ID of a successfully uploaded game build, (3) an EC2 instance type,
+         * and (4) a run-time configuration, which describes the server processes to run on
+         * each instance in the fleet. If you don't specify a fleet type (on-demand or
+         * spot), the new fleet uses on-demand instances by default.</p> <p>You can also
+         * configure the new fleet with the following settings:</p> <ul> <li> <p>Fleet
+         * description</p> </li> <li> <p>Access permissions for inbound traffic</p> </li>
+         * <li> <p>Fleet-wide game session protection</p> </li> <li> <p>Resource usage
+         * limits</p> </li> </ul> <ul> <li> <p>VPC peering connection (see <a
          * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-         * Peering with Amazon GameLift Fleets</a>.</p> <p>If the CreateFleet call is
-         * successful, Amazon GameLift performs the following tasks:</p> <ul> <li>
-         * <p>Creates a fleet record and sets the status to <code>NEW</code> (followed by
-         * other statuses as the fleet is activated).</p> </li> <li> <p>Sets the fleet's
-         * target capacity to 1 (desired instances), which causes Amazon GameLift to start
-         * one new EC2 instance.</p> </li> <li> <p>Starts launching server processes on the
-         * instance. If the fleet is configured to run multiple server processes per
-         * instance, Amazon GameLift staggers each launch by a few seconds.</p> </li> <li>
+         * Peering with Amazon GameLift Fleets</a>)</p> </li> </ul> <p>If you use Amazon
+         * CloudWatch for metrics, you can add the new fleet to a metric group. By adding
+         * multiple fleets to a metric group, you can view aggregated metrics for all the
+         * fleets in the group. </p> <p>If the <code>CreateFleet</code> call is successful,
+         * Amazon GameLift performs the following tasks. You can track the process of a
+         * fleet by checking the fleet status or by monitoring fleet creation events:</p>
+         * <ul> <li> <p>Creates a fleet record. Status: <code>NEW</code>.</p> </li> <li>
          * <p>Begins writing events to the fleet event log, which can be accessed in the
-         * Amazon GameLift console.</p> </li> <li> <p>Sets the fleet's status to
-         * <code>ACTIVE</code> as soon as one server process in the fleet is ready to host
-         * a game session.</p> </li> </ul> <p>Fleet-related operations include:</p> <ul>
-         * <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li>
-         * <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p>
-         * </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * Amazon GameLift console.</p> <p>Sets the fleet's target capacity to 1 (desired
+         * instances), which triggers Amazon GameLift to start one new EC2 instance.</p>
+         * </li> <li> <p>Downloads the game build to the new instance and installs it.
+         * Statuses: <code>DOWNLOADING</code>, <code>VALIDATING</code>,
+         * <code>BUILDING</code>. </p> </li> <li> <p>Starts launching server processes on
+         * the instance. If the fleet is configured to run multiple server processes per
+         * instance, Amazon GameLift staggers each launch by a few seconds. Status:
+         * <code>ACTIVATING</code>.</p> </li> <li> <p>Sets the fleet's status to
+         * <code>ACTIVE</code> as soon as one server process is ready to host a game
+         * session.</p> </li> </ul> <p>Fleet-related operations include:</p> <ul> <li> <p>
+         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li>
+         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
@@ -1308,10 +1311,10 @@ namespace Model
          * <p>Defines a new matchmaking configuration for use with FlexMatch. A matchmaking
          * configuration sets out guidelines for matching players and getting the matches
          * into games. You can set up multiple matchmaking configurations to handle the
-         * scenarios needed for your game. Each matchmaking request
-         * (<a>StartMatchmaking</a>) specifies a configuration for the match and provides
-         * player attributes to support the configuration being used. </p> <p>To create a
-         * matchmaking configuration, at a minimum you must specify the following:
+         * scenarios needed for your game. Each matchmaking ticket (<a>StartMatchmaking</a>
+         * or <a>StartMatchBackfill</a>) specifies a configuration for the match and
+         * provides player attributes to support the configuration being used. </p> <p>To
+         * create a matchmaking configuration, at a minimum you must specify the following:
          * configuration name; a rule set that governs how to evaluate players and find
          * acceptable matches; a game session queue to use when placing a new game session
          * for the match; and the maximum time allowed for a matchmaking attempt.</p> <p>
@@ -1347,10 +1350,10 @@ namespace Model
          * <p>Defines a new matchmaking configuration for use with FlexMatch. A matchmaking
          * configuration sets out guidelines for matching players and getting the matches
          * into games. You can set up multiple matchmaking configurations to handle the
-         * scenarios needed for your game. Each matchmaking request
-         * (<a>StartMatchmaking</a>) specifies a configuration for the match and provides
-         * player attributes to support the configuration being used. </p> <p>To create a
-         * matchmaking configuration, at a minimum you must specify the following:
+         * scenarios needed for your game. Each matchmaking ticket (<a>StartMatchmaking</a>
+         * or <a>StartMatchBackfill</a>) specifies a configuration for the match and
+         * provides player attributes to support the configuration being used. </p> <p>To
+         * create a matchmaking configuration, at a minimum you must specify the following:
          * configuration name; a rule set that governs how to evaluate players and find
          * acceptable matches; a game session queue to use when placing a new game session
          * for the match; and the maximum time allowed for a matchmaking attempt.</p> <p>
@@ -1388,10 +1391,10 @@ namespace Model
          * <p>Defines a new matchmaking configuration for use with FlexMatch. A matchmaking
          * configuration sets out guidelines for matching players and getting the matches
          * into games. You can set up multiple matchmaking configurations to handle the
-         * scenarios needed for your game. Each matchmaking request
-         * (<a>StartMatchmaking</a>) specifies a configuration for the match and provides
-         * player attributes to support the configuration being used. </p> <p>To create a
-         * matchmaking configuration, at a minimum you must specify the following:
+         * scenarios needed for your game. Each matchmaking ticket (<a>StartMatchmaking</a>
+         * or <a>StartMatchBackfill</a>) specifies a configuration for the match and
+         * provides player attributes to support the configuration being used. </p> <p>To
+         * create a matchmaking configuration, at a minimum you must specify the following:
          * configuration name; a rule set that governs how to evaluate players and find
          * acceptable matches; a game session queue to use when placing a new game session
          * for the match; and the maximum time allowed for a matchmaking attempt.</p> <p>
@@ -1439,7 +1442,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
          * Adding FlexMatch to Your Game</a>.</p> <p>Once created, matchmaking rule sets
          * cannot be changed or deleted, so we recommend checking the rule set syntax using
-         * <a>ValidateMatchmakingRuleSet</a>before creating the rule set.</p> <p>To create
+         * <a>ValidateMatchmakingRuleSet</a> before creating the rule set.</p> <p>To create
          * a matchmaking rule set, provide the set of rules and a unique name. Rule sets
          * must be defined in the same region as the matchmaking configuration they will be
          * used with. Rule sets cannot be edited or deleted. If you need to change a rule
@@ -1472,7 +1475,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
          * Adding FlexMatch to Your Game</a>.</p> <p>Once created, matchmaking rule sets
          * cannot be changed or deleted, so we recommend checking the rule set syntax using
-         * <a>ValidateMatchmakingRuleSet</a>before creating the rule set.</p> <p>To create
+         * <a>ValidateMatchmakingRuleSet</a> before creating the rule set.</p> <p>To create
          * a matchmaking rule set, provide the set of rules and a unique name. Rule sets
          * must be defined in the same region as the matchmaking configuration they will be
          * used with. Rule sets cannot be edited or deleted. If you need to change a rule
@@ -1507,7 +1510,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
          * Adding FlexMatch to Your Game</a>.</p> <p>Once created, matchmaking rule sets
          * cannot be changed or deleted, so we recommend checking the rule set syntax using
-         * <a>ValidateMatchmakingRuleSet</a>before creating the rule set.</p> <p>To create
+         * <a>ValidateMatchmakingRuleSet</a> before creating the rule set.</p> <p>To create
          * a matchmaking rule set, provide the set of rules and a unique name. Rule sets
          * must be defined in the same region as the matchmaking configuration they will be
          * used with. Rule sets cannot be edited or deleted. If you need to change a rule
@@ -3335,7 +3338,8 @@ namespace Model
          * returned for each requested ID that currently exists.</p> <p>Matchmaking-related
          * operations include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li>
          * <p> <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p>
-         * </li> <li> <p> <a>AcceptMatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * </li> <li> <p> <a>AcceptMatch</a> </p> </li> <li> <p> <a>StartMatchBackfill</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmaking">AWS
          * API Reference</a></p>
          */
@@ -3353,7 +3357,8 @@ namespace Model
          * returned for each requested ID that currently exists.</p> <p>Matchmaking-related
          * operations include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li>
          * <p> <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p>
-         * </li> <li> <p> <a>AcceptMatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * </li> <li> <p> <a>AcceptMatch</a> </p> </li> <li> <p> <a>StartMatchBackfill</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmaking">AWS
          * API Reference</a></p>
          *
@@ -3373,7 +3378,8 @@ namespace Model
          * returned for each requested ID that currently exists.</p> <p>Matchmaking-related
          * operations include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li>
          * <p> <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p>
-         * </li> <li> <p> <a>AcceptMatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * </li> <li> <p> <a>AcceptMatch</a> </p> </li> <li> <p> <a>StartMatchBackfill</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmaking">AWS
          * API Reference</a></p>
          *
@@ -4697,19 +4703,21 @@ namespace Model
          * Track the status of the ticket to respond as needed. For more detail how to set
          * up backfilling, see <a
          * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-backfill.html">
-         * Set up Match Backfilling</a>. </p> <p>The process of finding backfill matches is
-         * essentially identical to the initial matchmaking process. The matchmaker
-         * searches the pool and groups tickets together to form potential matches,
-         * allowing only one backfill ticket per potential match. Once the a match is
-         * formed, the matchmaker creates player sessions for the new players. All tickets
-         * in the match are updated with the game session's connection information, and the
-         * <a>GameSession</a> object is updated to include matchmaker data on the new
-         * players. For more detail on how match backfill requests are processed, see <a
+         * Backfill Existing Games with FlexMatch</a>. </p> <p>The process of finding
+         * backfill matches is essentially identical to the initial matchmaking process.
+         * The matchmaker searches the pool and groups tickets together to form potential
+         * matches, allowing only one backfill ticket per potential match. Once the a match
+         * is formed, the matchmaker creates player sessions for the new players. All
+         * tickets in the match are updated with the game session's connection information,
+         * and the <a>GameSession</a> object is updated to include matchmaker data on the
+         * new players. For more detail on how match backfill requests are processed, see
+         * <a
          * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
          * How Amazon GameLift FlexMatch Works</a>. </p> <p>Matchmaking-related operations
          * include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li> <p>
          * <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p> </li>
-         * <li> <p> <a>AcceptMatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <li> <p> <a>AcceptMatch</a> </p> </li> <li> <p> <a>StartMatchBackfill</a> </p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchBackfill">AWS
          * API Reference</a></p>
          */
@@ -4730,19 +4738,21 @@ namespace Model
          * Track the status of the ticket to respond as needed. For more detail how to set
          * up backfilling, see <a
          * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-backfill.html">
-         * Set up Match Backfilling</a>. </p> <p>The process of finding backfill matches is
-         * essentially identical to the initial matchmaking process. The matchmaker
-         * searches the pool and groups tickets together to form potential matches,
-         * allowing only one backfill ticket per potential match. Once the a match is
-         * formed, the matchmaker creates player sessions for the new players. All tickets
-         * in the match are updated with the game session's connection information, and the
-         * <a>GameSession</a> object is updated to include matchmaker data on the new
-         * players. For more detail on how match backfill requests are processed, see <a
+         * Backfill Existing Games with FlexMatch</a>. </p> <p>The process of finding
+         * backfill matches is essentially identical to the initial matchmaking process.
+         * The matchmaker searches the pool and groups tickets together to form potential
+         * matches, allowing only one backfill ticket per potential match. Once the a match
+         * is formed, the matchmaker creates player sessions for the new players. All
+         * tickets in the match are updated with the game session's connection information,
+         * and the <a>GameSession</a> object is updated to include matchmaker data on the
+         * new players. For more detail on how match backfill requests are processed, see
+         * <a
          * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
          * How Amazon GameLift FlexMatch Works</a>. </p> <p>Matchmaking-related operations
          * include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li> <p>
          * <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p> </li>
-         * <li> <p> <a>AcceptMatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <li> <p> <a>AcceptMatch</a> </p> </li> <li> <p> <a>StartMatchBackfill</a> </p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchBackfill">AWS
          * API Reference</a></p>
          *
@@ -4765,19 +4775,21 @@ namespace Model
          * Track the status of the ticket to respond as needed. For more detail how to set
          * up backfilling, see <a
          * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-backfill.html">
-         * Set up Match Backfilling</a>. </p> <p>The process of finding backfill matches is
-         * essentially identical to the initial matchmaking process. The matchmaker
-         * searches the pool and groups tickets together to form potential matches,
-         * allowing only one backfill ticket per potential match. Once the a match is
-         * formed, the matchmaker creates player sessions for the new players. All tickets
-         * in the match are updated with the game session's connection information, and the
-         * <a>GameSession</a> object is updated to include matchmaker data on the new
-         * players. For more detail on how match backfill requests are processed, see <a
+         * Backfill Existing Games with FlexMatch</a>. </p> <p>The process of finding
+         * backfill matches is essentially identical to the initial matchmaking process.
+         * The matchmaker searches the pool and groups tickets together to form potential
+         * matches, allowing only one backfill ticket per potential match. Once the a match
+         * is formed, the matchmaker creates player sessions for the new players. All
+         * tickets in the match are updated with the game session's connection information,
+         * and the <a>GameSession</a> object is updated to include matchmaker data on the
+         * new players. For more detail on how match backfill requests are processed, see
+         * <a
          * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
          * How Amazon GameLift FlexMatch Works</a>. </p> <p>Matchmaking-related operations
          * include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li> <p>
          * <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p> </li>
-         * <li> <p> <a>AcceptMatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <li> <p> <a>AcceptMatch</a> </p> </li> <li> <p> <a>StartMatchBackfill</a> </p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchBackfill">AWS
          * API Reference</a></p>
          *
@@ -4838,7 +4850,8 @@ namespace Model
          * connection information to join the game. </p> </li> </ol> <p>Matchmaking-related
          * operations include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li>
          * <p> <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p>
-         * </li> <li> <p> <a>AcceptMatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * </li> <li> <p> <a>AcceptMatch</a> </p> </li> <li> <p> <a>StartMatchBackfill</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchmaking">AWS
          * API Reference</a></p>
          */
@@ -4897,7 +4910,8 @@ namespace Model
          * connection information to join the game. </p> </li> </ol> <p>Matchmaking-related
          * operations include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li>
          * <p> <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p>
-         * </li> <li> <p> <a>AcceptMatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * </li> <li> <p> <a>AcceptMatch</a> </p> </li> <li> <p> <a>StartMatchBackfill</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchmaking">AWS
          * API Reference</a></p>
          *
@@ -4958,7 +4972,8 @@ namespace Model
          * connection information to join the game. </p> </li> </ol> <p>Matchmaking-related
          * operations include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li>
          * <p> <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p>
-         * </li> <li> <p> <a>AcceptMatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * </li> <li> <p> <a>AcceptMatch</a> </p> </li> <li> <p> <a>StartMatchBackfill</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchmaking">AWS
          * API Reference</a></p>
          *
@@ -5031,7 +5046,8 @@ namespace Model
          * <p>Matchmaking-related operations include:</p> <ul> <li> <p>
          * <a>StartMatchmaking</a> </p> </li> <li> <p> <a>DescribeMatchmaking</a> </p>
          * </li> <li> <p> <a>StopMatchmaking</a> </p> </li> <li> <p> <a>AcceptMatch</a>
-         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * </p> </li> <li> <p> <a>StartMatchBackfill</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopMatchmaking">AWS
          * API Reference</a></p>
          */
@@ -5044,7 +5060,8 @@ namespace Model
          * <p>Matchmaking-related operations include:</p> <ul> <li> <p>
          * <a>StartMatchmaking</a> </p> </li> <li> <p> <a>DescribeMatchmaking</a> </p>
          * </li> <li> <p> <a>StopMatchmaking</a> </p> </li> <li> <p> <a>AcceptMatch</a>
-         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * </p> </li> <li> <p> <a>StartMatchBackfill</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopMatchmaking">AWS
          * API Reference</a></p>
          *
@@ -5059,7 +5076,8 @@ namespace Model
          * <p>Matchmaking-related operations include:</p> <ul> <li> <p>
          * <a>StartMatchmaking</a> </p> </li> <li> <p> <a>DescribeMatchmaking</a> </p>
          * </li> <li> <p> <a>StopMatchmaking</a> </p> </li> <li> <p> <a>AcceptMatch</a>
-         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * </p> </li> <li> <p> <a>StartMatchBackfill</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopMatchmaking">AWS
          * API Reference</a></p>
          *

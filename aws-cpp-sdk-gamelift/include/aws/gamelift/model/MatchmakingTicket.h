@@ -385,37 +385,37 @@ namespace Model
 
 
     /**
-     * <p>Time stamp indicating when the matchmaking request stopped being processed
-     * due to successful completion, timeout, or cancellation. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * <p>Time stamp indicating when this matchmaking request stopped being processed
+     * due to success, failure, or cancellation. Format is a number expressed in Unix
+     * time as milliseconds (for example "1469498468.057").</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>Time stamp indicating when the matchmaking request stopped being processed
-     * due to successful completion, timeout, or cancellation. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * <p>Time stamp indicating when this matchmaking request stopped being processed
+     * due to success, failure, or cancellation. Format is a number expressed in Unix
+     * time as milliseconds (for example "1469498468.057").</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>Time stamp indicating when the matchmaking request stopped being processed
-     * due to successful completion, timeout, or cancellation. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * <p>Time stamp indicating when this matchmaking request stopped being processed
+     * due to success, failure, or cancellation. Format is a number expressed in Unix
+     * time as milliseconds (for example "1469498468.057").</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>Time stamp indicating when the matchmaking request stopped being processed
-     * due to successful completion, timeout, or cancellation. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * <p>Time stamp indicating when this matchmaking request stopped being processed
+     * due to success, failure, or cancellation. Format is a number expressed in Unix
+     * time as milliseconds (for example "1469498468.057").</p>
      */
     inline MatchmakingTicket& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>Time stamp indicating when the matchmaking request stopped being processed
-     * due to successful completion, timeout, or cancellation. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * <p>Time stamp indicating when this matchmaking request stopped being processed
+     * due to success, failure, or cancellation. Format is a number expressed in Unix
+     * time as milliseconds (for example "1469498468.057").</p>
      */
     inline MatchmakingTicket& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 

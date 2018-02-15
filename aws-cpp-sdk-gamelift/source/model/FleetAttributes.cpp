@@ -31,6 +31,10 @@ namespace Model
 FleetAttributes::FleetAttributes() : 
     m_fleetIdHasBeenSet(false),
     m_fleetArnHasBeenSet(false),
+    m_fleetType(FleetType::NOT_SET),
+    m_fleetTypeHasBeenSet(false),
+    m_instanceType(EC2InstanceType::NOT_SET),
+    m_instanceTypeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -53,6 +57,10 @@ FleetAttributes::FleetAttributes() :
 FleetAttributes::FleetAttributes(const JsonValue& jsonValue) : 
     m_fleetIdHasBeenSet(false),
     m_fleetArnHasBeenSet(false),
+    m_fleetType(FleetType::NOT_SET),
+    m_fleetTypeHasBeenSet(false),
+    m_instanceType(EC2InstanceType::NOT_SET),
+    m_instanceTypeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -87,6 +95,20 @@ FleetAttributes& FleetAttributes::operator =(const JsonValue& jsonValue)
     m_fleetArn = jsonValue.GetString("FleetArn");
 
     m_fleetArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FleetType"))
+  {
+    m_fleetType = FleetTypeMapper::GetFleetTypeForName(jsonValue.GetString("FleetType"));
+
+    m_fleetTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InstanceType"))
+  {
+    m_instanceType = EC2InstanceTypeMapper::GetEC2InstanceTypeForName(jsonValue.GetString("InstanceType"));
+
+    m_instanceTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Description"))
@@ -203,6 +225,16 @@ JsonValue FleetAttributes::Jsonize() const
   {
    payload.WithString("FleetArn", m_fleetArn);
 
+  }
+
+  if(m_fleetTypeHasBeenSet)
+  {
+   payload.WithString("FleetType", FleetTypeMapper::GetNameForFleetType(m_fleetType));
+  }
+
+  if(m_instanceTypeHasBeenSet)
+  {
+   payload.WithString("InstanceType", EC2InstanceTypeMapper::GetNameForEC2InstanceType(m_instanceType));
   }
 
   if(m_descriptionHasBeenSet)

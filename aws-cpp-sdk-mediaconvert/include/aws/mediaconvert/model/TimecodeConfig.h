@@ -235,7 +235,7 @@ namespace Model
 
 
     /**
-     * Only applies to outputs that support program-date-time stamp. Use Time  stamp
+     * Only applies to outputs that support program-date-time stamp. Use Time stamp
      * offset (TimestampOffset) to overwrite the timecode date without affecting the
      * time and frame number. Provide the new date as a string in the format
      * "yyyy-mm-dd".  To use Time stamp offset, you must also enable Insert
@@ -244,7 +244,7 @@ namespace Model
     inline const Aws::String& GetTimestampOffset() const{ return m_timestampOffset; }
 
     /**
-     * Only applies to outputs that support program-date-time stamp. Use Time  stamp
+     * Only applies to outputs that support program-date-time stamp. Use Time stamp
      * offset (TimestampOffset) to overwrite the timecode date without affecting the
      * time and frame number. Provide the new date as a string in the format
      * "yyyy-mm-dd".  To use Time stamp offset, you must also enable Insert
@@ -253,7 +253,7 @@ namespace Model
     inline void SetTimestampOffset(const Aws::String& value) { m_timestampOffsetHasBeenSet = true; m_timestampOffset = value; }
 
     /**
-     * Only applies to outputs that support program-date-time stamp. Use Time  stamp
+     * Only applies to outputs that support program-date-time stamp. Use Time stamp
      * offset (TimestampOffset) to overwrite the timecode date without affecting the
      * time and frame number. Provide the new date as a string in the format
      * "yyyy-mm-dd".  To use Time stamp offset, you must also enable Insert
@@ -262,7 +262,7 @@ namespace Model
     inline void SetTimestampOffset(Aws::String&& value) { m_timestampOffsetHasBeenSet = true; m_timestampOffset = std::move(value); }
 
     /**
-     * Only applies to outputs that support program-date-time stamp. Use Time  stamp
+     * Only applies to outputs that support program-date-time stamp. Use Time stamp
      * offset (TimestampOffset) to overwrite the timecode date without affecting the
      * time and frame number. Provide the new date as a string in the format
      * "yyyy-mm-dd".  To use Time stamp offset, you must also enable Insert
@@ -271,7 +271,7 @@ namespace Model
     inline void SetTimestampOffset(const char* value) { m_timestampOffsetHasBeenSet = true; m_timestampOffset.assign(value); }
 
     /**
-     * Only applies to outputs that support program-date-time stamp. Use Time  stamp
+     * Only applies to outputs that support program-date-time stamp. Use Time stamp
      * offset (TimestampOffset) to overwrite the timecode date without affecting the
      * time and frame number. Provide the new date as a string in the format
      * "yyyy-mm-dd".  To use Time stamp offset, you must also enable Insert
@@ -280,7 +280,7 @@ namespace Model
     inline TimecodeConfig& WithTimestampOffset(const Aws::String& value) { SetTimestampOffset(value); return *this;}
 
     /**
-     * Only applies to outputs that support program-date-time stamp. Use Time  stamp
+     * Only applies to outputs that support program-date-time stamp. Use Time stamp
      * offset (TimestampOffset) to overwrite the timecode date without affecting the
      * time and frame number. Provide the new date as a string in the format
      * "yyyy-mm-dd".  To use Time stamp offset, you must also enable Insert
@@ -289,7 +289,7 @@ namespace Model
     inline TimecodeConfig& WithTimestampOffset(Aws::String&& value) { SetTimestampOffset(std::move(value)); return *this;}
 
     /**
-     * Only applies to outputs that support program-date-time stamp. Use Time  stamp
+     * Only applies to outputs that support program-date-time stamp. Use Time stamp
      * offset (TimestampOffset) to overwrite the timecode date without affecting the
      * time and frame number. Provide the new date as a string in the format
      * "yyyy-mm-dd".  To use Time stamp offset, you must also enable Insert

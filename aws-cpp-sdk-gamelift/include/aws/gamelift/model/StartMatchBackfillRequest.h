@@ -244,112 +244,112 @@ namespace Model
     /**
      * <p>Match information on all players that are currently assigned to the game
      * session. This information is used by the matchmaker to find new players and add
-     * them to the existing game.</p> <ul> <li> <p>PlayerID, PlayerAttributes, Team --
-     * This information is maintained in the <a>GameSession</a> object,
+     * them to the existing game.</p> <ul> <li> <p>PlayerID, PlayerAttributes, Team
+     * -\\- This information is maintained in the <a>GameSession</a> object,
      * <code>MatchmakerData</code> property, for all players who are currently assigned
      * to the game session. The matchmaker data is in JSON syntax, formatted as a
      * string. For more details, see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
-     * Match Data</a>. </p> </li> <li> <p>LatencyInMs -- If the matchmaker uses player
-     * latency, include a latency value, in milliseconds, for the region that the game
-     * session is currently in. Do not include latency values for any other region.</p>
-     * </li> </ul>
+     * Match Data</a>. </p> </li> <li> <p>LatencyInMs -\\- If the matchmaker uses
+     * player latency, include a latency value, in milliseconds, for the region that
+     * the game session is currently in. Do not include latency values for any other
+     * region.</p> </li> </ul>
      */
     inline const Aws::Vector<Player>& GetPlayers() const{ return m_players; }
 
     /**
      * <p>Match information on all players that are currently assigned to the game
      * session. This information is used by the matchmaker to find new players and add
-     * them to the existing game.</p> <ul> <li> <p>PlayerID, PlayerAttributes, Team --
-     * This information is maintained in the <a>GameSession</a> object,
+     * them to the existing game.</p> <ul> <li> <p>PlayerID, PlayerAttributes, Team
+     * -\\- This information is maintained in the <a>GameSession</a> object,
      * <code>MatchmakerData</code> property, for all players who are currently assigned
      * to the game session. The matchmaker data is in JSON syntax, formatted as a
      * string. For more details, see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
-     * Match Data</a>. </p> </li> <li> <p>LatencyInMs -- If the matchmaker uses player
-     * latency, include a latency value, in milliseconds, for the region that the game
-     * session is currently in. Do not include latency values for any other region.</p>
-     * </li> </ul>
+     * Match Data</a>. </p> </li> <li> <p>LatencyInMs -\\- If the matchmaker uses
+     * player latency, include a latency value, in milliseconds, for the region that
+     * the game session is currently in. Do not include latency values for any other
+     * region.</p> </li> </ul>
      */
     inline void SetPlayers(const Aws::Vector<Player>& value) { m_playersHasBeenSet = true; m_players = value; }
 
     /**
      * <p>Match information on all players that are currently assigned to the game
      * session. This information is used by the matchmaker to find new players and add
-     * them to the existing game.</p> <ul> <li> <p>PlayerID, PlayerAttributes, Team --
-     * This information is maintained in the <a>GameSession</a> object,
+     * them to the existing game.</p> <ul> <li> <p>PlayerID, PlayerAttributes, Team
+     * -\\- This information is maintained in the <a>GameSession</a> object,
      * <code>MatchmakerData</code> property, for all players who are currently assigned
      * to the game session. The matchmaker data is in JSON syntax, formatted as a
      * string. For more details, see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
-     * Match Data</a>. </p> </li> <li> <p>LatencyInMs -- If the matchmaker uses player
-     * latency, include a latency value, in milliseconds, for the region that the game
-     * session is currently in. Do not include latency values for any other region.</p>
-     * </li> </ul>
+     * Match Data</a>. </p> </li> <li> <p>LatencyInMs -\\- If the matchmaker uses
+     * player latency, include a latency value, in milliseconds, for the region that
+     * the game session is currently in. Do not include latency values for any other
+     * region.</p> </li> </ul>
      */
     inline void SetPlayers(Aws::Vector<Player>&& value) { m_playersHasBeenSet = true; m_players = std::move(value); }
 
     /**
      * <p>Match information on all players that are currently assigned to the game
      * session. This information is used by the matchmaker to find new players and add
-     * them to the existing game.</p> <ul> <li> <p>PlayerID, PlayerAttributes, Team --
-     * This information is maintained in the <a>GameSession</a> object,
+     * them to the existing game.</p> <ul> <li> <p>PlayerID, PlayerAttributes, Team
+     * -\\- This information is maintained in the <a>GameSession</a> object,
      * <code>MatchmakerData</code> property, for all players who are currently assigned
      * to the game session. The matchmaker data is in JSON syntax, formatted as a
      * string. For more details, see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
-     * Match Data</a>. </p> </li> <li> <p>LatencyInMs -- If the matchmaker uses player
-     * latency, include a latency value, in milliseconds, for the region that the game
-     * session is currently in. Do not include latency values for any other region.</p>
-     * </li> </ul>
+     * Match Data</a>. </p> </li> <li> <p>LatencyInMs -\\- If the matchmaker uses
+     * player latency, include a latency value, in milliseconds, for the region that
+     * the game session is currently in. Do not include latency values for any other
+     * region.</p> </li> </ul>
      */
     inline StartMatchBackfillRequest& WithPlayers(const Aws::Vector<Player>& value) { SetPlayers(value); return *this;}
 
     /**
      * <p>Match information on all players that are currently assigned to the game
      * session. This information is used by the matchmaker to find new players and add
-     * them to the existing game.</p> <ul> <li> <p>PlayerID, PlayerAttributes, Team --
-     * This information is maintained in the <a>GameSession</a> object,
+     * them to the existing game.</p> <ul> <li> <p>PlayerID, PlayerAttributes, Team
+     * -\\- This information is maintained in the <a>GameSession</a> object,
      * <code>MatchmakerData</code> property, for all players who are currently assigned
      * to the game session. The matchmaker data is in JSON syntax, formatted as a
      * string. For more details, see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
-     * Match Data</a>. </p> </li> <li> <p>LatencyInMs -- If the matchmaker uses player
-     * latency, include a latency value, in milliseconds, for the region that the game
-     * session is currently in. Do not include latency values for any other region.</p>
-     * </li> </ul>
+     * Match Data</a>. </p> </li> <li> <p>LatencyInMs -\\- If the matchmaker uses
+     * player latency, include a latency value, in milliseconds, for the region that
+     * the game session is currently in. Do not include latency values for any other
+     * region.</p> </li> </ul>
      */
     inline StartMatchBackfillRequest& WithPlayers(Aws::Vector<Player>&& value) { SetPlayers(std::move(value)); return *this;}
 
     /**
      * <p>Match information on all players that are currently assigned to the game
      * session. This information is used by the matchmaker to find new players and add
-     * them to the existing game.</p> <ul> <li> <p>PlayerID, PlayerAttributes, Team --
-     * This information is maintained in the <a>GameSession</a> object,
+     * them to the existing game.</p> <ul> <li> <p>PlayerID, PlayerAttributes, Team
+     * -\\- This information is maintained in the <a>GameSession</a> object,
      * <code>MatchmakerData</code> property, for all players who are currently assigned
      * to the game session. The matchmaker data is in JSON syntax, formatted as a
      * string. For more details, see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
-     * Match Data</a>. </p> </li> <li> <p>LatencyInMs -- If the matchmaker uses player
-     * latency, include a latency value, in milliseconds, for the region that the game
-     * session is currently in. Do not include latency values for any other region.</p>
-     * </li> </ul>
+     * Match Data</a>. </p> </li> <li> <p>LatencyInMs -\\- If the matchmaker uses
+     * player latency, include a latency value, in milliseconds, for the region that
+     * the game session is currently in. Do not include latency values for any other
+     * region.</p> </li> </ul>
      */
     inline StartMatchBackfillRequest& AddPlayers(const Player& value) { m_playersHasBeenSet = true; m_players.push_back(value); return *this; }
 
     /**
      * <p>Match information on all players that are currently assigned to the game
      * session. This information is used by the matchmaker to find new players and add
-     * them to the existing game.</p> <ul> <li> <p>PlayerID, PlayerAttributes, Team --
-     * This information is maintained in the <a>GameSession</a> object,
+     * them to the existing game.</p> <ul> <li> <p>PlayerID, PlayerAttributes, Team
+     * -\\- This information is maintained in the <a>GameSession</a> object,
      * <code>MatchmakerData</code> property, for all players who are currently assigned
      * to the game session. The matchmaker data is in JSON syntax, formatted as a
      * string. For more details, see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
-     * Match Data</a>. </p> </li> <li> <p>LatencyInMs -- If the matchmaker uses player
-     * latency, include a latency value, in milliseconds, for the region that the game
-     * session is currently in. Do not include latency values for any other region.</p>
-     * </li> </ul>
+     * Match Data</a>. </p> </li> <li> <p>LatencyInMs -\\- If the matchmaker uses
+     * player latency, include a latency value, in milliseconds, for the region that
+     * the game session is currently in. Do not include latency values for any other
+     * region.</p> </li> </ul>
      */
     inline StartMatchBackfillRequest& AddPlayers(Player&& value) { m_playersHasBeenSet = true; m_players.push_back(std::move(value)); return *this; }
 

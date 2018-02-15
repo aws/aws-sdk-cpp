@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mediaconvert/model/M3u8NielsenId3.h>
 #include <aws/mediaconvert/model/M3u8PcrControl.h>
 #include <aws/mediaconvert/model/M3u8Scte35Source.h>
 #include <aws/mediaconvert/model/TimedMetadata.h>
@@ -68,44 +69,60 @@ namespace Model
     /**
      * Packet Identifier (PID) of the elementary audio stream(s) in the transport
      * stream. Multiple values are accepted, and can be entered in ranges and/or by
-     * comma separation. Can be entered as decimal or hexadecimal values.
+     * comma separation.
      */
     inline const Aws::Vector<int>& GetAudioPids() const{ return m_audioPids; }
 
     /**
      * Packet Identifier (PID) of the elementary audio stream(s) in the transport
      * stream. Multiple values are accepted, and can be entered in ranges and/or by
-     * comma separation. Can be entered as decimal or hexadecimal values.
+     * comma separation.
      */
     inline void SetAudioPids(const Aws::Vector<int>& value) { m_audioPidsHasBeenSet = true; m_audioPids = value; }
 
     /**
      * Packet Identifier (PID) of the elementary audio stream(s) in the transport
      * stream. Multiple values are accepted, and can be entered in ranges and/or by
-     * comma separation. Can be entered as decimal or hexadecimal values.
+     * comma separation.
      */
     inline void SetAudioPids(Aws::Vector<int>&& value) { m_audioPidsHasBeenSet = true; m_audioPids = std::move(value); }
 
     /**
      * Packet Identifier (PID) of the elementary audio stream(s) in the transport
      * stream. Multiple values are accepted, and can be entered in ranges and/or by
-     * comma separation. Can be entered as decimal or hexadecimal values.
+     * comma separation.
      */
     inline M3u8Settings& WithAudioPids(const Aws::Vector<int>& value) { SetAudioPids(value); return *this;}
 
     /**
      * Packet Identifier (PID) of the elementary audio stream(s) in the transport
      * stream. Multiple values are accepted, and can be entered in ranges and/or by
-     * comma separation. Can be entered as decimal or hexadecimal values.
+     * comma separation.
      */
     inline M3u8Settings& WithAudioPids(Aws::Vector<int>&& value) { SetAudioPids(std::move(value)); return *this;}
 
     /**
      * Packet Identifier (PID) of the elementary audio stream(s) in the transport
      * stream. Multiple values are accepted, and can be entered in ranges and/or by
-     * comma separation. Can be entered as decimal or hexadecimal values.
+     * comma separation.
      */
     inline M3u8Settings& AddAudioPids(int value) { m_audioPidsHasBeenSet = true; m_audioPids.push_back(value); return *this; }
+
+
+    
+    inline const M3u8NielsenId3& GetNielsenId3() const{ return m_nielsenId3; }
+
+    
+    inline void SetNielsenId3(const M3u8NielsenId3& value) { m_nielsenId3HasBeenSet = true; m_nielsenId3 = value; }
+
+    
+    inline void SetNielsenId3(M3u8NielsenId3&& value) { m_nielsenId3HasBeenSet = true; m_nielsenId3 = std::move(value); }
+
+    
+    inline M3u8Settings& WithNielsenId3(const M3u8NielsenId3& value) { SetNielsenId3(value); return *this;}
+
+    
+    inline M3u8Settings& WithNielsenId3(M3u8NielsenId3&& value) { SetNielsenId3(std::move(value)); return *this;}
 
 
     /**
@@ -146,21 +163,21 @@ namespace Model
     /**
      * Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport
      * stream. When no value is given, the encoder will assign the same value as the
-     * Video PID. Can be entered as a decimal or hexadecimal value.
+     * Video PID.
      */
     inline int GetPcrPid() const{ return m_pcrPid; }
 
     /**
      * Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport
      * stream. When no value is given, the encoder will assign the same value as the
-     * Video PID. Can be entered as a decimal or hexadecimal value.
+     * Video PID.
      */
     inline void SetPcrPid(int value) { m_pcrPidHasBeenSet = true; m_pcrPid = value; }
 
     /**
      * Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport
      * stream. When no value is given, the encoder will assign the same value as the
-     * Video PID. Can be entered as a decimal or hexadecimal value.
+     * Video PID.
      */
     inline M3u8Settings& WithPcrPid(int value) { SetPcrPid(value); return *this;}
 
@@ -186,38 +203,32 @@ namespace Model
 
     /**
      * Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream.
-     * Can be entered as a decimal or hexadecimal value.
      */
     inline int GetPmtPid() const{ return m_pmtPid; }
 
     /**
      * Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream.
-     * Can be entered as a decimal or hexadecimal value.
      */
     inline void SetPmtPid(int value) { m_pmtPidHasBeenSet = true; m_pmtPid = value; }
 
     /**
      * Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream.
-     * Can be entered as a decimal or hexadecimal value.
      */
     inline M3u8Settings& WithPmtPid(int value) { SetPmtPid(value); return *this;}
 
 
     /**
      * Packet Identifier (PID) of the private metadata stream in the transport stream.
-     * Can be entered as a decimal or hexadecimal value.
      */
     inline int GetPrivateMetadataPid() const{ return m_privateMetadataPid; }
 
     /**
      * Packet Identifier (PID) of the private metadata stream in the transport stream.
-     * Can be entered as a decimal or hexadecimal value.
      */
     inline void SetPrivateMetadataPid(int value) { m_privateMetadataPidHasBeenSet = true; m_privateMetadataPid = value; }
 
     /**
      * Packet Identifier (PID) of the private metadata stream in the transport stream.
-     * Can be entered as a decimal or hexadecimal value.
      */
     inline M3u8Settings& WithPrivateMetadataPid(int value) { SetPrivateMetadataPid(value); return *this;}
 
@@ -239,20 +250,17 @@ namespace Model
 
 
     /**
-     * Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be
-     * entered as a decimal or hexadecimal value.
+     * Packet Identifier (PID) of the SCTE-35 stream in the transport stream.
      */
     inline int GetScte35Pid() const{ return m_scte35Pid; }
 
     /**
-     * Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be
-     * entered as a decimal or hexadecimal value.
+     * Packet Identifier (PID) of the SCTE-35 stream in the transport stream.
      */
     inline void SetScte35Pid(int value) { m_scte35PidHasBeenSet = true; m_scte35Pid = value; }
 
     /**
-     * Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be
-     * entered as a decimal or hexadecimal value.
+     * Packet Identifier (PID) of the SCTE-35 stream in the transport stream.
      */
     inline M3u8Settings& WithScte35Pid(int value) { SetScte35Pid(value); return *this;}
 
@@ -291,19 +299,16 @@ namespace Model
 
     /**
      * Packet Identifier (PID) of the timed metadata stream in the transport stream.
-     * Can be entered as a decimal or hexadecimal value.
      */
     inline int GetTimedMetadataPid() const{ return m_timedMetadataPid; }
 
     /**
      * Packet Identifier (PID) of the timed metadata stream in the transport stream.
-     * Can be entered as a decimal or hexadecimal value.
      */
     inline void SetTimedMetadataPid(int value) { m_timedMetadataPidHasBeenSet = true; m_timedMetadataPid = value; }
 
     /**
      * Packet Identifier (PID) of the timed metadata stream in the transport stream.
-     * Can be entered as a decimal or hexadecimal value.
      */
     inline M3u8Settings& WithTimedMetadataPid(int value) { SetTimedMetadataPid(value); return *this;}
 
@@ -326,19 +331,16 @@ namespace Model
 
     /**
      * Packet Identifier (PID) of the elementary video stream in the transport stream.
-     * Can be entered as a decimal or hexadecimal value.
      */
     inline int GetVideoPid() const{ return m_videoPid; }
 
     /**
      * Packet Identifier (PID) of the elementary video stream in the transport stream.
-     * Can be entered as a decimal or hexadecimal value.
      */
     inline void SetVideoPid(int value) { m_videoPidHasBeenSet = true; m_videoPid = value; }
 
     /**
      * Packet Identifier (PID) of the elementary video stream in the transport stream.
-     * Can be entered as a decimal or hexadecimal value.
      */
     inline M3u8Settings& WithVideoPid(int value) { SetVideoPid(value); return *this;}
 
@@ -349,6 +351,9 @@ namespace Model
 
     Aws::Vector<int> m_audioPids;
     bool m_audioPidsHasBeenSet;
+
+    M3u8NielsenId3 m_nielsenId3;
+    bool m_nielsenId3HasBeenSet;
 
     int m_patInterval;
     bool m_patIntervalHasBeenSet;

@@ -22,6 +22,7 @@
 #include <aws/gamelift/model/ProtectionPolicy.h>
 #include <aws/gamelift/model/RuntimeConfiguration.h>
 #include <aws/gamelift/model/ResourceCreationLimitPolicy.h>
+#include <aws/gamelift/model/FleetType.h>
 #include <aws/gamelift/model/IpPermission.h>
 #include <utility>
 
@@ -843,6 +844,77 @@ namespace Model
      */
     inline CreateFleetRequest& WithPeerVpcId(const char* value) { SetPeerVpcId(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether to use on-demand instances or spot instances for this
+     * fleet. If empty, the default is ON_DEMAND. Both categories of instances use
+     * identical hardware and configurations, based on the instance type selected for
+     * this fleet. You can acquire on-demand instances at any time for a fixed price
+     * and keep them as long as you need them. Spot instances have lower prices, but
+     * spot pricing is variable, and while in use they can be interrupted (with a
+     * two-minute notification). Learn more about Amazon GameLift spot instances with
+     * at <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html">
+     * Choose Computing Resources</a>. </p>
+     */
+    inline const FleetType& GetFleetType() const{ return m_fleetType; }
+
+    /**
+     * <p>Indicates whether to use on-demand instances or spot instances for this
+     * fleet. If empty, the default is ON_DEMAND. Both categories of instances use
+     * identical hardware and configurations, based on the instance type selected for
+     * this fleet. You can acquire on-demand instances at any time for a fixed price
+     * and keep them as long as you need them. Spot instances have lower prices, but
+     * spot pricing is variable, and while in use they can be interrupted (with a
+     * two-minute notification). Learn more about Amazon GameLift spot instances with
+     * at <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html">
+     * Choose Computing Resources</a>. </p>
+     */
+    inline void SetFleetType(const FleetType& value) { m_fleetTypeHasBeenSet = true; m_fleetType = value; }
+
+    /**
+     * <p>Indicates whether to use on-demand instances or spot instances for this
+     * fleet. If empty, the default is ON_DEMAND. Both categories of instances use
+     * identical hardware and configurations, based on the instance type selected for
+     * this fleet. You can acquire on-demand instances at any time for a fixed price
+     * and keep them as long as you need them. Spot instances have lower prices, but
+     * spot pricing is variable, and while in use they can be interrupted (with a
+     * two-minute notification). Learn more about Amazon GameLift spot instances with
+     * at <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html">
+     * Choose Computing Resources</a>. </p>
+     */
+    inline void SetFleetType(FleetType&& value) { m_fleetTypeHasBeenSet = true; m_fleetType = std::move(value); }
+
+    /**
+     * <p>Indicates whether to use on-demand instances or spot instances for this
+     * fleet. If empty, the default is ON_DEMAND. Both categories of instances use
+     * identical hardware and configurations, based on the instance type selected for
+     * this fleet. You can acquire on-demand instances at any time for a fixed price
+     * and keep them as long as you need them. Spot instances have lower prices, but
+     * spot pricing is variable, and while in use they can be interrupted (with a
+     * two-minute notification). Learn more about Amazon GameLift spot instances with
+     * at <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html">
+     * Choose Computing Resources</a>. </p>
+     */
+    inline CreateFleetRequest& WithFleetType(const FleetType& value) { SetFleetType(value); return *this;}
+
+    /**
+     * <p>Indicates whether to use on-demand instances or spot instances for this
+     * fleet. If empty, the default is ON_DEMAND. Both categories of instances use
+     * identical hardware and configurations, based on the instance type selected for
+     * this fleet. You can acquire on-demand instances at any time for a fixed price
+     * and keep them as long as you need them. Spot instances have lower prices, but
+     * spot pricing is variable, and while in use they can be interrupted (with a
+     * two-minute notification). Learn more about Amazon GameLift spot instances with
+     * at <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html">
+     * Choose Computing Resources</a>. </p>
+     */
+    inline CreateFleetRequest& WithFleetType(FleetType&& value) { SetFleetType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -886,6 +958,9 @@ namespace Model
 
     Aws::String m_peerVpcId;
     bool m_peerVpcIdHasBeenSet;
+
+    FleetType m_fleetType;
+    bool m_fleetTypeHasBeenSet;
   };
 
 } // namespace Model

@@ -114,34 +114,19 @@ namespace Model
     inline OutputGroupSettings& WithMsSmoothGroupSettings(MsSmoothGroupSettings&& value) { SetMsSmoothGroupSettings(std::move(value)); return *this;}
 
 
-    /**
-     * Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth
-     * Streaming)
-     */
+    
     inline const OutputGroupType& GetType() const{ return m_type; }
 
-    /**
-     * Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth
-     * Streaming)
-     */
+    
     inline void SetType(const OutputGroupType& value) { m_typeHasBeenSet = true; m_type = value; }
 
-    /**
-     * Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth
-     * Streaming)
-     */
+    
     inline void SetType(OutputGroupType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
-    /**
-     * Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth
-     * Streaming)
-     */
+    
     inline OutputGroupSettings& WithType(const OutputGroupType& value) { SetType(value); return *this;}
 
-    /**
-     * Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth
-     * Streaming)
-     */
+    
     inline OutputGroupSettings& WithType(OutputGroupType&& value) { SetType(std::move(value)); return *this;}
 
   private:

@@ -68,44 +68,37 @@ namespace Model
 
 
     /**
-     * Specifies audio data from an external file source. Auto populated when Infer
-     * External Filename is checked
+     * Specifies audio data from an external file source.
      */
     inline const Aws::String& GetExternalAudioFileInput() const{ return m_externalAudioFileInput; }
 
     /**
-     * Specifies audio data from an external file source. Auto populated when Infer
-     * External Filename is checked
+     * Specifies audio data from an external file source.
      */
     inline void SetExternalAudioFileInput(const Aws::String& value) { m_externalAudioFileInputHasBeenSet = true; m_externalAudioFileInput = value; }
 
     /**
-     * Specifies audio data from an external file source. Auto populated when Infer
-     * External Filename is checked
+     * Specifies audio data from an external file source.
      */
     inline void SetExternalAudioFileInput(Aws::String&& value) { m_externalAudioFileInputHasBeenSet = true; m_externalAudioFileInput = std::move(value); }
 
     /**
-     * Specifies audio data from an external file source. Auto populated when Infer
-     * External Filename is checked
+     * Specifies audio data from an external file source.
      */
     inline void SetExternalAudioFileInput(const char* value) { m_externalAudioFileInputHasBeenSet = true; m_externalAudioFileInput.assign(value); }
 
     /**
-     * Specifies audio data from an external file source. Auto populated when Infer
-     * External Filename is checked
+     * Specifies audio data from an external file source.
      */
     inline AudioSelector& WithExternalAudioFileInput(const Aws::String& value) { SetExternalAudioFileInput(value); return *this;}
 
     /**
-     * Specifies audio data from an external file source. Auto populated when Infer
-     * External Filename is checked
+     * Specifies audio data from an external file source.
      */
     inline AudioSelector& WithExternalAudioFileInput(Aws::String&& value) { SetExternalAudioFileInput(std::move(value)); return *this;}
 
     /**
-     * Specifies audio data from an external file source. Auto populated when Infer
-     * External Filename is checked
+     * Specifies audio data from an external file source.
      */
     inline AudioSelector& WithExternalAudioFileInput(const char* value) { SetExternalAudioFileInput(value); return *this;}
 

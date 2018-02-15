@@ -148,19 +148,19 @@ namespace Model
 
     /**
      * Use Fragment length (FragmentLength) to specify the mp4 fragment sizes in
-     * seconds.  Fragment length must be compatible with GOP size and framerate.
+     * seconds. Fragment length must be compatible with GOP size and framerate.
      */
     inline int GetFragmentLength() const{ return m_fragmentLength; }
 
     /**
      * Use Fragment length (FragmentLength) to specify the mp4 fragment sizes in
-     * seconds.  Fragment length must be compatible with GOP size and framerate.
+     * seconds. Fragment length must be compatible with GOP size and framerate.
      */
     inline void SetFragmentLength(int value) { m_fragmentLengthHasBeenSet = true; m_fragmentLength = value; }
 
     /**
      * Use Fragment length (FragmentLength) to specify the mp4 fragment sizes in
-     * seconds.  Fragment length must be compatible with GOP size and framerate.
+     * seconds. Fragment length must be compatible with GOP size and framerate.
      */
     inline MsSmoothGroupSettings& WithFragmentLength(int value) { SetFragmentLength(value); return *this;}
 

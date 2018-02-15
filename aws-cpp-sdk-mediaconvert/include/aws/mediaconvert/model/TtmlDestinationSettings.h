@@ -33,7 +33,8 @@ namespace Model
 {
 
   /**
-   * Settings for TTML caption output<p><h3>See Also:</h3>   <a
+   * Settings specific to TTML caption outputs, including Pass style information
+   * (TtmlStylePassthrough).<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/TtmlDestinationSettings">AWS
    * API Reference</a></p>
    */
