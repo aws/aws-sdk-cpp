@@ -42,7 +42,9 @@ DBEngineVersion::DBEngineVersion() :
     m_supportedTimezonesHasBeenSet(false),
     m_exportableLogTypesHasBeenSet(false),
     m_supportsLogExportsToCloudwatchLogs(false),
-    m_supportsLogExportsToCloudwatchLogsHasBeenSet(false)
+    m_supportsLogExportsToCloudwatchLogsHasBeenSet(false),
+    m_supportsReadReplica(false),
+    m_supportsReadReplicaHasBeenSet(false)
 {
 }
 
@@ -58,7 +60,9 @@ DBEngineVersion::DBEngineVersion(const XmlNode& xmlNode) :
     m_supportedTimezonesHasBeenSet(false),
     m_exportableLogTypesHasBeenSet(false),
     m_supportsLogExportsToCloudwatchLogs(false),
-    m_supportsLogExportsToCloudwatchLogsHasBeenSet(false)
+    m_supportsLogExportsToCloudwatchLogsHasBeenSet(false),
+    m_supportsReadReplica(false),
+    m_supportsReadReplicaHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -159,6 +163,12 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
       m_supportsLogExportsToCloudwatchLogs = StringUtils::ConvertToBool(StringUtils::Trim(supportsLogExportsToCloudwatchLogsNode.GetText().c_str()).c_str());
       m_supportsLogExportsToCloudwatchLogsHasBeenSet = true;
     }
+    XmlNode supportsReadReplicaNode = resultNode.FirstChild("SupportsReadReplica");
+    if(!supportsReadReplicaNode.IsNull())
+    {
+      m_supportsReadReplica = StringUtils::ConvertToBool(StringUtils::Trim(supportsReadReplicaNode.GetText().c_str()).c_str());
+      m_supportsReadReplicaHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -245,6 +255,11 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".SupportsLogExportsToCloudwatchLogs=" << std::boolalpha << m_supportsLogExportsToCloudwatchLogs << "&";
   }
 
+  if(m_supportsReadReplicaHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsReadReplica=" << std::boolalpha << m_supportsReadReplica << "&";
+  }
+
 }
 
 void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -316,6 +331,10 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_supportsLogExportsToCloudwatchLogsHasBeenSet)
   {
       oStream << location << ".SupportsLogExportsToCloudwatchLogs=" << std::boolalpha << m_supportsLogExportsToCloudwatchLogs << "&";
+  }
+  if(m_supportsReadReplicaHasBeenSet)
+  {
+      oStream << location << ".SupportsReadReplica=" << std::boolalpha << m_supportsReadReplica << "&";
   }
 }
 

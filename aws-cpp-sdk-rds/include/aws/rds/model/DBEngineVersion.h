@@ -480,6 +480,22 @@ namespace Model
      */
     inline DBEngineVersion& WithSupportsLogExportsToCloudwatchLogs(bool value) { SetSupportsLogExportsToCloudwatchLogs(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether the database engine version supports read replicas.</p>
+     */
+    inline bool GetSupportsReadReplica() const{ return m_supportsReadReplica; }
+
+    /**
+     * <p>Indicates whether the database engine version supports read replicas.</p>
+     */
+    inline void SetSupportsReadReplica(bool value) { m_supportsReadReplicaHasBeenSet = true; m_supportsReadReplica = value; }
+
+    /**
+     * <p>Indicates whether the database engine version supports read replicas.</p>
+     */
+    inline DBEngineVersion& WithSupportsReadReplica(bool value) { SetSupportsReadReplica(value); return *this;}
+
   private:
 
     Aws::String m_engine;
@@ -514,6 +530,9 @@ namespace Model
 
     bool m_supportsLogExportsToCloudwatchLogs;
     bool m_supportsLogExportsToCloudwatchLogsHasBeenSet;
+
+    bool m_supportsReadReplica;
+    bool m_supportsReadReplicaHasBeenSet;
   };
 
 } // namespace Model

@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-MediaStoreData;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.3.20170901.58;
+        version : 1.3.20170901.59;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Elemental MediaStore Data Plane);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.3.58
+            AWSSDKCPP-Core/1.3.59
        }
     }
 

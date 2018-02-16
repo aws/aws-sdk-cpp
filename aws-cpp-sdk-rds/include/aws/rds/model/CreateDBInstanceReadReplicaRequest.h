@@ -387,8 +387,7 @@ namespace Model
      * can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of
      * your replica in another Availability Zone for failover support for the replica.
      * Creating your Read Replica as a Multi-AZ DB instance is independent of whether
-     * the source database is a Multi-AZ DB instance. </p> <note> <p>Currently, you
-     * can't create PostgreSQL Read Replicas as Multi-AZ DB instances.</p> </note>
+     * the source database is a Multi-AZ DB instance. </p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
@@ -397,8 +396,7 @@ namespace Model
      * can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of
      * your replica in another Availability Zone for failover support for the replica.
      * Creating your Read Replica as a Multi-AZ DB instance is independent of whether
-     * the source database is a Multi-AZ DB instance. </p> <note> <p>Currently, you
-     * can't create PostgreSQL Read Replicas as Multi-AZ DB instances.</p> </note>
+     * the source database is a Multi-AZ DB instance. </p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
@@ -407,8 +405,7 @@ namespace Model
      * can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of
      * your replica in another Availability Zone for failover support for the replica.
      * Creating your Read Replica as a Multi-AZ DB instance is independent of whether
-     * the source database is a Multi-AZ DB instance. </p> <note> <p>Currently, you
-     * can't create PostgreSQL Read Replicas as Multi-AZ DB instances.</p> </note>
+     * the source database is a Multi-AZ DB instance. </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
