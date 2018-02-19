@@ -346,7 +346,16 @@ public class C2jModelToGeneratorModelTransformer {
             return shape;
         }
         if (shapes.containsKey(name)) {
-            return shapes.get(name);
+            // Conflict with shape name defined by service team, need to rename it.
+            String newName = "";
+            switch(name) {
+                case "CopyObjectResult":
+                    newName = "CopyObjectResultDetails";
+                    break;
+                default:
+                    throw new RuntimeException("Unhandled shape name conflict: " + name);
+            }
+            renameShapeMember(shape, name, newName);
         }
 
         Shape cloned = cloneShape(shape);
@@ -371,6 +380,14 @@ public class C2jModelToGeneratorModelTransformer {
         cloned.setPayload(shape.getPayload());
         cloned.setFlattened(shape.isFlattened());
         return cloned;
+    }
+    void renameShapeMember(Shape parentShape, String originalName, String newName) {
+        shapes.get(originalName).setName(newName);
+        shapes.put(newName, shapes.get(originalName));
+        shapes.remove(originalName);
+        parentShape.getMembers().put(newName, parentShape.getMembers().get(originalName));
+        parentShape.RemoveMember(originalName);
+        parentShape.setPayload(newName);
     }
 
     Http convertHttp(C2jHttp c2jHttp) {
