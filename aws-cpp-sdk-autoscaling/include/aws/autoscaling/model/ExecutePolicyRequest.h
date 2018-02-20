@@ -119,33 +119,27 @@ namespace Model
 
 
     /**
-     * <p>If this parameter is true, Auto Scaling waits for the cooldown period to
-     * complete before executing the policy. Otherwise, Auto Scaling executes the
-     * policy without waiting for the cooldown period to complete.</p> <p>This
-     * parameter is not supported if the policy type is <code>StepScaling</code>.</p>
-     * <p>For more information, see <a
+     * <p>Indicates whether Auto Scaling waits for the cooldown period to complete
+     * before executing the policy.</p> <p>This parameter is not supported if the
+     * policy type is <code>StepScaling</code>.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/Cooldown.html">Auto
      * Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline bool GetHonorCooldown() const{ return m_honorCooldown; }
 
     /**
-     * <p>If this parameter is true, Auto Scaling waits for the cooldown period to
-     * complete before executing the policy. Otherwise, Auto Scaling executes the
-     * policy without waiting for the cooldown period to complete.</p> <p>This
-     * parameter is not supported if the policy type is <code>StepScaling</code>.</p>
-     * <p>For more information, see <a
+     * <p>Indicates whether Auto Scaling waits for the cooldown period to complete
+     * before executing the policy.</p> <p>This parameter is not supported if the
+     * policy type is <code>StepScaling</code>.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/Cooldown.html">Auto
      * Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline void SetHonorCooldown(bool value) { m_honorCooldownHasBeenSet = true; m_honorCooldown = value; }
 
     /**
-     * <p>If this parameter is true, Auto Scaling waits for the cooldown period to
-     * complete before executing the policy. Otherwise, Auto Scaling executes the
-     * policy without waiting for the cooldown period to complete.</p> <p>This
-     * parameter is not supported if the policy type is <code>StepScaling</code>.</p>
-     * <p>For more information, see <a
+     * <p>Indicates whether Auto Scaling waits for the cooldown period to complete
+     * before executing the policy.</p> <p>This parameter is not supported if the
+     * policy type is <code>StepScaling</code>.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/Cooldown.html">Auto
      * Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.</p>
      */

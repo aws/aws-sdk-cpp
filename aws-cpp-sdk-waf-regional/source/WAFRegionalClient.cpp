@@ -43,6 +43,7 @@
 #include <aws/waf-regional/model/DeleteByteMatchSetRequest.h>
 #include <aws/waf-regional/model/DeleteGeoMatchSetRequest.h>
 #include <aws/waf-regional/model/DeleteIPSetRequest.h>
+#include <aws/waf-regional/model/DeletePermissionPolicyRequest.h>
 #include <aws/waf-regional/model/DeleteRateBasedRuleRequest.h>
 #include <aws/waf-regional/model/DeleteRegexMatchSetRequest.h>
 #include <aws/waf-regional/model/DeleteRegexPatternSetRequest.h>
@@ -58,6 +59,7 @@
 #include <aws/waf-regional/model/GetChangeTokenStatusRequest.h>
 #include <aws/waf-regional/model/GetGeoMatchSetRequest.h>
 #include <aws/waf-regional/model/GetIPSetRequest.h>
+#include <aws/waf-regional/model/GetPermissionPolicyRequest.h>
 #include <aws/waf-regional/model/GetRateBasedRuleRequest.h>
 #include <aws/waf-regional/model/GetRateBasedRuleManagedKeysRequest.h>
 #include <aws/waf-regional/model/GetRegexMatchSetRequest.h>
@@ -85,6 +87,7 @@
 #include <aws/waf-regional/model/ListSubscribedRuleGroupsRequest.h>
 #include <aws/waf-regional/model/ListWebACLsRequest.h>
 #include <aws/waf-regional/model/ListXssMatchSetsRequest.h>
+#include <aws/waf-regional/model/PutPermissionPolicyRequest.h>
 #include <aws/waf-regional/model/UpdateByteMatchSetRequest.h>
 #include <aws/waf-regional/model/UpdateGeoMatchSetRequest.h>
 #include <aws/waf-regional/model/UpdateIPSetRequest.h>
@@ -722,6 +725,41 @@ void WAFRegionalClient::DeleteIPSetAsyncHelper(const DeleteIPSetRequest& request
   handler(this, request, DeleteIPSet(request), context);
 }
 
+DeletePermissionPolicyOutcome WAFRegionalClient::DeletePermissionPolicy(const DeletePermissionPolicyRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeletePermissionPolicyOutcome(DeletePermissionPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeletePermissionPolicyOutcome(outcome.GetError());
+  }
+}
+
+DeletePermissionPolicyOutcomeCallable WAFRegionalClient::DeletePermissionPolicyCallable(const DeletePermissionPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeletePermissionPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePermissionPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFRegionalClient::DeletePermissionPolicyAsync(const DeletePermissionPolicyRequest& request, const DeletePermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeletePermissionPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void WAFRegionalClient::DeletePermissionPolicyAsyncHelper(const DeletePermissionPolicyRequest& request, const DeletePermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeletePermissionPolicy(request), context);
+}
+
 DeleteRateBasedRuleOutcome WAFRegionalClient::DeleteRateBasedRule(const DeleteRateBasedRuleRequest& request) const
 {
   Aws::StringStream ss;
@@ -1245,6 +1283,41 @@ void WAFRegionalClient::GetIPSetAsync(const GetIPSetRequest& request, const GetI
 void WAFRegionalClient::GetIPSetAsyncHelper(const GetIPSetRequest& request, const GetIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetIPSet(request), context);
+}
+
+GetPermissionPolicyOutcome WAFRegionalClient::GetPermissionPolicy(const GetPermissionPolicyRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetPermissionPolicyOutcome(GetPermissionPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetPermissionPolicyOutcome(outcome.GetError());
+  }
+}
+
+GetPermissionPolicyOutcomeCallable WAFRegionalClient::GetPermissionPolicyCallable(const GetPermissionPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetPermissionPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPermissionPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFRegionalClient::GetPermissionPolicyAsync(const GetPermissionPolicyRequest& request, const GetPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetPermissionPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void WAFRegionalClient::GetPermissionPolicyAsyncHelper(const GetPermissionPolicyRequest& request, const GetPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetPermissionPolicy(request), context);
 }
 
 GetRateBasedRuleOutcome WAFRegionalClient::GetRateBasedRule(const GetRateBasedRuleRequest& request) const
@@ -2190,6 +2263,41 @@ void WAFRegionalClient::ListXssMatchSetsAsync(const ListXssMatchSetsRequest& req
 void WAFRegionalClient::ListXssMatchSetsAsyncHelper(const ListXssMatchSetsRequest& request, const ListXssMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListXssMatchSets(request), context);
+}
+
+PutPermissionPolicyOutcome WAFRegionalClient::PutPermissionPolicy(const PutPermissionPolicyRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutPermissionPolicyOutcome(PutPermissionPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutPermissionPolicyOutcome(outcome.GetError());
+  }
+}
+
+PutPermissionPolicyOutcomeCallable WAFRegionalClient::PutPermissionPolicyCallable(const PutPermissionPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutPermissionPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutPermissionPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFRegionalClient::PutPermissionPolicyAsync(const PutPermissionPolicyRequest& request, const PutPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutPermissionPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void WAFRegionalClient::PutPermissionPolicyAsyncHelper(const PutPermissionPolicyRequest& request, const PutPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutPermissionPolicy(request), context);
 }
 
 UpdateByteMatchSetOutcome WAFRegionalClient::UpdateByteMatchSet(const UpdateByteMatchSetRequest& request) const

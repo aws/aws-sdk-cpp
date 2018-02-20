@@ -37,6 +37,7 @@
 #include <aws/waf-regional/model/DeleteByteMatchSetResult.h>
 #include <aws/waf-regional/model/DeleteGeoMatchSetResult.h>
 #include <aws/waf-regional/model/DeleteIPSetResult.h>
+#include <aws/waf-regional/model/DeletePermissionPolicyResult.h>
 #include <aws/waf-regional/model/DeleteRateBasedRuleResult.h>
 #include <aws/waf-regional/model/DeleteRegexMatchSetResult.h>
 #include <aws/waf-regional/model/DeleteRegexPatternSetResult.h>
@@ -52,6 +53,7 @@
 #include <aws/waf-regional/model/GetChangeTokenStatusResult.h>
 #include <aws/waf-regional/model/GetGeoMatchSetResult.h>
 #include <aws/waf-regional/model/GetIPSetResult.h>
+#include <aws/waf-regional/model/GetPermissionPolicyResult.h>
 #include <aws/waf-regional/model/GetRateBasedRuleResult.h>
 #include <aws/waf-regional/model/GetRateBasedRuleManagedKeysResult.h>
 #include <aws/waf-regional/model/GetRegexMatchSetResult.h>
@@ -79,6 +81,7 @@
 #include <aws/waf-regional/model/ListSubscribedRuleGroupsResult.h>
 #include <aws/waf-regional/model/ListWebACLsResult.h>
 #include <aws/waf-regional/model/ListXssMatchSetsResult.h>
+#include <aws/waf-regional/model/PutPermissionPolicyResult.h>
 #include <aws/waf-regional/model/UpdateByteMatchSetResult.h>
 #include <aws/waf-regional/model/UpdateGeoMatchSetResult.h>
 #include <aws/waf-regional/model/UpdateIPSetResult.h>
@@ -152,6 +155,7 @@ namespace Model
         class DeleteByteMatchSetRequest;
         class DeleteGeoMatchSetRequest;
         class DeleteIPSetRequest;
+        class DeletePermissionPolicyRequest;
         class DeleteRateBasedRuleRequest;
         class DeleteRegexMatchSetRequest;
         class DeleteRegexPatternSetRequest;
@@ -167,6 +171,7 @@ namespace Model
         class GetChangeTokenStatusRequest;
         class GetGeoMatchSetRequest;
         class GetIPSetRequest;
+        class GetPermissionPolicyRequest;
         class GetRateBasedRuleRequest;
         class GetRateBasedRuleManagedKeysRequest;
         class GetRegexMatchSetRequest;
@@ -194,6 +199,7 @@ namespace Model
         class ListSubscribedRuleGroupsRequest;
         class ListWebACLsRequest;
         class ListXssMatchSetsRequest;
+        class PutPermissionPolicyRequest;
         class UpdateByteMatchSetRequest;
         class UpdateGeoMatchSetRequest;
         class UpdateIPSetRequest;
@@ -223,6 +229,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteByteMatchSetResult, Aws::Client::AWSError<WAFRegionalErrors>> DeleteByteMatchSetOutcome;
         typedef Aws::Utils::Outcome<DeleteGeoMatchSetResult, Aws::Client::AWSError<WAFRegionalErrors>> DeleteGeoMatchSetOutcome;
         typedef Aws::Utils::Outcome<DeleteIPSetResult, Aws::Client::AWSError<WAFRegionalErrors>> DeleteIPSetOutcome;
+        typedef Aws::Utils::Outcome<DeletePermissionPolicyResult, Aws::Client::AWSError<WAFRegionalErrors>> DeletePermissionPolicyOutcome;
         typedef Aws::Utils::Outcome<DeleteRateBasedRuleResult, Aws::Client::AWSError<WAFRegionalErrors>> DeleteRateBasedRuleOutcome;
         typedef Aws::Utils::Outcome<DeleteRegexMatchSetResult, Aws::Client::AWSError<WAFRegionalErrors>> DeleteRegexMatchSetOutcome;
         typedef Aws::Utils::Outcome<DeleteRegexPatternSetResult, Aws::Client::AWSError<WAFRegionalErrors>> DeleteRegexPatternSetOutcome;
@@ -238,6 +245,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetChangeTokenStatusResult, Aws::Client::AWSError<WAFRegionalErrors>> GetChangeTokenStatusOutcome;
         typedef Aws::Utils::Outcome<GetGeoMatchSetResult, Aws::Client::AWSError<WAFRegionalErrors>> GetGeoMatchSetOutcome;
         typedef Aws::Utils::Outcome<GetIPSetResult, Aws::Client::AWSError<WAFRegionalErrors>> GetIPSetOutcome;
+        typedef Aws::Utils::Outcome<GetPermissionPolicyResult, Aws::Client::AWSError<WAFRegionalErrors>> GetPermissionPolicyOutcome;
         typedef Aws::Utils::Outcome<GetRateBasedRuleResult, Aws::Client::AWSError<WAFRegionalErrors>> GetRateBasedRuleOutcome;
         typedef Aws::Utils::Outcome<GetRateBasedRuleManagedKeysResult, Aws::Client::AWSError<WAFRegionalErrors>> GetRateBasedRuleManagedKeysOutcome;
         typedef Aws::Utils::Outcome<GetRegexMatchSetResult, Aws::Client::AWSError<WAFRegionalErrors>> GetRegexMatchSetOutcome;
@@ -265,6 +273,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListSubscribedRuleGroupsResult, Aws::Client::AWSError<WAFRegionalErrors>> ListSubscribedRuleGroupsOutcome;
         typedef Aws::Utils::Outcome<ListWebACLsResult, Aws::Client::AWSError<WAFRegionalErrors>> ListWebACLsOutcome;
         typedef Aws::Utils::Outcome<ListXssMatchSetsResult, Aws::Client::AWSError<WAFRegionalErrors>> ListXssMatchSetsOutcome;
+        typedef Aws::Utils::Outcome<PutPermissionPolicyResult, Aws::Client::AWSError<WAFRegionalErrors>> PutPermissionPolicyOutcome;
         typedef Aws::Utils::Outcome<UpdateByteMatchSetResult, Aws::Client::AWSError<WAFRegionalErrors>> UpdateByteMatchSetOutcome;
         typedef Aws::Utils::Outcome<UpdateGeoMatchSetResult, Aws::Client::AWSError<WAFRegionalErrors>> UpdateGeoMatchSetOutcome;
         typedef Aws::Utils::Outcome<UpdateIPSetResult, Aws::Client::AWSError<WAFRegionalErrors>> UpdateIPSetOutcome;
@@ -294,6 +303,7 @@ namespace Model
         typedef std::future<DeleteByteMatchSetOutcome> DeleteByteMatchSetOutcomeCallable;
         typedef std::future<DeleteGeoMatchSetOutcome> DeleteGeoMatchSetOutcomeCallable;
         typedef std::future<DeleteIPSetOutcome> DeleteIPSetOutcomeCallable;
+        typedef std::future<DeletePermissionPolicyOutcome> DeletePermissionPolicyOutcomeCallable;
         typedef std::future<DeleteRateBasedRuleOutcome> DeleteRateBasedRuleOutcomeCallable;
         typedef std::future<DeleteRegexMatchSetOutcome> DeleteRegexMatchSetOutcomeCallable;
         typedef std::future<DeleteRegexPatternSetOutcome> DeleteRegexPatternSetOutcomeCallable;
@@ -309,6 +319,7 @@ namespace Model
         typedef std::future<GetChangeTokenStatusOutcome> GetChangeTokenStatusOutcomeCallable;
         typedef std::future<GetGeoMatchSetOutcome> GetGeoMatchSetOutcomeCallable;
         typedef std::future<GetIPSetOutcome> GetIPSetOutcomeCallable;
+        typedef std::future<GetPermissionPolicyOutcome> GetPermissionPolicyOutcomeCallable;
         typedef std::future<GetRateBasedRuleOutcome> GetRateBasedRuleOutcomeCallable;
         typedef std::future<GetRateBasedRuleManagedKeysOutcome> GetRateBasedRuleManagedKeysOutcomeCallable;
         typedef std::future<GetRegexMatchSetOutcome> GetRegexMatchSetOutcomeCallable;
@@ -336,6 +347,7 @@ namespace Model
         typedef std::future<ListSubscribedRuleGroupsOutcome> ListSubscribedRuleGroupsOutcomeCallable;
         typedef std::future<ListWebACLsOutcome> ListWebACLsOutcomeCallable;
         typedef std::future<ListXssMatchSetsOutcome> ListXssMatchSetsOutcomeCallable;
+        typedef std::future<PutPermissionPolicyOutcome> PutPermissionPolicyOutcomeCallable;
         typedef std::future<UpdateByteMatchSetOutcome> UpdateByteMatchSetOutcomeCallable;
         typedef std::future<UpdateGeoMatchSetOutcome> UpdateGeoMatchSetOutcomeCallable;
         typedef std::future<UpdateIPSetOutcome> UpdateIPSetOutcomeCallable;
@@ -368,6 +380,7 @@ namespace Model
     typedef std::function<void(const WAFRegionalClient*, const Model::DeleteByteMatchSetRequest&, const Model::DeleteByteMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteByteMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFRegionalClient*, const Model::DeleteGeoMatchSetRequest&, const Model::DeleteGeoMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGeoMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFRegionalClient*, const Model::DeleteIPSetRequest&, const Model::DeleteIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIPSetResponseReceivedHandler;
+    typedef std::function<void(const WAFRegionalClient*, const Model::DeletePermissionPolicyRequest&, const Model::DeletePermissionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePermissionPolicyResponseReceivedHandler;
     typedef std::function<void(const WAFRegionalClient*, const Model::DeleteRateBasedRuleRequest&, const Model::DeleteRateBasedRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRateBasedRuleResponseReceivedHandler;
     typedef std::function<void(const WAFRegionalClient*, const Model::DeleteRegexMatchSetRequest&, const Model::DeleteRegexMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRegexMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFRegionalClient*, const Model::DeleteRegexPatternSetRequest&, const Model::DeleteRegexPatternSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRegexPatternSetResponseReceivedHandler;
@@ -383,6 +396,7 @@ namespace Model
     typedef std::function<void(const WAFRegionalClient*, const Model::GetChangeTokenStatusRequest&, const Model::GetChangeTokenStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChangeTokenStatusResponseReceivedHandler;
     typedef std::function<void(const WAFRegionalClient*, const Model::GetGeoMatchSetRequest&, const Model::GetGeoMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGeoMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFRegionalClient*, const Model::GetIPSetRequest&, const Model::GetIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIPSetResponseReceivedHandler;
+    typedef std::function<void(const WAFRegionalClient*, const Model::GetPermissionPolicyRequest&, const Model::GetPermissionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPermissionPolicyResponseReceivedHandler;
     typedef std::function<void(const WAFRegionalClient*, const Model::GetRateBasedRuleRequest&, const Model::GetRateBasedRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRateBasedRuleResponseReceivedHandler;
     typedef std::function<void(const WAFRegionalClient*, const Model::GetRateBasedRuleManagedKeysRequest&, const Model::GetRateBasedRuleManagedKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRateBasedRuleManagedKeysResponseReceivedHandler;
     typedef std::function<void(const WAFRegionalClient*, const Model::GetRegexMatchSetRequest&, const Model::GetRegexMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRegexMatchSetResponseReceivedHandler;
@@ -410,6 +424,7 @@ namespace Model
     typedef std::function<void(const WAFRegionalClient*, const Model::ListSubscribedRuleGroupsRequest&, const Model::ListSubscribedRuleGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSubscribedRuleGroupsResponseReceivedHandler;
     typedef std::function<void(const WAFRegionalClient*, const Model::ListWebACLsRequest&, const Model::ListWebACLsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWebACLsResponseReceivedHandler;
     typedef std::function<void(const WAFRegionalClient*, const Model::ListXssMatchSetsRequest&, const Model::ListXssMatchSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListXssMatchSetsResponseReceivedHandler;
+    typedef std::function<void(const WAFRegionalClient*, const Model::PutPermissionPolicyRequest&, const Model::PutPermissionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPermissionPolicyResponseReceivedHandler;
     typedef std::function<void(const WAFRegionalClient*, const Model::UpdateByteMatchSetRequest&, const Model::UpdateByteMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateByteMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFRegionalClient*, const Model::UpdateGeoMatchSetRequest&, const Model::UpdateGeoMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGeoMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFRegionalClient*, const Model::UpdateIPSetRequest&, const Model::UpdateIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIPSetResponseReceivedHandler;
@@ -1694,6 +1709,37 @@ namespace Model
         virtual void DeleteIPSetAsync(const Model::DeleteIPSetRequest& request, const DeleteIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Permanently deletes an IAM policy from the specified RuleGroup.</p> <p>The
+         * user making the request must be the owner of the RuleGroup.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeletePermissionPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeletePermissionPolicyOutcome DeletePermissionPolicy(const Model::DeletePermissionPolicyRequest& request) const;
+
+        /**
+         * <p>Permanently deletes an IAM policy from the specified RuleGroup.</p> <p>The
+         * user making the request must be the owner of the RuleGroup.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeletePermissionPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeletePermissionPolicyOutcomeCallable DeletePermissionPolicyCallable(const Model::DeletePermissionPolicyRequest& request) const;
+
+        /**
+         * <p>Permanently deletes an IAM policy from the specified RuleGroup.</p> <p>The
+         * user making the request must be the owner of the RuleGroup.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeletePermissionPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeletePermissionPolicyAsync(const Model::DeletePermissionPolicyRequest& request, const DeletePermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Permanently deletes a <a>RateBasedRule</a>. You can't delete a rule if it's
          * still used in any <code>WebACL</code> objects or if it still includes any
          * predicates, such as <code>ByteMatchSet</code> objects.</p> <p>If you just want
@@ -2388,6 +2434,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetIPSetAsync(const Model::GetIPSetRequest& request, const GetIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the IAM policy attached to the RuleGroup.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetPermissionPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPermissionPolicyOutcome GetPermissionPolicy(const Model::GetPermissionPolicyRequest& request) const;
+
+        /**
+         * <p>Returns the IAM policy attached to the RuleGroup.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetPermissionPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetPermissionPolicyOutcomeCallable GetPermissionPolicyCallable(const Model::GetPermissionPolicyRequest& request) const;
+
+        /**
+         * <p>Returns the IAM policy attached to the RuleGroup.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetPermissionPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetPermissionPolicyAsync(const Model::GetPermissionPolicyRequest& request, const GetPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the <a>RateBasedRule</a> that is specified by the <code>RuleId</code>
@@ -3171,6 +3245,82 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListXssMatchSetsAsync(const Model::ListXssMatchSetsRequest& request, const ListXssMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Attaches a IAM policy to the specified resource. The only supported use for
+         * this action is to share a RuleGroup across accounts.</p> <p>The
+         * <code>PutPermissionPolicy</code> is subject to the following restrictions:</p>
+         * <ul> <li> <p>You can attach only one policy with each
+         * <code>PutPermissionPolicy</code> request.</p> </li> <li> <p>The policy must
+         * include an <code>Effect</code>, <code>Action</code> and <code>Principal</code>.
+         * </p> </li> <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p>
+         * </li> <li> <p>The <code>Action</code> in the policy must be
+         * <code>waf:UpdateWebACL</code> and <code>waf-regional:UpdateWebACL</code>. Any
+         * extra or wildcard actions in the policy will be rejected.</p> </li> <li> <p>The
+         * policy cannot include a <code>Resource</code> parameter.</p> </li> <li> <p>The
+         * ARN in the request must be a valid WAF RuleGroup ARN and the RuleGroup must
+         * exist in the same region.</p> </li> <li> <p>The user making the request must be
+         * the owner of the RuleGroup.</p> </li> <li> <p>Your policy must be composed using
+         * IAM Policy version 2012-10-17.</p> </li> </ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM
+         * Policies</a>. </p> <p>An example of a valid policy parameter is shown in the
+         * Examples section below.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/PutPermissionPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutPermissionPolicyOutcome PutPermissionPolicy(const Model::PutPermissionPolicyRequest& request) const;
+
+        /**
+         * <p>Attaches a IAM policy to the specified resource. The only supported use for
+         * this action is to share a RuleGroup across accounts.</p> <p>The
+         * <code>PutPermissionPolicy</code> is subject to the following restrictions:</p>
+         * <ul> <li> <p>You can attach only one policy with each
+         * <code>PutPermissionPolicy</code> request.</p> </li> <li> <p>The policy must
+         * include an <code>Effect</code>, <code>Action</code> and <code>Principal</code>.
+         * </p> </li> <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p>
+         * </li> <li> <p>The <code>Action</code> in the policy must be
+         * <code>waf:UpdateWebACL</code> and <code>waf-regional:UpdateWebACL</code>. Any
+         * extra or wildcard actions in the policy will be rejected.</p> </li> <li> <p>The
+         * policy cannot include a <code>Resource</code> parameter.</p> </li> <li> <p>The
+         * ARN in the request must be a valid WAF RuleGroup ARN and the RuleGroup must
+         * exist in the same region.</p> </li> <li> <p>The user making the request must be
+         * the owner of the RuleGroup.</p> </li> <li> <p>Your policy must be composed using
+         * IAM Policy version 2012-10-17.</p> </li> </ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM
+         * Policies</a>. </p> <p>An example of a valid policy parameter is shown in the
+         * Examples section below.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/PutPermissionPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutPermissionPolicyOutcomeCallable PutPermissionPolicyCallable(const Model::PutPermissionPolicyRequest& request) const;
+
+        /**
+         * <p>Attaches a IAM policy to the specified resource. The only supported use for
+         * this action is to share a RuleGroup across accounts.</p> <p>The
+         * <code>PutPermissionPolicy</code> is subject to the following restrictions:</p>
+         * <ul> <li> <p>You can attach only one policy with each
+         * <code>PutPermissionPolicy</code> request.</p> </li> <li> <p>The policy must
+         * include an <code>Effect</code>, <code>Action</code> and <code>Principal</code>.
+         * </p> </li> <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p>
+         * </li> <li> <p>The <code>Action</code> in the policy must be
+         * <code>waf:UpdateWebACL</code> and <code>waf-regional:UpdateWebACL</code>. Any
+         * extra or wildcard actions in the policy will be rejected.</p> </li> <li> <p>The
+         * policy cannot include a <code>Resource</code> parameter.</p> </li> <li> <p>The
+         * ARN in the request must be a valid WAF RuleGroup ARN and the RuleGroup must
+         * exist in the same region.</p> </li> <li> <p>The user making the request must be
+         * the owner of the RuleGroup.</p> </li> <li> <p>Your policy must be composed using
+         * IAM Policy version 2012-10-17.</p> </li> </ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM
+         * Policies</a>. </p> <p>An example of a valid policy parameter is shown in the
+         * Examples section below.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/PutPermissionPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutPermissionPolicyAsync(const Model::PutPermissionPolicyRequest& request, const PutPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Inserts or deletes <a>ByteMatchTuple</a> objects (filters) in a
@@ -4444,6 +4594,7 @@ namespace Model
         void DeleteByteMatchSetAsyncHelper(const Model::DeleteByteMatchSetRequest& request, const DeleteByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteGeoMatchSetAsyncHelper(const Model::DeleteGeoMatchSetRequest& request, const DeleteGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteIPSetAsyncHelper(const Model::DeleteIPSetRequest& request, const DeleteIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeletePermissionPolicyAsyncHelper(const Model::DeletePermissionPolicyRequest& request, const DeletePermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRateBasedRuleAsyncHelper(const Model::DeleteRateBasedRuleRequest& request, const DeleteRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRegexMatchSetAsyncHelper(const Model::DeleteRegexMatchSetRequest& request, const DeleteRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRegexPatternSetAsyncHelper(const Model::DeleteRegexPatternSetRequest& request, const DeleteRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4459,6 +4610,7 @@ namespace Model
         void GetChangeTokenStatusAsyncHelper(const Model::GetChangeTokenStatusRequest& request, const GetChangeTokenStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetGeoMatchSetAsyncHelper(const Model::GetGeoMatchSetRequest& request, const GetGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIPSetAsyncHelper(const Model::GetIPSetRequest& request, const GetIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetPermissionPolicyAsyncHelper(const Model::GetPermissionPolicyRequest& request, const GetPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRateBasedRuleAsyncHelper(const Model::GetRateBasedRuleRequest& request, const GetRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRateBasedRuleManagedKeysAsyncHelper(const Model::GetRateBasedRuleManagedKeysRequest& request, const GetRateBasedRuleManagedKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRegexMatchSetAsyncHelper(const Model::GetRegexMatchSetRequest& request, const GetRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4486,6 +4638,7 @@ namespace Model
         void ListSubscribedRuleGroupsAsyncHelper(const Model::ListSubscribedRuleGroupsRequest& request, const ListSubscribedRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListWebACLsAsyncHelper(const Model::ListWebACLsRequest& request, const ListWebACLsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListXssMatchSetsAsyncHelper(const Model::ListXssMatchSetsRequest& request, const ListXssMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutPermissionPolicyAsyncHelper(const Model::PutPermissionPolicyRequest& request, const PutPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateByteMatchSetAsyncHelper(const Model::UpdateByteMatchSetRequest& request, const UpdateByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGeoMatchSetAsyncHelper(const Model::UpdateGeoMatchSetRequest& request, const UpdateGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateIPSetAsyncHelper(const Model::UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

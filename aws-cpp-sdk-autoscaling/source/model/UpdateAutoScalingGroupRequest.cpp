@@ -40,7 +40,8 @@ UpdateAutoScalingGroupRequest::UpdateAutoScalingGroupRequest() :
     m_vPCZoneIdentifierHasBeenSet(false),
     m_terminationPoliciesHasBeenSet(false),
     m_newInstancesProtectedFromScaleIn(false),
-    m_newInstancesProtectedFromScaleInHasBeenSet(false)
+    m_newInstancesProtectedFromScaleInHasBeenSet(false),
+    m_serviceLinkedRoleARNHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,11 @@ Aws::String UpdateAutoScalingGroupRequest::SerializePayload() const
   if(m_newInstancesProtectedFromScaleInHasBeenSet)
   {
     ss << "NewInstancesProtectedFromScaleIn=" << std::boolalpha << m_newInstancesProtectedFromScaleIn << "&";
+  }
+
+  if(m_serviceLinkedRoleARNHasBeenSet)
+  {
+    ss << "ServiceLinkedRoleARN=" << StringUtils::URLEncode(m_serviceLinkedRoleARN.c_str()) << "&";
   }
 
   ss << "Version=2011-01-01";

@@ -181,20 +181,20 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the volume is deleted on instance termination.</p>
-     * <p>Default: <code>true</code> </p>
+     * <p>Indicates whether the volume is deleted on instance termination. The default
+     * is <code>true</code>.</p>
      */
     inline bool GetDeleteOnTermination() const{ return m_deleteOnTermination; }
 
     /**
-     * <p>Indicates whether the volume is deleted on instance termination.</p>
-     * <p>Default: <code>true</code> </p>
+     * <p>Indicates whether the volume is deleted on instance termination. The default
+     * is <code>true</code>.</p>
      */
     inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
 
     /**
-     * <p>Indicates whether the volume is deleted on instance termination.</p>
-     * <p>Default: <code>true</code> </p>
+     * <p>Indicates whether the volume is deleted on instance termination. The default
+     * is <code>true</code>.</p>
      */
     inline Ebs& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
 

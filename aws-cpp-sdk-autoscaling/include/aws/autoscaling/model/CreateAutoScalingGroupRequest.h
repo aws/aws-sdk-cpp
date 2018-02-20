@@ -925,6 +925,63 @@ namespace Model
      */
     inline CreateAutoScalingGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
+     * Scaling group uses to call other AWS services on your behalf. By default, Auto
+     * Scaling uses a service-linked role named AWSServiceRoleForAutoScaling, which it
+     * creates if it does not exist.</p>
+     */
+    inline const Aws::String& GetServiceLinkedRoleARN() const{ return m_serviceLinkedRoleARN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
+     * Scaling group uses to call other AWS services on your behalf. By default, Auto
+     * Scaling uses a service-linked role named AWSServiceRoleForAutoScaling, which it
+     * creates if it does not exist.</p>
+     */
+    inline void SetServiceLinkedRoleARN(const Aws::String& value) { m_serviceLinkedRoleARNHasBeenSet = true; m_serviceLinkedRoleARN = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
+     * Scaling group uses to call other AWS services on your behalf. By default, Auto
+     * Scaling uses a service-linked role named AWSServiceRoleForAutoScaling, which it
+     * creates if it does not exist.</p>
+     */
+    inline void SetServiceLinkedRoleARN(Aws::String&& value) { m_serviceLinkedRoleARNHasBeenSet = true; m_serviceLinkedRoleARN = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
+     * Scaling group uses to call other AWS services on your behalf. By default, Auto
+     * Scaling uses a service-linked role named AWSServiceRoleForAutoScaling, which it
+     * creates if it does not exist.</p>
+     */
+    inline void SetServiceLinkedRoleARN(const char* value) { m_serviceLinkedRoleARNHasBeenSet = true; m_serviceLinkedRoleARN.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
+     * Scaling group uses to call other AWS services on your behalf. By default, Auto
+     * Scaling uses a service-linked role named AWSServiceRoleForAutoScaling, which it
+     * creates if it does not exist.</p>
+     */
+    inline CreateAutoScalingGroupRequest& WithServiceLinkedRoleARN(const Aws::String& value) { SetServiceLinkedRoleARN(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
+     * Scaling group uses to call other AWS services on your behalf. By default, Auto
+     * Scaling uses a service-linked role named AWSServiceRoleForAutoScaling, which it
+     * creates if it does not exist.</p>
+     */
+    inline CreateAutoScalingGroupRequest& WithServiceLinkedRoleARN(Aws::String&& value) { SetServiceLinkedRoleARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
+     * Scaling group uses to call other AWS services on your behalf. By default, Auto
+     * Scaling uses a service-linked role named AWSServiceRoleForAutoScaling, which it
+     * creates if it does not exist.</p>
+     */
+    inline CreateAutoScalingGroupRequest& WithServiceLinkedRoleARN(const char* value) { SetServiceLinkedRoleARN(value); return *this;}
+
   private:
 
     Aws::String m_autoScalingGroupName;
@@ -983,6 +1040,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_serviceLinkedRoleARN;
+    bool m_serviceLinkedRoleARNHasBeenSet;
   };
 
 } // namespace Model
