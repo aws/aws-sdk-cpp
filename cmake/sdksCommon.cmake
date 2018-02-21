@@ -49,7 +49,11 @@ endfunction()
 
 function(get_dependencies_for_sdk PROJECT_NAME DEPENDENCY_LIST_VAR)
     get_map_element(${PROJECT_NAME} TEMP_VAR ${SDK_DEPENDENCY_LIST})
-    set(${DEPENDENCY_LIST_VAR} "${TEMP_VAR}" PARENT_SCOPE)
+    # "core" is the default dependency for every sdk. 
+    # Since we removed the hand-written C2J_LIST and instead auto generating it based on models,
+    # and location of models may not exist or incorrect when SDK is installed and then source has been deleted by customers.
+    # we end up getting an incomplete C2J_LIST when customers call find_package(AWSSDK). But C2J_LIST is only used in customers code for dependencies completing.
+    set(${DEPENDENCY_LIST_VAR} "${TEMP_VAR};core" PARENT_SCOPE)
 endfunction()
 
 function(get_dependencies_for_test TEST_NAME DEPENDENCY_LIST_VAR)

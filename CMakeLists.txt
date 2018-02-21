@@ -122,6 +122,9 @@ set(CMAKE_CONFIGURATION_TYPES
         )
 
 include(compiler_settings)
+# Instead of calling functions/macros inside included cmake scripts, we should call them in our main CMakeList.txt
+set_msvc_flags()
+set_msvc_warnings()
 
 include(sdks)
 

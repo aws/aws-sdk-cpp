@@ -156,6 +156,3 @@ macro(set_msvc_warnings)
         endif()
     endif(MSVC)
 endmacro()
-
-set_msvc_flags()
-set_msvc_warnings()
