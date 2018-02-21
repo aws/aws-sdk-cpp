@@ -136,15 +136,15 @@ AWSError<CoreErrors> AWSErrorMarshaller::Marshall(const Aws::String& exceptionNa
     AWSError<CoreErrors> error = FindErrorByName(formalExceptionName.c_str());
     if (error.GetErrorType() != CoreErrors::UNKNOWN)
     {
-        AWS_LOGSTREAM_WARN(AWS_ERROR_MARSHALLER_LOG_TAG, "Encountered AWSError\n" << formalExceptionName.c_str() << 
-                "\n" << message.c_str() << ":");
+        AWS_LOGSTREAM_WARN(AWS_ERROR_MARSHALLER_LOG_TAG, "Encountered AWSError '" << formalExceptionName.c_str() <<
+                "': " << message.c_str());
         error.SetExceptionName(formalExceptionName);
         error.SetMessage(message);
         return error;
     }    
 
-    AWS_LOGSTREAM_WARN(AWS_ERROR_MARSHALLER_LOG_TAG, "Encountered Unknown AWSError\n" << exceptionName.c_str() << 
-            "\n" <<  message.c_str() << ":");
+    AWS_LOGSTREAM_WARN(AWS_ERROR_MARSHALLER_LOG_TAG, "Encountered Unknown AWSError '" << exceptionName.c_str() <<
+            "': " <<  message.c_str());
 
     return AWSError<CoreErrors>(CoreErrors::UNKNOWN, exceptionName, "Unable to parse ExceptionName: " + exceptionName + " Message: " + message, false);
 }
