@@ -53,6 +53,7 @@
 #include <aws/codecommit/model/PostCommentForComparedCommitRequest.h>
 #include <aws/codecommit/model/PostCommentForPullRequestRequest.h>
 #include <aws/codecommit/model/PostCommentReplyRequest.h>
+#include <aws/codecommit/model/PutFileRequest.h>
 #include <aws/codecommit/model/PutRepositoryTriggersRequest.h>
 #include <aws/codecommit/model/TestRepositoryTriggersRequest.h>
 #include <aws/codecommit/model/UpdateCommentRequest.h>
@@ -1035,6 +1036,41 @@ void CodeCommitClient::PostCommentReplyAsync(const PostCommentReplyRequest& requ
 void CodeCommitClient::PostCommentReplyAsyncHelper(const PostCommentReplyRequest& request, const PostCommentReplyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PostCommentReply(request), context);
+}
+
+PutFileOutcome CodeCommitClient::PutFile(const PutFileRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutFileOutcome(PutFileResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutFileOutcome(outcome.GetError());
+  }
+}
+
+PutFileOutcomeCallable CodeCommitClient::PutFileCallable(const PutFileRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutFileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutFile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::PutFileAsync(const PutFileRequest& request, const PutFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutFileAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::PutFileAsyncHelper(const PutFileRequest& request, const PutFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutFile(request), context);
 }
 
 PutRepositoryTriggersOutcome CodeCommitClient::PutRepositoryTriggers(const PutRepositoryTriggersRequest& request) const

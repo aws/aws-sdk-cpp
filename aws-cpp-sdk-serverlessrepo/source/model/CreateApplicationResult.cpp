@@ -62,6 +62,12 @@ CreateApplicationResult& CreateApplicationResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("homePageUrl"))
+  {
+    m_homePageUrl = jsonValue.GetString("homePageUrl");
+
+  }
+
   if(jsonValue.ValueExists("labels"))
   {
     Array<JsonValue> labelsJsonList = jsonValue.GetArray("labels");

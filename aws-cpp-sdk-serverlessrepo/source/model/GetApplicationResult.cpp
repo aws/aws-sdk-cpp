@@ -62,6 +62,12 @@ GetApplicationResult& GetApplicationResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("homePageUrl"))
+  {
+    m_homePageUrl = jsonValue.GetString("homePageUrl");
+
+  }
+
   if(jsonValue.ValueExists("labels"))
   {
     Array<JsonValue> labelsJsonList = jsonValue.GetArray("labels");

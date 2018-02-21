@@ -121,42 +121,50 @@ namespace Model
 
 
     /**
-     * <p>The parent list for the specified commit.</p>
+     * <p>A list of parent commits for the specified commit. Each parent commit ID is
+     * the full commit ID.</p>
      */
     inline const Aws::Vector<Aws::String>& GetParents() const{ return m_parents; }
 
     /**
-     * <p>The parent list for the specified commit.</p>
+     * <p>A list of parent commits for the specified commit. Each parent commit ID is
+     * the full commit ID.</p>
      */
     inline void SetParents(const Aws::Vector<Aws::String>& value) { m_parentsHasBeenSet = true; m_parents = value; }
 
     /**
-     * <p>The parent list for the specified commit.</p>
+     * <p>A list of parent commits for the specified commit. Each parent commit ID is
+     * the full commit ID.</p>
      */
     inline void SetParents(Aws::Vector<Aws::String>&& value) { m_parentsHasBeenSet = true; m_parents = std::move(value); }
 
     /**
-     * <p>The parent list for the specified commit.</p>
+     * <p>A list of parent commits for the specified commit. Each parent commit ID is
+     * the full commit ID.</p>
      */
     inline Commit& WithParents(const Aws::Vector<Aws::String>& value) { SetParents(value); return *this;}
 
     /**
-     * <p>The parent list for the specified commit.</p>
+     * <p>A list of parent commits for the specified commit. Each parent commit ID is
+     * the full commit ID.</p>
      */
     inline Commit& WithParents(Aws::Vector<Aws::String>&& value) { SetParents(std::move(value)); return *this;}
 
     /**
-     * <p>The parent list for the specified commit.</p>
+     * <p>A list of parent commits for the specified commit. Each parent commit ID is
+     * the full commit ID.</p>
      */
     inline Commit& AddParents(const Aws::String& value) { m_parentsHasBeenSet = true; m_parents.push_back(value); return *this; }
 
     /**
-     * <p>The parent list for the specified commit.</p>
+     * <p>A list of parent commits for the specified commit. Each parent commit ID is
+     * the full commit ID.</p>
      */
     inline Commit& AddParents(Aws::String&& value) { m_parentsHasBeenSet = true; m_parents.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The parent list for the specified commit.</p>
+     * <p>A list of parent commits for the specified commit. Each parent commit ID is
+     * the full commit ID.</p>
      */
     inline Commit& AddParents(const char* value) { m_parentsHasBeenSet = true; m_parents.push_back(value); return *this; }
 

@@ -30,6 +30,7 @@
 #include <aws/serverlessrepo/model/CreateApplicationRequest.h>
 #include <aws/serverlessrepo/model/CreateApplicationVersionRequest.h>
 #include <aws/serverlessrepo/model/CreateCloudFormationChangeSetRequest.h>
+#include <aws/serverlessrepo/model/DeleteApplicationRequest.h>
 #include <aws/serverlessrepo/model/GetApplicationRequest.h>
 #include <aws/serverlessrepo/model/GetApplicationPolicyRequest.h>
 #include <aws/serverlessrepo/model/ListApplicationVersionsRequest.h>
@@ -209,6 +210,42 @@ void ServerlessApplicationRepositoryClient::CreateCloudFormationChangeSetAsync(c
 void ServerlessApplicationRepositoryClient::CreateCloudFormationChangeSetAsyncHelper(const CreateCloudFormationChangeSetRequest& request, const CreateCloudFormationChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateCloudFormationChangeSet(request), context);
+}
+
+DeleteApplicationOutcome ServerlessApplicationRepositoryClient::DeleteApplication(const DeleteApplicationRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/applications/";
+  ss << request.GetApplicationId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteApplicationOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteApplicationOutcome(outcome.GetError());
+  }
+}
+
+DeleteApplicationOutcomeCallable ServerlessApplicationRepositoryClient::DeleteApplicationCallable(const DeleteApplicationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteApplication(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServerlessApplicationRepositoryClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteApplicationAsyncHelper( request, handler, context ); } );
+}
+
+void ServerlessApplicationRepositoryClient::DeleteApplicationAsyncHelper(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteApplication(request), context);
 }
 
 GetApplicationOutcome ServerlessApplicationRepositoryClient::GetApplication(const GetApplicationRequest& request) const
