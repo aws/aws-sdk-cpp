@@ -53,7 +53,7 @@ function(get_dependencies_for_sdk PROJECT_NAME DEPENDENCY_LIST_VAR)
     # Since we removed the hand-written C2J_LIST and instead auto generating it based on models,
     # and location of models may not exist or incorrect when SDK is installed and then source has been deleted by customers.
     # we end up getting an incomplete C2J_LIST when customers call find_package(AWSSDK). But C2J_LIST is only used in customers code for dependencies completing.
-    set(${DEPENDENCY_LIST_VAR} "${TEMP_VAR};core" PARENT_SCOPE)
+    set(${DEPENDENCY_LIST_VAR} "${TEMP_VAR},core" PARENT_SCOPE)
 endfunction()
 
 function(get_dependencies_for_test TEST_NAME DEPENDENCY_LIST_VAR)
