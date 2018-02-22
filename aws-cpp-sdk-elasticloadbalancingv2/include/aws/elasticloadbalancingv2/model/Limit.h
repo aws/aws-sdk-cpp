@@ -57,7 +57,9 @@ namespace Model
      * <p>listeners-per-network-load-balancer</p> </li> <li>
      * <p>network-load-balancers</p> </li> <li>
      * <p>rules-per-application-load-balancer</p> </li> <li> <p>target-groups</p> </li>
-     * <li> <p>targets-per-application-load-balancer</p> </li> </ul>
+     * <li> <p>targets-per-application-load-balancer</p> </li> <li>
+     * <p>targets-per-availability-zone-per-network-load-balancer</p> </li> <li>
+     * <p>targets-per-network-load-balancer</p> </li> </ul>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -68,7 +70,9 @@ namespace Model
      * <p>listeners-per-network-load-balancer</p> </li> <li>
      * <p>network-load-balancers</p> </li> <li>
      * <p>rules-per-application-load-balancer</p> </li> <li> <p>target-groups</p> </li>
-     * <li> <p>targets-per-application-load-balancer</p> </li> </ul>
+     * <li> <p>targets-per-application-load-balancer</p> </li> <li>
+     * <p>targets-per-availability-zone-per-network-load-balancer</p> </li> <li>
+     * <p>targets-per-network-load-balancer</p> </li> </ul>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -79,7 +83,9 @@ namespace Model
      * <p>listeners-per-network-load-balancer</p> </li> <li>
      * <p>network-load-balancers</p> </li> <li>
      * <p>rules-per-application-load-balancer</p> </li> <li> <p>target-groups</p> </li>
-     * <li> <p>targets-per-application-load-balancer</p> </li> </ul>
+     * <li> <p>targets-per-application-load-balancer</p> </li> <li>
+     * <p>targets-per-availability-zone-per-network-load-balancer</p> </li> <li>
+     * <p>targets-per-network-load-balancer</p> </li> </ul>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -90,7 +96,9 @@ namespace Model
      * <p>listeners-per-network-load-balancer</p> </li> <li>
      * <p>network-load-balancers</p> </li> <li>
      * <p>rules-per-application-load-balancer</p> </li> <li> <p>target-groups</p> </li>
-     * <li> <p>targets-per-application-load-balancer</p> </li> </ul>
+     * <li> <p>targets-per-application-load-balancer</p> </li> <li>
+     * <p>targets-per-availability-zone-per-network-load-balancer</p> </li> <li>
+     * <p>targets-per-network-load-balancer</p> </li> </ul>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -101,7 +109,9 @@ namespace Model
      * <p>listeners-per-network-load-balancer</p> </li> <li>
      * <p>network-load-balancers</p> </li> <li>
      * <p>rules-per-application-load-balancer</p> </li> <li> <p>target-groups</p> </li>
-     * <li> <p>targets-per-application-load-balancer</p> </li> </ul>
+     * <li> <p>targets-per-application-load-balancer</p> </li> <li>
+     * <p>targets-per-availability-zone-per-network-load-balancer</p> </li> <li>
+     * <p>targets-per-network-load-balancer</p> </li> </ul>
      */
     inline Limit& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -112,7 +122,9 @@ namespace Model
      * <p>listeners-per-network-load-balancer</p> </li> <li>
      * <p>network-load-balancers</p> </li> <li>
      * <p>rules-per-application-load-balancer</p> </li> <li> <p>target-groups</p> </li>
-     * <li> <p>targets-per-application-load-balancer</p> </li> </ul>
+     * <li> <p>targets-per-application-load-balancer</p> </li> <li>
+     * <p>targets-per-availability-zone-per-network-load-balancer</p> </li> <li>
+     * <p>targets-per-network-load-balancer</p> </li> </ul>
      */
     inline Limit& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
@@ -123,7 +135,9 @@ namespace Model
      * <p>listeners-per-network-load-balancer</p> </li> <li>
      * <p>network-load-balancers</p> </li> <li>
      * <p>rules-per-application-load-balancer</p> </li> <li> <p>target-groups</p> </li>
-     * <li> <p>targets-per-application-load-balancer</p> </li> </ul>
+     * <li> <p>targets-per-application-load-balancer</p> </li> <li>
+     * <p>targets-per-availability-zone-per-network-load-balancer</p> </li> <li>
+     * <p>targets-per-network-load-balancer</p> </li> </ul>
      */
     inline Limit& WithName(const char* value) { SetName(value); return *this;}
 

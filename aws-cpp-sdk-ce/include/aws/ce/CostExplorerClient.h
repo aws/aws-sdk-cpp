@@ -23,6 +23,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ce/model/GetCostAndUsageResult.h>
 #include <aws/ce/model/GetDimensionValuesResult.h>
+#include <aws/ce/model/GetReservationCoverageResult.h>
 #include <aws/ce/model/GetReservationUtilizationResult.h>
 #include <aws/ce/model/GetTagsResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -72,16 +73,19 @@ namespace Model
 {
         class GetCostAndUsageRequest;
         class GetDimensionValuesRequest;
+        class GetReservationCoverageRequest;
         class GetReservationUtilizationRequest;
         class GetTagsRequest;
 
         typedef Aws::Utils::Outcome<GetCostAndUsageResult, Aws::Client::AWSError<CostExplorerErrors>> GetCostAndUsageOutcome;
         typedef Aws::Utils::Outcome<GetDimensionValuesResult, Aws::Client::AWSError<CostExplorerErrors>> GetDimensionValuesOutcome;
+        typedef Aws::Utils::Outcome<GetReservationCoverageResult, Aws::Client::AWSError<CostExplorerErrors>> GetReservationCoverageOutcome;
         typedef Aws::Utils::Outcome<GetReservationUtilizationResult, Aws::Client::AWSError<CostExplorerErrors>> GetReservationUtilizationOutcome;
         typedef Aws::Utils::Outcome<GetTagsResult, Aws::Client::AWSError<CostExplorerErrors>> GetTagsOutcome;
 
         typedef std::future<GetCostAndUsageOutcome> GetCostAndUsageOutcomeCallable;
         typedef std::future<GetDimensionValuesOutcome> GetDimensionValuesOutcomeCallable;
+        typedef std::future<GetReservationCoverageOutcome> GetReservationCoverageOutcomeCallable;
         typedef std::future<GetReservationUtilizationOutcome> GetReservationUtilizationOutcomeCallable;
         typedef std::future<GetTagsOutcome> GetTagsOutcomeCallable;
 } // namespace Model
@@ -90,6 +94,7 @@ namespace Model
 
     typedef std::function<void(const CostExplorerClient*, const Model::GetCostAndUsageRequest&, const Model::GetCostAndUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCostAndUsageResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetDimensionValuesRequest&, const Model::GetDimensionValuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDimensionValuesResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::GetReservationCoverageRequest&, const Model::GetReservationCoverageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReservationCoverageResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetReservationUtilizationRequest&, const Model::GetReservationUtilizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReservationUtilizationResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetTagsRequest&, const Model::GetTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTagsResponseReceivedHandler;
 
@@ -135,9 +140,9 @@ namespace Model
          * <p>Retrieve cost and usage metrics for your account. You can specify which cost
          * and usage-related metric, such as <code>BlendedCosts</code> or
          * <code>UsageQuantity</code>, that you want the request to return. You can also
-         * filter and group your data by various dimensions, such as <code>AWS
-         * Service</code> or <code>AvailabilityZone</code>, in a specific time range. See
-         * the <code>GetDimensionValues</code> action for a complete list of the valid
+         * filter and group your data by various dimensions, such as <code>SERVICE</code>
+         * or <code>AZ</code>, in a specific time range. See the
+         * <code>GetDimensionValues</code> action for a complete list of the valid
          * dimensions. Master accounts in an organization have access to all member
          * accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsage">AWS
@@ -149,9 +154,9 @@ namespace Model
          * <p>Retrieve cost and usage metrics for your account. You can specify which cost
          * and usage-related metric, such as <code>BlendedCosts</code> or
          * <code>UsageQuantity</code>, that you want the request to return. You can also
-         * filter and group your data by various dimensions, such as <code>AWS
-         * Service</code> or <code>AvailabilityZone</code>, in a specific time range. See
-         * the <code>GetDimensionValues</code> action for a complete list of the valid
+         * filter and group your data by various dimensions, such as <code>SERVICE</code>
+         * or <code>AZ</code>, in a specific time range. See the
+         * <code>GetDimensionValues</code> action for a complete list of the valid
          * dimensions. Master accounts in an organization have access to all member
          * accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsage">AWS
@@ -165,9 +170,9 @@ namespace Model
          * <p>Retrieve cost and usage metrics for your account. You can specify which cost
          * and usage-related metric, such as <code>BlendedCosts</code> or
          * <code>UsageQuantity</code>, that you want the request to return. You can also
-         * filter and group your data by various dimensions, such as <code>AWS
-         * Service</code> or <code>AvailabilityZone</code>, in a specific time range. See
-         * the <code>GetDimensionValues</code> action for a complete list of the valid
+         * filter and group your data by various dimensions, such as <code>SERVICE</code>
+         * or <code>AZ</code>, in a specific time range. See the
+         * <code>GetDimensionValues</code> action for a complete list of the valid
          * dimensions. Master accounts in an organization have access to all member
          * accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsage">AWS
@@ -207,6 +212,49 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDimensionValuesAsync(const Model::GetDimensionValuesRequest& request, const GetDimensionValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieve the reservation coverage for your account. An organization's master
+         * account has access to the associated member accounts. For any time period, you
+         * can filter data about reservation usage by the following dimensions. </p> <ul>
+         * <li> <p>AZ</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p>
+         * </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TENANCY</p>
+         * </li> </ul> <p>To determine valid values for a dimension, use the
+         * <code>GetDimensionValues</code> operation. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationCoverage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetReservationCoverageOutcome GetReservationCoverage(const Model::GetReservationCoverageRequest& request) const;
+
+        /**
+         * <p>Retrieve the reservation coverage for your account. An organization's master
+         * account has access to the associated member accounts. For any time period, you
+         * can filter data about reservation usage by the following dimensions. </p> <ul>
+         * <li> <p>AZ</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p>
+         * </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TENANCY</p>
+         * </li> </ul> <p>To determine valid values for a dimension, use the
+         * <code>GetDimensionValues</code> operation. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationCoverage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetReservationCoverageOutcomeCallable GetReservationCoverageCallable(const Model::GetReservationCoverageRequest& request) const;
+
+        /**
+         * <p>Retrieve the reservation coverage for your account. An organization's master
+         * account has access to the associated member accounts. For any time period, you
+         * can filter data about reservation usage by the following dimensions. </p> <ul>
+         * <li> <p>AZ</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p>
+         * </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TENANCY</p>
+         * </li> </ul> <p>To determine valid values for a dimension, use the
+         * <code>GetDimensionValues</code> operation. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationCoverage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetReservationCoverageAsync(const Model::GetReservationCoverageRequest& request, const GetReservationCoverageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>You can retrieve the Reservation utilization for your account. Master
@@ -283,6 +331,7 @@ namespace Model
         /**Async helpers**/
         void GetCostAndUsageAsyncHelper(const Model::GetCostAndUsageRequest& request, const GetCostAndUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDimensionValuesAsyncHelper(const Model::GetDimensionValuesRequest& request, const GetDimensionValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetReservationCoverageAsyncHelper(const Model::GetReservationCoverageRequest& request, const GetReservationCoverageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetReservationUtilizationAsyncHelper(const Model::GetReservationUtilizationRequest& request, const GetReservationUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTagsAsyncHelper(const Model::GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

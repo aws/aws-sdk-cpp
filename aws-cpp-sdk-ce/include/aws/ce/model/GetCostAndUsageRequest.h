@@ -96,93 +96,109 @@ namespace Model
 
 
     /**
-     * <p>Sets the AWS cost granularity to <code>MONTHLY</code> or
-     * <code>DAILY</code>.</p>
+     * <p>Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>.
+     * If <code>Granularity</code> isn't set, the response object doesn't include the
+     * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.
+     * </p>
      */
     inline const Granularity& GetGranularity() const{ return m_granularity; }
 
     /**
-     * <p>Sets the AWS cost granularity to <code>MONTHLY</code> or
-     * <code>DAILY</code>.</p>
+     * <p>Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>.
+     * If <code>Granularity</code> isn't set, the response object doesn't include the
+     * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.
+     * </p>
      */
     inline void SetGranularity(const Granularity& value) { m_granularityHasBeenSet = true; m_granularity = value; }
 
     /**
-     * <p>Sets the AWS cost granularity to <code>MONTHLY</code> or
-     * <code>DAILY</code>.</p>
+     * <p>Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>.
+     * If <code>Granularity</code> isn't set, the response object doesn't include the
+     * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.
+     * </p>
      */
     inline void SetGranularity(Granularity&& value) { m_granularityHasBeenSet = true; m_granularity = std::move(value); }
 
     /**
-     * <p>Sets the AWS cost granularity to <code>MONTHLY</code> or
-     * <code>DAILY</code>.</p>
+     * <p>Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>.
+     * If <code>Granularity</code> isn't set, the response object doesn't include the
+     * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.
+     * </p>
      */
     inline GetCostAndUsageRequest& WithGranularity(const Granularity& value) { SetGranularity(value); return *this;}
 
     /**
-     * <p>Sets the AWS cost granularity to <code>MONTHLY</code> or
-     * <code>DAILY</code>.</p>
+     * <p>Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>.
+     * If <code>Granularity</code> isn't set, the response object doesn't include the
+     * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.
+     * </p>
      */
     inline GetCostAndUsageRequest& WithGranularity(Granularity&& value) { SetGranularity(std::move(value)); return *this;}
 
 
     /**
      * <p>Filters AWS costs by different dimensions. For example, you can specify
-     * <code>Service</code> and <code>Linked Account</code> and get the costs
+     * <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs
      * associated with that account's usage of that service. You can nest
      * <code>Expression</code> objects to define any combination of dimension filters.
-     * For more information, see the <code>Expression</code> object or <code>More
-     * Examples</code>. </p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
+     * </p>
      */
     inline const Expression& GetFilter() const{ return m_filter; }
 
     /**
      * <p>Filters AWS costs by different dimensions. For example, you can specify
-     * <code>Service</code> and <code>Linked Account</code> and get the costs
+     * <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs
      * associated with that account's usage of that service. You can nest
      * <code>Expression</code> objects to define any combination of dimension filters.
-     * For more information, see the <code>Expression</code> object or <code>More
-     * Examples</code>. </p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
+     * </p>
      */
     inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
      * <p>Filters AWS costs by different dimensions. For example, you can specify
-     * <code>Service</code> and <code>Linked Account</code> and get the costs
+     * <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs
      * associated with that account's usage of that service. You can nest
      * <code>Expression</code> objects to define any combination of dimension filters.
-     * For more information, see the <code>Expression</code> object or <code>More
-     * Examples</code>. </p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
+     * </p>
      */
     inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
      * <p>Filters AWS costs by different dimensions. For example, you can specify
-     * <code>Service</code> and <code>Linked Account</code> and get the costs
+     * <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs
      * associated with that account's usage of that service. You can nest
      * <code>Expression</code> objects to define any combination of dimension filters.
-     * For more information, see the <code>Expression</code> object or <code>More
-     * Examples</code>. </p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
+     * </p>
      */
     inline GetCostAndUsageRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
 
     /**
      * <p>Filters AWS costs by different dimensions. For example, you can specify
-     * <code>Service</code> and <code>Linked Account</code> and get the costs
+     * <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs
      * associated with that account's usage of that service. You can nest
      * <code>Expression</code> objects to define any combination of dimension filters.
-     * For more information, see the <code>Expression</code> object or <code>More
-     * Examples</code>. </p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
+     * </p>
      */
     inline GetCostAndUsageRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
 
 
     /**
      * <p>Which metrics are returned in the query. For more information about blended
-     * and unblended rates, see
-     * https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/.
-     * </p> <p>Valid values are <code>BlendedCost</code>, <code>UnblendedCost</code>,
-     * and <code>UsageQuantity</code>.</p> <note> <p>If you return the
+     * and unblended rates, see <a
+     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
+     * does the "blended" annotation appear on some line items in my bill?</a>. </p>
+     * <p>Valid values are <code>BlendedCost</code>, <code>UnblendedCost</code>, and
+     * <code>UsageQuantity</code>.</p> <note> <p>If you return the
      * <code>UsageQuantity</code> metric, the service aggregates all usage numbers
      * without taking into account the units. For example, if you aggregate
      * <code>usageQuantity</code> across all of EC2, the results aren't meaningful
@@ -195,10 +211,11 @@ namespace Model
 
     /**
      * <p>Which metrics are returned in the query. For more information about blended
-     * and unblended rates, see
-     * https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/.
-     * </p> <p>Valid values are <code>BlendedCost</code>, <code>UnblendedCost</code>,
-     * and <code>UsageQuantity</code>.</p> <note> <p>If you return the
+     * and unblended rates, see <a
+     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
+     * does the "blended" annotation appear on some line items in my bill?</a>. </p>
+     * <p>Valid values are <code>BlendedCost</code>, <code>UnblendedCost</code>, and
+     * <code>UsageQuantity</code>.</p> <note> <p>If you return the
      * <code>UsageQuantity</code> metric, the service aggregates all usage numbers
      * without taking into account the units. For example, if you aggregate
      * <code>usageQuantity</code> across all of EC2, the results aren't meaningful
@@ -211,10 +228,11 @@ namespace Model
 
     /**
      * <p>Which metrics are returned in the query. For more information about blended
-     * and unblended rates, see
-     * https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/.
-     * </p> <p>Valid values are <code>BlendedCost</code>, <code>UnblendedCost</code>,
-     * and <code>UsageQuantity</code>.</p> <note> <p>If you return the
+     * and unblended rates, see <a
+     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
+     * does the "blended" annotation appear on some line items in my bill?</a>. </p>
+     * <p>Valid values are <code>BlendedCost</code>, <code>UnblendedCost</code>, and
+     * <code>UsageQuantity</code>.</p> <note> <p>If you return the
      * <code>UsageQuantity</code> metric, the service aggregates all usage numbers
      * without taking into account the units. For example, if you aggregate
      * <code>usageQuantity</code> across all of EC2, the results aren't meaningful
@@ -227,10 +245,11 @@ namespace Model
 
     /**
      * <p>Which metrics are returned in the query. For more information about blended
-     * and unblended rates, see
-     * https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/.
-     * </p> <p>Valid values are <code>BlendedCost</code>, <code>UnblendedCost</code>,
-     * and <code>UsageQuantity</code>.</p> <note> <p>If you return the
+     * and unblended rates, see <a
+     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
+     * does the "blended" annotation appear on some line items in my bill?</a>. </p>
+     * <p>Valid values are <code>BlendedCost</code>, <code>UnblendedCost</code>, and
+     * <code>UsageQuantity</code>.</p> <note> <p>If you return the
      * <code>UsageQuantity</code> metric, the service aggregates all usage numbers
      * without taking into account the units. For example, if you aggregate
      * <code>usageQuantity</code> across all of EC2, the results aren't meaningful
@@ -243,10 +262,11 @@ namespace Model
 
     /**
      * <p>Which metrics are returned in the query. For more information about blended
-     * and unblended rates, see
-     * https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/.
-     * </p> <p>Valid values are <code>BlendedCost</code>, <code>UnblendedCost</code>,
-     * and <code>UsageQuantity</code>.</p> <note> <p>If you return the
+     * and unblended rates, see <a
+     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
+     * does the "blended" annotation appear on some line items in my bill?</a>. </p>
+     * <p>Valid values are <code>BlendedCost</code>, <code>UnblendedCost</code>, and
+     * <code>UsageQuantity</code>.</p> <note> <p>If you return the
      * <code>UsageQuantity</code> metric, the service aggregates all usage numbers
      * without taking into account the units. For example, if you aggregate
      * <code>usageQuantity</code> across all of EC2, the results aren't meaningful
@@ -259,10 +279,11 @@ namespace Model
 
     /**
      * <p>Which metrics are returned in the query. For more information about blended
-     * and unblended rates, see
-     * https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/.
-     * </p> <p>Valid values are <code>BlendedCost</code>, <code>UnblendedCost</code>,
-     * and <code>UsageQuantity</code>.</p> <note> <p>If you return the
+     * and unblended rates, see <a
+     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
+     * does the "blended" annotation appear on some line items in my bill?</a>. </p>
+     * <p>Valid values are <code>BlendedCost</code>, <code>UnblendedCost</code>, and
+     * <code>UsageQuantity</code>.</p> <note> <p>If you return the
      * <code>UsageQuantity</code> metric, the service aggregates all usage numbers
      * without taking into account the units. For example, if you aggregate
      * <code>usageQuantity</code> across all of EC2, the results aren't meaningful
@@ -275,10 +296,11 @@ namespace Model
 
     /**
      * <p>Which metrics are returned in the query. For more information about blended
-     * and unblended rates, see
-     * https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/.
-     * </p> <p>Valid values are <code>BlendedCost</code>, <code>UnblendedCost</code>,
-     * and <code>UsageQuantity</code>.</p> <note> <p>If you return the
+     * and unblended rates, see <a
+     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
+     * does the "blended" annotation appear on some line items in my bill?</a>. </p>
+     * <p>Valid values are <code>BlendedCost</code>, <code>UnblendedCost</code>, and
+     * <code>UsageQuantity</code>.</p> <note> <p>If you return the
      * <code>UsageQuantity</code> metric, the service aggregates all usage numbers
      * without taking into account the units. For example, if you aggregate
      * <code>usageQuantity</code> across all of EC2, the results aren't meaningful
@@ -291,10 +313,11 @@ namespace Model
 
     /**
      * <p>Which metrics are returned in the query. For more information about blended
-     * and unblended rates, see
-     * https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/.
-     * </p> <p>Valid values are <code>BlendedCost</code>, <code>UnblendedCost</code>,
-     * and <code>UsageQuantity</code>.</p> <note> <p>If you return the
+     * and unblended rates, see <a
+     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
+     * does the "blended" annotation appear on some line items in my bill?</a>. </p>
+     * <p>Valid values are <code>BlendedCost</code>, <code>UnblendedCost</code>, and
+     * <code>UsageQuantity</code>.</p> <note> <p>If you return the
      * <code>UsageQuantity</code> metric, the service aggregates all usage numbers
      * without taking into account the units. For example, if you aggregate
      * <code>usageQuantity</code> across all of EC2, the results aren't meaningful
@@ -309,70 +332,70 @@ namespace Model
     /**
      * <p>You can group AWS costs using up to two different groups, either dimensions,
      * tag keys, or both.</p> <p>When you group by tag key, you get all tag values,
-     * including empty strings.</p> <p>Valid values are: <code>AZ</code>,
-     * <code>INSTANCE_TYPE</code>, <code>LINKED_ACCCOUNT</code>,
-     * <code>OPERATION</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>,
-     * <code>USAGE_TYPE</code>, <code>TAGS</code>, and <code>PLATFORM</code>.</p>
+     * including empty strings.</p> <p>Valid values are <code>AZ</code>,
+     * <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>,
+     * <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>,
+     * <code>TAGS</code>, <code>TENANCY</code>, and <code>USAGE_TYPE</code>.</p>
      */
     inline const Aws::Vector<GroupDefinition>& GetGroupBy() const{ return m_groupBy; }
 
     /**
      * <p>You can group AWS costs using up to two different groups, either dimensions,
      * tag keys, or both.</p> <p>When you group by tag key, you get all tag values,
-     * including empty strings.</p> <p>Valid values are: <code>AZ</code>,
-     * <code>INSTANCE_TYPE</code>, <code>LINKED_ACCCOUNT</code>,
-     * <code>OPERATION</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>,
-     * <code>USAGE_TYPE</code>, <code>TAGS</code>, and <code>PLATFORM</code>.</p>
+     * including empty strings.</p> <p>Valid values are <code>AZ</code>,
+     * <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>,
+     * <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>,
+     * <code>TAGS</code>, <code>TENANCY</code>, and <code>USAGE_TYPE</code>.</p>
      */
     inline void SetGroupBy(const Aws::Vector<GroupDefinition>& value) { m_groupByHasBeenSet = true; m_groupBy = value; }
 
     /**
      * <p>You can group AWS costs using up to two different groups, either dimensions,
      * tag keys, or both.</p> <p>When you group by tag key, you get all tag values,
-     * including empty strings.</p> <p>Valid values are: <code>AZ</code>,
-     * <code>INSTANCE_TYPE</code>, <code>LINKED_ACCCOUNT</code>,
-     * <code>OPERATION</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>,
-     * <code>USAGE_TYPE</code>, <code>TAGS</code>, and <code>PLATFORM</code>.</p>
+     * including empty strings.</p> <p>Valid values are <code>AZ</code>,
+     * <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>,
+     * <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>,
+     * <code>TAGS</code>, <code>TENANCY</code>, and <code>USAGE_TYPE</code>.</p>
      */
     inline void SetGroupBy(Aws::Vector<GroupDefinition>&& value) { m_groupByHasBeenSet = true; m_groupBy = std::move(value); }
 
     /**
      * <p>You can group AWS costs using up to two different groups, either dimensions,
      * tag keys, or both.</p> <p>When you group by tag key, you get all tag values,
-     * including empty strings.</p> <p>Valid values are: <code>AZ</code>,
-     * <code>INSTANCE_TYPE</code>, <code>LINKED_ACCCOUNT</code>,
-     * <code>OPERATION</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>,
-     * <code>USAGE_TYPE</code>, <code>TAGS</code>, and <code>PLATFORM</code>.</p>
+     * including empty strings.</p> <p>Valid values are <code>AZ</code>,
+     * <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>,
+     * <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>,
+     * <code>TAGS</code>, <code>TENANCY</code>, and <code>USAGE_TYPE</code>.</p>
      */
     inline GetCostAndUsageRequest& WithGroupBy(const Aws::Vector<GroupDefinition>& value) { SetGroupBy(value); return *this;}
 
     /**
      * <p>You can group AWS costs using up to two different groups, either dimensions,
      * tag keys, or both.</p> <p>When you group by tag key, you get all tag values,
-     * including empty strings.</p> <p>Valid values are: <code>AZ</code>,
-     * <code>INSTANCE_TYPE</code>, <code>LINKED_ACCCOUNT</code>,
-     * <code>OPERATION</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>,
-     * <code>USAGE_TYPE</code>, <code>TAGS</code>, and <code>PLATFORM</code>.</p>
+     * including empty strings.</p> <p>Valid values are <code>AZ</code>,
+     * <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>,
+     * <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>,
+     * <code>TAGS</code>, <code>TENANCY</code>, and <code>USAGE_TYPE</code>.</p>
      */
     inline GetCostAndUsageRequest& WithGroupBy(Aws::Vector<GroupDefinition>&& value) { SetGroupBy(std::move(value)); return *this;}
 
     /**
      * <p>You can group AWS costs using up to two different groups, either dimensions,
      * tag keys, or both.</p> <p>When you group by tag key, you get all tag values,
-     * including empty strings.</p> <p>Valid values are: <code>AZ</code>,
-     * <code>INSTANCE_TYPE</code>, <code>LINKED_ACCCOUNT</code>,
-     * <code>OPERATION</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>,
-     * <code>USAGE_TYPE</code>, <code>TAGS</code>, and <code>PLATFORM</code>.</p>
+     * including empty strings.</p> <p>Valid values are <code>AZ</code>,
+     * <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>,
+     * <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>,
+     * <code>TAGS</code>, <code>TENANCY</code>, and <code>USAGE_TYPE</code>.</p>
      */
     inline GetCostAndUsageRequest& AddGroupBy(const GroupDefinition& value) { m_groupByHasBeenSet = true; m_groupBy.push_back(value); return *this; }
 
     /**
      * <p>You can group AWS costs using up to two different groups, either dimensions,
      * tag keys, or both.</p> <p>When you group by tag key, you get all tag values,
-     * including empty strings.</p> <p>Valid values are: <code>AZ</code>,
-     * <code>INSTANCE_TYPE</code>, <code>LINKED_ACCCOUNT</code>,
-     * <code>OPERATION</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>,
-     * <code>USAGE_TYPE</code>, <code>TAGS</code>, and <code>PLATFORM</code>.</p>
+     * including empty strings.</p> <p>Valid values are <code>AZ</code>,
+     * <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>,
+     * <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>,
+     * <code>TAGS</code>, <code>TENANCY</code>, and <code>USAGE_TYPE</code>.</p>
      */
     inline GetCostAndUsageRequest& AddGroupBy(GroupDefinition&& value) { m_groupByHasBeenSet = true; m_groupBy.push_back(std::move(value)); return *this; }
 

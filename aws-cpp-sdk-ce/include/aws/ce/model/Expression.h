@@ -39,9 +39,9 @@ namespace Model
    * <p>Use <code>Expression</code> to filter by cost or by usage. There are two
    * patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension
    * name and values for the filters that you plan to use. For example, you can
-   * filter for <code>InstanceType==m4.xlarge OR InstanceType==c4.large</code>. The
+   * filter for <code>INSTANCE_TYPE==m4.xlarge OR INSTANCE_TYPE==c4.large</code>. The
    * <code>Expression</code> for that looks like this.</p> <p> <code>{ "Dimensions":
-   * { "Key": "InstanceType", "Values": [ "m4.xlarge", “c4.large” ] } }</code> </p>
+   * { "Key": "INSTANCE_TYPE", "Values": [ "m4.xlarge", “c4.large” ] } }</code> </p>
    * <p>The list of dimension values are OR'd together to retrieve cost or usage
    * data. You can create <code>Expression</code> and <code>DimensionValues</code>
    * objects using either <code>with*</code> methods or <code>set*</code> methods in
@@ -49,17 +49,17 @@ namespace Model
    * operations - You can use multiple <code>Expression</code> types and the logical
    * operators <code>AND/OR/NOT</code> to create a list of one or more
    * <code>Expression</code> objects. This allows you to filter on more advanced
-   * options. For example, you can filter on <code>((InstanceType == m4.large OR
-   * InstanceType == m3.large) OR (Tag.Type == Type1)) AND (UsageType !=
+   * options. For example, you can filter on <code>((INSTANCE_TYPE == m4.large OR
+   * INSTANCE_TYPE == m3.large) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
    * DataTransfer)</code>. The <code>Expression</code> for that looks like this.</p>
-   * <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "InstanceType", "Values":
+   * <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "INSTANCE_TYPE", "Values":
    * [ "m4.x.large", "c4.large" ] }}, {"Tag": { "Key": "TagName", "Values":
-   * ["Value1"] } } ]}, {"Not": {"dimensions": { "Key": "UsageType", "Values":
+   * ["Value1"] } } ]}, {"Not": {"dimensions": { "Key": "USAGE_TYPE", "Values":
    * ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each
    * <code>Expression</code> can have only one operator, the service returns an error
    * if more than one is specified. The following example shows an Expression object
    * that will create an error.</p> </note> <p> <code> { "And": [ ... ],
-   * "DimensionValues": { "Dimension": "UsageType", "Values": [ "DataTransfer" ] } }
+   * "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } }
    * </code> </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/Expression">AWS API
    * Reference</a></p>

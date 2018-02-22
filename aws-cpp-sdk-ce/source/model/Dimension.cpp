@@ -45,6 +45,11 @@ namespace Aws
         static const int SCOPE_HASH = HashingUtils::HashString("SCOPE");
         static const int PLATFORM_HASH = HashingUtils::HashString("PLATFORM");
         static const int SUBSCRIPTION_ID_HASH = HashingUtils::HashString("SUBSCRIPTION_ID");
+        static const int LEGAL_ENTITY_NAME_HASH = HashingUtils::HashString("LEGAL_ENTITY_NAME");
+        static const int DEPLOYMENT_OPTION_HASH = HashingUtils::HashString("DEPLOYMENT_OPTION");
+        static const int DATABASE_ENGINE_HASH = HashingUtils::HashString("DATABASE_ENGINE");
+        static const int CACHE_ENGINE_HASH = HashingUtils::HashString("CACHE_ENGINE");
+        static const int INSTANCE_TYPE_FAMILY_HASH = HashingUtils::HashString("INSTANCE_TYPE_FAMILY");
 
 
         Dimension GetDimensionForName(const Aws::String& name)
@@ -110,6 +115,26 @@ namespace Aws
           {
             return Dimension::SUBSCRIPTION_ID;
           }
+          else if (hashCode == LEGAL_ENTITY_NAME_HASH)
+          {
+            return Dimension::LEGAL_ENTITY_NAME;
+          }
+          else if (hashCode == DEPLOYMENT_OPTION_HASH)
+          {
+            return Dimension::DEPLOYMENT_OPTION;
+          }
+          else if (hashCode == DATABASE_ENGINE_HASH)
+          {
+            return Dimension::DATABASE_ENGINE;
+          }
+          else if (hashCode == CACHE_ENGINE_HASH)
+          {
+            return Dimension::CACHE_ENGINE;
+          }
+          else if (hashCode == INSTANCE_TYPE_FAMILY_HASH)
+          {
+            return Dimension::INSTANCE_TYPE_FAMILY;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -154,6 +179,16 @@ namespace Aws
             return "PLATFORM";
           case Dimension::SUBSCRIPTION_ID:
             return "SUBSCRIPTION_ID";
+          case Dimension::LEGAL_ENTITY_NAME:
+            return "LEGAL_ENTITY_NAME";
+          case Dimension::DEPLOYMENT_OPTION:
+            return "DEPLOYMENT_OPTION";
+          case Dimension::DATABASE_ENGINE:
+            return "DATABASE_ENGINE";
+          case Dimension::CACHE_ENGINE:
+            return "CACHE_ENGINE";
+          case Dimension::INSTANCE_TYPE_FAMILY:
+            return "INSTANCE_TYPE_FAMILY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

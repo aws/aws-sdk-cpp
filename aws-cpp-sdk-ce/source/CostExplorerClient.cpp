@@ -29,6 +29,7 @@
 #include <aws/ce/CostExplorerErrorMarshaller.h>
 #include <aws/ce/model/GetCostAndUsageRequest.h>
 #include <aws/ce/model/GetDimensionValuesRequest.h>
+#include <aws/ce/model/GetReservationCoverageRequest.h>
 #include <aws/ce/model/GetReservationUtilizationRequest.h>
 #include <aws/ce/model/GetTagsRequest.h>
 
@@ -164,6 +165,41 @@ void CostExplorerClient::GetDimensionValuesAsync(const GetDimensionValuesRequest
 void CostExplorerClient::GetDimensionValuesAsyncHelper(const GetDimensionValuesRequest& request, const GetDimensionValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetDimensionValues(request), context);
+}
+
+GetReservationCoverageOutcome CostExplorerClient::GetReservationCoverage(const GetReservationCoverageRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetReservationCoverageOutcome(GetReservationCoverageResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetReservationCoverageOutcome(outcome.GetError());
+  }
+}
+
+GetReservationCoverageOutcomeCallable CostExplorerClient::GetReservationCoverageCallable(const GetReservationCoverageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetReservationCoverageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetReservationCoverage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CostExplorerClient::GetReservationCoverageAsync(const GetReservationCoverageRequest& request, const GetReservationCoverageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetReservationCoverageAsyncHelper( request, handler, context ); } );
+}
+
+void CostExplorerClient::GetReservationCoverageAsyncHelper(const GetReservationCoverageRequest& request, const GetReservationCoverageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetReservationCoverage(request), context);
 }
 
 GetReservationUtilizationOutcome CostExplorerClient::GetReservationUtilization(const GetReservationUtilizationRequest& request) const

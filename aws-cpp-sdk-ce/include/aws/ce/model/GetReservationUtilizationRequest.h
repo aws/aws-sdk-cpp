@@ -101,88 +101,83 @@ namespace Model
 
 
     /**
-     * <p>Groups only by <code>SubscriptionId</code>. Metadata is included.</p>
+     * <p>Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.</p>
      */
     inline const Aws::Vector<GroupDefinition>& GetGroupBy() const{ return m_groupBy; }
 
     /**
-     * <p>Groups only by <code>SubscriptionId</code>. Metadata is included.</p>
+     * <p>Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.</p>
      */
     inline void SetGroupBy(const Aws::Vector<GroupDefinition>& value) { m_groupByHasBeenSet = true; m_groupBy = value; }
 
     /**
-     * <p>Groups only by <code>SubscriptionId</code>. Metadata is included.</p>
+     * <p>Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.</p>
      */
     inline void SetGroupBy(Aws::Vector<GroupDefinition>&& value) { m_groupByHasBeenSet = true; m_groupBy = std::move(value); }
 
     /**
-     * <p>Groups only by <code>SubscriptionId</code>. Metadata is included.</p>
+     * <p>Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.</p>
      */
     inline GetReservationUtilizationRequest& WithGroupBy(const Aws::Vector<GroupDefinition>& value) { SetGroupBy(value); return *this;}
 
     /**
-     * <p>Groups only by <code>SubscriptionId</code>. Metadata is included.</p>
+     * <p>Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.</p>
      */
     inline GetReservationUtilizationRequest& WithGroupBy(Aws::Vector<GroupDefinition>&& value) { SetGroupBy(std::move(value)); return *this;}
 
     /**
-     * <p>Groups only by <code>SubscriptionId</code>. Metadata is included.</p>
+     * <p>Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.</p>
      */
     inline GetReservationUtilizationRequest& AddGroupBy(const GroupDefinition& value) { m_groupByHasBeenSet = true; m_groupBy.push_back(value); return *this; }
 
     /**
-     * <p>Groups only by <code>SubscriptionId</code>. Metadata is included.</p>
+     * <p>Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.</p>
      */
     inline GetReservationUtilizationRequest& AddGroupBy(GroupDefinition&& value) { m_groupByHasBeenSet = true; m_groupBy.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>.
-     * If both <code>GroupBy</code> and <code>granularity</code> are not set,
-     * <code>GetReservationUtilization</code> defaults to <code>DAILY</code>. If
-     * <code>GroupBy</code> is set, <code>Granularity</code> can't be set, and the
-     * response object doesn't include <code>MONTHLY</code> or <code>DAILY</code>
-     * granularity.</p>
+     * <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If
+     * <code>Granularity</code> isn't set, the response object doesn't include the
+     * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If
+     * both <code>GroupBy</code> and <code>Granularity</code> aren't set,
+     * <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</p>
      */
     inline const Granularity& GetGranularity() const{ return m_granularity; }
 
     /**
-     * <p>Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>.
-     * If both <code>GroupBy</code> and <code>granularity</code> are not set,
-     * <code>GetReservationUtilization</code> defaults to <code>DAILY</code>. If
-     * <code>GroupBy</code> is set, <code>Granularity</code> can't be set, and the
-     * response object doesn't include <code>MONTHLY</code> or <code>DAILY</code>
-     * granularity.</p>
+     * <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If
+     * <code>Granularity</code> isn't set, the response object doesn't include the
+     * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If
+     * both <code>GroupBy</code> and <code>Granularity</code> aren't set,
+     * <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</p>
      */
     inline void SetGranularity(const Granularity& value) { m_granularityHasBeenSet = true; m_granularity = value; }
 
     /**
-     * <p>Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>.
-     * If both <code>GroupBy</code> and <code>granularity</code> are not set,
-     * <code>GetReservationUtilization</code> defaults to <code>DAILY</code>. If
-     * <code>GroupBy</code> is set, <code>Granularity</code> can't be set, and the
-     * response object doesn't include <code>MONTHLY</code> or <code>DAILY</code>
-     * granularity.</p>
+     * <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If
+     * <code>Granularity</code> isn't set, the response object doesn't include the
+     * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If
+     * both <code>GroupBy</code> and <code>Granularity</code> aren't set,
+     * <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</p>
      */
     inline void SetGranularity(Granularity&& value) { m_granularityHasBeenSet = true; m_granularity = std::move(value); }
 
     /**
-     * <p>Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>.
-     * If both <code>GroupBy</code> and <code>granularity</code> are not set,
-     * <code>GetReservationUtilization</code> defaults to <code>DAILY</code>. If
-     * <code>GroupBy</code> is set, <code>Granularity</code> can't be set, and the
-     * response object doesn't include <code>MONTHLY</code> or <code>DAILY</code>
-     * granularity.</p>
+     * <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If
+     * <code>Granularity</code> isn't set, the response object doesn't include the
+     * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If
+     * both <code>GroupBy</code> and <code>Granularity</code> aren't set,
+     * <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</p>
      */
     inline GetReservationUtilizationRequest& WithGranularity(const Granularity& value) { SetGranularity(value); return *this;}
 
     /**
-     * <p>Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>.
-     * If both <code>GroupBy</code> and <code>granularity</code> are not set,
-     * <code>GetReservationUtilization</code> defaults to <code>DAILY</code>. If
-     * <code>GroupBy</code> is set, <code>Granularity</code> can't be set, and the
-     * response object doesn't include <code>MONTHLY</code> or <code>DAILY</code>
-     * granularity.</p>
+     * <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If
+     * <code>Granularity</code> isn't set, the response object doesn't include the
+     * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If
+     * both <code>GroupBy</code> and <code>Granularity</code> aren't set,
+     * <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</p>
      */
     inline GetReservationUtilizationRequest& WithGranularity(Granularity&& value) { SetGranularity(std::move(value)); return *this;}
 

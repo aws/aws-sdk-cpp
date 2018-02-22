@@ -40,7 +40,12 @@ namespace Model
     TENANCY,
     SCOPE,
     PLATFORM,
-    SUBSCRIPTION_ID
+    SUBSCRIPTION_ID,
+    LEGAL_ENTITY_NAME,
+    DEPLOYMENT_OPTION,
+    DATABASE_ENGINE,
+    CACHE_ENGINE,
+    INSTANCE_TYPE_FAMILY
   };
 
 namespace DimensionMapper
