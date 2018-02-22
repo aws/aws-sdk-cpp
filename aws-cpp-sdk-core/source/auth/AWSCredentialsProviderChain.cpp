@@ -16,6 +16,7 @@
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/platform/Environment.h>
 #include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/core/utils/StringUtils.h>
 
 using namespace Aws::Auth;
 
@@ -36,6 +37,7 @@ AWSCredentials AWSCredentialsProviderChain::GetAWSCredentials()
 }
 
 static const char* DefaultCredentialsProviderChainTag = "DefaultAWSCredentialsProviderChain";
+static const char AWS_EC2_INSTANCE_METADATA_DISABLE_VAR[] = "AWS_EC2_METADATA_DISABLED";
 
 DefaultAWSCredentialsProviderChain::DefaultAWSCredentialsProviderChain() : AWSCredentialsProviderChain()
 {
@@ -48,7 +50,7 @@ DefaultAWSCredentialsProviderChain::DefaultAWSCredentialsProviderChain() : AWSCr
     {
         AddProvider(Aws::MakeShared<TaskRoleCredentialsProvider>(DefaultCredentialsProviderChainTag, relativeURIFromVar.c_str()));
     } 
-    else
+    else if (Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv(AWS_EC2_INSTANCE_METADATA_DISABLE_VAR).c_str()) != "true")
     {
         AddProvider(Aws::MakeShared<InstanceProfileCredentialsProvider>(DefaultCredentialsProviderChainTag));
     }

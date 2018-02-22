@@ -26,7 +26,7 @@
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/FileSystemUtils.h>
 #include <aws/core/config/AWSProfileConfigLoader.h>
-
+#include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <stdlib.h>
 #include <thread>
 #include <fstream>
@@ -101,6 +101,8 @@ public:
         SaveVariable("AWS_DEFAULT_PROFILE");
         SaveVariable("AWS_ACCESS_KEY_ID");
         SaveVariable("AWS_SECRET_ACCESS_KEY");
+        SaveVariable("AWS_CONTAINER_CREDENTIALS_RELATIVE_URI");
+        SaveVariable("AWS_EC2_METADATA_DISABLED");
     }
 
     void TearDown()
@@ -225,6 +227,23 @@ TEST_F(EnvironmentModifyingTest, TestEnvironmentVariablesDoNotExist)
     ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());
 }
 
+TEST_F(EnvironmentModifyingTest, TestProvidersNumberInCredentialsProvidersChain)
+{
+    Aws::Environment::UnSetEnv("AWS_CONTAINER_CREDENTIALS_RELATIVE_URI");
+    Aws::Environment::UnSetEnv("AWS_EC2_METADATA_DISABLED");
+
+    DefaultAWSCredentialsProviderChain providersChainWith3ProvidersEC2;
+    ASSERT_EQ(3u, providersChainWith3ProvidersEC2.GetProviders().size()); //With EC2 instance metadata, without ECS task role.
+
+    Aws::Environment::SetEnv("AWS_CONTAINER_CREDENTIALS_RELATIVE_URI", "TestVar", 1);
+    DefaultAWSCredentialsProviderChain providersChainWith3ProvidersECS;
+    ASSERT_EQ(3u, providersChainWith3ProvidersECS.GetProviders().size()); //With ECS task role, without ec2
+
+    Aws::Environment::SetEnv("AWS_EC2_METADATA_DISABLED", "TruE", 1);
+    Aws::Environment::UnSetEnv("AWS_CONTAINER_CREDENTIALS_RELATIVE_URI"); //Without ECS task role, without ec2
+    DefaultAWSCredentialsProviderChain providersChainWith2Providers;
+    ASSERT_EQ(2u, providersChainWith2Providers.GetProviders().size());
+}
 
 
 TEST(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientReturnsGoodData)

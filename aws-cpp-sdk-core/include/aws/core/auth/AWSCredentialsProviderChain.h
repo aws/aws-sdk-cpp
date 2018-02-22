@@ -39,6 +39,11 @@ namespace Aws
              */
             virtual AWSCredentials GetAWSCredentials();
 
+            /**
+             * Gets all providers stored in this chain.
+             */
+            const Aws::Vector<std::shared_ptr<AWSCredentialsProvider>>& GetProviders() { return m_providerChain; }
+
         protected:
             /**
              * This class is only allowed to be initialized by subclasses.
@@ -49,6 +54,7 @@ namespace Aws
              * Adds a provider to the back of the chain.
              */
             void AddProvider(const std::shared_ptr<AWSCredentialsProvider>& provider) { m_providerChain.push_back(provider); }
+
 
         private:            
             Aws::Vector<std::shared_ptr<AWSCredentialsProvider> > m_providerChain;
