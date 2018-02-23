@@ -22,6 +22,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/appstream/model/AssociateFleetResult.h>
+#include <aws/appstream/model/CopyImageResult.h>
 #include <aws/appstream/model/CreateDirectoryConfigResult.h>
 #include <aws/appstream/model/CreateFleetResult.h>
 #include <aws/appstream/model/CreateImageBuilderResult.h>
@@ -99,6 +100,7 @@ namespace AppStream
 namespace Model
 {
         class AssociateFleetRequest;
+        class CopyImageRequest;
         class CreateDirectoryConfigRequest;
         class CreateFleetRequest;
         class CreateImageBuilderRequest;
@@ -132,6 +134,7 @@ namespace Model
         class UpdateStackRequest;
 
         typedef Aws::Utils::Outcome<AssociateFleetResult, Aws::Client::AWSError<AppStreamErrors>> AssociateFleetOutcome;
+        typedef Aws::Utils::Outcome<CopyImageResult, Aws::Client::AWSError<AppStreamErrors>> CopyImageOutcome;
         typedef Aws::Utils::Outcome<CreateDirectoryConfigResult, Aws::Client::AWSError<AppStreamErrors>> CreateDirectoryConfigOutcome;
         typedef Aws::Utils::Outcome<CreateFleetResult, Aws::Client::AWSError<AppStreamErrors>> CreateFleetOutcome;
         typedef Aws::Utils::Outcome<CreateImageBuilderResult, Aws::Client::AWSError<AppStreamErrors>> CreateImageBuilderOutcome;
@@ -165,6 +168,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateStackResult, Aws::Client::AWSError<AppStreamErrors>> UpdateStackOutcome;
 
         typedef std::future<AssociateFleetOutcome> AssociateFleetOutcomeCallable;
+        typedef std::future<CopyImageOutcome> CopyImageOutcomeCallable;
         typedef std::future<CreateDirectoryConfigOutcome> CreateDirectoryConfigOutcomeCallable;
         typedef std::future<CreateFleetOutcome> CreateFleetOutcomeCallable;
         typedef std::future<CreateImageBuilderOutcome> CreateImageBuilderOutcomeCallable;
@@ -201,6 +205,7 @@ namespace Model
   class AppStreamClient;
 
     typedef std::function<void(const AppStreamClient*, const Model::AssociateFleetRequest&, const Model::AssociateFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateFleetResponseReceivedHandler;
+    typedef std::function<void(const AppStreamClient*, const Model::CopyImageRequest&, const Model::CopyImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyImageResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::CreateDirectoryConfigRequest&, const Model::CreateDirectoryConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDirectoryConfigResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::CreateFleetRequest&, const Model::CreateFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFleetResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::CreateImageBuilderRequest&, const Model::CreateImageBuilderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImageBuilderResponseReceivedHandler;
@@ -294,6 +299,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateFleetAsync(const Model::AssociateFleetRequest& request, const AssociateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Copies the image within the same region or to a new region within the same
+         * AWS account. Note that any tags you added to the image will not be
+         * copied.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CopyImage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CopyImageOutcome CopyImage(const Model::CopyImageRequest& request) const;
+
+        /**
+         * <p>Copies the image within the same region or to a new region within the same
+         * AWS account. Note that any tags you added to the image will not be
+         * copied.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CopyImage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CopyImageOutcomeCallable CopyImageCallable(const Model::CopyImageRequest& request) const;
+
+        /**
+         * <p>Copies the image within the same region or to a new region within the same
+         * AWS account. Note that any tags you added to the image will not be
+         * copied.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CopyImage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CopyImageAsync(const Model::CopyImageRequest& request, const CopyImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a directory configuration.</p><p><h3>See Also:</h3>   <a
@@ -1211,6 +1247,7 @@ namespace Model
 
         /**Async helpers**/
         void AssociateFleetAsyncHelper(const Model::AssociateFleetRequest& request, const AssociateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CopyImageAsyncHelper(const Model::CopyImageRequest& request, const CopyImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDirectoryConfigAsyncHelper(const Model::CreateDirectoryConfigRequest& request, const CreateDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateFleetAsyncHelper(const Model::CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateImageBuilderAsyncHelper(const Model::CreateImageBuilderRequest& request, const CreateImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

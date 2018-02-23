@@ -33,6 +33,7 @@ namespace Aws
         static const int PENDING_HASH = HashingUtils::HashString("PENDING");
         static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int COPYING_HASH = HashingUtils::HashString("COPYING");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
 
 
@@ -50,6 +51,10 @@ namespace Aws
           else if (hashCode == FAILED_HASH)
           {
             return ImageState::FAILED;
+          }
+          else if (hashCode == COPYING_HASH)
+          {
+            return ImageState::COPYING;
           }
           else if (hashCode == DELETING_HASH)
           {
@@ -75,6 +80,8 @@ namespace Aws
             return "AVAILABLE";
           case ImageState::FAILED:
             return "FAILED";
+          case ImageState::COPYING:
+            return "COPYING";
           case ImageState::DELETING:
             return "DELETING";
           default:

@@ -28,6 +28,7 @@
 #include <aws/appstream/AppStreamEndpoint.h>
 #include <aws/appstream/AppStreamErrorMarshaller.h>
 #include <aws/appstream/model/AssociateFleetRequest.h>
+#include <aws/appstream/model/CopyImageRequest.h>
 #include <aws/appstream/model/CreateDirectoryConfigRequest.h>
 #include <aws/appstream/model/CreateFleetRequest.h>
 #include <aws/appstream/model/CreateImageBuilderRequest.h>
@@ -157,6 +158,41 @@ void AppStreamClient::AssociateFleetAsync(const AssociateFleetRequest& request, 
 void AppStreamClient::AssociateFleetAsyncHelper(const AssociateFleetRequest& request, const AssociateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AssociateFleet(request), context);
+}
+
+CopyImageOutcome AppStreamClient::CopyImage(const CopyImageRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CopyImageOutcome(CopyImageResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CopyImageOutcome(outcome.GetError());
+  }
+}
+
+CopyImageOutcomeCallable AppStreamClient::CopyImageCallable(const CopyImageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CopyImageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CopyImage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::CopyImageAsync(const CopyImageRequest& request, const CopyImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CopyImageAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::CopyImageAsyncHelper(const CopyImageRequest& request, const CopyImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CopyImage(request), context);
 }
 
 CreateDirectoryConfigOutcome AppStreamClient::CreateDirectoryConfig(const CreateDirectoryConfigRequest& request) const

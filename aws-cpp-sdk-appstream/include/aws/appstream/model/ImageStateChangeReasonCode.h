@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     INTERNAL_ERROR,
-    IMAGE_BUILDER_NOT_AVAILABLE
+    IMAGE_BUILDER_NOT_AVAILABLE,
+    IMAGE_COPY_FAILURE
   };
 
 namespace ImageStateChangeReasonCodeMapper
