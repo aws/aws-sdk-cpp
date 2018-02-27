@@ -88,44 +88,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the repository that is associated with the repository policy
-     * to&#8232; delete.</p>
+     * <p>The name of the repository.</p>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
 
     /**
-     * <p>The name of the repository that is associated with the repository policy
-     * to&#8232; delete.</p>
+     * <p>The name of the repository.</p>
      */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
-     * <p>The name of the repository that is associated with the repository policy
-     * to&#8232; delete.</p>
+     * <p>The name of the repository.</p>
      */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
     /**
-     * <p>The name of the repository that is associated with the repository policy
-     * to&#8232; delete.</p>
+     * <p>The name of the repository.</p>
      */
     inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
 
     /**
-     * <p>The name of the repository that is associated with the repository policy
-     * to&#8232; delete.</p>
+     * <p>The name of the repository.</p>
      */
     inline DeleteLifecyclePolicyRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
 
     /**
-     * <p>The name of the repository that is associated with the repository policy
-     * to&#8232; delete.</p>
+     * <p>The name of the repository.</p>
      */
     inline DeleteLifecyclePolicyRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the repository that is associated with the repository policy
-     * to&#8232; delete.</p>
+     * <p>The name of the repository.</p>
      */
     inline DeleteLifecyclePolicyRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 

@@ -91,37 +91,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the repository with the policy to retrieve.</p>
+     * <p>The name of the repository.</p>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
 
     /**
-     * <p>The name of the repository with the policy to retrieve.</p>
+     * <p>The name of the repository.</p>
      */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
-     * <p>The name of the repository with the policy to retrieve.</p>
+     * <p>The name of the repository.</p>
      */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
     /**
-     * <p>The name of the repository with the policy to retrieve.</p>
+     * <p>The name of the repository.</p>
      */
     inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
 
     /**
-     * <p>The name of the repository with the policy to retrieve.</p>
+     * <p>The name of the repository.</p>
      */
     inline GetLifecyclePolicyPreviewRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
 
     /**
-     * <p>The name of the repository with the policy to retrieve.</p>
+     * <p>The name of the repository.</p>
      */
     inline GetLifecyclePolicyPreviewRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the repository with the policy to retrieve.</p>
+     * <p>The name of the repository.</p>
      */
     inline GetLifecyclePolicyPreviewRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 
@@ -163,118 +163,128 @@ namespace Model
 
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated&#8232;
+     * <p>The <code>nextToken</code> value returned from a previous paginated&#x2028;
      * <code>GetLifecyclePolicyPreviewRequest</code> request where
-     * <code>maxResults</code> was used and the&#8232; results exceeded the value of
-     * that parameter. Pagination continues from the end of the&#8232; previous results
-     * that returned the <code>nextToken</code> value. This value is&#8232;
-     * <code>null</code> when there are no more results to return.</p>
+     * <code>maxResults</code> was used and the&#x2028; results exceeded the value of
+     * that parameter. Pagination continues from the end of the&#x2028; previous
+     * results that returned the <code>nextToken</code> value. This value is&#x2028;
+     * <code>null</code> when there are no more results to return. This option cannot
+     * be used when you specify images with <code>imageIds</code>.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated&#8232;
+     * <p>The <code>nextToken</code> value returned from a previous paginated&#x2028;
      * <code>GetLifecyclePolicyPreviewRequest</code> request where
-     * <code>maxResults</code> was used and the&#8232; results exceeded the value of
-     * that parameter. Pagination continues from the end of the&#8232; previous results
-     * that returned the <code>nextToken</code> value. This value is&#8232;
-     * <code>null</code> when there are no more results to return.</p>
+     * <code>maxResults</code> was used and the&#x2028; results exceeded the value of
+     * that parameter. Pagination continues from the end of the&#x2028; previous
+     * results that returned the <code>nextToken</code> value. This value is&#x2028;
+     * <code>null</code> when there are no more results to return. This option cannot
+     * be used when you specify images with <code>imageIds</code>.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated&#8232;
+     * <p>The <code>nextToken</code> value returned from a previous paginated&#x2028;
      * <code>GetLifecyclePolicyPreviewRequest</code> request where
-     * <code>maxResults</code> was used and the&#8232; results exceeded the value of
-     * that parameter. Pagination continues from the end of the&#8232; previous results
-     * that returned the <code>nextToken</code> value. This value is&#8232;
-     * <code>null</code> when there are no more results to return.</p>
+     * <code>maxResults</code> was used and the&#x2028; results exceeded the value of
+     * that parameter. Pagination continues from the end of the&#x2028; previous
+     * results that returned the <code>nextToken</code> value. This value is&#x2028;
+     * <code>null</code> when there are no more results to return. This option cannot
+     * be used when you specify images with <code>imageIds</code>.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated&#8232;
+     * <p>The <code>nextToken</code> value returned from a previous paginated&#x2028;
      * <code>GetLifecyclePolicyPreviewRequest</code> request where
-     * <code>maxResults</code> was used and the&#8232; results exceeded the value of
-     * that parameter. Pagination continues from the end of the&#8232; previous results
-     * that returned the <code>nextToken</code> value. This value is&#8232;
-     * <code>null</code> when there are no more results to return.</p>
+     * <code>maxResults</code> was used and the&#x2028; results exceeded the value of
+     * that parameter. Pagination continues from the end of the&#x2028; previous
+     * results that returned the <code>nextToken</code> value. This value is&#x2028;
+     * <code>null</code> when there are no more results to return. This option cannot
+     * be used when you specify images with <code>imageIds</code>.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated&#8232;
+     * <p>The <code>nextToken</code> value returned from a previous paginated&#x2028;
      * <code>GetLifecyclePolicyPreviewRequest</code> request where
-     * <code>maxResults</code> was used and the&#8232; results exceeded the value of
-     * that parameter. Pagination continues from the end of the&#8232; previous results
-     * that returned the <code>nextToken</code> value. This value is&#8232;
-     * <code>null</code> when there are no more results to return.</p>
+     * <code>maxResults</code> was used and the&#x2028; results exceeded the value of
+     * that parameter. Pagination continues from the end of the&#x2028; previous
+     * results that returned the <code>nextToken</code> value. This value is&#x2028;
+     * <code>null</code> when there are no more results to return. This option cannot
+     * be used when you specify images with <code>imageIds</code>.</p>
      */
     inline GetLifecyclePolicyPreviewRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated&#8232;
+     * <p>The <code>nextToken</code> value returned from a previous paginated&#x2028;
      * <code>GetLifecyclePolicyPreviewRequest</code> request where
-     * <code>maxResults</code> was used and the&#8232; results exceeded the value of
-     * that parameter. Pagination continues from the end of the&#8232; previous results
-     * that returned the <code>nextToken</code> value. This value is&#8232;
-     * <code>null</code> when there are no more results to return.</p>
+     * <code>maxResults</code> was used and the&#x2028; results exceeded the value of
+     * that parameter. Pagination continues from the end of the&#x2028; previous
+     * results that returned the <code>nextToken</code> value. This value is&#x2028;
+     * <code>null</code> when there are no more results to return. This option cannot
+     * be used when you specify images with <code>imageIds</code>.</p>
      */
     inline GetLifecyclePolicyPreviewRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated&#8232;
+     * <p>The <code>nextToken</code> value returned from a previous paginated&#x2028;
      * <code>GetLifecyclePolicyPreviewRequest</code> request where
-     * <code>maxResults</code> was used and the&#8232; results exceeded the value of
-     * that parameter. Pagination continues from the end of the&#8232; previous results
-     * that returned the <code>nextToken</code> value. This value is&#8232;
-     * <code>null</code> when there are no more results to return.</p>
+     * <code>maxResults</code> was used and the&#x2028; results exceeded the value of
+     * that parameter. Pagination continues from the end of the&#x2028; previous
+     * results that returned the <code>nextToken</code> value. This value is&#x2028;
+     * <code>null</code> when there are no more results to return. This option cannot
+     * be used when you specify images with <code>imageIds</code>.</p>
      */
     inline GetLifecyclePolicyPreviewRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
      * <p>The maximum number of repository results returned by
-     * <code>GetLifecyclePolicyPreviewRequest</code> in&#8232; paginated output. When
+     * <code>GetLifecyclePolicyPreviewRequest</code> in&#x2028; paginated output. When
      * this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code> only
-     * returns&#8232; <code>maxResults</code> results in a single page along with a
-     * <code>nextToken</code>&#8232; response element. The remaining results of the
-     * initial request can be seen by sending&#8232; another
+     * returns&#x2028; <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code>&#x2028; response element. The remaining results of the
+     * initial request can be seen by sending&#x2028; another
      * <code>GetLifecyclePolicyPreviewRequest</code> request with the returned
-     * <code>nextToken</code>&#8232; value. This value can be between 1 and 100. If
-     * this&#8232; parameter is not used, then
-     * <code>GetLifecyclePolicyPreviewRequest</code> returns up to&#8232; 100 results
-     * and a <code>nextToken</code> value, if&#8232; applicable.</p>
+     * <code>nextToken</code>&#x2028; value. This value can be between 1 and 100. If
+     * this&#x2028; parameter is not used, then
+     * <code>GetLifecyclePolicyPreviewRequest</code> returns up to&#x2028; 100 results
+     * and a <code>nextToken</code> value, if&#x2028; applicable. This option cannot be
+     * used when you specify images with <code>imageIds</code>.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of repository results returned by
-     * <code>GetLifecyclePolicyPreviewRequest</code> in&#8232; paginated output. When
+     * <code>GetLifecyclePolicyPreviewRequest</code> in&#x2028; paginated output. When
      * this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code> only
-     * returns&#8232; <code>maxResults</code> results in a single page along with a
-     * <code>nextToken</code>&#8232; response element. The remaining results of the
-     * initial request can be seen by sending&#8232; another
+     * returns&#x2028; <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code>&#x2028; response element. The remaining results of the
+     * initial request can be seen by sending&#x2028; another
      * <code>GetLifecyclePolicyPreviewRequest</code> request with the returned
-     * <code>nextToken</code>&#8232; value. This value can be between 1 and 100. If
-     * this&#8232; parameter is not used, then
-     * <code>GetLifecyclePolicyPreviewRequest</code> returns up to&#8232; 100 results
-     * and a <code>nextToken</code> value, if&#8232; applicable.</p>
+     * <code>nextToken</code>&#x2028; value. This value can be between 1 and 100. If
+     * this&#x2028; parameter is not used, then
+     * <code>GetLifecyclePolicyPreviewRequest</code> returns up to&#x2028; 100 results
+     * and a <code>nextToken</code> value, if&#x2028; applicable. This option cannot be
+     * used when you specify images with <code>imageIds</code>.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of repository results returned by
-     * <code>GetLifecyclePolicyPreviewRequest</code> in&#8232; paginated output. When
+     * <code>GetLifecyclePolicyPreviewRequest</code> in&#x2028; paginated output. When
      * this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code> only
-     * returns&#8232; <code>maxResults</code> results in a single page along with a
-     * <code>nextToken</code>&#8232; response element. The remaining results of the
-     * initial request can be seen by sending&#8232; another
+     * returns&#x2028; <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code>&#x2028; response element. The remaining results of the
+     * initial request can be seen by sending&#x2028; another
      * <code>GetLifecyclePolicyPreviewRequest</code> request with the returned
-     * <code>nextToken</code>&#8232; value. This value can be between 1 and 100. If
-     * this&#8232; parameter is not used, then
-     * <code>GetLifecyclePolicyPreviewRequest</code> returns up to&#8232; 100 results
-     * and a <code>nextToken</code> value, if&#8232; applicable.</p>
+     * <code>nextToken</code>&#x2028; value. This value can be between 1 and 100. If
+     * this&#x2028; parameter is not used, then
+     * <code>GetLifecyclePolicyPreviewRequest</code> returns up to&#x2028; 100 results
+     * and a <code>nextToken</code> value, if&#x2028; applicable. This option cannot be
+     * used when you specify images with <code>imageIds</code>.</p>
      */
     inline GetLifecyclePolicyPreviewRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
