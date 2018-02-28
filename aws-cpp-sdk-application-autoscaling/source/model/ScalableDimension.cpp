@@ -39,6 +39,7 @@ namespace Aws
         static const int dynamodb_index_ReadCapacityUnits_HASH = HashingUtils::HashString("dynamodb:index:ReadCapacityUnits");
         static const int dynamodb_index_WriteCapacityUnits_HASH = HashingUtils::HashString("dynamodb:index:WriteCapacityUnits");
         static const int rds_cluster_ReadReplicaCount_HASH = HashingUtils::HashString("rds:cluster:ReadReplicaCount");
+        static const int sagemaker_variant_DesiredInstanceCount_HASH = HashingUtils::HashString("sagemaker:variant:DesiredInstanceCount");
 
 
         ScalableDimension GetScalableDimensionForName(const Aws::String& name)
@@ -80,6 +81,10 @@ namespace Aws
           {
             return ScalableDimension::rds_cluster_ReadReplicaCount;
           }
+          else if (hashCode == sagemaker_variant_DesiredInstanceCount_HASH)
+          {
+            return ScalableDimension::sagemaker_variant_DesiredInstanceCount;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -112,6 +117,8 @@ namespace Aws
             return "dynamodb:index:WriteCapacityUnits";
           case ScalableDimension::rds_cluster_ReadReplicaCount:
             return "rds:cluster:ReadReplicaCount";
+          case ScalableDimension::sagemaker_variant_DesiredInstanceCount:
+            return "sagemaker:variant:DesiredInstanceCount";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
