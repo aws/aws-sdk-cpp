@@ -520,18 +520,21 @@ namespace Model
         /**
          * <p>Creates or updates the specified rule. Rules are enabled by default, or based
          * on value of the state. You can disable a rule using <a>DisableRule</a>.</p>
-         * <p>When you create or update a rule, incoming events might not immediately start
-         * matching to new or updated rules. Please allow a short period of time for
-         * changes to take effect.</p> <p>A rule must contain at least an EventPattern or
-         * ScheduleExpression. Rules with EventPatterns are triggered when a matching event
-         * is observed. Rules with ScheduleExpressions self-trigger based on the given
-         * schedule. A rule can have both an EventPattern and a ScheduleExpression, in
-         * which case the rule triggers on matching events as well as on a schedule.</p>
-         * <p>Most services in AWS treat : or / as the same character in Amazon Resource
-         * Names (ARNs). However, CloudWatch Events uses an exact match in event patterns
-         * and rules. Be sure to use the correct ARN characters when creating event
-         * patterns so that they match the ARN syntax in the event you want to
-         * match.</p><p><h3>See Also:</h3>   <a
+         * <p>If you are updating an existing rule, the rule is completely replaced with
+         * what you specify in this <code>PutRule</code> command. If you omit arguments in
+         * <code>PutRule</code>, the old values for those arguments are not kept. Instead,
+         * they are replaced with null values.</p> <p>When you create or update a rule,
+         * incoming events might not immediately start matching to new or updated rules.
+         * Please allow a short period of time for changes to take effect.</p> <p>A rule
+         * must contain at least an EventPattern or ScheduleExpression. Rules with
+         * EventPatterns are triggered when a matching event is observed. Rules with
+         * ScheduleExpressions self-trigger based on the given schedule. A rule can have
+         * both an EventPattern and a ScheduleExpression, in which case the rule triggers
+         * on matching events as well as on a schedule.</p> <p>Most services in AWS treat :
+         * or / as the same character in Amazon Resource Names (ARNs). However, CloudWatch
+         * Events uses an exact match in event patterns and rules. Be sure to use the
+         * correct ARN characters when creating event patterns so that they match the ARN
+         * syntax in the event you want to match.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutRule">AWS API
          * Reference</a></p>
          */
@@ -540,18 +543,21 @@ namespace Model
         /**
          * <p>Creates or updates the specified rule. Rules are enabled by default, or based
          * on value of the state. You can disable a rule using <a>DisableRule</a>.</p>
-         * <p>When you create or update a rule, incoming events might not immediately start
-         * matching to new or updated rules. Please allow a short period of time for
-         * changes to take effect.</p> <p>A rule must contain at least an EventPattern or
-         * ScheduleExpression. Rules with EventPatterns are triggered when a matching event
-         * is observed. Rules with ScheduleExpressions self-trigger based on the given
-         * schedule. A rule can have both an EventPattern and a ScheduleExpression, in
-         * which case the rule triggers on matching events as well as on a schedule.</p>
-         * <p>Most services in AWS treat : or / as the same character in Amazon Resource
-         * Names (ARNs). However, CloudWatch Events uses an exact match in event patterns
-         * and rules. Be sure to use the correct ARN characters when creating event
-         * patterns so that they match the ARN syntax in the event you want to
-         * match.</p><p><h3>See Also:</h3>   <a
+         * <p>If you are updating an existing rule, the rule is completely replaced with
+         * what you specify in this <code>PutRule</code> command. If you omit arguments in
+         * <code>PutRule</code>, the old values for those arguments are not kept. Instead,
+         * they are replaced with null values.</p> <p>When you create or update a rule,
+         * incoming events might not immediately start matching to new or updated rules.
+         * Please allow a short period of time for changes to take effect.</p> <p>A rule
+         * must contain at least an EventPattern or ScheduleExpression. Rules with
+         * EventPatterns are triggered when a matching event is observed. Rules with
+         * ScheduleExpressions self-trigger based on the given schedule. A rule can have
+         * both an EventPattern and a ScheduleExpression, in which case the rule triggers
+         * on matching events as well as on a schedule.</p> <p>Most services in AWS treat :
+         * or / as the same character in Amazon Resource Names (ARNs). However, CloudWatch
+         * Events uses an exact match in event patterns and rules. Be sure to use the
+         * correct ARN characters when creating event patterns so that they match the ARN
+         * syntax in the event you want to match.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutRule">AWS API
          * Reference</a></p>
          *
@@ -562,18 +568,21 @@ namespace Model
         /**
          * <p>Creates or updates the specified rule. Rules are enabled by default, or based
          * on value of the state. You can disable a rule using <a>DisableRule</a>.</p>
-         * <p>When you create or update a rule, incoming events might not immediately start
-         * matching to new or updated rules. Please allow a short period of time for
-         * changes to take effect.</p> <p>A rule must contain at least an EventPattern or
-         * ScheduleExpression. Rules with EventPatterns are triggered when a matching event
-         * is observed. Rules with ScheduleExpressions self-trigger based on the given
-         * schedule. A rule can have both an EventPattern and a ScheduleExpression, in
-         * which case the rule triggers on matching events as well as on a schedule.</p>
-         * <p>Most services in AWS treat : or / as the same character in Amazon Resource
-         * Names (ARNs). However, CloudWatch Events uses an exact match in event patterns
-         * and rules. Be sure to use the correct ARN characters when creating event
-         * patterns so that they match the ARN syntax in the event you want to
-         * match.</p><p><h3>See Also:</h3>   <a
+         * <p>If you are updating an existing rule, the rule is completely replaced with
+         * what you specify in this <code>PutRule</code> command. If you omit arguments in
+         * <code>PutRule</code>, the old values for those arguments are not kept. Instead,
+         * they are replaced with null values.</p> <p>When you create or update a rule,
+         * incoming events might not immediately start matching to new or updated rules.
+         * Please allow a short period of time for changes to take effect.</p> <p>A rule
+         * must contain at least an EventPattern or ScheduleExpression. Rules with
+         * EventPatterns are triggered when a matching event is observed. Rules with
+         * ScheduleExpressions self-trigger based on the given schedule. A rule can have
+         * both an EventPattern and a ScheduleExpression, in which case the rule triggers
+         * on matching events as well as on a schedule.</p> <p>Most services in AWS treat :
+         * or / as the same character in Amazon Resource Names (ARNs). However, CloudWatch
+         * Events uses an exact match in event patterns and rules. Be sure to use the
+         * correct ARN characters when creating event patterns so that they match the ARN
+         * syntax in the event you want to match.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutRule">AWS API
          * Reference</a></p>
          *
@@ -589,22 +598,23 @@ namespace Model
          * <p>AWS Lambda functions</p> </li> <li> <p>Streams in Amazon Kinesis Streams</p>
          * </li> <li> <p>Delivery streams in Amazon Kinesis Firehose</p> </li> <li>
          * <p>Amazon ECS tasks</p> </li> <li> <p>AWS Step Functions state machines</p>
-         * </li> <li> <p>Pipelines in Amazon Code Pipeline</p> </li> <li> <p>Amazon
-         * Inspector assessment templates</p> </li> <li> <p>Amazon SNS topics</p> </li>
-         * <li> <p>Amazon SQS queues</p> </li> <li> <p>The default event bus of another AWS
-         * account</p> </li> </ul> <p>Note that creating rules with built-in targets is
-         * supported only in the AWS Management Console.</p> <p>For some target types,
-         * <code>PutTargets</code> provides target-specific parameters. If the target is an
-         * Amazon Kinesis stream, you can optionally specify which shard the event goes to
-         * by using the <code>KinesisParameters</code> argument. To invoke a command on
-         * multiple EC2 instances with one rule, you can use the
-         * <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls
-         * against the resources that you own, Amazon CloudWatch Events needs the
-         * appropriate permissions. For AWS Lambda and Amazon SNS resources, CloudWatch
-         * Events relies on resource-based policies. For EC2 instances, Amazon Kinesis
-         * streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM
-         * roles that you specify in the <code>RoleARN</code> argument in
-         * <code>PutTargets</code>. For more information, see <a
+         * </li> <li> <p>AWS Batch jobs</p> </li> <li> <p>Pipelines in Amazon Code
+         * Pipeline</p> </li> <li> <p>Amazon Inspector assessment templates</p> </li> <li>
+         * <p>Amazon SNS topics</p> </li> <li> <p>Amazon SQS queues</p> </li> <li> <p>The
+         * default event bus of another AWS account</p> </li> </ul> <p>Note that creating
+         * rules with built-in targets is supported only in the AWS Management Console.</p>
+         * <p>For some target types, <code>PutTargets</code> provides target-specific
+         * parameters. If the target is an Amazon Kinesis stream, you can optionally
+         * specify which shard the event goes to by using the
+         * <code>KinesisParameters</code> argument. To invoke a command on multiple EC2
+         * instances with one rule, you can use the <code>RunCommandParameters</code>
+         * field.</p> <p>To be able to make API calls against the resources that you own,
+         * Amazon CloudWatch Events needs the appropriate permissions. For AWS Lambda and
+         * Amazon SNS resources, CloudWatch Events relies on resource-based policies. For
+         * EC2 instances, Amazon Kinesis streams, and AWS Step Functions state machines,
+         * CloudWatch Events relies on IAM roles that you specify in the
+         * <code>RoleARN</code> argument in <code>PutTargets</code>. For more information,
+         * see <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">Authentication
          * and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
          * <p>If another AWS account is in the same region and has granted you permission
@@ -631,15 +641,14 @@ namespace Model
          * passed).</p> </li> <li> <p>If <b>InputTransformer</b> is specified, then one or
          * more specified JSONPaths are extracted from the event and used as values in a
          * template that you specify as the input to the target.</p> </li> </ul> <p>When
-         * you specify <code>Input</code>, <code>InputPath</code>, or
-         * <code>InputTransformer</code>, you must use JSON dot notation, not bracket
-         * notation.</p> <p>When you add targets to a rule and the associated rule triggers
-         * soon after, new or updated targets might not be immediately invoked. Please
-         * allow a short period of time for changes to take effect.</p> <p>This action can
-         * partially fail if too many requests are made at the same time. If that happens,
-         * <code>FailedEntryCount</code> is non-zero in the response and each entry in
-         * <code>FailedEntries</code> provides the ID of the failed target and the error
-         * code.</p><p><h3>See Also:</h3>   <a
+         * you specify <code>InputPath</code> or <code>InputTransformer</code>, you must
+         * use JSON dot notation, not bracket notation.</p> <p>When you add targets to a
+         * rule and the associated rule triggers soon after, new or updated targets might
+         * not be immediately invoked. Please allow a short period of time for changes to
+         * take effect.</p> <p>This action can partially fail if too many requests are made
+         * at the same time. If that happens, <code>FailedEntryCount</code> is non-zero in
+         * the response and each entry in <code>FailedEntries</code> provides the ID of the
+         * failed target and the error code.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutTargets">AWS
          * API Reference</a></p>
          */
@@ -653,22 +662,23 @@ namespace Model
          * <p>AWS Lambda functions</p> </li> <li> <p>Streams in Amazon Kinesis Streams</p>
          * </li> <li> <p>Delivery streams in Amazon Kinesis Firehose</p> </li> <li>
          * <p>Amazon ECS tasks</p> </li> <li> <p>AWS Step Functions state machines</p>
-         * </li> <li> <p>Pipelines in Amazon Code Pipeline</p> </li> <li> <p>Amazon
-         * Inspector assessment templates</p> </li> <li> <p>Amazon SNS topics</p> </li>
-         * <li> <p>Amazon SQS queues</p> </li> <li> <p>The default event bus of another AWS
-         * account</p> </li> </ul> <p>Note that creating rules with built-in targets is
-         * supported only in the AWS Management Console.</p> <p>For some target types,
-         * <code>PutTargets</code> provides target-specific parameters. If the target is an
-         * Amazon Kinesis stream, you can optionally specify which shard the event goes to
-         * by using the <code>KinesisParameters</code> argument. To invoke a command on
-         * multiple EC2 instances with one rule, you can use the
-         * <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls
-         * against the resources that you own, Amazon CloudWatch Events needs the
-         * appropriate permissions. For AWS Lambda and Amazon SNS resources, CloudWatch
-         * Events relies on resource-based policies. For EC2 instances, Amazon Kinesis
-         * streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM
-         * roles that you specify in the <code>RoleARN</code> argument in
-         * <code>PutTargets</code>. For more information, see <a
+         * </li> <li> <p>AWS Batch jobs</p> </li> <li> <p>Pipelines in Amazon Code
+         * Pipeline</p> </li> <li> <p>Amazon Inspector assessment templates</p> </li> <li>
+         * <p>Amazon SNS topics</p> </li> <li> <p>Amazon SQS queues</p> </li> <li> <p>The
+         * default event bus of another AWS account</p> </li> </ul> <p>Note that creating
+         * rules with built-in targets is supported only in the AWS Management Console.</p>
+         * <p>For some target types, <code>PutTargets</code> provides target-specific
+         * parameters. If the target is an Amazon Kinesis stream, you can optionally
+         * specify which shard the event goes to by using the
+         * <code>KinesisParameters</code> argument. To invoke a command on multiple EC2
+         * instances with one rule, you can use the <code>RunCommandParameters</code>
+         * field.</p> <p>To be able to make API calls against the resources that you own,
+         * Amazon CloudWatch Events needs the appropriate permissions. For AWS Lambda and
+         * Amazon SNS resources, CloudWatch Events relies on resource-based policies. For
+         * EC2 instances, Amazon Kinesis streams, and AWS Step Functions state machines,
+         * CloudWatch Events relies on IAM roles that you specify in the
+         * <code>RoleARN</code> argument in <code>PutTargets</code>. For more information,
+         * see <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">Authentication
          * and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
          * <p>If another AWS account is in the same region and has granted you permission
@@ -695,15 +705,14 @@ namespace Model
          * passed).</p> </li> <li> <p>If <b>InputTransformer</b> is specified, then one or
          * more specified JSONPaths are extracted from the event and used as values in a
          * template that you specify as the input to the target.</p> </li> </ul> <p>When
-         * you specify <code>Input</code>, <code>InputPath</code>, or
-         * <code>InputTransformer</code>, you must use JSON dot notation, not bracket
-         * notation.</p> <p>When you add targets to a rule and the associated rule triggers
-         * soon after, new or updated targets might not be immediately invoked. Please
-         * allow a short period of time for changes to take effect.</p> <p>This action can
-         * partially fail if too many requests are made at the same time. If that happens,
-         * <code>FailedEntryCount</code> is non-zero in the response and each entry in
-         * <code>FailedEntries</code> provides the ID of the failed target and the error
-         * code.</p><p><h3>See Also:</h3>   <a
+         * you specify <code>InputPath</code> or <code>InputTransformer</code>, you must
+         * use JSON dot notation, not bracket notation.</p> <p>When you add targets to a
+         * rule and the associated rule triggers soon after, new or updated targets might
+         * not be immediately invoked. Please allow a short period of time for changes to
+         * take effect.</p> <p>This action can partially fail if too many requests are made
+         * at the same time. If that happens, <code>FailedEntryCount</code> is non-zero in
+         * the response and each entry in <code>FailedEntries</code> provides the ID of the
+         * failed target and the error code.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutTargets">AWS
          * API Reference</a></p>
          *
@@ -719,22 +728,23 @@ namespace Model
          * <p>AWS Lambda functions</p> </li> <li> <p>Streams in Amazon Kinesis Streams</p>
          * </li> <li> <p>Delivery streams in Amazon Kinesis Firehose</p> </li> <li>
          * <p>Amazon ECS tasks</p> </li> <li> <p>AWS Step Functions state machines</p>
-         * </li> <li> <p>Pipelines in Amazon Code Pipeline</p> </li> <li> <p>Amazon
-         * Inspector assessment templates</p> </li> <li> <p>Amazon SNS topics</p> </li>
-         * <li> <p>Amazon SQS queues</p> </li> <li> <p>The default event bus of another AWS
-         * account</p> </li> </ul> <p>Note that creating rules with built-in targets is
-         * supported only in the AWS Management Console.</p> <p>For some target types,
-         * <code>PutTargets</code> provides target-specific parameters. If the target is an
-         * Amazon Kinesis stream, you can optionally specify which shard the event goes to
-         * by using the <code>KinesisParameters</code> argument. To invoke a command on
-         * multiple EC2 instances with one rule, you can use the
-         * <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls
-         * against the resources that you own, Amazon CloudWatch Events needs the
-         * appropriate permissions. For AWS Lambda and Amazon SNS resources, CloudWatch
-         * Events relies on resource-based policies. For EC2 instances, Amazon Kinesis
-         * streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM
-         * roles that you specify in the <code>RoleARN</code> argument in
-         * <code>PutTargets</code>. For more information, see <a
+         * </li> <li> <p>AWS Batch jobs</p> </li> <li> <p>Pipelines in Amazon Code
+         * Pipeline</p> </li> <li> <p>Amazon Inspector assessment templates</p> </li> <li>
+         * <p>Amazon SNS topics</p> </li> <li> <p>Amazon SQS queues</p> </li> <li> <p>The
+         * default event bus of another AWS account</p> </li> </ul> <p>Note that creating
+         * rules with built-in targets is supported only in the AWS Management Console.</p>
+         * <p>For some target types, <code>PutTargets</code> provides target-specific
+         * parameters. If the target is an Amazon Kinesis stream, you can optionally
+         * specify which shard the event goes to by using the
+         * <code>KinesisParameters</code> argument. To invoke a command on multiple EC2
+         * instances with one rule, you can use the <code>RunCommandParameters</code>
+         * field.</p> <p>To be able to make API calls against the resources that you own,
+         * Amazon CloudWatch Events needs the appropriate permissions. For AWS Lambda and
+         * Amazon SNS resources, CloudWatch Events relies on resource-based policies. For
+         * EC2 instances, Amazon Kinesis streams, and AWS Step Functions state machines,
+         * CloudWatch Events relies on IAM roles that you specify in the
+         * <code>RoleARN</code> argument in <code>PutTargets</code>. For more information,
+         * see <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">Authentication
          * and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
          * <p>If another AWS account is in the same region and has granted you permission
@@ -761,15 +771,14 @@ namespace Model
          * passed).</p> </li> <li> <p>If <b>InputTransformer</b> is specified, then one or
          * more specified JSONPaths are extracted from the event and used as values in a
          * template that you specify as the input to the target.</p> </li> </ul> <p>When
-         * you specify <code>Input</code>, <code>InputPath</code>, or
-         * <code>InputTransformer</code>, you must use JSON dot notation, not bracket
-         * notation.</p> <p>When you add targets to a rule and the associated rule triggers
-         * soon after, new or updated targets might not be immediately invoked. Please
-         * allow a short period of time for changes to take effect.</p> <p>This action can
-         * partially fail if too many requests are made at the same time. If that happens,
-         * <code>FailedEntryCount</code> is non-zero in the response and each entry in
-         * <code>FailedEntries</code> provides the ID of the failed target and the error
-         * code.</p><p><h3>See Also:</h3>   <a
+         * you specify <code>InputPath</code> or <code>InputTransformer</code>, you must
+         * use JSON dot notation, not bracket notation.</p> <p>When you add targets to a
+         * rule and the associated rule triggers soon after, new or updated targets might
+         * not be immediately invoked. Please allow a short period of time for changes to
+         * take effect.</p> <p>This action can partially fail if too many requests are made
+         * at the same time. If that happens, <code>FailedEntryCount</code> is non-zero in
+         * the response and each entry in <code>FailedEntries</code> provides the ID of the
+         * failed target and the error code.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutTargets">AWS
          * API Reference</a></p>
          *

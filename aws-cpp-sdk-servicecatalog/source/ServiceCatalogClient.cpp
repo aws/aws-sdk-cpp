@@ -45,6 +45,7 @@
 #include <aws/servicecatalog/model/DeleteProductRequest.h>
 #include <aws/servicecatalog/model/DeleteProvisionedProductPlanRequest.h>
 #include <aws/servicecatalog/model/DeleteProvisioningArtifactRequest.h>
+#include <aws/servicecatalog/model/DeleteTagOptionRequest.h>
 #include <aws/servicecatalog/model/DescribeConstraintRequest.h>
 #include <aws/servicecatalog/model/DescribeCopyProductStatusRequest.h>
 #include <aws/servicecatalog/model/DescribePortfolioRequest.h>
@@ -779,6 +780,41 @@ void ServiceCatalogClient::DeleteProvisioningArtifactAsync(const DeleteProvision
 void ServiceCatalogClient::DeleteProvisioningArtifactAsyncHelper(const DeleteProvisioningArtifactRequest& request, const DeleteProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteProvisioningArtifact(request), context);
+}
+
+DeleteTagOptionOutcome ServiceCatalogClient::DeleteTagOption(const DeleteTagOptionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteTagOptionOutcome(DeleteTagOptionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteTagOptionOutcome(outcome.GetError());
+  }
+}
+
+DeleteTagOptionOutcomeCallable ServiceCatalogClient::DeleteTagOptionCallable(const DeleteTagOptionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteTagOptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTagOption(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceCatalogClient::DeleteTagOptionAsync(const DeleteTagOptionRequest& request, const DeleteTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteTagOptionAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceCatalogClient::DeleteTagOptionAsyncHelper(const DeleteTagOptionRequest& request, const DeleteTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteTagOption(request), context);
 }
 
 DescribeConstraintOutcome ServiceCatalogClient::DescribeConstraint(const DescribeConstraintRequest& request) const

@@ -50,27 +50,27 @@ namespace Model
 
 
     /**
-     * <p>The attribute that will change.</p>
+     * <p>The attribute to be changed.</p>
      */
     inline const ResourceAttribute& GetAttribute() const{ return m_attribute; }
 
     /**
-     * <p>The attribute that will change.</p>
+     * <p>The attribute to be changed.</p>
      */
     inline void SetAttribute(const ResourceAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
-     * <p>The attribute that will change.</p>
+     * <p>The attribute to be changed.</p>
      */
     inline void SetAttribute(ResourceAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
 
     /**
-     * <p>The attribute that will change.</p>
+     * <p>The attribute to be changed.</p>
      */
     inline ResourceTargetDefinition& WithAttribute(const ResourceAttribute& value) { SetAttribute(value); return *this;}
 
     /**
-     * <p>The attribute that will change.</p>
+     * <p>The attribute to be changed.</p>
      */
     inline ResourceTargetDefinition& WithAttribute(ResourceAttribute&& value) { SetAttribute(std::move(value)); return *this;}
 
@@ -120,31 +120,31 @@ namespace Model
 
     /**
      * <p>If the attribute is <code>Properties</code>, indicates whether a change to
-     * this property causes the resource to be recreated.</p>
+     * this property causes the resource to be re-created.</p>
      */
     inline const RequiresRecreation& GetRequiresRecreation() const{ return m_requiresRecreation; }
 
     /**
      * <p>If the attribute is <code>Properties</code>, indicates whether a change to
-     * this property causes the resource to be recreated.</p>
+     * this property causes the resource to be re-created.</p>
      */
     inline void SetRequiresRecreation(const RequiresRecreation& value) { m_requiresRecreationHasBeenSet = true; m_requiresRecreation = value; }
 
     /**
      * <p>If the attribute is <code>Properties</code>, indicates whether a change to
-     * this property causes the resource to be recreated.</p>
+     * this property causes the resource to be re-created.</p>
      */
     inline void SetRequiresRecreation(RequiresRecreation&& value) { m_requiresRecreationHasBeenSet = true; m_requiresRecreation = std::move(value); }
 
     /**
      * <p>If the attribute is <code>Properties</code>, indicates whether a change to
-     * this property causes the resource to be recreated.</p>
+     * this property causes the resource to be re-created.</p>
      */
     inline ResourceTargetDefinition& WithRequiresRecreation(const RequiresRecreation& value) { SetRequiresRecreation(value); return *this;}
 
     /**
      * <p>If the attribute is <code>Properties</code>, indicates whether a change to
-     * this property causes the resource to be recreated.</p>
+     * this property causes the resource to be re-created.</p>
      */
     inline ResourceTargetDefinition& WithRequiresRecreation(RequiresRecreation&& value) { SetRequiresRecreation(std::move(value)); return *this;}
 

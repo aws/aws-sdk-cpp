@@ -72,25 +72,39 @@ namespace Model
     inline ModifyVolumeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
 
-    
+    /**
+     * <p>The ID of the volume.</p>
+     */
     inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
 
-    
+    /**
+     * <p>The ID of the volume.</p>
+     */
     inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
 
-    
+    /**
+     * <p>The ID of the volume.</p>
+     */
     inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
 
-    
+    /**
+     * <p>The ID of the volume.</p>
+     */
     inline void SetVolumeId(const char* value) { m_volumeIdHasBeenSet = true; m_volumeId.assign(value); }
 
-    
+    /**
+     * <p>The ID of the volume.</p>
+     */
     inline ModifyVolumeRequest& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
 
-    
+    /**
+     * <p>The ID of the volume.</p>
+     */
     inline ModifyVolumeRequest& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The ID of the volume.</p>
+     */
     inline ModifyVolumeRequest& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
 

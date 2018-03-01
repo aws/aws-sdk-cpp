@@ -20,6 +20,7 @@
 #include <aws/events/model/KinesisParameters.h>
 #include <aws/events/model/RunCommandParameters.h>
 #include <aws/events/model/EcsParameters.h>
+#include <aws/events/model/BatchParameters.h>
 #include <utility>
 
 namespace Aws
@@ -177,8 +178,7 @@ namespace Model
 
     /**
      * <p>Valid JSON text passed to the target. In this case, nothing from the event
-     * itself is passed to the target. You must use JSON dot notation, not bracket
-     * notation. For more information, see <a
+     * itself is passed to the target. For more information, see <a
      * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation
      * (JSON) Data Interchange Format</a>.</p>
      */
@@ -186,8 +186,7 @@ namespace Model
 
     /**
      * <p>Valid JSON text passed to the target. In this case, nothing from the event
-     * itself is passed to the target. You must use JSON dot notation, not bracket
-     * notation. For more information, see <a
+     * itself is passed to the target. For more information, see <a
      * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation
      * (JSON) Data Interchange Format</a>.</p>
      */
@@ -195,8 +194,7 @@ namespace Model
 
     /**
      * <p>Valid JSON text passed to the target. In this case, nothing from the event
-     * itself is passed to the target. You must use JSON dot notation, not bracket
-     * notation. For more information, see <a
+     * itself is passed to the target. For more information, see <a
      * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation
      * (JSON) Data Interchange Format</a>.</p>
      */
@@ -204,8 +202,7 @@ namespace Model
 
     /**
      * <p>Valid JSON text passed to the target. In this case, nothing from the event
-     * itself is passed to the target. You must use JSON dot notation, not bracket
-     * notation. For more information, see <a
+     * itself is passed to the target. For more information, see <a
      * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation
      * (JSON) Data Interchange Format</a>.</p>
      */
@@ -213,8 +210,7 @@ namespace Model
 
     /**
      * <p>Valid JSON text passed to the target. In this case, nothing from the event
-     * itself is passed to the target. You must use JSON dot notation, not bracket
-     * notation. For more information, see <a
+     * itself is passed to the target. For more information, see <a
      * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation
      * (JSON) Data Interchange Format</a>.</p>
      */
@@ -222,8 +218,7 @@ namespace Model
 
     /**
      * <p>Valid JSON text passed to the target. In this case, nothing from the event
-     * itself is passed to the target. You must use JSON dot notation, not bracket
-     * notation. For more information, see <a
+     * itself is passed to the target. For more information, see <a
      * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation
      * (JSON) Data Interchange Format</a>.</p>
      */
@@ -231,8 +226,7 @@ namespace Model
 
     /**
      * <p>Valid JSON text passed to the target. In this case, nothing from the event
-     * itself is passed to the target. You must use JSON dot notation, not bracket
-     * notation. For more information, see <a
+     * itself is passed to the target. For more information, see <a
      * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation
      * (JSON) Data Interchange Format</a>.</p>
      */
@@ -444,6 +438,47 @@ namespace Model
      */
     inline Target& WithEcsParameters(EcsParameters&& value) { SetEcsParameters(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains the job definition, job name, and other parameters if the event
+     * target is an AWS Batch job. For more information about AWS Batch, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
+     * the <i>AWS Batch User Guide</i>.</p>
+     */
+    inline const BatchParameters& GetBatchParameters() const{ return m_batchParameters; }
+
+    /**
+     * <p>Contains the job definition, job name, and other parameters if the event
+     * target is an AWS Batch job. For more information about AWS Batch, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
+     * the <i>AWS Batch User Guide</i>.</p>
+     */
+    inline void SetBatchParameters(const BatchParameters& value) { m_batchParametersHasBeenSet = true; m_batchParameters = value; }
+
+    /**
+     * <p>Contains the job definition, job name, and other parameters if the event
+     * target is an AWS Batch job. For more information about AWS Batch, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
+     * the <i>AWS Batch User Guide</i>.</p>
+     */
+    inline void SetBatchParameters(BatchParameters&& value) { m_batchParametersHasBeenSet = true; m_batchParameters = std::move(value); }
+
+    /**
+     * <p>Contains the job definition, job name, and other parameters if the event
+     * target is an AWS Batch job. For more information about AWS Batch, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
+     * the <i>AWS Batch User Guide</i>.</p>
+     */
+    inline Target& WithBatchParameters(const BatchParameters& value) { SetBatchParameters(value); return *this;}
+
+    /**
+     * <p>Contains the job definition, job name, and other parameters if the event
+     * target is an AWS Batch job. For more information about AWS Batch, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
+     * the <i>AWS Batch User Guide</i>.</p>
+     */
+    inline Target& WithBatchParameters(BatchParameters&& value) { SetBatchParameters(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -472,6 +507,9 @@ namespace Model
 
     EcsParameters m_ecsParameters;
     bool m_ecsParametersHasBeenSet;
+
+    BatchParameters m_batchParameters;
+    bool m_batchParametersHasBeenSet;
   };
 
 } // namespace Model

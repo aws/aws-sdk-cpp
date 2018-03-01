@@ -37,7 +37,8 @@ Target::Target() :
     m_inputTransformerHasBeenSet(false),
     m_kinesisParametersHasBeenSet(false),
     m_runCommandParametersHasBeenSet(false),
-    m_ecsParametersHasBeenSet(false)
+    m_ecsParametersHasBeenSet(false),
+    m_batchParametersHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ Target::Target(const JsonValue& jsonValue) :
     m_inputTransformerHasBeenSet(false),
     m_kinesisParametersHasBeenSet(false),
     m_runCommandParametersHasBeenSet(false),
-    m_ecsParametersHasBeenSet(false)
+    m_ecsParametersHasBeenSet(false),
+    m_batchParametersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -120,6 +122,13 @@ Target& Target::operator =(const JsonValue& jsonValue)
     m_ecsParametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("BatchParameters"))
+  {
+    m_batchParameters = jsonValue.GetObject("BatchParameters");
+
+    m_batchParametersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -178,6 +187,12 @@ JsonValue Target::Jsonize() const
   if(m_ecsParametersHasBeenSet)
   {
    payload.WithObject("EcsParameters", m_ecsParameters.Jsonize());
+
+  }
+
+  if(m_batchParametersHasBeenSet)
+  {
+   payload.WithObject("BatchParameters", m_batchParameters.Jsonize());
 
   }
 

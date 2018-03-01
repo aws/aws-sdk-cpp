@@ -41,12 +41,16 @@ NFSFileShareInfo::NFSFileShareInfo() :
     m_roleHasBeenSet(false),
     m_locationARNHasBeenSet(false),
     m_defaultStorageClassHasBeenSet(false),
+    m_objectACL(ObjectACL::NOT_SET),
+    m_objectACLHasBeenSet(false),
     m_clientListHasBeenSet(false),
     m_squashHasBeenSet(false),
     m_readOnly(false),
     m_readOnlyHasBeenSet(false),
     m_guessMIMETypeEnabled(false),
-    m_guessMIMETypeEnabledHasBeenSet(false)
+    m_guessMIMETypeEnabledHasBeenSet(false),
+    m_requesterPays(false),
+    m_requesterPaysHasBeenSet(false)
 {
 }
 
@@ -63,12 +67,16 @@ NFSFileShareInfo::NFSFileShareInfo(const JsonValue& jsonValue) :
     m_roleHasBeenSet(false),
     m_locationARNHasBeenSet(false),
     m_defaultStorageClassHasBeenSet(false),
+    m_objectACL(ObjectACL::NOT_SET),
+    m_objectACLHasBeenSet(false),
     m_clientListHasBeenSet(false),
     m_squashHasBeenSet(false),
     m_readOnly(false),
     m_readOnlyHasBeenSet(false),
     m_guessMIMETypeEnabled(false),
-    m_guessMIMETypeEnabledHasBeenSet(false)
+    m_guessMIMETypeEnabledHasBeenSet(false),
+    m_requesterPays(false),
+    m_requesterPaysHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -152,6 +160,13 @@ NFSFileShareInfo& NFSFileShareInfo::operator =(const JsonValue& jsonValue)
     m_defaultStorageClassHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ObjectACL"))
+  {
+    m_objectACL = ObjectACLMapper::GetObjectACLForName(jsonValue.GetString("ObjectACL"));
+
+    m_objectACLHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ClientList"))
   {
     Array<JsonValue> clientListJsonList = jsonValue.GetArray("ClientList");
@@ -181,6 +196,13 @@ NFSFileShareInfo& NFSFileShareInfo::operator =(const JsonValue& jsonValue)
     m_guessMIMETypeEnabled = jsonValue.GetBool("GuessMIMETypeEnabled");
 
     m_guessMIMETypeEnabledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RequesterPays"))
+  {
+    m_requesterPays = jsonValue.GetBool("RequesterPays");
+
+    m_requesterPaysHasBeenSet = true;
   }
 
   return *this;
@@ -256,6 +278,11 @@ JsonValue NFSFileShareInfo::Jsonize() const
 
   }
 
+  if(m_objectACLHasBeenSet)
+  {
+   payload.WithString("ObjectACL", ObjectACLMapper::GetNameForObjectACL(m_objectACL));
+  }
+
   if(m_clientListHasBeenSet)
   {
    Array<JsonValue> clientListJsonList(m_clientList.size());
@@ -282,6 +309,12 @@ JsonValue NFSFileShareInfo::Jsonize() const
   if(m_guessMIMETypeEnabledHasBeenSet)
   {
    payload.WithBool("GuessMIMETypeEnabled", m_guessMIMETypeEnabled);
+
+  }
+
+  if(m_requesterPaysHasBeenSet)
+  {
+   payload.WithBool("RequesterPays", m_requesterPays);
 
   }
 

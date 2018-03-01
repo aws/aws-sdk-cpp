@@ -74,137 +74,145 @@ namespace Model
 
     /**
      * <p>The type of resource: <code>bundle</code> | <code>conversion-task</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
-     * <code>elastic-ip-association</code> | <code>export-task</code> |
-     * <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
-     * <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code>
-     * | <code>network-acl-association</code> | <code>network-interface</code> |
-     * <code>network-interface-attachment</code> | <code>prefix-list</code> |
-     * <code>reservation</code> | <code>route-table</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> |
+     * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code>
+     * | <code>network-acl</code> | <code>network-acl-association</code> |
+     * <code>network-interface</code> | <code>network-interface-attachment</code> |
+     * <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
      * <code>route-table-association</code> | <code>security-group</code> |
      * <code>snapshot</code> | <code>subnet</code> |
      * <code>subnet-cidr-block-association</code> | <code>volume</code> |
      * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
-     * <code>vpc-peering-connection</code> </p>
+     * <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code> </p>
      */
     inline const Aws::Vector<Aws::String>& GetResources() const{ return m_resources; }
 
     /**
      * <p>The type of resource: <code>bundle</code> | <code>conversion-task</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
-     * <code>elastic-ip-association</code> | <code>export-task</code> |
-     * <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
-     * <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code>
-     * | <code>network-acl-association</code> | <code>network-interface</code> |
-     * <code>network-interface-attachment</code> | <code>prefix-list</code> |
-     * <code>reservation</code> | <code>route-table</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> |
+     * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code>
+     * | <code>network-acl</code> | <code>network-acl-association</code> |
+     * <code>network-interface</code> | <code>network-interface-attachment</code> |
+     * <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
      * <code>route-table-association</code> | <code>security-group</code> |
      * <code>snapshot</code> | <code>subnet</code> |
      * <code>subnet-cidr-block-association</code> | <code>volume</code> |
      * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
-     * <code>vpc-peering-connection</code> </p>
+     * <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code> </p>
      */
     inline void SetResources(const Aws::Vector<Aws::String>& value) { m_resourcesHasBeenSet = true; m_resources = value; }
 
     /**
      * <p>The type of resource: <code>bundle</code> | <code>conversion-task</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
-     * <code>elastic-ip-association</code> | <code>export-task</code> |
-     * <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
-     * <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code>
-     * | <code>network-acl-association</code> | <code>network-interface</code> |
-     * <code>network-interface-attachment</code> | <code>prefix-list</code> |
-     * <code>reservation</code> | <code>route-table</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> |
+     * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code>
+     * | <code>network-acl</code> | <code>network-acl-association</code> |
+     * <code>network-interface</code> | <code>network-interface-attachment</code> |
+     * <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
      * <code>route-table-association</code> | <code>security-group</code> |
      * <code>snapshot</code> | <code>subnet</code> |
      * <code>subnet-cidr-block-association</code> | <code>volume</code> |
      * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
-     * <code>vpc-peering-connection</code> </p>
+     * <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code> </p>
      */
     inline void SetResources(Aws::Vector<Aws::String>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
 
     /**
      * <p>The type of resource: <code>bundle</code> | <code>conversion-task</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
-     * <code>elastic-ip-association</code> | <code>export-task</code> |
-     * <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
-     * <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code>
-     * | <code>network-acl-association</code> | <code>network-interface</code> |
-     * <code>network-interface-attachment</code> | <code>prefix-list</code> |
-     * <code>reservation</code> | <code>route-table</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> |
+     * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code>
+     * | <code>network-acl</code> | <code>network-acl-association</code> |
+     * <code>network-interface</code> | <code>network-interface-attachment</code> |
+     * <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
      * <code>route-table-association</code> | <code>security-group</code> |
      * <code>snapshot</code> | <code>subnet</code> |
      * <code>subnet-cidr-block-association</code> | <code>volume</code> |
      * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
-     * <code>vpc-peering-connection</code> </p>
+     * <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code> </p>
      */
     inline DescribePrincipalIdFormatRequest& WithResources(const Aws::Vector<Aws::String>& value) { SetResources(value); return *this;}
 
     /**
      * <p>The type of resource: <code>bundle</code> | <code>conversion-task</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
-     * <code>elastic-ip-association</code> | <code>export-task</code> |
-     * <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
-     * <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code>
-     * | <code>network-acl-association</code> | <code>network-interface</code> |
-     * <code>network-interface-attachment</code> | <code>prefix-list</code> |
-     * <code>reservation</code> | <code>route-table</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> |
+     * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code>
+     * | <code>network-acl</code> | <code>network-acl-association</code> |
+     * <code>network-interface</code> | <code>network-interface-attachment</code> |
+     * <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
      * <code>route-table-association</code> | <code>security-group</code> |
      * <code>snapshot</code> | <code>subnet</code> |
      * <code>subnet-cidr-block-association</code> | <code>volume</code> |
      * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
-     * <code>vpc-peering-connection</code> </p>
+     * <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code> </p>
      */
     inline DescribePrincipalIdFormatRequest& WithResources(Aws::Vector<Aws::String>&& value) { SetResources(std::move(value)); return *this;}
 
     /**
      * <p>The type of resource: <code>bundle</code> | <code>conversion-task</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
-     * <code>elastic-ip-association</code> | <code>export-task</code> |
-     * <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
-     * <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code>
-     * | <code>network-acl-association</code> | <code>network-interface</code> |
-     * <code>network-interface-attachment</code> | <code>prefix-list</code> |
-     * <code>reservation</code> | <code>route-table</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> |
+     * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code>
+     * | <code>network-acl</code> | <code>network-acl-association</code> |
+     * <code>network-interface</code> | <code>network-interface-attachment</code> |
+     * <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
      * <code>route-table-association</code> | <code>security-group</code> |
      * <code>snapshot</code> | <code>subnet</code> |
      * <code>subnet-cidr-block-association</code> | <code>volume</code> |
      * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
-     * <code>vpc-peering-connection</code> </p>
+     * <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code> </p>
      */
     inline DescribePrincipalIdFormatRequest& AddResources(const Aws::String& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
 
     /**
      * <p>The type of resource: <code>bundle</code> | <code>conversion-task</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
-     * <code>elastic-ip-association</code> | <code>export-task</code> |
-     * <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
-     * <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code>
-     * | <code>network-acl-association</code> | <code>network-interface</code> |
-     * <code>network-interface-attachment</code> | <code>prefix-list</code> |
-     * <code>reservation</code> | <code>route-table</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> |
+     * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code>
+     * | <code>network-acl</code> | <code>network-acl-association</code> |
+     * <code>network-interface</code> | <code>network-interface-attachment</code> |
+     * <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
      * <code>route-table-association</code> | <code>security-group</code> |
      * <code>snapshot</code> | <code>subnet</code> |
      * <code>subnet-cidr-block-association</code> | <code>volume</code> |
      * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
-     * <code>vpc-peering-connection</code> </p>
+     * <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code> </p>
      */
     inline DescribePrincipalIdFormatRequest& AddResources(Aws::String&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The type of resource: <code>bundle</code> | <code>conversion-task</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
-     * <code>elastic-ip-association</code> | <code>export-task</code> |
-     * <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
-     * <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code>
-     * | <code>network-acl-association</code> | <code>network-interface</code> |
-     * <code>network-interface-attachment</code> | <code>prefix-list</code> |
-     * <code>reservation</code> | <code>route-table</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> |
+     * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code>
+     * | <code>network-acl</code> | <code>network-acl-association</code> |
+     * <code>network-interface</code> | <code>network-interface-attachment</code> |
+     * <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
      * <code>route-table-association</code> | <code>security-group</code> |
      * <code>snapshot</code> | <code>subnet</code> |
      * <code>subnet-cidr-block-association</code> | <code>volume</code> |
      * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
-     * <code>vpc-peering-connection</code> </p>
+     * <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code> </p>
      */
     inline DescribePrincipalIdFormatRequest& AddResources(const char* value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
 

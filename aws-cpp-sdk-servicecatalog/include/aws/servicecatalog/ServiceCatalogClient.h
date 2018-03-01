@@ -39,6 +39,7 @@
 #include <aws/servicecatalog/model/DeleteProductResult.h>
 #include <aws/servicecatalog/model/DeleteProvisionedProductPlanResult.h>
 #include <aws/servicecatalog/model/DeleteProvisioningArtifactResult.h>
+#include <aws/servicecatalog/model/DeleteTagOptionResult.h>
 #include <aws/servicecatalog/model/DescribeConstraintResult.h>
 #include <aws/servicecatalog/model/DescribeCopyProductStatusResult.h>
 #include <aws/servicecatalog/model/DescribePortfolioResult.h>
@@ -143,6 +144,7 @@ namespace Model
         class DeleteProductRequest;
         class DeleteProvisionedProductPlanRequest;
         class DeleteProvisioningArtifactRequest;
+        class DeleteTagOptionRequest;
         class DescribeConstraintRequest;
         class DescribeCopyProductStatusRequest;
         class DescribePortfolioRequest;
@@ -203,6 +205,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteProductResult, Aws::Client::AWSError<ServiceCatalogErrors>> DeleteProductOutcome;
         typedef Aws::Utils::Outcome<DeleteProvisionedProductPlanResult, Aws::Client::AWSError<ServiceCatalogErrors>> DeleteProvisionedProductPlanOutcome;
         typedef Aws::Utils::Outcome<DeleteProvisioningArtifactResult, Aws::Client::AWSError<ServiceCatalogErrors>> DeleteProvisioningArtifactOutcome;
+        typedef Aws::Utils::Outcome<DeleteTagOptionResult, Aws::Client::AWSError<ServiceCatalogErrors>> DeleteTagOptionOutcome;
         typedef Aws::Utils::Outcome<DescribeConstraintResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeConstraintOutcome;
         typedef Aws::Utils::Outcome<DescribeCopyProductStatusResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeCopyProductStatusOutcome;
         typedef Aws::Utils::Outcome<DescribePortfolioResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribePortfolioOutcome;
@@ -263,6 +266,7 @@ namespace Model
         typedef std::future<DeleteProductOutcome> DeleteProductOutcomeCallable;
         typedef std::future<DeleteProvisionedProductPlanOutcome> DeleteProvisionedProductPlanOutcomeCallable;
         typedef std::future<DeleteProvisioningArtifactOutcome> DeleteProvisioningArtifactOutcomeCallable;
+        typedef std::future<DeleteTagOptionOutcome> DeleteTagOptionOutcomeCallable;
         typedef std::future<DescribeConstraintOutcome> DescribeConstraintOutcomeCallable;
         typedef std::future<DescribeCopyProductStatusOutcome> DescribeCopyProductStatusOutcomeCallable;
         typedef std::future<DescribePortfolioOutcome> DescribePortfolioOutcomeCallable;
@@ -326,6 +330,7 @@ namespace Model
     typedef std::function<void(const ServiceCatalogClient*, const Model::DeleteProductRequest&, const Model::DeleteProductOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProductResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DeleteProvisionedProductPlanRequest&, const Model::DeleteProvisionedProductPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProvisionedProductPlanResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DeleteProvisioningArtifactRequest&, const Model::DeleteProvisioningArtifactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProvisioningArtifactResponseReceivedHandler;
+    typedef std::function<void(const ServiceCatalogClient*, const Model::DeleteTagOptionRequest&, const Model::DeleteTagOptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTagOptionResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DescribeConstraintRequest&, const Model::DescribeConstraintOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConstraintResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DescribeCopyProductStatusRequest&, const Model::DescribeCopyProductStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCopyProductStatusResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DescribePortfolioRequest&, const Model::DescribePortfolioOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePortfolioResponseReceivedHandler;
@@ -659,10 +664,10 @@ namespace Model
         virtual void CreateProductAsync(const Model::CreateProductRequest& request, const CreateProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a plan. A plan includes the list of resources that will be created
-         * (when provisioning a new product) or modified (when updating a provisioned
-         * product) when the plan is executed.</p> <p>You can create one plan per
-         * provisioned product. To create a plan for an existing provisioned product, it's
+         * <p>Creates a plan. A plan includes the list of resources to be created (when
+         * provisioning a new product) or modified (when updating a provisioned product)
+         * when the plan is executed.</p> <p>You can create one plan per provisioned
+         * product. To create a plan for an existing provisioned product, the product
          * status must be AVAILBLE or TAINTED.</p> <p>To view the resource changes in the
          * change set, use <a>DescribeProvisionedProductPlan</a>. To create or modify the
          * provisioned product, use <a>ExecuteProvisionedProductPlan</a>.</p><p><h3>See
@@ -673,10 +678,10 @@ namespace Model
         virtual Model::CreateProvisionedProductPlanOutcome CreateProvisionedProductPlan(const Model::CreateProvisionedProductPlanRequest& request) const;
 
         /**
-         * <p>Creates a plan. A plan includes the list of resources that will be created
-         * (when provisioning a new product) or modified (when updating a provisioned
-         * product) when the plan is executed.</p> <p>You can create one plan per
-         * provisioned product. To create a plan for an existing provisioned product, it's
+         * <p>Creates a plan. A plan includes the list of resources to be created (when
+         * provisioning a new product) or modified (when updating a provisioned product)
+         * when the plan is executed.</p> <p>You can create one plan per provisioned
+         * product. To create a plan for an existing provisioned product, the product
          * status must be AVAILBLE or TAINTED.</p> <p>To view the resource changes in the
          * change set, use <a>DescribeProvisionedProductPlan</a>. To create or modify the
          * provisioned product, use <a>ExecuteProvisionedProductPlan</a>.</p><p><h3>See
@@ -689,10 +694,10 @@ namespace Model
         virtual Model::CreateProvisionedProductPlanOutcomeCallable CreateProvisionedProductPlanCallable(const Model::CreateProvisionedProductPlanRequest& request) const;
 
         /**
-         * <p>Creates a plan. A plan includes the list of resources that will be created
-         * (when provisioning a new product) or modified (when updating a provisioned
-         * product) when the plan is executed.</p> <p>You can create one plan per
-         * provisioned product. To create a plan for an existing provisioned product, it's
+         * <p>Creates a plan. A plan includes the list of resources to be created (when
+         * provisioning a new product) or modified (when updating a provisioned product)
+         * when the plan is executed.</p> <p>You can create one plan per provisioned
+         * product. To create a plan for an existing provisioned product, the product
          * status must be AVAILBLE or TAINTED.</p> <p>To view the resource changes in the
          * change set, use <a>DescribeProvisionedProductPlan</a>. To create or modify the
          * provisioned product, use <a>ExecuteProvisionedProductPlan</a>.</p><p><h3>See
@@ -933,6 +938,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteProvisioningArtifactAsync(const Model::DeleteProvisioningArtifactRequest& request, const DeleteProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the specified TagOption.</p> <p>You cannot delete a TagOption if it
+         * is associated with a product or portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteTagOption">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTagOptionOutcome DeleteTagOption(const Model::DeleteTagOptionRequest& request) const;
+
+        /**
+         * <p>Deletes the specified TagOption.</p> <p>You cannot delete a TagOption if it
+         * is associated with a product or portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteTagOption">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteTagOptionOutcomeCallable DeleteTagOptionCallable(const Model::DeleteTagOptionRequest& request) const;
+
+        /**
+         * <p>Deletes the specified TagOption.</p> <p>You cannot delete a TagOption if it
+         * is associated with a product or portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteTagOption">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteTagOptionAsync(const Model::DeleteTagOptionRequest& request, const DeleteTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the specified constraint.</p><p><h3>See Also:</h3>  
@@ -1600,16 +1633,16 @@ namespace Model
         virtual void ListPrincipalsForPortfolioAsync(const Model::ListPrincipalsForPortfolioRequest& request, const ListPrincipalsForPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the plans for the specified provisioned product or all plans the user
-         * has access to.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the plans for the specified provisioned product or all plans to which
+         * the user has access.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisionedProductPlans">AWS
          * API Reference</a></p>
          */
         virtual Model::ListProvisionedProductPlansOutcome ListProvisionedProductPlans(const Model::ListProvisionedProductPlansRequest& request) const;
 
         /**
-         * <p>Lists the plans for the specified provisioned product or all plans the user
-         * has access to.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the plans for the specified provisioned product or all plans to which
+         * the user has access.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisionedProductPlans">AWS
          * API Reference</a></p>
          *
@@ -1618,8 +1651,8 @@ namespace Model
         virtual Model::ListProvisionedProductPlansOutcomeCallable ListProvisionedProductPlansCallable(const Model::ListProvisionedProductPlansRequest& request) const;
 
         /**
-         * <p>Lists the plans for the specified provisioned product or all plans the user
-         * has access to.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the plans for the specified provisioned product or all plans to which
+         * the user has access.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisionedProductPlans">AWS
          * API Reference</a></p>
          *
@@ -2162,6 +2195,7 @@ namespace Model
         void DeleteProductAsyncHelper(const Model::DeleteProductRequest& request, const DeleteProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteProvisionedProductPlanAsyncHelper(const Model::DeleteProvisionedProductPlanRequest& request, const DeleteProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteProvisioningArtifactAsyncHelper(const Model::DeleteProvisioningArtifactRequest& request, const DeleteProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteTagOptionAsyncHelper(const Model::DeleteTagOptionRequest& request, const DeleteTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeConstraintAsyncHelper(const Model::DescribeConstraintRequest& request, const DescribeConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCopyProductStatusAsyncHelper(const Model::DescribeCopyProductStatusRequest& request, const DescribeCopyProductStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePortfolioAsyncHelper(const Model::DescribePortfolioRequest& request, const DescribePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

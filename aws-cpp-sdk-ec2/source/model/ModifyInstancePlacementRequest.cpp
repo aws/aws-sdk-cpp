@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 ModifyInstancePlacementRequest::ModifyInstancePlacementRequest() : 
     m_affinity(Affinity::NOT_SET),
     m_affinityHasBeenSet(false),
+    m_groupNameHasBeenSet(false),
     m_hostIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_tenancy(HostTenancy::NOT_SET),
@@ -37,6 +38,11 @@ Aws::String ModifyInstancePlacementRequest::SerializePayload() const
   if(m_affinityHasBeenSet)
   {
     ss << "Affinity=" << AffinityMapper::GetNameForAffinity(m_affinity) << "&";
+  }
+
+  if(m_groupNameHasBeenSet)
+  {
+    ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
 
   if(m_hostIdHasBeenSet)

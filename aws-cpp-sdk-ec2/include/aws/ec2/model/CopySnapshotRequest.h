@@ -367,15 +367,17 @@ namespace Model
 
 
     /**
-     * <p>The pre-signed URL that facilitates copying an encrypted snapshot. This
-     * parameter is only required when copying an encrypted snapshot with the Amazon
-     * EC2 Query API; it is available as an optional parameter in all other cases. The
-     * <code>PresignedUrl</code> should use the snapshot source endpoint, the
-     * <code>CopySnapshot</code> action, and include the <code>SourceRegion</code>,
-     * <code>SourceSnapshotId</code>, and <code>DestinationRegion</code> parameters.
-     * The <code>PresignedUrl</code> must be signed using AWS Signature Version 4.
-     * Because EBS snapshots are stored in Amazon S3, the signing algorithm for this
-     * parameter uses the same logic that is described in <a
+     * <p>The pre-signed URL parameter is required when copying an encrypted snapshot
+     * with the Amazon EC2 Query API; it is available as an optional parameter in all
+     * other cases. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query
+     * Requests</a>.</p> <p>The <code>PresignedUrl</code> should use the snapshot
+     * source endpoint, the <code>CopySnapshot</code> action, and include the
+     * <code>SourceRegion</code>, <code>SourceSnapshotId</code>, and
+     * <code>DestinationRegion</code> parameters. The <code>PresignedUrl</code> must be
+     * signed using AWS Signature Version 4. Because EBS snapshots are stored in Amazon
+     * S3, the signing algorithm for this parameter uses the same logic that is
+     * described in <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests by Using Query Parameters (AWS Signature Version 4)</a> in the
      * <i>Amazon Simple Storage Service API Reference</i>. An invalid or improperly
@@ -385,15 +387,17 @@ namespace Model
     inline const Aws::String& GetPresignedUrl() const{ return m_presignedUrl; }
 
     /**
-     * <p>The pre-signed URL that facilitates copying an encrypted snapshot. This
-     * parameter is only required when copying an encrypted snapshot with the Amazon
-     * EC2 Query API; it is available as an optional parameter in all other cases. The
-     * <code>PresignedUrl</code> should use the snapshot source endpoint, the
-     * <code>CopySnapshot</code> action, and include the <code>SourceRegion</code>,
-     * <code>SourceSnapshotId</code>, and <code>DestinationRegion</code> parameters.
-     * The <code>PresignedUrl</code> must be signed using AWS Signature Version 4.
-     * Because EBS snapshots are stored in Amazon S3, the signing algorithm for this
-     * parameter uses the same logic that is described in <a
+     * <p>The pre-signed URL parameter is required when copying an encrypted snapshot
+     * with the Amazon EC2 Query API; it is available as an optional parameter in all
+     * other cases. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query
+     * Requests</a>.</p> <p>The <code>PresignedUrl</code> should use the snapshot
+     * source endpoint, the <code>CopySnapshot</code> action, and include the
+     * <code>SourceRegion</code>, <code>SourceSnapshotId</code>, and
+     * <code>DestinationRegion</code> parameters. The <code>PresignedUrl</code> must be
+     * signed using AWS Signature Version 4. Because EBS snapshots are stored in Amazon
+     * S3, the signing algorithm for this parameter uses the same logic that is
+     * described in <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests by Using Query Parameters (AWS Signature Version 4)</a> in the
      * <i>Amazon Simple Storage Service API Reference</i>. An invalid or improperly
@@ -403,15 +407,17 @@ namespace Model
     inline void SetPresignedUrl(const Aws::String& value) { m_presignedUrlHasBeenSet = true; m_presignedUrl = value; }
 
     /**
-     * <p>The pre-signed URL that facilitates copying an encrypted snapshot. This
-     * parameter is only required when copying an encrypted snapshot with the Amazon
-     * EC2 Query API; it is available as an optional parameter in all other cases. The
-     * <code>PresignedUrl</code> should use the snapshot source endpoint, the
-     * <code>CopySnapshot</code> action, and include the <code>SourceRegion</code>,
-     * <code>SourceSnapshotId</code>, and <code>DestinationRegion</code> parameters.
-     * The <code>PresignedUrl</code> must be signed using AWS Signature Version 4.
-     * Because EBS snapshots are stored in Amazon S3, the signing algorithm for this
-     * parameter uses the same logic that is described in <a
+     * <p>The pre-signed URL parameter is required when copying an encrypted snapshot
+     * with the Amazon EC2 Query API; it is available as an optional parameter in all
+     * other cases. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query
+     * Requests</a>.</p> <p>The <code>PresignedUrl</code> should use the snapshot
+     * source endpoint, the <code>CopySnapshot</code> action, and include the
+     * <code>SourceRegion</code>, <code>SourceSnapshotId</code>, and
+     * <code>DestinationRegion</code> parameters. The <code>PresignedUrl</code> must be
+     * signed using AWS Signature Version 4. Because EBS snapshots are stored in Amazon
+     * S3, the signing algorithm for this parameter uses the same logic that is
+     * described in <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests by Using Query Parameters (AWS Signature Version 4)</a> in the
      * <i>Amazon Simple Storage Service API Reference</i>. An invalid or improperly
@@ -421,15 +427,17 @@ namespace Model
     inline void SetPresignedUrl(Aws::String&& value) { m_presignedUrlHasBeenSet = true; m_presignedUrl = std::move(value); }
 
     /**
-     * <p>The pre-signed URL that facilitates copying an encrypted snapshot. This
-     * parameter is only required when copying an encrypted snapshot with the Amazon
-     * EC2 Query API; it is available as an optional parameter in all other cases. The
-     * <code>PresignedUrl</code> should use the snapshot source endpoint, the
-     * <code>CopySnapshot</code> action, and include the <code>SourceRegion</code>,
-     * <code>SourceSnapshotId</code>, and <code>DestinationRegion</code> parameters.
-     * The <code>PresignedUrl</code> must be signed using AWS Signature Version 4.
-     * Because EBS snapshots are stored in Amazon S3, the signing algorithm for this
-     * parameter uses the same logic that is described in <a
+     * <p>The pre-signed URL parameter is required when copying an encrypted snapshot
+     * with the Amazon EC2 Query API; it is available as an optional parameter in all
+     * other cases. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query
+     * Requests</a>.</p> <p>The <code>PresignedUrl</code> should use the snapshot
+     * source endpoint, the <code>CopySnapshot</code> action, and include the
+     * <code>SourceRegion</code>, <code>SourceSnapshotId</code>, and
+     * <code>DestinationRegion</code> parameters. The <code>PresignedUrl</code> must be
+     * signed using AWS Signature Version 4. Because EBS snapshots are stored in Amazon
+     * S3, the signing algorithm for this parameter uses the same logic that is
+     * described in <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests by Using Query Parameters (AWS Signature Version 4)</a> in the
      * <i>Amazon Simple Storage Service API Reference</i>. An invalid or improperly
@@ -439,15 +447,17 @@ namespace Model
     inline void SetPresignedUrl(const char* value) { m_presignedUrlHasBeenSet = true; m_presignedUrl.assign(value); }
 
     /**
-     * <p>The pre-signed URL that facilitates copying an encrypted snapshot. This
-     * parameter is only required when copying an encrypted snapshot with the Amazon
-     * EC2 Query API; it is available as an optional parameter in all other cases. The
-     * <code>PresignedUrl</code> should use the snapshot source endpoint, the
-     * <code>CopySnapshot</code> action, and include the <code>SourceRegion</code>,
-     * <code>SourceSnapshotId</code>, and <code>DestinationRegion</code> parameters.
-     * The <code>PresignedUrl</code> must be signed using AWS Signature Version 4.
-     * Because EBS snapshots are stored in Amazon S3, the signing algorithm for this
-     * parameter uses the same logic that is described in <a
+     * <p>The pre-signed URL parameter is required when copying an encrypted snapshot
+     * with the Amazon EC2 Query API; it is available as an optional parameter in all
+     * other cases. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query
+     * Requests</a>.</p> <p>The <code>PresignedUrl</code> should use the snapshot
+     * source endpoint, the <code>CopySnapshot</code> action, and include the
+     * <code>SourceRegion</code>, <code>SourceSnapshotId</code>, and
+     * <code>DestinationRegion</code> parameters. The <code>PresignedUrl</code> must be
+     * signed using AWS Signature Version 4. Because EBS snapshots are stored in Amazon
+     * S3, the signing algorithm for this parameter uses the same logic that is
+     * described in <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests by Using Query Parameters (AWS Signature Version 4)</a> in the
      * <i>Amazon Simple Storage Service API Reference</i>. An invalid or improperly
@@ -457,15 +467,17 @@ namespace Model
     inline CopySnapshotRequest& WithPresignedUrl(const Aws::String& value) { SetPresignedUrl(value); return *this;}
 
     /**
-     * <p>The pre-signed URL that facilitates copying an encrypted snapshot. This
-     * parameter is only required when copying an encrypted snapshot with the Amazon
-     * EC2 Query API; it is available as an optional parameter in all other cases. The
-     * <code>PresignedUrl</code> should use the snapshot source endpoint, the
-     * <code>CopySnapshot</code> action, and include the <code>SourceRegion</code>,
-     * <code>SourceSnapshotId</code>, and <code>DestinationRegion</code> parameters.
-     * The <code>PresignedUrl</code> must be signed using AWS Signature Version 4.
-     * Because EBS snapshots are stored in Amazon S3, the signing algorithm for this
-     * parameter uses the same logic that is described in <a
+     * <p>The pre-signed URL parameter is required when copying an encrypted snapshot
+     * with the Amazon EC2 Query API; it is available as an optional parameter in all
+     * other cases. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query
+     * Requests</a>.</p> <p>The <code>PresignedUrl</code> should use the snapshot
+     * source endpoint, the <code>CopySnapshot</code> action, and include the
+     * <code>SourceRegion</code>, <code>SourceSnapshotId</code>, and
+     * <code>DestinationRegion</code> parameters. The <code>PresignedUrl</code> must be
+     * signed using AWS Signature Version 4. Because EBS snapshots are stored in Amazon
+     * S3, the signing algorithm for this parameter uses the same logic that is
+     * described in <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests by Using Query Parameters (AWS Signature Version 4)</a> in the
      * <i>Amazon Simple Storage Service API Reference</i>. An invalid or improperly
@@ -475,15 +487,17 @@ namespace Model
     inline CopySnapshotRequest& WithPresignedUrl(Aws::String&& value) { SetPresignedUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The pre-signed URL that facilitates copying an encrypted snapshot. This
-     * parameter is only required when copying an encrypted snapshot with the Amazon
-     * EC2 Query API; it is available as an optional parameter in all other cases. The
-     * <code>PresignedUrl</code> should use the snapshot source endpoint, the
-     * <code>CopySnapshot</code> action, and include the <code>SourceRegion</code>,
-     * <code>SourceSnapshotId</code>, and <code>DestinationRegion</code> parameters.
-     * The <code>PresignedUrl</code> must be signed using AWS Signature Version 4.
-     * Because EBS snapshots are stored in Amazon S3, the signing algorithm for this
-     * parameter uses the same logic that is described in <a
+     * <p>The pre-signed URL parameter is required when copying an encrypted snapshot
+     * with the Amazon EC2 Query API; it is available as an optional parameter in all
+     * other cases. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query
+     * Requests</a>.</p> <p>The <code>PresignedUrl</code> should use the snapshot
+     * source endpoint, the <code>CopySnapshot</code> action, and include the
+     * <code>SourceRegion</code>, <code>SourceSnapshotId</code>, and
+     * <code>DestinationRegion</code> parameters. The <code>PresignedUrl</code> must be
+     * signed using AWS Signature Version 4. Because EBS snapshots are stored in Amazon
+     * S3, the signing algorithm for this parameter uses the same logic that is
+     * described in <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests by Using Query Parameters (AWS Signature Version 4)</a> in the
      * <i>Amazon Simple Storage Service API Reference</i>. An invalid or improperly

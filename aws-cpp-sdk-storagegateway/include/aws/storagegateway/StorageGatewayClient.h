@@ -464,32 +464,26 @@ namespace Model
 
 
         /**
-         * <p>Activates the gateway you previously deployed on your host. For more
-         * information, see <a
-         * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedActivateGateway-common.html">
-         * Activate the AWS Storage Gateway</a>. In the activation process, you specify
-         * information such as the region you want to use for storing snapshots or tapes,
-         * the time zone for scheduled snapshots the gateway snapshot schedule window, an
-         * activation key, and a name for your gateway. The activation process also
-         * associates your gateway with your account; for more information, see
-         * <a>UpdateGatewayInformation</a>.</p> <note> <p>You must turn on the gateway VM
-         * before you can activate your gateway.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Activates the gateway you previously deployed on your host. In the activation
+         * process, you specify information such as the region you want to use for storing
+         * snapshots or tapes, the time zone for scheduled snapshots the gateway snapshot
+         * schedule window, an activation key, and a name for your gateway. The activation
+         * process also associates your gateway with your account; for more information,
+         * see <a>UpdateGatewayInformation</a>.</p> <note> <p>You must turn on the gateway
+         * VM before you can activate your gateway.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ActivateGateway">AWS
          * API Reference</a></p>
          */
         virtual Model::ActivateGatewayOutcome ActivateGateway(const Model::ActivateGatewayRequest& request) const;
 
         /**
-         * <p>Activates the gateway you previously deployed on your host. For more
-         * information, see <a
-         * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedActivateGateway-common.html">
-         * Activate the AWS Storage Gateway</a>. In the activation process, you specify
-         * information such as the region you want to use for storing snapshots or tapes,
-         * the time zone for scheduled snapshots the gateway snapshot schedule window, an
-         * activation key, and a name for your gateway. The activation process also
-         * associates your gateway with your account; for more information, see
-         * <a>UpdateGatewayInformation</a>.</p> <note> <p>You must turn on the gateway VM
-         * before you can activate your gateway.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Activates the gateway you previously deployed on your host. In the activation
+         * process, you specify information such as the region you want to use for storing
+         * snapshots or tapes, the time zone for scheduled snapshots the gateway snapshot
+         * schedule window, an activation key, and a name for your gateway. The activation
+         * process also associates your gateway with your account; for more information,
+         * see <a>UpdateGatewayInformation</a>.</p> <note> <p>You must turn on the gateway
+         * VM before you can activate your gateway.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ActivateGateway">AWS
          * API Reference</a></p>
          *
@@ -498,16 +492,13 @@ namespace Model
         virtual Model::ActivateGatewayOutcomeCallable ActivateGatewayCallable(const Model::ActivateGatewayRequest& request) const;
 
         /**
-         * <p>Activates the gateway you previously deployed on your host. For more
-         * information, see <a
-         * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedActivateGateway-common.html">
-         * Activate the AWS Storage Gateway</a>. In the activation process, you specify
-         * information such as the region you want to use for storing snapshots or tapes,
-         * the time zone for scheduled snapshots the gateway snapshot schedule window, an
-         * activation key, and a name for your gateway. The activation process also
-         * associates your gateway with your account; for more information, see
-         * <a>UpdateGatewayInformation</a>.</p> <note> <p>You must turn on the gateway VM
-         * before you can activate your gateway.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Activates the gateway you previously deployed on your host. In the activation
+         * process, you specify information such as the region you want to use for storing
+         * snapshots or tapes, the time zone for scheduled snapshots the gateway snapshot
+         * schedule window, an activation key, and a name for your gateway. The activation
+         * process also associates your gateway with your account; for more information,
+         * see <a>UpdateGatewayInformation</a>.</p> <note> <p>You must turn on the gateway
+         * VM before you can activate your gateway.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ActivateGateway">AWS
          * API Reference</a></p>
          *
@@ -2418,32 +2409,38 @@ namespace Model
         virtual void ListVolumesAsync(const Model::ListVolumesRequest& request, const ListVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sends you notification when all file data written to the NFS file share has
-         * been uploaded to Amazon S3.</p> <p>AWS Storage Gateway can send a notification
-         * through Amazon CloudWatch Events when all files written to your file share up to
-         * that point in time have been uploaded to Amazon S3. These files include files
-         * written to the NFS file share up to the time that you make a request for
-         * notification. When the upload is done, Storage Gateway sends you notification
-         * through an Amazon CloudWatch event. You can configure CloudWatch Events to sent
-         * the notification through event targets such as email, SNS or a Lambda function.
-         * text or Lambda functions. This operation is only supported in the file gateway
-         * type.</p><p><h3>See Also:</h3>   <a
+         * <p>Sends you notification through CloudWatch Events when all files written to
+         * your NFS file share have been uploaded to Amazon S3.</p> <p>AWS Storage Gateway
+         * can send a notification through Amazon CloudWatch Events when all files written
+         * to your file share up to that point in time have been uploaded to Amazon S3.
+         * These files include files written to the NFS file share up to the time that you
+         * make a request for notification. When the upload is done, Storage Gateway sends
+         * you notification through an Amazon CloudWatch Event. You can configure
+         * CloudWatch Events to send the notification through event targets such as Amazon
+         * SNS or AWS Lambda function. This operation is only supported in the file gateway
+         * type.</p> <p>For more information, see Getting File Upload Notification in the
+         * Storage Gateway User Guide
+         * (https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-upload-notification).
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NotifyWhenUploaded">AWS
          * API Reference</a></p>
          */
         virtual Model::NotifyWhenUploadedOutcome NotifyWhenUploaded(const Model::NotifyWhenUploadedRequest& request) const;
 
         /**
-         * <p>Sends you notification when all file data written to the NFS file share has
-         * been uploaded to Amazon S3.</p> <p>AWS Storage Gateway can send a notification
-         * through Amazon CloudWatch Events when all files written to your file share up to
-         * that point in time have been uploaded to Amazon S3. These files include files
-         * written to the NFS file share up to the time that you make a request for
-         * notification. When the upload is done, Storage Gateway sends you notification
-         * through an Amazon CloudWatch event. You can configure CloudWatch Events to sent
-         * the notification through event targets such as email, SNS or a Lambda function.
-         * text or Lambda functions. This operation is only supported in the file gateway
-         * type.</p><p><h3>See Also:</h3>   <a
+         * <p>Sends you notification through CloudWatch Events when all files written to
+         * your NFS file share have been uploaded to Amazon S3.</p> <p>AWS Storage Gateway
+         * can send a notification through Amazon CloudWatch Events when all files written
+         * to your file share up to that point in time have been uploaded to Amazon S3.
+         * These files include files written to the NFS file share up to the time that you
+         * make a request for notification. When the upload is done, Storage Gateway sends
+         * you notification through an Amazon CloudWatch Event. You can configure
+         * CloudWatch Events to send the notification through event targets such as Amazon
+         * SNS or AWS Lambda function. This operation is only supported in the file gateway
+         * type.</p> <p>For more information, see Getting File Upload Notification in the
+         * Storage Gateway User Guide
+         * (https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-upload-notification).
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NotifyWhenUploaded">AWS
          * API Reference</a></p>
          *
@@ -2452,16 +2449,19 @@ namespace Model
         virtual Model::NotifyWhenUploadedOutcomeCallable NotifyWhenUploadedCallable(const Model::NotifyWhenUploadedRequest& request) const;
 
         /**
-         * <p>Sends you notification when all file data written to the NFS file share has
-         * been uploaded to Amazon S3.</p> <p>AWS Storage Gateway can send a notification
-         * through Amazon CloudWatch Events when all files written to your file share up to
-         * that point in time have been uploaded to Amazon S3. These files include files
-         * written to the NFS file share up to the time that you make a request for
-         * notification. When the upload is done, Storage Gateway sends you notification
-         * through an Amazon CloudWatch event. You can configure CloudWatch Events to sent
-         * the notification through event targets such as email, SNS or a Lambda function.
-         * text or Lambda functions. This operation is only supported in the file gateway
-         * type.</p><p><h3>See Also:</h3>   <a
+         * <p>Sends you notification through CloudWatch Events when all files written to
+         * your NFS file share have been uploaded to Amazon S3.</p> <p>AWS Storage Gateway
+         * can send a notification through Amazon CloudWatch Events when all files written
+         * to your file share up to that point in time have been uploaded to Amazon S3.
+         * These files include files written to the NFS file share up to the time that you
+         * make a request for notification. When the upload is done, Storage Gateway sends
+         * you notification through an Amazon CloudWatch Event. You can configure
+         * CloudWatch Events to send the notification through event targets such as Amazon
+         * SNS or AWS Lambda function. This operation is only supported in the file gateway
+         * type.</p> <p>For more information, see Getting File Upload Notification in the
+         * Storage Gateway User Guide
+         * (https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-upload-notification).
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NotifyWhenUploaded">AWS
          * API Reference</a></p>
          *
@@ -2541,12 +2541,12 @@ namespace Model
          * gateway. For example, an error can occur when a disk is corrupted or removed
          * from the gateway. When a cache is reset, the gateway loses its cache storage. At
          * this point you can reconfigure the disks as cache disks. This operation is only
-         * supported in the cached volume, tape and file gateway types.</p> <important>
-         * <p>If the cache disk you are resetting contains data that has not been uploaded
-         * to Amazon S3 yet, that data can be lost. After you reset cache disks, there will
-         * be no configured cache disks left in the gateway, so you must configure at least
-         * one new cache disk for your gateway to function properly.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * supported in the cached volume and tape types.</p> <important> <p>If the cache
+         * disk you are resetting contains data that has not been uploaded to Amazon S3
+         * yet, that data can be lost. After you reset cache disks, there will be no
+         * configured cache disks left in the gateway, so you must configure at least one
+         * new cache disk for your gateway to function properly.</p> </important><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ResetCache">AWS
          * API Reference</a></p>
          */
@@ -2559,12 +2559,12 @@ namespace Model
          * gateway. For example, an error can occur when a disk is corrupted or removed
          * from the gateway. When a cache is reset, the gateway loses its cache storage. At
          * this point you can reconfigure the disks as cache disks. This operation is only
-         * supported in the cached volume, tape and file gateway types.</p> <important>
-         * <p>If the cache disk you are resetting contains data that has not been uploaded
-         * to Amazon S3 yet, that data can be lost. After you reset cache disks, there will
-         * be no configured cache disks left in the gateway, so you must configure at least
-         * one new cache disk for your gateway to function properly.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * supported in the cached volume and tape types.</p> <important> <p>If the cache
+         * disk you are resetting contains data that has not been uploaded to Amazon S3
+         * yet, that data can be lost. After you reset cache disks, there will be no
+         * configured cache disks left in the gateway, so you must configure at least one
+         * new cache disk for your gateway to function properly.</p> </important><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ResetCache">AWS
          * API Reference</a></p>
          *
@@ -2579,12 +2579,12 @@ namespace Model
          * gateway. For example, an error can occur when a disk is corrupted or removed
          * from the gateway. When a cache is reset, the gateway loses its cache storage. At
          * this point you can reconfigure the disks as cache disks. This operation is only
-         * supported in the cached volume, tape and file gateway types.</p> <important>
-         * <p>If the cache disk you are resetting contains data that has not been uploaded
-         * to Amazon S3 yet, that data can be lost. After you reset cache disks, there will
-         * be no configured cache disks left in the gateway, so you must configure at least
-         * one new cache disk for your gateway to function properly.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * supported in the cached volume and tape types.</p> <important> <p>If the cache
+         * disk you are resetting contains data that has not been uploaded to Amazon S3
+         * yet, that data can be lost. After you reset cache disks, there will be no
+         * configured cache disks left in the gateway, so you must configure at least one
+         * new cache disk for your gateway to function properly.</p> </important><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ResetCache">AWS
          * API Reference</a></p>
          *

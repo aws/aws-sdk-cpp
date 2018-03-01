@@ -72,43 +72,43 @@ namespace Model
 
 
     /**
-     * <p>Information about the resources changes that will occur when the plan is
+     * <p>Information about the resource changes that will occur when the plan is
      * executed.</p>
      */
     inline const Aws::Vector<ResourceChange>& GetResourceChanges() const{ return m_resourceChanges; }
 
     /**
-     * <p>Information about the resources changes that will occur when the plan is
+     * <p>Information about the resource changes that will occur when the plan is
      * executed.</p>
      */
     inline void SetResourceChanges(const Aws::Vector<ResourceChange>& value) { m_resourceChanges = value; }
 
     /**
-     * <p>Information about the resources changes that will occur when the plan is
+     * <p>Information about the resource changes that will occur when the plan is
      * executed.</p>
      */
     inline void SetResourceChanges(Aws::Vector<ResourceChange>&& value) { m_resourceChanges = std::move(value); }
 
     /**
-     * <p>Information about the resources changes that will occur when the plan is
+     * <p>Information about the resource changes that will occur when the plan is
      * executed.</p>
      */
     inline DescribeProvisionedProductPlanResult& WithResourceChanges(const Aws::Vector<ResourceChange>& value) { SetResourceChanges(value); return *this;}
 
     /**
-     * <p>Information about the resources changes that will occur when the plan is
+     * <p>Information about the resource changes that will occur when the plan is
      * executed.</p>
      */
     inline DescribeProvisionedProductPlanResult& WithResourceChanges(Aws::Vector<ResourceChange>&& value) { SetResourceChanges(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the resources changes that will occur when the plan is
+     * <p>Information about the resource changes that will occur when the plan is
      * executed.</p>
      */
     inline DescribeProvisionedProductPlanResult& AddResourceChanges(const ResourceChange& value) { m_resourceChanges.push_back(value); return *this; }
 
     /**
-     * <p>Information about the resources changes that will occur when the plan is
+     * <p>Information about the resource changes that will occur when the plan is
      * executed.</p>
      */
     inline DescribeProvisionedProductPlanResult& AddResourceChanges(ResourceChange&& value) { m_resourceChanges.push_back(std::move(value)); return *this; }

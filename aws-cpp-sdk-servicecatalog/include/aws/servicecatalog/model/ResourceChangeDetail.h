@@ -50,63 +50,63 @@ namespace Model
 
 
     /**
-     * <p>Information about the resource attribute that will be modified.</p>
+     * <p>Information about the resource attribute to be modified.</p>
      */
     inline const ResourceTargetDefinition& GetTarget() const{ return m_target; }
 
     /**
-     * <p>Information about the resource attribute that will be modified.</p>
+     * <p>Information about the resource attribute to be modified.</p>
      */
     inline void SetTarget(const ResourceTargetDefinition& value) { m_targetHasBeenSet = true; m_target = value; }
 
     /**
-     * <p>Information about the resource attribute that will be modified.</p>
+     * <p>Information about the resource attribute to be modified.</p>
      */
     inline void SetTarget(ResourceTargetDefinition&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
 
     /**
-     * <p>Information about the resource attribute that will be modified.</p>
+     * <p>Information about the resource attribute to be modified.</p>
      */
     inline ResourceChangeDetail& WithTarget(const ResourceTargetDefinition& value) { SetTarget(value); return *this;}
 
     /**
-     * <p>Information about the resource attribute that will be modified.</p>
+     * <p>Information about the resource attribute to be modified.</p>
      */
     inline ResourceChangeDetail& WithTarget(ResourceTargetDefinition&& value) { SetTarget(std::move(value)); return *this;}
 
 
     /**
-     * <p>For static evaluations, the value the resource attribute will change and the
-     * new value is known. For dynamic evaluations, the value might change, and any new
-     * value will be determined when the plan is updated.</p>
+     * <p>For static evaluations, the value of the resource attribute will change and
+     * the new value is known. For dynamic evaluations, the value might change, and any
+     * new value will be determined when the plan is updated.</p>
      */
     inline const EvaluationType& GetEvaluation() const{ return m_evaluation; }
 
     /**
-     * <p>For static evaluations, the value the resource attribute will change and the
-     * new value is known. For dynamic evaluations, the value might change, and any new
-     * value will be determined when the plan is updated.</p>
+     * <p>For static evaluations, the value of the resource attribute will change and
+     * the new value is known. For dynamic evaluations, the value might change, and any
+     * new value will be determined when the plan is updated.</p>
      */
     inline void SetEvaluation(const EvaluationType& value) { m_evaluationHasBeenSet = true; m_evaluation = value; }
 
     /**
-     * <p>For static evaluations, the value the resource attribute will change and the
-     * new value is known. For dynamic evaluations, the value might change, and any new
-     * value will be determined when the plan is updated.</p>
+     * <p>For static evaluations, the value of the resource attribute will change and
+     * the new value is known. For dynamic evaluations, the value might change, and any
+     * new value will be determined when the plan is updated.</p>
      */
     inline void SetEvaluation(EvaluationType&& value) { m_evaluationHasBeenSet = true; m_evaluation = std::move(value); }
 
     /**
-     * <p>For static evaluations, the value the resource attribute will change and the
-     * new value is known. For dynamic evaluations, the value might change, and any new
-     * value will be determined when the plan is updated.</p>
+     * <p>For static evaluations, the value of the resource attribute will change and
+     * the new value is known. For dynamic evaluations, the value might change, and any
+     * new value will be determined when the plan is updated.</p>
      */
     inline ResourceChangeDetail& WithEvaluation(const EvaluationType& value) { SetEvaluation(value); return *this;}
 
     /**
-     * <p>For static evaluations, the value the resource attribute will change and the
-     * new value is known. For dynamic evaluations, the value might change, and any new
-     * value will be determined when the plan is updated.</p>
+     * <p>For static evaluations, the value of the resource attribute will change and
+     * the new value is known. For dynamic evaluations, the value might change, and any
+     * new value will be determined when the plan is updated.</p>
      */
     inline ResourceChangeDetail& WithEvaluation(EvaluationType&& value) { SetEvaluation(std::move(value)); return *this;}
 
