@@ -170,8 +170,11 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
-     * <li> <p>Images in Amazon ECR repositories can be specified by either using the
-     * full <code>registry/repository:tag</code> or
+     * <li> <p>When a new task starts, the Amazon ECS container agent pulls the latest
+     * version of the specified image and tag for the container to use. However,
+     * subsequent updates to a repository image are not propagated to already running
+     * tasks.</p> </li> <li> <p>Images in Amazon ECR repositories can be specified by
+     * either using the full <code>registry/repository:tag</code> or
      * <code>registry/repository@digest</code>. For example,
      * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;:latest</code>
      * or
@@ -199,8 +202,11 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
-     * <li> <p>Images in Amazon ECR repositories can be specified by either using the
-     * full <code>registry/repository:tag</code> or
+     * <li> <p>When a new task starts, the Amazon ECS container agent pulls the latest
+     * version of the specified image and tag for the container to use. However,
+     * subsequent updates to a repository image are not propagated to already running
+     * tasks.</p> </li> <li> <p>Images in Amazon ECR repositories can be specified by
+     * either using the full <code>registry/repository:tag</code> or
      * <code>registry/repository@digest</code>. For example,
      * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;:latest</code>
      * or
@@ -228,8 +234,11 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
-     * <li> <p>Images in Amazon ECR repositories can be specified by either using the
-     * full <code>registry/repository:tag</code> or
+     * <li> <p>When a new task starts, the Amazon ECS container agent pulls the latest
+     * version of the specified image and tag for the container to use. However,
+     * subsequent updates to a repository image are not propagated to already running
+     * tasks.</p> </li> <li> <p>Images in Amazon ECR repositories can be specified by
+     * either using the full <code>registry/repository:tag</code> or
      * <code>registry/repository@digest</code>. For example,
      * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;:latest</code>
      * or
@@ -257,8 +266,11 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
-     * <li> <p>Images in Amazon ECR repositories can be specified by either using the
-     * full <code>registry/repository:tag</code> or
+     * <li> <p>When a new task starts, the Amazon ECS container agent pulls the latest
+     * version of the specified image and tag for the container to use. However,
+     * subsequent updates to a repository image are not propagated to already running
+     * tasks.</p> </li> <li> <p>Images in Amazon ECR repositories can be specified by
+     * either using the full <code>registry/repository:tag</code> or
      * <code>registry/repository@digest</code>. For example,
      * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;:latest</code>
      * or
@@ -286,8 +298,11 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
-     * <li> <p>Images in Amazon ECR repositories can be specified by either using the
-     * full <code>registry/repository:tag</code> or
+     * <li> <p>When a new task starts, the Amazon ECS container agent pulls the latest
+     * version of the specified image and tag for the container to use. However,
+     * subsequent updates to a repository image are not propagated to already running
+     * tasks.</p> </li> <li> <p>Images in Amazon ECR repositories can be specified by
+     * either using the full <code>registry/repository:tag</code> or
      * <code>registry/repository@digest</code>. For example,
      * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;:latest</code>
      * or
@@ -315,8 +330,11 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
-     * <li> <p>Images in Amazon ECR repositories can be specified by either using the
-     * full <code>registry/repository:tag</code> or
+     * <li> <p>When a new task starts, the Amazon ECS container agent pulls the latest
+     * version of the specified image and tag for the container to use. However,
+     * subsequent updates to a repository image are not propagated to already running
+     * tasks.</p> </li> <li> <p>Images in Amazon ECR repositories can be specified by
+     * either using the full <code>registry/repository:tag</code> or
      * <code>registry/repository@digest</code>. For example,
      * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;:latest</code>
      * or
@@ -344,8 +362,11 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
-     * <li> <p>Images in Amazon ECR repositories can be specified by either using the
-     * full <code>registry/repository:tag</code> or
+     * <li> <p>When a new task starts, the Amazon ECS container agent pulls the latest
+     * version of the specified image and tag for the container to use. However,
+     * subsequent updates to a repository image are not propagated to already running
+     * tasks.</p> </li> <li> <p>Images in Amazon ECR repositories can be specified by
+     * either using the full <code>registry/repository:tag</code> or
      * <code>registry/repository@digest</code>. For example,
      * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;:latest</code>
      * or
@@ -1622,35 +1643,35 @@ namespace Model
     /**
      * <p>Linux-specific modifications that are applied to the container, such as Linux
      * <a>KernelCapabilities</a>.</p> <note> <p>This parameter is not supported for
-     * Windows containers or tasks using the Fargate launch type.</p> </note>
+     * Windows containers.</p> </note>
      */
     inline const LinuxParameters& GetLinuxParameters() const{ return m_linuxParameters; }
 
     /**
      * <p>Linux-specific modifications that are applied to the container, such as Linux
      * <a>KernelCapabilities</a>.</p> <note> <p>This parameter is not supported for
-     * Windows containers or tasks using the Fargate launch type.</p> </note>
+     * Windows containers.</p> </note>
      */
     inline void SetLinuxParameters(const LinuxParameters& value) { m_linuxParametersHasBeenSet = true; m_linuxParameters = value; }
 
     /**
      * <p>Linux-specific modifications that are applied to the container, such as Linux
      * <a>KernelCapabilities</a>.</p> <note> <p>This parameter is not supported for
-     * Windows containers or tasks using the Fargate launch type.</p> </note>
+     * Windows containers.</p> </note>
      */
     inline void SetLinuxParameters(LinuxParameters&& value) { m_linuxParametersHasBeenSet = true; m_linuxParameters = std::move(value); }
 
     /**
      * <p>Linux-specific modifications that are applied to the container, such as Linux
      * <a>KernelCapabilities</a>.</p> <note> <p>This parameter is not supported for
-     * Windows containers or tasks using the Fargate launch type.</p> </note>
+     * Windows containers.</p> </note>
      */
     inline ContainerDefinition& WithLinuxParameters(const LinuxParameters& value) { SetLinuxParameters(value); return *this;}
 
     /**
      * <p>Linux-specific modifications that are applied to the container, such as Linux
      * <a>KernelCapabilities</a>.</p> <note> <p>This parameter is not supported for
-     * Windows containers or tasks using the Fargate launch type.</p> </note>
+     * Windows containers.</p> </note>
      */
     inline ContainerDefinition& WithLinuxParameters(LinuxParameters&& value) { SetLinuxParameters(std::move(value)); return *this;}
 

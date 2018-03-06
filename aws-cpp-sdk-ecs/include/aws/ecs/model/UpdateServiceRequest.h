@@ -366,17 +366,23 @@ namespace Model
 
 
     /**
-     * <p>Whether or not to force a new deployment of the service.</p>
+     * <p>Whether or not to force a new deployment of the service. By default,
+     * <code>--no-force-new-deployment</code> is assumed unless specified
+     * otherwise.</p>
      */
     inline bool GetForceNewDeployment() const{ return m_forceNewDeployment; }
 
     /**
-     * <p>Whether or not to force a new deployment of the service.</p>
+     * <p>Whether or not to force a new deployment of the service. By default,
+     * <code>--no-force-new-deployment</code> is assumed unless specified
+     * otherwise.</p>
      */
     inline void SetForceNewDeployment(bool value) { m_forceNewDeploymentHasBeenSet = true; m_forceNewDeployment = value; }
 
     /**
-     * <p>Whether or not to force a new deployment of the service.</p>
+     * <p>Whether or not to force a new deployment of the service. By default,
+     * <code>--no-force-new-deployment</code> is assumed unless specified
+     * otherwise.</p>
      */
     inline UpdateServiceRequest& WithForceNewDeployment(bool value) { SetForceNewDeployment(value); return *this;}
 

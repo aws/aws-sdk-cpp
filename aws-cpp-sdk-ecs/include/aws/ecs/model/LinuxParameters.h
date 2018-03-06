@@ -51,31 +51,41 @@ namespace Model
 
     /**
      * <p>The Linux capabilities for the container that are added to or dropped from
-     * the default configuration provided by Docker.</p>
+     * the default configuration provided by Docker.</p> <note> <p>If you are using
+     * tasks that use the Fargate launch type, <code>capabilities</code> is supported
+     * but the <code>add</code> parameter is not supported.</p> </note>
      */
     inline const KernelCapabilities& GetCapabilities() const{ return m_capabilities; }
 
     /**
      * <p>The Linux capabilities for the container that are added to or dropped from
-     * the default configuration provided by Docker.</p>
+     * the default configuration provided by Docker.</p> <note> <p>If you are using
+     * tasks that use the Fargate launch type, <code>capabilities</code> is supported
+     * but the <code>add</code> parameter is not supported.</p> </note>
      */
     inline void SetCapabilities(const KernelCapabilities& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
 
     /**
      * <p>The Linux capabilities for the container that are added to or dropped from
-     * the default configuration provided by Docker.</p>
+     * the default configuration provided by Docker.</p> <note> <p>If you are using
+     * tasks that use the Fargate launch type, <code>capabilities</code> is supported
+     * but the <code>add</code> parameter is not supported.</p> </note>
      */
     inline void SetCapabilities(KernelCapabilities&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
 
     /**
      * <p>The Linux capabilities for the container that are added to or dropped from
-     * the default configuration provided by Docker.</p>
+     * the default configuration provided by Docker.</p> <note> <p>If you are using
+     * tasks that use the Fargate launch type, <code>capabilities</code> is supported
+     * but the <code>add</code> parameter is not supported.</p> </note>
      */
     inline LinuxParameters& WithCapabilities(const KernelCapabilities& value) { SetCapabilities(value); return *this;}
 
     /**
      * <p>The Linux capabilities for the container that are added to or dropped from
-     * the default configuration provided by Docker.</p>
+     * the default configuration provided by Docker.</p> <note> <p>If you are using
+     * tasks that use the Fargate launch type, <code>capabilities</code> is supported
+     * but the <code>add</code> parameter is not supported.</p> </note>
      */
     inline LinuxParameters& WithCapabilities(KernelCapabilities&& value) { SetCapabilities(std::move(value)); return *this;}
 
@@ -87,7 +97,9 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--device</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>devices</code> parameter is not supported.</p> </note>
      */
     inline const Aws::Vector<Device>& GetDevices() const{ return m_devices; }
 
@@ -98,7 +110,9 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--device</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>devices</code> parameter is not supported.</p> </note>
      */
     inline void SetDevices(const Aws::Vector<Device>& value) { m_devicesHasBeenSet = true; m_devices = value; }
 
@@ -109,7 +123,9 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--device</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>devices</code> parameter is not supported.</p> </note>
      */
     inline void SetDevices(Aws::Vector<Device>&& value) { m_devicesHasBeenSet = true; m_devices = std::move(value); }
 
@@ -120,7 +136,9 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--device</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>devices</code> parameter is not supported.</p> </note>
      */
     inline LinuxParameters& WithDevices(const Aws::Vector<Device>& value) { SetDevices(value); return *this;}
 
@@ -131,7 +149,9 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--device</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>devices</code> parameter is not supported.</p> </note>
      */
     inline LinuxParameters& WithDevices(Aws::Vector<Device>&& value) { SetDevices(std::move(value)); return *this;}
 
@@ -142,7 +162,9 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--device</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>devices</code> parameter is not supported.</p> </note>
      */
     inline LinuxParameters& AddDevices(const Device& value) { m_devicesHasBeenSet = true; m_devices.push_back(value); return *this; }
 
@@ -153,7 +175,9 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--device</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>devices</code> parameter is not supported.</p> </note>
      */
     inline LinuxParameters& AddDevices(Device&& value) { m_devicesHasBeenSet = true; m_devices.push_back(std::move(value)); return *this; }
 
