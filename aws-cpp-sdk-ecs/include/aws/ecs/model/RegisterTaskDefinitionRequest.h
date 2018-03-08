@@ -581,15 +581,15 @@ namespace Model
      * vCPUs).</p> <p>If using the Fargate launch type, this field is required and you
      * must use one of the following values, which determines your range of supported
      * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
-     * Available <code>memory</code> values: 512 (0.5GB), 1024 (1GB), 2048 (2GB)</p>
-     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1GB),
-     * 2048 (2GB), 3072 (3GB), 4096 (4GB)</p> </li> <li> <p>1024 (1 vCPU) - Available
-     * <code>memory</code> values: 2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144
-     * (6GB), 7168 (7GB), 8192 (8GB)</p> </li> <li> <p>2048 (2 vCPU) - Available
-     * <code>memory</code> values: Between 4096 (4GB) and 16384 (16GB) in increments of
-     * 1024 (1GB)</p> </li> <li> <p>4096 (4 vCPU) - Available <code>memory</code>
-     * values: Between 8192 (8GB) and 30720 (30GB) in increments of 1024 (1GB)</p>
-     * </li> </ul>
+     * Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
+     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB),
+     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
+     * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
+     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
+     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
+     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
+     * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
+     * of 1024 (1 GB)</p> </li> </ul>
      */
     inline const Aws::String& GetCpu() const{ return m_cpu; }
 
@@ -606,15 +606,15 @@ namespace Model
      * vCPUs).</p> <p>If using the Fargate launch type, this field is required and you
      * must use one of the following values, which determines your range of supported
      * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
-     * Available <code>memory</code> values: 512 (0.5GB), 1024 (1GB), 2048 (2GB)</p>
-     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1GB),
-     * 2048 (2GB), 3072 (3GB), 4096 (4GB)</p> </li> <li> <p>1024 (1 vCPU) - Available
-     * <code>memory</code> values: 2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144
-     * (6GB), 7168 (7GB), 8192 (8GB)</p> </li> <li> <p>2048 (2 vCPU) - Available
-     * <code>memory</code> values: Between 4096 (4GB) and 16384 (16GB) in increments of
-     * 1024 (1GB)</p> </li> <li> <p>4096 (4 vCPU) - Available <code>memory</code>
-     * values: Between 8192 (8GB) and 30720 (30GB) in increments of 1024 (1GB)</p>
-     * </li> </ul>
+     * Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
+     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB),
+     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
+     * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
+     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
+     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
+     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
+     * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
+     * of 1024 (1 GB)</p> </li> </ul>
      */
     inline void SetCpu(const Aws::String& value) { m_cpuHasBeenSet = true; m_cpu = value; }
 
@@ -631,15 +631,15 @@ namespace Model
      * vCPUs).</p> <p>If using the Fargate launch type, this field is required and you
      * must use one of the following values, which determines your range of supported
      * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
-     * Available <code>memory</code> values: 512 (0.5GB), 1024 (1GB), 2048 (2GB)</p>
-     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1GB),
-     * 2048 (2GB), 3072 (3GB), 4096 (4GB)</p> </li> <li> <p>1024 (1 vCPU) - Available
-     * <code>memory</code> values: 2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144
-     * (6GB), 7168 (7GB), 8192 (8GB)</p> </li> <li> <p>2048 (2 vCPU) - Available
-     * <code>memory</code> values: Between 4096 (4GB) and 16384 (16GB) in increments of
-     * 1024 (1GB)</p> </li> <li> <p>4096 (4 vCPU) - Available <code>memory</code>
-     * values: Between 8192 (8GB) and 30720 (30GB) in increments of 1024 (1GB)</p>
-     * </li> </ul>
+     * Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
+     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB),
+     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
+     * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
+     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
+     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
+     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
+     * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
+     * of 1024 (1 GB)</p> </li> </ul>
      */
     inline void SetCpu(Aws::String&& value) { m_cpuHasBeenSet = true; m_cpu = std::move(value); }
 
@@ -656,15 +656,15 @@ namespace Model
      * vCPUs).</p> <p>If using the Fargate launch type, this field is required and you
      * must use one of the following values, which determines your range of supported
      * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
-     * Available <code>memory</code> values: 512 (0.5GB), 1024 (1GB), 2048 (2GB)</p>
-     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1GB),
-     * 2048 (2GB), 3072 (3GB), 4096 (4GB)</p> </li> <li> <p>1024 (1 vCPU) - Available
-     * <code>memory</code> values: 2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144
-     * (6GB), 7168 (7GB), 8192 (8GB)</p> </li> <li> <p>2048 (2 vCPU) - Available
-     * <code>memory</code> values: Between 4096 (4GB) and 16384 (16GB) in increments of
-     * 1024 (1GB)</p> </li> <li> <p>4096 (4 vCPU) - Available <code>memory</code>
-     * values: Between 8192 (8GB) and 30720 (30GB) in increments of 1024 (1GB)</p>
-     * </li> </ul>
+     * Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
+     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB),
+     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
+     * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
+     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
+     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
+     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
+     * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
+     * of 1024 (1 GB)</p> </li> </ul>
      */
     inline void SetCpu(const char* value) { m_cpuHasBeenSet = true; m_cpu.assign(value); }
 
@@ -681,15 +681,15 @@ namespace Model
      * vCPUs).</p> <p>If using the Fargate launch type, this field is required and you
      * must use one of the following values, which determines your range of supported
      * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
-     * Available <code>memory</code> values: 512 (0.5GB), 1024 (1GB), 2048 (2GB)</p>
-     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1GB),
-     * 2048 (2GB), 3072 (3GB), 4096 (4GB)</p> </li> <li> <p>1024 (1 vCPU) - Available
-     * <code>memory</code> values: 2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144
-     * (6GB), 7168 (7GB), 8192 (8GB)</p> </li> <li> <p>2048 (2 vCPU) - Available
-     * <code>memory</code> values: Between 4096 (4GB) and 16384 (16GB) in increments of
-     * 1024 (1GB)</p> </li> <li> <p>4096 (4 vCPU) - Available <code>memory</code>
-     * values: Between 8192 (8GB) and 30720 (30GB) in increments of 1024 (1GB)</p>
-     * </li> </ul>
+     * Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
+     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB),
+     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
+     * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
+     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
+     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
+     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
+     * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
+     * of 1024 (1 GB)</p> </li> </ul>
      */
     inline RegisterTaskDefinitionRequest& WithCpu(const Aws::String& value) { SetCpu(value); return *this;}
 
@@ -706,15 +706,15 @@ namespace Model
      * vCPUs).</p> <p>If using the Fargate launch type, this field is required and you
      * must use one of the following values, which determines your range of supported
      * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
-     * Available <code>memory</code> values: 512 (0.5GB), 1024 (1GB), 2048 (2GB)</p>
-     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1GB),
-     * 2048 (2GB), 3072 (3GB), 4096 (4GB)</p> </li> <li> <p>1024 (1 vCPU) - Available
-     * <code>memory</code> values: 2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144
-     * (6GB), 7168 (7GB), 8192 (8GB)</p> </li> <li> <p>2048 (2 vCPU) - Available
-     * <code>memory</code> values: Between 4096 (4GB) and 16384 (16GB) in increments of
-     * 1024 (1GB)</p> </li> <li> <p>4096 (4 vCPU) - Available <code>memory</code>
-     * values: Between 8192 (8GB) and 30720 (30GB) in increments of 1024 (1GB)</p>
-     * </li> </ul>
+     * Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
+     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB),
+     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
+     * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
+     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
+     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
+     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
+     * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
+     * of 1024 (1 GB)</p> </li> </ul>
      */
     inline RegisterTaskDefinitionRequest& WithCpu(Aws::String&& value) { SetCpu(std::move(value)); return *this;}
 
@@ -731,15 +731,15 @@ namespace Model
      * vCPUs).</p> <p>If using the Fargate launch type, this field is required and you
      * must use one of the following values, which determines your range of supported
      * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
-     * Available <code>memory</code> values: 512 (0.5GB), 1024 (1GB), 2048 (2GB)</p>
-     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1GB),
-     * 2048 (2GB), 3072 (3GB), 4096 (4GB)</p> </li> <li> <p>1024 (1 vCPU) - Available
-     * <code>memory</code> values: 2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144
-     * (6GB), 7168 (7GB), 8192 (8GB)</p> </li> <li> <p>2048 (2 vCPU) - Available
-     * <code>memory</code> values: Between 4096 (4GB) and 16384 (16GB) in increments of
-     * 1024 (1GB)</p> </li> <li> <p>4096 (4 vCPU) - Available <code>memory</code>
-     * values: Between 8192 (8GB) and 30720 (30GB) in increments of 1024 (1GB)</p>
-     * </li> </ul>
+     * Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
+     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB),
+     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
+     * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
+     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
+     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
+     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
+     * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
+     * of 1024 (1 GB)</p> </li> </ul>
      */
     inline RegisterTaskDefinitionRequest& WithCpu(const char* value) { SetCpu(value); return *this;}
 
@@ -754,16 +754,16 @@ namespace Model
      * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
      * you must use one of the following values, which determines your range of
-     * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512
-     * (0.5GB), 1024 (1GB), 2048 (2GB) - Available <code>cpu</code> values: 256 (.25
-     * vCPU)</p> </li> <li> <p>1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB) -
-     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2GB),
-     * 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144 (6GB), 7168 (7GB), 8192 (8GB) -
+     * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
+     * GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25
+     * vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) -
+     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB),
+     * 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) -
      * Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096
-     * (4GB) and 16384 (16GB) in increments of 1024 (1GB) - Available <code>cpu</code>
-     * values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8GB) and 30720 (30GB) in
-     * increments of 1024 (1GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
-     * </li> </ul>
+     * (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
+     * <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and
+     * 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
+     * 4096 (4 vCPU)</p> </li> </ul>
      */
     inline const Aws::String& GetMemory() const{ return m_memory; }
 
@@ -777,16 +777,16 @@ namespace Model
      * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
      * you must use one of the following values, which determines your range of
-     * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512
-     * (0.5GB), 1024 (1GB), 2048 (2GB) - Available <code>cpu</code> values: 256 (.25
-     * vCPU)</p> </li> <li> <p>1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB) -
-     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2GB),
-     * 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144 (6GB), 7168 (7GB), 8192 (8GB) -
+     * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
+     * GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25
+     * vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) -
+     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB),
+     * 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) -
      * Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096
-     * (4GB) and 16384 (16GB) in increments of 1024 (1GB) - Available <code>cpu</code>
-     * values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8GB) and 30720 (30GB) in
-     * increments of 1024 (1GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
-     * </li> </ul>
+     * (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
+     * <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and
+     * 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
+     * 4096 (4 vCPU)</p> </li> </ul>
      */
     inline void SetMemory(const Aws::String& value) { m_memoryHasBeenSet = true; m_memory = value; }
 
@@ -800,16 +800,16 @@ namespace Model
      * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
      * you must use one of the following values, which determines your range of
-     * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512
-     * (0.5GB), 1024 (1GB), 2048 (2GB) - Available <code>cpu</code> values: 256 (.25
-     * vCPU)</p> </li> <li> <p>1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB) -
-     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2GB),
-     * 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144 (6GB), 7168 (7GB), 8192 (8GB) -
+     * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
+     * GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25
+     * vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) -
+     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB),
+     * 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) -
      * Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096
-     * (4GB) and 16384 (16GB) in increments of 1024 (1GB) - Available <code>cpu</code>
-     * values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8GB) and 30720 (30GB) in
-     * increments of 1024 (1GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
-     * </li> </ul>
+     * (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
+     * <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and
+     * 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
+     * 4096 (4 vCPU)</p> </li> </ul>
      */
     inline void SetMemory(Aws::String&& value) { m_memoryHasBeenSet = true; m_memory = std::move(value); }
 
@@ -823,16 +823,16 @@ namespace Model
      * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
      * you must use one of the following values, which determines your range of
-     * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512
-     * (0.5GB), 1024 (1GB), 2048 (2GB) - Available <code>cpu</code> values: 256 (.25
-     * vCPU)</p> </li> <li> <p>1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB) -
-     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2GB),
-     * 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144 (6GB), 7168 (7GB), 8192 (8GB) -
+     * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
+     * GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25
+     * vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) -
+     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB),
+     * 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) -
      * Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096
-     * (4GB) and 16384 (16GB) in increments of 1024 (1GB) - Available <code>cpu</code>
-     * values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8GB) and 30720 (30GB) in
-     * increments of 1024 (1GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
-     * </li> </ul>
+     * (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
+     * <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and
+     * 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
+     * 4096 (4 vCPU)</p> </li> </ul>
      */
     inline void SetMemory(const char* value) { m_memoryHasBeenSet = true; m_memory.assign(value); }
 
@@ -846,16 +846,16 @@ namespace Model
      * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
      * you must use one of the following values, which determines your range of
-     * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512
-     * (0.5GB), 1024 (1GB), 2048 (2GB) - Available <code>cpu</code> values: 256 (.25
-     * vCPU)</p> </li> <li> <p>1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB) -
-     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2GB),
-     * 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144 (6GB), 7168 (7GB), 8192 (8GB) -
+     * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
+     * GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25
+     * vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) -
+     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB),
+     * 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) -
      * Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096
-     * (4GB) and 16384 (16GB) in increments of 1024 (1GB) - Available <code>cpu</code>
-     * values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8GB) and 30720 (30GB) in
-     * increments of 1024 (1GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
-     * </li> </ul>
+     * (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
+     * <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and
+     * 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
+     * 4096 (4 vCPU)</p> </li> </ul>
      */
     inline RegisterTaskDefinitionRequest& WithMemory(const Aws::String& value) { SetMemory(value); return *this;}
 
@@ -869,16 +869,16 @@ namespace Model
      * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
      * you must use one of the following values, which determines your range of
-     * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512
-     * (0.5GB), 1024 (1GB), 2048 (2GB) - Available <code>cpu</code> values: 256 (.25
-     * vCPU)</p> </li> <li> <p>1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB) -
-     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2GB),
-     * 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144 (6GB), 7168 (7GB), 8192 (8GB) -
+     * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
+     * GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25
+     * vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) -
+     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB),
+     * 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) -
      * Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096
-     * (4GB) and 16384 (16GB) in increments of 1024 (1GB) - Available <code>cpu</code>
-     * values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8GB) and 30720 (30GB) in
-     * increments of 1024 (1GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
-     * </li> </ul>
+     * (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
+     * <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and
+     * 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
+     * 4096 (4 vCPU)</p> </li> </ul>
      */
     inline RegisterTaskDefinitionRequest& WithMemory(Aws::String&& value) { SetMemory(std::move(value)); return *this;}
 
@@ -892,16 +892,16 @@ namespace Model
      * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
      * you must use one of the following values, which determines your range of
-     * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512
-     * (0.5GB), 1024 (1GB), 2048 (2GB) - Available <code>cpu</code> values: 256 (.25
-     * vCPU)</p> </li> <li> <p>1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB) -
-     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2GB),
-     * 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144 (6GB), 7168 (7GB), 8192 (8GB) -
+     * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
+     * GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25
+     * vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) -
+     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB),
+     * 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) -
      * Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096
-     * (4GB) and 16384 (16GB) in increments of 1024 (1GB) - Available <code>cpu</code>
-     * values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8GB) and 30720 (30GB) in
-     * increments of 1024 (1GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
-     * </li> </ul>
+     * (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
+     * <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and
+     * 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
+     * 4096 (4 vCPU)</p> </li> </ul>
      */
     inline RegisterTaskDefinitionRequest& WithMemory(const char* value) { SetMemory(value); return *this;}
 

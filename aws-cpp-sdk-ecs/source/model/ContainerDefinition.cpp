@@ -62,7 +62,8 @@ ContainerDefinition::ContainerDefinition() :
     m_dockerSecurityOptionsHasBeenSet(false),
     m_dockerLabelsHasBeenSet(false),
     m_ulimitsHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false)
+    m_logConfigurationHasBeenSet(false),
+    m_healthCheckHasBeenSet(false)
 {
 }
 
@@ -100,7 +101,8 @@ ContainerDefinition::ContainerDefinition(const JsonValue& jsonValue) :
     m_dockerSecurityOptionsHasBeenSet(false),
     m_dockerLabelsHasBeenSet(false),
     m_ulimitsHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false)
+    m_logConfigurationHasBeenSet(false),
+    m_healthCheckHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -335,6 +337,13 @@ ContainerDefinition& ContainerDefinition::operator =(const JsonValue& jsonValue)
     m_logConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("healthCheck"))
+  {
+    m_healthCheck = jsonValue.GetObject("healthCheck");
+
+    m_healthCheckHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -566,6 +575,12 @@ JsonValue ContainerDefinition::Jsonize() const
   if(m_logConfigurationHasBeenSet)
   {
    payload.WithObject("logConfiguration", m_logConfiguration.Jsonize());
+
+  }
+
+  if(m_healthCheckHasBeenSet)
+  {
+   payload.WithObject("healthCheck", m_healthCheck.Jsonize());
 
   }
 

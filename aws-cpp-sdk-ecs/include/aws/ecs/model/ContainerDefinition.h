@@ -20,6 +20,7 @@
 #include <aws/ecs/model/LinuxParameters.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ecs/model/LogConfiguration.h>
+#include <aws/ecs/model/HealthCheck.h>
 #include <aws/ecs/model/PortMapping.h>
 #include <aws/ecs/model/KeyValuePair.h>
 #include <aws/ecs/model/MountPoint.h>
@@ -418,7 +419,7 @@ namespace Model
      * information, see <a
      * href="https://docs.docker.com/engine/reference/run/#cpu-share-constraint">CPU
      * share constraint</a> in the Docker documentation. The minimum valid CPU share
-     * value that the Linux kernel will allow is 2; however, the CPU parameter is not
+     * value that the Linux kernel allows is 2; however, the CPU parameter is not
      * required, and you can use CPU values below 2 in your container definitions. For
      * CPU values below 2 (including null), the behavior varies based on your Amazon
      * ECS container agent version:</p> <ul> <li> <p> <b>Agent versions less than or
@@ -470,7 +471,7 @@ namespace Model
      * information, see <a
      * href="https://docs.docker.com/engine/reference/run/#cpu-share-constraint">CPU
      * share constraint</a> in the Docker documentation. The minimum valid CPU share
-     * value that the Linux kernel will allow is 2; however, the CPU parameter is not
+     * value that the Linux kernel allows is 2; however, the CPU parameter is not
      * required, and you can use CPU values below 2 in your container definitions. For
      * CPU values below 2 (including null), the behavior varies based on your Amazon
      * ECS container agent version:</p> <ul> <li> <p> <b>Agent versions less than or
@@ -522,7 +523,7 @@ namespace Model
      * information, see <a
      * href="https://docs.docker.com/engine/reference/run/#cpu-share-constraint">CPU
      * share constraint</a> in the Docker documentation. The minimum valid CPU share
-     * value that the Linux kernel will allow is 2; however, the CPU parameter is not
+     * value that the Linux kernel allows is 2; however, the CPU parameter is not
      * required, and you can use CPU values below 2 in your container definitions. For
      * CPU values below 2 (including null), the behavior varies based on your Amazon
      * ECS container agent version:</p> <ul> <li> <p> <b>Agent versions less than or
@@ -547,12 +548,12 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--memory</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>If
-     * your containers will be part of a task using the Fargate launch type, this field
-     * is optional and the only requirement is that the total amount of memory reserved
+     * your containers are part of a task using the Fargate launch type, this field is
+     * optional and the only requirement is that the total amount of memory reserved
      * for all containers within a task be lower than the task <code>memory</code>
-     * value.</p> <p>For containers that will be part of a task using the EC2 launch
-     * type, you must specify a non-zero integer for one or both of <code>memory</code>
-     * or <code>memoryReservation</code> in container definitions. If you specify both,
+     * value.</p> <p>For containers that are part of a task using the EC2 launch type,
+     * you must specify a non-zero integer for one or both of <code>memory</code> or
+     * <code>memoryReservation</code> in container definitions. If you specify both,
      * <code>memory</code> must be greater than <code>memoryReservation</code>. If you
      * specify <code>memoryReservation</code>, then that value is subtracted from the
      * available memory resources for the container instance on which the container is
@@ -571,12 +572,12 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--memory</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>If
-     * your containers will be part of a task using the Fargate launch type, this field
-     * is optional and the only requirement is that the total amount of memory reserved
+     * your containers are part of a task using the Fargate launch type, this field is
+     * optional and the only requirement is that the total amount of memory reserved
      * for all containers within a task be lower than the task <code>memory</code>
-     * value.</p> <p>For containers that will be part of a task using the EC2 launch
-     * type, you must specify a non-zero integer for one or both of <code>memory</code>
-     * or <code>memoryReservation</code> in container definitions. If you specify both,
+     * value.</p> <p>For containers that are part of a task using the EC2 launch type,
+     * you must specify a non-zero integer for one or both of <code>memory</code> or
+     * <code>memoryReservation</code> in container definitions. If you specify both,
      * <code>memory</code> must be greater than <code>memoryReservation</code>. If you
      * specify <code>memoryReservation</code>, then that value is subtracted from the
      * available memory resources for the container instance on which the container is
@@ -595,12 +596,12 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--memory</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>If
-     * your containers will be part of a task using the Fargate launch type, this field
-     * is optional and the only requirement is that the total amount of memory reserved
+     * your containers are part of a task using the Fargate launch type, this field is
+     * optional and the only requirement is that the total amount of memory reserved
      * for all containers within a task be lower than the task <code>memory</code>
-     * value.</p> <p>For containers that will be part of a task using the EC2 launch
-     * type, you must specify a non-zero integer for one or both of <code>memory</code>
-     * or <code>memoryReservation</code> in container definitions. If you specify both,
+     * value.</p> <p>For containers that are part of a task using the EC2 launch type,
+     * you must specify a non-zero integer for one or both of <code>memory</code> or
+     * <code>memoryReservation</code> in container definitions. If you specify both,
      * <code>memory</code> must be greater than <code>memoryReservation</code>. If you
      * specify <code>memoryReservation</code>, then that value is subtracted from the
      * available memory resources for the container instance on which the container is
@@ -2982,6 +2983,62 @@ namespace Model
      */
     inline ContainerDefinition& WithLogConfiguration(LogConfiguration&& value) { SetLogConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The health check command and associated configuration parameters for the
+     * container. This parameter maps to <code>HealthCheck</code> in the <a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
+     * a container</a> section of the <a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
+     * Remote API</a> and the <code>HEALTHCHECK</code> parameter of <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     */
+    inline const HealthCheck& GetHealthCheck() const{ return m_healthCheck; }
+
+    /**
+     * <p>The health check command and associated configuration parameters for the
+     * container. This parameter maps to <code>HealthCheck</code> in the <a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
+     * a container</a> section of the <a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
+     * Remote API</a> and the <code>HEALTHCHECK</code> parameter of <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     */
+    inline void SetHealthCheck(const HealthCheck& value) { m_healthCheckHasBeenSet = true; m_healthCheck = value; }
+
+    /**
+     * <p>The health check command and associated configuration parameters for the
+     * container. This parameter maps to <code>HealthCheck</code> in the <a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
+     * a container</a> section of the <a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
+     * Remote API</a> and the <code>HEALTHCHECK</code> parameter of <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     */
+    inline void SetHealthCheck(HealthCheck&& value) { m_healthCheckHasBeenSet = true; m_healthCheck = std::move(value); }
+
+    /**
+     * <p>The health check command and associated configuration parameters for the
+     * container. This parameter maps to <code>HealthCheck</code> in the <a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
+     * a container</a> section of the <a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
+     * Remote API</a> and the <code>HEALTHCHECK</code> parameter of <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     */
+    inline ContainerDefinition& WithHealthCheck(const HealthCheck& value) { SetHealthCheck(value); return *this;}
+
+    /**
+     * <p>The health check command and associated configuration parameters for the
+     * container. This parameter maps to <code>HealthCheck</code> in the <a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
+     * a container</a> section of the <a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
+     * Remote API</a> and the <code>HEALTHCHECK</code> parameter of <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     */
+    inline ContainerDefinition& WithHealthCheck(HealthCheck&& value) { SetHealthCheck(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -3064,6 +3121,9 @@ namespace Model
 
     LogConfiguration m_logConfiguration;
     bool m_logConfigurationHasBeenSet;
+
+    HealthCheck m_healthCheck;
+    bool m_healthCheckHasBeenSet;
   };
 
 } // namespace Model

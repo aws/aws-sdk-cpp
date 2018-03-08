@@ -34,7 +34,8 @@ namespace Model
     ADM,
     SMS,
     EMAIL,
-    BAIDU
+    BAIDU,
+    CUSTOM
   };
 
 namespace ChannelTypeMapper

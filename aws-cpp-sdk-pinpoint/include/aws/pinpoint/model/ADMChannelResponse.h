@@ -47,37 +47,37 @@ namespace Model
 
 
     /**
-     * Application id
+     * The ID of the application to which the channel applies.
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * Application id
+     * The ID of the application to which the channel applies.
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * Application id
+     * The ID of the application to which the channel applies.
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * Application id
+     * The ID of the application to which the channel applies.
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * Application id
+     * The ID of the application to which the channel applies.
      */
     inline ADMChannelResponse& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * Application id
+     * The ID of the application to which the channel applies.
      */
     inline ADMChannelResponse& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * Application id
+     * The ID of the application to which the channel applies.
      */
     inline ADMChannelResponse& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
@@ -135,17 +135,23 @@ namespace Model
 
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Indicates whether the channel is configured with ADM credentials. Amazon
+     * Pinpoint uses your credentials to authenticate push notifications with ADM.
+     * Provide your credentials by setting the ClientId and ClientSecret attributes.
      */
     inline bool GetHasCredential() const{ return m_hasCredential; }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Indicates whether the channel is configured with ADM credentials. Amazon
+     * Pinpoint uses your credentials to authenticate push notifications with ADM.
+     * Provide your credentials by setting the ClientId and ClientSecret attributes.
      */
     inline void SetHasCredential(bool value) { m_hasCredentialHasBeenSet = true; m_hasCredential = value; }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Indicates whether the channel is configured with ADM credentials. Amazon
+     * Pinpoint uses your credentials to authenticate push notifications with ADM.
+     * Provide your credentials by setting the ClientId and ClientSecret attributes.
      */
     inline ADMChannelResponse& WithHasCredential(bool value) { SetHasCredential(value); return *this;}
 

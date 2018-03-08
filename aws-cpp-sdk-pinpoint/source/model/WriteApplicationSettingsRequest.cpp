@@ -29,12 +29,14 @@ namespace Model
 {
 
 WriteApplicationSettingsRequest::WriteApplicationSettingsRequest() : 
+    m_campaignHookHasBeenSet(false),
     m_limitsHasBeenSet(false),
     m_quietTimeHasBeenSet(false)
 {
 }
 
 WriteApplicationSettingsRequest::WriteApplicationSettingsRequest(const JsonValue& jsonValue) : 
+    m_campaignHookHasBeenSet(false),
     m_limitsHasBeenSet(false),
     m_quietTimeHasBeenSet(false)
 {
@@ -43,6 +45,13 @@ WriteApplicationSettingsRequest::WriteApplicationSettingsRequest(const JsonValue
 
 WriteApplicationSettingsRequest& WriteApplicationSettingsRequest::operator =(const JsonValue& jsonValue)
 {
+  if(jsonValue.ValueExists("CampaignHook"))
+  {
+    m_campaignHook = jsonValue.GetObject("CampaignHook");
+
+    m_campaignHookHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Limits"))
   {
     m_limits = jsonValue.GetObject("Limits");
@@ -63,6 +72,12 @@ WriteApplicationSettingsRequest& WriteApplicationSettingsRequest::operator =(con
 JsonValue WriteApplicationSettingsRequest::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_campaignHookHasBeenSet)
+  {
+   payload.WithObject("CampaignHook", m_campaignHook.Jsonize());
+
+  }
 
   if(m_limitsHasBeenSet)
   {

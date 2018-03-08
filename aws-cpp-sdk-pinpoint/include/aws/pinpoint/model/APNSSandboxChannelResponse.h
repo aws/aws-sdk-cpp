@@ -48,37 +48,37 @@ namespace Model
 
 
     /**
-     * Application id
+     * The ID of the application to which the channel applies.
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * Application id
+     * The ID of the application to which the channel applies.
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * Application id
+     * The ID of the application to which the channel applies.
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * Application id
+     * The ID of the application to which the channel applies.
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * Application id
+     * The ID of the application to which the channel applies.
      */
     inline APNSSandboxChannelResponse& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * Application id
+     * The ID of the application to which the channel applies.
      */
     inline APNSSandboxChannelResponse& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * Application id
+     * The ID of the application to which the channel applies.
      */
     inline APNSSandboxChannelResponse& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
@@ -172,33 +172,48 @@ namespace Model
 
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Indicates whether the channel is configured with APNs credentials. Amazon
+     * Pinpoint uses your credentials to authenticate push notifications with APNs. To
+     * use APNs token authentication, set the BundleId, TeamId, TokenKey, and
+     * TokenKeyId attributes. To use certificate authentication, set the Certificate
+     * and PrivateKey attributes.
      */
     inline bool GetHasCredential() const{ return m_hasCredential; }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Indicates whether the channel is configured with APNs credentials. Amazon
+     * Pinpoint uses your credentials to authenticate push notifications with APNs. To
+     * use APNs token authentication, set the BundleId, TeamId, TokenKey, and
+     * TokenKeyId attributes. To use certificate authentication, set the Certificate
+     * and PrivateKey attributes.
      */
     inline void SetHasCredential(bool value) { m_hasCredentialHasBeenSet = true; m_hasCredential = value; }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Indicates whether the channel is configured with APNs credentials. Amazon
+     * Pinpoint uses your credentials to authenticate push notifications with APNs. To
+     * use APNs token authentication, set the BundleId, TeamId, TokenKey, and
+     * TokenKeyId attributes. To use certificate authentication, set the Certificate
+     * and PrivateKey attributes.
      */
     inline APNSSandboxChannelResponse& WithHasCredential(bool value) { SetHasCredential(value); return *this;}
 
 
     /**
-     * If the channel is registered with a token key for authentication.
+     * Indicates whether the channel is configured with a key for APNs token
+     * authentication. Provide a token key by setting the TokenKey attribute.
      */
     inline bool GetHasTokenKey() const{ return m_hasTokenKey; }
 
     /**
-     * If the channel is registered with a token key for authentication.
+     * Indicates whether the channel is configured with a key for APNs token
+     * authentication. Provide a token key by setting the TokenKey attribute.
      */
     inline void SetHasTokenKey(bool value) { m_hasTokenKeyHasBeenSet = true; m_hasTokenKey = value; }
 
     /**
-     * If the channel is registered with a token key for authentication.
+     * Indicates whether the channel is configured with a key for APNs token
+     * authentication. Provide a token key by setting the TokenKey attribute.
      */
     inline APNSSandboxChannelResponse& WithHasTokenKey(bool value) { SetHasTokenKey(value); return *this;}
 

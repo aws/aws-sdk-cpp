@@ -1041,9 +1041,7 @@ namespace Aws
          * "available" state.</p> <p>You can copy a snapshot from one AWS Region to
          * another. In that case, the AWS Region where you call the
          * <code>CopyDBSnapshot</code> action is the destination AWS Region for the DB
-         * snapshot copy. </p> <p>You can't copy an encrypted, shared DB snapshot from one
-         * AWS Region to another.</p> <p>For more information about copying snapshots, see
-         * <a
+         * snapshot copy. </p> <p>For more information about copying snapshots, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopyDBSnapshot.html">Copying
          * a DB Snapshot</a> in the Amazon RDS User Guide. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBSnapshot">AWS
@@ -1056,9 +1054,7 @@ namespace Aws
          * "available" state.</p> <p>You can copy a snapshot from one AWS Region to
          * another. In that case, the AWS Region where you call the
          * <code>CopyDBSnapshot</code> action is the destination AWS Region for the DB
-         * snapshot copy. </p> <p>You can't copy an encrypted, shared DB snapshot from one
-         * AWS Region to another.</p> <p>For more information about copying snapshots, see
-         * <a
+         * snapshot copy. </p> <p>For more information about copying snapshots, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopyDBSnapshot.html">Copying
          * a DB Snapshot</a> in the Amazon RDS User Guide. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBSnapshot">AWS
@@ -1073,9 +1069,7 @@ namespace Aws
          * "available" state.</p> <p>You can copy a snapshot from one AWS Region to
          * another. In that case, the AWS Region where you call the
          * <code>CopyDBSnapshot</code> action is the destination AWS Region for the DB
-         * snapshot copy. </p> <p>You can't copy an encrypted, shared DB snapshot from one
-         * AWS Region to another.</p> <p>For more information about copying snapshots, see
-         * <a
+         * snapshot copy. </p> <p>For more information about copying snapshots, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopyDBSnapshot.html">Copying
          * a DB Snapshot</a> in the Amazon RDS User Guide. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBSnapshot">AWS
@@ -3614,12 +3608,15 @@ namespace Aws
 
         /**
          * <p>Promotes a Read Replica DB instance to a standalone DB instance.</p> <note>
-         * <ul> <li> <p>We recommend that you enable automated backups on your Read Replica
-         * before promoting the Read Replica. This ensures that no backup is taken during
-         * the promotion process. Once the instance is promoted to a primary instance,
-         * backups are taken based on your backup settings.</p> </li> <li> <p>This command
-         * doesn't apply to Aurora MySQL and Aurora PostgreSQL.</p> </li> </ul>
-         * </note><p><h3>See Also:</h3>   <a
+         * <ul> <li> <p>Backup duration is a function of the amount of changes to the
+         * database since the previous backup. If you plan to promote a Read Replica to a
+         * standalone instance, we recommend that you enable backups and complete at least
+         * one backup prior to promotion. In addition, a Read Replica cannot be promoted to
+         * a standalone instance when it is in the <code>backing-up</code> status. If you
+         * have enabled backups on your Read Replica, configure the automated backup window
+         * so that daily backups do not interfere with Read Replica promotion.</p> </li>
+         * <li> <p>This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.</p>
+         * </li> </ul> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplica">AWS
          * API Reference</a></p>
          */
@@ -3627,12 +3624,15 @@ namespace Aws
 
         /**
          * <p>Promotes a Read Replica DB instance to a standalone DB instance.</p> <note>
-         * <ul> <li> <p>We recommend that you enable automated backups on your Read Replica
-         * before promoting the Read Replica. This ensures that no backup is taken during
-         * the promotion process. Once the instance is promoted to a primary instance,
-         * backups are taken based on your backup settings.</p> </li> <li> <p>This command
-         * doesn't apply to Aurora MySQL and Aurora PostgreSQL.</p> </li> </ul>
-         * </note><p><h3>See Also:</h3>   <a
+         * <ul> <li> <p>Backup duration is a function of the amount of changes to the
+         * database since the previous backup. If you plan to promote a Read Replica to a
+         * standalone instance, we recommend that you enable backups and complete at least
+         * one backup prior to promotion. In addition, a Read Replica cannot be promoted to
+         * a standalone instance when it is in the <code>backing-up</code> status. If you
+         * have enabled backups on your Read Replica, configure the automated backup window
+         * so that daily backups do not interfere with Read Replica promotion.</p> </li>
+         * <li> <p>This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.</p>
+         * </li> </ul> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplica">AWS
          * API Reference</a></p>
          *
@@ -3642,12 +3642,15 @@ namespace Aws
 
         /**
          * <p>Promotes a Read Replica DB instance to a standalone DB instance.</p> <note>
-         * <ul> <li> <p>We recommend that you enable automated backups on your Read Replica
-         * before promoting the Read Replica. This ensures that no backup is taken during
-         * the promotion process. Once the instance is promoted to a primary instance,
-         * backups are taken based on your backup settings.</p> </li> <li> <p>This command
-         * doesn't apply to Aurora MySQL and Aurora PostgreSQL.</p> </li> </ul>
-         * </note><p><h3>See Also:</h3>   <a
+         * <ul> <li> <p>Backup duration is a function of the amount of changes to the
+         * database since the previous backup. If you plan to promote a Read Replica to a
+         * standalone instance, we recommend that you enable backups and complete at least
+         * one backup prior to promotion. In addition, a Read Replica cannot be promoted to
+         * a standalone instance when it is in the <code>backing-up</code> status. If you
+         * have enabled backups on your Read Replica, configure the automated backup window
+         * so that daily backups do not interfere with Read Replica promotion.</p> </li>
+         * <li> <p>This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.</p>
+         * </li> </ul> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplica">AWS
          * API Reference</a></p>
          *

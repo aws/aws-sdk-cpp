@@ -90,44 +90,58 @@ namespace Model
 
 
     /**
-     * A unique, custom ID assigned to the IAM role that restricts who can assume the
-     * role.
+     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an
+     * IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This
+     * requirement is removed, and external IDs are not recommended for IAM roles
+     * assumed by Amazon Pinpoint.
      */
     inline const Aws::String& GetExternalId() const{ return m_externalId; }
 
     /**
-     * A unique, custom ID assigned to the IAM role that restricts who can assume the
-     * role.
+     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an
+     * IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This
+     * requirement is removed, and external IDs are not recommended for IAM roles
+     * assumed by Amazon Pinpoint.
      */
     inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
 
     /**
-     * A unique, custom ID assigned to the IAM role that restricts who can assume the
-     * role.
+     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an
+     * IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This
+     * requirement is removed, and external IDs are not recommended for IAM roles
+     * assumed by Amazon Pinpoint.
      */
     inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
 
     /**
-     * A unique, custom ID assigned to the IAM role that restricts who can assume the
-     * role.
+     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an
+     * IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This
+     * requirement is removed, and external IDs are not recommended for IAM roles
+     * assumed by Amazon Pinpoint.
      */
     inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
 
     /**
-     * A unique, custom ID assigned to the IAM role that restricts who can assume the
-     * role.
+     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an
+     * IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This
+     * requirement is removed, and external IDs are not recommended for IAM roles
+     * assumed by Amazon Pinpoint.
      */
     inline SegmentImportResource& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
 
     /**
-     * A unique, custom ID assigned to the IAM role that restricts who can assume the
-     * role.
+     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an
+     * IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This
+     * requirement is removed, and external IDs are not recommended for IAM roles
+     * assumed by Amazon Pinpoint.
      */
     inline SegmentImportResource& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
 
     /**
-     * A unique, custom ID assigned to the IAM role that restricts who can assume the
-     * role.
+     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an
+     * IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This
+     * requirement is removed, and external IDs are not recommended for IAM roles
+     * assumed by Amazon Pinpoint.
      */
     inline SegmentImportResource& WithExternalId(const char* value) { SetExternalId(value); return *this;}
 

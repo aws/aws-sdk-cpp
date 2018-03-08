@@ -121,49 +121,126 @@ namespace Model
     /**
      * <p>Information about the resource that is being migrated. This data will be used
      * to map the task to a resource in the Application Discovery Service (ADS)'s
-     * repository.</p>
+     * repository.</p> <note> <p>In the <code>ResourceAttribute</code> object array,
+     * the <code>Type</code> field is reserved for the following values:
+     * <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID |
+     * VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID |
+     * MOTHERBOARD_SERIAL_NUMBER</code>, and the identifying value can be a string up
+     * to 256 characters.</p> </note> <important> <p>If any "VM" related value is used
+     * for a <code>ResourceAttribute</code> object, it is required that
+     * <code>VM_MANAGER_ID</code>, as a minimum, is always used. If it is not used, the
+     * server will not be associated in the Application Discovery Service (ADS)'s
+     * repository using any of the other "VM" related values, and you will experience
+     * data loss. See the Example section below for a use case of specifying "VM"
+     * related values.</p> </important>
      */
     inline const Aws::Vector<ResourceAttribute>& GetResourceAttributeList() const{ return m_resourceAttributeList; }
 
     /**
      * <p>Information about the resource that is being migrated. This data will be used
      * to map the task to a resource in the Application Discovery Service (ADS)'s
-     * repository.</p>
+     * repository.</p> <note> <p>In the <code>ResourceAttribute</code> object array,
+     * the <code>Type</code> field is reserved for the following values:
+     * <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID |
+     * VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID |
+     * MOTHERBOARD_SERIAL_NUMBER</code>, and the identifying value can be a string up
+     * to 256 characters.</p> </note> <important> <p>If any "VM" related value is used
+     * for a <code>ResourceAttribute</code> object, it is required that
+     * <code>VM_MANAGER_ID</code>, as a minimum, is always used. If it is not used, the
+     * server will not be associated in the Application Discovery Service (ADS)'s
+     * repository using any of the other "VM" related values, and you will experience
+     * data loss. See the Example section below for a use case of specifying "VM"
+     * related values.</p> </important>
      */
     inline void SetResourceAttributeList(const Aws::Vector<ResourceAttribute>& value) { m_resourceAttributeListHasBeenSet = true; m_resourceAttributeList = value; }
 
     /**
      * <p>Information about the resource that is being migrated. This data will be used
      * to map the task to a resource in the Application Discovery Service (ADS)'s
-     * repository.</p>
+     * repository.</p> <note> <p>In the <code>ResourceAttribute</code> object array,
+     * the <code>Type</code> field is reserved for the following values:
+     * <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID |
+     * VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID |
+     * MOTHERBOARD_SERIAL_NUMBER</code>, and the identifying value can be a string up
+     * to 256 characters.</p> </note> <important> <p>If any "VM" related value is used
+     * for a <code>ResourceAttribute</code> object, it is required that
+     * <code>VM_MANAGER_ID</code>, as a minimum, is always used. If it is not used, the
+     * server will not be associated in the Application Discovery Service (ADS)'s
+     * repository using any of the other "VM" related values, and you will experience
+     * data loss. See the Example section below for a use case of specifying "VM"
+     * related values.</p> </important>
      */
     inline void SetResourceAttributeList(Aws::Vector<ResourceAttribute>&& value) { m_resourceAttributeListHasBeenSet = true; m_resourceAttributeList = std::move(value); }
 
     /**
      * <p>Information about the resource that is being migrated. This data will be used
      * to map the task to a resource in the Application Discovery Service (ADS)'s
-     * repository.</p>
+     * repository.</p> <note> <p>In the <code>ResourceAttribute</code> object array,
+     * the <code>Type</code> field is reserved for the following values:
+     * <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID |
+     * VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID |
+     * MOTHERBOARD_SERIAL_NUMBER</code>, and the identifying value can be a string up
+     * to 256 characters.</p> </note> <important> <p>If any "VM" related value is used
+     * for a <code>ResourceAttribute</code> object, it is required that
+     * <code>VM_MANAGER_ID</code>, as a minimum, is always used. If it is not used, the
+     * server will not be associated in the Application Discovery Service (ADS)'s
+     * repository using any of the other "VM" related values, and you will experience
+     * data loss. See the Example section below for a use case of specifying "VM"
+     * related values.</p> </important>
      */
     inline PutResourceAttributesRequest& WithResourceAttributeList(const Aws::Vector<ResourceAttribute>& value) { SetResourceAttributeList(value); return *this;}
 
     /**
      * <p>Information about the resource that is being migrated. This data will be used
      * to map the task to a resource in the Application Discovery Service (ADS)'s
-     * repository.</p>
+     * repository.</p> <note> <p>In the <code>ResourceAttribute</code> object array,
+     * the <code>Type</code> field is reserved for the following values:
+     * <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID |
+     * VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID |
+     * MOTHERBOARD_SERIAL_NUMBER</code>, and the identifying value can be a string up
+     * to 256 characters.</p> </note> <important> <p>If any "VM" related value is used
+     * for a <code>ResourceAttribute</code> object, it is required that
+     * <code>VM_MANAGER_ID</code>, as a minimum, is always used. If it is not used, the
+     * server will not be associated in the Application Discovery Service (ADS)'s
+     * repository using any of the other "VM" related values, and you will experience
+     * data loss. See the Example section below for a use case of specifying "VM"
+     * related values.</p> </important>
      */
     inline PutResourceAttributesRequest& WithResourceAttributeList(Aws::Vector<ResourceAttribute>&& value) { SetResourceAttributeList(std::move(value)); return *this;}
 
     /**
      * <p>Information about the resource that is being migrated. This data will be used
      * to map the task to a resource in the Application Discovery Service (ADS)'s
-     * repository.</p>
+     * repository.</p> <note> <p>In the <code>ResourceAttribute</code> object array,
+     * the <code>Type</code> field is reserved for the following values:
+     * <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID |
+     * VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID |
+     * MOTHERBOARD_SERIAL_NUMBER</code>, and the identifying value can be a string up
+     * to 256 characters.</p> </note> <important> <p>If any "VM" related value is used
+     * for a <code>ResourceAttribute</code> object, it is required that
+     * <code>VM_MANAGER_ID</code>, as a minimum, is always used. If it is not used, the
+     * server will not be associated in the Application Discovery Service (ADS)'s
+     * repository using any of the other "VM" related values, and you will experience
+     * data loss. See the Example section below for a use case of specifying "VM"
+     * related values.</p> </important>
      */
     inline PutResourceAttributesRequest& AddResourceAttributeList(const ResourceAttribute& value) { m_resourceAttributeListHasBeenSet = true; m_resourceAttributeList.push_back(value); return *this; }
 
     /**
      * <p>Information about the resource that is being migrated. This data will be used
      * to map the task to a resource in the Application Discovery Service (ADS)'s
-     * repository.</p>
+     * repository.</p> <note> <p>In the <code>ResourceAttribute</code> object array,
+     * the <code>Type</code> field is reserved for the following values:
+     * <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID |
+     * VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID |
+     * MOTHERBOARD_SERIAL_NUMBER</code>, and the identifying value can be a string up
+     * to 256 characters.</p> </note> <important> <p>If any "VM" related value is used
+     * for a <code>ResourceAttribute</code> object, it is required that
+     * <code>VM_MANAGER_ID</code>, as a minimum, is always used. If it is not used, the
+     * server will not be associated in the Application Discovery Service (ADS)'s
+     * repository using any of the other "VM" related values, and you will experience
+     * data loss. See the Example section below for a use case of specifying "VM"
+     * related values.</p> </important>
      */
     inline PutResourceAttributesRequest& AddResourceAttributeList(ResourceAttribute&& value) { m_resourceAttributeListHasBeenSet = true; m_resourceAttributeList.push_back(std::move(value)); return *this; }
 

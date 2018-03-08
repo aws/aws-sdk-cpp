@@ -39,6 +39,7 @@ namespace Aws
         static const int SMS_HASH = HashingUtils::HashString("SMS");
         static const int EMAIL_HASH = HashingUtils::HashString("EMAIL");
         static const int BAIDU_HASH = HashingUtils::HashString("BAIDU");
+        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
 
 
         ChannelType GetChannelTypeForName(const Aws::String& name)
@@ -80,6 +81,10 @@ namespace Aws
           {
             return ChannelType::BAIDU;
           }
+          else if (hashCode == CUSTOM_HASH)
+          {
+            return ChannelType::CUSTOM;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -112,6 +117,8 @@ namespace Aws
             return "EMAIL";
           case ChannelType::BAIDU:
             return "BAIDU";
+          case ChannelType::CUSTOM:
+            return "CUSTOM";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -29,6 +29,7 @@
 #include <aws/pinpoint/PinpointErrorMarshaller.h>
 #include <aws/pinpoint/model/CreateAppRequest.h>
 #include <aws/pinpoint/model/CreateCampaignRequest.h>
+#include <aws/pinpoint/model/CreateExportJobRequest.h>
 #include <aws/pinpoint/model/CreateImportJobRequest.h>
 #include <aws/pinpoint/model/CreateSegmentRequest.h>
 #include <aws/pinpoint/model/DeleteAdmChannelRequest.h>
@@ -61,10 +62,13 @@
 #include <aws/pinpoint/model/GetEmailChannelRequest.h>
 #include <aws/pinpoint/model/GetEndpointRequest.h>
 #include <aws/pinpoint/model/GetEventStreamRequest.h>
+#include <aws/pinpoint/model/GetExportJobRequest.h>
+#include <aws/pinpoint/model/GetExportJobsRequest.h>
 #include <aws/pinpoint/model/GetGcmChannelRequest.h>
 #include <aws/pinpoint/model/GetImportJobRequest.h>
 #include <aws/pinpoint/model/GetImportJobsRequest.h>
 #include <aws/pinpoint/model/GetSegmentRequest.h>
+#include <aws/pinpoint/model/GetSegmentExportJobsRequest.h>
 #include <aws/pinpoint/model/GetSegmentImportJobsRequest.h>
 #include <aws/pinpoint/model/GetSegmentVersionRequest.h>
 #include <aws/pinpoint/model/GetSegmentVersionsRequest.h>
@@ -220,6 +224,41 @@ void PinpointClient::CreateCampaignAsync(const CreateCampaignRequest& request, c
 void PinpointClient::CreateCampaignAsyncHelper(const CreateCampaignRequest& request, const CreateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateCampaign(request), context);
+}
+
+CreateExportJobOutcome PinpointClient::CreateExportJob(const CreateExportJobRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/jobs/export";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateExportJobOutcome(CreateExportJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateExportJobOutcome(outcome.GetError());
+  }
+}
+
+CreateExportJobOutcomeCallable PinpointClient::CreateExportJobCallable(const CreateExportJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateExportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateExportJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::CreateExportJobAsync(const CreateExportJobRequest& request, const CreateExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateExportJobAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::CreateExportJobAsyncHelper(const CreateExportJobRequest& request, const CreateExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateExportJob(request), context);
 }
 
 CreateImportJobOutcome PinpointClient::CreateImportJob(const CreateImportJobRequest& request) const
@@ -1343,6 +1382,76 @@ void PinpointClient::GetEventStreamAsyncHelper(const GetEventStreamRequest& requ
   handler(this, request, GetEventStream(request), context);
 }
 
+GetExportJobOutcome PinpointClient::GetExportJob(const GetExportJobRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/jobs/export/{job-id}";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetExportJobOutcome(GetExportJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetExportJobOutcome(outcome.GetError());
+  }
+}
+
+GetExportJobOutcomeCallable PinpointClient::GetExportJobCallable(const GetExportJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetExportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetExportJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::GetExportJobAsync(const GetExportJobRequest& request, const GetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetExportJobAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::GetExportJobAsyncHelper(const GetExportJobRequest& request, const GetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetExportJob(request), context);
+}
+
+GetExportJobsOutcome PinpointClient::GetExportJobs(const GetExportJobsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/jobs/export";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetExportJobsOutcome(GetExportJobsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetExportJobsOutcome(outcome.GetError());
+  }
+}
+
+GetExportJobsOutcomeCallable PinpointClient::GetExportJobsCallable(const GetExportJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetExportJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetExportJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::GetExportJobsAsync(const GetExportJobsRequest& request, const GetExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetExportJobsAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::GetExportJobsAsyncHelper(const GetExportJobsRequest& request, const GetExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetExportJobs(request), context);
+}
+
 GetGcmChannelOutcome PinpointClient::GetGcmChannel(const GetGcmChannelRequest& request) const
 {
   Aws::StringStream ss;
@@ -1481,6 +1590,41 @@ void PinpointClient::GetSegmentAsync(const GetSegmentRequest& request, const Get
 void PinpointClient::GetSegmentAsyncHelper(const GetSegmentRequest& request, const GetSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetSegment(request), context);
+}
+
+GetSegmentExportJobsOutcome PinpointClient::GetSegmentExportJobs(const GetSegmentExportJobsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/segments/{segment-id}/jobs/export";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetSegmentExportJobsOutcome(GetSegmentExportJobsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetSegmentExportJobsOutcome(outcome.GetError());
+  }
+}
+
+GetSegmentExportJobsOutcomeCallable PinpointClient::GetSegmentExportJobsCallable(const GetSegmentExportJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetSegmentExportJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSegmentExportJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::GetSegmentExportJobsAsync(const GetSegmentExportJobsRequest& request, const GetSegmentExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetSegmentExportJobsAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::GetSegmentExportJobsAsyncHelper(const GetSegmentExportJobsRequest& request, const GetSegmentExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetSegmentExportJobs(request), context);
 }
 
 GetSegmentImportJobsOutcome PinpointClient::GetSegmentImportJobs(const GetSegmentImportJobsRequest& request) const

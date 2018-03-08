@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pinpoint/model/CampaignHook.h>
 #include <aws/pinpoint/model/CampaignLimits.h>
 #include <aws/pinpoint/model/QuietTime.h>
 #include <utility>
@@ -82,6 +83,32 @@ namespace Model
      * The unique ID for the application.
      */
     inline ApplicationSettingsResource& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+
+
+    /**
+     * Default campaign hook.
+     */
+    inline const CampaignHook& GetCampaignHook() const{ return m_campaignHook; }
+
+    /**
+     * Default campaign hook.
+     */
+    inline void SetCampaignHook(const CampaignHook& value) { m_campaignHookHasBeenSet = true; m_campaignHook = value; }
+
+    /**
+     * Default campaign hook.
+     */
+    inline void SetCampaignHook(CampaignHook&& value) { m_campaignHookHasBeenSet = true; m_campaignHook = std::move(value); }
+
+    /**
+     * Default campaign hook.
+     */
+    inline ApplicationSettingsResource& WithCampaignHook(const CampaignHook& value) { SetCampaignHook(value); return *this;}
+
+    /**
+     * Default campaign hook.
+     */
+    inline ApplicationSettingsResource& WithCampaignHook(CampaignHook&& value) { SetCampaignHook(std::move(value)); return *this;}
 
 
     /**
@@ -190,6 +217,9 @@ namespace Model
 
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
+    CampaignHook m_campaignHook;
+    bool m_campaignHookHasBeenSet;
 
     Aws::String m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;

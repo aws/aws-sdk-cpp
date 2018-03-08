@@ -33,6 +33,7 @@ WriteCampaignRequest::WriteCampaignRequest() :
     m_descriptionHasBeenSet(false),
     m_holdoutPercent(0),
     m_holdoutPercentHasBeenSet(false),
+    m_hookHasBeenSet(false),
     m_isPaused(false),
     m_isPausedHasBeenSet(false),
     m_limitsHasBeenSet(false),
@@ -52,6 +53,7 @@ WriteCampaignRequest::WriteCampaignRequest(const JsonValue& jsonValue) :
     m_descriptionHasBeenSet(false),
     m_holdoutPercent(0),
     m_holdoutPercentHasBeenSet(false),
+    m_hookHasBeenSet(false),
     m_isPaused(false),
     m_isPausedHasBeenSet(false),
     m_limitsHasBeenSet(false),
@@ -91,6 +93,13 @@ WriteCampaignRequest& WriteCampaignRequest::operator =(const JsonValue& jsonValu
     m_holdoutPercent = jsonValue.GetInteger("HoldoutPercent");
 
     m_holdoutPercentHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Hook"))
+  {
+    m_hook = jsonValue.GetObject("Hook");
+
+    m_hookHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("IsPaused"))
@@ -183,6 +192,12 @@ JsonValue WriteCampaignRequest::Jsonize() const
   if(m_holdoutPercentHasBeenSet)
   {
    payload.WithInteger("HoldoutPercent", m_holdoutPercent);
+
+  }
+
+  if(m_hookHasBeenSet)
+  {
+   payload.WithObject("Hook", m_hook.Jsonize());
 
   }
 

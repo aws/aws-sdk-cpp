@@ -1646,11 +1646,12 @@ namespace Model
      * <code>11.2.0.4.v3</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
      * </li> <li> <p> <code>11.2.0.4.v1</code> (supported for EE, SE1, and SE, in all
      * AWS regions)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version
-     * 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code> </p> </li> <li> <p>
-     * <b>Version 9.5.x:</b> <code> 9.5.9 | 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code> </p>
-     * </li> <li> <p> <b>Version 9.4.x:</b> <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 |
-     * 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 |
-     * 9.3.16 | 9.3.14 | 9.3.12</code> </p> </li> </ul>
+     * 10.1</b> </p> </li> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3
+     * | 9.6.2 | 9.6.1</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code> 9.5.9 |
+     * 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4.x:</b>
+     * <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 | 9.4.7</code> </p> </li> <li> <p>
+     * <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 | 9.3.16 | 9.3.14 | 9.3.12</code>
+     * </p> </li> </ul>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
@@ -1742,11 +1743,12 @@ namespace Model
      * <code>11.2.0.4.v3</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
      * </li> <li> <p> <code>11.2.0.4.v1</code> (supported for EE, SE1, and SE, in all
      * AWS regions)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version
-     * 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code> </p> </li> <li> <p>
-     * <b>Version 9.5.x:</b> <code> 9.5.9 | 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code> </p>
-     * </li> <li> <p> <b>Version 9.4.x:</b> <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 |
-     * 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 |
-     * 9.3.16 | 9.3.14 | 9.3.12</code> </p> </li> </ul>
+     * 10.1</b> </p> </li> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3
+     * | 9.6.2 | 9.6.1</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code> 9.5.9 |
+     * 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4.x:</b>
+     * <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 | 9.4.7</code> </p> </li> <li> <p>
+     * <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 | 9.3.16 | 9.3.14 | 9.3.12</code>
+     * </p> </li> </ul>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
@@ -1838,11 +1840,12 @@ namespace Model
      * <code>11.2.0.4.v3</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
      * </li> <li> <p> <code>11.2.0.4.v1</code> (supported for EE, SE1, and SE, in all
      * AWS regions)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version
-     * 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code> </p> </li> <li> <p>
-     * <b>Version 9.5.x:</b> <code> 9.5.9 | 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code> </p>
-     * </li> <li> <p> <b>Version 9.4.x:</b> <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 |
-     * 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 |
-     * 9.3.16 | 9.3.14 | 9.3.12</code> </p> </li> </ul>
+     * 10.1</b> </p> </li> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3
+     * | 9.6.2 | 9.6.1</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code> 9.5.9 |
+     * 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4.x:</b>
+     * <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 | 9.4.7</code> </p> </li> <li> <p>
+     * <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 | 9.3.16 | 9.3.14 | 9.3.12</code>
+     * </p> </li> </ul>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
@@ -1934,11 +1937,12 @@ namespace Model
      * <code>11.2.0.4.v3</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
      * </li> <li> <p> <code>11.2.0.4.v1</code> (supported for EE, SE1, and SE, in all
      * AWS regions)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version
-     * 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code> </p> </li> <li> <p>
-     * <b>Version 9.5.x:</b> <code> 9.5.9 | 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code> </p>
-     * </li> <li> <p> <b>Version 9.4.x:</b> <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 |
-     * 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 |
-     * 9.3.16 | 9.3.14 | 9.3.12</code> </p> </li> </ul>
+     * 10.1</b> </p> </li> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3
+     * | 9.6.2 | 9.6.1</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code> 9.5.9 |
+     * 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4.x:</b>
+     * <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 | 9.4.7</code> </p> </li> <li> <p>
+     * <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 | 9.3.16 | 9.3.14 | 9.3.12</code>
+     * </p> </li> </ul>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
@@ -2030,11 +2034,12 @@ namespace Model
      * <code>11.2.0.4.v3</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
      * </li> <li> <p> <code>11.2.0.4.v1</code> (supported for EE, SE1, and SE, in all
      * AWS regions)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version
-     * 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code> </p> </li> <li> <p>
-     * <b>Version 9.5.x:</b> <code> 9.5.9 | 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code> </p>
-     * </li> <li> <p> <b>Version 9.4.x:</b> <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 |
-     * 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 |
-     * 9.3.16 | 9.3.14 | 9.3.12</code> </p> </li> </ul>
+     * 10.1</b> </p> </li> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3
+     * | 9.6.2 | 9.6.1</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code> 9.5.9 |
+     * 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4.x:</b>
+     * <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 | 9.4.7</code> </p> </li> <li> <p>
+     * <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 | 9.3.16 | 9.3.14 | 9.3.12</code>
+     * </p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
@@ -2126,11 +2131,12 @@ namespace Model
      * <code>11.2.0.4.v3</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
      * </li> <li> <p> <code>11.2.0.4.v1</code> (supported for EE, SE1, and SE, in all
      * AWS regions)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version
-     * 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code> </p> </li> <li> <p>
-     * <b>Version 9.5.x:</b> <code> 9.5.9 | 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code> </p>
-     * </li> <li> <p> <b>Version 9.4.x:</b> <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 |
-     * 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 |
-     * 9.3.16 | 9.3.14 | 9.3.12</code> </p> </li> </ul>
+     * 10.1</b> </p> </li> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3
+     * | 9.6.2 | 9.6.1</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code> 9.5.9 |
+     * 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4.x:</b>
+     * <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 | 9.4.7</code> </p> </li> <li> <p>
+     * <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 | 9.3.16 | 9.3.14 | 9.3.12</code>
+     * </p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
@@ -2222,11 +2228,12 @@ namespace Model
      * <code>11.2.0.4.v3</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
      * </li> <li> <p> <code>11.2.0.4.v1</code> (supported for EE, SE1, and SE, in all
      * AWS regions)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version
-     * 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code> </p> </li> <li> <p>
-     * <b>Version 9.5.x:</b> <code> 9.5.9 | 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code> </p>
-     * </li> <li> <p> <b>Version 9.4.x:</b> <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 |
-     * 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 |
-     * 9.3.16 | 9.3.14 | 9.3.12</code> </p> </li> </ul>
+     * 10.1</b> </p> </li> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3
+     * | 9.6.2 | 9.6.1</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code> 9.5.9 |
+     * 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4.x:</b>
+     * <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 | 9.4.7</code> </p> </li> <li> <p>
+     * <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 | 9.3.16 | 9.3.14 | 9.3.12</code>
+     * </p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 

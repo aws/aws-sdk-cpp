@@ -98,7 +98,7 @@ namespace Model
      * <p>The port number on the container instance to reserve for your container.</p>
      * <p>If using containers in a task with the <code>awsvpc</code> or
      * <code>host</code> network mode, the <code>hostPort</code> can either be left
-     * blank or needs to be the same value as the <code>containerPort</code>.</p> <p>If
+     * blank or set to the same value as the <code>containerPort</code>.</p> <p>If
      * using containers in a task with the <code>bridge</code> network mode, you can
      * specify a non-reserved host port for your container port mapping, or you can
      * omit the <code>hostPort</code> (or set it to <code>0</code>) while specifying a
@@ -128,7 +128,7 @@ namespace Model
      * <p>The port number on the container instance to reserve for your container.</p>
      * <p>If using containers in a task with the <code>awsvpc</code> or
      * <code>host</code> network mode, the <code>hostPort</code> can either be left
-     * blank or needs to be the same value as the <code>containerPort</code>.</p> <p>If
+     * blank or set to the same value as the <code>containerPort</code>.</p> <p>If
      * using containers in a task with the <code>bridge</code> network mode, you can
      * specify a non-reserved host port for your container port mapping, or you can
      * omit the <code>hostPort</code> (or set it to <code>0</code>) while specifying a
@@ -158,7 +158,7 @@ namespace Model
      * <p>The port number on the container instance to reserve for your container.</p>
      * <p>If using containers in a task with the <code>awsvpc</code> or
      * <code>host</code> network mode, the <code>hostPort</code> can either be left
-     * blank or needs to be the same value as the <code>containerPort</code>.</p> <p>If
+     * blank or set to the same value as the <code>containerPort</code>.</p> <p>If
      * using containers in a task with the <code>bridge</code> network mode, you can
      * specify a non-reserved host port for your container port mapping, or you can
      * omit the <code>hostPort</code> (or set it to <code>0</code>) while specifying a

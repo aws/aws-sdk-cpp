@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>An object representing a constraint on task placement in the task
    * definition.</p> <p>If you are using the Fargate launch type, task placement
-   * contraints are not supported.</p> <p>For more information, see <a
+   * constraints are not supported.</p> <p>For more information, see <a
    * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task
    * Placement Constraints</a> in the <i>Amazon Elastic Container Service Developer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a

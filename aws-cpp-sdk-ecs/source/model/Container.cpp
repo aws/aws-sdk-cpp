@@ -37,7 +37,9 @@ Container::Container() :
     m_exitCodeHasBeenSet(false),
     m_reasonHasBeenSet(false),
     m_networkBindingsHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false)
+    m_networkInterfacesHasBeenSet(false),
+    m_healthStatus(HealthStatus::NOT_SET),
+    m_healthStatusHasBeenSet(false)
 {
 }
 
@@ -50,7 +52,9 @@ Container::Container(const JsonValue& jsonValue) :
     m_exitCodeHasBeenSet(false),
     m_reasonHasBeenSet(false),
     m_networkBindingsHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false)
+    m_networkInterfacesHasBeenSet(false),
+    m_healthStatus(HealthStatus::NOT_SET),
+    m_healthStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -119,6 +123,13 @@ Container& Container::operator =(const JsonValue& jsonValue)
     m_networkInterfacesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("healthStatus"))
+  {
+    m_healthStatus = HealthStatusMapper::GetHealthStatusForName(jsonValue.GetString("healthStatus"));
+
+    m_healthStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -182,6 +193,11 @@ JsonValue Container::Jsonize() const
    }
    payload.WithArray("networkInterfaces", std::move(networkInterfacesJsonList));
 
+  }
+
+  if(m_healthStatusHasBeenSet)
+  {
+   payload.WithString("healthStatus", HealthStatusMapper::GetNameForHealthStatus(m_healthStatus));
   }
 
   return payload;

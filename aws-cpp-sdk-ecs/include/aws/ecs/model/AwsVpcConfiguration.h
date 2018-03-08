@@ -140,32 +140,32 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether or not the task's elastic network interface receives a
-     * public IP address.</p>
+     * <p>Whether the task's elastic network interface receives a public IP
+     * address.</p>
      */
     inline const AssignPublicIp& GetAssignPublicIp() const{ return m_assignPublicIp; }
 
     /**
-     * <p>Specifies whether or not the task's elastic network interface receives a
-     * public IP address.</p>
+     * <p>Whether the task's elastic network interface receives a public IP
+     * address.</p>
      */
     inline void SetAssignPublicIp(const AssignPublicIp& value) { m_assignPublicIpHasBeenSet = true; m_assignPublicIp = value; }
 
     /**
-     * <p>Specifies whether or not the task's elastic network interface receives a
-     * public IP address.</p>
+     * <p>Whether the task's elastic network interface receives a public IP
+     * address.</p>
      */
     inline void SetAssignPublicIp(AssignPublicIp&& value) { m_assignPublicIpHasBeenSet = true; m_assignPublicIp = std::move(value); }
 
     /**
-     * <p>Specifies whether or not the task's elastic network interface receives a
-     * public IP address.</p>
+     * <p>Whether the task's elastic network interface receives a public IP
+     * address.</p>
      */
     inline AwsVpcConfiguration& WithAssignPublicIp(const AssignPublicIp& value) { SetAssignPublicIp(value); return *this;}
 
     /**
-     * <p>Specifies whether or not the task's elastic network interface receives a
-     * public IP address.</p>
+     * <p>Whether the task's elastic network interface receives a public IP
+     * address.</p>
      */
     inline AwsVpcConfiguration& WithAssignPublicIp(AssignPublicIp&& value) { SetAssignPublicIp(std::move(value)); return *this;}
 

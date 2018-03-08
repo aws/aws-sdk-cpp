@@ -57,7 +57,9 @@ Task::Task() :
     m_launchType(LaunchType::NOT_SET),
     m_launchTypeHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
-    m_attachmentsHasBeenSet(false)
+    m_attachmentsHasBeenSet(false),
+    m_healthStatus(HealthStatus::NOT_SET),
+    m_healthStatusHasBeenSet(false)
 {
 }
 
@@ -90,7 +92,9 @@ Task::Task(const JsonValue& jsonValue) :
     m_launchType(LaunchType::NOT_SET),
     m_launchTypeHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
-    m_attachmentsHasBeenSet(false)
+    m_attachmentsHasBeenSet(false),
+    m_healthStatus(HealthStatus::NOT_SET),
+    m_healthStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -285,6 +289,13 @@ Task& Task::operator =(const JsonValue& jsonValue)
     m_attachmentsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("healthStatus"))
+  {
+    m_healthStatus = HealthStatusMapper::GetHealthStatusForName(jsonValue.GetString("healthStatus"));
+
+    m_healthStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -446,6 +457,11 @@ JsonValue Task::Jsonize() const
    }
    payload.WithArray("attachments", std::move(attachmentsJsonList));
 
+  }
+
+  if(m_healthStatusHasBeenSet)
+  {
+   payload.WithString("healthStatus", HealthStatusMapper::GetNameForHealthStatus(m_healthStatus));
   }
 
   return payload;
