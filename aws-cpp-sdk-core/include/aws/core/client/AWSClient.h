@@ -69,6 +69,7 @@ namespace Aws
     namespace Auth
     {
         AWS_CORE_API extern const char SIGV4_SIGNER[];
+        AWS_CORE_API extern const char SIGV2_SIGNER[];
         AWS_CORE_API extern const char NULL_SIGNER[];
     }
 
@@ -197,7 +198,7 @@ namespace Aws
             StreamOutcome MakeRequestWithUnparsedResponse(const Aws::Http::URI& uri,
                 const Aws::AmazonWebServiceRequest& request,
                 Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
-                const char* signerName = Aws::Auth::SIGV4_SIGNER) const;
+                const char* signerName = nullptr) const;
 
             /**
              * This is used for structureless response payloads (file streams, binary data etc...). It calls AttemptExhaustively, but upon
@@ -205,7 +206,7 @@ namespace Aws
              */
             StreamOutcome MakeRequestWithUnparsedResponse(const Aws::Http::URI& uri,
                     Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
-                    const char* signerName = Aws::Auth::SIGV4_SIGNER,
+                    const char* signerName = nullptr,
                     const char* requestName = nullptr) const;
 
             /**
@@ -244,6 +245,7 @@ namespace Aws
 
             std::shared_ptr<Aws::Http::HttpClient> m_httpClient;
             std::shared_ptr<Aws::Auth::AWSAuthSignerProvider> m_signerProvider;
+            Aws::String m_signerName;
             std::shared_ptr<AWSErrorMarshaller> m_errorMarshaller;
             std::shared_ptr<RetryStrategy> m_retryStrategy;
             std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> m_writeRateLimiter;
@@ -296,7 +298,7 @@ namespace Aws
             JsonOutcome MakeRequest(const Aws::Http::URI& uri,
                 const Aws::AmazonWebServiceRequest& request,
                 Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
-                const char* signerName = Aws::Auth::SIGV4_SIGNER) const;
+                const char* signerName = nullptr) const;
 
             /**
              * Returns a Json document or an error from the request. Does some marshalling json and raw streams,
@@ -306,7 +308,7 @@ namespace Aws
              */
             JsonOutcome MakeRequest(const Aws::Http::URI& uri,
                 Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
-                const char* signerName = Aws::Auth::SIGV4_SIGNER,
+                const char* signerName = nullptr,
                 const char* requestName = nullptr) const;
         };
 
@@ -347,7 +349,7 @@ namespace Aws
             XmlOutcome MakeRequest(const Aws::Http::URI& uri,
                 const Aws::AmazonWebServiceRequest& request,
                 Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
-                const char* signerName = Aws::Auth::SIGV4_SIGNER) const;
+                const char* signerName = nullptr) const;
 
 
             /**
@@ -358,7 +360,7 @@ namespace Aws
              */
             XmlOutcome MakeRequest(const Aws::Http::URI& uri,
                 Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
-                const char* signerName = Aws::Auth::SIGV4_SIGNER,
+                const char* signerName = nullptr,
                 const char* requesetName = nullptr) const;
         };
 

@@ -115,6 +115,7 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
     m_httpClient(CreateHttpClient(configuration)),
     m_signerProvider(Aws::MakeUnique<Aws::Auth::DefaultAuthSignerProvider>(AWS_CLIENT_LOG_TAG, signer)),
+    m_signerName(configuration.signer),
     m_errorMarshaller(errorMarshaller),
     m_retryStrategy(configuration.retryStrategy),
     m_writeRateLimiter(configuration.writeRateLimiter),
@@ -131,6 +132,7 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
     m_httpClient(CreateHttpClient(configuration)),
     m_signerProvider(signerProvider),
+    m_signerName(configuration.signer),
     m_errorMarshaller(errorMarshaller),
     m_retryStrategy(configuration.retryStrategy),
     m_writeRateLimiter(configuration.writeRateLimiter),
@@ -160,7 +162,7 @@ void AWSClient::EnableRequestProcessing()
 
 Aws::Client::AWSAuthSigner* AWSClient::GetSignerByName(const char* name) const
 {
-    const auto& signer =  m_signerProvider->GetSigner(name);
+    const auto& signer =  m_signerProvider->GetSigner(name ? name : m_signerName.c_str());
     return signer ? signer.get() : nullptr;
 }
 

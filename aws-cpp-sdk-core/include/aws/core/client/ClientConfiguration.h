@@ -61,6 +61,10 @@ namespace Aws
              */
             Aws::String region;
             /**
+             * AWS Authentication version signer. Default SignatureV4.
+             */
+            const char *signer;
+            /**
              * Use dual stack endpoint in the endpoint calculation. It is your responsibility to verify that the service supports ipv6 in the region you select.
              */
             bool useDualStack;

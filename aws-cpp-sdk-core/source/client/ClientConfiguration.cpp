@@ -15,6 +15,7 @@
 
 #include <aws/core/client/ClientConfiguration.h>
 
+#include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/DefaultRetryStrategy.h>
 #include <aws/core/platform/OSVersionInfo.h>
 #include <aws/core/utils/memory/AWSMemory.h>
@@ -40,6 +41,7 @@ ClientConfiguration::ClientConfiguration() :
     userAgent(ComputeUserAgentString()), 
     scheme(Aws::Http::Scheme::HTTPS), 
     region(Region::US_EAST_1),
+    signer(Aws::Auth::SIGV4_SIGNER),
     useDualStack(false),
     maxConnections(25), 
     requestTimeoutMs(3000), 
