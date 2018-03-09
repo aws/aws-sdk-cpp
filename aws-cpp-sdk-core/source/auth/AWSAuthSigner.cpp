@@ -27,6 +27,7 @@
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/crypto/Sha256.h>
 #include <aws/core/utils/crypto/Sha256HMAC.h>
+#include <aws/core/utils/crypto/Sha1HMAC.h>
 
 #include <cstdio>
 #include <iomanip>
@@ -64,6 +65,7 @@ namespace Aws
     namespace Auth
     {
         const char SIGV4_SIGNER[] = "SignatureV4";
+        const char SIGV2_SIGNER[] = "SignatureV2";
         const char NULL_SIGNER[] = "NullSigner";
     }
 }
@@ -75,6 +77,7 @@ static Aws::String CanonicalizeRequestSigningString(HttpRequest& request, bool u
     signingStringStream << HttpMethodMapper::GetNameForHttpMethod(request.GetMethod());
 
     URI uriCpy = request.GetUri();
+    
     // Many AWS services do not decode the URL before calculating SignatureV4 on their end.
     // This results in the signature getting calculated with a double encoded URL.
     // That means we have to double encode it here for the signature to match on the service side.
@@ -105,6 +108,24 @@ static Aws::String CanonicalizeRequestSigningString(HttpRequest& request, bool u
     {
         signingStringStream << NEWLINE;
     }
+
+    return signingStringStream.str();
+}
+
+static Aws::String CanonicalizeRequestSigningStringV2(HttpRequest& request)
+{
+    request.CanonicalizeRequest();
+    Aws::StringStream signingStringStream;
+    signingStringStream << HttpMethodMapper::GetNameForHttpMethod(request.GetMethod()) << NEWLINE;
+
+    // V2 signature fields
+    signingStringStream << (request.HasHeader(CONTENT_MD5_HEADER) ? request.GetHeaderValue(CONTENT_MD5_HEADER) : "") << NEWLINE;
+    signingStringStream << (request.HasHeader(CONTENT_TYPE_HEADER) ? request.GetHeaderValue(CONTENT_TYPE_HEADER) : "") << NEWLINE;
+    signingStringStream << (request.HasHeader(DATE_HEADER) ? request.GetHeaderValue(DATE_HEADER) : "") << NEWLINE;
+
+    URI uriCpy = request.GetUri();
+    uriCpy.SetPath(uriCpy.GetURLEncodedPath());
+    signingStringStream << uriCpy.GetPath() << uriCpy.GetQueryString();
 
     return signingStringStream.str();
 }
@@ -508,4 +529,77 @@ const Aws::Utils::Array<unsigned char>& AWSAuthV4Signer::ComputeLongLivedHash(co
     }
 
     return m_partialSignature;
+}
+
+static const char* v2LogTag = "AWSAuthV2Signer";
+
+AWSAuthV2Signer::AWSAuthV2Signer(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider) :
+    m_credentialsProvider(credentialsProvider),
+    m_HMAC(Aws::MakeUnique<Aws::Utils::Crypto::Sha1HMAC>(v2LogTag))
+{
+}
+
+AWSAuthV2Signer::AWSAuthV2Signer(const Aws::String& awsAccessKeyId, const Aws::String& awsSecretAccessKey) :
+    m_credentialsProvider(Aws::MakeShared<SimpleAWSCredentialsProvider>(v2LogTag, awsAccessKeyId, awsSecretAccessKey)),
+    m_HMAC(Aws::MakeUnique<Aws::Utils::Crypto::Sha1HMAC>(v2LogTag))
+{
+}
+
+AWSAuthV2Signer::~AWSAuthV2Signer()
+{
+    // empty destructor in .cpp file to keep from needing the implementation of (AWSCredentialsProvider, Sha1HMAC) in the header file 
+}
+
+bool AWSAuthV2Signer::SignRequest(HttpRequest& request) const
+{
+    AWSCredentials credentials = m_credentialsProvider->GetAWSCredentials();
+
+    request.SetDate(GetSigningTimestamp().ToGmtString(DateFormat::RFC822));
+
+    Aws::String canonicalRequestSigningString = CanonicalizeRequestSigningStringV2(request);
+    AWS_LOG_DEBUG(v2LogTag, "Computed signing string: %s", canonicalRequestSigningString.c_str());
+
+    const Aws::String& secretKey = credentials.GetAWSSecretKey();
+
+    auto hashResult = m_HMAC->Calculate(ByteBuffer((unsigned char*)canonicalRequestSigningString.c_str(), canonicalRequestSigningString.length()),
+        ByteBuffer((unsigned char*)secretKey.c_str(), secretKey.length()));
+    if (!hashResult.IsSuccess())
+    {
+        AWS_LOGSTREAM_ERROR(v2LogTag, "Unable to hmac (sha1) signing string \"" << canonicalRequestSigningString << "\"");
+        return false;
+    }
+
+    ByteBuffer digest = hashResult.GetResult();
+
+    Aws::String base64HMAC = HashingUtils::Base64Encode(digest);
+    AWS_LOG_DEBUG(v2LogTag, "Computed hash: %s", base64HMAC.c_str());
+
+    Aws::StringStream ss;
+    ss << "AWS " << credentials.GetAWSAccessKeyId() << ":" << base64HMAC;
+
+    auto awsAuthString = ss.str();
+    AWS_LOGSTREAM_DEBUG(v2LogTag, "Signing request with: " << awsAuthString);
+    request.SetAwsAuthorization(awsAuthString);   
+
+    return true;
+}
+
+bool AWSAuthV2Signer::PresignRequest(Aws::Http::HttpRequest& request, long long expirationTimeInSeconds) const
+{
+    AWS_UNREFERENCED_PARAM(request);
+    AWS_UNREFERENCED_PARAM(expirationTimeInSeconds);
+    AWS_LOGSTREAM_ERROR(v2LogTag, "Presign is not implemented by " << SIGV2_SIGNER);
+    return false;
+}
+
+bool AWSAuthV2Signer::PresignRequest(Aws::Http::HttpRequest& request, const char* region, long long expirationTimeInSeconds) const
+{
+    AWS_UNREFERENCED_PARAM(region);
+    return PresignRequest(request, expirationTimeInSeconds);
+}
+
+bool AWSAuthV2Signer::PresignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, long long expirationTimeInSeconds) const
+{
+    AWS_UNREFERENCED_PARAM(serviceName);
+    return PresignRequest(request, region, expirationTimeInSeconds);
 }

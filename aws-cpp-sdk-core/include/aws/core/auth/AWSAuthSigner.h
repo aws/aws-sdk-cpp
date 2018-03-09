@@ -42,6 +42,7 @@ namespace Aws
         {
             class Sha256;
             class Sha256HMAC;
+            class Sha1HMAC;
         } // namespace Crypto
     } // namespace Utils
 
@@ -50,6 +51,7 @@ namespace Aws
         class AWSCredentials;
         class AWSCredentialsProvider;
         AWS_CORE_API extern const char SIGV4_SIGNER[];
+        AWS_CORE_API extern const char SIGV2_SIGNER[];
         AWS_CORE_API extern const char NULL_SIGNER[];
     } // namespace Auth
 
@@ -233,6 +235,53 @@ namespace Aws
             bool m_urlEscapePath;
         };
 
+        /**
+         * AWS Auth v2 Signer implementation of the AWSAuthSigner interface. More information on AWS Auth v4 Can be found here:
+         * https://docs.aws.amazon.com/general/latest/gr/signature-version-2.html
+         */
+        class AWS_CORE_API AWSAuthV2Signer : public AWSAuthSigner
+        {
+        public:
+            AWSAuthV2Signer(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider);
+
+            AWSAuthV2Signer(const Aws::String& awsAccessKeyId, const Aws::String& awsSecretAccessKey);
+
+            virtual ~AWSAuthV2Signer();
+
+            /**
+             * AWSAuthV2signer's implementation of virtual function from base class
+             * Return Auth Signer's name, here the value is specified in Aws::Auth::DEFAULT_AUTHV2_SIGNER.
+             */
+            const char* GetName() const override { return Aws::Auth::SIGV2_SIGNER; }
+
+            /**
+             * Signs the request itself based on info in the request and uri.
+             * Uses AWS Auth V2 signing method with SHA1 HMAC algorithm.
+             */
+            bool SignRequest(Aws::Http::HttpRequest& request) const override;
+
+            /**
+             * Unimplemented.
+             */
+            bool PresignRequest(Aws::Http::HttpRequest& request, long long expirationInSeconds = 0) const override;
+
+            /**
+             * Unimplemented.
+             */
+            bool PresignRequest(Aws::Http::HttpRequest& request, const char* region, long long expirationInSeconds = 0) const override;
+
+            /**
+             * Unimplemnted.
+             */
+            bool PresignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, long long expirationInSeconds = 0) const override;
+
+        private:
+
+            AWSAuthV2Signer & operator =(const AWSAuthV2Signer& rhs);
+
+            std::shared_ptr<Auth::AWSCredentialsProvider> m_credentialsProvider;
+            Aws::UniquePtr<Aws::Utils::Crypto::Sha1HMAC> m_HMAC;
+        };
 
         /**
          * A no-op implementation of the AWSAuthSigner interface
