@@ -101,6 +101,14 @@ namespace Aws
                 virtual HashResult Calculate(const ByteBuffer& toSign, const ByteBuffer& secret) override;
             };
 
+            class Sha1HMACOpenSSLImpl : public HMAC
+            {
+            public:
+                virtual ~Sha1HMACOpenSSLImpl() = default;
+
+                virtual HashResult Calculate(const ByteBuffer& toSign, const ByteBuffer& secret) override;
+            };
+
             /**
              * OpenSSL implementation for SymmetricCipher
              */

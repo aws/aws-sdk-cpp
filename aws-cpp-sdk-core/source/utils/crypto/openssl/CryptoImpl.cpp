@@ -300,6 +300,32 @@ namespace Aws
                 return HashResult(std::move(digest));
             }
 
+            HashResult Sha1HMACOpenSSLImpl::Calculate(const ByteBuffer& toSign, const ByteBuffer& secret)
+            {
+                unsigned int length = SHA_DIGEST_LENGTH;
+                ByteBuffer digest(length);
+                memset(digest.GetUnderlyingData(), 0, length);
+
+                HMACRAIIGuard guard;
+                HMAC_CTX* m_ctx = guard.getResource();
+
+#if OPENSSL_VERSION_LESS_1_1
+                HMAC_CTX_init(m_ctx);
+#endif
+
+                HMAC_Init_ex(m_ctx, secret.GetUnderlyingData(), static_cast<int>(secret.GetLength()), EVP_sha1(),
+                             NULL);
+                HMAC_Update(m_ctx, toSign.GetUnderlyingData(), toSign.GetLength());
+                HMAC_Final(m_ctx, digest.GetUnderlyingData(), &length);
+
+#if OPENSSL_VERSION_LESS_1_1
+                HMAC_CTX_cleanup(m_ctx);
+#else
+                HMAC_CTX_reset(m_ctx);
+#endif
+                return HashResult(std::move(digest));
+            }
+
             static const char* OPENSSL_LOG_TAG = "OpenSSLCipher";
 
             void LogErrors(const char* logTag = OPENSSL_LOG_TAG)

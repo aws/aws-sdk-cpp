@@ -42,6 +42,7 @@ static const char *s_allocationTag = "CryptoFactory";
 static std::shared_ptr<HashFactory> s_MD5Factory(nullptr);
 static std::shared_ptr<HashFactory> s_Sha256Factory(nullptr);
 static std::shared_ptr<HMACFactory> s_Sha256HMACFactory(nullptr);
+static std::shared_ptr<HMACFactory> s_Sha1HMACFactory(nullptr);
 
 static std::shared_ptr<SymmetricCipherFactory> s_AES_CBCFactory(nullptr);
 static std::shared_ptr<SymmetricCipherFactory> s_AES_CTRFactory(nullptr);
@@ -154,6 +155,51 @@ public:
         return Aws::MakeShared<Sha256HMACOpenSSLImpl>(s_allocationTag);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
         return Aws::MakeShared<Sha256HMACCommonCryptoImpl>(s_allocationTag);
+#else
+    return nullptr;
+#endif
+    }
+
+    /**
+     * Opportunity to make any static initialization calls you need to make.
+     * Will only be called once.
+     */
+    void InitStaticState() override
+    {
+#if ENABLE_OPENSSL_ENCRYPTION
+        if(s_InitCleanupOpenSSLFlag)
+        {
+            OpenSSL::getTheLights.EnterRoom(&OpenSSL::init_static_state);
+        }
+#endif
+    }
+
+    /**
+     * Opportunity to make any static cleanup calls you need to make.
+     * will only be called at the end of the application.
+     */
+    void CleanupStaticState() override
+    {
+#if ENABLE_OPENSSL_ENCRYPTION
+        if(s_InitCleanupOpenSSLFlag)
+        {
+            OpenSSL::getTheLights.LeaveRoom(&OpenSSL::cleanup_static_state);
+        }
+#endif
+    }
+};
+
+class DefaultSHA1HmacFactory : public HMACFactory
+{
+public:
+    std::shared_ptr<Aws::Utils::Crypto::HMAC> CreateImplementation() const override
+    {
+#if ENABLE_BCRYPT_ENCRYPTION
+        return Aws::MakeShared<Sha1HMACBcryptImpl>(s_allocationTag);
+#elif ENABLE_OPENSSL_ENCRYPTION
+        return Aws::MakeShared<Sha1HMACOpenSSLImpl>(s_allocationTag);
+#elif ENABLE_COMMONCRYPTO_ENCRYPTION
+        return Aws::MakeShared<Sha1HMACCommonCryptoImpl>(s_allocationTag);
 #else
     return nullptr;
 #endif
@@ -599,6 +645,16 @@ void Aws::Utils::Crypto::InitCrypto()
         s_Sha256HMACFactory->InitStaticState();
     }
 
+    if(s_Sha1HMACFactory)
+    {
+        s_Sha1HMACFactory->InitStaticState();
+    }
+    else
+    {
+        s_Sha1HMACFactory = Aws::MakeShared<DefaultSHA1HmacFactory>(s_allocationTag);
+        s_Sha1HMACFactory->InitStaticState();
+    }
+
     if(s_AES_CBCFactory)
     {
         s_AES_CBCFactory->InitStaticState();
@@ -668,6 +724,12 @@ void Aws::Utils::Crypto::CleanupCrypto()
         s_Sha256HMACFactory =  nullptr;
     }
 
+    if(s_Sha1HMACFactory)
+    {
+        s_Sha1HMACFactory->CleanupStaticState();
+        s_Sha1HMACFactory =  nullptr;
+    }
+
     if(s_AES_CBCFactory)
     {
         s_AES_CBCFactory->CleanupStaticState();
@@ -715,6 +777,11 @@ void Aws::Utils::Crypto::SetSha256HMACFactory(const std::shared_ptr<HMACFactory>
     s_Sha256HMACFactory = factory;
 }
 
+void Aws::Utils::Crypto::SetSha1HMACFactory(const std::shared_ptr<HMACFactory>& factory)
+{
+    s_Sha1HMACFactory = factory;
+}
+
 void Aws::Utils::Crypto::SetAES_CBCFactory(const std::shared_ptr<SymmetricCipherFactory>& factory)
 {
     s_AES_CBCFactory = factory;
@@ -753,6 +820,11 @@ std::shared_ptr<Hash> Aws::Utils::Crypto::CreateSha256Implementation()
 std::shared_ptr<Aws::Utils::Crypto::HMAC> Aws::Utils::Crypto::CreateSha256HMACImplementation()
 {
     return s_Sha256HMACFactory->CreateImplementation();
+}
+
+std::shared_ptr<Aws::Utils::Crypto::HMAC> Aws::Utils::Crypto::CreateSha1HMACImplementation()
+{
+    return s_Sha1HMACFactory->CreateImplementation();
 }
 
 #ifdef _WIN32

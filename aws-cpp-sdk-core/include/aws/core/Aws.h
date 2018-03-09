@@ -116,6 +116,10 @@ namespace Aws
         /**
          * If set, this closure will be used to create and install the factory.
          */
+        std::function<std::shared_ptr<Aws::Utils::Crypto::HMACFactory>()> sha1HMACFactory_create_fn;
+        /**
+         * If set, this closure will be used to create and install the factory.
+         */
         std::function<std::shared_ptr<Aws::Utils::Crypto::SymmetricCipherFactory>()> aes_CBCFactory_create_fn;
         /**
          * If set, this closure will be used to create and install the factory.

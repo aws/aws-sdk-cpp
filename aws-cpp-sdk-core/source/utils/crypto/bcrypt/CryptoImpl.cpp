@@ -350,6 +350,16 @@ namespace Aws
                 return m_impl.Calculate(toSign, secret);
             }
 
+            Sha1HMACBcryptImpl::Sha1HMACBcryptImpl() :
+                m_impl(BCRYPT_SHA1_ALGORITHM, true)
+            {
+            }
+
+            HashResult Sha1HMACBcryptImpl::Calculate(const ByteBuffer& toSign, const ByteBuffer& secret)
+            {
+                return m_impl.Calculate(toSign, secret);
+            }
+
             static const char* SYM_CIPHER_TAG = "BCryptSymmetricCipherImpl";
 
             BCryptSymmetricCipher::BCryptSymmetricCipher(const CryptoBuffer& key, size_t ivSizeBytes, bool ctrMode) :

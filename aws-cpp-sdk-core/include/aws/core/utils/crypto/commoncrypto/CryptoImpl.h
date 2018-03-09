@@ -87,8 +87,16 @@ namespace Aws
                 virtual ~Sha256HMACCommonCryptoImpl() {}
 
                 virtual HashResult Calculate(const ByteBuffer& toSign, const ByteBuffer& secret) override;
+            };
 
+            class Sha1HMACCommonCryptoImpl : public HMAC
+            {
+            public:
 
+                Sha1HMACCommonCryptoImpl() {}
+                virtual ~Sha1HMACCommonCryptoImpl() {}
+
+                virtual HashResult Calculate(const ByteBuffer& toSign, const ByteBuffer& secret) override;
             };
 
             /**

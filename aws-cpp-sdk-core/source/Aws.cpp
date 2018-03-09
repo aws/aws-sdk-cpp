@@ -76,6 +76,11 @@ namespace Aws
             Aws::Utils::Crypto::SetSha256HMACFactory(options.cryptoOptions.sha256HMACFactory_create_fn());
         }
 
+        if(options.cryptoOptions.sha1HMACFactory_create_fn)
+        {
+            Aws::Utils::Crypto::SetSha1HMACFactory(options.cryptoOptions.sha1HMACFactory_create_fn());
+        }
+
         if (options.cryptoOptions.aes_KeyWrapFactory_create_fn)
         {
             Aws::Utils::Crypto::SetAES_KeyWrapFactory(options.cryptoOptions.aes_KeyWrapFactory_create_fn());

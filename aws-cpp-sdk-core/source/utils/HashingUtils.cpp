@@ -18,6 +18,7 @@
 #include <aws/core/utils/base64/Base64.h>
 #include <aws/core/utils/crypto/Sha256.h>
 #include <aws/core/utils/crypto/Sha256HMAC.h>
+#include <aws/core/utils/crypto/Sha1HMAC.h>
 #include <aws/core/utils/crypto/MD5.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -48,6 +49,12 @@ ByteBuffer HashingUtils::Base64Decode(const Aws::String& encodedMessage)
 ByteBuffer HashingUtils::CalculateSHA256HMAC(const ByteBuffer& toSign, const ByteBuffer& secret)
 {
     Sha256HMAC hash;
+    return hash.Calculate(toSign, secret).GetResult();
+}
+
+ByteBuffer HashingUtils::CalculateSHA1HMAC(const ByteBuffer& toSign, const ByteBuffer& secret)
+{
+    Sha1HMAC hash;
     return hash.Calculate(toSign, secret).GetResult();
 }
 
