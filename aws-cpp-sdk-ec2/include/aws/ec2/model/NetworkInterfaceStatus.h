@@ -27,6 +27,7 @@ namespace Model
   {
     NOT_SET,
     available,
+    associated,
     attaching,
     in_use,
     detaching

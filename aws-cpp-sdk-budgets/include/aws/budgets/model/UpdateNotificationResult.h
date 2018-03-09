@@ -33,7 +33,7 @@ namespace Budgets
 namespace Model
 {
   /**
-   * Response of UpdateNotification<p><h3>See Also:</h3>   <a
+   * <p> Response of UpdateNotification </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateNotificationResponse">AWS
    * API Reference</a></p>
    */

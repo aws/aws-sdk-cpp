@@ -21,6 +21,8 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/dynamodb/model/ProvisionedThroughputDescription.h>
 #include <aws/dynamodb/model/StreamSpecification.h>
+#include <aws/dynamodb/model/RestoreSummary.h>
+#include <aws/dynamodb/model/SSEDescription.h>
 #include <aws/dynamodb/model/AttributeDefinition.h>
 #include <aws/dynamodb/model/KeySchemaElement.h>
 #include <aws/dynamodb/model/LocalSecondaryIndexDescription.h>
@@ -475,6 +477,42 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that uniquely identifies the table.</p>
      */
     inline TableDescription& WithTableArn(const char* value) { SetTableArn(value); return *this;}
+
+
+    /**
+     * <p>Unique identifier for the table for which the backup was created. </p>
+     */
+    inline const Aws::String& GetTableId() const{ return m_tableId; }
+
+    /**
+     * <p>Unique identifier for the table for which the backup was created. </p>
+     */
+    inline void SetTableId(const Aws::String& value) { m_tableIdHasBeenSet = true; m_tableId = value; }
+
+    /**
+     * <p>Unique identifier for the table for which the backup was created. </p>
+     */
+    inline void SetTableId(Aws::String&& value) { m_tableIdHasBeenSet = true; m_tableId = std::move(value); }
+
+    /**
+     * <p>Unique identifier for the table for which the backup was created. </p>
+     */
+    inline void SetTableId(const char* value) { m_tableIdHasBeenSet = true; m_tableId.assign(value); }
+
+    /**
+     * <p>Unique identifier for the table for which the backup was created. </p>
+     */
+    inline TableDescription& WithTableId(const Aws::String& value) { SetTableId(value); return *this;}
+
+    /**
+     * <p>Unique identifier for the table for which the backup was created. </p>
+     */
+    inline TableDescription& WithTableId(Aws::String&& value) { SetTableId(std::move(value)); return *this;}
+
+    /**
+     * <p>Unique identifier for the table for which the backup was created. </p>
+     */
+    inline TableDescription& WithTableId(const char* value) { SetTableId(value); return *this;}
 
 
     /**
@@ -1178,6 +1216,63 @@ namespace Model
      */
     inline TableDescription& WithLatestStreamArn(const char* value) { SetLatestStreamArn(value); return *this;}
 
+
+    /**
+     * <p>Contains details for the restore.</p>
+     */
+    inline const RestoreSummary& GetRestoreSummary() const{ return m_restoreSummary; }
+
+    /**
+     * <p>Contains details for the restore.</p>
+     */
+    inline void SetRestoreSummary(const RestoreSummary& value) { m_restoreSummaryHasBeenSet = true; m_restoreSummary = value; }
+
+    /**
+     * <p>Contains details for the restore.</p>
+     */
+    inline void SetRestoreSummary(RestoreSummary&& value) { m_restoreSummaryHasBeenSet = true; m_restoreSummary = std::move(value); }
+
+    /**
+     * <p>Contains details for the restore.</p>
+     */
+    inline TableDescription& WithRestoreSummary(const RestoreSummary& value) { SetRestoreSummary(value); return *this;}
+
+    /**
+     * <p>Contains details for the restore.</p>
+     */
+    inline TableDescription& WithRestoreSummary(RestoreSummary&& value) { SetRestoreSummary(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The description of the server-side encryption status on the specified
+     * table.</p>
+     */
+    inline const SSEDescription& GetSSEDescription() const{ return m_sSEDescription; }
+
+    /**
+     * <p>The description of the server-side encryption status on the specified
+     * table.</p>
+     */
+    inline void SetSSEDescription(const SSEDescription& value) { m_sSEDescriptionHasBeenSet = true; m_sSEDescription = value; }
+
+    /**
+     * <p>The description of the server-side encryption status on the specified
+     * table.</p>
+     */
+    inline void SetSSEDescription(SSEDescription&& value) { m_sSEDescriptionHasBeenSet = true; m_sSEDescription = std::move(value); }
+
+    /**
+     * <p>The description of the server-side encryption status on the specified
+     * table.</p>
+     */
+    inline TableDescription& WithSSEDescription(const SSEDescription& value) { SetSSEDescription(value); return *this;}
+
+    /**
+     * <p>The description of the server-side encryption status on the specified
+     * table.</p>
+     */
+    inline TableDescription& WithSSEDescription(SSEDescription&& value) { SetSSEDescription(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<AttributeDefinition> m_attributeDefinitions;
@@ -1207,6 +1302,9 @@ namespace Model
     Aws::String m_tableArn;
     bool m_tableArnHasBeenSet;
 
+    Aws::String m_tableId;
+    bool m_tableIdHasBeenSet;
+
     Aws::Vector<LocalSecondaryIndexDescription> m_localSecondaryIndexes;
     bool m_localSecondaryIndexesHasBeenSet;
 
@@ -1221,6 +1319,12 @@ namespace Model
 
     Aws::String m_latestStreamArn;
     bool m_latestStreamArnHasBeenSet;
+
+    RestoreSummary m_restoreSummary;
+    bool m_restoreSummaryHasBeenSet;
+
+    SSEDescription m_sSEDescription;
+    bool m_sSEDescriptionHasBeenSet;
   };
 
 } // namespace Model

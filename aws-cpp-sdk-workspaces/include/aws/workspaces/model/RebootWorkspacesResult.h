@@ -35,12 +35,6 @@ namespace WorkSpaces
 {
 namespace Model
 {
-  /**
-   * <p>Contains the results of the <a>RebootWorkspaces</a> operation.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebootWorkspacesResult">AWS
-   * API Reference</a></p>
-   */
   class AWS_WORKSPACES_API RebootWorkspacesResult
   {
   public:
@@ -50,44 +44,37 @@ namespace Model
 
 
     /**
-     * <p>An array of structures representing any WorkSpaces that could not be
-     * rebooted.</p>
+     * <p>Information about the WorkSpaces that could not be rebooted.</p>
      */
     inline const Aws::Vector<FailedWorkspaceChangeRequest>& GetFailedRequests() const{ return m_failedRequests; }
 
     /**
-     * <p>An array of structures representing any WorkSpaces that could not be
-     * rebooted.</p>
+     * <p>Information about the WorkSpaces that could not be rebooted.</p>
      */
     inline void SetFailedRequests(const Aws::Vector<FailedWorkspaceChangeRequest>& value) { m_failedRequests = value; }
 
     /**
-     * <p>An array of structures representing any WorkSpaces that could not be
-     * rebooted.</p>
+     * <p>Information about the WorkSpaces that could not be rebooted.</p>
      */
     inline void SetFailedRequests(Aws::Vector<FailedWorkspaceChangeRequest>&& value) { m_failedRequests = std::move(value); }
 
     /**
-     * <p>An array of structures representing any WorkSpaces that could not be
-     * rebooted.</p>
+     * <p>Information about the WorkSpaces that could not be rebooted.</p>
      */
     inline RebootWorkspacesResult& WithFailedRequests(const Aws::Vector<FailedWorkspaceChangeRequest>& value) { SetFailedRequests(value); return *this;}
 
     /**
-     * <p>An array of structures representing any WorkSpaces that could not be
-     * rebooted.</p>
+     * <p>Information about the WorkSpaces that could not be rebooted.</p>
      */
     inline RebootWorkspacesResult& WithFailedRequests(Aws::Vector<FailedWorkspaceChangeRequest>&& value) { SetFailedRequests(std::move(value)); return *this;}
 
     /**
-     * <p>An array of structures representing any WorkSpaces that could not be
-     * rebooted.</p>
+     * <p>Information about the WorkSpaces that could not be rebooted.</p>
      */
     inline RebootWorkspacesResult& AddFailedRequests(const FailedWorkspaceChangeRequest& value) { m_failedRequests.push_back(value); return *this; }
 
     /**
-     * <p>An array of structures representing any WorkSpaces that could not be
-     * rebooted.</p>
+     * <p>Information about the WorkSpaces that could not be rebooted.</p>
      */
     inline RebootWorkspacesResult& AddFailedRequests(FailedWorkspaceChangeRequest&& value) { m_failedRequests.push_back(std::move(value)); return *this; }
 

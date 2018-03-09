@@ -133,77 +133,77 @@ namespace Model
 
 
     /**
-     * <p>The parameters to use when creating the new provisioning artifact.</p>
+     * <p>The configuration for the provisioning artifact.</p>
      */
     inline const ProvisioningArtifactProperties& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>The parameters to use when creating the new provisioning artifact.</p>
+     * <p>The configuration for the provisioning artifact.</p>
      */
     inline void SetParameters(const ProvisioningArtifactProperties& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>The parameters to use when creating the new provisioning artifact.</p>
+     * <p>The configuration for the provisioning artifact.</p>
      */
     inline void SetParameters(ProvisioningArtifactProperties&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>The parameters to use when creating the new provisioning artifact.</p>
+     * <p>The configuration for the provisioning artifact.</p>
      */
     inline CreateProvisioningArtifactRequest& WithParameters(const ProvisioningArtifactProperties& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>The parameters to use when creating the new provisioning artifact.</p>
+     * <p>The configuration for the provisioning artifact.</p>
      */
     inline CreateProvisioningArtifactRequest& WithParameters(ProvisioningArtifactProperties&& value) { SetParameters(std::move(value)); return *this;}
 
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline CreateProvisioningArtifactRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline CreateProvisioningArtifactRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline CreateProvisioningArtifactRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 

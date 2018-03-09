@@ -38,7 +38,9 @@ CreateFleetRequest::CreateFleetRequest() :
     m_resourceCreationLimitPolicyHasBeenSet(false),
     m_metricGroupsHasBeenSet(false),
     m_peerVpcAwsAccountIdHasBeenSet(false),
-    m_peerVpcIdHasBeenSet(false)
+    m_peerVpcIdHasBeenSet(false),
+    m_fleetType(FleetType::NOT_SET),
+    m_fleetTypeHasBeenSet(false)
 {
 }
 
@@ -141,6 +143,11 @@ Aws::String CreateFleetRequest::SerializePayload() const
   {
    payload.WithString("PeerVpcId", m_peerVpcId);
 
+  }
+
+  if(m_fleetTypeHasBeenSet)
+  {
+   payload.WithString("FleetType", FleetTypeMapper::GetNameForFleetType(m_fleetType));
   }
 
   return payload.WriteReadable();

@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Detailed constraint information.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about a constraint.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ConstraintDetail">AWS
    * API Reference</a></p>
    */
@@ -83,73 +83,87 @@ namespace Model
 
 
     /**
-     * <p>The type of the constraint.</p>
+     * <p>The type of constraint.</p> <ul> <li> <p> <code>LAUNCH</code> </p> </li> <li>
+     * <p> <code>NOTIFICATION</code> </p> </li> <li> <p> <code>TEMPLATE</code> </p>
+     * </li> </ul>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the constraint.</p>
+     * <p>The type of constraint.</p> <ul> <li> <p> <code>LAUNCH</code> </p> </li> <li>
+     * <p> <code>NOTIFICATION</code> </p> </li> <li> <p> <code>TEMPLATE</code> </p>
+     * </li> </ul>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the constraint.</p>
+     * <p>The type of constraint.</p> <ul> <li> <p> <code>LAUNCH</code> </p> </li> <li>
+     * <p> <code>NOTIFICATION</code> </p> </li> <li> <p> <code>TEMPLATE</code> </p>
+     * </li> </ul>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the constraint.</p>
+     * <p>The type of constraint.</p> <ul> <li> <p> <code>LAUNCH</code> </p> </li> <li>
+     * <p> <code>NOTIFICATION</code> </p> </li> <li> <p> <code>TEMPLATE</code> </p>
+     * </li> </ul>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The type of the constraint.</p>
+     * <p>The type of constraint.</p> <ul> <li> <p> <code>LAUNCH</code> </p> </li> <li>
+     * <p> <code>NOTIFICATION</code> </p> </li> <li> <p> <code>TEMPLATE</code> </p>
+     * </li> </ul>
      */
     inline ConstraintDetail& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the constraint.</p>
+     * <p>The type of constraint.</p> <ul> <li> <p> <code>LAUNCH</code> </p> </li> <li>
+     * <p> <code>NOTIFICATION</code> </p> </li> <li> <p> <code>TEMPLATE</code> </p>
+     * </li> </ul>
      */
     inline ConstraintDetail& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of the constraint.</p>
+     * <p>The type of constraint.</p> <ul> <li> <p> <code>LAUNCH</code> </p> </li> <li>
+     * <p> <code>NOTIFICATION</code> </p> </li> <li> <p> <code>TEMPLATE</code> </p>
+     * </li> </ul>
      */
     inline ConstraintDetail& WithType(const char* value) { SetType(value); return *this;}
 
 
     /**
-     * <p>The text description of the constraint.</p>
+     * <p>The description of the constraint.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The text description of the constraint.</p>
+     * <p>The description of the constraint.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The text description of the constraint.</p>
+     * <p>The description of the constraint.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The text description of the constraint.</p>
+     * <p>The description of the constraint.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The text description of the constraint.</p>
+     * <p>The description of the constraint.</p>
      */
     inline ConstraintDetail& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The text description of the constraint.</p>
+     * <p>The description of the constraint.</p>
      */
     inline ConstraintDetail& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The text description of the constraint.</p>
+     * <p>The description of the constraint.</p>
      */
     inline ConstraintDetail& WithDescription(const char* value) { SetDescription(value); return *this;}
 

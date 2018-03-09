@@ -36,6 +36,10 @@ RestApi::RestApi() :
     m_versionHasBeenSet(false),
     m_warningsHasBeenSet(false),
     m_binaryMediaTypesHasBeenSet(false),
+    m_minimumCompressionSize(0),
+    m_minimumCompressionSizeHasBeenSet(false),
+    m_apiKeySource(ApiKeySourceType::NOT_SET),
+    m_apiKeySourceHasBeenSet(false),
     m_endpointConfigurationHasBeenSet(false)
 {
 }
@@ -48,6 +52,10 @@ RestApi::RestApi(const JsonValue& jsonValue) :
     m_versionHasBeenSet(false),
     m_warningsHasBeenSet(false),
     m_binaryMediaTypesHasBeenSet(false),
+    m_minimumCompressionSize(0),
+    m_minimumCompressionSizeHasBeenSet(false),
+    m_apiKeySource(ApiKeySourceType::NOT_SET),
+    m_apiKeySourceHasBeenSet(false),
     m_endpointConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
@@ -108,6 +116,20 @@ RestApi& RestApi::operator =(const JsonValue& jsonValue)
       m_binaryMediaTypes.push_back(binaryMediaTypesJsonList[binaryMediaTypesIndex].AsString());
     }
     m_binaryMediaTypesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("minimumCompressionSize"))
+  {
+    m_minimumCompressionSize = jsonValue.GetInteger("minimumCompressionSize");
+
+    m_minimumCompressionSizeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("apiKeySource"))
+  {
+    m_apiKeySource = ApiKeySourceTypeMapper::GetApiKeySourceTypeForName(jsonValue.GetString("apiKeySource"));
+
+    m_apiKeySourceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("endpointConfiguration"))
@@ -173,6 +195,17 @@ JsonValue RestApi::Jsonize() const
    }
    payload.WithArray("binaryMediaTypes", std::move(binaryMediaTypesJsonList));
 
+  }
+
+  if(m_minimumCompressionSizeHasBeenSet)
+  {
+   payload.WithInteger("minimumCompressionSize", m_minimumCompressionSize);
+
+  }
+
+  if(m_apiKeySourceHasBeenSet)
+  {
+   payload.WithString("apiKeySource", ApiKeySourceTypeMapper::GetNameForApiKeySourceType(m_apiKeySource));
   }
 
   if(m_endpointConfigurationHasBeenSet)

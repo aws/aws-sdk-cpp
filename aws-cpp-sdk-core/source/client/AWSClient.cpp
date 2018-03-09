@@ -16,6 +16,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/AmazonWebServiceRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
+#include <aws/core/auth/AWSAuthSignerProvider.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
 #include <aws/core/client/ClientConfiguration.h>
@@ -49,7 +50,7 @@ using namespace Aws::Utils::Xml;
 static const int SUCCESS_RESPONSE_MIN = 200;
 static const int SUCCESS_RESPONSE_MAX = 299;
 
-static const char* AWS_CLIENT_LOG_TAG = "AWSClient";
+static const char AWS_CLIENT_LOG_TAG[] = "AWSClient";
 //4 Minutes
 static const std::chrono::milliseconds TIME_DIFF_MAX = std::chrono::minutes(4); 
 //-4 Minutes
@@ -113,6 +114,7 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
     m_httpClient(CreateHttpClient(configuration)),
+    m_signerProvider(Aws::MakeUnique<Aws::Auth::DefaultAuthSignerProvider>(AWS_CLIENT_LOG_TAG, signer)),
     m_errorMarshaller(errorMarshaller),
     m_retryStrategy(configuration.retryStrategy),
     m_writeRateLimiter(configuration.writeRateLimiter),
@@ -121,19 +123,14 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_hash(Aws::Utils::Crypto::CreateMD5Implementation()),
     m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment)
 {
-    if (signer) 
-    {
-        m_signerMap.emplace(signer->GetName(), signer);
-    }
-    m_signerMap.emplace(Aws::Auth::NULL_SIGNER, Aws::MakeShared<Aws::Client::AWSNullSigner>(AWS_CLIENT_LOG_TAG));
     InitializeGlobalStatics();
 }
 
 AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
-    const Aws::Map<Aws::String, std::shared_ptr<Aws::Client::AWSAuthSigner>>& signerMap,
+    const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
     m_httpClient(CreateHttpClient(configuration)),
-    m_signerMap(signerMap),
+    m_signerProvider(signerProvider),
     m_errorMarshaller(errorMarshaller),
     m_retryStrategy(configuration.retryStrategy),
     m_writeRateLimiter(configuration.writeRateLimiter),
@@ -163,17 +160,8 @@ void AWSClient::EnableRequestProcessing()
 
 Aws::Client::AWSAuthSigner* AWSClient::GetSignerByName(const char* name) const
 {
-    auto iter = m_signerMap.find(name);
-    if (iter == m_signerMap.end()) 
-    {
-        AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, "Request's signer: '" << name << "' is not found in the signer's map.");
-        assert(false);
-        return nullptr;
-    }
-    else
-    {
-        return iter->second.get();
-    }
+    const auto& signer =  m_signerProvider->GetSigner(name);
+    return signer ? signer.get() : nullptr;
 }
 
 HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
@@ -562,9 +550,9 @@ AWSJsonClient::AWSJsonClient(const Aws::Client::ClientConfiguration& configurati
 }
 
 AWSJsonClient::AWSJsonClient(const Aws::Client::ClientConfiguration& configuration,
-    const Aws::Map<Aws::String, std::shared_ptr<Aws::Client::AWSAuthSigner>>& signerMap,
+    const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
-    BASECLASS(configuration, signerMap, errorMarshaller)
+    BASECLASS(configuration, signerProvider, errorMarshaller)
 {
 }
 
@@ -669,9 +657,9 @@ AWSXMLClient::AWSXMLClient(const Aws::Client::ClientConfiguration& configuration
 }
 
 AWSXMLClient::AWSXMLClient(const Aws::Client::ClientConfiguration& configuration,
-    const Aws::Map<Aws::String, std::shared_ptr<Aws::Client::AWSAuthSigner>>& signerMap,
+    const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
-    BASECLASS(configuration, signerMap, errorMarshaller)
+    BASECLASS(configuration, signerProvider, errorMarshaller)
 {
 }
 

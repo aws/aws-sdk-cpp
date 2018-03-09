@@ -1,0 +1,315 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/MediaLiveRequest.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/medialive/model/EncoderSettings.h>
+#include <aws/medialive/model/InputSpecification.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/model/OutputDestination.h>
+#include <aws/medialive/model/InputAttachment.h>
+#include <utility>
+#include <aws/core/utils/UUID.h>
+
+namespace Aws
+{
+namespace MediaLive
+{
+namespace Model
+{
+
+  /**
+   * A request to create a channel<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateChannelRequest">AWS
+   * API Reference</a></p>
+   */
+  class AWS_MEDIALIVE_API CreateChannelRequest : public MediaLiveRequest
+  {
+  public:
+    CreateChannelRequest();
+    
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "CreateChannel"; }
+
+    Aws::String SerializePayload() const override;
+
+
+    
+    inline const Aws::Vector<OutputDestination>& GetDestinations() const{ return m_destinations; }
+
+    
+    inline void SetDestinations(const Aws::Vector<OutputDestination>& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
+
+    
+    inline void SetDestinations(Aws::Vector<OutputDestination>&& value) { m_destinationsHasBeenSet = true; m_destinations = std::move(value); }
+
+    
+    inline CreateChannelRequest& WithDestinations(const Aws::Vector<OutputDestination>& value) { SetDestinations(value); return *this;}
+
+    
+    inline CreateChannelRequest& WithDestinations(Aws::Vector<OutputDestination>&& value) { SetDestinations(std::move(value)); return *this;}
+
+    
+    inline CreateChannelRequest& AddDestinations(const OutputDestination& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
+
+    
+    inline CreateChannelRequest& AddDestinations(OutputDestination&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(std::move(value)); return *this; }
+
+
+    
+    inline const EncoderSettings& GetEncoderSettings() const{ return m_encoderSettings; }
+
+    
+    inline void SetEncoderSettings(const EncoderSettings& value) { m_encoderSettingsHasBeenSet = true; m_encoderSettings = value; }
+
+    
+    inline void SetEncoderSettings(EncoderSettings&& value) { m_encoderSettingsHasBeenSet = true; m_encoderSettings = std::move(value); }
+
+    
+    inline CreateChannelRequest& WithEncoderSettings(const EncoderSettings& value) { SetEncoderSettings(value); return *this;}
+
+    
+    inline CreateChannelRequest& WithEncoderSettings(EncoderSettings&& value) { SetEncoderSettings(std::move(value)); return *this;}
+
+
+    /**
+     * List of input attachments for channel.
+     */
+    inline const Aws::Vector<InputAttachment>& GetInputAttachments() const{ return m_inputAttachments; }
+
+    /**
+     * List of input attachments for channel.
+     */
+    inline void SetInputAttachments(const Aws::Vector<InputAttachment>& value) { m_inputAttachmentsHasBeenSet = true; m_inputAttachments = value; }
+
+    /**
+     * List of input attachments for channel.
+     */
+    inline void SetInputAttachments(Aws::Vector<InputAttachment>&& value) { m_inputAttachmentsHasBeenSet = true; m_inputAttachments = std::move(value); }
+
+    /**
+     * List of input attachments for channel.
+     */
+    inline CreateChannelRequest& WithInputAttachments(const Aws::Vector<InputAttachment>& value) { SetInputAttachments(value); return *this;}
+
+    /**
+     * List of input attachments for channel.
+     */
+    inline CreateChannelRequest& WithInputAttachments(Aws::Vector<InputAttachment>&& value) { SetInputAttachments(std::move(value)); return *this;}
+
+    /**
+     * List of input attachments for channel.
+     */
+    inline CreateChannelRequest& AddInputAttachments(const InputAttachment& value) { m_inputAttachmentsHasBeenSet = true; m_inputAttachments.push_back(value); return *this; }
+
+    /**
+     * List of input attachments for channel.
+     */
+    inline CreateChannelRequest& AddInputAttachments(InputAttachment&& value) { m_inputAttachmentsHasBeenSet = true; m_inputAttachments.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     */
+    inline const InputSpecification& GetInputSpecification() const{ return m_inputSpecification; }
+
+    /**
+     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     */
+    inline void SetInputSpecification(const InputSpecification& value) { m_inputSpecificationHasBeenSet = true; m_inputSpecification = value; }
+
+    /**
+     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     */
+    inline void SetInputSpecification(InputSpecification&& value) { m_inputSpecificationHasBeenSet = true; m_inputSpecification = std::move(value); }
+
+    /**
+     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     */
+    inline CreateChannelRequest& WithInputSpecification(const InputSpecification& value) { SetInputSpecification(value); return *this;}
+
+    /**
+     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     */
+    inline CreateChannelRequest& WithInputSpecification(InputSpecification&& value) { SetInputSpecification(std::move(value)); return *this;}
+
+
+    /**
+     * Name of channel.
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * Name of channel.
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * Name of channel.
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * Name of channel.
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * Name of channel.
+     */
+    inline CreateChannelRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * Name of channel.
+     */
+    inline CreateChannelRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * Name of channel.
+     */
+    inline CreateChannelRequest& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * Unique request ID to be specified. This is needed to prevent retries
+     * from
+creating multiple resources.
+
+     */
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    /**
+     * Unique request ID to be specified. This is needed to prevent retries
+     * from
+creating multiple resources.
+
+     */
+    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
+
+    /**
+     * Unique request ID to be specified. This is needed to prevent retries
+     * from
+creating multiple resources.
+
+     */
+    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
+
+    /**
+     * Unique request ID to be specified. This is needed to prevent retries
+     * from
+creating multiple resources.
+
+     */
+    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
+
+    /**
+     * Unique request ID to be specified. This is needed to prevent retries
+     * from
+creating multiple resources.
+
+     */
+    inline CreateChannelRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    /**
+     * Unique request ID to be specified. This is needed to prevent retries
+     * from
+creating multiple resources.
+
+     */
+    inline CreateChannelRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    /**
+     * Unique request ID to be specified. This is needed to prevent retries
+     * from
+creating multiple resources.
+
+     */
+    inline CreateChannelRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
+
+    /**
+     * An optional Amazon Resource Name (ARN) of the role to assume when running the
+     * Channel.
+     */
+    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * An optional Amazon Resource Name (ARN) of the role to assume when running the
+     * Channel.
+     */
+    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+
+    /**
+     * An optional Amazon Resource Name (ARN) of the role to assume when running the
+     * Channel.
+     */
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
+
+    /**
+     * An optional Amazon Resource Name (ARN) of the role to assume when running the
+     * Channel.
+     */
+    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
+
+    /**
+     * An optional Amazon Resource Name (ARN) of the role to assume when running the
+     * Channel.
+     */
+    inline CreateChannelRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
+
+    /**
+     * An optional Amazon Resource Name (ARN) of the role to assume when running the
+     * Channel.
+     */
+    inline CreateChannelRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
+
+    /**
+     * An optional Amazon Resource Name (ARN) of the role to assume when running the
+     * Channel.
+     */
+    inline CreateChannelRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
+  private:
+
+    Aws::Vector<OutputDestination> m_destinations;
+    bool m_destinationsHasBeenSet;
+
+    EncoderSettings m_encoderSettings;
+    bool m_encoderSettingsHasBeenSet;
+
+    Aws::Vector<InputAttachment> m_inputAttachments;
+    bool m_inputAttachmentsHasBeenSet;
+
+    InputSpecification m_inputSpecification;
+    bool m_inputSpecificationHasBeenSet;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
+
+    Aws::String m_requestId;
+    bool m_requestIdHasBeenSet;
+
+    Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace MediaLive
+} // namespace Aws

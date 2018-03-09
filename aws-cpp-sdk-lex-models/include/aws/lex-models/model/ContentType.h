@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     PlainText,
-    SSML
+    SSML,
+    CustomPayload
   };
 
 namespace ContentTypeMapper

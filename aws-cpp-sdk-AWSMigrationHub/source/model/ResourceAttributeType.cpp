@@ -40,7 +40,6 @@ namespace Aws
         static const int VM_PATH_HASH = HashingUtils::HashString("VM_PATH");
         static const int BIOS_ID_HASH = HashingUtils::HashString("BIOS_ID");
         static const int MOTHERBOARD_SERIAL_NUMBER_HASH = HashingUtils::HashString("MOTHERBOARD_SERIAL_NUMBER");
-        static const int LABEL_HASH = HashingUtils::HashString("LABEL");
 
 
         ResourceAttributeType GetResourceAttributeTypeForName(const Aws::String& name)
@@ -86,10 +85,6 @@ namespace Aws
           {
             return ResourceAttributeType::MOTHERBOARD_SERIAL_NUMBER;
           }
-          else if (hashCode == LABEL_HASH)
-          {
-            return ResourceAttributeType::LABEL;
-          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -124,8 +119,6 @@ namespace Aws
             return "BIOS_ID";
           case ResourceAttributeType::MOTHERBOARD_SERIAL_NUMBER:
             return "MOTHERBOARD_SERIAL_NUMBER";
-          case ResourceAttributeType::LABEL:
-            return "LABEL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

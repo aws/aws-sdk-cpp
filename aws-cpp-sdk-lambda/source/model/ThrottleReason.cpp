@@ -32,6 +32,8 @@ namespace Aws
 
         static const int ConcurrentInvocationLimitExceeded_HASH = HashingUtils::HashString("ConcurrentInvocationLimitExceeded");
         static const int FunctionInvocationRateLimitExceeded_HASH = HashingUtils::HashString("FunctionInvocationRateLimitExceeded");
+        static const int ReservedFunctionConcurrentInvocationLimitExceeded_HASH = HashingUtils::HashString("ReservedFunctionConcurrentInvocationLimitExceeded");
+        static const int ReservedFunctionInvocationRateLimitExceeded_HASH = HashingUtils::HashString("ReservedFunctionInvocationRateLimitExceeded");
         static const int CallerRateLimitExceeded_HASH = HashingUtils::HashString("CallerRateLimitExceeded");
 
 
@@ -45,6 +47,14 @@ namespace Aws
           else if (hashCode == FunctionInvocationRateLimitExceeded_HASH)
           {
             return ThrottleReason::FunctionInvocationRateLimitExceeded;
+          }
+          else if (hashCode == ReservedFunctionConcurrentInvocationLimitExceeded_HASH)
+          {
+            return ThrottleReason::ReservedFunctionConcurrentInvocationLimitExceeded;
+          }
+          else if (hashCode == ReservedFunctionInvocationRateLimitExceeded_HASH)
+          {
+            return ThrottleReason::ReservedFunctionInvocationRateLimitExceeded;
           }
           else if (hashCode == CallerRateLimitExceeded_HASH)
           {
@@ -68,6 +78,10 @@ namespace Aws
             return "ConcurrentInvocationLimitExceeded";
           case ThrottleReason::FunctionInvocationRateLimitExceeded:
             return "FunctionInvocationRateLimitExceeded";
+          case ThrottleReason::ReservedFunctionConcurrentInvocationLimitExceeded:
+            return "ReservedFunctionConcurrentInvocationLimitExceeded";
+          case ThrottleReason::ReservedFunctionInvocationRateLimitExceeded:
+            return "ReservedFunctionInvocationRateLimitExceeded";
           case ThrottleReason::CallerRateLimitExceeded:
             return "CallerRateLimitExceeded";
           default:

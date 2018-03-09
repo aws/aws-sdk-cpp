@@ -42,19 +42,29 @@ namespace Model
     StartImageBuilderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>Information about the image builder.</p>
+     */
     inline const ImageBuilder& GetImageBuilder() const{ return m_imageBuilder; }
 
-    
+    /**
+     * <p>Information about the image builder.</p>
+     */
     inline void SetImageBuilder(const ImageBuilder& value) { m_imageBuilder = value; }
 
-    
+    /**
+     * <p>Information about the image builder.</p>
+     */
     inline void SetImageBuilder(ImageBuilder&& value) { m_imageBuilder = std::move(value); }
 
-    
+    /**
+     * <p>Information about the image builder.</p>
+     */
     inline StartImageBuilderResult& WithImageBuilder(const ImageBuilder& value) { SetImageBuilder(value); return *this;}
 
-    
+    /**
+     * <p>Information about the image builder.</p>
+     */
     inline StartImageBuilderResult& WithImageBuilder(ImageBuilder&& value) { SetImageBuilder(std::move(value)); return *this;}
 
   private:

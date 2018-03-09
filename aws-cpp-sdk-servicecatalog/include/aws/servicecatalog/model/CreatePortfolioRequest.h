@@ -134,37 +134,37 @@ namespace Model
 
 
     /**
-     * <p>The text description of the portfolio.</p>
+     * <p>The description of the portfolio.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The text description of the portfolio.</p>
+     * <p>The description of the portfolio.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The text description of the portfolio.</p>
+     * <p>The description of the portfolio.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The text description of the portfolio.</p>
+     * <p>The description of the portfolio.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The text description of the portfolio.</p>
+     * <p>The description of the portfolio.</p>
      */
     inline CreatePortfolioRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The text description of the portfolio.</p>
+     * <p>The description of the portfolio.</p>
      */
     inline CreatePortfolioRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The text description of the portfolio.</p>
+     * <p>The description of the portfolio.</p>
      */
     inline CreatePortfolioRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -206,87 +206,87 @@ namespace Model
 
 
     /**
-     * <p>Tags to associate with the new portfolio.</p>
+     * <p>One or more tags.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Tags to associate with the new portfolio.</p>
+     * <p>One or more tags.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Tags to associate with the new portfolio.</p>
+     * <p>One or more tags.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Tags to associate with the new portfolio.</p>
+     * <p>One or more tags.</p>
      */
     inline CreatePortfolioRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Tags to associate with the new portfolio.</p>
+     * <p>One or more tags.</p>
      */
     inline CreatePortfolioRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Tags to associate with the new portfolio.</p>
+     * <p>One or more tags.</p>
      */
     inline CreatePortfolioRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Tags to associate with the new portfolio.</p>
+     * <p>One or more tags.</p>
      */
     inline CreatePortfolioRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline CreatePortfolioRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline CreatePortfolioRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline CreatePortfolioRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 

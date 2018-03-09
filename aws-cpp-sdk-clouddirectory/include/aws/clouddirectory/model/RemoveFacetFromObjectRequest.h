@@ -83,27 +83,27 @@ namespace Model
 
 
     /**
-     * <p>The facet to remove.</p>
+     * <p>The facet to remove. See <a>SchemaFacet</a> for details.</p>
      */
     inline const SchemaFacet& GetSchemaFacet() const{ return m_schemaFacet; }
 
     /**
-     * <p>The facet to remove.</p>
+     * <p>The facet to remove. See <a>SchemaFacet</a> for details.</p>
      */
     inline void SetSchemaFacet(const SchemaFacet& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet = value; }
 
     /**
-     * <p>The facet to remove.</p>
+     * <p>The facet to remove. See <a>SchemaFacet</a> for details.</p>
      */
     inline void SetSchemaFacet(SchemaFacet&& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet = std::move(value); }
 
     /**
-     * <p>The facet to remove.</p>
+     * <p>The facet to remove. See <a>SchemaFacet</a> for details.</p>
      */
     inline RemoveFacetFromObjectRequest& WithSchemaFacet(const SchemaFacet& value) { SetSchemaFacet(value); return *this;}
 
     /**
-     * <p>The facet to remove.</p>
+     * <p>The facet to remove. See <a>SchemaFacet</a> for details.</p>
      */
     inline RemoveFacetFromObjectRequest& WithSchemaFacet(SchemaFacet&& value) { SetSchemaFacet(std::move(value)); return *this;}
 

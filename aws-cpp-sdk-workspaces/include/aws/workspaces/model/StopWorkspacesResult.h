@@ -44,37 +44,37 @@ namespace Model
 
 
     /**
-     * <p>The failed requests.</p>
+     * <p>Information about the WorkSpaces that could not be stopped.</p>
      */
     inline const Aws::Vector<FailedWorkspaceChangeRequest>& GetFailedRequests() const{ return m_failedRequests; }
 
     /**
-     * <p>The failed requests.</p>
+     * <p>Information about the WorkSpaces that could not be stopped.</p>
      */
     inline void SetFailedRequests(const Aws::Vector<FailedWorkspaceChangeRequest>& value) { m_failedRequests = value; }
 
     /**
-     * <p>The failed requests.</p>
+     * <p>Information about the WorkSpaces that could not be stopped.</p>
      */
     inline void SetFailedRequests(Aws::Vector<FailedWorkspaceChangeRequest>&& value) { m_failedRequests = std::move(value); }
 
     /**
-     * <p>The failed requests.</p>
+     * <p>Information about the WorkSpaces that could not be stopped.</p>
      */
     inline StopWorkspacesResult& WithFailedRequests(const Aws::Vector<FailedWorkspaceChangeRequest>& value) { SetFailedRequests(value); return *this;}
 
     /**
-     * <p>The failed requests.</p>
+     * <p>Information about the WorkSpaces that could not be stopped.</p>
      */
     inline StopWorkspacesResult& WithFailedRequests(Aws::Vector<FailedWorkspaceChangeRequest>&& value) { SetFailedRequests(std::move(value)); return *this;}
 
     /**
-     * <p>The failed requests.</p>
+     * <p>Information about the WorkSpaces that could not be stopped.</p>
      */
     inline StopWorkspacesResult& AddFailedRequests(const FailedWorkspaceChangeRequest& value) { m_failedRequests.push_back(value); return *this; }
 
     /**
-     * <p>The failed requests.</p>
+     * <p>Information about the WorkSpaces that could not be stopped.</p>
      */
     inline StopWorkspacesResult& AddFailedRequests(FailedWorkspaceChangeRequest&& value) { m_failedRequests.push_back(std::move(value)); return *this; }
 

@@ -47,37 +47,37 @@ namespace Model
   public:
 
     /**
-     * <p>The name of the group.</p>
+     * <p>The name of the Auto Scaling group.</p>
      */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
 
     /**
-     * <p>The name of the group.</p>
+     * <p>The name of the Auto Scaling group.</p>
      */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /**
-     * <p>The name of the group.</p>
+     * <p>The name of the Auto Scaling group.</p>
      */
     inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
 
     /**
-     * <p>The name of the group.</p>
+     * <p>The name of the Auto Scaling group.</p>
      */
     inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
 
     /**
-     * <p>The name of the group.</p>
+     * <p>The name of the Auto Scaling group.</p>
      */
     inline DescribeLoadBalancersRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
 
     /**
-     * <p>The name of the group.</p>
+     * <p>The name of the Auto Scaling group.</p>
      */
     inline DescribeLoadBalancersRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the group.</p>
+     * <p>The name of the Auto Scaling group.</p>
      */
     inline DescribeLoadBalancersRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
 
@@ -126,20 +126,20 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of items to return with this call. The default value is 50
-     * and the maximum value is 100.</p>
+     * <p>The maximum number of items to return with this call. The default value is
+     * 100 and the maximum value is 100.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
-     * <p>The maximum number of items to return with this call. The default value is 50
-     * and the maximum value is 100.</p>
+     * <p>The maximum number of items to return with this call. The default value is
+     * 100 and the maximum value is 100.</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
-     * <p>The maximum number of items to return with this call. The default value is 50
-     * and the maximum value is 100.</p>
+     * <p>The maximum number of items to return with this call. The default value is
+     * 100 and the maximum value is 100.</p>
      */
     inline DescribeLoadBalancersRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 

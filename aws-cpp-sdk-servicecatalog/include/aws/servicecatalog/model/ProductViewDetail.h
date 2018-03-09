@@ -36,7 +36,7 @@ namespace Model
 {
 
   /**
-   * <p>Detailed product view information.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about a product view.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProductViewDetail">AWS
    * API Reference</a></p>
    */
@@ -50,125 +50,130 @@ namespace Model
 
 
     /**
-     * <p>The summary metadata about the specified product view.</p>
+     * <p>Summary information about the product view.</p>
      */
     inline const ProductViewSummary& GetProductViewSummary() const{ return m_productViewSummary; }
 
     /**
-     * <p>The summary metadata about the specified product view.</p>
+     * <p>Summary information about the product view.</p>
      */
     inline void SetProductViewSummary(const ProductViewSummary& value) { m_productViewSummaryHasBeenSet = true; m_productViewSummary = value; }
 
     /**
-     * <p>The summary metadata about the specified product view.</p>
+     * <p>Summary information about the product view.</p>
      */
     inline void SetProductViewSummary(ProductViewSummary&& value) { m_productViewSummaryHasBeenSet = true; m_productViewSummary = std::move(value); }
 
     /**
-     * <p>The summary metadata about the specified product view.</p>
+     * <p>Summary information about the product view.</p>
      */
     inline ProductViewDetail& WithProductViewSummary(const ProductViewSummary& value) { SetProductViewSummary(value); return *this;}
 
     /**
-     * <p>The summary metadata about the specified product view.</p>
+     * <p>Summary information about the product view.</p>
      */
     inline ProductViewDetail& WithProductViewSummary(ProductViewSummary&& value) { SetProductViewSummary(std::move(value)); return *this;}
 
 
     /**
-     * <p>Current status of the product.</p> <p> <code>AVAILABLE</code> - Product is
-     * available for use.</p> <p> <code>CREATING</code> - Creation of product started,
-     * not ready for use.</p> <p> <code>FAILED</code> - Action on product failed.</p>
+     * <p>The status of the product.</p> <ul> <li> <p> <code>AVAILABLE</code> - The
+     * product is ready for use.</p> </li> <li> <p> <code>CREATING</code> - Product
+     * creation has started; the product is not ready for use.</p> </li> <li> <p>
+     * <code>FAILED</code> - An action failed.</p> </li> </ul>
      */
     inline const Status& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Current status of the product.</p> <p> <code>AVAILABLE</code> - Product is
-     * available for use.</p> <p> <code>CREATING</code> - Creation of product started,
-     * not ready for use.</p> <p> <code>FAILED</code> - Action on product failed.</p>
+     * <p>The status of the product.</p> <ul> <li> <p> <code>AVAILABLE</code> - The
+     * product is ready for use.</p> </li> <li> <p> <code>CREATING</code> - Product
+     * creation has started; the product is not ready for use.</p> </li> <li> <p>
+     * <code>FAILED</code> - An action failed.</p> </li> </ul>
      */
     inline void SetStatus(const Status& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Current status of the product.</p> <p> <code>AVAILABLE</code> - Product is
-     * available for use.</p> <p> <code>CREATING</code> - Creation of product started,
-     * not ready for use.</p> <p> <code>FAILED</code> - Action on product failed.</p>
+     * <p>The status of the product.</p> <ul> <li> <p> <code>AVAILABLE</code> - The
+     * product is ready for use.</p> </li> <li> <p> <code>CREATING</code> - Product
+     * creation has started; the product is not ready for use.</p> </li> <li> <p>
+     * <code>FAILED</code> - An action failed.</p> </li> </ul>
      */
     inline void SetStatus(Status&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>Current status of the product.</p> <p> <code>AVAILABLE</code> - Product is
-     * available for use.</p> <p> <code>CREATING</code> - Creation of product started,
-     * not ready for use.</p> <p> <code>FAILED</code> - Action on product failed.</p>
+     * <p>The status of the product.</p> <ul> <li> <p> <code>AVAILABLE</code> - The
+     * product is ready for use.</p> </li> <li> <p> <code>CREATING</code> - Product
+     * creation has started; the product is not ready for use.</p> </li> <li> <p>
+     * <code>FAILED</code> - An action failed.</p> </li> </ul>
      */
     inline ProductViewDetail& WithStatus(const Status& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Current status of the product.</p> <p> <code>AVAILABLE</code> - Product is
-     * available for use.</p> <p> <code>CREATING</code> - Creation of product started,
-     * not ready for use.</p> <p> <code>FAILED</code> - Action on product failed.</p>
+     * <p>The status of the product.</p> <ul> <li> <p> <code>AVAILABLE</code> - The
+     * product is ready for use.</p> </li> <li> <p> <code>CREATING</code> - Product
+     * creation has started; the product is not ready for use.</p> </li> <li> <p>
+     * <code>FAILED</code> - An action failed.</p> </li> </ul>
      */
     inline ProductViewDetail& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>The ARN associated with the product.</p>
+     * <p>The ARN of the product.</p>
      */
     inline const Aws::String& GetProductARN() const{ return m_productARN; }
 
     /**
-     * <p>The ARN associated with the product.</p>
+     * <p>The ARN of the product.</p>
      */
     inline void SetProductARN(const Aws::String& value) { m_productARNHasBeenSet = true; m_productARN = value; }
 
     /**
-     * <p>The ARN associated with the product.</p>
+     * <p>The ARN of the product.</p>
      */
     inline void SetProductARN(Aws::String&& value) { m_productARNHasBeenSet = true; m_productARN = std::move(value); }
 
     /**
-     * <p>The ARN associated with the product.</p>
+     * <p>The ARN of the product.</p>
      */
     inline void SetProductARN(const char* value) { m_productARNHasBeenSet = true; m_productARN.assign(value); }
 
     /**
-     * <p>The ARN associated with the product.</p>
+     * <p>The ARN of the product.</p>
      */
     inline ProductViewDetail& WithProductARN(const Aws::String& value) { SetProductARN(value); return *this;}
 
     /**
-     * <p>The ARN associated with the product.</p>
+     * <p>The ARN of the product.</p>
      */
     inline ProductViewDetail& WithProductARN(Aws::String&& value) { SetProductARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN associated with the product.</p>
+     * <p>The ARN of the product.</p>
      */
     inline ProductViewDetail& WithProductARN(const char* value) { SetProductARN(value); return *this;}
 
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The UTC time stamp of the creation time.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The UTC time stamp of the creation time.</p>
      */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The UTC time stamp of the creation time.</p>
      */
     inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The UTC time stamp of the creation time.</p>
      */
     inline ProductViewDetail& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The UTC time stamp of the creation time.</p>
      */
     inline ProductViewDetail& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 

@@ -44,6 +44,12 @@ GetPlanResult& GetPlanResult::operator =(const Aws::AmazonWebServiceResult<JsonV
 
   }
 
+  if(jsonValue.ValueExists("ScalaCode"))
+  {
+    m_scalaCode = jsonValue.GetString("ScalaCode");
+
+  }
+
 
 
   return *this;

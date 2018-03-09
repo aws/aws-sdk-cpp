@@ -45,77 +45,63 @@ namespace Model
 
 
     /**
-     * <p>The summary metadata about the specified product.</p>
+     * <p>Summary information about the product.</p>
      */
     inline const ProductViewSummary& GetProductViewSummary() const{ return m_productViewSummary; }
 
     /**
-     * <p>The summary metadata about the specified product.</p>
+     * <p>Summary information about the product.</p>
      */
     inline void SetProductViewSummary(const ProductViewSummary& value) { m_productViewSummary = value; }
 
     /**
-     * <p>The summary metadata about the specified product.</p>
+     * <p>Summary information about the product.</p>
      */
     inline void SetProductViewSummary(ProductViewSummary&& value) { m_productViewSummary = std::move(value); }
 
     /**
-     * <p>The summary metadata about the specified product.</p>
+     * <p>Summary information about the product.</p>
      */
     inline DescribeProductViewResult& WithProductViewSummary(const ProductViewSummary& value) { SetProductViewSummary(value); return *this;}
 
     /**
-     * <p>The summary metadata about the specified product.</p>
+     * <p>Summary information about the product.</p>
      */
     inline DescribeProductViewResult& WithProductViewSummary(ProductViewSummary&& value) { SetProductViewSummary(std::move(value)); return *this;}
 
 
     /**
-     * <p>A list of provisioning artifact objects for the specified product. The
-     * <code>ProvisioningArtifacts</code> represent the ways in which the specified
-     * product can be provisioned.</p>
+     * <p>Information about the provisioning artifacts for the product.</p>
      */
     inline const Aws::Vector<ProvisioningArtifact>& GetProvisioningArtifacts() const{ return m_provisioningArtifacts; }
 
     /**
-     * <p>A list of provisioning artifact objects for the specified product. The
-     * <code>ProvisioningArtifacts</code> represent the ways in which the specified
-     * product can be provisioned.</p>
+     * <p>Information about the provisioning artifacts for the product.</p>
      */
     inline void SetProvisioningArtifacts(const Aws::Vector<ProvisioningArtifact>& value) { m_provisioningArtifacts = value; }
 
     /**
-     * <p>A list of provisioning artifact objects for the specified product. The
-     * <code>ProvisioningArtifacts</code> represent the ways in which the specified
-     * product can be provisioned.</p>
+     * <p>Information about the provisioning artifacts for the product.</p>
      */
     inline void SetProvisioningArtifacts(Aws::Vector<ProvisioningArtifact>&& value) { m_provisioningArtifacts = std::move(value); }
 
     /**
-     * <p>A list of provisioning artifact objects for the specified product. The
-     * <code>ProvisioningArtifacts</code> represent the ways in which the specified
-     * product can be provisioned.</p>
+     * <p>Information about the provisioning artifacts for the product.</p>
      */
     inline DescribeProductViewResult& WithProvisioningArtifacts(const Aws::Vector<ProvisioningArtifact>& value) { SetProvisioningArtifacts(value); return *this;}
 
     /**
-     * <p>A list of provisioning artifact objects for the specified product. The
-     * <code>ProvisioningArtifacts</code> represent the ways in which the specified
-     * product can be provisioned.</p>
+     * <p>Information about the provisioning artifacts for the product.</p>
      */
     inline DescribeProductViewResult& WithProvisioningArtifacts(Aws::Vector<ProvisioningArtifact>&& value) { SetProvisioningArtifacts(std::move(value)); return *this;}
 
     /**
-     * <p>A list of provisioning artifact objects for the specified product. The
-     * <code>ProvisioningArtifacts</code> represent the ways in which the specified
-     * product can be provisioned.</p>
+     * <p>Information about the provisioning artifacts for the product.</p>
      */
     inline DescribeProductViewResult& AddProvisioningArtifacts(const ProvisioningArtifact& value) { m_provisioningArtifacts.push_back(value); return *this; }
 
     /**
-     * <p>A list of provisioning artifact objects for the specified product. The
-     * <code>ProvisioningArtifacts</code> represent the ways in which the specified
-     * product can be provisioned.</p>
+     * <p>Information about the provisioning artifacts for the product.</p>
      */
     inline DescribeProductViewResult& AddProvisioningArtifacts(ProvisioningArtifact&& value) { m_provisioningArtifacts.push_back(std::move(value)); return *this; }
 

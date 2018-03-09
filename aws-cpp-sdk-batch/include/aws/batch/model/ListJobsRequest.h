@@ -87,6 +87,49 @@ namespace Model
 
 
     /**
+     * <p>The job ID for an array job. Specifying an array job ID with this parameter
+     * lists all child jobs from within the specified array.</p>
+     */
+    inline const Aws::String& GetArrayJobId() const{ return m_arrayJobId; }
+
+    /**
+     * <p>The job ID for an array job. Specifying an array job ID with this parameter
+     * lists all child jobs from within the specified array.</p>
+     */
+    inline void SetArrayJobId(const Aws::String& value) { m_arrayJobIdHasBeenSet = true; m_arrayJobId = value; }
+
+    /**
+     * <p>The job ID for an array job. Specifying an array job ID with this parameter
+     * lists all child jobs from within the specified array.</p>
+     */
+    inline void SetArrayJobId(Aws::String&& value) { m_arrayJobIdHasBeenSet = true; m_arrayJobId = std::move(value); }
+
+    /**
+     * <p>The job ID for an array job. Specifying an array job ID with this parameter
+     * lists all child jobs from within the specified array.</p>
+     */
+    inline void SetArrayJobId(const char* value) { m_arrayJobIdHasBeenSet = true; m_arrayJobId.assign(value); }
+
+    /**
+     * <p>The job ID for an array job. Specifying an array job ID with this parameter
+     * lists all child jobs from within the specified array.</p>
+     */
+    inline ListJobsRequest& WithArrayJobId(const Aws::String& value) { SetArrayJobId(value); return *this;}
+
+    /**
+     * <p>The job ID for an array job. Specifying an array job ID with this parameter
+     * lists all child jobs from within the specified array.</p>
+     */
+    inline ListJobsRequest& WithArrayJobId(Aws::String&& value) { SetArrayJobId(std::move(value)); return *this;}
+
+    /**
+     * <p>The job ID for an array job. Specifying an array job ID with this parameter
+     * lists all child jobs from within the specified array.</p>
+     */
+    inline ListJobsRequest& WithArrayJobId(const char* value) { SetArrayJobId(value); return *this;}
+
+
+    /**
      * <p>The job status with which to filter jobs in the specified queue. If you do
      * not specify a status, only <code>RUNNING</code> jobs are returned.</p>
      */
@@ -242,6 +285,9 @@ namespace Model
 
     Aws::String m_jobQueue;
     bool m_jobQueueHasBeenSet;
+
+    Aws::String m_arrayJobId;
+    bool m_arrayJobIdHasBeenSet;
 
     JobStatus m_jobStatus;
     bool m_jobStatusHasBeenSet;

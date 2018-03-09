@@ -43,12 +43,14 @@ enum XmlErrorResponseStyle
     IllFormed = 4
 };
 
-static std::unique_ptr<Aws::Http::HttpResponse> BuildHttpResponse(const Aws::String& exception, const Aws::String& message, int style = LowerCaseMessage)
+static const char ERROR_MARSHALLER_TEST_ALLOC_TAG[] = "ErrorMarshllerTestAllocTag";
+
+static Aws::UniquePtr<Aws::Http::HttpResponse> BuildHttpResponse(const Aws::String& exception, const Aws::String& message, int style = LowerCaseMessage)
 {
     using namespace Aws::Http;
     using namespace Aws::Http::Standard;
     StandardHttpRequest fakeRequest("/some/uri", Aws::Http::HttpMethod::HTTP_GET);
-    auto ss = new Aws::StringStream;
+    auto ss = Aws::New<Aws::StringStream>(ERROR_MARSHALLER_TEST_ALLOC_TAG);
     fakeRequest.SetResponseStreamFactory([=] { return ss; });
     if (style & LowerCaseMessage)
     {
@@ -59,7 +61,7 @@ static std::unique_ptr<Aws::Http::HttpResponse> BuildHttpResponse(const Aws::Str
         *ss << "{\"" << MESSAGE_CAMEL_CASE << "\":\"" << message << "\"";
     }
 
-    auto response = std::unique_ptr<HttpResponse>(new StandardHttpResponse(fakeRequest));
+    auto response = Aws::MakeUnique<StandardHttpResponse>(ERROR_MARSHALLER_TEST_ALLOC_TAG, fakeRequest);
 
     if (!(style & Header)) 
     {
@@ -71,17 +73,17 @@ static std::unique_ptr<Aws::Http::HttpResponse> BuildHttpResponse(const Aws::Str
         response->AddHeader(ERROR_TYPE_HEADER, exception);
     }
 
-    return response;
+    return std::move(response);
 }
 
-static std::unique_ptr<Aws::Http::HttpResponse> BuildHttpXmlResponse(const Aws::String& exception, const Aws::String& message, int style = SingularErrorNode)
+static Aws::UniquePtr<Aws::Http::HttpResponse> BuildHttpXmlResponse(const Aws::String& exception, const Aws::String& message, int style = SingularErrorNode)
 {
     using namespace Aws::Http;
     using namespace Aws::Http::Standard;
     StandardHttpRequest fakeRequest("/some/uri", Aws::Http::HttpMethod::HTTP_GET);
-    auto ss = new Aws::StringStream;
+    auto ss = Aws::New<Aws::StringStream>(ERROR_MARSHALLER_TEST_ALLOC_TAG);
     fakeRequest.SetResponseStreamFactory([=] { return ss; });
-    auto response = std::unique_ptr<HttpResponse>(new StandardHttpResponse(fakeRequest));
+    auto response = Aws::MakeUnique<StandardHttpResponse>(ERROR_MARSHALLER_TEST_ALLOC_TAG, fakeRequest);
 
     *ss << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
     if (style & PluralErrorNode)
@@ -109,7 +111,7 @@ static std::unique_ptr<Aws::Http::HttpResponse> BuildHttpXmlResponse(const Aws::
     {
         *ss << "</Errors> </OtherRoot>";
     }
-    return response;
+    return std::move(response);
 }
 
 TEST(XmlErrorMarshallerTest, TestXmlErrorPayload)

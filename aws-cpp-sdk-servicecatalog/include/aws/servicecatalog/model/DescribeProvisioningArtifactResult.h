@@ -46,88 +46,88 @@ namespace Model
 
 
     /**
-     * <p>Detailed provisioning artifact information.</p>
+     * <p>Information about the provisioning artifact.</p>
      */
     inline const ProvisioningArtifactDetail& GetProvisioningArtifactDetail() const{ return m_provisioningArtifactDetail; }
 
     /**
-     * <p>Detailed provisioning artifact information.</p>
+     * <p>Information about the provisioning artifact.</p>
      */
     inline void SetProvisioningArtifactDetail(const ProvisioningArtifactDetail& value) { m_provisioningArtifactDetail = value; }
 
     /**
-     * <p>Detailed provisioning artifact information.</p>
+     * <p>Information about the provisioning artifact.</p>
      */
     inline void SetProvisioningArtifactDetail(ProvisioningArtifactDetail&& value) { m_provisioningArtifactDetail = std::move(value); }
 
     /**
-     * <p>Detailed provisioning artifact information.</p>
+     * <p>Information about the provisioning artifact.</p>
      */
     inline DescribeProvisioningArtifactResult& WithProvisioningArtifactDetail(const ProvisioningArtifactDetail& value) { SetProvisioningArtifactDetail(value); return *this;}
 
     /**
-     * <p>Detailed provisioning artifact information.</p>
+     * <p>Information about the provisioning artifact.</p>
      */
     inline DescribeProvisioningArtifactResult& WithProvisioningArtifactDetail(ProvisioningArtifactDetail&& value) { SetProvisioningArtifactDetail(std::move(value)); return *this;}
 
 
     /**
-     * <p>Additional information about the provisioning artifact.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetInfo() const{ return m_info; }
 
     /**
-     * <p>Additional information about the provisioning artifact.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3.</p>
      */
     inline void SetInfo(const Aws::Map<Aws::String, Aws::String>& value) { m_info = value; }
 
     /**
-     * <p>Additional information about the provisioning artifact.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3.</p>
      */
     inline void SetInfo(Aws::Map<Aws::String, Aws::String>&& value) { m_info = std::move(value); }
 
     /**
-     * <p>Additional information about the provisioning artifact.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3.</p>
      */
     inline DescribeProvisioningArtifactResult& WithInfo(const Aws::Map<Aws::String, Aws::String>& value) { SetInfo(value); return *this;}
 
     /**
-     * <p>Additional information about the provisioning artifact.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3.</p>
      */
     inline DescribeProvisioningArtifactResult& WithInfo(Aws::Map<Aws::String, Aws::String>&& value) { SetInfo(std::move(value)); return *this;}
 
     /**
-     * <p>Additional information about the provisioning artifact.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3.</p>
      */
     inline DescribeProvisioningArtifactResult& AddInfo(const Aws::String& key, const Aws::String& value) { m_info.emplace(key, value); return *this; }
 
     /**
-     * <p>Additional information about the provisioning artifact.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3.</p>
      */
     inline DescribeProvisioningArtifactResult& AddInfo(Aws::String&& key, const Aws::String& value) { m_info.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Additional information about the provisioning artifact.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3.</p>
      */
     inline DescribeProvisioningArtifactResult& AddInfo(const Aws::String& key, Aws::String&& value) { m_info.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Additional information about the provisioning artifact.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3.</p>
      */
     inline DescribeProvisioningArtifactResult& AddInfo(Aws::String&& key, Aws::String&& value) { m_info.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Additional information about the provisioning artifact.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3.</p>
      */
     inline DescribeProvisioningArtifactResult& AddInfo(const char* key, Aws::String&& value) { m_info.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Additional information about the provisioning artifact.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3.</p>
      */
     inline DescribeProvisioningArtifactResult& AddInfo(Aws::String&& key, const char* value) { m_info.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Additional information about the provisioning artifact.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3.</p>
      */
     inline DescribeProvisioningArtifactResult& AddInfo(const char* key, const char* value) { m_info.emplace(key, value); return *this; }
 

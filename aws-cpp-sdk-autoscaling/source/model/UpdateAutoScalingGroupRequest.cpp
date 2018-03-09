@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 UpdateAutoScalingGroupRequest::UpdateAutoScalingGroupRequest() : 
     m_autoScalingGroupNameHasBeenSet(false),
     m_launchConfigurationNameHasBeenSet(false),
+    m_launchTemplateHasBeenSet(false),
     m_minSize(0),
     m_minSizeHasBeenSet(false),
     m_maxSize(0),
@@ -39,7 +40,8 @@ UpdateAutoScalingGroupRequest::UpdateAutoScalingGroupRequest() :
     m_vPCZoneIdentifierHasBeenSet(false),
     m_terminationPoliciesHasBeenSet(false),
     m_newInstancesProtectedFromScaleIn(false),
-    m_newInstancesProtectedFromScaleInHasBeenSet(false)
+    m_newInstancesProtectedFromScaleInHasBeenSet(false),
+    m_serviceLinkedRoleARNHasBeenSet(false)
 {
 }
 
@@ -55,6 +57,11 @@ Aws::String UpdateAutoScalingGroupRequest::SerializePayload() const
   if(m_launchConfigurationNameHasBeenSet)
   {
     ss << "LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
+  }
+
+  if(m_launchTemplateHasBeenSet)
+  {
+    m_launchTemplate.OutputToStream(ss, "LaunchTemplate");
   }
 
   if(m_minSizeHasBeenSet)
@@ -122,6 +129,11 @@ Aws::String UpdateAutoScalingGroupRequest::SerializePayload() const
   if(m_newInstancesProtectedFromScaleInHasBeenSet)
   {
     ss << "NewInstancesProtectedFromScaleIn=" << std::boolalpha << m_newInstancesProtectedFromScaleIn << "&";
+  }
+
+  if(m_serviceLinkedRoleARNHasBeenSet)
+  {
+    ss << "ServiceLinkedRoleARN=" << StringUtils::URLEncode(m_serviceLinkedRoleARN.c_str()) << "&";
   }
 
   ss << "Version=2011-01-01";

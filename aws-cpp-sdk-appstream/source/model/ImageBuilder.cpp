@@ -45,7 +45,8 @@ ImageBuilder::ImageBuilder() :
     m_enableDefaultInternetAccess(false),
     m_enableDefaultInternetAccessHasBeenSet(false),
     m_domainJoinInfoHasBeenSet(false),
-    m_imageBuilderErrorsHasBeenSet(false)
+    m_imageBuilderErrorsHasBeenSet(false),
+    m_appstreamAgentVersionHasBeenSet(false)
 {
 }
 
@@ -66,7 +67,8 @@ ImageBuilder::ImageBuilder(const JsonValue& jsonValue) :
     m_enableDefaultInternetAccess(false),
     m_enableDefaultInternetAccessHasBeenSet(false),
     m_domainJoinInfoHasBeenSet(false),
-    m_imageBuilderErrorsHasBeenSet(false)
+    m_imageBuilderErrorsHasBeenSet(false),
+    m_appstreamAgentVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -174,6 +176,13 @@ ImageBuilder& ImageBuilder::operator =(const JsonValue& jsonValue)
     m_imageBuilderErrorsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AppstreamAgentVersion"))
+  {
+    m_appstreamAgentVersion = jsonValue.GetString("AppstreamAgentVersion");
+
+    m_appstreamAgentVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -264,6 +273,12 @@ JsonValue ImageBuilder::Jsonize() const
      imageBuilderErrorsJsonList[imageBuilderErrorsIndex].AsObject(m_imageBuilderErrors[imageBuilderErrorsIndex].Jsonize());
    }
    payload.WithArray("ImageBuilderErrors", std::move(imageBuilderErrorsJsonList));
+
+  }
+
+  if(m_appstreamAgentVersionHasBeenSet)
+  {
+   payload.WithString("AppstreamAgentVersion", m_appstreamAgentVersion);
 
   }
 

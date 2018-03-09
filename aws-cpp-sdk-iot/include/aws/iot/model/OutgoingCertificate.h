@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>A certificate that has been transfered but not yet accepted.</p><p><h3>See
+   * <p>A certificate that has been transferred but not yet accepted.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/OutgoingCertificate">AWS
    * API Reference</a></p>

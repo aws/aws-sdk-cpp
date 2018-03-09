@@ -29,7 +29,8 @@ CreateTableRequest::CreateTableRequest() :
     m_localSecondaryIndexesHasBeenSet(false),
     m_globalSecondaryIndexesHasBeenSet(false),
     m_provisionedThroughputHasBeenSet(false),
-    m_streamSpecificationHasBeenSet(false)
+    m_streamSpecificationHasBeenSet(false),
+    m_sSESpecificationHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,12 @@ Aws::String CreateTableRequest::SerializePayload() const
   if(m_streamSpecificationHasBeenSet)
   {
    payload.WithObject("StreamSpecification", m_streamSpecification.Jsonize());
+
+  }
+
+  if(m_sSESpecificationHasBeenSet)
+  {
+   payload.WithObject("SSESpecification", m_sSESpecification.Jsonize());
 
   }
 

@@ -35,12 +35,6 @@ namespace WorkSpaces
 {
 namespace Model
 {
-  /**
-   * <p>The result of the <a>DescribeTags</a> operation.</p><p><h3>See Also:</h3>  
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeTagsResult">AWS
-   * API Reference</a></p>
-   */
   class AWS_WORKSPACES_API DescribeTagsResult
   {
   public:
@@ -50,37 +44,37 @@ namespace Model
 
 
     /**
-     * <p>The list of tags.</p>
+     * <p>The tags.</p>
      */
     inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
 
     /**
-     * <p>The list of tags.</p>
+     * <p>The tags.</p>
      */
     inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagList = value; }
 
     /**
-     * <p>The list of tags.</p>
+     * <p>The tags.</p>
      */
     inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagList = std::move(value); }
 
     /**
-     * <p>The list of tags.</p>
+     * <p>The tags.</p>
      */
     inline DescribeTagsResult& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
 
     /**
-     * <p>The list of tags.</p>
+     * <p>The tags.</p>
      */
     inline DescribeTagsResult& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
 
     /**
-     * <p>The list of tags.</p>
+     * <p>The tags.</p>
      */
     inline DescribeTagsResult& AddTagList(const Tag& value) { m_tagList.push_back(value); return *this; }
 
     /**
-     * <p>The list of tags.</p>
+     * <p>The tags.</p>
      */
     inline DescribeTagsResult& AddTagList(Tag&& value) { m_tagList.push_back(std::move(value)); return *this; }
 

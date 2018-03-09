@@ -1,11 +1,15 @@
 add_project(aws-cpp-sdk-core "Core http and utility library for the AWS C++ SDK")
 
 if(VERSION_STRING)
-    set(Version_VERSION_STRING ${VERSION_STRING})
+    set(AWSSDK_VERSION_STRING ${VERSION_STRING})
     message(STATUS "Updating version info to ${VERSION_STRING}")
     if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h})
         FILE(REMOVE ${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h})
     endif()
+    string(REPLACE "." ";" VERSION_LIST ${VERSION_STRING})
+    list(GET VERSION_LIST 0 AWSSDK_VERSION_MAJOR)
+    list(GET VERSION_LIST 1 AWSSDK_VERSION_MINOR)
+    list(GET VERSION_LIST 2 AWSSDK_VERSION_PATCH)
 
     configure_file(
         "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h.in"
@@ -311,6 +315,10 @@ endif(MSVC)
 
 add_library(${PROJECT_NAME} ${LIBTYPE} ${AWS_NATIVE_SDK_SRC})
 add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
+
+target_compile_definitions(${PROJECT_NAME} PUBLIC "AWS_SDK_VERSION_MAJOR=${AWSSDK_VERSION_MAJOR}")
+target_compile_definitions(${PROJECT_NAME} PUBLIC "AWS_SDK_VERSION_MINOR=${AWSSDK_VERSION_MINOR}")
+target_compile_definitions(${PROJECT_NAME} PUBLIC "AWS_SDK_VERSION_PATCH=${AWSSDK_VERSION_PATCH}")
 
 set(Core_INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}/include/")
 

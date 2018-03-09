@@ -31,6 +31,7 @@
 #include <aws/email/model/CreateConfigurationSetRequest.h>
 #include <aws/email/model/CreateConfigurationSetEventDestinationRequest.h>
 #include <aws/email/model/CreateConfigurationSetTrackingOptionsRequest.h>
+#include <aws/email/model/CreateCustomVerificationEmailTemplateRequest.h>
 #include <aws/email/model/CreateReceiptFilterRequest.h>
 #include <aws/email/model/CreateReceiptRuleRequest.h>
 #include <aws/email/model/CreateReceiptRuleSetRequest.h>
@@ -38,6 +39,7 @@
 #include <aws/email/model/DeleteConfigurationSetRequest.h>
 #include <aws/email/model/DeleteConfigurationSetEventDestinationRequest.h>
 #include <aws/email/model/DeleteConfigurationSetTrackingOptionsRequest.h>
+#include <aws/email/model/DeleteCustomVerificationEmailTemplateRequest.h>
 #include <aws/email/model/DeleteIdentityRequest.h>
 #include <aws/email/model/DeleteIdentityPolicyRequest.h>
 #include <aws/email/model/DeleteReceiptFilterRequest.h>
@@ -50,6 +52,7 @@
 #include <aws/email/model/DescribeReceiptRuleRequest.h>
 #include <aws/email/model/DescribeReceiptRuleSetRequest.h>
 #include <aws/email/model/GetAccountSendingEnabledRequest.h>
+#include <aws/email/model/GetCustomVerificationEmailTemplateRequest.h>
 #include <aws/email/model/GetIdentityDkimAttributesRequest.h>
 #include <aws/email/model/GetIdentityMailFromDomainAttributesRequest.h>
 #include <aws/email/model/GetIdentityNotificationAttributesRequest.h>
@@ -59,6 +62,7 @@
 #include <aws/email/model/GetSendStatisticsRequest.h>
 #include <aws/email/model/GetTemplateRequest.h>
 #include <aws/email/model/ListConfigurationSetsRequest.h>
+#include <aws/email/model/ListCustomVerificationEmailTemplatesRequest.h>
 #include <aws/email/model/ListIdentitiesRequest.h>
 #include <aws/email/model/ListIdentityPoliciesRequest.h>
 #include <aws/email/model/ListReceiptFiltersRequest.h>
@@ -69,6 +73,7 @@
 #include <aws/email/model/ReorderReceiptRuleSetRequest.h>
 #include <aws/email/model/SendBounceRequest.h>
 #include <aws/email/model/SendBulkTemplatedEmailRequest.h>
+#include <aws/email/model/SendCustomVerificationEmailRequest.h>
 #include <aws/email/model/SendEmailRequest.h>
 #include <aws/email/model/SendRawEmailRequest.h>
 #include <aws/email/model/SendTemplatedEmailRequest.h>
@@ -85,6 +90,7 @@
 #include <aws/email/model/UpdateConfigurationSetReputationMetricsEnabledRequest.h>
 #include <aws/email/model/UpdateConfigurationSetSendingEnabledRequest.h>
 #include <aws/email/model/UpdateConfigurationSetTrackingOptionsRequest.h>
+#include <aws/email/model/UpdateCustomVerificationEmailTemplateRequest.h>
 #include <aws/email/model/UpdateReceiptRuleRequest.h>
 #include <aws/email/model/UpdateTemplateRequest.h>
 #include <aws/email/model/VerifyDomainDkimRequest.h>
@@ -305,6 +311,41 @@ void SESClient::CreateConfigurationSetTrackingOptionsAsync(const CreateConfigura
 void SESClient::CreateConfigurationSetTrackingOptionsAsyncHelper(const CreateConfigurationSetTrackingOptionsRequest& request, const CreateConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateConfigurationSetTrackingOptions(request), context);
+}
+
+CreateCustomVerificationEmailTemplateOutcome SESClient::CreateCustomVerificationEmailTemplate(const CreateCustomVerificationEmailTemplateRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateCustomVerificationEmailTemplateOutcome(NoResult());
+  }
+  else
+  {
+    return CreateCustomVerificationEmailTemplateOutcome(outcome.GetError());
+  }
+}
+
+CreateCustomVerificationEmailTemplateOutcomeCallable SESClient::CreateCustomVerificationEmailTemplateCallable(const CreateCustomVerificationEmailTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateCustomVerificationEmailTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCustomVerificationEmailTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESClient::CreateCustomVerificationEmailTemplateAsync(const CreateCustomVerificationEmailTemplateRequest& request, const CreateCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateCustomVerificationEmailTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void SESClient::CreateCustomVerificationEmailTemplateAsyncHelper(const CreateCustomVerificationEmailTemplateRequest& request, const CreateCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateCustomVerificationEmailTemplate(request), context);
 }
 
 CreateReceiptFilterOutcome SESClient::CreateReceiptFilter(const CreateReceiptFilterRequest& request) const
@@ -550,6 +591,41 @@ void SESClient::DeleteConfigurationSetTrackingOptionsAsync(const DeleteConfigura
 void SESClient::DeleteConfigurationSetTrackingOptionsAsyncHelper(const DeleteConfigurationSetTrackingOptionsRequest& request, const DeleteConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteConfigurationSetTrackingOptions(request), context);
+}
+
+DeleteCustomVerificationEmailTemplateOutcome SESClient::DeleteCustomVerificationEmailTemplate(const DeleteCustomVerificationEmailTemplateRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteCustomVerificationEmailTemplateOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteCustomVerificationEmailTemplateOutcome(outcome.GetError());
+  }
+}
+
+DeleteCustomVerificationEmailTemplateOutcomeCallable SESClient::DeleteCustomVerificationEmailTemplateCallable(const DeleteCustomVerificationEmailTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteCustomVerificationEmailTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCustomVerificationEmailTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESClient::DeleteCustomVerificationEmailTemplateAsync(const DeleteCustomVerificationEmailTemplateRequest& request, const DeleteCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteCustomVerificationEmailTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void SESClient::DeleteCustomVerificationEmailTemplateAsyncHelper(const DeleteCustomVerificationEmailTemplateRequest& request, const DeleteCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteCustomVerificationEmailTemplate(request), context);
 }
 
 DeleteIdentityOutcome SESClient::DeleteIdentity(const DeleteIdentityRequest& request) const
@@ -972,6 +1048,41 @@ void SESClient::GetAccountSendingEnabledAsyncHelper(const GetAccountSendingEnabl
   handler(this, request, GetAccountSendingEnabled(request), context);
 }
 
+GetCustomVerificationEmailTemplateOutcome SESClient::GetCustomVerificationEmailTemplate(const GetCustomVerificationEmailTemplateRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetCustomVerificationEmailTemplateOutcome(GetCustomVerificationEmailTemplateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetCustomVerificationEmailTemplateOutcome(outcome.GetError());
+  }
+}
+
+GetCustomVerificationEmailTemplateOutcomeCallable SESClient::GetCustomVerificationEmailTemplateCallable(const GetCustomVerificationEmailTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetCustomVerificationEmailTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCustomVerificationEmailTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESClient::GetCustomVerificationEmailTemplateAsync(const GetCustomVerificationEmailTemplateRequest& request, const GetCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetCustomVerificationEmailTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void SESClient::GetCustomVerificationEmailTemplateAsyncHelper(const GetCustomVerificationEmailTemplateRequest& request, const GetCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetCustomVerificationEmailTemplate(request), context);
+}
+
 GetIdentityDkimAttributesOutcome SESClient::GetIdentityDkimAttributes(const GetIdentityDkimAttributesRequest& request) const
 {
   Aws::StringStream ss;
@@ -1285,6 +1396,41 @@ void SESClient::ListConfigurationSetsAsync(const ListConfigurationSetsRequest& r
 void SESClient::ListConfigurationSetsAsyncHelper(const ListConfigurationSetsRequest& request, const ListConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListConfigurationSets(request), context);
+}
+
+ListCustomVerificationEmailTemplatesOutcome SESClient::ListCustomVerificationEmailTemplates(const ListCustomVerificationEmailTemplatesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListCustomVerificationEmailTemplatesOutcome(ListCustomVerificationEmailTemplatesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListCustomVerificationEmailTemplatesOutcome(outcome.GetError());
+  }
+}
+
+ListCustomVerificationEmailTemplatesOutcomeCallable SESClient::ListCustomVerificationEmailTemplatesCallable(const ListCustomVerificationEmailTemplatesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListCustomVerificationEmailTemplatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCustomVerificationEmailTemplates(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESClient::ListCustomVerificationEmailTemplatesAsync(const ListCustomVerificationEmailTemplatesRequest& request, const ListCustomVerificationEmailTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListCustomVerificationEmailTemplatesAsyncHelper( request, handler, context ); } );
+}
+
+void SESClient::ListCustomVerificationEmailTemplatesAsyncHelper(const ListCustomVerificationEmailTemplatesRequest& request, const ListCustomVerificationEmailTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListCustomVerificationEmailTemplates(request), context);
 }
 
 ListIdentitiesOutcome SESClient::ListIdentities(const ListIdentitiesRequest& request) const
@@ -1635,6 +1781,41 @@ void SESClient::SendBulkTemplatedEmailAsync(const SendBulkTemplatedEmailRequest&
 void SESClient::SendBulkTemplatedEmailAsyncHelper(const SendBulkTemplatedEmailRequest& request, const SendBulkTemplatedEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SendBulkTemplatedEmail(request), context);
+}
+
+SendCustomVerificationEmailOutcome SESClient::SendCustomVerificationEmail(const SendCustomVerificationEmailRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return SendCustomVerificationEmailOutcome(SendCustomVerificationEmailResult(outcome.GetResult()));
+  }
+  else
+  {
+    return SendCustomVerificationEmailOutcome(outcome.GetError());
+  }
+}
+
+SendCustomVerificationEmailOutcomeCallable SESClient::SendCustomVerificationEmailCallable(const SendCustomVerificationEmailRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SendCustomVerificationEmailOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendCustomVerificationEmail(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESClient::SendCustomVerificationEmailAsync(const SendCustomVerificationEmailRequest& request, const SendCustomVerificationEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SendCustomVerificationEmailAsyncHelper( request, handler, context ); } );
+}
+
+void SESClient::SendCustomVerificationEmailAsyncHelper(const SendCustomVerificationEmailRequest& request, const SendCustomVerificationEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SendCustomVerificationEmail(request), context);
 }
 
 SendEmailOutcome SESClient::SendEmail(const SendEmailRequest& request) const
@@ -2195,6 +2376,41 @@ void SESClient::UpdateConfigurationSetTrackingOptionsAsync(const UpdateConfigura
 void SESClient::UpdateConfigurationSetTrackingOptionsAsyncHelper(const UpdateConfigurationSetTrackingOptionsRequest& request, const UpdateConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateConfigurationSetTrackingOptions(request), context);
+}
+
+UpdateCustomVerificationEmailTemplateOutcome SESClient::UpdateCustomVerificationEmailTemplate(const UpdateCustomVerificationEmailTemplateRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateCustomVerificationEmailTemplateOutcome(NoResult());
+  }
+  else
+  {
+    return UpdateCustomVerificationEmailTemplateOutcome(outcome.GetError());
+  }
+}
+
+UpdateCustomVerificationEmailTemplateOutcomeCallable SESClient::UpdateCustomVerificationEmailTemplateCallable(const UpdateCustomVerificationEmailTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateCustomVerificationEmailTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateCustomVerificationEmailTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESClient::UpdateCustomVerificationEmailTemplateAsync(const UpdateCustomVerificationEmailTemplateRequest& request, const UpdateCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateCustomVerificationEmailTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void SESClient::UpdateCustomVerificationEmailTemplateAsyncHelper(const UpdateCustomVerificationEmailTemplateRequest& request, const UpdateCustomVerificationEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateCustomVerificationEmailTemplate(request), context);
 }
 
 UpdateReceiptRuleOutcome SESClient::UpdateReceiptRule(const UpdateReceiptRuleRequest& request) const

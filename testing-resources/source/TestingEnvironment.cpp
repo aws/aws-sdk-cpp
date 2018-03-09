@@ -32,7 +32,7 @@ void RedirectHomeToTempIfAppropriate()
         //Set $HOME to tmp on unix systems
         std::stringstream tempDir; //( P_tmpdir );
         tempDir << P_tmpdir;
-        Aws::String dir = tempDir.str().c_str();
+        std::string dir = tempDir.str().c_str();
         if (dir.size() > 0 && *(dir.c_str() + dir.size() - 1) != Aws::FileSystem::PATH_DELIM)
         {
             tempDir << Aws::FileSystem::PATH_DELIM;
@@ -41,7 +41,7 @@ void RedirectHomeToTempIfAppropriate()
     #endif // !defined(DISABLE_HOME_DIR_REDIRECT)
 }
 
-static Aws::String s_resourcePrefix("");
+static std::string s_resourcePrefix("");
 
 void SetAwsResourcePrefix(const char* resourcePrefix)
 {
@@ -55,9 +55,25 @@ void SetAwsResourcePrefix(const char* resourcePrefix)
     }
 }
 
-const Aws::String& GetAwsResourcePrefix()
+const Aws::String GetAwsResourcePrefix()
 {
-    return s_resourcePrefix;
+    return Aws::String(s_resourcePrefix.c_str());
+}
+
+void ParseArgs(int argc, char** argv)
+{
+    // std::string rather than Aws::String since this happens before the memory manager is initialized
+    const std::string resourcePrefixOption = "--aws_resource_prefix=";
+    // list other options here
+    for(int i = 1; i < argc; i++)
+    {
+        std::string arg = argv[i];
+        if(arg.find(resourcePrefixOption) == 0)
+        {
+            arg = arg.substr(resourcePrefixOption.length()); // get whatever value after the '='
+            Aws::Testing::SetAwsResourcePrefix(arg.c_str());
+        }
+    }
 }
 
 } // namespace Testing

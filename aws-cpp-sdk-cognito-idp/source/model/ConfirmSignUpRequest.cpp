@@ -28,7 +28,9 @@ ConfirmSignUpRequest::ConfirmSignUpRequest() :
     m_usernameHasBeenSet(false),
     m_confirmationCodeHasBeenSet(false),
     m_forceAliasCreation(false),
-    m_forceAliasCreationHasBeenSet(false)
+    m_forceAliasCreationHasBeenSet(false),
+    m_analyticsMetadataHasBeenSet(false),
+    m_userContextDataHasBeenSet(false)
 {
 }
 
@@ -63,6 +65,18 @@ Aws::String ConfirmSignUpRequest::SerializePayload() const
   if(m_forceAliasCreationHasBeenSet)
   {
    payload.WithBool("ForceAliasCreation", m_forceAliasCreation);
+
+  }
+
+  if(m_analyticsMetadataHasBeenSet)
+  {
+   payload.WithObject("AnalyticsMetadata", m_analyticsMetadata.Jsonize());
+
+  }
+
+  if(m_userContextDataHasBeenSet)
+  {
+   payload.WithObject("UserContextData", m_userContextData.Jsonize());
 
   }
 

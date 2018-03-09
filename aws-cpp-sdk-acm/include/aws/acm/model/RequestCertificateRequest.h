@@ -407,43 +407,43 @@ namespace Model
 
 
     /**
-     * <p>The domain name that you want ACM to use to send you emails so taht your can
+     * <p>The domain name that you want ACM to use to send you emails so that you can
      * validate domain ownership.</p>
      */
     inline const Aws::Vector<DomainValidationOption>& GetDomainValidationOptions() const{ return m_domainValidationOptions; }
 
     /**
-     * <p>The domain name that you want ACM to use to send you emails so taht your can
+     * <p>The domain name that you want ACM to use to send you emails so that you can
      * validate domain ownership.</p>
      */
     inline void SetDomainValidationOptions(const Aws::Vector<DomainValidationOption>& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = value; }
 
     /**
-     * <p>The domain name that you want ACM to use to send you emails so taht your can
+     * <p>The domain name that you want ACM to use to send you emails so that you can
      * validate domain ownership.</p>
      */
     inline void SetDomainValidationOptions(Aws::Vector<DomainValidationOption>&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = std::move(value); }
 
     /**
-     * <p>The domain name that you want ACM to use to send you emails so taht your can
+     * <p>The domain name that you want ACM to use to send you emails so that you can
      * validate domain ownership.</p>
      */
     inline RequestCertificateRequest& WithDomainValidationOptions(const Aws::Vector<DomainValidationOption>& value) { SetDomainValidationOptions(value); return *this;}
 
     /**
-     * <p>The domain name that you want ACM to use to send you emails so taht your can
+     * <p>The domain name that you want ACM to use to send you emails so that you can
      * validate domain ownership.</p>
      */
     inline RequestCertificateRequest& WithDomainValidationOptions(Aws::Vector<DomainValidationOption>&& value) { SetDomainValidationOptions(std::move(value)); return *this;}
 
     /**
-     * <p>The domain name that you want ACM to use to send you emails so taht your can
+     * <p>The domain name that you want ACM to use to send you emails so that you can
      * validate domain ownership.</p>
      */
     inline RequestCertificateRequest& AddDomainValidationOptions(const DomainValidationOption& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(value); return *this; }
 
     /**
-     * <p>The domain name that you want ACM to use to send you emails so taht your can
+     * <p>The domain name that you want ACM to use to send you emails so that you can
      * validate domain ownership.</p>
      */
     inline RequestCertificateRequest& AddDomainValidationOptions(DomainValidationOption&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(std::move(value)); return *this; }

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kinesisanalytics/model/KinesisStreamsOutputDescription.h>
 #include <aws/kinesisanalytics/model/KinesisFirehoseOutputDescription.h>
+#include <aws/kinesisanalytics/model/LambdaOutputDescription.h>
 #include <aws/kinesisanalytics/model/DestinationSchema.h>
 #include <utility>
 
@@ -187,6 +188,37 @@ namespace Model
 
 
     /**
+     * <p>Describes the AWS Lambda function configured as the destination where output
+     * is written.</p>
+     */
+    inline const LambdaOutputDescription& GetLambdaOutputDescription() const{ return m_lambdaOutputDescription; }
+
+    /**
+     * <p>Describes the AWS Lambda function configured as the destination where output
+     * is written.</p>
+     */
+    inline void SetLambdaOutputDescription(const LambdaOutputDescription& value) { m_lambdaOutputDescriptionHasBeenSet = true; m_lambdaOutputDescription = value; }
+
+    /**
+     * <p>Describes the AWS Lambda function configured as the destination where output
+     * is written.</p>
+     */
+    inline void SetLambdaOutputDescription(LambdaOutputDescription&& value) { m_lambdaOutputDescriptionHasBeenSet = true; m_lambdaOutputDescription = std::move(value); }
+
+    /**
+     * <p>Describes the AWS Lambda function configured as the destination where output
+     * is written.</p>
+     */
+    inline OutputDescription& WithLambdaOutputDescription(const LambdaOutputDescription& value) { SetLambdaOutputDescription(value); return *this;}
+
+    /**
+     * <p>Describes the AWS Lambda function configured as the destination where output
+     * is written.</p>
+     */
+    inline OutputDescription& WithLambdaOutputDescription(LambdaOutputDescription&& value) { SetLambdaOutputDescription(std::move(value)); return *this;}
+
+
+    /**
      * <p>Data format used for writing data to the destination.</p>
      */
     inline const DestinationSchema& GetDestinationSchema() const{ return m_destinationSchema; }
@@ -224,6 +256,9 @@ namespace Model
 
     KinesisFirehoseOutputDescription m_kinesisFirehoseOutputDescription;
     bool m_kinesisFirehoseOutputDescriptionHasBeenSet;
+
+    LambdaOutputDescription m_lambdaOutputDescription;
+    bool m_lambdaOutputDescriptionHasBeenSet;
 
     DestinationSchema m_destinationSchema;
     bool m_destinationSchemaHasBeenSet;

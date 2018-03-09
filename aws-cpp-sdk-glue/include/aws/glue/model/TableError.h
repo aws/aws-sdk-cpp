@@ -48,37 +48,44 @@ namespace Model
 
 
     /**
-     * <p>Name of the table.</p>
+     * <p>Name of the table. For Hive compatibility, this must be entirely
+     * lowercase.</p>
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
 
     /**
-     * <p>Name of the table.</p>
+     * <p>Name of the table. For Hive compatibility, this must be entirely
+     * lowercase.</p>
      */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
-     * <p>Name of the table.</p>
+     * <p>Name of the table. For Hive compatibility, this must be entirely
+     * lowercase.</p>
      */
     inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
 
     /**
-     * <p>Name of the table.</p>
+     * <p>Name of the table. For Hive compatibility, this must be entirely
+     * lowercase.</p>
      */
     inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
 
     /**
-     * <p>Name of the table.</p>
+     * <p>Name of the table. For Hive compatibility, this must be entirely
+     * lowercase.</p>
      */
     inline TableError& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
 
     /**
-     * <p>Name of the table.</p>
+     * <p>Name of the table. For Hive compatibility, this must be entirely
+     * lowercase.</p>
      */
     inline TableError& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the table.</p>
+     * <p>Name of the table. For Hive compatibility, this must be entirely
+     * lowercase.</p>
      */
     inline TableError& WithTableName(const char* value) { SetTableName(value); return *this;}
 

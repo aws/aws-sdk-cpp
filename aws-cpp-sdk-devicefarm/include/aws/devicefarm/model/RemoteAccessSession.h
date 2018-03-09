@@ -22,6 +22,7 @@
 #include <aws/devicefarm/model/Device.h>
 #include <aws/devicefarm/model/BillingMethod.h>
 #include <aws/devicefarm/model/DeviceMinutes.h>
+#include <aws/devicefarm/model/InteractionMode.h>
 #include <utility>
 
 namespace Aws
@@ -397,6 +398,68 @@ namespace Model
 
 
     /**
+     * <p>This flag is set to <code>true</code> if remote recording is enabled for the
+     * remote access session.</p>
+     */
+    inline bool GetRemoteRecordEnabled() const{ return m_remoteRecordEnabled; }
+
+    /**
+     * <p>This flag is set to <code>true</code> if remote recording is enabled for the
+     * remote access session.</p>
+     */
+    inline void SetRemoteRecordEnabled(bool value) { m_remoteRecordEnabledHasBeenSet = true; m_remoteRecordEnabled = value; }
+
+    /**
+     * <p>This flag is set to <code>true</code> if remote recording is enabled for the
+     * remote access session.</p>
+     */
+    inline RemoteAccessSession& WithRemoteRecordEnabled(bool value) { SetRemoteRecordEnabled(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote
+     * access session.</p>
+     */
+    inline const Aws::String& GetRemoteRecordAppArn() const{ return m_remoteRecordAppArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote
+     * access session.</p>
+     */
+    inline void SetRemoteRecordAppArn(const Aws::String& value) { m_remoteRecordAppArnHasBeenSet = true; m_remoteRecordAppArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote
+     * access session.</p>
+     */
+    inline void SetRemoteRecordAppArn(Aws::String&& value) { m_remoteRecordAppArnHasBeenSet = true; m_remoteRecordAppArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote
+     * access session.</p>
+     */
+    inline void SetRemoteRecordAppArn(const char* value) { m_remoteRecordAppArnHasBeenSet = true; m_remoteRecordAppArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote
+     * access session.</p>
+     */
+    inline RemoteAccessSession& WithRemoteRecordAppArn(const Aws::String& value) { SetRemoteRecordAppArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote
+     * access session.</p>
+     */
+    inline RemoteAccessSession& WithRemoteRecordAppArn(Aws::String&& value) { SetRemoteRecordAppArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote
+     * access session.</p>
+     */
+    inline RemoteAccessSession& WithRemoteRecordAppArn(const char* value) { SetRemoteRecordAppArn(value); return *this;}
+
+
+    /**
      * <p>IP address of the EC2 host where you need to connect to remotely debug
      * devices. Only returned if remote debugging is enabled for the remote access
      * session.</p>
@@ -644,6 +707,72 @@ namespace Model
      */
     inline RemoteAccessSession& WithDeviceUdid(const char* value) { SetDeviceUdid(value); return *this;}
 
+
+    /**
+     * <p>The interaction mode of the remote access session. Valid values are:</p> <ul>
+     * <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching,
+     * and rotating the screen. You <b>cannot</b> run XCUITest framework-based tests in
+     * this mode.</p> </li> <li> <p>NO_VIDEO: You are connected to the device but
+     * cannot interact with it or view the screen. This mode has the fastest test
+     * execution speed. You <b>can</b> run XCUITest framework-based tests in this
+     * mode.</p> </li> <li> <p>VIDEO_ONLY: You can view the screen but cannot touch or
+     * rotate it. You <b>can</b> run XCUITest framework-based tests and watch the
+     * screen in this mode.</p> </li> </ul>
+     */
+    inline const InteractionMode& GetInteractionMode() const{ return m_interactionMode; }
+
+    /**
+     * <p>The interaction mode of the remote access session. Valid values are:</p> <ul>
+     * <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching,
+     * and rotating the screen. You <b>cannot</b> run XCUITest framework-based tests in
+     * this mode.</p> </li> <li> <p>NO_VIDEO: You are connected to the device but
+     * cannot interact with it or view the screen. This mode has the fastest test
+     * execution speed. You <b>can</b> run XCUITest framework-based tests in this
+     * mode.</p> </li> <li> <p>VIDEO_ONLY: You can view the screen but cannot touch or
+     * rotate it. You <b>can</b> run XCUITest framework-based tests and watch the
+     * screen in this mode.</p> </li> </ul>
+     */
+    inline void SetInteractionMode(const InteractionMode& value) { m_interactionModeHasBeenSet = true; m_interactionMode = value; }
+
+    /**
+     * <p>The interaction mode of the remote access session. Valid values are:</p> <ul>
+     * <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching,
+     * and rotating the screen. You <b>cannot</b> run XCUITest framework-based tests in
+     * this mode.</p> </li> <li> <p>NO_VIDEO: You are connected to the device but
+     * cannot interact with it or view the screen. This mode has the fastest test
+     * execution speed. You <b>can</b> run XCUITest framework-based tests in this
+     * mode.</p> </li> <li> <p>VIDEO_ONLY: You can view the screen but cannot touch or
+     * rotate it. You <b>can</b> run XCUITest framework-based tests and watch the
+     * screen in this mode.</p> </li> </ul>
+     */
+    inline void SetInteractionMode(InteractionMode&& value) { m_interactionModeHasBeenSet = true; m_interactionMode = std::move(value); }
+
+    /**
+     * <p>The interaction mode of the remote access session. Valid values are:</p> <ul>
+     * <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching,
+     * and rotating the screen. You <b>cannot</b> run XCUITest framework-based tests in
+     * this mode.</p> </li> <li> <p>NO_VIDEO: You are connected to the device but
+     * cannot interact with it or view the screen. This mode has the fastest test
+     * execution speed. You <b>can</b> run XCUITest framework-based tests in this
+     * mode.</p> </li> <li> <p>VIDEO_ONLY: You can view the screen but cannot touch or
+     * rotate it. You <b>can</b> run XCUITest framework-based tests and watch the
+     * screen in this mode.</p> </li> </ul>
+     */
+    inline RemoteAccessSession& WithInteractionMode(const InteractionMode& value) { SetInteractionMode(value); return *this;}
+
+    /**
+     * <p>The interaction mode of the remote access session. Valid values are:</p> <ul>
+     * <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching,
+     * and rotating the screen. You <b>cannot</b> run XCUITest framework-based tests in
+     * this mode.</p> </li> <li> <p>NO_VIDEO: You are connected to the device but
+     * cannot interact with it or view the screen. This mode has the fastest test
+     * execution speed. You <b>can</b> run XCUITest framework-based tests in this
+     * mode.</p> </li> <li> <p>VIDEO_ONLY: You can view the screen but cannot touch or
+     * rotate it. You <b>can</b> run XCUITest framework-based tests and watch the
+     * screen in this mode.</p> </li> </ul>
+     */
+    inline RemoteAccessSession& WithInteractionMode(InteractionMode&& value) { SetInteractionMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -676,6 +805,12 @@ namespace Model
     bool m_remoteDebugEnabled;
     bool m_remoteDebugEnabledHasBeenSet;
 
+    bool m_remoteRecordEnabled;
+    bool m_remoteRecordEnabledHasBeenSet;
+
+    Aws::String m_remoteRecordAppArn;
+    bool m_remoteRecordAppArnHasBeenSet;
+
     Aws::String m_hostAddress;
     bool m_hostAddressHasBeenSet;
 
@@ -693,6 +828,9 @@ namespace Model
 
     Aws::String m_deviceUdid;
     bool m_deviceUdidHasBeenSet;
+
+    InteractionMode m_interactionMode;
+    bool m_interactionModeHasBeenSet;
   };
 
 } // namespace Model

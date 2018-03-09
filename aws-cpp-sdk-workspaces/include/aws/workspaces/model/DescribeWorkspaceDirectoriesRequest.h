@@ -28,10 +28,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the inputs for the <a>DescribeWorkspaceDirectories</a>
-   * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceDirectoriesRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_WORKSPACES_API DescribeWorkspaceDirectoriesRequest : public WorkSpacesRequest
   {
@@ -50,93 +46,93 @@ namespace Model
 
 
     /**
-     * <p>An array of strings that contains the directory identifiers to retrieve
-     * information for. If this member is null, all directories are retrieved.</p>
+     * <p>The identifiers of the directories. If the value is null, all directories are
+     * retrieved.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDirectoryIds() const{ return m_directoryIds; }
 
     /**
-     * <p>An array of strings that contains the directory identifiers to retrieve
-     * information for. If this member is null, all directories are retrieved.</p>
+     * <p>The identifiers of the directories. If the value is null, all directories are
+     * retrieved.</p>
      */
     inline void SetDirectoryIds(const Aws::Vector<Aws::String>& value) { m_directoryIdsHasBeenSet = true; m_directoryIds = value; }
 
     /**
-     * <p>An array of strings that contains the directory identifiers to retrieve
-     * information for. If this member is null, all directories are retrieved.</p>
+     * <p>The identifiers of the directories. If the value is null, all directories are
+     * retrieved.</p>
      */
     inline void SetDirectoryIds(Aws::Vector<Aws::String>&& value) { m_directoryIdsHasBeenSet = true; m_directoryIds = std::move(value); }
 
     /**
-     * <p>An array of strings that contains the directory identifiers to retrieve
-     * information for. If this member is null, all directories are retrieved.</p>
+     * <p>The identifiers of the directories. If the value is null, all directories are
+     * retrieved.</p>
      */
     inline DescribeWorkspaceDirectoriesRequest& WithDirectoryIds(const Aws::Vector<Aws::String>& value) { SetDirectoryIds(value); return *this;}
 
     /**
-     * <p>An array of strings that contains the directory identifiers to retrieve
-     * information for. If this member is null, all directories are retrieved.</p>
+     * <p>The identifiers of the directories. If the value is null, all directories are
+     * retrieved.</p>
      */
     inline DescribeWorkspaceDirectoriesRequest& WithDirectoryIds(Aws::Vector<Aws::String>&& value) { SetDirectoryIds(std::move(value)); return *this;}
 
     /**
-     * <p>An array of strings that contains the directory identifiers to retrieve
-     * information for. If this member is null, all directories are retrieved.</p>
+     * <p>The identifiers of the directories. If the value is null, all directories are
+     * retrieved.</p>
      */
     inline DescribeWorkspaceDirectoriesRequest& AddDirectoryIds(const Aws::String& value) { m_directoryIdsHasBeenSet = true; m_directoryIds.push_back(value); return *this; }
 
     /**
-     * <p>An array of strings that contains the directory identifiers to retrieve
-     * information for. If this member is null, all directories are retrieved.</p>
+     * <p>The identifiers of the directories. If the value is null, all directories are
+     * retrieved.</p>
      */
     inline DescribeWorkspaceDirectoriesRequest& AddDirectoryIds(Aws::String&& value) { m_directoryIdsHasBeenSet = true; m_directoryIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array of strings that contains the directory identifiers to retrieve
-     * information for. If this member is null, all directories are retrieved.</p>
+     * <p>The identifiers of the directories. If the value is null, all directories are
+     * retrieved.</p>
      */
     inline DescribeWorkspaceDirectoriesRequest& AddDirectoryIds(const char* value) { m_directoryIdsHasBeenSet = true; m_directoryIds.push_back(value); return *this; }
 
 
     /**
-     * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
-     * null if this is the first call.</p>
+     * <p>The token for the next set of results. (You received this token from a
+     * previous call.)</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
-     * null if this is the first call.</p>
+     * <p>The token for the next set of results. (You received this token from a
+     * previous call.)</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
-     * null if this is the first call.</p>
+     * <p>The token for the next set of results. (You received this token from a
+     * previous call.)</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
-     * null if this is the first call.</p>
+     * <p>The token for the next set of results. (You received this token from a
+     * previous call.)</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
-     * null if this is the first call.</p>
+     * <p>The token for the next set of results. (You received this token from a
+     * previous call.)</p>
      */
     inline DescribeWorkspaceDirectoriesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
-     * null if this is the first call.</p>
+     * <p>The token for the next set of results. (You received this token from a
+     * previous call.)</p>
      */
     inline DescribeWorkspaceDirectoriesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
-     * null if this is the first call.</p>
+     * <p>The token for the next set of results. (You received this token from a
+     * previous call.)</p>
      */
     inline DescribeWorkspaceDirectoriesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

@@ -52,176 +52,152 @@ namespace Model
 
 
     /**
-     * <p>The name of the challenge. For more information, see <a
-     * href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+     * <p>The name of the challenge. For more information, see .</p>
      */
     inline const ChallengeNameType& GetChallengeName() const{ return m_challengeName; }
 
     /**
-     * <p>The name of the challenge. For more information, see <a
-     * href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+     * <p>The name of the challenge. For more information, see .</p>
      */
     inline void SetChallengeName(const ChallengeNameType& value) { m_challengeName = value; }
 
     /**
-     * <p>The name of the challenge. For more information, see <a
-     * href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+     * <p>The name of the challenge. For more information, see .</p>
      */
     inline void SetChallengeName(ChallengeNameType&& value) { m_challengeName = std::move(value); }
 
     /**
-     * <p>The name of the challenge. For more information, see <a
-     * href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+     * <p>The name of the challenge. For more information, see .</p>
      */
     inline AdminRespondToAuthChallengeResult& WithChallengeName(const ChallengeNameType& value) { SetChallengeName(value); return *this;}
 
     /**
-     * <p>The name of the challenge. For more information, see <a
-     * href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+     * <p>The name of the challenge. For more information, see .</p>
      */
     inline AdminRespondToAuthChallengeResult& WithChallengeName(ChallengeNameType&& value) { SetChallengeName(std::move(value)); return *this;}
 
 
     /**
      * <p>The session which should be passed both ways in challenge-response calls to
-     * the service. If the <a href="API_InitiateAuth.html">InitiateAuth</a> or <a
-     * href="API_RespondToAuthChallenge.html">RespondToAuthChallenge</a> API call
-     * determines that the caller needs to go through another challenge, they return a
-     * session with other challenge parameters. This session should be passed as it is
-     * to the next <code>RespondToAuthChallenge</code> API call.</p>
+     * the service. If the or API call determines that the caller needs to go through
+     * another challenge, they return a session with other challenge parameters. This
+     * session should be passed as it is to the next
+     * <code>RespondToAuthChallenge</code> API call.</p>
      */
     inline const Aws::String& GetSession() const{ return m_session; }
 
     /**
      * <p>The session which should be passed both ways in challenge-response calls to
-     * the service. If the <a href="API_InitiateAuth.html">InitiateAuth</a> or <a
-     * href="API_RespondToAuthChallenge.html">RespondToAuthChallenge</a> API call
-     * determines that the caller needs to go through another challenge, they return a
-     * session with other challenge parameters. This session should be passed as it is
-     * to the next <code>RespondToAuthChallenge</code> API call.</p>
+     * the service. If the or API call determines that the caller needs to go through
+     * another challenge, they return a session with other challenge parameters. This
+     * session should be passed as it is to the next
+     * <code>RespondToAuthChallenge</code> API call.</p>
      */
     inline void SetSession(const Aws::String& value) { m_session = value; }
 
     /**
      * <p>The session which should be passed both ways in challenge-response calls to
-     * the service. If the <a href="API_InitiateAuth.html">InitiateAuth</a> or <a
-     * href="API_RespondToAuthChallenge.html">RespondToAuthChallenge</a> API call
-     * determines that the caller needs to go through another challenge, they return a
-     * session with other challenge parameters. This session should be passed as it is
-     * to the next <code>RespondToAuthChallenge</code> API call.</p>
+     * the service. If the or API call determines that the caller needs to go through
+     * another challenge, they return a session with other challenge parameters. This
+     * session should be passed as it is to the next
+     * <code>RespondToAuthChallenge</code> API call.</p>
      */
     inline void SetSession(Aws::String&& value) { m_session = std::move(value); }
 
     /**
      * <p>The session which should be passed both ways in challenge-response calls to
-     * the service. If the <a href="API_InitiateAuth.html">InitiateAuth</a> or <a
-     * href="API_RespondToAuthChallenge.html">RespondToAuthChallenge</a> API call
-     * determines that the caller needs to go through another challenge, they return a
-     * session with other challenge parameters. This session should be passed as it is
-     * to the next <code>RespondToAuthChallenge</code> API call.</p>
+     * the service. If the or API call determines that the caller needs to go through
+     * another challenge, they return a session with other challenge parameters. This
+     * session should be passed as it is to the next
+     * <code>RespondToAuthChallenge</code> API call.</p>
      */
     inline void SetSession(const char* value) { m_session.assign(value); }
 
     /**
      * <p>The session which should be passed both ways in challenge-response calls to
-     * the service. If the <a href="API_InitiateAuth.html">InitiateAuth</a> or <a
-     * href="API_RespondToAuthChallenge.html">RespondToAuthChallenge</a> API call
-     * determines that the caller needs to go through another challenge, they return a
-     * session with other challenge parameters. This session should be passed as it is
-     * to the next <code>RespondToAuthChallenge</code> API call.</p>
+     * the service. If the or API call determines that the caller needs to go through
+     * another challenge, they return a session with other challenge parameters. This
+     * session should be passed as it is to the next
+     * <code>RespondToAuthChallenge</code> API call.</p>
      */
     inline AdminRespondToAuthChallengeResult& WithSession(const Aws::String& value) { SetSession(value); return *this;}
 
     /**
      * <p>The session which should be passed both ways in challenge-response calls to
-     * the service. If the <a href="API_InitiateAuth.html">InitiateAuth</a> or <a
-     * href="API_RespondToAuthChallenge.html">RespondToAuthChallenge</a> API call
-     * determines that the caller needs to go through another challenge, they return a
-     * session with other challenge parameters. This session should be passed as it is
-     * to the next <code>RespondToAuthChallenge</code> API call.</p>
+     * the service. If the or API call determines that the caller needs to go through
+     * another challenge, they return a session with other challenge parameters. This
+     * session should be passed as it is to the next
+     * <code>RespondToAuthChallenge</code> API call.</p>
      */
     inline AdminRespondToAuthChallengeResult& WithSession(Aws::String&& value) { SetSession(std::move(value)); return *this;}
 
     /**
      * <p>The session which should be passed both ways in challenge-response calls to
-     * the service. If the <a href="API_InitiateAuth.html">InitiateAuth</a> or <a
-     * href="API_RespondToAuthChallenge.html">RespondToAuthChallenge</a> API call
-     * determines that the caller needs to go through another challenge, they return a
-     * session with other challenge parameters. This session should be passed as it is
-     * to the next <code>RespondToAuthChallenge</code> API call.</p>
+     * the service. If the or API call determines that the caller needs to go through
+     * another challenge, they return a session with other challenge parameters. This
+     * session should be passed as it is to the next
+     * <code>RespondToAuthChallenge</code> API call.</p>
      */
     inline AdminRespondToAuthChallengeResult& WithSession(const char* value) { SetSession(value); return *this;}
 
 
     /**
-     * <p>The challenge parameters. For more information, see <a
-     * href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+     * <p>The challenge parameters. For more information, see .</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetChallengeParameters() const{ return m_challengeParameters; }
 
     /**
-     * <p>The challenge parameters. For more information, see <a
-     * href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+     * <p>The challenge parameters. For more information, see .</p>
      */
     inline void SetChallengeParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_challengeParameters = value; }
 
     /**
-     * <p>The challenge parameters. For more information, see <a
-     * href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+     * <p>The challenge parameters. For more information, see .</p>
      */
     inline void SetChallengeParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_challengeParameters = std::move(value); }
 
     /**
-     * <p>The challenge parameters. For more information, see <a
-     * href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+     * <p>The challenge parameters. For more information, see .</p>
      */
     inline AdminRespondToAuthChallengeResult& WithChallengeParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetChallengeParameters(value); return *this;}
 
     /**
-     * <p>The challenge parameters. For more information, see <a
-     * href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+     * <p>The challenge parameters. For more information, see .</p>
      */
     inline AdminRespondToAuthChallengeResult& WithChallengeParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetChallengeParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The challenge parameters. For more information, see <a
-     * href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+     * <p>The challenge parameters. For more information, see .</p>
      */
     inline AdminRespondToAuthChallengeResult& AddChallengeParameters(const Aws::String& key, const Aws::String& value) { m_challengeParameters.emplace(key, value); return *this; }
 
     /**
-     * <p>The challenge parameters. For more information, see <a
-     * href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+     * <p>The challenge parameters. For more information, see .</p>
      */
     inline AdminRespondToAuthChallengeResult& AddChallengeParameters(Aws::String&& key, const Aws::String& value) { m_challengeParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The challenge parameters. For more information, see <a
-     * href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+     * <p>The challenge parameters. For more information, see .</p>
      */
     inline AdminRespondToAuthChallengeResult& AddChallengeParameters(const Aws::String& key, Aws::String&& value) { m_challengeParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The challenge parameters. For more information, see <a
-     * href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+     * <p>The challenge parameters. For more information, see .</p>
      */
     inline AdminRespondToAuthChallengeResult& AddChallengeParameters(Aws::String&& key, Aws::String&& value) { m_challengeParameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The challenge parameters. For more information, see <a
-     * href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+     * <p>The challenge parameters. For more information, see .</p>
      */
     inline AdminRespondToAuthChallengeResult& AddChallengeParameters(const char* key, Aws::String&& value) { m_challengeParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The challenge parameters. For more information, see <a
-     * href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+     * <p>The challenge parameters. For more information, see .</p>
      */
     inline AdminRespondToAuthChallengeResult& AddChallengeParameters(Aws::String&& key, const char* value) { m_challengeParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The challenge parameters. For more information, see <a
-     * href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+     * <p>The challenge parameters. For more information, see .</p>
      */
     inline AdminRespondToAuthChallengeResult& AddChallengeParameters(const char* key, const char* value) { m_challengeParameters.emplace(key, value); return *this; }
 

@@ -98,273 +98,238 @@ namespace Model
 
 
     /**
-     * <p>The updated name of the ProvisionedProduct object. Specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
-     * not both.</p>
+     * <p>The updated name of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline const Aws::String& GetProvisionedProductName() const{ return m_provisionedProductName; }
 
     /**
-     * <p>The updated name of the ProvisionedProduct object. Specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
-     * not both.</p>
+     * <p>The updated name of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline void SetProvisionedProductName(const Aws::String& value) { m_provisionedProductNameHasBeenSet = true; m_provisionedProductName = value; }
 
     /**
-     * <p>The updated name of the ProvisionedProduct object. Specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
-     * not both.</p>
+     * <p>The updated name of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline void SetProvisionedProductName(Aws::String&& value) { m_provisionedProductNameHasBeenSet = true; m_provisionedProductName = std::move(value); }
 
     /**
-     * <p>The updated name of the ProvisionedProduct object. Specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
-     * not both.</p>
+     * <p>The updated name of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline void SetProvisionedProductName(const char* value) { m_provisionedProductNameHasBeenSet = true; m_provisionedProductName.assign(value); }
 
     /**
-     * <p>The updated name of the ProvisionedProduct object. Specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
-     * not both.</p>
+     * <p>The updated name of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline UpdateProvisionedProductRequest& WithProvisionedProductName(const Aws::String& value) { SetProvisionedProductName(value); return *this;}
 
     /**
-     * <p>The updated name of the ProvisionedProduct object. Specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
-     * not both.</p>
+     * <p>The updated name of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline UpdateProvisionedProductRequest& WithProvisionedProductName(Aws::String&& value) { SetProvisionedProductName(std::move(value)); return *this;}
 
     /**
-     * <p>The updated name of the ProvisionedProduct object. Specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
-     * not both.</p>
+     * <p>The updated name of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline UpdateProvisionedProductRequest& WithProvisionedProductName(const char* value) { SetProvisionedProductName(value); return *this;}
 
 
     /**
-     * <p>The identifier of the ProvisionedProduct object to update. Specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
-     * not both.</p>
+     * <p>The identifier of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline const Aws::String& GetProvisionedProductId() const{ return m_provisionedProductId; }
 
     /**
-     * <p>The identifier of the ProvisionedProduct object to update. Specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
-     * not both.</p>
+     * <p>The identifier of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline void SetProvisionedProductId(const Aws::String& value) { m_provisionedProductIdHasBeenSet = true; m_provisionedProductId = value; }
 
     /**
-     * <p>The identifier of the ProvisionedProduct object to update. Specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
-     * not both.</p>
+     * <p>The identifier of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline void SetProvisionedProductId(Aws::String&& value) { m_provisionedProductIdHasBeenSet = true; m_provisionedProductId = std::move(value); }
 
     /**
-     * <p>The identifier of the ProvisionedProduct object to update. Specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
-     * not both.</p>
+     * <p>The identifier of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline void SetProvisionedProductId(const char* value) { m_provisionedProductIdHasBeenSet = true; m_provisionedProductId.assign(value); }
 
     /**
-     * <p>The identifier of the ProvisionedProduct object to update. Specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
-     * not both.</p>
+     * <p>The identifier of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline UpdateProvisionedProductRequest& WithProvisionedProductId(const Aws::String& value) { SetProvisionedProductId(value); return *this;}
 
     /**
-     * <p>The identifier of the ProvisionedProduct object to update. Specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
-     * not both.</p>
+     * <p>The identifier of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline UpdateProvisionedProductRequest& WithProvisionedProductId(Aws::String&& value) { SetProvisionedProductId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the ProvisionedProduct object to update. Specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
-     * not both.</p>
+     * <p>The identifier of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline UpdateProvisionedProductRequest& WithProvisionedProductId(const char* value) { SetProvisionedProductId(value); return *this;}
 
 
     /**
-     * <p>The identifier of the ProvisionedProduct object.</p>
+     * <p>The identifier of the provisioned product.</p>
      */
     inline const Aws::String& GetProductId() const{ return m_productId; }
 
     /**
-     * <p>The identifier of the ProvisionedProduct object.</p>
+     * <p>The identifier of the provisioned product.</p>
      */
     inline void SetProductId(const Aws::String& value) { m_productIdHasBeenSet = true; m_productId = value; }
 
     /**
-     * <p>The identifier of the ProvisionedProduct object.</p>
+     * <p>The identifier of the provisioned product.</p>
      */
     inline void SetProductId(Aws::String&& value) { m_productIdHasBeenSet = true; m_productId = std::move(value); }
 
     /**
-     * <p>The identifier of the ProvisionedProduct object.</p>
+     * <p>The identifier of the provisioned product.</p>
      */
     inline void SetProductId(const char* value) { m_productIdHasBeenSet = true; m_productId.assign(value); }
 
     /**
-     * <p>The identifier of the ProvisionedProduct object.</p>
+     * <p>The identifier of the provisioned product.</p>
      */
     inline UpdateProvisionedProductRequest& WithProductId(const Aws::String& value) { SetProductId(value); return *this;}
 
     /**
-     * <p>The identifier of the ProvisionedProduct object.</p>
+     * <p>The identifier of the provisioned product.</p>
      */
     inline UpdateProvisionedProductRequest& WithProductId(Aws::String&& value) { SetProductId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the ProvisionedProduct object.</p>
+     * <p>The identifier of the provisioned product.</p>
      */
     inline UpdateProvisionedProductRequest& WithProductId(const char* value) { SetProductId(value); return *this;}
 
 
     /**
-     * <p>The provisioning artifact identifier for this product. This is sometimes
-     * referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline const Aws::String& GetProvisioningArtifactId() const{ return m_provisioningArtifactId; }
 
     /**
-     * <p>The provisioning artifact identifier for this product. This is sometimes
-     * referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline void SetProvisioningArtifactId(const Aws::String& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = value; }
 
     /**
-     * <p>The provisioning artifact identifier for this product. This is sometimes
-     * referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline void SetProvisioningArtifactId(Aws::String&& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = std::move(value); }
 
     /**
-     * <p>The provisioning artifact identifier for this product. This is sometimes
-     * referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline void SetProvisioningArtifactId(const char* value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId.assign(value); }
 
     /**
-     * <p>The provisioning artifact identifier for this product. This is sometimes
-     * referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline UpdateProvisionedProductRequest& WithProvisioningArtifactId(const Aws::String& value) { SetProvisioningArtifactId(value); return *this;}
 
     /**
-     * <p>The provisioning artifact identifier for this product. This is sometimes
-     * referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline UpdateProvisionedProductRequest& WithProvisioningArtifactId(Aws::String&& value) { SetProvisioningArtifactId(std::move(value)); return *this;}
 
     /**
-     * <p>The provisioning artifact identifier for this product. This is sometimes
-     * referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline UpdateProvisionedProductRequest& WithProvisioningArtifactId(const char* value) { SetProvisioningArtifactId(value); return *this;}
 
 
     /**
-     * <p>The identifier of the path to use in the updated ProvisionedProduct object.
-     * This value is optional if the product has a default path, and is required if
-     * there is more than one path for the specified product.</p>
+     * <p>The new path identifier. This value is optional if the product has a default
+     * path, and required if the product has more than one path.</p>
      */
     inline const Aws::String& GetPathId() const{ return m_pathId; }
 
     /**
-     * <p>The identifier of the path to use in the updated ProvisionedProduct object.
-     * This value is optional if the product has a default path, and is required if
-     * there is more than one path for the specified product.</p>
+     * <p>The new path identifier. This value is optional if the product has a default
+     * path, and required if the product has more than one path.</p>
      */
     inline void SetPathId(const Aws::String& value) { m_pathIdHasBeenSet = true; m_pathId = value; }
 
     /**
-     * <p>The identifier of the path to use in the updated ProvisionedProduct object.
-     * This value is optional if the product has a default path, and is required if
-     * there is more than one path for the specified product.</p>
+     * <p>The new path identifier. This value is optional if the product has a default
+     * path, and required if the product has more than one path.</p>
      */
     inline void SetPathId(Aws::String&& value) { m_pathIdHasBeenSet = true; m_pathId = std::move(value); }
 
     /**
-     * <p>The identifier of the path to use in the updated ProvisionedProduct object.
-     * This value is optional if the product has a default path, and is required if
-     * there is more than one path for the specified product.</p>
+     * <p>The new path identifier. This value is optional if the product has a default
+     * path, and required if the product has more than one path.</p>
      */
     inline void SetPathId(const char* value) { m_pathIdHasBeenSet = true; m_pathId.assign(value); }
 
     /**
-     * <p>The identifier of the path to use in the updated ProvisionedProduct object.
-     * This value is optional if the product has a default path, and is required if
-     * there is more than one path for the specified product.</p>
+     * <p>The new path identifier. This value is optional if the product has a default
+     * path, and required if the product has more than one path.</p>
      */
     inline UpdateProvisionedProductRequest& WithPathId(const Aws::String& value) { SetPathId(value); return *this;}
 
     /**
-     * <p>The identifier of the path to use in the updated ProvisionedProduct object.
-     * This value is optional if the product has a default path, and is required if
-     * there is more than one path for the specified product.</p>
+     * <p>The new path identifier. This value is optional if the product has a default
+     * path, and required if the product has more than one path.</p>
      */
     inline UpdateProvisionedProductRequest& WithPathId(Aws::String&& value) { SetPathId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the path to use in the updated ProvisionedProduct object.
-     * This value is optional if the product has a default path, and is required if
-     * there is more than one path for the specified product.</p>
+     * <p>The new path identifier. This value is optional if the product has a default
+     * path, and required if the product has more than one path.</p>
      */
     inline UpdateProvisionedProductRequest& WithPathId(const char* value) { SetPathId(value); return *this;}
 
 
     /**
-     * <p>A list of <code>ProvisioningParameter</code> objects used to update the
-     * ProvisionedProduct object.</p>
+     * <p>The new parameters.</p>
      */
     inline const Aws::Vector<UpdateProvisioningParameter>& GetProvisioningParameters() const{ return m_provisioningParameters; }
 
     /**
-     * <p>A list of <code>ProvisioningParameter</code> objects used to update the
-     * ProvisionedProduct object.</p>
+     * <p>The new parameters.</p>
      */
     inline void SetProvisioningParameters(const Aws::Vector<UpdateProvisioningParameter>& value) { m_provisioningParametersHasBeenSet = true; m_provisioningParameters = value; }
 
     /**
-     * <p>A list of <code>ProvisioningParameter</code> objects used to update the
-     * ProvisionedProduct object.</p>
+     * <p>The new parameters.</p>
      */
     inline void SetProvisioningParameters(Aws::Vector<UpdateProvisioningParameter>&& value) { m_provisioningParametersHasBeenSet = true; m_provisioningParameters = std::move(value); }
 
     /**
-     * <p>A list of <code>ProvisioningParameter</code> objects used to update the
-     * ProvisionedProduct object.</p>
+     * <p>The new parameters.</p>
      */
     inline UpdateProvisionedProductRequest& WithProvisioningParameters(const Aws::Vector<UpdateProvisioningParameter>& value) { SetProvisioningParameters(value); return *this;}
 
     /**
-     * <p>A list of <code>ProvisioningParameter</code> objects used to update the
-     * ProvisionedProduct object.</p>
+     * <p>The new parameters.</p>
      */
     inline UpdateProvisionedProductRequest& WithProvisioningParameters(Aws::Vector<UpdateProvisioningParameter>&& value) { SetProvisioningParameters(std::move(value)); return *this;}
 
     /**
-     * <p>A list of <code>ProvisioningParameter</code> objects used to update the
-     * ProvisionedProduct object.</p>
+     * <p>The new parameters.</p>
      */
     inline UpdateProvisionedProductRequest& AddProvisioningParameters(const UpdateProvisioningParameter& value) { m_provisioningParametersHasBeenSet = true; m_provisioningParameters.push_back(value); return *this; }
 
     /**
-     * <p>A list of <code>ProvisioningParameter</code> objects used to update the
-     * ProvisionedProduct object.</p>
+     * <p>The new parameters.</p>
      */
     inline UpdateProvisionedProductRequest& AddProvisioningParameters(UpdateProvisioningParameter&& value) { m_provisioningParametersHasBeenSet = true; m_provisioningParameters.push_back(std::move(value)); return *this; }
 

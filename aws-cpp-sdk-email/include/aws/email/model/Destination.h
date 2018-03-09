@@ -36,12 +36,15 @@ namespace Model
 
   /**
    * <p>Represents the destination of the message, consisting of To:, CC:, and BCC:
-   * fields.</p> <p> By default, the string must be 7-bit ASCII. If the text must
-   * contain any other characters, then you must use MIME encoded-word syntax (RFC
-   * 2047) instead of a literal string. MIME encoded-word syntax uses the following
-   * form: <code>=?charset?encoding?encoded-text?=</code>. For more information, see
-   * <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. </p><p><h3>See
-   * Also:</h3>   <a
+   * fields.</p> <note> <p>Amazon SES does not support the SMTPUTF8 extension, as
+   * described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this
+   * reason, the <i>local part</i> of a destination email address (the part of the
+   * email address that precedes the @ sign) may only contain <a
+   * href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
+   * characters</a>. If the <i>domain part</i> of an address (the part after the @
+   * sign) contains non-ASCII characters, they must be encoded using Punycode, as
+   * described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.</p>
+   * </note><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/Destination">AWS
    * API Reference</a></p>
    */

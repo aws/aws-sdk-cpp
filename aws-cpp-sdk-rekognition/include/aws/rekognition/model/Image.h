@@ -40,8 +40,8 @@ namespace Model
    * image loaded from a local file system. Image bytes passed by using the
    * <code>Bytes</code> property must be base64-encoded. Your code may not need to
    * encode image bytes if you are using an AWS SDK to call Rekognition API
-   * operations. For more information, see <a>example4</a>.</p> <p> You pass images
-   * stored in an S3 bucket to a Rekognition API operation by using the
+   * operations. For more information, see <a>images-bytes</a>.</p> <p> You pass
+   * images stored in an S3 bucket to a Rekognition API operation by using the
    * <code>S3Object</code> property. Images stored in an S3 bucket do not need to be
    * base64-encoded.</p> <p>The region for the S3 bucket containing the S3 object
    * must match the region you use for Amazon Rekognition operations.</p> <p>If you

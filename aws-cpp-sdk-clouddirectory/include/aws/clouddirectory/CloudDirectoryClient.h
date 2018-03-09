@@ -45,6 +45,7 @@
 #include <aws/clouddirectory/model/DetachPolicyResult.h>
 #include <aws/clouddirectory/model/DisableDirectoryResult.h>
 #include <aws/clouddirectory/model/EnableDirectoryResult.h>
+#include <aws/clouddirectory/model/GetAppliedSchemaVersionResult.h>
 #include <aws/clouddirectory/model/GetDirectoryResult.h>
 #include <aws/clouddirectory/model/GetFacetResult.h>
 #include <aws/clouddirectory/model/GetObjectInformationResult.h>
@@ -79,6 +80,8 @@
 #include <aws/clouddirectory/model/UpdateObjectAttributesResult.h>
 #include <aws/clouddirectory/model/UpdateSchemaResult.h>
 #include <aws/clouddirectory/model/UpdateTypedLinkFacetResult.h>
+#include <aws/clouddirectory/model/UpgradeAppliedSchemaResult.h>
+#include <aws/clouddirectory/model/UpgradePublishedSchemaResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -150,6 +153,7 @@ namespace Model
         class DetachTypedLinkRequest;
         class DisableDirectoryRequest;
         class EnableDirectoryRequest;
+        class GetAppliedSchemaVersionRequest;
         class GetDirectoryRequest;
         class GetFacetRequest;
         class GetObjectInformationRequest;
@@ -184,6 +188,8 @@ namespace Model
         class UpdateObjectAttributesRequest;
         class UpdateSchemaRequest;
         class UpdateTypedLinkFacetRequest;
+        class UpgradeAppliedSchemaRequest;
+        class UpgradePublishedSchemaRequest;
 
         typedef Aws::Utils::Outcome<AddFacetToObjectResult, Aws::Client::AWSError<CloudDirectoryErrors>> AddFacetToObjectOutcome;
         typedef Aws::Utils::Outcome<ApplySchemaResult, Aws::Client::AWSError<CloudDirectoryErrors>> ApplySchemaOutcome;
@@ -210,6 +216,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudDirectoryErrors>> DetachTypedLinkOutcome;
         typedef Aws::Utils::Outcome<DisableDirectoryResult, Aws::Client::AWSError<CloudDirectoryErrors>> DisableDirectoryOutcome;
         typedef Aws::Utils::Outcome<EnableDirectoryResult, Aws::Client::AWSError<CloudDirectoryErrors>> EnableDirectoryOutcome;
+        typedef Aws::Utils::Outcome<GetAppliedSchemaVersionResult, Aws::Client::AWSError<CloudDirectoryErrors>> GetAppliedSchemaVersionOutcome;
         typedef Aws::Utils::Outcome<GetDirectoryResult, Aws::Client::AWSError<CloudDirectoryErrors>> GetDirectoryOutcome;
         typedef Aws::Utils::Outcome<GetFacetResult, Aws::Client::AWSError<CloudDirectoryErrors>> GetFacetOutcome;
         typedef Aws::Utils::Outcome<GetObjectInformationResult, Aws::Client::AWSError<CloudDirectoryErrors>> GetObjectInformationOutcome;
@@ -244,6 +251,8 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateObjectAttributesResult, Aws::Client::AWSError<CloudDirectoryErrors>> UpdateObjectAttributesOutcome;
         typedef Aws::Utils::Outcome<UpdateSchemaResult, Aws::Client::AWSError<CloudDirectoryErrors>> UpdateSchemaOutcome;
         typedef Aws::Utils::Outcome<UpdateTypedLinkFacetResult, Aws::Client::AWSError<CloudDirectoryErrors>> UpdateTypedLinkFacetOutcome;
+        typedef Aws::Utils::Outcome<UpgradeAppliedSchemaResult, Aws::Client::AWSError<CloudDirectoryErrors>> UpgradeAppliedSchemaOutcome;
+        typedef Aws::Utils::Outcome<UpgradePublishedSchemaResult, Aws::Client::AWSError<CloudDirectoryErrors>> UpgradePublishedSchemaOutcome;
 
         typedef std::future<AddFacetToObjectOutcome> AddFacetToObjectOutcomeCallable;
         typedef std::future<ApplySchemaOutcome> ApplySchemaOutcomeCallable;
@@ -270,6 +279,7 @@ namespace Model
         typedef std::future<DetachTypedLinkOutcome> DetachTypedLinkOutcomeCallable;
         typedef std::future<DisableDirectoryOutcome> DisableDirectoryOutcomeCallable;
         typedef std::future<EnableDirectoryOutcome> EnableDirectoryOutcomeCallable;
+        typedef std::future<GetAppliedSchemaVersionOutcome> GetAppliedSchemaVersionOutcomeCallable;
         typedef std::future<GetDirectoryOutcome> GetDirectoryOutcomeCallable;
         typedef std::future<GetFacetOutcome> GetFacetOutcomeCallable;
         typedef std::future<GetObjectInformationOutcome> GetObjectInformationOutcomeCallable;
@@ -304,6 +314,8 @@ namespace Model
         typedef std::future<UpdateObjectAttributesOutcome> UpdateObjectAttributesOutcomeCallable;
         typedef std::future<UpdateSchemaOutcome> UpdateSchemaOutcomeCallable;
         typedef std::future<UpdateTypedLinkFacetOutcome> UpdateTypedLinkFacetOutcomeCallable;
+        typedef std::future<UpgradeAppliedSchemaOutcome> UpgradeAppliedSchemaOutcomeCallable;
+        typedef std::future<UpgradePublishedSchemaOutcome> UpgradePublishedSchemaOutcomeCallable;
 } // namespace Model
 
   class CloudDirectoryClient;
@@ -333,6 +345,7 @@ namespace Model
     typedef std::function<void(const CloudDirectoryClient*, const Model::DetachTypedLinkRequest&, const Model::DetachTypedLinkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachTypedLinkResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::DisableDirectoryRequest&, const Model::DisableDirectoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableDirectoryResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::EnableDirectoryRequest&, const Model::EnableDirectoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableDirectoryResponseReceivedHandler;
+    typedef std::function<void(const CloudDirectoryClient*, const Model::GetAppliedSchemaVersionRequest&, const Model::GetAppliedSchemaVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAppliedSchemaVersionResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::GetDirectoryRequest&, const Model::GetDirectoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDirectoryResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::GetFacetRequest&, const Model::GetFacetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFacetResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::GetObjectInformationRequest&, const Model::GetObjectInformationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetObjectInformationResponseReceivedHandler;
@@ -367,6 +380,8 @@ namespace Model
     typedef std::function<void(const CloudDirectoryClient*, const Model::UpdateObjectAttributesRequest&, const Model::UpdateObjectAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateObjectAttributesResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::UpdateSchemaRequest&, const Model::UpdateSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSchemaResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::UpdateTypedLinkFacetRequest&, const Model::UpdateTypedLinkFacetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTypedLinkFacetResponseReceivedHandler;
+    typedef std::function<void(const CloudDirectoryClient*, const Model::UpgradeAppliedSchemaRequest&, const Model::UpgradeAppliedSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpgradeAppliedSchemaResponseReceivedHandler;
+    typedef std::function<void(const CloudDirectoryClient*, const Model::UpgradePublishedSchemaRequest&, const Model::UpgradePublishedSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpgradePublishedSchemaResponseReceivedHandler;
 
   /**
    * <fullname>Amazon Cloud Directory</fullname> <p>Amazon Cloud Directory is a
@@ -435,16 +450,18 @@ namespace Model
         virtual void AddFacetToObjectAsync(const Model::AddFacetToObjectRequest& request, const AddFacetToObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Copies the input published schema into the <a>Directory</a> with the same
-         * name and version as that of the published schema .</p><p><h3>See Also:</h3>   <a
+         * <p>Copies the input published schema, at the specified version, into the
+         * <a>Directory</a> with the same name and version as that of the published
+         * schema.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ApplySchema">AWS
          * API Reference</a></p>
          */
         virtual Model::ApplySchemaOutcome ApplySchema(const Model::ApplySchemaRequest& request) const;
 
         /**
-         * <p>Copies the input published schema into the <a>Directory</a> with the same
-         * name and version as that of the published schema .</p><p><h3>See Also:</h3>   <a
+         * <p>Copies the input published schema, at the specified version, into the
+         * <a>Directory</a> with the same name and version as that of the published
+         * schema.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ApplySchema">AWS
          * API Reference</a></p>
          *
@@ -453,8 +470,9 @@ namespace Model
         virtual Model::ApplySchemaOutcomeCallable ApplySchemaCallable(const Model::ApplySchemaRequest& request) const;
 
         /**
-         * <p>Copies the input published schema into the <a>Directory</a> with the same
-         * name and version as that of the published schema .</p><p><h3>See Also:</h3>   <a
+         * <p>Copies the input published schema, at the specified version, into the
+         * <a>Directory</a> with the same name and version as that of the published
+         * schema.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ApplySchema">AWS
          * API Reference</a></p>
          *
@@ -610,8 +628,7 @@ namespace Model
 
         /**
          * <p>Performs all the write operations in a batch. Either all the operations
-         * succeed or none. Batch writes supports only object-related
-         * operations.</p><p><h3>See Also:</h3>   <a
+         * succeed or none.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchWrite">AWS
          * API Reference</a></p>
          */
@@ -619,8 +636,7 @@ namespace Model
 
         /**
          * <p>Performs all the write operations in a batch. Either all the operations
-         * succeed or none. Batch writes supports only object-related
-         * operations.</p><p><h3>See Also:</h3>   <a
+         * succeed or none.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchWrite">AWS
          * API Reference</a></p>
          *
@@ -630,8 +646,7 @@ namespace Model
 
         /**
          * <p>Performs all the write operations in a batch. Either all the operations
-         * succeed or none. Batch writes supports only object-related
-         * operations.</p><p><h3>See Also:</h3>   <a
+         * succeed or none.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchWrite">AWS
          * API Reference</a></p>
          *
@@ -1176,6 +1191,34 @@ namespace Model
         virtual void EnableDirectoryAsync(const Model::EnableDirectoryRequest& request, const EnableDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns current applied schema version ARN, including the minor version in
+         * use.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetAppliedSchemaVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAppliedSchemaVersionOutcome GetAppliedSchemaVersion(const Model::GetAppliedSchemaVersionRequest& request) const;
+
+        /**
+         * <p>Returns current applied schema version ARN, including the minor version in
+         * use.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetAppliedSchemaVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAppliedSchemaVersionOutcomeCallable GetAppliedSchemaVersionCallable(const Model::GetAppliedSchemaVersionRequest& request) const;
+
+        /**
+         * <p>Returns current applied schema version ARN, including the minor version in
+         * use.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetAppliedSchemaVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAppliedSchemaVersionAsync(const Model::GetAppliedSchemaVersionRequest& request, const GetAppliedSchemaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves metadata about a directory.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetDirectory">AWS
          * API Reference</a></p>
@@ -1325,14 +1368,16 @@ namespace Model
         virtual void GetTypedLinkFacetInformationAsync(const Model::GetTypedLinkFacetInformationRequest& request, const GetTypedLinkFacetInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists schemas applied to a directory.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists schema major versions applied to a directory. If <code>SchemaArn</code>
+         * is provided, lists the minor version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAppliedSchemaArns">AWS
          * API Reference</a></p>
          */
         virtual Model::ListAppliedSchemaArnsOutcome ListAppliedSchemaArns(const Model::ListAppliedSchemaArnsRequest& request) const;
 
         /**
-         * <p>Lists schemas applied to a directory.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists schema major versions applied to a directory. If <code>SchemaArn</code>
+         * is provided, lists the minor version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAppliedSchemaArns">AWS
          * API Reference</a></p>
          *
@@ -1341,7 +1386,8 @@ namespace Model
         virtual Model::ListAppliedSchemaArnsOutcomeCallable ListAppliedSchemaArnsCallable(const Model::ListAppliedSchemaArnsRequest& request) const;
 
         /**
-         * <p>Lists schemas applied to a directory.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists schema major versions applied to a directory. If <code>SchemaArn</code>
+         * is provided, lists the minor version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAppliedSchemaArns">AWS
          * API Reference</a></p>
          *
@@ -1350,14 +1396,14 @@ namespace Model
         virtual void ListAppliedSchemaArnsAsync(const Model::ListAppliedSchemaArnsRequest& request, const ListAppliedSchemaArnsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists indices attached to an object.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists indices attached to the specified object.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAttachedIndices">AWS
          * API Reference</a></p>
          */
         virtual Model::ListAttachedIndicesOutcome ListAttachedIndices(const Model::ListAttachedIndicesRequest& request) const;
 
         /**
-         * <p>Lists indices attached to an object.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists indices attached to the specified object.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAttachedIndices">AWS
          * API Reference</a></p>
          *
@@ -1366,7 +1412,7 @@ namespace Model
         virtual Model::ListAttachedIndicesOutcomeCallable ListAttachedIndicesCallable(const Model::ListAttachedIndicesRequest& request) const;
 
         /**
-         * <p>Lists indices attached to an object.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists indices attached to the specified object.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAttachedIndices">AWS
          * API Reference</a></p>
          *
@@ -1518,14 +1564,16 @@ namespace Model
         virtual void ListIncomingTypedLinksAsync(const Model::ListIncomingTypedLinksRequest& request, const ListIncomingTypedLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists objects attached to the specified index.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists objects and indexed values attached to the index.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIndex">AWS
          * API Reference</a></p>
          */
         virtual Model::ListIndexOutcome ListIndex(const Model::ListIndexRequest& request) const;
 
         /**
-         * <p>Lists objects attached to the specified index.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists objects and indexed values attached to the index.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIndex">AWS
          * API Reference</a></p>
          *
@@ -1534,7 +1582,8 @@ namespace Model
         virtual Model::ListIndexOutcomeCallable ListIndexCallable(const Model::ListIndexRequest& request) const;
 
         /**
-         * <p>Lists objects attached to the specified index.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists objects and indexed values attached to the index.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIndex">AWS
          * API Reference</a></p>
          *
@@ -1775,16 +1824,16 @@ namespace Model
         virtual void ListPolicyAttachmentsAsync(const Model::ListPolicyAttachmentsRequest& request, const ListPolicyAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves each published schema Amazon Resource Name (ARN).</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists schema major versions for a published schema. If <code>SchemaArn</code>
+         * is provided, lists the minor version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPublishedSchemaArns">AWS
          * API Reference</a></p>
          */
         virtual Model::ListPublishedSchemaArnsOutcome ListPublishedSchemaArns(const Model::ListPublishedSchemaArnsRequest& request) const;
 
         /**
-         * <p>Retrieves each published schema Amazon Resource Name (ARN).</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists schema major versions for a published schema. If <code>SchemaArn</code>
+         * is provided, lists the minor version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPublishedSchemaArns">AWS
          * API Reference</a></p>
          *
@@ -1793,8 +1842,8 @@ namespace Model
         virtual Model::ListPublishedSchemaArnsOutcomeCallable ListPublishedSchemaArnsCallable(const Model::ListPublishedSchemaArnsRequest& request) const;
 
         /**
-         * <p>Retrieves each published schema Amazon Resource Name (ARN).</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists schema major versions for a published schema. If <code>SchemaArn</code>
+         * is provided, lists the minor version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPublishedSchemaArns">AWS
          * API Reference</a></p>
          *
@@ -1951,20 +2000,16 @@ namespace Model
         virtual void LookupPolicyAsync(const Model::LookupPolicyRequest& request, const LookupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Publishes a development schema with a version. If description and attributes
-         * are specified, <code>PublishSchema</code> overrides the development schema
-         * description and attributes. If not, the development schema description and
-         * attributes are used.</p><p><h3>See Also:</h3>   <a
+         * <p>Publishes a development schema with a major version and a recommended minor
+         * version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PublishSchema">AWS
          * API Reference</a></p>
          */
         virtual Model::PublishSchemaOutcome PublishSchema(const Model::PublishSchemaRequest& request) const;
 
         /**
-         * <p>Publishes a development schema with a version. If description and attributes
-         * are specified, <code>PublishSchema</code> overrides the development schema
-         * description and attributes. If not, the development schema description and
-         * attributes are used.</p><p><h3>See Also:</h3>   <a
+         * <p>Publishes a development schema with a major version and a recommended minor
+         * version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PublishSchema">AWS
          * API Reference</a></p>
          *
@@ -1973,10 +2018,8 @@ namespace Model
         virtual Model::PublishSchemaOutcomeCallable PublishSchemaCallable(const Model::PublishSchemaRequest& request) const;
 
         /**
-         * <p>Publishes a development schema with a version. If description and attributes
-         * are specified, <code>PublishSchema</code> overrides the development schema
-         * description and attributes. If not, the development schema description and
-         * attributes are used.</p><p><h3>See Also:</h3>   <a
+         * <p>Publishes a development schema with a major version and a recommended minor
+         * version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PublishSchema">AWS
          * API Reference</a></p>
          *
@@ -2223,6 +2266,80 @@ namespace Model
          */
         virtual void UpdateTypedLinkFacetAsync(const Model::UpdateTypedLinkFacetRequest& request, const UpdateTypedLinkFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Upgrades a single directory in-place using the
+         * <code>PublishedSchemaArn</code> with schema updates found in
+         * <code>MinorVersion</code>. Backwards-compatible minor version upgrades are
+         * instantaneously available for readers on all objects in the directory. Note:
+         * This is a synchronous API call and upgrades only one schema on a given directory
+         * per call. To upgrade multiple directories from one schema, you would need to
+         * call this API on each directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradeAppliedSchema">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpgradeAppliedSchemaOutcome UpgradeAppliedSchema(const Model::UpgradeAppliedSchemaRequest& request) const;
+
+        /**
+         * <p>Upgrades a single directory in-place using the
+         * <code>PublishedSchemaArn</code> with schema updates found in
+         * <code>MinorVersion</code>. Backwards-compatible minor version upgrades are
+         * instantaneously available for readers on all objects in the directory. Note:
+         * This is a synchronous API call and upgrades only one schema on a given directory
+         * per call. To upgrade multiple directories from one schema, you would need to
+         * call this API on each directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradeAppliedSchema">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpgradeAppliedSchemaOutcomeCallable UpgradeAppliedSchemaCallable(const Model::UpgradeAppliedSchemaRequest& request) const;
+
+        /**
+         * <p>Upgrades a single directory in-place using the
+         * <code>PublishedSchemaArn</code> with schema updates found in
+         * <code>MinorVersion</code>. Backwards-compatible minor version upgrades are
+         * instantaneously available for readers on all objects in the directory. Note:
+         * This is a synchronous API call and upgrades only one schema on a given directory
+         * per call. To upgrade multiple directories from one schema, you would need to
+         * call this API on each directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradeAppliedSchema">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpgradeAppliedSchemaAsync(const Model::UpgradeAppliedSchemaRequest& request, const UpgradeAppliedSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Upgrades a published schema under a new minor version revision using the
+         * current contents of <code>DevelopmentSchemaArn</code>.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradePublishedSchema">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpgradePublishedSchemaOutcome UpgradePublishedSchema(const Model::UpgradePublishedSchemaRequest& request) const;
+
+        /**
+         * <p>Upgrades a published schema under a new minor version revision using the
+         * current contents of <code>DevelopmentSchemaArn</code>.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradePublishedSchema">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpgradePublishedSchemaOutcomeCallable UpgradePublishedSchemaCallable(const Model::UpgradePublishedSchemaRequest& request) const;
+
+        /**
+         * <p>Upgrades a published schema under a new minor version revision using the
+         * current contents of <code>DevelopmentSchemaArn</code>.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradePublishedSchema">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpgradePublishedSchemaAsync(const Model::UpgradePublishedSchemaRequest& request, const UpgradePublishedSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
@@ -2253,6 +2370,7 @@ namespace Model
         void DetachTypedLinkAsyncHelper(const Model::DetachTypedLinkRequest& request, const DetachTypedLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableDirectoryAsyncHelper(const Model::DisableDirectoryRequest& request, const DisableDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableDirectoryAsyncHelper(const Model::EnableDirectoryRequest& request, const EnableDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAppliedSchemaVersionAsyncHelper(const Model::GetAppliedSchemaVersionRequest& request, const GetAppliedSchemaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDirectoryAsyncHelper(const Model::GetDirectoryRequest& request, const GetDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFacetAsyncHelper(const Model::GetFacetRequest& request, const GetFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetObjectInformationAsyncHelper(const Model::GetObjectInformationRequest& request, const GetObjectInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2287,6 +2405,8 @@ namespace Model
         void UpdateObjectAttributesAsyncHelper(const Model::UpdateObjectAttributesRequest& request, const UpdateObjectAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSchemaAsyncHelper(const Model::UpdateSchemaRequest& request, const UpdateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTypedLinkFacetAsyncHelper(const Model::UpdateTypedLinkFacetRequest& request, const UpdateTypedLinkFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpgradeAppliedSchemaAsyncHelper(const Model::UpgradeAppliedSchemaRequest& request, const UpgradeAppliedSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpgradePublishedSchemaAsyncHelper(const Model::UpgradePublishedSchemaRequest& request, const UpgradePublishedSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;

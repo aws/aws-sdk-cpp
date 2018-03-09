@@ -23,6 +23,9 @@
 #include <aws/ec2/model/Placement.h>
 #include <aws/ec2/model/IamInstanceProfileSpecification.h>
 #include <aws/ec2/model/ShutdownBehavior.h>
+#include <aws/ec2/model/LaunchTemplateSpecification.h>
+#include <aws/ec2/model/InstanceMarketOptionsRequest.h>
+#include <aws/ec2/model/CreditSpecificationRequest.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
 #include <aws/ec2/model/InstanceIpv6Address.h>
 #include <aws/ec2/model/InstanceNetworkInterfaceSpecification.h>
@@ -118,37 +121,51 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>.</p>
+     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI
+     * is required to launch an instance and must be specified here or in a launch
+     * template.</p>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
 
     /**
-     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>.</p>
+     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI
+     * is required to launch an instance and must be specified here or in a launch
+     * template.</p>
      */
     inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
 
     /**
-     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>.</p>
+     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI
+     * is required to launch an instance and must be specified here or in a launch
+     * template.</p>
      */
     inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
 
     /**
-     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>.</p>
+     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI
+     * is required to launch an instance and must be specified here or in a launch
+     * template.</p>
      */
     inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
 
     /**
-     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>.</p>
+     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI
+     * is required to launch an instance and must be specified here or in a launch
+     * template.</p>
      */
     inline RunInstancesRequest& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
 
     /**
-     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>.</p>
+     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI
+     * is required to launch an instance and must be specified here or in a launch
+     * template.</p>
      */
     inline RunInstancesRequest& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>.</p>
+     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI
+     * is required to launch an instance and must be specified here or in a launch
+     * template.</p>
      */
     inline RunInstancesRequest& WithImageId(const char* value) { SetImageId(value); return *this;}
 
@@ -1175,37 +1192,37 @@ namespace Model
 
 
     /**
-     * <p>An Elastic GPU to associate with the instance.</p>
+     * <p>An elastic GPU to associate with the instance.</p>
      */
     inline const Aws::Vector<ElasticGpuSpecification>& GetElasticGpuSpecification() const{ return m_elasticGpuSpecification; }
 
     /**
-     * <p>An Elastic GPU to associate with the instance.</p>
+     * <p>An elastic GPU to associate with the instance.</p>
      */
     inline void SetElasticGpuSpecification(const Aws::Vector<ElasticGpuSpecification>& value) { m_elasticGpuSpecificationHasBeenSet = true; m_elasticGpuSpecification = value; }
 
     /**
-     * <p>An Elastic GPU to associate with the instance.</p>
+     * <p>An elastic GPU to associate with the instance.</p>
      */
     inline void SetElasticGpuSpecification(Aws::Vector<ElasticGpuSpecification>&& value) { m_elasticGpuSpecificationHasBeenSet = true; m_elasticGpuSpecification = std::move(value); }
 
     /**
-     * <p>An Elastic GPU to associate with the instance.</p>
+     * <p>An elastic GPU to associate with the instance.</p>
      */
     inline RunInstancesRequest& WithElasticGpuSpecification(const Aws::Vector<ElasticGpuSpecification>& value) { SetElasticGpuSpecification(value); return *this;}
 
     /**
-     * <p>An Elastic GPU to associate with the instance.</p>
+     * <p>An elastic GPU to associate with the instance.</p>
      */
     inline RunInstancesRequest& WithElasticGpuSpecification(Aws::Vector<ElasticGpuSpecification>&& value) { SetElasticGpuSpecification(std::move(value)); return *this;}
 
     /**
-     * <p>An Elastic GPU to associate with the instance.</p>
+     * <p>An elastic GPU to associate with the instance.</p>
      */
     inline RunInstancesRequest& AddElasticGpuSpecification(const ElasticGpuSpecification& value) { m_elasticGpuSpecificationHasBeenSet = true; m_elasticGpuSpecification.push_back(value); return *this; }
 
     /**
-     * <p>An Elastic GPU to associate with the instance.</p>
+     * <p>An elastic GPU to associate with the instance.</p>
      */
     inline RunInstancesRequest& AddElasticGpuSpecification(ElasticGpuSpecification&& value) { m_elasticGpuSpecificationHasBeenSet = true; m_elasticGpuSpecification.push_back(std::move(value)); return *this; }
 
@@ -1258,6 +1275,124 @@ namespace Model
      * created during launch.</p>
      */
     inline RunInstancesRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The launch template to use to launch the instances. Any parameters that you
+     * specify in <a>RunInstances</a> override the same parameters in the launch
+     * template.</p>
+     */
+    inline const LaunchTemplateSpecification& GetLaunchTemplate() const{ return m_launchTemplate; }
+
+    /**
+     * <p>The launch template to use to launch the instances. Any parameters that you
+     * specify in <a>RunInstances</a> override the same parameters in the launch
+     * template.</p>
+     */
+    inline void SetLaunchTemplate(const LaunchTemplateSpecification& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
+
+    /**
+     * <p>The launch template to use to launch the instances. Any parameters that you
+     * specify in <a>RunInstances</a> override the same parameters in the launch
+     * template.</p>
+     */
+    inline void SetLaunchTemplate(LaunchTemplateSpecification&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
+
+    /**
+     * <p>The launch template to use to launch the instances. Any parameters that you
+     * specify in <a>RunInstances</a> override the same parameters in the launch
+     * template.</p>
+     */
+    inline RunInstancesRequest& WithLaunchTemplate(const LaunchTemplateSpecification& value) { SetLaunchTemplate(value); return *this;}
+
+    /**
+     * <p>The launch template to use to launch the instances. Any parameters that you
+     * specify in <a>RunInstances</a> override the same parameters in the launch
+     * template.</p>
+     */
+    inline RunInstancesRequest& WithLaunchTemplate(LaunchTemplateSpecification&& value) { SetLaunchTemplate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The market (purchasing) option for the instances.</p>
+     */
+    inline const InstanceMarketOptionsRequest& GetInstanceMarketOptions() const{ return m_instanceMarketOptions; }
+
+    /**
+     * <p>The market (purchasing) option for the instances.</p>
+     */
+    inline void SetInstanceMarketOptions(const InstanceMarketOptionsRequest& value) { m_instanceMarketOptionsHasBeenSet = true; m_instanceMarketOptions = value; }
+
+    /**
+     * <p>The market (purchasing) option for the instances.</p>
+     */
+    inline void SetInstanceMarketOptions(InstanceMarketOptionsRequest&& value) { m_instanceMarketOptionsHasBeenSet = true; m_instanceMarketOptions = std::move(value); }
+
+    /**
+     * <p>The market (purchasing) option for the instances.</p>
+     */
+    inline RunInstancesRequest& WithInstanceMarketOptions(const InstanceMarketOptionsRequest& value) { SetInstanceMarketOptions(value); return *this;}
+
+    /**
+     * <p>The market (purchasing) option for the instances.</p>
+     */
+    inline RunInstancesRequest& WithInstanceMarketOptions(InstanceMarketOptionsRequest&& value) { SetInstanceMarketOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The credit option for CPU usage of the instance. Valid values are
+     * <code>standard</code> and <code>unlimited</code>. To change this attribute after
+     * launch, use <a>ModifyInstanceCreditSpecification</a>. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>Default: <code>standard</code> </p>
+     */
+    inline const CreditSpecificationRequest& GetCreditSpecification() const{ return m_creditSpecification; }
+
+    /**
+     * <p>The credit option for CPU usage of the instance. Valid values are
+     * <code>standard</code> and <code>unlimited</code>. To change this attribute after
+     * launch, use <a>ModifyInstanceCreditSpecification</a>. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>Default: <code>standard</code> </p>
+     */
+    inline void SetCreditSpecification(const CreditSpecificationRequest& value) { m_creditSpecificationHasBeenSet = true; m_creditSpecification = value; }
+
+    /**
+     * <p>The credit option for CPU usage of the instance. Valid values are
+     * <code>standard</code> and <code>unlimited</code>. To change this attribute after
+     * launch, use <a>ModifyInstanceCreditSpecification</a>. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>Default: <code>standard</code> </p>
+     */
+    inline void SetCreditSpecification(CreditSpecificationRequest&& value) { m_creditSpecificationHasBeenSet = true; m_creditSpecification = std::move(value); }
+
+    /**
+     * <p>The credit option for CPU usage of the instance. Valid values are
+     * <code>standard</code> and <code>unlimited</code>. To change this attribute after
+     * launch, use <a>ModifyInstanceCreditSpecification</a>. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>Default: <code>standard</code> </p>
+     */
+    inline RunInstancesRequest& WithCreditSpecification(const CreditSpecificationRequest& value) { SetCreditSpecification(value); return *this;}
+
+    /**
+     * <p>The credit option for CPU usage of the instance. Valid values are
+     * <code>standard</code> and <code>unlimited</code>. To change this attribute after
+     * launch, use <a>ModifyInstanceCreditSpecification</a>. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>Default: <code>standard</code> </p>
+     */
+    inline RunInstancesRequest& WithCreditSpecification(CreditSpecificationRequest&& value) { SetCreditSpecification(std::move(value)); return *this;}
 
   private:
 
@@ -1341,6 +1476,15 @@ namespace Model
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet;
+
+    LaunchTemplateSpecification m_launchTemplate;
+    bool m_launchTemplateHasBeenSet;
+
+    InstanceMarketOptionsRequest m_instanceMarketOptions;
+    bool m_instanceMarketOptionsHasBeenSet;
+
+    CreditSpecificationRequest m_creditSpecification;
+    bool m_creditSpecificationHasBeenSet;
   };
 
 } // namespace Model

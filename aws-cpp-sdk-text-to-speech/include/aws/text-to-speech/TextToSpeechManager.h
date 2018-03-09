@@ -106,7 +106,7 @@ namespace Aws
             void OnPollySynthSpeechOutcomeRecieved(const Polly::PollyClient*, const Polly::Model::SynthesizeSpeechRequest&, 
                 const Polly::Model::SynthesizeSpeechOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) const;
             
-            std::shared_ptr<Polly::PollyClient> m_pollyClient;
+            Polly::PollyClient* m_pollyClient;
             std::shared_ptr<PCMOutputDriver> m_activeDriver;
             Aws::Vector<std::shared_ptr<PCMOutputDriver>> m_drivers;
             std::atomic<Polly::Model::VoiceId> m_activeVoice;

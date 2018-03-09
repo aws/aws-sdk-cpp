@@ -30,7 +30,8 @@ namespace Model
     CODEPIPELINE,
     GITHUB,
     S3,
-    BITBUCKET
+    BITBUCKET,
+    GITHUB_ENTERPRISE
   };
 
 namespace SourceTypeMapper

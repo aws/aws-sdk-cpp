@@ -34,6 +34,7 @@ namespace Aws
         static const int attached_HASH = HashingUtils::HashString("attached");
         static const int detaching_HASH = HashingUtils::HashString("detaching");
         static const int detached_HASH = HashingUtils::HashString("detached");
+        static const int busy_HASH = HashingUtils::HashString("busy");
 
 
         VolumeAttachmentState GetVolumeAttachmentStateForName(const Aws::String& name)
@@ -54,6 +55,10 @@ namespace Aws
           else if (hashCode == detached_HASH)
           {
             return VolumeAttachmentState::detached;
+          }
+          else if (hashCode == busy_HASH)
+          {
+            return VolumeAttachmentState::busy;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +82,8 @@ namespace Aws
             return "detaching";
           case VolumeAttachmentState::detached:
             return "detached";
+          case VolumeAttachmentState::busy:
+            return "busy";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

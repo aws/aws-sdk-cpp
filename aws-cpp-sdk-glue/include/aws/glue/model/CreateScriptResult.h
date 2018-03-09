@@ -77,9 +77,47 @@ namespace Model
      */
     inline CreateScriptResult& WithPythonScript(const char* value) { SetPythonScript(value); return *this;}
 
+
+    /**
+     * <p>The Scala code generated from the DAG.</p>
+     */
+    inline const Aws::String& GetScalaCode() const{ return m_scalaCode; }
+
+    /**
+     * <p>The Scala code generated from the DAG.</p>
+     */
+    inline void SetScalaCode(const Aws::String& value) { m_scalaCode = value; }
+
+    /**
+     * <p>The Scala code generated from the DAG.</p>
+     */
+    inline void SetScalaCode(Aws::String&& value) { m_scalaCode = std::move(value); }
+
+    /**
+     * <p>The Scala code generated from the DAG.</p>
+     */
+    inline void SetScalaCode(const char* value) { m_scalaCode.assign(value); }
+
+    /**
+     * <p>The Scala code generated from the DAG.</p>
+     */
+    inline CreateScriptResult& WithScalaCode(const Aws::String& value) { SetScalaCode(value); return *this;}
+
+    /**
+     * <p>The Scala code generated from the DAG.</p>
+     */
+    inline CreateScriptResult& WithScalaCode(Aws::String&& value) { SetScalaCode(std::move(value)); return *this;}
+
+    /**
+     * <p>The Scala code generated from the DAG.</p>
+     */
+    inline CreateScriptResult& WithScalaCode(const char* value) { SetScalaCode(value); return *this;}
+
   private:
 
     Aws::String m_pythonScript;
+
+    Aws::String m_scalaCode;
   };
 
 } // namespace Model

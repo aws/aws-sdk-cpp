@@ -177,6 +177,63 @@ namespace Model
      */
     inline SampledHTTPRequest& WithAction(const char* value) { SetAction(value); return *this;}
 
+
+    /**
+     * <p>This value is returned if the <code>GetSampledRequests</code> request
+     * specifies the ID of a <code>RuleGroup</code> rather than the ID of an individual
+     * rule. <code>RuleWithinRuleGroup</code> is the rule within the specified
+     * <code>RuleGroup</code> that matched the request listed in the response.</p>
+     */
+    inline const Aws::String& GetRuleWithinRuleGroup() const{ return m_ruleWithinRuleGroup; }
+
+    /**
+     * <p>This value is returned if the <code>GetSampledRequests</code> request
+     * specifies the ID of a <code>RuleGroup</code> rather than the ID of an individual
+     * rule. <code>RuleWithinRuleGroup</code> is the rule within the specified
+     * <code>RuleGroup</code> that matched the request listed in the response.</p>
+     */
+    inline void SetRuleWithinRuleGroup(const Aws::String& value) { m_ruleWithinRuleGroupHasBeenSet = true; m_ruleWithinRuleGroup = value; }
+
+    /**
+     * <p>This value is returned if the <code>GetSampledRequests</code> request
+     * specifies the ID of a <code>RuleGroup</code> rather than the ID of an individual
+     * rule. <code>RuleWithinRuleGroup</code> is the rule within the specified
+     * <code>RuleGroup</code> that matched the request listed in the response.</p>
+     */
+    inline void SetRuleWithinRuleGroup(Aws::String&& value) { m_ruleWithinRuleGroupHasBeenSet = true; m_ruleWithinRuleGroup = std::move(value); }
+
+    /**
+     * <p>This value is returned if the <code>GetSampledRequests</code> request
+     * specifies the ID of a <code>RuleGroup</code> rather than the ID of an individual
+     * rule. <code>RuleWithinRuleGroup</code> is the rule within the specified
+     * <code>RuleGroup</code> that matched the request listed in the response.</p>
+     */
+    inline void SetRuleWithinRuleGroup(const char* value) { m_ruleWithinRuleGroupHasBeenSet = true; m_ruleWithinRuleGroup.assign(value); }
+
+    /**
+     * <p>This value is returned if the <code>GetSampledRequests</code> request
+     * specifies the ID of a <code>RuleGroup</code> rather than the ID of an individual
+     * rule. <code>RuleWithinRuleGroup</code> is the rule within the specified
+     * <code>RuleGroup</code> that matched the request listed in the response.</p>
+     */
+    inline SampledHTTPRequest& WithRuleWithinRuleGroup(const Aws::String& value) { SetRuleWithinRuleGroup(value); return *this;}
+
+    /**
+     * <p>This value is returned if the <code>GetSampledRequests</code> request
+     * specifies the ID of a <code>RuleGroup</code> rather than the ID of an individual
+     * rule. <code>RuleWithinRuleGroup</code> is the rule within the specified
+     * <code>RuleGroup</code> that matched the request listed in the response.</p>
+     */
+    inline SampledHTTPRequest& WithRuleWithinRuleGroup(Aws::String&& value) { SetRuleWithinRuleGroup(std::move(value)); return *this;}
+
+    /**
+     * <p>This value is returned if the <code>GetSampledRequests</code> request
+     * specifies the ID of a <code>RuleGroup</code> rather than the ID of an individual
+     * rule. <code>RuleWithinRuleGroup</code> is the rule within the specified
+     * <code>RuleGroup</code> that matched the request listed in the response.</p>
+     */
+    inline SampledHTTPRequest& WithRuleWithinRuleGroup(const char* value) { SetRuleWithinRuleGroup(value); return *this;}
+
   private:
 
     HTTPRequest m_request;
@@ -190,6 +247,9 @@ namespace Model
 
     Aws::String m_action;
     bool m_actionHasBeenSet;
+
+    Aws::String m_ruleWithinRuleGroup;
+    bool m_ruleWithinRuleGroupHasBeenSet;
   };
 
 } // namespace Model

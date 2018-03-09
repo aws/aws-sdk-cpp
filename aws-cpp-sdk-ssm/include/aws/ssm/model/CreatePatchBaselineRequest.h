@@ -22,6 +22,7 @@
 #include <aws/ssm/model/PatchRuleGroup.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/PatchComplianceLevel.h>
+#include <aws/ssm/model/PatchSource.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -257,6 +258,28 @@ namespace Model
 
 
     /**
+     * <p>Indicates whether the list of approved patches includes non-security updates
+     * that should be applied to the instances. The default value is 'false'. Applies
+     * to Linux instances only.</p>
+     */
+    inline bool GetApprovedPatchesEnableNonSecurity() const{ return m_approvedPatchesEnableNonSecurity; }
+
+    /**
+     * <p>Indicates whether the list of approved patches includes non-security updates
+     * that should be applied to the instances. The default value is 'false'. Applies
+     * to Linux instances only.</p>
+     */
+    inline void SetApprovedPatchesEnableNonSecurity(bool value) { m_approvedPatchesEnableNonSecurityHasBeenSet = true; m_approvedPatchesEnableNonSecurity = value; }
+
+    /**
+     * <p>Indicates whether the list of approved patches includes non-security updates
+     * that should be applied to the instances. The default value is 'false'. Applies
+     * to Linux instances only.</p>
+     */
+    inline CreatePatchBaselineRequest& WithApprovedPatchesEnableNonSecurity(bool value) { SetApprovedPatchesEnableNonSecurity(value); return *this;}
+
+
+    /**
      * <p>A list of explicitly rejected patches for the baseline.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRejectedPatches() const{ return m_rejectedPatches; }
@@ -334,6 +357,56 @@ namespace Model
 
 
     /**
+     * <p>Information about the patches to use to update the instances, including
+     * target operating systems and source repositories. Applies to Linux instances
+     * only.</p>
+     */
+    inline const Aws::Vector<PatchSource>& GetSources() const{ return m_sources; }
+
+    /**
+     * <p>Information about the patches to use to update the instances, including
+     * target operating systems and source repositories. Applies to Linux instances
+     * only.</p>
+     */
+    inline void SetSources(const Aws::Vector<PatchSource>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
+
+    /**
+     * <p>Information about the patches to use to update the instances, including
+     * target operating systems and source repositories. Applies to Linux instances
+     * only.</p>
+     */
+    inline void SetSources(Aws::Vector<PatchSource>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
+
+    /**
+     * <p>Information about the patches to use to update the instances, including
+     * target operating systems and source repositories. Applies to Linux instances
+     * only.</p>
+     */
+    inline CreatePatchBaselineRequest& WithSources(const Aws::Vector<PatchSource>& value) { SetSources(value); return *this;}
+
+    /**
+     * <p>Information about the patches to use to update the instances, including
+     * target operating systems and source repositories. Applies to Linux instances
+     * only.</p>
+     */
+    inline CreatePatchBaselineRequest& WithSources(Aws::Vector<PatchSource>&& value) { SetSources(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the patches to use to update the instances, including
+     * target operating systems and source repositories. Applies to Linux instances
+     * only.</p>
+     */
+    inline CreatePatchBaselineRequest& AddSources(const PatchSource& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the patches to use to update the instances, including
+     * target operating systems and source repositories. Applies to Linux instances
+     * only.</p>
+     */
+    inline CreatePatchBaselineRequest& AddSources(PatchSource&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>User-provided idempotency token.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
@@ -388,11 +461,17 @@ namespace Model
     PatchComplianceLevel m_approvedPatchesComplianceLevel;
     bool m_approvedPatchesComplianceLevelHasBeenSet;
 
+    bool m_approvedPatchesEnableNonSecurity;
+    bool m_approvedPatchesEnableNonSecurityHasBeenSet;
+
     Aws::Vector<Aws::String> m_rejectedPatches;
     bool m_rejectedPatchesHasBeenSet;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    Aws::Vector<PatchSource> m_sources;
+    bool m_sourcesHasBeenSet;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;

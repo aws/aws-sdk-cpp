@@ -55,13 +55,17 @@ enum class RekognitionErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  IMAGE_TOO_LARGE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  IDEMPOTENT_PARAMETER_MISMATCH= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  IMAGE_TOO_LARGE,
   INVALID_IMAGE_FORMAT,
   INVALID_PAGINATION_TOKEN,
   INVALID_PARAMETER,
   INVALID_S3_OBJECT,
+  LIMIT_EXCEEDED,
   PROVISIONED_THROUGHPUT_EXCEEDED,
-  RESOURCE_ALREADY_EXISTS
+  RESOURCE_ALREADY_EXISTS,
+  RESOURCE_IN_USE,
+  VIDEO_TOO_LARGE
 };
 namespace RekognitionErrorMapper
 {

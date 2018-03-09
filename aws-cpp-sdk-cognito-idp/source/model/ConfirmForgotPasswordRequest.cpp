@@ -27,7 +27,9 @@ ConfirmForgotPasswordRequest::ConfirmForgotPasswordRequest() :
     m_secretHashHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_confirmationCodeHasBeenSet(false),
-    m_passwordHasBeenSet(false)
+    m_passwordHasBeenSet(false),
+    m_analyticsMetadataHasBeenSet(false),
+    m_userContextDataHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,18 @@ Aws::String ConfirmForgotPasswordRequest::SerializePayload() const
   if(m_passwordHasBeenSet)
   {
    payload.WithString("Password", m_password);
+
+  }
+
+  if(m_analyticsMetadataHasBeenSet)
+  {
+   payload.WithObject("AnalyticsMetadata", m_analyticsMetadata.Jsonize());
+
+  }
+
+  if(m_userContextDataHasBeenSet)
+  {
+   payload.WithObject("UserContextData", m_userContextData.Jsonize());
 
   }
 

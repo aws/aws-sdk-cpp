@@ -36,6 +36,9 @@ AssessmentTemplate::AssessmentTemplate() :
     m_durationInSecondsHasBeenSet(false),
     m_rulesPackageArnsHasBeenSet(false),
     m_userAttributesForFindingsHasBeenSet(false),
+    m_lastAssessmentRunArnHasBeenSet(false),
+    m_assessmentRunCount(0),
+    m_assessmentRunCountHasBeenSet(false),
     m_createdAtHasBeenSet(false)
 {
 }
@@ -48,6 +51,9 @@ AssessmentTemplate::AssessmentTemplate(const JsonValue& jsonValue) :
     m_durationInSecondsHasBeenSet(false),
     m_rulesPackageArnsHasBeenSet(false),
     m_userAttributesForFindingsHasBeenSet(false),
+    m_lastAssessmentRunArnHasBeenSet(false),
+    m_assessmentRunCount(0),
+    m_assessmentRunCountHasBeenSet(false),
     m_createdAtHasBeenSet(false)
 {
   *this = jsonValue;
@@ -101,6 +107,20 @@ AssessmentTemplate& AssessmentTemplate::operator =(const JsonValue& jsonValue)
       m_userAttributesForFindings.push_back(userAttributesForFindingsJsonList[userAttributesForFindingsIndex].AsObject());
     }
     m_userAttributesForFindingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lastAssessmentRunArn"))
+  {
+    m_lastAssessmentRunArn = jsonValue.GetString("lastAssessmentRunArn");
+
+    m_lastAssessmentRunArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("assessmentRunCount"))
+  {
+    m_assessmentRunCount = jsonValue.GetInteger("assessmentRunCount");
+
+    m_assessmentRunCountHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("createdAt"))
@@ -160,6 +180,18 @@ JsonValue AssessmentTemplate::Jsonize() const
      userAttributesForFindingsJsonList[userAttributesForFindingsIndex].AsObject(m_userAttributesForFindings[userAttributesForFindingsIndex].Jsonize());
    }
    payload.WithArray("userAttributesForFindings", std::move(userAttributesForFindingsJsonList));
+
+  }
+
+  if(m_lastAssessmentRunArnHasBeenSet)
+  {
+   payload.WithString("lastAssessmentRunArn", m_lastAssessmentRunArn);
+
+  }
+
+  if(m_assessmentRunCountHasBeenSet)
+  {
+   payload.WithInteger("assessmentRunCount", m_assessmentRunCount);
 
   }
 

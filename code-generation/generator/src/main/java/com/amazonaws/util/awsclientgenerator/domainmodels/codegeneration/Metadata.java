@@ -35,6 +35,7 @@ public class Metadata {
     private String projectName;
     private String classNamePrefix;
     private String acceptHeader;
+    private String timestampFormat;
     private Map<String, String> additionalHeaders;
     private boolean standalone;
 }

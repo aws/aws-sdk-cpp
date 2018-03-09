@@ -43,42 +43,27 @@ namespace Model
 
 
     /**
-     * <p>The detailed result of the <a>UpdateProvisionedProduct</a> request,
-     * containing the inputs made to that request, the current state of the request, a
-     * pointer to the ProvisionedProduct object that the request is modifying, and a
-     * list of any errors that the request encountered.</p>
+     * <p>Information about the result of the request.</p>
      */
     inline const RecordDetail& GetRecordDetail() const{ return m_recordDetail; }
 
     /**
-     * <p>The detailed result of the <a>UpdateProvisionedProduct</a> request,
-     * containing the inputs made to that request, the current state of the request, a
-     * pointer to the ProvisionedProduct object that the request is modifying, and a
-     * list of any errors that the request encountered.</p>
+     * <p>Information about the result of the request.</p>
      */
     inline void SetRecordDetail(const RecordDetail& value) { m_recordDetail = value; }
 
     /**
-     * <p>The detailed result of the <a>UpdateProvisionedProduct</a> request,
-     * containing the inputs made to that request, the current state of the request, a
-     * pointer to the ProvisionedProduct object that the request is modifying, and a
-     * list of any errors that the request encountered.</p>
+     * <p>Information about the result of the request.</p>
      */
     inline void SetRecordDetail(RecordDetail&& value) { m_recordDetail = std::move(value); }
 
     /**
-     * <p>The detailed result of the <a>UpdateProvisionedProduct</a> request,
-     * containing the inputs made to that request, the current state of the request, a
-     * pointer to the ProvisionedProduct object that the request is modifying, and a
-     * list of any errors that the request encountered.</p>
+     * <p>Information about the result of the request.</p>
      */
     inline UpdateProvisionedProductResult& WithRecordDetail(const RecordDetail& value) { SetRecordDetail(value); return *this;}
 
     /**
-     * <p>The detailed result of the <a>UpdateProvisionedProduct</a> request,
-     * containing the inputs made to that request, the current state of the request, a
-     * pointer to the ProvisionedProduct object that the request is modifying, and a
-     * list of any errors that the request encountered.</p>
+     * <p>Information about the result of the request.</p>
      */
     inline UpdateProvisionedProductResult& WithRecordDetail(RecordDetail&& value) { SetRecordDetail(std::move(value)); return *this;}
 

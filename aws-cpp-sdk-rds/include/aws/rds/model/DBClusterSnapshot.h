@@ -249,17 +249,17 @@ namespace Model
 
 
     /**
-     * <p>Specifies the allocated storage size in gigabytes (GB).</p>
+     * <p>Specifies the allocated storage size in gibibytes (GiB).</p>
      */
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
-     * <p>Specifies the allocated storage size in gigabytes (GB).</p>
+     * <p>Specifies the allocated storage size in gibibytes (GiB).</p>
      */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
-     * <p>Specifies the allocated storage size in gigabytes (GB).</p>
+     * <p>Specifies the allocated storage size in gibibytes (GiB).</p>
      */
     inline DBClusterSnapshot& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 

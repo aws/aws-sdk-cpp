@@ -16,6 +16,8 @@
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ecs/model/KeyValuePair.h>
 #include <utility>
 
 namespace Aws
@@ -288,6 +290,84 @@ namespace Model
      */
     inline Cluster& WithActiveServicesCount(int value) { SetActiveServicesCount(value); return *this;}
 
+
+    /**
+     * <p>Additional information about your clusters that are separated by launch type,
+     * including:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
+     * <p>RunningFargateTasksCount</p> </li> <li> <p>pendingEC2TasksCount</p> </li>
+     * <li> <p>pendingFargateTasksCount</p> </li> <li> <p>activeEC2ServiceCount</p>
+     * </li> <li> <p>activeFargateServiceCount</p> </li> <li>
+     * <p>drainingEC2ServiceCount</p> </li> <li> <p>drainingFargateServiceCount</p>
+     * </li> </ul>
+     */
+    inline const Aws::Vector<KeyValuePair>& GetStatistics() const{ return m_statistics; }
+
+    /**
+     * <p>Additional information about your clusters that are separated by launch type,
+     * including:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
+     * <p>RunningFargateTasksCount</p> </li> <li> <p>pendingEC2TasksCount</p> </li>
+     * <li> <p>pendingFargateTasksCount</p> </li> <li> <p>activeEC2ServiceCount</p>
+     * </li> <li> <p>activeFargateServiceCount</p> </li> <li>
+     * <p>drainingEC2ServiceCount</p> </li> <li> <p>drainingFargateServiceCount</p>
+     * </li> </ul>
+     */
+    inline void SetStatistics(const Aws::Vector<KeyValuePair>& value) { m_statisticsHasBeenSet = true; m_statistics = value; }
+
+    /**
+     * <p>Additional information about your clusters that are separated by launch type,
+     * including:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
+     * <p>RunningFargateTasksCount</p> </li> <li> <p>pendingEC2TasksCount</p> </li>
+     * <li> <p>pendingFargateTasksCount</p> </li> <li> <p>activeEC2ServiceCount</p>
+     * </li> <li> <p>activeFargateServiceCount</p> </li> <li>
+     * <p>drainingEC2ServiceCount</p> </li> <li> <p>drainingFargateServiceCount</p>
+     * </li> </ul>
+     */
+    inline void SetStatistics(Aws::Vector<KeyValuePair>&& value) { m_statisticsHasBeenSet = true; m_statistics = std::move(value); }
+
+    /**
+     * <p>Additional information about your clusters that are separated by launch type,
+     * including:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
+     * <p>RunningFargateTasksCount</p> </li> <li> <p>pendingEC2TasksCount</p> </li>
+     * <li> <p>pendingFargateTasksCount</p> </li> <li> <p>activeEC2ServiceCount</p>
+     * </li> <li> <p>activeFargateServiceCount</p> </li> <li>
+     * <p>drainingEC2ServiceCount</p> </li> <li> <p>drainingFargateServiceCount</p>
+     * </li> </ul>
+     */
+    inline Cluster& WithStatistics(const Aws::Vector<KeyValuePair>& value) { SetStatistics(value); return *this;}
+
+    /**
+     * <p>Additional information about your clusters that are separated by launch type,
+     * including:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
+     * <p>RunningFargateTasksCount</p> </li> <li> <p>pendingEC2TasksCount</p> </li>
+     * <li> <p>pendingFargateTasksCount</p> </li> <li> <p>activeEC2ServiceCount</p>
+     * </li> <li> <p>activeFargateServiceCount</p> </li> <li>
+     * <p>drainingEC2ServiceCount</p> </li> <li> <p>drainingFargateServiceCount</p>
+     * </li> </ul>
+     */
+    inline Cluster& WithStatistics(Aws::Vector<KeyValuePair>&& value) { SetStatistics(std::move(value)); return *this;}
+
+    /**
+     * <p>Additional information about your clusters that are separated by launch type,
+     * including:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
+     * <p>RunningFargateTasksCount</p> </li> <li> <p>pendingEC2TasksCount</p> </li>
+     * <li> <p>pendingFargateTasksCount</p> </li> <li> <p>activeEC2ServiceCount</p>
+     * </li> <li> <p>activeFargateServiceCount</p> </li> <li>
+     * <p>drainingEC2ServiceCount</p> </li> <li> <p>drainingFargateServiceCount</p>
+     * </li> </ul>
+     */
+    inline Cluster& AddStatistics(const KeyValuePair& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(value); return *this; }
+
+    /**
+     * <p>Additional information about your clusters that are separated by launch type,
+     * including:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
+     * <p>RunningFargateTasksCount</p> </li> <li> <p>pendingEC2TasksCount</p> </li>
+     * <li> <p>pendingFargateTasksCount</p> </li> <li> <p>activeEC2ServiceCount</p>
+     * </li> <li> <p>activeFargateServiceCount</p> </li> <li>
+     * <p>drainingEC2ServiceCount</p> </li> <li> <p>drainingFargateServiceCount</p>
+     * </li> </ul>
+     */
+    inline Cluster& AddStatistics(KeyValuePair&& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_clusterArn;
@@ -310,6 +390,9 @@ namespace Model
 
     int m_activeServicesCount;
     bool m_activeServicesCountHasBeenSet;
+
+    Aws::Vector<KeyValuePair> m_statistics;
+    bool m_statisticsHasBeenSet;
   };
 
 } // namespace Model

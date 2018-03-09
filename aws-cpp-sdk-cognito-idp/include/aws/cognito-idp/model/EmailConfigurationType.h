@@ -83,37 +83,37 @@ namespace Model
 
 
     /**
-     * <p>The REPLY-TO email address.</p>
+     * <p>The destination to which the receiver of the email should reply to.</p>
      */
     inline const Aws::String& GetReplyToEmailAddress() const{ return m_replyToEmailAddress; }
 
     /**
-     * <p>The REPLY-TO email address.</p>
+     * <p>The destination to which the receiver of the email should reply to.</p>
      */
     inline void SetReplyToEmailAddress(const Aws::String& value) { m_replyToEmailAddressHasBeenSet = true; m_replyToEmailAddress = value; }
 
     /**
-     * <p>The REPLY-TO email address.</p>
+     * <p>The destination to which the receiver of the email should reply to.</p>
      */
     inline void SetReplyToEmailAddress(Aws::String&& value) { m_replyToEmailAddressHasBeenSet = true; m_replyToEmailAddress = std::move(value); }
 
     /**
-     * <p>The REPLY-TO email address.</p>
+     * <p>The destination to which the receiver of the email should reply to.</p>
      */
     inline void SetReplyToEmailAddress(const char* value) { m_replyToEmailAddressHasBeenSet = true; m_replyToEmailAddress.assign(value); }
 
     /**
-     * <p>The REPLY-TO email address.</p>
+     * <p>The destination to which the receiver of the email should reply to.</p>
      */
     inline EmailConfigurationType& WithReplyToEmailAddress(const Aws::String& value) { SetReplyToEmailAddress(value); return *this;}
 
     /**
-     * <p>The REPLY-TO email address.</p>
+     * <p>The destination to which the receiver of the email should reply to.</p>
      */
     inline EmailConfigurationType& WithReplyToEmailAddress(Aws::String&& value) { SetReplyToEmailAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The REPLY-TO email address.</p>
+     * <p>The destination to which the receiver of the email should reply to.</p>
      */
     inline EmailConfigurationType& WithReplyToEmailAddress(const char* value) { SetReplyToEmailAddress(value); return *this;}
 

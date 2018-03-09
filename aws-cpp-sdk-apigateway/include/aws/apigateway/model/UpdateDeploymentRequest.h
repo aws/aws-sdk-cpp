@@ -29,7 +29,7 @@ namespace Model
 {
 
   /**
-   * <p>Requests Amazon API Gateway to change information about a <a>Deployment</a>
+   * <p>Requests API Gateway to change information about a <a>Deployment</a>
    * resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDeploymentRequest">AWS
    * API Reference</a></p>

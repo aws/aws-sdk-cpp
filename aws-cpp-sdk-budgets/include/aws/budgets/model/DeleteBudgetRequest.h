@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * Request of DeleteBudget<p><h3>See Also:</h3>   <a
+   * <p> Request of DeleteBudget </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteBudgetRequest">AWS
    * API Reference</a></p>
    */
@@ -47,47 +47,82 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /**
+     * <p>The <code>accountId</code> that is associated with the budget that you want
+     * to delete.</p>
+     */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
-    
+    /**
+     * <p>The <code>accountId</code> that is associated with the budget that you want
+     * to delete.</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
-    
+    /**
+     * <p>The <code>accountId</code> that is associated with the budget that you want
+     * to delete.</p>
+     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
-    
+    /**
+     * <p>The <code>accountId</code> that is associated with the budget that you want
+     * to delete.</p>
+     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
-    
+    /**
+     * <p>The <code>accountId</code> that is associated with the budget that you want
+     * to delete.</p>
+     */
     inline DeleteBudgetRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
-    
+    /**
+     * <p>The <code>accountId</code> that is associated with the budget that you want
+     * to delete.</p>
+     */
     inline DeleteBudgetRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The <code>accountId</code> that is associated with the budget that you want
+     * to delete.</p>
+     */
     inline DeleteBudgetRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
 
-    
+    /**
+     * <p>The name of the budget that you want to delete.</p>
+     */
     inline const Aws::String& GetBudgetName() const{ return m_budgetName; }
 
-    
+    /**
+     * <p>The name of the budget that you want to delete.</p>
+     */
     inline void SetBudgetName(const Aws::String& value) { m_budgetNameHasBeenSet = true; m_budgetName = value; }
 
-    
+    /**
+     * <p>The name of the budget that you want to delete.</p>
+     */
     inline void SetBudgetName(Aws::String&& value) { m_budgetNameHasBeenSet = true; m_budgetName = std::move(value); }
 
-    
+    /**
+     * <p>The name of the budget that you want to delete.</p>
+     */
     inline void SetBudgetName(const char* value) { m_budgetNameHasBeenSet = true; m_budgetName.assign(value); }
 
-    
+    /**
+     * <p>The name of the budget that you want to delete.</p>
+     */
     inline DeleteBudgetRequest& WithBudgetName(const Aws::String& value) { SetBudgetName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the budget that you want to delete.</p>
+     */
     inline DeleteBudgetRequest& WithBudgetName(Aws::String&& value) { SetBudgetName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The name of the budget that you want to delete.</p>
+     */
     inline DeleteBudgetRequest& WithBudgetName(const char* value) { SetBudgetName(value); return *this;}
 
   private:

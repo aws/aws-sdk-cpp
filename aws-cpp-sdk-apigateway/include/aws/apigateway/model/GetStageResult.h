@@ -20,6 +20,7 @@
 #include <aws/apigateway/model/CacheClusterStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/apigateway/model/AccessLogSettings.h>
+#include <aws/apigateway/model/CanarySettings.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/apigateway/model/MethodSetting.h>
 #include <utility>
@@ -130,43 +131,43 @@ namespace Model
 
     /**
      * <p>The name of the stage is the first path segment in the Uniform Resource
-     * Identifier (URI) of a call to Amazon API Gateway.</p>
+     * Identifier (URI) of a call to API Gateway.</p>
      */
     inline const Aws::String& GetStageName() const{ return m_stageName; }
 
     /**
      * <p>The name of the stage is the first path segment in the Uniform Resource
-     * Identifier (URI) of a call to Amazon API Gateway.</p>
+     * Identifier (URI) of a call to API Gateway.</p>
      */
     inline void SetStageName(const Aws::String& value) { m_stageName = value; }
 
     /**
      * <p>The name of the stage is the first path segment in the Uniform Resource
-     * Identifier (URI) of a call to Amazon API Gateway.</p>
+     * Identifier (URI) of a call to API Gateway.</p>
      */
     inline void SetStageName(Aws::String&& value) { m_stageName = std::move(value); }
 
     /**
      * <p>The name of the stage is the first path segment in the Uniform Resource
-     * Identifier (URI) of a call to Amazon API Gateway.</p>
+     * Identifier (URI) of a call to API Gateway.</p>
      */
     inline void SetStageName(const char* value) { m_stageName.assign(value); }
 
     /**
      * <p>The name of the stage is the first path segment in the Uniform Resource
-     * Identifier (URI) of a call to Amazon API Gateway.</p>
+     * Identifier (URI) of a call to API Gateway.</p>
      */
     inline GetStageResult& WithStageName(const Aws::String& value) { SetStageName(value); return *this;}
 
     /**
      * <p>The name of the stage is the first path segment in the Uniform Resource
-     * Identifier (URI) of a call to Amazon API Gateway.</p>
+     * Identifier (URI) of a call to API Gateway.</p>
      */
     inline GetStageResult& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the stage is the first path segment in the Uniform Resource
-     * Identifier (URI) of a call to Amazon API Gateway.</p>
+     * Identifier (URI) of a call to API Gateway.</p>
      */
     inline GetStageResult& WithStageName(const char* value) { SetStageName(value); return *this;}
 
@@ -486,29 +487,116 @@ namespace Model
 
 
     /**
-     * <p>The access log settings in this stage.</p>
+     * <p>Settings for logging access in this stage.</p>
      */
     inline const AccessLogSettings& GetAccessLogSettings() const{ return m_accessLogSettings; }
 
     /**
-     * <p>The access log settings in this stage.</p>
+     * <p>Settings for logging access in this stage.</p>
      */
     inline void SetAccessLogSettings(const AccessLogSettings& value) { m_accessLogSettings = value; }
 
     /**
-     * <p>The access log settings in this stage.</p>
+     * <p>Settings for logging access in this stage.</p>
      */
     inline void SetAccessLogSettings(AccessLogSettings&& value) { m_accessLogSettings = std::move(value); }
 
     /**
-     * <p>The access log settings in this stage.</p>
+     * <p>Settings for logging access in this stage.</p>
      */
     inline GetStageResult& WithAccessLogSettings(const AccessLogSettings& value) { SetAccessLogSettings(value); return *this;}
 
     /**
-     * <p>The access log settings in this stage.</p>
+     * <p>Settings for logging access in this stage.</p>
      */
     inline GetStageResult& WithAccessLogSettings(AccessLogSettings&& value) { SetAccessLogSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Settings for the canary deployment in this stage.</p>
+     */
+    inline const CanarySettings& GetCanarySettings() const{ return m_canarySettings; }
+
+    /**
+     * <p>Settings for the canary deployment in this stage.</p>
+     */
+    inline void SetCanarySettings(const CanarySettings& value) { m_canarySettings = value; }
+
+    /**
+     * <p>Settings for the canary deployment in this stage.</p>
+     */
+    inline void SetCanarySettings(CanarySettings&& value) { m_canarySettings = std::move(value); }
+
+    /**
+     * <p>Settings for the canary deployment in this stage.</p>
+     */
+    inline GetStageResult& WithCanarySettings(const CanarySettings& value) { SetCanarySettings(value); return *this;}
+
+    /**
+     * <p>Settings for the canary deployment in this stage.</p>
+     */
+    inline GetStageResult& WithCanarySettings(CanarySettings&& value) { SetCanarySettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A collection of Tags associated with a given resource.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A collection of Tags associated with a given resource.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
+
+    /**
+     * <p>A collection of Tags associated with a given resource.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>A collection of Tags associated with a given resource.</p>
+     */
+    inline GetStageResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A collection of Tags associated with a given resource.</p>
+     */
+    inline GetStageResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A collection of Tags associated with a given resource.</p>
+     */
+    inline GetStageResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>A collection of Tags associated with a given resource.</p>
+     */
+    inline GetStageResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A collection of Tags associated with a given resource.</p>
+     */
+    inline GetStageResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A collection of Tags associated with a given resource.</p>
+     */
+    inline GetStageResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A collection of Tags associated with a given resource.</p>
+     */
+    inline GetStageResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A collection of Tags associated with a given resource.</p>
+     */
+    inline GetStageResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A collection of Tags associated with a given resource.</p>
+     */
+    inline GetStageResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
 
     /**
@@ -585,6 +673,10 @@ namespace Model
     Aws::String m_documentationVersion;
 
     AccessLogSettings m_accessLogSettings;
+
+    CanarySettings m_canarySettings;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
 
     Aws::Utils::DateTime m_createdDate;
 

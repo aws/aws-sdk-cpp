@@ -138,10 +138,18 @@ class AWS_TESTING_API ExactTestMemorySystem : public BaseTestMemorySystem
 #define AWS_END_MEMORY_OVERRIDE   } \
                                   Aws::Utils::Memory::ShutdownAWSMemorySystem();
 
+#define AWS_BEGIN_MEMORY_TEST_EX(options, x, y) ExactTestMemorySystem memorySystem(x, y); \
+                                                options.memoryManagementOptions.memoryManager = &memorySystem;
+
+#define AWS_END_MEMORY_TEST_EX                  EXPECT_EQ(memorySystem.GetCurrentOutstandingAllocations(), 0ULL); \
+                                                EXPECT_EQ(memorySystem.GetCurrentBytesAllocated(), 0ULL); \
+                                                EXPECT_TRUE(memorySystem.IsClean()); 
 #else
 
 #define AWS_BEGIN_MEMORY_TEST(x, y)
 #define AWS_END_MEMORY_TEST
 #define AWS_END_MEMORY_OVERRIDE
+#define AWS_BEGIN_MEMORY_TEST_EX(options, x, y)
+#define AWS_END_MEMORY_TEST_EX
 
 #endif // USE_AWS_MEMORY_MANAGEMENT

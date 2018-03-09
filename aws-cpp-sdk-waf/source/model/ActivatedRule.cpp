@@ -33,6 +33,7 @@ ActivatedRule::ActivatedRule() :
     m_priorityHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
     m_actionHasBeenSet(false),
+    m_overrideActionHasBeenSet(false),
     m_type(WafRuleType::NOT_SET),
     m_typeHasBeenSet(false)
 {
@@ -43,6 +44,7 @@ ActivatedRule::ActivatedRule(const JsonValue& jsonValue) :
     m_priorityHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
     m_actionHasBeenSet(false),
+    m_overrideActionHasBeenSet(false),
     m_type(WafRuleType::NOT_SET),
     m_typeHasBeenSet(false)
 {
@@ -70,6 +72,13 @@ ActivatedRule& ActivatedRule::operator =(const JsonValue& jsonValue)
     m_action = jsonValue.GetObject("Action");
 
     m_actionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OverrideAction"))
+  {
+    m_overrideAction = jsonValue.GetObject("OverrideAction");
+
+    m_overrideActionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Type"))
@@ -101,6 +110,12 @@ JsonValue ActivatedRule::Jsonize() const
   if(m_actionHasBeenSet)
   {
    payload.WithObject("Action", m_action.Jsonize());
+
+  }
+
+  if(m_overrideActionHasBeenSet)
+  {
+   payload.WithObject("OverrideAction", m_overrideAction.Jsonize());
 
   }
 

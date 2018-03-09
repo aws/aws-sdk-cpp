@@ -33,8 +33,8 @@ namespace Model
   /**
    * <p>Gets the <a>GatewayResponses</a> collection on the given <a>RestApi</a>. If
    * an API developer has not added any definitions for gateway responses, the result
-   * will be the Amazon API Gateway-generated default <a>GatewayResponses</a>
-   * collection for the supported response types.</p><p><h3>See Also:</h3>   <a
+   * will be the API Gateway-generated default <a>GatewayResponses</a> collection for
+   * the supported response types.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetGatewayResponsesRequest">AWS
    * API Reference</a></p>
    */

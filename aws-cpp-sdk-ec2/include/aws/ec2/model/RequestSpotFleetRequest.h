@@ -75,27 +75,27 @@ namespace Model
 
 
     /**
-     * <p>The configuration for the Spot fleet request.</p>
+     * <p>The configuration for the Spot Fleet request.</p>
      */
     inline const SpotFleetRequestConfigData& GetSpotFleetRequestConfig() const{ return m_spotFleetRequestConfig; }
 
     /**
-     * <p>The configuration for the Spot fleet request.</p>
+     * <p>The configuration for the Spot Fleet request.</p>
      */
     inline void SetSpotFleetRequestConfig(const SpotFleetRequestConfigData& value) { m_spotFleetRequestConfigHasBeenSet = true; m_spotFleetRequestConfig = value; }
 
     /**
-     * <p>The configuration for the Spot fleet request.</p>
+     * <p>The configuration for the Spot Fleet request.</p>
      */
     inline void SetSpotFleetRequestConfig(SpotFleetRequestConfigData&& value) { m_spotFleetRequestConfigHasBeenSet = true; m_spotFleetRequestConfig = std::move(value); }
 
     /**
-     * <p>The configuration for the Spot fleet request.</p>
+     * <p>The configuration for the Spot Fleet request.</p>
      */
     inline RequestSpotFleetRequest& WithSpotFleetRequestConfig(const SpotFleetRequestConfigData& value) { SetSpotFleetRequestConfig(value); return *this;}
 
     /**
-     * <p>The configuration for the Spot fleet request.</p>
+     * <p>The configuration for the Spot Fleet request.</p>
      */
     inline RequestSpotFleetRequest& WithSpotFleetRequestConfig(SpotFleetRequestConfigData&& value) { SetSpotFleetRequestConfig(std::move(value)); return *this;}
 

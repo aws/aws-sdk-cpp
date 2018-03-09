@@ -121,6 +121,42 @@ namespace Model
 
 
     /**
+     * <p>The thing ARN.</p>
+     */
+    inline const Aws::String& GetThingArn() const{ return m_thingArn; }
+
+    /**
+     * <p>The thing ARN.</p>
+     */
+    inline void SetThingArn(const Aws::String& value) { m_thingArnHasBeenSet = true; m_thingArn = value; }
+
+    /**
+     * <p>The thing ARN.</p>
+     */
+    inline void SetThingArn(Aws::String&& value) { m_thingArnHasBeenSet = true; m_thingArn = std::move(value); }
+
+    /**
+     * <p>The thing ARN.</p>
+     */
+    inline void SetThingArn(const char* value) { m_thingArnHasBeenSet = true; m_thingArn.assign(value); }
+
+    /**
+     * <p>The thing ARN.</p>
+     */
+    inline ThingAttribute& WithThingArn(const Aws::String& value) { SetThingArn(value); return *this;}
+
+    /**
+     * <p>The thing ARN.</p>
+     */
+    inline ThingAttribute& WithThingArn(Aws::String&& value) { SetThingArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The thing ARN.</p>
+     */
+    inline ThingAttribute& WithThingArn(const char* value) { SetThingArn(value); return *this;}
+
+
+    /**
      * <p>A list of thing attributes which are name-value pairs.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
@@ -203,6 +239,9 @@ namespace Model
 
     Aws::String m_thingTypeName;
     bool m_thingTypeNameHasBeenSet;
+
+    Aws::String m_thingArn;
+    bool m_thingArnHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;

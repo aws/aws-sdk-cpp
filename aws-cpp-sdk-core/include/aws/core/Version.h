@@ -19,6 +19,9 @@ namespace Aws
 {
 namespace Version
 {
-AWS_CORE_API const char* GetVersionString();
+    AWS_CORE_API const char* GetVersionString();
+    AWS_CORE_API unsigned GetVersionMajor();
+    AWS_CORE_API unsigned GetVersionMinor();
+    AWS_CORE_API unsigned GetVersionPatch();
 } //namespace Version
 } //namespace Aws

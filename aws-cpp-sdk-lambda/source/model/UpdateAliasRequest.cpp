@@ -26,7 +26,9 @@ UpdateAliasRequest::UpdateAliasRequest() :
     m_functionNameHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_functionVersionHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_routingConfigHasBeenSet(false),
+    m_revisionIdHasBeenSet(false)
 {
 }
 
@@ -43,6 +45,18 @@ Aws::String UpdateAliasRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
+
+  }
+
+  if(m_routingConfigHasBeenSet)
+  {
+   payload.WithObject("RoutingConfig", m_routingConfig.Jsonize());
+
+  }
+
+  if(m_revisionIdHasBeenSet)
+  {
+   payload.WithString("RevisionId", m_revisionId);
 
   }
 

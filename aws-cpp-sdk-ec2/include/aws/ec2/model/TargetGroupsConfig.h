@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the target groups to attach to a Spot fleet. Spot fleet registers
-   * the running Spot instances with these target groups.</p><p><h3>See Also:</h3>  
+   * <p>Describes the target groups to attach to a Spot Fleet. Spot Fleet registers
+   * the running Spot Instances with these target groups.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TargetGroupsConfig">AWS
    * API Reference</a></p>

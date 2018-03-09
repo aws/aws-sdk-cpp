@@ -35,8 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Detailed information about a ProvisionedProduct object.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Information about a provisioned product.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisionedProductDetail">AWS
    * API Reference</a></p>
    */
@@ -50,381 +49,393 @@ namespace Model
 
 
     /**
-     * <p>The user-friendly name of the ProvisionedProduct object.</p>
+     * <p>The user-friendly name of the provisioned product.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The user-friendly name of the ProvisionedProduct object.</p>
+     * <p>The user-friendly name of the provisioned product.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The user-friendly name of the ProvisionedProduct object.</p>
+     * <p>The user-friendly name of the provisioned product.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The user-friendly name of the ProvisionedProduct object.</p>
+     * <p>The user-friendly name of the provisioned product.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The user-friendly name of the ProvisionedProduct object.</p>
+     * <p>The user-friendly name of the provisioned product.</p>
      */
     inline ProvisionedProductDetail& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The user-friendly name of the ProvisionedProduct object.</p>
+     * <p>The user-friendly name of the provisioned product.</p>
      */
     inline ProvisionedProductDetail& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The user-friendly name of the ProvisionedProduct object.</p>
+     * <p>The user-friendly name of the provisioned product.</p>
      */
     inline ProvisionedProductDetail& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The ARN associated with the ProvisionedProduct object.</p>
+     * <p>The ARN of the provisioned product.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The ARN associated with the ProvisionedProduct object.</p>
+     * <p>The ARN of the provisioned product.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The ARN associated with the ProvisionedProduct object.</p>
+     * <p>The ARN of the provisioned product.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The ARN associated with the ProvisionedProduct object.</p>
+     * <p>The ARN of the provisioned product.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The ARN associated with the ProvisionedProduct object.</p>
+     * <p>The ARN of the provisioned product.</p>
      */
     inline ProvisionedProductDetail& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The ARN associated with the ProvisionedProduct object.</p>
+     * <p>The ARN of the provisioned product.</p>
      */
     inline ProvisionedProductDetail& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN associated with the ProvisionedProduct object.</p>
+     * <p>The ARN of the provisioned product.</p>
      */
     inline ProvisionedProductDetail& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * <p>The type of the ProvisionedProduct object.</p>
+     * <p>The type of provisioned product. The supported value is
+     * <code>CFN_STACK</code>.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the ProvisionedProduct object.</p>
+     * <p>The type of provisioned product. The supported value is
+     * <code>CFN_STACK</code>.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the ProvisionedProduct object.</p>
+     * <p>The type of provisioned product. The supported value is
+     * <code>CFN_STACK</code>.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the ProvisionedProduct object.</p>
+     * <p>The type of provisioned product. The supported value is
+     * <code>CFN_STACK</code>.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The type of the ProvisionedProduct object.</p>
+     * <p>The type of provisioned product. The supported value is
+     * <code>CFN_STACK</code>.</p>
      */
     inline ProvisionedProductDetail& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the ProvisionedProduct object.</p>
+     * <p>The type of provisioned product. The supported value is
+     * <code>CFN_STACK</code>.</p>
      */
     inline ProvisionedProductDetail& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of the ProvisionedProduct object.</p>
+     * <p>The type of provisioned product. The supported value is
+     * <code>CFN_STACK</code>.</p>
      */
     inline ProvisionedProductDetail& WithType(const char* value) { SetType(value); return *this;}
 
 
     /**
-     * <p>The identifier of the ProvisionedProduct object.</p>
+     * <p>The identifier of the provisioned product.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The identifier of the ProvisionedProduct object.</p>
+     * <p>The identifier of the provisioned product.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The identifier of the ProvisionedProduct object.</p>
+     * <p>The identifier of the provisioned product.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The identifier of the ProvisionedProduct object.</p>
+     * <p>The identifier of the provisioned product.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The identifier of the ProvisionedProduct object.</p>
+     * <p>The identifier of the provisioned product.</p>
      */
     inline ProvisionedProductDetail& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The identifier of the ProvisionedProduct object.</p>
+     * <p>The identifier of the provisioned product.</p>
      */
     inline ProvisionedProductDetail& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the ProvisionedProduct object.</p>
+     * <p>The identifier of the provisioned product.</p>
      */
     inline ProvisionedProductDetail& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * <p>The current status of the ProvisionedProduct.</p> <p> <code>AVAILABLE</code>
-     * - Stable state, ready to perform any operation. The most recent action request
-     * succeeded and completed.</p> <p> <code>UNDER_CHANGE</code> - Transitive state,
-     * operations performed may or may not have valid results. Wait for an
-     * <code>AVAILABLE</code> status before performing operations.</p> <p>
-     * <code>TAINTED</code> - Stable state, ready to perform any operation. The stack
-     * has completed the requested operation but is not exactly what was requested. For
-     * example, a request to update to a new version failed and the stack rolled back
-     * to the current version. </p> <p> <code>ERROR</code> - Something unexpected
-     * happened such that the provisioned product exists but the stack is not running.
-     * For example, CloudFormation received an invalid parameter value and could not
-     * launch the stack.</p>
+     * <p>The current status of the provisioned product.</p> <ul> <li> <p>
+     * <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most
+     * recent operation succeeded and completed.</p> </li> <li> <p>
+     * <code>UNDER_CHANGE</code> - Transitive state, operations performed might not
+     * have valid results. Wait for an <code>AVAILABLE</code> status before performing
+     * operations.</p> </li> <li> <p> <code>TAINTED</code> - Stable state, ready to
+     * perform any operation. The stack has completed the requested operation but is
+     * not exactly what was requested. For example, a request to update to a new
+     * version failed and the stack rolled back to the current version.</p> </li> <li>
+     * <p> <code>ERROR</code> - An unexpected error occurred, the provisioned product
+     * exists but the stack is not running. For example, CloudFormation received a
+     * parameter value that was not valid and could not launch the stack.</p> </li>
+     * </ul>
      */
     inline const ProvisionedProductStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The current status of the ProvisionedProduct.</p> <p> <code>AVAILABLE</code>
-     * - Stable state, ready to perform any operation. The most recent action request
-     * succeeded and completed.</p> <p> <code>UNDER_CHANGE</code> - Transitive state,
-     * operations performed may or may not have valid results. Wait for an
-     * <code>AVAILABLE</code> status before performing operations.</p> <p>
-     * <code>TAINTED</code> - Stable state, ready to perform any operation. The stack
-     * has completed the requested operation but is not exactly what was requested. For
-     * example, a request to update to a new version failed and the stack rolled back
-     * to the current version. </p> <p> <code>ERROR</code> - Something unexpected
-     * happened such that the provisioned product exists but the stack is not running.
-     * For example, CloudFormation received an invalid parameter value and could not
-     * launch the stack.</p>
+     * <p>The current status of the provisioned product.</p> <ul> <li> <p>
+     * <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most
+     * recent operation succeeded and completed.</p> </li> <li> <p>
+     * <code>UNDER_CHANGE</code> - Transitive state, operations performed might not
+     * have valid results. Wait for an <code>AVAILABLE</code> status before performing
+     * operations.</p> </li> <li> <p> <code>TAINTED</code> - Stable state, ready to
+     * perform any operation. The stack has completed the requested operation but is
+     * not exactly what was requested. For example, a request to update to a new
+     * version failed and the stack rolled back to the current version.</p> </li> <li>
+     * <p> <code>ERROR</code> - An unexpected error occurred, the provisioned product
+     * exists but the stack is not running. For example, CloudFormation received a
+     * parameter value that was not valid and could not launch the stack.</p> </li>
+     * </ul>
      */
     inline void SetStatus(const ProvisionedProductStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The current status of the ProvisionedProduct.</p> <p> <code>AVAILABLE</code>
-     * - Stable state, ready to perform any operation. The most recent action request
-     * succeeded and completed.</p> <p> <code>UNDER_CHANGE</code> - Transitive state,
-     * operations performed may or may not have valid results. Wait for an
-     * <code>AVAILABLE</code> status before performing operations.</p> <p>
-     * <code>TAINTED</code> - Stable state, ready to perform any operation. The stack
-     * has completed the requested operation but is not exactly what was requested. For
-     * example, a request to update to a new version failed and the stack rolled back
-     * to the current version. </p> <p> <code>ERROR</code> - Something unexpected
-     * happened such that the provisioned product exists but the stack is not running.
-     * For example, CloudFormation received an invalid parameter value and could not
-     * launch the stack.</p>
+     * <p>The current status of the provisioned product.</p> <ul> <li> <p>
+     * <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most
+     * recent operation succeeded and completed.</p> </li> <li> <p>
+     * <code>UNDER_CHANGE</code> - Transitive state, operations performed might not
+     * have valid results. Wait for an <code>AVAILABLE</code> status before performing
+     * operations.</p> </li> <li> <p> <code>TAINTED</code> - Stable state, ready to
+     * perform any operation. The stack has completed the requested operation but is
+     * not exactly what was requested. For example, a request to update to a new
+     * version failed and the stack rolled back to the current version.</p> </li> <li>
+     * <p> <code>ERROR</code> - An unexpected error occurred, the provisioned product
+     * exists but the stack is not running. For example, CloudFormation received a
+     * parameter value that was not valid and could not launch the stack.</p> </li>
+     * </ul>
      */
     inline void SetStatus(ProvisionedProductStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The current status of the ProvisionedProduct.</p> <p> <code>AVAILABLE</code>
-     * - Stable state, ready to perform any operation. The most recent action request
-     * succeeded and completed.</p> <p> <code>UNDER_CHANGE</code> - Transitive state,
-     * operations performed may or may not have valid results. Wait for an
-     * <code>AVAILABLE</code> status before performing operations.</p> <p>
-     * <code>TAINTED</code> - Stable state, ready to perform any operation. The stack
-     * has completed the requested operation but is not exactly what was requested. For
-     * example, a request to update to a new version failed and the stack rolled back
-     * to the current version. </p> <p> <code>ERROR</code> - Something unexpected
-     * happened such that the provisioned product exists but the stack is not running.
-     * For example, CloudFormation received an invalid parameter value and could not
-     * launch the stack.</p>
+     * <p>The current status of the provisioned product.</p> <ul> <li> <p>
+     * <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most
+     * recent operation succeeded and completed.</p> </li> <li> <p>
+     * <code>UNDER_CHANGE</code> - Transitive state, operations performed might not
+     * have valid results. Wait for an <code>AVAILABLE</code> status before performing
+     * operations.</p> </li> <li> <p> <code>TAINTED</code> - Stable state, ready to
+     * perform any operation. The stack has completed the requested operation but is
+     * not exactly what was requested. For example, a request to update to a new
+     * version failed and the stack rolled back to the current version.</p> </li> <li>
+     * <p> <code>ERROR</code> - An unexpected error occurred, the provisioned product
+     * exists but the stack is not running. For example, CloudFormation received a
+     * parameter value that was not valid and could not launch the stack.</p> </li>
+     * </ul>
      */
     inline ProvisionedProductDetail& WithStatus(const ProvisionedProductStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The current status of the ProvisionedProduct.</p> <p> <code>AVAILABLE</code>
-     * - Stable state, ready to perform any operation. The most recent action request
-     * succeeded and completed.</p> <p> <code>UNDER_CHANGE</code> - Transitive state,
-     * operations performed may or may not have valid results. Wait for an
-     * <code>AVAILABLE</code> status before performing operations.</p> <p>
-     * <code>TAINTED</code> - Stable state, ready to perform any operation. The stack
-     * has completed the requested operation but is not exactly what was requested. For
-     * example, a request to update to a new version failed and the stack rolled back
-     * to the current version. </p> <p> <code>ERROR</code> - Something unexpected
-     * happened such that the provisioned product exists but the stack is not running.
-     * For example, CloudFormation received an invalid parameter value and could not
-     * launch the stack.</p>
+     * <p>The current status of the provisioned product.</p> <ul> <li> <p>
+     * <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most
+     * recent operation succeeded and completed.</p> </li> <li> <p>
+     * <code>UNDER_CHANGE</code> - Transitive state, operations performed might not
+     * have valid results. Wait for an <code>AVAILABLE</code> status before performing
+     * operations.</p> </li> <li> <p> <code>TAINTED</code> - Stable state, ready to
+     * perform any operation. The stack has completed the requested operation but is
+     * not exactly what was requested. For example, a request to update to a new
+     * version failed and the stack rolled back to the current version.</p> </li> <li>
+     * <p> <code>ERROR</code> - An unexpected error occurred, the provisioned product
+     * exists but the stack is not running. For example, CloudFormation received a
+     * parameter value that was not valid and could not launch the stack.</p> </li>
+     * </ul>
      */
     inline ProvisionedProductDetail& WithStatus(ProvisionedProductStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>The current status message of the ProvisionedProduct.</p>
+     * <p>The current status message of the provisioned product.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
 
     /**
-     * <p>The current status message of the ProvisionedProduct.</p>
+     * <p>The current status message of the provisioned product.</p>
      */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
 
     /**
-     * <p>The current status message of the ProvisionedProduct.</p>
+     * <p>The current status message of the provisioned product.</p>
      */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
 
     /**
-     * <p>The current status message of the ProvisionedProduct.</p>
+     * <p>The current status message of the provisioned product.</p>
      */
     inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
 
     /**
-     * <p>The current status message of the ProvisionedProduct.</p>
+     * <p>The current status message of the provisioned product.</p>
      */
     inline ProvisionedProductDetail& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
 
     /**
-     * <p>The current status message of the ProvisionedProduct.</p>
+     * <p>The current status message of the provisioned product.</p>
      */
     inline ProvisionedProductDetail& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
 
     /**
-     * <p>The current status message of the ProvisionedProduct.</p>
+     * <p>The current status message of the provisioned product.</p>
      */
     inline ProvisionedProductDetail& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The UTC time stamp of the creation time.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The UTC time stamp of the creation time.</p>
      */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The UTC time stamp of the creation time.</p>
      */
     inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The UTC time stamp of the creation time.</p>
      */
     inline ProvisionedProductDetail& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The UTC time stamp of the creation time.</p>
      */
     inline ProvisionedProductDetail& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline ProvisionedProductDetail& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline ProvisionedProductDetail& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline ProvisionedProductDetail& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 
 
     /**
-     * <p>The record identifier of the last request performed on this
-     * ProvisionedProduct object.</p>
+     * <p>The record identifier of the last request performed on this provisioned
+     * product.</p>
      */
     inline const Aws::String& GetLastRecordId() const{ return m_lastRecordId; }
 
     /**
-     * <p>The record identifier of the last request performed on this
-     * ProvisionedProduct object.</p>
+     * <p>The record identifier of the last request performed on this provisioned
+     * product.</p>
      */
     inline void SetLastRecordId(const Aws::String& value) { m_lastRecordIdHasBeenSet = true; m_lastRecordId = value; }
 
     /**
-     * <p>The record identifier of the last request performed on this
-     * ProvisionedProduct object.</p>
+     * <p>The record identifier of the last request performed on this provisioned
+     * product.</p>
      */
     inline void SetLastRecordId(Aws::String&& value) { m_lastRecordIdHasBeenSet = true; m_lastRecordId = std::move(value); }
 
     /**
-     * <p>The record identifier of the last request performed on this
-     * ProvisionedProduct object.</p>
+     * <p>The record identifier of the last request performed on this provisioned
+     * product.</p>
      */
     inline void SetLastRecordId(const char* value) { m_lastRecordIdHasBeenSet = true; m_lastRecordId.assign(value); }
 
     /**
-     * <p>The record identifier of the last request performed on this
-     * ProvisionedProduct object.</p>
+     * <p>The record identifier of the last request performed on this provisioned
+     * product.</p>
      */
     inline ProvisionedProductDetail& WithLastRecordId(const Aws::String& value) { SetLastRecordId(value); return *this;}
 
     /**
-     * <p>The record identifier of the last request performed on this
-     * ProvisionedProduct object.</p>
+     * <p>The record identifier of the last request performed on this provisioned
+     * product.</p>
      */
     inline ProvisionedProductDetail& WithLastRecordId(Aws::String&& value) { SetLastRecordId(std::move(value)); return *this;}
 
     /**
-     * <p>The record identifier of the last request performed on this
-     * ProvisionedProduct object.</p>
+     * <p>The record identifier of the last request performed on this provisioned
+     * product.</p>
      */
     inline ProvisionedProductDetail& WithLastRecordId(const char* value) { SetLastRecordId(value); return *this;}
 

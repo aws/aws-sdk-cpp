@@ -47,37 +47,44 @@ namespace Model
   public:
 
     /**
-     * <p>The token to use for pagination.</p>
+     * <p>A token returned from a previous call to <code>ListTemplates</code> to
+     * indicate the position in the list of email templates.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token to use for pagination.</p>
+     * <p>A token returned from a previous call to <code>ListTemplates</code> to
+     * indicate the position in the list of email templates.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The token to use for pagination.</p>
+     * <p>A token returned from a previous call to <code>ListTemplates</code> to
+     * indicate the position in the list of email templates.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The token to use for pagination.</p>
+     * <p>A token returned from a previous call to <code>ListTemplates</code> to
+     * indicate the position in the list of email templates.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The token to use for pagination.</p>
+     * <p>A token returned from a previous call to <code>ListTemplates</code> to
+     * indicate the position in the list of email templates.</p>
      */
     inline ListTemplatesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token to use for pagination.</p>
+     * <p>A token returned from a previous call to <code>ListTemplates</code> to
+     * indicate the position in the list of email templates.</p>
      */
     inline ListTemplatesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token to use for pagination.</p>
+     * <p>A token returned from a previous call to <code>ListTemplates</code> to
+     * indicate the position in the list of email templates.</p>
      */
     inline ListTemplatesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

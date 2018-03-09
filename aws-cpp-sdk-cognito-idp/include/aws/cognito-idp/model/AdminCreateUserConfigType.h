@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>The type of configuration for creating a new user profile.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The configuration for creating a new user profile.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminCreateUserConfigType">AWS
    * API Reference</a></p>
    */
@@ -99,26 +99,41 @@ namespace Model
 
     /**
      * <p>The message template to be used for the welcome message to new users.</p>
+     * <p>See also <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization">Customizing
+     * User Invitation Messages</a>.</p>
      */
     inline const MessageTemplateType& GetInviteMessageTemplate() const{ return m_inviteMessageTemplate; }
 
     /**
      * <p>The message template to be used for the welcome message to new users.</p>
+     * <p>See also <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization">Customizing
+     * User Invitation Messages</a>.</p>
      */
     inline void SetInviteMessageTemplate(const MessageTemplateType& value) { m_inviteMessageTemplateHasBeenSet = true; m_inviteMessageTemplate = value; }
 
     /**
      * <p>The message template to be used for the welcome message to new users.</p>
+     * <p>See also <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization">Customizing
+     * User Invitation Messages</a>.</p>
      */
     inline void SetInviteMessageTemplate(MessageTemplateType&& value) { m_inviteMessageTemplateHasBeenSet = true; m_inviteMessageTemplate = std::move(value); }
 
     /**
      * <p>The message template to be used for the welcome message to new users.</p>
+     * <p>See also <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization">Customizing
+     * User Invitation Messages</a>.</p>
      */
     inline AdminCreateUserConfigType& WithInviteMessageTemplate(const MessageTemplateType& value) { SetInviteMessageTemplate(value); return *this;}
 
     /**
      * <p>The message template to be used for the welcome message to new users.</p>
+     * <p>See also <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization">Customizing
+     * User Invitation Messages</a>.</p>
      */
     inline AdminCreateUserConfigType& WithInviteMessageTemplate(MessageTemplateType&& value) { SetInviteMessageTemplate(std::move(value)); return *this;}
 

@@ -28,7 +28,9 @@ SignUpRequest::SignUpRequest() :
     m_usernameHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_userAttributesHasBeenSet(false),
-    m_validationDataHasBeenSet(false)
+    m_validationDataHasBeenSet(false),
+    m_analyticsMetadataHasBeenSet(false),
+    m_userContextDataHasBeenSet(false)
 {
 }
 
@@ -79,6 +81,18 @@ Aws::String SignUpRequest::SerializePayload() const
      validationDataJsonList[validationDataIndex].AsObject(m_validationData[validationDataIndex].Jsonize());
    }
    payload.WithArray("ValidationData", std::move(validationDataJsonList));
+
+  }
+
+  if(m_analyticsMetadataHasBeenSet)
+  {
+   payload.WithObject("AnalyticsMetadata", m_analyticsMetadata.Jsonize());
+
+  }
+
+  if(m_userContextDataHasBeenSet)
+  {
+   payload.WithObject("UserContextData", m_userContextData.Jsonize());
 
   }
 

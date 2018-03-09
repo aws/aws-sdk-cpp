@@ -27,6 +27,8 @@ CreateDBInstanceReadReplicaRequest::CreateDBInstanceReadReplicaRequest() :
     m_availabilityZoneHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
+    m_multiAZ(false),
+    m_multiAZHasBeenSet(false),
     m_autoMinorVersionUpgrade(false),
     m_autoMinorVersionUpgradeHasBeenSet(false),
     m_iops(0),
@@ -48,7 +50,8 @@ CreateDBInstanceReadReplicaRequest::CreateDBInstanceReadReplicaRequest() :
     m_enableIAMDatabaseAuthenticationHasBeenSet(false),
     m_enablePerformanceInsights(false),
     m_enablePerformanceInsightsHasBeenSet(false),
-    m_performanceInsightsKMSKeyIdHasBeenSet(false)
+    m_performanceInsightsKMSKeyIdHasBeenSet(false),
+    m_enableCloudwatchLogsExportsHasBeenSet(false)
 {
 }
 
@@ -79,6 +82,11 @@ Aws::String CreateDBInstanceReadReplicaRequest::SerializePayload() const
   if(m_portHasBeenSet)
   {
     ss << "Port=" << m_port << "&";
+  }
+
+  if(m_multiAZHasBeenSet)
+  {
+    ss << "MultiAZ=" << std::boolalpha << m_multiAZ << "&";
   }
 
   if(m_autoMinorVersionUpgradeHasBeenSet)
@@ -159,6 +167,17 @@ Aws::String CreateDBInstanceReadReplicaRequest::SerializePayload() const
   if(m_performanceInsightsKMSKeyIdHasBeenSet)
   {
     ss << "PerformanceInsightsKMSKeyId=" << StringUtils::URLEncode(m_performanceInsightsKMSKeyId.c_str()) << "&";
+  }
+
+  if(m_enableCloudwatchLogsExportsHasBeenSet)
+  {
+    unsigned enableCloudwatchLogsExportsCount = 1;
+    for(auto& item : m_enableCloudwatchLogsExports)
+    {
+      ss << "EnableCloudwatchLogsExports.member." << enableCloudwatchLogsExportsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      enableCloudwatchLogsExportsCount++;
+    }
   }
 
   ss << "Version=2014-10-31";

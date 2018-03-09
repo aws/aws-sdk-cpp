@@ -48,20 +48,20 @@ namespace Model
 
 
     /**
-     * <p>If true, enables a local VPC to resolve public DNS hostnames to private IP
-     * addresses when queried from instances in the peer VPC.</p>
+     * <p>If true, the public DNS hostnames of instances in the specified VPC resolve
+     * to private IP addresses when queried from instances in the peer VPC.</p>
      */
     inline bool GetAllowDnsResolutionFromRemoteVpc() const{ return m_allowDnsResolutionFromRemoteVpc; }
 
     /**
-     * <p>If true, enables a local VPC to resolve public DNS hostnames to private IP
-     * addresses when queried from instances in the peer VPC.</p>
+     * <p>If true, the public DNS hostnames of instances in the specified VPC resolve
+     * to private IP addresses when queried from instances in the peer VPC.</p>
      */
     inline void SetAllowDnsResolutionFromRemoteVpc(bool value) { m_allowDnsResolutionFromRemoteVpcHasBeenSet = true; m_allowDnsResolutionFromRemoteVpc = value; }
 
     /**
-     * <p>If true, enables a local VPC to resolve public DNS hostnames to private IP
-     * addresses when queried from instances in the peer VPC.</p>
+     * <p>If true, the public DNS hostnames of instances in the specified VPC resolve
+     * to private IP addresses when queried from instances in the peer VPC.</p>
      */
     inline PeeringConnectionOptions& WithAllowDnsResolutionFromRemoteVpc(bool value) { SetAllowDnsResolutionFromRemoteVpc(value); return *this;}
 

@@ -45,80 +45,80 @@ namespace Model
 
 
     /**
-     * <p>List of detailed provisioning artifact information objects.</p>
+     * <p>Information about the provisioning artifacts.</p>
      */
     inline const Aws::Vector<ProvisioningArtifactDetail>& GetProvisioningArtifactDetails() const{ return m_provisioningArtifactDetails; }
 
     /**
-     * <p>List of detailed provisioning artifact information objects.</p>
+     * <p>Information about the provisioning artifacts.</p>
      */
     inline void SetProvisioningArtifactDetails(const Aws::Vector<ProvisioningArtifactDetail>& value) { m_provisioningArtifactDetails = value; }
 
     /**
-     * <p>List of detailed provisioning artifact information objects.</p>
+     * <p>Information about the provisioning artifacts.</p>
      */
     inline void SetProvisioningArtifactDetails(Aws::Vector<ProvisioningArtifactDetail>&& value) { m_provisioningArtifactDetails = std::move(value); }
 
     /**
-     * <p>List of detailed provisioning artifact information objects.</p>
+     * <p>Information about the provisioning artifacts.</p>
      */
     inline ListProvisioningArtifactsResult& WithProvisioningArtifactDetails(const Aws::Vector<ProvisioningArtifactDetail>& value) { SetProvisioningArtifactDetails(value); return *this;}
 
     /**
-     * <p>List of detailed provisioning artifact information objects.</p>
+     * <p>Information about the provisioning artifacts.</p>
      */
     inline ListProvisioningArtifactsResult& WithProvisioningArtifactDetails(Aws::Vector<ProvisioningArtifactDetail>&& value) { SetProvisioningArtifactDetails(std::move(value)); return *this;}
 
     /**
-     * <p>List of detailed provisioning artifact information objects.</p>
+     * <p>Information about the provisioning artifacts.</p>
      */
     inline ListProvisioningArtifactsResult& AddProvisioningArtifactDetails(const ProvisioningArtifactDetail& value) { m_provisioningArtifactDetails.push_back(value); return *this; }
 
     /**
-     * <p>List of detailed provisioning artifact information objects.</p>
+     * <p>Information about the provisioning artifacts.</p>
      */
     inline ListProvisioningArtifactsResult& AddProvisioningArtifactDetails(ProvisioningArtifactDetail&& value) { m_provisioningArtifactDetails.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The page token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
+     * <p>The page token to use to retrieve the next set of results. If there are no
+     * additional results, this value is null.</p>
      */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
 
     /**
-     * <p>The page token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
+     * <p>The page token to use to retrieve the next set of results. If there are no
+     * additional results, this value is null.</p>
      */
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
 
     /**
-     * <p>The page token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
+     * <p>The page token to use to retrieve the next set of results. If there are no
+     * additional results, this value is null.</p>
      */
     inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
 
     /**
-     * <p>The page token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
+     * <p>The page token to use to retrieve the next set of results. If there are no
+     * additional results, this value is null.</p>
      */
     inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
 
     /**
-     * <p>The page token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
+     * <p>The page token to use to retrieve the next set of results. If there are no
+     * additional results, this value is null.</p>
      */
     inline ListProvisioningArtifactsResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
 
     /**
-     * <p>The page token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
+     * <p>The page token to use to retrieve the next set of results. If there are no
+     * additional results, this value is null.</p>
      */
     inline ListProvisioningArtifactsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
-     * <p>The page token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
+     * <p>The page token to use to retrieve the next set of results. If there are no
+     * additional results, this value is null.</p>
      */
     inline ListProvisioningArtifactsResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 

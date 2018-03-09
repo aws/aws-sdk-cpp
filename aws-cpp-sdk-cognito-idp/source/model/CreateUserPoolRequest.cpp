@@ -41,7 +41,8 @@ CreateUserPoolRequest::CreateUserPoolRequest() :
     m_smsConfigurationHasBeenSet(false),
     m_userPoolTagsHasBeenSet(false),
     m_adminCreateUserConfigHasBeenSet(false),
-    m_schemaHasBeenSet(false)
+    m_schemaHasBeenSet(false),
+    m_userPoolAddOnsHasBeenSet(false)
 {
 }
 
@@ -178,6 +179,12 @@ Aws::String CreateUserPoolRequest::SerializePayload() const
      schemaJsonList[schemaIndex].AsObject(m_schema[schemaIndex].Jsonize());
    }
    payload.WithArray("Schema", std::move(schemaJsonList));
+
+  }
+
+  if(m_userPoolAddOnsHasBeenSet)
+  {
+   payload.WithObject("UserPoolAddOns", m_userPoolAddOns.Jsonize());
 
   }
 

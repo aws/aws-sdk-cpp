@@ -721,12 +721,13 @@ namespace Model
          * executed.</p> <p>When you update an existing alarm, its state is left unchanged,
          * but the update completely overwrites the previous configuration of the
          * alarm.</p> <p>If you are an IAM user, you must have Amazon EC2 permissions for
-         * some operations:</p> <ul> <li> <p> <code>ec2:DescribeInstanceStatus</code> and
-         * <code>ec2:DescribeInstances</code> for all alarms on EC2 instance status
-         * metrics</p> </li> <li> <p> <code>ec2:StopInstances</code> for alarms with stop
-         * actions</p> </li> <li> <p> <code>ec2:TerminateInstances</code> for alarms with
-         * terminate actions</p> </li> <li> <p>
-         * <code>ec2:DescribeInstanceRecoveryAttribute</code> and
+         * some operations:</p> <ul> <li> <p> <code>iam:CreateServiceLinkedRole</code> for
+         * all alarms with EC2 actions</p> </li> <li> <p>
+         * <code>ec2:DescribeInstanceStatus</code> and <code>ec2:DescribeInstances</code>
+         * for all alarms on EC2 instance status metrics</p> </li> <li> <p>
+         * <code>ec2:StopInstances</code> for alarms with stop actions</p> </li> <li> <p>
+         * <code>ec2:TerminateInstances</code> for alarms with terminate actions</p> </li>
+         * <li> <p> <code>ec2:DescribeInstanceRecoveryAttribute</code> and
          * <code>ec2:RecoverInstances</code> for alarms with recover actions</p> </li>
          * </ul> <p>If you have read/write permissions for Amazon CloudWatch but not for
          * Amazon EC2, you can still create an alarm, but the stop or terminate actions are
@@ -755,12 +756,13 @@ namespace Model
          * executed.</p> <p>When you update an existing alarm, its state is left unchanged,
          * but the update completely overwrites the previous configuration of the
          * alarm.</p> <p>If you are an IAM user, you must have Amazon EC2 permissions for
-         * some operations:</p> <ul> <li> <p> <code>ec2:DescribeInstanceStatus</code> and
-         * <code>ec2:DescribeInstances</code> for all alarms on EC2 instance status
-         * metrics</p> </li> <li> <p> <code>ec2:StopInstances</code> for alarms with stop
-         * actions</p> </li> <li> <p> <code>ec2:TerminateInstances</code> for alarms with
-         * terminate actions</p> </li> <li> <p>
-         * <code>ec2:DescribeInstanceRecoveryAttribute</code> and
+         * some operations:</p> <ul> <li> <p> <code>iam:CreateServiceLinkedRole</code> for
+         * all alarms with EC2 actions</p> </li> <li> <p>
+         * <code>ec2:DescribeInstanceStatus</code> and <code>ec2:DescribeInstances</code>
+         * for all alarms on EC2 instance status metrics</p> </li> <li> <p>
+         * <code>ec2:StopInstances</code> for alarms with stop actions</p> </li> <li> <p>
+         * <code>ec2:TerminateInstances</code> for alarms with terminate actions</p> </li>
+         * <li> <p> <code>ec2:DescribeInstanceRecoveryAttribute</code> and
          * <code>ec2:RecoverInstances</code> for alarms with recover actions</p> </li>
          * </ul> <p>If you have read/write permissions for Amazon CloudWatch but not for
          * Amazon EC2, you can still create an alarm, but the stop or terminate actions are
@@ -791,12 +793,13 @@ namespace Model
          * executed.</p> <p>When you update an existing alarm, its state is left unchanged,
          * but the update completely overwrites the previous configuration of the
          * alarm.</p> <p>If you are an IAM user, you must have Amazon EC2 permissions for
-         * some operations:</p> <ul> <li> <p> <code>ec2:DescribeInstanceStatus</code> and
-         * <code>ec2:DescribeInstances</code> for all alarms on EC2 instance status
-         * metrics</p> </li> <li> <p> <code>ec2:StopInstances</code> for alarms with stop
-         * actions</p> </li> <li> <p> <code>ec2:TerminateInstances</code> for alarms with
-         * terminate actions</p> </li> <li> <p>
-         * <code>ec2:DescribeInstanceRecoveryAttribute</code> and
+         * some operations:</p> <ul> <li> <p> <code>iam:CreateServiceLinkedRole</code> for
+         * all alarms with EC2 actions</p> </li> <li> <p>
+         * <code>ec2:DescribeInstanceStatus</code> and <code>ec2:DescribeInstances</code>
+         * for all alarms on EC2 instance status metrics</p> </li> <li> <p>
+         * <code>ec2:StopInstances</code> for alarms with stop actions</p> </li> <li> <p>
+         * <code>ec2:TerminateInstances</code> for alarms with terminate actions</p> </li>
+         * <li> <p> <code>ec2:DescribeInstanceRecoveryAttribute</code> and
          * <code>ec2:RecoverInstances</code> for alarms with recover actions</p> </li>
          * </ul> <p>If you have read/write permissions for Amazon CloudWatch but not for
          * Amazon EC2, you can still create an alarm, but the stop or terminate actions are

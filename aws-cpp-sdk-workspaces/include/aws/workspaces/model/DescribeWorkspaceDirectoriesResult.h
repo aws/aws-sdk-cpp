@@ -36,12 +36,6 @@ namespace WorkSpaces
 {
 namespace Model
 {
-  /**
-   * <p>Contains the results of the <a>DescribeWorkspaceDirectories</a>
-   * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceDirectoriesResult">AWS
-   * API Reference</a></p>
-   */
   class AWS_WORKSPACES_API DescribeWorkspaceDirectoriesResult
   {
   public:
@@ -51,94 +45,87 @@ namespace Model
 
 
     /**
-     * <p>An array of structures that contain information about the directories.</p>
+     * <p>Information about the directories.</p>
      */
     inline const Aws::Vector<WorkspaceDirectory>& GetDirectories() const{ return m_directories; }
 
     /**
-     * <p>An array of structures that contain information about the directories.</p>
+     * <p>Information about the directories.</p>
      */
     inline void SetDirectories(const Aws::Vector<WorkspaceDirectory>& value) { m_directories = value; }
 
     /**
-     * <p>An array of structures that contain information about the directories.</p>
+     * <p>Information about the directories.</p>
      */
     inline void SetDirectories(Aws::Vector<WorkspaceDirectory>&& value) { m_directories = std::move(value); }
 
     /**
-     * <p>An array of structures that contain information about the directories.</p>
+     * <p>Information about the directories.</p>
      */
     inline DescribeWorkspaceDirectoriesResult& WithDirectories(const Aws::Vector<WorkspaceDirectory>& value) { SetDirectories(value); return *this;}
 
     /**
-     * <p>An array of structures that contain information about the directories.</p>
+     * <p>Information about the directories.</p>
      */
     inline DescribeWorkspaceDirectoriesResult& WithDirectories(Aws::Vector<WorkspaceDirectory>&& value) { SetDirectories(std::move(value)); return *this;}
 
     /**
-     * <p>An array of structures that contain information about the directories.</p>
+     * <p>Information about the directories.</p>
      */
     inline DescribeWorkspaceDirectoriesResult& AddDirectories(const WorkspaceDirectory& value) { m_directories.push_back(value); return *this; }
 
     /**
-     * <p>An array of structures that contain information about the directories.</p>
+     * <p>Information about the directories.</p>
      */
     inline DescribeWorkspaceDirectoriesResult& AddDirectories(WorkspaceDirectory&& value) { m_directories.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>If not null, more results are available. Pass this value for the
-     * <code>NextToken</code> parameter in a subsequent call to this operation to
-     * retrieve the next set of items. This token is valid for one day and must be used
-     * within that time frame.</p>
+     * <p>The token to use to retrieve the next set of results, or null if there are no
+     * more results available. This token is valid for one day and must be used within
+     * that time frame.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>If not null, more results are available. Pass this value for the
-     * <code>NextToken</code> parameter in a subsequent call to this operation to
-     * retrieve the next set of items. This token is valid for one day and must be used
-     * within that time frame.</p>
+     * <p>The token to use to retrieve the next set of results, or null if there are no
+     * more results available. This token is valid for one day and must be used within
+     * that time frame.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>If not null, more results are available. Pass this value for the
-     * <code>NextToken</code> parameter in a subsequent call to this operation to
-     * retrieve the next set of items. This token is valid for one day and must be used
-     * within that time frame.</p>
+     * <p>The token to use to retrieve the next set of results, or null if there are no
+     * more results available. This token is valid for one day and must be used within
+     * that time frame.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>If not null, more results are available. Pass this value for the
-     * <code>NextToken</code> parameter in a subsequent call to this operation to
-     * retrieve the next set of items. This token is valid for one day and must be used
-     * within that time frame.</p>
+     * <p>The token to use to retrieve the next set of results, or null if there are no
+     * more results available. This token is valid for one day and must be used within
+     * that time frame.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>If not null, more results are available. Pass this value for the
-     * <code>NextToken</code> parameter in a subsequent call to this operation to
-     * retrieve the next set of items. This token is valid for one day and must be used
-     * within that time frame.</p>
+     * <p>The token to use to retrieve the next set of results, or null if there are no
+     * more results available. This token is valid for one day and must be used within
+     * that time frame.</p>
      */
     inline DescribeWorkspaceDirectoriesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>If not null, more results are available. Pass this value for the
-     * <code>NextToken</code> parameter in a subsequent call to this operation to
-     * retrieve the next set of items. This token is valid for one day and must be used
-     * within that time frame.</p>
+     * <p>The token to use to retrieve the next set of results, or null if there are no
+     * more results available. This token is valid for one day and must be used within
+     * that time frame.</p>
      */
     inline DescribeWorkspaceDirectoriesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>If not null, more results are available. Pass this value for the
-     * <code>NextToken</code> parameter in a subsequent call to this operation to
-     * retrieve the next set of items. This token is valid for one day and must be used
-     * within that time frame.</p>
+     * <p>The token to use to retrieve the next set of results, or null if there are no
+     * more results available. This token is valid for one day and must be used within
+     * that time frame.</p>
      */
     inline DescribeWorkspaceDirectoriesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

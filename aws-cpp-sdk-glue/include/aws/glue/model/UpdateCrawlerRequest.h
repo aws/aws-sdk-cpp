@@ -413,7 +413,9 @@ namespace Model
      * partitions to inherit metadata such as classification, input format, output
      * format, serde information, and schema from their parent table, rather than
      * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p>
+     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
+     * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
+     * }'</code> </p>
      */
     inline const Aws::String& GetConfiguration() const{ return m_configuration; }
 
@@ -423,7 +425,9 @@ namespace Model
      * partitions to inherit metadata such as classification, input format, output
      * format, serde information, and schema from their parent table, rather than
      * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p>
+     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
+     * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
+     * }'</code> </p>
      */
     inline void SetConfiguration(const Aws::String& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
@@ -433,7 +437,9 @@ namespace Model
      * partitions to inherit metadata such as classification, input format, output
      * format, serde information, and schema from their parent table, rather than
      * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p>
+     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
+     * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
+     * }'</code> </p>
      */
     inline void SetConfiguration(Aws::String&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
@@ -443,7 +449,9 @@ namespace Model
      * partitions to inherit metadata such as classification, input format, output
      * format, serde information, and schema from their parent table, rather than
      * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p>
+     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
+     * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
+     * }'</code> </p>
      */
     inline void SetConfiguration(const char* value) { m_configurationHasBeenSet = true; m_configuration.assign(value); }
 
@@ -453,7 +461,9 @@ namespace Model
      * partitions to inherit metadata such as classification, input format, output
      * format, serde information, and schema from their parent table, rather than
      * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p>
+     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
+     * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
+     * }'</code> </p>
      */
     inline UpdateCrawlerRequest& WithConfiguration(const Aws::String& value) { SetConfiguration(value); return *this;}
 
@@ -463,7 +473,9 @@ namespace Model
      * partitions to inherit metadata such as classification, input format, output
      * format, serde information, and schema from their parent table, rather than
      * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p>
+     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
+     * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
+     * }'</code> </p>
      */
     inline UpdateCrawlerRequest& WithConfiguration(Aws::String&& value) { SetConfiguration(std::move(value)); return *this;}
 
@@ -473,7 +485,9 @@ namespace Model
      * partitions to inherit metadata such as classification, input format, output
      * format, serde information, and schema from their parent table, rather than
      * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p>
+     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
+     * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
+     * }'</code> </p>
      */
     inline UpdateCrawlerRequest& WithConfiguration(const char* value) { SetConfiguration(value); return *this;}
 

@@ -62,6 +62,9 @@ endif()
 add_library(${PROJECT_NAME} ${LIBTYPE} ${ALL_S3ENCRYPTION})
 add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
+set_compiler_flags(${PROJECT_NAME})
+set_compiler_warnings(${PROJECT_NAME})
+
 target_include_directories(${PROJECT_NAME} PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:include>)

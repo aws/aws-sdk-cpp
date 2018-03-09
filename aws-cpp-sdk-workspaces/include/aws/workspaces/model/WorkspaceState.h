@@ -37,6 +37,7 @@ namespace Model
     TERMINATING,
     TERMINATED,
     SUSPENDED,
+    UPDATING,
     STOPPING,
     STOPPED,
     ERROR_

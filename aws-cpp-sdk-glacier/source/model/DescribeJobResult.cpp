@@ -156,6 +156,24 @@ DescribeJobResult& DescribeJobResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
+  if(jsonValue.ValueExists("JobOutputPath"))
+  {
+    m_jobOutputPath = jsonValue.GetString("JobOutputPath");
+
+  }
+
+  if(jsonValue.ValueExists("SelectParameters"))
+  {
+    m_selectParameters = jsonValue.GetObject("SelectParameters");
+
+  }
+
+  if(jsonValue.ValueExists("OutputLocation"))
+  {
+    m_outputLocation = jsonValue.GetObject("OutputLocation");
+
+  }
+
 
 
   return *this;

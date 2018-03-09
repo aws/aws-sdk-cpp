@@ -89,37 +89,44 @@ namespace Model
 
 
     /**
-     * <p>The catalog database in which to create the new table.</p>
+     * <p>The catalog database in which to create the new table. For Hive
+     * compatibility, this name is entirely lowercase.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
 
     /**
-     * <p>The catalog database in which to create the new table.</p>
+     * <p>The catalog database in which to create the new table. For Hive
+     * compatibility, this name is entirely lowercase.</p>
      */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /**
-     * <p>The catalog database in which to create the new table.</p>
+     * <p>The catalog database in which to create the new table. For Hive
+     * compatibility, this name is entirely lowercase.</p>
      */
     inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
 
     /**
-     * <p>The catalog database in which to create the new table.</p>
+     * <p>The catalog database in which to create the new table. For Hive
+     * compatibility, this name is entirely lowercase.</p>
      */
     inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
 
     /**
-     * <p>The catalog database in which to create the new table.</p>
+     * <p>The catalog database in which to create the new table. For Hive
+     * compatibility, this name is entirely lowercase.</p>
      */
     inline CreateTableRequest& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
 
     /**
-     * <p>The catalog database in which to create the new table.</p>
+     * <p>The catalog database in which to create the new table. For Hive
+     * compatibility, this name is entirely lowercase.</p>
      */
     inline CreateTableRequest& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
 
     /**
-     * <p>The catalog database in which to create the new table.</p>
+     * <p>The catalog database in which to create the new table. For Hive
+     * compatibility, this name is entirely lowercase.</p>
      */
     inline CreateTableRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 

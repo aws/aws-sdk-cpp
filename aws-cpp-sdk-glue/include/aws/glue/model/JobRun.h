@@ -88,89 +88,96 @@ namespace Model
 
 
     /**
-     * <p>The number or the attempt to run this job.</p>
+     * <p>The number of the attempt to run this job.</p>
      */
     inline int GetAttempt() const{ return m_attempt; }
 
     /**
-     * <p>The number or the attempt to run this job.</p>
+     * <p>The number of the attempt to run this job.</p>
      */
     inline void SetAttempt(int value) { m_attemptHasBeenSet = true; m_attempt = value; }
 
     /**
-     * <p>The number or the attempt to run this job.</p>
+     * <p>The number of the attempt to run this job.</p>
      */
     inline JobRun& WithAttempt(int value) { SetAttempt(value); return *this;}
 
 
     /**
-     * <p>The ID of the previous run of this job.</p>
+     * <p>The ID of the previous run of this job. For example, the JobRunId specified
+     * in the StartJobRun action.</p>
      */
     inline const Aws::String& GetPreviousRunId() const{ return m_previousRunId; }
 
     /**
-     * <p>The ID of the previous run of this job.</p>
+     * <p>The ID of the previous run of this job. For example, the JobRunId specified
+     * in the StartJobRun action.</p>
      */
     inline void SetPreviousRunId(const Aws::String& value) { m_previousRunIdHasBeenSet = true; m_previousRunId = value; }
 
     /**
-     * <p>The ID of the previous run of this job.</p>
+     * <p>The ID of the previous run of this job. For example, the JobRunId specified
+     * in the StartJobRun action.</p>
      */
     inline void SetPreviousRunId(Aws::String&& value) { m_previousRunIdHasBeenSet = true; m_previousRunId = std::move(value); }
 
     /**
-     * <p>The ID of the previous run of this job.</p>
+     * <p>The ID of the previous run of this job. For example, the JobRunId specified
+     * in the StartJobRun action.</p>
      */
     inline void SetPreviousRunId(const char* value) { m_previousRunIdHasBeenSet = true; m_previousRunId.assign(value); }
 
     /**
-     * <p>The ID of the previous run of this job.</p>
+     * <p>The ID of the previous run of this job. For example, the JobRunId specified
+     * in the StartJobRun action.</p>
      */
     inline JobRun& WithPreviousRunId(const Aws::String& value) { SetPreviousRunId(value); return *this;}
 
     /**
-     * <p>The ID of the previous run of this job.</p>
+     * <p>The ID of the previous run of this job. For example, the JobRunId specified
+     * in the StartJobRun action.</p>
      */
     inline JobRun& WithPreviousRunId(Aws::String&& value) { SetPreviousRunId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the previous run of this job.</p>
+     * <p>The ID of the previous run of this job. For example, the JobRunId specified
+     * in the StartJobRun action.</p>
      */
     inline JobRun& WithPreviousRunId(const char* value) { SetPreviousRunId(value); return *this;}
 
 
     /**
-     * <p>The name of the trigger for this job run.</p>
+     * <p>The name of the trigger that started this job run.</p>
      */
     inline const Aws::String& GetTriggerName() const{ return m_triggerName; }
 
     /**
-     * <p>The name of the trigger for this job run.</p>
+     * <p>The name of the trigger that started this job run.</p>
      */
     inline void SetTriggerName(const Aws::String& value) { m_triggerNameHasBeenSet = true; m_triggerName = value; }
 
     /**
-     * <p>The name of the trigger for this job run.</p>
+     * <p>The name of the trigger that started this job run.</p>
      */
     inline void SetTriggerName(Aws::String&& value) { m_triggerNameHasBeenSet = true; m_triggerName = std::move(value); }
 
     /**
-     * <p>The name of the trigger for this job run.</p>
+     * <p>The name of the trigger that started this job run.</p>
      */
     inline void SetTriggerName(const char* value) { m_triggerNameHasBeenSet = true; m_triggerName.assign(value); }
 
     /**
-     * <p>The name of the trigger for this job run.</p>
+     * <p>The name of the trigger that started this job run.</p>
      */
     inline JobRun& WithTriggerName(const Aws::String& value) { SetTriggerName(value); return *this;}
 
     /**
-     * <p>The name of the trigger for this job run.</p>
+     * <p>The name of the trigger that started this job run.</p>
      */
     inline JobRun& WithTriggerName(Aws::String&& value) { SetTriggerName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the trigger for this job run.</p>
+     * <p>The name of the trigger that started this job run.</p>
      */
     inline JobRun& WithTriggerName(const char* value) { SetTriggerName(value); return *this;}
 
@@ -316,62 +323,170 @@ namespace Model
 
 
     /**
-     * <p>The job arguments associated with this run.</p>
+     * <p>The job arguments associated with this run. These override equivalent default
+     * arguments set for the job.</p> <p>You can specify arguments here that your own
+     * job-execution script consumes, as well as arguments that AWS Glue itself
+     * consumes.</p> <p>For information about how to specify and consume your own job
+     * arguments, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+     * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
+     * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetArguments() const{ return m_arguments; }
 
     /**
-     * <p>The job arguments associated with this run.</p>
+     * <p>The job arguments associated with this run. These override equivalent default
+     * arguments set for the job.</p> <p>You can specify arguments here that your own
+     * job-execution script consumes, as well as arguments that AWS Glue itself
+     * consumes.</p> <p>For information about how to specify and consume your own job
+     * arguments, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+     * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
+     * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline void SetArguments(const Aws::Map<Aws::String, Aws::String>& value) { m_argumentsHasBeenSet = true; m_arguments = value; }
 
     /**
-     * <p>The job arguments associated with this run.</p>
+     * <p>The job arguments associated with this run. These override equivalent default
+     * arguments set for the job.</p> <p>You can specify arguments here that your own
+     * job-execution script consumes, as well as arguments that AWS Glue itself
+     * consumes.</p> <p>For information about how to specify and consume your own job
+     * arguments, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+     * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
+     * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline void SetArguments(Aws::Map<Aws::String, Aws::String>&& value) { m_argumentsHasBeenSet = true; m_arguments = std::move(value); }
 
     /**
-     * <p>The job arguments associated with this run.</p>
+     * <p>The job arguments associated with this run. These override equivalent default
+     * arguments set for the job.</p> <p>You can specify arguments here that your own
+     * job-execution script consumes, as well as arguments that AWS Glue itself
+     * consumes.</p> <p>For information about how to specify and consume your own job
+     * arguments, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+     * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
+     * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline JobRun& WithArguments(const Aws::Map<Aws::String, Aws::String>& value) { SetArguments(value); return *this;}
 
     /**
-     * <p>The job arguments associated with this run.</p>
+     * <p>The job arguments associated with this run. These override equivalent default
+     * arguments set for the job.</p> <p>You can specify arguments here that your own
+     * job-execution script consumes, as well as arguments that AWS Glue itself
+     * consumes.</p> <p>For information about how to specify and consume your own job
+     * arguments, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+     * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
+     * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline JobRun& WithArguments(Aws::Map<Aws::String, Aws::String>&& value) { SetArguments(std::move(value)); return *this;}
 
     /**
-     * <p>The job arguments associated with this run.</p>
+     * <p>The job arguments associated with this run. These override equivalent default
+     * arguments set for the job.</p> <p>You can specify arguments here that your own
+     * job-execution script consumes, as well as arguments that AWS Glue itself
+     * consumes.</p> <p>For information about how to specify and consume your own job
+     * arguments, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+     * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
+     * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline JobRun& AddArguments(const Aws::String& key, const Aws::String& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, value); return *this; }
 
     /**
-     * <p>The job arguments associated with this run.</p>
+     * <p>The job arguments associated with this run. These override equivalent default
+     * arguments set for the job.</p> <p>You can specify arguments here that your own
+     * job-execution script consumes, as well as arguments that AWS Glue itself
+     * consumes.</p> <p>For information about how to specify and consume your own job
+     * arguments, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+     * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
+     * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline JobRun& AddArguments(Aws::String&& key, const Aws::String& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The job arguments associated with this run.</p>
+     * <p>The job arguments associated with this run. These override equivalent default
+     * arguments set for the job.</p> <p>You can specify arguments here that your own
+     * job-execution script consumes, as well as arguments that AWS Glue itself
+     * consumes.</p> <p>For information about how to specify and consume your own job
+     * arguments, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+     * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
+     * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline JobRun& AddArguments(const Aws::String& key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The job arguments associated with this run.</p>
+     * <p>The job arguments associated with this run. These override equivalent default
+     * arguments set for the job.</p> <p>You can specify arguments here that your own
+     * job-execution script consumes, as well as arguments that AWS Glue itself
+     * consumes.</p> <p>For information about how to specify and consume your own job
+     * arguments, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+     * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
+     * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline JobRun& AddArguments(Aws::String&& key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The job arguments associated with this run.</p>
+     * <p>The job arguments associated with this run. These override equivalent default
+     * arguments set for the job.</p> <p>You can specify arguments here that your own
+     * job-execution script consumes, as well as arguments that AWS Glue itself
+     * consumes.</p> <p>For information about how to specify and consume your own job
+     * arguments, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+     * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
+     * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline JobRun& AddArguments(const char* key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The job arguments associated with this run.</p>
+     * <p>The job arguments associated with this run. These override equivalent default
+     * arguments set for the job.</p> <p>You can specify arguments here that your own
+     * job-execution script consumes, as well as arguments that AWS Glue itself
+     * consumes.</p> <p>For information about how to specify and consume your own job
+     * arguments, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+     * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
+     * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline JobRun& AddArguments(Aws::String&& key, const char* value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The job arguments associated with this run.</p>
+     * <p>The job arguments associated with this run. These override equivalent default
+     * arguments set for the job.</p> <p>You can specify arguments here that your own
+     * job-execution script consumes, as well as arguments that AWS Glue itself
+     * consumes.</p> <p>For information about how to specify and consume your own job
+     * arguments, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+     * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
+     * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline JobRun& AddArguments(const char* key, const char* value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, value); return *this; }
 
@@ -449,17 +564,29 @@ namespace Model
 
 
     /**
-     * <p>The amount of infrastructure capacity allocated to this job run.</p>
+     * <p>The number of AWS Glue data processing units (DPUs) allocated to this JobRun.
+     * From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative
+     * measure of processing power that consists of 4 vCPUs of compute capacity and 16
+     * GB of memory. For more information, see the <a
+     * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.</p>
      */
     inline int GetAllocatedCapacity() const{ return m_allocatedCapacity; }
 
     /**
-     * <p>The amount of infrastructure capacity allocated to this job run.</p>
+     * <p>The number of AWS Glue data processing units (DPUs) allocated to this JobRun.
+     * From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative
+     * measure of processing power that consists of 4 vCPUs of compute capacity and 16
+     * GB of memory. For more information, see the <a
+     * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.</p>
      */
     inline void SetAllocatedCapacity(int value) { m_allocatedCapacityHasBeenSet = true; m_allocatedCapacity = value; }
 
     /**
-     * <p>The amount of infrastructure capacity allocated to this job run.</p>
+     * <p>The number of AWS Glue data processing units (DPUs) allocated to this JobRun.
+     * From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative
+     * measure of processing power that consists of 4 vCPUs of compute capacity and 16
+     * GB of memory. For more information, see the <a
+     * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.</p>
      */
     inline JobRun& WithAllocatedCapacity(int value) { SetAllocatedCapacity(value); return *this;}
 

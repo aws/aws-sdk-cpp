@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     S3,
-    GitHub
+    GitHub,
+    String
   };
 
 namespace RevisionLocationTypeMapper

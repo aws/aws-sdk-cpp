@@ -145,7 +145,10 @@ namespace Model
      * <code>index</code> and the unique identifier is the resource ID. Example:
      * <code>table/my-table/index/my-table-index</code>.</p> </li> <li> <p>Aurora DB
      * cluster - The resource type is <code>cluster</code> and the unique identifier is
-     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> </ul>
+     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> <li>
+     * <p>Amazon SageMaker endpoint variants - The resource type is
+     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
@@ -170,7 +173,10 @@ namespace Model
      * <code>index</code> and the unique identifier is the resource ID. Example:
      * <code>table/my-table/index/my-table-index</code>.</p> </li> <li> <p>Aurora DB
      * cluster - The resource type is <code>cluster</code> and the unique identifier is
-     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> </ul>
+     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> <li>
+     * <p>Amazon SageMaker endpoint variants - The resource type is
+     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> </ul>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
@@ -195,7 +201,10 @@ namespace Model
      * <code>index</code> and the unique identifier is the resource ID. Example:
      * <code>table/my-table/index/my-table-index</code>.</p> </li> <li> <p>Aurora DB
      * cluster - The resource type is <code>cluster</code> and the unique identifier is
-     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> </ul>
+     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> <li>
+     * <p>Amazon SageMaker endpoint variants - The resource type is
+     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> </ul>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
@@ -220,7 +229,10 @@ namespace Model
      * <code>index</code> and the unique identifier is the resource ID. Example:
      * <code>table/my-table/index/my-table-index</code>.</p> </li> <li> <p>Aurora DB
      * cluster - The resource type is <code>cluster</code> and the unique identifier is
-     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> </ul>
+     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> <li>
+     * <p>Amazon SageMaker endpoint variants - The resource type is
+     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> </ul>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
@@ -245,7 +257,10 @@ namespace Model
      * <code>index</code> and the unique identifier is the resource ID. Example:
      * <code>table/my-table/index/my-table-index</code>.</p> </li> <li> <p>Aurora DB
      * cluster - The resource type is <code>cluster</code> and the unique identifier is
-     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> </ul>
+     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> <li>
+     * <p>Amazon SageMaker endpoint variants - The resource type is
+     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> </ul>
      */
     inline DescribeScalingPoliciesRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
@@ -270,7 +285,10 @@ namespace Model
      * <code>index</code> and the unique identifier is the resource ID. Example:
      * <code>table/my-table/index/my-table-index</code>.</p> </li> <li> <p>Aurora DB
      * cluster - The resource type is <code>cluster</code> and the unique identifier is
-     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> </ul>
+     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> <li>
+     * <p>Amazon SageMaker endpoint variants - The resource type is
+     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> </ul>
      */
     inline DescribeScalingPoliciesRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
@@ -295,7 +313,10 @@ namespace Model
      * <code>index</code> and the unique identifier is the resource ID. Example:
      * <code>table/my-table/index/my-table-index</code>.</p> </li> <li> <p>Aurora DB
      * cluster - The resource type is <code>cluster</code> and the unique identifier is
-     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> </ul>
+     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> <li>
+     * <p>Amazon SageMaker endpoint variants - The resource type is
+     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> </ul>
      */
     inline DescribeScalingPoliciesRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
@@ -320,8 +341,9 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li>
-     * </ul>
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li> <li>
+     * <p> <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
+     * instances for an Amazon SageMaker model endpoint variant.</p> </li> </ul>
      */
     inline const ScalableDimension& GetScalableDimension() const{ return m_scalableDimension; }
 
@@ -345,8 +367,9 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li>
-     * </ul>
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li> <li>
+     * <p> <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
+     * instances for an Amazon SageMaker model endpoint variant.</p> </li> </ul>
      */
     inline void SetScalableDimension(const ScalableDimension& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
 
@@ -370,8 +393,9 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li>
-     * </ul>
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li> <li>
+     * <p> <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
+     * instances for an Amazon SageMaker model endpoint variant.</p> </li> </ul>
      */
     inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = std::move(value); }
 
@@ -395,8 +419,9 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li>
-     * </ul>
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li> <li>
+     * <p> <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
+     * instances for an Amazon SageMaker model endpoint variant.</p> </li> </ul>
      */
     inline DescribeScalingPoliciesRequest& WithScalableDimension(const ScalableDimension& value) { SetScalableDimension(value); return *this;}
 
@@ -420,16 +445,17 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li>
-     * </ul>
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li> <li>
+     * <p> <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
+     * instances for an Amazon SageMaker model endpoint variant.</p> </li> </ul>
      */
     inline DescribeScalingPoliciesRequest& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
 
 
     /**
-     * <p>The maximum number of scalable target results. This value can be between 1
-     * and 50. The default value is 50.</p> <p>If this parameter is used, the operation
-     * returns up to <code>MaxResults</code> results at a time, along with a
+     * <p>The maximum number of scalable targets. This value can be between 1 and 50.
+     * The default value is 50.</p> <p>If this parameter is used, the operation returns
+     * up to <code>MaxResults</code> results at a time, along with a
      * <code>NextToken</code> value. To get the next set of results, include the
      * <code>NextToken</code> value in a subsequent call. If this parameter is not
      * used, the operation returns up to 50 results and a <code>NextToken</code> value,
@@ -438,9 +464,9 @@ namespace Model
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of scalable target results. This value can be between 1
-     * and 50. The default value is 50.</p> <p>If this parameter is used, the operation
-     * returns up to <code>MaxResults</code> results at a time, along with a
+     * <p>The maximum number of scalable targets. This value can be between 1 and 50.
+     * The default value is 50.</p> <p>If this parameter is used, the operation returns
+     * up to <code>MaxResults</code> results at a time, along with a
      * <code>NextToken</code> value. To get the next set of results, include the
      * <code>NextToken</code> value in a subsequent call. If this parameter is not
      * used, the operation returns up to 50 results and a <code>NextToken</code> value,
@@ -449,9 +475,9 @@ namespace Model
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of scalable target results. This value can be between 1
-     * and 50. The default value is 50.</p> <p>If this parameter is used, the operation
-     * returns up to <code>MaxResults</code> results at a time, along with a
+     * <p>The maximum number of scalable targets. This value can be between 1 and 50.
+     * The default value is 50.</p> <p>If this parameter is used, the operation returns
+     * up to <code>MaxResults</code> results at a time, along with a
      * <code>NextToken</code> value. To get the next set of results, include the
      * <code>NextToken</code> value in a subsequent call. If this parameter is not
      * used, the operation returns up to 50 results and a <code>NextToken</code> value,

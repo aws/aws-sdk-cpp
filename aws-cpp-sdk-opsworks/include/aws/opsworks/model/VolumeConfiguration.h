@@ -134,51 +134,79 @@ namespace Model
 
 
     /**
-     * <p>The volume type:</p> <ul> <li> <p> <code>standard</code> - Magnetic</p> </li>
-     * <li> <p> <code>io1</code> - Provisioned IOPS (SSD)</p> </li> <li> <p>
-     * <code>gp2</code> - General Purpose (SSD)</p> </li> </ul>
+     * <p>The volume type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
+     * Amazon EBS Volume Types</a>.</p> <ul> <li> <p> <code>standard</code> -
+     * Magnetic</p> </li> <li> <p> <code>io1</code> - Provisioned IOPS (SSD)</p> </li>
+     * <li> <p> <code>gp2</code> - General Purpose (SSD)</p> </li> <li> <p>
+     * <code>st1</code> - Throughput Optimized hard disk drive (HDD)</p> </li> <li> <p>
+     * <code>sc1</code> - Cold HDD</p> </li> </ul>
      */
     inline const Aws::String& GetVolumeType() const{ return m_volumeType; }
 
     /**
-     * <p>The volume type:</p> <ul> <li> <p> <code>standard</code> - Magnetic</p> </li>
-     * <li> <p> <code>io1</code> - Provisioned IOPS (SSD)</p> </li> <li> <p>
-     * <code>gp2</code> - General Purpose (SSD)</p> </li> </ul>
+     * <p>The volume type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
+     * Amazon EBS Volume Types</a>.</p> <ul> <li> <p> <code>standard</code> -
+     * Magnetic</p> </li> <li> <p> <code>io1</code> - Provisioned IOPS (SSD)</p> </li>
+     * <li> <p> <code>gp2</code> - General Purpose (SSD)</p> </li> <li> <p>
+     * <code>st1</code> - Throughput Optimized hard disk drive (HDD)</p> </li> <li> <p>
+     * <code>sc1</code> - Cold HDD</p> </li> </ul>
      */
     inline void SetVolumeType(const Aws::String& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
     /**
-     * <p>The volume type:</p> <ul> <li> <p> <code>standard</code> - Magnetic</p> </li>
-     * <li> <p> <code>io1</code> - Provisioned IOPS (SSD)</p> </li> <li> <p>
-     * <code>gp2</code> - General Purpose (SSD)</p> </li> </ul>
+     * <p>The volume type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
+     * Amazon EBS Volume Types</a>.</p> <ul> <li> <p> <code>standard</code> -
+     * Magnetic</p> </li> <li> <p> <code>io1</code> - Provisioned IOPS (SSD)</p> </li>
+     * <li> <p> <code>gp2</code> - General Purpose (SSD)</p> </li> <li> <p>
+     * <code>st1</code> - Throughput Optimized hard disk drive (HDD)</p> </li> <li> <p>
+     * <code>sc1</code> - Cold HDD</p> </li> </ul>
      */
     inline void SetVolumeType(Aws::String&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
     /**
-     * <p>The volume type:</p> <ul> <li> <p> <code>standard</code> - Magnetic</p> </li>
-     * <li> <p> <code>io1</code> - Provisioned IOPS (SSD)</p> </li> <li> <p>
-     * <code>gp2</code> - General Purpose (SSD)</p> </li> </ul>
+     * <p>The volume type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
+     * Amazon EBS Volume Types</a>.</p> <ul> <li> <p> <code>standard</code> -
+     * Magnetic</p> </li> <li> <p> <code>io1</code> - Provisioned IOPS (SSD)</p> </li>
+     * <li> <p> <code>gp2</code> - General Purpose (SSD)</p> </li> <li> <p>
+     * <code>st1</code> - Throughput Optimized hard disk drive (HDD)</p> </li> <li> <p>
+     * <code>sc1</code> - Cold HDD</p> </li> </ul>
      */
     inline void SetVolumeType(const char* value) { m_volumeTypeHasBeenSet = true; m_volumeType.assign(value); }
 
     /**
-     * <p>The volume type:</p> <ul> <li> <p> <code>standard</code> - Magnetic</p> </li>
-     * <li> <p> <code>io1</code> - Provisioned IOPS (SSD)</p> </li> <li> <p>
-     * <code>gp2</code> - General Purpose (SSD)</p> </li> </ul>
+     * <p>The volume type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
+     * Amazon EBS Volume Types</a>.</p> <ul> <li> <p> <code>standard</code> -
+     * Magnetic</p> </li> <li> <p> <code>io1</code> - Provisioned IOPS (SSD)</p> </li>
+     * <li> <p> <code>gp2</code> - General Purpose (SSD)</p> </li> <li> <p>
+     * <code>st1</code> - Throughput Optimized hard disk drive (HDD)</p> </li> <li> <p>
+     * <code>sc1</code> - Cold HDD</p> </li> </ul>
      */
     inline VolumeConfiguration& WithVolumeType(const Aws::String& value) { SetVolumeType(value); return *this;}
 
     /**
-     * <p>The volume type:</p> <ul> <li> <p> <code>standard</code> - Magnetic</p> </li>
-     * <li> <p> <code>io1</code> - Provisioned IOPS (SSD)</p> </li> <li> <p>
-     * <code>gp2</code> - General Purpose (SSD)</p> </li> </ul>
+     * <p>The volume type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
+     * Amazon EBS Volume Types</a>.</p> <ul> <li> <p> <code>standard</code> -
+     * Magnetic</p> </li> <li> <p> <code>io1</code> - Provisioned IOPS (SSD)</p> </li>
+     * <li> <p> <code>gp2</code> - General Purpose (SSD)</p> </li> <li> <p>
+     * <code>st1</code> - Throughput Optimized hard disk drive (HDD)</p> </li> <li> <p>
+     * <code>sc1</code> - Cold HDD</p> </li> </ul>
      */
     inline VolumeConfiguration& WithVolumeType(Aws::String&& value) { SetVolumeType(std::move(value)); return *this;}
 
     /**
-     * <p>The volume type:</p> <ul> <li> <p> <code>standard</code> - Magnetic</p> </li>
-     * <li> <p> <code>io1</code> - Provisioned IOPS (SSD)</p> </li> <li> <p>
-     * <code>gp2</code> - General Purpose (SSD)</p> </li> </ul>
+     * <p>The volume type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
+     * Amazon EBS Volume Types</a>.</p> <ul> <li> <p> <code>standard</code> -
+     * Magnetic</p> </li> <li> <p> <code>io1</code> - Provisioned IOPS (SSD)</p> </li>
+     * <li> <p> <code>gp2</code> - General Purpose (SSD)</p> </li> <li> <p>
+     * <code>st1</code> - Throughput Optimized hard disk drive (HDD)</p> </li> <li> <p>
+     * <code>sc1</code> - Cold HDD</p> </li> </ul>
      */
     inline VolumeConfiguration& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}
 
@@ -197,6 +225,31 @@ namespace Model
      * <p>For PIOPS volumes, the IOPS per disk.</p>
      */
     inline VolumeConfiguration& WithIops(int value) { SetIops(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether an Amazon EBS volume is encrypted. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a>.</p>
+     */
+    inline bool GetEncrypted() const{ return m_encrypted; }
+
+    /**
+     * <p>Specifies whether an Amazon EBS volume is encrypted. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a>.</p>
+     */
+    inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
+
+    /**
+     * <p>Specifies whether an Amazon EBS volume is encrypted. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a>.</p>
+     */
+    inline VolumeConfiguration& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 
   private:
 
@@ -217,6 +270,9 @@ namespace Model
 
     int m_iops;
     bool m_iopsHasBeenSet;
+
+    bool m_encrypted;
+    bool m_encryptedHasBeenSet;
   };
 
 } // namespace Model

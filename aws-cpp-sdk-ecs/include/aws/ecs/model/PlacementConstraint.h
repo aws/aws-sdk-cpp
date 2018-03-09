@@ -37,7 +37,7 @@ namespace Model
    * <p>An object representing a constraint on task placement. For more information,
    * see <a
    * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task
-   * Placement Constraints</a> in the <i>Amazon EC2 Container Service Developer
+   * Placement Constraints</a> in the <i>Amazon Elastic Container Service Developer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PlacementConstraint">AWS
    * API Reference</a></p>
@@ -54,40 +54,45 @@ namespace Model
     /**
      * <p>The type of constraint. Use <code>distinctInstance</code> to ensure that each
      * task in a particular group is running on a different container instance. Use
-     * <code>memberOf</code> to restrict selection to a group of valid candidates. Note
-     * that <code>distinctInstance</code> is not supported in task definitions.</p>
+     * <code>memberOf</code> to restrict the selection to a group of valid candidates.
+     * The value <code>distinctInstance</code> is not supported in task
+     * definitions.</p>
      */
     inline const PlacementConstraintType& GetType() const{ return m_type; }
 
     /**
      * <p>The type of constraint. Use <code>distinctInstance</code> to ensure that each
      * task in a particular group is running on a different container instance. Use
-     * <code>memberOf</code> to restrict selection to a group of valid candidates. Note
-     * that <code>distinctInstance</code> is not supported in task definitions.</p>
+     * <code>memberOf</code> to restrict the selection to a group of valid candidates.
+     * The value <code>distinctInstance</code> is not supported in task
+     * definitions.</p>
      */
     inline void SetType(const PlacementConstraintType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The type of constraint. Use <code>distinctInstance</code> to ensure that each
      * task in a particular group is running on a different container instance. Use
-     * <code>memberOf</code> to restrict selection to a group of valid candidates. Note
-     * that <code>distinctInstance</code> is not supported in task definitions.</p>
+     * <code>memberOf</code> to restrict the selection to a group of valid candidates.
+     * The value <code>distinctInstance</code> is not supported in task
+     * definitions.</p>
      */
     inline void SetType(PlacementConstraintType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of constraint. Use <code>distinctInstance</code> to ensure that each
      * task in a particular group is running on a different container instance. Use
-     * <code>memberOf</code> to restrict selection to a group of valid candidates. Note
-     * that <code>distinctInstance</code> is not supported in task definitions.</p>
+     * <code>memberOf</code> to restrict the selection to a group of valid candidates.
+     * The value <code>distinctInstance</code> is not supported in task
+     * definitions.</p>
      */
     inline PlacementConstraint& WithType(const PlacementConstraintType& value) { SetType(value); return *this;}
 
     /**
      * <p>The type of constraint. Use <code>distinctInstance</code> to ensure that each
      * task in a particular group is running on a different container instance. Use
-     * <code>memberOf</code> to restrict selection to a group of valid candidates. Note
-     * that <code>distinctInstance</code> is not supported in task definitions.</p>
+     * <code>memberOf</code> to restrict the selection to a group of valid candidates.
+     * The value <code>distinctInstance</code> is not supported in task
+     * definitions.</p>
      */
     inline PlacementConstraint& WithType(PlacementConstraintType&& value) { SetType(std::move(value)); return *this;}
 
@@ -97,7 +102,7 @@ namespace Model
      * cannot specify an expression if the constraint type is
      * <code>distinctInstance</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline const Aws::String& GetExpression() const{ return m_expression; }
@@ -107,7 +112,7 @@ namespace Model
      * cannot specify an expression if the constraint type is
      * <code>distinctInstance</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
@@ -117,7 +122,7 @@ namespace Model
      * cannot specify an expression if the constraint type is
      * <code>distinctInstance</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
@@ -127,7 +132,7 @@ namespace Model
      * cannot specify an expression if the constraint type is
      * <code>distinctInstance</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
@@ -137,7 +142,7 @@ namespace Model
      * cannot specify an expression if the constraint type is
      * <code>distinctInstance</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline PlacementConstraint& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
@@ -147,7 +152,7 @@ namespace Model
      * cannot specify an expression if the constraint type is
      * <code>distinctInstance</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline PlacementConstraint& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
@@ -157,7 +162,7 @@ namespace Model
      * cannot specify an expression if the constraint type is
      * <code>distinctInstance</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline PlacementConstraint& WithExpression(const char* value) { SetExpression(value); return *this;}

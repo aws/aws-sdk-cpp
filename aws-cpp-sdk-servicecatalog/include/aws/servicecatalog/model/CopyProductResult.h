@@ -43,44 +43,37 @@ namespace Model
 
 
     /**
-     * <p>A unique token to pass to <code>DescribeCopyProductStatus</code> to track the
-     * progress of the operation.</p>
+     * <p>The token to use to track the progress of the operation.</p>
      */
     inline const Aws::String& GetCopyProductToken() const{ return m_copyProductToken; }
 
     /**
-     * <p>A unique token to pass to <code>DescribeCopyProductStatus</code> to track the
-     * progress of the operation.</p>
+     * <p>The token to use to track the progress of the operation.</p>
      */
     inline void SetCopyProductToken(const Aws::String& value) { m_copyProductToken = value; }
 
     /**
-     * <p>A unique token to pass to <code>DescribeCopyProductStatus</code> to track the
-     * progress of the operation.</p>
+     * <p>The token to use to track the progress of the operation.</p>
      */
     inline void SetCopyProductToken(Aws::String&& value) { m_copyProductToken = std::move(value); }
 
     /**
-     * <p>A unique token to pass to <code>DescribeCopyProductStatus</code> to track the
-     * progress of the operation.</p>
+     * <p>The token to use to track the progress of the operation.</p>
      */
     inline void SetCopyProductToken(const char* value) { m_copyProductToken.assign(value); }
 
     /**
-     * <p>A unique token to pass to <code>DescribeCopyProductStatus</code> to track the
-     * progress of the operation.</p>
+     * <p>The token to use to track the progress of the operation.</p>
      */
     inline CopyProductResult& WithCopyProductToken(const Aws::String& value) { SetCopyProductToken(value); return *this;}
 
     /**
-     * <p>A unique token to pass to <code>DescribeCopyProductStatus</code> to track the
-     * progress of the operation.</p>
+     * <p>The token to use to track the progress of the operation.</p>
      */
     inline CopyProductResult& WithCopyProductToken(Aws::String&& value) { SetCopyProductToken(std::move(value)); return *this;}
 
     /**
-     * <p>A unique token to pass to <code>DescribeCopyProductStatus</code> to track the
-     * progress of the operation.</p>
+     * <p>The token to use to track the progress of the operation.</p>
      */
     inline CopyProductResult& WithCopyProductToken(const char* value) { SetCopyProductToken(value); return *this;}
 

@@ -16,7 +16,6 @@
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -156,6 +155,25 @@ namespace Model
 
 
     /**
+     * <p>When <code>true</code>, specifies whether the domain entry is an alias used
+     * by the Lightsail load balancer.</p>
+     */
+    inline bool GetIsAlias() const{ return m_isAlias; }
+
+    /**
+     * <p>When <code>true</code>, specifies whether the domain entry is an alias used
+     * by the Lightsail load balancer.</p>
+     */
+    inline void SetIsAlias(bool value) { m_isAliasHasBeenSet = true; m_isAlias = value; }
+
+    /**
+     * <p>When <code>true</code>, specifies whether the domain entry is an alias used
+     * by the Lightsail load balancer.</p>
+     */
+    inline DomainEntry& WithIsAlias(bool value) { SetIsAlias(value); return *this;}
+
+
+    /**
      * <p>The type of domain entry (e.g., <code>SOA</code> or <code>NS</code>).</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
@@ -190,67 +208,6 @@ namespace Model
      */
     inline DomainEntry& WithType(const char* value) { SetType(value); return *this;}
 
-
-    /**
-     * <p>The options for the domain entry.</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetOptions() const{ return m_options; }
-
-    /**
-     * <p>The options for the domain entry.</p>
-     */
-    inline void SetOptions(const Aws::Map<Aws::String, Aws::String>& value) { m_optionsHasBeenSet = true; m_options = value; }
-
-    /**
-     * <p>The options for the domain entry.</p>
-     */
-    inline void SetOptions(Aws::Map<Aws::String, Aws::String>&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-
-    /**
-     * <p>The options for the domain entry.</p>
-     */
-    inline DomainEntry& WithOptions(const Aws::Map<Aws::String, Aws::String>& value) { SetOptions(value); return *this;}
-
-    /**
-     * <p>The options for the domain entry.</p>
-     */
-    inline DomainEntry& WithOptions(Aws::Map<Aws::String, Aws::String>&& value) { SetOptions(std::move(value)); return *this;}
-
-    /**
-     * <p>The options for the domain entry.</p>
-     */
-    inline DomainEntry& AddOptions(const Aws::String& key, const Aws::String& value) { m_optionsHasBeenSet = true; m_options.emplace(key, value); return *this; }
-
-    /**
-     * <p>The options for the domain entry.</p>
-     */
-    inline DomainEntry& AddOptions(Aws::String&& key, const Aws::String& value) { m_optionsHasBeenSet = true; m_options.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The options for the domain entry.</p>
-     */
-    inline DomainEntry& AddOptions(const Aws::String& key, Aws::String&& value) { m_optionsHasBeenSet = true; m_options.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The options for the domain entry.</p>
-     */
-    inline DomainEntry& AddOptions(Aws::String&& key, Aws::String&& value) { m_optionsHasBeenSet = true; m_options.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The options for the domain entry.</p>
-     */
-    inline DomainEntry& AddOptions(const char* key, Aws::String&& value) { m_optionsHasBeenSet = true; m_options.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The options for the domain entry.</p>
-     */
-    inline DomainEntry& AddOptions(Aws::String&& key, const char* value) { m_optionsHasBeenSet = true; m_options.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The options for the domain entry.</p>
-     */
-    inline DomainEntry& AddOptions(const char* key, const char* value) { m_optionsHasBeenSet = true; m_options.emplace(key, value); return *this; }
-
   private:
 
     Aws::String m_id;
@@ -262,11 +219,11 @@ namespace Model
     Aws::String m_target;
     bool m_targetHasBeenSet;
 
+    bool m_isAlias;
+    bool m_isAliasHasBeenSet;
+
     Aws::String m_type;
     bool m_typeHasBeenSet;
-
-    Aws::Map<Aws::String, Aws::String> m_options;
-    bool m_optionsHasBeenSet;
   };
 
 } // namespace Model

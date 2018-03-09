@@ -1197,6 +1197,62 @@
       "member":{"shape":"CORSRule"},
       "flattened":true
     },
+    "CSVInput":{
+      "type":"structure",
+      "members":{
+        "FileHeaderInfo":{
+          "shape":"FileHeaderInfo",
+          "documentation":"Describes the first line of input. Valid values: None, Ignore, Use."
+        },
+        "Comments":{
+          "shape":"Comments",
+          "documentation":"Single character used to indicate a row should be ignored when present at the start of a row."
+        },
+        "QuoteEscapeCharacter":{
+          "shape":"QuoteEscapeCharacter",
+          "documentation":"Single character used for escaping the quote character inside an already escaped value."
+        },
+        "RecordDelimiter":{
+          "shape":"RecordDelimiter",
+          "documentation":"Value used to separate individual records."
+        },
+        "FieldDelimiter":{
+          "shape":"FieldDelimiter",
+          "documentation":"Value used to separate individual fields in a record."
+        },
+        "QuoteCharacter":{
+          "shape":"QuoteCharacter",
+          "documentation":"Value used for escaping where the field delimiter is part of the value."
+        }
+      },
+      "documentation":"Describes how a CSV-formatted input object is formatted."
+    },
+    "CSVOutput":{
+      "type":"structure",
+      "members":{
+        "QuoteFields":{
+          "shape":"QuoteFields",
+          "documentation":"Indicates whether or not all output fields should be quoted."
+        },
+        "QuoteEscapeCharacter":{
+          "shape":"QuoteEscapeCharacter",
+          "documentation":"Single character used for escaping the quote character inside an already escaped value."
+        },
+        "RecordDelimiter":{
+          "shape":"RecordDelimiter",
+          "documentation":"Value used to separate individual records."
+        },
+        "FieldDelimiter":{
+          "shape":"FieldDelimiter",
+          "documentation":"Value used to separate individual fields in a record."
+        },
+        "QuoteCharacter":{
+          "shape":"QuoteCharacter",
+          "documentation":"Value used for escaping where the field delimiter is part of the value."
+        }
+      },
+      "documentation":"Describes how CSV-formatted results are formatted."
+    },
     "CacheControl":{"type":"string"},
     "CloudFunction":{"type":"string"},
     "CloudFunctionConfiguration":{
@@ -1217,6 +1273,7 @@
     },
     "CloudFunctionInvocationRole":{"type":"string"},
     "Code":{"type":"string"},
+    "Comments":{"type":"string"},
     "CommonPrefix":{
       "type":"structure",
       "members":{
@@ -2279,6 +2336,7 @@
       "flattened":true
     },
     "Delimiter":{"type":"string"},
+    "Description":{"type":"string"},
     "Destination":{
       "type":"structure",
       "required":["Bucket"],
@@ -2313,6 +2371,25 @@
       "type":"string",
       "documentation":"Requests Amazon S3 to encode the object keys in the response and specifies the encoding method to use. An object key may contain any Unicode character; however, XML 1.0 parser cannot parse some characters, such as characters with an ASCII value from 0 to 10. For characters that are not supported in XML 1.0, you can add this parameter to request that Amazon S3 encode the keys in the response.",
       "enum":["url"]
+    },
+    "Encryption":{
+      "type":"structure",
+      "required":["EncryptionType"],
+      "members":{
+        "EncryptionType":{
+          "shape":"ServerSideEncryption",
+          "documentation":"The server-side encryption algorithm used when storing job results in Amazon S3 (e.g., AES256, aws:kms)."
+        },
+        "KMSKeyId":{
+          "shape":"SSEKMSKeyId",
+          "documentation":"If the encryption type is aws:kms, this optional value specifies the AWS KMS key ID to use for encryption of job results."
+        },
+        "KMSContext":{
+          "shape":"KMSContext",
+          "documentation":"If the encryption type is aws:kms, this optional value can be used to specify the encryption context for the restore results."
+        }
+      },
+      "documentation":"Describes the server-side encryption that will be applied to the restore results."
     },
     "EncryptionConfiguration":{
       "type":"structure",
@@ -2384,7 +2461,21 @@
       "member":{"shape":"ExposeHeader"},
       "flattened":true
     },
+    "Expression":{"type":"string"},
+    "ExpressionType":{
+      "type":"string",
+      "enum":["SQL"]
+    },
     "FetchOwner":{"type":"boolean"},
+    "FieldDelimiter":{"type":"string"},
+    "FileHeaderInfo":{
+      "type":"string",
+      "enum":[
+        "USE",
+        "IGNORE",
+        "NONE"
+      ]
+    },
     "FilterRule":{
       "type":"structure",
       "members":{
@@ -3545,6 +3636,16 @@
         }
       }
     },
+    "InputSerialization":{
+      "type":"structure",
+      "members":{
+        "CSV":{
+          "shape":"CSVInput",
+          "documentation":"Describes the serialization of a CSV-encoded object."
+        }
+      },
+      "documentation":"Describes the serialization format of the object."
+    },
     "InventoryConfiguration":{
       "type":"structure",
       "required":[
@@ -3709,6 +3810,7 @@
     "IsEnabled":{"type":"boolean"},
     "IsLatest":{"type":"boolean"},
     "IsTruncated":{"type":"boolean"},
+    "KMSContext":{"type":"string"},
     "KeyCount":{"type":"integer"},
     "KeyMarker":{"type":"string"},
     "KeyPrefixEquals":{"type":"string"},
@@ -4426,6 +4528,7 @@
       }
     },
     "Location":{"type":"string"},
+    "LocationPrefix":{"type":"string"},
     "LoggingEnabled":{
       "type":"structure",
       "members":{
@@ -4472,6 +4575,14 @@
         "COPY",
         "REPLACE"
       ]
+    },
+    "MetadataEntry":{
+      "type":"structure",
+      "members":{
+        "Name":{"shape":"MetadataKey"},
+        "Value":{"shape":"MetadataValue"}
+      },
+      "documentation":"A metadata key-value pair to store with an object."
     },
     "MetadataKey":{"type":"string"},
     "MetadataValue":{"type":"string"},
@@ -4772,6 +4883,26 @@
     "ObjectVersionStorageClass":{
       "type":"string",
       "enum":["STANDARD"]
+    },
+    "OutputLocation":{
+      "type":"structure",
+      "members":{
+        "S3":{
+          "shape":"S3Location",
+          "documentation":"Describes an S3 location that will receive the results of the restore request."
+        }
+      },
+      "documentation":"Describes the location where the restore job's output is stored."
+    },
+    "OutputSerialization":{
+      "type":"structure",
+      "members":{
+        "CSV":{
+          "shape":"CSVOutput",
+          "documentation":"Describes the serialization of CSV-encoded Select results."
+        }
+      },
+      "documentation":"Describes how results of the Select job are serialized."
     },
     "Owner":{
       "type":"structure",
@@ -5720,7 +5851,17 @@
       "flattened":true
     },
     "Quiet":{"type":"boolean"},
+    "QuoteCharacter":{"type":"string"},
+    "QuoteEscapeCharacter":{"type":"string"},
+    "QuoteFields":{
+      "type":"string",
+      "enum":[
+        "ALWAYS",
+        "ASNEEDED"
+      ]
+    },
     "Range":{"type":"string"},
+    "RecordDelimiter":{"type":"string"},
     "Redirect":{
       "type":"structure",
       "members":{
@@ -5868,6 +6009,12 @@
           "shape":"RequestCharged",
           "location":"header",
           "locationName":"x-amz-request-charged"
+        },
+        "RestoreOutputPath":{
+          "shape":"RestoreOutputPath",
+          "documentation":"Indicates the path in the provided S3 output location where Select results will be restored to.",
+          "location":"header",
+          "locationName":"x-amz-restore-output-path"
         }
       }
     },
@@ -5906,19 +6053,44 @@
       },
       "payload":"RestoreRequest"
     },
+    "RestoreOutputPath":{"type":"string"},
     "RestoreRequest":{
       "type":"structure",
-      "required":["Days"],
       "members":{
         "Days":{
           "shape":"Days",
-          "documentation":"Lifetime of the active copy in days"
+          "documentation":"Lifetime of the active copy in days. Do not use with restores that specify OutputLocation."
         },
         "GlacierJobParameters":{
           "shape":"GlacierJobParameters",
-          "documentation":"Glacier related prameters pertaining to this job."
+          "documentation":"Glacier related parameters pertaining to this job. Do not use with restores that specify OutputLocation."
+        },
+        "Type":{
+          "shape":"RestoreRequestType",
+          "documentation":"Type of restore request."
+        },
+        "Tier":{
+          "shape":"Tier",
+          "documentation":"Glacier retrieval tier at which the restore will be processed."
+        },
+        "Description":{
+          "shape":"Description",
+          "documentation":"The optional description for the job."
+        },
+        "SelectParameters":{
+          "shape":"SelectParameters",
+          "documentation":"Describes the parameters for Select job types."
+        },
+        "OutputLocation":{
+          "shape":"OutputLocation",
+          "documentation":"Describes the location where the restore job's output is stored."
         }
-      }
+      },
+      "documentation":"Container for restore job parameters."
+    },
+    "RestoreRequestType":{
+      "type":"string",
+      "enum":["SELECT"]
     },
     "Role":{"type":"string"},
     "RoutingRule":{
@@ -5983,6 +6155,45 @@
       },
       "documentation":"Container for object key name prefix and suffix filtering rules."
     },
+    "S3Location":{
+      "type":"structure",
+      "required":[
+        "BucketName",
+        "Prefix"
+      ],
+      "members":{
+        "BucketName":{
+          "shape":"BucketName",
+          "documentation":"The name of the bucket where the restore results will be placed."
+        },
+        "Prefix":{
+          "shape":"LocationPrefix",
+          "documentation":"The prefix that is prepended to the restore results for this request."
+        },
+        "Encryption":{"shape":"Encryption"},
+        "CannedACL":{
+          "shape":"ObjectCannedACL",
+          "documentation":"The canned ACL to apply to the restore results."
+        },
+        "AccessControlList":{
+          "shape":"Grants",
+          "documentation":"A list of grants that control access to the staged results."
+        },
+        "Tagging":{
+          "shape":"Tagging",
+          "documentation":"The tag-set that is applied to the restore results."
+        },
+        "UserMetadata":{
+          "shape":"UserMetadata",
+          "documentation":"A list of metadata to store with the restore results in S3."
+        },
+        "StorageClass":{
+          "shape":"StorageClass",
+          "documentation":"The class of storage used to store the restore results."
+        }
+      },
+      "documentation":"Describes an S3 location that will receive the results of the restore request."
+    },
     "SSECustomerAlgorithm":{"type":"string"},
     "SSECustomerKey":{
       "type":"string",
@@ -6011,6 +6222,34 @@
       },
       "documentation":"Specifies the use of SSE-S3 to encrypt delievered Inventory reports.",
       "locationName":"SSE-S3"
+    },
+    "SelectParameters":{
+      "type":"structure",
+      "required":[
+        "InputSerialization",
+        "ExpressionType",
+        "Expression",
+        "OutputSerialization"
+      ],
+      "members":{
+        "InputSerialization":{
+          "shape":"InputSerialization",
+          "documentation":"Describes the serialization format of the object."
+        },
+        "ExpressionType":{
+          "shape":"ExpressionType",
+          "documentation":"The type of the provided expression (e.g., SQL)."
+        },
+        "Expression":{
+          "shape":"Expression",
+          "documentation":"The expression that is used to query the object."
+        },
+        "OutputSerialization":{
+          "shape":"OutputSerialization",
+          "documentation":"Describes how the results of the Select job are serialized."
+        }
+      },
+      "documentation":"Describes the parameters for Select job types."
     },
     "ServerSideEncryption":{
       "type":"string",
@@ -6551,6 +6790,13 @@
         }
       },
       "payload":"Body"
+    },
+    "UserMetadata":{
+      "type":"list",
+      "member":{
+        "shape":"MetadataEntry",
+        "locationName":"MetadataEntry"
+      }
     },
     "Value":{"type":"string"},
     "VersionIdMarker":{"type":"string"},

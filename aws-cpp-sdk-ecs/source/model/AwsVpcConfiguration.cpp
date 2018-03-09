@@ -30,13 +30,17 @@ namespace Model
 
 AwsVpcConfiguration::AwsVpcConfiguration() : 
     m_subnetsHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false)
+    m_securityGroupsHasBeenSet(false),
+    m_assignPublicIp(AssignPublicIp::NOT_SET),
+    m_assignPublicIpHasBeenSet(false)
 {
 }
 
 AwsVpcConfiguration::AwsVpcConfiguration(const JsonValue& jsonValue) : 
     m_subnetsHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false)
+    m_securityGroupsHasBeenSet(false),
+    m_assignPublicIp(AssignPublicIp::NOT_SET),
+    m_assignPublicIpHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -61,6 +65,13 @@ AwsVpcConfiguration& AwsVpcConfiguration::operator =(const JsonValue& jsonValue)
       m_securityGroups.push_back(securityGroupsJsonList[securityGroupsIndex].AsString());
     }
     m_securityGroupsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("assignPublicIp"))
+  {
+    m_assignPublicIp = AssignPublicIpMapper::GetAssignPublicIpForName(jsonValue.GetString("assignPublicIp"));
+
+    m_assignPublicIpHasBeenSet = true;
   }
 
   return *this;
@@ -90,6 +101,11 @@ JsonValue AwsVpcConfiguration::Jsonize() const
    }
    payload.WithArray("securityGroups", std::move(securityGroupsJsonList));
 
+  }
+
+  if(m_assignPublicIpHasBeenSet)
+  {
+   payload.WithString("assignPublicIp", AssignPublicIpMapper::GetNameForAssignPublicIp(m_assignPublicIp));
   }
 
   return payload;

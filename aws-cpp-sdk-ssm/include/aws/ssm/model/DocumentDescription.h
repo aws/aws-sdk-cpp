@@ -21,6 +21,7 @@
 #include <aws/ssm/model/DocumentStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/DocumentType.h>
+#include <aws/ssm/model/DocumentFormat.h>
 #include <aws/ssm/model/DocumentParameter.h>
 #include <aws/ssm/model/PlatformType.h>
 #include <aws/ssm/model/Tag.h>
@@ -562,6 +563,89 @@ namespace Model
 
 
     /**
+     * <p>The document format, either JSON or YAML.</p>
+     */
+    inline const DocumentFormat& GetDocumentFormat() const{ return m_documentFormat; }
+
+    /**
+     * <p>The document format, either JSON or YAML.</p>
+     */
+    inline void SetDocumentFormat(const DocumentFormat& value) { m_documentFormatHasBeenSet = true; m_documentFormat = value; }
+
+    /**
+     * <p>The document format, either JSON or YAML.</p>
+     */
+    inline void SetDocumentFormat(DocumentFormat&& value) { m_documentFormatHasBeenSet = true; m_documentFormat = std::move(value); }
+
+    /**
+     * <p>The document format, either JSON or YAML.</p>
+     */
+    inline DocumentDescription& WithDocumentFormat(const DocumentFormat& value) { SetDocumentFormat(value); return *this;}
+
+    /**
+     * <p>The document format, either JSON or YAML.</p>
+     */
+    inline DocumentDescription& WithDocumentFormat(DocumentFormat&& value) { SetDocumentFormat(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The target type which defines the kinds of resources the document can run on.
+     * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     */
+    inline const Aws::String& GetTargetType() const{ return m_targetType; }
+
+    /**
+     * <p>The target type which defines the kinds of resources the document can run on.
+     * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     */
+    inline void SetTargetType(const Aws::String& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
+
+    /**
+     * <p>The target type which defines the kinds of resources the document can run on.
+     * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     */
+    inline void SetTargetType(Aws::String&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
+
+    /**
+     * <p>The target type which defines the kinds of resources the document can run on.
+     * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     */
+    inline void SetTargetType(const char* value) { m_targetTypeHasBeenSet = true; m_targetType.assign(value); }
+
+    /**
+     * <p>The target type which defines the kinds of resources the document can run on.
+     * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     */
+    inline DocumentDescription& WithTargetType(const Aws::String& value) { SetTargetType(value); return *this;}
+
+    /**
+     * <p>The target type which defines the kinds of resources the document can run on.
+     * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     */
+    inline DocumentDescription& WithTargetType(Aws::String&& value) { SetTargetType(std::move(value)); return *this;}
+
+    /**
+     * <p>The target type which defines the kinds of resources the document can run on.
+     * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     */
+    inline DocumentDescription& WithTargetType(const char* value) { SetTargetType(value); return *this;}
+
+
+    /**
      * <p>The tags, or metadata, that have been applied to the document.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -642,6 +726,12 @@ namespace Model
 
     Aws::String m_defaultVersion;
     bool m_defaultVersionHasBeenSet;
+
+    DocumentFormat m_documentFormat;
+    bool m_documentFormatHasBeenSet;
+
+    Aws::String m_targetType;
+    bool m_targetTypeHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

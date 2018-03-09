@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workspaces/model/RootStorage.h>
 #include <aws/workspaces/model/UserStorage.h>
 #include <aws/workspaces/model/ComputeType.h>
 #include <utility>
@@ -35,7 +36,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about a WorkSpace bundle.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about a WorkSpace bundle.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspaceBundle">AWS
    * API Reference</a></p>
    */
@@ -121,142 +122,168 @@ namespace Model
 
 
     /**
-     * <p>The owner of the bundle. This contains the owner's account identifier, or
+     * <p>The owner of the bundle. This is the account identifier of the owner, or
      * <code>AMAZON</code> if the bundle is provided by AWS.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
 
     /**
-     * <p>The owner of the bundle. This contains the owner's account identifier, or
+     * <p>The owner of the bundle. This is the account identifier of the owner, or
      * <code>AMAZON</code> if the bundle is provided by AWS.</p>
      */
     inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
-     * <p>The owner of the bundle. This contains the owner's account identifier, or
+     * <p>The owner of the bundle. This is the account identifier of the owner, or
      * <code>AMAZON</code> if the bundle is provided by AWS.</p>
      */
     inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
-     * <p>The owner of the bundle. This contains the owner's account identifier, or
+     * <p>The owner of the bundle. This is the account identifier of the owner, or
      * <code>AMAZON</code> if the bundle is provided by AWS.</p>
      */
     inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
 
     /**
-     * <p>The owner of the bundle. This contains the owner's account identifier, or
+     * <p>The owner of the bundle. This is the account identifier of the owner, or
      * <code>AMAZON</code> if the bundle is provided by AWS.</p>
      */
     inline WorkspaceBundle& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
 
     /**
-     * <p>The owner of the bundle. This contains the owner's account identifier, or
+     * <p>The owner of the bundle. This is the account identifier of the owner, or
      * <code>AMAZON</code> if the bundle is provided by AWS.</p>
      */
     inline WorkspaceBundle& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The owner of the bundle. This contains the owner's account identifier, or
+     * <p>The owner of the bundle. This is the account identifier of the owner, or
      * <code>AMAZON</code> if the bundle is provided by AWS.</p>
      */
     inline WorkspaceBundle& WithOwner(const char* value) { SetOwner(value); return *this;}
 
 
     /**
-     * <p>The bundle description.</p>
+     * <p>A description.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The bundle description.</p>
+     * <p>A description.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The bundle description.</p>
+     * <p>A description.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The bundle description.</p>
+     * <p>A description.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The bundle description.</p>
+     * <p>A description.</p>
      */
     inline WorkspaceBundle& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The bundle description.</p>
+     * <p>A description.</p>
      */
     inline WorkspaceBundle& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The bundle description.</p>
+     * <p>A description.</p>
      */
     inline WorkspaceBundle& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>A <a>UserStorage</a> object that specifies the amount of user storage that
-     * the bundle contains.</p>
+     * <p>The size of the root volume.</p>
+     */
+    inline const RootStorage& GetRootStorage() const{ return m_rootStorage; }
+
+    /**
+     * <p>The size of the root volume.</p>
+     */
+    inline void SetRootStorage(const RootStorage& value) { m_rootStorageHasBeenSet = true; m_rootStorage = value; }
+
+    /**
+     * <p>The size of the root volume.</p>
+     */
+    inline void SetRootStorage(RootStorage&& value) { m_rootStorageHasBeenSet = true; m_rootStorage = std::move(value); }
+
+    /**
+     * <p>The size of the root volume.</p>
+     */
+    inline WorkspaceBundle& WithRootStorage(const RootStorage& value) { SetRootStorage(value); return *this;}
+
+    /**
+     * <p>The size of the root volume.</p>
+     */
+    inline WorkspaceBundle& WithRootStorage(RootStorage&& value) { SetRootStorage(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The size of the user storage.</p>
      */
     inline const UserStorage& GetUserStorage() const{ return m_userStorage; }
 
     /**
-     * <p>A <a>UserStorage</a> object that specifies the amount of user storage that
-     * the bundle contains.</p>
+     * <p>The size of the user storage.</p>
      */
     inline void SetUserStorage(const UserStorage& value) { m_userStorageHasBeenSet = true; m_userStorage = value; }
 
     /**
-     * <p>A <a>UserStorage</a> object that specifies the amount of user storage that
-     * the bundle contains.</p>
+     * <p>The size of the user storage.</p>
      */
     inline void SetUserStorage(UserStorage&& value) { m_userStorageHasBeenSet = true; m_userStorage = std::move(value); }
 
     /**
-     * <p>A <a>UserStorage</a> object that specifies the amount of user storage that
-     * the bundle contains.</p>
+     * <p>The size of the user storage.</p>
      */
     inline WorkspaceBundle& WithUserStorage(const UserStorage& value) { SetUserStorage(value); return *this;}
 
     /**
-     * <p>A <a>UserStorage</a> object that specifies the amount of user storage that
-     * the bundle contains.</p>
+     * <p>The size of the user storage.</p>
      */
     inline WorkspaceBundle& WithUserStorage(UserStorage&& value) { SetUserStorage(std::move(value)); return *this;}
 
 
     /**
-     * <p>A <a>ComputeType</a> object that specifies the compute type for the
-     * bundle.</p>
+     * <p>The compute type. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon
+     * WorkSpaces Bundles</a>.</p>
      */
     inline const ComputeType& GetComputeType() const{ return m_computeType; }
 
     /**
-     * <p>A <a>ComputeType</a> object that specifies the compute type for the
-     * bundle.</p>
+     * <p>The compute type. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon
+     * WorkSpaces Bundles</a>.</p>
      */
     inline void SetComputeType(const ComputeType& value) { m_computeTypeHasBeenSet = true; m_computeType = value; }
 
     /**
-     * <p>A <a>ComputeType</a> object that specifies the compute type for the
-     * bundle.</p>
+     * <p>The compute type. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon
+     * WorkSpaces Bundles</a>.</p>
      */
     inline void SetComputeType(ComputeType&& value) { m_computeTypeHasBeenSet = true; m_computeType = std::move(value); }
 
     /**
-     * <p>A <a>ComputeType</a> object that specifies the compute type for the
-     * bundle.</p>
+     * <p>The compute type. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon
+     * WorkSpaces Bundles</a>.</p>
      */
     inline WorkspaceBundle& WithComputeType(const ComputeType& value) { SetComputeType(value); return *this;}
 
     /**
-     * <p>A <a>ComputeType</a> object that specifies the compute type for the
-     * bundle.</p>
+     * <p>The compute type. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon
+     * WorkSpaces Bundles</a>.</p>
      */
     inline WorkspaceBundle& WithComputeType(ComputeType&& value) { SetComputeType(std::move(value)); return *this;}
 
@@ -273,6 +300,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    RootStorage m_rootStorage;
+    bool m_rootStorageHasBeenSet;
 
     UserStorage m_userStorage;
     bool m_userStorageHasBeenSet;

@@ -21,6 +21,7 @@
 #include <aws/es/model/AccessPoliciesStatus.h>
 #include <aws/es/model/SnapshotOptionsStatus.h>
 #include <aws/es/model/VPCDerivedInfoStatus.h>
+#include <aws/es/model/EncryptionAtRestOptionsStatus.h>
 #include <aws/es/model/AdvancedOptionsStatus.h>
 #include <aws/es/model/LogPublishingOptionsStatus.h>
 #include <utility>
@@ -230,6 +231,37 @@ namespace Model
 
 
     /**
+     * <p>Specifies the <code>EncryptionAtRestOptions</code> for the Elasticsearch
+     * domain.</p>
+     */
+    inline const EncryptionAtRestOptionsStatus& GetEncryptionAtRestOptions() const{ return m_encryptionAtRestOptions; }
+
+    /**
+     * <p>Specifies the <code>EncryptionAtRestOptions</code> for the Elasticsearch
+     * domain.</p>
+     */
+    inline void SetEncryptionAtRestOptions(const EncryptionAtRestOptionsStatus& value) { m_encryptionAtRestOptionsHasBeenSet = true; m_encryptionAtRestOptions = value; }
+
+    /**
+     * <p>Specifies the <code>EncryptionAtRestOptions</code> for the Elasticsearch
+     * domain.</p>
+     */
+    inline void SetEncryptionAtRestOptions(EncryptionAtRestOptionsStatus&& value) { m_encryptionAtRestOptionsHasBeenSet = true; m_encryptionAtRestOptions = std::move(value); }
+
+    /**
+     * <p>Specifies the <code>EncryptionAtRestOptions</code> for the Elasticsearch
+     * domain.</p>
+     */
+    inline ElasticsearchDomainConfig& WithEncryptionAtRestOptions(const EncryptionAtRestOptionsStatus& value) { SetEncryptionAtRestOptions(value); return *this;}
+
+    /**
+     * <p>Specifies the <code>EncryptionAtRestOptions</code> for the Elasticsearch
+     * domain.</p>
+     */
+    inline ElasticsearchDomainConfig& WithEncryptionAtRestOptions(EncryptionAtRestOptionsStatus&& value) { SetEncryptionAtRestOptions(std::move(value)); return *this;}
+
+
+    /**
      * <p>Specifies the <code>AdvancedOptions</code> for the domain. See <a
      * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
      * target="_blank">Configuring Advanced Options</a> for more information.</p>
@@ -309,6 +341,9 @@ namespace Model
 
     VPCDerivedInfoStatus m_vPCOptions;
     bool m_vPCOptionsHasBeenSet;
+
+    EncryptionAtRestOptionsStatus m_encryptionAtRestOptions;
+    bool m_encryptionAtRestOptionsHasBeenSet;
 
     AdvancedOptionsStatus m_advancedOptions;
     bool m_advancedOptionsHasBeenSet;

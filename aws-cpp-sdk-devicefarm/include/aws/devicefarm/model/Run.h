@@ -26,6 +26,8 @@
 #include <aws/devicefarm/model/DeviceMinutes.h>
 #include <aws/devicefarm/model/NetworkProfile.h>
 #include <aws/devicefarm/model/ExecutionResultCode.h>
+#include <aws/devicefarm/model/Radios.h>
+#include <aws/devicefarm/model/Location.h>
 #include <aws/devicefarm/model/CustomerArtifactPaths.h>
 #include <utility>
 
@@ -706,6 +708,220 @@ namespace Model
 
 
     /**
+     * <p>For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using
+     * the same seed value between tests ensures identical event sequences.</p>
+     */
+    inline int GetSeed() const{ return m_seed; }
+
+    /**
+     * <p>For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using
+     * the same seed value between tests ensures identical event sequences.</p>
+     */
+    inline void SetSeed(int value) { m_seedHasBeenSet = true; m_seed = value; }
+
+    /**
+     * <p>For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using
+     * the same seed value between tests ensures identical event sequences.</p>
+     */
+    inline Run& WithSeed(int value) { SetSeed(value); return *this;}
+
+
+    /**
+     * <p>An app to upload or that has been uploaded.</p>
+     */
+    inline const Aws::String& GetAppUpload() const{ return m_appUpload; }
+
+    /**
+     * <p>An app to upload or that has been uploaded.</p>
+     */
+    inline void SetAppUpload(const Aws::String& value) { m_appUploadHasBeenSet = true; m_appUpload = value; }
+
+    /**
+     * <p>An app to upload or that has been uploaded.</p>
+     */
+    inline void SetAppUpload(Aws::String&& value) { m_appUploadHasBeenSet = true; m_appUpload = std::move(value); }
+
+    /**
+     * <p>An app to upload or that has been uploaded.</p>
+     */
+    inline void SetAppUpload(const char* value) { m_appUploadHasBeenSet = true; m_appUpload.assign(value); }
+
+    /**
+     * <p>An app to upload or that has been uploaded.</p>
+     */
+    inline Run& WithAppUpload(const Aws::String& value) { SetAppUpload(value); return *this;}
+
+    /**
+     * <p>An app to upload or that has been uploaded.</p>
+     */
+    inline Run& WithAppUpload(Aws::String&& value) { SetAppUpload(std::move(value)); return *this;}
+
+    /**
+     * <p>An app to upload or that has been uploaded.</p>
+     */
+    inline Run& WithAppUpload(const char* value) { SetAppUpload(value); return *this;}
+
+
+    /**
+     * <p>For fuzz tests, this is the number of events, between 1 and 10000, that the
+     * UI fuzz test should perform.</p>
+     */
+    inline int GetEventCount() const{ return m_eventCount; }
+
+    /**
+     * <p>For fuzz tests, this is the number of events, between 1 and 10000, that the
+     * UI fuzz test should perform.</p>
+     */
+    inline void SetEventCount(int value) { m_eventCountHasBeenSet = true; m_eventCount = value; }
+
+    /**
+     * <p>For fuzz tests, this is the number of events, between 1 and 10000, that the
+     * UI fuzz test should perform.</p>
+     */
+    inline Run& WithEventCount(int value) { SetEventCount(value); return *this;}
+
+
+    /**
+     * <p>The number of minutes the job will execute before it times out.</p>
+     */
+    inline int GetJobTimeoutMinutes() const{ return m_jobTimeoutMinutes; }
+
+    /**
+     * <p>The number of minutes the job will execute before it times out.</p>
+     */
+    inline void SetJobTimeoutMinutes(int value) { m_jobTimeoutMinutesHasBeenSet = true; m_jobTimeoutMinutes = value; }
+
+    /**
+     * <p>The number of minutes the job will execute before it times out.</p>
+     */
+    inline Run& WithJobTimeoutMinutes(int value) { SetJobTimeoutMinutes(value); return *this;}
+
+
+    /**
+     * <p>The ARN of the device pool for the run.</p>
+     */
+    inline const Aws::String& GetDevicePoolArn() const{ return m_devicePoolArn; }
+
+    /**
+     * <p>The ARN of the device pool for the run.</p>
+     */
+    inline void SetDevicePoolArn(const Aws::String& value) { m_devicePoolArnHasBeenSet = true; m_devicePoolArn = value; }
+
+    /**
+     * <p>The ARN of the device pool for the run.</p>
+     */
+    inline void SetDevicePoolArn(Aws::String&& value) { m_devicePoolArnHasBeenSet = true; m_devicePoolArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the device pool for the run.</p>
+     */
+    inline void SetDevicePoolArn(const char* value) { m_devicePoolArnHasBeenSet = true; m_devicePoolArn.assign(value); }
+
+    /**
+     * <p>The ARN of the device pool for the run.</p>
+     */
+    inline Run& WithDevicePoolArn(const Aws::String& value) { SetDevicePoolArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the device pool for the run.</p>
+     */
+    inline Run& WithDevicePoolArn(Aws::String&& value) { SetDevicePoolArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the device pool for the run.</p>
+     */
+    inline Run& WithDevicePoolArn(const char* value) { SetDevicePoolArn(value); return *this;}
+
+
+    /**
+     * <p>Information about the locale that is used for the run.</p>
+     */
+    inline const Aws::String& GetLocale() const{ return m_locale; }
+
+    /**
+     * <p>Information about the locale that is used for the run.</p>
+     */
+    inline void SetLocale(const Aws::String& value) { m_localeHasBeenSet = true; m_locale = value; }
+
+    /**
+     * <p>Information about the locale that is used for the run.</p>
+     */
+    inline void SetLocale(Aws::String&& value) { m_localeHasBeenSet = true; m_locale = std::move(value); }
+
+    /**
+     * <p>Information about the locale that is used for the run.</p>
+     */
+    inline void SetLocale(const char* value) { m_localeHasBeenSet = true; m_locale.assign(value); }
+
+    /**
+     * <p>Information about the locale that is used for the run.</p>
+     */
+    inline Run& WithLocale(const Aws::String& value) { SetLocale(value); return *this;}
+
+    /**
+     * <p>Information about the locale that is used for the run.</p>
+     */
+    inline Run& WithLocale(Aws::String&& value) { SetLocale(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the locale that is used for the run.</p>
+     */
+    inline Run& WithLocale(const char* value) { SetLocale(value); return *this;}
+
+
+    /**
+     * <p>Information about the radio states for the run.</p>
+     */
+    inline const Radios& GetRadios() const{ return m_radios; }
+
+    /**
+     * <p>Information about the radio states for the run.</p>
+     */
+    inline void SetRadios(const Radios& value) { m_radiosHasBeenSet = true; m_radios = value; }
+
+    /**
+     * <p>Information about the radio states for the run.</p>
+     */
+    inline void SetRadios(Radios&& value) { m_radiosHasBeenSet = true; m_radios = std::move(value); }
+
+    /**
+     * <p>Information about the radio states for the run.</p>
+     */
+    inline Run& WithRadios(const Radios& value) { SetRadios(value); return *this;}
+
+    /**
+     * <p>Information about the radio states for the run.</p>
+     */
+    inline Run& WithRadios(Radios&& value) { SetRadios(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about the location that is used for the run.</p>
+     */
+    inline const Location& GetLocation() const{ return m_location; }
+
+    /**
+     * <p>Information about the location that is used for the run.</p>
+     */
+    inline void SetLocation(const Location& value) { m_locationHasBeenSet = true; m_location = value; }
+
+    /**
+     * <p>Information about the location that is used for the run.</p>
+     */
+    inline void SetLocation(Location&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
+
+    /**
+     * <p>Information about the location that is used for the run.</p>
+     */
+    inline Run& WithLocation(const Location& value) { SetLocation(value); return *this;}
+
+    /**
+     * <p>Information about the location that is used for the run.</p>
+     */
+    inline Run& WithLocation(Location&& value) { SetLocation(std::move(value)); return *this;}
+
+
+    /**
      * <p>Output <code>CustomerArtifactPaths</code> object for the test run.</p>
      */
     inline const CustomerArtifactPaths& GetCustomerArtifactPaths() const{ return m_customerArtifactPaths; }
@@ -729,6 +945,49 @@ namespace Model
      * <p>Output <code>CustomerArtifactPaths</code> object for the test run.</p>
      */
     inline Run& WithCustomerArtifactPaths(CustomerArtifactPaths&& value) { SetCustomerArtifactPaths(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A pre-signed Amazon S3 URL that can be used with a corresponding GET request
+     * to download the symbol file for the run.</p>
+     */
+    inline const Aws::String& GetWebUrl() const{ return m_webUrl; }
+
+    /**
+     * <p>A pre-signed Amazon S3 URL that can be used with a corresponding GET request
+     * to download the symbol file for the run.</p>
+     */
+    inline void SetWebUrl(const Aws::String& value) { m_webUrlHasBeenSet = true; m_webUrl = value; }
+
+    /**
+     * <p>A pre-signed Amazon S3 URL that can be used with a corresponding GET request
+     * to download the symbol file for the run.</p>
+     */
+    inline void SetWebUrl(Aws::String&& value) { m_webUrlHasBeenSet = true; m_webUrl = std::move(value); }
+
+    /**
+     * <p>A pre-signed Amazon S3 URL that can be used with a corresponding GET request
+     * to download the symbol file for the run.</p>
+     */
+    inline void SetWebUrl(const char* value) { m_webUrlHasBeenSet = true; m_webUrl.assign(value); }
+
+    /**
+     * <p>A pre-signed Amazon S3 URL that can be used with a corresponding GET request
+     * to download the symbol file for the run.</p>
+     */
+    inline Run& WithWebUrl(const Aws::String& value) { SetWebUrl(value); return *this;}
+
+    /**
+     * <p>A pre-signed Amazon S3 URL that can be used with a corresponding GET request
+     * to download the symbol file for the run.</p>
+     */
+    inline Run& WithWebUrl(Aws::String&& value) { SetWebUrl(std::move(value)); return *this;}
+
+    /**
+     * <p>A pre-signed Amazon S3 URL that can be used with a corresponding GET request
+     * to download the symbol file for the run.</p>
+     */
+    inline Run& WithWebUrl(const char* value) { SetWebUrl(value); return *this;}
 
   private:
 
@@ -786,8 +1045,35 @@ namespace Model
     ExecutionResultCode m_resultCode;
     bool m_resultCodeHasBeenSet;
 
+    int m_seed;
+    bool m_seedHasBeenSet;
+
+    Aws::String m_appUpload;
+    bool m_appUploadHasBeenSet;
+
+    int m_eventCount;
+    bool m_eventCountHasBeenSet;
+
+    int m_jobTimeoutMinutes;
+    bool m_jobTimeoutMinutesHasBeenSet;
+
+    Aws::String m_devicePoolArn;
+    bool m_devicePoolArnHasBeenSet;
+
+    Aws::String m_locale;
+    bool m_localeHasBeenSet;
+
+    Radios m_radios;
+    bool m_radiosHasBeenSet;
+
+    Location m_location;
+    bool m_locationHasBeenSet;
+
     CustomerArtifactPaths m_customerArtifactPaths;
     bool m_customerArtifactPathsHasBeenSet;
+
+    Aws::String m_webUrl;
+    bool m_webUrlHasBeenSet;
   };
 
 } // namespace Model

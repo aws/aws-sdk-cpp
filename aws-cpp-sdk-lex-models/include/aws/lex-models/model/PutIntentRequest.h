@@ -772,6 +772,16 @@ namespace Model
      */
     inline PutIntentRequest& WithChecksum(const char* value) { SetChecksum(value); return *this;}
 
+
+    
+    inline bool GetCreateVersion() const{ return m_createVersion; }
+
+    
+    inline void SetCreateVersion(bool value) { m_createVersionHasBeenSet = true; m_createVersion = value; }
+
+    
+    inline PutIntentRequest& WithCreateVersion(bool value) { SetCreateVersion(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -809,6 +819,9 @@ namespace Model
 
     Aws::String m_checksum;
     bool m_checksumHasBeenSet;
+
+    bool m_createVersion;
+    bool m_createVersionHasBeenSet;
   };
 
 } // namespace Model

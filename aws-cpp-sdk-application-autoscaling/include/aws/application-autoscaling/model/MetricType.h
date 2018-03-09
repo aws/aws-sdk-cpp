@@ -33,7 +33,10 @@ namespace Model
     RDSReaderAverageDatabaseConnections,
     EC2SpotFleetRequestAverageCPUUtilization,
     EC2SpotFleetRequestAverageNetworkIn,
-    EC2SpotFleetRequestAverageNetworkOut
+    EC2SpotFleetRequestAverageNetworkOut,
+    SageMakerVariantInvocationsPerInstance,
+    ECSServiceAverageCPUUtilization,
+    ECSServiceAverageMemoryUtilization
   };
 
 namespace MetricTypeMapper

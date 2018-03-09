@@ -25,11 +25,15 @@ using namespace Aws::Utils;
 RegisterTaskDefinitionRequest::RegisterTaskDefinitionRequest() : 
     m_familyHasBeenSet(false),
     m_taskRoleArnHasBeenSet(false),
+    m_executionRoleArnHasBeenSet(false),
     m_networkMode(NetworkMode::NOT_SET),
     m_networkModeHasBeenSet(false),
     m_containerDefinitionsHasBeenSet(false),
     m_volumesHasBeenSet(false),
-    m_placementConstraintsHasBeenSet(false)
+    m_placementConstraintsHasBeenSet(false),
+    m_requiresCompatibilitiesHasBeenSet(false),
+    m_cpuHasBeenSet(false),
+    m_memoryHasBeenSet(false)
 {
 }
 
@@ -46,6 +50,12 @@ Aws::String RegisterTaskDefinitionRequest::SerializePayload() const
   if(m_taskRoleArnHasBeenSet)
   {
    payload.WithString("taskRoleArn", m_taskRoleArn);
+
+  }
+
+  if(m_executionRoleArnHasBeenSet)
+  {
+   payload.WithString("executionRoleArn", m_executionRoleArn);
 
   }
 
@@ -84,6 +94,29 @@ Aws::String RegisterTaskDefinitionRequest::SerializePayload() const
      placementConstraintsJsonList[placementConstraintsIndex].AsObject(m_placementConstraints[placementConstraintsIndex].Jsonize());
    }
    payload.WithArray("placementConstraints", std::move(placementConstraintsJsonList));
+
+  }
+
+  if(m_requiresCompatibilitiesHasBeenSet)
+  {
+   Array<JsonValue> requiresCompatibilitiesJsonList(m_requiresCompatibilities.size());
+   for(unsigned requiresCompatibilitiesIndex = 0; requiresCompatibilitiesIndex < requiresCompatibilitiesJsonList.GetLength(); ++requiresCompatibilitiesIndex)
+   {
+     requiresCompatibilitiesJsonList[requiresCompatibilitiesIndex].AsString(CompatibilityMapper::GetNameForCompatibility(m_requiresCompatibilities[requiresCompatibilitiesIndex]));
+   }
+   payload.WithArray("requiresCompatibilities", std::move(requiresCompatibilitiesJsonList));
+
+  }
+
+  if(m_cpuHasBeenSet)
+  {
+   payload.WithString("cpu", m_cpu);
+
+  }
+
+  if(m_memoryHasBeenSet)
+  {
+   payload.WithString("memory", m_memory);
 
   }
 

@@ -131,94 +131,87 @@ namespace Model
 
 
     /**
-     * <p>The provisioning artifact identifier for this product. This is sometimes
-     * referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline const Aws::String& GetProvisioningArtifactId() const{ return m_provisioningArtifactId; }
 
     /**
-     * <p>The provisioning artifact identifier for this product. This is sometimes
-     * referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline void SetProvisioningArtifactId(const Aws::String& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = value; }
 
     /**
-     * <p>The provisioning artifact identifier for this product. This is sometimes
-     * referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline void SetProvisioningArtifactId(Aws::String&& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = std::move(value); }
 
     /**
-     * <p>The provisioning artifact identifier for this product. This is sometimes
-     * referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline void SetProvisioningArtifactId(const char* value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId.assign(value); }
 
     /**
-     * <p>The provisioning artifact identifier for this product. This is sometimes
-     * referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline DescribeProvisioningParametersRequest& WithProvisioningArtifactId(const Aws::String& value) { SetProvisioningArtifactId(value); return *this;}
 
     /**
-     * <p>The provisioning artifact identifier for this product. This is sometimes
-     * referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline DescribeProvisioningParametersRequest& WithProvisioningArtifactId(Aws::String&& value) { SetProvisioningArtifactId(std::move(value)); return *this;}
 
     /**
-     * <p>The provisioning artifact identifier for this product. This is sometimes
-     * referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline DescribeProvisioningParametersRequest& WithProvisioningArtifactId(const char* value) { SetProvisioningArtifactId(value); return *this;}
 
 
     /**
-     * <p>The identifier of the path for this product's provisioning. This value is
-     * optional if the product has a default path, and is required if there is more
-     * than one path for the specified product.</p>
+     * <p>The path identifier of the product. This value is optional if the product has
+     * a default path, and required if the product has more than one path. To list the
+     * paths for a product, use <a>ListLaunchPaths</a>.</p>
      */
     inline const Aws::String& GetPathId() const{ return m_pathId; }
 
     /**
-     * <p>The identifier of the path for this product's provisioning. This value is
-     * optional if the product has a default path, and is required if there is more
-     * than one path for the specified product.</p>
+     * <p>The path identifier of the product. This value is optional if the product has
+     * a default path, and required if the product has more than one path. To list the
+     * paths for a product, use <a>ListLaunchPaths</a>.</p>
      */
     inline void SetPathId(const Aws::String& value) { m_pathIdHasBeenSet = true; m_pathId = value; }
 
     /**
-     * <p>The identifier of the path for this product's provisioning. This value is
-     * optional if the product has a default path, and is required if there is more
-     * than one path for the specified product.</p>
+     * <p>The path identifier of the product. This value is optional if the product has
+     * a default path, and required if the product has more than one path. To list the
+     * paths for a product, use <a>ListLaunchPaths</a>.</p>
      */
     inline void SetPathId(Aws::String&& value) { m_pathIdHasBeenSet = true; m_pathId = std::move(value); }
 
     /**
-     * <p>The identifier of the path for this product's provisioning. This value is
-     * optional if the product has a default path, and is required if there is more
-     * than one path for the specified product.</p>
+     * <p>The path identifier of the product. This value is optional if the product has
+     * a default path, and required if the product has more than one path. To list the
+     * paths for a product, use <a>ListLaunchPaths</a>.</p>
      */
     inline void SetPathId(const char* value) { m_pathIdHasBeenSet = true; m_pathId.assign(value); }
 
     /**
-     * <p>The identifier of the path for this product's provisioning. This value is
-     * optional if the product has a default path, and is required if there is more
-     * than one path for the specified product.</p>
+     * <p>The path identifier of the product. This value is optional if the product has
+     * a default path, and required if the product has more than one path. To list the
+     * paths for a product, use <a>ListLaunchPaths</a>.</p>
      */
     inline DescribeProvisioningParametersRequest& WithPathId(const Aws::String& value) { SetPathId(value); return *this;}
 
     /**
-     * <p>The identifier of the path for this product's provisioning. This value is
-     * optional if the product has a default path, and is required if there is more
-     * than one path for the specified product.</p>
+     * <p>The path identifier of the product. This value is optional if the product has
+     * a default path, and required if the product has more than one path. To list the
+     * paths for a product, use <a>ListLaunchPaths</a>.</p>
      */
     inline DescribeProvisioningParametersRequest& WithPathId(Aws::String&& value) { SetPathId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the path for this product's provisioning. This value is
-     * optional if the product has a default path, and is required if there is more
-     * than one path for the specified product.</p>
+     * <p>The path identifier of the product. This value is optional if the product has
+     * a default path, and required if the product has more than one path. To list the
+     * paths for a product, use <a>ListLaunchPaths</a>.</p>
      */
     inline DescribeProvisioningParametersRequest& WithPathId(const char* value) { SetPathId(value); return *this;}
 

@@ -172,37 +172,37 @@ namespace Model
 
 
     /**
-     * <p>The text description of the product.</p>
+     * <p>The description of the product.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The text description of the product.</p>
+     * <p>The description of the product.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The text description of the product.</p>
+     * <p>The description of the product.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The text description of the product.</p>
+     * <p>The description of the product.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The text description of the product.</p>
+     * <p>The description of the product.</p>
      */
     inline CreateProductRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The text description of the product.</p>
+     * <p>The description of the product.</p>
      */
     inline CreateProductRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The text description of the product.</p>
+     * <p>The description of the product.</p>
      */
     inline CreateProductRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -244,247 +244,247 @@ namespace Model
 
 
     /**
-     * <p>Support information about the product.</p>
+     * <p>The support information about the product.</p>
      */
     inline const Aws::String& GetSupportDescription() const{ return m_supportDescription; }
 
     /**
-     * <p>Support information about the product.</p>
+     * <p>The support information about the product.</p>
      */
     inline void SetSupportDescription(const Aws::String& value) { m_supportDescriptionHasBeenSet = true; m_supportDescription = value; }
 
     /**
-     * <p>Support information about the product.</p>
+     * <p>The support information about the product.</p>
      */
     inline void SetSupportDescription(Aws::String&& value) { m_supportDescriptionHasBeenSet = true; m_supportDescription = std::move(value); }
 
     /**
-     * <p>Support information about the product.</p>
+     * <p>The support information about the product.</p>
      */
     inline void SetSupportDescription(const char* value) { m_supportDescriptionHasBeenSet = true; m_supportDescription.assign(value); }
 
     /**
-     * <p>Support information about the product.</p>
+     * <p>The support information about the product.</p>
      */
     inline CreateProductRequest& WithSupportDescription(const Aws::String& value) { SetSupportDescription(value); return *this;}
 
     /**
-     * <p>Support information about the product.</p>
+     * <p>The support information about the product.</p>
      */
     inline CreateProductRequest& WithSupportDescription(Aws::String&& value) { SetSupportDescription(std::move(value)); return *this;}
 
     /**
-     * <p>Support information about the product.</p>
+     * <p>The support information about the product.</p>
      */
     inline CreateProductRequest& WithSupportDescription(const char* value) { SetSupportDescription(value); return *this;}
 
 
     /**
-     * <p>Contact email for product support.</p>
+     * <p>The contact email for product support.</p>
      */
     inline const Aws::String& GetSupportEmail() const{ return m_supportEmail; }
 
     /**
-     * <p>Contact email for product support.</p>
+     * <p>The contact email for product support.</p>
      */
     inline void SetSupportEmail(const Aws::String& value) { m_supportEmailHasBeenSet = true; m_supportEmail = value; }
 
     /**
-     * <p>Contact email for product support.</p>
+     * <p>The contact email for product support.</p>
      */
     inline void SetSupportEmail(Aws::String&& value) { m_supportEmailHasBeenSet = true; m_supportEmail = std::move(value); }
 
     /**
-     * <p>Contact email for product support.</p>
+     * <p>The contact email for product support.</p>
      */
     inline void SetSupportEmail(const char* value) { m_supportEmailHasBeenSet = true; m_supportEmail.assign(value); }
 
     /**
-     * <p>Contact email for product support.</p>
+     * <p>The contact email for product support.</p>
      */
     inline CreateProductRequest& WithSupportEmail(const Aws::String& value) { SetSupportEmail(value); return *this;}
 
     /**
-     * <p>Contact email for product support.</p>
+     * <p>The contact email for product support.</p>
      */
     inline CreateProductRequest& WithSupportEmail(Aws::String&& value) { SetSupportEmail(std::move(value)); return *this;}
 
     /**
-     * <p>Contact email for product support.</p>
+     * <p>The contact email for product support.</p>
      */
     inline CreateProductRequest& WithSupportEmail(const char* value) { SetSupportEmail(value); return *this;}
 
 
     /**
-     * <p>Contact URL for product support.</p>
+     * <p>The contact URL for product support.</p>
      */
     inline const Aws::String& GetSupportUrl() const{ return m_supportUrl; }
 
     /**
-     * <p>Contact URL for product support.</p>
+     * <p>The contact URL for product support.</p>
      */
     inline void SetSupportUrl(const Aws::String& value) { m_supportUrlHasBeenSet = true; m_supportUrl = value; }
 
     /**
-     * <p>Contact URL for product support.</p>
+     * <p>The contact URL for product support.</p>
      */
     inline void SetSupportUrl(Aws::String&& value) { m_supportUrlHasBeenSet = true; m_supportUrl = std::move(value); }
 
     /**
-     * <p>Contact URL for product support.</p>
+     * <p>The contact URL for product support.</p>
      */
     inline void SetSupportUrl(const char* value) { m_supportUrlHasBeenSet = true; m_supportUrl.assign(value); }
 
     /**
-     * <p>Contact URL for product support.</p>
+     * <p>The contact URL for product support.</p>
      */
     inline CreateProductRequest& WithSupportUrl(const Aws::String& value) { SetSupportUrl(value); return *this;}
 
     /**
-     * <p>Contact URL for product support.</p>
+     * <p>The contact URL for product support.</p>
      */
     inline CreateProductRequest& WithSupportUrl(Aws::String&& value) { SetSupportUrl(std::move(value)); return *this;}
 
     /**
-     * <p>Contact URL for product support.</p>
+     * <p>The contact URL for product support.</p>
      */
     inline CreateProductRequest& WithSupportUrl(const char* value) { SetSupportUrl(value); return *this;}
 
 
     /**
-     * <p>The type of the product to create.</p>
+     * <p>The type of product.</p>
      */
     inline const ProductType& GetProductType() const{ return m_productType; }
 
     /**
-     * <p>The type of the product to create.</p>
+     * <p>The type of product.</p>
      */
     inline void SetProductType(const ProductType& value) { m_productTypeHasBeenSet = true; m_productType = value; }
 
     /**
-     * <p>The type of the product to create.</p>
+     * <p>The type of product.</p>
      */
     inline void SetProductType(ProductType&& value) { m_productTypeHasBeenSet = true; m_productType = std::move(value); }
 
     /**
-     * <p>The type of the product to create.</p>
+     * <p>The type of product.</p>
      */
     inline CreateProductRequest& WithProductType(const ProductType& value) { SetProductType(value); return *this;}
 
     /**
-     * <p>The type of the product to create.</p>
+     * <p>The type of product.</p>
      */
     inline CreateProductRequest& WithProductType(ProductType&& value) { SetProductType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Tags to associate with the new product.</p>
+     * <p>One or more tags.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Tags to associate with the new product.</p>
+     * <p>One or more tags.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Tags to associate with the new product.</p>
+     * <p>One or more tags.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Tags to associate with the new product.</p>
+     * <p>One or more tags.</p>
      */
     inline CreateProductRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Tags to associate with the new product.</p>
+     * <p>One or more tags.</p>
      */
     inline CreateProductRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Tags to associate with the new product.</p>
+     * <p>One or more tags.</p>
      */
     inline CreateProductRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Tags to associate with the new product.</p>
+     * <p>One or more tags.</p>
      */
     inline CreateProductRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Parameters for the provisioning artifact.</p>
+     * <p>The configuration of the provisioning artifact.</p>
      */
     inline const ProvisioningArtifactProperties& GetProvisioningArtifactParameters() const{ return m_provisioningArtifactParameters; }
 
     /**
-     * <p>Parameters for the provisioning artifact.</p>
+     * <p>The configuration of the provisioning artifact.</p>
      */
     inline void SetProvisioningArtifactParameters(const ProvisioningArtifactProperties& value) { m_provisioningArtifactParametersHasBeenSet = true; m_provisioningArtifactParameters = value; }
 
     /**
-     * <p>Parameters for the provisioning artifact.</p>
+     * <p>The configuration of the provisioning artifact.</p>
      */
     inline void SetProvisioningArtifactParameters(ProvisioningArtifactProperties&& value) { m_provisioningArtifactParametersHasBeenSet = true; m_provisioningArtifactParameters = std::move(value); }
 
     /**
-     * <p>Parameters for the provisioning artifact.</p>
+     * <p>The configuration of the provisioning artifact.</p>
      */
     inline CreateProductRequest& WithProvisioningArtifactParameters(const ProvisioningArtifactProperties& value) { SetProvisioningArtifactParameters(value); return *this;}
 
     /**
-     * <p>Parameters for the provisioning artifact.</p>
+     * <p>The configuration of the provisioning artifact.</p>
      */
     inline CreateProductRequest& WithProvisioningArtifactParameters(ProvisioningArtifactProperties&& value) { SetProvisioningArtifactParameters(std::move(value)); return *this;}
 
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline CreateProductRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline CreateProductRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
      */
     inline CreateProductRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 

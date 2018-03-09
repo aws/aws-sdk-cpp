@@ -1041,9 +1041,7 @@ namespace Aws
          * "available" state.</p> <p>You can copy a snapshot from one AWS Region to
          * another. In that case, the AWS Region where you call the
          * <code>CopyDBSnapshot</code> action is the destination AWS Region for the DB
-         * snapshot copy. </p> <p>You can't copy an encrypted, shared DB snapshot from one
-         * AWS Region to another.</p> <p>For more information about copying snapshots, see
-         * <a
+         * snapshot copy. </p> <p>For more information about copying snapshots, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopyDBSnapshot.html">Copying
          * a DB Snapshot</a> in the Amazon RDS User Guide. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBSnapshot">AWS
@@ -1056,9 +1054,7 @@ namespace Aws
          * "available" state.</p> <p>You can copy a snapshot from one AWS Region to
          * another. In that case, the AWS Region where you call the
          * <code>CopyDBSnapshot</code> action is the destination AWS Region for the DB
-         * snapshot copy. </p> <p>You can't copy an encrypted, shared DB snapshot from one
-         * AWS Region to another.</p> <p>For more information about copying snapshots, see
-         * <a
+         * snapshot copy. </p> <p>For more information about copying snapshots, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopyDBSnapshot.html">Copying
          * a DB Snapshot</a> in the Amazon RDS User Guide. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBSnapshot">AWS
@@ -1073,9 +1069,7 @@ namespace Aws
          * "available" state.</p> <p>You can copy a snapshot from one AWS Region to
          * another. In that case, the AWS Region where you call the
          * <code>CopyDBSnapshot</code> action is the destination AWS Region for the DB
-         * snapshot copy. </p> <p>You can't copy an encrypted, shared DB snapshot from one
-         * AWS Region to another.</p> <p>For more information about copying snapshots, see
-         * <a
+         * snapshot copy. </p> <p>For more information about copying snapshots, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopyDBSnapshot.html">Copying
          * a DB Snapshot</a> in the Amazon RDS User Guide. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBSnapshot">AWS
@@ -1324,17 +1318,16 @@ namespace Aws
         /**
          * <p>Creates a new DB instance that acts as a Read Replica for an existing source
          * DB instance. You can create a Read Replica for a DB instance running MySQL,
-         * MariaDB, or PostgreSQL. </p> <note> <p>Amazon Aurora does not support this
-         * action. You must call the <code>CreateDBInstance</code> action to create a DB
-         * instance for an Aurora DB cluster. </p> </note> <p>All Read Replica DB instances
-         * are created as Single-AZ deployments with backups disabled. All other DB
-         * instance attributes (including DB security groups and DB parameter groups) are
-         * inherited from the source DB instance, except as specified below. </p>
-         * <important> <p>The source DB instance must have backup retention enabled. </p>
-         * </important> <p>For more information, see <a
+         * MariaDB, or PostgreSQL. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
-         * with PostgreSQL, MySQL, and MariaDB Read Replicas</a>. </p><p><h3>See Also:</h3>
-         * <a
+         * with PostgreSQL, MySQL, and MariaDB Read Replicas</a>. </p> <p>Amazon Aurora
+         * doesn't support this action. You must call the <code>CreateDBInstance</code>
+         * action to create a DB instance for an Aurora DB cluster. </p> <p>All Read
+         * Replica DB instances are created with backups disabled. All other DB instance
+         * attributes (including DB security groups and DB parameter groups) are inherited
+         * from the source DB instance, except as specified following. </p> <important>
+         * <p>Your source DB instance must have backup retention enabled. </p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplica">AWS
          * API Reference</a></p>
          */
@@ -1343,17 +1336,16 @@ namespace Aws
         /**
          * <p>Creates a new DB instance that acts as a Read Replica for an existing source
          * DB instance. You can create a Read Replica for a DB instance running MySQL,
-         * MariaDB, or PostgreSQL. </p> <note> <p>Amazon Aurora does not support this
-         * action. You must call the <code>CreateDBInstance</code> action to create a DB
-         * instance for an Aurora DB cluster. </p> </note> <p>All Read Replica DB instances
-         * are created as Single-AZ deployments with backups disabled. All other DB
-         * instance attributes (including DB security groups and DB parameter groups) are
-         * inherited from the source DB instance, except as specified below. </p>
-         * <important> <p>The source DB instance must have backup retention enabled. </p>
-         * </important> <p>For more information, see <a
+         * MariaDB, or PostgreSQL. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
-         * with PostgreSQL, MySQL, and MariaDB Read Replicas</a>. </p><p><h3>See Also:</h3>
-         * <a
+         * with PostgreSQL, MySQL, and MariaDB Read Replicas</a>. </p> <p>Amazon Aurora
+         * doesn't support this action. You must call the <code>CreateDBInstance</code>
+         * action to create a DB instance for an Aurora DB cluster. </p> <p>All Read
+         * Replica DB instances are created with backups disabled. All other DB instance
+         * attributes (including DB security groups and DB parameter groups) are inherited
+         * from the source DB instance, except as specified following. </p> <important>
+         * <p>Your source DB instance must have backup retention enabled. </p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplica">AWS
          * API Reference</a></p>
          *
@@ -1364,17 +1356,16 @@ namespace Aws
         /**
          * <p>Creates a new DB instance that acts as a Read Replica for an existing source
          * DB instance. You can create a Read Replica for a DB instance running MySQL,
-         * MariaDB, or PostgreSQL. </p> <note> <p>Amazon Aurora does not support this
-         * action. You must call the <code>CreateDBInstance</code> action to create a DB
-         * instance for an Aurora DB cluster. </p> </note> <p>All Read Replica DB instances
-         * are created as Single-AZ deployments with backups disabled. All other DB
-         * instance attributes (including DB security groups and DB parameter groups) are
-         * inherited from the source DB instance, except as specified below. </p>
-         * <important> <p>The source DB instance must have backup retention enabled. </p>
-         * </important> <p>For more information, see <a
+         * MariaDB, or PostgreSQL. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
-         * with PostgreSQL, MySQL, and MariaDB Read Replicas</a>. </p><p><h3>See Also:</h3>
-         * <a
+         * with PostgreSQL, MySQL, and MariaDB Read Replicas</a>. </p> <p>Amazon Aurora
+         * doesn't support this action. You must call the <code>CreateDBInstance</code>
+         * action to create a DB instance for an Aurora DB cluster. </p> <p>All Read
+         * Replica DB instances are created with backups disabled. All other DB instance
+         * attributes (including DB security groups and DB parameter groups) are inherited
+         * from the source DB instance, except as specified following. </p> <important>
+         * <p>Your source DB instance must have backup retention enabled. </p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplica">AWS
          * API Reference</a></p>
          *
@@ -2026,7 +2017,7 @@ namespace Aws
          * <p>Lists all of the attributes for a customer account. The attributes include
          * Amazon RDS quotas for the account, such as the number of DB instances allowed.
          * The description for a quota includes the quota name, current usage toward that
-         * quota, and the quota's maximum value.</p> <p>This command does not take any
+         * quota, and the quota's maximum value.</p> <p>This command doesn't take any
          * parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeAccountAttributes">AWS
          * API Reference</a></p>
@@ -2037,7 +2028,7 @@ namespace Aws
          * <p>Lists all of the attributes for a customer account. The attributes include
          * Amazon RDS quotas for the account, such as the number of DB instances allowed.
          * The description for a quota includes the quota name, current usage toward that
-         * quota, and the quota's maximum value.</p> <p>This command does not take any
+         * quota, and the quota's maximum value.</p> <p>This command doesn't take any
          * parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeAccountAttributes">AWS
          * API Reference</a></p>
@@ -2050,7 +2041,7 @@ namespace Aws
          * <p>Lists all of the attributes for a customer account. The attributes include
          * Amazon RDS quotas for the account, such as the number of DB instances allowed.
          * The description for a quota includes the quota name, current usage toward that
-         * quota, and the quota's maximum value.</p> <p>This command does not take any
+         * quota, and the quota's maximum value.</p> <p>This command doesn't take any
          * parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeAccountAttributes">AWS
          * API Reference</a></p>
@@ -3617,10 +3608,15 @@ namespace Aws
 
         /**
          * <p>Promotes a Read Replica DB instance to a standalone DB instance.</p> <note>
-         * <p>We recommend that you enable automated backups on your Read Replica before
-         * promoting the Read Replica. This ensures that no backup is taken during the
-         * promotion process. Once the instance is promoted to a primary instance, backups
-         * are taken based on your backup settings.</p> </note><p><h3>See Also:</h3>   <a
+         * <ul> <li> <p>Backup duration is a function of the amount of changes to the
+         * database since the previous backup. If you plan to promote a Read Replica to a
+         * standalone instance, we recommend that you enable backups and complete at least
+         * one backup prior to promotion. In addition, a Read Replica cannot be promoted to
+         * a standalone instance when it is in the <code>backing-up</code> status. If you
+         * have enabled backups on your Read Replica, configure the automated backup window
+         * so that daily backups do not interfere with Read Replica promotion.</p> </li>
+         * <li> <p>This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.</p>
+         * </li> </ul> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplica">AWS
          * API Reference</a></p>
          */
@@ -3628,10 +3624,15 @@ namespace Aws
 
         /**
          * <p>Promotes a Read Replica DB instance to a standalone DB instance.</p> <note>
-         * <p>We recommend that you enable automated backups on your Read Replica before
-         * promoting the Read Replica. This ensures that no backup is taken during the
-         * promotion process. Once the instance is promoted to a primary instance, backups
-         * are taken based on your backup settings.</p> </note><p><h3>See Also:</h3>   <a
+         * <ul> <li> <p>Backup duration is a function of the amount of changes to the
+         * database since the previous backup. If you plan to promote a Read Replica to a
+         * standalone instance, we recommend that you enable backups and complete at least
+         * one backup prior to promotion. In addition, a Read Replica cannot be promoted to
+         * a standalone instance when it is in the <code>backing-up</code> status. If you
+         * have enabled backups on your Read Replica, configure the automated backup window
+         * so that daily backups do not interfere with Read Replica promotion.</p> </li>
+         * <li> <p>This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.</p>
+         * </li> </ul> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplica">AWS
          * API Reference</a></p>
          *
@@ -3641,10 +3642,15 @@ namespace Aws
 
         /**
          * <p>Promotes a Read Replica DB instance to a standalone DB instance.</p> <note>
-         * <p>We recommend that you enable automated backups on your Read Replica before
-         * promoting the Read Replica. This ensures that no backup is taken during the
-         * promotion process. Once the instance is promoted to a primary instance, backups
-         * are taken based on your backup settings.</p> </note><p><h3>See Also:</h3>   <a
+         * <ul> <li> <p>Backup duration is a function of the amount of changes to the
+         * database since the previous backup. If you plan to promote a Read Replica to a
+         * standalone instance, we recommend that you enable backups and complete at least
+         * one backup prior to promotion. In addition, a Read Replica cannot be promoted to
+         * a standalone instance when it is in the <code>backing-up</code> status. If you
+         * have enabled backups on your Read Replica, configure the automated backup window
+         * so that daily backups do not interfere with Read Replica promotion.</p> </li>
+         * <li> <p>This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.</p>
+         * </li> </ul> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplica">AWS
          * API Reference</a></p>
          *
@@ -3706,40 +3712,30 @@ namespace Aws
         virtual void PurchaseReservedDBInstancesOfferingAsync(const Model::PurchaseReservedDBInstancesOfferingRequest& request, const PurchaseReservedDBInstancesOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Rebooting a DB instance restarts the database engine service. A reboot also
-         * applies to the DB instance any modifications to the associated DB parameter
-         * group that were pending. Rebooting a DB instance results in a momentary outage
-         * of the instance, during which the DB instance status is set to rebooting. If the
-         * RDS instance is configured for MultiAZ, it is possible that the reboot is
-         * conducted through a failover. An Amazon RDS event is created when the reboot is
-         * completed.</p> <p>If your DB instance is deployed in multiple Availability
-         * Zones, you can force a failover from one AZ to the other during the reboot. You
-         * might force a failover to test the availability of your DB instance deployment
-         * or to restore operations to the original AZ after a failover occurs.</p> <p>The
-         * time required to reboot is a function of the specific database engine's crash
-         * recovery process. To improve the reboot time, we recommend that you reduce
-         * database activities as much as possible during the reboot process to reduce
-         * rollback activity for in-transit transactions.</p><p><h3>See Also:</h3>   <a
+         * <p>You might need to reboot your DB instance, usually for maintenance reasons.
+         * For example, if you make certain modifications, or if you change the DB
+         * parameter group associated with the DB instance, you must reboot the instance
+         * for the changes to take effect. </p> <p>Rebooting a DB instance restarts the
+         * database engine service. Rebooting a DB instance results in a momentary outage,
+         * during which the DB instance status is set to rebooting. </p> <p>For more
+         * information about rebooting, see <a
+         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_RebootInstance.html">Rebooting
+         * a DB Instance</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBInstance">AWS
          * API Reference</a></p>
          */
         virtual Model::RebootDBInstanceOutcome RebootDBInstance(const Model::RebootDBInstanceRequest& request) const;
 
         /**
-         * <p>Rebooting a DB instance restarts the database engine service. A reboot also
-         * applies to the DB instance any modifications to the associated DB parameter
-         * group that were pending. Rebooting a DB instance results in a momentary outage
-         * of the instance, during which the DB instance status is set to rebooting. If the
-         * RDS instance is configured for MultiAZ, it is possible that the reboot is
-         * conducted through a failover. An Amazon RDS event is created when the reboot is
-         * completed.</p> <p>If your DB instance is deployed in multiple Availability
-         * Zones, you can force a failover from one AZ to the other during the reboot. You
-         * might force a failover to test the availability of your DB instance deployment
-         * or to restore operations to the original AZ after a failover occurs.</p> <p>The
-         * time required to reboot is a function of the specific database engine's crash
-         * recovery process. To improve the reboot time, we recommend that you reduce
-         * database activities as much as possible during the reboot process to reduce
-         * rollback activity for in-transit transactions.</p><p><h3>See Also:</h3>   <a
+         * <p>You might need to reboot your DB instance, usually for maintenance reasons.
+         * For example, if you make certain modifications, or if you change the DB
+         * parameter group associated with the DB instance, you must reboot the instance
+         * for the changes to take effect. </p> <p>Rebooting a DB instance restarts the
+         * database engine service. Rebooting a DB instance results in a momentary outage,
+         * during which the DB instance status is set to rebooting. </p> <p>For more
+         * information about rebooting, see <a
+         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_RebootInstance.html">Rebooting
+         * a DB Instance</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBInstance">AWS
          * API Reference</a></p>
          *
@@ -3748,20 +3744,15 @@ namespace Aws
         virtual Model::RebootDBInstanceOutcomeCallable RebootDBInstanceCallable(const Model::RebootDBInstanceRequest& request) const;
 
         /**
-         * <p>Rebooting a DB instance restarts the database engine service. A reboot also
-         * applies to the DB instance any modifications to the associated DB parameter
-         * group that were pending. Rebooting a DB instance results in a momentary outage
-         * of the instance, during which the DB instance status is set to rebooting. If the
-         * RDS instance is configured for MultiAZ, it is possible that the reboot is
-         * conducted through a failover. An Amazon RDS event is created when the reboot is
-         * completed.</p> <p>If your DB instance is deployed in multiple Availability
-         * Zones, you can force a failover from one AZ to the other during the reboot. You
-         * might force a failover to test the availability of your DB instance deployment
-         * or to restore operations to the original AZ after a failover occurs.</p> <p>The
-         * time required to reboot is a function of the specific database engine's crash
-         * recovery process. To improve the reboot time, we recommend that you reduce
-         * database activities as much as possible during the reboot process to reduce
-         * rollback activity for in-transit transactions.</p><p><h3>See Also:</h3>   <a
+         * <p>You might need to reboot your DB instance, usually for maintenance reasons.
+         * For example, if you make certain modifications, or if you change the DB
+         * parameter group associated with the DB instance, you must reboot the instance
+         * for the changes to take effect. </p> <p>Rebooting a DB instance restarts the
+         * database engine service. Rebooting a DB instance results in a momentary outage,
+         * during which the DB instance status is set to rebooting. </p> <p>For more
+         * information about rebooting, see <a
+         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_RebootInstance.html">Rebooting
+         * a DB Instance</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBInstance">AWS
          * API Reference</a></p>
          *
@@ -4143,15 +4134,17 @@ namespace Aws
          * with mirroring; in this case, the instance becomes a mirrored AZ deployment and
          * not a single-AZ deployment.</p> <p>If your intent is to replace your original DB
          * instance with the new, restored DB instance, then rename your original DB
-         * instance before you call the RestoreDBInstanceFromDBSnapshot action. RDS does
-         * not allow two DB instances with the same name. Once you have renamed your
-         * original DB instance with a different identifier, then you can pass the original
-         * name of the DB instance as the DBInstanceIdentifier in the call to the
+         * instance before you call the RestoreDBInstanceFromDBSnapshot action. RDS doesn't
+         * allow two DB instances with the same name. Once you have renamed your original
+         * DB instance with a different identifier, then you can pass the original name of
+         * the DB instance as the DBInstanceIdentifier in the call to the
          * RestoreDBInstanceFromDBSnapshot action. The result is that you will replace the
          * original DB instance with the DB instance created from the snapshot.</p> <p>If
          * you are restoring from a shared manual DB snapshot, the
-         * <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB
-         * snapshot.</p><p><h3>See Also:</h3>   <a
+         * <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p>
+         * <note> <p>This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For
+         * Aurora, use <a>RestoreDBClusterFromSnapshot</a>.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot">AWS
          * API Reference</a></p>
          */
@@ -4166,15 +4159,17 @@ namespace Aws
          * with mirroring; in this case, the instance becomes a mirrored AZ deployment and
          * not a single-AZ deployment.</p> <p>If your intent is to replace your original DB
          * instance with the new, restored DB instance, then rename your original DB
-         * instance before you call the RestoreDBInstanceFromDBSnapshot action. RDS does
-         * not allow two DB instances with the same name. Once you have renamed your
-         * original DB instance with a different identifier, then you can pass the original
-         * name of the DB instance as the DBInstanceIdentifier in the call to the
+         * instance before you call the RestoreDBInstanceFromDBSnapshot action. RDS doesn't
+         * allow two DB instances with the same name. Once you have renamed your original
+         * DB instance with a different identifier, then you can pass the original name of
+         * the DB instance as the DBInstanceIdentifier in the call to the
          * RestoreDBInstanceFromDBSnapshot action. The result is that you will replace the
          * original DB instance with the DB instance created from the snapshot.</p> <p>If
          * you are restoring from a shared manual DB snapshot, the
-         * <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB
-         * snapshot.</p><p><h3>See Also:</h3>   <a
+         * <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p>
+         * <note> <p>This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For
+         * Aurora, use <a>RestoreDBClusterFromSnapshot</a>.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot">AWS
          * API Reference</a></p>
          *
@@ -4191,15 +4186,17 @@ namespace Aws
          * with mirroring; in this case, the instance becomes a mirrored AZ deployment and
          * not a single-AZ deployment.</p> <p>If your intent is to replace your original DB
          * instance with the new, restored DB instance, then rename your original DB
-         * instance before you call the RestoreDBInstanceFromDBSnapshot action. RDS does
-         * not allow two DB instances with the same name. Once you have renamed your
-         * original DB instance with a different identifier, then you can pass the original
-         * name of the DB instance as the DBInstanceIdentifier in the call to the
+         * instance before you call the RestoreDBInstanceFromDBSnapshot action. RDS doesn't
+         * allow two DB instances with the same name. Once you have renamed your original
+         * DB instance with a different identifier, then you can pass the original name of
+         * the DB instance as the DBInstanceIdentifier in the call to the
          * RestoreDBInstanceFromDBSnapshot action. The result is that you will replace the
          * original DB instance with the DB instance created from the snapshot.</p> <p>If
          * you are restoring from a shared manual DB snapshot, the
-         * <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB
-         * snapshot.</p><p><h3>See Also:</h3>   <a
+         * <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p>
+         * <note> <p>This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For
+         * Aurora, use <a>RestoreDBClusterFromSnapshot</a>.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot">AWS
          * API Reference</a></p>
          *
@@ -4260,8 +4257,9 @@ namespace Aws
          * parameter group. By default, the new DB instance is created as a single-AZ
          * deployment except when the instance is a SQL Server instance that has an option
          * group that is associated with mirroring; in this case, the instance becomes a
-         * mirrored deployment and not a single-AZ deployment.</p><p><h3>See Also:</h3>  
-         * <a
+         * mirrored deployment and not a single-AZ deployment.</p> <note> <p>This command
+         * doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use
+         * <a>RestoreDBClusterToPointInTime</a>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceToPointInTime">AWS
          * API Reference</a></p>
          */
@@ -4277,8 +4275,9 @@ namespace Aws
          * parameter group. By default, the new DB instance is created as a single-AZ
          * deployment except when the instance is a SQL Server instance that has an option
          * group that is associated with mirroring; in this case, the instance becomes a
-         * mirrored deployment and not a single-AZ deployment.</p><p><h3>See Also:</h3>  
-         * <a
+         * mirrored deployment and not a single-AZ deployment.</p> <note> <p>This command
+         * doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use
+         * <a>RestoreDBClusterToPointInTime</a>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceToPointInTime">AWS
          * API Reference</a></p>
          *
@@ -4296,8 +4295,9 @@ namespace Aws
          * parameter group. By default, the new DB instance is created as a single-AZ
          * deployment except when the instance is a SQL Server instance that has an option
          * group that is associated with mirroring; in this case, the instance becomes a
-         * mirrored deployment and not a single-AZ deployment.</p><p><h3>See Also:</h3>  
-         * <a
+         * mirrored deployment and not a single-AZ deployment.</p> <note> <p>This command
+         * doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use
+         * <a>RestoreDBClusterToPointInTime</a>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceToPointInTime">AWS
          * API Reference</a></p>
          *
@@ -4343,7 +4343,8 @@ namespace Aws
          * <p> Starts a DB instance that was stopped using the AWS console, the
          * stop-db-instance AWS CLI command, or the StopDBInstance action. For more
          * information, see Stopping and Starting a DB instance in the AWS RDS user guide.
-         * </p><p><h3>See Also:</h3>   <a
+         * </p> <note> <p>This command doesn't apply to Aurora MySQL and Aurora
+         * PostgreSQL.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstance">AWS
          * API Reference</a></p>
          */
@@ -4353,7 +4354,8 @@ namespace Aws
          * <p> Starts a DB instance that was stopped using the AWS console, the
          * stop-db-instance AWS CLI command, or the StopDBInstance action. For more
          * information, see Stopping and Starting a DB instance in the AWS RDS user guide.
-         * </p><p><h3>See Also:</h3>   <a
+         * </p> <note> <p>This command doesn't apply to Aurora MySQL and Aurora
+         * PostgreSQL.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstance">AWS
          * API Reference</a></p>
          *
@@ -4365,7 +4367,8 @@ namespace Aws
          * <p> Starts a DB instance that was stopped using the AWS console, the
          * stop-db-instance AWS CLI command, or the StopDBInstance action. For more
          * information, see Stopping and Starting a DB instance in the AWS RDS user guide.
-         * </p><p><h3>See Also:</h3>   <a
+         * </p> <note> <p>This command doesn't apply to Aurora MySQL and Aurora
+         * PostgreSQL.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstance">AWS
          * API Reference</a></p>
          *
@@ -4378,7 +4381,9 @@ namespace Aws
          * instance's metadata, including its endpoint, DB parameter group, and option
          * group membership. Amazon RDS also retains the transaction logs so you can do a
          * point-in-time restore if necessary. For more information, see Stopping and
-         * Starting a DB instance in the AWS RDS user guide. </p><p><h3>See Also:</h3>   <a
+         * Starting a DB instance in the AWS RDS user guide. </p> <note> <p>This command
+         * doesn't apply to Aurora MySQL and Aurora PostgreSQL.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBInstance">AWS
          * API Reference</a></p>
          */
@@ -4389,7 +4394,9 @@ namespace Aws
          * instance's metadata, including its endpoint, DB parameter group, and option
          * group membership. Amazon RDS also retains the transaction logs so you can do a
          * point-in-time restore if necessary. For more information, see Stopping and
-         * Starting a DB instance in the AWS RDS user guide. </p><p><h3>See Also:</h3>   <a
+         * Starting a DB instance in the AWS RDS user guide. </p> <note> <p>This command
+         * doesn't apply to Aurora MySQL and Aurora PostgreSQL.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBInstance">AWS
          * API Reference</a></p>
          *
@@ -4402,7 +4409,9 @@ namespace Aws
          * instance's metadata, including its endpoint, DB parameter group, and option
          * group membership. Amazon RDS also retains the transaction logs so you can do a
          * point-in-time restore if necessary. For more information, see Stopping and
-         * Starting a DB instance in the AWS RDS user guide. </p><p><h3>See Also:</h3>   <a
+         * Starting a DB instance in the AWS RDS user guide. </p> <note> <p>This command
+         * doesn't apply to Aurora MySQL and Aurora PostgreSQL.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBInstance">AWS
          * API Reference</a></p>
          *

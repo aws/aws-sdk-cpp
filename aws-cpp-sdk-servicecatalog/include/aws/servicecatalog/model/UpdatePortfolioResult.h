@@ -45,63 +45,63 @@ namespace Model
 
 
     /**
-     * <p>The resulting detailed portfolio information.</p>
+     * <p>Information about the portfolio.</p>
      */
     inline const PortfolioDetail& GetPortfolioDetail() const{ return m_portfolioDetail; }
 
     /**
-     * <p>The resulting detailed portfolio information.</p>
+     * <p>Information about the portfolio.</p>
      */
     inline void SetPortfolioDetail(const PortfolioDetail& value) { m_portfolioDetail = value; }
 
     /**
-     * <p>The resulting detailed portfolio information.</p>
+     * <p>Information about the portfolio.</p>
      */
     inline void SetPortfolioDetail(PortfolioDetail&& value) { m_portfolioDetail = std::move(value); }
 
     /**
-     * <p>The resulting detailed portfolio information.</p>
+     * <p>Information about the portfolio.</p>
      */
     inline UpdatePortfolioResult& WithPortfolioDetail(const PortfolioDetail& value) { SetPortfolioDetail(value); return *this;}
 
     /**
-     * <p>The resulting detailed portfolio information.</p>
+     * <p>Information about the portfolio.</p>
      */
     inline UpdatePortfolioResult& WithPortfolioDetail(PortfolioDetail&& value) { SetPortfolioDetail(std::move(value)); return *this;}
 
 
     /**
-     * <p>Tags associated with the portfolio.</p>
+     * <p>Information about the tags associated with the portfolio.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Tags associated with the portfolio.</p>
+     * <p>Information about the tags associated with the portfolio.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
 
     /**
-     * <p>Tags associated with the portfolio.</p>
+     * <p>Information about the tags associated with the portfolio.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>Tags associated with the portfolio.</p>
+     * <p>Information about the tags associated with the portfolio.</p>
      */
     inline UpdatePortfolioResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Tags associated with the portfolio.</p>
+     * <p>Information about the tags associated with the portfolio.</p>
      */
     inline UpdatePortfolioResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Tags associated with the portfolio.</p>
+     * <p>Information about the tags associated with the portfolio.</p>
      */
     inline UpdatePortfolioResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Tags associated with the portfolio.</p>
+     * <p>Information about the tags associated with the portfolio.</p>
      */
     inline UpdatePortfolioResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 

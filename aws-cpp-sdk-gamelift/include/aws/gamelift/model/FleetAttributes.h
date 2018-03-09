@@ -16,6 +16,8 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/gamelift/model/FleetType.h>
+#include <aws/gamelift/model/EC2InstanceType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/gamelift/model/FleetStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -139,6 +141,78 @@ namespace Model
      * <p>Identifier for a fleet that is unique across all regions.</p>
      */
     inline FleetAttributes& WithFleetArn(const char* value) { SetFleetArn(value); return *this;}
+
+
+    /**
+     * <p>Indicates whether the fleet uses on-demand or spot instances. A spot instance
+     * in use may be interrupted with a two-minute notification.</p>
+     */
+    inline const FleetType& GetFleetType() const{ return m_fleetType; }
+
+    /**
+     * <p>Indicates whether the fleet uses on-demand or spot instances. A spot instance
+     * in use may be interrupted with a two-minute notification.</p>
+     */
+    inline void SetFleetType(const FleetType& value) { m_fleetTypeHasBeenSet = true; m_fleetType = value; }
+
+    /**
+     * <p>Indicates whether the fleet uses on-demand or spot instances. A spot instance
+     * in use may be interrupted with a two-minute notification.</p>
+     */
+    inline void SetFleetType(FleetType&& value) { m_fleetTypeHasBeenSet = true; m_fleetType = std::move(value); }
+
+    /**
+     * <p>Indicates whether the fleet uses on-demand or spot instances. A spot instance
+     * in use may be interrupted with a two-minute notification.</p>
+     */
+    inline FleetAttributes& WithFleetType(const FleetType& value) { SetFleetType(value); return *this;}
+
+    /**
+     * <p>Indicates whether the fleet uses on-demand or spot instances. A spot instance
+     * in use may be interrupted with a two-minute notification.</p>
+     */
+    inline FleetAttributes& WithFleetType(FleetType&& value) { SetFleetType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>EC2 instance type indicating the computing resources of each instance in the
+     * fleet, including CPU, memory, storage, and networking capacity. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+     * for detailed descriptions.</p>
+     */
+    inline const EC2InstanceType& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>EC2 instance type indicating the computing resources of each instance in the
+     * fleet, including CPU, memory, storage, and networking capacity. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+     * for detailed descriptions.</p>
+     */
+    inline void SetInstanceType(const EC2InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+
+    /**
+     * <p>EC2 instance type indicating the computing resources of each instance in the
+     * fleet, including CPU, memory, storage, and networking capacity. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+     * for detailed descriptions.</p>
+     */
+    inline void SetInstanceType(EC2InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
+
+    /**
+     * <p>EC2 instance type indicating the computing resources of each instance in the
+     * fleet, including CPU, memory, storage, and networking capacity. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+     * for detailed descriptions.</p>
+     */
+    inline FleetAttributes& WithInstanceType(const EC2InstanceType& value) { SetInstanceType(value); return *this;}
+
+    /**
+     * <p>EC2 instance type indicating the computing resources of each instance in the
+     * fleet, including CPU, memory, storage, and networking capacity. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+     * for detailed descriptions.</p>
+     */
+    inline FleetAttributes& WithInstanceType(EC2InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
 
     /**
@@ -782,6 +856,12 @@ namespace Model
 
     Aws::String m_fleetArn;
     bool m_fleetArnHasBeenSet;
+
+    FleetType m_fleetType;
+    bool m_fleetTypeHasBeenSet;
+
+    EC2InstanceType m_instanceType;
+    bool m_instanceTypeHasBeenSet;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;

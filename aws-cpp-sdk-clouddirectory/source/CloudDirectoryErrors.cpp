@@ -39,6 +39,7 @@ static const int FACET_VALIDATION_HASH = HashingUtils::HashString("FacetValidati
 static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceException");
 static const int SCHEMA_ALREADY_EXISTS_HASH = HashingUtils::HashString("SchemaAlreadyExistsException");
 static const int FACET_NOT_FOUND_HASH = HashingUtils::HashString("FacetNotFoundException");
+static const int INCOMPATIBLE_SCHEMA_HASH = HashingUtils::HashString("IncompatibleSchemaException");
 static const int INVALID_FACET_UPDATE_HASH = HashingUtils::HashString("InvalidFacetUpdateException");
 static const int NOT_POLICY_HASH = HashingUtils::HashString("NotPolicyException");
 static const int UNSUPPORTED_INDEX_TYPE_HASH = HashingUtils::HashString("UnsupportedIndexTypeException");
@@ -108,6 +109,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == FACET_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::FACET_NOT_FOUND), false);
+  }
+  else if (hashCode == INCOMPATIBLE_SCHEMA_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::INCOMPATIBLE_SCHEMA), false);
   }
   else if (hashCode == INVALID_FACET_UPDATE_HASH)
   {

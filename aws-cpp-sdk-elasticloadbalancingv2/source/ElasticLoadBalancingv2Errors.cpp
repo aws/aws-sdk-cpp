@@ -57,8 +57,8 @@ static const int DUPLICATE_LOAD_BALANCER_NAME_HASH = HashingUtils::HashString("D
 static const int DUPLICATE_TARGET_GROUP_NAME_HASH = HashingUtils::HashString("DuplicateTargetGroupName");
 static const int S_S_L_POLICY_NOT_FOUND_HASH = HashingUtils::HashString("SSLPolicyNotFound");
 static const int TOO_MANY_CERTIFICATES_HASH = HashingUtils::HashString("TooManyCertificates");
-static const int TOO_MANY_RULES_HASH = HashingUtils::HashString("TooManyRules");
 static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OperationNotPermitted");
+static const int TOO_MANY_RULES_HASH = HashingUtils::HashString("TooManyRules");
 static const int LISTENER_NOT_FOUND_HASH = HashingUtils::HashString("ListenerNotFound");
 static const int HEALTH_UNAVAILABLE_HASH = HashingUtils::HashString("HealthUnavailable");
 
@@ -183,13 +183,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::TOO_MANY_CERTIFICATES), false);
   }
-  else if (hashCode == TOO_MANY_RULES_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::TOO_MANY_RULES), false);
-  }
   else if (hashCode == OPERATION_NOT_PERMITTED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::OPERATION_NOT_PERMITTED), false);
+  }
+  else if (hashCode == TOO_MANY_RULES_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::TOO_MANY_RULES), false);
   }
   else if (hashCode == LISTENER_NOT_FOUND_HASH)
   {

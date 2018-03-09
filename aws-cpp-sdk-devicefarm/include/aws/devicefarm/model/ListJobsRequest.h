@@ -49,37 +49,37 @@ namespace Model
 
 
     /**
-     * <p>The jobs' ARNs.</p>
+     * <p>The run's Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The jobs' ARNs.</p>
+     * <p>The run's Amazon Resource Name (ARN).</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The jobs' ARNs.</p>
+     * <p>The run's Amazon Resource Name (ARN).</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The jobs' ARNs.</p>
+     * <p>The run's Amazon Resource Name (ARN).</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The jobs' ARNs.</p>
+     * <p>The run's Amazon Resource Name (ARN).</p>
      */
     inline ListJobsRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The jobs' ARNs.</p>
+     * <p>The run's Amazon Resource Name (ARN).</p>
      */
     inline ListJobsRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The jobs' ARNs.</p>
+     * <p>The run's Amazon Resource Name (ARN).</p>
      */
     inline ListJobsRequest& WithArn(const char* value) { SetArn(value); return *this;}
 

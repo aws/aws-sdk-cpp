@@ -57,7 +57,7 @@ namespace Model
      * (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from
      * which the functions are replicated. For example, if you specify
      * <code>us-east-1</code>, only functions replicated from that region will be
-     * returned.</p> <p> <code>ALL</code> _ Will return all functions from any region.
+     * returned.</p> <p> <code>ALL</code>: Will return all functions from any region.
      * If specified, you also must specify a valid FunctionVersion parameter.</p>
      */
     inline const Aws::String& GetMasterRegion() const{ return m_masterRegion; }
@@ -67,7 +67,7 @@ namespace Model
      * (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from
      * which the functions are replicated. For example, if you specify
      * <code>us-east-1</code>, only functions replicated from that region will be
-     * returned.</p> <p> <code>ALL</code> _ Will return all functions from any region.
+     * returned.</p> <p> <code>ALL</code>: Will return all functions from any region.
      * If specified, you also must specify a valid FunctionVersion parameter.</p>
      */
     inline void SetMasterRegion(const Aws::String& value) { m_masterRegionHasBeenSet = true; m_masterRegion = value; }
@@ -77,7 +77,7 @@ namespace Model
      * (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from
      * which the functions are replicated. For example, if you specify
      * <code>us-east-1</code>, only functions replicated from that region will be
-     * returned.</p> <p> <code>ALL</code> _ Will return all functions from any region.
+     * returned.</p> <p> <code>ALL</code>: Will return all functions from any region.
      * If specified, you also must specify a valid FunctionVersion parameter.</p>
      */
     inline void SetMasterRegion(Aws::String&& value) { m_masterRegionHasBeenSet = true; m_masterRegion = std::move(value); }
@@ -87,7 +87,7 @@ namespace Model
      * (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from
      * which the functions are replicated. For example, if you specify
      * <code>us-east-1</code>, only functions replicated from that region will be
-     * returned.</p> <p> <code>ALL</code> _ Will return all functions from any region.
+     * returned.</p> <p> <code>ALL</code>: Will return all functions from any region.
      * If specified, you also must specify a valid FunctionVersion parameter.</p>
      */
     inline void SetMasterRegion(const char* value) { m_masterRegionHasBeenSet = true; m_masterRegion.assign(value); }
@@ -97,7 +97,7 @@ namespace Model
      * (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from
      * which the functions are replicated. For example, if you specify
      * <code>us-east-1</code>, only functions replicated from that region will be
-     * returned.</p> <p> <code>ALL</code> _ Will return all functions from any region.
+     * returned.</p> <p> <code>ALL</code>: Will return all functions from any region.
      * If specified, you also must specify a valid FunctionVersion parameter.</p>
      */
     inline ListFunctionsRequest& WithMasterRegion(const Aws::String& value) { SetMasterRegion(value); return *this;}
@@ -107,7 +107,7 @@ namespace Model
      * (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from
      * which the functions are replicated. For example, if you specify
      * <code>us-east-1</code>, only functions replicated from that region will be
-     * returned.</p> <p> <code>ALL</code> _ Will return all functions from any region.
+     * returned.</p> <p> <code>ALL</code>: Will return all functions from any region.
      * If specified, you also must specify a valid FunctionVersion parameter.</p>
      */
     inline ListFunctionsRequest& WithMasterRegion(Aws::String&& value) { SetMasterRegion(std::move(value)); return *this;}
@@ -117,7 +117,7 @@ namespace Model
      * (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from
      * which the functions are replicated. For example, if you specify
      * <code>us-east-1</code>, only functions replicated from that region will be
-     * returned.</p> <p> <code>ALL</code> _ Will return all functions from any region.
+     * returned.</p> <p> <code>ALL</code>: Will return all functions from any region.
      * If specified, you also must specify a valid FunctionVersion parameter.</p>
      */
     inline ListFunctionsRequest& WithMasterRegion(const char* value) { SetMasterRegion(value); return *this;}
@@ -126,40 +126,40 @@ namespace Model
     /**
      * <p>Optional string. If not specified, only the unqualified functions ARNs
      * (Amazon Resource Names) will be returned.</p> <p>Valid value:</p> <p>
-     * <code>ALL</code> _ Will return all versions, including <code>$LATEST</code>
-     * which will have fully qualified ARNs (Amazon Resource Names).</p>
+     * <code>ALL</code>: Will return all versions, including <code>$LATEST</code> which
+     * will have fully qualified ARNs (Amazon Resource Names).</p>
      */
     inline const FunctionVersion& GetFunctionVersion() const{ return m_functionVersion; }
 
     /**
      * <p>Optional string. If not specified, only the unqualified functions ARNs
      * (Amazon Resource Names) will be returned.</p> <p>Valid value:</p> <p>
-     * <code>ALL</code> _ Will return all versions, including <code>$LATEST</code>
-     * which will have fully qualified ARNs (Amazon Resource Names).</p>
+     * <code>ALL</code>: Will return all versions, including <code>$LATEST</code> which
+     * will have fully qualified ARNs (Amazon Resource Names).</p>
      */
     inline void SetFunctionVersion(const FunctionVersion& value) { m_functionVersionHasBeenSet = true; m_functionVersion = value; }
 
     /**
      * <p>Optional string. If not specified, only the unqualified functions ARNs
      * (Amazon Resource Names) will be returned.</p> <p>Valid value:</p> <p>
-     * <code>ALL</code> _ Will return all versions, including <code>$LATEST</code>
-     * which will have fully qualified ARNs (Amazon Resource Names).</p>
+     * <code>ALL</code>: Will return all versions, including <code>$LATEST</code> which
+     * will have fully qualified ARNs (Amazon Resource Names).</p>
      */
     inline void SetFunctionVersion(FunctionVersion&& value) { m_functionVersionHasBeenSet = true; m_functionVersion = std::move(value); }
 
     /**
      * <p>Optional string. If not specified, only the unqualified functions ARNs
      * (Amazon Resource Names) will be returned.</p> <p>Valid value:</p> <p>
-     * <code>ALL</code> _ Will return all versions, including <code>$LATEST</code>
-     * which will have fully qualified ARNs (Amazon Resource Names).</p>
+     * <code>ALL</code>: Will return all versions, including <code>$LATEST</code> which
+     * will have fully qualified ARNs (Amazon Resource Names).</p>
      */
     inline ListFunctionsRequest& WithFunctionVersion(const FunctionVersion& value) { SetFunctionVersion(value); return *this;}
 
     /**
      * <p>Optional string. If not specified, only the unqualified functions ARNs
      * (Amazon Resource Names) will be returned.</p> <p>Valid value:</p> <p>
-     * <code>ALL</code> _ Will return all versions, including <code>$LATEST</code>
-     * which will have fully qualified ARNs (Amazon Resource Names).</p>
+     * <code>ALL</code>: Will return all versions, including <code>$LATEST</code> which
+     * will have fully qualified ARNs (Amazon Resource Names).</p>
      */
     inline ListFunctionsRequest& WithFunctionVersion(FunctionVersion&& value) { SetFunctionVersion(std::move(value)); return *this;}
 

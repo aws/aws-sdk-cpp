@@ -45,77 +45,77 @@ namespace Model
 
 
     /**
-     * <p>The container instance ID or full Amazon Resource Name (ARN) of the container
-     * instance. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
-     * the region of the container instance, the AWS account ID of the container
-     * instance owner, the <code>container-instance</code> namespace, and then the
-     * container instance ID. For example,
+     * <p>The container instance ID or full ARN of the container instance. The ARN
+     * contains the <code>arn:aws:ecs</code> namespace, followed by the region of the
+     * container instance, the AWS account ID of the container instance owner, the
+     * <code>container-instance</code> namespace, and then the container instance ID.
+     * For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
      * </code>.</p>
      */
     inline const Aws::String& GetContainerInstance() const{ return m_containerInstance; }
 
     /**
-     * <p>The container instance ID or full Amazon Resource Name (ARN) of the container
-     * instance. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
-     * the region of the container instance, the AWS account ID of the container
-     * instance owner, the <code>container-instance</code> namespace, and then the
-     * container instance ID. For example,
+     * <p>The container instance ID or full ARN of the container instance. The ARN
+     * contains the <code>arn:aws:ecs</code> namespace, followed by the region of the
+     * container instance, the AWS account ID of the container instance owner, the
+     * <code>container-instance</code> namespace, and then the container instance ID.
+     * For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
      * </code>.</p>
      */
     inline void SetContainerInstance(const Aws::String& value) { m_containerInstanceHasBeenSet = true; m_containerInstance = value; }
 
     /**
-     * <p>The container instance ID or full Amazon Resource Name (ARN) of the container
-     * instance. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
-     * the region of the container instance, the AWS account ID of the container
-     * instance owner, the <code>container-instance</code> namespace, and then the
-     * container instance ID. For example,
+     * <p>The container instance ID or full ARN of the container instance. The ARN
+     * contains the <code>arn:aws:ecs</code> namespace, followed by the region of the
+     * container instance, the AWS account ID of the container instance owner, the
+     * <code>container-instance</code> namespace, and then the container instance ID.
+     * For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
      * </code>.</p>
      */
     inline void SetContainerInstance(Aws::String&& value) { m_containerInstanceHasBeenSet = true; m_containerInstance = std::move(value); }
 
     /**
-     * <p>The container instance ID or full Amazon Resource Name (ARN) of the container
-     * instance. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
-     * the region of the container instance, the AWS account ID of the container
-     * instance owner, the <code>container-instance</code> namespace, and then the
-     * container instance ID. For example,
+     * <p>The container instance ID or full ARN of the container instance. The ARN
+     * contains the <code>arn:aws:ecs</code> namespace, followed by the region of the
+     * container instance, the AWS account ID of the container instance owner, the
+     * <code>container-instance</code> namespace, and then the container instance ID.
+     * For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
      * </code>.</p>
      */
     inline void SetContainerInstance(const char* value) { m_containerInstanceHasBeenSet = true; m_containerInstance.assign(value); }
 
     /**
-     * <p>The container instance ID or full Amazon Resource Name (ARN) of the container
-     * instance. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
-     * the region of the container instance, the AWS account ID of the container
-     * instance owner, the <code>container-instance</code> namespace, and then the
-     * container instance ID. For example,
+     * <p>The container instance ID or full ARN of the container instance. The ARN
+     * contains the <code>arn:aws:ecs</code> namespace, followed by the region of the
+     * container instance, the AWS account ID of the container instance owner, the
+     * <code>container-instance</code> namespace, and then the container instance ID.
+     * For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
      * </code>.</p>
      */
     inline DiscoverPollEndpointRequest& WithContainerInstance(const Aws::String& value) { SetContainerInstance(value); return *this;}
 
     /**
-     * <p>The container instance ID or full Amazon Resource Name (ARN) of the container
-     * instance. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
-     * the region of the container instance, the AWS account ID of the container
-     * instance owner, the <code>container-instance</code> namespace, and then the
-     * container instance ID. For example,
+     * <p>The container instance ID or full ARN of the container instance. The ARN
+     * contains the <code>arn:aws:ecs</code> namespace, followed by the region of the
+     * container instance, the AWS account ID of the container instance owner, the
+     * <code>container-instance</code> namespace, and then the container instance ID.
+     * For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
      * </code>.</p>
      */
     inline DiscoverPollEndpointRequest& WithContainerInstance(Aws::String&& value) { SetContainerInstance(std::move(value)); return *this;}
 
     /**
-     * <p>The container instance ID or full Amazon Resource Name (ARN) of the container
-     * instance. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
-     * the region of the container instance, the AWS account ID of the container
-     * instance owner, the <code>container-instance</code> namespace, and then the
-     * container instance ID. For example,
+     * <p>The container instance ID or full ARN of the container instance. The ARN
+     * contains the <code>arn:aws:ecs</code> namespace, followed by the region of the
+     * container instance, the AWS account ID of the container instance owner, the
+     * <code>container-instance</code> namespace, and then the container instance ID.
+     * For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
      * </code>.</p>
      */

@@ -26,11 +26,15 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateRestApiResult::CreateRestApiResult()
+CreateRestApiResult::CreateRestApiResult() : 
+    m_minimumCompressionSize(0),
+    m_apiKeySource(ApiKeySourceType::NOT_SET)
 {
 }
 
-CreateRestApiResult::CreateRestApiResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+CreateRestApiResult::CreateRestApiResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_minimumCompressionSize(0),
+    m_apiKeySource(ApiKeySourceType::NOT_SET)
 {
   *this = result;
 }
@@ -84,6 +88,18 @@ CreateRestApiResult& CreateRestApiResult::operator =(const Aws::AmazonWebService
     {
       m_binaryMediaTypes.push_back(binaryMediaTypesJsonList[binaryMediaTypesIndex].AsString());
     }
+  }
+
+  if(jsonValue.ValueExists("minimumCompressionSize"))
+  {
+    m_minimumCompressionSize = jsonValue.GetInteger("minimumCompressionSize");
+
+  }
+
+  if(jsonValue.ValueExists("apiKeySource"))
+  {
+    m_apiKeySource = ApiKeySourceTypeMapper::GetApiKeySourceTypeForName(jsonValue.GetString("apiKeySource"));
+
   }
 
   if(jsonValue.ValueExists("endpointConfiguration"))

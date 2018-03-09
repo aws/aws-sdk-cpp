@@ -29,6 +29,7 @@ namespace Model
     PENDING,
     AVAILABLE,
     FAILED,
+    COPYING,
     DELETING
   };
 

@@ -44,7 +44,7 @@ namespace Model
 
   /**
    * <p>Describes the launch specification for one or more Spot
-   * instances.</p><p><h3>See Also:</h3>   <a
+   * Instances.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotFleetLaunchSpecification">AWS
    * API Reference</a></p>
    */
@@ -293,27 +293,27 @@ namespace Model
 
 
     /**
-     * <p>The instance type. Note that T2 and HS1 instance types are not supported.</p>
+     * <p>The instance type.</p>
      */
     inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The instance type. Note that T2 and HS1 instance types are not supported.</p>
+     * <p>The instance type.</p>
      */
     inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type. Note that T2 and HS1 instance types are not supported.</p>
+     * <p>The instance type.</p>
      */
     inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The instance type. Note that T2 and HS1 instance types are not supported.</p>
+     * <p>The instance type.</p>
      */
     inline SpotFleetLaunchSpecification& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type. Note that T2 and HS1 instance types are not supported.</p>
+     * <p>The instance type.</p>
      */
     inline SpotFleetLaunchSpecification& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
@@ -522,58 +522,58 @@ namespace Model
 
 
     /**
-     * <p>The bid price per unit hour for the specified instance type. If this value is
-     * not specified, the default is the Spot bid price specified for the fleet. To
-     * determine the bid price per unit hour, divide the Spot bid price by the value of
-     * <code>WeightedCapacity</code>.</p>
+     * <p>The maximum price per unit hour that you are willing to pay for a Spot
+     * Instance. If this value is not specified, the default is the Spot price
+     * specified for the fleet. To determine the Spot price per unit hour, divide the
+     * Spot price by the value of <code>WeightedCapacity</code>.</p>
      */
     inline const Aws::String& GetSpotPrice() const{ return m_spotPrice; }
 
     /**
-     * <p>The bid price per unit hour for the specified instance type. If this value is
-     * not specified, the default is the Spot bid price specified for the fleet. To
-     * determine the bid price per unit hour, divide the Spot bid price by the value of
-     * <code>WeightedCapacity</code>.</p>
+     * <p>The maximum price per unit hour that you are willing to pay for a Spot
+     * Instance. If this value is not specified, the default is the Spot price
+     * specified for the fleet. To determine the Spot price per unit hour, divide the
+     * Spot price by the value of <code>WeightedCapacity</code>.</p>
      */
     inline void SetSpotPrice(const Aws::String& value) { m_spotPriceHasBeenSet = true; m_spotPrice = value; }
 
     /**
-     * <p>The bid price per unit hour for the specified instance type. If this value is
-     * not specified, the default is the Spot bid price specified for the fleet. To
-     * determine the bid price per unit hour, divide the Spot bid price by the value of
-     * <code>WeightedCapacity</code>.</p>
+     * <p>The maximum price per unit hour that you are willing to pay for a Spot
+     * Instance. If this value is not specified, the default is the Spot price
+     * specified for the fleet. To determine the Spot price per unit hour, divide the
+     * Spot price by the value of <code>WeightedCapacity</code>.</p>
      */
     inline void SetSpotPrice(Aws::String&& value) { m_spotPriceHasBeenSet = true; m_spotPrice = std::move(value); }
 
     /**
-     * <p>The bid price per unit hour for the specified instance type. If this value is
-     * not specified, the default is the Spot bid price specified for the fleet. To
-     * determine the bid price per unit hour, divide the Spot bid price by the value of
-     * <code>WeightedCapacity</code>.</p>
+     * <p>The maximum price per unit hour that you are willing to pay for a Spot
+     * Instance. If this value is not specified, the default is the Spot price
+     * specified for the fleet. To determine the Spot price per unit hour, divide the
+     * Spot price by the value of <code>WeightedCapacity</code>.</p>
      */
     inline void SetSpotPrice(const char* value) { m_spotPriceHasBeenSet = true; m_spotPrice.assign(value); }
 
     /**
-     * <p>The bid price per unit hour for the specified instance type. If this value is
-     * not specified, the default is the Spot bid price specified for the fleet. To
-     * determine the bid price per unit hour, divide the Spot bid price by the value of
-     * <code>WeightedCapacity</code>.</p>
+     * <p>The maximum price per unit hour that you are willing to pay for a Spot
+     * Instance. If this value is not specified, the default is the Spot price
+     * specified for the fleet. To determine the Spot price per unit hour, divide the
+     * Spot price by the value of <code>WeightedCapacity</code>.</p>
      */
     inline SpotFleetLaunchSpecification& WithSpotPrice(const Aws::String& value) { SetSpotPrice(value); return *this;}
 
     /**
-     * <p>The bid price per unit hour for the specified instance type. If this value is
-     * not specified, the default is the Spot bid price specified for the fleet. To
-     * determine the bid price per unit hour, divide the Spot bid price by the value of
-     * <code>WeightedCapacity</code>.</p>
+     * <p>The maximum price per unit hour that you are willing to pay for a Spot
+     * Instance. If this value is not specified, the default is the Spot price
+     * specified for the fleet. To determine the Spot price per unit hour, divide the
+     * Spot price by the value of <code>WeightedCapacity</code>.</p>
      */
     inline SpotFleetLaunchSpecification& WithSpotPrice(Aws::String&& value) { SetSpotPrice(std::move(value)); return *this;}
 
     /**
-     * <p>The bid price per unit hour for the specified instance type. If this value is
-     * not specified, the default is the Spot bid price specified for the fleet. To
-     * determine the bid price per unit hour, divide the Spot bid price by the value of
-     * <code>WeightedCapacity</code>.</p>
+     * <p>The maximum price per unit hour that you are willing to pay for a Spot
+     * Instance. If this value is not specified, the default is the Spot price
+     * specified for the fleet. To determine the Spot price per unit hour, divide the
+     * Spot price by the value of <code>WeightedCapacity</code>.</p>
      */
     inline SpotFleetLaunchSpecification& WithSpotPrice(const char* value) { SetSpotPrice(value); return *this;}
 
@@ -629,51 +629,37 @@ namespace Model
 
 
     /**
-     * <p>The user data to make available to the instances. If you are using an AWS SDK
-     * or command line tool, Base64-encoding is performed for you, and you can load the
-     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
+     * <p>The Base64-encoded user data to make available to the instances.</p>
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
 
     /**
-     * <p>The user data to make available to the instances. If you are using an AWS SDK
-     * or command line tool, Base64-encoding is performed for you, and you can load the
-     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
+     * <p>The Base64-encoded user data to make available to the instances.</p>
      */
     inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
-     * <p>The user data to make available to the instances. If you are using an AWS SDK
-     * or command line tool, Base64-encoding is performed for you, and you can load the
-     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
+     * <p>The Base64-encoded user data to make available to the instances.</p>
      */
     inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
 
     /**
-     * <p>The user data to make available to the instances. If you are using an AWS SDK
-     * or command line tool, Base64-encoding is performed for you, and you can load the
-     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
+     * <p>The Base64-encoded user data to make available to the instances.</p>
      */
     inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
 
     /**
-     * <p>The user data to make available to the instances. If you are using an AWS SDK
-     * or command line tool, Base64-encoding is performed for you, and you can load the
-     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
+     * <p>The Base64-encoded user data to make available to the instances.</p>
      */
     inline SpotFleetLaunchSpecification& WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
 
     /**
-     * <p>The user data to make available to the instances. If you are using an AWS SDK
-     * or command line tool, Base64-encoding is performed for you, and you can load the
-     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
+     * <p>The Base64-encoded user data to make available to the instances.</p>
      */
     inline SpotFleetLaunchSpecification& WithUserData(Aws::String&& value) { SetUserData(std::move(value)); return *this;}
 
     /**
-     * <p>The user data to make available to the instances. If you are using an AWS SDK
-     * or command line tool, Base64-encoding is performed for you, and you can load the
-     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
+     * <p>The Base64-encoded user data to make available to the instances.</p>
      */
     inline SpotFleetLaunchSpecification& WithUserData(const char* value) { SetUserData(value); return *this;}
 

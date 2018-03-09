@@ -34,7 +34,9 @@ ApplicationInfo::ApplicationInfo() :
     m_createTimeHasBeenSet(false),
     m_linkedToGitHub(false),
     m_linkedToGitHubHasBeenSet(false),
-    m_gitHubAccountNameHasBeenSet(false)
+    m_gitHubAccountNameHasBeenSet(false),
+    m_computePlatform(ComputePlatform::NOT_SET),
+    m_computePlatformHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ ApplicationInfo::ApplicationInfo(const JsonValue& jsonValue) :
     m_createTimeHasBeenSet(false),
     m_linkedToGitHub(false),
     m_linkedToGitHubHasBeenSet(false),
-    m_gitHubAccountNameHasBeenSet(false)
+    m_gitHubAccountNameHasBeenSet(false),
+    m_computePlatform(ComputePlatform::NOT_SET),
+    m_computePlatformHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +90,13 @@ ApplicationInfo& ApplicationInfo::operator =(const JsonValue& jsonValue)
     m_gitHubAccountNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("computePlatform"))
+  {
+    m_computePlatform = ComputePlatformMapper::GetComputePlatformForName(jsonValue.GetString("computePlatform"));
+
+    m_computePlatformHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -120,6 +131,11 @@ JsonValue ApplicationInfo::Jsonize() const
   {
    payload.WithString("gitHubAccountName", m_gitHubAccountName);
 
+  }
+
+  if(m_computePlatformHasBeenSet)
+  {
+   payload.WithString("computePlatform", ComputePlatformMapper::GetNameForComputePlatform(m_computePlatform));
   }
 
   return payload;

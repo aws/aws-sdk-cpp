@@ -28,6 +28,8 @@ namespace Model
     NOT_SET,
     ConcurrentInvocationLimitExceeded,
     FunctionInvocationRateLimitExceeded,
+    ReservedFunctionConcurrentInvocationLimitExceeded,
+    ReservedFunctionInvocationRateLimitExceeded,
     CallerRateLimitExceeded
   };
 

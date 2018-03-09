@@ -28,7 +28,9 @@ AdminInitiateAuthRequest::AdminInitiateAuthRequest() :
     m_authFlow(AuthFlowType::NOT_SET),
     m_authFlowHasBeenSet(false),
     m_authParametersHasBeenSet(false),
-    m_clientMetadataHasBeenSet(false)
+    m_clientMetadataHasBeenSet(false),
+    m_analyticsMetadataHasBeenSet(false),
+    m_contextDataHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,18 @@ Aws::String AdminInitiateAuthRequest::SerializePayload() const
      clientMetadataJsonMap.WithString(clientMetadataItem.first, clientMetadataItem.second);
    }
    payload.WithObject("ClientMetadata", std::move(clientMetadataJsonMap));
+
+  }
+
+  if(m_analyticsMetadataHasBeenSet)
+  {
+   payload.WithObject("AnalyticsMetadata", m_analyticsMetadata.Jsonize());
+
+  }
+
+  if(m_contextDataHasBeenSet)
+  {
+   payload.WithObject("ContextData", m_contextData.Jsonize());
 
   }
 

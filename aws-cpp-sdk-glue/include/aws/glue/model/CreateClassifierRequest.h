@@ -18,6 +18,7 @@
 #include <aws/glue/GlueRequest.h>
 #include <aws/glue/model/CreateGrokClassifierRequest.h>
 #include <aws/glue/model/CreateXMLClassifierRequest.h>
+#include <aws/glue/model/CreateJsonClassifierRequest.h>
 #include <utility>
 
 namespace Aws
@@ -96,6 +97,32 @@ namespace Model
      */
     inline CreateClassifierRequest& WithXMLClassifier(CreateXMLClassifierRequest&& value) { SetXMLClassifier(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A <code>JsonClassifier</code> object specifying the classifier to create.</p>
+     */
+    inline const CreateJsonClassifierRequest& GetJsonClassifier() const{ return m_jsonClassifier; }
+
+    /**
+     * <p>A <code>JsonClassifier</code> object specifying the classifier to create.</p>
+     */
+    inline void SetJsonClassifier(const CreateJsonClassifierRequest& value) { m_jsonClassifierHasBeenSet = true; m_jsonClassifier = value; }
+
+    /**
+     * <p>A <code>JsonClassifier</code> object specifying the classifier to create.</p>
+     */
+    inline void SetJsonClassifier(CreateJsonClassifierRequest&& value) { m_jsonClassifierHasBeenSet = true; m_jsonClassifier = std::move(value); }
+
+    /**
+     * <p>A <code>JsonClassifier</code> object specifying the classifier to create.</p>
+     */
+    inline CreateClassifierRequest& WithJsonClassifier(const CreateJsonClassifierRequest& value) { SetJsonClassifier(value); return *this;}
+
+    /**
+     * <p>A <code>JsonClassifier</code> object specifying the classifier to create.</p>
+     */
+    inline CreateClassifierRequest& WithJsonClassifier(CreateJsonClassifierRequest&& value) { SetJsonClassifier(std::move(value)); return *this;}
+
   private:
 
     CreateGrokClassifierRequest m_grokClassifier;
@@ -103,6 +130,9 @@ namespace Model
 
     CreateXMLClassifierRequest m_xMLClassifier;
     bool m_xMLClassifierHasBeenSet;
+
+    CreateJsonClassifierRequest m_jsonClassifier;
+    bool m_jsonClassifierHasBeenSet;
   };
 
 } // namespace Model

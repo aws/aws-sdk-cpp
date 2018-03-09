@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/autoscaling/model/LifecycleState.h>
+#include <aws/autoscaling/model/LaunchTemplateSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -240,6 +241,32 @@ namespace Model
 
 
     /**
+     * <p>The launch template for the instance.</p>
+     */
+    inline const LaunchTemplateSpecification& GetLaunchTemplate() const{ return m_launchTemplate; }
+
+    /**
+     * <p>The launch template for the instance.</p>
+     */
+    inline void SetLaunchTemplate(const LaunchTemplateSpecification& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
+
+    /**
+     * <p>The launch template for the instance.</p>
+     */
+    inline void SetLaunchTemplate(LaunchTemplateSpecification&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
+
+    /**
+     * <p>The launch template for the instance.</p>
+     */
+    inline Instance& WithLaunchTemplate(const LaunchTemplateSpecification& value) { SetLaunchTemplate(value); return *this;}
+
+    /**
+     * <p>The launch template for the instance.</p>
+     */
+    inline Instance& WithLaunchTemplate(LaunchTemplateSpecification&& value) { SetLaunchTemplate(std::move(value)); return *this;}
+
+
+    /**
      * <p>Indicates whether the instance is protected from termination by Auto Scaling
      * when scaling in.</p>
      */
@@ -273,6 +300,9 @@ namespace Model
 
     Aws::String m_launchConfigurationName;
     bool m_launchConfigurationNameHasBeenSet;
+
+    LaunchTemplateSpecification m_launchTemplate;
+    bool m_launchTemplateHasBeenSet;
 
     bool m_protectedFromScaleIn;
     bool m_protectedFromScaleInHasBeenSet;

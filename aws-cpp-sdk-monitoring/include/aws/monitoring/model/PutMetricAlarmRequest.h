@@ -147,13 +147,16 @@ namespace Model
      * state from any other state. Each action is specified as an Amazon Resource Name
      * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
      * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover</p> <p>Valid Values (for use with IAM
-     * roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * arn:aws:automate:<i>region</i>:ec2:recover |
+     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </p> <p>Valid Values (for use with IAM roles):
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
      */
     inline const Aws::Vector<Aws::String>& GetOKActions() const{ return m_oKActions; }
 
@@ -162,13 +165,16 @@ namespace Model
      * state from any other state. Each action is specified as an Amazon Resource Name
      * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
      * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover</p> <p>Valid Values (for use with IAM
-     * roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * arn:aws:automate:<i>region</i>:ec2:recover |
+     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </p> <p>Valid Values (for use with IAM roles):
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
      */
     inline void SetOKActions(const Aws::Vector<Aws::String>& value) { m_oKActionsHasBeenSet = true; m_oKActions = value; }
 
@@ -177,13 +183,16 @@ namespace Model
      * state from any other state. Each action is specified as an Amazon Resource Name
      * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
      * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover</p> <p>Valid Values (for use with IAM
-     * roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * arn:aws:automate:<i>region</i>:ec2:recover |
+     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </p> <p>Valid Values (for use with IAM roles):
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
      */
     inline void SetOKActions(Aws::Vector<Aws::String>&& value) { m_oKActionsHasBeenSet = true; m_oKActions = std::move(value); }
 
@@ -192,13 +201,16 @@ namespace Model
      * state from any other state. Each action is specified as an Amazon Resource Name
      * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
      * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover</p> <p>Valid Values (for use with IAM
-     * roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * arn:aws:automate:<i>region</i>:ec2:recover |
+     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </p> <p>Valid Values (for use with IAM roles):
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
      */
     inline PutMetricAlarmRequest& WithOKActions(const Aws::Vector<Aws::String>& value) { SetOKActions(value); return *this;}
 
@@ -207,13 +219,16 @@ namespace Model
      * state from any other state. Each action is specified as an Amazon Resource Name
      * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
      * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover</p> <p>Valid Values (for use with IAM
-     * roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * arn:aws:automate:<i>region</i>:ec2:recover |
+     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </p> <p>Valid Values (for use with IAM roles):
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
      */
     inline PutMetricAlarmRequest& WithOKActions(Aws::Vector<Aws::String>&& value) { SetOKActions(std::move(value)); return *this;}
 
@@ -222,13 +237,16 @@ namespace Model
      * state from any other state. Each action is specified as an Amazon Resource Name
      * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
      * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover</p> <p>Valid Values (for use with IAM
-     * roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * arn:aws:automate:<i>region</i>:ec2:recover |
+     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </p> <p>Valid Values (for use with IAM roles):
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
      */
     inline PutMetricAlarmRequest& AddOKActions(const Aws::String& value) { m_oKActionsHasBeenSet = true; m_oKActions.push_back(value); return *this; }
 
@@ -237,13 +255,16 @@ namespace Model
      * state from any other state. Each action is specified as an Amazon Resource Name
      * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
      * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover</p> <p>Valid Values (for use with IAM
-     * roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * arn:aws:automate:<i>region</i>:ec2:recover |
+     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </p> <p>Valid Values (for use with IAM roles):
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
      */
     inline PutMetricAlarmRequest& AddOKActions(Aws::String&& value) { m_oKActionsHasBeenSet = true; m_oKActions.push_back(std::move(value)); return *this; }
 
@@ -252,13 +273,16 @@ namespace Model
      * state from any other state. Each action is specified as an Amazon Resource Name
      * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
      * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover</p> <p>Valid Values (for use with IAM
-     * roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * arn:aws:automate:<i>region</i>:ec2:recover |
+     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </p> <p>Valid Values (for use with IAM roles):
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
      */
     inline PutMetricAlarmRequest& AddOKActions(const char* value) { m_oKActionsHasBeenSet = true; m_oKActions.push_back(value); return *this; }
 
@@ -268,13 +292,16 @@ namespace Model
      * state from any other state. Each action is specified as an Amazon Resource Name
      * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
      * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover</p> <p>Valid Values (for use with IAM
-     * roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * arn:aws:automate:<i>region</i>:ec2:recover |
+     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </p> <p>Valid Values (for use with IAM roles):
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
      */
     inline const Aws::Vector<Aws::String>& GetAlarmActions() const{ return m_alarmActions; }
 
@@ -283,13 +310,16 @@ namespace Model
      * state from any other state. Each action is specified as an Amazon Resource Name
      * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
      * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover</p> <p>Valid Values (for use with IAM
-     * roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * arn:aws:automate:<i>region</i>:ec2:recover |
+     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </p> <p>Valid Values (for use with IAM roles):
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
      */
     inline void SetAlarmActions(const Aws::Vector<Aws::String>& value) { m_alarmActionsHasBeenSet = true; m_alarmActions = value; }
 
@@ -298,13 +328,16 @@ namespace Model
      * state from any other state. Each action is specified as an Amazon Resource Name
      * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
      * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover</p> <p>Valid Values (for use with IAM
-     * roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * arn:aws:automate:<i>region</i>:ec2:recover |
+     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </p> <p>Valid Values (for use with IAM roles):
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
      */
     inline void SetAlarmActions(Aws::Vector<Aws::String>&& value) { m_alarmActionsHasBeenSet = true; m_alarmActions = std::move(value); }
 
@@ -313,13 +346,16 @@ namespace Model
      * state from any other state. Each action is specified as an Amazon Resource Name
      * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
      * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover</p> <p>Valid Values (for use with IAM
-     * roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * arn:aws:automate:<i>region</i>:ec2:recover |
+     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </p> <p>Valid Values (for use with IAM roles):
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
      */
     inline PutMetricAlarmRequest& WithAlarmActions(const Aws::Vector<Aws::String>& value) { SetAlarmActions(value); return *this;}
 
@@ -328,13 +364,16 @@ namespace Model
      * state from any other state. Each action is specified as an Amazon Resource Name
      * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
      * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover</p> <p>Valid Values (for use with IAM
-     * roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * arn:aws:automate:<i>region</i>:ec2:recover |
+     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </p> <p>Valid Values (for use with IAM roles):
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
      */
     inline PutMetricAlarmRequest& WithAlarmActions(Aws::Vector<Aws::String>&& value) { SetAlarmActions(std::move(value)); return *this;}
 
@@ -343,13 +382,16 @@ namespace Model
      * state from any other state. Each action is specified as an Amazon Resource Name
      * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
      * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover</p> <p>Valid Values (for use with IAM
-     * roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * arn:aws:automate:<i>region</i>:ec2:recover |
+     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </p> <p>Valid Values (for use with IAM roles):
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
      */
     inline PutMetricAlarmRequest& AddAlarmActions(const Aws::String& value) { m_alarmActionsHasBeenSet = true; m_alarmActions.push_back(value); return *this; }
 
@@ -358,13 +400,16 @@ namespace Model
      * state from any other state. Each action is specified as an Amazon Resource Name
      * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
      * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover</p> <p>Valid Values (for use with IAM
-     * roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * arn:aws:automate:<i>region</i>:ec2:recover |
+     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </p> <p>Valid Values (for use with IAM roles):
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
      */
     inline PutMetricAlarmRequest& AddAlarmActions(Aws::String&& value) { m_alarmActionsHasBeenSet = true; m_alarmActions.push_back(std::move(value)); return *this; }
 
@@ -373,13 +418,16 @@ namespace Model
      * state from any other state. Each action is specified as an Amazon Resource Name
      * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
      * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover</p> <p>Valid Values (for use with IAM
-     * roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * arn:aws:automate:<i>region</i>:ec2:recover |
+     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </p> <p>Valid Values (for use with IAM roles):
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
      */
     inline PutMetricAlarmRequest& AddAlarmActions(const char* value) { m_alarmActionsHasBeenSet = true; m_alarmActions.push_back(value); return *this; }
 
@@ -390,13 +438,16 @@ namespace Model
      * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values:
      * arn:aws:automate:<i>region</i>:ec2:stop |
      * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover</p> <p>Valid Values (for use with IAM
-     * roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * arn:aws:automate:<i>region</i>:ec2:recover |
+     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </p> <p>Valid Values (for use with IAM roles):
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
      */
     inline const Aws::Vector<Aws::String>& GetInsufficientDataActions() const{ return m_insufficientDataActions; }
 
@@ -406,13 +457,16 @@ namespace Model
      * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values:
      * arn:aws:automate:<i>region</i>:ec2:stop |
      * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover</p> <p>Valid Values (for use with IAM
-     * roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * arn:aws:automate:<i>region</i>:ec2:recover |
+     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </p> <p>Valid Values (for use with IAM roles):
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
      */
     inline void SetInsufficientDataActions(const Aws::Vector<Aws::String>& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions = value; }
 
@@ -422,13 +476,16 @@ namespace Model
      * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values:
      * arn:aws:automate:<i>region</i>:ec2:stop |
      * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover</p> <p>Valid Values (for use with IAM
-     * roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * arn:aws:automate:<i>region</i>:ec2:recover |
+     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </p> <p>Valid Values (for use with IAM roles):
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
      */
     inline void SetInsufficientDataActions(Aws::Vector<Aws::String>&& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions = std::move(value); }
 
@@ -438,13 +495,16 @@ namespace Model
      * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values:
      * arn:aws:automate:<i>region</i>:ec2:stop |
      * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover</p> <p>Valid Values (for use with IAM
-     * roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * arn:aws:automate:<i>region</i>:ec2:recover |
+     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </p> <p>Valid Values (for use with IAM roles):
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
      */
     inline PutMetricAlarmRequest& WithInsufficientDataActions(const Aws::Vector<Aws::String>& value) { SetInsufficientDataActions(value); return *this;}
 
@@ -454,13 +514,16 @@ namespace Model
      * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values:
      * arn:aws:automate:<i>region</i>:ec2:stop |
      * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover</p> <p>Valid Values (for use with IAM
-     * roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * arn:aws:automate:<i>region</i>:ec2:recover |
+     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </p> <p>Valid Values (for use with IAM roles):
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
      */
     inline PutMetricAlarmRequest& WithInsufficientDataActions(Aws::Vector<Aws::String>&& value) { SetInsufficientDataActions(std::move(value)); return *this;}
 
@@ -470,13 +533,16 @@ namespace Model
      * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values:
      * arn:aws:automate:<i>region</i>:ec2:stop |
      * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover</p> <p>Valid Values (for use with IAM
-     * roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * arn:aws:automate:<i>region</i>:ec2:recover |
+     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </p> <p>Valid Values (for use with IAM roles):
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
      */
     inline PutMetricAlarmRequest& AddInsufficientDataActions(const Aws::String& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions.push_back(value); return *this; }
 
@@ -486,13 +552,16 @@ namespace Model
      * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values:
      * arn:aws:automate:<i>region</i>:ec2:stop |
      * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover</p> <p>Valid Values (for use with IAM
-     * roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * arn:aws:automate:<i>region</i>:ec2:recover |
+     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </p> <p>Valid Values (for use with IAM roles):
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
      */
     inline PutMetricAlarmRequest& AddInsufficientDataActions(Aws::String&& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions.push_back(std::move(value)); return *this; }
 
@@ -502,13 +571,16 @@ namespace Model
      * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values:
      * arn:aws:automate:<i>region</i>:ec2:stop |
      * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover</p> <p>Valid Values (for use with IAM
-     * roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * arn:aws:automate:<i>region</i>:ec2:recover |
+     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </p> <p>Valid Values (for use with IAM roles):
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
      * |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
      */
     inline PutMetricAlarmRequest& AddInsufficientDataActions(const char* value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions.push_back(value); return *this; }
 
@@ -587,74 +659,98 @@ namespace Model
 
     /**
      * <p>The statistic for the metric associated with the alarm, other than
-     * percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p>
+     * percentile. For percentile statistics, use <code>ExtendedStatistic</code>. When
+     * you call <code>PutMetricAlarm</code>, you must specify either
+     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
      */
     inline const Statistic& GetStatistic() const{ return m_statistic; }
 
     /**
      * <p>The statistic for the metric associated with the alarm, other than
-     * percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p>
+     * percentile. For percentile statistics, use <code>ExtendedStatistic</code>. When
+     * you call <code>PutMetricAlarm</code>, you must specify either
+     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
      */
     inline void SetStatistic(const Statistic& value) { m_statisticHasBeenSet = true; m_statistic = value; }
 
     /**
      * <p>The statistic for the metric associated with the alarm, other than
-     * percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p>
+     * percentile. For percentile statistics, use <code>ExtendedStatistic</code>. When
+     * you call <code>PutMetricAlarm</code>, you must specify either
+     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
      */
     inline void SetStatistic(Statistic&& value) { m_statisticHasBeenSet = true; m_statistic = std::move(value); }
 
     /**
      * <p>The statistic for the metric associated with the alarm, other than
-     * percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p>
+     * percentile. For percentile statistics, use <code>ExtendedStatistic</code>. When
+     * you call <code>PutMetricAlarm</code>, you must specify either
+     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
      */
     inline PutMetricAlarmRequest& WithStatistic(const Statistic& value) { SetStatistic(value); return *this;}
 
     /**
      * <p>The statistic for the metric associated with the alarm, other than
-     * percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p>
+     * percentile. For percentile statistics, use <code>ExtendedStatistic</code>. When
+     * you call <code>PutMetricAlarm</code>, you must specify either
+     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
      */
     inline PutMetricAlarmRequest& WithStatistic(Statistic&& value) { SetStatistic(std::move(value)); return *this;}
 
 
     /**
      * <p>The percentile statistic for the metric associated with the alarm. Specify a
-     * value between p0.0 and p100.</p>
+     * value between p0.0 and p100. When you call <code>PutMetricAlarm</code>, you must
+     * specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not
+     * both.</p>
      */
     inline const Aws::String& GetExtendedStatistic() const{ return m_extendedStatistic; }
 
     /**
      * <p>The percentile statistic for the metric associated with the alarm. Specify a
-     * value between p0.0 and p100.</p>
+     * value between p0.0 and p100. When you call <code>PutMetricAlarm</code>, you must
+     * specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not
+     * both.</p>
      */
     inline void SetExtendedStatistic(const Aws::String& value) { m_extendedStatisticHasBeenSet = true; m_extendedStatistic = value; }
 
     /**
      * <p>The percentile statistic for the metric associated with the alarm. Specify a
-     * value between p0.0 and p100.</p>
+     * value between p0.0 and p100. When you call <code>PutMetricAlarm</code>, you must
+     * specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not
+     * both.</p>
      */
     inline void SetExtendedStatistic(Aws::String&& value) { m_extendedStatisticHasBeenSet = true; m_extendedStatistic = std::move(value); }
 
     /**
      * <p>The percentile statistic for the metric associated with the alarm. Specify a
-     * value between p0.0 and p100.</p>
+     * value between p0.0 and p100. When you call <code>PutMetricAlarm</code>, you must
+     * specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not
+     * both.</p>
      */
     inline void SetExtendedStatistic(const char* value) { m_extendedStatisticHasBeenSet = true; m_extendedStatistic.assign(value); }
 
     /**
      * <p>The percentile statistic for the metric associated with the alarm. Specify a
-     * value between p0.0 and p100.</p>
+     * value between p0.0 and p100. When you call <code>PutMetricAlarm</code>, you must
+     * specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not
+     * both.</p>
      */
     inline PutMetricAlarmRequest& WithExtendedStatistic(const Aws::String& value) { SetExtendedStatistic(value); return *this;}
 
     /**
      * <p>The percentile statistic for the metric associated with the alarm. Specify a
-     * value between p0.0 and p100.</p>
+     * value between p0.0 and p100. When you call <code>PutMetricAlarm</code>, you must
+     * specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not
+     * both.</p>
      */
     inline PutMetricAlarmRequest& WithExtendedStatistic(Aws::String&& value) { SetExtendedStatistic(std::move(value)); return *this;}
 
     /**
      * <p>The percentile statistic for the metric associated with the alarm. Specify a
-     * value between p0.0 and p100.</p>
+     * value between p0.0 and p100. When you call <code>PutMetricAlarm</code>, you must
+     * specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not
+     * both.</p>
      */
     inline PutMetricAlarmRequest& WithExtendedStatistic(const char* value) { SetExtendedStatistic(value); return *this;}
 
@@ -834,6 +930,22 @@ namespace Model
      * seconds.</p>
      */
     inline PutMetricAlarmRequest& WithEvaluationPeriods(int value) { SetEvaluationPeriods(value); return *this;}
+
+
+    /**
+     * <p>The number of datapoints that must be breaching to trigger the alarm.</p>
+     */
+    inline int GetDatapointsToAlarm() const{ return m_datapointsToAlarm; }
+
+    /**
+     * <p>The number of datapoints that must be breaching to trigger the alarm.</p>
+     */
+    inline void SetDatapointsToAlarm(int value) { m_datapointsToAlarmHasBeenSet = true; m_datapointsToAlarm = value; }
+
+    /**
+     * <p>The number of datapoints that must be breaching to trigger the alarm.</p>
+     */
+    inline PutMetricAlarmRequest& WithDatapointsToAlarm(int value) { SetDatapointsToAlarm(value); return *this;}
 
 
     /**
@@ -1088,6 +1200,9 @@ namespace Model
 
     int m_evaluationPeriods;
     bool m_evaluationPeriodsHasBeenSet;
+
+    int m_datapointsToAlarm;
+    bool m_datapointsToAlarmHasBeenSet;
 
     double m_threshold;
     bool m_thresholdHasBeenSet;

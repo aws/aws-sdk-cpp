@@ -30,30 +30,35 @@ namespace Aws
       namespace ConfigurationItemStatusMapper
       {
 
-        static const int Ok_HASH = HashingUtils::HashString("Ok");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Discovered_HASH = HashingUtils::HashString("Discovered");
-        static const int Deleted_HASH = HashingUtils::HashString("Deleted");
+        static const int OK_HASH = HashingUtils::HashString("OK");
+        static const int ResourceDiscovered_HASH = HashingUtils::HashString("ResourceDiscovered");
+        static const int ResourceNotRecorded_HASH = HashingUtils::HashString("ResourceNotRecorded");
+        static const int ResourceDeleted_HASH = HashingUtils::HashString("ResourceDeleted");
+        static const int ResourceDeletedNotRecorded_HASH = HashingUtils::HashString("ResourceDeletedNotRecorded");
 
 
         ConfigurationItemStatus GetConfigurationItemStatusForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Ok_HASH)
+          if (hashCode == OK_HASH)
           {
-            return ConfigurationItemStatus::Ok;
+            return ConfigurationItemStatus::OK;
           }
-          else if (hashCode == Failed_HASH)
+          else if (hashCode == ResourceDiscovered_HASH)
           {
-            return ConfigurationItemStatus::Failed;
+            return ConfigurationItemStatus::ResourceDiscovered;
           }
-          else if (hashCode == Discovered_HASH)
+          else if (hashCode == ResourceNotRecorded_HASH)
           {
-            return ConfigurationItemStatus::Discovered;
+            return ConfigurationItemStatus::ResourceNotRecorded;
           }
-          else if (hashCode == Deleted_HASH)
+          else if (hashCode == ResourceDeleted_HASH)
           {
-            return ConfigurationItemStatus::Deleted;
+            return ConfigurationItemStatus::ResourceDeleted;
+          }
+          else if (hashCode == ResourceDeletedNotRecorded_HASH)
+          {
+            return ConfigurationItemStatus::ResourceDeletedNotRecorded;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,14 +74,16 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case ConfigurationItemStatus::Ok:
-            return "Ok";
-          case ConfigurationItemStatus::Failed:
-            return "Failed";
-          case ConfigurationItemStatus::Discovered:
-            return "Discovered";
-          case ConfigurationItemStatus::Deleted:
-            return "Deleted";
+          case ConfigurationItemStatus::OK:
+            return "OK";
+          case ConfigurationItemStatus::ResourceDiscovered:
+            return "ResourceDiscovered";
+          case ConfigurationItemStatus::ResourceNotRecorded:
+            return "ResourceNotRecorded";
+          case ConfigurationItemStatus::ResourceDeleted:
+            return "ResourceDeleted";
+          case ConfigurationItemStatus::ResourceDeletedNotRecorded:
+            return "ResourceDeletedNotRecorded";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

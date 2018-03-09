@@ -46,78 +46,85 @@ namespace Model
 
 
     /**
-     * <p>An array of strings that contain the identifiers of the WorkSpaces.</p>
+     * <p>The identifiers of the WorkSpaces.</p>
      */
     inline const Aws::Vector<Aws::String>& GetWorkspaceIds() const{ return m_workspaceIds; }
 
     /**
-     * <p>An array of strings that contain the identifiers of the WorkSpaces.</p>
+     * <p>The identifiers of the WorkSpaces.</p>
      */
     inline void SetWorkspaceIds(const Aws::Vector<Aws::String>& value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds = value; }
 
     /**
-     * <p>An array of strings that contain the identifiers of the WorkSpaces.</p>
+     * <p>The identifiers of the WorkSpaces.</p>
      */
     inline void SetWorkspaceIds(Aws::Vector<Aws::String>&& value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds = std::move(value); }
 
     /**
-     * <p>An array of strings that contain the identifiers of the WorkSpaces.</p>
+     * <p>The identifiers of the WorkSpaces.</p>
      */
     inline DescribeWorkspacesConnectionStatusRequest& WithWorkspaceIds(const Aws::Vector<Aws::String>& value) { SetWorkspaceIds(value); return *this;}
 
     /**
-     * <p>An array of strings that contain the identifiers of the WorkSpaces.</p>
+     * <p>The identifiers of the WorkSpaces.</p>
      */
     inline DescribeWorkspacesConnectionStatusRequest& WithWorkspaceIds(Aws::Vector<Aws::String>&& value) { SetWorkspaceIds(std::move(value)); return *this;}
 
     /**
-     * <p>An array of strings that contain the identifiers of the WorkSpaces.</p>
+     * <p>The identifiers of the WorkSpaces.</p>
      */
     inline DescribeWorkspacesConnectionStatusRequest& AddWorkspaceIds(const Aws::String& value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds.push_back(value); return *this; }
 
     /**
-     * <p>An array of strings that contain the identifiers of the WorkSpaces.</p>
+     * <p>The identifiers of the WorkSpaces.</p>
      */
     inline DescribeWorkspacesConnectionStatusRequest& AddWorkspaceIds(Aws::String&& value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array of strings that contain the identifiers of the WorkSpaces.</p>
+     * <p>The identifiers of the WorkSpaces.</p>
      */
     inline DescribeWorkspacesConnectionStatusRequest& AddWorkspaceIds(const char* value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds.push_back(value); return *this; }
 
 
     /**
-     * <p>The next token of the request.</p>
+     * <p>The token for the next set of results. (You received this token from a
+     * previous call.)</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The next token of the request.</p>
+     * <p>The token for the next set of results. (You received this token from a
+     * previous call.)</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The next token of the request.</p>
+     * <p>The token for the next set of results. (You received this token from a
+     * previous call.)</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The next token of the request.</p>
+     * <p>The token for the next set of results. (You received this token from a
+     * previous call.)</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The next token of the request.</p>
+     * <p>The token for the next set of results. (You received this token from a
+     * previous call.)</p>
      */
     inline DescribeWorkspacesConnectionStatusRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The next token of the request.</p>
+     * <p>The token for the next set of results. (You received this token from a
+     * previous call.)</p>
      */
     inline DescribeWorkspacesConnectionStatusRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The next token of the request.</p>
+     * <p>The token for the next set of results. (You received this token from a
+     * previous call.)</p>
      */
     inline DescribeWorkspacesConnectionStatusRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

@@ -32,12 +32,16 @@ CreateNFSFileShareRequest::CreateNFSFileShareRequest() :
     m_roleHasBeenSet(false),
     m_locationARNHasBeenSet(false),
     m_defaultStorageClassHasBeenSet(false),
+    m_objectACL(ObjectACL::NOT_SET),
+    m_objectACLHasBeenSet(false),
     m_clientListHasBeenSet(false),
     m_squashHasBeenSet(false),
     m_readOnly(false),
     m_readOnlyHasBeenSet(false),
     m_guessMIMETypeEnabled(false),
-    m_guessMIMETypeEnabledHasBeenSet(false)
+    m_guessMIMETypeEnabledHasBeenSet(false),
+    m_requesterPays(false),
+    m_requesterPaysHasBeenSet(false)
 {
 }
 
@@ -93,6 +97,11 @@ Aws::String CreateNFSFileShareRequest::SerializePayload() const
 
   }
 
+  if(m_objectACLHasBeenSet)
+  {
+   payload.WithString("ObjectACL", ObjectACLMapper::GetNameForObjectACL(m_objectACL));
+  }
+
   if(m_clientListHasBeenSet)
   {
    Array<JsonValue> clientListJsonList(m_clientList.size());
@@ -119,6 +128,12 @@ Aws::String CreateNFSFileShareRequest::SerializePayload() const
   if(m_guessMIMETypeEnabledHasBeenSet)
   {
    payload.WithBool("GuessMIMETypeEnabled", m_guessMIMETypeEnabled);
+
+  }
+
+  if(m_requesterPaysHasBeenSet)
+  {
+   payload.WithBool("RequesterPays", m_requesterPays);
 
   }
 

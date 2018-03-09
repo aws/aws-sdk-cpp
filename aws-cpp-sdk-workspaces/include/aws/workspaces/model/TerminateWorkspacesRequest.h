@@ -28,10 +28,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the inputs for the <a>TerminateWorkspaces</a>
-   * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspacesRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_WORKSPACES_API TerminateWorkspacesRequest : public WorkSpacesRequest
   {
@@ -50,37 +46,37 @@ namespace Model
 
 
     /**
-     * <p>An array of structures that specify the WorkSpaces to terminate.</p>
+     * <p>The WorkSpaces to terminate.</p>
      */
     inline const Aws::Vector<TerminateRequest>& GetTerminateWorkspaceRequests() const{ return m_terminateWorkspaceRequests; }
 
     /**
-     * <p>An array of structures that specify the WorkSpaces to terminate.</p>
+     * <p>The WorkSpaces to terminate.</p>
      */
     inline void SetTerminateWorkspaceRequests(const Aws::Vector<TerminateRequest>& value) { m_terminateWorkspaceRequestsHasBeenSet = true; m_terminateWorkspaceRequests = value; }
 
     /**
-     * <p>An array of structures that specify the WorkSpaces to terminate.</p>
+     * <p>The WorkSpaces to terminate.</p>
      */
     inline void SetTerminateWorkspaceRequests(Aws::Vector<TerminateRequest>&& value) { m_terminateWorkspaceRequestsHasBeenSet = true; m_terminateWorkspaceRequests = std::move(value); }
 
     /**
-     * <p>An array of structures that specify the WorkSpaces to terminate.</p>
+     * <p>The WorkSpaces to terminate.</p>
      */
     inline TerminateWorkspacesRequest& WithTerminateWorkspaceRequests(const Aws::Vector<TerminateRequest>& value) { SetTerminateWorkspaceRequests(value); return *this;}
 
     /**
-     * <p>An array of structures that specify the WorkSpaces to terminate.</p>
+     * <p>The WorkSpaces to terminate.</p>
      */
     inline TerminateWorkspacesRequest& WithTerminateWorkspaceRequests(Aws::Vector<TerminateRequest>&& value) { SetTerminateWorkspaceRequests(std::move(value)); return *this;}
 
     /**
-     * <p>An array of structures that specify the WorkSpaces to terminate.</p>
+     * <p>The WorkSpaces to terminate.</p>
      */
     inline TerminateWorkspacesRequest& AddTerminateWorkspaceRequests(const TerminateRequest& value) { m_terminateWorkspaceRequestsHasBeenSet = true; m_terminateWorkspaceRequests.push_back(value); return *this; }
 
     /**
-     * <p>An array of structures that specify the WorkSpaces to terminate.</p>
+     * <p>The WorkSpaces to terminate.</p>
      */
     inline TerminateWorkspacesRequest& AddTerminateWorkspaceRequests(TerminateRequest&& value) { m_terminateWorkspaceRequestsHasBeenSet = true; m_terminateWorkspaceRequests.push_back(std::move(value)); return *this; }
 

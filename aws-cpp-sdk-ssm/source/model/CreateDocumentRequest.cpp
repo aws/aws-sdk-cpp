@@ -26,7 +26,10 @@ CreateDocumentRequest::CreateDocumentRequest() :
     m_contentHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_documentType(DocumentType::NOT_SET),
-    m_documentTypeHasBeenSet(false)
+    m_documentTypeHasBeenSet(false),
+    m_documentFormat(DocumentFormat::NOT_SET),
+    m_documentFormatHasBeenSet(false),
+    m_targetTypeHasBeenSet(false)
 {
 }
 
@@ -49,6 +52,17 @@ Aws::String CreateDocumentRequest::SerializePayload() const
   if(m_documentTypeHasBeenSet)
   {
    payload.WithString("DocumentType", DocumentTypeMapper::GetNameForDocumentType(m_documentType));
+  }
+
+  if(m_documentFormatHasBeenSet)
+  {
+   payload.WithString("DocumentFormat", DocumentFormatMapper::GetNameForDocumentFormat(m_documentFormat));
+  }
+
+  if(m_targetTypeHasBeenSet)
+  {
+   payload.WithString("TargetType", m_targetType);
+
   }
 
   return payload.WriteReadable();

@@ -33,9 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>Key-value pairs to associate with this provisioning. These tags are entirely
-   * discretionary and are propagated to the resources created in the
-   * provisioning.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about a tag. A tag is a key-value pair. Tags are propagated to
+   * the resources created when provisioning a product.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/Tag">AWS
    * API Reference</a></p>
    */
@@ -49,80 +48,73 @@ namespace Model
 
 
     /**
-     * <p>The <code>ProvisioningArtifactParameter.TagKey</code> parameter from
-     * <a>DescribeProvisioningParameters</a>.</p>
+     * <p>The tag key.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p>The <code>ProvisioningArtifactParameter.TagKey</code> parameter from
-     * <a>DescribeProvisioningParameters</a>.</p>
+     * <p>The tag key.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>The <code>ProvisioningArtifactParameter.TagKey</code> parameter from
-     * <a>DescribeProvisioningParameters</a>.</p>
+     * <p>The tag key.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p>The <code>ProvisioningArtifactParameter.TagKey</code> parameter from
-     * <a>DescribeProvisioningParameters</a>.</p>
+     * <p>The tag key.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p>The <code>ProvisioningArtifactParameter.TagKey</code> parameter from
-     * <a>DescribeProvisioningParameters</a>.</p>
+     * <p>The tag key.</p>
      */
     inline Tag& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p>The <code>ProvisioningArtifactParameter.TagKey</code> parameter from
-     * <a>DescribeProvisioningParameters</a>.</p>
+     * <p>The tag key.</p>
      */
     inline Tag& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>ProvisioningArtifactParameter.TagKey</code> parameter from
-     * <a>DescribeProvisioningParameters</a>.</p>
+     * <p>The tag key.</p>
      */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
 
 
     /**
-     * <p>The desired value for this key.</p>
+     * <p>The value for this key.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>The desired value for this key.</p>
+     * <p>The value for this key.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The desired value for this key.</p>
+     * <p>The value for this key.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>The desired value for this key.</p>
+     * <p>The value for this key.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>The desired value for this key.</p>
+     * <p>The value for this key.</p>
      */
     inline Tag& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The desired value for this key.</p>
+     * <p>The value for this key.</p>
      */
     inline Tag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>The desired value for this key.</p>
+     * <p>The value for this key.</p>
      */
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
 

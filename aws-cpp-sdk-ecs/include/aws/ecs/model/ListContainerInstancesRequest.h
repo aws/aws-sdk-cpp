@@ -99,7 +99,7 @@ namespace Model
      * <p>You can filter the results of a <code>ListContainerInstances</code> operation
      * with cluster query language statements. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline const Aws::String& GetFilter() const{ return m_filter; }
@@ -108,7 +108,7 @@ namespace Model
      * <p>You can filter the results of a <code>ListContainerInstances</code> operation
      * with cluster query language statements. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetFilter(const Aws::String& value) { m_filterHasBeenSet = true; m_filter = value; }
@@ -117,7 +117,7 @@ namespace Model
      * <p>You can filter the results of a <code>ListContainerInstances</code> operation
      * with cluster query language statements. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetFilter(Aws::String&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
@@ -126,7 +126,7 @@ namespace Model
      * <p>You can filter the results of a <code>ListContainerInstances</code> operation
      * with cluster query language statements. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetFilter(const char* value) { m_filterHasBeenSet = true; m_filter.assign(value); }
@@ -135,7 +135,7 @@ namespace Model
      * <p>You can filter the results of a <code>ListContainerInstances</code> operation
      * with cluster query language statements. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline ListContainerInstancesRequest& WithFilter(const Aws::String& value) { SetFilter(value); return *this;}
@@ -144,7 +144,7 @@ namespace Model
      * <p>You can filter the results of a <code>ListContainerInstances</code> operation
      * with cluster query language statements. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline ListContainerInstancesRequest& WithFilter(Aws::String&& value) { SetFilter(std::move(value)); return *this;}
@@ -153,7 +153,7 @@ namespace Model
      * <p>You can filter the results of a <code>ListContainerInstances</code> operation
      * with cluster query language statements. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline ListContainerInstancesRequest& WithFilter(const char* value) { SetFilter(value); return *this;}
@@ -164,8 +164,7 @@ namespace Model
      * <code>ListContainerInstances</code> request where <code>maxResults</code> was
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
-     * value. This value is <code>null</code> when there are no more results to
-     * return.</p> <note> <p>This token should be treated as an opaque identifier that
+     * value.</p> <note> <p>This token should be treated as an opaque identifier that
      * is only used to retrieve the next items in a list and not for other programmatic
      * purposes.</p> </note>
      */
@@ -176,8 +175,7 @@ namespace Model
      * <code>ListContainerInstances</code> request where <code>maxResults</code> was
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
-     * value. This value is <code>null</code> when there are no more results to
-     * return.</p> <note> <p>This token should be treated as an opaque identifier that
+     * value.</p> <note> <p>This token should be treated as an opaque identifier that
      * is only used to retrieve the next items in a list and not for other programmatic
      * purposes.</p> </note>
      */
@@ -188,8 +186,7 @@ namespace Model
      * <code>ListContainerInstances</code> request where <code>maxResults</code> was
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
-     * value. This value is <code>null</code> when there are no more results to
-     * return.</p> <note> <p>This token should be treated as an opaque identifier that
+     * value.</p> <note> <p>This token should be treated as an opaque identifier that
      * is only used to retrieve the next items in a list and not for other programmatic
      * purposes.</p> </note>
      */
@@ -200,8 +197,7 @@ namespace Model
      * <code>ListContainerInstances</code> request where <code>maxResults</code> was
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
-     * value. This value is <code>null</code> when there are no more results to
-     * return.</p> <note> <p>This token should be treated as an opaque identifier that
+     * value.</p> <note> <p>This token should be treated as an opaque identifier that
      * is only used to retrieve the next items in a list and not for other programmatic
      * purposes.</p> </note>
      */
@@ -212,8 +208,7 @@ namespace Model
      * <code>ListContainerInstances</code> request where <code>maxResults</code> was
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
-     * value. This value is <code>null</code> when there are no more results to
-     * return.</p> <note> <p>This token should be treated as an opaque identifier that
+     * value.</p> <note> <p>This token should be treated as an opaque identifier that
      * is only used to retrieve the next items in a list and not for other programmatic
      * purposes.</p> </note>
      */
@@ -224,8 +219,7 @@ namespace Model
      * <code>ListContainerInstances</code> request where <code>maxResults</code> was
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
-     * value. This value is <code>null</code> when there are no more results to
-     * return.</p> <note> <p>This token should be treated as an opaque identifier that
+     * value.</p> <note> <p>This token should be treated as an opaque identifier that
      * is only used to retrieve the next items in a list and not for other programmatic
      * purposes.</p> </note>
      */
@@ -236,8 +230,7 @@ namespace Model
      * <code>ListContainerInstances</code> request where <code>maxResults</code> was
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
-     * value. This value is <code>null</code> when there are no more results to
-     * return.</p> <note> <p>This token should be treated as an opaque identifier that
+     * value.</p> <note> <p>This token should be treated as an opaque identifier that
      * is only used to retrieve the next items in a list and not for other programmatic
      * purposes.</p> </note>
      */

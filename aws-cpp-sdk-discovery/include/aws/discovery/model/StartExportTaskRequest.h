@@ -49,43 +49,50 @@ namespace Model
 
     /**
      * <p>The file format for the returned export data. Default value is
-     * <code>CSV</code>.</p>
+     * <code>CSV</code>. <b>Note:</b> <i>The</i> <code>GRAPHML</code> <i>option has
+     * been deprecated.</i> </p>
      */
     inline const Aws::Vector<ExportDataFormat>& GetExportDataFormat() const{ return m_exportDataFormat; }
 
     /**
      * <p>The file format for the returned export data. Default value is
-     * <code>CSV</code>.</p>
+     * <code>CSV</code>. <b>Note:</b> <i>The</i> <code>GRAPHML</code> <i>option has
+     * been deprecated.</i> </p>
      */
     inline void SetExportDataFormat(const Aws::Vector<ExportDataFormat>& value) { m_exportDataFormatHasBeenSet = true; m_exportDataFormat = value; }
 
     /**
      * <p>The file format for the returned export data. Default value is
-     * <code>CSV</code>.</p>
+     * <code>CSV</code>. <b>Note:</b> <i>The</i> <code>GRAPHML</code> <i>option has
+     * been deprecated.</i> </p>
      */
     inline void SetExportDataFormat(Aws::Vector<ExportDataFormat>&& value) { m_exportDataFormatHasBeenSet = true; m_exportDataFormat = std::move(value); }
 
     /**
      * <p>The file format for the returned export data. Default value is
-     * <code>CSV</code>.</p>
+     * <code>CSV</code>. <b>Note:</b> <i>The</i> <code>GRAPHML</code> <i>option has
+     * been deprecated.</i> </p>
      */
     inline StartExportTaskRequest& WithExportDataFormat(const Aws::Vector<ExportDataFormat>& value) { SetExportDataFormat(value); return *this;}
 
     /**
      * <p>The file format for the returned export data. Default value is
-     * <code>CSV</code>.</p>
+     * <code>CSV</code>. <b>Note:</b> <i>The</i> <code>GRAPHML</code> <i>option has
+     * been deprecated.</i> </p>
      */
     inline StartExportTaskRequest& WithExportDataFormat(Aws::Vector<ExportDataFormat>&& value) { SetExportDataFormat(std::move(value)); return *this;}
 
     /**
      * <p>The file format for the returned export data. Default value is
-     * <code>CSV</code>.</p>
+     * <code>CSV</code>. <b>Note:</b> <i>The</i> <code>GRAPHML</code> <i>option has
+     * been deprecated.</i> </p>
      */
     inline StartExportTaskRequest& AddExportDataFormat(const ExportDataFormat& value) { m_exportDataFormatHasBeenSet = true; m_exportDataFormat.push_back(value); return *this; }
 
     /**
      * <p>The file format for the returned export data. Default value is
-     * <code>CSV</code>.</p>
+     * <code>CSV</code>. <b>Note:</b> <i>The</i> <code>GRAPHML</code> <i>option has
+     * been deprecated.</i> </p>
      */
     inline StartExportTaskRequest& AddExportDataFormat(ExportDataFormat&& value) { m_exportDataFormatHasBeenSet = true; m_exportDataFormat.push_back(std::move(value)); return *this; }
 

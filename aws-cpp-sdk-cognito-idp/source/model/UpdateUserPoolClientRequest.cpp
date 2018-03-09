@@ -38,7 +38,8 @@ UpdateUserPoolClientRequest::UpdateUserPoolClientRequest() :
     m_allowedOAuthFlowsHasBeenSet(false),
     m_allowedOAuthScopesHasBeenSet(false),
     m_allowedOAuthFlowsUserPoolClient(false),
-    m_allowedOAuthFlowsUserPoolClientHasBeenSet(false)
+    m_allowedOAuthFlowsUserPoolClientHasBeenSet(false),
+    m_analyticsConfigurationHasBeenSet(false)
 {
 }
 
@@ -167,6 +168,12 @@ Aws::String UpdateUserPoolClientRequest::SerializePayload() const
   if(m_allowedOAuthFlowsUserPoolClientHasBeenSet)
   {
    payload.WithBool("AllowedOAuthFlowsUserPoolClient", m_allowedOAuthFlowsUserPoolClient);
+
+  }
+
+  if(m_analyticsConfigurationHasBeenSet)
+  {
+   payload.WithObject("AnalyticsConfiguration", m_analyticsConfiguration.Jsonize());
 
   }
 

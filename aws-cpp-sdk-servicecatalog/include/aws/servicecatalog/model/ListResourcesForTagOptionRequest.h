@@ -45,138 +45,139 @@ namespace Model
 
 
     /**
-     * <p>Identifier of the TagOption.</p>
+     * <p>The TagOption identifier.</p>
      */
     inline const Aws::String& GetTagOptionId() const{ return m_tagOptionId; }
 
     /**
-     * <p>Identifier of the TagOption.</p>
+     * <p>The TagOption identifier.</p>
      */
     inline void SetTagOptionId(const Aws::String& value) { m_tagOptionIdHasBeenSet = true; m_tagOptionId = value; }
 
     /**
-     * <p>Identifier of the TagOption.</p>
+     * <p>The TagOption identifier.</p>
      */
     inline void SetTagOptionId(Aws::String&& value) { m_tagOptionIdHasBeenSet = true; m_tagOptionId = std::move(value); }
 
     /**
-     * <p>Identifier of the TagOption.</p>
+     * <p>The TagOption identifier.</p>
      */
     inline void SetTagOptionId(const char* value) { m_tagOptionIdHasBeenSet = true; m_tagOptionId.assign(value); }
 
     /**
-     * <p>Identifier of the TagOption.</p>
+     * <p>The TagOption identifier.</p>
      */
     inline ListResourcesForTagOptionRequest& WithTagOptionId(const Aws::String& value) { SetTagOptionId(value); return *this;}
 
     /**
-     * <p>Identifier of the TagOption.</p>
+     * <p>The TagOption identifier.</p>
      */
     inline ListResourcesForTagOptionRequest& WithTagOptionId(Aws::String&& value) { SetTagOptionId(std::move(value)); return *this;}
 
     /**
-     * <p>Identifier of the TagOption.</p>
+     * <p>The TagOption identifier.</p>
      */
     inline ListResourcesForTagOptionRequest& WithTagOptionId(const char* value) { SetTagOptionId(value); return *this;}
 
 
     /**
-     * <p>Resource type.</p>
+     * <p>The resource type.</p> <ul> <li> <p> <code>Portfolio</code> </p> </li> <li>
+     * <p> <code>Product</code> </p> </li> </ul>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>Resource type.</p>
+     * <p>The resource type.</p> <ul> <li> <p> <code>Portfolio</code> </p> </li> <li>
+     * <p> <code>Product</code> </p> </li> </ul>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>Resource type.</p>
+     * <p>The resource type.</p> <ul> <li> <p> <code>Portfolio</code> </p> </li> <li>
+     * <p> <code>Product</code> </p> </li> </ul>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>Resource type.</p>
+     * <p>The resource type.</p> <ul> <li> <p> <code>Portfolio</code> </p> </li> <li>
+     * <p> <code>Product</code> </p> </li> </ul>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p>Resource type.</p>
+     * <p>The resource type.</p> <ul> <li> <p> <code>Portfolio</code> </p> </li> <li>
+     * <p> <code>Product</code> </p> </li> </ul>
      */
     inline ListResourcesForTagOptionRequest& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>Resource type.</p>
+     * <p>The resource type.</p> <ul> <li> <p> <code>Portfolio</code> </p> </li> <li>
+     * <p> <code>Product</code> </p> </li> </ul>
      */
     inline ListResourcesForTagOptionRequest& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>Resource type.</p>
+     * <p>The resource type.</p> <ul> <li> <p> <code>Portfolio</code> </p> </li> <li>
+     * <p> <code>Product</code> </p> </li> </ul>
      */
     inline ListResourcesForTagOptionRequest& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
 
     /**
-     * <p>The maximum number of items to return in the results. If more results exist
-     * than fit in the specified <code>PageSize</code>, the value of
-     * <code>NextPageToken</code> in the response is non-null.</p>
+     * <p>The maximum number of items to return with this call.</p>
      */
     inline int GetPageSize() const{ return m_pageSize; }
 
     /**
-     * <p>The maximum number of items to return in the results. If more results exist
-     * than fit in the specified <code>PageSize</code>, the value of
-     * <code>NextPageToken</code> in the response is non-null.</p>
+     * <p>The maximum number of items to return with this call.</p>
      */
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
 
     /**
-     * <p>The maximum number of items to return in the results. If more results exist
-     * than fit in the specified <code>PageSize</code>, the value of
-     * <code>NextPageToken</code> in the response is non-null.</p>
+     * <p>The maximum number of items to return with this call.</p>
      */
     inline ListResourcesForTagOptionRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
 
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline const Aws::String& GetPageToken() const{ return m_pageToken; }
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline void SetPageToken(const Aws::String& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::move(value); }
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline void SetPageToken(const char* value) { m_pageTokenHasBeenSet = true; m_pageToken.assign(value); }
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline ListResourcesForTagOptionRequest& WithPageToken(const Aws::String& value) { SetPageToken(value); return *this;}
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline ListResourcesForTagOptionRequest& WithPageToken(Aws::String&& value) { SetPageToken(std::move(value)); return *this;}
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline ListResourcesForTagOptionRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
 

@@ -43,27 +43,27 @@ namespace Model
 
 
     /**
-     * <p>The resulting detailed TagOption information.</p>
+     * <p>Information about the TagOption.</p>
      */
     inline const TagOptionDetail& GetTagOptionDetail() const{ return m_tagOptionDetail; }
 
     /**
-     * <p>The resulting detailed TagOption information.</p>
+     * <p>Information about the TagOption.</p>
      */
     inline void SetTagOptionDetail(const TagOptionDetail& value) { m_tagOptionDetail = value; }
 
     /**
-     * <p>The resulting detailed TagOption information.</p>
+     * <p>Information about the TagOption.</p>
      */
     inline void SetTagOptionDetail(TagOptionDetail&& value) { m_tagOptionDetail = std::move(value); }
 
     /**
-     * <p>The resulting detailed TagOption information.</p>
+     * <p>Information about the TagOption.</p>
      */
     inline CreateTagOptionResult& WithTagOptionDetail(const TagOptionDetail& value) { SetTagOptionDetail(value); return *this;}
 
     /**
-     * <p>The resulting detailed TagOption information.</p>
+     * <p>Information about the TagOption.</p>
      */
     inline CreateTagOptionResult& WithTagOptionDetail(TagOptionDetail&& value) { SetTagOptionDetail(std::move(value)); return *this;}
 

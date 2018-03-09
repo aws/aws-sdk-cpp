@@ -263,6 +263,42 @@ namespace Model
      */
     inline VpcPeeringConnectionVpcInfo& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
+    /**
+     * <p>The region in which the VPC is located.</p>
+     */
+    inline const Aws::String& GetRegion() const{ return m_region; }
+
+    /**
+     * <p>The region in which the VPC is located.</p>
+     */
+    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
+
+    /**
+     * <p>The region in which the VPC is located.</p>
+     */
+    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
+
+    /**
+     * <p>The region in which the VPC is located.</p>
+     */
+    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
+
+    /**
+     * <p>The region in which the VPC is located.</p>
+     */
+    inline VpcPeeringConnectionVpcInfo& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
+
+    /**
+     * <p>The region in which the VPC is located.</p>
+     */
+    inline VpcPeeringConnectionVpcInfo& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
+
+    /**
+     * <p>The region in which the VPC is located.</p>
+     */
+    inline VpcPeeringConnectionVpcInfo& WithRegion(const char* value) { SetRegion(value); return *this;}
+
   private:
 
     Aws::String m_cidrBlock;
@@ -282,6 +318,9 @@ namespace Model
 
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
+    Aws::String m_region;
+    bool m_regionHasBeenSet;
   };
 
 } // namespace Model

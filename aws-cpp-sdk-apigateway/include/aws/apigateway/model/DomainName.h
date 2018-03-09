@@ -36,11 +36,10 @@ namespace Model
 
   /**
    * <p>Represents a custom domain name as a user-friendly host name of an API
-   * (<a>RestApi</a>).</p> <div class="Remarks"> <p>When you deploy an API, Amazon
-   * API Gateway creates a default host name for the API. This default API host name
-   * is of the <code>{restapi-id}.execute-api.{region}.amazonaws.com</code> format.
-   * With the default host name, you can access the API's root resource with the URL
-   * of
+   * (<a>RestApi</a>).</p> <div class="Remarks"> <p>When you deploy an API, API
+   * Gateway creates a default host name for the API. This default API host name is
+   * of the <code>{restapi-id}.execute-api.{region}.amazonaws.com</code> format. With
+   * the default host name, you can access the API's root resource with the URL of
    * <code>https://{restapi-id}.execute-api.{region}.amazonaws.com/{stage}/</code>.
    * When you set up a custom domain name of <code>apis.example.com</code> for this
    * API, you can then access the same resource using the URL of the
@@ -225,7 +224,7 @@ namespace Model
      * <p>The domain name associated with the regional endpoint for this custom domain
      * name. You set up this association by adding a DNS record that points the custom
      * domain name to this regional domain name. The regional domain name is returned
-     * by Amazon API Gateway when you create a regional endpoint.</p>
+     * by API Gateway when you create a regional endpoint.</p>
      */
     inline const Aws::String& GetRegionalDomainName() const{ return m_regionalDomainName; }
 
@@ -233,7 +232,7 @@ namespace Model
      * <p>The domain name associated with the regional endpoint for this custom domain
      * name. You set up this association by adding a DNS record that points the custom
      * domain name to this regional domain name. The regional domain name is returned
-     * by Amazon API Gateway when you create a regional endpoint.</p>
+     * by API Gateway when you create a regional endpoint.</p>
      */
     inline void SetRegionalDomainName(const Aws::String& value) { m_regionalDomainNameHasBeenSet = true; m_regionalDomainName = value; }
 
@@ -241,7 +240,7 @@ namespace Model
      * <p>The domain name associated with the regional endpoint for this custom domain
      * name. You set up this association by adding a DNS record that points the custom
      * domain name to this regional domain name. The regional domain name is returned
-     * by Amazon API Gateway when you create a regional endpoint.</p>
+     * by API Gateway when you create a regional endpoint.</p>
      */
     inline void SetRegionalDomainName(Aws::String&& value) { m_regionalDomainNameHasBeenSet = true; m_regionalDomainName = std::move(value); }
 
@@ -249,7 +248,7 @@ namespace Model
      * <p>The domain name associated with the regional endpoint for this custom domain
      * name. You set up this association by adding a DNS record that points the custom
      * domain name to this regional domain name. The regional domain name is returned
-     * by Amazon API Gateway when you create a regional endpoint.</p>
+     * by API Gateway when you create a regional endpoint.</p>
      */
     inline void SetRegionalDomainName(const char* value) { m_regionalDomainNameHasBeenSet = true; m_regionalDomainName.assign(value); }
 
@@ -257,7 +256,7 @@ namespace Model
      * <p>The domain name associated with the regional endpoint for this custom domain
      * name. You set up this association by adding a DNS record that points the custom
      * domain name to this regional domain name. The regional domain name is returned
-     * by Amazon API Gateway when you create a regional endpoint.</p>
+     * by API Gateway when you create a regional endpoint.</p>
      */
     inline DomainName& WithRegionalDomainName(const Aws::String& value) { SetRegionalDomainName(value); return *this;}
 
@@ -265,7 +264,7 @@ namespace Model
      * <p>The domain name associated with the regional endpoint for this custom domain
      * name. You set up this association by adding a DNS record that points the custom
      * domain name to this regional domain name. The regional domain name is returned
-     * by Amazon API Gateway when you create a regional endpoint.</p>
+     * by API Gateway when you create a regional endpoint.</p>
      */
     inline DomainName& WithRegionalDomainName(Aws::String&& value) { SetRegionalDomainName(std::move(value)); return *this;}
 
@@ -273,7 +272,7 @@ namespace Model
      * <p>The domain name associated with the regional endpoint for this custom domain
      * name. You set up this association by adding a DNS record that points the custom
      * domain name to this regional domain name. The regional domain name is returned
-     * by Amazon API Gateway when you create a regional endpoint.</p>
+     * by API Gateway when you create a regional endpoint.</p>
      */
     inline DomainName& WithRegionalDomainName(const char* value) { SetRegionalDomainName(value); return *this;}
 

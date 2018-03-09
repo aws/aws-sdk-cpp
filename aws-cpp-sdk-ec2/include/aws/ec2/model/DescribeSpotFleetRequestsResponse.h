@@ -95,37 +95,37 @@ namespace Model
 
 
     /**
-     * <p>Information about the configuration of your Spot fleet.</p>
+     * <p>Information about the configuration of your Spot Fleet.</p>
      */
     inline const Aws::Vector<SpotFleetRequestConfig>& GetSpotFleetRequestConfigs() const{ return m_spotFleetRequestConfigs; }
 
     /**
-     * <p>Information about the configuration of your Spot fleet.</p>
+     * <p>Information about the configuration of your Spot Fleet.</p>
      */
     inline void SetSpotFleetRequestConfigs(const Aws::Vector<SpotFleetRequestConfig>& value) { m_spotFleetRequestConfigs = value; }
 
     /**
-     * <p>Information about the configuration of your Spot fleet.</p>
+     * <p>Information about the configuration of your Spot Fleet.</p>
      */
     inline void SetSpotFleetRequestConfigs(Aws::Vector<SpotFleetRequestConfig>&& value) { m_spotFleetRequestConfigs = std::move(value); }
 
     /**
-     * <p>Information about the configuration of your Spot fleet.</p>
+     * <p>Information about the configuration of your Spot Fleet.</p>
      */
     inline DescribeSpotFleetRequestsResponse& WithSpotFleetRequestConfigs(const Aws::Vector<SpotFleetRequestConfig>& value) { SetSpotFleetRequestConfigs(value); return *this;}
 
     /**
-     * <p>Information about the configuration of your Spot fleet.</p>
+     * <p>Information about the configuration of your Spot Fleet.</p>
      */
     inline DescribeSpotFleetRequestsResponse& WithSpotFleetRequestConfigs(Aws::Vector<SpotFleetRequestConfig>&& value) { SetSpotFleetRequestConfigs(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the configuration of your Spot fleet.</p>
+     * <p>Information about the configuration of your Spot Fleet.</p>
      */
     inline DescribeSpotFleetRequestsResponse& AddSpotFleetRequestConfigs(const SpotFleetRequestConfig& value) { m_spotFleetRequestConfigs.push_back(value); return *this; }
 
     /**
-     * <p>Information about the configuration of your Spot fleet.</p>
+     * <p>Information about the configuration of your Spot Fleet.</p>
      */
     inline DescribeSpotFleetRequestsResponse& AddSpotFleetRequestConfigs(SpotFleetRequestConfig&& value) { m_spotFleetRequestConfigs.push_back(std::move(value)); return *this; }
 

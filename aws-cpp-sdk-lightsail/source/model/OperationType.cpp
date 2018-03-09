@@ -49,6 +49,14 @@ namespace Aws
         static const int CreateInstanceSnapshot_HASH = HashingUtils::HashString("CreateInstanceSnapshot");
         static const int DeleteInstanceSnapshot_HASH = HashingUtils::HashString("DeleteInstanceSnapshot");
         static const int CreateInstancesFromSnapshot_HASH = HashingUtils::HashString("CreateInstancesFromSnapshot");
+        static const int CreateLoadBalancer_HASH = HashingUtils::HashString("CreateLoadBalancer");
+        static const int DeleteLoadBalancer_HASH = HashingUtils::HashString("DeleteLoadBalancer");
+        static const int AttachInstancesToLoadBalancer_HASH = HashingUtils::HashString("AttachInstancesToLoadBalancer");
+        static const int DetachInstancesFromLoadBalancer_HASH = HashingUtils::HashString("DetachInstancesFromLoadBalancer");
+        static const int UpdateLoadBalancerAttribute_HASH = HashingUtils::HashString("UpdateLoadBalancerAttribute");
+        static const int CreateLoadBalancerTlsCertificate_HASH = HashingUtils::HashString("CreateLoadBalancerTlsCertificate");
+        static const int DeleteLoadBalancerTlsCertificate_HASH = HashingUtils::HashString("DeleteLoadBalancerTlsCertificate");
+        static const int AttachLoadBalancerTlsCertificate_HASH = HashingUtils::HashString("AttachLoadBalancerTlsCertificate");
         static const int CreateDisk_HASH = HashingUtils::HashString("CreateDisk");
         static const int DeleteDisk_HASH = HashingUtils::HashString("DeleteDisk");
         static const int AttachDisk_HASH = HashingUtils::HashString("AttachDisk");
@@ -137,6 +145,38 @@ namespace Aws
           {
             return OperationType::CreateInstancesFromSnapshot;
           }
+          else if (hashCode == CreateLoadBalancer_HASH)
+          {
+            return OperationType::CreateLoadBalancer;
+          }
+          else if (hashCode == DeleteLoadBalancer_HASH)
+          {
+            return OperationType::DeleteLoadBalancer;
+          }
+          else if (hashCode == AttachInstancesToLoadBalancer_HASH)
+          {
+            return OperationType::AttachInstancesToLoadBalancer;
+          }
+          else if (hashCode == DetachInstancesFromLoadBalancer_HASH)
+          {
+            return OperationType::DetachInstancesFromLoadBalancer;
+          }
+          else if (hashCode == UpdateLoadBalancerAttribute_HASH)
+          {
+            return OperationType::UpdateLoadBalancerAttribute;
+          }
+          else if (hashCode == CreateLoadBalancerTlsCertificate_HASH)
+          {
+            return OperationType::CreateLoadBalancerTlsCertificate;
+          }
+          else if (hashCode == DeleteLoadBalancerTlsCertificate_HASH)
+          {
+            return OperationType::DeleteLoadBalancerTlsCertificate;
+          }
+          else if (hashCode == AttachLoadBalancerTlsCertificate_HASH)
+          {
+            return OperationType::AttachLoadBalancerTlsCertificate;
+          }
           else if (hashCode == CreateDisk_HASH)
           {
             return OperationType::CreateDisk;
@@ -217,6 +257,22 @@ namespace Aws
             return "DeleteInstanceSnapshot";
           case OperationType::CreateInstancesFromSnapshot:
             return "CreateInstancesFromSnapshot";
+          case OperationType::CreateLoadBalancer:
+            return "CreateLoadBalancer";
+          case OperationType::DeleteLoadBalancer:
+            return "DeleteLoadBalancer";
+          case OperationType::AttachInstancesToLoadBalancer:
+            return "AttachInstancesToLoadBalancer";
+          case OperationType::DetachInstancesFromLoadBalancer:
+            return "DetachInstancesFromLoadBalancer";
+          case OperationType::UpdateLoadBalancerAttribute:
+            return "UpdateLoadBalancerAttribute";
+          case OperationType::CreateLoadBalancerTlsCertificate:
+            return "CreateLoadBalancerTlsCertificate";
+          case OperationType::DeleteLoadBalancerTlsCertificate:
+            return "DeleteLoadBalancerTlsCertificate";
+          case OperationType::AttachLoadBalancerTlsCertificate:
+            return "AttachLoadBalancerTlsCertificate";
           case OperationType::CreateDisk:
             return "CreateDisk";
           case OperationType::DeleteDisk:

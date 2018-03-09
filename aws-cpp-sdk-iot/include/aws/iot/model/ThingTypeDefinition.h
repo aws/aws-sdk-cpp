@@ -86,6 +86,42 @@ namespace Model
 
 
     /**
+     * <p>The thing type ARN.</p>
+     */
+    inline const Aws::String& GetThingTypeArn() const{ return m_thingTypeArn; }
+
+    /**
+     * <p>The thing type ARN.</p>
+     */
+    inline void SetThingTypeArn(const Aws::String& value) { m_thingTypeArnHasBeenSet = true; m_thingTypeArn = value; }
+
+    /**
+     * <p>The thing type ARN.</p>
+     */
+    inline void SetThingTypeArn(Aws::String&& value) { m_thingTypeArnHasBeenSet = true; m_thingTypeArn = std::move(value); }
+
+    /**
+     * <p>The thing type ARN.</p>
+     */
+    inline void SetThingTypeArn(const char* value) { m_thingTypeArnHasBeenSet = true; m_thingTypeArn.assign(value); }
+
+    /**
+     * <p>The thing type ARN.</p>
+     */
+    inline ThingTypeDefinition& WithThingTypeArn(const Aws::String& value) { SetThingTypeArn(value); return *this;}
+
+    /**
+     * <p>The thing type ARN.</p>
+     */
+    inline ThingTypeDefinition& WithThingTypeArn(Aws::String&& value) { SetThingTypeArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The thing type ARN.</p>
+     */
+    inline ThingTypeDefinition& WithThingTypeArn(const char* value) { SetThingTypeArn(value); return *this;}
+
+
+    /**
      * <p>The ThingTypeProperties for the thing type.</p>
      */
     inline const ThingTypeProperties& GetThingTypeProperties() const{ return m_thingTypeProperties; }
@@ -150,6 +186,9 @@ namespace Model
 
     Aws::String m_thingTypeName;
     bool m_thingTypeNameHasBeenSet;
+
+    Aws::String m_thingTypeArn;
+    bool m_thingTypeArnHasBeenSet;
 
     ThingTypeProperties m_thingTypeProperties;
     bool m_thingTypePropertiesHasBeenSet;

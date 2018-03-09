@@ -44,37 +44,37 @@ namespace Model
 
 
     /**
-     * <p>An object describing the API operation.</p>
+     * <p>An object describing the API operations.</p>
      */
     inline const Aws::Vector<Operation>& GetOperations() const{ return m_operations; }
 
     /**
-     * <p>An object describing the API operation.</p>
+     * <p>An object describing the API operations.</p>
      */
     inline void SetOperations(const Aws::Vector<Operation>& value) { m_operations = value; }
 
     /**
-     * <p>An object describing the API operation.</p>
+     * <p>An object describing the API operations.</p>
      */
     inline void SetOperations(Aws::Vector<Operation>&& value) { m_operations = std::move(value); }
 
     /**
-     * <p>An object describing the API operation.</p>
+     * <p>An object describing the API operations.</p>
      */
     inline AttachDiskResult& WithOperations(const Aws::Vector<Operation>& value) { SetOperations(value); return *this;}
 
     /**
-     * <p>An object describing the API operation.</p>
+     * <p>An object describing the API operations.</p>
      */
     inline AttachDiskResult& WithOperations(Aws::Vector<Operation>&& value) { SetOperations(std::move(value)); return *this;}
 
     /**
-     * <p>An object describing the API operation.</p>
+     * <p>An object describing the API operations.</p>
      */
     inline AttachDiskResult& AddOperations(const Operation& value) { m_operations.push_back(value); return *this; }
 
     /**
-     * <p>An object describing the API operation.</p>
+     * <p>An object describing the API operations.</p>
      */
     inline AttachDiskResult& AddOperations(Operation&& value) { m_operations.push_back(std::move(value)); return *this; }
 

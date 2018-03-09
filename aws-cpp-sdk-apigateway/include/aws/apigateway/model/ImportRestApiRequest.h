@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>A POST request to import an API to Amazon API Gateway using an input of an
-   * API definition file.</p><p><h3>See Also:</h3>   <a
+   * <p>A POST request to import an API to API Gateway using an input of an API
+   * definition file.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportRestApiRequest">AWS
    * API Reference</a></p>
    */

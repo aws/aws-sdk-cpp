@@ -45,27 +45,27 @@ namespace Model
 
 
     /**
-     * <p>The metric name to return data for. </p>
+     * <p>The metric name to return data for.</p>
      */
     inline const InstanceMetricName& GetMetricName() const{ return m_metricName; }
 
     /**
-     * <p>The metric name to return data for. </p>
+     * <p>The metric name to return data for.</p>
      */
     inline void SetMetricName(const InstanceMetricName& value) { m_metricName = value; }
 
     /**
-     * <p>The metric name to return data for. </p>
+     * <p>The metric name to return data for.</p>
      */
     inline void SetMetricName(InstanceMetricName&& value) { m_metricName = std::move(value); }
 
     /**
-     * <p>The metric name to return data for. </p>
+     * <p>The metric name to return data for.</p>
      */
     inline GetInstanceMetricDataResult& WithMetricName(const InstanceMetricName& value) { SetMetricName(value); return *this;}
 
     /**
-     * <p>The metric name to return data for. </p>
+     * <p>The metric name to return data for.</p>
      */
     inline GetInstanceMetricDataResult& WithMetricName(InstanceMetricName&& value) { SetMetricName(std::move(value)); return *this;}
 

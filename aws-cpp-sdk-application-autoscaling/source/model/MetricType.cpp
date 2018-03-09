@@ -38,6 +38,9 @@ namespace Aws
         static const int EC2SpotFleetRequestAverageCPUUtilization_HASH = HashingUtils::HashString("EC2SpotFleetRequestAverageCPUUtilization");
         static const int EC2SpotFleetRequestAverageNetworkIn_HASH = HashingUtils::HashString("EC2SpotFleetRequestAverageNetworkIn");
         static const int EC2SpotFleetRequestAverageNetworkOut_HASH = HashingUtils::HashString("EC2SpotFleetRequestAverageNetworkOut");
+        static const int SageMakerVariantInvocationsPerInstance_HASH = HashingUtils::HashString("SageMakerVariantInvocationsPerInstance");
+        static const int ECSServiceAverageCPUUtilization_HASH = HashingUtils::HashString("ECSServiceAverageCPUUtilization");
+        static const int ECSServiceAverageMemoryUtilization_HASH = HashingUtils::HashString("ECSServiceAverageMemoryUtilization");
 
 
         MetricType GetMetricTypeForName(const Aws::String& name)
@@ -75,6 +78,18 @@ namespace Aws
           {
             return MetricType::EC2SpotFleetRequestAverageNetworkOut;
           }
+          else if (hashCode == SageMakerVariantInvocationsPerInstance_HASH)
+          {
+            return MetricType::SageMakerVariantInvocationsPerInstance;
+          }
+          else if (hashCode == ECSServiceAverageCPUUtilization_HASH)
+          {
+            return MetricType::ECSServiceAverageCPUUtilization;
+          }
+          else if (hashCode == ECSServiceAverageMemoryUtilization_HASH)
+          {
+            return MetricType::ECSServiceAverageMemoryUtilization;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -105,6 +120,12 @@ namespace Aws
             return "EC2SpotFleetRequestAverageNetworkIn";
           case MetricType::EC2SpotFleetRequestAverageNetworkOut:
             return "EC2SpotFleetRequestAverageNetworkOut";
+          case MetricType::SageMakerVariantInvocationsPerInstance:
+            return "SageMakerVariantInvocationsPerInstance";
+          case MetricType::ECSServiceAverageCPUUtilization:
+            return "ECSServiceAverageCPUUtilization";
+          case MetricType::ECSServiceAverageMemoryUtilization:
+            return "ECSServiceAverageMemoryUtilization";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

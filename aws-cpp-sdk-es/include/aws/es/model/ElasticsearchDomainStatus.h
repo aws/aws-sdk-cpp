@@ -21,6 +21,7 @@
 #include <aws/es/model/EBSOptions.h>
 #include <aws/es/model/SnapshotOptions.h>
 #include <aws/es/model/VPCDerivedInfo.h>
+#include <aws/es/model/EncryptionAtRestOptions.h>
 #include <aws/es/model/LogType.h>
 #include <aws/es/model/LogPublishingOption.h>
 #include <utility>
@@ -588,6 +589,32 @@ namespace Model
 
 
     /**
+     * <p> Specifies the status of the <code>EncryptionAtRestOptions</code>.</p>
+     */
+    inline const EncryptionAtRestOptions& GetEncryptionAtRestOptions() const{ return m_encryptionAtRestOptions; }
+
+    /**
+     * <p> Specifies the status of the <code>EncryptionAtRestOptions</code>.</p>
+     */
+    inline void SetEncryptionAtRestOptions(const EncryptionAtRestOptions& value) { m_encryptionAtRestOptionsHasBeenSet = true; m_encryptionAtRestOptions = value; }
+
+    /**
+     * <p> Specifies the status of the <code>EncryptionAtRestOptions</code>.</p>
+     */
+    inline void SetEncryptionAtRestOptions(EncryptionAtRestOptions&& value) { m_encryptionAtRestOptionsHasBeenSet = true; m_encryptionAtRestOptions = std::move(value); }
+
+    /**
+     * <p> Specifies the status of the <code>EncryptionAtRestOptions</code>.</p>
+     */
+    inline ElasticsearchDomainStatus& WithEncryptionAtRestOptions(const EncryptionAtRestOptions& value) { SetEncryptionAtRestOptions(value); return *this;}
+
+    /**
+     * <p> Specifies the status of the <code>EncryptionAtRestOptions</code>.</p>
+     */
+    inline ElasticsearchDomainStatus& WithEncryptionAtRestOptions(EncryptionAtRestOptions&& value) { SetEncryptionAtRestOptions(std::move(value)); return *this;}
+
+
+    /**
      * <p>Specifies the status of the <code>AdvancedOptions</code></p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAdvancedOptions() const{ return m_advancedOptions; }
@@ -736,6 +763,9 @@ namespace Model
 
     VPCDerivedInfo m_vPCOptions;
     bool m_vPCOptionsHasBeenSet;
+
+    EncryptionAtRestOptions m_encryptionAtRestOptions;
+    bool m_encryptionAtRestOptionsHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_advancedOptions;
     bool m_advancedOptionsHasBeenSet;

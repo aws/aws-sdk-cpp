@@ -45,6 +45,7 @@
 #include <aws/ssm/model/DescribeActivationsResult.h>
 #include <aws/ssm/model/DescribeAssociationResult.h>
 #include <aws/ssm/model/DescribeAutomationExecutionsResult.h>
+#include <aws/ssm/model/DescribeAutomationStepExecutionsResult.h>
 #include <aws/ssm/model/DescribeAvailablePatchesResult.h>
 #include <aws/ssm/model/DescribeDocumentResult.h>
 #include <aws/ssm/model/DescribeDocumentPermissionResult.h>
@@ -186,6 +187,7 @@ namespace Model
         class DescribeActivationsRequest;
         class DescribeAssociationRequest;
         class DescribeAutomationExecutionsRequest;
+        class DescribeAutomationStepExecutionsRequest;
         class DescribeAvailablePatchesRequest;
         class DescribeDocumentRequest;
         class DescribeDocumentPermissionRequest;
@@ -283,6 +285,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeActivationsResult, Aws::Client::AWSError<SSMErrors>> DescribeActivationsOutcome;
         typedef Aws::Utils::Outcome<DescribeAssociationResult, Aws::Client::AWSError<SSMErrors>> DescribeAssociationOutcome;
         typedef Aws::Utils::Outcome<DescribeAutomationExecutionsResult, Aws::Client::AWSError<SSMErrors>> DescribeAutomationExecutionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeAutomationStepExecutionsResult, Aws::Client::AWSError<SSMErrors>> DescribeAutomationStepExecutionsOutcome;
         typedef Aws::Utils::Outcome<DescribeAvailablePatchesResult, Aws::Client::AWSError<SSMErrors>> DescribeAvailablePatchesOutcome;
         typedef Aws::Utils::Outcome<DescribeDocumentResult, Aws::Client::AWSError<SSMErrors>> DescribeDocumentOutcome;
         typedef Aws::Utils::Outcome<DescribeDocumentPermissionResult, Aws::Client::AWSError<SSMErrors>> DescribeDocumentPermissionOutcome;
@@ -380,6 +383,7 @@ namespace Model
         typedef std::future<DescribeActivationsOutcome> DescribeActivationsOutcomeCallable;
         typedef std::future<DescribeAssociationOutcome> DescribeAssociationOutcomeCallable;
         typedef std::future<DescribeAutomationExecutionsOutcome> DescribeAutomationExecutionsOutcomeCallable;
+        typedef std::future<DescribeAutomationStepExecutionsOutcome> DescribeAutomationStepExecutionsOutcomeCallable;
         typedef std::future<DescribeAvailablePatchesOutcome> DescribeAvailablePatchesOutcomeCallable;
         typedef std::future<DescribeDocumentOutcome> DescribeDocumentOutcomeCallable;
         typedef std::future<DescribeDocumentPermissionOutcome> DescribeDocumentPermissionOutcomeCallable;
@@ -480,6 +484,7 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::DescribeActivationsRequest&, const Model::DescribeActivationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeActivationsResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DescribeAssociationRequest&, const Model::DescribeAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAssociationResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DescribeAutomationExecutionsRequest&, const Model::DescribeAutomationExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAutomationExecutionsResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::DescribeAutomationStepExecutionsRequest&, const Model::DescribeAutomationStepExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAutomationStepExecutionsResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DescribeAvailablePatchesRequest&, const Model::DescribeAvailablePatchesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAvailablePatchesResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DescribeDocumentRequest&, const Model::DescribeDocumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDocumentResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DescribeDocumentPermissionRequest&, const Model::DescribeDocumentPermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDocumentPermissionResponseReceivedHandler;
@@ -554,17 +559,17 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::UpdatePatchBaselineRequest&, const Model::UpdatePatchBaselineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePatchBaselineResponseReceivedHandler;
 
   /**
-   * <fullname>Amazon EC2 Systems Manager</fullname> <p>Amazon EC2 Systems Manager is
-   * a collection of capabilities that helps you automate management tasks such as
-   * collecting system inventory, applying operating system (OS) patches, automating
-   * the creation of Amazon Machine Images (AMIs), and configuring operating systems
+   * <fullname>AWS Systems Manager</fullname> <p>AWS Systems Manager is a collection
+   * of capabilities that helps you automate management tasks such as collecting
+   * system inventory, applying operating system (OS) patches, automating the
+   * creation of Amazon Machine Images (AMIs), and configuring operating systems
    * (OSs) and applications at scale. Systems Manager lets you remotely and securely
    * manage the configuration of your managed instances. A <i>managed instance</i> is
    * any Amazon EC2 instance or on-premises machine in your hybrid environment that
    * has been configured for Systems Manager.</p> <p>This reference is intended to be
    * used with the <a
-   * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/">Amazon EC2
-   * Systems Manager User Guide</a>.</p> <p>To get started, verify prerequisites and
+   * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/">AWS Systems
+   * Manager User Guide</a>.</p> <p>To get started, verify prerequisites and
    * configure managed instances. For more information, see <a
    * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Systems
    * Manager Prerequisites</a>.</p> <p>For information about other API actions you
@@ -613,7 +618,7 @@ namespace Model
          * instances that helps you track each instance's owner and stack level. For
          * example: Key=Owner and Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and
          * Value=Production, Pre-Production, or Test.</p> <p>Each resource can have a
-         * maximum of 10 tags. </p> <p>We recommend that you devise a set of tag keys that
+         * maximum of 50 tags. </p> <p>We recommend that you devise a set of tag keys that
          * meets your needs for each resource type. Using a consistent set of tag keys
          * makes it easier for you to manage your resources. You can search and filter the
          * resources based on the tags you add. Tags don't have any semantic meaning to
@@ -637,7 +642,7 @@ namespace Model
          * instances that helps you track each instance's owner and stack level. For
          * example: Key=Owner and Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and
          * Value=Production, Pre-Production, or Test.</p> <p>Each resource can have a
-         * maximum of 10 tags. </p> <p>We recommend that you devise a set of tag keys that
+         * maximum of 50 tags. </p> <p>We recommend that you devise a set of tag keys that
          * meets your needs for each resource type. Using a consistent set of tag keys
          * makes it easier for you to manage your resources. You can search and filter the
          * resources based on the tags you add. Tags don't have any semantic meaning to
@@ -663,7 +668,7 @@ namespace Model
          * instances that helps you track each instance's owner and stack level. For
          * example: Key=Owner and Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and
          * Value=Production, Pre-Production, or Test.</p> <p>Each resource can have a
-         * maximum of 10 tags. </p> <p>We recommend that you devise a set of tag keys that
+         * maximum of 50 tags. </p> <p>We recommend that you devise a set of tag keys that
          * meets your needs for each resource type. Using a consistent set of tag keys
          * makes it easier for you to manage your resources. You can search and filter the
          * resources based on the tags you add. Tags don't have any semantic meaning to
@@ -893,14 +898,22 @@ namespace Model
         virtual void CreateMaintenanceWindowAsync(const Model::CreateMaintenanceWindowRequest& request, const CreateMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a patch baseline.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a patch baseline.</p> <note> <p>For information about valid key and
+         * value pairs in <code>PatchFilters</code> for each supported operating system
+         * type, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreatePatchBaseline">AWS
          * API Reference</a></p>
          */
         virtual Model::CreatePatchBaselineOutcome CreatePatchBaseline(const Model::CreatePatchBaselineRequest& request) const;
 
         /**
-         * <p>Creates a patch baseline.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a patch baseline.</p> <note> <p>For information about valid key and
+         * value pairs in <code>PatchFilters</code> for each supported operating system
+         * type, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreatePatchBaseline">AWS
          * API Reference</a></p>
          *
@@ -909,7 +922,11 @@ namespace Model
         virtual Model::CreatePatchBaselineOutcomeCallable CreatePatchBaselineCallable(const Model::CreatePatchBaselineRequest& request) const;
 
         /**
-         * <p>Creates a patch baseline.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a patch baseline.</p> <note> <p>For information about valid key and
+         * value pairs in <code>PatchFilters</code> for each supported operating system
+         * type, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreatePatchBaseline">AWS
          * API Reference</a></p>
          *
@@ -1427,6 +1444,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeAutomationExecutionsAsync(const Model::DescribeAutomationExecutionsRequest& request, const DescribeAutomationExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Information about all active and terminated step executions in an Automation
+         * workflow.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationStepExecutions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAutomationStepExecutionsOutcome DescribeAutomationStepExecutions(const Model::DescribeAutomationStepExecutionsRequest& request) const;
+
+        /**
+         * <p>Information about all active and terminated step executions in an Automation
+         * workflow.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationStepExecutions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAutomationStepExecutionsOutcomeCallable DescribeAutomationStepExecutionsCallable(const Model::DescribeAutomationStepExecutionsRequest& request) const;
+
+        /**
+         * <p>Information about all active and terminated step executions in an Automation
+         * workflow.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationStepExecutions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAutomationStepExecutionsAsync(const Model::DescribeAutomationStepExecutionsRequest& request, const DescribeAutomationStepExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all patches that could possibly be included in a patch
@@ -2463,7 +2508,8 @@ namespace Model
          * If the service reaches an internal limit while processing the results, it stops
          * the operation and returns the matching values up to that point and a
          * <code>NextToken</code>. You can specify the <code>NextToken</code> in a
-         * subsequent call to get the next set of results.</p><p><h3>See Also:</h3>   <a
+         * subsequent call to get the next set of results.</p> <note> <p>This API action
+         * doesn't support filtering by tags. </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">AWS
          * API Reference</a></p>
          */
@@ -2479,7 +2525,8 @@ namespace Model
          * If the service reaches an internal limit while processing the results, it stops
          * the operation and returns the matching values up to that point and a
          * <code>NextToken</code>. You can specify the <code>NextToken</code> in a
-         * subsequent call to get the next set of results.</p><p><h3>See Also:</h3>   <a
+         * subsequent call to get the next set of results.</p> <note> <p>This API action
+         * doesn't support filtering by tags. </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">AWS
          * API Reference</a></p>
          *
@@ -2497,7 +2544,8 @@ namespace Model
          * If the service reaches an internal limit while processing the results, it stops
          * the operation and returns the matching values up to that point and a
          * <code>NextToken</code>. You can specify the <code>NextToken</code> in a
-         * subsequent call to get the next set of results.</p><p><h3>See Also:</h3>   <a
+         * subsequent call to get the next set of results.</p> <note> <p>This API action
+         * doesn't support filtering by tags. </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">AWS
          * API Reference</a></p>
          *
@@ -2984,7 +3032,27 @@ namespace Model
          * resource. This action lets you register custom compliance details with a
          * resource. This call overwrites existing compliance information on the resource,
          * so you must provide a full list of compliance items each time that you send the
-         * request.</p><p><h3>See Also:</h3>   <a
+         * request.</p> <p>ComplianceType can be one of the following:</p> <ul> <li>
+         * <p>ExecutionId: The execution ID when the patch, association, or custom
+         * compliance item was applied.</p> </li> <li> <p>ExecutionType: Specify patch,
+         * association, or Custom:<code>string</code>.</p> </li> <li> <p>ExecutionTime. The
+         * time the patch, association, or custom compliance item was applied to the
+         * instance.</p> </li> <li> <p>Id: The patch, association, or custom compliance
+         * ID.</p> </li> <li> <p>Title: A title.</p> </li> <li> <p>Status: The status of
+         * the compliance item. For example, <code>approved</code> for patches, or
+         * <code>Failed</code> for associations.</p> </li> <li> <p>Severity: A patch
+         * severity. For example, <code>critical</code>.</p> </li> <li> <p>DocumentName: A
+         * SSM document name. For example, AWS-RunPatchBaseline.</p> </li> <li>
+         * <p>DocumentVersion: An SSM document version number. For example, 4.</p> </li>
+         * <li> <p>Classification: A patch classification. For example, <code>security
+         * updates</code>.</p> </li> <li> <p>PatchBaselineId: A patch baseline ID.</p>
+         * </li> <li> <p>PatchSeverity: A patch severity. For example,
+         * <code>Critical</code>.</p> </li> <li> <p>PatchState: A patch state. For example,
+         * <code>InstancesWithFailedPatches</code>.</p> </li> <li> <p>PatchGroup: The name
+         * of a patch group.</p> </li> <li> <p>InstalledTime: The time the association,
+         * patch, or custom compliance item was applied to the resource. Specify the time
+         * by using the following format: yyyy-MM-dd'T'HH:mm:ss'Z'</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutComplianceItems">AWS
          * API Reference</a></p>
          */
@@ -2995,7 +3063,27 @@ namespace Model
          * resource. This action lets you register custom compliance details with a
          * resource. This call overwrites existing compliance information on the resource,
          * so you must provide a full list of compliance items each time that you send the
-         * request.</p><p><h3>See Also:</h3>   <a
+         * request.</p> <p>ComplianceType can be one of the following:</p> <ul> <li>
+         * <p>ExecutionId: The execution ID when the patch, association, or custom
+         * compliance item was applied.</p> </li> <li> <p>ExecutionType: Specify patch,
+         * association, or Custom:<code>string</code>.</p> </li> <li> <p>ExecutionTime. The
+         * time the patch, association, or custom compliance item was applied to the
+         * instance.</p> </li> <li> <p>Id: The patch, association, or custom compliance
+         * ID.</p> </li> <li> <p>Title: A title.</p> </li> <li> <p>Status: The status of
+         * the compliance item. For example, <code>approved</code> for patches, or
+         * <code>Failed</code> for associations.</p> </li> <li> <p>Severity: A patch
+         * severity. For example, <code>critical</code>.</p> </li> <li> <p>DocumentName: A
+         * SSM document name. For example, AWS-RunPatchBaseline.</p> </li> <li>
+         * <p>DocumentVersion: An SSM document version number. For example, 4.</p> </li>
+         * <li> <p>Classification: A patch classification. For example, <code>security
+         * updates</code>.</p> </li> <li> <p>PatchBaselineId: A patch baseline ID.</p>
+         * </li> <li> <p>PatchSeverity: A patch severity. For example,
+         * <code>Critical</code>.</p> </li> <li> <p>PatchState: A patch state. For example,
+         * <code>InstancesWithFailedPatches</code>.</p> </li> <li> <p>PatchGroup: The name
+         * of a patch group.</p> </li> <li> <p>InstalledTime: The time the association,
+         * patch, or custom compliance item was applied to the resource. Specify the time
+         * by using the following format: yyyy-MM-dd'T'HH:mm:ss'Z'</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutComplianceItems">AWS
          * API Reference</a></p>
          *
@@ -3008,7 +3096,27 @@ namespace Model
          * resource. This action lets you register custom compliance details with a
          * resource. This call overwrites existing compliance information on the resource,
          * so you must provide a full list of compliance items each time that you send the
-         * request.</p><p><h3>See Also:</h3>   <a
+         * request.</p> <p>ComplianceType can be one of the following:</p> <ul> <li>
+         * <p>ExecutionId: The execution ID when the patch, association, or custom
+         * compliance item was applied.</p> </li> <li> <p>ExecutionType: Specify patch,
+         * association, or Custom:<code>string</code>.</p> </li> <li> <p>ExecutionTime. The
+         * time the patch, association, or custom compliance item was applied to the
+         * instance.</p> </li> <li> <p>Id: The patch, association, or custom compliance
+         * ID.</p> </li> <li> <p>Title: A title.</p> </li> <li> <p>Status: The status of
+         * the compliance item. For example, <code>approved</code> for patches, or
+         * <code>Failed</code> for associations.</p> </li> <li> <p>Severity: A patch
+         * severity. For example, <code>critical</code>.</p> </li> <li> <p>DocumentName: A
+         * SSM document name. For example, AWS-RunPatchBaseline.</p> </li> <li>
+         * <p>DocumentVersion: An SSM document version number. For example, 4.</p> </li>
+         * <li> <p>Classification: A patch classification. For example, <code>security
+         * updates</code>.</p> </li> <li> <p>PatchBaselineId: A patch baseline ID.</p>
+         * </li> <li> <p>PatchSeverity: A patch severity. For example,
+         * <code>Critical</code>.</p> </li> <li> <p>PatchState: A patch state. For example,
+         * <code>InstancesWithFailedPatches</code>.</p> </li> <li> <p>PatchGroup: The name
+         * of a patch group.</p> </li> <li> <p>InstalledTime: The time the association,
+         * patch, or custom compliance item was applied to the resource. Specify the time
+         * by using the following format: yyyy-MM-dd'T'HH:mm:ss'Z'</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutComplianceItems">AWS
          * API Reference</a></p>
          *
@@ -3556,7 +3664,10 @@ namespace Model
 
         /**
          * <p>Modifies an existing patch baseline. Fields not specified in the request are
-         * left unchanged.</p><p><h3>See Also:</h3>   <a
+         * left unchanged.</p> <note> <p>For information about valid key and value pairs in
+         * <code>PatchFilters</code> for each supported operating system type, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdatePatchBaseline">AWS
          * API Reference</a></p>
          */
@@ -3564,7 +3675,10 @@ namespace Model
 
         /**
          * <p>Modifies an existing patch baseline. Fields not specified in the request are
-         * left unchanged.</p><p><h3>See Also:</h3>   <a
+         * left unchanged.</p> <note> <p>For information about valid key and value pairs in
+         * <code>PatchFilters</code> for each supported operating system type, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdatePatchBaseline">AWS
          * API Reference</a></p>
          *
@@ -3574,7 +3688,10 @@ namespace Model
 
         /**
          * <p>Modifies an existing patch baseline. Fields not specified in the request are
-         * left unchanged.</p><p><h3>See Also:</h3>   <a
+         * left unchanged.</p> <note> <p>For information about valid key and value pairs in
+         * <code>PatchFilters</code> for each supported operating system type, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdatePatchBaseline">AWS
          * API Reference</a></p>
          *
@@ -3611,6 +3728,7 @@ namespace Model
         void DescribeActivationsAsyncHelper(const Model::DescribeActivationsRequest& request, const DescribeActivationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAssociationAsyncHelper(const Model::DescribeAssociationRequest& request, const DescribeAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAutomationExecutionsAsyncHelper(const Model::DescribeAutomationExecutionsRequest& request, const DescribeAutomationExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeAutomationStepExecutionsAsyncHelper(const Model::DescribeAutomationStepExecutionsRequest& request, const DescribeAutomationStepExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAvailablePatchesAsyncHelper(const Model::DescribeAvailablePatchesRequest& request, const DescribeAvailablePatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDocumentAsyncHelper(const Model::DescribeDocumentRequest& request, const DescribeDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDocumentPermissionAsyncHelper(const Model::DescribeDocumentPermissionRequest& request, const DescribeDocumentPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -62,6 +62,7 @@ namespace Aws
         static const int FLEET_VPC_PEERING_SUCCEEDED_HASH = HashingUtils::HashString("FLEET_VPC_PEERING_SUCCEEDED");
         static const int FLEET_VPC_PEERING_FAILED_HASH = HashingUtils::HashString("FLEET_VPC_PEERING_FAILED");
         static const int FLEET_VPC_PEERING_DELETED_HASH = HashingUtils::HashString("FLEET_VPC_PEERING_DELETED");
+        static const int INSTANCE_INTERRUPTED_HASH = HashingUtils::HashString("INSTANCE_INTERRUPTED");
 
 
         EventCode GetEventCodeForName(const Aws::String& name)
@@ -195,6 +196,10 @@ namespace Aws
           {
             return EventCode::FLEET_VPC_PEERING_DELETED;
           }
+          else if (hashCode == INSTANCE_INTERRUPTED_HASH)
+          {
+            return EventCode::INSTANCE_INTERRUPTED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -273,6 +278,8 @@ namespace Aws
             return "FLEET_VPC_PEERING_FAILED";
           case EventCode::FLEET_VPC_PEERING_DELETED:
             return "FLEET_VPC_PEERING_DELETED";
+          case EventCode::INSTANCE_INTERRUPTED:
+            return "INSTANCE_INTERRUPTED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

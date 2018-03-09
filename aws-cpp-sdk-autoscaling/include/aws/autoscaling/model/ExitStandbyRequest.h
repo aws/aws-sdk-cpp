@@ -48,42 +48,42 @@ namespace Model
   public:
 
     /**
-     * <p>One or more instance IDs. You must specify at least one instance ID.</p>
+     * <p>The IDs of the instances. You can specify up to 20 instances.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
 
     /**
-     * <p>One or more instance IDs. You must specify at least one instance ID.</p>
+     * <p>The IDs of the instances. You can specify up to 20 instances.</p>
      */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
-     * <p>One or more instance IDs. You must specify at least one instance ID.</p>
+     * <p>The IDs of the instances. You can specify up to 20 instances.</p>
      */
     inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
 
     /**
-     * <p>One or more instance IDs. You must specify at least one instance ID.</p>
+     * <p>The IDs of the instances. You can specify up to 20 instances.</p>
      */
     inline ExitStandbyRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
 
     /**
-     * <p>One or more instance IDs. You must specify at least one instance ID.</p>
+     * <p>The IDs of the instances. You can specify up to 20 instances.</p>
      */
     inline ExitStandbyRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more instance IDs. You must specify at least one instance ID.</p>
+     * <p>The IDs of the instances. You can specify up to 20 instances.</p>
      */
     inline ExitStandbyRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more instance IDs. You must specify at least one instance ID.</p>
+     * <p>The IDs of the instances. You can specify up to 20 instances.</p>
      */
     inline ExitStandbyRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more instance IDs. You must specify at least one instance ID.</p>
+     * <p>The IDs of the instances. You can specify up to 20 instances.</p>
      */
     inline ExitStandbyRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 

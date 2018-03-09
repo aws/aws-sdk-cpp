@@ -33,7 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>A job run that preceded this one.</p><p><h3>See Also:</h3>   <a
+   * <p>A job run that was used in the predicate of a conditional trigger that
+   * triggered this job run.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Predecessor">AWS
    * API Reference</a></p>
    */
@@ -83,37 +84,37 @@ namespace Model
 
 
     /**
-     * <p>The job-run ID of the precessor job run.</p>
+     * <p>The job-run ID of the predecessor job run.</p>
      */
     inline const Aws::String& GetRunId() const{ return m_runId; }
 
     /**
-     * <p>The job-run ID of the precessor job run.</p>
+     * <p>The job-run ID of the predecessor job run.</p>
      */
     inline void SetRunId(const Aws::String& value) { m_runIdHasBeenSet = true; m_runId = value; }
 
     /**
-     * <p>The job-run ID of the precessor job run.</p>
+     * <p>The job-run ID of the predecessor job run.</p>
      */
     inline void SetRunId(Aws::String&& value) { m_runIdHasBeenSet = true; m_runId = std::move(value); }
 
     /**
-     * <p>The job-run ID of the precessor job run.</p>
+     * <p>The job-run ID of the predecessor job run.</p>
      */
     inline void SetRunId(const char* value) { m_runIdHasBeenSet = true; m_runId.assign(value); }
 
     /**
-     * <p>The job-run ID of the precessor job run.</p>
+     * <p>The job-run ID of the predecessor job run.</p>
      */
     inline Predecessor& WithRunId(const Aws::String& value) { SetRunId(value); return *this;}
 
     /**
-     * <p>The job-run ID of the precessor job run.</p>
+     * <p>The job-run ID of the predecessor job run.</p>
      */
     inline Predecessor& WithRunId(Aws::String&& value) { SetRunId(std::move(value)); return *this;}
 
     /**
-     * <p>The job-run ID of the precessor job run.</p>
+     * <p>The job-run ID of the predecessor job run.</p>
      */
     inline Predecessor& WithRunId(const char* value) { SetRunId(value); return *this;}
 

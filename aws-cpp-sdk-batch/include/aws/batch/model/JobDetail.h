@@ -21,6 +21,7 @@
 #include <aws/batch/model/RetryStrategy.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/batch/model/ContainerDetail.h>
+#include <aws/batch/model/ArrayPropertiesDetail.h>
 #include <aws/batch/model/AttemptDetail.h>
 #include <aws/batch/model/JobDependency.h>
 #include <utility>
@@ -274,20 +275,29 @@ namespace Model
 
 
     /**
-     * <p>The Unix timestamp for when the job was created (when the task entered the
-     * <code>PENDING</code> state). </p>
+     * <p>The Unix time stamp for when the job was created. For non-array jobs and
+     * parent array jobs, this is when the job entered the <code>SUBMITTED</code> state
+     * (at the time <a>SubmitJob</a> was called). For array child jobs, this is when
+     * the child job was spawned by its parent and entered the <code>PENDING</code>
+     * state.</p>
      */
     inline long long GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The Unix timestamp for when the job was created (when the task entered the
-     * <code>PENDING</code> state). </p>
+     * <p>The Unix time stamp for when the job was created. For non-array jobs and
+     * parent array jobs, this is when the job entered the <code>SUBMITTED</code> state
+     * (at the time <a>SubmitJob</a> was called). For array child jobs, this is when
+     * the child job was spawned by its parent and entered the <code>PENDING</code>
+     * state.</p>
      */
     inline void SetCreatedAt(long long value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The Unix timestamp for when the job was created (when the task entered the
-     * <code>PENDING</code> state). </p>
+     * <p>The Unix time stamp for when the job was created. For non-array jobs and
+     * parent array jobs, this is when the job entered the <code>SUBMITTED</code> state
+     * (at the time <a>SubmitJob</a> was called). For array child jobs, this is when
+     * the child job was spawned by its parent and entered the <code>PENDING</code>
+     * state.</p>
      */
     inline JobDetail& WithCreatedAt(long long value) { SetCreatedAt(value); return *this;}
 
@@ -319,39 +329,42 @@ namespace Model
 
 
     /**
-     * <p>The Unix timestamp for when the job was started (when the task transitioned
-     * from the <code>PENDING</code> state to the <code>RUNNING</code> state). </p>
+     * <p>The Unix time stamp for when the job was started (when the job transitioned
+     * from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
      */
     inline long long GetStartedAt() const{ return m_startedAt; }
 
     /**
-     * <p>The Unix timestamp for when the job was started (when the task transitioned
-     * from the <code>PENDING</code> state to the <code>RUNNING</code> state). </p>
+     * <p>The Unix time stamp for when the job was started (when the job transitioned
+     * from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
      */
     inline void SetStartedAt(long long value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
 
     /**
-     * <p>The Unix timestamp for when the job was started (when the task transitioned
-     * from the <code>PENDING</code> state to the <code>RUNNING</code> state). </p>
+     * <p>The Unix time stamp for when the job was started (when the job transitioned
+     * from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
      */
     inline JobDetail& WithStartedAt(long long value) { SetStartedAt(value); return *this;}
 
 
     /**
-     * <p>The Unix timestamp for when the job was stopped (when the task transitioned
-     * from the <code>RUNNING</code> state to the <code>STOPPED</code> state).</p>
+     * <p>The Unix time stamp for when the job was stopped (when the job transitioned
+     * from the <code>RUNNING</code> state to a terminal state, such as
+     * <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
      */
     inline long long GetStoppedAt() const{ return m_stoppedAt; }
 
     /**
-     * <p>The Unix timestamp for when the job was stopped (when the task transitioned
-     * from the <code>RUNNING</code> state to the <code>STOPPED</code> state).</p>
+     * <p>The Unix time stamp for when the job was stopped (when the job transitioned
+     * from the <code>RUNNING</code> state to a terminal state, such as
+     * <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
      */
     inline void SetStoppedAt(long long value) { m_stoppedAtHasBeenSet = true; m_stoppedAt = value; }
 
     /**
-     * <p>The Unix timestamp for when the job was stopped (when the task transitioned
-     * from the <code>RUNNING</code> state to the <code>STOPPED</code> state).</p>
+     * <p>The Unix time stamp for when the job was stopped (when the job transitioned
+     * from the <code>RUNNING</code> state to a terminal state, such as
+     * <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
      */
     inline JobDetail& WithStoppedAt(long long value) { SetStoppedAt(value); return *this;}
 
@@ -543,6 +556,32 @@ namespace Model
      */
     inline JobDetail& WithContainer(ContainerDetail&& value) { SetContainer(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The array properties of the job, if it is an array job.</p>
+     */
+    inline const ArrayPropertiesDetail& GetArrayProperties() const{ return m_arrayProperties; }
+
+    /**
+     * <p>The array properties of the job, if it is an array job.</p>
+     */
+    inline void SetArrayProperties(const ArrayPropertiesDetail& value) { m_arrayPropertiesHasBeenSet = true; m_arrayProperties = value; }
+
+    /**
+     * <p>The array properties of the job, if it is an array job.</p>
+     */
+    inline void SetArrayProperties(ArrayPropertiesDetail&& value) { m_arrayPropertiesHasBeenSet = true; m_arrayProperties = std::move(value); }
+
+    /**
+     * <p>The array properties of the job, if it is an array job.</p>
+     */
+    inline JobDetail& WithArrayProperties(const ArrayPropertiesDetail& value) { SetArrayProperties(value); return *this;}
+
+    /**
+     * <p>The array properties of the job, if it is an array job.</p>
+     */
+    inline JobDetail& WithArrayProperties(ArrayPropertiesDetail&& value) { SetArrayProperties(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_jobName;
@@ -586,6 +625,9 @@ namespace Model
 
     ContainerDetail m_container;
     bool m_containerHasBeenSet;
+
+    ArrayPropertiesDetail m_arrayProperties;
+    bool m_arrayPropertiesHasBeenSet;
   };
 
 } // namespace Model

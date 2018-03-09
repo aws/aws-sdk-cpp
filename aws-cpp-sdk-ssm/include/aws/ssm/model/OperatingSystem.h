@@ -29,7 +29,8 @@ namespace Model
     WINDOWS,
     AMAZON_LINUX,
     UBUNTU,
-    REDHAT_ENTERPRISE_LINUX
+    REDHAT_ENTERPRISE_LINUX,
+    SUSE
   };
 
 namespace OperatingSystemMapper

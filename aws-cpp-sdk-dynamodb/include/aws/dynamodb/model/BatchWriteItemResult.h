@@ -369,13 +369,13 @@ namespace Model
      * <p>Each entry consists of the following subelements:</p> <ul> <li> <p>
      * <code>ItemCollectionKey</code> - The partition key value of the item collection.
      * This is the same as the partition key value of the item.</p> </li> <li> <p>
-     * <code>SizeEstimateRange</code> - An estimate of item collection size, expressed
-     * in GB. This is a two-element array containing a lower bound and an upper bound
-     * for the estimate. The estimate includes the size of all the items in the table,
-     * plus the size of all attributes projected into all of the local secondary
-     * indexes on the table. Use this estimate to measure whether a local secondary
-     * index is approaching its size limit.</p> <p>The estimate is subject to change
-     * over time; therefore, do not rely on the precision or accuracy of the
+     * <code>SizeEstimateRangeGB</code> - An estimate of item collection size,
+     * expressed in GB. This is a two-element array containing a lower bound and an
+     * upper bound for the estimate. The estimate includes the size of all the items in
+     * the table, plus the size of all attributes projected into all of the local
+     * secondary indexes on the table. Use this estimate to measure whether a local
+     * secondary index is approaching its size limit.</p> <p>The estimate is subject to
+     * change over time; therefore, do not rely on the precision or accuracy of the
      * estimate.</p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<ItemCollectionMetrics>>& GetItemCollectionMetrics() const{ return m_itemCollectionMetrics; }
@@ -387,13 +387,13 @@ namespace Model
      * <p>Each entry consists of the following subelements:</p> <ul> <li> <p>
      * <code>ItemCollectionKey</code> - The partition key value of the item collection.
      * This is the same as the partition key value of the item.</p> </li> <li> <p>
-     * <code>SizeEstimateRange</code> - An estimate of item collection size, expressed
-     * in GB. This is a two-element array containing a lower bound and an upper bound
-     * for the estimate. The estimate includes the size of all the items in the table,
-     * plus the size of all attributes projected into all of the local secondary
-     * indexes on the table. Use this estimate to measure whether a local secondary
-     * index is approaching its size limit.</p> <p>The estimate is subject to change
-     * over time; therefore, do not rely on the precision or accuracy of the
+     * <code>SizeEstimateRangeGB</code> - An estimate of item collection size,
+     * expressed in GB. This is a two-element array containing a lower bound and an
+     * upper bound for the estimate. The estimate includes the size of all the items in
+     * the table, plus the size of all attributes projected into all of the local
+     * secondary indexes on the table. Use this estimate to measure whether a local
+     * secondary index is approaching its size limit.</p> <p>The estimate is subject to
+     * change over time; therefore, do not rely on the precision or accuracy of the
      * estimate.</p> </li> </ul>
      */
     inline void SetItemCollectionMetrics(const Aws::Map<Aws::String, Aws::Vector<ItemCollectionMetrics>>& value) { m_itemCollectionMetrics = value; }
@@ -405,13 +405,13 @@ namespace Model
      * <p>Each entry consists of the following subelements:</p> <ul> <li> <p>
      * <code>ItemCollectionKey</code> - The partition key value of the item collection.
      * This is the same as the partition key value of the item.</p> </li> <li> <p>
-     * <code>SizeEstimateRange</code> - An estimate of item collection size, expressed
-     * in GB. This is a two-element array containing a lower bound and an upper bound
-     * for the estimate. The estimate includes the size of all the items in the table,
-     * plus the size of all attributes projected into all of the local secondary
-     * indexes on the table. Use this estimate to measure whether a local secondary
-     * index is approaching its size limit.</p> <p>The estimate is subject to change
-     * over time; therefore, do not rely on the precision or accuracy of the
+     * <code>SizeEstimateRangeGB</code> - An estimate of item collection size,
+     * expressed in GB. This is a two-element array containing a lower bound and an
+     * upper bound for the estimate. The estimate includes the size of all the items in
+     * the table, plus the size of all attributes projected into all of the local
+     * secondary indexes on the table. Use this estimate to measure whether a local
+     * secondary index is approaching its size limit.</p> <p>The estimate is subject to
+     * change over time; therefore, do not rely on the precision or accuracy of the
      * estimate.</p> </li> </ul>
      */
     inline void SetItemCollectionMetrics(Aws::Map<Aws::String, Aws::Vector<ItemCollectionMetrics>>&& value) { m_itemCollectionMetrics = std::move(value); }
@@ -423,13 +423,13 @@ namespace Model
      * <p>Each entry consists of the following subelements:</p> <ul> <li> <p>
      * <code>ItemCollectionKey</code> - The partition key value of the item collection.
      * This is the same as the partition key value of the item.</p> </li> <li> <p>
-     * <code>SizeEstimateRange</code> - An estimate of item collection size, expressed
-     * in GB. This is a two-element array containing a lower bound and an upper bound
-     * for the estimate. The estimate includes the size of all the items in the table,
-     * plus the size of all attributes projected into all of the local secondary
-     * indexes on the table. Use this estimate to measure whether a local secondary
-     * index is approaching its size limit.</p> <p>The estimate is subject to change
-     * over time; therefore, do not rely on the precision or accuracy of the
+     * <code>SizeEstimateRangeGB</code> - An estimate of item collection size,
+     * expressed in GB. This is a two-element array containing a lower bound and an
+     * upper bound for the estimate. The estimate includes the size of all the items in
+     * the table, plus the size of all attributes projected into all of the local
+     * secondary indexes on the table. Use this estimate to measure whether a local
+     * secondary index is approaching its size limit.</p> <p>The estimate is subject to
+     * change over time; therefore, do not rely on the precision or accuracy of the
      * estimate.</p> </li> </ul>
      */
     inline BatchWriteItemResult& WithItemCollectionMetrics(const Aws::Map<Aws::String, Aws::Vector<ItemCollectionMetrics>>& value) { SetItemCollectionMetrics(value); return *this;}
@@ -441,13 +441,13 @@ namespace Model
      * <p>Each entry consists of the following subelements:</p> <ul> <li> <p>
      * <code>ItemCollectionKey</code> - The partition key value of the item collection.
      * This is the same as the partition key value of the item.</p> </li> <li> <p>
-     * <code>SizeEstimateRange</code> - An estimate of item collection size, expressed
-     * in GB. This is a two-element array containing a lower bound and an upper bound
-     * for the estimate. The estimate includes the size of all the items in the table,
-     * plus the size of all attributes projected into all of the local secondary
-     * indexes on the table. Use this estimate to measure whether a local secondary
-     * index is approaching its size limit.</p> <p>The estimate is subject to change
-     * over time; therefore, do not rely on the precision or accuracy of the
+     * <code>SizeEstimateRangeGB</code> - An estimate of item collection size,
+     * expressed in GB. This is a two-element array containing a lower bound and an
+     * upper bound for the estimate. The estimate includes the size of all the items in
+     * the table, plus the size of all attributes projected into all of the local
+     * secondary indexes on the table. Use this estimate to measure whether a local
+     * secondary index is approaching its size limit.</p> <p>The estimate is subject to
+     * change over time; therefore, do not rely on the precision or accuracy of the
      * estimate.</p> </li> </ul>
      */
     inline BatchWriteItemResult& WithItemCollectionMetrics(Aws::Map<Aws::String, Aws::Vector<ItemCollectionMetrics>>&& value) { SetItemCollectionMetrics(std::move(value)); return *this;}
@@ -459,13 +459,13 @@ namespace Model
      * <p>Each entry consists of the following subelements:</p> <ul> <li> <p>
      * <code>ItemCollectionKey</code> - The partition key value of the item collection.
      * This is the same as the partition key value of the item.</p> </li> <li> <p>
-     * <code>SizeEstimateRange</code> - An estimate of item collection size, expressed
-     * in GB. This is a two-element array containing a lower bound and an upper bound
-     * for the estimate. The estimate includes the size of all the items in the table,
-     * plus the size of all attributes projected into all of the local secondary
-     * indexes on the table. Use this estimate to measure whether a local secondary
-     * index is approaching its size limit.</p> <p>The estimate is subject to change
-     * over time; therefore, do not rely on the precision or accuracy of the
+     * <code>SizeEstimateRangeGB</code> - An estimate of item collection size,
+     * expressed in GB. This is a two-element array containing a lower bound and an
+     * upper bound for the estimate. The estimate includes the size of all the items in
+     * the table, plus the size of all attributes projected into all of the local
+     * secondary indexes on the table. Use this estimate to measure whether a local
+     * secondary index is approaching its size limit.</p> <p>The estimate is subject to
+     * change over time; therefore, do not rely on the precision or accuracy of the
      * estimate.</p> </li> </ul>
      */
     inline BatchWriteItemResult& AddItemCollectionMetrics(const Aws::String& key, const Aws::Vector<ItemCollectionMetrics>& value) { m_itemCollectionMetrics.emplace(key, value); return *this; }
@@ -477,13 +477,13 @@ namespace Model
      * <p>Each entry consists of the following subelements:</p> <ul> <li> <p>
      * <code>ItemCollectionKey</code> - The partition key value of the item collection.
      * This is the same as the partition key value of the item.</p> </li> <li> <p>
-     * <code>SizeEstimateRange</code> - An estimate of item collection size, expressed
-     * in GB. This is a two-element array containing a lower bound and an upper bound
-     * for the estimate. The estimate includes the size of all the items in the table,
-     * plus the size of all attributes projected into all of the local secondary
-     * indexes on the table. Use this estimate to measure whether a local secondary
-     * index is approaching its size limit.</p> <p>The estimate is subject to change
-     * over time; therefore, do not rely on the precision or accuracy of the
+     * <code>SizeEstimateRangeGB</code> - An estimate of item collection size,
+     * expressed in GB. This is a two-element array containing a lower bound and an
+     * upper bound for the estimate. The estimate includes the size of all the items in
+     * the table, plus the size of all attributes projected into all of the local
+     * secondary indexes on the table. Use this estimate to measure whether a local
+     * secondary index is approaching its size limit.</p> <p>The estimate is subject to
+     * change over time; therefore, do not rely on the precision or accuracy of the
      * estimate.</p> </li> </ul>
      */
     inline BatchWriteItemResult& AddItemCollectionMetrics(Aws::String&& key, const Aws::Vector<ItemCollectionMetrics>& value) { m_itemCollectionMetrics.emplace(std::move(key), value); return *this; }
@@ -495,13 +495,13 @@ namespace Model
      * <p>Each entry consists of the following subelements:</p> <ul> <li> <p>
      * <code>ItemCollectionKey</code> - The partition key value of the item collection.
      * This is the same as the partition key value of the item.</p> </li> <li> <p>
-     * <code>SizeEstimateRange</code> - An estimate of item collection size, expressed
-     * in GB. This is a two-element array containing a lower bound and an upper bound
-     * for the estimate. The estimate includes the size of all the items in the table,
-     * plus the size of all attributes projected into all of the local secondary
-     * indexes on the table. Use this estimate to measure whether a local secondary
-     * index is approaching its size limit.</p> <p>The estimate is subject to change
-     * over time; therefore, do not rely on the precision or accuracy of the
+     * <code>SizeEstimateRangeGB</code> - An estimate of item collection size,
+     * expressed in GB. This is a two-element array containing a lower bound and an
+     * upper bound for the estimate. The estimate includes the size of all the items in
+     * the table, plus the size of all attributes projected into all of the local
+     * secondary indexes on the table. Use this estimate to measure whether a local
+     * secondary index is approaching its size limit.</p> <p>The estimate is subject to
+     * change over time; therefore, do not rely on the precision or accuracy of the
      * estimate.</p> </li> </ul>
      */
     inline BatchWriteItemResult& AddItemCollectionMetrics(const Aws::String& key, Aws::Vector<ItemCollectionMetrics>&& value) { m_itemCollectionMetrics.emplace(key, std::move(value)); return *this; }
@@ -513,13 +513,13 @@ namespace Model
      * <p>Each entry consists of the following subelements:</p> <ul> <li> <p>
      * <code>ItemCollectionKey</code> - The partition key value of the item collection.
      * This is the same as the partition key value of the item.</p> </li> <li> <p>
-     * <code>SizeEstimateRange</code> - An estimate of item collection size, expressed
-     * in GB. This is a two-element array containing a lower bound and an upper bound
-     * for the estimate. The estimate includes the size of all the items in the table,
-     * plus the size of all attributes projected into all of the local secondary
-     * indexes on the table. Use this estimate to measure whether a local secondary
-     * index is approaching its size limit.</p> <p>The estimate is subject to change
-     * over time; therefore, do not rely on the precision or accuracy of the
+     * <code>SizeEstimateRangeGB</code> - An estimate of item collection size,
+     * expressed in GB. This is a two-element array containing a lower bound and an
+     * upper bound for the estimate. The estimate includes the size of all the items in
+     * the table, plus the size of all attributes projected into all of the local
+     * secondary indexes on the table. Use this estimate to measure whether a local
+     * secondary index is approaching its size limit.</p> <p>The estimate is subject to
+     * change over time; therefore, do not rely on the precision or accuracy of the
      * estimate.</p> </li> </ul>
      */
     inline BatchWriteItemResult& AddItemCollectionMetrics(Aws::String&& key, Aws::Vector<ItemCollectionMetrics>&& value) { m_itemCollectionMetrics.emplace(std::move(key), std::move(value)); return *this; }
@@ -531,13 +531,13 @@ namespace Model
      * <p>Each entry consists of the following subelements:</p> <ul> <li> <p>
      * <code>ItemCollectionKey</code> - The partition key value of the item collection.
      * This is the same as the partition key value of the item.</p> </li> <li> <p>
-     * <code>SizeEstimateRange</code> - An estimate of item collection size, expressed
-     * in GB. This is a two-element array containing a lower bound and an upper bound
-     * for the estimate. The estimate includes the size of all the items in the table,
-     * plus the size of all attributes projected into all of the local secondary
-     * indexes on the table. Use this estimate to measure whether a local secondary
-     * index is approaching its size limit.</p> <p>The estimate is subject to change
-     * over time; therefore, do not rely on the precision or accuracy of the
+     * <code>SizeEstimateRangeGB</code> - An estimate of item collection size,
+     * expressed in GB. This is a two-element array containing a lower bound and an
+     * upper bound for the estimate. The estimate includes the size of all the items in
+     * the table, plus the size of all attributes projected into all of the local
+     * secondary indexes on the table. Use this estimate to measure whether a local
+     * secondary index is approaching its size limit.</p> <p>The estimate is subject to
+     * change over time; therefore, do not rely on the precision or accuracy of the
      * estimate.</p> </li> </ul>
      */
     inline BatchWriteItemResult& AddItemCollectionMetrics(const char* key, Aws::Vector<ItemCollectionMetrics>&& value) { m_itemCollectionMetrics.emplace(key, std::move(value)); return *this; }
@@ -549,13 +549,13 @@ namespace Model
      * <p>Each entry consists of the following subelements:</p> <ul> <li> <p>
      * <code>ItemCollectionKey</code> - The partition key value of the item collection.
      * This is the same as the partition key value of the item.</p> </li> <li> <p>
-     * <code>SizeEstimateRange</code> - An estimate of item collection size, expressed
-     * in GB. This is a two-element array containing a lower bound and an upper bound
-     * for the estimate. The estimate includes the size of all the items in the table,
-     * plus the size of all attributes projected into all of the local secondary
-     * indexes on the table. Use this estimate to measure whether a local secondary
-     * index is approaching its size limit.</p> <p>The estimate is subject to change
-     * over time; therefore, do not rely on the precision or accuracy of the
+     * <code>SizeEstimateRangeGB</code> - An estimate of item collection size,
+     * expressed in GB. This is a two-element array containing a lower bound and an
+     * upper bound for the estimate. The estimate includes the size of all the items in
+     * the table, plus the size of all attributes projected into all of the local
+     * secondary indexes on the table. Use this estimate to measure whether a local
+     * secondary index is approaching its size limit.</p> <p>The estimate is subject to
+     * change over time; therefore, do not rely on the precision or accuracy of the
      * estimate.</p> </li> </ul>
      */
     inline BatchWriteItemResult& AddItemCollectionMetrics(const char* key, const Aws::Vector<ItemCollectionMetrics>& value) { m_itemCollectionMetrics.emplace(key, value); return *this; }

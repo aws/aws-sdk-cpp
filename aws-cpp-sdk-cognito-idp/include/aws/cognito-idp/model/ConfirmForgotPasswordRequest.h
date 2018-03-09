@@ -17,6 +17,8 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cognito-idp/model/AnalyticsMetadataType.h>
+#include <aws/cognito-idp/model/UserContextDataType.h>
 #include <utility>
 
 namespace Aws
@@ -172,50 +174,43 @@ namespace Model
 
     /**
      * <p>The confirmation code sent by a user's request to retrieve a forgotten
-     * password. For more information, see <a
-     * href="API_ForgotPassword.html">ForgotPassword</a> </p>
+     * password. For more information, see </p>
      */
     inline const Aws::String& GetConfirmationCode() const{ return m_confirmationCode; }
 
     /**
      * <p>The confirmation code sent by a user's request to retrieve a forgotten
-     * password. For more information, see <a
-     * href="API_ForgotPassword.html">ForgotPassword</a> </p>
+     * password. For more information, see </p>
      */
     inline void SetConfirmationCode(const Aws::String& value) { m_confirmationCodeHasBeenSet = true; m_confirmationCode = value; }
 
     /**
      * <p>The confirmation code sent by a user's request to retrieve a forgotten
-     * password. For more information, see <a
-     * href="API_ForgotPassword.html">ForgotPassword</a> </p>
+     * password. For more information, see </p>
      */
     inline void SetConfirmationCode(Aws::String&& value) { m_confirmationCodeHasBeenSet = true; m_confirmationCode = std::move(value); }
 
     /**
      * <p>The confirmation code sent by a user's request to retrieve a forgotten
-     * password. For more information, see <a
-     * href="API_ForgotPassword.html">ForgotPassword</a> </p>
+     * password. For more information, see </p>
      */
     inline void SetConfirmationCode(const char* value) { m_confirmationCodeHasBeenSet = true; m_confirmationCode.assign(value); }
 
     /**
      * <p>The confirmation code sent by a user's request to retrieve a forgotten
-     * password. For more information, see <a
-     * href="API_ForgotPassword.html">ForgotPassword</a> </p>
+     * password. For more information, see </p>
      */
     inline ConfirmForgotPasswordRequest& WithConfirmationCode(const Aws::String& value) { SetConfirmationCode(value); return *this;}
 
     /**
      * <p>The confirmation code sent by a user's request to retrieve a forgotten
-     * password. For more information, see <a
-     * href="API_ForgotPassword.html">ForgotPassword</a> </p>
+     * password. For more information, see </p>
      */
     inline ConfirmForgotPasswordRequest& WithConfirmationCode(Aws::String&& value) { SetConfirmationCode(std::move(value)); return *this;}
 
     /**
      * <p>The confirmation code sent by a user's request to retrieve a forgotten
-     * password. For more information, see <a
-     * href="API_ForgotPassword.html">ForgotPassword</a> </p>
+     * password. For more information, see </p>
      */
     inline ConfirmForgotPasswordRequest& WithConfirmationCode(const char* value) { SetConfirmationCode(value); return *this;}
 
@@ -255,6 +250,73 @@ namespace Model
      */
     inline ConfirmForgotPasswordRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <code>ConfirmForgotPassword</code> calls.</p>
+     */
+    inline const AnalyticsMetadataType& GetAnalyticsMetadata() const{ return m_analyticsMetadata; }
+
+    /**
+     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <code>ConfirmForgotPassword</code> calls.</p>
+     */
+    inline void SetAnalyticsMetadata(const AnalyticsMetadataType& value) { m_analyticsMetadataHasBeenSet = true; m_analyticsMetadata = value; }
+
+    /**
+     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <code>ConfirmForgotPassword</code> calls.</p>
+     */
+    inline void SetAnalyticsMetadata(AnalyticsMetadataType&& value) { m_analyticsMetadataHasBeenSet = true; m_analyticsMetadata = std::move(value); }
+
+    /**
+     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <code>ConfirmForgotPassword</code> calls.</p>
+     */
+    inline ConfirmForgotPasswordRequest& WithAnalyticsMetadata(const AnalyticsMetadataType& value) { SetAnalyticsMetadata(value); return *this;}
+
+    /**
+     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <code>ConfirmForgotPassword</code> calls.</p>
+     */
+    inline ConfirmForgotPasswordRequest& WithAnalyticsMetadata(AnalyticsMetadataType&& value) { SetAnalyticsMetadata(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Contextual data such as the user's device fingerprint, IP address, or
+     * location used for evaluating the risk of an unexpected event by Amazon Cognito
+     * advanced security.</p>
+     */
+    inline const UserContextDataType& GetUserContextData() const{ return m_userContextData; }
+
+    /**
+     * <p>Contextual data such as the user's device fingerprint, IP address, or
+     * location used for evaluating the risk of an unexpected event by Amazon Cognito
+     * advanced security.</p>
+     */
+    inline void SetUserContextData(const UserContextDataType& value) { m_userContextDataHasBeenSet = true; m_userContextData = value; }
+
+    /**
+     * <p>Contextual data such as the user's device fingerprint, IP address, or
+     * location used for evaluating the risk of an unexpected event by Amazon Cognito
+     * advanced security.</p>
+     */
+    inline void SetUserContextData(UserContextDataType&& value) { m_userContextDataHasBeenSet = true; m_userContextData = std::move(value); }
+
+    /**
+     * <p>Contextual data such as the user's device fingerprint, IP address, or
+     * location used for evaluating the risk of an unexpected event by Amazon Cognito
+     * advanced security.</p>
+     */
+    inline ConfirmForgotPasswordRequest& WithUserContextData(const UserContextDataType& value) { SetUserContextData(value); return *this;}
+
+    /**
+     * <p>Contextual data such as the user's device fingerprint, IP address, or
+     * location used for evaluating the risk of an unexpected event by Amazon Cognito
+     * advanced security.</p>
+     */
+    inline ConfirmForgotPasswordRequest& WithUserContextData(UserContextDataType&& value) { SetUserContextData(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clientId;
@@ -271,6 +333,12 @@ namespace Model
 
     Aws::String m_password;
     bool m_passwordHasBeenSet;
+
+    AnalyticsMetadataType m_analyticsMetadata;
+    bool m_analyticsMetadataHasBeenSet;
+
+    UserContextDataType m_userContextData;
+    bool m_userContextDataHasBeenSet;
   };
 
 } // namespace Model

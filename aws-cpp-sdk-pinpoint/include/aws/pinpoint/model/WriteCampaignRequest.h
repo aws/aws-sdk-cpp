@@ -17,6 +17,7 @@
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pinpoint/model/CampaignHook.h>
 #include <aws/pinpoint/model/CampaignLimits.h>
 #include <aws/pinpoint/model/MessageConfiguration.h>
 #include <aws/pinpoint/model/Schedule.h>
@@ -140,6 +141,32 @@ namespace Model
      * campaign.
      */
     inline WriteCampaignRequest& WithHoldoutPercent(int value) { SetHoldoutPercent(value); return *this;}
+
+
+    /**
+     * Campaign hook information.
+     */
+    inline const CampaignHook& GetHook() const{ return m_hook; }
+
+    /**
+     * Campaign hook information.
+     */
+    inline void SetHook(const CampaignHook& value) { m_hookHasBeenSet = true; m_hook = value; }
+
+    /**
+     * Campaign hook information.
+     */
+    inline void SetHook(CampaignHook&& value) { m_hookHasBeenSet = true; m_hook = std::move(value); }
+
+    /**
+     * Campaign hook information.
+     */
+    inline WriteCampaignRequest& WithHook(const CampaignHook& value) { SetHook(value); return *this;}
+
+    /**
+     * Campaign hook information.
+     */
+    inline WriteCampaignRequest& WithHook(CampaignHook&& value) { SetHook(std::move(value)); return *this;}
 
 
     /**
@@ -408,6 +435,9 @@ namespace Model
 
     int m_holdoutPercent;
     bool m_holdoutPercentHasBeenSet;
+
+    CampaignHook m_hook;
+    bool m_hookHasBeenSet;
 
     bool m_isPaused;
     bool m_isPausedHasBeenSet;

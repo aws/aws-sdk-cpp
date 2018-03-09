@@ -83,73 +83,73 @@ namespace Model
 
 
     /**
-     * <p>The description displayed to end users.</p>
+     * <p>The description for display.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description displayed to end users.</p>
+     * <p>The description for display.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description displayed to end users.</p>
+     * <p>The description for display.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description displayed to end users.</p>
+     * <p>The description for display.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description displayed to end users.</p>
+     * <p>The description for display.</p>
      */
     inline CreateStackRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description displayed to end users.</p>
+     * <p>The description for display.</p>
      */
     inline CreateStackRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description displayed to end users.</p>
+     * <p>The description for display.</p>
      */
     inline CreateStackRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>The stack name displayed to end users.</p>
+     * <p>The stack name for display.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * <p>The stack name displayed to end users.</p>
+     * <p>The stack name for display.</p>
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
-     * <p>The stack name displayed to end users.</p>
+     * <p>The stack name for display.</p>
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
-     * <p>The stack name displayed to end users.</p>
+     * <p>The stack name for display.</p>
      */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
-     * <p>The stack name displayed to end users.</p>
+     * <p>The stack name for display.</p>
      */
     inline CreateStackRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>The stack name displayed to end users.</p>
+     * <p>The stack name for display.</p>
      */
     inline CreateStackRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
-     * <p>The stack name displayed to end users.</p>
+     * <p>The stack name for display.</p>
      */
     inline CreateStackRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
@@ -189,6 +189,42 @@ namespace Model
      */
     inline CreateStackRequest& AddStorageConnectors(StorageConnector&& value) { m_storageConnectorsHasBeenSet = true; m_storageConnectors.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     */
+    inline const Aws::String& GetRedirectURL() const{ return m_redirectURL; }
+
+    /**
+     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     */
+    inline void SetRedirectURL(const Aws::String& value) { m_redirectURLHasBeenSet = true; m_redirectURL = value; }
+
+    /**
+     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     */
+    inline void SetRedirectURL(Aws::String&& value) { m_redirectURLHasBeenSet = true; m_redirectURL = std::move(value); }
+
+    /**
+     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     */
+    inline void SetRedirectURL(const char* value) { m_redirectURLHasBeenSet = true; m_redirectURL.assign(value); }
+
+    /**
+     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     */
+    inline CreateStackRequest& WithRedirectURL(const Aws::String& value) { SetRedirectURL(value); return *this;}
+
+    /**
+     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     */
+    inline CreateStackRequest& WithRedirectURL(Aws::String&& value) { SetRedirectURL(std::move(value)); return *this;}
+
+    /**
+     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     */
+    inline CreateStackRequest& WithRedirectURL(const char* value) { SetRedirectURL(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -202,6 +238,9 @@ namespace Model
 
     Aws::Vector<StorageConnector> m_storageConnectors;
     bool m_storageConnectorsHasBeenSet;
+
+    Aws::String m_redirectURL;
+    bool m_redirectURLHasBeenSet;
   };
 
 } // namespace Model

@@ -189,50 +189,71 @@ namespace Model
 
     /**
      * <p>The XML tag designating the element that contains each record in an XML
-     * document being parsed. Note that this cannot be an empty element. It must
-     * contain child elements representing fields in the record.</p>
+     * document being parsed. Note that this cannot identify a self-closing element
+     * (closed by <code>/&gt;</code>). An empty row element that contains only
+     * attributes can be parsed as long as it ends with a closing tag (for example,
+     * <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
+     * <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).</p>
      */
     inline const Aws::String& GetRowTag() const{ return m_rowTag; }
 
     /**
      * <p>The XML tag designating the element that contains each record in an XML
-     * document being parsed. Note that this cannot be an empty element. It must
-     * contain child elements representing fields in the record.</p>
+     * document being parsed. Note that this cannot identify a self-closing element
+     * (closed by <code>/&gt;</code>). An empty row element that contains only
+     * attributes can be parsed as long as it ends with a closing tag (for example,
+     * <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
+     * <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).</p>
      */
     inline void SetRowTag(const Aws::String& value) { m_rowTagHasBeenSet = true; m_rowTag = value; }
 
     /**
      * <p>The XML tag designating the element that contains each record in an XML
-     * document being parsed. Note that this cannot be an empty element. It must
-     * contain child elements representing fields in the record.</p>
+     * document being parsed. Note that this cannot identify a self-closing element
+     * (closed by <code>/&gt;</code>). An empty row element that contains only
+     * attributes can be parsed as long as it ends with a closing tag (for example,
+     * <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
+     * <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).</p>
      */
     inline void SetRowTag(Aws::String&& value) { m_rowTagHasBeenSet = true; m_rowTag = std::move(value); }
 
     /**
      * <p>The XML tag designating the element that contains each record in an XML
-     * document being parsed. Note that this cannot be an empty element. It must
-     * contain child elements representing fields in the record.</p>
+     * document being parsed. Note that this cannot identify a self-closing element
+     * (closed by <code>/&gt;</code>). An empty row element that contains only
+     * attributes can be parsed as long as it ends with a closing tag (for example,
+     * <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
+     * <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).</p>
      */
     inline void SetRowTag(const char* value) { m_rowTagHasBeenSet = true; m_rowTag.assign(value); }
 
     /**
      * <p>The XML tag designating the element that contains each record in an XML
-     * document being parsed. Note that this cannot be an empty element. It must
-     * contain child elements representing fields in the record.</p>
+     * document being parsed. Note that this cannot identify a self-closing element
+     * (closed by <code>/&gt;</code>). An empty row element that contains only
+     * attributes can be parsed as long as it ends with a closing tag (for example,
+     * <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
+     * <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).</p>
      */
     inline XMLClassifier& WithRowTag(const Aws::String& value) { SetRowTag(value); return *this;}
 
     /**
      * <p>The XML tag designating the element that contains each record in an XML
-     * document being parsed. Note that this cannot be an empty element. It must
-     * contain child elements representing fields in the record.</p>
+     * document being parsed. Note that this cannot identify a self-closing element
+     * (closed by <code>/&gt;</code>). An empty row element that contains only
+     * attributes can be parsed as long as it ends with a closing tag (for example,
+     * <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
+     * <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).</p>
      */
     inline XMLClassifier& WithRowTag(Aws::String&& value) { SetRowTag(std::move(value)); return *this;}
 
     /**
      * <p>The XML tag designating the element that contains each record in an XML
-     * document being parsed. Note that this cannot be an empty element. It must
-     * contain child elements representing fields in the record.</p>
+     * document being parsed. Note that this cannot identify a self-closing element
+     * (closed by <code>/&gt;</code>). An empty row element that contains only
+     * attributes can be parsed as long as it ends with a closing tag (for example,
+     * <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
+     * <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).</p>
      */
     inline XMLClassifier& WithRowTag(const char* value) { SetRowTag(value); return *this;}
 

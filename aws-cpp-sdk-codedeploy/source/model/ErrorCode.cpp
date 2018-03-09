@@ -48,6 +48,14 @@ namespace Aws
         static const int AUTO_SCALING_IAM_ROLE_PERMISSIONS_HASH = HashingUtils::HashString("AUTO_SCALING_IAM_ROLE_PERMISSIONS");
         static const int AUTO_SCALING_CONFIGURATION_HASH = HashingUtils::HashString("AUTO_SCALING_CONFIGURATION");
         static const int MANUAL_STOP_HASH = HashingUtils::HashString("MANUAL_STOP");
+        static const int MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION_HASH = HashingUtils::HashString("MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION");
+        static const int MISSING_ELB_INFORMATION_HASH = HashingUtils::HashString("MISSING_ELB_INFORMATION");
+        static const int MISSING_GITHUB_TOKEN_HASH = HashingUtils::HashString("MISSING_GITHUB_TOKEN");
+        static const int ELASTIC_LOAD_BALANCING_INVALID_HASH = HashingUtils::HashString("ELASTIC_LOAD_BALANCING_INVALID");
+        static const int ELB_INVALID_INSTANCE_HASH = HashingUtils::HashString("ELB_INVALID_INSTANCE");
+        static const int INVALID_LAMBDA_CONFIGURATION_HASH = HashingUtils::HashString("INVALID_LAMBDA_CONFIGURATION");
+        static const int INVALID_LAMBDA_FUNCTION_HASH = HashingUtils::HashString("INVALID_LAMBDA_FUNCTION");
+        static const int HOOK_EXECUTION_FAILURE_HASH = HashingUtils::HashString("HOOK_EXECUTION_FAILURE");
 
 
         ErrorCode GetErrorCodeForName(const Aws::String& name)
@@ -125,6 +133,38 @@ namespace Aws
           {
             return ErrorCode::MANUAL_STOP;
           }
+          else if (hashCode == MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION_HASH)
+          {
+            return ErrorCode::MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION;
+          }
+          else if (hashCode == MISSING_ELB_INFORMATION_HASH)
+          {
+            return ErrorCode::MISSING_ELB_INFORMATION;
+          }
+          else if (hashCode == MISSING_GITHUB_TOKEN_HASH)
+          {
+            return ErrorCode::MISSING_GITHUB_TOKEN;
+          }
+          else if (hashCode == ELASTIC_LOAD_BALANCING_INVALID_HASH)
+          {
+            return ErrorCode::ELASTIC_LOAD_BALANCING_INVALID;
+          }
+          else if (hashCode == ELB_INVALID_INSTANCE_HASH)
+          {
+            return ErrorCode::ELB_INVALID_INSTANCE;
+          }
+          else if (hashCode == INVALID_LAMBDA_CONFIGURATION_HASH)
+          {
+            return ErrorCode::INVALID_LAMBDA_CONFIGURATION;
+          }
+          else if (hashCode == INVALID_LAMBDA_FUNCTION_HASH)
+          {
+            return ErrorCode::INVALID_LAMBDA_FUNCTION;
+          }
+          else if (hashCode == HOOK_EXECUTION_FAILURE_HASH)
+          {
+            return ErrorCode::HOOK_EXECUTION_FAILURE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -175,6 +215,22 @@ namespace Aws
             return "AUTO_SCALING_CONFIGURATION";
           case ErrorCode::MANUAL_STOP:
             return "MANUAL_STOP";
+          case ErrorCode::MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION:
+            return "MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION";
+          case ErrorCode::MISSING_ELB_INFORMATION:
+            return "MISSING_ELB_INFORMATION";
+          case ErrorCode::MISSING_GITHUB_TOKEN:
+            return "MISSING_GITHUB_TOKEN";
+          case ErrorCode::ELASTIC_LOAD_BALANCING_INVALID:
+            return "ELASTIC_LOAD_BALANCING_INVALID";
+          case ErrorCode::ELB_INVALID_INSTANCE:
+            return "ELB_INVALID_INSTANCE";
+          case ErrorCode::INVALID_LAMBDA_CONFIGURATION:
+            return "INVALID_LAMBDA_CONFIGURATION";
+          case ErrorCode::INVALID_LAMBDA_FUNCTION:
+            return "INVALID_LAMBDA_FUNCTION";
+          case ErrorCode::HOOK_EXECUTION_FAILURE:
+            return "HOOK_EXECUTION_FAILURE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

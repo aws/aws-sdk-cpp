@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int AND_HASH = HashingUtils::HashString("AND");
+        static const int ANY_HASH = HashingUtils::HashString("ANY");
 
 
         Logical GetLogicalForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           if (hashCode == AND_HASH)
           {
             return Logical::AND;
+          }
+          else if (hashCode == ANY_HASH)
+          {
+            return Logical::ANY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +61,8 @@ namespace Aws
           {
           case Logical::AND:
             return "AND";
+          case Logical::ANY:
+            return "ANY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

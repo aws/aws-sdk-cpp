@@ -178,19 +178,25 @@ namespace Model
 
     /**
      * <p>Indicates whether latest version of the SSM Agent is running on your
-     * instance. </p>
+     * instance. Some older versions of Windows Server use the EC2Config service to
+     * process SSM requests. For this reason, this field does not indicate whether or
+     * not the latest version is installed on Windows managed instances.</p>
      */
     inline bool GetIsLatestVersion() const{ return m_isLatestVersion; }
 
     /**
      * <p>Indicates whether latest version of the SSM Agent is running on your
-     * instance. </p>
+     * instance. Some older versions of Windows Server use the EC2Config service to
+     * process SSM requests. For this reason, this field does not indicate whether or
+     * not the latest version is installed on Windows managed instances.</p>
      */
     inline void SetIsLatestVersion(bool value) { m_isLatestVersionHasBeenSet = true; m_isLatestVersion = value; }
 
     /**
      * <p>Indicates whether latest version of the SSM Agent is running on your
-     * instance. </p>
+     * instance. Some older versions of Windows Server use the EC2Config service to
+     * process SSM requests. For this reason, this field does not indicate whether or
+     * not the latest version is installed on Windows managed instances.</p>
      */
     inline InstanceInformation& WithIsLatestVersion(bool value) { SetIsLatestVersion(value); return *this;}
 

@@ -17,6 +17,8 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cognito-idp/model/UserContextDataType.h>
+#include <aws/cognito-idp/model/AnalyticsMetadataType.h>
 #include <utility>
 
 namespace Aws
@@ -128,6 +130,42 @@ namespace Model
 
 
     /**
+     * <p>Contextual data such as the user's device fingerprint, IP address, or
+     * location used for evaluating the risk of an unexpected event by Amazon Cognito
+     * advanced security.</p>
+     */
+    inline const UserContextDataType& GetUserContextData() const{ return m_userContextData; }
+
+    /**
+     * <p>Contextual data such as the user's device fingerprint, IP address, or
+     * location used for evaluating the risk of an unexpected event by Amazon Cognito
+     * advanced security.</p>
+     */
+    inline void SetUserContextData(const UserContextDataType& value) { m_userContextDataHasBeenSet = true; m_userContextData = value; }
+
+    /**
+     * <p>Contextual data such as the user's device fingerprint, IP address, or
+     * location used for evaluating the risk of an unexpected event by Amazon Cognito
+     * advanced security.</p>
+     */
+    inline void SetUserContextData(UserContextDataType&& value) { m_userContextDataHasBeenSet = true; m_userContextData = std::move(value); }
+
+    /**
+     * <p>Contextual data such as the user's device fingerprint, IP address, or
+     * location used for evaluating the risk of an unexpected event by Amazon Cognito
+     * advanced security.</p>
+     */
+    inline ResendConfirmationCodeRequest& WithUserContextData(const UserContextDataType& value) { SetUserContextData(value); return *this;}
+
+    /**
+     * <p>Contextual data such as the user's device fingerprint, IP address, or
+     * location used for evaluating the risk of an unexpected event by Amazon Cognito
+     * advanced security.</p>
+     */
+    inline ResendConfirmationCodeRequest& WithUserContextData(UserContextDataType&& value) { SetUserContextData(std::move(value)); return *this;}
+
+
+    /**
      * <p>The user name of the user to whom you wish to resend a confirmation code.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
@@ -162,6 +200,37 @@ namespace Model
      */
     inline ResendConfirmationCodeRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <code>ResendConfirmationCode</code> calls.</p>
+     */
+    inline const AnalyticsMetadataType& GetAnalyticsMetadata() const{ return m_analyticsMetadata; }
+
+    /**
+     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <code>ResendConfirmationCode</code> calls.</p>
+     */
+    inline void SetAnalyticsMetadata(const AnalyticsMetadataType& value) { m_analyticsMetadataHasBeenSet = true; m_analyticsMetadata = value; }
+
+    /**
+     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <code>ResendConfirmationCode</code> calls.</p>
+     */
+    inline void SetAnalyticsMetadata(AnalyticsMetadataType&& value) { m_analyticsMetadataHasBeenSet = true; m_analyticsMetadata = std::move(value); }
+
+    /**
+     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <code>ResendConfirmationCode</code> calls.</p>
+     */
+    inline ResendConfirmationCodeRequest& WithAnalyticsMetadata(const AnalyticsMetadataType& value) { SetAnalyticsMetadata(value); return *this;}
+
+    /**
+     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <code>ResendConfirmationCode</code> calls.</p>
+     */
+    inline ResendConfirmationCodeRequest& WithAnalyticsMetadata(AnalyticsMetadataType&& value) { SetAnalyticsMetadata(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clientId;
@@ -170,8 +239,14 @@ namespace Model
     Aws::String m_secretHash;
     bool m_secretHashHasBeenSet;
 
+    UserContextDataType m_userContextData;
+    bool m_userContextDataHasBeenSet;
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
+
+    AnalyticsMetadataType m_analyticsMetadata;
+    bool m_analyticsMetadataHasBeenSet;
   };
 
 } // namespace Model

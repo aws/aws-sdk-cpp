@@ -17,6 +17,7 @@
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ds/model/DirectorySize.h>
+#include <aws/ds/model/DirectoryEdition.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ds/model/DirectoryStage.h>
 #include <aws/core/utils/DateTime.h>
@@ -188,6 +189,32 @@ namespace Model
      * <p>The directory size.</p>
      */
     inline DirectoryDescription& WithSize(DirectorySize&& value) { SetSize(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The edition associated with this directory.</p>
+     */
+    inline const DirectoryEdition& GetEdition() const{ return m_edition; }
+
+    /**
+     * <p>The edition associated with this directory.</p>
+     */
+    inline void SetEdition(const DirectoryEdition& value) { m_editionHasBeenSet = true; m_edition = value; }
+
+    /**
+     * <p>The edition associated with this directory.</p>
+     */
+    inline void SetEdition(DirectoryEdition&& value) { m_editionHasBeenSet = true; m_edition = std::move(value); }
+
+    /**
+     * <p>The edition associated with this directory.</p>
+     */
+    inline DirectoryDescription& WithEdition(const DirectoryEdition& value) { SetEdition(value); return *this;}
+
+    /**
+     * <p>The edition associated with this directory.</p>
+     */
+    inline DirectoryDescription& WithEdition(DirectoryEdition&& value) { SetEdition(std::move(value)); return *this;}
 
 
     /**
@@ -718,6 +745,9 @@ namespace Model
 
     DirectorySize m_size;
     bool m_sizeHasBeenSet;
+
+    DirectoryEdition m_edition;
+    bool m_editionHasBeenSet;
 
     Aws::String m_alias;
     bool m_aliasHasBeenSet;

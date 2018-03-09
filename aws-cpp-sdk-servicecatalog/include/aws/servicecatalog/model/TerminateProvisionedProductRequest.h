@@ -46,184 +46,163 @@ namespace Model
 
 
     /**
-     * <p>The name of the ProvisionedProduct object to terminate. Specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
-     * not both.</p>
+     * <p>The name of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline const Aws::String& GetProvisionedProductName() const{ return m_provisionedProductName; }
 
     /**
-     * <p>The name of the ProvisionedProduct object to terminate. Specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
-     * not both.</p>
+     * <p>The name of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline void SetProvisionedProductName(const Aws::String& value) { m_provisionedProductNameHasBeenSet = true; m_provisionedProductName = value; }
 
     /**
-     * <p>The name of the ProvisionedProduct object to terminate. Specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
-     * not both.</p>
+     * <p>The name of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline void SetProvisionedProductName(Aws::String&& value) { m_provisionedProductNameHasBeenSet = true; m_provisionedProductName = std::move(value); }
 
     /**
-     * <p>The name of the ProvisionedProduct object to terminate. Specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
-     * not both.</p>
+     * <p>The name of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline void SetProvisionedProductName(const char* value) { m_provisionedProductNameHasBeenSet = true; m_provisionedProductName.assign(value); }
 
     /**
-     * <p>The name of the ProvisionedProduct object to terminate. Specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
-     * not both.</p>
+     * <p>The name of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline TerminateProvisionedProductRequest& WithProvisionedProductName(const Aws::String& value) { SetProvisionedProductName(value); return *this;}
 
     /**
-     * <p>The name of the ProvisionedProduct object to terminate. Specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
-     * not both.</p>
+     * <p>The name of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline TerminateProvisionedProductRequest& WithProvisionedProductName(Aws::String&& value) { SetProvisionedProductName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the ProvisionedProduct object to terminate. Specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
-     * not both.</p>
+     * <p>The name of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline TerminateProvisionedProductRequest& WithProvisionedProductName(const char* value) { SetProvisionedProductName(value); return *this;}
 
 
     /**
-     * <p>The identifier of the ProvisionedProduct object to terminate. Specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
-     * not both.</p>
+     * <p>The identifier of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline const Aws::String& GetProvisionedProductId() const{ return m_provisionedProductId; }
 
     /**
-     * <p>The identifier of the ProvisionedProduct object to terminate. Specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
-     * not both.</p>
+     * <p>The identifier of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline void SetProvisionedProductId(const Aws::String& value) { m_provisionedProductIdHasBeenSet = true; m_provisionedProductId = value; }
 
     /**
-     * <p>The identifier of the ProvisionedProduct object to terminate. Specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
-     * not both.</p>
+     * <p>The identifier of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline void SetProvisionedProductId(Aws::String&& value) { m_provisionedProductIdHasBeenSet = true; m_provisionedProductId = std::move(value); }
 
     /**
-     * <p>The identifier of the ProvisionedProduct object to terminate. Specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
-     * not both.</p>
+     * <p>The identifier of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline void SetProvisionedProductId(const char* value) { m_provisionedProductIdHasBeenSet = true; m_provisionedProductId.assign(value); }
 
     /**
-     * <p>The identifier of the ProvisionedProduct object to terminate. Specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
-     * not both.</p>
+     * <p>The identifier of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline TerminateProvisionedProductRequest& WithProvisionedProductId(const Aws::String& value) { SetProvisionedProductId(value); return *this;}
 
     /**
-     * <p>The identifier of the ProvisionedProduct object to terminate. Specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
-     * not both.</p>
+     * <p>The identifier of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline TerminateProvisionedProductRequest& WithProvisionedProductId(Aws::String&& value) { SetProvisionedProductId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the ProvisionedProduct object to terminate. Specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
-     * not both.</p>
+     * <p>The identifier of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline TerminateProvisionedProductRequest& WithProvisionedProductId(const char* value) { SetProvisionedProductId(value); return *this;}
 
 
     /**
      * <p>An idempotency token that uniquely identifies the termination request. This
-     * token is only valid during the termination process. After the ProvisionedProduct
-     * object is terminated, further requests to terminate the same ProvisionedProduct
-     * object always return <b>ResourceNotFound</b> regardless of the value of
-     * <code>TerminateToken</code>.</p>
+     * token is only valid during the termination process. After the provisioned
+     * product is terminated, subsequent requests to terminate the same provisioned
+     * product always return <b>ResourceNotFound</b>.</p>
      */
     inline const Aws::String& GetTerminateToken() const{ return m_terminateToken; }
 
     /**
      * <p>An idempotency token that uniquely identifies the termination request. This
-     * token is only valid during the termination process. After the ProvisionedProduct
-     * object is terminated, further requests to terminate the same ProvisionedProduct
-     * object always return <b>ResourceNotFound</b> regardless of the value of
-     * <code>TerminateToken</code>.</p>
+     * token is only valid during the termination process. After the provisioned
+     * product is terminated, subsequent requests to terminate the same provisioned
+     * product always return <b>ResourceNotFound</b>.</p>
      */
     inline void SetTerminateToken(const Aws::String& value) { m_terminateTokenHasBeenSet = true; m_terminateToken = value; }
 
     /**
      * <p>An idempotency token that uniquely identifies the termination request. This
-     * token is only valid during the termination process. After the ProvisionedProduct
-     * object is terminated, further requests to terminate the same ProvisionedProduct
-     * object always return <b>ResourceNotFound</b> regardless of the value of
-     * <code>TerminateToken</code>.</p>
+     * token is only valid during the termination process. After the provisioned
+     * product is terminated, subsequent requests to terminate the same provisioned
+     * product always return <b>ResourceNotFound</b>.</p>
      */
     inline void SetTerminateToken(Aws::String&& value) { m_terminateTokenHasBeenSet = true; m_terminateToken = std::move(value); }
 
     /**
      * <p>An idempotency token that uniquely identifies the termination request. This
-     * token is only valid during the termination process. After the ProvisionedProduct
-     * object is terminated, further requests to terminate the same ProvisionedProduct
-     * object always return <b>ResourceNotFound</b> regardless of the value of
-     * <code>TerminateToken</code>.</p>
+     * token is only valid during the termination process. After the provisioned
+     * product is terminated, subsequent requests to terminate the same provisioned
+     * product always return <b>ResourceNotFound</b>.</p>
      */
     inline void SetTerminateToken(const char* value) { m_terminateTokenHasBeenSet = true; m_terminateToken.assign(value); }
 
     /**
      * <p>An idempotency token that uniquely identifies the termination request. This
-     * token is only valid during the termination process. After the ProvisionedProduct
-     * object is terminated, further requests to terminate the same ProvisionedProduct
-     * object always return <b>ResourceNotFound</b> regardless of the value of
-     * <code>TerminateToken</code>.</p>
+     * token is only valid during the termination process. After the provisioned
+     * product is terminated, subsequent requests to terminate the same provisioned
+     * product always return <b>ResourceNotFound</b>.</p>
      */
     inline TerminateProvisionedProductRequest& WithTerminateToken(const Aws::String& value) { SetTerminateToken(value); return *this;}
 
     /**
      * <p>An idempotency token that uniquely identifies the termination request. This
-     * token is only valid during the termination process. After the ProvisionedProduct
-     * object is terminated, further requests to terminate the same ProvisionedProduct
-     * object always return <b>ResourceNotFound</b> regardless of the value of
-     * <code>TerminateToken</code>.</p>
+     * token is only valid during the termination process. After the provisioned
+     * product is terminated, subsequent requests to terminate the same provisioned
+     * product always return <b>ResourceNotFound</b>.</p>
      */
     inline TerminateProvisionedProductRequest& WithTerminateToken(Aws::String&& value) { SetTerminateToken(std::move(value)); return *this;}
 
     /**
      * <p>An idempotency token that uniquely identifies the termination request. This
-     * token is only valid during the termination process. After the ProvisionedProduct
-     * object is terminated, further requests to terminate the same ProvisionedProduct
-     * object always return <b>ResourceNotFound</b> regardless of the value of
-     * <code>TerminateToken</code>.</p>
+     * token is only valid during the termination process. After the provisioned
+     * product is terminated, subsequent requests to terminate the same provisioned
+     * product always return <b>ResourceNotFound</b>.</p>
      */
     inline TerminateProvisionedProductRequest& WithTerminateToken(const char* value) { SetTerminateToken(value); return *this;}
 
 
     /**
-     * <p>If set to true, AWS Service Catalog stops managing the specified
-     * ProvisionedProduct object even if it cannot delete the underlying resources.</p>
+     * <p>If set to true, AWS Service Catalog stops managing the specified provisioned
+     * product even if it cannot delete the underlying resources.</p>
      */
     inline bool GetIgnoreErrors() const{ return m_ignoreErrors; }
 
     /**
-     * <p>If set to true, AWS Service Catalog stops managing the specified
-     * ProvisionedProduct object even if it cannot delete the underlying resources.</p>
+     * <p>If set to true, AWS Service Catalog stops managing the specified provisioned
+     * product even if it cannot delete the underlying resources.</p>
      */
     inline void SetIgnoreErrors(bool value) { m_ignoreErrorsHasBeenSet = true; m_ignoreErrors = value; }
 
     /**
-     * <p>If set to true, AWS Service Catalog stops managing the specified
-     * ProvisionedProduct object even if it cannot delete the underlying resources.</p>
+     * <p>If set to true, AWS Service Catalog stops managing the specified provisioned
+     * product even if it cannot delete the underlying resources.</p>
      */
     inline TerminateProvisionedProductRequest& WithIgnoreErrors(bool value) { SetIgnoreErrors(value); return *this;}
 

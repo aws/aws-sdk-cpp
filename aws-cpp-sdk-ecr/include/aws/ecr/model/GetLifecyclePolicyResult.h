@@ -116,37 +116,37 @@ namespace Model
 
 
     /**
-     * <p>The JSON repository policy text.</p>
+     * <p>The JSON lifecycle policy text.</p>
      */
     inline const Aws::String& GetLifecyclePolicyText() const{ return m_lifecyclePolicyText; }
 
     /**
-     * <p>The JSON repository policy text.</p>
+     * <p>The JSON lifecycle policy text.</p>
      */
     inline void SetLifecyclePolicyText(const Aws::String& value) { m_lifecyclePolicyText = value; }
 
     /**
-     * <p>The JSON repository policy text.</p>
+     * <p>The JSON lifecycle policy text.</p>
      */
     inline void SetLifecyclePolicyText(Aws::String&& value) { m_lifecyclePolicyText = std::move(value); }
 
     /**
-     * <p>The JSON repository policy text.</p>
+     * <p>The JSON lifecycle policy text.</p>
      */
     inline void SetLifecyclePolicyText(const char* value) { m_lifecyclePolicyText.assign(value); }
 
     /**
-     * <p>The JSON repository policy text.</p>
+     * <p>The JSON lifecycle policy text.</p>
      */
     inline GetLifecyclePolicyResult& WithLifecyclePolicyText(const Aws::String& value) { SetLifecyclePolicyText(value); return *this;}
 
     /**
-     * <p>The JSON repository policy text.</p>
+     * <p>The JSON lifecycle policy text.</p>
      */
     inline GetLifecyclePolicyResult& WithLifecyclePolicyText(Aws::String&& value) { SetLifecyclePolicyText(std::move(value)); return *this;}
 
     /**
-     * <p>The JSON repository policy text.</p>
+     * <p>The JSON lifecycle policy text.</p>
      */
     inline GetLifecyclePolicyResult& WithLifecyclePolicyText(const char* value) { SetLifecyclePolicyText(value); return *this;}
 

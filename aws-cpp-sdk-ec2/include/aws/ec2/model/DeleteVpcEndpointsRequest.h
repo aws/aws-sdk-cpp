@@ -76,42 +76,42 @@ namespace Model
 
 
     /**
-     * <p>One or more endpoint IDs.</p>
+     * <p>One or more VPC endpoint IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcEndpointIds() const{ return m_vpcEndpointIds; }
 
     /**
-     * <p>One or more endpoint IDs.</p>
+     * <p>One or more VPC endpoint IDs.</p>
      */
     inline void SetVpcEndpointIds(const Aws::Vector<Aws::String>& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds = value; }
 
     /**
-     * <p>One or more endpoint IDs.</p>
+     * <p>One or more VPC endpoint IDs.</p>
      */
     inline void SetVpcEndpointIds(Aws::Vector<Aws::String>&& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds = std::move(value); }
 
     /**
-     * <p>One or more endpoint IDs.</p>
+     * <p>One or more VPC endpoint IDs.</p>
      */
     inline DeleteVpcEndpointsRequest& WithVpcEndpointIds(const Aws::Vector<Aws::String>& value) { SetVpcEndpointIds(value); return *this;}
 
     /**
-     * <p>One or more endpoint IDs.</p>
+     * <p>One or more VPC endpoint IDs.</p>
      */
     inline DeleteVpcEndpointsRequest& WithVpcEndpointIds(Aws::Vector<Aws::String>&& value) { SetVpcEndpointIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more endpoint IDs.</p>
+     * <p>One or more VPC endpoint IDs.</p>
      */
     inline DeleteVpcEndpointsRequest& AddVpcEndpointIds(const Aws::String& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more endpoint IDs.</p>
+     * <p>One or more VPC endpoint IDs.</p>
      */
     inline DeleteVpcEndpointsRequest& AddVpcEndpointIds(Aws::String&& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more endpoint IDs.</p>
+     * <p>One or more VPC endpoint IDs.</p>
      */
     inline DeleteVpcEndpointsRequest& AddVpcEndpointIds(const char* value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.push_back(value); return *this; }
 

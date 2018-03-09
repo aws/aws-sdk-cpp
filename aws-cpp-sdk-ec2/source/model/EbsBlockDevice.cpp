@@ -37,6 +37,7 @@ EbsBlockDevice::EbsBlockDevice() :
     m_deleteOnTerminationHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false),
     m_snapshotIdHasBeenSet(false),
     m_volumeSize(0),
     m_volumeSizeHasBeenSet(false),
@@ -52,6 +53,7 @@ EbsBlockDevice::EbsBlockDevice(const XmlNode& xmlNode) :
     m_deleteOnTerminationHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false),
     m_snapshotIdHasBeenSet(false),
     m_volumeSize(0),
     m_volumeSizeHasBeenSet(false),
@@ -84,6 +86,12 @@ EbsBlockDevice& EbsBlockDevice::operator =(const XmlNode& xmlNode)
     {
       m_iops = StringUtils::ConvertToInt32(StringUtils::Trim(iopsNode.GetText().c_str()).c_str());
       m_iopsHasBeenSet = true;
+    }
+    XmlNode kmsKeyIdNode = resultNode.FirstChild("KmsKeyId");
+    if(!kmsKeyIdNode.IsNull())
+    {
+      m_kmsKeyId = StringUtils::Trim(kmsKeyIdNode.GetText().c_str());
+      m_kmsKeyIdHasBeenSet = true;
     }
     XmlNode snapshotIdNode = resultNode.FirstChild("snapshotId");
     if(!snapshotIdNode.IsNull())
@@ -125,6 +133,11 @@ void EbsBlockDevice::OutputToStream(Aws::OStream& oStream, const char* location,
       oStream << location << index << locationValue << ".Iops=" << m_iops << "&";
   }
 
+  if(m_kmsKeyIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+
   if(m_snapshotIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
@@ -155,6 +168,10 @@ void EbsBlockDevice::OutputToStream(Aws::OStream& oStream, const char* location)
   if(m_iopsHasBeenSet)
   {
       oStream << location << ".Iops=" << m_iops << "&";
+  }
+  if(m_kmsKeyIdHasBeenSet)
+  {
+      oStream << location << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
   if(m_snapshotIdHasBeenSet)
   {

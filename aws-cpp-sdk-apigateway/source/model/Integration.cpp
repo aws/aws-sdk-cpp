@@ -33,6 +33,9 @@ Integration::Integration() :
     m_typeHasBeenSet(false),
     m_httpMethodHasBeenSet(false),
     m_uriHasBeenSet(false),
+    m_connectionType(ConnectionType::NOT_SET),
+    m_connectionTypeHasBeenSet(false),
+    m_connectionIdHasBeenSet(false),
     m_credentialsHasBeenSet(false),
     m_requestParametersHasBeenSet(false),
     m_requestTemplatesHasBeenSet(false),
@@ -52,6 +55,9 @@ Integration::Integration(const JsonValue& jsonValue) :
     m_typeHasBeenSet(false),
     m_httpMethodHasBeenSet(false),
     m_uriHasBeenSet(false),
+    m_connectionType(ConnectionType::NOT_SET),
+    m_connectionTypeHasBeenSet(false),
+    m_connectionIdHasBeenSet(false),
     m_credentialsHasBeenSet(false),
     m_requestParametersHasBeenSet(false),
     m_requestTemplatesHasBeenSet(false),
@@ -88,6 +94,20 @@ Integration& Integration::operator =(const JsonValue& jsonValue)
     m_uri = jsonValue.GetString("uri");
 
     m_uriHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("connectionType"))
+  {
+    m_connectionType = ConnectionTypeMapper::GetConnectionTypeForName(jsonValue.GetString("connectionType"));
+
+    m_connectionTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("connectionId"))
+  {
+    m_connectionId = jsonValue.GetString("connectionId");
+
+    m_connectionIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("credentials"))
@@ -186,6 +206,17 @@ JsonValue Integration::Jsonize() const
   if(m_uriHasBeenSet)
   {
    payload.WithString("uri", m_uri);
+
+  }
+
+  if(m_connectionTypeHasBeenSet)
+  {
+   payload.WithString("connectionType", ConnectionTypeMapper::GetNameForConnectionType(m_connectionType));
+  }
+
+  if(m_connectionIdHasBeenSet)
+  {
+   payload.WithString("connectionId", m_connectionId);
 
   }
 

@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
+#include <aws/pinpoint/model/CampaignHook.h>
 #include <aws/pinpoint/model/CampaignLimits.h>
 #include <aws/pinpoint/model/QuietTime.h>
 #include <utility>
@@ -45,6 +46,32 @@ namespace Model
     WriteApplicationSettingsRequest(const Aws::Utils::Json::JsonValue& jsonValue);
     WriteApplicationSettingsRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * Default campaign hook information.
+     */
+    inline const CampaignHook& GetCampaignHook() const{ return m_campaignHook; }
+
+    /**
+     * Default campaign hook information.
+     */
+    inline void SetCampaignHook(const CampaignHook& value) { m_campaignHookHasBeenSet = true; m_campaignHook = value; }
+
+    /**
+     * Default campaign hook information.
+     */
+    inline void SetCampaignHook(CampaignHook&& value) { m_campaignHookHasBeenSet = true; m_campaignHook = std::move(value); }
+
+    /**
+     * Default campaign hook information.
+     */
+    inline WriteApplicationSettingsRequest& WithCampaignHook(const CampaignHook& value) { SetCampaignHook(value); return *this;}
+
+    /**
+     * Default campaign hook information.
+     */
+    inline WriteApplicationSettingsRequest& WithCampaignHook(CampaignHook&& value) { SetCampaignHook(std::move(value)); return *this;}
 
 
     /**
@@ -114,6 +141,9 @@ namespace Model
     inline WriteApplicationSettingsRequest& WithQuietTime(QuietTime&& value) { SetQuietTime(std::move(value)); return *this;}
 
   private:
+
+    CampaignHook m_campaignHook;
+    bool m_campaignHookHasBeenSet;
 
     CampaignLimits m_limits;
     bool m_limitsHasBeenSet;

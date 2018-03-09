@@ -221,6 +221,32 @@ namespace Model
      */
     inline TopicRulePayload& WithAwsIotSqlVersion(const char* value) { SetAwsIotSqlVersion(value); return *this;}
 
+
+    /**
+     * <p>The action to take when an error occurs.</p>
+     */
+    inline const Action& GetErrorAction() const{ return m_errorAction; }
+
+    /**
+     * <p>The action to take when an error occurs.</p>
+     */
+    inline void SetErrorAction(const Action& value) { m_errorActionHasBeenSet = true; m_errorAction = value; }
+
+    /**
+     * <p>The action to take when an error occurs.</p>
+     */
+    inline void SetErrorAction(Action&& value) { m_errorActionHasBeenSet = true; m_errorAction = std::move(value); }
+
+    /**
+     * <p>The action to take when an error occurs.</p>
+     */
+    inline TopicRulePayload& WithErrorAction(const Action& value) { SetErrorAction(value); return *this;}
+
+    /**
+     * <p>The action to take when an error occurs.</p>
+     */
+    inline TopicRulePayload& WithErrorAction(Action&& value) { SetErrorAction(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_sql;
@@ -237,6 +263,9 @@ namespace Model
 
     Aws::String m_awsIotSqlVersion;
     bool m_awsIotSqlVersionHasBeenSet;
+
+    Action m_errorAction;
+    bool m_errorActionHasBeenSet;
   };
 
 } // namespace Model

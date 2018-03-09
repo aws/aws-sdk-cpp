@@ -99,57 +99,57 @@ namespace Model
 
 
     /**
-     * <p>The data section in the inventory result entity json.</p>
+     * <p>The data section in the inventory result entity JSON.</p>
      */
     inline const Aws::Map<Aws::String, InventoryResultItem>& GetData() const{ return m_data; }
 
     /**
-     * <p>The data section in the inventory result entity json.</p>
+     * <p>The data section in the inventory result entity JSON.</p>
      */
     inline void SetData(const Aws::Map<Aws::String, InventoryResultItem>& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /**
-     * <p>The data section in the inventory result entity json.</p>
+     * <p>The data section in the inventory result entity JSON.</p>
      */
     inline void SetData(Aws::Map<Aws::String, InventoryResultItem>&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
 
     /**
-     * <p>The data section in the inventory result entity json.</p>
+     * <p>The data section in the inventory result entity JSON.</p>
      */
     inline InventoryResultEntity& WithData(const Aws::Map<Aws::String, InventoryResultItem>& value) { SetData(value); return *this;}
 
     /**
-     * <p>The data section in the inventory result entity json.</p>
+     * <p>The data section in the inventory result entity JSON.</p>
      */
     inline InventoryResultEntity& WithData(Aws::Map<Aws::String, InventoryResultItem>&& value) { SetData(std::move(value)); return *this;}
 
     /**
-     * <p>The data section in the inventory result entity json.</p>
+     * <p>The data section in the inventory result entity JSON.</p>
      */
     inline InventoryResultEntity& AddData(const Aws::String& key, const InventoryResultItem& value) { m_dataHasBeenSet = true; m_data.emplace(key, value); return *this; }
 
     /**
-     * <p>The data section in the inventory result entity json.</p>
+     * <p>The data section in the inventory result entity JSON.</p>
      */
     inline InventoryResultEntity& AddData(Aws::String&& key, const InventoryResultItem& value) { m_dataHasBeenSet = true; m_data.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The data section in the inventory result entity json.</p>
+     * <p>The data section in the inventory result entity JSON.</p>
      */
     inline InventoryResultEntity& AddData(const Aws::String& key, InventoryResultItem&& value) { m_dataHasBeenSet = true; m_data.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The data section in the inventory result entity json.</p>
+     * <p>The data section in the inventory result entity JSON.</p>
      */
     inline InventoryResultEntity& AddData(Aws::String&& key, InventoryResultItem&& value) { m_dataHasBeenSet = true; m_data.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The data section in the inventory result entity json.</p>
+     * <p>The data section in the inventory result entity JSON.</p>
      */
     inline InventoryResultEntity& AddData(const char* key, InventoryResultItem&& value) { m_dataHasBeenSet = true; m_data.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The data section in the inventory result entity json.</p>
+     * <p>The data section in the inventory result entity JSON.</p>
      */
     inline InventoryResultEntity& AddData(const char* key, const InventoryResultItem& value) { m_dataHasBeenSet = true; m_data.emplace(key, value); return *this; }
 

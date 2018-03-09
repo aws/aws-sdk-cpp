@@ -19,6 +19,7 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.SdkFileEntry;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ServiceModel;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ShapeMember;
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppShapeInformation;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.RestXmlCppClientGenerator;
 import org.apache.velocity.Template;
@@ -172,14 +173,30 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
 
     @Override
     protected SdkFileEntry generateModelSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) throws Exception {
+        Template template = null;
+        String fileName = "";
+
         switch(shapeEntry.getKey()) {
             case "GetBucketLocationResult": {
-                Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/GetBucketLocationResult.vm", StandardCharsets.UTF_8.name());
-                return makeFile(template, createContext(serviceModel), "source/model/GetBucketLocationResult.cpp", true);
+                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/GetBucketLocationResult.vm", StandardCharsets.UTF_8.name());
+                fileName = "source/model/GetBucketLocationResult.cpp";
+                break;
+            }
+            case "PutBucketNotificationConfigurationRequest": {
+                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/PutBucketNotificationConfigurationRequest.vm", StandardCharsets.UTF_8.name());
+                fileName = "source/model/PutBucketNotificationConfigurationRequest.cpp";
+                break;
             }
             default:
                 return super.generateModelSourceFile(serviceModel, shapeEntry);
         }
+
+        Shape shape = shapeEntry.getValue();
+        VelocityContext context = createContext(serviceModel);
+        context.put("shape", shape);
+        context.put("typeInfo", new CppShapeInformation(shape, serviceModel));
+        context.put("CppViewHelper", CppViewHelper.class);
+        return makeFile(template, context, fileName, true); 
     }
     
 

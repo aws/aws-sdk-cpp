@@ -127,10 +127,10 @@ namespace Model
     /**
      * <p>The current status of the stream being described. The stream status is one of
      * the following states:</p> <ul> <li> <p> <code>CREATING</code> - The stream is
-     * being created. Kinesis Streams immediately returns and sets
+     * being created. Kinesis Data Streams immediately returns and sets
      * <code>StreamStatus</code> to <code>CREATING</code>.</p> </li> <li> <p>
      * <code>DELETING</code> - The stream is being deleted. The specified stream is in
-     * the <code>DELETING</code> state until Kinesis Streams completes the
+     * the <code>DELETING</code> state until Kinesis Data Streams completes the
      * deletion.</p> </li> <li> <p> <code>ACTIVE</code> - The stream exists and is
      * ready for read and write operations or deletion. You should perform read and
      * write operations only on an <code>ACTIVE</code> stream.</p> </li> <li> <p>
@@ -143,10 +143,10 @@ namespace Model
     /**
      * <p>The current status of the stream being described. The stream status is one of
      * the following states:</p> <ul> <li> <p> <code>CREATING</code> - The stream is
-     * being created. Kinesis Streams immediately returns and sets
+     * being created. Kinesis Data Streams immediately returns and sets
      * <code>StreamStatus</code> to <code>CREATING</code>.</p> </li> <li> <p>
      * <code>DELETING</code> - The stream is being deleted. The specified stream is in
-     * the <code>DELETING</code> state until Kinesis Streams completes the
+     * the <code>DELETING</code> state until Kinesis Data Streams completes the
      * deletion.</p> </li> <li> <p> <code>ACTIVE</code> - The stream exists and is
      * ready for read and write operations or deletion. You should perform read and
      * write operations only on an <code>ACTIVE</code> stream.</p> </li> <li> <p>
@@ -159,10 +159,10 @@ namespace Model
     /**
      * <p>The current status of the stream being described. The stream status is one of
      * the following states:</p> <ul> <li> <p> <code>CREATING</code> - The stream is
-     * being created. Kinesis Streams immediately returns and sets
+     * being created. Kinesis Data Streams immediately returns and sets
      * <code>StreamStatus</code> to <code>CREATING</code>.</p> </li> <li> <p>
      * <code>DELETING</code> - The stream is being deleted. The specified stream is in
-     * the <code>DELETING</code> state until Kinesis Streams completes the
+     * the <code>DELETING</code> state until Kinesis Data Streams completes the
      * deletion.</p> </li> <li> <p> <code>ACTIVE</code> - The stream exists and is
      * ready for read and write operations or deletion. You should perform read and
      * write operations only on an <code>ACTIVE</code> stream.</p> </li> <li> <p>
@@ -175,10 +175,10 @@ namespace Model
     /**
      * <p>The current status of the stream being described. The stream status is one of
      * the following states:</p> <ul> <li> <p> <code>CREATING</code> - The stream is
-     * being created. Kinesis Streams immediately returns and sets
+     * being created. Kinesis Data Streams immediately returns and sets
      * <code>StreamStatus</code> to <code>CREATING</code>.</p> </li> <li> <p>
      * <code>DELETING</code> - The stream is being deleted. The specified stream is in
-     * the <code>DELETING</code> state until Kinesis Streams completes the
+     * the <code>DELETING</code> state until Kinesis Data Streams completes the
      * deletion.</p> </li> <li> <p> <code>ACTIVE</code> - The stream exists and is
      * ready for read and write operations or deletion. You should perform read and
      * write operations only on an <code>ACTIVE</code> stream.</p> </li> <li> <p>
@@ -191,10 +191,10 @@ namespace Model
     /**
      * <p>The current status of the stream being described. The stream status is one of
      * the following states:</p> <ul> <li> <p> <code>CREATING</code> - The stream is
-     * being created. Kinesis Streams immediately returns and sets
+     * being created. Kinesis Data Streams immediately returns and sets
      * <code>StreamStatus</code> to <code>CREATING</code>.</p> </li> <li> <p>
      * <code>DELETING</code> - The stream is being deleted. The specified stream is in
-     * the <code>DELETING</code> state until Kinesis Streams completes the
+     * the <code>DELETING</code> state until Kinesis Data Streams completes the
      * deletion.</p> </li> <li> <p> <code>ACTIVE</code> - The stream exists and is
      * ready for read and write operations or deletion. You should perform read and
      * write operations only on an <code>ACTIVE</code> stream.</p> </li> <li> <p>
@@ -315,114 +315,114 @@ namespace Model
 
 
     /**
-     * <p>The GUID for the customer-managed KMS key to use for encryption. This value
-     * can be a globally unique identifier, a fully specified ARN to either an alias or
-     * a key, or an alias name prefixed by "alias/".You can also use a master key owned
-     * by Kinesis Streams by specifying the alias <code>aws/kinesis</code>.</p> <ul>
-     * <li> <p>Key ARN example:
+     * <p>The GUID for the customer-managed AWS KMS key to use for encryption. This
+     * value can be a globally unique identifier, a fully specified ARN to either an
+     * alias or a key, or an alias name prefixed by "alias/".You can also use a master
+     * key owned by Kinesis Data Streams by specifying the alias
+     * <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN example:
      * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p> </li> <li> <p>Alias ARN example: <code>
      * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li> <li>
      * <p>Globally unique key ID example:
      * <code>12345678-1234-1234-1234-123456789012</code> </p> </li> <li> <p>Alias name
      * example: <code>alias/MyAliasName</code> </p> </li> <li> <p>Master key owned by
-     * Kinesis: <code>alias/aws/kinesis</code> </p> </li> </ul>
+     * Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li> </ul>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>The GUID for the customer-managed KMS key to use for encryption. This value
-     * can be a globally unique identifier, a fully specified ARN to either an alias or
-     * a key, or an alias name prefixed by "alias/".You can also use a master key owned
-     * by Kinesis Streams by specifying the alias <code>aws/kinesis</code>.</p> <ul>
-     * <li> <p>Key ARN example:
+     * <p>The GUID for the customer-managed AWS KMS key to use for encryption. This
+     * value can be a globally unique identifier, a fully specified ARN to either an
+     * alias or a key, or an alias name prefixed by "alias/".You can also use a master
+     * key owned by Kinesis Data Streams by specifying the alias
+     * <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN example:
      * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p> </li> <li> <p>Alias ARN example: <code>
      * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li> <li>
      * <p>Globally unique key ID example:
      * <code>12345678-1234-1234-1234-123456789012</code> </p> </li> <li> <p>Alias name
      * example: <code>alias/MyAliasName</code> </p> </li> <li> <p>Master key owned by
-     * Kinesis: <code>alias/aws/kinesis</code> </p> </li> </ul>
+     * Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li> </ul>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>The GUID for the customer-managed KMS key to use for encryption. This value
-     * can be a globally unique identifier, a fully specified ARN to either an alias or
-     * a key, or an alias name prefixed by "alias/".You can also use a master key owned
-     * by Kinesis Streams by specifying the alias <code>aws/kinesis</code>.</p> <ul>
-     * <li> <p>Key ARN example:
+     * <p>The GUID for the customer-managed AWS KMS key to use for encryption. This
+     * value can be a globally unique identifier, a fully specified ARN to either an
+     * alias or a key, or an alias name prefixed by "alias/".You can also use a master
+     * key owned by Kinesis Data Streams by specifying the alias
+     * <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN example:
      * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p> </li> <li> <p>Alias ARN example: <code>
      * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li> <li>
      * <p>Globally unique key ID example:
      * <code>12345678-1234-1234-1234-123456789012</code> </p> </li> <li> <p>Alias name
      * example: <code>alias/MyAliasName</code> </p> </li> <li> <p>Master key owned by
-     * Kinesis: <code>alias/aws/kinesis</code> </p> </li> </ul>
+     * Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li> </ul>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
-     * <p>The GUID for the customer-managed KMS key to use for encryption. This value
-     * can be a globally unique identifier, a fully specified ARN to either an alias or
-     * a key, or an alias name prefixed by "alias/".You can also use a master key owned
-     * by Kinesis Streams by specifying the alias <code>aws/kinesis</code>.</p> <ul>
-     * <li> <p>Key ARN example:
+     * <p>The GUID for the customer-managed AWS KMS key to use for encryption. This
+     * value can be a globally unique identifier, a fully specified ARN to either an
+     * alias or a key, or an alias name prefixed by "alias/".You can also use a master
+     * key owned by Kinesis Data Streams by specifying the alias
+     * <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN example:
      * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p> </li> <li> <p>Alias ARN example: <code>
      * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li> <li>
      * <p>Globally unique key ID example:
      * <code>12345678-1234-1234-1234-123456789012</code> </p> </li> <li> <p>Alias name
      * example: <code>alias/MyAliasName</code> </p> </li> <li> <p>Master key owned by
-     * Kinesis: <code>alias/aws/kinesis</code> </p> </li> </ul>
+     * Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li> </ul>
      */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * <p>The GUID for the customer-managed KMS key to use for encryption. This value
-     * can be a globally unique identifier, a fully specified ARN to either an alias or
-     * a key, or an alias name prefixed by "alias/".You can also use a master key owned
-     * by Kinesis Streams by specifying the alias <code>aws/kinesis</code>.</p> <ul>
-     * <li> <p>Key ARN example:
+     * <p>The GUID for the customer-managed AWS KMS key to use for encryption. This
+     * value can be a globally unique identifier, a fully specified ARN to either an
+     * alias or a key, or an alias name prefixed by "alias/".You can also use a master
+     * key owned by Kinesis Data Streams by specifying the alias
+     * <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN example:
      * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p> </li> <li> <p>Alias ARN example: <code>
      * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li> <li>
      * <p>Globally unique key ID example:
      * <code>12345678-1234-1234-1234-123456789012</code> </p> </li> <li> <p>Alias name
      * example: <code>alias/MyAliasName</code> </p> </li> <li> <p>Master key owned by
-     * Kinesis: <code>alias/aws/kinesis</code> </p> </li> </ul>
+     * Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li> </ul>
      */
     inline StreamDescriptionSummary& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>The GUID for the customer-managed KMS key to use for encryption. This value
-     * can be a globally unique identifier, a fully specified ARN to either an alias or
-     * a key, or an alias name prefixed by "alias/".You can also use a master key owned
-     * by Kinesis Streams by specifying the alias <code>aws/kinesis</code>.</p> <ul>
-     * <li> <p>Key ARN example:
+     * <p>The GUID for the customer-managed AWS KMS key to use for encryption. This
+     * value can be a globally unique identifier, a fully specified ARN to either an
+     * alias or a key, or an alias name prefixed by "alias/".You can also use a master
+     * key owned by Kinesis Data Streams by specifying the alias
+     * <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN example:
      * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p> </li> <li> <p>Alias ARN example: <code>
      * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li> <li>
      * <p>Globally unique key ID example:
      * <code>12345678-1234-1234-1234-123456789012</code> </p> </li> <li> <p>Alias name
      * example: <code>alias/MyAliasName</code> </p> </li> <li> <p>Master key owned by
-     * Kinesis: <code>alias/aws/kinesis</code> </p> </li> </ul>
+     * Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li> </ul>
      */
     inline StreamDescriptionSummary& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The GUID for the customer-managed KMS key to use for encryption. This value
-     * can be a globally unique identifier, a fully specified ARN to either an alias or
-     * a key, or an alias name prefixed by "alias/".You can also use a master key owned
-     * by Kinesis Streams by specifying the alias <code>aws/kinesis</code>.</p> <ul>
-     * <li> <p>Key ARN example:
+     * <p>The GUID for the customer-managed AWS KMS key to use for encryption. This
+     * value can be a globally unique identifier, a fully specified ARN to either an
+     * alias or a key, or an alias name prefixed by "alias/".You can also use a master
+     * key owned by Kinesis Data Streams by specifying the alias
+     * <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN example:
      * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p> </li> <li> <p>Alias ARN example: <code>
      * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li> <li>
      * <p>Globally unique key ID example:
      * <code>12345678-1234-1234-1234-123456789012</code> </p> </li> <li> <p>Alias name
      * example: <code>alias/MyAliasName</code> </p> </li> <li> <p>Master key owned by
-     * Kinesis: <code>alias/aws/kinesis</code> </p> </li> </ul>
+     * Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li> </ul>
      */
     inline StreamDescriptionSummary& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 

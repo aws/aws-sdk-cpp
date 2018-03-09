@@ -17,6 +17,7 @@
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/LambdaRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lambda/model/AliasRoutingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -206,6 +207,106 @@ namespace Model
      */
     inline UpdateAliasRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    /**
+     * <p>Specifies an additional version your alias can point to, allowing you to
+     * dictate what percentage of traffic will invoke each version. For more
+     * information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     */
+    inline const AliasRoutingConfiguration& GetRoutingConfig() const{ return m_routingConfig; }
+
+    /**
+     * <p>Specifies an additional version your alias can point to, allowing you to
+     * dictate what percentage of traffic will invoke each version. For more
+     * information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     */
+    inline void SetRoutingConfig(const AliasRoutingConfiguration& value) { m_routingConfigHasBeenSet = true; m_routingConfig = value; }
+
+    /**
+     * <p>Specifies an additional version your alias can point to, allowing you to
+     * dictate what percentage of traffic will invoke each version. For more
+     * information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     */
+    inline void SetRoutingConfig(AliasRoutingConfiguration&& value) { m_routingConfigHasBeenSet = true; m_routingConfig = std::move(value); }
+
+    /**
+     * <p>Specifies an additional version your alias can point to, allowing you to
+     * dictate what percentage of traffic will invoke each version. For more
+     * information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     */
+    inline UpdateAliasRequest& WithRoutingConfig(const AliasRoutingConfiguration& value) { SetRoutingConfig(value); return *this;}
+
+    /**
+     * <p>Specifies an additional version your alias can point to, allowing you to
+     * dictate what percentage of traffic will invoke each version. For more
+     * information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     */
+    inline UpdateAliasRequest& WithRoutingConfig(AliasRoutingConfiguration&& value) { SetRoutingConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An optional value you can use to ensure you are updating the latest update of
+     * the function version or alias. If the <code>RevisionID</code> you pass doesn't
+     * match the latest <code>RevisionId</code> of the function or alias, it will fail
+     * with an error message, advising you to retrieve the latest function version or
+     * alias <code>RevisionID</code> using either or .</p>
+     */
+    inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
+
+    /**
+     * <p>An optional value you can use to ensure you are updating the latest update of
+     * the function version or alias. If the <code>RevisionID</code> you pass doesn't
+     * match the latest <code>RevisionId</code> of the function or alias, it will fail
+     * with an error message, advising you to retrieve the latest function version or
+     * alias <code>RevisionID</code> using either or .</p>
+     */
+    inline void SetRevisionId(const Aws::String& value) { m_revisionIdHasBeenSet = true; m_revisionId = value; }
+
+    /**
+     * <p>An optional value you can use to ensure you are updating the latest update of
+     * the function version or alias. If the <code>RevisionID</code> you pass doesn't
+     * match the latest <code>RevisionId</code> of the function or alias, it will fail
+     * with an error message, advising you to retrieve the latest function version or
+     * alias <code>RevisionID</code> using either or .</p>
+     */
+    inline void SetRevisionId(Aws::String&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::move(value); }
+
+    /**
+     * <p>An optional value you can use to ensure you are updating the latest update of
+     * the function version or alias. If the <code>RevisionID</code> you pass doesn't
+     * match the latest <code>RevisionId</code> of the function or alias, it will fail
+     * with an error message, advising you to retrieve the latest function version or
+     * alias <code>RevisionID</code> using either or .</p>
+     */
+    inline void SetRevisionId(const char* value) { m_revisionIdHasBeenSet = true; m_revisionId.assign(value); }
+
+    /**
+     * <p>An optional value you can use to ensure you are updating the latest update of
+     * the function version or alias. If the <code>RevisionID</code> you pass doesn't
+     * match the latest <code>RevisionId</code> of the function or alias, it will fail
+     * with an error message, advising you to retrieve the latest function version or
+     * alias <code>RevisionID</code> using either or .</p>
+     */
+    inline UpdateAliasRequest& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
+
+    /**
+     * <p>An optional value you can use to ensure you are updating the latest update of
+     * the function version or alias. If the <code>RevisionID</code> you pass doesn't
+     * match the latest <code>RevisionId</code> of the function or alias, it will fail
+     * with an error message, advising you to retrieve the latest function version or
+     * alias <code>RevisionID</code> using either or .</p>
+     */
+    inline UpdateAliasRequest& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional value you can use to ensure you are updating the latest update of
+     * the function version or alias. If the <code>RevisionID</code> you pass doesn't
+     * match the latest <code>RevisionId</code> of the function or alias, it will fail
+     * with an error message, advising you to retrieve the latest function version or
+     * alias <code>RevisionID</code> using either or .</p>
+     */
+    inline UpdateAliasRequest& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
+
   private:
 
     Aws::String m_functionName;
@@ -219,6 +320,12 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    AliasRoutingConfiguration m_routingConfig;
+    bool m_routingConfigHasBeenSet;
+
+    Aws::String m_revisionId;
+    bool m_revisionIdHasBeenSet;
   };
 
 } // namespace Model

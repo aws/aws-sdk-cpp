@@ -28,7 +28,8 @@ namespace Model
     NOT_SET,
     Facebook,
     Slack,
-    Twilio_Sms
+    Twilio_Sms,
+    Kik
   };
 
 namespace ChannelTypeMapper

@@ -92,51 +92,44 @@ namespace Model
 
 
     /**
-     * <p>A list of schema facets to be associated with the object that contains
-     * <code>SchemaArn</code> and facet name. For more information, see
-     * <a>arns</a>.</p>
+     * <p>A list of schema facets to be associated with the object. Do not provide
+     * minor version components. See <a>SchemaFacet</a> for details.</p>
      */
     inline const Aws::Vector<SchemaFacet>& GetSchemaFacets() const{ return m_schemaFacets; }
 
     /**
-     * <p>A list of schema facets to be associated with the object that contains
-     * <code>SchemaArn</code> and facet name. For more information, see
-     * <a>arns</a>.</p>
+     * <p>A list of schema facets to be associated with the object. Do not provide
+     * minor version components. See <a>SchemaFacet</a> for details.</p>
      */
     inline void SetSchemaFacets(const Aws::Vector<SchemaFacet>& value) { m_schemaFacetsHasBeenSet = true; m_schemaFacets = value; }
 
     /**
-     * <p>A list of schema facets to be associated with the object that contains
-     * <code>SchemaArn</code> and facet name. For more information, see
-     * <a>arns</a>.</p>
+     * <p>A list of schema facets to be associated with the object. Do not provide
+     * minor version components. See <a>SchemaFacet</a> for details.</p>
      */
     inline void SetSchemaFacets(Aws::Vector<SchemaFacet>&& value) { m_schemaFacetsHasBeenSet = true; m_schemaFacets = std::move(value); }
 
     /**
-     * <p>A list of schema facets to be associated with the object that contains
-     * <code>SchemaArn</code> and facet name. For more information, see
-     * <a>arns</a>.</p>
+     * <p>A list of schema facets to be associated with the object. Do not provide
+     * minor version components. See <a>SchemaFacet</a> for details.</p>
      */
     inline CreateObjectRequest& WithSchemaFacets(const Aws::Vector<SchemaFacet>& value) { SetSchemaFacets(value); return *this;}
 
     /**
-     * <p>A list of schema facets to be associated with the object that contains
-     * <code>SchemaArn</code> and facet name. For more information, see
-     * <a>arns</a>.</p>
+     * <p>A list of schema facets to be associated with the object. Do not provide
+     * minor version components. See <a>SchemaFacet</a> for details.</p>
      */
     inline CreateObjectRequest& WithSchemaFacets(Aws::Vector<SchemaFacet>&& value) { SetSchemaFacets(std::move(value)); return *this;}
 
     /**
-     * <p>A list of schema facets to be associated with the object that contains
-     * <code>SchemaArn</code> and facet name. For more information, see
-     * <a>arns</a>.</p>
+     * <p>A list of schema facets to be associated with the object. Do not provide
+     * minor version components. See <a>SchemaFacet</a> for details.</p>
      */
     inline CreateObjectRequest& AddSchemaFacets(const SchemaFacet& value) { m_schemaFacetsHasBeenSet = true; m_schemaFacets.push_back(value); return *this; }
 
     /**
-     * <p>A list of schema facets to be associated with the object that contains
-     * <code>SchemaArn</code> and facet name. For more information, see
-     * <a>arns</a>.</p>
+     * <p>A list of schema facets to be associated with the object. Do not provide
+     * minor version components. See <a>SchemaFacet</a> for details.</p>
      */
     inline CreateObjectRequest& AddSchemaFacets(SchemaFacet&& value) { m_schemaFacetsHasBeenSet = true; m_schemaFacets.push_back(std::move(value)); return *this; }
 

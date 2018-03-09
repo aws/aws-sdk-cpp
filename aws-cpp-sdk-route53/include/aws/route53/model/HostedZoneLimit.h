@@ -52,7 +52,7 @@ namespace Model
      * <p>The limit that you requested. Valid values include the following:</p> <ul>
      * <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can
      * create in the specified hosted zone.</p> </li> <li> <p>
-     * <b>MAX_VPCS_ASSOCIATED_BY_TYPE</b>: The maximum number of Amazon VPCs that you
+     * <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you
      * can associate with the specified private hosted zone.</p> </li> </ul>
      */
     inline const HostedZoneLimitType& GetType() const{ return m_type; }
@@ -61,7 +61,7 @@ namespace Model
      * <p>The limit that you requested. Valid values include the following:</p> <ul>
      * <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can
      * create in the specified hosted zone.</p> </li> <li> <p>
-     * <b>MAX_VPCS_ASSOCIATED_BY_TYPE</b>: The maximum number of Amazon VPCs that you
+     * <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you
      * can associate with the specified private hosted zone.</p> </li> </ul>
      */
     inline void SetType(const HostedZoneLimitType& value) { m_typeHasBeenSet = true; m_type = value; }
@@ -70,7 +70,7 @@ namespace Model
      * <p>The limit that you requested. Valid values include the following:</p> <ul>
      * <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can
      * create in the specified hosted zone.</p> </li> <li> <p>
-     * <b>MAX_VPCS_ASSOCIATED_BY_TYPE</b>: The maximum number of Amazon VPCs that you
+     * <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you
      * can associate with the specified private hosted zone.</p> </li> </ul>
      */
     inline void SetType(HostedZoneLimitType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
@@ -79,7 +79,7 @@ namespace Model
      * <p>The limit that you requested. Valid values include the following:</p> <ul>
      * <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can
      * create in the specified hosted zone.</p> </li> <li> <p>
-     * <b>MAX_VPCS_ASSOCIATED_BY_TYPE</b>: The maximum number of Amazon VPCs that you
+     * <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you
      * can associate with the specified private hosted zone.</p> </li> </ul>
      */
     inline HostedZoneLimit& WithType(const HostedZoneLimitType& value) { SetType(value); return *this;}
@@ -88,7 +88,7 @@ namespace Model
      * <p>The limit that you requested. Valid values include the following:</p> <ul>
      * <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can
      * create in the specified hosted zone.</p> </li> <li> <p>
-     * <b>MAX_VPCS_ASSOCIATED_BY_TYPE</b>: The maximum number of Amazon VPCs that you
+     * <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you
      * can associate with the specified private hosted zone.</p> </li> </ul>
      */
     inline HostedZoneLimit& WithType(HostedZoneLimitType&& value) { SetType(std::move(value)); return *this;}

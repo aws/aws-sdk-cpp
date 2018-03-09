@@ -44,6 +44,12 @@ GetPolicyResult& GetPolicyResult::operator =(const Aws::AmazonWebServiceResult<J
 
   }
 
+  if(jsonValue.ValueExists("RevisionId"))
+  {
+    m_revisionId = jsonValue.GetString("RevisionId");
+
+  }
+
 
 
   return *this;

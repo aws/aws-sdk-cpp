@@ -37,9 +37,23 @@ AutomationExecution::AutomationExecution() :
     m_automationExecutionStatus(AutomationExecutionStatus::NOT_SET),
     m_automationExecutionStatusHasBeenSet(false),
     m_stepExecutionsHasBeenSet(false),
+    m_stepExecutionsTruncated(false),
+    m_stepExecutionsTruncatedHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_outputsHasBeenSet(false),
-    m_failureMessageHasBeenSet(false)
+    m_failureMessageHasBeenSet(false),
+    m_mode(ExecutionMode::NOT_SET),
+    m_modeHasBeenSet(false),
+    m_parentAutomationExecutionIdHasBeenSet(false),
+    m_executedByHasBeenSet(false),
+    m_currentStepNameHasBeenSet(false),
+    m_currentActionHasBeenSet(false),
+    m_targetParameterNameHasBeenSet(false),
+    m_targetsHasBeenSet(false),
+    m_resolvedTargetsHasBeenSet(false),
+    m_maxConcurrencyHasBeenSet(false),
+    m_maxErrorsHasBeenSet(false),
+    m_targetHasBeenSet(false)
 {
 }
 
@@ -52,9 +66,23 @@ AutomationExecution::AutomationExecution(const JsonValue& jsonValue) :
     m_automationExecutionStatus(AutomationExecutionStatus::NOT_SET),
     m_automationExecutionStatusHasBeenSet(false),
     m_stepExecutionsHasBeenSet(false),
+    m_stepExecutionsTruncated(false),
+    m_stepExecutionsTruncatedHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_outputsHasBeenSet(false),
-    m_failureMessageHasBeenSet(false)
+    m_failureMessageHasBeenSet(false),
+    m_mode(ExecutionMode::NOT_SET),
+    m_modeHasBeenSet(false),
+    m_parentAutomationExecutionIdHasBeenSet(false),
+    m_executedByHasBeenSet(false),
+    m_currentStepNameHasBeenSet(false),
+    m_currentActionHasBeenSet(false),
+    m_targetParameterNameHasBeenSet(false),
+    m_targetsHasBeenSet(false),
+    m_resolvedTargetsHasBeenSet(false),
+    m_maxConcurrencyHasBeenSet(false),
+    m_maxErrorsHasBeenSet(false),
+    m_targetHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -113,6 +141,13 @@ AutomationExecution& AutomationExecution::operator =(const JsonValue& jsonValue)
     m_stepExecutionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StepExecutionsTruncated"))
+  {
+    m_stepExecutionsTruncated = jsonValue.GetBool("StepExecutionsTruncated");
+
+    m_stepExecutionsTruncatedHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Map<Aws::String, JsonValue> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
@@ -152,6 +187,86 @@ AutomationExecution& AutomationExecution::operator =(const JsonValue& jsonValue)
     m_failureMessage = jsonValue.GetString("FailureMessage");
 
     m_failureMessageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Mode"))
+  {
+    m_mode = ExecutionModeMapper::GetExecutionModeForName(jsonValue.GetString("Mode"));
+
+    m_modeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ParentAutomationExecutionId"))
+  {
+    m_parentAutomationExecutionId = jsonValue.GetString("ParentAutomationExecutionId");
+
+    m_parentAutomationExecutionIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ExecutedBy"))
+  {
+    m_executedBy = jsonValue.GetString("ExecutedBy");
+
+    m_executedByHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CurrentStepName"))
+  {
+    m_currentStepName = jsonValue.GetString("CurrentStepName");
+
+    m_currentStepNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CurrentAction"))
+  {
+    m_currentAction = jsonValue.GetString("CurrentAction");
+
+    m_currentActionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TargetParameterName"))
+  {
+    m_targetParameterName = jsonValue.GetString("TargetParameterName");
+
+    m_targetParameterNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Targets"))
+  {
+    Array<JsonValue> targetsJsonList = jsonValue.GetArray("Targets");
+    for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
+    {
+      m_targets.push_back(targetsJsonList[targetsIndex].AsObject());
+    }
+    m_targetsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ResolvedTargets"))
+  {
+    m_resolvedTargets = jsonValue.GetObject("ResolvedTargets");
+
+    m_resolvedTargetsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MaxConcurrency"))
+  {
+    m_maxConcurrency = jsonValue.GetString("MaxConcurrency");
+
+    m_maxConcurrencyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MaxErrors"))
+  {
+    m_maxErrors = jsonValue.GetString("MaxErrors");
+
+    m_maxErrorsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Target"))
+  {
+    m_target = jsonValue.GetString("Target");
+
+    m_targetHasBeenSet = true;
   }
 
   return *this;
@@ -205,6 +320,12 @@ JsonValue AutomationExecution::Jsonize() const
 
   }
 
+  if(m_stepExecutionsTruncatedHasBeenSet)
+  {
+   payload.WithBool("StepExecutionsTruncated", m_stepExecutionsTruncated);
+
+  }
+
   if(m_parametersHasBeenSet)
   {
    JsonValue parametersJsonMap;
@@ -240,6 +361,76 @@ JsonValue AutomationExecution::Jsonize() const
   if(m_failureMessageHasBeenSet)
   {
    payload.WithString("FailureMessage", m_failureMessage);
+
+  }
+
+  if(m_modeHasBeenSet)
+  {
+   payload.WithString("Mode", ExecutionModeMapper::GetNameForExecutionMode(m_mode));
+  }
+
+  if(m_parentAutomationExecutionIdHasBeenSet)
+  {
+   payload.WithString("ParentAutomationExecutionId", m_parentAutomationExecutionId);
+
+  }
+
+  if(m_executedByHasBeenSet)
+  {
+   payload.WithString("ExecutedBy", m_executedBy);
+
+  }
+
+  if(m_currentStepNameHasBeenSet)
+  {
+   payload.WithString("CurrentStepName", m_currentStepName);
+
+  }
+
+  if(m_currentActionHasBeenSet)
+  {
+   payload.WithString("CurrentAction", m_currentAction);
+
+  }
+
+  if(m_targetParameterNameHasBeenSet)
+  {
+   payload.WithString("TargetParameterName", m_targetParameterName);
+
+  }
+
+  if(m_targetsHasBeenSet)
+  {
+   Array<JsonValue> targetsJsonList(m_targets.size());
+   for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
+   {
+     targetsJsonList[targetsIndex].AsObject(m_targets[targetsIndex].Jsonize());
+   }
+   payload.WithArray("Targets", std::move(targetsJsonList));
+
+  }
+
+  if(m_resolvedTargetsHasBeenSet)
+  {
+   payload.WithObject("ResolvedTargets", m_resolvedTargets.Jsonize());
+
+  }
+
+  if(m_maxConcurrencyHasBeenSet)
+  {
+   payload.WithString("MaxConcurrency", m_maxConcurrency);
+
+  }
+
+  if(m_maxErrorsHasBeenSet)
+  {
+   payload.WithString("MaxErrors", m_maxErrors);
+
+  }
+
+  if(m_targetHasBeenSet)
+  {
+   payload.WithString("Target", m_target);
 
   }
 

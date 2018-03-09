@@ -118,11 +118,49 @@ namespace Model
      */
     inline CreateThingResult& WithThingArn(const char* value) { SetThingArn(value); return *this;}
 
+
+    /**
+     * <p>The thing ID.</p>
+     */
+    inline const Aws::String& GetThingId() const{ return m_thingId; }
+
+    /**
+     * <p>The thing ID.</p>
+     */
+    inline void SetThingId(const Aws::String& value) { m_thingId = value; }
+
+    /**
+     * <p>The thing ID.</p>
+     */
+    inline void SetThingId(Aws::String&& value) { m_thingId = std::move(value); }
+
+    /**
+     * <p>The thing ID.</p>
+     */
+    inline void SetThingId(const char* value) { m_thingId.assign(value); }
+
+    /**
+     * <p>The thing ID.</p>
+     */
+    inline CreateThingResult& WithThingId(const Aws::String& value) { SetThingId(value); return *this;}
+
+    /**
+     * <p>The thing ID.</p>
+     */
+    inline CreateThingResult& WithThingId(Aws::String&& value) { SetThingId(std::move(value)); return *this;}
+
+    /**
+     * <p>The thing ID.</p>
+     */
+    inline CreateThingResult& WithThingId(const char* value) { SetThingId(value); return *this;}
+
   private:
 
     Aws::String m_thingName;
 
     Aws::String m_thingArn;
+
+    Aws::String m_thingId;
   };
 
 } // namespace Model

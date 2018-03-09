@@ -18,6 +18,7 @@
 #include <aws/glue/GlueRequest.h>
 #include <aws/glue/model/UpdateGrokClassifierRequest.h>
 #include <aws/glue/model/UpdateXMLClassifierRequest.h>
+#include <aws/glue/model/UpdateJsonClassifierRequest.h>
 #include <utility>
 
 namespace Aws
@@ -96,6 +97,32 @@ namespace Model
      */
     inline UpdateClassifierRequest& WithXMLClassifier(UpdateXMLClassifierRequest&& value) { SetXMLClassifier(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A <code>JsonClassifier</code> object with updated fields.</p>
+     */
+    inline const UpdateJsonClassifierRequest& GetJsonClassifier() const{ return m_jsonClassifier; }
+
+    /**
+     * <p>A <code>JsonClassifier</code> object with updated fields.</p>
+     */
+    inline void SetJsonClassifier(const UpdateJsonClassifierRequest& value) { m_jsonClassifierHasBeenSet = true; m_jsonClassifier = value; }
+
+    /**
+     * <p>A <code>JsonClassifier</code> object with updated fields.</p>
+     */
+    inline void SetJsonClassifier(UpdateJsonClassifierRequest&& value) { m_jsonClassifierHasBeenSet = true; m_jsonClassifier = std::move(value); }
+
+    /**
+     * <p>A <code>JsonClassifier</code> object with updated fields.</p>
+     */
+    inline UpdateClassifierRequest& WithJsonClassifier(const UpdateJsonClassifierRequest& value) { SetJsonClassifier(value); return *this;}
+
+    /**
+     * <p>A <code>JsonClassifier</code> object with updated fields.</p>
+     */
+    inline UpdateClassifierRequest& WithJsonClassifier(UpdateJsonClassifierRequest&& value) { SetJsonClassifier(std::move(value)); return *this;}
+
   private:
 
     UpdateGrokClassifierRequest m_grokClassifier;
@@ -103,6 +130,9 @@ namespace Model
 
     UpdateXMLClassifierRequest m_xMLClassifier;
     bool m_xMLClassifierHasBeenSet;
+
+    UpdateJsonClassifierRequest m_jsonClassifier;
+    bool m_jsonClassifierHasBeenSet;
   };
 
 } // namespace Model

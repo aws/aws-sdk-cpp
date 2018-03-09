@@ -508,6 +508,16 @@ namespace Model
      */
     inline Volume& WithIops(int value) { SetIops(value); return *this;}
 
+
+    
+    inline bool GetEncrypted() const{ return m_encrypted; }
+
+    
+    inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
+
+    
+    inline Volume& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
+
   private:
 
     Aws::String m_volumeId;
@@ -548,6 +558,9 @@ namespace Model
 
     int m_iops;
     bool m_iopsHasBeenSet;
+
+    bool m_encrypted;
+    bool m_encryptedHasBeenSet;
   };
 
 } // namespace Model

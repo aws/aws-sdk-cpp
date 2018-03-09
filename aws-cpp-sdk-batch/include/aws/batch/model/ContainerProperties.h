@@ -236,7 +236,7 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>--cpu-shares</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
-     * is equivalent to 1,024 CPU shares. You must specify at least 1 vCPU.</p>
+     * is equivalent to 1,024 CPU shares. You must specify at least one vCPU.</p>
      */
     inline int GetVcpus() const{ return m_vcpus; }
 
@@ -248,7 +248,7 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>--cpu-shares</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
-     * is equivalent to 1,024 CPU shares. You must specify at least 1 vCPU.</p>
+     * is equivalent to 1,024 CPU shares. You must specify at least one vCPU.</p>
      */
     inline void SetVcpus(int value) { m_vcpusHasBeenSet = true; m_vcpus = value; }
 
@@ -260,7 +260,7 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>--cpu-shares</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
-     * is equivalent to 1,024 CPU shares. You must specify at least 1 vCPU.</p>
+     * is equivalent to 1,024 CPU shares. You must specify at least one vCPU.</p>
      */
     inline ContainerProperties& WithVcpus(int value) { SetVcpus(value); return *this;}
 
@@ -497,7 +497,7 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     * <important> <p>We do not recommend using plain text environment variables for
+     * <important> <p>We do not recommend using plaintext environment variables for
      * sensitive information, such as credential data.</p> </important> <note>
      * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
      * convention is reserved for variables that are set by the AWS Batch service.</p>
@@ -513,7 +513,7 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     * <important> <p>We do not recommend using plain text environment variables for
+     * <important> <p>We do not recommend using plaintext environment variables for
      * sensitive information, such as credential data.</p> </important> <note>
      * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
      * convention is reserved for variables that are set by the AWS Batch service.</p>
@@ -529,7 +529,7 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     * <important> <p>We do not recommend using plain text environment variables for
+     * <important> <p>We do not recommend using plaintext environment variables for
      * sensitive information, such as credential data.</p> </important> <note>
      * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
      * convention is reserved for variables that are set by the AWS Batch service.</p>
@@ -545,7 +545,7 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     * <important> <p>We do not recommend using plain text environment variables for
+     * <important> <p>We do not recommend using plaintext environment variables for
      * sensitive information, such as credential data.</p> </important> <note>
      * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
      * convention is reserved for variables that are set by the AWS Batch service.</p>
@@ -561,7 +561,7 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     * <important> <p>We do not recommend using plain text environment variables for
+     * <important> <p>We do not recommend using plaintext environment variables for
      * sensitive information, such as credential data.</p> </important> <note>
      * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
      * convention is reserved for variables that are set by the AWS Batch service.</p>
@@ -577,7 +577,7 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     * <important> <p>We do not recommend using plain text environment variables for
+     * <important> <p>We do not recommend using plaintext environment variables for
      * sensitive information, such as credential data.</p> </important> <note>
      * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
      * convention is reserved for variables that are set by the AWS Batch service.</p>
@@ -593,7 +593,7 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     * <important> <p>We do not recommend using plain text environment variables for
+     * <important> <p>We do not recommend using plaintext environment variables for
      * sensitive information, such as credential data.</p> </important> <note>
      * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
      * convention is reserved for variables that are set by the AWS Batch service.</p>

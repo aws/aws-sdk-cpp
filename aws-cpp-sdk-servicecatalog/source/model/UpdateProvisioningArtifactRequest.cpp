@@ -27,7 +27,9 @@ UpdateProvisioningArtifactRequest::UpdateProvisioningArtifactRequest() :
     m_productIdHasBeenSet(false),
     m_provisioningArtifactIdHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_active(false),
+    m_activeHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,12 @@ Aws::String UpdateProvisioningArtifactRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
+
+  }
+
+  if(m_activeHasBeenSet)
+  {
+   payload.WithBool("Active", m_active);
 
   }
 

@@ -83,20 +83,20 @@ namespace Model
 
 
     /**
-     * <p>If <code>true</code>, terminating the instance also decrements the size of
-     * the Auto Scaling group.</p>
+     * <p>Indicates whether terminating the instance also decrements the size of the
+     * Auto Scaling group.</p>
      */
     inline bool GetShouldDecrementDesiredCapacity() const{ return m_shouldDecrementDesiredCapacity; }
 
     /**
-     * <p>If <code>true</code>, terminating the instance also decrements the size of
-     * the Auto Scaling group.</p>
+     * <p>Indicates whether terminating the instance also decrements the size of the
+     * Auto Scaling group.</p>
      */
     inline void SetShouldDecrementDesiredCapacity(bool value) { m_shouldDecrementDesiredCapacityHasBeenSet = true; m_shouldDecrementDesiredCapacity = value; }
 
     /**
-     * <p>If <code>true</code>, terminating the instance also decrements the size of
-     * the Auto Scaling group.</p>
+     * <p>Indicates whether terminating the instance also decrements the size of the
+     * Auto Scaling group.</p>
      */
     inline TerminateInstanceInAutoScalingGroupRequest& WithShouldDecrementDesiredCapacity(bool value) { SetShouldDecrementDesiredCapacity(value); return *this;}
 

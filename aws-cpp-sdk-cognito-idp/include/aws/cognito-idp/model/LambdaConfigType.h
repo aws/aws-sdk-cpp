@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the type of configuration for AWS Lambda triggers.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Specifies the configuration for AWS Lambda triggers.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/LambdaConfigType">AWS
    * API Reference</a></p>
    */
@@ -334,6 +334,78 @@ namespace Model
      */
     inline LambdaConfigType& WithVerifyAuthChallengeResponse(const char* value) { SetVerifyAuthChallengeResponse(value); return *this;}
 
+
+    /**
+     * <p>A Lambda trigger that is invoked before token generation.</p>
+     */
+    inline const Aws::String& GetPreTokenGeneration() const{ return m_preTokenGeneration; }
+
+    /**
+     * <p>A Lambda trigger that is invoked before token generation.</p>
+     */
+    inline void SetPreTokenGeneration(const Aws::String& value) { m_preTokenGenerationHasBeenSet = true; m_preTokenGeneration = value; }
+
+    /**
+     * <p>A Lambda trigger that is invoked before token generation.</p>
+     */
+    inline void SetPreTokenGeneration(Aws::String&& value) { m_preTokenGenerationHasBeenSet = true; m_preTokenGeneration = std::move(value); }
+
+    /**
+     * <p>A Lambda trigger that is invoked before token generation.</p>
+     */
+    inline void SetPreTokenGeneration(const char* value) { m_preTokenGenerationHasBeenSet = true; m_preTokenGeneration.assign(value); }
+
+    /**
+     * <p>A Lambda trigger that is invoked before token generation.</p>
+     */
+    inline LambdaConfigType& WithPreTokenGeneration(const Aws::String& value) { SetPreTokenGeneration(value); return *this;}
+
+    /**
+     * <p>A Lambda trigger that is invoked before token generation.</p>
+     */
+    inline LambdaConfigType& WithPreTokenGeneration(Aws::String&& value) { SetPreTokenGeneration(std::move(value)); return *this;}
+
+    /**
+     * <p>A Lambda trigger that is invoked before token generation.</p>
+     */
+    inline LambdaConfigType& WithPreTokenGeneration(const char* value) { SetPreTokenGeneration(value); return *this;}
+
+
+    /**
+     * <p>The user migration Lambda config type.</p>
+     */
+    inline const Aws::String& GetUserMigration() const{ return m_userMigration; }
+
+    /**
+     * <p>The user migration Lambda config type.</p>
+     */
+    inline void SetUserMigration(const Aws::String& value) { m_userMigrationHasBeenSet = true; m_userMigration = value; }
+
+    /**
+     * <p>The user migration Lambda config type.</p>
+     */
+    inline void SetUserMigration(Aws::String&& value) { m_userMigrationHasBeenSet = true; m_userMigration = std::move(value); }
+
+    /**
+     * <p>The user migration Lambda config type.</p>
+     */
+    inline void SetUserMigration(const char* value) { m_userMigrationHasBeenSet = true; m_userMigration.assign(value); }
+
+    /**
+     * <p>The user migration Lambda config type.</p>
+     */
+    inline LambdaConfigType& WithUserMigration(const Aws::String& value) { SetUserMigration(value); return *this;}
+
+    /**
+     * <p>The user migration Lambda config type.</p>
+     */
+    inline LambdaConfigType& WithUserMigration(Aws::String&& value) { SetUserMigration(std::move(value)); return *this;}
+
+    /**
+     * <p>The user migration Lambda config type.</p>
+     */
+    inline LambdaConfigType& WithUserMigration(const char* value) { SetUserMigration(value); return *this;}
+
   private:
 
     Aws::String m_preSignUp;
@@ -359,6 +431,12 @@ namespace Model
 
     Aws::String m_verifyAuthChallengeResponse;
     bool m_verifyAuthChallengeResponseHasBeenSet;
+
+    Aws::String m_preTokenGeneration;
+    bool m_preTokenGenerationHasBeenSet;
+
+    Aws::String m_userMigration;
+    bool m_userMigrationHasBeenSet;
   };
 
 } // namespace Model

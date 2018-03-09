@@ -240,6 +240,56 @@ namespace Model
      */
     inline void ReplaceBody(Aws::IOStream* body) { m_payload = Aws::Utils::Stream::ResponseStream(body); }
     
+
+    /**
+     * <p>The function version that has been executed. This value is returned only if
+     * the invocation type is <code>RequestResponse</code>. For more information, see
+     * <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     */
+    inline const Aws::String& GetExecutedVersion() const{ return m_executedVersion; }
+
+    /**
+     * <p>The function version that has been executed. This value is returned only if
+     * the invocation type is <code>RequestResponse</code>. For more information, see
+     * <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     */
+    inline void SetExecutedVersion(const Aws::String& value) { m_executedVersion = value; }
+
+    /**
+     * <p>The function version that has been executed. This value is returned only if
+     * the invocation type is <code>RequestResponse</code>. For more information, see
+     * <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     */
+    inline void SetExecutedVersion(Aws::String&& value) { m_executedVersion = std::move(value); }
+
+    /**
+     * <p>The function version that has been executed. This value is returned only if
+     * the invocation type is <code>RequestResponse</code>. For more information, see
+     * <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     */
+    inline void SetExecutedVersion(const char* value) { m_executedVersion.assign(value); }
+
+    /**
+     * <p>The function version that has been executed. This value is returned only if
+     * the invocation type is <code>RequestResponse</code>. For more information, see
+     * <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     */
+    inline InvokeResult& WithExecutedVersion(const Aws::String& value) { SetExecutedVersion(value); return *this;}
+
+    /**
+     * <p>The function version that has been executed. This value is returned only if
+     * the invocation type is <code>RequestResponse</code>. For more information, see
+     * <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     */
+    inline InvokeResult& WithExecutedVersion(Aws::String&& value) { SetExecutedVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The function version that has been executed. This value is returned only if
+     * the invocation type is <code>RequestResponse</code>. For more information, see
+     * <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     */
+    inline InvokeResult& WithExecutedVersion(const char* value) { SetExecutedVersion(value); return *this;}
+
   private:
 
     int m_statusCode;
@@ -249,6 +299,8 @@ namespace Model
     Aws::String m_logResult;
 
   Aws::Utils::Stream::ResponseStream m_payload;
+
+    Aws::String m_executedVersion;
   };
 
 } // namespace Model

@@ -196,6 +196,42 @@ namespace Model
 
 
     /**
+     * <p>The device's model ID.</p>
+     */
+    inline const Aws::String& GetModelId() const{ return m_modelId; }
+
+    /**
+     * <p>The device's model ID.</p>
+     */
+    inline void SetModelId(const Aws::String& value) { m_modelIdHasBeenSet = true; m_modelId = value; }
+
+    /**
+     * <p>The device's model ID.</p>
+     */
+    inline void SetModelId(Aws::String&& value) { m_modelIdHasBeenSet = true; m_modelId = std::move(value); }
+
+    /**
+     * <p>The device's model ID.</p>
+     */
+    inline void SetModelId(const char* value) { m_modelIdHasBeenSet = true; m_modelId.assign(value); }
+
+    /**
+     * <p>The device's model ID.</p>
+     */
+    inline Device& WithModelId(const Aws::String& value) { SetModelId(value); return *this;}
+
+    /**
+     * <p>The device's model ID.</p>
+     */
+    inline Device& WithModelId(Aws::String&& value) { SetModelId(std::move(value)); return *this;}
+
+    /**
+     * <p>The device's model ID.</p>
+     */
+    inline Device& WithModelId(const char* value) { SetModelId(value); return *this;}
+
+
+    /**
      * <p>The device's form factor.</p> <p>Allowed values include:</p> <ul> <li>
      * <p>PHONE: The phone form factor.</p> </li> <li> <p>TABLET: The tablet form
      * factor.</p> </li> </ul>
@@ -624,6 +660,9 @@ namespace Model
 
     Aws::String m_model;
     bool m_modelHasBeenSet;
+
+    Aws::String m_modelId;
+    bool m_modelIdHasBeenSet;
 
     DeviceFormFactor m_formFactor;
     bool m_formFactorHasBeenSet;

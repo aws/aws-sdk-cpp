@@ -41,6 +41,9 @@
 #include <aws/greengrass/model/CreateGroupVersionRequest.h>
 #include <aws/greengrass/model/CreateLoggerDefinitionRequest.h>
 #include <aws/greengrass/model/CreateLoggerDefinitionVersionRequest.h>
+#include <aws/greengrass/model/CreateResourceDefinitionRequest.h>
+#include <aws/greengrass/model/CreateResourceDefinitionVersionRequest.h>
+#include <aws/greengrass/model/CreateSoftwareUpdateJobRequest.h>
 #include <aws/greengrass/model/CreateSubscriptionDefinitionRequest.h>
 #include <aws/greengrass/model/CreateSubscriptionDefinitionVersionRequest.h>
 #include <aws/greengrass/model/DeleteCoreDefinitionRequest.h>
@@ -48,6 +51,7 @@
 #include <aws/greengrass/model/DeleteFunctionDefinitionRequest.h>
 #include <aws/greengrass/model/DeleteGroupRequest.h>
 #include <aws/greengrass/model/DeleteLoggerDefinitionRequest.h>
+#include <aws/greengrass/model/DeleteResourceDefinitionRequest.h>
 #include <aws/greengrass/model/DeleteSubscriptionDefinitionRequest.h>
 #include <aws/greengrass/model/DisassociateRoleFromGroupRequest.h>
 #include <aws/greengrass/model/DisassociateServiceRoleFromAccountRequest.h>
@@ -66,6 +70,8 @@
 #include <aws/greengrass/model/GetGroupVersionRequest.h>
 #include <aws/greengrass/model/GetLoggerDefinitionRequest.h>
 #include <aws/greengrass/model/GetLoggerDefinitionVersionRequest.h>
+#include <aws/greengrass/model/GetResourceDefinitionRequest.h>
+#include <aws/greengrass/model/GetResourceDefinitionVersionRequest.h>
 #include <aws/greengrass/model/GetServiceRoleForAccountRequest.h>
 #include <aws/greengrass/model/GetSubscriptionDefinitionRequest.h>
 #include <aws/greengrass/model/GetSubscriptionDefinitionVersionRequest.h>
@@ -81,6 +87,8 @@
 #include <aws/greengrass/model/ListGroupsRequest.h>
 #include <aws/greengrass/model/ListLoggerDefinitionVersionsRequest.h>
 #include <aws/greengrass/model/ListLoggerDefinitionsRequest.h>
+#include <aws/greengrass/model/ListResourceDefinitionVersionsRequest.h>
+#include <aws/greengrass/model/ListResourceDefinitionsRequest.h>
 #include <aws/greengrass/model/ListSubscriptionDefinitionVersionsRequest.h>
 #include <aws/greengrass/model/ListSubscriptionDefinitionsRequest.h>
 #include <aws/greengrass/model/ResetDeploymentsRequest.h>
@@ -91,6 +99,7 @@
 #include <aws/greengrass/model/UpdateGroupRequest.h>
 #include <aws/greengrass/model/UpdateGroupCertificateConfigurationRequest.h>
 #include <aws/greengrass/model/UpdateLoggerDefinitionRequest.h>
+#include <aws/greengrass/model/UpdateResourceDefinitionRequest.h>
 #include <aws/greengrass/model/UpdateSubscriptionDefinitionRequest.h>
 
 using namespace Aws;
@@ -663,6 +672,113 @@ void GreengrassClient::CreateLoggerDefinitionVersionAsyncHelper(const CreateLogg
   handler(this, request, CreateLoggerDefinitionVersion(request), context);
 }
 
+CreateResourceDefinitionOutcome GreengrassClient::CreateResourceDefinition(const CreateResourceDefinitionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/greengrass/definition/resources";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateResourceDefinitionOutcome(CreateResourceDefinitionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateResourceDefinitionOutcome(outcome.GetError());
+  }
+}
+
+CreateResourceDefinitionOutcomeCallable GreengrassClient::CreateResourceDefinitionCallable(const CreateResourceDefinitionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateResourceDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateResourceDefinition(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassClient::CreateResourceDefinitionAsync(const CreateResourceDefinitionRequest& request, const CreateResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateResourceDefinitionAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassClient::CreateResourceDefinitionAsyncHelper(const CreateResourceDefinitionRequest& request, const CreateResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateResourceDefinition(request), context);
+}
+
+CreateResourceDefinitionVersionOutcome GreengrassClient::CreateResourceDefinitionVersion(const CreateResourceDefinitionVersionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/greengrass/definition/resources/";
+  ss << request.GetResourceDefinitionId();
+  ss << "/versions";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateResourceDefinitionVersionOutcome(CreateResourceDefinitionVersionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateResourceDefinitionVersionOutcome(outcome.GetError());
+  }
+}
+
+CreateResourceDefinitionVersionOutcomeCallable GreengrassClient::CreateResourceDefinitionVersionCallable(const CreateResourceDefinitionVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateResourceDefinitionVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateResourceDefinitionVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassClient::CreateResourceDefinitionVersionAsync(const CreateResourceDefinitionVersionRequest& request, const CreateResourceDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateResourceDefinitionVersionAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassClient::CreateResourceDefinitionVersionAsyncHelper(const CreateResourceDefinitionVersionRequest& request, const CreateResourceDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateResourceDefinitionVersion(request), context);
+}
+
+CreateSoftwareUpdateJobOutcome GreengrassClient::CreateSoftwareUpdateJob(const CreateSoftwareUpdateJobRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/greengrass/updates";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateSoftwareUpdateJobOutcome(CreateSoftwareUpdateJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateSoftwareUpdateJobOutcome(outcome.GetError());
+  }
+}
+
+CreateSoftwareUpdateJobOutcomeCallable GreengrassClient::CreateSoftwareUpdateJobCallable(const CreateSoftwareUpdateJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateSoftwareUpdateJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSoftwareUpdateJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassClient::CreateSoftwareUpdateJobAsync(const CreateSoftwareUpdateJobRequest& request, const CreateSoftwareUpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateSoftwareUpdateJobAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassClient::CreateSoftwareUpdateJobAsyncHelper(const CreateSoftwareUpdateJobRequest& request, const CreateSoftwareUpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateSoftwareUpdateJob(request), context);
+}
+
 CreateSubscriptionDefinitionOutcome GreengrassClient::CreateSubscriptionDefinition(const CreateSubscriptionDefinitionRequest& request) const
 {
   Aws::StringStream ss;
@@ -913,6 +1029,42 @@ void GreengrassClient::DeleteLoggerDefinitionAsync(const DeleteLoggerDefinitionR
 void GreengrassClient::DeleteLoggerDefinitionAsyncHelper(const DeleteLoggerDefinitionRequest& request, const DeleteLoggerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteLoggerDefinition(request), context);
+}
+
+DeleteResourceDefinitionOutcome GreengrassClient::DeleteResourceDefinition(const DeleteResourceDefinitionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/greengrass/definition/resources/";
+  ss << request.GetResourceDefinitionId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteResourceDefinitionOutcome(DeleteResourceDefinitionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteResourceDefinitionOutcome(outcome.GetError());
+  }
+}
+
+DeleteResourceDefinitionOutcomeCallable GreengrassClient::DeleteResourceDefinitionCallable(const DeleteResourceDefinitionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteResourceDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteResourceDefinition(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassClient::DeleteResourceDefinitionAsync(const DeleteResourceDefinitionRequest& request, const DeleteResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourceDefinitionAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassClient::DeleteResourceDefinitionAsyncHelper(const DeleteResourceDefinitionRequest& request, const DeleteResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteResourceDefinition(request), context);
 }
 
 DeleteSubscriptionDefinitionOutcome GreengrassClient::DeleteSubscriptionDefinition(const DeleteSubscriptionDefinitionRequest& request) const
@@ -1581,6 +1733,80 @@ void GreengrassClient::GetLoggerDefinitionVersionAsyncHelper(const GetLoggerDefi
   handler(this, request, GetLoggerDefinitionVersion(request), context);
 }
 
+GetResourceDefinitionOutcome GreengrassClient::GetResourceDefinition(const GetResourceDefinitionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/greengrass/definition/resources/";
+  ss << request.GetResourceDefinitionId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetResourceDefinitionOutcome(GetResourceDefinitionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetResourceDefinitionOutcome(outcome.GetError());
+  }
+}
+
+GetResourceDefinitionOutcomeCallable GreengrassClient::GetResourceDefinitionCallable(const GetResourceDefinitionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetResourceDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResourceDefinition(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassClient::GetResourceDefinitionAsync(const GetResourceDefinitionRequest& request, const GetResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetResourceDefinitionAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassClient::GetResourceDefinitionAsyncHelper(const GetResourceDefinitionRequest& request, const GetResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetResourceDefinition(request), context);
+}
+
+GetResourceDefinitionVersionOutcome GreengrassClient::GetResourceDefinitionVersion(const GetResourceDefinitionVersionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/greengrass/definition/resources/";
+  ss << request.GetResourceDefinitionId();
+  ss << "/versions/";
+  ss << request.GetResourceDefinitionVersionId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetResourceDefinitionVersionOutcome(GetResourceDefinitionVersionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetResourceDefinitionVersionOutcome(outcome.GetError());
+  }
+}
+
+GetResourceDefinitionVersionOutcomeCallable GreengrassClient::GetResourceDefinitionVersionCallable(const GetResourceDefinitionVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetResourceDefinitionVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResourceDefinitionVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassClient::GetResourceDefinitionVersionAsync(const GetResourceDefinitionVersionRequest& request, const GetResourceDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetResourceDefinitionVersionAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassClient::GetResourceDefinitionVersionAsyncHelper(const GetResourceDefinitionVersionRequest& request, const GetResourceDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetResourceDefinitionVersion(request), context);
+}
+
 GetServiceRoleForAccountOutcome GreengrassClient::GetServiceRoleForAccount(const GetServiceRoleForAccountRequest& request) const
 {
   Aws::StringStream ss;
@@ -2124,6 +2350,78 @@ void GreengrassClient::ListLoggerDefinitionsAsyncHelper(const ListLoggerDefiniti
   handler(this, request, ListLoggerDefinitions(request), context);
 }
 
+ListResourceDefinitionVersionsOutcome GreengrassClient::ListResourceDefinitionVersions(const ListResourceDefinitionVersionsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/greengrass/definition/resources/";
+  ss << request.GetResourceDefinitionId();
+  ss << "/versions";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListResourceDefinitionVersionsOutcome(ListResourceDefinitionVersionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListResourceDefinitionVersionsOutcome(outcome.GetError());
+  }
+}
+
+ListResourceDefinitionVersionsOutcomeCallable GreengrassClient::ListResourceDefinitionVersionsCallable(const ListResourceDefinitionVersionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListResourceDefinitionVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResourceDefinitionVersions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassClient::ListResourceDefinitionVersionsAsync(const ListResourceDefinitionVersionsRequest& request, const ListResourceDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListResourceDefinitionVersionsAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassClient::ListResourceDefinitionVersionsAsyncHelper(const ListResourceDefinitionVersionsRequest& request, const ListResourceDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListResourceDefinitionVersions(request), context);
+}
+
+ListResourceDefinitionsOutcome GreengrassClient::ListResourceDefinitions(const ListResourceDefinitionsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/greengrass/definition/resources";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListResourceDefinitionsOutcome(ListResourceDefinitionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListResourceDefinitionsOutcome(outcome.GetError());
+  }
+}
+
+ListResourceDefinitionsOutcomeCallable GreengrassClient::ListResourceDefinitionsCallable(const ListResourceDefinitionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListResourceDefinitionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResourceDefinitions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassClient::ListResourceDefinitionsAsync(const ListResourceDefinitionsRequest& request, const ListResourceDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListResourceDefinitionsAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassClient::ListResourceDefinitionsAsyncHelper(const ListResourceDefinitionsRequest& request, const ListResourceDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListResourceDefinitions(request), context);
+}
+
 ListSubscriptionDefinitionVersionsOutcome GreengrassClient::ListSubscriptionDefinitionVersions(const ListSubscriptionDefinitionVersionsRequest& request) const
 {
   Aws::StringStream ss;
@@ -2485,6 +2783,42 @@ void GreengrassClient::UpdateLoggerDefinitionAsync(const UpdateLoggerDefinitionR
 void GreengrassClient::UpdateLoggerDefinitionAsyncHelper(const UpdateLoggerDefinitionRequest& request, const UpdateLoggerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateLoggerDefinition(request), context);
+}
+
+UpdateResourceDefinitionOutcome GreengrassClient::UpdateResourceDefinition(const UpdateResourceDefinitionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/greengrass/definition/resources/";
+  ss << request.GetResourceDefinitionId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateResourceDefinitionOutcome(UpdateResourceDefinitionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateResourceDefinitionOutcome(outcome.GetError());
+  }
+}
+
+UpdateResourceDefinitionOutcomeCallable GreengrassClient::UpdateResourceDefinitionCallable(const UpdateResourceDefinitionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateResourceDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateResourceDefinition(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassClient::UpdateResourceDefinitionAsync(const UpdateResourceDefinitionRequest& request, const UpdateResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateResourceDefinitionAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassClient::UpdateResourceDefinitionAsyncHelper(const UpdateResourceDefinitionRequest& request, const UpdateResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateResourceDefinition(request), context);
 }
 
 UpdateSubscriptionDefinitionOutcome GreengrassClient::UpdateSubscriptionDefinition(const UpdateSubscriptionDefinitionRequest& request) const

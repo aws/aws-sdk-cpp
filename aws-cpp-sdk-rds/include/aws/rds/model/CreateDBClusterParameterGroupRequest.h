@@ -105,7 +105,10 @@ namespace Model
      * <p>The DB cluster parameter group family name. A DB cluster parameter group can
      * be associated with one and only one DB cluster parameter group family, and can
      * be applied only to a DB cluster running a database engine and engine version
-     * compatible with that DB cluster parameter group family.</p>
+     * compatible with that DB cluster parameter group family.</p> <p> <b>Aurora
+     * MySQL</b> </p> <p>Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>
+     * </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Example:
+     * <code>aurora-postgresql9.6</code> </p>
      */
     inline const Aws::String& GetDBParameterGroupFamily() const{ return m_dBParameterGroupFamily; }
 
@@ -113,7 +116,10 @@ namespace Model
      * <p>The DB cluster parameter group family name. A DB cluster parameter group can
      * be associated with one and only one DB cluster parameter group family, and can
      * be applied only to a DB cluster running a database engine and engine version
-     * compatible with that DB cluster parameter group family.</p>
+     * compatible with that DB cluster parameter group family.</p> <p> <b>Aurora
+     * MySQL</b> </p> <p>Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>
+     * </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Example:
+     * <code>aurora-postgresql9.6</code> </p>
      */
     inline void SetDBParameterGroupFamily(const Aws::String& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
 
@@ -121,7 +127,10 @@ namespace Model
      * <p>The DB cluster parameter group family name. A DB cluster parameter group can
      * be associated with one and only one DB cluster parameter group family, and can
      * be applied only to a DB cluster running a database engine and engine version
-     * compatible with that DB cluster parameter group family.</p>
+     * compatible with that DB cluster parameter group family.</p> <p> <b>Aurora
+     * MySQL</b> </p> <p>Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>
+     * </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Example:
+     * <code>aurora-postgresql9.6</code> </p>
      */
     inline void SetDBParameterGroupFamily(Aws::String&& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = std::move(value); }
 
@@ -129,7 +138,10 @@ namespace Model
      * <p>The DB cluster parameter group family name. A DB cluster parameter group can
      * be associated with one and only one DB cluster parameter group family, and can
      * be applied only to a DB cluster running a database engine and engine version
-     * compatible with that DB cluster parameter group family.</p>
+     * compatible with that DB cluster parameter group family.</p> <p> <b>Aurora
+     * MySQL</b> </p> <p>Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>
+     * </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Example:
+     * <code>aurora-postgresql9.6</code> </p>
      */
     inline void SetDBParameterGroupFamily(const char* value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily.assign(value); }
 
@@ -137,7 +149,10 @@ namespace Model
      * <p>The DB cluster parameter group family name. A DB cluster parameter group can
      * be associated with one and only one DB cluster parameter group family, and can
      * be applied only to a DB cluster running a database engine and engine version
-     * compatible with that DB cluster parameter group family.</p>
+     * compatible with that DB cluster parameter group family.</p> <p> <b>Aurora
+     * MySQL</b> </p> <p>Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>
+     * </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Example:
+     * <code>aurora-postgresql9.6</code> </p>
      */
     inline CreateDBClusterParameterGroupRequest& WithDBParameterGroupFamily(const Aws::String& value) { SetDBParameterGroupFamily(value); return *this;}
 
@@ -145,7 +160,10 @@ namespace Model
      * <p>The DB cluster parameter group family name. A DB cluster parameter group can
      * be associated with one and only one DB cluster parameter group family, and can
      * be applied only to a DB cluster running a database engine and engine version
-     * compatible with that DB cluster parameter group family.</p>
+     * compatible with that DB cluster parameter group family.</p> <p> <b>Aurora
+     * MySQL</b> </p> <p>Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>
+     * </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Example:
+     * <code>aurora-postgresql9.6</code> </p>
      */
     inline CreateDBClusterParameterGroupRequest& WithDBParameterGroupFamily(Aws::String&& value) { SetDBParameterGroupFamily(std::move(value)); return *this;}
 
@@ -153,7 +171,10 @@ namespace Model
      * <p>The DB cluster parameter group family name. A DB cluster parameter group can
      * be associated with one and only one DB cluster parameter group family, and can
      * be applied only to a DB cluster running a database engine and engine version
-     * compatible with that DB cluster parameter group family.</p>
+     * compatible with that DB cluster parameter group family.</p> <p> <b>Aurora
+     * MySQL</b> </p> <p>Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>
+     * </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Example:
+     * <code>aurora-postgresql9.6</code> </p>
      */
     inline CreateDBClusterParameterGroupRequest& WithDBParameterGroupFamily(const char* value) { SetDBParameterGroupFamily(value); return *this;}
 

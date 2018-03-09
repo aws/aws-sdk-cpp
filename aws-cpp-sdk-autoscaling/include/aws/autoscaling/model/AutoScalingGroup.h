@@ -17,6 +17,7 @@
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/autoscaling/model/LaunchTemplateSpecification.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/autoscaling/model/Instance.h>
@@ -56,73 +57,73 @@ namespace Model
 
 
     /**
-     * <p>The name of the group.</p>
+     * <p>The name of the Auto Scaling group.</p>
      */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
 
     /**
-     * <p>The name of the group.</p>
+     * <p>The name of the Auto Scaling group.</p>
      */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /**
-     * <p>The name of the group.</p>
+     * <p>The name of the Auto Scaling group.</p>
      */
     inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
 
     /**
-     * <p>The name of the group.</p>
+     * <p>The name of the Auto Scaling group.</p>
      */
     inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
 
     /**
-     * <p>The name of the group.</p>
+     * <p>The name of the Auto Scaling group.</p>
      */
     inline AutoScalingGroup& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
 
     /**
-     * <p>The name of the group.</p>
+     * <p>The name of the Auto Scaling group.</p>
      */
     inline AutoScalingGroup& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the group.</p>
+     * <p>The name of the Auto Scaling group.</p>
      */
     inline AutoScalingGroup& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the group.</p>
+     * <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
      */
     inline const Aws::String& GetAutoScalingGroupARN() const{ return m_autoScalingGroupARN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the group.</p>
+     * <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
      */
     inline void SetAutoScalingGroupARN(const Aws::String& value) { m_autoScalingGroupARNHasBeenSet = true; m_autoScalingGroupARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the group.</p>
+     * <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
      */
     inline void SetAutoScalingGroupARN(Aws::String&& value) { m_autoScalingGroupARNHasBeenSet = true; m_autoScalingGroupARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the group.</p>
+     * <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
      */
     inline void SetAutoScalingGroupARN(const char* value) { m_autoScalingGroupARNHasBeenSet = true; m_autoScalingGroupARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the group.</p>
+     * <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
      */
     inline AutoScalingGroup& WithAutoScalingGroupARN(const Aws::String& value) { SetAutoScalingGroupARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the group.</p>
+     * <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
      */
     inline AutoScalingGroup& WithAutoScalingGroupARN(Aws::String&& value) { SetAutoScalingGroupARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the group.</p>
+     * <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
      */
     inline AutoScalingGroup& WithAutoScalingGroupARN(const char* value) { SetAutoScalingGroupARN(value); return *this;}
 
@@ -161,6 +162,32 @@ namespace Model
      * <p>The name of the associated launch configuration.</p>
      */
     inline AutoScalingGroup& WithLaunchConfigurationName(const char* value) { SetLaunchConfigurationName(value); return *this;}
+
+
+    /**
+     * <p>The launch template for the group.</p>
+     */
+    inline const LaunchTemplateSpecification& GetLaunchTemplate() const{ return m_launchTemplate; }
+
+    /**
+     * <p>The launch template for the group.</p>
+     */
+    inline void SetLaunchTemplate(const LaunchTemplateSpecification& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
+
+    /**
+     * <p>The launch template for the group.</p>
+     */
+    inline void SetLaunchTemplate(LaunchTemplateSpecification&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
+
+    /**
+     * <p>The launch template for the group.</p>
+     */
+    inline AutoScalingGroup& WithLaunchTemplate(const LaunchTemplateSpecification& value) { SetLaunchTemplate(value); return *this;}
+
+    /**
+     * <p>The launch template for the group.</p>
+     */
+    inline AutoScalingGroup& WithLaunchTemplate(LaunchTemplateSpecification&& value) { SetLaunchTemplate(std::move(value)); return *this;}
 
 
     /**
@@ -809,6 +836,49 @@ namespace Model
      */
     inline AutoScalingGroup& WithNewInstancesProtectedFromScaleIn(bool value) { SetNewInstancesProtectedFromScaleIn(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
+     * Scaling group uses to call other AWS services on your behalf.</p>
+     */
+    inline const Aws::String& GetServiceLinkedRoleARN() const{ return m_serviceLinkedRoleARN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
+     * Scaling group uses to call other AWS services on your behalf.</p>
+     */
+    inline void SetServiceLinkedRoleARN(const Aws::String& value) { m_serviceLinkedRoleARNHasBeenSet = true; m_serviceLinkedRoleARN = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
+     * Scaling group uses to call other AWS services on your behalf.</p>
+     */
+    inline void SetServiceLinkedRoleARN(Aws::String&& value) { m_serviceLinkedRoleARNHasBeenSet = true; m_serviceLinkedRoleARN = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
+     * Scaling group uses to call other AWS services on your behalf.</p>
+     */
+    inline void SetServiceLinkedRoleARN(const char* value) { m_serviceLinkedRoleARNHasBeenSet = true; m_serviceLinkedRoleARN.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
+     * Scaling group uses to call other AWS services on your behalf.</p>
+     */
+    inline AutoScalingGroup& WithServiceLinkedRoleARN(const Aws::String& value) { SetServiceLinkedRoleARN(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
+     * Scaling group uses to call other AWS services on your behalf.</p>
+     */
+    inline AutoScalingGroup& WithServiceLinkedRoleARN(Aws::String&& value) { SetServiceLinkedRoleARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
+     * Scaling group uses to call other AWS services on your behalf.</p>
+     */
+    inline AutoScalingGroup& WithServiceLinkedRoleARN(const char* value) { SetServiceLinkedRoleARN(value); return *this;}
+
   private:
 
     Aws::String m_autoScalingGroupName;
@@ -819,6 +889,9 @@ namespace Model
 
     Aws::String m_launchConfigurationName;
     bool m_launchConfigurationNameHasBeenSet;
+
+    LaunchTemplateSpecification m_launchTemplate;
+    bool m_launchTemplateHasBeenSet;
 
     int m_minSize;
     bool m_minSizeHasBeenSet;
@@ -876,6 +949,9 @@ namespace Model
 
     bool m_newInstancesProtectedFromScaleIn;
     bool m_newInstancesProtectedFromScaleInHasBeenSet;
+
+    Aws::String m_serviceLinkedRoleARN;
+    bool m_serviceLinkedRoleARNHasBeenSet;
   };
 
 } // namespace Model

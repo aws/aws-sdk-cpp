@@ -28,10 +28,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the inputs for the <a>DescribeWorkspaces</a>
-   * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspacesRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_WORKSPACES_API DescribeWorkspacesRequest : public WorkSpacesRequest
   {
@@ -50,72 +46,64 @@ namespace Model
 
 
     /**
-     * <p>An array of strings that contain the identifiers of the WorkSpaces for which
-     * to retrieve information. This parameter cannot be combined with any other filter
-     * parameter.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous,
+     * <p>The IDs of the WorkSpaces. This parameter cannot be combined with any other
+     * filter.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous,
      * the identifier it returns is not immediately available. If you immediately call
      * <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>
      */
     inline const Aws::Vector<Aws::String>& GetWorkspaceIds() const{ return m_workspaceIds; }
 
     /**
-     * <p>An array of strings that contain the identifiers of the WorkSpaces for which
-     * to retrieve information. This parameter cannot be combined with any other filter
-     * parameter.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous,
+     * <p>The IDs of the WorkSpaces. This parameter cannot be combined with any other
+     * filter.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous,
      * the identifier it returns is not immediately available. If you immediately call
      * <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>
      */
     inline void SetWorkspaceIds(const Aws::Vector<Aws::String>& value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds = value; }
 
     /**
-     * <p>An array of strings that contain the identifiers of the WorkSpaces for which
-     * to retrieve information. This parameter cannot be combined with any other filter
-     * parameter.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous,
+     * <p>The IDs of the WorkSpaces. This parameter cannot be combined with any other
+     * filter.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous,
      * the identifier it returns is not immediately available. If you immediately call
      * <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>
      */
     inline void SetWorkspaceIds(Aws::Vector<Aws::String>&& value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds = std::move(value); }
 
     /**
-     * <p>An array of strings that contain the identifiers of the WorkSpaces for which
-     * to retrieve information. This parameter cannot be combined with any other filter
-     * parameter.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous,
+     * <p>The IDs of the WorkSpaces. This parameter cannot be combined with any other
+     * filter.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous,
      * the identifier it returns is not immediately available. If you immediately call
      * <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>
      */
     inline DescribeWorkspacesRequest& WithWorkspaceIds(const Aws::Vector<Aws::String>& value) { SetWorkspaceIds(value); return *this;}
 
     /**
-     * <p>An array of strings that contain the identifiers of the WorkSpaces for which
-     * to retrieve information. This parameter cannot be combined with any other filter
-     * parameter.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous,
+     * <p>The IDs of the WorkSpaces. This parameter cannot be combined with any other
+     * filter.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous,
      * the identifier it returns is not immediately available. If you immediately call
      * <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>
      */
     inline DescribeWorkspacesRequest& WithWorkspaceIds(Aws::Vector<Aws::String>&& value) { SetWorkspaceIds(std::move(value)); return *this;}
 
     /**
-     * <p>An array of strings that contain the identifiers of the WorkSpaces for which
-     * to retrieve information. This parameter cannot be combined with any other filter
-     * parameter.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous,
+     * <p>The IDs of the WorkSpaces. This parameter cannot be combined with any other
+     * filter.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous,
      * the identifier it returns is not immediately available. If you immediately call
      * <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>
      */
     inline DescribeWorkspacesRequest& AddWorkspaceIds(const Aws::String& value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds.push_back(value); return *this; }
 
     /**
-     * <p>An array of strings that contain the identifiers of the WorkSpaces for which
-     * to retrieve information. This parameter cannot be combined with any other filter
-     * parameter.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous,
+     * <p>The IDs of the WorkSpaces. This parameter cannot be combined with any other
+     * filter.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous,
      * the identifier it returns is not immediately available. If you immediately call
      * <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>
      */
     inline DescribeWorkspacesRequest& AddWorkspaceIds(Aws::String&& value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array of strings that contain the identifiers of the WorkSpaces for which
-     * to retrieve information. This parameter cannot be combined with any other filter
-     * parameter.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous,
+     * <p>The IDs of the WorkSpaces. This parameter cannot be combined with any other
+     * filter.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous,
      * the identifier it returns is not immediately available. If you immediately call
      * <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>
      */
@@ -123,151 +111,137 @@ namespace Model
 
 
     /**
-     * <p>Specifies the directory identifier to which to limit the WorkSpaces.
-     * Optionally, you can specify a specific directory user with the
-     * <code>UserName</code> parameter. This parameter cannot be combined with any
-     * other filter parameter.</p>
+     * <p>The ID of the directory. In addition, you can optionally specify a specific
+     * directory user (see <code>UserName</code>). This parameter cannot be combined
+     * with any other filter.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
 
     /**
-     * <p>Specifies the directory identifier to which to limit the WorkSpaces.
-     * Optionally, you can specify a specific directory user with the
-     * <code>UserName</code> parameter. This parameter cannot be combined with any
-     * other filter parameter.</p>
+     * <p>The ID of the directory. In addition, you can optionally specify a specific
+     * directory user (see <code>UserName</code>). This parameter cannot be combined
+     * with any other filter.</p>
      */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
-     * <p>Specifies the directory identifier to which to limit the WorkSpaces.
-     * Optionally, you can specify a specific directory user with the
-     * <code>UserName</code> parameter. This parameter cannot be combined with any
-     * other filter parameter.</p>
+     * <p>The ID of the directory. In addition, you can optionally specify a specific
+     * directory user (see <code>UserName</code>). This parameter cannot be combined
+     * with any other filter.</p>
      */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
-     * <p>Specifies the directory identifier to which to limit the WorkSpaces.
-     * Optionally, you can specify a specific directory user with the
-     * <code>UserName</code> parameter. This parameter cannot be combined with any
-     * other filter parameter.</p>
+     * <p>The ID of the directory. In addition, you can optionally specify a specific
+     * directory user (see <code>UserName</code>). This parameter cannot be combined
+     * with any other filter.</p>
      */
     inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
 
     /**
-     * <p>Specifies the directory identifier to which to limit the WorkSpaces.
-     * Optionally, you can specify a specific directory user with the
-     * <code>UserName</code> parameter. This parameter cannot be combined with any
-     * other filter parameter.</p>
+     * <p>The ID of the directory. In addition, you can optionally specify a specific
+     * directory user (see <code>UserName</code>). This parameter cannot be combined
+     * with any other filter.</p>
      */
     inline DescribeWorkspacesRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
 
     /**
-     * <p>Specifies the directory identifier to which to limit the WorkSpaces.
-     * Optionally, you can specify a specific directory user with the
-     * <code>UserName</code> parameter. This parameter cannot be combined with any
-     * other filter parameter.</p>
+     * <p>The ID of the directory. In addition, you can optionally specify a specific
+     * directory user (see <code>UserName</code>). This parameter cannot be combined
+     * with any other filter.</p>
      */
     inline DescribeWorkspacesRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the directory identifier to which to limit the WorkSpaces.
-     * Optionally, you can specify a specific directory user with the
-     * <code>UserName</code> parameter. This parameter cannot be combined with any
-     * other filter parameter.</p>
+     * <p>The ID of the directory. In addition, you can optionally specify a specific
+     * directory user (see <code>UserName</code>). This parameter cannot be combined
+     * with any other filter.</p>
      */
     inline DescribeWorkspacesRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 
 
     /**
-     * <p>Used with the <code>DirectoryId</code> parameter to specify the directory
-     * user for whom to obtain the WorkSpace.</p>
+     * <p>The name of the directory user. You must specify this parameter with
+     * <code>DirectoryId</code>.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
-     * <p>Used with the <code>DirectoryId</code> parameter to specify the directory
-     * user for whom to obtain the WorkSpace.</p>
+     * <p>The name of the directory user. You must specify this parameter with
+     * <code>DirectoryId</code>.</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
-     * <p>Used with the <code>DirectoryId</code> parameter to specify the directory
-     * user for whom to obtain the WorkSpace.</p>
+     * <p>The name of the directory user. You must specify this parameter with
+     * <code>DirectoryId</code>.</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
-     * <p>Used with the <code>DirectoryId</code> parameter to specify the directory
-     * user for whom to obtain the WorkSpace.</p>
+     * <p>The name of the directory user. You must specify this parameter with
+     * <code>DirectoryId</code>.</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
-     * <p>Used with the <code>DirectoryId</code> parameter to specify the directory
-     * user for whom to obtain the WorkSpace.</p>
+     * <p>The name of the directory user. You must specify this parameter with
+     * <code>DirectoryId</code>.</p>
      */
     inline DescribeWorkspacesRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>Used with the <code>DirectoryId</code> parameter to specify the directory
-     * user for whom to obtain the WorkSpace.</p>
+     * <p>The name of the directory user. You must specify this parameter with
+     * <code>DirectoryId</code>.</p>
      */
     inline DescribeWorkspacesRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
-     * <p>Used with the <code>DirectoryId</code> parameter to specify the directory
-     * user for whom to obtain the WorkSpace.</p>
+     * <p>The name of the directory user. You must specify this parameter with
+     * <code>DirectoryId</code>.</p>
      */
     inline DescribeWorkspacesRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
 
     /**
-     * <p>The identifier of a bundle to obtain the WorkSpaces for. All WorkSpaces that
-     * are created from this bundle will be retrieved. This parameter cannot be
-     * combined with any other filter parameter.</p>
+     * <p>The ID of the bundle. All WorkSpaces that are created from this bundle are
+     * retrieved. This parameter cannot be combined with any other filter.</p>
      */
     inline const Aws::String& GetBundleId() const{ return m_bundleId; }
 
     /**
-     * <p>The identifier of a bundle to obtain the WorkSpaces for. All WorkSpaces that
-     * are created from this bundle will be retrieved. This parameter cannot be
-     * combined with any other filter parameter.</p>
+     * <p>The ID of the bundle. All WorkSpaces that are created from this bundle are
+     * retrieved. This parameter cannot be combined with any other filter.</p>
      */
     inline void SetBundleId(const Aws::String& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
 
     /**
-     * <p>The identifier of a bundle to obtain the WorkSpaces for. All WorkSpaces that
-     * are created from this bundle will be retrieved. This parameter cannot be
-     * combined with any other filter parameter.</p>
+     * <p>The ID of the bundle. All WorkSpaces that are created from this bundle are
+     * retrieved. This parameter cannot be combined with any other filter.</p>
      */
     inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::move(value); }
 
     /**
-     * <p>The identifier of a bundle to obtain the WorkSpaces for. All WorkSpaces that
-     * are created from this bundle will be retrieved. This parameter cannot be
-     * combined with any other filter parameter.</p>
+     * <p>The ID of the bundle. All WorkSpaces that are created from this bundle are
+     * retrieved. This parameter cannot be combined with any other filter.</p>
      */
     inline void SetBundleId(const char* value) { m_bundleIdHasBeenSet = true; m_bundleId.assign(value); }
 
     /**
-     * <p>The identifier of a bundle to obtain the WorkSpaces for. All WorkSpaces that
-     * are created from this bundle will be retrieved. This parameter cannot be
-     * combined with any other filter parameter.</p>
+     * <p>The ID of the bundle. All WorkSpaces that are created from this bundle are
+     * retrieved. This parameter cannot be combined with any other filter.</p>
      */
     inline DescribeWorkspacesRequest& WithBundleId(const Aws::String& value) { SetBundleId(value); return *this;}
 
     /**
-     * <p>The identifier of a bundle to obtain the WorkSpaces for. All WorkSpaces that
-     * are created from this bundle will be retrieved. This parameter cannot be
-     * combined with any other filter parameter.</p>
+     * <p>The ID of the bundle. All WorkSpaces that are created from this bundle are
+     * retrieved. This parameter cannot be combined with any other filter.</p>
      */
     inline DescribeWorkspacesRequest& WithBundleId(Aws::String&& value) { SetBundleId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of a bundle to obtain the WorkSpaces for. All WorkSpaces that
-     * are created from this bundle will be retrieved. This parameter cannot be
-     * combined with any other filter parameter.</p>
+     * <p>The ID of the bundle. All WorkSpaces that are created from this bundle are
+     * retrieved. This parameter cannot be combined with any other filter.</p>
      */
     inline DescribeWorkspacesRequest& WithBundleId(const char* value) { SetBundleId(value); return *this;}
 
@@ -289,44 +263,44 @@ namespace Model
 
 
     /**
-     * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
-     * null if this is the first call.</p>
+     * <p>The token for the next set of results. (You received this token from a
+     * previous call.)</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
-     * null if this is the first call.</p>
+     * <p>The token for the next set of results. (You received this token from a
+     * previous call.)</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
-     * null if this is the first call.</p>
+     * <p>The token for the next set of results. (You received this token from a
+     * previous call.)</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
-     * null if this is the first call.</p>
+     * <p>The token for the next set of results. (You received this token from a
+     * previous call.)</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
-     * null if this is the first call.</p>
+     * <p>The token for the next set of results. (You received this token from a
+     * previous call.)</p>
      */
     inline DescribeWorkspacesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
-     * null if this is the first call.</p>
+     * <p>The token for the next set of results. (You received this token from a
+     * previous call.)</p>
      */
     inline DescribeWorkspacesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
-     * null if this is the first call.</p>
+     * <p>The token for the next set of results. (You received this token from a
+     * previous call.)</p>
      */
     inline DescribeWorkspacesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

@@ -35,6 +35,7 @@ Stack::Stack() :
     m_displayNameHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_storageConnectorsHasBeenSet(false),
+    m_redirectURLHasBeenSet(false),
     m_stackErrorsHasBeenSet(false)
 {
 }
@@ -46,6 +47,7 @@ Stack::Stack(const JsonValue& jsonValue) :
     m_displayNameHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_storageConnectorsHasBeenSet(false),
+    m_redirectURLHasBeenSet(false),
     m_stackErrorsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -96,6 +98,13 @@ Stack& Stack::operator =(const JsonValue& jsonValue)
       m_storageConnectors.push_back(storageConnectorsJsonList[storageConnectorsIndex].AsObject());
     }
     m_storageConnectorsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RedirectURL"))
+  {
+    m_redirectURL = jsonValue.GetString("RedirectURL");
+
+    m_redirectURLHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("StackErrors"))
@@ -152,6 +161,12 @@ JsonValue Stack::Jsonize() const
      storageConnectorsJsonList[storageConnectorsIndex].AsObject(m_storageConnectors[storageConnectorsIndex].Jsonize());
    }
    payload.WithArray("StorageConnectors", std::move(storageConnectorsJsonList));
+
+  }
+
+  if(m_redirectURLHasBeenSet)
+  {
+   payload.WithString("RedirectURL", m_redirectURL);
 
   }
 

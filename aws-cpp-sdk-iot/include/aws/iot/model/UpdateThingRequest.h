@@ -180,19 +180,19 @@ namespace Model
 
 
     /**
-     * <p>Remove a thing type association. If <b>true</b>, the assocation is
+     * <p>Remove a thing type association. If <b>true</b>, the association is
      * removed.</p>
      */
     inline bool GetRemoveThingType() const{ return m_removeThingType; }
 
     /**
-     * <p>Remove a thing type association. If <b>true</b>, the assocation is
+     * <p>Remove a thing type association. If <b>true</b>, the association is
      * removed.</p>
      */
     inline void SetRemoveThingType(bool value) { m_removeThingTypeHasBeenSet = true; m_removeThingType = value; }
 
     /**
-     * <p>Remove a thing type association. If <b>true</b>, the assocation is
+     * <p>Remove a thing type association. If <b>true</b>, the association is
      * removed.</p>
      */
     inline UpdateThingRequest& WithRemoveThingType(bool value) { SetRemoveThingType(value); return *this;}

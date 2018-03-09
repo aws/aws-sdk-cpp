@@ -28,7 +28,9 @@ PutSlotTypeRequest::PutSlotTypeRequest() :
     m_enumerationValuesHasBeenSet(false),
     m_checksumHasBeenSet(false),
     m_valueSelectionStrategy(SlotValueSelectionStrategy::NOT_SET),
-    m_valueSelectionStrategyHasBeenSet(false)
+    m_valueSelectionStrategyHasBeenSet(false),
+    m_createVersion(false),
+    m_createVersionHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,12 @@ Aws::String PutSlotTypeRequest::SerializePayload() const
   if(m_valueSelectionStrategyHasBeenSet)
   {
    payload.WithString("valueSelectionStrategy", SlotValueSelectionStrategyMapper::GetNameForSlotValueSelectionStrategy(m_valueSelectionStrategy));
+  }
+
+  if(m_createVersionHasBeenSet)
+  {
+   payload.WithBool("createVersion", m_createVersion);
+
   }
 
   return payload.WriteReadable();

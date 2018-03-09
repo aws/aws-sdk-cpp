@@ -31,6 +31,7 @@ namespace Model
 ThingAttribute::ThingAttribute() : 
     m_thingNameHasBeenSet(false),
     m_thingTypeNameHasBeenSet(false),
+    m_thingArnHasBeenSet(false),
     m_attributesHasBeenSet(false),
     m_version(0),
     m_versionHasBeenSet(false)
@@ -40,6 +41,7 @@ ThingAttribute::ThingAttribute() :
 ThingAttribute::ThingAttribute(const JsonValue& jsonValue) : 
     m_thingNameHasBeenSet(false),
     m_thingTypeNameHasBeenSet(false),
+    m_thingArnHasBeenSet(false),
     m_attributesHasBeenSet(false),
     m_version(0),
     m_versionHasBeenSet(false)
@@ -61,6 +63,13 @@ ThingAttribute& ThingAttribute::operator =(const JsonValue& jsonValue)
     m_thingTypeName = jsonValue.GetString("thingTypeName");
 
     m_thingTypeNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("thingArn"))
+  {
+    m_thingArn = jsonValue.GetString("thingArn");
+
+    m_thingArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("attributes"))
@@ -96,6 +105,12 @@ JsonValue ThingAttribute::Jsonize() const
   if(m_thingTypeNameHasBeenSet)
   {
    payload.WithString("thingTypeName", m_thingTypeName);
+
+  }
+
+  if(m_thingArnHasBeenSet)
+  {
+   payload.WithString("thingArn", m_thingArn);
 
   }
 

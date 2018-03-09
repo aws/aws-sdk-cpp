@@ -36,6 +36,8 @@ namespace Aws
         static const int InstanceSnapshot_HASH = HashingUtils::HashString("InstanceSnapshot");
         static const int Domain_HASH = HashingUtils::HashString("Domain");
         static const int PeeredVpc_HASH = HashingUtils::HashString("PeeredVpc");
+        static const int LoadBalancer_HASH = HashingUtils::HashString("LoadBalancer");
+        static const int LoadBalancerTlsCertificate_HASH = HashingUtils::HashString("LoadBalancerTlsCertificate");
         static const int Disk_HASH = HashingUtils::HashString("Disk");
         static const int DiskSnapshot_HASH = HashingUtils::HashString("DiskSnapshot");
 
@@ -66,6 +68,14 @@ namespace Aws
           else if (hashCode == PeeredVpc_HASH)
           {
             return ResourceType::PeeredVpc;
+          }
+          else if (hashCode == LoadBalancer_HASH)
+          {
+            return ResourceType::LoadBalancer;
+          }
+          else if (hashCode == LoadBalancerTlsCertificate_HASH)
+          {
+            return ResourceType::LoadBalancerTlsCertificate;
           }
           else if (hashCode == Disk_HASH)
           {
@@ -101,6 +111,10 @@ namespace Aws
             return "Domain";
           case ResourceType::PeeredVpc:
             return "PeeredVpc";
+          case ResourceType::LoadBalancer:
+            return "LoadBalancer";
+          case ResourceType::LoadBalancerTlsCertificate:
+            return "LoadBalancerTlsCertificate";
           case ResourceType::Disk:
             return "Disk";
           case ResourceType::DiskSnapshot:

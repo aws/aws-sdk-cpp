@@ -88,20 +88,17 @@ namespace Model
 
 
     /**
-     * <p>The port number on the container that is be used with the network
-     * binding.</p>
+     * <p>The port number on the container that is used with the network binding.</p>
      */
     inline int GetContainerPort() const{ return m_containerPort; }
 
     /**
-     * <p>The port number on the container that is be used with the network
-     * binding.</p>
+     * <p>The port number on the container that is used with the network binding.</p>
      */
     inline void SetContainerPort(int value) { m_containerPortHasBeenSet = true; m_containerPort = value; }
 
     /**
-     * <p>The port number on the container that is be used with the network
-     * binding.</p>
+     * <p>The port number on the container that is used with the network binding.</p>
      */
     inline NetworkBinding& WithContainerPort(int value) { SetContainerPort(value); return *this;}
 

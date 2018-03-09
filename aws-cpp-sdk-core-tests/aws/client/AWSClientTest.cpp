@@ -43,7 +43,7 @@ class AccessViolatingAWSClient : public AWSClient
 {
 public:
     AccessViolatingAWSClient() : AWSClient(
-        ClientConfiguration(), nullptr, nullptr)
+        ClientConfiguration(), std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>(), nullptr)
     {
     }
 

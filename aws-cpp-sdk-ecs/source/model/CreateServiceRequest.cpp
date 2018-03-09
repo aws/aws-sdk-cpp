@@ -30,11 +30,16 @@ CreateServiceRequest::CreateServiceRequest() :
     m_desiredCount(0),
     m_desiredCountHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
+    m_launchType(LaunchType::NOT_SET),
+    m_launchTypeHasBeenSet(false),
+    m_platformVersionHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_deploymentConfigurationHasBeenSet(false),
     m_placementConstraintsHasBeenSet(false),
     m_placementStrategyHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false)
+    m_networkConfigurationHasBeenSet(false),
+    m_healthCheckGracePeriodSeconds(0),
+    m_healthCheckGracePeriodSecondsHasBeenSet(false)
 {
 }
 
@@ -83,6 +88,17 @@ Aws::String CreateServiceRequest::SerializePayload() const
 
   }
 
+  if(m_launchTypeHasBeenSet)
+  {
+   payload.WithString("launchType", LaunchTypeMapper::GetNameForLaunchType(m_launchType));
+  }
+
+  if(m_platformVersionHasBeenSet)
+  {
+   payload.WithString("platformVersion", m_platformVersion);
+
+  }
+
   if(m_roleHasBeenSet)
   {
    payload.WithString("role", m_role);
@@ -120,6 +136,12 @@ Aws::String CreateServiceRequest::SerializePayload() const
   if(m_networkConfigurationHasBeenSet)
   {
    payload.WithObject("networkConfiguration", m_networkConfiguration.Jsonize());
+
+  }
+
+  if(m_healthCheckGracePeriodSecondsHasBeenSet)
+  {
+   payload.WithInteger("healthCheckGracePeriodSeconds", m_healthCheckGracePeriodSeconds);
 
   }
 

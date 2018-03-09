@@ -253,7 +253,8 @@ namespace Model
      * For an example of a <code>ClientContext</code> JSON, see <a
      * href="http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html">PutEvents</a>
      * in the <i>Amazon Mobile Analytics API Reference and User Guide</i>.</p> <p>The
-     * ClientContext JSON must be base64-encoded.</p>
+     * ClientContext JSON must be base64-encoded and has a maximum size of 3583
+     * bytes.</p>
      */
     inline const Aws::String& GetClientContext() const{ return m_clientContext; }
 
@@ -264,7 +265,8 @@ namespace Model
      * For an example of a <code>ClientContext</code> JSON, see <a
      * href="http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html">PutEvents</a>
      * in the <i>Amazon Mobile Analytics API Reference and User Guide</i>.</p> <p>The
-     * ClientContext JSON must be base64-encoded.</p>
+     * ClientContext JSON must be base64-encoded and has a maximum size of 3583
+     * bytes.</p>
      */
     inline void SetClientContext(const Aws::String& value) { m_clientContextHasBeenSet = true; m_clientContext = value; }
 
@@ -275,7 +277,8 @@ namespace Model
      * For an example of a <code>ClientContext</code> JSON, see <a
      * href="http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html">PutEvents</a>
      * in the <i>Amazon Mobile Analytics API Reference and User Guide</i>.</p> <p>The
-     * ClientContext JSON must be base64-encoded.</p>
+     * ClientContext JSON must be base64-encoded and has a maximum size of 3583
+     * bytes.</p>
      */
     inline void SetClientContext(Aws::String&& value) { m_clientContextHasBeenSet = true; m_clientContext = std::move(value); }
 
@@ -286,7 +289,8 @@ namespace Model
      * For an example of a <code>ClientContext</code> JSON, see <a
      * href="http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html">PutEvents</a>
      * in the <i>Amazon Mobile Analytics API Reference and User Guide</i>.</p> <p>The
-     * ClientContext JSON must be base64-encoded.</p>
+     * ClientContext JSON must be base64-encoded and has a maximum size of 3583
+     * bytes.</p>
      */
     inline void SetClientContext(const char* value) { m_clientContextHasBeenSet = true; m_clientContext.assign(value); }
 
@@ -297,7 +301,8 @@ namespace Model
      * For an example of a <code>ClientContext</code> JSON, see <a
      * href="http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html">PutEvents</a>
      * in the <i>Amazon Mobile Analytics API Reference and User Guide</i>.</p> <p>The
-     * ClientContext JSON must be base64-encoded.</p>
+     * ClientContext JSON must be base64-encoded and has a maximum size of 3583
+     * bytes.</p>
      */
     inline InvokeRequest& WithClientContext(const Aws::String& value) { SetClientContext(value); return *this;}
 
@@ -308,7 +313,8 @@ namespace Model
      * For an example of a <code>ClientContext</code> JSON, see <a
      * href="http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html">PutEvents</a>
      * in the <i>Amazon Mobile Analytics API Reference and User Guide</i>.</p> <p>The
-     * ClientContext JSON must be base64-encoded.</p>
+     * ClientContext JSON must be base64-encoded and has a maximum size of 3583
+     * bytes.</p>
      */
     inline InvokeRequest& WithClientContext(Aws::String&& value) { SetClientContext(std::move(value)); return *this;}
 
@@ -319,7 +325,8 @@ namespace Model
      * For an example of a <code>ClientContext</code> JSON, see <a
      * href="http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html">PutEvents</a>
      * in the <i>Amazon Mobile Analytics API Reference and User Guide</i>.</p> <p>The
-     * ClientContext JSON must be base64-encoded.</p>
+     * ClientContext JSON must be base64-encoded and has a maximum size of 3583
+     * bytes.</p>
      */
     inline InvokeRequest& WithClientContext(const char* value) { SetClientContext(value); return *this;}
 

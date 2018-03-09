@@ -44,6 +44,18 @@ DescribeThingTypeResult& DescribeThingTypeResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("thingTypeId"))
+  {
+    m_thingTypeId = jsonValue.GetString("thingTypeId");
+
+  }
+
+  if(jsonValue.ValueExists("thingTypeArn"))
+  {
+    m_thingTypeArn = jsonValue.GetString("thingTypeArn");
+
+  }
+
   if(jsonValue.ValueExists("thingTypeProperties"))
   {
     m_thingTypeProperties = jsonValue.GetObject("thingTypeProperties");

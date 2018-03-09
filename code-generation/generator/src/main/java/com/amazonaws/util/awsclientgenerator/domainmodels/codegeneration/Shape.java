@@ -45,6 +45,7 @@ public class Shape {
     private boolean supportsPresigning;
     private boolean signBody;
     private String signerName;
+    private String timestampFormat;
 
     public boolean isMap() {
         return "map".equals(type.toLowerCase());

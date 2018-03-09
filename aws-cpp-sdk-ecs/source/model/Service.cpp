@@ -40,6 +40,9 @@ Service::Service() :
     m_runningCountHasBeenSet(false),
     m_pendingCount(0),
     m_pendingCountHasBeenSet(false),
+    m_launchType(LaunchType::NOT_SET),
+    m_launchTypeHasBeenSet(false),
+    m_platformVersionHasBeenSet(false),
     m_taskDefinitionHasBeenSet(false),
     m_deploymentConfigurationHasBeenSet(false),
     m_deploymentsHasBeenSet(false),
@@ -48,7 +51,9 @@ Service::Service() :
     m_createdAtHasBeenSet(false),
     m_placementConstraintsHasBeenSet(false),
     m_placementStrategyHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false)
+    m_networkConfigurationHasBeenSet(false),
+    m_healthCheckGracePeriodSeconds(0),
+    m_healthCheckGracePeriodSecondsHasBeenSet(false)
 {
 }
 
@@ -64,6 +69,9 @@ Service::Service(const JsonValue& jsonValue) :
     m_runningCountHasBeenSet(false),
     m_pendingCount(0),
     m_pendingCountHasBeenSet(false),
+    m_launchType(LaunchType::NOT_SET),
+    m_launchTypeHasBeenSet(false),
+    m_platformVersionHasBeenSet(false),
     m_taskDefinitionHasBeenSet(false),
     m_deploymentConfigurationHasBeenSet(false),
     m_deploymentsHasBeenSet(false),
@@ -72,7 +80,9 @@ Service::Service(const JsonValue& jsonValue) :
     m_createdAtHasBeenSet(false),
     m_placementConstraintsHasBeenSet(false),
     m_placementStrategyHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false)
+    m_networkConfigurationHasBeenSet(false),
+    m_healthCheckGracePeriodSeconds(0),
+    m_healthCheckGracePeriodSecondsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -136,6 +146,20 @@ Service& Service::operator =(const JsonValue& jsonValue)
     m_pendingCount = jsonValue.GetInteger("pendingCount");
 
     m_pendingCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("launchType"))
+  {
+    m_launchType = LaunchTypeMapper::GetLaunchTypeForName(jsonValue.GetString("launchType"));
+
+    m_launchTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("platformVersion"))
+  {
+    m_platformVersion = jsonValue.GetString("platformVersion");
+
+    m_platformVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("taskDefinition"))
@@ -213,6 +237,13 @@ Service& Service::operator =(const JsonValue& jsonValue)
     m_networkConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("healthCheckGracePeriodSeconds"))
+  {
+    m_healthCheckGracePeriodSeconds = jsonValue.GetInteger("healthCheckGracePeriodSeconds");
+
+    m_healthCheckGracePeriodSecondsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -270,6 +301,17 @@ JsonValue Service::Jsonize() const
   if(m_pendingCountHasBeenSet)
   {
    payload.WithInteger("pendingCount", m_pendingCount);
+
+  }
+
+  if(m_launchTypeHasBeenSet)
+  {
+   payload.WithString("launchType", LaunchTypeMapper::GetNameForLaunchType(m_launchType));
+  }
+
+  if(m_platformVersionHasBeenSet)
+  {
+   payload.WithString("platformVersion", m_platformVersion);
 
   }
 
@@ -343,6 +385,12 @@ JsonValue Service::Jsonize() const
   if(m_networkConfigurationHasBeenSet)
   {
    payload.WithObject("networkConfiguration", m_networkConfiguration.Jsonize());
+
+  }
+
+  if(m_healthCheckGracePeriodSecondsHasBeenSet)
+  {
+   payload.WithInteger("healthCheckGracePeriodSeconds", m_healthCheckGracePeriodSeconds);
 
   }
 

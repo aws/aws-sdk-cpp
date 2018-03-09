@@ -27,6 +27,7 @@ namespace Model
   {
     NOT_SET,
     PENDING,
+    UPDATING_AGENT,
     RUNNING,
     STOPPING,
     STOPPED,

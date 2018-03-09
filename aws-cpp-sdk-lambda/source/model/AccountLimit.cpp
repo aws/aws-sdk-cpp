@@ -36,7 +36,9 @@ AccountLimit::AccountLimit() :
     m_codeSizeZipped(0),
     m_codeSizeZippedHasBeenSet(false),
     m_concurrentExecutions(0),
-    m_concurrentExecutionsHasBeenSet(false)
+    m_concurrentExecutionsHasBeenSet(false),
+    m_unreservedConcurrentExecutions(0),
+    m_unreservedConcurrentExecutionsHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ AccountLimit::AccountLimit(const JsonValue& jsonValue) :
     m_codeSizeZipped(0),
     m_codeSizeZippedHasBeenSet(false),
     m_concurrentExecutions(0),
-    m_concurrentExecutionsHasBeenSet(false)
+    m_concurrentExecutionsHasBeenSet(false),
+    m_unreservedConcurrentExecutions(0),
+    m_unreservedConcurrentExecutionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -83,6 +87,13 @@ AccountLimit& AccountLimit::operator =(const JsonValue& jsonValue)
     m_concurrentExecutionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UnreservedConcurrentExecutions"))
+  {
+    m_unreservedConcurrentExecutions = jsonValue.GetInteger("UnreservedConcurrentExecutions");
+
+    m_unreservedConcurrentExecutionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -111,6 +122,12 @@ JsonValue AccountLimit::Jsonize() const
   if(m_concurrentExecutionsHasBeenSet)
   {
    payload.WithInteger("ConcurrentExecutions", m_concurrentExecutions);
+
+  }
+
+  if(m_unreservedConcurrentExecutionsHasBeenSet)
+  {
+   payload.WithInteger("UnreservedConcurrentExecutions", m_unreservedConcurrentExecutions);
 
   }
 

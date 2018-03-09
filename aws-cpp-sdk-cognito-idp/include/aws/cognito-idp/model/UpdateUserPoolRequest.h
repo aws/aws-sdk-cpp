@@ -27,6 +27,7 @@
 #include <aws/cognito-idp/model/SmsConfigurationType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/cognito-idp/model/AdminCreateUserConfigType.h>
+#include <aws/cognito-idp/model/UserPoolAddOnsType.h>
 #include <aws/cognito-idp/model/VerifiedAttributeType.h>
 #include <utility>
 
@@ -603,6 +604,37 @@ namespace Model
      */
     inline UpdateUserPoolRequest& WithAdminCreateUserConfig(AdminCreateUserConfigType&& value) { SetAdminCreateUserConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Used to enable advanced security risk detection. Set the key
+     * <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+     */
+    inline const UserPoolAddOnsType& GetUserPoolAddOns() const{ return m_userPoolAddOns; }
+
+    /**
+     * <p>Used to enable advanced security risk detection. Set the key
+     * <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+     */
+    inline void SetUserPoolAddOns(const UserPoolAddOnsType& value) { m_userPoolAddOnsHasBeenSet = true; m_userPoolAddOns = value; }
+
+    /**
+     * <p>Used to enable advanced security risk detection. Set the key
+     * <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+     */
+    inline void SetUserPoolAddOns(UserPoolAddOnsType&& value) { m_userPoolAddOnsHasBeenSet = true; m_userPoolAddOns = std::move(value); }
+
+    /**
+     * <p>Used to enable advanced security risk detection. Set the key
+     * <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+     */
+    inline UpdateUserPoolRequest& WithUserPoolAddOns(const UserPoolAddOnsType& value) { SetUserPoolAddOns(value); return *this;}
+
+    /**
+     * <p>Used to enable advanced security risk detection. Set the key
+     * <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+     */
+    inline UpdateUserPoolRequest& WithUserPoolAddOns(UserPoolAddOnsType&& value) { SetUserPoolAddOns(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_userPoolId;
@@ -649,6 +681,9 @@ namespace Model
 
     AdminCreateUserConfigType m_adminCreateUserConfig;
     bool m_adminCreateUserConfigHasBeenSet;
+
+    UserPoolAddOnsType m_userPoolAddOns;
+    bool m_userPoolAddOnsHasBeenSet;
   };
 
 } // namespace Model

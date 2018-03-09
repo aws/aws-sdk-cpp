@@ -220,6 +220,42 @@ namespace Model
      */
     inline ResourceDataSyncItem& WithSyncCreatedTime(Aws::Utils::DateTime&& value) { SetSyncCreatedTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The status message details reported by the last sync.</p>
+     */
+    inline const Aws::String& GetLastSyncStatusMessage() const{ return m_lastSyncStatusMessage; }
+
+    /**
+     * <p>The status message details reported by the last sync.</p>
+     */
+    inline void SetLastSyncStatusMessage(const Aws::String& value) { m_lastSyncStatusMessageHasBeenSet = true; m_lastSyncStatusMessage = value; }
+
+    /**
+     * <p>The status message details reported by the last sync.</p>
+     */
+    inline void SetLastSyncStatusMessage(Aws::String&& value) { m_lastSyncStatusMessageHasBeenSet = true; m_lastSyncStatusMessage = std::move(value); }
+
+    /**
+     * <p>The status message details reported by the last sync.</p>
+     */
+    inline void SetLastSyncStatusMessage(const char* value) { m_lastSyncStatusMessageHasBeenSet = true; m_lastSyncStatusMessage.assign(value); }
+
+    /**
+     * <p>The status message details reported by the last sync.</p>
+     */
+    inline ResourceDataSyncItem& WithLastSyncStatusMessage(const Aws::String& value) { SetLastSyncStatusMessage(value); return *this;}
+
+    /**
+     * <p>The status message details reported by the last sync.</p>
+     */
+    inline ResourceDataSyncItem& WithLastSyncStatusMessage(Aws::String&& value) { SetLastSyncStatusMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>The status message details reported by the last sync.</p>
+     */
+    inline ResourceDataSyncItem& WithLastSyncStatusMessage(const char* value) { SetLastSyncStatusMessage(value); return *this;}
+
   private:
 
     Aws::String m_syncName;
@@ -239,6 +275,9 @@ namespace Model
 
     Aws::Utils::DateTime m_syncCreatedTime;
     bool m_syncCreatedTimeHasBeenSet;
+
+    Aws::String m_lastSyncStatusMessage;
+    bool m_lastSyncStatusMessageHasBeenSet;
   };
 
 } // namespace Model

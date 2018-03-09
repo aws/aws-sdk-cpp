@@ -36,6 +36,9 @@ DocumentIdentifier::DocumentIdentifier() :
     m_documentType(DocumentType::NOT_SET),
     m_documentTypeHasBeenSet(false),
     m_schemaVersionHasBeenSet(false),
+    m_documentFormat(DocumentFormat::NOT_SET),
+    m_documentFormatHasBeenSet(false),
+    m_targetTypeHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -48,6 +51,9 @@ DocumentIdentifier::DocumentIdentifier(const JsonValue& jsonValue) :
     m_documentType(DocumentType::NOT_SET),
     m_documentTypeHasBeenSet(false),
     m_schemaVersionHasBeenSet(false),
+    m_documentFormat(DocumentFormat::NOT_SET),
+    m_documentFormatHasBeenSet(false),
+    m_targetTypeHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -98,6 +104,20 @@ DocumentIdentifier& DocumentIdentifier::operator =(const JsonValue& jsonValue)
     m_schemaVersion = jsonValue.GetString("SchemaVersion");
 
     m_schemaVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DocumentFormat"))
+  {
+    m_documentFormat = DocumentFormatMapper::GetDocumentFormatForName(jsonValue.GetString("DocumentFormat"));
+
+    m_documentFormatHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TargetType"))
+  {
+    m_targetType = jsonValue.GetString("TargetType");
+
+    m_targetTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Tags"))
@@ -154,6 +174,17 @@ JsonValue DocumentIdentifier::Jsonize() const
   if(m_schemaVersionHasBeenSet)
   {
    payload.WithString("SchemaVersion", m_schemaVersion);
+
+  }
+
+  if(m_documentFormatHasBeenSet)
+  {
+   payload.WithString("DocumentFormat", DocumentFormatMapper::GetNameForDocumentFormat(m_documentFormat));
+  }
+
+  if(m_targetTypeHasBeenSet)
+  {
+   payload.WithString("TargetType", m_targetType);
 
   }
 

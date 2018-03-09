@@ -44,31 +44,91 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /**
+     * <p>The name of the image builder.</p>
+     */
     inline const Aws::String& GetName() const{ return m_name; }
 
-    
+    /**
+     * <p>The name of the image builder.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    
+    /**
+     * <p>The name of the image builder.</p>
+     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
-    
+    /**
+     * <p>The name of the image builder.</p>
+     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
-    
+    /**
+     * <p>The name of the image builder.</p>
+     */
     inline StartImageBuilderRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the image builder.</p>
+     */
     inline StartImageBuilderRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The name of the image builder.</p>
+     */
     inline StartImageBuilderRequest& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>The version of the AppStream 2.0 agent to use for this image builder. To use
+     * the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
+     */
+    inline const Aws::String& GetAppstreamAgentVersion() const{ return m_appstreamAgentVersion; }
+
+    /**
+     * <p>The version of the AppStream 2.0 agent to use for this image builder. To use
+     * the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
+     */
+    inline void SetAppstreamAgentVersion(const Aws::String& value) { m_appstreamAgentVersionHasBeenSet = true; m_appstreamAgentVersion = value; }
+
+    /**
+     * <p>The version of the AppStream 2.0 agent to use for this image builder. To use
+     * the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
+     */
+    inline void SetAppstreamAgentVersion(Aws::String&& value) { m_appstreamAgentVersionHasBeenSet = true; m_appstreamAgentVersion = std::move(value); }
+
+    /**
+     * <p>The version of the AppStream 2.0 agent to use for this image builder. To use
+     * the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
+     */
+    inline void SetAppstreamAgentVersion(const char* value) { m_appstreamAgentVersionHasBeenSet = true; m_appstreamAgentVersion.assign(value); }
+
+    /**
+     * <p>The version of the AppStream 2.0 agent to use for this image builder. To use
+     * the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
+     */
+    inline StartImageBuilderRequest& WithAppstreamAgentVersion(const Aws::String& value) { SetAppstreamAgentVersion(value); return *this;}
+
+    /**
+     * <p>The version of the AppStream 2.0 agent to use for this image builder. To use
+     * the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
+     */
+    inline StartImageBuilderRequest& WithAppstreamAgentVersion(Aws::String&& value) { SetAppstreamAgentVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The version of the AppStream 2.0 agent to use for this image builder. To use
+     * the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
+     */
+    inline StartImageBuilderRequest& WithAppstreamAgentVersion(const char* value) { SetAppstreamAgentVersion(value); return *this;}
 
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    Aws::String m_appstreamAgentVersion;
+    bool m_appstreamAgentVersionHasBeenSet;
   };
 
 } // namespace Model

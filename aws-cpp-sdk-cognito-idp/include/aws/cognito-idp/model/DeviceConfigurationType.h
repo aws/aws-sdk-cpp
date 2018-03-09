@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>The type of configuration for the user pool's device tracking.</p><p><h3>See
+   * <p>The configuration for the user pool's device tracking.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeviceConfigurationType">AWS
    * API Reference</a></p>

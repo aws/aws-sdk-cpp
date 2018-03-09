@@ -107,6 +107,7 @@ public class C2jModelToGeneratorModelTransformer {
         metadata.setSignatureVersion(c2jMetadata.getSignatureVersion());
         metadata.setTargetPrefix(c2jMetadata.getTargetPrefix());
         metadata.setGlobalEndpoint(c2jMetadata.getGlobalEndpoint());
+        metadata.setTimestampFormat(c2jMetadata.getTimestampFormat());
 
         if (metadata.getNamespace() == null || metadata.getNamespace().isEmpty()) {
             metadata.setNamespace(sanitizeServiceAbbreviation(metadata.getServiceFullName()));
@@ -185,7 +186,12 @@ public class C2jModelToGeneratorModelTransformer {
         shape.setLocationName(c2jShape.getLocationName());
         shape.setPayload(c2jShape.getPayload());
         shape.setFlattened(c2jShape.isFlattened());
-
+        if("timestamp".equalsIgnoreCase(shape.getType())) {
+            // shape's specific timestampFormat overrides the timestampFormat specified in metadata (if any)
+            shape.setTimestampFormat(c2jShape.getTimestampFormat() != null ?
+                    c2jShape.getTimestampFormat() :
+                    c2jServiceModel.getMetadata().getTimestampFormat());
+        }
         return shape;
     }
 
@@ -340,7 +346,16 @@ public class C2jModelToGeneratorModelTransformer {
             return shape;
         }
         if (shapes.containsKey(name)) {
-            return shapes.get(name);
+            // Conflict with shape name defined by service team, need to rename it.
+            String newName = "";
+            switch(name) {
+                case "CopyObjectResult":
+                    newName = "CopyObjectResultDetails";
+                    break;
+                default:
+                    throw new RuntimeException("Unhandled shape name conflict: " + name);
+            }
+            renameShapeMember(shape, name, newName);
         }
 
         Shape cloned = cloneShape(shape);
@@ -365,6 +380,14 @@ public class C2jModelToGeneratorModelTransformer {
         cloned.setPayload(shape.getPayload());
         cloned.setFlattened(shape.isFlattened());
         return cloned;
+    }
+    void renameShapeMember(Shape parentShape, String originalName, String newName) {
+        shapes.get(originalName).setName(newName);
+        shapes.put(newName, shapes.get(originalName));
+        shapes.remove(originalName);
+        parentShape.getMembers().put(newName, parentShape.getMembers().get(originalName));
+        parentShape.RemoveMember(originalName);
+        parentShape.setPayload(newName);
     }
 
     Http convertHttp(C2jHttp c2jHttp) {

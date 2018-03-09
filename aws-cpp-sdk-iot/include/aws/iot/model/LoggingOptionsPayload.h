@@ -84,27 +84,27 @@ namespace Model
 
 
     /**
-     * <p>The logging level.</p>
+     * <p>The log level.</p>
      */
     inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
 
     /**
-     * <p>The logging level.</p>
+     * <p>The log level.</p>
      */
     inline void SetLogLevel(const LogLevel& value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
 
     /**
-     * <p>The logging level.</p>
+     * <p>The log level.</p>
      */
     inline void SetLogLevel(LogLevel&& value) { m_logLevelHasBeenSet = true; m_logLevel = std::move(value); }
 
     /**
-     * <p>The logging level.</p>
+     * <p>The log level.</p>
      */
     inline LoggingOptionsPayload& WithLogLevel(const LogLevel& value) { SetLogLevel(value); return *this;}
 
     /**
-     * <p>The logging level.</p>
+     * <p>The log level.</p>
      */
     inline LoggingOptionsPayload& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
 

@@ -213,44 +213,44 @@ namespace Model
 
 
     /**
-     * <p>In the JSON sense, an object containing fields, which may also contain nested
-     * subobjects. No constraints are imposed on its contents.</p>
+     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
+     * contain fields and nested subobjects.</p>
      */
     inline const Aws::String& GetDetail() const{ return m_detail; }
 
     /**
-     * <p>In the JSON sense, an object containing fields, which may also contain nested
-     * subobjects. No constraints are imposed on its contents.</p>
+     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
+     * contain fields and nested subobjects.</p>
      */
     inline void SetDetail(const Aws::String& value) { m_detailHasBeenSet = true; m_detail = value; }
 
     /**
-     * <p>In the JSON sense, an object containing fields, which may also contain nested
-     * subobjects. No constraints are imposed on its contents.</p>
+     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
+     * contain fields and nested subobjects.</p>
      */
     inline void SetDetail(Aws::String&& value) { m_detailHasBeenSet = true; m_detail = std::move(value); }
 
     /**
-     * <p>In the JSON sense, an object containing fields, which may also contain nested
-     * subobjects. No constraints are imposed on its contents.</p>
+     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
+     * contain fields and nested subobjects.</p>
      */
     inline void SetDetail(const char* value) { m_detailHasBeenSet = true; m_detail.assign(value); }
 
     /**
-     * <p>In the JSON sense, an object containing fields, which may also contain nested
-     * subobjects. No constraints are imposed on its contents.</p>
+     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
+     * contain fields and nested subobjects.</p>
      */
     inline PutEventsRequestEntry& WithDetail(const Aws::String& value) { SetDetail(value); return *this;}
 
     /**
-     * <p>In the JSON sense, an object containing fields, which may also contain nested
-     * subobjects. No constraints are imposed on its contents.</p>
+     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
+     * contain fields and nested subobjects.</p>
      */
     inline PutEventsRequestEntry& WithDetail(Aws::String&& value) { SetDetail(std::move(value)); return *this;}
 
     /**
-     * <p>In the JSON sense, an object containing fields, which may also contain nested
-     * subobjects. No constraints are imposed on its contents.</p>
+     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
+     * contain fields and nested subobjects.</p>
      */
     inline PutEventsRequestEntry& WithDetail(const char* value) { SetDetail(value); return *this;}
 

@@ -95,116 +95,103 @@ namespace Model
 
 
     /**
-     * <p>The record identifier of the ProvisionedProduct object for which to retrieve
-     * output information. This is the <code>RecordDetail.RecordId</code> obtained from
-     * the request operation's response.</p>
+     * <p>The record identifier of the provisioned product. This identifier is returned
+     * by the request operation.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The record identifier of the ProvisionedProduct object for which to retrieve
-     * output information. This is the <code>RecordDetail.RecordId</code> obtained from
-     * the request operation's response.</p>
+     * <p>The record identifier of the provisioned product. This identifier is returned
+     * by the request operation.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The record identifier of the ProvisionedProduct object for which to retrieve
-     * output information. This is the <code>RecordDetail.RecordId</code> obtained from
-     * the request operation's response.</p>
+     * <p>The record identifier of the provisioned product. This identifier is returned
+     * by the request operation.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The record identifier of the ProvisionedProduct object for which to retrieve
-     * output information. This is the <code>RecordDetail.RecordId</code> obtained from
-     * the request operation's response.</p>
+     * <p>The record identifier of the provisioned product. This identifier is returned
+     * by the request operation.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The record identifier of the ProvisionedProduct object for which to retrieve
-     * output information. This is the <code>RecordDetail.RecordId</code> obtained from
-     * the request operation's response.</p>
+     * <p>The record identifier of the provisioned product. This identifier is returned
+     * by the request operation.</p>
      */
     inline DescribeRecordRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The record identifier of the ProvisionedProduct object for which to retrieve
-     * output information. This is the <code>RecordDetail.RecordId</code> obtained from
-     * the request operation's response.</p>
+     * <p>The record identifier of the provisioned product. This identifier is returned
+     * by the request operation.</p>
      */
     inline DescribeRecordRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The record identifier of the ProvisionedProduct object for which to retrieve
-     * output information. This is the <code>RecordDetail.RecordId</code> obtained from
-     * the request operation's response.</p>
+     * <p>The record identifier of the provisioned product. This identifier is returned
+     * by the request operation.</p>
      */
     inline DescribeRecordRequest& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline const Aws::String& GetPageToken() const{ return m_pageToken; }
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline void SetPageToken(const Aws::String& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::move(value); }
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline void SetPageToken(const char* value) { m_pageTokenHasBeenSet = true; m_pageToken.assign(value); }
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline DescribeRecordRequest& WithPageToken(const Aws::String& value) { SetPageToken(value); return *this;}
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline DescribeRecordRequest& WithPageToken(Aws::String&& value) { SetPageToken(std::move(value)); return *this;}
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline DescribeRecordRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
 
 
     /**
-     * <p>The maximum number of items to return in the results. If more results exist
-     * than fit in the specified <code>PageSize</code>, the value of
-     * <code>NextPageToken</code> in the response is non-null.</p>
+     * <p>The maximum number of items to return with this call.</p>
      */
     inline int GetPageSize() const{ return m_pageSize; }
 
     /**
-     * <p>The maximum number of items to return in the results. If more results exist
-     * than fit in the specified <code>PageSize</code>, the value of
-     * <code>NextPageToken</code> in the response is non-null.</p>
+     * <p>The maximum number of items to return with this call.</p>
      */
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
 
     /**
-     * <p>The maximum number of items to return in the results. If more results exist
-     * than fit in the specified <code>PageSize</code>, the value of
-     * <code>NextPageToken</code> in the response is non-null.</p>
+     * <p>The maximum number of items to return with this call.</p>
      */
     inline DescribeRecordRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
 

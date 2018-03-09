@@ -30,13 +30,15 @@ namespace Model
 
 TaskOverride::TaskOverride() : 
     m_containerOverridesHasBeenSet(false),
-    m_taskRoleArnHasBeenSet(false)
+    m_taskRoleArnHasBeenSet(false),
+    m_executionRoleArnHasBeenSet(false)
 {
 }
 
 TaskOverride::TaskOverride(const JsonValue& jsonValue) : 
     m_containerOverridesHasBeenSet(false),
-    m_taskRoleArnHasBeenSet(false)
+    m_taskRoleArnHasBeenSet(false),
+    m_executionRoleArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +62,13 @@ TaskOverride& TaskOverride::operator =(const JsonValue& jsonValue)
     m_taskRoleArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("executionRoleArn"))
+  {
+    m_executionRoleArn = jsonValue.GetString("executionRoleArn");
+
+    m_executionRoleArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -81,6 +90,12 @@ JsonValue TaskOverride::Jsonize() const
   if(m_taskRoleArnHasBeenSet)
   {
    payload.WithString("taskRoleArn", m_taskRoleArn);
+
+  }
+
+  if(m_executionRoleArnHasBeenSet)
+  {
+   payload.WithString("executionRoleArn", m_executionRoleArn);
 
   }
 

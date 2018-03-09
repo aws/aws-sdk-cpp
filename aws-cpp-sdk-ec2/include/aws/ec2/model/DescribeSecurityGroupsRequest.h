@@ -588,21 +588,24 @@ namespace Model
     /**
      * <p>The maximum number of results to return in a single call. To retrieve the
      * remaining results, make another request with the returned <code>NextToken</code>
-     * value. This value can be between 5 and 1000.</p>
+     * value. This value can be between 5 and 1000. If this parameter is not specified,
+     * then all results are returned.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of results to return in a single call. To retrieve the
      * remaining results, make another request with the returned <code>NextToken</code>
-     * value. This value can be between 5 and 1000.</p>
+     * value. This value can be between 5 and 1000. If this parameter is not specified,
+     * then all results are returned.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of results to return in a single call. To retrieve the
      * remaining results, make another request with the returned <code>NextToken</code>
-     * value. This value can be between 5 and 1000.</p>
+     * value. This value can be between 5 and 1000. If this parameter is not specified,
+     * then all results are returned.</p>
      */
     inline DescribeSecurityGroupsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

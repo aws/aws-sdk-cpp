@@ -26,6 +26,7 @@ using namespace Aws::Utils;
 PublishSchemaRequest::PublishSchemaRequest() : 
     m_developmentSchemaArnHasBeenSet(false),
     m_versionHasBeenSet(false),
+    m_minorVersionHasBeenSet(false),
     m_nameHasBeenSet(false)
 {
 }
@@ -37,6 +38,12 @@ Aws::String PublishSchemaRequest::SerializePayload() const
   if(m_versionHasBeenSet)
   {
    payload.WithString("Version", m_version);
+
+  }
+
+  if(m_minorVersionHasBeenSet)
+  {
+   payload.WithString("MinorVersion", m_minorVersion);
 
   }
 

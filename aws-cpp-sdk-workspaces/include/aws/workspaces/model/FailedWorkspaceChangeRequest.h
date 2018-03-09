@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about a WorkSpace that could not be rebooted
+   * <p>Information about a WorkSpace that could not be rebooted
    * (<a>RebootWorkspaces</a>), rebuilt (<a>RebuildWorkspaces</a>), terminated
    * (<a>TerminateWorkspaces</a>), started (<a>StartWorkspaces</a>), or stopped
    * (<a>StopWorkspaces</a>).</p><p><h3>See Also:</h3>   <a

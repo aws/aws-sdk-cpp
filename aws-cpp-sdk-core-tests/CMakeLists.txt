@@ -17,11 +17,12 @@ file(GLOB UTILS_STREAM_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/stream/*.cpp")
 file(GLOB UTILS_LOGGING_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/logging/*.cpp")
 file(GLOB UTILS_RATE_LIMITER_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/ratelimiter/*.cpp")
 file(GLOB UTILS_XML_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/xml/*.cpp")
-file(GLOB UTILS_XML_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/threading/*.cpp")
-file(GLOB UTILS_XML_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/memory/*.cpp")
+file(GLOB UTILS_THREADING_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/threading/*.cpp")
+file(GLOB UTILS_MEMORY_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/memory/*.cpp")
 
 file(GLOB AWS_CPP_SDK_CORE_TESTS_SRC
   "${CMAKE_CURRENT_SOURCE_DIR}/RunTests.cpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/VersionTests.cpp"
   ${AWS_SRC}
   ${AWS_AUTH_SRC}
   ${AWS_CONFIG_SRC}
@@ -32,6 +33,8 @@ file(GLOB AWS_CPP_SDK_CORE_TESTS_SRC
   ${UTILS_JSON_SRC}
   ${UTILS_STREAM_SRC}
   ${UTILS_XML_SRC}
+  ${UTILS_THREADING_SRC}
+  ${UTILS_MEMORY_SRC}
   ${UTILS_LOGGING_SRC}
   ${UTILS_RATE_LIMITER_SRC}
 )
@@ -76,6 +79,9 @@ if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
 else()
     add_executable(${PROJECT_NAME} ${AWS_CPP_SDK_CORE_TESTS_SRC})
 endif()
+
+set_compiler_flags(${PROJECT_NAME})
+set_compiler_warnings(${PROJECT_NAME})
 
 target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
 

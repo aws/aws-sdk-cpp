@@ -33,6 +33,7 @@ TaskDefinition::TaskDefinition() :
     m_containerDefinitionsHasBeenSet(false),
     m_familyHasBeenSet(false),
     m_taskRoleArnHasBeenSet(false),
+    m_executionRoleArnHasBeenSet(false),
     m_networkMode(NetworkMode::NOT_SET),
     m_networkModeHasBeenSet(false),
     m_revision(0),
@@ -41,7 +42,11 @@ TaskDefinition::TaskDefinition() :
     m_status(TaskDefinitionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_requiresAttributesHasBeenSet(false),
-    m_placementConstraintsHasBeenSet(false)
+    m_placementConstraintsHasBeenSet(false),
+    m_compatibilitiesHasBeenSet(false),
+    m_requiresCompatibilitiesHasBeenSet(false),
+    m_cpuHasBeenSet(false),
+    m_memoryHasBeenSet(false)
 {
 }
 
@@ -50,6 +55,7 @@ TaskDefinition::TaskDefinition(const JsonValue& jsonValue) :
     m_containerDefinitionsHasBeenSet(false),
     m_familyHasBeenSet(false),
     m_taskRoleArnHasBeenSet(false),
+    m_executionRoleArnHasBeenSet(false),
     m_networkMode(NetworkMode::NOT_SET),
     m_networkModeHasBeenSet(false),
     m_revision(0),
@@ -58,7 +64,11 @@ TaskDefinition::TaskDefinition(const JsonValue& jsonValue) :
     m_status(TaskDefinitionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_requiresAttributesHasBeenSet(false),
-    m_placementConstraintsHasBeenSet(false)
+    m_placementConstraintsHasBeenSet(false),
+    m_compatibilitiesHasBeenSet(false),
+    m_requiresCompatibilitiesHasBeenSet(false),
+    m_cpuHasBeenSet(false),
+    m_memoryHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -94,6 +104,13 @@ TaskDefinition& TaskDefinition::operator =(const JsonValue& jsonValue)
     m_taskRoleArn = jsonValue.GetString("taskRoleArn");
 
     m_taskRoleArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("executionRoleArn"))
+  {
+    m_executionRoleArn = jsonValue.GetString("executionRoleArn");
+
+    m_executionRoleArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("networkMode"))
@@ -147,6 +164,40 @@ TaskDefinition& TaskDefinition::operator =(const JsonValue& jsonValue)
     m_placementConstraintsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("compatibilities"))
+  {
+    Array<JsonValue> compatibilitiesJsonList = jsonValue.GetArray("compatibilities");
+    for(unsigned compatibilitiesIndex = 0; compatibilitiesIndex < compatibilitiesJsonList.GetLength(); ++compatibilitiesIndex)
+    {
+      m_compatibilities.push_back(CompatibilityMapper::GetCompatibilityForName(compatibilitiesJsonList[compatibilitiesIndex].AsString()));
+    }
+    m_compatibilitiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("requiresCompatibilities"))
+  {
+    Array<JsonValue> requiresCompatibilitiesJsonList = jsonValue.GetArray("requiresCompatibilities");
+    for(unsigned requiresCompatibilitiesIndex = 0; requiresCompatibilitiesIndex < requiresCompatibilitiesJsonList.GetLength(); ++requiresCompatibilitiesIndex)
+    {
+      m_requiresCompatibilities.push_back(CompatibilityMapper::GetCompatibilityForName(requiresCompatibilitiesJsonList[requiresCompatibilitiesIndex].AsString()));
+    }
+    m_requiresCompatibilitiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("cpu"))
+  {
+    m_cpu = jsonValue.GetString("cpu");
+
+    m_cpuHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("memory"))
+  {
+    m_memory = jsonValue.GetString("memory");
+
+    m_memoryHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -180,6 +231,12 @@ JsonValue TaskDefinition::Jsonize() const
   if(m_taskRoleArnHasBeenSet)
   {
    payload.WithString("taskRoleArn", m_taskRoleArn);
+
+  }
+
+  if(m_executionRoleArnHasBeenSet)
+  {
+   payload.WithString("executionRoleArn", m_executionRoleArn);
 
   }
 
@@ -229,6 +286,40 @@ JsonValue TaskDefinition::Jsonize() const
      placementConstraintsJsonList[placementConstraintsIndex].AsObject(m_placementConstraints[placementConstraintsIndex].Jsonize());
    }
    payload.WithArray("placementConstraints", std::move(placementConstraintsJsonList));
+
+  }
+
+  if(m_compatibilitiesHasBeenSet)
+  {
+   Array<JsonValue> compatibilitiesJsonList(m_compatibilities.size());
+   for(unsigned compatibilitiesIndex = 0; compatibilitiesIndex < compatibilitiesJsonList.GetLength(); ++compatibilitiesIndex)
+   {
+     compatibilitiesJsonList[compatibilitiesIndex].AsString(CompatibilityMapper::GetNameForCompatibility(m_compatibilities[compatibilitiesIndex]));
+   }
+   payload.WithArray("compatibilities", std::move(compatibilitiesJsonList));
+
+  }
+
+  if(m_requiresCompatibilitiesHasBeenSet)
+  {
+   Array<JsonValue> requiresCompatibilitiesJsonList(m_requiresCompatibilities.size());
+   for(unsigned requiresCompatibilitiesIndex = 0; requiresCompatibilitiesIndex < requiresCompatibilitiesJsonList.GetLength(); ++requiresCompatibilitiesIndex)
+   {
+     requiresCompatibilitiesJsonList[requiresCompatibilitiesIndex].AsString(CompatibilityMapper::GetNameForCompatibility(m_requiresCompatibilities[requiresCompatibilitiesIndex]));
+   }
+   payload.WithArray("requiresCompatibilities", std::move(requiresCompatibilitiesJsonList));
+
+  }
+
+  if(m_cpuHasBeenSet)
+  {
+   payload.WithString("cpu", m_cpu);
+
+  }
+
+  if(m_memoryHasBeenSet)
+  {
+   payload.WithString("memory", m_memory);
 
   }
 

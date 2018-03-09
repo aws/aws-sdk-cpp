@@ -43,42 +43,27 @@ namespace Model
 
 
     /**
-     * <p>The detailed result of the <a>ProvisionProduct</a> request, containing the
-     * inputs made to that request, the current state of the request, a pointer to the
-     * ProvisionedProduct object of the request, and a list of any errors that the
-     * request encountered. </p>
+     * <p>Information about the result of provisioning the product.</p>
      */
     inline const RecordDetail& GetRecordDetail() const{ return m_recordDetail; }
 
     /**
-     * <p>The detailed result of the <a>ProvisionProduct</a> request, containing the
-     * inputs made to that request, the current state of the request, a pointer to the
-     * ProvisionedProduct object of the request, and a list of any errors that the
-     * request encountered. </p>
+     * <p>Information about the result of provisioning the product.</p>
      */
     inline void SetRecordDetail(const RecordDetail& value) { m_recordDetail = value; }
 
     /**
-     * <p>The detailed result of the <a>ProvisionProduct</a> request, containing the
-     * inputs made to that request, the current state of the request, a pointer to the
-     * ProvisionedProduct object of the request, and a list of any errors that the
-     * request encountered. </p>
+     * <p>Information about the result of provisioning the product.</p>
      */
     inline void SetRecordDetail(RecordDetail&& value) { m_recordDetail = std::move(value); }
 
     /**
-     * <p>The detailed result of the <a>ProvisionProduct</a> request, containing the
-     * inputs made to that request, the current state of the request, a pointer to the
-     * ProvisionedProduct object of the request, and a list of any errors that the
-     * request encountered. </p>
+     * <p>Information about the result of provisioning the product.</p>
      */
     inline ProvisionProductResult& WithRecordDetail(const RecordDetail& value) { SetRecordDetail(value); return *this;}
 
     /**
-     * <p>The detailed result of the <a>ProvisionProduct</a> request, containing the
-     * inputs made to that request, the current state of the request, a pointer to the
-     * ProvisionedProduct object of the request, and a list of any errors that the
-     * request encountered. </p>
+     * <p>Information about the result of provisioning the product.</p>
      */
     inline ProvisionProductResult& WithRecordDetail(RecordDetail&& value) { SetRecordDetail(std::move(value)); return *this;}
 

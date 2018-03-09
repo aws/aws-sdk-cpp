@@ -38,6 +38,7 @@ static const int TOO_MANY_HOSTED_ZONES_HASH = HashingUtils::HashString("TooManyH
 static const int NO_SUCH_CHANGE_HASH = HashingUtils::HashString("NoSuchChange");
 static const int QUERY_LOGGING_CONFIG_ALREADY_EXISTS_HASH = HashingUtils::HashString("QueryLoggingConfigAlreadyExists");
 static const int CONFLICTING_TYPES_HASH = HashingUtils::HashString("ConflictingTypes");
+static const int TOO_MANY_TRAFFIC_POLICY_VERSIONS_FOR_CURRENT_POLICY_HASH = HashingUtils::HashString("TooManyTrafficPolicyVersionsForCurrentPolicy");
 static const int INVALID_TRAFFIC_POLICY_DOCUMENT_HASH = HashingUtils::HashString("InvalidTrafficPolicyDocument");
 static const int LIMITS_EXCEEDED_HASH = HashingUtils::HashString("LimitsExceeded");
 static const int NO_SUCH_TRAFFIC_POLICY_HASH = HashingUtils::HashString("NoSuchTrafficPolicy");
@@ -122,6 +123,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == CONFLICTING_TYPES_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::CONFLICTING_TYPES), false);
+  }
+  else if (hashCode == TOO_MANY_TRAFFIC_POLICY_VERSIONS_FOR_CURRENT_POLICY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::TOO_MANY_TRAFFIC_POLICY_VERSIONS_FOR_CURRENT_POLICY), false);
   }
   else if (hashCode == INVALID_TRAFFIC_POLICY_DOCUMENT_HASH)
   {

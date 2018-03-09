@@ -29,11 +29,17 @@ namespace Model
 {
 
 FunctionConfigurationEnvironment::FunctionConfigurationEnvironment() : 
+    m_accessSysfs(false),
+    m_accessSysfsHasBeenSet(false),
+    m_resourceAccessPoliciesHasBeenSet(false),
     m_variablesHasBeenSet(false)
 {
 }
 
 FunctionConfigurationEnvironment::FunctionConfigurationEnvironment(const JsonValue& jsonValue) : 
+    m_accessSysfs(false),
+    m_accessSysfsHasBeenSet(false),
+    m_resourceAccessPoliciesHasBeenSet(false),
     m_variablesHasBeenSet(false)
 {
   *this = jsonValue;
@@ -41,6 +47,23 @@ FunctionConfigurationEnvironment::FunctionConfigurationEnvironment(const JsonVal
 
 FunctionConfigurationEnvironment& FunctionConfigurationEnvironment::operator =(const JsonValue& jsonValue)
 {
+  if(jsonValue.ValueExists("AccessSysfs"))
+  {
+    m_accessSysfs = jsonValue.GetBool("AccessSysfs");
+
+    m_accessSysfsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ResourceAccessPolicies"))
+  {
+    Array<JsonValue> resourceAccessPoliciesJsonList = jsonValue.GetArray("ResourceAccessPolicies");
+    for(unsigned resourceAccessPoliciesIndex = 0; resourceAccessPoliciesIndex < resourceAccessPoliciesJsonList.GetLength(); ++resourceAccessPoliciesIndex)
+    {
+      m_resourceAccessPolicies.push_back(resourceAccessPoliciesJsonList[resourceAccessPoliciesIndex].AsObject());
+    }
+    m_resourceAccessPoliciesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Variables"))
   {
     Aws::Map<Aws::String, JsonValue> variablesJsonMap = jsonValue.GetObject("Variables").GetAllObjects();
@@ -57,6 +80,23 @@ FunctionConfigurationEnvironment& FunctionConfigurationEnvironment::operator =(c
 JsonValue FunctionConfigurationEnvironment::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_accessSysfsHasBeenSet)
+  {
+   payload.WithBool("AccessSysfs", m_accessSysfs);
+
+  }
+
+  if(m_resourceAccessPoliciesHasBeenSet)
+  {
+   Array<JsonValue> resourceAccessPoliciesJsonList(m_resourceAccessPolicies.size());
+   for(unsigned resourceAccessPoliciesIndex = 0; resourceAccessPoliciesIndex < resourceAccessPoliciesJsonList.GetLength(); ++resourceAccessPoliciesIndex)
+   {
+     resourceAccessPoliciesJsonList[resourceAccessPoliciesIndex].AsObject(m_resourceAccessPolicies[resourceAccessPoliciesIndex].Jsonize());
+   }
+   payload.WithArray("ResourceAccessPolicies", std::move(resourceAccessPoliciesJsonList));
+
+  }
 
   if(m_variablesHasBeenSet)
   {

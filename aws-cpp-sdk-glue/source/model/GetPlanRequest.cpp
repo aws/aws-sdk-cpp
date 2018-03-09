@@ -26,7 +26,9 @@ GetPlanRequest::GetPlanRequest() :
     m_mappingHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_sinksHasBeenSet(false),
-    m_locationHasBeenSet(false)
+    m_locationHasBeenSet(false),
+    m_language(Language::NOT_SET),
+    m_languageHasBeenSet(false)
 {
 }
 
@@ -66,6 +68,11 @@ Aws::String GetPlanRequest::SerializePayload() const
   {
    payload.WithObject("Location", m_location.Jsonize());
 
+  }
+
+  if(m_languageHasBeenSet)
+  {
+   payload.WithString("Language", LanguageMapper::GetNameForLanguage(m_language));
   }
 
   return payload.WriteReadable();

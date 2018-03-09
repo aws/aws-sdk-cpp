@@ -39,7 +39,8 @@ Cluster::Cluster() :
     m_pendingTasksCount(0),
     m_pendingTasksCountHasBeenSet(false),
     m_activeServicesCount(0),
-    m_activeServicesCountHasBeenSet(false)
+    m_activeServicesCountHasBeenSet(false),
+    m_statisticsHasBeenSet(false)
 {
 }
 
@@ -54,7 +55,8 @@ Cluster::Cluster(const JsonValue& jsonValue) :
     m_pendingTasksCount(0),
     m_pendingTasksCountHasBeenSet(false),
     m_activeServicesCount(0),
-    m_activeServicesCountHasBeenSet(false)
+    m_activeServicesCountHasBeenSet(false),
+    m_statisticsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -110,6 +112,16 @@ Cluster& Cluster::operator =(const JsonValue& jsonValue)
     m_activeServicesCountHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("statistics"))
+  {
+    Array<JsonValue> statisticsJsonList = jsonValue.GetArray("statistics");
+    for(unsigned statisticsIndex = 0; statisticsIndex < statisticsJsonList.GetLength(); ++statisticsIndex)
+    {
+      m_statistics.push_back(statisticsJsonList[statisticsIndex].AsObject());
+    }
+    m_statisticsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -156,6 +168,17 @@ JsonValue Cluster::Jsonize() const
   if(m_activeServicesCountHasBeenSet)
   {
    payload.WithInteger("activeServicesCount", m_activeServicesCount);
+
+  }
+
+  if(m_statisticsHasBeenSet)
+  {
+   Array<JsonValue> statisticsJsonList(m_statistics.size());
+   for(unsigned statisticsIndex = 0; statisticsIndex < statisticsJsonList.GetLength(); ++statisticsIndex)
+   {
+     statisticsJsonList[statisticsIndex].AsObject(m_statistics[statisticsIndex].Jsonize());
+   }
+   payload.WithArray("statistics", std::move(statisticsJsonList));
 
   }
 

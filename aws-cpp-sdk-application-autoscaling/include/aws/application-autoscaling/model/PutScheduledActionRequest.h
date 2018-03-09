@@ -246,7 +246,10 @@ namespace Model
      * <code>index</code> and the unique identifier is the resource ID. Example:
      * <code>table/my-table/index/my-table-index</code>.</p> </li> <li> <p>Aurora DB
      * cluster - The resource type is <code>cluster</code> and the unique identifier is
-     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> </ul>
+     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> <li>
+     * <p>Amazon SageMaker endpoint variants - The resource type is
+     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
@@ -270,7 +273,10 @@ namespace Model
      * <code>index</code> and the unique identifier is the resource ID. Example:
      * <code>table/my-table/index/my-table-index</code>.</p> </li> <li> <p>Aurora DB
      * cluster - The resource type is <code>cluster</code> and the unique identifier is
-     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> </ul>
+     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> <li>
+     * <p>Amazon SageMaker endpoint variants - The resource type is
+     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> </ul>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
@@ -294,7 +300,10 @@ namespace Model
      * <code>index</code> and the unique identifier is the resource ID. Example:
      * <code>table/my-table/index/my-table-index</code>.</p> </li> <li> <p>Aurora DB
      * cluster - The resource type is <code>cluster</code> and the unique identifier is
-     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> </ul>
+     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> <li>
+     * <p>Amazon SageMaker endpoint variants - The resource type is
+     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> </ul>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
@@ -318,7 +327,10 @@ namespace Model
      * <code>index</code> and the unique identifier is the resource ID. Example:
      * <code>table/my-table/index/my-table-index</code>.</p> </li> <li> <p>Aurora DB
      * cluster - The resource type is <code>cluster</code> and the unique identifier is
-     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> </ul>
+     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> <li>
+     * <p>Amazon SageMaker endpoint variants - The resource type is
+     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> </ul>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
@@ -342,7 +354,10 @@ namespace Model
      * <code>index</code> and the unique identifier is the resource ID. Example:
      * <code>table/my-table/index/my-table-index</code>.</p> </li> <li> <p>Aurora DB
      * cluster - The resource type is <code>cluster</code> and the unique identifier is
-     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> </ul>
+     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> <li>
+     * <p>Amazon SageMaker endpoint variants - The resource type is
+     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> </ul>
      */
     inline PutScheduledActionRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
@@ -366,7 +381,10 @@ namespace Model
      * <code>index</code> and the unique identifier is the resource ID. Example:
      * <code>table/my-table/index/my-table-index</code>.</p> </li> <li> <p>Aurora DB
      * cluster - The resource type is <code>cluster</code> and the unique identifier is
-     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> </ul>
+     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> <li>
+     * <p>Amazon SageMaker endpoint variants - The resource type is
+     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> </ul>
      */
     inline PutScheduledActionRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
@@ -390,17 +408,21 @@ namespace Model
      * <code>index</code> and the unique identifier is the resource ID. Example:
      * <code>table/my-table/index/my-table-index</code>.</p> </li> <li> <p>Aurora DB
      * cluster - The resource type is <code>cluster</code> and the unique identifier is
-     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> </ul>
+     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> <li>
+     * <p>Amazon SageMaker endpoint variants - The resource type is
+     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> </ul>
      */
     inline PutScheduledActionRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
 
     /**
-     * <p>The scalable dimension. This string consists of the service namespace,
-     * resource type, and scaling property.</p> <ul> <li> <p>
-     * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
-     * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
-     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
+     * <p>The scalable dimension. This parameter is required if you are creating a
+     * scheduled action. This string consists of the service namespace, resource type,
+     * and scaling property.</p> <ul> <li> <p> <code>ecs:service:DesiredCount</code> -
+     * The desired task count of an ECS service.</p> </li> <li> <p>
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a
+     * Spot fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
@@ -414,17 +436,19 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li>
-     * </ul>
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li> <li>
+     * <p> <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
+     * instances for an Amazon SageMaker model endpoint variant.</p> </li> </ul>
      */
     inline const ScalableDimension& GetScalableDimension() const{ return m_scalableDimension; }
 
     /**
-     * <p>The scalable dimension. This string consists of the service namespace,
-     * resource type, and scaling property.</p> <ul> <li> <p>
-     * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
-     * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
-     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
+     * <p>The scalable dimension. This parameter is required if you are creating a
+     * scheduled action. This string consists of the service namespace, resource type,
+     * and scaling property.</p> <ul> <li> <p> <code>ecs:service:DesiredCount</code> -
+     * The desired task count of an ECS service.</p> </li> <li> <p>
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a
+     * Spot fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
@@ -438,17 +462,19 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li>
-     * </ul>
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li> <li>
+     * <p> <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
+     * instances for an Amazon SageMaker model endpoint variant.</p> </li> </ul>
      */
     inline void SetScalableDimension(const ScalableDimension& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
 
     /**
-     * <p>The scalable dimension. This string consists of the service namespace,
-     * resource type, and scaling property.</p> <ul> <li> <p>
-     * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
-     * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
-     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
+     * <p>The scalable dimension. This parameter is required if you are creating a
+     * scheduled action. This string consists of the service namespace, resource type,
+     * and scaling property.</p> <ul> <li> <p> <code>ecs:service:DesiredCount</code> -
+     * The desired task count of an ECS service.</p> </li> <li> <p>
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a
+     * Spot fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
@@ -462,17 +488,19 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li>
-     * </ul>
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li> <li>
+     * <p> <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
+     * instances for an Amazon SageMaker model endpoint variant.</p> </li> </ul>
      */
     inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = std::move(value); }
 
     /**
-     * <p>The scalable dimension. This string consists of the service namespace,
-     * resource type, and scaling property.</p> <ul> <li> <p>
-     * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
-     * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
-     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
+     * <p>The scalable dimension. This parameter is required if you are creating a
+     * scheduled action. This string consists of the service namespace, resource type,
+     * and scaling property.</p> <ul> <li> <p> <code>ecs:service:DesiredCount</code> -
+     * The desired task count of an ECS service.</p> </li> <li> <p>
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a
+     * Spot fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
@@ -486,17 +514,19 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li>
-     * </ul>
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li> <li>
+     * <p> <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
+     * instances for an Amazon SageMaker model endpoint variant.</p> </li> </ul>
      */
     inline PutScheduledActionRequest& WithScalableDimension(const ScalableDimension& value) { SetScalableDimension(value); return *this;}
 
     /**
-     * <p>The scalable dimension. This string consists of the service namespace,
-     * resource type, and scaling property.</p> <ul> <li> <p>
-     * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
-     * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
-     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
+     * <p>The scalable dimension. This parameter is required if you are creating a
+     * scheduled action. This string consists of the service namespace, resource type,
+     * and scaling property.</p> <ul> <li> <p> <code>ecs:service:DesiredCount</code> -
+     * The desired task count of an ECS service.</p> </li> <li> <p>
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a
+     * Spot fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
@@ -510,8 +540,9 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li>
-     * </ul>
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li> <li>
+     * <p> <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
+     * instances for an Amazon SageMaker model endpoint variant.</p> </li> </ul>
      */
     inline PutScheduledActionRequest& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
 

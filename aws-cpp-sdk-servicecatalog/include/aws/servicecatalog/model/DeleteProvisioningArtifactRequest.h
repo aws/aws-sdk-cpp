@@ -131,44 +131,37 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the provisioning artifact for the delete request. This is
-     * sometimes referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline const Aws::String& GetProvisioningArtifactId() const{ return m_provisioningArtifactId; }
 
     /**
-     * <p>The identifier of the provisioning artifact for the delete request. This is
-     * sometimes referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline void SetProvisioningArtifactId(const Aws::String& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = value; }
 
     /**
-     * <p>The identifier of the provisioning artifact for the delete request. This is
-     * sometimes referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline void SetProvisioningArtifactId(Aws::String&& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = std::move(value); }
 
     /**
-     * <p>The identifier of the provisioning artifact for the delete request. This is
-     * sometimes referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline void SetProvisioningArtifactId(const char* value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId.assign(value); }
 
     /**
-     * <p>The identifier of the provisioning artifact for the delete request. This is
-     * sometimes referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline DeleteProvisioningArtifactRequest& WithProvisioningArtifactId(const Aws::String& value) { SetProvisioningArtifactId(value); return *this;}
 
     /**
-     * <p>The identifier of the provisioning artifact for the delete request. This is
-     * sometimes referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline DeleteProvisioningArtifactRequest& WithProvisioningArtifactId(Aws::String&& value) { SetProvisioningArtifactId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the provisioning artifact for the delete request. This is
-     * sometimes referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline DeleteProvisioningArtifactRequest& WithProvisioningArtifactId(const char* value) { SetProvisioningArtifactId(value); return *this;}
 

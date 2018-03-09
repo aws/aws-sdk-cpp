@@ -31,6 +31,9 @@ namespace Aws
       {
 
         static const int SMS_MFA_HASH = HashingUtils::HashString("SMS_MFA");
+        static const int SOFTWARE_TOKEN_MFA_HASH = HashingUtils::HashString("SOFTWARE_TOKEN_MFA");
+        static const int SELECT_MFA_TYPE_HASH = HashingUtils::HashString("SELECT_MFA_TYPE");
+        static const int MFA_SETUP_HASH = HashingUtils::HashString("MFA_SETUP");
         static const int PASSWORD_VERIFIER_HASH = HashingUtils::HashString("PASSWORD_VERIFIER");
         static const int CUSTOM_CHALLENGE_HASH = HashingUtils::HashString("CUSTOM_CHALLENGE");
         static const int DEVICE_SRP_AUTH_HASH = HashingUtils::HashString("DEVICE_SRP_AUTH");
@@ -45,6 +48,18 @@ namespace Aws
           if (hashCode == SMS_MFA_HASH)
           {
             return ChallengeNameType::SMS_MFA;
+          }
+          else if (hashCode == SOFTWARE_TOKEN_MFA_HASH)
+          {
+            return ChallengeNameType::SOFTWARE_TOKEN_MFA;
+          }
+          else if (hashCode == SELECT_MFA_TYPE_HASH)
+          {
+            return ChallengeNameType::SELECT_MFA_TYPE;
+          }
+          else if (hashCode == MFA_SETUP_HASH)
+          {
+            return ChallengeNameType::MFA_SETUP;
           }
           else if (hashCode == PASSWORD_VERIFIER_HASH)
           {
@@ -86,6 +101,12 @@ namespace Aws
           {
           case ChallengeNameType::SMS_MFA:
             return "SMS_MFA";
+          case ChallengeNameType::SOFTWARE_TOKEN_MFA:
+            return "SOFTWARE_TOKEN_MFA";
+          case ChallengeNameType::SELECT_MFA_TYPE:
+            return "SELECT_MFA_TYPE";
+          case ChallengeNameType::MFA_SETUP:
+            return "MFA_SETUP";
           case ChallengeNameType::PASSWORD_VERIFIER:
             return "PASSWORD_VERIFIER";
           case ChallengeNameType::CUSTOM_CHALLENGE:

@@ -48,7 +48,6 @@ public class CppViewHelper {
         CORAL_TO_JSON_CPP_TYPE_MAPPING.put("long", "Int64");
         CORAL_TO_JSON_CPP_TYPE_MAPPING.put("integer", "Integer");
         CORAL_TO_JSON_CPP_TYPE_MAPPING.put("string", "String");
-        CORAL_TO_JSON_CPP_TYPE_MAPPING.put("timestamp", "Double");
         CORAL_TO_JSON_CPP_TYPE_MAPPING.put("boolean", "Bool");
         CORAL_TO_JSON_CPP_TYPE_MAPPING.put("double", "Double");
         CORAL_TO_JSON_CPP_TYPE_MAPPING.put("map", "Object");
@@ -56,6 +55,10 @@ public class CppViewHelper {
         CORAL_TO_JSON_CPP_TYPE_MAPPING.put("structure", "Object");
         CORAL_TO_JSON_CPP_TYPE_MAPPING.put("blob", "String");
         CORAL_TO_JSON_CPP_TYPE_MAPPING.put("float", "Double");
+        CORAL_TO_JSON_CPP_TYPE_MAPPING.put("timestamp", "Double");
+        CORAL_TO_JSON_CPP_TYPE_MAPPING.put("unixtimestamp", "Double");
+        CORAL_TO_JSON_CPP_TYPE_MAPPING.put("rfc822", "String");
+        CORAL_TO_JSON_CPP_TYPE_MAPPING.put("iso8601", "String");
 
         CORAL_TO_XML_CONVERSION_MAPPING.put("long", "StringUtils::ConvertToInt64");
         CORAL_TO_XML_CONVERSION_MAPPING.put("integer", "StringUtils::ConvertToInt32");
@@ -152,6 +155,9 @@ public class CppViewHelper {
     }
 
     public static String computeJsonCppType(Shape shape) {
+        if("timestamp" == shape.getType() && shape.getTimestampFormat() != null) {
+            return CORAL_TO_JSON_CPP_TYPE_MAPPING.get(shape.getTimestampFormat().toLowerCase());
+        }
         return CORAL_TO_JSON_CPP_TYPE_MAPPING.get(shape.getType());
     }
 

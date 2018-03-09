@@ -64,15 +64,15 @@ using namespace Aws::Utils;
 namespace
 {
 
-    Aws::String BASE_CREATE_BUCKET_TEST_NAME = "createbuckettest";
-    Aws::String BASE_DNS_UNFRIENDLY_TEST_NAME = "dns.unfriendly";
-    Aws::String BASE_LOCATION_BUCKET_TEST_NAME = "locbuckettest";
-    Aws::String BASE_PUT_OBJECTS_BUCKET_NAME = "putobjecttest";
-    Aws::String BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME = "charsetstest";
-    Aws::String BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME = "presignedtest";
-    Aws::String BASE_PUT_MULTIPART_BUCKET_NAME = "putobjectmultiparttest";
-    Aws::String BASE_ERRORS_TESTING_BUCKET = "errorstest";
-    Aws::String BASE_INTERRUPT_TESTING_BUCKET = "interrupttest";
+    static std::string BASE_CREATE_BUCKET_TEST_NAME = "createbuckettest";
+    static std::string BASE_DNS_UNFRIENDLY_TEST_NAME = "dns.unfriendly";
+    static std::string BASE_LOCATION_BUCKET_TEST_NAME = "locbuckettest";
+    static std::string BASE_PUT_OBJECTS_BUCKET_NAME = "putobjecttest";
+    static std::string BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME = "charsetstest";
+    static std::string BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME = "presignedtest";
+    static std::string BASE_PUT_MULTIPART_BUCKET_NAME = "putobjectmultiparttest";
+    static std::string BASE_ERRORS_TESTING_BUCKET = "errorstest";
+    static std::string BASE_INTERRUPT_TESTING_BUCKET = "interrupttest";
     static const char* ALLOCATION_TAG = "BucketAndObjectOperationTest";
     static const char* TEST_OBJ_KEY = "TestObjectKey";
     static const char* TEST_NOT_MODIFIED_OBJ_KEY = "TestNotModifiedObjectKey";
@@ -84,13 +84,12 @@ namespace
 
     static const int TIMEOUT_MAX = 10;
 
-    void AppendUUID(Aws::String& bucketName)
+    void AppendUUID(std::string& bucketName)
     {
         using Aws::Utils::UUID;
         Aws::StringStream s;
         s << bucketName << "-" << static_cast<Aws::String>(UUID::RandomUUID());
-        bucketName = Aws::Utils::StringUtils::ToLower(s.str().c_str());
-
+        bucketName = Aws::Utils::StringUtils::ToLower(s.str().c_str()).c_str();
     }
 
     void EnsureUniqueBucketNames()
@@ -153,15 +152,15 @@ namespace
 
         static void TearDownTestCase()
         {
-            DeleteBucket(CalculateBucketName(BASE_CREATE_BUCKET_TEST_NAME));
-            DeleteBucket(CalculateBucketName(BASE_DNS_UNFRIENDLY_TEST_NAME));
-            DeleteBucket(CalculateBucketName(BASE_LOCATION_BUCKET_TEST_NAME));
-            DeleteBucket(CalculateBucketName(BASE_PUT_OBJECTS_BUCKET_NAME));
-            DeleteBucket(CalculateBucketName(BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME));
-            DeleteBucket(CalculateBucketName(BASE_PUT_MULTIPART_BUCKET_NAME));
-            DeleteBucket(CalculateBucketName(BASE_ERRORS_TESTING_BUCKET));
-            DeleteBucket(CalculateBucketName(BASE_INTERRUPT_TESTING_BUCKET));
-            DeleteBucket(CalculateBucketName(BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME));
+            DeleteBucket(CalculateBucketName(BASE_CREATE_BUCKET_TEST_NAME.c_str()));
+            DeleteBucket(CalculateBucketName(BASE_DNS_UNFRIENDLY_TEST_NAME.c_str()));
+            DeleteBucket(CalculateBucketName(BASE_LOCATION_BUCKET_TEST_NAME.c_str()));
+            DeleteBucket(CalculateBucketName(BASE_PUT_OBJECTS_BUCKET_NAME.c_str()));
+            DeleteBucket(CalculateBucketName(BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME.c_str()));
+            DeleteBucket(CalculateBucketName(BASE_PUT_MULTIPART_BUCKET_NAME.c_str()));
+            DeleteBucket(CalculateBucketName(BASE_ERRORS_TESTING_BUCKET.c_str()));
+            DeleteBucket(CalculateBucketName(BASE_INTERRUPT_TESTING_BUCKET.c_str()));
+            DeleteBucket(CalculateBucketName(BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME.c_str()));
             Limiter = nullptr;
             Client = nullptr;
             oregonClient = nullptr;
@@ -222,7 +221,7 @@ namespace
             ASSERT_EQ(ss.str(), outcome.GetResult().GetETag());
         }
 
-        static bool WaitForBucketToPropagate(const Aws::String& bucketName, const std::shared_ptr<S3Client> client = Client)
+        static bool WaitForBucketToPropagate(const Aws::String& bucketName, const std::shared_ptr<S3Client>& client = Client)
         {
             unsigned timeoutCount = 0;
             while (timeoutCount++ < TIMEOUT_MAX)
@@ -336,7 +335,7 @@ namespace
 
     TEST_F(BucketAndObjectOperationTest, TestInterrupt)
     {
-        Aws::String fullBucketName = CalculateBucketName(BASE_INTERRUPT_TESTING_BUCKET);
+        Aws::String fullBucketName = CalculateBucketName(BASE_INTERRUPT_TESTING_BUCKET.c_str());
 
         CreateBucketRequest createBucketRequest;
         createBucketRequest.SetBucket(fullBucketName);
@@ -397,7 +396,7 @@ namespace
 
     TEST_F(BucketAndObjectOperationTest, TestBucketCreationAndListing)
     {
-        Aws::String fullBucketName = CalculateBucketName(BASE_CREATE_BUCKET_TEST_NAME);
+        Aws::String fullBucketName = CalculateBucketName(BASE_CREATE_BUCKET_TEST_NAME.c_str());
         HeadBucketRequest headBucketRequest;
         headBucketRequest.SetBucket(fullBucketName);
         HeadBucketOutcome headBucketOutcome = Client->HeadBucket(headBucketRequest);
@@ -455,7 +454,7 @@ namespace
     //Create a bucket somewhere other than US Standard and ensure the location is correctly shown later
     TEST_F(BucketAndObjectOperationTest, TestBucketLocation)
     {
-        Aws::String fullBucketName = CalculateBucketName(BASE_LOCATION_BUCKET_TEST_NAME);
+        Aws::String fullBucketName = CalculateBucketName(BASE_LOCATION_BUCKET_TEST_NAME.c_str());
         HeadBucketRequest headBucketRequest;
         headBucketRequest.SetBucket(fullBucketName);
         HeadBucketOutcome headBucketOutcome = oregonClient->HeadBucket(headBucketRequest);
@@ -487,7 +486,7 @@ namespace
 
     TEST_F(BucketAndObjectOperationTest, TestObjectOperations)
     {
-        Aws::String fullBucketName = CalculateBucketName(BASE_PUT_OBJECTS_BUCKET_NAME);
+        Aws::String fullBucketName = CalculateBucketName(BASE_PUT_OBJECTS_BUCKET_NAME.c_str());
 
         CreateBucketRequest createBucketRequest;
         createBucketRequest.SetBucket(fullBucketName);
@@ -566,7 +565,7 @@ namespace
 
     TEST_F(BucketAndObjectOperationTest, TestKeysWithCrazyCharacterSets)
     {
-        Aws::String fullBucketName = CalculateBucketName(BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME);
+        Aws::String fullBucketName = CalculateBucketName(BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME.c_str());
 
         CreateBucketRequest createBucketRequest;
         createBucketRequest.SetBucket(fullBucketName);
@@ -660,7 +659,7 @@ namespace
 
     TEST_F(BucketAndObjectOperationTest, TestObjectOperationsWithPresignedUrls)
     {
-        Aws::String fullBucketName = CalculateBucketName(BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME);
+        Aws::String fullBucketName = CalculateBucketName(BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME.c_str());
 
         CreateBucketRequest createBucketRequest;
         createBucketRequest.SetBucket(fullBucketName);
@@ -710,7 +709,7 @@ namespace
     TEST_F(BucketAndObjectOperationTest, TestMultiPartObjectOperations)
     {
         const char* multipartKeyName = "MultiPartKey";
-        Aws::String fullBucketName = CalculateBucketName(BASE_PUT_MULTIPART_BUCKET_NAME);
+        Aws::String fullBucketName = CalculateBucketName(BASE_PUT_MULTIPART_BUCKET_NAME.c_str());
         CreateBucketRequest createBucketRequest;
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
@@ -920,7 +919,7 @@ namespace
 
     TEST_F(BucketAndObjectOperationTest, TestThatErrorsParse)
     {
-        Aws::String fullBucketName = CalculateBucketName(BASE_ERRORS_TESTING_BUCKET);
+        Aws::String fullBucketName = CalculateBucketName(BASE_ERRORS_TESTING_BUCKET.c_str());
 
         ListObjectsRequest listObjectsRequest;
         listObjectsRequest.SetBucket("abcdedoikengi");
@@ -947,7 +946,7 @@ namespace
 
     TEST_F(BucketAndObjectOperationTest, TestNotModifiedIsSuccess)
     {
-        Aws::String fullBucketName = CalculateBucketName(BASE_PUT_OBJECTS_BUCKET_NAME);
+        Aws::String fullBucketName = CalculateBucketName(BASE_PUT_OBJECTS_BUCKET_NAME.c_str());
         CreateBucketRequest createBucketRequest;
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
@@ -980,7 +979,7 @@ namespace
 
     TEST_F(BucketAndObjectOperationTest, TestVirtualAddressingWithUnfriendlyBucketName)
     {
-        Aws::String fullBucketName = CalculateBucketName(BASE_DNS_UNFRIENDLY_TEST_NAME);
+        Aws::String fullBucketName = CalculateBucketName(BASE_DNS_UNFRIENDLY_TEST_NAME.c_str());
         CreateBucketRequest createBucketRequest;
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);

@@ -45,7 +45,8 @@ Image::Image() :
     m_stateChangeReasonHasBeenSet(false),
     m_applicationsHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_publicBaseImageReleasedDateHasBeenSet(false)
+    m_publicBaseImageReleasedDateHasBeenSet(false),
+    m_appstreamAgentVersionHasBeenSet(false)
 {
 }
 
@@ -66,7 +67,8 @@ Image::Image(const JsonValue& jsonValue) :
     m_stateChangeReasonHasBeenSet(false),
     m_applicationsHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_publicBaseImageReleasedDateHasBeenSet(false)
+    m_publicBaseImageReleasedDateHasBeenSet(false),
+    m_appstreamAgentVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -167,6 +169,13 @@ Image& Image::operator =(const JsonValue& jsonValue)
     m_publicBaseImageReleasedDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AppstreamAgentVersion"))
+  {
+    m_appstreamAgentVersion = jsonValue.GetString("AppstreamAgentVersion");
+
+    m_appstreamAgentVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -250,6 +259,12 @@ JsonValue Image::Jsonize() const
   if(m_publicBaseImageReleasedDateHasBeenSet)
   {
    payload.WithDouble("PublicBaseImageReleasedDate", m_publicBaseImageReleasedDate.SecondsWithMSPrecision());
+  }
+
+  if(m_appstreamAgentVersionHasBeenSet)
+  {
+   payload.WithString("AppstreamAgentVersion", m_appstreamAgentVersion);
+
   }
 
   return payload;

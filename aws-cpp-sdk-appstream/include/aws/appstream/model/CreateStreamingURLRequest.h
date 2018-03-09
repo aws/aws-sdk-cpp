@@ -153,92 +153,113 @@ namespace Model
 
 
     /**
-     * <p>The ID of the application that must be launched after the session starts.</p>
+     * <p>The name of the application to launch after the session starts. This is the
+     * name that you specified as <b>Name</b> in the Image Assistant.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * <p>The ID of the application that must be launched after the session starts.</p>
+     * <p>The name of the application to launch after the session starts. This is the
+     * name that you specified as <b>Name</b> in the Image Assistant.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * <p>The ID of the application that must be launched after the session starts.</p>
+     * <p>The name of the application to launch after the session starts. This is the
+     * name that you specified as <b>Name</b> in the Image Assistant.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * <p>The ID of the application that must be launched after the session starts.</p>
+     * <p>The name of the application to launch after the session starts. This is the
+     * name that you specified as <b>Name</b> in the Image Assistant.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * <p>The ID of the application that must be launched after the session starts.</p>
+     * <p>The name of the application to launch after the session starts. This is the
+     * name that you specified as <b>Name</b> in the Image Assistant.</p>
      */
     inline CreateStreamingURLRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * <p>The ID of the application that must be launched after the session starts.</p>
+     * <p>The name of the application to launch after the session starts. This is the
+     * name that you specified as <b>Name</b> in the Image Assistant.</p>
      */
     inline CreateStreamingURLRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the application that must be launched after the session starts.</p>
+     * <p>The name of the application to launch after the session starts. This is the
+     * name that you specified as <b>Name</b> in the Image Assistant.</p>
      */
     inline CreateStreamingURLRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
     /**
      * <p>The time that the streaming URL will be valid, in seconds. Specify a value
-     * between 1 and 604800 seconds.</p>
+     * between 1 and 604800 seconds. The default is 60 seconds.</p>
      */
     inline long long GetValidity() const{ return m_validity; }
 
     /**
      * <p>The time that the streaming URL will be valid, in seconds. Specify a value
-     * between 1 and 604800 seconds.</p>
+     * between 1 and 604800 seconds. The default is 60 seconds.</p>
      */
     inline void SetValidity(long long value) { m_validityHasBeenSet = true; m_validity = value; }
 
     /**
      * <p>The time that the streaming URL will be valid, in seconds. Specify a value
-     * between 1 and 604800 seconds.</p>
+     * between 1 and 604800 seconds. The default is 60 seconds.</p>
      */
     inline CreateStreamingURLRequest& WithValidity(long long value) { SetValidity(value); return *this;}
 
 
     /**
-     * <p>The session context of the streaming URL.</p>
+     * <p>The session context. For more information, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session
+     * Context</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
      */
     inline const Aws::String& GetSessionContext() const{ return m_sessionContext; }
 
     /**
-     * <p>The session context of the streaming URL.</p>
+     * <p>The session context. For more information, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session
+     * Context</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
      */
     inline void SetSessionContext(const Aws::String& value) { m_sessionContextHasBeenSet = true; m_sessionContext = value; }
 
     /**
-     * <p>The session context of the streaming URL.</p>
+     * <p>The session context. For more information, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session
+     * Context</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
      */
     inline void SetSessionContext(Aws::String&& value) { m_sessionContextHasBeenSet = true; m_sessionContext = std::move(value); }
 
     /**
-     * <p>The session context of the streaming URL.</p>
+     * <p>The session context. For more information, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session
+     * Context</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
      */
     inline void SetSessionContext(const char* value) { m_sessionContextHasBeenSet = true; m_sessionContext.assign(value); }
 
     /**
-     * <p>The session context of the streaming URL.</p>
+     * <p>The session context. For more information, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session
+     * Context</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
      */
     inline CreateStreamingURLRequest& WithSessionContext(const Aws::String& value) { SetSessionContext(value); return *this;}
 
     /**
-     * <p>The session context of the streaming URL.</p>
+     * <p>The session context. For more information, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session
+     * Context</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
      */
     inline CreateStreamingURLRequest& WithSessionContext(Aws::String&& value) { SetSessionContext(std::move(value)); return *this;}
 
     /**
-     * <p>The session context of the streaming URL.</p>
+     * <p>The session context. For more information, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session
+     * Context</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
      */
     inline CreateStreamingURLRequest& WithSessionContext(const char* value) { SetSessionContext(value); return *this;}
 

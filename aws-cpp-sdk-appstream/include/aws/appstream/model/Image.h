@@ -162,37 +162,37 @@ namespace Model
 
 
     /**
-     * <p>The image name displayed to end users.</p>
+     * <p>The image name for display.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * <p>The image name displayed to end users.</p>
+     * <p>The image name for display.</p>
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
-     * <p>The image name displayed to end users.</p>
+     * <p>The image name for display.</p>
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
-     * <p>The image name displayed to end users.</p>
+     * <p>The image name for display.</p>
      */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
-     * <p>The image name displayed to end users.</p>
+     * <p>The image name for display.</p>
      */
     inline Image& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>The image name displayed to end users.</p>
+     * <p>The image name for display.</p>
      */
     inline Image& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
-     * <p>The image name displayed to end users.</p>
+     * <p>The image name for display.</p>
      */
     inline Image& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
@@ -302,37 +302,37 @@ namespace Model
 
 
     /**
-     * <p>The description displayed to end users.</p>
+     * <p>The description for display.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description displayed to end users.</p>
+     * <p>The description for display.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description displayed to end users.</p>
+     * <p>The description for display.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description displayed to end users.</p>
+     * <p>The description for display.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description displayed to end users.</p>
+     * <p>The description for display.</p>
      */
     inline Image& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description displayed to end users.</p>
+     * <p>The description for display.</p>
      */
     inline Image& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description displayed to end users.</p>
+     * <p>The description for display.</p>
      */
     inline Image& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -455,6 +455,49 @@ namespace Model
      */
     inline Image& WithPublicBaseImageReleasedDate(Aws::Utils::DateTime&& value) { SetPublicBaseImageReleasedDate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The version of the AppStream 2.0 agent to use for instances that are launched
+     * from this image. </p>
+     */
+    inline const Aws::String& GetAppstreamAgentVersion() const{ return m_appstreamAgentVersion; }
+
+    /**
+     * <p>The version of the AppStream 2.0 agent to use for instances that are launched
+     * from this image. </p>
+     */
+    inline void SetAppstreamAgentVersion(const Aws::String& value) { m_appstreamAgentVersionHasBeenSet = true; m_appstreamAgentVersion = value; }
+
+    /**
+     * <p>The version of the AppStream 2.0 agent to use for instances that are launched
+     * from this image. </p>
+     */
+    inline void SetAppstreamAgentVersion(Aws::String&& value) { m_appstreamAgentVersionHasBeenSet = true; m_appstreamAgentVersion = std::move(value); }
+
+    /**
+     * <p>The version of the AppStream 2.0 agent to use for instances that are launched
+     * from this image. </p>
+     */
+    inline void SetAppstreamAgentVersion(const char* value) { m_appstreamAgentVersionHasBeenSet = true; m_appstreamAgentVersion.assign(value); }
+
+    /**
+     * <p>The version of the AppStream 2.0 agent to use for instances that are launched
+     * from this image. </p>
+     */
+    inline Image& WithAppstreamAgentVersion(const Aws::String& value) { SetAppstreamAgentVersion(value); return *this;}
+
+    /**
+     * <p>The version of the AppStream 2.0 agent to use for instances that are launched
+     * from this image. </p>
+     */
+    inline Image& WithAppstreamAgentVersion(Aws::String&& value) { SetAppstreamAgentVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The version of the AppStream 2.0 agent to use for instances that are launched
+     * from this image. </p>
+     */
+    inline Image& WithAppstreamAgentVersion(const char* value) { SetAppstreamAgentVersion(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -495,6 +538,9 @@ namespace Model
 
     Aws::Utils::DateTime m_publicBaseImageReleasedDate;
     bool m_publicBaseImageReleasedDateHasBeenSet;
+
+    Aws::String m_appstreamAgentVersion;
+    bool m_appstreamAgentVersionHasBeenSet;
   };
 
 } // namespace Model

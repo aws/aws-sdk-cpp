@@ -23,7 +23,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DescribeClustersRequest::DescribeClustersRequest() : 
-    m_clustersHasBeenSet(false)
+    m_clustersHasBeenSet(false),
+    m_includeHasBeenSet(false)
 {
 }
 
@@ -39,6 +40,17 @@ Aws::String DescribeClustersRequest::SerializePayload() const
      clustersJsonList[clustersIndex].AsString(m_clusters[clustersIndex]);
    }
    payload.WithArray("clusters", std::move(clustersJsonList));
+
+  }
+
+  if(m_includeHasBeenSet)
+  {
+   Array<JsonValue> includeJsonList(m_include.size());
+   for(unsigned includeIndex = 0; includeIndex < includeJsonList.GetLength(); ++includeIndex)
+   {
+     includeJsonList[includeIndex].AsString(ClusterFieldMapper::GetNameForClusterField(m_include[includeIndex]));
+   }
+   payload.WithArray("include", std::move(includeJsonList));
 
   }
 

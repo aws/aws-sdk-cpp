@@ -40,6 +40,9 @@ Deployment::Deployment() :
     m_runningCountHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
+    m_launchType(LaunchType::NOT_SET),
+    m_launchTypeHasBeenSet(false),
+    m_platformVersionHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false)
 {
 }
@@ -56,6 +59,9 @@ Deployment::Deployment(const JsonValue& jsonValue) :
     m_runningCountHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
+    m_launchType(LaunchType::NOT_SET),
+    m_launchTypeHasBeenSet(false),
+    m_platformVersionHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
@@ -119,6 +125,20 @@ Deployment& Deployment::operator =(const JsonValue& jsonValue)
     m_updatedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("launchType"))
+  {
+    m_launchType = LaunchTypeMapper::GetLaunchTypeForName(jsonValue.GetString("launchType"));
+
+    m_launchTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("platformVersion"))
+  {
+    m_platformVersion = jsonValue.GetString("platformVersion");
+
+    m_platformVersionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("networkConfiguration"))
   {
     m_networkConfiguration = jsonValue.GetObject("networkConfiguration");
@@ -177,6 +197,17 @@ JsonValue Deployment::Jsonize() const
   if(m_updatedAtHasBeenSet)
   {
    payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_launchTypeHasBeenSet)
+  {
+   payload.WithString("launchType", LaunchTypeMapper::GetNameForLaunchType(m_launchType));
+  }
+
+  if(m_platformVersionHasBeenSet)
+  {
+   payload.WithString("platformVersion", m_platformVersion);
+
   }
 
   if(m_networkConfigurationHasBeenSet)

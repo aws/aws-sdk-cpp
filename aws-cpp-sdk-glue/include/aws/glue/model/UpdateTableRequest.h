@@ -89,37 +89,44 @@ namespace Model
 
 
     /**
-     * <p>The name of the catalog database in which the table resides.</p>
+     * <p>The name of the catalog database in which the table resides. For Hive
+     * compatibility, this name is entirely lowercase.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
 
     /**
-     * <p>The name of the catalog database in which the table resides.</p>
+     * <p>The name of the catalog database in which the table resides. For Hive
+     * compatibility, this name is entirely lowercase.</p>
      */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /**
-     * <p>The name of the catalog database in which the table resides.</p>
+     * <p>The name of the catalog database in which the table resides. For Hive
+     * compatibility, this name is entirely lowercase.</p>
      */
     inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
 
     /**
-     * <p>The name of the catalog database in which the table resides.</p>
+     * <p>The name of the catalog database in which the table resides. For Hive
+     * compatibility, this name is entirely lowercase.</p>
      */
     inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
 
     /**
-     * <p>The name of the catalog database in which the table resides.</p>
+     * <p>The name of the catalog database in which the table resides. For Hive
+     * compatibility, this name is entirely lowercase.</p>
      */
     inline UpdateTableRequest& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
 
     /**
-     * <p>The name of the catalog database in which the table resides.</p>
+     * <p>The name of the catalog database in which the table resides. For Hive
+     * compatibility, this name is entirely lowercase.</p>
      */
     inline UpdateTableRequest& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the catalog database in which the table resides.</p>
+     * <p>The name of the catalog database in which the table resides. For Hive
+     * compatibility, this name is entirely lowercase.</p>
      */
     inline UpdateTableRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 
@@ -154,6 +161,28 @@ namespace Model
      */
     inline UpdateTableRequest& WithTableInput(TableInput&& value) { SetTableInput(std::move(value)); return *this;}
 
+
+    /**
+     * <p>By default, <code>UpdateTable</code> always creates an archived version of
+     * the table before updating it. If <code>skipArchive</code> is set to true,
+     * however, <code>UpdateTable</code> does not create the archived version.</p>
+     */
+    inline bool GetSkipArchive() const{ return m_skipArchive; }
+
+    /**
+     * <p>By default, <code>UpdateTable</code> always creates an archived version of
+     * the table before updating it. If <code>skipArchive</code> is set to true,
+     * however, <code>UpdateTable</code> does not create the archived version.</p>
+     */
+    inline void SetSkipArchive(bool value) { m_skipArchiveHasBeenSet = true; m_skipArchive = value; }
+
+    /**
+     * <p>By default, <code>UpdateTable</code> always creates an archived version of
+     * the table before updating it. If <code>skipArchive</code> is set to true,
+     * however, <code>UpdateTable</code> does not create the archived version.</p>
+     */
+    inline UpdateTableRequest& WithSkipArchive(bool value) { SetSkipArchive(value); return *this;}
+
   private:
 
     Aws::String m_catalogId;
@@ -164,6 +193,9 @@ namespace Model
 
     TableInput m_tableInput;
     bool m_tableInputHasBeenSet;
+
+    bool m_skipArchive;
+    bool m_skipArchiveHasBeenSet;
   };
 
 } // namespace Model

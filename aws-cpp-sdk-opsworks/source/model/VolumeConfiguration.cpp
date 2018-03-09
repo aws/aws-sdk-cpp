@@ -38,7 +38,9 @@ VolumeConfiguration::VolumeConfiguration() :
     m_sizeHasBeenSet(false),
     m_volumeTypeHasBeenSet(false),
     m_iops(0),
-    m_iopsHasBeenSet(false)
+    m_iopsHasBeenSet(false),
+    m_encrypted(false),
+    m_encryptedHasBeenSet(false)
 {
 }
 
@@ -52,7 +54,9 @@ VolumeConfiguration::VolumeConfiguration(const JsonValue& jsonValue) :
     m_sizeHasBeenSet(false),
     m_volumeTypeHasBeenSet(false),
     m_iops(0),
-    m_iopsHasBeenSet(false)
+    m_iopsHasBeenSet(false),
+    m_encrypted(false),
+    m_encryptedHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -101,6 +105,13 @@ VolumeConfiguration& VolumeConfiguration::operator =(const JsonValue& jsonValue)
     m_iopsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Encrypted"))
+  {
+    m_encrypted = jsonValue.GetBool("Encrypted");
+
+    m_encryptedHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -141,6 +152,12 @@ JsonValue VolumeConfiguration::Jsonize() const
   if(m_iopsHasBeenSet)
   {
    payload.WithInteger("Iops", m_iops);
+
+  }
+
+  if(m_encryptedHasBeenSet)
+  {
+   payload.WithBool("Encrypted", m_encrypted);
 
   }
 

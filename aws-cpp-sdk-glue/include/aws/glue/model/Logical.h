@@ -26,7 +26,8 @@ namespace Model
   enum class Logical
   {
     NOT_SET,
-    AND
+    AND,
+    ANY
   };
 
 namespace LogicalMapper

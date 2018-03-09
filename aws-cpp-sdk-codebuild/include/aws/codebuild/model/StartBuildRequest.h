@@ -285,6 +285,28 @@ namespace Model
 
 
     /**
+     * <p>The user-defined depth of history, with a minimum value of 0, that overrides,
+     * for this build only, any previous depth of history defined in the build
+     * project.</p>
+     */
+    inline int GetGitCloneDepthOverride() const{ return m_gitCloneDepthOverride; }
+
+    /**
+     * <p>The user-defined depth of history, with a minimum value of 0, that overrides,
+     * for this build only, any previous depth of history defined in the build
+     * project.</p>
+     */
+    inline void SetGitCloneDepthOverride(int value) { m_gitCloneDepthOverrideHasBeenSet = true; m_gitCloneDepthOverride = value; }
+
+    /**
+     * <p>The user-defined depth of history, with a minimum value of 0, that overrides,
+     * for this build only, any previous depth of history defined in the build
+     * project.</p>
+     */
+    inline StartBuildRequest& WithGitCloneDepthOverride(int value) { SetGitCloneDepthOverride(value); return *this;}
+
+
+    /**
      * <p>A build spec declaration that overrides, for this build only, the latest one
      * already defined in the build project.</p>
      */
@@ -361,6 +383,9 @@ namespace Model
 
     Aws::Vector<EnvironmentVariable> m_environmentVariablesOverride;
     bool m_environmentVariablesOverrideHasBeenSet;
+
+    int m_gitCloneDepthOverride;
+    bool m_gitCloneDepthOverrideHasBeenSet;
 
     Aws::String m_buildspecOverride;
     bool m_buildspecOverrideHasBeenSet;

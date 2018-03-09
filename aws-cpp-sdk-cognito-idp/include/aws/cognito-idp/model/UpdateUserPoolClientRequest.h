@@ -18,6 +18,7 @@
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cognito-idp/model/AnalyticsConfigurationType.h>
 #include <aws/cognito-idp/model/ExplicitAuthFlowsType.h>
 #include <aws/cognito-idp/model/OAuthFlowType.h>
 #include <utility>
@@ -609,6 +610,37 @@ namespace Model
      */
     inline UpdateUserPoolClientRequest& WithAllowedOAuthFlowsUserPoolClient(bool value) { SetAllowedOAuthFlowsUserPoolClient(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
+     * user pool.</p>
+     */
+    inline const AnalyticsConfigurationType& GetAnalyticsConfiguration() const{ return m_analyticsConfiguration; }
+
+    /**
+     * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
+     * user pool.</p>
+     */
+    inline void SetAnalyticsConfiguration(const AnalyticsConfigurationType& value) { m_analyticsConfigurationHasBeenSet = true; m_analyticsConfiguration = value; }
+
+    /**
+     * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
+     * user pool.</p>
+     */
+    inline void SetAnalyticsConfiguration(AnalyticsConfigurationType&& value) { m_analyticsConfigurationHasBeenSet = true; m_analyticsConfiguration = std::move(value); }
+
+    /**
+     * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
+     * user pool.</p>
+     */
+    inline UpdateUserPoolClientRequest& WithAnalyticsConfiguration(const AnalyticsConfigurationType& value) { SetAnalyticsConfiguration(value); return *this;}
+
+    /**
+     * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
+     * user pool.</p>
+     */
+    inline UpdateUserPoolClientRequest& WithAnalyticsConfiguration(AnalyticsConfigurationType&& value) { SetAnalyticsConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_userPoolId;
@@ -652,6 +684,9 @@ namespace Model
 
     bool m_allowedOAuthFlowsUserPoolClient;
     bool m_allowedOAuthFlowsUserPoolClientHasBeenSet;
+
+    AnalyticsConfigurationType m_analyticsConfiguration;
+    bool m_analyticsConfigurationHasBeenSet;
   };
 
 } // namespace Model

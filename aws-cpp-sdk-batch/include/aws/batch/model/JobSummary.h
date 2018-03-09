@@ -16,6 +16,9 @@
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/batch/model/JobStatus.h>
+#include <aws/batch/model/ContainerSummary.h>
+#include <aws/batch/model/ArrayPropertiesSummary.h>
 #include <utility>
 
 namespace Aws
@@ -117,6 +120,201 @@ namespace Model
      */
     inline JobSummary& WithJobName(const char* value) { SetJobName(value); return *this;}
 
+
+    /**
+     * <p>The Unix time stamp for when the job was created. For non-array jobs and
+     * parent array jobs, this is when the job entered the <code>SUBMITTED</code> state
+     * (at the time <a>SubmitJob</a> was called). For array child jobs, this is when
+     * the child job was spawned by its parent and entered the <code>PENDING</code>
+     * state.</p>
+     */
+    inline long long GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * <p>The Unix time stamp for when the job was created. For non-array jobs and
+     * parent array jobs, this is when the job entered the <code>SUBMITTED</code> state
+     * (at the time <a>SubmitJob</a> was called). For array child jobs, this is when
+     * the child job was spawned by its parent and entered the <code>PENDING</code>
+     * state.</p>
+     */
+    inline void SetCreatedAt(long long value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+
+    /**
+     * <p>The Unix time stamp for when the job was created. For non-array jobs and
+     * parent array jobs, this is when the job entered the <code>SUBMITTED</code> state
+     * (at the time <a>SubmitJob</a> was called). For array child jobs, this is when
+     * the child job was spawned by its parent and entered the <code>PENDING</code>
+     * state.</p>
+     */
+    inline JobSummary& WithCreatedAt(long long value) { SetCreatedAt(value); return *this;}
+
+
+    /**
+     * <p>The current status for the job.</p>
+     */
+    inline const JobStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The current status for the job.</p>
+     */
+    inline void SetStatus(const JobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The current status for the job.</p>
+     */
+    inline void SetStatus(JobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>The current status for the job.</p>
+     */
+    inline JobSummary& WithStatus(const JobStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The current status for the job.</p>
+     */
+    inline JobSummary& WithStatus(JobStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A short, human-readable string to provide additional details about the
+     * current status of the job.</p>
+     */
+    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+
+    /**
+     * <p>A short, human-readable string to provide additional details about the
+     * current status of the job.</p>
+     */
+    inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
+
+    /**
+     * <p>A short, human-readable string to provide additional details about the
+     * current status of the job.</p>
+     */
+    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
+
+    /**
+     * <p>A short, human-readable string to provide additional details about the
+     * current status of the job.</p>
+     */
+    inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
+
+    /**
+     * <p>A short, human-readable string to provide additional details about the
+     * current status of the job.</p>
+     */
+    inline JobSummary& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
+
+    /**
+     * <p>A short, human-readable string to provide additional details about the
+     * current status of the job.</p>
+     */
+    inline JobSummary& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
+
+    /**
+     * <p>A short, human-readable string to provide additional details about the
+     * current status of the job.</p>
+     */
+    inline JobSummary& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+
+
+    /**
+     * <p>The Unix time stamp for when the job was started (when the job transitioned
+     * from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
+     */
+    inline long long GetStartedAt() const{ return m_startedAt; }
+
+    /**
+     * <p>The Unix time stamp for when the job was started (when the job transitioned
+     * from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
+     */
+    inline void SetStartedAt(long long value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
+
+    /**
+     * <p>The Unix time stamp for when the job was started (when the job transitioned
+     * from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
+     */
+    inline JobSummary& WithStartedAt(long long value) { SetStartedAt(value); return *this;}
+
+
+    /**
+     * <p>The Unix time stamp for when the job was stopped (when the job transitioned
+     * from the <code>RUNNING</code> state to a terminal state, such as
+     * <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+     */
+    inline long long GetStoppedAt() const{ return m_stoppedAt; }
+
+    /**
+     * <p>The Unix time stamp for when the job was stopped (when the job transitioned
+     * from the <code>RUNNING</code> state to a terminal state, such as
+     * <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+     */
+    inline void SetStoppedAt(long long value) { m_stoppedAtHasBeenSet = true; m_stoppedAt = value; }
+
+    /**
+     * <p>The Unix time stamp for when the job was stopped (when the job transitioned
+     * from the <code>RUNNING</code> state to a terminal state, such as
+     * <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+     */
+    inline JobSummary& WithStoppedAt(long long value) { SetStoppedAt(value); return *this;}
+
+
+    /**
+     * <p>An object representing the details of the container that is associated with
+     * the job.</p>
+     */
+    inline const ContainerSummary& GetContainer() const{ return m_container; }
+
+    /**
+     * <p>An object representing the details of the container that is associated with
+     * the job.</p>
+     */
+    inline void SetContainer(const ContainerSummary& value) { m_containerHasBeenSet = true; m_container = value; }
+
+    /**
+     * <p>An object representing the details of the container that is associated with
+     * the job.</p>
+     */
+    inline void SetContainer(ContainerSummary&& value) { m_containerHasBeenSet = true; m_container = std::move(value); }
+
+    /**
+     * <p>An object representing the details of the container that is associated with
+     * the job.</p>
+     */
+    inline JobSummary& WithContainer(const ContainerSummary& value) { SetContainer(value); return *this;}
+
+    /**
+     * <p>An object representing the details of the container that is associated with
+     * the job.</p>
+     */
+    inline JobSummary& WithContainer(ContainerSummary&& value) { SetContainer(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The array properties of the job, if it is an array job.</p>
+     */
+    inline const ArrayPropertiesSummary& GetArrayProperties() const{ return m_arrayProperties; }
+
+    /**
+     * <p>The array properties of the job, if it is an array job.</p>
+     */
+    inline void SetArrayProperties(const ArrayPropertiesSummary& value) { m_arrayPropertiesHasBeenSet = true; m_arrayProperties = value; }
+
+    /**
+     * <p>The array properties of the job, if it is an array job.</p>
+     */
+    inline void SetArrayProperties(ArrayPropertiesSummary&& value) { m_arrayPropertiesHasBeenSet = true; m_arrayProperties = std::move(value); }
+
+    /**
+     * <p>The array properties of the job, if it is an array job.</p>
+     */
+    inline JobSummary& WithArrayProperties(const ArrayPropertiesSummary& value) { SetArrayProperties(value); return *this;}
+
+    /**
+     * <p>The array properties of the job, if it is an array job.</p>
+     */
+    inline JobSummary& WithArrayProperties(ArrayPropertiesSummary&& value) { SetArrayProperties(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_jobId;
@@ -124,6 +322,27 @@ namespace Model
 
     Aws::String m_jobName;
     bool m_jobNameHasBeenSet;
+
+    long long m_createdAt;
+    bool m_createdAtHasBeenSet;
+
+    JobStatus m_status;
+    bool m_statusHasBeenSet;
+
+    Aws::String m_statusReason;
+    bool m_statusReasonHasBeenSet;
+
+    long long m_startedAt;
+    bool m_startedAtHasBeenSet;
+
+    long long m_stoppedAt;
+    bool m_stoppedAtHasBeenSet;
+
+    ContainerSummary m_container;
+    bool m_containerHasBeenSet;
+
+    ArrayPropertiesSummary m_arrayProperties;
+    bool m_arrayPropertiesHasBeenSet;
   };
 
 } // namespace Model

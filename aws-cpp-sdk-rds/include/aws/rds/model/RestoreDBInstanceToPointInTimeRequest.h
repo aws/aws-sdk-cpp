@@ -54,50 +54,50 @@ namespace Model
 
     /**
      * <p>The identifier of the source DB instance from which to restore.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
-     * DBInstance.</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing DB
+     * instance.</p> </li> </ul>
      */
     inline const Aws::String& GetSourceDBInstanceIdentifier() const{ return m_sourceDBInstanceIdentifier; }
 
     /**
      * <p>The identifier of the source DB instance from which to restore.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
-     * DBInstance.</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing DB
+     * instance.</p> </li> </ul>
      */
     inline void SetSourceDBInstanceIdentifier(const Aws::String& value) { m_sourceDBInstanceIdentifierHasBeenSet = true; m_sourceDBInstanceIdentifier = value; }
 
     /**
      * <p>The identifier of the source DB instance from which to restore.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
-     * DBInstance.</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing DB
+     * instance.</p> </li> </ul>
      */
     inline void SetSourceDBInstanceIdentifier(Aws::String&& value) { m_sourceDBInstanceIdentifierHasBeenSet = true; m_sourceDBInstanceIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the source DB instance from which to restore.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
-     * DBInstance.</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing DB
+     * instance.</p> </li> </ul>
      */
     inline void SetSourceDBInstanceIdentifier(const char* value) { m_sourceDBInstanceIdentifierHasBeenSet = true; m_sourceDBInstanceIdentifier.assign(value); }
 
     /**
      * <p>The identifier of the source DB instance from which to restore.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
-     * DBInstance.</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing DB
+     * instance.</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithSourceDBInstanceIdentifier(const Aws::String& value) { SetSourceDBInstanceIdentifier(value); return *this;}
 
     /**
      * <p>The identifier of the source DB instance from which to restore.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
-     * DBInstance.</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing DB
+     * instance.</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithSourceDBInstanceIdentifier(Aws::String&& value) { SetSourceDBInstanceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the source DB instance from which to restore.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
-     * DBInstance.</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing DB
+     * instance.</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithSourceDBInstanceIdentifier(const char* value) { SetSourceDBInstanceIdentifier(value); return *this;}
 
@@ -623,105 +623,91 @@ namespace Model
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
-     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
-     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li> <li> <p>
+     * <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li>
+     * <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se1</code> </p>
+     * </li> <li> <p> <code>oracle-se</code> </p> </li> <li> <p> <code>postgres</code>
+     * </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p>
+     * <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code> </p>
+     * </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
-     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
-     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li> <li> <p>
+     * <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li>
+     * <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se1</code> </p>
+     * </li> <li> <p> <code>oracle-se</code> </p> </li> <li> <p> <code>postgres</code>
+     * </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p>
+     * <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code> </p>
+     * </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
-     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
-     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li> <li> <p>
+     * <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li>
+     * <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se1</code> </p>
+     * </li> <li> <p> <code>oracle-se</code> </p> </li> <li> <p> <code>postgres</code>
+     * </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p>
+     * <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code> </p>
+     * </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
-     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
-     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li> <li> <p>
+     * <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li>
+     * <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se1</code> </p>
+     * </li> <li> <p> <code>oracle-se</code> </p> </li> <li> <p> <code>postgres</code>
+     * </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p>
+     * <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code> </p>
+     * </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
-     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
-     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li> <li> <p>
+     * <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li>
+     * <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se1</code> </p>
+     * </li> <li> <p> <code>oracle-se</code> </p> </li> <li> <p> <code>postgres</code>
+     * </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p>
+     * <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code> </p>
+     * </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
-     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
-     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li> <li> <p>
+     * <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li>
+     * <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se1</code> </p>
+     * </li> <li> <p> <code>oracle-se</code> </p> </li> <li> <p> <code>postgres</code>
+     * </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p>
+     * <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code> </p>
+     * </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
-     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
-     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li> <li> <p>
+     * <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li>
+     * <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se1</code> </p>
+     * </li> <li> <p> <code>oracle-se</code> </p> </li> <li> <p> <code>postgres</code>
+     * </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p>
+     * <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code> </p>
+     * </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -1083,8 +1069,7 @@ namespace Model
      * to database accounts, and otherwise false.</p> <p>You can enable IAM database
      * authentication for the following database engines</p> <ul> <li> <p>For MySQL
      * 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor
-     * version 5.7.16 or higher</p> </li> <li> <p>Aurora 5.6 or higher.</p> </li> </ul>
-     * <p>Default: <code>false</code> </p>
+     * version 5.7.16 or higher</p> </li> </ul> <p>Default: <code>false</code> </p>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
@@ -1093,8 +1078,7 @@ namespace Model
      * to database accounts, and otherwise false.</p> <p>You can enable IAM database
      * authentication for the following database engines</p> <ul> <li> <p>For MySQL
      * 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor
-     * version 5.7.16 or higher</p> </li> <li> <p>Aurora 5.6 or higher.</p> </li> </ul>
-     * <p>Default: <code>false</code> </p>
+     * version 5.7.16 or higher</p> </li> </ul> <p>Default: <code>false</code> </p>
      */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
@@ -1103,10 +1087,58 @@ namespace Model
      * to database accounts, and otherwise false.</p> <p>You can enable IAM database
      * authentication for the following database engines</p> <ul> <li> <p>For MySQL
      * 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor
-     * version 5.7.16 or higher</p> </li> <li> <p>Aurora 5.6 or higher.</p> </li> </ul>
-     * <p>Default: <code>false</code> </p>
+     * version 5.7.16 or higher</p> </li> </ul> <p>Default: <code>false</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
+
+
+    /**
+     * <p>The list of logs that the restored DB instance is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
+
+    /**
+     * <p>The list of logs that the restored DB instance is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline void SetEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = value; }
+
+    /**
+     * <p>The list of logs that the restored DB instance is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline void SetEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = std::move(value); }
+
+    /**
+     * <p>The list of logs that the restored DB instance is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnableCloudwatchLogsExports(value); return *this;}
+
+    /**
+     * <p>The list of logs that the restored DB instance is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnableCloudwatchLogsExports(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of logs that the restored DB instance is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& AddEnableCloudwatchLogsExports(const Aws::String& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
+
+    /**
+     * <p>The list of logs that the restored DB instance is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& AddEnableCloudwatchLogsExports(Aws::String&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The list of logs that the restored DB instance is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& AddEnableCloudwatchLogsExports(const char* value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
 
   private:
 
@@ -1181,6 +1213,9 @@ namespace Model
 
     bool m_enableIAMDatabaseAuthentication;
     bool m_enableIAMDatabaseAuthenticationHasBeenSet;
+
+    Aws::Vector<Aws::String> m_enableCloudwatchLogsExports;
+    bool m_enableCloudwatchLogsExportsHasBeenSet;
   };
 
 } // namespace Model

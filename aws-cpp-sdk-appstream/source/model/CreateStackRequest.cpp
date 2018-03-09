@@ -26,7 +26,8 @@ CreateStackRequest::CreateStackRequest() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_displayNameHasBeenSet(false),
-    m_storageConnectorsHasBeenSet(false)
+    m_storageConnectorsHasBeenSet(false),
+    m_redirectURLHasBeenSet(false)
 {
 }
 
@@ -60,6 +61,12 @@ Aws::String CreateStackRequest::SerializePayload() const
      storageConnectorsJsonList[storageConnectorsIndex].AsObject(m_storageConnectors[storageConnectorsIndex].Jsonize());
    }
    payload.WithArray("StorageConnectors", std::move(storageConnectorsJsonList));
+
+  }
+
+  if(m_redirectURLHasBeenSet)
+  {
+   payload.WithString("RedirectURL", m_redirectURL);
 
   }
 

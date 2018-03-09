@@ -93,56 +93,56 @@ namespace Model
 
     /**
      * <p>An array of strings, where each string is the name of a user attribute to be
-     * returned for each user in the search results. If the array is empty, all
+     * returned for each user in the search results. If the array is null, all
      * attributes are returned.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAttributesToGet() const{ return m_attributesToGet; }
 
     /**
      * <p>An array of strings, where each string is the name of a user attribute to be
-     * returned for each user in the search results. If the array is empty, all
+     * returned for each user in the search results. If the array is null, all
      * attributes are returned.</p>
      */
     inline void SetAttributesToGet(const Aws::Vector<Aws::String>& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet = value; }
 
     /**
      * <p>An array of strings, where each string is the name of a user attribute to be
-     * returned for each user in the search results. If the array is empty, all
+     * returned for each user in the search results. If the array is null, all
      * attributes are returned.</p>
      */
     inline void SetAttributesToGet(Aws::Vector<Aws::String>&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet = std::move(value); }
 
     /**
      * <p>An array of strings, where each string is the name of a user attribute to be
-     * returned for each user in the search results. If the array is empty, all
+     * returned for each user in the search results. If the array is null, all
      * attributes are returned.</p>
      */
     inline ListUsersRequest& WithAttributesToGet(const Aws::Vector<Aws::String>& value) { SetAttributesToGet(value); return *this;}
 
     /**
      * <p>An array of strings, where each string is the name of a user attribute to be
-     * returned for each user in the search results. If the array is empty, all
+     * returned for each user in the search results. If the array is null, all
      * attributes are returned.</p>
      */
     inline ListUsersRequest& WithAttributesToGet(Aws::Vector<Aws::String>&& value) { SetAttributesToGet(std::move(value)); return *this;}
 
     /**
      * <p>An array of strings, where each string is the name of a user attribute to be
-     * returned for each user in the search results. If the array is empty, all
+     * returned for each user in the search results. If the array is null, all
      * attributes are returned.</p>
      */
     inline ListUsersRequest& AddAttributesToGet(const Aws::String& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(value); return *this; }
 
     /**
      * <p>An array of strings, where each string is the name of a user attribute to be
-     * returned for each user in the search results. If the array is empty, all
+     * returned for each user in the search results. If the array is null, all
      * attributes are returned.</p>
      */
     inline ListUsersRequest& AddAttributesToGet(Aws::String&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of strings, where each string is the name of a user attribute to be
-     * returned for each user in the search results. If the array is empty, all
+     * returned for each user in the search results. If the array is null, all
      * attributes are returned.</p>
      */
     inline ListUsersRequest& AddAttributesToGet(const char* value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(value); return *this; }
@@ -226,8 +226,8 @@ namespace Model
      * <p> <code>family_name</code> </p> </li> <li> <p> <code>preferred_username</code>
      * </p> </li> <li> <p> <code>cognito:user_status</code> (called <b>Enabled</b> in
      * the Console) (case-sensitive)</p> </li> <li> <p> <code>status</code>
-     * (case-insensitive)</p> </li> </ul> <p>Custom attributes are not searchable.</p>
-     * <p>For more information, see <a
+     * (case-insensitive)</p> </li> <li> <p> <code>sub</code> </p> </li> </ul>
+     * <p>Custom attributes are not searchable.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching
      * for Users Using the ListUsers API</a> and <a
      * href="http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples
@@ -254,8 +254,8 @@ namespace Model
      * <p> <code>family_name</code> </p> </li> <li> <p> <code>preferred_username</code>
      * </p> </li> <li> <p> <code>cognito:user_status</code> (called <b>Enabled</b> in
      * the Console) (case-sensitive)</p> </li> <li> <p> <code>status</code>
-     * (case-insensitive)</p> </li> </ul> <p>Custom attributes are not searchable.</p>
-     * <p>For more information, see <a
+     * (case-insensitive)</p> </li> <li> <p> <code>sub</code> </p> </li> </ul>
+     * <p>Custom attributes are not searchable.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching
      * for Users Using the ListUsers API</a> and <a
      * href="http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples
@@ -282,8 +282,8 @@ namespace Model
      * <p> <code>family_name</code> </p> </li> <li> <p> <code>preferred_username</code>
      * </p> </li> <li> <p> <code>cognito:user_status</code> (called <b>Enabled</b> in
      * the Console) (case-sensitive)</p> </li> <li> <p> <code>status</code>
-     * (case-insensitive)</p> </li> </ul> <p>Custom attributes are not searchable.</p>
-     * <p>For more information, see <a
+     * (case-insensitive)</p> </li> <li> <p> <code>sub</code> </p> </li> </ul>
+     * <p>Custom attributes are not searchable.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching
      * for Users Using the ListUsers API</a> and <a
      * href="http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples
@@ -310,8 +310,8 @@ namespace Model
      * <p> <code>family_name</code> </p> </li> <li> <p> <code>preferred_username</code>
      * </p> </li> <li> <p> <code>cognito:user_status</code> (called <b>Enabled</b> in
      * the Console) (case-sensitive)</p> </li> <li> <p> <code>status</code>
-     * (case-insensitive)</p> </li> </ul> <p>Custom attributes are not searchable.</p>
-     * <p>For more information, see <a
+     * (case-insensitive)</p> </li> <li> <p> <code>sub</code> </p> </li> </ul>
+     * <p>Custom attributes are not searchable.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching
      * for Users Using the ListUsers API</a> and <a
      * href="http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples
@@ -338,8 +338,8 @@ namespace Model
      * <p> <code>family_name</code> </p> </li> <li> <p> <code>preferred_username</code>
      * </p> </li> <li> <p> <code>cognito:user_status</code> (called <b>Enabled</b> in
      * the Console) (case-sensitive)</p> </li> <li> <p> <code>status</code>
-     * (case-insensitive)</p> </li> </ul> <p>Custom attributes are not searchable.</p>
-     * <p>For more information, see <a
+     * (case-insensitive)</p> </li> <li> <p> <code>sub</code> </p> </li> </ul>
+     * <p>Custom attributes are not searchable.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching
      * for Users Using the ListUsers API</a> and <a
      * href="http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples
@@ -366,8 +366,8 @@ namespace Model
      * <p> <code>family_name</code> </p> </li> <li> <p> <code>preferred_username</code>
      * </p> </li> <li> <p> <code>cognito:user_status</code> (called <b>Enabled</b> in
      * the Console) (case-sensitive)</p> </li> <li> <p> <code>status</code>
-     * (case-insensitive)</p> </li> </ul> <p>Custom attributes are not searchable.</p>
-     * <p>For more information, see <a
+     * (case-insensitive)</p> </li> <li> <p> <code>sub</code> </p> </li> </ul>
+     * <p>Custom attributes are not searchable.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching
      * for Users Using the ListUsers API</a> and <a
      * href="http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples
@@ -394,8 +394,8 @@ namespace Model
      * <p> <code>family_name</code> </p> </li> <li> <p> <code>preferred_username</code>
      * </p> </li> <li> <p> <code>cognito:user_status</code> (called <b>Enabled</b> in
      * the Console) (case-sensitive)</p> </li> <li> <p> <code>status</code>
-     * (case-insensitive)</p> </li> </ul> <p>Custom attributes are not searchable.</p>
-     * <p>For more information, see <a
+     * (case-insensitive)</p> </li> <li> <p> <code>sub</code> </p> </li> </ul>
+     * <p>Custom attributes are not searchable.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching
      * for Users Using the ListUsers API</a> and <a
      * href="http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples

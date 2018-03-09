@@ -95,37 +95,37 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the product for the delete request.</p>
+     * <p>The product identifier.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The identifier of the product for the delete request.</p>
+     * <p>The product identifier.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The identifier of the product for the delete request.</p>
+     * <p>The product identifier.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The identifier of the product for the delete request.</p>
+     * <p>The product identifier.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The identifier of the product for the delete request.</p>
+     * <p>The product identifier.</p>
      */
     inline DeleteProductRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The identifier of the product for the delete request.</p>
+     * <p>The product identifier.</p>
      */
     inline DeleteProductRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the product for the delete request.</p>
+     * <p>The product identifier.</p>
      */
     inline DeleteProductRequest& WithId(const char* value) { SetId(value); return *this;}
 

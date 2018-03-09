@@ -50,27 +50,27 @@ namespace Model
 
 
     /**
-     * <p>The Spot instance data feed subscription.</p>
+     * <p>The Spot Instance data feed subscription.</p>
      */
     inline const SpotDatafeedSubscription& GetSpotDatafeedSubscription() const{ return m_spotDatafeedSubscription; }
 
     /**
-     * <p>The Spot instance data feed subscription.</p>
+     * <p>The Spot Instance data feed subscription.</p>
      */
     inline void SetSpotDatafeedSubscription(const SpotDatafeedSubscription& value) { m_spotDatafeedSubscription = value; }
 
     /**
-     * <p>The Spot instance data feed subscription.</p>
+     * <p>The Spot Instance data feed subscription.</p>
      */
     inline void SetSpotDatafeedSubscription(SpotDatafeedSubscription&& value) { m_spotDatafeedSubscription = std::move(value); }
 
     /**
-     * <p>The Spot instance data feed subscription.</p>
+     * <p>The Spot Instance data feed subscription.</p>
      */
     inline CreateSpotDatafeedSubscriptionResponse& WithSpotDatafeedSubscription(const SpotDatafeedSubscription& value) { SetSpotDatafeedSubscription(value); return *this;}
 
     /**
-     * <p>The Spot instance data feed subscription.</p>
+     * <p>The Spot Instance data feed subscription.</p>
      */
     inline CreateSpotDatafeedSubscriptionResponse& WithSpotDatafeedSubscription(SpotDatafeedSubscription&& value) { SetSpotDatafeedSubscription(std::move(value)); return *this;}
 

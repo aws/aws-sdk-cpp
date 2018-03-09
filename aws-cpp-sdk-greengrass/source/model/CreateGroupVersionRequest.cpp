@@ -30,6 +30,7 @@ CreateGroupVersionRequest::CreateGroupVersionRequest() :
     m_functionDefinitionVersionArnHasBeenSet(false),
     m_groupIdHasBeenSet(false),
     m_loggerDefinitionVersionArnHasBeenSet(false),
+    m_resourceDefinitionVersionArnHasBeenSet(false),
     m_subscriptionDefinitionVersionArnHasBeenSet(false)
 {
 }
@@ -59,6 +60,12 @@ Aws::String CreateGroupVersionRequest::SerializePayload() const
   if(m_loggerDefinitionVersionArnHasBeenSet)
   {
    payload.WithString("LoggerDefinitionVersionArn", m_loggerDefinitionVersionArn);
+
+  }
+
+  if(m_resourceDefinitionVersionArnHasBeenSet)
+  {
+   payload.WithString("ResourceDefinitionVersionArn", m_resourceDefinitionVersionArn);
 
   }
 

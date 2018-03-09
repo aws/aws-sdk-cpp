@@ -78,6 +78,7 @@
 #include <aws/gamelift/model/ResolveAliasRequest.h>
 #include <aws/gamelift/model/SearchGameSessionsRequest.h>
 #include <aws/gamelift/model/StartGameSessionPlacementRequest.h>
+#include <aws/gamelift/model/StartMatchBackfillRequest.h>
 #include <aws/gamelift/model/StartMatchmakingRequest.h>
 #include <aws/gamelift/model/StopGameSessionPlacementRequest.h>
 #include <aws/gamelift/model/StopMatchmakingRequest.h>
@@ -1939,6 +1940,41 @@ void GameLiftClient::StartGameSessionPlacementAsync(const StartGameSessionPlacem
 void GameLiftClient::StartGameSessionPlacementAsyncHelper(const StartGameSessionPlacementRequest& request, const StartGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StartGameSessionPlacement(request), context);
+}
+
+StartMatchBackfillOutcome GameLiftClient::StartMatchBackfill(const StartMatchBackfillRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StartMatchBackfillOutcome(StartMatchBackfillResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartMatchBackfillOutcome(outcome.GetError());
+  }
+}
+
+StartMatchBackfillOutcomeCallable GameLiftClient::StartMatchBackfillCallable(const StartMatchBackfillRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartMatchBackfillOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartMatchBackfill(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::StartMatchBackfillAsync(const StartMatchBackfillRequest& request, const StartMatchBackfillResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartMatchBackfillAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::StartMatchBackfillAsyncHelper(const StartMatchBackfillRequest& request, const StartMatchBackfillResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartMatchBackfill(request), context);
 }
 
 StartMatchmakingOutcome GameLiftClient::StartMatchmaking(const StartMatchmakingRequest& request) const

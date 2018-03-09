@@ -53,37 +53,37 @@ namespace Model
 
 
     /**
-     * <p>Information about the events in the history of the Spot fleet request.</p>
+     * <p>Information about the events in the history of the Spot Fleet request.</p>
      */
     inline const Aws::Vector<HistoryRecord>& GetHistoryRecords() const{ return m_historyRecords; }
 
     /**
-     * <p>Information about the events in the history of the Spot fleet request.</p>
+     * <p>Information about the events in the history of the Spot Fleet request.</p>
      */
     inline void SetHistoryRecords(const Aws::Vector<HistoryRecord>& value) { m_historyRecords = value; }
 
     /**
-     * <p>Information about the events in the history of the Spot fleet request.</p>
+     * <p>Information about the events in the history of the Spot Fleet request.</p>
      */
     inline void SetHistoryRecords(Aws::Vector<HistoryRecord>&& value) { m_historyRecords = std::move(value); }
 
     /**
-     * <p>Information about the events in the history of the Spot fleet request.</p>
+     * <p>Information about the events in the history of the Spot Fleet request.</p>
      */
     inline DescribeSpotFleetRequestHistoryResponse& WithHistoryRecords(const Aws::Vector<HistoryRecord>& value) { SetHistoryRecords(value); return *this;}
 
     /**
-     * <p>Information about the events in the history of the Spot fleet request.</p>
+     * <p>Information about the events in the history of the Spot Fleet request.</p>
      */
     inline DescribeSpotFleetRequestHistoryResponse& WithHistoryRecords(Aws::Vector<HistoryRecord>&& value) { SetHistoryRecords(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the events in the history of the Spot fleet request.</p>
+     * <p>Information about the events in the history of the Spot Fleet request.</p>
      */
     inline DescribeSpotFleetRequestHistoryResponse& AddHistoryRecords(const HistoryRecord& value) { m_historyRecords.push_back(value); return *this; }
 
     /**
-     * <p>Information about the events in the history of the Spot fleet request.</p>
+     * <p>Information about the events in the history of the Spot Fleet request.</p>
      */
     inline DescribeSpotFleetRequestHistoryResponse& AddHistoryRecords(HistoryRecord&& value) { m_historyRecords.push_back(std::move(value)); return *this; }
 
@@ -173,37 +173,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Spot fleet request.</p>
+     * <p>The ID of the Spot Fleet request.</p>
      */
     inline const Aws::String& GetSpotFleetRequestId() const{ return m_spotFleetRequestId; }
 
     /**
-     * <p>The ID of the Spot fleet request.</p>
+     * <p>The ID of the Spot Fleet request.</p>
      */
     inline void SetSpotFleetRequestId(const Aws::String& value) { m_spotFleetRequestId = value; }
 
     /**
-     * <p>The ID of the Spot fleet request.</p>
+     * <p>The ID of the Spot Fleet request.</p>
      */
     inline void SetSpotFleetRequestId(Aws::String&& value) { m_spotFleetRequestId = std::move(value); }
 
     /**
-     * <p>The ID of the Spot fleet request.</p>
+     * <p>The ID of the Spot Fleet request.</p>
      */
     inline void SetSpotFleetRequestId(const char* value) { m_spotFleetRequestId.assign(value); }
 
     /**
-     * <p>The ID of the Spot fleet request.</p>
+     * <p>The ID of the Spot Fleet request.</p>
      */
     inline DescribeSpotFleetRequestHistoryResponse& WithSpotFleetRequestId(const Aws::String& value) { SetSpotFleetRequestId(value); return *this;}
 
     /**
-     * <p>The ID of the Spot fleet request.</p>
+     * <p>The ID of the Spot Fleet request.</p>
      */
     inline DescribeSpotFleetRequestHistoryResponse& WithSpotFleetRequestId(Aws::String&& value) { SetSpotFleetRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Spot fleet request.</p>
+     * <p>The ID of the Spot Fleet request.</p>
      */
     inline DescribeSpotFleetRequestHistoryResponse& WithSpotFleetRequestId(const char* value) { SetSpotFleetRequestId(value); return *this;}
 

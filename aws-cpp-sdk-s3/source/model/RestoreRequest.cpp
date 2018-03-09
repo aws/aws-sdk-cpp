@@ -33,14 +33,28 @@ namespace Model
 RestoreRequest::RestoreRequest() : 
     m_days(0),
     m_daysHasBeenSet(false),
-    m_glacierJobParametersHasBeenSet(false)
+    m_glacierJobParametersHasBeenSet(false),
+    m_type(RestoreRequestType::NOT_SET),
+    m_typeHasBeenSet(false),
+    m_tier(Tier::NOT_SET),
+    m_tierHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_selectParametersHasBeenSet(false),
+    m_outputLocationHasBeenSet(false)
 {
 }
 
 RestoreRequest::RestoreRequest(const XmlNode& xmlNode) : 
     m_days(0),
     m_daysHasBeenSet(false),
-    m_glacierJobParametersHasBeenSet(false)
+    m_glacierJobParametersHasBeenSet(false),
+    m_type(RestoreRequestType::NOT_SET),
+    m_typeHasBeenSet(false),
+    m_tier(Tier::NOT_SET),
+    m_tierHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_selectParametersHasBeenSet(false),
+    m_outputLocationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -63,6 +77,36 @@ RestoreRequest& RestoreRequest::operator =(const XmlNode& xmlNode)
       m_glacierJobParameters = glacierJobParametersNode;
       m_glacierJobParametersHasBeenSet = true;
     }
+    XmlNode typeNode = resultNode.FirstChild("Type");
+    if(!typeNode.IsNull())
+    {
+      m_type = RestoreRequestTypeMapper::GetRestoreRequestTypeForName(StringUtils::Trim(typeNode.GetText().c_str()).c_str());
+      m_typeHasBeenSet = true;
+    }
+    XmlNode tierNode = resultNode.FirstChild("Tier");
+    if(!tierNode.IsNull())
+    {
+      m_tier = TierMapper::GetTierForName(StringUtils::Trim(tierNode.GetText().c_str()).c_str());
+      m_tierHasBeenSet = true;
+    }
+    XmlNode descriptionNode = resultNode.FirstChild("Description");
+    if(!descriptionNode.IsNull())
+    {
+      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_descriptionHasBeenSet = true;
+    }
+    XmlNode selectParametersNode = resultNode.FirstChild("SelectParameters");
+    if(!selectParametersNode.IsNull())
+    {
+      m_selectParameters = selectParametersNode;
+      m_selectParametersHasBeenSet = true;
+    }
+    XmlNode outputLocationNode = resultNode.FirstChild("OutputLocation");
+    if(!outputLocationNode.IsNull())
+    {
+      m_outputLocation = outputLocationNode;
+      m_outputLocationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -83,6 +127,36 @@ void RestoreRequest::AddToNode(XmlNode& parentNode) const
   {
    XmlNode glacierJobParametersNode = parentNode.CreateChildElement("GlacierJobParameters");
    m_glacierJobParameters.AddToNode(glacierJobParametersNode);
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   XmlNode typeNode = parentNode.CreateChildElement("Type");
+   typeNode.SetText(RestoreRequestTypeMapper::GetNameForRestoreRequestType(m_type));
+  }
+
+  if(m_tierHasBeenSet)
+  {
+   XmlNode tierNode = parentNode.CreateChildElement("Tier");
+   tierNode.SetText(TierMapper::GetNameForTier(m_tier));
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   XmlNode descriptionNode = parentNode.CreateChildElement("Description");
+   descriptionNode.SetText(m_description);
+  }
+
+  if(m_selectParametersHasBeenSet)
+  {
+   XmlNode selectParametersNode = parentNode.CreateChildElement("SelectParameters");
+   m_selectParameters.AddToNode(selectParametersNode);
+  }
+
+  if(m_outputLocationHasBeenSet)
+  {
+   XmlNode outputLocationNode = parentNode.CreateChildElement("OutputLocation");
+   m_outputLocation.AddToNode(outputLocationNode);
   }
 
 }

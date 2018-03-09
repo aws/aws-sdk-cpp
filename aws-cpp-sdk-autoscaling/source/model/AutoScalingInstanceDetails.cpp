@@ -37,6 +37,7 @@ AutoScalingInstanceDetails::AutoScalingInstanceDetails() :
     m_lifecycleStateHasBeenSet(false),
     m_healthStatusHasBeenSet(false),
     m_launchConfigurationNameHasBeenSet(false),
+    m_launchTemplateHasBeenSet(false),
     m_protectedFromScaleIn(false),
     m_protectedFromScaleInHasBeenSet(false)
 {
@@ -49,6 +50,7 @@ AutoScalingInstanceDetails::AutoScalingInstanceDetails(const XmlNode& xmlNode) :
     m_lifecycleStateHasBeenSet(false),
     m_healthStatusHasBeenSet(false),
     m_launchConfigurationNameHasBeenSet(false),
+    m_launchTemplateHasBeenSet(false),
     m_protectedFromScaleIn(false),
     m_protectedFromScaleInHasBeenSet(false)
 {
@@ -97,6 +99,12 @@ AutoScalingInstanceDetails& AutoScalingInstanceDetails::operator =(const XmlNode
       m_launchConfigurationName = StringUtils::Trim(launchConfigurationNameNode.GetText().c_str());
       m_launchConfigurationNameHasBeenSet = true;
     }
+    XmlNode launchTemplateNode = resultNode.FirstChild("LaunchTemplate");
+    if(!launchTemplateNode.IsNull())
+    {
+      m_launchTemplate = launchTemplateNode;
+      m_launchTemplateHasBeenSet = true;
+    }
     XmlNode protectedFromScaleInNode = resultNode.FirstChild("ProtectedFromScaleIn");
     if(!protectedFromScaleInNode.IsNull())
     {
@@ -140,6 +148,13 @@ void AutoScalingInstanceDetails::OutputToStream(Aws::OStream& oStream, const cha
       oStream << location << index << locationValue << ".LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
   }
 
+  if(m_launchTemplateHasBeenSet)
+  {
+      Aws::StringStream launchTemplateLocationAndMemberSs;
+      launchTemplateLocationAndMemberSs << location << index << locationValue << ".LaunchTemplate";
+      m_launchTemplate.OutputToStream(oStream, launchTemplateLocationAndMemberSs.str().c_str());
+  }
+
   if(m_protectedFromScaleInHasBeenSet)
   {
       oStream << location << index << locationValue << ".ProtectedFromScaleIn=" << std::boolalpha << m_protectedFromScaleIn << "&";
@@ -172,6 +187,12 @@ void AutoScalingInstanceDetails::OutputToStream(Aws::OStream& oStream, const cha
   if(m_launchConfigurationNameHasBeenSet)
   {
       oStream << location << ".LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
+  }
+  if(m_launchTemplateHasBeenSet)
+  {
+      Aws::String launchTemplateLocationAndMember(location);
+      launchTemplateLocationAndMember += ".LaunchTemplate";
+      m_launchTemplate.OutputToStream(oStream, launchTemplateLocationAndMember.c_str());
   }
   if(m_protectedFromScaleInHasBeenSet)
   {

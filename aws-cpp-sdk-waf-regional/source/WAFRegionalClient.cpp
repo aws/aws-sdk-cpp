@@ -35,6 +35,7 @@
 #include <aws/waf-regional/model/CreateRegexMatchSetRequest.h>
 #include <aws/waf-regional/model/CreateRegexPatternSetRequest.h>
 #include <aws/waf-regional/model/CreateRuleRequest.h>
+#include <aws/waf-regional/model/CreateRuleGroupRequest.h>
 #include <aws/waf-regional/model/CreateSizeConstraintSetRequest.h>
 #include <aws/waf-regional/model/CreateSqlInjectionMatchSetRequest.h>
 #include <aws/waf-regional/model/CreateWebACLRequest.h>
@@ -42,10 +43,12 @@
 #include <aws/waf-regional/model/DeleteByteMatchSetRequest.h>
 #include <aws/waf-regional/model/DeleteGeoMatchSetRequest.h>
 #include <aws/waf-regional/model/DeleteIPSetRequest.h>
+#include <aws/waf-regional/model/DeletePermissionPolicyRequest.h>
 #include <aws/waf-regional/model/DeleteRateBasedRuleRequest.h>
 #include <aws/waf-regional/model/DeleteRegexMatchSetRequest.h>
 #include <aws/waf-regional/model/DeleteRegexPatternSetRequest.h>
 #include <aws/waf-regional/model/DeleteRuleRequest.h>
+#include <aws/waf-regional/model/DeleteRuleGroupRequest.h>
 #include <aws/waf-regional/model/DeleteSizeConstraintSetRequest.h>
 #include <aws/waf-regional/model/DeleteSqlInjectionMatchSetRequest.h>
 #include <aws/waf-regional/model/DeleteWebACLRequest.h>
@@ -56,17 +59,20 @@
 #include <aws/waf-regional/model/GetChangeTokenStatusRequest.h>
 #include <aws/waf-regional/model/GetGeoMatchSetRequest.h>
 #include <aws/waf-regional/model/GetIPSetRequest.h>
+#include <aws/waf-regional/model/GetPermissionPolicyRequest.h>
 #include <aws/waf-regional/model/GetRateBasedRuleRequest.h>
 #include <aws/waf-regional/model/GetRateBasedRuleManagedKeysRequest.h>
 #include <aws/waf-regional/model/GetRegexMatchSetRequest.h>
 #include <aws/waf-regional/model/GetRegexPatternSetRequest.h>
 #include <aws/waf-regional/model/GetRuleRequest.h>
+#include <aws/waf-regional/model/GetRuleGroupRequest.h>
 #include <aws/waf-regional/model/GetSampledRequestsRequest.h>
 #include <aws/waf-regional/model/GetSizeConstraintSetRequest.h>
 #include <aws/waf-regional/model/GetSqlInjectionMatchSetRequest.h>
 #include <aws/waf-regional/model/GetWebACLRequest.h>
 #include <aws/waf-regional/model/GetWebACLForResourceRequest.h>
 #include <aws/waf-regional/model/GetXssMatchSetRequest.h>
+#include <aws/waf-regional/model/ListActivatedRulesInRuleGroupRequest.h>
 #include <aws/waf-regional/model/ListByteMatchSetsRequest.h>
 #include <aws/waf-regional/model/ListGeoMatchSetsRequest.h>
 #include <aws/waf-regional/model/ListIPSetsRequest.h>
@@ -74,11 +80,14 @@
 #include <aws/waf-regional/model/ListRegexMatchSetsRequest.h>
 #include <aws/waf-regional/model/ListRegexPatternSetsRequest.h>
 #include <aws/waf-regional/model/ListResourcesForWebACLRequest.h>
+#include <aws/waf-regional/model/ListRuleGroupsRequest.h>
 #include <aws/waf-regional/model/ListRulesRequest.h>
 #include <aws/waf-regional/model/ListSizeConstraintSetsRequest.h>
 #include <aws/waf-regional/model/ListSqlInjectionMatchSetsRequest.h>
+#include <aws/waf-regional/model/ListSubscribedRuleGroupsRequest.h>
 #include <aws/waf-regional/model/ListWebACLsRequest.h>
 #include <aws/waf-regional/model/ListXssMatchSetsRequest.h>
+#include <aws/waf-regional/model/PutPermissionPolicyRequest.h>
 #include <aws/waf-regional/model/UpdateByteMatchSetRequest.h>
 #include <aws/waf-regional/model/UpdateGeoMatchSetRequest.h>
 #include <aws/waf-regional/model/UpdateIPSetRequest.h>
@@ -86,6 +95,7 @@
 #include <aws/waf-regional/model/UpdateRegexMatchSetRequest.h>
 #include <aws/waf-regional/model/UpdateRegexPatternSetRequest.h>
 #include <aws/waf-regional/model/UpdateRuleRequest.h>
+#include <aws/waf-regional/model/UpdateRuleGroupRequest.h>
 #include <aws/waf-regional/model/UpdateSizeConstraintSetRequest.h>
 #include <aws/waf-regional/model/UpdateSqlInjectionMatchSetRequest.h>
 #include <aws/waf-regional/model/UpdateWebACLRequest.h>
@@ -435,6 +445,41 @@ void WAFRegionalClient::CreateRuleAsyncHelper(const CreateRuleRequest& request, 
   handler(this, request, CreateRule(request), context);
 }
 
+CreateRuleGroupOutcome WAFRegionalClient::CreateRuleGroup(const CreateRuleGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateRuleGroupOutcome(CreateRuleGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateRuleGroupOutcome(outcome.GetError());
+  }
+}
+
+CreateRuleGroupOutcomeCallable WAFRegionalClient::CreateRuleGroupCallable(const CreateRuleGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateRuleGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRuleGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFRegionalClient::CreateRuleGroupAsync(const CreateRuleGroupRequest& request, const CreateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateRuleGroupAsyncHelper( request, handler, context ); } );
+}
+
+void WAFRegionalClient::CreateRuleGroupAsyncHelper(const CreateRuleGroupRequest& request, const CreateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateRuleGroup(request), context);
+}
+
 CreateSizeConstraintSetOutcome WAFRegionalClient::CreateSizeConstraintSet(const CreateSizeConstraintSetRequest& request) const
 {
   Aws::StringStream ss;
@@ -680,6 +725,41 @@ void WAFRegionalClient::DeleteIPSetAsyncHelper(const DeleteIPSetRequest& request
   handler(this, request, DeleteIPSet(request), context);
 }
 
+DeletePermissionPolicyOutcome WAFRegionalClient::DeletePermissionPolicy(const DeletePermissionPolicyRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeletePermissionPolicyOutcome(DeletePermissionPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeletePermissionPolicyOutcome(outcome.GetError());
+  }
+}
+
+DeletePermissionPolicyOutcomeCallable WAFRegionalClient::DeletePermissionPolicyCallable(const DeletePermissionPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeletePermissionPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePermissionPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFRegionalClient::DeletePermissionPolicyAsync(const DeletePermissionPolicyRequest& request, const DeletePermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeletePermissionPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void WAFRegionalClient::DeletePermissionPolicyAsyncHelper(const DeletePermissionPolicyRequest& request, const DeletePermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeletePermissionPolicy(request), context);
+}
+
 DeleteRateBasedRuleOutcome WAFRegionalClient::DeleteRateBasedRule(const DeleteRateBasedRuleRequest& request) const
 {
   Aws::StringStream ss;
@@ -818,6 +898,41 @@ void WAFRegionalClient::DeleteRuleAsync(const DeleteRuleRequest& request, const 
 void WAFRegionalClient::DeleteRuleAsyncHelper(const DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteRule(request), context);
+}
+
+DeleteRuleGroupOutcome WAFRegionalClient::DeleteRuleGroup(const DeleteRuleGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteRuleGroupOutcome(DeleteRuleGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteRuleGroupOutcome(outcome.GetError());
+  }
+}
+
+DeleteRuleGroupOutcomeCallable WAFRegionalClient::DeleteRuleGroupCallable(const DeleteRuleGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRuleGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRuleGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFRegionalClient::DeleteRuleGroupAsync(const DeleteRuleGroupRequest& request, const DeleteRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteRuleGroupAsyncHelper( request, handler, context ); } );
+}
+
+void WAFRegionalClient::DeleteRuleGroupAsyncHelper(const DeleteRuleGroupRequest& request, const DeleteRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteRuleGroup(request), context);
 }
 
 DeleteSizeConstraintSetOutcome WAFRegionalClient::DeleteSizeConstraintSet(const DeleteSizeConstraintSetRequest& request) const
@@ -1170,6 +1285,41 @@ void WAFRegionalClient::GetIPSetAsyncHelper(const GetIPSetRequest& request, cons
   handler(this, request, GetIPSet(request), context);
 }
 
+GetPermissionPolicyOutcome WAFRegionalClient::GetPermissionPolicy(const GetPermissionPolicyRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetPermissionPolicyOutcome(GetPermissionPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetPermissionPolicyOutcome(outcome.GetError());
+  }
+}
+
+GetPermissionPolicyOutcomeCallable WAFRegionalClient::GetPermissionPolicyCallable(const GetPermissionPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetPermissionPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPermissionPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFRegionalClient::GetPermissionPolicyAsync(const GetPermissionPolicyRequest& request, const GetPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetPermissionPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void WAFRegionalClient::GetPermissionPolicyAsyncHelper(const GetPermissionPolicyRequest& request, const GetPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetPermissionPolicy(request), context);
+}
+
 GetRateBasedRuleOutcome WAFRegionalClient::GetRateBasedRule(const GetRateBasedRuleRequest& request) const
 {
   Aws::StringStream ss;
@@ -1343,6 +1493,41 @@ void WAFRegionalClient::GetRuleAsync(const GetRuleRequest& request, const GetRul
 void WAFRegionalClient::GetRuleAsyncHelper(const GetRuleRequest& request, const GetRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetRule(request), context);
+}
+
+GetRuleGroupOutcome WAFRegionalClient::GetRuleGroup(const GetRuleGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetRuleGroupOutcome(GetRuleGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetRuleGroupOutcome(outcome.GetError());
+  }
+}
+
+GetRuleGroupOutcomeCallable WAFRegionalClient::GetRuleGroupCallable(const GetRuleGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetRuleGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRuleGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFRegionalClient::GetRuleGroupAsync(const GetRuleGroupRequest& request, const GetRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetRuleGroupAsyncHelper( request, handler, context ); } );
+}
+
+void WAFRegionalClient::GetRuleGroupAsyncHelper(const GetRuleGroupRequest& request, const GetRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRuleGroup(request), context);
 }
 
 GetSampledRequestsOutcome WAFRegionalClient::GetSampledRequests(const GetSampledRequestsRequest& request) const
@@ -1553,6 +1738,41 @@ void WAFRegionalClient::GetXssMatchSetAsync(const GetXssMatchSetRequest& request
 void WAFRegionalClient::GetXssMatchSetAsyncHelper(const GetXssMatchSetRequest& request, const GetXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetXssMatchSet(request), context);
+}
+
+ListActivatedRulesInRuleGroupOutcome WAFRegionalClient::ListActivatedRulesInRuleGroup(const ListActivatedRulesInRuleGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListActivatedRulesInRuleGroupOutcome(ListActivatedRulesInRuleGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListActivatedRulesInRuleGroupOutcome(outcome.GetError());
+  }
+}
+
+ListActivatedRulesInRuleGroupOutcomeCallable WAFRegionalClient::ListActivatedRulesInRuleGroupCallable(const ListActivatedRulesInRuleGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListActivatedRulesInRuleGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListActivatedRulesInRuleGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFRegionalClient::ListActivatedRulesInRuleGroupAsync(const ListActivatedRulesInRuleGroupRequest& request, const ListActivatedRulesInRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListActivatedRulesInRuleGroupAsyncHelper( request, handler, context ); } );
+}
+
+void WAFRegionalClient::ListActivatedRulesInRuleGroupAsyncHelper(const ListActivatedRulesInRuleGroupRequest& request, const ListActivatedRulesInRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListActivatedRulesInRuleGroup(request), context);
 }
 
 ListByteMatchSetsOutcome WAFRegionalClient::ListByteMatchSets(const ListByteMatchSetsRequest& request) const
@@ -1800,6 +2020,41 @@ void WAFRegionalClient::ListResourcesForWebACLAsyncHelper(const ListResourcesFor
   handler(this, request, ListResourcesForWebACL(request), context);
 }
 
+ListRuleGroupsOutcome WAFRegionalClient::ListRuleGroups(const ListRuleGroupsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListRuleGroupsOutcome(ListRuleGroupsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListRuleGroupsOutcome(outcome.GetError());
+  }
+}
+
+ListRuleGroupsOutcomeCallable WAFRegionalClient::ListRuleGroupsCallable(const ListRuleGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListRuleGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRuleGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFRegionalClient::ListRuleGroupsAsync(const ListRuleGroupsRequest& request, const ListRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListRuleGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void WAFRegionalClient::ListRuleGroupsAsyncHelper(const ListRuleGroupsRequest& request, const ListRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListRuleGroups(request), context);
+}
+
 ListRulesOutcome WAFRegionalClient::ListRules(const ListRulesRequest& request) const
 {
   Aws::StringStream ss;
@@ -1905,6 +2160,41 @@ void WAFRegionalClient::ListSqlInjectionMatchSetsAsyncHelper(const ListSqlInject
   handler(this, request, ListSqlInjectionMatchSets(request), context);
 }
 
+ListSubscribedRuleGroupsOutcome WAFRegionalClient::ListSubscribedRuleGroups(const ListSubscribedRuleGroupsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListSubscribedRuleGroupsOutcome(ListSubscribedRuleGroupsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListSubscribedRuleGroupsOutcome(outcome.GetError());
+  }
+}
+
+ListSubscribedRuleGroupsOutcomeCallable WAFRegionalClient::ListSubscribedRuleGroupsCallable(const ListSubscribedRuleGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListSubscribedRuleGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSubscribedRuleGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFRegionalClient::ListSubscribedRuleGroupsAsync(const ListSubscribedRuleGroupsRequest& request, const ListSubscribedRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListSubscribedRuleGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void WAFRegionalClient::ListSubscribedRuleGroupsAsyncHelper(const ListSubscribedRuleGroupsRequest& request, const ListSubscribedRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListSubscribedRuleGroups(request), context);
+}
+
 ListWebACLsOutcome WAFRegionalClient::ListWebACLs(const ListWebACLsRequest& request) const
 {
   Aws::StringStream ss;
@@ -1973,6 +2263,41 @@ void WAFRegionalClient::ListXssMatchSetsAsync(const ListXssMatchSetsRequest& req
 void WAFRegionalClient::ListXssMatchSetsAsyncHelper(const ListXssMatchSetsRequest& request, const ListXssMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListXssMatchSets(request), context);
+}
+
+PutPermissionPolicyOutcome WAFRegionalClient::PutPermissionPolicy(const PutPermissionPolicyRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutPermissionPolicyOutcome(PutPermissionPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutPermissionPolicyOutcome(outcome.GetError());
+  }
+}
+
+PutPermissionPolicyOutcomeCallable WAFRegionalClient::PutPermissionPolicyCallable(const PutPermissionPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutPermissionPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutPermissionPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFRegionalClient::PutPermissionPolicyAsync(const PutPermissionPolicyRequest& request, const PutPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutPermissionPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void WAFRegionalClient::PutPermissionPolicyAsyncHelper(const PutPermissionPolicyRequest& request, const PutPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutPermissionPolicy(request), context);
 }
 
 UpdateByteMatchSetOutcome WAFRegionalClient::UpdateByteMatchSet(const UpdateByteMatchSetRequest& request) const
@@ -2218,6 +2543,41 @@ void WAFRegionalClient::UpdateRuleAsync(const UpdateRuleRequest& request, const 
 void WAFRegionalClient::UpdateRuleAsyncHelper(const UpdateRuleRequest& request, const UpdateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateRule(request), context);
+}
+
+UpdateRuleGroupOutcome WAFRegionalClient::UpdateRuleGroup(const UpdateRuleGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateRuleGroupOutcome(UpdateRuleGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateRuleGroupOutcome(outcome.GetError());
+  }
+}
+
+UpdateRuleGroupOutcomeCallable WAFRegionalClient::UpdateRuleGroupCallable(const UpdateRuleGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateRuleGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRuleGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFRegionalClient::UpdateRuleGroupAsync(const UpdateRuleGroupRequest& request, const UpdateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateRuleGroupAsyncHelper( request, handler, context ); } );
+}
+
+void WAFRegionalClient::UpdateRuleGroupAsyncHelper(const UpdateRuleGroupRequest& request, const UpdateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateRuleGroup(request), context);
 }
 
 UpdateSizeConstraintSetOutcome WAFRegionalClient::UpdateSizeConstraintSet(const UpdateSizeConstraintSetRequest& request) const

@@ -50,18 +50,17 @@ class LiveClientTest : public ::testing::Test
 {
 public:
     static std::shared_ptr<S3Client> StandardClient;
-    static Aws::String TimeStamp;
-    static Aws::String BucketName;
-    static ClientConfiguration clientConfig;
+    static std::string TimeStamp;
+    static std::string BucketName;
 
     static void SetUpTestCase()
     {
-        clientConfig.region = Aws::Region::US_EAST_1;    
+        TimeStamp = DateTime::Now().CalculateLocalTimestampAsString("%Y%m%dt%H%M%Sz").c_str();
 
-        StandardClient = Aws::MakeShared<Aws::S3::S3Client>(ALLOCATION_TAG, clientConfig);
-        BucketName = ComputeUniqueBucketName(ENCRYPTED_BUCKET_TEST_NAME);
+        StandardClient = Aws::MakeShared<Aws::S3::S3Client>(ALLOCATION_TAG);
+        BucketName = ComputeUniqueBucketName(ENCRYPTED_BUCKET_TEST_NAME).c_str();
         Model::CreateBucketRequest createBucketRequest;
-        createBucketRequest.WithBucket(BucketName)
+        createBucketRequest.WithBucket(BucketName.c_str())
             .WithACL(Model::BucketCannedACL::private_);
 
         auto createBucketOutcome = StandardClient->CreateBucket(createBucketRequest);
@@ -71,7 +70,7 @@ public:
     static void TearDownTestCase()
     {
         Model::DeleteBucketRequest deleteBucketRequest;
-        deleteBucketRequest.WithBucket(BucketName);
+        deleteBucketRequest.WithBucket(BucketName.c_str());
 
         StandardClient->DeleteBucket(deleteBucketRequest);
         StandardClient = nullptr;
@@ -80,15 +79,14 @@ public:
     static Aws::String ComputeUniqueBucketName(const char* bucketName)
     {
         Aws::String uniqueBucketName(bucketName);
-        uniqueBucketName.append(TimeStamp);
+        uniqueBucketName.append((TimeStamp.c_str()));
 
         return Aws::Testing::GetAwsResourcePrefix() + uniqueBucketName;
     }
 };
 
-Aws::String LiveClientTest::TimeStamp = DateTime::Now().CalculateLocalTimestampAsString("%Y%m%dt%H%M%Sz");
-Aws::String LiveClientTest::BucketName;
-ClientConfiguration LiveClientTest::clientConfig;
+std::string LiveClientTest::TimeStamp;
+std::string LiveClientTest::BucketName;
 std::shared_ptr<S3Client> LiveClientTest::StandardClient(nullptr);
 
 TEST_F(LiveClientTest, TestEOMode)
@@ -102,10 +100,10 @@ TEST_F(LiveClientTest, TestEOMode)
 
     static const char* objectKey = "TestEOKey";
 
-    S3EncryptionClient client(simpleEncryptionMaterials, configuration, clientConfig);
+    S3EncryptionClient client(simpleEncryptionMaterials, configuration);
 
     Model::PutObjectRequest putObjectRequest;
-    putObjectRequest.WithBucket(BucketName)
+    putObjectRequest.WithBucket(BucketName.c_str())
         .WithKey(objectKey);
 
     auto ss = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
@@ -118,7 +116,7 @@ TEST_F(LiveClientTest, TestEOMode)
     ASSERT_TRUE(putObjectResult.IsSuccess());
 
     Model::GetObjectRequest getObjectRequest;
-    getObjectRequest.WithBucket(BucketName).WithKey(objectKey);
+    getObjectRequest.WithBucket(BucketName.c_str()).WithKey(objectKey);
 
     auto getObjectResult = client.GetObject(getObjectRequest);
     EXPECT_TRUE(getObjectResult.IsSuccess());
@@ -145,7 +143,7 @@ TEST_F(LiveClientTest, TestEOMode)
     Crypto::SymmetricCryptoStream cryptoStream((Aws::OStream&)comparisonStream, CipherMode::Encrypt, *cbcCipher);
 
     Model::GetObjectRequest getUnencryptedObjectRequest;
-    getUnencryptedObjectRequest.WithBucket(BucketName).WithKey(objectKey);
+    getUnencryptedObjectRequest.WithBucket(BucketName.c_str()).WithKey(objectKey);
     getObjectResult = StandardClient->GetObject(getUnencryptedObjectRequest);
 
     EXPECT_TRUE(getObjectResult.IsSuccess());
@@ -160,7 +158,7 @@ TEST_F(LiveClientTest, TestEOMode)
     EXPECT_STREQ(HashingUtils::HexEncode(comparisonResult).c_str(), HashingUtils::HexEncode(rawData).c_str());
 
     Model::DeleteObjectRequest deleteObject;
-    deleteObject.WithBucket(BucketName).WithKey(objectKey);
+    deleteObject.WithBucket(BucketName.c_str()).WithKey(objectKey);
 
     auto deleteResult = client.DeleteObject(deleteObject);
     EXPECT_TRUE(deleteResult.IsSuccess());
@@ -179,10 +177,10 @@ TEST_F(LiveClientTest, TestAEMode)
 
     static const char* objectKey = "TestAEKey";
 
-    S3EncryptionClient client(simpleEncryptionMaterials, configuration, clientConfig);
+    S3EncryptionClient client(simpleEncryptionMaterials, configuration);
 
     Model::PutObjectRequest putObjectRequest;
-    putObjectRequest.WithBucket(BucketName)
+    putObjectRequest.WithBucket(BucketName.c_str())
         .WithKey(objectKey);
 
     auto ss = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
@@ -195,7 +193,7 @@ TEST_F(LiveClientTest, TestAEMode)
     ASSERT_TRUE(putObjectResult.IsSuccess());
 
     Model::GetObjectRequest getObjectRequest;
-    getObjectRequest.WithBucket(BucketName).WithKey(objectKey);
+    getObjectRequest.WithBucket(BucketName.c_str()).WithKey(objectKey);
 
     auto getObjectResult = client.GetObject(getObjectRequest);
     EXPECT_TRUE(getObjectResult.IsSuccess());
@@ -226,7 +224,7 @@ TEST_F(LiveClientTest, TestAEMode)
     Crypto::SymmetricCryptoStream cryptoStream((Aws::OStream&)comparisonStream, CipherMode::Encrypt, *gcmCipher);
 
     Model::GetObjectRequest getUnencryptedObjectRequest;
-    getUnencryptedObjectRequest.WithBucket(BucketName).WithKey(objectKey);
+    getUnencryptedObjectRequest.WithBucket(BucketName.c_str()).WithKey(objectKey);
     getObjectResult = StandardClient->GetObject(getUnencryptedObjectRequest);
 
     EXPECT_TRUE(getObjectResult.IsSuccess());
@@ -243,7 +241,7 @@ TEST_F(LiveClientTest, TestAEMode)
     EXPECT_STREQ(HashingUtils::HexEncode(comparisonResult).c_str(), HashingUtils::HexEncode(rawData).c_str());
 
     Model::DeleteObjectRequest deleteObject;
-    deleteObject.WithBucket(BucketName).WithKey(objectKey);
+    deleteObject.WithBucket(BucketName.c_str()).WithKey(objectKey);
 
     auto deleteResult = client.DeleteObject(deleteObject);
     EXPECT_TRUE(deleteResult.IsSuccess());
@@ -260,10 +258,10 @@ TEST_F(LiveClientTest, TestAEModeRangeGet)
 
     static const char* objectKey = "TestAERangeGetKey";
 
-    S3EncryptionClient client(simpleEncryptionMaterials, configuration, clientConfig);
+    S3EncryptionClient client(simpleEncryptionMaterials, configuration);
 
     Model::PutObjectRequest putObjectRequest;
-    putObjectRequest.WithBucket(BucketName)
+    putObjectRequest.WithBucket(BucketName.c_str())
         .WithKey(objectKey);
 
     auto ss = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
@@ -276,7 +274,7 @@ TEST_F(LiveClientTest, TestAEModeRangeGet)
     ASSERT_TRUE(putObjectResult.IsSuccess());
 
     Model::GetObjectRequest getObjectRequest;
-    getObjectRequest.WithBucket(BucketName).WithKey(objectKey).WithRange(RANGE_GET_STR);
+    getObjectRequest.WithBucket(BucketName.c_str()).WithKey(objectKey).WithRange(RANGE_GET_STR);
 
     auto getObjectResult = client.GetObject(getObjectRequest);
     EXPECT_TRUE(getObjectResult.IsSuccess());
@@ -307,7 +305,7 @@ TEST_F(LiveClientTest, TestAEModeRangeGet)
     Crypto::SymmetricCryptoStream cryptoStream((Aws::OStream&)comparisonStream, CipherMode::Encrypt, *gcmCipher);
 
     Model::GetObjectRequest getUnencryptedObjectRequest;
-    getUnencryptedObjectRequest.WithBucket(BucketName).WithKey(objectKey).WithRange(RANGE_GET_STR);
+    getUnencryptedObjectRequest.WithBucket(BucketName.c_str()).WithKey(objectKey).WithRange(RANGE_GET_STR);
     getObjectResult = StandardClient->GetObject(getUnencryptedObjectRequest);
 
     EXPECT_TRUE(getObjectResult.IsSuccess());
@@ -325,7 +323,7 @@ TEST_F(LiveClientTest, TestAEModeRangeGet)
     EXPECT_STREQ(HashingUtils::HexEncode(comparisonResult).c_str(), HashingUtils::HexEncode(rawData).c_str());
 
     Model::DeleteObjectRequest deleteObject;
-    deleteObject.WithBucket(BucketName).WithKey(objectKey);
+    deleteObject.WithBucket(BucketName.c_str()).WithKey(objectKey);
 
     auto deleteResult = client.DeleteObject(deleteObject);
     EXPECT_TRUE(deleteResult.IsSuccess());

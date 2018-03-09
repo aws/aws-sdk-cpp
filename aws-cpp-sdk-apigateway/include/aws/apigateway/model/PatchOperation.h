@@ -50,47 +50,47 @@ namespace Model
 
 
     /**
-     * <p>An update operation to be performed with this PATCH request. The valid value
-     * can be "add", "remove", or "replace". Not all valid operations are supported for
-     * a given resource. Support of the operations depends on specific operational
-     * contexts. Attempts to apply an unsupported operation on a resource will return
-     * an error message.</p>
+     * <p> An update operation to be performed with this PATCH request. The valid value
+     * can be <code>add</code>, <code>remove</code>, <code>replace</code> or
+     * <code>copy</code>. Not all valid operations are supported for a given resource.
+     * Support of the operations depends on specific operational contexts. Attempts to
+     * apply an unsupported operation on a resource will return an error message.</p>
      */
     inline const Op& GetOp() const{ return m_op; }
 
     /**
-     * <p>An update operation to be performed with this PATCH request. The valid value
-     * can be "add", "remove", or "replace". Not all valid operations are supported for
-     * a given resource. Support of the operations depends on specific operational
-     * contexts. Attempts to apply an unsupported operation on a resource will return
-     * an error message.</p>
+     * <p> An update operation to be performed with this PATCH request. The valid value
+     * can be <code>add</code>, <code>remove</code>, <code>replace</code> or
+     * <code>copy</code>. Not all valid operations are supported for a given resource.
+     * Support of the operations depends on specific operational contexts. Attempts to
+     * apply an unsupported operation on a resource will return an error message.</p>
      */
     inline void SetOp(const Op& value) { m_opHasBeenSet = true; m_op = value; }
 
     /**
-     * <p>An update operation to be performed with this PATCH request. The valid value
-     * can be "add", "remove", or "replace". Not all valid operations are supported for
-     * a given resource. Support of the operations depends on specific operational
-     * contexts. Attempts to apply an unsupported operation on a resource will return
-     * an error message.</p>
+     * <p> An update operation to be performed with this PATCH request. The valid value
+     * can be <code>add</code>, <code>remove</code>, <code>replace</code> or
+     * <code>copy</code>. Not all valid operations are supported for a given resource.
+     * Support of the operations depends on specific operational contexts. Attempts to
+     * apply an unsupported operation on a resource will return an error message.</p>
      */
     inline void SetOp(Op&& value) { m_opHasBeenSet = true; m_op = std::move(value); }
 
     /**
-     * <p>An update operation to be performed with this PATCH request. The valid value
-     * can be "add", "remove", or "replace". Not all valid operations are supported for
-     * a given resource. Support of the operations depends on specific operational
-     * contexts. Attempts to apply an unsupported operation on a resource will return
-     * an error message.</p>
+     * <p> An update operation to be performed with this PATCH request. The valid value
+     * can be <code>add</code>, <code>remove</code>, <code>replace</code> or
+     * <code>copy</code>. Not all valid operations are supported for a given resource.
+     * Support of the operations depends on specific operational contexts. Attempts to
+     * apply an unsupported operation on a resource will return an error message.</p>
      */
     inline PatchOperation& WithOp(const Op& value) { SetOp(value); return *this;}
 
     /**
-     * <p>An update operation to be performed with this PATCH request. The valid value
-     * can be "add", "remove", or "replace". Not all valid operations are supported for
-     * a given resource. Support of the operations depends on specific operational
-     * contexts. Attempts to apply an unsupported operation on a resource will return
-     * an error message.</p>
+     * <p> An update operation to be performed with this PATCH request. The valid value
+     * can be <code>add</code>, <code>remove</code>, <code>replace</code> or
+     * <code>copy</code>. Not all valid operations are supported for a given resource.
+     * Support of the operations depends on specific operational contexts. Attempts to
+     * apply an unsupported operation on a resource will return an error message.</p>
      */
     inline PatchOperation& WithOp(Op&& value) { SetOp(std::move(value)); return *this;}
 
@@ -202,8 +202,9 @@ namespace Model
 
 
     /**
-     * <p>The new target value of the update operation. When using AWS CLI to update a
-     * property of a JSON value, enclose the JSON object with a pair of single quotes
+     * <p>The new target value of the update operation. It is applicable for the
+     * <code>add</code> or <code>replace</code> operation. When using AWS CLI to update
+     * a property of a JSON value, enclose the JSON object with a pair of single quotes
      * in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a>.</p>
@@ -211,8 +212,9 @@ namespace Model
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>The new target value of the update operation. When using AWS CLI to update a
-     * property of a JSON value, enclose the JSON object with a pair of single quotes
+     * <p>The new target value of the update operation. It is applicable for the
+     * <code>add</code> or <code>replace</code> operation. When using AWS CLI to update
+     * a property of a JSON value, enclose the JSON object with a pair of single quotes
      * in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a>.</p>
@@ -220,8 +222,9 @@ namespace Model
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The new target value of the update operation. When using AWS CLI to update a
-     * property of a JSON value, enclose the JSON object with a pair of single quotes
+     * <p>The new target value of the update operation. It is applicable for the
+     * <code>add</code> or <code>replace</code> operation. When using AWS CLI to update
+     * a property of a JSON value, enclose the JSON object with a pair of single quotes
      * in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a>.</p>
@@ -229,8 +232,9 @@ namespace Model
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>The new target value of the update operation. When using AWS CLI to update a
-     * property of a JSON value, enclose the JSON object with a pair of single quotes
+     * <p>The new target value of the update operation. It is applicable for the
+     * <code>add</code> or <code>replace</code> operation. When using AWS CLI to update
+     * a property of a JSON value, enclose the JSON object with a pair of single quotes
      * in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a>.</p>
@@ -238,8 +242,9 @@ namespace Model
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>The new target value of the update operation. When using AWS CLI to update a
-     * property of a JSON value, enclose the JSON object with a pair of single quotes
+     * <p>The new target value of the update operation. It is applicable for the
+     * <code>add</code> or <code>replace</code> operation. When using AWS CLI to update
+     * a property of a JSON value, enclose the JSON object with a pair of single quotes
      * in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a>.</p>
@@ -247,8 +252,9 @@ namespace Model
     inline PatchOperation& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The new target value of the update operation. When using AWS CLI to update a
-     * property of a JSON value, enclose the JSON object with a pair of single quotes
+     * <p>The new target value of the update operation. It is applicable for the
+     * <code>add</code> or <code>replace</code> operation. When using AWS CLI to update
+     * a property of a JSON value, enclose the JSON object with a pair of single quotes
      * in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a>.</p>
@@ -256,8 +262,9 @@ namespace Model
     inline PatchOperation& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>The new target value of the update operation. When using AWS CLI to update a
-     * property of a JSON value, enclose the JSON object with a pair of single quotes
+     * <p>The new target value of the update operation. It is applicable for the
+     * <code>add</code> or <code>replace</code> operation. When using AWS CLI to update
+     * a property of a JSON value, enclose the JSON object with a pair of single quotes
      * in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a>.</p>
@@ -266,37 +273,79 @@ namespace Model
 
 
     /**
-     * <p> Not supported.</p>
+     * <p>The <code>copy</code> update operation's source as identified by a
+     * <code>JSON-Pointer</code> value referencing the location within the targeted
+     * resource to copy the value from. For example, to promote a canary deployment,
+     * you copy the canary deployment ID to the affiliated deployment ID by calling a
+     * PATCH request on a <a>Stage</a> resource with <code>"op":"copy"</code>,
+     * <code>"from":"/canarySettings/deploymentId"</code> and
+     * <code>"path":"/deploymentId"</code>.</p>
      */
     inline const Aws::String& GetFrom() const{ return m_from; }
 
     /**
-     * <p> Not supported.</p>
+     * <p>The <code>copy</code> update operation's source as identified by a
+     * <code>JSON-Pointer</code> value referencing the location within the targeted
+     * resource to copy the value from. For example, to promote a canary deployment,
+     * you copy the canary deployment ID to the affiliated deployment ID by calling a
+     * PATCH request on a <a>Stage</a> resource with <code>"op":"copy"</code>,
+     * <code>"from":"/canarySettings/deploymentId"</code> and
+     * <code>"path":"/deploymentId"</code>.</p>
      */
     inline void SetFrom(const Aws::String& value) { m_fromHasBeenSet = true; m_from = value; }
 
     /**
-     * <p> Not supported.</p>
+     * <p>The <code>copy</code> update operation's source as identified by a
+     * <code>JSON-Pointer</code> value referencing the location within the targeted
+     * resource to copy the value from. For example, to promote a canary deployment,
+     * you copy the canary deployment ID to the affiliated deployment ID by calling a
+     * PATCH request on a <a>Stage</a> resource with <code>"op":"copy"</code>,
+     * <code>"from":"/canarySettings/deploymentId"</code> and
+     * <code>"path":"/deploymentId"</code>.</p>
      */
     inline void SetFrom(Aws::String&& value) { m_fromHasBeenSet = true; m_from = std::move(value); }
 
     /**
-     * <p> Not supported.</p>
+     * <p>The <code>copy</code> update operation's source as identified by a
+     * <code>JSON-Pointer</code> value referencing the location within the targeted
+     * resource to copy the value from. For example, to promote a canary deployment,
+     * you copy the canary deployment ID to the affiliated deployment ID by calling a
+     * PATCH request on a <a>Stage</a> resource with <code>"op":"copy"</code>,
+     * <code>"from":"/canarySettings/deploymentId"</code> and
+     * <code>"path":"/deploymentId"</code>.</p>
      */
     inline void SetFrom(const char* value) { m_fromHasBeenSet = true; m_from.assign(value); }
 
     /**
-     * <p> Not supported.</p>
+     * <p>The <code>copy</code> update operation's source as identified by a
+     * <code>JSON-Pointer</code> value referencing the location within the targeted
+     * resource to copy the value from. For example, to promote a canary deployment,
+     * you copy the canary deployment ID to the affiliated deployment ID by calling a
+     * PATCH request on a <a>Stage</a> resource with <code>"op":"copy"</code>,
+     * <code>"from":"/canarySettings/deploymentId"</code> and
+     * <code>"path":"/deploymentId"</code>.</p>
      */
     inline PatchOperation& WithFrom(const Aws::String& value) { SetFrom(value); return *this;}
 
     /**
-     * <p> Not supported.</p>
+     * <p>The <code>copy</code> update operation's source as identified by a
+     * <code>JSON-Pointer</code> value referencing the location within the targeted
+     * resource to copy the value from. For example, to promote a canary deployment,
+     * you copy the canary deployment ID to the affiliated deployment ID by calling a
+     * PATCH request on a <a>Stage</a> resource with <code>"op":"copy"</code>,
+     * <code>"from":"/canarySettings/deploymentId"</code> and
+     * <code>"path":"/deploymentId"</code>.</p>
      */
     inline PatchOperation& WithFrom(Aws::String&& value) { SetFrom(std::move(value)); return *this;}
 
     /**
-     * <p> Not supported.</p>
+     * <p>The <code>copy</code> update operation's source as identified by a
+     * <code>JSON-Pointer</code> value referencing the location within the targeted
+     * resource to copy the value from. For example, to promote a canary deployment,
+     * you copy the canary deployment ID to the affiliated deployment ID by calling a
+     * PATCH request on a <a>Stage</a> resource with <code>"op":"copy"</code>,
+     * <code>"from":"/canarySettings/deploymentId"</code> and
+     * <code>"path":"/deploymentId"</code>.</p>
      */
     inline PatchOperation& WithFrom(const char* value) { SetFrom(value); return *this;}
 

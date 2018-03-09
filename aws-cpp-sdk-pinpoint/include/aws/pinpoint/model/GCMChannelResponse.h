@@ -171,17 +171,23 @@ namespace Model
 
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Indicates whether the channel is configured with FCM or GCM credentials. Amazon
+     * Pinpoint uses your credentials to authenticate push notifications with FCM or
+     * GCM. Provide your credentials by setting the ApiKey attribute.
      */
     inline bool GetHasCredential() const{ return m_hasCredential; }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Indicates whether the channel is configured with FCM or GCM credentials. Amazon
+     * Pinpoint uses your credentials to authenticate push notifications with FCM or
+     * GCM. Provide your credentials by setting the ApiKey attribute.
      */
     inline void SetHasCredential(bool value) { m_hasCredentialHasBeenSet = true; m_hasCredential = value; }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Indicates whether the channel is configured with FCM or GCM credentials. Amazon
+     * Pinpoint uses your credentials to authenticate push notifications with FCM or
+     * GCM. Provide your credentials by setting the ApiKey attribute.
      */
     inline GCMChannelResponse& WithHasCredential(bool value) { SetHasCredential(value); return *this;}
 

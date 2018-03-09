@@ -29,18 +29,22 @@ namespace SESErrorMapper
 {
 
 static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExists");
+static const int CUSTOM_VERIFICATION_EMAIL_INVALID_CONTENT_HASH = HashingUtils::HashString("CustomVerificationEmailInvalidContent");
 static const int INVALID_TEMPLATE_HASH = HashingUtils::HashString("InvalidTemplate");
 static const int INVALID_RENDERING_PARAMETER_HASH = HashingUtils::HashString("InvalidRenderingParameter");
+static const int FROM_EMAIL_ADDRESS_NOT_VERIFIED_HASH = HashingUtils::HashString("FromEmailAddressNotVerified");
 static const int RULE_SET_DOES_NOT_EXIST_HASH = HashingUtils::HashString("RuleSetDoesNotExist");
 static const int INVALID_SNS_TOPIC_HASH = HashingUtils::HashString("InvalidSnsTopic");
 static const int MESSAGE_REJECTED_HASH = HashingUtils::HashString("MessageRejected");
 static const int MAIL_FROM_DOMAIN_NOT_VERIFIED_HASH = HashingUtils::HashString("MailFromDomainNotVerifiedException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceeded");
+static const int CUSTOM_VERIFICATION_EMAIL_TEMPLATE_ALREADY_EXISTS_HASH = HashingUtils::HashString("CustomVerificationEmailTemplateAlreadyExists");
 static const int RULE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("RuleDoesNotExist");
 static const int INVALID_FIREHOSE_DESTINATION_HASH = HashingUtils::HashString("InvalidFirehoseDestination");
 static const int CANNOT_DELETE_HASH = HashingUtils::HashString("CannotDelete");
 static const int ACCOUNT_SENDING_PAUSED_HASH = HashingUtils::HashString("AccountSendingPausedException");
 static const int INVALID_CLOUD_WATCH_DESTINATION_HASH = HashingUtils::HashString("InvalidCloudWatchDestination");
+static const int PRODUCTION_ACCESS_NOT_GRANTED_HASH = HashingUtils::HashString("ProductionAccessNotGranted");
 static const int CONFIGURATION_SET_DOES_NOT_EXIST_HASH = HashingUtils::HashString("ConfigurationSetDoesNotExist");
 static const int INVALID_TRACKING_OPTIONS_HASH = HashingUtils::HashString("InvalidTrackingOptions");
 static const int CONFIGURATION_SET_SENDING_PAUSED_HASH = HashingUtils::HashString("ConfigurationSetSendingPausedException");
@@ -51,6 +55,7 @@ static const int INVALID_CONFIGURATION_SET_HASH = HashingUtils::HashString("Inva
 static const int MISSING_RENDERING_ATTRIBUTE_HASH = HashingUtils::HashString("MissingRenderingAttribute");
 static const int TRACKING_OPTIONS_ALREADY_EXISTS_HASH = HashingUtils::HashString("TrackingOptionsAlreadyExistsException");
 static const int INVALID_S_N_S_DESTINATION_HASH = HashingUtils::HashString("InvalidSNSDestination");
+static const int CUSTOM_VERIFICATION_EMAIL_TEMPLATE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("CustomVerificationEmailTemplateDoesNotExist");
 static const int INVALID_POLICY_HASH = HashingUtils::HashString("InvalidPolicy");
 static const int TEMPLATE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("TemplateDoesNotExist");
 static const int TRACKING_OPTIONS_DOES_NOT_EXIST_HASH = HashingUtils::HashString("TrackingOptionsDoesNotExistException");
@@ -66,6 +71,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::ALREADY_EXISTS), false);
   }
+  else if (hashCode == CUSTOM_VERIFICATION_EMAIL_INVALID_CONTENT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::CUSTOM_VERIFICATION_EMAIL_INVALID_CONTENT), false);
+  }
   else if (hashCode == INVALID_TEMPLATE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_TEMPLATE), false);
@@ -73,6 +82,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_RENDERING_PARAMETER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_RENDERING_PARAMETER), false);
+  }
+  else if (hashCode == FROM_EMAIL_ADDRESS_NOT_VERIFIED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::FROM_EMAIL_ADDRESS_NOT_VERIFIED), false);
   }
   else if (hashCode == RULE_SET_DOES_NOT_EXIST_HASH)
   {
@@ -94,6 +107,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::LIMIT_EXCEEDED), false);
   }
+  else if (hashCode == CUSTOM_VERIFICATION_EMAIL_TEMPLATE_ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::CUSTOM_VERIFICATION_EMAIL_TEMPLATE_ALREADY_EXISTS), false);
+  }
   else if (hashCode == RULE_DOES_NOT_EXIST_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::RULE_DOES_NOT_EXIST), false);
@@ -113,6 +130,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_CLOUD_WATCH_DESTINATION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_CLOUD_WATCH_DESTINATION), false);
+  }
+  else if (hashCode == PRODUCTION_ACCESS_NOT_GRANTED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::PRODUCTION_ACCESS_NOT_GRANTED), false);
   }
   else if (hashCode == CONFIGURATION_SET_DOES_NOT_EXIST_HASH)
   {
@@ -153,6 +174,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_S_N_S_DESTINATION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_S_N_S_DESTINATION), false);
+  }
+  else if (hashCode == CUSTOM_VERIFICATION_EMAIL_TEMPLATE_DOES_NOT_EXIST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::CUSTOM_VERIFICATION_EMAIL_TEMPLATE_DOES_NOT_EXIST), false);
   }
   else if (hashCode == INVALID_POLICY_HASH)
   {

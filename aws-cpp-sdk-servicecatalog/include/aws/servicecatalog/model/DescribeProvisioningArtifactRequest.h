@@ -95,44 +95,37 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the provisioning artifact. This is sometimes referred to as
-     * the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline const Aws::String& GetProvisioningArtifactId() const{ return m_provisioningArtifactId; }
 
     /**
-     * <p>The identifier of the provisioning artifact. This is sometimes referred to as
-     * the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline void SetProvisioningArtifactId(const Aws::String& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = value; }
 
     /**
-     * <p>The identifier of the provisioning artifact. This is sometimes referred to as
-     * the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline void SetProvisioningArtifactId(Aws::String&& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = std::move(value); }
 
     /**
-     * <p>The identifier of the provisioning artifact. This is sometimes referred to as
-     * the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline void SetProvisioningArtifactId(const char* value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId.assign(value); }
 
     /**
-     * <p>The identifier of the provisioning artifact. This is sometimes referred to as
-     * the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline DescribeProvisioningArtifactRequest& WithProvisioningArtifactId(const Aws::String& value) { SetProvisioningArtifactId(value); return *this;}
 
     /**
-     * <p>The identifier of the provisioning artifact. This is sometimes referred to as
-     * the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline DescribeProvisioningArtifactRequest& WithProvisioningArtifactId(Aws::String&& value) { SetProvisioningArtifactId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the provisioning artifact. This is sometimes referred to as
-     * the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline DescribeProvisioningArtifactRequest& WithProvisioningArtifactId(const char* value) { SetProvisioningArtifactId(value); return *this;}
 
@@ -174,17 +167,17 @@ namespace Model
 
 
     /**
-     * <p>Enable a verbose level of details for the provisioning artifact.</p>
+     * <p>Indicates whether a verbose level of detail is enabled.</p>
      */
     inline bool GetVerbose() const{ return m_verbose; }
 
     /**
-     * <p>Enable a verbose level of details for the provisioning artifact.</p>
+     * <p>Indicates whether a verbose level of detail is enabled.</p>
      */
     inline void SetVerbose(bool value) { m_verboseHasBeenSet = true; m_verbose = value; }
 
     /**
-     * <p>Enable a verbose level of details for the provisioning artifact.</p>
+     * <p>Indicates whether a verbose level of detail is enabled.</p>
      */
     inline DescribeProvisioningArtifactRequest& WithVerbose(bool value) { SetVerbose(value); return *this;}
 

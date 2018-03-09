@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 CreateSnapshotRequest::CreateSnapshotRequest() : 
     m_descriptionHasBeenSet(false),
     m_volumeIdHasBeenSet(false),
+    m_tagSpecificationsHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false)
 {
@@ -40,6 +41,16 @@ Aws::String CreateSnapshotRequest::SerializePayload() const
   if(m_volumeIdHasBeenSet)
   {
     ss << "VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
+  }
+
+  if(m_tagSpecificationsHasBeenSet)
+  {
+    unsigned tagSpecificationsCount = 1;
+    for(auto& item : m_tagSpecifications)
+    {
+      item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
+      tagSpecificationsCount++;
+    }
   }
 
   if(m_dryRunHasBeenSet)

@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>A parameter used to successfully provision the product. This value includes a
-   * list of allowable values and additional metadata. </p><p><h3>See Also:</h3>   <a
+   * <p>Information about a parameter used to provision a product.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisioningArtifactParameter">AWS
    * API Reference</a></p>
    */
@@ -49,73 +49,73 @@ namespace Model
 
 
     /**
-     * <p>The parameter key. </p>
+     * <p>The parameter key.</p>
      */
     inline const Aws::String& GetParameterKey() const{ return m_parameterKey; }
 
     /**
-     * <p>The parameter key. </p>
+     * <p>The parameter key.</p>
      */
     inline void SetParameterKey(const Aws::String& value) { m_parameterKeyHasBeenSet = true; m_parameterKey = value; }
 
     /**
-     * <p>The parameter key. </p>
+     * <p>The parameter key.</p>
      */
     inline void SetParameterKey(Aws::String&& value) { m_parameterKeyHasBeenSet = true; m_parameterKey = std::move(value); }
 
     /**
-     * <p>The parameter key. </p>
+     * <p>The parameter key.</p>
      */
     inline void SetParameterKey(const char* value) { m_parameterKeyHasBeenSet = true; m_parameterKey.assign(value); }
 
     /**
-     * <p>The parameter key. </p>
+     * <p>The parameter key.</p>
      */
     inline ProvisioningArtifactParameter& WithParameterKey(const Aws::String& value) { SetParameterKey(value); return *this;}
 
     /**
-     * <p>The parameter key. </p>
+     * <p>The parameter key.</p>
      */
     inline ProvisioningArtifactParameter& WithParameterKey(Aws::String&& value) { SetParameterKey(std::move(value)); return *this;}
 
     /**
-     * <p>The parameter key. </p>
+     * <p>The parameter key.</p>
      */
     inline ProvisioningArtifactParameter& WithParameterKey(const char* value) { SetParameterKey(value); return *this;}
 
 
     /**
-     * <p>The default value for this parameter.</p>
+     * <p>The default value.</p>
      */
     inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
 
     /**
-     * <p>The default value for this parameter.</p>
+     * <p>The default value.</p>
      */
     inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
 
     /**
-     * <p>The default value for this parameter.</p>
+     * <p>The default value.</p>
      */
     inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
 
     /**
-     * <p>The default value for this parameter.</p>
+     * <p>The default value.</p>
      */
     inline void SetDefaultValue(const char* value) { m_defaultValueHasBeenSet = true; m_defaultValue.assign(value); }
 
     /**
-     * <p>The default value for this parameter.</p>
+     * <p>The default value.</p>
      */
     inline ProvisioningArtifactParameter& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
 
     /**
-     * <p>The default value for this parameter.</p>
+     * <p>The default value.</p>
      */
     inline ProvisioningArtifactParameter& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
 
     /**
-     * <p>The default value for this parameter.</p>
+     * <p>The default value.</p>
      */
     inline ProvisioningArtifactParameter& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
 
@@ -179,63 +179,63 @@ namespace Model
 
 
     /**
-     * <p>The text description of the parameter.</p>
+     * <p>The description of the parameter.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The text description of the parameter.</p>
+     * <p>The description of the parameter.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The text description of the parameter.</p>
+     * <p>The description of the parameter.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The text description of the parameter.</p>
+     * <p>The description of the parameter.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The text description of the parameter.</p>
+     * <p>The description of the parameter.</p>
      */
     inline ProvisioningArtifactParameter& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The text description of the parameter.</p>
+     * <p>The description of the parameter.</p>
      */
     inline ProvisioningArtifactParameter& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The text description of the parameter.</p>
+     * <p>The description of the parameter.</p>
      */
     inline ProvisioningArtifactParameter& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>The list of constraints that the administrator has put on the parameter.</p>
+     * <p>Constraints that the administrator has put on a parameter.</p>
      */
     inline const ParameterConstraints& GetParameterConstraints() const{ return m_parameterConstraints; }
 
     /**
-     * <p>The list of constraints that the administrator has put on the parameter.</p>
+     * <p>Constraints that the administrator has put on a parameter.</p>
      */
     inline void SetParameterConstraints(const ParameterConstraints& value) { m_parameterConstraintsHasBeenSet = true; m_parameterConstraints = value; }
 
     /**
-     * <p>The list of constraints that the administrator has put on the parameter.</p>
+     * <p>Constraints that the administrator has put on a parameter.</p>
      */
     inline void SetParameterConstraints(ParameterConstraints&& value) { m_parameterConstraintsHasBeenSet = true; m_parameterConstraints = std::move(value); }
 
     /**
-     * <p>The list of constraints that the administrator has put on the parameter.</p>
+     * <p>Constraints that the administrator has put on a parameter.</p>
      */
     inline ProvisioningArtifactParameter& WithParameterConstraints(const ParameterConstraints& value) { SetParameterConstraints(value); return *this;}
 
     /**
-     * <p>The list of constraints that the administrator has put on the parameter.</p>
+     * <p>Constraints that the administrator has put on a parameter.</p>
      */
     inline ProvisioningArtifactParameter& WithParameterConstraints(ParameterConstraints&& value) { SetParameterConstraints(std::move(value)); return *this;}
 

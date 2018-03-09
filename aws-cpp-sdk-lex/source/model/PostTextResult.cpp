@@ -27,11 +27,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 PostTextResult::PostTextResult() : 
+    m_messageFormat(MessageFormatType::NOT_SET),
     m_dialogState(DialogState::NOT_SET)
 {
 }
 
 PostTextResult::PostTextResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_messageFormat(MessageFormatType::NOT_SET),
     m_dialogState(DialogState::NOT_SET)
 {
   *this = result;
@@ -67,6 +69,12 @@ PostTextResult& PostTextResult::operator =(const Aws::AmazonWebServiceResult<Jso
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
+
+  }
+
+  if(jsonValue.ValueExists("messageFormat"))
+  {
+    m_messageFormat = MessageFormatTypeMapper::GetMessageFormatTypeForName(jsonValue.GetString("messageFormat"));
 
   }
 

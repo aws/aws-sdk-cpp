@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/apigateway/model/Integration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/apigateway/model/MethodResponse.h>
 #include <utility>
 
@@ -391,7 +392,7 @@ namespace Model
 
     /**
      * <p>A key-value map defining required or optional method request parameters that
-     * can be accepted by Amazon API Gateway. A key is a method request parameter name
+     * can be accepted by API Gateway. A key is a method request parameter name
      * matching the pattern of <code>method.request.{location}.{name}</code>, where
      * <code>location</code> is <code>querystring</code>, <code>path</code>, or
      * <code>header</code> and <code>name</code> is a valid and unique parameter name.
@@ -404,7 +405,7 @@ namespace Model
 
     /**
      * <p>A key-value map defining required or optional method request parameters that
-     * can be accepted by Amazon API Gateway. A key is a method request parameter name
+     * can be accepted by API Gateway. A key is a method request parameter name
      * matching the pattern of <code>method.request.{location}.{name}</code>, where
      * <code>location</code> is <code>querystring</code>, <code>path</code>, or
      * <code>header</code> and <code>name</code> is a valid and unique parameter name.
@@ -417,7 +418,7 @@ namespace Model
 
     /**
      * <p>A key-value map defining required or optional method request parameters that
-     * can be accepted by Amazon API Gateway. A key is a method request parameter name
+     * can be accepted by API Gateway. A key is a method request parameter name
      * matching the pattern of <code>method.request.{location}.{name}</code>, where
      * <code>location</code> is <code>querystring</code>, <code>path</code>, or
      * <code>header</code> and <code>name</code> is a valid and unique parameter name.
@@ -430,7 +431,7 @@ namespace Model
 
     /**
      * <p>A key-value map defining required or optional method request parameters that
-     * can be accepted by Amazon API Gateway. A key is a method request parameter name
+     * can be accepted by API Gateway. A key is a method request parameter name
      * matching the pattern of <code>method.request.{location}.{name}</code>, where
      * <code>location</code> is <code>querystring</code>, <code>path</code>, or
      * <code>header</code> and <code>name</code> is a valid and unique parameter name.
@@ -443,7 +444,7 @@ namespace Model
 
     /**
      * <p>A key-value map defining required or optional method request parameters that
-     * can be accepted by Amazon API Gateway. A key is a method request parameter name
+     * can be accepted by API Gateway. A key is a method request parameter name
      * matching the pattern of <code>method.request.{location}.{name}</code>, where
      * <code>location</code> is <code>querystring</code>, <code>path</code>, or
      * <code>header</code> and <code>name</code> is a valid and unique parameter name.
@@ -456,7 +457,7 @@ namespace Model
 
     /**
      * <p>A key-value map defining required or optional method request parameters that
-     * can be accepted by Amazon API Gateway. A key is a method request parameter name
+     * can be accepted by API Gateway. A key is a method request parameter name
      * matching the pattern of <code>method.request.{location}.{name}</code>, where
      * <code>location</code> is <code>querystring</code>, <code>path</code>, or
      * <code>header</code> and <code>name</code> is a valid and unique parameter name.
@@ -469,7 +470,7 @@ namespace Model
 
     /**
      * <p>A key-value map defining required or optional method request parameters that
-     * can be accepted by Amazon API Gateway. A key is a method request parameter name
+     * can be accepted by API Gateway. A key is a method request parameter name
      * matching the pattern of <code>method.request.{location}.{name}</code>, where
      * <code>location</code> is <code>querystring</code>, <code>path</code>, or
      * <code>header</code> and <code>name</code> is a valid and unique parameter name.
@@ -482,7 +483,7 @@ namespace Model
 
     /**
      * <p>A key-value map defining required or optional method request parameters that
-     * can be accepted by Amazon API Gateway. A key is a method request parameter name
+     * can be accepted by API Gateway. A key is a method request parameter name
      * matching the pattern of <code>method.request.{location}.{name}</code>, where
      * <code>location</code> is <code>querystring</code>, <code>path</code>, or
      * <code>header</code> and <code>name</code> is a valid and unique parameter name.
@@ -1181,6 +1182,103 @@ namespace Model
      */
     inline Method& WithMethodIntegration(Integration&& value) { SetMethodIntegration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A list of authorization scopes configured on the method. The scopes are used
+     * with a <code>COGNITO_USER_POOL</code> authorizer to authorize the method
+     * invocation. The authorization works by matching the method scopes against the
+     * scopes parsed from the access token in the incoming request. The method
+     * invocation is authorized if any method scopes matches a claimed scope in the
+     * access token. Otherwise, the invocation is not authorized. When the method scope
+     * is configured, the client must provide an access token instead of an identity
+     * token for authorization purposes.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAuthorizationScopes() const{ return m_authorizationScopes; }
+
+    /**
+     * <p>A list of authorization scopes configured on the method. The scopes are used
+     * with a <code>COGNITO_USER_POOL</code> authorizer to authorize the method
+     * invocation. The authorization works by matching the method scopes against the
+     * scopes parsed from the access token in the incoming request. The method
+     * invocation is authorized if any method scopes matches a claimed scope in the
+     * access token. Otherwise, the invocation is not authorized. When the method scope
+     * is configured, the client must provide an access token instead of an identity
+     * token for authorization purposes.</p>
+     */
+    inline void SetAuthorizationScopes(const Aws::Vector<Aws::String>& value) { m_authorizationScopesHasBeenSet = true; m_authorizationScopes = value; }
+
+    /**
+     * <p>A list of authorization scopes configured on the method. The scopes are used
+     * with a <code>COGNITO_USER_POOL</code> authorizer to authorize the method
+     * invocation. The authorization works by matching the method scopes against the
+     * scopes parsed from the access token in the incoming request. The method
+     * invocation is authorized if any method scopes matches a claimed scope in the
+     * access token. Otherwise, the invocation is not authorized. When the method scope
+     * is configured, the client must provide an access token instead of an identity
+     * token for authorization purposes.</p>
+     */
+    inline void SetAuthorizationScopes(Aws::Vector<Aws::String>&& value) { m_authorizationScopesHasBeenSet = true; m_authorizationScopes = std::move(value); }
+
+    /**
+     * <p>A list of authorization scopes configured on the method. The scopes are used
+     * with a <code>COGNITO_USER_POOL</code> authorizer to authorize the method
+     * invocation. The authorization works by matching the method scopes against the
+     * scopes parsed from the access token in the incoming request. The method
+     * invocation is authorized if any method scopes matches a claimed scope in the
+     * access token. Otherwise, the invocation is not authorized. When the method scope
+     * is configured, the client must provide an access token instead of an identity
+     * token for authorization purposes.</p>
+     */
+    inline Method& WithAuthorizationScopes(const Aws::Vector<Aws::String>& value) { SetAuthorizationScopes(value); return *this;}
+
+    /**
+     * <p>A list of authorization scopes configured on the method. The scopes are used
+     * with a <code>COGNITO_USER_POOL</code> authorizer to authorize the method
+     * invocation. The authorization works by matching the method scopes against the
+     * scopes parsed from the access token in the incoming request. The method
+     * invocation is authorized if any method scopes matches a claimed scope in the
+     * access token. Otherwise, the invocation is not authorized. When the method scope
+     * is configured, the client must provide an access token instead of an identity
+     * token for authorization purposes.</p>
+     */
+    inline Method& WithAuthorizationScopes(Aws::Vector<Aws::String>&& value) { SetAuthorizationScopes(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of authorization scopes configured on the method. The scopes are used
+     * with a <code>COGNITO_USER_POOL</code> authorizer to authorize the method
+     * invocation. The authorization works by matching the method scopes against the
+     * scopes parsed from the access token in the incoming request. The method
+     * invocation is authorized if any method scopes matches a claimed scope in the
+     * access token. Otherwise, the invocation is not authorized. When the method scope
+     * is configured, the client must provide an access token instead of an identity
+     * token for authorization purposes.</p>
+     */
+    inline Method& AddAuthorizationScopes(const Aws::String& value) { m_authorizationScopesHasBeenSet = true; m_authorizationScopes.push_back(value); return *this; }
+
+    /**
+     * <p>A list of authorization scopes configured on the method. The scopes are used
+     * with a <code>COGNITO_USER_POOL</code> authorizer to authorize the method
+     * invocation. The authorization works by matching the method scopes against the
+     * scopes parsed from the access token in the incoming request. The method
+     * invocation is authorized if any method scopes matches a claimed scope in the
+     * access token. Otherwise, the invocation is not authorized. When the method scope
+     * is configured, the client must provide an access token instead of an identity
+     * token for authorization purposes.</p>
+     */
+    inline Method& AddAuthorizationScopes(Aws::String&& value) { m_authorizationScopesHasBeenSet = true; m_authorizationScopes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of authorization scopes configured on the method. The scopes are used
+     * with a <code>COGNITO_USER_POOL</code> authorizer to authorize the method
+     * invocation. The authorization works by matching the method scopes against the
+     * scopes parsed from the access token in the incoming request. The method
+     * invocation is authorized if any method scopes matches a claimed scope in the
+     * access token. Otherwise, the invocation is not authorized. When the method scope
+     * is configured, the client must provide an access token instead of an identity
+     * token for authorization purposes.</p>
+     */
+    inline Method& AddAuthorizationScopes(const char* value) { m_authorizationScopesHasBeenSet = true; m_authorizationScopes.push_back(value); return *this; }
+
   private:
 
     Aws::String m_httpMethod;
@@ -1212,6 +1310,9 @@ namespace Model
 
     Integration m_methodIntegration;
     bool m_methodIntegrationHasBeenSet;
+
+    Aws::Vector<Aws::String> m_authorizationScopes;
+    bool m_authorizationScopesHasBeenSet;
   };
 
 } // namespace Model

@@ -36,8 +36,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about a WorkSpace creation request.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Information used to create a WorkSpace.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspaceRequest">AWS
    * API Reference</a></p>
    */
@@ -51,151 +50,137 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the AWS Directory Service directory to create the WorkSpace
-     * in. You can use the <a>DescribeWorkspaceDirectories</a> operation to obtain a
-     * list of the directories that are available.</p>
+     * <p>The identifier of the AWS Directory Service directory for the WorkSpace. You
+     * can use <a>DescribeWorkspaceDirectories</a> to list the available
+     * directories.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
 
     /**
-     * <p>The identifier of the AWS Directory Service directory to create the WorkSpace
-     * in. You can use the <a>DescribeWorkspaceDirectories</a> operation to obtain a
-     * list of the directories that are available.</p>
+     * <p>The identifier of the AWS Directory Service directory for the WorkSpace. You
+     * can use <a>DescribeWorkspaceDirectories</a> to list the available
+     * directories.</p>
      */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
-     * <p>The identifier of the AWS Directory Service directory to create the WorkSpace
-     * in. You can use the <a>DescribeWorkspaceDirectories</a> operation to obtain a
-     * list of the directories that are available.</p>
+     * <p>The identifier of the AWS Directory Service directory for the WorkSpace. You
+     * can use <a>DescribeWorkspaceDirectories</a> to list the available
+     * directories.</p>
      */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
-     * <p>The identifier of the AWS Directory Service directory to create the WorkSpace
-     * in. You can use the <a>DescribeWorkspaceDirectories</a> operation to obtain a
-     * list of the directories that are available.</p>
+     * <p>The identifier of the AWS Directory Service directory for the WorkSpace. You
+     * can use <a>DescribeWorkspaceDirectories</a> to list the available
+     * directories.</p>
      */
     inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
 
     /**
-     * <p>The identifier of the AWS Directory Service directory to create the WorkSpace
-     * in. You can use the <a>DescribeWorkspaceDirectories</a> operation to obtain a
-     * list of the directories that are available.</p>
+     * <p>The identifier of the AWS Directory Service directory for the WorkSpace. You
+     * can use <a>DescribeWorkspaceDirectories</a> to list the available
+     * directories.</p>
      */
     inline WorkspaceRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
 
     /**
-     * <p>The identifier of the AWS Directory Service directory to create the WorkSpace
-     * in. You can use the <a>DescribeWorkspaceDirectories</a> operation to obtain a
-     * list of the directories that are available.</p>
+     * <p>The identifier of the AWS Directory Service directory for the WorkSpace. You
+     * can use <a>DescribeWorkspaceDirectories</a> to list the available
+     * directories.</p>
      */
     inline WorkspaceRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the AWS Directory Service directory to create the WorkSpace
-     * in. You can use the <a>DescribeWorkspaceDirectories</a> operation to obtain a
-     * list of the directories that are available.</p>
+     * <p>The identifier of the AWS Directory Service directory for the WorkSpace. You
+     * can use <a>DescribeWorkspaceDirectories</a> to list the available
+     * directories.</p>
      */
     inline WorkspaceRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 
 
     /**
-     * <p>The username that the WorkSpace is assigned to. This username must exist in
-     * the AWS Directory Service directory specified by the <code>DirectoryId</code>
-     * member.</p>
+     * <p>The username of the user for the WorkSpace. This username must exist in the
+     * AWS Directory Service directory for the WorkSpace.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
-     * <p>The username that the WorkSpace is assigned to. This username must exist in
-     * the AWS Directory Service directory specified by the <code>DirectoryId</code>
-     * member.</p>
+     * <p>The username of the user for the WorkSpace. This username must exist in the
+     * AWS Directory Service directory for the WorkSpace.</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
-     * <p>The username that the WorkSpace is assigned to. This username must exist in
-     * the AWS Directory Service directory specified by the <code>DirectoryId</code>
-     * member.</p>
+     * <p>The username of the user for the WorkSpace. This username must exist in the
+     * AWS Directory Service directory for the WorkSpace.</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
-     * <p>The username that the WorkSpace is assigned to. This username must exist in
-     * the AWS Directory Service directory specified by the <code>DirectoryId</code>
-     * member.</p>
+     * <p>The username of the user for the WorkSpace. This username must exist in the
+     * AWS Directory Service directory for the WorkSpace.</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
-     * <p>The username that the WorkSpace is assigned to. This username must exist in
-     * the AWS Directory Service directory specified by the <code>DirectoryId</code>
-     * member.</p>
+     * <p>The username of the user for the WorkSpace. This username must exist in the
+     * AWS Directory Service directory for the WorkSpace.</p>
      */
     inline WorkspaceRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The username that the WorkSpace is assigned to. This username must exist in
-     * the AWS Directory Service directory specified by the <code>DirectoryId</code>
-     * member.</p>
+     * <p>The username of the user for the WorkSpace. This username must exist in the
+     * AWS Directory Service directory for the WorkSpace.</p>
      */
     inline WorkspaceRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
-     * <p>The username that the WorkSpace is assigned to. This username must exist in
-     * the AWS Directory Service directory specified by the <code>DirectoryId</code>
-     * member.</p>
+     * <p>The username of the user for the WorkSpace. This username must exist in the
+     * AWS Directory Service directory for the WorkSpace.</p>
      */
     inline WorkspaceRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
 
     /**
-     * <p>The identifier of the bundle to create the WorkSpace from. You can use the
-     * <a>DescribeWorkspaceBundles</a> operation to obtain a list of the bundles that
-     * are available.</p>
+     * <p>The identifier of the bundle for the WorkSpace. You can use
+     * <a>DescribeWorkspaceBundles</a> to list the available bundles.</p>
      */
     inline const Aws::String& GetBundleId() const{ return m_bundleId; }
 
     /**
-     * <p>The identifier of the bundle to create the WorkSpace from. You can use the
-     * <a>DescribeWorkspaceBundles</a> operation to obtain a list of the bundles that
-     * are available.</p>
+     * <p>The identifier of the bundle for the WorkSpace. You can use
+     * <a>DescribeWorkspaceBundles</a> to list the available bundles.</p>
      */
     inline void SetBundleId(const Aws::String& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
 
     /**
-     * <p>The identifier of the bundle to create the WorkSpace from. You can use the
-     * <a>DescribeWorkspaceBundles</a> operation to obtain a list of the bundles that
-     * are available.</p>
+     * <p>The identifier of the bundle for the WorkSpace. You can use
+     * <a>DescribeWorkspaceBundles</a> to list the available bundles.</p>
      */
     inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::move(value); }
 
     /**
-     * <p>The identifier of the bundle to create the WorkSpace from. You can use the
-     * <a>DescribeWorkspaceBundles</a> operation to obtain a list of the bundles that
-     * are available.</p>
+     * <p>The identifier of the bundle for the WorkSpace. You can use
+     * <a>DescribeWorkspaceBundles</a> to list the available bundles.</p>
      */
     inline void SetBundleId(const char* value) { m_bundleIdHasBeenSet = true; m_bundleId.assign(value); }
 
     /**
-     * <p>The identifier of the bundle to create the WorkSpace from. You can use the
-     * <a>DescribeWorkspaceBundles</a> operation to obtain a list of the bundles that
-     * are available.</p>
+     * <p>The identifier of the bundle for the WorkSpace. You can use
+     * <a>DescribeWorkspaceBundles</a> to list the available bundles.</p>
      */
     inline WorkspaceRequest& WithBundleId(const Aws::String& value) { SetBundleId(value); return *this;}
 
     /**
-     * <p>The identifier of the bundle to create the WorkSpace from. You can use the
-     * <a>DescribeWorkspaceBundles</a> operation to obtain a list of the bundles that
-     * are available.</p>
+     * <p>The identifier of the bundle for the WorkSpace. You can use
+     * <a>DescribeWorkspaceBundles</a> to list the available bundles.</p>
      */
     inline WorkspaceRequest& WithBundleId(Aws::String&& value) { SetBundleId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the bundle to create the WorkSpace from. You can use the
-     * <a>DescribeWorkspaceBundles</a> operation to obtain a list of the bundles that
-     * are available.</p>
+     * <p>The identifier of the bundle for the WorkSpace. You can use
+     * <a>DescribeWorkspaceBundles</a> to list the available bundles.</p>
      */
     inline WorkspaceRequest& WithBundleId(const char* value) { SetBundleId(value); return *this;}
 
@@ -237,91 +222,95 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the data stored on the user volume, or D: drive, is
-     * encrypted.</p>
+     * <p>Indicates whether the data stored on the user volume is encrypted.</p>
      */
     inline bool GetUserVolumeEncryptionEnabled() const{ return m_userVolumeEncryptionEnabled; }
 
     /**
-     * <p>Specifies whether the data stored on the user volume, or D: drive, is
-     * encrypted.</p>
+     * <p>Indicates whether the data stored on the user volume is encrypted.</p>
      */
     inline void SetUserVolumeEncryptionEnabled(bool value) { m_userVolumeEncryptionEnabledHasBeenSet = true; m_userVolumeEncryptionEnabled = value; }
 
     /**
-     * <p>Specifies whether the data stored on the user volume, or D: drive, is
-     * encrypted.</p>
+     * <p>Indicates whether the data stored on the user volume is encrypted.</p>
      */
     inline WorkspaceRequest& WithUserVolumeEncryptionEnabled(bool value) { SetUserVolumeEncryptionEnabled(value); return *this;}
 
 
     /**
-     * <p>Specifies whether the data stored on the root volume, or C: drive, is
-     * encrypted.</p>
+     * <p>Indicates whether the data stored on the root volume is encrypted.</p>
      */
     inline bool GetRootVolumeEncryptionEnabled() const{ return m_rootVolumeEncryptionEnabled; }
 
     /**
-     * <p>Specifies whether the data stored on the root volume, or C: drive, is
-     * encrypted.</p>
+     * <p>Indicates whether the data stored on the root volume is encrypted.</p>
      */
     inline void SetRootVolumeEncryptionEnabled(bool value) { m_rootVolumeEncryptionEnabledHasBeenSet = true; m_rootVolumeEncryptionEnabled = value; }
 
     /**
-     * <p>Specifies whether the data stored on the root volume, or C: drive, is
-     * encrypted.</p>
+     * <p>Indicates whether the data stored on the root volume is encrypted.</p>
      */
     inline WorkspaceRequest& WithRootVolumeEncryptionEnabled(bool value) { SetRootVolumeEncryptionEnabled(value); return *this;}
 
 
-    
+    /**
+     * <p>The WorkSpace properties.</p>
+     */
     inline const WorkspaceProperties& GetWorkspaceProperties() const{ return m_workspaceProperties; }
 
-    
+    /**
+     * <p>The WorkSpace properties.</p>
+     */
     inline void SetWorkspaceProperties(const WorkspaceProperties& value) { m_workspacePropertiesHasBeenSet = true; m_workspaceProperties = value; }
 
-    
+    /**
+     * <p>The WorkSpace properties.</p>
+     */
     inline void SetWorkspaceProperties(WorkspaceProperties&& value) { m_workspacePropertiesHasBeenSet = true; m_workspaceProperties = std::move(value); }
 
-    
+    /**
+     * <p>The WorkSpace properties.</p>
+     */
     inline WorkspaceRequest& WithWorkspaceProperties(const WorkspaceProperties& value) { SetWorkspaceProperties(value); return *this;}
 
-    
+    /**
+     * <p>The WorkSpace properties.</p>
+     */
     inline WorkspaceRequest& WithWorkspaceProperties(WorkspaceProperties&& value) { SetWorkspaceProperties(std::move(value)); return *this;}
 
 
     /**
-     * <p>The tags of the WorkSpace request.</p>
+     * <p>The tags for the WorkSpace.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags of the WorkSpace request.</p>
+     * <p>The tags for the WorkSpace.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags of the WorkSpace request.</p>
+     * <p>The tags for the WorkSpace.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags of the WorkSpace request.</p>
+     * <p>The tags for the WorkSpace.</p>
      */
     inline WorkspaceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags of the WorkSpace request.</p>
+     * <p>The tags for the WorkSpace.</p>
      */
     inline WorkspaceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags of the WorkSpace request.</p>
+     * <p>The tags for the WorkSpace.</p>
      */
     inline WorkspaceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The tags of the WorkSpace request.</p>
+     * <p>The tags for the WorkSpace.</p>
      */
     inline WorkspaceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

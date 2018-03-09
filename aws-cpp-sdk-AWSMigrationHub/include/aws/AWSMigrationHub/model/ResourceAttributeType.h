@@ -35,8 +35,7 @@ namespace Model
     VM_NAME,
     VM_PATH,
     BIOS_ID,
-    MOTHERBOARD_SERIAL_NUMBER,
-    LABEL
+    MOTHERBOARD_SERIAL_NUMBER
   };
 
 namespace ResourceAttributeTypeMapper

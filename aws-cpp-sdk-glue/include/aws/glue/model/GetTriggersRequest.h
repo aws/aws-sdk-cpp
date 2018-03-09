@@ -81,37 +81,51 @@ namespace Model
 
 
     /**
-     * <p>The name of the job for which to retrieve triggers.</p>
+     * <p>The name of the job for which to retrieve triggers. The trigger that can
+     * start this job will be returned, and if there is no such trigger, all triggers
+     * will be returned.</p>
      */
     inline const Aws::String& GetDependentJobName() const{ return m_dependentJobName; }
 
     /**
-     * <p>The name of the job for which to retrieve triggers.</p>
+     * <p>The name of the job for which to retrieve triggers. The trigger that can
+     * start this job will be returned, and if there is no such trigger, all triggers
+     * will be returned.</p>
      */
     inline void SetDependentJobName(const Aws::String& value) { m_dependentJobNameHasBeenSet = true; m_dependentJobName = value; }
 
     /**
-     * <p>The name of the job for which to retrieve triggers.</p>
+     * <p>The name of the job for which to retrieve triggers. The trigger that can
+     * start this job will be returned, and if there is no such trigger, all triggers
+     * will be returned.</p>
      */
     inline void SetDependentJobName(Aws::String&& value) { m_dependentJobNameHasBeenSet = true; m_dependentJobName = std::move(value); }
 
     /**
-     * <p>The name of the job for which to retrieve triggers.</p>
+     * <p>The name of the job for which to retrieve triggers. The trigger that can
+     * start this job will be returned, and if there is no such trigger, all triggers
+     * will be returned.</p>
      */
     inline void SetDependentJobName(const char* value) { m_dependentJobNameHasBeenSet = true; m_dependentJobName.assign(value); }
 
     /**
-     * <p>The name of the job for which to retrieve triggers.</p>
+     * <p>The name of the job for which to retrieve triggers. The trigger that can
+     * start this job will be returned, and if there is no such trigger, all triggers
+     * will be returned.</p>
      */
     inline GetTriggersRequest& WithDependentJobName(const Aws::String& value) { SetDependentJobName(value); return *this;}
 
     /**
-     * <p>The name of the job for which to retrieve triggers.</p>
+     * <p>The name of the job for which to retrieve triggers. The trigger that can
+     * start this job will be returned, and if there is no such trigger, all triggers
+     * will be returned.</p>
      */
     inline GetTriggersRequest& WithDependentJobName(Aws::String&& value) { SetDependentJobName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the job for which to retrieve triggers.</p>
+     * <p>The name of the job for which to retrieve triggers. The trigger that can
+     * start this job will be returned, and if there is no such trigger, all triggers
+     * will be returned.</p>
      */
     inline GetTriggersRequest& WithDependentJobName(const char* value) { SetDependentJobName(value); return *this;}
 

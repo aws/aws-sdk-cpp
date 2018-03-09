@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/model/CACertificateDescription.h>
+#include <aws/iot/model/RegistrationConfig.h>
 #include <utility>
 
 namespace Aws
@@ -73,9 +74,37 @@ namespace Model
      */
     inline DescribeCACertificateResult& WithCertificateDescription(CACertificateDescription&& value) { SetCertificateDescription(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information about the registration configuration.</p>
+     */
+    inline const RegistrationConfig& GetRegistrationConfig() const{ return m_registrationConfig; }
+
+    /**
+     * <p>Information about the registration configuration.</p>
+     */
+    inline void SetRegistrationConfig(const RegistrationConfig& value) { m_registrationConfig = value; }
+
+    /**
+     * <p>Information about the registration configuration.</p>
+     */
+    inline void SetRegistrationConfig(RegistrationConfig&& value) { m_registrationConfig = std::move(value); }
+
+    /**
+     * <p>Information about the registration configuration.</p>
+     */
+    inline DescribeCACertificateResult& WithRegistrationConfig(const RegistrationConfig& value) { SetRegistrationConfig(value); return *this;}
+
+    /**
+     * <p>Information about the registration configuration.</p>
+     */
+    inline DescribeCACertificateResult& WithRegistrationConfig(RegistrationConfig&& value) { SetRegistrationConfig(std::move(value)); return *this;}
+
   private:
 
     CACertificateDescription m_certificateDescription;
+
+    RegistrationConfig m_registrationConfig;
   };
 
 } // namespace Model

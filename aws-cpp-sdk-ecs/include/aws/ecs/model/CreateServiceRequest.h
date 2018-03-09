@@ -18,6 +18,7 @@
 #include <aws/ecs/ECSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ecs/model/LaunchType.h>
 #include <aws/ecs/model/DeploymentConfiguration.h>
 #include <aws/ecs/model/NetworkConfiguration.h>
 #include <aws/ecs/model/LoadBalancer.h>
@@ -159,57 +160,57 @@ namespace Model
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to run in your service. If a <code>revision</code> is not specified,
-     * the latest <code>ACTIVE</code> revision is used.</p>
+     * (<code>family:revision</code>) or full ARN of the task definition to run in your
+     * service. If a <code>revision</code> is not specified, the latest
+     * <code>ACTIVE</code> revision is used.</p>
      */
     inline const Aws::String& GetTaskDefinition() const{ return m_taskDefinition; }
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to run in your service. If a <code>revision</code> is not specified,
-     * the latest <code>ACTIVE</code> revision is used.</p>
+     * (<code>family:revision</code>) or full ARN of the task definition to run in your
+     * service. If a <code>revision</code> is not specified, the latest
+     * <code>ACTIVE</code> revision is used.</p>
      */
     inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to run in your service. If a <code>revision</code> is not specified,
-     * the latest <code>ACTIVE</code> revision is used.</p>
+     * (<code>family:revision</code>) or full ARN of the task definition to run in your
+     * service. If a <code>revision</code> is not specified, the latest
+     * <code>ACTIVE</code> revision is used.</p>
      */
     inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::move(value); }
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to run in your service. If a <code>revision</code> is not specified,
-     * the latest <code>ACTIVE</code> revision is used.</p>
+     * (<code>family:revision</code>) or full ARN of the task definition to run in your
+     * service. If a <code>revision</code> is not specified, the latest
+     * <code>ACTIVE</code> revision is used.</p>
      */
     inline void SetTaskDefinition(const char* value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition.assign(value); }
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to run in your service. If a <code>revision</code> is not specified,
-     * the latest <code>ACTIVE</code> revision is used.</p>
+     * (<code>family:revision</code>) or full ARN of the task definition to run in your
+     * service. If a <code>revision</code> is not specified, the latest
+     * <code>ACTIVE</code> revision is used.</p>
      */
     inline CreateServiceRequest& WithTaskDefinition(const Aws::String& value) { SetTaskDefinition(value); return *this;}
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to run in your service. If a <code>revision</code> is not specified,
-     * the latest <code>ACTIVE</code> revision is used.</p>
+     * (<code>family:revision</code>) or full ARN of the task definition to run in your
+     * service. If a <code>revision</code> is not specified, the latest
+     * <code>ACTIVE</code> revision is used.</p>
      */
     inline CreateServiceRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(std::move(value)); return *this;}
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to run in your service. If a <code>revision</code> is not specified,
-     * the latest <code>ACTIVE</code> revision is used.</p>
+     * (<code>family:revision</code>) or full ARN of the task definition to run in your
+     * service. If a <code>revision</code> is not specified, the latest
+     * <code>ACTIVE</code> revision is used.</p>
      */
     inline CreateServiceRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
 
@@ -404,6 +405,75 @@ namespace Model
 
 
     /**
+     * <p>The launch type on which to run your service.</p>
+     */
+    inline const LaunchType& GetLaunchType() const{ return m_launchType; }
+
+    /**
+     * <p>The launch type on which to run your service.</p>
+     */
+    inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
+
+    /**
+     * <p>The launch type on which to run your service.</p>
+     */
+    inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
+
+    /**
+     * <p>The launch type on which to run your service.</p>
+     */
+    inline CreateServiceRequest& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
+
+    /**
+     * <p>The launch type on which to run your service.</p>
+     */
+    inline CreateServiceRequest& WithLaunchType(LaunchType&& value) { SetLaunchType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The platform version on which to run your service. If one is not specified,
+     * the latest version is used by default.</p>
+     */
+    inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
+
+    /**
+     * <p>The platform version on which to run your service. If one is not specified,
+     * the latest version is used by default.</p>
+     */
+    inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
+
+    /**
+     * <p>The platform version on which to run your service. If one is not specified,
+     * the latest version is used by default.</p>
+     */
+    inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
+
+    /**
+     * <p>The platform version on which to run your service. If one is not specified,
+     * the latest version is used by default.</p>
+     */
+    inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
+
+    /**
+     * <p>The platform version on which to run your service. If one is not specified,
+     * the latest version is used by default.</p>
+     */
+    inline CreateServiceRequest& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
+
+    /**
+     * <p>The platform version on which to run your service. If one is not specified,
+     * the latest version is used by default.</p>
+     */
+    inline CreateServiceRequest& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The platform version on which to run your service. If one is not specified,
+     * the latest version is used by default.</p>
+     */
+    inline CreateServiceRequest& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
+
+
+    /**
      * <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows
      * Amazon ECS to make calls to your load balancer on your behalf. This parameter is
      * only permitted if you are using a load balancer with your service and your task
@@ -414,13 +484,14 @@ namespace Model
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode, in
      * which case you should not specify a role here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service
-     * Developer Guide</i>.</p> </important> <p>If your specified role has a path other
-     * than <code>/</code>, then you must either specify the full role ARN (this is
-     * recommended) or prefix the role name with the path. For example, if a role with
-     * the name <code>bar</code> has a path of <code>/foo/</code> then you would
-     * specify <code>/foo/bar</code> as the role name. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
+     * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
+     * path other than <code>/</code>, then you must either specify the full role ARN
+     * (this is recommended) or prefix the role name with the path. For example, if a
+     * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
+     * would specify <code>/foo/bar</code> as the role name. For more information, see
+     * <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
      */
@@ -437,13 +508,14 @@ namespace Model
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode, in
      * which case you should not specify a role here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service
-     * Developer Guide</i>.</p> </important> <p>If your specified role has a path other
-     * than <code>/</code>, then you must either specify the full role ARN (this is
-     * recommended) or prefix the role name with the path. For example, if a role with
-     * the name <code>bar</code> has a path of <code>/foo/</code> then you would
-     * specify <code>/foo/bar</code> as the role name. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
+     * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
+     * path other than <code>/</code>, then you must either specify the full role ARN
+     * (this is recommended) or prefix the role name with the path. For example, if a
+     * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
+     * would specify <code>/foo/bar</code> as the role name. For more information, see
+     * <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
      */
@@ -460,13 +532,14 @@ namespace Model
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode, in
      * which case you should not specify a role here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service
-     * Developer Guide</i>.</p> </important> <p>If your specified role has a path other
-     * than <code>/</code>, then you must either specify the full role ARN (this is
-     * recommended) or prefix the role name with the path. For example, if a role with
-     * the name <code>bar</code> has a path of <code>/foo/</code> then you would
-     * specify <code>/foo/bar</code> as the role name. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
+     * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
+     * path other than <code>/</code>, then you must either specify the full role ARN
+     * (this is recommended) or prefix the role name with the path. For example, if a
+     * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
+     * would specify <code>/foo/bar</code> as the role name. For more information, see
+     * <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
      */
@@ -483,13 +556,14 @@ namespace Model
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode, in
      * which case you should not specify a role here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service
-     * Developer Guide</i>.</p> </important> <p>If your specified role has a path other
-     * than <code>/</code>, then you must either specify the full role ARN (this is
-     * recommended) or prefix the role name with the path. For example, if a role with
-     * the name <code>bar</code> has a path of <code>/foo/</code> then you would
-     * specify <code>/foo/bar</code> as the role name. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
+     * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
+     * path other than <code>/</code>, then you must either specify the full role ARN
+     * (this is recommended) or prefix the role name with the path. For example, if a
+     * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
+     * would specify <code>/foo/bar</code> as the role name. For more information, see
+     * <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
      */
@@ -506,13 +580,14 @@ namespace Model
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode, in
      * which case you should not specify a role here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service
-     * Developer Guide</i>.</p> </important> <p>If your specified role has a path other
-     * than <code>/</code>, then you must either specify the full role ARN (this is
-     * recommended) or prefix the role name with the path. For example, if a role with
-     * the name <code>bar</code> has a path of <code>/foo/</code> then you would
-     * specify <code>/foo/bar</code> as the role name. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
+     * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
+     * path other than <code>/</code>, then you must either specify the full role ARN
+     * (this is recommended) or prefix the role name with the path. For example, if a
+     * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
+     * would specify <code>/foo/bar</code> as the role name. For more information, see
+     * <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
      */
@@ -529,13 +604,14 @@ namespace Model
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode, in
      * which case you should not specify a role here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service
-     * Developer Guide</i>.</p> </important> <p>If your specified role has a path other
-     * than <code>/</code>, then you must either specify the full role ARN (this is
-     * recommended) or prefix the role name with the path. For example, if a role with
-     * the name <code>bar</code> has a path of <code>/foo/</code> then you would
-     * specify <code>/foo/bar</code> as the role name. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
+     * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
+     * path other than <code>/</code>, then you must either specify the full role ARN
+     * (this is recommended) or prefix the role name with the path. For example, if a
+     * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
+     * would specify <code>/foo/bar</code> as the role name. For more information, see
+     * <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
      */
@@ -552,13 +628,14 @@ namespace Model
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode, in
      * which case you should not specify a role here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service
-     * Developer Guide</i>.</p> </important> <p>If your specified role has a path other
-     * than <code>/</code>, then you must either specify the full role ARN (this is
-     * recommended) or prefix the role name with the path. For example, if a role with
-     * the name <code>bar</code> has a path of <code>/foo/</code> then you would
-     * specify <code>/foo/bar</code> as the role name. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
+     * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
+     * path other than <code>/</code>, then you must either specify the full role ARN
+     * (this is recommended) or prefix the role name with the path. For example, if a
+     * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
+     * would specify <code>/foo/bar</code> as the role name. For more information, see
+     * <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
      */
@@ -648,43 +725,43 @@ namespace Model
 
     /**
      * <p>The placement strategy objects to use for tasks in your service. You can
-     * specify a maximum of 5 strategy rules per service.</p>
+     * specify a maximum of five strategy rules per service.</p>
      */
     inline const Aws::Vector<PlacementStrategy>& GetPlacementStrategy() const{ return m_placementStrategy; }
 
     /**
      * <p>The placement strategy objects to use for tasks in your service. You can
-     * specify a maximum of 5 strategy rules per service.</p>
+     * specify a maximum of five strategy rules per service.</p>
      */
     inline void SetPlacementStrategy(const Aws::Vector<PlacementStrategy>& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = value; }
 
     /**
      * <p>The placement strategy objects to use for tasks in your service. You can
-     * specify a maximum of 5 strategy rules per service.</p>
+     * specify a maximum of five strategy rules per service.</p>
      */
     inline void SetPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = std::move(value); }
 
     /**
      * <p>The placement strategy objects to use for tasks in your service. You can
-     * specify a maximum of 5 strategy rules per service.</p>
+     * specify a maximum of five strategy rules per service.</p>
      */
     inline CreateServiceRequest& WithPlacementStrategy(const Aws::Vector<PlacementStrategy>& value) { SetPlacementStrategy(value); return *this;}
 
     /**
      * <p>The placement strategy objects to use for tasks in your service. You can
-     * specify a maximum of 5 strategy rules per service.</p>
+     * specify a maximum of five strategy rules per service.</p>
      */
     inline CreateServiceRequest& WithPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { SetPlacementStrategy(std::move(value)); return *this;}
 
     /**
      * <p>The placement strategy objects to use for tasks in your service. You can
-     * specify a maximum of 5 strategy rules per service.</p>
+     * specify a maximum of five strategy rules per service.</p>
      */
     inline CreateServiceRequest& AddPlacementStrategy(const PlacementStrategy& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(value); return *this; }
 
     /**
      * <p>The placement strategy objects to use for tasks in your service. You can
-     * specify a maximum of 5 strategy rules per service.</p>
+     * specify a maximum of five strategy rules per service.</p>
      */
     inline CreateServiceRequest& AddPlacementStrategy(PlacementStrategy&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(std::move(value)); return *this; }
 
@@ -694,8 +771,9 @@ namespace Model
      * task definitions that use the <code>awsvpc</code> network mode to receive their
      * own Elastic Network Interface, and it is not supported for other network modes.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
-     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * Networking</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
 
@@ -704,8 +782,9 @@ namespace Model
      * task definitions that use the <code>awsvpc</code> network mode to receive their
      * own Elastic Network Interface, and it is not supported for other network modes.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
-     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * Networking</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
 
@@ -714,8 +793,9 @@ namespace Model
      * task definitions that use the <code>awsvpc</code> network mode to receive their
      * own Elastic Network Interface, and it is not supported for other network modes.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
-     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * Networking</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
 
@@ -724,8 +804,9 @@ namespace Model
      * task definitions that use the <code>awsvpc</code> network mode to receive their
      * own Elastic Network Interface, and it is not supported for other network modes.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
-     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * Networking</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline CreateServiceRequest& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
 
@@ -734,10 +815,48 @@ namespace Model
      * task definitions that use the <code>awsvpc</code> network mode to receive their
      * own Elastic Network Interface, and it is not supported for other network modes.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
-     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * Networking</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline CreateServiceRequest& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The period of time, in seconds, that the Amazon ECS service scheduler should
+     * ignore unhealthy Elastic Load Balancing target health checks after a task has
+     * first started. This is only valid if your service is configured to use a load
+     * balancer. If your service's tasks take a while to start and respond to Elastic
+     * Load Balancing health checks, you can specify a health check grace period of up
+     * to 1,800 seconds during which the ECS service scheduler ignores health check
+     * status. This grace period can prevent the ECS service scheduler from marking
+     * tasks as unhealthy and stopping them before they have time to come up.</p>
+     */
+    inline int GetHealthCheckGracePeriodSeconds() const{ return m_healthCheckGracePeriodSeconds; }
+
+    /**
+     * <p>The period of time, in seconds, that the Amazon ECS service scheduler should
+     * ignore unhealthy Elastic Load Balancing target health checks after a task has
+     * first started. This is only valid if your service is configured to use a load
+     * balancer. If your service's tasks take a while to start and respond to Elastic
+     * Load Balancing health checks, you can specify a health check grace period of up
+     * to 1,800 seconds during which the ECS service scheduler ignores health check
+     * status. This grace period can prevent the ECS service scheduler from marking
+     * tasks as unhealthy and stopping them before they have time to come up.</p>
+     */
+    inline void SetHealthCheckGracePeriodSeconds(int value) { m_healthCheckGracePeriodSecondsHasBeenSet = true; m_healthCheckGracePeriodSeconds = value; }
+
+    /**
+     * <p>The period of time, in seconds, that the Amazon ECS service scheduler should
+     * ignore unhealthy Elastic Load Balancing target health checks after a task has
+     * first started. This is only valid if your service is configured to use a load
+     * balancer. If your service's tasks take a while to start and respond to Elastic
+     * Load Balancing health checks, you can specify a health check grace period of up
+     * to 1,800 seconds during which the ECS service scheduler ignores health check
+     * status. This grace period can prevent the ECS service scheduler from marking
+     * tasks as unhealthy and stopping them before they have time to come up.</p>
+     */
+    inline CreateServiceRequest& WithHealthCheckGracePeriodSeconds(int value) { SetHealthCheckGracePeriodSeconds(value); return *this;}
 
   private:
 
@@ -759,6 +878,12 @@ namespace Model
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
 
+    LaunchType m_launchType;
+    bool m_launchTypeHasBeenSet;
+
+    Aws::String m_platformVersion;
+    bool m_platformVersionHasBeenSet;
+
     Aws::String m_role;
     bool m_roleHasBeenSet;
 
@@ -773,6 +898,9 @@ namespace Model
 
     NetworkConfiguration m_networkConfiguration;
     bool m_networkConfigurationHasBeenSet;
+
+    int m_healthCheckGracePeriodSeconds;
+    bool m_healthCheckGracePeriodSecondsHasBeenSet;
   };
 
 } // namespace Model

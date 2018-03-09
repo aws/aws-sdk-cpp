@@ -62,6 +62,21 @@ GetUserResult& GetUserResult::operator =(const Aws::AmazonWebServiceResult<JsonV
     }
   }
 
+  if(jsonValue.ValueExists("PreferredMfaSetting"))
+  {
+    m_preferredMfaSetting = jsonValue.GetString("PreferredMfaSetting");
+
+  }
+
+  if(jsonValue.ValueExists("UserMFASettingList"))
+  {
+    Array<JsonValue> userMFASettingListJsonList = jsonValue.GetArray("UserMFASettingList");
+    for(unsigned userMFASettingListIndex = 0; userMFASettingListIndex < userMFASettingListJsonList.GetLength(); ++userMFASettingListIndex)
+    {
+      m_userMFASettingList.push_back(userMFASettingListJsonList[userMFASettingListIndex].AsString());
+    }
+  }
+
 
 
   return *this;

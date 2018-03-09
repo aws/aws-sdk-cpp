@@ -135,42 +135,42 @@ namespace Model
 
 
     /**
-     * <p>The IDs of the Spot fleet requests.</p>
+     * <p>The IDs of the Spot Fleet requests.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSpotFleetRequestIds() const{ return m_spotFleetRequestIds; }
 
     /**
-     * <p>The IDs of the Spot fleet requests.</p>
+     * <p>The IDs of the Spot Fleet requests.</p>
      */
     inline void SetSpotFleetRequestIds(const Aws::Vector<Aws::String>& value) { m_spotFleetRequestIdsHasBeenSet = true; m_spotFleetRequestIds = value; }
 
     /**
-     * <p>The IDs of the Spot fleet requests.</p>
+     * <p>The IDs of the Spot Fleet requests.</p>
      */
     inline void SetSpotFleetRequestIds(Aws::Vector<Aws::String>&& value) { m_spotFleetRequestIdsHasBeenSet = true; m_spotFleetRequestIds = std::move(value); }
 
     /**
-     * <p>The IDs of the Spot fleet requests.</p>
+     * <p>The IDs of the Spot Fleet requests.</p>
      */
     inline DescribeSpotFleetRequestsRequest& WithSpotFleetRequestIds(const Aws::Vector<Aws::String>& value) { SetSpotFleetRequestIds(value); return *this;}
 
     /**
-     * <p>The IDs of the Spot fleet requests.</p>
+     * <p>The IDs of the Spot Fleet requests.</p>
      */
     inline DescribeSpotFleetRequestsRequest& WithSpotFleetRequestIds(Aws::Vector<Aws::String>&& value) { SetSpotFleetRequestIds(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of the Spot fleet requests.</p>
+     * <p>The IDs of the Spot Fleet requests.</p>
      */
     inline DescribeSpotFleetRequestsRequest& AddSpotFleetRequestIds(const Aws::String& value) { m_spotFleetRequestIdsHasBeenSet = true; m_spotFleetRequestIds.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the Spot fleet requests.</p>
+     * <p>The IDs of the Spot Fleet requests.</p>
      */
     inline DescribeSpotFleetRequestsRequest& AddSpotFleetRequestIds(Aws::String&& value) { m_spotFleetRequestIdsHasBeenSet = true; m_spotFleetRequestIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IDs of the Spot fleet requests.</p>
+     * <p>The IDs of the Spot Fleet requests.</p>
      */
     inline DescribeSpotFleetRequestsRequest& AddSpotFleetRequestIds(const char* value) { m_spotFleetRequestIdsHasBeenSet = true; m_spotFleetRequestIds.push_back(value); return *this; }
 

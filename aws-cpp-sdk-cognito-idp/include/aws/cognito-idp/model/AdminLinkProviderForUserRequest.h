@@ -86,10 +86,13 @@ namespace Model
      * provider user account. Can be a native (Username + Password) Cognito User Pools
      * user or a federated user (for example, a SAML or Facebook user). If the user
      * doesn't exist, an exception is thrown. This is the user that is returned when
-     * the new user (with the linked identity provider attribute) signs in.</p> <p>The
-     * <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> must
-     * match the username for the user in the user pool. The
-     * <code>ProviderAttributeName</code> will always be ignored.</p>
+     * the new user (with the linked identity provider attribute) signs in.</p> <p>For
+     * a native username + password user, the <code>ProviderAttributeValue</code> for
+     * the <code>DestinationUser</code> should be the username in the user pool. For a
+     * federated user, it should be the provider-specific <code>user_id</code>.</p>
+     * <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is
+     * ignored.</p> <p>The <code>ProviderName</code> should be set to
+     * <code>Cognito</code> for users in Cognito user pools.</p>
      */
     inline const ProviderUserIdentifierType& GetDestinationUser() const{ return m_destinationUser; }
 
@@ -98,10 +101,13 @@ namespace Model
      * provider user account. Can be a native (Username + Password) Cognito User Pools
      * user or a federated user (for example, a SAML or Facebook user). If the user
      * doesn't exist, an exception is thrown. This is the user that is returned when
-     * the new user (with the linked identity provider attribute) signs in.</p> <p>The
-     * <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> must
-     * match the username for the user in the user pool. The
-     * <code>ProviderAttributeName</code> will always be ignored.</p>
+     * the new user (with the linked identity provider attribute) signs in.</p> <p>For
+     * a native username + password user, the <code>ProviderAttributeValue</code> for
+     * the <code>DestinationUser</code> should be the username in the user pool. For a
+     * federated user, it should be the provider-specific <code>user_id</code>.</p>
+     * <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is
+     * ignored.</p> <p>The <code>ProviderName</code> should be set to
+     * <code>Cognito</code> for users in Cognito user pools.</p>
      */
     inline void SetDestinationUser(const ProviderUserIdentifierType& value) { m_destinationUserHasBeenSet = true; m_destinationUser = value; }
 
@@ -110,10 +116,13 @@ namespace Model
      * provider user account. Can be a native (Username + Password) Cognito User Pools
      * user or a federated user (for example, a SAML or Facebook user). If the user
      * doesn't exist, an exception is thrown. This is the user that is returned when
-     * the new user (with the linked identity provider attribute) signs in.</p> <p>The
-     * <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> must
-     * match the username for the user in the user pool. The
-     * <code>ProviderAttributeName</code> will always be ignored.</p>
+     * the new user (with the linked identity provider attribute) signs in.</p> <p>For
+     * a native username + password user, the <code>ProviderAttributeValue</code> for
+     * the <code>DestinationUser</code> should be the username in the user pool. For a
+     * federated user, it should be the provider-specific <code>user_id</code>.</p>
+     * <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is
+     * ignored.</p> <p>The <code>ProviderName</code> should be set to
+     * <code>Cognito</code> for users in Cognito user pools.</p>
      */
     inline void SetDestinationUser(ProviderUserIdentifierType&& value) { m_destinationUserHasBeenSet = true; m_destinationUser = std::move(value); }
 
@@ -122,10 +131,13 @@ namespace Model
      * provider user account. Can be a native (Username + Password) Cognito User Pools
      * user or a federated user (for example, a SAML or Facebook user). If the user
      * doesn't exist, an exception is thrown. This is the user that is returned when
-     * the new user (with the linked identity provider attribute) signs in.</p> <p>The
-     * <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> must
-     * match the username for the user in the user pool. The
-     * <code>ProviderAttributeName</code> will always be ignored.</p>
+     * the new user (with the linked identity provider attribute) signs in.</p> <p>For
+     * a native username + password user, the <code>ProviderAttributeValue</code> for
+     * the <code>DestinationUser</code> should be the username in the user pool. For a
+     * federated user, it should be the provider-specific <code>user_id</code>.</p>
+     * <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is
+     * ignored.</p> <p>The <code>ProviderName</code> should be set to
+     * <code>Cognito</code> for users in Cognito user pools.</p>
      */
     inline AdminLinkProviderForUserRequest& WithDestinationUser(const ProviderUserIdentifierType& value) { SetDestinationUser(value); return *this;}
 
@@ -134,10 +146,13 @@ namespace Model
      * provider user account. Can be a native (Username + Password) Cognito User Pools
      * user or a federated user (for example, a SAML or Facebook user). If the user
      * doesn't exist, an exception is thrown. This is the user that is returned when
-     * the new user (with the linked identity provider attribute) signs in.</p> <p>The
-     * <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> must
-     * match the username for the user in the user pool. The
-     * <code>ProviderAttributeName</code> will always be ignored.</p>
+     * the new user (with the linked identity provider attribute) signs in.</p> <p>For
+     * a native username + password user, the <code>ProviderAttributeValue</code> for
+     * the <code>DestinationUser</code> should be the username in the user pool. For a
+     * federated user, it should be the provider-specific <code>user_id</code>.</p>
+     * <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is
+     * ignored.</p> <p>The <code>ProviderName</code> should be set to
+     * <code>Cognito</code> for users in Cognito user pools.</p>
      */
     inline AdminLinkProviderForUserRequest& WithDestinationUser(ProviderUserIdentifierType&& value) { SetDestinationUser(std::move(value)); return *this;}
 

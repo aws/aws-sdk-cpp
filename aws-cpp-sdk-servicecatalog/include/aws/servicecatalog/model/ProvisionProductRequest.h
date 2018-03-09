@@ -135,144 +135,130 @@ namespace Model
 
 
     /**
-     * <p>The provisioning artifact identifier for this product. This is sometimes
-     * referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline const Aws::String& GetProvisioningArtifactId() const{ return m_provisioningArtifactId; }
 
     /**
-     * <p>The provisioning artifact identifier for this product. This is sometimes
-     * referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline void SetProvisioningArtifactId(const Aws::String& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = value; }
 
     /**
-     * <p>The provisioning artifact identifier for this product. This is sometimes
-     * referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline void SetProvisioningArtifactId(Aws::String&& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = std::move(value); }
 
     /**
-     * <p>The provisioning artifact identifier for this product. This is sometimes
-     * referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline void SetProvisioningArtifactId(const char* value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId.assign(value); }
 
     /**
-     * <p>The provisioning artifact identifier for this product. This is sometimes
-     * referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline ProvisionProductRequest& WithProvisioningArtifactId(const Aws::String& value) { SetProvisioningArtifactId(value); return *this;}
 
     /**
-     * <p>The provisioning artifact identifier for this product. This is sometimes
-     * referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline ProvisionProductRequest& WithProvisioningArtifactId(Aws::String&& value) { SetProvisioningArtifactId(std::move(value)); return *this;}
 
     /**
-     * <p>The provisioning artifact identifier for this product. This is sometimes
-     * referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline ProvisionProductRequest& WithProvisioningArtifactId(const char* value) { SetProvisioningArtifactId(value); return *this;}
 
 
     /**
-     * <p>The identifier of the path for this product's provisioning. This value is
-     * optional if the product has a default path, and is required if there is more
-     * than one path for the specified product.</p>
+     * <p>The path identifier of the product. This value is optional if the product has
+     * a default path, and required if the product has more than one path. To list the
+     * paths for a product, use <a>ListLaunchPaths</a>.</p>
      */
     inline const Aws::String& GetPathId() const{ return m_pathId; }
 
     /**
-     * <p>The identifier of the path for this product's provisioning. This value is
-     * optional if the product has a default path, and is required if there is more
-     * than one path for the specified product.</p>
+     * <p>The path identifier of the product. This value is optional if the product has
+     * a default path, and required if the product has more than one path. To list the
+     * paths for a product, use <a>ListLaunchPaths</a>.</p>
      */
     inline void SetPathId(const Aws::String& value) { m_pathIdHasBeenSet = true; m_pathId = value; }
 
     /**
-     * <p>The identifier of the path for this product's provisioning. This value is
-     * optional if the product has a default path, and is required if there is more
-     * than one path for the specified product.</p>
+     * <p>The path identifier of the product. This value is optional if the product has
+     * a default path, and required if the product has more than one path. To list the
+     * paths for a product, use <a>ListLaunchPaths</a>.</p>
      */
     inline void SetPathId(Aws::String&& value) { m_pathIdHasBeenSet = true; m_pathId = std::move(value); }
 
     /**
-     * <p>The identifier of the path for this product's provisioning. This value is
-     * optional if the product has a default path, and is required if there is more
-     * than one path for the specified product.</p>
+     * <p>The path identifier of the product. This value is optional if the product has
+     * a default path, and required if the product has more than one path. To list the
+     * paths for a product, use <a>ListLaunchPaths</a>.</p>
      */
     inline void SetPathId(const char* value) { m_pathIdHasBeenSet = true; m_pathId.assign(value); }
 
     /**
-     * <p>The identifier of the path for this product's provisioning. This value is
-     * optional if the product has a default path, and is required if there is more
-     * than one path for the specified product.</p>
+     * <p>The path identifier of the product. This value is optional if the product has
+     * a default path, and required if the product has more than one path. To list the
+     * paths for a product, use <a>ListLaunchPaths</a>.</p>
      */
     inline ProvisionProductRequest& WithPathId(const Aws::String& value) { SetPathId(value); return *this;}
 
     /**
-     * <p>The identifier of the path for this product's provisioning. This value is
-     * optional if the product has a default path, and is required if there is more
-     * than one path for the specified product.</p>
+     * <p>The path identifier of the product. This value is optional if the product has
+     * a default path, and required if the product has more than one path. To list the
+     * paths for a product, use <a>ListLaunchPaths</a>.</p>
      */
     inline ProvisionProductRequest& WithPathId(Aws::String&& value) { SetPathId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the path for this product's provisioning. This value is
-     * optional if the product has a default path, and is required if there is more
-     * than one path for the specified product.</p>
+     * <p>The path identifier of the product. This value is optional if the product has
+     * a default path, and required if the product has more than one path. To list the
+     * paths for a product, use <a>ListLaunchPaths</a>.</p>
      */
     inline ProvisionProductRequest& WithPathId(const char* value) { SetPathId(value); return *this;}
 
 
     /**
-     * <p>A user-friendly name to identify the ProvisionedProduct object. This value
-     * must be unique for the AWS account and cannot be updated after the product is
-     * provisioned.</p>
+     * <p>A user-friendly name for the provisioned product. This value must be unique
+     * for the AWS account and cannot be updated after the product is provisioned.</p>
      */
     inline const Aws::String& GetProvisionedProductName() const{ return m_provisionedProductName; }
 
     /**
-     * <p>A user-friendly name to identify the ProvisionedProduct object. This value
-     * must be unique for the AWS account and cannot be updated after the product is
-     * provisioned.</p>
+     * <p>A user-friendly name for the provisioned product. This value must be unique
+     * for the AWS account and cannot be updated after the product is provisioned.</p>
      */
     inline void SetProvisionedProductName(const Aws::String& value) { m_provisionedProductNameHasBeenSet = true; m_provisionedProductName = value; }
 
     /**
-     * <p>A user-friendly name to identify the ProvisionedProduct object. This value
-     * must be unique for the AWS account and cannot be updated after the product is
-     * provisioned.</p>
+     * <p>A user-friendly name for the provisioned product. This value must be unique
+     * for the AWS account and cannot be updated after the product is provisioned.</p>
      */
     inline void SetProvisionedProductName(Aws::String&& value) { m_provisionedProductNameHasBeenSet = true; m_provisionedProductName = std::move(value); }
 
     /**
-     * <p>A user-friendly name to identify the ProvisionedProduct object. This value
-     * must be unique for the AWS account and cannot be updated after the product is
-     * provisioned.</p>
+     * <p>A user-friendly name for the provisioned product. This value must be unique
+     * for the AWS account and cannot be updated after the product is provisioned.</p>
      */
     inline void SetProvisionedProductName(const char* value) { m_provisionedProductNameHasBeenSet = true; m_provisionedProductName.assign(value); }
 
     /**
-     * <p>A user-friendly name to identify the ProvisionedProduct object. This value
-     * must be unique for the AWS account and cannot be updated after the product is
-     * provisioned.</p>
+     * <p>A user-friendly name for the provisioned product. This value must be unique
+     * for the AWS account and cannot be updated after the product is provisioned.</p>
      */
     inline ProvisionProductRequest& WithProvisionedProductName(const Aws::String& value) { SetProvisionedProductName(value); return *this;}
 
     /**
-     * <p>A user-friendly name to identify the ProvisionedProduct object. This value
-     * must be unique for the AWS account and cannot be updated after the product is
-     * provisioned.</p>
+     * <p>A user-friendly name for the provisioned product. This value must be unique
+     * for the AWS account and cannot be updated after the product is provisioned.</p>
      */
     inline ProvisionProductRequest& WithProvisionedProductName(Aws::String&& value) { SetProvisionedProductName(std::move(value)); return *this;}
 
     /**
-     * <p>A user-friendly name to identify the ProvisionedProduct object. This value
-     * must be unique for the AWS account and cannot be updated after the product is
-     * provisioned.</p>
+     * <p>A user-friendly name for the provisioned product. This value must be unique
+     * for the AWS account and cannot be updated after the product is provisioned.</p>
      */
     inline ProvisionProductRequest& WithProvisionedProductName(const char* value) { SetProvisionedProductName(value); return *this;}
 
@@ -321,37 +307,37 @@ namespace Model
 
 
     /**
-     * <p>A list of tags to use as provisioning options.</p>
+     * <p>One or more tags.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A list of tags to use as provisioning options.</p>
+     * <p>One or more tags.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A list of tags to use as provisioning options.</p>
+     * <p>One or more tags.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A list of tags to use as provisioning options.</p>
+     * <p>One or more tags.</p>
      */
     inline ProvisionProductRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A list of tags to use as provisioning options.</p>
+     * <p>One or more tags.</p>
      */
     inline ProvisionProductRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A list of tags to use as provisioning options.</p>
+     * <p>One or more tags.</p>
      */
     inline ProvisionProductRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>A list of tags to use as provisioning options.</p>
+     * <p>One or more tags.</p>
      */
     inline ProvisionProductRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
@@ -406,37 +392,37 @@ namespace Model
 
 
     /**
-     * <p>An idempotency token that uniquely identifies the provisioning request. </p>
+     * <p>An idempotency token that uniquely identifies the provisioning request.</p>
      */
     inline const Aws::String& GetProvisionToken() const{ return m_provisionToken; }
 
     /**
-     * <p>An idempotency token that uniquely identifies the provisioning request. </p>
+     * <p>An idempotency token that uniquely identifies the provisioning request.</p>
      */
     inline void SetProvisionToken(const Aws::String& value) { m_provisionTokenHasBeenSet = true; m_provisionToken = value; }
 
     /**
-     * <p>An idempotency token that uniquely identifies the provisioning request. </p>
+     * <p>An idempotency token that uniquely identifies the provisioning request.</p>
      */
     inline void SetProvisionToken(Aws::String&& value) { m_provisionTokenHasBeenSet = true; m_provisionToken = std::move(value); }
 
     /**
-     * <p>An idempotency token that uniquely identifies the provisioning request. </p>
+     * <p>An idempotency token that uniquely identifies the provisioning request.</p>
      */
     inline void SetProvisionToken(const char* value) { m_provisionTokenHasBeenSet = true; m_provisionToken.assign(value); }
 
     /**
-     * <p>An idempotency token that uniquely identifies the provisioning request. </p>
+     * <p>An idempotency token that uniquely identifies the provisioning request.</p>
      */
     inline ProvisionProductRequest& WithProvisionToken(const Aws::String& value) { SetProvisionToken(value); return *this;}
 
     /**
-     * <p>An idempotency token that uniquely identifies the provisioning request. </p>
+     * <p>An idempotency token that uniquely identifies the provisioning request.</p>
      */
     inline ProvisionProductRequest& WithProvisionToken(Aws::String&& value) { SetProvisionToken(std::move(value)); return *this;}
 
     /**
-     * <p>An idempotency token that uniquely identifies the provisioning request. </p>
+     * <p>An idempotency token that uniquely identifies the provisioning request.</p>
      */
     inline ProvisionProductRequest& WithProvisionToken(const char* value) { SetProvisionToken(value); return *this;}
 

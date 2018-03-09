@@ -28,10 +28,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the inputs for the <a>RebootWorkspaces</a> operation.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebootWorkspacesRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_WORKSPACES_API RebootWorkspacesRequest : public WorkSpacesRequest
   {
@@ -50,37 +46,37 @@ namespace Model
 
 
     /**
-     * <p>An array of structures that specify the WorkSpaces to reboot.</p>
+     * <p>The WorkSpaces to reboot.</p>
      */
     inline const Aws::Vector<RebootRequest>& GetRebootWorkspaceRequests() const{ return m_rebootWorkspaceRequests; }
 
     /**
-     * <p>An array of structures that specify the WorkSpaces to reboot.</p>
+     * <p>The WorkSpaces to reboot.</p>
      */
     inline void SetRebootWorkspaceRequests(const Aws::Vector<RebootRequest>& value) { m_rebootWorkspaceRequestsHasBeenSet = true; m_rebootWorkspaceRequests = value; }
 
     /**
-     * <p>An array of structures that specify the WorkSpaces to reboot.</p>
+     * <p>The WorkSpaces to reboot.</p>
      */
     inline void SetRebootWorkspaceRequests(Aws::Vector<RebootRequest>&& value) { m_rebootWorkspaceRequestsHasBeenSet = true; m_rebootWorkspaceRequests = std::move(value); }
 
     /**
-     * <p>An array of structures that specify the WorkSpaces to reboot.</p>
+     * <p>The WorkSpaces to reboot.</p>
      */
     inline RebootWorkspacesRequest& WithRebootWorkspaceRequests(const Aws::Vector<RebootRequest>& value) { SetRebootWorkspaceRequests(value); return *this;}
 
     /**
-     * <p>An array of structures that specify the WorkSpaces to reboot.</p>
+     * <p>The WorkSpaces to reboot.</p>
      */
     inline RebootWorkspacesRequest& WithRebootWorkspaceRequests(Aws::Vector<RebootRequest>&& value) { SetRebootWorkspaceRequests(std::move(value)); return *this;}
 
     /**
-     * <p>An array of structures that specify the WorkSpaces to reboot.</p>
+     * <p>The WorkSpaces to reboot.</p>
      */
     inline RebootWorkspacesRequest& AddRebootWorkspaceRequests(const RebootRequest& value) { m_rebootWorkspaceRequestsHasBeenSet = true; m_rebootWorkspaceRequests.push_back(value); return *this; }
 
     /**
-     * <p>An array of structures that specify the WorkSpaces to reboot.</p>
+     * <p>The WorkSpaces to reboot.</p>
      */
     inline RebootWorkspacesRequest& AddRebootWorkspaceRequests(RebootRequest&& value) { m_rebootWorkspaceRequestsHasBeenSet = true; m_rebootWorkspaceRequests.push_back(std::move(value)); return *this; }
 

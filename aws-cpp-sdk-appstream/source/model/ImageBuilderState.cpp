@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+        static const int UPDATING_AGENT_HASH = HashingUtils::HashString("UPDATING_AGENT");
         static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
         static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
         static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
@@ -46,6 +47,10 @@ namespace Aws
           if (hashCode == PENDING_HASH)
           {
             return ImageBuilderState::PENDING;
+          }
+          else if (hashCode == UPDATING_AGENT_HASH)
+          {
+            return ImageBuilderState::UPDATING_AGENT;
           }
           else if (hashCode == RUNNING_HASH)
           {
@@ -91,6 +96,8 @@ namespace Aws
           {
           case ImageBuilderState::PENDING:
             return "PENDING";
+          case ImageBuilderState::UPDATING_AGENT:
+            return "UPDATING_AGENT";
           case ImageBuilderState::RUNNING:
             return "RUNNING";
           case ImageBuilderState::STOPPING:

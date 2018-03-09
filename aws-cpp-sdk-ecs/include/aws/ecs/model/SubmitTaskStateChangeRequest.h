@@ -18,6 +18,7 @@
 #include <aws/ecs/ECSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ecs/model/ContainerStateChange.h>
 #include <aws/ecs/model/AttachmentStateChange.h>
 #include <utility>
@@ -91,44 +92,37 @@ namespace Model
 
 
     /**
-     * <p>The task ID or full Amazon Resource Name (ARN) of the task in the state
-     * change request.</p>
+     * <p>The task ID or full ARN of the task in the state change request.</p>
      */
     inline const Aws::String& GetTask() const{ return m_task; }
 
     /**
-     * <p>The task ID or full Amazon Resource Name (ARN) of the task in the state
-     * change request.</p>
+     * <p>The task ID or full ARN of the task in the state change request.</p>
      */
     inline void SetTask(const Aws::String& value) { m_taskHasBeenSet = true; m_task = value; }
 
     /**
-     * <p>The task ID or full Amazon Resource Name (ARN) of the task in the state
-     * change request.</p>
+     * <p>The task ID or full ARN of the task in the state change request.</p>
      */
     inline void SetTask(Aws::String&& value) { m_taskHasBeenSet = true; m_task = std::move(value); }
 
     /**
-     * <p>The task ID or full Amazon Resource Name (ARN) of the task in the state
-     * change request.</p>
+     * <p>The task ID or full ARN of the task in the state change request.</p>
      */
     inline void SetTask(const char* value) { m_taskHasBeenSet = true; m_task.assign(value); }
 
     /**
-     * <p>The task ID or full Amazon Resource Name (ARN) of the task in the state
-     * change request.</p>
+     * <p>The task ID or full ARN of the task in the state change request.</p>
      */
     inline SubmitTaskStateChangeRequest& WithTask(const Aws::String& value) { SetTask(value); return *this;}
 
     /**
-     * <p>The task ID or full Amazon Resource Name (ARN) of the task in the state
-     * change request.</p>
+     * <p>The task ID or full ARN of the task in the state change request.</p>
      */
     inline SubmitTaskStateChangeRequest& WithTask(Aws::String&& value) { SetTask(std::move(value)); return *this;}
 
     /**
-     * <p>The task ID or full Amazon Resource Name (ARN) of the task in the state
-     * change request.</p>
+     * <p>The task ID or full ARN of the task in the state change request.</p>
      */
     inline SubmitTaskStateChangeRequest& WithTask(const char* value) { SetTask(value); return *this;}
 
@@ -276,6 +270,84 @@ namespace Model
      */
     inline SubmitTaskStateChangeRequest& AddAttachments(AttachmentStateChange&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The Unix time stamp for when the container image pull began.</p>
+     */
+    inline const Aws::Utils::DateTime& GetPullStartedAt() const{ return m_pullStartedAt; }
+
+    /**
+     * <p>The Unix time stamp for when the container image pull began.</p>
+     */
+    inline void SetPullStartedAt(const Aws::Utils::DateTime& value) { m_pullStartedAtHasBeenSet = true; m_pullStartedAt = value; }
+
+    /**
+     * <p>The Unix time stamp for when the container image pull began.</p>
+     */
+    inline void SetPullStartedAt(Aws::Utils::DateTime&& value) { m_pullStartedAtHasBeenSet = true; m_pullStartedAt = std::move(value); }
+
+    /**
+     * <p>The Unix time stamp for when the container image pull began.</p>
+     */
+    inline SubmitTaskStateChangeRequest& WithPullStartedAt(const Aws::Utils::DateTime& value) { SetPullStartedAt(value); return *this;}
+
+    /**
+     * <p>The Unix time stamp for when the container image pull began.</p>
+     */
+    inline SubmitTaskStateChangeRequest& WithPullStartedAt(Aws::Utils::DateTime&& value) { SetPullStartedAt(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Unix time stamp for when the container image pull completed.</p>
+     */
+    inline const Aws::Utils::DateTime& GetPullStoppedAt() const{ return m_pullStoppedAt; }
+
+    /**
+     * <p>The Unix time stamp for when the container image pull completed.</p>
+     */
+    inline void SetPullStoppedAt(const Aws::Utils::DateTime& value) { m_pullStoppedAtHasBeenSet = true; m_pullStoppedAt = value; }
+
+    /**
+     * <p>The Unix time stamp for when the container image pull completed.</p>
+     */
+    inline void SetPullStoppedAt(Aws::Utils::DateTime&& value) { m_pullStoppedAtHasBeenSet = true; m_pullStoppedAt = std::move(value); }
+
+    /**
+     * <p>The Unix time stamp for when the container image pull completed.</p>
+     */
+    inline SubmitTaskStateChangeRequest& WithPullStoppedAt(const Aws::Utils::DateTime& value) { SetPullStoppedAt(value); return *this;}
+
+    /**
+     * <p>The Unix time stamp for when the container image pull completed.</p>
+     */
+    inline SubmitTaskStateChangeRequest& WithPullStoppedAt(Aws::Utils::DateTime&& value) { SetPullStoppedAt(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Unix time stamp for when the task execution stopped.</p>
+     */
+    inline const Aws::Utils::DateTime& GetExecutionStoppedAt() const{ return m_executionStoppedAt; }
+
+    /**
+     * <p>The Unix time stamp for when the task execution stopped.</p>
+     */
+    inline void SetExecutionStoppedAt(const Aws::Utils::DateTime& value) { m_executionStoppedAtHasBeenSet = true; m_executionStoppedAt = value; }
+
+    /**
+     * <p>The Unix time stamp for when the task execution stopped.</p>
+     */
+    inline void SetExecutionStoppedAt(Aws::Utils::DateTime&& value) { m_executionStoppedAtHasBeenSet = true; m_executionStoppedAt = std::move(value); }
+
+    /**
+     * <p>The Unix time stamp for when the task execution stopped.</p>
+     */
+    inline SubmitTaskStateChangeRequest& WithExecutionStoppedAt(const Aws::Utils::DateTime& value) { SetExecutionStoppedAt(value); return *this;}
+
+    /**
+     * <p>The Unix time stamp for when the task execution stopped.</p>
+     */
+    inline SubmitTaskStateChangeRequest& WithExecutionStoppedAt(Aws::Utils::DateTime&& value) { SetExecutionStoppedAt(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_cluster;
@@ -295,6 +367,15 @@ namespace Model
 
     Aws::Vector<AttachmentStateChange> m_attachments;
     bool m_attachmentsHasBeenSet;
+
+    Aws::Utils::DateTime m_pullStartedAt;
+    bool m_pullStartedAtHasBeenSet;
+
+    Aws::Utils::DateTime m_pullStoppedAt;
+    bool m_pullStoppedAtHasBeenSet;
+
+    Aws::Utils::DateTime m_executionStoppedAt;
+    bool m_executionStoppedAtHasBeenSet;
   };
 
 } // namespace Model

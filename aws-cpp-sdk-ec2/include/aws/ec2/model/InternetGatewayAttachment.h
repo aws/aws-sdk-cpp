@@ -52,27 +52,37 @@ namespace Model
 
 
     /**
-     * <p>The current state of the attachment.</p>
+     * <p>The current state of the attachment. For an Internet gateway, the state is
+     * <code>available</code> when attached to a VPC; otherwise, this value is not
+     * returned.</p>
      */
     inline const AttachmentStatus& GetState() const{ return m_state; }
 
     /**
-     * <p>The current state of the attachment.</p>
+     * <p>The current state of the attachment. For an Internet gateway, the state is
+     * <code>available</code> when attached to a VPC; otherwise, this value is not
+     * returned.</p>
      */
     inline void SetState(const AttachmentStatus& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The current state of the attachment.</p>
+     * <p>The current state of the attachment. For an Internet gateway, the state is
+     * <code>available</code> when attached to a VPC; otherwise, this value is not
+     * returned.</p>
      */
     inline void SetState(AttachmentStatus&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The current state of the attachment.</p>
+     * <p>The current state of the attachment. For an Internet gateway, the state is
+     * <code>available</code> when attached to a VPC; otherwise, this value is not
+     * returned.</p>
      */
     inline InternetGatewayAttachment& WithState(const AttachmentStatus& value) { SetState(value); return *this;}
 
     /**
-     * <p>The current state of the attachment.</p>
+     * <p>The current state of the attachment. For an Internet gateway, the state is
+     * <code>available</code> when attached to a VPC; otherwise, this value is not
+     * returned.</p>
      */
     inline InternetGatewayAttachment& WithState(AttachmentStatus&& value) { SetState(std::move(value)); return *this;}
 

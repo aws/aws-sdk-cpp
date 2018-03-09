@@ -17,6 +17,7 @@
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/storagegateway/model/NFSFileShareDefaults.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/storagegateway/model/ObjectACL.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
@@ -312,6 +313,22 @@ namespace Model
 
 
     
+    inline const ObjectACL& GetObjectACL() const{ return m_objectACL; }
+
+    
+    inline void SetObjectACL(const ObjectACL& value) { m_objectACLHasBeenSet = true; m_objectACL = value; }
+
+    
+    inline void SetObjectACL(ObjectACL&& value) { m_objectACLHasBeenSet = true; m_objectACL = std::move(value); }
+
+    
+    inline NFSFileShareInfo& WithObjectACL(const ObjectACL& value) { SetObjectACL(value); return *this;}
+
+    
+    inline NFSFileShareInfo& WithObjectACL(ObjectACL&& value) { SetObjectACL(std::move(value)); return *this;}
+
+
+    
     inline const Aws::Vector<Aws::String>& GetClientList() const{ return m_clientList; }
 
     
@@ -358,33 +375,67 @@ namespace Model
     inline NFSFileShareInfo& WithSquash(const char* value) { SetSquash(value); return *this;}
 
 
-    
+    /**
+     * <p>Sets the write status of a file share. This value is true if the write status
+     * is read-only, and otherwise false.</p>
+     */
     inline bool GetReadOnly() const{ return m_readOnly; }
 
-    
+    /**
+     * <p>Sets the write status of a file share. This value is true if the write status
+     * is read-only, and otherwise false.</p>
+     */
     inline void SetReadOnly(bool value) { m_readOnlyHasBeenSet = true; m_readOnly = value; }
 
-    
+    /**
+     * <p>Sets the write status of a file share. This value is true if the write status
+     * is read-only, and otherwise false.</p>
+     */
     inline NFSFileShareInfo& WithReadOnly(bool value) { SetReadOnly(value); return *this;}
 
 
     /**
      * <p>Enables guessing of the MIME type for uploaded objects based on file
-     * extensions: "true" to enable MIME type guessing, and otherwise "false".</p>
+     * extensions. Set this value to true to enable MIME type guessing, and otherwise
+     * to false. The default value is true.</p>
      */
     inline bool GetGuessMIMETypeEnabled() const{ return m_guessMIMETypeEnabled; }
 
     /**
      * <p>Enables guessing of the MIME type for uploaded objects based on file
-     * extensions: "true" to enable MIME type guessing, and otherwise "false".</p>
+     * extensions. Set this value to true to enable MIME type guessing, and otherwise
+     * to false. The default value is true.</p>
      */
     inline void SetGuessMIMETypeEnabled(bool value) { m_guessMIMETypeEnabledHasBeenSet = true; m_guessMIMETypeEnabled = value; }
 
     /**
      * <p>Enables guessing of the MIME type for uploaded objects based on file
-     * extensions: "true" to enable MIME type guessing, and otherwise "false".</p>
+     * extensions. Set this value to true to enable MIME type guessing, and otherwise
+     * to false. The default value is true.</p>
      */
     inline NFSFileShareInfo& WithGuessMIMETypeEnabled(bool value) { SetGuessMIMETypeEnabled(value); return *this;}
+
+
+    /**
+     * <p>Sets who pays the cost of the request and the data download from the Amazon
+     * S3 bucket. Set this value to true if you want the requester to pay instead of
+     * the bucket owner, and otherwise to false.</p>
+     */
+    inline bool GetRequesterPays() const{ return m_requesterPays; }
+
+    /**
+     * <p>Sets who pays the cost of the request and the data download from the Amazon
+     * S3 bucket. Set this value to true if you want the requester to pay instead of
+     * the bucket owner, and otherwise to false.</p>
+     */
+    inline void SetRequesterPays(bool value) { m_requesterPaysHasBeenSet = true; m_requesterPays = value; }
+
+    /**
+     * <p>Sets who pays the cost of the request and the data download from the Amazon
+     * S3 bucket. Set this value to true if you want the requester to pay instead of
+     * the bucket owner, and otherwise to false.</p>
+     */
+    inline NFSFileShareInfo& WithRequesterPays(bool value) { SetRequesterPays(value); return *this;}
 
   private:
 
@@ -421,6 +472,9 @@ namespace Model
     Aws::String m_defaultStorageClass;
     bool m_defaultStorageClassHasBeenSet;
 
+    ObjectACL m_objectACL;
+    bool m_objectACLHasBeenSet;
+
     Aws::Vector<Aws::String> m_clientList;
     bool m_clientListHasBeenSet;
 
@@ -432,6 +486,9 @@ namespace Model
 
     bool m_guessMIMETypeEnabled;
     bool m_guessMIMETypeEnabledHasBeenSet;
+
+    bool m_requesterPays;
+    bool m_requesterPaysHasBeenSet;
   };
 
 } // namespace Model

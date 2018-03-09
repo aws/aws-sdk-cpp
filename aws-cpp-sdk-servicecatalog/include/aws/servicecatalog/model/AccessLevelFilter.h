@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>The access level to limit results.</p><p><h3>See Also:</h3>   <a
+   * <p>The access level to use to filter results.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AccessLevelFilter">AWS
    * API Reference</a></p>
    */
@@ -48,85 +48,85 @@ namespace Model
 
 
     /**
-     * <p>Specifies the access level.</p> <p> <code>Account</code> allows results at
-     * the account level. </p> <p> <code>Role</code> allows results based on the
-     * federated role of the specified user.</p> <p> <code>User</code> allows results
-     * limited to the specified user. </p>
+     * <p>The access level.</p> <ul> <li> <p> <code>Account</code> - Filter results
+     * based on the account.</p> </li> <li> <p> <code>Role</code> - Filter results
+     * based on the federated role of the specified user.</p> </li> <li> <p>
+     * <code>User</code> - Filter results based on the specified user.</p> </li> </ul>
      */
     inline const AccessLevelFilterKey& GetKey() const{ return m_key; }
 
     /**
-     * <p>Specifies the access level.</p> <p> <code>Account</code> allows results at
-     * the account level. </p> <p> <code>Role</code> allows results based on the
-     * federated role of the specified user.</p> <p> <code>User</code> allows results
-     * limited to the specified user. </p>
+     * <p>The access level.</p> <ul> <li> <p> <code>Account</code> - Filter results
+     * based on the account.</p> </li> <li> <p> <code>Role</code> - Filter results
+     * based on the federated role of the specified user.</p> </li> <li> <p>
+     * <code>User</code> - Filter results based on the specified user.</p> </li> </ul>
      */
     inline void SetKey(const AccessLevelFilterKey& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>Specifies the access level.</p> <p> <code>Account</code> allows results at
-     * the account level. </p> <p> <code>Role</code> allows results based on the
-     * federated role of the specified user.</p> <p> <code>User</code> allows results
-     * limited to the specified user. </p>
+     * <p>The access level.</p> <ul> <li> <p> <code>Account</code> - Filter results
+     * based on the account.</p> </li> <li> <p> <code>Role</code> - Filter results
+     * based on the federated role of the specified user.</p> </li> <li> <p>
+     * <code>User</code> - Filter results based on the specified user.</p> </li> </ul>
      */
     inline void SetKey(AccessLevelFilterKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p>Specifies the access level.</p> <p> <code>Account</code> allows results at
-     * the account level. </p> <p> <code>Role</code> allows results based on the
-     * federated role of the specified user.</p> <p> <code>User</code> allows results
-     * limited to the specified user. </p>
+     * <p>The access level.</p> <ul> <li> <p> <code>Account</code> - Filter results
+     * based on the account.</p> </li> <li> <p> <code>Role</code> - Filter results
+     * based on the federated role of the specified user.</p> </li> <li> <p>
+     * <code>User</code> - Filter results based on the specified user.</p> </li> </ul>
      */
     inline AccessLevelFilter& WithKey(const AccessLevelFilterKey& value) { SetKey(value); return *this;}
 
     /**
-     * <p>Specifies the access level.</p> <p> <code>Account</code> allows results at
-     * the account level. </p> <p> <code>Role</code> allows results based on the
-     * federated role of the specified user.</p> <p> <code>User</code> allows results
-     * limited to the specified user. </p>
+     * <p>The access level.</p> <ul> <li> <p> <code>Account</code> - Filter results
+     * based on the account.</p> </li> <li> <p> <code>Role</code> - Filter results
+     * based on the federated role of the specified user.</p> </li> <li> <p>
+     * <code>User</code> - Filter results based on the specified user.</p> </li> </ul>
      */
     inline AccessLevelFilter& WithKey(AccessLevelFilterKey&& value) { SetKey(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies the user to which the access level applies. A value of
-     * <code>Self</code> is currently supported.</p>
+     * <p>The user to which the access level applies. The only supported value is
+     * <code>Self</code>.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>Specifies the user to which the access level applies. A value of
-     * <code>Self</code> is currently supported.</p>
+     * <p>The user to which the access level applies. The only supported value is
+     * <code>Self</code>.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>Specifies the user to which the access level applies. A value of
-     * <code>Self</code> is currently supported.</p>
+     * <p>The user to which the access level applies. The only supported value is
+     * <code>Self</code>.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>Specifies the user to which the access level applies. A value of
-     * <code>Self</code> is currently supported.</p>
+     * <p>The user to which the access level applies. The only supported value is
+     * <code>Self</code>.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>Specifies the user to which the access level applies. A value of
-     * <code>Self</code> is currently supported.</p>
+     * <p>The user to which the access level applies. The only supported value is
+     * <code>Self</code>.</p>
      */
     inline AccessLevelFilter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>Specifies the user to which the access level applies. A value of
-     * <code>Self</code> is currently supported.</p>
+     * <p>The user to which the access level applies. The only supported value is
+     * <code>Self</code>.</p>
      */
     inline AccessLevelFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the user to which the access level applies. A value of
-     * <code>Self</code> is currently supported.</p>
+     * <p>The user to which the access level applies. The only supported value is
+     * <code>Self</code>.</p>
      */
     inline AccessLevelFilter& WithValue(const char* value) { SetValue(value); return *this;}
 

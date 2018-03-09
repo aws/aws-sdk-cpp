@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lambda/model/AliasRoutingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -212,6 +213,78 @@ namespace Model
      */
     inline GetAliasResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    /**
+     * <p>Specifies an additional function versions the alias points to, allowing you
+     * to dictate what percentage of traffic will invoke each version. For more
+     * information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     */
+    inline const AliasRoutingConfiguration& GetRoutingConfig() const{ return m_routingConfig; }
+
+    /**
+     * <p>Specifies an additional function versions the alias points to, allowing you
+     * to dictate what percentage of traffic will invoke each version. For more
+     * information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     */
+    inline void SetRoutingConfig(const AliasRoutingConfiguration& value) { m_routingConfig = value; }
+
+    /**
+     * <p>Specifies an additional function versions the alias points to, allowing you
+     * to dictate what percentage of traffic will invoke each version. For more
+     * information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     */
+    inline void SetRoutingConfig(AliasRoutingConfiguration&& value) { m_routingConfig = std::move(value); }
+
+    /**
+     * <p>Specifies an additional function versions the alias points to, allowing you
+     * to dictate what percentage of traffic will invoke each version. For more
+     * information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     */
+    inline GetAliasResult& WithRoutingConfig(const AliasRoutingConfiguration& value) { SetRoutingConfig(value); return *this;}
+
+    /**
+     * <p>Specifies an additional function versions the alias points to, allowing you
+     * to dictate what percentage of traffic will invoke each version. For more
+     * information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     */
+    inline GetAliasResult& WithRoutingConfig(AliasRoutingConfiguration&& value) { SetRoutingConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Represents the latest updated revision of the function or alias.</p>
+     */
+    inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
+
+    /**
+     * <p>Represents the latest updated revision of the function or alias.</p>
+     */
+    inline void SetRevisionId(const Aws::String& value) { m_revisionId = value; }
+
+    /**
+     * <p>Represents the latest updated revision of the function or alias.</p>
+     */
+    inline void SetRevisionId(Aws::String&& value) { m_revisionId = std::move(value); }
+
+    /**
+     * <p>Represents the latest updated revision of the function or alias.</p>
+     */
+    inline void SetRevisionId(const char* value) { m_revisionId.assign(value); }
+
+    /**
+     * <p>Represents the latest updated revision of the function or alias.</p>
+     */
+    inline GetAliasResult& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
+
+    /**
+     * <p>Represents the latest updated revision of the function or alias.</p>
+     */
+    inline GetAliasResult& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
+
+    /**
+     * <p>Represents the latest updated revision of the function or alias.</p>
+     */
+    inline GetAliasResult& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
+
   private:
 
     Aws::String m_aliasArn;
@@ -221,6 +294,10 @@ namespace Model
     Aws::String m_functionVersion;
 
     Aws::String m_description;
+
+    AliasRoutingConfiguration m_routingConfig;
+
+    Aws::String m_revisionId;
   };
 
 } // namespace Model

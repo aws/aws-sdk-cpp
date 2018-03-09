@@ -261,6 +261,42 @@ namespace Model
      */
     inline ProjectEnvironment& WithPrivilegedMode(bool value) { SetPrivilegedMode(value); return *this;}
 
+
+    /**
+     * <p>The certificate to use with this build project.</p>
+     */
+    inline const Aws::String& GetCertificate() const{ return m_certificate; }
+
+    /**
+     * <p>The certificate to use with this build project.</p>
+     */
+    inline void SetCertificate(const Aws::String& value) { m_certificateHasBeenSet = true; m_certificate = value; }
+
+    /**
+     * <p>The certificate to use with this build project.</p>
+     */
+    inline void SetCertificate(Aws::String&& value) { m_certificateHasBeenSet = true; m_certificate = std::move(value); }
+
+    /**
+     * <p>The certificate to use with this build project.</p>
+     */
+    inline void SetCertificate(const char* value) { m_certificateHasBeenSet = true; m_certificate.assign(value); }
+
+    /**
+     * <p>The certificate to use with this build project.</p>
+     */
+    inline ProjectEnvironment& WithCertificate(const Aws::String& value) { SetCertificate(value); return *this;}
+
+    /**
+     * <p>The certificate to use with this build project.</p>
+     */
+    inline ProjectEnvironment& WithCertificate(Aws::String&& value) { SetCertificate(std::move(value)); return *this;}
+
+    /**
+     * <p>The certificate to use with this build project.</p>
+     */
+    inline ProjectEnvironment& WithCertificate(const char* value) { SetCertificate(value); return *this;}
+
   private:
 
     EnvironmentType m_type;
@@ -277,6 +313,9 @@ namespace Model
 
     bool m_privilegedMode;
     bool m_privilegedModeHasBeenSet;
+
+    Aws::String m_certificate;
+    bool m_certificateHasBeenSet;
   };
 
 } // namespace Model

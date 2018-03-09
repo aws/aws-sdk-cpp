@@ -17,6 +17,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ecs/model/HealthStatus.h>
 #include <aws/ecs/model/NetworkBinding.h>
 #include <aws/ecs/model/NetworkInterface.h>
 #include <utility>
@@ -86,37 +87,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task.</p>
+     * <p>The ARN of the task.</p>
      */
     inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task.</p>
+     * <p>The ARN of the task.</p>
      */
     inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task.</p>
+     * <p>The ARN of the task.</p>
      */
     inline void SetTaskArn(Aws::String&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task.</p>
+     * <p>The ARN of the task.</p>
      */
     inline void SetTaskArn(const char* value) { m_taskArnHasBeenSet = true; m_taskArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task.</p>
+     * <p>The ARN of the task.</p>
      */
     inline Container& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task.</p>
+     * <p>The ARN of the task.</p>
      */
     inline Container& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task.</p>
+     * <p>The ARN of the task.</p>
      */
     inline Container& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
 
@@ -323,6 +324,42 @@ namespace Model
      */
     inline Container& AddNetworkInterfaces(NetworkInterface&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The health status of the container. If health checks are not configured for
+     * this container in its task definition, then it reports health status as
+     * <code>UNKNOWN</code>.</p>
+     */
+    inline const HealthStatus& GetHealthStatus() const{ return m_healthStatus; }
+
+    /**
+     * <p>The health status of the container. If health checks are not configured for
+     * this container in its task definition, then it reports health status as
+     * <code>UNKNOWN</code>.</p>
+     */
+    inline void SetHealthStatus(const HealthStatus& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
+
+    /**
+     * <p>The health status of the container. If health checks are not configured for
+     * this container in its task definition, then it reports health status as
+     * <code>UNKNOWN</code>.</p>
+     */
+    inline void SetHealthStatus(HealthStatus&& value) { m_healthStatusHasBeenSet = true; m_healthStatus = std::move(value); }
+
+    /**
+     * <p>The health status of the container. If health checks are not configured for
+     * this container in its task definition, then it reports health status as
+     * <code>UNKNOWN</code>.</p>
+     */
+    inline Container& WithHealthStatus(const HealthStatus& value) { SetHealthStatus(value); return *this;}
+
+    /**
+     * <p>The health status of the container. If health checks are not configured for
+     * this container in its task definition, then it reports health status as
+     * <code>UNKNOWN</code>.</p>
+     */
+    inline Container& WithHealthStatus(HealthStatus&& value) { SetHealthStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_containerArn;
@@ -348,6 +385,9 @@ namespace Model
 
     Aws::Vector<NetworkInterface> m_networkInterfaces;
     bool m_networkInterfacesHasBeenSet;
+
+    HealthStatus m_healthStatus;
+    bool m_healthStatusHasBeenSet;
   };
 
 } // namespace Model

@@ -17,6 +17,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/model/RegistrationConfig.h>
 #include <utility>
 
 namespace Aws
@@ -158,6 +159,32 @@ namespace Model
      */
     inline RegisterCACertificateRequest& WithAllowAutoRegistration(bool value) { SetAllowAutoRegistration(value); return *this;}
 
+
+    /**
+     * <p>Information about the registration configuration.</p>
+     */
+    inline const RegistrationConfig& GetRegistrationConfig() const{ return m_registrationConfig; }
+
+    /**
+     * <p>Information about the registration configuration.</p>
+     */
+    inline void SetRegistrationConfig(const RegistrationConfig& value) { m_registrationConfigHasBeenSet = true; m_registrationConfig = value; }
+
+    /**
+     * <p>Information about the registration configuration.</p>
+     */
+    inline void SetRegistrationConfig(RegistrationConfig&& value) { m_registrationConfigHasBeenSet = true; m_registrationConfig = std::move(value); }
+
+    /**
+     * <p>Information about the registration configuration.</p>
+     */
+    inline RegisterCACertificateRequest& WithRegistrationConfig(const RegistrationConfig& value) { SetRegistrationConfig(value); return *this;}
+
+    /**
+     * <p>Information about the registration configuration.</p>
+     */
+    inline RegisterCACertificateRequest& WithRegistrationConfig(RegistrationConfig&& value) { SetRegistrationConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_caCertificate;
@@ -171,6 +198,9 @@ namespace Model
 
     bool m_allowAutoRegistration;
     bool m_allowAutoRegistrationHasBeenSet;
+
+    RegistrationConfig m_registrationConfig;
+    bool m_registrationConfigHasBeenSet;
   };
 
 } // namespace Model

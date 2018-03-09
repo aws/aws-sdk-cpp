@@ -17,6 +17,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/model/DocumentFormat.h>
 #include <utility>
 
 namespace Aws
@@ -115,6 +116,37 @@ namespace Model
      */
     inline GetDocumentRequest& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 
+
+    /**
+     * <p>Returns the document in the specified format. The document format can be
+     * either JSON or YAML. JSON is the default format.</p>
+     */
+    inline const DocumentFormat& GetDocumentFormat() const{ return m_documentFormat; }
+
+    /**
+     * <p>Returns the document in the specified format. The document format can be
+     * either JSON or YAML. JSON is the default format.</p>
+     */
+    inline void SetDocumentFormat(const DocumentFormat& value) { m_documentFormatHasBeenSet = true; m_documentFormat = value; }
+
+    /**
+     * <p>Returns the document in the specified format. The document format can be
+     * either JSON or YAML. JSON is the default format.</p>
+     */
+    inline void SetDocumentFormat(DocumentFormat&& value) { m_documentFormatHasBeenSet = true; m_documentFormat = std::move(value); }
+
+    /**
+     * <p>Returns the document in the specified format. The document format can be
+     * either JSON or YAML. JSON is the default format.</p>
+     */
+    inline GetDocumentRequest& WithDocumentFormat(const DocumentFormat& value) { SetDocumentFormat(value); return *this;}
+
+    /**
+     * <p>Returns the document in the specified format. The document format can be
+     * either JSON or YAML. JSON is the default format.</p>
+     */
+    inline GetDocumentRequest& WithDocumentFormat(DocumentFormat&& value) { SetDocumentFormat(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -122,6 +154,9 @@ namespace Model
 
     Aws::String m_documentVersion;
     bool m_documentVersionHasBeenSet;
+
+    DocumentFormat m_documentFormat;
+    bool m_documentFormatHasBeenSet;
   };
 
 } // namespace Model

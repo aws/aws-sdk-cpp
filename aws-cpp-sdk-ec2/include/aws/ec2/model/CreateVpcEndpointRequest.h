@@ -77,32 +77,27 @@ namespace Model
 
 
     /**
-     * <p>The type of endpoint. If not specified, the default is a gateway
-     * endpoint.</p>
+     * <p>The type of endpoint.</p> <p>Default: Gateway</p>
      */
     inline const VpcEndpointType& GetVpcEndpointType() const{ return m_vpcEndpointType; }
 
     /**
-     * <p>The type of endpoint. If not specified, the default is a gateway
-     * endpoint.</p>
+     * <p>The type of endpoint.</p> <p>Default: Gateway</p>
      */
     inline void SetVpcEndpointType(const VpcEndpointType& value) { m_vpcEndpointTypeHasBeenSet = true; m_vpcEndpointType = value; }
 
     /**
-     * <p>The type of endpoint. If not specified, the default is a gateway
-     * endpoint.</p>
+     * <p>The type of endpoint.</p> <p>Default: Gateway</p>
      */
     inline void SetVpcEndpointType(VpcEndpointType&& value) { m_vpcEndpointTypeHasBeenSet = true; m_vpcEndpointType = std::move(value); }
 
     /**
-     * <p>The type of endpoint. If not specified, the default is a gateway
-     * endpoint.</p>
+     * <p>The type of endpoint.</p> <p>Default: Gateway</p>
      */
     inline CreateVpcEndpointRequest& WithVpcEndpointType(const VpcEndpointType& value) { SetVpcEndpointType(value); return *this;}
 
     /**
-     * <p>The type of endpoint. If not specified, the default is a gateway
-     * endpoint.</p>
+     * <p>The type of endpoint.</p> <p>Default: Gateway</p>
      */
     inline CreateVpcEndpointRequest& WithVpcEndpointType(VpcEndpointType&& value) { SetVpcEndpointType(std::move(value)); return *this;}
 
@@ -144,51 +139,51 @@ namespace Model
 
 
     /**
-     * <p>The AWS service name, in the form
-     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
-     * available services, use the <a>DescribeVpcEndpointServices</a> request.</p>
+     * <p>The service name. To get a list of available services, use the
+     * <a>DescribeVpcEndpointServices</a> request, or get the name from the service
+     * provider.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
     /**
-     * <p>The AWS service name, in the form
-     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
-     * available services, use the <a>DescribeVpcEndpointServices</a> request.</p>
+     * <p>The service name. To get a list of available services, use the
+     * <a>DescribeVpcEndpointServices</a> request, or get the name from the service
+     * provider.</p>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
-     * <p>The AWS service name, in the form
-     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
-     * available services, use the <a>DescribeVpcEndpointServices</a> request.</p>
+     * <p>The service name. To get a list of available services, use the
+     * <a>DescribeVpcEndpointServices</a> request, or get the name from the service
+     * provider.</p>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
-     * <p>The AWS service name, in the form
-     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
-     * available services, use the <a>DescribeVpcEndpointServices</a> request.</p>
+     * <p>The service name. To get a list of available services, use the
+     * <a>DescribeVpcEndpointServices</a> request, or get the name from the service
+     * provider.</p>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
     /**
-     * <p>The AWS service name, in the form
-     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
-     * available services, use the <a>DescribeVpcEndpointServices</a> request.</p>
+     * <p>The service name. To get a list of available services, use the
+     * <a>DescribeVpcEndpointServices</a> request, or get the name from the service
+     * provider.</p>
      */
     inline CreateVpcEndpointRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
     /**
-     * <p>The AWS service name, in the form
-     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
-     * available services, use the <a>DescribeVpcEndpointServices</a> request.</p>
+     * <p>The service name. To get a list of available services, use the
+     * <a>DescribeVpcEndpointServices</a> request, or get the name from the service
+     * provider.</p>
      */
     inline CreateVpcEndpointRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS service name, in the form
-     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
-     * available services, use the <a>DescribeVpcEndpointServices</a> request.</p>
+     * <p>The service name. To get a list of available services, use the
+     * <a>DescribeVpcEndpointServices</a> request, or get the name from the service
+     * provider.</p>
      */
     inline CreateVpcEndpointRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 
@@ -292,99 +287,99 @@ namespace Model
 
 
     /**
-     * <p>(Interface endpoint) The ID of one or more subnets in which to create a
-     * network interface for the endpoint.</p>
+     * <p>(Interface endpoint) The ID of one or more subnets in which to create an
+     * endpoint network interface.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * <p>(Interface endpoint) The ID of one or more subnets in which to create a
-     * network interface for the endpoint.</p>
+     * <p>(Interface endpoint) The ID of one or more subnets in which to create an
+     * endpoint network interface.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
-     * <p>(Interface endpoint) The ID of one or more subnets in which to create a
-     * network interface for the endpoint.</p>
+     * <p>(Interface endpoint) The ID of one or more subnets in which to create an
+     * endpoint network interface.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
-     * <p>(Interface endpoint) The ID of one or more subnets in which to create a
-     * network interface for the endpoint.</p>
+     * <p>(Interface endpoint) The ID of one or more subnets in which to create an
+     * endpoint network interface.</p>
      */
     inline CreateVpcEndpointRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * <p>(Interface endpoint) The ID of one or more subnets in which to create a
-     * network interface for the endpoint.</p>
+     * <p>(Interface endpoint) The ID of one or more subnets in which to create an
+     * endpoint network interface.</p>
      */
     inline CreateVpcEndpointRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
-     * <p>(Interface endpoint) The ID of one or more subnets in which to create a
-     * network interface for the endpoint.</p>
+     * <p>(Interface endpoint) The ID of one or more subnets in which to create an
+     * endpoint network interface.</p>
      */
     inline CreateVpcEndpointRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
-     * <p>(Interface endpoint) The ID of one or more subnets in which to create a
-     * network interface for the endpoint.</p>
+     * <p>(Interface endpoint) The ID of one or more subnets in which to create an
+     * endpoint network interface.</p>
      */
     inline CreateVpcEndpointRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>(Interface endpoint) The ID of one or more subnets in which to create a
-     * network interface for the endpoint.</p>
+     * <p>(Interface endpoint) The ID of one or more subnets in which to create an
+     * endpoint network interface.</p>
      */
     inline CreateVpcEndpointRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
 
     /**
      * <p>(Interface endpoint) The ID of one or more security groups to associate with
-     * the network interface.</p>
+     * the endpoint network interface.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
      * <p>(Interface endpoint) The ID of one or more security groups to associate with
-     * the network interface.</p>
+     * the endpoint network interface.</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
      * <p>(Interface endpoint) The ID of one or more security groups to associate with
-     * the network interface.</p>
+     * the endpoint network interface.</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
      * <p>(Interface endpoint) The ID of one or more security groups to associate with
-     * the network interface.</p>
+     * the endpoint network interface.</p>
      */
     inline CreateVpcEndpointRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
      * <p>(Interface endpoint) The ID of one or more security groups to associate with
-     * the network interface.</p>
+     * the endpoint network interface.</p>
      */
     inline CreateVpcEndpointRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>(Interface endpoint) The ID of one or more security groups to associate with
-     * the network interface.</p>
+     * the endpoint network interface.</p>
      */
     inline CreateVpcEndpointRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
      * <p>(Interface endpoint) The ID of one or more security groups to associate with
-     * the network interface.</p>
+     * the endpoint network interface.</p>
      */
     inline CreateVpcEndpointRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>(Interface endpoint) The ID of one or more security groups to associate with
-     * the network interface.</p>
+     * the endpoint network interface.</p>
      */
     inline CreateVpcEndpointRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 

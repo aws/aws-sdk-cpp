@@ -47,73 +47,73 @@ namespace Model
 
 
     /**
-     * <p>The name of this job command.</p>
+     * <p>The name of the job command: this must be <code>glueetl</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of this job command.</p>
+     * <p>The name of the job command: this must be <code>glueetl</code>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of this job command.</p>
+     * <p>The name of the job command: this must be <code>glueetl</code>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of this job command.</p>
+     * <p>The name of the job command: this must be <code>glueetl</code>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of this job command.</p>
+     * <p>The name of the job command: this must be <code>glueetl</code>.</p>
      */
     inline JobCommand& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of this job command.</p>
+     * <p>The name of the job command: this must be <code>glueetl</code>.</p>
      */
     inline JobCommand& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of this job command.</p>
+     * <p>The name of the job command: this must be <code>glueetl</code>.</p>
      */
     inline JobCommand& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>Specifies the location of a script that executes a job.</p>
+     * <p>Specifies the S3 path to a script that executes a job (required).</p>
      */
     inline const Aws::String& GetScriptLocation() const{ return m_scriptLocation; }
 
     /**
-     * <p>Specifies the location of a script that executes a job.</p>
+     * <p>Specifies the S3 path to a script that executes a job (required).</p>
      */
     inline void SetScriptLocation(const Aws::String& value) { m_scriptLocationHasBeenSet = true; m_scriptLocation = value; }
 
     /**
-     * <p>Specifies the location of a script that executes a job.</p>
+     * <p>Specifies the S3 path to a script that executes a job (required).</p>
      */
     inline void SetScriptLocation(Aws::String&& value) { m_scriptLocationHasBeenSet = true; m_scriptLocation = std::move(value); }
 
     /**
-     * <p>Specifies the location of a script that executes a job.</p>
+     * <p>Specifies the S3 path to a script that executes a job (required).</p>
      */
     inline void SetScriptLocation(const char* value) { m_scriptLocationHasBeenSet = true; m_scriptLocation.assign(value); }
 
     /**
-     * <p>Specifies the location of a script that executes a job.</p>
+     * <p>Specifies the S3 path to a script that executes a job (required).</p>
      */
     inline JobCommand& WithScriptLocation(const Aws::String& value) { SetScriptLocation(value); return *this;}
 
     /**
-     * <p>Specifies the location of a script that executes a job.</p>
+     * <p>Specifies the S3 path to a script that executes a job (required).</p>
      */
     inline JobCommand& WithScriptLocation(Aws::String&& value) { SetScriptLocation(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the location of a script that executes a job.</p>
+     * <p>Specifies the S3 path to a script that executes a job (required).</p>
      */
     inline JobCommand& WithScriptLocation(const char* value) { SetScriptLocation(value); return *this;}
 

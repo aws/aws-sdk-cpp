@@ -100,192 +100,167 @@ namespace Model
 
 
     /**
-     * <p>The list of filters with which to limit search results. If no search filters
-     * are specified, the output is all the products to which the calling user has
-     * access. </p>
+     * <p>The search filters. If no search filters are specified, the output includes
+     * all products to which the caller has access.</p>
      */
     inline const Aws::Map<ProductViewFilterBy, Aws::Vector<Aws::String>>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>The list of filters with which to limit search results. If no search filters
-     * are specified, the output is all the products to which the calling user has
-     * access. </p>
+     * <p>The search filters. If no search filters are specified, the output includes
+     * all products to which the caller has access.</p>
      */
     inline void SetFilters(const Aws::Map<ProductViewFilterBy, Aws::Vector<Aws::String>>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>The list of filters with which to limit search results. If no search filters
-     * are specified, the output is all the products to which the calling user has
-     * access. </p>
+     * <p>The search filters. If no search filters are specified, the output includes
+     * all products to which the caller has access.</p>
      */
     inline void SetFilters(Aws::Map<ProductViewFilterBy, Aws::Vector<Aws::String>>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>The list of filters with which to limit search results. If no search filters
-     * are specified, the output is all the products to which the calling user has
-     * access. </p>
+     * <p>The search filters. If no search filters are specified, the output includes
+     * all products to which the caller has access.</p>
      */
     inline SearchProductsRequest& WithFilters(const Aws::Map<ProductViewFilterBy, Aws::Vector<Aws::String>>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>The list of filters with which to limit search results. If no search filters
-     * are specified, the output is all the products to which the calling user has
-     * access. </p>
+     * <p>The search filters. If no search filters are specified, the output includes
+     * all products to which the caller has access.</p>
      */
     inline SearchProductsRequest& WithFilters(Aws::Map<ProductViewFilterBy, Aws::Vector<Aws::String>>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>The list of filters with which to limit search results. If no search filters
-     * are specified, the output is all the products to which the calling user has
-     * access. </p>
+     * <p>The search filters. If no search filters are specified, the output includes
+     * all products to which the caller has access.</p>
      */
     inline SearchProductsRequest& AddFilters(const ProductViewFilterBy& key, const Aws::Vector<Aws::String>& value) { m_filtersHasBeenSet = true; m_filters.emplace(key, value); return *this; }
 
     /**
-     * <p>The list of filters with which to limit search results. If no search filters
-     * are specified, the output is all the products to which the calling user has
-     * access. </p>
+     * <p>The search filters. If no search filters are specified, the output includes
+     * all products to which the caller has access.</p>
      */
     inline SearchProductsRequest& AddFilters(ProductViewFilterBy&& key, const Aws::Vector<Aws::String>& value) { m_filtersHasBeenSet = true; m_filters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The list of filters with which to limit search results. If no search filters
-     * are specified, the output is all the products to which the calling user has
-     * access. </p>
+     * <p>The search filters. If no search filters are specified, the output includes
+     * all products to which the caller has access.</p>
      */
     inline SearchProductsRequest& AddFilters(const ProductViewFilterBy& key, Aws::Vector<Aws::String>&& value) { m_filtersHasBeenSet = true; m_filters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The list of filters with which to limit search results. If no search filters
-     * are specified, the output is all the products to which the calling user has
-     * access. </p>
+     * <p>The search filters. If no search filters are specified, the output includes
+     * all products to which the caller has access.</p>
      */
     inline SearchProductsRequest& AddFilters(ProductViewFilterBy&& key, Aws::Vector<Aws::String>&& value) { m_filtersHasBeenSet = true; m_filters.emplace(std::move(key), std::move(value)); return *this; }
 
 
     /**
-     * <p>The maximum number of items to return in the results. If more results exist
-     * than fit in the specified <code>PageSize</code>, the value of
-     * <code>NextPageToken</code> in the response is non-null.</p>
+     * <p>The maximum number of items to return with this call.</p>
      */
     inline int GetPageSize() const{ return m_pageSize; }
 
     /**
-     * <p>The maximum number of items to return in the results. If more results exist
-     * than fit in the specified <code>PageSize</code>, the value of
-     * <code>NextPageToken</code> in the response is non-null.</p>
+     * <p>The maximum number of items to return with this call.</p>
      */
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
 
     /**
-     * <p>The maximum number of items to return in the results. If more results exist
-     * than fit in the specified <code>PageSize</code>, the value of
-     * <code>NextPageToken</code> in the response is non-null.</p>
+     * <p>The maximum number of items to return with this call.</p>
      */
     inline SearchProductsRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
 
 
     /**
-     * <p>The sort field specifier. If no value is specified, results are not
-     * sorted.</p>
+     * <p>The sort field. If no value is specified, the results are not sorted.</p>
      */
     inline const ProductViewSortBy& GetSortBy() const{ return m_sortBy; }
 
     /**
-     * <p>The sort field specifier. If no value is specified, results are not
-     * sorted.</p>
+     * <p>The sort field. If no value is specified, the results are not sorted.</p>
      */
     inline void SetSortBy(const ProductViewSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
 
     /**
-     * <p>The sort field specifier. If no value is specified, results are not
-     * sorted.</p>
+     * <p>The sort field. If no value is specified, the results are not sorted.</p>
      */
     inline void SetSortBy(ProductViewSortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
 
     /**
-     * <p>The sort field specifier. If no value is specified, results are not
-     * sorted.</p>
+     * <p>The sort field. If no value is specified, the results are not sorted.</p>
      */
     inline SearchProductsRequest& WithSortBy(const ProductViewSortBy& value) { SetSortBy(value); return *this;}
 
     /**
-     * <p>The sort field specifier. If no value is specified, results are not
-     * sorted.</p>
+     * <p>The sort field. If no value is specified, the results are not sorted.</p>
      */
     inline SearchProductsRequest& WithSortBy(ProductViewSortBy&& value) { SetSortBy(std::move(value)); return *this;}
 
 
     /**
-     * <p>The sort order specifier. If no value is specified, results are not
-     * sorted.</p>
+     * <p>The sort order. If no value is specified, the results are not sorted.</p>
      */
     inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
 
     /**
-     * <p>The sort order specifier. If no value is specified, results are not
-     * sorted.</p>
+     * <p>The sort order. If no value is specified, the results are not sorted.</p>
      */
     inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
 
     /**
-     * <p>The sort order specifier. If no value is specified, results are not
-     * sorted.</p>
+     * <p>The sort order. If no value is specified, the results are not sorted.</p>
      */
     inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
 
     /**
-     * <p>The sort order specifier. If no value is specified, results are not
-     * sorted.</p>
+     * <p>The sort order. If no value is specified, the results are not sorted.</p>
      */
     inline SearchProductsRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
 
     /**
-     * <p>The sort order specifier. If no value is specified, results are not
-     * sorted.</p>
+     * <p>The sort order. If no value is specified, the results are not sorted.</p>
      */
     inline SearchProductsRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
 
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline const Aws::String& GetPageToken() const{ return m_pageToken; }
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline void SetPageToken(const Aws::String& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::move(value); }
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline void SetPageToken(const char* value) { m_pageTokenHasBeenSet = true; m_pageToken.assign(value); }
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline SearchProductsRequest& WithPageToken(const Aws::String& value) { SetPageToken(value); return *this;}
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline SearchProductsRequest& WithPageToken(Aws::String&& value) { SetPageToken(std::move(value)); return *this;}
 
     /**
-     * <p>The page token of the first page retrieved. If null, this retrieves the first
-     * page of size <code>PageSize</code>.</p>
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
      */
     inline SearchProductsRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
 

@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about an email template.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about an email template.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/TemplateMetadata">AWS
    * API Reference</a></p>
    */

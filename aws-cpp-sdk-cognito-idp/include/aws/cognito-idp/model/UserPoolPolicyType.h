@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>The type of policy in a user pool.</p><p><h3>See Also:</h3>   <a
+   * <p>The policy associated with a user pool.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserPoolPolicyType">AWS
    * API Reference</a></p>
    */
@@ -47,27 +47,27 @@ namespace Model
 
 
     /**
-     * <p>A container for information about the user pool password policy.</p>
+     * <p>The password policy.</p>
      */
     inline const PasswordPolicyType& GetPasswordPolicy() const{ return m_passwordPolicy; }
 
     /**
-     * <p>A container for information about the user pool password policy.</p>
+     * <p>The password policy.</p>
      */
     inline void SetPasswordPolicy(const PasswordPolicyType& value) { m_passwordPolicyHasBeenSet = true; m_passwordPolicy = value; }
 
     /**
-     * <p>A container for information about the user pool password policy.</p>
+     * <p>The password policy.</p>
      */
     inline void SetPasswordPolicy(PasswordPolicyType&& value) { m_passwordPolicyHasBeenSet = true; m_passwordPolicy = std::move(value); }
 
     /**
-     * <p>A container for information about the user pool password policy.</p>
+     * <p>The password policy.</p>
      */
     inline UserPoolPolicyType& WithPasswordPolicy(const PasswordPolicyType& value) { SetPasswordPolicy(value); return *this;}
 
     /**
-     * <p>A container for information about the user pool password policy.</p>
+     * <p>The password policy.</p>
      */
     inline UserPoolPolicyType& WithPasswordPolicy(PasswordPolicyType&& value) { SetPasswordPolicy(std::move(value)); return *this;}
 

@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/model/RequestCharged.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -57,9 +58,54 @@ namespace Model
     
     inline RestoreObjectResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
 
+
+    /**
+     * Indicates the path in the provided S3 output location where Select results will
+     * be restored to.
+     */
+    inline const Aws::String& GetRestoreOutputPath() const{ return m_restoreOutputPath; }
+
+    /**
+     * Indicates the path in the provided S3 output location where Select results will
+     * be restored to.
+     */
+    inline void SetRestoreOutputPath(const Aws::String& value) { m_restoreOutputPath = value; }
+
+    /**
+     * Indicates the path in the provided S3 output location where Select results will
+     * be restored to.
+     */
+    inline void SetRestoreOutputPath(Aws::String&& value) { m_restoreOutputPath = std::move(value); }
+
+    /**
+     * Indicates the path in the provided S3 output location where Select results will
+     * be restored to.
+     */
+    inline void SetRestoreOutputPath(const char* value) { m_restoreOutputPath.assign(value); }
+
+    /**
+     * Indicates the path in the provided S3 output location where Select results will
+     * be restored to.
+     */
+    inline RestoreObjectResult& WithRestoreOutputPath(const Aws::String& value) { SetRestoreOutputPath(value); return *this;}
+
+    /**
+     * Indicates the path in the provided S3 output location where Select results will
+     * be restored to.
+     */
+    inline RestoreObjectResult& WithRestoreOutputPath(Aws::String&& value) { SetRestoreOutputPath(std::move(value)); return *this;}
+
+    /**
+     * Indicates the path in the provided S3 output location where Select results will
+     * be restored to.
+     */
+    inline RestoreObjectResult& WithRestoreOutputPath(const char* value) { SetRestoreOutputPath(value); return *this;}
+
   private:
 
     RequestCharged m_requestCharged;
+
+    Aws::String m_restoreOutputPath;
   };
 
 } // namespace Model

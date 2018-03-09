@@ -31,8 +31,11 @@ CreatePatchBaselineRequest::CreatePatchBaselineRequest() :
     m_approvedPatchesHasBeenSet(false),
     m_approvedPatchesComplianceLevel(PatchComplianceLevel::NOT_SET),
     m_approvedPatchesComplianceLevelHasBeenSet(false),
+    m_approvedPatchesEnableNonSecurity(false),
+    m_approvedPatchesEnableNonSecurityHasBeenSet(false),
     m_rejectedPatchesHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_sourcesHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
@@ -81,6 +84,12 @@ Aws::String CreatePatchBaselineRequest::SerializePayload() const
    payload.WithString("ApprovedPatchesComplianceLevel", PatchComplianceLevelMapper::GetNameForPatchComplianceLevel(m_approvedPatchesComplianceLevel));
   }
 
+  if(m_approvedPatchesEnableNonSecurityHasBeenSet)
+  {
+   payload.WithBool("ApprovedPatchesEnableNonSecurity", m_approvedPatchesEnableNonSecurity);
+
+  }
+
   if(m_rejectedPatchesHasBeenSet)
   {
    Array<JsonValue> rejectedPatchesJsonList(m_rejectedPatches.size());
@@ -95,6 +104,17 @@ Aws::String CreatePatchBaselineRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
+
+  }
+
+  if(m_sourcesHasBeenSet)
+  {
+   Array<JsonValue> sourcesJsonList(m_sources.size());
+   for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
+   {
+     sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());
+   }
+   payload.WithArray("Sources", std::move(sourcesJsonList));
 
   }
 

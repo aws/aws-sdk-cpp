@@ -47,87 +47,73 @@ namespace Model
 
 
     /**
-     * <p>The list of parameters used to successfully provision the product. Each
-     * parameter includes a list of allowable values and additional metadata about each
-     * parameter.</p>
+     * <p>Information about the parameters used to provision the product.</p>
      */
     inline const Aws::Vector<ProvisioningArtifactParameter>& GetProvisioningArtifactParameters() const{ return m_provisioningArtifactParameters; }
 
     /**
-     * <p>The list of parameters used to successfully provision the product. Each
-     * parameter includes a list of allowable values and additional metadata about each
-     * parameter.</p>
+     * <p>Information about the parameters used to provision the product.</p>
      */
     inline void SetProvisioningArtifactParameters(const Aws::Vector<ProvisioningArtifactParameter>& value) { m_provisioningArtifactParameters = value; }
 
     /**
-     * <p>The list of parameters used to successfully provision the product. Each
-     * parameter includes a list of allowable values and additional metadata about each
-     * parameter.</p>
+     * <p>Information about the parameters used to provision the product.</p>
      */
     inline void SetProvisioningArtifactParameters(Aws::Vector<ProvisioningArtifactParameter>&& value) { m_provisioningArtifactParameters = std::move(value); }
 
     /**
-     * <p>The list of parameters used to successfully provision the product. Each
-     * parameter includes a list of allowable values and additional metadata about each
-     * parameter.</p>
+     * <p>Information about the parameters used to provision the product.</p>
      */
     inline DescribeProvisioningParametersResult& WithProvisioningArtifactParameters(const Aws::Vector<ProvisioningArtifactParameter>& value) { SetProvisioningArtifactParameters(value); return *this;}
 
     /**
-     * <p>The list of parameters used to successfully provision the product. Each
-     * parameter includes a list of allowable values and additional metadata about each
-     * parameter.</p>
+     * <p>Information about the parameters used to provision the product.</p>
      */
     inline DescribeProvisioningParametersResult& WithProvisioningArtifactParameters(Aws::Vector<ProvisioningArtifactParameter>&& value) { SetProvisioningArtifactParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The list of parameters used to successfully provision the product. Each
-     * parameter includes a list of allowable values and additional metadata about each
-     * parameter.</p>
+     * <p>Information about the parameters used to provision the product.</p>
      */
     inline DescribeProvisioningParametersResult& AddProvisioningArtifactParameters(const ProvisioningArtifactParameter& value) { m_provisioningArtifactParameters.push_back(value); return *this; }
 
     /**
-     * <p>The list of parameters used to successfully provision the product. Each
-     * parameter includes a list of allowable values and additional metadata about each
-     * parameter.</p>
+     * <p>Information about the parameters used to provision the product.</p>
      */
     inline DescribeProvisioningParametersResult& AddProvisioningArtifactParameters(ProvisioningArtifactParameter&& value) { m_provisioningArtifactParameters.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The list of constraint summaries that apply to provisioning this product.</p>
+     * <p>Information about the constraints used to provision the product.</p>
      */
     inline const Aws::Vector<ConstraintSummary>& GetConstraintSummaries() const{ return m_constraintSummaries; }
 
     /**
-     * <p>The list of constraint summaries that apply to provisioning this product.</p>
+     * <p>Information about the constraints used to provision the product.</p>
      */
     inline void SetConstraintSummaries(const Aws::Vector<ConstraintSummary>& value) { m_constraintSummaries = value; }
 
     /**
-     * <p>The list of constraint summaries that apply to provisioning this product.</p>
+     * <p>Information about the constraints used to provision the product.</p>
      */
     inline void SetConstraintSummaries(Aws::Vector<ConstraintSummary>&& value) { m_constraintSummaries = std::move(value); }
 
     /**
-     * <p>The list of constraint summaries that apply to provisioning this product.</p>
+     * <p>Information about the constraints used to provision the product.</p>
      */
     inline DescribeProvisioningParametersResult& WithConstraintSummaries(const Aws::Vector<ConstraintSummary>& value) { SetConstraintSummaries(value); return *this;}
 
     /**
-     * <p>The list of constraint summaries that apply to provisioning this product.</p>
+     * <p>Information about the constraints used to provision the product.</p>
      */
     inline DescribeProvisioningParametersResult& WithConstraintSummaries(Aws::Vector<ConstraintSummary>&& value) { SetConstraintSummaries(std::move(value)); return *this;}
 
     /**
-     * <p>The list of constraint summaries that apply to provisioning this product.</p>
+     * <p>Information about the constraints used to provision the product.</p>
      */
     inline DescribeProvisioningParametersResult& AddConstraintSummaries(const ConstraintSummary& value) { m_constraintSummaries.push_back(value); return *this; }
 
     /**
-     * <p>The list of constraint summaries that apply to provisioning this product.</p>
+     * <p>Information about the constraints used to provision the product.</p>
      */
     inline DescribeProvisioningParametersResult& AddConstraintSummaries(ConstraintSummary&& value) { m_constraintSummaries.push_back(std::move(value)); return *this; }
 
@@ -183,44 +169,37 @@ namespace Model
 
 
     /**
-     * <p>List of TagOptions associated with the provisioned provisioning
-     * parameters.</p>
+     * <p>Information about the TagOptions associated with the resource.</p>
      */
     inline const Aws::Vector<TagOptionSummary>& GetTagOptions() const{ return m_tagOptions; }
 
     /**
-     * <p>List of TagOptions associated with the provisioned provisioning
-     * parameters.</p>
+     * <p>Information about the TagOptions associated with the resource.</p>
      */
     inline void SetTagOptions(const Aws::Vector<TagOptionSummary>& value) { m_tagOptions = value; }
 
     /**
-     * <p>List of TagOptions associated with the provisioned provisioning
-     * parameters.</p>
+     * <p>Information about the TagOptions associated with the resource.</p>
      */
     inline void SetTagOptions(Aws::Vector<TagOptionSummary>&& value) { m_tagOptions = std::move(value); }
 
     /**
-     * <p>List of TagOptions associated with the provisioned provisioning
-     * parameters.</p>
+     * <p>Information about the TagOptions associated with the resource.</p>
      */
     inline DescribeProvisioningParametersResult& WithTagOptions(const Aws::Vector<TagOptionSummary>& value) { SetTagOptions(value); return *this;}
 
     /**
-     * <p>List of TagOptions associated with the provisioned provisioning
-     * parameters.</p>
+     * <p>Information about the TagOptions associated with the resource.</p>
      */
     inline DescribeProvisioningParametersResult& WithTagOptions(Aws::Vector<TagOptionSummary>&& value) { SetTagOptions(std::move(value)); return *this;}
 
     /**
-     * <p>List of TagOptions associated with the provisioned provisioning
-     * parameters.</p>
+     * <p>Information about the TagOptions associated with the resource.</p>
      */
     inline DescribeProvisioningParametersResult& AddTagOptions(const TagOptionSummary& value) { m_tagOptions.push_back(value); return *this; }
 
     /**
-     * <p>List of TagOptions associated with the provisioned provisioning
-     * parameters.</p>
+     * <p>Information about the TagOptions associated with the resource.</p>
      */
     inline DescribeProvisioningParametersResult& AddTagOptions(TagOptionSummary&& value) { m_tagOptions.push_back(std::move(value)); return *this; }
 

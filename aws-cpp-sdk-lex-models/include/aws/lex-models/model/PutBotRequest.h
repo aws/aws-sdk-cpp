@@ -518,42 +518,42 @@ namespace Model
 
 
     /**
-     * <p>If you set the <code>processBehavior</code> element to <code>Build</code>,
+     * <p>If you set the <code>processBehavior</code> element to <code>BUILD</code>,
      * Amazon Lex builds the bot so that it can be run. If you set the element to
-     * <code>Save</code>Amazon Lex saves the bot, but doesn't build it. </p> <p>If you
-     * don't specify this value, the default value is <code>Save</code>.</p>
+     * <code>SAVE</code> Amazon Lex saves the bot, but doesn't build it. </p> <p>If you
+     * don't specify this value, the default value is <code>BUILD</code>.</p>
      */
     inline const ProcessBehavior& GetProcessBehavior() const{ return m_processBehavior; }
 
     /**
-     * <p>If you set the <code>processBehavior</code> element to <code>Build</code>,
+     * <p>If you set the <code>processBehavior</code> element to <code>BUILD</code>,
      * Amazon Lex builds the bot so that it can be run. If you set the element to
-     * <code>Save</code>Amazon Lex saves the bot, but doesn't build it. </p> <p>If you
-     * don't specify this value, the default value is <code>Save</code>.</p>
+     * <code>SAVE</code> Amazon Lex saves the bot, but doesn't build it. </p> <p>If you
+     * don't specify this value, the default value is <code>BUILD</code>.</p>
      */
     inline void SetProcessBehavior(const ProcessBehavior& value) { m_processBehaviorHasBeenSet = true; m_processBehavior = value; }
 
     /**
-     * <p>If you set the <code>processBehavior</code> element to <code>Build</code>,
+     * <p>If you set the <code>processBehavior</code> element to <code>BUILD</code>,
      * Amazon Lex builds the bot so that it can be run. If you set the element to
-     * <code>Save</code>Amazon Lex saves the bot, but doesn't build it. </p> <p>If you
-     * don't specify this value, the default value is <code>Save</code>.</p>
+     * <code>SAVE</code> Amazon Lex saves the bot, but doesn't build it. </p> <p>If you
+     * don't specify this value, the default value is <code>BUILD</code>.</p>
      */
     inline void SetProcessBehavior(ProcessBehavior&& value) { m_processBehaviorHasBeenSet = true; m_processBehavior = std::move(value); }
 
     /**
-     * <p>If you set the <code>processBehavior</code> element to <code>Build</code>,
+     * <p>If you set the <code>processBehavior</code> element to <code>BUILD</code>,
      * Amazon Lex builds the bot so that it can be run. If you set the element to
-     * <code>Save</code>Amazon Lex saves the bot, but doesn't build it. </p> <p>If you
-     * don't specify this value, the default value is <code>Save</code>.</p>
+     * <code>SAVE</code> Amazon Lex saves the bot, but doesn't build it. </p> <p>If you
+     * don't specify this value, the default value is <code>BUILD</code>.</p>
      */
     inline PutBotRequest& WithProcessBehavior(const ProcessBehavior& value) { SetProcessBehavior(value); return *this;}
 
     /**
-     * <p>If you set the <code>processBehavior</code> element to <code>Build</code>,
+     * <p>If you set the <code>processBehavior</code> element to <code>BUILD</code>,
      * Amazon Lex builds the bot so that it can be run. If you set the element to
-     * <code>Save</code>Amazon Lex saves the bot, but doesn't build it. </p> <p>If you
-     * don't specify this value, the default value is <code>Save</code>.</p>
+     * <code>SAVE</code> Amazon Lex saves the bot, but doesn't build it. </p> <p>If you
+     * don't specify this value, the default value is <code>BUILD</code>.</p>
      */
     inline PutBotRequest& WithProcessBehavior(ProcessBehavior&& value) { SetProcessBehavior(std::move(value)); return *this;}
 
@@ -675,6 +675,16 @@ namespace Model
      */
     inline PutBotRequest& WithChildDirected(bool value) { SetChildDirected(value); return *this;}
 
+
+    
+    inline bool GetCreateVersion() const{ return m_createVersion; }
+
+    
+    inline void SetCreateVersion(bool value) { m_createVersionHasBeenSet = true; m_createVersion = value; }
+
+    
+    inline PutBotRequest& WithCreateVersion(bool value) { SetCreateVersion(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -709,6 +719,9 @@ namespace Model
 
     bool m_childDirected;
     bool m_childDirectedHasBeenSet;
+
+    bool m_createVersion;
+    bool m_createVersionHasBeenSet;
   };
 
 } // namespace Model

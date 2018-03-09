@@ -51,32 +51,37 @@ namespace Model
 
 
     /**
-     * <p>The aspect of the Automation execution information that should be
-     * limited.</p>
+     * <p>One or more keys to limit the results. Valid filter keys include the
+     * following: DocumentNamePrefix, ExecutionStatus, ExecutionId, ParentExecutionId,
+     * CurrentAction, StartTimeBefore, StartTimeAfter.</p>
      */
     inline const AutomationExecutionFilterKey& GetKey() const{ return m_key; }
 
     /**
-     * <p>The aspect of the Automation execution information that should be
-     * limited.</p>
+     * <p>One or more keys to limit the results. Valid filter keys include the
+     * following: DocumentNamePrefix, ExecutionStatus, ExecutionId, ParentExecutionId,
+     * CurrentAction, StartTimeBefore, StartTimeAfter.</p>
      */
     inline void SetKey(const AutomationExecutionFilterKey& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>The aspect of the Automation execution information that should be
-     * limited.</p>
+     * <p>One or more keys to limit the results. Valid filter keys include the
+     * following: DocumentNamePrefix, ExecutionStatus, ExecutionId, ParentExecutionId,
+     * CurrentAction, StartTimeBefore, StartTimeAfter.</p>
      */
     inline void SetKey(AutomationExecutionFilterKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p>The aspect of the Automation execution information that should be
-     * limited.</p>
+     * <p>One or more keys to limit the results. Valid filter keys include the
+     * following: DocumentNamePrefix, ExecutionStatus, ExecutionId, ParentExecutionId,
+     * CurrentAction, StartTimeBefore, StartTimeAfter.</p>
      */
     inline AutomationExecutionFilter& WithKey(const AutomationExecutionFilterKey& value) { SetKey(value); return *this;}
 
     /**
-     * <p>The aspect of the Automation execution information that should be
-     * limited.</p>
+     * <p>One or more keys to limit the results. Valid filter keys include the
+     * following: DocumentNamePrefix, ExecutionStatus, ExecutionId, ParentExecutionId,
+     * CurrentAction, StartTimeBefore, StartTimeAfter.</p>
      */
     inline AutomationExecutionFilter& WithKey(AutomationExecutionFilterKey&& value) { SetKey(std::move(value)); return *this;}
 

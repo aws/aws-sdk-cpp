@@ -57,11 +57,16 @@ def Main():
                  "aws-cpp-sdk-cognitoidentity-integration-tests",
                  "aws-cpp-sdk-transfer-tests",
                  "aws-cpp-sdk-s3-encryption-integration-tests",
+                 #"aws-cpp-sdk-redshift-integration-tests", # Don't run this test unless you really want to, it will cost you a lot of money. The test takes around a half hour to finish.
+                 #"aws-cpp-sdk-cloudfront-integration-tests", # This test will cost you a lot of money as well.
                  "aws-cpp-sdk-ec2-integration-tests" ]
 
     for testName in testList:
         testExe = arguments["buildDir"] + "/" + testName + "/" + configDir + "/" + testName + exeExtension
-        prefix = platform.system().lower()
+        # when build with BUILD_ONLY, not all test binaries will be generated.
+        if not os.path.isfile(testExe):
+            continue
+        prefix = "--aws_resource_prefix=" + platform.system().lower()
         print("testExe = " + testExe)
         print("prefix = " + prefix)
         AddExecutableBit(testExe)

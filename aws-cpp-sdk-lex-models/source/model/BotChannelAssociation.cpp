@@ -36,7 +36,10 @@ BotChannelAssociation::BotChannelAssociation() :
     m_createdDateHasBeenSet(false),
     m_type(ChannelType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_botConfigurationHasBeenSet(false)
+    m_botConfigurationHasBeenSet(false),
+    m_status(ChannelStatus::NOT_SET),
+    m_statusHasBeenSet(false),
+    m_failureReasonHasBeenSet(false)
 {
 }
 
@@ -48,7 +51,10 @@ BotChannelAssociation::BotChannelAssociation(const JsonValue& jsonValue) :
     m_createdDateHasBeenSet(false),
     m_type(ChannelType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_botConfigurationHasBeenSet(false)
+    m_botConfigurationHasBeenSet(false),
+    m_status(ChannelStatus::NOT_SET),
+    m_statusHasBeenSet(false),
+    m_failureReasonHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -107,6 +113,20 @@ BotChannelAssociation& BotChannelAssociation::operator =(const JsonValue& jsonVa
     m_botConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = ChannelStatusMapper::GetChannelStatusForName(jsonValue.GetString("status"));
+
+    m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("failureReason"))
+  {
+    m_failureReason = jsonValue.GetString("failureReason");
+
+    m_failureReasonHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -156,6 +176,17 @@ JsonValue BotChannelAssociation::Jsonize() const
      botConfigurationJsonMap.WithString(botConfigurationItem.first, botConfigurationItem.second);
    }
    payload.WithObject("botConfiguration", std::move(botConfigurationJsonMap));
+
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", ChannelStatusMapper::GetNameForChannelStatus(m_status));
+  }
+
+  if(m_failureReasonHasBeenSet)
+  {
+   payload.WithString("failureReason", m_failureReason);
 
   }
 

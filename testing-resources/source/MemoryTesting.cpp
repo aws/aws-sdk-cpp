@@ -23,6 +23,21 @@
 #include <chrono>
 #include <thread>
 #include <cstdlib>
+#include <cstddef>
+#if defined(_MSC_VER) && _MSC_VER < 1900
+#define alignof __alignof
+#endif
+
+
+namespace {
+#if defined(__GNUC__) && __GNUC__ == 4 && __GNUC_MINOR__ <= 8 && !defined(__clang__)
+    // GCC 4.8 has `max_align_t` defined in global namespace
+    using ::max_align_t;
+#else
+    using std::max_align_t;
+#endif
+}
+
 
 BaseTestMemorySystem::BaseTestMemorySystem() :
     m_currentBytesAllocated(0),
@@ -47,11 +62,19 @@ void* BaseTestMemorySystem::AllocateMemory(std::size_t blockSize, std::size_t al
     m_maxBytesAllocated = (std::max)(m_maxBytesAllocated, m_currentBytesAllocated);
     m_totalBytesAllocated += blockSize;
 
-    char* rawMemory = reinterpret_cast<char*>(malloc(blockSize + sizeof(std::size_t)));
+    // Note: malloc will always return an address aligned with alignof(std::max_align_t);
+    // This alignment value is not always equals to sizeof(std::size_t). But one thing we can make sure is that
+    // alignof(std::max_align_t) is always multiple of sizeof(std::size_t).
+    // On some platforms, in place construction requires memory address must be aligned with alignof(std::max_align_t).
+    // E.g on Mac, x86_64, sizeof(std::size_t) equals 8. but alignof(std::max_align_t) equals 16. std::function requires aligned memory address.
+    // To record the malloc size and keep returned address align with 16, instead of malloc extra 8 bytes,  
+    // we end up with malloc extra 16 bytes.
+    
+    char* rawMemory = reinterpret_cast<char*>(malloc(blockSize + alignof(max_align_t)));
     std::size_t *pointerToSize = reinterpret_cast<std::size_t*>(reinterpret_cast<void*>(rawMemory));
     *pointerToSize = blockSize;
 
-    return reinterpret_cast<void*>(rawMemory + sizeof(std::size_t));
+    return reinterpret_cast<void*>(rawMemory + alignof(max_align_t));
 }
 
 void BaseTestMemorySystem::FreeMemory(void* memoryPtr) 
@@ -62,8 +85,7 @@ void BaseTestMemorySystem::FreeMemory(void* memoryPtr)
         --m_currentOutstandingAllocations;
     }
 
-    std::size_t *pointerToSize = reinterpret_cast<std::size_t*>(memoryPtr);
-    --pointerToSize;
+    std::size_t *pointerToSize = reinterpret_cast<std::size_t*>(reinterpret_cast<char*>(memoryPtr) - alignof(max_align_t));
     std::size_t blockSize = *pointerToSize;
 
     ASSERT_GE(m_currentBytesAllocated, blockSize);

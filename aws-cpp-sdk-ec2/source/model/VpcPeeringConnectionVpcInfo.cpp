@@ -36,7 +36,8 @@ VpcPeeringConnectionVpcInfo::VpcPeeringConnectionVpcInfo() :
     m_cidrBlockSetHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
     m_peeringOptionsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_regionHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ VpcPeeringConnectionVpcInfo::VpcPeeringConnectionVpcInfo(const XmlNode& xmlNode)
     m_cidrBlockSetHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
     m_peeringOptionsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_regionHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -105,6 +107,12 @@ VpcPeeringConnectionVpcInfo& VpcPeeringConnectionVpcInfo::operator =(const XmlNo
       m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
       m_vpcIdHasBeenSet = true;
     }
+    XmlNode regionNode = resultNode.FirstChild("region");
+    if(!regionNode.IsNull())
+    {
+      m_region = StringUtils::Trim(regionNode.GetText().c_str());
+      m_regionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -156,6 +164,11 @@ void VpcPeeringConnectionVpcInfo::OutputToStream(Aws::OStream& oStream, const ch
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
+  if(m_regionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Region=" << StringUtils::URLEncode(m_region.c_str()) << "&";
+  }
+
 }
 
 void VpcPeeringConnectionVpcInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -197,6 +210,10 @@ void VpcPeeringConnectionVpcInfo::OutputToStream(Aws::OStream& oStream, const ch
   if(m_vpcIdHasBeenSet)
   {
       oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+  }
+  if(m_regionHasBeenSet)
+  {
+      oStream << location << ".Region=" << StringUtils::URLEncode(m_region.c_str()) << "&";
   }
 }
 

@@ -32,6 +32,7 @@ namespace Aws
 
         static const int ArchiveRetrieval_HASH = HashingUtils::HashString("ArchiveRetrieval");
         static const int InventoryRetrieval_HASH = HashingUtils::HashString("InventoryRetrieval");
+        static const int Select_HASH = HashingUtils::HashString("Select");
 
 
         ActionCode GetActionCodeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == InventoryRetrieval_HASH)
           {
             return ActionCode::InventoryRetrieval;
+          }
+          else if (hashCode == Select_HASH)
+          {
+            return ActionCode::Select;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "ArchiveRetrieval";
           case ActionCode::InventoryRetrieval:
             return "InventoryRetrieval";
+          case ActionCode::Select:
+            return "Select";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

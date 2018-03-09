@@ -36,12 +36,6 @@ namespace WorkSpaces
 {
 namespace Model
 {
-  /**
-   * <p>Contains the result of the <a>CreateWorkspaces</a> operation.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspacesResult">AWS
-   * API Reference</a></p>
-   */
   class AWS_WORKSPACES_API CreateWorkspacesResult
   {
   public:
@@ -51,108 +45,101 @@ namespace Model
 
 
     /**
-     * <p>An array of structures that represent the WorkSpaces that could not be
-     * created.</p>
+     * <p>Information about the WorkSpaces that could not be created.</p>
      */
     inline const Aws::Vector<FailedCreateWorkspaceRequest>& GetFailedRequests() const{ return m_failedRequests; }
 
     /**
-     * <p>An array of structures that represent the WorkSpaces that could not be
-     * created.</p>
+     * <p>Information about the WorkSpaces that could not be created.</p>
      */
     inline void SetFailedRequests(const Aws::Vector<FailedCreateWorkspaceRequest>& value) { m_failedRequests = value; }
 
     /**
-     * <p>An array of structures that represent the WorkSpaces that could not be
-     * created.</p>
+     * <p>Information about the WorkSpaces that could not be created.</p>
      */
     inline void SetFailedRequests(Aws::Vector<FailedCreateWorkspaceRequest>&& value) { m_failedRequests = std::move(value); }
 
     /**
-     * <p>An array of structures that represent the WorkSpaces that could not be
-     * created.</p>
+     * <p>Information about the WorkSpaces that could not be created.</p>
      */
     inline CreateWorkspacesResult& WithFailedRequests(const Aws::Vector<FailedCreateWorkspaceRequest>& value) { SetFailedRequests(value); return *this;}
 
     /**
-     * <p>An array of structures that represent the WorkSpaces that could not be
-     * created.</p>
+     * <p>Information about the WorkSpaces that could not be created.</p>
      */
     inline CreateWorkspacesResult& WithFailedRequests(Aws::Vector<FailedCreateWorkspaceRequest>&& value) { SetFailedRequests(std::move(value)); return *this;}
 
     /**
-     * <p>An array of structures that represent the WorkSpaces that could not be
-     * created.</p>
+     * <p>Information about the WorkSpaces that could not be created.</p>
      */
     inline CreateWorkspacesResult& AddFailedRequests(const FailedCreateWorkspaceRequest& value) { m_failedRequests.push_back(value); return *this; }
 
     /**
-     * <p>An array of structures that represent the WorkSpaces that could not be
-     * created.</p>
+     * <p>Information about the WorkSpaces that could not be created.</p>
      */
     inline CreateWorkspacesResult& AddFailedRequests(FailedCreateWorkspaceRequest&& value) { m_failedRequests.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>An array of structures that represent the WorkSpaces that were created.</p>
-     * <p>Because this operation is asynchronous, the identifier in
-     * <code>WorkspaceId</code> is not immediately available. If you immediately call
-     * <a>DescribeWorkspaces</a> with this identifier, no information will be
-     * returned.</p>
+     * <p>Information about the WorkSpaces that were created.</p> <p>Because this
+     * operation is asynchronous, the identifier returned is not immediately available
+     * for use with other operations. For example, if you call
+     * <a>DescribeWorkspaces</a> before the WorkSpace is created, the information
+     * returned can be incomplete.</p>
      */
     inline const Aws::Vector<Workspace>& GetPendingRequests() const{ return m_pendingRequests; }
 
     /**
-     * <p>An array of structures that represent the WorkSpaces that were created.</p>
-     * <p>Because this operation is asynchronous, the identifier in
-     * <code>WorkspaceId</code> is not immediately available. If you immediately call
-     * <a>DescribeWorkspaces</a> with this identifier, no information will be
-     * returned.</p>
+     * <p>Information about the WorkSpaces that were created.</p> <p>Because this
+     * operation is asynchronous, the identifier returned is not immediately available
+     * for use with other operations. For example, if you call
+     * <a>DescribeWorkspaces</a> before the WorkSpace is created, the information
+     * returned can be incomplete.</p>
      */
     inline void SetPendingRequests(const Aws::Vector<Workspace>& value) { m_pendingRequests = value; }
 
     /**
-     * <p>An array of structures that represent the WorkSpaces that were created.</p>
-     * <p>Because this operation is asynchronous, the identifier in
-     * <code>WorkspaceId</code> is not immediately available. If you immediately call
-     * <a>DescribeWorkspaces</a> with this identifier, no information will be
-     * returned.</p>
+     * <p>Information about the WorkSpaces that were created.</p> <p>Because this
+     * operation is asynchronous, the identifier returned is not immediately available
+     * for use with other operations. For example, if you call
+     * <a>DescribeWorkspaces</a> before the WorkSpace is created, the information
+     * returned can be incomplete.</p>
      */
     inline void SetPendingRequests(Aws::Vector<Workspace>&& value) { m_pendingRequests = std::move(value); }
 
     /**
-     * <p>An array of structures that represent the WorkSpaces that were created.</p>
-     * <p>Because this operation is asynchronous, the identifier in
-     * <code>WorkspaceId</code> is not immediately available. If you immediately call
-     * <a>DescribeWorkspaces</a> with this identifier, no information will be
-     * returned.</p>
+     * <p>Information about the WorkSpaces that were created.</p> <p>Because this
+     * operation is asynchronous, the identifier returned is not immediately available
+     * for use with other operations. For example, if you call
+     * <a>DescribeWorkspaces</a> before the WorkSpace is created, the information
+     * returned can be incomplete.</p>
      */
     inline CreateWorkspacesResult& WithPendingRequests(const Aws::Vector<Workspace>& value) { SetPendingRequests(value); return *this;}
 
     /**
-     * <p>An array of structures that represent the WorkSpaces that were created.</p>
-     * <p>Because this operation is asynchronous, the identifier in
-     * <code>WorkspaceId</code> is not immediately available. If you immediately call
-     * <a>DescribeWorkspaces</a> with this identifier, no information will be
-     * returned.</p>
+     * <p>Information about the WorkSpaces that were created.</p> <p>Because this
+     * operation is asynchronous, the identifier returned is not immediately available
+     * for use with other operations. For example, if you call
+     * <a>DescribeWorkspaces</a> before the WorkSpace is created, the information
+     * returned can be incomplete.</p>
      */
     inline CreateWorkspacesResult& WithPendingRequests(Aws::Vector<Workspace>&& value) { SetPendingRequests(std::move(value)); return *this;}
 
     /**
-     * <p>An array of structures that represent the WorkSpaces that were created.</p>
-     * <p>Because this operation is asynchronous, the identifier in
-     * <code>WorkspaceId</code> is not immediately available. If you immediately call
-     * <a>DescribeWorkspaces</a> with this identifier, no information will be
-     * returned.</p>
+     * <p>Information about the WorkSpaces that were created.</p> <p>Because this
+     * operation is asynchronous, the identifier returned is not immediately available
+     * for use with other operations. For example, if you call
+     * <a>DescribeWorkspaces</a> before the WorkSpace is created, the information
+     * returned can be incomplete.</p>
      */
     inline CreateWorkspacesResult& AddPendingRequests(const Workspace& value) { m_pendingRequests.push_back(value); return *this; }
 
     /**
-     * <p>An array of structures that represent the WorkSpaces that were created.</p>
-     * <p>Because this operation is asynchronous, the identifier in
-     * <code>WorkspaceId</code> is not immediately available. If you immediately call
-     * <a>DescribeWorkspaces</a> with this identifier, no information will be
-     * returned.</p>
+     * <p>Information about the WorkSpaces that were created.</p> <p>Because this
+     * operation is asynchronous, the identifier returned is not immediately available
+     * for use with other operations. For example, if you call
+     * <a>DescribeWorkspaces</a> before the WorkSpace is created, the information
+     * returned can be incomplete.</p>
      */
     inline CreateWorkspacesResult& AddPendingRequests(Workspace&& value) { m_pendingRequests.push_back(std::move(value)); return *this; }
 

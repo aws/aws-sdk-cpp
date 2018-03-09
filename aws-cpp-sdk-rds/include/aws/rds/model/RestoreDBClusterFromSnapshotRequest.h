@@ -103,7 +103,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
      * snapshot. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
      * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-snapshot-id</code> </p>
@@ -113,7 +113,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
      * snapshot. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
      * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-snapshot-id</code> </p>
@@ -123,7 +123,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
      * snapshot. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
      * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-snapshot-id</code> </p>
@@ -133,7 +133,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
      * snapshot. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
      * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-snapshot-id</code> </p>
@@ -143,7 +143,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
      * snapshot. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
      * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-snapshot-id</code> </p>
@@ -153,7 +153,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
      * snapshot. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
      * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-snapshot-id</code> </p>
@@ -163,7 +163,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
      * snapshot. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
      * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-snapshot-id</code> </p>

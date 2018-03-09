@@ -31,6 +31,7 @@ namespace Model
     Waiting,
     Success,
     TimedOut,
+    Cancelling,
     Cancelled,
     Failed
   };

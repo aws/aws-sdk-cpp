@@ -17,6 +17,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/model/DocumentFormat.h>
 #include <utility>
 
 namespace Aws
@@ -151,6 +152,73 @@ namespace Model
      */
     inline UpdateDocumentRequest& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 
+
+    /**
+     * <p>Specify the document format for the new document version. Systems Manager
+     * supports JSON and YAML documents. JSON is the default format.</p>
+     */
+    inline const DocumentFormat& GetDocumentFormat() const{ return m_documentFormat; }
+
+    /**
+     * <p>Specify the document format for the new document version. Systems Manager
+     * supports JSON and YAML documents. JSON is the default format.</p>
+     */
+    inline void SetDocumentFormat(const DocumentFormat& value) { m_documentFormatHasBeenSet = true; m_documentFormat = value; }
+
+    /**
+     * <p>Specify the document format for the new document version. Systems Manager
+     * supports JSON and YAML documents. JSON is the default format.</p>
+     */
+    inline void SetDocumentFormat(DocumentFormat&& value) { m_documentFormatHasBeenSet = true; m_documentFormat = std::move(value); }
+
+    /**
+     * <p>Specify the document format for the new document version. Systems Manager
+     * supports JSON and YAML documents. JSON is the default format.</p>
+     */
+    inline UpdateDocumentRequest& WithDocumentFormat(const DocumentFormat& value) { SetDocumentFormat(value); return *this;}
+
+    /**
+     * <p>Specify the document format for the new document version. Systems Manager
+     * supports JSON and YAML documents. JSON is the default format.</p>
+     */
+    inline UpdateDocumentRequest& WithDocumentFormat(DocumentFormat&& value) { SetDocumentFormat(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specify a new target type for the document.</p>
+     */
+    inline const Aws::String& GetTargetType() const{ return m_targetType; }
+
+    /**
+     * <p>Specify a new target type for the document.</p>
+     */
+    inline void SetTargetType(const Aws::String& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
+
+    /**
+     * <p>Specify a new target type for the document.</p>
+     */
+    inline void SetTargetType(Aws::String&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
+
+    /**
+     * <p>Specify a new target type for the document.</p>
+     */
+    inline void SetTargetType(const char* value) { m_targetTypeHasBeenSet = true; m_targetType.assign(value); }
+
+    /**
+     * <p>Specify a new target type for the document.</p>
+     */
+    inline UpdateDocumentRequest& WithTargetType(const Aws::String& value) { SetTargetType(value); return *this;}
+
+    /**
+     * <p>Specify a new target type for the document.</p>
+     */
+    inline UpdateDocumentRequest& WithTargetType(Aws::String&& value) { SetTargetType(std::move(value)); return *this;}
+
+    /**
+     * <p>Specify a new target type for the document.</p>
+     */
+    inline UpdateDocumentRequest& WithTargetType(const char* value) { SetTargetType(value); return *this;}
+
   private:
 
     Aws::String m_content;
@@ -161,6 +229,12 @@ namespace Model
 
     Aws::String m_documentVersion;
     bool m_documentVersionHasBeenSet;
+
+    DocumentFormat m_documentFormat;
+    bool m_documentFormatHasBeenSet;
+
+    Aws::String m_targetType;
+    bool m_targetTypeHasBeenSet;
   };
 
 } // namespace Model

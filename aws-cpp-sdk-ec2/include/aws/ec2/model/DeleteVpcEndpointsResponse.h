@@ -50,37 +50,37 @@ namespace Model
 
 
     /**
-     * <p>Information about the endpoints that were not successfully deleted.</p>
+     * <p>Information about the VPC endpoints that were not successfully deleted.</p>
      */
     inline const Aws::Vector<UnsuccessfulItem>& GetUnsuccessful() const{ return m_unsuccessful; }
 
     /**
-     * <p>Information about the endpoints that were not successfully deleted.</p>
+     * <p>Information about the VPC endpoints that were not successfully deleted.</p>
      */
     inline void SetUnsuccessful(const Aws::Vector<UnsuccessfulItem>& value) { m_unsuccessful = value; }
 
     /**
-     * <p>Information about the endpoints that were not successfully deleted.</p>
+     * <p>Information about the VPC endpoints that were not successfully deleted.</p>
      */
     inline void SetUnsuccessful(Aws::Vector<UnsuccessfulItem>&& value) { m_unsuccessful = std::move(value); }
 
     /**
-     * <p>Information about the endpoints that were not successfully deleted.</p>
+     * <p>Information about the VPC endpoints that were not successfully deleted.</p>
      */
     inline DeleteVpcEndpointsResponse& WithUnsuccessful(const Aws::Vector<UnsuccessfulItem>& value) { SetUnsuccessful(value); return *this;}
 
     /**
-     * <p>Information about the endpoints that were not successfully deleted.</p>
+     * <p>Information about the VPC endpoints that were not successfully deleted.</p>
      */
     inline DeleteVpcEndpointsResponse& WithUnsuccessful(Aws::Vector<UnsuccessfulItem>&& value) { SetUnsuccessful(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the endpoints that were not successfully deleted.</p>
+     * <p>Information about the VPC endpoints that were not successfully deleted.</p>
      */
     inline DeleteVpcEndpointsResponse& AddUnsuccessful(const UnsuccessfulItem& value) { m_unsuccessful.push_back(value); return *this; }
 
     /**
-     * <p>Information about the endpoints that were not successfully deleted.</p>
+     * <p>Information about the VPC endpoints that were not successfully deleted.</p>
      */
     inline DeleteVpcEndpointsResponse& AddUnsuccessful(UnsuccessfulItem&& value) { m_unsuccessful.push_back(std::move(value)); return *this; }
 

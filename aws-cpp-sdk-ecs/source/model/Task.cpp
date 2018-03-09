@@ -36,16 +36,30 @@ Task::Task() :
     m_overridesHasBeenSet(false),
     m_lastStatusHasBeenSet(false),
     m_desiredStatusHasBeenSet(false),
+    m_cpuHasBeenSet(false),
+    m_memoryHasBeenSet(false),
     m_containersHasBeenSet(false),
     m_startedByHasBeenSet(false),
     m_version(0),
     m_versionHasBeenSet(false),
     m_stoppedReasonHasBeenSet(false),
+    m_connectivity(Connectivity::NOT_SET),
+    m_connectivityHasBeenSet(false),
+    m_connectivityAtHasBeenSet(false),
+    m_pullStartedAtHasBeenSet(false),
+    m_pullStoppedAtHasBeenSet(false),
+    m_executionStoppedAtHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_startedAtHasBeenSet(false),
+    m_stoppingAtHasBeenSet(false),
     m_stoppedAtHasBeenSet(false),
     m_groupHasBeenSet(false),
-    m_attachmentsHasBeenSet(false)
+    m_launchType(LaunchType::NOT_SET),
+    m_launchTypeHasBeenSet(false),
+    m_platformVersionHasBeenSet(false),
+    m_attachmentsHasBeenSet(false),
+    m_healthStatus(HealthStatus::NOT_SET),
+    m_healthStatusHasBeenSet(false)
 {
 }
 
@@ -57,16 +71,30 @@ Task::Task(const JsonValue& jsonValue) :
     m_overridesHasBeenSet(false),
     m_lastStatusHasBeenSet(false),
     m_desiredStatusHasBeenSet(false),
+    m_cpuHasBeenSet(false),
+    m_memoryHasBeenSet(false),
     m_containersHasBeenSet(false),
     m_startedByHasBeenSet(false),
     m_version(0),
     m_versionHasBeenSet(false),
     m_stoppedReasonHasBeenSet(false),
+    m_connectivity(Connectivity::NOT_SET),
+    m_connectivityHasBeenSet(false),
+    m_connectivityAtHasBeenSet(false),
+    m_pullStartedAtHasBeenSet(false),
+    m_pullStoppedAtHasBeenSet(false),
+    m_executionStoppedAtHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_startedAtHasBeenSet(false),
+    m_stoppingAtHasBeenSet(false),
     m_stoppedAtHasBeenSet(false),
     m_groupHasBeenSet(false),
-    m_attachmentsHasBeenSet(false)
+    m_launchType(LaunchType::NOT_SET),
+    m_launchTypeHasBeenSet(false),
+    m_platformVersionHasBeenSet(false),
+    m_attachmentsHasBeenSet(false),
+    m_healthStatus(HealthStatus::NOT_SET),
+    m_healthStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -122,6 +150,20 @@ Task& Task::operator =(const JsonValue& jsonValue)
     m_desiredStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("cpu"))
+  {
+    m_cpu = jsonValue.GetString("cpu");
+
+    m_cpuHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("memory"))
+  {
+    m_memory = jsonValue.GetString("memory");
+
+    m_memoryHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("containers"))
   {
     Array<JsonValue> containersJsonList = jsonValue.GetArray("containers");
@@ -153,6 +195,41 @@ Task& Task::operator =(const JsonValue& jsonValue)
     m_stoppedReasonHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("connectivity"))
+  {
+    m_connectivity = ConnectivityMapper::GetConnectivityForName(jsonValue.GetString("connectivity"));
+
+    m_connectivityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("connectivityAt"))
+  {
+    m_connectivityAt = jsonValue.GetDouble("connectivityAt");
+
+    m_connectivityAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("pullStartedAt"))
+  {
+    m_pullStartedAt = jsonValue.GetDouble("pullStartedAt");
+
+    m_pullStartedAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("pullStoppedAt"))
+  {
+    m_pullStoppedAt = jsonValue.GetDouble("pullStoppedAt");
+
+    m_pullStoppedAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("executionStoppedAt"))
+  {
+    m_executionStoppedAt = jsonValue.GetDouble("executionStoppedAt");
+
+    m_executionStoppedAtHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
@@ -165,6 +242,13 @@ Task& Task::operator =(const JsonValue& jsonValue)
     m_startedAt = jsonValue.GetDouble("startedAt");
 
     m_startedAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("stoppingAt"))
+  {
+    m_stoppingAt = jsonValue.GetDouble("stoppingAt");
+
+    m_stoppingAtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("stoppedAt"))
@@ -181,6 +265,20 @@ Task& Task::operator =(const JsonValue& jsonValue)
     m_groupHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("launchType"))
+  {
+    m_launchType = LaunchTypeMapper::GetLaunchTypeForName(jsonValue.GetString("launchType"));
+
+    m_launchTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("platformVersion"))
+  {
+    m_platformVersion = jsonValue.GetString("platformVersion");
+
+    m_platformVersionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("attachments"))
   {
     Array<JsonValue> attachmentsJsonList = jsonValue.GetArray("attachments");
@@ -189,6 +287,13 @@ Task& Task::operator =(const JsonValue& jsonValue)
       m_attachments.push_back(attachmentsJsonList[attachmentsIndex].AsObject());
     }
     m_attachmentsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("healthStatus"))
+  {
+    m_healthStatus = HealthStatusMapper::GetHealthStatusForName(jsonValue.GetString("healthStatus"));
+
+    m_healthStatusHasBeenSet = true;
   }
 
   return *this;
@@ -240,6 +345,18 @@ JsonValue Task::Jsonize() const
 
   }
 
+  if(m_cpuHasBeenSet)
+  {
+   payload.WithString("cpu", m_cpu);
+
+  }
+
+  if(m_memoryHasBeenSet)
+  {
+   payload.WithString("memory", m_memory);
+
+  }
+
   if(m_containersHasBeenSet)
   {
    Array<JsonValue> containersJsonList(m_containers.size());
@@ -269,6 +386,31 @@ JsonValue Task::Jsonize() const
 
   }
 
+  if(m_connectivityHasBeenSet)
+  {
+   payload.WithString("connectivity", ConnectivityMapper::GetNameForConnectivity(m_connectivity));
+  }
+
+  if(m_connectivityAtHasBeenSet)
+  {
+   payload.WithDouble("connectivityAt", m_connectivityAt.SecondsWithMSPrecision());
+  }
+
+  if(m_pullStartedAtHasBeenSet)
+  {
+   payload.WithDouble("pullStartedAt", m_pullStartedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_pullStoppedAtHasBeenSet)
+  {
+   payload.WithDouble("pullStoppedAt", m_pullStoppedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_executionStoppedAtHasBeenSet)
+  {
+   payload.WithDouble("executionStoppedAt", m_executionStoppedAt.SecondsWithMSPrecision());
+  }
+
   if(m_createdAtHasBeenSet)
   {
    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
@@ -277,6 +419,11 @@ JsonValue Task::Jsonize() const
   if(m_startedAtHasBeenSet)
   {
    payload.WithDouble("startedAt", m_startedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_stoppingAtHasBeenSet)
+  {
+   payload.WithDouble("stoppingAt", m_stoppingAt.SecondsWithMSPrecision());
   }
 
   if(m_stoppedAtHasBeenSet)
@@ -290,6 +437,17 @@ JsonValue Task::Jsonize() const
 
   }
 
+  if(m_launchTypeHasBeenSet)
+  {
+   payload.WithString("launchType", LaunchTypeMapper::GetNameForLaunchType(m_launchType));
+  }
+
+  if(m_platformVersionHasBeenSet)
+  {
+   payload.WithString("platformVersion", m_platformVersion);
+
+  }
+
   if(m_attachmentsHasBeenSet)
   {
    Array<JsonValue> attachmentsJsonList(m_attachments.size());
@@ -299,6 +457,11 @@ JsonValue Task::Jsonize() const
    }
    payload.WithArray("attachments", std::move(attachmentsJsonList));
 
+  }
+
+  if(m_healthStatusHasBeenSet)
+  {
+   payload.WithString("healthStatus", HealthStatusMapper::GetNameForHealthStatus(m_healthStatus));
   }
 
   return payload;

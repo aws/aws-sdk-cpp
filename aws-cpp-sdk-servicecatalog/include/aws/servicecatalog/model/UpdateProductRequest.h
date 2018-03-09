@@ -97,37 +97,37 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the product for the update request.</p>
+     * <p>The product identifier.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The identifier of the product for the update request.</p>
+     * <p>The product identifier.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The identifier of the product for the update request.</p>
+     * <p>The product identifier.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The identifier of the product for the update request.</p>
+     * <p>The product identifier.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The identifier of the product for the update request.</p>
+     * <p>The product identifier.</p>
      */
     inline UpdateProductRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The identifier of the product for the update request.</p>
+     * <p>The product identifier.</p>
      */
     inline UpdateProductRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the product for the update request.</p>
+     * <p>The product identifier.</p>
      */
     inline UpdateProductRequest& WithId(const char* value) { SetId(value); return *this;}
 
@@ -205,37 +205,37 @@ namespace Model
 
 
     /**
-     * <p>The updated text description of the product.</p>
+     * <p>The updated description of the product.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The updated text description of the product.</p>
+     * <p>The updated description of the product.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The updated text description of the product.</p>
+     * <p>The updated description of the product.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The updated text description of the product.</p>
+     * <p>The updated description of the product.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The updated text description of the product.</p>
+     * <p>The updated description of the product.</p>
      */
     inline UpdateProductRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The updated text description of the product.</p>
+     * <p>The updated description of the product.</p>
      */
     inline UpdateProductRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The updated text description of the product.</p>
+     * <p>The updated description of the product.</p>
      */
     inline UpdateProductRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -385,86 +385,78 @@ namespace Model
 
 
     /**
-     * <p>Tags to add to the existing list of tags associated with the product.</p>
+     * <p>The tags to add to the product.</p>
      */
     inline const Aws::Vector<Tag>& GetAddTags() const{ return m_addTags; }
 
     /**
-     * <p>Tags to add to the existing list of tags associated with the product.</p>
+     * <p>The tags to add to the product.</p>
      */
     inline void SetAddTags(const Aws::Vector<Tag>& value) { m_addTagsHasBeenSet = true; m_addTags = value; }
 
     /**
-     * <p>Tags to add to the existing list of tags associated with the product.</p>
+     * <p>The tags to add to the product.</p>
      */
     inline void SetAddTags(Aws::Vector<Tag>&& value) { m_addTagsHasBeenSet = true; m_addTags = std::move(value); }
 
     /**
-     * <p>Tags to add to the existing list of tags associated with the product.</p>
+     * <p>The tags to add to the product.</p>
      */
     inline UpdateProductRequest& WithAddTags(const Aws::Vector<Tag>& value) { SetAddTags(value); return *this;}
 
     /**
-     * <p>Tags to add to the existing list of tags associated with the product.</p>
+     * <p>The tags to add to the product.</p>
      */
     inline UpdateProductRequest& WithAddTags(Aws::Vector<Tag>&& value) { SetAddTags(std::move(value)); return *this;}
 
     /**
-     * <p>Tags to add to the existing list of tags associated with the product.</p>
+     * <p>The tags to add to the product.</p>
      */
     inline UpdateProductRequest& AddAddTags(const Tag& value) { m_addTagsHasBeenSet = true; m_addTags.push_back(value); return *this; }
 
     /**
-     * <p>Tags to add to the existing list of tags associated with the product.</p>
+     * <p>The tags to add to the product.</p>
      */
     inline UpdateProductRequest& AddAddTags(Tag&& value) { m_addTagsHasBeenSet = true; m_addTags.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Tags to remove from the existing list of tags associated with the
-     * product.</p>
+     * <p>The tags to remove from the product.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRemoveTags() const{ return m_removeTags; }
 
     /**
-     * <p>Tags to remove from the existing list of tags associated with the
-     * product.</p>
+     * <p>The tags to remove from the product.</p>
      */
     inline void SetRemoveTags(const Aws::Vector<Aws::String>& value) { m_removeTagsHasBeenSet = true; m_removeTags = value; }
 
     /**
-     * <p>Tags to remove from the existing list of tags associated with the
-     * product.</p>
+     * <p>The tags to remove from the product.</p>
      */
     inline void SetRemoveTags(Aws::Vector<Aws::String>&& value) { m_removeTagsHasBeenSet = true; m_removeTags = std::move(value); }
 
     /**
-     * <p>Tags to remove from the existing list of tags associated with the
-     * product.</p>
+     * <p>The tags to remove from the product.</p>
      */
     inline UpdateProductRequest& WithRemoveTags(const Aws::Vector<Aws::String>& value) { SetRemoveTags(value); return *this;}
 
     /**
-     * <p>Tags to remove from the existing list of tags associated with the
-     * product.</p>
+     * <p>The tags to remove from the product.</p>
      */
     inline UpdateProductRequest& WithRemoveTags(Aws::Vector<Aws::String>&& value) { SetRemoveTags(std::move(value)); return *this;}
 
     /**
-     * <p>Tags to remove from the existing list of tags associated with the
-     * product.</p>
+     * <p>The tags to remove from the product.</p>
      */
     inline UpdateProductRequest& AddRemoveTags(const Aws::String& value) { m_removeTagsHasBeenSet = true; m_removeTags.push_back(value); return *this; }
 
     /**
-     * <p>Tags to remove from the existing list of tags associated with the
-     * product.</p>
+     * <p>The tags to remove from the product.</p>
      */
     inline UpdateProductRequest& AddRemoveTags(Aws::String&& value) { m_removeTagsHasBeenSet = true; m_removeTags.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Tags to remove from the existing list of tags associated with the
-     * product.</p>
+     * <p>The tags to remove from the product.</p>
      */
     inline UpdateProductRequest& AddRemoveTags(const char* value) { m_removeTagsHasBeenSet = true; m_removeTags.push_back(value); return *this; }
 

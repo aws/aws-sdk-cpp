@@ -172,9 +172,9 @@ namespace Model
      * <p>The version counter for the container instance. Every time a container
      * instance experiences a change that triggers a CloudWatch event, the version
      * counter is incremented. If you are replicating your Amazon ECS container
-     * instance state with CloudWatch events, you can compare the version of a
+     * instance state with CloudWatch Events, you can compare the version of a
      * container instance reported by the Amazon ECS APIs with the version reported in
-     * CloudWatch events for the container instance (inside the <code>detail</code>
+     * CloudWatch Events for the container instance (inside the <code>detail</code>
      * object) to verify that the version in your event stream is current.</p>
      */
     inline long long GetVersion() const{ return m_version; }
@@ -183,9 +183,9 @@ namespace Model
      * <p>The version counter for the container instance. Every time a container
      * instance experiences a change that triggers a CloudWatch event, the version
      * counter is incremented. If you are replicating your Amazon ECS container
-     * instance state with CloudWatch events, you can compare the version of a
+     * instance state with CloudWatch Events, you can compare the version of a
      * container instance reported by the Amazon ECS APIs with the version reported in
-     * CloudWatch events for the container instance (inside the <code>detail</code>
+     * CloudWatch Events for the container instance (inside the <code>detail</code>
      * object) to verify that the version in your event stream is current.</p>
      */
     inline void SetVersion(long long value) { m_versionHasBeenSet = true; m_version = value; }
@@ -194,9 +194,9 @@ namespace Model
      * <p>The version counter for the container instance. Every time a container
      * instance experiences a change that triggers a CloudWatch event, the version
      * counter is incremented. If you are replicating your Amazon ECS container
-     * instance state with CloudWatch events, you can compare the version of a
+     * instance state with CloudWatch Events, you can compare the version of a
      * container instance reported by the Amazon ECS APIs with the version reported in
-     * CloudWatch events for the container instance (inside the <code>detail</code>
+     * CloudWatch Events for the container instance (inside the <code>detail</code>
      * object) to verify that the version in your event stream is current.</p>
      */
     inline ContainerInstance& WithVersion(long long value) { SetVersion(value); return *this;}
@@ -362,7 +362,7 @@ namespace Model
      * instance and any service tasks running on the container instance are removed if
      * possible. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
-     * Instance Draining</a> in the <i>Amazon EC2 Container Service Developer
+     * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
@@ -375,7 +375,7 @@ namespace Model
      * instance and any service tasks running on the container instance are removed if
      * possible. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
-     * Instance Draining</a> in the <i>Amazon EC2 Container Service Developer
+     * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
@@ -388,7 +388,7 @@ namespace Model
      * instance and any service tasks running on the container instance are removed if
      * possible. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
-     * Instance Draining</a> in the <i>Amazon EC2 Container Service Developer
+     * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
@@ -401,7 +401,7 @@ namespace Model
      * instance and any service tasks running on the container instance are removed if
      * possible. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
-     * Instance Draining</a> in the <i>Amazon EC2 Container Service Developer
+     * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
@@ -414,7 +414,7 @@ namespace Model
      * instance and any service tasks running on the container instance are removed if
      * possible. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
-     * Instance Draining</a> in the <i>Amazon EC2 Container Service Developer
+     * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline ContainerInstance& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
@@ -427,7 +427,7 @@ namespace Model
      * instance and any service tasks running on the container instance are removed if
      * possible. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
-     * Instance Draining</a> in the <i>Amazon EC2 Container Service Developer
+     * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline ContainerInstance& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
@@ -440,33 +440,33 @@ namespace Model
      * instance and any service tasks running on the container instance are removed if
      * possible. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
-     * Instance Draining</a> in the <i>Amazon EC2 Container Service Developer
+     * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline ContainerInstance& WithStatus(const char* value) { SetStatus(value); return *this;}
 
 
     /**
-     * <p>This parameter returns <code>true</code> if the agent is actually connected
-     * to Amazon ECS. Registered instances with an agent that may be unhealthy or
-     * stopped return <code>false</code>, and instances without a connected agent
-     * cannot accept placement requests.</p>
+     * <p>This parameter returns <code>true</code> if the agent is connected to Amazon
+     * ECS. Registered instances with an agent that may be unhealthy or stopped return
+     * <code>false</code>. Instances without a connected agent can't accept placement
+     * requests.</p>
      */
     inline bool GetAgentConnected() const{ return m_agentConnected; }
 
     /**
-     * <p>This parameter returns <code>true</code> if the agent is actually connected
-     * to Amazon ECS. Registered instances with an agent that may be unhealthy or
-     * stopped return <code>false</code>, and instances without a connected agent
-     * cannot accept placement requests.</p>
+     * <p>This parameter returns <code>true</code> if the agent is connected to Amazon
+     * ECS. Registered instances with an agent that may be unhealthy or stopped return
+     * <code>false</code>. Instances without a connected agent can't accept placement
+     * requests.</p>
      */
     inline void SetAgentConnected(bool value) { m_agentConnectedHasBeenSet = true; m_agentConnected = value; }
 
     /**
-     * <p>This parameter returns <code>true</code> if the agent is actually connected
-     * to Amazon ECS. Registered instances with an agent that may be unhealthy or
-     * stopped return <code>false</code>, and instances without a connected agent
-     * cannot accept placement requests.</p>
+     * <p>This parameter returns <code>true</code> if the agent is connected to Amazon
+     * ECS. Registered instances with an agent that may be unhealthy or stopped return
+     * <code>false</code>. Instances without a connected agent can't accept placement
+     * requests.</p>
      */
     inline ContainerInstance& WithAgentConnected(bool value) { SetAgentConnected(value); return *this;}
 
@@ -591,27 +591,27 @@ namespace Model
 
 
     /**
-     * <p>The Unix timestamp for when the container instance was registered.</p>
+     * <p>The Unix time stamp for when the container instance was registered.</p>
      */
     inline const Aws::Utils::DateTime& GetRegisteredAt() const{ return m_registeredAt; }
 
     /**
-     * <p>The Unix timestamp for when the container instance was registered.</p>
+     * <p>The Unix time stamp for when the container instance was registered.</p>
      */
     inline void SetRegisteredAt(const Aws::Utils::DateTime& value) { m_registeredAtHasBeenSet = true; m_registeredAt = value; }
 
     /**
-     * <p>The Unix timestamp for when the container instance was registered.</p>
+     * <p>The Unix time stamp for when the container instance was registered.</p>
      */
     inline void SetRegisteredAt(Aws::Utils::DateTime&& value) { m_registeredAtHasBeenSet = true; m_registeredAt = std::move(value); }
 
     /**
-     * <p>The Unix timestamp for when the container instance was registered.</p>
+     * <p>The Unix time stamp for when the container instance was registered.</p>
      */
     inline ContainerInstance& WithRegisteredAt(const Aws::Utils::DateTime& value) { SetRegisteredAt(value); return *this;}
 
     /**
-     * <p>The Unix timestamp for when the container instance was registered.</p>
+     * <p>The Unix time stamp for when the container instance was registered.</p>
      */
     inline ContainerInstance& WithRegisteredAt(Aws::Utils::DateTime&& value) { SetRegisteredAt(std::move(value)); return *this;}
 

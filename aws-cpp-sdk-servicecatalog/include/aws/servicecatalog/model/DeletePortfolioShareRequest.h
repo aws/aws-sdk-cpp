@@ -131,37 +131,37 @@ namespace Model
 
 
     /**
-     * <p>The account ID associated with the share to delete.</p>
+     * <p>The AWS account ID.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The account ID associated with the share to delete.</p>
+     * <p>The AWS account ID.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The account ID associated with the share to delete.</p>
+     * <p>The AWS account ID.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The account ID associated with the share to delete.</p>
+     * <p>The AWS account ID.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The account ID associated with the share to delete.</p>
+     * <p>The AWS account ID.</p>
      */
     inline DeletePortfolioShareRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The account ID associated with the share to delete.</p>
+     * <p>The AWS account ID.</p>
      */
     inline DeletePortfolioShareRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The account ID associated with the share to delete.</p>
+     * <p>The AWS account ID.</p>
      */
     inline DeletePortfolioShareRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 

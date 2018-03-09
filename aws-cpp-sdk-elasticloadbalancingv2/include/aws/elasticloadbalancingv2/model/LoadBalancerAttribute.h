@@ -65,7 +65,13 @@ namespace Model
      * whether deletion protection is enabled. The value is <code>true</code> or
      * <code>false</code>.</p> </li> <li> <p> <code>idle_timeout.timeout_seconds</code>
      * - [Application Load Balancers] The idle timeout value, in seconds. The valid
-     * range is 1-4000. The default is 60 seconds.</p> </li> </ul>
+     * range is 1-4000. The default is 60 seconds.</p> </li> <li> <p>
+     * <code>load_balancing.cross_zone.enabled</code> - [Network Load Balancers]
+     * Indicates whether cross-zone load balancing is enabled. The value is
+     * <code>true</code> or <code>false</code>. The default is <code>false</code>.</p>
+     * </li> <li> <p> <code>routing.http2.enabled</code> - [Application Load Balancers]
+     * Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
+     * <code>false</code>. The default is <code>true</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
@@ -85,7 +91,13 @@ namespace Model
      * whether deletion protection is enabled. The value is <code>true</code> or
      * <code>false</code>.</p> </li> <li> <p> <code>idle_timeout.timeout_seconds</code>
      * - [Application Load Balancers] The idle timeout value, in seconds. The valid
-     * range is 1-4000. The default is 60 seconds.</p> </li> </ul>
+     * range is 1-4000. The default is 60 seconds.</p> </li> <li> <p>
+     * <code>load_balancing.cross_zone.enabled</code> - [Network Load Balancers]
+     * Indicates whether cross-zone load balancing is enabled. The value is
+     * <code>true</code> or <code>false</code>. The default is <code>false</code>.</p>
+     * </li> <li> <p> <code>routing.http2.enabled</code> - [Application Load Balancers]
+     * Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
+     * <code>false</code>. The default is <code>true</code>.</p> </li> </ul>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
@@ -105,7 +117,13 @@ namespace Model
      * whether deletion protection is enabled. The value is <code>true</code> or
      * <code>false</code>.</p> </li> <li> <p> <code>idle_timeout.timeout_seconds</code>
      * - [Application Load Balancers] The idle timeout value, in seconds. The valid
-     * range is 1-4000. The default is 60 seconds.</p> </li> </ul>
+     * range is 1-4000. The default is 60 seconds.</p> </li> <li> <p>
+     * <code>load_balancing.cross_zone.enabled</code> - [Network Load Balancers]
+     * Indicates whether cross-zone load balancing is enabled. The value is
+     * <code>true</code> or <code>false</code>. The default is <code>false</code>.</p>
+     * </li> <li> <p> <code>routing.http2.enabled</code> - [Application Load Balancers]
+     * Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
+     * <code>false</code>. The default is <code>true</code>.</p> </li> </ul>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
@@ -125,7 +143,13 @@ namespace Model
      * whether deletion protection is enabled. The value is <code>true</code> or
      * <code>false</code>.</p> </li> <li> <p> <code>idle_timeout.timeout_seconds</code>
      * - [Application Load Balancers] The idle timeout value, in seconds. The valid
-     * range is 1-4000. The default is 60 seconds.</p> </li> </ul>
+     * range is 1-4000. The default is 60 seconds.</p> </li> <li> <p>
+     * <code>load_balancing.cross_zone.enabled</code> - [Network Load Balancers]
+     * Indicates whether cross-zone load balancing is enabled. The value is
+     * <code>true</code> or <code>false</code>. The default is <code>false</code>.</p>
+     * </li> <li> <p> <code>routing.http2.enabled</code> - [Application Load Balancers]
+     * Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
+     * <code>false</code>. The default is <code>true</code>.</p> </li> </ul>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
@@ -145,7 +169,13 @@ namespace Model
      * whether deletion protection is enabled. The value is <code>true</code> or
      * <code>false</code>.</p> </li> <li> <p> <code>idle_timeout.timeout_seconds</code>
      * - [Application Load Balancers] The idle timeout value, in seconds. The valid
-     * range is 1-4000. The default is 60 seconds.</p> </li> </ul>
+     * range is 1-4000. The default is 60 seconds.</p> </li> <li> <p>
+     * <code>load_balancing.cross_zone.enabled</code> - [Network Load Balancers]
+     * Indicates whether cross-zone load balancing is enabled. The value is
+     * <code>true</code> or <code>false</code>. The default is <code>false</code>.</p>
+     * </li> <li> <p> <code>routing.http2.enabled</code> - [Application Load Balancers]
+     * Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
+     * <code>false</code>. The default is <code>true</code>.</p> </li> </ul>
      */
     inline LoadBalancerAttribute& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
@@ -165,7 +195,13 @@ namespace Model
      * whether deletion protection is enabled. The value is <code>true</code> or
      * <code>false</code>.</p> </li> <li> <p> <code>idle_timeout.timeout_seconds</code>
      * - [Application Load Balancers] The idle timeout value, in seconds. The valid
-     * range is 1-4000. The default is 60 seconds.</p> </li> </ul>
+     * range is 1-4000. The default is 60 seconds.</p> </li> <li> <p>
+     * <code>load_balancing.cross_zone.enabled</code> - [Network Load Balancers]
+     * Indicates whether cross-zone load balancing is enabled. The value is
+     * <code>true</code> or <code>false</code>. The default is <code>false</code>.</p>
+     * </li> <li> <p> <code>routing.http2.enabled</code> - [Application Load Balancers]
+     * Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
+     * <code>false</code>. The default is <code>true</code>.</p> </li> </ul>
      */
     inline LoadBalancerAttribute& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
@@ -185,7 +221,13 @@ namespace Model
      * whether deletion protection is enabled. The value is <code>true</code> or
      * <code>false</code>.</p> </li> <li> <p> <code>idle_timeout.timeout_seconds</code>
      * - [Application Load Balancers] The idle timeout value, in seconds. The valid
-     * range is 1-4000. The default is 60 seconds.</p> </li> </ul>
+     * range is 1-4000. The default is 60 seconds.</p> </li> <li> <p>
+     * <code>load_balancing.cross_zone.enabled</code> - [Network Load Balancers]
+     * Indicates whether cross-zone load balancing is enabled. The value is
+     * <code>true</code> or <code>false</code>. The default is <code>false</code>.</p>
+     * </li> <li> <p> <code>routing.http2.enabled</code> - [Application Load Balancers]
+     * Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
+     * <code>false</code>. The default is <code>true</code>.</p> </li> </ul>
      */
     inline LoadBalancerAttribute& WithKey(const char* value) { SetKey(value); return *this;}
 

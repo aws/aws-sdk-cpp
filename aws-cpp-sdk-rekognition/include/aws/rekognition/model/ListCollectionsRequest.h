@@ -81,17 +81,17 @@ namespace Model
 
 
     /**
-     * <p>Maximum number of collection IDs to return.</p>
+     * <p>Maximum number of collection IDs to return. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Maximum number of collection IDs to return.</p>
+     * <p>Maximum number of collection IDs to return. </p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Maximum number of collection IDs to return.</p>
+     * <p>Maximum number of collection IDs to return. </p>
      */
     inline ListCollectionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

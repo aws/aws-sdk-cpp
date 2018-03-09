@@ -51,6 +51,7 @@
 #include <aws/ssm/model/DescribeActivationsRequest.h>
 #include <aws/ssm/model/DescribeAssociationRequest.h>
 #include <aws/ssm/model/DescribeAutomationExecutionsRequest.h>
+#include <aws/ssm/model/DescribeAutomationStepExecutionsRequest.h>
 #include <aws/ssm/model/DescribeAvailablePatchesRequest.h>
 #include <aws/ssm/model/DescribeDocumentRequest.h>
 #include <aws/ssm/model/DescribeDocumentPermissionRequest.h>
@@ -1026,6 +1027,41 @@ void SSMClient::DescribeAutomationExecutionsAsync(const DescribeAutomationExecut
 void SSMClient::DescribeAutomationExecutionsAsyncHelper(const DescribeAutomationExecutionsRequest& request, const DescribeAutomationExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeAutomationExecutions(request), context);
+}
+
+DescribeAutomationStepExecutionsOutcome SSMClient::DescribeAutomationStepExecutions(const DescribeAutomationStepExecutionsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeAutomationStepExecutionsOutcome(DescribeAutomationStepExecutionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeAutomationStepExecutionsOutcome(outcome.GetError());
+  }
+}
+
+DescribeAutomationStepExecutionsOutcomeCallable SSMClient::DescribeAutomationStepExecutionsCallable(const DescribeAutomationStepExecutionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAutomationStepExecutionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAutomationStepExecutions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::DescribeAutomationStepExecutionsAsync(const DescribeAutomationStepExecutionsRequest& request, const DescribeAutomationStepExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAutomationStepExecutionsAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::DescribeAutomationStepExecutionsAsyncHelper(const DescribeAutomationStepExecutionsRequest& request, const DescribeAutomationStepExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAutomationStepExecutions(request), context);
 }
 
 DescribeAvailablePatchesOutcome SSMClient::DescribeAvailablePatches(const DescribeAvailablePatchesRequest& request) const

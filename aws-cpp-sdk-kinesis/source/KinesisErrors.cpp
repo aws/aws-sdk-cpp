@@ -37,6 +37,7 @@ static const int K_M_S_DISABLED_HASH = HashingUtils::HashString("KMSDisabledExce
 static const int K_M_S_INVALID_STATE_HASH = HashingUtils::HashString("KMSInvalidStateException");
 static const int EXPIRED_ITERATOR_HASH = HashingUtils::HashString("ExpiredIteratorException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int EXPIRED_NEXT_TOKEN_HASH = HashingUtils::HashString("ExpiredNextTokenException");
 static const int K_M_S_THROTTLING_HASH = HashingUtils::HashString("KMSThrottlingException");
 static const int PROVISIONED_THROUGHPUT_EXCEEDED_HASH = HashingUtils::HashString("ProvisionedThroughputExceededException");
 
@@ -80,6 +81,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisErrors::LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == EXPIRED_NEXT_TOKEN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisErrors::EXPIRED_NEXT_TOKEN), false);
   }
   else if (hashCode == K_M_S_THROTTLING_HASH)
   {

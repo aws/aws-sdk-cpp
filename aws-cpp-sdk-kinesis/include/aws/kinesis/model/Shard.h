@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>A uniquely identified group of data records in a Kinesis
+   * <p>A uniquely identified group of data records in a Kinesis data
    * stream.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/Shard">AWS API
    * Reference</a></p>

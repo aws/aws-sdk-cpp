@@ -27,7 +27,12 @@ namespace Model
   {
     NOT_SET,
     DocumentNamePrefix,
-    ExecutionStatus
+    ExecutionStatus,
+    ExecutionId,
+    ParentExecutionId,
+    CurrentAction,
+    StartTimeBefore,
+    StartTimeAfter
   };
 
 namespace AutomationExecutionFilterKeyMapper

@@ -40,6 +40,8 @@ PutMetricAlarmRequest::PutMetricAlarmRequest() :
     m_unitHasBeenSet(false),
     m_evaluationPeriods(0),
     m_evaluationPeriodsHasBeenSet(false),
+    m_datapointsToAlarm(0),
+    m_datapointsToAlarmHasBeenSet(false),
     m_threshold(0.0),
     m_thresholdHasBeenSet(false),
     m_comparisonOperator(ComparisonOperator::NOT_SET),
@@ -144,6 +146,11 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const
   if(m_evaluationPeriodsHasBeenSet)
   {
     ss << "EvaluationPeriods=" << m_evaluationPeriods << "&";
+  }
+
+  if(m_datapointsToAlarmHasBeenSet)
+  {
+    ss << "DatapointsToAlarm=" << m_datapointsToAlarm << "&";
   }
 
   if(m_thresholdHasBeenSet)

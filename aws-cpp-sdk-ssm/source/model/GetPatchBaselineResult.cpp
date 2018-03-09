@@ -28,13 +28,15 @@ using namespace Aws;
 
 GetPatchBaselineResult::GetPatchBaselineResult() : 
     m_operatingSystem(OperatingSystem::NOT_SET),
-    m_approvedPatchesComplianceLevel(PatchComplianceLevel::NOT_SET)
+    m_approvedPatchesComplianceLevel(PatchComplianceLevel::NOT_SET),
+    m_approvedPatchesEnableNonSecurity(false)
 {
 }
 
 GetPatchBaselineResult::GetPatchBaselineResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_operatingSystem(OperatingSystem::NOT_SET),
-    m_approvedPatchesComplianceLevel(PatchComplianceLevel::NOT_SET)
+    m_approvedPatchesComplianceLevel(PatchComplianceLevel::NOT_SET),
+    m_approvedPatchesEnableNonSecurity(false)
 {
   *this = result;
 }
@@ -87,6 +89,12 @@ GetPatchBaselineResult& GetPatchBaselineResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("ApprovedPatchesEnableNonSecurity"))
+  {
+    m_approvedPatchesEnableNonSecurity = jsonValue.GetBool("ApprovedPatchesEnableNonSecurity");
+
+  }
+
   if(jsonValue.ValueExists("RejectedPatches"))
   {
     Array<JsonValue> rejectedPatchesJsonList = jsonValue.GetArray("RejectedPatches");
@@ -121,6 +129,15 @@ GetPatchBaselineResult& GetPatchBaselineResult::operator =(const Aws::AmazonWebS
   {
     m_description = jsonValue.GetString("Description");
 
+  }
+
+  if(jsonValue.ValueExists("Sources"))
+  {
+    Array<JsonValue> sourcesJsonList = jsonValue.GetArray("Sources");
+    for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
+    {
+      m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());
+    }
   }
 
 

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/apigateway/model/ApiKeySourceType.h>
 #include <aws/apigateway/model/EndpointConfiguration.h>
 #include <utility>
 
@@ -54,43 +55,43 @@ namespace Model
 
     /**
      * <p>The API's identifier. This identifier is unique across all of your APIs in
-     * Amazon API Gateway.</p>
+     * API Gateway.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
      * <p>The API's identifier. This identifier is unique across all of your APIs in
-     * Amazon API Gateway.</p>
+     * API Gateway.</p>
      */
     inline void SetId(const Aws::String& value) { m_id = value; }
 
     /**
      * <p>The API's identifier. This identifier is unique across all of your APIs in
-     * Amazon API Gateway.</p>
+     * API Gateway.</p>
      */
     inline void SetId(Aws::String&& value) { m_id = std::move(value); }
 
     /**
      * <p>The API's identifier. This identifier is unique across all of your APIs in
-     * Amazon API Gateway.</p>
+     * API Gateway.</p>
      */
     inline void SetId(const char* value) { m_id.assign(value); }
 
     /**
      * <p>The API's identifier. This identifier is unique across all of your APIs in
-     * Amazon API Gateway.</p>
+     * API Gateway.</p>
      */
     inline CreateRestApiResult& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
      * <p>The API's identifier. This identifier is unique across all of your APIs in
-     * Amazon API Gateway.</p>
+     * API Gateway.</p>
      */
     inline CreateRestApiResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The API's identifier. This identifier is unique across all of your APIs in
-     * Amazon API Gateway.</p>
+     * API Gateway.</p>
      */
     inline CreateRestApiResult& WithId(const char* value) { SetId(value); return *this;}
 
@@ -328,6 +329,80 @@ namespace Model
 
 
     /**
+     * <p>A nullable integer used to enable (non-negative between 0 and 10485760 (10M)
+     * bytes, inclusive) or disable (null) compression on an API. When compression is
+     * enabled, compression or decompression are not applied on the payload if the
+     * payload size is smaller than this value. Setting it to zero allows compression
+     * for any payload size.</p>
+     */
+    inline int GetMinimumCompressionSize() const{ return m_minimumCompressionSize; }
+
+    /**
+     * <p>A nullable integer used to enable (non-negative between 0 and 10485760 (10M)
+     * bytes, inclusive) or disable (null) compression on an API. When compression is
+     * enabled, compression or decompression are not applied on the payload if the
+     * payload size is smaller than this value. Setting it to zero allows compression
+     * for any payload size.</p>
+     */
+    inline void SetMinimumCompressionSize(int value) { m_minimumCompressionSize = value; }
+
+    /**
+     * <p>A nullable integer used to enable (non-negative between 0 and 10485760 (10M)
+     * bytes, inclusive) or disable (null) compression on an API. When compression is
+     * enabled, compression or decompression are not applied on the payload if the
+     * payload size is smaller than this value. Setting it to zero allows compression
+     * for any payload size.</p>
+     */
+    inline CreateRestApiResult& WithMinimumCompressionSize(int value) { SetMinimumCompressionSize(value); return *this;}
+
+
+    /**
+     * <p>The source of the API key for metring requests according to a usage plan.
+     * Valid values are <ul><li><code>HEADER</code> to read the API key from the
+     * <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to
+     * read the API key from the <code>UsageIdentifierKey</code> from a custom
+     * authorizer.</li></ul> </p>
+     */
+    inline const ApiKeySourceType& GetApiKeySource() const{ return m_apiKeySource; }
+
+    /**
+     * <p>The source of the API key for metring requests according to a usage plan.
+     * Valid values are <ul><li><code>HEADER</code> to read the API key from the
+     * <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to
+     * read the API key from the <code>UsageIdentifierKey</code> from a custom
+     * authorizer.</li></ul> </p>
+     */
+    inline void SetApiKeySource(const ApiKeySourceType& value) { m_apiKeySource = value; }
+
+    /**
+     * <p>The source of the API key for metring requests according to a usage plan.
+     * Valid values are <ul><li><code>HEADER</code> to read the API key from the
+     * <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to
+     * read the API key from the <code>UsageIdentifierKey</code> from a custom
+     * authorizer.</li></ul> </p>
+     */
+    inline void SetApiKeySource(ApiKeySourceType&& value) { m_apiKeySource = std::move(value); }
+
+    /**
+     * <p>The source of the API key for metring requests according to a usage plan.
+     * Valid values are <ul><li><code>HEADER</code> to read the API key from the
+     * <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to
+     * read the API key from the <code>UsageIdentifierKey</code> from a custom
+     * authorizer.</li></ul> </p>
+     */
+    inline CreateRestApiResult& WithApiKeySource(const ApiKeySourceType& value) { SetApiKeySource(value); return *this;}
+
+    /**
+     * <p>The source of the API key for metring requests according to a usage plan.
+     * Valid values are <ul><li><code>HEADER</code> to read the API key from the
+     * <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to
+     * read the API key from the <code>UsageIdentifierKey</code> from a custom
+     * authorizer.</li></ul> </p>
+     */
+    inline CreateRestApiResult& WithApiKeySource(ApiKeySourceType&& value) { SetApiKeySource(std::move(value)); return *this;}
+
+
+    /**
      * <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types
      * of the API. </p>
      */
@@ -372,6 +447,10 @@ namespace Model
     Aws::Vector<Aws::String> m_warnings;
 
     Aws::Vector<Aws::String> m_binaryMediaTypes;
+
+    int m_minimumCompressionSize;
+
+    ApiKeySourceType m_apiKeySource;
 
     EndpointConfiguration m_endpointConfiguration;
   };

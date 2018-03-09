@@ -33,6 +33,7 @@ Device::Device() :
     m_nameHasBeenSet(false),
     m_manufacturerHasBeenSet(false),
     m_modelHasBeenSet(false),
+    m_modelIdHasBeenSet(false),
     m_formFactor(DeviceFormFactor::NOT_SET),
     m_formFactorHasBeenSet(false),
     m_platform(DevicePlatform::NOT_SET),
@@ -61,6 +62,7 @@ Device::Device(const JsonValue& jsonValue) :
     m_nameHasBeenSet(false),
     m_manufacturerHasBeenSet(false),
     m_modelHasBeenSet(false),
+    m_modelIdHasBeenSet(false),
     m_formFactor(DeviceFormFactor::NOT_SET),
     m_formFactorHasBeenSet(false),
     m_platform(DevicePlatform::NOT_SET),
@@ -113,6 +115,13 @@ Device& Device::operator =(const JsonValue& jsonValue)
     m_model = jsonValue.GetString("model");
 
     m_modelHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("modelId"))
+  {
+    m_modelId = jsonValue.GetString("modelId");
+
+    m_modelIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("formFactor"))
@@ -241,6 +250,12 @@ JsonValue Device::Jsonize() const
   if(m_modelHasBeenSet)
   {
    payload.WithString("model", m_model);
+
+  }
+
+  if(m_modelIdHasBeenSet)
+  {
+   payload.WithString("modelId", m_modelId);
 
   }
 

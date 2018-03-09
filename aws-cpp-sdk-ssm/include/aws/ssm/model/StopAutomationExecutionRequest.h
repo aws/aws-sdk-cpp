@@ -17,6 +17,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/model/StopType.h>
 #include <utility>
 
 namespace Aws
@@ -79,10 +80,44 @@ namespace Model
      */
     inline StopAutomationExecutionRequest& WithAutomationExecutionId(const char* value) { SetAutomationExecutionId(value); return *this;}
 
+
+    /**
+     * <p>The stop request type. Valid types include the following: Cancel and
+     * Complete. The default type is Cancel.</p>
+     */
+    inline const StopType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The stop request type. Valid types include the following: Cancel and
+     * Complete. The default type is Cancel.</p>
+     */
+    inline void SetType(const StopType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The stop request type. Valid types include the following: Cancel and
+     * Complete. The default type is Cancel.</p>
+     */
+    inline void SetType(StopType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The stop request type. Valid types include the following: Cancel and
+     * Complete. The default type is Cancel.</p>
+     */
+    inline StopAutomationExecutionRequest& WithType(const StopType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The stop request type. Valid types include the following: Cancel and
+     * Complete. The default type is Cancel.</p>
+     */
+    inline StopAutomationExecutionRequest& WithType(StopType&& value) { SetType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_automationExecutionId;
     bool m_automationExecutionIdHasBeenSet;
+
+    StopType m_type;
+    bool m_typeHasBeenSet;
   };
 
 } // namespace Model

@@ -15,12 +15,14 @@
 
 #include <aws/external/gtest.h>
 #include <aws/testing/MemoryTesting.h>
+#include <algorithm>
 
 #include <aws/cognito-identity/CognitoIdentityClient.h>
 #include <aws/cognito-identity/CognitoIdentityErrors.h>
 #include <aws/cognito-identity/model/CreateIdentityPoolRequest.h>
 #include <aws/cognito-identity/model/DeleteIdentityPoolRequest.h>
 #include <aws/cognito-identity/model/DescribeIdentityPoolRequest.h>
+#include <aws/cognito-identity/model/GetIdentityPoolRolesRequest.h>
 #include <aws/cognito-identity/model/UpdateIdentityPoolRequest.h>
 #include <aws/cognito-identity/model/ListIdentityPoolsRequest.h>
 #include <aws/cognito-identity/model/GetCredentialsForIdentityRequest.h>
@@ -75,28 +77,44 @@ protected:
         client = nullptr;
     }
 
+    static bool WaitForIdentitiesToBeActive(const Aws::String& identityPoolId, const std::shared_ptr<CognitoIdentityClient>& client)
+    {
+        unsigned timeoutCount = 0;
+        const unsigned maxRetries = 10;
+        while (timeoutCount++ < maxRetries)
+        {
+            GetIdentityPoolRolesRequest getIdentityPoolRolesRequest;
+            getIdentityPoolRolesRequest.SetIdentityPoolId(identityPoolId);
+
+            GetIdentityPoolRolesOutcome getIdentityPoolRolesOutcome = client->GetIdentityPoolRoles(getIdentityPoolRolesRequest);
+            if (getIdentityPoolRolesOutcome.IsSuccess())
+            {
+                return true;
+            }
+
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+        }
+
+        return false;
+    }
+
     void CleanupPreviousFailedTests()
     {
         Aws::String resourcePrefix = GetResourcePrefix();
 
-        size_t prefixLength = resourcePrefix.length();
-
-        Aws::Vector<IdentityPoolShortDescription> pools = GetAllPools();
+        Aws::Vector<IdentityPoolShortDescription> pools = GetAllPoolsWithPrefix(resourcePrefix);
         for (auto& pool : pools)
         {
             // Only delete integration test pools
-            if (pool.GetIdentityPoolName().compare(0, prefixLength, resourcePrefix) == 0)
-            {
-                DeleteIdentityPoolRequest deleteIdentityPoolRequest;
-                deleteIdentityPoolRequest.WithIdentityPoolId(pool.GetIdentityPoolId());
+            DeleteIdentityPoolRequest deleteIdentityPoolRequest;
+            deleteIdentityPoolRequest.WithIdentityPoolId(pool.GetIdentityPoolId());
 
-                DeleteIdentityPoolOutcome deleteIdentityPoolOutcome = client->DeleteIdentityPool(deleteIdentityPoolRequest);
-                ASSERT_TRUE(deleteIdentityPoolOutcome.IsSuccess());
-            }
+            DeleteIdentityPoolOutcome deleteIdentityPoolOutcome = client->DeleteIdentityPool(deleteIdentityPoolRequest);
+            ASSERT_TRUE(deleteIdentityPoolOutcome.IsSuccess());
         }
     }
 
-    const Aws::Vector<IdentityPoolShortDescription> GetAllPools()
+    const Aws::Vector<IdentityPoolShortDescription> GetAllPoolsWithPrefix(Aws::String prefix)
     {
         ListIdentityPoolsRequest request;
         request.WithMaxResults(50);
@@ -105,14 +123,21 @@ protected:
         {
             std::cout << "Encountered Unexpected Error:" << outcome.GetError().GetExceptionName() << std::endl;
         }
-        return outcome.GetResult().GetIdentityPools();
+        EXPECT_TRUE(outcome.IsSuccess());
+
+        auto& identityPools = outcome.GetResult().GetIdentityPools();
+        Aws::Vector<IdentityPoolShortDescription> pools;
+        std::copy_if(identityPools.begin(), identityPools.end(), std::back_inserter(pools), [&](const IdentityPoolShortDescription& pool) {
+            return pool.GetIdentityPoolName().find(prefix) == 0;
+        });
+        return pools;
     }
 
 };
 
 TEST_F(IdentityPoolOperationTest, TestCreateGetUpdateDeleteOperations)
 {
-    std::size_t initialPoolCount = GetAllPools().size();
+    std::size_t initialPoolCount = GetAllPoolsWithPrefix(GetResourcePrefix()).size();
     Aws::String identityPoolName = GetResourcePrefix();
     identityPoolName += "BatCave";
     CreateIdentityPoolRequest createIdentityPoolRequest;
@@ -131,6 +156,9 @@ TEST_F(IdentityPoolOperationTest, TestCreateGetUpdateDeleteOperations)
     EXPECT_EQ(createIdentityPoolRequest.GetSupportedLoginProviders().find("www.amazon.com")->second,
         createIdentityPoolOutcome.GetResult().GetSupportedLoginProviders().find("www.amazon.com")->second);
 
+    Aws::String identityPoolId = createIdentityPoolOutcome.GetResult().GetIdentityPoolId();
+    EXPECT_TRUE(WaitForIdentitiesToBeActive(identityPoolId, client));
+
     DescribeIdentityPoolRequest describeIdentityPoolRequest;
     describeIdentityPoolRequest.WithIdentityPoolId(createIdentityPoolOutcome.GetResult().GetIdentityPoolId());
 
@@ -142,8 +170,7 @@ TEST_F(IdentityPoolOperationTest, TestCreateGetUpdateDeleteOperations)
     EXPECT_EQ(createIdentityPoolRequest.GetDeveloperProviderName(), describeIdentityPoolOutcome.GetResult().GetDeveloperProviderName());
     EXPECT_EQ(createIdentityPoolRequest.GetSupportedLoginProviders().find("www.amazon.com")->second,
         describeIdentityPoolOutcome.GetResult().GetSupportedLoginProviders().find("www.amazon.com")->second);
-    Aws::Vector<IdentityPoolShortDescription> pools = GetAllPools();
-    ASSERT_EQ(initialPoolCount + 1, GetAllPools().size());
+    ASSERT_EQ(initialPoolCount + 1, GetAllPoolsWithPrefix(GetResourcePrefix()).size());
 
     UpdateIdentityPoolRequest updateIdentityPoolRequest;
     updateIdentityPoolRequest.WithIdentityPoolId(createIdentityPoolOutcome.GetResult().GetIdentityPoolId())
@@ -166,7 +193,7 @@ TEST_F(IdentityPoolOperationTest, TestCreateGetUpdateDeleteOperations)
 
     DeleteIdentityPoolOutcome deleteIdentityPoolOutcome = client->DeleteIdentityPool(deleteIdentityPoolRequest);
     EXPECT_TRUE(deleteIdentityPoolOutcome.IsSuccess());
-    ASSERT_EQ(initialPoolCount, GetAllPools().size());
+    ASSERT_EQ(initialPoolCount, GetAllPoolsWithPrefix(GetResourcePrefix()).size());
 }
 
 TEST_F(IdentityPoolOperationTest, TestExceptionProperlyPropgates)
@@ -221,6 +248,8 @@ TEST_F(IdentityPoolOperationTest, TestIdentityActions)
     GetCredentialsForIdentityOutcome getCredentialsOutcome = client->GetCredentialsForIdentity(getCredentialsRequest);
     EXPECT_FALSE(getCredentialsOutcome.IsSuccess());
     EXPECT_EQ(CognitoIdentityErrors::INVALID_IDENTITY_POOL_CONFIGURATION, getCredentialsOutcome.GetError().GetErrorType());
+
+    EXPECT_TRUE(WaitForIdentitiesToBeActive(identityPoolId, client));
 
     ListIdentitiesRequest listIdentitiesRequest;
     listIdentitiesRequest.WithIdentityPoolId(createIdentityPoolOutcome.GetResult().GetIdentityPoolId()).WithMaxResults(10);

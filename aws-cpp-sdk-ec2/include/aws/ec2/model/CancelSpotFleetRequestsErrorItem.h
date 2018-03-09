@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes a Spot fleet request that was not successfully
+   * <p>Describes a Spot Fleet request that was not successfully
    * canceled.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotFleetRequestsErrorItem">AWS
    * API Reference</a></p>
@@ -78,37 +78,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Spot fleet request.</p>
+     * <p>The ID of the Spot Fleet request.</p>
      */
     inline const Aws::String& GetSpotFleetRequestId() const{ return m_spotFleetRequestId; }
 
     /**
-     * <p>The ID of the Spot fleet request.</p>
+     * <p>The ID of the Spot Fleet request.</p>
      */
     inline void SetSpotFleetRequestId(const Aws::String& value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId = value; }
 
     /**
-     * <p>The ID of the Spot fleet request.</p>
+     * <p>The ID of the Spot Fleet request.</p>
      */
     inline void SetSpotFleetRequestId(Aws::String&& value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId = std::move(value); }
 
     /**
-     * <p>The ID of the Spot fleet request.</p>
+     * <p>The ID of the Spot Fleet request.</p>
      */
     inline void SetSpotFleetRequestId(const char* value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId.assign(value); }
 
     /**
-     * <p>The ID of the Spot fleet request.</p>
+     * <p>The ID of the Spot Fleet request.</p>
      */
     inline CancelSpotFleetRequestsErrorItem& WithSpotFleetRequestId(const Aws::String& value) { SetSpotFleetRequestId(value); return *this;}
 
     /**
-     * <p>The ID of the Spot fleet request.</p>
+     * <p>The ID of the Spot Fleet request.</p>
      */
     inline CancelSpotFleetRequestsErrorItem& WithSpotFleetRequestId(Aws::String&& value) { SetSpotFleetRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Spot fleet request.</p>
+     * <p>The ID of the Spot Fleet request.</p>
      */
     inline CancelSpotFleetRequestsErrorItem& WithSpotFleetRequestId(const char* value) { SetSpotFleetRequestId(value); return *this;}
 

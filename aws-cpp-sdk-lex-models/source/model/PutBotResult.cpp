@@ -30,7 +30,8 @@ PutBotResult::PutBotResult() :
     m_status(Status::NOT_SET),
     m_idleSessionTTLInSeconds(0),
     m_locale(Locale::NOT_SET),
-    m_childDirected(false)
+    m_childDirected(false),
+    m_createVersion(false)
 {
 }
 
@@ -38,7 +39,8 @@ PutBotResult::PutBotResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
     m_status(Status::NOT_SET),
     m_idleSessionTTLInSeconds(0),
     m_locale(Locale::NOT_SET),
-    m_childDirected(false)
+    m_childDirected(false),
+    m_createVersion(false)
 {
   *this = result;
 }
@@ -136,6 +138,12 @@ PutBotResult& PutBotResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
   if(jsonValue.ValueExists("childDirected"))
   {
     m_childDirected = jsonValue.GetBool("childDirected");
+
+  }
+
+  if(jsonValue.ValueExists("createVersion"))
+  {
+    m_createVersion = jsonValue.GetBool("createVersion");
 
   }
 

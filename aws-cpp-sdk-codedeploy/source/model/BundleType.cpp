@@ -33,6 +33,8 @@ namespace Aws
         static const int tar_HASH = HashingUtils::HashString("tar");
         static const int tgz_HASH = HashingUtils::HashString("tgz");
         static const int zip_HASH = HashingUtils::HashString("zip");
+        static const int YAML_HASH = HashingUtils::HashString("YAML");
+        static const int JSON_HASH = HashingUtils::HashString("JSON");
 
 
         BundleType GetBundleTypeForName(const Aws::String& name)
@@ -49,6 +51,14 @@ namespace Aws
           else if (hashCode == zip_HASH)
           {
             return BundleType::zip;
+          }
+          else if (hashCode == YAML_HASH)
+          {
+            return BundleType::YAML;
+          }
+          else if (hashCode == JSON_HASH)
+          {
+            return BundleType::JSON;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +80,10 @@ namespace Aws
             return "tgz";
           case BundleType::zip:
             return "zip";
+          case BundleType::YAML:
+            return "YAML";
+          case BundleType::JSON:
+            return "JSON";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

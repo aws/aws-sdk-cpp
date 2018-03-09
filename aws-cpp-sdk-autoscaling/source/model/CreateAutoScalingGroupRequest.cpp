@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 CreateAutoScalingGroupRequest::CreateAutoScalingGroupRequest() : 
     m_autoScalingGroupNameHasBeenSet(false),
     m_launchConfigurationNameHasBeenSet(false),
+    m_launchTemplateHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_minSize(0),
     m_minSizeHasBeenSet(false),
@@ -44,7 +45,8 @@ CreateAutoScalingGroupRequest::CreateAutoScalingGroupRequest() :
     m_newInstancesProtectedFromScaleIn(false),
     m_newInstancesProtectedFromScaleInHasBeenSet(false),
     m_lifecycleHookSpecificationListHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_serviceLinkedRoleARNHasBeenSet(false)
 {
 }
 
@@ -60,6 +62,11 @@ Aws::String CreateAutoScalingGroupRequest::SerializePayload() const
   if(m_launchConfigurationNameHasBeenSet)
   {
     ss << "LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
+  }
+
+  if(m_launchTemplateHasBeenSet)
+  {
+    m_launchTemplate.OutputToStream(ss, "LaunchTemplate");
   }
 
   if(m_instanceIdHasBeenSet)
@@ -174,6 +181,11 @@ Aws::String CreateAutoScalingGroupRequest::SerializePayload() const
       item.OutputToStream(ss, "Tags.member.", tagsCount, "");
       tagsCount++;
     }
+  }
+
+  if(m_serviceLinkedRoleARNHasBeenSet)
+  {
+    ss << "ServiceLinkedRoleARN=" << StringUtils::URLEncode(m_serviceLinkedRoleARN.c_str()) << "&";
   }
 
   ss << "Version=2011-01-01";

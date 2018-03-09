@@ -37,21 +37,16 @@ int main(int argc, char** argv)
     Aws::Testing::RedirectHomeToTempIfAppropriate();
 
     Aws::SDKOptions options;	
-
-    ExactTestMemorySystem memorySystem(16, 10);
-    options.memoryManagementOptions.memoryManager = &memorySystem;
-    Aws::Testing::InitPlatformTest(options);
-
     options.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Trace;
     options.httpOptions.installSigPipeHandler = true;
+    AWS_BEGIN_MEMORY_TEST_EX(options, 1024, 128);
 
+    Aws::Testing::InitPlatformTest(options);
     Aws::InitAPI(options);
     ::testing::InitGoogleTest(&argc, argv);
     int retVal = RUN_ALL_TESTS();
     Aws::ShutdownAPI(options);
-    EXPECT_EQ(memorySystem.GetCurrentOutstandingAllocations(), 0ULL);
-    EXPECT_EQ(memorySystem.GetCurrentBytesAllocated(), 0ULL);
-    EXPECT_TRUE(memorySystem.IsClean());
+    AWS_END_MEMORY_TEST_EX;
 
     Aws::Testing::ShutdownPlatformTest(options);
 

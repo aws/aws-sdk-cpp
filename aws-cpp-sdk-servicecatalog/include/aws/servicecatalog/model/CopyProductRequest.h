@@ -136,37 +136,44 @@ namespace Model
 
 
     /**
-     * <p>The ID of the target product. By default, a new product is created.</p>
+     * <p>The identifier of the target product. By default, a new product is
+     * created.</p>
      */
     inline const Aws::String& GetTargetProductId() const{ return m_targetProductId; }
 
     /**
-     * <p>The ID of the target product. By default, a new product is created.</p>
+     * <p>The identifier of the target product. By default, a new product is
+     * created.</p>
      */
     inline void SetTargetProductId(const Aws::String& value) { m_targetProductIdHasBeenSet = true; m_targetProductId = value; }
 
     /**
-     * <p>The ID of the target product. By default, a new product is created.</p>
+     * <p>The identifier of the target product. By default, a new product is
+     * created.</p>
      */
     inline void SetTargetProductId(Aws::String&& value) { m_targetProductIdHasBeenSet = true; m_targetProductId = std::move(value); }
 
     /**
-     * <p>The ID of the target product. By default, a new product is created.</p>
+     * <p>The identifier of the target product. By default, a new product is
+     * created.</p>
      */
     inline void SetTargetProductId(const char* value) { m_targetProductIdHasBeenSet = true; m_targetProductId.assign(value); }
 
     /**
-     * <p>The ID of the target product. By default, a new product is created.</p>
+     * <p>The identifier of the target product. By default, a new product is
+     * created.</p>
      */
     inline CopyProductRequest& WithTargetProductId(const Aws::String& value) { SetTargetProductId(value); return *this;}
 
     /**
-     * <p>The ID of the target product. By default, a new product is created.</p>
+     * <p>The identifier of the target product. By default, a new product is
+     * created.</p>
      */
     inline CopyProductRequest& WithTargetProductId(Aws::String&& value) { SetTargetProductId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the target product. By default, a new product is created.</p>
+     * <p>The identifier of the target product. By default, a new product is
+     * created.</p>
      */
     inline CopyProductRequest& WithTargetProductId(const char* value) { SetTargetProductId(value); return *this;}
 
@@ -215,44 +222,44 @@ namespace Model
 
 
     /**
-     * <p>The IDs of the product versions to copy. By default, all provisioning
-     * artifacts are copied.</p>
+     * <p>The identifiers of the provisioning artifacts (also known as versions) of the
+     * product to copy. By default, all provisioning artifacts are copied.</p>
      */
     inline const Aws::Vector<Aws::Map<ProvisioningArtifactPropertyName, Aws::String>>& GetSourceProvisioningArtifactIdentifiers() const{ return m_sourceProvisioningArtifactIdentifiers; }
 
     /**
-     * <p>The IDs of the product versions to copy. By default, all provisioning
-     * artifacts are copied.</p>
+     * <p>The identifiers of the provisioning artifacts (also known as versions) of the
+     * product to copy. By default, all provisioning artifacts are copied.</p>
      */
     inline void SetSourceProvisioningArtifactIdentifiers(const Aws::Vector<Aws::Map<ProvisioningArtifactPropertyName, Aws::String>>& value) { m_sourceProvisioningArtifactIdentifiersHasBeenSet = true; m_sourceProvisioningArtifactIdentifiers = value; }
 
     /**
-     * <p>The IDs of the product versions to copy. By default, all provisioning
-     * artifacts are copied.</p>
+     * <p>The identifiers of the provisioning artifacts (also known as versions) of the
+     * product to copy. By default, all provisioning artifacts are copied.</p>
      */
     inline void SetSourceProvisioningArtifactIdentifiers(Aws::Vector<Aws::Map<ProvisioningArtifactPropertyName, Aws::String>>&& value) { m_sourceProvisioningArtifactIdentifiersHasBeenSet = true; m_sourceProvisioningArtifactIdentifiers = std::move(value); }
 
     /**
-     * <p>The IDs of the product versions to copy. By default, all provisioning
-     * artifacts are copied.</p>
+     * <p>The identifiers of the provisioning artifacts (also known as versions) of the
+     * product to copy. By default, all provisioning artifacts are copied.</p>
      */
     inline CopyProductRequest& WithSourceProvisioningArtifactIdentifiers(const Aws::Vector<Aws::Map<ProvisioningArtifactPropertyName, Aws::String>>& value) { SetSourceProvisioningArtifactIdentifiers(value); return *this;}
 
     /**
-     * <p>The IDs of the product versions to copy. By default, all provisioning
-     * artifacts are copied.</p>
+     * <p>The identifiers of the provisioning artifacts (also known as versions) of the
+     * product to copy. By default, all provisioning artifacts are copied.</p>
      */
     inline CopyProductRequest& WithSourceProvisioningArtifactIdentifiers(Aws::Vector<Aws::Map<ProvisioningArtifactPropertyName, Aws::String>>&& value) { SetSourceProvisioningArtifactIdentifiers(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of the product versions to copy. By default, all provisioning
-     * artifacts are copied.</p>
+     * <p>The identifiers of the provisioning artifacts (also known as versions) of the
+     * product to copy. By default, all provisioning artifacts are copied.</p>
      */
     inline CopyProductRequest& AddSourceProvisioningArtifactIdentifiers(const Aws::Map<ProvisioningArtifactPropertyName, Aws::String>& value) { m_sourceProvisioningArtifactIdentifiersHasBeenSet = true; m_sourceProvisioningArtifactIdentifiers.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the product versions to copy. By default, all provisioning
-     * artifacts are copied.</p>
+     * <p>The identifiers of the provisioning artifacts (also known as versions) of the
+     * product to copy. By default, all provisioning artifacts are copied.</p>
      */
     inline CopyProductRequest& AddSourceProvisioningArtifactIdentifiers(Aws::Map<ProvisioningArtifactPropertyName, Aws::String>&& value) { m_sourceProvisioningArtifactIdentifiersHasBeenSet = true; m_sourceProvisioningArtifactIdentifiers.push_back(std::move(value)); return *this; }
 
@@ -301,51 +308,51 @@ namespace Model
 
 
     /**
-     * <p> A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request. </p>
+     * <p> A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request. </p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
 
     /**
-     * <p> A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request. </p>
+     * <p> A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request. </p>
      */
     inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
 
     /**
-     * <p> A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request. </p>
+     * <p> A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request. </p>
      */
     inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
 
     /**
-     * <p> A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request. </p>
+     * <p> A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request. </p>
      */
     inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
 
     /**
-     * <p> A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request. </p>
+     * <p> A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request. </p>
      */
     inline CopyProductRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
 
     /**
-     * <p> A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request. </p>
+     * <p> A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request. </p>
      */
     inline CopyProductRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
 
     /**
-     * <p> A token to disambiguate duplicate requests. You can use the same input in
-     * multiple requests, provided that you also specify a different idempotency token
-     * for each request. </p>
+     * <p> A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request. </p>
      */
     inline CopyProductRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 

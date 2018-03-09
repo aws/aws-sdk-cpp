@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/batch/model/ArrayJobDependency.h>
 #include <utility>
 
 namespace Aws
@@ -82,10 +83,39 @@ namespace Model
      */
     inline JobDependency& WithJobId(const char* value) { SetJobId(value); return *this;}
 
+
+    /**
+     * <p>The type of the job dependency.</p>
+     */
+    inline const ArrayJobDependency& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of the job dependency.</p>
+     */
+    inline void SetType(const ArrayJobDependency& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The type of the job dependency.</p>
+     */
+    inline void SetType(ArrayJobDependency&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The type of the job dependency.</p>
+     */
+    inline JobDependency& WithType(const ArrayJobDependency& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The type of the job dependency.</p>
+     */
+    inline JobDependency& WithType(ArrayJobDependency&& value) { SetType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
+
+    ArrayJobDependency m_type;
+    bool m_typeHasBeenSet;
   };
 
 } // namespace Model

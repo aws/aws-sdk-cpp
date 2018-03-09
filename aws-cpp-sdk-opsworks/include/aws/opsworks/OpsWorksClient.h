@@ -39,6 +39,7 @@
 #include <aws/opsworks/model/DescribeLayersResult.h>
 #include <aws/opsworks/model/DescribeLoadBasedAutoScalingResult.h>
 #include <aws/opsworks/model/DescribeMyUserProfileResult.h>
+#include <aws/opsworks/model/DescribeOperatingSystemsResult.h>
 #include <aws/opsworks/model/DescribePermissionsResult.h>
 #include <aws/opsworks/model/DescribeRaidArraysResult.h>
 #include <aws/opsworks/model/DescribeRdsDbInstancesResult.h>
@@ -207,6 +208,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeLayersResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeLayersOutcome;
         typedef Aws::Utils::Outcome<DescribeLoadBasedAutoScalingResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeLoadBasedAutoScalingOutcome;
         typedef Aws::Utils::Outcome<DescribeMyUserProfileResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeMyUserProfileOutcome;
+        typedef Aws::Utils::Outcome<DescribeOperatingSystemsResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeOperatingSystemsOutcome;
         typedef Aws::Utils::Outcome<DescribePermissionsResult, Aws::Client::AWSError<OpsWorksErrors>> DescribePermissionsOutcome;
         typedef Aws::Utils::Outcome<DescribeRaidArraysResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeRaidArraysOutcome;
         typedef Aws::Utils::Outcome<DescribeRdsDbInstancesResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeRdsDbInstancesOutcome;
@@ -281,6 +283,7 @@ namespace Model
         typedef std::future<DescribeLayersOutcome> DescribeLayersOutcomeCallable;
         typedef std::future<DescribeLoadBasedAutoScalingOutcome> DescribeLoadBasedAutoScalingOutcomeCallable;
         typedef std::future<DescribeMyUserProfileOutcome> DescribeMyUserProfileOutcomeCallable;
+        typedef std::future<DescribeOperatingSystemsOutcome> DescribeOperatingSystemsOutcomeCallable;
         typedef std::future<DescribePermissionsOutcome> DescribePermissionsOutcomeCallable;
         typedef std::future<DescribeRaidArraysOutcome> DescribeRaidArraysOutcomeCallable;
         typedef std::future<DescribeRdsDbInstancesOutcome> DescribeRdsDbInstancesOutcomeCallable;
@@ -358,6 +361,7 @@ namespace Model
     typedef std::function<void(const OpsWorksClient*, const Model::DescribeLayersRequest&, const Model::DescribeLayersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLayersResponseReceivedHandler;
     typedef std::function<void(const OpsWorksClient*, const Model::DescribeLoadBasedAutoScalingRequest&, const Model::DescribeLoadBasedAutoScalingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLoadBasedAutoScalingResponseReceivedHandler;
     typedef std::function<void(const OpsWorksClient*, const Model::DescribeMyUserProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMyUserProfileResponseReceivedHandler;
+    typedef std::function<void(const OpsWorksClient*, const Model::DescribeOperatingSystemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOperatingSystemsResponseReceivedHandler;
     typedef std::function<void(const OpsWorksClient*, const Model::DescribePermissionsRequest&, const Model::DescribePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePermissionsResponseReceivedHandler;
     typedef std::function<void(const OpsWorksClient*, const Model::DescribeRaidArraysRequest&, const Model::DescribeRaidArraysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRaidArraysResponseReceivedHandler;
     typedef std::function<void(const OpsWorksClient*, const Model::DescribeRdsDbInstancesRequest&, const Model::DescribeRdsDbInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRdsDbInstancesResponseReceivedHandler;
@@ -433,8 +437,10 @@ namespace Model
    * <p>opsworks.us-east-2.amazonaws.com</p> </li> <li>
    * <p>opsworks.us-west-1.amazonaws.com</p> </li> <li>
    * <p>opsworks.us-west-2.amazonaws.com</p> </li> <li>
-   * <p>opsworks.eu-west-1.amazonaws.com</p> </li> <li>
+   * <p>opsworks.ca-central-1.amazonaws.com (API only; not available in the AWS
+   * console)</p> </li> <li> <p>opsworks.eu-west-1.amazonaws.com</p> </li> <li>
    * <p>opsworks.eu-west-2.amazonaws.com</p> </li> <li>
+   * <p>opsworks.eu-west-3.amazonaws.com</p> </li> <li>
    * <p>opsworks.eu-central-1.amazonaws.com</p> </li> <li>
    * <p>opsworks.ap-northeast-1.amazonaws.com</p> </li> <li>
    * <p>opsworks.ap-northeast-2.amazonaws.com</p> </li> <li>
@@ -1973,6 +1979,33 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeMyUserProfileAsync(const DescribeMyUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        /**
+         * <p>Describes the operating systems that are supported by AWS OpsWorks
+         * Stacks.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeOperatingSystems">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeOperatingSystemsOutcome DescribeOperatingSystems() const;
+
+        /**
+         * <p>Describes the operating systems that are supported by AWS OpsWorks
+         * Stacks.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeOperatingSystems">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeOperatingSystemsOutcomeCallable DescribeOperatingSystemsCallable() const;
+
+        /**
+         * <p>Describes the operating systems that are supported by AWS OpsWorks
+         * Stacks.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeOperatingSystems">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeOperatingSystemsAsync(const DescribeOperatingSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
         /**
          * <p>Describes the permissions for a specified stack.</p> <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Manage permissions
@@ -3812,6 +3845,7 @@ namespace Model
         void DescribeLayersAsyncHelper(const Model::DescribeLayersRequest& request, const DescribeLayersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLoadBasedAutoScalingAsyncHelper(const Model::DescribeLoadBasedAutoScalingRequest& request, const DescribeLoadBasedAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMyUserProfileAsyncHelper(const DescribeMyUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeOperatingSystemsAsyncHelper(const DescribeOperatingSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePermissionsAsyncHelper(const Model::DescribePermissionsRequest& request, const DescribePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRaidArraysAsyncHelper(const Model::DescribeRaidArraysRequest& request, const DescribeRaidArraysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRdsDbInstancesAsyncHelper(const Model::DescribeRdsDbInstancesRequest& request, const DescribeRdsDbInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

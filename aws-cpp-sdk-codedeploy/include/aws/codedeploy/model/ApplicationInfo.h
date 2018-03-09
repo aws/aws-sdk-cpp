@@ -17,6 +17,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/codedeploy/model/ComputePlatform.h>
 #include <utility>
 
 namespace Aws
@@ -199,6 +200,37 @@ namespace Model
      */
     inline ApplicationInfo& WithGitHubAccountName(const char* value) { SetGitHubAccountName(value); return *this;}
 
+
+    /**
+     * <p>The destination platform type for deployment of the application
+     * (<code>Lambda</code> or <code>Server</code>).</p>
+     */
+    inline const ComputePlatform& GetComputePlatform() const{ return m_computePlatform; }
+
+    /**
+     * <p>The destination platform type for deployment of the application
+     * (<code>Lambda</code> or <code>Server</code>).</p>
+     */
+    inline void SetComputePlatform(const ComputePlatform& value) { m_computePlatformHasBeenSet = true; m_computePlatform = value; }
+
+    /**
+     * <p>The destination platform type for deployment of the application
+     * (<code>Lambda</code> or <code>Server</code>).</p>
+     */
+    inline void SetComputePlatform(ComputePlatform&& value) { m_computePlatformHasBeenSet = true; m_computePlatform = std::move(value); }
+
+    /**
+     * <p>The destination platform type for deployment of the application
+     * (<code>Lambda</code> or <code>Server</code>).</p>
+     */
+    inline ApplicationInfo& WithComputePlatform(const ComputePlatform& value) { SetComputePlatform(value); return *this;}
+
+    /**
+     * <p>The destination platform type for deployment of the application
+     * (<code>Lambda</code> or <code>Server</code>).</p>
+     */
+    inline ApplicationInfo& WithComputePlatform(ComputePlatform&& value) { SetComputePlatform(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_applicationId;
@@ -215,6 +247,9 @@ namespace Model
 
     Aws::String m_gitHubAccountName;
     bool m_gitHubAccountNameHasBeenSet;
+
+    ComputePlatform m_computePlatform;
+    bool m_computePlatformHasBeenSet;
   };
 
 } // namespace Model

@@ -27,12 +27,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetBotChannelAssociationResult::GetBotChannelAssociationResult() : 
-    m_type(ChannelType::NOT_SET)
+    m_type(ChannelType::NOT_SET),
+    m_status(ChannelStatus::NOT_SET)
 {
 }
 
 GetBotChannelAssociationResult::GetBotChannelAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_type(ChannelType::NOT_SET)
+    m_type(ChannelType::NOT_SET),
+    m_status(ChannelStatus::NOT_SET)
 {
   *this = result;
 }
@@ -83,6 +85,18 @@ GetBotChannelAssociationResult& GetBotChannelAssociationResult::operator =(const
     {
       m_botConfiguration[botConfigurationItem.first] = botConfigurationItem.second.AsString();
     }
+  }
+
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = ChannelStatusMapper::GetChannelStatusForName(jsonValue.GetString("status"));
+
+  }
+
+  if(jsonValue.ValueExists("failureReason"))
+  {
+    m_failureReason = jsonValue.GetString("failureReason");
+
   }
 
 

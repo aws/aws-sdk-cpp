@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     HEALTHY,
-    UNHEALTHY
+    UNHEALTHY,
+    UNKNOWN
   };
 
 namespace AgentHealthMapper

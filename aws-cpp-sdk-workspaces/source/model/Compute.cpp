@@ -33,6 +33,8 @@ namespace Aws
         static const int VALUE_HASH = HashingUtils::HashString("VALUE");
         static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
         static const int PERFORMANCE_HASH = HashingUtils::HashString("PERFORMANCE");
+        static const int POWER_HASH = HashingUtils::HashString("POWER");
+        static const int GRAPHICS_HASH = HashingUtils::HashString("GRAPHICS");
 
 
         Compute GetComputeForName(const Aws::String& name)
@@ -49,6 +51,14 @@ namespace Aws
           else if (hashCode == PERFORMANCE_HASH)
           {
             return Compute::PERFORMANCE;
+          }
+          else if (hashCode == POWER_HASH)
+          {
+            return Compute::POWER;
+          }
+          else if (hashCode == GRAPHICS_HASH)
+          {
+            return Compute::GRAPHICS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +80,10 @@ namespace Aws
             return "STANDARD";
           case Compute::PERFORMANCE:
             return "PERFORMANCE";
+          case Compute::POWER:
+            return "POWER";
+          case Compute::GRAPHICS:
+            return "GRAPHICS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

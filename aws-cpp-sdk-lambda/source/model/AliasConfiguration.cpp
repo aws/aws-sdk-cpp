@@ -32,7 +32,9 @@ AliasConfiguration::AliasConfiguration() :
     m_aliasArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_functionVersionHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_routingConfigHasBeenSet(false),
+    m_revisionIdHasBeenSet(false)
 {
 }
 
@@ -40,7 +42,9 @@ AliasConfiguration::AliasConfiguration(const JsonValue& jsonValue) :
     m_aliasArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_functionVersionHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_routingConfigHasBeenSet(false),
+    m_revisionIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -75,6 +79,20 @@ AliasConfiguration& AliasConfiguration::operator =(const JsonValue& jsonValue)
     m_descriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RoutingConfig"))
+  {
+    m_routingConfig = jsonValue.GetObject("RoutingConfig");
+
+    m_routingConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RevisionId"))
+  {
+    m_revisionId = jsonValue.GetString("RevisionId");
+
+    m_revisionIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -103,6 +121,18 @@ JsonValue AliasConfiguration::Jsonize() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
+
+  }
+
+  if(m_routingConfigHasBeenSet)
+  {
+   payload.WithObject("RoutingConfig", m_routingConfig.Jsonize());
+
+  }
+
+  if(m_revisionIdHasBeenSet)
+  {
+   payload.WithString("RevisionId", m_revisionId);
 
   }
 

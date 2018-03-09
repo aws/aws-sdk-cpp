@@ -131,44 +131,37 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the provisioning artifact for the update request. This is
-     * sometimes referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline const Aws::String& GetProvisioningArtifactId() const{ return m_provisioningArtifactId; }
 
     /**
-     * <p>The identifier of the provisioning artifact for the update request. This is
-     * sometimes referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline void SetProvisioningArtifactId(const Aws::String& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = value; }
 
     /**
-     * <p>The identifier of the provisioning artifact for the update request. This is
-     * sometimes referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline void SetProvisioningArtifactId(Aws::String&& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = std::move(value); }
 
     /**
-     * <p>The identifier of the provisioning artifact for the update request. This is
-     * sometimes referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline void SetProvisioningArtifactId(const char* value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId.assign(value); }
 
     /**
-     * <p>The identifier of the provisioning artifact for the update request. This is
-     * sometimes referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline UpdateProvisioningArtifactRequest& WithProvisioningArtifactId(const Aws::String& value) { SetProvisioningArtifactId(value); return *this;}
 
     /**
-     * <p>The identifier of the provisioning artifact for the update request. This is
-     * sometimes referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline UpdateProvisioningArtifactRequest& WithProvisioningArtifactId(Aws::String&& value) { SetProvisioningArtifactId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the provisioning artifact for the update request. This is
-     * sometimes referred to as the product version.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline UpdateProvisioningArtifactRequest& WithProvisioningArtifactId(const char* value) { SetProvisioningArtifactId(value); return *this;}
 
@@ -210,39 +203,55 @@ namespace Model
 
 
     /**
-     * <p>The updated text description of the provisioning artifact.</p>
+     * <p>The updated description of the provisioning artifact.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The updated text description of the provisioning artifact.</p>
+     * <p>The updated description of the provisioning artifact.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The updated text description of the provisioning artifact.</p>
+     * <p>The updated description of the provisioning artifact.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The updated text description of the provisioning artifact.</p>
+     * <p>The updated description of the provisioning artifact.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The updated text description of the provisioning artifact.</p>
+     * <p>The updated description of the provisioning artifact.</p>
      */
     inline UpdateProvisioningArtifactRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The updated text description of the provisioning artifact.</p>
+     * <p>The updated description of the provisioning artifact.</p>
      */
     inline UpdateProvisioningArtifactRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The updated text description of the provisioning artifact.</p>
+     * <p>The updated description of the provisioning artifact.</p>
      */
     inline UpdateProvisioningArtifactRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * <p>Indicates whether the product version is active.</p>
+     */
+    inline bool GetActive() const{ return m_active; }
+
+    /**
+     * <p>Indicates whether the product version is active.</p>
+     */
+    inline void SetActive(bool value) { m_activeHasBeenSet = true; m_active = value; }
+
+    /**
+     * <p>Indicates whether the product version is active.</p>
+     */
+    inline UpdateProvisioningArtifactRequest& WithActive(bool value) { SetActive(value); return *this;}
 
   private:
 
@@ -260,6 +269,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    bool m_active;
+    bool m_activeHasBeenSet;
   };
 
 } // namespace Model
