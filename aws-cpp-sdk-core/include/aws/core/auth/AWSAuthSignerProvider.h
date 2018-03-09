@@ -41,6 +41,7 @@ namespace Aws
         {
         public:
             explicit DefaultAuthSignerProvider(const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer);
+            explicit DefaultAuthSignerProvider(const std::shared_ptr<Aws::Client::AWSAuthSigner>& signerA, const std::shared_ptr<Aws::Client::AWSAuthSigner>& signerB);
             std::shared_ptr<Aws::Client::AWSAuthSigner> GetSigner(const Aws::String& signerName) const override;
         private:
             Aws::Vector<std::shared_ptr<Aws::Client::AWSAuthSigner>> m_signers;

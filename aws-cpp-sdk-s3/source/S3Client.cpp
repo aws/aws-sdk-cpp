@@ -114,30 +114,33 @@ static const char* ALLOCATION_TAG = "S3Client";
 
 
 S3Client::S3Client(const Client::ClientConfiguration& clientConfiguration, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads, bool useVirtualAdressing) :
-  BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region, signPayloads, false),
-    Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor), m_useVirtualAdressing(useVirtualAdressing)
+  BASECLASS(clientConfiguration, Aws::MakeUnique<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+     Aws::MakeShared<AWSAuthV2Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG)),
+     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+         SERVICE_NAME, clientConfiguration.region, signPayloads, false)),
+     Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
+     m_executor(clientConfiguration.executor), m_useVirtualAdressing(useVirtualAdressing)
 {
   init(clientConfiguration);
 }
 
 S3Client::S3Client(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads, bool useVirtualAdressing) :
-  BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region, signPayloads, false),
-    Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor), m_useVirtualAdressing(useVirtualAdressing)
+  BASECLASS(clientConfiguration, Aws::MakeUnique<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+     Aws::MakeShared<AWSAuthV2Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials)),
+     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+         SERVICE_NAME, clientConfiguration.region, signPayloads, false)),
+     Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
+     m_executor(clientConfiguration.executor), m_useVirtualAdressing(useVirtualAdressing)
 {
   init(clientConfiguration);
 }
 
 S3Client::S3Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
   const Client::ClientConfiguration& clientConfiguration, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads, bool useVirtualAdressing) :
-  BASECLASS(clientConfiguration,
+  BASECLASS(clientConfiguration, Aws::MakeUnique<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+    Aws::MakeShared<AWSAuthV2Signer>(ALLOCATION_TAG, credentialsProvider),
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region, signPayloads, false),
+         SERVICE_NAME, clientConfiguration.region, signPayloads, false)),
     Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor), m_useVirtualAdressing(useVirtualAdressing)
 {
@@ -1760,7 +1763,7 @@ ListBucketsOutcome S3Client::ListBuckets() const
 {
   Aws::StringStream ss;
   ss << ComputeEndpointString();
-  XmlOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, "ListBuckets");
+  XmlOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_GET, nullptr, "ListBuckets");
   if(outcome.IsSuccess())
   {
     return ListBucketsOutcome(ListBucketsResult(outcome.GetResult()));

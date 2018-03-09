@@ -29,6 +29,19 @@ DefaultAuthSignerProvider::DefaultAuthSignerProvider(const std::shared_ptr<Aws::
     }
 }
 
+DefaultAuthSignerProvider::DefaultAuthSignerProvider(const std::shared_ptr<Aws::Client::AWSAuthSigner>& signerA, const std::shared_ptr<Aws::Client::AWSAuthSigner>& signerB)
+{
+   m_signers.emplace_back(Aws::MakeShared<Aws::Client::AWSNullSigner>(CLASS_TAG));
+   if (signerA)
+   {
+      m_signers.emplace_back(signerA);
+   }
+   if (signerB)
+   {
+      m_signers.emplace_back(signerB);
+   }
+}
+
 std::shared_ptr<Aws::Client::AWSAuthSigner> DefaultAuthSignerProvider::GetSigner(const Aws::String& signerName) const
 {
     for(const auto& signer : m_signers)
