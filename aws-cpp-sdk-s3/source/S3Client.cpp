@@ -114,7 +114,7 @@ static const char* ALLOCATION_TAG = "S3Client";
 
 
 S3Client::S3Client(const Client::ClientConfiguration& clientConfiguration, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads, bool useVirtualAdressing) :
-  BASECLASS(clientConfiguration, Aws::MakeUnique<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+  BASECLASS(clientConfiguration, Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
      Aws::MakeShared<AWSAuthV2Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG)),
      Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
          SERVICE_NAME, clientConfiguration.region, signPayloads, false)),
@@ -125,7 +125,7 @@ S3Client::S3Client(const Client::ClientConfiguration& clientConfiguration, Aws::
 }
 
 S3Client::S3Client(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads, bool useVirtualAdressing) :
-  BASECLASS(clientConfiguration, Aws::MakeUnique<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+  BASECLASS(clientConfiguration, Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
      Aws::MakeShared<AWSAuthV2Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials)),
      Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
          SERVICE_NAME, clientConfiguration.region, signPayloads, false)),
@@ -137,7 +137,7 @@ S3Client::S3Client(const AWSCredentials& credentials, const Client::ClientConfig
 
 S3Client::S3Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
   const Client::ClientConfiguration& clientConfiguration, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads, bool useVirtualAdressing) :
-  BASECLASS(clientConfiguration, Aws::MakeUnique<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+  BASECLASS(clientConfiguration, Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
     Aws::MakeShared<AWSAuthV2Signer>(ALLOCATION_TAG, credentialsProvider),
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
          SERVICE_NAME, clientConfiguration.region, signPayloads, false)),

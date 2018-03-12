@@ -261,6 +261,12 @@ namespace Aws
             bool SignRequest(Aws::Http::HttpRequest& request) const override;
 
             /**
+             * Signs the request itself based on info in the request and uri.
+             * Uses AWS Auth V2 signing method with SHA1 HMAC algorithm.
+             */
+            virtual bool SignRequest(Aws::Http::HttpRequest& request, bool signBody) const { AWS_UNREFERENCED_PARAM(signBody); return SignRequest(request); }
+
+            /**
              * Unimplemented.
              */
             bool PresignRequest(Aws::Http::HttpRequest& request, long long expirationInSeconds = 0) const override;
