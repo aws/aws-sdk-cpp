@@ -275,6 +275,54 @@ namespace Model
      */
     inline CACertificateDescription& WithAutoRegistrationStatus(AutoRegistrationStatus&& value) { SetAutoRegistrationStatus(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
+
+    
+    inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
+
+    
+    inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
+
+    
+    inline CACertificateDescription& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
+
+    
+    inline CACertificateDescription& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+
+
+    
+    inline int GetCustomerVersion() const{ return m_customerVersion; }
+
+    
+    inline void SetCustomerVersion(int value) { m_customerVersionHasBeenSet = true; m_customerVersion = value; }
+
+    
+    inline CACertificateDescription& WithCustomerVersion(int value) { SetCustomerVersion(value); return *this;}
+
+
+    
+    inline const Aws::String& GetGenerationId() const{ return m_generationId; }
+
+    
+    inline void SetGenerationId(const Aws::String& value) { m_generationIdHasBeenSet = true; m_generationId = value; }
+
+    
+    inline void SetGenerationId(Aws::String&& value) { m_generationIdHasBeenSet = true; m_generationId = std::move(value); }
+
+    
+    inline void SetGenerationId(const char* value) { m_generationIdHasBeenSet = true; m_generationId.assign(value); }
+
+    
+    inline CACertificateDescription& WithGenerationId(const Aws::String& value) { SetGenerationId(value); return *this;}
+
+    
+    inline CACertificateDescription& WithGenerationId(Aws::String&& value) { SetGenerationId(std::move(value)); return *this;}
+
+    
+    inline CACertificateDescription& WithGenerationId(const char* value) { SetGenerationId(value); return *this;}
+
   private:
 
     Aws::String m_certificateArn;
@@ -297,6 +345,15 @@ namespace Model
 
     AutoRegistrationStatus m_autoRegistrationStatus;
     bool m_autoRegistrationStatusHasBeenSet;
+
+    Aws::Utils::DateTime m_lastModifiedDate;
+    bool m_lastModifiedDateHasBeenSet;
+
+    int m_customerVersion;
+    bool m_customerVersionHasBeenSet;
+
+    Aws::String m_generationId;
+    bool m_generationIdHasBeenSet;
   };
 
 } // namespace Model

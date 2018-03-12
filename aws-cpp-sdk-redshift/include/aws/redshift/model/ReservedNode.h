@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/redshift/model/ReservedNodeOfferingType.h>
 #include <aws/redshift/model/RecurringCharge.h>
 #include <utility>
 
@@ -442,6 +443,22 @@ namespace Model
      */
     inline ReservedNode& AddRecurringCharges(RecurringCharge&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const ReservedNodeOfferingType& GetReservedNodeOfferingType() const{ return m_reservedNodeOfferingType; }
+
+    
+    inline void SetReservedNodeOfferingType(const ReservedNodeOfferingType& value) { m_reservedNodeOfferingTypeHasBeenSet = true; m_reservedNodeOfferingType = value; }
+
+    
+    inline void SetReservedNodeOfferingType(ReservedNodeOfferingType&& value) { m_reservedNodeOfferingTypeHasBeenSet = true; m_reservedNodeOfferingType = std::move(value); }
+
+    
+    inline ReservedNode& WithReservedNodeOfferingType(const ReservedNodeOfferingType& value) { SetReservedNodeOfferingType(value); return *this;}
+
+    
+    inline ReservedNode& WithReservedNodeOfferingType(ReservedNodeOfferingType&& value) { SetReservedNodeOfferingType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_reservedNodeId;
@@ -479,6 +496,9 @@ namespace Model
 
     Aws::Vector<RecurringCharge> m_recurringCharges;
     bool m_recurringChargesHasBeenSet;
+
+    ReservedNodeOfferingType m_reservedNodeOfferingType;
+    bool m_reservedNodeOfferingTypeHasBeenSet;
   };
 
 } // namespace Model

@@ -589,6 +589,34 @@ namespace Model
      */
     inline DescribeClusterSnapshotsRequest& AddTagValues(const char* value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(value); return *this; }
 
+
+    /**
+     * <p>A value that indicates whether to return snapshots only for an existing
+     * cluster. Table-level restore can be performed only using a snapshot of an
+     * existing cluster, that is, a cluster that has not been deleted. If
+     * <code>ClusterExists</code> is set to <code>true</code>,
+     * <code>ClusterIdentifier</code> is required.</p>
+     */
+    inline bool GetClusterExists() const{ return m_clusterExists; }
+
+    /**
+     * <p>A value that indicates whether to return snapshots only for an existing
+     * cluster. Table-level restore can be performed only using a snapshot of an
+     * existing cluster, that is, a cluster that has not been deleted. If
+     * <code>ClusterExists</code> is set to <code>true</code>,
+     * <code>ClusterIdentifier</code> is required.</p>
+     */
+    inline void SetClusterExists(bool value) { m_clusterExistsHasBeenSet = true; m_clusterExists = value; }
+
+    /**
+     * <p>A value that indicates whether to return snapshots only for an existing
+     * cluster. Table-level restore can be performed only using a snapshot of an
+     * existing cluster, that is, a cluster that has not been deleted. If
+     * <code>ClusterExists</code> is set to <code>true</code>,
+     * <code>ClusterIdentifier</code> is required.</p>
+     */
+    inline DescribeClusterSnapshotsRequest& WithClusterExists(bool value) { SetClusterExists(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -620,6 +648,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_tagValues;
     bool m_tagValuesHasBeenSet;
+
+    bool m_clusterExists;
+    bool m_clusterExistsHasBeenSet;
   };
 
 } // namespace Model

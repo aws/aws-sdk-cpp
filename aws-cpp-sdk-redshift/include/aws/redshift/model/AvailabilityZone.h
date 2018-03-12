@@ -17,6 +17,8 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/redshift/model/SupportedPlatform.h>
 #include <utility>
 
 namespace Aws
@@ -84,10 +86,35 @@ namespace Model
      */
     inline AvailabilityZone& WithName(const char* value) { SetName(value); return *this;}
 
+
+    
+    inline const Aws::Vector<SupportedPlatform>& GetSupportedPlatforms() const{ return m_supportedPlatforms; }
+
+    
+    inline void SetSupportedPlatforms(const Aws::Vector<SupportedPlatform>& value) { m_supportedPlatformsHasBeenSet = true; m_supportedPlatforms = value; }
+
+    
+    inline void SetSupportedPlatforms(Aws::Vector<SupportedPlatform>&& value) { m_supportedPlatformsHasBeenSet = true; m_supportedPlatforms = std::move(value); }
+
+    
+    inline AvailabilityZone& WithSupportedPlatforms(const Aws::Vector<SupportedPlatform>& value) { SetSupportedPlatforms(value); return *this;}
+
+    
+    inline AvailabilityZone& WithSupportedPlatforms(Aws::Vector<SupportedPlatform>&& value) { SetSupportedPlatforms(std::move(value)); return *this;}
+
+    
+    inline AvailabilityZone& AddSupportedPlatforms(const SupportedPlatform& value) { m_supportedPlatformsHasBeenSet = true; m_supportedPlatforms.push_back(value); return *this; }
+
+    
+    inline AvailabilityZone& AddSupportedPlatforms(SupportedPlatform&& value) { m_supportedPlatformsHasBeenSet = true; m_supportedPlatforms.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    Aws::Vector<SupportedPlatform> m_supportedPlatforms;
+    bool m_supportedPlatformsHasBeenSet;
   };
 
 } // namespace Model

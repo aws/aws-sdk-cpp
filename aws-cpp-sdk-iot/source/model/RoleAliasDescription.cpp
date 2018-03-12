@@ -30,6 +30,7 @@ namespace Model
 
 RoleAliasDescription::RoleAliasDescription() : 
     m_roleAliasHasBeenSet(false),
+    m_roleAliasArnHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_credentialDurationSeconds(0),
@@ -41,6 +42,7 @@ RoleAliasDescription::RoleAliasDescription() :
 
 RoleAliasDescription::RoleAliasDescription(const JsonValue& jsonValue) : 
     m_roleAliasHasBeenSet(false),
+    m_roleAliasArnHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_credentialDurationSeconds(0),
@@ -58,6 +60,13 @@ RoleAliasDescription& RoleAliasDescription::operator =(const JsonValue& jsonValu
     m_roleAlias = jsonValue.GetString("roleAlias");
 
     m_roleAliasHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("roleAliasArn"))
+  {
+    m_roleAliasArn = jsonValue.GetString("roleAliasArn");
+
+    m_roleAliasArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("roleArn"))
@@ -105,6 +114,12 @@ JsonValue RoleAliasDescription::Jsonize() const
   if(m_roleAliasHasBeenSet)
   {
    payload.WithString("roleAlias", m_roleAlias);
+
+  }
+
+  if(m_roleAliasArnHasBeenSet)
+  {
+   payload.WithString("roleAliasArn", m_roleAliasArn);
 
   }
 

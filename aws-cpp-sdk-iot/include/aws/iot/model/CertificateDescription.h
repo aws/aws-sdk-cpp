@@ -343,6 +343,16 @@ namespace Model
     inline CertificateDescription& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
 
 
+    
+    inline int GetCustomerVersion() const{ return m_customerVersion; }
+
+    
+    inline void SetCustomerVersion(int value) { m_customerVersionHasBeenSet = true; m_customerVersion = value; }
+
+    
+    inline CertificateDescription& WithCustomerVersion(int value) { SetCustomerVersion(value); return *this;}
+
+
     /**
      * <p>The transfer data.</p>
      */
@@ -367,6 +377,28 @@ namespace Model
      * <p>The transfer data.</p>
      */
     inline CertificateDescription& WithTransferData(TransferData&& value) { SetTransferData(std::move(value)); return *this;}
+
+
+    
+    inline const Aws::String& GetGenerationId() const{ return m_generationId; }
+
+    
+    inline void SetGenerationId(const Aws::String& value) { m_generationIdHasBeenSet = true; m_generationId = value; }
+
+    
+    inline void SetGenerationId(Aws::String&& value) { m_generationIdHasBeenSet = true; m_generationId = std::move(value); }
+
+    
+    inline void SetGenerationId(const char* value) { m_generationIdHasBeenSet = true; m_generationId.assign(value); }
+
+    
+    inline CertificateDescription& WithGenerationId(const Aws::String& value) { SetGenerationId(value); return *this;}
+
+    
+    inline CertificateDescription& WithGenerationId(Aws::String&& value) { SetGenerationId(std::move(value)); return *this;}
+
+    
+    inline CertificateDescription& WithGenerationId(const char* value) { SetGenerationId(value); return *this;}
 
   private:
 
@@ -397,8 +429,14 @@ namespace Model
     Aws::Utils::DateTime m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
 
+    int m_customerVersion;
+    bool m_customerVersionHasBeenSet;
+
     TransferData m_transferData;
     bool m_transferDataHasBeenSet;
+
+    Aws::String m_generationId;
+    bool m_generationIdHasBeenSet;
   };
 
 } // namespace Model

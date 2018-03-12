@@ -62,6 +62,24 @@ GetPolicyResult& GetPolicyResult::operator =(const Aws::AmazonWebServiceResult<J
 
   }
 
+  if(jsonValue.ValueExists("creationDate"))
+  {
+    m_creationDate = jsonValue.GetDouble("creationDate");
+
+  }
+
+  if(jsonValue.ValueExists("lastModifiedDate"))
+  {
+    m_lastModifiedDate = jsonValue.GetDouble("lastModifiedDate");
+
+  }
+
+  if(jsonValue.ValueExists("generationId"))
+  {
+    m_generationId = jsonValue.GetString("generationId");
+
+  }
+
 
 
   return *this;

@@ -37,7 +37,11 @@ CACertificateDescription::CACertificateDescription() :
     m_ownedByHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_autoRegistrationStatus(AutoRegistrationStatus::NOT_SET),
-    m_autoRegistrationStatusHasBeenSet(false)
+    m_autoRegistrationStatusHasBeenSet(false),
+    m_lastModifiedDateHasBeenSet(false),
+    m_customerVersion(0),
+    m_customerVersionHasBeenSet(false),
+    m_generationIdHasBeenSet(false)
 {
 }
 
@@ -50,7 +54,11 @@ CACertificateDescription::CACertificateDescription(const JsonValue& jsonValue) :
     m_ownedByHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_autoRegistrationStatus(AutoRegistrationStatus::NOT_SET),
-    m_autoRegistrationStatusHasBeenSet(false)
+    m_autoRegistrationStatusHasBeenSet(false),
+    m_lastModifiedDateHasBeenSet(false),
+    m_customerVersion(0),
+    m_customerVersionHasBeenSet(false),
+    m_generationIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -106,6 +114,27 @@ CACertificateDescription& CACertificateDescription::operator =(const JsonValue& 
     m_autoRegistrationStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("lastModifiedDate"))
+  {
+    m_lastModifiedDate = jsonValue.GetDouble("lastModifiedDate");
+
+    m_lastModifiedDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("customerVersion"))
+  {
+    m_customerVersion = jsonValue.GetInteger("customerVersion");
+
+    m_customerVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("generationId"))
+  {
+    m_generationId = jsonValue.GetString("generationId");
+
+    m_generationIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -150,6 +179,23 @@ JsonValue CACertificateDescription::Jsonize() const
   if(m_autoRegistrationStatusHasBeenSet)
   {
    payload.WithString("autoRegistrationStatus", AutoRegistrationStatusMapper::GetNameForAutoRegistrationStatus(m_autoRegistrationStatus));
+  }
+
+  if(m_lastModifiedDateHasBeenSet)
+  {
+   payload.WithDouble("lastModifiedDate", m_lastModifiedDate.SecondsWithMSPrecision());
+  }
+
+  if(m_customerVersionHasBeenSet)
+  {
+   payload.WithInteger("customerVersion", m_customerVersion);
+
+  }
+
+  if(m_generationIdHasBeenSet)
+  {
+   payload.WithString("generationId", m_generationId);
+
   }
 
   return payload;
