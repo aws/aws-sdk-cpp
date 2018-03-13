@@ -55,7 +55,8 @@ enum class ServiceDiscoveryErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  DUPLICATE_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CUSTOM_HEALTH_NOT_FOUND= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  DUPLICATE_REQUEST,
   INSTANCE_NOT_FOUND,
   INVALID_INPUT,
   NAMESPACE_ALREADY_EXISTS,

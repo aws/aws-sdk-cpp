@@ -28,7 +28,8 @@ CreateServiceRequest::CreateServiceRequest() :
     m_creatorRequestIdHasBeenSet(true),
     m_descriptionHasBeenSet(false),
     m_dnsConfigHasBeenSet(false),
-    m_healthCheckConfigHasBeenSet(false)
+    m_healthCheckConfigHasBeenSet(false),
+    m_healthCheckCustomConfigHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,12 @@ Aws::String CreateServiceRequest::SerializePayload() const
   if(m_healthCheckConfigHasBeenSet)
   {
    payload.WithObject("HealthCheckConfig", m_healthCheckConfig.Jsonize());
+
+  }
+
+  if(m_healthCheckCustomConfigHasBeenSet)
+  {
+   payload.WithObject("HealthCheckCustomConfig", m_healthCheckCustomConfig.Jsonize());
 
   }
 

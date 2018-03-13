@@ -29,6 +29,7 @@ namespace ServiceDiscoveryErrorMapper
 {
 
 static const int SERVICE_NOT_FOUND_HASH = HashingUtils::HashString("ServiceNotFound");
+static const int CUSTOM_HEALTH_NOT_FOUND_HASH = HashingUtils::HashString("CustomHealthNotFound");
 static const int DUPLICATE_REQUEST_HASH = HashingUtils::HashString("DuplicateRequest");
 static const int SERVICE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ServiceAlreadyExists");
 static const int OPERATION_NOT_FOUND_HASH = HashingUtils::HashString("OperationNotFound");
@@ -47,6 +48,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == SERVICE_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceDiscoveryErrors::SERVICE_NOT_FOUND), false);
+  }
+  else if (hashCode == CUSTOM_HEALTH_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceDiscoveryErrors::CUSTOM_HEALTH_NOT_FOUND), false);
   }
   else if (hashCode == DUPLICATE_REQUEST_HASH)
   {

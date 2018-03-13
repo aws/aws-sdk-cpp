@@ -318,21 +318,21 @@ namespace Model
      * includes an A record, the IPv4 address that you want Route 53 to return in
      * response to DNS queries, for example, <code>192.0.2.44</code>.</p> <p>This value
      * is required if the service specified by <code>ServiceId</code> includes settings
-     * for an A record. Either <code>AWS_INSTANCE_IPV4</code> or
-     * <code>AWS_INSTANCE_IPV6</code> is required if the service includes settings for
-     * an SRV record.</p> <p> <b>AWS_INSTANCE_IPV6</b> </p> <p>If the service
-     * configuration includes an AAAA record, the IPv6 address that you want Route 53
-     * to return in response to DNS queries, for example,
+     * for an A record. If the service includes settings for an SRV record, you must
+     * specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.</p> <p> <b>AWS_INSTANCE_IPV6</b> </p>
+     * <p>If the service configuration includes an AAAA record, the IPv6 address that
+     * you want Route 53 to return in response to DNS queries, for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.</p> <p>This value is
      * required if the service specified by <code>ServiceId</code> includes settings
-     * for an AAAA record. Either <code>AWS_INSTANCE_IPV4</code> or
-     * <code>AWS_INSTANCE_IPV6</code> is required if the service includes settings for
-     * an SRV record.</p> <p> <b>AWS_INSTANCE_PORT</b> </p> <p>If the service includes
-     * an SRV record, the value that you want Route 53 to return for the port.</p>
-     * <p>If the service includes <code>HealthCheckConfig</code>, the port on the
-     * endpoint that you want Route 53 to send requests to. </p> <p>This value is
-     * required if you specified settings for an SRV record when you created the
-     * service.</p>
+     * for an AAAA record. If the service includes settings for an SRV record, you must
+     * specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.</p> <p> <b>AWS_INSTANCE_PORT</b> </p>
+     * <p>If the service includes an SRV record, the value that you want Route 53 to
+     * return for the port.</p> <p>If the service includes
+     * <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53
+     * to send requests to. </p> <p>This value is required if you specified settings
+     * for an SRV record when you created the service.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
@@ -367,21 +367,21 @@ namespace Model
      * includes an A record, the IPv4 address that you want Route 53 to return in
      * response to DNS queries, for example, <code>192.0.2.44</code>.</p> <p>This value
      * is required if the service specified by <code>ServiceId</code> includes settings
-     * for an A record. Either <code>AWS_INSTANCE_IPV4</code> or
-     * <code>AWS_INSTANCE_IPV6</code> is required if the service includes settings for
-     * an SRV record.</p> <p> <b>AWS_INSTANCE_IPV6</b> </p> <p>If the service
-     * configuration includes an AAAA record, the IPv6 address that you want Route 53
-     * to return in response to DNS queries, for example,
+     * for an A record. If the service includes settings for an SRV record, you must
+     * specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.</p> <p> <b>AWS_INSTANCE_IPV6</b> </p>
+     * <p>If the service configuration includes an AAAA record, the IPv6 address that
+     * you want Route 53 to return in response to DNS queries, for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.</p> <p>This value is
      * required if the service specified by <code>ServiceId</code> includes settings
-     * for an AAAA record. Either <code>AWS_INSTANCE_IPV4</code> or
-     * <code>AWS_INSTANCE_IPV6</code> is required if the service includes settings for
-     * an SRV record.</p> <p> <b>AWS_INSTANCE_PORT</b> </p> <p>If the service includes
-     * an SRV record, the value that you want Route 53 to return for the port.</p>
-     * <p>If the service includes <code>HealthCheckConfig</code>, the port on the
-     * endpoint that you want Route 53 to send requests to. </p> <p>This value is
-     * required if you specified settings for an SRV record when you created the
-     * service.</p>
+     * for an AAAA record. If the service includes settings for an SRV record, you must
+     * specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.</p> <p> <b>AWS_INSTANCE_PORT</b> </p>
+     * <p>If the service includes an SRV record, the value that you want Route 53 to
+     * return for the port.</p> <p>If the service includes
+     * <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53
+     * to send requests to. </p> <p>This value is required if you specified settings
+     * for an SRV record when you created the service.</p>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
@@ -416,21 +416,21 @@ namespace Model
      * includes an A record, the IPv4 address that you want Route 53 to return in
      * response to DNS queries, for example, <code>192.0.2.44</code>.</p> <p>This value
      * is required if the service specified by <code>ServiceId</code> includes settings
-     * for an A record. Either <code>AWS_INSTANCE_IPV4</code> or
-     * <code>AWS_INSTANCE_IPV6</code> is required if the service includes settings for
-     * an SRV record.</p> <p> <b>AWS_INSTANCE_IPV6</b> </p> <p>If the service
-     * configuration includes an AAAA record, the IPv6 address that you want Route 53
-     * to return in response to DNS queries, for example,
+     * for an A record. If the service includes settings for an SRV record, you must
+     * specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.</p> <p> <b>AWS_INSTANCE_IPV6</b> </p>
+     * <p>If the service configuration includes an AAAA record, the IPv6 address that
+     * you want Route 53 to return in response to DNS queries, for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.</p> <p>This value is
      * required if the service specified by <code>ServiceId</code> includes settings
-     * for an AAAA record. Either <code>AWS_INSTANCE_IPV4</code> or
-     * <code>AWS_INSTANCE_IPV6</code> is required if the service includes settings for
-     * an SRV record.</p> <p> <b>AWS_INSTANCE_PORT</b> </p> <p>If the service includes
-     * an SRV record, the value that you want Route 53 to return for the port.</p>
-     * <p>If the service includes <code>HealthCheckConfig</code>, the port on the
-     * endpoint that you want Route 53 to send requests to. </p> <p>This value is
-     * required if you specified settings for an SRV record when you created the
-     * service.</p>
+     * for an AAAA record. If the service includes settings for an SRV record, you must
+     * specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.</p> <p> <b>AWS_INSTANCE_PORT</b> </p>
+     * <p>If the service includes an SRV record, the value that you want Route 53 to
+     * return for the port.</p> <p>If the service includes
+     * <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53
+     * to send requests to. </p> <p>This value is required if you specified settings
+     * for an SRV record when you created the service.</p>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
@@ -465,21 +465,21 @@ namespace Model
      * includes an A record, the IPv4 address that you want Route 53 to return in
      * response to DNS queries, for example, <code>192.0.2.44</code>.</p> <p>This value
      * is required if the service specified by <code>ServiceId</code> includes settings
-     * for an A record. Either <code>AWS_INSTANCE_IPV4</code> or
-     * <code>AWS_INSTANCE_IPV6</code> is required if the service includes settings for
-     * an SRV record.</p> <p> <b>AWS_INSTANCE_IPV6</b> </p> <p>If the service
-     * configuration includes an AAAA record, the IPv6 address that you want Route 53
-     * to return in response to DNS queries, for example,
+     * for an A record. If the service includes settings for an SRV record, you must
+     * specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.</p> <p> <b>AWS_INSTANCE_IPV6</b> </p>
+     * <p>If the service configuration includes an AAAA record, the IPv6 address that
+     * you want Route 53 to return in response to DNS queries, for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.</p> <p>This value is
      * required if the service specified by <code>ServiceId</code> includes settings
-     * for an AAAA record. Either <code>AWS_INSTANCE_IPV4</code> or
-     * <code>AWS_INSTANCE_IPV6</code> is required if the service includes settings for
-     * an SRV record.</p> <p> <b>AWS_INSTANCE_PORT</b> </p> <p>If the service includes
-     * an SRV record, the value that you want Route 53 to return for the port.</p>
-     * <p>If the service includes <code>HealthCheckConfig</code>, the port on the
-     * endpoint that you want Route 53 to send requests to. </p> <p>This value is
-     * required if you specified settings for an SRV record when you created the
-     * service.</p>
+     * for an AAAA record. If the service includes settings for an SRV record, you must
+     * specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.</p> <p> <b>AWS_INSTANCE_PORT</b> </p>
+     * <p>If the service includes an SRV record, the value that you want Route 53 to
+     * return for the port.</p> <p>If the service includes
+     * <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53
+     * to send requests to. </p> <p>This value is required if you specified settings
+     * for an SRV record when you created the service.</p>
      */
     inline RegisterInstanceRequest& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
@@ -514,21 +514,21 @@ namespace Model
      * includes an A record, the IPv4 address that you want Route 53 to return in
      * response to DNS queries, for example, <code>192.0.2.44</code>.</p> <p>This value
      * is required if the service specified by <code>ServiceId</code> includes settings
-     * for an A record. Either <code>AWS_INSTANCE_IPV4</code> or
-     * <code>AWS_INSTANCE_IPV6</code> is required if the service includes settings for
-     * an SRV record.</p> <p> <b>AWS_INSTANCE_IPV6</b> </p> <p>If the service
-     * configuration includes an AAAA record, the IPv6 address that you want Route 53
-     * to return in response to DNS queries, for example,
+     * for an A record. If the service includes settings for an SRV record, you must
+     * specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.</p> <p> <b>AWS_INSTANCE_IPV6</b> </p>
+     * <p>If the service configuration includes an AAAA record, the IPv6 address that
+     * you want Route 53 to return in response to DNS queries, for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.</p> <p>This value is
      * required if the service specified by <code>ServiceId</code> includes settings
-     * for an AAAA record. Either <code>AWS_INSTANCE_IPV4</code> or
-     * <code>AWS_INSTANCE_IPV6</code> is required if the service includes settings for
-     * an SRV record.</p> <p> <b>AWS_INSTANCE_PORT</b> </p> <p>If the service includes
-     * an SRV record, the value that you want Route 53 to return for the port.</p>
-     * <p>If the service includes <code>HealthCheckConfig</code>, the port on the
-     * endpoint that you want Route 53 to send requests to. </p> <p>This value is
-     * required if you specified settings for an SRV record when you created the
-     * service.</p>
+     * for an AAAA record. If the service includes settings for an SRV record, you must
+     * specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.</p> <p> <b>AWS_INSTANCE_PORT</b> </p>
+     * <p>If the service includes an SRV record, the value that you want Route 53 to
+     * return for the port.</p> <p>If the service includes
+     * <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53
+     * to send requests to. </p> <p>This value is required if you specified settings
+     * for an SRV record when you created the service.</p>
      */
     inline RegisterInstanceRequest& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
@@ -563,21 +563,21 @@ namespace Model
      * includes an A record, the IPv4 address that you want Route 53 to return in
      * response to DNS queries, for example, <code>192.0.2.44</code>.</p> <p>This value
      * is required if the service specified by <code>ServiceId</code> includes settings
-     * for an A record. Either <code>AWS_INSTANCE_IPV4</code> or
-     * <code>AWS_INSTANCE_IPV6</code> is required if the service includes settings for
-     * an SRV record.</p> <p> <b>AWS_INSTANCE_IPV6</b> </p> <p>If the service
-     * configuration includes an AAAA record, the IPv6 address that you want Route 53
-     * to return in response to DNS queries, for example,
+     * for an A record. If the service includes settings for an SRV record, you must
+     * specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.</p> <p> <b>AWS_INSTANCE_IPV6</b> </p>
+     * <p>If the service configuration includes an AAAA record, the IPv6 address that
+     * you want Route 53 to return in response to DNS queries, for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.</p> <p>This value is
      * required if the service specified by <code>ServiceId</code> includes settings
-     * for an AAAA record. Either <code>AWS_INSTANCE_IPV4</code> or
-     * <code>AWS_INSTANCE_IPV6</code> is required if the service includes settings for
-     * an SRV record.</p> <p> <b>AWS_INSTANCE_PORT</b> </p> <p>If the service includes
-     * an SRV record, the value that you want Route 53 to return for the port.</p>
-     * <p>If the service includes <code>HealthCheckConfig</code>, the port on the
-     * endpoint that you want Route 53 to send requests to. </p> <p>This value is
-     * required if you specified settings for an SRV record when you created the
-     * service.</p>
+     * for an AAAA record. If the service includes settings for an SRV record, you must
+     * specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.</p> <p> <b>AWS_INSTANCE_PORT</b> </p>
+     * <p>If the service includes an SRV record, the value that you want Route 53 to
+     * return for the port.</p> <p>If the service includes
+     * <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53
+     * to send requests to. </p> <p>This value is required if you specified settings
+     * for an SRV record when you created the service.</p>
      */
     inline RegisterInstanceRequest& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
@@ -612,21 +612,21 @@ namespace Model
      * includes an A record, the IPv4 address that you want Route 53 to return in
      * response to DNS queries, for example, <code>192.0.2.44</code>.</p> <p>This value
      * is required if the service specified by <code>ServiceId</code> includes settings
-     * for an A record. Either <code>AWS_INSTANCE_IPV4</code> or
-     * <code>AWS_INSTANCE_IPV6</code> is required if the service includes settings for
-     * an SRV record.</p> <p> <b>AWS_INSTANCE_IPV6</b> </p> <p>If the service
-     * configuration includes an AAAA record, the IPv6 address that you want Route 53
-     * to return in response to DNS queries, for example,
+     * for an A record. If the service includes settings for an SRV record, you must
+     * specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.</p> <p> <b>AWS_INSTANCE_IPV6</b> </p>
+     * <p>If the service configuration includes an AAAA record, the IPv6 address that
+     * you want Route 53 to return in response to DNS queries, for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.</p> <p>This value is
      * required if the service specified by <code>ServiceId</code> includes settings
-     * for an AAAA record. Either <code>AWS_INSTANCE_IPV4</code> or
-     * <code>AWS_INSTANCE_IPV6</code> is required if the service includes settings for
-     * an SRV record.</p> <p> <b>AWS_INSTANCE_PORT</b> </p> <p>If the service includes
-     * an SRV record, the value that you want Route 53 to return for the port.</p>
-     * <p>If the service includes <code>HealthCheckConfig</code>, the port on the
-     * endpoint that you want Route 53 to send requests to. </p> <p>This value is
-     * required if you specified settings for an SRV record when you created the
-     * service.</p>
+     * for an AAAA record. If the service includes settings for an SRV record, you must
+     * specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.</p> <p> <b>AWS_INSTANCE_PORT</b> </p>
+     * <p>If the service includes an SRV record, the value that you want Route 53 to
+     * return for the port.</p> <p>If the service includes
+     * <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53
+     * to send requests to. </p> <p>This value is required if you specified settings
+     * for an SRV record when you created the service.</p>
      */
     inline RegisterInstanceRequest& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
@@ -661,21 +661,21 @@ namespace Model
      * includes an A record, the IPv4 address that you want Route 53 to return in
      * response to DNS queries, for example, <code>192.0.2.44</code>.</p> <p>This value
      * is required if the service specified by <code>ServiceId</code> includes settings
-     * for an A record. Either <code>AWS_INSTANCE_IPV4</code> or
-     * <code>AWS_INSTANCE_IPV6</code> is required if the service includes settings for
-     * an SRV record.</p> <p> <b>AWS_INSTANCE_IPV6</b> </p> <p>If the service
-     * configuration includes an AAAA record, the IPv6 address that you want Route 53
-     * to return in response to DNS queries, for example,
+     * for an A record. If the service includes settings for an SRV record, you must
+     * specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.</p> <p> <b>AWS_INSTANCE_IPV6</b> </p>
+     * <p>If the service configuration includes an AAAA record, the IPv6 address that
+     * you want Route 53 to return in response to DNS queries, for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.</p> <p>This value is
      * required if the service specified by <code>ServiceId</code> includes settings
-     * for an AAAA record. Either <code>AWS_INSTANCE_IPV4</code> or
-     * <code>AWS_INSTANCE_IPV6</code> is required if the service includes settings for
-     * an SRV record.</p> <p> <b>AWS_INSTANCE_PORT</b> </p> <p>If the service includes
-     * an SRV record, the value that you want Route 53 to return for the port.</p>
-     * <p>If the service includes <code>HealthCheckConfig</code>, the port on the
-     * endpoint that you want Route 53 to send requests to. </p> <p>This value is
-     * required if you specified settings for an SRV record when you created the
-     * service.</p>
+     * for an AAAA record. If the service includes settings for an SRV record, you must
+     * specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.</p> <p> <b>AWS_INSTANCE_PORT</b> </p>
+     * <p>If the service includes an SRV record, the value that you want Route 53 to
+     * return for the port.</p> <p>If the service includes
+     * <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53
+     * to send requests to. </p> <p>This value is required if you specified settings
+     * for an SRV record when you created the service.</p>
      */
     inline RegisterInstanceRequest& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
@@ -710,21 +710,21 @@ namespace Model
      * includes an A record, the IPv4 address that you want Route 53 to return in
      * response to DNS queries, for example, <code>192.0.2.44</code>.</p> <p>This value
      * is required if the service specified by <code>ServiceId</code> includes settings
-     * for an A record. Either <code>AWS_INSTANCE_IPV4</code> or
-     * <code>AWS_INSTANCE_IPV6</code> is required if the service includes settings for
-     * an SRV record.</p> <p> <b>AWS_INSTANCE_IPV6</b> </p> <p>If the service
-     * configuration includes an AAAA record, the IPv6 address that you want Route 53
-     * to return in response to DNS queries, for example,
+     * for an A record. If the service includes settings for an SRV record, you must
+     * specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.</p> <p> <b>AWS_INSTANCE_IPV6</b> </p>
+     * <p>If the service configuration includes an AAAA record, the IPv6 address that
+     * you want Route 53 to return in response to DNS queries, for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.</p> <p>This value is
      * required if the service specified by <code>ServiceId</code> includes settings
-     * for an AAAA record. Either <code>AWS_INSTANCE_IPV4</code> or
-     * <code>AWS_INSTANCE_IPV6</code> is required if the service includes settings for
-     * an SRV record.</p> <p> <b>AWS_INSTANCE_PORT</b> </p> <p>If the service includes
-     * an SRV record, the value that you want Route 53 to return for the port.</p>
-     * <p>If the service includes <code>HealthCheckConfig</code>, the port on the
-     * endpoint that you want Route 53 to send requests to. </p> <p>This value is
-     * required if you specified settings for an SRV record when you created the
-     * service.</p>
+     * for an AAAA record. If the service includes settings for an SRV record, you must
+     * specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.</p> <p> <b>AWS_INSTANCE_PORT</b> </p>
+     * <p>If the service includes an SRV record, the value that you want Route 53 to
+     * return for the port.</p> <p>If the service includes
+     * <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53
+     * to send requests to. </p> <p>This value is required if you specified settings
+     * for an SRV record when you created the service.</p>
      */
     inline RegisterInstanceRequest& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -759,21 +759,21 @@ namespace Model
      * includes an A record, the IPv4 address that you want Route 53 to return in
      * response to DNS queries, for example, <code>192.0.2.44</code>.</p> <p>This value
      * is required if the service specified by <code>ServiceId</code> includes settings
-     * for an A record. Either <code>AWS_INSTANCE_IPV4</code> or
-     * <code>AWS_INSTANCE_IPV6</code> is required if the service includes settings for
-     * an SRV record.</p> <p> <b>AWS_INSTANCE_IPV6</b> </p> <p>If the service
-     * configuration includes an AAAA record, the IPv6 address that you want Route 53
-     * to return in response to DNS queries, for example,
+     * for an A record. If the service includes settings for an SRV record, you must
+     * specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.</p> <p> <b>AWS_INSTANCE_IPV6</b> </p>
+     * <p>If the service configuration includes an AAAA record, the IPv6 address that
+     * you want Route 53 to return in response to DNS queries, for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.</p> <p>This value is
      * required if the service specified by <code>ServiceId</code> includes settings
-     * for an AAAA record. Either <code>AWS_INSTANCE_IPV4</code> or
-     * <code>AWS_INSTANCE_IPV6</code> is required if the service includes settings for
-     * an SRV record.</p> <p> <b>AWS_INSTANCE_PORT</b> </p> <p>If the service includes
-     * an SRV record, the value that you want Route 53 to return for the port.</p>
-     * <p>If the service includes <code>HealthCheckConfig</code>, the port on the
-     * endpoint that you want Route 53 to send requests to. </p> <p>This value is
-     * required if you specified settings for an SRV record when you created the
-     * service.</p>
+     * for an AAAA record. If the service includes settings for an SRV record, you must
+     * specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.</p> <p> <b>AWS_INSTANCE_PORT</b> </p>
+     * <p>If the service includes an SRV record, the value that you want Route 53 to
+     * return for the port.</p> <p>If the service includes
+     * <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53
+     * to send requests to. </p> <p>This value is required if you specified settings
+     * for an SRV record when you created the service.</p>
      */
     inline RegisterInstanceRequest& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
@@ -808,21 +808,21 @@ namespace Model
      * includes an A record, the IPv4 address that you want Route 53 to return in
      * response to DNS queries, for example, <code>192.0.2.44</code>.</p> <p>This value
      * is required if the service specified by <code>ServiceId</code> includes settings
-     * for an A record. Either <code>AWS_INSTANCE_IPV4</code> or
-     * <code>AWS_INSTANCE_IPV6</code> is required if the service includes settings for
-     * an SRV record.</p> <p> <b>AWS_INSTANCE_IPV6</b> </p> <p>If the service
-     * configuration includes an AAAA record, the IPv6 address that you want Route 53
-     * to return in response to DNS queries, for example,
+     * for an A record. If the service includes settings for an SRV record, you must
+     * specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.</p> <p> <b>AWS_INSTANCE_IPV6</b> </p>
+     * <p>If the service configuration includes an AAAA record, the IPv6 address that
+     * you want Route 53 to return in response to DNS queries, for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.</p> <p>This value is
      * required if the service specified by <code>ServiceId</code> includes settings
-     * for an AAAA record. Either <code>AWS_INSTANCE_IPV4</code> or
-     * <code>AWS_INSTANCE_IPV6</code> is required if the service includes settings for
-     * an SRV record.</p> <p> <b>AWS_INSTANCE_PORT</b> </p> <p>If the service includes
-     * an SRV record, the value that you want Route 53 to return for the port.</p>
-     * <p>If the service includes <code>HealthCheckConfig</code>, the port on the
-     * endpoint that you want Route 53 to send requests to. </p> <p>This value is
-     * required if you specified settings for an SRV record when you created the
-     * service.</p>
+     * for an AAAA record. If the service includes settings for an SRV record, you must
+     * specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.</p> <p> <b>AWS_INSTANCE_PORT</b> </p>
+     * <p>If the service includes an SRV record, the value that you want Route 53 to
+     * return for the port.</p> <p>If the service includes
+     * <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53
+     * to send requests to. </p> <p>This value is required if you specified settings
+     * for an SRV record when you created the service.</p>
      */
     inline RegisterInstanceRequest& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
@@ -857,21 +857,21 @@ namespace Model
      * includes an A record, the IPv4 address that you want Route 53 to return in
      * response to DNS queries, for example, <code>192.0.2.44</code>.</p> <p>This value
      * is required if the service specified by <code>ServiceId</code> includes settings
-     * for an A record. Either <code>AWS_INSTANCE_IPV4</code> or
-     * <code>AWS_INSTANCE_IPV6</code> is required if the service includes settings for
-     * an SRV record.</p> <p> <b>AWS_INSTANCE_IPV6</b> </p> <p>If the service
-     * configuration includes an AAAA record, the IPv6 address that you want Route 53
-     * to return in response to DNS queries, for example,
+     * for an A record. If the service includes settings for an SRV record, you must
+     * specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.</p> <p> <b>AWS_INSTANCE_IPV6</b> </p>
+     * <p>If the service configuration includes an AAAA record, the IPv6 address that
+     * you want Route 53 to return in response to DNS queries, for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.</p> <p>This value is
      * required if the service specified by <code>ServiceId</code> includes settings
-     * for an AAAA record. Either <code>AWS_INSTANCE_IPV4</code> or
-     * <code>AWS_INSTANCE_IPV6</code> is required if the service includes settings for
-     * an SRV record.</p> <p> <b>AWS_INSTANCE_PORT</b> </p> <p>If the service includes
-     * an SRV record, the value that you want Route 53 to return for the port.</p>
-     * <p>If the service includes <code>HealthCheckConfig</code>, the port on the
-     * endpoint that you want Route 53 to send requests to. </p> <p>This value is
-     * required if you specified settings for an SRV record when you created the
-     * service.</p>
+     * for an AAAA record. If the service includes settings for an SRV record, you must
+     * specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.</p> <p> <b>AWS_INSTANCE_PORT</b> </p>
+     * <p>If the service includes an SRV record, the value that you want Route 53 to
+     * return for the port.</p> <p>If the service includes
+     * <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53
+     * to send requests to. </p> <p>This value is required if you specified settings
+     * for an SRV record when you created the service.</p>
      */
     inline RegisterInstanceRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 

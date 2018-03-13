@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/servicediscovery/model/DnsConfig.h>
 #include <aws/servicediscovery/model/HealthCheckConfig.h>
+#include <aws/servicediscovery/model/HealthCheckCustomConfig.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -257,6 +258,22 @@ namespace Model
      */
     inline CreateServiceRequest& WithHealthCheckConfig(HealthCheckConfig&& value) { SetHealthCheckConfig(std::move(value)); return *this;}
 
+
+    
+    inline const HealthCheckCustomConfig& GetHealthCheckCustomConfig() const{ return m_healthCheckCustomConfig; }
+
+    
+    inline void SetHealthCheckCustomConfig(const HealthCheckCustomConfig& value) { m_healthCheckCustomConfigHasBeenSet = true; m_healthCheckCustomConfig = value; }
+
+    
+    inline void SetHealthCheckCustomConfig(HealthCheckCustomConfig&& value) { m_healthCheckCustomConfigHasBeenSet = true; m_healthCheckCustomConfig = std::move(value); }
+
+    
+    inline CreateServiceRequest& WithHealthCheckCustomConfig(const HealthCheckCustomConfig& value) { SetHealthCheckCustomConfig(value); return *this;}
+
+    
+    inline CreateServiceRequest& WithHealthCheckCustomConfig(HealthCheckCustomConfig&& value) { SetHealthCheckCustomConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -273,6 +290,9 @@ namespace Model
 
     HealthCheckConfig m_healthCheckConfig;
     bool m_healthCheckConfigHasBeenSet;
+
+    HealthCheckCustomConfig m_healthCheckCustomConfig;
+    bool m_healthCheckCustomConfigHasBeenSet;
   };
 
 } // namespace Model

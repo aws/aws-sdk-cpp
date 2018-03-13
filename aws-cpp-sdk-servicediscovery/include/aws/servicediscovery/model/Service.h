@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/servicediscovery/model/DnsConfig.h>
 #include <aws/servicediscovery/model/HealthCheckConfig.h>
+#include <aws/servicediscovery/model/HealthCheckCustomConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -305,6 +306,22 @@ namespace Model
     inline Service& WithHealthCheckConfig(HealthCheckConfig&& value) { SetHealthCheckConfig(std::move(value)); return *this;}
 
 
+    
+    inline const HealthCheckCustomConfig& GetHealthCheckCustomConfig() const{ return m_healthCheckCustomConfig; }
+
+    
+    inline void SetHealthCheckCustomConfig(const HealthCheckCustomConfig& value) { m_healthCheckCustomConfigHasBeenSet = true; m_healthCheckCustomConfig = value; }
+
+    
+    inline void SetHealthCheckCustomConfig(HealthCheckCustomConfig&& value) { m_healthCheckCustomConfigHasBeenSet = true; m_healthCheckCustomConfig = std::move(value); }
+
+    
+    inline Service& WithHealthCheckCustomConfig(const HealthCheckCustomConfig& value) { SetHealthCheckCustomConfig(value); return *this;}
+
+    
+    inline Service& WithHealthCheckCustomConfig(HealthCheckCustomConfig&& value) { SetHealthCheckCustomConfig(std::move(value)); return *this;}
+
+
     /**
      * <p>The date and time that the service was created, in Unix format and
      * Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is
@@ -424,6 +441,9 @@ namespace Model
 
     HealthCheckConfig m_healthCheckConfig;
     bool m_healthCheckConfigHasBeenSet;
+
+    HealthCheckCustomConfig m_healthCheckCustomConfig;
+    bool m_healthCheckCustomConfigHasBeenSet;
 
     Aws::Utils::DateTime m_createDate;
     bool m_createDateHasBeenSet;

@@ -37,6 +37,7 @@ Service::Service() :
     m_instanceCountHasBeenSet(false),
     m_dnsConfigHasBeenSet(false),
     m_healthCheckConfigHasBeenSet(false),
+    m_healthCheckCustomConfigHasBeenSet(false),
     m_createDateHasBeenSet(false),
     m_creatorRequestIdHasBeenSet(false)
 {
@@ -51,6 +52,7 @@ Service::Service(const JsonValue& jsonValue) :
     m_instanceCountHasBeenSet(false),
     m_dnsConfigHasBeenSet(false),
     m_healthCheckConfigHasBeenSet(false),
+    m_healthCheckCustomConfigHasBeenSet(false),
     m_createDateHasBeenSet(false),
     m_creatorRequestIdHasBeenSet(false)
 {
@@ -106,6 +108,13 @@ Service& Service::operator =(const JsonValue& jsonValue)
     m_healthCheckConfig = jsonValue.GetObject("HealthCheckConfig");
 
     m_healthCheckConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("HealthCheckCustomConfig"))
+  {
+    m_healthCheckCustomConfig = jsonValue.GetObject("HealthCheckCustomConfig");
+
+    m_healthCheckCustomConfigHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CreateDate"))
@@ -168,6 +177,12 @@ JsonValue Service::Jsonize() const
   if(m_healthCheckConfigHasBeenSet)
   {
    payload.WithObject("HealthCheckConfig", m_healthCheckConfig.Jsonize());
+
+  }
+
+  if(m_healthCheckCustomConfigHasBeenSet)
+  {
+   payload.WithObject("HealthCheckCustomConfig", m_healthCheckCustomConfig.Jsonize());
 
   }
 
