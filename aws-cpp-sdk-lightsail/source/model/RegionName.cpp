@@ -34,8 +34,9 @@ namespace Aws
         static const int us_east_2_HASH = HashingUtils::HashString("us-east-2");
         static const int us_west_1_HASH = HashingUtils::HashString("us-west-1");
         static const int us_west_2_HASH = HashingUtils::HashString("us-west-2");
-        static const int eu_west_1_HASH = HashingUtils::HashString("eu-west-1");
         static const int eu_central_1_HASH = HashingUtils::HashString("eu-central-1");
+        static const int eu_west_1_HASH = HashingUtils::HashString("eu-west-1");
+        static const int eu_west_2_HASH = HashingUtils::HashString("eu-west-2");
         static const int ap_south_1_HASH = HashingUtils::HashString("ap-south-1");
         static const int ap_southeast_1_HASH = HashingUtils::HashString("ap-southeast-1");
         static const int ap_southeast_2_HASH = HashingUtils::HashString("ap-southeast-2");
@@ -62,13 +63,17 @@ namespace Aws
           {
             return RegionName::us_west_2;
           }
+          else if (hashCode == eu_central_1_HASH)
+          {
+            return RegionName::eu_central_1;
+          }
           else if (hashCode == eu_west_1_HASH)
           {
             return RegionName::eu_west_1;
           }
-          else if (hashCode == eu_central_1_HASH)
+          else if (hashCode == eu_west_2_HASH)
           {
-            return RegionName::eu_central_1;
+            return RegionName::eu_west_2;
           }
           else if (hashCode == ap_south_1_HASH)
           {
@@ -112,10 +117,12 @@ namespace Aws
             return "us-west-1";
           case RegionName::us_west_2:
             return "us-west-2";
-          case RegionName::eu_west_1:
-            return "eu-west-1";
           case RegionName::eu_central_1:
             return "eu-central-1";
+          case RegionName::eu_west_1:
+            return "eu-west-1";
+          case RegionName::eu_west_2:
+            return "eu-west-2";
           case RegionName::ap_south_1:
             return "ap-south-1";
           case RegionName::ap_southeast_1:

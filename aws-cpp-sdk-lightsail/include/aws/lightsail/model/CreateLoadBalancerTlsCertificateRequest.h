@@ -46,165 +46,216 @@ namespace Model
 
 
     /**
-     * <p>The load balancer name where you want to create the TLS/SSL certificate.</p>
+     * <p>The load balancer name where you want to create the SSL/TLS certificate.</p>
      */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
 
     /**
-     * <p>The load balancer name where you want to create the TLS/SSL certificate.</p>
+     * <p>The load balancer name where you want to create the SSL/TLS certificate.</p>
      */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /**
-     * <p>The load balancer name where you want to create the TLS/SSL certificate.</p>
+     * <p>The load balancer name where you want to create the SSL/TLS certificate.</p>
      */
     inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::move(value); }
 
     /**
-     * <p>The load balancer name where you want to create the TLS/SSL certificate.</p>
+     * <p>The load balancer name where you want to create the SSL/TLS certificate.</p>
      */
     inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
 
     /**
-     * <p>The load balancer name where you want to create the TLS/SSL certificate.</p>
+     * <p>The load balancer name where you want to create the SSL/TLS certificate.</p>
      */
     inline CreateLoadBalancerTlsCertificateRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
 
     /**
-     * <p>The load balancer name where you want to create the TLS/SSL certificate.</p>
+     * <p>The load balancer name where you want to create the SSL/TLS certificate.</p>
      */
     inline CreateLoadBalancerTlsCertificateRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(std::move(value)); return *this;}
 
     /**
-     * <p>The load balancer name where you want to create the TLS/SSL certificate.</p>
+     * <p>The load balancer name where you want to create the SSL/TLS certificate.</p>
      */
     inline CreateLoadBalancerTlsCertificateRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
 
 
     /**
-     * <p>The TLS/SSL certificate name.</p>
+     * <p>The SSL/TLS certificate name.</p> <p>You can have up to 10 certificates in
+     * your account at one time. Each Lightsail load balancer can have up to 2
+     * certificates associated with it at one time. There is also an overall limit to
+     * the number of certificates that can be issue in a 365-day period. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
      */
     inline const Aws::String& GetCertificateName() const{ return m_certificateName; }
 
     /**
-     * <p>The TLS/SSL certificate name.</p>
+     * <p>The SSL/TLS certificate name.</p> <p>You can have up to 10 certificates in
+     * your account at one time. Each Lightsail load balancer can have up to 2
+     * certificates associated with it at one time. There is also an overall limit to
+     * the number of certificates that can be issue in a 365-day period. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
      */
     inline void SetCertificateName(const Aws::String& value) { m_certificateNameHasBeenSet = true; m_certificateName = value; }
 
     /**
-     * <p>The TLS/SSL certificate name.</p>
+     * <p>The SSL/TLS certificate name.</p> <p>You can have up to 10 certificates in
+     * your account at one time. Each Lightsail load balancer can have up to 2
+     * certificates associated with it at one time. There is also an overall limit to
+     * the number of certificates that can be issue in a 365-day period. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
      */
     inline void SetCertificateName(Aws::String&& value) { m_certificateNameHasBeenSet = true; m_certificateName = std::move(value); }
 
     /**
-     * <p>The TLS/SSL certificate name.</p>
+     * <p>The SSL/TLS certificate name.</p> <p>You can have up to 10 certificates in
+     * your account at one time. Each Lightsail load balancer can have up to 2
+     * certificates associated with it at one time. There is also an overall limit to
+     * the number of certificates that can be issue in a 365-day period. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
      */
     inline void SetCertificateName(const char* value) { m_certificateNameHasBeenSet = true; m_certificateName.assign(value); }
 
     /**
-     * <p>The TLS/SSL certificate name.</p>
+     * <p>The SSL/TLS certificate name.</p> <p>You can have up to 10 certificates in
+     * your account at one time. Each Lightsail load balancer can have up to 2
+     * certificates associated with it at one time. There is also an overall limit to
+     * the number of certificates that can be issue in a 365-day period. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
      */
     inline CreateLoadBalancerTlsCertificateRequest& WithCertificateName(const Aws::String& value) { SetCertificateName(value); return *this;}
 
     /**
-     * <p>The TLS/SSL certificate name.</p>
+     * <p>The SSL/TLS certificate name.</p> <p>You can have up to 10 certificates in
+     * your account at one time. Each Lightsail load balancer can have up to 2
+     * certificates associated with it at one time. There is also an overall limit to
+     * the number of certificates that can be issue in a 365-day period. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
      */
     inline CreateLoadBalancerTlsCertificateRequest& WithCertificateName(Aws::String&& value) { SetCertificateName(std::move(value)); return *this;}
 
     /**
-     * <p>The TLS/SSL certificate name.</p>
+     * <p>The SSL/TLS certificate name.</p> <p>You can have up to 10 certificates in
+     * your account at one time. Each Lightsail load balancer can have up to 2
+     * certificates associated with it at one time. There is also an overall limit to
+     * the number of certificates that can be issue in a 365-day period. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
      */
     inline CreateLoadBalancerTlsCertificateRequest& WithCertificateName(const char* value) { SetCertificateName(value); return *this;}
 
 
     /**
-     * <p>The domain name (e.g., <code>example.com</code>) for your TLS/SSL
+     * <p>The domain name (e.g., <code>example.com</code>) for your SSL/TLS
      * certificate.</p>
      */
     inline const Aws::String& GetCertificateDomainName() const{ return m_certificateDomainName; }
 
     /**
-     * <p>The domain name (e.g., <code>example.com</code>) for your TLS/SSL
+     * <p>The domain name (e.g., <code>example.com</code>) for your SSL/TLS
      * certificate.</p>
      */
     inline void SetCertificateDomainName(const Aws::String& value) { m_certificateDomainNameHasBeenSet = true; m_certificateDomainName = value; }
 
     /**
-     * <p>The domain name (e.g., <code>example.com</code>) for your TLS/SSL
+     * <p>The domain name (e.g., <code>example.com</code>) for your SSL/TLS
      * certificate.</p>
      */
     inline void SetCertificateDomainName(Aws::String&& value) { m_certificateDomainNameHasBeenSet = true; m_certificateDomainName = std::move(value); }
 
     /**
-     * <p>The domain name (e.g., <code>example.com</code>) for your TLS/SSL
+     * <p>The domain name (e.g., <code>example.com</code>) for your SSL/TLS
      * certificate.</p>
      */
     inline void SetCertificateDomainName(const char* value) { m_certificateDomainNameHasBeenSet = true; m_certificateDomainName.assign(value); }
 
     /**
-     * <p>The domain name (e.g., <code>example.com</code>) for your TLS/SSL
+     * <p>The domain name (e.g., <code>example.com</code>) for your SSL/TLS
      * certificate.</p>
      */
     inline CreateLoadBalancerTlsCertificateRequest& WithCertificateDomainName(const Aws::String& value) { SetCertificateDomainName(value); return *this;}
 
     /**
-     * <p>The domain name (e.g., <code>example.com</code>) for your TLS/SSL
+     * <p>The domain name (e.g., <code>example.com</code>) for your SSL/TLS
      * certificate.</p>
      */
     inline CreateLoadBalancerTlsCertificateRequest& WithCertificateDomainName(Aws::String&& value) { SetCertificateDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>The domain name (e.g., <code>example.com</code>) for your TLS/SSL
+     * <p>The domain name (e.g., <code>example.com</code>) for your SSL/TLS
      * certificate.</p>
      */
     inline CreateLoadBalancerTlsCertificateRequest& WithCertificateDomainName(const char* value) { SetCertificateDomainName(value); return *this;}
 
 
     /**
-     * <p>An array of strings listing alternative domain names for your TLS/SSL
-     * certificate.</p>
+     * <p>An array of strings listing alternative domains and subdomains for your
+     * SSL/TLS certificate. Lightsail will de-dupe the names for you. You can have a
+     * maximum of 9 alternative names (in addition to the 1 primary domain). We do not
+     * support wildcards (e.g., <code>*.example.com</code>).</p>
      */
     inline const Aws::Vector<Aws::String>& GetCertificateAlternativeNames() const{ return m_certificateAlternativeNames; }
 
     /**
-     * <p>An array of strings listing alternative domain names for your TLS/SSL
-     * certificate.</p>
+     * <p>An array of strings listing alternative domains and subdomains for your
+     * SSL/TLS certificate. Lightsail will de-dupe the names for you. You can have a
+     * maximum of 9 alternative names (in addition to the 1 primary domain). We do not
+     * support wildcards (e.g., <code>*.example.com</code>).</p>
      */
     inline void SetCertificateAlternativeNames(const Aws::Vector<Aws::String>& value) { m_certificateAlternativeNamesHasBeenSet = true; m_certificateAlternativeNames = value; }
 
     /**
-     * <p>An array of strings listing alternative domain names for your TLS/SSL
-     * certificate.</p>
+     * <p>An array of strings listing alternative domains and subdomains for your
+     * SSL/TLS certificate. Lightsail will de-dupe the names for you. You can have a
+     * maximum of 9 alternative names (in addition to the 1 primary domain). We do not
+     * support wildcards (e.g., <code>*.example.com</code>).</p>
      */
     inline void SetCertificateAlternativeNames(Aws::Vector<Aws::String>&& value) { m_certificateAlternativeNamesHasBeenSet = true; m_certificateAlternativeNames = std::move(value); }
 
     /**
-     * <p>An array of strings listing alternative domain names for your TLS/SSL
-     * certificate.</p>
+     * <p>An array of strings listing alternative domains and subdomains for your
+     * SSL/TLS certificate. Lightsail will de-dupe the names for you. You can have a
+     * maximum of 9 alternative names (in addition to the 1 primary domain). We do not
+     * support wildcards (e.g., <code>*.example.com</code>).</p>
      */
     inline CreateLoadBalancerTlsCertificateRequest& WithCertificateAlternativeNames(const Aws::Vector<Aws::String>& value) { SetCertificateAlternativeNames(value); return *this;}
 
     /**
-     * <p>An array of strings listing alternative domain names for your TLS/SSL
-     * certificate.</p>
+     * <p>An array of strings listing alternative domains and subdomains for your
+     * SSL/TLS certificate. Lightsail will de-dupe the names for you. You can have a
+     * maximum of 9 alternative names (in addition to the 1 primary domain). We do not
+     * support wildcards (e.g., <code>*.example.com</code>).</p>
      */
     inline CreateLoadBalancerTlsCertificateRequest& WithCertificateAlternativeNames(Aws::Vector<Aws::String>&& value) { SetCertificateAlternativeNames(std::move(value)); return *this;}
 
     /**
-     * <p>An array of strings listing alternative domain names for your TLS/SSL
-     * certificate.</p>
+     * <p>An array of strings listing alternative domains and subdomains for your
+     * SSL/TLS certificate. Lightsail will de-dupe the names for you. You can have a
+     * maximum of 9 alternative names (in addition to the 1 primary domain). We do not
+     * support wildcards (e.g., <code>*.example.com</code>).</p>
      */
     inline CreateLoadBalancerTlsCertificateRequest& AddCertificateAlternativeNames(const Aws::String& value) { m_certificateAlternativeNamesHasBeenSet = true; m_certificateAlternativeNames.push_back(value); return *this; }
 
     /**
-     * <p>An array of strings listing alternative domain names for your TLS/SSL
-     * certificate.</p>
+     * <p>An array of strings listing alternative domains and subdomains for your
+     * SSL/TLS certificate. Lightsail will de-dupe the names for you. You can have a
+     * maximum of 9 alternative names (in addition to the 1 primary domain). We do not
+     * support wildcards (e.g., <code>*.example.com</code>).</p>
      */
     inline CreateLoadBalancerTlsCertificateRequest& AddCertificateAlternativeNames(Aws::String&& value) { m_certificateAlternativeNamesHasBeenSet = true; m_certificateAlternativeNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array of strings listing alternative domain names for your TLS/SSL
-     * certificate.</p>
+     * <p>An array of strings listing alternative domains and subdomains for your
+     * SSL/TLS certificate. Lightsail will de-dupe the names for you. You can have a
+     * maximum of 9 alternative names (in addition to the 1 primary domain). We do not
+     * support wildcards (e.g., <code>*.example.com</code>).</p>
      */
     inline CreateLoadBalancerTlsCertificateRequest& AddCertificateAlternativeNames(const char* value) { m_certificateAlternativeNamesHasBeenSet = true; m_certificateAlternativeNames.push_back(value); return *this; }
 

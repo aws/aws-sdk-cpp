@@ -529,16 +529,18 @@ namespace Model
         virtual void AttachDiskAsync(const Model::AttachDiskRequest& request, const AttachDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Attaches one or more Lightsail instances to a load balancer.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Attaches one or more Lightsail instances to a load balancer.</p> <p>After
+         * some time, the instances are attached to the load balancer and the health check
+         * status is available.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachInstancesToLoadBalancer">AWS
          * API Reference</a></p>
          */
         virtual Model::AttachInstancesToLoadBalancerOutcome AttachInstancesToLoadBalancer(const Model::AttachInstancesToLoadBalancerRequest& request) const;
 
         /**
-         * <p>Attaches one or more Lightsail instances to a load balancer.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Attaches one or more Lightsail instances to a load balancer.</p> <p>After
+         * some time, the instances are attached to the load balancer and the health check
+         * status is available.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachInstancesToLoadBalancer">AWS
          * API Reference</a></p>
          *
@@ -547,8 +549,9 @@ namespace Model
         virtual Model::AttachInstancesToLoadBalancerOutcomeCallable AttachInstancesToLoadBalancerCallable(const Model::AttachInstancesToLoadBalancerRequest& request) const;
 
         /**
-         * <p>Attaches one or more Lightsail instances to a load balancer.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Attaches one or more Lightsail instances to a load balancer.</p> <p>After
+         * some time, the instances are attached to the load balancer and the health check
+         * status is available.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachInstancesToLoadBalancer">AWS
          * API Reference</a></p>
          *
@@ -557,18 +560,26 @@ namespace Model
         virtual void AttachInstancesToLoadBalancerAsync(const Model::AttachInstancesToLoadBalancerRequest& request, const AttachInstancesToLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Attaches a Transport Layer Security (TLS) certificate to your load
-         * balancer.</p> <p>TLS is just an updated, more secure version of Secure Socket
-         * Layer (SSL).</p><p><h3>See Also:</h3>   <a
+         * <p>Attaches a Transport Layer Security (TLS) certificate to your load balancer.
+         * TLS is just an updated, more secure version of Secure Socket Layer (SSL).</p>
+         * <p>Once you create and validate your certificate, you can attach it to your load
+         * balancer. You can also use this API to rotate the certificates on your account.
+         * Use the <code>AttachLoadBalancerTlsCertificate</code> operation with the
+         * non-attached certificate, and it will replace the existing one and become the
+         * attached certificate.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachLoadBalancerTlsCertificate">AWS
          * API Reference</a></p>
          */
         virtual Model::AttachLoadBalancerTlsCertificateOutcome AttachLoadBalancerTlsCertificate(const Model::AttachLoadBalancerTlsCertificateRequest& request) const;
 
         /**
-         * <p>Attaches a Transport Layer Security (TLS) certificate to your load
-         * balancer.</p> <p>TLS is just an updated, more secure version of Secure Socket
-         * Layer (SSL).</p><p><h3>See Also:</h3>   <a
+         * <p>Attaches a Transport Layer Security (TLS) certificate to your load balancer.
+         * TLS is just an updated, more secure version of Secure Socket Layer (SSL).</p>
+         * <p>Once you create and validate your certificate, you can attach it to your load
+         * balancer. You can also use this API to rotate the certificates on your account.
+         * Use the <code>AttachLoadBalancerTlsCertificate</code> operation with the
+         * non-attached certificate, and it will replace the existing one and become the
+         * attached certificate.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachLoadBalancerTlsCertificate">AWS
          * API Reference</a></p>
          *
@@ -577,9 +588,13 @@ namespace Model
         virtual Model::AttachLoadBalancerTlsCertificateOutcomeCallable AttachLoadBalancerTlsCertificateCallable(const Model::AttachLoadBalancerTlsCertificateRequest& request) const;
 
         /**
-         * <p>Attaches a Transport Layer Security (TLS) certificate to your load
-         * balancer.</p> <p>TLS is just an updated, more secure version of Secure Socket
-         * Layer (SSL).</p><p><h3>See Also:</h3>   <a
+         * <p>Attaches a Transport Layer Security (TLS) certificate to your load balancer.
+         * TLS is just an updated, more secure version of Secure Socket Layer (SSL).</p>
+         * <p>Once you create and validate your certificate, you can attach it to your load
+         * balancer. You can also use this API to rotate the certificates on your account.
+         * Use the <code>AttachLoadBalancerTlsCertificate</code> operation with the
+         * non-attached certificate, and it will replace the existing one and become the
+         * attached certificate.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachLoadBalancerTlsCertificate">AWS
          * API Reference</a></p>
          *
@@ -953,18 +968,28 @@ namespace Model
         virtual void CreateKeyPairAsync(const Model::CreateKeyPairRequest& request, const CreateKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a Lightsail load balancer.</p> <p>When you create a load balancer,
-         * you can specify certificates and port settings. You can create up to 5 load
-         * balancers per AWS Region in your account.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a Lightsail load balancer. To learn more about deciding whether to
+         * load balance your application, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/how-to/article/configure-lightsail-instances-for-load-balancing">Configure
+         * your Lightsail instances for load balancing</a>. You can create up to 5 load
+         * balancers per AWS Region in your account.</p> <p>When you create a load
+         * balancer, you can specify a unique name and port settings. To change additional
+         * load balancer settings, use the <code>UpdateLoadBalancerAttribute</code>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateLoadBalancer">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateLoadBalancerOutcome CreateLoadBalancer(const Model::CreateLoadBalancerRequest& request) const;
 
         /**
-         * <p>Creates a Lightsail load balancer.</p> <p>When you create a load balancer,
-         * you can specify certificates and port settings. You can create up to 5 load
-         * balancers per AWS Region in your account.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a Lightsail load balancer. To learn more about deciding whether to
+         * load balance your application, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/how-to/article/configure-lightsail-instances-for-load-balancing">Configure
+         * your Lightsail instances for load balancing</a>. You can create up to 5 load
+         * balancers per AWS Region in your account.</p> <p>When you create a load
+         * balancer, you can specify a unique name and port settings. To change additional
+         * load balancer settings, use the <code>UpdateLoadBalancerAttribute</code>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateLoadBalancer">AWS
          * API Reference</a></p>
          *
@@ -973,9 +998,14 @@ namespace Model
         virtual Model::CreateLoadBalancerOutcomeCallable CreateLoadBalancerCallable(const Model::CreateLoadBalancerRequest& request) const;
 
         /**
-         * <p>Creates a Lightsail load balancer.</p> <p>When you create a load balancer,
-         * you can specify certificates and port settings. You can create up to 5 load
-         * balancers per AWS Region in your account.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a Lightsail load balancer. To learn more about deciding whether to
+         * load balance your application, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/how-to/article/configure-lightsail-instances-for-load-balancing">Configure
+         * your Lightsail instances for load balancing</a>. You can create up to 5 load
+         * balancers per AWS Region in your account.</p> <p>When you create a load
+         * balancer, you can specify a unique name and port settings. To change additional
+         * load balancer settings, use the <code>UpdateLoadBalancerAttribute</code>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateLoadBalancer">AWS
          * API Reference</a></p>
          *
@@ -1226,14 +1256,20 @@ namespace Model
         virtual void DeleteKeyPairAsync(const Model::DeleteKeyPairRequest& request, const DeleteKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a Lightsail load balancer.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a Lightsail load balancer and all its associated SSL/TLS
+         * certificates. Once the load balancer is deleted, you will need to create a new
+         * load balancer, create a new certificate, and verify domain ownership
+         * again.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancer">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteLoadBalancerOutcome DeleteLoadBalancer(const Model::DeleteLoadBalancerRequest& request) const;
 
         /**
-         * <p>Deletes a Lightsail load balancer.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a Lightsail load balancer and all its associated SSL/TLS
+         * certificates. Once the load balancer is deleted, you will need to create a new
+         * load balancer, create a new certificate, and verify domain ownership
+         * again.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancer">AWS
          * API Reference</a></p>
          *
@@ -1242,7 +1278,10 @@ namespace Model
         virtual Model::DeleteLoadBalancerOutcomeCallable DeleteLoadBalancerCallable(const Model::DeleteLoadBalancerRequest& request) const;
 
         /**
-         * <p>Deletes a Lightsail load balancer.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a Lightsail load balancer and all its associated SSL/TLS
+         * certificates. Once the load balancer is deleted, you will need to create a new
+         * load balancer, create a new certificate, and verify domain ownership
+         * again.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancer">AWS
          * API Reference</a></p>
          *
@@ -1251,7 +1290,7 @@ namespace Model
         virtual void DeleteLoadBalancerAsync(const Model::DeleteLoadBalancerRequest& request, const DeleteLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a TLS/SSL certificate associated with a Lightsail load
+         * <p>Deletes an SSL/TLS certificate associated with a Lightsail load
          * balancer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancerTlsCertificate">AWS
          * API Reference</a></p>
@@ -1259,7 +1298,7 @@ namespace Model
         virtual Model::DeleteLoadBalancerTlsCertificateOutcome DeleteLoadBalancerTlsCertificate(const Model::DeleteLoadBalancerTlsCertificateRequest& request) const;
 
         /**
-         * <p>Deletes a TLS/SSL certificate associated with a Lightsail load
+         * <p>Deletes an SSL/TLS certificate associated with a Lightsail load
          * balancer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancerTlsCertificate">AWS
          * API Reference</a></p>
@@ -1269,7 +1308,7 @@ namespace Model
         virtual Model::DeleteLoadBalancerTlsCertificateOutcomeCallable DeleteLoadBalancerTlsCertificateCallable(const Model::DeleteLoadBalancerTlsCertificateRequest& request) const;
 
         /**
-         * <p>Deletes a TLS/SSL certificate associated with a Lightsail load
+         * <p>Deletes an SSL/TLS certificate associated with a Lightsail load
          * balancer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancerTlsCertificate">AWS
          * API Reference</a></p>
@@ -1310,16 +1349,18 @@ namespace Model
         virtual void DetachDiskAsync(const Model::DetachDiskRequest& request, const DetachDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Detaches the specified instances from a Lightsail load
-         * balancer.</p><p><h3>See Also:</h3>   <a
+         * <p>Detaches the specified instances from a Lightsail load balancer.</p> <p>This
+         * operation waits until the instances are no longer needed before they are
+         * detached from the load balancer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachInstancesFromLoadBalancer">AWS
          * API Reference</a></p>
          */
         virtual Model::DetachInstancesFromLoadBalancerOutcome DetachInstancesFromLoadBalancer(const Model::DetachInstancesFromLoadBalancerRequest& request) const;
 
         /**
-         * <p>Detaches the specified instances from a Lightsail load
-         * balancer.</p><p><h3>See Also:</h3>   <a
+         * <p>Detaches the specified instances from a Lightsail load balancer.</p> <p>This
+         * operation waits until the instances are no longer needed before they are
+         * detached from the load balancer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachInstancesFromLoadBalancer">AWS
          * API Reference</a></p>
          *
@@ -1328,8 +1369,9 @@ namespace Model
         virtual Model::DetachInstancesFromLoadBalancerOutcomeCallable DetachInstancesFromLoadBalancerCallable(const Model::DetachInstancesFromLoadBalancerRequest& request) const;
 
         /**
-         * <p>Detaches the specified instances from a Lightsail load
-         * balancer.</p><p><h3>See Also:</h3>   <a
+         * <p>Detaches the specified instances from a Lightsail load balancer.</p> <p>This
+         * operation waits until the instances are no longer needed before they are
+         * detached from the load balancer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachInstancesFromLoadBalancer">AWS
          * API Reference</a></p>
          *
@@ -2011,7 +2053,9 @@ namespace Model
         /**
          * <p>Returns information about the TLS certificates that are associated with the
          * specified Lightsail load balancer.</p> <p>TLS is just an updated, more secure
-         * version of Secure Socket Layer (SSL).</p><p><h3>See Also:</h3>   <a
+         * version of Secure Socket Layer (SSL).</p> <p>You can have a maximum of 2
+         * certificates associated with a Lightsail load balancer. One is active and the
+         * other is inactive.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancerTlsCertificates">AWS
          * API Reference</a></p>
          */
@@ -2020,7 +2064,9 @@ namespace Model
         /**
          * <p>Returns information about the TLS certificates that are associated with the
          * specified Lightsail load balancer.</p> <p>TLS is just an updated, more secure
-         * version of Secure Socket Layer (SSL).</p><p><h3>See Also:</h3>   <a
+         * version of Secure Socket Layer (SSL).</p> <p>You can have a maximum of 2
+         * certificates associated with a Lightsail load balancer. One is active and the
+         * other is inactive.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancerTlsCertificates">AWS
          * API Reference</a></p>
          *
@@ -2031,7 +2077,9 @@ namespace Model
         /**
          * <p>Returns information about the TLS certificates that are associated with the
          * specified Lightsail load balancer.</p> <p>TLS is just an updated, more secure
-         * version of Secure Socket Layer (SSL).</p><p><h3>See Also:</h3>   <a
+         * version of Secure Socket Layer (SSL).</p> <p>You can have a maximum of 2
+         * certificates associated with a Lightsail load balancer. One is active and the
+         * other is inactive.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancerTlsCertificates">AWS
          * API Reference</a></p>
          *
@@ -2565,16 +2613,16 @@ namespace Model
         virtual void UpdateDomainEntryAsync(const Model::UpdateDomainEntryRequest& request, const UpdateDomainEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the specified attribute for a load balancer.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Updates the specified attribute for a load balancer. You can only update one
+         * attribute at a time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateLoadBalancerAttribute">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateLoadBalancerAttributeOutcome UpdateLoadBalancerAttribute(const Model::UpdateLoadBalancerAttributeRequest& request) const;
 
         /**
-         * <p>Updates the specified attribute for a load balancer.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Updates the specified attribute for a load balancer. You can only update one
+         * attribute at a time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateLoadBalancerAttribute">AWS
          * API Reference</a></p>
          *
@@ -2583,8 +2631,8 @@ namespace Model
         virtual Model::UpdateLoadBalancerAttributeOutcomeCallable UpdateLoadBalancerAttributeCallable(const Model::UpdateLoadBalancerAttributeRequest& request) const;
 
         /**
-         * <p>Updates the specified attribute for a load balancer.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Updates the specified attribute for a load balancer. You can only update one
+         * attribute at a time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateLoadBalancerAttribute">AWS
          * API Reference</a></p>
          *

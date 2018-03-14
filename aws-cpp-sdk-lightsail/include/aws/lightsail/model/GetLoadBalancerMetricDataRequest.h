@@ -502,43 +502,134 @@ namespace Model
 
     /**
      * <p>An array of statistics that you want to request metrics for. Valid values are
-     * listed below.</p>
+     * listed below.</p> <ul> <li> <p> <b> <code>SampleCount</code> </b> - The count
+     * (number) of data points used for the statistical calculation.</p> </li> <li> <p>
+     * <b> <code>Average</code> </b> - The value of Sum / SampleCount during the
+     * specified period. By comparing this statistic with the Minimum and Maximum, you
+     * can determine the full scope of a metric and how close the average use is to the
+     * Minimum and Maximum. This comparison helps you to know when to increase or
+     * decrease your resources as needed.</p> </li> <li> <p> <b> <code>Sum</code> </b>
+     * - All values submitted for the matching metric added together. This statistic
+     * can be useful for determining the total volume of a metric.</p> </li> <li> <p>
+     * <b> <code>Minimum</code> </b> - The lowest value observed during the specified
+     * period. You can use this value to determine low volumes of activity for your
+     * application.</p> </li> <li> <p> <b> <code>Maximum</code> </b> - The highest
+     * value observed during the specified period. You can use this value to determine
+     * high volumes of activity for your application.</p> </li> </ul>
      */
     inline const Aws::Vector<MetricStatistic>& GetStatistics() const{ return m_statistics; }
 
     /**
      * <p>An array of statistics that you want to request metrics for. Valid values are
-     * listed below.</p>
+     * listed below.</p> <ul> <li> <p> <b> <code>SampleCount</code> </b> - The count
+     * (number) of data points used for the statistical calculation.</p> </li> <li> <p>
+     * <b> <code>Average</code> </b> - The value of Sum / SampleCount during the
+     * specified period. By comparing this statistic with the Minimum and Maximum, you
+     * can determine the full scope of a metric and how close the average use is to the
+     * Minimum and Maximum. This comparison helps you to know when to increase or
+     * decrease your resources as needed.</p> </li> <li> <p> <b> <code>Sum</code> </b>
+     * - All values submitted for the matching metric added together. This statistic
+     * can be useful for determining the total volume of a metric.</p> </li> <li> <p>
+     * <b> <code>Minimum</code> </b> - The lowest value observed during the specified
+     * period. You can use this value to determine low volumes of activity for your
+     * application.</p> </li> <li> <p> <b> <code>Maximum</code> </b> - The highest
+     * value observed during the specified period. You can use this value to determine
+     * high volumes of activity for your application.</p> </li> </ul>
      */
     inline void SetStatistics(const Aws::Vector<MetricStatistic>& value) { m_statisticsHasBeenSet = true; m_statistics = value; }
 
     /**
      * <p>An array of statistics that you want to request metrics for. Valid values are
-     * listed below.</p>
+     * listed below.</p> <ul> <li> <p> <b> <code>SampleCount</code> </b> - The count
+     * (number) of data points used for the statistical calculation.</p> </li> <li> <p>
+     * <b> <code>Average</code> </b> - The value of Sum / SampleCount during the
+     * specified period. By comparing this statistic with the Minimum and Maximum, you
+     * can determine the full scope of a metric and how close the average use is to the
+     * Minimum and Maximum. This comparison helps you to know when to increase or
+     * decrease your resources as needed.</p> </li> <li> <p> <b> <code>Sum</code> </b>
+     * - All values submitted for the matching metric added together. This statistic
+     * can be useful for determining the total volume of a metric.</p> </li> <li> <p>
+     * <b> <code>Minimum</code> </b> - The lowest value observed during the specified
+     * period. You can use this value to determine low volumes of activity for your
+     * application.</p> </li> <li> <p> <b> <code>Maximum</code> </b> - The highest
+     * value observed during the specified period. You can use this value to determine
+     * high volumes of activity for your application.</p> </li> </ul>
      */
     inline void SetStatistics(Aws::Vector<MetricStatistic>&& value) { m_statisticsHasBeenSet = true; m_statistics = std::move(value); }
 
     /**
      * <p>An array of statistics that you want to request metrics for. Valid values are
-     * listed below.</p>
+     * listed below.</p> <ul> <li> <p> <b> <code>SampleCount</code> </b> - The count
+     * (number) of data points used for the statistical calculation.</p> </li> <li> <p>
+     * <b> <code>Average</code> </b> - The value of Sum / SampleCount during the
+     * specified period. By comparing this statistic with the Minimum and Maximum, you
+     * can determine the full scope of a metric and how close the average use is to the
+     * Minimum and Maximum. This comparison helps you to know when to increase or
+     * decrease your resources as needed.</p> </li> <li> <p> <b> <code>Sum</code> </b>
+     * - All values submitted for the matching metric added together. This statistic
+     * can be useful for determining the total volume of a metric.</p> </li> <li> <p>
+     * <b> <code>Minimum</code> </b> - The lowest value observed during the specified
+     * period. You can use this value to determine low volumes of activity for your
+     * application.</p> </li> <li> <p> <b> <code>Maximum</code> </b> - The highest
+     * value observed during the specified period. You can use this value to determine
+     * high volumes of activity for your application.</p> </li> </ul>
      */
     inline GetLoadBalancerMetricDataRequest& WithStatistics(const Aws::Vector<MetricStatistic>& value) { SetStatistics(value); return *this;}
 
     /**
      * <p>An array of statistics that you want to request metrics for. Valid values are
-     * listed below.</p>
+     * listed below.</p> <ul> <li> <p> <b> <code>SampleCount</code> </b> - The count
+     * (number) of data points used for the statistical calculation.</p> </li> <li> <p>
+     * <b> <code>Average</code> </b> - The value of Sum / SampleCount during the
+     * specified period. By comparing this statistic with the Minimum and Maximum, you
+     * can determine the full scope of a metric and how close the average use is to the
+     * Minimum and Maximum. This comparison helps you to know when to increase or
+     * decrease your resources as needed.</p> </li> <li> <p> <b> <code>Sum</code> </b>
+     * - All values submitted for the matching metric added together. This statistic
+     * can be useful for determining the total volume of a metric.</p> </li> <li> <p>
+     * <b> <code>Minimum</code> </b> - The lowest value observed during the specified
+     * period. You can use this value to determine low volumes of activity for your
+     * application.</p> </li> <li> <p> <b> <code>Maximum</code> </b> - The highest
+     * value observed during the specified period. You can use this value to determine
+     * high volumes of activity for your application.</p> </li> </ul>
      */
     inline GetLoadBalancerMetricDataRequest& WithStatistics(Aws::Vector<MetricStatistic>&& value) { SetStatistics(std::move(value)); return *this;}
 
     /**
      * <p>An array of statistics that you want to request metrics for. Valid values are
-     * listed below.</p>
+     * listed below.</p> <ul> <li> <p> <b> <code>SampleCount</code> </b> - The count
+     * (number) of data points used for the statistical calculation.</p> </li> <li> <p>
+     * <b> <code>Average</code> </b> - The value of Sum / SampleCount during the
+     * specified period. By comparing this statistic with the Minimum and Maximum, you
+     * can determine the full scope of a metric and how close the average use is to the
+     * Minimum and Maximum. This comparison helps you to know when to increase or
+     * decrease your resources as needed.</p> </li> <li> <p> <b> <code>Sum</code> </b>
+     * - All values submitted for the matching metric added together. This statistic
+     * can be useful for determining the total volume of a metric.</p> </li> <li> <p>
+     * <b> <code>Minimum</code> </b> - The lowest value observed during the specified
+     * period. You can use this value to determine low volumes of activity for your
+     * application.</p> </li> <li> <p> <b> <code>Maximum</code> </b> - The highest
+     * value observed during the specified period. You can use this value to determine
+     * high volumes of activity for your application.</p> </li> </ul>
      */
     inline GetLoadBalancerMetricDataRequest& AddStatistics(const MetricStatistic& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(value); return *this; }
 
     /**
      * <p>An array of statistics that you want to request metrics for. Valid values are
-     * listed below.</p>
+     * listed below.</p> <ul> <li> <p> <b> <code>SampleCount</code> </b> - The count
+     * (number) of data points used for the statistical calculation.</p> </li> <li> <p>
+     * <b> <code>Average</code> </b> - The value of Sum / SampleCount during the
+     * specified period. By comparing this statistic with the Minimum and Maximum, you
+     * can determine the full scope of a metric and how close the average use is to the
+     * Minimum and Maximum. This comparison helps you to know when to increase or
+     * decrease your resources as needed.</p> </li> <li> <p> <b> <code>Sum</code> </b>
+     * - All values submitted for the matching metric added together. This statistic
+     * can be useful for determining the total volume of a metric.</p> </li> <li> <p>
+     * <b> <code>Minimum</code> </b> - The lowest value observed during the specified
+     * period. You can use this value to determine low volumes of activity for your
+     * application.</p> </li> <li> <p> <b> <code>Maximum</code> </b> - The highest
+     * value observed during the specified period. You can use this value to determine
+     * high volumes of activity for your application.</p> </li> </ul>
      */
     inline GetLoadBalancerMetricDataRequest& AddStatistics(MetricStatistic&& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(std::move(value)); return *this; }
 

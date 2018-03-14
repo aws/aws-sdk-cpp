@@ -81,53 +81,62 @@ namespace Model
 
 
     /**
-     * <p>The TLS/SSL certificate name.</p>
+     * <p>The SSL/TLS certificate name.</p>
      */
     inline const Aws::String& GetCertificateName() const{ return m_certificateName; }
 
     /**
-     * <p>The TLS/SSL certificate name.</p>
+     * <p>The SSL/TLS certificate name.</p>
      */
     inline void SetCertificateName(const Aws::String& value) { m_certificateNameHasBeenSet = true; m_certificateName = value; }
 
     /**
-     * <p>The TLS/SSL certificate name.</p>
+     * <p>The SSL/TLS certificate name.</p>
      */
     inline void SetCertificateName(Aws::String&& value) { m_certificateNameHasBeenSet = true; m_certificateName = std::move(value); }
 
     /**
-     * <p>The TLS/SSL certificate name.</p>
+     * <p>The SSL/TLS certificate name.</p>
      */
     inline void SetCertificateName(const char* value) { m_certificateNameHasBeenSet = true; m_certificateName.assign(value); }
 
     /**
-     * <p>The TLS/SSL certificate name.</p>
+     * <p>The SSL/TLS certificate name.</p>
      */
     inline DeleteLoadBalancerTlsCertificateRequest& WithCertificateName(const Aws::String& value) { SetCertificateName(value); return *this;}
 
     /**
-     * <p>The TLS/SSL certificate name.</p>
+     * <p>The SSL/TLS certificate name.</p>
      */
     inline DeleteLoadBalancerTlsCertificateRequest& WithCertificateName(Aws::String&& value) { SetCertificateName(std::move(value)); return *this;}
 
     /**
-     * <p>The TLS/SSL certificate name.</p>
+     * <p>The SSL/TLS certificate name.</p>
      */
     inline DeleteLoadBalancerTlsCertificateRequest& WithCertificateName(const char* value) { SetCertificateName(value); return *this;}
 
 
     /**
-     * <p>When <code>true</code>, forces the deletion of a TLS/SSL certificate.</p>
+     * <p>When <code>true</code>, forces the deletion of an SSL/TLS certificate.</p>
+     * <p>There can be two certificates associated with a Lightsail load balancer: the
+     * primary and the backup. The force parameter is required when the primary SSL/TLS
+     * certificate is in use by an instance attached to the load balancer.</p>
      */
     inline bool GetForce() const{ return m_force; }
 
     /**
-     * <p>When <code>true</code>, forces the deletion of a TLS/SSL certificate.</p>
+     * <p>When <code>true</code>, forces the deletion of an SSL/TLS certificate.</p>
+     * <p>There can be two certificates associated with a Lightsail load balancer: the
+     * primary and the backup. The force parameter is required when the primary SSL/TLS
+     * certificate is in use by an instance attached to the load balancer.</p>
      */
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
 
     /**
-     * <p>When <code>true</code>, forces the deletion of a TLS/SSL certificate.</p>
+     * <p>When <code>true</code>, forces the deletion of an SSL/TLS certificate.</p>
+     * <p>There can be two certificates associated with a Lightsail load balancer: the
+     * primary and the backup. The force parameter is required when the primary SSL/TLS
+     * certificate is in use by an instance attached to the load balancer.</p>
      */
     inline DeleteLoadBalancerTlsCertificateRequest& WithForce(bool value) { SetForce(value); return *this;}
 

@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the validation record of each domain name in the TLS/SSL
+   * <p>Describes the validation record of each domain name in the SSL/TLS
    * certificate.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/LoadBalancerTlsCertificateDomainValidationRecord">AWS
    * API Reference</a></p>
@@ -197,37 +197,37 @@ namespace Model
 
 
     /**
-     * <p>The domain name against which your TLS/SSL certificate was validated.</p>
+     * <p>The domain name against which your SSL/TLS certificate was validated.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>The domain name against which your TLS/SSL certificate was validated.</p>
+     * <p>The domain name against which your SSL/TLS certificate was validated.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>The domain name against which your TLS/SSL certificate was validated.</p>
+     * <p>The domain name against which your SSL/TLS certificate was validated.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>The domain name against which your TLS/SSL certificate was validated.</p>
+     * <p>The domain name against which your SSL/TLS certificate was validated.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>The domain name against which your TLS/SSL certificate was validated.</p>
+     * <p>The domain name against which your SSL/TLS certificate was validated.</p>
      */
     inline LoadBalancerTlsCertificateDomainValidationRecord& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>The domain name against which your TLS/SSL certificate was validated.</p>
+     * <p>The domain name against which your SSL/TLS certificate was validated.</p>
      */
     inline LoadBalancerTlsCertificateDomainValidationRecord& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>The domain name against which your TLS/SSL certificate was validated.</p>
+     * <p>The domain name against which your SSL/TLS certificate was validated.</p>
      */
     inline LoadBalancerTlsCertificateDomainValidationRecord& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 

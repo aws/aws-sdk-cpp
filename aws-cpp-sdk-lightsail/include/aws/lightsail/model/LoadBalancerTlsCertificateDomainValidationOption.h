@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the domain names on a TLS/SSL certificate that you
-   * will use to validate domain ownership.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about the domain names on an SSL/TLS certificate that
+   * you will use to validate domain ownership.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/LoadBalancerTlsCertificateDomainValidationOption">AWS
    * API Reference</a></p>
    */
@@ -49,37 +49,37 @@ namespace Model
 
 
     /**
-     * <p>A fully qualified domain name in the certificate request.</p>
+     * <p>The fully qualified domain name in the certificate request.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>A fully qualified domain name in the certificate request.</p>
+     * <p>The fully qualified domain name in the certificate request.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>A fully qualified domain name in the certificate request.</p>
+     * <p>The fully qualified domain name in the certificate request.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>A fully qualified domain name in the certificate request.</p>
+     * <p>The fully qualified domain name in the certificate request.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>A fully qualified domain name in the certificate request.</p>
+     * <p>The fully qualified domain name in the certificate request.</p>
      */
     inline LoadBalancerTlsCertificateDomainValidationOption& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>A fully qualified domain name in the certificate request.</p>
+     * <p>The fully qualified domain name in the certificate request.</p>
      */
     inline LoadBalancerTlsCertificateDomainValidationOption& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>A fully qualified domain name in the certificate request.</p>
+     * <p>The fully qualified domain name in the certificate request.</p>
      */
     inline LoadBalancerTlsCertificateDomainValidationOption& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 

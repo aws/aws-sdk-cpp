@@ -44,37 +44,51 @@ namespace Model
 
 
     /**
-     * <p>An object representing the API operations.</p>
+     * <p>An object representing the API operations.</p> <p>These SSL/TLS certificates
+     * are only usable by Lightsail load balancers. You can't get the certificate and
+     * use it for another purpose.</p>
      */
     inline const Aws::Vector<Operation>& GetOperations() const{ return m_operations; }
 
     /**
-     * <p>An object representing the API operations.</p>
+     * <p>An object representing the API operations.</p> <p>These SSL/TLS certificates
+     * are only usable by Lightsail load balancers. You can't get the certificate and
+     * use it for another purpose.</p>
      */
     inline void SetOperations(const Aws::Vector<Operation>& value) { m_operations = value; }
 
     /**
-     * <p>An object representing the API operations.</p>
+     * <p>An object representing the API operations.</p> <p>These SSL/TLS certificates
+     * are only usable by Lightsail load balancers. You can't get the certificate and
+     * use it for another purpose.</p>
      */
     inline void SetOperations(Aws::Vector<Operation>&& value) { m_operations = std::move(value); }
 
     /**
-     * <p>An object representing the API operations.</p>
+     * <p>An object representing the API operations.</p> <p>These SSL/TLS certificates
+     * are only usable by Lightsail load balancers. You can't get the certificate and
+     * use it for another purpose.</p>
      */
     inline AttachLoadBalancerTlsCertificateResult& WithOperations(const Aws::Vector<Operation>& value) { SetOperations(value); return *this;}
 
     /**
-     * <p>An object representing the API operations.</p>
+     * <p>An object representing the API operations.</p> <p>These SSL/TLS certificates
+     * are only usable by Lightsail load balancers. You can't get the certificate and
+     * use it for another purpose.</p>
      */
     inline AttachLoadBalancerTlsCertificateResult& WithOperations(Aws::Vector<Operation>&& value) { SetOperations(std::move(value)); return *this;}
 
     /**
-     * <p>An object representing the API operations.</p>
+     * <p>An object representing the API operations.</p> <p>These SSL/TLS certificates
+     * are only usable by Lightsail load balancers. You can't get the certificate and
+     * use it for another purpose.</p>
      */
     inline AttachLoadBalancerTlsCertificateResult& AddOperations(const Operation& value) { m_operations.push_back(value); return *this; }
 
     /**
-     * <p>An object representing the API operations.</p>
+     * <p>An object representing the API operations.</p> <p>These SSL/TLS certificates
+     * are only usable by Lightsail load balancers. You can't get the certificate and
+     * use it for another purpose.</p>
      */
     inline AttachLoadBalancerTlsCertificateResult& AddOperations(Operation&& value) { m_operations.push_back(std::move(value)); return *this; }
 
