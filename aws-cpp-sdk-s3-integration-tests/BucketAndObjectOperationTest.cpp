@@ -952,6 +952,7 @@ namespace
         createBucketRequest.SetACL(BucketCannedACL::private_);
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        WaitForBucketToPropagate(fullBucketName);
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
@@ -985,6 +986,7 @@ namespace
         createBucketRequest.SetACL(BucketCannedACL::private_);
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        WaitForBucketToPropagate(fullBucketName);
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
