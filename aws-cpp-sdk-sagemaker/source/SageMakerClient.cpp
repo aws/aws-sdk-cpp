@@ -32,21 +32,25 @@
 #include <aws/sagemaker/model/CreateEndpointConfigRequest.h>
 #include <aws/sagemaker/model/CreateModelRequest.h>
 #include <aws/sagemaker/model/CreateNotebookInstanceRequest.h>
+#include <aws/sagemaker/model/CreateNotebookInstanceLifecycleConfigRequest.h>
 #include <aws/sagemaker/model/CreatePresignedNotebookInstanceUrlRequest.h>
 #include <aws/sagemaker/model/CreateTrainingJobRequest.h>
 #include <aws/sagemaker/model/DeleteEndpointRequest.h>
 #include <aws/sagemaker/model/DeleteEndpointConfigRequest.h>
 #include <aws/sagemaker/model/DeleteModelRequest.h>
 #include <aws/sagemaker/model/DeleteNotebookInstanceRequest.h>
+#include <aws/sagemaker/model/DeleteNotebookInstanceLifecycleConfigRequest.h>
 #include <aws/sagemaker/model/DeleteTagsRequest.h>
 #include <aws/sagemaker/model/DescribeEndpointRequest.h>
 #include <aws/sagemaker/model/DescribeEndpointConfigRequest.h>
 #include <aws/sagemaker/model/DescribeModelRequest.h>
 #include <aws/sagemaker/model/DescribeNotebookInstanceRequest.h>
+#include <aws/sagemaker/model/DescribeNotebookInstanceLifecycleConfigRequest.h>
 #include <aws/sagemaker/model/DescribeTrainingJobRequest.h>
 #include <aws/sagemaker/model/ListEndpointConfigsRequest.h>
 #include <aws/sagemaker/model/ListEndpointsRequest.h>
 #include <aws/sagemaker/model/ListModelsRequest.h>
+#include <aws/sagemaker/model/ListNotebookInstanceLifecycleConfigsRequest.h>
 #include <aws/sagemaker/model/ListNotebookInstancesRequest.h>
 #include <aws/sagemaker/model/ListTagsRequest.h>
 #include <aws/sagemaker/model/ListTrainingJobsRequest.h>
@@ -56,6 +60,7 @@
 #include <aws/sagemaker/model/UpdateEndpointRequest.h>
 #include <aws/sagemaker/model/UpdateEndpointWeightsAndCapacitiesRequest.h>
 #include <aws/sagemaker/model/UpdateNotebookInstanceRequest.h>
+#include <aws/sagemaker/model/UpdateNotebookInstanceLifecycleConfigRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -296,6 +301,41 @@ void SageMakerClient::CreateNotebookInstanceAsyncHelper(const CreateNotebookInst
   handler(this, request, CreateNotebookInstance(request), context);
 }
 
+CreateNotebookInstanceLifecycleConfigOutcome SageMakerClient::CreateNotebookInstanceLifecycleConfig(const CreateNotebookInstanceLifecycleConfigRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateNotebookInstanceLifecycleConfigOutcome(CreateNotebookInstanceLifecycleConfigResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateNotebookInstanceLifecycleConfigOutcome(outcome.GetError());
+  }
+}
+
+CreateNotebookInstanceLifecycleConfigOutcomeCallable SageMakerClient::CreateNotebookInstanceLifecycleConfigCallable(const CreateNotebookInstanceLifecycleConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateNotebookInstanceLifecycleConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateNotebookInstanceLifecycleConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::CreateNotebookInstanceLifecycleConfigAsync(const CreateNotebookInstanceLifecycleConfigRequest& request, const CreateNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateNotebookInstanceLifecycleConfigAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::CreateNotebookInstanceLifecycleConfigAsyncHelper(const CreateNotebookInstanceLifecycleConfigRequest& request, const CreateNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateNotebookInstanceLifecycleConfig(request), context);
+}
+
 CreatePresignedNotebookInstanceUrlOutcome SageMakerClient::CreatePresignedNotebookInstanceUrl(const CreatePresignedNotebookInstanceUrlRequest& request) const
 {
   Aws::StringStream ss;
@@ -506,6 +546,41 @@ void SageMakerClient::DeleteNotebookInstanceAsyncHelper(const DeleteNotebookInst
   handler(this, request, DeleteNotebookInstance(request), context);
 }
 
+DeleteNotebookInstanceLifecycleConfigOutcome SageMakerClient::DeleteNotebookInstanceLifecycleConfig(const DeleteNotebookInstanceLifecycleConfigRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteNotebookInstanceLifecycleConfigOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteNotebookInstanceLifecycleConfigOutcome(outcome.GetError());
+  }
+}
+
+DeleteNotebookInstanceLifecycleConfigOutcomeCallable SageMakerClient::DeleteNotebookInstanceLifecycleConfigCallable(const DeleteNotebookInstanceLifecycleConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteNotebookInstanceLifecycleConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteNotebookInstanceLifecycleConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DeleteNotebookInstanceLifecycleConfigAsync(const DeleteNotebookInstanceLifecycleConfigRequest& request, const DeleteNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteNotebookInstanceLifecycleConfigAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::DeleteNotebookInstanceLifecycleConfigAsyncHelper(const DeleteNotebookInstanceLifecycleConfigRequest& request, const DeleteNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteNotebookInstanceLifecycleConfig(request), context);
+}
+
 DeleteTagsOutcome SageMakerClient::DeleteTags(const DeleteTagsRequest& request) const
 {
   Aws::StringStream ss;
@@ -681,6 +756,41 @@ void SageMakerClient::DescribeNotebookInstanceAsyncHelper(const DescribeNotebook
   handler(this, request, DescribeNotebookInstance(request), context);
 }
 
+DescribeNotebookInstanceLifecycleConfigOutcome SageMakerClient::DescribeNotebookInstanceLifecycleConfig(const DescribeNotebookInstanceLifecycleConfigRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeNotebookInstanceLifecycleConfigOutcome(DescribeNotebookInstanceLifecycleConfigResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeNotebookInstanceLifecycleConfigOutcome(outcome.GetError());
+  }
+}
+
+DescribeNotebookInstanceLifecycleConfigOutcomeCallable SageMakerClient::DescribeNotebookInstanceLifecycleConfigCallable(const DescribeNotebookInstanceLifecycleConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeNotebookInstanceLifecycleConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeNotebookInstanceLifecycleConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DescribeNotebookInstanceLifecycleConfigAsync(const DescribeNotebookInstanceLifecycleConfigRequest& request, const DescribeNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeNotebookInstanceLifecycleConfigAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::DescribeNotebookInstanceLifecycleConfigAsyncHelper(const DescribeNotebookInstanceLifecycleConfigRequest& request, const DescribeNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeNotebookInstanceLifecycleConfig(request), context);
+}
+
 DescribeTrainingJobOutcome SageMakerClient::DescribeTrainingJob(const DescribeTrainingJobRequest& request) const
 {
   Aws::StringStream ss;
@@ -819,6 +929,41 @@ void SageMakerClient::ListModelsAsync(const ListModelsRequest& request, const Li
 void SageMakerClient::ListModelsAsyncHelper(const ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListModels(request), context);
+}
+
+ListNotebookInstanceLifecycleConfigsOutcome SageMakerClient::ListNotebookInstanceLifecycleConfigs(const ListNotebookInstanceLifecycleConfigsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListNotebookInstanceLifecycleConfigsOutcome(ListNotebookInstanceLifecycleConfigsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListNotebookInstanceLifecycleConfigsOutcome(outcome.GetError());
+  }
+}
+
+ListNotebookInstanceLifecycleConfigsOutcomeCallable SageMakerClient::ListNotebookInstanceLifecycleConfigsCallable(const ListNotebookInstanceLifecycleConfigsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListNotebookInstanceLifecycleConfigsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListNotebookInstanceLifecycleConfigs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::ListNotebookInstanceLifecycleConfigsAsync(const ListNotebookInstanceLifecycleConfigsRequest& request, const ListNotebookInstanceLifecycleConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListNotebookInstanceLifecycleConfigsAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::ListNotebookInstanceLifecycleConfigsAsyncHelper(const ListNotebookInstanceLifecycleConfigsRequest& request, const ListNotebookInstanceLifecycleConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListNotebookInstanceLifecycleConfigs(request), context);
 }
 
 ListNotebookInstancesOutcome SageMakerClient::ListNotebookInstances(const ListNotebookInstancesRequest& request) const
@@ -1134,5 +1279,40 @@ void SageMakerClient::UpdateNotebookInstanceAsync(const UpdateNotebookInstanceRe
 void SageMakerClient::UpdateNotebookInstanceAsyncHelper(const UpdateNotebookInstanceRequest& request, const UpdateNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateNotebookInstance(request), context);
+}
+
+UpdateNotebookInstanceLifecycleConfigOutcome SageMakerClient::UpdateNotebookInstanceLifecycleConfig(const UpdateNotebookInstanceLifecycleConfigRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateNotebookInstanceLifecycleConfigOutcome(UpdateNotebookInstanceLifecycleConfigResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateNotebookInstanceLifecycleConfigOutcome(outcome.GetError());
+  }
+}
+
+UpdateNotebookInstanceLifecycleConfigOutcomeCallable SageMakerClient::UpdateNotebookInstanceLifecycleConfigCallable(const UpdateNotebookInstanceLifecycleConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateNotebookInstanceLifecycleConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateNotebookInstanceLifecycleConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::UpdateNotebookInstanceLifecycleConfigAsync(const UpdateNotebookInstanceLifecycleConfigRequest& request, const UpdateNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateNotebookInstanceLifecycleConfigAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::UpdateNotebookInstanceLifecycleConfigAsyncHelper(const UpdateNotebookInstanceLifecycleConfigRequest& request, const UpdateNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateNotebookInstanceLifecycleConfig(request), context);
 }
 

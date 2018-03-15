@@ -20,6 +20,7 @@
 #include <aws/sagemaker/model/InstanceType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/sagemaker/model/DirectInternetAccess.h>
 #include <utility>
 
 namespace Aws
@@ -145,37 +146,37 @@ namespace Model
 
 
     /**
-     * <p>If staus is failed, the reason it failed.</p>
+     * <p>If status is failed, the reason it failed.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
 
     /**
-     * <p>If staus is failed, the reason it failed.</p>
+     * <p>If status is failed, the reason it failed.</p>
      */
     inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
 
     /**
-     * <p>If staus is failed, the reason it failed.</p>
+     * <p>If status is failed, the reason it failed.</p>
      */
     inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
 
     /**
-     * <p>If staus is failed, the reason it failed.</p>
+     * <p>If status is failed, the reason it failed.</p>
      */
     inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
 
     /**
-     * <p>If staus is failed, the reason it failed.</p>
+     * <p>If status is failed, the reason it failed.</p>
      */
     inline DescribeNotebookInstanceResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
 
     /**
-     * <p>If staus is failed, the reason it failed.</p>
+     * <p>If status is failed, the reason it failed.</p>
      */
     inline DescribeNotebookInstanceResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
 
     /**
-     * <p>If staus is failed, the reason it failed.</p>
+     * <p>If status is failed, the reason it failed.</p>
      */
     inline DescribeNotebookInstanceResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 
@@ -516,6 +517,87 @@ namespace Model
      */
     inline DescribeNotebookInstanceResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Returns the name of a notebook instance lifecycle configuration.</p> <p>For
+     * information about notebook instance lifestyle configurations, see
+     * <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline const Aws::String& GetNotebookInstanceLifecycleConfigName() const{ return m_notebookInstanceLifecycleConfigName; }
+
+    /**
+     * <p>Returns the name of a notebook instance lifecycle configuration.</p> <p>For
+     * information about notebook instance lifestyle configurations, see
+     * <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline void SetNotebookInstanceLifecycleConfigName(const Aws::String& value) { m_notebookInstanceLifecycleConfigName = value; }
+
+    /**
+     * <p>Returns the name of a notebook instance lifecycle configuration.</p> <p>For
+     * information about notebook instance lifestyle configurations, see
+     * <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline void SetNotebookInstanceLifecycleConfigName(Aws::String&& value) { m_notebookInstanceLifecycleConfigName = std::move(value); }
+
+    /**
+     * <p>Returns the name of a notebook instance lifecycle configuration.</p> <p>For
+     * information about notebook instance lifestyle configurations, see
+     * <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline void SetNotebookInstanceLifecycleConfigName(const char* value) { m_notebookInstanceLifecycleConfigName.assign(value); }
+
+    /**
+     * <p>Returns the name of a notebook instance lifecycle configuration.</p> <p>For
+     * information about notebook instance lifestyle configurations, see
+     * <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline DescribeNotebookInstanceResult& WithNotebookInstanceLifecycleConfigName(const Aws::String& value) { SetNotebookInstanceLifecycleConfigName(value); return *this;}
+
+    /**
+     * <p>Returns the name of a notebook instance lifecycle configuration.</p> <p>For
+     * information about notebook instance lifestyle configurations, see
+     * <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline DescribeNotebookInstanceResult& WithNotebookInstanceLifecycleConfigName(Aws::String&& value) { SetNotebookInstanceLifecycleConfigName(std::move(value)); return *this;}
+
+    /**
+     * <p>Returns the name of a notebook instance lifecycle configuration.</p> <p>For
+     * information about notebook instance lifestyle configurations, see
+     * <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline DescribeNotebookInstanceResult& WithNotebookInstanceLifecycleConfigName(const char* value) { SetNotebookInstanceLifecycleConfigName(value); return *this;}
+
+
+    /**
+     * <p>Describes whether the notebook instance has internet access.</p> <p>For more
+     * information, see <a>appendix-notebook-and-internet-access</a>.</p>
+     */
+    inline const DirectInternetAccess& GetDirectInternetAccess() const{ return m_directInternetAccess; }
+
+    /**
+     * <p>Describes whether the notebook instance has internet access.</p> <p>For more
+     * information, see <a>appendix-notebook-and-internet-access</a>.</p>
+     */
+    inline void SetDirectInternetAccess(const DirectInternetAccess& value) { m_directInternetAccess = value; }
+
+    /**
+     * <p>Describes whether the notebook instance has internet access.</p> <p>For more
+     * information, see <a>appendix-notebook-and-internet-access</a>.</p>
+     */
+    inline void SetDirectInternetAccess(DirectInternetAccess&& value) { m_directInternetAccess = std::move(value); }
+
+    /**
+     * <p>Describes whether the notebook instance has internet access.</p> <p>For more
+     * information, see <a>appendix-notebook-and-internet-access</a>.</p>
+     */
+    inline DescribeNotebookInstanceResult& WithDirectInternetAccess(const DirectInternetAccess& value) { SetDirectInternetAccess(value); return *this;}
+
+    /**
+     * <p>Describes whether the notebook instance has internet access.</p> <p>For more
+     * information, see <a>appendix-notebook-and-internet-access</a>.</p>
+     */
+    inline DescribeNotebookInstanceResult& WithDirectInternetAccess(DirectInternetAccess&& value) { SetDirectInternetAccess(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_notebookInstanceArn;
@@ -543,6 +625,10 @@ namespace Model
     Aws::Utils::DateTime m_lastModifiedTime;
 
     Aws::Utils::DateTime m_creationTime;
+
+    Aws::String m_notebookInstanceLifecycleConfigName;
+
+    DirectInternetAccess m_directInternetAccess;
   };
 
 } // namespace Model

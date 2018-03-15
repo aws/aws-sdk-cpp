@@ -112,37 +112,101 @@ namespace Model
 
 
     /**
-     * Sender ID of sent message.
+     * The phone number that the SMS message originates from. Specify one of the
+     * dedicated long codes or short codes that you requested from AWS Support and that
+     * is assigned to your account. If this attribute is not specified, Amazon Pinpoint
+     * randomly assigns a long code.
+     */
+    inline const Aws::String& GetOriginationNumber() const{ return m_originationNumber; }
+
+    /**
+     * The phone number that the SMS message originates from. Specify one of the
+     * dedicated long codes or short codes that you requested from AWS Support and that
+     * is assigned to your account. If this attribute is not specified, Amazon Pinpoint
+     * randomly assigns a long code.
+     */
+    inline void SetOriginationNumber(const Aws::String& value) { m_originationNumberHasBeenSet = true; m_originationNumber = value; }
+
+    /**
+     * The phone number that the SMS message originates from. Specify one of the
+     * dedicated long codes or short codes that you requested from AWS Support and that
+     * is assigned to your account. If this attribute is not specified, Amazon Pinpoint
+     * randomly assigns a long code.
+     */
+    inline void SetOriginationNumber(Aws::String&& value) { m_originationNumberHasBeenSet = true; m_originationNumber = std::move(value); }
+
+    /**
+     * The phone number that the SMS message originates from. Specify one of the
+     * dedicated long codes or short codes that you requested from AWS Support and that
+     * is assigned to your account. If this attribute is not specified, Amazon Pinpoint
+     * randomly assigns a long code.
+     */
+    inline void SetOriginationNumber(const char* value) { m_originationNumberHasBeenSet = true; m_originationNumber.assign(value); }
+
+    /**
+     * The phone number that the SMS message originates from. Specify one of the
+     * dedicated long codes or short codes that you requested from AWS Support and that
+     * is assigned to your account. If this attribute is not specified, Amazon Pinpoint
+     * randomly assigns a long code.
+     */
+    inline SMSMessage& WithOriginationNumber(const Aws::String& value) { SetOriginationNumber(value); return *this;}
+
+    /**
+     * The phone number that the SMS message originates from. Specify one of the
+     * dedicated long codes or short codes that you requested from AWS Support and that
+     * is assigned to your account. If this attribute is not specified, Amazon Pinpoint
+     * randomly assigns a long code.
+     */
+    inline SMSMessage& WithOriginationNumber(Aws::String&& value) { SetOriginationNumber(std::move(value)); return *this;}
+
+    /**
+     * The phone number that the SMS message originates from. Specify one of the
+     * dedicated long codes or short codes that you requested from AWS Support and that
+     * is assigned to your account. If this attribute is not specified, Amazon Pinpoint
+     * randomly assigns a long code.
+     */
+    inline SMSMessage& WithOriginationNumber(const char* value) { SetOriginationNumber(value); return *this;}
+
+
+    /**
+     * The sender ID that is shown as the message sender on the recipient's device.
+     * Support for sender IDs varies by country or region.
      */
     inline const Aws::String& GetSenderId() const{ return m_senderId; }
 
     /**
-     * Sender ID of sent message.
+     * The sender ID that is shown as the message sender on the recipient's device.
+     * Support for sender IDs varies by country or region.
      */
     inline void SetSenderId(const Aws::String& value) { m_senderIdHasBeenSet = true; m_senderId = value; }
 
     /**
-     * Sender ID of sent message.
+     * The sender ID that is shown as the message sender on the recipient's device.
+     * Support for sender IDs varies by country or region.
      */
     inline void SetSenderId(Aws::String&& value) { m_senderIdHasBeenSet = true; m_senderId = std::move(value); }
 
     /**
-     * Sender ID of sent message.
+     * The sender ID that is shown as the message sender on the recipient's device.
+     * Support for sender IDs varies by country or region.
      */
     inline void SetSenderId(const char* value) { m_senderIdHasBeenSet = true; m_senderId.assign(value); }
 
     /**
-     * Sender ID of sent message.
+     * The sender ID that is shown as the message sender on the recipient's device.
+     * Support for sender IDs varies by country or region.
      */
     inline SMSMessage& WithSenderId(const Aws::String& value) { SetSenderId(value); return *this;}
 
     /**
-     * Sender ID of sent message.
+     * The sender ID that is shown as the message sender on the recipient's device.
+     * Support for sender IDs varies by country or region.
      */
     inline SMSMessage& WithSenderId(Aws::String&& value) { SetSenderId(std::move(value)); return *this;}
 
     /**
-     * Sender ID of sent message.
+     * The sender ID that is shown as the message sender on the recipient's device.
+     * Support for sender IDs varies by country or region.
      */
     inline SMSMessage& WithSenderId(const char* value) { SetSenderId(value); return *this;}
 
@@ -220,6 +284,9 @@ namespace Model
 
     MessageType m_messageType;
     bool m_messageTypeHasBeenSet;
+
+    Aws::String m_originationNumber;
+    bool m_originationNumberHasBeenSet;
 
     Aws::String m_senderId;
     bool m_senderIdHasBeenSet;

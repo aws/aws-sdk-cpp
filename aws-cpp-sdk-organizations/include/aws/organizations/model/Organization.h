@@ -389,49 +389,70 @@ namespace Model
     /**
      * <p>A list of policy types that are enabled for this organization. For example,
      * if your organization has all features enabled, then service control policies
-     * (SCPs) are included in the list.</p>
+     * (SCPs) are included in the list.</p> <note> <p>Even if a policy type is shown as
+     * available in the organization, you can separately enable and disable them at the
+     * root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use
+     * <a>ListRoots</a> to see the status of a policy type in that root.</p> </note>
      */
     inline const Aws::Vector<PolicyTypeSummary>& GetAvailablePolicyTypes() const{ return m_availablePolicyTypes; }
 
     /**
      * <p>A list of policy types that are enabled for this organization. For example,
      * if your organization has all features enabled, then service control policies
-     * (SCPs) are included in the list.</p>
+     * (SCPs) are included in the list.</p> <note> <p>Even if a policy type is shown as
+     * available in the organization, you can separately enable and disable them at the
+     * root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use
+     * <a>ListRoots</a> to see the status of a policy type in that root.</p> </note>
      */
     inline void SetAvailablePolicyTypes(const Aws::Vector<PolicyTypeSummary>& value) { m_availablePolicyTypesHasBeenSet = true; m_availablePolicyTypes = value; }
 
     /**
      * <p>A list of policy types that are enabled for this organization. For example,
      * if your organization has all features enabled, then service control policies
-     * (SCPs) are included in the list.</p>
+     * (SCPs) are included in the list.</p> <note> <p>Even if a policy type is shown as
+     * available in the organization, you can separately enable and disable them at the
+     * root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use
+     * <a>ListRoots</a> to see the status of a policy type in that root.</p> </note>
      */
     inline void SetAvailablePolicyTypes(Aws::Vector<PolicyTypeSummary>&& value) { m_availablePolicyTypesHasBeenSet = true; m_availablePolicyTypes = std::move(value); }
 
     /**
      * <p>A list of policy types that are enabled for this organization. For example,
      * if your organization has all features enabled, then service control policies
-     * (SCPs) are included in the list.</p>
+     * (SCPs) are included in the list.</p> <note> <p>Even if a policy type is shown as
+     * available in the organization, you can separately enable and disable them at the
+     * root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use
+     * <a>ListRoots</a> to see the status of a policy type in that root.</p> </note>
      */
     inline Organization& WithAvailablePolicyTypes(const Aws::Vector<PolicyTypeSummary>& value) { SetAvailablePolicyTypes(value); return *this;}
 
     /**
      * <p>A list of policy types that are enabled for this organization. For example,
      * if your organization has all features enabled, then service control policies
-     * (SCPs) are included in the list.</p>
+     * (SCPs) are included in the list.</p> <note> <p>Even if a policy type is shown as
+     * available in the organization, you can separately enable and disable them at the
+     * root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use
+     * <a>ListRoots</a> to see the status of a policy type in that root.</p> </note>
      */
     inline Organization& WithAvailablePolicyTypes(Aws::Vector<PolicyTypeSummary>&& value) { SetAvailablePolicyTypes(std::move(value)); return *this;}
 
     /**
      * <p>A list of policy types that are enabled for this organization. For example,
      * if your organization has all features enabled, then service control policies
-     * (SCPs) are included in the list.</p>
+     * (SCPs) are included in the list.</p> <note> <p>Even if a policy type is shown as
+     * available in the organization, you can separately enable and disable them at the
+     * root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use
+     * <a>ListRoots</a> to see the status of a policy type in that root.</p> </note>
      */
     inline Organization& AddAvailablePolicyTypes(const PolicyTypeSummary& value) { m_availablePolicyTypesHasBeenSet = true; m_availablePolicyTypes.push_back(value); return *this; }
 
     /**
      * <p>A list of policy types that are enabled for this organization. For example,
      * if your organization has all features enabled, then service control policies
-     * (SCPs) are included in the list.</p>
+     * (SCPs) are included in the list.</p> <note> <p>Even if a policy type is shown as
+     * available in the organization, you can separately enable and disable them at the
+     * root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use
+     * <a>ListRoots</a> to see the status of a policy type in that root.</p> </note>
      */
     inline Organization& AddAvailablePolicyTypes(PolicyTypeSummary&& value) { m_availablePolicyTypesHasBeenSet = true; m_availablePolicyTypes.push_back(std::move(value)); return *this; }
 

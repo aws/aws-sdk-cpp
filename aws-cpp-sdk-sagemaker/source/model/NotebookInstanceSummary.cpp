@@ -37,7 +37,8 @@ NotebookInstanceSummary::NotebookInstanceSummary() :
     m_instanceType(InstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+    m_lastModifiedTimeHasBeenSet(false),
+    m_notebookInstanceLifecycleConfigNameHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ NotebookInstanceSummary::NotebookInstanceSummary(const JsonValue& jsonValue) :
     m_instanceType(InstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+    m_lastModifiedTimeHasBeenSet(false),
+    m_notebookInstanceLifecycleConfigNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -106,6 +108,13 @@ NotebookInstanceSummary& NotebookInstanceSummary::operator =(const JsonValue& js
     m_lastModifiedTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NotebookInstanceLifecycleConfigName"))
+  {
+    m_notebookInstanceLifecycleConfigName = jsonValue.GetString("NotebookInstanceLifecycleConfigName");
+
+    m_notebookInstanceLifecycleConfigNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -149,6 +158,12 @@ JsonValue NotebookInstanceSummary::Jsonize() const
   if(m_lastModifiedTimeHasBeenSet)
   {
    payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_notebookInstanceLifecycleConfigNameHasBeenSet)
+  {
+   payload.WithString("NotebookInstanceLifecycleConfigName", m_notebookInstanceLifecycleConfigName);
+
   }
 
   return payload;

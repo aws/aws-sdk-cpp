@@ -1210,7 +1210,10 @@ namespace Model
         /**
          * <p>Retrieves information about the organization that the user's account belongs
          * to.</p> <p>This operation can be called from any account in the
-         * organization.</p><p><h3>See Also:</h3>   <a
+         * organization.</p> <note> <p>Even if a policy type is shown as available in the
+         * organization, it can be disabled separately at the root level with
+         * <a>DisablePolicyType</a>. Use <a>ListRoots</a> to see the status of policy types
+         * for a specified root.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeOrganization">AWS
          * API Reference</a></p>
          */
@@ -1219,7 +1222,10 @@ namespace Model
         /**
          * <p>Retrieves information about the organization that the user's account belongs
          * to.</p> <p>This operation can be called from any account in the
-         * organization.</p><p><h3>See Also:</h3>   <a
+         * organization.</p> <note> <p>Even if a policy type is shown as available in the
+         * organization, it can be disabled separately at the root level with
+         * <a>DisablePolicyType</a>. Use <a>ListRoots</a> to see the status of policy types
+         * for a specified root.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeOrganization">AWS
          * API Reference</a></p>
          *
@@ -1230,7 +1236,10 @@ namespace Model
         /**
          * <p>Retrieves information about the organization that the user's account belongs
          * to.</p> <p>This operation can be called from any account in the
-         * organization.</p><p><h3>See Also:</h3>   <a
+         * organization.</p> <note> <p>Even if a policy type is shown as available in the
+         * organization, it can be disabled separately at the root level with
+         * <a>DisablePolicyType</a>. Use <a>ListRoots</a> to see the status of policy types
+         * for a specified root.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeOrganization">AWS
          * API Reference</a></p>
          *
@@ -1472,7 +1481,11 @@ namespace Model
          * in the root. After you perform this operation, you no longer can attach policies
          * of the specified type to that root or to any OU or account in that root. You can
          * undo this by using the <a>EnablePolicyType</a> operation.</p> <p>This operation
-         * can be called only from the organization's master account.</p><p><h3>See
+         * can be called only from the organization's master account.</p> <note> <p>If you
+         * disable a policy type for a root, it still shows as enabled for the organization
+         * if all features are enabled in that organization. Use <a>ListRoots</a> to see
+         * the status of policy types for a specified root. Use <a>DescribeOrganization</a>
+         * to see the status of policy types in the organization.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisablePolicyType">AWS
          * API Reference</a></p>
@@ -1485,7 +1498,11 @@ namespace Model
          * in the root. After you perform this operation, you no longer can attach policies
          * of the specified type to that root or to any OU or account in that root. You can
          * undo this by using the <a>EnablePolicyType</a> operation.</p> <p>This operation
-         * can be called only from the organization's master account.</p><p><h3>See
+         * can be called only from the organization's master account.</p> <note> <p>If you
+         * disable a policy type for a root, it still shows as enabled for the organization
+         * if all features are enabled in that organization. Use <a>ListRoots</a> to see
+         * the status of policy types for a specified root. Use <a>DescribeOrganization</a>
+         * to see the status of policy types in the organization.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisablePolicyType">AWS
          * API Reference</a></p>
@@ -1500,7 +1517,11 @@ namespace Model
          * in the root. After you perform this operation, you no longer can attach policies
          * of the specified type to that root or to any OU or account in that root. You can
          * undo this by using the <a>EnablePolicyType</a> operation.</p> <p>This operation
-         * can be called only from the organization's master account.</p><p><h3>See
+         * can be called only from the organization's master account.</p> <note> <p>If you
+         * disable a policy type for a root, it still shows as enabled for the organization
+         * if all features are enabled in that organization. Use <a>ListRoots</a> to see
+         * the status of policy types for a specified root. Use <a>DescribeOrganization</a>
+         * to see the status of policy types in the organization.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisablePolicyType">AWS
          * API Reference</a></p>
@@ -1605,16 +1626,19 @@ namespace Model
          * Organizations. Calling this operation sends a handshake to every invited account
          * in the organization. The feature set change can be finalized and the additional
          * features enabled only after all administrators in the invited accounts approve
-         * the change by accepting the handshake.</p> </important> <p>After all invited
-         * member accounts accept the handshake, you finalize the feature set change by
-         * accepting the handshake that contains <code>"Action":
-         * "ENABLE_ALL_FEATURES"</code>. This completes the change.</p> <p>After you enable
-         * all features in your organization, the master account in the organization can
-         * apply policies on all member accounts. These policies can restrict what users
-         * and even administrators in those accounts can do. The master account can apply
-         * policies that prevent accounts from leaving the organization. Ensure that your
-         * account administrators are aware of this.</p> <p>This operation can be called
-         * only from the organization's master account. </p><p><h3>See Also:</h3>   <a
+         * the change by accepting the handshake.</p> </important> <p>After you enable all
+         * features, you can separately enable or disable individual policy types in a root
+         * using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. To see the status of
+         * policy types in a root, use <a>ListRoots</a>.</p> <p>After all invited member
+         * accounts accept the handshake, you finalize the feature set change by accepting
+         * the handshake that contains <code>"Action": "ENABLE_ALL_FEATURES"</code>. This
+         * completes the change.</p> <p>After you enable all features in your organization,
+         * the master account in the organization can apply policies on all member
+         * accounts. These policies can restrict what users and even administrators in
+         * those accounts can do. The master account can apply policies that prevent
+         * accounts from leaving the organization. Ensure that your account administrators
+         * are aware of this.</p> <p>This operation can be called only from the
+         * organization's master account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAllFeatures">AWS
          * API Reference</a></p>
          */
@@ -1634,16 +1658,19 @@ namespace Model
          * Organizations. Calling this operation sends a handshake to every invited account
          * in the organization. The feature set change can be finalized and the additional
          * features enabled only after all administrators in the invited accounts approve
-         * the change by accepting the handshake.</p> </important> <p>After all invited
-         * member accounts accept the handshake, you finalize the feature set change by
-         * accepting the handshake that contains <code>"Action":
-         * "ENABLE_ALL_FEATURES"</code>. This completes the change.</p> <p>After you enable
-         * all features in your organization, the master account in the organization can
-         * apply policies on all member accounts. These policies can restrict what users
-         * and even administrators in those accounts can do. The master account can apply
-         * policies that prevent accounts from leaving the organization. Ensure that your
-         * account administrators are aware of this.</p> <p>This operation can be called
-         * only from the organization's master account. </p><p><h3>See Also:</h3>   <a
+         * the change by accepting the handshake.</p> </important> <p>After you enable all
+         * features, you can separately enable or disable individual policy types in a root
+         * using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. To see the status of
+         * policy types in a root, use <a>ListRoots</a>.</p> <p>After all invited member
+         * accounts accept the handshake, you finalize the feature set change by accepting
+         * the handshake that contains <code>"Action": "ENABLE_ALL_FEATURES"</code>. This
+         * completes the change.</p> <p>After you enable all features in your organization,
+         * the master account in the organization can apply policies on all member
+         * accounts. These policies can restrict what users and even administrators in
+         * those accounts can do. The master account can apply policies that prevent
+         * accounts from leaving the organization. Ensure that your account administrators
+         * are aware of this.</p> <p>This operation can be called only from the
+         * organization's master account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAllFeatures">AWS
          * API Reference</a></p>
          *
@@ -1665,16 +1692,19 @@ namespace Model
          * Organizations. Calling this operation sends a handshake to every invited account
          * in the organization. The feature set change can be finalized and the additional
          * features enabled only after all administrators in the invited accounts approve
-         * the change by accepting the handshake.</p> </important> <p>After all invited
-         * member accounts accept the handshake, you finalize the feature set change by
-         * accepting the handshake that contains <code>"Action":
-         * "ENABLE_ALL_FEATURES"</code>. This completes the change.</p> <p>After you enable
-         * all features in your organization, the master account in the organization can
-         * apply policies on all member accounts. These policies can restrict what users
-         * and even administrators in those accounts can do. The master account can apply
-         * policies that prevent accounts from leaving the organization. Ensure that your
-         * account administrators are aware of this.</p> <p>This operation can be called
-         * only from the organization's master account. </p><p><h3>See Also:</h3>   <a
+         * the change by accepting the handshake.</p> </important> <p>After you enable all
+         * features, you can separately enable or disable individual policy types in a root
+         * using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. To see the status of
+         * policy types in a root, use <a>ListRoots</a>.</p> <p>After all invited member
+         * accounts accept the handshake, you finalize the feature set change by accepting
+         * the handshake that contains <code>"Action": "ENABLE_ALL_FEATURES"</code>. This
+         * completes the change.</p> <p>After you enable all features in your organization,
+         * the master account in the organization can apply policies on all member
+         * accounts. These policies can restrict what users and even administrators in
+         * those accounts can do. The master account can apply policies that prevent
+         * accounts from leaving the organization. Ensure that your account administrators
+         * are aware of this.</p> <p>This operation can be called only from the
+         * organization's master account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAllFeatures">AWS
          * API Reference</a></p>
          *
@@ -1686,8 +1716,11 @@ namespace Model
          * <p>Enables a policy type in a root. After you enable a policy type in a root,
          * you can attach policies of that type to the root, any OU, or account in that
          * root. You can undo this by using the <a>DisablePolicyType</a> operation.</p>
-         * <p>This operation can be called only from the organization's master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>This operation can be called only from the organization's master account.</p>
+         * <p>You can enable a policy type in a root only if that policy type is available
+         * in the organization. Use <a>DescribeOrganization</a> to view the status of
+         * available policy types in the organization.</p> <p>To view the status of policy
+         * type in a root, use <a>ListRoots</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnablePolicyType">AWS
          * API Reference</a></p>
          */
@@ -1697,8 +1730,11 @@ namespace Model
          * <p>Enables a policy type in a root. After you enable a policy type in a root,
          * you can attach policies of that type to the root, any OU, or account in that
          * root. You can undo this by using the <a>DisablePolicyType</a> operation.</p>
-         * <p>This operation can be called only from the organization's master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>This operation can be called only from the organization's master account.</p>
+         * <p>You can enable a policy type in a root only if that policy type is available
+         * in the organization. Use <a>DescribeOrganization</a> to view the status of
+         * available policy types in the organization.</p> <p>To view the status of policy
+         * type in a root, use <a>ListRoots</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnablePolicyType">AWS
          * API Reference</a></p>
          *
@@ -1710,8 +1746,11 @@ namespace Model
          * <p>Enables a policy type in a root. After you enable a policy type in a root,
          * you can attach policies of that type to the root, any OU, or account in that
          * root. You can undo this by using the <a>DisablePolicyType</a> operation.</p>
-         * <p>This operation can be called only from the organization's master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>This operation can be called only from the organization's master account.</p>
+         * <p>You can enable a policy type in a root only if that policy type is available
+         * in the organization. Use <a>DescribeOrganization</a> to view the status of
+         * available policy types in the organization.</p> <p>To view the status of policy
+         * type in a root, use <a>ListRoots</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnablePolicyType">AWS
          * API Reference</a></p>
          *
@@ -1948,9 +1987,14 @@ namespace Model
 
         /**
          * <p>Lists all the accounts in the organization. To request only the accounts in a
-         * root or OU, use the <a>ListAccountsForParent</a> operation instead.</p> <p>This
-         * operation can be called only from the organization's master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * specified root or OU, use the <a>ListAccountsForParent</a> operation
+         * instead.</p> <note> <p>Always check the <code>NextToken</code> response
+         * parameter for a <code>null</code> value when calling a <code>List*</code>
+         * operation. These operations can occasionally return an empty set of results even
+         * when there are more results available. The <code>NextToken</code> response
+         * parameter value is <code>null</code> <i>only</i> when there are no more results
+         * to display.</p> </note> <p>This operation can be called only from the
+         * organization's master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccounts">AWS
          * API Reference</a></p>
          */
@@ -1958,9 +2002,14 @@ namespace Model
 
         /**
          * <p>Lists all the accounts in the organization. To request only the accounts in a
-         * root or OU, use the <a>ListAccountsForParent</a> operation instead.</p> <p>This
-         * operation can be called only from the organization's master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * specified root or OU, use the <a>ListAccountsForParent</a> operation
+         * instead.</p> <note> <p>Always check the <code>NextToken</code> response
+         * parameter for a <code>null</code> value when calling a <code>List*</code>
+         * operation. These operations can occasionally return an empty set of results even
+         * when there are more results available. The <code>NextToken</code> response
+         * parameter value is <code>null</code> <i>only</i> when there are no more results
+         * to display.</p> </note> <p>This operation can be called only from the
+         * organization's master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccounts">AWS
          * API Reference</a></p>
          *
@@ -1970,9 +2019,14 @@ namespace Model
 
         /**
          * <p>Lists all the accounts in the organization. To request only the accounts in a
-         * root or OU, use the <a>ListAccountsForParent</a> operation instead.</p> <p>This
-         * operation can be called only from the organization's master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * specified root or OU, use the <a>ListAccountsForParent</a> operation
+         * instead.</p> <note> <p>Always check the <code>NextToken</code> response
+         * parameter for a <code>null</code> value when calling a <code>List*</code>
+         * operation. These operations can occasionally return an empty set of results even
+         * when there are more results available. The <code>NextToken</code> response
+         * parameter value is <code>null</code> <i>only</i> when there are no more results
+         * to display.</p> </note> <p>This operation can be called only from the
+         * organization's master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccounts">AWS
          * API Reference</a></p>
          *
@@ -1986,7 +2040,12 @@ namespace Model
          * of all the accounts that are not in any OU. If you specify an OU, you get a list
          * of all the accounts in only that OU, and not in any child OUs. To get a list of
          * all accounts in the organization, use the <a>ListAccounts</a> operation.</p>
-         * <p>This operation can be called only from the organization's master
+         * <note> <p>Always check the <code>NextToken</code> response parameter for a
+         * <code>null</code> value when calling a <code>List*</code> operation. These
+         * operations can occasionally return an empty set of results even when there are
+         * more results available. The <code>NextToken</code> response parameter value is
+         * <code>null</code> <i>only</i> when there are no more results to display.</p>
+         * </note> <p>This operation can be called only from the organization's master
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccountsForParent">AWS
          * API Reference</a></p>
@@ -1999,7 +2058,12 @@ namespace Model
          * of all the accounts that are not in any OU. If you specify an OU, you get a list
          * of all the accounts in only that OU, and not in any child OUs. To get a list of
          * all accounts in the organization, use the <a>ListAccounts</a> operation.</p>
-         * <p>This operation can be called only from the organization's master
+         * <note> <p>Always check the <code>NextToken</code> response parameter for a
+         * <code>null</code> value when calling a <code>List*</code> operation. These
+         * operations can occasionally return an empty set of results even when there are
+         * more results available. The <code>NextToken</code> response parameter value is
+         * <code>null</code> <i>only</i> when there are no more results to display.</p>
+         * </note> <p>This operation can be called only from the organization's master
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccountsForParent">AWS
          * API Reference</a></p>
@@ -2014,7 +2078,12 @@ namespace Model
          * of all the accounts that are not in any OU. If you specify an OU, you get a list
          * of all the accounts in only that OU, and not in any child OUs. To get a list of
          * all accounts in the organization, use the <a>ListAccounts</a> operation.</p>
-         * <p>This operation can be called only from the organization's master
+         * <note> <p>Always check the <code>NextToken</code> response parameter for a
+         * <code>null</code> value when calling a <code>List*</code> operation. These
+         * operations can occasionally return an empty set of results even when there are
+         * more results available. The <code>NextToken</code> response parameter value is
+         * <code>null</code> <i>only</i> when there are no more results to display.</p>
+         * </note> <p>This operation can be called only from the organization's master
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccountsForParent">AWS
          * API Reference</a></p>
@@ -2026,8 +2095,13 @@ namespace Model
         /**
          * <p>Lists all of the OUs or accounts that are contained in the specified parent
          * OU or root. This operation, along with <a>ListParents</a> enables you to
-         * traverse the tree structure that makes up this root.</p> <p>This operation can
-         * be called only from the organization's master account.</p><p><h3>See Also:</h3> 
+         * traverse the tree structure that makes up this root.</p> <note> <p>Always check
+         * the <code>NextToken</code> response parameter for a <code>null</code> value when
+         * calling a <code>List*</code> operation. These operations can occasionally return
+         * an empty set of results even when there are more results available. The
+         * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
+         * when there are no more results to display.</p> </note> <p>This operation can be
+         * called only from the organization's master account.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListChildren">AWS
          * API Reference</a></p>
@@ -2037,8 +2111,13 @@ namespace Model
         /**
          * <p>Lists all of the OUs or accounts that are contained in the specified parent
          * OU or root. This operation, along with <a>ListParents</a> enables you to
-         * traverse the tree structure that makes up this root.</p> <p>This operation can
-         * be called only from the organization's master account.</p><p><h3>See Also:</h3> 
+         * traverse the tree structure that makes up this root.</p> <note> <p>Always check
+         * the <code>NextToken</code> response parameter for a <code>null</code> value when
+         * calling a <code>List*</code> operation. These operations can occasionally return
+         * an empty set of results even when there are more results available. The
+         * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
+         * when there are no more results to display.</p> </note> <p>This operation can be
+         * called only from the organization's master account.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListChildren">AWS
          * API Reference</a></p>
@@ -2050,8 +2129,13 @@ namespace Model
         /**
          * <p>Lists all of the OUs or accounts that are contained in the specified parent
          * OU or root. This operation, along with <a>ListParents</a> enables you to
-         * traverse the tree structure that makes up this root.</p> <p>This operation can
-         * be called only from the organization's master account.</p><p><h3>See Also:</h3> 
+         * traverse the tree structure that makes up this root.</p> <note> <p>Always check
+         * the <code>NextToken</code> response parameter for a <code>null</code> value when
+         * calling a <code>List*</code> operation. These operations can occasionally return
+         * an empty set of results even when there are more results available. The
+         * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
+         * when there are no more results to display.</p> </note> <p>This operation can be
+         * called only from the organization's master account.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListChildren">AWS
          * API Reference</a></p>
@@ -2062,7 +2146,12 @@ namespace Model
 
         /**
          * <p>Lists the account creation requests that match the specified status that is
-         * currently being tracked for the organization.</p> <p>This operation can be
+         * currently being tracked for the organization.</p> <note> <p>Always check the
+         * <code>NextToken</code> response parameter for a <code>null</code> value when
+         * calling a <code>List*</code> operation. These operations can occasionally return
+         * an empty set of results even when there are more results available. The
+         * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
+         * when there are no more results to display.</p> </note> <p>This operation can be
          * called only from the organization's master account.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListCreateAccountStatus">AWS
@@ -2072,7 +2161,12 @@ namespace Model
 
         /**
          * <p>Lists the account creation requests that match the specified status that is
-         * currently being tracked for the organization.</p> <p>This operation can be
+         * currently being tracked for the organization.</p> <note> <p>Always check the
+         * <code>NextToken</code> response parameter for a <code>null</code> value when
+         * calling a <code>List*</code> operation. These operations can occasionally return
+         * an empty set of results even when there are more results available. The
+         * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
+         * when there are no more results to display.</p> </note> <p>This operation can be
          * called only from the organization's master account.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListCreateAccountStatus">AWS
@@ -2084,7 +2178,12 @@ namespace Model
 
         /**
          * <p>Lists the account creation requests that match the specified status that is
-         * currently being tracked for the organization.</p> <p>This operation can be
+         * currently being tracked for the organization.</p> <note> <p>Always check the
+         * <code>NextToken</code> response parameter for a <code>null</code> value when
+         * calling a <code>List*</code> operation. These operations can occasionally return
+         * an empty set of results even when there are more results available. The
+         * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
+         * when there are no more results to display.</p> </note> <p>This operation can be
          * called only from the organization's master account.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListCreateAccountStatus">AWS
@@ -2098,8 +2197,13 @@ namespace Model
          * <p>Lists the current handshakes that are associated with the account of the
          * requesting user.</p> <p>Handshakes that are ACCEPTED, DECLINED, or CANCELED
          * appear in the results of this API for only 30 days after changing to that state.
-         * After that they are deleted and no longer accessible.</p> <p>This operation can
-         * be called from any account in the organization.</p><p><h3>See Also:</h3>   <a
+         * After that they are deleted and no longer accessible.</p> <note> <p>Always check
+         * the <code>NextToken</code> response parameter for a <code>null</code> value when
+         * calling a <code>List*</code> operation. These operations can occasionally return
+         * an empty set of results even when there are more results available. The
+         * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
+         * when there are no more results to display.</p> </note> <p>This operation can be
+         * called from any account in the organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForAccount">AWS
          * API Reference</a></p>
          */
@@ -2109,8 +2213,13 @@ namespace Model
          * <p>Lists the current handshakes that are associated with the account of the
          * requesting user.</p> <p>Handshakes that are ACCEPTED, DECLINED, or CANCELED
          * appear in the results of this API for only 30 days after changing to that state.
-         * After that they are deleted and no longer accessible.</p> <p>This operation can
-         * be called from any account in the organization.</p><p><h3>See Also:</h3>   <a
+         * After that they are deleted and no longer accessible.</p> <note> <p>Always check
+         * the <code>NextToken</code> response parameter for a <code>null</code> value when
+         * calling a <code>List*</code> operation. These operations can occasionally return
+         * an empty set of results even when there are more results available. The
+         * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
+         * when there are no more results to display.</p> </note> <p>This operation can be
+         * called from any account in the organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForAccount">AWS
          * API Reference</a></p>
          *
@@ -2122,8 +2231,13 @@ namespace Model
          * <p>Lists the current handshakes that are associated with the account of the
          * requesting user.</p> <p>Handshakes that are ACCEPTED, DECLINED, or CANCELED
          * appear in the results of this API for only 30 days after changing to that state.
-         * After that they are deleted and no longer accessible.</p> <p>This operation can
-         * be called from any account in the organization.</p><p><h3>See Also:</h3>   <a
+         * After that they are deleted and no longer accessible.</p> <note> <p>Always check
+         * the <code>NextToken</code> response parameter for a <code>null</code> value when
+         * calling a <code>List*</code> operation. These operations can occasionally return
+         * an empty set of results even when there are more results available. The
+         * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
+         * when there are no more results to display.</p> </note> <p>This operation can be
+         * called from any account in the organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForAccount">AWS
          * API Reference</a></p>
          *
@@ -2138,8 +2252,13 @@ namespace Model
          * details and status about a handshake.</p> <p>Handshakes that are ACCEPTED,
          * DECLINED, or CANCELED appear in the results of this API for only 30 days after
          * changing to that state. After that they are deleted and no longer
-         * accessible.</p> <p>This operation can be called only from the organization's
-         * master account.</p><p><h3>See Also:</h3>   <a
+         * accessible.</p> <note> <p>Always check the <code>NextToken</code> response
+         * parameter for a <code>null</code> value when calling a <code>List*</code>
+         * operation. These operations can occasionally return an empty set of results even
+         * when there are more results available. The <code>NextToken</code> response
+         * parameter value is <code>null</code> <i>only</i> when there are no more results
+         * to display.</p> </note> <p>This operation can be called only from the
+         * organization's master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForOrganization">AWS
          * API Reference</a></p>
          */
@@ -2152,8 +2271,13 @@ namespace Model
          * details and status about a handshake.</p> <p>Handshakes that are ACCEPTED,
          * DECLINED, or CANCELED appear in the results of this API for only 30 days after
          * changing to that state. After that they are deleted and no longer
-         * accessible.</p> <p>This operation can be called only from the organization's
-         * master account.</p><p><h3>See Also:</h3>   <a
+         * accessible.</p> <note> <p>Always check the <code>NextToken</code> response
+         * parameter for a <code>null</code> value when calling a <code>List*</code>
+         * operation. These operations can occasionally return an empty set of results even
+         * when there are more results available. The <code>NextToken</code> response
+         * parameter value is <code>null</code> <i>only</i> when there are no more results
+         * to display.</p> </note> <p>This operation can be called only from the
+         * organization's master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForOrganization">AWS
          * API Reference</a></p>
          *
@@ -2168,8 +2292,13 @@ namespace Model
          * details and status about a handshake.</p> <p>Handshakes that are ACCEPTED,
          * DECLINED, or CANCELED appear in the results of this API for only 30 days after
          * changing to that state. After that they are deleted and no longer
-         * accessible.</p> <p>This operation can be called only from the organization's
-         * master account.</p><p><h3>See Also:</h3>   <a
+         * accessible.</p> <note> <p>Always check the <code>NextToken</code> response
+         * parameter for a <code>null</code> value when calling a <code>List*</code>
+         * operation. These operations can occasionally return an empty set of results even
+         * when there are more results available. The <code>NextToken</code> response
+         * parameter value is <code>null</code> <i>only</i> when there are no more results
+         * to display.</p> </note> <p>This operation can be called only from the
+         * organization's master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForOrganization">AWS
          * API Reference</a></p>
          *
@@ -2179,7 +2308,12 @@ namespace Model
 
         /**
          * <p>Lists the organizational units (OUs) in a parent organizational unit or
-         * root.</p> <p>This operation can be called only from the organization's master
+         * root.</p> <note> <p>Always check the <code>NextToken</code> response parameter
+         * for a <code>null</code> value when calling a <code>List*</code> operation. These
+         * operations can occasionally return an empty set of results even when there are
+         * more results available. The <code>NextToken</code> response parameter value is
+         * <code>null</code> <i>only</i> when there are no more results to display.</p>
+         * </note> <p>This operation can be called only from the organization's master
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListOrganizationalUnitsForParent">AWS
          * API Reference</a></p>
@@ -2188,7 +2322,12 @@ namespace Model
 
         /**
          * <p>Lists the organizational units (OUs) in a parent organizational unit or
-         * root.</p> <p>This operation can be called only from the organization's master
+         * root.</p> <note> <p>Always check the <code>NextToken</code> response parameter
+         * for a <code>null</code> value when calling a <code>List*</code> operation. These
+         * operations can occasionally return an empty set of results even when there are
+         * more results available. The <code>NextToken</code> response parameter value is
+         * <code>null</code> <i>only</i> when there are no more results to display.</p>
+         * </note> <p>This operation can be called only from the organization's master
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListOrganizationalUnitsForParent">AWS
          * API Reference</a></p>
@@ -2199,7 +2338,12 @@ namespace Model
 
         /**
          * <p>Lists the organizational units (OUs) in a parent organizational unit or
-         * root.</p> <p>This operation can be called only from the organization's master
+         * root.</p> <note> <p>Always check the <code>NextToken</code> response parameter
+         * for a <code>null</code> value when calling a <code>List*</code> operation. These
+         * operations can occasionally return an empty set of results even when there are
+         * more results available. The <code>NextToken</code> response parameter value is
+         * <code>null</code> <i>only</i> when there are no more results to display.</p>
+         * </note> <p>This operation can be called only from the organization's master
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListOrganizationalUnitsForParent">AWS
          * API Reference</a></p>
@@ -2212,9 +2356,14 @@ namespace Model
          * <p>Lists the root or organizational units (OUs) that serve as the immediate
          * parent of the specified child OU or account. This operation, along with
          * <a>ListChildren</a> enables you to traverse the tree structure that makes up
-         * this root.</p> <p>This operation can be called only from the organization's
-         * master account.</p> <note> <p>In the current release, a child can have only a
-         * single parent. </p> </note><p><h3>See Also:</h3>   <a
+         * this root.</p> <note> <p>Always check the <code>NextToken</code> response
+         * parameter for a <code>null</code> value when calling a <code>List*</code>
+         * operation. These operations can occasionally return an empty set of results even
+         * when there are more results available. The <code>NextToken</code> response
+         * parameter value is <code>null</code> <i>only</i> when there are no more results
+         * to display.</p> </note> <p>This operation can be called only from the
+         * organization's master account.</p> <note> <p>In the current release, a child can
+         * have only a single parent. </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListParents">AWS
          * API Reference</a></p>
          */
@@ -2224,9 +2373,14 @@ namespace Model
          * <p>Lists the root or organizational units (OUs) that serve as the immediate
          * parent of the specified child OU or account. This operation, along with
          * <a>ListChildren</a> enables you to traverse the tree structure that makes up
-         * this root.</p> <p>This operation can be called only from the organization's
-         * master account.</p> <note> <p>In the current release, a child can have only a
-         * single parent. </p> </note><p><h3>See Also:</h3>   <a
+         * this root.</p> <note> <p>Always check the <code>NextToken</code> response
+         * parameter for a <code>null</code> value when calling a <code>List*</code>
+         * operation. These operations can occasionally return an empty set of results even
+         * when there are more results available. The <code>NextToken</code> response
+         * parameter value is <code>null</code> <i>only</i> when there are no more results
+         * to display.</p> </note> <p>This operation can be called only from the
+         * organization's master account.</p> <note> <p>In the current release, a child can
+         * have only a single parent. </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListParents">AWS
          * API Reference</a></p>
          *
@@ -2238,9 +2392,14 @@ namespace Model
          * <p>Lists the root or organizational units (OUs) that serve as the immediate
          * parent of the specified child OU or account. This operation, along with
          * <a>ListChildren</a> enables you to traverse the tree structure that makes up
-         * this root.</p> <p>This operation can be called only from the organization's
-         * master account.</p> <note> <p>In the current release, a child can have only a
-         * single parent. </p> </note><p><h3>See Also:</h3>   <a
+         * this root.</p> <note> <p>Always check the <code>NextToken</code> response
+         * parameter for a <code>null</code> value when calling a <code>List*</code>
+         * operation. These operations can occasionally return an empty set of results even
+         * when there are more results available. The <code>NextToken</code> response
+         * parameter value is <code>null</code> <i>only</i> when there are no more results
+         * to display.</p> </note> <p>This operation can be called only from the
+         * organization's master account.</p> <note> <p>In the current release, a child can
+         * have only a single parent. </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListParents">AWS
          * API Reference</a></p>
          *
@@ -2250,7 +2409,12 @@ namespace Model
 
         /**
          * <p>Retrieves the list of all policies in an organization of a specified
-         * type.</p> <p>This operation can be called only from the organization's master
+         * type.</p> <note> <p>Always check the <code>NextToken</code> response parameter
+         * for a <code>null</code> value when calling a <code>List*</code> operation. These
+         * operations can occasionally return an empty set of results even when there are
+         * more results available. The <code>NextToken</code> response parameter value is
+         * <code>null</code> <i>only</i> when there are no more results to display.</p>
+         * </note> <p>This operation can be called only from the organization's master
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPolicies">AWS
          * API Reference</a></p>
@@ -2259,7 +2423,12 @@ namespace Model
 
         /**
          * <p>Retrieves the list of all policies in an organization of a specified
-         * type.</p> <p>This operation can be called only from the organization's master
+         * type.</p> <note> <p>Always check the <code>NextToken</code> response parameter
+         * for a <code>null</code> value when calling a <code>List*</code> operation. These
+         * operations can occasionally return an empty set of results even when there are
+         * more results available. The <code>NextToken</code> response parameter value is
+         * <code>null</code> <i>only</i> when there are no more results to display.</p>
+         * </note> <p>This operation can be called only from the organization's master
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPolicies">AWS
          * API Reference</a></p>
@@ -2270,7 +2439,12 @@ namespace Model
 
         /**
          * <p>Retrieves the list of all policies in an organization of a specified
-         * type.</p> <p>This operation can be called only from the organization's master
+         * type.</p> <note> <p>Always check the <code>NextToken</code> response parameter
+         * for a <code>null</code> value when calling a <code>List*</code> operation. These
+         * operations can occasionally return an empty set of results even when there are
+         * more results available. The <code>NextToken</code> response parameter value is
+         * <code>null</code> <i>only</i> when there are no more results to display.</p>
+         * </note> <p>This operation can be called only from the organization's master
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPolicies">AWS
          * API Reference</a></p>
@@ -2282,8 +2456,14 @@ namespace Model
         /**
          * <p>Lists the policies that are directly attached to the specified target root,
          * organizational unit (OU), or account. You must specify the policy type that you
-         * want included in the returned list.</p> <p>This operation can be called only
-         * from the organization's master account.</p><p><h3>See Also:</h3>   <a
+         * want included in the returned list.</p> <note> <p>Always check the
+         * <code>NextToken</code> response parameter for a <code>null</code> value when
+         * calling a <code>List*</code> operation. These operations can occasionally return
+         * an empty set of results even when there are more results available. The
+         * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
+         * when there are no more results to display.</p> </note> <p>This operation can be
+         * called only from the organization's master account.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPoliciesForTarget">AWS
          * API Reference</a></p>
          */
@@ -2292,8 +2472,14 @@ namespace Model
         /**
          * <p>Lists the policies that are directly attached to the specified target root,
          * organizational unit (OU), or account. You must specify the policy type that you
-         * want included in the returned list.</p> <p>This operation can be called only
-         * from the organization's master account.</p><p><h3>See Also:</h3>   <a
+         * want included in the returned list.</p> <note> <p>Always check the
+         * <code>NextToken</code> response parameter for a <code>null</code> value when
+         * calling a <code>List*</code> operation. These operations can occasionally return
+         * an empty set of results even when there are more results available. The
+         * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
+         * when there are no more results to display.</p> </note> <p>This operation can be
+         * called only from the organization's master account.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPoliciesForTarget">AWS
          * API Reference</a></p>
          *
@@ -2304,8 +2490,14 @@ namespace Model
         /**
          * <p>Lists the policies that are directly attached to the specified target root,
          * organizational unit (OU), or account. You must specify the policy type that you
-         * want included in the returned list.</p> <p>This operation can be called only
-         * from the organization's master account.</p><p><h3>See Also:</h3>   <a
+         * want included in the returned list.</p> <note> <p>Always check the
+         * <code>NextToken</code> response parameter for a <code>null</code> value when
+         * calling a <code>List*</code> operation. These operations can occasionally return
+         * an empty set of results even when there are more results available. The
+         * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
+         * when there are no more results to display.</p> </note> <p>This operation can be
+         * called only from the organization's master account.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPoliciesForTarget">AWS
          * API Reference</a></p>
          *
@@ -2314,18 +2506,38 @@ namespace Model
         virtual void ListPoliciesForTargetAsync(const Model::ListPoliciesForTargetRequest& request, const ListPoliciesForTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the roots that are defined in the current organization.</p> <p>This
-         * operation can be called only from the organization's master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the roots that are defined in the current organization.</p> <note>
+         * <p>Always check the <code>NextToken</code> response parameter for a
+         * <code>null</code> value when calling a <code>List*</code> operation. These
+         * operations can occasionally return an empty set of results even when there are
+         * more results available. The <code>NextToken</code> response parameter value is
+         * <code>null</code> <i>only</i> when there are no more results to display.</p>
+         * </note> <p>This operation can be called only from the organization's master
+         * account.</p> <note> <p>Policy types can be enabled and disabled in roots. This
+         * is distinct from whether they are available in the organization. When you enable
+         * all features, you make policy types available for use in that organization.
+         * Individual policy types can then be enabled and disabled in a root. To see the
+         * availability of a policy type in an organization, use
+         * <a>DescribeOrganization</a>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListRoots">AWS
          * API Reference</a></p>
          */
         virtual Model::ListRootsOutcome ListRoots(const Model::ListRootsRequest& request) const;
 
         /**
-         * <p>Lists the roots that are defined in the current organization.</p> <p>This
-         * operation can be called only from the organization's master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the roots that are defined in the current organization.</p> <note>
+         * <p>Always check the <code>NextToken</code> response parameter for a
+         * <code>null</code> value when calling a <code>List*</code> operation. These
+         * operations can occasionally return an empty set of results even when there are
+         * more results available. The <code>NextToken</code> response parameter value is
+         * <code>null</code> <i>only</i> when there are no more results to display.</p>
+         * </note> <p>This operation can be called only from the organization's master
+         * account.</p> <note> <p>Policy types can be enabled and disabled in roots. This
+         * is distinct from whether they are available in the organization. When you enable
+         * all features, you make policy types available for use in that organization.
+         * Individual policy types can then be enabled and disabled in a root. To see the
+         * availability of a policy type in an organization, use
+         * <a>DescribeOrganization</a>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListRoots">AWS
          * API Reference</a></p>
          *
@@ -2334,9 +2546,19 @@ namespace Model
         virtual Model::ListRootsOutcomeCallable ListRootsCallable(const Model::ListRootsRequest& request) const;
 
         /**
-         * <p>Lists the roots that are defined in the current organization.</p> <p>This
-         * operation can be called only from the organization's master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the roots that are defined in the current organization.</p> <note>
+         * <p>Always check the <code>NextToken</code> response parameter for a
+         * <code>null</code> value when calling a <code>List*</code> operation. These
+         * operations can occasionally return an empty set of results even when there are
+         * more results available. The <code>NextToken</code> response parameter value is
+         * <code>null</code> <i>only</i> when there are no more results to display.</p>
+         * </note> <p>This operation can be called only from the organization's master
+         * account.</p> <note> <p>Policy types can be enabled and disabled in roots. This
+         * is distinct from whether they are available in the organization. When you enable
+         * all features, you make policy types available for use in that organization.
+         * Individual policy types can then be enabled and disabled in a root. To see the
+         * availability of a policy type in an organization, use
+         * <a>DescribeOrganization</a>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListRoots">AWS
          * API Reference</a></p>
          *
@@ -2346,8 +2568,13 @@ namespace Model
 
         /**
          * <p>Lists all the roots, OUs, and accounts to which the specified policy is
-         * attached.</p> <p>This operation can be called only from the organization's
-         * master account.</p><p><h3>See Also:</h3>   <a
+         * attached.</p> <note> <p>Always check the <code>NextToken</code> response
+         * parameter for a <code>null</code> value when calling a <code>List*</code>
+         * operation. These operations can occasionally return an empty set of results even
+         * when there are more results available. The <code>NextToken</code> response
+         * parameter value is <code>null</code> <i>only</i> when there are no more results
+         * to display.</p> </note> <p>This operation can be called only from the
+         * organization's master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListTargetsForPolicy">AWS
          * API Reference</a></p>
          */
@@ -2355,8 +2582,13 @@ namespace Model
 
         /**
          * <p>Lists all the roots, OUs, and accounts to which the specified policy is
-         * attached.</p> <p>This operation can be called only from the organization's
-         * master account.</p><p><h3>See Also:</h3>   <a
+         * attached.</p> <note> <p>Always check the <code>NextToken</code> response
+         * parameter for a <code>null</code> value when calling a <code>List*</code>
+         * operation. These operations can occasionally return an empty set of results even
+         * when there are more results available. The <code>NextToken</code> response
+         * parameter value is <code>null</code> <i>only</i> when there are no more results
+         * to display.</p> </note> <p>This operation can be called only from the
+         * organization's master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListTargetsForPolicy">AWS
          * API Reference</a></p>
          *
@@ -2366,8 +2598,13 @@ namespace Model
 
         /**
          * <p>Lists all the roots, OUs, and accounts to which the specified policy is
-         * attached.</p> <p>This operation can be called only from the organization's
-         * master account.</p><p><h3>See Also:</h3>   <a
+         * attached.</p> <note> <p>Always check the <code>NextToken</code> response
+         * parameter for a <code>null</code> value when calling a <code>List*</code>
+         * operation. These operations can occasionally return an empty set of results even
+         * when there are more results available. The <code>NextToken</code> response
+         * parameter value is <code>null</code> <i>only</i> when there are no more results
+         * to display.</p> </note> <p>This operation can be called only from the
+         * organization's master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListTargetsForPolicy">AWS
          * API Reference</a></p>
          *

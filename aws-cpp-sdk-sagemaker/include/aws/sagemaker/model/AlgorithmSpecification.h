@@ -120,7 +120,7 @@ namespace Model
      * mounts the directory to docker volume for training container. If an algorithm
      * supports the <code>Pipe</code> input mode, Amazon SageMaker streams data
      * directly from S3 to the container. </p> <p> In File mode, make sure you
-     * provision ML storage volume with sufficient capacity to accomodate the data
+     * provision ML storage volume with sufficient capacity to accommodate the data
      * download from S3. In addition to the training data, the ML storage volume also
      * stores the output model. The algorithm container use ML storage volume to also
      * store intermediate information, if any. </p> <p> For distributed algorithms
@@ -142,7 +142,7 @@ namespace Model
      * mounts the directory to docker volume for training container. If an algorithm
      * supports the <code>Pipe</code> input mode, Amazon SageMaker streams data
      * directly from S3 to the container. </p> <p> In File mode, make sure you
-     * provision ML storage volume with sufficient capacity to accomodate the data
+     * provision ML storage volume with sufficient capacity to accommodate the data
      * download from S3. In addition to the training data, the ML storage volume also
      * stores the output model. The algorithm container use ML storage volume to also
      * store intermediate information, if any. </p> <p> For distributed algorithms
@@ -164,7 +164,7 @@ namespace Model
      * mounts the directory to docker volume for training container. If an algorithm
      * supports the <code>Pipe</code> input mode, Amazon SageMaker streams data
      * directly from S3 to the container. </p> <p> In File mode, make sure you
-     * provision ML storage volume with sufficient capacity to accomodate the data
+     * provision ML storage volume with sufficient capacity to accommodate the data
      * download from S3. In addition to the training data, the ML storage volume also
      * stores the output model. The algorithm container use ML storage volume to also
      * store intermediate information, if any. </p> <p> For distributed algorithms
@@ -186,7 +186,7 @@ namespace Model
      * mounts the directory to docker volume for training container. If an algorithm
      * supports the <code>Pipe</code> input mode, Amazon SageMaker streams data
      * directly from S3 to the container. </p> <p> In File mode, make sure you
-     * provision ML storage volume with sufficient capacity to accomodate the data
+     * provision ML storage volume with sufficient capacity to accommodate the data
      * download from S3. In addition to the training data, the ML storage volume also
      * stores the output model. The algorithm container use ML storage volume to also
      * store intermediate information, if any. </p> <p> For distributed algorithms
@@ -208,7 +208,7 @@ namespace Model
      * mounts the directory to docker volume for training container. If an algorithm
      * supports the <code>Pipe</code> input mode, Amazon SageMaker streams data
      * directly from S3 to the container. </p> <p> In File mode, make sure you
-     * provision ML storage volume with sufficient capacity to accomodate the data
+     * provision ML storage volume with sufficient capacity to accommodate the data
      * download from S3. In addition to the training data, the ML storage volume also
      * stores the output model. The algorithm container use ML storage volume to also
      * store intermediate information, if any. </p> <p> For distributed algorithms

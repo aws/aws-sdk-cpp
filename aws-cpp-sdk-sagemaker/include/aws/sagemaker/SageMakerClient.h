@@ -26,6 +26,7 @@
 #include <aws/sagemaker/model/CreateEndpointConfigResult.h>
 #include <aws/sagemaker/model/CreateModelResult.h>
 #include <aws/sagemaker/model/CreateNotebookInstanceResult.h>
+#include <aws/sagemaker/model/CreateNotebookInstanceLifecycleConfigResult.h>
 #include <aws/sagemaker/model/CreatePresignedNotebookInstanceUrlResult.h>
 #include <aws/sagemaker/model/CreateTrainingJobResult.h>
 #include <aws/sagemaker/model/DeleteTagsResult.h>
@@ -33,16 +34,19 @@
 #include <aws/sagemaker/model/DescribeEndpointConfigResult.h>
 #include <aws/sagemaker/model/DescribeModelResult.h>
 #include <aws/sagemaker/model/DescribeNotebookInstanceResult.h>
+#include <aws/sagemaker/model/DescribeNotebookInstanceLifecycleConfigResult.h>
 #include <aws/sagemaker/model/DescribeTrainingJobResult.h>
 #include <aws/sagemaker/model/ListEndpointConfigsResult.h>
 #include <aws/sagemaker/model/ListEndpointsResult.h>
 #include <aws/sagemaker/model/ListModelsResult.h>
+#include <aws/sagemaker/model/ListNotebookInstanceLifecycleConfigsResult.h>
 #include <aws/sagemaker/model/ListNotebookInstancesResult.h>
 #include <aws/sagemaker/model/ListTagsResult.h>
 #include <aws/sagemaker/model/ListTrainingJobsResult.h>
 #include <aws/sagemaker/model/UpdateEndpointResult.h>
 #include <aws/sagemaker/model/UpdateEndpointWeightsAndCapacitiesResult.h>
 #include <aws/sagemaker/model/UpdateNotebookInstanceResult.h>
+#include <aws/sagemaker/model/UpdateNotebookInstanceLifecycleConfigResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -94,21 +98,25 @@ namespace Model
         class CreateEndpointConfigRequest;
         class CreateModelRequest;
         class CreateNotebookInstanceRequest;
+        class CreateNotebookInstanceLifecycleConfigRequest;
         class CreatePresignedNotebookInstanceUrlRequest;
         class CreateTrainingJobRequest;
         class DeleteEndpointRequest;
         class DeleteEndpointConfigRequest;
         class DeleteModelRequest;
         class DeleteNotebookInstanceRequest;
+        class DeleteNotebookInstanceLifecycleConfigRequest;
         class DeleteTagsRequest;
         class DescribeEndpointRequest;
         class DescribeEndpointConfigRequest;
         class DescribeModelRequest;
         class DescribeNotebookInstanceRequest;
+        class DescribeNotebookInstanceLifecycleConfigRequest;
         class DescribeTrainingJobRequest;
         class ListEndpointConfigsRequest;
         class ListEndpointsRequest;
         class ListModelsRequest;
+        class ListNotebookInstanceLifecycleConfigsRequest;
         class ListNotebookInstancesRequest;
         class ListTagsRequest;
         class ListTrainingJobsRequest;
@@ -118,27 +126,32 @@ namespace Model
         class UpdateEndpointRequest;
         class UpdateEndpointWeightsAndCapacitiesRequest;
         class UpdateNotebookInstanceRequest;
+        class UpdateNotebookInstanceLifecycleConfigRequest;
 
         typedef Aws::Utils::Outcome<AddTagsResult, Aws::Client::AWSError<SageMakerErrors>> AddTagsOutcome;
         typedef Aws::Utils::Outcome<CreateEndpointResult, Aws::Client::AWSError<SageMakerErrors>> CreateEndpointOutcome;
         typedef Aws::Utils::Outcome<CreateEndpointConfigResult, Aws::Client::AWSError<SageMakerErrors>> CreateEndpointConfigOutcome;
         typedef Aws::Utils::Outcome<CreateModelResult, Aws::Client::AWSError<SageMakerErrors>> CreateModelOutcome;
         typedef Aws::Utils::Outcome<CreateNotebookInstanceResult, Aws::Client::AWSError<SageMakerErrors>> CreateNotebookInstanceOutcome;
+        typedef Aws::Utils::Outcome<CreateNotebookInstanceLifecycleConfigResult, Aws::Client::AWSError<SageMakerErrors>> CreateNotebookInstanceLifecycleConfigOutcome;
         typedef Aws::Utils::Outcome<CreatePresignedNotebookInstanceUrlResult, Aws::Client::AWSError<SageMakerErrors>> CreatePresignedNotebookInstanceUrlOutcome;
         typedef Aws::Utils::Outcome<CreateTrainingJobResult, Aws::Client::AWSError<SageMakerErrors>> CreateTrainingJobOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SageMakerErrors>> DeleteEndpointOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SageMakerErrors>> DeleteEndpointConfigOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SageMakerErrors>> DeleteModelOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SageMakerErrors>> DeleteNotebookInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SageMakerErrors>> DeleteNotebookInstanceLifecycleConfigOutcome;
         typedef Aws::Utils::Outcome<DeleteTagsResult, Aws::Client::AWSError<SageMakerErrors>> DeleteTagsOutcome;
         typedef Aws::Utils::Outcome<DescribeEndpointResult, Aws::Client::AWSError<SageMakerErrors>> DescribeEndpointOutcome;
         typedef Aws::Utils::Outcome<DescribeEndpointConfigResult, Aws::Client::AWSError<SageMakerErrors>> DescribeEndpointConfigOutcome;
         typedef Aws::Utils::Outcome<DescribeModelResult, Aws::Client::AWSError<SageMakerErrors>> DescribeModelOutcome;
         typedef Aws::Utils::Outcome<DescribeNotebookInstanceResult, Aws::Client::AWSError<SageMakerErrors>> DescribeNotebookInstanceOutcome;
+        typedef Aws::Utils::Outcome<DescribeNotebookInstanceLifecycleConfigResult, Aws::Client::AWSError<SageMakerErrors>> DescribeNotebookInstanceLifecycleConfigOutcome;
         typedef Aws::Utils::Outcome<DescribeTrainingJobResult, Aws::Client::AWSError<SageMakerErrors>> DescribeTrainingJobOutcome;
         typedef Aws::Utils::Outcome<ListEndpointConfigsResult, Aws::Client::AWSError<SageMakerErrors>> ListEndpointConfigsOutcome;
         typedef Aws::Utils::Outcome<ListEndpointsResult, Aws::Client::AWSError<SageMakerErrors>> ListEndpointsOutcome;
         typedef Aws::Utils::Outcome<ListModelsResult, Aws::Client::AWSError<SageMakerErrors>> ListModelsOutcome;
+        typedef Aws::Utils::Outcome<ListNotebookInstanceLifecycleConfigsResult, Aws::Client::AWSError<SageMakerErrors>> ListNotebookInstanceLifecycleConfigsOutcome;
         typedef Aws::Utils::Outcome<ListNotebookInstancesResult, Aws::Client::AWSError<SageMakerErrors>> ListNotebookInstancesOutcome;
         typedef Aws::Utils::Outcome<ListTagsResult, Aws::Client::AWSError<SageMakerErrors>> ListTagsOutcome;
         typedef Aws::Utils::Outcome<ListTrainingJobsResult, Aws::Client::AWSError<SageMakerErrors>> ListTrainingJobsOutcome;
@@ -148,27 +161,32 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateEndpointResult, Aws::Client::AWSError<SageMakerErrors>> UpdateEndpointOutcome;
         typedef Aws::Utils::Outcome<UpdateEndpointWeightsAndCapacitiesResult, Aws::Client::AWSError<SageMakerErrors>> UpdateEndpointWeightsAndCapacitiesOutcome;
         typedef Aws::Utils::Outcome<UpdateNotebookInstanceResult, Aws::Client::AWSError<SageMakerErrors>> UpdateNotebookInstanceOutcome;
+        typedef Aws::Utils::Outcome<UpdateNotebookInstanceLifecycleConfigResult, Aws::Client::AWSError<SageMakerErrors>> UpdateNotebookInstanceLifecycleConfigOutcome;
 
         typedef std::future<AddTagsOutcome> AddTagsOutcomeCallable;
         typedef std::future<CreateEndpointOutcome> CreateEndpointOutcomeCallable;
         typedef std::future<CreateEndpointConfigOutcome> CreateEndpointConfigOutcomeCallable;
         typedef std::future<CreateModelOutcome> CreateModelOutcomeCallable;
         typedef std::future<CreateNotebookInstanceOutcome> CreateNotebookInstanceOutcomeCallable;
+        typedef std::future<CreateNotebookInstanceLifecycleConfigOutcome> CreateNotebookInstanceLifecycleConfigOutcomeCallable;
         typedef std::future<CreatePresignedNotebookInstanceUrlOutcome> CreatePresignedNotebookInstanceUrlOutcomeCallable;
         typedef std::future<CreateTrainingJobOutcome> CreateTrainingJobOutcomeCallable;
         typedef std::future<DeleteEndpointOutcome> DeleteEndpointOutcomeCallable;
         typedef std::future<DeleteEndpointConfigOutcome> DeleteEndpointConfigOutcomeCallable;
         typedef std::future<DeleteModelOutcome> DeleteModelOutcomeCallable;
         typedef std::future<DeleteNotebookInstanceOutcome> DeleteNotebookInstanceOutcomeCallable;
+        typedef std::future<DeleteNotebookInstanceLifecycleConfigOutcome> DeleteNotebookInstanceLifecycleConfigOutcomeCallable;
         typedef std::future<DeleteTagsOutcome> DeleteTagsOutcomeCallable;
         typedef std::future<DescribeEndpointOutcome> DescribeEndpointOutcomeCallable;
         typedef std::future<DescribeEndpointConfigOutcome> DescribeEndpointConfigOutcomeCallable;
         typedef std::future<DescribeModelOutcome> DescribeModelOutcomeCallable;
         typedef std::future<DescribeNotebookInstanceOutcome> DescribeNotebookInstanceOutcomeCallable;
+        typedef std::future<DescribeNotebookInstanceLifecycleConfigOutcome> DescribeNotebookInstanceLifecycleConfigOutcomeCallable;
         typedef std::future<DescribeTrainingJobOutcome> DescribeTrainingJobOutcomeCallable;
         typedef std::future<ListEndpointConfigsOutcome> ListEndpointConfigsOutcomeCallable;
         typedef std::future<ListEndpointsOutcome> ListEndpointsOutcomeCallable;
         typedef std::future<ListModelsOutcome> ListModelsOutcomeCallable;
+        typedef std::future<ListNotebookInstanceLifecycleConfigsOutcome> ListNotebookInstanceLifecycleConfigsOutcomeCallable;
         typedef std::future<ListNotebookInstancesOutcome> ListNotebookInstancesOutcomeCallable;
         typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
         typedef std::future<ListTrainingJobsOutcome> ListTrainingJobsOutcomeCallable;
@@ -178,6 +196,7 @@ namespace Model
         typedef std::future<UpdateEndpointOutcome> UpdateEndpointOutcomeCallable;
         typedef std::future<UpdateEndpointWeightsAndCapacitiesOutcome> UpdateEndpointWeightsAndCapacitiesOutcomeCallable;
         typedef std::future<UpdateNotebookInstanceOutcome> UpdateNotebookInstanceOutcomeCallable;
+        typedef std::future<UpdateNotebookInstanceLifecycleConfigOutcome> UpdateNotebookInstanceLifecycleConfigOutcomeCallable;
 } // namespace Model
 
   class SageMakerClient;
@@ -187,21 +206,25 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::CreateEndpointConfigRequest&, const Model::CreateEndpointConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEndpointConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateModelRequest&, const Model::CreateModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateNotebookInstanceRequest&, const Model::CreateNotebookInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNotebookInstanceResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateNotebookInstanceLifecycleConfigRequest&, const Model::CreateNotebookInstanceLifecycleConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNotebookInstanceLifecycleConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreatePresignedNotebookInstanceUrlRequest&, const Model::CreatePresignedNotebookInstanceUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePresignedNotebookInstanceUrlResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateTrainingJobRequest&, const Model::CreateTrainingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrainingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteEndpointRequest&, const Model::DeleteEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEndpointResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteEndpointConfigRequest&, const Model::DeleteEndpointConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEndpointConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteModelRequest&, const Model::DeleteModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteNotebookInstanceRequest&, const Model::DeleteNotebookInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNotebookInstanceResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DeleteNotebookInstanceLifecycleConfigRequest&, const Model::DeleteNotebookInstanceLifecycleConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNotebookInstanceLifecycleConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteTagsRequest&, const Model::DeleteTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTagsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeEndpointRequest&, const Model::DescribeEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeEndpointConfigRequest&, const Model::DescribeEndpointConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeModelRequest&, const Model::DescribeModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeModelResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeNotebookInstanceRequest&, const Model::DescribeNotebookInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNotebookInstanceResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeNotebookInstanceLifecycleConfigRequest&, const Model::DescribeNotebookInstanceLifecycleConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNotebookInstanceLifecycleConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeTrainingJobRequest&, const Model::DescribeTrainingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrainingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListEndpointConfigsRequest&, const Model::ListEndpointConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEndpointConfigsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListEndpointsRequest&, const Model::ListEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEndpointsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListModelsRequest&, const Model::ListModelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListNotebookInstanceLifecycleConfigsRequest&, const Model::ListNotebookInstanceLifecycleConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNotebookInstanceLifecycleConfigsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListNotebookInstancesRequest&, const Model::ListNotebookInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNotebookInstancesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListTagsRequest&, const Model::ListTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListTrainingJobsRequest&, const Model::ListTrainingJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTrainingJobsResponseReceivedHandler;
@@ -211,6 +234,7 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::UpdateEndpointRequest&, const Model::UpdateEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEndpointResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateEndpointWeightsAndCapacitiesRequest&, const Model::UpdateEndpointWeightsAndCapacitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEndpointWeightsAndCapacitiesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateNotebookInstanceRequest&, const Model::UpdateNotebookInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNotebookInstanceResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::UpdateNotebookInstanceLifecycleConfigRequest&, const Model::UpdateNotebookInstanceLifecycleConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNotebookInstanceLifecycleConfigResponseReceivedHandler;
 
   /**
    * Definition of the public APIs exposed by SageMaker
@@ -507,21 +531,21 @@ namespace Model
         virtual void CreateModelAsync(const Model::CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an Amazon SageMaker notebook instance. A notebook instance is an ML
-         * compute instance running on a Jupyter notebook. </p> <p>In a
-         * <code>CreateNotebookInstance</code> request, you specify the type of ML compute
+         * <p>Creates an Amazon SageMaker notebook instance. A notebook instance is a
+         * machine learning (ML) compute instance running on a Jupyter notebook. </p> <p>In
+         * a <code>CreateNotebookInstance</code> request, specify the type of ML compute
          * instance that you want to run. Amazon SageMaker launches the instance, installs
          * common libraries that you can use to explore datasets for model training, and
          * attaches an ML storage volume to the notebook instance. </p> <p>Amazon SageMaker
          * also provides a set of example notebooks. Each notebook demonstrates how to use
-         * Amazon SageMaker with a specific an algorithm or with a machine learning
-         * framework. </p> <p>After receiving the request, Amazon SageMaker does the
-         * following:</p> <ol> <li> <p>Creates a network interface in the Amazon SageMaker
-         * VPC.</p> </li> <li> <p>(Option) If you specified <code>SubnetId</code>, creates
-         * a network interface in your own VPC, which is inferred from the subnet ID that
-         * you provide in the input. When creating this network interface, Amazon SageMaker
-         * attaches the security group that you specified in the request to the network
-         * interface that it creates in your VPC.</p> </li> <li> <p>Launches an EC2
+         * Amazon SageMaker with a specific algorithm or with a machine learning framework.
+         * </p> <p>After receiving the request, Amazon SageMaker does the following:</p>
+         * <ol> <li> <p>Creates a network interface in the Amazon SageMaker VPC.</p> </li>
+         * <li> <p>(Option) If you specified <code>SubnetId</code>, Amazon SageMaker
+         * creates a network interface in your own VPC, which is inferred from the subnet
+         * ID that you provide in the input. When creating this network interface, Amazon
+         * SageMaker attaches the security group that you specified in the request to the
+         * network interface that it creates in your VPC.</p> </li> <li> <p>Launches an EC2
          * instance of the type specified in the request in the Amazon SageMaker VPC. If
          * you specified <code>SubnetId</code> of your VPC, Amazon SageMaker specifies both
          * network interfaces when launching this instance. This enables inbound traffic
@@ -541,21 +565,21 @@ namespace Model
         virtual Model::CreateNotebookInstanceOutcome CreateNotebookInstance(const Model::CreateNotebookInstanceRequest& request) const;
 
         /**
-         * <p>Creates an Amazon SageMaker notebook instance. A notebook instance is an ML
-         * compute instance running on a Jupyter notebook. </p> <p>In a
-         * <code>CreateNotebookInstance</code> request, you specify the type of ML compute
+         * <p>Creates an Amazon SageMaker notebook instance. A notebook instance is a
+         * machine learning (ML) compute instance running on a Jupyter notebook. </p> <p>In
+         * a <code>CreateNotebookInstance</code> request, specify the type of ML compute
          * instance that you want to run. Amazon SageMaker launches the instance, installs
          * common libraries that you can use to explore datasets for model training, and
          * attaches an ML storage volume to the notebook instance. </p> <p>Amazon SageMaker
          * also provides a set of example notebooks. Each notebook demonstrates how to use
-         * Amazon SageMaker with a specific an algorithm or with a machine learning
-         * framework. </p> <p>After receiving the request, Amazon SageMaker does the
-         * following:</p> <ol> <li> <p>Creates a network interface in the Amazon SageMaker
-         * VPC.</p> </li> <li> <p>(Option) If you specified <code>SubnetId</code>, creates
-         * a network interface in your own VPC, which is inferred from the subnet ID that
-         * you provide in the input. When creating this network interface, Amazon SageMaker
-         * attaches the security group that you specified in the request to the network
-         * interface that it creates in your VPC.</p> </li> <li> <p>Launches an EC2
+         * Amazon SageMaker with a specific algorithm or with a machine learning framework.
+         * </p> <p>After receiving the request, Amazon SageMaker does the following:</p>
+         * <ol> <li> <p>Creates a network interface in the Amazon SageMaker VPC.</p> </li>
+         * <li> <p>(Option) If you specified <code>SubnetId</code>, Amazon SageMaker
+         * creates a network interface in your own VPC, which is inferred from the subnet
+         * ID that you provide in the input. When creating this network interface, Amazon
+         * SageMaker attaches the security group that you specified in the request to the
+         * network interface that it creates in your VPC.</p> </li> <li> <p>Launches an EC2
          * instance of the type specified in the request in the Amazon SageMaker VPC. If
          * you specified <code>SubnetId</code> of your VPC, Amazon SageMaker specifies both
          * network interfaces when launching this instance. This enables inbound traffic
@@ -577,21 +601,21 @@ namespace Model
         virtual Model::CreateNotebookInstanceOutcomeCallable CreateNotebookInstanceCallable(const Model::CreateNotebookInstanceRequest& request) const;
 
         /**
-         * <p>Creates an Amazon SageMaker notebook instance. A notebook instance is an ML
-         * compute instance running on a Jupyter notebook. </p> <p>In a
-         * <code>CreateNotebookInstance</code> request, you specify the type of ML compute
+         * <p>Creates an Amazon SageMaker notebook instance. A notebook instance is a
+         * machine learning (ML) compute instance running on a Jupyter notebook. </p> <p>In
+         * a <code>CreateNotebookInstance</code> request, specify the type of ML compute
          * instance that you want to run. Amazon SageMaker launches the instance, installs
          * common libraries that you can use to explore datasets for model training, and
          * attaches an ML storage volume to the notebook instance. </p> <p>Amazon SageMaker
          * also provides a set of example notebooks. Each notebook demonstrates how to use
-         * Amazon SageMaker with a specific an algorithm or with a machine learning
-         * framework. </p> <p>After receiving the request, Amazon SageMaker does the
-         * following:</p> <ol> <li> <p>Creates a network interface in the Amazon SageMaker
-         * VPC.</p> </li> <li> <p>(Option) If you specified <code>SubnetId</code>, creates
-         * a network interface in your own VPC, which is inferred from the subnet ID that
-         * you provide in the input. When creating this network interface, Amazon SageMaker
-         * attaches the security group that you specified in the request to the network
-         * interface that it creates in your VPC.</p> </li> <li> <p>Launches an EC2
+         * Amazon SageMaker with a specific algorithm or with a machine learning framework.
+         * </p> <p>After receiving the request, Amazon SageMaker does the following:</p>
+         * <ol> <li> <p>Creates a network interface in the Amazon SageMaker VPC.</p> </li>
+         * <li> <p>(Option) If you specified <code>SubnetId</code>, Amazon SageMaker
+         * creates a network interface in your own VPC, which is inferred from the subnet
+         * ID that you provide in the input. When creating this network interface, Amazon
+         * SageMaker attaches the security group that you specified in the request to the
+         * network interface that it creates in your VPC.</p> </li> <li> <p>Launches an EC2
          * instance of the type specified in the request in the Amazon SageMaker VPC. If
          * you specified <code>SubnetId</code> of your VPC, Amazon SageMaker specifies both
          * network interfaces when launching this instance. This enables inbound traffic
@@ -611,6 +635,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateNotebookInstanceAsync(const Model::CreateNotebookInstanceRequest& request, const CreateNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a lifecycle configuration that you can associate with a notebook
+         * instance. A <i>lifecycle configuration</i> is a collection of shell scripts that
+         * run when you create or start a notebook instance.</p> <p>For information about
+         * notebook instance lifestyle configurations, see
+         * <a>notebook-lifecycle-config</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateNotebookInstanceLifecycleConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateNotebookInstanceLifecycleConfigOutcome CreateNotebookInstanceLifecycleConfig(const Model::CreateNotebookInstanceLifecycleConfigRequest& request) const;
+
+        /**
+         * <p>Creates a lifecycle configuration that you can associate with a notebook
+         * instance. A <i>lifecycle configuration</i> is a collection of shell scripts that
+         * run when you create or start a notebook instance.</p> <p>For information about
+         * notebook instance lifestyle configurations, see
+         * <a>notebook-lifecycle-config</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateNotebookInstanceLifecycleConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateNotebookInstanceLifecycleConfigOutcomeCallable CreateNotebookInstanceLifecycleConfigCallable(const Model::CreateNotebookInstanceLifecycleConfigRequest& request) const;
+
+        /**
+         * <p>Creates a lifecycle configuration that you can associate with a notebook
+         * instance. A <i>lifecycle configuration</i> is a collection of shell scripts that
+         * run when you create or start a notebook instance.</p> <p>For information about
+         * notebook instance lifestyle configurations, see
+         * <a>notebook-lifecycle-config</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateNotebookInstanceLifecycleConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateNotebookInstanceLifecycleConfigAsync(const Model::CreateNotebookInstanceLifecycleConfigRequest& request, const CreateNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a URL that you can use to connect to the Juypter server from a
@@ -892,6 +953,34 @@ namespace Model
         virtual void DeleteNotebookInstanceAsync(const Model::DeleteNotebookInstanceRequest& request, const DeleteNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes a notebook instance lifecycle configuration.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteNotebookInstanceLifecycleConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteNotebookInstanceLifecycleConfigOutcome DeleteNotebookInstanceLifecycleConfig(const Model::DeleteNotebookInstanceLifecycleConfigRequest& request) const;
+
+        /**
+         * <p>Deletes a notebook instance lifecycle configuration.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteNotebookInstanceLifecycleConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteNotebookInstanceLifecycleConfigOutcomeCallable DeleteNotebookInstanceLifecycleConfigCallable(const Model::DeleteNotebookInstanceLifecycleConfigRequest& request) const;
+
+        /**
+         * <p>Deletes a notebook instance lifecycle configuration.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteNotebookInstanceLifecycleConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteNotebookInstanceLifecycleConfigAsync(const Model::DeleteNotebookInstanceLifecycleConfigRequest& request, const DeleteNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the specified tags from an Amazon SageMaker resource.</p> <p>To list
          * a resource's tags, use the <code>ListTags</code> API. </p><p><h3>See Also:</h3> 
          * <a
@@ -1029,6 +1118,37 @@ namespace Model
         virtual void DescribeNotebookInstanceAsync(const Model::DescribeNotebookInstanceRequest& request, const DescribeNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a description of a notebook instance lifecycle configuration.</p>
+         * <p>For information about notebook instance lifestyle configurations, see
+         * <a>notebook-lifecycle-config</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeNotebookInstanceLifecycleConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeNotebookInstanceLifecycleConfigOutcome DescribeNotebookInstanceLifecycleConfig(const Model::DescribeNotebookInstanceLifecycleConfigRequest& request) const;
+
+        /**
+         * <p>Returns a description of a notebook instance lifecycle configuration.</p>
+         * <p>For information about notebook instance lifestyle configurations, see
+         * <a>notebook-lifecycle-config</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeNotebookInstanceLifecycleConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeNotebookInstanceLifecycleConfigOutcomeCallable DescribeNotebookInstanceLifecycleConfigCallable(const Model::DescribeNotebookInstanceLifecycleConfigRequest& request) const;
+
+        /**
+         * <p>Returns a description of a notebook instance lifecycle configuration.</p>
+         * <p>For information about notebook instance lifestyle configurations, see
+         * <a>notebook-lifecycle-config</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeNotebookInstanceLifecycleConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeNotebookInstanceLifecycleConfigAsync(const Model::DescribeNotebookInstanceLifecycleConfigRequest& request, const DescribeNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns information about a training job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrainingJob">AWS
          * API Reference</a></p>
@@ -1133,6 +1253,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListModelsAsync(const Model::ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists notebook instance lifestyle configurations created with the
+         * API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListNotebookInstanceLifecycleConfigs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListNotebookInstanceLifecycleConfigsOutcome ListNotebookInstanceLifecycleConfigs(const Model::ListNotebookInstanceLifecycleConfigsRequest& request) const;
+
+        /**
+         * <p>Lists notebook instance lifestyle configurations created with the
+         * API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListNotebookInstanceLifecycleConfigs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListNotebookInstanceLifecycleConfigsOutcomeCallable ListNotebookInstanceLifecycleConfigsCallable(const Model::ListNotebookInstanceLifecycleConfigsRequest& request) const;
+
+        /**
+         * <p>Lists notebook instance lifestyle configurations created with the
+         * API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListNotebookInstanceLifecycleConfigs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListNotebookInstanceLifecycleConfigsAsync(const Model::ListNotebookInstanceLifecycleConfigsRequest& request, const ListNotebookInstanceLifecycleConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the Amazon SageMaker notebook instances in the requester's
@@ -1476,6 +1624,34 @@ namespace Model
          */
         virtual void UpdateNotebookInstanceAsync(const Model::UpdateNotebookInstanceRequest& request, const UpdateNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Updates a notebook instance lifecycle configuration created with the
+         * API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstanceLifecycleConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateNotebookInstanceLifecycleConfigOutcome UpdateNotebookInstanceLifecycleConfig(const Model::UpdateNotebookInstanceLifecycleConfigRequest& request) const;
+
+        /**
+         * <p>Updates a notebook instance lifecycle configuration created with the
+         * API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstanceLifecycleConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateNotebookInstanceLifecycleConfigOutcomeCallable UpdateNotebookInstanceLifecycleConfigCallable(const Model::UpdateNotebookInstanceLifecycleConfigRequest& request) const;
+
+        /**
+         * <p>Updates a notebook instance lifecycle configuration created with the
+         * API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstanceLifecycleConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateNotebookInstanceLifecycleConfigAsync(const Model::UpdateNotebookInstanceLifecycleConfigRequest& request, const UpdateNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
@@ -1486,21 +1662,25 @@ namespace Model
         void CreateEndpointConfigAsyncHelper(const Model::CreateEndpointConfigRequest& request, const CreateEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateModelAsyncHelper(const Model::CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateNotebookInstanceAsyncHelper(const Model::CreateNotebookInstanceRequest& request, const CreateNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateNotebookInstanceLifecycleConfigAsyncHelper(const Model::CreateNotebookInstanceLifecycleConfigRequest& request, const CreateNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePresignedNotebookInstanceUrlAsyncHelper(const Model::CreatePresignedNotebookInstanceUrlRequest& request, const CreatePresignedNotebookInstanceUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTrainingJobAsyncHelper(const Model::CreateTrainingJobRequest& request, const CreateTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEndpointAsyncHelper(const Model::DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEndpointConfigAsyncHelper(const Model::DeleteEndpointConfigRequest& request, const DeleteEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteModelAsyncHelper(const Model::DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteNotebookInstanceAsyncHelper(const Model::DeleteNotebookInstanceRequest& request, const DeleteNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteNotebookInstanceLifecycleConfigAsyncHelper(const Model::DeleteNotebookInstanceLifecycleConfigRequest& request, const DeleteNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTagsAsyncHelper(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEndpointAsyncHelper(const Model::DescribeEndpointRequest& request, const DescribeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEndpointConfigAsyncHelper(const Model::DescribeEndpointConfigRequest& request, const DescribeEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeModelAsyncHelper(const Model::DescribeModelRequest& request, const DescribeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeNotebookInstanceAsyncHelper(const Model::DescribeNotebookInstanceRequest& request, const DescribeNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeNotebookInstanceLifecycleConfigAsyncHelper(const Model::DescribeNotebookInstanceLifecycleConfigRequest& request, const DescribeNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTrainingJobAsyncHelper(const Model::DescribeTrainingJobRequest& request, const DescribeTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEndpointConfigsAsyncHelper(const Model::ListEndpointConfigsRequest& request, const ListEndpointConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEndpointsAsyncHelper(const Model::ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListModelsAsyncHelper(const Model::ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListNotebookInstanceLifecycleConfigsAsyncHelper(const Model::ListNotebookInstanceLifecycleConfigsRequest& request, const ListNotebookInstanceLifecycleConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListNotebookInstancesAsyncHelper(const Model::ListNotebookInstancesRequest& request, const ListNotebookInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsAsyncHelper(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTrainingJobsAsyncHelper(const Model::ListTrainingJobsRequest& request, const ListTrainingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1510,6 +1690,7 @@ namespace Model
         void UpdateEndpointAsyncHelper(const Model::UpdateEndpointRequest& request, const UpdateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateEndpointWeightsAndCapacitiesAsyncHelper(const Model::UpdateEndpointWeightsAndCapacitiesRequest& request, const UpdateEndpointWeightsAndCapacitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateNotebookInstanceAsyncHelper(const Model::UpdateNotebookInstanceRequest& request, const UpdateNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateNotebookInstanceLifecycleConfigAsyncHelper(const Model::UpdateNotebookInstanceLifecycleConfigRequest& request, const UpdateNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;

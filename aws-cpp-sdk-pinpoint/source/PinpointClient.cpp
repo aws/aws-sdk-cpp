@@ -41,6 +41,7 @@
 #include <aws/pinpoint/model/DeleteBaiduChannelRequest.h>
 #include <aws/pinpoint/model/DeleteCampaignRequest.h>
 #include <aws/pinpoint/model/DeleteEmailChannelRequest.h>
+#include <aws/pinpoint/model/DeleteEndpointRequest.h>
 #include <aws/pinpoint/model/DeleteEventStreamRequest.h>
 #include <aws/pinpoint/model/DeleteGcmChannelRequest.h>
 #include <aws/pinpoint/model/DeleteSegmentRequest.h>
@@ -644,6 +645,41 @@ void PinpointClient::DeleteEmailChannelAsync(const DeleteEmailChannelRequest& re
 void PinpointClient::DeleteEmailChannelAsyncHelper(const DeleteEmailChannelRequest& request, const DeleteEmailChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteEmailChannel(request), context);
+}
+
+DeleteEndpointOutcome PinpointClient::DeleteEndpoint(const DeleteEndpointRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/endpoints/{endpoint-id}";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteEndpointOutcome(DeleteEndpointResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteEndpointOutcome(outcome.GetError());
+  }
+}
+
+DeleteEndpointOutcomeCallable PinpointClient::DeleteEndpointCallable(const DeleteEndpointRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEndpoint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::DeleteEndpointAsync(const DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteEndpointAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::DeleteEndpointAsyncHelper(const DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteEndpoint(request), context);
 }
 
 DeleteEventStreamOutcome PinpointClient::DeleteEventStream(const DeleteEventStreamRequest& request) const

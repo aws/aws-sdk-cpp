@@ -34,9 +34,10 @@ namespace Model
 
   /**
    * <p>Describes weight and capacities for a production variant associated with an
-   * endpoint. If you sent a request to the <code>UpdateWeightAndCapacities</code>
-   * API and the endpoint status is <code>Updating</code>, you get different desired
-   * and current values. </p><p><h3>See Also:</h3>   <a
+   * endpoint. If you sent a request to the
+   * <code>UpdateEndpointWeightsAndCapacities</code> API and the endpoint status is
+   * <code>Updating</code>, you get different desired and current values.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProductionVariantSummary">AWS
    * API Reference</a></p>
    */
@@ -103,19 +104,19 @@ namespace Model
 
     /**
      * <p>The requested weight, as specified in the
-     * <code>UpdateWeightAndCapacities</code> request. </p>
+     * <code>UpdateEndpointWeightsAndCapacities</code> request. </p>
      */
     inline double GetDesiredWeight() const{ return m_desiredWeight; }
 
     /**
      * <p>The requested weight, as specified in the
-     * <code>UpdateWeightAndCapacities</code> request. </p>
+     * <code>UpdateEndpointWeightsAndCapacities</code> request. </p>
      */
     inline void SetDesiredWeight(double value) { m_desiredWeightHasBeenSet = true; m_desiredWeight = value; }
 
     /**
      * <p>The requested weight, as specified in the
-     * <code>UpdateWeightAndCapacities</code> request. </p>
+     * <code>UpdateEndpointWeightsAndCapacities</code> request. </p>
      */
     inline ProductionVariantSummary& WithDesiredWeight(double value) { SetDesiredWeight(value); return *this;}
 
@@ -138,19 +139,19 @@ namespace Model
 
     /**
      * <p>The number of instances requested in the
-     * <code>UpdateWeightAndCapacities</code> request. </p>
+     * <code>UpdateEndpointWeightsAndCapacities</code> request. </p>
      */
     inline int GetDesiredInstanceCount() const{ return m_desiredInstanceCount; }
 
     /**
      * <p>The number of instances requested in the
-     * <code>UpdateWeightAndCapacities</code> request. </p>
+     * <code>UpdateEndpointWeightsAndCapacities</code> request. </p>
      */
     inline void SetDesiredInstanceCount(int value) { m_desiredInstanceCountHasBeenSet = true; m_desiredInstanceCount = value; }
 
     /**
      * <p>The number of instances requested in the
-     * <code>UpdateWeightAndCapacities</code> request. </p>
+     * <code>UpdateEndpointWeightsAndCapacities</code> request. </p>
      */
     inline ProductionVariantSummary& WithDesiredInstanceCount(int value) { SetDesiredInstanceCount(value); return *this;}
 

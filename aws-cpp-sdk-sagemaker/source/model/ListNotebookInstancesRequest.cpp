@@ -36,7 +36,8 @@ ListNotebookInstancesRequest::ListNotebookInstancesRequest() :
     m_lastModifiedTimeBeforeHasBeenSet(false),
     m_lastModifiedTimeAfterHasBeenSet(false),
     m_statusEquals(NotebookInstanceStatus::NOT_SET),
-    m_statusEqualsHasBeenSet(false)
+    m_statusEqualsHasBeenSet(false),
+    m_notebookInstanceLifecycleConfigNameContainsHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,12 @@ Aws::String ListNotebookInstancesRequest::SerializePayload() const
   if(m_statusEqualsHasBeenSet)
   {
    payload.WithString("StatusEquals", NotebookInstanceStatusMapper::GetNameForNotebookInstanceStatus(m_statusEquals));
+  }
+
+  if(m_notebookInstanceLifecycleConfigNameContainsHasBeenSet)
+  {
+   payload.WithString("NotebookInstanceLifecycleConfigNameContains", m_notebookInstanceLifecycleConfigNameContains);
+
   }
 
   return payload.WriteReadable();

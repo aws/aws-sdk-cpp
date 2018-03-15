@@ -28,13 +28,15 @@ using namespace Aws;
 
 DescribeNotebookInstanceResult::DescribeNotebookInstanceResult() : 
     m_notebookInstanceStatus(NotebookInstanceStatus::NOT_SET),
-    m_instanceType(InstanceType::NOT_SET)
+    m_instanceType(InstanceType::NOT_SET),
+    m_directInternetAccess(DirectInternetAccess::NOT_SET)
 {
 }
 
 DescribeNotebookInstanceResult::DescribeNotebookInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_notebookInstanceStatus(NotebookInstanceStatus::NOT_SET),
-    m_instanceType(InstanceType::NOT_SET)
+    m_instanceType(InstanceType::NOT_SET),
+    m_directInternetAccess(DirectInternetAccess::NOT_SET)
 {
   *this = result;
 }
@@ -120,6 +122,18 @@ DescribeNotebookInstanceResult& DescribeNotebookInstanceResult::operator =(const
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
+
+  }
+
+  if(jsonValue.ValueExists("NotebookInstanceLifecycleConfigName"))
+  {
+    m_notebookInstanceLifecycleConfigName = jsonValue.GetString("NotebookInstanceLifecycleConfigName");
+
+  }
+
+  if(jsonValue.ValueExists("DirectInternetAccess"))
+  {
+    m_directInternetAccess = DirectInternetAccessMapper::GetDirectInternetAccessForName(jsonValue.GetString("DirectInternetAccess"));
 
   }
 
