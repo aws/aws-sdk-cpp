@@ -26,6 +26,7 @@ UpdateChannelRequest::UpdateChannelRequest() :
     m_channelIdHasBeenSet(false),
     m_destinationsHasBeenSet(false),
     m_encoderSettingsHasBeenSet(false),
+    m_inputAttachmentsHasBeenSet(false),
     m_inputSpecificationHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_roleArnHasBeenSet(false)
@@ -50,6 +51,17 @@ Aws::String UpdateChannelRequest::SerializePayload() const
   if(m_encoderSettingsHasBeenSet)
   {
    payload.WithObject("encoderSettings", m_encoderSettings.Jsonize());
+
+  }
+
+  if(m_inputAttachmentsHasBeenSet)
+  {
+   Array<JsonValue> inputAttachmentsJsonList(m_inputAttachments.size());
+   for(unsigned inputAttachmentsIndex = 0; inputAttachmentsIndex < inputAttachmentsJsonList.GetLength(); ++inputAttachmentsIndex)
+   {
+     inputAttachmentsJsonList[inputAttachmentsIndex].AsObject(m_inputAttachments[inputAttachmentsIndex].Jsonize());
+   }
+   payload.WithArray("inputAttachments", std::move(inputAttachmentsJsonList));
 
   }
 

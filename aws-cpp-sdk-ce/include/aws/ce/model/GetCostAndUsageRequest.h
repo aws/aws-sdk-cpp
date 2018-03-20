@@ -138,7 +138,7 @@ namespace Model
 
     /**
      * <p>Filters AWS costs by different dimensions. For example, you can specify
-     * <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs
+     * <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are
      * associated with that account's usage of that service. You can nest
      * <code>Expression</code> objects to define any combination of dimension filters.
      * For more information, see <a
@@ -149,7 +149,7 @@ namespace Model
 
     /**
      * <p>Filters AWS costs by different dimensions. For example, you can specify
-     * <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs
+     * <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are
      * associated with that account's usage of that service. You can nest
      * <code>Expression</code> objects to define any combination of dimension filters.
      * For more information, see <a
@@ -160,7 +160,7 @@ namespace Model
 
     /**
      * <p>Filters AWS costs by different dimensions. For example, you can specify
-     * <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs
+     * <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are
      * associated with that account's usage of that service. You can nest
      * <code>Expression</code> objects to define any combination of dimension filters.
      * For more information, see <a
@@ -171,7 +171,7 @@ namespace Model
 
     /**
      * <p>Filters AWS costs by different dimensions. For example, you can specify
-     * <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs
+     * <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are
      * associated with that account's usage of that service. You can nest
      * <code>Expression</code> objects to define any combination of dimension filters.
      * For more information, see <a
@@ -182,7 +182,7 @@ namespace Model
 
     /**
      * <p>Filters AWS costs by different dimensions. For example, you can specify
-     * <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs
+     * <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are
      * associated with that account's usage of that service. You can nest
      * <code>Expression</code> objects to define any combination of dimension filters.
      * For more information, see <a
@@ -205,7 +205,8 @@ namespace Model
      * because EC2 compute hours and data transfer are measured in different units (for
      * example, hours vs. GB). To get more meaningful <code>UsageQuantity</code>
      * metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
-     * </note>
+     * </note> <p> <code>Metrics</code> is required for <code>GetCostAndUsage</code>
+     * requests.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMetrics() const{ return m_metrics; }
 
@@ -222,7 +223,8 @@ namespace Model
      * because EC2 compute hours and data transfer are measured in different units (for
      * example, hours vs. GB). To get more meaningful <code>UsageQuantity</code>
      * metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
-     * </note>
+     * </note> <p> <code>Metrics</code> is required for <code>GetCostAndUsage</code>
+     * requests.</p>
      */
     inline void SetMetrics(const Aws::Vector<Aws::String>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
 
@@ -239,7 +241,8 @@ namespace Model
      * because EC2 compute hours and data transfer are measured in different units (for
      * example, hours vs. GB). To get more meaningful <code>UsageQuantity</code>
      * metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
-     * </note>
+     * </note> <p> <code>Metrics</code> is required for <code>GetCostAndUsage</code>
+     * requests.</p>
      */
     inline void SetMetrics(Aws::Vector<Aws::String>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
 
@@ -256,7 +259,8 @@ namespace Model
      * because EC2 compute hours and data transfer are measured in different units (for
      * example, hours vs. GB). To get more meaningful <code>UsageQuantity</code>
      * metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
-     * </note>
+     * </note> <p> <code>Metrics</code> is required for <code>GetCostAndUsage</code>
+     * requests.</p>
      */
     inline GetCostAndUsageRequest& WithMetrics(const Aws::Vector<Aws::String>& value) { SetMetrics(value); return *this;}
 
@@ -273,7 +277,8 @@ namespace Model
      * because EC2 compute hours and data transfer are measured in different units (for
      * example, hours vs. GB). To get more meaningful <code>UsageQuantity</code>
      * metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
-     * </note>
+     * </note> <p> <code>Metrics</code> is required for <code>GetCostAndUsage</code>
+     * requests.</p>
      */
     inline GetCostAndUsageRequest& WithMetrics(Aws::Vector<Aws::String>&& value) { SetMetrics(std::move(value)); return *this;}
 
@@ -290,7 +295,8 @@ namespace Model
      * because EC2 compute hours and data transfer are measured in different units (for
      * example, hours vs. GB). To get more meaningful <code>UsageQuantity</code>
      * metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
-     * </note>
+     * </note> <p> <code>Metrics</code> is required for <code>GetCostAndUsage</code>
+     * requests.</p>
      */
     inline GetCostAndUsageRequest& AddMetrics(const Aws::String& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
 
@@ -307,7 +313,8 @@ namespace Model
      * because EC2 compute hours and data transfer are measured in different units (for
      * example, hours vs. GB). To get more meaningful <code>UsageQuantity</code>
      * metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
-     * </note>
+     * </note> <p> <code>Metrics</code> is required for <code>GetCostAndUsage</code>
+     * requests.</p>
      */
     inline GetCostAndUsageRequest& AddMetrics(Aws::String&& value) { m_metricsHasBeenSet = true; m_metrics.push_back(std::move(value)); return *this; }
 
@@ -324,7 +331,8 @@ namespace Model
      * because EC2 compute hours and data transfer are measured in different units (for
      * example, hours vs. GB). To get more meaningful <code>UsageQuantity</code>
      * metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
-     * </note>
+     * </note> <p> <code>Metrics</code> is required for <code>GetCostAndUsage</code>
+     * requests.</p>
      */
     inline GetCostAndUsageRequest& AddMetrics(const char* value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
 
@@ -333,9 +341,10 @@ namespace Model
      * <p>You can group AWS costs using up to two different groups, either dimensions,
      * tag keys, or both.</p> <p>When you group by tag key, you get all tag values,
      * including empty strings.</p> <p>Valid values are <code>AZ</code>,
-     * <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>,
-     * <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>,
-     * <code>TAGS</code>, <code>TENANCY</code>, and <code>USAGE_TYPE</code>.</p>
+     * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
+     * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
+     * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TAGS</code>,
+     * <code>TENANCY</code>, and <code>USAGE_TYPE</code>.</p>
      */
     inline const Aws::Vector<GroupDefinition>& GetGroupBy() const{ return m_groupBy; }
 
@@ -343,9 +352,10 @@ namespace Model
      * <p>You can group AWS costs using up to two different groups, either dimensions,
      * tag keys, or both.</p> <p>When you group by tag key, you get all tag values,
      * including empty strings.</p> <p>Valid values are <code>AZ</code>,
-     * <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>,
-     * <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>,
-     * <code>TAGS</code>, <code>TENANCY</code>, and <code>USAGE_TYPE</code>.</p>
+     * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
+     * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
+     * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TAGS</code>,
+     * <code>TENANCY</code>, and <code>USAGE_TYPE</code>.</p>
      */
     inline void SetGroupBy(const Aws::Vector<GroupDefinition>& value) { m_groupByHasBeenSet = true; m_groupBy = value; }
 
@@ -353,9 +363,10 @@ namespace Model
      * <p>You can group AWS costs using up to two different groups, either dimensions,
      * tag keys, or both.</p> <p>When you group by tag key, you get all tag values,
      * including empty strings.</p> <p>Valid values are <code>AZ</code>,
-     * <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>,
-     * <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>,
-     * <code>TAGS</code>, <code>TENANCY</code>, and <code>USAGE_TYPE</code>.</p>
+     * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
+     * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
+     * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TAGS</code>,
+     * <code>TENANCY</code>, and <code>USAGE_TYPE</code>.</p>
      */
     inline void SetGroupBy(Aws::Vector<GroupDefinition>&& value) { m_groupByHasBeenSet = true; m_groupBy = std::move(value); }
 
@@ -363,9 +374,10 @@ namespace Model
      * <p>You can group AWS costs using up to two different groups, either dimensions,
      * tag keys, or both.</p> <p>When you group by tag key, you get all tag values,
      * including empty strings.</p> <p>Valid values are <code>AZ</code>,
-     * <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>,
-     * <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>,
-     * <code>TAGS</code>, <code>TENANCY</code>, and <code>USAGE_TYPE</code>.</p>
+     * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
+     * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
+     * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TAGS</code>,
+     * <code>TENANCY</code>, and <code>USAGE_TYPE</code>.</p>
      */
     inline GetCostAndUsageRequest& WithGroupBy(const Aws::Vector<GroupDefinition>& value) { SetGroupBy(value); return *this;}
 
@@ -373,9 +385,10 @@ namespace Model
      * <p>You can group AWS costs using up to two different groups, either dimensions,
      * tag keys, or both.</p> <p>When you group by tag key, you get all tag values,
      * including empty strings.</p> <p>Valid values are <code>AZ</code>,
-     * <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>,
-     * <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>,
-     * <code>TAGS</code>, <code>TENANCY</code>, and <code>USAGE_TYPE</code>.</p>
+     * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
+     * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
+     * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TAGS</code>,
+     * <code>TENANCY</code>, and <code>USAGE_TYPE</code>.</p>
      */
     inline GetCostAndUsageRequest& WithGroupBy(Aws::Vector<GroupDefinition>&& value) { SetGroupBy(std::move(value)); return *this;}
 
@@ -383,9 +396,10 @@ namespace Model
      * <p>You can group AWS costs using up to two different groups, either dimensions,
      * tag keys, or both.</p> <p>When you group by tag key, you get all tag values,
      * including empty strings.</p> <p>Valid values are <code>AZ</code>,
-     * <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>,
-     * <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>,
-     * <code>TAGS</code>, <code>TENANCY</code>, and <code>USAGE_TYPE</code>.</p>
+     * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
+     * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
+     * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TAGS</code>,
+     * <code>TENANCY</code>, and <code>USAGE_TYPE</code>.</p>
      */
     inline GetCostAndUsageRequest& AddGroupBy(const GroupDefinition& value) { m_groupByHasBeenSet = true; m_groupBy.push_back(value); return *this; }
 
@@ -393,9 +407,10 @@ namespace Model
      * <p>You can group AWS costs using up to two different groups, either dimensions,
      * tag keys, or both.</p> <p>When you group by tag key, you get all tag values,
      * including empty strings.</p> <p>Valid values are <code>AZ</code>,
-     * <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>,
-     * <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>,
-     * <code>TAGS</code>, <code>TENANCY</code>, and <code>USAGE_TYPE</code>.</p>
+     * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
+     * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
+     * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TAGS</code>,
+     * <code>TENANCY</code>, and <code>USAGE_TYPE</code>.</p>
      */
     inline GetCostAndUsageRequest& AddGroupBy(GroupDefinition&& value) { m_groupByHasBeenSet = true; m_groupBy.push_back(std::move(value)); return *this; }
 

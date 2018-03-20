@@ -366,23 +366,29 @@ namespace Model
 
 
     /**
-     * <p>Whether to force a new deployment of the service. By default,
-     * <code>--no-force-new-deployment</code> is assumed unless otherwise
-     * specified.</p>
+     * <p>Whether to force a new deployment of the service. Deployments are not forced
+     * by default. You can use this option to trigger a new deployment with no service
+     * definition changes. For example, you can update a service's tasks to use a newer
+     * Docker image with the same image/tag combination (<code>my_image:latest</code>)
+     * or to roll Fargate tasks onto a newer platform version.</p>
      */
     inline bool GetForceNewDeployment() const{ return m_forceNewDeployment; }
 
     /**
-     * <p>Whether to force a new deployment of the service. By default,
-     * <code>--no-force-new-deployment</code> is assumed unless otherwise
-     * specified.</p>
+     * <p>Whether to force a new deployment of the service. Deployments are not forced
+     * by default. You can use this option to trigger a new deployment with no service
+     * definition changes. For example, you can update a service's tasks to use a newer
+     * Docker image with the same image/tag combination (<code>my_image:latest</code>)
+     * or to roll Fargate tasks onto a newer platform version.</p>
      */
     inline void SetForceNewDeployment(bool value) { m_forceNewDeploymentHasBeenSet = true; m_forceNewDeployment = value; }
 
     /**
-     * <p>Whether to force a new deployment of the service. By default,
-     * <code>--no-force-new-deployment</code> is assumed unless otherwise
-     * specified.</p>
+     * <p>Whether to force a new deployment of the service. Deployments are not forced
+     * by default. You can use this option to trigger a new deployment with no service
+     * definition changes. For example, you can update a service's tasks to use a newer
+     * Docker image with the same image/tag combination (<code>my_image:latest</code>)
+     * or to roll Fargate tasks onto a newer platform version.</p>
      */
     inline UpdateServiceRequest& WithForceNewDeployment(bool value) { SetForceNewDeployment(value); return *this;}
 

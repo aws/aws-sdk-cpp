@@ -130,35 +130,35 @@ namespace Model
 
 
     /**
-     * <p>The name of the dimension. Each <code>Dimensions</code>is available for
+     * <p>The name of the dimension. Each <code>Dimension</code> is available for
      * different a <code>Context</code>. For more information, see
      * <code>Context</code>.</p>
      */
     inline const Dimension& GetDimension() const{ return m_dimension; }
 
     /**
-     * <p>The name of the dimension. Each <code>Dimensions</code>is available for
+     * <p>The name of the dimension. Each <code>Dimension</code> is available for
      * different a <code>Context</code>. For more information, see
      * <code>Context</code>.</p>
      */
     inline void SetDimension(const Dimension& value) { m_dimensionHasBeenSet = true; m_dimension = value; }
 
     /**
-     * <p>The name of the dimension. Each <code>Dimensions</code>is available for
+     * <p>The name of the dimension. Each <code>Dimension</code> is available for
      * different a <code>Context</code>. For more information, see
      * <code>Context</code>.</p>
      */
     inline void SetDimension(Dimension&& value) { m_dimensionHasBeenSet = true; m_dimension = std::move(value); }
 
     /**
-     * <p>The name of the dimension. Each <code>Dimensions</code>is available for
+     * <p>The name of the dimension. Each <code>Dimension</code> is available for
      * different a <code>Context</code>. For more information, see
      * <code>Context</code>.</p>
      */
     inline GetDimensionValuesRequest& WithDimension(const Dimension& value) { SetDimension(value); return *this;}
 
     /**
-     * <p>The name of the dimension. Each <code>Dimensions</code>is available for
+     * <p>The name of the dimension. Each <code>Dimension</code> is available for
      * different a <code>Context</code>. For more information, see
      * <code>Context</code>.</p>
      */
@@ -170,36 +170,40 @@ namespace Model
      * <code>RESERVATIONS</code> or <code>COST_AND_USAGE</code>. The default value is
      * <code>COST_AND_USAGE</code>. If the context is set to <code>RESERVATIONS</code>,
      * the resulting dimension values can be used in the
-     * <code>GetReservationUtilization</code> action. If the context is set to
-     * <code>COST_AND_USAGE</code>, the resulting dimension values can be used in the
+     * <code>GetReservationUtilization</code> operation. If the context is set to
+     * <code>COST_AND_USAGE</code> the resulting dimension values can be used in the
      * <code>GetCostAndUsage</code> operation.</p> <p>If you set the context to
      * <code>CostAndUsage</code>, you can use the following dimensions for
      * searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is
-     * us-east-1a.</p> </li> <li> <p>INSTANCE_TYPE - The type of EC2 instance. An
-     * example is m4.xlarge.</p> </li> <li> <p>LINKED_ACCOUNT - The description in the
-     * attribute map that includes the full name of the member account. The value field
-     * contains the AWS ID of the member account</p> </li> <li> <p>OPERATION - The
-     * action performed. Examples include RunInstance and CreateBucket.</p> </li> <li>
+     * <code>us-east-1a</code>.</p> </li> <li> <p>INSTANCE_TYPE - The type of instance.
+     * An example is an EC2 <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT -
+     * The description in the attribute map that includes the full name of the member
+     * account. The value field contains the AWS ID of the member account.</p> </li>
+     * <li> <p>OPERATION - The action performed. Examples include
+     * <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li> <li>
      * <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is
-     * related. Examples include: On Demand Instances and Standard Reserved
-     * Instances</p> </li> <li> <p>SERVICE - The AWS service such as DynamoDB.</p>
+     * related. Examples include On-Demand Instances and Standard Reserved
+     * Instances.</p> </li> <li> <p>SERVICE - The AWS service such as DynamoDB.</p>
      * </li> <li> <p>USAGE_TYPE - The type of usage. An example is
-     * DataTransfer-In-Bytes. The response for the GetDimensionValues action includes a
-     * unit attribute, examples of which include GB and Hrs.</p> </li> <li>
-     * <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is EC2:
-     * CloudWatch – Alarms. The response for this action includes a unit attribute.</p>
-     * </li> <li> <p>RECORD_TYPE - The different types of charges such as RI fees,
-     * usage costs, tax refunds, and credits.</p> </li> </ul> <p>If you set the context
-     * to <code>RESERVATIONS</code>, you can use the following dimensions for
-     * searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is
-     * us-east-1a.</p> </li> <li> <p>INSTANCE_TYPE - The type of EC2 instance. An
-     * example is m4.xlarge.</p> </li> <li> <p>LINKED_ACCOUNT - The description in the
-     * attribute map that includes the full name of the member account. The value field
-     * contains the AWS ID of the member account</p> </li> <li> <p>PLATFORM - The
-     * operating system. Examples are Windows or Linux.</p> </li> <li> <p>REGION - The
-     * AWS region.</p> </li> <li> <p>SCOPE - The scope of a reserved instance (RI).
-     * Values are regional or a single availability zone.</p> </li> <li> <p>TENANCY -
-     * The tenancy of a resource. Examples are shared or dedicated.</p> </li> </ul>
+     * <code>DataTransfer-In-Bytes</code>. The response for the
+     * <code>GetDimensionValues</code> operation includes a unit attribute, examples of
+     * which include GB and Hrs.</p> </li> <li> <p>USAGE_TYPE_GROUP - The grouping of
+     * common usage types. An example is EC2: CloudWatch – Alarms. The response for
+     * this operation includes a unit attribute.</p> </li> <li> <p>RECORD_TYPE - The
+     * different types of charges such as RI fees, usage costs, tax refunds, and
+     * credits.</p> </li> </ul> <p>If you set the context to <code>RESERVATIONS</code>,
+     * you can use the following dimensions for searching:</p> <ul> <li> <p>AZ - The
+     * Availability Zone. An example is <code>us-east-1a</code>.</p> </li> <li>
+     * <p>INSTANCE_TYPE - The type of instance. An example is an EC2
+     * <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT - The description in
+     * the attribute map that includes the full name of the member account. The value
+     * field contains the AWS ID of the member account.</p> </li> <li> <p>PLATFORM -
+     * The specific combination of operating system, license model, and software on an
+     * instance. For example, a Windows instance with SQL Server Web and no license, or
+     * a Red Hat Enterprise Linux instance.</p> </li> <li> <p>REGION - The AWS
+     * Region.</p> </li> <li> <p>SCOPE - The scope of a Reserved Instance (RI). Values
+     * are regional or a single Availability Zone.</p> </li> <li> <p>TENANCY - The
+     * tenancy of a resource. Examples are shared or dedicated.</p> </li> </ul>
      */
     inline const Context& GetContext() const{ return m_context; }
 
@@ -208,36 +212,40 @@ namespace Model
      * <code>RESERVATIONS</code> or <code>COST_AND_USAGE</code>. The default value is
      * <code>COST_AND_USAGE</code>. If the context is set to <code>RESERVATIONS</code>,
      * the resulting dimension values can be used in the
-     * <code>GetReservationUtilization</code> action. If the context is set to
-     * <code>COST_AND_USAGE</code>, the resulting dimension values can be used in the
+     * <code>GetReservationUtilization</code> operation. If the context is set to
+     * <code>COST_AND_USAGE</code> the resulting dimension values can be used in the
      * <code>GetCostAndUsage</code> operation.</p> <p>If you set the context to
      * <code>CostAndUsage</code>, you can use the following dimensions for
      * searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is
-     * us-east-1a.</p> </li> <li> <p>INSTANCE_TYPE - The type of EC2 instance. An
-     * example is m4.xlarge.</p> </li> <li> <p>LINKED_ACCOUNT - The description in the
-     * attribute map that includes the full name of the member account. The value field
-     * contains the AWS ID of the member account</p> </li> <li> <p>OPERATION - The
-     * action performed. Examples include RunInstance and CreateBucket.</p> </li> <li>
+     * <code>us-east-1a</code>.</p> </li> <li> <p>INSTANCE_TYPE - The type of instance.
+     * An example is an EC2 <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT -
+     * The description in the attribute map that includes the full name of the member
+     * account. The value field contains the AWS ID of the member account.</p> </li>
+     * <li> <p>OPERATION - The action performed. Examples include
+     * <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li> <li>
      * <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is
-     * related. Examples include: On Demand Instances and Standard Reserved
-     * Instances</p> </li> <li> <p>SERVICE - The AWS service such as DynamoDB.</p>
+     * related. Examples include On-Demand Instances and Standard Reserved
+     * Instances.</p> </li> <li> <p>SERVICE - The AWS service such as DynamoDB.</p>
      * </li> <li> <p>USAGE_TYPE - The type of usage. An example is
-     * DataTransfer-In-Bytes. The response for the GetDimensionValues action includes a
-     * unit attribute, examples of which include GB and Hrs.</p> </li> <li>
-     * <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is EC2:
-     * CloudWatch – Alarms. The response for this action includes a unit attribute.</p>
-     * </li> <li> <p>RECORD_TYPE - The different types of charges such as RI fees,
-     * usage costs, tax refunds, and credits.</p> </li> </ul> <p>If you set the context
-     * to <code>RESERVATIONS</code>, you can use the following dimensions for
-     * searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is
-     * us-east-1a.</p> </li> <li> <p>INSTANCE_TYPE - The type of EC2 instance. An
-     * example is m4.xlarge.</p> </li> <li> <p>LINKED_ACCOUNT - The description in the
-     * attribute map that includes the full name of the member account. The value field
-     * contains the AWS ID of the member account</p> </li> <li> <p>PLATFORM - The
-     * operating system. Examples are Windows or Linux.</p> </li> <li> <p>REGION - The
-     * AWS region.</p> </li> <li> <p>SCOPE - The scope of a reserved instance (RI).
-     * Values are regional or a single availability zone.</p> </li> <li> <p>TENANCY -
-     * The tenancy of a resource. Examples are shared or dedicated.</p> </li> </ul>
+     * <code>DataTransfer-In-Bytes</code>. The response for the
+     * <code>GetDimensionValues</code> operation includes a unit attribute, examples of
+     * which include GB and Hrs.</p> </li> <li> <p>USAGE_TYPE_GROUP - The grouping of
+     * common usage types. An example is EC2: CloudWatch – Alarms. The response for
+     * this operation includes a unit attribute.</p> </li> <li> <p>RECORD_TYPE - The
+     * different types of charges such as RI fees, usage costs, tax refunds, and
+     * credits.</p> </li> </ul> <p>If you set the context to <code>RESERVATIONS</code>,
+     * you can use the following dimensions for searching:</p> <ul> <li> <p>AZ - The
+     * Availability Zone. An example is <code>us-east-1a</code>.</p> </li> <li>
+     * <p>INSTANCE_TYPE - The type of instance. An example is an EC2
+     * <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT - The description in
+     * the attribute map that includes the full name of the member account. The value
+     * field contains the AWS ID of the member account.</p> </li> <li> <p>PLATFORM -
+     * The specific combination of operating system, license model, and software on an
+     * instance. For example, a Windows instance with SQL Server Web and no license, or
+     * a Red Hat Enterprise Linux instance.</p> </li> <li> <p>REGION - The AWS
+     * Region.</p> </li> <li> <p>SCOPE - The scope of a Reserved Instance (RI). Values
+     * are regional or a single Availability Zone.</p> </li> <li> <p>TENANCY - The
+     * tenancy of a resource. Examples are shared or dedicated.</p> </li> </ul>
      */
     inline void SetContext(const Context& value) { m_contextHasBeenSet = true; m_context = value; }
 
@@ -246,36 +254,40 @@ namespace Model
      * <code>RESERVATIONS</code> or <code>COST_AND_USAGE</code>. The default value is
      * <code>COST_AND_USAGE</code>. If the context is set to <code>RESERVATIONS</code>,
      * the resulting dimension values can be used in the
-     * <code>GetReservationUtilization</code> action. If the context is set to
-     * <code>COST_AND_USAGE</code>, the resulting dimension values can be used in the
+     * <code>GetReservationUtilization</code> operation. If the context is set to
+     * <code>COST_AND_USAGE</code> the resulting dimension values can be used in the
      * <code>GetCostAndUsage</code> operation.</p> <p>If you set the context to
      * <code>CostAndUsage</code>, you can use the following dimensions for
      * searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is
-     * us-east-1a.</p> </li> <li> <p>INSTANCE_TYPE - The type of EC2 instance. An
-     * example is m4.xlarge.</p> </li> <li> <p>LINKED_ACCOUNT - The description in the
-     * attribute map that includes the full name of the member account. The value field
-     * contains the AWS ID of the member account</p> </li> <li> <p>OPERATION - The
-     * action performed. Examples include RunInstance and CreateBucket.</p> </li> <li>
+     * <code>us-east-1a</code>.</p> </li> <li> <p>INSTANCE_TYPE - The type of instance.
+     * An example is an EC2 <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT -
+     * The description in the attribute map that includes the full name of the member
+     * account. The value field contains the AWS ID of the member account.</p> </li>
+     * <li> <p>OPERATION - The action performed. Examples include
+     * <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li> <li>
      * <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is
-     * related. Examples include: On Demand Instances and Standard Reserved
-     * Instances</p> </li> <li> <p>SERVICE - The AWS service such as DynamoDB.</p>
+     * related. Examples include On-Demand Instances and Standard Reserved
+     * Instances.</p> </li> <li> <p>SERVICE - The AWS service such as DynamoDB.</p>
      * </li> <li> <p>USAGE_TYPE - The type of usage. An example is
-     * DataTransfer-In-Bytes. The response for the GetDimensionValues action includes a
-     * unit attribute, examples of which include GB and Hrs.</p> </li> <li>
-     * <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is EC2:
-     * CloudWatch – Alarms. The response for this action includes a unit attribute.</p>
-     * </li> <li> <p>RECORD_TYPE - The different types of charges such as RI fees,
-     * usage costs, tax refunds, and credits.</p> </li> </ul> <p>If you set the context
-     * to <code>RESERVATIONS</code>, you can use the following dimensions for
-     * searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is
-     * us-east-1a.</p> </li> <li> <p>INSTANCE_TYPE - The type of EC2 instance. An
-     * example is m4.xlarge.</p> </li> <li> <p>LINKED_ACCOUNT - The description in the
-     * attribute map that includes the full name of the member account. The value field
-     * contains the AWS ID of the member account</p> </li> <li> <p>PLATFORM - The
-     * operating system. Examples are Windows or Linux.</p> </li> <li> <p>REGION - The
-     * AWS region.</p> </li> <li> <p>SCOPE - The scope of a reserved instance (RI).
-     * Values are regional or a single availability zone.</p> </li> <li> <p>TENANCY -
-     * The tenancy of a resource. Examples are shared or dedicated.</p> </li> </ul>
+     * <code>DataTransfer-In-Bytes</code>. The response for the
+     * <code>GetDimensionValues</code> operation includes a unit attribute, examples of
+     * which include GB and Hrs.</p> </li> <li> <p>USAGE_TYPE_GROUP - The grouping of
+     * common usage types. An example is EC2: CloudWatch – Alarms. The response for
+     * this operation includes a unit attribute.</p> </li> <li> <p>RECORD_TYPE - The
+     * different types of charges such as RI fees, usage costs, tax refunds, and
+     * credits.</p> </li> </ul> <p>If you set the context to <code>RESERVATIONS</code>,
+     * you can use the following dimensions for searching:</p> <ul> <li> <p>AZ - The
+     * Availability Zone. An example is <code>us-east-1a</code>.</p> </li> <li>
+     * <p>INSTANCE_TYPE - The type of instance. An example is an EC2
+     * <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT - The description in
+     * the attribute map that includes the full name of the member account. The value
+     * field contains the AWS ID of the member account.</p> </li> <li> <p>PLATFORM -
+     * The specific combination of operating system, license model, and software on an
+     * instance. For example, a Windows instance with SQL Server Web and no license, or
+     * a Red Hat Enterprise Linux instance.</p> </li> <li> <p>REGION - The AWS
+     * Region.</p> </li> <li> <p>SCOPE - The scope of a Reserved Instance (RI). Values
+     * are regional or a single Availability Zone.</p> </li> <li> <p>TENANCY - The
+     * tenancy of a resource. Examples are shared or dedicated.</p> </li> </ul>
      */
     inline void SetContext(Context&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
 
@@ -284,36 +296,40 @@ namespace Model
      * <code>RESERVATIONS</code> or <code>COST_AND_USAGE</code>. The default value is
      * <code>COST_AND_USAGE</code>. If the context is set to <code>RESERVATIONS</code>,
      * the resulting dimension values can be used in the
-     * <code>GetReservationUtilization</code> action. If the context is set to
-     * <code>COST_AND_USAGE</code>, the resulting dimension values can be used in the
+     * <code>GetReservationUtilization</code> operation. If the context is set to
+     * <code>COST_AND_USAGE</code> the resulting dimension values can be used in the
      * <code>GetCostAndUsage</code> operation.</p> <p>If you set the context to
      * <code>CostAndUsage</code>, you can use the following dimensions for
      * searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is
-     * us-east-1a.</p> </li> <li> <p>INSTANCE_TYPE - The type of EC2 instance. An
-     * example is m4.xlarge.</p> </li> <li> <p>LINKED_ACCOUNT - The description in the
-     * attribute map that includes the full name of the member account. The value field
-     * contains the AWS ID of the member account</p> </li> <li> <p>OPERATION - The
-     * action performed. Examples include RunInstance and CreateBucket.</p> </li> <li>
+     * <code>us-east-1a</code>.</p> </li> <li> <p>INSTANCE_TYPE - The type of instance.
+     * An example is an EC2 <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT -
+     * The description in the attribute map that includes the full name of the member
+     * account. The value field contains the AWS ID of the member account.</p> </li>
+     * <li> <p>OPERATION - The action performed. Examples include
+     * <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li> <li>
      * <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is
-     * related. Examples include: On Demand Instances and Standard Reserved
-     * Instances</p> </li> <li> <p>SERVICE - The AWS service such as DynamoDB.</p>
+     * related. Examples include On-Demand Instances and Standard Reserved
+     * Instances.</p> </li> <li> <p>SERVICE - The AWS service such as DynamoDB.</p>
      * </li> <li> <p>USAGE_TYPE - The type of usage. An example is
-     * DataTransfer-In-Bytes. The response for the GetDimensionValues action includes a
-     * unit attribute, examples of which include GB and Hrs.</p> </li> <li>
-     * <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is EC2:
-     * CloudWatch – Alarms. The response for this action includes a unit attribute.</p>
-     * </li> <li> <p>RECORD_TYPE - The different types of charges such as RI fees,
-     * usage costs, tax refunds, and credits.</p> </li> </ul> <p>If you set the context
-     * to <code>RESERVATIONS</code>, you can use the following dimensions for
-     * searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is
-     * us-east-1a.</p> </li> <li> <p>INSTANCE_TYPE - The type of EC2 instance. An
-     * example is m4.xlarge.</p> </li> <li> <p>LINKED_ACCOUNT - The description in the
-     * attribute map that includes the full name of the member account. The value field
-     * contains the AWS ID of the member account</p> </li> <li> <p>PLATFORM - The
-     * operating system. Examples are Windows or Linux.</p> </li> <li> <p>REGION - The
-     * AWS region.</p> </li> <li> <p>SCOPE - The scope of a reserved instance (RI).
-     * Values are regional or a single availability zone.</p> </li> <li> <p>TENANCY -
-     * The tenancy of a resource. Examples are shared or dedicated.</p> </li> </ul>
+     * <code>DataTransfer-In-Bytes</code>. The response for the
+     * <code>GetDimensionValues</code> operation includes a unit attribute, examples of
+     * which include GB and Hrs.</p> </li> <li> <p>USAGE_TYPE_GROUP - The grouping of
+     * common usage types. An example is EC2: CloudWatch – Alarms. The response for
+     * this operation includes a unit attribute.</p> </li> <li> <p>RECORD_TYPE - The
+     * different types of charges such as RI fees, usage costs, tax refunds, and
+     * credits.</p> </li> </ul> <p>If you set the context to <code>RESERVATIONS</code>,
+     * you can use the following dimensions for searching:</p> <ul> <li> <p>AZ - The
+     * Availability Zone. An example is <code>us-east-1a</code>.</p> </li> <li>
+     * <p>INSTANCE_TYPE - The type of instance. An example is an EC2
+     * <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT - The description in
+     * the attribute map that includes the full name of the member account. The value
+     * field contains the AWS ID of the member account.</p> </li> <li> <p>PLATFORM -
+     * The specific combination of operating system, license model, and software on an
+     * instance. For example, a Windows instance with SQL Server Web and no license, or
+     * a Red Hat Enterprise Linux instance.</p> </li> <li> <p>REGION - The AWS
+     * Region.</p> </li> <li> <p>SCOPE - The scope of a Reserved Instance (RI). Values
+     * are regional or a single Availability Zone.</p> </li> <li> <p>TENANCY - The
+     * tenancy of a resource. Examples are shared or dedicated.</p> </li> </ul>
      */
     inline GetDimensionValuesRequest& WithContext(const Context& value) { SetContext(value); return *this;}
 
@@ -322,36 +338,40 @@ namespace Model
      * <code>RESERVATIONS</code> or <code>COST_AND_USAGE</code>. The default value is
      * <code>COST_AND_USAGE</code>. If the context is set to <code>RESERVATIONS</code>,
      * the resulting dimension values can be used in the
-     * <code>GetReservationUtilization</code> action. If the context is set to
-     * <code>COST_AND_USAGE</code>, the resulting dimension values can be used in the
+     * <code>GetReservationUtilization</code> operation. If the context is set to
+     * <code>COST_AND_USAGE</code> the resulting dimension values can be used in the
      * <code>GetCostAndUsage</code> operation.</p> <p>If you set the context to
      * <code>CostAndUsage</code>, you can use the following dimensions for
      * searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is
-     * us-east-1a.</p> </li> <li> <p>INSTANCE_TYPE - The type of EC2 instance. An
-     * example is m4.xlarge.</p> </li> <li> <p>LINKED_ACCOUNT - The description in the
-     * attribute map that includes the full name of the member account. The value field
-     * contains the AWS ID of the member account</p> </li> <li> <p>OPERATION - The
-     * action performed. Examples include RunInstance and CreateBucket.</p> </li> <li>
+     * <code>us-east-1a</code>.</p> </li> <li> <p>INSTANCE_TYPE - The type of instance.
+     * An example is an EC2 <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT -
+     * The description in the attribute map that includes the full name of the member
+     * account. The value field contains the AWS ID of the member account.</p> </li>
+     * <li> <p>OPERATION - The action performed. Examples include
+     * <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li> <li>
      * <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is
-     * related. Examples include: On Demand Instances and Standard Reserved
-     * Instances</p> </li> <li> <p>SERVICE - The AWS service such as DynamoDB.</p>
+     * related. Examples include On-Demand Instances and Standard Reserved
+     * Instances.</p> </li> <li> <p>SERVICE - The AWS service such as DynamoDB.</p>
      * </li> <li> <p>USAGE_TYPE - The type of usage. An example is
-     * DataTransfer-In-Bytes. The response for the GetDimensionValues action includes a
-     * unit attribute, examples of which include GB and Hrs.</p> </li> <li>
-     * <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is EC2:
-     * CloudWatch – Alarms. The response for this action includes a unit attribute.</p>
-     * </li> <li> <p>RECORD_TYPE - The different types of charges such as RI fees,
-     * usage costs, tax refunds, and credits.</p> </li> </ul> <p>If you set the context
-     * to <code>RESERVATIONS</code>, you can use the following dimensions for
-     * searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is
-     * us-east-1a.</p> </li> <li> <p>INSTANCE_TYPE - The type of EC2 instance. An
-     * example is m4.xlarge.</p> </li> <li> <p>LINKED_ACCOUNT - The description in the
-     * attribute map that includes the full name of the member account. The value field
-     * contains the AWS ID of the member account</p> </li> <li> <p>PLATFORM - The
-     * operating system. Examples are Windows or Linux.</p> </li> <li> <p>REGION - The
-     * AWS region.</p> </li> <li> <p>SCOPE - The scope of a reserved instance (RI).
-     * Values are regional or a single availability zone.</p> </li> <li> <p>TENANCY -
-     * The tenancy of a resource. Examples are shared or dedicated.</p> </li> </ul>
+     * <code>DataTransfer-In-Bytes</code>. The response for the
+     * <code>GetDimensionValues</code> operation includes a unit attribute, examples of
+     * which include GB and Hrs.</p> </li> <li> <p>USAGE_TYPE_GROUP - The grouping of
+     * common usage types. An example is EC2: CloudWatch – Alarms. The response for
+     * this operation includes a unit attribute.</p> </li> <li> <p>RECORD_TYPE - The
+     * different types of charges such as RI fees, usage costs, tax refunds, and
+     * credits.</p> </li> </ul> <p>If you set the context to <code>RESERVATIONS</code>,
+     * you can use the following dimensions for searching:</p> <ul> <li> <p>AZ - The
+     * Availability Zone. An example is <code>us-east-1a</code>.</p> </li> <li>
+     * <p>INSTANCE_TYPE - The type of instance. An example is an EC2
+     * <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT - The description in
+     * the attribute map that includes the full name of the member account. The value
+     * field contains the AWS ID of the member account.</p> </li> <li> <p>PLATFORM -
+     * The specific combination of operating system, license model, and software on an
+     * instance. For example, a Windows instance with SQL Server Web and no license, or
+     * a Red Hat Enterprise Linux instance.</p> </li> <li> <p>REGION - The AWS
+     * Region.</p> </li> <li> <p>SCOPE - The scope of a Reserved Instance (RI). Values
+     * are regional or a single Availability Zone.</p> </li> <li> <p>TENANCY - The
+     * tenancy of a resource. Examples are shared or dedicated.</p> </li> </ul>
      */
     inline GetDimensionValuesRequest& WithContext(Context&& value) { SetContext(std::move(value)); return *this;}
 

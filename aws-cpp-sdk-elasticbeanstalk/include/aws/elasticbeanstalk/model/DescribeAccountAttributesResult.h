@@ -43,19 +43,34 @@ namespace Model
     DescribeAccountAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
-    
+    /**
+     * <p>The Elastic Beanstalk resource quotas associated with the calling AWS
+     * account.</p>
+     */
     inline const ResourceQuotas& GetResourceQuotas() const{ return m_resourceQuotas; }
 
-    
+    /**
+     * <p>The Elastic Beanstalk resource quotas associated with the calling AWS
+     * account.</p>
+     */
     inline void SetResourceQuotas(const ResourceQuotas& value) { m_resourceQuotas = value; }
 
-    
+    /**
+     * <p>The Elastic Beanstalk resource quotas associated with the calling AWS
+     * account.</p>
+     */
     inline void SetResourceQuotas(ResourceQuotas&& value) { m_resourceQuotas = std::move(value); }
 
-    
+    /**
+     * <p>The Elastic Beanstalk resource quotas associated with the calling AWS
+     * account.</p>
+     */
     inline DescribeAccountAttributesResult& WithResourceQuotas(const ResourceQuotas& value) { SetResourceQuotas(value); return *this;}
 
-    
+    /**
+     * <p>The Elastic Beanstalk resource quotas associated with the calling AWS
+     * account.</p>
+     */
     inline DescribeAccountAttributesResult& WithResourceQuotas(ResourceQuotas&& value) { SetResourceQuotas(std::move(value)); return *this;}
 
 

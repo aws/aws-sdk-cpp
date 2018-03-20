@@ -50,98 +50,98 @@ namespace Model
 
 
     /**
-     * <p>The keys included in this group.</p>
+     * <p>The keys that are included in this group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetKeys() const{ return m_keys; }
 
     /**
-     * <p>The keys included in this group.</p>
+     * <p>The keys that are included in this group.</p>
      */
     inline void SetKeys(const Aws::Vector<Aws::String>& value) { m_keysHasBeenSet = true; m_keys = value; }
 
     /**
-     * <p>The keys included in this group.</p>
+     * <p>The keys that are included in this group.</p>
      */
     inline void SetKeys(Aws::Vector<Aws::String>&& value) { m_keysHasBeenSet = true; m_keys = std::move(value); }
 
     /**
-     * <p>The keys included in this group.</p>
+     * <p>The keys that are included in this group.</p>
      */
     inline Group& WithKeys(const Aws::Vector<Aws::String>& value) { SetKeys(value); return *this;}
 
     /**
-     * <p>The keys included in this group.</p>
+     * <p>The keys that are included in this group.</p>
      */
     inline Group& WithKeys(Aws::Vector<Aws::String>&& value) { SetKeys(std::move(value)); return *this;}
 
     /**
-     * <p>The keys included in this group.</p>
+     * <p>The keys that are included in this group.</p>
      */
     inline Group& AddKeys(const Aws::String& value) { m_keysHasBeenSet = true; m_keys.push_back(value); return *this; }
 
     /**
-     * <p>The keys included in this group.</p>
+     * <p>The keys that are included in this group.</p>
      */
     inline Group& AddKeys(Aws::String&& value) { m_keysHasBeenSet = true; m_keys.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The keys included in this group.</p>
+     * <p>The keys that are included in this group.</p>
      */
     inline Group& AddKeys(const char* value) { m_keysHasBeenSet = true; m_keys.push_back(value); return *this; }
 
 
     /**
-     * <p>The metrics included in this group.</p>
+     * <p>The metrics that are included in this group.</p>
      */
     inline const Aws::Map<Aws::String, MetricValue>& GetMetrics() const{ return m_metrics; }
 
     /**
-     * <p>The metrics included in this group.</p>
+     * <p>The metrics that are included in this group.</p>
      */
     inline void SetMetrics(const Aws::Map<Aws::String, MetricValue>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
 
     /**
-     * <p>The metrics included in this group.</p>
+     * <p>The metrics that are included in this group.</p>
      */
     inline void SetMetrics(Aws::Map<Aws::String, MetricValue>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
 
     /**
-     * <p>The metrics included in this group.</p>
+     * <p>The metrics that are included in this group.</p>
      */
     inline Group& WithMetrics(const Aws::Map<Aws::String, MetricValue>& value) { SetMetrics(value); return *this;}
 
     /**
-     * <p>The metrics included in this group.</p>
+     * <p>The metrics that are included in this group.</p>
      */
     inline Group& WithMetrics(Aws::Map<Aws::String, MetricValue>&& value) { SetMetrics(std::move(value)); return *this;}
 
     /**
-     * <p>The metrics included in this group.</p>
+     * <p>The metrics that are included in this group.</p>
      */
     inline Group& AddMetrics(const Aws::String& key, const MetricValue& value) { m_metricsHasBeenSet = true; m_metrics.emplace(key, value); return *this; }
 
     /**
-     * <p>The metrics included in this group.</p>
+     * <p>The metrics that are included in this group.</p>
      */
     inline Group& AddMetrics(Aws::String&& key, const MetricValue& value) { m_metricsHasBeenSet = true; m_metrics.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The metrics included in this group.</p>
+     * <p>The metrics that are included in this group.</p>
      */
     inline Group& AddMetrics(const Aws::String& key, MetricValue&& value) { m_metricsHasBeenSet = true; m_metrics.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The metrics included in this group.</p>
+     * <p>The metrics that are included in this group.</p>
      */
     inline Group& AddMetrics(Aws::String&& key, MetricValue&& value) { m_metricsHasBeenSet = true; m_metrics.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The metrics included in this group.</p>
+     * <p>The metrics that are included in this group.</p>
      */
     inline Group& AddMetrics(const char* key, MetricValue&& value) { m_metricsHasBeenSet = true; m_metrics.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The metrics included in this group.</p>
+     * <p>The metrics that are included in this group.</p>
      */
     inline Group& AddMetrics(const char* key, const MetricValue& value) { m_metricsHasBeenSet = true; m_metrics.emplace(key, value); return *this; }
 

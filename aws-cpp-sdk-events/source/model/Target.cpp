@@ -38,7 +38,8 @@ Target::Target() :
     m_kinesisParametersHasBeenSet(false),
     m_runCommandParametersHasBeenSet(false),
     m_ecsParametersHasBeenSet(false),
-    m_batchParametersHasBeenSet(false)
+    m_batchParametersHasBeenSet(false),
+    m_sqsParametersHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ Target::Target(const JsonValue& jsonValue) :
     m_kinesisParametersHasBeenSet(false),
     m_runCommandParametersHasBeenSet(false),
     m_ecsParametersHasBeenSet(false),
-    m_batchParametersHasBeenSet(false)
+    m_batchParametersHasBeenSet(false),
+    m_sqsParametersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -129,6 +131,13 @@ Target& Target::operator =(const JsonValue& jsonValue)
     m_batchParametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SqsParameters"))
+  {
+    m_sqsParameters = jsonValue.GetObject("SqsParameters");
+
+    m_sqsParametersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -193,6 +202,12 @@ JsonValue Target::Jsonize() const
   if(m_batchParametersHasBeenSet)
   {
    payload.WithObject("BatchParameters", m_batchParameters.Jsonize());
+
+  }
+
+  if(m_sqsParametersHasBeenSet)
+  {
+   payload.WithObject("SqsParameters", m_sqsParameters.Jsonize());
 
   }
 

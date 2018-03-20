@@ -27,6 +27,7 @@
 #include <aws/config/ConfigServiceClient.h>
 #include <aws/config/ConfigServiceEndpoint.h>
 #include <aws/config/ConfigServiceErrorMarshaller.h>
+#include <aws/config/model/BatchGetResourceConfigRequest.h>
 #include <aws/config/model/DeleteConfigRuleRequest.h>
 #include <aws/config/model/DeleteConfigurationRecorderRequest.h>
 #include <aws/config/model/DeleteDeliveryChannelRequest.h>
@@ -116,6 +117,41 @@ void ConfigServiceClient::init(const ClientConfiguration& config)
   }
 
   m_uri = ss.str();
+}
+
+BatchGetResourceConfigOutcome ConfigServiceClient::BatchGetResourceConfig(const BatchGetResourceConfigRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return BatchGetResourceConfigOutcome(BatchGetResourceConfigResult(outcome.GetResult()));
+  }
+  else
+  {
+    return BatchGetResourceConfigOutcome(outcome.GetError());
+  }
+}
+
+BatchGetResourceConfigOutcomeCallable ConfigServiceClient::BatchGetResourceConfigCallable(const BatchGetResourceConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchGetResourceConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetResourceConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::BatchGetResourceConfigAsync(const BatchGetResourceConfigRequest& request, const BatchGetResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchGetResourceConfigAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::BatchGetResourceConfigAsyncHelper(const BatchGetResourceConfigRequest& request, const BatchGetResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchGetResourceConfig(request), context);
 }
 
 DeleteConfigRuleOutcome ConfigServiceClient::DeleteConfigRule(const DeleteConfigRuleRequest& request) const

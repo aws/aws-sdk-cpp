@@ -600,12 +600,12 @@ namespace Model
          * <p>Amazon ECS tasks</p> </li> <li> <p>AWS Step Functions state machines</p>
          * </li> <li> <p>AWS Batch jobs</p> </li> <li> <p>Pipelines in Amazon Code
          * Pipeline</p> </li> <li> <p>Amazon Inspector assessment templates</p> </li> <li>
-         * <p>Amazon SNS topics</p> </li> <li> <p>Amazon SQS queues</p> </li> <li> <p>The
-         * default event bus of another AWS account</p> </li> </ul> <p>Note that creating
-         * rules with built-in targets is supported only in the AWS Management Console.</p>
-         * <p>For some target types, <code>PutTargets</code> provides target-specific
-         * parameters. If the target is an Amazon Kinesis stream, you can optionally
-         * specify which shard the event goes to by using the
+         * <p>Amazon SNS topics</p> </li> <li> <p>Amazon SQS queues, including FIFO
+         * queues</p> </li> <li> <p>The default event bus of another AWS account</p> </li>
+         * </ul> <p>Note that creating rules with built-in targets is supported only in the
+         * AWS Management Console.</p> <p>For some target types, <code>PutTargets</code>
+         * provides target-specific parameters. If the target is an Amazon Kinesis stream,
+         * you can optionally specify which shard the event goes to by using the
          * <code>KinesisParameters</code> argument. To invoke a command on multiple EC2
          * instances with one rule, you can use the <code>RunCommandParameters</code>
          * field.</p> <p>To be able to make API calls against the resources that you own,
@@ -664,12 +664,12 @@ namespace Model
          * <p>Amazon ECS tasks</p> </li> <li> <p>AWS Step Functions state machines</p>
          * </li> <li> <p>AWS Batch jobs</p> </li> <li> <p>Pipelines in Amazon Code
          * Pipeline</p> </li> <li> <p>Amazon Inspector assessment templates</p> </li> <li>
-         * <p>Amazon SNS topics</p> </li> <li> <p>Amazon SQS queues</p> </li> <li> <p>The
-         * default event bus of another AWS account</p> </li> </ul> <p>Note that creating
-         * rules with built-in targets is supported only in the AWS Management Console.</p>
-         * <p>For some target types, <code>PutTargets</code> provides target-specific
-         * parameters. If the target is an Amazon Kinesis stream, you can optionally
-         * specify which shard the event goes to by using the
+         * <p>Amazon SNS topics</p> </li> <li> <p>Amazon SQS queues, including FIFO
+         * queues</p> </li> <li> <p>The default event bus of another AWS account</p> </li>
+         * </ul> <p>Note that creating rules with built-in targets is supported only in the
+         * AWS Management Console.</p> <p>For some target types, <code>PutTargets</code>
+         * provides target-specific parameters. If the target is an Amazon Kinesis stream,
+         * you can optionally specify which shard the event goes to by using the
          * <code>KinesisParameters</code> argument. To invoke a command on multiple EC2
          * instances with one rule, you can use the <code>RunCommandParameters</code>
          * field.</p> <p>To be able to make API calls against the resources that you own,
@@ -730,12 +730,12 @@ namespace Model
          * <p>Amazon ECS tasks</p> </li> <li> <p>AWS Step Functions state machines</p>
          * </li> <li> <p>AWS Batch jobs</p> </li> <li> <p>Pipelines in Amazon Code
          * Pipeline</p> </li> <li> <p>Amazon Inspector assessment templates</p> </li> <li>
-         * <p>Amazon SNS topics</p> </li> <li> <p>Amazon SQS queues</p> </li> <li> <p>The
-         * default event bus of another AWS account</p> </li> </ul> <p>Note that creating
-         * rules with built-in targets is supported only in the AWS Management Console.</p>
-         * <p>For some target types, <code>PutTargets</code> provides target-specific
-         * parameters. If the target is an Amazon Kinesis stream, you can optionally
-         * specify which shard the event goes to by using the
+         * <p>Amazon SNS topics</p> </li> <li> <p>Amazon SQS queues, including FIFO
+         * queues</p> </li> <li> <p>The default event bus of another AWS account</p> </li>
+         * </ul> <p>Note that creating rules with built-in targets is supported only in the
+         * AWS Management Console.</p> <p>For some target types, <code>PutTargets</code>
+         * provides target-specific parameters. If the target is an Amazon Kinesis stream,
+         * you can optionally specify which shard the event goes to by using the
          * <code>KinesisParameters</code> argument. To invoke a command on multiple EC2
          * instances with one rule, you can use the <code>RunCommandParameters</code>
          * field.</p> <p>To be able to make API calls against the resources that you own,

@@ -21,6 +21,7 @@
 #include <aws/events/model/RunCommandParameters.h>
 #include <aws/events/model/EcsParameters.h>
 #include <aws/events/model/BatchParameters.h>
+#include <aws/events/model/SqsParameters.h>
 #include <utility>
 
 namespace Aws
@@ -479,6 +480,32 @@ namespace Model
      */
     inline Target& WithBatchParameters(BatchParameters&& value) { SetBatchParameters(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains the message group ID to use when the target is a FIFO queue.</p>
+     */
+    inline const SqsParameters& GetSqsParameters() const{ return m_sqsParameters; }
+
+    /**
+     * <p>Contains the message group ID to use when the target is a FIFO queue.</p>
+     */
+    inline void SetSqsParameters(const SqsParameters& value) { m_sqsParametersHasBeenSet = true; m_sqsParameters = value; }
+
+    /**
+     * <p>Contains the message group ID to use when the target is a FIFO queue.</p>
+     */
+    inline void SetSqsParameters(SqsParameters&& value) { m_sqsParametersHasBeenSet = true; m_sqsParameters = std::move(value); }
+
+    /**
+     * <p>Contains the message group ID to use when the target is a FIFO queue.</p>
+     */
+    inline Target& WithSqsParameters(const SqsParameters& value) { SetSqsParameters(value); return *this;}
+
+    /**
+     * <p>Contains the message group ID to use when the target is a FIFO queue.</p>
+     */
+    inline Target& WithSqsParameters(SqsParameters&& value) { SetSqsParameters(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -510,6 +537,9 @@ namespace Model
 
     BatchParameters m_batchParameters;
     bool m_batchParametersHasBeenSet;
+
+    SqsParameters m_sqsParameters;
+    bool m_sqsParametersHasBeenSet;
   };
 
 } // namespace Model

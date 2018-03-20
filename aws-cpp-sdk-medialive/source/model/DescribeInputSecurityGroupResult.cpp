@@ -26,11 +26,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeInputSecurityGroupResult::DescribeInputSecurityGroupResult()
+DescribeInputSecurityGroupResult::DescribeInputSecurityGroupResult() : 
+    m_state(InputSecurityGroupState::NOT_SET)
 {
 }
 
-DescribeInputSecurityGroupResult::DescribeInputSecurityGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DescribeInputSecurityGroupResult::DescribeInputSecurityGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_state(InputSecurityGroupState::NOT_SET)
 {
   *this = result;
 }
@@ -47,6 +49,21 @@ DescribeInputSecurityGroupResult& DescribeInputSecurityGroupResult::operator =(c
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
+
+  }
+
+  if(jsonValue.ValueExists("inputs"))
+  {
+    Array<JsonValue> inputsJsonList = jsonValue.GetArray("inputs");
+    for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
+    {
+      m_inputs.push_back(inputsJsonList[inputsIndex].AsString());
+    }
+  }
+
+  if(jsonValue.ValueExists("state"))
+  {
+    m_state = InputSecurityGroupStateMapper::GetInputSecurityGroupStateForName(jsonValue.GetString("state"));
 
   }
 

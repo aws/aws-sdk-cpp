@@ -31,6 +31,13 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
+  /**
+   * <p>The AWS Elastic Beanstalk quota information for a single resource type in an
+   * AWS account. It reflects the resource's limits for this account.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ResourceQuota">AWS
+   * API Reference</a></p>
+   */
   class AWS_ELASTICBEANSTALK_API ResourceQuota
   {
   public:
@@ -42,13 +49,22 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
-    
+    /**
+     * <p>The maximum number of instances of this Elastic Beanstalk resource type that
+     * an AWS account can use.</p>
+     */
     inline int GetMaximum() const{ return m_maximum; }
 
-    
+    /**
+     * <p>The maximum number of instances of this Elastic Beanstalk resource type that
+     * an AWS account can use.</p>
+     */
     inline void SetMaximum(int value) { m_maximumHasBeenSet = true; m_maximum = value; }
 
-    
+    /**
+     * <p>The maximum number of instances of this Elastic Beanstalk resource type that
+     * an AWS account can use.</p>
+     */
     inline ResourceQuota& WithMaximum(int value) { SetMaximum(value); return *this;}
 
   private:

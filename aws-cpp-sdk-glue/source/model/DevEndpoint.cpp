@@ -34,6 +34,7 @@ DevEndpoint::DevEndpoint() :
     m_securityGroupIdsHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_yarnEndpointAddressHasBeenSet(false),
+    m_privateAddressHasBeenSet(false),
     m_zeppelinRemoteSparkInterpreterPort(0),
     m_zeppelinRemoteSparkInterpreterPortHasBeenSet(false),
     m_publicAddressHasBeenSet(false),
@@ -58,6 +59,7 @@ DevEndpoint::DevEndpoint(const JsonValue& jsonValue) :
     m_securityGroupIdsHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_yarnEndpointAddressHasBeenSet(false),
+    m_privateAddressHasBeenSet(false),
     m_zeppelinRemoteSparkInterpreterPort(0),
     m_zeppelinRemoteSparkInterpreterPortHasBeenSet(false),
     m_publicAddressHasBeenSet(false),
@@ -115,6 +117,13 @@ DevEndpoint& DevEndpoint::operator =(const JsonValue& jsonValue)
     m_yarnEndpointAddress = jsonValue.GetString("YarnEndpointAddress");
 
     m_yarnEndpointAddressHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PrivateAddress"))
+  {
+    m_privateAddress = jsonValue.GetString("PrivateAddress");
+
+    m_privateAddressHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ZeppelinRemoteSparkInterpreterPort"))
@@ -247,6 +256,12 @@ JsonValue DevEndpoint::Jsonize() const
   if(m_yarnEndpointAddressHasBeenSet)
   {
    payload.WithString("YarnEndpointAddress", m_yarnEndpointAddress);
+
+  }
+
+  if(m_privateAddressHasBeenSet)
+  {
+   payload.WithString("PrivateAddress", m_privateAddress);
 
   }
 

@@ -21,6 +21,7 @@
 #include <aws/medialive/model/EncoderSettings.h>
 #include <aws/medialive/model/InputSpecification.h>
 #include <aws/medialive/model/OutputDestination.h>
+#include <aws/medialive/model/InputAttachment.h>
 #include <utility>
 
 namespace Aws
@@ -147,6 +148,28 @@ namespace Model
     inline UpdateChannelRequest& WithEncoderSettings(EncoderSettings&& value) { SetEncoderSettings(std::move(value)); return *this;}
 
 
+    
+    inline const Aws::Vector<InputAttachment>& GetInputAttachments() const{ return m_inputAttachments; }
+
+    
+    inline void SetInputAttachments(const Aws::Vector<InputAttachment>& value) { m_inputAttachmentsHasBeenSet = true; m_inputAttachments = value; }
+
+    
+    inline void SetInputAttachments(Aws::Vector<InputAttachment>&& value) { m_inputAttachmentsHasBeenSet = true; m_inputAttachments = std::move(value); }
+
+    
+    inline UpdateChannelRequest& WithInputAttachments(const Aws::Vector<InputAttachment>& value) { SetInputAttachments(value); return *this;}
+
+    
+    inline UpdateChannelRequest& WithInputAttachments(Aws::Vector<InputAttachment>&& value) { SetInputAttachments(std::move(value)); return *this;}
+
+    
+    inline UpdateChannelRequest& AddInputAttachments(const InputAttachment& value) { m_inputAttachmentsHasBeenSet = true; m_inputAttachments.push_back(value); return *this; }
+
+    
+    inline UpdateChannelRequest& AddInputAttachments(InputAttachment&& value) { m_inputAttachmentsHasBeenSet = true; m_inputAttachments.push_back(std::move(value)); return *this; }
+
+
     /**
      * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
      */
@@ -268,6 +291,9 @@ namespace Model
 
     EncoderSettings m_encoderSettings;
     bool m_encoderSettingsHasBeenSet;
+
+    Aws::Vector<InputAttachment> m_inputAttachments;
+    bool m_inputAttachmentsHasBeenSet;
 
     InputSpecification m_inputSpecification;
     bool m_inputSpecificationHasBeenSet;

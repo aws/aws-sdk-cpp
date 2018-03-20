@@ -83,37 +83,37 @@ namespace Model
 
 
     /**
-     * <p>How many RI hours you purchased.</p>
+     * <p>How many RI hours that you purchased.</p>
      */
     inline const Aws::String& GetPurchasedHours() const{ return m_purchasedHours; }
 
     /**
-     * <p>How many RI hours you purchased.</p>
+     * <p>How many RI hours that you purchased.</p>
      */
     inline void SetPurchasedHours(const Aws::String& value) { m_purchasedHoursHasBeenSet = true; m_purchasedHours = value; }
 
     /**
-     * <p>How many RI hours you purchased.</p>
+     * <p>How many RI hours that you purchased.</p>
      */
     inline void SetPurchasedHours(Aws::String&& value) { m_purchasedHoursHasBeenSet = true; m_purchasedHours = std::move(value); }
 
     /**
-     * <p>How many RI hours you purchased.</p>
+     * <p>How many RI hours that you purchased.</p>
      */
     inline void SetPurchasedHours(const char* value) { m_purchasedHoursHasBeenSet = true; m_purchasedHours.assign(value); }
 
     /**
-     * <p>How many RI hours you purchased.</p>
+     * <p>How many RI hours that you purchased.</p>
      */
     inline ReservationAggregates& WithPurchasedHours(const Aws::String& value) { SetPurchasedHours(value); return *this;}
 
     /**
-     * <p>How many RI hours you purchased.</p>
+     * <p>How many RI hours that you purchased.</p>
      */
     inline ReservationAggregates& WithPurchasedHours(Aws::String&& value) { SetPurchasedHours(std::move(value)); return *this;}
 
     /**
-     * <p>How many RI hours you purchased.</p>
+     * <p>How many RI hours that you purchased.</p>
      */
     inline ReservationAggregates& WithPurchasedHours(const char* value) { SetPurchasedHours(value); return *this;}
 

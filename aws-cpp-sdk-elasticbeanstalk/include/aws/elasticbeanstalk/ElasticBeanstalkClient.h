@@ -862,19 +862,31 @@ namespace Model
         virtual void DeletePlatformVersionAsync(const Model::DeletePlatformVersionRequest& request, const DeletePlatformVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Returns attributes related to AWS Elastic Beanstalk that are associated with
+         * the calling AWS account.</p> <p>The result currently has one set of
+         * attributes—resource quotas.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeAccountAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeAccountAttributesOutcome DescribeAccountAttributes(const Model::DescribeAccountAttributesRequest& request) const;
 
         /**
-         * 
+         * <p>Returns attributes related to AWS Elastic Beanstalk that are associated with
+         * the calling AWS account.</p> <p>The result currently has one set of
+         * attributes—resource quotas.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeAccountAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeAccountAttributesOutcomeCallable DescribeAccountAttributesCallable(const Model::DescribeAccountAttributesRequest& request) const;
 
         /**
-         * 
+         * <p>Returns attributes related to AWS Elastic Beanstalk that are associated with
+         * the calling AWS account.</p> <p>The result currently has one set of
+         * attributes—resource quotas.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeAccountAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

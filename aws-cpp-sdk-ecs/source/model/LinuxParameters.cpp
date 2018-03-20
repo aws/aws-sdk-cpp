@@ -32,7 +32,10 @@ LinuxParameters::LinuxParameters() :
     m_capabilitiesHasBeenSet(false),
     m_devicesHasBeenSet(false),
     m_initProcessEnabled(false),
-    m_initProcessEnabledHasBeenSet(false)
+    m_initProcessEnabledHasBeenSet(false),
+    m_sharedMemorySize(0),
+    m_sharedMemorySizeHasBeenSet(false),
+    m_tmpfsHasBeenSet(false)
 {
 }
 
@@ -40,7 +43,10 @@ LinuxParameters::LinuxParameters(const JsonValue& jsonValue) :
     m_capabilitiesHasBeenSet(false),
     m_devicesHasBeenSet(false),
     m_initProcessEnabled(false),
-    m_initProcessEnabledHasBeenSet(false)
+    m_initProcessEnabledHasBeenSet(false),
+    m_sharedMemorySize(0),
+    m_sharedMemorySizeHasBeenSet(false),
+    m_tmpfsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -71,6 +77,23 @@ LinuxParameters& LinuxParameters::operator =(const JsonValue& jsonValue)
     m_initProcessEnabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("sharedMemorySize"))
+  {
+    m_sharedMemorySize = jsonValue.GetInteger("sharedMemorySize");
+
+    m_sharedMemorySizeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("tmpfs"))
+  {
+    Array<JsonValue> tmpfsJsonList = jsonValue.GetArray("tmpfs");
+    for(unsigned tmpfsIndex = 0; tmpfsIndex < tmpfsJsonList.GetLength(); ++tmpfsIndex)
+    {
+      m_tmpfs.push_back(tmpfsJsonList[tmpfsIndex].AsObject());
+    }
+    m_tmpfsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -98,6 +121,23 @@ JsonValue LinuxParameters::Jsonize() const
   if(m_initProcessEnabledHasBeenSet)
   {
    payload.WithBool("initProcessEnabled", m_initProcessEnabled);
+
+  }
+
+  if(m_sharedMemorySizeHasBeenSet)
+  {
+   payload.WithInteger("sharedMemorySize", m_sharedMemorySize);
+
+  }
+
+  if(m_tmpfsHasBeenSet)
+  {
+   Array<JsonValue> tmpfsJsonList(m_tmpfs.size());
+   for(unsigned tmpfsIndex = 0; tmpfsIndex < tmpfsJsonList.GetLength(); ++tmpfsIndex)
+   {
+     tmpfsJsonList[tmpfsIndex].AsObject(m_tmpfs[tmpfsIndex].Jsonize());
+   }
+   payload.WithArray("tmpfs", std::move(tmpfsJsonList));
 
   }
 

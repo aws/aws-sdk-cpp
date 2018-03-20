@@ -47,37 +47,37 @@ namespace Model
 
 
     /**
-     * The IPv4 CIDR to whitelist
+     * The IPv4 CIDR to whitelist.
      */
     inline const Aws::String& GetCidr() const{ return m_cidr; }
 
     /**
-     * The IPv4 CIDR to whitelist
+     * The IPv4 CIDR to whitelist.
      */
     inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
 
     /**
-     * The IPv4 CIDR to whitelist
+     * The IPv4 CIDR to whitelist.
      */
     inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
 
     /**
-     * The IPv4 CIDR to whitelist
+     * The IPv4 CIDR to whitelist.
      */
     inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
 
     /**
-     * The IPv4 CIDR to whitelist
+     * The IPv4 CIDR to whitelist.
      */
     inline InputWhitelistRuleCidr& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
 
     /**
-     * The IPv4 CIDR to whitelist
+     * The IPv4 CIDR to whitelist.
      */
     inline InputWhitelistRuleCidr& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
 
     /**
-     * The IPv4 CIDR to whitelist
+     * The IPv4 CIDR to whitelist.
      */
     inline InputWhitelistRuleCidr& WithCidr(const char* value) { SetCidr(value); return *this;}
 

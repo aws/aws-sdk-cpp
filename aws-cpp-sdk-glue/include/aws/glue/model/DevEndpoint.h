@@ -235,6 +235,42 @@ namespace Model
 
 
     /**
+     * <p>The private address used by this DevEndpoint.</p>
+     */
+    inline const Aws::String& GetPrivateAddress() const{ return m_privateAddress; }
+
+    /**
+     * <p>The private address used by this DevEndpoint.</p>
+     */
+    inline void SetPrivateAddress(const Aws::String& value) { m_privateAddressHasBeenSet = true; m_privateAddress = value; }
+
+    /**
+     * <p>The private address used by this DevEndpoint.</p>
+     */
+    inline void SetPrivateAddress(Aws::String&& value) { m_privateAddressHasBeenSet = true; m_privateAddress = std::move(value); }
+
+    /**
+     * <p>The private address used by this DevEndpoint.</p>
+     */
+    inline void SetPrivateAddress(const char* value) { m_privateAddressHasBeenSet = true; m_privateAddress.assign(value); }
+
+    /**
+     * <p>The private address used by this DevEndpoint.</p>
+     */
+    inline DevEndpoint& WithPrivateAddress(const Aws::String& value) { SetPrivateAddress(value); return *this;}
+
+    /**
+     * <p>The private address used by this DevEndpoint.</p>
+     */
+    inline DevEndpoint& WithPrivateAddress(Aws::String&& value) { SetPrivateAddress(std::move(value)); return *this;}
+
+    /**
+     * <p>The private address used by this DevEndpoint.</p>
+     */
+    inline DevEndpoint& WithPrivateAddress(const char* value) { SetPrivateAddress(value); return *this;}
+
+
+    /**
      * <p>The Apache Zeppelin port for the remote Apache Spark interpreter.</p>
      */
     inline int GetZeppelinRemoteSparkInterpreterPort() const{ return m_zeppelinRemoteSparkInterpreterPort; }
@@ -251,37 +287,37 @@ namespace Model
 
 
     /**
-     * <p>The public address used by this DevEndpoint.</p>
+     * <p>The public VPC address used by this DevEndpoint.</p>
      */
     inline const Aws::String& GetPublicAddress() const{ return m_publicAddress; }
 
     /**
-     * <p>The public address used by this DevEndpoint.</p>
+     * <p>The public VPC address used by this DevEndpoint.</p>
      */
     inline void SetPublicAddress(const Aws::String& value) { m_publicAddressHasBeenSet = true; m_publicAddress = value; }
 
     /**
-     * <p>The public address used by this DevEndpoint.</p>
+     * <p>The public VPC address used by this DevEndpoint.</p>
      */
     inline void SetPublicAddress(Aws::String&& value) { m_publicAddressHasBeenSet = true; m_publicAddress = std::move(value); }
 
     /**
-     * <p>The public address used by this DevEndpoint.</p>
+     * <p>The public VPC address used by this DevEndpoint.</p>
      */
     inline void SetPublicAddress(const char* value) { m_publicAddressHasBeenSet = true; m_publicAddress.assign(value); }
 
     /**
-     * <p>The public address used by this DevEndpoint.</p>
+     * <p>The public VPC address used by this DevEndpoint.</p>
      */
     inline DevEndpoint& WithPublicAddress(const Aws::String& value) { SetPublicAddress(value); return *this;}
 
     /**
-     * <p>The public address used by this DevEndpoint.</p>
+     * <p>The public VPC address used by this DevEndpoint.</p>
      */
     inline DevEndpoint& WithPublicAddress(Aws::String&& value) { SetPublicAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The public address used by this DevEndpoint.</p>
+     * <p>The public VPC address used by this DevEndpoint.</p>
      */
     inline DevEndpoint& WithPublicAddress(const char* value) { SetPublicAddress(value); return *this;}
 
@@ -709,6 +745,9 @@ namespace Model
 
     Aws::String m_yarnEndpointAddress;
     bool m_yarnEndpointAddressHasBeenSet;
+
+    Aws::String m_privateAddress;
+    bool m_privateAddressHasBeenSet;
 
     int m_zeppelinRemoteSparkInterpreterPort;
     bool m_zeppelinRemoteSparkInterpreterPortHasBeenSet;

@@ -184,46 +184,51 @@ namespace Model
 
     /**
      * <p>Filters utilization data by using different dimensions.
-     * <code>GetReservationUtilization</code> uses the same <code>Expression</code>
-     * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension, and nesting is supported up to only one level deep. If there are
-     * multiple values for a dimension, they are OR'd together.</p>
+     * <code>GetReservationUtilization</code> uses the same <code> <a
+     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * </code> object as the other operations, but only <code>AND</code> is supported
+     * among each dimension, and nesting is supported to only one level deep. If there
+     * are multiple values for a dimension, they are OR'd together.</p>
      */
     inline const Expression& GetFilter() const{ return m_filter; }
 
     /**
      * <p>Filters utilization data by using different dimensions.
-     * <code>GetReservationUtilization</code> uses the same <code>Expression</code>
-     * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension, and nesting is supported up to only one level deep. If there are
-     * multiple values for a dimension, they are OR'd together.</p>
+     * <code>GetReservationUtilization</code> uses the same <code> <a
+     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * </code> object as the other operations, but only <code>AND</code> is supported
+     * among each dimension, and nesting is supported to only one level deep. If there
+     * are multiple values for a dimension, they are OR'd together.</p>
      */
     inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
      * <p>Filters utilization data by using different dimensions.
-     * <code>GetReservationUtilization</code> uses the same <code>Expression</code>
-     * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension, and nesting is supported up to only one level deep. If there are
-     * multiple values for a dimension, they are OR'd together.</p>
+     * <code>GetReservationUtilization</code> uses the same <code> <a
+     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * </code> object as the other operations, but only <code>AND</code> is supported
+     * among each dimension, and nesting is supported to only one level deep. If there
+     * are multiple values for a dimension, they are OR'd together.</p>
      */
     inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
      * <p>Filters utilization data by using different dimensions.
-     * <code>GetReservationUtilization</code> uses the same <code>Expression</code>
-     * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension, and nesting is supported up to only one level deep. If there are
-     * multiple values for a dimension, they are OR'd together.</p>
+     * <code>GetReservationUtilization</code> uses the same <code> <a
+     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * </code> object as the other operations, but only <code>AND</code> is supported
+     * among each dimension, and nesting is supported to only one level deep. If there
+     * are multiple values for a dimension, they are OR'd together.</p>
      */
     inline GetReservationUtilizationRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
 
     /**
      * <p>Filters utilization data by using different dimensions.
-     * <code>GetReservationUtilization</code> uses the same <code>Expression</code>
-     * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension, and nesting is supported up to only one level deep. If there are
-     * multiple values for a dimension, they are OR'd together.</p>
+     * <code>GetReservationUtilization</code> uses the same <code> <a
+     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * </code> object as the other operations, but only <code>AND</code> is supported
+     * among each dimension, and nesting is supported to only one level deep. If there
+     * are multiple values for a dimension, they are OR'd together.</p>
      */
     inline GetReservationUtilizationRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
 

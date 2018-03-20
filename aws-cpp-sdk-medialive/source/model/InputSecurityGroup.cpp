@@ -31,6 +31,9 @@ namespace Model
 InputSecurityGroup::InputSecurityGroup() : 
     m_arnHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_inputsHasBeenSet(false),
+    m_state(InputSecurityGroupState::NOT_SET),
+    m_stateHasBeenSet(false),
     m_whitelistRulesHasBeenSet(false)
 {
 }
@@ -38,6 +41,9 @@ InputSecurityGroup::InputSecurityGroup() :
 InputSecurityGroup::InputSecurityGroup(const JsonValue& jsonValue) : 
     m_arnHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_inputsHasBeenSet(false),
+    m_state(InputSecurityGroupState::NOT_SET),
+    m_stateHasBeenSet(false),
     m_whitelistRulesHasBeenSet(false)
 {
   *this = jsonValue;
@@ -57,6 +63,23 @@ InputSecurityGroup& InputSecurityGroup::operator =(const JsonValue& jsonValue)
     m_id = jsonValue.GetString("id");
 
     m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("inputs"))
+  {
+    Array<JsonValue> inputsJsonList = jsonValue.GetArray("inputs");
+    for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
+    {
+      m_inputs.push_back(inputsJsonList[inputsIndex].AsString());
+    }
+    m_inputsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("state"))
+  {
+    m_state = InputSecurityGroupStateMapper::GetInputSecurityGroupStateForName(jsonValue.GetString("state"));
+
+    m_stateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("whitelistRules"))
@@ -86,6 +109,22 @@ JsonValue InputSecurityGroup::Jsonize() const
   {
    payload.WithString("id", m_id);
 
+  }
+
+  if(m_inputsHasBeenSet)
+  {
+   Array<JsonValue> inputsJsonList(m_inputs.size());
+   for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
+   {
+     inputsJsonList[inputsIndex].AsString(m_inputs[inputsIndex]);
+   }
+   payload.WithArray("inputs", std::move(inputsJsonList));
+
+  }
+
+  if(m_stateHasBeenSet)
+  {
+   payload.WithString("state", InputSecurityGroupStateMapper::GetNameForInputSecurityGroupState(m_state));
   }
 
   if(m_whitelistRulesHasBeenSet)

@@ -50,7 +50,7 @@ namespace Model
     /**
      * <p>The beginning of the time period that you want the usage and costs for. The
      * start date is inclusive. For example, if <code>start</code> is
-     * <code>2017-01-01</code>, then the cost and usage data is retrieved starting at
+     * <code>2017-01-01</code>, AWS retrieves cost and usage data starting at
      * <code>2017-01-01</code> up to the end date.</p>
      */
     inline const Aws::String& GetStart() const{ return m_start; }
@@ -58,7 +58,7 @@ namespace Model
     /**
      * <p>The beginning of the time period that you want the usage and costs for. The
      * start date is inclusive. For example, if <code>start</code> is
-     * <code>2017-01-01</code>, then the cost and usage data is retrieved starting at
+     * <code>2017-01-01</code>, AWS retrieves cost and usage data starting at
      * <code>2017-01-01</code> up to the end date.</p>
      */
     inline void SetStart(const Aws::String& value) { m_startHasBeenSet = true; m_start = value; }
@@ -66,7 +66,7 @@ namespace Model
     /**
      * <p>The beginning of the time period that you want the usage and costs for. The
      * start date is inclusive. For example, if <code>start</code> is
-     * <code>2017-01-01</code>, then the cost and usage data is retrieved starting at
+     * <code>2017-01-01</code>, AWS retrieves cost and usage data starting at
      * <code>2017-01-01</code> up to the end date.</p>
      */
     inline void SetStart(Aws::String&& value) { m_startHasBeenSet = true; m_start = std::move(value); }
@@ -74,7 +74,7 @@ namespace Model
     /**
      * <p>The beginning of the time period that you want the usage and costs for. The
      * start date is inclusive. For example, if <code>start</code> is
-     * <code>2017-01-01</code>, then the cost and usage data is retrieved starting at
+     * <code>2017-01-01</code>, AWS retrieves cost and usage data starting at
      * <code>2017-01-01</code> up to the end date.</p>
      */
     inline void SetStart(const char* value) { m_startHasBeenSet = true; m_start.assign(value); }
@@ -82,7 +82,7 @@ namespace Model
     /**
      * <p>The beginning of the time period that you want the usage and costs for. The
      * start date is inclusive. For example, if <code>start</code> is
-     * <code>2017-01-01</code>, then the cost and usage data is retrieved starting at
+     * <code>2017-01-01</code>, AWS retrieves cost and usage data starting at
      * <code>2017-01-01</code> up to the end date.</p>
      */
     inline DateInterval& WithStart(const Aws::String& value) { SetStart(value); return *this;}
@@ -90,7 +90,7 @@ namespace Model
     /**
      * <p>The beginning of the time period that you want the usage and costs for. The
      * start date is inclusive. For example, if <code>start</code> is
-     * <code>2017-01-01</code>, then the cost and usage data is retrieved starting at
+     * <code>2017-01-01</code>, AWS retrieves cost and usage data starting at
      * <code>2017-01-01</code> up to the end date.</p>
      */
     inline DateInterval& WithStart(Aws::String&& value) { SetStart(std::move(value)); return *this;}
@@ -98,7 +98,7 @@ namespace Model
     /**
      * <p>The beginning of the time period that you want the usage and costs for. The
      * start date is inclusive. For example, if <code>start</code> is
-     * <code>2017-01-01</code>, then the cost and usage data is retrieved starting at
+     * <code>2017-01-01</code>, AWS retrieves cost and usage data starting at
      * <code>2017-01-01</code> up to the end date.</p>
      */
     inline DateInterval& WithStart(const char* value) { SetStart(value); return *this;}
@@ -106,57 +106,57 @@ namespace Model
 
     /**
      * <p>The end of the time period that you want the usage and costs for. The end
-     * date is exclusive. For example, if the <code>end</code> is
-     * <code>2017-05-01</code>, then the cost and usage data is retrieved from the
-     * start date but not including <code>2017-05-01</code>.</p>
+     * date is exclusive. For example, if <code>end</code> is <code>2017-05-01</code>,
+     * AWS retrieves cost and usage data from the start date up to, but not including,
+     * <code>2017-05-01</code>.</p>
      */
     inline const Aws::String& GetEnd() const{ return m_end; }
 
     /**
      * <p>The end of the time period that you want the usage and costs for. The end
-     * date is exclusive. For example, if the <code>end</code> is
-     * <code>2017-05-01</code>, then the cost and usage data is retrieved from the
-     * start date but not including <code>2017-05-01</code>.</p>
+     * date is exclusive. For example, if <code>end</code> is <code>2017-05-01</code>,
+     * AWS retrieves cost and usage data from the start date up to, but not including,
+     * <code>2017-05-01</code>.</p>
      */
     inline void SetEnd(const Aws::String& value) { m_endHasBeenSet = true; m_end = value; }
 
     /**
      * <p>The end of the time period that you want the usage and costs for. The end
-     * date is exclusive. For example, if the <code>end</code> is
-     * <code>2017-05-01</code>, then the cost and usage data is retrieved from the
-     * start date but not including <code>2017-05-01</code>.</p>
+     * date is exclusive. For example, if <code>end</code> is <code>2017-05-01</code>,
+     * AWS retrieves cost and usage data from the start date up to, but not including,
+     * <code>2017-05-01</code>.</p>
      */
     inline void SetEnd(Aws::String&& value) { m_endHasBeenSet = true; m_end = std::move(value); }
 
     /**
      * <p>The end of the time period that you want the usage and costs for. The end
-     * date is exclusive. For example, if the <code>end</code> is
-     * <code>2017-05-01</code>, then the cost and usage data is retrieved from the
-     * start date but not including <code>2017-05-01</code>.</p>
+     * date is exclusive. For example, if <code>end</code> is <code>2017-05-01</code>,
+     * AWS retrieves cost and usage data from the start date up to, but not including,
+     * <code>2017-05-01</code>.</p>
      */
     inline void SetEnd(const char* value) { m_endHasBeenSet = true; m_end.assign(value); }
 
     /**
      * <p>The end of the time period that you want the usage and costs for. The end
-     * date is exclusive. For example, if the <code>end</code> is
-     * <code>2017-05-01</code>, then the cost and usage data is retrieved from the
-     * start date but not including <code>2017-05-01</code>.</p>
+     * date is exclusive. For example, if <code>end</code> is <code>2017-05-01</code>,
+     * AWS retrieves cost and usage data from the start date up to, but not including,
+     * <code>2017-05-01</code>.</p>
      */
     inline DateInterval& WithEnd(const Aws::String& value) { SetEnd(value); return *this;}
 
     /**
      * <p>The end of the time period that you want the usage and costs for. The end
-     * date is exclusive. For example, if the <code>end</code> is
-     * <code>2017-05-01</code>, then the cost and usage data is retrieved from the
-     * start date but not including <code>2017-05-01</code>.</p>
+     * date is exclusive. For example, if <code>end</code> is <code>2017-05-01</code>,
+     * AWS retrieves cost and usage data from the start date up to, but not including,
+     * <code>2017-05-01</code>.</p>
      */
     inline DateInterval& WithEnd(Aws::String&& value) { SetEnd(std::move(value)); return *this;}
 
     /**
      * <p>The end of the time period that you want the usage and costs for. The end
-     * date is exclusive. For example, if the <code>end</code> is
-     * <code>2017-05-01</code>, then the cost and usage data is retrieved from the
-     * start date but not including <code>2017-05-01</code>.</p>
+     * date is exclusive. For example, if <code>end</code> is <code>2017-05-01</code>,
+     * AWS retrieves cost and usage data from the start date up to, but not including,
+     * <code>2017-05-01</code>.</p>
      */
     inline DateInterval& WithEnd(const char* value) { SetEnd(value); return *this;}
 

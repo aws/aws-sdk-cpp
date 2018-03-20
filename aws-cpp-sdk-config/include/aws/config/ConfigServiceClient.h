@@ -21,6 +21,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/config/model/BatchGetResourceConfigResult.h>
 #include <aws/config/model/DeleteEvaluationResultsResult.h>
 #include <aws/config/model/DeliverConfigSnapshotResult.h>
 #include <aws/config/model/DescribeComplianceByConfigRuleResult.h>
@@ -86,6 +87,7 @@ namespace ConfigService
 
 namespace Model
 {
+        class BatchGetResourceConfigRequest;
         class DeleteConfigRuleRequest;
         class DeleteConfigurationRecorderRequest;
         class DeleteDeliveryChannelRequest;
@@ -113,6 +115,7 @@ namespace Model
         class StartConfigurationRecorderRequest;
         class StopConfigurationRecorderRequest;
 
+        typedef Aws::Utils::Outcome<BatchGetResourceConfigResult, Aws::Client::AWSError<ConfigServiceErrors>> BatchGetResourceConfigOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteConfigRuleOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteConfigurationRecorderOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteDeliveryChannelOutcome;
@@ -141,6 +144,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> StartConfigurationRecorderOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> StopConfigurationRecorderOutcome;
 
+        typedef std::future<BatchGetResourceConfigOutcome> BatchGetResourceConfigOutcomeCallable;
         typedef std::future<DeleteConfigRuleOutcome> DeleteConfigRuleOutcomeCallable;
         typedef std::future<DeleteConfigurationRecorderOutcome> DeleteConfigurationRecorderOutcomeCallable;
         typedef std::future<DeleteDeliveryChannelOutcome> DeleteDeliveryChannelOutcomeCallable;
@@ -172,6 +176,7 @@ namespace Model
 
   class ConfigServiceClient;
 
+    typedef std::function<void(const ConfigServiceClient*, const Model::BatchGetResourceConfigRequest&, const Model::BatchGetResourceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetResourceConfigResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeleteConfigRuleRequest&, const Model::DeleteConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConfigRuleResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeleteConfigurationRecorderRequest&, const Model::DeleteConfigurationRecorderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConfigurationRecorderResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeleteDeliveryChannelRequest&, const Model::DeleteDeliveryChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDeliveryChannelResponseReceivedHandler;
@@ -252,6 +257,52 @@ namespace Model
 
         inline virtual const char* GetServiceClientName() const override { return "config"; }
 
+
+        /**
+         * <p>Returns the current configuration for one or more requested resources. The
+         * operation also returns a list of resources that are not processed in the current
+         * request. If there are no unprocessed resources, the operation returns an empty
+         * unprocessedResourceKeys list. </p> <note> <ul> <li> <p>The API does not return
+         * results for deleted resources.</p> </li> <li> <p> The API does not return any
+         * tags for the requested resources. This information is filtered out of the
+         * supplementaryConfiguration section of the API response.</p> </li> </ul>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetResourceConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetResourceConfigOutcome BatchGetResourceConfig(const Model::BatchGetResourceConfigRequest& request) const;
+
+        /**
+         * <p>Returns the current configuration for one or more requested resources. The
+         * operation also returns a list of resources that are not processed in the current
+         * request. If there are no unprocessed resources, the operation returns an empty
+         * unprocessedResourceKeys list. </p> <note> <ul> <li> <p>The API does not return
+         * results for deleted resources.</p> </li> <li> <p> The API does not return any
+         * tags for the requested resources. This information is filtered out of the
+         * supplementaryConfiguration section of the API response.</p> </li> </ul>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetResourceConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchGetResourceConfigOutcomeCallable BatchGetResourceConfigCallable(const Model::BatchGetResourceConfigRequest& request) const;
+
+        /**
+         * <p>Returns the current configuration for one or more requested resources. The
+         * operation also returns a list of resources that are not processed in the current
+         * request. If there are no unprocessed resources, the operation returns an empty
+         * unprocessedResourceKeys list. </p> <note> <ul> <li> <p>The API does not return
+         * results for deleted resources.</p> </li> <li> <p> The API does not return any
+         * tags for the requested resources. This information is filtered out of the
+         * supplementaryConfiguration section of the API response.</p> </li> </ul>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetResourceConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchGetResourceConfigAsync(const Model::BatchGetResourceConfigRequest& request, const BatchGetResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified AWS Config rule and all of its evaluation results.</p>
@@ -1553,6 +1604,7 @@ namespace Model
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
+        void BatchGetResourceConfigAsyncHelper(const Model::BatchGetResourceConfigRequest& request, const BatchGetResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteConfigRuleAsyncHelper(const Model::DeleteConfigRuleRequest& request, const DeleteConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteConfigurationRecorderAsyncHelper(const Model::DeleteConfigurationRecorderRequest& request, const DeleteConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDeliveryChannelAsyncHelper(const Model::DeleteDeliveryChannelRequest& request, const DeleteDeliveryChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

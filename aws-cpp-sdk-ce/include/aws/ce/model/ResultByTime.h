@@ -170,17 +170,17 @@ namespace Model
 
 
     /**
-     * <p>Whether or not this result is estimated.</p>
+     * <p>Whether this result is estimated.</p>
      */
     inline bool GetEstimated() const{ return m_estimated; }
 
     /**
-     * <p>Whether or not this result is estimated.</p>
+     * <p>Whether this result is estimated.</p>
      */
     inline void SetEstimated(bool value) { m_estimatedHasBeenSet = true; m_estimated = value; }
 
     /**
-     * <p>Whether or not this result is estimated.</p>
+     * <p>Whether this result is estimated.</p>
      */
     inline ResultByTime& WithEstimated(bool value) { SetEstimated(value); return *this;}
 

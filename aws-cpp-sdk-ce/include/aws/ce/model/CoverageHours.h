@@ -48,73 +48,80 @@ namespace Model
 
 
     /**
-     * <p>The number of instance running hours covered by On-Demand Instances.</p>
+     * <p>The number of instance running hours that are covered by On-Demand
+     * Instances.</p>
      */
     inline const Aws::String& GetOnDemandHours() const{ return m_onDemandHours; }
 
     /**
-     * <p>The number of instance running hours covered by On-Demand Instances.</p>
+     * <p>The number of instance running hours that are covered by On-Demand
+     * Instances.</p>
      */
     inline void SetOnDemandHours(const Aws::String& value) { m_onDemandHoursHasBeenSet = true; m_onDemandHours = value; }
 
     /**
-     * <p>The number of instance running hours covered by On-Demand Instances.</p>
+     * <p>The number of instance running hours that are covered by On-Demand
+     * Instances.</p>
      */
     inline void SetOnDemandHours(Aws::String&& value) { m_onDemandHoursHasBeenSet = true; m_onDemandHours = std::move(value); }
 
     /**
-     * <p>The number of instance running hours covered by On-Demand Instances.</p>
+     * <p>The number of instance running hours that are covered by On-Demand
+     * Instances.</p>
      */
     inline void SetOnDemandHours(const char* value) { m_onDemandHoursHasBeenSet = true; m_onDemandHours.assign(value); }
 
     /**
-     * <p>The number of instance running hours covered by On-Demand Instances.</p>
+     * <p>The number of instance running hours that are covered by On-Demand
+     * Instances.</p>
      */
     inline CoverageHours& WithOnDemandHours(const Aws::String& value) { SetOnDemandHours(value); return *this;}
 
     /**
-     * <p>The number of instance running hours covered by On-Demand Instances.</p>
+     * <p>The number of instance running hours that are covered by On-Demand
+     * Instances.</p>
      */
     inline CoverageHours& WithOnDemandHours(Aws::String&& value) { SetOnDemandHours(std::move(value)); return *this;}
 
     /**
-     * <p>The number of instance running hours covered by On-Demand Instances.</p>
+     * <p>The number of instance running hours that are covered by On-Demand
+     * Instances.</p>
      */
     inline CoverageHours& WithOnDemandHours(const char* value) { SetOnDemandHours(value); return *this;}
 
 
     /**
-     * <p>The number of instance running hours covered by reservations.</p>
+     * <p>The number of instance running hours that are covered by reservations.</p>
      */
     inline const Aws::String& GetReservedHours() const{ return m_reservedHours; }
 
     /**
-     * <p>The number of instance running hours covered by reservations.</p>
+     * <p>The number of instance running hours that are covered by reservations.</p>
      */
     inline void SetReservedHours(const Aws::String& value) { m_reservedHoursHasBeenSet = true; m_reservedHours = value; }
 
     /**
-     * <p>The number of instance running hours covered by reservations.</p>
+     * <p>The number of instance running hours that are covered by reservations.</p>
      */
     inline void SetReservedHours(Aws::String&& value) { m_reservedHoursHasBeenSet = true; m_reservedHours = std::move(value); }
 
     /**
-     * <p>The number of instance running hours covered by reservations.</p>
+     * <p>The number of instance running hours that are covered by reservations.</p>
      */
     inline void SetReservedHours(const char* value) { m_reservedHoursHasBeenSet = true; m_reservedHours.assign(value); }
 
     /**
-     * <p>The number of instance running hours covered by reservations.</p>
+     * <p>The number of instance running hours that are covered by reservations.</p>
      */
     inline CoverageHours& WithReservedHours(const Aws::String& value) { SetReservedHours(value); return *this;}
 
     /**
-     * <p>The number of instance running hours covered by reservations.</p>
+     * <p>The number of instance running hours that are covered by reservations.</p>
      */
     inline CoverageHours& WithReservedHours(Aws::String&& value) { SetReservedHours(std::move(value)); return *this;}
 
     /**
-     * <p>The number of instance running hours covered by reservations.</p>
+     * <p>The number of instance running hours that are covered by reservations.</p>
      */
     inline CoverageHours& WithReservedHours(const char* value) { SetReservedHours(value); return *this;}
 
@@ -156,37 +163,37 @@ namespace Model
 
 
     /**
-     * <p>The percentage of instance hours covered by a reservation.</p>
+     * <p>The percentage of instance hours that are covered by a reservation.</p>
      */
     inline const Aws::String& GetCoverageHoursPercentage() const{ return m_coverageHoursPercentage; }
 
     /**
-     * <p>The percentage of instance hours covered by a reservation.</p>
+     * <p>The percentage of instance hours that are covered by a reservation.</p>
      */
     inline void SetCoverageHoursPercentage(const Aws::String& value) { m_coverageHoursPercentageHasBeenSet = true; m_coverageHoursPercentage = value; }
 
     /**
-     * <p>The percentage of instance hours covered by a reservation.</p>
+     * <p>The percentage of instance hours that are covered by a reservation.</p>
      */
     inline void SetCoverageHoursPercentage(Aws::String&& value) { m_coverageHoursPercentageHasBeenSet = true; m_coverageHoursPercentage = std::move(value); }
 
     /**
-     * <p>The percentage of instance hours covered by a reservation.</p>
+     * <p>The percentage of instance hours that are covered by a reservation.</p>
      */
     inline void SetCoverageHoursPercentage(const char* value) { m_coverageHoursPercentageHasBeenSet = true; m_coverageHoursPercentage.assign(value); }
 
     /**
-     * <p>The percentage of instance hours covered by a reservation.</p>
+     * <p>The percentage of instance hours that are covered by a reservation.</p>
      */
     inline CoverageHours& WithCoverageHoursPercentage(const Aws::String& value) { SetCoverageHoursPercentage(value); return *this;}
 
     /**
-     * <p>The percentage of instance hours covered by a reservation.</p>
+     * <p>The percentage of instance hours that are covered by a reservation.</p>
      */
     inline CoverageHours& WithCoverageHoursPercentage(Aws::String&& value) { SetCoverageHoursPercentage(std::move(value)); return *this;}
 
     /**
-     * <p>The percentage of instance hours covered by a reservation.</p>
+     * <p>The percentage of instance hours that are covered by a reservation.</p>
      */
     inline CoverageHours& WithCoverageHoursPercentage(const char* value) { SetCoverageHoursPercentage(value); return *this;}
 
