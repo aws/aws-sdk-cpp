@@ -121,7 +121,7 @@ namespace Model
     /**
      * <p>The semantic version of the application:</p><p>
  <a
-     * href=""https://semver.org/"">https://semver.org/</a>
+     * href="https://semver.org/">https://semver.org/</a>
  </p>
      */
     inline const Aws::String& GetSemanticVersion() const{ return m_semanticVersion; }
@@ -129,7 +129,7 @@ namespace Model
     /**
      * <p>The semantic version of the application:</p><p>
  <a
-     * href=""https://semver.org/"">https://semver.org/</a>
+     * href="https://semver.org/">https://semver.org/</a>
  </p>
      */
     inline void SetSemanticVersion(const Aws::String& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = value; }
@@ -137,7 +137,7 @@ namespace Model
     /**
      * <p>The semantic version of the application:</p><p>
  <a
-     * href=""https://semver.org/"">https://semver.org/</a>
+     * href="https://semver.org/">https://semver.org/</a>
  </p>
      */
     inline void SetSemanticVersion(Aws::String&& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = std::move(value); }
@@ -145,7 +145,7 @@ namespace Model
     /**
      * <p>The semantic version of the application:</p><p>
  <a
-     * href=""https://semver.org/"">https://semver.org/</a>
+     * href="https://semver.org/">https://semver.org/</a>
  </p>
      */
     inline void SetSemanticVersion(const char* value) { m_semanticVersionHasBeenSet = true; m_semanticVersion.assign(value); }
@@ -153,7 +153,7 @@ namespace Model
     /**
      * <p>The semantic version of the application:</p><p>
  <a
-     * href=""https://semver.org/"">https://semver.org/</a>
+     * href="https://semver.org/">https://semver.org/</a>
  </p>
      */
     inline VersionSummary& WithSemanticVersion(const Aws::String& value) { SetSemanticVersion(value); return *this;}
@@ -161,7 +161,7 @@ namespace Model
     /**
      * <p>The semantic version of the application:</p><p>
  <a
-     * href=""https://semver.org/"">https://semver.org/</a>
+     * href="https://semver.org/">https://semver.org/</a>
  </p>
      */
     inline VersionSummary& WithSemanticVersion(Aws::String&& value) { SetSemanticVersion(std::move(value)); return *this;}
@@ -169,7 +169,7 @@ namespace Model
     /**
      * <p>The semantic version of the application:</p><p>
  <a
-     * href=""https://semver.org/"">https://semver.org/</a>
+     * href="https://semver.org/">https://semver.org/</a>
  </p>
      */
     inline VersionSummary& WithSemanticVersion(const char* value) { SetSemanticVersion(value); return *this;}

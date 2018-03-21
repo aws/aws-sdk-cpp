@@ -447,7 +447,7 @@ namespace Model
     /**
      * <p>The semantic version of the application:</p><p>
  <a
-     * href=""https://semver.org/"">https://semver.org/</a>
+     * href="https://semver.org/">https://semver.org/</a>
  </p>
      */
     inline const Aws::String& GetSemanticVersion() const{ return m_semanticVersion; }
@@ -455,7 +455,7 @@ namespace Model
     /**
      * <p>The semantic version of the application:</p><p>
  <a
-     * href=""https://semver.org/"">https://semver.org/</a>
+     * href="https://semver.org/">https://semver.org/</a>
  </p>
      */
     inline void SetSemanticVersion(const Aws::String& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = value; }
@@ -463,7 +463,7 @@ namespace Model
     /**
      * <p>The semantic version of the application:</p><p>
  <a
-     * href=""https://semver.org/"">https://semver.org/</a>
+     * href="https://semver.org/">https://semver.org/</a>
  </p>
      */
     inline void SetSemanticVersion(Aws::String&& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = std::move(value); }
@@ -471,7 +471,7 @@ namespace Model
     /**
      * <p>The semantic version of the application:</p><p>
  <a
-     * href=""https://semver.org/"">https://semver.org/</a>
+     * href="https://semver.org/">https://semver.org/</a>
  </p>
      */
     inline void SetSemanticVersion(const char* value) { m_semanticVersionHasBeenSet = true; m_semanticVersion.assign(value); }
@@ -479,7 +479,7 @@ namespace Model
     /**
      * <p>The semantic version of the application:</p><p>
  <a
-     * href=""https://semver.org/"">https://semver.org/</a>
+     * href="https://semver.org/">https://semver.org/</a>
  </p>
      */
     inline CreateApplicationRequest& WithSemanticVersion(const Aws::String& value) { SetSemanticVersion(value); return *this;}
@@ -487,7 +487,7 @@ namespace Model
     /**
      * <p>The semantic version of the application:</p><p>
  <a
-     * href=""https://semver.org/"">https://semver.org/</a>
+     * href="https://semver.org/">https://semver.org/</a>
  </p>
      */
     inline CreateApplicationRequest& WithSemanticVersion(Aws::String&& value) { SetSemanticVersion(std::move(value)); return *this;}
@@ -495,7 +495,7 @@ namespace Model
     /**
      * <p>The semantic version of the application:</p><p>
  <a
-     * href=""https://semver.org/"">https://semver.org/</a>
+     * href="https://semver.org/">https://semver.org/</a>
  </p>
      */
     inline CreateApplicationRequest& WithSemanticVersion(const char* value) { SetSemanticVersion(value); return *this;}
@@ -539,43 +539,43 @@ namespace Model
 
     /**
      * <p>A valid identifier from <a
-     * href=""https://spdx.org/licenses/"">https://spdx.org/licenses/</a>.</p>
+     * href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
      */
     inline const Aws::String& GetSpdxLicenseId() const{ return m_spdxLicenseId; }
 
     /**
      * <p>A valid identifier from <a
-     * href=""https://spdx.org/licenses/"">https://spdx.org/licenses/</a>.</p>
+     * href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
      */
     inline void SetSpdxLicenseId(const Aws::String& value) { m_spdxLicenseIdHasBeenSet = true; m_spdxLicenseId = value; }
 
     /**
      * <p>A valid identifier from <a
-     * href=""https://spdx.org/licenses/"">https://spdx.org/licenses/</a>.</p>
+     * href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
      */
     inline void SetSpdxLicenseId(Aws::String&& value) { m_spdxLicenseIdHasBeenSet = true; m_spdxLicenseId = std::move(value); }
 
     /**
      * <p>A valid identifier from <a
-     * href=""https://spdx.org/licenses/"">https://spdx.org/licenses/</a>.</p>
+     * href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
      */
     inline void SetSpdxLicenseId(const char* value) { m_spdxLicenseIdHasBeenSet = true; m_spdxLicenseId.assign(value); }
 
     /**
      * <p>A valid identifier from <a
-     * href=""https://spdx.org/licenses/"">https://spdx.org/licenses/</a>.</p>
+     * href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
      */
     inline CreateApplicationRequest& WithSpdxLicenseId(const Aws::String& value) { SetSpdxLicenseId(value); return *this;}
 
     /**
      * <p>A valid identifier from <a
-     * href=""https://spdx.org/licenses/"">https://spdx.org/licenses/</a>.</p>
+     * href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
      */
     inline CreateApplicationRequest& WithSpdxLicenseId(Aws::String&& value) { SetSpdxLicenseId(std::move(value)); return *this;}
 
     /**
      * <p>A valid identifier from <a
-     * href=""https://spdx.org/licenses/"">https://spdx.org/licenses/</a>.</p>
+     * href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
      */
     inline CreateApplicationRequest& WithSpdxLicenseId(const char* value) { SetSpdxLicenseId(value); return *this;}
 

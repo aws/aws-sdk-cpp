@@ -350,43 +350,43 @@ namespace Model
 
     /**
      * <p>A valid identifier from <a
-     * href=""https://spdx.org/licenses/"">https://spdx.org/licenses/</a>.</p>
+     * href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
      */
     inline const Aws::String& GetSpdxLicenseId() const{ return m_spdxLicenseId; }
 
     /**
      * <p>A valid identifier from <a
-     * href=""https://spdx.org/licenses/"">https://spdx.org/licenses/</a>.</p>
+     * href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
      */
     inline void SetSpdxLicenseId(const Aws::String& value) { m_spdxLicenseIdHasBeenSet = true; m_spdxLicenseId = value; }
 
     /**
      * <p>A valid identifier from <a
-     * href=""https://spdx.org/licenses/"">https://spdx.org/licenses/</a>.</p>
+     * href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
      */
     inline void SetSpdxLicenseId(Aws::String&& value) { m_spdxLicenseIdHasBeenSet = true; m_spdxLicenseId = std::move(value); }
 
     /**
      * <p>A valid identifier from <a
-     * href=""https://spdx.org/licenses/"">https://spdx.org/licenses/</a>.</p>
+     * href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
      */
     inline void SetSpdxLicenseId(const char* value) { m_spdxLicenseIdHasBeenSet = true; m_spdxLicenseId.assign(value); }
 
     /**
      * <p>A valid identifier from <a
-     * href=""https://spdx.org/licenses/"">https://spdx.org/licenses/</a>.</p>
+     * href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
      */
     inline ApplicationSummary& WithSpdxLicenseId(const Aws::String& value) { SetSpdxLicenseId(value); return *this;}
 
     /**
      * <p>A valid identifier from <a
-     * href=""https://spdx.org/licenses/"">https://spdx.org/licenses/</a>.</p>
+     * href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
      */
     inline ApplicationSummary& WithSpdxLicenseId(Aws::String&& value) { SetSpdxLicenseId(std::move(value)); return *this;}
 
     /**
      * <p>A valid identifier from <a
-     * href=""https://spdx.org/licenses/"">https://spdx.org/licenses/</a>.</p>
+     * href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
      */
     inline ApplicationSummary& WithSpdxLicenseId(const char* value) { SetSpdxLicenseId(value); return *this;}
 
