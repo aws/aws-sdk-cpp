@@ -191,39 +191,82 @@ namespace Model
 
 
     /**
-     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     * <p>The URL that users are redirected to after their streaming session ends.</p>
      */
     inline const Aws::String& GetRedirectURL() const{ return m_redirectURL; }
 
     /**
-     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     * <p>The URL that users are redirected to after their streaming session ends.</p>
      */
     inline void SetRedirectURL(const Aws::String& value) { m_redirectURLHasBeenSet = true; m_redirectURL = value; }
 
     /**
-     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     * <p>The URL that users are redirected to after their streaming session ends.</p>
      */
     inline void SetRedirectURL(Aws::String&& value) { m_redirectURLHasBeenSet = true; m_redirectURL = std::move(value); }
 
     /**
-     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     * <p>The URL that users are redirected to after their streaming session ends.</p>
      */
     inline void SetRedirectURL(const char* value) { m_redirectURLHasBeenSet = true; m_redirectURL.assign(value); }
 
     /**
-     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     * <p>The URL that users are redirected to after their streaming session ends.</p>
      */
     inline CreateStackRequest& WithRedirectURL(const Aws::String& value) { SetRedirectURL(value); return *this;}
 
     /**
-     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     * <p>The URL that users are redirected to after their streaming session ends.</p>
      */
     inline CreateStackRequest& WithRedirectURL(Aws::String&& value) { SetRedirectURL(std::move(value)); return *this;}
 
     /**
-     * <p>The URL the user is redirected to after the streaming session ends.</p>
+     * <p>The URL that users are redirected to after their streaming session ends.</p>
      */
     inline CreateStackRequest& WithRedirectURL(const char* value) { SetRedirectURL(value); return *this;}
+
+
+    /**
+     * <p>The URL that users are redirected to after they click the Send Feedback link.
+     * If no URL is specified, no Send Feedback link is displayed.</p>
+     */
+    inline const Aws::String& GetFeedbackURL() const{ return m_feedbackURL; }
+
+    /**
+     * <p>The URL that users are redirected to after they click the Send Feedback link.
+     * If no URL is specified, no Send Feedback link is displayed.</p>
+     */
+    inline void SetFeedbackURL(const Aws::String& value) { m_feedbackURLHasBeenSet = true; m_feedbackURL = value; }
+
+    /**
+     * <p>The URL that users are redirected to after they click the Send Feedback link.
+     * If no URL is specified, no Send Feedback link is displayed.</p>
+     */
+    inline void SetFeedbackURL(Aws::String&& value) { m_feedbackURLHasBeenSet = true; m_feedbackURL = std::move(value); }
+
+    /**
+     * <p>The URL that users are redirected to after they click the Send Feedback link.
+     * If no URL is specified, no Send Feedback link is displayed.</p>
+     */
+    inline void SetFeedbackURL(const char* value) { m_feedbackURLHasBeenSet = true; m_feedbackURL.assign(value); }
+
+    /**
+     * <p>The URL that users are redirected to after they click the Send Feedback link.
+     * If no URL is specified, no Send Feedback link is displayed.</p>
+     */
+    inline CreateStackRequest& WithFeedbackURL(const Aws::String& value) { SetFeedbackURL(value); return *this;}
+
+    /**
+     * <p>The URL that users are redirected to after they click the Send Feedback link.
+     * If no URL is specified, no Send Feedback link is displayed.</p>
+     */
+    inline CreateStackRequest& WithFeedbackURL(Aws::String&& value) { SetFeedbackURL(std::move(value)); return *this;}
+
+    /**
+     * <p>The URL that users are redirected to after they click the Send Feedback link.
+     * If no URL is specified, no Send Feedback link is displayed.</p>
+     */
+    inline CreateStackRequest& WithFeedbackURL(const char* value) { SetFeedbackURL(value); return *this;}
 
   private:
 
@@ -241,6 +284,9 @@ namespace Model
 
     Aws::String m_redirectURL;
     bool m_redirectURLHasBeenSet;
+
+    Aws::String m_feedbackURL;
+    bool m_feedbackURLHasBeenSet;
   };
 
 } // namespace Model

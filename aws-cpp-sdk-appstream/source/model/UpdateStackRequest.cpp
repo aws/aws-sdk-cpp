@@ -28,6 +28,7 @@ UpdateStackRequest::UpdateStackRequest() :
     m_nameHasBeenSet(false),
     m_storageConnectorsHasBeenSet(false),
     m_redirectURLHasBeenSet(false),
+    m_feedbackURLHasBeenSet(false),
     m_attributesToDeleteHasBeenSet(false)
 {
 }
@@ -68,6 +69,12 @@ Aws::String UpdateStackRequest::SerializePayload() const
   if(m_redirectURLHasBeenSet)
   {
    payload.WithString("RedirectURL", m_redirectURL);
+
+  }
+
+  if(m_feedbackURLHasBeenSet)
+  {
+   payload.WithString("FeedbackURL", m_feedbackURL);
 
   }
 

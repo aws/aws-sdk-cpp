@@ -27,7 +27,9 @@ namespace Model
   {
     NOT_SET,
     STORAGE_CONNECTORS,
-    REDIRECT_URL
+    REDIRECT_URL,
+    FEEDBACK_URL,
+    THEME_NAME
   };
 
 namespace StackAttributeMapper

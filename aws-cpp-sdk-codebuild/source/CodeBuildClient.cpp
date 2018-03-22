@@ -42,6 +42,7 @@
 #include <aws/codebuild/model/StartBuildRequest.h>
 #include <aws/codebuild/model/StopBuildRequest.h>
 #include <aws/codebuild/model/UpdateProjectRequest.h>
+#include <aws/codebuild/model/UpdateWebhookRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -630,5 +631,40 @@ void CodeBuildClient::UpdateProjectAsync(const UpdateProjectRequest& request, co
 void CodeBuildClient::UpdateProjectAsyncHelper(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateProject(request), context);
+}
+
+UpdateWebhookOutcome CodeBuildClient::UpdateWebhook(const UpdateWebhookRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateWebhookOutcome(UpdateWebhookResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateWebhookOutcome(outcome.GetError());
+  }
+}
+
+UpdateWebhookOutcomeCallable CodeBuildClient::UpdateWebhookCallable(const UpdateWebhookRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateWebhookOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateWebhook(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeBuildClient::UpdateWebhookAsync(const UpdateWebhookRequest& request, const UpdateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateWebhookAsyncHelper( request, handler, context ); } );
+}
+
+void CodeBuildClient::UpdateWebhookAsyncHelper(const UpdateWebhookRequest& request, const UpdateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateWebhook(request), context);
 }
 

@@ -36,6 +36,7 @@ Stack::Stack() :
     m_createdTimeHasBeenSet(false),
     m_storageConnectorsHasBeenSet(false),
     m_redirectURLHasBeenSet(false),
+    m_feedbackURLHasBeenSet(false),
     m_stackErrorsHasBeenSet(false)
 {
 }
@@ -48,6 +49,7 @@ Stack::Stack(const JsonValue& jsonValue) :
     m_createdTimeHasBeenSet(false),
     m_storageConnectorsHasBeenSet(false),
     m_redirectURLHasBeenSet(false),
+    m_feedbackURLHasBeenSet(false),
     m_stackErrorsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -105,6 +107,13 @@ Stack& Stack::operator =(const JsonValue& jsonValue)
     m_redirectURL = jsonValue.GetString("RedirectURL");
 
     m_redirectURLHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FeedbackURL"))
+  {
+    m_feedbackURL = jsonValue.GetString("FeedbackURL");
+
+    m_feedbackURLHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("StackErrors"))
@@ -167,6 +176,12 @@ JsonValue Stack::Jsonize() const
   if(m_redirectURLHasBeenSet)
   {
    payload.WithString("RedirectURL", m_redirectURL);
+
+  }
+
+  if(m_feedbackURLHasBeenSet)
+  {
+   payload.WithString("FeedbackURL", m_feedbackURL);
 
   }
 

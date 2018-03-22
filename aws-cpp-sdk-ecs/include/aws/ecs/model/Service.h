@@ -22,6 +22,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/ecs/model/NetworkConfiguration.h>
 #include <aws/ecs/model/LoadBalancer.h>
+#include <aws/ecs/model/ServiceRegistry.h>
 #include <aws/ecs/model/Deployment.h>
 #include <aws/ecs/model/ServiceEvent.h>
 #include <aws/ecs/model/PlacementConstraint.h>
@@ -268,6 +269,42 @@ namespace Model
      * the container port to access from the load balancer.</p>
      */
     inline Service& AddLoadBalancers(LoadBalancer&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p/>
+     */
+    inline const Aws::Vector<ServiceRegistry>& GetServiceRegistries() const{ return m_serviceRegistries; }
+
+    /**
+     * <p/>
+     */
+    inline void SetServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline Service& WithServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { SetServiceRegistries(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline Service& WithServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { SetServiceRegistries(std::move(value)); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline Service& AddServiceRegistries(const ServiceRegistry& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(value); return *this; }
+
+    /**
+     * <p/>
+     */
+    inline Service& AddServiceRegistries(ServiceRegistry&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -848,6 +885,9 @@ namespace Model
 
     Aws::Vector<LoadBalancer> m_loadBalancers;
     bool m_loadBalancersHasBeenSet;
+
+    Aws::Vector<ServiceRegistry> m_serviceRegistries;
+    bool m_serviceRegistriesHasBeenSet;
 
     Aws::String m_status;
     bool m_statusHasBeenSet;

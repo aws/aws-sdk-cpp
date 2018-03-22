@@ -22,6 +22,7 @@
 #include <aws/ecs/model/DeploymentConfiguration.h>
 #include <aws/ecs/model/NetworkConfiguration.h>
 #include <aws/ecs/model/LoadBalancer.h>
+#include <aws/ecs/model/ServiceRegistry.h>
 #include <aws/ecs/model/PlacementConstraint.h>
 #include <aws/ecs/model/PlacementStrategy.h>
 #include <utility>
@@ -340,6 +341,63 @@ namespace Model
      * is registered as a target in the target group specified here.</p>
      */
     inline CreateServiceRequest& AddLoadBalancers(LoadBalancer&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The details of the service discovery registries you want to assign to this
+     * service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service
+     * Discovery</a>.</p>
+     */
+    inline const Aws::Vector<ServiceRegistry>& GetServiceRegistries() const{ return m_serviceRegistries; }
+
+    /**
+     * <p>The details of the service discovery registries you want to assign to this
+     * service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service
+     * Discovery</a>.</p>
+     */
+    inline void SetServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = value; }
+
+    /**
+     * <p>The details of the service discovery registries you want to assign to this
+     * service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service
+     * Discovery</a>.</p>
+     */
+    inline void SetServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = std::move(value); }
+
+    /**
+     * <p>The details of the service discovery registries you want to assign to this
+     * service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service
+     * Discovery</a>.</p>
+     */
+    inline CreateServiceRequest& WithServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { SetServiceRegistries(value); return *this;}
+
+    /**
+     * <p>The details of the service discovery registries you want to assign to this
+     * service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service
+     * Discovery</a>.</p>
+     */
+    inline CreateServiceRequest& WithServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { SetServiceRegistries(std::move(value)); return *this;}
+
+    /**
+     * <p>The details of the service discovery registries you want to assign to this
+     * service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service
+     * Discovery</a>.</p>
+     */
+    inline CreateServiceRequest& AddServiceRegistries(const ServiceRegistry& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(value); return *this; }
+
+    /**
+     * <p>The details of the service discovery registries you want to assign to this
+     * service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service
+     * Discovery</a>.</p>
+     */
+    inline CreateServiceRequest& AddServiceRegistries(ServiceRegistry&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -871,6 +929,9 @@ namespace Model
 
     Aws::Vector<LoadBalancer> m_loadBalancers;
     bool m_loadBalancersHasBeenSet;
+
+    Aws::Vector<ServiceRegistry> m_serviceRegistries;
+    bool m_serviceRegistriesHasBeenSet;
 
     int m_desiredCount;
     bool m_desiredCountHasBeenSet;

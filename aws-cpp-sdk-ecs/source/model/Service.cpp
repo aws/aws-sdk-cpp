@@ -33,6 +33,7 @@ Service::Service() :
     m_serviceNameHasBeenSet(false),
     m_clusterArnHasBeenSet(false),
     m_loadBalancersHasBeenSet(false),
+    m_serviceRegistriesHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_desiredCount(0),
     m_desiredCountHasBeenSet(false),
@@ -62,6 +63,7 @@ Service::Service(const JsonValue& jsonValue) :
     m_serviceNameHasBeenSet(false),
     m_clusterArnHasBeenSet(false),
     m_loadBalancersHasBeenSet(false),
+    m_serviceRegistriesHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_desiredCount(0),
     m_desiredCountHasBeenSet(false),
@@ -118,6 +120,16 @@ Service& Service::operator =(const JsonValue& jsonValue)
       m_loadBalancers.push_back(loadBalancersJsonList[loadBalancersIndex].AsObject());
     }
     m_loadBalancersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("serviceRegistries"))
+  {
+    Array<JsonValue> serviceRegistriesJsonList = jsonValue.GetArray("serviceRegistries");
+    for(unsigned serviceRegistriesIndex = 0; serviceRegistriesIndex < serviceRegistriesJsonList.GetLength(); ++serviceRegistriesIndex)
+    {
+      m_serviceRegistries.push_back(serviceRegistriesJsonList[serviceRegistriesIndex].AsObject());
+    }
+    m_serviceRegistriesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -277,6 +289,17 @@ JsonValue Service::Jsonize() const
      loadBalancersJsonList[loadBalancersIndex].AsObject(m_loadBalancers[loadBalancersIndex].Jsonize());
    }
    payload.WithArray("loadBalancers", std::move(loadBalancersJsonList));
+
+  }
+
+  if(m_serviceRegistriesHasBeenSet)
+  {
+   Array<JsonValue> serviceRegistriesJsonList(m_serviceRegistries.size());
+   for(unsigned serviceRegistriesIndex = 0; serviceRegistriesIndex < serviceRegistriesJsonList.GetLength(); ++serviceRegistriesIndex)
+   {
+     serviceRegistriesJsonList[serviceRegistriesIndex].AsObject(m_serviceRegistries[serviceRegistriesIndex].Jsonize());
+   }
+   payload.WithArray("serviceRegistries", std::move(serviceRegistriesJsonList));
 
   }
 

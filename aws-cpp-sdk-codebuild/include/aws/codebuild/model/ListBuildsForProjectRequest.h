@@ -46,37 +46,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the build project.</p>
+     * <p>The name of the AWS CodeBuild project.</p>
      */
     inline const Aws::String& GetProjectName() const{ return m_projectName; }
 
     /**
-     * <p>The name of the build project.</p>
+     * <p>The name of the AWS CodeBuild project.</p>
      */
     inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
 
     /**
-     * <p>The name of the build project.</p>
+     * <p>The name of the AWS CodeBuild project.</p>
      */
     inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = std::move(value); }
 
     /**
-     * <p>The name of the build project.</p>
+     * <p>The name of the AWS CodeBuild project.</p>
      */
     inline void SetProjectName(const char* value) { m_projectNameHasBeenSet = true; m_projectName.assign(value); }
 
     /**
-     * <p>The name of the build project.</p>
+     * <p>The name of the AWS CodeBuild project.</p>
      */
     inline ListBuildsForProjectRequest& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
 
     /**
-     * <p>The name of the build project.</p>
+     * <p>The name of the AWS CodeBuild project.</p>
      */
     inline ListBuildsForProjectRequest& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the build project.</p>
+     * <p>The name of the AWS CodeBuild project.</p>
      */
     inline ListBuildsForProjectRequest& WithProjectName(const char* value) { SetProjectName(value); return *this;}
 

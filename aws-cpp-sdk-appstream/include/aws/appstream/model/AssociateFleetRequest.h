@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the fleet.</p>
+     * <p>The name of the fleet. </p>
      */
     inline const Aws::String& GetFleetName() const{ return m_fleetName; }
 
     /**
-     * <p>The name of the fleet.</p>
+     * <p>The name of the fleet. </p>
      */
     inline void SetFleetName(const Aws::String& value) { m_fleetNameHasBeenSet = true; m_fleetName = value; }
 
     /**
-     * <p>The name of the fleet.</p>
+     * <p>The name of the fleet. </p>
      */
     inline void SetFleetName(Aws::String&& value) { m_fleetNameHasBeenSet = true; m_fleetName = std::move(value); }
 
     /**
-     * <p>The name of the fleet.</p>
+     * <p>The name of the fleet. </p>
      */
     inline void SetFleetName(const char* value) { m_fleetNameHasBeenSet = true; m_fleetName.assign(value); }
 
     /**
-     * <p>The name of the fleet.</p>
+     * <p>The name of the fleet. </p>
      */
     inline AssociateFleetRequest& WithFleetName(const Aws::String& value) { SetFleetName(value); return *this;}
 
     /**
-     * <p>The name of the fleet.</p>
+     * <p>The name of the fleet. </p>
      */
     inline AssociateFleetRequest& WithFleetName(Aws::String&& value) { SetFleetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the fleet.</p>
+     * <p>The name of the fleet. </p>
      */
     inline AssociateFleetRequest& WithFleetName(const char* value) { SetFleetName(value); return *this;}
 

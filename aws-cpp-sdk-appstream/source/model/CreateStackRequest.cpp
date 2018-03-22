@@ -27,7 +27,8 @@ CreateStackRequest::CreateStackRequest() :
     m_descriptionHasBeenSet(false),
     m_displayNameHasBeenSet(false),
     m_storageConnectorsHasBeenSet(false),
-    m_redirectURLHasBeenSet(false)
+    m_redirectURLHasBeenSet(false),
+    m_feedbackURLHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,12 @@ Aws::String CreateStackRequest::SerializePayload() const
   if(m_redirectURLHasBeenSet)
   {
    payload.WithString("RedirectURL", m_redirectURL);
+
+  }
+
+  if(m_feedbackURLHasBeenSet)
+  {
+   payload.WithString("FeedbackURL", m_feedbackURL);
 
   }
 

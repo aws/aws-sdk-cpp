@@ -31,14 +31,18 @@ namespace Model
 Webhook::Webhook() : 
     m_urlHasBeenSet(false),
     m_payloadUrlHasBeenSet(false),
-    m_secretHasBeenSet(false)
+    m_secretHasBeenSet(false),
+    m_branchFilterHasBeenSet(false),
+    m_lastModifiedSecretHasBeenSet(false)
 {
 }
 
 Webhook::Webhook(const JsonValue& jsonValue) : 
     m_urlHasBeenSet(false),
     m_payloadUrlHasBeenSet(false),
-    m_secretHasBeenSet(false)
+    m_secretHasBeenSet(false),
+    m_branchFilterHasBeenSet(false),
+    m_lastModifiedSecretHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -66,6 +70,20 @@ Webhook& Webhook::operator =(const JsonValue& jsonValue)
     m_secretHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("branchFilter"))
+  {
+    m_branchFilter = jsonValue.GetString("branchFilter");
+
+    m_branchFilterHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lastModifiedSecret"))
+  {
+    m_lastModifiedSecret = jsonValue.GetDouble("lastModifiedSecret");
+
+    m_lastModifiedSecretHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -89,6 +107,17 @@ JsonValue Webhook::Jsonize() const
   {
    payload.WithString("secret", m_secret);
 
+  }
+
+  if(m_branchFilterHasBeenSet)
+  {
+   payload.WithString("branchFilter", m_branchFilter);
+
+  }
+
+  if(m_lastModifiedSecretHasBeenSet)
+  {
+   payload.WithDouble("lastModifiedSecret", m_lastModifiedSecret.SecondsWithMSPrecision());
   }
 
   return payload;

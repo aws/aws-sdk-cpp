@@ -28,6 +28,7 @@ namespace AppStream
 namespace AppStreamErrorMapper
 {
 
+static const int INVALID_ACCOUNT_STATUS_HASH = HashingUtils::HashString("InvalidAccountStatusException");
 static const int RESOURCE_NOT_AVAILABLE_HASH = HashingUtils::HashString("ResourceNotAvailableException");
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
@@ -42,7 +43,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == RESOURCE_NOT_AVAILABLE_HASH)
+  if (hashCode == INVALID_ACCOUNT_STATUS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppStreamErrors::INVALID_ACCOUNT_STATUS), false);
+  }
+  else if (hashCode == RESOURCE_NOT_AVAILABLE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AppStreamErrors::RESOURCE_NOT_AVAILABLE), false);
   }

@@ -32,6 +32,8 @@ namespace Aws
 
         static const int STORAGE_CONNECTORS_HASH = HashingUtils::HashString("STORAGE_CONNECTORS");
         static const int REDIRECT_URL_HASH = HashingUtils::HashString("REDIRECT_URL");
+        static const int FEEDBACK_URL_HASH = HashingUtils::HashString("FEEDBACK_URL");
+        static const int THEME_NAME_HASH = HashingUtils::HashString("THEME_NAME");
 
 
         StackAttribute GetStackAttributeForName(const Aws::String& name)
@@ -44,6 +46,14 @@ namespace Aws
           else if (hashCode == REDIRECT_URL_HASH)
           {
             return StackAttribute::REDIRECT_URL;
+          }
+          else if (hashCode == FEEDBACK_URL_HASH)
+          {
+            return StackAttribute::FEEDBACK_URL;
+          }
+          else if (hashCode == THEME_NAME_HASH)
+          {
+            return StackAttribute::THEME_NAME;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +73,10 @@ namespace Aws
             return "STORAGE_CONNECTORS";
           case StackAttribute::REDIRECT_URL:
             return "REDIRECT_URL";
+          case StackAttribute::FEEDBACK_URL:
+            return "FEEDBACK_URL";
+          case StackAttribute::THEME_NAME:
+            return "THEME_NAME";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

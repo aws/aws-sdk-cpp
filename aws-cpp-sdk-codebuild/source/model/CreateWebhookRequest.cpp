@@ -23,7 +23,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateWebhookRequest::CreateWebhookRequest() : 
-    m_projectNameHasBeenSet(false)
+    m_projectNameHasBeenSet(false),
+    m_branchFilterHasBeenSet(false)
 {
 }
 
@@ -34,6 +35,12 @@ Aws::String CreateWebhookRequest::SerializePayload() const
   if(m_projectNameHasBeenSet)
   {
    payload.WithString("projectName", m_projectName);
+
+  }
+
+  if(m_branchFilterHasBeenSet)
+  {
+   payload.WithString("branchFilter", m_branchFilter);
 
   }
 
