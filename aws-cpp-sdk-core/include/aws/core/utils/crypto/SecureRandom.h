@@ -102,6 +102,8 @@ namespace Aws
             class SecureRandomFactory
             {
             public:
+                virtual ~SecureRandomFactory() = default;
+
                 /**
                  * Factory method. Returns SecureRandom implementation.
                  */
