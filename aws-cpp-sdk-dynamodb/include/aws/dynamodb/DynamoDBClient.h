@@ -43,7 +43,9 @@
 #include <aws/dynamodb/model/PutItemResult.h>
 #include <aws/dynamodb/model/QueryResult.h>
 #include <aws/dynamodb/model/RestoreTableFromBackupResult.h>
+#include <aws/dynamodb/model/RestoreTableToPointInTimeResult.h>
 #include <aws/dynamodb/model/ScanResult.h>
+#include <aws/dynamodb/model/UpdateContinuousBackupsResult.h>
 #include <aws/dynamodb/model/UpdateGlobalTableResult.h>
 #include <aws/dynamodb/model/UpdateItemResult.h>
 #include <aws/dynamodb/model/UpdateTableResult.h>
@@ -116,9 +118,11 @@ namespace Model
         class PutItemRequest;
         class QueryRequest;
         class RestoreTableFromBackupRequest;
+        class RestoreTableToPointInTimeRequest;
         class ScanRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
+        class UpdateContinuousBackupsRequest;
         class UpdateGlobalTableRequest;
         class UpdateItemRequest;
         class UpdateTableRequest;
@@ -146,9 +150,11 @@ namespace Model
         typedef Aws::Utils::Outcome<PutItemResult, Aws::Client::AWSError<DynamoDBErrors>> PutItemOutcome;
         typedef Aws::Utils::Outcome<QueryResult, Aws::Client::AWSError<DynamoDBErrors>> QueryOutcome;
         typedef Aws::Utils::Outcome<RestoreTableFromBackupResult, Aws::Client::AWSError<DynamoDBErrors>> RestoreTableFromBackupOutcome;
+        typedef Aws::Utils::Outcome<RestoreTableToPointInTimeResult, Aws::Client::AWSError<DynamoDBErrors>> RestoreTableToPointInTimeOutcome;
         typedef Aws::Utils::Outcome<ScanResult, Aws::Client::AWSError<DynamoDBErrors>> ScanOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DynamoDBErrors>> TagResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DynamoDBErrors>> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateContinuousBackupsResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateContinuousBackupsOutcome;
         typedef Aws::Utils::Outcome<UpdateGlobalTableResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateGlobalTableOutcome;
         typedef Aws::Utils::Outcome<UpdateItemResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateItemOutcome;
         typedef Aws::Utils::Outcome<UpdateTableResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateTableOutcome;
@@ -176,9 +182,11 @@ namespace Model
         typedef std::future<PutItemOutcome> PutItemOutcomeCallable;
         typedef std::future<QueryOutcome> QueryOutcomeCallable;
         typedef std::future<RestoreTableFromBackupOutcome> RestoreTableFromBackupOutcomeCallable;
+        typedef std::future<RestoreTableToPointInTimeOutcome> RestoreTableToPointInTimeOutcomeCallable;
         typedef std::future<ScanOutcome> ScanOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+        typedef std::future<UpdateContinuousBackupsOutcome> UpdateContinuousBackupsOutcomeCallable;
         typedef std::future<UpdateGlobalTableOutcome> UpdateGlobalTableOutcomeCallable;
         typedef std::future<UpdateItemOutcome> UpdateItemOutcomeCallable;
         typedef std::future<UpdateTableOutcome> UpdateTableOutcomeCallable;
@@ -209,9 +217,11 @@ namespace Model
     typedef std::function<void(const DynamoDBClient*, const Model::PutItemRequest&, const Model::PutItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutItemResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::QueryRequest&, const Model::QueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > QueryResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::RestoreTableFromBackupRequest&, const Model::RestoreTableFromBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreTableFromBackupResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::RestoreTableToPointInTimeRequest&, const Model::RestoreTableToPointInTimeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreTableToPointInTimeResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::ScanRequest&, const Model::ScanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ScanResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::UpdateContinuousBackupsRequest&, const Model::UpdateContinuousBackupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContinuousBackupsResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::UpdateGlobalTableRequest&, const Model::UpdateGlobalTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGlobalTableResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::UpdateItemRequest&, const Model::UpdateItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateItemResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::UpdateTableRequest&, const Model::UpdateTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTableResponseReceivedHandler;
@@ -474,10 +484,12 @@ namespace Model
          * corresponding table's primary key schema.</p> </li> <li> <p>You try to perform
          * multiple operations on the same item in the same <code>BatchWriteItem</code>
          * request. For example, you cannot put and delete the same item in the same
-         * <code>BatchWriteItem</code> request. </p> </li> <li> <p>There are more than 25
-         * requests in the batch.</p> </li> <li> <p>Any individual item in a batch exceeds
-         * 400 KB.</p> </li> <li> <p>The total request size exceeds 16 MB.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * <code>BatchWriteItem</code> request. </p> </li> <li> <p> Your request contains
+         * at least two items with identical hash and range keys (which essentially is two
+         * put operations). </p> </li> <li> <p>There are more than 25 requests in the
+         * batch.</p> </li> <li> <p>Any individual item in a batch exceeds 400 KB.</p>
+         * </li> <li> <p>The total request size exceeds 16 MB.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItem">AWS
          * API Reference</a></p>
          */
@@ -536,10 +548,12 @@ namespace Model
          * corresponding table's primary key schema.</p> </li> <li> <p>You try to perform
          * multiple operations on the same item in the same <code>BatchWriteItem</code>
          * request. For example, you cannot put and delete the same item in the same
-         * <code>BatchWriteItem</code> request. </p> </li> <li> <p>There are more than 25
-         * requests in the batch.</p> </li> <li> <p>Any individual item in a batch exceeds
-         * 400 KB.</p> </li> <li> <p>The total request size exceeds 16 MB.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * <code>BatchWriteItem</code> request. </p> </li> <li> <p> Your request contains
+         * at least two items with identical hash and range keys (which essentially is two
+         * put operations). </p> </li> <li> <p>There are more than 25 requests in the
+         * batch.</p> </li> <li> <p>Any individual item in a batch exceeds 400 KB.</p>
+         * </li> <li> <p>The total request size exceeds 16 MB.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItem">AWS
          * API Reference</a></p>
          *
@@ -600,10 +614,12 @@ namespace Model
          * corresponding table's primary key schema.</p> </li> <li> <p>You try to perform
          * multiple operations on the same item in the same <code>BatchWriteItem</code>
          * request. For example, you cannot put and delete the same item in the same
-         * <code>BatchWriteItem</code> request. </p> </li> <li> <p>There are more than 25
-         * requests in the batch.</p> </li> <li> <p>Any individual item in a batch exceeds
-         * 400 KB.</p> </li> <li> <p>The total request size exceeds 16 MB.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * <code>BatchWriteItem</code> request. </p> </li> <li> <p> Your request contains
+         * at least two items with identical hash and range keys (which essentially is two
+         * put operations). </p> </li> <li> <p>There are more than 25 requests in the
+         * batch.</p> </li> <li> <p>Any individual item in a batch exceeds 400 KB.</p>
+         * </li> <li> <p>The total request size exceeds 16 MB.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItem">AWS
          * API Reference</a></p>
          *
@@ -988,20 +1004,36 @@ namespace Model
         virtual void DescribeBackupAsync(const Model::DescribeBackupRequest& request, const DescribeBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Checks the status of the backup restore settings on the specified table. If
-         * backups are enabled, <code>ContinuousBackupsStatus</code> will bet set to
-         * ENABLED.</p> <p>You can call <code>DescribeContinuousBackups</code> at a maximum
-         * rate of 10 times per second.</p><p><h3>See Also:</h3>   <a
+         * <p>Checks the status of continuous backups and point in time recovery on the
+         * specified table. Continuous backups are <code>ENABLED</code> on all tables at
+         * table creation. If point in time recovery is enabled,
+         * <code>PointInTimeRecoveryStatus</code> will be set to ENABLED.</p> <p> Once
+         * continuous backups and point in time recovery are enabled, you can restore to
+         * any point in time within <code>EarliestRestorableDateTime</code> and
+         * <code>LatestRestorableDateTime</code>. </p> <p>
+         * <code>LatestRestorableDateTime</code> is typically 5 minutes before the current
+         * time. You can restore your table to any point in time during the last 35 days
+         * with a 1-minute granularity. </p> <p>You can call
+         * <code>DescribeContinuousBackups</code> at a maximum rate of 10 times per
+         * second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContinuousBackups">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeContinuousBackupsOutcome DescribeContinuousBackups(const Model::DescribeContinuousBackupsRequest& request) const;
 
         /**
-         * <p>Checks the status of the backup restore settings on the specified table. If
-         * backups are enabled, <code>ContinuousBackupsStatus</code> will bet set to
-         * ENABLED.</p> <p>You can call <code>DescribeContinuousBackups</code> at a maximum
-         * rate of 10 times per second.</p><p><h3>See Also:</h3>   <a
+         * <p>Checks the status of continuous backups and point in time recovery on the
+         * specified table. Continuous backups are <code>ENABLED</code> on all tables at
+         * table creation. If point in time recovery is enabled,
+         * <code>PointInTimeRecoveryStatus</code> will be set to ENABLED.</p> <p> Once
+         * continuous backups and point in time recovery are enabled, you can restore to
+         * any point in time within <code>EarliestRestorableDateTime</code> and
+         * <code>LatestRestorableDateTime</code>. </p> <p>
+         * <code>LatestRestorableDateTime</code> is typically 5 minutes before the current
+         * time. You can restore your table to any point in time during the last 35 days
+         * with a 1-minute granularity. </p> <p>You can call
+         * <code>DescribeContinuousBackups</code> at a maximum rate of 10 times per
+         * second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContinuousBackups">AWS
          * API Reference</a></p>
          *
@@ -1010,10 +1042,18 @@ namespace Model
         virtual Model::DescribeContinuousBackupsOutcomeCallable DescribeContinuousBackupsCallable(const Model::DescribeContinuousBackupsRequest& request) const;
 
         /**
-         * <p>Checks the status of the backup restore settings on the specified table. If
-         * backups are enabled, <code>ContinuousBackupsStatus</code> will bet set to
-         * ENABLED.</p> <p>You can call <code>DescribeContinuousBackups</code> at a maximum
-         * rate of 10 times per second.</p><p><h3>See Also:</h3>   <a
+         * <p>Checks the status of continuous backups and point in time recovery on the
+         * specified table. Continuous backups are <code>ENABLED</code> on all tables at
+         * table creation. If point in time recovery is enabled,
+         * <code>PointInTimeRecoveryStatus</code> will be set to ENABLED.</p> <p> Once
+         * continuous backups and point in time recovery are enabled, you can restore to
+         * any point in time within <code>EarliestRestorableDateTime</code> and
+         * <code>LatestRestorableDateTime</code>. </p> <p>
+         * <code>LatestRestorableDateTime</code> is typically 5 minutes before the current
+         * time. You can restore your table to any point in time during the last 35 days
+         * with a 1-minute granularity. </p> <p>You can call
+         * <code>DescribeContinuousBackups</code> at a maximum rate of 10 times per
+         * second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContinuousBackups">AWS
          * API Reference</a></p>
          *
@@ -1763,13 +1803,13 @@ namespace Model
 
         /**
          * <p>Creates a new table from an existing backup. Any number of users can execute
-         * up to 10 concurrent restores in a given account. </p> <p>You can call
-         * <code>RestoreTableFromBackup</code> at a maximum rate of 10 times per
-         * second.</p> <p>You must manually set up the following on the restored table:</p>
-         * <ul> <li> <p>Auto scaling policies</p> </li> <li> <p>IAM policies</p> </li> <li>
-         * <p>Cloudwatch metrics and alarms</p> </li> <li> <p>Tags</p> </li> <li> <p>Stream
-         * settings</p> </li> <li> <p>Time to Live (TTL) settings</p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * up to 4 concurrent restores (any type of restore) in a given account. </p>
+         * <p>You can call <code>RestoreTableFromBackup</code> at a maximum rate of 10
+         * times per second.</p> <p>You must manually set up the following on the restored
+         * table:</p> <ul> <li> <p>Auto scaling policies</p> </li> <li> <p>IAM policies</p>
+         * </li> <li> <p>Cloudwatch metrics and alarms</p> </li> <li> <p>Tags</p> </li>
+         * <li> <p>Stream settings</p> </li> <li> <p>Time to Live (TTL) settings</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableFromBackup">AWS
          * API Reference</a></p>
          */
@@ -1777,13 +1817,13 @@ namespace Model
 
         /**
          * <p>Creates a new table from an existing backup. Any number of users can execute
-         * up to 10 concurrent restores in a given account. </p> <p>You can call
-         * <code>RestoreTableFromBackup</code> at a maximum rate of 10 times per
-         * second.</p> <p>You must manually set up the following on the restored table:</p>
-         * <ul> <li> <p>Auto scaling policies</p> </li> <li> <p>IAM policies</p> </li> <li>
-         * <p>Cloudwatch metrics and alarms</p> </li> <li> <p>Tags</p> </li> <li> <p>Stream
-         * settings</p> </li> <li> <p>Time to Live (TTL) settings</p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * up to 4 concurrent restores (any type of restore) in a given account. </p>
+         * <p>You can call <code>RestoreTableFromBackup</code> at a maximum rate of 10
+         * times per second.</p> <p>You must manually set up the following on the restored
+         * table:</p> <ul> <li> <p>Auto scaling policies</p> </li> <li> <p>IAM policies</p>
+         * </li> <li> <p>Cloudwatch metrics and alarms</p> </li> <li> <p>Tags</p> </li>
+         * <li> <p>Stream settings</p> </li> <li> <p>Time to Live (TTL) settings</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableFromBackup">AWS
          * API Reference</a></p>
          *
@@ -1793,19 +1833,74 @@ namespace Model
 
         /**
          * <p>Creates a new table from an existing backup. Any number of users can execute
-         * up to 10 concurrent restores in a given account. </p> <p>You can call
-         * <code>RestoreTableFromBackup</code> at a maximum rate of 10 times per
-         * second.</p> <p>You must manually set up the following on the restored table:</p>
-         * <ul> <li> <p>Auto scaling policies</p> </li> <li> <p>IAM policies</p> </li> <li>
-         * <p>Cloudwatch metrics and alarms</p> </li> <li> <p>Tags</p> </li> <li> <p>Stream
-         * settings</p> </li> <li> <p>Time to Live (TTL) settings</p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * up to 4 concurrent restores (any type of restore) in a given account. </p>
+         * <p>You can call <code>RestoreTableFromBackup</code> at a maximum rate of 10
+         * times per second.</p> <p>You must manually set up the following on the restored
+         * table:</p> <ul> <li> <p>Auto scaling policies</p> </li> <li> <p>IAM policies</p>
+         * </li> <li> <p>Cloudwatch metrics and alarms</p> </li> <li> <p>Tags</p> </li>
+         * <li> <p>Stream settings</p> </li> <li> <p>Time to Live (TTL) settings</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableFromBackup">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RestoreTableFromBackupAsync(const Model::RestoreTableFromBackupRequest& request, const RestoreTableFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Restores the specified table to the specified point in time within
+         * <code>EarliestRestorableDateTime</code> and
+         * <code>LatestRestorableDateTime</code>. You can restore your table to any point
+         * in time during the last 35 days with a 1-minute granularity. Any number of users
+         * can execute up to 4 concurrent restores (any type of restore) in a given
+         * account. </p> <p>You must manually set up the following on the restored
+         * table:</p> <ul> <li> <p>Auto scaling policies</p> </li> <li> <p>IAM policies</p>
+         * </li> <li> <p>Cloudwatch metrics and alarms</p> </li> <li> <p>Tags</p> </li>
+         * <li> <p>Stream settings</p> </li> <li> <p>Time to Live (TTL) settings</p> </li>
+         * <li> <p>Point in time recovery settings</p> </li> </ul><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableToPointInTime">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RestoreTableToPointInTimeOutcome RestoreTableToPointInTime(const Model::RestoreTableToPointInTimeRequest& request) const;
+
+        /**
+         * <p>Restores the specified table to the specified point in time within
+         * <code>EarliestRestorableDateTime</code> and
+         * <code>LatestRestorableDateTime</code>. You can restore your table to any point
+         * in time during the last 35 days with a 1-minute granularity. Any number of users
+         * can execute up to 4 concurrent restores (any type of restore) in a given
+         * account. </p> <p>You must manually set up the following on the restored
+         * table:</p> <ul> <li> <p>Auto scaling policies</p> </li> <li> <p>IAM policies</p>
+         * </li> <li> <p>Cloudwatch metrics and alarms</p> </li> <li> <p>Tags</p> </li>
+         * <li> <p>Stream settings</p> </li> <li> <p>Time to Live (TTL) settings</p> </li>
+         * <li> <p>Point in time recovery settings</p> </li> </ul><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableToPointInTime">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RestoreTableToPointInTimeOutcomeCallable RestoreTableToPointInTimeCallable(const Model::RestoreTableToPointInTimeRequest& request) const;
+
+        /**
+         * <p>Restores the specified table to the specified point in time within
+         * <code>EarliestRestorableDateTime</code> and
+         * <code>LatestRestorableDateTime</code>. You can restore your table to any point
+         * in time during the last 35 days with a 1-minute granularity. Any number of users
+         * can execute up to 4 concurrent restores (any type of restore) in a given
+         * account. </p> <p>You must manually set up the following on the restored
+         * table:</p> <ul> <li> <p>Auto scaling policies</p> </li> <li> <p>IAM policies</p>
+         * </li> <li> <p>Cloudwatch metrics and alarms</p> </li> <li> <p>Tags</p> </li>
+         * <li> <p>Stream settings</p> </li> <li> <p>Time to Live (TTL) settings</p> </li>
+         * <li> <p>Point in time recovery settings</p> </li> </ul><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableToPointInTime">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RestoreTableToPointInTimeAsync(const Model::RestoreTableToPointInTimeRequest& request, const RestoreTableToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The <code>Scan</code> operation returns one or more items and item attributes
@@ -1997,14 +2092,71 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> <code>UpdateContinuousBackups</code> enables or disables point in time
+         * recovery for the specified table. A successful
+         * <code>UpdateContinuousBackups</code> call returns the current
+         * <code>ContinuousBackupsDescription</code>. Continuous backups are
+         * <code>ENABLED</code> on all tables at table creation. If point in time recovery
+         * is enabled, <code>PointInTimeRecoveryStatus</code> will be set to ENABLED.</p>
+         * <p> Once continuous backups and point in time recovery are enabled, you can
+         * restore to any point in time within <code>EarliestRestorableDateTime</code> and
+         * <code>LatestRestorableDateTime</code>. </p> <p>
+         * <code>LatestRestorableDateTime</code> is typically 5 minutes before the current
+         * time. You can restore your table to any point in time during the last 35 days
+         * with a 1-minute granularity. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContinuousBackups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateContinuousBackupsOutcome UpdateContinuousBackups(const Model::UpdateContinuousBackupsRequest& request) const;
+
+        /**
+         * <p> <code>UpdateContinuousBackups</code> enables or disables point in time
+         * recovery for the specified table. A successful
+         * <code>UpdateContinuousBackups</code> call returns the current
+         * <code>ContinuousBackupsDescription</code>. Continuous backups are
+         * <code>ENABLED</code> on all tables at table creation. If point in time recovery
+         * is enabled, <code>PointInTimeRecoveryStatus</code> will be set to ENABLED.</p>
+         * <p> Once continuous backups and point in time recovery are enabled, you can
+         * restore to any point in time within <code>EarliestRestorableDateTime</code> and
+         * <code>LatestRestorableDateTime</code>. </p> <p>
+         * <code>LatestRestorableDateTime</code> is typically 5 minutes before the current
+         * time. You can restore your table to any point in time during the last 35 days
+         * with a 1-minute granularity. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContinuousBackups">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateContinuousBackupsOutcomeCallable UpdateContinuousBackupsCallable(const Model::UpdateContinuousBackupsRequest& request) const;
+
+        /**
+         * <p> <code>UpdateContinuousBackups</code> enables or disables point in time
+         * recovery for the specified table. A successful
+         * <code>UpdateContinuousBackups</code> call returns the current
+         * <code>ContinuousBackupsDescription</code>. Continuous backups are
+         * <code>ENABLED</code> on all tables at table creation. If point in time recovery
+         * is enabled, <code>PointInTimeRecoveryStatus</code> will be set to ENABLED.</p>
+         * <p> Once continuous backups and point in time recovery are enabled, you can
+         * restore to any point in time within <code>EarliestRestorableDateTime</code> and
+         * <code>LatestRestorableDateTime</code>. </p> <p>
+         * <code>LatestRestorableDateTime</code> is typically 5 minutes before the current
+         * time. You can restore your table to any point in time during the last 35 days
+         * with a 1-minute granularity. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContinuousBackups">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateContinuousBackupsAsync(const Model::UpdateContinuousBackupsRequest& request, const UpdateContinuousBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Adds or removes replicas in the specified global table. The global table must
          * already exist to be able to use this operation. Any replica to be added must be
          * empty, must have the same name as the global table, must have the same key
-         * schema, must have DynamoDB Streams enabled, and cannot have any local secondary
-         * indexes (LSIs).</p> <note> <p>Although you can use
-         * <code>UpdateGlobalTable</code> to add replicas and remove replicas in a single
-         * request, for simplicity we recommend that you issue separate requests for adding
-         * or removing replicas.</p> </note><p><h3>See Also:</h3>   <a
+         * schema, and must have DynamoDB Streams enabled.</p> <note> <p>Although you can
+         * use <code>UpdateGlobalTable</code> to add replicas and remove replicas in a
+         * single request, for simplicity we recommend that you issue separate requests for
+         * adding or removing replicas.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTable">AWS
          * API Reference</a></p>
          */
@@ -2014,11 +2166,10 @@ namespace Model
          * <p>Adds or removes replicas in the specified global table. The global table must
          * already exist to be able to use this operation. Any replica to be added must be
          * empty, must have the same name as the global table, must have the same key
-         * schema, must have DynamoDB Streams enabled, and cannot have any local secondary
-         * indexes (LSIs).</p> <note> <p>Although you can use
-         * <code>UpdateGlobalTable</code> to add replicas and remove replicas in a single
-         * request, for simplicity we recommend that you issue separate requests for adding
-         * or removing replicas.</p> </note><p><h3>See Also:</h3>   <a
+         * schema, and must have DynamoDB Streams enabled.</p> <note> <p>Although you can
+         * use <code>UpdateGlobalTable</code> to add replicas and remove replicas in a
+         * single request, for simplicity we recommend that you issue separate requests for
+         * adding or removing replicas.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTable">AWS
          * API Reference</a></p>
          *
@@ -2030,11 +2181,10 @@ namespace Model
          * <p>Adds or removes replicas in the specified global table. The global table must
          * already exist to be able to use this operation. Any replica to be added must be
          * empty, must have the same name as the global table, must have the same key
-         * schema, must have DynamoDB Streams enabled, and cannot have any local secondary
-         * indexes (LSIs).</p> <note> <p>Although you can use
-         * <code>UpdateGlobalTable</code> to add replicas and remove replicas in a single
-         * request, for simplicity we recommend that you issue separate requests for adding
-         * or removing replicas.</p> </note><p><h3>See Also:</h3>   <a
+         * schema, and must have DynamoDB Streams enabled.</p> <note> <p>Although you can
+         * use <code>UpdateGlobalTable</code> to add replicas and remove replicas in a
+         * single request, for simplicity we recommend that you issue separate requests for
+         * adding or removing replicas.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTable">AWS
          * API Reference</a></p>
          *
@@ -2261,9 +2411,11 @@ namespace Model
         void PutItemAsyncHelper(const Model::PutItemRequest& request, const PutItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void QueryAsyncHelper(const Model::QueryRequest& request, const QueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreTableFromBackupAsyncHelper(const Model::RestoreTableFromBackupRequest& request, const RestoreTableFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RestoreTableToPointInTimeAsyncHelper(const Model::RestoreTableToPointInTimeRequest& request, const RestoreTableToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ScanAsyncHelper(const Model::ScanRequest& request, const ScanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateContinuousBackupsAsyncHelper(const Model::UpdateContinuousBackupsRequest& request, const UpdateContinuousBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGlobalTableAsyncHelper(const Model::UpdateGlobalTableRequest& request, const UpdateGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateItemAsyncHelper(const Model::UpdateItemRequest& request, const UpdateItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTableAsyncHelper(const Model::UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

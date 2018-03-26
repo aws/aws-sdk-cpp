@@ -711,13 +711,13 @@ namespace Model
      * is performed in descending order. </p> <p>Items with the same partition key
      * value are stored in sorted order by sort key. If the sort key data type is
      * Number, the results are stored in numeric order. For type String, the results
-     * are stored in order of ASCII character code values. For type Binary, DynamoDB
-     * treats each byte of the binary data as unsigned.</p> <p>If
-     * <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results
-     * in the order in which they are stored (by sort key value). This is the default
-     * behavior. If <code>ScanIndexForward</code> is <code>false</code>, DynamoDB reads
-     * the results in reverse order by sort key value, and then returns the results to
-     * the client.</p>
+     * are stored in order of UTF-8 bytes. For type Binary, DynamoDB treats each byte
+     * of the binary data as unsigned.</p> <p>If <code>ScanIndexForward</code> is
+     * <code>true</code>, DynamoDB returns the results in the order in which they are
+     * stored (by sort key value). This is the default behavior. If
+     * <code>ScanIndexForward</code> is <code>false</code>, DynamoDB reads the results
+     * in reverse order by sort key value, and then returns the results to the
+     * client.</p>
      */
     inline bool GetScanIndexForward() const{ return m_scanIndexForward; }
 
@@ -727,13 +727,13 @@ namespace Model
      * is performed in descending order. </p> <p>Items with the same partition key
      * value are stored in sorted order by sort key. If the sort key data type is
      * Number, the results are stored in numeric order. For type String, the results
-     * are stored in order of ASCII character code values. For type Binary, DynamoDB
-     * treats each byte of the binary data as unsigned.</p> <p>If
-     * <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results
-     * in the order in which they are stored (by sort key value). This is the default
-     * behavior. If <code>ScanIndexForward</code> is <code>false</code>, DynamoDB reads
-     * the results in reverse order by sort key value, and then returns the results to
-     * the client.</p>
+     * are stored in order of UTF-8 bytes. For type Binary, DynamoDB treats each byte
+     * of the binary data as unsigned.</p> <p>If <code>ScanIndexForward</code> is
+     * <code>true</code>, DynamoDB returns the results in the order in which they are
+     * stored (by sort key value). This is the default behavior. If
+     * <code>ScanIndexForward</code> is <code>false</code>, DynamoDB reads the results
+     * in reverse order by sort key value, and then returns the results to the
+     * client.</p>
      */
     inline void SetScanIndexForward(bool value) { m_scanIndexForwardHasBeenSet = true; m_scanIndexForward = value; }
 
@@ -743,13 +743,13 @@ namespace Model
      * is performed in descending order. </p> <p>Items with the same partition key
      * value are stored in sorted order by sort key. If the sort key data type is
      * Number, the results are stored in numeric order. For type String, the results
-     * are stored in order of ASCII character code values. For type Binary, DynamoDB
-     * treats each byte of the binary data as unsigned.</p> <p>If
-     * <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results
-     * in the order in which they are stored (by sort key value). This is the default
-     * behavior. If <code>ScanIndexForward</code> is <code>false</code>, DynamoDB reads
-     * the results in reverse order by sort key value, and then returns the results to
-     * the client.</p>
+     * are stored in order of UTF-8 bytes. For type Binary, DynamoDB treats each byte
+     * of the binary data as unsigned.</p> <p>If <code>ScanIndexForward</code> is
+     * <code>true</code>, DynamoDB returns the results in the order in which they are
+     * stored (by sort key value). This is the default behavior. If
+     * <code>ScanIndexForward</code> is <code>false</code>, DynamoDB reads the results
+     * in reverse order by sort key value, and then returns the results to the
+     * client.</p>
      */
     inline QueryRequest& WithScanIndexForward(bool value) { SetScanIndexForward(value); return *this;}
 

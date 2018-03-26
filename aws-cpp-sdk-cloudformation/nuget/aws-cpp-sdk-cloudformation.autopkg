@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-CloudFormation;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.4.20100515.21;
+        version : 1.4.20100515.22;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS CloudFormation);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.4.21
+            AWSSDKCPP-Core/1.4.22
        }
     }
 
