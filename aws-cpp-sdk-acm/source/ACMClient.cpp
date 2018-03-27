@@ -37,6 +37,7 @@
 #include <aws/acm/model/RemoveTagsFromCertificateRequest.h>
 #include <aws/acm/model/RequestCertificateRequest.h>
 #include <aws/acm/model/ResendValidationEmailRequest.h>
+#include <aws/acm/model/UpdateCertificateOptionsRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -450,5 +451,40 @@ void ACMClient::ResendValidationEmailAsync(const ResendValidationEmailRequest& r
 void ACMClient::ResendValidationEmailAsyncHelper(const ResendValidationEmailRequest& request, const ResendValidationEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ResendValidationEmail(request), context);
+}
+
+UpdateCertificateOptionsOutcome ACMClient::UpdateCertificateOptions(const UpdateCertificateOptionsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateCertificateOptionsOutcome(NoResult());
+  }
+  else
+  {
+    return UpdateCertificateOptionsOutcome(outcome.GetError());
+  }
+}
+
+UpdateCertificateOptionsOutcomeCallable ACMClient::UpdateCertificateOptionsCallable(const UpdateCertificateOptionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateCertificateOptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateCertificateOptions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ACMClient::UpdateCertificateOptionsAsync(const UpdateCertificateOptionsRequest& request, const UpdateCertificateOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateCertificateOptionsAsyncHelper( request, handler, context ); } );
+}
+
+void ACMClient::UpdateCertificateOptionsAsyncHelper(const UpdateCertificateOptionsRequest& request, const UpdateCertificateOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateCertificateOptions(request), context);
 }
 

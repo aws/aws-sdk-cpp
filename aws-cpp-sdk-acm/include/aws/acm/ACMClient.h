@@ -83,6 +83,7 @@ namespace Model
         class RemoveTagsFromCertificateRequest;
         class RequestCertificateRequest;
         class ResendValidationEmailRequest;
+        class UpdateCertificateOptionsRequest;
 
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ACMErrors>> AddTagsToCertificateOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ACMErrors>> DeleteCertificateOutcome;
@@ -94,6 +95,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ACMErrors>> RemoveTagsFromCertificateOutcome;
         typedef Aws::Utils::Outcome<RequestCertificateResult, Aws::Client::AWSError<ACMErrors>> RequestCertificateOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ACMErrors>> ResendValidationEmailOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ACMErrors>> UpdateCertificateOptionsOutcome;
 
         typedef std::future<AddTagsToCertificateOutcome> AddTagsToCertificateOutcomeCallable;
         typedef std::future<DeleteCertificateOutcome> DeleteCertificateOutcomeCallable;
@@ -105,6 +107,7 @@ namespace Model
         typedef std::future<RemoveTagsFromCertificateOutcome> RemoveTagsFromCertificateOutcomeCallable;
         typedef std::future<RequestCertificateOutcome> RequestCertificateOutcomeCallable;
         typedef std::future<ResendValidationEmailOutcome> ResendValidationEmailOutcomeCallable;
+        typedef std::future<UpdateCertificateOptionsOutcome> UpdateCertificateOptionsOutcomeCallable;
 } // namespace Model
 
   class ACMClient;
@@ -119,6 +122,7 @@ namespace Model
     typedef std::function<void(const ACMClient*, const Model::RemoveTagsFromCertificateRequest&, const Model::RemoveTagsFromCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsFromCertificateResponseReceivedHandler;
     typedef std::function<void(const ACMClient*, const Model::RequestCertificateRequest&, const Model::RequestCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RequestCertificateResponseReceivedHandler;
     typedef std::function<void(const ACMClient*, const Model::ResendValidationEmailRequest&, const Model::ResendValidationEmailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResendValidationEmailResponseReceivedHandler;
+    typedef std::function<void(const ACMClient*, const Model::UpdateCertificateOptionsRequest&, const Model::UpdateCertificateOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCertificateOptionsResponseReceivedHandler;
 
   /**
    * <fullname>AWS Certificate Manager</fullname> <p>Welcome to the AWS Certificate
@@ -158,7 +162,7 @@ namespace Model
 
 
         /**
-         * <p>Adds one or more tags to an ACM Certificate. Tags are labels that you can use
+         * <p>Adds one or more tags to an ACM certificate. Tags are labels that you can use
          * to identify and organize your AWS resources. Each tag consists of a
          * <code>key</code> and an optional <code>value</code>. You specify the certificate
          * on input by its Amazon Resource Name (ARN). You specify the tag by using a
@@ -167,11 +171,11 @@ namespace Model
          * same tag to multiple certificates if you want to filter for a common
          * relationship among those certificates. Similarly, you can apply the same tag to
          * multiple resources if you want to specify a relationship among those resources.
-         * For example, you can add the same tag to an ACM Certificate and an Elastic Load
+         * For example, you can add the same tag to an ACM certificate and an Elastic Load
          * Balancing load balancer to indicate that they are both used by the same website.
          * For more information, see <a
          * href="http://docs.aws.amazon.com/acm/latest/userguide/tags.html">Tagging ACM
-         * Certificates</a>. </p> <p>To remove one or more tags, use the
+         * certificates</a>. </p> <p>To remove one or more tags, use the
          * <a>RemoveTagsFromCertificate</a> action. To view all of the tags that have been
          * applied to the certificate, use the <a>ListTagsForCertificate</a> action.
          * </p><p><h3>See Also:</h3>   <a
@@ -181,7 +185,7 @@ namespace Model
         virtual Model::AddTagsToCertificateOutcome AddTagsToCertificate(const Model::AddTagsToCertificateRequest& request) const;
 
         /**
-         * <p>Adds one or more tags to an ACM Certificate. Tags are labels that you can use
+         * <p>Adds one or more tags to an ACM certificate. Tags are labels that you can use
          * to identify and organize your AWS resources. Each tag consists of a
          * <code>key</code> and an optional <code>value</code>. You specify the certificate
          * on input by its Amazon Resource Name (ARN). You specify the tag by using a
@@ -190,11 +194,11 @@ namespace Model
          * same tag to multiple certificates if you want to filter for a common
          * relationship among those certificates. Similarly, you can apply the same tag to
          * multiple resources if you want to specify a relationship among those resources.
-         * For example, you can add the same tag to an ACM Certificate and an Elastic Load
+         * For example, you can add the same tag to an ACM certificate and an Elastic Load
          * Balancing load balancer to indicate that they are both used by the same website.
          * For more information, see <a
          * href="http://docs.aws.amazon.com/acm/latest/userguide/tags.html">Tagging ACM
-         * Certificates</a>. </p> <p>To remove one or more tags, use the
+         * certificates</a>. </p> <p>To remove one or more tags, use the
          * <a>RemoveTagsFromCertificate</a> action. To view all of the tags that have been
          * applied to the certificate, use the <a>ListTagsForCertificate</a> action.
          * </p><p><h3>See Also:</h3>   <a
@@ -206,7 +210,7 @@ namespace Model
         virtual Model::AddTagsToCertificateOutcomeCallable AddTagsToCertificateCallable(const Model::AddTagsToCertificateRequest& request) const;
 
         /**
-         * <p>Adds one or more tags to an ACM Certificate. Tags are labels that you can use
+         * <p>Adds one or more tags to an ACM certificate. Tags are labels that you can use
          * to identify and organize your AWS resources. Each tag consists of a
          * <code>key</code> and an optional <code>value</code>. You specify the certificate
          * on input by its Amazon Resource Name (ARN). You specify the tag by using a
@@ -215,11 +219,11 @@ namespace Model
          * same tag to multiple certificates if you want to filter for a common
          * relationship among those certificates. Similarly, you can apply the same tag to
          * multiple resources if you want to specify a relationship among those resources.
-         * For example, you can add the same tag to an ACM Certificate and an Elastic Load
+         * For example, you can add the same tag to an ACM certificate and an Elastic Load
          * Balancing load balancer to indicate that they are both used by the same website.
          * For more information, see <a
          * href="http://docs.aws.amazon.com/acm/latest/userguide/tags.html">Tagging ACM
-         * Certificates</a>. </p> <p>To remove one or more tags, use the
+         * certificates</a>. </p> <p>To remove one or more tags, use the
          * <a>RemoveTagsFromCertificate</a> action. To view all of the tags that have been
          * applied to the certificate, use the <a>ListTagsForCertificate</a> action.
          * </p><p><h3>See Also:</h3>   <a
@@ -236,7 +240,7 @@ namespace Model
          * calling the <a>ListCertificates</a> action or be retrieved by calling the
          * <a>GetCertificate</a> action. The certificate will not be available for use by
          * AWS services integrated with ACM. </p> <note> <p>You cannot delete an ACM
-         * Certificate that is being used by another AWS service. To delete a certificate
+         * certificate that is being used by another AWS service. To delete a certificate
          * that is in use, the certificate association must first be removed.</p>
          * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate">AWS
@@ -250,7 +254,7 @@ namespace Model
          * calling the <a>ListCertificates</a> action or be retrieved by calling the
          * <a>GetCertificate</a> action. The certificate will not be available for use by
          * AWS services integrated with ACM. </p> <note> <p>You cannot delete an ACM
-         * Certificate that is being used by another AWS service. To delete a certificate
+         * certificate that is being used by another AWS service. To delete a certificate
          * that is in use, the certificate association must first be removed.</p>
          * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate">AWS
@@ -266,7 +270,7 @@ namespace Model
          * calling the <a>ListCertificates</a> action or be retrieved by calling the
          * <a>GetCertificate</a> action. The certificate will not be available for use by
          * AWS services integrated with ACM. </p> <note> <p>You cannot delete an ACM
-         * Certificate that is being used by another AWS service. To delete a certificate
+         * certificate that is being used by another AWS service. To delete a certificate
          * that is in use, the certificate association must first be removed.</p>
          * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate">AWS
@@ -277,7 +281,7 @@ namespace Model
         virtual void DeleteCertificateAsync(const Model::DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns detailed metadata about the specified ACM Certificate.</p><p><h3>See
+         * <p>Returns detailed metadata about the specified ACM certificate.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeCertificate">AWS
          * API Reference</a></p>
@@ -285,7 +289,7 @@ namespace Model
         virtual Model::DescribeCertificateOutcome DescribeCertificate(const Model::DescribeCertificateRequest& request) const;
 
         /**
-         * <p>Returns detailed metadata about the specified ACM Certificate.</p><p><h3>See
+         * <p>Returns detailed metadata about the specified ACM certificate.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeCertificate">AWS
          * API Reference</a></p>
@@ -295,7 +299,7 @@ namespace Model
         virtual Model::DescribeCertificateOutcomeCallable DescribeCertificateCallable(const Model::DescribeCertificateRequest& request) const;
 
         /**
-         * <p>Returns detailed metadata about the specified ACM Certificate.</p><p><h3>See
+         * <p>Returns detailed metadata about the specified ACM certificate.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeCertificate">AWS
          * API Reference</a></p>
@@ -509,9 +513,9 @@ namespace Model
         virtual void ListCertificatesAsync(const Model::ListCertificatesRequest& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the tags that have been applied to the ACM Certificate. Use the
+         * <p>Lists the tags that have been applied to the ACM certificate. Use the
          * certificate's Amazon Resource Name (ARN) to specify the certificate. To add a
-         * tag to an ACM Certificate, use the <a>AddTagsToCertificate</a> action. To delete
+         * tag to an ACM certificate, use the <a>AddTagsToCertificate</a> action. To delete
          * a tag, use the <a>RemoveTagsFromCertificate</a> action. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListTagsForCertificate">AWS
@@ -520,9 +524,9 @@ namespace Model
         virtual Model::ListTagsForCertificateOutcome ListTagsForCertificate(const Model::ListTagsForCertificateRequest& request) const;
 
         /**
-         * <p>Lists the tags that have been applied to the ACM Certificate. Use the
+         * <p>Lists the tags that have been applied to the ACM certificate. Use the
          * certificate's Amazon Resource Name (ARN) to specify the certificate. To add a
-         * tag to an ACM Certificate, use the <a>AddTagsToCertificate</a> action. To delete
+         * tag to an ACM certificate, use the <a>AddTagsToCertificate</a> action. To delete
          * a tag, use the <a>RemoveTagsFromCertificate</a> action. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListTagsForCertificate">AWS
@@ -533,9 +537,9 @@ namespace Model
         virtual Model::ListTagsForCertificateOutcomeCallable ListTagsForCertificateCallable(const Model::ListTagsForCertificateRequest& request) const;
 
         /**
-         * <p>Lists the tags that have been applied to the ACM Certificate. Use the
+         * <p>Lists the tags that have been applied to the ACM certificate. Use the
          * certificate's Amazon Resource Name (ARN) to specify the certificate. To add a
-         * tag to an ACM Certificate, use the <a>AddTagsToCertificate</a> action. To delete
+         * tag to an ACM certificate, use the <a>AddTagsToCertificate</a> action. To delete
          * a tag, use the <a>RemoveTagsFromCertificate</a> action. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListTagsForCertificate">AWS
@@ -546,13 +550,13 @@ namespace Model
         virtual void ListTagsForCertificateAsync(const Model::ListTagsForCertificateRequest& request, const ListTagsForCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Remove one or more tags from an ACM Certificate. A tag consists of a
+         * <p>Remove one or more tags from an ACM certificate. A tag consists of a
          * key-value pair. If you do not specify the value portion of the tag when calling
          * this function, the tag will be removed regardless of value. If you specify a
          * value, the tag is removed only if it is associated with the specified value.
          * </p> <p>To add tags to a certificate, use the <a>AddTagsToCertificate</a>
          * action. To view all of the tags that have been applied to a specific ACM
-         * Certificate, use the <a>ListTagsForCertificate</a> action. </p><p><h3>See
+         * certificate, use the <a>ListTagsForCertificate</a> action. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RemoveTagsFromCertificate">AWS
          * API Reference</a></p>
@@ -560,13 +564,13 @@ namespace Model
         virtual Model::RemoveTagsFromCertificateOutcome RemoveTagsFromCertificate(const Model::RemoveTagsFromCertificateRequest& request) const;
 
         /**
-         * <p>Remove one or more tags from an ACM Certificate. A tag consists of a
+         * <p>Remove one or more tags from an ACM certificate. A tag consists of a
          * key-value pair. If you do not specify the value portion of the tag when calling
          * this function, the tag will be removed regardless of value. If you specify a
          * value, the tag is removed only if it is associated with the specified value.
          * </p> <p>To add tags to a certificate, use the <a>AddTagsToCertificate</a>
          * action. To view all of the tags that have been applied to a specific ACM
-         * Certificate, use the <a>ListTagsForCertificate</a> action. </p><p><h3>See
+         * certificate, use the <a>ListTagsForCertificate</a> action. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RemoveTagsFromCertificate">AWS
          * API Reference</a></p>
@@ -576,13 +580,13 @@ namespace Model
         virtual Model::RemoveTagsFromCertificateOutcomeCallable RemoveTagsFromCertificateCallable(const Model::RemoveTagsFromCertificateRequest& request) const;
 
         /**
-         * <p>Remove one or more tags from an ACM Certificate. A tag consists of a
+         * <p>Remove one or more tags from an ACM certificate. A tag consists of a
          * key-value pair. If you do not specify the value portion of the tag when calling
          * this function, the tag will be removed regardless of value. If you specify a
          * value, the tag is removed only if it is associated with the specified value.
          * </p> <p>To add tags to a certificate, use the <a>AddTagsToCertificate</a>
          * action. To view all of the tags that have been applied to a specific ACM
-         * Certificate, use the <a>ListTagsForCertificate</a> action. </p><p><h3>See
+         * certificate, use the <a>ListTagsForCertificate</a> action. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RemoveTagsFromCertificate">AWS
          * API Reference</a></p>
@@ -592,8 +596,8 @@ namespace Model
         virtual void RemoveTagsFromCertificateAsync(const Model::RemoveTagsFromCertificateRequest& request, const RemoveTagsFromCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Requests an ACM Certificate for use with other AWS services. To request an
-         * ACM Certificate, you must specify the fully qualified domain name (FQDN) for
+         * <p>Requests an ACM certificate for use with other AWS services. To request an
+         * ACM certificate, you must specify the fully qualified domain name (FQDN) for
          * your site in the <code>DomainName</code> parameter. You can also specify
          * additional FQDNs in the <code>SubjectAlternativeNames</code> parameter if users
          * can reach your site by using other names. </p> <p>For each domain name you
@@ -604,7 +608,7 @@ namespace Model
          * parameter. For more information, see <a
          * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate.html">Validate
          * Domain Ownership</a>. </p> <p>After receiving approval from the domain owner,
-         * the ACM Certificate is issued. For more information, see the <a
+         * the ACM certificate is issued. For more information, see the <a
          * href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
          * User Guide</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate">AWS
@@ -613,8 +617,8 @@ namespace Model
         virtual Model::RequestCertificateOutcome RequestCertificate(const Model::RequestCertificateRequest& request) const;
 
         /**
-         * <p>Requests an ACM Certificate for use with other AWS services. To request an
-         * ACM Certificate, you must specify the fully qualified domain name (FQDN) for
+         * <p>Requests an ACM certificate for use with other AWS services. To request an
+         * ACM certificate, you must specify the fully qualified domain name (FQDN) for
          * your site in the <code>DomainName</code> parameter. You can also specify
          * additional FQDNs in the <code>SubjectAlternativeNames</code> parameter if users
          * can reach your site by using other names. </p> <p>For each domain name you
@@ -625,7 +629,7 @@ namespace Model
          * parameter. For more information, see <a
          * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate.html">Validate
          * Domain Ownership</a>. </p> <p>After receiving approval from the domain owner,
-         * the ACM Certificate is issued. For more information, see the <a
+         * the ACM certificate is issued. For more information, see the <a
          * href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
          * User Guide</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate">AWS
@@ -636,8 +640,8 @@ namespace Model
         virtual Model::RequestCertificateOutcomeCallable RequestCertificateCallable(const Model::RequestCertificateRequest& request) const;
 
         /**
-         * <p>Requests an ACM Certificate for use with other AWS services. To request an
-         * ACM Certificate, you must specify the fully qualified domain name (FQDN) for
+         * <p>Requests an ACM certificate for use with other AWS services. To request an
+         * ACM certificate, you must specify the fully qualified domain name (FQDN) for
          * your site in the <code>DomainName</code> parameter. You can also specify
          * additional FQDNs in the <code>SubjectAlternativeNames</code> parameter if users
          * can reach your site by using other names. </p> <p>For each domain name you
@@ -648,7 +652,7 @@ namespace Model
          * parameter. For more information, see <a
          * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate.html">Validate
          * Domain Ownership</a>. </p> <p>After receiving approval from the domain owner,
-         * the ACM Certificate is issued. For more information, see the <a
+         * the ACM certificate is issued. For more information, see the <a
          * href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
          * User Guide</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate">AWS
@@ -660,12 +664,12 @@ namespace Model
 
         /**
          * <p>Resends the email that requests domain ownership validation. The domain owner
-         * or an authorized representative must approve the ACM Certificate before it can
+         * or an authorized representative must approve the ACM certificate before it can
          * be issued. The certificate can be approved by clicking a link in the mail to
          * navigate to the Amazon certificate approval website and then clicking <b>I
          * Approve</b>. However, the validation email can be blocked by spam filters.
          * Therefore, if you do not receive the original mail, you can request that the
-         * mail be resent within 72 hours of requesting the ACM Certificate. If more than
+         * mail be resent within 72 hours of requesting the ACM certificate. If more than
          * 72 hours have elapsed since your original request or since your last attempt to
          * resend validation mail, you must request a new certificate. For more information
          * about setting up your contact email addresses, see <a
@@ -678,12 +682,12 @@ namespace Model
 
         /**
          * <p>Resends the email that requests domain ownership validation. The domain owner
-         * or an authorized representative must approve the ACM Certificate before it can
+         * or an authorized representative must approve the ACM certificate before it can
          * be issued. The certificate can be approved by clicking a link in the mail to
          * navigate to the Amazon certificate approval website and then clicking <b>I
          * Approve</b>. However, the validation email can be blocked by spam filters.
          * Therefore, if you do not receive the original mail, you can request that the
-         * mail be resent within 72 hours of requesting the ACM Certificate. If more than
+         * mail be resent within 72 hours of requesting the ACM certificate. If more than
          * 72 hours have elapsed since your original request or since your last attempt to
          * resend validation mail, you must request a new certificate. For more information
          * about setting up your contact email addresses, see <a
@@ -698,12 +702,12 @@ namespace Model
 
         /**
          * <p>Resends the email that requests domain ownership validation. The domain owner
-         * or an authorized representative must approve the ACM Certificate before it can
+         * or an authorized representative must approve the ACM certificate before it can
          * be issued. The certificate can be approved by clicking a link in the mail to
          * navigate to the Amazon certificate approval website and then clicking <b>I
          * Approve</b>. However, the validation email can be blocked by spam filters.
          * Therefore, if you do not receive the original mail, you can request that the
-         * mail be resent within 72 hours of requesting the ACM Certificate. If more than
+         * mail be resent within 72 hours of requesting the ACM certificate. If more than
          * 72 hours have elapsed since your original request or since your last attempt to
          * resend validation mail, you must request a new certificate. For more information
          * about setting up your contact email addresses, see <a
@@ -715,6 +719,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ResendValidationEmailAsync(const Model::ResendValidationEmailRequest& request, const ResendValidationEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates a certificate. Currently, you can use this function to specify
+         * whether to opt in to or out of recording your certificate in a certificate
+         * transparency log. For more information, see <a
+         * href="acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">
+         * Opting Out of Certificate Transparency Logging</a>. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/UpdateCertificateOptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateCertificateOptionsOutcome UpdateCertificateOptions(const Model::UpdateCertificateOptionsRequest& request) const;
+
+        /**
+         * <p>Updates a certificate. Currently, you can use this function to specify
+         * whether to opt in to or out of recording your certificate in a certificate
+         * transparency log. For more information, see <a
+         * href="acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">
+         * Opting Out of Certificate Transparency Logging</a>. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/UpdateCertificateOptions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateCertificateOptionsOutcomeCallable UpdateCertificateOptionsCallable(const Model::UpdateCertificateOptionsRequest& request) const;
+
+        /**
+         * <p>Updates a certificate. Currently, you can use this function to specify
+         * whether to opt in to or out of recording your certificate in a certificate
+         * transparency log. For more information, see <a
+         * href="acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">
+         * Opting Out of Certificate Transparency Logging</a>. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/UpdateCertificateOptions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateCertificateOptionsAsync(const Model::UpdateCertificateOptionsRequest& request, const UpdateCertificateOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
     private:
@@ -731,6 +775,7 @@ namespace Model
         void RemoveTagsFromCertificateAsyncHelper(const Model::RemoveTagsFromCertificateRequest& request, const RemoveTagsFromCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RequestCertificateAsyncHelper(const Model::RequestCertificateRequest& request, const RequestCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResendValidationEmailAsyncHelper(const Model::ResendValidationEmailRequest& request, const ResendValidationEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateCertificateOptionsAsyncHelper(const Model::UpdateCertificateOptionsRequest& request, const UpdateCertificateOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;

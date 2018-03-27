@@ -56,7 +56,8 @@ CertificateDetail::CertificateDetail() :
     m_typeHasBeenSet(false),
     m_renewalSummaryHasBeenSet(false),
     m_keyUsagesHasBeenSet(false),
-    m_extendedKeyUsagesHasBeenSet(false)
+    m_extendedKeyUsagesHasBeenSet(false),
+    m_optionsHasBeenSet(false)
 {
 }
 
@@ -88,7 +89,8 @@ CertificateDetail::CertificateDetail(const JsonValue& jsonValue) :
     m_typeHasBeenSet(false),
     m_renewalSummaryHasBeenSet(false),
     m_keyUsagesHasBeenSet(false),
-    m_extendedKeyUsagesHasBeenSet(false)
+    m_extendedKeyUsagesHasBeenSet(false),
+    m_optionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -271,6 +273,13 @@ CertificateDetail& CertificateDetail::operator =(const JsonValue& jsonValue)
     m_extendedKeyUsagesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Options"))
+  {
+    m_options = jsonValue.GetObject("Options");
+
+    m_optionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -427,6 +436,12 @@ JsonValue CertificateDetail::Jsonize() const
      extendedKeyUsagesJsonList[extendedKeyUsagesIndex].AsObject(m_extendedKeyUsages[extendedKeyUsagesIndex].Jsonize());
    }
    payload.WithArray("ExtendedKeyUsages", std::move(extendedKeyUsagesJsonList));
+
+  }
+
+  if(m_optionsHasBeenSet)
+  {
+   payload.WithObject("Options", m_options.Jsonize());
 
   }
 

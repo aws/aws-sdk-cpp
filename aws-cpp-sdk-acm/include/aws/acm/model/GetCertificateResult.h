@@ -43,43 +43,43 @@ namespace Model
 
 
     /**
-     * <p>String that contains the ACM Certificate represented by the ARN specified at
+     * <p>String that contains the ACM certificate represented by the ARN specified at
      * input.</p>
      */
     inline const Aws::String& GetCertificate() const{ return m_certificate; }
 
     /**
-     * <p>String that contains the ACM Certificate represented by the ARN specified at
+     * <p>String that contains the ACM certificate represented by the ARN specified at
      * input.</p>
      */
     inline void SetCertificate(const Aws::String& value) { m_certificate = value; }
 
     /**
-     * <p>String that contains the ACM Certificate represented by the ARN specified at
+     * <p>String that contains the ACM certificate represented by the ARN specified at
      * input.</p>
      */
     inline void SetCertificate(Aws::String&& value) { m_certificate = std::move(value); }
 
     /**
-     * <p>String that contains the ACM Certificate represented by the ARN specified at
+     * <p>String that contains the ACM certificate represented by the ARN specified at
      * input.</p>
      */
     inline void SetCertificate(const char* value) { m_certificate.assign(value); }
 
     /**
-     * <p>String that contains the ACM Certificate represented by the ARN specified at
+     * <p>String that contains the ACM certificate represented by the ARN specified at
      * input.</p>
      */
     inline GetCertificateResult& WithCertificate(const Aws::String& value) { SetCertificate(value); return *this;}
 
     /**
-     * <p>String that contains the ACM Certificate represented by the ARN specified at
+     * <p>String that contains the ACM certificate represented by the ARN specified at
      * input.</p>
      */
     inline GetCertificateResult& WithCertificate(Aws::String&& value) { SetCertificate(std::move(value)); return *this;}
 
     /**
-     * <p>String that contains the ACM Certificate represented by the ARN specified at
+     * <p>String that contains the ACM certificate represented by the ARN specified at
      * input.</p>
      */
     inline GetCertificateResult& WithCertificate(const char* value) { SetCertificate(value); return *this;}

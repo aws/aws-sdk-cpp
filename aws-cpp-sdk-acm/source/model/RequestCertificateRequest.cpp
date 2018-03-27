@@ -28,7 +28,8 @@ RequestCertificateRequest::RequestCertificateRequest() :
     m_validationMethodHasBeenSet(false),
     m_subjectAlternativeNamesHasBeenSet(false),
     m_idempotencyTokenHasBeenSet(false),
-    m_domainValidationOptionsHasBeenSet(false)
+    m_domainValidationOptionsHasBeenSet(false),
+    m_optionsHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,12 @@ Aws::String RequestCertificateRequest::SerializePayload() const
      domainValidationOptionsJsonList[domainValidationOptionsIndex].AsObject(m_domainValidationOptions[domainValidationOptionsIndex].Jsonize());
    }
    payload.WithArray("DomainValidationOptions", std::move(domainValidationOptionsJsonList));
+
+  }
+
+  if(m_optionsHasBeenSet)
+  {
+   payload.WithObject("Options", m_options.Jsonize());
 
   }
 

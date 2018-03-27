@@ -95,37 +95,37 @@ namespace Model
 
 
     /**
-     * <p>A list of ACM Certificates.</p>
+     * <p>A list of ACM certificates.</p>
      */
     inline const Aws::Vector<CertificateSummary>& GetCertificateSummaryList() const{ return m_certificateSummaryList; }
 
     /**
-     * <p>A list of ACM Certificates.</p>
+     * <p>A list of ACM certificates.</p>
      */
     inline void SetCertificateSummaryList(const Aws::Vector<CertificateSummary>& value) { m_certificateSummaryList = value; }
 
     /**
-     * <p>A list of ACM Certificates.</p>
+     * <p>A list of ACM certificates.</p>
      */
     inline void SetCertificateSummaryList(Aws::Vector<CertificateSummary>&& value) { m_certificateSummaryList = std::move(value); }
 
     /**
-     * <p>A list of ACM Certificates.</p>
+     * <p>A list of ACM certificates.</p>
      */
     inline ListCertificatesResult& WithCertificateSummaryList(const Aws::Vector<CertificateSummary>& value) { SetCertificateSummaryList(value); return *this;}
 
     /**
-     * <p>A list of ACM Certificates.</p>
+     * <p>A list of ACM certificates.</p>
      */
     inline ListCertificatesResult& WithCertificateSummaryList(Aws::Vector<CertificateSummary>&& value) { SetCertificateSummaryList(std::move(value)); return *this;}
 
     /**
-     * <p>A list of ACM Certificates.</p>
+     * <p>A list of ACM certificates.</p>
      */
     inline ListCertificatesResult& AddCertificateSummaryList(const CertificateSummary& value) { m_certificateSummaryList.push_back(value); return *this; }
 
     /**
-     * <p>A list of ACM Certificates.</p>
+     * <p>A list of ACM certificates.</p>
      */
     inline ListCertificatesResult& AddCertificateSummaryList(CertificateSummary&& value) { m_certificateSummaryList.push_back(std::move(value)); return *this; }
 

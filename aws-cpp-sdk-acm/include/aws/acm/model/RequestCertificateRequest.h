@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/acm/model/ValidationMethod.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/acm/model/CertificateOptions.h>
 #include <aws/acm/model/DomainValidationOption.h>
 #include <utility>
 
@@ -153,10 +154,10 @@ namespace Model
 
     /**
      * <p>Additional FQDNs to be included in the Subject Alternative Name extension of
-     * the ACM Certificate. For example, add the name www.example.net to a certificate
+     * the ACM certificate. For example, add the name www.example.net to a certificate
      * for which the <code>DomainName</code> field is www.example.com if users can
      * reach your site by using either name. The maximum number of domain names that
-     * you can add to an ACM Certificate is 100. However, the initial limit is 10
+     * you can add to an ACM certificate is 100. However, the initial limit is 10
      * domain names. If you need more than 10 names, you must request a limit increase.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
@@ -175,10 +176,10 @@ namespace Model
 
     /**
      * <p>Additional FQDNs to be included in the Subject Alternative Name extension of
-     * the ACM Certificate. For example, add the name www.example.net to a certificate
+     * the ACM certificate. For example, add the name www.example.net to a certificate
      * for which the <code>DomainName</code> field is www.example.com if users can
      * reach your site by using either name. The maximum number of domain names that
-     * you can add to an ACM Certificate is 100. However, the initial limit is 10
+     * you can add to an ACM certificate is 100. However, the initial limit is 10
      * domain names. If you need more than 10 names, you must request a limit increase.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
@@ -197,10 +198,10 @@ namespace Model
 
     /**
      * <p>Additional FQDNs to be included in the Subject Alternative Name extension of
-     * the ACM Certificate. For example, add the name www.example.net to a certificate
+     * the ACM certificate. For example, add the name www.example.net to a certificate
      * for which the <code>DomainName</code> field is www.example.com if users can
      * reach your site by using either name. The maximum number of domain names that
-     * you can add to an ACM Certificate is 100. However, the initial limit is 10
+     * you can add to an ACM certificate is 100. However, the initial limit is 10
      * domain names. If you need more than 10 names, you must request a limit increase.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
@@ -219,10 +220,10 @@ namespace Model
 
     /**
      * <p>Additional FQDNs to be included in the Subject Alternative Name extension of
-     * the ACM Certificate. For example, add the name www.example.net to a certificate
+     * the ACM certificate. For example, add the name www.example.net to a certificate
      * for which the <code>DomainName</code> field is www.example.com if users can
      * reach your site by using either name. The maximum number of domain names that
-     * you can add to an ACM Certificate is 100. However, the initial limit is 10
+     * you can add to an ACM certificate is 100. However, the initial limit is 10
      * domain names. If you need more than 10 names, you must request a limit increase.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
@@ -241,10 +242,10 @@ namespace Model
 
     /**
      * <p>Additional FQDNs to be included in the Subject Alternative Name extension of
-     * the ACM Certificate. For example, add the name www.example.net to a certificate
+     * the ACM certificate. For example, add the name www.example.net to a certificate
      * for which the <code>DomainName</code> field is www.example.com if users can
      * reach your site by using either name. The maximum number of domain names that
-     * you can add to an ACM Certificate is 100. However, the initial limit is 10
+     * you can add to an ACM certificate is 100. However, the initial limit is 10
      * domain names. If you need more than 10 names, you must request a limit increase.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
@@ -263,10 +264,10 @@ namespace Model
 
     /**
      * <p>Additional FQDNs to be included in the Subject Alternative Name extension of
-     * the ACM Certificate. For example, add the name www.example.net to a certificate
+     * the ACM certificate. For example, add the name www.example.net to a certificate
      * for which the <code>DomainName</code> field is www.example.com if users can
      * reach your site by using either name. The maximum number of domain names that
-     * you can add to an ACM Certificate is 100. However, the initial limit is 10
+     * you can add to an ACM certificate is 100. However, the initial limit is 10
      * domain names. If you need more than 10 names, you must request a limit increase.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
@@ -285,10 +286,10 @@ namespace Model
 
     /**
      * <p>Additional FQDNs to be included in the Subject Alternative Name extension of
-     * the ACM Certificate. For example, add the name www.example.net to a certificate
+     * the ACM certificate. For example, add the name www.example.net to a certificate
      * for which the <code>DomainName</code> field is www.example.com if users can
      * reach your site by using either name. The maximum number of domain names that
-     * you can add to an ACM Certificate is 100. However, the initial limit is 10
+     * you can add to an ACM certificate is 100. However, the initial limit is 10
      * domain names. If you need more than 10 names, you must request a limit increase.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
@@ -307,10 +308,10 @@ namespace Model
 
     /**
      * <p>Additional FQDNs to be included in the Subject Alternative Name extension of
-     * the ACM Certificate. For example, add the name www.example.net to a certificate
+     * the ACM certificate. For example, add the name www.example.net to a certificate
      * for which the <code>DomainName</code> field is www.example.com if users can
      * reach your site by using either name. The maximum number of domain names that
-     * you can add to an ACM Certificate is 100. However, the initial limit is 10
+     * you can add to an ACM certificate is 100. However, the initial limit is 10
      * domain names. If you need more than 10 names, you must request a limit increase.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
@@ -448,6 +449,62 @@ namespace Model
      */
     inline RequestCertificateRequest& AddDomainValidationOptions(DomainValidationOption&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Currently, you can use this parameter to specify whether to add the
+     * certificate to a certificate transparency log. Certificate transparency makes it
+     * possible to detect SSL/TLS certificates that have been mistakenly or maliciously
+     * issued. Certificates that have not been logged typically produce an error
+     * message in a browser. For more information, see <a
+     * href="acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">
+     * Opting Out of Certificate Transparency Logging</a>. </p>
+     */
+    inline const CertificateOptions& GetOptions() const{ return m_options; }
+
+    /**
+     * <p>Currently, you can use this parameter to specify whether to add the
+     * certificate to a certificate transparency log. Certificate transparency makes it
+     * possible to detect SSL/TLS certificates that have been mistakenly or maliciously
+     * issued. Certificates that have not been logged typically produce an error
+     * message in a browser. For more information, see <a
+     * href="acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">
+     * Opting Out of Certificate Transparency Logging</a>. </p>
+     */
+    inline void SetOptions(const CertificateOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
+
+    /**
+     * <p>Currently, you can use this parameter to specify whether to add the
+     * certificate to a certificate transparency log. Certificate transparency makes it
+     * possible to detect SSL/TLS certificates that have been mistakenly or maliciously
+     * issued. Certificates that have not been logged typically produce an error
+     * message in a browser. For more information, see <a
+     * href="acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">
+     * Opting Out of Certificate Transparency Logging</a>. </p>
+     */
+    inline void SetOptions(CertificateOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
+
+    /**
+     * <p>Currently, you can use this parameter to specify whether to add the
+     * certificate to a certificate transparency log. Certificate transparency makes it
+     * possible to detect SSL/TLS certificates that have been mistakenly or maliciously
+     * issued. Certificates that have not been logged typically produce an error
+     * message in a browser. For more information, see <a
+     * href="acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">
+     * Opting Out of Certificate Transparency Logging</a>. </p>
+     */
+    inline RequestCertificateRequest& WithOptions(const CertificateOptions& value) { SetOptions(value); return *this;}
+
+    /**
+     * <p>Currently, you can use this parameter to specify whether to add the
+     * certificate to a certificate transparency log. Certificate transparency makes it
+     * possible to detect SSL/TLS certificates that have been mistakenly or maliciously
+     * issued. Certificates that have not been logged typically produce an error
+     * message in a browser. For more information, see <a
+     * href="acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">
+     * Opting Out of Certificate Transparency Logging</a>. </p>
+     */
+    inline RequestCertificateRequest& WithOptions(CertificateOptions&& value) { SetOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainName;
@@ -464,6 +521,9 @@ namespace Model
 
     Aws::Vector<DomainValidationOption> m_domainValidationOptions;
     bool m_domainValidationOptionsHasBeenSet;
+
+    CertificateOptions m_options;
+    bool m_optionsHasBeenSet;
   };
 
 } // namespace Model

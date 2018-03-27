@@ -24,6 +24,7 @@
 #include <aws/acm/model/FailureReason.h>
 #include <aws/acm/model/CertificateType.h>
 #include <aws/acm/model/RenewalSummary.h>
+#include <aws/acm/model/CertificateOptions.h>
 #include <aws/acm/model/DomainValidation.h>
 #include <aws/acm/model/KeyUsage.h>
 #include <aws/acm/model/ExtendedKeyUsage.h>
@@ -1013,6 +1014,52 @@ namespace Model
      */
     inline CertificateDetail& AddExtendedKeyUsages(ExtendedKeyUsage&& value) { m_extendedKeyUsagesHasBeenSet = true; m_extendedKeyUsages.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Value that specifies whether to add the certificate to a transparency log.
+     * Certificate transparency makes it possible to detect SSL certificates that have
+     * been mistakenly or maliciously issued. A browser might respond to certificate
+     * that has not been logged by showing an error message. The logs are
+     * cryptographicaly secure. </p>
+     */
+    inline const CertificateOptions& GetOptions() const{ return m_options; }
+
+    /**
+     * <p>Value that specifies whether to add the certificate to a transparency log.
+     * Certificate transparency makes it possible to detect SSL certificates that have
+     * been mistakenly or maliciously issued. A browser might respond to certificate
+     * that has not been logged by showing an error message. The logs are
+     * cryptographicaly secure. </p>
+     */
+    inline void SetOptions(const CertificateOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
+
+    /**
+     * <p>Value that specifies whether to add the certificate to a transparency log.
+     * Certificate transparency makes it possible to detect SSL certificates that have
+     * been mistakenly or maliciously issued. A browser might respond to certificate
+     * that has not been logged by showing an error message. The logs are
+     * cryptographicaly secure. </p>
+     */
+    inline void SetOptions(CertificateOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
+
+    /**
+     * <p>Value that specifies whether to add the certificate to a transparency log.
+     * Certificate transparency makes it possible to detect SSL certificates that have
+     * been mistakenly or maliciously issued. A browser might respond to certificate
+     * that has not been logged by showing an error message. The logs are
+     * cryptographicaly secure. </p>
+     */
+    inline CertificateDetail& WithOptions(const CertificateOptions& value) { SetOptions(value); return *this;}
+
+    /**
+     * <p>Value that specifies whether to add the certificate to a transparency log.
+     * Certificate transparency makes it possible to detect SSL certificates that have
+     * been mistakenly or maliciously issued. A browser might respond to certificate
+     * that has not been logged by showing an error message. The logs are
+     * cryptographicaly secure. </p>
+     */
+    inline CertificateDetail& WithOptions(CertificateOptions&& value) { SetOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_certificateArn;
@@ -1083,6 +1130,9 @@ namespace Model
 
     Aws::Vector<ExtendedKeyUsage> m_extendedKeyUsages;
     bool m_extendedKeyUsagesHasBeenSet;
+
+    CertificateOptions m_options;
+    bool m_optionsHasBeenSet;
   };
 
 } // namespace Model
