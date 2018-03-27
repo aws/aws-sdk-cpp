@@ -128,6 +128,8 @@ namespace FileSystem
     class AWS_CORE_API Directory
     {
     public:
+        virtual ~Directory() = default;
+
         /**
          * Initialize a directory with it's absolute path. If the path is invalid, the bool operator will return false.
          */
