@@ -121,7 +121,7 @@ namespace Aws
             /**
              * Whether or not parsing the timestamp from string was successful.
              */
-            inline bool WasParseSuccessful() { return m_valid; }
+            inline bool WasParseSuccessful() const { return m_valid; }
 
             /**
              * Convert dateTime to local time string using predefined format.
