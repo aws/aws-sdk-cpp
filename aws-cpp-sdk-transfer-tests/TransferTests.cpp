@@ -516,7 +516,8 @@ TEST_F(TransferTests, TransferManager_ThreadExecutorJoinsAsyncOperations)
     transferManagerConfig.s3Client = m_s3Client;
     Aws::Utils::Threading::Semaphore ev(0, 1);
     transferManagerConfig.downloadProgressCallback = [&ev](const TransferManager*, const std::shared_ptr<const TransferHandle>&){ ev.Release(); };
-
+    // When httpRequest returns with error, downloadProgressCallback will not be called.
+    transferManagerConfig.errorCallback = [&ev](const TransferManager*, const std::shared_ptr<const TransferHandle>&, const Aws::Client::AWSError<Aws::S3::S3Errors>&){ ev.Release(); };
     std::shared_ptr<TransferHandle> uploadHandle, downloadHandle;
     {
         auto transferManager = TransferManager::Create(transferManagerConfig);

@@ -232,7 +232,13 @@ namespace Aws
 
         static bool IsTransitionAllowed(TransferStatus currentValue, TransferStatus nextState)
         {
-            //we can only change from a final state to a final state if moving from canceled to aborted
+            // If current state is the same as next state, the transition is allowed.
+            // otherwise, we can only change from a final state to a final state if moving from canceled to aborted
+            if (currentValue == nextState)
+            {
+                return true;
+            }
+
             if (IsFinishedStatus(currentValue) && IsFinishedStatus(nextState))
             {
                 return currentValue == TransferStatus::CANCELED && nextState == TransferStatus::ABORTED;

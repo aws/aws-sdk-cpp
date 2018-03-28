@@ -351,6 +351,11 @@ namespace Aws
                 handle->ChangePartToFailed(partsIter->second);
             }
 
+            if (handle->HasFailedParts())
+            {
+                handle->UpdateStatus(DetermineIfFailedOrCanceled(*handle));
+                TriggerTransferStatusUpdatedCallback(handle);
+            }
         }
 
         void TransferManager::DoSinglePartUpload(const std::shared_ptr<TransferHandle>& handle)
@@ -765,6 +770,11 @@ namespace Aws
             {
                 handle->ChangePartToFailed(queuedPartIter->second);
                 ++queuedPartIter;
+            }
+            if (handle->HasFailedParts())
+            {
+                handle->UpdateStatus(DetermineIfFailedOrCanceled(*handle));
+                TriggerTransferStatusUpdatedCallback(handle);      
             }
         }
 
