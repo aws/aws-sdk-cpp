@@ -38,7 +38,7 @@ namespace Model
   /**
    * <p>Contains information about an SSH public key, without the key's body or
    * fingerprint.</p> <p>This data type is used as a response element in the
-   * <a>ListSSHPublicKeys</a> action.</p><p><h3>See Also:</h3>   <a
+   * <a>ListSSHPublicKeys</a> operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SSHPublicKeyMetadata">AWS
    * API Reference</a></p>
    */
@@ -126,37 +126,37 @@ namespace Model
 
 
     /**
-     * <p>The status of the SSH public key. <code>Active</code> means the key can be
-     * used for authentication with an AWS CodeCommit repository. <code>Inactive</code>
-     * means the key cannot be used.</p>
+     * <p>The status of the SSH public key. <code>Active</code> means that the key can
+     * be used for authentication with an AWS CodeCommit repository.
+     * <code>Inactive</code> means that the key cannot be used.</p>
      */
     inline const StatusType& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the SSH public key. <code>Active</code> means the key can be
-     * used for authentication with an AWS CodeCommit repository. <code>Inactive</code>
-     * means the key cannot be used.</p>
+     * <p>The status of the SSH public key. <code>Active</code> means that the key can
+     * be used for authentication with an AWS CodeCommit repository.
+     * <code>Inactive</code> means that the key cannot be used.</p>
      */
     inline void SetStatus(const StatusType& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the SSH public key. <code>Active</code> means the key can be
-     * used for authentication with an AWS CodeCommit repository. <code>Inactive</code>
-     * means the key cannot be used.</p>
+     * <p>The status of the SSH public key. <code>Active</code> means that the key can
+     * be used for authentication with an AWS CodeCommit repository.
+     * <code>Inactive</code> means that the key cannot be used.</p>
      */
     inline void SetStatus(StatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the SSH public key. <code>Active</code> means the key can be
-     * used for authentication with an AWS CodeCommit repository. <code>Inactive</code>
-     * means the key cannot be used.</p>
+     * <p>The status of the SSH public key. <code>Active</code> means that the key can
+     * be used for authentication with an AWS CodeCommit repository.
+     * <code>Inactive</code> means that the key cannot be used.</p>
      */
     inline SSHPublicKeyMetadata& WithStatus(const StatusType& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the SSH public key. <code>Active</code> means the key can be
-     * used for authentication with an AWS CodeCommit repository. <code>Inactive</code>
-     * means the key cannot be used.</p>
+     * <p>The status of the SSH public key. <code>Active</code> means that the key can
+     * be used for authentication with an AWS CodeCommit repository.
+     * <code>Inactive</code> means that the key cannot be used.</p>
      */
     inline SSHPublicKeyMetadata& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
 

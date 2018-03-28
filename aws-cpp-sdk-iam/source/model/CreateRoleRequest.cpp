@@ -24,7 +24,9 @@ CreateRoleRequest::CreateRoleRequest() :
     m_pathHasBeenSet(false),
     m_roleNameHasBeenSet(false),
     m_assumeRolePolicyDocumentHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_maxSessionDuration(0),
+    m_maxSessionDurationHasBeenSet(false)
 {
 }
 
@@ -50,6 +52,11 @@ Aws::String CreateRoleRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+
+  if(m_maxSessionDurationHasBeenSet)
+  {
+    ss << "MaxSessionDuration=" << m_maxSessionDuration << "&";
   }
 
   ss << "Version=2010-05-08";

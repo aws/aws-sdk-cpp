@@ -1369,22 +1369,18 @@ namespace Model
         virtual void ListQualificationRequestsAsync(const Model::ListQualificationRequestsRequest& request, const ListQualificationRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> The <code>ListQualificationRequests</code> operation retrieves requests for
-         * Qualifications of a particular Qualification type. The owner of the
-         * Qualification type calls this operation to poll for pending requests, and
-         * accepts them using the AcceptQualification operation. </p><p><h3>See Also:</h3> 
-         * <a
+         * <p> The <code>ListQualificationTypes</code> operation returns a list of
+         * Qualification types, filtered by an optional search term. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListQualificationTypes">AWS
          * API Reference</a></p>
          */
         virtual Model::ListQualificationTypesOutcome ListQualificationTypes(const Model::ListQualificationTypesRequest& request) const;
 
         /**
-         * <p> The <code>ListQualificationRequests</code> operation retrieves requests for
-         * Qualifications of a particular Qualification type. The owner of the
-         * Qualification type calls this operation to poll for pending requests, and
-         * accepts them using the AcceptQualification operation. </p><p><h3>See Also:</h3> 
-         * <a
+         * <p> The <code>ListQualificationTypes</code> operation returns a list of
+         * Qualification types, filtered by an optional search term. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListQualificationTypes">AWS
          * API Reference</a></p>
          *
@@ -1393,11 +1389,9 @@ namespace Model
         virtual Model::ListQualificationTypesOutcomeCallable ListQualificationTypesCallable(const Model::ListQualificationTypesRequest& request) const;
 
         /**
-         * <p> The <code>ListQualificationRequests</code> operation retrieves requests for
-         * Qualifications of a particular Qualification type. The owner of the
-         * Qualification type calls this operation to poll for pending requests, and
-         * accepts them using the AcceptQualification operation. </p><p><h3>See Also:</h3> 
-         * <a
+         * <p> The <code>ListQualificationTypes</code> operation returns a list of
+         * Qualification types, filtered by an optional search term. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListQualificationTypes">AWS
          * API Reference</a></p>
          *

@@ -36,7 +36,7 @@ namespace Model
 
   /**
    * <p>Contains information about an IAM user entity.</p> <p>This data type is used
-   * as a response element in the following actions:</p> <ul> <li> <p>
+   * as a response element in the following operations:</p> <ul> <li> <p>
    * <a>CreateUser</a> </p> </li> <li> <p> <a>GetUser</a> </p> </li> <li> <p>
    * <a>ListUsers</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/User">AWS API
@@ -299,7 +299,7 @@ namespace Model
      * null does not mean that the user <i>never</i> had a password. Also, if the user
      * does not currently have a password, but had one in the past, then this field
      * contains the date and time the most recent password was used.</p> <p>This value
-     * is returned only in the <a>GetUser</a> and <a>ListUsers</a> actions. </p>
+     * is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>
      */
     inline const Aws::Utils::DateTime& GetPasswordLastUsed() const{ return m_passwordLastUsed; }
 
@@ -318,7 +318,7 @@ namespace Model
      * null does not mean that the user <i>never</i> had a password. Also, if the user
      * does not currently have a password, but had one in the past, then this field
      * contains the date and time the most recent password was used.</p> <p>This value
-     * is returned only in the <a>GetUser</a> and <a>ListUsers</a> actions. </p>
+     * is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>
      */
     inline void SetPasswordLastUsed(const Aws::Utils::DateTime& value) { m_passwordLastUsedHasBeenSet = true; m_passwordLastUsed = value; }
 
@@ -337,7 +337,7 @@ namespace Model
      * null does not mean that the user <i>never</i> had a password. Also, if the user
      * does not currently have a password, but had one in the past, then this field
      * contains the date and time the most recent password was used.</p> <p>This value
-     * is returned only in the <a>GetUser</a> and <a>ListUsers</a> actions. </p>
+     * is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>
      */
     inline void SetPasswordLastUsed(Aws::Utils::DateTime&& value) { m_passwordLastUsedHasBeenSet = true; m_passwordLastUsed = std::move(value); }
 
@@ -356,7 +356,7 @@ namespace Model
      * null does not mean that the user <i>never</i> had a password. Also, if the user
      * does not currently have a password, but had one in the past, then this field
      * contains the date and time the most recent password was used.</p> <p>This value
-     * is returned only in the <a>GetUser</a> and <a>ListUsers</a> actions. </p>
+     * is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>
      */
     inline User& WithPasswordLastUsed(const Aws::Utils::DateTime& value) { SetPasswordLastUsed(value); return *this;}
 
@@ -375,7 +375,7 @@ namespace Model
      * null does not mean that the user <i>never</i> had a password. Also, if the user
      * does not currently have a password, but had one in the past, then this field
      * contains the date and time the most recent password was used.</p> <p>This value
-     * is returned only in the <a>GetUser</a> and <a>ListUsers</a> actions. </p>
+     * is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>
      */
     inline User& WithPasswordLastUsed(Aws::Utils::DateTime&& value) { SetPasswordLastUsed(std::move(value)); return *this;}
 

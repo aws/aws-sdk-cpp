@@ -51,7 +51,7 @@ namespace Model
      * about.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline const Aws::String& GetServerCertificateName() const{ return m_serverCertificateName; }
 
@@ -60,7 +60,7 @@ namespace Model
      * about.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetServerCertificateName(const Aws::String& value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName = value; }
 
@@ -69,7 +69,7 @@ namespace Model
      * about.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetServerCertificateName(Aws::String&& value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName = std::move(value); }
 
@@ -78,7 +78,7 @@ namespace Model
      * about.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetServerCertificateName(const char* value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName.assign(value); }
 
@@ -87,7 +87,7 @@ namespace Model
      * about.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline GetServerCertificateRequest& WithServerCertificateName(const Aws::String& value) { SetServerCertificateName(value); return *this;}
 
@@ -96,7 +96,7 @@ namespace Model
      * about.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline GetServerCertificateRequest& WithServerCertificateName(Aws::String&& value) { SetServerCertificateName(std::move(value)); return *this;}
 
@@ -105,7 +105,7 @@ namespace Model
      * about.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline GetServerCertificateRequest& WithServerCertificateName(const char* value) { SetServerCertificateName(value); return *this;}
 

@@ -52,7 +52,7 @@ namespace Model
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * following characters: _+=,.@-</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
@@ -61,7 +61,7 @@ namespace Model
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * following characters: _+=,.@-</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
@@ -70,7 +70,7 @@ namespace Model
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * following characters: _+=,.@-</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
@@ -79,7 +79,7 @@ namespace Model
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * following characters: _+=,.@-</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
@@ -88,7 +88,7 @@ namespace Model
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * following characters: _+=,.@-</p>
      */
     inline UpdateSigningCertificateRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
@@ -97,7 +97,7 @@ namespace Model
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * following characters: _+=,.@-</p>
      */
     inline UpdateSigningCertificateRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
@@ -106,7 +106,7 @@ namespace Model
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * following characters: _+=,.@-</p>
      */
     inline UpdateSigningCertificateRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
@@ -170,36 +170,36 @@ namespace Model
 
     /**
      * <p> The status you want to assign to the certificate. <code>Active</code> means
-     * the certificate can be used for API calls to AWS, while <code>Inactive</code>
-     * means the certificate cannot be used.</p>
+     * that the certificate can be used for API calls to AWS <code>Inactive</code>
+     * means that the certificate cannot be used.</p>
      */
     inline const StatusType& GetStatus() const{ return m_status; }
 
     /**
      * <p> The status you want to assign to the certificate. <code>Active</code> means
-     * the certificate can be used for API calls to AWS, while <code>Inactive</code>
-     * means the certificate cannot be used.</p>
+     * that the certificate can be used for API calls to AWS <code>Inactive</code>
+     * means that the certificate cannot be used.</p>
      */
     inline void SetStatus(const StatusType& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p> The status you want to assign to the certificate. <code>Active</code> means
-     * the certificate can be used for API calls to AWS, while <code>Inactive</code>
-     * means the certificate cannot be used.</p>
+     * that the certificate can be used for API calls to AWS <code>Inactive</code>
+     * means that the certificate cannot be used.</p>
      */
     inline void SetStatus(StatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p> The status you want to assign to the certificate. <code>Active</code> means
-     * the certificate can be used for API calls to AWS, while <code>Inactive</code>
-     * means the certificate cannot be used.</p>
+     * that the certificate can be used for API calls to AWS <code>Inactive</code>
+     * means that the certificate cannot be used.</p>
      */
     inline UpdateSigningCertificateRequest& WithStatus(const StatusType& value) { SetStatus(value); return *this;}
 
     /**
      * <p> The status you want to assign to the certificate. <code>Active</code> means
-     * the certificate can be used for API calls to AWS, while <code>Inactive</code>
-     * means the certificate cannot be used.</p>
+     * that the certificate can be used for API calls to AWS <code>Inactive</code>
+     * means that the certificate cannot be used.</p>
      */
     inline UpdateSigningCertificateRequest& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
 

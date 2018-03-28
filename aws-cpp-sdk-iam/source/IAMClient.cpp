@@ -139,6 +139,7 @@
 #include <aws/iam/model/UpdateGroupRequest.h>
 #include <aws/iam/model/UpdateLoginProfileRequest.h>
 #include <aws/iam/model/UpdateOpenIDConnectProviderThumbprintRequest.h>
+#include <aws/iam/model/UpdateRoleRequest.h>
 #include <aws/iam/model/UpdateRoleDescriptionRequest.h>
 #include <aws/iam/model/UpdateSAMLProviderRequest.h>
 #include <aws/iam/model/UpdateSSHPublicKeyRequest.h>
@@ -4143,6 +4144,41 @@ void IAMClient::UpdateOpenIDConnectProviderThumbprintAsync(const UpdateOpenIDCon
 void IAMClient::UpdateOpenIDConnectProviderThumbprintAsyncHelper(const UpdateOpenIDConnectProviderThumbprintRequest& request, const UpdateOpenIDConnectProviderThumbprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateOpenIDConnectProviderThumbprint(request), context);
+}
+
+UpdateRoleOutcome IAMClient::UpdateRole(const UpdateRoleRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateRoleOutcome(UpdateRoleResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateRoleOutcome(outcome.GetError());
+  }
+}
+
+UpdateRoleOutcomeCallable IAMClient::UpdateRoleCallable(const UpdateRoleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateRoleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRole(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IAMClient::UpdateRoleAsync(const UpdateRoleRequest& request, const UpdateRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateRoleAsyncHelper( request, handler, context ); } );
+}
+
+void IAMClient::UpdateRoleAsyncHelper(const UpdateRoleRequest& request, const UpdateRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateRole(request), context);
 }
 
 UpdateRoleDescriptionOutcome IAMClient::UpdateRoleDescription(const UpdateRoleDescriptionRequest& request) const

@@ -34,8 +34,8 @@ QualificationRequirement::QualificationRequirement() :
     m_comparatorHasBeenSet(false),
     m_integerValuesHasBeenSet(false),
     m_localeValuesHasBeenSet(false),
-    m_requiredToPreview(false),
-    m_requiredToPreviewHasBeenSet(false)
+    m_actionsGuarded(HITAccessActions::NOT_SET),
+    m_actionsGuardedHasBeenSet(false)
 {
 }
 
@@ -45,8 +45,8 @@ QualificationRequirement::QualificationRequirement(const JsonValue& jsonValue) :
     m_comparatorHasBeenSet(false),
     m_integerValuesHasBeenSet(false),
     m_localeValuesHasBeenSet(false),
-    m_requiredToPreview(false),
-    m_requiredToPreviewHasBeenSet(false)
+    m_actionsGuarded(HITAccessActions::NOT_SET),
+    m_actionsGuardedHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -87,11 +87,11 @@ QualificationRequirement& QualificationRequirement::operator =(const JsonValue& 
     m_localeValuesHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("RequiredToPreview"))
+  if(jsonValue.ValueExists("ActionsGuarded"))
   {
-    m_requiredToPreview = jsonValue.GetBool("RequiredToPreview");
+    m_actionsGuarded = HITAccessActionsMapper::GetHITAccessActionsForName(jsonValue.GetString("ActionsGuarded"));
 
-    m_requiredToPreviewHasBeenSet = true;
+    m_actionsGuardedHasBeenSet = true;
   }
 
   return *this;
@@ -134,10 +134,9 @@ JsonValue QualificationRequirement::Jsonize() const
 
   }
 
-  if(m_requiredToPreviewHasBeenSet)
+  if(m_actionsGuardedHasBeenSet)
   {
-   payload.WithBool("RequiredToPreview", m_requiredToPreview);
-
+   payload.WithString("ActionsGuarded", HITAccessActionsMapper::GetNameForHITAccessActions(m_actionsGuarded));
   }
 
   return payload;

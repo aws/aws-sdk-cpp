@@ -50,7 +50,8 @@ namespace Model
      * <p>The name of the user whose password you want to update.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
@@ -58,7 +59,8 @@ namespace Model
      * <p>The name of the user whose password you want to update.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
@@ -66,7 +68,8 @@ namespace Model
      * <p>The name of the user whose password you want to update.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
@@ -74,7 +77,8 @@ namespace Model
      * <p>The name of the user whose password you want to update.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
@@ -82,7 +86,8 @@ namespace Model
      * <p>The name of the user whose password you want to update.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline UpdateLoginProfileRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
@@ -90,7 +95,8 @@ namespace Model
      * <p>The name of the user whose password you want to update.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline UpdateLoginProfileRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
@@ -98,7 +104,8 @@ namespace Model
      * <p>The name of the user whose password you want to update.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline UpdateLoginProfileRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
@@ -106,13 +113,14 @@ namespace Model
     /**
      * <p>The new password for the specified IAM user.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).
-     * However, the format can be further restricted by the account administrator by
-     * setting a password policy on the AWS account. For more information, see
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul> <p>However, the format
+     * can be further restricted by the account administrator by setting a password
+     * policy on the AWS account. For more information, see
      * <a>UpdateAccountPasswordPolicy</a>.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
@@ -120,13 +128,14 @@ namespace Model
     /**
      * <p>The new password for the specified IAM user.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).
-     * However, the format can be further restricted by the account administrator by
-     * setting a password policy on the AWS account. For more information, see
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul> <p>However, the format
+     * can be further restricted by the account administrator by setting a password
+     * policy on the AWS account. For more information, see
      * <a>UpdateAccountPasswordPolicy</a>.</p>
      */
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
@@ -134,13 +143,14 @@ namespace Model
     /**
      * <p>The new password for the specified IAM user.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).
-     * However, the format can be further restricted by the account administrator by
-     * setting a password policy on the AWS account. For more information, see
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul> <p>However, the format
+     * can be further restricted by the account administrator by setting a password
+     * policy on the AWS account. For more information, see
      * <a>UpdateAccountPasswordPolicy</a>.</p>
      */
     inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
@@ -148,13 +158,14 @@ namespace Model
     /**
      * <p>The new password for the specified IAM user.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).
-     * However, the format can be further restricted by the account administrator by
-     * setting a password policy on the AWS account. For more information, see
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul> <p>However, the format
+     * can be further restricted by the account administrator by setting a password
+     * policy on the AWS account. For more information, see
      * <a>UpdateAccountPasswordPolicy</a>.</p>
      */
     inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
@@ -162,13 +173,14 @@ namespace Model
     /**
      * <p>The new password for the specified IAM user.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).
-     * However, the format can be further restricted by the account administrator by
-     * setting a password policy on the AWS account. For more information, see
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul> <p>However, the format
+     * can be further restricted by the account administrator by setting a password
+     * policy on the AWS account. For more information, see
      * <a>UpdateAccountPasswordPolicy</a>.</p>
      */
     inline UpdateLoginProfileRequest& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
@@ -176,13 +188,14 @@ namespace Model
     /**
      * <p>The new password for the specified IAM user.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).
-     * However, the format can be further restricted by the account administrator by
-     * setting a password policy on the AWS account. For more information, see
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul> <p>However, the format
+     * can be further restricted by the account administrator by setting a password
+     * policy on the AWS account. For more information, see
      * <a>UpdateAccountPasswordPolicy</a>.</p>
      */
     inline UpdateLoginProfileRequest& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
@@ -190,13 +203,14 @@ namespace Model
     /**
      * <p>The new password for the specified IAM user.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).
-     * However, the format can be further restricted by the account administrator by
-     * setting a password policy on the AWS account. For more information, see
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul> <p>However, the format
+     * can be further restricted by the account administrator by setting a password
+     * policy on the AWS account. For more information, see
      * <a>UpdateAccountPasswordPolicy</a>.</p>
      */
     inline UpdateLoginProfileRequest& WithPassword(const char* value) { SetPassword(value); return *this;}

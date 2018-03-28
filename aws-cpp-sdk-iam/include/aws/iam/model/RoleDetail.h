@@ -41,7 +41,7 @@ namespace Model
   /**
    * <p>Contains information about an IAM role, including all of the role's
    * policies.</p> <p>This data type is used as a response element in the
-   * <a>GetAccountAuthorizationDetails</a> action.</p><p><h3>See Also:</h3>   <a
+   * <a>GetAccountAuthorizationDetails</a> operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RoleDetail">AWS API
    * Reference</a></p>
    */

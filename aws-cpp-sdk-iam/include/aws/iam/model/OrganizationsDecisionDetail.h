@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about AWS Organizations's affect on a policy
+   * <p>Contains information about AWS Organizations's effect on a policy
    * simulation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/OrganizationsDecisionDetail">AWS
    * API Reference</a></p>
@@ -49,19 +49,19 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the simulated action is allowed by the AWS Organizations
+     * <p>Specifies whether the simulated operation is allowed by the AWS Organizations
      * service control policies that impact the simulated user's account.</p>
      */
     inline bool GetAllowedByOrganizations() const{ return m_allowedByOrganizations; }
 
     /**
-     * <p>Specifies whether the simulated action is allowed by the AWS Organizations
+     * <p>Specifies whether the simulated operation is allowed by the AWS Organizations
      * service control policies that impact the simulated user's account.</p>
      */
     inline void SetAllowedByOrganizations(bool value) { m_allowedByOrganizationsHasBeenSet = true; m_allowedByOrganizations = value; }
 
     /**
-     * <p>Specifies whether the simulated action is allowed by the AWS Organizations
+     * <p>Specifies whether the simulated operation is allowed by the AWS Organizations
      * service control policies that impact the simulated user's account.</p>
      */
     inline OrganizationsDecisionDetail& WithAllowedByOrganizations(bool value) { SetAllowedByOrganizations(value); return *this;}

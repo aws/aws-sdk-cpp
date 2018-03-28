@@ -54,7 +54,7 @@ namespace Model
      * <p>A list of policy names.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-+</p>
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline const Aws::Vector<Aws::String>& GetPolicyNames() const{ return m_policyNames; }
 
@@ -62,7 +62,7 @@ namespace Model
      * <p>A list of policy names.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-+</p>
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetPolicyNames(const Aws::Vector<Aws::String>& value) { m_policyNames = value; }
 
@@ -70,7 +70,7 @@ namespace Model
      * <p>A list of policy names.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-+</p>
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetPolicyNames(Aws::Vector<Aws::String>&& value) { m_policyNames = std::move(value); }
 
@@ -78,7 +78,7 @@ namespace Model
      * <p>A list of policy names.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-+</p>
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline ListGroupPoliciesResult& WithPolicyNames(const Aws::Vector<Aws::String>& value) { SetPolicyNames(value); return *this;}
 
@@ -86,7 +86,7 @@ namespace Model
      * <p>A list of policy names.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-+</p>
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline ListGroupPoliciesResult& WithPolicyNames(Aws::Vector<Aws::String>&& value) { SetPolicyNames(std::move(value)); return *this;}
 
@@ -94,7 +94,7 @@ namespace Model
      * <p>A list of policy names.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-+</p>
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline ListGroupPoliciesResult& AddPolicyNames(const Aws::String& value) { m_policyNames.push_back(value); return *this; }
 
@@ -102,7 +102,7 @@ namespace Model
      * <p>A list of policy names.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-+</p>
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline ListGroupPoliciesResult& AddPolicyNames(Aws::String&& value) { m_policyNames.push_back(std::move(value)); return *this; }
 
@@ -110,7 +110,7 @@ namespace Model
      * <p>A list of policy names.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-+</p>
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline ListGroupPoliciesResult& AddPolicyNames(const char* value) { m_policyNames.push_back(value); return *this; }
 

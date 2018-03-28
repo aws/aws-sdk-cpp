@@ -36,8 +36,8 @@ namespace Model
 
   /**
    * <p>Contains information about an IAM role. This structure is returned as a
-   * response element in several APIs that interact with roles.</p><p><h3>See
-   * Also:</h3>   <a
+   * response element in several API operations that interact with
+   * roles.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/Role">AWS API
    * Reference</a></p>
    */
@@ -354,6 +354,31 @@ namespace Model
      */
     inline Role& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    /**
+     * <p>The maximum session duration (in seconds) for the specified role. Anyone who
+     * uses the AWS CLI or API to assume the role can specify the duration using the
+     * optional <code>DurationSeconds</code> API parameter or
+     * <code>duration-seconds</code> CLI parameter.</p>
+     */
+    inline int GetMaxSessionDuration() const{ return m_maxSessionDuration; }
+
+    /**
+     * <p>The maximum session duration (in seconds) for the specified role. Anyone who
+     * uses the AWS CLI or API to assume the role can specify the duration using the
+     * optional <code>DurationSeconds</code> API parameter or
+     * <code>duration-seconds</code> CLI parameter.</p>
+     */
+    inline void SetMaxSessionDuration(int value) { m_maxSessionDurationHasBeenSet = true; m_maxSessionDuration = value; }
+
+    /**
+     * <p>The maximum session duration (in seconds) for the specified role. Anyone who
+     * uses the AWS CLI or API to assume the role can specify the duration using the
+     * optional <code>DurationSeconds</code> API parameter or
+     * <code>duration-seconds</code> CLI parameter.</p>
+     */
+    inline Role& WithMaxSessionDuration(int value) { SetMaxSessionDuration(value); return *this;}
+
   private:
 
     Aws::String m_path;
@@ -376,6 +401,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    int m_maxSessionDuration;
+    bool m_maxSessionDurationHasBeenSet;
   };
 
 } // namespace Model

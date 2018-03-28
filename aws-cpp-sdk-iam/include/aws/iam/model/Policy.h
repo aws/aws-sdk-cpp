@@ -37,7 +37,7 @@ namespace Model
   /**
    * <p>Contains information about a managed policy.</p> <p>This data type is used as
    * a response element in the <a>CreatePolicy</a>, <a>GetPolicy</a>, and
-   * <a>ListPolicies</a> actions. </p> <p>For more information about managed
+   * <a>ListPolicies</a> operations. </p> <p>For more information about managed
    * policies, refer to <a
    * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
    * Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p><p><h3>See

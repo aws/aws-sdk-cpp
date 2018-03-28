@@ -51,7 +51,7 @@ namespace Model
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * following characters: _+=,.@-</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
@@ -60,7 +60,7 @@ namespace Model
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * following characters: _+=,.@-</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
@@ -69,7 +69,7 @@ namespace Model
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * following characters: _+=,.@-</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
@@ -78,7 +78,7 @@ namespace Model
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * following characters: _+=,.@-</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
@@ -87,7 +87,7 @@ namespace Model
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * following characters: _+=,.@-</p>
      */
     inline ResyncMFADeviceRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
@@ -96,7 +96,7 @@ namespace Model
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * following characters: _+=,.@-</p>
      */
     inline ResyncMFADeviceRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
@@ -105,7 +105,7 @@ namespace Model
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * following characters: _+=,.@-</p>
      */
     inline ResyncMFADeviceRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
@@ -114,7 +114,8 @@ namespace Model
      * <p>Serial number that uniquely identifies the MFA device.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline const Aws::String& GetSerialNumber() const{ return m_serialNumber; }
 
@@ -122,7 +123,8 @@ namespace Model
      * <p>Serial number that uniquely identifies the MFA device.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline void SetSerialNumber(const Aws::String& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
 
@@ -130,7 +132,8 @@ namespace Model
      * <p>Serial number that uniquely identifies the MFA device.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = std::move(value); }
 
@@ -138,7 +141,8 @@ namespace Model
      * <p>Serial number that uniquely identifies the MFA device.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline void SetSerialNumber(const char* value) { m_serialNumberHasBeenSet = true; m_serialNumber.assign(value); }
 
@@ -146,7 +150,8 @@ namespace Model
      * <p>Serial number that uniquely identifies the MFA device.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline ResyncMFADeviceRequest& WithSerialNumber(const Aws::String& value) { SetSerialNumber(value); return *this;}
 
@@ -154,7 +159,8 @@ namespace Model
      * <p>Serial number that uniquely identifies the MFA device.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline ResyncMFADeviceRequest& WithSerialNumber(Aws::String&& value) { SetSerialNumber(std::move(value)); return *this;}
 
@@ -162,7 +168,8 @@ namespace Model
      * <p>Serial number that uniquely identifies the MFA device.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline ResyncMFADeviceRequest& WithSerialNumber(const char* value) { SetSerialNumber(value); return *this;}
 

@@ -38,7 +38,7 @@ namespace Model
   /**
    * <p>Contains information about an X.509 signing certificate.</p> <p>This data
    * type is used as a response element in the <a>UploadSigningCertificate</a> and
-   * <a>ListSigningCertificates</a> actions. </p><p><h3>See Also:</h3>   <a
+   * <a>ListSigningCertificates</a> operations. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SigningCertificate">AWS
    * API Reference</a></p>
    */
@@ -162,32 +162,32 @@ namespace Model
 
 
     /**
-     * <p>The status of the signing certificate. <code>Active</code> means the key is
-     * valid for API calls, while <code>Inactive</code> means it is not.</p>
+     * <p>The status of the signing certificate. <code>Active</code> means that the key
+     * is valid for API calls, while <code>Inactive</code> means it is not.</p>
      */
     inline const StatusType& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the signing certificate. <code>Active</code> means the key is
-     * valid for API calls, while <code>Inactive</code> means it is not.</p>
+     * <p>The status of the signing certificate. <code>Active</code> means that the key
+     * is valid for API calls, while <code>Inactive</code> means it is not.</p>
      */
     inline void SetStatus(const StatusType& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the signing certificate. <code>Active</code> means the key is
-     * valid for API calls, while <code>Inactive</code> means it is not.</p>
+     * <p>The status of the signing certificate. <code>Active</code> means that the key
+     * is valid for API calls, while <code>Inactive</code> means it is not.</p>
      */
     inline void SetStatus(StatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the signing certificate. <code>Active</code> means the key is
-     * valid for API calls, while <code>Inactive</code> means it is not.</p>
+     * <p>The status of the signing certificate. <code>Active</code> means that the key
+     * is valid for API calls, while <code>Inactive</code> means it is not.</p>
      */
     inline SigningCertificate& WithStatus(const StatusType& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the signing certificate. <code>Active</code> means the key is
-     * valid for API calls, while <code>Inactive</code> means it is not.</p>
+     * <p>The status of the signing certificate. <code>Active</code> means that the key
+     * is valid for API calls, while <code>Inactive</code> means it is not.</p>
      */
     inline SigningCertificate& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
 

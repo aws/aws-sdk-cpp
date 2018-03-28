@@ -36,8 +36,8 @@ namespace Model
   /**
    * <p>Contains information about a user that a managed policy is attached to.</p>
    * <p>This data type is used as a response element in the
-   * <a>ListEntitiesForPolicy</a> action. </p> <p>For more information about managed
-   * policies, refer to <a
+   * <a>ListEntitiesForPolicy</a> operation. </p> <p>For more information about
+   * managed policies, refer to <a
    * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
    * Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p><p><h3>See
    * Also:</h3>   <a

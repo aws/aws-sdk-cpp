@@ -37,7 +37,7 @@ namespace Model
   /**
    * <p>Contains the user name and password create date for a user.</p> <p> This data
    * type is used as a response element in the <a>CreateLoginProfile</a> and
-   * <a>GetLoginProfile</a> actions. </p><p><h3>See Also:</h3>   <a
+   * <a>GetLoginProfile</a> operations. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/LoginProfile">AWS
    * API Reference</a></p>
    */

@@ -36,9 +36,10 @@ namespace Model
 
   /**
    * <p>Contains information about an MFA device.</p> <p>This data type is used as a
-   * response element in the <a>ListMFADevices</a> action.</p><p><h3>See Also:</h3>  
-   * <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/MFADevice">AWS
-   * API Reference</a></p>
+   * response element in the <a>ListMFADevices</a> operation.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/MFADevice">AWS API
+   * Reference</a></p>
    */
   class AWS_IAM_API MFADevice
   {

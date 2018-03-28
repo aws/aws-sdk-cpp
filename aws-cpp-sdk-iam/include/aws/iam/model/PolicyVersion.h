@@ -38,7 +38,7 @@ namespace Model
    * <p>Contains information about a version of a managed policy.</p> <p>This data
    * type is used as a response element in the <a>CreatePolicyVersion</a>,
    * <a>GetPolicyVersion</a>, <a>ListPolicyVersions</a>, and
-   * <a>GetAccountAuthorizationDetails</a> actions. </p> <p>For more information
+   * <a>GetAccountAuthorizationDetails</a> operations. </p> <p>For more information
    * about managed policies, refer to <a
    * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
    * Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p><p><h3>See
@@ -61,7 +61,13 @@ namespace Model
      * <p>The policy document.</p> <p>The policy document is returned in the response
      * to the <a>GetPolicyVersion</a> and <a>GetAccountAuthorizationDetails</a>
      * operations. It is not returned in the response to the <a>CreatePolicyVersion</a>
-     * or <a>ListPolicyVersions</a> operations. </p>
+     * or <a>ListPolicyVersions</a> operations. </p> <p>The policy document returned in
+     * this structure is URL-encoded compliant with <a
+     * href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>. You can use a URL
+     * decoding method to convert the policy back to plain JSON text. For example, if
+     * you use Java, you can use the <code>decode</code> method of the
+     * <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+     * and SDKs provide similar functionality.</p>
      */
     inline const Aws::String& GetDocument() const{ return m_document; }
 
@@ -69,7 +75,13 @@ namespace Model
      * <p>The policy document.</p> <p>The policy document is returned in the response
      * to the <a>GetPolicyVersion</a> and <a>GetAccountAuthorizationDetails</a>
      * operations. It is not returned in the response to the <a>CreatePolicyVersion</a>
-     * or <a>ListPolicyVersions</a> operations. </p>
+     * or <a>ListPolicyVersions</a> operations. </p> <p>The policy document returned in
+     * this structure is URL-encoded compliant with <a
+     * href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>. You can use a URL
+     * decoding method to convert the policy back to plain JSON text. For example, if
+     * you use Java, you can use the <code>decode</code> method of the
+     * <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+     * and SDKs provide similar functionality.</p>
      */
     inline void SetDocument(const Aws::String& value) { m_documentHasBeenSet = true; m_document = value; }
 
@@ -77,7 +89,13 @@ namespace Model
      * <p>The policy document.</p> <p>The policy document is returned in the response
      * to the <a>GetPolicyVersion</a> and <a>GetAccountAuthorizationDetails</a>
      * operations. It is not returned in the response to the <a>CreatePolicyVersion</a>
-     * or <a>ListPolicyVersions</a> operations. </p>
+     * or <a>ListPolicyVersions</a> operations. </p> <p>The policy document returned in
+     * this structure is URL-encoded compliant with <a
+     * href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>. You can use a URL
+     * decoding method to convert the policy back to plain JSON text. For example, if
+     * you use Java, you can use the <code>decode</code> method of the
+     * <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+     * and SDKs provide similar functionality.</p>
      */
     inline void SetDocument(Aws::String&& value) { m_documentHasBeenSet = true; m_document = std::move(value); }
 
@@ -85,7 +103,13 @@ namespace Model
      * <p>The policy document.</p> <p>The policy document is returned in the response
      * to the <a>GetPolicyVersion</a> and <a>GetAccountAuthorizationDetails</a>
      * operations. It is not returned in the response to the <a>CreatePolicyVersion</a>
-     * or <a>ListPolicyVersions</a> operations. </p>
+     * or <a>ListPolicyVersions</a> operations. </p> <p>The policy document returned in
+     * this structure is URL-encoded compliant with <a
+     * href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>. You can use a URL
+     * decoding method to convert the policy back to plain JSON text. For example, if
+     * you use Java, you can use the <code>decode</code> method of the
+     * <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+     * and SDKs provide similar functionality.</p>
      */
     inline void SetDocument(const char* value) { m_documentHasBeenSet = true; m_document.assign(value); }
 
@@ -93,7 +117,13 @@ namespace Model
      * <p>The policy document.</p> <p>The policy document is returned in the response
      * to the <a>GetPolicyVersion</a> and <a>GetAccountAuthorizationDetails</a>
      * operations. It is not returned in the response to the <a>CreatePolicyVersion</a>
-     * or <a>ListPolicyVersions</a> operations. </p>
+     * or <a>ListPolicyVersions</a> operations. </p> <p>The policy document returned in
+     * this structure is URL-encoded compliant with <a
+     * href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>. You can use a URL
+     * decoding method to convert the policy back to plain JSON text. For example, if
+     * you use Java, you can use the <code>decode</code> method of the
+     * <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+     * and SDKs provide similar functionality.</p>
      */
     inline PolicyVersion& WithDocument(const Aws::String& value) { SetDocument(value); return *this;}
 
@@ -101,7 +131,13 @@ namespace Model
      * <p>The policy document.</p> <p>The policy document is returned in the response
      * to the <a>GetPolicyVersion</a> and <a>GetAccountAuthorizationDetails</a>
      * operations. It is not returned in the response to the <a>CreatePolicyVersion</a>
-     * or <a>ListPolicyVersions</a> operations. </p>
+     * or <a>ListPolicyVersions</a> operations. </p> <p>The policy document returned in
+     * this structure is URL-encoded compliant with <a
+     * href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>. You can use a URL
+     * decoding method to convert the policy back to plain JSON text. For example, if
+     * you use Java, you can use the <code>decode</code> method of the
+     * <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+     * and SDKs provide similar functionality.</p>
      */
     inline PolicyVersion& WithDocument(Aws::String&& value) { SetDocument(std::move(value)); return *this;}
 
@@ -109,7 +145,13 @@ namespace Model
      * <p>The policy document.</p> <p>The policy document is returned in the response
      * to the <a>GetPolicyVersion</a> and <a>GetAccountAuthorizationDetails</a>
      * operations. It is not returned in the response to the <a>CreatePolicyVersion</a>
-     * or <a>ListPolicyVersions</a> operations. </p>
+     * or <a>ListPolicyVersions</a> operations. </p> <p>The policy document returned in
+     * this structure is URL-encoded compliant with <a
+     * href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>. You can use a URL
+     * decoding method to convert the policy back to plain JSON text. For example, if
+     * you use Java, you can use the <code>decode</code> method of the
+     * <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+     * and SDKs provide similar functionality.</p>
      */
     inline PolicyVersion& WithDocument(const char* value) { SetDocument(value); return *this;}
 

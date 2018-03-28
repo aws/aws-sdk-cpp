@@ -101,56 +101,56 @@ namespace Model
 
     /**
      * <p>The value (or values, if the condition context key supports multiple values)
-     * to provide to the simulation for use when the key is referenced by a
+     * to provide to the simulation when the key is referenced by a
      * <code>Condition</code> element in an input policy.</p>
      */
     inline const Aws::Vector<Aws::String>& GetContextKeyValues() const{ return m_contextKeyValues; }
 
     /**
      * <p>The value (or values, if the condition context key supports multiple values)
-     * to provide to the simulation for use when the key is referenced by a
+     * to provide to the simulation when the key is referenced by a
      * <code>Condition</code> element in an input policy.</p>
      */
     inline void SetContextKeyValues(const Aws::Vector<Aws::String>& value) { m_contextKeyValuesHasBeenSet = true; m_contextKeyValues = value; }
 
     /**
      * <p>The value (or values, if the condition context key supports multiple values)
-     * to provide to the simulation for use when the key is referenced by a
+     * to provide to the simulation when the key is referenced by a
      * <code>Condition</code> element in an input policy.</p>
      */
     inline void SetContextKeyValues(Aws::Vector<Aws::String>&& value) { m_contextKeyValuesHasBeenSet = true; m_contextKeyValues = std::move(value); }
 
     /**
      * <p>The value (or values, if the condition context key supports multiple values)
-     * to provide to the simulation for use when the key is referenced by a
+     * to provide to the simulation when the key is referenced by a
      * <code>Condition</code> element in an input policy.</p>
      */
     inline ContextEntry& WithContextKeyValues(const Aws::Vector<Aws::String>& value) { SetContextKeyValues(value); return *this;}
 
     /**
      * <p>The value (or values, if the condition context key supports multiple values)
-     * to provide to the simulation for use when the key is referenced by a
+     * to provide to the simulation when the key is referenced by a
      * <code>Condition</code> element in an input policy.</p>
      */
     inline ContextEntry& WithContextKeyValues(Aws::Vector<Aws::String>&& value) { SetContextKeyValues(std::move(value)); return *this;}
 
     /**
      * <p>The value (or values, if the condition context key supports multiple values)
-     * to provide to the simulation for use when the key is referenced by a
+     * to provide to the simulation when the key is referenced by a
      * <code>Condition</code> element in an input policy.</p>
      */
     inline ContextEntry& AddContextKeyValues(const Aws::String& value) { m_contextKeyValuesHasBeenSet = true; m_contextKeyValues.push_back(value); return *this; }
 
     /**
      * <p>The value (or values, if the condition context key supports multiple values)
-     * to provide to the simulation for use when the key is referenced by a
+     * to provide to the simulation when the key is referenced by a
      * <code>Condition</code> element in an input policy.</p>
      */
     inline ContextEntry& AddContextKeyValues(Aws::String&& value) { m_contextKeyValuesHasBeenSet = true; m_contextKeyValues.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The value (or values, if the condition context key supports multiple values)
-     * to provide to the simulation for use when the key is referenced by a
+     * to provide to the simulation when the key is referenced by a
      * <code>Condition</code> element in an input policy.</p>
      */
     inline ContextEntry& AddContextKeyValues(const char* value) { m_contextKeyValuesHasBeenSet = true; m_contextKeyValues.push_back(value); return *this; }
