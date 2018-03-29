@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * Time when the service role was disassociated from the account.
+     * The time when the service role was disassociated from the account.
      */
     inline const Aws::String& GetDisassociatedAt() const{ return m_disassociatedAt; }
 
     /**
-     * Time when the service role was disassociated from the account.
+     * The time when the service role was disassociated from the account.
      */
     inline void SetDisassociatedAt(const Aws::String& value) { m_disassociatedAt = value; }
 
     /**
-     * Time when the service role was disassociated from the account.
+     * The time when the service role was disassociated from the account.
      */
     inline void SetDisassociatedAt(Aws::String&& value) { m_disassociatedAt = std::move(value); }
 
     /**
-     * Time when the service role was disassociated from the account.
+     * The time when the service role was disassociated from the account.
      */
     inline void SetDisassociatedAt(const char* value) { m_disassociatedAt.assign(value); }
 
     /**
-     * Time when the service role was disassociated from the account.
+     * The time when the service role was disassociated from the account.
      */
     inline DisassociateServiceRoleFromAccountResult& WithDisassociatedAt(const Aws::String& value) { SetDisassociatedAt(value); return *this;}
 
     /**
-     * Time when the service role was disassociated from the account.
+     * The time when the service role was disassociated from the account.
      */
     inline DisassociateServiceRoleFromAccountResult& WithDisassociatedAt(Aws::String&& value) { SetDisassociatedAt(std::move(value)); return *this;}
 
     /**
-     * Time when the service role was disassociated from the account.
+     * The time when the service role was disassociated from the account.
      */
     inline DisassociateServiceRoleFromAccountResult& WithDisassociatedAt(const char* value) { SetDisassociatedAt(value); return *this;}
 

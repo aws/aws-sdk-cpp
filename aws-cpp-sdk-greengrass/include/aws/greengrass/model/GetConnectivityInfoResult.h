@@ -45,73 +45,73 @@ namespace Model
 
 
     /**
-     * Connectivity info list
+     * Connectivity info list.
      */
     inline const Aws::Vector<ConnectivityInfo>& GetConnectivityInfo() const{ return m_connectivityInfo; }
 
     /**
-     * Connectivity info list
+     * Connectivity info list.
      */
     inline void SetConnectivityInfo(const Aws::Vector<ConnectivityInfo>& value) { m_connectivityInfo = value; }
 
     /**
-     * Connectivity info list
+     * Connectivity info list.
      */
     inline void SetConnectivityInfo(Aws::Vector<ConnectivityInfo>&& value) { m_connectivityInfo = std::move(value); }
 
     /**
-     * Connectivity info list
+     * Connectivity info list.
      */
     inline GetConnectivityInfoResult& WithConnectivityInfo(const Aws::Vector<ConnectivityInfo>& value) { SetConnectivityInfo(value); return *this;}
 
     /**
-     * Connectivity info list
+     * Connectivity info list.
      */
     inline GetConnectivityInfoResult& WithConnectivityInfo(Aws::Vector<ConnectivityInfo>&& value) { SetConnectivityInfo(std::move(value)); return *this;}
 
     /**
-     * Connectivity info list
+     * Connectivity info list.
      */
     inline GetConnectivityInfoResult& AddConnectivityInfo(const ConnectivityInfo& value) { m_connectivityInfo.push_back(value); return *this; }
 
     /**
-     * Connectivity info list
+     * Connectivity info list.
      */
     inline GetConnectivityInfoResult& AddConnectivityInfo(ConnectivityInfo&& value) { m_connectivityInfo.push_back(std::move(value)); return *this; }
 
 
     /**
-     * Response Text
+     * A message about the connectivity info request.
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * Response Text
+     * A message about the connectivity info request.
      */
     inline void SetMessage(const Aws::String& value) { m_message = value; }
 
     /**
-     * Response Text
+     * A message about the connectivity info request.
      */
     inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
 
     /**
-     * Response Text
+     * A message about the connectivity info request.
      */
     inline void SetMessage(const char* value) { m_message.assign(value); }
 
     /**
-     * Response Text
+     * A message about the connectivity info request.
      */
     inline GetConnectivityInfoResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * Response Text
+     * A message about the connectivity info request.
      */
     inline GetConnectivityInfoResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * Response Text
+     * A message about the connectivity info request.
      */
     inline GetConnectivityInfoResult& WithMessage(const char* value) { SetMessage(value); return *this;}
 

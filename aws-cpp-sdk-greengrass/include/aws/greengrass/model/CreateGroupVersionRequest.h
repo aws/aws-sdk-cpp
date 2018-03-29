@@ -45,289 +45,289 @@ namespace Model
 
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline const Aws::String& GetAmznClientToken() const{ return m_amznClientToken; }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline void SetAmznClientToken(const Aws::String& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = value; }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline void SetAmznClientToken(Aws::String&& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = std::move(value); }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline void SetAmznClientToken(const char* value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken.assign(value); }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline CreateGroupVersionRequest& WithAmznClientToken(const Aws::String& value) { SetAmznClientToken(value); return *this;}
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline CreateGroupVersionRequest& WithAmznClientToken(Aws::String&& value) { SetAmznClientToken(std::move(value)); return *this;}
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline CreateGroupVersionRequest& WithAmznClientToken(const char* value) { SetAmznClientToken(value); return *this;}
 
 
     /**
-     * Core definition version arn for this group.
+     * The ARN of the core definition version for this group.
      */
     inline const Aws::String& GetCoreDefinitionVersionArn() const{ return m_coreDefinitionVersionArn; }
 
     /**
-     * Core definition version arn for this group.
+     * The ARN of the core definition version for this group.
      */
     inline void SetCoreDefinitionVersionArn(const Aws::String& value) { m_coreDefinitionVersionArnHasBeenSet = true; m_coreDefinitionVersionArn = value; }
 
     /**
-     * Core definition version arn for this group.
+     * The ARN of the core definition version for this group.
      */
     inline void SetCoreDefinitionVersionArn(Aws::String&& value) { m_coreDefinitionVersionArnHasBeenSet = true; m_coreDefinitionVersionArn = std::move(value); }
 
     /**
-     * Core definition version arn for this group.
+     * The ARN of the core definition version for this group.
      */
     inline void SetCoreDefinitionVersionArn(const char* value) { m_coreDefinitionVersionArnHasBeenSet = true; m_coreDefinitionVersionArn.assign(value); }
 
     /**
-     * Core definition version arn for this group.
+     * The ARN of the core definition version for this group.
      */
     inline CreateGroupVersionRequest& WithCoreDefinitionVersionArn(const Aws::String& value) { SetCoreDefinitionVersionArn(value); return *this;}
 
     /**
-     * Core definition version arn for this group.
+     * The ARN of the core definition version for this group.
      */
     inline CreateGroupVersionRequest& WithCoreDefinitionVersionArn(Aws::String&& value) { SetCoreDefinitionVersionArn(std::move(value)); return *this;}
 
     /**
-     * Core definition version arn for this group.
+     * The ARN of the core definition version for this group.
      */
     inline CreateGroupVersionRequest& WithCoreDefinitionVersionArn(const char* value) { SetCoreDefinitionVersionArn(value); return *this;}
 
 
     /**
-     * Device definition version arn for this group.
+     * The ARN of the device definition version for this group.
      */
     inline const Aws::String& GetDeviceDefinitionVersionArn() const{ return m_deviceDefinitionVersionArn; }
 
     /**
-     * Device definition version arn for this group.
+     * The ARN of the device definition version for this group.
      */
     inline void SetDeviceDefinitionVersionArn(const Aws::String& value) { m_deviceDefinitionVersionArnHasBeenSet = true; m_deviceDefinitionVersionArn = value; }
 
     /**
-     * Device definition version arn for this group.
+     * The ARN of the device definition version for this group.
      */
     inline void SetDeviceDefinitionVersionArn(Aws::String&& value) { m_deviceDefinitionVersionArnHasBeenSet = true; m_deviceDefinitionVersionArn = std::move(value); }
 
     /**
-     * Device definition version arn for this group.
+     * The ARN of the device definition version for this group.
      */
     inline void SetDeviceDefinitionVersionArn(const char* value) { m_deviceDefinitionVersionArnHasBeenSet = true; m_deviceDefinitionVersionArn.assign(value); }
 
     /**
-     * Device definition version arn for this group.
+     * The ARN of the device definition version for this group.
      */
     inline CreateGroupVersionRequest& WithDeviceDefinitionVersionArn(const Aws::String& value) { SetDeviceDefinitionVersionArn(value); return *this;}
 
     /**
-     * Device definition version arn for this group.
+     * The ARN of the device definition version for this group.
      */
     inline CreateGroupVersionRequest& WithDeviceDefinitionVersionArn(Aws::String&& value) { SetDeviceDefinitionVersionArn(std::move(value)); return *this;}
 
     /**
-     * Device definition version arn for this group.
+     * The ARN of the device definition version for this group.
      */
     inline CreateGroupVersionRequest& WithDeviceDefinitionVersionArn(const char* value) { SetDeviceDefinitionVersionArn(value); return *this;}
 
 
     /**
-     * Function definition version arn for this group.
+     * The ARN of the function definition version for this group.
      */
     inline const Aws::String& GetFunctionDefinitionVersionArn() const{ return m_functionDefinitionVersionArn; }
 
     /**
-     * Function definition version arn for this group.
+     * The ARN of the function definition version for this group.
      */
     inline void SetFunctionDefinitionVersionArn(const Aws::String& value) { m_functionDefinitionVersionArnHasBeenSet = true; m_functionDefinitionVersionArn = value; }
 
     /**
-     * Function definition version arn for this group.
+     * The ARN of the function definition version for this group.
      */
     inline void SetFunctionDefinitionVersionArn(Aws::String&& value) { m_functionDefinitionVersionArnHasBeenSet = true; m_functionDefinitionVersionArn = std::move(value); }
 
     /**
-     * Function definition version arn for this group.
+     * The ARN of the function definition version for this group.
      */
     inline void SetFunctionDefinitionVersionArn(const char* value) { m_functionDefinitionVersionArnHasBeenSet = true; m_functionDefinitionVersionArn.assign(value); }
 
     /**
-     * Function definition version arn for this group.
+     * The ARN of the function definition version for this group.
      */
     inline CreateGroupVersionRequest& WithFunctionDefinitionVersionArn(const Aws::String& value) { SetFunctionDefinitionVersionArn(value); return *this;}
 
     /**
-     * Function definition version arn for this group.
+     * The ARN of the function definition version for this group.
      */
     inline CreateGroupVersionRequest& WithFunctionDefinitionVersionArn(Aws::String&& value) { SetFunctionDefinitionVersionArn(std::move(value)); return *this;}
 
     /**
-     * Function definition version arn for this group.
+     * The ARN of the function definition version for this group.
      */
     inline CreateGroupVersionRequest& WithFunctionDefinitionVersionArn(const char* value) { SetFunctionDefinitionVersionArn(value); return *this;}
 
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline CreateGroupVersionRequest& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline CreateGroupVersionRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline CreateGroupVersionRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 
 
     /**
-     * Logger definition version arn for this group.
+     * The ARN of the logger definition version for this group.
      */
     inline const Aws::String& GetLoggerDefinitionVersionArn() const{ return m_loggerDefinitionVersionArn; }
 
     /**
-     * Logger definition version arn for this group.
+     * The ARN of the logger definition version for this group.
      */
     inline void SetLoggerDefinitionVersionArn(const Aws::String& value) { m_loggerDefinitionVersionArnHasBeenSet = true; m_loggerDefinitionVersionArn = value; }
 
     /**
-     * Logger definition version arn for this group.
+     * The ARN of the logger definition version for this group.
      */
     inline void SetLoggerDefinitionVersionArn(Aws::String&& value) { m_loggerDefinitionVersionArnHasBeenSet = true; m_loggerDefinitionVersionArn = std::move(value); }
 
     /**
-     * Logger definition version arn for this group.
+     * The ARN of the logger definition version for this group.
      */
     inline void SetLoggerDefinitionVersionArn(const char* value) { m_loggerDefinitionVersionArnHasBeenSet = true; m_loggerDefinitionVersionArn.assign(value); }
 
     /**
-     * Logger definition version arn for this group.
+     * The ARN of the logger definition version for this group.
      */
     inline CreateGroupVersionRequest& WithLoggerDefinitionVersionArn(const Aws::String& value) { SetLoggerDefinitionVersionArn(value); return *this;}
 
     /**
-     * Logger definition version arn for this group.
+     * The ARN of the logger definition version for this group.
      */
     inline CreateGroupVersionRequest& WithLoggerDefinitionVersionArn(Aws::String&& value) { SetLoggerDefinitionVersionArn(std::move(value)); return *this;}
 
     /**
-     * Logger definition version arn for this group.
+     * The ARN of the logger definition version for this group.
      */
     inline CreateGroupVersionRequest& WithLoggerDefinitionVersionArn(const char* value) { SetLoggerDefinitionVersionArn(value); return *this;}
 
 
     /**
-     * Resource definition version arn for this group.
+     * The resource definition version ARN for this group.
      */
     inline const Aws::String& GetResourceDefinitionVersionArn() const{ return m_resourceDefinitionVersionArn; }
 
     /**
-     * Resource definition version arn for this group.
+     * The resource definition version ARN for this group.
      */
     inline void SetResourceDefinitionVersionArn(const Aws::String& value) { m_resourceDefinitionVersionArnHasBeenSet = true; m_resourceDefinitionVersionArn = value; }
 
     /**
-     * Resource definition version arn for this group.
+     * The resource definition version ARN for this group.
      */
     inline void SetResourceDefinitionVersionArn(Aws::String&& value) { m_resourceDefinitionVersionArnHasBeenSet = true; m_resourceDefinitionVersionArn = std::move(value); }
 
     /**
-     * Resource definition version arn for this group.
+     * The resource definition version ARN for this group.
      */
     inline void SetResourceDefinitionVersionArn(const char* value) { m_resourceDefinitionVersionArnHasBeenSet = true; m_resourceDefinitionVersionArn.assign(value); }
 
     /**
-     * Resource definition version arn for this group.
+     * The resource definition version ARN for this group.
      */
     inline CreateGroupVersionRequest& WithResourceDefinitionVersionArn(const Aws::String& value) { SetResourceDefinitionVersionArn(value); return *this;}
 
     /**
-     * Resource definition version arn for this group.
+     * The resource definition version ARN for this group.
      */
     inline CreateGroupVersionRequest& WithResourceDefinitionVersionArn(Aws::String&& value) { SetResourceDefinitionVersionArn(std::move(value)); return *this;}
 
     /**
-     * Resource definition version arn for this group.
+     * The resource definition version ARN for this group.
      */
     inline CreateGroupVersionRequest& WithResourceDefinitionVersionArn(const char* value) { SetResourceDefinitionVersionArn(value); return *this;}
 
 
     /**
-     * Subscription definition version arn for this group.
+     * The ARN of the subscription definition version for this group.
      */
     inline const Aws::String& GetSubscriptionDefinitionVersionArn() const{ return m_subscriptionDefinitionVersionArn; }
 
     /**
-     * Subscription definition version arn for this group.
+     * The ARN of the subscription definition version for this group.
      */
     inline void SetSubscriptionDefinitionVersionArn(const Aws::String& value) { m_subscriptionDefinitionVersionArnHasBeenSet = true; m_subscriptionDefinitionVersionArn = value; }
 
     /**
-     * Subscription definition version arn for this group.
+     * The ARN of the subscription definition version for this group.
      */
     inline void SetSubscriptionDefinitionVersionArn(Aws::String&& value) { m_subscriptionDefinitionVersionArnHasBeenSet = true; m_subscriptionDefinitionVersionArn = std::move(value); }
 
     /**
-     * Subscription definition version arn for this group.
+     * The ARN of the subscription definition version for this group.
      */
     inline void SetSubscriptionDefinitionVersionArn(const char* value) { m_subscriptionDefinitionVersionArnHasBeenSet = true; m_subscriptionDefinitionVersionArn.assign(value); }
 
     /**
-     * Subscription definition version arn for this group.
+     * The ARN of the subscription definition version for this group.
      */
     inline CreateGroupVersionRequest& WithSubscriptionDefinitionVersionArn(const Aws::String& value) { SetSubscriptionDefinitionVersionArn(value); return *this;}
 
     /**
-     * Subscription definition version arn for this group.
+     * The ARN of the subscription definition version for this group.
      */
     inline CreateGroupVersionRequest& WithSubscriptionDefinitionVersionArn(Aws::String&& value) { SetSubscriptionDefinitionVersionArn(std::move(value)); return *this;}
 
     /**
-     * Subscription definition version arn for this group.
+     * The ARN of the subscription definition version for this group.
      */
     inline CreateGroupVersionRequest& WithSubscriptionDefinitionVersionArn(const char* value) { SetSubscriptionDefinitionVersionArn(value); return *this;}
 

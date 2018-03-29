@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * device definition Id
+     * The ID of the device definition.
      */
     inline const Aws::String& GetDeviceDefinitionId() const{ return m_deviceDefinitionId; }
 
     /**
-     * device definition Id
+     * The ID of the device definition.
      */
     inline void SetDeviceDefinitionId(const Aws::String& value) { m_deviceDefinitionIdHasBeenSet = true; m_deviceDefinitionId = value; }
 
     /**
-     * device definition Id
+     * The ID of the device definition.
      */
     inline void SetDeviceDefinitionId(Aws::String&& value) { m_deviceDefinitionIdHasBeenSet = true; m_deviceDefinitionId = std::move(value); }
 
     /**
-     * device definition Id
+     * The ID of the device definition.
      */
     inline void SetDeviceDefinitionId(const char* value) { m_deviceDefinitionIdHasBeenSet = true; m_deviceDefinitionId.assign(value); }
 
     /**
-     * device definition Id
+     * The ID of the device definition.
      */
     inline GetDeviceDefinitionRequest& WithDeviceDefinitionId(const Aws::String& value) { SetDeviceDefinitionId(value); return *this;}
 
     /**
-     * device definition Id
+     * The ID of the device definition.
      */
     inline GetDeviceDefinitionRequest& WithDeviceDefinitionId(Aws::String&& value) { SetDeviceDefinitionId(std::move(value)); return *this;}
 
     /**
-     * device definition Id
+     * The ID of the device definition.
      */
     inline GetDeviceDefinitionRequest& WithDeviceDefinitionId(const char* value) { SetDeviceDefinitionId(value); return *this;}
 

@@ -43,73 +43,73 @@ namespace Model
 
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline GetGroupVersionRequest& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline GetGroupVersionRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline GetGroupVersionRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 
 
     /**
-     * Group version Id
+     * The ID of the group version.
      */
     inline const Aws::String& GetGroupVersionId() const{ return m_groupVersionId; }
 
     /**
-     * Group version Id
+     * The ID of the group version.
      */
     inline void SetGroupVersionId(const Aws::String& value) { m_groupVersionIdHasBeenSet = true; m_groupVersionId = value; }
 
     /**
-     * Group version Id
+     * The ID of the group version.
      */
     inline void SetGroupVersionId(Aws::String&& value) { m_groupVersionIdHasBeenSet = true; m_groupVersionId = std::move(value); }
 
     /**
-     * Group version Id
+     * The ID of the group version.
      */
     inline void SetGroupVersionId(const char* value) { m_groupVersionIdHasBeenSet = true; m_groupVersionId.assign(value); }
 
     /**
-     * Group version Id
+     * The ID of the group version.
      */
     inline GetGroupVersionRequest& WithGroupVersionId(const Aws::String& value) { SetGroupVersionId(value); return *this;}
 
     /**
-     * Group version Id
+     * The ID of the group version.
      */
     inline GetGroupVersionRequest& WithGroupVersionId(Aws::String&& value) { SetGroupVersionId(std::move(value)); return *this;}
 
     /**
-     * Group version Id
+     * The ID of the group version.
      */
     inline GetGroupVersionRequest& WithGroupVersionId(const char* value) { SetGroupVersionId(value); return *this;}
 

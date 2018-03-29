@@ -43,73 +43,73 @@ namespace Model
 
 
     /**
-     * Response Text
+     * A message about the connectivity info update request.
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * Response Text
+     * A message about the connectivity info update request.
      */
     inline void SetMessage(const Aws::String& value) { m_message = value; }
 
     /**
-     * Response Text
+     * A message about the connectivity info update request.
      */
     inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
 
     /**
-     * Response Text
+     * A message about the connectivity info update request.
      */
     inline void SetMessage(const char* value) { m_message.assign(value); }
 
     /**
-     * Response Text
+     * A message about the connectivity info update request.
      */
     inline UpdateConnectivityInfoResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * Response Text
+     * A message about the connectivity info update request.
      */
     inline UpdateConnectivityInfoResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * Response Text
+     * A message about the connectivity info update request.
      */
     inline UpdateConnectivityInfoResult& WithMessage(const char* value) { SetMessage(value); return *this;}
 
 
     /**
-     * New Version
+     * The new version of the connectivity info.
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * New Version
+     * The new version of the connectivity info.
      */
     inline void SetVersion(const Aws::String& value) { m_version = value; }
 
     /**
-     * New Version
+     * The new version of the connectivity info.
      */
     inline void SetVersion(Aws::String&& value) { m_version = std::move(value); }
 
     /**
-     * New Version
+     * The new version of the connectivity info.
      */
     inline void SetVersion(const char* value) { m_version.assign(value); }
 
     /**
-     * New Version
+     * The new version of the connectivity info.
      */
     inline UpdateConnectivityInfoResult& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * New Version
+     * The new version of the connectivity info.
      */
     inline UpdateConnectivityInfoResult& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * New Version
+     * The new version of the connectivity info.
      */
     inline UpdateConnectivityInfoResult& WithVersion(const char* value) { SetVersion(value); return *this;}
 

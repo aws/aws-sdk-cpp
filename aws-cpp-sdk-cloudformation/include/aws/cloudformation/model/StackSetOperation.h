@@ -320,6 +320,84 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack
+     * set operation. </p> <p>Use customized administrator roles to control which users
+     * or groups can manage specific stack sets within the same administrator account.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
+     * Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User
+     * Guide</i>.</p>
+     */
+    inline const Aws::String& GetAdministrationRoleARN() const{ return m_administrationRoleARN; }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack
+     * set operation. </p> <p>Use customized administrator roles to control which users
+     * or groups can manage specific stack sets within the same administrator account.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
+     * Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User
+     * Guide</i>.</p>
+     */
+    inline void SetAdministrationRoleARN(const Aws::String& value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN = value; }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack
+     * set operation. </p> <p>Use customized administrator roles to control which users
+     * or groups can manage specific stack sets within the same administrator account.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
+     * Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User
+     * Guide</i>.</p>
+     */
+    inline void SetAdministrationRoleARN(Aws::String&& value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack
+     * set operation. </p> <p>Use customized administrator roles to control which users
+     * or groups can manage specific stack sets within the same administrator account.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
+     * Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User
+     * Guide</i>.</p>
+     */
+    inline void SetAdministrationRoleARN(const char* value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack
+     * set operation. </p> <p>Use customized administrator roles to control which users
+     * or groups can manage specific stack sets within the same administrator account.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
+     * Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User
+     * Guide</i>.</p>
+     */
+    inline StackSetOperation& WithAdministrationRoleARN(const Aws::String& value) { SetAdministrationRoleARN(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack
+     * set operation. </p> <p>Use customized administrator roles to control which users
+     * or groups can manage specific stack sets within the same administrator account.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
+     * Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User
+     * Guide</i>.</p>
+     */
+    inline StackSetOperation& WithAdministrationRoleARN(Aws::String&& value) { SetAdministrationRoleARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack
+     * set operation. </p> <p>Use customized administrator roles to control which users
+     * or groups can manage specific stack sets within the same administrator account.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
+     * Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User
+     * Guide</i>.</p>
+     */
+    inline StackSetOperation& WithAdministrationRoleARN(const char* value) { SetAdministrationRoleARN(value); return *this;}
+
+
+    /**
      * <p>The time at which the operation was initiated. Note that the creation times
      * for the stack set operation might differ from the creation time of the
      * individual stacks themselves. This is because AWS CloudFormation needs to
@@ -419,6 +497,9 @@ namespace Model
 
     bool m_retainStacks;
     bool m_retainStacksHasBeenSet;
+
+    Aws::String m_administrationRoleARN;
+    bool m_administrationRoleARNHasBeenSet;
 
     Aws::Utils::DateTime m_creationTimestamp;
     bool m_creationTimestampHasBeenSet;

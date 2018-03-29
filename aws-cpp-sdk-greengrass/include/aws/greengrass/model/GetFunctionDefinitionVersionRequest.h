@@ -43,73 +43,73 @@ namespace Model
 
 
     /**
-     * the unique Id of the lambda definition
+     * The ID of the Lambda function definition.
      */
     inline const Aws::String& GetFunctionDefinitionId() const{ return m_functionDefinitionId; }
 
     /**
-     * the unique Id of the lambda definition
+     * The ID of the Lambda function definition.
      */
     inline void SetFunctionDefinitionId(const Aws::String& value) { m_functionDefinitionIdHasBeenSet = true; m_functionDefinitionId = value; }
 
     /**
-     * the unique Id of the lambda definition
+     * The ID of the Lambda function definition.
      */
     inline void SetFunctionDefinitionId(Aws::String&& value) { m_functionDefinitionIdHasBeenSet = true; m_functionDefinitionId = std::move(value); }
 
     /**
-     * the unique Id of the lambda definition
+     * The ID of the Lambda function definition.
      */
     inline void SetFunctionDefinitionId(const char* value) { m_functionDefinitionIdHasBeenSet = true; m_functionDefinitionId.assign(value); }
 
     /**
-     * the unique Id of the lambda definition
+     * The ID of the Lambda function definition.
      */
     inline GetFunctionDefinitionVersionRequest& WithFunctionDefinitionId(const Aws::String& value) { SetFunctionDefinitionId(value); return *this;}
 
     /**
-     * the unique Id of the lambda definition
+     * The ID of the Lambda function definition.
      */
     inline GetFunctionDefinitionVersionRequest& WithFunctionDefinitionId(Aws::String&& value) { SetFunctionDefinitionId(std::move(value)); return *this;}
 
     /**
-     * the unique Id of the lambda definition
+     * The ID of the Lambda function definition.
      */
     inline GetFunctionDefinitionVersionRequest& WithFunctionDefinitionId(const char* value) { SetFunctionDefinitionId(value); return *this;}
 
 
     /**
-     * Function definition version Id
+     * The ID of the function definition version.
      */
     inline const Aws::String& GetFunctionDefinitionVersionId() const{ return m_functionDefinitionVersionId; }
 
     /**
-     * Function definition version Id
+     * The ID of the function definition version.
      */
     inline void SetFunctionDefinitionVersionId(const Aws::String& value) { m_functionDefinitionVersionIdHasBeenSet = true; m_functionDefinitionVersionId = value; }
 
     /**
-     * Function definition version Id
+     * The ID of the function definition version.
      */
     inline void SetFunctionDefinitionVersionId(Aws::String&& value) { m_functionDefinitionVersionIdHasBeenSet = true; m_functionDefinitionVersionId = std::move(value); }
 
     /**
-     * Function definition version Id
+     * The ID of the function definition version.
      */
     inline void SetFunctionDefinitionVersionId(const char* value) { m_functionDefinitionVersionIdHasBeenSet = true; m_functionDefinitionVersionId.assign(value); }
 
     /**
-     * Function definition version Id
+     * The ID of the function definition version.
      */
     inline GetFunctionDefinitionVersionRequest& WithFunctionDefinitionVersionId(const Aws::String& value) { SetFunctionDefinitionVersionId(value); return *this;}
 
     /**
-     * Function definition version Id
+     * The ID of the function definition version.
      */
     inline GetFunctionDefinitionVersionRequest& WithFunctionDefinitionVersionId(Aws::String&& value) { SetFunctionDefinitionVersionId(std::move(value)); return *this;}
 
     /**
-     * Function definition version Id
+     * The ID of the function definition version.
      */
     inline GetFunctionDefinitionVersionRequest& WithFunctionDefinitionVersionId(const char* value) { SetFunctionDefinitionVersionId(value); return *this;}
 

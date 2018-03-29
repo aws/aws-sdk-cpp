@@ -27,19 +27,27 @@
 #include <aws/alexaforbusiness/AlexaForBusinessClient.h>
 #include <aws/alexaforbusiness/AlexaForBusinessEndpoint.h>
 #include <aws/alexaforbusiness/AlexaForBusinessErrorMarshaller.h>
+#include <aws/alexaforbusiness/model/AssociateContactWithAddressBookRequest.h>
 #include <aws/alexaforbusiness/model/AssociateDeviceWithRoomRequest.h>
 #include <aws/alexaforbusiness/model/AssociateSkillGroupWithRoomRequest.h>
+#include <aws/alexaforbusiness/model/CreateAddressBookRequest.h>
+#include <aws/alexaforbusiness/model/CreateContactRequest.h>
 #include <aws/alexaforbusiness/model/CreateProfileRequest.h>
 #include <aws/alexaforbusiness/model/CreateRoomRequest.h>
 #include <aws/alexaforbusiness/model/CreateSkillGroupRequest.h>
 #include <aws/alexaforbusiness/model/CreateUserRequest.h>
+#include <aws/alexaforbusiness/model/DeleteAddressBookRequest.h>
+#include <aws/alexaforbusiness/model/DeleteContactRequest.h>
 #include <aws/alexaforbusiness/model/DeleteProfileRequest.h>
 #include <aws/alexaforbusiness/model/DeleteRoomRequest.h>
 #include <aws/alexaforbusiness/model/DeleteRoomSkillParameterRequest.h>
 #include <aws/alexaforbusiness/model/DeleteSkillGroupRequest.h>
 #include <aws/alexaforbusiness/model/DeleteUserRequest.h>
+#include <aws/alexaforbusiness/model/DisassociateContactFromAddressBookRequest.h>
 #include <aws/alexaforbusiness/model/DisassociateDeviceFromRoomRequest.h>
 #include <aws/alexaforbusiness/model/DisassociateSkillGroupFromRoomRequest.h>
+#include <aws/alexaforbusiness/model/GetAddressBookRequest.h>
+#include <aws/alexaforbusiness/model/GetContactRequest.h>
 #include <aws/alexaforbusiness/model/GetDeviceRequest.h>
 #include <aws/alexaforbusiness/model/GetProfileRequest.h>
 #include <aws/alexaforbusiness/model/GetRoomRequest.h>
@@ -50,6 +58,8 @@
 #include <aws/alexaforbusiness/model/PutRoomSkillParameterRequest.h>
 #include <aws/alexaforbusiness/model/ResolveRoomRequest.h>
 #include <aws/alexaforbusiness/model/RevokeInvitationRequest.h>
+#include <aws/alexaforbusiness/model/SearchAddressBooksRequest.h>
+#include <aws/alexaforbusiness/model/SearchContactsRequest.h>
 #include <aws/alexaforbusiness/model/SearchDevicesRequest.h>
 #include <aws/alexaforbusiness/model/SearchProfilesRequest.h>
 #include <aws/alexaforbusiness/model/SearchRoomsRequest.h>
@@ -59,6 +69,8 @@
 #include <aws/alexaforbusiness/model/StartDeviceSyncRequest.h>
 #include <aws/alexaforbusiness/model/TagResourceRequest.h>
 #include <aws/alexaforbusiness/model/UntagResourceRequest.h>
+#include <aws/alexaforbusiness/model/UpdateAddressBookRequest.h>
+#include <aws/alexaforbusiness/model/UpdateContactRequest.h>
 #include <aws/alexaforbusiness/model/UpdateDeviceRequest.h>
 #include <aws/alexaforbusiness/model/UpdateProfileRequest.h>
 #include <aws/alexaforbusiness/model/UpdateRoomRequest.h>
@@ -126,6 +138,41 @@ void AlexaForBusinessClient::init(const ClientConfiguration& config)
   }
 
   m_uri = ss.str();
+}
+
+AssociateContactWithAddressBookOutcome AlexaForBusinessClient::AssociateContactWithAddressBook(const AssociateContactWithAddressBookRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return AssociateContactWithAddressBookOutcome(AssociateContactWithAddressBookResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AssociateContactWithAddressBookOutcome(outcome.GetError());
+  }
+}
+
+AssociateContactWithAddressBookOutcomeCallable AlexaForBusinessClient::AssociateContactWithAddressBookCallable(const AssociateContactWithAddressBookRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateContactWithAddressBookOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateContactWithAddressBook(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::AssociateContactWithAddressBookAsync(const AssociateContactWithAddressBookRequest& request, const AssociateContactWithAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateContactWithAddressBookAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::AssociateContactWithAddressBookAsyncHelper(const AssociateContactWithAddressBookRequest& request, const AssociateContactWithAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateContactWithAddressBook(request), context);
 }
 
 AssociateDeviceWithRoomOutcome AlexaForBusinessClient::AssociateDeviceWithRoom(const AssociateDeviceWithRoomRequest& request) const
@@ -196,6 +243,76 @@ void AlexaForBusinessClient::AssociateSkillGroupWithRoomAsync(const AssociateSki
 void AlexaForBusinessClient::AssociateSkillGroupWithRoomAsyncHelper(const AssociateSkillGroupWithRoomRequest& request, const AssociateSkillGroupWithRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AssociateSkillGroupWithRoom(request), context);
+}
+
+CreateAddressBookOutcome AlexaForBusinessClient::CreateAddressBook(const CreateAddressBookRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateAddressBookOutcome(CreateAddressBookResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateAddressBookOutcome(outcome.GetError());
+  }
+}
+
+CreateAddressBookOutcomeCallable AlexaForBusinessClient::CreateAddressBookCallable(const CreateAddressBookRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateAddressBookOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAddressBook(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::CreateAddressBookAsync(const CreateAddressBookRequest& request, const CreateAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateAddressBookAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::CreateAddressBookAsyncHelper(const CreateAddressBookRequest& request, const CreateAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateAddressBook(request), context);
+}
+
+CreateContactOutcome AlexaForBusinessClient::CreateContact(const CreateContactRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateContactOutcome(CreateContactResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateContactOutcome(outcome.GetError());
+  }
+}
+
+CreateContactOutcomeCallable AlexaForBusinessClient::CreateContactCallable(const CreateContactRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateContactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateContact(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::CreateContactAsync(const CreateContactRequest& request, const CreateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateContactAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::CreateContactAsyncHelper(const CreateContactRequest& request, const CreateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateContact(request), context);
 }
 
 CreateProfileOutcome AlexaForBusinessClient::CreateProfile(const CreateProfileRequest& request) const
@@ -336,6 +453,76 @@ void AlexaForBusinessClient::CreateUserAsync(const CreateUserRequest& request, c
 void AlexaForBusinessClient::CreateUserAsyncHelper(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateUser(request), context);
+}
+
+DeleteAddressBookOutcome AlexaForBusinessClient::DeleteAddressBook(const DeleteAddressBookRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteAddressBookOutcome(DeleteAddressBookResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteAddressBookOutcome(outcome.GetError());
+  }
+}
+
+DeleteAddressBookOutcomeCallable AlexaForBusinessClient::DeleteAddressBookCallable(const DeleteAddressBookRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAddressBookOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAddressBook(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::DeleteAddressBookAsync(const DeleteAddressBookRequest& request, const DeleteAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAddressBookAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::DeleteAddressBookAsyncHelper(const DeleteAddressBookRequest& request, const DeleteAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAddressBook(request), context);
+}
+
+DeleteContactOutcome AlexaForBusinessClient::DeleteContact(const DeleteContactRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteContactOutcome(DeleteContactResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteContactOutcome(outcome.GetError());
+  }
+}
+
+DeleteContactOutcomeCallable AlexaForBusinessClient::DeleteContactCallable(const DeleteContactRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteContactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteContact(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::DeleteContactAsync(const DeleteContactRequest& request, const DeleteContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteContactAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::DeleteContactAsyncHelper(const DeleteContactRequest& request, const DeleteContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteContact(request), context);
 }
 
 DeleteProfileOutcome AlexaForBusinessClient::DeleteProfile(const DeleteProfileRequest& request) const
@@ -513,6 +700,41 @@ void AlexaForBusinessClient::DeleteUserAsyncHelper(const DeleteUserRequest& requ
   handler(this, request, DeleteUser(request), context);
 }
 
+DisassociateContactFromAddressBookOutcome AlexaForBusinessClient::DisassociateContactFromAddressBook(const DisassociateContactFromAddressBookRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DisassociateContactFromAddressBookOutcome(DisassociateContactFromAddressBookResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DisassociateContactFromAddressBookOutcome(outcome.GetError());
+  }
+}
+
+DisassociateContactFromAddressBookOutcomeCallable AlexaForBusinessClient::DisassociateContactFromAddressBookCallable(const DisassociateContactFromAddressBookRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateContactFromAddressBookOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateContactFromAddressBook(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::DisassociateContactFromAddressBookAsync(const DisassociateContactFromAddressBookRequest& request, const DisassociateContactFromAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateContactFromAddressBookAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::DisassociateContactFromAddressBookAsyncHelper(const DisassociateContactFromAddressBookRequest& request, const DisassociateContactFromAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateContactFromAddressBook(request), context);
+}
+
 DisassociateDeviceFromRoomOutcome AlexaForBusinessClient::DisassociateDeviceFromRoom(const DisassociateDeviceFromRoomRequest& request) const
 {
   Aws::StringStream ss;
@@ -581,6 +803,76 @@ void AlexaForBusinessClient::DisassociateSkillGroupFromRoomAsync(const Disassoci
 void AlexaForBusinessClient::DisassociateSkillGroupFromRoomAsyncHelper(const DisassociateSkillGroupFromRoomRequest& request, const DisassociateSkillGroupFromRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DisassociateSkillGroupFromRoom(request), context);
+}
+
+GetAddressBookOutcome AlexaForBusinessClient::GetAddressBook(const GetAddressBookRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetAddressBookOutcome(GetAddressBookResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetAddressBookOutcome(outcome.GetError());
+  }
+}
+
+GetAddressBookOutcomeCallable AlexaForBusinessClient::GetAddressBookCallable(const GetAddressBookRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAddressBookOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAddressBook(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::GetAddressBookAsync(const GetAddressBookRequest& request, const GetAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAddressBookAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::GetAddressBookAsyncHelper(const GetAddressBookRequest& request, const GetAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAddressBook(request), context);
+}
+
+GetContactOutcome AlexaForBusinessClient::GetContact(const GetContactRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetContactOutcome(GetContactResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetContactOutcome(outcome.GetError());
+  }
+}
+
+GetContactOutcomeCallable AlexaForBusinessClient::GetContactCallable(const GetContactRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetContactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetContact(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::GetContactAsync(const GetContactRequest& request, const GetContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetContactAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::GetContactAsyncHelper(const GetContactRequest& request, const GetContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetContact(request), context);
 }
 
 GetDeviceOutcome AlexaForBusinessClient::GetDevice(const GetDeviceRequest& request) const
@@ -933,6 +1225,76 @@ void AlexaForBusinessClient::RevokeInvitationAsyncHelper(const RevokeInvitationR
   handler(this, request, RevokeInvitation(request), context);
 }
 
+SearchAddressBooksOutcome AlexaForBusinessClient::SearchAddressBooks(const SearchAddressBooksRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return SearchAddressBooksOutcome(SearchAddressBooksResult(outcome.GetResult()));
+  }
+  else
+  {
+    return SearchAddressBooksOutcome(outcome.GetError());
+  }
+}
+
+SearchAddressBooksOutcomeCallable AlexaForBusinessClient::SearchAddressBooksCallable(const SearchAddressBooksRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SearchAddressBooksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchAddressBooks(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::SearchAddressBooksAsync(const SearchAddressBooksRequest& request, const SearchAddressBooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SearchAddressBooksAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::SearchAddressBooksAsyncHelper(const SearchAddressBooksRequest& request, const SearchAddressBooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SearchAddressBooks(request), context);
+}
+
+SearchContactsOutcome AlexaForBusinessClient::SearchContacts(const SearchContactsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return SearchContactsOutcome(SearchContactsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return SearchContactsOutcome(outcome.GetError());
+  }
+}
+
+SearchContactsOutcomeCallable AlexaForBusinessClient::SearchContactsCallable(const SearchContactsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SearchContactsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchContacts(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::SearchContactsAsync(const SearchContactsRequest& request, const SearchContactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SearchContactsAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::SearchContactsAsyncHelper(const SearchContactsRequest& request, const SearchContactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SearchContacts(request), context);
+}
+
 SearchDevicesOutcome AlexaForBusinessClient::SearchDevices(const SearchDevicesRequest& request) const
 {
   Aws::StringStream ss;
@@ -1246,6 +1608,76 @@ void AlexaForBusinessClient::UntagResourceAsync(const UntagResourceRequest& requ
 void AlexaForBusinessClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdateAddressBookOutcome AlexaForBusinessClient::UpdateAddressBook(const UpdateAddressBookRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateAddressBookOutcome(UpdateAddressBookResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateAddressBookOutcome(outcome.GetError());
+  }
+}
+
+UpdateAddressBookOutcomeCallable AlexaForBusinessClient::UpdateAddressBookCallable(const UpdateAddressBookRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAddressBookOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAddressBook(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::UpdateAddressBookAsync(const UpdateAddressBookRequest& request, const UpdateAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAddressBookAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::UpdateAddressBookAsyncHelper(const UpdateAddressBookRequest& request, const UpdateAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateAddressBook(request), context);
+}
+
+UpdateContactOutcome AlexaForBusinessClient::UpdateContact(const UpdateContactRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateContactOutcome(UpdateContactResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateContactOutcome(outcome.GetError());
+  }
+}
+
+UpdateContactOutcomeCallable AlexaForBusinessClient::UpdateContactCallable(const UpdateContactRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateContactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateContact(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::UpdateContactAsync(const UpdateContactRequest& request, const UpdateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateContactAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::UpdateContactAsyncHelper(const UpdateContactRequest& request, const UpdateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateContact(request), context);
 }
 
 UpdateDeviceOutcome AlexaForBusinessClient::UpdateDevice(const UpdateDeviceRequest& request) const

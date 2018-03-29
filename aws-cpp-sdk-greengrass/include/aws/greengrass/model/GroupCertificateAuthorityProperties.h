@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * Information on group certificate authority properties<p><h3>See Also:</h3>   <a
+   * Information about a certificate authority for a group.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GroupCertificateAuthorityProperties">AWS
    * API Reference</a></p>
    */
@@ -47,73 +47,73 @@ namespace Model
 
 
     /**
-     * Arn of the certificate authority for the group.
+     * The ARN of the certificate authority for the group.
      */
     inline const Aws::String& GetGroupCertificateAuthorityArn() const{ return m_groupCertificateAuthorityArn; }
 
     /**
-     * Arn of the certificate authority for the group.
+     * The ARN of the certificate authority for the group.
      */
     inline void SetGroupCertificateAuthorityArn(const Aws::String& value) { m_groupCertificateAuthorityArnHasBeenSet = true; m_groupCertificateAuthorityArn = value; }
 
     /**
-     * Arn of the certificate authority for the group.
+     * The ARN of the certificate authority for the group.
      */
     inline void SetGroupCertificateAuthorityArn(Aws::String&& value) { m_groupCertificateAuthorityArnHasBeenSet = true; m_groupCertificateAuthorityArn = std::move(value); }
 
     /**
-     * Arn of the certificate authority for the group.
+     * The ARN of the certificate authority for the group.
      */
     inline void SetGroupCertificateAuthorityArn(const char* value) { m_groupCertificateAuthorityArnHasBeenSet = true; m_groupCertificateAuthorityArn.assign(value); }
 
     /**
-     * Arn of the certificate authority for the group.
+     * The ARN of the certificate authority for the group.
      */
     inline GroupCertificateAuthorityProperties& WithGroupCertificateAuthorityArn(const Aws::String& value) { SetGroupCertificateAuthorityArn(value); return *this;}
 
     /**
-     * Arn of the certificate authority for the group.
+     * The ARN of the certificate authority for the group.
      */
     inline GroupCertificateAuthorityProperties& WithGroupCertificateAuthorityArn(Aws::String&& value) { SetGroupCertificateAuthorityArn(std::move(value)); return *this;}
 
     /**
-     * Arn of the certificate authority for the group.
+     * The ARN of the certificate authority for the group.
      */
     inline GroupCertificateAuthorityProperties& WithGroupCertificateAuthorityArn(const char* value) { SetGroupCertificateAuthorityArn(value); return *this;}
 
 
     /**
-     * Id of the certificate authority for the group.
+     * The ID of the certificate authority for the group.
      */
     inline const Aws::String& GetGroupCertificateAuthorityId() const{ return m_groupCertificateAuthorityId; }
 
     /**
-     * Id of the certificate authority for the group.
+     * The ID of the certificate authority for the group.
      */
     inline void SetGroupCertificateAuthorityId(const Aws::String& value) { m_groupCertificateAuthorityIdHasBeenSet = true; m_groupCertificateAuthorityId = value; }
 
     /**
-     * Id of the certificate authority for the group.
+     * The ID of the certificate authority for the group.
      */
     inline void SetGroupCertificateAuthorityId(Aws::String&& value) { m_groupCertificateAuthorityIdHasBeenSet = true; m_groupCertificateAuthorityId = std::move(value); }
 
     /**
-     * Id of the certificate authority for the group.
+     * The ID of the certificate authority for the group.
      */
     inline void SetGroupCertificateAuthorityId(const char* value) { m_groupCertificateAuthorityIdHasBeenSet = true; m_groupCertificateAuthorityId.assign(value); }
 
     /**
-     * Id of the certificate authority for the group.
+     * The ID of the certificate authority for the group.
      */
     inline GroupCertificateAuthorityProperties& WithGroupCertificateAuthorityId(const Aws::String& value) { SetGroupCertificateAuthorityId(value); return *this;}
 
     /**
-     * Id of the certificate authority for the group.
+     * The ID of the certificate authority for the group.
      */
     inline GroupCertificateAuthorityProperties& WithGroupCertificateAuthorityId(Aws::String&& value) { SetGroupCertificateAuthorityId(std::move(value)); return *this;}
 
     /**
-     * Id of the certificate authority for the group.
+     * The ID of the certificate authority for the group.
      */
     inline GroupCertificateAuthorityProperties& WithGroupCertificateAuthorityId(const char* value) { SetGroupCertificateAuthorityId(value); return *this;}
 

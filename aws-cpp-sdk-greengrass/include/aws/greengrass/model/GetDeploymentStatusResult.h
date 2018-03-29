@@ -46,37 +46,37 @@ namespace Model
 
 
     /**
-     * Status of the deployment.
+     * The status of the deployment.
      */
     inline const Aws::String& GetDeploymentStatus() const{ return m_deploymentStatus; }
 
     /**
-     * Status of the deployment.
+     * The status of the deployment.
      */
     inline void SetDeploymentStatus(const Aws::String& value) { m_deploymentStatus = value; }
 
     /**
-     * Status of the deployment.
+     * The status of the deployment.
      */
     inline void SetDeploymentStatus(Aws::String&& value) { m_deploymentStatus = std::move(value); }
 
     /**
-     * Status of the deployment.
+     * The status of the deployment.
      */
     inline void SetDeploymentStatus(const char* value) { m_deploymentStatus.assign(value); }
 
     /**
-     * Status of the deployment.
+     * The status of the deployment.
      */
     inline GetDeploymentStatusResult& WithDeploymentStatus(const Aws::String& value) { SetDeploymentStatus(value); return *this;}
 
     /**
-     * Status of the deployment.
+     * The status of the deployment.
      */
     inline GetDeploymentStatusResult& WithDeploymentStatus(Aws::String&& value) { SetDeploymentStatus(std::move(value)); return *this;}
 
     /**
-     * Status of the deployment.
+     * The status of the deployment.
      */
     inline GetDeploymentStatusResult& WithDeploymentStatus(const char* value) { SetDeploymentStatus(value); return *this;}
 
@@ -108,109 +108,116 @@ namespace Model
 
 
     /**
-     * The error Details
+     * Error details
      */
     inline const Aws::Vector<ErrorDetail>& GetErrorDetails() const{ return m_errorDetails; }
 
     /**
-     * The error Details
+     * Error details
      */
     inline void SetErrorDetails(const Aws::Vector<ErrorDetail>& value) { m_errorDetails = value; }
 
     /**
-     * The error Details
+     * Error details
      */
     inline void SetErrorDetails(Aws::Vector<ErrorDetail>&& value) { m_errorDetails = std::move(value); }
 
     /**
-     * The error Details
+     * Error details
      */
     inline GetDeploymentStatusResult& WithErrorDetails(const Aws::Vector<ErrorDetail>& value) { SetErrorDetails(value); return *this;}
 
     /**
-     * The error Details
+     * Error details
      */
     inline GetDeploymentStatusResult& WithErrorDetails(Aws::Vector<ErrorDetail>&& value) { SetErrorDetails(std::move(value)); return *this;}
 
     /**
-     * The error Details
+     * Error details
      */
     inline GetDeploymentStatusResult& AddErrorDetails(const ErrorDetail& value) { m_errorDetails.push_back(value); return *this; }
 
     /**
-     * The error Details
+     * Error details
      */
     inline GetDeploymentStatusResult& AddErrorDetails(ErrorDetail&& value) { m_errorDetails.push_back(std::move(value)); return *this; }
 
 
     /**
-     * Error Message
+     * Error message
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
 
     /**
-     * Error Message
+     * Error message
      */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessage = value; }
 
     /**
-     * Error Message
+     * Error message
      */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessage = std::move(value); }
 
     /**
-     * Error Message
+     * Error message
      */
     inline void SetErrorMessage(const char* value) { m_errorMessage.assign(value); }
 
     /**
-     * Error Message
+     * Error message
      */
     inline GetDeploymentStatusResult& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
 
     /**
-     * Error Message
+     * Error message
      */
     inline GetDeploymentStatusResult& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
 
     /**
-     * Error Message
+     * Error message
      */
     inline GetDeploymentStatusResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 
 
     /**
-     * Last time the deployment status was updated.
+     * The time, in milliseconds since the epoch, when the deployment status was
+     * updated.
      */
     inline const Aws::String& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * Last time the deployment status was updated.
+     * The time, in milliseconds since the epoch, when the deployment status was
+     * updated.
      */
     inline void SetUpdatedAt(const Aws::String& value) { m_updatedAt = value; }
 
     /**
-     * Last time the deployment status was updated.
+     * The time, in milliseconds since the epoch, when the deployment status was
+     * updated.
      */
     inline void SetUpdatedAt(Aws::String&& value) { m_updatedAt = std::move(value); }
 
     /**
-     * Last time the deployment status was updated.
+     * The time, in milliseconds since the epoch, when the deployment status was
+     * updated.
      */
     inline void SetUpdatedAt(const char* value) { m_updatedAt.assign(value); }
 
     /**
-     * Last time the deployment status was updated.
+     * The time, in milliseconds since the epoch, when the deployment status was
+     * updated.
      */
     inline GetDeploymentStatusResult& WithUpdatedAt(const Aws::String& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * Last time the deployment status was updated.
+     * The time, in milliseconds since the epoch, when the deployment status was
+     * updated.
      */
     inline GetDeploymentStatusResult& WithUpdatedAt(Aws::String&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
     /**
-     * Last time the deployment status was updated.
+     * The time, in milliseconds since the epoch, when the deployment status was
+     * updated.
      */
     inline GetDeploymentStatusResult& WithUpdatedAt(const char* value) { SetUpdatedAt(value); return *this;}
 

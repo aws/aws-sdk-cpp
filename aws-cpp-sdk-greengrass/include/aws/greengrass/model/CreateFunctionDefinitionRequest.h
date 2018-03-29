@@ -46,99 +46,99 @@ namespace Model
 
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline const Aws::String& GetAmznClientToken() const{ return m_amznClientToken; }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline void SetAmznClientToken(const Aws::String& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = value; }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline void SetAmznClientToken(Aws::String&& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = std::move(value); }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline void SetAmznClientToken(const char* value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken.assign(value); }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline CreateFunctionDefinitionRequest& WithAmznClientToken(const Aws::String& value) { SetAmznClientToken(value); return *this;}
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline CreateFunctionDefinitionRequest& WithAmznClientToken(Aws::String&& value) { SetAmznClientToken(std::move(value)); return *this;}
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline CreateFunctionDefinitionRequest& WithAmznClientToken(const char* value) { SetAmznClientToken(value); return *this;}
 
 
     /**
-     * Information on the initial version
+     * Information about the initial version of the function definition.
      */
     inline const FunctionDefinitionVersion& GetInitialVersion() const{ return m_initialVersion; }
 
     /**
-     * Information on the initial version
+     * Information about the initial version of the function definition.
      */
     inline void SetInitialVersion(const FunctionDefinitionVersion& value) { m_initialVersionHasBeenSet = true; m_initialVersion = value; }
 
     /**
-     * Information on the initial version
+     * Information about the initial version of the function definition.
      */
     inline void SetInitialVersion(FunctionDefinitionVersion&& value) { m_initialVersionHasBeenSet = true; m_initialVersion = std::move(value); }
 
     /**
-     * Information on the initial version
+     * Information about the initial version of the function definition.
      */
     inline CreateFunctionDefinitionRequest& WithInitialVersion(const FunctionDefinitionVersion& value) { SetInitialVersion(value); return *this;}
 
     /**
-     * Information on the initial version
+     * Information about the initial version of the function definition.
      */
     inline CreateFunctionDefinitionRequest& WithInitialVersion(FunctionDefinitionVersion&& value) { SetInitialVersion(std::move(value)); return *this;}
 
 
     /**
-     * name of the function definition
+     * The name of the function definition.
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * name of the function definition
+     * The name of the function definition.
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * name of the function definition
+     * The name of the function definition.
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * name of the function definition
+     * The name of the function definition.
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * name of the function definition
+     * The name of the function definition.
      */
     inline CreateFunctionDefinitionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * name of the function definition
+     * The name of the function definition.
      */
     inline CreateFunctionDefinitionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * name of the function definition
+     * The name of the function definition.
      */
     inline CreateFunctionDefinitionRequest& WithName(const char* value) { SetName(value); return *this;}
 

@@ -44,37 +44,37 @@ namespace Model
 
 
     /**
-     * List of certificate authorities associated with the group.
+     * A list of certificate authorities associated with the group.
      */
     inline const Aws::Vector<GroupCertificateAuthorityProperties>& GetGroupCertificateAuthorities() const{ return m_groupCertificateAuthorities; }
 
     /**
-     * List of certificate authorities associated with the group.
+     * A list of certificate authorities associated with the group.
      */
     inline void SetGroupCertificateAuthorities(const Aws::Vector<GroupCertificateAuthorityProperties>& value) { m_groupCertificateAuthorities = value; }
 
     /**
-     * List of certificate authorities associated with the group.
+     * A list of certificate authorities associated with the group.
      */
     inline void SetGroupCertificateAuthorities(Aws::Vector<GroupCertificateAuthorityProperties>&& value) { m_groupCertificateAuthorities = std::move(value); }
 
     /**
-     * List of certificate authorities associated with the group.
+     * A list of certificate authorities associated with the group.
      */
     inline ListGroupCertificateAuthoritiesResult& WithGroupCertificateAuthorities(const Aws::Vector<GroupCertificateAuthorityProperties>& value) { SetGroupCertificateAuthorities(value); return *this;}
 
     /**
-     * List of certificate authorities associated with the group.
+     * A list of certificate authorities associated with the group.
      */
     inline ListGroupCertificateAuthoritiesResult& WithGroupCertificateAuthorities(Aws::Vector<GroupCertificateAuthorityProperties>&& value) { SetGroupCertificateAuthorities(std::move(value)); return *this;}
 
     /**
-     * List of certificate authorities associated with the group.
+     * A list of certificate authorities associated with the group.
      */
     inline ListGroupCertificateAuthoritiesResult& AddGroupCertificateAuthorities(const GroupCertificateAuthorityProperties& value) { m_groupCertificateAuthorities.push_back(value); return *this; }
 
     /**
-     * List of certificate authorities associated with the group.
+     * A list of certificate authorities associated with the group.
      */
     inline ListGroupCertificateAuthoritiesResult& AddGroupCertificateAuthorities(GroupCertificateAuthorityProperties&& value) { m_groupCertificateAuthorities.push_back(std::move(value)); return *this; }
 

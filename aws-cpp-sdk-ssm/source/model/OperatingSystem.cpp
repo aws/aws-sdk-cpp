@@ -35,6 +35,7 @@ namespace Aws
         static const int UBUNTU_HASH = HashingUtils::HashString("UBUNTU");
         static const int REDHAT_ENTERPRISE_LINUX_HASH = HashingUtils::HashString("REDHAT_ENTERPRISE_LINUX");
         static const int SUSE_HASH = HashingUtils::HashString("SUSE");
+        static const int CENTOS_HASH = HashingUtils::HashString("CENTOS");
 
 
         OperatingSystem GetOperatingSystemForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return OperatingSystem::SUSE;
           }
+          else if (hashCode == CENTOS_HASH)
+          {
+            return OperatingSystem::CENTOS;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -84,6 +89,8 @@ namespace Aws
             return "REDHAT_ENTERPRISE_LINUX";
           case OperatingSystem::SUSE:
             return "SUSE";
+          case OperatingSystem::CENTOS:
+            return "CENTOS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

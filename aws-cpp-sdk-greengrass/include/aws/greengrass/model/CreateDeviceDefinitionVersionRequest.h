@@ -47,109 +47,109 @@ namespace Model
 
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline const Aws::String& GetAmznClientToken() const{ return m_amznClientToken; }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline void SetAmznClientToken(const Aws::String& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = value; }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline void SetAmznClientToken(Aws::String&& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = std::move(value); }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline void SetAmznClientToken(const char* value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken.assign(value); }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline CreateDeviceDefinitionVersionRequest& WithAmznClientToken(const Aws::String& value) { SetAmznClientToken(value); return *this;}
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline CreateDeviceDefinitionVersionRequest& WithAmznClientToken(Aws::String&& value) { SetAmznClientToken(std::move(value)); return *this;}
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline CreateDeviceDefinitionVersionRequest& WithAmznClientToken(const char* value) { SetAmznClientToken(value); return *this;}
 
 
     /**
-     * device definition Id
+     * The ID of the device definition.
      */
     inline const Aws::String& GetDeviceDefinitionId() const{ return m_deviceDefinitionId; }
 
     /**
-     * device definition Id
+     * The ID of the device definition.
      */
     inline void SetDeviceDefinitionId(const Aws::String& value) { m_deviceDefinitionIdHasBeenSet = true; m_deviceDefinitionId = value; }
 
     /**
-     * device definition Id
+     * The ID of the device definition.
      */
     inline void SetDeviceDefinitionId(Aws::String&& value) { m_deviceDefinitionIdHasBeenSet = true; m_deviceDefinitionId = std::move(value); }
 
     /**
-     * device definition Id
+     * The ID of the device definition.
      */
     inline void SetDeviceDefinitionId(const char* value) { m_deviceDefinitionIdHasBeenSet = true; m_deviceDefinitionId.assign(value); }
 
     /**
-     * device definition Id
+     * The ID of the device definition.
      */
     inline CreateDeviceDefinitionVersionRequest& WithDeviceDefinitionId(const Aws::String& value) { SetDeviceDefinitionId(value); return *this;}
 
     /**
-     * device definition Id
+     * The ID of the device definition.
      */
     inline CreateDeviceDefinitionVersionRequest& WithDeviceDefinitionId(Aws::String&& value) { SetDeviceDefinitionId(std::move(value)); return *this;}
 
     /**
-     * device definition Id
+     * The ID of the device definition.
      */
     inline CreateDeviceDefinitionVersionRequest& WithDeviceDefinitionId(const char* value) { SetDeviceDefinitionId(value); return *this;}
 
 
     /**
-     * Devices in the definition version.
+     * A list of devices in the definition version.
      */
     inline const Aws::Vector<Device>& GetDevices() const{ return m_devices; }
 
     /**
-     * Devices in the definition version.
+     * A list of devices in the definition version.
      */
     inline void SetDevices(const Aws::Vector<Device>& value) { m_devicesHasBeenSet = true; m_devices = value; }
 
     /**
-     * Devices in the definition version.
+     * A list of devices in the definition version.
      */
     inline void SetDevices(Aws::Vector<Device>&& value) { m_devicesHasBeenSet = true; m_devices = std::move(value); }
 
     /**
-     * Devices in the definition version.
+     * A list of devices in the definition version.
      */
     inline CreateDeviceDefinitionVersionRequest& WithDevices(const Aws::Vector<Device>& value) { SetDevices(value); return *this;}
 
     /**
-     * Devices in the definition version.
+     * A list of devices in the definition version.
      */
     inline CreateDeviceDefinitionVersionRequest& WithDevices(Aws::Vector<Device>&& value) { SetDevices(std::move(value)); return *this;}
 
     /**
-     * Devices in the definition version.
+     * A list of devices in the definition version.
      */
     inline CreateDeviceDefinitionVersionRequest& AddDevices(const Device& value) { m_devicesHasBeenSet = true; m_devices.push_back(value); return *this; }
 
     /**
-     * Devices in the definition version.
+     * A list of devices in the definition version.
      */
     inline CreateDeviceDefinitionVersionRequest& AddDevices(Device&& value) { m_devicesHasBeenSet = true; m_devices.push_back(std::move(value)); return *this; }
 

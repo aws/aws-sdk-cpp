@@ -43,73 +43,73 @@ namespace Model
 
 
     /**
-     * certificate authority Id
+     * The ID of the certificate authority.
      */
     inline const Aws::String& GetCertificateAuthorityId() const{ return m_certificateAuthorityId; }
 
     /**
-     * certificate authority Id
+     * The ID of the certificate authority.
      */
     inline void SetCertificateAuthorityId(const Aws::String& value) { m_certificateAuthorityIdHasBeenSet = true; m_certificateAuthorityId = value; }
 
     /**
-     * certificate authority Id
+     * The ID of the certificate authority.
      */
     inline void SetCertificateAuthorityId(Aws::String&& value) { m_certificateAuthorityIdHasBeenSet = true; m_certificateAuthorityId = std::move(value); }
 
     /**
-     * certificate authority Id
+     * The ID of the certificate authority.
      */
     inline void SetCertificateAuthorityId(const char* value) { m_certificateAuthorityIdHasBeenSet = true; m_certificateAuthorityId.assign(value); }
 
     /**
-     * certificate authority Id
+     * The ID of the certificate authority.
      */
     inline GetGroupCertificateAuthorityRequest& WithCertificateAuthorityId(const Aws::String& value) { SetCertificateAuthorityId(value); return *this;}
 
     /**
-     * certificate authority Id
+     * The ID of the certificate authority.
      */
     inline GetGroupCertificateAuthorityRequest& WithCertificateAuthorityId(Aws::String&& value) { SetCertificateAuthorityId(std::move(value)); return *this;}
 
     /**
-     * certificate authority Id
+     * The ID of the certificate authority.
      */
     inline GetGroupCertificateAuthorityRequest& WithCertificateAuthorityId(const char* value) { SetCertificateAuthorityId(value); return *this;}
 
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline GetGroupCertificateAuthorityRequest& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline GetGroupCertificateAuthorityRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline GetGroupCertificateAuthorityRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 

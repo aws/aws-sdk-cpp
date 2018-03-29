@@ -44,171 +44,171 @@ namespace Model
 
 
     /**
-     * Arn of the group version.
+     * The ARN of the group version.
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * Arn of the group version.
+     * The ARN of the group version.
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * Arn of the group version.
+     * The ARN of the group version.
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * Arn of the group version.
+     * The ARN of the group version.
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * Arn of the group version.
+     * The ARN of the group version.
      */
     inline GetGroupVersionResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * Arn of the group version.
+     * The ARN of the group version.
      */
     inline GetGroupVersionResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * Arn of the group version.
+     * The ARN of the group version.
      */
     inline GetGroupVersionResult& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * Timestamp when the group version was created.
+     * The time, in milliseconds since the epoch, when the group version was created.
      */
     inline const Aws::String& GetCreationTimestamp() const{ return m_creationTimestamp; }
 
     /**
-     * Timestamp when the group version was created.
+     * The time, in milliseconds since the epoch, when the group version was created.
      */
     inline void SetCreationTimestamp(const Aws::String& value) { m_creationTimestamp = value; }
 
     /**
-     * Timestamp when the group version was created.
+     * The time, in milliseconds since the epoch, when the group version was created.
      */
     inline void SetCreationTimestamp(Aws::String&& value) { m_creationTimestamp = std::move(value); }
 
     /**
-     * Timestamp when the group version was created.
+     * The time, in milliseconds since the epoch, when the group version was created.
      */
     inline void SetCreationTimestamp(const char* value) { m_creationTimestamp.assign(value); }
 
     /**
-     * Timestamp when the group version was created.
+     * The time, in milliseconds since the epoch, when the group version was created.
      */
     inline GetGroupVersionResult& WithCreationTimestamp(const Aws::String& value) { SetCreationTimestamp(value); return *this;}
 
     /**
-     * Timestamp when the group version was created.
+     * The time, in milliseconds since the epoch, when the group version was created.
      */
     inline GetGroupVersionResult& WithCreationTimestamp(Aws::String&& value) { SetCreationTimestamp(std::move(value)); return *this;}
 
     /**
-     * Timestamp when the group version was created.
+     * The time, in milliseconds since the epoch, when the group version was created.
      */
     inline GetGroupVersionResult& WithCreationTimestamp(const char* value) { SetCreationTimestamp(value); return *this;}
 
 
     /**
-     * Information on the definition
+     * Information about the group version definition.
      */
     inline const GroupVersion& GetDefinition() const{ return m_definition; }
 
     /**
-     * Information on the definition
+     * Information about the group version definition.
      */
     inline void SetDefinition(const GroupVersion& value) { m_definition = value; }
 
     /**
-     * Information on the definition
+     * Information about the group version definition.
      */
     inline void SetDefinition(GroupVersion&& value) { m_definition = std::move(value); }
 
     /**
-     * Information on the definition
+     * Information about the group version definition.
      */
     inline GetGroupVersionResult& WithDefinition(const GroupVersion& value) { SetDefinition(value); return *this;}
 
     /**
-     * Information on the definition
+     * Information about the group version definition.
      */
     inline GetGroupVersionResult& WithDefinition(GroupVersion&& value) { SetDefinition(std::move(value)); return *this;}
 
 
     /**
-     * Id of the group version.
+     * The ID of the group version.
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * Id of the group version.
+     * The ID of the group version.
      */
     inline void SetId(const Aws::String& value) { m_id = value; }
 
     /**
-     * Id of the group version.
+     * The ID of the group version.
      */
     inline void SetId(Aws::String&& value) { m_id = std::move(value); }
 
     /**
-     * Id of the group version.
+     * The ID of the group version.
      */
     inline void SetId(const char* value) { m_id.assign(value); }
 
     /**
-     * Id of the group version.
+     * The ID of the group version.
      */
     inline GetGroupVersionResult& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * Id of the group version.
+     * The ID of the group version.
      */
     inline GetGroupVersionResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * Id of the group version.
+     * The ID of the group version.
      */
     inline GetGroupVersionResult& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * Unique Id for a version of the Group.
+     * The unique ID for the version of the group.
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * Unique Id for a version of the Group.
+     * The unique ID for the version of the group.
      */
     inline void SetVersion(const Aws::String& value) { m_version = value; }
 
     /**
-     * Unique Id for a version of the Group.
+     * The unique ID for the version of the group.
      */
     inline void SetVersion(Aws::String&& value) { m_version = std::move(value); }
 
     /**
-     * Unique Id for a version of the Group.
+     * The unique ID for the version of the group.
      */
     inline void SetVersion(const char* value) { m_version.assign(value); }
 
     /**
-     * Unique Id for a version of the Group.
+     * The unique ID for the version of the group.
      */
     inline GetGroupVersionResult& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * Unique Id for a version of the Group.
+     * The unique ID for the version of the group.
      */
     inline GetGroupVersionResult& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * Unique Id for a version of the Group.
+     * The unique ID for the version of the group.
      */
     inline GetGroupVersionResult& WithVersion(const char* value) { SetVersion(value); return *this;}
 

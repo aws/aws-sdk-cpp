@@ -47,109 +47,109 @@ namespace Model
 
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline const Aws::String& GetAmznClientToken() const{ return m_amznClientToken; }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline void SetAmznClientToken(const Aws::String& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = value; }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline void SetAmznClientToken(Aws::String&& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = std::move(value); }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline void SetAmznClientToken(const char* value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken.assign(value); }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline CreateLoggerDefinitionVersionRequest& WithAmznClientToken(const Aws::String& value) { SetAmznClientToken(value); return *this;}
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline CreateLoggerDefinitionVersionRequest& WithAmznClientToken(Aws::String&& value) { SetAmznClientToken(std::move(value)); return *this;}
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline CreateLoggerDefinitionVersionRequest& WithAmznClientToken(const char* value) { SetAmznClientToken(value); return *this;}
 
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      */
     inline const Aws::String& GetLoggerDefinitionId() const{ return m_loggerDefinitionId; }
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      */
     inline void SetLoggerDefinitionId(const Aws::String& value) { m_loggerDefinitionIdHasBeenSet = true; m_loggerDefinitionId = value; }
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      */
     inline void SetLoggerDefinitionId(Aws::String&& value) { m_loggerDefinitionIdHasBeenSet = true; m_loggerDefinitionId = std::move(value); }
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      */
     inline void SetLoggerDefinitionId(const char* value) { m_loggerDefinitionIdHasBeenSet = true; m_loggerDefinitionId.assign(value); }
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      */
     inline CreateLoggerDefinitionVersionRequest& WithLoggerDefinitionId(const Aws::String& value) { SetLoggerDefinitionId(value); return *this;}
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      */
     inline CreateLoggerDefinitionVersionRequest& WithLoggerDefinitionId(Aws::String&& value) { SetLoggerDefinitionId(std::move(value)); return *this;}
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      */
     inline CreateLoggerDefinitionVersionRequest& WithLoggerDefinitionId(const char* value) { SetLoggerDefinitionId(value); return *this;}
 
 
     /**
-     * List of loggers.
+     * A list of loggers.
      */
     inline const Aws::Vector<Logger>& GetLoggers() const{ return m_loggers; }
 
     /**
-     * List of loggers.
+     * A list of loggers.
      */
     inline void SetLoggers(const Aws::Vector<Logger>& value) { m_loggersHasBeenSet = true; m_loggers = value; }
 
     /**
-     * List of loggers.
+     * A list of loggers.
      */
     inline void SetLoggers(Aws::Vector<Logger>&& value) { m_loggersHasBeenSet = true; m_loggers = std::move(value); }
 
     /**
-     * List of loggers.
+     * A list of loggers.
      */
     inline CreateLoggerDefinitionVersionRequest& WithLoggers(const Aws::Vector<Logger>& value) { SetLoggers(value); return *this;}
 
     /**
-     * List of loggers.
+     * A list of loggers.
      */
     inline CreateLoggerDefinitionVersionRequest& WithLoggers(Aws::Vector<Logger>&& value) { SetLoggers(std::move(value)); return *this;}
 
     /**
-     * List of loggers.
+     * A list of loggers.
      */
     inline CreateLoggerDefinitionVersionRequest& AddLoggers(const Logger& value) { m_loggersHasBeenSet = true; m_loggers.push_back(value); return *this; }
 
     /**
-     * List of loggers.
+     * A list of loggers.
      */
     inline CreateLoggerDefinitionVersionRequest& AddLoggers(Logger&& value) { m_loggersHasBeenSet = true; m_loggers.push_back(std::move(value)); return *this; }
 

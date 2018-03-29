@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * Resource definition Id.
+     * The ID of the resource definition.
      */
     inline const Aws::String& GetResourceDefinitionId() const{ return m_resourceDefinitionId; }
 
     /**
-     * Resource definition Id.
+     * The ID of the resource definition.
      */
     inline void SetResourceDefinitionId(const Aws::String& value) { m_resourceDefinitionIdHasBeenSet = true; m_resourceDefinitionId = value; }
 
     /**
-     * Resource definition Id.
+     * The ID of the resource definition.
      */
     inline void SetResourceDefinitionId(Aws::String&& value) { m_resourceDefinitionIdHasBeenSet = true; m_resourceDefinitionId = std::move(value); }
 
     /**
-     * Resource definition Id.
+     * The ID of the resource definition.
      */
     inline void SetResourceDefinitionId(const char* value) { m_resourceDefinitionIdHasBeenSet = true; m_resourceDefinitionId.assign(value); }
 
     /**
-     * Resource definition Id.
+     * The ID of the resource definition.
      */
     inline DeleteResourceDefinitionRequest& WithResourceDefinitionId(const Aws::String& value) { SetResourceDefinitionId(value); return *this;}
 
     /**
-     * Resource definition Id.
+     * The ID of the resource definition.
      */
     inline DeleteResourceDefinitionRequest& WithResourceDefinitionId(Aws::String&& value) { SetResourceDefinitionId(std::move(value)); return *this;}
 
     /**
-     * Resource definition Id.
+     * The ID of the resource definition.
      */
     inline DeleteResourceDefinitionRequest& WithResourceDefinitionId(const char* value) { SetResourceDefinitionId(value); return *this;}
 

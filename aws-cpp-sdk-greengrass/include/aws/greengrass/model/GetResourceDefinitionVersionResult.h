@@ -80,135 +80,142 @@ namespace Model
 
 
     /**
-     * Timestamp of when the resource definition version was created.
+     * The time, in milliseconds since the epoch, when the resource definition version
+     * was created.
      */
     inline const Aws::String& GetCreationTimestamp() const{ return m_creationTimestamp; }
 
     /**
-     * Timestamp of when the resource definition version was created.
+     * The time, in milliseconds since the epoch, when the resource definition version
+     * was created.
      */
     inline void SetCreationTimestamp(const Aws::String& value) { m_creationTimestamp = value; }
 
     /**
-     * Timestamp of when the resource definition version was created.
+     * The time, in milliseconds since the epoch, when the resource definition version
+     * was created.
      */
     inline void SetCreationTimestamp(Aws::String&& value) { m_creationTimestamp = std::move(value); }
 
     /**
-     * Timestamp of when the resource definition version was created.
+     * The time, in milliseconds since the epoch, when the resource definition version
+     * was created.
      */
     inline void SetCreationTimestamp(const char* value) { m_creationTimestamp.assign(value); }
 
     /**
-     * Timestamp of when the resource definition version was created.
+     * The time, in milliseconds since the epoch, when the resource definition version
+     * was created.
      */
     inline GetResourceDefinitionVersionResult& WithCreationTimestamp(const Aws::String& value) { SetCreationTimestamp(value); return *this;}
 
     /**
-     * Timestamp of when the resource definition version was created.
+     * The time, in milliseconds since the epoch, when the resource definition version
+     * was created.
      */
     inline GetResourceDefinitionVersionResult& WithCreationTimestamp(Aws::String&& value) { SetCreationTimestamp(std::move(value)); return *this;}
 
     /**
-     * Timestamp of when the resource definition version was created.
+     * The time, in milliseconds since the epoch, when the resource definition version
+     * was created.
      */
     inline GetResourceDefinitionVersionResult& WithCreationTimestamp(const char* value) { SetCreationTimestamp(value); return *this;}
 
 
     /**
-     * Information on definition.
+     * Information about the definition.
      */
     inline const ResourceDefinitionVersion& GetDefinition() const{ return m_definition; }
 
     /**
-     * Information on definition.
+     * Information about the definition.
      */
     inline void SetDefinition(const ResourceDefinitionVersion& value) { m_definition = value; }
 
     /**
-     * Information on definition.
+     * Information about the definition.
      */
     inline void SetDefinition(ResourceDefinitionVersion&& value) { m_definition = std::move(value); }
 
     /**
-     * Information on definition.
+     * Information about the definition.
      */
     inline GetResourceDefinitionVersionResult& WithDefinition(const ResourceDefinitionVersion& value) { SetDefinition(value); return *this;}
 
     /**
-     * Information on definition.
+     * Information about the definition.
      */
     inline GetResourceDefinitionVersionResult& WithDefinition(ResourceDefinitionVersion&& value) { SetDefinition(std::move(value)); return *this;}
 
 
     /**
-     * Id of the resource definition the version belongs to.
+     * The ID of the resource definition version.
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * Id of the resource definition the version belongs to.
+     * The ID of the resource definition version.
      */
     inline void SetId(const Aws::String& value) { m_id = value; }
 
     /**
-     * Id of the resource definition the version belongs to.
+     * The ID of the resource definition version.
      */
     inline void SetId(Aws::String&& value) { m_id = std::move(value); }
 
     /**
-     * Id of the resource definition the version belongs to.
+     * The ID of the resource definition version.
      */
     inline void SetId(const char* value) { m_id.assign(value); }
 
     /**
-     * Id of the resource definition the version belongs to.
+     * The ID of the resource definition version.
      */
     inline GetResourceDefinitionVersionResult& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * Id of the resource definition the version belongs to.
+     * The ID of the resource definition version.
      */
     inline GetResourceDefinitionVersionResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * Id of the resource definition the version belongs to.
+     * The ID of the resource definition version.
      */
     inline GetResourceDefinitionVersionResult& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * Version of the resource definition version.
+     * The version of the resource definition version.
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * Version of the resource definition version.
+     * The version of the resource definition version.
      */
     inline void SetVersion(const Aws::String& value) { m_version = value; }
 
     /**
-     * Version of the resource definition version.
+     * The version of the resource definition version.
      */
     inline void SetVersion(Aws::String&& value) { m_version = std::move(value); }
 
     /**
-     * Version of the resource definition version.
+     * The version of the resource definition version.
      */
     inline void SetVersion(const char* value) { m_version.assign(value); }
 
     /**
-     * Version of the resource definition version.
+     * The version of the resource definition version.
      */
     inline GetResourceDefinitionVersionResult& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * Version of the resource definition version.
+     * The version of the resource definition version.
      */
     inline GetResourceDefinitionVersionResult& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * Version of the resource definition version.
+     * The version of the resource definition version.
      */
     inline GetResourceDefinitionVersionResult& WithVersion(const char* value) { SetVersion(value); return *this;}
 

@@ -43,73 +43,73 @@ namespace Model
 
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      */
     inline const Aws::String& GetLoggerDefinitionId() const{ return m_loggerDefinitionId; }
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      */
     inline void SetLoggerDefinitionId(const Aws::String& value) { m_loggerDefinitionIdHasBeenSet = true; m_loggerDefinitionId = value; }
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      */
     inline void SetLoggerDefinitionId(Aws::String&& value) { m_loggerDefinitionIdHasBeenSet = true; m_loggerDefinitionId = std::move(value); }
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      */
     inline void SetLoggerDefinitionId(const char* value) { m_loggerDefinitionIdHasBeenSet = true; m_loggerDefinitionId.assign(value); }
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      */
     inline UpdateLoggerDefinitionRequest& WithLoggerDefinitionId(const Aws::String& value) { SetLoggerDefinitionId(value); return *this;}
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      */
     inline UpdateLoggerDefinitionRequest& WithLoggerDefinitionId(Aws::String&& value) { SetLoggerDefinitionId(std::move(value)); return *this;}
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      */
     inline UpdateLoggerDefinitionRequest& WithLoggerDefinitionId(const char* value) { SetLoggerDefinitionId(value); return *this;}
 
 
     /**
-     * name of the definition
+     * The name of the definition.
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * name of the definition
+     * The name of the definition.
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * name of the definition
+     * The name of the definition.
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * name of the definition
+     * The name of the definition.
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * name of the definition
+     * The name of the definition.
      */
     inline UpdateLoggerDefinitionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * name of the definition
+     * The name of the definition.
      */
     inline UpdateLoggerDefinitionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * name of the definition
+     * The name of the definition.
      */
     inline UpdateLoggerDefinitionRequest& WithName(const char* value) { SetName(value); return *this;}
 

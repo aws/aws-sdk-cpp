@@ -46,99 +46,99 @@ namespace Model
 
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline const Aws::String& GetAmznClientToken() const{ return m_amznClientToken; }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline void SetAmznClientToken(const Aws::String& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = value; }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline void SetAmznClientToken(Aws::String&& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = std::move(value); }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline void SetAmznClientToken(const char* value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken.assign(value); }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline CreateResourceDefinitionRequest& WithAmznClientToken(const Aws::String& value) { SetAmznClientToken(value); return *this;}
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline CreateResourceDefinitionRequest& WithAmznClientToken(Aws::String&& value) { SetAmznClientToken(std::move(value)); return *this;}
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline CreateResourceDefinitionRequest& WithAmznClientToken(const char* value) { SetAmznClientToken(value); return *this;}
 
 
     /**
-     * Information on the initial version
+     * Information about the initial version of the resource definition.
      */
     inline const ResourceDefinitionVersion& GetInitialVersion() const{ return m_initialVersion; }
 
     /**
-     * Information on the initial version
+     * Information about the initial version of the resource definition.
      */
     inline void SetInitialVersion(const ResourceDefinitionVersion& value) { m_initialVersionHasBeenSet = true; m_initialVersion = value; }
 
     /**
-     * Information on the initial version
+     * Information about the initial version of the resource definition.
      */
     inline void SetInitialVersion(ResourceDefinitionVersion&& value) { m_initialVersionHasBeenSet = true; m_initialVersion = std::move(value); }
 
     /**
-     * Information on the initial version
+     * Information about the initial version of the resource definition.
      */
     inline CreateResourceDefinitionRequest& WithInitialVersion(const ResourceDefinitionVersion& value) { SetInitialVersion(value); return *this;}
 
     /**
-     * Information on the initial version
+     * Information about the initial version of the resource definition.
      */
     inline CreateResourceDefinitionRequest& WithInitialVersion(ResourceDefinitionVersion&& value) { SetInitialVersion(std::move(value)); return *this;}
 
 
     /**
-     * Name of the resource definition
+     * The name of the resource definition.
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * Name of the resource definition
+     * The name of the resource definition.
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * Name of the resource definition
+     * The name of the resource definition.
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * Name of the resource definition
+     * The name of the resource definition.
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * Name of the resource definition
+     * The name of the resource definition.
      */
     inline CreateResourceDefinitionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * Name of the resource definition
+     * The name of the resource definition.
      */
     inline CreateResourceDefinitionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * Name of the resource definition
+     * The name of the resource definition.
      */
     inline CreateResourceDefinitionRequest& WithName(const char* value) { SetName(value); return *this;}
 

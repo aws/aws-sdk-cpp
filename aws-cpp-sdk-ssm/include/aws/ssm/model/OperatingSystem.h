@@ -30,7 +30,8 @@ namespace Model
     AMAZON_LINUX,
     UBUNTU,
     REDHAT_ENTERPRISE_LINUX,
-    SUSE
+    SUSE,
+    CENTOS
   };
 
 namespace OperatingSystemMapper

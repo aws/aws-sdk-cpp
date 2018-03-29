@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * Information on the core definition request<p><h3>See Also:</h3>   <a
+   * Information needed to create a core definition.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateCoreDefinitionRequest">AWS
    * API Reference</a></p>
    */
@@ -49,99 +49,99 @@ namespace Model
 
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline const Aws::String& GetAmznClientToken() const{ return m_amznClientToken; }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline void SetAmznClientToken(const Aws::String& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = value; }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline void SetAmznClientToken(Aws::String&& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = std::move(value); }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline void SetAmznClientToken(const char* value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken.assign(value); }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline CreateCoreDefinitionRequest& WithAmznClientToken(const Aws::String& value) { SetAmznClientToken(value); return *this;}
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline CreateCoreDefinitionRequest& WithAmznClientToken(Aws::String&& value) { SetAmznClientToken(std::move(value)); return *this;}
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline CreateCoreDefinitionRequest& WithAmznClientToken(const char* value) { SetAmznClientToken(value); return *this;}
 
 
     /**
-     * Information on the initial version
+     * Information about the initial version of the core definition.
      */
     inline const CoreDefinitionVersion& GetInitialVersion() const{ return m_initialVersion; }
 
     /**
-     * Information on the initial version
+     * Information about the initial version of the core definition.
      */
     inline void SetInitialVersion(const CoreDefinitionVersion& value) { m_initialVersionHasBeenSet = true; m_initialVersion = value; }
 
     /**
-     * Information on the initial version
+     * Information about the initial version of the core definition.
      */
     inline void SetInitialVersion(CoreDefinitionVersion&& value) { m_initialVersionHasBeenSet = true; m_initialVersion = std::move(value); }
 
     /**
-     * Information on the initial version
+     * Information about the initial version of the core definition.
      */
     inline CreateCoreDefinitionRequest& WithInitialVersion(const CoreDefinitionVersion& value) { SetInitialVersion(value); return *this;}
 
     /**
-     * Information on the initial version
+     * Information about the initial version of the core definition.
      */
     inline CreateCoreDefinitionRequest& WithInitialVersion(CoreDefinitionVersion&& value) { SetInitialVersion(std::move(value)); return *this;}
 
 
     /**
-     * name of the core definition
+     * The name of the core definition.
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * name of the core definition
+     * The name of the core definition.
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * name of the core definition
+     * The name of the core definition.
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * name of the core definition
+     * The name of the core definition.
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * name of the core definition
+     * The name of the core definition.
      */
     inline CreateCoreDefinitionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * name of the core definition
+     * The name of the core definition.
      */
     inline CreateCoreDefinitionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * name of the core definition
+     * The name of the core definition.
      */
     inline CreateCoreDefinitionRequest& WithName(const char* value) { SetName(value); return *this;}
 

@@ -46,99 +46,99 @@ namespace Model
 
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline const Aws::String& GetAmznClientToken() const{ return m_amznClientToken; }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline void SetAmznClientToken(const Aws::String& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = value; }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline void SetAmznClientToken(Aws::String&& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = std::move(value); }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline void SetAmznClientToken(const char* value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken.assign(value); }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline CreateGroupRequest& WithAmznClientToken(const Aws::String& value) { SetAmznClientToken(value); return *this;}
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline CreateGroupRequest& WithAmznClientToken(Aws::String&& value) { SetAmznClientToken(std::move(value)); return *this;}
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline CreateGroupRequest& WithAmznClientToken(const char* value) { SetAmznClientToken(value); return *this;}
 
 
     /**
-     * Information on the initial version
+     * Information about the initial version of the group.
      */
     inline const GroupVersion& GetInitialVersion() const{ return m_initialVersion; }
 
     /**
-     * Information on the initial version
+     * Information about the initial version of the group.
      */
     inline void SetInitialVersion(const GroupVersion& value) { m_initialVersionHasBeenSet = true; m_initialVersion = value; }
 
     /**
-     * Information on the initial version
+     * Information about the initial version of the group.
      */
     inline void SetInitialVersion(GroupVersion&& value) { m_initialVersionHasBeenSet = true; m_initialVersion = std::move(value); }
 
     /**
-     * Information on the initial version
+     * Information about the initial version of the group.
      */
     inline CreateGroupRequest& WithInitialVersion(const GroupVersion& value) { SetInitialVersion(value); return *this;}
 
     /**
-     * Information on the initial version
+     * Information about the initial version of the group.
      */
     inline CreateGroupRequest& WithInitialVersion(GroupVersion&& value) { SetInitialVersion(std::move(value)); return *this;}
 
 
     /**
-     * name of the group
+     * The name of the group.
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * name of the group
+     * The name of the group.
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * name of the group
+     * The name of the group.
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * name of the group
+     * The name of the group.
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * name of the group
+     * The name of the group.
      */
     inline CreateGroupRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * name of the group
+     * The name of the group.
      */
     inline CreateGroupRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * name of the group
+     * The name of the group.
      */
     inline CreateGroupRequest& WithName(const char* value) { SetName(value); return *this;}
 

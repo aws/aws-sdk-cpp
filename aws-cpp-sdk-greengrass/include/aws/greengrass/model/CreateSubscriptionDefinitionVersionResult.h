@@ -43,145 +43,145 @@ namespace Model
 
 
     /**
-     * Arn of the version.
+     * The ARN of the version.
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * Arn of the version.
+     * The ARN of the version.
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * Arn of the version.
+     * The ARN of the version.
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * Arn of the version.
+     * The ARN of the version.
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * Arn of the version.
+     * The ARN of the version.
      */
     inline CreateSubscriptionDefinitionVersionResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * Arn of the version.
+     * The ARN of the version.
      */
     inline CreateSubscriptionDefinitionVersionResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * Arn of the version.
+     * The ARN of the version.
      */
     inline CreateSubscriptionDefinitionVersionResult& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * Timestamp of when the version was created.
+     * The time, in milliseconds since the epoch, when the version was created.
      */
     inline const Aws::String& GetCreationTimestamp() const{ return m_creationTimestamp; }
 
     /**
-     * Timestamp of when the version was created.
+     * The time, in milliseconds since the epoch, when the version was created.
      */
     inline void SetCreationTimestamp(const Aws::String& value) { m_creationTimestamp = value; }
 
     /**
-     * Timestamp of when the version was created.
+     * The time, in milliseconds since the epoch, when the version was created.
      */
     inline void SetCreationTimestamp(Aws::String&& value) { m_creationTimestamp = std::move(value); }
 
     /**
-     * Timestamp of when the version was created.
+     * The time, in milliseconds since the epoch, when the version was created.
      */
     inline void SetCreationTimestamp(const char* value) { m_creationTimestamp.assign(value); }
 
     /**
-     * Timestamp of when the version was created.
+     * The time, in milliseconds since the epoch, when the version was created.
      */
     inline CreateSubscriptionDefinitionVersionResult& WithCreationTimestamp(const Aws::String& value) { SetCreationTimestamp(value); return *this;}
 
     /**
-     * Timestamp of when the version was created.
+     * The time, in milliseconds since the epoch, when the version was created.
      */
     inline CreateSubscriptionDefinitionVersionResult& WithCreationTimestamp(Aws::String&& value) { SetCreationTimestamp(std::move(value)); return *this;}
 
     /**
-     * Timestamp of when the version was created.
+     * The time, in milliseconds since the epoch, when the version was created.
      */
     inline CreateSubscriptionDefinitionVersionResult& WithCreationTimestamp(const char* value) { SetCreationTimestamp(value); return *this;}
 
 
     /**
-     * Id of the resource container.
+     * The ID of the version.
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * Id of the resource container.
+     * The ID of the version.
      */
     inline void SetId(const Aws::String& value) { m_id = value; }
 
     /**
-     * Id of the resource container.
+     * The ID of the version.
      */
     inline void SetId(Aws::String&& value) { m_id = std::move(value); }
 
     /**
-     * Id of the resource container.
+     * The ID of the version.
      */
     inline void SetId(const char* value) { m_id.assign(value); }
 
     /**
-     * Id of the resource container.
+     * The ID of the version.
      */
     inline CreateSubscriptionDefinitionVersionResult& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * Id of the resource container.
+     * The ID of the version.
      */
     inline CreateSubscriptionDefinitionVersionResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * Id of the resource container.
+     * The ID of the version.
      */
     inline CreateSubscriptionDefinitionVersionResult& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * Unique Id of a version.
+     * The unique ID of the version.
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * Unique Id of a version.
+     * The unique ID of the version.
      */
     inline void SetVersion(const Aws::String& value) { m_version = value; }
 
     /**
-     * Unique Id of a version.
+     * The unique ID of the version.
      */
     inline void SetVersion(Aws::String&& value) { m_version = std::move(value); }
 
     /**
-     * Unique Id of a version.
+     * The unique ID of the version.
      */
     inline void SetVersion(const char* value) { m_version.assign(value); }
 
     /**
-     * Unique Id of a version.
+     * The unique ID of the version.
      */
     inline CreateSubscriptionDefinitionVersionResult& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * Unique Id of a version.
+     * The unique ID of the version.
      */
     inline CreateSubscriptionDefinitionVersionResult& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * Unique Id of a version.
+     * The unique ID of the version.
      */
     inline CreateSubscriptionDefinitionVersionResult& WithVersion(const char* value) { SetVersion(value); return *this;}
 

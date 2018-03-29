@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * Definitions
+     * Information about a definition.
      */
     inline const Aws::Vector<DefinitionInformation>& GetDefinitions() const{ return m_definitions; }
 
     /**
-     * Definitions
+     * Information about a definition.
      */
     inline void SetDefinitions(const Aws::Vector<DefinitionInformation>& value) { m_definitions = value; }
 
     /**
-     * Definitions
+     * Information about a definition.
      */
     inline void SetDefinitions(Aws::Vector<DefinitionInformation>&& value) { m_definitions = std::move(value); }
 
     /**
-     * Definitions
+     * Information about a definition.
      */
     inline ListLoggerDefinitionsResult& WithDefinitions(const Aws::Vector<DefinitionInformation>& value) { SetDefinitions(value); return *this;}
 
     /**
-     * Definitions
+     * Information about a definition.
      */
     inline ListLoggerDefinitionsResult& WithDefinitions(Aws::Vector<DefinitionInformation>&& value) { SetDefinitions(std::move(value)); return *this;}
 
     /**
-     * Definitions
+     * Information about a definition.
      */
     inline ListLoggerDefinitionsResult& AddDefinitions(const DefinitionInformation& value) { m_definitions.push_back(value); return *this; }
 
     /**
-     * Definitions
+     * Information about a definition.
      */
     inline ListLoggerDefinitionsResult& AddDefinitions(DefinitionInformation&& value) { m_definitions.push_back(std::move(value)); return *this; }
 

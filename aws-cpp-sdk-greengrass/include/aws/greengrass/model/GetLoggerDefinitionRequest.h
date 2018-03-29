@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      */
     inline const Aws::String& GetLoggerDefinitionId() const{ return m_loggerDefinitionId; }
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      */
     inline void SetLoggerDefinitionId(const Aws::String& value) { m_loggerDefinitionIdHasBeenSet = true; m_loggerDefinitionId = value; }
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      */
     inline void SetLoggerDefinitionId(Aws::String&& value) { m_loggerDefinitionIdHasBeenSet = true; m_loggerDefinitionId = std::move(value); }
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      */
     inline void SetLoggerDefinitionId(const char* value) { m_loggerDefinitionIdHasBeenSet = true; m_loggerDefinitionId.assign(value); }
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      */
     inline GetLoggerDefinitionRequest& WithLoggerDefinitionId(const Aws::String& value) { SetLoggerDefinitionId(value); return *this;}
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      */
     inline GetLoggerDefinitionRequest& WithLoggerDefinitionId(Aws::String&& value) { SetLoggerDefinitionId(std::move(value)); return *this;}
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      */
     inline GetLoggerDefinitionRequest& WithLoggerDefinitionId(const char* value) { SetLoggerDefinitionId(value); return *this;}
 

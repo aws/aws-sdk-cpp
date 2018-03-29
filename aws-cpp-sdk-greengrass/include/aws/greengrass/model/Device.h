@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * Information on a Device<p><h3>See Also:</h3>   <a
+   * Information about a device.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/Device">AWS
    * API Reference</a></p>
    */
@@ -47,128 +47,125 @@ namespace Model
 
 
     /**
-     * Certificate arn of the device.
+     * The ARN of the certificate associated with the device.
      */
     inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
 
     /**
-     * Certificate arn of the device.
+     * The ARN of the certificate associated with the device.
      */
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
 
     /**
-     * Certificate arn of the device.
+     * The ARN of the certificate associated with the device.
      */
     inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
 
     /**
-     * Certificate arn of the device.
+     * The ARN of the certificate associated with the device.
      */
     inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
 
     /**
-     * Certificate arn of the device.
+     * The ARN of the certificate associated with the device.
      */
     inline Device& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
 
     /**
-     * Certificate arn of the device.
+     * The ARN of the certificate associated with the device.
      */
     inline Device& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
 
     /**
-     * Certificate arn of the device.
+     * The ARN of the certificate associated with the device.
      */
     inline Device& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
 
 
     /**
-     * Element Id for this entry in the list.
+     * The ID of the device.
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * Element Id for this entry in the list.
+     * The ID of the device.
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * Element Id for this entry in the list.
+     * The ID of the device.
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * Element Id for this entry in the list.
+     * The ID of the device.
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * Element Id for this entry in the list.
+     * The ID of the device.
      */
     inline Device& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * Element Id for this entry in the list.
+     * The ID of the device.
      */
     inline Device& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * Element Id for this entry in the list.
+     * The ID of the device.
      */
     inline Device& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * If true, the local shadow value automatically syncs with the cloud's shadow
-     * state.
+     * If true, the device's local shadow will be automatically synced with the cloud.
      */
     inline bool GetSyncShadow() const{ return m_syncShadow; }
 
     /**
-     * If true, the local shadow value automatically syncs with the cloud's shadow
-     * state.
+     * If true, the device's local shadow will be automatically synced with the cloud.
      */
     inline void SetSyncShadow(bool value) { m_syncShadowHasBeenSet = true; m_syncShadow = value; }
 
     /**
-     * If true, the local shadow value automatically syncs with the cloud's shadow
-     * state.
+     * If true, the device's local shadow will be automatically synced with the cloud.
      */
     inline Device& WithSyncShadow(bool value) { SetSyncShadow(value); return *this;}
 
 
     /**
-     * Thing arn of the device.
+     * The thing ARN of the device.
      */
     inline const Aws::String& GetThingArn() const{ return m_thingArn; }
 
     /**
-     * Thing arn of the device.
+     * The thing ARN of the device.
      */
     inline void SetThingArn(const Aws::String& value) { m_thingArnHasBeenSet = true; m_thingArn = value; }
 
     /**
-     * Thing arn of the device.
+     * The thing ARN of the device.
      */
     inline void SetThingArn(Aws::String&& value) { m_thingArnHasBeenSet = true; m_thingArn = std::move(value); }
 
     /**
-     * Thing arn of the device.
+     * The thing ARN of the device.
      */
     inline void SetThingArn(const char* value) { m_thingArnHasBeenSet = true; m_thingArn.assign(value); }
 
     /**
-     * Thing arn of the device.
+     * The thing ARN of the device.
      */
     inline Device& WithThingArn(const Aws::String& value) { SetThingArn(value); return *this;}
 
     /**
-     * Thing arn of the device.
+     * The thing ARN of the device.
      */
     inline Device& WithThingArn(Aws::String&& value) { SetThingArn(std::move(value)); return *this;}
 
     /**
-     * Thing arn of the device.
+     * The thing ARN of the device.
      */
     inline Device& WithThingArn(const char* value) { SetThingArn(value); return *this;}
 

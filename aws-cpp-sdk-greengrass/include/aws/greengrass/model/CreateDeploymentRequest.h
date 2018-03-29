@@ -46,176 +46,176 @@ namespace Model
 
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline const Aws::String& GetAmznClientToken() const{ return m_amznClientToken; }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline void SetAmznClientToken(const Aws::String& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = value; }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline void SetAmznClientToken(Aws::String&& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = std::move(value); }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline void SetAmznClientToken(const char* value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken.assign(value); }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline CreateDeploymentRequest& WithAmznClientToken(const Aws::String& value) { SetAmznClientToken(value); return *this;}
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline CreateDeploymentRequest& WithAmznClientToken(Aws::String&& value) { SetAmznClientToken(std::move(value)); return *this;}
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline CreateDeploymentRequest& WithAmznClientToken(const char* value) { SetAmznClientToken(value); return *this;}
 
 
     /**
-     * Id of the deployment if you wish to redeploy a previous deployment.
+     * The ID of the deployment if you wish to redeploy a previous deployment.
      */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
 
     /**
-     * Id of the deployment if you wish to redeploy a previous deployment.
+     * The ID of the deployment if you wish to redeploy a previous deployment.
      */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /**
-     * Id of the deployment if you wish to redeploy a previous deployment.
+     * The ID of the deployment if you wish to redeploy a previous deployment.
      */
     inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
 
     /**
-     * Id of the deployment if you wish to redeploy a previous deployment.
+     * The ID of the deployment if you wish to redeploy a previous deployment.
      */
     inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
 
     /**
-     * Id of the deployment if you wish to redeploy a previous deployment.
+     * The ID of the deployment if you wish to redeploy a previous deployment.
      */
     inline CreateDeploymentRequest& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
 
     /**
-     * Id of the deployment if you wish to redeploy a previous deployment.
+     * The ID of the deployment if you wish to redeploy a previous deployment.
      */
     inline CreateDeploymentRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
 
     /**
-     * Id of the deployment if you wish to redeploy a previous deployment.
+     * The ID of the deployment if you wish to redeploy a previous deployment.
      */
     inline CreateDeploymentRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
 
     /**
-     * Type of deployment. When used in CreateDeployment, only NewDeployment and
-     * Redeployment are valid. 
+     * The type of deployment. When used in ''CreateDeployment'', only
+     * ''NewDeployment'' and ''Redeployment'' are valid.
      */
     inline const DeploymentType& GetDeploymentType() const{ return m_deploymentType; }
 
     /**
-     * Type of deployment. When used in CreateDeployment, only NewDeployment and
-     * Redeployment are valid. 
+     * The type of deployment. When used in ''CreateDeployment'', only
+     * ''NewDeployment'' and ''Redeployment'' are valid.
      */
     inline void SetDeploymentType(const DeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
 
     /**
-     * Type of deployment. When used in CreateDeployment, only NewDeployment and
-     * Redeployment are valid. 
+     * The type of deployment. When used in ''CreateDeployment'', only
+     * ''NewDeployment'' and ''Redeployment'' are valid.
      */
     inline void SetDeploymentType(DeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
 
     /**
-     * Type of deployment. When used in CreateDeployment, only NewDeployment and
-     * Redeployment are valid. 
+     * The type of deployment. When used in ''CreateDeployment'', only
+     * ''NewDeployment'' and ''Redeployment'' are valid.
      */
     inline CreateDeploymentRequest& WithDeploymentType(const DeploymentType& value) { SetDeploymentType(value); return *this;}
 
     /**
-     * Type of deployment. When used in CreateDeployment, only NewDeployment and
-     * Redeployment are valid. 
+     * The type of deployment. When used in ''CreateDeployment'', only
+     * ''NewDeployment'' and ''Redeployment'' are valid.
      */
     inline CreateDeploymentRequest& WithDeploymentType(DeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
 
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline CreateDeploymentRequest& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline CreateDeploymentRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline CreateDeploymentRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 
 
     /**
-     * Group Version you wish to deploy.
+     * The ID of the group version to be deployed.
      */
     inline const Aws::String& GetGroupVersionId() const{ return m_groupVersionId; }
 
     /**
-     * Group Version you wish to deploy.
+     * The ID of the group version to be deployed.
      */
     inline void SetGroupVersionId(const Aws::String& value) { m_groupVersionIdHasBeenSet = true; m_groupVersionId = value; }
 
     /**
-     * Group Version you wish to deploy.
+     * The ID of the group version to be deployed.
      */
     inline void SetGroupVersionId(Aws::String&& value) { m_groupVersionIdHasBeenSet = true; m_groupVersionId = std::move(value); }
 
     /**
-     * Group Version you wish to deploy.
+     * The ID of the group version to be deployed.
      */
     inline void SetGroupVersionId(const char* value) { m_groupVersionIdHasBeenSet = true; m_groupVersionId.assign(value); }
 
     /**
-     * Group Version you wish to deploy.
+     * The ID of the group version to be deployed.
      */
     inline CreateDeploymentRequest& WithGroupVersionId(const Aws::String& value) { SetGroupVersionId(value); return *this;}
 
     /**
-     * Group Version you wish to deploy.
+     * The ID of the group version to be deployed.
      */
     inline CreateDeploymentRequest& WithGroupVersionId(Aws::String&& value) { SetGroupVersionId(std::move(value)); return *this;}
 
     /**
-     * Group Version you wish to deploy.
+     * The ID of the group version to be deployed.
      */
     inline CreateDeploymentRequest& WithGroupVersionId(const char* value) { SetGroupVersionId(value); return *this;}
 

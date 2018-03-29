@@ -43,109 +43,109 @@ namespace Model
 
 
     /**
-     * Arn of the certificate authority for the group.
+     * The ARN of the certificate authority for the group.
      */
     inline const Aws::String& GetGroupCertificateAuthorityArn() const{ return m_groupCertificateAuthorityArn; }
 
     /**
-     * Arn of the certificate authority for the group.
+     * The ARN of the certificate authority for the group.
      */
     inline void SetGroupCertificateAuthorityArn(const Aws::String& value) { m_groupCertificateAuthorityArn = value; }
 
     /**
-     * Arn of the certificate authority for the group.
+     * The ARN of the certificate authority for the group.
      */
     inline void SetGroupCertificateAuthorityArn(Aws::String&& value) { m_groupCertificateAuthorityArn = std::move(value); }
 
     /**
-     * Arn of the certificate authority for the group.
+     * The ARN of the certificate authority for the group.
      */
     inline void SetGroupCertificateAuthorityArn(const char* value) { m_groupCertificateAuthorityArn.assign(value); }
 
     /**
-     * Arn of the certificate authority for the group.
+     * The ARN of the certificate authority for the group.
      */
     inline GetGroupCertificateAuthorityResult& WithGroupCertificateAuthorityArn(const Aws::String& value) { SetGroupCertificateAuthorityArn(value); return *this;}
 
     /**
-     * Arn of the certificate authority for the group.
+     * The ARN of the certificate authority for the group.
      */
     inline GetGroupCertificateAuthorityResult& WithGroupCertificateAuthorityArn(Aws::String&& value) { SetGroupCertificateAuthorityArn(std::move(value)); return *this;}
 
     /**
-     * Arn of the certificate authority for the group.
+     * The ARN of the certificate authority for the group.
      */
     inline GetGroupCertificateAuthorityResult& WithGroupCertificateAuthorityArn(const char* value) { SetGroupCertificateAuthorityArn(value); return *this;}
 
 
     /**
-     * Id of the certificate authority for the group.
+     * The ID of the certificate authority for the group.
      */
     inline const Aws::String& GetGroupCertificateAuthorityId() const{ return m_groupCertificateAuthorityId; }
 
     /**
-     * Id of the certificate authority for the group.
+     * The ID of the certificate authority for the group.
      */
     inline void SetGroupCertificateAuthorityId(const Aws::String& value) { m_groupCertificateAuthorityId = value; }
 
     /**
-     * Id of the certificate authority for the group.
+     * The ID of the certificate authority for the group.
      */
     inline void SetGroupCertificateAuthorityId(Aws::String&& value) { m_groupCertificateAuthorityId = std::move(value); }
 
     /**
-     * Id of the certificate authority for the group.
+     * The ID of the certificate authority for the group.
      */
     inline void SetGroupCertificateAuthorityId(const char* value) { m_groupCertificateAuthorityId.assign(value); }
 
     /**
-     * Id of the certificate authority for the group.
+     * The ID of the certificate authority for the group.
      */
     inline GetGroupCertificateAuthorityResult& WithGroupCertificateAuthorityId(const Aws::String& value) { SetGroupCertificateAuthorityId(value); return *this;}
 
     /**
-     * Id of the certificate authority for the group.
+     * The ID of the certificate authority for the group.
      */
     inline GetGroupCertificateAuthorityResult& WithGroupCertificateAuthorityId(Aws::String&& value) { SetGroupCertificateAuthorityId(std::move(value)); return *this;}
 
     /**
-     * Id of the certificate authority for the group.
+     * The ID of the certificate authority for the group.
      */
     inline GetGroupCertificateAuthorityResult& WithGroupCertificateAuthorityId(const char* value) { SetGroupCertificateAuthorityId(value); return *this;}
 
 
     /**
-     * PEM encoded certificate for the group.
+     * The PEM encoded certificate for the group.
      */
     inline const Aws::String& GetPemEncodedCertificate() const{ return m_pemEncodedCertificate; }
 
     /**
-     * PEM encoded certificate for the group.
+     * The PEM encoded certificate for the group.
      */
     inline void SetPemEncodedCertificate(const Aws::String& value) { m_pemEncodedCertificate = value; }
 
     /**
-     * PEM encoded certificate for the group.
+     * The PEM encoded certificate for the group.
      */
     inline void SetPemEncodedCertificate(Aws::String&& value) { m_pemEncodedCertificate = std::move(value); }
 
     /**
-     * PEM encoded certificate for the group.
+     * The PEM encoded certificate for the group.
      */
     inline void SetPemEncodedCertificate(const char* value) { m_pemEncodedCertificate.assign(value); }
 
     /**
-     * PEM encoded certificate for the group.
+     * The PEM encoded certificate for the group.
      */
     inline GetGroupCertificateAuthorityResult& WithPemEncodedCertificate(const Aws::String& value) { SetPemEncodedCertificate(value); return *this;}
 
     /**
-     * PEM encoded certificate for the group.
+     * The PEM encoded certificate for the group.
      */
     inline GetGroupCertificateAuthorityResult& WithPemEncodedCertificate(Aws::String&& value) { SetPemEncodedCertificate(std::move(value)); return *this;}
 
     /**
-     * PEM encoded certificate for the group.
+     * The PEM encoded certificate for the group.
      */
     inline GetGroupCertificateAuthorityResult& WithPemEncodedCertificate(const char* value) { SetPemEncodedCertificate(value); return *this;}
 

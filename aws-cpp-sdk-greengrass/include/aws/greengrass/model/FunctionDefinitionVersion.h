@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Information on the function definition version<p><h3>See Also:</h3>   <a
+   * Information about a function definition version.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/FunctionDefinitionVersion">AWS
    * API Reference</a></p>
    */
@@ -48,37 +48,37 @@ namespace Model
 
 
     /**
-     * Lambda functions in this function definition version.
+     * A list of Lambda functions in this function definition version.
      */
     inline const Aws::Vector<Function>& GetFunctions() const{ return m_functions; }
 
     /**
-     * Lambda functions in this function definition version.
+     * A list of Lambda functions in this function definition version.
      */
     inline void SetFunctions(const Aws::Vector<Function>& value) { m_functionsHasBeenSet = true; m_functions = value; }
 
     /**
-     * Lambda functions in this function definition version.
+     * A list of Lambda functions in this function definition version.
      */
     inline void SetFunctions(Aws::Vector<Function>&& value) { m_functionsHasBeenSet = true; m_functions = std::move(value); }
 
     /**
-     * Lambda functions in this function definition version.
+     * A list of Lambda functions in this function definition version.
      */
     inline FunctionDefinitionVersion& WithFunctions(const Aws::Vector<Function>& value) { SetFunctions(value); return *this;}
 
     /**
-     * Lambda functions in this function definition version.
+     * A list of Lambda functions in this function definition version.
      */
     inline FunctionDefinitionVersion& WithFunctions(Aws::Vector<Function>&& value) { SetFunctions(std::move(value)); return *this;}
 
     /**
-     * Lambda functions in this function definition version.
+     * A list of Lambda functions in this function definition version.
      */
     inline FunctionDefinitionVersion& AddFunctions(const Function& value) { m_functionsHasBeenSet = true; m_functions.push_back(value); return *this; }
 
     /**
-     * Lambda functions in this function definition version.
+     * A list of Lambda functions in this function definition version.
      */
     inline FunctionDefinitionVersion& AddFunctions(Function&& value) { m_functionsHasBeenSet = true; m_functions.push_back(std::move(value)); return *this; }
 

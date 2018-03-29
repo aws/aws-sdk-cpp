@@ -43,37 +43,44 @@ namespace Model
 
 
     /**
-     * Time the role arn was associated to your group.
+     * The time, in milliseconds since the epoch, when the role ARN was associated with
+     * the group.
      */
     inline const Aws::String& GetAssociatedAt() const{ return m_associatedAt; }
 
     /**
-     * Time the role arn was associated to your group.
+     * The time, in milliseconds since the epoch, when the role ARN was associated with
+     * the group.
      */
     inline void SetAssociatedAt(const Aws::String& value) { m_associatedAt = value; }
 
     /**
-     * Time the role arn was associated to your group.
+     * The time, in milliseconds since the epoch, when the role ARN was associated with
+     * the group.
      */
     inline void SetAssociatedAt(Aws::String&& value) { m_associatedAt = std::move(value); }
 
     /**
-     * Time the role arn was associated to your group.
+     * The time, in milliseconds since the epoch, when the role ARN was associated with
+     * the group.
      */
     inline void SetAssociatedAt(const char* value) { m_associatedAt.assign(value); }
 
     /**
-     * Time the role arn was associated to your group.
+     * The time, in milliseconds since the epoch, when the role ARN was associated with
+     * the group.
      */
     inline AssociateRoleToGroupResult& WithAssociatedAt(const Aws::String& value) { SetAssociatedAt(value); return *this;}
 
     /**
-     * Time the role arn was associated to your group.
+     * The time, in milliseconds since the epoch, when the role ARN was associated with
+     * the group.
      */
     inline AssociateRoleToGroupResult& WithAssociatedAt(Aws::String&& value) { SetAssociatedAt(std::move(value)); return *this;}
 
     /**
-     * Time the role arn was associated to your group.
+     * The time, in milliseconds since the epoch, when the role ARN was associated with
+     * the group.
      */
     inline AssociateRoleToGroupResult& WithAssociatedAt(const char* value) { SetAssociatedAt(value); return *this;}
 

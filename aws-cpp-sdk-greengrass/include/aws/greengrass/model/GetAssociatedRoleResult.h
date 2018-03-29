@@ -43,73 +43,73 @@ namespace Model
 
 
     /**
-     * Time when the role was associated for the group.
+     * The time when the role was associated with the group.
      */
     inline const Aws::String& GetAssociatedAt() const{ return m_associatedAt; }
 
     /**
-     * Time when the role was associated for the group.
+     * The time when the role was associated with the group.
      */
     inline void SetAssociatedAt(const Aws::String& value) { m_associatedAt = value; }
 
     /**
-     * Time when the role was associated for the group.
+     * The time when the role was associated with the group.
      */
     inline void SetAssociatedAt(Aws::String&& value) { m_associatedAt = std::move(value); }
 
     /**
-     * Time when the role was associated for the group.
+     * The time when the role was associated with the group.
      */
     inline void SetAssociatedAt(const char* value) { m_associatedAt.assign(value); }
 
     /**
-     * Time when the role was associated for the group.
+     * The time when the role was associated with the group.
      */
     inline GetAssociatedRoleResult& WithAssociatedAt(const Aws::String& value) { SetAssociatedAt(value); return *this;}
 
     /**
-     * Time when the role was associated for the group.
+     * The time when the role was associated with the group.
      */
     inline GetAssociatedRoleResult& WithAssociatedAt(Aws::String&& value) { SetAssociatedAt(std::move(value)); return *this;}
 
     /**
-     * Time when the role was associated for the group.
+     * The time when the role was associated with the group.
      */
     inline GetAssociatedRoleResult& WithAssociatedAt(const char* value) { SetAssociatedAt(value); return *this;}
 
 
     /**
-     * Arn of the role that is associated with the group.
+     * The ARN of the role that is associated with the group.
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * Arn of the role that is associated with the group.
+     * The ARN of the role that is associated with the group.
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
 
     /**
-     * Arn of the role that is associated with the group.
+     * The ARN of the role that is associated with the group.
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
 
     /**
-     * Arn of the role that is associated with the group.
+     * The ARN of the role that is associated with the group.
      */
     inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
 
     /**
-     * Arn of the role that is associated with the group.
+     * The ARN of the role that is associated with the group.
      */
     inline GetAssociatedRoleResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * Arn of the role that is associated with the group.
+     * The ARN of the role that is associated with the group.
      */
     inline GetAssociatedRoleResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * Arn of the role that is associated with the group.
+     * The ARN of the role that is associated with the group.
      */
     inline GetAssociatedRoleResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

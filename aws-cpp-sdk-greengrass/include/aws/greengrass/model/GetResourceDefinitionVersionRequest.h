@@ -43,73 +43,73 @@ namespace Model
 
 
     /**
-     * Resource definition Id.
+     * The ID of the resource definition.
      */
     inline const Aws::String& GetResourceDefinitionId() const{ return m_resourceDefinitionId; }
 
     /**
-     * Resource definition Id.
+     * The ID of the resource definition.
      */
     inline void SetResourceDefinitionId(const Aws::String& value) { m_resourceDefinitionIdHasBeenSet = true; m_resourceDefinitionId = value; }
 
     /**
-     * Resource definition Id.
+     * The ID of the resource definition.
      */
     inline void SetResourceDefinitionId(Aws::String&& value) { m_resourceDefinitionIdHasBeenSet = true; m_resourceDefinitionId = std::move(value); }
 
     /**
-     * Resource definition Id.
+     * The ID of the resource definition.
      */
     inline void SetResourceDefinitionId(const char* value) { m_resourceDefinitionIdHasBeenSet = true; m_resourceDefinitionId.assign(value); }
 
     /**
-     * Resource definition Id.
+     * The ID of the resource definition.
      */
     inline GetResourceDefinitionVersionRequest& WithResourceDefinitionId(const Aws::String& value) { SetResourceDefinitionId(value); return *this;}
 
     /**
-     * Resource definition Id.
+     * The ID of the resource definition.
      */
     inline GetResourceDefinitionVersionRequest& WithResourceDefinitionId(Aws::String&& value) { SetResourceDefinitionId(std::move(value)); return *this;}
 
     /**
-     * Resource definition Id.
+     * The ID of the resource definition.
      */
     inline GetResourceDefinitionVersionRequest& WithResourceDefinitionId(const char* value) { SetResourceDefinitionId(value); return *this;}
 
 
     /**
-     * Resource definition version Id.
+     * The ID of the resource definition version.
      */
     inline const Aws::String& GetResourceDefinitionVersionId() const{ return m_resourceDefinitionVersionId; }
 
     /**
-     * Resource definition version Id.
+     * The ID of the resource definition version.
      */
     inline void SetResourceDefinitionVersionId(const Aws::String& value) { m_resourceDefinitionVersionIdHasBeenSet = true; m_resourceDefinitionVersionId = value; }
 
     /**
-     * Resource definition version Id.
+     * The ID of the resource definition version.
      */
     inline void SetResourceDefinitionVersionId(Aws::String&& value) { m_resourceDefinitionVersionIdHasBeenSet = true; m_resourceDefinitionVersionId = std::move(value); }
 
     /**
-     * Resource definition version Id.
+     * The ID of the resource definition version.
      */
     inline void SetResourceDefinitionVersionId(const char* value) { m_resourceDefinitionVersionIdHasBeenSet = true; m_resourceDefinitionVersionId.assign(value); }
 
     /**
-     * Resource definition version Id.
+     * The ID of the resource definition version.
      */
     inline GetResourceDefinitionVersionRequest& WithResourceDefinitionVersionId(const Aws::String& value) { SetResourceDefinitionVersionId(value); return *this;}
 
     /**
-     * Resource definition version Id.
+     * The ID of the resource definition version.
      */
     inline GetResourceDefinitionVersionRequest& WithResourceDefinitionVersionId(Aws::String&& value) { SetResourceDefinitionVersionId(std::move(value)); return *this;}
 
     /**
-     * Resource definition version Id.
+     * The ID of the resource definition version.
      */
     inline GetResourceDefinitionVersionRequest& WithResourceDefinitionVersionId(const char* value) { SetResourceDefinitionVersionId(value); return *this;}
 

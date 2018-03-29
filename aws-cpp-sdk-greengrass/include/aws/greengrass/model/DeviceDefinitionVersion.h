@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Information on device definition version<p><h3>See Also:</h3>   <a
+   * Information about a device definition version.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeviceDefinitionVersion">AWS
    * API Reference</a></p>
    */
@@ -48,37 +48,37 @@ namespace Model
 
 
     /**
-     * Devices in the definition version.
+     * A list of devices in the definition version.
      */
     inline const Aws::Vector<Device>& GetDevices() const{ return m_devices; }
 
     /**
-     * Devices in the definition version.
+     * A list of devices in the definition version.
      */
     inline void SetDevices(const Aws::Vector<Device>& value) { m_devicesHasBeenSet = true; m_devices = value; }
 
     /**
-     * Devices in the definition version.
+     * A list of devices in the definition version.
      */
     inline void SetDevices(Aws::Vector<Device>&& value) { m_devicesHasBeenSet = true; m_devices = std::move(value); }
 
     /**
-     * Devices in the definition version.
+     * A list of devices in the definition version.
      */
     inline DeviceDefinitionVersion& WithDevices(const Aws::Vector<Device>& value) { SetDevices(value); return *this;}
 
     /**
-     * Devices in the definition version.
+     * A list of devices in the definition version.
      */
     inline DeviceDefinitionVersion& WithDevices(Aws::Vector<Device>&& value) { SetDevices(std::move(value)); return *this;}
 
     /**
-     * Devices in the definition version.
+     * A list of devices in the definition version.
      */
     inline DeviceDefinitionVersion& AddDevices(const Device& value) { m_devicesHasBeenSet = true; m_devices.push_back(value); return *this; }
 
     /**
-     * Devices in the definition version.
+     * A list of devices in the definition version.
      */
     inline DeviceDefinitionVersion& AddDevices(Device&& value) { m_devicesHasBeenSet = true; m_devices.push_back(std::move(value)); return *this; }
 

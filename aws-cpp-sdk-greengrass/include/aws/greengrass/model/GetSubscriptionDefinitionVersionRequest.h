@@ -43,73 +43,73 @@ namespace Model
 
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      */
     inline const Aws::String& GetSubscriptionDefinitionId() const{ return m_subscriptionDefinitionId; }
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      */
     inline void SetSubscriptionDefinitionId(const Aws::String& value) { m_subscriptionDefinitionIdHasBeenSet = true; m_subscriptionDefinitionId = value; }
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      */
     inline void SetSubscriptionDefinitionId(Aws::String&& value) { m_subscriptionDefinitionIdHasBeenSet = true; m_subscriptionDefinitionId = std::move(value); }
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      */
     inline void SetSubscriptionDefinitionId(const char* value) { m_subscriptionDefinitionIdHasBeenSet = true; m_subscriptionDefinitionId.assign(value); }
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      */
     inline GetSubscriptionDefinitionVersionRequest& WithSubscriptionDefinitionId(const Aws::String& value) { SetSubscriptionDefinitionId(value); return *this;}
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      */
     inline GetSubscriptionDefinitionVersionRequest& WithSubscriptionDefinitionId(Aws::String&& value) { SetSubscriptionDefinitionId(std::move(value)); return *this;}
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      */
     inline GetSubscriptionDefinitionVersionRequest& WithSubscriptionDefinitionId(const char* value) { SetSubscriptionDefinitionId(value); return *this;}
 
 
     /**
-     * subscription definition version Id
+     * The ID of the subscription definition version.
      */
     inline const Aws::String& GetSubscriptionDefinitionVersionId() const{ return m_subscriptionDefinitionVersionId; }
 
     /**
-     * subscription definition version Id
+     * The ID of the subscription definition version.
      */
     inline void SetSubscriptionDefinitionVersionId(const Aws::String& value) { m_subscriptionDefinitionVersionIdHasBeenSet = true; m_subscriptionDefinitionVersionId = value; }
 
     /**
-     * subscription definition version Id
+     * The ID of the subscription definition version.
      */
     inline void SetSubscriptionDefinitionVersionId(Aws::String&& value) { m_subscriptionDefinitionVersionIdHasBeenSet = true; m_subscriptionDefinitionVersionId = std::move(value); }
 
     /**
-     * subscription definition version Id
+     * The ID of the subscription definition version.
      */
     inline void SetSubscriptionDefinitionVersionId(const char* value) { m_subscriptionDefinitionVersionIdHasBeenSet = true; m_subscriptionDefinitionVersionId.assign(value); }
 
     /**
-     * subscription definition version Id
+     * The ID of the subscription definition version.
      */
     inline GetSubscriptionDefinitionVersionRequest& WithSubscriptionDefinitionVersionId(const Aws::String& value) { SetSubscriptionDefinitionVersionId(value); return *this;}
 
     /**
-     * subscription definition version Id
+     * The ID of the subscription definition version.
      */
     inline GetSubscriptionDefinitionVersionRequest& WithSubscriptionDefinitionVersionId(Aws::String&& value) { SetSubscriptionDefinitionVersionId(std::move(value)); return *this;}
 
     /**
-     * subscription definition version Id
+     * The ID of the subscription definition version.
      */
     inline GetSubscriptionDefinitionVersionRequest& WithSubscriptionDefinitionVersionId(const char* value) { SetSubscriptionDefinitionVersionId(value); return *this;}
 

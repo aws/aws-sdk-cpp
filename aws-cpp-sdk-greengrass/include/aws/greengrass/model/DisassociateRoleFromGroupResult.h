@@ -43,37 +43,44 @@ namespace Model
 
 
     /**
-     * Time when the role was disassociated from the group.
+     * The time, in milliseconds since the epoch, when the role was disassociated from
+     * the group.
      */
     inline const Aws::String& GetDisassociatedAt() const{ return m_disassociatedAt; }
 
     /**
-     * Time when the role was disassociated from the group.
+     * The time, in milliseconds since the epoch, when the role was disassociated from
+     * the group.
      */
     inline void SetDisassociatedAt(const Aws::String& value) { m_disassociatedAt = value; }
 
     /**
-     * Time when the role was disassociated from the group.
+     * The time, in milliseconds since the epoch, when the role was disassociated from
+     * the group.
      */
     inline void SetDisassociatedAt(Aws::String&& value) { m_disassociatedAt = std::move(value); }
 
     /**
-     * Time when the role was disassociated from the group.
+     * The time, in milliseconds since the epoch, when the role was disassociated from
+     * the group.
      */
     inline void SetDisassociatedAt(const char* value) { m_disassociatedAt.assign(value); }
 
     /**
-     * Time when the role was disassociated from the group.
+     * The time, in milliseconds since the epoch, when the role was disassociated from
+     * the group.
      */
     inline DisassociateRoleFromGroupResult& WithDisassociatedAt(const Aws::String& value) { SetDisassociatedAt(value); return *this;}
 
     /**
-     * Time when the role was disassociated from the group.
+     * The time, in milliseconds since the epoch, when the role was disassociated from
+     * the group.
      */
     inline DisassociateRoleFromGroupResult& WithDisassociatedAt(Aws::String&& value) { SetDisassociatedAt(std::move(value)); return *this;}
 
     /**
-     * Time when the role was disassociated from the group.
+     * The time, in milliseconds since the epoch, when the role was disassociated from
+     * the group.
      */
     inline DisassociateRoleFromGroupResult& WithDisassociatedAt(const char* value) { SetDisassociatedAt(value); return *this;}
 

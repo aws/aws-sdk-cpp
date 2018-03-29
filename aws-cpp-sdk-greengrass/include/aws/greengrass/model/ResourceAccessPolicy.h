@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Policy for the function to access a resource.<p><h3>See Also:</h3>   <a
+   * A policy used by the function to access a resource.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ResourceAccessPolicy">AWS
    * API Reference</a></p>
    */
@@ -48,63 +48,75 @@ namespace Model
 
 
     /**
-     * The function's access permission to the resource.
+     * The permissions that the Lambda function has to the resource. Can be one of
+     * ''rw'' (read/write) or ''ro'' (read-only).
      */
     inline const Permission& GetPermission() const{ return m_permission; }
 
     /**
-     * The function's access permission to the resource.
+     * The permissions that the Lambda function has to the resource. Can be one of
+     * ''rw'' (read/write) or ''ro'' (read-only).
      */
     inline void SetPermission(const Permission& value) { m_permissionHasBeenSet = true; m_permission = value; }
 
     /**
-     * The function's access permission to the resource.
+     * The permissions that the Lambda function has to the resource. Can be one of
+     * ''rw'' (read/write) or ''ro'' (read-only).
      */
     inline void SetPermission(Permission&& value) { m_permissionHasBeenSet = true; m_permission = std::move(value); }
 
     /**
-     * The function's access permission to the resource.
+     * The permissions that the Lambda function has to the resource. Can be one of
+     * ''rw'' (read/write) or ''ro'' (read-only).
      */
     inline ResourceAccessPolicy& WithPermission(const Permission& value) { SetPermission(value); return *this;}
 
     /**
-     * The function's access permission to the resource.
+     * The permissions that the Lambda function has to the resource. Can be one of
+     * ''rw'' (read/write) or ''ro'' (read-only).
      */
     inline ResourceAccessPolicy& WithPermission(Permission&& value) { SetPermission(std::move(value)); return *this;}
 
 
     /**
-     * Id of the resource. A reference to the resource definiton.
+     * The ID of the resource. (This ID is assigned to the resource when you create the
+     * resource definiton.)
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * Id of the resource. A reference to the resource definiton.
+     * The ID of the resource. (This ID is assigned to the resource when you create the
+     * resource definiton.)
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * Id of the resource. A reference to the resource definiton.
+     * The ID of the resource. (This ID is assigned to the resource when you create the
+     * resource definiton.)
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * Id of the resource. A reference to the resource definiton.
+     * The ID of the resource. (This ID is assigned to the resource when you create the
+     * resource definiton.)
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * Id of the resource. A reference to the resource definiton.
+     * The ID of the resource. (This ID is assigned to the resource when you create the
+     * resource definiton.)
      */
     inline ResourceAccessPolicy& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * Id of the resource. A reference to the resource definiton.
+     * The ID of the resource. (This ID is assigned to the resource when you create the
+     * resource definiton.)
      */
     inline ResourceAccessPolicy& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * Id of the resource. A reference to the resource definiton.
+     * The ID of the resource. (This ID is assigned to the resource when you create the
+     * resource definiton.)
      */
     inline ResourceAccessPolicy& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 

@@ -44,171 +44,178 @@ namespace Model
 
 
     /**
-     * Arn of the logger definition version.
+     * The ARN of the logger definition version.
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * Arn of the logger definition version.
+     * The ARN of the logger definition version.
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * Arn of the logger definition version.
+     * The ARN of the logger definition version.
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * Arn of the logger definition version.
+     * The ARN of the logger definition version.
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * Arn of the logger definition version.
+     * The ARN of the logger definition version.
      */
     inline GetLoggerDefinitionVersionResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * Arn of the logger definition version.
+     * The ARN of the logger definition version.
      */
     inline GetLoggerDefinitionVersionResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * Arn of the logger definition version.
+     * The ARN of the logger definition version.
      */
     inline GetLoggerDefinitionVersionResult& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * Timestamp of when the logger definition version was created.
+     * The time, in milliseconds since the epoch, when the logger definition version
+     * was created.
      */
     inline const Aws::String& GetCreationTimestamp() const{ return m_creationTimestamp; }
 
     /**
-     * Timestamp of when the logger definition version was created.
+     * The time, in milliseconds since the epoch, when the logger definition version
+     * was created.
      */
     inline void SetCreationTimestamp(const Aws::String& value) { m_creationTimestamp = value; }
 
     /**
-     * Timestamp of when the logger definition version was created.
+     * The time, in milliseconds since the epoch, when the logger definition version
+     * was created.
      */
     inline void SetCreationTimestamp(Aws::String&& value) { m_creationTimestamp = std::move(value); }
 
     /**
-     * Timestamp of when the logger definition version was created.
+     * The time, in milliseconds since the epoch, when the logger definition version
+     * was created.
      */
     inline void SetCreationTimestamp(const char* value) { m_creationTimestamp.assign(value); }
 
     /**
-     * Timestamp of when the logger definition version was created.
+     * The time, in milliseconds since the epoch, when the logger definition version
+     * was created.
      */
     inline GetLoggerDefinitionVersionResult& WithCreationTimestamp(const Aws::String& value) { SetCreationTimestamp(value); return *this;}
 
     /**
-     * Timestamp of when the logger definition version was created.
+     * The time, in milliseconds since the epoch, when the logger definition version
+     * was created.
      */
     inline GetLoggerDefinitionVersionResult& WithCreationTimestamp(Aws::String&& value) { SetCreationTimestamp(std::move(value)); return *this;}
 
     /**
-     * Timestamp of when the logger definition version was created.
+     * The time, in milliseconds since the epoch, when the logger definition version
+     * was created.
      */
     inline GetLoggerDefinitionVersionResult& WithCreationTimestamp(const char* value) { SetCreationTimestamp(value); return *this;}
 
 
     /**
-     * Information on definition
+     * Information about the logger definition version.
      */
     inline const LoggerDefinitionVersion& GetDefinition() const{ return m_definition; }
 
     /**
-     * Information on definition
+     * Information about the logger definition version.
      */
     inline void SetDefinition(const LoggerDefinitionVersion& value) { m_definition = value; }
 
     /**
-     * Information on definition
+     * Information about the logger definition version.
      */
     inline void SetDefinition(LoggerDefinitionVersion&& value) { m_definition = std::move(value); }
 
     /**
-     * Information on definition
+     * Information about the logger definition version.
      */
     inline GetLoggerDefinitionVersionResult& WithDefinition(const LoggerDefinitionVersion& value) { SetDefinition(value); return *this;}
 
     /**
-     * Information on definition
+     * Information about the logger definition version.
      */
     inline GetLoggerDefinitionVersionResult& WithDefinition(LoggerDefinitionVersion&& value) { SetDefinition(std::move(value)); return *this;}
 
 
     /**
-     * Id of the logger definition the version belongs to.
+     * The ID of the logger definition version.
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * Id of the logger definition the version belongs to.
+     * The ID of the logger definition version.
      */
     inline void SetId(const Aws::String& value) { m_id = value; }
 
     /**
-     * Id of the logger definition the version belongs to.
+     * The ID of the logger definition version.
      */
     inline void SetId(Aws::String&& value) { m_id = std::move(value); }
 
     /**
-     * Id of the logger definition the version belongs to.
+     * The ID of the logger definition version.
      */
     inline void SetId(const char* value) { m_id.assign(value); }
 
     /**
-     * Id of the logger definition the version belongs to.
+     * The ID of the logger definition version.
      */
     inline GetLoggerDefinitionVersionResult& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * Id of the logger definition the version belongs to.
+     * The ID of the logger definition version.
      */
     inline GetLoggerDefinitionVersionResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * Id of the logger definition the version belongs to.
+     * The ID of the logger definition version.
      */
     inline GetLoggerDefinitionVersionResult& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * Version of the logger definition version.
+     * The version of the logger definition version.
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * Version of the logger definition version.
+     * The version of the logger definition version.
      */
     inline void SetVersion(const Aws::String& value) { m_version = value; }
 
     /**
-     * Version of the logger definition version.
+     * The version of the logger definition version.
      */
     inline void SetVersion(Aws::String&& value) { m_version = std::move(value); }
 
     /**
-     * Version of the logger definition version.
+     * The version of the logger definition version.
      */
     inline void SetVersion(const char* value) { m_version.assign(value); }
 
     /**
-     * Version of the logger definition version.
+     * The version of the logger definition version.
      */
     inline GetLoggerDefinitionVersionResult& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * Version of the logger definition version.
+     * The version of the logger definition version.
      */
     inline GetLoggerDefinitionVersionResult& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * Version of the logger definition version.
+     * The version of the logger definition version.
      */
     inline GetLoggerDefinitionVersionResult& WithVersion(const char* value) { SetVersion(value); return *this;}
 

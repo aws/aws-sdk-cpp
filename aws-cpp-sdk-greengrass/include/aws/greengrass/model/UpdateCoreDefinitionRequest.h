@@ -43,73 +43,73 @@ namespace Model
 
 
     /**
-     * core definition Id
+     * The ID of the core definition.
      */
     inline const Aws::String& GetCoreDefinitionId() const{ return m_coreDefinitionId; }
 
     /**
-     * core definition Id
+     * The ID of the core definition.
      */
     inline void SetCoreDefinitionId(const Aws::String& value) { m_coreDefinitionIdHasBeenSet = true; m_coreDefinitionId = value; }
 
     /**
-     * core definition Id
+     * The ID of the core definition.
      */
     inline void SetCoreDefinitionId(Aws::String&& value) { m_coreDefinitionIdHasBeenSet = true; m_coreDefinitionId = std::move(value); }
 
     /**
-     * core definition Id
+     * The ID of the core definition.
      */
     inline void SetCoreDefinitionId(const char* value) { m_coreDefinitionIdHasBeenSet = true; m_coreDefinitionId.assign(value); }
 
     /**
-     * core definition Id
+     * The ID of the core definition.
      */
     inline UpdateCoreDefinitionRequest& WithCoreDefinitionId(const Aws::String& value) { SetCoreDefinitionId(value); return *this;}
 
     /**
-     * core definition Id
+     * The ID of the core definition.
      */
     inline UpdateCoreDefinitionRequest& WithCoreDefinitionId(Aws::String&& value) { SetCoreDefinitionId(std::move(value)); return *this;}
 
     /**
-     * core definition Id
+     * The ID of the core definition.
      */
     inline UpdateCoreDefinitionRequest& WithCoreDefinitionId(const char* value) { SetCoreDefinitionId(value); return *this;}
 
 
     /**
-     * name of the definition
+     * The name of the definition.
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * name of the definition
+     * The name of the definition.
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * name of the definition
+     * The name of the definition.
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * name of the definition
+     * The name of the definition.
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * name of the definition
+     * The name of the definition.
      */
     inline UpdateCoreDefinitionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * name of the definition
+     * The name of the definition.
      */
     inline UpdateCoreDefinitionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * name of the definition
+     * The name of the definition.
      */
     inline UpdateCoreDefinitionRequest& WithName(const char* value) { SetName(value); return *this;}
 

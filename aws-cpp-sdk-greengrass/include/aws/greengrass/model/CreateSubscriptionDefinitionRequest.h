@@ -46,99 +46,99 @@ namespace Model
 
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline const Aws::String& GetAmznClientToken() const{ return m_amznClientToken; }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline void SetAmznClientToken(const Aws::String& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = value; }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline void SetAmznClientToken(Aws::String&& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = std::move(value); }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline void SetAmznClientToken(const char* value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken.assign(value); }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline CreateSubscriptionDefinitionRequest& WithAmznClientToken(const Aws::String& value) { SetAmznClientToken(value); return *this;}
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline CreateSubscriptionDefinitionRequest& WithAmznClientToken(Aws::String&& value) { SetAmznClientToken(std::move(value)); return *this;}
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline CreateSubscriptionDefinitionRequest& WithAmznClientToken(const char* value) { SetAmznClientToken(value); return *this;}
 
 
     /**
-     * Information on the initial version
+     * Information about the initial version of the subscription definition.
      */
     inline const SubscriptionDefinitionVersion& GetInitialVersion() const{ return m_initialVersion; }
 
     /**
-     * Information on the initial version
+     * Information about the initial version of the subscription definition.
      */
     inline void SetInitialVersion(const SubscriptionDefinitionVersion& value) { m_initialVersionHasBeenSet = true; m_initialVersion = value; }
 
     /**
-     * Information on the initial version
+     * Information about the initial version of the subscription definition.
      */
     inline void SetInitialVersion(SubscriptionDefinitionVersion&& value) { m_initialVersionHasBeenSet = true; m_initialVersion = std::move(value); }
 
     /**
-     * Information on the initial version
+     * Information about the initial version of the subscription definition.
      */
     inline CreateSubscriptionDefinitionRequest& WithInitialVersion(const SubscriptionDefinitionVersion& value) { SetInitialVersion(value); return *this;}
 
     /**
-     * Information on the initial version
+     * Information about the initial version of the subscription definition.
      */
     inline CreateSubscriptionDefinitionRequest& WithInitialVersion(SubscriptionDefinitionVersion&& value) { SetInitialVersion(std::move(value)); return *this;}
 
 
     /**
-     * name of the subscription definition
+     * The name of the subscription definition.
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * name of the subscription definition
+     * The name of the subscription definition.
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * name of the subscription definition
+     * The name of the subscription definition.
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * name of the subscription definition
+     * The name of the subscription definition.
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * name of the subscription definition
+     * The name of the subscription definition.
      */
     inline CreateSubscriptionDefinitionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * name of the subscription definition
+     * The name of the subscription definition.
      */
     inline CreateSubscriptionDefinitionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * name of the subscription definition
+     * The name of the subscription definition.
      */
     inline CreateSubscriptionDefinitionRequest& WithName(const char* value) { SetName(value); return *this;}
 

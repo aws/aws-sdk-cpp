@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * Role arn you wish to associate with this account.
+     * The ARN of the service role you wish to associate with your account.
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * Role arn you wish to associate with this account.
+     * The ARN of the service role you wish to associate with your account.
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * Role arn you wish to associate with this account.
+     * The ARN of the service role you wish to associate with your account.
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * Role arn you wish to associate with this account.
+     * The ARN of the service role you wish to associate with your account.
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * Role arn you wish to associate with this account.
+     * The ARN of the service role you wish to associate with your account.
      */
     inline AssociateServiceRoleToAccountRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * Role arn you wish to associate with this account.
+     * The ARN of the service role you wish to associate with your account.
      */
     inline AssociateServiceRoleToAccountRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * Role arn you wish to associate with this account.
+     * The ARN of the service role you wish to associate with your account.
      */
     inline AssociateServiceRoleToAccountRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

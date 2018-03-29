@@ -29,7 +29,8 @@ namespace Model
 {
 
   /**
-   * Function definition version<p><h3>See Also:</h3>   <a
+   * Information needed to create a function definition version.<p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateFunctionDefinitionVersionRequest">AWS
    * API Reference</a></p>
    */
@@ -50,109 +51,109 @@ namespace Model
 
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline const Aws::String& GetAmznClientToken() const{ return m_amznClientToken; }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline void SetAmznClientToken(const Aws::String& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = value; }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline void SetAmznClientToken(Aws::String&& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = std::move(value); }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline void SetAmznClientToken(const char* value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken.assign(value); }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline CreateFunctionDefinitionVersionRequest& WithAmznClientToken(const Aws::String& value) { SetAmznClientToken(value); return *this;}
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline CreateFunctionDefinitionVersionRequest& WithAmznClientToken(Aws::String&& value) { SetAmznClientToken(std::move(value)); return *this;}
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      */
     inline CreateFunctionDefinitionVersionRequest& WithAmznClientToken(const char* value) { SetAmznClientToken(value); return *this;}
 
 
     /**
-     * the unique Id of the lambda definition
+     * The ID of the Lambda function definition.
      */
     inline const Aws::String& GetFunctionDefinitionId() const{ return m_functionDefinitionId; }
 
     /**
-     * the unique Id of the lambda definition
+     * The ID of the Lambda function definition.
      */
     inline void SetFunctionDefinitionId(const Aws::String& value) { m_functionDefinitionIdHasBeenSet = true; m_functionDefinitionId = value; }
 
     /**
-     * the unique Id of the lambda definition
+     * The ID of the Lambda function definition.
      */
     inline void SetFunctionDefinitionId(Aws::String&& value) { m_functionDefinitionIdHasBeenSet = true; m_functionDefinitionId = std::move(value); }
 
     /**
-     * the unique Id of the lambda definition
+     * The ID of the Lambda function definition.
      */
     inline void SetFunctionDefinitionId(const char* value) { m_functionDefinitionIdHasBeenSet = true; m_functionDefinitionId.assign(value); }
 
     /**
-     * the unique Id of the lambda definition
+     * The ID of the Lambda function definition.
      */
     inline CreateFunctionDefinitionVersionRequest& WithFunctionDefinitionId(const Aws::String& value) { SetFunctionDefinitionId(value); return *this;}
 
     /**
-     * the unique Id of the lambda definition
+     * The ID of the Lambda function definition.
      */
     inline CreateFunctionDefinitionVersionRequest& WithFunctionDefinitionId(Aws::String&& value) { SetFunctionDefinitionId(std::move(value)); return *this;}
 
     /**
-     * the unique Id of the lambda definition
+     * The ID of the Lambda function definition.
      */
     inline CreateFunctionDefinitionVersionRequest& WithFunctionDefinitionId(const char* value) { SetFunctionDefinitionId(value); return *this;}
 
 
     /**
-     * Lambda functions in this function definition version.
+     * A list of Lambda functions in this function definition version.
      */
     inline const Aws::Vector<Function>& GetFunctions() const{ return m_functions; }
 
     /**
-     * Lambda functions in this function definition version.
+     * A list of Lambda functions in this function definition version.
      */
     inline void SetFunctions(const Aws::Vector<Function>& value) { m_functionsHasBeenSet = true; m_functions = value; }
 
     /**
-     * Lambda functions in this function definition version.
+     * A list of Lambda functions in this function definition version.
      */
     inline void SetFunctions(Aws::Vector<Function>&& value) { m_functionsHasBeenSet = true; m_functions = std::move(value); }
 
     /**
-     * Lambda functions in this function definition version.
+     * A list of Lambda functions in this function definition version.
      */
     inline CreateFunctionDefinitionVersionRequest& WithFunctions(const Aws::Vector<Function>& value) { SetFunctions(value); return *this;}
 
     /**
-     * Lambda functions in this function definition version.
+     * A list of Lambda functions in this function definition version.
      */
     inline CreateFunctionDefinitionVersionRequest& WithFunctions(Aws::Vector<Function>&& value) { SetFunctions(std::move(value)); return *this;}
 
     /**
-     * Lambda functions in this function definition version.
+     * A list of Lambda functions in this function definition version.
      */
     inline CreateFunctionDefinitionVersionRequest& AddFunctions(const Function& value) { m_functionsHasBeenSet = true; m_functions.push_back(value); return *this; }
 
     /**
-     * Lambda functions in this function definition version.
+     * A list of Lambda functions in this function definition version.
      */
     inline CreateFunctionDefinitionVersionRequest& AddFunctions(Function&& value) { m_functionsHasBeenSet = true; m_functions.push_back(std::move(value)); return *this; }
 

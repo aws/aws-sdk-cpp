@@ -43,73 +43,73 @@ namespace Model
 
 
     /**
-     * name of the definition
+     * The name of the definition.
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * name of the definition
+     * The name of the definition.
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * name of the definition
+     * The name of the definition.
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * name of the definition
+     * The name of the definition.
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * name of the definition
+     * The name of the definition.
      */
     inline UpdateResourceDefinitionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * name of the definition
+     * The name of the definition.
      */
     inline UpdateResourceDefinitionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * name of the definition
+     * The name of the definition.
      */
     inline UpdateResourceDefinitionRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * Resource definition Id.
+     * The ID of the resource definition.
      */
     inline const Aws::String& GetResourceDefinitionId() const{ return m_resourceDefinitionId; }
 
     /**
-     * Resource definition Id.
+     * The ID of the resource definition.
      */
     inline void SetResourceDefinitionId(const Aws::String& value) { m_resourceDefinitionIdHasBeenSet = true; m_resourceDefinitionId = value; }
 
     /**
-     * Resource definition Id.
+     * The ID of the resource definition.
      */
     inline void SetResourceDefinitionId(Aws::String&& value) { m_resourceDefinitionIdHasBeenSet = true; m_resourceDefinitionId = std::move(value); }
 
     /**
-     * Resource definition Id.
+     * The ID of the resource definition.
      */
     inline void SetResourceDefinitionId(const char* value) { m_resourceDefinitionIdHasBeenSet = true; m_resourceDefinitionId.assign(value); }
 
     /**
-     * Resource definition Id.
+     * The ID of the resource definition.
      */
     inline UpdateResourceDefinitionRequest& WithResourceDefinitionId(const Aws::String& value) { SetResourceDefinitionId(value); return *this;}
 
     /**
-     * Resource definition Id.
+     * The ID of the resource definition.
      */
     inline UpdateResourceDefinitionRequest& WithResourceDefinitionId(Aws::String&& value) { SetResourceDefinitionId(std::move(value)); return *this;}
 
     /**
-     * Resource definition Id.
+     * The ID of the resource definition.
      */
     inline UpdateResourceDefinitionRequest& WithResourceDefinitionId(const char* value) { SetResourceDefinitionId(value); return *this;}
 

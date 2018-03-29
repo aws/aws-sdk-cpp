@@ -49,109 +49,116 @@ namespace Model
 
 
     /**
-     * Specifies the maximum number of list results to be returned in this page
+     * The maximum number of results to be returned per request.
      */
     inline const Aws::String& GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * Specifies the maximum number of list results to be returned in this page
+     * The maximum number of results to be returned per request.
      */
     inline void SetMaxResults(const Aws::String& value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * Specifies the maximum number of list results to be returned in this page
+     * The maximum number of results to be returned per request.
      */
     inline void SetMaxResults(Aws::String&& value) { m_maxResultsHasBeenSet = true; m_maxResults = std::move(value); }
 
     /**
-     * Specifies the maximum number of list results to be returned in this page
+     * The maximum number of results to be returned per request.
      */
     inline void SetMaxResults(const char* value) { m_maxResultsHasBeenSet = true; m_maxResults.assign(value); }
 
     /**
-     * Specifies the maximum number of list results to be returned in this page
+     * The maximum number of results to be returned per request.
      */
     inline ListSubscriptionDefinitionVersionsRequest& WithMaxResults(const Aws::String& value) { SetMaxResults(value); return *this;}
 
     /**
-     * Specifies the maximum number of list results to be returned in this page
+     * The maximum number of results to be returned per request.
      */
     inline ListSubscriptionDefinitionVersionsRequest& WithMaxResults(Aws::String&& value) { SetMaxResults(std::move(value)); return *this;}
 
     /**
-     * Specifies the maximum number of list results to be returned in this page
+     * The maximum number of results to be returned per request.
      */
     inline ListSubscriptionDefinitionVersionsRequest& WithMaxResults(const char* value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * Specifies the pagination token used when iterating through a paginated request
+     * The token for the next set of results, or ''null'' if there are no additional
+     * results.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * Specifies the pagination token used when iterating through a paginated request
+     * The token for the next set of results, or ''null'' if there are no additional
+     * results.
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * Specifies the pagination token used when iterating through a paginated request
+     * The token for the next set of results, or ''null'' if there are no additional
+     * results.
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * Specifies the pagination token used when iterating through a paginated request
+     * The token for the next set of results, or ''null'' if there are no additional
+     * results.
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * Specifies the pagination token used when iterating through a paginated request
+     * The token for the next set of results, or ''null'' if there are no additional
+     * results.
      */
     inline ListSubscriptionDefinitionVersionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * Specifies the pagination token used when iterating through a paginated request
+     * The token for the next set of results, or ''null'' if there are no additional
+     * results.
      */
     inline ListSubscriptionDefinitionVersionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * Specifies the pagination token used when iterating through a paginated request
+     * The token for the next set of results, or ''null'' if there are no additional
+     * results.
      */
     inline ListSubscriptionDefinitionVersionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      */
     inline const Aws::String& GetSubscriptionDefinitionId() const{ return m_subscriptionDefinitionId; }
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      */
     inline void SetSubscriptionDefinitionId(const Aws::String& value) { m_subscriptionDefinitionIdHasBeenSet = true; m_subscriptionDefinitionId = value; }
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      */
     inline void SetSubscriptionDefinitionId(Aws::String&& value) { m_subscriptionDefinitionIdHasBeenSet = true; m_subscriptionDefinitionId = std::move(value); }
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      */
     inline void SetSubscriptionDefinitionId(const char* value) { m_subscriptionDefinitionIdHasBeenSet = true; m_subscriptionDefinitionId.assign(value); }
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      */
     inline ListSubscriptionDefinitionVersionsRequest& WithSubscriptionDefinitionId(const Aws::String& value) { SetSubscriptionDefinitionId(value); return *this;}
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      */
     inline ListSubscriptionDefinitionVersionsRequest& WithSubscriptionDefinitionId(Aws::String&& value) { SetSubscriptionDefinitionId(std::move(value)); return *this;}
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      */
     inline ListSubscriptionDefinitionVersionsRequest& WithSubscriptionDefinitionId(const char* value) { SetSubscriptionDefinitionId(value); return *this;}
 
