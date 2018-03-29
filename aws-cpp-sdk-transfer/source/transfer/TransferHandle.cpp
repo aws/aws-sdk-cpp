@@ -315,6 +315,7 @@ namespace Aws
 
         void TransferHandle::CleanupDownloadStream()
         {
+            std::lock_guard<std::mutex> locker(m_downloadStreamLock);
             if(m_downloadStream)
             {
                 m_downloadStream->flush();
