@@ -1020,7 +1020,7 @@ namespace Model
      * Certificate transparency makes it possible to detect SSL certificates that have
      * been mistakenly or maliciously issued. A browser might respond to certificate
      * that has not been logged by showing an error message. The logs are
-     * cryptographicaly secure. </p>
+     * cryptographically secure. </p>
      */
     inline const CertificateOptions& GetOptions() const{ return m_options; }
 
@@ -1029,7 +1029,7 @@ namespace Model
      * Certificate transparency makes it possible to detect SSL certificates that have
      * been mistakenly or maliciously issued. A browser might respond to certificate
      * that has not been logged by showing an error message. The logs are
-     * cryptographicaly secure. </p>
+     * cryptographically secure. </p>
      */
     inline void SetOptions(const CertificateOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
 
@@ -1038,7 +1038,7 @@ namespace Model
      * Certificate transparency makes it possible to detect SSL certificates that have
      * been mistakenly or maliciously issued. A browser might respond to certificate
      * that has not been logged by showing an error message. The logs are
-     * cryptographicaly secure. </p>
+     * cryptographically secure. </p>
      */
     inline void SetOptions(CertificateOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
 
@@ -1047,7 +1047,7 @@ namespace Model
      * Certificate transparency makes it possible to detect SSL certificates that have
      * been mistakenly or maliciously issued. A browser might respond to certificate
      * that has not been logged by showing an error message. The logs are
-     * cryptographicaly secure. </p>
+     * cryptographically secure. </p>
      */
     inline CertificateDetail& WithOptions(const CertificateOptions& value) { SetOptions(value); return *this;}
 
@@ -1056,7 +1056,7 @@ namespace Model
      * Certificate transparency makes it possible to detect SSL certificates that have
      * been mistakenly or maliciously issued. A browser might respond to certificate
      * that has not been logged by showing an error message. The logs are
-     * cryptographicaly secure. </p>
+     * cryptographically secure. </p>
      */
     inline CertificateDetail& WithOptions(CertificateOptions&& value) { SetOptions(std::move(value)); return *this;}
 

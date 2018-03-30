@@ -127,27 +127,52 @@ namespace Model
 
 
     /**
-     * <p>The method you want to use to validate your domain.</p>
+     * <p>The method you want to use to validate that you own or control domain. You
+     * can <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate
+     * with DNS</a> or <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate
+     * with email</a>. We recommend that you use DNS validation. </p>
      */
     inline const ValidationMethod& GetValidationMethod() const{ return m_validationMethod; }
 
     /**
-     * <p>The method you want to use to validate your domain.</p>
+     * <p>The method you want to use to validate that you own or control domain. You
+     * can <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate
+     * with DNS</a> or <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate
+     * with email</a>. We recommend that you use DNS validation. </p>
      */
     inline void SetValidationMethod(const ValidationMethod& value) { m_validationMethodHasBeenSet = true; m_validationMethod = value; }
 
     /**
-     * <p>The method you want to use to validate your domain.</p>
+     * <p>The method you want to use to validate that you own or control domain. You
+     * can <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate
+     * with DNS</a> or <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate
+     * with email</a>. We recommend that you use DNS validation. </p>
      */
     inline void SetValidationMethod(ValidationMethod&& value) { m_validationMethodHasBeenSet = true; m_validationMethod = std::move(value); }
 
     /**
-     * <p>The method you want to use to validate your domain.</p>
+     * <p>The method you want to use to validate that you own or control domain. You
+     * can <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate
+     * with DNS</a> or <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate
+     * with email</a>. We recommend that you use DNS validation. </p>
      */
     inline RequestCertificateRequest& WithValidationMethod(const ValidationMethod& value) { SetValidationMethod(value); return *this;}
 
     /**
-     * <p>The method you want to use to validate your domain.</p>
+     * <p>The method you want to use to validate that you own or control domain. You
+     * can <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate
+     * with DNS</a> or <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate
+     * with email</a>. We recommend that you use DNS validation. </p>
      */
     inline RequestCertificateRequest& WithValidationMethod(ValidationMethod&& value) { SetValidationMethod(std::move(value)); return *this;}
 
@@ -456,8 +481,8 @@ namespace Model
      * possible to detect SSL/TLS certificates that have been mistakenly or maliciously
      * issued. Certificates that have not been logged typically produce an error
      * message in a browser. For more information, see <a
-     * href="acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">
-     * Opting Out of Certificate Transparency Logging</a>. </p>
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting
+     * Out of Certificate Transparency Logging</a>.</p>
      */
     inline const CertificateOptions& GetOptions() const{ return m_options; }
 
@@ -467,8 +492,8 @@ namespace Model
      * possible to detect SSL/TLS certificates that have been mistakenly or maliciously
      * issued. Certificates that have not been logged typically produce an error
      * message in a browser. For more information, see <a
-     * href="acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">
-     * Opting Out of Certificate Transparency Logging</a>. </p>
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting
+     * Out of Certificate Transparency Logging</a>.</p>
      */
     inline void SetOptions(const CertificateOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
 
@@ -478,8 +503,8 @@ namespace Model
      * possible to detect SSL/TLS certificates that have been mistakenly or maliciously
      * issued. Certificates that have not been logged typically produce an error
      * message in a browser. For more information, see <a
-     * href="acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">
-     * Opting Out of Certificate Transparency Logging</a>. </p>
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting
+     * Out of Certificate Transparency Logging</a>.</p>
      */
     inline void SetOptions(CertificateOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
 
@@ -489,8 +514,8 @@ namespace Model
      * possible to detect SSL/TLS certificates that have been mistakenly or maliciously
      * issued. Certificates that have not been logged typically produce an error
      * message in a browser. For more information, see <a
-     * href="acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">
-     * Opting Out of Certificate Transparency Logging</a>. </p>
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting
+     * Out of Certificate Transparency Logging</a>.</p>
      */
     inline RequestCertificateRequest& WithOptions(const CertificateOptions& value) { SetOptions(value); return *this;}
 
@@ -500,8 +525,8 @@ namespace Model
      * possible to detect SSL/TLS certificates that have been mistakenly or maliciously
      * issued. Certificates that have not been logged typically produce an error
      * message in a browser. For more information, see <a
-     * href="acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">
-     * Opting Out of Certificate Transparency Logging</a>. </p>
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting
+     * Out of Certificate Transparency Logging</a>.</p>
      */
     inline RequestCertificateRequest& WithOptions(CertificateOptions&& value) { SetOptions(std::move(value)); return *this;}
 
