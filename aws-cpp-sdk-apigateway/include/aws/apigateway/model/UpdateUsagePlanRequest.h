@@ -49,37 +49,37 @@ namespace Model
 
 
     /**
-     * <p>The Id of the to-be-updated usage plan.</p>
+     * <p>[Required] The Id of the to-be-updated usage plan.</p>
      */
     inline const Aws::String& GetUsagePlanId() const{ return m_usagePlanId; }
 
     /**
-     * <p>The Id of the to-be-updated usage plan.</p>
+     * <p>[Required] The Id of the to-be-updated usage plan.</p>
      */
     inline void SetUsagePlanId(const Aws::String& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = value; }
 
     /**
-     * <p>The Id of the to-be-updated usage plan.</p>
+     * <p>[Required] The Id of the to-be-updated usage plan.</p>
      */
     inline void SetUsagePlanId(Aws::String&& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = std::move(value); }
 
     /**
-     * <p>The Id of the to-be-updated usage plan.</p>
+     * <p>[Required] The Id of the to-be-updated usage plan.</p>
      */
     inline void SetUsagePlanId(const char* value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId.assign(value); }
 
     /**
-     * <p>The Id of the to-be-updated usage plan.</p>
+     * <p>[Required] The Id of the to-be-updated usage plan.</p>
      */
     inline UpdateUsagePlanRequest& WithUsagePlanId(const Aws::String& value) { SetUsagePlanId(value); return *this;}
 
     /**
-     * <p>The Id of the to-be-updated usage plan.</p>
+     * <p>[Required] The Id of the to-be-updated usage plan.</p>
      */
     inline UpdateUsagePlanRequest& WithUsagePlanId(Aws::String&& value) { SetUsagePlanId(std::move(value)); return *this;}
 
     /**
-     * <p>The Id of the to-be-updated usage plan.</p>
+     * <p>[Required] The Id of the to-be-updated usage plan.</p>
      */
     inline UpdateUsagePlanRequest& WithUsagePlanId(const char* value) { SetUsagePlanId(value); return *this;}
 

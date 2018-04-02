@@ -108,6 +108,12 @@ PutRestApiResult& PutRestApiResult::operator =(const Aws::AmazonWebServiceResult
 
   }
 
+  if(jsonValue.ValueExists("policy"))
+  {
+    m_policy = jsonValue.GetString("policy");
+
+  }
+
 
 
   return *this;

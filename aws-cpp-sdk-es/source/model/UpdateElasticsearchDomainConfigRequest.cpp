@@ -28,6 +28,7 @@ UpdateElasticsearchDomainConfigRequest::UpdateElasticsearchDomainConfigRequest()
     m_eBSOptionsHasBeenSet(false),
     m_snapshotOptionsHasBeenSet(false),
     m_vPCOptionsHasBeenSet(false),
+    m_cognitoOptionsHasBeenSet(false),
     m_advancedOptionsHasBeenSet(false),
     m_accessPoliciesHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false)
@@ -59,6 +60,12 @@ Aws::String UpdateElasticsearchDomainConfigRequest::SerializePayload() const
   if(m_vPCOptionsHasBeenSet)
   {
    payload.WithObject("VPCOptions", m_vPCOptions.Jsonize());
+
+  }
+
+  if(m_cognitoOptionsHasBeenSet)
+  {
+   payload.WithObject("CognitoOptions", m_cognitoOptions.Jsonize());
 
   }
 

@@ -47,73 +47,87 @@ namespace Model
 
 
     /**
-     * <p>The domain name of the <a>BasePathMapping</a> resource to delete.</p>
+     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
+     * delete.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>The domain name of the <a>BasePathMapping</a> resource to delete.</p>
+     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
+     * delete.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>The domain name of the <a>BasePathMapping</a> resource to delete.</p>
+     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
+     * delete.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>The domain name of the <a>BasePathMapping</a> resource to delete.</p>
+     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
+     * delete.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>The domain name of the <a>BasePathMapping</a> resource to delete.</p>
+     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
+     * delete.</p>
      */
     inline DeleteBasePathMappingRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>The domain name of the <a>BasePathMapping</a> resource to delete.</p>
+     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
+     * delete.</p>
      */
     inline DeleteBasePathMappingRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>The domain name of the <a>BasePathMapping</a> resource to delete.</p>
+     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
+     * delete.</p>
      */
     inline DeleteBasePathMappingRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
 
     /**
-     * <p>The base path name of the <a>BasePathMapping</a> resource to delete.</p>
+     * <p>[Required] The base path name of the <a>BasePathMapping</a> resource to
+     * delete.</p>
      */
     inline const Aws::String& GetBasePath() const{ return m_basePath; }
 
     /**
-     * <p>The base path name of the <a>BasePathMapping</a> resource to delete.</p>
+     * <p>[Required] The base path name of the <a>BasePathMapping</a> resource to
+     * delete.</p>
      */
     inline void SetBasePath(const Aws::String& value) { m_basePathHasBeenSet = true; m_basePath = value; }
 
     /**
-     * <p>The base path name of the <a>BasePathMapping</a> resource to delete.</p>
+     * <p>[Required] The base path name of the <a>BasePathMapping</a> resource to
+     * delete.</p>
      */
     inline void SetBasePath(Aws::String&& value) { m_basePathHasBeenSet = true; m_basePath = std::move(value); }
 
     /**
-     * <p>The base path name of the <a>BasePathMapping</a> resource to delete.</p>
+     * <p>[Required] The base path name of the <a>BasePathMapping</a> resource to
+     * delete.</p>
      */
     inline void SetBasePath(const char* value) { m_basePathHasBeenSet = true; m_basePath.assign(value); }
 
     /**
-     * <p>The base path name of the <a>BasePathMapping</a> resource to delete.</p>
+     * <p>[Required] The base path name of the <a>BasePathMapping</a> resource to
+     * delete.</p>
      */
     inline DeleteBasePathMappingRequest& WithBasePath(const Aws::String& value) { SetBasePath(value); return *this;}
 
     /**
-     * <p>The base path name of the <a>BasePathMapping</a> resource to delete.</p>
+     * <p>[Required] The base path name of the <a>BasePathMapping</a> resource to
+     * delete.</p>
      */
     inline DeleteBasePathMappingRequest& WithBasePath(Aws::String&& value) { SetBasePath(std::move(value)); return *this;}
 
     /**
-     * <p>The base path name of the <a>BasePathMapping</a> resource to delete.</p>
+     * <p>[Required] The base path name of the <a>BasePathMapping</a> resource to
+     * delete.</p>
      */
     inline DeleteBasePathMappingRequest& WithBasePath(const char* value) { SetBasePath(value); return *this;}
 

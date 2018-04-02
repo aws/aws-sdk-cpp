@@ -56,109 +56,109 @@ namespace Model
 
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline GetExportRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline GetExportRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline GetExportRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
 
     /**
-     * <p>The name of the <a>Stage</a> that will be exported.</p>
+     * <p>[Required] The name of the <a>Stage</a> that will be exported.</p>
      */
     inline const Aws::String& GetStageName() const{ return m_stageName; }
 
     /**
-     * <p>The name of the <a>Stage</a> that will be exported.</p>
+     * <p>[Required] The name of the <a>Stage</a> that will be exported.</p>
      */
     inline void SetStageName(const Aws::String& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
 
     /**
-     * <p>The name of the <a>Stage</a> that will be exported.</p>
+     * <p>[Required] The name of the <a>Stage</a> that will be exported.</p>
      */
     inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
 
     /**
-     * <p>The name of the <a>Stage</a> that will be exported.</p>
+     * <p>[Required] The name of the <a>Stage</a> that will be exported.</p>
      */
     inline void SetStageName(const char* value) { m_stageNameHasBeenSet = true; m_stageName.assign(value); }
 
     /**
-     * <p>The name of the <a>Stage</a> that will be exported.</p>
+     * <p>[Required] The name of the <a>Stage</a> that will be exported.</p>
      */
     inline GetExportRequest& WithStageName(const Aws::String& value) { SetStageName(value); return *this;}
 
     /**
-     * <p>The name of the <a>Stage</a> that will be exported.</p>
+     * <p>[Required] The name of the <a>Stage</a> that will be exported.</p>
      */
     inline GetExportRequest& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the <a>Stage</a> that will be exported.</p>
+     * <p>[Required] The name of the <a>Stage</a> that will be exported.</p>
      */
     inline GetExportRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
 
 
     /**
-     * <p>The type of export. Currently only 'swagger' is supported.</p>
+     * <p>[Required] The type of export. Currently only 'swagger' is supported.</p>
      */
     inline const Aws::String& GetExportType() const{ return m_exportType; }
 
     /**
-     * <p>The type of export. Currently only 'swagger' is supported.</p>
+     * <p>[Required] The type of export. Currently only 'swagger' is supported.</p>
      */
     inline void SetExportType(const Aws::String& value) { m_exportTypeHasBeenSet = true; m_exportType = value; }
 
     /**
-     * <p>The type of export. Currently only 'swagger' is supported.</p>
+     * <p>[Required] The type of export. Currently only 'swagger' is supported.</p>
      */
     inline void SetExportType(Aws::String&& value) { m_exportTypeHasBeenSet = true; m_exportType = std::move(value); }
 
     /**
-     * <p>The type of export. Currently only 'swagger' is supported.</p>
+     * <p>[Required] The type of export. Currently only 'swagger' is supported.</p>
      */
     inline void SetExportType(const char* value) { m_exportTypeHasBeenSet = true; m_exportType.assign(value); }
 
     /**
-     * <p>The type of export. Currently only 'swagger' is supported.</p>
+     * <p>[Required] The type of export. Currently only 'swagger' is supported.</p>
      */
     inline GetExportRequest& WithExportType(const Aws::String& value) { SetExportType(value); return *this;}
 
     /**
-     * <p>The type of export. Currently only 'swagger' is supported.</p>
+     * <p>[Required] The type of export. Currently only 'swagger' is supported.</p>
      */
     inline GetExportRequest& WithExportType(Aws::String&& value) { SetExportType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of export. Currently only 'swagger' is supported.</p>
+     * <p>[Required] The type of export. Currently only 'swagger' is supported.</p>
      */
     inline GetExportRequest& WithExportType(const char* value) { SetExportType(value); return *this;}
 

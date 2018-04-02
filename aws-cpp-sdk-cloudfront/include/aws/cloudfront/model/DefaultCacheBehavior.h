@@ -42,7 +42,7 @@ namespace Model
    * a <code>CacheBehavior</code> element or if files don't match any of the values
    * of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must
    * create exactly one default cache behavior.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DefaultCacheBehavior">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DefaultCacheBehavior">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API DefaultCacheBehavior
@@ -561,6 +561,28 @@ namespace Model
      */
     inline DefaultCacheBehavior& WithLambdaFunctionAssociations(LambdaFunctionAssociations&& value) { SetLambdaFunctionAssociations(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetFieldLevelEncryptionId() const{ return m_fieldLevelEncryptionId; }
+
+    
+    inline void SetFieldLevelEncryptionId(const Aws::String& value) { m_fieldLevelEncryptionIdHasBeenSet = true; m_fieldLevelEncryptionId = value; }
+
+    
+    inline void SetFieldLevelEncryptionId(Aws::String&& value) { m_fieldLevelEncryptionIdHasBeenSet = true; m_fieldLevelEncryptionId = std::move(value); }
+
+    
+    inline void SetFieldLevelEncryptionId(const char* value) { m_fieldLevelEncryptionIdHasBeenSet = true; m_fieldLevelEncryptionId.assign(value); }
+
+    
+    inline DefaultCacheBehavior& WithFieldLevelEncryptionId(const Aws::String& value) { SetFieldLevelEncryptionId(value); return *this;}
+
+    
+    inline DefaultCacheBehavior& WithFieldLevelEncryptionId(Aws::String&& value) { SetFieldLevelEncryptionId(std::move(value)); return *this;}
+
+    
+    inline DefaultCacheBehavior& WithFieldLevelEncryptionId(const char* value) { SetFieldLevelEncryptionId(value); return *this;}
+
   private:
 
     Aws::String m_targetOriginId;
@@ -595,6 +617,9 @@ namespace Model
 
     LambdaFunctionAssociations m_lambdaFunctionAssociations;
     bool m_lambdaFunctionAssociationsHasBeenSet;
+
+    Aws::String m_fieldLevelEncryptionId;
+    bool m_fieldLevelEncryptionIdHasBeenSet;
   };
 
 } // namespace Model

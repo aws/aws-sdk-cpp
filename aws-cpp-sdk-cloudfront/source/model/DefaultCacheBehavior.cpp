@@ -47,7 +47,8 @@ DefaultCacheBehavior::DefaultCacheBehavior() :
     m_maxTTLHasBeenSet(false),
     m_compress(false),
     m_compressHasBeenSet(false),
-    m_lambdaFunctionAssociationsHasBeenSet(false)
+    m_lambdaFunctionAssociationsHasBeenSet(false),
+    m_fieldLevelEncryptionIdHasBeenSet(false)
 {
 }
 
@@ -68,7 +69,8 @@ DefaultCacheBehavior::DefaultCacheBehavior(const XmlNode& xmlNode) :
     m_maxTTLHasBeenSet(false),
     m_compress(false),
     m_compressHasBeenSet(false),
-    m_lambdaFunctionAssociationsHasBeenSet(false)
+    m_lambdaFunctionAssociationsHasBeenSet(false),
+    m_fieldLevelEncryptionIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -144,6 +146,12 @@ DefaultCacheBehavior& DefaultCacheBehavior::operator =(const XmlNode& xmlNode)
     {
       m_lambdaFunctionAssociations = lambdaFunctionAssociationsNode;
       m_lambdaFunctionAssociationsHasBeenSet = true;
+    }
+    XmlNode fieldLevelEncryptionIdNode = resultNode.FirstChild("FieldLevelEncryptionId");
+    if(!fieldLevelEncryptionIdNode.IsNull())
+    {
+      m_fieldLevelEncryptionId = StringUtils::Trim(fieldLevelEncryptionIdNode.GetText().c_str());
+      m_fieldLevelEncryptionIdHasBeenSet = true;
     }
   }
 
@@ -227,6 +235,12 @@ void DefaultCacheBehavior::AddToNode(XmlNode& parentNode) const
   {
    XmlNode lambdaFunctionAssociationsNode = parentNode.CreateChildElement("LambdaFunctionAssociations");
    m_lambdaFunctionAssociations.AddToNode(lambdaFunctionAssociationsNode);
+  }
+
+  if(m_fieldLevelEncryptionIdHasBeenSet)
+  {
+   XmlNode fieldLevelEncryptionIdNode = parentNode.CreateChildElement("FieldLevelEncryptionId");
+   fieldLevelEncryptionIdNode.SetText(m_fieldLevelEncryptionId);
   }
 
 }

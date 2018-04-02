@@ -53,37 +53,37 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the <a>ApiKey</a> resource.</p>
+     * <p>[Required] The identifier of the <a>ApiKey</a> resource.</p>
      */
     inline const Aws::String& GetApiKey() const{ return m_apiKey; }
 
     /**
-     * <p>The identifier of the <a>ApiKey</a> resource.</p>
+     * <p>[Required] The identifier of the <a>ApiKey</a> resource.</p>
      */
     inline void SetApiKey(const Aws::String& value) { m_apiKeyHasBeenSet = true; m_apiKey = value; }
 
     /**
-     * <p>The identifier of the <a>ApiKey</a> resource.</p>
+     * <p>[Required] The identifier of the <a>ApiKey</a> resource.</p>
      */
     inline void SetApiKey(Aws::String&& value) { m_apiKeyHasBeenSet = true; m_apiKey = std::move(value); }
 
     /**
-     * <p>The identifier of the <a>ApiKey</a> resource.</p>
+     * <p>[Required] The identifier of the <a>ApiKey</a> resource.</p>
      */
     inline void SetApiKey(const char* value) { m_apiKeyHasBeenSet = true; m_apiKey.assign(value); }
 
     /**
-     * <p>The identifier of the <a>ApiKey</a> resource.</p>
+     * <p>[Required] The identifier of the <a>ApiKey</a> resource.</p>
      */
     inline GetApiKeyRequest& WithApiKey(const Aws::String& value) { SetApiKey(value); return *this;}
 
     /**
-     * <p>The identifier of the <a>ApiKey</a> resource.</p>
+     * <p>[Required] The identifier of the <a>ApiKey</a> resource.</p>
      */
     inline GetApiKeyRequest& WithApiKey(Aws::String&& value) { SetApiKey(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the <a>ApiKey</a> resource.</p>
+     * <p>[Required] The identifier of the <a>ApiKey</a> resource.</p>
      */
     inline GetApiKeyRequest& WithApiKey(const char* value) { SetApiKey(value); return *this;}
 

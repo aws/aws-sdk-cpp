@@ -49,37 +49,37 @@ namespace Model
 
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline CreateAuthorizerRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline CreateAuthorizerRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline CreateAuthorizerRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
@@ -442,10 +442,10 @@ namespace Model
 
     /**
      * <p>The identity source for which authorization is requested. <ul><li>For a
-     * <code>TOKEN</code> authorizer, this is required and specifies the request header
-     * mapping expression for the custom header holding the authorization token
-     * submitted by the client. For example, if the token header name is
-     * <code>Auth</code>, the header mapping expression is
+     * <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is
+     * required and specifies the request header mapping expression for the custom
+     * header holding the authorization token submitted by the client. For example, if
+     * the token header name is <code>Auth</code>, the header mapping expression is
      * <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code>
      * authorizer, this is required when authorization caching is enabled. The value is
      * a comma-separated string of one or more mapping expressions of the specified
@@ -460,17 +460,16 @@ namespace Model
      * Unauthorized response without calling the Lambda function. The valid value is a
      * string of comma-separated mapping expressions of the specified request
      * parameters. When the authorization caching is not enabled, this property is
-     * optional.</li><li>For a <code>COGNITO_USER_POOLS</code> authorizer, this
-     * property is not used.</li></ul></p>
+     * optional.</li></ul></p>
      */
     inline const Aws::String& GetIdentitySource() const{ return m_identitySource; }
 
     /**
      * <p>The identity source for which authorization is requested. <ul><li>For a
-     * <code>TOKEN</code> authorizer, this is required and specifies the request header
-     * mapping expression for the custom header holding the authorization token
-     * submitted by the client. For example, if the token header name is
-     * <code>Auth</code>, the header mapping expression is
+     * <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is
+     * required and specifies the request header mapping expression for the custom
+     * header holding the authorization token submitted by the client. For example, if
+     * the token header name is <code>Auth</code>, the header mapping expression is
      * <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code>
      * authorizer, this is required when authorization caching is enabled. The value is
      * a comma-separated string of one or more mapping expressions of the specified
@@ -485,17 +484,16 @@ namespace Model
      * Unauthorized response without calling the Lambda function. The valid value is a
      * string of comma-separated mapping expressions of the specified request
      * parameters. When the authorization caching is not enabled, this property is
-     * optional.</li><li>For a <code>COGNITO_USER_POOLS</code> authorizer, this
-     * property is not used.</li></ul></p>
+     * optional.</li></ul></p>
      */
     inline void SetIdentitySource(const Aws::String& value) { m_identitySourceHasBeenSet = true; m_identitySource = value; }
 
     /**
      * <p>The identity source for which authorization is requested. <ul><li>For a
-     * <code>TOKEN</code> authorizer, this is required and specifies the request header
-     * mapping expression for the custom header holding the authorization token
-     * submitted by the client. For example, if the token header name is
-     * <code>Auth</code>, the header mapping expression is
+     * <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is
+     * required and specifies the request header mapping expression for the custom
+     * header holding the authorization token submitted by the client. For example, if
+     * the token header name is <code>Auth</code>, the header mapping expression is
      * <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code>
      * authorizer, this is required when authorization caching is enabled. The value is
      * a comma-separated string of one or more mapping expressions of the specified
@@ -510,17 +508,16 @@ namespace Model
      * Unauthorized response without calling the Lambda function. The valid value is a
      * string of comma-separated mapping expressions of the specified request
      * parameters. When the authorization caching is not enabled, this property is
-     * optional.</li><li>For a <code>COGNITO_USER_POOLS</code> authorizer, this
-     * property is not used.</li></ul></p>
+     * optional.</li></ul></p>
      */
     inline void SetIdentitySource(Aws::String&& value) { m_identitySourceHasBeenSet = true; m_identitySource = std::move(value); }
 
     /**
      * <p>The identity source for which authorization is requested. <ul><li>For a
-     * <code>TOKEN</code> authorizer, this is required and specifies the request header
-     * mapping expression for the custom header holding the authorization token
-     * submitted by the client. For example, if the token header name is
-     * <code>Auth</code>, the header mapping expression is
+     * <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is
+     * required and specifies the request header mapping expression for the custom
+     * header holding the authorization token submitted by the client. For example, if
+     * the token header name is <code>Auth</code>, the header mapping expression is
      * <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code>
      * authorizer, this is required when authorization caching is enabled. The value is
      * a comma-separated string of one or more mapping expressions of the specified
@@ -535,17 +532,16 @@ namespace Model
      * Unauthorized response without calling the Lambda function. The valid value is a
      * string of comma-separated mapping expressions of the specified request
      * parameters. When the authorization caching is not enabled, this property is
-     * optional.</li><li>For a <code>COGNITO_USER_POOLS</code> authorizer, this
-     * property is not used.</li></ul></p>
+     * optional.</li></ul></p>
      */
     inline void SetIdentitySource(const char* value) { m_identitySourceHasBeenSet = true; m_identitySource.assign(value); }
 
     /**
      * <p>The identity source for which authorization is requested. <ul><li>For a
-     * <code>TOKEN</code> authorizer, this is required and specifies the request header
-     * mapping expression for the custom header holding the authorization token
-     * submitted by the client. For example, if the token header name is
-     * <code>Auth</code>, the header mapping expression is
+     * <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is
+     * required and specifies the request header mapping expression for the custom
+     * header holding the authorization token submitted by the client. For example, if
+     * the token header name is <code>Auth</code>, the header mapping expression is
      * <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code>
      * authorizer, this is required when authorization caching is enabled. The value is
      * a comma-separated string of one or more mapping expressions of the specified
@@ -560,17 +556,16 @@ namespace Model
      * Unauthorized response without calling the Lambda function. The valid value is a
      * string of comma-separated mapping expressions of the specified request
      * parameters. When the authorization caching is not enabled, this property is
-     * optional.</li><li>For a <code>COGNITO_USER_POOLS</code> authorizer, this
-     * property is not used.</li></ul></p>
+     * optional.</li></ul></p>
      */
     inline CreateAuthorizerRequest& WithIdentitySource(const Aws::String& value) { SetIdentitySource(value); return *this;}
 
     /**
      * <p>The identity source for which authorization is requested. <ul><li>For a
-     * <code>TOKEN</code> authorizer, this is required and specifies the request header
-     * mapping expression for the custom header holding the authorization token
-     * submitted by the client. For example, if the token header name is
-     * <code>Auth</code>, the header mapping expression is
+     * <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is
+     * required and specifies the request header mapping expression for the custom
+     * header holding the authorization token submitted by the client. For example, if
+     * the token header name is <code>Auth</code>, the header mapping expression is
      * <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code>
      * authorizer, this is required when authorization caching is enabled. The value is
      * a comma-separated string of one or more mapping expressions of the specified
@@ -585,17 +580,16 @@ namespace Model
      * Unauthorized response without calling the Lambda function. The valid value is a
      * string of comma-separated mapping expressions of the specified request
      * parameters. When the authorization caching is not enabled, this property is
-     * optional.</li><li>For a <code>COGNITO_USER_POOLS</code> authorizer, this
-     * property is not used.</li></ul></p>
+     * optional.</li></ul></p>
      */
     inline CreateAuthorizerRequest& WithIdentitySource(Aws::String&& value) { SetIdentitySource(std::move(value)); return *this;}
 
     /**
      * <p>The identity source for which authorization is requested. <ul><li>For a
-     * <code>TOKEN</code> authorizer, this is required and specifies the request header
-     * mapping expression for the custom header holding the authorization token
-     * submitted by the client. For example, if the token header name is
-     * <code>Auth</code>, the header mapping expression is
+     * <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is
+     * required and specifies the request header mapping expression for the custom
+     * header holding the authorization token submitted by the client. For example, if
+     * the token header name is <code>Auth</code>, the header mapping expression is
      * <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code>
      * authorizer, this is required when authorization caching is enabled. The value is
      * a comma-separated string of one or more mapping expressions of the specified
@@ -610,8 +604,7 @@ namespace Model
      * Unauthorized response without calling the Lambda function. The valid value is a
      * string of comma-separated mapping expressions of the specified request
      * parameters. When the authorization caching is not enabled, this property is
-     * optional.</li><li>For a <code>COGNITO_USER_POOLS</code> authorizer, this
-     * property is not used.</li></ul></p>
+     * optional.</li></ul></p>
      */
     inline CreateAuthorizerRequest& WithIdentitySource(const char* value) { SetIdentitySource(value); return *this;}
 
@@ -619,77 +612,77 @@ namespace Model
     /**
      * <p>A validation expression for the incoming identity token. For
      * <code>TOKEN</code> authorizers, this value is a regular expression. API Gateway
-     * will match the incoming token from the client against the specified regular
-     * expression. It will invoke the authorizer's Lambda function there is a match.
-     * Otherwise, it will return a 401 Unauthorized response without calling the Lambda
-     * function. The validation expression does not apply to the <code>REQUEST</code>
-     * authorizer.</p>
+     * will match the <code>aud</code> field of the incoming token from the client
+     * against the specified regular expression. It will invoke the authorizer's Lambda
+     * function when there is a match. Otherwise, it will return a 401 Unauthorized
+     * response without calling the Lambda function. The validation expression does not
+     * apply to the <code>REQUEST</code> authorizer.</p>
      */
     inline const Aws::String& GetIdentityValidationExpression() const{ return m_identityValidationExpression; }
 
     /**
      * <p>A validation expression for the incoming identity token. For
      * <code>TOKEN</code> authorizers, this value is a regular expression. API Gateway
-     * will match the incoming token from the client against the specified regular
-     * expression. It will invoke the authorizer's Lambda function there is a match.
-     * Otherwise, it will return a 401 Unauthorized response without calling the Lambda
-     * function. The validation expression does not apply to the <code>REQUEST</code>
-     * authorizer.</p>
+     * will match the <code>aud</code> field of the incoming token from the client
+     * against the specified regular expression. It will invoke the authorizer's Lambda
+     * function when there is a match. Otherwise, it will return a 401 Unauthorized
+     * response without calling the Lambda function. The validation expression does not
+     * apply to the <code>REQUEST</code> authorizer.</p>
      */
     inline void SetIdentityValidationExpression(const Aws::String& value) { m_identityValidationExpressionHasBeenSet = true; m_identityValidationExpression = value; }
 
     /**
      * <p>A validation expression for the incoming identity token. For
      * <code>TOKEN</code> authorizers, this value is a regular expression. API Gateway
-     * will match the incoming token from the client against the specified regular
-     * expression. It will invoke the authorizer's Lambda function there is a match.
-     * Otherwise, it will return a 401 Unauthorized response without calling the Lambda
-     * function. The validation expression does not apply to the <code>REQUEST</code>
-     * authorizer.</p>
+     * will match the <code>aud</code> field of the incoming token from the client
+     * against the specified regular expression. It will invoke the authorizer's Lambda
+     * function when there is a match. Otherwise, it will return a 401 Unauthorized
+     * response without calling the Lambda function. The validation expression does not
+     * apply to the <code>REQUEST</code> authorizer.</p>
      */
     inline void SetIdentityValidationExpression(Aws::String&& value) { m_identityValidationExpressionHasBeenSet = true; m_identityValidationExpression = std::move(value); }
 
     /**
      * <p>A validation expression for the incoming identity token. For
      * <code>TOKEN</code> authorizers, this value is a regular expression. API Gateway
-     * will match the incoming token from the client against the specified regular
-     * expression. It will invoke the authorizer's Lambda function there is a match.
-     * Otherwise, it will return a 401 Unauthorized response without calling the Lambda
-     * function. The validation expression does not apply to the <code>REQUEST</code>
-     * authorizer.</p>
+     * will match the <code>aud</code> field of the incoming token from the client
+     * against the specified regular expression. It will invoke the authorizer's Lambda
+     * function when there is a match. Otherwise, it will return a 401 Unauthorized
+     * response without calling the Lambda function. The validation expression does not
+     * apply to the <code>REQUEST</code> authorizer.</p>
      */
     inline void SetIdentityValidationExpression(const char* value) { m_identityValidationExpressionHasBeenSet = true; m_identityValidationExpression.assign(value); }
 
     /**
      * <p>A validation expression for the incoming identity token. For
      * <code>TOKEN</code> authorizers, this value is a regular expression. API Gateway
-     * will match the incoming token from the client against the specified regular
-     * expression. It will invoke the authorizer's Lambda function there is a match.
-     * Otherwise, it will return a 401 Unauthorized response without calling the Lambda
-     * function. The validation expression does not apply to the <code>REQUEST</code>
-     * authorizer.</p>
+     * will match the <code>aud</code> field of the incoming token from the client
+     * against the specified regular expression. It will invoke the authorizer's Lambda
+     * function when there is a match. Otherwise, it will return a 401 Unauthorized
+     * response without calling the Lambda function. The validation expression does not
+     * apply to the <code>REQUEST</code> authorizer.</p>
      */
     inline CreateAuthorizerRequest& WithIdentityValidationExpression(const Aws::String& value) { SetIdentityValidationExpression(value); return *this;}
 
     /**
      * <p>A validation expression for the incoming identity token. For
      * <code>TOKEN</code> authorizers, this value is a regular expression. API Gateway
-     * will match the incoming token from the client against the specified regular
-     * expression. It will invoke the authorizer's Lambda function there is a match.
-     * Otherwise, it will return a 401 Unauthorized response without calling the Lambda
-     * function. The validation expression does not apply to the <code>REQUEST</code>
-     * authorizer.</p>
+     * will match the <code>aud</code> field of the incoming token from the client
+     * against the specified regular expression. It will invoke the authorizer's Lambda
+     * function when there is a match. Otherwise, it will return a 401 Unauthorized
+     * response without calling the Lambda function. The validation expression does not
+     * apply to the <code>REQUEST</code> authorizer.</p>
      */
     inline CreateAuthorizerRequest& WithIdentityValidationExpression(Aws::String&& value) { SetIdentityValidationExpression(std::move(value)); return *this;}
 
     /**
      * <p>A validation expression for the incoming identity token. For
      * <code>TOKEN</code> authorizers, this value is a regular expression. API Gateway
-     * will match the incoming token from the client against the specified regular
-     * expression. It will invoke the authorizer's Lambda function there is a match.
-     * Otherwise, it will return a 401 Unauthorized response without calling the Lambda
-     * function. The validation expression does not apply to the <code>REQUEST</code>
-     * authorizer.</p>
+     * will match the <code>aud</code> field of the incoming token from the client
+     * against the specified regular expression. It will invoke the authorizer's Lambda
+     * function when there is a match. Otherwise, it will return a 401 Unauthorized
+     * response without calling the Lambda function. The validation expression does not
+     * apply to the <code>REQUEST</code> authorizer.</p>
      */
     inline CreateAuthorizerRequest& WithIdentityValidationExpression(const char* value) { SetIdentityValidationExpression(value); return *this;}
 

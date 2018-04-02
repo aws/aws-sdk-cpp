@@ -108,6 +108,12 @@ UpdateRestApiResult& UpdateRestApiResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("policy"))
+  {
+    m_policy = jsonValue.GetString("policy");
+
+  }
+
 
 
   return *this;

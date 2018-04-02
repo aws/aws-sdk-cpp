@@ -35,7 +35,7 @@ namespace Model
 
   /**
    * <p>A customer origin.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CustomOriginConfig">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CustomOriginConfig">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API CustomOriginConfig

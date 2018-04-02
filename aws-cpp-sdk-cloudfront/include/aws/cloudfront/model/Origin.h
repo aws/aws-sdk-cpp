@@ -43,7 +43,7 @@ namespace Model
    * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront">Amazon
    * CloudFront Limits</a> in the <i>AWS General Reference</i>.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/Origin">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/Origin">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API Origin

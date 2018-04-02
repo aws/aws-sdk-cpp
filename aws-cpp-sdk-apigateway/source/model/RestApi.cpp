@@ -40,7 +40,8 @@ RestApi::RestApi() :
     m_minimumCompressionSizeHasBeenSet(false),
     m_apiKeySource(ApiKeySourceType::NOT_SET),
     m_apiKeySourceHasBeenSet(false),
-    m_endpointConfigurationHasBeenSet(false)
+    m_endpointConfigurationHasBeenSet(false),
+    m_policyHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ RestApi::RestApi(const JsonValue& jsonValue) :
     m_minimumCompressionSizeHasBeenSet(false),
     m_apiKeySource(ApiKeySourceType::NOT_SET),
     m_apiKeySourceHasBeenSet(false),
-    m_endpointConfigurationHasBeenSet(false)
+    m_endpointConfigurationHasBeenSet(false),
+    m_policyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -139,6 +141,13 @@ RestApi& RestApi::operator =(const JsonValue& jsonValue)
     m_endpointConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("policy"))
+  {
+    m_policy = jsonValue.GetString("policy");
+
+    m_policyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -211,6 +220,12 @@ JsonValue RestApi::Jsonize() const
   if(m_endpointConfigurationHasBeenSet)
   {
    payload.WithObject("endpointConfiguration", m_endpointConfiguration.Jsonize());
+
+  }
+
+  if(m_policyHasBeenSet)
+  {
+   payload.WithString("policy", m_policy);
 
   }
 

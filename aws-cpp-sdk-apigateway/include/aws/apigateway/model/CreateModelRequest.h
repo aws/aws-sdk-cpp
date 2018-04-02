@@ -47,80 +47,80 @@ namespace Model
 
 
     /**
-     * <p>The <a>RestApi</a> identifier under which the <a>Model</a> will be
+     * <p>[Required] The <a>RestApi</a> identifier under which the <a>Model</a> will be
      * created.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
     /**
-     * <p>The <a>RestApi</a> identifier under which the <a>Model</a> will be
+     * <p>[Required] The <a>RestApi</a> identifier under which the <a>Model</a> will be
      * created.</p>
      */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
-     * <p>The <a>RestApi</a> identifier under which the <a>Model</a> will be
+     * <p>[Required] The <a>RestApi</a> identifier under which the <a>Model</a> will be
      * created.</p>
      */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
-     * <p>The <a>RestApi</a> identifier under which the <a>Model</a> will be
+     * <p>[Required] The <a>RestApi</a> identifier under which the <a>Model</a> will be
      * created.</p>
      */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
     /**
-     * <p>The <a>RestApi</a> identifier under which the <a>Model</a> will be
+     * <p>[Required] The <a>RestApi</a> identifier under which the <a>Model</a> will be
      * created.</p>
      */
     inline CreateModelRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>The <a>RestApi</a> identifier under which the <a>Model</a> will be
+     * <p>[Required] The <a>RestApi</a> identifier under which the <a>Model</a> will be
      * created.</p>
      */
     inline CreateModelRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
-     * <p>The <a>RestApi</a> identifier under which the <a>Model</a> will be
+     * <p>[Required] The <a>RestApi</a> identifier under which the <a>Model</a> will be
      * created.</p>
      */
     inline CreateModelRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
 
     /**
-     * <p>The name of the model. Must be alphanumeric.</p>
+     * <p>[Required] The name of the model. Must be alphanumeric.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the model. Must be alphanumeric.</p>
+     * <p>[Required] The name of the model. Must be alphanumeric.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the model. Must be alphanumeric.</p>
+     * <p>[Required] The name of the model. Must be alphanumeric.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the model. Must be alphanumeric.</p>
+     * <p>[Required] The name of the model. Must be alphanumeric.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the model. Must be alphanumeric.</p>
+     * <p>[Required] The name of the model. Must be alphanumeric.</p>
      */
     inline CreateModelRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the model. Must be alphanumeric.</p>
+     * <p>[Required] The name of the model. Must be alphanumeric.</p>
      */
     inline CreateModelRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the model. Must be alphanumeric.</p>
+     * <p>[Required] The name of the model. Must be alphanumeric.</p>
      */
     inline CreateModelRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -163,86 +163,86 @@ namespace Model
 
     /**
      * <p>The schema for the model. For <code>application/json</code> models, this
-     * should be <a href="http://json-schema.org/documentation.html"
-     * target="_blank">JSON-schema draft v4</a> model.</p>
+     * should be <a href="https://tools.ietf.org/html/draft-zyp-json-schema-04"
+     * target="_blank">JSON schema draft 4</a> model.</p>
      */
     inline const Aws::String& GetSchema() const{ return m_schema; }
 
     /**
      * <p>The schema for the model. For <code>application/json</code> models, this
-     * should be <a href="http://json-schema.org/documentation.html"
-     * target="_blank">JSON-schema draft v4</a> model.</p>
+     * should be <a href="https://tools.ietf.org/html/draft-zyp-json-schema-04"
+     * target="_blank">JSON schema draft 4</a> model.</p>
      */
     inline void SetSchema(const Aws::String& value) { m_schemaHasBeenSet = true; m_schema = value; }
 
     /**
      * <p>The schema for the model. For <code>application/json</code> models, this
-     * should be <a href="http://json-schema.org/documentation.html"
-     * target="_blank">JSON-schema draft v4</a> model.</p>
+     * should be <a href="https://tools.ietf.org/html/draft-zyp-json-schema-04"
+     * target="_blank">JSON schema draft 4</a> model.</p>
      */
     inline void SetSchema(Aws::String&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
 
     /**
      * <p>The schema for the model. For <code>application/json</code> models, this
-     * should be <a href="http://json-schema.org/documentation.html"
-     * target="_blank">JSON-schema draft v4</a> model.</p>
+     * should be <a href="https://tools.ietf.org/html/draft-zyp-json-schema-04"
+     * target="_blank">JSON schema draft 4</a> model.</p>
      */
     inline void SetSchema(const char* value) { m_schemaHasBeenSet = true; m_schema.assign(value); }
 
     /**
      * <p>The schema for the model. For <code>application/json</code> models, this
-     * should be <a href="http://json-schema.org/documentation.html"
-     * target="_blank">JSON-schema draft v4</a> model.</p>
+     * should be <a href="https://tools.ietf.org/html/draft-zyp-json-schema-04"
+     * target="_blank">JSON schema draft 4</a> model.</p>
      */
     inline CreateModelRequest& WithSchema(const Aws::String& value) { SetSchema(value); return *this;}
 
     /**
      * <p>The schema for the model. For <code>application/json</code> models, this
-     * should be <a href="http://json-schema.org/documentation.html"
-     * target="_blank">JSON-schema draft v4</a> model.</p>
+     * should be <a href="https://tools.ietf.org/html/draft-zyp-json-schema-04"
+     * target="_blank">JSON schema draft 4</a> model.</p>
      */
     inline CreateModelRequest& WithSchema(Aws::String&& value) { SetSchema(std::move(value)); return *this;}
 
     /**
      * <p>The schema for the model. For <code>application/json</code> models, this
-     * should be <a href="http://json-schema.org/documentation.html"
-     * target="_blank">JSON-schema draft v4</a> model.</p>
+     * should be <a href="https://tools.ietf.org/html/draft-zyp-json-schema-04"
+     * target="_blank">JSON schema draft 4</a> model.</p>
      */
     inline CreateModelRequest& WithSchema(const char* value) { SetSchema(value); return *this;}
 
 
     /**
-     * <p>The content-type for the model.</p>
+     * <p>[Required] The content-type for the model.</p>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
 
     /**
-     * <p>The content-type for the model.</p>
+     * <p>[Required] The content-type for the model.</p>
      */
     inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
 
     /**
-     * <p>The content-type for the model.</p>
+     * <p>[Required] The content-type for the model.</p>
      */
     inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
 
     /**
-     * <p>The content-type for the model.</p>
+     * <p>[Required] The content-type for the model.</p>
      */
     inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
 
     /**
-     * <p>The content-type for the model.</p>
+     * <p>[Required] The content-type for the model.</p>
      */
     inline CreateModelRequest& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
 
     /**
-     * <p>The content-type for the model.</p>
+     * <p>[Required] The content-type for the model.</p>
      */
     inline CreateModelRequest& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
 
     /**
-     * <p>The content-type for the model.</p>
+     * <p>[Required] The content-type for the model.</p>
      */
     inline CreateModelRequest& WithContentType(const char* value) { SetContentType(value); return *this;}
 

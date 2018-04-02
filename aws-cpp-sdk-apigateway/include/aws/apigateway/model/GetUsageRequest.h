@@ -53,37 +53,37 @@ namespace Model
 
 
     /**
-     * <p>The Id of the usage plan associated with the usage data.</p>
+     * <p>[Required] The Id of the usage plan associated with the usage data.</p>
      */
     inline const Aws::String& GetUsagePlanId() const{ return m_usagePlanId; }
 
     /**
-     * <p>The Id of the usage plan associated with the usage data.</p>
+     * <p>[Required] The Id of the usage plan associated with the usage data.</p>
      */
     inline void SetUsagePlanId(const Aws::String& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = value; }
 
     /**
-     * <p>The Id of the usage plan associated with the usage data.</p>
+     * <p>[Required] The Id of the usage plan associated with the usage data.</p>
      */
     inline void SetUsagePlanId(Aws::String&& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = std::move(value); }
 
     /**
-     * <p>The Id of the usage plan associated with the usage data.</p>
+     * <p>[Required] The Id of the usage plan associated with the usage data.</p>
      */
     inline void SetUsagePlanId(const char* value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId.assign(value); }
 
     /**
-     * <p>The Id of the usage plan associated with the usage data.</p>
+     * <p>[Required] The Id of the usage plan associated with the usage data.</p>
      */
     inline GetUsageRequest& WithUsagePlanId(const Aws::String& value) { SetUsagePlanId(value); return *this;}
 
     /**
-     * <p>The Id of the usage plan associated with the usage data.</p>
+     * <p>[Required] The Id of the usage plan associated with the usage data.</p>
      */
     inline GetUsageRequest& WithUsagePlanId(Aws::String&& value) { SetUsagePlanId(std::move(value)); return *this;}
 
     /**
-     * <p>The Id of the usage plan associated with the usage data.</p>
+     * <p>[Required] The Id of the usage plan associated with the usage data.</p>
      */
     inline GetUsageRequest& WithUsagePlanId(const char* value) { SetUsagePlanId(value); return *this;}
 
@@ -125,73 +125,73 @@ namespace Model
 
 
     /**
-     * <p>The starting date (e.g., 2016-01-01) of the usage data.</p>
+     * <p>[Required] The starting date (e.g., 2016-01-01) of the usage data.</p>
      */
     inline const Aws::String& GetStartDate() const{ return m_startDate; }
 
     /**
-     * <p>The starting date (e.g., 2016-01-01) of the usage data.</p>
+     * <p>[Required] The starting date (e.g., 2016-01-01) of the usage data.</p>
      */
     inline void SetStartDate(const Aws::String& value) { m_startDateHasBeenSet = true; m_startDate = value; }
 
     /**
-     * <p>The starting date (e.g., 2016-01-01) of the usage data.</p>
+     * <p>[Required] The starting date (e.g., 2016-01-01) of the usage data.</p>
      */
     inline void SetStartDate(Aws::String&& value) { m_startDateHasBeenSet = true; m_startDate = std::move(value); }
 
     /**
-     * <p>The starting date (e.g., 2016-01-01) of the usage data.</p>
+     * <p>[Required] The starting date (e.g., 2016-01-01) of the usage data.</p>
      */
     inline void SetStartDate(const char* value) { m_startDateHasBeenSet = true; m_startDate.assign(value); }
 
     /**
-     * <p>The starting date (e.g., 2016-01-01) of the usage data.</p>
+     * <p>[Required] The starting date (e.g., 2016-01-01) of the usage data.</p>
      */
     inline GetUsageRequest& WithStartDate(const Aws::String& value) { SetStartDate(value); return *this;}
 
     /**
-     * <p>The starting date (e.g., 2016-01-01) of the usage data.</p>
+     * <p>[Required] The starting date (e.g., 2016-01-01) of the usage data.</p>
      */
     inline GetUsageRequest& WithStartDate(Aws::String&& value) { SetStartDate(std::move(value)); return *this;}
 
     /**
-     * <p>The starting date (e.g., 2016-01-01) of the usage data.</p>
+     * <p>[Required] The starting date (e.g., 2016-01-01) of the usage data.</p>
      */
     inline GetUsageRequest& WithStartDate(const char* value) { SetStartDate(value); return *this;}
 
 
     /**
-     * <p>The ending date (e.g., 2016-12-31) of the usage data.</p>
+     * <p>[Required] The ending date (e.g., 2016-12-31) of the usage data.</p>
      */
     inline const Aws::String& GetEndDate() const{ return m_endDate; }
 
     /**
-     * <p>The ending date (e.g., 2016-12-31) of the usage data.</p>
+     * <p>[Required] The ending date (e.g., 2016-12-31) of the usage data.</p>
      */
     inline void SetEndDate(const Aws::String& value) { m_endDateHasBeenSet = true; m_endDate = value; }
 
     /**
-     * <p>The ending date (e.g., 2016-12-31) of the usage data.</p>
+     * <p>[Required] The ending date (e.g., 2016-12-31) of the usage data.</p>
      */
     inline void SetEndDate(Aws::String&& value) { m_endDateHasBeenSet = true; m_endDate = std::move(value); }
 
     /**
-     * <p>The ending date (e.g., 2016-12-31) of the usage data.</p>
+     * <p>[Required] The ending date (e.g., 2016-12-31) of the usage data.</p>
      */
     inline void SetEndDate(const char* value) { m_endDateHasBeenSet = true; m_endDate.assign(value); }
 
     /**
-     * <p>The ending date (e.g., 2016-12-31) of the usage data.</p>
+     * <p>[Required] The ending date (e.g., 2016-12-31) of the usage data.</p>
      */
     inline GetUsageRequest& WithEndDate(const Aws::String& value) { SetEndDate(value); return *this;}
 
     /**
-     * <p>The ending date (e.g., 2016-12-31) of the usage data.</p>
+     * <p>[Required] The ending date (e.g., 2016-12-31) of the usage data.</p>
      */
     inline GetUsageRequest& WithEndDate(Aws::String&& value) { SetEndDate(std::move(value)); return *this;}
 
     /**
-     * <p>The ending date (e.g., 2016-12-31) of the usage data.</p>
+     * <p>[Required] The ending date (e.g., 2016-12-31) of the usage data.</p>
      */
     inline GetUsageRequest& WithEndDate(const char* value) { SetEndDate(value); return *this;}
 
@@ -233,17 +233,20 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of returned results per page.</p>
+     * <p>The maximum number of returned results per page. The default value is 25 and
+     * the maximum value is 500.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>The maximum number of returned results per page.</p>
+     * <p>The maximum number of returned results per page. The default value is 25 and
+     * the maximum value is 500.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>The maximum number of returned results per page.</p>
+     * <p>The maximum number of returned results per page. The default value is 25 and
+     * the maximum value is 500.</p>
      */
     inline GetUsageRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

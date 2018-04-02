@@ -47,109 +47,109 @@ namespace Model
 
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline GetMethodRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline GetMethodRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline GetMethodRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
 
     /**
-     * <p>The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
+     * <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
+     * <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
+     * <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p>The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
+     * <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
+     * <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
      */
     inline GetMethodRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
+     * <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
      */
     inline GetMethodRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
+     * <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
      */
     inline GetMethodRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
 
     /**
-     * <p>Specifies the method request's HTTP method type.</p>
+     * <p>[Required] Specifies the method request's HTTP method type.</p>
      */
     inline const Aws::String& GetHttpMethod() const{ return m_httpMethod; }
 
     /**
-     * <p>Specifies the method request's HTTP method type.</p>
+     * <p>[Required] Specifies the method request's HTTP method type.</p>
      */
     inline void SetHttpMethod(const Aws::String& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
 
     /**
-     * <p>Specifies the method request's HTTP method type.</p>
+     * <p>[Required] Specifies the method request's HTTP method type.</p>
      */
     inline void SetHttpMethod(Aws::String&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = std::move(value); }
 
     /**
-     * <p>Specifies the method request's HTTP method type.</p>
+     * <p>[Required] Specifies the method request's HTTP method type.</p>
      */
     inline void SetHttpMethod(const char* value) { m_httpMethodHasBeenSet = true; m_httpMethod.assign(value); }
 
     /**
-     * <p>Specifies the method request's HTTP method type.</p>
+     * <p>[Required] Specifies the method request's HTTP method type.</p>
      */
     inline GetMethodRequest& WithHttpMethod(const Aws::String& value) { SetHttpMethod(value); return *this;}
 
     /**
-     * <p>Specifies the method request's HTTP method type.</p>
+     * <p>[Required] Specifies the method request's HTTP method type.</p>
      */
     inline GetMethodRequest& WithHttpMethod(Aws::String&& value) { SetHttpMethod(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the method request's HTTP method type.</p>
+     * <p>[Required] Specifies the method request's HTTP method type.</p>
      */
     inline GetMethodRequest& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
 

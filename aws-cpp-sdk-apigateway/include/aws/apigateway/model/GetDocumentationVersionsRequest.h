@@ -124,17 +124,20 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of returned results per page.</p>
+     * <p>The maximum number of returned results per page. The default value is 25 and
+     * the maximum value is 500.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>The maximum number of returned results per page.</p>
+     * <p>The maximum number of returned results per page. The default value is 25 and
+     * the maximum value is 500.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>The maximum number of returned results per page.</p>
+     * <p>The maximum number of returned results per page. The default value is 25 and
+     * the maximum value is 500.</p>
      */
     inline GetDocumentationVersionsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

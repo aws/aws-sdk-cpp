@@ -53,73 +53,80 @@ namespace Model
 
 
     /**
-     * <p>The <a>RestApi</a> identifier under which the <a>Model</a> exists.</p>
+     * <p>[Required] The <a>RestApi</a> identifier under which the <a>Model</a>
+     * exists.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
     /**
-     * <p>The <a>RestApi</a> identifier under which the <a>Model</a> exists.</p>
+     * <p>[Required] The <a>RestApi</a> identifier under which the <a>Model</a>
+     * exists.</p>
      */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
-     * <p>The <a>RestApi</a> identifier under which the <a>Model</a> exists.</p>
+     * <p>[Required] The <a>RestApi</a> identifier under which the <a>Model</a>
+     * exists.</p>
      */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
-     * <p>The <a>RestApi</a> identifier under which the <a>Model</a> exists.</p>
+     * <p>[Required] The <a>RestApi</a> identifier under which the <a>Model</a>
+     * exists.</p>
      */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
     /**
-     * <p>The <a>RestApi</a> identifier under which the <a>Model</a> exists.</p>
+     * <p>[Required] The <a>RestApi</a> identifier under which the <a>Model</a>
+     * exists.</p>
      */
     inline GetModelRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>The <a>RestApi</a> identifier under which the <a>Model</a> exists.</p>
+     * <p>[Required] The <a>RestApi</a> identifier under which the <a>Model</a>
+     * exists.</p>
      */
     inline GetModelRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
-     * <p>The <a>RestApi</a> identifier under which the <a>Model</a> exists.</p>
+     * <p>[Required] The <a>RestApi</a> identifier under which the <a>Model</a>
+     * exists.</p>
      */
     inline GetModelRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
 
     /**
-     * <p>The name of the model as an identifier.</p>
+     * <p>[Required] The name of the model as an identifier.</p>
      */
     inline const Aws::String& GetModelName() const{ return m_modelName; }
 
     /**
-     * <p>The name of the model as an identifier.</p>
+     * <p>[Required] The name of the model as an identifier.</p>
      */
     inline void SetModelName(const Aws::String& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
 
     /**
-     * <p>The name of the model as an identifier.</p>
+     * <p>[Required] The name of the model as an identifier.</p>
      */
     inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = std::move(value); }
 
     /**
-     * <p>The name of the model as an identifier.</p>
+     * <p>[Required] The name of the model as an identifier.</p>
      */
     inline void SetModelName(const char* value) { m_modelNameHasBeenSet = true; m_modelName.assign(value); }
 
     /**
-     * <p>The name of the model as an identifier.</p>
+     * <p>[Required] The name of the model as an identifier.</p>
      */
     inline GetModelRequest& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
 
     /**
-     * <p>The name of the model as an identifier.</p>
+     * <p>[Required] The name of the model as an identifier.</p>
      */
     inline GetModelRequest& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the model as an identifier.</p>
+     * <p>[Required] The name of the model as an identifier.</p>
      */
     inline GetModelRequest& WithModelName(const char* value) { SetModelName(value); return *this;}
 

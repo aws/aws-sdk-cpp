@@ -54,121 +54,121 @@ namespace Model
 
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline GetSdkRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline GetSdkRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline GetSdkRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
 
     /**
-     * <p>The name of the <a>Stage</a> that the SDK will use.</p>
+     * <p>[Required] The name of the <a>Stage</a> that the SDK will use.</p>
      */
     inline const Aws::String& GetStageName() const{ return m_stageName; }
 
     /**
-     * <p>The name of the <a>Stage</a> that the SDK will use.</p>
+     * <p>[Required] The name of the <a>Stage</a> that the SDK will use.</p>
      */
     inline void SetStageName(const Aws::String& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
 
     /**
-     * <p>The name of the <a>Stage</a> that the SDK will use.</p>
+     * <p>[Required] The name of the <a>Stage</a> that the SDK will use.</p>
      */
     inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
 
     /**
-     * <p>The name of the <a>Stage</a> that the SDK will use.</p>
+     * <p>[Required] The name of the <a>Stage</a> that the SDK will use.</p>
      */
     inline void SetStageName(const char* value) { m_stageNameHasBeenSet = true; m_stageName.assign(value); }
 
     /**
-     * <p>The name of the <a>Stage</a> that the SDK will use.</p>
+     * <p>[Required] The name of the <a>Stage</a> that the SDK will use.</p>
      */
     inline GetSdkRequest& WithStageName(const Aws::String& value) { SetStageName(value); return *this;}
 
     /**
-     * <p>The name of the <a>Stage</a> that the SDK will use.</p>
+     * <p>[Required] The name of the <a>Stage</a> that the SDK will use.</p>
      */
     inline GetSdkRequest& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the <a>Stage</a> that the SDK will use.</p>
+     * <p>[Required] The name of the <a>Stage</a> that the SDK will use.</p>
      */
     inline GetSdkRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
 
 
     /**
-     * <p>The language for the generated SDK. Currently <code>java</code>,
+     * <p>[Required] The language for the generated SDK. Currently <code>java</code>,
      * <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for
      * iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.</p>
      */
     inline const Aws::String& GetSdkType() const{ return m_sdkType; }
 
     /**
-     * <p>The language for the generated SDK. Currently <code>java</code>,
+     * <p>[Required] The language for the generated SDK. Currently <code>java</code>,
      * <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for
      * iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.</p>
      */
     inline void SetSdkType(const Aws::String& value) { m_sdkTypeHasBeenSet = true; m_sdkType = value; }
 
     /**
-     * <p>The language for the generated SDK. Currently <code>java</code>,
+     * <p>[Required] The language for the generated SDK. Currently <code>java</code>,
      * <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for
      * iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.</p>
      */
     inline void SetSdkType(Aws::String&& value) { m_sdkTypeHasBeenSet = true; m_sdkType = std::move(value); }
 
     /**
-     * <p>The language for the generated SDK. Currently <code>java</code>,
+     * <p>[Required] The language for the generated SDK. Currently <code>java</code>,
      * <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for
      * iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.</p>
      */
     inline void SetSdkType(const char* value) { m_sdkTypeHasBeenSet = true; m_sdkType.assign(value); }
 
     /**
-     * <p>The language for the generated SDK. Currently <code>java</code>,
+     * <p>[Required] The language for the generated SDK. Currently <code>java</code>,
      * <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for
      * iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.</p>
      */
     inline GetSdkRequest& WithSdkType(const Aws::String& value) { SetSdkType(value); return *this;}
 
     /**
-     * <p>The language for the generated SDK. Currently <code>java</code>,
+     * <p>[Required] The language for the generated SDK. Currently <code>java</code>,
      * <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for
      * iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.</p>
      */
     inline GetSdkRequest& WithSdkType(Aws::String&& value) { SetSdkType(std::move(value)); return *this;}
 
     /**
-     * <p>The language for the generated SDK. Currently <code>java</code>,
+     * <p>[Required] The language for the generated SDK. Currently <code>java</code>,
      * <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for
      * iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.</p>
      */

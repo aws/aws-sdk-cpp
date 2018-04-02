@@ -35,7 +35,7 @@ namespace Model
 
   /**
    * <p>An invalidation batch.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/InvalidationBatch">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/InvalidationBatch">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API InvalidationBatch

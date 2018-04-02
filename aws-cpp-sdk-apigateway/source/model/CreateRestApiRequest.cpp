@@ -32,7 +32,8 @@ CreateRestApiRequest::CreateRestApiRequest() :
     m_minimumCompressionSizeHasBeenSet(false),
     m_apiKeySource(ApiKeySourceType::NOT_SET),
     m_apiKeySourceHasBeenSet(false),
-    m_endpointConfigurationHasBeenSet(false)
+    m_endpointConfigurationHasBeenSet(false),
+    m_policyHasBeenSet(false)
 {
 }
 
@@ -89,6 +90,12 @@ Aws::String CreateRestApiRequest::SerializePayload() const
   if(m_endpointConfigurationHasBeenSet)
   {
    payload.WithObject("endpointConfiguration", m_endpointConfiguration.Jsonize());
+
+  }
+
+  if(m_policyHasBeenSet)
+  {
+   payload.WithString("policy", m_policy);
 
   }
 
