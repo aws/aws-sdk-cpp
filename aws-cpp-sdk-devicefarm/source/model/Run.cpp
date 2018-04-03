@@ -67,7 +67,9 @@ Run::Run() :
     m_radiosHasBeenSet(false),
     m_locationHasBeenSet(false),
     m_customerArtifactPathsHasBeenSet(false),
-    m_webUrlHasBeenSet(false)
+    m_webUrlHasBeenSet(false),
+    m_skipAppResign(false),
+    m_skipAppResignHasBeenSet(false)
 {
 }
 
@@ -110,7 +112,9 @@ Run::Run(const JsonValue& jsonValue) :
     m_radiosHasBeenSet(false),
     m_locationHasBeenSet(false),
     m_customerArtifactPathsHasBeenSet(false),
-    m_webUrlHasBeenSet(false)
+    m_webUrlHasBeenSet(false),
+    m_skipAppResign(false),
+    m_skipAppResignHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -313,6 +317,13 @@ Run& Run::operator =(const JsonValue& jsonValue)
     m_webUrlHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("skipAppResign"))
+  {
+    m_skipAppResign = jsonValue.GetBool("skipAppResign");
+
+    m_skipAppResignHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -476,6 +487,12 @@ JsonValue Run::Jsonize() const
   if(m_webUrlHasBeenSet)
   {
    payload.WithString("webUrl", m_webUrl);
+
+  }
+
+  if(m_skipAppResignHasBeenSet)
+  {
+   payload.WithBool("skipAppResign", m_skipAppResign);
 
   }
 

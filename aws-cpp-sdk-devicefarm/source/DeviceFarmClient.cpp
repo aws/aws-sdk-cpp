@@ -28,11 +28,13 @@
 #include <aws/devicefarm/DeviceFarmEndpoint.h>
 #include <aws/devicefarm/DeviceFarmErrorMarshaller.h>
 #include <aws/devicefarm/model/CreateDevicePoolRequest.h>
+#include <aws/devicefarm/model/CreateInstanceProfileRequest.h>
 #include <aws/devicefarm/model/CreateNetworkProfileRequest.h>
 #include <aws/devicefarm/model/CreateProjectRequest.h>
 #include <aws/devicefarm/model/CreateRemoteAccessSessionRequest.h>
 #include <aws/devicefarm/model/CreateUploadRequest.h>
 #include <aws/devicefarm/model/DeleteDevicePoolRequest.h>
+#include <aws/devicefarm/model/DeleteInstanceProfileRequest.h>
 #include <aws/devicefarm/model/DeleteNetworkProfileRequest.h>
 #include <aws/devicefarm/model/DeleteProjectRequest.h>
 #include <aws/devicefarm/model/DeleteRemoteAccessSessionRequest.h>
@@ -40,8 +42,10 @@
 #include <aws/devicefarm/model/DeleteUploadRequest.h>
 #include <aws/devicefarm/model/GetAccountSettingsRequest.h>
 #include <aws/devicefarm/model/GetDeviceRequest.h>
+#include <aws/devicefarm/model/GetDeviceInstanceRequest.h>
 #include <aws/devicefarm/model/GetDevicePoolRequest.h>
 #include <aws/devicefarm/model/GetDevicePoolCompatibilityRequest.h>
+#include <aws/devicefarm/model/GetInstanceProfileRequest.h>
 #include <aws/devicefarm/model/GetJobRequest.h>
 #include <aws/devicefarm/model/GetNetworkProfileRequest.h>
 #include <aws/devicefarm/model/GetOfferingStatusRequest.h>
@@ -53,8 +57,10 @@
 #include <aws/devicefarm/model/GetUploadRequest.h>
 #include <aws/devicefarm/model/InstallToRemoteAccessSessionRequest.h>
 #include <aws/devicefarm/model/ListArtifactsRequest.h>
+#include <aws/devicefarm/model/ListDeviceInstancesRequest.h>
 #include <aws/devicefarm/model/ListDevicePoolsRequest.h>
 #include <aws/devicefarm/model/ListDevicesRequest.h>
+#include <aws/devicefarm/model/ListInstanceProfilesRequest.h>
 #include <aws/devicefarm/model/ListJobsRequest.h>
 #include <aws/devicefarm/model/ListNetworkProfilesRequest.h>
 #include <aws/devicefarm/model/ListOfferingPromotionsRequest.h>
@@ -73,7 +79,9 @@
 #include <aws/devicefarm/model/ScheduleRunRequest.h>
 #include <aws/devicefarm/model/StopRemoteAccessSessionRequest.h>
 #include <aws/devicefarm/model/StopRunRequest.h>
+#include <aws/devicefarm/model/UpdateDeviceInstanceRequest.h>
 #include <aws/devicefarm/model/UpdateDevicePoolRequest.h>
+#include <aws/devicefarm/model/UpdateInstanceProfileRequest.h>
 #include <aws/devicefarm/model/UpdateNetworkProfileRequest.h>
 #include <aws/devicefarm/model/UpdateProjectRequest.h>
 
@@ -174,6 +182,41 @@ void DeviceFarmClient::CreateDevicePoolAsync(const CreateDevicePoolRequest& requ
 void DeviceFarmClient::CreateDevicePoolAsyncHelper(const CreateDevicePoolRequest& request, const CreateDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateDevicePool(request), context);
+}
+
+CreateInstanceProfileOutcome DeviceFarmClient::CreateInstanceProfile(const CreateInstanceProfileRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateInstanceProfileOutcome(CreateInstanceProfileResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateInstanceProfileOutcome(outcome.GetError());
+  }
+}
+
+CreateInstanceProfileOutcomeCallable DeviceFarmClient::CreateInstanceProfileCallable(const CreateInstanceProfileRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateInstanceProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateInstanceProfile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DeviceFarmClient::CreateInstanceProfileAsync(const CreateInstanceProfileRequest& request, const CreateInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateInstanceProfileAsyncHelper( request, handler, context ); } );
+}
+
+void DeviceFarmClient::CreateInstanceProfileAsyncHelper(const CreateInstanceProfileRequest& request, const CreateInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateInstanceProfile(request), context);
 }
 
 CreateNetworkProfileOutcome DeviceFarmClient::CreateNetworkProfile(const CreateNetworkProfileRequest& request) const
@@ -349,6 +392,41 @@ void DeviceFarmClient::DeleteDevicePoolAsync(const DeleteDevicePoolRequest& requ
 void DeviceFarmClient::DeleteDevicePoolAsyncHelper(const DeleteDevicePoolRequest& request, const DeleteDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteDevicePool(request), context);
+}
+
+DeleteInstanceProfileOutcome DeviceFarmClient::DeleteInstanceProfile(const DeleteInstanceProfileRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteInstanceProfileOutcome(DeleteInstanceProfileResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteInstanceProfileOutcome(outcome.GetError());
+  }
+}
+
+DeleteInstanceProfileOutcomeCallable DeviceFarmClient::DeleteInstanceProfileCallable(const DeleteInstanceProfileRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteInstanceProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteInstanceProfile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DeviceFarmClient::DeleteInstanceProfileAsync(const DeleteInstanceProfileRequest& request, const DeleteInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteInstanceProfileAsyncHelper( request, handler, context ); } );
+}
+
+void DeviceFarmClient::DeleteInstanceProfileAsyncHelper(const DeleteInstanceProfileRequest& request, const DeleteInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteInstanceProfile(request), context);
 }
 
 DeleteNetworkProfileOutcome DeviceFarmClient::DeleteNetworkProfile(const DeleteNetworkProfileRequest& request) const
@@ -596,6 +674,41 @@ void DeviceFarmClient::GetDeviceAsyncHelper(const GetDeviceRequest& request, con
   handler(this, request, GetDevice(request), context);
 }
 
+GetDeviceInstanceOutcome DeviceFarmClient::GetDeviceInstance(const GetDeviceInstanceRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetDeviceInstanceOutcome(GetDeviceInstanceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetDeviceInstanceOutcome(outcome.GetError());
+  }
+}
+
+GetDeviceInstanceOutcomeCallable DeviceFarmClient::GetDeviceInstanceCallable(const GetDeviceInstanceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetDeviceInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDeviceInstance(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DeviceFarmClient::GetDeviceInstanceAsync(const GetDeviceInstanceRequest& request, const GetDeviceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetDeviceInstanceAsyncHelper( request, handler, context ); } );
+}
+
+void DeviceFarmClient::GetDeviceInstanceAsyncHelper(const GetDeviceInstanceRequest& request, const GetDeviceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetDeviceInstance(request), context);
+}
+
 GetDevicePoolOutcome DeviceFarmClient::GetDevicePool(const GetDevicePoolRequest& request) const
 {
   Aws::StringStream ss;
@@ -664,6 +777,41 @@ void DeviceFarmClient::GetDevicePoolCompatibilityAsync(const GetDevicePoolCompat
 void DeviceFarmClient::GetDevicePoolCompatibilityAsyncHelper(const GetDevicePoolCompatibilityRequest& request, const GetDevicePoolCompatibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetDevicePoolCompatibility(request), context);
+}
+
+GetInstanceProfileOutcome DeviceFarmClient::GetInstanceProfile(const GetInstanceProfileRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetInstanceProfileOutcome(GetInstanceProfileResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetInstanceProfileOutcome(outcome.GetError());
+  }
+}
+
+GetInstanceProfileOutcomeCallable DeviceFarmClient::GetInstanceProfileCallable(const GetInstanceProfileRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetInstanceProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetInstanceProfile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DeviceFarmClient::GetInstanceProfileAsync(const GetInstanceProfileRequest& request, const GetInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetInstanceProfileAsyncHelper( request, handler, context ); } );
+}
+
+void DeviceFarmClient::GetInstanceProfileAsyncHelper(const GetInstanceProfileRequest& request, const GetInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetInstanceProfile(request), context);
 }
 
 GetJobOutcome DeviceFarmClient::GetJob(const GetJobRequest& request) const
@@ -1051,6 +1199,41 @@ void DeviceFarmClient::ListArtifactsAsyncHelper(const ListArtifactsRequest& requ
   handler(this, request, ListArtifacts(request), context);
 }
 
+ListDeviceInstancesOutcome DeviceFarmClient::ListDeviceInstances(const ListDeviceInstancesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListDeviceInstancesOutcome(ListDeviceInstancesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListDeviceInstancesOutcome(outcome.GetError());
+  }
+}
+
+ListDeviceInstancesOutcomeCallable DeviceFarmClient::ListDeviceInstancesCallable(const ListDeviceInstancesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListDeviceInstancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDeviceInstances(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DeviceFarmClient::ListDeviceInstancesAsync(const ListDeviceInstancesRequest& request, const ListDeviceInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListDeviceInstancesAsyncHelper( request, handler, context ); } );
+}
+
+void DeviceFarmClient::ListDeviceInstancesAsyncHelper(const ListDeviceInstancesRequest& request, const ListDeviceInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListDeviceInstances(request), context);
+}
+
 ListDevicePoolsOutcome DeviceFarmClient::ListDevicePools(const ListDevicePoolsRequest& request) const
 {
   Aws::StringStream ss;
@@ -1119,6 +1302,41 @@ void DeviceFarmClient::ListDevicesAsync(const ListDevicesRequest& request, const
 void DeviceFarmClient::ListDevicesAsyncHelper(const ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListDevices(request), context);
+}
+
+ListInstanceProfilesOutcome DeviceFarmClient::ListInstanceProfiles(const ListInstanceProfilesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListInstanceProfilesOutcome(ListInstanceProfilesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListInstanceProfilesOutcome(outcome.GetError());
+  }
+}
+
+ListInstanceProfilesOutcomeCallable DeviceFarmClient::ListInstanceProfilesCallable(const ListInstanceProfilesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListInstanceProfilesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInstanceProfiles(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DeviceFarmClient::ListInstanceProfilesAsync(const ListInstanceProfilesRequest& request, const ListInstanceProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListInstanceProfilesAsyncHelper( request, handler, context ); } );
+}
+
+void DeviceFarmClient::ListInstanceProfilesAsyncHelper(const ListInstanceProfilesRequest& request, const ListInstanceProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListInstanceProfiles(request), context);
 }
 
 ListJobsOutcome DeviceFarmClient::ListJobs(const ListJobsRequest& request) const
@@ -1751,6 +1969,41 @@ void DeviceFarmClient::StopRunAsyncHelper(const StopRunRequest& request, const S
   handler(this, request, StopRun(request), context);
 }
 
+UpdateDeviceInstanceOutcome DeviceFarmClient::UpdateDeviceInstance(const UpdateDeviceInstanceRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateDeviceInstanceOutcome(UpdateDeviceInstanceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateDeviceInstanceOutcome(outcome.GetError());
+  }
+}
+
+UpdateDeviceInstanceOutcomeCallable DeviceFarmClient::UpdateDeviceInstanceCallable(const UpdateDeviceInstanceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDeviceInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDeviceInstance(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DeviceFarmClient::UpdateDeviceInstanceAsync(const UpdateDeviceInstanceRequest& request, const UpdateDeviceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateDeviceInstanceAsyncHelper( request, handler, context ); } );
+}
+
+void DeviceFarmClient::UpdateDeviceInstanceAsyncHelper(const UpdateDeviceInstanceRequest& request, const UpdateDeviceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateDeviceInstance(request), context);
+}
+
 UpdateDevicePoolOutcome DeviceFarmClient::UpdateDevicePool(const UpdateDevicePoolRequest& request) const
 {
   Aws::StringStream ss;
@@ -1784,6 +2037,41 @@ void DeviceFarmClient::UpdateDevicePoolAsync(const UpdateDevicePoolRequest& requ
 void DeviceFarmClient::UpdateDevicePoolAsyncHelper(const UpdateDevicePoolRequest& request, const UpdateDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateDevicePool(request), context);
+}
+
+UpdateInstanceProfileOutcome DeviceFarmClient::UpdateInstanceProfile(const UpdateInstanceProfileRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateInstanceProfileOutcome(UpdateInstanceProfileResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateInstanceProfileOutcome(outcome.GetError());
+  }
+}
+
+UpdateInstanceProfileOutcomeCallable DeviceFarmClient::UpdateInstanceProfileCallable(const UpdateInstanceProfileRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateInstanceProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateInstanceProfile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DeviceFarmClient::UpdateInstanceProfileAsync(const UpdateInstanceProfileRequest& request, const UpdateInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateInstanceProfileAsyncHelper( request, handler, context ); } );
+}
+
+void DeviceFarmClient::UpdateInstanceProfileAsyncHelper(const UpdateInstanceProfileRequest& request, const UpdateInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateInstanceProfile(request), context);
 }
 
 UpdateNetworkProfileOutcome DeviceFarmClient::UpdateNetworkProfile(const UpdateNetworkProfileRequest& request) const

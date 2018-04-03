@@ -25,6 +25,7 @@ using namespace Aws::Utils;
 CreateRemoteAccessSessionRequest::CreateRemoteAccessSessionRequest() : 
     m_projectArnHasBeenSet(false),
     m_deviceArnHasBeenSet(false),
+    m_instanceArnHasBeenSet(false),
     m_sshPublicKeyHasBeenSet(false),
     m_remoteDebugEnabled(false),
     m_remoteDebugEnabledHasBeenSet(false),
@@ -35,7 +36,9 @@ CreateRemoteAccessSessionRequest::CreateRemoteAccessSessionRequest() :
     m_clientIdHasBeenSet(false),
     m_configurationHasBeenSet(false),
     m_interactionMode(InteractionMode::NOT_SET),
-    m_interactionModeHasBeenSet(false)
+    m_interactionModeHasBeenSet(false),
+    m_skipAppResign(false),
+    m_skipAppResignHasBeenSet(false)
 {
 }
 
@@ -52,6 +55,12 @@ Aws::String CreateRemoteAccessSessionRequest::SerializePayload() const
   if(m_deviceArnHasBeenSet)
   {
    payload.WithString("deviceArn", m_deviceArn);
+
+  }
+
+  if(m_instanceArnHasBeenSet)
+  {
+   payload.WithString("instanceArn", m_instanceArn);
 
   }
 
@@ -100,6 +109,12 @@ Aws::String CreateRemoteAccessSessionRequest::SerializePayload() const
   if(m_interactionModeHasBeenSet)
   {
    payload.WithString("interactionMode", InteractionModeMapper::GetNameForInteractionMode(m_interactionMode));
+  }
+
+  if(m_skipAppResignHasBeenSet)
+  {
+   payload.WithBool("skipAppResign", m_skipAppResign);
+
   }
 
   return payload.WriteReadable();

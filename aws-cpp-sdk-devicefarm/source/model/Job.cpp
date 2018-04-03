@@ -43,6 +43,7 @@ Job::Job() :
     m_countersHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_deviceHasBeenSet(false),
+    m_instanceArnHasBeenSet(false),
     m_deviceMinutesHasBeenSet(false)
 {
 }
@@ -62,6 +63,7 @@ Job::Job(const JsonValue& jsonValue) :
     m_countersHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_deviceHasBeenSet(false),
+    m_instanceArnHasBeenSet(false),
     m_deviceMinutesHasBeenSet(false)
 {
   *this = jsonValue;
@@ -146,6 +148,13 @@ Job& Job::operator =(const JsonValue& jsonValue)
     m_deviceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("instanceArn"))
+  {
+    m_instanceArn = jsonValue.GetString("instanceArn");
+
+    m_instanceArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("deviceMinutes"))
   {
     m_deviceMinutes = jsonValue.GetObject("deviceMinutes");
@@ -217,6 +226,12 @@ JsonValue Job::Jsonize() const
   if(m_deviceHasBeenSet)
   {
    payload.WithObject("device", m_device.Jsonize());
+
+  }
+
+  if(m_instanceArnHasBeenSet)
+  {
+   payload.WithString("instanceArn", m_instanceArn);
 
   }
 

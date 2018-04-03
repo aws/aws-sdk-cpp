@@ -22,11 +22,13 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/devicefarm/model/CreateDevicePoolResult.h>
+#include <aws/devicefarm/model/CreateInstanceProfileResult.h>
 #include <aws/devicefarm/model/CreateNetworkProfileResult.h>
 #include <aws/devicefarm/model/CreateProjectResult.h>
 #include <aws/devicefarm/model/CreateRemoteAccessSessionResult.h>
 #include <aws/devicefarm/model/CreateUploadResult.h>
 #include <aws/devicefarm/model/DeleteDevicePoolResult.h>
+#include <aws/devicefarm/model/DeleteInstanceProfileResult.h>
 #include <aws/devicefarm/model/DeleteNetworkProfileResult.h>
 #include <aws/devicefarm/model/DeleteProjectResult.h>
 #include <aws/devicefarm/model/DeleteRemoteAccessSessionResult.h>
@@ -34,8 +36,10 @@
 #include <aws/devicefarm/model/DeleteUploadResult.h>
 #include <aws/devicefarm/model/GetAccountSettingsResult.h>
 #include <aws/devicefarm/model/GetDeviceResult.h>
+#include <aws/devicefarm/model/GetDeviceInstanceResult.h>
 #include <aws/devicefarm/model/GetDevicePoolResult.h>
 #include <aws/devicefarm/model/GetDevicePoolCompatibilityResult.h>
+#include <aws/devicefarm/model/GetInstanceProfileResult.h>
 #include <aws/devicefarm/model/GetJobResult.h>
 #include <aws/devicefarm/model/GetNetworkProfileResult.h>
 #include <aws/devicefarm/model/GetOfferingStatusResult.h>
@@ -47,8 +51,10 @@
 #include <aws/devicefarm/model/GetUploadResult.h>
 #include <aws/devicefarm/model/InstallToRemoteAccessSessionResult.h>
 #include <aws/devicefarm/model/ListArtifactsResult.h>
+#include <aws/devicefarm/model/ListDeviceInstancesResult.h>
 #include <aws/devicefarm/model/ListDevicePoolsResult.h>
 #include <aws/devicefarm/model/ListDevicesResult.h>
+#include <aws/devicefarm/model/ListInstanceProfilesResult.h>
 #include <aws/devicefarm/model/ListJobsResult.h>
 #include <aws/devicefarm/model/ListNetworkProfilesResult.h>
 #include <aws/devicefarm/model/ListOfferingPromotionsResult.h>
@@ -67,7 +73,9 @@
 #include <aws/devicefarm/model/ScheduleRunResult.h>
 #include <aws/devicefarm/model/StopRemoteAccessSessionResult.h>
 #include <aws/devicefarm/model/StopRunResult.h>
+#include <aws/devicefarm/model/UpdateDeviceInstanceResult.h>
 #include <aws/devicefarm/model/UpdateDevicePoolResult.h>
+#include <aws/devicefarm/model/UpdateInstanceProfileResult.h>
 #include <aws/devicefarm/model/UpdateNetworkProfileResult.h>
 #include <aws/devicefarm/model/UpdateProjectResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -116,11 +124,13 @@ namespace DeviceFarm
 namespace Model
 {
         class CreateDevicePoolRequest;
+        class CreateInstanceProfileRequest;
         class CreateNetworkProfileRequest;
         class CreateProjectRequest;
         class CreateRemoteAccessSessionRequest;
         class CreateUploadRequest;
         class DeleteDevicePoolRequest;
+        class DeleteInstanceProfileRequest;
         class DeleteNetworkProfileRequest;
         class DeleteProjectRequest;
         class DeleteRemoteAccessSessionRequest;
@@ -128,8 +138,10 @@ namespace Model
         class DeleteUploadRequest;
         class GetAccountSettingsRequest;
         class GetDeviceRequest;
+        class GetDeviceInstanceRequest;
         class GetDevicePoolRequest;
         class GetDevicePoolCompatibilityRequest;
+        class GetInstanceProfileRequest;
         class GetJobRequest;
         class GetNetworkProfileRequest;
         class GetOfferingStatusRequest;
@@ -141,8 +153,10 @@ namespace Model
         class GetUploadRequest;
         class InstallToRemoteAccessSessionRequest;
         class ListArtifactsRequest;
+        class ListDeviceInstancesRequest;
         class ListDevicePoolsRequest;
         class ListDevicesRequest;
+        class ListInstanceProfilesRequest;
         class ListJobsRequest;
         class ListNetworkProfilesRequest;
         class ListOfferingPromotionsRequest;
@@ -161,16 +175,20 @@ namespace Model
         class ScheduleRunRequest;
         class StopRemoteAccessSessionRequest;
         class StopRunRequest;
+        class UpdateDeviceInstanceRequest;
         class UpdateDevicePoolRequest;
+        class UpdateInstanceProfileRequest;
         class UpdateNetworkProfileRequest;
         class UpdateProjectRequest;
 
         typedef Aws::Utils::Outcome<CreateDevicePoolResult, Aws::Client::AWSError<DeviceFarmErrors>> CreateDevicePoolOutcome;
+        typedef Aws::Utils::Outcome<CreateInstanceProfileResult, Aws::Client::AWSError<DeviceFarmErrors>> CreateInstanceProfileOutcome;
         typedef Aws::Utils::Outcome<CreateNetworkProfileResult, Aws::Client::AWSError<DeviceFarmErrors>> CreateNetworkProfileOutcome;
         typedef Aws::Utils::Outcome<CreateProjectResult, Aws::Client::AWSError<DeviceFarmErrors>> CreateProjectOutcome;
         typedef Aws::Utils::Outcome<CreateRemoteAccessSessionResult, Aws::Client::AWSError<DeviceFarmErrors>> CreateRemoteAccessSessionOutcome;
         typedef Aws::Utils::Outcome<CreateUploadResult, Aws::Client::AWSError<DeviceFarmErrors>> CreateUploadOutcome;
         typedef Aws::Utils::Outcome<DeleteDevicePoolResult, Aws::Client::AWSError<DeviceFarmErrors>> DeleteDevicePoolOutcome;
+        typedef Aws::Utils::Outcome<DeleteInstanceProfileResult, Aws::Client::AWSError<DeviceFarmErrors>> DeleteInstanceProfileOutcome;
         typedef Aws::Utils::Outcome<DeleteNetworkProfileResult, Aws::Client::AWSError<DeviceFarmErrors>> DeleteNetworkProfileOutcome;
         typedef Aws::Utils::Outcome<DeleteProjectResult, Aws::Client::AWSError<DeviceFarmErrors>> DeleteProjectOutcome;
         typedef Aws::Utils::Outcome<DeleteRemoteAccessSessionResult, Aws::Client::AWSError<DeviceFarmErrors>> DeleteRemoteAccessSessionOutcome;
@@ -178,8 +196,10 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteUploadResult, Aws::Client::AWSError<DeviceFarmErrors>> DeleteUploadOutcome;
         typedef Aws::Utils::Outcome<GetAccountSettingsResult, Aws::Client::AWSError<DeviceFarmErrors>> GetAccountSettingsOutcome;
         typedef Aws::Utils::Outcome<GetDeviceResult, Aws::Client::AWSError<DeviceFarmErrors>> GetDeviceOutcome;
+        typedef Aws::Utils::Outcome<GetDeviceInstanceResult, Aws::Client::AWSError<DeviceFarmErrors>> GetDeviceInstanceOutcome;
         typedef Aws::Utils::Outcome<GetDevicePoolResult, Aws::Client::AWSError<DeviceFarmErrors>> GetDevicePoolOutcome;
         typedef Aws::Utils::Outcome<GetDevicePoolCompatibilityResult, Aws::Client::AWSError<DeviceFarmErrors>> GetDevicePoolCompatibilityOutcome;
+        typedef Aws::Utils::Outcome<GetInstanceProfileResult, Aws::Client::AWSError<DeviceFarmErrors>> GetInstanceProfileOutcome;
         typedef Aws::Utils::Outcome<GetJobResult, Aws::Client::AWSError<DeviceFarmErrors>> GetJobOutcome;
         typedef Aws::Utils::Outcome<GetNetworkProfileResult, Aws::Client::AWSError<DeviceFarmErrors>> GetNetworkProfileOutcome;
         typedef Aws::Utils::Outcome<GetOfferingStatusResult, Aws::Client::AWSError<DeviceFarmErrors>> GetOfferingStatusOutcome;
@@ -191,8 +211,10 @@ namespace Model
         typedef Aws::Utils::Outcome<GetUploadResult, Aws::Client::AWSError<DeviceFarmErrors>> GetUploadOutcome;
         typedef Aws::Utils::Outcome<InstallToRemoteAccessSessionResult, Aws::Client::AWSError<DeviceFarmErrors>> InstallToRemoteAccessSessionOutcome;
         typedef Aws::Utils::Outcome<ListArtifactsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListArtifactsOutcome;
+        typedef Aws::Utils::Outcome<ListDeviceInstancesResult, Aws::Client::AWSError<DeviceFarmErrors>> ListDeviceInstancesOutcome;
         typedef Aws::Utils::Outcome<ListDevicePoolsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListDevicePoolsOutcome;
         typedef Aws::Utils::Outcome<ListDevicesResult, Aws::Client::AWSError<DeviceFarmErrors>> ListDevicesOutcome;
+        typedef Aws::Utils::Outcome<ListInstanceProfilesResult, Aws::Client::AWSError<DeviceFarmErrors>> ListInstanceProfilesOutcome;
         typedef Aws::Utils::Outcome<ListJobsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListJobsOutcome;
         typedef Aws::Utils::Outcome<ListNetworkProfilesResult, Aws::Client::AWSError<DeviceFarmErrors>> ListNetworkProfilesOutcome;
         typedef Aws::Utils::Outcome<ListOfferingPromotionsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListOfferingPromotionsOutcome;
@@ -211,16 +233,20 @@ namespace Model
         typedef Aws::Utils::Outcome<ScheduleRunResult, Aws::Client::AWSError<DeviceFarmErrors>> ScheduleRunOutcome;
         typedef Aws::Utils::Outcome<StopRemoteAccessSessionResult, Aws::Client::AWSError<DeviceFarmErrors>> StopRemoteAccessSessionOutcome;
         typedef Aws::Utils::Outcome<StopRunResult, Aws::Client::AWSError<DeviceFarmErrors>> StopRunOutcome;
+        typedef Aws::Utils::Outcome<UpdateDeviceInstanceResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateDeviceInstanceOutcome;
         typedef Aws::Utils::Outcome<UpdateDevicePoolResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateDevicePoolOutcome;
+        typedef Aws::Utils::Outcome<UpdateInstanceProfileResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateInstanceProfileOutcome;
         typedef Aws::Utils::Outcome<UpdateNetworkProfileResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateNetworkProfileOutcome;
         typedef Aws::Utils::Outcome<UpdateProjectResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateProjectOutcome;
 
         typedef std::future<CreateDevicePoolOutcome> CreateDevicePoolOutcomeCallable;
+        typedef std::future<CreateInstanceProfileOutcome> CreateInstanceProfileOutcomeCallable;
         typedef std::future<CreateNetworkProfileOutcome> CreateNetworkProfileOutcomeCallable;
         typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
         typedef std::future<CreateRemoteAccessSessionOutcome> CreateRemoteAccessSessionOutcomeCallable;
         typedef std::future<CreateUploadOutcome> CreateUploadOutcomeCallable;
         typedef std::future<DeleteDevicePoolOutcome> DeleteDevicePoolOutcomeCallable;
+        typedef std::future<DeleteInstanceProfileOutcome> DeleteInstanceProfileOutcomeCallable;
         typedef std::future<DeleteNetworkProfileOutcome> DeleteNetworkProfileOutcomeCallable;
         typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
         typedef std::future<DeleteRemoteAccessSessionOutcome> DeleteRemoteAccessSessionOutcomeCallable;
@@ -228,8 +254,10 @@ namespace Model
         typedef std::future<DeleteUploadOutcome> DeleteUploadOutcomeCallable;
         typedef std::future<GetAccountSettingsOutcome> GetAccountSettingsOutcomeCallable;
         typedef std::future<GetDeviceOutcome> GetDeviceOutcomeCallable;
+        typedef std::future<GetDeviceInstanceOutcome> GetDeviceInstanceOutcomeCallable;
         typedef std::future<GetDevicePoolOutcome> GetDevicePoolOutcomeCallable;
         typedef std::future<GetDevicePoolCompatibilityOutcome> GetDevicePoolCompatibilityOutcomeCallable;
+        typedef std::future<GetInstanceProfileOutcome> GetInstanceProfileOutcomeCallable;
         typedef std::future<GetJobOutcome> GetJobOutcomeCallable;
         typedef std::future<GetNetworkProfileOutcome> GetNetworkProfileOutcomeCallable;
         typedef std::future<GetOfferingStatusOutcome> GetOfferingStatusOutcomeCallable;
@@ -241,8 +269,10 @@ namespace Model
         typedef std::future<GetUploadOutcome> GetUploadOutcomeCallable;
         typedef std::future<InstallToRemoteAccessSessionOutcome> InstallToRemoteAccessSessionOutcomeCallable;
         typedef std::future<ListArtifactsOutcome> ListArtifactsOutcomeCallable;
+        typedef std::future<ListDeviceInstancesOutcome> ListDeviceInstancesOutcomeCallable;
         typedef std::future<ListDevicePoolsOutcome> ListDevicePoolsOutcomeCallable;
         typedef std::future<ListDevicesOutcome> ListDevicesOutcomeCallable;
+        typedef std::future<ListInstanceProfilesOutcome> ListInstanceProfilesOutcomeCallable;
         typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
         typedef std::future<ListNetworkProfilesOutcome> ListNetworkProfilesOutcomeCallable;
         typedef std::future<ListOfferingPromotionsOutcome> ListOfferingPromotionsOutcomeCallable;
@@ -261,7 +291,9 @@ namespace Model
         typedef std::future<ScheduleRunOutcome> ScheduleRunOutcomeCallable;
         typedef std::future<StopRemoteAccessSessionOutcome> StopRemoteAccessSessionOutcomeCallable;
         typedef std::future<StopRunOutcome> StopRunOutcomeCallable;
+        typedef std::future<UpdateDeviceInstanceOutcome> UpdateDeviceInstanceOutcomeCallable;
         typedef std::future<UpdateDevicePoolOutcome> UpdateDevicePoolOutcomeCallable;
+        typedef std::future<UpdateInstanceProfileOutcome> UpdateInstanceProfileOutcomeCallable;
         typedef std::future<UpdateNetworkProfileOutcome> UpdateNetworkProfileOutcomeCallable;
         typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
 } // namespace Model
@@ -269,11 +301,13 @@ namespace Model
   class DeviceFarmClient;
 
     typedef std::function<void(const DeviceFarmClient*, const Model::CreateDevicePoolRequest&, const Model::CreateDevicePoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDevicePoolResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::CreateInstanceProfileRequest&, const Model::CreateInstanceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInstanceProfileResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::CreateNetworkProfileRequest&, const Model::CreateNetworkProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNetworkProfileResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::CreateProjectRequest&, const Model::CreateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::CreateRemoteAccessSessionRequest&, const Model::CreateRemoteAccessSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRemoteAccessSessionResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::CreateUploadRequest&, const Model::CreateUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUploadResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::DeleteDevicePoolRequest&, const Model::DeleteDevicePoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDevicePoolResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::DeleteInstanceProfileRequest&, const Model::DeleteInstanceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInstanceProfileResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::DeleteNetworkProfileRequest&, const Model::DeleteNetworkProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNetworkProfileResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::DeleteProjectRequest&, const Model::DeleteProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProjectResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::DeleteRemoteAccessSessionRequest&, const Model::DeleteRemoteAccessSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRemoteAccessSessionResponseReceivedHandler;
@@ -281,8 +315,10 @@ namespace Model
     typedef std::function<void(const DeviceFarmClient*, const Model::DeleteUploadRequest&, const Model::DeleteUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUploadResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::GetAccountSettingsRequest&, const Model::GetAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountSettingsResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::GetDeviceRequest&, const Model::GetDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeviceResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::GetDeviceInstanceRequest&, const Model::GetDeviceInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeviceInstanceResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::GetDevicePoolRequest&, const Model::GetDevicePoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDevicePoolResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::GetDevicePoolCompatibilityRequest&, const Model::GetDevicePoolCompatibilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDevicePoolCompatibilityResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::GetInstanceProfileRequest&, const Model::GetInstanceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInstanceProfileResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::GetJobRequest&, const Model::GetJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::GetNetworkProfileRequest&, const Model::GetNetworkProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetNetworkProfileResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::GetOfferingStatusRequest&, const Model::GetOfferingStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOfferingStatusResponseReceivedHandler;
@@ -294,8 +330,10 @@ namespace Model
     typedef std::function<void(const DeviceFarmClient*, const Model::GetUploadRequest&, const Model::GetUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUploadResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::InstallToRemoteAccessSessionRequest&, const Model::InstallToRemoteAccessSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InstallToRemoteAccessSessionResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListArtifactsRequest&, const Model::ListArtifactsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListArtifactsResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::ListDeviceInstancesRequest&, const Model::ListDeviceInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeviceInstancesResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListDevicePoolsRequest&, const Model::ListDevicePoolsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDevicePoolsResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListDevicesRequest&, const Model::ListDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDevicesResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::ListInstanceProfilesRequest&, const Model::ListInstanceProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInstanceProfilesResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListNetworkProfilesRequest&, const Model::ListNetworkProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNetworkProfilesResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListOfferingPromotionsRequest&, const Model::ListOfferingPromotionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOfferingPromotionsResponseReceivedHandler;
@@ -314,7 +352,9 @@ namespace Model
     typedef std::function<void(const DeviceFarmClient*, const Model::ScheduleRunRequest&, const Model::ScheduleRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ScheduleRunResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::StopRemoteAccessSessionRequest&, const Model::StopRemoteAccessSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopRemoteAccessSessionResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::StopRunRequest&, const Model::StopRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopRunResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::UpdateDeviceInstanceRequest&, const Model::UpdateDeviceInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDeviceInstanceResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::UpdateDevicePoolRequest&, const Model::UpdateDevicePoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDevicePoolResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::UpdateInstanceProfileRequest&, const Model::UpdateInstanceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInstanceProfileResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::UpdateNetworkProfileRequest&, const Model::UpdateNetworkProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNetworkProfileResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::UpdateProjectRequest&, const Model::UpdateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProjectResponseReceivedHandler;
 
@@ -376,6 +416,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateDevicePoolAsync(const Model::CreateDevicePoolRequest& request, const CreateDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a profile that can be applied to one or more private fleet device
+         * instances.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateInstanceProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateInstanceProfileOutcome CreateInstanceProfile(const Model::CreateInstanceProfileRequest& request) const;
+
+        /**
+         * <p>Creates a profile that can be applied to one or more private fleet device
+         * instances.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateInstanceProfile">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateInstanceProfileOutcomeCallable CreateInstanceProfileCallable(const Model::CreateInstanceProfileRequest& request) const;
+
+        /**
+         * <p>Creates a profile that can be applied to one or more private fleet device
+         * instances.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateInstanceProfile">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateInstanceProfileAsync(const Model::CreateInstanceProfileRequest& request, const CreateInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a network profile.</p><p><h3>See Also:</h3>   <a
@@ -504,6 +572,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteDevicePoolAsync(const Model::DeleteDevicePoolRequest& request, const DeleteDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a profile that can be applied to one or more private device
+         * instances.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteInstanceProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteInstanceProfileOutcome DeleteInstanceProfile(const Model::DeleteInstanceProfileRequest& request) const;
+
+        /**
+         * <p>Deletes a profile that can be applied to one or more private device
+         * instances.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteInstanceProfile">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteInstanceProfileOutcomeCallable DeleteInstanceProfileCallable(const Model::DeleteInstanceProfileRequest& request) const;
+
+        /**
+         * <p>Deletes a profile that can be applied to one or more private device
+         * instances.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteInstanceProfile">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteInstanceProfileAsync(const Model::DeleteInstanceProfileRequest& request, const DeleteInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a network profile.</p><p><h3>See Also:</h3>   <a
@@ -696,6 +792,34 @@ namespace Model
         virtual void GetDeviceAsync(const Model::GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns information about a device instance belonging to a private device
+         * fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDeviceInstance">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDeviceInstanceOutcome GetDeviceInstance(const Model::GetDeviceInstanceRequest& request) const;
+
+        /**
+         * <p>Returns information about a device instance belonging to a private device
+         * fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDeviceInstance">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDeviceInstanceOutcomeCallable GetDeviceInstanceCallable(const Model::GetDeviceInstanceRequest& request) const;
+
+        /**
+         * <p>Returns information about a device instance belonging to a private device
+         * fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDeviceInstance">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDeviceInstanceAsync(const Model::GetDeviceInstanceRequest& request, const GetDeviceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets information about a device pool.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePool">AWS
          * API Reference</a></p>
@@ -747,6 +871,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDevicePoolCompatibilityAsync(const Model::GetDevicePoolCompatibilityRequest& request, const GetDevicePoolCompatibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about the specified instance profile.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetInstanceProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetInstanceProfileOutcome GetInstanceProfile(const Model::GetInstanceProfileRequest& request) const;
+
+        /**
+         * <p>Returns information about the specified instance profile.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetInstanceProfile">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetInstanceProfileOutcomeCallable GetInstanceProfileCallable(const Model::GetInstanceProfileRequest& request) const;
+
+        /**
+         * <p>Returns information about the specified instance profile.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetInstanceProfile">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetInstanceProfileAsync(const Model::GetInstanceProfileRequest& request, const GetInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a job.</p><p><h3>See Also:</h3>   <a
@@ -1054,6 +1206,34 @@ namespace Model
         virtual void ListArtifactsAsync(const Model::ListArtifactsRequest& request, const ListArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns information about the private device instances associated with one or
+         * more AWS accounts.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDeviceInstances">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDeviceInstancesOutcome ListDeviceInstances(const Model::ListDeviceInstancesRequest& request) const;
+
+        /**
+         * <p>Returns information about the private device instances associated with one or
+         * more AWS accounts.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDeviceInstances">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListDeviceInstancesOutcomeCallable ListDeviceInstancesCallable(const Model::ListDeviceInstancesRequest& request) const;
+
+        /**
+         * <p>Returns information about the private device instances associated with one or
+         * more AWS accounts.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDeviceInstances">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListDeviceInstancesAsync(const Model::ListDeviceInstancesRequest& request, const ListDeviceInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets information about device pools.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDevicePools">AWS
          * API Reference</a></p>
@@ -1102,6 +1282,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDevicesAsync(const Model::ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about all the instance profiles in an AWS
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListInstanceProfiles">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListInstanceProfilesOutcome ListInstanceProfiles(const Model::ListInstanceProfilesRequest& request) const;
+
+        /**
+         * <p>Returns information about all the instance profiles in an AWS
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListInstanceProfiles">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListInstanceProfilesOutcomeCallable ListInstanceProfilesCallable(const Model::ListInstanceProfilesRequest& request) const;
+
+        /**
+         * <p>Returns information about all the instance profiles in an AWS
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListInstanceProfiles">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListInstanceProfilesAsync(const Model::ListInstanceProfilesRequest& request, const ListInstanceProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about jobs for a given test run.</p><p><h3>See Also:</h3>  
@@ -1686,6 +1894,34 @@ namespace Model
         virtual void StopRunAsync(const Model::StopRunRequest& request, const StopRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates information about an existing private device instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDeviceInstance">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDeviceInstanceOutcome UpdateDeviceInstance(const Model::UpdateDeviceInstanceRequest& request) const;
+
+        /**
+         * <p>Updates information about an existing private device instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDeviceInstance">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateDeviceInstanceOutcomeCallable UpdateDeviceInstanceCallable(const Model::UpdateDeviceInstanceRequest& request) const;
+
+        /**
+         * <p>Updates information about an existing private device instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDeviceInstance">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateDeviceInstanceAsync(const Model::UpdateDeviceInstanceRequest& request, const UpdateDeviceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Modifies the name, description, and rules in a device pool given the
          * attributes and the pool ARN. Rule updates are all-or-nothing, meaning they can
          * only be updated as a whole (or not at all).</p><p><h3>See Also:</h3>   <a
@@ -1715,6 +1951,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateDevicePoolAsync(const Model::UpdateDevicePoolRequest& request, const UpdateDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates information about an existing private device instance
+         * profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateInstanceProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateInstanceProfileOutcome UpdateInstanceProfile(const Model::UpdateInstanceProfileRequest& request) const;
+
+        /**
+         * <p>Updates information about an existing private device instance
+         * profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateInstanceProfile">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateInstanceProfileOutcomeCallable UpdateInstanceProfileCallable(const Model::UpdateInstanceProfileRequest& request) const;
+
+        /**
+         * <p>Updates information about an existing private device instance
+         * profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateInstanceProfile">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateInstanceProfileAsync(const Model::UpdateInstanceProfileRequest& request, const UpdateInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the network profile with specific settings.</p><p><h3>See Also:</h3> 
@@ -1778,11 +2042,13 @@ namespace Model
 
         /**Async helpers**/
         void CreateDevicePoolAsyncHelper(const Model::CreateDevicePoolRequest& request, const CreateDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateInstanceProfileAsyncHelper(const Model::CreateInstanceProfileRequest& request, const CreateInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateNetworkProfileAsyncHelper(const Model::CreateNetworkProfileRequest& request, const CreateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateProjectAsyncHelper(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRemoteAccessSessionAsyncHelper(const Model::CreateRemoteAccessSessionRequest& request, const CreateRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUploadAsyncHelper(const Model::CreateUploadRequest& request, const CreateUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDevicePoolAsyncHelper(const Model::DeleteDevicePoolRequest& request, const DeleteDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteInstanceProfileAsyncHelper(const Model::DeleteInstanceProfileRequest& request, const DeleteInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteNetworkProfileAsyncHelper(const Model::DeleteNetworkProfileRequest& request, const DeleteNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteProjectAsyncHelper(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRemoteAccessSessionAsyncHelper(const Model::DeleteRemoteAccessSessionRequest& request, const DeleteRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1790,8 +2056,10 @@ namespace Model
         void DeleteUploadAsyncHelper(const Model::DeleteUploadRequest& request, const DeleteUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAccountSettingsAsyncHelper(const Model::GetAccountSettingsRequest& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDeviceAsyncHelper(const Model::GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetDeviceInstanceAsyncHelper(const Model::GetDeviceInstanceRequest& request, const GetDeviceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDevicePoolAsyncHelper(const Model::GetDevicePoolRequest& request, const GetDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDevicePoolCompatibilityAsyncHelper(const Model::GetDevicePoolCompatibilityRequest& request, const GetDevicePoolCompatibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetInstanceProfileAsyncHelper(const Model::GetInstanceProfileRequest& request, const GetInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetJobAsyncHelper(const Model::GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetNetworkProfileAsyncHelper(const Model::GetNetworkProfileRequest& request, const GetNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetOfferingStatusAsyncHelper(const Model::GetOfferingStatusRequest& request, const GetOfferingStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1803,8 +2071,10 @@ namespace Model
         void GetUploadAsyncHelper(const Model::GetUploadRequest& request, const GetUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void InstallToRemoteAccessSessionAsyncHelper(const Model::InstallToRemoteAccessSessionRequest& request, const InstallToRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListArtifactsAsyncHelper(const Model::ListArtifactsRequest& request, const ListArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListDeviceInstancesAsyncHelper(const Model::ListDeviceInstancesRequest& request, const ListDeviceInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDevicePoolsAsyncHelper(const Model::ListDevicePoolsRequest& request, const ListDevicePoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDevicesAsyncHelper(const Model::ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListInstanceProfilesAsyncHelper(const Model::ListInstanceProfilesRequest& request, const ListInstanceProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListJobsAsyncHelper(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListNetworkProfilesAsyncHelper(const Model::ListNetworkProfilesRequest& request, const ListNetworkProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListOfferingPromotionsAsyncHelper(const Model::ListOfferingPromotionsRequest& request, const ListOfferingPromotionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1823,7 +2093,9 @@ namespace Model
         void ScheduleRunAsyncHelper(const Model::ScheduleRunRequest& request, const ScheduleRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopRemoteAccessSessionAsyncHelper(const Model::StopRemoteAccessSessionRequest& request, const StopRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopRunAsyncHelper(const Model::StopRunRequest& request, const StopRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateDeviceInstanceAsyncHelper(const Model::UpdateDeviceInstanceRequest& request, const UpdateDeviceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDevicePoolAsyncHelper(const Model::UpdateDevicePoolRequest& request, const UpdateDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateInstanceProfileAsyncHelper(const Model::UpdateInstanceProfileRequest& request, const UpdateInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateNetworkProfileAsyncHelper(const Model::UpdateNetworkProfileRequest& request, const UpdateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateProjectAsyncHelper(const Model::UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

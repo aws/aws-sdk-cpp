@@ -34,7 +34,9 @@ ExecutionConfiguration::ExecutionConfiguration() :
     m_accountsCleanup(false),
     m_accountsCleanupHasBeenSet(false),
     m_appPackagesCleanup(false),
-    m_appPackagesCleanupHasBeenSet(false)
+    m_appPackagesCleanupHasBeenSet(false),
+    m_skipAppResign(false),
+    m_skipAppResignHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ ExecutionConfiguration::ExecutionConfiguration(const JsonValue& jsonValue) :
     m_accountsCleanup(false),
     m_accountsCleanupHasBeenSet(false),
     m_appPackagesCleanup(false),
-    m_appPackagesCleanupHasBeenSet(false)
+    m_appPackagesCleanupHasBeenSet(false),
+    m_skipAppResign(false),
+    m_skipAppResignHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -72,6 +76,13 @@ ExecutionConfiguration& ExecutionConfiguration::operator =(const JsonValue& json
     m_appPackagesCleanupHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("skipAppResign"))
+  {
+    m_skipAppResign = jsonValue.GetBool("skipAppResign");
+
+    m_skipAppResignHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -94,6 +105,12 @@ JsonValue ExecutionConfiguration::Jsonize() const
   if(m_appPackagesCleanupHasBeenSet)
   {
    payload.WithBool("appPackagesCleanup", m_appPackagesCleanup);
+
+  }
+
+  if(m_skipAppResignHasBeenSet)
+  {
+   payload.WithBool("skipAppResign", m_skipAppResign);
 
   }
 

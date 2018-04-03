@@ -37,7 +37,9 @@ AccountSettings::AccountSettings() :
     m_trialMinutesHasBeenSet(false),
     m_maxSlotsHasBeenSet(false),
     m_defaultJobTimeoutMinutes(0),
-    m_defaultJobTimeoutMinutesHasBeenSet(false)
+    m_defaultJobTimeoutMinutesHasBeenSet(false),
+    m_skipAppResign(false),
+    m_skipAppResignHasBeenSet(false)
 {
 }
 
@@ -50,7 +52,9 @@ AccountSettings::AccountSettings(const JsonValue& jsonValue) :
     m_trialMinutesHasBeenSet(false),
     m_maxSlotsHasBeenSet(false),
     m_defaultJobTimeoutMinutes(0),
-    m_defaultJobTimeoutMinutesHasBeenSet(false)
+    m_defaultJobTimeoutMinutesHasBeenSet(false),
+    m_skipAppResign(false),
+    m_skipAppResignHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -115,6 +119,13 @@ AccountSettings& AccountSettings::operator =(const JsonValue& jsonValue)
     m_defaultJobTimeoutMinutesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("skipAppResign"))
+  {
+    m_skipAppResign = jsonValue.GetBool("skipAppResign");
+
+    m_skipAppResignHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -176,6 +187,12 @@ JsonValue AccountSettings::Jsonize() const
   if(m_defaultJobTimeoutMinutesHasBeenSet)
   {
    payload.WithInteger("defaultJobTimeoutMinutes", m_defaultJobTimeoutMinutes);
+
+  }
+
+  if(m_skipAppResignHasBeenSet)
+  {
+   payload.WithBool("skipAppResign", m_skipAppResign);
 
   }
 

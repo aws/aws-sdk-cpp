@@ -32,7 +32,9 @@ namespace Model
     MANUFACTURER,
     REMOTE_ACCESS_ENABLED,
     REMOTE_DEBUG_ENABLED,
-    APPIUM_VERSION
+    APPIUM_VERSION,
+    INSTANCE_ARN,
+    INSTANCE_LABELS
   };
 
 namespace DeviceAttributeMapper

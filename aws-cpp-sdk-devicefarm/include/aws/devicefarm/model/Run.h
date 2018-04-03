@@ -948,46 +948,67 @@ namespace Model
 
 
     /**
-     * <p>A pre-signed Amazon S3 URL that can be used with a corresponding GET request
-     * to download the symbol file for the run.</p>
+     * <p>The Device Farm console URL for the recording of the run.</p>
      */
     inline const Aws::String& GetWebUrl() const{ return m_webUrl; }
 
     /**
-     * <p>A pre-signed Amazon S3 URL that can be used with a corresponding GET request
-     * to download the symbol file for the run.</p>
+     * <p>The Device Farm console URL for the recording of the run.</p>
      */
     inline void SetWebUrl(const Aws::String& value) { m_webUrlHasBeenSet = true; m_webUrl = value; }
 
     /**
-     * <p>A pre-signed Amazon S3 URL that can be used with a corresponding GET request
-     * to download the symbol file for the run.</p>
+     * <p>The Device Farm console URL for the recording of the run.</p>
      */
     inline void SetWebUrl(Aws::String&& value) { m_webUrlHasBeenSet = true; m_webUrl = std::move(value); }
 
     /**
-     * <p>A pre-signed Amazon S3 URL that can be used with a corresponding GET request
-     * to download the symbol file for the run.</p>
+     * <p>The Device Farm console URL for the recording of the run.</p>
      */
     inline void SetWebUrl(const char* value) { m_webUrlHasBeenSet = true; m_webUrl.assign(value); }
 
     /**
-     * <p>A pre-signed Amazon S3 URL that can be used with a corresponding GET request
-     * to download the symbol file for the run.</p>
+     * <p>The Device Farm console URL for the recording of the run.</p>
      */
     inline Run& WithWebUrl(const Aws::String& value) { SetWebUrl(value); return *this;}
 
     /**
-     * <p>A pre-signed Amazon S3 URL that can be used with a corresponding GET request
-     * to download the symbol file for the run.</p>
+     * <p>The Device Farm console URL for the recording of the run.</p>
      */
     inline Run& WithWebUrl(Aws::String&& value) { SetWebUrl(std::move(value)); return *this;}
 
     /**
-     * <p>A pre-signed Amazon S3 URL that can be used with a corresponding GET request
-     * to download the symbol file for the run.</p>
+     * <p>The Device Farm console URL for the recording of the run.</p>
      */
     inline Run& WithWebUrl(const char* value) { SetWebUrl(value); return *this;}
+
+
+    /**
+     * <p>When set to <code>true</code>, for private devices, Device Farm will not sign
+     * your app again. For public devices, Device Farm always signs your apps again and
+     * this parameter has no effect.</p> <p>For more information about how Device Farm
+     * re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
+     * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+     */
+    inline bool GetSkipAppResign() const{ return m_skipAppResign; }
+
+    /**
+     * <p>When set to <code>true</code>, for private devices, Device Farm will not sign
+     * your app again. For public devices, Device Farm always signs your apps again and
+     * this parameter has no effect.</p> <p>For more information about how Device Farm
+     * re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
+     * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+     */
+    inline void SetSkipAppResign(bool value) { m_skipAppResignHasBeenSet = true; m_skipAppResign = value; }
+
+    /**
+     * <p>When set to <code>true</code>, for private devices, Device Farm will not sign
+     * your app again. For public devices, Device Farm always signs your apps again and
+     * this parameter has no effect.</p> <p>For more information about how Device Farm
+     * re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
+     * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+     */
+    inline Run& WithSkipAppResign(bool value) { SetSkipAppResign(value); return *this;}
 
   private:
 
@@ -1074,6 +1095,9 @@ namespace Model
 
     Aws::String m_webUrl;
     bool m_webUrlHasBeenSet;
+
+    bool m_skipAppResign;
+    bool m_skipAppResignHasBeenSet;
   };
 
 } // namespace Model

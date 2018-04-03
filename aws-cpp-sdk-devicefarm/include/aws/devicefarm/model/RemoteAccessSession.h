@@ -379,6 +379,42 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline RemoteAccessSession& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline RemoteAccessSession& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline RemoteAccessSession& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
+
+
+    /**
      * <p>This flag is set to <code>true</code> if remote debugging is enabled for the
      * remote access session.</p>
      */
@@ -773,6 +809,34 @@ namespace Model
      */
     inline RemoteAccessSession& WithInteractionMode(InteractionMode&& value) { SetInteractionMode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>When set to <code>true</code>, for private devices, Device Farm will not sign
+     * your app again. For public devices, Device Farm always signs your apps again and
+     * this parameter has no effect.</p> <p>For more information about how Device Farm
+     * re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
+     * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+     */
+    inline bool GetSkipAppResign() const{ return m_skipAppResign; }
+
+    /**
+     * <p>When set to <code>true</code>, for private devices, Device Farm will not sign
+     * your app again. For public devices, Device Farm always signs your apps again and
+     * this parameter has no effect.</p> <p>For more information about how Device Farm
+     * re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
+     * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+     */
+    inline void SetSkipAppResign(bool value) { m_skipAppResignHasBeenSet = true; m_skipAppResign = value; }
+
+    /**
+     * <p>When set to <code>true</code>, for private devices, Device Farm will not sign
+     * your app again. For public devices, Device Farm always signs your apps again and
+     * this parameter has no effect.</p> <p>For more information about how Device Farm
+     * re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
+     * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+     */
+    inline RemoteAccessSession& WithSkipAppResign(bool value) { SetSkipAppResign(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -801,6 +865,9 @@ namespace Model
 
     Device m_device;
     bool m_deviceHasBeenSet;
+
+    Aws::String m_instanceArn;
+    bool m_instanceArnHasBeenSet;
 
     bool m_remoteDebugEnabled;
     bool m_remoteDebugEnabledHasBeenSet;
@@ -831,6 +898,9 @@ namespace Model
 
     InteractionMode m_interactionMode;
     bool m_interactionModeHasBeenSet;
+
+    bool m_skipAppResign;
+    bool m_skipAppResignHasBeenSet;
   };
 
 } // namespace Model

@@ -300,6 +300,34 @@ namespace Model
      */
     inline AccountSettings& WithDefaultJobTimeoutMinutes(int value) { SetDefaultJobTimeoutMinutes(value); return *this;}
 
+
+    /**
+     * <p>When set to <code>true</code>, for private devices, Device Farm will not sign
+     * your app again. For public devices, Device Farm always signs your apps again and
+     * this parameter has no effect.</p> <p>For more information about how Device Farm
+     * re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
+     * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+     */
+    inline bool GetSkipAppResign() const{ return m_skipAppResign; }
+
+    /**
+     * <p>When set to <code>true</code>, for private devices, Device Farm will not sign
+     * your app again. For public devices, Device Farm always signs your apps again and
+     * this parameter has no effect.</p> <p>For more information about how Device Farm
+     * re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
+     * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+     */
+    inline void SetSkipAppResign(bool value) { m_skipAppResignHasBeenSet = true; m_skipAppResign = value; }
+
+    /**
+     * <p>When set to <code>true</code>, for private devices, Device Farm will not sign
+     * your app again. For public devices, Device Farm always signs your apps again and
+     * this parameter has no effect.</p> <p>For more information about how Device Farm
+     * re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
+     * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+     */
+    inline AccountSettings& WithSkipAppResign(bool value) { SetSkipAppResign(value); return *this;}
+
   private:
 
     Aws::String m_awsAccountNumber;
@@ -322,6 +350,9 @@ namespace Model
 
     int m_defaultJobTimeoutMinutes;
     bool m_defaultJobTimeoutMinutesHasBeenSet;
+
+    bool m_skipAppResign;
+    bool m_skipAppResignHasBeenSet;
   };
 
 } // namespace Model

@@ -137,6 +137,49 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the device instance for which you want to
+     * create a remote access session.</p>
+     */
+    inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the device instance for which you want to
+     * create a remote access session.</p>
+     */
+    inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the device instance for which you want to
+     * create a remote access session.</p>
+     */
+    inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the device instance for which you want to
+     * create a remote access session.</p>
+     */
+    inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the device instance for which you want to
+     * create a remote access session.</p>
+     */
+    inline CreateRemoteAccessSessionRequest& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the device instance for which you want to
+     * create a remote access session.</p>
+     */
+    inline CreateRemoteAccessSessionRequest& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the device instance for which you want to
+     * create a remote access session.</p>
+     */
+    inline CreateRemoteAccessSessionRequest& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
+
+
+    /**
      * <p>The public key of the <code>ssh</code> key pair you want to use for
      * connecting to remote devices in your remote debugging session. This is only
      * required if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
@@ -451,6 +494,34 @@ namespace Model
      */
     inline CreateRemoteAccessSessionRequest& WithInteractionMode(InteractionMode&& value) { SetInteractionMode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>When set to <code>true</code>, for private devices, Device Farm will not sign
+     * your app again. For public devices, Device Farm always signs your apps again and
+     * this parameter has no effect.</p> <p>For more information about how Device Farm
+     * re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
+     * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+     */
+    inline bool GetSkipAppResign() const{ return m_skipAppResign; }
+
+    /**
+     * <p>When set to <code>true</code>, for private devices, Device Farm will not sign
+     * your app again. For public devices, Device Farm always signs your apps again and
+     * this parameter has no effect.</p> <p>For more information about how Device Farm
+     * re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
+     * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+     */
+    inline void SetSkipAppResign(bool value) { m_skipAppResignHasBeenSet = true; m_skipAppResign = value; }
+
+    /**
+     * <p>When set to <code>true</code>, for private devices, Device Farm will not sign
+     * your app again. For public devices, Device Farm always signs your apps again and
+     * this parameter has no effect.</p> <p>For more information about how Device Farm
+     * re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
+     * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+     */
+    inline CreateRemoteAccessSessionRequest& WithSkipAppResign(bool value) { SetSkipAppResign(value); return *this;}
+
   private:
 
     Aws::String m_projectArn;
@@ -458,6 +529,9 @@ namespace Model
 
     Aws::String m_deviceArn;
     bool m_deviceArnHasBeenSet;
+
+    Aws::String m_instanceArn;
+    bool m_instanceArnHasBeenSet;
 
     Aws::String m_sshPublicKey;
     bool m_sshPublicKeyHasBeenSet;
@@ -482,6 +556,9 @@ namespace Model
 
     InteractionMode m_interactionMode;
     bool m_interactionModeHasBeenSet;
+
+    bool m_skipAppResign;
+    bool m_skipAppResignHasBeenSet;
   };
 
 } // namespace Model

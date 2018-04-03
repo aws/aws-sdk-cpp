@@ -53,7 +53,8 @@ Device::Device() :
     m_remoteDebugEnabled(false),
     m_remoteDebugEnabledHasBeenSet(false),
     m_fleetTypeHasBeenSet(false),
-    m_fleetNameHasBeenSet(false)
+    m_fleetNameHasBeenSet(false),
+    m_instancesHasBeenSet(false)
 {
 }
 
@@ -82,7 +83,8 @@ Device::Device(const JsonValue& jsonValue) :
     m_remoteDebugEnabled(false),
     m_remoteDebugEnabledHasBeenSet(false),
     m_fleetTypeHasBeenSet(false),
-    m_fleetNameHasBeenSet(false)
+    m_fleetNameHasBeenSet(false),
+    m_instancesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -222,6 +224,16 @@ Device& Device::operator =(const JsonValue& jsonValue)
     m_fleetNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("instances"))
+  {
+    Array<JsonValue> instancesJsonList = jsonValue.GetArray("instances");
+    for(unsigned instancesIndex = 0; instancesIndex < instancesJsonList.GetLength(); ++instancesIndex)
+    {
+      m_instances.push_back(instancesJsonList[instancesIndex].AsObject());
+    }
+    m_instancesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -338,6 +350,17 @@ JsonValue Device::Jsonize() const
   if(m_fleetNameHasBeenSet)
   {
    payload.WithString("fleetName", m_fleetName);
+
+  }
+
+  if(m_instancesHasBeenSet)
+  {
+   Array<JsonValue> instancesJsonList(m_instances.size());
+   for(unsigned instancesIndex = 0; instancesIndex < instancesJsonList.GetLength(); ++instancesIndex)
+   {
+     instancesJsonList[instancesIndex].AsObject(m_instances[instancesIndex].Jsonize());
+   }
+   payload.WithArray("instances", std::move(instancesJsonList));
 
   }
 

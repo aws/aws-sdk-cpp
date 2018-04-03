@@ -83,49 +83,70 @@ namespace Model
     /**
      * <p>One of the supported language codes for the source text. If the
      * <code>TargetLanguageCode</code> is not "en", the <code>SourceLanguageCode</code>
-     * must be "en".</p>
+     * must be "en".</p> <p>To have Amazon Translate determine the source language of
+     * your text, you can specify <code>auto</code> in the
+     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
+     * Translate will call Amazon Comprehend to determine the source language.</p>
      */
     inline const Aws::String& GetSourceLanguageCode() const{ return m_sourceLanguageCode; }
 
     /**
      * <p>One of the supported language codes for the source text. If the
      * <code>TargetLanguageCode</code> is not "en", the <code>SourceLanguageCode</code>
-     * must be "en".</p>
+     * must be "en".</p> <p>To have Amazon Translate determine the source language of
+     * your text, you can specify <code>auto</code> in the
+     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
+     * Translate will call Amazon Comprehend to determine the source language.</p>
      */
     inline void SetSourceLanguageCode(const Aws::String& value) { m_sourceLanguageCodeHasBeenSet = true; m_sourceLanguageCode = value; }
 
     /**
      * <p>One of the supported language codes for the source text. If the
      * <code>TargetLanguageCode</code> is not "en", the <code>SourceLanguageCode</code>
-     * must be "en".</p>
+     * must be "en".</p> <p>To have Amazon Translate determine the source language of
+     * your text, you can specify <code>auto</code> in the
+     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
+     * Translate will call Amazon Comprehend to determine the source language.</p>
      */
     inline void SetSourceLanguageCode(Aws::String&& value) { m_sourceLanguageCodeHasBeenSet = true; m_sourceLanguageCode = std::move(value); }
 
     /**
      * <p>One of the supported language codes for the source text. If the
      * <code>TargetLanguageCode</code> is not "en", the <code>SourceLanguageCode</code>
-     * must be "en".</p>
+     * must be "en".</p> <p>To have Amazon Translate determine the source language of
+     * your text, you can specify <code>auto</code> in the
+     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
+     * Translate will call Amazon Comprehend to determine the source language.</p>
      */
     inline void SetSourceLanguageCode(const char* value) { m_sourceLanguageCodeHasBeenSet = true; m_sourceLanguageCode.assign(value); }
 
     /**
      * <p>One of the supported language codes for the source text. If the
      * <code>TargetLanguageCode</code> is not "en", the <code>SourceLanguageCode</code>
-     * must be "en".</p>
+     * must be "en".</p> <p>To have Amazon Translate determine the source language of
+     * your text, you can specify <code>auto</code> in the
+     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
+     * Translate will call Amazon Comprehend to determine the source language.</p>
      */
     inline TranslateTextRequest& WithSourceLanguageCode(const Aws::String& value) { SetSourceLanguageCode(value); return *this;}
 
     /**
      * <p>One of the supported language codes for the source text. If the
      * <code>TargetLanguageCode</code> is not "en", the <code>SourceLanguageCode</code>
-     * must be "en".</p>
+     * must be "en".</p> <p>To have Amazon Translate determine the source language of
+     * your text, you can specify <code>auto</code> in the
+     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
+     * Translate will call Amazon Comprehend to determine the source language.</p>
      */
     inline TranslateTextRequest& WithSourceLanguageCode(Aws::String&& value) { SetSourceLanguageCode(std::move(value)); return *this;}
 
     /**
      * <p>One of the supported language codes for the source text. If the
      * <code>TargetLanguageCode</code> is not "en", the <code>SourceLanguageCode</code>
-     * must be "en".</p>
+     * must be "en".</p> <p>To have Amazon Translate determine the source language of
+     * your text, you can specify <code>auto</code> in the
+     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
+     * Translate will call Amazon Comprehend to determine the source language.</p>
      */
     inline TranslateTextRequest& WithSourceLanguageCode(const char* value) { SetSourceLanguageCode(value); return *this;}
 

@@ -40,6 +40,7 @@ RemoteAccessSession::RemoteAccessSession() :
     m_startedHasBeenSet(false),
     m_stoppedHasBeenSet(false),
     m_deviceHasBeenSet(false),
+    m_instanceArnHasBeenSet(false),
     m_remoteDebugEnabled(false),
     m_remoteDebugEnabledHasBeenSet(false),
     m_remoteRecordEnabled(false),
@@ -53,7 +54,9 @@ RemoteAccessSession::RemoteAccessSession() :
     m_endpointHasBeenSet(false),
     m_deviceUdidHasBeenSet(false),
     m_interactionMode(InteractionMode::NOT_SET),
-    m_interactionModeHasBeenSet(false)
+    m_interactionModeHasBeenSet(false),
+    m_skipAppResign(false),
+    m_skipAppResignHasBeenSet(false)
 {
 }
 
@@ -69,6 +72,7 @@ RemoteAccessSession::RemoteAccessSession(const JsonValue& jsonValue) :
     m_startedHasBeenSet(false),
     m_stoppedHasBeenSet(false),
     m_deviceHasBeenSet(false),
+    m_instanceArnHasBeenSet(false),
     m_remoteDebugEnabled(false),
     m_remoteDebugEnabledHasBeenSet(false),
     m_remoteRecordEnabled(false),
@@ -82,7 +86,9 @@ RemoteAccessSession::RemoteAccessSession(const JsonValue& jsonValue) :
     m_endpointHasBeenSet(false),
     m_deviceUdidHasBeenSet(false),
     m_interactionMode(InteractionMode::NOT_SET),
-    m_interactionModeHasBeenSet(false)
+    m_interactionModeHasBeenSet(false),
+    m_skipAppResign(false),
+    m_skipAppResignHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -150,6 +156,13 @@ RemoteAccessSession& RemoteAccessSession::operator =(const JsonValue& jsonValue)
     m_device = jsonValue.GetObject("device");
 
     m_deviceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("instanceArn"))
+  {
+    m_instanceArn = jsonValue.GetString("instanceArn");
+
+    m_instanceArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("remoteDebugEnabled"))
@@ -222,6 +235,13 @@ RemoteAccessSession& RemoteAccessSession::operator =(const JsonValue& jsonValue)
     m_interactionModeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("skipAppResign"))
+  {
+    m_skipAppResign = jsonValue.GetBool("skipAppResign");
+
+    m_skipAppResignHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -275,6 +295,12 @@ JsonValue RemoteAccessSession::Jsonize() const
   if(m_deviceHasBeenSet)
   {
    payload.WithObject("device", m_device.Jsonize());
+
+  }
+
+  if(m_instanceArnHasBeenSet)
+  {
+   payload.WithString("instanceArn", m_instanceArn);
 
   }
 
@@ -334,6 +360,12 @@ JsonValue RemoteAccessSession::Jsonize() const
   if(m_interactionModeHasBeenSet)
   {
    payload.WithString("interactionMode", InteractionModeMapper::GetNameForInteractionMode(m_interactionMode));
+  }
+
+  if(m_skipAppResignHasBeenSet)
+  {
+   payload.WithBool("skipAppResign", m_skipAppResign);
+
   }
 
   return payload;

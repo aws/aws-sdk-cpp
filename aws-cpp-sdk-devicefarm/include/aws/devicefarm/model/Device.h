@@ -20,6 +20,8 @@
 #include <aws/devicefarm/model/DevicePlatform.h>
 #include <aws/devicefarm/model/CPU.h>
 #include <aws/devicefarm/model/Resolution.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/devicefarm/model/DeviceInstance.h>
 #include <utility>
 
 namespace Aws
@@ -647,6 +649,42 @@ namespace Model
      */
     inline Device& WithFleetName(const char* value) { SetFleetName(value); return *this;}
 
+
+    /**
+     * <p>The instances belonging to this device.</p>
+     */
+    inline const Aws::Vector<DeviceInstance>& GetInstances() const{ return m_instances; }
+
+    /**
+     * <p>The instances belonging to this device.</p>
+     */
+    inline void SetInstances(const Aws::Vector<DeviceInstance>& value) { m_instancesHasBeenSet = true; m_instances = value; }
+
+    /**
+     * <p>The instances belonging to this device.</p>
+     */
+    inline void SetInstances(Aws::Vector<DeviceInstance>&& value) { m_instancesHasBeenSet = true; m_instances = std::move(value); }
+
+    /**
+     * <p>The instances belonging to this device.</p>
+     */
+    inline Device& WithInstances(const Aws::Vector<DeviceInstance>& value) { SetInstances(value); return *this;}
+
+    /**
+     * <p>The instances belonging to this device.</p>
+     */
+    inline Device& WithInstances(Aws::Vector<DeviceInstance>&& value) { SetInstances(std::move(value)); return *this;}
+
+    /**
+     * <p>The instances belonging to this device.</p>
+     */
+    inline Device& AddInstances(const DeviceInstance& value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
+
+    /**
+     * <p>The instances belonging to this device.</p>
+     */
+    inline Device& AddInstances(DeviceInstance&& value) { m_instancesHasBeenSet = true; m_instances.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_arn;
@@ -705,6 +743,9 @@ namespace Model
 
     Aws::String m_fleetName;
     bool m_fleetNameHasBeenSet;
+
+    Aws::Vector<DeviceInstance> m_instances;
+    bool m_instancesHasBeenSet;
   };
 
 } // namespace Model

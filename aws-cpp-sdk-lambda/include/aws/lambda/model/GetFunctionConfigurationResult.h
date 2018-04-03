@@ -501,31 +501,31 @@ namespace Model
 
     /**
      * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
-     * Amazon SQS queue or Amazon SNS topic.</p>
+     * Amazon SQS queue or Amazon SNS topic. For more information, see <a>dlq</a>. </p>
      */
     inline const DeadLetterConfig& GetDeadLetterConfig() const{ return m_deadLetterConfig; }
 
     /**
      * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
-     * Amazon SQS queue or Amazon SNS topic.</p>
+     * Amazon SQS queue or Amazon SNS topic. For more information, see <a>dlq</a>. </p>
      */
     inline void SetDeadLetterConfig(const DeadLetterConfig& value) { m_deadLetterConfig = value; }
 
     /**
      * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
-     * Amazon SQS queue or Amazon SNS topic.</p>
+     * Amazon SQS queue or Amazon SNS topic. For more information, see <a>dlq</a>. </p>
      */
     inline void SetDeadLetterConfig(DeadLetterConfig&& value) { m_deadLetterConfig = std::move(value); }
 
     /**
      * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
-     * Amazon SQS queue or Amazon SNS topic.</p>
+     * Amazon SQS queue or Amazon SNS topic. For more information, see <a>dlq</a>. </p>
      */
     inline GetFunctionConfigurationResult& WithDeadLetterConfig(const DeadLetterConfig& value) { SetDeadLetterConfig(value); return *this;}
 
     /**
      * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
-     * Amazon SQS queue or Amazon SNS topic.</p>
+     * Amazon SQS queue or Amazon SNS topic. For more information, see <a>dlq</a>. </p>
      */
     inline GetFunctionConfigurationResult& WithDeadLetterConfig(DeadLetterConfig&& value) { SetDeadLetterConfig(std::move(value)); return *this;}
 

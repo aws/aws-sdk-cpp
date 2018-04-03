@@ -280,42 +280,67 @@ namespace Model
 
 
     /**
-     * <p>The position in the stream where AWS Lambda should start reading. Valid only
-     * for Kinesis streams. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">ShardIteratorType</a>
-     * in the <i>Amazon Kinesis API Reference</i>. </p>
+     * <p>The position in the DynamoDB or Kinesis stream where AWS Lambda should start
+     * reading. For more information, see <a
+     * href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">GetShardIterator</a>
+     * in the <i>Amazon Kinesis API Reference Guide</i> or <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_streams_GetShardIterator.html">GetShardIterator</a>
+     * in the <i>Amazon DynamoDB API Reference Guide</i>. The <code>AT_TIMESTAMP</code>
+     * value is supported only for <a
+     * href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis
+     * streams</a>. </p>
      */
     inline const EventSourcePosition& GetStartingPosition() const{ return m_startingPosition; }
 
     /**
-     * <p>The position in the stream where AWS Lambda should start reading. Valid only
-     * for Kinesis streams. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">ShardIteratorType</a>
-     * in the <i>Amazon Kinesis API Reference</i>. </p>
+     * <p>The position in the DynamoDB or Kinesis stream where AWS Lambda should start
+     * reading. For more information, see <a
+     * href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">GetShardIterator</a>
+     * in the <i>Amazon Kinesis API Reference Guide</i> or <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_streams_GetShardIterator.html">GetShardIterator</a>
+     * in the <i>Amazon DynamoDB API Reference Guide</i>. The <code>AT_TIMESTAMP</code>
+     * value is supported only for <a
+     * href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis
+     * streams</a>. </p>
      */
     inline void SetStartingPosition(const EventSourcePosition& value) { m_startingPositionHasBeenSet = true; m_startingPosition = value; }
 
     /**
-     * <p>The position in the stream where AWS Lambda should start reading. Valid only
-     * for Kinesis streams. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">ShardIteratorType</a>
-     * in the <i>Amazon Kinesis API Reference</i>. </p>
+     * <p>The position in the DynamoDB or Kinesis stream where AWS Lambda should start
+     * reading. For more information, see <a
+     * href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">GetShardIterator</a>
+     * in the <i>Amazon Kinesis API Reference Guide</i> or <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_streams_GetShardIterator.html">GetShardIterator</a>
+     * in the <i>Amazon DynamoDB API Reference Guide</i>. The <code>AT_TIMESTAMP</code>
+     * value is supported only for <a
+     * href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis
+     * streams</a>. </p>
      */
     inline void SetStartingPosition(EventSourcePosition&& value) { m_startingPositionHasBeenSet = true; m_startingPosition = std::move(value); }
 
     /**
-     * <p>The position in the stream where AWS Lambda should start reading. Valid only
-     * for Kinesis streams. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">ShardIteratorType</a>
-     * in the <i>Amazon Kinesis API Reference</i>. </p>
+     * <p>The position in the DynamoDB or Kinesis stream where AWS Lambda should start
+     * reading. For more information, see <a
+     * href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">GetShardIterator</a>
+     * in the <i>Amazon Kinesis API Reference Guide</i> or <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_streams_GetShardIterator.html">GetShardIterator</a>
+     * in the <i>Amazon DynamoDB API Reference Guide</i>. The <code>AT_TIMESTAMP</code>
+     * value is supported only for <a
+     * href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis
+     * streams</a>. </p>
      */
     inline CreateEventSourceMappingRequest& WithStartingPosition(const EventSourcePosition& value) { SetStartingPosition(value); return *this;}
 
     /**
-     * <p>The position in the stream where AWS Lambda should start reading. Valid only
-     * for Kinesis streams. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">ShardIteratorType</a>
-     * in the <i>Amazon Kinesis API Reference</i>. </p>
+     * <p>The position in the DynamoDB or Kinesis stream where AWS Lambda should start
+     * reading. For more information, see <a
+     * href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">GetShardIterator</a>
+     * in the <i>Amazon Kinesis API Reference Guide</i> or <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_streams_GetShardIterator.html">GetShardIterator</a>
+     * in the <i>Amazon DynamoDB API Reference Guide</i>. The <code>AT_TIMESTAMP</code>
+     * value is supported only for <a
+     * href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis
+     * streams</a>. </p>
      */
     inline CreateEventSourceMappingRequest& WithStartingPosition(EventSourcePosition&& value) { SetStartingPosition(std::move(value)); return *this;}
 
@@ -326,7 +351,9 @@ namespace Model
      * iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not
      * exist, the iterator returned is for the next (later) record. If the timestamp is
      * older than the current trim horizon, the iterator returned is for the oldest
-     * untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams. </p>
+     * untrimmed data record (TRIM_HORIZON). Valid only for <a
+     * href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis
+     * streams</a>. </p>
      */
     inline const Aws::Utils::DateTime& GetStartingPositionTimestamp() const{ return m_startingPositionTimestamp; }
 
@@ -336,7 +363,9 @@ namespace Model
      * iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not
      * exist, the iterator returned is for the next (later) record. If the timestamp is
      * older than the current trim horizon, the iterator returned is for the oldest
-     * untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams. </p>
+     * untrimmed data record (TRIM_HORIZON). Valid only for <a
+     * href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis
+     * streams</a>. </p>
      */
     inline void SetStartingPositionTimestamp(const Aws::Utils::DateTime& value) { m_startingPositionTimestampHasBeenSet = true; m_startingPositionTimestamp = value; }
 
@@ -346,7 +375,9 @@ namespace Model
      * iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not
      * exist, the iterator returned is for the next (later) record. If the timestamp is
      * older than the current trim horizon, the iterator returned is for the oldest
-     * untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams. </p>
+     * untrimmed data record (TRIM_HORIZON). Valid only for <a
+     * href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis
+     * streams</a>. </p>
      */
     inline void SetStartingPositionTimestamp(Aws::Utils::DateTime&& value) { m_startingPositionTimestampHasBeenSet = true; m_startingPositionTimestamp = std::move(value); }
 
@@ -356,7 +387,9 @@ namespace Model
      * iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not
      * exist, the iterator returned is for the next (later) record. If the timestamp is
      * older than the current trim horizon, the iterator returned is for the oldest
-     * untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams. </p>
+     * untrimmed data record (TRIM_HORIZON). Valid only for <a
+     * href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis
+     * streams</a>. </p>
      */
     inline CreateEventSourceMappingRequest& WithStartingPositionTimestamp(const Aws::Utils::DateTime& value) { SetStartingPositionTimestamp(value); return *this;}
 
@@ -366,7 +399,9 @@ namespace Model
      * iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not
      * exist, the iterator returned is for the next (later) record. If the timestamp is
      * older than the current trim horizon, the iterator returned is for the oldest
-     * untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams. </p>
+     * untrimmed data record (TRIM_HORIZON). Valid only for <a
+     * href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis
+     * streams</a>. </p>
      */
     inline CreateEventSourceMappingRequest& WithStartingPositionTimestamp(Aws::Utils::DateTime&& value) { SetStartingPositionTimestamp(std::move(value)); return *this;}
 

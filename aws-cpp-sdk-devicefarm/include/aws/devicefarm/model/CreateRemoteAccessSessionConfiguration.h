@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>Creates the configuration settings for a remote access session, including the
-   * device model and type.</p><p><h3>See Also:</h3>   <a
+   * <p>Configuration settings for a remote access session, including billing
+   * method.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateRemoteAccessSessionConfiguration">AWS
    * API Reference</a></p>
    */
@@ -48,32 +48,27 @@ namespace Model
 
 
     /**
-     * <p>Returns the billing method for purposes of configuring a remote access
-     * session.</p>
+     * <p>The billing method for the remote access session.</p>
      */
     inline const BillingMethod& GetBillingMethod() const{ return m_billingMethod; }
 
     /**
-     * <p>Returns the billing method for purposes of configuring a remote access
-     * session.</p>
+     * <p>The billing method for the remote access session.</p>
      */
     inline void SetBillingMethod(const BillingMethod& value) { m_billingMethodHasBeenSet = true; m_billingMethod = value; }
 
     /**
-     * <p>Returns the billing method for purposes of configuring a remote access
-     * session.</p>
+     * <p>The billing method for the remote access session.</p>
      */
     inline void SetBillingMethod(BillingMethod&& value) { m_billingMethodHasBeenSet = true; m_billingMethod = std::move(value); }
 
     /**
-     * <p>Returns the billing method for purposes of configuring a remote access
-     * session.</p>
+     * <p>The billing method for the remote access session.</p>
      */
     inline CreateRemoteAccessSessionConfiguration& WithBillingMethod(const BillingMethod& value) { SetBillingMethod(value); return *this;}
 
     /**
-     * <p>Returns the billing method for purposes of configuring a remote access
-     * session.</p>
+     * <p>The billing method for the remote access session.</p>
      */
     inline CreateRemoteAccessSessionConfiguration& WithBillingMethod(BillingMethod&& value) { SetBillingMethod(std::move(value)); return *this;}
 

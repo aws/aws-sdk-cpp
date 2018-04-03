@@ -117,7 +117,11 @@ namespace Model
          * between one of the following languages and English.</p> <ul> <li> <p>Arabic
          * (ar)</p> </li> <li> <p>Chinese (Simplified) (zh)</p> </li> <li> <p>French
          * (fr)</p> </li> <li> <p>German (de)</p> </li> <li> <p>Portuguese (pt)</p> </li>
-         * <li> <p>Spanish (es)</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <li> <p>Spanish (es)</p> </li> </ul> <p>To have Amazon Translate determine the
+         * source language of your text, you can specify <code>auto</code> in the
+         * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
+         * Translate will call Amazon Comprehend to determine the source
+         * language.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TranslateText">AWS
          * API Reference</a></p>
          */
@@ -129,7 +133,11 @@ namespace Model
          * between one of the following languages and English.</p> <ul> <li> <p>Arabic
          * (ar)</p> </li> <li> <p>Chinese (Simplified) (zh)</p> </li> <li> <p>French
          * (fr)</p> </li> <li> <p>German (de)</p> </li> <li> <p>Portuguese (pt)</p> </li>
-         * <li> <p>Spanish (es)</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <li> <p>Spanish (es)</p> </li> </ul> <p>To have Amazon Translate determine the
+         * source language of your text, you can specify <code>auto</code> in the
+         * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
+         * Translate will call Amazon Comprehend to determine the source
+         * language.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TranslateText">AWS
          * API Reference</a></p>
          *
@@ -143,7 +151,11 @@ namespace Model
          * between one of the following languages and English.</p> <ul> <li> <p>Arabic
          * (ar)</p> </li> <li> <p>Chinese (Simplified) (zh)</p> </li> <li> <p>French
          * (fr)</p> </li> <li> <p>German (de)</p> </li> <li> <p>Portuguese (pt)</p> </li>
-         * <li> <p>Spanish (es)</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <li> <p>Spanish (es)</p> </li> </ul> <p>To have Amazon Translate determine the
+         * source language of your text, you can specify <code>auto</code> in the
+         * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
+         * Translate will call Amazon Comprehend to determine the source
+         * language.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TranslateText">AWS
          * API Reference</a></p>
          *

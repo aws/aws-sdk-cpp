@@ -490,6 +490,42 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline Job& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline Job& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline Job& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
+
+
+    /**
      * <p>Represents the total (metered or unmetered) minutes used by the job.</p>
      */
     inline const DeviceMinutes& GetDeviceMinutes() const{ return m_deviceMinutes; }
@@ -548,6 +584,9 @@ namespace Model
 
     Device m_device;
     bool m_deviceHasBeenSet;
+
+    Aws::String m_instanceArn;
+    bool m_instanceArnHasBeenSet;
 
     DeviceMinutes m_deviceMinutes;
     bool m_deviceMinutesHasBeenSet;
