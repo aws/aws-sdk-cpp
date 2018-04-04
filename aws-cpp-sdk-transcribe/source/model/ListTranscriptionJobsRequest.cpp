@@ -25,6 +25,7 @@ using namespace Aws::Utils;
 ListTranscriptionJobsRequest::ListTranscriptionJobsRequest() : 
     m_status(TranscriptionJobStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_jobNameContainsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false)
@@ -38,6 +39,12 @@ Aws::String ListTranscriptionJobsRequest::SerializePayload() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("Status", TranscriptionJobStatusMapper::GetNameForTranscriptionJobStatus(m_status));
+  }
+
+  if(m_jobNameContainsHasBeenSet)
+  {
+   payload.WithString("JobNameContains", m_jobNameContains);
+
   }
 
   if(m_nextTokenHasBeenSet)

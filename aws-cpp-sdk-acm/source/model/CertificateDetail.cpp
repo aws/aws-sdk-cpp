@@ -57,6 +57,9 @@ CertificateDetail::CertificateDetail() :
     m_renewalSummaryHasBeenSet(false),
     m_keyUsagesHasBeenSet(false),
     m_extendedKeyUsagesHasBeenSet(false),
+    m_certificateAuthorityArnHasBeenSet(false),
+    m_renewalEligibility(RenewalEligibility::NOT_SET),
+    m_renewalEligibilityHasBeenSet(false),
     m_optionsHasBeenSet(false)
 {
 }
@@ -90,6 +93,9 @@ CertificateDetail::CertificateDetail(const JsonValue& jsonValue) :
     m_renewalSummaryHasBeenSet(false),
     m_keyUsagesHasBeenSet(false),
     m_extendedKeyUsagesHasBeenSet(false),
+    m_certificateAuthorityArnHasBeenSet(false),
+    m_renewalEligibility(RenewalEligibility::NOT_SET),
+    m_renewalEligibilityHasBeenSet(false),
     m_optionsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -273,6 +279,20 @@ CertificateDetail& CertificateDetail::operator =(const JsonValue& jsonValue)
     m_extendedKeyUsagesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CertificateAuthorityArn"))
+  {
+    m_certificateAuthorityArn = jsonValue.GetString("CertificateAuthorityArn");
+
+    m_certificateAuthorityArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RenewalEligibility"))
+  {
+    m_renewalEligibility = RenewalEligibilityMapper::GetRenewalEligibilityForName(jsonValue.GetString("RenewalEligibility"));
+
+    m_renewalEligibilityHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Options"))
   {
     m_options = jsonValue.GetObject("Options");
@@ -437,6 +457,17 @@ JsonValue CertificateDetail::Jsonize() const
    }
    payload.WithArray("ExtendedKeyUsages", std::move(extendedKeyUsagesJsonList));
 
+  }
+
+  if(m_certificateAuthorityArnHasBeenSet)
+  {
+   payload.WithString("CertificateAuthorityArn", m_certificateAuthorityArn);
+
+  }
+
+  if(m_renewalEligibilityHasBeenSet)
+  {
+   payload.WithString("RenewalEligibility", RenewalEligibilityMapper::GetNameForRenewalEligibility(m_renewalEligibility));
   }
 
   if(m_optionsHasBeenSet)

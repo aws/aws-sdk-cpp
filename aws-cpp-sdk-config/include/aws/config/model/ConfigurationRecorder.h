@@ -142,31 +142,31 @@ namespace Model
 
 
     /**
-     * <p>Specifies the types of AWS resource for which AWS Config records
+     * <p>Specifies the types of AWS resources for which AWS Config records
      * configuration changes.</p>
      */
     inline const RecordingGroup& GetRecordingGroup() const{ return m_recordingGroup; }
 
     /**
-     * <p>Specifies the types of AWS resource for which AWS Config records
+     * <p>Specifies the types of AWS resources for which AWS Config records
      * configuration changes.</p>
      */
     inline void SetRecordingGroup(const RecordingGroup& value) { m_recordingGroupHasBeenSet = true; m_recordingGroup = value; }
 
     /**
-     * <p>Specifies the types of AWS resource for which AWS Config records
+     * <p>Specifies the types of AWS resources for which AWS Config records
      * configuration changes.</p>
      */
     inline void SetRecordingGroup(RecordingGroup&& value) { m_recordingGroupHasBeenSet = true; m_recordingGroup = std::move(value); }
 
     /**
-     * <p>Specifies the types of AWS resource for which AWS Config records
+     * <p>Specifies the types of AWS resources for which AWS Config records
      * configuration changes.</p>
      */
     inline ConfigurationRecorder& WithRecordingGroup(const RecordingGroup& value) { SetRecordingGroup(value); return *this;}
 
     /**
-     * <p>Specifies the types of AWS resource for which AWS Config records
+     * <p>Specifies the types of AWS resources for which AWS Config records
      * configuration changes.</p>
      */
     inline ConfigurationRecorder& WithRecordingGroup(RecordingGroup&& value) { SetRecordingGroup(std::move(value)); return *this;}

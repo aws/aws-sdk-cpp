@@ -34,6 +34,13 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * Container for logging information. Presence of this element indicates that
+   * logging is enabled. Parameters TargetBucket and TargetPrefix are required in
+   * this case.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/LoggingEnabled">AWS
+   * API Reference</a></p>
+   */
   class AWS_S3_API LoggingEnabled
   {
   public:

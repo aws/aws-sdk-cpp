@@ -35,8 +35,7 @@ namespace Model
 
   /**
    * <p>The number of AWS resources of a specific type that are compliant or
-   * noncompliant, up to a maximum of 100 for each compliance.</p><p><h3>See
-   * Also:</h3>   <a
+   * noncompliant, up to a maximum of 100 for each.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ComplianceSummaryByResourceType">AWS
    * API Reference</a></p>
    */
@@ -87,31 +86,31 @@ namespace Model
 
     /**
      * <p>The number of AWS resources that are compliant or noncompliant, up to a
-     * maximum of 100 for each compliance.</p>
+     * maximum of 100 for each.</p>
      */
     inline const ComplianceSummary& GetComplianceSummary() const{ return m_complianceSummary; }
 
     /**
      * <p>The number of AWS resources that are compliant or noncompliant, up to a
-     * maximum of 100 for each compliance.</p>
+     * maximum of 100 for each.</p>
      */
     inline void SetComplianceSummary(const ComplianceSummary& value) { m_complianceSummaryHasBeenSet = true; m_complianceSummary = value; }
 
     /**
      * <p>The number of AWS resources that are compliant or noncompliant, up to a
-     * maximum of 100 for each compliance.</p>
+     * maximum of 100 for each.</p>
      */
     inline void SetComplianceSummary(ComplianceSummary&& value) { m_complianceSummaryHasBeenSet = true; m_complianceSummary = std::move(value); }
 
     /**
      * <p>The number of AWS resources that are compliant or noncompliant, up to a
-     * maximum of 100 for each compliance.</p>
+     * maximum of 100 for each.</p>
      */
     inline ComplianceSummaryByResourceType& WithComplianceSummary(const ComplianceSummary& value) { SetComplianceSummary(value); return *this;}
 
     /**
      * <p>The number of AWS resources that are compliant or noncompliant, up to a
-     * maximum of 100 for each compliance.</p>
+     * maximum of 100 for each.</p>
      */
     inline ComplianceSummaryByResourceType& WithComplianceSummary(ComplianceSummary&& value) { SetComplianceSummary(std::move(value)); return *this;}
 

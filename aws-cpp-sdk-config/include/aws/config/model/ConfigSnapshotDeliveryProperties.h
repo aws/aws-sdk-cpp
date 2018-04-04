@@ -42,7 +42,7 @@ namespace Model
    * depending on which is less frequent:</p> <ul> <li> <p>The value for the
    * <code>deliveryFrequency</code> parameter within the delivery channel
    * configuration, which sets how often AWS Config delivers configuration snapshots.
-   * This value also sets how often AWS Config invokes evaluations for Config
+   * This value also sets how often AWS Config invokes evaluations for AWS Config
    * rules.</p> </li> <li> <p>The value for the
    * <code>MaximumExecutionFrequency</code> parameter, which sets the maximum
    * frequency with which AWS Config invokes evaluations for the rule. For more

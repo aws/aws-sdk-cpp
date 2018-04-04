@@ -77,6 +77,49 @@ namespace Model
 
 
     /**
+     * <p>When specified, the jobs returned in the list are limited to jobs whose name
+     * contains the specified string.</p>
+     */
+    inline const Aws::String& GetJobNameContains() const{ return m_jobNameContains; }
+
+    /**
+     * <p>When specified, the jobs returned in the list are limited to jobs whose name
+     * contains the specified string.</p>
+     */
+    inline void SetJobNameContains(const Aws::String& value) { m_jobNameContainsHasBeenSet = true; m_jobNameContains = value; }
+
+    /**
+     * <p>When specified, the jobs returned in the list are limited to jobs whose name
+     * contains the specified string.</p>
+     */
+    inline void SetJobNameContains(Aws::String&& value) { m_jobNameContainsHasBeenSet = true; m_jobNameContains = std::move(value); }
+
+    /**
+     * <p>When specified, the jobs returned in the list are limited to jobs whose name
+     * contains the specified string.</p>
+     */
+    inline void SetJobNameContains(const char* value) { m_jobNameContainsHasBeenSet = true; m_jobNameContains.assign(value); }
+
+    /**
+     * <p>When specified, the jobs returned in the list are limited to jobs whose name
+     * contains the specified string.</p>
+     */
+    inline ListTranscriptionJobsRequest& WithJobNameContains(const Aws::String& value) { SetJobNameContains(value); return *this;}
+
+    /**
+     * <p>When specified, the jobs returned in the list are limited to jobs whose name
+     * contains the specified string.</p>
+     */
+    inline ListTranscriptionJobsRequest& WithJobNameContains(Aws::String&& value) { SetJobNameContains(std::move(value)); return *this;}
+
+    /**
+     * <p>When specified, the jobs returned in the list are limited to jobs whose name
+     * contains the specified string.</p>
+     */
+    inline ListTranscriptionJobsRequest& WithJobNameContains(const char* value) { SetJobNameContains(value); return *this;}
+
+
+    /**
      * <p>If the result of the previous request to <code>ListTranscriptionJobs</code>
      * was truncated, include the <code>NextToken</code> to fetch the next set of
      * jobs.</p>
@@ -127,17 +170,20 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of jobs to return in the response.</p>
+     * <p>The maximum number of jobs to return in the response. If there are fewer
+     * results in the list, this response contains only the actual results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of jobs to return in the response.</p>
+     * <p>The maximum number of jobs to return in the response. If there are fewer
+     * results in the list, this response contains only the actual results.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of jobs to return in the response.</p>
+     * <p>The maximum number of jobs to return in the response. If there are fewer
+     * results in the list, this response contains only the actual results.</p>
      */
     inline ListTranscriptionJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -145,6 +191,9 @@ namespace Model
 
     TranscriptionJobStatus m_status;
     bool m_statusHasBeenSet;
+
+    Aws::String m_jobNameContains;
+    bool m_jobNameContainsHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

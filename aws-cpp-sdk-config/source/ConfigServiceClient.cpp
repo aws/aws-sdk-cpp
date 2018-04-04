@@ -28,26 +28,38 @@
 #include <aws/config/ConfigServiceEndpoint.h>
 #include <aws/config/ConfigServiceErrorMarshaller.h>
 #include <aws/config/model/BatchGetResourceConfigRequest.h>
+#include <aws/config/model/DeleteAggregationAuthorizationRequest.h>
 #include <aws/config/model/DeleteConfigRuleRequest.h>
+#include <aws/config/model/DeleteConfigurationAggregatorRequest.h>
 #include <aws/config/model/DeleteConfigurationRecorderRequest.h>
 #include <aws/config/model/DeleteDeliveryChannelRequest.h>
 #include <aws/config/model/DeleteEvaluationResultsRequest.h>
+#include <aws/config/model/DeletePendingAggregationRequestRequest.h>
 #include <aws/config/model/DeliverConfigSnapshotRequest.h>
+#include <aws/config/model/DescribeAggregateComplianceByConfigRulesRequest.h>
+#include <aws/config/model/DescribeAggregationAuthorizationsRequest.h>
 #include <aws/config/model/DescribeComplianceByConfigRuleRequest.h>
 #include <aws/config/model/DescribeComplianceByResourceRequest.h>
 #include <aws/config/model/DescribeConfigRuleEvaluationStatusRequest.h>
 #include <aws/config/model/DescribeConfigRulesRequest.h>
+#include <aws/config/model/DescribeConfigurationAggregatorSourcesStatusRequest.h>
+#include <aws/config/model/DescribeConfigurationAggregatorsRequest.h>
 #include <aws/config/model/DescribeConfigurationRecorderStatusRequest.h>
 #include <aws/config/model/DescribeConfigurationRecordersRequest.h>
 #include <aws/config/model/DescribeDeliveryChannelStatusRequest.h>
 #include <aws/config/model/DescribeDeliveryChannelsRequest.h>
+#include <aws/config/model/DescribePendingAggregationRequestsRequest.h>
+#include <aws/config/model/GetAggregateComplianceDetailsByConfigRuleRequest.h>
+#include <aws/config/model/GetAggregateConfigRuleComplianceSummaryRequest.h>
 #include <aws/config/model/GetComplianceDetailsByConfigRuleRequest.h>
 #include <aws/config/model/GetComplianceDetailsByResourceRequest.h>
 #include <aws/config/model/GetComplianceSummaryByResourceTypeRequest.h>
 #include <aws/config/model/GetDiscoveredResourceCountsRequest.h>
 #include <aws/config/model/GetResourceConfigHistoryRequest.h>
 #include <aws/config/model/ListDiscoveredResourcesRequest.h>
+#include <aws/config/model/PutAggregationAuthorizationRequest.h>
 #include <aws/config/model/PutConfigRuleRequest.h>
+#include <aws/config/model/PutConfigurationAggregatorRequest.h>
 #include <aws/config/model/PutConfigurationRecorderRequest.h>
 #include <aws/config/model/PutDeliveryChannelRequest.h>
 #include <aws/config/model/PutEvaluationsRequest.h>
@@ -154,6 +166,41 @@ void ConfigServiceClient::BatchGetResourceConfigAsyncHelper(const BatchGetResour
   handler(this, request, BatchGetResourceConfig(request), context);
 }
 
+DeleteAggregationAuthorizationOutcome ConfigServiceClient::DeleteAggregationAuthorization(const DeleteAggregationAuthorizationRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteAggregationAuthorizationOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteAggregationAuthorizationOutcome(outcome.GetError());
+  }
+}
+
+DeleteAggregationAuthorizationOutcomeCallable ConfigServiceClient::DeleteAggregationAuthorizationCallable(const DeleteAggregationAuthorizationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAggregationAuthorizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAggregationAuthorization(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::DeleteAggregationAuthorizationAsync(const DeleteAggregationAuthorizationRequest& request, const DeleteAggregationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAggregationAuthorizationAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::DeleteAggregationAuthorizationAsyncHelper(const DeleteAggregationAuthorizationRequest& request, const DeleteAggregationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAggregationAuthorization(request), context);
+}
+
 DeleteConfigRuleOutcome ConfigServiceClient::DeleteConfigRule(const DeleteConfigRuleRequest& request) const
 {
   Aws::StringStream ss;
@@ -187,6 +234,41 @@ void ConfigServiceClient::DeleteConfigRuleAsync(const DeleteConfigRuleRequest& r
 void ConfigServiceClient::DeleteConfigRuleAsyncHelper(const DeleteConfigRuleRequest& request, const DeleteConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteConfigRule(request), context);
+}
+
+DeleteConfigurationAggregatorOutcome ConfigServiceClient::DeleteConfigurationAggregator(const DeleteConfigurationAggregatorRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteConfigurationAggregatorOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteConfigurationAggregatorOutcome(outcome.GetError());
+  }
+}
+
+DeleteConfigurationAggregatorOutcomeCallable ConfigServiceClient::DeleteConfigurationAggregatorCallable(const DeleteConfigurationAggregatorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteConfigurationAggregatorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteConfigurationAggregator(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::DeleteConfigurationAggregatorAsync(const DeleteConfigurationAggregatorRequest& request, const DeleteConfigurationAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteConfigurationAggregatorAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::DeleteConfigurationAggregatorAsyncHelper(const DeleteConfigurationAggregatorRequest& request, const DeleteConfigurationAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteConfigurationAggregator(request), context);
 }
 
 DeleteConfigurationRecorderOutcome ConfigServiceClient::DeleteConfigurationRecorder(const DeleteConfigurationRecorderRequest& request) const
@@ -294,6 +376,41 @@ void ConfigServiceClient::DeleteEvaluationResultsAsyncHelper(const DeleteEvaluat
   handler(this, request, DeleteEvaluationResults(request), context);
 }
 
+DeletePendingAggregationRequestOutcome ConfigServiceClient::DeletePendingAggregationRequest(const DeletePendingAggregationRequestRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeletePendingAggregationRequestOutcome(NoResult());
+  }
+  else
+  {
+    return DeletePendingAggregationRequestOutcome(outcome.GetError());
+  }
+}
+
+DeletePendingAggregationRequestOutcomeCallable ConfigServiceClient::DeletePendingAggregationRequestCallable(const DeletePendingAggregationRequestRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeletePendingAggregationRequestOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePendingAggregationRequest(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::DeletePendingAggregationRequestAsync(const DeletePendingAggregationRequestRequest& request, const DeletePendingAggregationRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeletePendingAggregationRequestAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::DeletePendingAggregationRequestAsyncHelper(const DeletePendingAggregationRequestRequest& request, const DeletePendingAggregationRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeletePendingAggregationRequest(request), context);
+}
+
 DeliverConfigSnapshotOutcome ConfigServiceClient::DeliverConfigSnapshot(const DeliverConfigSnapshotRequest& request) const
 {
   Aws::StringStream ss;
@@ -327,6 +444,76 @@ void ConfigServiceClient::DeliverConfigSnapshotAsync(const DeliverConfigSnapshot
 void ConfigServiceClient::DeliverConfigSnapshotAsyncHelper(const DeliverConfigSnapshotRequest& request, const DeliverConfigSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeliverConfigSnapshot(request), context);
+}
+
+DescribeAggregateComplianceByConfigRulesOutcome ConfigServiceClient::DescribeAggregateComplianceByConfigRules(const DescribeAggregateComplianceByConfigRulesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeAggregateComplianceByConfigRulesOutcome(DescribeAggregateComplianceByConfigRulesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeAggregateComplianceByConfigRulesOutcome(outcome.GetError());
+  }
+}
+
+DescribeAggregateComplianceByConfigRulesOutcomeCallable ConfigServiceClient::DescribeAggregateComplianceByConfigRulesCallable(const DescribeAggregateComplianceByConfigRulesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAggregateComplianceByConfigRulesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAggregateComplianceByConfigRules(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::DescribeAggregateComplianceByConfigRulesAsync(const DescribeAggregateComplianceByConfigRulesRequest& request, const DescribeAggregateComplianceByConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAggregateComplianceByConfigRulesAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::DescribeAggregateComplianceByConfigRulesAsyncHelper(const DescribeAggregateComplianceByConfigRulesRequest& request, const DescribeAggregateComplianceByConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAggregateComplianceByConfigRules(request), context);
+}
+
+DescribeAggregationAuthorizationsOutcome ConfigServiceClient::DescribeAggregationAuthorizations(const DescribeAggregationAuthorizationsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeAggregationAuthorizationsOutcome(DescribeAggregationAuthorizationsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeAggregationAuthorizationsOutcome(outcome.GetError());
+  }
+}
+
+DescribeAggregationAuthorizationsOutcomeCallable ConfigServiceClient::DescribeAggregationAuthorizationsCallable(const DescribeAggregationAuthorizationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAggregationAuthorizationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAggregationAuthorizations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::DescribeAggregationAuthorizationsAsync(const DescribeAggregationAuthorizationsRequest& request, const DescribeAggregationAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAggregationAuthorizationsAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::DescribeAggregationAuthorizationsAsyncHelper(const DescribeAggregationAuthorizationsRequest& request, const DescribeAggregationAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAggregationAuthorizations(request), context);
 }
 
 DescribeComplianceByConfigRuleOutcome ConfigServiceClient::DescribeComplianceByConfigRule(const DescribeComplianceByConfigRuleRequest& request) const
@@ -469,6 +656,76 @@ void ConfigServiceClient::DescribeConfigRulesAsyncHelper(const DescribeConfigRul
   handler(this, request, DescribeConfigRules(request), context);
 }
 
+DescribeConfigurationAggregatorSourcesStatusOutcome ConfigServiceClient::DescribeConfigurationAggregatorSourcesStatus(const DescribeConfigurationAggregatorSourcesStatusRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeConfigurationAggregatorSourcesStatusOutcome(DescribeConfigurationAggregatorSourcesStatusResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeConfigurationAggregatorSourcesStatusOutcome(outcome.GetError());
+  }
+}
+
+DescribeConfigurationAggregatorSourcesStatusOutcomeCallable ConfigServiceClient::DescribeConfigurationAggregatorSourcesStatusCallable(const DescribeConfigurationAggregatorSourcesStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeConfigurationAggregatorSourcesStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeConfigurationAggregatorSourcesStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::DescribeConfigurationAggregatorSourcesStatusAsync(const DescribeConfigurationAggregatorSourcesStatusRequest& request, const DescribeConfigurationAggregatorSourcesStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeConfigurationAggregatorSourcesStatusAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::DescribeConfigurationAggregatorSourcesStatusAsyncHelper(const DescribeConfigurationAggregatorSourcesStatusRequest& request, const DescribeConfigurationAggregatorSourcesStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeConfigurationAggregatorSourcesStatus(request), context);
+}
+
+DescribeConfigurationAggregatorsOutcome ConfigServiceClient::DescribeConfigurationAggregators(const DescribeConfigurationAggregatorsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeConfigurationAggregatorsOutcome(DescribeConfigurationAggregatorsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeConfigurationAggregatorsOutcome(outcome.GetError());
+  }
+}
+
+DescribeConfigurationAggregatorsOutcomeCallable ConfigServiceClient::DescribeConfigurationAggregatorsCallable(const DescribeConfigurationAggregatorsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeConfigurationAggregatorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeConfigurationAggregators(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::DescribeConfigurationAggregatorsAsync(const DescribeConfigurationAggregatorsRequest& request, const DescribeConfigurationAggregatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeConfigurationAggregatorsAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::DescribeConfigurationAggregatorsAsyncHelper(const DescribeConfigurationAggregatorsRequest& request, const DescribeConfigurationAggregatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeConfigurationAggregators(request), context);
+}
+
 DescribeConfigurationRecorderStatusOutcome ConfigServiceClient::DescribeConfigurationRecorderStatus(const DescribeConfigurationRecorderStatusRequest& request) const
 {
   Aws::StringStream ss;
@@ -607,6 +864,111 @@ void ConfigServiceClient::DescribeDeliveryChannelsAsync(const DescribeDeliveryCh
 void ConfigServiceClient::DescribeDeliveryChannelsAsyncHelper(const DescribeDeliveryChannelsRequest& request, const DescribeDeliveryChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeDeliveryChannels(request), context);
+}
+
+DescribePendingAggregationRequestsOutcome ConfigServiceClient::DescribePendingAggregationRequests(const DescribePendingAggregationRequestsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribePendingAggregationRequestsOutcome(DescribePendingAggregationRequestsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribePendingAggregationRequestsOutcome(outcome.GetError());
+  }
+}
+
+DescribePendingAggregationRequestsOutcomeCallable ConfigServiceClient::DescribePendingAggregationRequestsCallable(const DescribePendingAggregationRequestsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribePendingAggregationRequestsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePendingAggregationRequests(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::DescribePendingAggregationRequestsAsync(const DescribePendingAggregationRequestsRequest& request, const DescribePendingAggregationRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribePendingAggregationRequestsAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::DescribePendingAggregationRequestsAsyncHelper(const DescribePendingAggregationRequestsRequest& request, const DescribePendingAggregationRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribePendingAggregationRequests(request), context);
+}
+
+GetAggregateComplianceDetailsByConfigRuleOutcome ConfigServiceClient::GetAggregateComplianceDetailsByConfigRule(const GetAggregateComplianceDetailsByConfigRuleRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetAggregateComplianceDetailsByConfigRuleOutcome(GetAggregateComplianceDetailsByConfigRuleResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetAggregateComplianceDetailsByConfigRuleOutcome(outcome.GetError());
+  }
+}
+
+GetAggregateComplianceDetailsByConfigRuleOutcomeCallable ConfigServiceClient::GetAggregateComplianceDetailsByConfigRuleCallable(const GetAggregateComplianceDetailsByConfigRuleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAggregateComplianceDetailsByConfigRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAggregateComplianceDetailsByConfigRule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::GetAggregateComplianceDetailsByConfigRuleAsync(const GetAggregateComplianceDetailsByConfigRuleRequest& request, const GetAggregateComplianceDetailsByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAggregateComplianceDetailsByConfigRuleAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::GetAggregateComplianceDetailsByConfigRuleAsyncHelper(const GetAggregateComplianceDetailsByConfigRuleRequest& request, const GetAggregateComplianceDetailsByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAggregateComplianceDetailsByConfigRule(request), context);
+}
+
+GetAggregateConfigRuleComplianceSummaryOutcome ConfigServiceClient::GetAggregateConfigRuleComplianceSummary(const GetAggregateConfigRuleComplianceSummaryRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetAggregateConfigRuleComplianceSummaryOutcome(GetAggregateConfigRuleComplianceSummaryResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetAggregateConfigRuleComplianceSummaryOutcome(outcome.GetError());
+  }
+}
+
+GetAggregateConfigRuleComplianceSummaryOutcomeCallable ConfigServiceClient::GetAggregateConfigRuleComplianceSummaryCallable(const GetAggregateConfigRuleComplianceSummaryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAggregateConfigRuleComplianceSummaryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAggregateConfigRuleComplianceSummary(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::GetAggregateConfigRuleComplianceSummaryAsync(const GetAggregateConfigRuleComplianceSummaryRequest& request, const GetAggregateConfigRuleComplianceSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAggregateConfigRuleComplianceSummaryAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::GetAggregateConfigRuleComplianceSummaryAsyncHelper(const GetAggregateConfigRuleComplianceSummaryRequest& request, const GetAggregateConfigRuleComplianceSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAggregateConfigRuleComplianceSummary(request), context);
 }
 
 GetComplianceDetailsByConfigRuleOutcome ConfigServiceClient::GetComplianceDetailsByConfigRule(const GetComplianceDetailsByConfigRuleRequest& request) const
@@ -853,6 +1215,41 @@ void ConfigServiceClient::ListDiscoveredResourcesAsyncHelper(const ListDiscovere
   handler(this, request, ListDiscoveredResources(request), context);
 }
 
+PutAggregationAuthorizationOutcome ConfigServiceClient::PutAggregationAuthorization(const PutAggregationAuthorizationRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutAggregationAuthorizationOutcome(PutAggregationAuthorizationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutAggregationAuthorizationOutcome(outcome.GetError());
+  }
+}
+
+PutAggregationAuthorizationOutcomeCallable ConfigServiceClient::PutAggregationAuthorizationCallable(const PutAggregationAuthorizationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutAggregationAuthorizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutAggregationAuthorization(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::PutAggregationAuthorizationAsync(const PutAggregationAuthorizationRequest& request, const PutAggregationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutAggregationAuthorizationAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::PutAggregationAuthorizationAsyncHelper(const PutAggregationAuthorizationRequest& request, const PutAggregationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutAggregationAuthorization(request), context);
+}
+
 PutConfigRuleOutcome ConfigServiceClient::PutConfigRule(const PutConfigRuleRequest& request) const
 {
   Aws::StringStream ss;
@@ -886,6 +1283,41 @@ void ConfigServiceClient::PutConfigRuleAsync(const PutConfigRuleRequest& request
 void ConfigServiceClient::PutConfigRuleAsyncHelper(const PutConfigRuleRequest& request, const PutConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutConfigRule(request), context);
+}
+
+PutConfigurationAggregatorOutcome ConfigServiceClient::PutConfigurationAggregator(const PutConfigurationAggregatorRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutConfigurationAggregatorOutcome(PutConfigurationAggregatorResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutConfigurationAggregatorOutcome(outcome.GetError());
+  }
+}
+
+PutConfigurationAggregatorOutcomeCallable ConfigServiceClient::PutConfigurationAggregatorCallable(const PutConfigurationAggregatorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutConfigurationAggregatorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutConfigurationAggregator(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::PutConfigurationAggregatorAsync(const PutConfigurationAggregatorRequest& request, const PutConfigurationAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutConfigurationAggregatorAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::PutConfigurationAggregatorAsyncHelper(const PutConfigurationAggregatorRequest& request, const PutConfigurationAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutConfigurationAggregator(request), context);
 }
 
 PutConfigurationRecorderOutcome ConfigServiceClient::PutConfigurationRecorder(const PutConfigurationRecorderRequest& request) const

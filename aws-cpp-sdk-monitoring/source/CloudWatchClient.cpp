@@ -35,6 +35,7 @@
 #include <aws/monitoring/model/DisableAlarmActionsRequest.h>
 #include <aws/monitoring/model/EnableAlarmActionsRequest.h>
 #include <aws/monitoring/model/GetDashboardRequest.h>
+#include <aws/monitoring/model/GetMetricDataRequest.h>
 #include <aws/monitoring/model/GetMetricStatisticsRequest.h>
 #include <aws/monitoring/model/ListDashboardsRequest.h>
 #include <aws/monitoring/model/ListMetricsRequest.h>
@@ -396,6 +397,41 @@ void CloudWatchClient::GetDashboardAsync(const GetDashboardRequest& request, con
 void CloudWatchClient::GetDashboardAsyncHelper(const GetDashboardRequest& request, const GetDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetDashboard(request), context);
+}
+
+GetMetricDataOutcome CloudWatchClient::GetMetricData(const GetMetricDataRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetMetricDataOutcome(GetMetricDataResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetMetricDataOutcome(outcome.GetError());
+  }
+}
+
+GetMetricDataOutcomeCallable CloudWatchClient::GetMetricDataCallable(const GetMetricDataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMetricDataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMetricData(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchClient::GetMetricDataAsync(const GetMetricDataRequest& request, const GetMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMetricDataAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchClient::GetMetricDataAsyncHelper(const GetMetricDataRequest& request, const GetMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMetricData(request), context);
 }
 
 GetMetricStatisticsOutcome CloudWatchClient::GetMetricStatistics(const GetMetricStatisticsRequest& request) const

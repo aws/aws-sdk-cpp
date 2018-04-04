@@ -33,6 +33,8 @@ namespace Aws
         static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
         static const int REDUCED_REDUNDANCY_HASH = HashingUtils::HashString("REDUCED_REDUNDANCY");
         static const int GLACIER_HASH = HashingUtils::HashString("GLACIER");
+        static const int STANDARD_IA_HASH = HashingUtils::HashString("STANDARD_IA");
+        static const int ONEZONE_IA_HASH = HashingUtils::HashString("ONEZONE_IA");
 
 
         ObjectStorageClass GetObjectStorageClassForName(const Aws::String& name)
@@ -49,6 +51,14 @@ namespace Aws
           else if (hashCode == GLACIER_HASH)
           {
             return ObjectStorageClass::GLACIER;
+          }
+          else if (hashCode == STANDARD_IA_HASH)
+          {
+            return ObjectStorageClass::STANDARD_IA;
+          }
+          else if (hashCode == ONEZONE_IA_HASH)
+          {
+            return ObjectStorageClass::ONEZONE_IA;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +80,10 @@ namespace Aws
             return "REDUCED_REDUNDANCY";
           case ObjectStorageClass::GLACIER:
             return "GLACIER";
+          case ObjectStorageClass::STANDARD_IA:
+            return "STANDARD_IA";
+          case ObjectStorageClass::ONEZONE_IA:
+            return "ONEZONE_IA";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

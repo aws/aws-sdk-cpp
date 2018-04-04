@@ -36,7 +36,7 @@ namespace Model
 
   /**
    * <p>Contains information about the status of ACM's <a
-   * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+   * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
    * renewal</a> for the certificate. This structure exists only when the certificate
    * type is <code>AMAZON_ISSUED</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RenewalSummary">AWS
@@ -53,35 +53,35 @@ namespace Model
 
     /**
      * <p>The status of ACM's <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
      * renewal</a> of the certificate.</p>
      */
     inline const RenewalStatus& GetRenewalStatus() const{ return m_renewalStatus; }
 
     /**
      * <p>The status of ACM's <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
      * renewal</a> of the certificate.</p>
      */
     inline void SetRenewalStatus(const RenewalStatus& value) { m_renewalStatusHasBeenSet = true; m_renewalStatus = value; }
 
     /**
      * <p>The status of ACM's <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
      * renewal</a> of the certificate.</p>
      */
     inline void SetRenewalStatus(RenewalStatus&& value) { m_renewalStatusHasBeenSet = true; m_renewalStatus = std::move(value); }
 
     /**
      * <p>The status of ACM's <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
      * renewal</a> of the certificate.</p>
      */
     inline RenewalSummary& WithRenewalStatus(const RenewalStatus& value) { SetRenewalStatus(value); return *this;}
 
     /**
      * <p>The status of ACM's <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
      * renewal</a> of the certificate.</p>
      */
     inline RenewalSummary& WithRenewalStatus(RenewalStatus&& value) { SetRenewalStatus(std::move(value)); return *this;}
@@ -90,7 +90,7 @@ namespace Model
     /**
      * <p>Contains information about the validation of each domain name in the
      * certificate, as it pertains to ACM's <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
      * renewal</a>. This is different from the initial validation that occurs as a
      * result of the <a>RequestCertificate</a> request. This field exists only when the
      * certificate type is <code>AMAZON_ISSUED</code>.</p>
@@ -100,7 +100,7 @@ namespace Model
     /**
      * <p>Contains information about the validation of each domain name in the
      * certificate, as it pertains to ACM's <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
      * renewal</a>. This is different from the initial validation that occurs as a
      * result of the <a>RequestCertificate</a> request. This field exists only when the
      * certificate type is <code>AMAZON_ISSUED</code>.</p>
@@ -110,7 +110,7 @@ namespace Model
     /**
      * <p>Contains information about the validation of each domain name in the
      * certificate, as it pertains to ACM's <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
      * renewal</a>. This is different from the initial validation that occurs as a
      * result of the <a>RequestCertificate</a> request. This field exists only when the
      * certificate type is <code>AMAZON_ISSUED</code>.</p>
@@ -120,7 +120,7 @@ namespace Model
     /**
      * <p>Contains information about the validation of each domain name in the
      * certificate, as it pertains to ACM's <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
      * renewal</a>. This is different from the initial validation that occurs as a
      * result of the <a>RequestCertificate</a> request. This field exists only when the
      * certificate type is <code>AMAZON_ISSUED</code>.</p>
@@ -130,7 +130,7 @@ namespace Model
     /**
      * <p>Contains information about the validation of each domain name in the
      * certificate, as it pertains to ACM's <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
      * renewal</a>. This is different from the initial validation that occurs as a
      * result of the <a>RequestCertificate</a> request. This field exists only when the
      * certificate type is <code>AMAZON_ISSUED</code>.</p>
@@ -140,7 +140,7 @@ namespace Model
     /**
      * <p>Contains information about the validation of each domain name in the
      * certificate, as it pertains to ACM's <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
      * renewal</a>. This is different from the initial validation that occurs as a
      * result of the <a>RequestCertificate</a> request. This field exists only when the
      * certificate type is <code>AMAZON_ISSUED</code>.</p>
@@ -150,7 +150,7 @@ namespace Model
     /**
      * <p>Contains information about the validation of each domain name in the
      * certificate, as it pertains to ACM's <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
      * renewal</a>. This is different from the initial validation that occurs as a
      * result of the <a>RequestCertificate</a> request. This field exists only when the
      * certificate type is <code>AMAZON_ISSUED</code>.</p>

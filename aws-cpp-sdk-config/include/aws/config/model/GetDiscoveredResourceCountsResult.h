@@ -52,7 +52,7 @@ namespace Model
      * resource types in the US East (Ohio) Region for your account: 25 EC2 instances,
      * 20 IAM users, and 15 S3 buckets, for a total of 60 resources.</p> </li> <li>
      * <p>You make a call to the <code>GetDiscoveredResourceCounts</code> action and
-     * specify the resource type, <code>"AWS::EC2::Instances"</code> in the
+     * specify the resource type, <code>"AWS::EC2::Instances"</code>, in the
      * request.</p> </li> <li> <p>AWS Config returns 25 for
      * <code>totalDiscoveredResources</code>.</p> </li> </ol>
      */
@@ -66,7 +66,7 @@ namespace Model
      * resource types in the US East (Ohio) Region for your account: 25 EC2 instances,
      * 20 IAM users, and 15 S3 buckets, for a total of 60 resources.</p> </li> <li>
      * <p>You make a call to the <code>GetDiscoveredResourceCounts</code> action and
-     * specify the resource type, <code>"AWS::EC2::Instances"</code> in the
+     * specify the resource type, <code>"AWS::EC2::Instances"</code>, in the
      * request.</p> </li> <li> <p>AWS Config returns 25 for
      * <code>totalDiscoveredResources</code>.</p> </li> </ol>
      */
@@ -80,7 +80,7 @@ namespace Model
      * resource types in the US East (Ohio) Region for your account: 25 EC2 instances,
      * 20 IAM users, and 15 S3 buckets, for a total of 60 resources.</p> </li> <li>
      * <p>You make a call to the <code>GetDiscoveredResourceCounts</code> action and
-     * specify the resource type, <code>"AWS::EC2::Instances"</code> in the
+     * specify the resource type, <code>"AWS::EC2::Instances"</code>, in the
      * request.</p> </li> <li> <p>AWS Config returns 25 for
      * <code>totalDiscoveredResources</code>.</p> </li> </ol>
      */

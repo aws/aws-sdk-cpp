@@ -569,32 +569,47 @@ namespace Model
 
 
     /**
-     * <p>Describes whether the notebook instance has internet access.</p> <p>For more
-     * information, see <a>appendix-notebook-and-internet-access</a>.</p>
+     * <p>Describes whether Amazon SageMaker provides internet access to the notebook
+     * instance. If this value is set to <i>Disabled, he notebook instance does not
+     * have internet access, and cannot connect to Amazon SageMaker training and
+     * endpoint services</i>.</p> <p>For more information, see
+     * <a>appendix-notebook-and-internet-access</a>.</p>
      */
     inline const DirectInternetAccess& GetDirectInternetAccess() const{ return m_directInternetAccess; }
 
     /**
-     * <p>Describes whether the notebook instance has internet access.</p> <p>For more
-     * information, see <a>appendix-notebook-and-internet-access</a>.</p>
+     * <p>Describes whether Amazon SageMaker provides internet access to the notebook
+     * instance. If this value is set to <i>Disabled, he notebook instance does not
+     * have internet access, and cannot connect to Amazon SageMaker training and
+     * endpoint services</i>.</p> <p>For more information, see
+     * <a>appendix-notebook-and-internet-access</a>.</p>
      */
     inline void SetDirectInternetAccess(const DirectInternetAccess& value) { m_directInternetAccess = value; }
 
     /**
-     * <p>Describes whether the notebook instance has internet access.</p> <p>For more
-     * information, see <a>appendix-notebook-and-internet-access</a>.</p>
+     * <p>Describes whether Amazon SageMaker provides internet access to the notebook
+     * instance. If this value is set to <i>Disabled, he notebook instance does not
+     * have internet access, and cannot connect to Amazon SageMaker training and
+     * endpoint services</i>.</p> <p>For more information, see
+     * <a>appendix-notebook-and-internet-access</a>.</p>
      */
     inline void SetDirectInternetAccess(DirectInternetAccess&& value) { m_directInternetAccess = std::move(value); }
 
     /**
-     * <p>Describes whether the notebook instance has internet access.</p> <p>For more
-     * information, see <a>appendix-notebook-and-internet-access</a>.</p>
+     * <p>Describes whether Amazon SageMaker provides internet access to the notebook
+     * instance. If this value is set to <i>Disabled, he notebook instance does not
+     * have internet access, and cannot connect to Amazon SageMaker training and
+     * endpoint services</i>.</p> <p>For more information, see
+     * <a>appendix-notebook-and-internet-access</a>.</p>
      */
     inline DescribeNotebookInstanceResult& WithDirectInternetAccess(const DirectInternetAccess& value) { SetDirectInternetAccess(value); return *this;}
 
     /**
-     * <p>Describes whether the notebook instance has internet access.</p> <p>For more
-     * information, see <a>appendix-notebook-and-internet-access</a>.</p>
+     * <p>Describes whether Amazon SageMaker provides internet access to the notebook
+     * instance. If this value is set to <i>Disabled, he notebook instance does not
+     * have internet access, and cannot connect to Amazon SageMaker training and
+     * endpoint services</i>.</p> <p>For more information, see
+     * <a>appendix-notebook-and-internet-access</a>.</p>
      */
     inline DescribeNotebookInstanceResult& WithDirectInternetAccess(DirectInternetAccess&& value) { SetDirectInternetAccess(std::move(value)); return *this;}
 

@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     IMPORTED,
-    AMAZON_ISSUED
+    AMAZON_ISSUED,
+    PRIVATE_
   };
 
 namespace CertificateTypeMapper

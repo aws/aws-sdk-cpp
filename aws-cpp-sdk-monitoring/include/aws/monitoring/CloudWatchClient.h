@@ -27,6 +27,7 @@
 #include <aws/monitoring/model/DescribeAlarmsResult.h>
 #include <aws/monitoring/model/DescribeAlarmsForMetricResult.h>
 #include <aws/monitoring/model/GetDashboardResult.h>
+#include <aws/monitoring/model/GetMetricDataResult.h>
 #include <aws/monitoring/model/GetMetricStatisticsResult.h>
 #include <aws/monitoring/model/ListDashboardsResult.h>
 #include <aws/monitoring/model/ListMetricsResult.h>
@@ -85,6 +86,7 @@ namespace Model
         class DisableAlarmActionsRequest;
         class EnableAlarmActionsRequest;
         class GetDashboardRequest;
+        class GetMetricDataRequest;
         class GetMetricStatisticsRequest;
         class ListDashboardsRequest;
         class ListMetricsRequest;
@@ -101,6 +103,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchErrors>> DisableAlarmActionsOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchErrors>> EnableAlarmActionsOutcome;
         typedef Aws::Utils::Outcome<GetDashboardResult, Aws::Client::AWSError<CloudWatchErrors>> GetDashboardOutcome;
+        typedef Aws::Utils::Outcome<GetMetricDataResult, Aws::Client::AWSError<CloudWatchErrors>> GetMetricDataOutcome;
         typedef Aws::Utils::Outcome<GetMetricStatisticsResult, Aws::Client::AWSError<CloudWatchErrors>> GetMetricStatisticsOutcome;
         typedef Aws::Utils::Outcome<ListDashboardsResult, Aws::Client::AWSError<CloudWatchErrors>> ListDashboardsOutcome;
         typedef Aws::Utils::Outcome<ListMetricsResult, Aws::Client::AWSError<CloudWatchErrors>> ListMetricsOutcome;
@@ -117,6 +120,7 @@ namespace Model
         typedef std::future<DisableAlarmActionsOutcome> DisableAlarmActionsOutcomeCallable;
         typedef std::future<EnableAlarmActionsOutcome> EnableAlarmActionsOutcomeCallable;
         typedef std::future<GetDashboardOutcome> GetDashboardOutcomeCallable;
+        typedef std::future<GetMetricDataOutcome> GetMetricDataOutcomeCallable;
         typedef std::future<GetMetricStatisticsOutcome> GetMetricStatisticsOutcomeCallable;
         typedef std::future<ListDashboardsOutcome> ListDashboardsOutcomeCallable;
         typedef std::future<ListMetricsOutcome> ListMetricsOutcomeCallable;
@@ -136,6 +140,7 @@ namespace Model
     typedef std::function<void(const CloudWatchClient*, const Model::DisableAlarmActionsRequest&, const Model::DisableAlarmActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableAlarmActionsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::EnableAlarmActionsRequest&, const Model::EnableAlarmActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableAlarmActionsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::GetDashboardRequest&, const Model::GetDashboardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDashboardResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchClient*, const Model::GetMetricDataRequest&, const Model::GetMetricDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMetricDataResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::GetMetricStatisticsRequest&, const Model::GetMetricStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMetricStatisticsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::ListDashboardsRequest&, const Model::ListDashboardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDashboardsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::ListMetricsRequest&, const Model::ListMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMetricsResponseReceivedHandler;
@@ -437,6 +442,67 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDashboardAsync(const Model::GetDashboardRequest& request, const GetDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>You can use the <code>GetMetricData</code> API to retrieve as many as 100
+         * different metrics in a single request, with a total of as many as 100,800
+         * datapoints. You can also optionally perform math expressions on the values of
+         * the returned statistics, to create new time series that represent new insights
+         * into your data. For example, using Lambda metrics, you could divide the Errors
+         * metric by the Invocations metric to get an error rate time series. For more
+         * information about metric math expressions, see <a
+         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
+         * Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+         * <p>Calls to the <code>GetMetricData</code> API have a different pricing
+         * structure than calls to <code>GetMetricStatistics</code>. For more information
+         * about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon
+         * CloudWatch Pricing</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricData">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMetricDataOutcome GetMetricData(const Model::GetMetricDataRequest& request) const;
+
+        /**
+         * <p>You can use the <code>GetMetricData</code> API to retrieve as many as 100
+         * different metrics in a single request, with a total of as many as 100,800
+         * datapoints. You can also optionally perform math expressions on the values of
+         * the returned statistics, to create new time series that represent new insights
+         * into your data. For example, using Lambda metrics, you could divide the Errors
+         * metric by the Invocations metric to get an error rate time series. For more
+         * information about metric math expressions, see <a
+         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
+         * Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+         * <p>Calls to the <code>GetMetricData</code> API have a different pricing
+         * structure than calls to <code>GetMetricStatistics</code>. For more information
+         * about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon
+         * CloudWatch Pricing</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricData">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetMetricDataOutcomeCallable GetMetricDataCallable(const Model::GetMetricDataRequest& request) const;
+
+        /**
+         * <p>You can use the <code>GetMetricData</code> API to retrieve as many as 100
+         * different metrics in a single request, with a total of as many as 100,800
+         * datapoints. You can also optionally perform math expressions on the values of
+         * the returned statistics, to create new time series that represent new insights
+         * into your data. For example, using Lambda metrics, you could divide the Errors
+         * metric by the Invocations metric to get an error rate time series. For more
+         * information about metric math expressions, see <a
+         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
+         * Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+         * <p>Calls to the <code>GetMetricData</code> API have a different pricing
+         * structure than calls to <code>GetMetricStatistics</code>. For more information
+         * about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon
+         * CloudWatch Pricing</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricData">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetMetricDataAsync(const Model::GetMetricDataRequest& request, const GetMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets statistics for the specified metric.</p> <p>The maximum number of data
@@ -971,6 +1037,7 @@ namespace Model
         void DisableAlarmActionsAsyncHelper(const Model::DisableAlarmActionsRequest& request, const DisableAlarmActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableAlarmActionsAsyncHelper(const Model::EnableAlarmActionsRequest& request, const EnableAlarmActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDashboardAsyncHelper(const Model::GetDashboardRequest& request, const GetDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetMetricDataAsyncHelper(const Model::GetMetricDataRequest& request, const GetMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMetricStatisticsAsyncHelper(const Model::GetMetricStatisticsRequest& request, const GetMetricStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDashboardsAsyncHelper(const Model::ListDashboardsRequest& request, const ListDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMetricsAsyncHelper(const Model::ListMetricsRequest& request, const ListMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

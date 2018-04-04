@@ -22,6 +22,7 @@
 #include <aws/transcribe/model/Media.h>
 #include <aws/transcribe/model/Transcript.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/transcribe/model/Settings.h>
 #include <utility>
 
 namespace Aws
@@ -90,27 +91,27 @@ namespace Model
 
 
     /**
-     * <p>The identifier assigned to the job when it was created.</p>
+     * <p>The status of the transcription job.</p>
      */
     inline const TranscriptionJobStatus& GetTranscriptionJobStatus() const{ return m_transcriptionJobStatus; }
 
     /**
-     * <p>The identifier assigned to the job when it was created.</p>
+     * <p>The status of the transcription job.</p>
      */
     inline void SetTranscriptionJobStatus(const TranscriptionJobStatus& value) { m_transcriptionJobStatusHasBeenSet = true; m_transcriptionJobStatus = value; }
 
     /**
-     * <p>The identifier assigned to the job when it was created.</p>
+     * <p>The status of the transcription job.</p>
      */
     inline void SetTranscriptionJobStatus(TranscriptionJobStatus&& value) { m_transcriptionJobStatusHasBeenSet = true; m_transcriptionJobStatus = std::move(value); }
 
     /**
-     * <p>The identifier assigned to the job when it was created.</p>
+     * <p>The status of the transcription job.</p>
      */
     inline TranscriptionJob& WithTranscriptionJobStatus(const TranscriptionJobStatus& value) { SetTranscriptionJobStatus(value); return *this;}
 
     /**
-     * <p>The identifier assigned to the job when it was created.</p>
+     * <p>The status of the transcription job.</p>
      */
     inline TranscriptionJob& WithTranscriptionJobStatus(TranscriptionJobStatus&& value) { SetTranscriptionJobStatus(std::move(value)); return *this;}
 
@@ -329,6 +330,32 @@ namespace Model
      */
     inline TranscriptionJob& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 
+
+    /**
+     * <p>Optional settings for the transcription job.</p>
+     */
+    inline const Settings& GetSettings() const{ return m_settings; }
+
+    /**
+     * <p>Optional settings for the transcription job.</p>
+     */
+    inline void SetSettings(const Settings& value) { m_settingsHasBeenSet = true; m_settings = value; }
+
+    /**
+     * <p>Optional settings for the transcription job.</p>
+     */
+    inline void SetSettings(Settings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
+
+    /**
+     * <p>Optional settings for the transcription job.</p>
+     */
+    inline TranscriptionJob& WithSettings(const Settings& value) { SetSettings(value); return *this;}
+
+    /**
+     * <p>Optional settings for the transcription job.</p>
+     */
+    inline TranscriptionJob& WithSettings(Settings&& value) { SetSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_transcriptionJobName;
@@ -360,6 +387,9 @@ namespace Model
 
     Aws::String m_failureReason;
     bool m_failureReasonHasBeenSet;
+
+    Settings m_settings;
+    bool m_settingsHasBeenSet;
   };
 
 } // namespace Model

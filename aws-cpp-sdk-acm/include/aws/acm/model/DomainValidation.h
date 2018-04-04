@@ -210,7 +210,7 @@ namespace Model
     /**
      * <p>Contains the CNAME record that you add to your DNS database for domain
      * validation. For more information, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-dns.html">Use
      * DNS to Validate Domain Ownership</a>.</p>
      */
     inline const ResourceRecord& GetResourceRecord() const{ return m_resourceRecord; }
@@ -218,7 +218,7 @@ namespace Model
     /**
      * <p>Contains the CNAME record that you add to your DNS database for domain
      * validation. For more information, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-dns.html">Use
      * DNS to Validate Domain Ownership</a>.</p>
      */
     inline void SetResourceRecord(const ResourceRecord& value) { m_resourceRecordHasBeenSet = true; m_resourceRecord = value; }
@@ -226,7 +226,7 @@ namespace Model
     /**
      * <p>Contains the CNAME record that you add to your DNS database for domain
      * validation. For more information, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-dns.html">Use
      * DNS to Validate Domain Ownership</a>.</p>
      */
     inline void SetResourceRecord(ResourceRecord&& value) { m_resourceRecordHasBeenSet = true; m_resourceRecord = std::move(value); }
@@ -234,7 +234,7 @@ namespace Model
     /**
      * <p>Contains the CNAME record that you add to your DNS database for domain
      * validation. For more information, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-dns.html">Use
      * DNS to Validate Domain Ownership</a>.</p>
      */
     inline DomainValidation& WithResourceRecord(const ResourceRecord& value) { SetResourceRecord(value); return *this;}
@@ -242,7 +242,7 @@ namespace Model
     /**
      * <p>Contains the CNAME record that you add to your DNS database for domain
      * validation. For more information, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-dns.html">Use
      * DNS to Validate Domain Ownership</a>.</p>
      */
     inline DomainValidation& WithResourceRecord(ResourceRecord&& value) { SetResourceRecord(std::move(value)); return *this;}

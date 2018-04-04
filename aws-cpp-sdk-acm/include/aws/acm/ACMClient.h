@@ -22,6 +22,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/acm/model/DescribeCertificateResult.h>
+#include <aws/acm/model/ExportCertificateResult.h>
 #include <aws/acm/model/GetCertificateResult.h>
 #include <aws/acm/model/ImportCertificateResult.h>
 #include <aws/acm/model/ListCertificatesResult.h>
@@ -76,6 +77,7 @@ namespace Model
         class AddTagsToCertificateRequest;
         class DeleteCertificateRequest;
         class DescribeCertificateRequest;
+        class ExportCertificateRequest;
         class GetCertificateRequest;
         class ImportCertificateRequest;
         class ListCertificatesRequest;
@@ -88,6 +90,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ACMErrors>> AddTagsToCertificateOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ACMErrors>> DeleteCertificateOutcome;
         typedef Aws::Utils::Outcome<DescribeCertificateResult, Aws::Client::AWSError<ACMErrors>> DescribeCertificateOutcome;
+        typedef Aws::Utils::Outcome<ExportCertificateResult, Aws::Client::AWSError<ACMErrors>> ExportCertificateOutcome;
         typedef Aws::Utils::Outcome<GetCertificateResult, Aws::Client::AWSError<ACMErrors>> GetCertificateOutcome;
         typedef Aws::Utils::Outcome<ImportCertificateResult, Aws::Client::AWSError<ACMErrors>> ImportCertificateOutcome;
         typedef Aws::Utils::Outcome<ListCertificatesResult, Aws::Client::AWSError<ACMErrors>> ListCertificatesOutcome;
@@ -100,6 +103,7 @@ namespace Model
         typedef std::future<AddTagsToCertificateOutcome> AddTagsToCertificateOutcomeCallable;
         typedef std::future<DeleteCertificateOutcome> DeleteCertificateOutcomeCallable;
         typedef std::future<DescribeCertificateOutcome> DescribeCertificateOutcomeCallable;
+        typedef std::future<ExportCertificateOutcome> ExportCertificateOutcomeCallable;
         typedef std::future<GetCertificateOutcome> GetCertificateOutcomeCallable;
         typedef std::future<ImportCertificateOutcome> ImportCertificateOutcomeCallable;
         typedef std::future<ListCertificatesOutcome> ListCertificatesOutcomeCallable;
@@ -115,6 +119,7 @@ namespace Model
     typedef std::function<void(const ACMClient*, const Model::AddTagsToCertificateRequest&, const Model::AddTagsToCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsToCertificateResponseReceivedHandler;
     typedef std::function<void(const ACMClient*, const Model::DeleteCertificateRequest&, const Model::DeleteCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCertificateResponseReceivedHandler;
     typedef std::function<void(const ACMClient*, const Model::DescribeCertificateRequest&, const Model::DescribeCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCertificateResponseReceivedHandler;
+    typedef std::function<void(const ACMClient*, const Model::ExportCertificateRequest&, const Model::ExportCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportCertificateResponseReceivedHandler;
     typedef std::function<void(const ACMClient*, const Model::GetCertificateRequest&, const Model::GetCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCertificateResponseReceivedHandler;
     typedef std::function<void(const ACMClient*, const Model::ImportCertificateRequest&, const Model::ImportCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportCertificateResponseReceivedHandler;
     typedef std::function<void(const ACMClient*, const Model::ListCertificatesRequest&, const Model::ListCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCertificatesResponseReceivedHandler;
@@ -129,8 +134,8 @@ namespace Model
    * Manager (ACM) API documentation.</p> <p>You can use ACM to manage SSL/TLS
    * certificates for your AWS-based websites and applications. For general
    * information about using ACM, see the <a
-   * href="http://docs.aws.amazon.com/acm/latest/userguide/"> <i>AWS Certificate
-   * Manager User Guide</i> </a>.</p>
+   * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/">
+   * <i>AWS Certificate Manager User Guide</i> </a>.</p>
    */
   class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient
   {
@@ -174,8 +179,8 @@ namespace Model
          * For example, you can add the same tag to an ACM certificate and an Elastic Load
          * Balancing load balancer to indicate that they are both used by the same website.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/tags.html">Tagging ACM
-         * certificates</a>. </p> <p>To remove one or more tags, use the
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/tags.html">Tagging
+         * ACM certificates</a>. </p> <p>To remove one or more tags, use the
          * <a>RemoveTagsFromCertificate</a> action. To view all of the tags that have been
          * applied to the certificate, use the <a>ListTagsForCertificate</a> action.
          * </p><p><h3>See Also:</h3>   <a
@@ -197,8 +202,8 @@ namespace Model
          * For example, you can add the same tag to an ACM certificate and an Elastic Load
          * Balancing load balancer to indicate that they are both used by the same website.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/tags.html">Tagging ACM
-         * certificates</a>. </p> <p>To remove one or more tags, use the
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/tags.html">Tagging
+         * ACM certificates</a>. </p> <p>To remove one or more tags, use the
          * <a>RemoveTagsFromCertificate</a> action. To view all of the tags that have been
          * applied to the certificate, use the <a>ListTagsForCertificate</a> action.
          * </p><p><h3>See Also:</h3>   <a
@@ -222,8 +227,8 @@ namespace Model
          * For example, you can add the same tag to an ACM certificate and an Elastic Load
          * Balancing load balancer to indicate that they are both used by the same website.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/tags.html">Tagging ACM
-         * certificates</a>. </p> <p>To remove one or more tags, use the
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/tags.html">Tagging
+         * ACM certificates</a>. </p> <p>To remove one or more tags, use the
          * <a>RemoveTagsFromCertificate</a> action. To view all of the tags that have been
          * applied to the certificate, use the <a>ListTagsForCertificate</a> action.
          * </p><p><h3>See Also:</h3>   <a
@@ -309,6 +314,49 @@ namespace Model
         virtual void DescribeCertificateAsync(const Model::DescribeCertificateRequest& request, const DescribeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Exports a certificate for use anywhere. You can export the certificate, the
+         * certificate chain, and the encrypted private key associated with the public key
+         * embedded in the certificate. You must store the private key securely. The
+         * private key is a 2048 bit RSA key. You must provide a passphrase for the private
+         * key when exporting it. You can use the following OpenSSL command to decrypt it
+         * later. Provide the passphrase when prompted. </p> <p> <code>openssl rsa -in
+         * encrypted_key.pem -out decrypted_key.pem</code> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ExportCertificate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ExportCertificateOutcome ExportCertificate(const Model::ExportCertificateRequest& request) const;
+
+        /**
+         * <p>Exports a certificate for use anywhere. You can export the certificate, the
+         * certificate chain, and the encrypted private key associated with the public key
+         * embedded in the certificate. You must store the private key securely. The
+         * private key is a 2048 bit RSA key. You must provide a passphrase for the private
+         * key when exporting it. You can use the following OpenSSL command to decrypt it
+         * later. Provide the passphrase when prompted. </p> <p> <code>openssl rsa -in
+         * encrypted_key.pem -out decrypted_key.pem</code> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ExportCertificate">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ExportCertificateOutcomeCallable ExportCertificateCallable(const Model::ExportCertificateRequest& request) const;
+
+        /**
+         * <p>Exports a certificate for use anywhere. You can export the certificate, the
+         * certificate chain, and the encrypted private key associated with the public key
+         * embedded in the certificate. You must store the private key securely. The
+         * private key is a 2048 bit RSA key. You must provide a passphrase for the private
+         * key when exporting it. You can use the following OpenSSL command to decrypt it
+         * later. Provide the passphrase when prompted. </p> <p> <code>openssl rsa -in
+         * encrypted_key.pem -out decrypted_key.pem</code> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ExportCertificate">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ExportCertificateAsync(const Model::ExportCertificateRequest& request, const ExportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves a certificate specified by an ARN and its certificate chain . The
          * chain is an ordered list of certificates that contains the end entity
          * certificate, intermediate certificates of subordinate CAs, and the root
@@ -351,16 +399,16 @@ namespace Model
         /**
          * <p>Imports a certificate into AWS Certificate Manager (ACM) to use with services
          * that are integrated with ACM. Note that <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">integrated
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-services.html">integrated
          * services</a> allow only certificate types and keys they support to be associated
          * with their resources. Further, their support differs depending on whether the
          * certificate is imported into IAM or into ACM. For more information, see the
          * documentation for each service. For more information about importing
          * certificates into ACM, see <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/import-certificate.html">Importing
          * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p> <note>
          * <p>ACM does not provide <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
          * renewal</a> for certificates that you import.</p> </note> <p>Note the following
          * guidelines when importing third party certificates:</p> <ul> <li> <p>You must
          * enter the private key that matches the certificate you are importing.</p> </li>
@@ -394,16 +442,16 @@ namespace Model
         /**
          * <p>Imports a certificate into AWS Certificate Manager (ACM) to use with services
          * that are integrated with ACM. Note that <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">integrated
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-services.html">integrated
          * services</a> allow only certificate types and keys they support to be associated
          * with their resources. Further, their support differs depending on whether the
          * certificate is imported into IAM or into ACM. For more information, see the
          * documentation for each service. For more information about importing
          * certificates into ACM, see <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/import-certificate.html">Importing
          * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p> <note>
          * <p>ACM does not provide <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
          * renewal</a> for certificates that you import.</p> </note> <p>Note the following
          * guidelines when importing third party certificates:</p> <ul> <li> <p>You must
          * enter the private key that matches the certificate you are importing.</p> </li>
@@ -439,16 +487,16 @@ namespace Model
         /**
          * <p>Imports a certificate into AWS Certificate Manager (ACM) to use with services
          * that are integrated with ACM. Note that <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">integrated
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-services.html">integrated
          * services</a> allow only certificate types and keys they support to be associated
          * with their resources. Further, their support differs depending on whether the
          * certificate is imported into IAM or into ACM. For more information, see the
          * documentation for each service. For more information about importing
          * certificates into ACM, see <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/import-certificate.html">Importing
          * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p> <note>
          * <p>ACM does not provide <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
          * renewal</a> for certificates that you import.</p> </note> <p>Note the following
          * guidelines when importing third party certificates:</p> <ul> <li> <p>You must
          * enter the private key that matches the certificate you are importing.</p> </li>
@@ -602,16 +650,16 @@ namespace Model
          * additional FQDNs in the <code>SubjectAlternativeNames</code> parameter. </p>
          * <p>Each domain name that you specify must be validated to verify that you own or
          * control the domain. You can use <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">DNS
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-dns.html">DNS
          * validation</a> or <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">email
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-email.html">email
          * validation</a>. We recommend that you use DNS validation. </p> <p>If you choose
          * email validation, email is sent to the domain owner to request approval to issue
          * the certificate. Email is sent to three registered contact addresses in the
          * WHOIS database and to five common system administration addresses formed from
          * the <code>DomainName</code> you enter or the optional
          * <code>ValidationDomain</code> parameter. For more information, see <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">Validate
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-email.html">Validate
          * with Email</a>. </p> <p>After receiving approval from the domain owner, the ACM
          * certificate is issued.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate">AWS
@@ -626,16 +674,16 @@ namespace Model
          * additional FQDNs in the <code>SubjectAlternativeNames</code> parameter. </p>
          * <p>Each domain name that you specify must be validated to verify that you own or
          * control the domain. You can use <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">DNS
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-dns.html">DNS
          * validation</a> or <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">email
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-email.html">email
          * validation</a>. We recommend that you use DNS validation. </p> <p>If you choose
          * email validation, email is sent to the domain owner to request approval to issue
          * the certificate. Email is sent to three registered contact addresses in the
          * WHOIS database and to five common system administration addresses formed from
          * the <code>DomainName</code> you enter or the optional
          * <code>ValidationDomain</code> parameter. For more information, see <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">Validate
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-email.html">Validate
          * with Email</a>. </p> <p>After receiving approval from the domain owner, the ACM
          * certificate is issued.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate">AWS
@@ -652,16 +700,16 @@ namespace Model
          * additional FQDNs in the <code>SubjectAlternativeNames</code> parameter. </p>
          * <p>Each domain name that you specify must be validated to verify that you own or
          * control the domain. You can use <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">DNS
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-dns.html">DNS
          * validation</a> or <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">email
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-email.html">email
          * validation</a>. We recommend that you use DNS validation. </p> <p>If you choose
          * email validation, email is sent to the domain owner to request approval to issue
          * the certificate. Email is sent to three registered contact addresses in the
          * WHOIS database and to five common system administration addresses formed from
          * the <code>DomainName</code> you enter or the optional
          * <code>ValidationDomain</code> parameter. For more information, see <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">Validate
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-email.html">Validate
          * with Email</a>. </p> <p>After receiving approval from the domain owner, the ACM
          * certificate is issued.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate">AWS
@@ -682,7 +730,7 @@ namespace Model
          * 72 hours have elapsed since your original request or since your last attempt to
          * resend validation mail, you must request a new certificate. For more information
          * about setting up your contact email addresses, see <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/setup-email.html">Configure
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/setup-email.html">Configure
          * Email for your Domain</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ResendValidationEmail">AWS
          * API Reference</a></p>
@@ -700,7 +748,7 @@ namespace Model
          * 72 hours have elapsed since your original request or since your last attempt to
          * resend validation mail, you must request a new certificate. For more information
          * about setting up your contact email addresses, see <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/setup-email.html">Configure
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/setup-email.html">Configure
          * Email for your Domain</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ResendValidationEmail">AWS
          * API Reference</a></p>
@@ -720,7 +768,7 @@ namespace Model
          * 72 hours have elapsed since your original request or since your last attempt to
          * resend validation mail, you must request a new certificate. For more information
          * about setting up your contact email addresses, see <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/setup-email.html">Configure
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/setup-email.html">Configure
          * Email for your Domain</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ResendValidationEmail">AWS
          * API Reference</a></p>
@@ -733,7 +781,7 @@ namespace Model
          * <p>Updates a certificate. Currently, you can use this function to specify
          * whether to opt in to or out of recording your certificate in a certificate
          * transparency log. For more information, see <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-bestpractices.html#best-practices-transparency">
          * Opting Out of Certificate Transparency Logging</a>. </p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/UpdateCertificateOptions">AWS
@@ -745,7 +793,7 @@ namespace Model
          * <p>Updates a certificate. Currently, you can use this function to specify
          * whether to opt in to or out of recording your certificate in a certificate
          * transparency log. For more information, see <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-bestpractices.html#best-practices-transparency">
          * Opting Out of Certificate Transparency Logging</a>. </p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/UpdateCertificateOptions">AWS
@@ -759,7 +807,7 @@ namespace Model
          * <p>Updates a certificate. Currently, you can use this function to specify
          * whether to opt in to or out of recording your certificate in a certificate
          * transparency log. For more information, see <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-bestpractices.html#best-practices-transparency">
          * Opting Out of Certificate Transparency Logging</a>. </p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/UpdateCertificateOptions">AWS
@@ -777,6 +825,7 @@ namespace Model
         void AddTagsToCertificateAsyncHelper(const Model::AddTagsToCertificateRequest& request, const AddTagsToCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCertificateAsyncHelper(const Model::DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCertificateAsyncHelper(const Model::DescribeCertificateRequest& request, const DescribeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ExportCertificateAsyncHelper(const Model::ExportCertificateRequest& request, const ExportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCertificateAsyncHelper(const Model::GetCertificateRequest& request, const GetCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportCertificateAsyncHelper(const Model::ImportCertificateRequest& request, const ImportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCertificatesAsyncHelper(const Model::ListCertificatesRequest& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

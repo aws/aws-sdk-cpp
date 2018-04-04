@@ -245,9 +245,8 @@ namespace Model
      * and algorithm-specific metadata, including the input mode. For more information
      * about algorithms provided by Amazon SageMaker, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
-     * For information about providing your own algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html">Bring
-     * Your Own Algorithms </a>. </p>
+     * For information about providing your own algorithms, see <a>your-algorithms</a>.
+     * </p>
      */
     inline const AlgorithmSpecification& GetAlgorithmSpecification() const{ return m_algorithmSpecification; }
 
@@ -256,9 +255,8 @@ namespace Model
      * and algorithm-specific metadata, including the input mode. For more information
      * about algorithms provided by Amazon SageMaker, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
-     * For information about providing your own algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html">Bring
-     * Your Own Algorithms </a>. </p>
+     * For information about providing your own algorithms, see <a>your-algorithms</a>.
+     * </p>
      */
     inline void SetAlgorithmSpecification(const AlgorithmSpecification& value) { m_algorithmSpecificationHasBeenSet = true; m_algorithmSpecification = value; }
 
@@ -267,9 +265,8 @@ namespace Model
      * and algorithm-specific metadata, including the input mode. For more information
      * about algorithms provided by Amazon SageMaker, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
-     * For information about providing your own algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html">Bring
-     * Your Own Algorithms </a>. </p>
+     * For information about providing your own algorithms, see <a>your-algorithms</a>.
+     * </p>
      */
     inline void SetAlgorithmSpecification(AlgorithmSpecification&& value) { m_algorithmSpecificationHasBeenSet = true; m_algorithmSpecification = std::move(value); }
 
@@ -278,9 +275,8 @@ namespace Model
      * and algorithm-specific metadata, including the input mode. For more information
      * about algorithms provided by Amazon SageMaker, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
-     * For information about providing your own algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html">Bring
-     * Your Own Algorithms </a>. </p>
+     * For information about providing your own algorithms, see <a>your-algorithms</a>.
+     * </p>
      */
     inline CreateTrainingJobRequest& WithAlgorithmSpecification(const AlgorithmSpecification& value) { SetAlgorithmSpecification(value); return *this;}
 
@@ -289,9 +285,8 @@ namespace Model
      * and algorithm-specific metadata, including the input mode. For more information
      * about algorithms provided by Amazon SageMaker, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
-     * For information about providing your own algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html">Bring
-     * Your Own Algorithms </a>. </p>
+     * For information about providing your own algorithms, see <a>your-algorithms</a>.
+     * </p>
      */
     inline CreateTrainingJobRequest& WithAlgorithmSpecification(AlgorithmSpecification&& value) { SetAlgorithmSpecification(std::move(value)); return *this;}
 

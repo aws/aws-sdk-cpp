@@ -47,86 +47,44 @@ namespace Model
 
 
     /**
-     * <p>The S3 location where the transcription result is stored. The general form of
-     * this Uri is:</p> <p> <code>
-     * https://&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-     * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3-us-west-2.amazonaws.com/examplebucket/example.json</code> </p>
-     * <p>
-     * <code>https://s3-us-west-2.amazonaws.com/examplebucket/mediadocs/example.json</code>
-     * </p>
+     * <p>The S3 location where the transcription result is stored. Use this URI to
+     * access the results of the transcription job. </p>
      */
     inline const Aws::String& GetTranscriptFileUri() const{ return m_transcriptFileUri; }
 
     /**
-     * <p>The S3 location where the transcription result is stored. The general form of
-     * this Uri is:</p> <p> <code>
-     * https://&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-     * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3-us-west-2.amazonaws.com/examplebucket/example.json</code> </p>
-     * <p>
-     * <code>https://s3-us-west-2.amazonaws.com/examplebucket/mediadocs/example.json</code>
-     * </p>
+     * <p>The S3 location where the transcription result is stored. Use this URI to
+     * access the results of the transcription job. </p>
      */
     inline void SetTranscriptFileUri(const Aws::String& value) { m_transcriptFileUriHasBeenSet = true; m_transcriptFileUri = value; }
 
     /**
-     * <p>The S3 location where the transcription result is stored. The general form of
-     * this Uri is:</p> <p> <code>
-     * https://&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-     * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3-us-west-2.amazonaws.com/examplebucket/example.json</code> </p>
-     * <p>
-     * <code>https://s3-us-west-2.amazonaws.com/examplebucket/mediadocs/example.json</code>
-     * </p>
+     * <p>The S3 location where the transcription result is stored. Use this URI to
+     * access the results of the transcription job. </p>
      */
     inline void SetTranscriptFileUri(Aws::String&& value) { m_transcriptFileUriHasBeenSet = true; m_transcriptFileUri = std::move(value); }
 
     /**
-     * <p>The S3 location where the transcription result is stored. The general form of
-     * this Uri is:</p> <p> <code>
-     * https://&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-     * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3-us-west-2.amazonaws.com/examplebucket/example.json</code> </p>
-     * <p>
-     * <code>https://s3-us-west-2.amazonaws.com/examplebucket/mediadocs/example.json</code>
-     * </p>
+     * <p>The S3 location where the transcription result is stored. Use this URI to
+     * access the results of the transcription job. </p>
      */
     inline void SetTranscriptFileUri(const char* value) { m_transcriptFileUriHasBeenSet = true; m_transcriptFileUri.assign(value); }
 
     /**
-     * <p>The S3 location where the transcription result is stored. The general form of
-     * this Uri is:</p> <p> <code>
-     * https://&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-     * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3-us-west-2.amazonaws.com/examplebucket/example.json</code> </p>
-     * <p>
-     * <code>https://s3-us-west-2.amazonaws.com/examplebucket/mediadocs/example.json</code>
-     * </p>
+     * <p>The S3 location where the transcription result is stored. Use this URI to
+     * access the results of the transcription job. </p>
      */
     inline Transcript& WithTranscriptFileUri(const Aws::String& value) { SetTranscriptFileUri(value); return *this;}
 
     /**
-     * <p>The S3 location where the transcription result is stored. The general form of
-     * this Uri is:</p> <p> <code>
-     * https://&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-     * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3-us-west-2.amazonaws.com/examplebucket/example.json</code> </p>
-     * <p>
-     * <code>https://s3-us-west-2.amazonaws.com/examplebucket/mediadocs/example.json</code>
-     * </p>
+     * <p>The S3 location where the transcription result is stored. Use this URI to
+     * access the results of the transcription job. </p>
      */
     inline Transcript& WithTranscriptFileUri(Aws::String&& value) { SetTranscriptFileUri(std::move(value)); return *this;}
 
     /**
-     * <p>The S3 location where the transcription result is stored. The general form of
-     * this Uri is:</p> <p> <code>
-     * https://&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-     * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3-us-west-2.amazonaws.com/examplebucket/example.json</code> </p>
-     * <p>
-     * <code>https://s3-us-west-2.amazonaws.com/examplebucket/mediadocs/example.json</code>
-     * </p>
+     * <p>The S3 location where the transcription result is stored. Use this URI to
+     * access the results of the transcription job. </p>
      */
     inline Transcript& WithTranscriptFileUri(const char* value) { SetTranscriptFileUri(value); return *this;}
 

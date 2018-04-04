@@ -37,8 +37,8 @@ namespace Model
 
   /**
    * <p>The details of an AWS Config evaluation. Provides the AWS resource that was
-   * evaluated, the compliance of the resource, related timestamps, and supplementary
-   * information.</p><p><h3>See Also:</h3>   <a
+   * evaluated, the compliance of the resource, related time stamps, and
+   * supplementary information.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/EvaluationResult">AWS
    * API Reference</a></p>
    */

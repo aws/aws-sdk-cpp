@@ -20,6 +20,7 @@
 #include <aws/transcribe/model/LanguageCode.h>
 #include <aws/transcribe/model/MediaFormat.h>
 #include <aws/transcribe/model/Media.h>
+#include <aws/transcribe/model/Settings.h>
 #include <utility>
 
 namespace Aws
@@ -176,6 +177,37 @@ namespace Model
      */
     inline StartTranscriptionJobRequest& WithMedia(Media&& value) { SetMedia(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A <code>Settings</code> object that provides optional settings for a
+     * transcription job.</p>
+     */
+    inline const Settings& GetSettings() const{ return m_settings; }
+
+    /**
+     * <p>A <code>Settings</code> object that provides optional settings for a
+     * transcription job.</p>
+     */
+    inline void SetSettings(const Settings& value) { m_settingsHasBeenSet = true; m_settings = value; }
+
+    /**
+     * <p>A <code>Settings</code> object that provides optional settings for a
+     * transcription job.</p>
+     */
+    inline void SetSettings(Settings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
+
+    /**
+     * <p>A <code>Settings</code> object that provides optional settings for a
+     * transcription job.</p>
+     */
+    inline StartTranscriptionJobRequest& WithSettings(const Settings& value) { SetSettings(value); return *this;}
+
+    /**
+     * <p>A <code>Settings</code> object that provides optional settings for a
+     * transcription job.</p>
+     */
+    inline StartTranscriptionJobRequest& WithSettings(Settings&& value) { SetSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_transcriptionJobName;
@@ -192,6 +224,9 @@ namespace Model
 
     Media m_media;
     bool m_mediaHasBeenSet;
+
+    Settings m_settings;
+    bool m_settingsHasBeenSet;
   };
 
 } // namespace Model

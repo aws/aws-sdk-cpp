@@ -138,17 +138,17 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the recorder is currently recording or not.</p>
+     * <p>Specifies whether or not the recorder is currently recording.</p>
      */
     inline bool GetRecording() const{ return m_recording; }
 
     /**
-     * <p>Specifies whether the recorder is currently recording or not.</p>
+     * <p>Specifies whether or not the recorder is currently recording.</p>
      */
     inline void SetRecording(bool value) { m_recordingHasBeenSet = true; m_recording = value; }
 
     /**
-     * <p>Specifies whether the recorder is currently recording or not.</p>
+     * <p>Specifies whether or not the recorder is currently recording.</p>
      */
     inline ConfigurationRecorderStatus& WithRecording(bool value) { SetRecording(value); return *this;}
 

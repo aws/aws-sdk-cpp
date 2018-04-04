@@ -31,12 +31,18 @@ namespace Model
 {
 
 InputSerialization::InputSerialization() : 
-    m_cSVHasBeenSet(false)
+    m_cSVHasBeenSet(false),
+    m_compressionType(CompressionType::NOT_SET),
+    m_compressionTypeHasBeenSet(false),
+    m_jSONHasBeenSet(false)
 {
 }
 
 InputSerialization::InputSerialization(const XmlNode& xmlNode) : 
-    m_cSVHasBeenSet(false)
+    m_cSVHasBeenSet(false),
+    m_compressionType(CompressionType::NOT_SET),
+    m_compressionTypeHasBeenSet(false),
+    m_jSONHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -53,6 +59,18 @@ InputSerialization& InputSerialization::operator =(const XmlNode& xmlNode)
       m_cSV = cSVNode;
       m_cSVHasBeenSet = true;
     }
+    XmlNode compressionTypeNode = resultNode.FirstChild("CompressionType");
+    if(!compressionTypeNode.IsNull())
+    {
+      m_compressionType = CompressionTypeMapper::GetCompressionTypeForName(StringUtils::Trim(compressionTypeNode.GetText().c_str()).c_str());
+      m_compressionTypeHasBeenSet = true;
+    }
+    XmlNode jSONNode = resultNode.FirstChild("JSON");
+    if(!jSONNode.IsNull())
+    {
+      m_jSON = jSONNode;
+      m_jSONHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -65,6 +83,18 @@ void InputSerialization::AddToNode(XmlNode& parentNode) const
   {
    XmlNode cSVNode = parentNode.CreateChildElement("CSV");
    m_cSV.AddToNode(cSVNode);
+  }
+
+  if(m_compressionTypeHasBeenSet)
+  {
+   XmlNode compressionTypeNode = parentNode.CreateChildElement("CompressionType");
+   compressionTypeNode.SetText(CompressionTypeMapper::GetNameForCompressionType(m_compressionType));
+  }
+
+  if(m_jSONHasBeenSet)
+  {
+   XmlNode jSONNode = parentNode.CreateChildElement("JSON");
+   m_jSON.AddToNode(jSONNode);
   }
 
 }

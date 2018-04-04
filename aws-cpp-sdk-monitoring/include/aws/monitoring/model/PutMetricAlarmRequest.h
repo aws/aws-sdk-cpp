@@ -795,7 +795,7 @@ namespace Model
      * <p>The period, in seconds, over which the specified statistic is applied. Valid
      * values are 10, 30, and any multiple of 60.</p> <p>Be sure to specify 10 or 30
      * only for metrics that are stored by a <code>PutMetricData</code> call with a
-     * <code>StorageResolution</code> of 1. If you specify a Period of 10 or 30 for a
+     * <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a
      * metric that does not have sub-minute resolution, the alarm still attempts to
      * gather data at the period rate that you specify. In this case, it does not
      * receive data for the attempts that do not correspond to a one-minute data
@@ -813,7 +813,7 @@ namespace Model
      * <p>The period, in seconds, over which the specified statistic is applied. Valid
      * values are 10, 30, and any multiple of 60.</p> <p>Be sure to specify 10 or 30
      * only for metrics that are stored by a <code>PutMetricData</code> call with a
-     * <code>StorageResolution</code> of 1. If you specify a Period of 10 or 30 for a
+     * <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a
      * metric that does not have sub-minute resolution, the alarm still attempts to
      * gather data at the period rate that you specify. In this case, it does not
      * receive data for the attempts that do not correspond to a one-minute data
@@ -831,7 +831,7 @@ namespace Model
      * <p>The period, in seconds, over which the specified statistic is applied. Valid
      * values are 10, 30, and any multiple of 60.</p> <p>Be sure to specify 10 or 30
      * only for metrics that are stored by a <code>PutMetricData</code> call with a
-     * <code>StorageResolution</code> of 1. If you specify a Period of 10 or 30 for a
+     * <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a
      * metric that does not have sub-minute resolution, the alarm still attempts to
      * gather data at the period rate that you specify. In this case, it does not
      * receive data for the attempts that do not correspond to a one-minute data
@@ -909,41 +909,59 @@ namespace Model
 
     /**
      * <p>The number of periods over which data is compared to the specified threshold.
-     * An alarm's total current evaluation period can be no longer than one day, so
-     * this number multiplied by <code>Period</code> cannot be more than 86,400
-     * seconds.</p>
+     * If you are setting an alarm which requires that a number of consecutive data
+     * points be breaching to trigger the alarm, this value specifies that number. If
+     * you are setting an "M out of N" alarm, this value is the N.</p> <p>An alarm's
+     * total current evaluation period can be no longer than one day, so this number
+     * multiplied by <code>Period</code> cannot be more than 86,400 seconds.</p>
      */
     inline int GetEvaluationPeriods() const{ return m_evaluationPeriods; }
 
     /**
      * <p>The number of periods over which data is compared to the specified threshold.
-     * An alarm's total current evaluation period can be no longer than one day, so
-     * this number multiplied by <code>Period</code> cannot be more than 86,400
-     * seconds.</p>
+     * If you are setting an alarm which requires that a number of consecutive data
+     * points be breaching to trigger the alarm, this value specifies that number. If
+     * you are setting an "M out of N" alarm, this value is the N.</p> <p>An alarm's
+     * total current evaluation period can be no longer than one day, so this number
+     * multiplied by <code>Period</code> cannot be more than 86,400 seconds.</p>
      */
     inline void SetEvaluationPeriods(int value) { m_evaluationPeriodsHasBeenSet = true; m_evaluationPeriods = value; }
 
     /**
      * <p>The number of periods over which data is compared to the specified threshold.
-     * An alarm's total current evaluation period can be no longer than one day, so
-     * this number multiplied by <code>Period</code> cannot be more than 86,400
-     * seconds.</p>
+     * If you are setting an alarm which requires that a number of consecutive data
+     * points be breaching to trigger the alarm, this value specifies that number. If
+     * you are setting an "M out of N" alarm, this value is the N.</p> <p>An alarm's
+     * total current evaluation period can be no longer than one day, so this number
+     * multiplied by <code>Period</code> cannot be more than 86,400 seconds.</p>
      */
     inline PutMetricAlarmRequest& WithEvaluationPeriods(int value) { SetEvaluationPeriods(value); return *this;}
 
 
     /**
-     * <p>The number of datapoints that must be breaching to trigger the alarm.</p>
+     * <p>The number of datapoints that must be breaching to trigger the alarm. This is
+     * used only if you are setting an "M out of N" alarm. In that case, this value is
+     * the M. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation">Evaluating
+     * an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      */
     inline int GetDatapointsToAlarm() const{ return m_datapointsToAlarm; }
 
     /**
-     * <p>The number of datapoints that must be breaching to trigger the alarm.</p>
+     * <p>The number of datapoints that must be breaching to trigger the alarm. This is
+     * used only if you are setting an "M out of N" alarm. In that case, this value is
+     * the M. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation">Evaluating
+     * an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      */
     inline void SetDatapointsToAlarm(int value) { m_datapointsToAlarmHasBeenSet = true; m_datapointsToAlarm = value; }
 
     /**
-     * <p>The number of datapoints that must be breaching to trigger the alarm.</p>
+     * <p>The number of datapoints that must be breaching to trigger the alarm. This is
+     * used only if you are setting an "M out of N" alarm. In that case, this value is
+     * the M. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation">Evaluating
+     * an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      */
     inline PutMetricAlarmRequest& WithDatapointsToAlarm(int value) { SetDatapointsToAlarm(value); return *this;}
 

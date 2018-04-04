@@ -52,8 +52,8 @@ namespace Model
      * <p>Specify one or more resource types to get the number of resources that are
      * compliant and the number that are noncompliant for each resource type.</p>
      * <p>For this request, you can specify an AWS resource type such as
-     * <code>AWS::EC2::Instance</code>, and you can specify that the resource type is
-     * an AWS account by specifying <code>AWS::::Account</code>.</p>
+     * <code>AWS::EC2::Instance</code>. You can specify that the resource type is an
+     * AWS account by specifying <code>AWS::::Account</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceTypes() const{ return m_resourceTypes; }
 
@@ -61,8 +61,8 @@ namespace Model
      * <p>Specify one or more resource types to get the number of resources that are
      * compliant and the number that are noncompliant for each resource type.</p>
      * <p>For this request, you can specify an AWS resource type such as
-     * <code>AWS::EC2::Instance</code>, and you can specify that the resource type is
-     * an AWS account by specifying <code>AWS::::Account</code>.</p>
+     * <code>AWS::EC2::Instance</code>. You can specify that the resource type is an
+     * AWS account by specifying <code>AWS::::Account</code>.</p>
      */
     inline void SetResourceTypes(const Aws::Vector<Aws::String>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
 
@@ -70,8 +70,8 @@ namespace Model
      * <p>Specify one or more resource types to get the number of resources that are
      * compliant and the number that are noncompliant for each resource type.</p>
      * <p>For this request, you can specify an AWS resource type such as
-     * <code>AWS::EC2::Instance</code>, and you can specify that the resource type is
-     * an AWS account by specifying <code>AWS::::Account</code>.</p>
+     * <code>AWS::EC2::Instance</code>. You can specify that the resource type is an
+     * AWS account by specifying <code>AWS::::Account</code>.</p>
      */
     inline void SetResourceTypes(Aws::Vector<Aws::String>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::move(value); }
 
@@ -79,8 +79,8 @@ namespace Model
      * <p>Specify one or more resource types to get the number of resources that are
      * compliant and the number that are noncompliant for each resource type.</p>
      * <p>For this request, you can specify an AWS resource type such as
-     * <code>AWS::EC2::Instance</code>, and you can specify that the resource type is
-     * an AWS account by specifying <code>AWS::::Account</code>.</p>
+     * <code>AWS::EC2::Instance</code>. You can specify that the resource type is an
+     * AWS account by specifying <code>AWS::::Account</code>.</p>
      */
     inline GetComplianceSummaryByResourceTypeRequest& WithResourceTypes(const Aws::Vector<Aws::String>& value) { SetResourceTypes(value); return *this;}
 
@@ -88,8 +88,8 @@ namespace Model
      * <p>Specify one or more resource types to get the number of resources that are
      * compliant and the number that are noncompliant for each resource type.</p>
      * <p>For this request, you can specify an AWS resource type such as
-     * <code>AWS::EC2::Instance</code>, and you can specify that the resource type is
-     * an AWS account by specifying <code>AWS::::Account</code>.</p>
+     * <code>AWS::EC2::Instance</code>. You can specify that the resource type is an
+     * AWS account by specifying <code>AWS::::Account</code>.</p>
      */
     inline GetComplianceSummaryByResourceTypeRequest& WithResourceTypes(Aws::Vector<Aws::String>&& value) { SetResourceTypes(std::move(value)); return *this;}
 
@@ -97,8 +97,8 @@ namespace Model
      * <p>Specify one or more resource types to get the number of resources that are
      * compliant and the number that are noncompliant for each resource type.</p>
      * <p>For this request, you can specify an AWS resource type such as
-     * <code>AWS::EC2::Instance</code>, and you can specify that the resource type is
-     * an AWS account by specifying <code>AWS::::Account</code>.</p>
+     * <code>AWS::EC2::Instance</code>. You can specify that the resource type is an
+     * AWS account by specifying <code>AWS::::Account</code>.</p>
      */
     inline GetComplianceSummaryByResourceTypeRequest& AddResourceTypes(const Aws::String& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
 
@@ -106,8 +106,8 @@ namespace Model
      * <p>Specify one or more resource types to get the number of resources that are
      * compliant and the number that are noncompliant for each resource type.</p>
      * <p>For this request, you can specify an AWS resource type such as
-     * <code>AWS::EC2::Instance</code>, and you can specify that the resource type is
-     * an AWS account by specifying <code>AWS::::Account</code>.</p>
+     * <code>AWS::EC2::Instance</code>. You can specify that the resource type is an
+     * AWS account by specifying <code>AWS::::Account</code>.</p>
      */
     inline GetComplianceSummaryByResourceTypeRequest& AddResourceTypes(Aws::String&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }
 
@@ -115,8 +115,8 @@ namespace Model
      * <p>Specify one or more resource types to get the number of resources that are
      * compliant and the number that are noncompliant for each resource type.</p>
      * <p>For this request, you can specify an AWS resource type such as
-     * <code>AWS::EC2::Instance</code>, and you can specify that the resource type is
-     * an AWS account by specifying <code>AWS::::Account</code>.</p>
+     * <code>AWS::EC2::Instance</code>. You can specify that the resource type is an
+     * AWS account by specifying <code>AWS::::Account</code>.</p>
      */
     inline GetComplianceSummaryByResourceTypeRequest& AddResourceTypes(const char* value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
 

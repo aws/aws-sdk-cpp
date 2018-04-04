@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/model/CSVOutput.h>
+#include <aws/s3/model/JSONOutput.h>
 #include <utility>
 
 namespace Aws
@@ -73,10 +74,39 @@ namespace Model
      */
     inline OutputSerialization& WithCSV(CSVOutput&& value) { SetCSV(std::move(value)); return *this;}
 
+
+    /**
+     * Specifies JSON as request's output serialization format.
+     */
+    inline const JSONOutput& GetJSON() const{ return m_jSON; }
+
+    /**
+     * Specifies JSON as request's output serialization format.
+     */
+    inline void SetJSON(const JSONOutput& value) { m_jSONHasBeenSet = true; m_jSON = value; }
+
+    /**
+     * Specifies JSON as request's output serialization format.
+     */
+    inline void SetJSON(JSONOutput&& value) { m_jSONHasBeenSet = true; m_jSON = std::move(value); }
+
+    /**
+     * Specifies JSON as request's output serialization format.
+     */
+    inline OutputSerialization& WithJSON(const JSONOutput& value) { SetJSON(value); return *this;}
+
+    /**
+     * Specifies JSON as request's output serialization format.
+     */
+    inline OutputSerialization& WithJSON(JSONOutput&& value) { SetJSON(std::move(value)); return *this;}
+
   private:
 
     CSVOutput m_cSV;
     bool m_cSVHasBeenSet;
+
+    JSONOutput m_jSON;
+    bool m_jSONHasBeenSet;
   };
 
 } // namespace Model

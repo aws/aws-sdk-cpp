@@ -30,6 +30,7 @@
 #include <aws/acm/model/AddTagsToCertificateRequest.h>
 #include <aws/acm/model/DeleteCertificateRequest.h>
 #include <aws/acm/model/DescribeCertificateRequest.h>
+#include <aws/acm/model/ExportCertificateRequest.h>
 #include <aws/acm/model/GetCertificateRequest.h>
 #include <aws/acm/model/ImportCertificateRequest.h>
 #include <aws/acm/model/ListCertificatesRequest.h>
@@ -206,6 +207,41 @@ void ACMClient::DescribeCertificateAsync(const DescribeCertificateRequest& reque
 void ACMClient::DescribeCertificateAsyncHelper(const DescribeCertificateRequest& request, const DescribeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeCertificate(request), context);
+}
+
+ExportCertificateOutcome ACMClient::ExportCertificate(const ExportCertificateRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ExportCertificateOutcome(ExportCertificateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ExportCertificateOutcome(outcome.GetError());
+  }
+}
+
+ExportCertificateOutcomeCallable ACMClient::ExportCertificateCallable(const ExportCertificateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ExportCertificateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExportCertificate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ACMClient::ExportCertificateAsync(const ExportCertificateRequest& request, const ExportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ExportCertificateAsyncHelper( request, handler, context ); } );
+}
+
+void ACMClient::ExportCertificateAsyncHelper(const ExportCertificateRequest& request, const ExportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ExportCertificate(request), context);
 }
 
 GetCertificateOutcome ACMClient::GetCertificate(const GetCertificateRequest& request) const

@@ -30,7 +30,8 @@ StartTranscriptionJobRequest::StartTranscriptionJobRequest() :
     m_mediaSampleRateHertzHasBeenSet(false),
     m_mediaFormat(MediaFormat::NOT_SET),
     m_mediaFormatHasBeenSet(false),
-    m_mediaHasBeenSet(false)
+    m_mediaHasBeenSet(false),
+    m_settingsHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,12 @@ Aws::String StartTranscriptionJobRequest::SerializePayload() const
   if(m_mediaHasBeenSet)
   {
    payload.WithObject("Media", m_media.Jsonize());
+
+  }
+
+  if(m_settingsHasBeenSet)
+  {
+   payload.WithObject("Settings", m_settings.Jsonize());
 
   }
 

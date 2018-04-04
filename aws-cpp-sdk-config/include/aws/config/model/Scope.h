@@ -203,49 +203,49 @@ namespace Model
 
 
     /**
-     * <p>The IDs of the only AWS resource that you want to trigger an evaluation for
+     * <p>The ID of the only AWS resource that you want to trigger an evaluation for
      * the rule. If you specify a resource ID, you must specify one resource type for
      * <code>ComplianceResourceTypes</code>.</p>
      */
     inline const Aws::String& GetComplianceResourceId() const{ return m_complianceResourceId; }
 
     /**
-     * <p>The IDs of the only AWS resource that you want to trigger an evaluation for
+     * <p>The ID of the only AWS resource that you want to trigger an evaluation for
      * the rule. If you specify a resource ID, you must specify one resource type for
      * <code>ComplianceResourceTypes</code>.</p>
      */
     inline void SetComplianceResourceId(const Aws::String& value) { m_complianceResourceIdHasBeenSet = true; m_complianceResourceId = value; }
 
     /**
-     * <p>The IDs of the only AWS resource that you want to trigger an evaluation for
+     * <p>The ID of the only AWS resource that you want to trigger an evaluation for
      * the rule. If you specify a resource ID, you must specify one resource type for
      * <code>ComplianceResourceTypes</code>.</p>
      */
     inline void SetComplianceResourceId(Aws::String&& value) { m_complianceResourceIdHasBeenSet = true; m_complianceResourceId = std::move(value); }
 
     /**
-     * <p>The IDs of the only AWS resource that you want to trigger an evaluation for
+     * <p>The ID of the only AWS resource that you want to trigger an evaluation for
      * the rule. If you specify a resource ID, you must specify one resource type for
      * <code>ComplianceResourceTypes</code>.</p>
      */
     inline void SetComplianceResourceId(const char* value) { m_complianceResourceIdHasBeenSet = true; m_complianceResourceId.assign(value); }
 
     /**
-     * <p>The IDs of the only AWS resource that you want to trigger an evaluation for
+     * <p>The ID of the only AWS resource that you want to trigger an evaluation for
      * the rule. If you specify a resource ID, you must specify one resource type for
      * <code>ComplianceResourceTypes</code>.</p>
      */
     inline Scope& WithComplianceResourceId(const Aws::String& value) { SetComplianceResourceId(value); return *this;}
 
     /**
-     * <p>The IDs of the only AWS resource that you want to trigger an evaluation for
+     * <p>The ID of the only AWS resource that you want to trigger an evaluation for
      * the rule. If you specify a resource ID, you must specify one resource type for
      * <code>ComplianceResourceTypes</code>.</p>
      */
     inline Scope& WithComplianceResourceId(Aws::String&& value) { SetComplianceResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of the only AWS resource that you want to trigger an evaluation for
+     * <p>The ID of the only AWS resource that you want to trigger an evaluation for
      * the rule. If you specify a resource ID, you must specify one resource type for
      * <code>ComplianceResourceTypes</code>.</p>
      */

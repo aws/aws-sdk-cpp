@@ -48,27 +48,27 @@ namespace Model
 
 
     /**
-     * <p>The resource type, for example <code>"AWS::EC2::Instance"</code>.</p>
+     * <p>The resource type (for example, <code>"AWS::EC2::Instance"</code>).</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The resource type, for example <code>"AWS::EC2::Instance"</code>.</p>
+     * <p>The resource type (for example, <code>"AWS::EC2::Instance"</code>).</p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The resource type, for example <code>"AWS::EC2::Instance"</code>.</p>
+     * <p>The resource type (for example, <code>"AWS::EC2::Instance"</code>).</p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The resource type, for example <code>"AWS::EC2::Instance"</code>.</p>
+     * <p>The resource type (for example, <code>"AWS::EC2::Instance"</code>).</p>
      */
     inline ResourceCount& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The resource type, for example <code>"AWS::EC2::Instance"</code>.</p>
+     * <p>The resource type (for example, <code>"AWS::EC2::Instance"</code>).</p>
      */
     inline ResourceCount& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 

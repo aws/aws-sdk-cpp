@@ -31,12 +31,14 @@ namespace Model
 {
 
 OutputSerialization::OutputSerialization() : 
-    m_cSVHasBeenSet(false)
+    m_cSVHasBeenSet(false),
+    m_jSONHasBeenSet(false)
 {
 }
 
 OutputSerialization::OutputSerialization(const XmlNode& xmlNode) : 
-    m_cSVHasBeenSet(false)
+    m_cSVHasBeenSet(false),
+    m_jSONHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -53,6 +55,12 @@ OutputSerialization& OutputSerialization::operator =(const XmlNode& xmlNode)
       m_cSV = cSVNode;
       m_cSVHasBeenSet = true;
     }
+    XmlNode jSONNode = resultNode.FirstChild("JSON");
+    if(!jSONNode.IsNull())
+    {
+      m_jSON = jSONNode;
+      m_jSONHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -65,6 +73,12 @@ void OutputSerialization::AddToNode(XmlNode& parentNode) const
   {
    XmlNode cSVNode = parentNode.CreateChildElement("CSV");
    m_cSV.AddToNode(cSVNode);
+  }
+
+  if(m_jSONHasBeenSet)
+  {
+   XmlNode jSONNode = parentNode.CreateChildElement("JSON");
+   m_jSON.AddToNode(jSONNode);
   }
 
 }

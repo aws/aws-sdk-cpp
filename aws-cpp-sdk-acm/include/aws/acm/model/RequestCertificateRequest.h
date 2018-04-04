@@ -129,9 +129,9 @@ namespace Model
     /**
      * <p>The method you want to use to validate that you own or control domain. You
      * can <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-dns.html">validate
      * with DNS</a> or <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-email.html">validate
      * with email</a>. We recommend that you use DNS validation. </p>
      */
     inline const ValidationMethod& GetValidationMethod() const{ return m_validationMethod; }
@@ -139,9 +139,9 @@ namespace Model
     /**
      * <p>The method you want to use to validate that you own or control domain. You
      * can <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-dns.html">validate
      * with DNS</a> or <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-email.html">validate
      * with email</a>. We recommend that you use DNS validation. </p>
      */
     inline void SetValidationMethod(const ValidationMethod& value) { m_validationMethodHasBeenSet = true; m_validationMethod = value; }
@@ -149,9 +149,9 @@ namespace Model
     /**
      * <p>The method you want to use to validate that you own or control domain. You
      * can <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-dns.html">validate
      * with DNS</a> or <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-email.html">validate
      * with email</a>. We recommend that you use DNS validation. </p>
      */
     inline void SetValidationMethod(ValidationMethod&& value) { m_validationMethodHasBeenSet = true; m_validationMethod = std::move(value); }
@@ -159,9 +159,9 @@ namespace Model
     /**
      * <p>The method you want to use to validate that you own or control domain. You
      * can <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-dns.html">validate
      * with DNS</a> or <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-email.html">validate
      * with email</a>. We recommend that you use DNS validation. </p>
      */
     inline RequestCertificateRequest& WithValidationMethod(const ValidationMethod& value) { SetValidationMethod(value); return *this;}
@@ -169,9 +169,9 @@ namespace Model
     /**
      * <p>The method you want to use to validate that you own or control domain. You
      * can <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-dns.html">validate
      * with DNS</a> or <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-email.html">validate
      * with email</a>. We recommend that you use DNS validation. </p>
      */
     inline RequestCertificateRequest& WithValidationMethod(ValidationMethod&& value) { SetValidationMethod(std::move(value)); return *this;}
@@ -185,7 +185,7 @@ namespace Model
      * you can add to an ACM certificate is 100. However, the initial limit is 10
      * domain names. If you need more than 10 names, you must request a limit increase.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-limits.html">Limits</a>.</p>
      * <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of
      * multiple labels separated by periods. No label can be longer than 63 octets.
      * Consider the following examples: </p> <ul> <li> <p> <code>(63 octets).(63
@@ -207,7 +207,7 @@ namespace Model
      * you can add to an ACM certificate is 100. However, the initial limit is 10
      * domain names. If you need more than 10 names, you must request a limit increase.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-limits.html">Limits</a>.</p>
      * <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of
      * multiple labels separated by periods. No label can be longer than 63 octets.
      * Consider the following examples: </p> <ul> <li> <p> <code>(63 octets).(63
@@ -229,7 +229,7 @@ namespace Model
      * you can add to an ACM certificate is 100. However, the initial limit is 10
      * domain names. If you need more than 10 names, you must request a limit increase.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-limits.html">Limits</a>.</p>
      * <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of
      * multiple labels separated by periods. No label can be longer than 63 octets.
      * Consider the following examples: </p> <ul> <li> <p> <code>(63 octets).(63
@@ -251,7 +251,7 @@ namespace Model
      * you can add to an ACM certificate is 100. However, the initial limit is 10
      * domain names. If you need more than 10 names, you must request a limit increase.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-limits.html">Limits</a>.</p>
      * <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of
      * multiple labels separated by periods. No label can be longer than 63 octets.
      * Consider the following examples: </p> <ul> <li> <p> <code>(63 octets).(63
@@ -273,7 +273,7 @@ namespace Model
      * you can add to an ACM certificate is 100. However, the initial limit is 10
      * domain names. If you need more than 10 names, you must request a limit increase.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-limits.html">Limits</a>.</p>
      * <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of
      * multiple labels separated by periods. No label can be longer than 63 octets.
      * Consider the following examples: </p> <ul> <li> <p> <code>(63 octets).(63
@@ -295,7 +295,7 @@ namespace Model
      * you can add to an ACM certificate is 100. However, the initial limit is 10
      * domain names. If you need more than 10 names, you must request a limit increase.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-limits.html">Limits</a>.</p>
      * <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of
      * multiple labels separated by periods. No label can be longer than 63 octets.
      * Consider the following examples: </p> <ul> <li> <p> <code>(63 octets).(63
@@ -317,7 +317,7 @@ namespace Model
      * you can add to an ACM certificate is 100. However, the initial limit is 10
      * domain names. If you need more than 10 names, you must request a limit increase.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-limits.html">Limits</a>.</p>
      * <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of
      * multiple labels separated by periods. No label can be longer than 63 octets.
      * Consider the following examples: </p> <ul> <li> <p> <code>(63 octets).(63
@@ -339,7 +339,7 @@ namespace Model
      * you can add to an ACM certificate is 100. However, the initial limit is 10
      * domain names. If you need more than 10 names, you must request a limit increase.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-limits.html">Limits</a>.</p>
      * <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of
      * multiple labels separated by periods. No label can be longer than 63 octets.
      * Consider the following examples: </p> <ul> <li> <p> <code>(63 octets).(63
@@ -481,7 +481,7 @@ namespace Model
      * possible to detect SSL/TLS certificates that have been mistakenly or maliciously
      * issued. Certificates that have not been logged typically produce an error
      * message in a browser. For more information, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting
      * Out of Certificate Transparency Logging</a>.</p>
      */
     inline const CertificateOptions& GetOptions() const{ return m_options; }
@@ -492,7 +492,7 @@ namespace Model
      * possible to detect SSL/TLS certificates that have been mistakenly or maliciously
      * issued. Certificates that have not been logged typically produce an error
      * message in a browser. For more information, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting
      * Out of Certificate Transparency Logging</a>.</p>
      */
     inline void SetOptions(const CertificateOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
@@ -503,7 +503,7 @@ namespace Model
      * possible to detect SSL/TLS certificates that have been mistakenly or maliciously
      * issued. Certificates that have not been logged typically produce an error
      * message in a browser. For more information, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting
      * Out of Certificate Transparency Logging</a>.</p>
      */
     inline void SetOptions(CertificateOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
@@ -514,7 +514,7 @@ namespace Model
      * possible to detect SSL/TLS certificates that have been mistakenly or maliciously
      * issued. Certificates that have not been logged typically produce an error
      * message in a browser. For more information, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting
      * Out of Certificate Transparency Logging</a>.</p>
      */
     inline RequestCertificateRequest& WithOptions(const CertificateOptions& value) { SetOptions(value); return *this;}
@@ -525,10 +525,95 @@ namespace Model
      * possible to detect SSL/TLS certificates that have been mistakenly or maliciously
      * issued. Certificates that have not been logged typically produce an error
      * message in a browser. For more information, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting
      * Out of Certificate Transparency Logging</a>.</p>
      */
     inline RequestCertificateRequest& WithOptions(CertificateOptions&& value) { SetOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that
+     * will be used to issue the certificate. For more information about private CAs,
+     * see the <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm-pca/latest/userguide/PcaWelcome.html">AWS
+     * Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN
+     * must have the following form: </p> <p>
+     * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     */
+    inline const Aws::String& GetCertificateAuthorityArn() const{ return m_certificateAuthorityArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that
+     * will be used to issue the certificate. For more information about private CAs,
+     * see the <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm-pca/latest/userguide/PcaWelcome.html">AWS
+     * Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN
+     * must have the following form: </p> <p>
+     * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     */
+    inline void SetCertificateAuthorityArn(const Aws::String& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that
+     * will be used to issue the certificate. For more information about private CAs,
+     * see the <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm-pca/latest/userguide/PcaWelcome.html">AWS
+     * Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN
+     * must have the following form: </p> <p>
+     * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     */
+    inline void SetCertificateAuthorityArn(Aws::String&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that
+     * will be used to issue the certificate. For more information about private CAs,
+     * see the <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm-pca/latest/userguide/PcaWelcome.html">AWS
+     * Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN
+     * must have the following form: </p> <p>
+     * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     */
+    inline void SetCertificateAuthorityArn(const char* value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that
+     * will be used to issue the certificate. For more information about private CAs,
+     * see the <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm-pca/latest/userguide/PcaWelcome.html">AWS
+     * Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN
+     * must have the following form: </p> <p>
+     * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     */
+    inline RequestCertificateRequest& WithCertificateAuthorityArn(const Aws::String& value) { SetCertificateAuthorityArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that
+     * will be used to issue the certificate. For more information about private CAs,
+     * see the <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm-pca/latest/userguide/PcaWelcome.html">AWS
+     * Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN
+     * must have the following form: </p> <p>
+     * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     */
+    inline RequestCertificateRequest& WithCertificateAuthorityArn(Aws::String&& value) { SetCertificateAuthorityArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that
+     * will be used to issue the certificate. For more information about private CAs,
+     * see the <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm-pca/latest/userguide/PcaWelcome.html">AWS
+     * Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN
+     * must have the following form: </p> <p>
+     * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     */
+    inline RequestCertificateRequest& WithCertificateAuthorityArn(const char* value) { SetCertificateAuthorityArn(value); return *this;}
 
   private:
 
@@ -549,6 +634,9 @@ namespace Model
 
     CertificateOptions m_options;
     bool m_optionsHasBeenSet;
+
+    Aws::String m_certificateAuthorityArn;
+    bool m_certificateAuthorityArnHasBeenSet;
   };
 
 } // namespace Model

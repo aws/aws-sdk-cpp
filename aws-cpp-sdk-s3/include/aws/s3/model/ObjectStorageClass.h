@@ -28,7 +28,9 @@ namespace Model
     NOT_SET,
     STANDARD,
     REDUCED_REDUNDANCY,
-    GLACIER
+    GLACIER,
+    STANDARD_IA,
+    ONEZONE_IA
   };
 
 namespace ObjectStorageClassMapper
