@@ -120,7 +120,7 @@
 #elseif($member.shape.listMember.shape.string)
     ${spaces}  ${memberVarName}.push_back(StringUtils::Trim(${listVarName}.GetText().c_str()));
 #elseif($member.shape.listMember.shape.timeStamp)
-    ${spaces}  ${memberVarName}.push_back(DateTime(StringUtils::Trim(${listVarName}.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+    ${spaces}  ${memberVarName}.push_back(DateTime(StringUtils::Trim(${listVarName}.GetText().c_str()).c_str(), DateFormat::ISO_8601));
 #elseif($member.shape.listMember.shape.primitive)
     ${spaces}   ${memberVarName}.push_back(${CppViewHelper.computeXmlConversionMethodName($member.shape.listMember.shape)}(StringUtils::Trim(${listVarName}.GetText().c_str()).c_str()));
 #end
