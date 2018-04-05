@@ -46,44 +46,51 @@ namespace Model
 
 
     /**
-     * <p>A userdefined description of the resource that you want to register with
-     * Amazon EC2. </p>
+     * <p>A user-defined description of the resource that you want to register with
+     * Amazon EC2. </p> <important> <p>Do not enter personally identifiable information
+     * in this field.</p> </important>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A userdefined description of the resource that you want to register with
-     * Amazon EC2. </p>
+     * <p>A user-defined description of the resource that you want to register with
+     * Amazon EC2. </p> <important> <p>Do not enter personally identifiable information
+     * in this field.</p> </important>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A userdefined description of the resource that you want to register with
-     * Amazon EC2. </p>
+     * <p>A user-defined description of the resource that you want to register with
+     * Amazon EC2. </p> <important> <p>Do not enter personally identifiable information
+     * in this field.</p> </important>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A userdefined description of the resource that you want to register with
-     * Amazon EC2. </p>
+     * <p>A user-defined description of the resource that you want to register with
+     * Amazon EC2. </p> <important> <p>Do not enter personally identifiable information
+     * in this field.</p> </important>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A userdefined description of the resource that you want to register with
-     * Amazon EC2. </p>
+     * <p>A user-defined description of the resource that you want to register with
+     * Amazon EC2. </p> <important> <p>Do not enter personally identifiable information
+     * in this field.</p> </important>
      */
     inline CreateActivationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A userdefined description of the resource that you want to register with
-     * Amazon EC2. </p>
+     * <p>A user-defined description of the resource that you want to register with
+     * Amazon EC2. </p> <important> <p>Do not enter personally identifiable information
+     * in this field.</p> </important>
      */
     inline CreateActivationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A userdefined description of the resource that you want to register with
-     * Amazon EC2. </p>
+     * <p>A user-defined description of the resource that you want to register with
+     * Amazon EC2. </p> <important> <p>Do not enter personally identifiable information
+     * in this field.</p> </important>
      */
     inline CreateActivationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -91,49 +98,56 @@ namespace Model
     /**
      * <p>The name of the registered, managed instance as it will appear in the Amazon
      * EC2 console or when you use the AWS command line tools to list EC2
-     * resources.</p>
+     * resources.</p> <important> <p>Do not enter personally identifiable information
+     * in this field.</p> </important>
      */
     inline const Aws::String& GetDefaultInstanceName() const{ return m_defaultInstanceName; }
 
     /**
      * <p>The name of the registered, managed instance as it will appear in the Amazon
      * EC2 console or when you use the AWS command line tools to list EC2
-     * resources.</p>
+     * resources.</p> <important> <p>Do not enter personally identifiable information
+     * in this field.</p> </important>
      */
     inline void SetDefaultInstanceName(const Aws::String& value) { m_defaultInstanceNameHasBeenSet = true; m_defaultInstanceName = value; }
 
     /**
      * <p>The name of the registered, managed instance as it will appear in the Amazon
      * EC2 console or when you use the AWS command line tools to list EC2
-     * resources.</p>
+     * resources.</p> <important> <p>Do not enter personally identifiable information
+     * in this field.</p> </important>
      */
     inline void SetDefaultInstanceName(Aws::String&& value) { m_defaultInstanceNameHasBeenSet = true; m_defaultInstanceName = std::move(value); }
 
     /**
      * <p>The name of the registered, managed instance as it will appear in the Amazon
      * EC2 console or when you use the AWS command line tools to list EC2
-     * resources.</p>
+     * resources.</p> <important> <p>Do not enter personally identifiable information
+     * in this field.</p> </important>
      */
     inline void SetDefaultInstanceName(const char* value) { m_defaultInstanceNameHasBeenSet = true; m_defaultInstanceName.assign(value); }
 
     /**
      * <p>The name of the registered, managed instance as it will appear in the Amazon
      * EC2 console or when you use the AWS command line tools to list EC2
-     * resources.</p>
+     * resources.</p> <important> <p>Do not enter personally identifiable information
+     * in this field.</p> </important>
      */
     inline CreateActivationRequest& WithDefaultInstanceName(const Aws::String& value) { SetDefaultInstanceName(value); return *this;}
 
     /**
      * <p>The name of the registered, managed instance as it will appear in the Amazon
      * EC2 console or when you use the AWS command line tools to list EC2
-     * resources.</p>
+     * resources.</p> <important> <p>Do not enter personally identifiable information
+     * in this field.</p> </important>
      */
     inline CreateActivationRequest& WithDefaultInstanceName(Aws::String&& value) { SetDefaultInstanceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the registered, managed instance as it will appear in the Amazon
      * EC2 console or when you use the AWS command line tools to list EC2
-     * resources.</p>
+     * resources.</p> <important> <p>Do not enter personally identifiable information
+     * in this field.</p> </important>
      */
     inline CreateActivationRequest& WithDefaultInstanceName(const char* value) { SetDefaultInstanceName(value); return *this;}
 

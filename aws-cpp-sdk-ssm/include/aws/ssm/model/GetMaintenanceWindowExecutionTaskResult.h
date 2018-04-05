@@ -226,51 +226,93 @@ namespace Model
 
 
     /**
-     * <p>The parameters passed to the task when it was executed. The map has the
-     * following format:</p> <p>Key: string, between 1 and 255 characters</p> <p>Value:
-     * an array of strings, each string is between 1 and 255 characters</p>
+     * <p>The parameters passed to the task when it was executed.</p> <note> <p>
+     * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
+     * to a task when it runs, instead use the <code>Parameters</code> option in the
+     * <code>TaskInvocationParameters</code> structure. For information about how
+     * Systems Manager handles these options for the supported Maintenance Window task
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> <p>The
+     * map has the following format:</p> <p>Key: string, between 1 and 255
+     * characters</p> <p>Value: an array of strings, each string is between 1 and 255
+     * characters</p>
      */
     inline const Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>& GetTaskParameters() const{ return m_taskParameters; }
 
     /**
-     * <p>The parameters passed to the task when it was executed. The map has the
-     * following format:</p> <p>Key: string, between 1 and 255 characters</p> <p>Value:
-     * an array of strings, each string is between 1 and 255 characters</p>
+     * <p>The parameters passed to the task when it was executed.</p> <note> <p>
+     * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
+     * to a task when it runs, instead use the <code>Parameters</code> option in the
+     * <code>TaskInvocationParameters</code> structure. For information about how
+     * Systems Manager handles these options for the supported Maintenance Window task
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> <p>The
+     * map has the following format:</p> <p>Key: string, between 1 and 255
+     * characters</p> <p>Value: an array of strings, each string is between 1 and 255
+     * characters</p>
      */
     inline void SetTaskParameters(const Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>& value) { m_taskParameters = value; }
 
     /**
-     * <p>The parameters passed to the task when it was executed. The map has the
-     * following format:</p> <p>Key: string, between 1 and 255 characters</p> <p>Value:
-     * an array of strings, each string is between 1 and 255 characters</p>
+     * <p>The parameters passed to the task when it was executed.</p> <note> <p>
+     * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
+     * to a task when it runs, instead use the <code>Parameters</code> option in the
+     * <code>TaskInvocationParameters</code> structure. For information about how
+     * Systems Manager handles these options for the supported Maintenance Window task
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> <p>The
+     * map has the following format:</p> <p>Key: string, between 1 and 255
+     * characters</p> <p>Value: an array of strings, each string is between 1 and 255
+     * characters</p>
      */
     inline void SetTaskParameters(Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>&& value) { m_taskParameters = std::move(value); }
 
     /**
-     * <p>The parameters passed to the task when it was executed. The map has the
-     * following format:</p> <p>Key: string, between 1 and 255 characters</p> <p>Value:
-     * an array of strings, each string is between 1 and 255 characters</p>
+     * <p>The parameters passed to the task when it was executed.</p> <note> <p>
+     * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
+     * to a task when it runs, instead use the <code>Parameters</code> option in the
+     * <code>TaskInvocationParameters</code> structure. For information about how
+     * Systems Manager handles these options for the supported Maintenance Window task
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> <p>The
+     * map has the following format:</p> <p>Key: string, between 1 and 255
+     * characters</p> <p>Value: an array of strings, each string is between 1 and 255
+     * characters</p>
      */
     inline GetMaintenanceWindowExecutionTaskResult& WithTaskParameters(const Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>& value) { SetTaskParameters(value); return *this;}
 
     /**
-     * <p>The parameters passed to the task when it was executed. The map has the
-     * following format:</p> <p>Key: string, between 1 and 255 characters</p> <p>Value:
-     * an array of strings, each string is between 1 and 255 characters</p>
+     * <p>The parameters passed to the task when it was executed.</p> <note> <p>
+     * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
+     * to a task when it runs, instead use the <code>Parameters</code> option in the
+     * <code>TaskInvocationParameters</code> structure. For information about how
+     * Systems Manager handles these options for the supported Maintenance Window task
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> <p>The
+     * map has the following format:</p> <p>Key: string, between 1 and 255
+     * characters</p> <p>Value: an array of strings, each string is between 1 and 255
+     * characters</p>
      */
     inline GetMaintenanceWindowExecutionTaskResult& WithTaskParameters(Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>&& value) { SetTaskParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The parameters passed to the task when it was executed. The map has the
-     * following format:</p> <p>Key: string, between 1 and 255 characters</p> <p>Value:
-     * an array of strings, each string is between 1 and 255 characters</p>
+     * <p>The parameters passed to the task when it was executed.</p> <note> <p>
+     * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
+     * to a task when it runs, instead use the <code>Parameters</code> option in the
+     * <code>TaskInvocationParameters</code> structure. For information about how
+     * Systems Manager handles these options for the supported Maintenance Window task
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> <p>The
+     * map has the following format:</p> <p>Key: string, between 1 and 255
+     * characters</p> <p>Value: an array of strings, each string is between 1 and 255
+     * characters</p>
      */
     inline GetMaintenanceWindowExecutionTaskResult& AddTaskParameters(const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& value) { m_taskParameters.push_back(value); return *this; }
 
     /**
-     * <p>The parameters passed to the task when it was executed. The map has the
-     * following format:</p> <p>Key: string, between 1 and 255 characters</p> <p>Value:
-     * an array of strings, each string is between 1 and 255 characters</p>
+     * <p>The parameters passed to the task when it was executed.</p> <note> <p>
+     * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
+     * to a task when it runs, instead use the <code>Parameters</code> option in the
+     * <code>TaskInvocationParameters</code> structure. For information about how
+     * Systems Manager handles these options for the supported Maintenance Window task
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> <p>The
+     * map has the following format:</p> <p>Key: string, between 1 and 255
+     * characters</p> <p>Value: an array of strings, each string is between 1 and 255
+     * characters</p>
      */
     inline GetMaintenanceWindowExecutionTaskResult& AddTaskParameters(Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>&& value) { m_taskParameters.push_back(std::move(value)); return *this; }
 
