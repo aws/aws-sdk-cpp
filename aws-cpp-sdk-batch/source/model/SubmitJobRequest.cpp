@@ -30,7 +30,8 @@ SubmitJobRequest::SubmitJobRequest() :
     m_jobDefinitionHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_containerOverridesHasBeenSet(false),
-    m_retryStrategyHasBeenSet(false)
+    m_retryStrategyHasBeenSet(false),
+    m_timeoutHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,12 @@ Aws::String SubmitJobRequest::SerializePayload() const
   if(m_retryStrategyHasBeenSet)
   {
    payload.WithObject("retryStrategy", m_retryStrategy.Jsonize());
+
+  }
+
+  if(m_timeoutHasBeenSet)
+  {
+   payload.WithObject("timeout", m_timeout.Jsonize());
 
   }
 

@@ -274,7 +274,11 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>--memory</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
-     * specify at least 4 MiB of memory for a job.</p>
+     * specify at least 4 MiB of memory for a job.</p> <note> <p>If you are trying to
+     * maximize your resource utilization by providing your jobs as much memory as
+     * possible for a particular instance type, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
+     * Management</a> in the <i>AWS Batch User Guide</i>.</p> </note>
      */
     inline int GetMemory() const{ return m_memory; }
 
@@ -287,7 +291,11 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>--memory</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
-     * specify at least 4 MiB of memory for a job.</p>
+     * specify at least 4 MiB of memory for a job.</p> <note> <p>If you are trying to
+     * maximize your resource utilization by providing your jobs as much memory as
+     * possible for a particular instance type, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
+     * Management</a> in the <i>AWS Batch User Guide</i>.</p> </note>
      */
     inline void SetMemory(int value) { m_memoryHasBeenSet = true; m_memory = value; }
 
@@ -300,7 +308,11 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>--memory</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
-     * specify at least 4 MiB of memory for a job.</p>
+     * specify at least 4 MiB of memory for a job.</p> <note> <p>If you are trying to
+     * maximize your resource utilization by providing your jobs as much memory as
+     * possible for a particular instance type, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
+     * Management</a> in the <i>AWS Batch User Guide</i>.</p> </note>
      */
     inline ContainerProperties& WithMemory(int value) { SetMemory(value); return *this;}
 

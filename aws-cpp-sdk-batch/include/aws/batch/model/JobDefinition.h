@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/batch/model/RetryStrategy.h>
 #include <aws/batch/model/ContainerProperties.h>
+#include <aws/batch/model/JobTimeout.h>
 #include <utility>
 
 namespace Aws
@@ -363,6 +364,42 @@ namespace Model
      */
     inline JobDefinition& WithContainerProperties(ContainerProperties&& value) { SetContainerProperties(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The timeout configuration for jobs that are submitted with this job
+     * definition. You can specify a timeout duration after which AWS Batch terminates
+     * your jobs if they have not finished.</p>
+     */
+    inline const JobTimeout& GetTimeout() const{ return m_timeout; }
+
+    /**
+     * <p>The timeout configuration for jobs that are submitted with this job
+     * definition. You can specify a timeout duration after which AWS Batch terminates
+     * your jobs if they have not finished.</p>
+     */
+    inline void SetTimeout(const JobTimeout& value) { m_timeoutHasBeenSet = true; m_timeout = value; }
+
+    /**
+     * <p>The timeout configuration for jobs that are submitted with this job
+     * definition. You can specify a timeout duration after which AWS Batch terminates
+     * your jobs if they have not finished.</p>
+     */
+    inline void SetTimeout(JobTimeout&& value) { m_timeoutHasBeenSet = true; m_timeout = std::move(value); }
+
+    /**
+     * <p>The timeout configuration for jobs that are submitted with this job
+     * definition. You can specify a timeout duration after which AWS Batch terminates
+     * your jobs if they have not finished.</p>
+     */
+    inline JobDefinition& WithTimeout(const JobTimeout& value) { SetTimeout(value); return *this;}
+
+    /**
+     * <p>The timeout configuration for jobs that are submitted with this job
+     * definition. You can specify a timeout duration after which AWS Batch terminates
+     * your jobs if they have not finished.</p>
+     */
+    inline JobDefinition& WithTimeout(JobTimeout&& value) { SetTimeout(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_jobDefinitionName;
@@ -388,6 +425,9 @@ namespace Model
 
     ContainerProperties m_containerProperties;
     bool m_containerPropertiesHasBeenSet;
+
+    JobTimeout m_timeout;
+    bool m_timeoutHasBeenSet;
   };
 
 } // namespace Model
