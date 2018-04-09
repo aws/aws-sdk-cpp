@@ -20,6 +20,7 @@
 #include <aws/clouddirectory/model/BatchListAttachedIndices.h>
 #include <aws/clouddirectory/model/BatchListObjectParentPaths.h>
 #include <aws/clouddirectory/model/BatchGetObjectInformation.h>
+#include <aws/clouddirectory/model/BatchGetObjectAttributes.h>
 #include <aws/clouddirectory/model/BatchListObjectPolicies.h>
 #include <aws/clouddirectory/model/BatchListPolicyAttachments.h>
 #include <aws/clouddirectory/model/BatchLookupPolicy.h>
@@ -210,6 +211,32 @@ namespace Model
      * <p>Retrieves metadata about an object.</p>
      */
     inline BatchReadOperation& WithGetObjectInformation(BatchGetObjectInformation&& value) { SetGetObjectInformation(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Retrieves attributes within a facet that are associated with an object.</p>
+     */
+    inline const BatchGetObjectAttributes& GetGetObjectAttributes() const{ return m_getObjectAttributes; }
+
+    /**
+     * <p>Retrieves attributes within a facet that are associated with an object.</p>
+     */
+    inline void SetGetObjectAttributes(const BatchGetObjectAttributes& value) { m_getObjectAttributesHasBeenSet = true; m_getObjectAttributes = value; }
+
+    /**
+     * <p>Retrieves attributes within a facet that are associated with an object.</p>
+     */
+    inline void SetGetObjectAttributes(BatchGetObjectAttributes&& value) { m_getObjectAttributesHasBeenSet = true; m_getObjectAttributes = std::move(value); }
+
+    /**
+     * <p>Retrieves attributes within a facet that are associated with an object.</p>
+     */
+    inline BatchReadOperation& WithGetObjectAttributes(const BatchGetObjectAttributes& value) { SetGetObjectAttributes(value); return *this;}
+
+    /**
+     * <p>Retrieves attributes within a facet that are associated with an object.</p>
+     */
+    inline BatchReadOperation& WithGetObjectAttributes(BatchGetObjectAttributes&& value) { SetGetObjectAttributes(std::move(value)); return *this;}
 
 
     /**
@@ -463,6 +490,9 @@ namespace Model
 
     BatchGetObjectInformation m_getObjectInformation;
     bool m_getObjectInformationHasBeenSet;
+
+    BatchGetObjectAttributes m_getObjectAttributes;
+    bool m_getObjectAttributesHasBeenSet;
 
     BatchListObjectPolicies m_listObjectPolicies;
     bool m_listObjectPoliciesHasBeenSet;

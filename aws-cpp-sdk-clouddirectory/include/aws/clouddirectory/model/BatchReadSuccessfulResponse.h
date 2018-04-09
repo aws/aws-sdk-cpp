@@ -18,6 +18,7 @@
 #include <aws/clouddirectory/model/BatchListObjectAttributesResponse.h>
 #include <aws/clouddirectory/model/BatchListObjectChildrenResponse.h>
 #include <aws/clouddirectory/model/BatchGetObjectInformationResponse.h>
+#include <aws/clouddirectory/model/BatchGetObjectAttributesResponse.h>
 #include <aws/clouddirectory/model/BatchListAttachedIndicesResponse.h>
 #include <aws/clouddirectory/model/BatchListObjectParentPathsResponse.h>
 #include <aws/clouddirectory/model/BatchListObjectPoliciesResponse.h>
@@ -138,6 +139,32 @@ namespace Model
      * <p>Retrieves metadata about an object.</p>
      */
     inline BatchReadSuccessfulResponse& WithGetObjectInformation(BatchGetObjectInformationResponse&& value) { SetGetObjectInformation(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Retrieves attributes within a facet that are associated with an object.</p>
+     */
+    inline const BatchGetObjectAttributesResponse& GetGetObjectAttributes() const{ return m_getObjectAttributes; }
+
+    /**
+     * <p>Retrieves attributes within a facet that are associated with an object.</p>
+     */
+    inline void SetGetObjectAttributes(const BatchGetObjectAttributesResponse& value) { m_getObjectAttributesHasBeenSet = true; m_getObjectAttributes = value; }
+
+    /**
+     * <p>Retrieves attributes within a facet that are associated with an object.</p>
+     */
+    inline void SetGetObjectAttributes(BatchGetObjectAttributesResponse&& value) { m_getObjectAttributesHasBeenSet = true; m_getObjectAttributes = std::move(value); }
+
+    /**
+     * <p>Retrieves attributes within a facet that are associated with an object.</p>
+     */
+    inline BatchReadSuccessfulResponse& WithGetObjectAttributes(const BatchGetObjectAttributesResponse& value) { SetGetObjectAttributes(value); return *this;}
+
+    /**
+     * <p>Retrieves attributes within a facet that are associated with an object.</p>
+     */
+    inline BatchReadSuccessfulResponse& WithGetObjectAttributes(BatchGetObjectAttributesResponse&& value) { SetGetObjectAttributes(std::move(value)); return *this;}
 
 
     /**
@@ -457,6 +484,9 @@ namespace Model
 
     BatchGetObjectInformationResponse m_getObjectInformation;
     bool m_getObjectInformationHasBeenSet;
+
+    BatchGetObjectAttributesResponse m_getObjectAttributes;
+    bool m_getObjectAttributesHasBeenSet;
 
     BatchListAttachedIndicesResponse m_listAttachedIndices;
     bool m_listAttachedIndicesHasBeenSet;

@@ -35,8 +35,10 @@ namespace Model
 
   /**
    * <p>A structure that contains <code>Name</code>, <code>ARN</code>,
-   * <code>Attributes</code>, <a>Rule</a>s, and
-   * <code>ObjectTypes</code>.</p><p><h3>See Also:</h3>   <a
+   * <code>Attributes</code>, <code> <a>Rule</a>s</code>, and
+   * <code>ObjectTypes</code>. See <a
+   * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/whatarefacets.html">Facets</a>
+   * for more information.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/Facet">AWS
    * API Reference</a></p>
    */

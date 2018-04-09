@@ -37,6 +37,7 @@ namespace Model
     AccessDeniedException,
     InvalidAttachmentException,
     NotIndexException,
+    NotNodeException,
     IndexedAttributeMissingException,
     ObjectAlreadyDetachedException,
     NotPolicyException,

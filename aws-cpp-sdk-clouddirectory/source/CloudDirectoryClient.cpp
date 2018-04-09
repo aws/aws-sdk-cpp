@@ -55,6 +55,7 @@
 #include <aws/clouddirectory/model/GetAppliedSchemaVersionRequest.h>
 #include <aws/clouddirectory/model/GetDirectoryRequest.h>
 #include <aws/clouddirectory/model/GetFacetRequest.h>
+#include <aws/clouddirectory/model/GetObjectAttributesRequest.h>
 #include <aws/clouddirectory/model/GetObjectInformationRequest.h>
 #include <aws/clouddirectory/model/GetSchemaAsJsonRequest.h>
 #include <aws/clouddirectory/model/GetTypedLinkFacetInformationRequest.h>
@@ -1132,6 +1133,41 @@ void CloudDirectoryClient::GetFacetAsync(const GetFacetRequest& request, const G
 void CloudDirectoryClient::GetFacetAsyncHelper(const GetFacetRequest& request, const GetFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetFacet(request), context);
+}
+
+GetObjectAttributesOutcome CloudDirectoryClient::GetObjectAttributes(const GetObjectAttributesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/object/attributes/get";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetObjectAttributesOutcome(GetObjectAttributesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetObjectAttributesOutcome(outcome.GetError());
+  }
+}
+
+GetObjectAttributesOutcomeCallable CloudDirectoryClient::GetObjectAttributesCallable(const GetObjectAttributesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetObjectAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetObjectAttributes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudDirectoryClient::GetObjectAttributesAsync(const GetObjectAttributesRequest& request, const GetObjectAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetObjectAttributesAsyncHelper( request, handler, context ); } );
+}
+
+void CloudDirectoryClient::GetObjectAttributesAsyncHelper(const GetObjectAttributesRequest& request, const GetObjectAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetObjectAttributes(request), context);
 }
 
 GetObjectInformationOutcome CloudDirectoryClient::GetObjectInformation(const GetObjectInformationRequest& request) const

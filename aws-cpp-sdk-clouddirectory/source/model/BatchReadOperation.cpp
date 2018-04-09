@@ -34,6 +34,7 @@ BatchReadOperation::BatchReadOperation() :
     m_listAttachedIndicesHasBeenSet(false),
     m_listObjectParentPathsHasBeenSet(false),
     m_getObjectInformationHasBeenSet(false),
+    m_getObjectAttributesHasBeenSet(false),
     m_listObjectPoliciesHasBeenSet(false),
     m_listPolicyAttachmentsHasBeenSet(false),
     m_lookupPolicyHasBeenSet(false),
@@ -49,6 +50,7 @@ BatchReadOperation::BatchReadOperation(const JsonValue& jsonValue) :
     m_listAttachedIndicesHasBeenSet(false),
     m_listObjectParentPathsHasBeenSet(false),
     m_getObjectInformationHasBeenSet(false),
+    m_getObjectAttributesHasBeenSet(false),
     m_listObjectPoliciesHasBeenSet(false),
     m_listPolicyAttachmentsHasBeenSet(false),
     m_lookupPolicyHasBeenSet(false),
@@ -94,6 +96,13 @@ BatchReadOperation& BatchReadOperation::operator =(const JsonValue& jsonValue)
     m_getObjectInformation = jsonValue.GetObject("GetObjectInformation");
 
     m_getObjectInformationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("GetObjectAttributes"))
+  {
+    m_getObjectAttributes = jsonValue.GetObject("GetObjectAttributes");
+
+    m_getObjectAttributesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ListObjectPolicies"))
@@ -172,6 +181,12 @@ JsonValue BatchReadOperation::Jsonize() const
   if(m_getObjectInformationHasBeenSet)
   {
    payload.WithObject("GetObjectInformation", m_getObjectInformation.Jsonize());
+
+  }
+
+  if(m_getObjectAttributesHasBeenSet)
+  {
+   payload.WithObject("GetObjectAttributes", m_getObjectAttributes.Jsonize());
 
   }
 

@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>A range of attribute values.</p><p><h3>See Also:</h3>   <a
+   * <p>A range of attribute values. For more information, see <a
+   * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#rangefilters">Range
+   * Filters</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TypedAttributeValueRange">AWS
    * API Reference</a></p>
    */
