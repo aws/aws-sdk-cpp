@@ -132,6 +132,27 @@ include(utilities)
 
 include(build_external)
 
+if(ENABLE_BCRYPT_ENCRYPTION)
+    set(CRYPTO_LIBS Bcrypt)
+    set(CRYPTO_LIBS_ABSTRACT_NAME Bcrypt)
+elseif(ENABLE_OPENSSL_ENCRYPTION)
+    set(CRYPTO_LIBS ${OPENSSL_LIBRARIES} ${ZLIB_LIBRARIES})
+    set(CRYPTO_LIBS_ABSTRACT_NAME ssl z)
+endif()
+
+if(ENABLE_CURL_CLIENT)
+    set(CLIENT_LIBS ${CURL_LIBRARIES})
+    set(CLIENT_LIBS_ABSTRACT_NAME curl)
+elseif(ENABLE_WINDOWS_CLIENT)
+    if(USE_IXML_HTTP_REQUEST_2)
+        set(CLIENT_LIBS msxml6 runtimeobject)
+        set(CLIENT_LIBS_ABSTRACT_NAME msxml6 runtimeobject)
+    else()
+        set(CLIENT_LIBS Wininet winhttp)
+        set(CLIENT_LIBS_ABSTRACT_NAME Wininet winhttp)
+    endif()
+endif()
+
 # setup user specified installation directory if any, regardless previous platform default settings
 if (CMAKE_INSTALL_BINDIR)
     set(BINARY_DIRECTORY "${CMAKE_INSTALL_BINDIR}")
