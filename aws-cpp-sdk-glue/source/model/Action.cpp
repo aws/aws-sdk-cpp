@@ -30,13 +30,17 @@ namespace Model
 
 Action::Action() : 
     m_jobNameHasBeenSet(false),
-    m_argumentsHasBeenSet(false)
+    m_argumentsHasBeenSet(false),
+    m_timeout(0),
+    m_timeoutHasBeenSet(false)
 {
 }
 
 Action::Action(const JsonValue& jsonValue) : 
     m_jobNameHasBeenSet(false),
-    m_argumentsHasBeenSet(false)
+    m_argumentsHasBeenSet(false),
+    m_timeout(0),
+    m_timeoutHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +64,13 @@ Action& Action::operator =(const JsonValue& jsonValue)
     m_argumentsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Timeout"))
+  {
+    m_timeout = jsonValue.GetInteger("Timeout");
+
+    m_timeoutHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -81,6 +92,12 @@ JsonValue Action::Jsonize() const
      argumentsJsonMap.WithString(argumentsItem.first, argumentsItem.second);
    }
    payload.WithObject("Arguments", std::move(argumentsJsonMap));
+
+  }
+
+  if(m_timeoutHasBeenSet)
+  {
+   payload.WithInteger("Timeout", m_timeout);
 
   }
 

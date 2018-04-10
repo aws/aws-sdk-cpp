@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/mediapackage/MediaPackage_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediapackage/model/CmafPackage.h>
 #include <aws/mediapackage/model/DashPackage.h>
 #include <aws/mediapackage/model/HlsPackage.h>
 #include <aws/mediapackage/model/MssPackage.h>
@@ -116,6 +117,22 @@ namespace Model
      * The ID of the Channel the OriginEndpoint is associated with.
      */
     inline CreateOriginEndpointResult& WithChannelId(const char* value) { SetChannelId(value); return *this;}
+
+
+    
+    inline const CmafPackage& GetCmafPackage() const{ return m_cmafPackage; }
+
+    
+    inline void SetCmafPackage(const CmafPackage& value) { m_cmafPackage = value; }
+
+    
+    inline void SetCmafPackage(CmafPackage&& value) { m_cmafPackage = std::move(value); }
+
+    
+    inline CreateOriginEndpointResult& WithCmafPackage(const CmafPackage& value) { SetCmafPackage(value); return *this;}
+
+    
+    inline CreateOriginEndpointResult& WithCmafPackage(CmafPackage&& value) { SetCmafPackage(std::move(value)); return *this;}
 
 
     
@@ -413,6 +430,8 @@ If not
     Aws::String m_arn;
 
     Aws::String m_channelId;
+
+    CmafPackage m_cmafPackage;
 
     DashPackage m_dashPackage;
 

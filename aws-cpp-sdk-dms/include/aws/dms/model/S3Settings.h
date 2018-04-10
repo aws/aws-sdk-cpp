@@ -84,37 +84,37 @@ namespace Model
 
 
     /**
-     * <p> </p>
+     * <p> The external table definition. </p>
      */
     inline const Aws::String& GetExternalTableDefinition() const{ return m_externalTableDefinition; }
 
     /**
-     * <p> </p>
+     * <p> The external table definition. </p>
      */
     inline void SetExternalTableDefinition(const Aws::String& value) { m_externalTableDefinitionHasBeenSet = true; m_externalTableDefinition = value; }
 
     /**
-     * <p> </p>
+     * <p> The external table definition. </p>
      */
     inline void SetExternalTableDefinition(Aws::String&& value) { m_externalTableDefinitionHasBeenSet = true; m_externalTableDefinition = std::move(value); }
 
     /**
-     * <p> </p>
+     * <p> The external table definition. </p>
      */
     inline void SetExternalTableDefinition(const char* value) { m_externalTableDefinitionHasBeenSet = true; m_externalTableDefinition.assign(value); }
 
     /**
-     * <p> </p>
+     * <p> The external table definition. </p>
      */
     inline S3Settings& WithExternalTableDefinition(const Aws::String& value) { SetExternalTableDefinition(value); return *this;}
 
     /**
-     * <p> </p>
+     * <p> The external table definition. </p>
      */
     inline S3Settings& WithExternalTableDefinition(Aws::String&& value) { SetExternalTableDefinition(std::move(value)); return *this;}
 
     /**
-     * <p> </p>
+     * <p> The external table definition. </p>
      */
     inline S3Settings& WithExternalTableDefinition(const char* value) { SetExternalTableDefinition(value); return *this;}
 

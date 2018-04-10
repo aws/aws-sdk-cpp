@@ -452,32 +452,32 @@ namespace Model
 
 
     /**
-     * <p>The status of this invocation plugin. This status can be different than
-     * StatusDetails.</p>
+     * <p>The status of the parent command for this invocation. This status can be
+     * different than StatusDetails.</p>
      */
     inline const CommandInvocationStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of this invocation plugin. This status can be different than
-     * StatusDetails.</p>
+     * <p>The status of the parent command for this invocation. This status can be
+     * different than StatusDetails.</p>
      */
     inline void SetStatus(const CommandInvocationStatus& value) { m_status = value; }
 
     /**
-     * <p>The status of this invocation plugin. This status can be different than
-     * StatusDetails.</p>
+     * <p>The status of the parent command for this invocation. This status can be
+     * different than StatusDetails.</p>
      */
     inline void SetStatus(CommandInvocationStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The status of this invocation plugin. This status can be different than
-     * StatusDetails.</p>
+     * <p>The status of the parent command for this invocation. This status can be
+     * different than StatusDetails.</p>
      */
     inline GetCommandInvocationResult& WithStatus(const CommandInvocationStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of this invocation plugin. This status can be different than
-     * StatusDetails.</p>
+     * <p>The status of the parent command for this invocation. This status can be
+     * different than StatusDetails.</p>
      */
     inline GetCommandInvocationResult& WithStatus(CommandInvocationStatus&& value) { SetStatus(std::move(value)); return *this;}
 

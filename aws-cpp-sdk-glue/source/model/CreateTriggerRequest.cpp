@@ -29,7 +29,9 @@ CreateTriggerRequest::CreateTriggerRequest() :
     m_scheduleHasBeenSet(false),
     m_predicateHasBeenSet(false),
     m_actionsHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_startOnCreation(false),
+    m_startOnCreationHasBeenSet(false)
 {
 }
 
@@ -74,6 +76,12 @@ Aws::String CreateTriggerRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
+
+  }
+
+  if(m_startOnCreationHasBeenSet)
+  {
+   payload.WithBool("StartOnCreation", m_startOnCreation);
 
   }
 

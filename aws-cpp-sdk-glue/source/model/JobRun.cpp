@@ -44,7 +44,11 @@ JobRun::JobRun() :
     m_errorMessageHasBeenSet(false),
     m_predecessorRunsHasBeenSet(false),
     m_allocatedCapacity(0),
-    m_allocatedCapacityHasBeenSet(false)
+    m_allocatedCapacityHasBeenSet(false),
+    m_executionTime(0),
+    m_executionTimeHasBeenSet(false),
+    m_timeout(0),
+    m_timeoutHasBeenSet(false)
 {
 }
 
@@ -64,7 +68,11 @@ JobRun::JobRun(const JsonValue& jsonValue) :
     m_errorMessageHasBeenSet(false),
     m_predecessorRunsHasBeenSet(false),
     m_allocatedCapacity(0),
-    m_allocatedCapacityHasBeenSet(false)
+    m_allocatedCapacityHasBeenSet(false),
+    m_executionTime(0),
+    m_executionTimeHasBeenSet(false),
+    m_timeout(0),
+    m_timeoutHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -168,6 +176,20 @@ JobRun& JobRun::operator =(const JsonValue& jsonValue)
     m_allocatedCapacityHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ExecutionTime"))
+  {
+    m_executionTime = jsonValue.GetInteger("ExecutionTime");
+
+    m_executionTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Timeout"))
+  {
+    m_timeout = jsonValue.GetInteger("Timeout");
+
+    m_timeoutHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -256,6 +278,18 @@ JsonValue JobRun::Jsonize() const
   if(m_allocatedCapacityHasBeenSet)
   {
    payload.WithInteger("AllocatedCapacity", m_allocatedCapacity);
+
+  }
+
+  if(m_executionTimeHasBeenSet)
+  {
+   payload.WithInteger("ExecutionTime", m_executionTime);
+
+  }
+
+  if(m_timeoutHasBeenSet)
+  {
+   payload.WithInteger("Timeout", m_timeout);
 
   }
 

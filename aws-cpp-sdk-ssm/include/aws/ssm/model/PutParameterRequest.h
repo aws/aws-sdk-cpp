@@ -146,50 +146,36 @@ namespace Model
 
     /**
      * <p>Information about the parameter that you want to add to the system.</p>
-     * <important> <p>Do not enter personally identifiable information in this
-     * field.</p> </important>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
      * <p>Information about the parameter that you want to add to the system.</p>
-     * <important> <p>Do not enter personally identifiable information in this
-     * field.</p> </important>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
      * <p>Information about the parameter that you want to add to the system.</p>
-     * <important> <p>Do not enter personally identifiable information in this
-     * field.</p> </important>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>Information about the parameter that you want to add to the system.</p>
-     * <important> <p>Do not enter personally identifiable information in this
-     * field.</p> </important>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
      * <p>Information about the parameter that you want to add to the system.</p>
-     * <important> <p>Do not enter personally identifiable information in this
-     * field.</p> </important>
      */
     inline PutParameterRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
      * <p>Information about the parameter that you want to add to the system.</p>
-     * <important> <p>Do not enter personally identifiable information in this
-     * field.</p> </important>
      */
     inline PutParameterRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>Information about the parameter that you want to add to the system.</p>
-     * <important> <p>Do not enter personally identifiable information in this
-     * field.</p> </important>
      */
     inline PutParameterRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 

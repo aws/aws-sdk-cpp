@@ -33,6 +33,7 @@ Endpoint::Endpoint() :
     m_endpointType(ReplicationEndpointTypeValue::NOT_SET),
     m_endpointTypeHasBeenSet(false),
     m_engineNameHasBeenSet(false),
+    m_engineDisplayNameHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_serverNameHasBeenSet(false),
     m_port(0),
@@ -45,6 +46,8 @@ Endpoint::Endpoint() :
     m_certificateArnHasBeenSet(false),
     m_sslMode(DmsSslModeValue::NOT_SET),
     m_sslModeHasBeenSet(false),
+    m_serviceAccessRoleArnHasBeenSet(false),
+    m_externalTableDefinitionHasBeenSet(false),
     m_externalIdHasBeenSet(false),
     m_dynamoDbSettingsHasBeenSet(false),
     m_s3SettingsHasBeenSet(false),
@@ -57,6 +60,7 @@ Endpoint::Endpoint(const JsonValue& jsonValue) :
     m_endpointType(ReplicationEndpointTypeValue::NOT_SET),
     m_endpointTypeHasBeenSet(false),
     m_engineNameHasBeenSet(false),
+    m_engineDisplayNameHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_serverNameHasBeenSet(false),
     m_port(0),
@@ -69,6 +73,8 @@ Endpoint::Endpoint(const JsonValue& jsonValue) :
     m_certificateArnHasBeenSet(false),
     m_sslMode(DmsSslModeValue::NOT_SET),
     m_sslModeHasBeenSet(false),
+    m_serviceAccessRoleArnHasBeenSet(false),
+    m_externalTableDefinitionHasBeenSet(false),
     m_externalIdHasBeenSet(false),
     m_dynamoDbSettingsHasBeenSet(false),
     m_s3SettingsHasBeenSet(false),
@@ -98,6 +104,13 @@ Endpoint& Endpoint::operator =(const JsonValue& jsonValue)
     m_engineName = jsonValue.GetString("EngineName");
 
     m_engineNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EngineDisplayName"))
+  {
+    m_engineDisplayName = jsonValue.GetString("EngineDisplayName");
+
+    m_engineDisplayNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Username"))
@@ -170,6 +183,20 @@ Endpoint& Endpoint::operator =(const JsonValue& jsonValue)
     m_sslModeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ServiceAccessRoleArn"))
+  {
+    m_serviceAccessRoleArn = jsonValue.GetString("ServiceAccessRoleArn");
+
+    m_serviceAccessRoleArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ExternalTableDefinition"))
+  {
+    m_externalTableDefinition = jsonValue.GetString("ExternalTableDefinition");
+
+    m_externalTableDefinitionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ExternalId"))
   {
     m_externalId = jsonValue.GetString("ExternalId");
@@ -219,6 +246,12 @@ JsonValue Endpoint::Jsonize() const
   if(m_engineNameHasBeenSet)
   {
    payload.WithString("EngineName", m_engineName);
+
+  }
+
+  if(m_engineDisplayNameHasBeenSet)
+  {
+   payload.WithString("EngineDisplayName", m_engineDisplayName);
 
   }
 
@@ -279,6 +312,18 @@ JsonValue Endpoint::Jsonize() const
   if(m_sslModeHasBeenSet)
   {
    payload.WithString("SslMode", DmsSslModeValueMapper::GetNameForDmsSslModeValue(m_sslMode));
+  }
+
+  if(m_serviceAccessRoleArnHasBeenSet)
+  {
+   payload.WithString("ServiceAccessRoleArn", m_serviceAccessRoleArn);
+
+  }
+
+  if(m_externalTableDefinitionHasBeenSet)
+  {
+   payload.WithString("ExternalTableDefinition", m_externalTableDefinition);
+
   }
 
   if(m_externalIdHasBeenSet)

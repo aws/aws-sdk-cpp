@@ -169,36 +169,36 @@ namespace Model
 
     /**
      * <p>If this time is reached and the command has not already started executing, it
-     * will not run. Calculated based on the ExpiresAfter user input provided as part
-     * of the SendCommand API.</p>
+     * will not execute. Calculated based on the ExpiresAfter user input provided as
+     * part of the SendCommand API.</p>
      */
     inline const Aws::Utils::DateTime& GetExpiresAfter() const{ return m_expiresAfter; }
 
     /**
      * <p>If this time is reached and the command has not already started executing, it
-     * will not run. Calculated based on the ExpiresAfter user input provided as part
-     * of the SendCommand API.</p>
+     * will not execute. Calculated based on the ExpiresAfter user input provided as
+     * part of the SendCommand API.</p>
      */
     inline void SetExpiresAfter(const Aws::Utils::DateTime& value) { m_expiresAfterHasBeenSet = true; m_expiresAfter = value; }
 
     /**
      * <p>If this time is reached and the command has not already started executing, it
-     * will not run. Calculated based on the ExpiresAfter user input provided as part
-     * of the SendCommand API.</p>
+     * will not execute. Calculated based on the ExpiresAfter user input provided as
+     * part of the SendCommand API.</p>
      */
     inline void SetExpiresAfter(Aws::Utils::DateTime&& value) { m_expiresAfterHasBeenSet = true; m_expiresAfter = std::move(value); }
 
     /**
      * <p>If this time is reached and the command has not already started executing, it
-     * will not run. Calculated based on the ExpiresAfter user input provided as part
-     * of the SendCommand API.</p>
+     * will not execute. Calculated based on the ExpiresAfter user input provided as
+     * part of the SendCommand API.</p>
      */
     inline Command& WithExpiresAfter(const Aws::Utils::DateTime& value) { SetExpiresAfter(value); return *this;}
 
     /**
      * <p>If this time is reached and the command has not already started executing, it
-     * will not run. Calculated based on the ExpiresAfter user input provided as part
-     * of the SendCommand API.</p>
+     * will not execute. Calculated based on the ExpiresAfter user input provided as
+     * part of the SendCommand API.</p>
      */
     inline Command& WithExpiresAfter(Aws::Utils::DateTime&& value) { SetExpiresAfter(std::move(value)); return *this;}
 

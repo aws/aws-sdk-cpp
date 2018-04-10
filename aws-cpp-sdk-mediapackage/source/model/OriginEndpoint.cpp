@@ -31,6 +31,7 @@ namespace Model
 OriginEndpoint::OriginEndpoint() : 
     m_arnHasBeenSet(false),
     m_channelIdHasBeenSet(false),
+    m_cmafPackageHasBeenSet(false),
     m_dashPackageHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_hlsPackageHasBeenSet(false),
@@ -49,6 +50,7 @@ OriginEndpoint::OriginEndpoint() :
 OriginEndpoint::OriginEndpoint(const JsonValue& jsonValue) : 
     m_arnHasBeenSet(false),
     m_channelIdHasBeenSet(false),
+    m_cmafPackageHasBeenSet(false),
     m_dashPackageHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_hlsPackageHasBeenSet(false),
@@ -79,6 +81,13 @@ OriginEndpoint& OriginEndpoint::operator =(const JsonValue& jsonValue)
     m_channelId = jsonValue.GetString("channelId");
 
     m_channelIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("cmafPackage"))
+  {
+    m_cmafPackage = jsonValue.GetObject("cmafPackage");
+
+    m_cmafPackageHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("dashPackage"))
@@ -170,6 +179,12 @@ JsonValue OriginEndpoint::Jsonize() const
   if(m_channelIdHasBeenSet)
   {
    payload.WithString("channelId", m_channelId);
+
+  }
+
+  if(m_cmafPackageHasBeenSet)
+  {
+   payload.WithObject("cmafPackage", m_cmafPackage.Jsonize());
 
   }
 

@@ -53,108 +53,87 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Maintenance Window the task should be added to.</p>
+     * <p>The id of the Maintenance Window the task should be added to.</p>
      */
     inline const Aws::String& GetWindowId() const{ return m_windowId; }
 
     /**
-     * <p>The ID of the Maintenance Window the task should be added to.</p>
+     * <p>The id of the Maintenance Window the task should be added to.</p>
      */
     inline void SetWindowId(const Aws::String& value) { m_windowIdHasBeenSet = true; m_windowId = value; }
 
     /**
-     * <p>The ID of the Maintenance Window the task should be added to.</p>
+     * <p>The id of the Maintenance Window the task should be added to.</p>
      */
     inline void SetWindowId(Aws::String&& value) { m_windowIdHasBeenSet = true; m_windowId = std::move(value); }
 
     /**
-     * <p>The ID of the Maintenance Window the task should be added to.</p>
+     * <p>The id of the Maintenance Window the task should be added to.</p>
      */
     inline void SetWindowId(const char* value) { m_windowIdHasBeenSet = true; m_windowId.assign(value); }
 
     /**
-     * <p>The ID of the Maintenance Window the task should be added to.</p>
+     * <p>The id of the Maintenance Window the task should be added to.</p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithWindowId(const Aws::String& value) { SetWindowId(value); return *this;}
 
     /**
-     * <p>The ID of the Maintenance Window the task should be added to.</p>
+     * <p>The id of the Maintenance Window the task should be added to.</p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithWindowId(Aws::String&& value) { SetWindowId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Maintenance Window the task should be added to.</p>
+     * <p>The id of the Maintenance Window the task should be added to.</p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithWindowId(const char* value) { SetWindowId(value); return *this;}
 
 
     /**
-     * <p>The targets (either instances or Maintenance Window targets).</p> <p>Specify
-     * instances using the following format: </p> <p>
-     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
-     * </p> <p>Specify Maintenance Window targets using the following format:</p> <p>
-     * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
-     * </p>
+     * <p>The targets (either instances or tags). Instances are specified using
+     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
+     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
     /**
-     * <p>The targets (either instances or Maintenance Window targets).</p> <p>Specify
-     * instances using the following format: </p> <p>
-     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
-     * </p> <p>Specify Maintenance Window targets using the following format:</p> <p>
-     * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
-     * </p>
+     * <p>The targets (either instances or tags). Instances are specified using
+     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
+     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
      */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
-     * <p>The targets (either instances or Maintenance Window targets).</p> <p>Specify
-     * instances using the following format: </p> <p>
-     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
-     * </p> <p>Specify Maintenance Window targets using the following format:</p> <p>
-     * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
-     * </p>
+     * <p>The targets (either instances or tags). Instances are specified using
+     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
+     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
      */
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
-     * <p>The targets (either instances or Maintenance Window targets).</p> <p>Specify
-     * instances using the following format: </p> <p>
-     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
-     * </p> <p>Specify Maintenance Window targets using the following format:</p> <p>
-     * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
-     * </p>
+     * <p>The targets (either instances or tags). Instances are specified using
+     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
+     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>The targets (either instances or Maintenance Window targets).</p> <p>Specify
-     * instances using the following format: </p> <p>
-     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
-     * </p> <p>Specify Maintenance Window targets using the following format:</p> <p>
-     * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
-     * </p>
+     * <p>The targets (either instances or tags). Instances are specified using
+     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
+     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
-     * <p>The targets (either instances or Maintenance Window targets).</p> <p>Specify
-     * instances using the following format: </p> <p>
-     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
-     * </p> <p>Specify Maintenance Window targets using the following format:</p> <p>
-     * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
-     * </p>
+     * <p>The targets (either instances or tags). Instances are specified using
+     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
+     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
     /**
-     * <p>The targets (either instances or Maintenance Window targets).</p> <p>Specify
-     * instances using the following format: </p> <p>
-     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
-     * </p> <p>Specify Maintenance Window targets using the following format:</p> <p>
-     * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
-     * </p>
+     * <p>The targets (either instances or tags). Instances are specified using
+     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
+     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
@@ -259,122 +238,56 @@ namespace Model
 
     /**
      * <p>The parameters that should be passed to the task when it is executed.</p>
-     * <note> <p> <code>TaskParameters</code> has been deprecated. To specify
-     * parameters to pass to a task when it runs, instead use the
-     * <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
-     * structure. For information about how Systems Manager handles these options for
-     * the supported Maintenance Window task types, see
-     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& GetTaskParameters() const{ return m_taskParameters; }
 
     /**
      * <p>The parameters that should be passed to the task when it is executed.</p>
-     * <note> <p> <code>TaskParameters</code> has been deprecated. To specify
-     * parameters to pass to a task when it runs, instead use the
-     * <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
-     * structure. For information about how Systems Manager handles these options for
-     * the supported Maintenance Window task types, see
-     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline void SetTaskParameters(const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& value) { m_taskParametersHasBeenSet = true; m_taskParameters = value; }
 
     /**
      * <p>The parameters that should be passed to the task when it is executed.</p>
-     * <note> <p> <code>TaskParameters</code> has been deprecated. To specify
-     * parameters to pass to a task when it runs, instead use the
-     * <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
-     * structure. For information about how Systems Manager handles these options for
-     * the supported Maintenance Window task types, see
-     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline void SetTaskParameters(Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>&& value) { m_taskParametersHasBeenSet = true; m_taskParameters = std::move(value); }
 
     /**
      * <p>The parameters that should be passed to the task when it is executed.</p>
-     * <note> <p> <code>TaskParameters</code> has been deprecated. To specify
-     * parameters to pass to a task when it runs, instead use the
-     * <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
-     * structure. For information about how Systems Manager handles these options for
-     * the supported Maintenance Window task types, see
-     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithTaskParameters(const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& value) { SetTaskParameters(value); return *this;}
 
     /**
      * <p>The parameters that should be passed to the task when it is executed.</p>
-     * <note> <p> <code>TaskParameters</code> has been deprecated. To specify
-     * parameters to pass to a task when it runs, instead use the
-     * <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
-     * structure. For information about how Systems Manager handles these options for
-     * the supported Maintenance Window task types, see
-     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithTaskParameters(Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>&& value) { SetTaskParameters(std::move(value)); return *this;}
 
     /**
      * <p>The parameters that should be passed to the task when it is executed.</p>
-     * <note> <p> <code>TaskParameters</code> has been deprecated. To specify
-     * parameters to pass to a task when it runs, instead use the
-     * <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
-     * structure. For information about how Systems Manager handles these options for
-     * the supported Maintenance Window task types, see
-     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& AddTaskParameters(const Aws::String& key, const MaintenanceWindowTaskParameterValueExpression& value) { m_taskParametersHasBeenSet = true; m_taskParameters.emplace(key, value); return *this; }
 
     /**
      * <p>The parameters that should be passed to the task when it is executed.</p>
-     * <note> <p> <code>TaskParameters</code> has been deprecated. To specify
-     * parameters to pass to a task when it runs, instead use the
-     * <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
-     * structure. For information about how Systems Manager handles these options for
-     * the supported Maintenance Window task types, see
-     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& AddTaskParameters(Aws::String&& key, const MaintenanceWindowTaskParameterValueExpression& value) { m_taskParametersHasBeenSet = true; m_taskParameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The parameters that should be passed to the task when it is executed.</p>
-     * <note> <p> <code>TaskParameters</code> has been deprecated. To specify
-     * parameters to pass to a task when it runs, instead use the
-     * <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
-     * structure. For information about how Systems Manager handles these options for
-     * the supported Maintenance Window task types, see
-     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& AddTaskParameters(const Aws::String& key, MaintenanceWindowTaskParameterValueExpression&& value) { m_taskParametersHasBeenSet = true; m_taskParameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The parameters that should be passed to the task when it is executed.</p>
-     * <note> <p> <code>TaskParameters</code> has been deprecated. To specify
-     * parameters to pass to a task when it runs, instead use the
-     * <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
-     * structure. For information about how Systems Manager handles these options for
-     * the supported Maintenance Window task types, see
-     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& AddTaskParameters(Aws::String&& key, MaintenanceWindowTaskParameterValueExpression&& value) { m_taskParametersHasBeenSet = true; m_taskParameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The parameters that should be passed to the task when it is executed.</p>
-     * <note> <p> <code>TaskParameters</code> has been deprecated. To specify
-     * parameters to pass to a task when it runs, instead use the
-     * <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
-     * structure. For information about how Systems Manager handles these options for
-     * the supported Maintenance Window task types, see
-     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& AddTaskParameters(const char* key, MaintenanceWindowTaskParameterValueExpression&& value) { m_taskParametersHasBeenSet = true; m_taskParameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The parameters that should be passed to the task when it is executed.</p>
-     * <note> <p> <code>TaskParameters</code> has been deprecated. To specify
-     * parameters to pass to a task when it runs, instead use the
-     * <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
-     * structure. For information about how Systems Manager handles these options for
-     * the supported Maintenance Window task types, see
-     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& AddTaskParameters(const char* key, const MaintenanceWindowTaskParameterValueExpression& value) { m_taskParametersHasBeenSet = true; m_taskParameters.emplace(key, value); return *this; }
 
@@ -513,56 +426,31 @@ namespace Model
 
     /**
      * <p>A structure containing information about an Amazon S3 bucket to write
-     * instance-level logs to. </p> <note> <p> <code>LoggingInfo</code> has been
-     * deprecated. To specify an S3 bucket to contain logs, instead use the
-     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
-     * the <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * instance-level logs to. </p>
      */
     inline const LoggingInfo& GetLoggingInfo() const{ return m_loggingInfo; }
 
     /**
      * <p>A structure containing information about an Amazon S3 bucket to write
-     * instance-level logs to. </p> <note> <p> <code>LoggingInfo</code> has been
-     * deprecated. To specify an S3 bucket to contain logs, instead use the
-     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
-     * the <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * instance-level logs to. </p>
      */
     inline void SetLoggingInfo(const LoggingInfo& value) { m_loggingInfoHasBeenSet = true; m_loggingInfo = value; }
 
     /**
      * <p>A structure containing information about an Amazon S3 bucket to write
-     * instance-level logs to. </p> <note> <p> <code>LoggingInfo</code> has been
-     * deprecated. To specify an S3 bucket to contain logs, instead use the
-     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
-     * the <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * instance-level logs to. </p>
      */
     inline void SetLoggingInfo(LoggingInfo&& value) { m_loggingInfoHasBeenSet = true; m_loggingInfo = std::move(value); }
 
     /**
      * <p>A structure containing information about an Amazon S3 bucket to write
-     * instance-level logs to. </p> <note> <p> <code>LoggingInfo</code> has been
-     * deprecated. To specify an S3 bucket to contain logs, instead use the
-     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
-     * the <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * instance-level logs to. </p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithLoggingInfo(const LoggingInfo& value) { SetLoggingInfo(value); return *this;}
 
     /**
      * <p>A structure containing information about an Amazon S3 bucket to write
-     * instance-level logs to. </p> <note> <p> <code>LoggingInfo</code> has been
-     * deprecated. To specify an S3 bucket to contain logs, instead use the
-     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
-     * the <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * instance-level logs to. </p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithLoggingInfo(LoggingInfo&& value) { SetLoggingInfo(std::move(value)); return *this;}
 

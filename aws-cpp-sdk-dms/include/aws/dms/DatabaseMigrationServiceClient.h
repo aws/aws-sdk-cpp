@@ -335,7 +335,7 @@ namespace Model
 
 
         /**
-         * <p>Adds metadata tags to a DMS resource, including replication instance,
+         * <p>Adds metadata tags to an AWS DMS resource, including replication instance,
          * endpoint, security group, and migration task. These tags can also be used with
          * cost allocation reporting to track cost associated with DMS resources, or used
          * in a Condition statement in an IAM policy for DMS.</p><p><h3>See Also:</h3>   <a
@@ -345,7 +345,7 @@ namespace Model
         virtual Model::AddTagsToResourceOutcome AddTagsToResource(const Model::AddTagsToResourceRequest& request) const;
 
         /**
-         * <p>Adds metadata tags to a DMS resource, including replication instance,
+         * <p>Adds metadata tags to an AWS DMS resource, including replication instance,
          * endpoint, security group, and migration task. These tags can also be used with
          * cost allocation reporting to track cost associated with DMS resources, or used
          * in a Condition statement in an IAM policy for DMS.</p><p><h3>See Also:</h3>   <a
@@ -357,7 +357,7 @@ namespace Model
         virtual Model::AddTagsToResourceOutcomeCallable AddTagsToResourceCallable(const Model::AddTagsToResourceRequest& request) const;
 
         /**
-         * <p>Adds metadata tags to a DMS resource, including replication instance,
+         * <p>Adds metadata tags to an AWS DMS resource, including replication instance,
          * endpoint, security group, and migration task. These tags can also be used with
          * cost allocation reporting to track cost associated with DMS resources, or used
          * in a Condition statement in an IAM policy for DMS.</p><p><h3>See Also:</h3>   <a

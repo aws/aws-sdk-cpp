@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * <p>Returns the name of the updated job.</p>
+     * <p>Returns the name of the updated job definition.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
 
     /**
-     * <p>Returns the name of the updated job.</p>
+     * <p>Returns the name of the updated job definition.</p>
      */
     inline void SetJobName(const Aws::String& value) { m_jobName = value; }
 
     /**
-     * <p>Returns the name of the updated job.</p>
+     * <p>Returns the name of the updated job definition.</p>
      */
     inline void SetJobName(Aws::String&& value) { m_jobName = std::move(value); }
 
     /**
-     * <p>Returns the name of the updated job.</p>
+     * <p>Returns the name of the updated job definition.</p>
      */
     inline void SetJobName(const char* value) { m_jobName.assign(value); }
 
     /**
-     * <p>Returns the name of the updated job.</p>
+     * <p>Returns the name of the updated job definition.</p>
      */
     inline UpdateJobResult& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
 
     /**
-     * <p>Returns the name of the updated job.</p>
+     * <p>Returns the name of the updated job definition.</p>
      */
     inline UpdateJobResult& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
 
     /**
-     * <p>Returns the name of the updated job.</p>
+     * <p>Returns the name of the updated job definition.</p>
      */
     inline UpdateJobResult& WithJobName(const char* value) { SetJobName(value); return *this;}
 

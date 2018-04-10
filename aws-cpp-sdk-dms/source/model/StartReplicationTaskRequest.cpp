@@ -26,7 +26,9 @@ StartReplicationTaskRequest::StartReplicationTaskRequest() :
     m_replicationTaskArnHasBeenSet(false),
     m_startReplicationTaskType(StartReplicationTaskTypeValue::NOT_SET),
     m_startReplicationTaskTypeHasBeenSet(false),
-    m_cdcStartTimeHasBeenSet(false)
+    m_cdcStartTimeHasBeenSet(false),
+    m_cdcStartPositionHasBeenSet(false),
+    m_cdcStopPositionHasBeenSet(false)
 {
 }
 
@@ -48,6 +50,18 @@ Aws::String StartReplicationTaskRequest::SerializePayload() const
   if(m_cdcStartTimeHasBeenSet)
   {
    payload.WithDouble("CdcStartTime", m_cdcStartTime.SecondsWithMSPrecision());
+  }
+
+  if(m_cdcStartPositionHasBeenSet)
+  {
+   payload.WithString("CdcStartPosition", m_cdcStartPosition);
+
+  }
+
+  if(m_cdcStopPositionHasBeenSet)
+  {
+   payload.WithString("CdcStopPosition", m_cdcStopPosition);
+
   }
 
   return payload.WriteReadable();

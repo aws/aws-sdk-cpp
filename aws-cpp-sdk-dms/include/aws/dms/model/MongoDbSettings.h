@@ -464,6 +464,70 @@ namespace Model
      */
     inline MongoDbSettings& WithAuthSource(const char* value) { SetAuthSource(value); return *this;}
 
+
+    /**
+     * <p> The KMS key identifier that will be used to encrypt the connection
+     * parameters. If you do not specify a value for the KmsKeyId parameter, then AWS
+     * DMS will use your default encryption key. AWS KMS creates the default encryption
+     * key for your AWS account. Your AWS account has a different default encryption
+     * key for each AWS region. </p>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p> The KMS key identifier that will be used to encrypt the connection
+     * parameters. If you do not specify a value for the KmsKeyId parameter, then AWS
+     * DMS will use your default encryption key. AWS KMS creates the default encryption
+     * key for your AWS account. Your AWS account has a different default encryption
+     * key for each AWS region. </p>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+
+    /**
+     * <p> The KMS key identifier that will be used to encrypt the connection
+     * parameters. If you do not specify a value for the KmsKeyId parameter, then AWS
+     * DMS will use your default encryption key. AWS KMS creates the default encryption
+     * key for your AWS account. Your AWS account has a different default encryption
+     * key for each AWS region. </p>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p> The KMS key identifier that will be used to encrypt the connection
+     * parameters. If you do not specify a value for the KmsKeyId parameter, then AWS
+     * DMS will use your default encryption key. AWS KMS creates the default encryption
+     * key for your AWS account. Your AWS account has a different default encryption
+     * key for each AWS region. </p>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
+
+    /**
+     * <p> The KMS key identifier that will be used to encrypt the connection
+     * parameters. If you do not specify a value for the KmsKeyId parameter, then AWS
+     * DMS will use your default encryption key. AWS KMS creates the default encryption
+     * key for your AWS account. Your AWS account has a different default encryption
+     * key for each AWS region. </p>
+     */
+    inline MongoDbSettings& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p> The KMS key identifier that will be used to encrypt the connection
+     * parameters. If you do not specify a value for the KmsKeyId parameter, then AWS
+     * DMS will use your default encryption key. AWS KMS creates the default encryption
+     * key for your AWS account. Your AWS account has a different default encryption
+     * key for each AWS region. </p>
+     */
+    inline MongoDbSettings& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p> The KMS key identifier that will be used to encrypt the connection
+     * parameters. If you do not specify a value for the KmsKeyId parameter, then AWS
+     * DMS will use your default encryption key. AWS KMS creates the default encryption
+     * key for your AWS account. Your AWS account has a different default encryption
+     * key for each AWS region. </p>
+     */
+    inline MongoDbSettings& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
   private:
 
     Aws::String m_username;
@@ -498,6 +562,9 @@ namespace Model
 
     Aws::String m_authSource;
     bool m_authSourceHasBeenSet;
+
+    Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet;
   };
 
 } // namespace Model

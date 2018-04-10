@@ -487,6 +487,198 @@ namespace Model
 
 
     /**
+     * <p>Indicates when you want a change data capture (CDC) operation to start. Use
+     * either CdcStartPosition or CdcStartTime to specify when you want a CDC operation
+     * to start. Specifying both values results in an error.</p> <p> The value can be
+     * in date, checkpoint, or LSN/SCN format.</p> <p>Date Example:
+     * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
+     * --cdc-start-position
+     * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
+     */
+    inline const Aws::String& GetCdcStartPosition() const{ return m_cdcStartPosition; }
+
+    /**
+     * <p>Indicates when you want a change data capture (CDC) operation to start. Use
+     * either CdcStartPosition or CdcStartTime to specify when you want a CDC operation
+     * to start. Specifying both values results in an error.</p> <p> The value can be
+     * in date, checkpoint, or LSN/SCN format.</p> <p>Date Example:
+     * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
+     * --cdc-start-position
+     * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
+     */
+    inline void SetCdcStartPosition(const Aws::String& value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition = value; }
+
+    /**
+     * <p>Indicates when you want a change data capture (CDC) operation to start. Use
+     * either CdcStartPosition or CdcStartTime to specify when you want a CDC operation
+     * to start. Specifying both values results in an error.</p> <p> The value can be
+     * in date, checkpoint, or LSN/SCN format.</p> <p>Date Example:
+     * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
+     * --cdc-start-position
+     * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
+     */
+    inline void SetCdcStartPosition(Aws::String&& value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition = std::move(value); }
+
+    /**
+     * <p>Indicates when you want a change data capture (CDC) operation to start. Use
+     * either CdcStartPosition or CdcStartTime to specify when you want a CDC operation
+     * to start. Specifying both values results in an error.</p> <p> The value can be
+     * in date, checkpoint, or LSN/SCN format.</p> <p>Date Example:
+     * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
+     * --cdc-start-position
+     * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
+     */
+    inline void SetCdcStartPosition(const char* value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition.assign(value); }
+
+    /**
+     * <p>Indicates when you want a change data capture (CDC) operation to start. Use
+     * either CdcStartPosition or CdcStartTime to specify when you want a CDC operation
+     * to start. Specifying both values results in an error.</p> <p> The value can be
+     * in date, checkpoint, or LSN/SCN format.</p> <p>Date Example:
+     * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
+     * --cdc-start-position
+     * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
+     */
+    inline ReplicationTask& WithCdcStartPosition(const Aws::String& value) { SetCdcStartPosition(value); return *this;}
+
+    /**
+     * <p>Indicates when you want a change data capture (CDC) operation to start. Use
+     * either CdcStartPosition or CdcStartTime to specify when you want a CDC operation
+     * to start. Specifying both values results in an error.</p> <p> The value can be
+     * in date, checkpoint, or LSN/SCN format.</p> <p>Date Example:
+     * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
+     * --cdc-start-position
+     * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
+     */
+    inline ReplicationTask& WithCdcStartPosition(Aws::String&& value) { SetCdcStartPosition(std::move(value)); return *this;}
+
+    /**
+     * <p>Indicates when you want a change data capture (CDC) operation to start. Use
+     * either CdcStartPosition or CdcStartTime to specify when you want a CDC operation
+     * to start. Specifying both values results in an error.</p> <p> The value can be
+     * in date, checkpoint, or LSN/SCN format.</p> <p>Date Example:
+     * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
+     * --cdc-start-position
+     * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
+     */
+    inline ReplicationTask& WithCdcStartPosition(const char* value) { SetCdcStartPosition(value); return *this;}
+
+
+    /**
+     * <p>Indicates when you want a change data capture (CDC) operation to stop. The
+     * value can be either server time or commit time.</p> <p>Server time example:
+     * --cdc-stop-position “server_time:3018-02-09T12:12:12”</p> <p>Commit time
+     * example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “</p>
+     */
+    inline const Aws::String& GetCdcStopPosition() const{ return m_cdcStopPosition; }
+
+    /**
+     * <p>Indicates when you want a change data capture (CDC) operation to stop. The
+     * value can be either server time or commit time.</p> <p>Server time example:
+     * --cdc-stop-position “server_time:3018-02-09T12:12:12”</p> <p>Commit time
+     * example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “</p>
+     */
+    inline void SetCdcStopPosition(const Aws::String& value) { m_cdcStopPositionHasBeenSet = true; m_cdcStopPosition = value; }
+
+    /**
+     * <p>Indicates when you want a change data capture (CDC) operation to stop. The
+     * value can be either server time or commit time.</p> <p>Server time example:
+     * --cdc-stop-position “server_time:3018-02-09T12:12:12”</p> <p>Commit time
+     * example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “</p>
+     */
+    inline void SetCdcStopPosition(Aws::String&& value) { m_cdcStopPositionHasBeenSet = true; m_cdcStopPosition = std::move(value); }
+
+    /**
+     * <p>Indicates when you want a change data capture (CDC) operation to stop. The
+     * value can be either server time or commit time.</p> <p>Server time example:
+     * --cdc-stop-position “server_time:3018-02-09T12:12:12”</p> <p>Commit time
+     * example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “</p>
+     */
+    inline void SetCdcStopPosition(const char* value) { m_cdcStopPositionHasBeenSet = true; m_cdcStopPosition.assign(value); }
+
+    /**
+     * <p>Indicates when you want a change data capture (CDC) operation to stop. The
+     * value can be either server time or commit time.</p> <p>Server time example:
+     * --cdc-stop-position “server_time:3018-02-09T12:12:12”</p> <p>Commit time
+     * example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “</p>
+     */
+    inline ReplicationTask& WithCdcStopPosition(const Aws::String& value) { SetCdcStopPosition(value); return *this;}
+
+    /**
+     * <p>Indicates when you want a change data capture (CDC) operation to stop. The
+     * value can be either server time or commit time.</p> <p>Server time example:
+     * --cdc-stop-position “server_time:3018-02-09T12:12:12”</p> <p>Commit time
+     * example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “</p>
+     */
+    inline ReplicationTask& WithCdcStopPosition(Aws::String&& value) { SetCdcStopPosition(std::move(value)); return *this;}
+
+    /**
+     * <p>Indicates when you want a change data capture (CDC) operation to stop. The
+     * value can be either server time or commit time.</p> <p>Server time example:
+     * --cdc-stop-position “server_time:3018-02-09T12:12:12”</p> <p>Commit time
+     * example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “</p>
+     */
+    inline ReplicationTask& WithCdcStopPosition(const char* value) { SetCdcStopPosition(value); return *this;}
+
+
+    /**
+     * <p>Indicates the last checkpoint that occurred during a change data capture
+     * (CDC) operation. You can provide this value to the <code>CdcStartPosition</code>
+     * parameter to start a CDC operation that begins at that checkpoint.</p>
+     */
+    inline const Aws::String& GetRecoveryCheckpoint() const{ return m_recoveryCheckpoint; }
+
+    /**
+     * <p>Indicates the last checkpoint that occurred during a change data capture
+     * (CDC) operation. You can provide this value to the <code>CdcStartPosition</code>
+     * parameter to start a CDC operation that begins at that checkpoint.</p>
+     */
+    inline void SetRecoveryCheckpoint(const Aws::String& value) { m_recoveryCheckpointHasBeenSet = true; m_recoveryCheckpoint = value; }
+
+    /**
+     * <p>Indicates the last checkpoint that occurred during a change data capture
+     * (CDC) operation. You can provide this value to the <code>CdcStartPosition</code>
+     * parameter to start a CDC operation that begins at that checkpoint.</p>
+     */
+    inline void SetRecoveryCheckpoint(Aws::String&& value) { m_recoveryCheckpointHasBeenSet = true; m_recoveryCheckpoint = std::move(value); }
+
+    /**
+     * <p>Indicates the last checkpoint that occurred during a change data capture
+     * (CDC) operation. You can provide this value to the <code>CdcStartPosition</code>
+     * parameter to start a CDC operation that begins at that checkpoint.</p>
+     */
+    inline void SetRecoveryCheckpoint(const char* value) { m_recoveryCheckpointHasBeenSet = true; m_recoveryCheckpoint.assign(value); }
+
+    /**
+     * <p>Indicates the last checkpoint that occurred during a change data capture
+     * (CDC) operation. You can provide this value to the <code>CdcStartPosition</code>
+     * parameter to start a CDC operation that begins at that checkpoint.</p>
+     */
+    inline ReplicationTask& WithRecoveryCheckpoint(const Aws::String& value) { SetRecoveryCheckpoint(value); return *this;}
+
+    /**
+     * <p>Indicates the last checkpoint that occurred during a change data capture
+     * (CDC) operation. You can provide this value to the <code>CdcStartPosition</code>
+     * parameter to start a CDC operation that begins at that checkpoint.</p>
+     */
+    inline ReplicationTask& WithRecoveryCheckpoint(Aws::String&& value) { SetRecoveryCheckpoint(std::move(value)); return *this;}
+
+    /**
+     * <p>Indicates the last checkpoint that occurred during a change data capture
+     * (CDC) operation. You can provide this value to the <code>CdcStartPosition</code>
+     * parameter to start a CDC operation that begins at that checkpoint.</p>
+     */
+    inline ReplicationTask& WithRecoveryCheckpoint(const char* value) { SetRecoveryCheckpoint(value); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) of the replication task.</p>
      */
     inline const Aws::String& GetReplicationTaskArn() const{ return m_replicationTaskArn; }
@@ -589,6 +781,15 @@ namespace Model
 
     Aws::Utils::DateTime m_replicationTaskStartDate;
     bool m_replicationTaskStartDateHasBeenSet;
+
+    Aws::String m_cdcStartPosition;
+    bool m_cdcStartPositionHasBeenSet;
+
+    Aws::String m_cdcStopPosition;
+    bool m_cdcStopPositionHasBeenSet;
+
+    Aws::String m_recoveryCheckpoint;
+    bool m_recoveryCheckpointHasBeenSet;
 
     Aws::String m_replicationTaskArn;
     bool m_replicationTaskArnHasBeenSet;

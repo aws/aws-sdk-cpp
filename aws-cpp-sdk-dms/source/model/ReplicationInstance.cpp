@@ -51,7 +51,8 @@ ReplicationInstance::ReplicationInstance() :
     m_replicationInstancePrivateIpAddressesHasBeenSet(false),
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
-    m_secondaryAvailabilityZoneHasBeenSet(false)
+    m_secondaryAvailabilityZoneHasBeenSet(false),
+    m_freeUntilHasBeenSet(false)
 {
 }
 
@@ -78,7 +79,8 @@ ReplicationInstance::ReplicationInstance(const JsonValue& jsonValue) :
     m_replicationInstancePrivateIpAddressesHasBeenSet(false),
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
-    m_secondaryAvailabilityZoneHasBeenSet(false)
+    m_secondaryAvailabilityZoneHasBeenSet(false),
+    m_freeUntilHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -227,6 +229,13 @@ ReplicationInstance& ReplicationInstance::operator =(const JsonValue& jsonValue)
     m_secondaryAvailabilityZoneHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FreeUntil"))
+  {
+    m_freeUntil = jsonValue.GetDouble("FreeUntil");
+
+    m_freeUntilHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -360,6 +369,11 @@ JsonValue ReplicationInstance::Jsonize() const
   {
    payload.WithString("SecondaryAvailabilityZone", m_secondaryAvailabilityZone);
 
+  }
+
+  if(m_freeUntilHasBeenSet)
+  {
+   payload.WithDouble("FreeUntil", m_freeUntil.SecondsWithMSPrecision());
   }
 
   return payload;

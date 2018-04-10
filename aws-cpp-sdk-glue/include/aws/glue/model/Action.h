@@ -91,7 +91,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetArguments() const{ return m_arguments; }
@@ -104,7 +104,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline void SetArguments(const Aws::Map<Aws::String, Aws::String>& value) { m_argumentsHasBeenSet = true; m_arguments = value; }
@@ -117,7 +117,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline void SetArguments(Aws::Map<Aws::String, Aws::String>&& value) { m_argumentsHasBeenSet = true; m_arguments = std::move(value); }
@@ -130,7 +130,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline Action& WithArguments(const Aws::Map<Aws::String, Aws::String>& value) { SetArguments(value); return *this;}
@@ -143,7 +143,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline Action& WithArguments(Aws::Map<Aws::String, Aws::String>&& value) { SetArguments(std::move(value)); return *this;}
@@ -156,7 +156,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline Action& AddArguments(const Aws::String& key, const Aws::String& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, value); return *this; }
@@ -169,7 +169,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline Action& AddArguments(Aws::String&& key, const Aws::String& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), value); return *this; }
@@ -182,7 +182,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline Action& AddArguments(const Aws::String& key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, std::move(value)); return *this; }
@@ -195,7 +195,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline Action& AddArguments(Aws::String&& key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), std::move(value)); return *this; }
@@ -208,7 +208,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline Action& AddArguments(const char* key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, std::move(value)); return *this; }
@@ -221,7 +221,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline Action& AddArguments(Aws::String&& key, const char* value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), value); return *this; }
@@ -234,10 +234,29 @@ namespace Model
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline Action& AddArguments(const char* key, const char* value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>The job run timeout in minutes. It overrides the timeout value of the
+     * job.</p>
+     */
+    inline int GetTimeout() const{ return m_timeout; }
+
+    /**
+     * <p>The job run timeout in minutes. It overrides the timeout value of the
+     * job.</p>
+     */
+    inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
+
+    /**
+     * <p>The job run timeout in minutes. It overrides the timeout value of the
+     * job.</p>
+     */
+    inline Action& WithTimeout(int value) { SetTimeout(value); return *this;}
 
   private:
 
@@ -246,6 +265,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_arguments;
     bool m_argumentsHasBeenSet;
+
+    int m_timeout;
+    bool m_timeoutHasBeenSet;
   };
 
 } // namespace Model

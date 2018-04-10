@@ -33,7 +33,8 @@ SupportedEndpointType::SupportedEndpointType() :
     m_supportsCDC(false),
     m_supportsCDCHasBeenSet(false),
     m_endpointType(ReplicationEndpointTypeValue::NOT_SET),
-    m_endpointTypeHasBeenSet(false)
+    m_endpointTypeHasBeenSet(false),
+    m_engineDisplayNameHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ SupportedEndpointType::SupportedEndpointType(const JsonValue& jsonValue) :
     m_supportsCDC(false),
     m_supportsCDCHasBeenSet(false),
     m_endpointType(ReplicationEndpointTypeValue::NOT_SET),
-    m_endpointTypeHasBeenSet(false)
+    m_endpointTypeHasBeenSet(false),
+    m_engineDisplayNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -70,6 +72,13 @@ SupportedEndpointType& SupportedEndpointType::operator =(const JsonValue& jsonVa
     m_endpointTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EngineDisplayName"))
+  {
+    m_engineDisplayName = jsonValue.GetString("EngineDisplayName");
+
+    m_engineDisplayNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -92,6 +101,12 @@ JsonValue SupportedEndpointType::Jsonize() const
   if(m_endpointTypeHasBeenSet)
   {
    payload.WithString("EndpointType", ReplicationEndpointTypeValueMapper::GetNameForReplicationEndpointTypeValue(m_endpointType));
+  }
+
+  if(m_engineDisplayNameHasBeenSet)
+  {
+   payload.WithString("EngineDisplayName", m_engineDisplayName);
+
   }
 
   return payload;

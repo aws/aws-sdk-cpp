@@ -38,7 +38,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a job.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies a job definition.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Job">AWS API
    * Reference</a></p>
    */
@@ -52,73 +52,73 @@ namespace Model
 
 
     /**
-     * <p>The name you assign to this job.</p>
+     * <p>The name you assign to this job definition.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name you assign to this job.</p>
+     * <p>The name you assign to this job definition.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name you assign to this job.</p>
+     * <p>The name you assign to this job definition.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name you assign to this job.</p>
+     * <p>The name you assign to this job definition.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name you assign to this job.</p>
+     * <p>The name you assign to this job definition.</p>
      */
     inline Job& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name you assign to this job.</p>
+     * <p>The name you assign to this job definition.</p>
      */
     inline Job& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name you assign to this job.</p>
+     * <p>The name you assign to this job definition.</p>
      */
     inline Job& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>Description of this job.</p>
+     * <p>Description of the job being defined.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>Description of this job.</p>
+     * <p>Description of the job being defined.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>Description of this job.</p>
+     * <p>Description of the job being defined.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>Description of this job.</p>
+     * <p>Description of the job being defined.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>Description of this job.</p>
+     * <p>Description of the job being defined.</p>
      */
     inline Job& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>Description of this job.</p>
+     * <p>Description of the job being defined.</p>
      */
     inline Job& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>Description of this job.</p>
+     * <p>Description of the job being defined.</p>
      */
     inline Job& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -160,89 +160,89 @@ namespace Model
 
 
     /**
-     * <p>The name of the IAM role associated with this job.</p>
+     * <p>The name or ARN of the IAM role associated with this job.</p>
      */
     inline const Aws::String& GetRole() const{ return m_role; }
 
     /**
-     * <p>The name of the IAM role associated with this job.</p>
+     * <p>The name or ARN of the IAM role associated with this job.</p>
      */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /**
-     * <p>The name of the IAM role associated with this job.</p>
+     * <p>The name or ARN of the IAM role associated with this job.</p>
      */
     inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
 
     /**
-     * <p>The name of the IAM role associated with this job.</p>
+     * <p>The name or ARN of the IAM role associated with this job.</p>
      */
     inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
 
     /**
-     * <p>The name of the IAM role associated with this job.</p>
+     * <p>The name or ARN of the IAM role associated with this job.</p>
      */
     inline Job& WithRole(const Aws::String& value) { SetRole(value); return *this;}
 
     /**
-     * <p>The name of the IAM role associated with this job.</p>
+     * <p>The name or ARN of the IAM role associated with this job.</p>
      */
     inline Job& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the IAM role associated with this job.</p>
+     * <p>The name or ARN of the IAM role associated with this job.</p>
      */
     inline Job& WithRole(const char* value) { SetRole(value); return *this;}
 
 
     /**
-     * <p>The time and date that this job specification was created.</p>
+     * <p>The time and date that this job definition was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedOn() const{ return m_createdOn; }
 
     /**
-     * <p>The time and date that this job specification was created.</p>
+     * <p>The time and date that this job definition was created.</p>
      */
     inline void SetCreatedOn(const Aws::Utils::DateTime& value) { m_createdOnHasBeenSet = true; m_createdOn = value; }
 
     /**
-     * <p>The time and date that this job specification was created.</p>
+     * <p>The time and date that this job definition was created.</p>
      */
     inline void SetCreatedOn(Aws::Utils::DateTime&& value) { m_createdOnHasBeenSet = true; m_createdOn = std::move(value); }
 
     /**
-     * <p>The time and date that this job specification was created.</p>
+     * <p>The time and date that this job definition was created.</p>
      */
     inline Job& WithCreatedOn(const Aws::Utils::DateTime& value) { SetCreatedOn(value); return *this;}
 
     /**
-     * <p>The time and date that this job specification was created.</p>
+     * <p>The time and date that this job definition was created.</p>
      */
     inline Job& WithCreatedOn(Aws::Utils::DateTime&& value) { SetCreatedOn(std::move(value)); return *this;}
 
 
     /**
-     * <p>The last point in time when this job specification was modified.</p>
+     * <p>The last point in time when this job definition was modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedOn() const{ return m_lastModifiedOn; }
 
     /**
-     * <p>The last point in time when this job specification was modified.</p>
+     * <p>The last point in time when this job definition was modified.</p>
      */
     inline void SetLastModifiedOn(const Aws::Utils::DateTime& value) { m_lastModifiedOnHasBeenSet = true; m_lastModifiedOn = value; }
 
     /**
-     * <p>The last point in time when this job specification was modified.</p>
+     * <p>The last point in time when this job definition was modified.</p>
      */
     inline void SetLastModifiedOn(Aws::Utils::DateTime&& value) { m_lastModifiedOnHasBeenSet = true; m_lastModifiedOn = std::move(value); }
 
     /**
-     * <p>The last point in time when this job specification was modified.</p>
+     * <p>The last point in time when this job definition was modified.</p>
      */
     inline Job& WithLastModifiedOn(const Aws::Utils::DateTime& value) { SetLastModifiedOn(value); return *this;}
 
     /**
-     * <p>The last point in time when this job specification was modified.</p>
+     * <p>The last point in time when this job definition was modified.</p>
      */
     inline Job& WithLastModifiedOn(Aws::Utils::DateTime&& value) { SetLastModifiedOn(std::move(value)); return *this;}
 
@@ -312,7 +312,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetDefaultArguments() const{ return m_defaultArguments; }
@@ -325,7 +325,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline void SetDefaultArguments(const Aws::Map<Aws::String, Aws::String>& value) { m_defaultArgumentsHasBeenSet = true; m_defaultArguments = value; }
@@ -338,7 +338,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline void SetDefaultArguments(Aws::Map<Aws::String, Aws::String>&& value) { m_defaultArgumentsHasBeenSet = true; m_defaultArguments = std::move(value); }
@@ -351,7 +351,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline Job& WithDefaultArguments(const Aws::Map<Aws::String, Aws::String>& value) { SetDefaultArguments(value); return *this;}
@@ -364,7 +364,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline Job& WithDefaultArguments(Aws::Map<Aws::String, Aws::String>&& value) { SetDefaultArguments(std::move(value)); return *this;}
@@ -377,7 +377,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline Job& AddDefaultArguments(const Aws::String& key, const Aws::String& value) { m_defaultArgumentsHasBeenSet = true; m_defaultArguments.emplace(key, value); return *this; }
@@ -390,7 +390,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline Job& AddDefaultArguments(Aws::String&& key, const Aws::String& value) { m_defaultArgumentsHasBeenSet = true; m_defaultArguments.emplace(std::move(key), value); return *this; }
@@ -403,7 +403,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline Job& AddDefaultArguments(const Aws::String& key, Aws::String&& value) { m_defaultArgumentsHasBeenSet = true; m_defaultArguments.emplace(key, std::move(value)); return *this; }
@@ -416,7 +416,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline Job& AddDefaultArguments(Aws::String&& key, Aws::String&& value) { m_defaultArgumentsHasBeenSet = true; m_defaultArguments.emplace(std::move(key), std::move(value)); return *this; }
@@ -429,7 +429,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline Job& AddDefaultArguments(const char* key, Aws::String&& value) { m_defaultArgumentsHasBeenSet = true; m_defaultArguments.emplace(key, std::move(value)); return *this; }
@@ -442,7 +442,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline Job& AddDefaultArguments(Aws::String&& key, const char* value) { m_defaultArgumentsHasBeenSet = true; m_defaultArguments.emplace(std::move(key), value); return *this; }
@@ -455,7 +455,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline Job& AddDefaultArguments(const char* key, const char* value) { m_defaultArgumentsHasBeenSet = true; m_defaultArguments.emplace(key, value); return *this; }
@@ -488,24 +488,24 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of times to retry this job if it fails.</p>
+     * <p>The maximum number of times to retry this job after a JobRun fails.</p>
      */
     inline int GetMaxRetries() const{ return m_maxRetries; }
 
     /**
-     * <p>The maximum number of times to retry this job if it fails.</p>
+     * <p>The maximum number of times to retry this job after a JobRun fails.</p>
      */
     inline void SetMaxRetries(int value) { m_maxRetriesHasBeenSet = true; m_maxRetries = value; }
 
     /**
-     * <p>The maximum number of times to retry this job if it fails.</p>
+     * <p>The maximum number of times to retry this job after a JobRun fails.</p>
      */
     inline Job& WithMaxRetries(int value) { SetMaxRetries(value); return *this;}
 
 
     /**
-     * <p>The number of AWS Glue data processing units (DPUs) allocated to this Job.
-     * From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative
+     * <p>The number of AWS Glue data processing units (DPUs) allocated to runs of this
+     * job. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative
      * measure of processing power that consists of 4 vCPUs of compute capacity and 16
      * GB of memory. For more information, see the <a
      * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.</p>
@@ -513,8 +513,8 @@ namespace Model
     inline int GetAllocatedCapacity() const{ return m_allocatedCapacity; }
 
     /**
-     * <p>The number of AWS Glue data processing units (DPUs) allocated to this Job.
-     * From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative
+     * <p>The number of AWS Glue data processing units (DPUs) allocated to runs of this
+     * job. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative
      * measure of processing power that consists of 4 vCPUs of compute capacity and 16
      * GB of memory. For more information, see the <a
      * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.</p>
@@ -522,13 +522,29 @@ namespace Model
     inline void SetAllocatedCapacity(int value) { m_allocatedCapacityHasBeenSet = true; m_allocatedCapacity = value; }
 
     /**
-     * <p>The number of AWS Glue data processing units (DPUs) allocated to this Job.
-     * From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative
+     * <p>The number of AWS Glue data processing units (DPUs) allocated to runs of this
+     * job. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative
      * measure of processing power that consists of 4 vCPUs of compute capacity and 16
      * GB of memory. For more information, see the <a
      * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.</p>
      */
     inline Job& WithAllocatedCapacity(int value) { SetAllocatedCapacity(value); return *this;}
+
+
+    /**
+     * <p>The job timeout in minutes.</p>
+     */
+    inline int GetTimeout() const{ return m_timeout; }
+
+    /**
+     * <p>The job timeout in minutes.</p>
+     */
+    inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
+
+    /**
+     * <p>The job timeout in minutes.</p>
+     */
+    inline Job& WithTimeout(int value) { SetTimeout(value); return *this;}
 
   private:
 
@@ -567,6 +583,9 @@ namespace Model
 
     int m_allocatedCapacity;
     bool m_allocatedCapacityHasBeenSet;
+
+    int m_timeout;
+    bool m_timeoutHasBeenSet;
   };
 
 } // namespace Model

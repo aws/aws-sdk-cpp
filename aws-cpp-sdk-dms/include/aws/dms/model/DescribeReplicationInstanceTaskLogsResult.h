@@ -82,43 +82,43 @@ namespace Model
 
     /**
      * <p>An array of replication task log metadata. Each member of the array contains
-     * the replication task name, ARN, and task log size (in bytes).</p>
+     * the replication task name, ARN, and task log size (in bytes). </p>
      */
     inline const Aws::Vector<ReplicationInstanceTaskLog>& GetReplicationInstanceTaskLogs() const{ return m_replicationInstanceTaskLogs; }
 
     /**
      * <p>An array of replication task log metadata. Each member of the array contains
-     * the replication task name, ARN, and task log size (in bytes).</p>
+     * the replication task name, ARN, and task log size (in bytes). </p>
      */
     inline void SetReplicationInstanceTaskLogs(const Aws::Vector<ReplicationInstanceTaskLog>& value) { m_replicationInstanceTaskLogs = value; }
 
     /**
      * <p>An array of replication task log metadata. Each member of the array contains
-     * the replication task name, ARN, and task log size (in bytes).</p>
+     * the replication task name, ARN, and task log size (in bytes). </p>
      */
     inline void SetReplicationInstanceTaskLogs(Aws::Vector<ReplicationInstanceTaskLog>&& value) { m_replicationInstanceTaskLogs = std::move(value); }
 
     /**
      * <p>An array of replication task log metadata. Each member of the array contains
-     * the replication task name, ARN, and task log size (in bytes).</p>
+     * the replication task name, ARN, and task log size (in bytes). </p>
      */
     inline DescribeReplicationInstanceTaskLogsResult& WithReplicationInstanceTaskLogs(const Aws::Vector<ReplicationInstanceTaskLog>& value) { SetReplicationInstanceTaskLogs(value); return *this;}
 
     /**
      * <p>An array of replication task log metadata. Each member of the array contains
-     * the replication task name, ARN, and task log size (in bytes).</p>
+     * the replication task name, ARN, and task log size (in bytes). </p>
      */
     inline DescribeReplicationInstanceTaskLogsResult& WithReplicationInstanceTaskLogs(Aws::Vector<ReplicationInstanceTaskLog>&& value) { SetReplicationInstanceTaskLogs(std::move(value)); return *this;}
 
     /**
      * <p>An array of replication task log metadata. Each member of the array contains
-     * the replication task name, ARN, and task log size (in bytes).</p>
+     * the replication task name, ARN, and task log size (in bytes). </p>
      */
     inline DescribeReplicationInstanceTaskLogsResult& AddReplicationInstanceTaskLogs(const ReplicationInstanceTaskLog& value) { m_replicationInstanceTaskLogs.push_back(value); return *this; }
 
     /**
      * <p>An array of replication task log metadata. Each member of the array contains
-     * the replication task name, ARN, and task log size (in bytes).</p>
+     * the replication task name, ARN, and task log size (in bytes). </p>
      */
     inline DescribeReplicationInstanceTaskLogsResult& AddReplicationInstanceTaskLogs(ReplicationInstanceTaskLog&& value) { m_replicationInstanceTaskLogs.push_back(std::move(value)); return *this; }
 

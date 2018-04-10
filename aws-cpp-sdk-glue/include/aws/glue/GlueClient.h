@@ -659,14 +659,16 @@ namespace Model
         virtual void BatchGetPartitionAsync(const Model::BatchGetPartitionRequest& request, const BatchGetPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stops one or more job runs for a specified Job.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops one or more job runs for a specified job definition.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchStopJobRun">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchStopJobRunOutcome BatchStopJobRun(const Model::BatchStopJobRunRequest& request) const;
 
         /**
-         * <p>Stops one or more job runs for a specified Job.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops one or more job runs for a specified job definition.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchStopJobRun">AWS
          * API Reference</a></p>
          *
@@ -675,7 +677,8 @@ namespace Model
         virtual Model::BatchStopJobRunOutcomeCallable BatchStopJobRunCallable(const Model::BatchStopJobRunRequest& request) const;
 
         /**
-         * <p>Stops one or more job runs for a specified Job.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops one or more job runs for a specified job definition.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchStopJobRun">AWS
          * API Reference</a></p>
          *
@@ -827,14 +830,14 @@ namespace Model
         virtual void CreateDevEndpointAsync(const Model::CreateDevEndpointRequest& request, const CreateDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new job.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new job definition.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateJob">AWS API
          * Reference</a></p>
          */
         virtual Model::CreateJobOutcome CreateJob(const Model::CreateJobRequest& request) const;
 
         /**
-         * <p>Creates a new job.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new job definition.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateJob">AWS API
          * Reference</a></p>
          *
@@ -843,7 +846,7 @@ namespace Model
         virtual Model::CreateJobOutcomeCallable CreateJobCallable(const Model::CreateJobRequest& request) const;
 
         /**
-         * <p>Creates a new job.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new job definition.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateJob">AWS API
          * Reference</a></p>
          *
@@ -1114,16 +1117,16 @@ namespace Model
         virtual void DeleteDevEndpointAsync(const Model::DeleteDevEndpointRequest& request, const DeleteDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a specified job. If the job is not found, no exception is
-         * thrown.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a specified job definition. If the job definition is not found, no
+         * exception is thrown.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteJob">AWS API
          * Reference</a></p>
          */
         virtual Model::DeleteJobOutcome DeleteJob(const Model::DeleteJobRequest& request) const;
 
         /**
-         * <p>Deletes a specified job. If the job is not found, no exception is
-         * thrown.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a specified job definition. If the job definition is not found, no
+         * exception is thrown.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteJob">AWS API
          * Reference</a></p>
          *
@@ -1132,8 +1135,8 @@ namespace Model
         virtual Model::DeleteJobOutcomeCallable DeleteJobCallable(const Model::DeleteJobRequest& request) const;
 
         /**
-         * <p>Deletes a specified job. If the job is not found, no exception is
-         * thrown.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a specified job definition. If the job definition is not found, no
+         * exception is thrown.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteJob">AWS API
          * Reference</a></p>
          *
@@ -1672,14 +1675,16 @@ namespace Model
         virtual void GetJobRunAsync(const Model::GetJobRunRequest& request, const GetJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves metadata for all runs of a given job.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves metadata for all runs of a given job definition.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobRuns">AWS API
          * Reference</a></p>
          */
         virtual Model::GetJobRunsOutcome GetJobRuns(const Model::GetJobRunsRequest& request) const;
 
         /**
-         * <p>Retrieves metadata for all runs of a given job.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves metadata for all runs of a given job definition.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobRuns">AWS API
          * Reference</a></p>
          *
@@ -1688,7 +1693,8 @@ namespace Model
         virtual Model::GetJobRunsOutcomeCallable GetJobRunsCallable(const Model::GetJobRunsRequest& request) const;
 
         /**
-         * <p>Retrieves metadata for all runs of a given job.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves metadata for all runs of a given job definition.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobRuns">AWS API
          * Reference</a></p>
          *
@@ -1697,14 +1703,14 @@ namespace Model
         virtual void GetJobRunsAsync(const Model::GetJobRunsRequest& request, const GetJobRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves all current jobs.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves all current job definitions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobs">AWS API
          * Reference</a></p>
          */
         virtual Model::GetJobsOutcome GetJobs(const Model::GetJobsRequest& request) const;
 
         /**
-         * <p>Retrieves all current jobs.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves all current job definitions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobs">AWS API
          * Reference</a></p>
          *
@@ -1713,7 +1719,7 @@ namespace Model
         virtual Model::GetJobsOutcomeCallable GetJobsCallable(const Model::GetJobsRequest& request) const;
 
         /**
-         * <p>Retrieves all current jobs.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves all current job definitions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobs">AWS API
          * Reference</a></p>
          *
@@ -2155,14 +2161,14 @@ namespace Model
         virtual void StartCrawlerScheduleAsync(const Model::StartCrawlerScheduleRequest& request, const StartCrawlerScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Runs a job.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts a job run using a job definition.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartJobRun">AWS
          * API Reference</a></p>
          */
         virtual Model::StartJobRunOutcome StartJobRun(const Model::StartJobRunRequest& request) const;
 
         /**
-         * <p>Runs a job.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts a job run using a job definition.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartJobRun">AWS
          * API Reference</a></p>
          *
@@ -2171,7 +2177,7 @@ namespace Model
         virtual Model::StartJobRunOutcomeCallable StartJobRunCallable(const Model::StartJobRunRequest& request) const;
 
         /**
-         * <p>Runs a job.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts a job run using a job definition.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartJobRun">AWS
          * API Reference</a></p>
          *

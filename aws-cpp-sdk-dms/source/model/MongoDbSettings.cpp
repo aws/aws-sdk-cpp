@@ -43,7 +43,8 @@ MongoDbSettings::MongoDbSettings() :
     m_nestingLevelHasBeenSet(false),
     m_extractDocIdHasBeenSet(false),
     m_docsToInvestigateHasBeenSet(false),
-    m_authSourceHasBeenSet(false)
+    m_authSourceHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -62,7 +63,8 @@ MongoDbSettings::MongoDbSettings(const JsonValue& jsonValue) :
     m_nestingLevelHasBeenSet(false),
     m_extractDocIdHasBeenSet(false),
     m_docsToInvestigateHasBeenSet(false),
-    m_authSourceHasBeenSet(false)
+    m_authSourceHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -146,6 +148,13 @@ MongoDbSettings& MongoDbSettings::operator =(const JsonValue& jsonValue)
     m_authSourceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KmsKeyId"))
+  {
+    m_kmsKeyId = jsonValue.GetString("KmsKeyId");
+
+    m_kmsKeyIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -213,6 +222,12 @@ JsonValue MongoDbSettings::Jsonize() const
   if(m_authSourceHasBeenSet)
   {
    payload.WithString("AuthSource", m_authSource);
+
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+   payload.WithString("KmsKeyId", m_kmsKeyId);
 
   }
 

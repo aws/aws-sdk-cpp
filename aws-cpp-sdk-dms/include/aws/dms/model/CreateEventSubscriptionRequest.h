@@ -50,44 +50,44 @@ namespace Model
 
 
     /**
-     * <p>The name of the DMS event notification subscription. </p> <p>Constraints: The
-     * name must be less than 255 characters. </p>
+     * <p>The name of the AWS DMS event notification subscription. </p> <p>Constraints:
+     * The name must be less than 255 characters. </p>
      */
     inline const Aws::String& GetSubscriptionName() const{ return m_subscriptionName; }
 
     /**
-     * <p>The name of the DMS event notification subscription. </p> <p>Constraints: The
-     * name must be less than 255 characters. </p>
+     * <p>The name of the AWS DMS event notification subscription. </p> <p>Constraints:
+     * The name must be less than 255 characters. </p>
      */
     inline void SetSubscriptionName(const Aws::String& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = value; }
 
     /**
-     * <p>The name of the DMS event notification subscription. </p> <p>Constraints: The
-     * name must be less than 255 characters. </p>
+     * <p>The name of the AWS DMS event notification subscription. </p> <p>Constraints:
+     * The name must be less than 255 characters. </p>
      */
     inline void SetSubscriptionName(Aws::String&& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = std::move(value); }
 
     /**
-     * <p>The name of the DMS event notification subscription. </p> <p>Constraints: The
-     * name must be less than 255 characters. </p>
+     * <p>The name of the AWS DMS event notification subscription. </p> <p>Constraints:
+     * The name must be less than 255 characters. </p>
      */
     inline void SetSubscriptionName(const char* value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName.assign(value); }
 
     /**
-     * <p>The name of the DMS event notification subscription. </p> <p>Constraints: The
-     * name must be less than 255 characters. </p>
+     * <p>The name of the AWS DMS event notification subscription. </p> <p>Constraints:
+     * The name must be less than 255 characters. </p>
      */
     inline CreateEventSubscriptionRequest& WithSubscriptionName(const Aws::String& value) { SetSubscriptionName(value); return *this;}
 
     /**
-     * <p>The name of the DMS event notification subscription. </p> <p>Constraints: The
-     * name must be less than 255 characters. </p>
+     * <p>The name of the AWS DMS event notification subscription. </p> <p>Constraints:
+     * The name must be less than 255 characters. </p>
      */
     inline CreateEventSubscriptionRequest& WithSubscriptionName(Aws::String&& value) { SetSubscriptionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the DMS event notification subscription. </p> <p>Constraints: The
-     * name must be less than 255 characters. </p>
+     * <p>The name of the AWS DMS event notification subscription. </p> <p>Constraints:
+     * The name must be less than 255 characters. </p>
      */
     inline CreateEventSubscriptionRequest& WithSubscriptionName(const char* value) { SetSubscriptionName(value); return *this;}
 

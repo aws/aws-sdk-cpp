@@ -50,27 +50,32 @@ namespace Model
 
 
     /**
-     * <p>Currently "OR" is not supported.</p>
+     * <p>Optional field if only one condition is listed. If multiple conditions are
+     * listed, then this field is required.</p>
      */
     inline const Logical& GetLogical() const{ return m_logical; }
 
     /**
-     * <p>Currently "OR" is not supported.</p>
+     * <p>Optional field if only one condition is listed. If multiple conditions are
+     * listed, then this field is required.</p>
      */
     inline void SetLogical(const Logical& value) { m_logicalHasBeenSet = true; m_logical = value; }
 
     /**
-     * <p>Currently "OR" is not supported.</p>
+     * <p>Optional field if only one condition is listed. If multiple conditions are
+     * listed, then this field is required.</p>
      */
     inline void SetLogical(Logical&& value) { m_logicalHasBeenSet = true; m_logical = std::move(value); }
 
     /**
-     * <p>Currently "OR" is not supported.</p>
+     * <p>Optional field if only one condition is listed. If multiple conditions are
+     * listed, then this field is required.</p>
      */
     inline Predicate& WithLogical(const Logical& value) { SetLogical(value); return *this;}
 
     /**
-     * <p>Currently "OR" is not supported.</p>
+     * <p>Optional field if only one condition is listed. If multiple conditions are
+     * listed, then this field is required.</p>
      */
     inline Predicate& WithLogical(Logical&& value) { SetLogical(std::move(value)); return *this;}
 

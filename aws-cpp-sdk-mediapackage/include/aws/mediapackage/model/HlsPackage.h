@@ -234,7 +234,7 @@ entry will be included in the
 inserted into
      * manifests. Additionally, when an interval is specified
 ID3Timed Metadata
-     * messages will be generated every 5 seconds using the 
+     * messages will be generated every 5 seconds using the
 ingest time of the
      * content.
 If the interval is not specified, or set to 0, then
@@ -255,7 +255,7 @@ it will
 inserted into
      * manifests. Additionally, when an interval is specified
 ID3Timed Metadata
-     * messages will be generated every 5 seconds using the 
+     * messages will be generated every 5 seconds using the
 ingest time of the
      * content.
 If the interval is not specified, or set to 0, then
@@ -276,7 +276,7 @@ it will
 inserted into
      * manifests. Additionally, when an interval is specified
 ID3Timed Metadata
-     * messages will be generated every 5 seconds using the 
+     * messages will be generated every 5 seconds using the
 ingest time of the
      * content.
 If the interval is not specified, or set to 0, then

@@ -42,6 +42,9 @@ ReplicationTask::ReplicationTask() :
     m_stopReasonHasBeenSet(false),
     m_replicationTaskCreationDateHasBeenSet(false),
     m_replicationTaskStartDateHasBeenSet(false),
+    m_cdcStartPositionHasBeenSet(false),
+    m_cdcStopPositionHasBeenSet(false),
+    m_recoveryCheckpointHasBeenSet(false),
     m_replicationTaskArnHasBeenSet(false),
     m_replicationTaskStatsHasBeenSet(false)
 {
@@ -61,6 +64,9 @@ ReplicationTask::ReplicationTask(const JsonValue& jsonValue) :
     m_stopReasonHasBeenSet(false),
     m_replicationTaskCreationDateHasBeenSet(false),
     m_replicationTaskStartDateHasBeenSet(false),
+    m_cdcStartPositionHasBeenSet(false),
+    m_cdcStopPositionHasBeenSet(false),
+    m_recoveryCheckpointHasBeenSet(false),
     m_replicationTaskArnHasBeenSet(false),
     m_replicationTaskStatsHasBeenSet(false)
 {
@@ -153,6 +159,27 @@ ReplicationTask& ReplicationTask::operator =(const JsonValue& jsonValue)
     m_replicationTaskStartDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CdcStartPosition"))
+  {
+    m_cdcStartPosition = jsonValue.GetString("CdcStartPosition");
+
+    m_cdcStartPositionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CdcStopPosition"))
+  {
+    m_cdcStopPosition = jsonValue.GetString("CdcStopPosition");
+
+    m_cdcStopPositionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RecoveryCheckpoint"))
+  {
+    m_recoveryCheckpoint = jsonValue.GetString("RecoveryCheckpoint");
+
+    m_recoveryCheckpointHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ReplicationTaskArn"))
   {
     m_replicationTaskArn = jsonValue.GetString("ReplicationTaskArn");
@@ -241,6 +268,24 @@ JsonValue ReplicationTask::Jsonize() const
   if(m_replicationTaskStartDateHasBeenSet)
   {
    payload.WithDouble("ReplicationTaskStartDate", m_replicationTaskStartDate.SecondsWithMSPrecision());
+  }
+
+  if(m_cdcStartPositionHasBeenSet)
+  {
+   payload.WithString("CdcStartPosition", m_cdcStartPosition);
+
+  }
+
+  if(m_cdcStopPositionHasBeenSet)
+  {
+   payload.WithString("CdcStopPosition", m_cdcStopPosition);
+
+  }
+
+  if(m_recoveryCheckpointHasBeenSet)
+  {
+   payload.WithString("RecoveryCheckpoint", m_recoveryCheckpoint);
+
   }
 
   if(m_replicationTaskArnHasBeenSet)

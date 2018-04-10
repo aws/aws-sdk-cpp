@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/mediapackage/MediaPackage_EXPORTS.h>
 #include <aws/mediapackage/MediaPackageRequest.h>
+#include <aws/mediapackage/model/CmafPackageCreateOrUpdateParameters.h>
 #include <aws/mediapackage/model/DashPackage.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediapackage/model/HlsPackage.h>
@@ -48,6 +49,22 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "UpdateOriginEndpoint"; }
 
     Aws::String SerializePayload() const override;
+
+
+    
+    inline const CmafPackageCreateOrUpdateParameters& GetCmafPackage() const{ return m_cmafPackage; }
+
+    
+    inline void SetCmafPackage(const CmafPackageCreateOrUpdateParameters& value) { m_cmafPackageHasBeenSet = true; m_cmafPackage = value; }
+
+    
+    inline void SetCmafPackage(CmafPackageCreateOrUpdateParameters&& value) { m_cmafPackageHasBeenSet = true; m_cmafPackage = std::move(value); }
+
+    
+    inline UpdateOriginEndpointRequest& WithCmafPackage(const CmafPackageCreateOrUpdateParameters& value) { SetCmafPackage(value); return *this;}
+
+    
+    inline UpdateOriginEndpointRequest& WithCmafPackage(CmafPackageCreateOrUpdateParameters&& value) { SetCmafPackage(std::move(value)); return *this;}
 
 
     
@@ -305,6 +322,9 @@ If not
     inline UpdateOriginEndpointRequest& AddWhitelist(const char* value) { m_whitelistHasBeenSet = true; m_whitelist.push_back(value); return *this; }
 
   private:
+
+    CmafPackageCreateOrUpdateParameters m_cmafPackage;
+    bool m_cmafPackageHasBeenSet;
 
     DashPackage m_dashPackage;
     bool m_dashPackageHasBeenSet;

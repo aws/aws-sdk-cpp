@@ -129,52 +129,102 @@ namespace Model
 
     /**
      * <p>The database engine name. Valid values, depending on the EndPointType,
-     * include mysql, oracle, postgres, mariadb, aurora, redshift, S3, sybase,
-     * dynamodb, mongodb, and sqlserver.</p>
+     * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
+     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
     /**
      * <p>The database engine name. Valid values, depending on the EndPointType,
-     * include mysql, oracle, postgres, mariadb, aurora, redshift, S3, sybase,
-     * dynamodb, mongodb, and sqlserver.</p>
+     * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
+     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
      * <p>The database engine name. Valid values, depending on the EndPointType,
-     * include mysql, oracle, postgres, mariadb, aurora, redshift, S3, sybase,
-     * dynamodb, mongodb, and sqlserver.</p>
+     * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
+     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
 
     /**
      * <p>The database engine name. Valid values, depending on the EndPointType,
-     * include mysql, oracle, postgres, mariadb, aurora, redshift, S3, sybase,
-     * dynamodb, mongodb, and sqlserver.</p>
+     * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
+     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
     /**
      * <p>The database engine name. Valid values, depending on the EndPointType,
-     * include mysql, oracle, postgres, mariadb, aurora, redshift, S3, sybase,
-     * dynamodb, mongodb, and sqlserver.</p>
+     * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
+     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline Endpoint& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
     /**
      * <p>The database engine name. Valid values, depending on the EndPointType,
-     * include mysql, oracle, postgres, mariadb, aurora, redshift, S3, sybase,
-     * dynamodb, mongodb, and sqlserver.</p>
+     * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
+     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline Endpoint& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
 
     /**
      * <p>The database engine name. Valid values, depending on the EndPointType,
-     * include mysql, oracle, postgres, mariadb, aurora, redshift, S3, sybase,
-     * dynamodb, mongodb, and sqlserver.</p>
+     * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
+     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline Endpoint& WithEngineName(const char* value) { SetEngineName(value); return *this;}
+
+
+    /**
+     * <p>The expanded name for the engine name. For example, if the
+     * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
+     * Aurora MySQL."</p>
+     */
+    inline const Aws::String& GetEngineDisplayName() const{ return m_engineDisplayName; }
+
+    /**
+     * <p>The expanded name for the engine name. For example, if the
+     * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
+     * Aurora MySQL."</p>
+     */
+    inline void SetEngineDisplayName(const Aws::String& value) { m_engineDisplayNameHasBeenSet = true; m_engineDisplayName = value; }
+
+    /**
+     * <p>The expanded name for the engine name. For example, if the
+     * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
+     * Aurora MySQL."</p>
+     */
+    inline void SetEngineDisplayName(Aws::String&& value) { m_engineDisplayNameHasBeenSet = true; m_engineDisplayName = std::move(value); }
+
+    /**
+     * <p>The expanded name for the engine name. For example, if the
+     * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
+     * Aurora MySQL."</p>
+     */
+    inline void SetEngineDisplayName(const char* value) { m_engineDisplayNameHasBeenSet = true; m_engineDisplayName.assign(value); }
+
+    /**
+     * <p>The expanded name for the engine name. For example, if the
+     * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
+     * Aurora MySQL."</p>
+     */
+    inline Endpoint& WithEngineDisplayName(const Aws::String& value) { SetEngineDisplayName(value); return *this;}
+
+    /**
+     * <p>The expanded name for the engine name. For example, if the
+     * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
+     * Aurora MySQL."</p>
+     */
+    inline Endpoint& WithEngineDisplayName(Aws::String&& value) { SetEngineDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>The expanded name for the engine name. For example, if the
+     * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
+     * Aurora MySQL."</p>
+     */
+    inline Endpoint& WithEngineDisplayName(const char* value) { SetEngineDisplayName(value); return *this;}
 
 
     /**
@@ -553,6 +603,78 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) used by the service access IAM role.</p>
+     */
+    inline const Aws::String& GetServiceAccessRoleArn() const{ return m_serviceAccessRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) used by the service access IAM role.</p>
+     */
+    inline void SetServiceAccessRoleArn(const Aws::String& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) used by the service access IAM role.</p>
+     */
+    inline void SetServiceAccessRoleArn(Aws::String&& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) used by the service access IAM role.</p>
+     */
+    inline void SetServiceAccessRoleArn(const char* value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) used by the service access IAM role.</p>
+     */
+    inline Endpoint& WithServiceAccessRoleArn(const Aws::String& value) { SetServiceAccessRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) used by the service access IAM role.</p>
+     */
+    inline Endpoint& WithServiceAccessRoleArn(Aws::String&& value) { SetServiceAccessRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) used by the service access IAM role.</p>
+     */
+    inline Endpoint& WithServiceAccessRoleArn(const char* value) { SetServiceAccessRoleArn(value); return *this;}
+
+
+    /**
+     * <p>The external table definition.</p>
+     */
+    inline const Aws::String& GetExternalTableDefinition() const{ return m_externalTableDefinition; }
+
+    /**
+     * <p>The external table definition.</p>
+     */
+    inline void SetExternalTableDefinition(const Aws::String& value) { m_externalTableDefinitionHasBeenSet = true; m_externalTableDefinition = value; }
+
+    /**
+     * <p>The external table definition.</p>
+     */
+    inline void SetExternalTableDefinition(Aws::String&& value) { m_externalTableDefinitionHasBeenSet = true; m_externalTableDefinition = std::move(value); }
+
+    /**
+     * <p>The external table definition.</p>
+     */
+    inline void SetExternalTableDefinition(const char* value) { m_externalTableDefinitionHasBeenSet = true; m_externalTableDefinition.assign(value); }
+
+    /**
+     * <p>The external table definition.</p>
+     */
+    inline Endpoint& WithExternalTableDefinition(const Aws::String& value) { SetExternalTableDefinition(value); return *this;}
+
+    /**
+     * <p>The external table definition.</p>
+     */
+    inline Endpoint& WithExternalTableDefinition(Aws::String&& value) { SetExternalTableDefinition(std::move(value)); return *this;}
+
+    /**
+     * <p>The external table definition.</p>
+     */
+    inline Endpoint& WithExternalTableDefinition(const char* value) { SetExternalTableDefinition(value); return *this;}
+
+
+    /**
      * <p> Value returned by a call to CreateEndpoint that can be used for
      * cross-account validation. Use it on a subsequent call to CreateEndpoint to
      * create the endpoint with a cross-account. </p>
@@ -705,6 +827,9 @@ namespace Model
     Aws::String m_engineName;
     bool m_engineNameHasBeenSet;
 
+    Aws::String m_engineDisplayName;
+    bool m_engineDisplayNameHasBeenSet;
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
 
@@ -734,6 +859,12 @@ namespace Model
 
     DmsSslModeValue m_sslMode;
     bool m_sslModeHasBeenSet;
+
+    Aws::String m_serviceAccessRoleArn;
+    bool m_serviceAccessRoleArnHasBeenSet;
+
+    Aws::String m_externalTableDefinition;
+    bool m_externalTableDefinitionHasBeenSet;
 
     Aws::String m_externalId;
     bool m_externalIdHasBeenSet;

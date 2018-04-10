@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the job that was deleted.</p>
+     * <p>The name of the job definition that was deleted.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
 
     /**
-     * <p>The name of the job that was deleted.</p>
+     * <p>The name of the job definition that was deleted.</p>
      */
     inline void SetJobName(const Aws::String& value) { m_jobName = value; }
 
     /**
-     * <p>The name of the job that was deleted.</p>
+     * <p>The name of the job definition that was deleted.</p>
      */
     inline void SetJobName(Aws::String&& value) { m_jobName = std::move(value); }
 
     /**
-     * <p>The name of the job that was deleted.</p>
+     * <p>The name of the job definition that was deleted.</p>
      */
     inline void SetJobName(const char* value) { m_jobName.assign(value); }
 
     /**
-     * <p>The name of the job that was deleted.</p>
+     * <p>The name of the job definition that was deleted.</p>
      */
     inline DeleteJobResult& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
 
     /**
-     * <p>The name of the job that was deleted.</p>
+     * <p>The name of the job definition that was deleted.</p>
      */
     inline DeleteJobResult& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the job that was deleted.</p>
+     * <p>The name of the job definition that was deleted.</p>
      */
     inline DeleteJobResult& WithJobName(const char* value) { SetJobName(value); return *this;}
 

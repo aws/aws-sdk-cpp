@@ -132,50 +132,57 @@ namespace Model
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndPointType, include mysql, oracle, postgres, mariadb, aurora, redshift, S3,
-     * sybase, dynamodb, mongodb, and sqlserver.</p>
+     * EndPointType, include mysql, oracle, postgres, mariadb, aurora,
+     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
+     * sqlserver.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndPointType, include mysql, oracle, postgres, mariadb, aurora, redshift, S3,
-     * sybase, dynamodb, mongodb, and sqlserver.</p>
+     * EndPointType, include mysql, oracle, postgres, mariadb, aurora,
+     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
+     * sqlserver.</p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndPointType, include mysql, oracle, postgres, mariadb, aurora, redshift, S3,
-     * sybase, dynamodb, mongodb, and sqlserver.</p>
+     * EndPointType, include mysql, oracle, postgres, mariadb, aurora,
+     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
+     * sqlserver.</p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndPointType, include mysql, oracle, postgres, mariadb, aurora, redshift, S3,
-     * sybase, dynamodb, mongodb, and sqlserver.</p>
+     * EndPointType, include mysql, oracle, postgres, mariadb, aurora,
+     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
+     * sqlserver.</p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndPointType, include mysql, oracle, postgres, mariadb, aurora, redshift, S3,
-     * sybase, dynamodb, mongodb, and sqlserver.</p>
+     * EndPointType, include mysql, oracle, postgres, mariadb, aurora,
+     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
+     * sqlserver.</p>
      */
     inline CreateEndpointRequest& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndPointType, include mysql, oracle, postgres, mariadb, aurora, redshift, S3,
-     * sybase, dynamodb, mongodb, and sqlserver.</p>
+     * EndPointType, include mysql, oracle, postgres, mariadb, aurora,
+     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
+     * sqlserver.</p>
      */
     inline CreateEndpointRequest& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndPointType, include mysql, oracle, postgres, mariadb, aurora, redshift, S3,
-     * sybase, dynamodb, mongodb, and sqlserver.</p>
+     * EndPointType, include mysql, oracle, postgres, mariadb, aurora,
+     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
+     * sqlserver.</p>
      */
     inline CreateEndpointRequest& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 
@@ -549,6 +556,85 @@ namespace Model
 
 
     /**
+     * <p> The Amazon Resource Name (ARN) for the service access role you want to use
+     * to create the endpoint. </p>
+     */
+    inline const Aws::String& GetServiceAccessRoleArn() const{ return m_serviceAccessRoleArn; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) for the service access role you want to use
+     * to create the endpoint. </p>
+     */
+    inline void SetServiceAccessRoleArn(const Aws::String& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = value; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) for the service access role you want to use
+     * to create the endpoint. </p>
+     */
+    inline void SetServiceAccessRoleArn(Aws::String&& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = std::move(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) for the service access role you want to use
+     * to create the endpoint. </p>
+     */
+    inline void SetServiceAccessRoleArn(const char* value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn.assign(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) for the service access role you want to use
+     * to create the endpoint. </p>
+     */
+    inline CreateEndpointRequest& WithServiceAccessRoleArn(const Aws::String& value) { SetServiceAccessRoleArn(value); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) for the service access role you want to use
+     * to create the endpoint. </p>
+     */
+    inline CreateEndpointRequest& WithServiceAccessRoleArn(Aws::String&& value) { SetServiceAccessRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) for the service access role you want to use
+     * to create the endpoint. </p>
+     */
+    inline CreateEndpointRequest& WithServiceAccessRoleArn(const char* value) { SetServiceAccessRoleArn(value); return *this;}
+
+
+    /**
+     * <p>The external table definition. </p>
+     */
+    inline const Aws::String& GetExternalTableDefinition() const{ return m_externalTableDefinition; }
+
+    /**
+     * <p>The external table definition. </p>
+     */
+    inline void SetExternalTableDefinition(const Aws::String& value) { m_externalTableDefinitionHasBeenSet = true; m_externalTableDefinition = value; }
+
+    /**
+     * <p>The external table definition. </p>
+     */
+    inline void SetExternalTableDefinition(Aws::String&& value) { m_externalTableDefinitionHasBeenSet = true; m_externalTableDefinition = std::move(value); }
+
+    /**
+     * <p>The external table definition. </p>
+     */
+    inline void SetExternalTableDefinition(const char* value) { m_externalTableDefinitionHasBeenSet = true; m_externalTableDefinition.assign(value); }
+
+    /**
+     * <p>The external table definition. </p>
+     */
+    inline CreateEndpointRequest& WithExternalTableDefinition(const Aws::String& value) { SetExternalTableDefinition(value); return *this;}
+
+    /**
+     * <p>The external table definition. </p>
+     */
+    inline CreateEndpointRequest& WithExternalTableDefinition(Aws::String&& value) { SetExternalTableDefinition(std::move(value)); return *this;}
+
+    /**
+     * <p>The external table definition. </p>
+     */
+    inline CreateEndpointRequest& WithExternalTableDefinition(const char* value) { SetExternalTableDefinition(value); return *this;}
+
+
+    /**
      * <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For more
      * information about the available settings, see the <b>Using Object Mapping to
      * Migrate Data to DynamoDB</b> section at <a
@@ -600,45 +686,45 @@ namespace Model
 
 
     /**
-     * <p>Settings in JSON format for the target S3 endpoint. For more information
-     * about the available settings, see the <b>Extra Connection Attributes</b> section
-     * at <a
+     * <p>Settings in JSON format for the target Amazon S3 endpoint. For more
+     * information about the available settings, see the <b>Extra Connection
+     * Attributes</b> section at <a
      * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html">
      * Using Amazon S3 as a Target for AWS Database Migration Service</a>. </p>
      */
     inline const S3Settings& GetS3Settings() const{ return m_s3Settings; }
 
     /**
-     * <p>Settings in JSON format for the target S3 endpoint. For more information
-     * about the available settings, see the <b>Extra Connection Attributes</b> section
-     * at <a
+     * <p>Settings in JSON format for the target Amazon S3 endpoint. For more
+     * information about the available settings, see the <b>Extra Connection
+     * Attributes</b> section at <a
      * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html">
      * Using Amazon S3 as a Target for AWS Database Migration Service</a>. </p>
      */
     inline void SetS3Settings(const S3Settings& value) { m_s3SettingsHasBeenSet = true; m_s3Settings = value; }
 
     /**
-     * <p>Settings in JSON format for the target S3 endpoint. For more information
-     * about the available settings, see the <b>Extra Connection Attributes</b> section
-     * at <a
+     * <p>Settings in JSON format for the target Amazon S3 endpoint. For more
+     * information about the available settings, see the <b>Extra Connection
+     * Attributes</b> section at <a
      * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html">
      * Using Amazon S3 as a Target for AWS Database Migration Service</a>. </p>
      */
     inline void SetS3Settings(S3Settings&& value) { m_s3SettingsHasBeenSet = true; m_s3Settings = std::move(value); }
 
     /**
-     * <p>Settings in JSON format for the target S3 endpoint. For more information
-     * about the available settings, see the <b>Extra Connection Attributes</b> section
-     * at <a
+     * <p>Settings in JSON format for the target Amazon S3 endpoint. For more
+     * information about the available settings, see the <b>Extra Connection
+     * Attributes</b> section at <a
      * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html">
      * Using Amazon S3 as a Target for AWS Database Migration Service</a>. </p>
      */
     inline CreateEndpointRequest& WithS3Settings(const S3Settings& value) { SetS3Settings(value); return *this;}
 
     /**
-     * <p>Settings in JSON format for the target S3 endpoint. For more information
-     * about the available settings, see the <b>Extra Connection Attributes</b> section
-     * at <a
+     * <p>Settings in JSON format for the target Amazon S3 endpoint. For more
+     * information about the available settings, see the <b>Extra Connection
+     * Attributes</b> section at <a
      * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html">
      * Using Amazon S3 as a Target for AWS Database Migration Service</a>. </p>
      */
@@ -730,6 +816,12 @@ namespace Model
 
     DmsSslModeValue m_sslMode;
     bool m_sslModeHasBeenSet;
+
+    Aws::String m_serviceAccessRoleArn;
+    bool m_serviceAccessRoleArnHasBeenSet;
+
+    Aws::String m_externalTableDefinition;
+    bool m_externalTableDefinitionHasBeenSet;
 
     DynamoDbSettings m_dynamoDbSettings;
     bool m_dynamoDbSettingsHasBeenSet;

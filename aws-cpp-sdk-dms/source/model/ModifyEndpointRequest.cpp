@@ -38,6 +38,8 @@ ModifyEndpointRequest::ModifyEndpointRequest() :
     m_certificateArnHasBeenSet(false),
     m_sslMode(DmsSslModeValue::NOT_SET),
     m_sslModeHasBeenSet(false),
+    m_serviceAccessRoleArnHasBeenSet(false),
+    m_externalTableDefinitionHasBeenSet(false),
     m_dynamoDbSettingsHasBeenSet(false),
     m_s3SettingsHasBeenSet(false),
     m_mongoDbSettingsHasBeenSet(false)
@@ -116,6 +118,18 @@ Aws::String ModifyEndpointRequest::SerializePayload() const
   if(m_sslModeHasBeenSet)
   {
    payload.WithString("SslMode", DmsSslModeValueMapper::GetNameForDmsSslModeValue(m_sslMode));
+  }
+
+  if(m_serviceAccessRoleArnHasBeenSet)
+  {
+   payload.WithString("ServiceAccessRoleArn", m_serviceAccessRoleArn);
+
+  }
+
+  if(m_externalTableDefinitionHasBeenSet)
+  {
+   payload.WithString("ExternalTableDefinition", m_externalTableDefinition);
+
   }
 
   if(m_dynamoDbSettingsHasBeenSet)

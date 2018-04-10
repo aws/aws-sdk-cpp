@@ -54,6 +54,12 @@ CreateOriginEndpointResult& CreateOriginEndpointResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("cmafPackage"))
+  {
+    m_cmafPackage = jsonValue.GetObject("cmafPackage");
+
+  }
+
   if(jsonValue.ValueExists("dashPackage"))
   {
     m_dashPackage = jsonValue.GetObject("dashPackage");

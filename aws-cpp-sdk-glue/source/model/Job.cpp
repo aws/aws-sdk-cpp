@@ -42,7 +42,9 @@ Job::Job() :
     m_maxRetries(0),
     m_maxRetriesHasBeenSet(false),
     m_allocatedCapacity(0),
-    m_allocatedCapacityHasBeenSet(false)
+    m_allocatedCapacityHasBeenSet(false),
+    m_timeout(0),
+    m_timeoutHasBeenSet(false)
 {
 }
 
@@ -60,7 +62,9 @@ Job::Job(const JsonValue& jsonValue) :
     m_maxRetries(0),
     m_maxRetriesHasBeenSet(false),
     m_allocatedCapacity(0),
-    m_allocatedCapacityHasBeenSet(false)
+    m_allocatedCapacityHasBeenSet(false),
+    m_timeout(0),
+    m_timeoutHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -154,6 +158,13 @@ Job& Job::operator =(const JsonValue& jsonValue)
     m_allocatedCapacityHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Timeout"))
+  {
+    m_timeout = jsonValue.GetInteger("Timeout");
+
+    m_timeoutHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -233,6 +244,12 @@ JsonValue Job::Jsonize() const
   if(m_allocatedCapacityHasBeenSet)
   {
    payload.WithInteger("AllocatedCapacity", m_allocatedCapacity);
+
+  }
+
+  if(m_timeoutHasBeenSet)
+  {
+   payload.WithInteger("Timeout", m_timeout);
 
   }
 
