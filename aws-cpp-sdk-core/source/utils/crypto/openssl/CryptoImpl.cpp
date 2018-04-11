@@ -217,7 +217,7 @@ namespace Aws
 
                 EVP_DigestInit_ex(ctx, EVP_sha256(), nullptr);
 
-		        auto currentPos = stream.tellg();
+                auto currentPos = stream.tellg();
                 if (currentPos == std::streampos(-1))
                 {
                     currentPos = 0;
