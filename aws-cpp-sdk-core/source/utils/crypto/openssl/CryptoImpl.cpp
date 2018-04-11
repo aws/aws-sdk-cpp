@@ -169,7 +169,7 @@ namespace Aws
                 EVP_DigestInit_ex(ctx, EVP_md5(), nullptr);
 
                 auto currentPos = stream.tellg();
-                if (currentPos == -1)
+                if (currentPos == std::streampos(-1))
                 {
                     currentPos = 0;
                     stream.clear();
@@ -217,8 +217,8 @@ namespace Aws
 
                 EVP_DigestInit_ex(ctx, EVP_sha256(), nullptr);
 
-                auto currentPos = stream.tellg();
-                if (currentPos == -1)
+		        auto currentPos = stream.tellg();
+                if (currentPos == std::streampos(-1))
                 {
                     currentPos = 0;
                     stream.clear();
@@ -318,6 +318,9 @@ namespace Aws
                 Init();
             }
 
+//the following works in visual studio 2013 but the derived classes 
+//use it through a defaulted on that doesn't.
+#if defined(_MSC_FULL_VER) && (_MSC_FULL_VER < 180020827)
             OpenSSLCipher::OpenSSLCipher(OpenSSLCipher&& toMove) : SymmetricCipher(std::move(toMove)),
                                                                    m_ctx(nullptr), m_encDecInitialized(false)
             {
@@ -328,6 +331,7 @@ namespace Aws
                 m_encryptionMode = toMove.m_encryptionMode;
                 m_decryptionMode = toMove.m_decryptionMode;
             }
+#endif
 
             OpenSSLCipher::OpenSSLCipher(CryptoBuffer&& key, CryptoBuffer&& initializationVector, CryptoBuffer&& tag) :
                     SymmetricCipher(std::move(key), std::move(initializationVector), std::move(tag)),

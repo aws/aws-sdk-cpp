@@ -130,6 +130,7 @@ namespace Aws
 
                 OpenSSLCipher& operator=(const OpenSSLCipher& other) = delete;
 
+#if defined(_MSC_FULL_VER) && (_MSC_FULL_VER < 180020827)
                 /**
                  * Normally we don't work around VS 2013 not auto-generating these, but they are kind of expensive,
                  * so let's go ahead and optimize by defining default move operations. Implementors of this class
@@ -143,6 +144,7 @@ namespace Aws
                  * need to be sure to define the move operations and call the base class.
                  */
                 OpenSSLCipher& operator=(OpenSSLCipher&& toMove) = default;
+#endif
 
 
                 virtual ~OpenSSLCipher();
@@ -227,7 +229,9 @@ namespace Aws
 
                 AES_CBC_Cipher_OpenSSL& operator=(const AES_CBC_Cipher_OpenSSL& other) = delete;
 
+#if defined(_MSC_FULL_VER) && (_MSC_FULL_VER < 180020827)
                 AES_CBC_Cipher_OpenSSL(AES_CBC_Cipher_OpenSSL&& toMove) = default;
+#endif
 
             protected:
                 void InitEncryptor_Internal() override;
@@ -269,7 +273,9 @@ namespace Aws
 
                 AES_CTR_Cipher_OpenSSL& operator=(const AES_CTR_Cipher_OpenSSL& other) = delete;
 
+#if defined(_MSC_FULL_VER) && (_MSC_FULL_VER < 180020827)
                 AES_CTR_Cipher_OpenSSL(AES_CTR_Cipher_OpenSSL&& toMove) = default;
+#endif
 
             protected:
                 void InitEncryptor_Internal() override;
@@ -314,7 +320,9 @@ namespace Aws
 
                 AES_GCM_Cipher_OpenSSL& operator=(const AES_GCM_Cipher_OpenSSL& other) = delete;
 
+#if defined(_MSC_FULL_VER) && (_MSC_FULL_VER < 180020827)
                 AES_GCM_Cipher_OpenSSL(AES_GCM_Cipher_OpenSSL&& toMove) = default;
+#endif
 
                 /**
                  * Calls base class first, then grabs the tag from the cipher and sets it on m_tag.
@@ -358,7 +366,9 @@ namespace Aws
 
                 AES_KeyWrap_Cipher_OpenSSL& operator=(const AES_KeyWrap_Cipher_OpenSSL&) = delete;
 
+#if defined(_MSC_FULL_VER) && (_MSC_FULL_VER < 180020827)
                 AES_KeyWrap_Cipher_OpenSSL(AES_KeyWrap_Cipher_OpenSSL&&) = default;
+#endif
 
                 CryptoBuffer EncryptBuffer(const CryptoBuffer&) override;
                 CryptoBuffer FinalizeEncryption() override;
