@@ -70,7 +70,7 @@ namespace
     static std::string BASE_PUT_OBJECTS_BUCKET_NAME = "putobjecttest";
     static std::string BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME = "charsetstest";
     static std::string BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME = "presignedtest";
-    static std::string BASE_PUT_MULTIPART_BUCKET_NAME = "putobjectmultiparttest";
+    static std::string BASE_PUT_MULTIPART_BUCKET_NAME = "multiparttest";
     static std::string BASE_ERRORS_TESTING_BUCKET = "errorstest";
     static std::string BASE_INTERRUPT_TESTING_BUCKET = "interrupttest";
     static const char* ALLOCATION_TAG = "BucketAndObjectOperationTest";

@@ -83,7 +83,7 @@ static const char* UNICODE_FILE_KEY = "UnicodeFileKey";
 static const char* CANCEL_TEST_FILE_NAME = "CancelTestFile.txt";
 static const char* CANCEL_FILE_KEY = "CancelFileKey";
 
-static const char* TEST_BUCKET_NAME_BASE = "transferintegrationtest";
+static const char* TEST_BUCKET_NAME_BASE = "transfertests";
 static const unsigned SMALL_TEST_SIZE = MB5 / 2;
 static const unsigned MEDIUM_TEST_SIZE = MB5 * 3 / 2;
 
@@ -212,7 +212,9 @@ protected:
     static Aws::String GetTestBucketName()
     {
         static const std::string suffix = Aws::String(Aws::Utils::UUID::RandomUUID()).c_str();
-        return Aws::Testing::GetAwsResourcePrefix() + TEST_BUCKET_NAME_BASE + suffix.c_str();
+        Aws::StringStream s;
+        s << Aws::Testing::GetAwsResourcePrefix() << TEST_BUCKET_NAME_BASE << suffix;
+        return Aws::Utils::StringUtils::ToLower(s.str().c_str());
     }
 
     static bool AreFilesSame(const Aws::String& fileName, const Aws::String& fileName2)
