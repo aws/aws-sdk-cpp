@@ -588,7 +588,7 @@ namespace
             std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>("TestKeysWithCrazyCharacterSets");
             *objectStream << "Test Object";
             objectStream->flush();
-            putObjectRequest.SetBody(objectStream);			
+            putObjectRequest.SetBody(objectStream);
             putObjectRequest.SetKey(unicodekey);
 
             PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
@@ -625,7 +625,7 @@ namespace
             std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>("TestKeysWithCrazyCharacterSets");
             *objectStream << "Test Object";
             objectStream->flush();
-            putObjectRequest.SetBody(objectStream);			
+            putObjectRequest.SetBody(objectStream);
             putObjectRequest.SetKey(URIESCAPE_KEY);
 
             PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
@@ -654,7 +654,7 @@ namespace
             ASSERT_TRUE(deleteObjectOutcome.IsSuccess());
         }
 
-        WaitForBucketToEmpty(fullBucketName);	
+        WaitForBucketToEmpty(fullBucketName);
     }
 
     TEST_F(BucketAndObjectOperationTest, TestObjectOperationsWithPresignedUrls)
@@ -792,6 +792,20 @@ namespace
         GetObjectRequest getObjectRequest;
         getObjectRequest.SetBucket(fullBucketName);
         getObjectRequest.SetKey(multipartKeyName);
+        // This is to verify that user specified additional query strings will be in the URI and won't affect current operation.
+        // Verified via integration test result that operation is not affected. And log shows query is attached to URI.
+        Aws::Map<Aws::String, Aws::String> queries;
+        queries.emplace("x-key1", "value1");
+        queries.emplace("x-key2", "value2");
+        getObjectRequest.SetCustomizedAccessLogTag(queries);
+        getObjectRequest.AddCustomizedAccessLogTag("x-key3", "value3");
+
+        // This shouldn't be in URI query string
+        getObjectRequest.AddCustomizedAccessLogTag("y-whatever-you-set", "this-will-not-appear-in-uri");
+
+        URI uri("http://test.com/");
+        getObjectRequest.AddQueryStringParameters(uri);
+        ASSERT_STREQ("?x-key1=value1&x-key2=value2&x-key3=value3", uri.GetQueryString().c_str());
 
         GetObjectOutcome getObjectOutcome = Client->GetObject(getObjectRequest);
         ASSERT_TRUE(getObjectOutcome.IsSuccess());

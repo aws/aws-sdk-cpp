@@ -102,6 +102,49 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
                     .forEach(enumEntry -> locationConstraints.getEnumValues().add(enumEntry));
         }
 
+        // Customized Log Information
+        Shape logTagKeyShape = new Shape();
+        logTagKeyShape.setName("customizedAccessLogTagKey");
+        logTagKeyShape.setType("string");
+        logTagKeyShape.setReferenced(true);
+        HashSet<String> keyReferencedBy = new HashSet<String>();
+        logTagKeyShape.setReferencedBy(keyReferencedBy);
+        ShapeMember shapeMemberKey = new ShapeMember();
+        shapeMemberKey.setShape(logTagKeyShape);
+
+        Shape logTagValShape = new Shape();
+        logTagValShape.setName("customizedAccessLogTagVal");
+        logTagValShape.setType("string");
+        logTagValShape.setReferenced(true);
+        HashSet<String> valReferencedBy = new HashSet<String>();
+        logTagValShape.setReferencedBy(valReferencedBy);
+        ShapeMember shapeMemberVal = new ShapeMember();
+        shapeMemberVal.setShape(logTagValShape);
+
+        Shape logTagShape = new Shape();
+        logTagShape.setName("customizedAccessLogTag");
+        logTagShape.setType("map");
+        logTagShape.setReferenced(true);
+        HashSet<String> tagReferencedBy = new HashSet<String>();
+        logTagShape.setReferencedBy(tagReferencedBy);
+        logTagKeyShape.getReferencedBy().add(logTagShape.getName());
+        logTagValShape.getReferencedBy().add(logTagShape.getName());
+        logTagShape.setMapKey(shapeMemberKey);
+        logTagShape.setMapValue(shapeMemberVal);
+
+        ShapeMember shapeMemberTag = new ShapeMember();
+        shapeMemberTag.setLocation("querystring");
+        shapeMemberTag.setCustomizedQuery(true);
+        shapeMemberTag.setShape(logTagShape);
+
+        serviceModel.getOperations().values().forEach(operationEntry -> {
+            if (operationEntry.getRequest() != null) {
+                operationEntry.getRequest().getShape().getMembers().put(logTagShape.getName(), shapeMemberTag);
+                operationEntry.getRequest().getShape().setCustomizedQuery(shapeMemberTag);
+                logTagShape.getReferencedBy().add(operationEntry.getRequest().getShape().getName());
+            }
+        });
+
         return super.generateSourceFiles(serviceModel);
     }
 

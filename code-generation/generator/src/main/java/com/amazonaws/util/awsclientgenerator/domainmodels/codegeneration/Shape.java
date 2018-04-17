@@ -33,6 +33,7 @@ public class Shape {
     private ShapeMember listMember;
     private ShapeMember mapKey;
     private ShapeMember mapValue;
+    private ShapeMember customizedQuery;
     private String max;
     private String min;
     private String documentation;
@@ -101,6 +102,7 @@ public class Shape {
     }
 
     public boolean hasStreamMembers() {
+      if (members == null) return false;
       return members.values().parallelStream()
               .anyMatch(member -> member.isStreaming()) || (payload != null && members.get(payload) != null && !members.get(payload).getShape().isStructure() && !members.get(payload).getShape().isList());
     }

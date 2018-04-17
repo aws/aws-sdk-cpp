@@ -215,6 +215,7 @@ namespace Aws
                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) { self->HandleListObjectsResponse(client, request, outcome, context); };
 
             Aws::S3::Model::ListObjectsV2Request request;
+            request.SetCustomizedAccessLogTag(m_transferConfig.customizedAccessLogTag);
             request.WithBucket(bucketName)
                 .WithPrefix(prefix);
 
@@ -247,6 +248,7 @@ namespace Aws
             if (!isRetry)
             {
                 Aws::S3::Model::CreateMultipartUploadRequest createMultipartRequest = m_transferConfig.createMultipartUploadTemplate;
+                createMultipartRequest.SetCustomizedAccessLogTag(m_transferConfig.customizedAccessLogTag);
                 createMultipartRequest.WithBucket(handle->GetBucketName());
                 createMultipartRequest.WithContentType(handle->GetContentType());
                 createMultipartRequest.WithKey(handle->GetKey());
@@ -311,6 +313,7 @@ namespace Aws
                     auto self = shared_from_this(); // keep transfer manager alive until all callbacks are finished.
                     PartPointer partPtr = partsIter->second;
                     Aws::S3::Model::UploadPartRequest uploadPartRequest = m_transferConfig.uploadPartTemplate;
+                    uploadPartRequest.SetCustomizedAccessLogTag(m_transferConfig.customizedAccessLogTag);
                     uploadPartRequest.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
                     uploadPartRequest.SetDataSentEventHandler([self, handle, partPtr](const Aws::Http::HttpRequest*, long long amount){ partPtr->OnDataTransferred(amount, handle); self->TriggerUploadProgressCallback(handle); });
                     uploadPartRequest.SetRequestRetryHandler([partPtr](const AmazonWebServiceRequest&){ partPtr->Reset(); });
@@ -380,6 +383,7 @@ namespace Aws
             TriggerTransferStatusUpdatedCallback(handle);
 
             auto putObjectRequest = m_transferConfig.putObjectTemplate;
+            putObjectRequest.SetCustomizedAccessLogTag(m_transferConfig.customizedAccessLogTag);
             putObjectRequest.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
             putObjectRequest.WithBucket(handle->GetBucketName())
                 .WithKey(handle->GetKey())                
@@ -476,6 +480,7 @@ namespace Aws
                     }
 
                     Aws::S3::Model::CompleteMultipartUploadRequest completeMultipartUploadRequest;
+                    completeMultipartUploadRequest.SetCustomizedAccessLogTag(m_transferConfig.customizedAccessLogTag);
                     completeMultipartUploadRequest.SetContinueRequestHandler([=](const Aws::Http::HttpRequest*) { return transferContext->handle->ShouldContinue(); });
                     completeMultipartUploadRequest.WithBucket(transferContext->handle->GetBucketName())
                         .WithKey(transferContext->handle->GetKey())
@@ -567,6 +572,7 @@ namespace Aws
 
             auto partState = queuedParts.begin()->second;
             Aws::S3::Model::GetObjectRequest request;
+            request.SetCustomizedAccessLogTag(m_transferConfig.customizedAccessLogTag);
             request.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
             request.WithBucket(handle->GetBucketName())
                    .WithKey(handle->GetKey());
@@ -624,6 +630,7 @@ namespace Aws
             if (!isRetry)
             {
                 Aws::S3::Model::HeadObjectRequest headObjectRequest;
+                headObjectRequest.SetCustomizedAccessLogTag(m_transferConfig.customizedAccessLogTag);
                 headObjectRequest.WithBucket(handle->GetBucketName())
                                  .WithKey(handle->GetKey());
 
@@ -718,6 +725,7 @@ namespace Aws
                     partState->SetDownloadBuffer(buffer);
 
                     Aws::S3::Model::GetObjectRequest getObjectRangeRequest;
+                    getObjectRangeRequest.SetCustomizedAccessLogTag(m_transferConfig.customizedAccessLogTag);
                     getObjectRangeRequest.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
                     getObjectRangeRequest.SetBucket(handle->GetBucketName());
                     getObjectRangeRequest.WithKey(handle->GetKey());
@@ -843,6 +851,7 @@ namespace Aws
             if (canceledHandle->GetStatus() == TransferStatus::CANCELED)
             {
                 Aws::S3::Model::AbortMultipartUploadRequest abortMultipartUploadRequest;
+                abortMultipartUploadRequest.SetCustomizedAccessLogTag(m_transferConfig.customizedAccessLogTag);
                 abortMultipartUploadRequest.WithBucket(canceledHandle->GetBucketName())
                     .WithKey(canceledHandle->GetKey())
                     .WithUploadId(canceledHandle->GetMultiPartId());

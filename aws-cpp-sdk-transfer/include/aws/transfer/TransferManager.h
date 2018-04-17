@@ -107,6 +107,13 @@ namespace Aws
              * Callback to receive all errors that are thrown over the course of a transfer.
              */
             ErrorCallback errorCallback;
+            /**
+             * To support Customer Access Log Information when access S3. 
+             * https://docs.aws.amazon.com/AmazonS3/latest/dev/LogFormat.html
+             * Note: query string key not started with "x-" will be filtered out.
+             * key/val of map entries will be key/val of query strings.
+             */
+            Aws::Map<Aws::String, Aws::String> customizedAccessLogTag;
         };        
 
         /**

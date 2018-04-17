@@ -552,8 +552,11 @@ TEST_F(TransferTests, TransferManager_SinglePartUploadTest)
 
     TransferManagerConfiguration transferManagerConfig(m_executor.get());
     transferManagerConfig.s3Client = m_s3Client;
+    Aws::Map<Aws::String, Aws::String> queries;
+    queries.emplace("x-key", "value");
+    queries.emplace("y-key", "value");
+    transferManagerConfig.customizedAccessLogTag = queries;
     auto transferManager = TransferManager::Create(transferManagerConfig);
-
 
     // Test with default behavior of using file name as key
     auto requestPtr = transferManager->UploadFile(testFileName, GetTestBucketName(), TEST_FILE_KEY, 
