@@ -35,7 +35,7 @@ namespace Aws
 
     namespace Auth
     {
-        static int REFRESH_THRESHOLD = 1000 * 60 * 15;
+        static int REFRESH_THRESHOLD = 1000 * 60 * 5;
 
         /**
          * Simple data object around aws credentials
@@ -243,13 +243,13 @@ namespace Aws
         public:
 
             /**
-            * Initializes with refreshRateMs as the frequency at which the file is reparsed in milliseconds. Defaults to 15 minutes.
+            * Initializes with refreshRateMs as the frequency at which the file is reparsed in milliseconds. Defaults to 5 minutes.
             */
             ProfileConfigFileAWSCredentialsProvider(long refreshRateMs = REFRESH_THRESHOLD);
 
             /**
             * Initializes with a profile override and
-            * refreshRateMs as the frequency at which the file is reparsed in milliseconds. Defaults to 15 minutes.
+            * refreshRateMs as the frequency at which the file is reparsed in milliseconds. Defaults to 5 minutes.
             */
             ProfileConfigFileAWSCredentialsProvider(const char* profile, long refreshRateMs = REFRESH_THRESHOLD);
 
@@ -296,13 +296,13 @@ namespace Aws
         {
         public:
             /**
-             * Initializes the provider to refresh credentials form the EC2 instance metadata service every 15 minutes.
+             * Initializes the provider to refresh credentials form the EC2 instance metadata service every 5 minutes.
              * Constructs an EC2MetadataClient using the default http stack (most likely what you want).
              */
             InstanceProfileCredentialsProvider(long refreshRateMs = REFRESH_THRESHOLD);
 
             /**
-             * Initializes the provider to refresh credentials form the EC2 instance metadata service every 15 minutes,
+             * Initializes the provider to refresh credentials form the EC2 instance metadata service every 5 minutes,
              * uses a supplied EC2MetadataClient.
              */
             InstanceProfileCredentialsProvider(const std::shared_ptr<Aws::Config::EC2InstanceProfileConfigLoader>&, long refreshRateMs = REFRESH_THRESHOLD);
@@ -330,7 +330,7 @@ namespace Aws
         {
         public:
             /**
-             * Initializes the provider to retrieve credentials from the ECS metadata service every 15 minutes,
+             * Initializes the provider to retrieve credentials from the ECS metadata service every 5 minutes,
              * or before it expires.
              * @param resourcePath A path appended to the metadata service endpoint.
              * @param refreshRateMs The number of milliseconds after which the credentials will be fetched again.
@@ -338,7 +338,7 @@ namespace Aws
             TaskRoleCredentialsProvider(const char* resourcePath, long refreshRateMs = REFRESH_THRESHOLD);
 
             /**
-             * Initializes the provider to retrieve credentials from a provided endpoint every 15 minutes or before it
+             * Initializes the provider to retrieve credentials from a provided endpoint every 5 minutes or before it
              * expires.
              * @param endpoint The full URI to resolve to get credentials.
              * @param token An optional authorization token passed to the URI via the 'Authorization' HTTP header.
