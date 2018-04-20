@@ -107,10 +107,12 @@ namespace Model
    * <p>The Cost Explorer API allows you to programmatically query your cost and
    * usage data. You can query for aggregated data such as total monthly costs or
    * total daily usage. You can also query for granular data, such as the number of
-   * daily write operations for DynamoDB database tables in your production
+   * daily write operations for Amazon DynamoDB database tables in your production
    * environment. </p> <p>Service Endpoint</p> <p>The Cost Explorer API provides the
    * following endpoint:</p> <ul> <li> <p>https://ce.us-east-1.amazonaws.com</p>
-   * </li> </ul>
+   * </li> </ul> <p>For information about costs associated with the Cost Explorer
+   * API, see <a href="https://aws.amazon.com/aws-cost-management/pricing/">AWS Cost
+   * Management Pricing</a>.</p>
    */
   class AWS_COSTEXPLORER_API CostExplorerClient : public Aws::Client::AWSJsonClient
   {
@@ -191,7 +193,7 @@ namespace Model
         virtual void GetCostAndUsageAsync(const Model::GetCostAndUsageRequest& request, const GetCostAndUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves all available filter values for a specific filter over a period of
+         * <p>Retrieves all available filter values for a specified filter over a period of
          * time. You can search the dimension values for an arbitrary string.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetDimensionValues">AWS
@@ -200,7 +202,7 @@ namespace Model
         virtual Model::GetDimensionValuesOutcome GetDimensionValues(const Model::GetDimensionValuesRequest& request) const;
 
         /**
-         * <p>Retrieves all available filter values for a specific filter over a period of
+         * <p>Retrieves all available filter values for a specified filter over a period of
          * time. You can search the dimension values for an arbitrary string.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetDimensionValues">AWS
@@ -211,7 +213,7 @@ namespace Model
         virtual Model::GetDimensionValuesOutcomeCallable GetDimensionValuesCallable(const Model::GetDimensionValuesRequest& request) const;
 
         /**
-         * <p>Retrieves all available filter values for a specific filter over a period of
+         * <p>Retrieves all available filter values for a specified filter over a period of
          * time. You can search the dimension values for an arbitrary string.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetDimensionValues">AWS
@@ -228,10 +230,13 @@ namespace Model
          * reservation. An organization's master account can see the coverage of the
          * associated member accounts. For any time period, you can filter data about
          * reservation usage by the following dimensions:</p> <ul> <li> <p>AZ</p> </li>
-         * <li> <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
-         * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TENANCY</p> </li> </ul>
-         * <p>To determine valid values for a dimension, use the
-         * <code>GetDimensionValues</code> operation. </p><p><h3>See Also:</h3>   <a
+         * <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
+         * <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
+         * <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li>
+         * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>SERVICE</p> </li> <li>
+         * <p>TAG</p> </li> <li> <p>TENANCY</p> </li> </ul> <p>To determine valid values
+         * for a dimension, use the <code>GetDimensionValues</code> operation.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationCoverage">AWS
          * API Reference</a></p>
          */
@@ -244,10 +249,13 @@ namespace Model
          * reservation. An organization's master account can see the coverage of the
          * associated member accounts. For any time period, you can filter data about
          * reservation usage by the following dimensions:</p> <ul> <li> <p>AZ</p> </li>
-         * <li> <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
-         * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TENANCY</p> </li> </ul>
-         * <p>To determine valid values for a dimension, use the
-         * <code>GetDimensionValues</code> operation. </p><p><h3>See Also:</h3>   <a
+         * <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
+         * <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
+         * <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li>
+         * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>SERVICE</p> </li> <li>
+         * <p>TAG</p> </li> <li> <p>TENANCY</p> </li> </ul> <p>To determine valid values
+         * for a dimension, use the <code>GetDimensionValues</code> operation.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationCoverage">AWS
          * API Reference</a></p>
          *
@@ -262,10 +270,13 @@ namespace Model
          * reservation. An organization's master account can see the coverage of the
          * associated member accounts. For any time period, you can filter data about
          * reservation usage by the following dimensions:</p> <ul> <li> <p>AZ</p> </li>
-         * <li> <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
-         * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TENANCY</p> </li> </ul>
-         * <p>To determine valid values for a dimension, use the
-         * <code>GetDimensionValues</code> operation. </p><p><h3>See Also:</h3>   <a
+         * <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
+         * <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
+         * <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li>
+         * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>SERVICE</p> </li> <li>
+         * <p>TAG</p> </li> <li> <p>TENANCY</p> </li> </ul> <p>To determine valid values
+         * for a dimension, use the <code>GetDimensionValues</code> operation.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationCoverage">AWS
          * API Reference</a></p>
          *
@@ -347,24 +358,22 @@ namespace Model
         virtual void GetReservationPurchaseRecommendationAsync(const Model::GetReservationPurchaseRecommendationRequest& request, const GetReservationPurchaseRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>You can retrieve the reservation utilization for your account. Master
-         * accounts in an organization in AWS Organizations have access to their associated
-         * member accounts. You can filter data by dimensions in a time period. You can use
-         * <code>GetDimensionValues</code> to determine the possible dimension values.
-         * Currently, you can group only by <code>SUBSCRIPTION_ID</code>. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the reservation utilization for your account. Master accounts in an
+         * organization have access to member accounts. You can filter data by dimensions
+         * in a time period. You can use <code>GetDimensionValues</code> to determine the
+         * possible dimension values. Currently, you can group only by
+         * <code>SUBSCRIPTION_ID</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationUtilization">AWS
          * API Reference</a></p>
          */
         virtual Model::GetReservationUtilizationOutcome GetReservationUtilization(const Model::GetReservationUtilizationRequest& request) const;
 
         /**
-         * <p>You can retrieve the reservation utilization for your account. Master
-         * accounts in an organization in AWS Organizations have access to their associated
-         * member accounts. You can filter data by dimensions in a time period. You can use
-         * <code>GetDimensionValues</code> to determine the possible dimension values.
-         * Currently, you can group only by <code>SUBSCRIPTION_ID</code>. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the reservation utilization for your account. Master accounts in an
+         * organization have access to member accounts. You can filter data by dimensions
+         * in a time period. You can use <code>GetDimensionValues</code> to determine the
+         * possible dimension values. Currently, you can group only by
+         * <code>SUBSCRIPTION_ID</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationUtilization">AWS
          * API Reference</a></p>
          *
@@ -373,12 +382,11 @@ namespace Model
         virtual Model::GetReservationUtilizationOutcomeCallable GetReservationUtilizationCallable(const Model::GetReservationUtilizationRequest& request) const;
 
         /**
-         * <p>You can retrieve the reservation utilization for your account. Master
-         * accounts in an organization in AWS Organizations have access to their associated
-         * member accounts. You can filter data by dimensions in a time period. You can use
-         * <code>GetDimensionValues</code> to determine the possible dimension values.
-         * Currently, you can group only by <code>SUBSCRIPTION_ID</code>. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the reservation utilization for your account. Master accounts in an
+         * organization have access to member accounts. You can filter data by dimensions
+         * in a time period. You can use <code>GetDimensionValues</code> to determine the
+         * possible dimension values. Currently, you can group only by
+         * <code>SUBSCRIPTION_ID</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationUtilization">AWS
          * API Reference</a></p>
          *
@@ -387,17 +395,17 @@ namespace Model
         virtual void GetReservationUtilizationAsync(const Model::GetReservationUtilizationRequest& request, const GetReservationUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>You can query for available tag keys and tag values for a specified period.
-         * You can search the tag values for an arbitrary string. </p><p><h3>See Also:</h3>
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetTags">AWS API
+         * <p>Queries for available tag keys and tag values for a specified period. You can
+         * search the tag values for an arbitrary string. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetTags">AWS API
          * Reference</a></p>
          */
         virtual Model::GetTagsOutcome GetTags(const Model::GetTagsRequest& request) const;
 
         /**
-         * <p>You can query for available tag keys and tag values for a specified period.
-         * You can search the tag values for an arbitrary string. </p><p><h3>See Also:</h3>
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetTags">AWS API
+         * <p>Queries for available tag keys and tag values for a specified period. You can
+         * search the tag values for an arbitrary string. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetTags">AWS API
          * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -405,9 +413,9 @@ namespace Model
         virtual Model::GetTagsOutcomeCallable GetTagsCallable(const Model::GetTagsRequest& request) const;
 
         /**
-         * <p>You can query for available tag keys and tag values for a specified period.
-         * You can search the tag values for an arbitrary string. </p><p><h3>See Also:</h3>
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetTags">AWS API
+         * <p>Queries for available tag keys and tag values for a specified period. You can
+         * search the tag values for an arbitrary string. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetTags">AWS API
          * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.

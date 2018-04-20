@@ -39,6 +39,7 @@
 #include <aws/ssm/model/DeleteActivationRequest.h>
 #include <aws/ssm/model/DeleteAssociationRequest.h>
 #include <aws/ssm/model/DeleteDocumentRequest.h>
+#include <aws/ssm/model/DeleteInventoryRequest.h>
 #include <aws/ssm/model/DeleteMaintenanceWindowRequest.h>
 #include <aws/ssm/model/DeleteParameterRequest.h>
 #include <aws/ssm/model/DeleteParametersRequest.h>
@@ -62,6 +63,7 @@
 #include <aws/ssm/model/DescribeInstancePatchStatesRequest.h>
 #include <aws/ssm/model/DescribeInstancePatchStatesForPatchGroupRequest.h>
 #include <aws/ssm/model/DescribeInstancePatchesRequest.h>
+#include <aws/ssm/model/DescribeInventoryDeletionsRequest.h>
 #include <aws/ssm/model/DescribeMaintenanceWindowExecutionTaskInvocationsRequest.h>
 #include <aws/ssm/model/DescribeMaintenanceWindowExecutionTasksRequest.h>
 #include <aws/ssm/model/DescribeMaintenanceWindowExecutionsRequest.h>
@@ -607,6 +609,41 @@ void SSMClient::DeleteDocumentAsync(const DeleteDocumentRequest& request, const 
 void SSMClient::DeleteDocumentAsyncHelper(const DeleteDocumentRequest& request, const DeleteDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteDocument(request), context);
+}
+
+DeleteInventoryOutcome SSMClient::DeleteInventory(const DeleteInventoryRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteInventoryOutcome(DeleteInventoryResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteInventoryOutcome(outcome.GetError());
+  }
+}
+
+DeleteInventoryOutcomeCallable SSMClient::DeleteInventoryCallable(const DeleteInventoryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteInventoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteInventory(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::DeleteInventoryAsync(const DeleteInventoryRequest& request, const DeleteInventoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteInventoryAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::DeleteInventoryAsyncHelper(const DeleteInventoryRequest& request, const DeleteInventoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteInventory(request), context);
 }
 
 DeleteMaintenanceWindowOutcome SSMClient::DeleteMaintenanceWindow(const DeleteMaintenanceWindowRequest& request) const
@@ -1412,6 +1449,41 @@ void SSMClient::DescribeInstancePatchesAsync(const DescribeInstancePatchesReques
 void SSMClient::DescribeInstancePatchesAsyncHelper(const DescribeInstancePatchesRequest& request, const DescribeInstancePatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeInstancePatches(request), context);
+}
+
+DescribeInventoryDeletionsOutcome SSMClient::DescribeInventoryDeletions(const DescribeInventoryDeletionsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeInventoryDeletionsOutcome(DescribeInventoryDeletionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeInventoryDeletionsOutcome(outcome.GetError());
+  }
+}
+
+DescribeInventoryDeletionsOutcomeCallable SSMClient::DescribeInventoryDeletionsCallable(const DescribeInventoryDeletionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeInventoryDeletionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeInventoryDeletions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::DescribeInventoryDeletionsAsync(const DescribeInventoryDeletionsRequest& request, const DescribeInventoryDeletionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeInventoryDeletionsAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::DescribeInventoryDeletionsAsyncHelper(const DescribeInventoryDeletionsRequest& request, const DescribeInventoryDeletionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeInventoryDeletions(request), context);
 }
 
 DescribeMaintenanceWindowExecutionTaskInvocationsOutcome SSMClient::DescribeMaintenanceWindowExecutionTaskInvocations(const DescribeMaintenanceWindowExecutionTaskInvocationsRequest& request) const

@@ -34,7 +34,8 @@ namespace Model
     REMOTE_DEBUG_ENABLED,
     APPIUM_VERSION,
     INSTANCE_ARN,
-    INSTANCE_LABELS
+    INSTANCE_LABELS,
+    FLEET_TYPE
   };
 
 namespace DeviceAttributeMapper

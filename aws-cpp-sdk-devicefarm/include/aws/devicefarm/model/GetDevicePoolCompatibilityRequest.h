@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devicefarm/model/TestType.h>
 #include <aws/devicefarm/model/ScheduleRunTest.h>
+#include <aws/devicefarm/model/ScheduleRunConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -243,6 +244,32 @@ namespace Model
      */
     inline GetDevicePoolCompatibilityRequest& WithTest(ScheduleRunTest&& value) { SetTest(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An object containing information about the settings for a run.</p>
+     */
+    inline const ScheduleRunConfiguration& GetConfiguration() const{ return m_configuration; }
+
+    /**
+     * <p>An object containing information about the settings for a run.</p>
+     */
+    inline void SetConfiguration(const ScheduleRunConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
+
+    /**
+     * <p>An object containing information about the settings for a run.</p>
+     */
+    inline void SetConfiguration(ScheduleRunConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
+
+    /**
+     * <p>An object containing information about the settings for a run.</p>
+     */
+    inline GetDevicePoolCompatibilityRequest& WithConfiguration(const ScheduleRunConfiguration& value) { SetConfiguration(value); return *this;}
+
+    /**
+     * <p>An object containing information about the settings for a run.</p>
+     */
+    inline GetDevicePoolCompatibilityRequest& WithConfiguration(ScheduleRunConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_devicePoolArn;
@@ -256,6 +283,9 @@ namespace Model
 
     ScheduleRunTest m_test;
     bool m_testHasBeenSet;
+
+    ScheduleRunConfiguration m_configuration;
+    bool m_configurationHasBeenSet;
   };
 
 } // namespace Model

@@ -49,51 +49,37 @@ namespace Model
 
 
     /**
-     * <p>Specifies the friendly name of the new secret. The secret name can consist of
-     * uppercase letters, lowercase letters, digits, and any of the following
-     * characters: /_+=.@-    Spaces are not permitted.</p>
+     * <p>Specifies the friendly name of the new secret.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Specifies the friendly name of the new secret. The secret name can consist of
-     * uppercase letters, lowercase letters, digits, and any of the following
-     * characters: /_+=.@-    Spaces are not permitted.</p>
+     * <p>Specifies the friendly name of the new secret.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Specifies the friendly name of the new secret. The secret name can consist of
-     * uppercase letters, lowercase letters, digits, and any of the following
-     * characters: /_+=.@-    Spaces are not permitted.</p>
+     * <p>Specifies the friendly name of the new secret.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Specifies the friendly name of the new secret. The secret name can consist of
-     * uppercase letters, lowercase letters, digits, and any of the following
-     * characters: /_+=.@-    Spaces are not permitted.</p>
+     * <p>Specifies the friendly name of the new secret.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Specifies the friendly name of the new secret. The secret name can consist of
-     * uppercase letters, lowercase letters, digits, and any of the following
-     * characters: /_+=.@-    Spaces are not permitted.</p>
+     * <p>Specifies the friendly name of the new secret.</p>
      */
     inline CreateSecretRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Specifies the friendly name of the new secret. The secret name can consist of
-     * uppercase letters, lowercase letters, digits, and any of the following
-     * characters: /_+=.@-    Spaces are not permitted.</p>
+     * <p>Specifies the friendly name of the new secret.</p>
      */
     inline CreateSecretRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the friendly name of the new secret. The secret name can consist of
-     * uppercase letters, lowercase letters, digits, and any of the following
-     * characters: /_+=.@-    Spaces are not permitted.</p>
+     * <p>Specifies the friendly name of the new secret.</p>
      */
     inline CreateSecretRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -105,8 +91,8 @@ namespace Model
      * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes as the value for this parameter in the request.
-     * If you don't use the SDK and instead generate a raw HTTP request to the AWS
-     * Secrets Manager service endpoint, then you must generate a
+     * If you don't use the SDK and instead generate a raw HTTP request to the Secrets
+     * Manager service endpoint, then you must generate a
      * <code>ClientRequestToken</code> yourself for the new version and include that
      * value in the request.</p> </note> <p>This value helps ensure idempotency.
      * Secrets Manager uses this value to prevent the accidental creation of duplicate
@@ -135,8 +121,8 @@ namespace Model
      * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes as the value for this parameter in the request.
-     * If you don't use the SDK and instead generate a raw HTTP request to the AWS
-     * Secrets Manager service endpoint, then you must generate a
+     * If you don't use the SDK and instead generate a raw HTTP request to the Secrets
+     * Manager service endpoint, then you must generate a
      * <code>ClientRequestToken</code> yourself for the new version and include that
      * value in the request.</p> </note> <p>This value helps ensure idempotency.
      * Secrets Manager uses this value to prevent the accidental creation of duplicate
@@ -165,8 +151,8 @@ namespace Model
      * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes as the value for this parameter in the request.
-     * If you don't use the SDK and instead generate a raw HTTP request to the AWS
-     * Secrets Manager service endpoint, then you must generate a
+     * If you don't use the SDK and instead generate a raw HTTP request to the Secrets
+     * Manager service endpoint, then you must generate a
      * <code>ClientRequestToken</code> yourself for the new version and include that
      * value in the request.</p> </note> <p>This value helps ensure idempotency.
      * Secrets Manager uses this value to prevent the accidental creation of duplicate
@@ -195,8 +181,8 @@ namespace Model
      * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes as the value for this parameter in the request.
-     * If you don't use the SDK and instead generate a raw HTTP request to the AWS
-     * Secrets Manager service endpoint, then you must generate a
+     * If you don't use the SDK and instead generate a raw HTTP request to the Secrets
+     * Manager service endpoint, then you must generate a
      * <code>ClientRequestToken</code> yourself for the new version and include that
      * value in the request.</p> </note> <p>This value helps ensure idempotency.
      * Secrets Manager uses this value to prevent the accidental creation of duplicate
@@ -225,8 +211,8 @@ namespace Model
      * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes as the value for this parameter in the request.
-     * If you don't use the SDK and instead generate a raw HTTP request to the AWS
-     * Secrets Manager service endpoint, then you must generate a
+     * If you don't use the SDK and instead generate a raw HTTP request to the Secrets
+     * Manager service endpoint, then you must generate a
      * <code>ClientRequestToken</code> yourself for the new version and include that
      * value in the request.</p> </note> <p>This value helps ensure idempotency.
      * Secrets Manager uses this value to prevent the accidental creation of duplicate
@@ -255,8 +241,8 @@ namespace Model
      * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes as the value for this parameter in the request.
-     * If you don't use the SDK and instead generate a raw HTTP request to the AWS
-     * Secrets Manager service endpoint, then you must generate a
+     * If you don't use the SDK and instead generate a raw HTTP request to the Secrets
+     * Manager service endpoint, then you must generate a
      * <code>ClientRequestToken</code> yourself for the new version and include that
      * value in the request.</p> </note> <p>This value helps ensure idempotency.
      * Secrets Manager uses this value to prevent the accidental creation of duplicate
@@ -285,8 +271,8 @@ namespace Model
      * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes as the value for this parameter in the request.
-     * If you don't use the SDK and instead generate a raw HTTP request to the AWS
-     * Secrets Manager service endpoint, then you must generate a
+     * If you don't use the SDK and instead generate a raw HTTP request to the Secrets
+     * Manager service endpoint, then you must generate a
      * <code>ClientRequestToken</code> yourself for the new version and include that
      * value in the request.</p> </note> <p>This value helps ensure idempotency.
      * Secrets Manager uses this value to prevent the accidental creation of duplicate
@@ -351,8 +337,8 @@ namespace Model
      * <code>SecretBinary</code> values in the versions stored in this secret.</p>
      * <p>If you don't specify this value, then Secrets Manager defaults to using the
      * AWS account's default CMK (the one named <code>aws/secretsmanager</code>). If a
-     * KMS CMK with that name doesn't yet exist, then AWS Secrets Manager creates it
-     * for you automatically the first time it needs to encrypt a version's
+     * KMS CMK with that name doesn't yet exist, then Secrets Manager creates it for
+     * you automatically the first time it needs to encrypt a version's
      * <code>SecretString</code> or <code>SecretBinary</code> fields.</p> <important>
      * <p>You can use the account's default CMK to encrypt and decrypt only if you call
      * this operation using credentials from the same account that owns the secret. If
@@ -367,8 +353,8 @@ namespace Model
      * <code>SecretBinary</code> values in the versions stored in this secret.</p>
      * <p>If you don't specify this value, then Secrets Manager defaults to using the
      * AWS account's default CMK (the one named <code>aws/secretsmanager</code>). If a
-     * KMS CMK with that name doesn't yet exist, then AWS Secrets Manager creates it
-     * for you automatically the first time it needs to encrypt a version's
+     * KMS CMK with that name doesn't yet exist, then Secrets Manager creates it for
+     * you automatically the first time it needs to encrypt a version's
      * <code>SecretString</code> or <code>SecretBinary</code> fields.</p> <important>
      * <p>You can use the account's default CMK to encrypt and decrypt only if you call
      * this operation using credentials from the same account that owns the secret. If
@@ -383,8 +369,8 @@ namespace Model
      * <code>SecretBinary</code> values in the versions stored in this secret.</p>
      * <p>If you don't specify this value, then Secrets Manager defaults to using the
      * AWS account's default CMK (the one named <code>aws/secretsmanager</code>). If a
-     * KMS CMK with that name doesn't yet exist, then AWS Secrets Manager creates it
-     * for you automatically the first time it needs to encrypt a version's
+     * KMS CMK with that name doesn't yet exist, then Secrets Manager creates it for
+     * you automatically the first time it needs to encrypt a version's
      * <code>SecretString</code> or <code>SecretBinary</code> fields.</p> <important>
      * <p>You can use the account's default CMK to encrypt and decrypt only if you call
      * this operation using credentials from the same account that owns the secret. If
@@ -399,8 +385,8 @@ namespace Model
      * <code>SecretBinary</code> values in the versions stored in this secret.</p>
      * <p>If you don't specify this value, then Secrets Manager defaults to using the
      * AWS account's default CMK (the one named <code>aws/secretsmanager</code>). If a
-     * KMS CMK with that name doesn't yet exist, then AWS Secrets Manager creates it
-     * for you automatically the first time it needs to encrypt a version's
+     * KMS CMK with that name doesn't yet exist, then Secrets Manager creates it for
+     * you automatically the first time it needs to encrypt a version's
      * <code>SecretString</code> or <code>SecretBinary</code> fields.</p> <important>
      * <p>You can use the account's default CMK to encrypt and decrypt only if you call
      * this operation using credentials from the same account that owns the secret. If
@@ -415,8 +401,8 @@ namespace Model
      * <code>SecretBinary</code> values in the versions stored in this secret.</p>
      * <p>If you don't specify this value, then Secrets Manager defaults to using the
      * AWS account's default CMK (the one named <code>aws/secretsmanager</code>). If a
-     * KMS CMK with that name doesn't yet exist, then AWS Secrets Manager creates it
-     * for you automatically the first time it needs to encrypt a version's
+     * KMS CMK with that name doesn't yet exist, then Secrets Manager creates it for
+     * you automatically the first time it needs to encrypt a version's
      * <code>SecretString</code> or <code>SecretBinary</code> fields.</p> <important>
      * <p>You can use the account's default CMK to encrypt and decrypt only if you call
      * this operation using credentials from the same account that owns the secret. If
@@ -431,8 +417,8 @@ namespace Model
      * <code>SecretBinary</code> values in the versions stored in this secret.</p>
      * <p>If you don't specify this value, then Secrets Manager defaults to using the
      * AWS account's default CMK (the one named <code>aws/secretsmanager</code>). If a
-     * KMS CMK with that name doesn't yet exist, then AWS Secrets Manager creates it
-     * for you automatically the first time it needs to encrypt a version's
+     * KMS CMK with that name doesn't yet exist, then Secrets Manager creates it for
+     * you automatically the first time it needs to encrypt a version's
      * <code>SecretString</code> or <code>SecretBinary</code> fields.</p> <important>
      * <p>You can use the account's default CMK to encrypt and decrypt only if you call
      * this operation using credentials from the same account that owns the secret. If
@@ -447,8 +433,8 @@ namespace Model
      * <code>SecretBinary</code> values in the versions stored in this secret.</p>
      * <p>If you don't specify this value, then Secrets Manager defaults to using the
      * AWS account's default CMK (the one named <code>aws/secretsmanager</code>). If a
-     * KMS CMK with that name doesn't yet exist, then AWS Secrets Manager creates it
-     * for you automatically the first time it needs to encrypt a version's
+     * KMS CMK with that name doesn't yet exist, then Secrets Manager creates it for
+     * you automatically the first time it needs to encrypt a version's
      * <code>SecretString</code> or <code>SecretBinary</code> fields.</p> <important>
      * <p>You can use the account's default CMK to encrypt and decrypt only if you call
      * this operation using credentials from the same account that owns the secret. If
@@ -695,9 +681,9 @@ namespace Model
      * <p>(Optional) Specifies a list of user-defined tags that are attached to the
      * secret. Each tag is a "Key" and "Value" pair of strings. This operation only
      * appends tags to the existing list of tags. To remove tags, you must use
-     * <a>UntagResource</a>.</p> <important> <ul> <li> <p>AWS Secrets Manager tag key
-     * names are case sensitive. A tag with the key "ABC" is a different tag from one
-     * with key "abc".</p> </li> <li> <p>If you check tags in IAM policy
+     * <a>UntagResource</a>.</p> <important> <ul> <li> <p>Secrets Manager tag key names
+     * are case sensitive. A tag with the key "ABC" is a different tag from one with
+     * key "abc".</p> </li> <li> <p>If you check tags in IAM policy
      * <code>Condition</code> elements as part of your security strategy, then adding
      * or removing a tag can change permissions. If the successful completion of this
      * operation would result in you losing your permissions for this secret, then this
@@ -729,9 +715,9 @@ namespace Model
      * <p>(Optional) Specifies a list of user-defined tags that are attached to the
      * secret. Each tag is a "Key" and "Value" pair of strings. This operation only
      * appends tags to the existing list of tags. To remove tags, you must use
-     * <a>UntagResource</a>.</p> <important> <ul> <li> <p>AWS Secrets Manager tag key
-     * names are case sensitive. A tag with the key "ABC" is a different tag from one
-     * with key "abc".</p> </li> <li> <p>If you check tags in IAM policy
+     * <a>UntagResource</a>.</p> <important> <ul> <li> <p>Secrets Manager tag key names
+     * are case sensitive. A tag with the key "ABC" is a different tag from one with
+     * key "abc".</p> </li> <li> <p>If you check tags in IAM policy
      * <code>Condition</code> elements as part of your security strategy, then adding
      * or removing a tag can change permissions. If the successful completion of this
      * operation would result in you losing your permissions for this secret, then this
@@ -763,9 +749,9 @@ namespace Model
      * <p>(Optional) Specifies a list of user-defined tags that are attached to the
      * secret. Each tag is a "Key" and "Value" pair of strings. This operation only
      * appends tags to the existing list of tags. To remove tags, you must use
-     * <a>UntagResource</a>.</p> <important> <ul> <li> <p>AWS Secrets Manager tag key
-     * names are case sensitive. A tag with the key "ABC" is a different tag from one
-     * with key "abc".</p> </li> <li> <p>If you check tags in IAM policy
+     * <a>UntagResource</a>.</p> <important> <ul> <li> <p>Secrets Manager tag key names
+     * are case sensitive. A tag with the key "ABC" is a different tag from one with
+     * key "abc".</p> </li> <li> <p>If you check tags in IAM policy
      * <code>Condition</code> elements as part of your security strategy, then adding
      * or removing a tag can change permissions. If the successful completion of this
      * operation would result in you losing your permissions for this secret, then this
@@ -797,9 +783,9 @@ namespace Model
      * <p>(Optional) Specifies a list of user-defined tags that are attached to the
      * secret. Each tag is a "Key" and "Value" pair of strings. This operation only
      * appends tags to the existing list of tags. To remove tags, you must use
-     * <a>UntagResource</a>.</p> <important> <ul> <li> <p>AWS Secrets Manager tag key
-     * names are case sensitive. A tag with the key "ABC" is a different tag from one
-     * with key "abc".</p> </li> <li> <p>If you check tags in IAM policy
+     * <a>UntagResource</a>.</p> <important> <ul> <li> <p>Secrets Manager tag key names
+     * are case sensitive. A tag with the key "ABC" is a different tag from one with
+     * key "abc".</p> </li> <li> <p>If you check tags in IAM policy
      * <code>Condition</code> elements as part of your security strategy, then adding
      * or removing a tag can change permissions. If the successful completion of this
      * operation would result in you losing your permissions for this secret, then this
@@ -831,9 +817,9 @@ namespace Model
      * <p>(Optional) Specifies a list of user-defined tags that are attached to the
      * secret. Each tag is a "Key" and "Value" pair of strings. This operation only
      * appends tags to the existing list of tags. To remove tags, you must use
-     * <a>UntagResource</a>.</p> <important> <ul> <li> <p>AWS Secrets Manager tag key
-     * names are case sensitive. A tag with the key "ABC" is a different tag from one
-     * with key "abc".</p> </li> <li> <p>If you check tags in IAM policy
+     * <a>UntagResource</a>.</p> <important> <ul> <li> <p>Secrets Manager tag key names
+     * are case sensitive. A tag with the key "ABC" is a different tag from one with
+     * key "abc".</p> </li> <li> <p>If you check tags in IAM policy
      * <code>Condition</code> elements as part of your security strategy, then adding
      * or removing a tag can change permissions. If the successful completion of this
      * operation would result in you losing your permissions for this secret, then this
@@ -865,9 +851,9 @@ namespace Model
      * <p>(Optional) Specifies a list of user-defined tags that are attached to the
      * secret. Each tag is a "Key" and "Value" pair of strings. This operation only
      * appends tags to the existing list of tags. To remove tags, you must use
-     * <a>UntagResource</a>.</p> <important> <ul> <li> <p>AWS Secrets Manager tag key
-     * names are case sensitive. A tag with the key "ABC" is a different tag from one
-     * with key "abc".</p> </li> <li> <p>If you check tags in IAM policy
+     * <a>UntagResource</a>.</p> <important> <ul> <li> <p>Secrets Manager tag key names
+     * are case sensitive. A tag with the key "ABC" is a different tag from one with
+     * key "abc".</p> </li> <li> <p>If you check tags in IAM policy
      * <code>Condition</code> elements as part of your security strategy, then adding
      * or removing a tag can change permissions. If the successful completion of this
      * operation would result in you losing your permissions for this secret, then this
@@ -899,9 +885,9 @@ namespace Model
      * <p>(Optional) Specifies a list of user-defined tags that are attached to the
      * secret. Each tag is a "Key" and "Value" pair of strings. This operation only
      * appends tags to the existing list of tags. To remove tags, you must use
-     * <a>UntagResource</a>.</p> <important> <ul> <li> <p>AWS Secrets Manager tag key
-     * names are case sensitive. A tag with the key "ABC" is a different tag from one
-     * with key "abc".</p> </li> <li> <p>If you check tags in IAM policy
+     * <a>UntagResource</a>.</p> <important> <ul> <li> <p>Secrets Manager tag key names
+     * are case sensitive. A tag with the key "ABC" is a different tag from one with
+     * key "abc".</p> </li> <li> <p>If you check tags in IAM policy
      * <code>Condition</code> elements as part of your security strategy, then adding
      * or removing a tag can change permissions. If the successful completion of this
      * operation would result in you losing your permissions for this secret, then this

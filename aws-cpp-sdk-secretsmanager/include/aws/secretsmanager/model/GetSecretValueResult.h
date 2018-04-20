@@ -226,9 +226,9 @@ namespace Model
      * Secrets Manager stores the information as a JSON structure of key/value pairs
      * that the Lambda rotation function knows how to parse.</p> <p>If you store custom
      * information in the secret by using the <a>CreateSecret</a>, <a>UpdateSecret</a>,
-     * or <a>PutSecretValue</a> API operations instead of the AWS Secrets Manager
-     * console, or by using the <b>Other secret type</b> in the console, then you must
-     * code your Lambda rotation function to parse and interpret those values.</p>
+     * or <a>PutSecretValue</a> API operations instead of the Secrets Manager console,
+     * or by using the <b>Other secret type</b> in the console, then you must code your
+     * Lambda rotation function to parse and interpret those values.</p>
      */
     inline const Aws::String& GetSecretString() const{ return m_secretString; }
 
@@ -239,9 +239,9 @@ namespace Model
      * Secrets Manager stores the information as a JSON structure of key/value pairs
      * that the Lambda rotation function knows how to parse.</p> <p>If you store custom
      * information in the secret by using the <a>CreateSecret</a>, <a>UpdateSecret</a>,
-     * or <a>PutSecretValue</a> API operations instead of the AWS Secrets Manager
-     * console, or by using the <b>Other secret type</b> in the console, then you must
-     * code your Lambda rotation function to parse and interpret those values.</p>
+     * or <a>PutSecretValue</a> API operations instead of the Secrets Manager console,
+     * or by using the <b>Other secret type</b> in the console, then you must code your
+     * Lambda rotation function to parse and interpret those values.</p>
      */
     inline void SetSecretString(const Aws::String& value) { m_secretString = value; }
 
@@ -252,9 +252,9 @@ namespace Model
      * Secrets Manager stores the information as a JSON structure of key/value pairs
      * that the Lambda rotation function knows how to parse.</p> <p>If you store custom
      * information in the secret by using the <a>CreateSecret</a>, <a>UpdateSecret</a>,
-     * or <a>PutSecretValue</a> API operations instead of the AWS Secrets Manager
-     * console, or by using the <b>Other secret type</b> in the console, then you must
-     * code your Lambda rotation function to parse and interpret those values.</p>
+     * or <a>PutSecretValue</a> API operations instead of the Secrets Manager console,
+     * or by using the <b>Other secret type</b> in the console, then you must code your
+     * Lambda rotation function to parse and interpret those values.</p>
      */
     inline void SetSecretString(Aws::String&& value) { m_secretString = std::move(value); }
 
@@ -265,9 +265,9 @@ namespace Model
      * Secrets Manager stores the information as a JSON structure of key/value pairs
      * that the Lambda rotation function knows how to parse.</p> <p>If you store custom
      * information in the secret by using the <a>CreateSecret</a>, <a>UpdateSecret</a>,
-     * or <a>PutSecretValue</a> API operations instead of the AWS Secrets Manager
-     * console, or by using the <b>Other secret type</b> in the console, then you must
-     * code your Lambda rotation function to parse and interpret those values.</p>
+     * or <a>PutSecretValue</a> API operations instead of the Secrets Manager console,
+     * or by using the <b>Other secret type</b> in the console, then you must code your
+     * Lambda rotation function to parse and interpret those values.</p>
      */
     inline void SetSecretString(const char* value) { m_secretString.assign(value); }
 
@@ -278,9 +278,9 @@ namespace Model
      * Secrets Manager stores the information as a JSON structure of key/value pairs
      * that the Lambda rotation function knows how to parse.</p> <p>If you store custom
      * information in the secret by using the <a>CreateSecret</a>, <a>UpdateSecret</a>,
-     * or <a>PutSecretValue</a> API operations instead of the AWS Secrets Manager
-     * console, or by using the <b>Other secret type</b> in the console, then you must
-     * code your Lambda rotation function to parse and interpret those values.</p>
+     * or <a>PutSecretValue</a> API operations instead of the Secrets Manager console,
+     * or by using the <b>Other secret type</b> in the console, then you must code your
+     * Lambda rotation function to parse and interpret those values.</p>
      */
     inline GetSecretValueResult& WithSecretString(const Aws::String& value) { SetSecretString(value); return *this;}
 
@@ -291,9 +291,9 @@ namespace Model
      * Secrets Manager stores the information as a JSON structure of key/value pairs
      * that the Lambda rotation function knows how to parse.</p> <p>If you store custom
      * information in the secret by using the <a>CreateSecret</a>, <a>UpdateSecret</a>,
-     * or <a>PutSecretValue</a> API operations instead of the AWS Secrets Manager
-     * console, or by using the <b>Other secret type</b> in the console, then you must
-     * code your Lambda rotation function to parse and interpret those values.</p>
+     * or <a>PutSecretValue</a> API operations instead of the Secrets Manager console,
+     * or by using the <b>Other secret type</b> in the console, then you must code your
+     * Lambda rotation function to parse and interpret those values.</p>
      */
     inline GetSecretValueResult& WithSecretString(Aws::String&& value) { SetSecretString(std::move(value)); return *this;}
 
@@ -304,9 +304,9 @@ namespace Model
      * Secrets Manager stores the information as a JSON structure of key/value pairs
      * that the Lambda rotation function knows how to parse.</p> <p>If you store custom
      * information in the secret by using the <a>CreateSecret</a>, <a>UpdateSecret</a>,
-     * or <a>PutSecretValue</a> API operations instead of the AWS Secrets Manager
-     * console, or by using the <b>Other secret type</b> in the console, then you must
-     * code your Lambda rotation function to parse and interpret those values.</p>
+     * or <a>PutSecretValue</a> API operations instead of the Secrets Manager console,
+     * or by using the <b>Other secret type</b> in the console, then you must code your
+     * Lambda rotation function to parse and interpret those values.</p>
      */
     inline GetSecretValueResult& WithSecretString(const char* value) { SetSecretString(value); return *this;}
 

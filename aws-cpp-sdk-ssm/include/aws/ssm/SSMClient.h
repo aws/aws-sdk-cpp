@@ -33,6 +33,7 @@
 #include <aws/ssm/model/DeleteActivationResult.h>
 #include <aws/ssm/model/DeleteAssociationResult.h>
 #include <aws/ssm/model/DeleteDocumentResult.h>
+#include <aws/ssm/model/DeleteInventoryResult.h>
 #include <aws/ssm/model/DeleteMaintenanceWindowResult.h>
 #include <aws/ssm/model/DeleteParameterResult.h>
 #include <aws/ssm/model/DeleteParametersResult.h>
@@ -56,6 +57,7 @@
 #include <aws/ssm/model/DescribeInstancePatchStatesResult.h>
 #include <aws/ssm/model/DescribeInstancePatchStatesForPatchGroupResult.h>
 #include <aws/ssm/model/DescribeInstancePatchesResult.h>
+#include <aws/ssm/model/DescribeInventoryDeletionsResult.h>
 #include <aws/ssm/model/DescribeMaintenanceWindowExecutionTaskInvocationsResult.h>
 #include <aws/ssm/model/DescribeMaintenanceWindowExecutionTasksResult.h>
 #include <aws/ssm/model/DescribeMaintenanceWindowExecutionsResult.h>
@@ -175,6 +177,7 @@ namespace Model
         class DeleteActivationRequest;
         class DeleteAssociationRequest;
         class DeleteDocumentRequest;
+        class DeleteInventoryRequest;
         class DeleteMaintenanceWindowRequest;
         class DeleteParameterRequest;
         class DeleteParametersRequest;
@@ -198,6 +201,7 @@ namespace Model
         class DescribeInstancePatchStatesRequest;
         class DescribeInstancePatchStatesForPatchGroupRequest;
         class DescribeInstancePatchesRequest;
+        class DescribeInventoryDeletionsRequest;
         class DescribeMaintenanceWindowExecutionTaskInvocationsRequest;
         class DescribeMaintenanceWindowExecutionTasksRequest;
         class DescribeMaintenanceWindowExecutionsRequest;
@@ -273,6 +277,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteActivationResult, Aws::Client::AWSError<SSMErrors>> DeleteActivationOutcome;
         typedef Aws::Utils::Outcome<DeleteAssociationResult, Aws::Client::AWSError<SSMErrors>> DeleteAssociationOutcome;
         typedef Aws::Utils::Outcome<DeleteDocumentResult, Aws::Client::AWSError<SSMErrors>> DeleteDocumentOutcome;
+        typedef Aws::Utils::Outcome<DeleteInventoryResult, Aws::Client::AWSError<SSMErrors>> DeleteInventoryOutcome;
         typedef Aws::Utils::Outcome<DeleteMaintenanceWindowResult, Aws::Client::AWSError<SSMErrors>> DeleteMaintenanceWindowOutcome;
         typedef Aws::Utils::Outcome<DeleteParameterResult, Aws::Client::AWSError<SSMErrors>> DeleteParameterOutcome;
         typedef Aws::Utils::Outcome<DeleteParametersResult, Aws::Client::AWSError<SSMErrors>> DeleteParametersOutcome;
@@ -296,6 +301,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeInstancePatchStatesResult, Aws::Client::AWSError<SSMErrors>> DescribeInstancePatchStatesOutcome;
         typedef Aws::Utils::Outcome<DescribeInstancePatchStatesForPatchGroupResult, Aws::Client::AWSError<SSMErrors>> DescribeInstancePatchStatesForPatchGroupOutcome;
         typedef Aws::Utils::Outcome<DescribeInstancePatchesResult, Aws::Client::AWSError<SSMErrors>> DescribeInstancePatchesOutcome;
+        typedef Aws::Utils::Outcome<DescribeInventoryDeletionsResult, Aws::Client::AWSError<SSMErrors>> DescribeInventoryDeletionsOutcome;
         typedef Aws::Utils::Outcome<DescribeMaintenanceWindowExecutionTaskInvocationsResult, Aws::Client::AWSError<SSMErrors>> DescribeMaintenanceWindowExecutionTaskInvocationsOutcome;
         typedef Aws::Utils::Outcome<DescribeMaintenanceWindowExecutionTasksResult, Aws::Client::AWSError<SSMErrors>> DescribeMaintenanceWindowExecutionTasksOutcome;
         typedef Aws::Utils::Outcome<DescribeMaintenanceWindowExecutionsResult, Aws::Client::AWSError<SSMErrors>> DescribeMaintenanceWindowExecutionsOutcome;
@@ -371,6 +377,7 @@ namespace Model
         typedef std::future<DeleteActivationOutcome> DeleteActivationOutcomeCallable;
         typedef std::future<DeleteAssociationOutcome> DeleteAssociationOutcomeCallable;
         typedef std::future<DeleteDocumentOutcome> DeleteDocumentOutcomeCallable;
+        typedef std::future<DeleteInventoryOutcome> DeleteInventoryOutcomeCallable;
         typedef std::future<DeleteMaintenanceWindowOutcome> DeleteMaintenanceWindowOutcomeCallable;
         typedef std::future<DeleteParameterOutcome> DeleteParameterOutcomeCallable;
         typedef std::future<DeleteParametersOutcome> DeleteParametersOutcomeCallable;
@@ -394,6 +401,7 @@ namespace Model
         typedef std::future<DescribeInstancePatchStatesOutcome> DescribeInstancePatchStatesOutcomeCallable;
         typedef std::future<DescribeInstancePatchStatesForPatchGroupOutcome> DescribeInstancePatchStatesForPatchGroupOutcomeCallable;
         typedef std::future<DescribeInstancePatchesOutcome> DescribeInstancePatchesOutcomeCallable;
+        typedef std::future<DescribeInventoryDeletionsOutcome> DescribeInventoryDeletionsOutcomeCallable;
         typedef std::future<DescribeMaintenanceWindowExecutionTaskInvocationsOutcome> DescribeMaintenanceWindowExecutionTaskInvocationsOutcomeCallable;
         typedef std::future<DescribeMaintenanceWindowExecutionTasksOutcome> DescribeMaintenanceWindowExecutionTasksOutcomeCallable;
         typedef std::future<DescribeMaintenanceWindowExecutionsOutcome> DescribeMaintenanceWindowExecutionsOutcomeCallable;
@@ -472,6 +480,7 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::DeleteActivationRequest&, const Model::DeleteActivationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteActivationResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DeleteAssociationRequest&, const Model::DeleteAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAssociationResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DeleteDocumentRequest&, const Model::DeleteDocumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDocumentResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::DeleteInventoryRequest&, const Model::DeleteInventoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInventoryResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DeleteMaintenanceWindowRequest&, const Model::DeleteMaintenanceWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMaintenanceWindowResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DeleteParameterRequest&, const Model::DeleteParameterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteParameterResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DeleteParametersRequest&, const Model::DeleteParametersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteParametersResponseReceivedHandler;
@@ -495,6 +504,7 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::DescribeInstancePatchStatesRequest&, const Model::DescribeInstancePatchStatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstancePatchStatesResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DescribeInstancePatchStatesForPatchGroupRequest&, const Model::DescribeInstancePatchStatesForPatchGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstancePatchStatesForPatchGroupResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DescribeInstancePatchesRequest&, const Model::DescribeInstancePatchesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstancePatchesResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::DescribeInventoryDeletionsRequest&, const Model::DescribeInventoryDeletionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInventoryDeletionsResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DescribeMaintenanceWindowExecutionTaskInvocationsRequest&, const Model::DescribeMaintenanceWindowExecutionTaskInvocationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMaintenanceWindowExecutionTaskInvocationsResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DescribeMaintenanceWindowExecutionTasksRequest&, const Model::DescribeMaintenanceWindowExecutionTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMaintenanceWindowExecutionTasksResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DescribeMaintenanceWindowExecutionsRequest&, const Model::DescribeMaintenanceWindowExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMaintenanceWindowExecutionsResponseReceivedHandler;
@@ -1096,6 +1106,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteDocumentAsync(const Model::DeleteDocumentRequest& request, const DeleteDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Delete a custom inventory type, or the data associated with a custom
+         * Inventory type. Deleting a custom inventory type is also referred to as deleting
+         * a custom inventory schema.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteInventory">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteInventoryOutcome DeleteInventory(const Model::DeleteInventoryRequest& request) const;
+
+        /**
+         * <p>Delete a custom inventory type, or the data associated with a custom
+         * Inventory type. Deleting a custom inventory type is also referred to as deleting
+         * a custom inventory schema.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteInventory">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteInventoryOutcomeCallable DeleteInventoryCallable(const Model::DeleteInventoryRequest& request) const;
+
+        /**
+         * <p>Delete a custom inventory type, or the data associated with a custom
+         * Inventory type. Deleting a custom inventory type is also referred to as deleting
+         * a custom inventory schema.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteInventory">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteInventoryAsync(const Model::DeleteInventoryRequest& request, const DeleteInventoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a Maintenance Window.</p><p><h3>See Also:</h3>   <a
@@ -1776,6 +1817,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeInstancePatchesAsync(const Model::DescribeInstancePatchesRequest& request, const DescribeInstancePatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes a specific delete inventory operation.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInventoryDeletions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeInventoryDeletionsOutcome DescribeInventoryDeletions(const Model::DescribeInventoryDeletionsRequest& request) const;
+
+        /**
+         * <p>Describes a specific delete inventory operation.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInventoryDeletions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeInventoryDeletionsOutcomeCallable DescribeInventoryDeletionsCallable(const Model::DescribeInventoryDeletionsRequest& request) const;
+
+        /**
+         * <p>Describes a specific delete inventory operation.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInventoryDeletions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeInventoryDeletionsAsync(const Model::DescribeInventoryDeletionsRequest& request, const DescribeInventoryDeletionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the individual task executions (one per target) for a particular
@@ -3587,14 +3656,16 @@ namespace Model
 
         /**
          * <p>Modifies a task assigned to a Maintenance Window. You can't change the task
-         * type, but you can change the following values:</p> <p>Task ARN. For example, you
-         * can change a RUN_COMMAND task from AWS-RunPowerShellScript to
-         * AWS-RunShellScript.</p> <p>Service role ARN.</p> <p>Task parameters.</p> <p>Task
-         * priority.</p> <p>Task MaxConcurrency and MaxErrors.</p> <p>Log location.</p>
-         * <p>If a parameter is null, then the corresponding field is not modified. Also,
-         * if you set Replace to true, then all fields required by the
-         * RegisterTaskWithMaintenanceWindow action are required for this request. Optional
-         * fields that aren't specified are set to null.</p><p><h3>See Also:</h3>   <a
+         * type, but you can change the following values:</p> <ul> <li> <p>TaskARN. For
+         * example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to
+         * AWS-RunShellScript.</p> </li> <li> <p>ServiceRoleArn</p> </li> <li>
+         * <p>TaskInvocationParameters</p> </li> <li> <p>Priority</p> </li> <li>
+         * <p>MaxConcurrency</p> </li> <li> <p>MaxErrors</p> </li> </ul> <p>If a parameter
+         * is null, then the corresponding field is not modified. Also, if you set Replace
+         * to true, then all fields required by the
+         * <a>RegisterTaskWithMaintenanceWindow</a> action are required for this request.
+         * Optional fields that aren't specified are set to null.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTask">AWS
          * API Reference</a></p>
          */
@@ -3602,14 +3673,16 @@ namespace Model
 
         /**
          * <p>Modifies a task assigned to a Maintenance Window. You can't change the task
-         * type, but you can change the following values:</p> <p>Task ARN. For example, you
-         * can change a RUN_COMMAND task from AWS-RunPowerShellScript to
-         * AWS-RunShellScript.</p> <p>Service role ARN.</p> <p>Task parameters.</p> <p>Task
-         * priority.</p> <p>Task MaxConcurrency and MaxErrors.</p> <p>Log location.</p>
-         * <p>If a parameter is null, then the corresponding field is not modified. Also,
-         * if you set Replace to true, then all fields required by the
-         * RegisterTaskWithMaintenanceWindow action are required for this request. Optional
-         * fields that aren't specified are set to null.</p><p><h3>See Also:</h3>   <a
+         * type, but you can change the following values:</p> <ul> <li> <p>TaskARN. For
+         * example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to
+         * AWS-RunShellScript.</p> </li> <li> <p>ServiceRoleArn</p> </li> <li>
+         * <p>TaskInvocationParameters</p> </li> <li> <p>Priority</p> </li> <li>
+         * <p>MaxConcurrency</p> </li> <li> <p>MaxErrors</p> </li> </ul> <p>If a parameter
+         * is null, then the corresponding field is not modified. Also, if you set Replace
+         * to true, then all fields required by the
+         * <a>RegisterTaskWithMaintenanceWindow</a> action are required for this request.
+         * Optional fields that aren't specified are set to null.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTask">AWS
          * API Reference</a></p>
          *
@@ -3619,14 +3692,16 @@ namespace Model
 
         /**
          * <p>Modifies a task assigned to a Maintenance Window. You can't change the task
-         * type, but you can change the following values:</p> <p>Task ARN. For example, you
-         * can change a RUN_COMMAND task from AWS-RunPowerShellScript to
-         * AWS-RunShellScript.</p> <p>Service role ARN.</p> <p>Task parameters.</p> <p>Task
-         * priority.</p> <p>Task MaxConcurrency and MaxErrors.</p> <p>Log location.</p>
-         * <p>If a parameter is null, then the corresponding field is not modified. Also,
-         * if you set Replace to true, then all fields required by the
-         * RegisterTaskWithMaintenanceWindow action are required for this request. Optional
-         * fields that aren't specified are set to null.</p><p><h3>See Also:</h3>   <a
+         * type, but you can change the following values:</p> <ul> <li> <p>TaskARN. For
+         * example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to
+         * AWS-RunShellScript.</p> </li> <li> <p>ServiceRoleArn</p> </li> <li>
+         * <p>TaskInvocationParameters</p> </li> <li> <p>Priority</p> </li> <li>
+         * <p>MaxConcurrency</p> </li> <li> <p>MaxErrors</p> </li> </ul> <p>If a parameter
+         * is null, then the corresponding field is not modified. Also, if you set Replace
+         * to true, then all fields required by the
+         * <a>RegisterTaskWithMaintenanceWindow</a> action are required for this request.
+         * Optional fields that aren't specified are set to null.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTask">AWS
          * API Reference</a></p>
          *
@@ -3716,6 +3791,7 @@ namespace Model
         void DeleteActivationAsyncHelper(const Model::DeleteActivationRequest& request, const DeleteActivationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAssociationAsyncHelper(const Model::DeleteAssociationRequest& request, const DeleteAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDocumentAsyncHelper(const Model::DeleteDocumentRequest& request, const DeleteDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteInventoryAsyncHelper(const Model::DeleteInventoryRequest& request, const DeleteInventoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteMaintenanceWindowAsyncHelper(const Model::DeleteMaintenanceWindowRequest& request, const DeleteMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteParameterAsyncHelper(const Model::DeleteParameterRequest& request, const DeleteParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteParametersAsyncHelper(const Model::DeleteParametersRequest& request, const DeleteParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3739,6 +3815,7 @@ namespace Model
         void DescribeInstancePatchStatesAsyncHelper(const Model::DescribeInstancePatchStatesRequest& request, const DescribeInstancePatchStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstancePatchStatesForPatchGroupAsyncHelper(const Model::DescribeInstancePatchStatesForPatchGroupRequest& request, const DescribeInstancePatchStatesForPatchGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstancePatchesAsyncHelper(const Model::DescribeInstancePatchesRequest& request, const DescribeInstancePatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeInventoryDeletionsAsyncHelper(const Model::DescribeInventoryDeletionsRequest& request, const DescribeInventoryDeletionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMaintenanceWindowExecutionTaskInvocationsAsyncHelper(const Model::DescribeMaintenanceWindowExecutionTaskInvocationsRequest& request, const DescribeMaintenanceWindowExecutionTaskInvocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMaintenanceWindowExecutionTasksAsyncHelper(const Model::DescribeMaintenanceWindowExecutionTasksRequest& request, const DescribeMaintenanceWindowExecutionTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMaintenanceWindowExecutionsAsyncHelper(const Model::DescribeMaintenanceWindowExecutionsRequest& request, const DescribeMaintenanceWindowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -116,41 +116,41 @@ namespace Model
 
 
     /**
-     * <p>The date and time after which this secret will be deleted by AWS Secrets
-     * Manager and is no longer recoverable. This value is the date and time of the
-     * delete request plus the number of days specified in
+     * <p>The date and time after which this secret can be deleted by Secrets Manager
+     * and can no longer be restored. This value is the date and time of the delete
+     * request plus the number of days specified in
      * <code>RecoveryWindowInDays</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetDeletionDate() const{ return m_deletionDate; }
 
     /**
-     * <p>The date and time after which this secret will be deleted by AWS Secrets
-     * Manager and is no longer recoverable. This value is the date and time of the
-     * delete request plus the number of days specified in
+     * <p>The date and time after which this secret can be deleted by Secrets Manager
+     * and can no longer be restored. This value is the date and time of the delete
+     * request plus the number of days specified in
      * <code>RecoveryWindowInDays</code>.</p>
      */
     inline void SetDeletionDate(const Aws::Utils::DateTime& value) { m_deletionDate = value; }
 
     /**
-     * <p>The date and time after which this secret will be deleted by AWS Secrets
-     * Manager and is no longer recoverable. This value is the date and time of the
-     * delete request plus the number of days specified in
+     * <p>The date and time after which this secret can be deleted by Secrets Manager
+     * and can no longer be restored. This value is the date and time of the delete
+     * request plus the number of days specified in
      * <code>RecoveryWindowInDays</code>.</p>
      */
     inline void SetDeletionDate(Aws::Utils::DateTime&& value) { m_deletionDate = std::move(value); }
 
     /**
-     * <p>The date and time after which this secret will be deleted by AWS Secrets
-     * Manager and is no longer recoverable. This value is the date and time of the
-     * delete request plus the number of days specified in
+     * <p>The date and time after which this secret can be deleted by Secrets Manager
+     * and can no longer be restored. This value is the date and time of the delete
+     * request plus the number of days specified in
      * <code>RecoveryWindowInDays</code>.</p>
      */
     inline DeleteSecretResult& WithDeletionDate(const Aws::Utils::DateTime& value) { SetDeletionDate(value); return *this;}
 
     /**
-     * <p>The date and time after which this secret will be deleted by AWS Secrets
-     * Manager and is no longer recoverable. This value is the date and time of the
-     * delete request plus the number of days specified in
+     * <p>The date and time after which this secret can be deleted by Secrets Manager
+     * and can no longer be restored. This value is the date and time of the delete
+     * request plus the number of days specified in
      * <code>RecoveryWindowInDays</code>.</p>
      */
     inline DeleteSecretResult& WithDeletionDate(Aws::Utils::DateTime&& value) { SetDeletionDate(std::move(value)); return *this;}

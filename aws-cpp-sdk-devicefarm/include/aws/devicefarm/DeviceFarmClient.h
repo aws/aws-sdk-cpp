@@ -27,6 +27,7 @@
 #include <aws/devicefarm/model/CreateProjectResult.h>
 #include <aws/devicefarm/model/CreateRemoteAccessSessionResult.h>
 #include <aws/devicefarm/model/CreateUploadResult.h>
+#include <aws/devicefarm/model/CreateVPCEConfigurationResult.h>
 #include <aws/devicefarm/model/DeleteDevicePoolResult.h>
 #include <aws/devicefarm/model/DeleteInstanceProfileResult.h>
 #include <aws/devicefarm/model/DeleteNetworkProfileResult.h>
@@ -34,6 +35,7 @@
 #include <aws/devicefarm/model/DeleteRemoteAccessSessionResult.h>
 #include <aws/devicefarm/model/DeleteRunResult.h>
 #include <aws/devicefarm/model/DeleteUploadResult.h>
+#include <aws/devicefarm/model/DeleteVPCEConfigurationResult.h>
 #include <aws/devicefarm/model/GetAccountSettingsResult.h>
 #include <aws/devicefarm/model/GetDeviceResult.h>
 #include <aws/devicefarm/model/GetDeviceInstanceResult.h>
@@ -49,6 +51,7 @@
 #include <aws/devicefarm/model/GetSuiteResult.h>
 #include <aws/devicefarm/model/GetTestResult.h>
 #include <aws/devicefarm/model/GetUploadResult.h>
+#include <aws/devicefarm/model/GetVPCEConfigurationResult.h>
 #include <aws/devicefarm/model/InstallToRemoteAccessSessionResult.h>
 #include <aws/devicefarm/model/ListArtifactsResult.h>
 #include <aws/devicefarm/model/ListDeviceInstancesResult.h>
@@ -68,6 +71,7 @@
 #include <aws/devicefarm/model/ListTestsResult.h>
 #include <aws/devicefarm/model/ListUniqueProblemsResult.h>
 #include <aws/devicefarm/model/ListUploadsResult.h>
+#include <aws/devicefarm/model/ListVPCEConfigurationsResult.h>
 #include <aws/devicefarm/model/PurchaseOfferingResult.h>
 #include <aws/devicefarm/model/RenewOfferingResult.h>
 #include <aws/devicefarm/model/ScheduleRunResult.h>
@@ -78,6 +82,7 @@
 #include <aws/devicefarm/model/UpdateInstanceProfileResult.h>
 #include <aws/devicefarm/model/UpdateNetworkProfileResult.h>
 #include <aws/devicefarm/model/UpdateProjectResult.h>
+#include <aws/devicefarm/model/UpdateVPCEConfigurationResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -129,6 +134,7 @@ namespace Model
         class CreateProjectRequest;
         class CreateRemoteAccessSessionRequest;
         class CreateUploadRequest;
+        class CreateVPCEConfigurationRequest;
         class DeleteDevicePoolRequest;
         class DeleteInstanceProfileRequest;
         class DeleteNetworkProfileRequest;
@@ -136,6 +142,7 @@ namespace Model
         class DeleteRemoteAccessSessionRequest;
         class DeleteRunRequest;
         class DeleteUploadRequest;
+        class DeleteVPCEConfigurationRequest;
         class GetAccountSettingsRequest;
         class GetDeviceRequest;
         class GetDeviceInstanceRequest;
@@ -151,6 +158,7 @@ namespace Model
         class GetSuiteRequest;
         class GetTestRequest;
         class GetUploadRequest;
+        class GetVPCEConfigurationRequest;
         class InstallToRemoteAccessSessionRequest;
         class ListArtifactsRequest;
         class ListDeviceInstancesRequest;
@@ -170,6 +178,7 @@ namespace Model
         class ListTestsRequest;
         class ListUniqueProblemsRequest;
         class ListUploadsRequest;
+        class ListVPCEConfigurationsRequest;
         class PurchaseOfferingRequest;
         class RenewOfferingRequest;
         class ScheduleRunRequest;
@@ -180,6 +189,7 @@ namespace Model
         class UpdateInstanceProfileRequest;
         class UpdateNetworkProfileRequest;
         class UpdateProjectRequest;
+        class UpdateVPCEConfigurationRequest;
 
         typedef Aws::Utils::Outcome<CreateDevicePoolResult, Aws::Client::AWSError<DeviceFarmErrors>> CreateDevicePoolOutcome;
         typedef Aws::Utils::Outcome<CreateInstanceProfileResult, Aws::Client::AWSError<DeviceFarmErrors>> CreateInstanceProfileOutcome;
@@ -187,6 +197,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateProjectResult, Aws::Client::AWSError<DeviceFarmErrors>> CreateProjectOutcome;
         typedef Aws::Utils::Outcome<CreateRemoteAccessSessionResult, Aws::Client::AWSError<DeviceFarmErrors>> CreateRemoteAccessSessionOutcome;
         typedef Aws::Utils::Outcome<CreateUploadResult, Aws::Client::AWSError<DeviceFarmErrors>> CreateUploadOutcome;
+        typedef Aws::Utils::Outcome<CreateVPCEConfigurationResult, Aws::Client::AWSError<DeviceFarmErrors>> CreateVPCEConfigurationOutcome;
         typedef Aws::Utils::Outcome<DeleteDevicePoolResult, Aws::Client::AWSError<DeviceFarmErrors>> DeleteDevicePoolOutcome;
         typedef Aws::Utils::Outcome<DeleteInstanceProfileResult, Aws::Client::AWSError<DeviceFarmErrors>> DeleteInstanceProfileOutcome;
         typedef Aws::Utils::Outcome<DeleteNetworkProfileResult, Aws::Client::AWSError<DeviceFarmErrors>> DeleteNetworkProfileOutcome;
@@ -194,6 +205,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteRemoteAccessSessionResult, Aws::Client::AWSError<DeviceFarmErrors>> DeleteRemoteAccessSessionOutcome;
         typedef Aws::Utils::Outcome<DeleteRunResult, Aws::Client::AWSError<DeviceFarmErrors>> DeleteRunOutcome;
         typedef Aws::Utils::Outcome<DeleteUploadResult, Aws::Client::AWSError<DeviceFarmErrors>> DeleteUploadOutcome;
+        typedef Aws::Utils::Outcome<DeleteVPCEConfigurationResult, Aws::Client::AWSError<DeviceFarmErrors>> DeleteVPCEConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetAccountSettingsResult, Aws::Client::AWSError<DeviceFarmErrors>> GetAccountSettingsOutcome;
         typedef Aws::Utils::Outcome<GetDeviceResult, Aws::Client::AWSError<DeviceFarmErrors>> GetDeviceOutcome;
         typedef Aws::Utils::Outcome<GetDeviceInstanceResult, Aws::Client::AWSError<DeviceFarmErrors>> GetDeviceInstanceOutcome;
@@ -209,6 +221,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetSuiteResult, Aws::Client::AWSError<DeviceFarmErrors>> GetSuiteOutcome;
         typedef Aws::Utils::Outcome<GetTestResult, Aws::Client::AWSError<DeviceFarmErrors>> GetTestOutcome;
         typedef Aws::Utils::Outcome<GetUploadResult, Aws::Client::AWSError<DeviceFarmErrors>> GetUploadOutcome;
+        typedef Aws::Utils::Outcome<GetVPCEConfigurationResult, Aws::Client::AWSError<DeviceFarmErrors>> GetVPCEConfigurationOutcome;
         typedef Aws::Utils::Outcome<InstallToRemoteAccessSessionResult, Aws::Client::AWSError<DeviceFarmErrors>> InstallToRemoteAccessSessionOutcome;
         typedef Aws::Utils::Outcome<ListArtifactsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListArtifactsOutcome;
         typedef Aws::Utils::Outcome<ListDeviceInstancesResult, Aws::Client::AWSError<DeviceFarmErrors>> ListDeviceInstancesOutcome;
@@ -228,6 +241,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListTestsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListTestsOutcome;
         typedef Aws::Utils::Outcome<ListUniqueProblemsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListUniqueProblemsOutcome;
         typedef Aws::Utils::Outcome<ListUploadsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListUploadsOutcome;
+        typedef Aws::Utils::Outcome<ListVPCEConfigurationsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListVPCEConfigurationsOutcome;
         typedef Aws::Utils::Outcome<PurchaseOfferingResult, Aws::Client::AWSError<DeviceFarmErrors>> PurchaseOfferingOutcome;
         typedef Aws::Utils::Outcome<RenewOfferingResult, Aws::Client::AWSError<DeviceFarmErrors>> RenewOfferingOutcome;
         typedef Aws::Utils::Outcome<ScheduleRunResult, Aws::Client::AWSError<DeviceFarmErrors>> ScheduleRunOutcome;
@@ -238,6 +252,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateInstanceProfileResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateInstanceProfileOutcome;
         typedef Aws::Utils::Outcome<UpdateNetworkProfileResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateNetworkProfileOutcome;
         typedef Aws::Utils::Outcome<UpdateProjectResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateProjectOutcome;
+        typedef Aws::Utils::Outcome<UpdateVPCEConfigurationResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateVPCEConfigurationOutcome;
 
         typedef std::future<CreateDevicePoolOutcome> CreateDevicePoolOutcomeCallable;
         typedef std::future<CreateInstanceProfileOutcome> CreateInstanceProfileOutcomeCallable;
@@ -245,6 +260,7 @@ namespace Model
         typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
         typedef std::future<CreateRemoteAccessSessionOutcome> CreateRemoteAccessSessionOutcomeCallable;
         typedef std::future<CreateUploadOutcome> CreateUploadOutcomeCallable;
+        typedef std::future<CreateVPCEConfigurationOutcome> CreateVPCEConfigurationOutcomeCallable;
         typedef std::future<DeleteDevicePoolOutcome> DeleteDevicePoolOutcomeCallable;
         typedef std::future<DeleteInstanceProfileOutcome> DeleteInstanceProfileOutcomeCallable;
         typedef std::future<DeleteNetworkProfileOutcome> DeleteNetworkProfileOutcomeCallable;
@@ -252,6 +268,7 @@ namespace Model
         typedef std::future<DeleteRemoteAccessSessionOutcome> DeleteRemoteAccessSessionOutcomeCallable;
         typedef std::future<DeleteRunOutcome> DeleteRunOutcomeCallable;
         typedef std::future<DeleteUploadOutcome> DeleteUploadOutcomeCallable;
+        typedef std::future<DeleteVPCEConfigurationOutcome> DeleteVPCEConfigurationOutcomeCallable;
         typedef std::future<GetAccountSettingsOutcome> GetAccountSettingsOutcomeCallable;
         typedef std::future<GetDeviceOutcome> GetDeviceOutcomeCallable;
         typedef std::future<GetDeviceInstanceOutcome> GetDeviceInstanceOutcomeCallable;
@@ -267,6 +284,7 @@ namespace Model
         typedef std::future<GetSuiteOutcome> GetSuiteOutcomeCallable;
         typedef std::future<GetTestOutcome> GetTestOutcomeCallable;
         typedef std::future<GetUploadOutcome> GetUploadOutcomeCallable;
+        typedef std::future<GetVPCEConfigurationOutcome> GetVPCEConfigurationOutcomeCallable;
         typedef std::future<InstallToRemoteAccessSessionOutcome> InstallToRemoteAccessSessionOutcomeCallable;
         typedef std::future<ListArtifactsOutcome> ListArtifactsOutcomeCallable;
         typedef std::future<ListDeviceInstancesOutcome> ListDeviceInstancesOutcomeCallable;
@@ -286,6 +304,7 @@ namespace Model
         typedef std::future<ListTestsOutcome> ListTestsOutcomeCallable;
         typedef std::future<ListUniqueProblemsOutcome> ListUniqueProblemsOutcomeCallable;
         typedef std::future<ListUploadsOutcome> ListUploadsOutcomeCallable;
+        typedef std::future<ListVPCEConfigurationsOutcome> ListVPCEConfigurationsOutcomeCallable;
         typedef std::future<PurchaseOfferingOutcome> PurchaseOfferingOutcomeCallable;
         typedef std::future<RenewOfferingOutcome> RenewOfferingOutcomeCallable;
         typedef std::future<ScheduleRunOutcome> ScheduleRunOutcomeCallable;
@@ -296,6 +315,7 @@ namespace Model
         typedef std::future<UpdateInstanceProfileOutcome> UpdateInstanceProfileOutcomeCallable;
         typedef std::future<UpdateNetworkProfileOutcome> UpdateNetworkProfileOutcomeCallable;
         typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
+        typedef std::future<UpdateVPCEConfigurationOutcome> UpdateVPCEConfigurationOutcomeCallable;
 } // namespace Model
 
   class DeviceFarmClient;
@@ -306,6 +326,7 @@ namespace Model
     typedef std::function<void(const DeviceFarmClient*, const Model::CreateProjectRequest&, const Model::CreateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::CreateRemoteAccessSessionRequest&, const Model::CreateRemoteAccessSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRemoteAccessSessionResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::CreateUploadRequest&, const Model::CreateUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUploadResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::CreateVPCEConfigurationRequest&, const Model::CreateVPCEConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVPCEConfigurationResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::DeleteDevicePoolRequest&, const Model::DeleteDevicePoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDevicePoolResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::DeleteInstanceProfileRequest&, const Model::DeleteInstanceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInstanceProfileResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::DeleteNetworkProfileRequest&, const Model::DeleteNetworkProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNetworkProfileResponseReceivedHandler;
@@ -313,6 +334,7 @@ namespace Model
     typedef std::function<void(const DeviceFarmClient*, const Model::DeleteRemoteAccessSessionRequest&, const Model::DeleteRemoteAccessSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRemoteAccessSessionResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::DeleteRunRequest&, const Model::DeleteRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRunResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::DeleteUploadRequest&, const Model::DeleteUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUploadResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::DeleteVPCEConfigurationRequest&, const Model::DeleteVPCEConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVPCEConfigurationResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::GetAccountSettingsRequest&, const Model::GetAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountSettingsResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::GetDeviceRequest&, const Model::GetDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeviceResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::GetDeviceInstanceRequest&, const Model::GetDeviceInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeviceInstanceResponseReceivedHandler;
@@ -328,6 +350,7 @@ namespace Model
     typedef std::function<void(const DeviceFarmClient*, const Model::GetSuiteRequest&, const Model::GetSuiteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSuiteResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::GetTestRequest&, const Model::GetTestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTestResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::GetUploadRequest&, const Model::GetUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUploadResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::GetVPCEConfigurationRequest&, const Model::GetVPCEConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVPCEConfigurationResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::InstallToRemoteAccessSessionRequest&, const Model::InstallToRemoteAccessSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InstallToRemoteAccessSessionResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListArtifactsRequest&, const Model::ListArtifactsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListArtifactsResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListDeviceInstancesRequest&, const Model::ListDeviceInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeviceInstancesResponseReceivedHandler;
@@ -347,6 +370,7 @@ namespace Model
     typedef std::function<void(const DeviceFarmClient*, const Model::ListTestsRequest&, const Model::ListTestsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTestsResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListUniqueProblemsRequest&, const Model::ListUniqueProblemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUniqueProblemsResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListUploadsRequest&, const Model::ListUploadsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUploadsResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::ListVPCEConfigurationsRequest&, const Model::ListVPCEConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVPCEConfigurationsResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::PurchaseOfferingRequest&, const Model::PurchaseOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseOfferingResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::RenewOfferingRequest&, const Model::RenewOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RenewOfferingResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ScheduleRunRequest&, const Model::ScheduleRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ScheduleRunResponseReceivedHandler;
@@ -357,6 +381,7 @@ namespace Model
     typedef std::function<void(const DeviceFarmClient*, const Model::UpdateInstanceProfileRequest&, const Model::UpdateInstanceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInstanceProfileResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::UpdateNetworkProfileRequest&, const Model::UpdateNetworkProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNetworkProfileResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::UpdateProjectRequest&, const Model::UpdateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProjectResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::UpdateVPCEConfigurationRequest&, const Model::UpdateVPCEConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVPCEConfigurationResponseReceivedHandler;
 
   /**
    * <p>AWS Device Farm is a service that enables mobile app developers to test
@@ -544,6 +569,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateUploadAsync(const Model::CreateUploadRequest& request, const CreateUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a configuration record in Device Farm for your Amazon Virtual Private
+         * Cloud (VPC) endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateVPCEConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateVPCEConfigurationOutcome CreateVPCEConfiguration(const Model::CreateVPCEConfigurationRequest& request) const;
+
+        /**
+         * <p>Creates a configuration record in Device Farm for your Amazon Virtual Private
+         * Cloud (VPC) endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateVPCEConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateVPCEConfigurationOutcomeCallable CreateVPCEConfigurationCallable(const Model::CreateVPCEConfigurationRequest& request) const;
+
+        /**
+         * <p>Creates a configuration record in Device Farm for your Amazon Virtual Private
+         * Cloud (VPC) endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateVPCEConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateVPCEConfigurationAsync(const Model::CreateVPCEConfigurationRequest& request, const CreateVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a device pool given the pool ARN. Does not allow deletion of curated
@@ -737,6 +790,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteUploadAsync(const Model::DeleteUploadRequest& request, const DeleteUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a configuration for your Amazon Virtual Private Cloud (VPC)
+         * endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteVPCEConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteVPCEConfigurationOutcome DeleteVPCEConfiguration(const Model::DeleteVPCEConfigurationRequest& request) const;
+
+        /**
+         * <p>Deletes a configuration for your Amazon Virtual Private Cloud (VPC)
+         * endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteVPCEConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteVPCEConfigurationOutcomeCallable DeleteVPCEConfigurationCallable(const Model::DeleteVPCEConfigurationRequest& request) const;
+
+        /**
+         * <p>Deletes a configuration for your Amazon Virtual Private Cloud (VPC)
+         * endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteVPCEConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteVPCEConfigurationAsync(const Model::DeleteVPCEConfigurationRequest& request, const DeleteVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the number of unmetered iOS and/or unmetered Android devices that
@@ -1148,6 +1229,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetUploadAsync(const Model::GetUploadRequest& request, const GetUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about the configuration settings for your Amazon Virtual
+         * Private Cloud (VPC) endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetVPCEConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetVPCEConfigurationOutcome GetVPCEConfiguration(const Model::GetVPCEConfigurationRequest& request) const;
+
+        /**
+         * <p>Returns information about the configuration settings for your Amazon Virtual
+         * Private Cloud (VPC) endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetVPCEConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetVPCEConfigurationOutcomeCallable GetVPCEConfigurationCallable(const Model::GetVPCEConfigurationRequest& request) const;
+
+        /**
+         * <p>Returns information about the configuration settings for your Amazon Virtual
+         * Private Cloud (VPC) endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetVPCEConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetVPCEConfigurationAsync(const Model::GetVPCEConfigurationRequest& request, const GetVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Installs an application to the device in a remote access session. For Android
@@ -1715,6 +1824,34 @@ namespace Model
         virtual void ListUploadsAsync(const Model::ListUploadsRequest& request, const ListUploadsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns information about all Amazon Virtual Private Cloud (VPC) endpoint
+         * configurations in the AWS account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListVPCEConfigurations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListVPCEConfigurationsOutcome ListVPCEConfigurations(const Model::ListVPCEConfigurationsRequest& request) const;
+
+        /**
+         * <p>Returns information about all Amazon Virtual Private Cloud (VPC) endpoint
+         * configurations in the AWS account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListVPCEConfigurations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListVPCEConfigurationsOutcomeCallable ListVPCEConfigurationsCallable(const Model::ListVPCEConfigurationsRequest& request) const;
+
+        /**
+         * <p>Returns information about all Amazon Virtual Private Cloud (VPC) endpoint
+         * configurations in the AWS account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListVPCEConfigurations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListVPCEConfigurationsAsync(const Model::ListVPCEConfigurationsRequest& request, const ListVPCEConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Immediately purchases offerings for an AWS account. Offerings renew with the
          * latest total purchased quantity for an offering, unless the renewal was
          * overridden. The API returns a <code>NotEligible</code> error if the user is not
@@ -2036,6 +2173,34 @@ namespace Model
          */
         virtual void UpdateProjectAsync(const Model::UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Updates information about an existing Amazon Virtual Private Cloud (VPC)
+         * endpoint configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateVPCEConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateVPCEConfigurationOutcome UpdateVPCEConfiguration(const Model::UpdateVPCEConfigurationRequest& request) const;
+
+        /**
+         * <p>Updates information about an existing Amazon Virtual Private Cloud (VPC)
+         * endpoint configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateVPCEConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateVPCEConfigurationOutcomeCallable UpdateVPCEConfigurationCallable(const Model::UpdateVPCEConfigurationRequest& request) const;
+
+        /**
+         * <p>Updates information about an existing Amazon Virtual Private Cloud (VPC)
+         * endpoint configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateVPCEConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateVPCEConfigurationAsync(const Model::UpdateVPCEConfigurationRequest& request, const UpdateVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
@@ -2047,6 +2212,7 @@ namespace Model
         void CreateProjectAsyncHelper(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRemoteAccessSessionAsyncHelper(const Model::CreateRemoteAccessSessionRequest& request, const CreateRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUploadAsyncHelper(const Model::CreateUploadRequest& request, const CreateUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateVPCEConfigurationAsyncHelper(const Model::CreateVPCEConfigurationRequest& request, const CreateVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDevicePoolAsyncHelper(const Model::DeleteDevicePoolRequest& request, const DeleteDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteInstanceProfileAsyncHelper(const Model::DeleteInstanceProfileRequest& request, const DeleteInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteNetworkProfileAsyncHelper(const Model::DeleteNetworkProfileRequest& request, const DeleteNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2054,6 +2220,7 @@ namespace Model
         void DeleteRemoteAccessSessionAsyncHelper(const Model::DeleteRemoteAccessSessionRequest& request, const DeleteRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRunAsyncHelper(const Model::DeleteRunRequest& request, const DeleteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUploadAsyncHelper(const Model::DeleteUploadRequest& request, const DeleteUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteVPCEConfigurationAsyncHelper(const Model::DeleteVPCEConfigurationRequest& request, const DeleteVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAccountSettingsAsyncHelper(const Model::GetAccountSettingsRequest& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDeviceAsyncHelper(const Model::GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDeviceInstanceAsyncHelper(const Model::GetDeviceInstanceRequest& request, const GetDeviceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2069,6 +2236,7 @@ namespace Model
         void GetSuiteAsyncHelper(const Model::GetSuiteRequest& request, const GetSuiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTestAsyncHelper(const Model::GetTestRequest& request, const GetTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUploadAsyncHelper(const Model::GetUploadRequest& request, const GetUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetVPCEConfigurationAsyncHelper(const Model::GetVPCEConfigurationRequest& request, const GetVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void InstallToRemoteAccessSessionAsyncHelper(const Model::InstallToRemoteAccessSessionRequest& request, const InstallToRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListArtifactsAsyncHelper(const Model::ListArtifactsRequest& request, const ListArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDeviceInstancesAsyncHelper(const Model::ListDeviceInstancesRequest& request, const ListDeviceInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2088,6 +2256,7 @@ namespace Model
         void ListTestsAsyncHelper(const Model::ListTestsRequest& request, const ListTestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUniqueProblemsAsyncHelper(const Model::ListUniqueProblemsRequest& request, const ListUniqueProblemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUploadsAsyncHelper(const Model::ListUploadsRequest& request, const ListUploadsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListVPCEConfigurationsAsyncHelper(const Model::ListVPCEConfigurationsRequest& request, const ListVPCEConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PurchaseOfferingAsyncHelper(const Model::PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RenewOfferingAsyncHelper(const Model::RenewOfferingRequest& request, const RenewOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ScheduleRunAsyncHelper(const Model::ScheduleRunRequest& request, const ScheduleRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2098,6 +2267,7 @@ namespace Model
         void UpdateInstanceProfileAsyncHelper(const Model::UpdateInstanceProfileRequest& request, const UpdateInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateNetworkProfileAsyncHelper(const Model::UpdateNetworkProfileRequest& request, const UpdateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateProjectAsyncHelper(const Model::UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateVPCEConfigurationAsyncHelper(const Model::UpdateVPCEConfigurationRequest& request, const UpdateVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;

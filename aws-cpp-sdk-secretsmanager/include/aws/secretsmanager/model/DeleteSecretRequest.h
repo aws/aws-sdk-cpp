@@ -88,22 +88,22 @@ namespace Model
 
 
     /**
-     * <p>(Optional) Specifies the number of days that AWS Secrets Manager waits before
-     * it can delete the secret.</p> <p>This value can range from 7 to 30 days. The
+     * <p>(Optional) Specifies the number of days that Secrets Manager waits before it
+     * can delete the secret.</p> <p>This value can range from 7 to 30 days. The
      * default value is 30.</p>
      */
     inline long long GetRecoveryWindowInDays() const{ return m_recoveryWindowInDays; }
 
     /**
-     * <p>(Optional) Specifies the number of days that AWS Secrets Manager waits before
-     * it can delete the secret.</p> <p>This value can range from 7 to 30 days. The
+     * <p>(Optional) Specifies the number of days that Secrets Manager waits before it
+     * can delete the secret.</p> <p>This value can range from 7 to 30 days. The
      * default value is 30.</p>
      */
     inline void SetRecoveryWindowInDays(long long value) { m_recoveryWindowInDaysHasBeenSet = true; m_recoveryWindowInDays = value; }
 
     /**
-     * <p>(Optional) Specifies the number of days that AWS Secrets Manager waits before
-     * it can delete the secret.</p> <p>This value can range from 7 to 30 days. The
+     * <p>(Optional) Specifies the number of days that Secrets Manager waits before it
+     * can delete the secret.</p> <p>This value can range from 7 to 30 days. The
      * default value is 30.</p>
      */
     inline DeleteSecretRequest& WithRecoveryWindowInDays(long long value) { SetRecoveryWindowInDays(value); return *this;}

@@ -56,7 +56,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the secret.</p> <p>For more information
-     * about ARNs in AWS Secrets Manager, see <a
+     * about ARNs in Secrets Manager, see <a
      * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
      * Resources</a> in the <i>AWS Secrets Manager User Guide</i>.</p>
      */
@@ -64,7 +64,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the secret.</p> <p>For more information
-     * about ARNs in AWS Secrets Manager, see <a
+     * about ARNs in Secrets Manager, see <a
      * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
      * Resources</a> in the <i>AWS Secrets Manager User Guide</i>.</p>
      */
@@ -72,7 +72,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the secret.</p> <p>For more information
-     * about ARNs in AWS Secrets Manager, see <a
+     * about ARNs in Secrets Manager, see <a
      * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
      * Resources</a> in the <i>AWS Secrets Manager User Guide</i>.</p>
      */
@@ -80,7 +80,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the secret.</p> <p>For more information
-     * about ARNs in AWS Secrets Manager, see <a
+     * about ARNs in Secrets Manager, see <a
      * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
      * Resources</a> in the <i>AWS Secrets Manager User Guide</i>.</p>
      */
@@ -88,7 +88,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the secret.</p> <p>For more information
-     * about ARNs in AWS Secrets Manager, see <a
+     * about ARNs in Secrets Manager, see <a
      * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
      * Resources</a> in the <i>AWS Secrets Manager User Guide</i>.</p>
      */
@@ -96,7 +96,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the secret.</p> <p>For more information
-     * about ARNs in AWS Secrets Manager, see <a
+     * about ARNs in Secrets Manager, see <a
      * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
      * Resources</a> in the <i>AWS Secrets Manager User Guide</i>.</p>
      */
@@ -104,7 +104,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the secret.</p> <p>For more information
-     * about ARNs in AWS Secrets Manager, see <a
+     * about ARNs in Secrets Manager, see <a
      * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
      * Resources</a> in the <i>AWS Secrets Manager User Guide</i>.</p>
      */
@@ -207,7 +207,7 @@ namespace Model
     /**
      * <p>The ARN or alias of the AWS KMS customer master key (CMK) that's used to
      * encrypt the <code>SecretString</code> and <code>SecretBinary</code> fields in
-     * each version of the secret. If you don't provide a key, then AWS Secrets Manager
+     * each version of the secret. If you don't provide a key, then Secrets Manager
      * defaults to encrypting the secret fields with the default KMS CMK (the one named
      * <code>awssecretsmanager</code>) for this account.</p>
      */
@@ -216,7 +216,7 @@ namespace Model
     /**
      * <p>The ARN or alias of the AWS KMS customer master key (CMK) that's used to
      * encrypt the <code>SecretString</code> and <code>SecretBinary</code> fields in
-     * each version of the secret. If you don't provide a key, then AWS Secrets Manager
+     * each version of the secret. If you don't provide a key, then Secrets Manager
      * defaults to encrypting the secret fields with the default KMS CMK (the one named
      * <code>awssecretsmanager</code>) for this account.</p>
      */
@@ -225,7 +225,7 @@ namespace Model
     /**
      * <p>The ARN or alias of the AWS KMS customer master key (CMK) that's used to
      * encrypt the <code>SecretString</code> and <code>SecretBinary</code> fields in
-     * each version of the secret. If you don't provide a key, then AWS Secrets Manager
+     * each version of the secret. If you don't provide a key, then Secrets Manager
      * defaults to encrypting the secret fields with the default KMS CMK (the one named
      * <code>awssecretsmanager</code>) for this account.</p>
      */
@@ -234,7 +234,7 @@ namespace Model
     /**
      * <p>The ARN or alias of the AWS KMS customer master key (CMK) that's used to
      * encrypt the <code>SecretString</code> and <code>SecretBinary</code> fields in
-     * each version of the secret. If you don't provide a key, then AWS Secrets Manager
+     * each version of the secret. If you don't provide a key, then Secrets Manager
      * defaults to encrypting the secret fields with the default KMS CMK (the one named
      * <code>awssecretsmanager</code>) for this account.</p>
      */
@@ -243,7 +243,7 @@ namespace Model
     /**
      * <p>The ARN or alias of the AWS KMS customer master key (CMK) that's used to
      * encrypt the <code>SecretString</code> and <code>SecretBinary</code> fields in
-     * each version of the secret. If you don't provide a key, then AWS Secrets Manager
+     * each version of the secret. If you don't provide a key, then Secrets Manager
      * defaults to encrypting the secret fields with the default KMS CMK (the one named
      * <code>awssecretsmanager</code>) for this account.</p>
      */
@@ -252,7 +252,7 @@ namespace Model
     /**
      * <p>The ARN or alias of the AWS KMS customer master key (CMK) that's used to
      * encrypt the <code>SecretString</code> and <code>SecretBinary</code> fields in
-     * each version of the secret. If you don't provide a key, then AWS Secrets Manager
+     * each version of the secret. If you don't provide a key, then Secrets Manager
      * defaults to encrypting the secret fields with the default KMS CMK (the one named
      * <code>awssecretsmanager</code>) for this account.</p>
      */
@@ -261,7 +261,7 @@ namespace Model
     /**
      * <p>The ARN or alias of the AWS KMS customer master key (CMK) that's used to
      * encrypt the <code>SecretString</code> and <code>SecretBinary</code> fields in
-     * each version of the secret. If you don't provide a key, then AWS Secrets Manager
+     * each version of the secret. If you don't provide a key, then Secrets Manager
      * defaults to encrypting the secret fields with the default KMS CMK (the one named
      * <code>awssecretsmanager</code>) for this account.</p>
      */
@@ -288,51 +288,51 @@ namespace Model
 
 
     /**
-     * <p>The ARN of an AWS Lambda function that's invoked by AWS Secrets Manager to
-     * rotate and expire the secret either automatically per the schedule or manually
-     * by a call to <a>RotateSecret</a>.</p>
+     * <p>The ARN of an AWS Lambda function that's invoked by Secrets Manager to rotate
+     * and expire the secret either automatically per the schedule or manually by a
+     * call to <a>RotateSecret</a>.</p>
      */
     inline const Aws::String& GetRotationLambdaARN() const{ return m_rotationLambdaARN; }
 
     /**
-     * <p>The ARN of an AWS Lambda function that's invoked by AWS Secrets Manager to
-     * rotate and expire the secret either automatically per the schedule or manually
-     * by a call to <a>RotateSecret</a>.</p>
+     * <p>The ARN of an AWS Lambda function that's invoked by Secrets Manager to rotate
+     * and expire the secret either automatically per the schedule or manually by a
+     * call to <a>RotateSecret</a>.</p>
      */
     inline void SetRotationLambdaARN(const Aws::String& value) { m_rotationLambdaARNHasBeenSet = true; m_rotationLambdaARN = value; }
 
     /**
-     * <p>The ARN of an AWS Lambda function that's invoked by AWS Secrets Manager to
-     * rotate and expire the secret either automatically per the schedule or manually
-     * by a call to <a>RotateSecret</a>.</p>
+     * <p>The ARN of an AWS Lambda function that's invoked by Secrets Manager to rotate
+     * and expire the secret either automatically per the schedule or manually by a
+     * call to <a>RotateSecret</a>.</p>
      */
     inline void SetRotationLambdaARN(Aws::String&& value) { m_rotationLambdaARNHasBeenSet = true; m_rotationLambdaARN = std::move(value); }
 
     /**
-     * <p>The ARN of an AWS Lambda function that's invoked by AWS Secrets Manager to
-     * rotate and expire the secret either automatically per the schedule or manually
-     * by a call to <a>RotateSecret</a>.</p>
+     * <p>The ARN of an AWS Lambda function that's invoked by Secrets Manager to rotate
+     * and expire the secret either automatically per the schedule or manually by a
+     * call to <a>RotateSecret</a>.</p>
      */
     inline void SetRotationLambdaARN(const char* value) { m_rotationLambdaARNHasBeenSet = true; m_rotationLambdaARN.assign(value); }
 
     /**
-     * <p>The ARN of an AWS Lambda function that's invoked by AWS Secrets Manager to
-     * rotate and expire the secret either automatically per the schedule or manually
-     * by a call to <a>RotateSecret</a>.</p>
+     * <p>The ARN of an AWS Lambda function that's invoked by Secrets Manager to rotate
+     * and expire the secret either automatically per the schedule or manually by a
+     * call to <a>RotateSecret</a>.</p>
      */
     inline SecretListEntry& WithRotationLambdaARN(const Aws::String& value) { SetRotationLambdaARN(value); return *this;}
 
     /**
-     * <p>The ARN of an AWS Lambda function that's invoked by AWS Secrets Manager to
-     * rotate and expire the secret either automatically per the schedule or manually
-     * by a call to <a>RotateSecret</a>.</p>
+     * <p>The ARN of an AWS Lambda function that's invoked by Secrets Manager to rotate
+     * and expire the secret either automatically per the schedule or manually by a
+     * call to <a>RotateSecret</a>.</p>
      */
     inline SecretListEntry& WithRotationLambdaARN(Aws::String&& value) { SetRotationLambdaARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of an AWS Lambda function that's invoked by AWS Secrets Manager to
-     * rotate and expire the secret either automatically per the schedule or manually
-     * by a call to <a>RotateSecret</a>.</p>
+     * <p>The ARN of an AWS Lambda function that's invoked by Secrets Manager to rotate
+     * and expire the secret either automatically per the schedule or manually by a
+     * call to <a>RotateSecret</a>.</p>
      */
     inline SecretListEntry& WithRotationLambdaARN(const char* value) { SetRotationLambdaARN(value); return *this;}
 

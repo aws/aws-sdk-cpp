@@ -32,6 +32,7 @@ static const int SERVICE_ACCOUNT_HASH = HashingUtils::HashString("ServiceAccount
 static const int IDEMPOTENCY_HASH = HashingUtils::HashString("IdempotencyException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
 static const int ARGUMENT_HASH = HashingUtils::HashString("ArgumentException");
+static const int INVALID_OPERATION_HASH = HashingUtils::HashString("InvalidOperationException");
 static const int NOT_ELIGIBLE_HASH = HashingUtils::HashString("NotEligibleException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 
@@ -55,6 +56,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == ARGUMENT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::ARGUMENT), false);
+  }
+  else if (hashCode == INVALID_OPERATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::INVALID_OPERATION), false);
   }
   else if (hashCode == NOT_ELIGIBLE_HASH)
   {

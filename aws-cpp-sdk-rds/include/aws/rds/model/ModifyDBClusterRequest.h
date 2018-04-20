@@ -705,6 +705,70 @@ namespace Model
      */
     inline ModifyDBClusterRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
+
+    /**
+     * <p>The version number of the database engine to which you want to upgrade.
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless the ApplyImmediately parameter is set to
+     * true.</p> <p>For a list of valid engine versions, see <a>CreateDBInstance</a>,
+     * or call <a>DescribeDBEngineVersions</a>.</p>
+     */
+    inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * <p>The version number of the database engine to which you want to upgrade.
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless the ApplyImmediately parameter is set to
+     * true.</p> <p>For a list of valid engine versions, see <a>CreateDBInstance</a>,
+     * or call <a>DescribeDBEngineVersions</a>.</p>
+     */
+    inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
+
+    /**
+     * <p>The version number of the database engine to which you want to upgrade.
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless the ApplyImmediately parameter is set to
+     * true.</p> <p>For a list of valid engine versions, see <a>CreateDBInstance</a>,
+     * or call <a>DescribeDBEngineVersions</a>.</p>
+     */
+    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
+
+    /**
+     * <p>The version number of the database engine to which you want to upgrade.
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless the ApplyImmediately parameter is set to
+     * true.</p> <p>For a list of valid engine versions, see <a>CreateDBInstance</a>,
+     * or call <a>DescribeDBEngineVersions</a>.</p>
+     */
+    inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
+
+    /**
+     * <p>The version number of the database engine to which you want to upgrade.
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless the ApplyImmediately parameter is set to
+     * true.</p> <p>For a list of valid engine versions, see <a>CreateDBInstance</a>,
+     * or call <a>DescribeDBEngineVersions</a>.</p>
+     */
+    inline ModifyDBClusterRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
+
+    /**
+     * <p>The version number of the database engine to which you want to upgrade.
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless the ApplyImmediately parameter is set to
+     * true.</p> <p>For a list of valid engine versions, see <a>CreateDBInstance</a>,
+     * or call <a>DescribeDBEngineVersions</a>.</p>
+     */
+    inline ModifyDBClusterRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The version number of the database engine to which you want to upgrade.
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless the ApplyImmediately parameter is set to
+     * true.</p> <p>For a list of valid engine versions, see <a>CreateDBInstance</a>,
+     * or call <a>DescribeDBEngineVersions</a>.</p>
+     */
+    inline ModifyDBClusterRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+
   private:
 
     Aws::String m_dBClusterIdentifier;
@@ -742,6 +806,9 @@ namespace Model
 
     bool m_enableIAMDatabaseAuthentication;
     bool m_enableIAMDatabaseAuthenticationHasBeenSet;
+
+    Aws::String m_engineVersion;
+    bool m_engineVersionHasBeenSet;
   };
 
 } // namespace Model

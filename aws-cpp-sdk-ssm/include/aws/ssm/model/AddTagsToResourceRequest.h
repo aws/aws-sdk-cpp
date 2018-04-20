@@ -133,49 +133,56 @@ namespace Model
     /**
      * <p> One or more tags. The value parameter is required, but if you don't want the
      * tag to have a value, specify the parameter with no value, and we set the value
-     * to an empty string. </p>
+     * to an empty string. </p> <important> <p>Do not enter personally identifiable
+     * information in this field.</p> </important>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p> One or more tags. The value parameter is required, but if you don't want the
      * tag to have a value, specify the parameter with no value, and we set the value
-     * to an empty string. </p>
+     * to an empty string. </p> <important> <p>Do not enter personally identifiable
+     * information in this field.</p> </important>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p> One or more tags. The value parameter is required, but if you don't want the
      * tag to have a value, specify the parameter with no value, and we set the value
-     * to an empty string. </p>
+     * to an empty string. </p> <important> <p>Do not enter personally identifiable
+     * information in this field.</p> </important>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p> One or more tags. The value parameter is required, but if you don't want the
      * tag to have a value, specify the parameter with no value, and we set the value
-     * to an empty string. </p>
+     * to an empty string. </p> <important> <p>Do not enter personally identifiable
+     * information in this field.</p> </important>
      */
     inline AddTagsToResourceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p> One or more tags. The value parameter is required, but if you don't want the
      * tag to have a value, specify the parameter with no value, and we set the value
-     * to an empty string. </p>
+     * to an empty string. </p> <important> <p>Do not enter personally identifiable
+     * information in this field.</p> </important>
      */
     inline AddTagsToResourceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p> One or more tags. The value parameter is required, but if you don't want the
      * tag to have a value, specify the parameter with no value, and we set the value
-     * to an empty string. </p>
+     * to an empty string. </p> <important> <p>Do not enter personally identifiable
+     * information in this field.</p> </important>
      */
     inline AddTagsToResourceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p> One or more tags. The value parameter is required, but if you don't want the
      * tag to have a value, specify the parameter with no value, and we set the value
-     * to an empty string. </p>
+     * to an empty string. </p> <important> <p>Do not enter personally identifiable
+     * information in this field.</p> </important>
      */
     inline AddTagsToResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

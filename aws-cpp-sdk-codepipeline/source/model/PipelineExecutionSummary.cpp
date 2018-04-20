@@ -33,7 +33,8 @@ PipelineExecutionSummary::PipelineExecutionSummary() :
     m_status(PipelineExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+    m_lastUpdateTimeHasBeenSet(false),
+    m_sourceRevisionsHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ PipelineExecutionSummary::PipelineExecutionSummary(const JsonValue& jsonValue) :
     m_status(PipelineExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+    m_lastUpdateTimeHasBeenSet(false),
+    m_sourceRevisionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -77,6 +79,16 @@ PipelineExecutionSummary& PipelineExecutionSummary::operator =(const JsonValue& 
     m_lastUpdateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("sourceRevisions"))
+  {
+    Array<JsonValue> sourceRevisionsJsonList = jsonValue.GetArray("sourceRevisions");
+    for(unsigned sourceRevisionsIndex = 0; sourceRevisionsIndex < sourceRevisionsJsonList.GetLength(); ++sourceRevisionsIndex)
+    {
+      m_sourceRevisions.push_back(sourceRevisionsJsonList[sourceRevisionsIndex].AsObject());
+    }
+    m_sourceRevisionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -103,6 +115,17 @@ JsonValue PipelineExecutionSummary::Jsonize() const
   if(m_lastUpdateTimeHasBeenSet)
   {
    payload.WithDouble("lastUpdateTime", m_lastUpdateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_sourceRevisionsHasBeenSet)
+  {
+   Array<JsonValue> sourceRevisionsJsonList(m_sourceRevisions.size());
+   for(unsigned sourceRevisionsIndex = 0; sourceRevisionsIndex < sourceRevisionsJsonList.GetLength(); ++sourceRevisionsIndex)
+   {
+     sourceRevisionsJsonList[sourceRevisionsIndex].AsObject(m_sourceRevisions[sourceRevisionsIndex].Jsonize());
+   }
+   payload.WithArray("sourceRevisions", std::move(sourceRevisionsJsonList));
+
   }
 
   return payload;

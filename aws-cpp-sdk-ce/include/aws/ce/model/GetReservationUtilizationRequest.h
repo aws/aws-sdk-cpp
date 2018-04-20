@@ -50,7 +50,7 @@ namespace Model
 
 
     /**
-     * <p>Sets the start and end dates for retrieving reserve instance (RI)
+     * <p>Sets the start and end dates for retrieving Reserved Instance (RI)
      * utilization. The start date is inclusive, but the end date is exclusive. For
      * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
      * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
@@ -60,7 +60,7 @@ namespace Model
     inline const DateInterval& GetTimePeriod() const{ return m_timePeriod; }
 
     /**
-     * <p>Sets the start and end dates for retrieving reserve instance (RI)
+     * <p>Sets the start and end dates for retrieving Reserved Instance (RI)
      * utilization. The start date is inclusive, but the end date is exclusive. For
      * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
      * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
@@ -70,7 +70,7 @@ namespace Model
     inline void SetTimePeriod(const DateInterval& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
 
     /**
-     * <p>Sets the start and end dates for retrieving reserve instance (RI)
+     * <p>Sets the start and end dates for retrieving Reserved Instance (RI)
      * utilization. The start date is inclusive, but the end date is exclusive. For
      * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
      * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
@@ -80,7 +80,7 @@ namespace Model
     inline void SetTimePeriod(DateInterval&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::move(value); }
 
     /**
-     * <p>Sets the start and end dates for retrieving reserve instance (RI)
+     * <p>Sets the start and end dates for retrieving Reserved Instance (RI)
      * utilization. The start date is inclusive, but the end date is exclusive. For
      * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
      * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
@@ -90,7 +90,7 @@ namespace Model
     inline GetReservationUtilizationRequest& WithTimePeriod(const DateInterval& value) { SetTimePeriod(value); return *this;}
 
     /**
-     * <p>Sets the start and end dates for retrieving reserve instance (RI)
+     * <p>Sets the start and end dates for retrieving Reserved Instance (RI)
      * utilization. The start date is inclusive, but the end date is exclusive. For
      * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
      * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
@@ -138,7 +138,7 @@ namespace Model
 
     /**
      * <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If
-     * <code>Granularity</code> isn't set, the response object doesn't include the
+     * <code>Granularity</code> isn't set, the response object doesn't include
      * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If
      * both <code>GroupBy</code> and <code>Granularity</code> aren't set,
      * <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</p>
@@ -147,7 +147,7 @@ namespace Model
 
     /**
      * <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If
-     * <code>Granularity</code> isn't set, the response object doesn't include the
+     * <code>Granularity</code> isn't set, the response object doesn't include
      * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If
      * both <code>GroupBy</code> and <code>Granularity</code> aren't set,
      * <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</p>
@@ -156,7 +156,7 @@ namespace Model
 
     /**
      * <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If
-     * <code>Granularity</code> isn't set, the response object doesn't include the
+     * <code>Granularity</code> isn't set, the response object doesn't include
      * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If
      * both <code>GroupBy</code> and <code>Granularity</code> aren't set,
      * <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</p>
@@ -165,7 +165,7 @@ namespace Model
 
     /**
      * <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If
-     * <code>Granularity</code> isn't set, the response object doesn't include the
+     * <code>Granularity</code> isn't set, the response object doesn't include
      * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If
      * both <code>GroupBy</code> and <code>Granularity</code> aren't set,
      * <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</p>
@@ -174,7 +174,7 @@ namespace Model
 
     /**
      * <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If
-     * <code>Granularity</code> isn't set, the response object doesn't include the
+     * <code>Granularity</code> isn't set, the response object doesn't include
      * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If
      * both <code>GroupBy</code> and <code>Granularity</code> aren't set,
      * <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</p>
@@ -183,52 +183,77 @@ namespace Model
 
 
     /**
-     * <p>Filters utilization data by using different dimensions.
-     * <code>GetReservationUtilization</code> uses the same <code> <a
+     * <p>Filters utilization data by dimensions. You can filter by the following
+     * dimensions:</p> <ul> <li> <p>AZ</p> </li> <li> <p>CACHE_ENGINE</p> </li> <li>
+     * <p>DATABASE_ENGINE</p> </li> <li> <p>DEPLOYMENT_OPTION</p> </li> <li>
+     * <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
+     * <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p>
+     * </li> <li> <p>SERVICE</p> </li> <li> <p>SCOPE</p> </li> <li> <p>TENANCY</p>
+     * </li> </ul> <p> <code>GetReservationUtilization</code> uses the same <code> <a
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * </code> object as the other operations, but only <code>AND</code> is supported
-     * among each dimension, and nesting is supported to only one level deep. If there
-     * are multiple values for a dimension, they are OR'd together.</p>
+     * among each dimension, and nesting is supported up to only one level deep. If
+     * there are multiple values for a dimension, they are OR'd together.</p>
      */
     inline const Expression& GetFilter() const{ return m_filter; }
 
     /**
-     * <p>Filters utilization data by using different dimensions.
-     * <code>GetReservationUtilization</code> uses the same <code> <a
+     * <p>Filters utilization data by dimensions. You can filter by the following
+     * dimensions:</p> <ul> <li> <p>AZ</p> </li> <li> <p>CACHE_ENGINE</p> </li> <li>
+     * <p>DATABASE_ENGINE</p> </li> <li> <p>DEPLOYMENT_OPTION</p> </li> <li>
+     * <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
+     * <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p>
+     * </li> <li> <p>SERVICE</p> </li> <li> <p>SCOPE</p> </li> <li> <p>TENANCY</p>
+     * </li> </ul> <p> <code>GetReservationUtilization</code> uses the same <code> <a
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * </code> object as the other operations, but only <code>AND</code> is supported
-     * among each dimension, and nesting is supported to only one level deep. If there
-     * are multiple values for a dimension, they are OR'd together.</p>
+     * among each dimension, and nesting is supported up to only one level deep. If
+     * there are multiple values for a dimension, they are OR'd together.</p>
      */
     inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
-     * <p>Filters utilization data by using different dimensions.
-     * <code>GetReservationUtilization</code> uses the same <code> <a
+     * <p>Filters utilization data by dimensions. You can filter by the following
+     * dimensions:</p> <ul> <li> <p>AZ</p> </li> <li> <p>CACHE_ENGINE</p> </li> <li>
+     * <p>DATABASE_ENGINE</p> </li> <li> <p>DEPLOYMENT_OPTION</p> </li> <li>
+     * <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
+     * <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p>
+     * </li> <li> <p>SERVICE</p> </li> <li> <p>SCOPE</p> </li> <li> <p>TENANCY</p>
+     * </li> </ul> <p> <code>GetReservationUtilization</code> uses the same <code> <a
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * </code> object as the other operations, but only <code>AND</code> is supported
-     * among each dimension, and nesting is supported to only one level deep. If there
-     * are multiple values for a dimension, they are OR'd together.</p>
+     * among each dimension, and nesting is supported up to only one level deep. If
+     * there are multiple values for a dimension, they are OR'd together.</p>
      */
     inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
-     * <p>Filters utilization data by using different dimensions.
-     * <code>GetReservationUtilization</code> uses the same <code> <a
+     * <p>Filters utilization data by dimensions. You can filter by the following
+     * dimensions:</p> <ul> <li> <p>AZ</p> </li> <li> <p>CACHE_ENGINE</p> </li> <li>
+     * <p>DATABASE_ENGINE</p> </li> <li> <p>DEPLOYMENT_OPTION</p> </li> <li>
+     * <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
+     * <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p>
+     * </li> <li> <p>SERVICE</p> </li> <li> <p>SCOPE</p> </li> <li> <p>TENANCY</p>
+     * </li> </ul> <p> <code>GetReservationUtilization</code> uses the same <code> <a
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * </code> object as the other operations, but only <code>AND</code> is supported
-     * among each dimension, and nesting is supported to only one level deep. If there
-     * are multiple values for a dimension, they are OR'd together.</p>
+     * among each dimension, and nesting is supported up to only one level deep. If
+     * there are multiple values for a dimension, they are OR'd together.</p>
      */
     inline GetReservationUtilizationRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
 
     /**
-     * <p>Filters utilization data by using different dimensions.
-     * <code>GetReservationUtilization</code> uses the same <code> <a
+     * <p>Filters utilization data by dimensions. You can filter by the following
+     * dimensions:</p> <ul> <li> <p>AZ</p> </li> <li> <p>CACHE_ENGINE</p> </li> <li>
+     * <p>DATABASE_ENGINE</p> </li> <li> <p>DEPLOYMENT_OPTION</p> </li> <li>
+     * <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
+     * <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p>
+     * </li> <li> <p>SERVICE</p> </li> <li> <p>SCOPE</p> </li> <li> <p>TENANCY</p>
+     * </li> </ul> <p> <code>GetReservationUtilization</code> uses the same <code> <a
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * </code> object as the other operations, but only <code>AND</code> is supported
-     * among each dimension, and nesting is supported to only one level deep. If there
-     * are multiple values for a dimension, they are OR'd together.</p>
+     * among each dimension, and nesting is supported up to only one level deep. If
+     * there are multiple values for a dimension, they are OR'd together.</p>
      */
     inline GetReservationUtilizationRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
 

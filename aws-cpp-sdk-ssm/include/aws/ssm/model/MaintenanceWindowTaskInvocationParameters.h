@@ -76,27 +76,27 @@ namespace Model
 
 
     /**
-     * <p>The parameters for a AUTOMATION task type.</p>
+     * <p>The parameters for an AUTOMATION task type.</p>
      */
     inline const MaintenanceWindowAutomationParameters& GetAutomation() const{ return m_automation; }
 
     /**
-     * <p>The parameters for a AUTOMATION task type.</p>
+     * <p>The parameters for an AUTOMATION task type.</p>
      */
     inline void SetAutomation(const MaintenanceWindowAutomationParameters& value) { m_automationHasBeenSet = true; m_automation = value; }
 
     /**
-     * <p>The parameters for a AUTOMATION task type.</p>
+     * <p>The parameters for an AUTOMATION task type.</p>
      */
     inline void SetAutomation(MaintenanceWindowAutomationParameters&& value) { m_automationHasBeenSet = true; m_automation = std::move(value); }
 
     /**
-     * <p>The parameters for a AUTOMATION task type.</p>
+     * <p>The parameters for an AUTOMATION task type.</p>
      */
     inline MaintenanceWindowTaskInvocationParameters& WithAutomation(const MaintenanceWindowAutomationParameters& value) { SetAutomation(value); return *this;}
 
     /**
-     * <p>The parameters for a AUTOMATION task type.</p>
+     * <p>The parameters for an AUTOMATION task type.</p>
      */
     inline MaintenanceWindowTaskInvocationParameters& WithAutomation(MaintenanceWindowAutomationParameters&& value) { SetAutomation(std::move(value)); return *this;}
 

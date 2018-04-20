@@ -34,6 +34,7 @@ static const int INVALID_COMMAND_ID_HASH = HashingUtils::HashString("InvalidComm
 static const int INVALID_SCHEDULE_HASH = HashingUtils::HashString("InvalidSchedule");
 static const int HIERARCHY_TYPE_MISMATCH_HASH = HashingUtils::HashString("HierarchyTypeMismatchException");
 static const int INVALID_INSTANCE_INFORMATION_FILTER_VALUE_HASH = HashingUtils::HashString("InvalidInstanceInformationFilterValue");
+static const int INVALID_OPTION_HASH = HashingUtils::HashString("InvalidOptionException");
 static const int CUSTOM_SCHEMA_COUNT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("CustomSchemaCountLimitExceededException");
 static const int INVALID_AUTOMATION_EXECUTION_PARAMETERS_HASH = HashingUtils::HashString("InvalidAutomationExecutionParametersException");
 static const int TARGET_IN_USE_HASH = HashingUtils::HashString("TargetInUseException");
@@ -48,8 +49,10 @@ static const int INVALID_TARGET_HASH = HashingUtils::HashString("InvalidTarget")
 static const int INVALID_DOCUMENT_CONTENT_HASH = HashingUtils::HashString("InvalidDocumentContent");
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsError");
 static const int INVALID_FILTER_VALUE_HASH = HashingUtils::HashString("InvalidFilterValue");
+static const int INVALID_INVENTORY_REQUEST_HASH = HashingUtils::HashString("InvalidInventoryRequestException");
 static const int RESOURCE_DATA_SYNC_COUNT_EXCEEDED_HASH = HashingUtils::HashString("ResourceDataSyncCountExceededException");
 static const int DUPLICATE_DOCUMENT_CONTENT_HASH = HashingUtils::HashString("DuplicateDocumentContent");
+static const int INVALID_DELETE_INVENTORY_PARAMETERS_HASH = HashingUtils::HashString("InvalidDeleteInventoryParametersException");
 static const int AUTOMATION_STEP_NOT_FOUND_HASH = HashingUtils::HashString("AutomationStepNotFoundException");
 static const int INVALID_PARAMETERS_HASH = HashingUtils::HashString("InvalidParameters");
 static const int INVALID_DOCUMENT_HASH = HashingUtils::HashString("InvalidDocument");
@@ -88,6 +91,7 @@ static const int INVALID_ACTIVATION_HASH = HashingUtils::HashString("InvalidActi
 static const int HIERARCHY_LEVEL_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("HierarchyLevelLimitExceededException");
 static const int UNSUPPORTED_PARAMETER_TYPE_HASH = HashingUtils::HashString("UnsupportedParameterType");
 static const int INVALID_FILTER_KEY_HASH = HashingUtils::HashString("InvalidFilterKey");
+static const int INVALID_DELETION_ID_HASH = HashingUtils::HashString("InvalidDeletionIdException");
 static const int INVALID_FILTER_OPTION_HASH = HashingUtils::HashString("InvalidFilterOption");
 static const int RESOURCE_DATA_SYNC_INVALID_CONFIGURATION_HASH = HashingUtils::HashString("ResourceDataSyncInvalidConfigurationException");
 static const int PARAMETER_ALREADY_EXISTS_HASH = HashingUtils::HashString("ParameterAlreadyExists");
@@ -146,6 +150,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_INSTANCE_INFORMATION_FILTER_VALUE), false);
   }
+  else if (hashCode == INVALID_OPTION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_OPTION), false);
+  }
   else if (hashCode == CUSTOM_SCHEMA_COUNT_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::CUSTOM_SCHEMA_COUNT_LIMIT_EXCEEDED), false);
@@ -202,6 +210,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER_VALUE), false);
   }
+  else if (hashCode == INVALID_INVENTORY_REQUEST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_INVENTORY_REQUEST), false);
+  }
   else if (hashCode == RESOURCE_DATA_SYNC_COUNT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_DATA_SYNC_COUNT_EXCEEDED), false);
@@ -209,6 +221,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == DUPLICATE_DOCUMENT_CONTENT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DUPLICATE_DOCUMENT_CONTENT), false);
+  }
+  else if (hashCode == INVALID_DELETE_INVENTORY_PARAMETERS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DELETE_INVENTORY_PARAMETERS), false);
   }
   else if (hashCode == AUTOMATION_STEP_NOT_FOUND_HASH)
   {
@@ -361,6 +377,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_FILTER_KEY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER_KEY), false);
+  }
+  else if (hashCode == INVALID_DELETION_ID_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DELETION_ID), false);
   }
   else if (hashCode == INVALID_FILTER_OPTION_HASH)
   {

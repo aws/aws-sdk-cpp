@@ -74,16 +74,18 @@ namespace Model
      * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
      * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>for Cold
      * HDD, or <code>standard</code> for Magnetic.</p> </li> <li> <p>
-     * <code>launch.group-id</code> - The security group for the instance.</p> </li>
-     * <li> <p> <code>launch.image-id</code> - The ID of the AMI.</p> </li> <li> <p>
-     * <code>launch.instance-type</code> - The type of instance (for example,
-     * <code>m3.medium</code>).</p> </li> <li> <p> <code>launch.kernel-id</code> - The
-     * kernel ID.</p> </li> <li> <p> <code>launch.key-name</code> - The name of the key
-     * pair the instance launched with.</p> </li> <li> <p>
-     * <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled
-     * for the Spot Instance.</p> </li> <li> <p> <code>launch.ramdisk-id</code> - The
-     * RAM disk ID.</p> </li> <li> <p> <code>launched-availability-zone</code> - The
-     * Availability Zone in which the request is launched.</p> </li> <li> <p>
+     * <code>launch.group-id</code> - The ID of the security group for the
+     * instance.</p> </li> <li> <p> <code>launch.group-name</code> - The name of the
+     * security group for the instance.</p> </li> <li> <p> <code>launch.image-id</code>
+     * - The ID of the AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The
+     * type of instance (for example, <code>m3.medium</code>).</p> </li> <li> <p>
+     * <code>launch.kernel-id</code> - The kernel ID.</p> </li> <li> <p>
+     * <code>launch.key-name</code> - The name of the key pair the instance launched
+     * with.</p> </li> <li> <p> <code>launch.monitoring-enabled</code> - Whether
+     * detailed monitoring is enabled for the Spot Instance.</p> </li> <li> <p>
+     * <code>launch.ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
+     * <code>launched-availability-zone</code> - The Availability Zone in which the
+     * request is launched.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Indicates whether the IP
      * address is the primary private IP address.</p> </li> <li> <p>
      * <code>network-interface.delete-on-termination</code> - Indicates whether the
@@ -154,16 +156,18 @@ namespace Model
      * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
      * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>for Cold
      * HDD, or <code>standard</code> for Magnetic.</p> </li> <li> <p>
-     * <code>launch.group-id</code> - The security group for the instance.</p> </li>
-     * <li> <p> <code>launch.image-id</code> - The ID of the AMI.</p> </li> <li> <p>
-     * <code>launch.instance-type</code> - The type of instance (for example,
-     * <code>m3.medium</code>).</p> </li> <li> <p> <code>launch.kernel-id</code> - The
-     * kernel ID.</p> </li> <li> <p> <code>launch.key-name</code> - The name of the key
-     * pair the instance launched with.</p> </li> <li> <p>
-     * <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled
-     * for the Spot Instance.</p> </li> <li> <p> <code>launch.ramdisk-id</code> - The
-     * RAM disk ID.</p> </li> <li> <p> <code>launched-availability-zone</code> - The
-     * Availability Zone in which the request is launched.</p> </li> <li> <p>
+     * <code>launch.group-id</code> - The ID of the security group for the
+     * instance.</p> </li> <li> <p> <code>launch.group-name</code> - The name of the
+     * security group for the instance.</p> </li> <li> <p> <code>launch.image-id</code>
+     * - The ID of the AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The
+     * type of instance (for example, <code>m3.medium</code>).</p> </li> <li> <p>
+     * <code>launch.kernel-id</code> - The kernel ID.</p> </li> <li> <p>
+     * <code>launch.key-name</code> - The name of the key pair the instance launched
+     * with.</p> </li> <li> <p> <code>launch.monitoring-enabled</code> - Whether
+     * detailed monitoring is enabled for the Spot Instance.</p> </li> <li> <p>
+     * <code>launch.ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
+     * <code>launched-availability-zone</code> - The Availability Zone in which the
+     * request is launched.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Indicates whether the IP
      * address is the primary private IP address.</p> </li> <li> <p>
      * <code>network-interface.delete-on-termination</code> - Indicates whether the
@@ -234,16 +238,18 @@ namespace Model
      * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
      * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>for Cold
      * HDD, or <code>standard</code> for Magnetic.</p> </li> <li> <p>
-     * <code>launch.group-id</code> - The security group for the instance.</p> </li>
-     * <li> <p> <code>launch.image-id</code> - The ID of the AMI.</p> </li> <li> <p>
-     * <code>launch.instance-type</code> - The type of instance (for example,
-     * <code>m3.medium</code>).</p> </li> <li> <p> <code>launch.kernel-id</code> - The
-     * kernel ID.</p> </li> <li> <p> <code>launch.key-name</code> - The name of the key
-     * pair the instance launched with.</p> </li> <li> <p>
-     * <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled
-     * for the Spot Instance.</p> </li> <li> <p> <code>launch.ramdisk-id</code> - The
-     * RAM disk ID.</p> </li> <li> <p> <code>launched-availability-zone</code> - The
-     * Availability Zone in which the request is launched.</p> </li> <li> <p>
+     * <code>launch.group-id</code> - The ID of the security group for the
+     * instance.</p> </li> <li> <p> <code>launch.group-name</code> - The name of the
+     * security group for the instance.</p> </li> <li> <p> <code>launch.image-id</code>
+     * - The ID of the AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The
+     * type of instance (for example, <code>m3.medium</code>).</p> </li> <li> <p>
+     * <code>launch.kernel-id</code> - The kernel ID.</p> </li> <li> <p>
+     * <code>launch.key-name</code> - The name of the key pair the instance launched
+     * with.</p> </li> <li> <p> <code>launch.monitoring-enabled</code> - Whether
+     * detailed monitoring is enabled for the Spot Instance.</p> </li> <li> <p>
+     * <code>launch.ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
+     * <code>launched-availability-zone</code> - The Availability Zone in which the
+     * request is launched.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Indicates whether the IP
      * address is the primary private IP address.</p> </li> <li> <p>
      * <code>network-interface.delete-on-termination</code> - Indicates whether the
@@ -314,16 +320,18 @@ namespace Model
      * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
      * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>for Cold
      * HDD, or <code>standard</code> for Magnetic.</p> </li> <li> <p>
-     * <code>launch.group-id</code> - The security group for the instance.</p> </li>
-     * <li> <p> <code>launch.image-id</code> - The ID of the AMI.</p> </li> <li> <p>
-     * <code>launch.instance-type</code> - The type of instance (for example,
-     * <code>m3.medium</code>).</p> </li> <li> <p> <code>launch.kernel-id</code> - The
-     * kernel ID.</p> </li> <li> <p> <code>launch.key-name</code> - The name of the key
-     * pair the instance launched with.</p> </li> <li> <p>
-     * <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled
-     * for the Spot Instance.</p> </li> <li> <p> <code>launch.ramdisk-id</code> - The
-     * RAM disk ID.</p> </li> <li> <p> <code>launched-availability-zone</code> - The
-     * Availability Zone in which the request is launched.</p> </li> <li> <p>
+     * <code>launch.group-id</code> - The ID of the security group for the
+     * instance.</p> </li> <li> <p> <code>launch.group-name</code> - The name of the
+     * security group for the instance.</p> </li> <li> <p> <code>launch.image-id</code>
+     * - The ID of the AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The
+     * type of instance (for example, <code>m3.medium</code>).</p> </li> <li> <p>
+     * <code>launch.kernel-id</code> - The kernel ID.</p> </li> <li> <p>
+     * <code>launch.key-name</code> - The name of the key pair the instance launched
+     * with.</p> </li> <li> <p> <code>launch.monitoring-enabled</code> - Whether
+     * detailed monitoring is enabled for the Spot Instance.</p> </li> <li> <p>
+     * <code>launch.ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
+     * <code>launched-availability-zone</code> - The Availability Zone in which the
+     * request is launched.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Indicates whether the IP
      * address is the primary private IP address.</p> </li> <li> <p>
      * <code>network-interface.delete-on-termination</code> - Indicates whether the
@@ -394,16 +402,18 @@ namespace Model
      * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
      * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>for Cold
      * HDD, or <code>standard</code> for Magnetic.</p> </li> <li> <p>
-     * <code>launch.group-id</code> - The security group for the instance.</p> </li>
-     * <li> <p> <code>launch.image-id</code> - The ID of the AMI.</p> </li> <li> <p>
-     * <code>launch.instance-type</code> - The type of instance (for example,
-     * <code>m3.medium</code>).</p> </li> <li> <p> <code>launch.kernel-id</code> - The
-     * kernel ID.</p> </li> <li> <p> <code>launch.key-name</code> - The name of the key
-     * pair the instance launched with.</p> </li> <li> <p>
-     * <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled
-     * for the Spot Instance.</p> </li> <li> <p> <code>launch.ramdisk-id</code> - The
-     * RAM disk ID.</p> </li> <li> <p> <code>launched-availability-zone</code> - The
-     * Availability Zone in which the request is launched.</p> </li> <li> <p>
+     * <code>launch.group-id</code> - The ID of the security group for the
+     * instance.</p> </li> <li> <p> <code>launch.group-name</code> - The name of the
+     * security group for the instance.</p> </li> <li> <p> <code>launch.image-id</code>
+     * - The ID of the AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The
+     * type of instance (for example, <code>m3.medium</code>).</p> </li> <li> <p>
+     * <code>launch.kernel-id</code> - The kernel ID.</p> </li> <li> <p>
+     * <code>launch.key-name</code> - The name of the key pair the instance launched
+     * with.</p> </li> <li> <p> <code>launch.monitoring-enabled</code> - Whether
+     * detailed monitoring is enabled for the Spot Instance.</p> </li> <li> <p>
+     * <code>launch.ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
+     * <code>launched-availability-zone</code> - The Availability Zone in which the
+     * request is launched.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Indicates whether the IP
      * address is the primary private IP address.</p> </li> <li> <p>
      * <code>network-interface.delete-on-termination</code> - Indicates whether the
@@ -474,16 +484,18 @@ namespace Model
      * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
      * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>for Cold
      * HDD, or <code>standard</code> for Magnetic.</p> </li> <li> <p>
-     * <code>launch.group-id</code> - The security group for the instance.</p> </li>
-     * <li> <p> <code>launch.image-id</code> - The ID of the AMI.</p> </li> <li> <p>
-     * <code>launch.instance-type</code> - The type of instance (for example,
-     * <code>m3.medium</code>).</p> </li> <li> <p> <code>launch.kernel-id</code> - The
-     * kernel ID.</p> </li> <li> <p> <code>launch.key-name</code> - The name of the key
-     * pair the instance launched with.</p> </li> <li> <p>
-     * <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled
-     * for the Spot Instance.</p> </li> <li> <p> <code>launch.ramdisk-id</code> - The
-     * RAM disk ID.</p> </li> <li> <p> <code>launched-availability-zone</code> - The
-     * Availability Zone in which the request is launched.</p> </li> <li> <p>
+     * <code>launch.group-id</code> - The ID of the security group for the
+     * instance.</p> </li> <li> <p> <code>launch.group-name</code> - The name of the
+     * security group for the instance.</p> </li> <li> <p> <code>launch.image-id</code>
+     * - The ID of the AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The
+     * type of instance (for example, <code>m3.medium</code>).</p> </li> <li> <p>
+     * <code>launch.kernel-id</code> - The kernel ID.</p> </li> <li> <p>
+     * <code>launch.key-name</code> - The name of the key pair the instance launched
+     * with.</p> </li> <li> <p> <code>launch.monitoring-enabled</code> - Whether
+     * detailed monitoring is enabled for the Spot Instance.</p> </li> <li> <p>
+     * <code>launch.ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
+     * <code>launched-availability-zone</code> - The Availability Zone in which the
+     * request is launched.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Indicates whether the IP
      * address is the primary private IP address.</p> </li> <li> <p>
      * <code>network-interface.delete-on-termination</code> - Indicates whether the
@@ -554,16 +566,18 @@ namespace Model
      * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
      * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>for Cold
      * HDD, or <code>standard</code> for Magnetic.</p> </li> <li> <p>
-     * <code>launch.group-id</code> - The security group for the instance.</p> </li>
-     * <li> <p> <code>launch.image-id</code> - The ID of the AMI.</p> </li> <li> <p>
-     * <code>launch.instance-type</code> - The type of instance (for example,
-     * <code>m3.medium</code>).</p> </li> <li> <p> <code>launch.kernel-id</code> - The
-     * kernel ID.</p> </li> <li> <p> <code>launch.key-name</code> - The name of the key
-     * pair the instance launched with.</p> </li> <li> <p>
-     * <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled
-     * for the Spot Instance.</p> </li> <li> <p> <code>launch.ramdisk-id</code> - The
-     * RAM disk ID.</p> </li> <li> <p> <code>launched-availability-zone</code> - The
-     * Availability Zone in which the request is launched.</p> </li> <li> <p>
+     * <code>launch.group-id</code> - The ID of the security group for the
+     * instance.</p> </li> <li> <p> <code>launch.group-name</code> - The name of the
+     * security group for the instance.</p> </li> <li> <p> <code>launch.image-id</code>
+     * - The ID of the AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The
+     * type of instance (for example, <code>m3.medium</code>).</p> </li> <li> <p>
+     * <code>launch.kernel-id</code> - The kernel ID.</p> </li> <li> <p>
+     * <code>launch.key-name</code> - The name of the key pair the instance launched
+     * with.</p> </li> <li> <p> <code>launch.monitoring-enabled</code> - Whether
+     * detailed monitoring is enabled for the Spot Instance.</p> </li> <li> <p>
+     * <code>launch.ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
+     * <code>launched-availability-zone</code> - The Availability Zone in which the
+     * request is launched.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Indicates whether the IP
      * address is the primary private IP address.</p> </li> <li> <p>
      * <code>network-interface.delete-on-termination</code> - Indicates whether the

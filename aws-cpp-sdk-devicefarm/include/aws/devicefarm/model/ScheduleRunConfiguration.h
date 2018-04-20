@@ -17,9 +17,9 @@
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devicefarm/model/Location.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/devicefarm/model/CustomerArtifactPaths.h>
 #include <aws/devicefarm/model/Radios.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/devicefarm/model/BillingMethod.h>
 #include <utility>
 
@@ -201,6 +201,55 @@ namespace Model
 
 
     /**
+     * <p>An array of Amazon Resource Names (ARNs) for your VPC endpoint
+     * configurations.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetVpceConfigurationArns() const{ return m_vpceConfigurationArns; }
+
+    /**
+     * <p>An array of Amazon Resource Names (ARNs) for your VPC endpoint
+     * configurations.</p>
+     */
+    inline void SetVpceConfigurationArns(const Aws::Vector<Aws::String>& value) { m_vpceConfigurationArnsHasBeenSet = true; m_vpceConfigurationArns = value; }
+
+    /**
+     * <p>An array of Amazon Resource Names (ARNs) for your VPC endpoint
+     * configurations.</p>
+     */
+    inline void SetVpceConfigurationArns(Aws::Vector<Aws::String>&& value) { m_vpceConfigurationArnsHasBeenSet = true; m_vpceConfigurationArns = std::move(value); }
+
+    /**
+     * <p>An array of Amazon Resource Names (ARNs) for your VPC endpoint
+     * configurations.</p>
+     */
+    inline ScheduleRunConfiguration& WithVpceConfigurationArns(const Aws::Vector<Aws::String>& value) { SetVpceConfigurationArns(value); return *this;}
+
+    /**
+     * <p>An array of Amazon Resource Names (ARNs) for your VPC endpoint
+     * configurations.</p>
+     */
+    inline ScheduleRunConfiguration& WithVpceConfigurationArns(Aws::Vector<Aws::String>&& value) { SetVpceConfigurationArns(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of Amazon Resource Names (ARNs) for your VPC endpoint
+     * configurations.</p>
+     */
+    inline ScheduleRunConfiguration& AddVpceConfigurationArns(const Aws::String& value) { m_vpceConfigurationArnsHasBeenSet = true; m_vpceConfigurationArns.push_back(value); return *this; }
+
+    /**
+     * <p>An array of Amazon Resource Names (ARNs) for your VPC endpoint
+     * configurations.</p>
+     */
+    inline ScheduleRunConfiguration& AddVpceConfigurationArns(Aws::String&& value) { m_vpceConfigurationArnsHasBeenSet = true; m_vpceConfigurationArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>An array of Amazon Resource Names (ARNs) for your VPC endpoint
+     * configurations.</p>
+     */
+    inline ScheduleRunConfiguration& AddVpceConfigurationArns(const char* value) { m_vpceConfigurationArnsHasBeenSet = true; m_vpceConfigurationArns.push_back(value); return *this; }
+
+
+    /**
      * <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run
      * configuration.</p>
      */
@@ -346,6 +395,9 @@ namespace Model
 
     Location m_location;
     bool m_locationHasBeenSet;
+
+    Aws::Vector<Aws::String> m_vpceConfigurationArns;
+    bool m_vpceConfigurationArnsHasBeenSet;
 
     CustomerArtifactPaths m_customerArtifactPaths;
     bool m_customerArtifactPathsHasBeenSet;

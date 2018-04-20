@@ -315,19 +315,19 @@ namespace Model
 
     /**
      * <p>If this time is reached and the command has not already started executing, it
-     * will not execute.</p>
+     * will not run.</p>
      */
     inline int GetTimeoutSeconds() const{ return m_timeoutSeconds; }
 
     /**
      * <p>If this time is reached and the command has not already started executing, it
-     * will not execute.</p>
+     * will not run.</p>
      */
     inline void SetTimeoutSeconds(int value) { m_timeoutSecondsHasBeenSet = true; m_timeoutSeconds = value; }
 
     /**
      * <p>If this time is reached and the command has not already started executing, it
-     * will not execute.</p>
+     * will not run.</p>
      */
     inline SendCommandRequest& WithTimeoutSeconds(int value) { SetTimeoutSeconds(value); return *this;}
 

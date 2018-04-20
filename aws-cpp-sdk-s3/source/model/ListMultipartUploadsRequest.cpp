@@ -35,7 +35,8 @@ ListMultipartUploadsRequest::ListMultipartUploadsRequest() :
     m_maxUploads(0),
     m_maxUploadsHasBeenSet(false),
     m_prefixHasBeenSet(false),
-    m_uploadIdMarkerHasBeenSet(false)
+    m_uploadIdMarkerHasBeenSet(false),
+    m_customizedAccessLogTagHasBeenSet(false)
 {
 }
 
@@ -89,5 +90,22 @@ void ListMultipartUploadsRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
+    if(!m_customizedAccessLogTag.empty())
+    {
+        // only accept customized LogTag which starts with "x-"
+        Aws::Map<Aws::String, Aws::String> collectedLogTags;
+        for(const auto& entry: m_customizedAccessLogTag)
+        {
+            if (!entry.first.empty() && !entry.second.empty() && entry.first.substr(0, 2) == "x-")
+            {
+                collectedLogTags.emplace(entry.first, entry.second);
+            }
+        }
+
+        if (!collectedLogTags.empty())
+        {
+            uri.AddQueryStringParameter(collectedLogTags);
+        }
+    }
 }
 

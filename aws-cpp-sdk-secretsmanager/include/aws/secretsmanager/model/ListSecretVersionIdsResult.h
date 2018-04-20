@@ -166,79 +166,79 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the secret.</p> <note> <p>AWS Secrets
-     * Manager automatically adds several random characters to the name at the end of
-     * the ARN when you initially create a secret. This affects only the ARN and not
-     * the actual friendly name. This ensures that if you create a new secret with the
-     * same name as an old secret that you previously deleted, then users with access
-     * to the old secret <i>don't</i> automatically get access to the new secret
-     * because the ARNs are different.</p> </note>
+     * <p>The Amazon Resource Name (ARN) for the secret.</p> <note> <p>Secrets Manager
+     * automatically adds several random characters to the name at the end of the ARN
+     * when you initially create a secret. This affects only the ARN and not the actual
+     * friendly name. This ensures that if you create a new secret with the same name
+     * as an old secret that you previously deleted, then users with access to the old
+     * secret <i>don't</i> automatically get access to the new secret because the ARNs
+     * are different.</p> </note>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the secret.</p> <note> <p>AWS Secrets
-     * Manager automatically adds several random characters to the name at the end of
-     * the ARN when you initially create a secret. This affects only the ARN and not
-     * the actual friendly name. This ensures that if you create a new secret with the
-     * same name as an old secret that you previously deleted, then users with access
-     * to the old secret <i>don't</i> automatically get access to the new secret
-     * because the ARNs are different.</p> </note>
+     * <p>The Amazon Resource Name (ARN) for the secret.</p> <note> <p>Secrets Manager
+     * automatically adds several random characters to the name at the end of the ARN
+     * when you initially create a secret. This affects only the ARN and not the actual
+     * friendly name. This ensures that if you create a new secret with the same name
+     * as an old secret that you previously deleted, then users with access to the old
+     * secret <i>don't</i> automatically get access to the new secret because the ARNs
+     * are different.</p> </note>
      */
     inline void SetARN(const Aws::String& value) { m_aRN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the secret.</p> <note> <p>AWS Secrets
-     * Manager automatically adds several random characters to the name at the end of
-     * the ARN when you initially create a secret. This affects only the ARN and not
-     * the actual friendly name. This ensures that if you create a new secret with the
-     * same name as an old secret that you previously deleted, then users with access
-     * to the old secret <i>don't</i> automatically get access to the new secret
-     * because the ARNs are different.</p> </note>
+     * <p>The Amazon Resource Name (ARN) for the secret.</p> <note> <p>Secrets Manager
+     * automatically adds several random characters to the name at the end of the ARN
+     * when you initially create a secret. This affects only the ARN and not the actual
+     * friendly name. This ensures that if you create a new secret with the same name
+     * as an old secret that you previously deleted, then users with access to the old
+     * secret <i>don't</i> automatically get access to the new secret because the ARNs
+     * are different.</p> </note>
      */
     inline void SetARN(Aws::String&& value) { m_aRN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the secret.</p> <note> <p>AWS Secrets
-     * Manager automatically adds several random characters to the name at the end of
-     * the ARN when you initially create a secret. This affects only the ARN and not
-     * the actual friendly name. This ensures that if you create a new secret with the
-     * same name as an old secret that you previously deleted, then users with access
-     * to the old secret <i>don't</i> automatically get access to the new secret
-     * because the ARNs are different.</p> </note>
+     * <p>The Amazon Resource Name (ARN) for the secret.</p> <note> <p>Secrets Manager
+     * automatically adds several random characters to the name at the end of the ARN
+     * when you initially create a secret. This affects only the ARN and not the actual
+     * friendly name. This ensures that if you create a new secret with the same name
+     * as an old secret that you previously deleted, then users with access to the old
+     * secret <i>don't</i> automatically get access to the new secret because the ARNs
+     * are different.</p> </note>
      */
     inline void SetARN(const char* value) { m_aRN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the secret.</p> <note> <p>AWS Secrets
-     * Manager automatically adds several random characters to the name at the end of
-     * the ARN when you initially create a secret. This affects only the ARN and not
-     * the actual friendly name. This ensures that if you create a new secret with the
-     * same name as an old secret that you previously deleted, then users with access
-     * to the old secret <i>don't</i> automatically get access to the new secret
-     * because the ARNs are different.</p> </note>
+     * <p>The Amazon Resource Name (ARN) for the secret.</p> <note> <p>Secrets Manager
+     * automatically adds several random characters to the name at the end of the ARN
+     * when you initially create a secret. This affects only the ARN and not the actual
+     * friendly name. This ensures that if you create a new secret with the same name
+     * as an old secret that you previously deleted, then users with access to the old
+     * secret <i>don't</i> automatically get access to the new secret because the ARNs
+     * are different.</p> </note>
      */
     inline ListSecretVersionIdsResult& WithARN(const Aws::String& value) { SetARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the secret.</p> <note> <p>AWS Secrets
-     * Manager automatically adds several random characters to the name at the end of
-     * the ARN when you initially create a secret. This affects only the ARN and not
-     * the actual friendly name. This ensures that if you create a new secret with the
-     * same name as an old secret that you previously deleted, then users with access
-     * to the old secret <i>don't</i> automatically get access to the new secret
-     * because the ARNs are different.</p> </note>
+     * <p>The Amazon Resource Name (ARN) for the secret.</p> <note> <p>Secrets Manager
+     * automatically adds several random characters to the name at the end of the ARN
+     * when you initially create a secret. This affects only the ARN and not the actual
+     * friendly name. This ensures that if you create a new secret with the same name
+     * as an old secret that you previously deleted, then users with access to the old
+     * secret <i>don't</i> automatically get access to the new secret because the ARNs
+     * are different.</p> </note>
      */
     inline ListSecretVersionIdsResult& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the secret.</p> <note> <p>AWS Secrets
-     * Manager automatically adds several random characters to the name at the end of
-     * the ARN when you initially create a secret. This affects only the ARN and not
-     * the actual friendly name. This ensures that if you create a new secret with the
-     * same name as an old secret that you previously deleted, then users with access
-     * to the old secret <i>don't</i> automatically get access to the new secret
-     * because the ARNs are different.</p> </note>
+     * <p>The Amazon Resource Name (ARN) for the secret.</p> <note> <p>Secrets Manager
+     * automatically adds several random characters to the name at the end of the ARN
+     * when you initially create a secret. This affects only the ARN and not the actual
+     * friendly name. This ensures that if you create a new secret with the same name
+     * as an old secret that you previously deleted, then users with access to the old
+     * secret <i>don't</i> automatically get access to the new secret because the ARNs
+     * are different.</p> </note>
      */
     inline ListSecretVersionIdsResult& WithARN(const char* value) { SetARN(value); return *this;}
 

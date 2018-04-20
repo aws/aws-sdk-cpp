@@ -33,6 +33,7 @@ ScheduleRunConfiguration::ScheduleRunConfiguration() :
     m_networkProfileArnHasBeenSet(false),
     m_localeHasBeenSet(false),
     m_locationHasBeenSet(false),
+    m_vpceConfigurationArnsHasBeenSet(false),
     m_customerArtifactPathsHasBeenSet(false),
     m_radiosHasBeenSet(false),
     m_auxiliaryAppsHasBeenSet(false),
@@ -46,6 +47,7 @@ ScheduleRunConfiguration::ScheduleRunConfiguration(const JsonValue& jsonValue) :
     m_networkProfileArnHasBeenSet(false),
     m_localeHasBeenSet(false),
     m_locationHasBeenSet(false),
+    m_vpceConfigurationArnsHasBeenSet(false),
     m_customerArtifactPathsHasBeenSet(false),
     m_radiosHasBeenSet(false),
     m_auxiliaryAppsHasBeenSet(false),
@@ -83,6 +85,16 @@ ScheduleRunConfiguration& ScheduleRunConfiguration::operator =(const JsonValue& 
     m_location = jsonValue.GetObject("location");
 
     m_locationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("vpceConfigurationArns"))
+  {
+    Array<JsonValue> vpceConfigurationArnsJsonList = jsonValue.GetArray("vpceConfigurationArns");
+    for(unsigned vpceConfigurationArnsIndex = 0; vpceConfigurationArnsIndex < vpceConfigurationArnsJsonList.GetLength(); ++vpceConfigurationArnsIndex)
+    {
+      m_vpceConfigurationArns.push_back(vpceConfigurationArnsJsonList[vpceConfigurationArnsIndex].AsString());
+    }
+    m_vpceConfigurationArnsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("customerArtifactPaths"))
@@ -144,6 +156,17 @@ JsonValue ScheduleRunConfiguration::Jsonize() const
   if(m_locationHasBeenSet)
   {
    payload.WithObject("location", m_location.Jsonize());
+
+  }
+
+  if(m_vpceConfigurationArnsHasBeenSet)
+  {
+   Array<JsonValue> vpceConfigurationArnsJsonList(m_vpceConfigurationArns.size());
+   for(unsigned vpceConfigurationArnsIndex = 0; vpceConfigurationArnsIndex < vpceConfigurationArnsJsonList.GetLength(); ++vpceConfigurationArnsIndex)
+   {
+     vpceConfigurationArnsJsonList[vpceConfigurationArnsIndex].AsString(m_vpceConfigurationArns[vpceConfigurationArnsIndex]);
+   }
+   payload.WithArray("vpceConfigurationArns", std::move(vpceConfigurationArnsJsonList));
 
   }
 

@@ -60,26 +60,25 @@ namespace Model
      * <code>/dev/sda1</code>).</p> </li> <li> <p> <code>attachment.instance-id</code>
      * - The ID of the instance the volume is attached to.</p> </li> <li> <p>
      * <code>attachment.status</code> - The attachment state (<code>attaching</code> |
-     * <code>attached</code> | <code>detaching</code> | <code>detached</code>).</p>
-     * </li> <li> <p> <code>availability-zone</code> - The Availability Zone in which
-     * the volume was created.</p> </li> <li> <p> <code>create-time</code> - The time
-     * stamp when the volume was created.</p> </li> <li> <p> <code>encrypted</code> -
-     * The encryption status of the volume.</p> </li> <li> <p> <code>size</code> - The
-     * size of the volume, in GiB.</p> </li> <li> <p> <code>snapshot-id</code> - The
-     * snapshot from which the volume was created.</p> </li> <li> <p>
-     * <code>status</code> - The status of the volume (<code>creating</code> |
-     * <code>available</code> | <code>in-use</code> | <code>deleting</code> |
-     * <code>deleted</code> | <code>error</code>).</p> </li> <li> <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
-     * assigned to the resource. Specify the key of the tag in the filter name and the
-     * value of the tag in the filter value. For example, for the tag Purpose=X,
-     * specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     * filter value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag
-     * assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter
-     * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
-     * both the tag key Purpose (regardless of what the tag's value is), and the tag
-     * value X (regardless of what the tag's key is). If you want to list only
+     * <code>attached</code> | <code>detaching</code>).</p> </li> <li> <p>
+     * <code>availability-zone</code> - The Availability Zone in which the volume was
+     * created.</p> </li> <li> <p> <code>create-time</code> - The time stamp when the
+     * volume was created.</p> </li> <li> <p> <code>encrypted</code> - The encryption
+     * status of the volume.</p> </li> <li> <p> <code>size</code> - The size of the
+     * volume, in GiB.</p> </li> <li> <p> <code>snapshot-id</code> - The snapshot from
+     * which the volume was created.</p> </li> <li> <p> <code>status</code> - The
+     * status of the volume (<code>creating</code> | <code>available</code> |
+     * <code>in-use</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>error</code>).</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i>
+     * - The key/value combination of a tag assigned to the resource. Specify the key
+     * of the tag in the filter name and the value of the tag in the filter value. For
+     * example, for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter
+     * name and <code>X</code> for the filter value.</p> </li> <li> <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
+     * independent of the <code>tag-value</code> filter. For example, if you use both
+     * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
+     * assigned both the tag key Purpose (regardless of what the tag's value is), and
+     * the tag value X (regardless of what the tag's key is). If you want to list only
      * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
      * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
      * to the resource. This filter is independent of the <code>tag-key</code>
@@ -100,26 +99,25 @@ namespace Model
      * <code>/dev/sda1</code>).</p> </li> <li> <p> <code>attachment.instance-id</code>
      * - The ID of the instance the volume is attached to.</p> </li> <li> <p>
      * <code>attachment.status</code> - The attachment state (<code>attaching</code> |
-     * <code>attached</code> | <code>detaching</code> | <code>detached</code>).</p>
-     * </li> <li> <p> <code>availability-zone</code> - The Availability Zone in which
-     * the volume was created.</p> </li> <li> <p> <code>create-time</code> - The time
-     * stamp when the volume was created.</p> </li> <li> <p> <code>encrypted</code> -
-     * The encryption status of the volume.</p> </li> <li> <p> <code>size</code> - The
-     * size of the volume, in GiB.</p> </li> <li> <p> <code>snapshot-id</code> - The
-     * snapshot from which the volume was created.</p> </li> <li> <p>
-     * <code>status</code> - The status of the volume (<code>creating</code> |
-     * <code>available</code> | <code>in-use</code> | <code>deleting</code> |
-     * <code>deleted</code> | <code>error</code>).</p> </li> <li> <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
-     * assigned to the resource. Specify the key of the tag in the filter name and the
-     * value of the tag in the filter value. For example, for the tag Purpose=X,
-     * specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     * filter value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag
-     * assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter
-     * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
-     * both the tag key Purpose (regardless of what the tag's value is), and the tag
-     * value X (regardless of what the tag's key is). If you want to list only
+     * <code>attached</code> | <code>detaching</code>).</p> </li> <li> <p>
+     * <code>availability-zone</code> - The Availability Zone in which the volume was
+     * created.</p> </li> <li> <p> <code>create-time</code> - The time stamp when the
+     * volume was created.</p> </li> <li> <p> <code>encrypted</code> - The encryption
+     * status of the volume.</p> </li> <li> <p> <code>size</code> - The size of the
+     * volume, in GiB.</p> </li> <li> <p> <code>snapshot-id</code> - The snapshot from
+     * which the volume was created.</p> </li> <li> <p> <code>status</code> - The
+     * status of the volume (<code>creating</code> | <code>available</code> |
+     * <code>in-use</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>error</code>).</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i>
+     * - The key/value combination of a tag assigned to the resource. Specify the key
+     * of the tag in the filter name and the value of the tag in the filter value. For
+     * example, for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter
+     * name and <code>X</code> for the filter value.</p> </li> <li> <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
+     * independent of the <code>tag-value</code> filter. For example, if you use both
+     * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
+     * assigned both the tag key Purpose (regardless of what the tag's value is), and
+     * the tag value X (regardless of what the tag's key is). If you want to list only
      * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
      * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
      * to the resource. This filter is independent of the <code>tag-key</code>
@@ -140,26 +138,25 @@ namespace Model
      * <code>/dev/sda1</code>).</p> </li> <li> <p> <code>attachment.instance-id</code>
      * - The ID of the instance the volume is attached to.</p> </li> <li> <p>
      * <code>attachment.status</code> - The attachment state (<code>attaching</code> |
-     * <code>attached</code> | <code>detaching</code> | <code>detached</code>).</p>
-     * </li> <li> <p> <code>availability-zone</code> - The Availability Zone in which
-     * the volume was created.</p> </li> <li> <p> <code>create-time</code> - The time
-     * stamp when the volume was created.</p> </li> <li> <p> <code>encrypted</code> -
-     * The encryption status of the volume.</p> </li> <li> <p> <code>size</code> - The
-     * size of the volume, in GiB.</p> </li> <li> <p> <code>snapshot-id</code> - The
-     * snapshot from which the volume was created.</p> </li> <li> <p>
-     * <code>status</code> - The status of the volume (<code>creating</code> |
-     * <code>available</code> | <code>in-use</code> | <code>deleting</code> |
-     * <code>deleted</code> | <code>error</code>).</p> </li> <li> <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
-     * assigned to the resource. Specify the key of the tag in the filter name and the
-     * value of the tag in the filter value. For example, for the tag Purpose=X,
-     * specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     * filter value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag
-     * assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter
-     * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
-     * both the tag key Purpose (regardless of what the tag's value is), and the tag
-     * value X (regardless of what the tag's key is). If you want to list only
+     * <code>attached</code> | <code>detaching</code>).</p> </li> <li> <p>
+     * <code>availability-zone</code> - The Availability Zone in which the volume was
+     * created.</p> </li> <li> <p> <code>create-time</code> - The time stamp when the
+     * volume was created.</p> </li> <li> <p> <code>encrypted</code> - The encryption
+     * status of the volume.</p> </li> <li> <p> <code>size</code> - The size of the
+     * volume, in GiB.</p> </li> <li> <p> <code>snapshot-id</code> - The snapshot from
+     * which the volume was created.</p> </li> <li> <p> <code>status</code> - The
+     * status of the volume (<code>creating</code> | <code>available</code> |
+     * <code>in-use</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>error</code>).</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i>
+     * - The key/value combination of a tag assigned to the resource. Specify the key
+     * of the tag in the filter name and the value of the tag in the filter value. For
+     * example, for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter
+     * name and <code>X</code> for the filter value.</p> </li> <li> <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
+     * independent of the <code>tag-value</code> filter. For example, if you use both
+     * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
+     * assigned both the tag key Purpose (regardless of what the tag's value is), and
+     * the tag value X (regardless of what the tag's key is). If you want to list only
      * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
      * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
      * to the resource. This filter is independent of the <code>tag-key</code>
@@ -180,26 +177,25 @@ namespace Model
      * <code>/dev/sda1</code>).</p> </li> <li> <p> <code>attachment.instance-id</code>
      * - The ID of the instance the volume is attached to.</p> </li> <li> <p>
      * <code>attachment.status</code> - The attachment state (<code>attaching</code> |
-     * <code>attached</code> | <code>detaching</code> | <code>detached</code>).</p>
-     * </li> <li> <p> <code>availability-zone</code> - The Availability Zone in which
-     * the volume was created.</p> </li> <li> <p> <code>create-time</code> - The time
-     * stamp when the volume was created.</p> </li> <li> <p> <code>encrypted</code> -
-     * The encryption status of the volume.</p> </li> <li> <p> <code>size</code> - The
-     * size of the volume, in GiB.</p> </li> <li> <p> <code>snapshot-id</code> - The
-     * snapshot from which the volume was created.</p> </li> <li> <p>
-     * <code>status</code> - The status of the volume (<code>creating</code> |
-     * <code>available</code> | <code>in-use</code> | <code>deleting</code> |
-     * <code>deleted</code> | <code>error</code>).</p> </li> <li> <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
-     * assigned to the resource. Specify the key of the tag in the filter name and the
-     * value of the tag in the filter value. For example, for the tag Purpose=X,
-     * specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     * filter value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag
-     * assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter
-     * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
-     * both the tag key Purpose (regardless of what the tag's value is), and the tag
-     * value X (regardless of what the tag's key is). If you want to list only
+     * <code>attached</code> | <code>detaching</code>).</p> </li> <li> <p>
+     * <code>availability-zone</code> - The Availability Zone in which the volume was
+     * created.</p> </li> <li> <p> <code>create-time</code> - The time stamp when the
+     * volume was created.</p> </li> <li> <p> <code>encrypted</code> - The encryption
+     * status of the volume.</p> </li> <li> <p> <code>size</code> - The size of the
+     * volume, in GiB.</p> </li> <li> <p> <code>snapshot-id</code> - The snapshot from
+     * which the volume was created.</p> </li> <li> <p> <code>status</code> - The
+     * status of the volume (<code>creating</code> | <code>available</code> |
+     * <code>in-use</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>error</code>).</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i>
+     * - The key/value combination of a tag assigned to the resource. Specify the key
+     * of the tag in the filter name and the value of the tag in the filter value. For
+     * example, for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter
+     * name and <code>X</code> for the filter value.</p> </li> <li> <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
+     * independent of the <code>tag-value</code> filter. For example, if you use both
+     * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
+     * assigned both the tag key Purpose (regardless of what the tag's value is), and
+     * the tag value X (regardless of what the tag's key is). If you want to list only
      * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
      * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
      * to the resource. This filter is independent of the <code>tag-key</code>
@@ -220,26 +216,25 @@ namespace Model
      * <code>/dev/sda1</code>).</p> </li> <li> <p> <code>attachment.instance-id</code>
      * - The ID of the instance the volume is attached to.</p> </li> <li> <p>
      * <code>attachment.status</code> - The attachment state (<code>attaching</code> |
-     * <code>attached</code> | <code>detaching</code> | <code>detached</code>).</p>
-     * </li> <li> <p> <code>availability-zone</code> - The Availability Zone in which
-     * the volume was created.</p> </li> <li> <p> <code>create-time</code> - The time
-     * stamp when the volume was created.</p> </li> <li> <p> <code>encrypted</code> -
-     * The encryption status of the volume.</p> </li> <li> <p> <code>size</code> - The
-     * size of the volume, in GiB.</p> </li> <li> <p> <code>snapshot-id</code> - The
-     * snapshot from which the volume was created.</p> </li> <li> <p>
-     * <code>status</code> - The status of the volume (<code>creating</code> |
-     * <code>available</code> | <code>in-use</code> | <code>deleting</code> |
-     * <code>deleted</code> | <code>error</code>).</p> </li> <li> <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
-     * assigned to the resource. Specify the key of the tag in the filter name and the
-     * value of the tag in the filter value. For example, for the tag Purpose=X,
-     * specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     * filter value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag
-     * assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter
-     * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
-     * both the tag key Purpose (regardless of what the tag's value is), and the tag
-     * value X (regardless of what the tag's key is). If you want to list only
+     * <code>attached</code> | <code>detaching</code>).</p> </li> <li> <p>
+     * <code>availability-zone</code> - The Availability Zone in which the volume was
+     * created.</p> </li> <li> <p> <code>create-time</code> - The time stamp when the
+     * volume was created.</p> </li> <li> <p> <code>encrypted</code> - The encryption
+     * status of the volume.</p> </li> <li> <p> <code>size</code> - The size of the
+     * volume, in GiB.</p> </li> <li> <p> <code>snapshot-id</code> - The snapshot from
+     * which the volume was created.</p> </li> <li> <p> <code>status</code> - The
+     * status of the volume (<code>creating</code> | <code>available</code> |
+     * <code>in-use</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>error</code>).</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i>
+     * - The key/value combination of a tag assigned to the resource. Specify the key
+     * of the tag in the filter name and the value of the tag in the filter value. For
+     * example, for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter
+     * name and <code>X</code> for the filter value.</p> </li> <li> <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
+     * independent of the <code>tag-value</code> filter. For example, if you use both
+     * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
+     * assigned both the tag key Purpose (regardless of what the tag's value is), and
+     * the tag value X (regardless of what the tag's key is). If you want to list only
      * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
      * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
      * to the resource. This filter is independent of the <code>tag-key</code>
@@ -260,26 +255,25 @@ namespace Model
      * <code>/dev/sda1</code>).</p> </li> <li> <p> <code>attachment.instance-id</code>
      * - The ID of the instance the volume is attached to.</p> </li> <li> <p>
      * <code>attachment.status</code> - The attachment state (<code>attaching</code> |
-     * <code>attached</code> | <code>detaching</code> | <code>detached</code>).</p>
-     * </li> <li> <p> <code>availability-zone</code> - The Availability Zone in which
-     * the volume was created.</p> </li> <li> <p> <code>create-time</code> - The time
-     * stamp when the volume was created.</p> </li> <li> <p> <code>encrypted</code> -
-     * The encryption status of the volume.</p> </li> <li> <p> <code>size</code> - The
-     * size of the volume, in GiB.</p> </li> <li> <p> <code>snapshot-id</code> - The
-     * snapshot from which the volume was created.</p> </li> <li> <p>
-     * <code>status</code> - The status of the volume (<code>creating</code> |
-     * <code>available</code> | <code>in-use</code> | <code>deleting</code> |
-     * <code>deleted</code> | <code>error</code>).</p> </li> <li> <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
-     * assigned to the resource. Specify the key of the tag in the filter name and the
-     * value of the tag in the filter value. For example, for the tag Purpose=X,
-     * specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     * filter value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag
-     * assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter
-     * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
-     * both the tag key Purpose (regardless of what the tag's value is), and the tag
-     * value X (regardless of what the tag's key is). If you want to list only
+     * <code>attached</code> | <code>detaching</code>).</p> </li> <li> <p>
+     * <code>availability-zone</code> - The Availability Zone in which the volume was
+     * created.</p> </li> <li> <p> <code>create-time</code> - The time stamp when the
+     * volume was created.</p> </li> <li> <p> <code>encrypted</code> - The encryption
+     * status of the volume.</p> </li> <li> <p> <code>size</code> - The size of the
+     * volume, in GiB.</p> </li> <li> <p> <code>snapshot-id</code> - The snapshot from
+     * which the volume was created.</p> </li> <li> <p> <code>status</code> - The
+     * status of the volume (<code>creating</code> | <code>available</code> |
+     * <code>in-use</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>error</code>).</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i>
+     * - The key/value combination of a tag assigned to the resource. Specify the key
+     * of the tag in the filter name and the value of the tag in the filter value. For
+     * example, for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter
+     * name and <code>X</code> for the filter value.</p> </li> <li> <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
+     * independent of the <code>tag-value</code> filter. For example, if you use both
+     * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
+     * assigned both the tag key Purpose (regardless of what the tag's value is), and
+     * the tag value X (regardless of what the tag's key is). If you want to list only
      * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
      * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
      * to the resource. This filter is independent of the <code>tag-key</code>
@@ -300,26 +294,25 @@ namespace Model
      * <code>/dev/sda1</code>).</p> </li> <li> <p> <code>attachment.instance-id</code>
      * - The ID of the instance the volume is attached to.</p> </li> <li> <p>
      * <code>attachment.status</code> - The attachment state (<code>attaching</code> |
-     * <code>attached</code> | <code>detaching</code> | <code>detached</code>).</p>
-     * </li> <li> <p> <code>availability-zone</code> - The Availability Zone in which
-     * the volume was created.</p> </li> <li> <p> <code>create-time</code> - The time
-     * stamp when the volume was created.</p> </li> <li> <p> <code>encrypted</code> -
-     * The encryption status of the volume.</p> </li> <li> <p> <code>size</code> - The
-     * size of the volume, in GiB.</p> </li> <li> <p> <code>snapshot-id</code> - The
-     * snapshot from which the volume was created.</p> </li> <li> <p>
-     * <code>status</code> - The status of the volume (<code>creating</code> |
-     * <code>available</code> | <code>in-use</code> | <code>deleting</code> |
-     * <code>deleted</code> | <code>error</code>).</p> </li> <li> <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
-     * assigned to the resource. Specify the key of the tag in the filter name and the
-     * value of the tag in the filter value. For example, for the tag Purpose=X,
-     * specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     * filter value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag
-     * assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter
-     * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
-     * both the tag key Purpose (regardless of what the tag's value is), and the tag
-     * value X (regardless of what the tag's key is). If you want to list only
+     * <code>attached</code> | <code>detaching</code>).</p> </li> <li> <p>
+     * <code>availability-zone</code> - The Availability Zone in which the volume was
+     * created.</p> </li> <li> <p> <code>create-time</code> - The time stamp when the
+     * volume was created.</p> </li> <li> <p> <code>encrypted</code> - The encryption
+     * status of the volume.</p> </li> <li> <p> <code>size</code> - The size of the
+     * volume, in GiB.</p> </li> <li> <p> <code>snapshot-id</code> - The snapshot from
+     * which the volume was created.</p> </li> <li> <p> <code>status</code> - The
+     * status of the volume (<code>creating</code> | <code>available</code> |
+     * <code>in-use</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>error</code>).</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i>
+     * - The key/value combination of a tag assigned to the resource. Specify the key
+     * of the tag in the filter name and the value of the tag in the filter value. For
+     * example, for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter
+     * name and <code>X</code> for the filter value.</p> </li> <li> <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
+     * independent of the <code>tag-value</code> filter. For example, if you use both
+     * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
+     * assigned both the tag key Purpose (regardless of what the tag's value is), and
+     * the tag value X (regardless of what the tag's key is). If you want to list only
      * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
      * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
      * to the resource. This filter is independent of the <code>tag-key</code>

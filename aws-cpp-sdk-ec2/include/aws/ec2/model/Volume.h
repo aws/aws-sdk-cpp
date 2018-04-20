@@ -336,7 +336,7 @@ namespace Model
      * performance, I/O credits, and bursting, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Constraint: Range is 100-20000 IOPS for io1 volumes and 100-10000 IOPS for
+     * <p>Constraint: Range is 100-32000 IOPS for io1 volumes and 100-10000 IOPS for
      * <code>gp2</code> volumes.</p> <p>Condition: This parameter is required for
      * requests to create <code>io1</code> volumes; it is not used in requests to
      * create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
@@ -353,7 +353,7 @@ namespace Model
      * performance, I/O credits, and bursting, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Constraint: Range is 100-20000 IOPS for io1 volumes and 100-10000 IOPS for
+     * <p>Constraint: Range is 100-32000 IOPS for io1 volumes and 100-10000 IOPS for
      * <code>gp2</code> volumes.</p> <p>Condition: This parameter is required for
      * requests to create <code>io1</code> volumes; it is not used in requests to
      * create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
@@ -370,7 +370,7 @@ namespace Model
      * performance, I/O credits, and bursting, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Constraint: Range is 100-20000 IOPS for io1 volumes and 100-10000 IOPS for
+     * <p>Constraint: Range is 100-32000 IOPS for io1 volumes and 100-10000 IOPS for
      * <code>gp2</code> volumes.</p> <p>Condition: This parameter is required for
      * requests to create <code>io1</code> volumes; it is not used in requests to
      * create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or

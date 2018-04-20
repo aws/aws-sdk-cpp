@@ -33,6 +33,7 @@
 #include <aws/devicefarm/model/CreateProjectRequest.h>
 #include <aws/devicefarm/model/CreateRemoteAccessSessionRequest.h>
 #include <aws/devicefarm/model/CreateUploadRequest.h>
+#include <aws/devicefarm/model/CreateVPCEConfigurationRequest.h>
 #include <aws/devicefarm/model/DeleteDevicePoolRequest.h>
 #include <aws/devicefarm/model/DeleteInstanceProfileRequest.h>
 #include <aws/devicefarm/model/DeleteNetworkProfileRequest.h>
@@ -40,6 +41,7 @@
 #include <aws/devicefarm/model/DeleteRemoteAccessSessionRequest.h>
 #include <aws/devicefarm/model/DeleteRunRequest.h>
 #include <aws/devicefarm/model/DeleteUploadRequest.h>
+#include <aws/devicefarm/model/DeleteVPCEConfigurationRequest.h>
 #include <aws/devicefarm/model/GetAccountSettingsRequest.h>
 #include <aws/devicefarm/model/GetDeviceRequest.h>
 #include <aws/devicefarm/model/GetDeviceInstanceRequest.h>
@@ -55,6 +57,7 @@
 #include <aws/devicefarm/model/GetSuiteRequest.h>
 #include <aws/devicefarm/model/GetTestRequest.h>
 #include <aws/devicefarm/model/GetUploadRequest.h>
+#include <aws/devicefarm/model/GetVPCEConfigurationRequest.h>
 #include <aws/devicefarm/model/InstallToRemoteAccessSessionRequest.h>
 #include <aws/devicefarm/model/ListArtifactsRequest.h>
 #include <aws/devicefarm/model/ListDeviceInstancesRequest.h>
@@ -74,6 +77,7 @@
 #include <aws/devicefarm/model/ListTestsRequest.h>
 #include <aws/devicefarm/model/ListUniqueProblemsRequest.h>
 #include <aws/devicefarm/model/ListUploadsRequest.h>
+#include <aws/devicefarm/model/ListVPCEConfigurationsRequest.h>
 #include <aws/devicefarm/model/PurchaseOfferingRequest.h>
 #include <aws/devicefarm/model/RenewOfferingRequest.h>
 #include <aws/devicefarm/model/ScheduleRunRequest.h>
@@ -84,6 +88,7 @@
 #include <aws/devicefarm/model/UpdateInstanceProfileRequest.h>
 #include <aws/devicefarm/model/UpdateNetworkProfileRequest.h>
 #include <aws/devicefarm/model/UpdateProjectRequest.h>
+#include <aws/devicefarm/model/UpdateVPCEConfigurationRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -359,6 +364,41 @@ void DeviceFarmClient::CreateUploadAsyncHelper(const CreateUploadRequest& reques
   handler(this, request, CreateUpload(request), context);
 }
 
+CreateVPCEConfigurationOutcome DeviceFarmClient::CreateVPCEConfiguration(const CreateVPCEConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateVPCEConfigurationOutcome(CreateVPCEConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateVPCEConfigurationOutcome(outcome.GetError());
+  }
+}
+
+CreateVPCEConfigurationOutcomeCallable DeviceFarmClient::CreateVPCEConfigurationCallable(const CreateVPCEConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateVPCEConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateVPCEConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DeviceFarmClient::CreateVPCEConfigurationAsync(const CreateVPCEConfigurationRequest& request, const CreateVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateVPCEConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void DeviceFarmClient::CreateVPCEConfigurationAsyncHelper(const CreateVPCEConfigurationRequest& request, const CreateVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateVPCEConfiguration(request), context);
+}
+
 DeleteDevicePoolOutcome DeviceFarmClient::DeleteDevicePool(const DeleteDevicePoolRequest& request) const
 {
   Aws::StringStream ss;
@@ -602,6 +642,41 @@ void DeviceFarmClient::DeleteUploadAsync(const DeleteUploadRequest& request, con
 void DeviceFarmClient::DeleteUploadAsyncHelper(const DeleteUploadRequest& request, const DeleteUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteUpload(request), context);
+}
+
+DeleteVPCEConfigurationOutcome DeviceFarmClient::DeleteVPCEConfiguration(const DeleteVPCEConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteVPCEConfigurationOutcome(DeleteVPCEConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteVPCEConfigurationOutcome(outcome.GetError());
+  }
+}
+
+DeleteVPCEConfigurationOutcomeCallable DeviceFarmClient::DeleteVPCEConfigurationCallable(const DeleteVPCEConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteVPCEConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteVPCEConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DeviceFarmClient::DeleteVPCEConfigurationAsync(const DeleteVPCEConfigurationRequest& request, const DeleteVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteVPCEConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void DeviceFarmClient::DeleteVPCEConfigurationAsyncHelper(const DeleteVPCEConfigurationRequest& request, const DeleteVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteVPCEConfiguration(request), context);
 }
 
 GetAccountSettingsOutcome DeviceFarmClient::GetAccountSettings(const GetAccountSettingsRequest& request) const
@@ -1127,6 +1202,41 @@ void DeviceFarmClient::GetUploadAsync(const GetUploadRequest& request, const Get
 void DeviceFarmClient::GetUploadAsyncHelper(const GetUploadRequest& request, const GetUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetUpload(request), context);
+}
+
+GetVPCEConfigurationOutcome DeviceFarmClient::GetVPCEConfiguration(const GetVPCEConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetVPCEConfigurationOutcome(GetVPCEConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetVPCEConfigurationOutcome(outcome.GetError());
+  }
+}
+
+GetVPCEConfigurationOutcomeCallable DeviceFarmClient::GetVPCEConfigurationCallable(const GetVPCEConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetVPCEConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetVPCEConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DeviceFarmClient::GetVPCEConfigurationAsync(const GetVPCEConfigurationRequest& request, const GetVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetVPCEConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void DeviceFarmClient::GetVPCEConfigurationAsyncHelper(const GetVPCEConfigurationRequest& request, const GetVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetVPCEConfiguration(request), context);
 }
 
 InstallToRemoteAccessSessionOutcome DeviceFarmClient::InstallToRemoteAccessSession(const InstallToRemoteAccessSessionRequest& request) const
@@ -1794,6 +1904,41 @@ void DeviceFarmClient::ListUploadsAsyncHelper(const ListUploadsRequest& request,
   handler(this, request, ListUploads(request), context);
 }
 
+ListVPCEConfigurationsOutcome DeviceFarmClient::ListVPCEConfigurations(const ListVPCEConfigurationsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListVPCEConfigurationsOutcome(ListVPCEConfigurationsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListVPCEConfigurationsOutcome(outcome.GetError());
+  }
+}
+
+ListVPCEConfigurationsOutcomeCallable DeviceFarmClient::ListVPCEConfigurationsCallable(const ListVPCEConfigurationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListVPCEConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListVPCEConfigurations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DeviceFarmClient::ListVPCEConfigurationsAsync(const ListVPCEConfigurationsRequest& request, const ListVPCEConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListVPCEConfigurationsAsyncHelper( request, handler, context ); } );
+}
+
+void DeviceFarmClient::ListVPCEConfigurationsAsyncHelper(const ListVPCEConfigurationsRequest& request, const ListVPCEConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListVPCEConfigurations(request), context);
+}
+
 PurchaseOfferingOutcome DeviceFarmClient::PurchaseOffering(const PurchaseOfferingRequest& request) const
 {
   Aws::StringStream ss;
@@ -2142,5 +2287,40 @@ void DeviceFarmClient::UpdateProjectAsync(const UpdateProjectRequest& request, c
 void DeviceFarmClient::UpdateProjectAsyncHelper(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateProject(request), context);
+}
+
+UpdateVPCEConfigurationOutcome DeviceFarmClient::UpdateVPCEConfiguration(const UpdateVPCEConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateVPCEConfigurationOutcome(UpdateVPCEConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateVPCEConfigurationOutcome(outcome.GetError());
+  }
+}
+
+UpdateVPCEConfigurationOutcomeCallable DeviceFarmClient::UpdateVPCEConfigurationCallable(const UpdateVPCEConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateVPCEConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateVPCEConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DeviceFarmClient::UpdateVPCEConfigurationAsync(const UpdateVPCEConfigurationRequest& request, const UpdateVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateVPCEConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void DeviceFarmClient::UpdateVPCEConfigurationAsyncHelper(const UpdateVPCEConfigurationRequest& request, const UpdateVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateVPCEConfiguration(request), context);
 }
 

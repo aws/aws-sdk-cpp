@@ -22,6 +22,7 @@
 #include <aws/ec2/model/HostProperties.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/AllocationState.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/HostInstance.h>
 #include <utility>
 
@@ -380,6 +381,58 @@ namespace Model
      */
     inline Host& WithState(AllocationState&& value) { SetState(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The time that the Dedicated Host was allocated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetAllocationTime() const{ return m_allocationTime; }
+
+    /**
+     * <p>The time that the Dedicated Host was allocated.</p>
+     */
+    inline void SetAllocationTime(const Aws::Utils::DateTime& value) { m_allocationTimeHasBeenSet = true; m_allocationTime = value; }
+
+    /**
+     * <p>The time that the Dedicated Host was allocated.</p>
+     */
+    inline void SetAllocationTime(Aws::Utils::DateTime&& value) { m_allocationTimeHasBeenSet = true; m_allocationTime = std::move(value); }
+
+    /**
+     * <p>The time that the Dedicated Host was allocated.</p>
+     */
+    inline Host& WithAllocationTime(const Aws::Utils::DateTime& value) { SetAllocationTime(value); return *this;}
+
+    /**
+     * <p>The time that the Dedicated Host was allocated.</p>
+     */
+    inline Host& WithAllocationTime(Aws::Utils::DateTime&& value) { SetAllocationTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The time that the Dedicated Host was released.</p>
+     */
+    inline const Aws::Utils::DateTime& GetReleaseTime() const{ return m_releaseTime; }
+
+    /**
+     * <p>The time that the Dedicated Host was released.</p>
+     */
+    inline void SetReleaseTime(const Aws::Utils::DateTime& value) { m_releaseTimeHasBeenSet = true; m_releaseTime = value; }
+
+    /**
+     * <p>The time that the Dedicated Host was released.</p>
+     */
+    inline void SetReleaseTime(Aws::Utils::DateTime&& value) { m_releaseTimeHasBeenSet = true; m_releaseTime = std::move(value); }
+
+    /**
+     * <p>The time that the Dedicated Host was released.</p>
+     */
+    inline Host& WithReleaseTime(const Aws::Utils::DateTime& value) { SetReleaseTime(value); return *this;}
+
+    /**
+     * <p>The time that the Dedicated Host was released.</p>
+     */
+    inline Host& WithReleaseTime(Aws::Utils::DateTime&& value) { SetReleaseTime(std::move(value)); return *this;}
+
   private:
 
     AutoPlacement m_autoPlacement;
@@ -408,6 +461,12 @@ namespace Model
 
     AllocationState m_state;
     bool m_stateHasBeenSet;
+
+    Aws::Utils::DateTime m_allocationTime;
+    bool m_allocationTimeHasBeenSet;
+
+    Aws::Utils::DateTime m_releaseTime;
+    bool m_releaseTimeHasBeenSet;
   };
 
 } // namespace Model

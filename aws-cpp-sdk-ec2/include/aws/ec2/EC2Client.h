@@ -10859,8 +10859,13 @@ namespace Model
 
         /**
          * <p>Modifies the specified attribute of the specified instance. You can specify
-         * only one attribute at a time.</p> <p>To modify some attributes, the instance
-         * must be stopped. For more information, see <a
+         * only one attribute at a time.</p> <p> <b>Note: </b>Using this action to change
+         * the security groups associated with an elastic network interface (ENI) attached
+         * to an instance in a VPC can result in an error if the instance has more than one
+         * ENI. To change the security groups associated with an ENI attached to an
+         * instance that has multiple ENIs, we recommend that you use the
+         * <a>ModifyNetworkInterfaceAttribute</a> action.</p> <p>To modify some attributes,
+         * the instance must be stopped. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">Modifying
          * Attributes of a Stopped Instance</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -10871,8 +10876,13 @@ namespace Model
 
         /**
          * <p>Modifies the specified attribute of the specified instance. You can specify
-         * only one attribute at a time.</p> <p>To modify some attributes, the instance
-         * must be stopped. For more information, see <a
+         * only one attribute at a time.</p> <p> <b>Note: </b>Using this action to change
+         * the security groups associated with an elastic network interface (ENI) attached
+         * to an instance in a VPC can result in an error if the instance has more than one
+         * ENI. To change the security groups associated with an ENI attached to an
+         * instance that has multiple ENIs, we recommend that you use the
+         * <a>ModifyNetworkInterfaceAttribute</a> action.</p> <p>To modify some attributes,
+         * the instance must be stopped. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">Modifying
          * Attributes of a Stopped Instance</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -10885,8 +10895,13 @@ namespace Model
 
         /**
          * <p>Modifies the specified attribute of the specified instance. You can specify
-         * only one attribute at a time.</p> <p>To modify some attributes, the instance
-         * must be stopped. For more information, see <a
+         * only one attribute at a time.</p> <p> <b>Note: </b>Using this action to change
+         * the security groups associated with an elastic network interface (ENI) attached
+         * to an instance in a VPC can result in an error if the instance has more than one
+         * ENI. To change the security groups associated with an ENI attached to an
+         * instance that has multiple ENIs, we recommend that you use the
+         * <a>ModifyNetworkInterfaceAttribute</a> action.</p> <p>To modify some attributes,
+         * the instance must be stopped. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">Modifying
          * Attributes of a Stopped Instance</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a

@@ -116,50 +116,71 @@ namespace Model
 
     /**
      * <p>You can group the data by the following attributes:</p> <ul> <li> <p>AZ</p>
-     * </li> <li> <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
-     * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TENANCY</p> </li> </ul>
+     * </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
+     * <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
+     * <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li>
+     * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TAG</p> </li> <li>
+     * <p>TENANCY</p> </li> </ul>
      */
     inline const Aws::Vector<GroupDefinition>& GetGroupBy() const{ return m_groupBy; }
 
     /**
      * <p>You can group the data by the following attributes:</p> <ul> <li> <p>AZ</p>
-     * </li> <li> <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
-     * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TENANCY</p> </li> </ul>
+     * </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
+     * <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
+     * <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li>
+     * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TAG</p> </li> <li>
+     * <p>TENANCY</p> </li> </ul>
      */
     inline void SetGroupBy(const Aws::Vector<GroupDefinition>& value) { m_groupByHasBeenSet = true; m_groupBy = value; }
 
     /**
      * <p>You can group the data by the following attributes:</p> <ul> <li> <p>AZ</p>
-     * </li> <li> <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
-     * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TENANCY</p> </li> </ul>
+     * </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
+     * <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
+     * <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li>
+     * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TAG</p> </li> <li>
+     * <p>TENANCY</p> </li> </ul>
      */
     inline void SetGroupBy(Aws::Vector<GroupDefinition>&& value) { m_groupByHasBeenSet = true; m_groupBy = std::move(value); }
 
     /**
      * <p>You can group the data by the following attributes:</p> <ul> <li> <p>AZ</p>
-     * </li> <li> <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
-     * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TENANCY</p> </li> </ul>
+     * </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
+     * <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
+     * <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li>
+     * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TAG</p> </li> <li>
+     * <p>TENANCY</p> </li> </ul>
      */
     inline GetReservationCoverageRequest& WithGroupBy(const Aws::Vector<GroupDefinition>& value) { SetGroupBy(value); return *this;}
 
     /**
      * <p>You can group the data by the following attributes:</p> <ul> <li> <p>AZ</p>
-     * </li> <li> <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
-     * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TENANCY</p> </li> </ul>
+     * </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
+     * <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
+     * <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li>
+     * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TAG</p> </li> <li>
+     * <p>TENANCY</p> </li> </ul>
      */
     inline GetReservationCoverageRequest& WithGroupBy(Aws::Vector<GroupDefinition>&& value) { SetGroupBy(std::move(value)); return *this;}
 
     /**
      * <p>You can group the data by the following attributes:</p> <ul> <li> <p>AZ</p>
-     * </li> <li> <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
-     * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TENANCY</p> </li> </ul>
+     * </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
+     * <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
+     * <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li>
+     * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TAG</p> </li> <li>
+     * <p>TENANCY</p> </li> </ul>
      */
     inline GetReservationCoverageRequest& AddGroupBy(const GroupDefinition& value) { m_groupByHasBeenSet = true; m_groupBy.push_back(value); return *this; }
 
     /**
      * <p>You can group the data by the following attributes:</p> <ul> <li> <p>AZ</p>
-     * </li> <li> <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
-     * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TENANCY</p> </li> </ul>
+     * </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
+     * <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
+     * <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li>
+     * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TAG</p> </li> <li>
+     * <p>TENANCY</p> </li> </ul>
      */
     inline GetReservationCoverageRequest& AddGroupBy(GroupDefinition&& value) { m_groupByHasBeenSet = true; m_groupBy.push_back(std::move(value)); return *this; }
 
@@ -168,7 +189,7 @@ namespace Model
      * <p>The granularity of the AWS cost data for the reservation. Valid values are
      * <code>MONTHLY</code> and <code>DAILY</code>.</p> <p>If <code>GroupBy</code> is
      * set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
-     * set, the response object doesn't include the <code>Granularity</code>, either
+     * set, the response object doesn't include <code>Granularity</code>, either
      * <code>MONTHLY</code> or <code>DAILY</code>.</p>
      */
     inline const Granularity& GetGranularity() const{ return m_granularity; }
@@ -177,7 +198,7 @@ namespace Model
      * <p>The granularity of the AWS cost data for the reservation. Valid values are
      * <code>MONTHLY</code> and <code>DAILY</code>.</p> <p>If <code>GroupBy</code> is
      * set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
-     * set, the response object doesn't include the <code>Granularity</code>, either
+     * set, the response object doesn't include <code>Granularity</code>, either
      * <code>MONTHLY</code> or <code>DAILY</code>.</p>
      */
     inline void SetGranularity(const Granularity& value) { m_granularityHasBeenSet = true; m_granularity = value; }
@@ -186,7 +207,7 @@ namespace Model
      * <p>The granularity of the AWS cost data for the reservation. Valid values are
      * <code>MONTHLY</code> and <code>DAILY</code>.</p> <p>If <code>GroupBy</code> is
      * set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
-     * set, the response object doesn't include the <code>Granularity</code>, either
+     * set, the response object doesn't include <code>Granularity</code>, either
      * <code>MONTHLY</code> or <code>DAILY</code>.</p>
      */
     inline void SetGranularity(Granularity&& value) { m_granularityHasBeenSet = true; m_granularity = std::move(value); }
@@ -195,7 +216,7 @@ namespace Model
      * <p>The granularity of the AWS cost data for the reservation. Valid values are
      * <code>MONTHLY</code> and <code>DAILY</code>.</p> <p>If <code>GroupBy</code> is
      * set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
-     * set, the response object doesn't include the <code>Granularity</code>, either
+     * set, the response object doesn't include <code>Granularity</code>, either
      * <code>MONTHLY</code> or <code>DAILY</code>.</p>
      */
     inline GetReservationCoverageRequest& WithGranularity(const Granularity& value) { SetGranularity(value); return *this;}
@@ -204,7 +225,7 @@ namespace Model
      * <p>The granularity of the AWS cost data for the reservation. Valid values are
      * <code>MONTHLY</code> and <code>DAILY</code>.</p> <p>If <code>GroupBy</code> is
      * set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
-     * set, the response object doesn't include the <code>Granularity</code>, either
+     * set, the response object doesn't include <code>Granularity</code>, either
      * <code>MONTHLY</code> or <code>DAILY</code>.</p>
      */
     inline GetReservationCoverageRequest& WithGranularity(Granularity&& value) { SetGranularity(std::move(value)); return *this;}
@@ -212,10 +233,12 @@ namespace Model
 
     /**
      * <p>Filters utilization data by dimensions. You can filter by the following
-     * dimensions:</p> <ul> <li> <p>AZ</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
-     * <p>LINKED_ACCOUNT</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p> </li>
-     * <li> <p>TENANCY</p> </li> </ul> <p> <code>GetReservationCoverage</code> uses the
-     * same <code> <a
+     * dimensions:</p> <ul> <li> <p>AZ</p> </li> <li> <p>CACHE_ENGINE</p> </li> <li>
+     * <p>DATABASE_ENGINE</p> </li> <li> <p>DEPLOYMENT_OPTION</p> </li> <li>
+     * <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
+     * <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p>
+     * </li> <li> <p>SERVICE</p> </li> <li> <p>TAG</p> </li> <li> <p>TENANCY</p> </li>
+     * </ul> <p> <code>GetReservationCoverage</code> uses the same <code> <a
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * </code> object as the other operations, but only <code>AND</code> is supported
      * among each dimension. You can nest only one level deep. If there are multiple
@@ -225,10 +248,12 @@ namespace Model
 
     /**
      * <p>Filters utilization data by dimensions. You can filter by the following
-     * dimensions:</p> <ul> <li> <p>AZ</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
-     * <p>LINKED_ACCOUNT</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p> </li>
-     * <li> <p>TENANCY</p> </li> </ul> <p> <code>GetReservationCoverage</code> uses the
-     * same <code> <a
+     * dimensions:</p> <ul> <li> <p>AZ</p> </li> <li> <p>CACHE_ENGINE</p> </li> <li>
+     * <p>DATABASE_ENGINE</p> </li> <li> <p>DEPLOYMENT_OPTION</p> </li> <li>
+     * <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
+     * <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p>
+     * </li> <li> <p>SERVICE</p> </li> <li> <p>TAG</p> </li> <li> <p>TENANCY</p> </li>
+     * </ul> <p> <code>GetReservationCoverage</code> uses the same <code> <a
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * </code> object as the other operations, but only <code>AND</code> is supported
      * among each dimension. You can nest only one level deep. If there are multiple
@@ -238,10 +263,12 @@ namespace Model
 
     /**
      * <p>Filters utilization data by dimensions. You can filter by the following
-     * dimensions:</p> <ul> <li> <p>AZ</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
-     * <p>LINKED_ACCOUNT</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p> </li>
-     * <li> <p>TENANCY</p> </li> </ul> <p> <code>GetReservationCoverage</code> uses the
-     * same <code> <a
+     * dimensions:</p> <ul> <li> <p>AZ</p> </li> <li> <p>CACHE_ENGINE</p> </li> <li>
+     * <p>DATABASE_ENGINE</p> </li> <li> <p>DEPLOYMENT_OPTION</p> </li> <li>
+     * <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
+     * <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p>
+     * </li> <li> <p>SERVICE</p> </li> <li> <p>TAG</p> </li> <li> <p>TENANCY</p> </li>
+     * </ul> <p> <code>GetReservationCoverage</code> uses the same <code> <a
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * </code> object as the other operations, but only <code>AND</code> is supported
      * among each dimension. You can nest only one level deep. If there are multiple
@@ -251,10 +278,12 @@ namespace Model
 
     /**
      * <p>Filters utilization data by dimensions. You can filter by the following
-     * dimensions:</p> <ul> <li> <p>AZ</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
-     * <p>LINKED_ACCOUNT</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p> </li>
-     * <li> <p>TENANCY</p> </li> </ul> <p> <code>GetReservationCoverage</code> uses the
-     * same <code> <a
+     * dimensions:</p> <ul> <li> <p>AZ</p> </li> <li> <p>CACHE_ENGINE</p> </li> <li>
+     * <p>DATABASE_ENGINE</p> </li> <li> <p>DEPLOYMENT_OPTION</p> </li> <li>
+     * <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
+     * <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p>
+     * </li> <li> <p>SERVICE</p> </li> <li> <p>TAG</p> </li> <li> <p>TENANCY</p> </li>
+     * </ul> <p> <code>GetReservationCoverage</code> uses the same <code> <a
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * </code> object as the other operations, but only <code>AND</code> is supported
      * among each dimension. You can nest only one level deep. If there are multiple
@@ -264,10 +293,12 @@ namespace Model
 
     /**
      * <p>Filters utilization data by dimensions. You can filter by the following
-     * dimensions:</p> <ul> <li> <p>AZ</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
-     * <p>LINKED_ACCOUNT</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p> </li>
-     * <li> <p>TENANCY</p> </li> </ul> <p> <code>GetReservationCoverage</code> uses the
-     * same <code> <a
+     * dimensions:</p> <ul> <li> <p>AZ</p> </li> <li> <p>CACHE_ENGINE</p> </li> <li>
+     * <p>DATABASE_ENGINE</p> </li> <li> <p>DEPLOYMENT_OPTION</p> </li> <li>
+     * <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
+     * <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p>
+     * </li> <li> <p>SERVICE</p> </li> <li> <p>TAG</p> </li> <li> <p>TENANCY</p> </li>
+     * </ul> <p> <code>GetReservationCoverage</code> uses the same <code> <a
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * </code> object as the other operations, but only <code>AND</code> is supported
      * among each dimension. You can nest only one level deep. If there are multiple

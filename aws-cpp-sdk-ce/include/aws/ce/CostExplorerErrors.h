@@ -58,7 +58,8 @@ enum class CostExplorerErrors
   BILL_EXPIRATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   DATA_UNAVAILABLE,
   INVALID_NEXT_TOKEN,
-  LIMIT_EXCEEDED
+  LIMIT_EXCEEDED,
+  REQUEST_CHANGED
 };
 namespace CostExplorerErrorMapper
 {

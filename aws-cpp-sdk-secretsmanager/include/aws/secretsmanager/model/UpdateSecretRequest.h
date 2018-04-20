@@ -102,12 +102,11 @@ namespace Model
      * </p> <p>If you use the AWS CLI or one of the AWS SDK to call this operation,
      * then you can leave this parameter empty. The CLI or SDK generates a random UUID
      * for you and includes that in the request. If you don't use the SDK and instead
-     * generate a raw HTTP request to the AWS Secrets Manager service endpoint, then
-     * you must generate a <code>ClientRequestToken</code> yourself for new versions
-     * and include that value in the request.</p> <p>You typically only need to
-     * interact with this value if you implement your own retry logic and want to
-     * ensure that a given secret is not created twice. We recommend that you generate
-     * a <a
+     * generate a raw HTTP request to the Secrets Manager service endpoint, then you
+     * must generate a <code>ClientRequestToken</code> yourself for new versions and
+     * include that value in the request.</p> <p>You typically only need to interact
+     * with this value if you implement your own retry logic and want to ensure that a
+     * given secret is not created twice. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <p>Secrets Manager
      * uses this value to prevent the accidental creation of duplicate versions if
@@ -131,12 +130,11 @@ namespace Model
      * </p> <p>If you use the AWS CLI or one of the AWS SDK to call this operation,
      * then you can leave this parameter empty. The CLI or SDK generates a random UUID
      * for you and includes that in the request. If you don't use the SDK and instead
-     * generate a raw HTTP request to the AWS Secrets Manager service endpoint, then
-     * you must generate a <code>ClientRequestToken</code> yourself for new versions
-     * and include that value in the request.</p> <p>You typically only need to
-     * interact with this value if you implement your own retry logic and want to
-     * ensure that a given secret is not created twice. We recommend that you generate
-     * a <a
+     * generate a raw HTTP request to the Secrets Manager service endpoint, then you
+     * must generate a <code>ClientRequestToken</code> yourself for new versions and
+     * include that value in the request.</p> <p>You typically only need to interact
+     * with this value if you implement your own retry logic and want to ensure that a
+     * given secret is not created twice. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <p>Secrets Manager
      * uses this value to prevent the accidental creation of duplicate versions if
@@ -160,12 +158,11 @@ namespace Model
      * </p> <p>If you use the AWS CLI or one of the AWS SDK to call this operation,
      * then you can leave this parameter empty. The CLI or SDK generates a random UUID
      * for you and includes that in the request. If you don't use the SDK and instead
-     * generate a raw HTTP request to the AWS Secrets Manager service endpoint, then
-     * you must generate a <code>ClientRequestToken</code> yourself for new versions
-     * and include that value in the request.</p> <p>You typically only need to
-     * interact with this value if you implement your own retry logic and want to
-     * ensure that a given secret is not created twice. We recommend that you generate
-     * a <a
+     * generate a raw HTTP request to the Secrets Manager service endpoint, then you
+     * must generate a <code>ClientRequestToken</code> yourself for new versions and
+     * include that value in the request.</p> <p>You typically only need to interact
+     * with this value if you implement your own retry logic and want to ensure that a
+     * given secret is not created twice. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <p>Secrets Manager
      * uses this value to prevent the accidental creation of duplicate versions if
@@ -189,12 +186,11 @@ namespace Model
      * </p> <p>If you use the AWS CLI or one of the AWS SDK to call this operation,
      * then you can leave this parameter empty. The CLI or SDK generates a random UUID
      * for you and includes that in the request. If you don't use the SDK and instead
-     * generate a raw HTTP request to the AWS Secrets Manager service endpoint, then
-     * you must generate a <code>ClientRequestToken</code> yourself for new versions
-     * and include that value in the request.</p> <p>You typically only need to
-     * interact with this value if you implement your own retry logic and want to
-     * ensure that a given secret is not created twice. We recommend that you generate
-     * a <a
+     * generate a raw HTTP request to the Secrets Manager service endpoint, then you
+     * must generate a <code>ClientRequestToken</code> yourself for new versions and
+     * include that value in the request.</p> <p>You typically only need to interact
+     * with this value if you implement your own retry logic and want to ensure that a
+     * given secret is not created twice. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <p>Secrets Manager
      * uses this value to prevent the accidental creation of duplicate versions if
@@ -218,12 +214,11 @@ namespace Model
      * </p> <p>If you use the AWS CLI or one of the AWS SDK to call this operation,
      * then you can leave this parameter empty. The CLI or SDK generates a random UUID
      * for you and includes that in the request. If you don't use the SDK and instead
-     * generate a raw HTTP request to the AWS Secrets Manager service endpoint, then
-     * you must generate a <code>ClientRequestToken</code> yourself for new versions
-     * and include that value in the request.</p> <p>You typically only need to
-     * interact with this value if you implement your own retry logic and want to
-     * ensure that a given secret is not created twice. We recommend that you generate
-     * a <a
+     * generate a raw HTTP request to the Secrets Manager service endpoint, then you
+     * must generate a <code>ClientRequestToken</code> yourself for new versions and
+     * include that value in the request.</p> <p>You typically only need to interact
+     * with this value if you implement your own retry logic and want to ensure that a
+     * given secret is not created twice. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <p>Secrets Manager
      * uses this value to prevent the accidental creation of duplicate versions if
@@ -247,12 +242,11 @@ namespace Model
      * </p> <p>If you use the AWS CLI or one of the AWS SDK to call this operation,
      * then you can leave this parameter empty. The CLI or SDK generates a random UUID
      * for you and includes that in the request. If you don't use the SDK and instead
-     * generate a raw HTTP request to the AWS Secrets Manager service endpoint, then
-     * you must generate a <code>ClientRequestToken</code> yourself for new versions
-     * and include that value in the request.</p> <p>You typically only need to
-     * interact with this value if you implement your own retry logic and want to
-     * ensure that a given secret is not created twice. We recommend that you generate
-     * a <a
+     * generate a raw HTTP request to the Secrets Manager service endpoint, then you
+     * must generate a <code>ClientRequestToken</code> yourself for new versions and
+     * include that value in the request.</p> <p>You typically only need to interact
+     * with this value if you implement your own retry logic and want to ensure that a
+     * given secret is not created twice. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <p>Secrets Manager
      * uses this value to prevent the accidental creation of duplicate versions if
@@ -276,12 +270,11 @@ namespace Model
      * </p> <p>If you use the AWS CLI or one of the AWS SDK to call this operation,
      * then you can leave this parameter empty. The CLI or SDK generates a random UUID
      * for you and includes that in the request. If you don't use the SDK and instead
-     * generate a raw HTTP request to the AWS Secrets Manager service endpoint, then
-     * you must generate a <code>ClientRequestToken</code> yourself for new versions
-     * and include that value in the request.</p> <p>You typically only need to
-     * interact with this value if you implement your own retry logic and want to
-     * ensure that a given secret is not created twice. We recommend that you generate
-     * a <a
+     * generate a raw HTTP request to the Secrets Manager service endpoint, then you
+     * must generate a <code>ClientRequestToken</code> yourself for new versions and
+     * include that value in the request.</p> <p>You typically only need to interact
+     * with this value if you implement your own retry logic and want to ensure that a
+     * given secret is not created twice. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <p>Secrets Manager
      * uses this value to prevent the accidental creation of duplicate versions if
@@ -341,7 +334,7 @@ namespace Model
      * be used to encrypt the protected text in the versions of this secret.</p> <p>If
      * you don't specify this value, then Secrets Manager defaults to using the default
      * CMK in the account (the one named <code>aws/secretsmanager</code>). If a KMS CMK
-     * with that name doesn't exist, then AWS Secrets Manager creates it for you
+     * with that name doesn't exist, then Secrets Manager creates it for you
      * automatically the first time it needs to encrypt a version's
      * <code>Plaintext</code> or <code>PlaintextString</code> fields.</p> <important>
      * <p>You can only use the account's default CMK to encrypt and decrypt if you call
@@ -356,7 +349,7 @@ namespace Model
      * be used to encrypt the protected text in the versions of this secret.</p> <p>If
      * you don't specify this value, then Secrets Manager defaults to using the default
      * CMK in the account (the one named <code>aws/secretsmanager</code>). If a KMS CMK
-     * with that name doesn't exist, then AWS Secrets Manager creates it for you
+     * with that name doesn't exist, then Secrets Manager creates it for you
      * automatically the first time it needs to encrypt a version's
      * <code>Plaintext</code> or <code>PlaintextString</code> fields.</p> <important>
      * <p>You can only use the account's default CMK to encrypt and decrypt if you call
@@ -371,7 +364,7 @@ namespace Model
      * be used to encrypt the protected text in the versions of this secret.</p> <p>If
      * you don't specify this value, then Secrets Manager defaults to using the default
      * CMK in the account (the one named <code>aws/secretsmanager</code>). If a KMS CMK
-     * with that name doesn't exist, then AWS Secrets Manager creates it for you
+     * with that name doesn't exist, then Secrets Manager creates it for you
      * automatically the first time it needs to encrypt a version's
      * <code>Plaintext</code> or <code>PlaintextString</code> fields.</p> <important>
      * <p>You can only use the account's default CMK to encrypt and decrypt if you call
@@ -386,7 +379,7 @@ namespace Model
      * be used to encrypt the protected text in the versions of this secret.</p> <p>If
      * you don't specify this value, then Secrets Manager defaults to using the default
      * CMK in the account (the one named <code>aws/secretsmanager</code>). If a KMS CMK
-     * with that name doesn't exist, then AWS Secrets Manager creates it for you
+     * with that name doesn't exist, then Secrets Manager creates it for you
      * automatically the first time it needs to encrypt a version's
      * <code>Plaintext</code> or <code>PlaintextString</code> fields.</p> <important>
      * <p>You can only use the account's default CMK to encrypt and decrypt if you call
@@ -401,7 +394,7 @@ namespace Model
      * be used to encrypt the protected text in the versions of this secret.</p> <p>If
      * you don't specify this value, then Secrets Manager defaults to using the default
      * CMK in the account (the one named <code>aws/secretsmanager</code>). If a KMS CMK
-     * with that name doesn't exist, then AWS Secrets Manager creates it for you
+     * with that name doesn't exist, then Secrets Manager creates it for you
      * automatically the first time it needs to encrypt a version's
      * <code>Plaintext</code> or <code>PlaintextString</code> fields.</p> <important>
      * <p>You can only use the account's default CMK to encrypt and decrypt if you call
@@ -416,7 +409,7 @@ namespace Model
      * be used to encrypt the protected text in the versions of this secret.</p> <p>If
      * you don't specify this value, then Secrets Manager defaults to using the default
      * CMK in the account (the one named <code>aws/secretsmanager</code>). If a KMS CMK
-     * with that name doesn't exist, then AWS Secrets Manager creates it for you
+     * with that name doesn't exist, then Secrets Manager creates it for you
      * automatically the first time it needs to encrypt a version's
      * <code>Plaintext</code> or <code>PlaintextString</code> fields.</p> <important>
      * <p>You can only use the account's default CMK to encrypt and decrypt if you call
@@ -431,7 +424,7 @@ namespace Model
      * be used to encrypt the protected text in the versions of this secret.</p> <p>If
      * you don't specify this value, then Secrets Manager defaults to using the default
      * CMK in the account (the one named <code>aws/secretsmanager</code>). If a KMS CMK
-     * with that name doesn't exist, then AWS Secrets Manager creates it for you
+     * with that name doesn't exist, then Secrets Manager creates it for you
      * automatically the first time it needs to encrypt a version's
      * <code>Plaintext</code> or <code>PlaintextString</code> fields.</p> <important>
      * <p>You can only use the account's default CMK to encrypt and decrypt if you call

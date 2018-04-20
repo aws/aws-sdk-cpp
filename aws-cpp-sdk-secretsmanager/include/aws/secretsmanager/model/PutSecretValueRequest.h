@@ -50,63 +50,49 @@ namespace Model
     /**
      * <p>Specifies the secret to which you want to add a new version. You can specify
      * either the Amazon Resource Name (ARN) or the friendly name of the secret. The
-     * secret must already exist.</p> <p>The secret name can consist of uppercase
-     * letters, lowercase letters, digits, and any of the following characters: /_+=.@-
-     *    Spaces are not permitted.</p>
+     * secret must already exist.</p>
      */
     inline const Aws::String& GetSecretId() const{ return m_secretId; }
 
     /**
      * <p>Specifies the secret to which you want to add a new version. You can specify
      * either the Amazon Resource Name (ARN) or the friendly name of the secret. The
-     * secret must already exist.</p> <p>The secret name can consist of uppercase
-     * letters, lowercase letters, digits, and any of the following characters: /_+=.@-
-     *    Spaces are not permitted.</p>
+     * secret must already exist.</p>
      */
     inline void SetSecretId(const Aws::String& value) { m_secretIdHasBeenSet = true; m_secretId = value; }
 
     /**
      * <p>Specifies the secret to which you want to add a new version. You can specify
      * either the Amazon Resource Name (ARN) or the friendly name of the secret. The
-     * secret must already exist.</p> <p>The secret name can consist of uppercase
-     * letters, lowercase letters, digits, and any of the following characters: /_+=.@-
-     *    Spaces are not permitted.</p>
+     * secret must already exist.</p>
      */
     inline void SetSecretId(Aws::String&& value) { m_secretIdHasBeenSet = true; m_secretId = std::move(value); }
 
     /**
      * <p>Specifies the secret to which you want to add a new version. You can specify
      * either the Amazon Resource Name (ARN) or the friendly name of the secret. The
-     * secret must already exist.</p> <p>The secret name can consist of uppercase
-     * letters, lowercase letters, digits, and any of the following characters: /_+=.@-
-     *    Spaces are not permitted.</p>
+     * secret must already exist.</p>
      */
     inline void SetSecretId(const char* value) { m_secretIdHasBeenSet = true; m_secretId.assign(value); }
 
     /**
      * <p>Specifies the secret to which you want to add a new version. You can specify
      * either the Amazon Resource Name (ARN) or the friendly name of the secret. The
-     * secret must already exist.</p> <p>The secret name can consist of uppercase
-     * letters, lowercase letters, digits, and any of the following characters: /_+=.@-
-     *    Spaces are not permitted.</p>
+     * secret must already exist.</p>
      */
     inline PutSecretValueRequest& WithSecretId(const Aws::String& value) { SetSecretId(value); return *this;}
 
     /**
      * <p>Specifies the secret to which you want to add a new version. You can specify
      * either the Amazon Resource Name (ARN) or the friendly name of the secret. The
-     * secret must already exist.</p> <p>The secret name can consist of uppercase
-     * letters, lowercase letters, digits, and any of the following characters: /_+=.@-
-     *    Spaces are not permitted.</p>
+     * secret must already exist.</p>
      */
     inline PutSecretValueRequest& WithSecretId(Aws::String&& value) { SetSecretId(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the secret to which you want to add a new version. You can specify
      * either the Amazon Resource Name (ARN) or the friendly name of the secret. The
-     * secret must already exist.</p> <p>The secret name can consist of uppercase
-     * letters, lowercase letters, digits, and any of the following characters: /_+=.@-
-     *    Spaces are not permitted.</p>
+     * secret must already exist.</p>
      */
     inline PutSecretValueRequest& WithSecretId(const char* value) { SetSecretId(value); return *this;}
 
@@ -116,13 +102,12 @@ namespace Model
      * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes that in the request. If you don't use the SDK
-     * and instead generate a raw HTTP request to the AWS Secrets Manager service
-     * endpoint, then you must generate a <code>ClientRequestToken</code> yourself for
-     * new versions and include that value in the request. </p> </note> <p>This value
-     * helps ensure idempotency. Secrets Manager uses this value to prevent the
-     * accidental creation of duplicate versions if there are failures and retries
-     * during the Lambda rotation function's processing. We recommend that you generate
-     * a <a
+     * and instead generate a raw HTTP request to the Secrets Manager service endpoint,
+     * then you must generate a <code>ClientRequestToken</code> yourself for new
+     * versions and include that value in the request. </p> </note> <p>This value helps
+     * ensure idempotency. Secrets Manager uses this value to prevent the accidental
+     * creation of duplicate versions if there are failures and retries during the
+     * Lambda rotation function's processing. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <ul> <li> <p>If the
      * <code>ClientRequestToken</code> value isn't already associated with a version of
@@ -144,13 +129,12 @@ namespace Model
      * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes that in the request. If you don't use the SDK
-     * and instead generate a raw HTTP request to the AWS Secrets Manager service
-     * endpoint, then you must generate a <code>ClientRequestToken</code> yourself for
-     * new versions and include that value in the request. </p> </note> <p>This value
-     * helps ensure idempotency. Secrets Manager uses this value to prevent the
-     * accidental creation of duplicate versions if there are failures and retries
-     * during the Lambda rotation function's processing. We recommend that you generate
-     * a <a
+     * and instead generate a raw HTTP request to the Secrets Manager service endpoint,
+     * then you must generate a <code>ClientRequestToken</code> yourself for new
+     * versions and include that value in the request. </p> </note> <p>This value helps
+     * ensure idempotency. Secrets Manager uses this value to prevent the accidental
+     * creation of duplicate versions if there are failures and retries during the
+     * Lambda rotation function's processing. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <ul> <li> <p>If the
      * <code>ClientRequestToken</code> value isn't already associated with a version of
@@ -172,13 +156,12 @@ namespace Model
      * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes that in the request. If you don't use the SDK
-     * and instead generate a raw HTTP request to the AWS Secrets Manager service
-     * endpoint, then you must generate a <code>ClientRequestToken</code> yourself for
-     * new versions and include that value in the request. </p> </note> <p>This value
-     * helps ensure idempotency. Secrets Manager uses this value to prevent the
-     * accidental creation of duplicate versions if there are failures and retries
-     * during the Lambda rotation function's processing. We recommend that you generate
-     * a <a
+     * and instead generate a raw HTTP request to the Secrets Manager service endpoint,
+     * then you must generate a <code>ClientRequestToken</code> yourself for new
+     * versions and include that value in the request. </p> </note> <p>This value helps
+     * ensure idempotency. Secrets Manager uses this value to prevent the accidental
+     * creation of duplicate versions if there are failures and retries during the
+     * Lambda rotation function's processing. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <ul> <li> <p>If the
      * <code>ClientRequestToken</code> value isn't already associated with a version of
@@ -200,13 +183,12 @@ namespace Model
      * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes that in the request. If you don't use the SDK
-     * and instead generate a raw HTTP request to the AWS Secrets Manager service
-     * endpoint, then you must generate a <code>ClientRequestToken</code> yourself for
-     * new versions and include that value in the request. </p> </note> <p>This value
-     * helps ensure idempotency. Secrets Manager uses this value to prevent the
-     * accidental creation of duplicate versions if there are failures and retries
-     * during the Lambda rotation function's processing. We recommend that you generate
-     * a <a
+     * and instead generate a raw HTTP request to the Secrets Manager service endpoint,
+     * then you must generate a <code>ClientRequestToken</code> yourself for new
+     * versions and include that value in the request. </p> </note> <p>This value helps
+     * ensure idempotency. Secrets Manager uses this value to prevent the accidental
+     * creation of duplicate versions if there are failures and retries during the
+     * Lambda rotation function's processing. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <ul> <li> <p>If the
      * <code>ClientRequestToken</code> value isn't already associated with a version of
@@ -228,13 +210,12 @@ namespace Model
      * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes that in the request. If you don't use the SDK
-     * and instead generate a raw HTTP request to the AWS Secrets Manager service
-     * endpoint, then you must generate a <code>ClientRequestToken</code> yourself for
-     * new versions and include that value in the request. </p> </note> <p>This value
-     * helps ensure idempotency. Secrets Manager uses this value to prevent the
-     * accidental creation of duplicate versions if there are failures and retries
-     * during the Lambda rotation function's processing. We recommend that you generate
-     * a <a
+     * and instead generate a raw HTTP request to the Secrets Manager service endpoint,
+     * then you must generate a <code>ClientRequestToken</code> yourself for new
+     * versions and include that value in the request. </p> </note> <p>This value helps
+     * ensure idempotency. Secrets Manager uses this value to prevent the accidental
+     * creation of duplicate versions if there are failures and retries during the
+     * Lambda rotation function's processing. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <ul> <li> <p>If the
      * <code>ClientRequestToken</code> value isn't already associated with a version of
@@ -256,13 +237,12 @@ namespace Model
      * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes that in the request. If you don't use the SDK
-     * and instead generate a raw HTTP request to the AWS Secrets Manager service
-     * endpoint, then you must generate a <code>ClientRequestToken</code> yourself for
-     * new versions and include that value in the request. </p> </note> <p>This value
-     * helps ensure idempotency. Secrets Manager uses this value to prevent the
-     * accidental creation of duplicate versions if there are failures and retries
-     * during the Lambda rotation function's processing. We recommend that you generate
-     * a <a
+     * and instead generate a raw HTTP request to the Secrets Manager service endpoint,
+     * then you must generate a <code>ClientRequestToken</code> yourself for new
+     * versions and include that value in the request. </p> </note> <p>This value helps
+     * ensure idempotency. Secrets Manager uses this value to prevent the accidental
+     * creation of duplicate versions if there are failures and retries during the
+     * Lambda rotation function's processing. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <ul> <li> <p>If the
      * <code>ClientRequestToken</code> value isn't already associated with a version of
@@ -284,13 +264,12 @@ namespace Model
      * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes that in the request. If you don't use the SDK
-     * and instead generate a raw HTTP request to the AWS Secrets Manager service
-     * endpoint, then you must generate a <code>ClientRequestToken</code> yourself for
-     * new versions and include that value in the request. </p> </note> <p>This value
-     * helps ensure idempotency. Secrets Manager uses this value to prevent the
-     * accidental creation of duplicate versions if there are failures and retries
-     * during the Lambda rotation function's processing. We recommend that you generate
-     * a <a
+     * and instead generate a raw HTTP request to the Secrets Manager service endpoint,
+     * then you must generate a <code>ClientRequestToken</code> yourself for new
+     * versions and include that value in the request. </p> </note> <p>This value helps
+     * ensure idempotency. Secrets Manager uses this value to prevent the accidental
+     * creation of duplicate versions if there are failures and retries during the
+     * Lambda rotation function's processing. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <ul> <li> <p>If the
      * <code>ClientRequestToken</code> value isn't already associated with a version of
@@ -485,8 +464,8 @@ namespace Model
      * label that's already associated with a different version of the same secret then
      * that staging label is automatically removed from the other version and attached
      * to this version.</p> <p>If you do not specify a value for
-     * <code>VersionStages</code> then AWS Secrets Manager automatically moves the
-     * staging label <code>AWSCURRENT</code> to this new version.</p>
+     * <code>VersionStages</code> then Secrets Manager automatically moves the staging
+     * label <code>AWSCURRENT</code> to this new version.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVersionStages() const{ return m_versionStages; }
 
@@ -498,8 +477,8 @@ namespace Model
      * label that's already associated with a different version of the same secret then
      * that staging label is automatically removed from the other version and attached
      * to this version.</p> <p>If you do not specify a value for
-     * <code>VersionStages</code> then AWS Secrets Manager automatically moves the
-     * staging label <code>AWSCURRENT</code> to this new version.</p>
+     * <code>VersionStages</code> then Secrets Manager automatically moves the staging
+     * label <code>AWSCURRENT</code> to this new version.</p>
      */
     inline void SetVersionStages(const Aws::Vector<Aws::String>& value) { m_versionStagesHasBeenSet = true; m_versionStages = value; }
 
@@ -511,8 +490,8 @@ namespace Model
      * label that's already associated with a different version of the same secret then
      * that staging label is automatically removed from the other version and attached
      * to this version.</p> <p>If you do not specify a value for
-     * <code>VersionStages</code> then AWS Secrets Manager automatically moves the
-     * staging label <code>AWSCURRENT</code> to this new version.</p>
+     * <code>VersionStages</code> then Secrets Manager automatically moves the staging
+     * label <code>AWSCURRENT</code> to this new version.</p>
      */
     inline void SetVersionStages(Aws::Vector<Aws::String>&& value) { m_versionStagesHasBeenSet = true; m_versionStages = std::move(value); }
 
@@ -524,8 +503,8 @@ namespace Model
      * label that's already associated with a different version of the same secret then
      * that staging label is automatically removed from the other version and attached
      * to this version.</p> <p>If you do not specify a value for
-     * <code>VersionStages</code> then AWS Secrets Manager automatically moves the
-     * staging label <code>AWSCURRENT</code> to this new version.</p>
+     * <code>VersionStages</code> then Secrets Manager automatically moves the staging
+     * label <code>AWSCURRENT</code> to this new version.</p>
      */
     inline PutSecretValueRequest& WithVersionStages(const Aws::Vector<Aws::String>& value) { SetVersionStages(value); return *this;}
 
@@ -537,8 +516,8 @@ namespace Model
      * label that's already associated with a different version of the same secret then
      * that staging label is automatically removed from the other version and attached
      * to this version.</p> <p>If you do not specify a value for
-     * <code>VersionStages</code> then AWS Secrets Manager automatically moves the
-     * staging label <code>AWSCURRENT</code> to this new version.</p>
+     * <code>VersionStages</code> then Secrets Manager automatically moves the staging
+     * label <code>AWSCURRENT</code> to this new version.</p>
      */
     inline PutSecretValueRequest& WithVersionStages(Aws::Vector<Aws::String>&& value) { SetVersionStages(std::move(value)); return *this;}
 
@@ -550,8 +529,8 @@ namespace Model
      * label that's already associated with a different version of the same secret then
      * that staging label is automatically removed from the other version and attached
      * to this version.</p> <p>If you do not specify a value for
-     * <code>VersionStages</code> then AWS Secrets Manager automatically moves the
-     * staging label <code>AWSCURRENT</code> to this new version.</p>
+     * <code>VersionStages</code> then Secrets Manager automatically moves the staging
+     * label <code>AWSCURRENT</code> to this new version.</p>
      */
     inline PutSecretValueRequest& AddVersionStages(const Aws::String& value) { m_versionStagesHasBeenSet = true; m_versionStages.push_back(value); return *this; }
 
@@ -563,8 +542,8 @@ namespace Model
      * label that's already associated with a different version of the same secret then
      * that staging label is automatically removed from the other version and attached
      * to this version.</p> <p>If you do not specify a value for
-     * <code>VersionStages</code> then AWS Secrets Manager automatically moves the
-     * staging label <code>AWSCURRENT</code> to this new version.</p>
+     * <code>VersionStages</code> then Secrets Manager automatically moves the staging
+     * label <code>AWSCURRENT</code> to this new version.</p>
      */
     inline PutSecretValueRequest& AddVersionStages(Aws::String&& value) { m_versionStagesHasBeenSet = true; m_versionStages.push_back(std::move(value)); return *this; }
 
@@ -576,8 +555,8 @@ namespace Model
      * label that's already associated with a different version of the same secret then
      * that staging label is automatically removed from the other version and attached
      * to this version.</p> <p>If you do not specify a value for
-     * <code>VersionStages</code> then AWS Secrets Manager automatically moves the
-     * staging label <code>AWSCURRENT</code> to this new version.</p>
+     * <code>VersionStages</code> then Secrets Manager automatically moves the staging
+     * label <code>AWSCURRENT</code> to this new version.</p>
      */
     inline PutSecretValueRequest& AddVersionStages(const char* value) { m_versionStagesHasBeenSet = true; m_versionStages.push_back(value); return *this; }
 

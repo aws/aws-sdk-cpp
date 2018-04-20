@@ -29,12 +29,14 @@ namespace Model
 {
 
 InstanceDetails::InstanceDetails() : 
-    m_eC2InstanceDetailsHasBeenSet(false)
+    m_eC2InstanceDetailsHasBeenSet(false),
+    m_rDSInstanceDetailsHasBeenSet(false)
 {
 }
 
 InstanceDetails::InstanceDetails(const JsonValue& jsonValue) : 
-    m_eC2InstanceDetailsHasBeenSet(false)
+    m_eC2InstanceDetailsHasBeenSet(false),
+    m_rDSInstanceDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,13 @@ InstanceDetails& InstanceDetails::operator =(const JsonValue& jsonValue)
     m_eC2InstanceDetailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RDSInstanceDetails"))
+  {
+    m_rDSInstanceDetails = jsonValue.GetObject("RDSInstanceDetails");
+
+    m_rDSInstanceDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +67,12 @@ JsonValue InstanceDetails::Jsonize() const
   if(m_eC2InstanceDetailsHasBeenSet)
   {
    payload.WithObject("EC2InstanceDetails", m_eC2InstanceDetails.Jsonize());
+
+  }
+
+  if(m_rDSInstanceDetailsHasBeenSet)
+  {
+   payload.WithObject("RDSInstanceDetails", m_rDSInstanceDetails.Jsonize());
 
   }
 

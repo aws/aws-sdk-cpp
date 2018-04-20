@@ -43,7 +43,7 @@ namespace Model
 
 
     /**
-     * <p>The ARN of this secret.</p> <note> <p>AWS Secrets Manager automatically adds
+     * <p>The ARN of this secret.</p> <note> <p>Secrets Manager automatically adds
      * several random characters to the name at the end of the ARN when you initially
      * create a secret. This affects only the ARN and not the actual friendly name.
      * This ensures that if you create a new secret with the same name as an old secret
@@ -54,7 +54,7 @@ namespace Model
     inline const Aws::String& GetARN() const{ return m_aRN; }
 
     /**
-     * <p>The ARN of this secret.</p> <note> <p>AWS Secrets Manager automatically adds
+     * <p>The ARN of this secret.</p> <note> <p>Secrets Manager automatically adds
      * several random characters to the name at the end of the ARN when you initially
      * create a secret. This affects only the ARN and not the actual friendly name.
      * This ensures that if you create a new secret with the same name as an old secret
@@ -65,7 +65,7 @@ namespace Model
     inline void SetARN(const Aws::String& value) { m_aRN = value; }
 
     /**
-     * <p>The ARN of this secret.</p> <note> <p>AWS Secrets Manager automatically adds
+     * <p>The ARN of this secret.</p> <note> <p>Secrets Manager automatically adds
      * several random characters to the name at the end of the ARN when you initially
      * create a secret. This affects only the ARN and not the actual friendly name.
      * This ensures that if you create a new secret with the same name as an old secret
@@ -76,7 +76,7 @@ namespace Model
     inline void SetARN(Aws::String&& value) { m_aRN = std::move(value); }
 
     /**
-     * <p>The ARN of this secret.</p> <note> <p>AWS Secrets Manager automatically adds
+     * <p>The ARN of this secret.</p> <note> <p>Secrets Manager automatically adds
      * several random characters to the name at the end of the ARN when you initially
      * create a secret. This affects only the ARN and not the actual friendly name.
      * This ensures that if you create a new secret with the same name as an old secret
@@ -87,7 +87,7 @@ namespace Model
     inline void SetARN(const char* value) { m_aRN.assign(value); }
 
     /**
-     * <p>The ARN of this secret.</p> <note> <p>AWS Secrets Manager automatically adds
+     * <p>The ARN of this secret.</p> <note> <p>Secrets Manager automatically adds
      * several random characters to the name at the end of the ARN when you initially
      * create a secret. This affects only the ARN and not the actual friendly name.
      * This ensures that if you create a new secret with the same name as an old secret
@@ -98,7 +98,7 @@ namespace Model
     inline UpdateSecretResult& WithARN(const Aws::String& value) { SetARN(value); return *this;}
 
     /**
-     * <p>The ARN of this secret.</p> <note> <p>AWS Secrets Manager automatically adds
+     * <p>The ARN of this secret.</p> <note> <p>Secrets Manager automatically adds
      * several random characters to the name at the end of the ARN when you initially
      * create a secret. This affects only the ARN and not the actual friendly name.
      * This ensures that if you create a new secret with the same name as an old secret
@@ -109,7 +109,7 @@ namespace Model
     inline UpdateSecretResult& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of this secret.</p> <note> <p>AWS Secrets Manager automatically adds
+     * <p>The ARN of this secret.</p> <note> <p>Secrets Manager automatically adds
      * several random characters to the name at the end of the ARN when you initially
      * create a secret. This affects only the ARN and not the actual friendly name.
      * This ensures that if you create a new secret with the same name as an old secret

@@ -26,7 +26,8 @@ namespace Model
   enum class ExecutionResultCode
   {
     NOT_SET,
-    PARSING_FAILED
+    PARSING_FAILED,
+    VPC_ENDPOINT_SETUP_FAILED
   };
 
 namespace ExecutionResultCodeMapper

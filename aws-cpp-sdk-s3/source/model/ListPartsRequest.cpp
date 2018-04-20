@@ -35,7 +35,8 @@ ListPartsRequest::ListPartsRequest() :
     m_partNumberMarkerHasBeenSet(false),
     m_uploadIdHasBeenSet(false),
     m_requestPayer(RequestPayer::NOT_SET),
-    m_requestPayerHasBeenSet(false)
+    m_requestPayerHasBeenSet(false),
+    m_customizedAccessLogTagHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,23 @@ void ListPartsRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
+    if(!m_customizedAccessLogTag.empty())
+    {
+        // only accept customized LogTag which starts with "x-"
+        Aws::Map<Aws::String, Aws::String> collectedLogTags;
+        for(const auto& entry: m_customizedAccessLogTag)
+        {
+            if (!entry.first.empty() && !entry.second.empty() && entry.first.substr(0, 2) == "x-")
+            {
+                collectedLogTags.emplace(entry.first, entry.second);
+            }
+        }
+
+        if (!collectedLogTags.empty())
+        {
+            uri.AddQueryStringParameter(collectedLogTags);
+        }
+    }
 }
 
 Aws::Http::HeaderValueCollection ListPartsRequest::GetRequestSpecificHeaders() const

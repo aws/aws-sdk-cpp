@@ -367,9 +367,9 @@ namespace Model
 
 
     /**
-     * <p>The pre-signed URL parameter is required when copying an encrypted snapshot
-     * with the Amazon EC2 Query API; it is available as an optional parameter in all
-     * other cases. For more information, see <a
+     * <p>When you copy an encrypted source snapshot using the Amazon EC2 Query API,
+     * you must supply a pre-signed URL. This parameter is optional for unencrypted
+     * snapshots. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query
      * Requests</a>.</p> <p>The <code>PresignedUrl</code> should use the snapshot
      * source endpoint, the <code>CopySnapshot</code> action, and include the
@@ -387,9 +387,9 @@ namespace Model
     inline const Aws::String& GetPresignedUrl() const{ return m_presignedUrl; }
 
     /**
-     * <p>The pre-signed URL parameter is required when copying an encrypted snapshot
-     * with the Amazon EC2 Query API; it is available as an optional parameter in all
-     * other cases. For more information, see <a
+     * <p>When you copy an encrypted source snapshot using the Amazon EC2 Query API,
+     * you must supply a pre-signed URL. This parameter is optional for unencrypted
+     * snapshots. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query
      * Requests</a>.</p> <p>The <code>PresignedUrl</code> should use the snapshot
      * source endpoint, the <code>CopySnapshot</code> action, and include the
@@ -407,9 +407,9 @@ namespace Model
     inline void SetPresignedUrl(const Aws::String& value) { m_presignedUrlHasBeenSet = true; m_presignedUrl = value; }
 
     /**
-     * <p>The pre-signed URL parameter is required when copying an encrypted snapshot
-     * with the Amazon EC2 Query API; it is available as an optional parameter in all
-     * other cases. For more information, see <a
+     * <p>When you copy an encrypted source snapshot using the Amazon EC2 Query API,
+     * you must supply a pre-signed URL. This parameter is optional for unencrypted
+     * snapshots. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query
      * Requests</a>.</p> <p>The <code>PresignedUrl</code> should use the snapshot
      * source endpoint, the <code>CopySnapshot</code> action, and include the
@@ -427,9 +427,9 @@ namespace Model
     inline void SetPresignedUrl(Aws::String&& value) { m_presignedUrlHasBeenSet = true; m_presignedUrl = std::move(value); }
 
     /**
-     * <p>The pre-signed URL parameter is required when copying an encrypted snapshot
-     * with the Amazon EC2 Query API; it is available as an optional parameter in all
-     * other cases. For more information, see <a
+     * <p>When you copy an encrypted source snapshot using the Amazon EC2 Query API,
+     * you must supply a pre-signed URL. This parameter is optional for unencrypted
+     * snapshots. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query
      * Requests</a>.</p> <p>The <code>PresignedUrl</code> should use the snapshot
      * source endpoint, the <code>CopySnapshot</code> action, and include the
@@ -447,9 +447,9 @@ namespace Model
     inline void SetPresignedUrl(const char* value) { m_presignedUrlHasBeenSet = true; m_presignedUrl.assign(value); }
 
     /**
-     * <p>The pre-signed URL parameter is required when copying an encrypted snapshot
-     * with the Amazon EC2 Query API; it is available as an optional parameter in all
-     * other cases. For more information, see <a
+     * <p>When you copy an encrypted source snapshot using the Amazon EC2 Query API,
+     * you must supply a pre-signed URL. This parameter is optional for unencrypted
+     * snapshots. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query
      * Requests</a>.</p> <p>The <code>PresignedUrl</code> should use the snapshot
      * source endpoint, the <code>CopySnapshot</code> action, and include the
@@ -467,9 +467,9 @@ namespace Model
     inline CopySnapshotRequest& WithPresignedUrl(const Aws::String& value) { SetPresignedUrl(value); return *this;}
 
     /**
-     * <p>The pre-signed URL parameter is required when copying an encrypted snapshot
-     * with the Amazon EC2 Query API; it is available as an optional parameter in all
-     * other cases. For more information, see <a
+     * <p>When you copy an encrypted source snapshot using the Amazon EC2 Query API,
+     * you must supply a pre-signed URL. This parameter is optional for unencrypted
+     * snapshots. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query
      * Requests</a>.</p> <p>The <code>PresignedUrl</code> should use the snapshot
      * source endpoint, the <code>CopySnapshot</code> action, and include the
@@ -487,9 +487,9 @@ namespace Model
     inline CopySnapshotRequest& WithPresignedUrl(Aws::String&& value) { SetPresignedUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The pre-signed URL parameter is required when copying an encrypted snapshot
-     * with the Amazon EC2 Query API; it is available as an optional parameter in all
-     * other cases. For more information, see <a
+     * <p>When you copy an encrypted source snapshot using the Amazon EC2 Query API,
+     * you must supply a pre-signed URL. This parameter is optional for unencrypted
+     * snapshots. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query
      * Requests</a>.</p> <p>The <code>PresignedUrl</code> should use the snapshot
      * source endpoint, the <code>CopySnapshot</code> action, and include the
