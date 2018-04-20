@@ -454,6 +454,56 @@ namespace Model
 
 
     /**
+     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     * Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or
+     * 0x20)..8182 (or 0x1ff6).
+     */
+    inline const Aws::String& GetTimedMetadataPid() const{ return m_timedMetadataPid; }
+
+    /**
+     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     * Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or
+     * 0x20)..8182 (or 0x1ff6).
+     */
+    inline void SetTimedMetadataPid(const Aws::String& value) { m_timedMetadataPidHasBeenSet = true; m_timedMetadataPid = value; }
+
+    /**
+     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     * Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or
+     * 0x20)..8182 (or 0x1ff6).
+     */
+    inline void SetTimedMetadataPid(Aws::String&& value) { m_timedMetadataPidHasBeenSet = true; m_timedMetadataPid = std::move(value); }
+
+    /**
+     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     * Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or
+     * 0x20)..8182 (or 0x1ff6).
+     */
+    inline void SetTimedMetadataPid(const char* value) { m_timedMetadataPidHasBeenSet = true; m_timedMetadataPid.assign(value); }
+
+    /**
+     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     * Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or
+     * 0x20)..8182 (or 0x1ff6).
+     */
+    inline M3u8Settings& WithTimedMetadataPid(const Aws::String& value) { SetTimedMetadataPid(value); return *this;}
+
+    /**
+     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     * Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or
+     * 0x20)..8182 (or 0x1ff6).
+     */
+    inline M3u8Settings& WithTimedMetadataPid(Aws::String&& value) { SetTimedMetadataPid(std::move(value)); return *this;}
+
+    /**
+     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     * Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or
+     * 0x20)..8182 (or 0x1ff6).
+     */
+    inline M3u8Settings& WithTimedMetadataPid(const char* value) { SetTimedMetadataPid(value); return *this;}
+
+
+    /**
      * The value of the transport stream ID field in the Program Map Table.
      */
     inline int GetTransportStreamId() const{ return m_transportStreamId; }
@@ -551,6 +601,9 @@ namespace Model
 
     M3u8TimedMetadataBehavior m_timedMetadataBehavior;
     bool m_timedMetadataBehaviorHasBeenSet;
+
+    Aws::String m_timedMetadataPid;
+    bool m_timedMetadataPidHasBeenSet;
 
     int m_transportStreamId;
     bool m_transportStreamIdHasBeenSet;

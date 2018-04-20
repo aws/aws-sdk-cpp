@@ -31,8 +31,8 @@ namespace Model
 {
 
   /**
-   * <p>Configures retry behavior in case Kinesis Firehose is unable to deliver
-   * documents to Splunk or if it doesn't receive an acknowledgment from
+   * <p>Configures retry behavior in case Kinesis Data Firehose is unable to deliver
+   * documents to Splunk, or if it doesn't receive an acknowledgment from
    * Splunk.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/SplunkRetryOptions">AWS
    * API Reference</a></p>
@@ -47,25 +47,25 @@ namespace Model
 
 
     /**
-     * <p>The total amount of time that Kinesis Firehose spends on retries. This
-     * duration starts after the initial attempt to send data to Splunk fails and
-     * doesn't include the periods during which Kinesis Firehose waits for
+     * <p>The total amount of time that Kinesis Data Firehose spends on retries. This
+     * duration starts after the initial attempt to send data to Splunk fails. It
+     * doesn't include the periods during which Kinesis Data Firehose waits for
      * acknowledgment from Splunk after each attempt.</p>
      */
     inline int GetDurationInSeconds() const{ return m_durationInSeconds; }
 
     /**
-     * <p>The total amount of time that Kinesis Firehose spends on retries. This
-     * duration starts after the initial attempt to send data to Splunk fails and
-     * doesn't include the periods during which Kinesis Firehose waits for
+     * <p>The total amount of time that Kinesis Data Firehose spends on retries. This
+     * duration starts after the initial attempt to send data to Splunk fails. It
+     * doesn't include the periods during which Kinesis Data Firehose waits for
      * acknowledgment from Splunk after each attempt.</p>
      */
     inline void SetDurationInSeconds(int value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
 
     /**
-     * <p>The total amount of time that Kinesis Firehose spends on retries. This
-     * duration starts after the initial attempt to send data to Splunk fails and
-     * doesn't include the periods during which Kinesis Firehose waits for
+     * <p>The total amount of time that Kinesis Data Firehose spends on retries. This
+     * duration starts after the initial attempt to send data to Splunk fails. It
+     * doesn't include the periods during which Kinesis Data Firehose waits for
      * acknowledgment from Splunk after each attempt.</p>
      */
     inline SplunkRetryOptions& WithDurationInSeconds(int value) { SetDurationInSeconds(value); return *this;}

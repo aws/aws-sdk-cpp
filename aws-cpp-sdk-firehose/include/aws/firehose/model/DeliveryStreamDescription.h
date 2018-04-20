@@ -154,7 +154,7 @@ namespace Model
      * <p>The delivery stream type. This can be one of the following values:</p> <ul>
      * <li> <p> <code>DirectPut</code>: Provider applications access the delivery
      * stream directly.</p> </li> <li> <p> <code>KinesisStreamAsSource</code>: The
-     * delivery stream uses a Kinesis stream as a source.</p> </li> </ul>
+     * delivery stream uses a Kinesis data stream as a source.</p> </li> </ul>
      */
     inline const DeliveryStreamType& GetDeliveryStreamType() const{ return m_deliveryStreamType; }
 
@@ -162,7 +162,7 @@ namespace Model
      * <p>The delivery stream type. This can be one of the following values:</p> <ul>
      * <li> <p> <code>DirectPut</code>: Provider applications access the delivery
      * stream directly.</p> </li> <li> <p> <code>KinesisStreamAsSource</code>: The
-     * delivery stream uses a Kinesis stream as a source.</p> </li> </ul>
+     * delivery stream uses a Kinesis data stream as a source.</p> </li> </ul>
      */
     inline void SetDeliveryStreamType(const DeliveryStreamType& value) { m_deliveryStreamTypeHasBeenSet = true; m_deliveryStreamType = value; }
 
@@ -170,7 +170,7 @@ namespace Model
      * <p>The delivery stream type. This can be one of the following values:</p> <ul>
      * <li> <p> <code>DirectPut</code>: Provider applications access the delivery
      * stream directly.</p> </li> <li> <p> <code>KinesisStreamAsSource</code>: The
-     * delivery stream uses a Kinesis stream as a source.</p> </li> </ul>
+     * delivery stream uses a Kinesis data stream as a source.</p> </li> </ul>
      */
     inline void SetDeliveryStreamType(DeliveryStreamType&& value) { m_deliveryStreamTypeHasBeenSet = true; m_deliveryStreamType = std::move(value); }
 
@@ -178,7 +178,7 @@ namespace Model
      * <p>The delivery stream type. This can be one of the following values:</p> <ul>
      * <li> <p> <code>DirectPut</code>: Provider applications access the delivery
      * stream directly.</p> </li> <li> <p> <code>KinesisStreamAsSource</code>: The
-     * delivery stream uses a Kinesis stream as a source.</p> </li> </ul>
+     * delivery stream uses a Kinesis data stream as a source.</p> </li> </ul>
      */
     inline DeliveryStreamDescription& WithDeliveryStreamType(const DeliveryStreamType& value) { SetDeliveryStreamType(value); return *this;}
 
@@ -186,7 +186,7 @@ namespace Model
      * <p>The delivery stream type. This can be one of the following values:</p> <ul>
      * <li> <p> <code>DirectPut</code>: Provider applications access the delivery
      * stream directly.</p> </li> <li> <p> <code>KinesisStreamAsSource</code>: The
-     * delivery stream uses a Kinesis stream as a source.</p> </li> </ul>
+     * delivery stream uses a Kinesis data stream as a source.</p> </li> </ul>
      */
     inline DeliveryStreamDescription& WithDeliveryStreamType(DeliveryStreamType&& value) { SetDeliveryStreamType(std::move(value)); return *this;}
 
@@ -303,35 +303,35 @@ namespace Model
     /**
      * <p>If the <code>DeliveryStreamType</code> parameter is
      * <code>KinesisStreamAsSource</code>, a <a>SourceDescription</a> object describing
-     * the source Kinesis stream.</p>
+     * the source Kinesis data stream.</p>
      */
     inline const SourceDescription& GetSource() const{ return m_source; }
 
     /**
      * <p>If the <code>DeliveryStreamType</code> parameter is
      * <code>KinesisStreamAsSource</code>, a <a>SourceDescription</a> object describing
-     * the source Kinesis stream.</p>
+     * the source Kinesis data stream.</p>
      */
     inline void SetSource(const SourceDescription& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
      * <p>If the <code>DeliveryStreamType</code> parameter is
      * <code>KinesisStreamAsSource</code>, a <a>SourceDescription</a> object describing
-     * the source Kinesis stream.</p>
+     * the source Kinesis data stream.</p>
      */
     inline void SetSource(SourceDescription&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
     /**
      * <p>If the <code>DeliveryStreamType</code> parameter is
      * <code>KinesisStreamAsSource</code>, a <a>SourceDescription</a> object describing
-     * the source Kinesis stream.</p>
+     * the source Kinesis data stream.</p>
      */
     inline DeliveryStreamDescription& WithSource(const SourceDescription& value) { SetSource(value); return *this;}
 
     /**
      * <p>If the <code>DeliveryStreamType</code> parameter is
      * <code>KinesisStreamAsSource</code>, a <a>SourceDescription</a> object describing
-     * the source Kinesis stream.</p>
+     * the source Kinesis data stream.</p>
      */
     inline DeliveryStreamDescription& WithSource(SourceDescription&& value) { SetSource(std::move(value)); return *this;}
 

@@ -84,6 +84,42 @@ namespace Model
 
 
     /**
+     * Stream name for RTMP destinations (URLs of type rtmp://)
+     */
+    inline const Aws::String& GetStreamName() const{ return m_streamName; }
+
+    /**
+     * Stream name for RTMP destinations (URLs of type rtmp://)
+     */
+    inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
+
+    /**
+     * Stream name for RTMP destinations (URLs of type rtmp://)
+     */
+    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
+
+    /**
+     * Stream name for RTMP destinations (URLs of type rtmp://)
+     */
+    inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
+
+    /**
+     * Stream name for RTMP destinations (URLs of type rtmp://)
+     */
+    inline OutputDestinationSettings& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
+
+    /**
+     * Stream name for RTMP destinations (URLs of type rtmp://)
+     */
+    inline OutputDestinationSettings& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
+
+    /**
+     * Stream name for RTMP destinations (URLs of type rtmp://)
+     */
+    inline OutputDestinationSettings& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+
+
+    /**
      * A URL specifying a destination
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
@@ -158,6 +194,9 @@ namespace Model
 
     Aws::String m_passwordParam;
     bool m_passwordParamHasBeenSet;
+
+    Aws::String m_streamName;
+    bool m_streamNameHasBeenSet;
 
     Aws::String m_url;
     bool m_urlHasBeenSet;

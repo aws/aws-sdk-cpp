@@ -54,37 +54,37 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS credentials.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
-     * <p>The ARN of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS credentials.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
-     * <p>The ARN of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS credentials.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
-     * <p>The ARN of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS credentials.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
-     * <p>The ARN of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS credentials.</p>
      */
     inline ExtendedS3DestinationDescription& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
-     * <p>The ARN of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS credentials.</p>
      */
     inline ExtendedS3DestinationDescription& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS credentials.</p>
      */
     inline ExtendedS3DestinationDescription& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
@@ -130,8 +130,8 @@ namespace Model
      * files. You can specify an extra prefix to be added in front of the time format
      * prefix. If the prefix ends with a slash, it appears as a folder in the S3
      * bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
-     * S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon
+     * S3 Object Name Format</a> in the <i>Amazon Kinesis Data Firehose Developer
      * Guide</i>.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
@@ -141,8 +141,8 @@ namespace Model
      * files. You can specify an extra prefix to be added in front of the time format
      * prefix. If the prefix ends with a slash, it appears as a folder in the S3
      * bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
-     * S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon
+     * S3 Object Name Format</a> in the <i>Amazon Kinesis Data Firehose Developer
      * Guide</i>.</p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
@@ -152,8 +152,8 @@ namespace Model
      * files. You can specify an extra prefix to be added in front of the time format
      * prefix. If the prefix ends with a slash, it appears as a folder in the S3
      * bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
-     * S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon
+     * S3 Object Name Format</a> in the <i>Amazon Kinesis Data Firehose Developer
      * Guide</i>.</p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
@@ -163,8 +163,8 @@ namespace Model
      * files. You can specify an extra prefix to be added in front of the time format
      * prefix. If the prefix ends with a slash, it appears as a folder in the S3
      * bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
-     * S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon
+     * S3 Object Name Format</a> in the <i>Amazon Kinesis Data Firehose Developer
      * Guide</i>.</p>
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
@@ -174,8 +174,8 @@ namespace Model
      * files. You can specify an extra prefix to be added in front of the time format
      * prefix. If the prefix ends with a slash, it appears as a folder in the S3
      * bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
-     * S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon
+     * S3 Object Name Format</a> in the <i>Amazon Kinesis Data Firehose Developer
      * Guide</i>.</p>
      */
     inline ExtendedS3DestinationDescription& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
@@ -185,8 +185,8 @@ namespace Model
      * files. You can specify an extra prefix to be added in front of the time format
      * prefix. If the prefix ends with a slash, it appears as a folder in the S3
      * bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
-     * S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon
+     * S3 Object Name Format</a> in the <i>Amazon Kinesis Data Firehose Developer
      * Guide</i>.</p>
      */
     inline ExtendedS3DestinationDescription& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
@@ -196,8 +196,8 @@ namespace Model
      * files. You can specify an extra prefix to be added in front of the time format
      * prefix. If the prefix ends with a slash, it appears as a folder in the S3
      * bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
-     * S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon
+     * S3 Object Name Format</a> in the <i>Amazon Kinesis Data Firehose Developer
      * Guide</i>.</p>
      */
     inline ExtendedS3DestinationDescription& WithPrefix(const char* value) { SetPrefix(value); return *this;}

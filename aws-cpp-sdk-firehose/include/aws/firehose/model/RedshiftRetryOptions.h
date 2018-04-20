@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>Configures retry behavior in case Kinesis Firehose is unable to deliver
+   * <p>Configures retry behavior in case Kinesis Data Firehose is unable to deliver
    * documents to Amazon Redshift.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/RedshiftRetryOptions">AWS
    * API Reference</a></p>
@@ -46,29 +46,29 @@ namespace Model
 
 
     /**
-     * <p>The length of time during which Kinesis Firehose retries delivery after a
-     * failure, starting from the initial request and including the first attempt. The
-     * default value is 3600 seconds (60 minutes). Kinesis Firehose does not retry if
-     * the value of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery
-     * attempt takes longer than the current value.</p>
+     * <p>The length of time during which Kinesis Data Firehose retries delivery after
+     * a failure, starting from the initial request and including the first attempt.
+     * The default value is 3600 seconds (60 minutes). Kinesis Data Firehose does not
+     * retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first
+     * delivery attempt takes longer than the current value.</p>
      */
     inline int GetDurationInSeconds() const{ return m_durationInSeconds; }
 
     /**
-     * <p>The length of time during which Kinesis Firehose retries delivery after a
-     * failure, starting from the initial request and including the first attempt. The
-     * default value is 3600 seconds (60 minutes). Kinesis Firehose does not retry if
-     * the value of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery
-     * attempt takes longer than the current value.</p>
+     * <p>The length of time during which Kinesis Data Firehose retries delivery after
+     * a failure, starting from the initial request and including the first attempt.
+     * The default value is 3600 seconds (60 minutes). Kinesis Data Firehose does not
+     * retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first
+     * delivery attempt takes longer than the current value.</p>
      */
     inline void SetDurationInSeconds(int value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
 
     /**
-     * <p>The length of time during which Kinesis Firehose retries delivery after a
-     * failure, starting from the initial request and including the first attempt. The
-     * default value is 3600 seconds (60 minutes). Kinesis Firehose does not retry if
-     * the value of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery
-     * attempt takes longer than the current value.</p>
+     * <p>The length of time during which Kinesis Data Firehose retries delivery after
+     * a failure, starting from the initial request and including the first attempt.
+     * The default value is 3600 seconds (60 minutes). Kinesis Data Firehose does not
+     * retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first
+     * delivery attempt takes longer than the current value.</p>
      */
     inline RedshiftRetryOptions& WithDurationInSeconds(int value) { SetDurationInSeconds(value); return *this;}
 

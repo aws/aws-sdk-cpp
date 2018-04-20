@@ -18,6 +18,7 @@
 #include <aws/medialive/model/ArchiveGroupSettings.h>
 #include <aws/medialive/model/HlsGroupSettings.h>
 #include <aws/medialive/model/MsSmoothGroupSettings.h>
+#include <aws/medialive/model/RtmpGroupSettings.h>
 #include <aws/medialive/model/UdpGroupSettings.h>
 #include <utility>
 
@@ -98,6 +99,22 @@ namespace Model
 
 
     
+    inline const RtmpGroupSettings& GetRtmpGroupSettings() const{ return m_rtmpGroupSettings; }
+
+    
+    inline void SetRtmpGroupSettings(const RtmpGroupSettings& value) { m_rtmpGroupSettingsHasBeenSet = true; m_rtmpGroupSettings = value; }
+
+    
+    inline void SetRtmpGroupSettings(RtmpGroupSettings&& value) { m_rtmpGroupSettingsHasBeenSet = true; m_rtmpGroupSettings = std::move(value); }
+
+    
+    inline OutputGroupSettings& WithRtmpGroupSettings(const RtmpGroupSettings& value) { SetRtmpGroupSettings(value); return *this;}
+
+    
+    inline OutputGroupSettings& WithRtmpGroupSettings(RtmpGroupSettings&& value) { SetRtmpGroupSettings(std::move(value)); return *this;}
+
+
+    
     inline const UdpGroupSettings& GetUdpGroupSettings() const{ return m_udpGroupSettings; }
 
     
@@ -122,6 +139,9 @@ namespace Model
 
     MsSmoothGroupSettings m_msSmoothGroupSettings;
     bool m_msSmoothGroupSettingsHasBeenSet;
+
+    RtmpGroupSettings m_rtmpGroupSettings;
+    bool m_rtmpGroupSettingsHasBeenSet;
 
     UdpGroupSettings m_udpGroupSettings;
     bool m_udpGroupSettingsHasBeenSet;

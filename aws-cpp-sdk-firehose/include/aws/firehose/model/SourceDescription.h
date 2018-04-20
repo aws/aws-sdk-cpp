@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>Details about a Kinesis stream used as the source for a Kinesis Firehose
-   * delivery stream.</p><p><h3>See Also:</h3>   <a
+   * <p>Details about a Kinesis data stream used as the source for a Kinesis Data
+   * Firehose delivery stream.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/SourceDescription">AWS
    * API Reference</a></p>
    */
@@ -48,31 +48,31 @@ namespace Model
 
 
     /**
-     * <p>The <a>KinesisStreamSourceDescription</a> value for the source Kinesis
+     * <p>The <a>KinesisStreamSourceDescription</a> value for the source Kinesis data
      * stream.</p>
      */
     inline const KinesisStreamSourceDescription& GetKinesisStreamSourceDescription() const{ return m_kinesisStreamSourceDescription; }
 
     /**
-     * <p>The <a>KinesisStreamSourceDescription</a> value for the source Kinesis
+     * <p>The <a>KinesisStreamSourceDescription</a> value for the source Kinesis data
      * stream.</p>
      */
     inline void SetKinesisStreamSourceDescription(const KinesisStreamSourceDescription& value) { m_kinesisStreamSourceDescriptionHasBeenSet = true; m_kinesisStreamSourceDescription = value; }
 
     /**
-     * <p>The <a>KinesisStreamSourceDescription</a> value for the source Kinesis
+     * <p>The <a>KinesisStreamSourceDescription</a> value for the source Kinesis data
      * stream.</p>
      */
     inline void SetKinesisStreamSourceDescription(KinesisStreamSourceDescription&& value) { m_kinesisStreamSourceDescriptionHasBeenSet = true; m_kinesisStreamSourceDescription = std::move(value); }
 
     /**
-     * <p>The <a>KinesisStreamSourceDescription</a> value for the source Kinesis
+     * <p>The <a>KinesisStreamSourceDescription</a> value for the source Kinesis data
      * stream.</p>
      */
     inline SourceDescription& WithKinesisStreamSourceDescription(const KinesisStreamSourceDescription& value) { SetKinesisStreamSourceDescription(value); return *this;}
 
     /**
-     * <p>The <a>KinesisStreamSourceDescription</a> value for the source Kinesis
+     * <p>The <a>KinesisStreamSourceDescription</a> value for the source Kinesis data
      * stream.</p>
      */
     inline SourceDescription& WithKinesisStreamSourceDescription(KinesisStreamSourceDescription&& value) { SetKinesisStreamSourceDescription(std::move(value)); return *this;}

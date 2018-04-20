@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>The stream and role ARNs for a Kinesis stream used as the source for a
-   * delivery stream.</p><p><h3>See Also:</h3>   <a
+   * <p>The stream and role Amazon Resource Names (ARNs) for a Kinesis data stream
+   * used as the source for a delivery stream.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/KinesisStreamSourceConfiguration">AWS
    * API Reference</a></p>
    */
@@ -48,73 +48,80 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the source Kinesis stream.</p>
+     * <p>The ARN of the source Kinesis data stream.</p>
      */
     inline const Aws::String& GetKinesisStreamARN() const{ return m_kinesisStreamARN; }
 
     /**
-     * <p>The ARN of the source Kinesis stream.</p>
+     * <p>The ARN of the source Kinesis data stream.</p>
      */
     inline void SetKinesisStreamARN(const Aws::String& value) { m_kinesisStreamARNHasBeenSet = true; m_kinesisStreamARN = value; }
 
     /**
-     * <p>The ARN of the source Kinesis stream.</p>
+     * <p>The ARN of the source Kinesis data stream.</p>
      */
     inline void SetKinesisStreamARN(Aws::String&& value) { m_kinesisStreamARNHasBeenSet = true; m_kinesisStreamARN = std::move(value); }
 
     /**
-     * <p>The ARN of the source Kinesis stream.</p>
+     * <p>The ARN of the source Kinesis data stream.</p>
      */
     inline void SetKinesisStreamARN(const char* value) { m_kinesisStreamARNHasBeenSet = true; m_kinesisStreamARN.assign(value); }
 
     /**
-     * <p>The ARN of the source Kinesis stream.</p>
+     * <p>The ARN of the source Kinesis data stream.</p>
      */
     inline KinesisStreamSourceConfiguration& WithKinesisStreamARN(const Aws::String& value) { SetKinesisStreamARN(value); return *this;}
 
     /**
-     * <p>The ARN of the source Kinesis stream.</p>
+     * <p>The ARN of the source Kinesis data stream.</p>
      */
     inline KinesisStreamSourceConfiguration& WithKinesisStreamARN(Aws::String&& value) { SetKinesisStreamARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the source Kinesis stream.</p>
+     * <p>The ARN of the source Kinesis data stream.</p>
      */
     inline KinesisStreamSourceConfiguration& WithKinesisStreamARN(const char* value) { SetKinesisStreamARN(value); return *this;}
 
 
     /**
-     * <p>The ARN of the role that provides access to the source Kinesis stream.</p>
+     * <p>The ARN of the role that provides access to the source Kinesis data
+     * stream.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
-     * <p>The ARN of the role that provides access to the source Kinesis stream.</p>
+     * <p>The ARN of the role that provides access to the source Kinesis data
+     * stream.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
-     * <p>The ARN of the role that provides access to the source Kinesis stream.</p>
+     * <p>The ARN of the role that provides access to the source Kinesis data
+     * stream.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
-     * <p>The ARN of the role that provides access to the source Kinesis stream.</p>
+     * <p>The ARN of the role that provides access to the source Kinesis data
+     * stream.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
-     * <p>The ARN of the role that provides access to the source Kinesis stream.</p>
+     * <p>The ARN of the role that provides access to the source Kinesis data
+     * stream.</p>
      */
     inline KinesisStreamSourceConfiguration& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
-     * <p>The ARN of the role that provides access to the source Kinesis stream.</p>
+     * <p>The ARN of the role that provides access to the source Kinesis data
+     * stream.</p>
      */
     inline KinesisStreamSourceConfiguration& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the role that provides access to the source Kinesis stream.</p>
+     * <p>The ARN of the role that provides access to the source Kinesis data
+     * stream.</p>
      */
     inline KinesisStreamSourceConfiguration& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 

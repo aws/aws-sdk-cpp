@@ -30,6 +30,7 @@ namespace Model
 
 OutputDestinationSettings::OutputDestinationSettings() : 
     m_passwordParamHasBeenSet(false),
+    m_streamNameHasBeenSet(false),
     m_urlHasBeenSet(false),
     m_usernameHasBeenSet(false)
 {
@@ -37,6 +38,7 @@ OutputDestinationSettings::OutputDestinationSettings() :
 
 OutputDestinationSettings::OutputDestinationSettings(const JsonValue& jsonValue) : 
     m_passwordParamHasBeenSet(false),
+    m_streamNameHasBeenSet(false),
     m_urlHasBeenSet(false),
     m_usernameHasBeenSet(false)
 {
@@ -50,6 +52,13 @@ OutputDestinationSettings& OutputDestinationSettings::operator =(const JsonValue
     m_passwordParam = jsonValue.GetString("passwordParam");
 
     m_passwordParamHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("streamName"))
+  {
+    m_streamName = jsonValue.GetString("streamName");
+
+    m_streamNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("url"))
@@ -76,6 +85,12 @@ JsonValue OutputDestinationSettings::Jsonize() const
   if(m_passwordParamHasBeenSet)
   {
    payload.WithString("passwordParam", m_passwordParam);
+
+  }
+
+  if(m_streamNameHasBeenSet)
+  {
+   payload.WithString("streamName", m_streamName);
 
   }
 

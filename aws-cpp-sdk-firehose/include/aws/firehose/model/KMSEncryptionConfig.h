@@ -48,44 +48,44 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the encryption key. Must belong to the same region as the
-     * destination Amazon S3 bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of the encryption key. Must belong to the same
+     * AWS Region as the destination Amazon S3 bucket.</p>
      */
     inline const Aws::String& GetAWSKMSKeyARN() const{ return m_aWSKMSKeyARN; }
 
     /**
-     * <p>The ARN of the encryption key. Must belong to the same region as the
-     * destination Amazon S3 bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of the encryption key. Must belong to the same
+     * AWS Region as the destination Amazon S3 bucket.</p>
      */
     inline void SetAWSKMSKeyARN(const Aws::String& value) { m_aWSKMSKeyARNHasBeenSet = true; m_aWSKMSKeyARN = value; }
 
     /**
-     * <p>The ARN of the encryption key. Must belong to the same region as the
-     * destination Amazon S3 bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of the encryption key. Must belong to the same
+     * AWS Region as the destination Amazon S3 bucket.</p>
      */
     inline void SetAWSKMSKeyARN(Aws::String&& value) { m_aWSKMSKeyARNHasBeenSet = true; m_aWSKMSKeyARN = std::move(value); }
 
     /**
-     * <p>The ARN of the encryption key. Must belong to the same region as the
-     * destination Amazon S3 bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of the encryption key. Must belong to the same
+     * AWS Region as the destination Amazon S3 bucket.</p>
      */
     inline void SetAWSKMSKeyARN(const char* value) { m_aWSKMSKeyARNHasBeenSet = true; m_aWSKMSKeyARN.assign(value); }
 
     /**
-     * <p>The ARN of the encryption key. Must belong to the same region as the
-     * destination Amazon S3 bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of the encryption key. Must belong to the same
+     * AWS Region as the destination Amazon S3 bucket.</p>
      */
     inline KMSEncryptionConfig& WithAWSKMSKeyARN(const Aws::String& value) { SetAWSKMSKeyARN(value); return *this;}
 
     /**
-     * <p>The ARN of the encryption key. Must belong to the same region as the
-     * destination Amazon S3 bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of the encryption key. Must belong to the same
+     * AWS Region as the destination Amazon S3 bucket.</p>
      */
     inline KMSEncryptionConfig& WithAWSKMSKeyARN(Aws::String&& value) { SetAWSKMSKeyARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the encryption key. Must belong to the same region as the
-     * destination Amazon S3 bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of the encryption key. Must belong to the same
+     * AWS Region as the destination Amazon S3 bucket.</p>
      */
     inline KMSEncryptionConfig& WithAWSKMSKeyARN(const char* value) { SetAWSKMSKeyARN(value); return *this;}
 

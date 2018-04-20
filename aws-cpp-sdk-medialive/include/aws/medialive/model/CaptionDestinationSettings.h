@@ -20,6 +20,7 @@
 #include <aws/medialive/model/DvbSubDestinationSettings.h>
 #include <aws/medialive/model/EmbeddedDestinationSettings.h>
 #include <aws/medialive/model/EmbeddedPlusScte20DestinationSettings.h>
+#include <aws/medialive/model/RtmpCaptionInfoDestinationSettings.h>
 #include <aws/medialive/model/Scte20PlusEmbeddedDestinationSettings.h>
 #include <aws/medialive/model/Scte27DestinationSettings.h>
 #include <aws/medialive/model/SmpteTtDestinationSettings.h>
@@ -138,6 +139,22 @@ namespace Model
 
 
     
+    inline const RtmpCaptionInfoDestinationSettings& GetRtmpCaptionInfoDestinationSettings() const{ return m_rtmpCaptionInfoDestinationSettings; }
+
+    
+    inline void SetRtmpCaptionInfoDestinationSettings(const RtmpCaptionInfoDestinationSettings& value) { m_rtmpCaptionInfoDestinationSettingsHasBeenSet = true; m_rtmpCaptionInfoDestinationSettings = value; }
+
+    
+    inline void SetRtmpCaptionInfoDestinationSettings(RtmpCaptionInfoDestinationSettings&& value) { m_rtmpCaptionInfoDestinationSettingsHasBeenSet = true; m_rtmpCaptionInfoDestinationSettings = std::move(value); }
+
+    
+    inline CaptionDestinationSettings& WithRtmpCaptionInfoDestinationSettings(const RtmpCaptionInfoDestinationSettings& value) { SetRtmpCaptionInfoDestinationSettings(value); return *this;}
+
+    
+    inline CaptionDestinationSettings& WithRtmpCaptionInfoDestinationSettings(RtmpCaptionInfoDestinationSettings&& value) { SetRtmpCaptionInfoDestinationSettings(std::move(value)); return *this;}
+
+
+    
     inline const Scte20PlusEmbeddedDestinationSettings& GetScte20PlusEmbeddedDestinationSettings() const{ return m_scte20PlusEmbeddedDestinationSettings; }
 
     
@@ -248,6 +265,9 @@ namespace Model
 
     EmbeddedPlusScte20DestinationSettings m_embeddedPlusScte20DestinationSettings;
     bool m_embeddedPlusScte20DestinationSettingsHasBeenSet;
+
+    RtmpCaptionInfoDestinationSettings m_rtmpCaptionInfoDestinationSettings;
+    bool m_rtmpCaptionInfoDestinationSettingsHasBeenSet;
 
     Scte20PlusEmbeddedDestinationSettings m_scte20PlusEmbeddedDestinationSettings;
     bool m_scte20PlusEmbeddedDestinationSettingsHasBeenSet;

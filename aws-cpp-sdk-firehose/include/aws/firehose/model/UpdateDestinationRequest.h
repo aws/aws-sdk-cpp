@@ -85,72 +85,72 @@ namespace Model
 
 
     /**
-     * <p>Obtain this value from the <b>VersionId</b> result of
-     * <a>DeliveryStreamDescription</a>. This value is required, and helps the service
-     * to perform conditional operations. For example, if there is an interleaving
+     * <p>Obtain this value from the <code>VersionId</code> result of
+     * <a>DeliveryStreamDescription</a>. This value is required, and it helps the
+     * service perform conditional operations. For example, if there is an interleaving
      * update and this value is null, then the update destination fails. After the
-     * update is successful, the <b>VersionId</b> value is updated. The service then
-     * performs a merge of the old configuration with the new configuration.</p>
+     * update is successful, the <code>VersionId</code> value is updated. The service
+     * then performs a merge of the old configuration with the new configuration.</p>
      */
     inline const Aws::String& GetCurrentDeliveryStreamVersionId() const{ return m_currentDeliveryStreamVersionId; }
 
     /**
-     * <p>Obtain this value from the <b>VersionId</b> result of
-     * <a>DeliveryStreamDescription</a>. This value is required, and helps the service
-     * to perform conditional operations. For example, if there is an interleaving
+     * <p>Obtain this value from the <code>VersionId</code> result of
+     * <a>DeliveryStreamDescription</a>. This value is required, and it helps the
+     * service perform conditional operations. For example, if there is an interleaving
      * update and this value is null, then the update destination fails. After the
-     * update is successful, the <b>VersionId</b> value is updated. The service then
-     * performs a merge of the old configuration with the new configuration.</p>
+     * update is successful, the <code>VersionId</code> value is updated. The service
+     * then performs a merge of the old configuration with the new configuration.</p>
      */
     inline void SetCurrentDeliveryStreamVersionId(const Aws::String& value) { m_currentDeliveryStreamVersionIdHasBeenSet = true; m_currentDeliveryStreamVersionId = value; }
 
     /**
-     * <p>Obtain this value from the <b>VersionId</b> result of
-     * <a>DeliveryStreamDescription</a>. This value is required, and helps the service
-     * to perform conditional operations. For example, if there is an interleaving
+     * <p>Obtain this value from the <code>VersionId</code> result of
+     * <a>DeliveryStreamDescription</a>. This value is required, and it helps the
+     * service perform conditional operations. For example, if there is an interleaving
      * update and this value is null, then the update destination fails. After the
-     * update is successful, the <b>VersionId</b> value is updated. The service then
-     * performs a merge of the old configuration with the new configuration.</p>
+     * update is successful, the <code>VersionId</code> value is updated. The service
+     * then performs a merge of the old configuration with the new configuration.</p>
      */
     inline void SetCurrentDeliveryStreamVersionId(Aws::String&& value) { m_currentDeliveryStreamVersionIdHasBeenSet = true; m_currentDeliveryStreamVersionId = std::move(value); }
 
     /**
-     * <p>Obtain this value from the <b>VersionId</b> result of
-     * <a>DeliveryStreamDescription</a>. This value is required, and helps the service
-     * to perform conditional operations. For example, if there is an interleaving
+     * <p>Obtain this value from the <code>VersionId</code> result of
+     * <a>DeliveryStreamDescription</a>. This value is required, and it helps the
+     * service perform conditional operations. For example, if there is an interleaving
      * update and this value is null, then the update destination fails. After the
-     * update is successful, the <b>VersionId</b> value is updated. The service then
-     * performs a merge of the old configuration with the new configuration.</p>
+     * update is successful, the <code>VersionId</code> value is updated. The service
+     * then performs a merge of the old configuration with the new configuration.</p>
      */
     inline void SetCurrentDeliveryStreamVersionId(const char* value) { m_currentDeliveryStreamVersionIdHasBeenSet = true; m_currentDeliveryStreamVersionId.assign(value); }
 
     /**
-     * <p>Obtain this value from the <b>VersionId</b> result of
-     * <a>DeliveryStreamDescription</a>. This value is required, and helps the service
-     * to perform conditional operations. For example, if there is an interleaving
+     * <p>Obtain this value from the <code>VersionId</code> result of
+     * <a>DeliveryStreamDescription</a>. This value is required, and it helps the
+     * service perform conditional operations. For example, if there is an interleaving
      * update and this value is null, then the update destination fails. After the
-     * update is successful, the <b>VersionId</b> value is updated. The service then
-     * performs a merge of the old configuration with the new configuration.</p>
+     * update is successful, the <code>VersionId</code> value is updated. The service
+     * then performs a merge of the old configuration with the new configuration.</p>
      */
     inline UpdateDestinationRequest& WithCurrentDeliveryStreamVersionId(const Aws::String& value) { SetCurrentDeliveryStreamVersionId(value); return *this;}
 
     /**
-     * <p>Obtain this value from the <b>VersionId</b> result of
-     * <a>DeliveryStreamDescription</a>. This value is required, and helps the service
-     * to perform conditional operations. For example, if there is an interleaving
+     * <p>Obtain this value from the <code>VersionId</code> result of
+     * <a>DeliveryStreamDescription</a>. This value is required, and it helps the
+     * service perform conditional operations. For example, if there is an interleaving
      * update and this value is null, then the update destination fails. After the
-     * update is successful, the <b>VersionId</b> value is updated. The service then
-     * performs a merge of the old configuration with the new configuration.</p>
+     * update is successful, the <code>VersionId</code> value is updated. The service
+     * then performs a merge of the old configuration with the new configuration.</p>
      */
     inline UpdateDestinationRequest& WithCurrentDeliveryStreamVersionId(Aws::String&& value) { SetCurrentDeliveryStreamVersionId(std::move(value)); return *this;}
 
     /**
-     * <p>Obtain this value from the <b>VersionId</b> result of
-     * <a>DeliveryStreamDescription</a>. This value is required, and helps the service
-     * to perform conditional operations. For example, if there is an interleaving
+     * <p>Obtain this value from the <code>VersionId</code> result of
+     * <a>DeliveryStreamDescription</a>. This value is required, and it helps the
+     * service perform conditional operations. For example, if there is an interleaving
      * update and this value is null, then the update destination fails. After the
-     * update is successful, the <b>VersionId</b> value is updated. The service then
-     * performs a merge of the old configuration with the new configuration.</p>
+     * update is successful, the <code>VersionId</code> value is updated. The service
+     * then performs a merge of the old configuration with the new configuration.</p>
      */
     inline UpdateDestinationRequest& WithCurrentDeliveryStreamVersionId(const char* value) { SetCurrentDeliveryStreamVersionId(value); return *this;}
 

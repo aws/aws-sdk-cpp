@@ -138,40 +138,35 @@ namespace Model
     /**
      * If set to verifyAuthenticity, verify the https certificate chain to a trusted
      * Certificate Authority (CA).  This will cause https outputs to self-signed
-     * certificates to fail unless those certificates are manually added to the OS
-     * trusted keystore.
+     * certificates to fail.
      */
     inline const SmoothGroupCertificateMode& GetCertificateMode() const{ return m_certificateMode; }
 
     /**
      * If set to verifyAuthenticity, verify the https certificate chain to a trusted
      * Certificate Authority (CA).  This will cause https outputs to self-signed
-     * certificates to fail unless those certificates are manually added to the OS
-     * trusted keystore.
+     * certificates to fail.
      */
     inline void SetCertificateMode(const SmoothGroupCertificateMode& value) { m_certificateModeHasBeenSet = true; m_certificateMode = value; }
 
     /**
      * If set to verifyAuthenticity, verify the https certificate chain to a trusted
      * Certificate Authority (CA).  This will cause https outputs to self-signed
-     * certificates to fail unless those certificates are manually added to the OS
-     * trusted keystore.
+     * certificates to fail.
      */
     inline void SetCertificateMode(SmoothGroupCertificateMode&& value) { m_certificateModeHasBeenSet = true; m_certificateMode = std::move(value); }
 
     /**
      * If set to verifyAuthenticity, verify the https certificate chain to a trusted
      * Certificate Authority (CA).  This will cause https outputs to self-signed
-     * certificates to fail unless those certificates are manually added to the OS
-     * trusted keystore.
+     * certificates to fail.
      */
     inline MsSmoothGroupSettings& WithCertificateMode(const SmoothGroupCertificateMode& value) { SetCertificateMode(value); return *this;}
 
     /**
      * If set to verifyAuthenticity, verify the https certificate chain to a trusted
      * Certificate Authority (CA).  This will cause https outputs to self-signed
-     * certificates to fail unless those certificates are manually added to the OS
-     * trusted keystore.
+     * certificates to fail.
      */
     inline MsSmoothGroupSettings& WithCertificateMode(SmoothGroupCertificateMode&& value) { SetCertificateMode(std::move(value)); return *this;}
 
