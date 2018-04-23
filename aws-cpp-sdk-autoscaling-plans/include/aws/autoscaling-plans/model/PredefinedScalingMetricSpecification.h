@@ -82,8 +82,8 @@ namespace Model
     /**
      * <p>Identifies the resource associated with the metric type. You can't specify a
      * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
-     * and there is a target group attached to the Auto Scaling group, Spot Fleet
-     * request, or ECS service.</p> <p>The format is
+     * and there is a target group for an Application Load Balancer attached to the
+     * Auto Scaling group, Spot Fleet request, or ECS service.</p> <p>The format is
      * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
      * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
      * is the final portion of the load balancer ARN</p> </li> <li>
@@ -95,8 +95,8 @@ namespace Model
     /**
      * <p>Identifies the resource associated with the metric type. You can't specify a
      * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
-     * and there is a target group attached to the Auto Scaling group, Spot Fleet
-     * request, or ECS service.</p> <p>The format is
+     * and there is a target group for an Application Load Balancer attached to the
+     * Auto Scaling group, Spot Fleet request, or ECS service.</p> <p>The format is
      * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
      * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
      * is the final portion of the load balancer ARN</p> </li> <li>
@@ -108,8 +108,8 @@ namespace Model
     /**
      * <p>Identifies the resource associated with the metric type. You can't specify a
      * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
-     * and there is a target group attached to the Auto Scaling group, Spot Fleet
-     * request, or ECS service.</p> <p>The format is
+     * and there is a target group for an Application Load Balancer attached to the
+     * Auto Scaling group, Spot Fleet request, or ECS service.</p> <p>The format is
      * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
      * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
      * is the final portion of the load balancer ARN</p> </li> <li>
@@ -121,8 +121,8 @@ namespace Model
     /**
      * <p>Identifies the resource associated with the metric type. You can't specify a
      * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
-     * and there is a target group attached to the Auto Scaling group, Spot Fleet
-     * request, or ECS service.</p> <p>The format is
+     * and there is a target group for an Application Load Balancer attached to the
+     * Auto Scaling group, Spot Fleet request, or ECS service.</p> <p>The format is
      * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
      * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
      * is the final portion of the load balancer ARN</p> </li> <li>
@@ -134,8 +134,8 @@ namespace Model
     /**
      * <p>Identifies the resource associated with the metric type. You can't specify a
      * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
-     * and there is a target group attached to the Auto Scaling group, Spot Fleet
-     * request, or ECS service.</p> <p>The format is
+     * and there is a target group for an Application Load Balancer attached to the
+     * Auto Scaling group, Spot Fleet request, or ECS service.</p> <p>The format is
      * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
      * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
      * is the final portion of the load balancer ARN</p> </li> <li>
@@ -147,8 +147,8 @@ namespace Model
     /**
      * <p>Identifies the resource associated with the metric type. You can't specify a
      * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
-     * and there is a target group attached to the Auto Scaling group, Spot Fleet
-     * request, or ECS service.</p> <p>The format is
+     * and there is a target group for an Application Load Balancer attached to the
+     * Auto Scaling group, Spot Fleet request, or ECS service.</p> <p>The format is
      * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
      * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
      * is the final portion of the load balancer ARN</p> </li> <li>
@@ -160,8 +160,8 @@ namespace Model
     /**
      * <p>Identifies the resource associated with the metric type. You can't specify a
      * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
-     * and there is a target group attached to the Auto Scaling group, Spot Fleet
-     * request, or ECS service.</p> <p>The format is
+     * and there is a target group for an Application Load Balancer attached to the
+     * Auto Scaling group, Spot Fleet request, or ECS service.</p> <p>The format is
      * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
      * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
      * is the final portion of the load balancer ARN</p> </li> <li>

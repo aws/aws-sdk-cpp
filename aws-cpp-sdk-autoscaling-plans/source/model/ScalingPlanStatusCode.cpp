@@ -36,6 +36,8 @@ namespace Aws
         static const int CreationFailed_HASH = HashingUtils::HashString("CreationFailed");
         static const int DeletionInProgress_HASH = HashingUtils::HashString("DeletionInProgress");
         static const int DeletionFailed_HASH = HashingUtils::HashString("DeletionFailed");
+        static const int UpdateInProgress_HASH = HashingUtils::HashString("UpdateInProgress");
+        static const int UpdateFailed_HASH = HashingUtils::HashString("UpdateFailed");
 
 
         ScalingPlanStatusCode GetScalingPlanStatusCodeForName(const Aws::String& name)
@@ -65,6 +67,14 @@ namespace Aws
           {
             return ScalingPlanStatusCode::DeletionFailed;
           }
+          else if (hashCode == UpdateInProgress_HASH)
+          {
+            return ScalingPlanStatusCode::UpdateInProgress;
+          }
+          else if (hashCode == UpdateFailed_HASH)
+          {
+            return ScalingPlanStatusCode::UpdateFailed;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -91,6 +101,10 @@ namespace Aws
             return "DeletionInProgress";
           case ScalingPlanStatusCode::DeletionFailed:
             return "DeletionFailed";
+          case ScalingPlanStatusCode::UpdateInProgress:
+            return "UpdateInProgress";
+          case ScalingPlanStatusCode::UpdateFailed:
+            return "UpdateFailed";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

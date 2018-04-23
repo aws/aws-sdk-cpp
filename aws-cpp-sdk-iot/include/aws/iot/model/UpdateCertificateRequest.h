@@ -53,37 +53,44 @@ namespace Model
 
 
     /**
-     * <p>The ID of the certificate.</p>
+     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
+     * certificate ID.)</p>
      */
     inline const Aws::String& GetCertificateId() const{ return m_certificateId; }
 
     /**
-     * <p>The ID of the certificate.</p>
+     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
+     * certificate ID.)</p>
      */
     inline void SetCertificateId(const Aws::String& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
 
     /**
-     * <p>The ID of the certificate.</p>
+     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
+     * certificate ID.)</p>
      */
     inline void SetCertificateId(Aws::String&& value) { m_certificateIdHasBeenSet = true; m_certificateId = std::move(value); }
 
     /**
-     * <p>The ID of the certificate.</p>
+     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
+     * certificate ID.)</p>
      */
     inline void SetCertificateId(const char* value) { m_certificateIdHasBeenSet = true; m_certificateId.assign(value); }
 
     /**
-     * <p>The ID of the certificate.</p>
+     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
+     * certificate ID.)</p>
      */
     inline UpdateCertificateRequest& WithCertificateId(const Aws::String& value) { SetCertificateId(value); return *this;}
 
     /**
-     * <p>The ID of the certificate.</p>
+     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
+     * certificate ID.)</p>
      */
     inline UpdateCertificateRequest& WithCertificateId(Aws::String&& value) { SetCertificateId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the certificate.</p>
+     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
+     * certificate ID.)</p>
      */
     inline UpdateCertificateRequest& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
 

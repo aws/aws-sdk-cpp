@@ -41,7 +41,8 @@ Action::Action() :
     m_cloudwatchMetricHasBeenSet(false),
     m_cloudwatchAlarmHasBeenSet(false),
     m_elasticsearchHasBeenSet(false),
-    m_salesforceHasBeenSet(false)
+    m_salesforceHasBeenSet(false),
+    m_iotAnalyticsHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ Action::Action(const JsonValue& jsonValue) :
     m_cloudwatchMetricHasBeenSet(false),
     m_cloudwatchAlarmHasBeenSet(false),
     m_elasticsearchHasBeenSet(false),
-    m_salesforceHasBeenSet(false)
+    m_salesforceHasBeenSet(false),
+    m_iotAnalyticsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -156,6 +158,13 @@ Action& Action::operator =(const JsonValue& jsonValue)
     m_salesforceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("iotAnalytics"))
+  {
+    m_iotAnalytics = jsonValue.GetObject("iotAnalytics");
+
+    m_iotAnalyticsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -238,6 +247,12 @@ JsonValue Action::Jsonize() const
   if(m_salesforceHasBeenSet)
   {
    payload.WithObject("salesforce", m_salesforce.Jsonize());
+
+  }
+
+  if(m_iotAnalyticsHasBeenSet)
+  {
+   payload.WithObject("iotAnalytics", m_iotAnalytics.Jsonize());
 
   }
 

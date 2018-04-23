@@ -31,6 +31,7 @@
 #include <aws/autoscaling-plans/model/DeleteScalingPlanRequest.h>
 #include <aws/autoscaling-plans/model/DescribeScalingPlanResourcesRequest.h>
 #include <aws/autoscaling-plans/model/DescribeScalingPlansRequest.h>
+#include <aws/autoscaling-plans/model/UpdateScalingPlanRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -234,5 +235,40 @@ void AutoScalingPlansClient::DescribeScalingPlansAsync(const DescribeScalingPlan
 void AutoScalingPlansClient::DescribeScalingPlansAsyncHelper(const DescribeScalingPlansRequest& request, const DescribeScalingPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeScalingPlans(request), context);
+}
+
+UpdateScalingPlanOutcome AutoScalingPlansClient::UpdateScalingPlan(const UpdateScalingPlanRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateScalingPlanOutcome(UpdateScalingPlanResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateScalingPlanOutcome(outcome.GetError());
+  }
+}
+
+UpdateScalingPlanOutcomeCallable AutoScalingPlansClient::UpdateScalingPlanCallable(const UpdateScalingPlanRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateScalingPlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateScalingPlan(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AutoScalingPlansClient::UpdateScalingPlanAsync(const UpdateScalingPlanRequest& request, const UpdateScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateScalingPlanAsyncHelper( request, handler, context ); } );
+}
+
+void AutoScalingPlansClient::UpdateScalingPlanAsyncHelper(const UpdateScalingPlanRequest& request, const UpdateScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateScalingPlan(request), context);
 }
 

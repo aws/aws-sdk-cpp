@@ -268,6 +268,32 @@ namespace Model
 
 
     /**
+     * <p>The Unix timestamp when the scaling plan entered the current status.</p>
+     */
+    inline const Aws::Utils::DateTime& GetStatusStartTime() const{ return m_statusStartTime; }
+
+    /**
+     * <p>The Unix timestamp when the scaling plan entered the current status.</p>
+     */
+    inline void SetStatusStartTime(const Aws::Utils::DateTime& value) { m_statusStartTimeHasBeenSet = true; m_statusStartTime = value; }
+
+    /**
+     * <p>The Unix timestamp when the scaling plan entered the current status.</p>
+     */
+    inline void SetStatusStartTime(Aws::Utils::DateTime&& value) { m_statusStartTimeHasBeenSet = true; m_statusStartTime = std::move(value); }
+
+    /**
+     * <p>The Unix timestamp when the scaling plan entered the current status.</p>
+     */
+    inline ScalingPlan& WithStatusStartTime(const Aws::Utils::DateTime& value) { SetStatusStartTime(value); return *this;}
+
+    /**
+     * <p>The Unix timestamp when the scaling plan entered the current status.</p>
+     */
+    inline ScalingPlan& WithStatusStartTime(Aws::Utils::DateTime&& value) { SetStatusStartTime(std::move(value)); return *this;}
+
+
+    /**
      * <p>The Unix timestamp when the scaling plan was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
@@ -311,6 +337,9 @@ namespace Model
 
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
+
+    Aws::Utils::DateTime m_statusStartTime;
+    bool m_statusStartTimeHasBeenSet;
 
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;

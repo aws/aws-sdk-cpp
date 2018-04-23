@@ -25,6 +25,7 @@
 #include <aws/autoscaling-plans/model/DeleteScalingPlanResult.h>
 #include <aws/autoscaling-plans/model/DescribeScalingPlanResourcesResult.h>
 #include <aws/autoscaling-plans/model/DescribeScalingPlansResult.h>
+#include <aws/autoscaling-plans/model/UpdateScalingPlanResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -74,16 +75,19 @@ namespace Model
         class DeleteScalingPlanRequest;
         class DescribeScalingPlanResourcesRequest;
         class DescribeScalingPlansRequest;
+        class UpdateScalingPlanRequest;
 
         typedef Aws::Utils::Outcome<CreateScalingPlanResult, Aws::Client::AWSError<AutoScalingPlansErrors>> CreateScalingPlanOutcome;
         typedef Aws::Utils::Outcome<DeleteScalingPlanResult, Aws::Client::AWSError<AutoScalingPlansErrors>> DeleteScalingPlanOutcome;
         typedef Aws::Utils::Outcome<DescribeScalingPlanResourcesResult, Aws::Client::AWSError<AutoScalingPlansErrors>> DescribeScalingPlanResourcesOutcome;
         typedef Aws::Utils::Outcome<DescribeScalingPlansResult, Aws::Client::AWSError<AutoScalingPlansErrors>> DescribeScalingPlansOutcome;
+        typedef Aws::Utils::Outcome<UpdateScalingPlanResult, Aws::Client::AWSError<AutoScalingPlansErrors>> UpdateScalingPlanOutcome;
 
         typedef std::future<CreateScalingPlanOutcome> CreateScalingPlanOutcomeCallable;
         typedef std::future<DeleteScalingPlanOutcome> DeleteScalingPlanOutcomeCallable;
         typedef std::future<DescribeScalingPlanResourcesOutcome> DescribeScalingPlanResourcesOutcomeCallable;
         typedef std::future<DescribeScalingPlansOutcome> DescribeScalingPlansOutcomeCallable;
+        typedef std::future<UpdateScalingPlanOutcome> UpdateScalingPlanOutcomeCallable;
 } // namespace Model
 
   class AutoScalingPlansClient;
@@ -92,16 +96,18 @@ namespace Model
     typedef std::function<void(const AutoScalingPlansClient*, const Model::DeleteScalingPlanRequest&, const Model::DeleteScalingPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteScalingPlanResponseReceivedHandler;
     typedef std::function<void(const AutoScalingPlansClient*, const Model::DescribeScalingPlanResourcesRequest&, const Model::DescribeScalingPlanResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScalingPlanResourcesResponseReceivedHandler;
     typedef std::function<void(const AutoScalingPlansClient*, const Model::DescribeScalingPlansRequest&, const Model::DescribeScalingPlansOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScalingPlansResponseReceivedHandler;
+    typedef std::function<void(const AutoScalingPlansClient*, const Model::UpdateScalingPlanRequest&, const Model::UpdateScalingPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateScalingPlanResponseReceivedHandler;
 
   /**
-   * <p>Use AWS Auto Scaling to quickly discover all the scalable AWS resources for
-   * your application and configure dynamic scaling for your scalable resources.</p>
-   * <p>To get started, create a scaling plan with a set of instructions used to
-   * configure dynamic scaling for the scalable resources in your application. AWS
-   * Auto Scaling creates target tracking scaling policies for the scalable resources
-   * in your scaling plan. Target tracking scaling policies adjust the capacity of
-   * your scalable resource as required to maintain resource utilization at the
-   * target value that you specified.</p>
+   * <fullname>AWS Auto Scaling</fullname> <p>Use AWS Auto Scaling to quickly
+   * discover all the scalable AWS resources for your application and configure
+   * dynamic scaling for your scalable resources.</p> <p>To get started, create a
+   * scaling plan with a set of instructions used to configure dynamic scaling for
+   * the scalable resources in your application. AWS Auto Scaling creates target
+   * tracking scaling policies for the scalable resources in your scaling plan.
+   * Target tracking scaling policies adjust the capacity of your scalable resource
+   * as required to maintain resource utilization at the target value that you
+   * specified.</p>
    */
   class AWS_AUTOSCALINGPLANS_API AutoScalingPlansClient : public Aws::Client::AWSJsonClient
   {
@@ -247,6 +253,37 @@ namespace Model
          */
         virtual void DescribeScalingPlansAsync(const Model::DescribeScalingPlansRequest& request, const DescribeScalingPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Updates the scaling plan for the specified scaling plan.</p> <p>You cannot
+         * update a scaling plan if it is in the process of being created, updated, or
+         * deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/UpdateScalingPlan">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateScalingPlanOutcome UpdateScalingPlan(const Model::UpdateScalingPlanRequest& request) const;
+
+        /**
+         * <p>Updates the scaling plan for the specified scaling plan.</p> <p>You cannot
+         * update a scaling plan if it is in the process of being created, updated, or
+         * deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/UpdateScalingPlan">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateScalingPlanOutcomeCallable UpdateScalingPlanCallable(const Model::UpdateScalingPlanRequest& request) const;
+
+        /**
+         * <p>Updates the scaling plan for the specified scaling plan.</p> <p>You cannot
+         * update a scaling plan if it is in the process of being created, updated, or
+         * deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/UpdateScalingPlan">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateScalingPlanAsync(const Model::UpdateScalingPlanRequest& request, const UpdateScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
@@ -256,6 +293,7 @@ namespace Model
         void DeleteScalingPlanAsyncHelper(const Model::DeleteScalingPlanRequest& request, const DeleteScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeScalingPlanResourcesAsyncHelper(const Model::DescribeScalingPlanResourcesRequest& request, const DescribeScalingPlanResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeScalingPlansAsyncHelper(const Model::DescribeScalingPlansRequest& request, const DescribeScalingPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateScalingPlanAsyncHelper(const Model::UpdateScalingPlanRequest& request, const UpdateScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;

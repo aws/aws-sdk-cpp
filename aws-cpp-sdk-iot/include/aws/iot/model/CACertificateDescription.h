@@ -276,51 +276,81 @@ namespace Model
     inline CACertificateDescription& WithAutoRegistrationStatus(AutoRegistrationStatus&& value) { SetAutoRegistrationStatus(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The date the CA certificate was last modified.</p>
+     */
     inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
 
-    
+    /**
+     * <p>The date the CA certificate was last modified.</p>
+     */
     inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
-    
+    /**
+     * <p>The date the CA certificate was last modified.</p>
+     */
     inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
 
-    
+    /**
+     * <p>The date the CA certificate was last modified.</p>
+     */
     inline CACertificateDescription& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
 
-    
+    /**
+     * <p>The date the CA certificate was last modified.</p>
+     */
     inline CACertificateDescription& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The customer version of the CA certificate.</p>
+     */
     inline int GetCustomerVersion() const{ return m_customerVersion; }
 
-    
+    /**
+     * <p>The customer version of the CA certificate.</p>
+     */
     inline void SetCustomerVersion(int value) { m_customerVersionHasBeenSet = true; m_customerVersion = value; }
 
-    
+    /**
+     * <p>The customer version of the CA certificate.</p>
+     */
     inline CACertificateDescription& WithCustomerVersion(int value) { SetCustomerVersion(value); return *this;}
 
 
-    
+    /**
+     * <p>The generation ID of the CA certificate.</p>
+     */
     inline const Aws::String& GetGenerationId() const{ return m_generationId; }
 
-    
+    /**
+     * <p>The generation ID of the CA certificate.</p>
+     */
     inline void SetGenerationId(const Aws::String& value) { m_generationIdHasBeenSet = true; m_generationId = value; }
 
-    
+    /**
+     * <p>The generation ID of the CA certificate.</p>
+     */
     inline void SetGenerationId(Aws::String&& value) { m_generationIdHasBeenSet = true; m_generationId = std::move(value); }
 
-    
+    /**
+     * <p>The generation ID of the CA certificate.</p>
+     */
     inline void SetGenerationId(const char* value) { m_generationIdHasBeenSet = true; m_generationId.assign(value); }
 
-    
+    /**
+     * <p>The generation ID of the CA certificate.</p>
+     */
     inline CACertificateDescription& WithGenerationId(const Aws::String& value) { SetGenerationId(value); return *this;}
 
-    
+    /**
+     * <p>The generation ID of the CA certificate.</p>
+     */
     inline CACertificateDescription& WithGenerationId(Aws::String&& value) { SetGenerationId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The generation ID of the CA certificate.</p>
+     */
     inline CACertificateDescription& WithGenerationId(const char* value) { SetGenerationId(value); return *this;}
 
   private:

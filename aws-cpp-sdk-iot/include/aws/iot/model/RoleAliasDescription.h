@@ -83,25 +83,39 @@ namespace Model
     inline RoleAliasDescription& WithRoleAlias(const char* value) { SetRoleAlias(value); return *this;}
 
 
-    
+    /**
+     * <p>The ARN of the role alias.</p>
+     */
     inline const Aws::String& GetRoleAliasArn() const{ return m_roleAliasArn; }
 
-    
+    /**
+     * <p>The ARN of the role alias.</p>
+     */
     inline void SetRoleAliasArn(const Aws::String& value) { m_roleAliasArnHasBeenSet = true; m_roleAliasArn = value; }
 
-    
+    /**
+     * <p>The ARN of the role alias.</p>
+     */
     inline void SetRoleAliasArn(Aws::String&& value) { m_roleAliasArnHasBeenSet = true; m_roleAliasArn = std::move(value); }
 
-    
+    /**
+     * <p>The ARN of the role alias.</p>
+     */
     inline void SetRoleAliasArn(const char* value) { m_roleAliasArnHasBeenSet = true; m_roleAliasArn.assign(value); }
 
-    
+    /**
+     * <p>The ARN of the role alias.</p>
+     */
     inline RoleAliasDescription& WithRoleAliasArn(const Aws::String& value) { SetRoleAliasArn(value); return *this;}
 
-    
+    /**
+     * <p>The ARN of the role alias.</p>
+     */
     inline RoleAliasDescription& WithRoleAliasArn(Aws::String&& value) { SetRoleAliasArn(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The ARN of the role alias.</p>
+     */
     inline RoleAliasDescription& WithRoleAliasArn(const char* value) { SetRoleAliasArn(value); return *this;}
 
 

@@ -192,57 +192,91 @@ namespace Model
     inline GetPolicyResult& WithDefaultVersionId(const char* value) { SetDefaultVersionId(value); return *this;}
 
 
-    
+    /**
+     * <p>The date the policy was created.</p>
+     */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
-    
+    /**
+     * <p>The date the policy was created.</p>
+     */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDate = value; }
 
-    
+    /**
+     * <p>The date the policy was created.</p>
+     */
     inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDate = std::move(value); }
 
-    
+    /**
+     * <p>The date the policy was created.</p>
+     */
     inline GetPolicyResult& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
 
-    
+    /**
+     * <p>The date the policy was created.</p>
+     */
     inline GetPolicyResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The date the policy was last modified.</p>
+     */
     inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
 
-    
+    /**
+     * <p>The date the policy was last modified.</p>
+     */
     inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDate = value; }
 
-    
+    /**
+     * <p>The date the policy was last modified.</p>
+     */
     inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDate = std::move(value); }
 
-    
+    /**
+     * <p>The date the policy was last modified.</p>
+     */
     inline GetPolicyResult& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
 
-    
+    /**
+     * <p>The date the policy was last modified.</p>
+     */
     inline GetPolicyResult& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The generation ID of the policy.</p>
+     */
     inline const Aws::String& GetGenerationId() const{ return m_generationId; }
 
-    
+    /**
+     * <p>The generation ID of the policy.</p>
+     */
     inline void SetGenerationId(const Aws::String& value) { m_generationId = value; }
 
-    
+    /**
+     * <p>The generation ID of the policy.</p>
+     */
     inline void SetGenerationId(Aws::String&& value) { m_generationId = std::move(value); }
 
-    
+    /**
+     * <p>The generation ID of the policy.</p>
+     */
     inline void SetGenerationId(const char* value) { m_generationId.assign(value); }
 
-    
+    /**
+     * <p>The generation ID of the policy.</p>
+     */
     inline GetPolicyResult& WithGenerationId(const Aws::String& value) { SetGenerationId(value); return *this;}
 
-    
+    /**
+     * <p>The generation ID of the policy.</p>
+     */
     inline GetPolicyResult& WithGenerationId(Aws::String&& value) { SetGenerationId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The generation ID of the policy.</p>
+     */
     inline GetPolicyResult& WithGenerationId(const char* value) { SetGenerationId(value); return *this;}
 
   private:

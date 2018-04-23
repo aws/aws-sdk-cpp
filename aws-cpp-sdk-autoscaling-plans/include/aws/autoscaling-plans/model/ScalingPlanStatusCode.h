@@ -31,7 +31,9 @@ namespace Model
     CreationInProgress,
     CreationFailed,
     DeletionInProgress,
-    DeletionFailed
+    DeletionFailed,
+    UpdateInProgress,
+    UpdateFailed
   };
 
 namespace ScalingPlanStatusCodeMapper

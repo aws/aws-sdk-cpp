@@ -29,12 +29,14 @@ namespace Model
 {
 
 ApplicationSource::ApplicationSource() : 
-    m_cloudFormationStackARNHasBeenSet(false)
+    m_cloudFormationStackARNHasBeenSet(false),
+    m_tagFiltersHasBeenSet(false)
 {
 }
 
 ApplicationSource::ApplicationSource(const JsonValue& jsonValue) : 
-    m_cloudFormationStackARNHasBeenSet(false)
+    m_cloudFormationStackARNHasBeenSet(false),
+    m_tagFiltersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,16 @@ ApplicationSource& ApplicationSource::operator =(const JsonValue& jsonValue)
     m_cloudFormationStackARNHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TagFilters"))
+  {
+    Array<JsonValue> tagFiltersJsonList = jsonValue.GetArray("TagFilters");
+    for(unsigned tagFiltersIndex = 0; tagFiltersIndex < tagFiltersJsonList.GetLength(); ++tagFiltersIndex)
+    {
+      m_tagFilters.push_back(tagFiltersJsonList[tagFiltersIndex].AsObject());
+    }
+    m_tagFiltersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +70,17 @@ JsonValue ApplicationSource::Jsonize() const
   if(m_cloudFormationStackARNHasBeenSet)
   {
    payload.WithString("CloudFormationStackARN", m_cloudFormationStackARN);
+
+  }
+
+  if(m_tagFiltersHasBeenSet)
+  {
+   Array<JsonValue> tagFiltersJsonList(m_tagFilters.size());
+   for(unsigned tagFiltersIndex = 0; tagFiltersIndex < tagFiltersJsonList.GetLength(); ++tagFiltersIndex)
+   {
+     tagFiltersJsonList[tagFiltersIndex].AsObject(m_tagFilters[tagFiltersIndex].Jsonize());
+   }
+   payload.WithArray("TagFilters", std::move(tagFiltersJsonList));
 
   }
 

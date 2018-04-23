@@ -651,13 +651,13 @@ namespace Model
 
   /**
    * <fullname>AWS IoT</fullname> <p>AWS IoT provides secure, bi-directional
-   * communication between Internet-connected things (such as sensors, actuators,
+   * communication between Internet-connected devices (such as sensors, actuators,
    * embedded devices, or smart appliances) and the AWS cloud. You can discover your
    * custom IoT-Data endpoint to communicate with, configure rules for data
    * processing and integration with other services, organize resources associated
-   * with each thing (Thing Registry), configure logging, and create and manage
-   * policies and credentials to authenticate things.</p> <p>For more information
-   * about how AWS IoT works, see the <a
+   * with each device (Registry), configure logging, and create and manage policies
+   * and credentials to authenticate devices.</p> <p>For more information about how
+   * AWS IoT works, see the <a
    * href="http://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html">Developer
    * Guide</a>.</p>
    */
@@ -1299,14 +1299,14 @@ namespace Model
         virtual void CreateStreamAsync(const Model::CreateStreamRequest& request, const CreateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a thing record in the thing registry.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a thing record in the registry.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThing">AWS API
          * Reference</a></p>
          */
         virtual Model::CreateThingOutcome CreateThing(const Model::CreateThingRequest& request) const;
 
         /**
-         * <p>Creates a thing record in the thing registry.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a thing record in the registry.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThing">AWS API
          * Reference</a></p>
          *
@@ -1315,7 +1315,7 @@ namespace Model
         virtual Model::CreateThingOutcomeCallable CreateThingCallable(const Model::CreateThingRequest& request) const;
 
         /**
-         * <p>Creates a thing record in the thing registry.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a thing record in the registry.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThing">AWS API
          * Reference</a></p>
          *

@@ -37,6 +37,7 @@ ScalingPlan::ScalingPlan() :
     m_statusCode(ScalingPlanStatusCode::NOT_SET),
     m_statusCodeHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
+    m_statusStartTimeHasBeenSet(false),
     m_creationTimeHasBeenSet(false)
 {
 }
@@ -50,6 +51,7 @@ ScalingPlan::ScalingPlan(const JsonValue& jsonValue) :
     m_statusCode(ScalingPlanStatusCode::NOT_SET),
     m_statusCodeHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
+    m_statusStartTimeHasBeenSet(false),
     m_creationTimeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -100,6 +102,13 @@ ScalingPlan& ScalingPlan::operator =(const JsonValue& jsonValue)
     m_statusMessage = jsonValue.GetString("StatusMessage");
 
     m_statusMessageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StatusStartTime"))
+  {
+    m_statusStartTime = jsonValue.GetDouble("StatusStartTime");
+
+    m_statusStartTimeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CreationTime"))
@@ -154,6 +163,11 @@ JsonValue ScalingPlan::Jsonize() const
   {
    payload.WithString("StatusMessage", m_statusMessage);
 
+  }
+
+  if(m_statusStartTimeHasBeenSet)
+  {
+   payload.WithDouble("StatusStartTime", m_statusStartTime.SecondsWithMSPrecision());
   }
 
   if(m_creationTimeHasBeenSet)

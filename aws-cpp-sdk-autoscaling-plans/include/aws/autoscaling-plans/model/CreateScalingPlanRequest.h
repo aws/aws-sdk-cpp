@@ -48,63 +48,75 @@ namespace Model
 
 
     /**
-     * <p>The name of the scaling plan.</p>
+     * <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or
+     * forward slashes.</p>
      */
     inline const Aws::String& GetScalingPlanName() const{ return m_scalingPlanName; }
 
     /**
-     * <p>The name of the scaling plan.</p>
+     * <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or
+     * forward slashes.</p>
      */
     inline void SetScalingPlanName(const Aws::String& value) { m_scalingPlanNameHasBeenSet = true; m_scalingPlanName = value; }
 
     /**
-     * <p>The name of the scaling plan.</p>
+     * <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or
+     * forward slashes.</p>
      */
     inline void SetScalingPlanName(Aws::String&& value) { m_scalingPlanNameHasBeenSet = true; m_scalingPlanName = std::move(value); }
 
     /**
-     * <p>The name of the scaling plan.</p>
+     * <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or
+     * forward slashes.</p>
      */
     inline void SetScalingPlanName(const char* value) { m_scalingPlanNameHasBeenSet = true; m_scalingPlanName.assign(value); }
 
     /**
-     * <p>The name of the scaling plan.</p>
+     * <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or
+     * forward slashes.</p>
      */
     inline CreateScalingPlanRequest& WithScalingPlanName(const Aws::String& value) { SetScalingPlanName(value); return *this;}
 
     /**
-     * <p>The name of the scaling plan.</p>
+     * <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or
+     * forward slashes.</p>
      */
     inline CreateScalingPlanRequest& WithScalingPlanName(Aws::String&& value) { SetScalingPlanName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the scaling plan.</p>
+     * <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or
+     * forward slashes.</p>
      */
     inline CreateScalingPlanRequest& WithScalingPlanName(const char* value) { SetScalingPlanName(value); return *this;}
 
 
     /**
-     * <p>The source for the application.</p>
+     * <p>A CloudFormation stack or set of tags. You can create one scaling plan per
+     * application source.</p>
      */
     inline const ApplicationSource& GetApplicationSource() const{ return m_applicationSource; }
 
     /**
-     * <p>The source for the application.</p>
+     * <p>A CloudFormation stack or set of tags. You can create one scaling plan per
+     * application source.</p>
      */
     inline void SetApplicationSource(const ApplicationSource& value) { m_applicationSourceHasBeenSet = true; m_applicationSource = value; }
 
     /**
-     * <p>The source for the application.</p>
+     * <p>A CloudFormation stack or set of tags. You can create one scaling plan per
+     * application source.</p>
      */
     inline void SetApplicationSource(ApplicationSource&& value) { m_applicationSourceHasBeenSet = true; m_applicationSource = std::move(value); }
 
     /**
-     * <p>The source for the application.</p>
+     * <p>A CloudFormation stack or set of tags. You can create one scaling plan per
+     * application source.</p>
      */
     inline CreateScalingPlanRequest& WithApplicationSource(const ApplicationSource& value) { SetApplicationSource(value); return *this;}
 
     /**
-     * <p>The source for the application.</p>
+     * <p>A CloudFormation stack or set of tags. You can create one scaling plan per
+     * application source.</p>
      */
     inline CreateScalingPlanRequest& WithApplicationSource(ApplicationSource&& value) { SetApplicationSource(std::move(value)); return *this;}
 

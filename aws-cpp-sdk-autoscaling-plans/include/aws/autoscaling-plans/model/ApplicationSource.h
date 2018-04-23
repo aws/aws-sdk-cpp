@@ -16,6 +16,8 @@
 #pragma once
 #include <aws/autoscaling-plans/AutoScalingPlans_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/autoscaling-plans/model/TagFilter.h>
 #include <utility>
 
 namespace Aws
@@ -81,10 +83,49 @@ namespace Model
      */
     inline ApplicationSource& WithCloudFormationStackARN(const char* value) { SetCloudFormationStackARN(value); return *this;}
 
+
+    /**
+     * <p>A set of tags (up to 50).</p>
+     */
+    inline const Aws::Vector<TagFilter>& GetTagFilters() const{ return m_tagFilters; }
+
+    /**
+     * <p>A set of tags (up to 50).</p>
+     */
+    inline void SetTagFilters(const Aws::Vector<TagFilter>& value) { m_tagFiltersHasBeenSet = true; m_tagFilters = value; }
+
+    /**
+     * <p>A set of tags (up to 50).</p>
+     */
+    inline void SetTagFilters(Aws::Vector<TagFilter>&& value) { m_tagFiltersHasBeenSet = true; m_tagFilters = std::move(value); }
+
+    /**
+     * <p>A set of tags (up to 50).</p>
+     */
+    inline ApplicationSource& WithTagFilters(const Aws::Vector<TagFilter>& value) { SetTagFilters(value); return *this;}
+
+    /**
+     * <p>A set of tags (up to 50).</p>
+     */
+    inline ApplicationSource& WithTagFilters(Aws::Vector<TagFilter>&& value) { SetTagFilters(std::move(value)); return *this;}
+
+    /**
+     * <p>A set of tags (up to 50).</p>
+     */
+    inline ApplicationSource& AddTagFilters(const TagFilter& value) { m_tagFiltersHasBeenSet = true; m_tagFilters.push_back(value); return *this; }
+
+    /**
+     * <p>A set of tags (up to 50).</p>
+     */
+    inline ApplicationSource& AddTagFilters(TagFilter&& value) { m_tagFiltersHasBeenSet = true; m_tagFilters.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_cloudFormationStackARN;
     bool m_cloudFormationStackARNHasBeenSet;
+
+    Aws::Vector<TagFilter> m_tagFilters;
+    bool m_tagFiltersHasBeenSet;
   };
 
 } // namespace Model

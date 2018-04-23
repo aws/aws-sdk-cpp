@@ -28,6 +28,7 @@
 #include <aws/iot/model/CloudwatchAlarmAction.h>
 #include <aws/iot/model/ElasticsearchAction.h>
 #include <aws/iot/model/SalesforceAction.h>
+#include <aws/iot/model/IotAnalyticsAction.h>
 #include <utility>
 
 namespace Aws
@@ -405,6 +406,32 @@ namespace Model
      */
     inline Action& WithSalesforce(SalesforceAction&& value) { SetSalesforce(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Sends message data to an AWS IoT Analytics channel.</p>
+     */
+    inline const IotAnalyticsAction& GetIotAnalytics() const{ return m_iotAnalytics; }
+
+    /**
+     * <p>Sends message data to an AWS IoT Analytics channel.</p>
+     */
+    inline void SetIotAnalytics(const IotAnalyticsAction& value) { m_iotAnalyticsHasBeenSet = true; m_iotAnalytics = value; }
+
+    /**
+     * <p>Sends message data to an AWS IoT Analytics channel.</p>
+     */
+    inline void SetIotAnalytics(IotAnalyticsAction&& value) { m_iotAnalyticsHasBeenSet = true; m_iotAnalytics = std::move(value); }
+
+    /**
+     * <p>Sends message data to an AWS IoT Analytics channel.</p>
+     */
+    inline Action& WithIotAnalytics(const IotAnalyticsAction& value) { SetIotAnalytics(value); return *this;}
+
+    /**
+     * <p>Sends message data to an AWS IoT Analytics channel.</p>
+     */
+    inline Action& WithIotAnalytics(IotAnalyticsAction&& value) { SetIotAnalytics(std::move(value)); return *this;}
+
   private:
 
     DynamoDBAction m_dynamoDB;
@@ -445,6 +472,9 @@ namespace Model
 
     SalesforceAction m_salesforce;
     bool m_salesforceHasBeenSet;
+
+    IotAnalyticsAction m_iotAnalytics;
+    bool m_iotAnalyticsHasBeenSet;
   };
 
 } // namespace Model

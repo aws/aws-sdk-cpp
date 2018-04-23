@@ -259,37 +259,37 @@ namespace Model
 
 
     /**
-     * <p>The thing shadow.</p>
+     * <p>The shadow.</p>
      */
     inline const Aws::String& GetShadow() const{ return m_shadow; }
 
     /**
-     * <p>The thing shadow.</p>
+     * <p>The shadow.</p>
      */
     inline void SetShadow(const Aws::String& value) { m_shadowHasBeenSet = true; m_shadow = value; }
 
     /**
-     * <p>The thing shadow.</p>
+     * <p>The shadow.</p>
      */
     inline void SetShadow(Aws::String&& value) { m_shadowHasBeenSet = true; m_shadow = std::move(value); }
 
     /**
-     * <p>The thing shadow.</p>
+     * <p>The shadow.</p>
      */
     inline void SetShadow(const char* value) { m_shadowHasBeenSet = true; m_shadow.assign(value); }
 
     /**
-     * <p>The thing shadow.</p>
+     * <p>The shadow.</p>
      */
     inline ThingDocument& WithShadow(const Aws::String& value) { SetShadow(value); return *this;}
 
     /**
-     * <p>The thing shadow.</p>
+     * <p>The shadow.</p>
      */
     inline ThingDocument& WithShadow(Aws::String&& value) { SetShadow(std::move(value)); return *this;}
 
     /**
-     * <p>The thing shadow.</p>
+     * <p>The shadow.</p>
      */
     inline ThingDocument& WithShadow(const char* value) { SetShadow(value); return *this;}
 
