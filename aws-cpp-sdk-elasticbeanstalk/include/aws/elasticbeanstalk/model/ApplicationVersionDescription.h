@@ -55,6 +55,42 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the application version.</p>
+     */
+    inline const Aws::String& GetApplicationVersionArn() const{ return m_applicationVersionArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the application version.</p>
+     */
+    inline void SetApplicationVersionArn(const Aws::String& value) { m_applicationVersionArnHasBeenSet = true; m_applicationVersionArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the application version.</p>
+     */
+    inline void SetApplicationVersionArn(Aws::String&& value) { m_applicationVersionArnHasBeenSet = true; m_applicationVersionArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the application version.</p>
+     */
+    inline void SetApplicationVersionArn(const char* value) { m_applicationVersionArnHasBeenSet = true; m_applicationVersionArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the application version.</p>
+     */
+    inline ApplicationVersionDescription& WithApplicationVersionArn(const Aws::String& value) { SetApplicationVersionArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the application version.</p>
+     */
+    inline ApplicationVersionDescription& WithApplicationVersionArn(Aws::String&& value) { SetApplicationVersionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the application version.</p>
+     */
+    inline ApplicationVersionDescription& WithApplicationVersionArn(const char* value) { SetApplicationVersionArn(value); return *this;}
+
+
+    /**
      * <p>The name of the application to which the application version belongs.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
@@ -338,6 +374,9 @@ namespace Model
     inline ApplicationVersionDescription& WithStatus(ApplicationVersionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
+    Aws::String m_applicationVersionArn;
+    bool m_applicationVersionArnHasBeenSet;
 
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;

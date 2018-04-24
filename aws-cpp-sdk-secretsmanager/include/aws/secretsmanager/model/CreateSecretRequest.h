@@ -333,7 +333,7 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies the ARN or alias of the AWS KMS customer master key
-     * (CMK) to be used to encrypt the <code>SecretString</code> and
+     * (CMK) to be used to encrypt the <code>SecretString</code> or
      * <code>SecretBinary</code> values in the versions stored in this secret.</p>
      * <p>If you don't specify this value, then Secrets Manager defaults to using the
      * AWS account's default CMK (the one named <code>aws/secretsmanager</code>). If a
@@ -349,7 +349,7 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies the ARN or alias of the AWS KMS customer master key
-     * (CMK) to be used to encrypt the <code>SecretString</code> and
+     * (CMK) to be used to encrypt the <code>SecretString</code> or
      * <code>SecretBinary</code> values in the versions stored in this secret.</p>
      * <p>If you don't specify this value, then Secrets Manager defaults to using the
      * AWS account's default CMK (the one named <code>aws/secretsmanager</code>). If a
@@ -365,7 +365,7 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies the ARN or alias of the AWS KMS customer master key
-     * (CMK) to be used to encrypt the <code>SecretString</code> and
+     * (CMK) to be used to encrypt the <code>SecretString</code> or
      * <code>SecretBinary</code> values in the versions stored in this secret.</p>
      * <p>If you don't specify this value, then Secrets Manager defaults to using the
      * AWS account's default CMK (the one named <code>aws/secretsmanager</code>). If a
@@ -381,7 +381,7 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies the ARN or alias of the AWS KMS customer master key
-     * (CMK) to be used to encrypt the <code>SecretString</code> and
+     * (CMK) to be used to encrypt the <code>SecretString</code> or
      * <code>SecretBinary</code> values in the versions stored in this secret.</p>
      * <p>If you don't specify this value, then Secrets Manager defaults to using the
      * AWS account's default CMK (the one named <code>aws/secretsmanager</code>). If a
@@ -397,7 +397,7 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies the ARN or alias of the AWS KMS customer master key
-     * (CMK) to be used to encrypt the <code>SecretString</code> and
+     * (CMK) to be used to encrypt the <code>SecretString</code> or
      * <code>SecretBinary</code> values in the versions stored in this secret.</p>
      * <p>If you don't specify this value, then Secrets Manager defaults to using the
      * AWS account's default CMK (the one named <code>aws/secretsmanager</code>). If a
@@ -413,7 +413,7 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies the ARN or alias of the AWS KMS customer master key
-     * (CMK) to be used to encrypt the <code>SecretString</code> and
+     * (CMK) to be used to encrypt the <code>SecretString</code> or
      * <code>SecretBinary</code> values in the versions stored in this secret.</p>
      * <p>If you don't specify this value, then Secrets Manager defaults to using the
      * AWS account's default CMK (the one named <code>aws/secretsmanager</code>). If a
@@ -429,7 +429,7 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies the ARN or alias of the AWS KMS customer master key
-     * (CMK) to be used to encrypt the <code>SecretString</code> and
+     * (CMK) to be used to encrypt the <code>SecretString</code> or
      * <code>SecretBinary</code> values in the versions stored in this secret.</p>
      * <p>If you don't specify this value, then Secrets Manager defaults to using the
      * AWS account's default CMK (the one named <code>aws/secretsmanager</code>). If a
@@ -449,10 +449,8 @@ namespace Model
      * new version of the secret. To use this parameter in the command-line tools, we
      * recommend that you store your binary data in a file and then use the appropriate
      * technique for your tool to pass the contents of the file as a parameter.</p>
-     * <p>Either <code>SecretString</code>, <code>SecretBinary</code>, or both must
-     * have a value. They cannot both be empty.</p> <p>This <code>SecretBinary</code>
-     * value is stored separately from the <code>SecretString</code>, but the two
-     * parameters jointly share a maximum size limit.</p> <p>This parameter is not
+     * <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a
+     * value, but not both. They cannot both be empty.</p> <p>This parameter is not
      * available using the Secrets Manager console. It can be accessed only by using
      * the AWS CLI or one of the AWS SDKs.</p>
      */
@@ -463,10 +461,8 @@ namespace Model
      * new version of the secret. To use this parameter in the command-line tools, we
      * recommend that you store your binary data in a file and then use the appropriate
      * technique for your tool to pass the contents of the file as a parameter.</p>
-     * <p>Either <code>SecretString</code>, <code>SecretBinary</code>, or both must
-     * have a value. They cannot both be empty.</p> <p>This <code>SecretBinary</code>
-     * value is stored separately from the <code>SecretString</code>, but the two
-     * parameters jointly share a maximum size limit.</p> <p>This parameter is not
+     * <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a
+     * value, but not both. They cannot both be empty.</p> <p>This parameter is not
      * available using the Secrets Manager console. It can be accessed only by using
      * the AWS CLI or one of the AWS SDKs.</p>
      */
@@ -477,10 +473,8 @@ namespace Model
      * new version of the secret. To use this parameter in the command-line tools, we
      * recommend that you store your binary data in a file and then use the appropriate
      * technique for your tool to pass the contents of the file as a parameter.</p>
-     * <p>Either <code>SecretString</code>, <code>SecretBinary</code>, or both must
-     * have a value. They cannot both be empty.</p> <p>This <code>SecretBinary</code>
-     * value is stored separately from the <code>SecretString</code>, but the two
-     * parameters jointly share a maximum size limit.</p> <p>This parameter is not
+     * <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a
+     * value, but not both. They cannot both be empty.</p> <p>This parameter is not
      * available using the Secrets Manager console. It can be accessed only by using
      * the AWS CLI or one of the AWS SDKs.</p>
      */
@@ -491,10 +485,8 @@ namespace Model
      * new version of the secret. To use this parameter in the command-line tools, we
      * recommend that you store your binary data in a file and then use the appropriate
      * technique for your tool to pass the contents of the file as a parameter.</p>
-     * <p>Either <code>SecretString</code>, <code>SecretBinary</code>, or both must
-     * have a value. They cannot both be empty.</p> <p>This <code>SecretBinary</code>
-     * value is stored separately from the <code>SecretString</code>, but the two
-     * parameters jointly share a maximum size limit.</p> <p>This parameter is not
+     * <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a
+     * value, but not both. They cannot both be empty.</p> <p>This parameter is not
      * available using the Secrets Manager console. It can be accessed only by using
      * the AWS CLI or one of the AWS SDKs.</p>
      */
@@ -505,10 +497,8 @@ namespace Model
      * new version of the secret. To use this parameter in the command-line tools, we
      * recommend that you store your binary data in a file and then use the appropriate
      * technique for your tool to pass the contents of the file as a parameter.</p>
-     * <p>Either <code>SecretString</code>, <code>SecretBinary</code>, or both must
-     * have a value. They cannot both be empty.</p> <p>This <code>SecretBinary</code>
-     * value is stored separately from the <code>SecretString</code>, but the two
-     * parameters jointly share a maximum size limit.</p> <p>This parameter is not
+     * <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a
+     * value, but not both. They cannot both be empty.</p> <p>This parameter is not
      * available using the Secrets Manager console. It can be accessed only by using
      * the AWS CLI or one of the AWS SDKs.</p>
      */
@@ -517,11 +507,9 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies text data that you want to encrypt and store in this new
-     * version of the secret.</p> <p>Either <code>SecretString</code>,
-     * <code>SecretBinary</code>, or both must have a value. They cannot both be
-     * empty.</p> <p>This string value is stored separately from the
-     * <code>SecretBinary</code>, but the two parameters jointly share a maximum size
-     * limit.</p> <p>If you create a secret by using the Secrets Manager console then
+     * version of the secret.</p> <p>Either <code>SecretString</code> or
+     * <code>SecretBinary</code> must have a value, but not both. They cannot both be
+     * empty.</p> <p>If you create a secret by using the Secrets Manager console then
      * Secrets Manager puts the protected secret text in only the
      * <code>SecretString</code> parameter. The Secrets Manager console stores the
      * information as a JSON structure of key/value pairs that the Lambda rotation
@@ -540,11 +528,9 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies text data that you want to encrypt and store in this new
-     * version of the secret.</p> <p>Either <code>SecretString</code>,
-     * <code>SecretBinary</code>, or both must have a value. They cannot both be
-     * empty.</p> <p>This string value is stored separately from the
-     * <code>SecretBinary</code>, but the two parameters jointly share a maximum size
-     * limit.</p> <p>If you create a secret by using the Secrets Manager console then
+     * version of the secret.</p> <p>Either <code>SecretString</code> or
+     * <code>SecretBinary</code> must have a value, but not both. They cannot both be
+     * empty.</p> <p>If you create a secret by using the Secrets Manager console then
      * Secrets Manager puts the protected secret text in only the
      * <code>SecretString</code> parameter. The Secrets Manager console stores the
      * information as a JSON structure of key/value pairs that the Lambda rotation
@@ -563,11 +549,9 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies text data that you want to encrypt and store in this new
-     * version of the secret.</p> <p>Either <code>SecretString</code>,
-     * <code>SecretBinary</code>, or both must have a value. They cannot both be
-     * empty.</p> <p>This string value is stored separately from the
-     * <code>SecretBinary</code>, but the two parameters jointly share a maximum size
-     * limit.</p> <p>If you create a secret by using the Secrets Manager console then
+     * version of the secret.</p> <p>Either <code>SecretString</code> or
+     * <code>SecretBinary</code> must have a value, but not both. They cannot both be
+     * empty.</p> <p>If you create a secret by using the Secrets Manager console then
      * Secrets Manager puts the protected secret text in only the
      * <code>SecretString</code> parameter. The Secrets Manager console stores the
      * information as a JSON structure of key/value pairs that the Lambda rotation
@@ -586,11 +570,9 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies text data that you want to encrypt and store in this new
-     * version of the secret.</p> <p>Either <code>SecretString</code>,
-     * <code>SecretBinary</code>, or both must have a value. They cannot both be
-     * empty.</p> <p>This string value is stored separately from the
-     * <code>SecretBinary</code>, but the two parameters jointly share a maximum size
-     * limit.</p> <p>If you create a secret by using the Secrets Manager console then
+     * version of the secret.</p> <p>Either <code>SecretString</code> or
+     * <code>SecretBinary</code> must have a value, but not both. They cannot both be
+     * empty.</p> <p>If you create a secret by using the Secrets Manager console then
      * Secrets Manager puts the protected secret text in only the
      * <code>SecretString</code> parameter. The Secrets Manager console stores the
      * information as a JSON structure of key/value pairs that the Lambda rotation
@@ -609,11 +591,9 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies text data that you want to encrypt and store in this new
-     * version of the secret.</p> <p>Either <code>SecretString</code>,
-     * <code>SecretBinary</code>, or both must have a value. They cannot both be
-     * empty.</p> <p>This string value is stored separately from the
-     * <code>SecretBinary</code>, but the two parameters jointly share a maximum size
-     * limit.</p> <p>If you create a secret by using the Secrets Manager console then
+     * version of the secret.</p> <p>Either <code>SecretString</code> or
+     * <code>SecretBinary</code> must have a value, but not both. They cannot both be
+     * empty.</p> <p>If you create a secret by using the Secrets Manager console then
      * Secrets Manager puts the protected secret text in only the
      * <code>SecretString</code> parameter. The Secrets Manager console stores the
      * information as a JSON structure of key/value pairs that the Lambda rotation
@@ -632,11 +612,9 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies text data that you want to encrypt and store in this new
-     * version of the secret.</p> <p>Either <code>SecretString</code>,
-     * <code>SecretBinary</code>, or both must have a value. They cannot both be
-     * empty.</p> <p>This string value is stored separately from the
-     * <code>SecretBinary</code>, but the two parameters jointly share a maximum size
-     * limit.</p> <p>If you create a secret by using the Secrets Manager console then
+     * version of the secret.</p> <p>Either <code>SecretString</code> or
+     * <code>SecretBinary</code> must have a value, but not both. They cannot both be
+     * empty.</p> <p>If you create a secret by using the Secrets Manager console then
      * Secrets Manager puts the protected secret text in only the
      * <code>SecretString</code> parameter. The Secrets Manager console stores the
      * information as a JSON structure of key/value pairs that the Lambda rotation
@@ -655,11 +633,9 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies text data that you want to encrypt and store in this new
-     * version of the secret.</p> <p>Either <code>SecretString</code>,
-     * <code>SecretBinary</code>, or both must have a value. They cannot both be
-     * empty.</p> <p>This string value is stored separately from the
-     * <code>SecretBinary</code>, but the two parameters jointly share a maximum size
-     * limit.</p> <p>If you create a secret by using the Secrets Manager console then
+     * version of the secret.</p> <p>Either <code>SecretString</code> or
+     * <code>SecretBinary</code> must have a value, but not both. They cannot both be
+     * empty.</p> <p>If you create a secret by using the Secrets Manager console then
      * Secrets Manager puts the protected secret text in only the
      * <code>SecretString</code> parameter. The Secrets Manager console stores the
      * information as a JSON structure of key/value pairs that the Lambda rotation

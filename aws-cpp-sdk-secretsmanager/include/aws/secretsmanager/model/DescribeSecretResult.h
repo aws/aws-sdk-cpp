@@ -157,7 +157,7 @@ namespace Model
 
     /**
      * <p>The ARN or alias of the AWS KMS customer master key (CMK) that's used to
-     * encrypt the <code>SecretString</code> and <code>SecretBinary</code> fields in
+     * encrypt the <code>SecretString</code> or <code>SecretBinary</code> fields in
      * each version of the secret. If you don't provide a key, then Secrets Manager
      * defaults to encrypting the secret fields with the default KMS CMK (the one named
      * <code>awssecretsmanager</code>) for this account.</p>
@@ -166,7 +166,7 @@ namespace Model
 
     /**
      * <p>The ARN or alias of the AWS KMS customer master key (CMK) that's used to
-     * encrypt the <code>SecretString</code> and <code>SecretBinary</code> fields in
+     * encrypt the <code>SecretString</code> or <code>SecretBinary</code> fields in
      * each version of the secret. If you don't provide a key, then Secrets Manager
      * defaults to encrypting the secret fields with the default KMS CMK (the one named
      * <code>awssecretsmanager</code>) for this account.</p>
@@ -175,7 +175,7 @@ namespace Model
 
     /**
      * <p>The ARN or alias of the AWS KMS customer master key (CMK) that's used to
-     * encrypt the <code>SecretString</code> and <code>SecretBinary</code> fields in
+     * encrypt the <code>SecretString</code> or <code>SecretBinary</code> fields in
      * each version of the secret. If you don't provide a key, then Secrets Manager
      * defaults to encrypting the secret fields with the default KMS CMK (the one named
      * <code>awssecretsmanager</code>) for this account.</p>
@@ -184,7 +184,7 @@ namespace Model
 
     /**
      * <p>The ARN or alias of the AWS KMS customer master key (CMK) that's used to
-     * encrypt the <code>SecretString</code> and <code>SecretBinary</code> fields in
+     * encrypt the <code>SecretString</code> or <code>SecretBinary</code> fields in
      * each version of the secret. If you don't provide a key, then Secrets Manager
      * defaults to encrypting the secret fields with the default KMS CMK (the one named
      * <code>awssecretsmanager</code>) for this account.</p>
@@ -193,7 +193,7 @@ namespace Model
 
     /**
      * <p>The ARN or alias of the AWS KMS customer master key (CMK) that's used to
-     * encrypt the <code>SecretString</code> and <code>SecretBinary</code> fields in
+     * encrypt the <code>SecretString</code> or <code>SecretBinary</code> fields in
      * each version of the secret. If you don't provide a key, then Secrets Manager
      * defaults to encrypting the secret fields with the default KMS CMK (the one named
      * <code>awssecretsmanager</code>) for this account.</p>
@@ -202,7 +202,7 @@ namespace Model
 
     /**
      * <p>The ARN or alias of the AWS KMS customer master key (CMK) that's used to
-     * encrypt the <code>SecretString</code> and <code>SecretBinary</code> fields in
+     * encrypt the <code>SecretString</code> or <code>SecretBinary</code> fields in
      * each version of the secret. If you don't provide a key, then Secrets Manager
      * defaults to encrypting the secret fields with the default KMS CMK (the one named
      * <code>awssecretsmanager</code>) for this account.</p>
@@ -211,7 +211,7 @@ namespace Model
 
     /**
      * <p>The ARN or alias of the AWS KMS customer master key (CMK) that's used to
-     * encrypt the <code>SecretString</code> and <code>SecretBinary</code> fields in
+     * encrypt the <code>SecretString</code> or <code>SecretBinary</code> fields in
      * each version of the secret. If you don't provide a key, then Secrets Manager
      * defaults to encrypting the secret fields with the default KMS CMK (the one named
      * <code>awssecretsmanager</code>) for this account.</p>

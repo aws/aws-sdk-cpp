@@ -31,6 +31,7 @@ namespace Model
 {
 
 ApplicationDescription::ApplicationDescription() : 
+    m_applicationArnHasBeenSet(false),
     m_applicationNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_dateCreatedHasBeenSet(false),
@@ -42,6 +43,7 @@ ApplicationDescription::ApplicationDescription() :
 }
 
 ApplicationDescription::ApplicationDescription(const XmlNode& xmlNode) : 
+    m_applicationArnHasBeenSet(false),
     m_applicationNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_dateCreatedHasBeenSet(false),
@@ -59,6 +61,12 @@ ApplicationDescription& ApplicationDescription::operator =(const XmlNode& xmlNod
 
   if(!resultNode.IsNull())
   {
+    XmlNode applicationArnNode = resultNode.FirstChild("ApplicationArn");
+    if(!applicationArnNode.IsNull())
+    {
+      m_applicationArn = StringUtils::Trim(applicationArnNode.GetText().c_str());
+      m_applicationArnHasBeenSet = true;
+    }
     XmlNode applicationNameNode = resultNode.FirstChild("ApplicationName");
     if(!applicationNameNode.IsNull())
     {
@@ -120,6 +128,11 @@ ApplicationDescription& ApplicationDescription::operator =(const XmlNode& xmlNod
 
 void ApplicationDescription::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_applicationArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ApplicationArn=" << StringUtils::URLEncode(m_applicationArn.c_str()) << "&";
+  }
+
   if(m_applicationNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
@@ -169,6 +182,10 @@ void ApplicationDescription::OutputToStream(Aws::OStream& oStream, const char* l
 
 void ApplicationDescription::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_applicationArnHasBeenSet)
+  {
+      oStream << location << ".ApplicationArn=" << StringUtils::URLEncode(m_applicationArn.c_str()) << "&";
+  }
   if(m_applicationNameHasBeenSet)
   {
       oStream << location << ".ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";

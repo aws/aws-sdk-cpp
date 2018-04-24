@@ -440,9 +440,9 @@ namespace Model
      * new version of the secret. To use this parameter in the command-line tools, we
      * recommend that you store your binary data in a file and then use the appropriate
      * technique for your tool to pass the contents of the file as a parameter. Either
-     * <code>SecretBinary</code> or <code>SecretString</code> must have a value. They
-     * cannot both be empty.</p> <p>This parameter is not accessible using the Secrets
-     * Manager console.</p>
+     * <code>SecretBinary</code> or <code>SecretString</code> must have a value, but
+     * not both. They cannot both be empty.</p> <p>This parameter is not accessible
+     * using the Secrets Manager console.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetSecretBinary() const{ return m_secretBinary; }
 
@@ -451,9 +451,9 @@ namespace Model
      * new version of the secret. To use this parameter in the command-line tools, we
      * recommend that you store your binary data in a file and then use the appropriate
      * technique for your tool to pass the contents of the file as a parameter. Either
-     * <code>SecretBinary</code> or <code>SecretString</code> must have a value. They
-     * cannot both be empty.</p> <p>This parameter is not accessible using the Secrets
-     * Manager console.</p>
+     * <code>SecretBinary</code> or <code>SecretString</code> must have a value, but
+     * not both. They cannot both be empty.</p> <p>This parameter is not accessible
+     * using the Secrets Manager console.</p>
      */
     inline void SetSecretBinary(const Aws::Utils::ByteBuffer& value) { m_secretBinaryHasBeenSet = true; m_secretBinary = value; }
 
@@ -462,9 +462,9 @@ namespace Model
      * new version of the secret. To use this parameter in the command-line tools, we
      * recommend that you store your binary data in a file and then use the appropriate
      * technique for your tool to pass the contents of the file as a parameter. Either
-     * <code>SecretBinary</code> or <code>SecretString</code> must have a value. They
-     * cannot both be empty.</p> <p>This parameter is not accessible using the Secrets
-     * Manager console.</p>
+     * <code>SecretBinary</code> or <code>SecretString</code> must have a value, but
+     * not both. They cannot both be empty.</p> <p>This parameter is not accessible
+     * using the Secrets Manager console.</p>
      */
     inline void SetSecretBinary(Aws::Utils::ByteBuffer&& value) { m_secretBinaryHasBeenSet = true; m_secretBinary = std::move(value); }
 
@@ -473,9 +473,9 @@ namespace Model
      * new version of the secret. To use this parameter in the command-line tools, we
      * recommend that you store your binary data in a file and then use the appropriate
      * technique for your tool to pass the contents of the file as a parameter. Either
-     * <code>SecretBinary</code> or <code>SecretString</code> must have a value. They
-     * cannot both be empty.</p> <p>This parameter is not accessible using the Secrets
-     * Manager console.</p>
+     * <code>SecretBinary</code> or <code>SecretString</code> must have a value, but
+     * not both. They cannot both be empty.</p> <p>This parameter is not accessible
+     * using the Secrets Manager console.</p>
      */
     inline UpdateSecretRequest& WithSecretBinary(const Aws::Utils::ByteBuffer& value) { SetSecretBinary(value); return *this;}
 
@@ -484,9 +484,9 @@ namespace Model
      * new version of the secret. To use this parameter in the command-line tools, we
      * recommend that you store your binary data in a file and then use the appropriate
      * technique for your tool to pass the contents of the file as a parameter. Either
-     * <code>SecretBinary</code> or <code>SecretString</code> must have a value. They
-     * cannot both be empty.</p> <p>This parameter is not accessible using the Secrets
-     * Manager console.</p>
+     * <code>SecretBinary</code> or <code>SecretString</code> must have a value, but
+     * not both. They cannot both be empty.</p> <p>This parameter is not accessible
+     * using the Secrets Manager console.</p>
      */
     inline UpdateSecretRequest& WithSecretBinary(Aws::Utils::ByteBuffer&& value) { SetSecretBinary(std::move(value)); return *this;}
 
@@ -494,14 +494,15 @@ namespace Model
     /**
      * <p>(Optional) Specifies text data that you want to encrypt and store in this new
      * version of the secret. Either <code>SecretBinary</code> or
-     * <code>SecretString</code> must have a value. They cannot both be empty.</p>
-     * <p>If you create this secret by using the Secrets Manager console then Secrets
-     * Manager puts the protected secret text in only the <code>SecretString</code>
-     * parameter. The Secrets Manager console stores the information as a JSON
-     * structure of key/value pairs that the default Lambda rotation function knows how
-     * to parse.</p> <p>For storing multiple values, we recommend that you use a JSON
-     * text string argument and specify key/value pairs. For information on how to
-     * format a JSON parameter for the various command line tool environments, see <a
+     * <code>SecretString</code> must have a value, but not both. They cannot both be
+     * empty.</p> <p>If you create this secret by using the Secrets Manager console
+     * then Secrets Manager puts the protected secret text in only the
+     * <code>SecretString</code> parameter. The Secrets Manager console stores the
+     * information as a JSON structure of key/value pairs that the default Lambda
+     * rotation function knows how to parse.</p> <p>For storing multiple values, we
+     * recommend that you use a JSON text string argument and specify key/value pairs.
+     * For information on how to format a JSON parameter for the various command line
+     * tool environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
      */
@@ -510,14 +511,15 @@ namespace Model
     /**
      * <p>(Optional) Specifies text data that you want to encrypt and store in this new
      * version of the secret. Either <code>SecretBinary</code> or
-     * <code>SecretString</code> must have a value. They cannot both be empty.</p>
-     * <p>If you create this secret by using the Secrets Manager console then Secrets
-     * Manager puts the protected secret text in only the <code>SecretString</code>
-     * parameter. The Secrets Manager console stores the information as a JSON
-     * structure of key/value pairs that the default Lambda rotation function knows how
-     * to parse.</p> <p>For storing multiple values, we recommend that you use a JSON
-     * text string argument and specify key/value pairs. For information on how to
-     * format a JSON parameter for the various command line tool environments, see <a
+     * <code>SecretString</code> must have a value, but not both. They cannot both be
+     * empty.</p> <p>If you create this secret by using the Secrets Manager console
+     * then Secrets Manager puts the protected secret text in only the
+     * <code>SecretString</code> parameter. The Secrets Manager console stores the
+     * information as a JSON structure of key/value pairs that the default Lambda
+     * rotation function knows how to parse.</p> <p>For storing multiple values, we
+     * recommend that you use a JSON text string argument and specify key/value pairs.
+     * For information on how to format a JSON parameter for the various command line
+     * tool environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
      */
@@ -526,14 +528,15 @@ namespace Model
     /**
      * <p>(Optional) Specifies text data that you want to encrypt and store in this new
      * version of the secret. Either <code>SecretBinary</code> or
-     * <code>SecretString</code> must have a value. They cannot both be empty.</p>
-     * <p>If you create this secret by using the Secrets Manager console then Secrets
-     * Manager puts the protected secret text in only the <code>SecretString</code>
-     * parameter. The Secrets Manager console stores the information as a JSON
-     * structure of key/value pairs that the default Lambda rotation function knows how
-     * to parse.</p> <p>For storing multiple values, we recommend that you use a JSON
-     * text string argument and specify key/value pairs. For information on how to
-     * format a JSON parameter for the various command line tool environments, see <a
+     * <code>SecretString</code> must have a value, but not both. They cannot both be
+     * empty.</p> <p>If you create this secret by using the Secrets Manager console
+     * then Secrets Manager puts the protected secret text in only the
+     * <code>SecretString</code> parameter. The Secrets Manager console stores the
+     * information as a JSON structure of key/value pairs that the default Lambda
+     * rotation function knows how to parse.</p> <p>For storing multiple values, we
+     * recommend that you use a JSON text string argument and specify key/value pairs.
+     * For information on how to format a JSON parameter for the various command line
+     * tool environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
      */
@@ -542,14 +545,15 @@ namespace Model
     /**
      * <p>(Optional) Specifies text data that you want to encrypt and store in this new
      * version of the secret. Either <code>SecretBinary</code> or
-     * <code>SecretString</code> must have a value. They cannot both be empty.</p>
-     * <p>If you create this secret by using the Secrets Manager console then Secrets
-     * Manager puts the protected secret text in only the <code>SecretString</code>
-     * parameter. The Secrets Manager console stores the information as a JSON
-     * structure of key/value pairs that the default Lambda rotation function knows how
-     * to parse.</p> <p>For storing multiple values, we recommend that you use a JSON
-     * text string argument and specify key/value pairs. For information on how to
-     * format a JSON parameter for the various command line tool environments, see <a
+     * <code>SecretString</code> must have a value, but not both. They cannot both be
+     * empty.</p> <p>If you create this secret by using the Secrets Manager console
+     * then Secrets Manager puts the protected secret text in only the
+     * <code>SecretString</code> parameter. The Secrets Manager console stores the
+     * information as a JSON structure of key/value pairs that the default Lambda
+     * rotation function knows how to parse.</p> <p>For storing multiple values, we
+     * recommend that you use a JSON text string argument and specify key/value pairs.
+     * For information on how to format a JSON parameter for the various command line
+     * tool environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
      */
@@ -558,14 +562,15 @@ namespace Model
     /**
      * <p>(Optional) Specifies text data that you want to encrypt and store in this new
      * version of the secret. Either <code>SecretBinary</code> or
-     * <code>SecretString</code> must have a value. They cannot both be empty.</p>
-     * <p>If you create this secret by using the Secrets Manager console then Secrets
-     * Manager puts the protected secret text in only the <code>SecretString</code>
-     * parameter. The Secrets Manager console stores the information as a JSON
-     * structure of key/value pairs that the default Lambda rotation function knows how
-     * to parse.</p> <p>For storing multiple values, we recommend that you use a JSON
-     * text string argument and specify key/value pairs. For information on how to
-     * format a JSON parameter for the various command line tool environments, see <a
+     * <code>SecretString</code> must have a value, but not both. They cannot both be
+     * empty.</p> <p>If you create this secret by using the Secrets Manager console
+     * then Secrets Manager puts the protected secret text in only the
+     * <code>SecretString</code> parameter. The Secrets Manager console stores the
+     * information as a JSON structure of key/value pairs that the default Lambda
+     * rotation function knows how to parse.</p> <p>For storing multiple values, we
+     * recommend that you use a JSON text string argument and specify key/value pairs.
+     * For information on how to format a JSON parameter for the various command line
+     * tool environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
      */
@@ -574,14 +579,15 @@ namespace Model
     /**
      * <p>(Optional) Specifies text data that you want to encrypt and store in this new
      * version of the secret. Either <code>SecretBinary</code> or
-     * <code>SecretString</code> must have a value. They cannot both be empty.</p>
-     * <p>If you create this secret by using the Secrets Manager console then Secrets
-     * Manager puts the protected secret text in only the <code>SecretString</code>
-     * parameter. The Secrets Manager console stores the information as a JSON
-     * structure of key/value pairs that the default Lambda rotation function knows how
-     * to parse.</p> <p>For storing multiple values, we recommend that you use a JSON
-     * text string argument and specify key/value pairs. For information on how to
-     * format a JSON parameter for the various command line tool environments, see <a
+     * <code>SecretString</code> must have a value, but not both. They cannot both be
+     * empty.</p> <p>If you create this secret by using the Secrets Manager console
+     * then Secrets Manager puts the protected secret text in only the
+     * <code>SecretString</code> parameter. The Secrets Manager console stores the
+     * information as a JSON structure of key/value pairs that the default Lambda
+     * rotation function knows how to parse.</p> <p>For storing multiple values, we
+     * recommend that you use a JSON text string argument and specify key/value pairs.
+     * For information on how to format a JSON parameter for the various command line
+     * tool environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
      */
@@ -590,14 +596,15 @@ namespace Model
     /**
      * <p>(Optional) Specifies text data that you want to encrypt and store in this new
      * version of the secret. Either <code>SecretBinary</code> or
-     * <code>SecretString</code> must have a value. They cannot both be empty.</p>
-     * <p>If you create this secret by using the Secrets Manager console then Secrets
-     * Manager puts the protected secret text in only the <code>SecretString</code>
-     * parameter. The Secrets Manager console stores the information as a JSON
-     * structure of key/value pairs that the default Lambda rotation function knows how
-     * to parse.</p> <p>For storing multiple values, we recommend that you use a JSON
-     * text string argument and specify key/value pairs. For information on how to
-     * format a JSON parameter for the various command line tool environments, see <a
+     * <code>SecretString</code> must have a value, but not both. They cannot both be
+     * empty.</p> <p>If you create this secret by using the Secrets Manager console
+     * then Secrets Manager puts the protected secret text in only the
+     * <code>SecretString</code> parameter. The Secrets Manager console stores the
+     * information as a JSON structure of key/value pairs that the default Lambda
+     * rotation function knows how to parse.</p> <p>For storing multiple values, we
+     * recommend that you use a JSON text string argument and specify key/value pairs.
+     * For information on how to format a JSON parameter for the various command line
+     * tool environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
      */

@@ -787,43 +787,43 @@ namespace Model
 
     /**
      * <p>The environment's Amazon Resource Name (ARN), which can be used in other API
-     * reuqests that require an ARN.</p>
+     * requests that require an ARN.</p>
      */
     inline const Aws::String& GetEnvironmentArn() const{ return m_environmentArn; }
 
     /**
      * <p>The environment's Amazon Resource Name (ARN), which can be used in other API
-     * reuqests that require an ARN.</p>
+     * requests that require an ARN.</p>
      */
     inline void SetEnvironmentArn(const Aws::String& value) { m_environmentArn = value; }
 
     /**
      * <p>The environment's Amazon Resource Name (ARN), which can be used in other API
-     * reuqests that require an ARN.</p>
+     * requests that require an ARN.</p>
      */
     inline void SetEnvironmentArn(Aws::String&& value) { m_environmentArn = std::move(value); }
 
     /**
      * <p>The environment's Amazon Resource Name (ARN), which can be used in other API
-     * reuqests that require an ARN.</p>
+     * requests that require an ARN.</p>
      */
     inline void SetEnvironmentArn(const char* value) { m_environmentArn.assign(value); }
 
     /**
      * <p>The environment's Amazon Resource Name (ARN), which can be used in other API
-     * reuqests that require an ARN.</p>
+     * requests that require an ARN.</p>
      */
     inline TerminateEnvironmentResult& WithEnvironmentArn(const Aws::String& value) { SetEnvironmentArn(value); return *this;}
 
     /**
      * <p>The environment's Amazon Resource Name (ARN), which can be used in other API
-     * reuqests that require an ARN.</p>
+     * requests that require an ARN.</p>
      */
     inline TerminateEnvironmentResult& WithEnvironmentArn(Aws::String&& value) { SetEnvironmentArn(std::move(value)); return *this;}
 
     /**
      * <p>The environment's Amazon Resource Name (ARN), which can be used in other API
-     * reuqests that require an ARN.</p>
+     * requests that require an ARN.</p>
      */
     inline TerminateEnvironmentResult& WithEnvironmentArn(const char* value) { SetEnvironmentArn(value); return *this;}
 
