@@ -28,9 +28,11 @@
 #include <aws/xray/XRayEndpoint.h>
 #include <aws/xray/XRayErrorMarshaller.h>
 #include <aws/xray/model/BatchGetTracesRequest.h>
+#include <aws/xray/model/GetEncryptionConfigRequest.h>
 #include <aws/xray/model/GetServiceGraphRequest.h>
 #include <aws/xray/model/GetTraceGraphRequest.h>
 #include <aws/xray/model/GetTraceSummariesRequest.h>
+#include <aws/xray/model/PutEncryptionConfigRequest.h>
 #include <aws/xray/model/PutTelemetryRecordsRequest.h>
 #include <aws/xray/model/PutTraceSegmentsRequest.h>
 
@@ -131,6 +133,41 @@ void XRayClient::BatchGetTracesAsync(const BatchGetTracesRequest& request, const
 void XRayClient::BatchGetTracesAsyncHelper(const BatchGetTracesRequest& request, const BatchGetTracesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, BatchGetTraces(request), context);
+}
+
+GetEncryptionConfigOutcome XRayClient::GetEncryptionConfig(const GetEncryptionConfigRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/EncryptionConfig";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetEncryptionConfigOutcome(GetEncryptionConfigResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetEncryptionConfigOutcome(outcome.GetError());
+  }
+}
+
+GetEncryptionConfigOutcomeCallable XRayClient::GetEncryptionConfigCallable(const GetEncryptionConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetEncryptionConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEncryptionConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void XRayClient::GetEncryptionConfigAsync(const GetEncryptionConfigRequest& request, const GetEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetEncryptionConfigAsyncHelper( request, handler, context ); } );
+}
+
+void XRayClient::GetEncryptionConfigAsyncHelper(const GetEncryptionConfigRequest& request, const GetEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetEncryptionConfig(request), context);
 }
 
 GetServiceGraphOutcome XRayClient::GetServiceGraph(const GetServiceGraphRequest& request) const
@@ -236,6 +273,41 @@ void XRayClient::GetTraceSummariesAsync(const GetTraceSummariesRequest& request,
 void XRayClient::GetTraceSummariesAsyncHelper(const GetTraceSummariesRequest& request, const GetTraceSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetTraceSummaries(request), context);
+}
+
+PutEncryptionConfigOutcome XRayClient::PutEncryptionConfig(const PutEncryptionConfigRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/PutEncryptionConfig";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutEncryptionConfigOutcome(PutEncryptionConfigResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutEncryptionConfigOutcome(outcome.GetError());
+  }
+}
+
+PutEncryptionConfigOutcomeCallable XRayClient::PutEncryptionConfigCallable(const PutEncryptionConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutEncryptionConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutEncryptionConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void XRayClient::PutEncryptionConfigAsync(const PutEncryptionConfigRequest& request, const PutEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutEncryptionConfigAsyncHelper( request, handler, context ); } );
+}
+
+void XRayClient::PutEncryptionConfigAsyncHelper(const PutEncryptionConfigRequest& request, const PutEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutEncryptionConfig(request), context);
 }
 
 PutTelemetryRecordsOutcome XRayClient::PutTelemetryRecords(const PutTelemetryRecordsRequest& request) const

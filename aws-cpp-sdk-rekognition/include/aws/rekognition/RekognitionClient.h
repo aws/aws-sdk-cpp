@@ -1031,7 +1031,12 @@ namespace Model
          * celebrities and the time(s) they are detected in an array
          * (<code>Celebrities</code>) of objects. Each <code>CelebrityRecognition</code>
          * contains information about the celebrity in a object and the time,
-         * <code>Timestamp</code>, the celebrity was detected. </p> <p>By default, the
+         * <code>Timestamp</code>, the celebrity was detected. </p> <note> <p>
+         * <code>GetCelebrityRecognition</code> only returns the default facial attributes
+         * (<code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>,
+         * <code>Pose</code>, and <code>Quality</code>). The other facial attributes listed
+         * in the <code>Face</code> object of the following response syntax are not
+         * returned. For more information, see . </p> </note> <p>By default, the
          * <code>Celebrities</code> array is sorted by time (milliseconds from the start of
          * the video). You can also sort the array by celebrity by specifying the value
          * <code>ID</code> in the <code>SortBy</code> input parameter.</p> <p>The
@@ -1068,7 +1073,12 @@ namespace Model
          * celebrities and the time(s) they are detected in an array
          * (<code>Celebrities</code>) of objects. Each <code>CelebrityRecognition</code>
          * contains information about the celebrity in a object and the time,
-         * <code>Timestamp</code>, the celebrity was detected. </p> <p>By default, the
+         * <code>Timestamp</code>, the celebrity was detected. </p> <note> <p>
+         * <code>GetCelebrityRecognition</code> only returns the default facial attributes
+         * (<code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>,
+         * <code>Pose</code>, and <code>Quality</code>). The other facial attributes listed
+         * in the <code>Face</code> object of the following response syntax are not
+         * returned. For more information, see . </p> </note> <p>By default, the
          * <code>Celebrities</code> array is sorted by time (milliseconds from the start of
          * the video). You can also sort the array by celebrity by specifying the value
          * <code>ID</code> in the <code>SortBy</code> input parameter.</p> <p>The
@@ -1107,7 +1117,12 @@ namespace Model
          * celebrities and the time(s) they are detected in an array
          * (<code>Celebrities</code>) of objects. Each <code>CelebrityRecognition</code>
          * contains information about the celebrity in a object and the time,
-         * <code>Timestamp</code>, the celebrity was detected. </p> <p>By default, the
+         * <code>Timestamp</code>, the celebrity was detected. </p> <note> <p>
+         * <code>GetCelebrityRecognition</code> only returns the default facial attributes
+         * (<code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>,
+         * <code>Pose</code>, and <code>Quality</code>). The other facial attributes listed
+         * in the <code>Face</code> object of the following response syntax are not
+         * returned. For more information, see . </p> </note> <p>By default, the
          * <code>Celebrities</code> array is sorted by time (milliseconds from the start of
          * the video). You can also sort the array by celebrity by specifying the value
          * <code>ID</code> in the <code>SortBy</code> input parameter.</p> <p>The
@@ -1323,12 +1338,17 @@ namespace Model
          * <code>StartFaceSearch</code>. For more information, see <a>collections</a>.</p>
          * <p>The search results are retured in an array, <code>Persons</code>, of objects.
          * Each<code>PersonMatch</code> element contains details about the matching faces
-         * in the input collection, person information for the matched person, and the time
-         * the person was matched in the video.</p> <p>By default, the <code>Persons</code>
-         * array is sorted by the time, in milliseconds from the start of the video,
-         * persons are matched. You can also sort by persons by specifying
-         * <code>INDEX</code> for the <code>SORTBY</code> input parameter.</p><p><h3>See
-         * Also:</h3>   <a
+         * in the input collection, person information (facial attributes, bounding boxes,
+         * and person identifer) for the matched person, and the time the person was
+         * matched in the video.</p> <note> <p> <code>GetFaceSearch</code> only returns the
+         * default facial attributes (<code>BoundingBox</code>, <code>Confidence</code>,
+         * <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>). The other
+         * facial attributes listed in the <code>Face</code> object of the following
+         * response syntax are not returned. For more information, see . </p> </note> <p>By
+         * default, the <code>Persons</code> array is sorted by the time, in milliseconds
+         * from the start of the video, persons are matched. You can also sort by persons
+         * by specifying <code>INDEX</code> for the <code>SORTBY</code> input
+         * parameter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetFaceSearch">AWS
          * API Reference</a></p>
          */
@@ -1349,12 +1369,17 @@ namespace Model
          * <code>StartFaceSearch</code>. For more information, see <a>collections</a>.</p>
          * <p>The search results are retured in an array, <code>Persons</code>, of objects.
          * Each<code>PersonMatch</code> element contains details about the matching faces
-         * in the input collection, person information for the matched person, and the time
-         * the person was matched in the video.</p> <p>By default, the <code>Persons</code>
-         * array is sorted by the time, in milliseconds from the start of the video,
-         * persons are matched. You can also sort by persons by specifying
-         * <code>INDEX</code> for the <code>SORTBY</code> input parameter.</p><p><h3>See
-         * Also:</h3>   <a
+         * in the input collection, person information (facial attributes, bounding boxes,
+         * and person identifer) for the matched person, and the time the person was
+         * matched in the video.</p> <note> <p> <code>GetFaceSearch</code> only returns the
+         * default facial attributes (<code>BoundingBox</code>, <code>Confidence</code>,
+         * <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>). The other
+         * facial attributes listed in the <code>Face</code> object of the following
+         * response syntax are not returned. For more information, see . </p> </note> <p>By
+         * default, the <code>Persons</code> array is sorted by the time, in milliseconds
+         * from the start of the video, persons are matched. You can also sort by persons
+         * by specifying <code>INDEX</code> for the <code>SORTBY</code> input
+         * parameter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetFaceSearch">AWS
          * API Reference</a></p>
          *
@@ -1377,12 +1402,17 @@ namespace Model
          * <code>StartFaceSearch</code>. For more information, see <a>collections</a>.</p>
          * <p>The search results are retured in an array, <code>Persons</code>, of objects.
          * Each<code>PersonMatch</code> element contains details about the matching faces
-         * in the input collection, person information for the matched person, and the time
-         * the person was matched in the video.</p> <p>By default, the <code>Persons</code>
-         * array is sorted by the time, in milliseconds from the start of the video,
-         * persons are matched. You can also sort by persons by specifying
-         * <code>INDEX</code> for the <code>SORTBY</code> input parameter.</p><p><h3>See
-         * Also:</h3>   <a
+         * in the input collection, person information (facial attributes, bounding boxes,
+         * and person identifer) for the matched person, and the time the person was
+         * matched in the video.</p> <note> <p> <code>GetFaceSearch</code> only returns the
+         * default facial attributes (<code>BoundingBox</code>, <code>Confidence</code>,
+         * <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>). The other
+         * facial attributes listed in the <code>Face</code> object of the following
+         * response syntax are not returned. For more information, see . </p> </note> <p>By
+         * default, the <code>Persons</code> array is sorted by the time, in milliseconds
+         * from the start of the video, persons are matched. You can also sort by persons
+         * by specifying <code>INDEX</code> for the <code>SORTBY</code> input
+         * parameter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetFaceSearch">AWS
          * API Reference</a></p>
          *
@@ -1490,16 +1520,21 @@ namespace Model
          * call and pass the job identifier (<code>JobId</code>) from the initial call to
          * <code>StartPersonTracking</code>.</p> <p> <code>GetPersonTracking</code> returns
          * an array, <code>Persons</code>, of tracked persons and the time(s) they were
-         * tracked in the video. </p> <p>By default, the array is sorted by the time(s) a
-         * person is tracked in the video. You can sort by tracked persons by specifying
-         * <code>INDEX</code> for the <code>SortBy</code> input parameter.</p> <p>Use the
-         * <code>MaxResults</code> parameter to limit the number of items returned. If
-         * there are more results than specified in <code>MaxResults</code>, the value of
-         * <code>NextToken</code> in the operation response contains a pagination token for
-         * getting the next set of results. To get the next page of results, call
-         * <code>GetPersonTracking</code> and populate the <code>NextToken</code> request
-         * parameter with the token value returned from the previous call to
-         * <code>GetPersonTracking</code>.</p><p><h3>See Also:</h3>   <a
+         * tracked in the video. </p> <note> <p> <code>GetPersonTracking</code> only
+         * returns the default facial attributes (<code>BoundingBox</code>,
+         * <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and
+         * <code>Quality</code>). The other facial attributes listed in the
+         * <code>Face</code> object of the following response syntax are not returned. For
+         * more information, see . </p> </note> <p>By default, the array is sorted by the
+         * time(s) a person is tracked in the video. You can sort by tracked persons by
+         * specifying <code>INDEX</code> for the <code>SortBy</code> input parameter.</p>
+         * <p>Use the <code>MaxResults</code> parameter to limit the number of items
+         * returned. If there are more results than specified in <code>MaxResults</code>,
+         * the value of <code>NextToken</code> in the operation response contains a
+         * pagination token for getting the next set of results. To get the next page of
+         * results, call <code>GetPersonTracking</code> and populate the
+         * <code>NextToken</code> request parameter with the token value returned from the
+         * previous call to <code>GetPersonTracking</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetPersonTracking">AWS
          * API Reference</a></p>
          */
@@ -1517,16 +1552,21 @@ namespace Model
          * call and pass the job identifier (<code>JobId</code>) from the initial call to
          * <code>StartPersonTracking</code>.</p> <p> <code>GetPersonTracking</code> returns
          * an array, <code>Persons</code>, of tracked persons and the time(s) they were
-         * tracked in the video. </p> <p>By default, the array is sorted by the time(s) a
-         * person is tracked in the video. You can sort by tracked persons by specifying
-         * <code>INDEX</code> for the <code>SortBy</code> input parameter.</p> <p>Use the
-         * <code>MaxResults</code> parameter to limit the number of items returned. If
-         * there are more results than specified in <code>MaxResults</code>, the value of
-         * <code>NextToken</code> in the operation response contains a pagination token for
-         * getting the next set of results. To get the next page of results, call
-         * <code>GetPersonTracking</code> and populate the <code>NextToken</code> request
-         * parameter with the token value returned from the previous call to
-         * <code>GetPersonTracking</code>.</p><p><h3>See Also:</h3>   <a
+         * tracked in the video. </p> <note> <p> <code>GetPersonTracking</code> only
+         * returns the default facial attributes (<code>BoundingBox</code>,
+         * <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and
+         * <code>Quality</code>). The other facial attributes listed in the
+         * <code>Face</code> object of the following response syntax are not returned. For
+         * more information, see . </p> </note> <p>By default, the array is sorted by the
+         * time(s) a person is tracked in the video. You can sort by tracked persons by
+         * specifying <code>INDEX</code> for the <code>SortBy</code> input parameter.</p>
+         * <p>Use the <code>MaxResults</code> parameter to limit the number of items
+         * returned. If there are more results than specified in <code>MaxResults</code>,
+         * the value of <code>NextToken</code> in the operation response contains a
+         * pagination token for getting the next set of results. To get the next page of
+         * results, call <code>GetPersonTracking</code> and populate the
+         * <code>NextToken</code> request parameter with the token value returned from the
+         * previous call to <code>GetPersonTracking</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetPersonTracking">AWS
          * API Reference</a></p>
          *
@@ -1546,16 +1586,21 @@ namespace Model
          * call and pass the job identifier (<code>JobId</code>) from the initial call to
          * <code>StartPersonTracking</code>.</p> <p> <code>GetPersonTracking</code> returns
          * an array, <code>Persons</code>, of tracked persons and the time(s) they were
-         * tracked in the video. </p> <p>By default, the array is sorted by the time(s) a
-         * person is tracked in the video. You can sort by tracked persons by specifying
-         * <code>INDEX</code> for the <code>SortBy</code> input parameter.</p> <p>Use the
-         * <code>MaxResults</code> parameter to limit the number of items returned. If
-         * there are more results than specified in <code>MaxResults</code>, the value of
-         * <code>NextToken</code> in the operation response contains a pagination token for
-         * getting the next set of results. To get the next page of results, call
-         * <code>GetPersonTracking</code> and populate the <code>NextToken</code> request
-         * parameter with the token value returned from the previous call to
-         * <code>GetPersonTracking</code>.</p><p><h3>See Also:</h3>   <a
+         * tracked in the video. </p> <note> <p> <code>GetPersonTracking</code> only
+         * returns the default facial attributes (<code>BoundingBox</code>,
+         * <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and
+         * <code>Quality</code>). The other facial attributes listed in the
+         * <code>Face</code> object of the following response syntax are not returned. For
+         * more information, see . </p> </note> <p>By default, the array is sorted by the
+         * time(s) a person is tracked in the video. You can sort by tracked persons by
+         * specifying <code>INDEX</code> for the <code>SortBy</code> input parameter.</p>
+         * <p>Use the <code>MaxResults</code> parameter to limit the number of items
+         * returned. If there are more results than specified in <code>MaxResults</code>,
+         * the value of <code>NextToken</code> in the operation response contains a
+         * pagination token for getting the next set of results. To get the next page of
+         * results, call <code>GetPersonTracking</code> and populate the
+         * <code>NextToken</code> request parameter with the token value returned from the
+         * previous call to <code>GetPersonTracking</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetPersonTracking">AWS
          * API Reference</a></p>
          *

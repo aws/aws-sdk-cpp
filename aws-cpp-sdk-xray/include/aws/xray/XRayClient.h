@@ -22,9 +22,11 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/xray/model/BatchGetTracesResult.h>
+#include <aws/xray/model/GetEncryptionConfigResult.h>
 #include <aws/xray/model/GetServiceGraphResult.h>
 #include <aws/xray/model/GetTraceGraphResult.h>
 #include <aws/xray/model/GetTraceSummariesResult.h>
+#include <aws/xray/model/PutEncryptionConfigResult.h>
 #include <aws/xray/model/PutTelemetryRecordsResult.h>
 #include <aws/xray/model/PutTraceSegmentsResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -73,23 +75,29 @@ namespace XRay
 namespace Model
 {
         class BatchGetTracesRequest;
+        class GetEncryptionConfigRequest;
         class GetServiceGraphRequest;
         class GetTraceGraphRequest;
         class GetTraceSummariesRequest;
+        class PutEncryptionConfigRequest;
         class PutTelemetryRecordsRequest;
         class PutTraceSegmentsRequest;
 
         typedef Aws::Utils::Outcome<BatchGetTracesResult, Aws::Client::AWSError<XRayErrors>> BatchGetTracesOutcome;
+        typedef Aws::Utils::Outcome<GetEncryptionConfigResult, Aws::Client::AWSError<XRayErrors>> GetEncryptionConfigOutcome;
         typedef Aws::Utils::Outcome<GetServiceGraphResult, Aws::Client::AWSError<XRayErrors>> GetServiceGraphOutcome;
         typedef Aws::Utils::Outcome<GetTraceGraphResult, Aws::Client::AWSError<XRayErrors>> GetTraceGraphOutcome;
         typedef Aws::Utils::Outcome<GetTraceSummariesResult, Aws::Client::AWSError<XRayErrors>> GetTraceSummariesOutcome;
+        typedef Aws::Utils::Outcome<PutEncryptionConfigResult, Aws::Client::AWSError<XRayErrors>> PutEncryptionConfigOutcome;
         typedef Aws::Utils::Outcome<PutTelemetryRecordsResult, Aws::Client::AWSError<XRayErrors>> PutTelemetryRecordsOutcome;
         typedef Aws::Utils::Outcome<PutTraceSegmentsResult, Aws::Client::AWSError<XRayErrors>> PutTraceSegmentsOutcome;
 
         typedef std::future<BatchGetTracesOutcome> BatchGetTracesOutcomeCallable;
+        typedef std::future<GetEncryptionConfigOutcome> GetEncryptionConfigOutcomeCallable;
         typedef std::future<GetServiceGraphOutcome> GetServiceGraphOutcomeCallable;
         typedef std::future<GetTraceGraphOutcome> GetTraceGraphOutcomeCallable;
         typedef std::future<GetTraceSummariesOutcome> GetTraceSummariesOutcomeCallable;
+        typedef std::future<PutEncryptionConfigOutcome> PutEncryptionConfigOutcomeCallable;
         typedef std::future<PutTelemetryRecordsOutcome> PutTelemetryRecordsOutcomeCallable;
         typedef std::future<PutTraceSegmentsOutcome> PutTraceSegmentsOutcomeCallable;
 } // namespace Model
@@ -97,9 +105,11 @@ namespace Model
   class XRayClient;
 
     typedef std::function<void(const XRayClient*, const Model::BatchGetTracesRequest&, const Model::BatchGetTracesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetTracesResponseReceivedHandler;
+    typedef std::function<void(const XRayClient*, const Model::GetEncryptionConfigRequest&, const Model::GetEncryptionConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEncryptionConfigResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::GetServiceGraphRequest&, const Model::GetServiceGraphOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceGraphResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::GetTraceGraphRequest&, const Model::GetTraceGraphOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTraceGraphResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::GetTraceSummariesRequest&, const Model::GetTraceSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTraceSummariesResponseReceivedHandler;
+    typedef std::function<void(const XRayClient*, const Model::PutEncryptionConfigRequest&, const Model::PutEncryptionConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEncryptionConfigResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::PutTelemetryRecordsRequest&, const Model::PutTelemetryRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutTelemetryRecordsResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::PutTraceSegmentsRequest&, const Model::PutTraceSegmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutTraceSegmentsResponseReceivedHandler;
 
@@ -169,6 +179,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchGetTracesAsync(const Model::BatchGetTracesRequest& request, const BatchGetTracesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the current encryption configuration for X-Ray data.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetEncryptionConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetEncryptionConfigOutcome GetEncryptionConfig(const Model::GetEncryptionConfigRequest& request) const;
+
+        /**
+         * <p>Retrieves the current encryption configuration for X-Ray data.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetEncryptionConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetEncryptionConfigOutcomeCallable GetEncryptionConfigCallable(const Model::GetEncryptionConfigRequest& request) const;
+
+        /**
+         * <p>Retrieves the current encryption configuration for X-Ray data.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetEncryptionConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetEncryptionConfigAsync(const Model::GetEncryptionConfigRequest& request, const GetEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a document that describes services that process incoming requests,
@@ -303,6 +341,34 @@ namespace Model
         virtual void GetTraceSummariesAsync(const Model::GetTraceSummariesRequest& request, const GetTraceSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the encryption configuration for X-Ray data.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutEncryptionConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutEncryptionConfigOutcome PutEncryptionConfig(const Model::PutEncryptionConfigRequest& request) const;
+
+        /**
+         * <p>Updates the encryption configuration for X-Ray data.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutEncryptionConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutEncryptionConfigOutcomeCallable PutEncryptionConfigCallable(const Model::PutEncryptionConfigRequest& request) const;
+
+        /**
+         * <p>Updates the encryption configuration for X-Ray data.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutEncryptionConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutEncryptionConfigAsync(const Model::PutEncryptionConfigRequest& request, const PutEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Used by the AWS X-Ray daemon to upload telemetry.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTelemetryRecords">AWS
@@ -336,7 +402,7 @@ namespace Model
          * segment document can be a completed segment, an in-progress segment, or an array
          * of subsegments.</p> <p>Segments must include the following fields. For the full
          * segment document schema, see <a
-         * href="http://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS
+         * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS
          * X-Ray Segment Documents</a> in the <i>AWS X-Ray Developer Guide</i>.</p> <p
          * class="title"> <b>Required Segment Document Fields</b> </p> <ul> <li> <p>
          * <code>name</code> - The name of the service that handled the request.</p> </li>
@@ -375,7 +441,7 @@ namespace Model
          * segment document can be a completed segment, an in-progress segment, or an array
          * of subsegments.</p> <p>Segments must include the following fields. For the full
          * segment document schema, see <a
-         * href="http://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS
+         * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS
          * X-Ray Segment Documents</a> in the <i>AWS X-Ray Developer Guide</i>.</p> <p
          * class="title"> <b>Required Segment Document Fields</b> </p> <ul> <li> <p>
          * <code>name</code> - The name of the service that handled the request.</p> </li>
@@ -416,7 +482,7 @@ namespace Model
          * segment document can be a completed segment, an in-progress segment, or an array
          * of subsegments.</p> <p>Segments must include the following fields. For the full
          * segment document schema, see <a
-         * href="http://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS
+         * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS
          * X-Ray Segment Documents</a> in the <i>AWS X-Ray Developer Guide</i>.</p> <p
          * class="title"> <b>Required Segment Document Fields</b> </p> <ul> <li> <p>
          * <code>name</code> - The name of the service that handled the request.</p> </li>
@@ -457,9 +523,11 @@ namespace Model
 
         /**Async helpers**/
         void BatchGetTracesAsyncHelper(const Model::BatchGetTracesRequest& request, const BatchGetTracesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetEncryptionConfigAsyncHelper(const Model::GetEncryptionConfigRequest& request, const GetEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetServiceGraphAsyncHelper(const Model::GetServiceGraphRequest& request, const GetServiceGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTraceGraphAsyncHelper(const Model::GetTraceGraphRequest& request, const GetTraceGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTraceSummariesAsyncHelper(const Model::GetTraceSummariesRequest& request, const GetTraceSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutEncryptionConfigAsyncHelper(const Model::PutEncryptionConfigRequest& request, const PutEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutTelemetryRecordsAsyncHelper(const Model::PutTelemetryRecordsRequest& request, const PutTelemetryRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutTraceSegmentsAsyncHelper(const Model::PutTraceSegmentsRequest& request, const PutTraceSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

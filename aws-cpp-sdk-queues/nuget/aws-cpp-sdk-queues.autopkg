@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-Queues;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.4.37;
+        version : 1.4.38;
 
         // Display name for package.
         title: AWS SDK for C++ (Queues);
@@ -48,8 +48,8 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.4.37,
-            AWSSDKCPP-Sqs/1.4.20121105.37
+            AWSSDKCPP-Core/1.4.38,
+            AWSSDKCPP-Sqs/1.4.20121105.38
        }
     }
 

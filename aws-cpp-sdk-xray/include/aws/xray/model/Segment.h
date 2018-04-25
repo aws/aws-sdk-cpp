@@ -36,7 +36,11 @@ namespace Model
    * <p>A segment from a trace that has been ingested by the X-Ray service. The
    * segment can be compiled from documents uploaded with <a>PutTraceSegments</a>, or
    * an <code>inferred</code> segment for a downstream service, generated from a
-   * subsegment sent by the service that called it.</p><p><h3>See Also:</h3>   <a
+   * subsegment sent by the service that called it.</p> <p>For the full segment
+   * document schema, see <a
+   * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS
+   * X-Ray Segment Documents</a> in the <i>AWS X-Ray Developer
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/Segment">AWS API
    * Reference</a></p>
    */
@@ -86,37 +90,37 @@ namespace Model
 
 
     /**
-     * <p>The segment document</p>
+     * <p>The segment document.</p>
      */
     inline const Aws::String& GetDocument() const{ return m_document; }
 
     /**
-     * <p>The segment document</p>
+     * <p>The segment document.</p>
      */
     inline void SetDocument(const Aws::String& value) { m_documentHasBeenSet = true; m_document = value; }
 
     /**
-     * <p>The segment document</p>
+     * <p>The segment document.</p>
      */
     inline void SetDocument(Aws::String&& value) { m_documentHasBeenSet = true; m_document = std::move(value); }
 
     /**
-     * <p>The segment document</p>
+     * <p>The segment document.</p>
      */
     inline void SetDocument(const char* value) { m_documentHasBeenSet = true; m_document.assign(value); }
 
     /**
-     * <p>The segment document</p>
+     * <p>The segment document.</p>
      */
     inline Segment& WithDocument(const Aws::String& value) { SetDocument(value); return *this;}
 
     /**
-     * <p>The segment document</p>
+     * <p>The segment document.</p>
      */
     inline Segment& WithDocument(Aws::String&& value) { SetDocument(std::move(value)); return *this;}
 
     /**
-     * <p>The segment document</p>
+     * <p>The segment document.</p>
      */
     inline Segment& WithDocument(const char* value) { SetDocument(value); return *this;}
 
