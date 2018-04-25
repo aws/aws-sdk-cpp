@@ -42,19 +42,36 @@ namespace Aws
                  *  ivGenerationInCtrMode, if true, initializes the iv with a 4 byte counter at the end.
                  */
                 SymmetricCipher(const CryptoBuffer& key, size_t ivSize, bool ivGenerationInCtrMode = false) :
-                        m_key(key), m_initializationVector(ivSize > 0 ? GenerateIV(ivSize, ivGenerationInCtrMode) : 0), m_failure(false) { Validate(); }
+                        m_key(key),
+                        m_initializationVector(ivSize > 0 ? GenerateIV(ivSize, ivGenerationInCtrMode) : 0),
+                        m_failure(false)
+                {
+                    Validate();
+                }
 
                 /**
                  * Initialize with key and initializationVector, set tag for decryption of authenticated modes (makes copies of the buffers)
                  */
                 SymmetricCipher(const CryptoBuffer& key, const CryptoBuffer& initializationVector, const CryptoBuffer& tag = CryptoBuffer(0)) :
-                        m_key(key), m_initializationVector(initializationVector), m_tag(tag), m_failure(false) { Validate(); }
+                        m_key(key),
+                        m_initializationVector(initializationVector),
+                        m_tag(tag),
+                        m_failure(false)
+                {
+                    Validate();
+                }
 
                 /**
                  * Initialize with key and initializationVector, set tag for decryption of authenticated modes  (move the buffers)
                  */
                 SymmetricCipher(CryptoBuffer&& key, CryptoBuffer&& initializationVector, CryptoBuffer&& tag = CryptoBuffer(0)) :
-                        m_key(std::move(key)), m_initializationVector(std::move(initializationVector)), m_tag(std::move(tag)), m_failure(false) { Validate(); }
+                        m_key(std::move(key)),
+                        m_initializationVector(std::move(initializationVector)),
+                        m_tag(std::move(tag)),  
+                        m_failure(false)
+                {
+                    Validate();
+                }
 
                 SymmetricCipher(const SymmetricCipher& other) = delete;
                 SymmetricCipher& operator=(const SymmetricCipher& other) = delete;
