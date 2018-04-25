@@ -425,7 +425,9 @@ namespace Aws
 
             CryptoBuffer OpenSSLCipher::FinalizeEncryption()
             {
-                if (m_failure)
+				if (!m_encDecInitialized) //don't finalize uninitialized cipher
+					return CryptoBuffer();
+				if (m_failure)
                 {
                     AWS_LOGSTREAM_FATAL(OPENSSL_LOG_TAG,
                                         "Cipher not properly initialized for encryption finalization. Aborting");
@@ -474,6 +476,8 @@ namespace Aws
 
             CryptoBuffer OpenSSLCipher::FinalizeDecryption()
             {
+				if (!m_encDecInitialized) //don't finalize uninitialized cipher
+					return CryptoBuffer(); 
                 if (m_failure)
                 {
                     AWS_LOGSTREAM_FATAL(OPENSSL_LOG_TAG,
@@ -626,7 +630,9 @@ namespace Aws
 
             CryptoBuffer AES_GCM_Cipher_OpenSSL::FinalizeEncryption()
             {
-                CryptoBuffer&& finalBuffer = OpenSSLCipher::FinalizeEncryption();
+				if (!m_encDecInitialized) //don't finalize uninitialized cipher
+					return CryptoBuffer();
+				CryptoBuffer&& finalBuffer = OpenSSLCipher::FinalizeEncryption();
                 m_tag = CryptoBuffer(TagLengthBytes);
                 if (!EVP_CIPHER_CTX_ctrl(m_ctx, EVP_CTRL_CCM_GET_TAG, static_cast<int>(m_tag.GetLength()),
                                          m_tag.GetUnderlyingData()))

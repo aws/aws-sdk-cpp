@@ -547,9 +547,10 @@ TEST(CryptoStreamsTest, TestLiveSymmetricCipher)
         stream.read((char*)buffer.GetUnderlyingData(), buffer.GetLength());
 
         ASSERT_STREQ(expected_raw.c_str(), HashingUtils::HexEncode(buffer).c_str());
-        stream.Finalize();       
+        stream.Finalize();
         ASSERT_STREQ(tag_raw.c_str(), HashingUtils::HexEncode(cipher->GetTag()).c_str());
-    }
+		stream.seekg(0, std::ios_base::beg); //must work for WinSyncHttpClient::StreamPayloadToRequest
+	}
 
     {
         cipher = Aws::Utils::Crypto::CreateAES_GCMImplementation(HashingUtils::HexDecode(key_raw),
