@@ -35,3 +35,15 @@
     #define AWS_CORE_API
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
 
+#if defined (__cplusplus) && __cplusplus > 201103L // standard attributes are available since C++14
+    #define AWS_DEPRECATED [[deprecated]]
+#else
+    #ifdef _MSC_VER
+        #define AWS_DEPRECATED __declspec(deprecated)
+    #elif defined (__GNUC__)
+        #define AWS_DEPRECATED __attribute__((deprecated))
+    #else
+        #define AWS_DEPRECATED
+    #endif
+#endif
+
