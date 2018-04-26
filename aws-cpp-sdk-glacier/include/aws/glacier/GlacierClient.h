@@ -1012,7 +1012,7 @@ namespace Model
          * Identity and Access Management (IAM) users don't have any permissions by
          * default. You must grant them explicit permission to perform specific actions.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/latest/dev/using-iam-with-amazon-glacier.html">Access
+         * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
          * Control Using AWS Identity and Access Management (IAM)</a>.</p> <p> For
          * conceptual information and underlying REST API, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
@@ -1034,7 +1034,7 @@ namespace Model
          * Identity and Access Management (IAM) users don't have any permissions by
          * default. You must grant them explicit permission to perform specific actions.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/latest/dev/using-iam-with-amazon-glacier.html">Access
+         * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
          * Control Using AWS Identity and Access Management (IAM)</a>.</p> <p> For
          * conceptual information and underlying REST API, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
@@ -1058,7 +1058,7 @@ namespace Model
          * Identity and Access Management (IAM) users don't have any permissions by
          * default. You must grant them explicit permission to perform specific actions.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/latest/dev/using-iam-with-amazon-glacier.html">Access
+         * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
          * Control Using AWS Identity and Access Management (IAM)</a>.</p> <p> For
          * conceptual information and underlying REST API, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
