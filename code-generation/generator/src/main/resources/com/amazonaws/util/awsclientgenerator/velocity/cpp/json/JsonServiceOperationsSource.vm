@@ -97,11 +97,11 @@ ${operation.name}Outcome ${className}::${operation.name}() const
   ss << m_uri << "${operation.http.requestUri}";
 
 #if($operation.result && $operation.result.shape.hasStreamMembers())
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(ss.str(), HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "{operation.name}");
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(ss.str(), HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}");
 #elseif($operation.request)
-  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "{operation.name}");
+  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}");
 #else
-  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_${operation.http.method}, Aws::Auth::SIGV4_SIGNER, "{operation.name}");
+  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_${operation.http.method}, Aws::Auth::SIGV4_SIGNER, "${operation.name}");
 #end
   if(outcome.IsSuccess())
   {
