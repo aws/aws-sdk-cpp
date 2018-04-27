@@ -243,7 +243,7 @@ public class CppViewHelper {
 
         for(Map.Entry<String, ShapeMember> entry : shape.getMembers().entrySet()) {
             Shape innerShape = entry.getValue().getShape();
-            if (innerShape.isBlob()) {
+            if (innerShape.isBlob() || (innerShape.isList() && innerShape.getListMember().getShape().isBlob())) {
                 headers.add("<aws/core/utils/HashingUtils.h>");
             }
             else if(entry.getValue().isUsedForHeader() || entry.getValue().isUsedForQueryString()) {
