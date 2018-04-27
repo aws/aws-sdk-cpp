@@ -243,7 +243,12 @@ public class CppViewHelper {
 
         for(Map.Entry<String, ShapeMember> entry : shape.getMembers().entrySet()) {
             Shape innerShape = entry.getValue().getShape();
-            if (innerShape.isBlob() || (innerShape.isList() && innerShape.getListMember().getShape().isBlob())) {
+            // if the shape is a blob, list of blobs or a map with a value blob. It's very unlikely that a blob would be
+            // the key in a map, but we check it anyways.
+            if (innerShape.isBlob() ||
+                (innerShape.isList() && innerShape.getListMember().getShape().isBlob()) ||
+                (innerShape.isMap() && innerShape.getMapValue().getShape().isBlob()) ||
+                (innerShape.isMap() && innerShape.getMapKey().getShape().isBlob())) {
                 headers.add("<aws/core/utils/HashingUtils.h>");
             }
             else if(entry.getValue().isUsedForHeader() || entry.getValue().isUsedForQueryString()) {
