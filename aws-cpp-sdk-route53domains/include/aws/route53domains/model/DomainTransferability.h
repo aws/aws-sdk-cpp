@@ -32,6 +32,12 @@ namespace Route53Domains
 namespace Model
 {
 
+  /**
+   * <p>A complex type that contains information about whether the specified domain
+   * can be transferred to Amazon Route 53.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DomainTransferability">AWS
+   * API Reference</a></p>
+   */
   class AWS_ROUTE53DOMAINS_API DomainTransferability
   {
   public:

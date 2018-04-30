@@ -1254,7 +1254,7 @@ DescribeMyUserProfileOutcome OpsWorksClient::DescribeMyUserProfile() const
   Aws::StringStream ss;
   ss << m_uri << "/";
 
-  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "{operation.name}");
+  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "DescribeMyUserProfile");
   if(outcome.IsSuccess())
   {
     return DescribeMyUserProfileOutcome(DescribeMyUserProfileResult(outcome.GetResult()));
@@ -1288,7 +1288,7 @@ DescribeOperatingSystemsOutcome OpsWorksClient::DescribeOperatingSystems() const
   Aws::StringStream ss;
   ss << m_uri << "/";
 
-  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "{operation.name}");
+  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "DescribeOperatingSystems");
   if(outcome.IsSuccess())
   {
     return DescribeOperatingSystemsOutcome(DescribeOperatingSystemsResult(outcome.GetResult()));

@@ -53,6 +53,7 @@
 #include <aws/alexaforbusiness/model/GetRoomRequest.h>
 #include <aws/alexaforbusiness/model/GetRoomSkillParameterRequest.h>
 #include <aws/alexaforbusiness/model/GetSkillGroupRequest.h>
+#include <aws/alexaforbusiness/model/ListDeviceEventsRequest.h>
 #include <aws/alexaforbusiness/model/ListSkillsRequest.h>
 #include <aws/alexaforbusiness/model/ListTagsRequest.h>
 #include <aws/alexaforbusiness/model/PutRoomSkillParameterRequest.h>
@@ -1048,6 +1049,41 @@ void AlexaForBusinessClient::GetSkillGroupAsync(const GetSkillGroupRequest& requ
 void AlexaForBusinessClient::GetSkillGroupAsyncHelper(const GetSkillGroupRequest& request, const GetSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetSkillGroup(request), context);
+}
+
+ListDeviceEventsOutcome AlexaForBusinessClient::ListDeviceEvents(const ListDeviceEventsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListDeviceEventsOutcome(ListDeviceEventsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListDeviceEventsOutcome(outcome.GetError());
+  }
+}
+
+ListDeviceEventsOutcomeCallable AlexaForBusinessClient::ListDeviceEventsCallable(const ListDeviceEventsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListDeviceEventsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDeviceEvents(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::ListDeviceEventsAsync(const ListDeviceEventsRequest& request, const ListDeviceEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListDeviceEventsAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::ListDeviceEventsAsyncHelper(const ListDeviceEventsRequest& request, const ListDeviceEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListDeviceEvents(request), context);
 }
 
 ListSkillsOutcome AlexaForBusinessClient::ListSkills(const ListSkillsRequest& request) const

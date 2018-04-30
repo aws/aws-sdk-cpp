@@ -32,6 +32,7 @@
 #include <aws/dynamodb/model/DescribeBackupResult.h>
 #include <aws/dynamodb/model/DescribeContinuousBackupsResult.h>
 #include <aws/dynamodb/model/DescribeGlobalTableResult.h>
+#include <aws/dynamodb/model/DescribeGlobalTableSettingsResult.h>
 #include <aws/dynamodb/model/DescribeLimitsResult.h>
 #include <aws/dynamodb/model/DescribeTableResult.h>
 #include <aws/dynamodb/model/DescribeTimeToLiveResult.h>
@@ -47,6 +48,7 @@
 #include <aws/dynamodb/model/ScanResult.h>
 #include <aws/dynamodb/model/UpdateContinuousBackupsResult.h>
 #include <aws/dynamodb/model/UpdateGlobalTableResult.h>
+#include <aws/dynamodb/model/UpdateGlobalTableSettingsResult.h>
 #include <aws/dynamodb/model/UpdateItemResult.h>
 #include <aws/dynamodb/model/UpdateTableResult.h>
 #include <aws/dynamodb/model/UpdateTimeToLiveResult.h>
@@ -107,6 +109,7 @@ namespace Model
         class DescribeBackupRequest;
         class DescribeContinuousBackupsRequest;
         class DescribeGlobalTableRequest;
+        class DescribeGlobalTableSettingsRequest;
         class DescribeLimitsRequest;
         class DescribeTableRequest;
         class DescribeTimeToLiveRequest;
@@ -124,6 +127,7 @@ namespace Model
         class UntagResourceRequest;
         class UpdateContinuousBackupsRequest;
         class UpdateGlobalTableRequest;
+        class UpdateGlobalTableSettingsRequest;
         class UpdateItemRequest;
         class UpdateTableRequest;
         class UpdateTimeToLiveRequest;
@@ -139,6 +143,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeBackupResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeBackupOutcome;
         typedef Aws::Utils::Outcome<DescribeContinuousBackupsResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeContinuousBackupsOutcome;
         typedef Aws::Utils::Outcome<DescribeGlobalTableResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeGlobalTableOutcome;
+        typedef Aws::Utils::Outcome<DescribeGlobalTableSettingsResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeGlobalTableSettingsOutcome;
         typedef Aws::Utils::Outcome<DescribeLimitsResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeLimitsOutcome;
         typedef Aws::Utils::Outcome<DescribeTableResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeTableOutcome;
         typedef Aws::Utils::Outcome<DescribeTimeToLiveResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeTimeToLiveOutcome;
@@ -156,6 +161,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DynamoDBErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateContinuousBackupsResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateContinuousBackupsOutcome;
         typedef Aws::Utils::Outcome<UpdateGlobalTableResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateGlobalTableOutcome;
+        typedef Aws::Utils::Outcome<UpdateGlobalTableSettingsResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateGlobalTableSettingsOutcome;
         typedef Aws::Utils::Outcome<UpdateItemResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateItemOutcome;
         typedef Aws::Utils::Outcome<UpdateTableResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateTableOutcome;
         typedef Aws::Utils::Outcome<UpdateTimeToLiveResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateTimeToLiveOutcome;
@@ -171,6 +177,7 @@ namespace Model
         typedef std::future<DescribeBackupOutcome> DescribeBackupOutcomeCallable;
         typedef std::future<DescribeContinuousBackupsOutcome> DescribeContinuousBackupsOutcomeCallable;
         typedef std::future<DescribeGlobalTableOutcome> DescribeGlobalTableOutcomeCallable;
+        typedef std::future<DescribeGlobalTableSettingsOutcome> DescribeGlobalTableSettingsOutcomeCallable;
         typedef std::future<DescribeLimitsOutcome> DescribeLimitsOutcomeCallable;
         typedef std::future<DescribeTableOutcome> DescribeTableOutcomeCallable;
         typedef std::future<DescribeTimeToLiveOutcome> DescribeTimeToLiveOutcomeCallable;
@@ -188,6 +195,7 @@ namespace Model
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateContinuousBackupsOutcome> UpdateContinuousBackupsOutcomeCallable;
         typedef std::future<UpdateGlobalTableOutcome> UpdateGlobalTableOutcomeCallable;
+        typedef std::future<UpdateGlobalTableSettingsOutcome> UpdateGlobalTableSettingsOutcomeCallable;
         typedef std::future<UpdateItemOutcome> UpdateItemOutcomeCallable;
         typedef std::future<UpdateTableOutcome> UpdateTableOutcomeCallable;
         typedef std::future<UpdateTimeToLiveOutcome> UpdateTimeToLiveOutcomeCallable;
@@ -206,6 +214,7 @@ namespace Model
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeBackupRequest&, const Model::DescribeBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBackupResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeContinuousBackupsRequest&, const Model::DescribeContinuousBackupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContinuousBackupsResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeGlobalTableRequest&, const Model::DescribeGlobalTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGlobalTableResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::DescribeGlobalTableSettingsRequest&, const Model::DescribeGlobalTableSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGlobalTableSettingsResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeLimitsRequest&, const Model::DescribeLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLimitsResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeTableRequest&, const Model::DescribeTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTableResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeTimeToLiveRequest&, const Model::DescribeTimeToLiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTimeToLiveResponseReceivedHandler;
@@ -223,6 +232,7 @@ namespace Model
     typedef std::function<void(const DynamoDBClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::UpdateContinuousBackupsRequest&, const Model::UpdateContinuousBackupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContinuousBackupsResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::UpdateGlobalTableRequest&, const Model::UpdateGlobalTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGlobalTableResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::UpdateGlobalTableSettingsRequest&, const Model::UpdateGlobalTableSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGlobalTableSettingsResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::UpdateItemRequest&, const Model::UpdateItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateItemResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::UpdateTableRequest&, const Model::UpdateTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTableResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::UpdateTimeToLiveRequest&, const Model::UpdateTimeToLiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTimeToLiveResponseReceivedHandler;
@@ -711,7 +721,14 @@ namespace Model
          * tables must have the same name. </p> </li> <li> <p> The tables must contain no
          * items. </p> </li> <li> <p> The tables must have the same hash key and sort key
          * (if present). </p> </li> <li> <p> The tables must have DynamoDB Streams enabled
-         * (NEW_AND_OLD_IMAGES). </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * (NEW_AND_OLD_IMAGES). </p> </li> <li> <p> The tables must have same provisioned
+         * and maximum write capacity units. </p> </li> </ul> <p> If global secondary
+         * indexes are specified, then the following conditions must also be met: </p> <ul>
+         * <li> <p> The global secondary indexes must have the same name. </p> </li> <li>
+         * <p> The global secondary indexes must have the same hash key and sort key (if
+         * present). </p> </li> <li> <p> The global secondary indexes must have the same
+         * provisioned and maximum write capacity units. </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable">AWS
          * API Reference</a></p>
          */
@@ -725,7 +742,14 @@ namespace Model
          * tables must have the same name. </p> </li> <li> <p> The tables must contain no
          * items. </p> </li> <li> <p> The tables must have the same hash key and sort key
          * (if present). </p> </li> <li> <p> The tables must have DynamoDB Streams enabled
-         * (NEW_AND_OLD_IMAGES). </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * (NEW_AND_OLD_IMAGES). </p> </li> <li> <p> The tables must have same provisioned
+         * and maximum write capacity units. </p> </li> </ul> <p> If global secondary
+         * indexes are specified, then the following conditions must also be met: </p> <ul>
+         * <li> <p> The global secondary indexes must have the same name. </p> </li> <li>
+         * <p> The global secondary indexes must have the same hash key and sort key (if
+         * present). </p> </li> <li> <p> The global secondary indexes must have the same
+         * provisioned and maximum write capacity units. </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable">AWS
          * API Reference</a></p>
          *
@@ -741,7 +765,14 @@ namespace Model
          * tables must have the same name. </p> </li> <li> <p> The tables must contain no
          * items. </p> </li> <li> <p> The tables must have the same hash key and sort key
          * (if present). </p> </li> <li> <p> The tables must have DynamoDB Streams enabled
-         * (NEW_AND_OLD_IMAGES). </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * (NEW_AND_OLD_IMAGES). </p> </li> <li> <p> The tables must have same provisioned
+         * and maximum write capacity units. </p> </li> </ul> <p> If global secondary
+         * indexes are specified, then the following conditions must also be met: </p> <ul>
+         * <li> <p> The global secondary indexes must have the same name. </p> </li> <li>
+         * <p> The global secondary indexes must have the same hash key and sort key (if
+         * present). </p> </li> <li> <p> The global secondary indexes must have the same
+         * provisioned and maximum write capacity units. </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable">AWS
          * API Reference</a></p>
          *
@@ -1012,10 +1043,9 @@ namespace Model
          * any point in time within <code>EarliestRestorableDateTime</code> and
          * <code>LatestRestorableDateTime</code>. </p> <p>
          * <code>LatestRestorableDateTime</code> is typically 5 minutes before the current
-         * time. You can restore your table to any point in time during the last 35 days
-         * with a 1-minute granularity. </p> <p>You can call
-         * <code>DescribeContinuousBackups</code> at a maximum rate of 10 times per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * time. You can restore your table to any point in time during the last 35 days.
+         * </p> <p>You can call <code>DescribeContinuousBackups</code> at a maximum rate of
+         * 10 times per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContinuousBackups">AWS
          * API Reference</a></p>
          */
@@ -1030,10 +1060,9 @@ namespace Model
          * any point in time within <code>EarliestRestorableDateTime</code> and
          * <code>LatestRestorableDateTime</code>. </p> <p>
          * <code>LatestRestorableDateTime</code> is typically 5 minutes before the current
-         * time. You can restore your table to any point in time during the last 35 days
-         * with a 1-minute granularity. </p> <p>You can call
-         * <code>DescribeContinuousBackups</code> at a maximum rate of 10 times per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * time. You can restore your table to any point in time during the last 35 days.
+         * </p> <p>You can call <code>DescribeContinuousBackups</code> at a maximum rate of
+         * 10 times per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContinuousBackups">AWS
          * API Reference</a></p>
          *
@@ -1050,10 +1079,9 @@ namespace Model
          * any point in time within <code>EarliestRestorableDateTime</code> and
          * <code>LatestRestorableDateTime</code>. </p> <p>
          * <code>LatestRestorableDateTime</code> is typically 5 minutes before the current
-         * time. You can restore your table to any point in time during the last 35 days
-         * with a 1-minute granularity. </p> <p>You can call
-         * <code>DescribeContinuousBackups</code> at a maximum rate of 10 times per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * time. You can restore your table to any point in time during the last 35 days.
+         * </p> <p>You can call <code>DescribeContinuousBackups</code> at a maximum rate of
+         * 10 times per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContinuousBackups">AWS
          * API Reference</a></p>
          *
@@ -1088,6 +1116,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeGlobalTableAsync(const Model::DescribeGlobalTableRequest& request, const DescribeGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes region specific settings for a global table.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTableSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeGlobalTableSettingsOutcome DescribeGlobalTableSettings(const Model::DescribeGlobalTableSettingsRequest& request) const;
+
+        /**
+         * <p>Describes region specific settings for a global table.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTableSettings">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeGlobalTableSettingsOutcomeCallable DescribeGlobalTableSettingsCallable(const Model::DescribeGlobalTableSettingsRequest& request) const;
+
+        /**
+         * <p>Describes region specific settings for a global table.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTableSettings">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeGlobalTableSettingsAsync(const Model::DescribeGlobalTableSettingsRequest& request, const DescribeGlobalTableSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the current provisioned-capacity limits for your AWS account in a
@@ -1851,14 +1907,21 @@ namespace Model
          * <p>Restores the specified table to the specified point in time within
          * <code>EarliestRestorableDateTime</code> and
          * <code>LatestRestorableDateTime</code>. You can restore your table to any point
-         * in time during the last 35 days with a 1-minute granularity. Any number of users
-         * can execute up to 4 concurrent restores (any type of restore) in a given
-         * account. </p> <p>You must manually set up the following on the restored
-         * table:</p> <ul> <li> <p>Auto scaling policies</p> </li> <li> <p>IAM policies</p>
-         * </li> <li> <p>Cloudwatch metrics and alarms</p> </li> <li> <p>Tags</p> </li>
-         * <li> <p>Stream settings</p> </li> <li> <p>Time to Live (TTL) settings</p> </li>
-         * <li> <p>Point in time recovery settings</p> </li> </ul><p><h3>See Also:</h3>  
-         * <a
+         * in time during the last 35 days. Any number of users can execute up to 4
+         * concurrent restores (any type of restore) in a given account. </p> <p> When you
+         * restore using point in time recovery, DynamoDB restores your table data to the
+         * state based on the selected date and time (day:hour:minute:second) to a new
+         * table. </p> <p> Along with data, the following are also included on the new
+         * restored table using point in time recovery: </p> <ul> <li> <p>Global secondary
+         * indexes (GSIs)</p> </li> <li> <p>Local secondary indexes (LSIs)</p> </li> <li>
+         * <p>Provisioned read and write capacity</p> </li> <li> <p>Encryption settings</p>
+         * <important> <p> All these settings come from the current settings of the source
+         * table at the time of restore. </p> </important> </li> </ul> <p>You must manually
+         * set up the following on the restored table:</p> <ul> <li> <p>Auto scaling
+         * policies</p> </li> <li> <p>IAM policies</p> </li> <li> <p>Cloudwatch metrics and
+         * alarms</p> </li> <li> <p>Tags</p> </li> <li> <p>Stream settings</p> </li> <li>
+         * <p>Time to Live (TTL) settings</p> </li> <li> <p>Point in time recovery
+         * settings</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableToPointInTime">AWS
          * API Reference</a></p>
          */
@@ -1868,14 +1931,21 @@ namespace Model
          * <p>Restores the specified table to the specified point in time within
          * <code>EarliestRestorableDateTime</code> and
          * <code>LatestRestorableDateTime</code>. You can restore your table to any point
-         * in time during the last 35 days with a 1-minute granularity. Any number of users
-         * can execute up to 4 concurrent restores (any type of restore) in a given
-         * account. </p> <p>You must manually set up the following on the restored
-         * table:</p> <ul> <li> <p>Auto scaling policies</p> </li> <li> <p>IAM policies</p>
-         * </li> <li> <p>Cloudwatch metrics and alarms</p> </li> <li> <p>Tags</p> </li>
-         * <li> <p>Stream settings</p> </li> <li> <p>Time to Live (TTL) settings</p> </li>
-         * <li> <p>Point in time recovery settings</p> </li> </ul><p><h3>See Also:</h3>  
-         * <a
+         * in time during the last 35 days. Any number of users can execute up to 4
+         * concurrent restores (any type of restore) in a given account. </p> <p> When you
+         * restore using point in time recovery, DynamoDB restores your table data to the
+         * state based on the selected date and time (day:hour:minute:second) to a new
+         * table. </p> <p> Along with data, the following are also included on the new
+         * restored table using point in time recovery: </p> <ul> <li> <p>Global secondary
+         * indexes (GSIs)</p> </li> <li> <p>Local secondary indexes (LSIs)</p> </li> <li>
+         * <p>Provisioned read and write capacity</p> </li> <li> <p>Encryption settings</p>
+         * <important> <p> All these settings come from the current settings of the source
+         * table at the time of restore. </p> </important> </li> </ul> <p>You must manually
+         * set up the following on the restored table:</p> <ul> <li> <p>Auto scaling
+         * policies</p> </li> <li> <p>IAM policies</p> </li> <li> <p>Cloudwatch metrics and
+         * alarms</p> </li> <li> <p>Tags</p> </li> <li> <p>Stream settings</p> </li> <li>
+         * <p>Time to Live (TTL) settings</p> </li> <li> <p>Point in time recovery
+         * settings</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableToPointInTime">AWS
          * API Reference</a></p>
          *
@@ -1887,14 +1957,21 @@ namespace Model
          * <p>Restores the specified table to the specified point in time within
          * <code>EarliestRestorableDateTime</code> and
          * <code>LatestRestorableDateTime</code>. You can restore your table to any point
-         * in time during the last 35 days with a 1-minute granularity. Any number of users
-         * can execute up to 4 concurrent restores (any type of restore) in a given
-         * account. </p> <p>You must manually set up the following on the restored
-         * table:</p> <ul> <li> <p>Auto scaling policies</p> </li> <li> <p>IAM policies</p>
-         * </li> <li> <p>Cloudwatch metrics and alarms</p> </li> <li> <p>Tags</p> </li>
-         * <li> <p>Stream settings</p> </li> <li> <p>Time to Live (TTL) settings</p> </li>
-         * <li> <p>Point in time recovery settings</p> </li> </ul><p><h3>See Also:</h3>  
-         * <a
+         * in time during the last 35 days. Any number of users can execute up to 4
+         * concurrent restores (any type of restore) in a given account. </p> <p> When you
+         * restore using point in time recovery, DynamoDB restores your table data to the
+         * state based on the selected date and time (day:hour:minute:second) to a new
+         * table. </p> <p> Along with data, the following are also included on the new
+         * restored table using point in time recovery: </p> <ul> <li> <p>Global secondary
+         * indexes (GSIs)</p> </li> <li> <p>Local secondary indexes (LSIs)</p> </li> <li>
+         * <p>Provisioned read and write capacity</p> </li> <li> <p>Encryption settings</p>
+         * <important> <p> All these settings come from the current settings of the source
+         * table at the time of restore. </p> </important> </li> </ul> <p>You must manually
+         * set up the following on the restored table:</p> <ul> <li> <p>Auto scaling
+         * policies</p> </li> <li> <p>IAM policies</p> </li> <li> <p>Cloudwatch metrics and
+         * alarms</p> </li> <li> <p>Tags</p> </li> <li> <p>Stream settings</p> </li> <li>
+         * <p>Time to Live (TTL) settings</p> </li> <li> <p>Point in time recovery
+         * settings</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableToPointInTime">AWS
          * API Reference</a></p>
          *
@@ -2102,8 +2179,8 @@ namespace Model
          * restore to any point in time within <code>EarliestRestorableDateTime</code> and
          * <code>LatestRestorableDateTime</code>. </p> <p>
          * <code>LatestRestorableDateTime</code> is typically 5 minutes before the current
-         * time. You can restore your table to any point in time during the last 35 days
-         * with a 1-minute granularity. </p><p><h3>See Also:</h3>   <a
+         * time. You can restore your table to any point in time during the last 35 days..
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContinuousBackups">AWS
          * API Reference</a></p>
          */
@@ -2120,8 +2197,8 @@ namespace Model
          * restore to any point in time within <code>EarliestRestorableDateTime</code> and
          * <code>LatestRestorableDateTime</code>. </p> <p>
          * <code>LatestRestorableDateTime</code> is typically 5 minutes before the current
-         * time. You can restore your table to any point in time during the last 35 days
-         * with a 1-minute granularity. </p><p><h3>See Also:</h3>   <a
+         * time. You can restore your table to any point in time during the last 35 days..
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContinuousBackups">AWS
          * API Reference</a></p>
          *
@@ -2140,8 +2217,8 @@ namespace Model
          * restore to any point in time within <code>EarliestRestorableDateTime</code> and
          * <code>LatestRestorableDateTime</code>. </p> <p>
          * <code>LatestRestorableDateTime</code> is typically 5 minutes before the current
-         * time. You can restore your table to any point in time during the last 35 days
-         * with a 1-minute granularity. </p><p><h3>See Also:</h3>   <a
+         * time. You can restore your table to any point in time during the last 35 days..
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContinuousBackups">AWS
          * API Reference</a></p>
          *
@@ -2153,10 +2230,16 @@ namespace Model
          * <p>Adds or removes replicas in the specified global table. The global table must
          * already exist to be able to use this operation. Any replica to be added must be
          * empty, must have the same name as the global table, must have the same key
-         * schema, and must have DynamoDB Streams enabled.</p> <note> <p>Although you can
-         * use <code>UpdateGlobalTable</code> to add replicas and remove replicas in a
-         * single request, for simplicity we recommend that you issue separate requests for
-         * adding or removing replicas.</p> </note><p><h3>See Also:</h3>   <a
+         * schema, and must have DynamoDB Streams enabled and must have same provisioned
+         * and maximum write capacity units.</p> <note> <p>Although you can use
+         * <code>UpdateGlobalTable</code> to add replicas and remove replicas in a single
+         * request, for simplicity we recommend that you issue separate requests for adding
+         * or removing replicas.</p> </note> <p> If global secondary indexes are specified,
+         * then the following conditions must also be met: </p> <ul> <li> <p> The global
+         * secondary indexes must have the same name. </p> </li> <li> <p> The global
+         * secondary indexes must have the same hash key and sort key (if present). </p>
+         * </li> <li> <p> The global secondary indexes must have the same provisioned and
+         * maximum write capacity units. </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTable">AWS
          * API Reference</a></p>
          */
@@ -2166,10 +2249,16 @@ namespace Model
          * <p>Adds or removes replicas in the specified global table. The global table must
          * already exist to be able to use this operation. Any replica to be added must be
          * empty, must have the same name as the global table, must have the same key
-         * schema, and must have DynamoDB Streams enabled.</p> <note> <p>Although you can
-         * use <code>UpdateGlobalTable</code> to add replicas and remove replicas in a
-         * single request, for simplicity we recommend that you issue separate requests for
-         * adding or removing replicas.</p> </note><p><h3>See Also:</h3>   <a
+         * schema, and must have DynamoDB Streams enabled and must have same provisioned
+         * and maximum write capacity units.</p> <note> <p>Although you can use
+         * <code>UpdateGlobalTable</code> to add replicas and remove replicas in a single
+         * request, for simplicity we recommend that you issue separate requests for adding
+         * or removing replicas.</p> </note> <p> If global secondary indexes are specified,
+         * then the following conditions must also be met: </p> <ul> <li> <p> The global
+         * secondary indexes must have the same name. </p> </li> <li> <p> The global
+         * secondary indexes must have the same hash key and sort key (if present). </p>
+         * </li> <li> <p> The global secondary indexes must have the same provisioned and
+         * maximum write capacity units. </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTable">AWS
          * API Reference</a></p>
          *
@@ -2181,16 +2270,47 @@ namespace Model
          * <p>Adds or removes replicas in the specified global table. The global table must
          * already exist to be able to use this operation. Any replica to be added must be
          * empty, must have the same name as the global table, must have the same key
-         * schema, and must have DynamoDB Streams enabled.</p> <note> <p>Although you can
-         * use <code>UpdateGlobalTable</code> to add replicas and remove replicas in a
-         * single request, for simplicity we recommend that you issue separate requests for
-         * adding or removing replicas.</p> </note><p><h3>See Also:</h3>   <a
+         * schema, and must have DynamoDB Streams enabled and must have same provisioned
+         * and maximum write capacity units.</p> <note> <p>Although you can use
+         * <code>UpdateGlobalTable</code> to add replicas and remove replicas in a single
+         * request, for simplicity we recommend that you issue separate requests for adding
+         * or removing replicas.</p> </note> <p> If global secondary indexes are specified,
+         * then the following conditions must also be met: </p> <ul> <li> <p> The global
+         * secondary indexes must have the same name. </p> </li> <li> <p> The global
+         * secondary indexes must have the same hash key and sort key (if present). </p>
+         * </li> <li> <p> The global secondary indexes must have the same provisioned and
+         * maximum write capacity units. </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTable">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateGlobalTableAsync(const Model::UpdateGlobalTableRequest& request, const UpdateGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates settings for a global table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTableSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateGlobalTableSettingsOutcome UpdateGlobalTableSettings(const Model::UpdateGlobalTableSettingsRequest& request) const;
+
+        /**
+         * <p>Updates settings for a global table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTableSettings">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateGlobalTableSettingsOutcomeCallable UpdateGlobalTableSettingsCallable(const Model::UpdateGlobalTableSettingsRequest& request) const;
+
+        /**
+         * <p>Updates settings for a global table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTableSettings">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateGlobalTableSettingsAsync(const Model::UpdateGlobalTableSettingsRequest& request, const UpdateGlobalTableSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Edits an existing item's attributes, or adds a new item to the table if it
@@ -2400,6 +2520,7 @@ namespace Model
         void DescribeBackupAsyncHelper(const Model::DescribeBackupRequest& request, const DescribeBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeContinuousBackupsAsyncHelper(const Model::DescribeContinuousBackupsRequest& request, const DescribeContinuousBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeGlobalTableAsyncHelper(const Model::DescribeGlobalTableRequest& request, const DescribeGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeGlobalTableSettingsAsyncHelper(const Model::DescribeGlobalTableSettingsRequest& request, const DescribeGlobalTableSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLimitsAsyncHelper(const Model::DescribeLimitsRequest& request, const DescribeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTableAsyncHelper(const Model::DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTimeToLiveAsyncHelper(const Model::DescribeTimeToLiveRequest& request, const DescribeTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2417,6 +2538,7 @@ namespace Model
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateContinuousBackupsAsyncHelper(const Model::UpdateContinuousBackupsRequest& request, const UpdateContinuousBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGlobalTableAsyncHelper(const Model::UpdateGlobalTableRequest& request, const UpdateGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateGlobalTableSettingsAsyncHelper(const Model::UpdateGlobalTableSettingsRequest& request, const UpdateGlobalTableSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateItemAsyncHelper(const Model::UpdateItemRequest& request, const UpdateItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTableAsyncHelper(const Model::UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTimeToLiveAsyncHelper(const Model::UpdateTimeToLiveRequest& request, const UpdateTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

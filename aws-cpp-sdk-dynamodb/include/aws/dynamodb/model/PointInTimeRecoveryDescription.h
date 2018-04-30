@@ -90,68 +90,63 @@ namespace Model
 
 
     /**
-     * <p>Specifies the earliest point in time you can restore your table to. It is
-     * equal to the maximum of point in time recovery enabled time and
-     * <code>CurrentTime</code> - <code>PointInTimeRecoveryPeriod</code>.</p>
+     * <p>Specifies the earliest point in time you can restore your table to. It You
+     * can restore your table to any point in time during the last 35 days. </p>
      */
     inline const Aws::Utils::DateTime& GetEarliestRestorableDateTime() const{ return m_earliestRestorableDateTime; }
 
     /**
-     * <p>Specifies the earliest point in time you can restore your table to. It is
-     * equal to the maximum of point in time recovery enabled time and
-     * <code>CurrentTime</code> - <code>PointInTimeRecoveryPeriod</code>.</p>
+     * <p>Specifies the earliest point in time you can restore your table to. It You
+     * can restore your table to any point in time during the last 35 days. </p>
      */
     inline void SetEarliestRestorableDateTime(const Aws::Utils::DateTime& value) { m_earliestRestorableDateTimeHasBeenSet = true; m_earliestRestorableDateTime = value; }
 
     /**
-     * <p>Specifies the earliest point in time you can restore your table to. It is
-     * equal to the maximum of point in time recovery enabled time and
-     * <code>CurrentTime</code> - <code>PointInTimeRecoveryPeriod</code>.</p>
+     * <p>Specifies the earliest point in time you can restore your table to. It You
+     * can restore your table to any point in time during the last 35 days. </p>
      */
     inline void SetEarliestRestorableDateTime(Aws::Utils::DateTime&& value) { m_earliestRestorableDateTimeHasBeenSet = true; m_earliestRestorableDateTime = std::move(value); }
 
     /**
-     * <p>Specifies the earliest point in time you can restore your table to. It is
-     * equal to the maximum of point in time recovery enabled time and
-     * <code>CurrentTime</code> - <code>PointInTimeRecoveryPeriod</code>.</p>
+     * <p>Specifies the earliest point in time you can restore your table to. It You
+     * can restore your table to any point in time during the last 35 days. </p>
      */
     inline PointInTimeRecoveryDescription& WithEarliestRestorableDateTime(const Aws::Utils::DateTime& value) { SetEarliestRestorableDateTime(value); return *this;}
 
     /**
-     * <p>Specifies the earliest point in time you can restore your table to. It is
-     * equal to the maximum of point in time recovery enabled time and
-     * <code>CurrentTime</code> - <code>PointInTimeRecoveryPeriod</code>.</p>
+     * <p>Specifies the earliest point in time you can restore your table to. It You
+     * can restore your table to any point in time during the last 35 days. </p>
      */
     inline PointInTimeRecoveryDescription& WithEarliestRestorableDateTime(Aws::Utils::DateTime&& value) { SetEarliestRestorableDateTime(std::move(value)); return *this;}
 
 
     /**
-     * <p> <code>LatestRestorableDateTime</code> is 5 minutes from now and there is a
-     * +/- 1 minute fuzziness on the restore times. </p>
+     * <p> <code>LatestRestorableDateTime</code> is typically 5 minutes before the
+     * current time. </p>
      */
     inline const Aws::Utils::DateTime& GetLatestRestorableDateTime() const{ return m_latestRestorableDateTime; }
 
     /**
-     * <p> <code>LatestRestorableDateTime</code> is 5 minutes from now and there is a
-     * +/- 1 minute fuzziness on the restore times. </p>
+     * <p> <code>LatestRestorableDateTime</code> is typically 5 minutes before the
+     * current time. </p>
      */
     inline void SetLatestRestorableDateTime(const Aws::Utils::DateTime& value) { m_latestRestorableDateTimeHasBeenSet = true; m_latestRestorableDateTime = value; }
 
     /**
-     * <p> <code>LatestRestorableDateTime</code> is 5 minutes from now and there is a
-     * +/- 1 minute fuzziness on the restore times. </p>
+     * <p> <code>LatestRestorableDateTime</code> is typically 5 minutes before the
+     * current time. </p>
      */
     inline void SetLatestRestorableDateTime(Aws::Utils::DateTime&& value) { m_latestRestorableDateTimeHasBeenSet = true; m_latestRestorableDateTime = std::move(value); }
 
     /**
-     * <p> <code>LatestRestorableDateTime</code> is 5 minutes from now and there is a
-     * +/- 1 minute fuzziness on the restore times. </p>
+     * <p> <code>LatestRestorableDateTime</code> is typically 5 minutes before the
+     * current time. </p>
      */
     inline PointInTimeRecoveryDescription& WithLatestRestorableDateTime(const Aws::Utils::DateTime& value) { SetLatestRestorableDateTime(value); return *this;}
 
     /**
-     * <p> <code>LatestRestorableDateTime</code> is 5 minutes from now and there is a
-     * +/- 1 minute fuzziness on the restore times. </p>
+     * <p> <code>LatestRestorableDateTime</code> is typically 5 minutes before the
+     * current time. </p>
      */
     inline PointInTimeRecoveryDescription& WithLatestRestorableDateTime(Aws::Utils::DateTime&& value) { SetLatestRestorableDateTime(std::move(value)); return *this;}
 

@@ -27,20 +27,29 @@
 #include <aws/workspaces/WorkSpacesClient.h>
 #include <aws/workspaces/WorkSpacesEndpoint.h>
 #include <aws/workspaces/WorkSpacesErrorMarshaller.h>
+#include <aws/workspaces/model/AssociateIpGroupsRequest.h>
+#include <aws/workspaces/model/AuthorizeIpRulesRequest.h>
+#include <aws/workspaces/model/CreateIpGroupRequest.h>
 #include <aws/workspaces/model/CreateTagsRequest.h>
 #include <aws/workspaces/model/CreateWorkspacesRequest.h>
+#include <aws/workspaces/model/DeleteIpGroupRequest.h>
 #include <aws/workspaces/model/DeleteTagsRequest.h>
+#include <aws/workspaces/model/DescribeIpGroupsRequest.h>
 #include <aws/workspaces/model/DescribeTagsRequest.h>
 #include <aws/workspaces/model/DescribeWorkspaceBundlesRequest.h>
 #include <aws/workspaces/model/DescribeWorkspaceDirectoriesRequest.h>
 #include <aws/workspaces/model/DescribeWorkspacesRequest.h>
 #include <aws/workspaces/model/DescribeWorkspacesConnectionStatusRequest.h>
+#include <aws/workspaces/model/DisassociateIpGroupsRequest.h>
 #include <aws/workspaces/model/ModifyWorkspacePropertiesRequest.h>
+#include <aws/workspaces/model/ModifyWorkspaceStateRequest.h>
 #include <aws/workspaces/model/RebootWorkspacesRequest.h>
 #include <aws/workspaces/model/RebuildWorkspacesRequest.h>
+#include <aws/workspaces/model/RevokeIpRulesRequest.h>
 #include <aws/workspaces/model/StartWorkspacesRequest.h>
 #include <aws/workspaces/model/StopWorkspacesRequest.h>
 #include <aws/workspaces/model/TerminateWorkspacesRequest.h>
+#include <aws/workspaces/model/UpdateRulesOfIpGroupRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -104,6 +113,111 @@ void WorkSpacesClient::init(const ClientConfiguration& config)
   }
 
   m_uri = ss.str();
+}
+
+AssociateIpGroupsOutcome WorkSpacesClient::AssociateIpGroups(const AssociateIpGroupsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return AssociateIpGroupsOutcome(AssociateIpGroupsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AssociateIpGroupsOutcome(outcome.GetError());
+  }
+}
+
+AssociateIpGroupsOutcomeCallable WorkSpacesClient::AssociateIpGroupsCallable(const AssociateIpGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateIpGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateIpGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::AssociateIpGroupsAsync(const AssociateIpGroupsRequest& request, const AssociateIpGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateIpGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::AssociateIpGroupsAsyncHelper(const AssociateIpGroupsRequest& request, const AssociateIpGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateIpGroups(request), context);
+}
+
+AuthorizeIpRulesOutcome WorkSpacesClient::AuthorizeIpRules(const AuthorizeIpRulesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return AuthorizeIpRulesOutcome(AuthorizeIpRulesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AuthorizeIpRulesOutcome(outcome.GetError());
+  }
+}
+
+AuthorizeIpRulesOutcomeCallable WorkSpacesClient::AuthorizeIpRulesCallable(const AuthorizeIpRulesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AuthorizeIpRulesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AuthorizeIpRules(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::AuthorizeIpRulesAsync(const AuthorizeIpRulesRequest& request, const AuthorizeIpRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AuthorizeIpRulesAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::AuthorizeIpRulesAsyncHelper(const AuthorizeIpRulesRequest& request, const AuthorizeIpRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AuthorizeIpRules(request), context);
+}
+
+CreateIpGroupOutcome WorkSpacesClient::CreateIpGroup(const CreateIpGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateIpGroupOutcome(CreateIpGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateIpGroupOutcome(outcome.GetError());
+  }
+}
+
+CreateIpGroupOutcomeCallable WorkSpacesClient::CreateIpGroupCallable(const CreateIpGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateIpGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateIpGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::CreateIpGroupAsync(const CreateIpGroupRequest& request, const CreateIpGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateIpGroupAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::CreateIpGroupAsyncHelper(const CreateIpGroupRequest& request, const CreateIpGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateIpGroup(request), context);
 }
 
 CreateTagsOutcome WorkSpacesClient::CreateTags(const CreateTagsRequest& request) const
@@ -176,6 +290,41 @@ void WorkSpacesClient::CreateWorkspacesAsyncHelper(const CreateWorkspacesRequest
   handler(this, request, CreateWorkspaces(request), context);
 }
 
+DeleteIpGroupOutcome WorkSpacesClient::DeleteIpGroup(const DeleteIpGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteIpGroupOutcome(DeleteIpGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteIpGroupOutcome(outcome.GetError());
+  }
+}
+
+DeleteIpGroupOutcomeCallable WorkSpacesClient::DeleteIpGroupCallable(const DeleteIpGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteIpGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteIpGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::DeleteIpGroupAsync(const DeleteIpGroupRequest& request, const DeleteIpGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteIpGroupAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::DeleteIpGroupAsyncHelper(const DeleteIpGroupRequest& request, const DeleteIpGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteIpGroup(request), context);
+}
+
 DeleteTagsOutcome WorkSpacesClient::DeleteTags(const DeleteTagsRequest& request) const
 {
   Aws::StringStream ss;
@@ -209,6 +358,41 @@ void WorkSpacesClient::DeleteTagsAsync(const DeleteTagsRequest& request, const D
 void WorkSpacesClient::DeleteTagsAsyncHelper(const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteTags(request), context);
+}
+
+DescribeIpGroupsOutcome WorkSpacesClient::DescribeIpGroups(const DescribeIpGroupsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeIpGroupsOutcome(DescribeIpGroupsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeIpGroupsOutcome(outcome.GetError());
+  }
+}
+
+DescribeIpGroupsOutcomeCallable WorkSpacesClient::DescribeIpGroupsCallable(const DescribeIpGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeIpGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeIpGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::DescribeIpGroupsAsync(const DescribeIpGroupsRequest& request, const DescribeIpGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeIpGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::DescribeIpGroupsAsyncHelper(const DescribeIpGroupsRequest& request, const DescribeIpGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeIpGroups(request), context);
 }
 
 DescribeTagsOutcome WorkSpacesClient::DescribeTags(const DescribeTagsRequest& request) const
@@ -386,6 +570,41 @@ void WorkSpacesClient::DescribeWorkspacesConnectionStatusAsyncHelper(const Descr
   handler(this, request, DescribeWorkspacesConnectionStatus(request), context);
 }
 
+DisassociateIpGroupsOutcome WorkSpacesClient::DisassociateIpGroups(const DisassociateIpGroupsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DisassociateIpGroupsOutcome(DisassociateIpGroupsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DisassociateIpGroupsOutcome(outcome.GetError());
+  }
+}
+
+DisassociateIpGroupsOutcomeCallable WorkSpacesClient::DisassociateIpGroupsCallable(const DisassociateIpGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateIpGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateIpGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::DisassociateIpGroupsAsync(const DisassociateIpGroupsRequest& request, const DisassociateIpGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateIpGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::DisassociateIpGroupsAsyncHelper(const DisassociateIpGroupsRequest& request, const DisassociateIpGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateIpGroups(request), context);
+}
+
 ModifyWorkspacePropertiesOutcome WorkSpacesClient::ModifyWorkspaceProperties(const ModifyWorkspacePropertiesRequest& request) const
 {
   Aws::StringStream ss;
@@ -419,6 +638,41 @@ void WorkSpacesClient::ModifyWorkspacePropertiesAsync(const ModifyWorkspacePrope
 void WorkSpacesClient::ModifyWorkspacePropertiesAsyncHelper(const ModifyWorkspacePropertiesRequest& request, const ModifyWorkspacePropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ModifyWorkspaceProperties(request), context);
+}
+
+ModifyWorkspaceStateOutcome WorkSpacesClient::ModifyWorkspaceState(const ModifyWorkspaceStateRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ModifyWorkspaceStateOutcome(ModifyWorkspaceStateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ModifyWorkspaceStateOutcome(outcome.GetError());
+  }
+}
+
+ModifyWorkspaceStateOutcomeCallable WorkSpacesClient::ModifyWorkspaceStateCallable(const ModifyWorkspaceStateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyWorkspaceStateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyWorkspaceState(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::ModifyWorkspaceStateAsync(const ModifyWorkspaceStateRequest& request, const ModifyWorkspaceStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyWorkspaceStateAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::ModifyWorkspaceStateAsyncHelper(const ModifyWorkspaceStateRequest& request, const ModifyWorkspaceStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyWorkspaceState(request), context);
 }
 
 RebootWorkspacesOutcome WorkSpacesClient::RebootWorkspaces(const RebootWorkspacesRequest& request) const
@@ -489,6 +743,41 @@ void WorkSpacesClient::RebuildWorkspacesAsync(const RebuildWorkspacesRequest& re
 void WorkSpacesClient::RebuildWorkspacesAsyncHelper(const RebuildWorkspacesRequest& request, const RebuildWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RebuildWorkspaces(request), context);
+}
+
+RevokeIpRulesOutcome WorkSpacesClient::RevokeIpRules(const RevokeIpRulesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return RevokeIpRulesOutcome(RevokeIpRulesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RevokeIpRulesOutcome(outcome.GetError());
+  }
+}
+
+RevokeIpRulesOutcomeCallable WorkSpacesClient::RevokeIpRulesCallable(const RevokeIpRulesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RevokeIpRulesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RevokeIpRules(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::RevokeIpRulesAsync(const RevokeIpRulesRequest& request, const RevokeIpRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RevokeIpRulesAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::RevokeIpRulesAsyncHelper(const RevokeIpRulesRequest& request, const RevokeIpRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RevokeIpRules(request), context);
 }
 
 StartWorkspacesOutcome WorkSpacesClient::StartWorkspaces(const StartWorkspacesRequest& request) const
@@ -594,5 +883,40 @@ void WorkSpacesClient::TerminateWorkspacesAsync(const TerminateWorkspacesRequest
 void WorkSpacesClient::TerminateWorkspacesAsyncHelper(const TerminateWorkspacesRequest& request, const TerminateWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, TerminateWorkspaces(request), context);
+}
+
+UpdateRulesOfIpGroupOutcome WorkSpacesClient::UpdateRulesOfIpGroup(const UpdateRulesOfIpGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateRulesOfIpGroupOutcome(UpdateRulesOfIpGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateRulesOfIpGroupOutcome(outcome.GetError());
+  }
+}
+
+UpdateRulesOfIpGroupOutcomeCallable WorkSpacesClient::UpdateRulesOfIpGroupCallable(const UpdateRulesOfIpGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateRulesOfIpGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRulesOfIpGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::UpdateRulesOfIpGroupAsync(const UpdateRulesOfIpGroupRequest& request, const UpdateRulesOfIpGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateRulesOfIpGroupAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::UpdateRulesOfIpGroupAsyncHelper(const UpdateRulesOfIpGroupRequest& request, const UpdateRulesOfIpGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateRulesOfIpGroup(request), context);
 }
 

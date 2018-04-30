@@ -47,6 +47,7 @@
 #include <aws/alexaforbusiness/model/GetRoomResult.h>
 #include <aws/alexaforbusiness/model/GetRoomSkillParameterResult.h>
 #include <aws/alexaforbusiness/model/GetSkillGroupResult.h>
+#include <aws/alexaforbusiness/model/ListDeviceEventsResult.h>
 #include <aws/alexaforbusiness/model/ListSkillsResult.h>
 #include <aws/alexaforbusiness/model/ListTagsResult.h>
 #include <aws/alexaforbusiness/model/PutRoomSkillParameterResult.h>
@@ -140,6 +141,7 @@ namespace Model
         class GetRoomRequest;
         class GetRoomSkillParameterRequest;
         class GetSkillGroupRequest;
+        class ListDeviceEventsRequest;
         class ListSkillsRequest;
         class ListTagsRequest;
         class PutRoomSkillParameterRequest;
@@ -189,6 +191,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetRoomResult, Aws::Client::AWSError<AlexaForBusinessErrors>> GetRoomOutcome;
         typedef Aws::Utils::Outcome<GetRoomSkillParameterResult, Aws::Client::AWSError<AlexaForBusinessErrors>> GetRoomSkillParameterOutcome;
         typedef Aws::Utils::Outcome<GetSkillGroupResult, Aws::Client::AWSError<AlexaForBusinessErrors>> GetSkillGroupOutcome;
+        typedef Aws::Utils::Outcome<ListDeviceEventsResult, Aws::Client::AWSError<AlexaForBusinessErrors>> ListDeviceEventsOutcome;
         typedef Aws::Utils::Outcome<ListSkillsResult, Aws::Client::AWSError<AlexaForBusinessErrors>> ListSkillsOutcome;
         typedef Aws::Utils::Outcome<ListTagsResult, Aws::Client::AWSError<AlexaForBusinessErrors>> ListTagsOutcome;
         typedef Aws::Utils::Outcome<PutRoomSkillParameterResult, Aws::Client::AWSError<AlexaForBusinessErrors>> PutRoomSkillParameterOutcome;
@@ -238,6 +241,7 @@ namespace Model
         typedef std::future<GetRoomOutcome> GetRoomOutcomeCallable;
         typedef std::future<GetRoomSkillParameterOutcome> GetRoomSkillParameterOutcomeCallable;
         typedef std::future<GetSkillGroupOutcome> GetSkillGroupOutcomeCallable;
+        typedef std::future<ListDeviceEventsOutcome> ListDeviceEventsOutcomeCallable;
         typedef std::future<ListSkillsOutcome> ListSkillsOutcomeCallable;
         typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
         typedef std::future<PutRoomSkillParameterOutcome> PutRoomSkillParameterOutcomeCallable;
@@ -290,6 +294,7 @@ namespace Model
     typedef std::function<void(const AlexaForBusinessClient*, const Model::GetRoomRequest&, const Model::GetRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRoomResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::GetRoomSkillParameterRequest&, const Model::GetRoomSkillParameterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRoomSkillParameterResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::GetSkillGroupRequest&, const Model::GetSkillGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSkillGroupResponseReceivedHandler;
+    typedef std::function<void(const AlexaForBusinessClient*, const Model::ListDeviceEventsRequest&, const Model::ListDeviceEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeviceEventsResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::ListSkillsRequest&, const Model::ListSkillsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSkillsResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::ListTagsRequest&, const Model::ListTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::PutRoomSkillParameterRequest&, const Model::PutRoomSkillParameterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRoomSkillParameterResponseReceivedHandler;
@@ -315,12 +320,12 @@ namespace Model
 
   /**
    * <p>Alexa for Business makes it easy for you to use Alexa in your organization.
-   * Alexa for Business gives you the tools you need to manage Alexa devices, enroll
-   * your users, and assign skills, at scale. You can build your own context-aware
-   * voice skills using the Alexa Skills Kit, and the Alexa for Business APIs, and
-   * you can make these available as private skills for your organization. Alexa for
-   * Business also makes it easy to voice-enable your products and services,
-   * providing context-aware voice experiences for your customers.</p>
+   * Alexa for Business gives you the tools you need for managing Alexa devices,
+   * enroll your users, and assign skills, at scale. You can build your own
+   * context-aware voice skills using the Alexa Skills Kit and the Alexa for Business
+   * API operations. You can make also these available as private skills for your
+   * organization. Alexa for Business makes it easy to voice-enable your products and
+   * services, providing context-aware voice experiences for your customers.</p>
    */
   class AWS_ALEXAFORBUSINESS_API AlexaForBusinessClient : public Aws::Client::AWSJsonClient
   {
@@ -352,14 +357,14 @@ namespace Model
 
 
         /**
-         * <p>Associates a contact to a given address book.</p><p><h3>See Also:</h3>   <a
+         * <p>Associates a contact with a given address book.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateContactWithAddressBook">AWS
          * API Reference</a></p>
          */
         virtual Model::AssociateContactWithAddressBookOutcome AssociateContactWithAddressBook(const Model::AssociateContactWithAddressBookRequest& request) const;
 
         /**
-         * <p>Associates a contact to a given address book.</p><p><h3>See Also:</h3>   <a
+         * <p>Associates a contact with a given address book.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateContactWithAddressBook">AWS
          * API Reference</a></p>
          *
@@ -368,7 +373,7 @@ namespace Model
         virtual Model::AssociateContactWithAddressBookOutcomeCallable AssociateContactWithAddressBookCallable(const Model::AssociateContactWithAddressBookRequest& request) const;
 
         /**
-         * <p>Associates a contact to a given address book.</p><p><h3>See Also:</h3>   <a
+         * <p>Associates a contact with a given address book.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateContactWithAddressBook">AWS
          * API Reference</a></p>
          *
@@ -377,9 +382,9 @@ namespace Model
         virtual void AssociateContactWithAddressBookAsync(const Model::AssociateContactWithAddressBookRequest& request, const AssociateContactWithAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Associates a device to a given room. This applies all the settings from the
+         * <p>Associates a device with a given room. This applies all the settings from the
          * room profile to the device, and all the skills in any skill groups added to that
-         * room. This operation requires the device to be online, or a manual sync is
+         * room. This operation requires the device to be online, or else a manual sync is
          * required. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithRoom">AWS
          * API Reference</a></p>
@@ -387,9 +392,9 @@ namespace Model
         virtual Model::AssociateDeviceWithRoomOutcome AssociateDeviceWithRoom(const Model::AssociateDeviceWithRoomRequest& request) const;
 
         /**
-         * <p>Associates a device to a given room. This applies all the settings from the
+         * <p>Associates a device with a given room. This applies all the settings from the
          * room profile to the device, and all the skills in any skill groups added to that
-         * room. This operation requires the device to be online, or a manual sync is
+         * room. This operation requires the device to be online, or else a manual sync is
          * required. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithRoom">AWS
          * API Reference</a></p>
@@ -399,9 +404,9 @@ namespace Model
         virtual Model::AssociateDeviceWithRoomOutcomeCallable AssociateDeviceWithRoomCallable(const Model::AssociateDeviceWithRoomRequest& request) const;
 
         /**
-         * <p>Associates a device to a given room. This applies all the settings from the
+         * <p>Associates a device with a given room. This applies all the settings from the
          * room profile to the device, and all the skills in any skill groups added to that
-         * room. This operation requires the device to be online, or a manual sync is
+         * room. This operation requires the device to be online, or else a manual sync is
          * required. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithRoom">AWS
          * API Reference</a></p>
@@ -411,7 +416,7 @@ namespace Model
         virtual void AssociateDeviceWithRoomAsync(const Model::AssociateDeviceWithRoomRequest& request, const AssociateDeviceWithRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Associates a skill group to a given room. This enables all skills in the
+         * <p>Associates a skill group with a given room. This enables all skills in the
          * associated skill group on all devices in the room.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillGroupWithRoom">AWS
          * API Reference</a></p>
@@ -419,7 +424,7 @@ namespace Model
         virtual Model::AssociateSkillGroupWithRoomOutcome AssociateSkillGroupWithRoom(const Model::AssociateSkillGroupWithRoomRequest& request) const;
 
         /**
-         * <p>Associates a skill group to a given room. This enables all skills in the
+         * <p>Associates a skill group with a given room. This enables all skills in the
          * associated skill group on all devices in the room.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillGroupWithRoom">AWS
          * API Reference</a></p>
@@ -429,7 +434,7 @@ namespace Model
         virtual Model::AssociateSkillGroupWithRoomOutcomeCallable AssociateSkillGroupWithRoomCallable(const Model::AssociateSkillGroupWithRoomRequest& request) const;
 
         /**
-         * <p>Associates a skill group to a given room. This enables all skills in the
+         * <p>Associates a skill group with a given room. This enables all skills in the
          * associated skill group on all devices in the room.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillGroupWithRoom">AWS
          * API Reference</a></p>
@@ -1056,6 +1061,43 @@ namespace Model
         virtual void GetSkillGroupAsync(const Model::GetSkillGroupRequest& request, const GetSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the Device Event history for up to 30 days. If EventType isn't
+         * specified in the request, this returns a list of all device events in reverse
+         * chronological order. If EventType is specified, this returns a list of device
+         * events for that EventType in reverse chronological order. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListDeviceEvents">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDeviceEventsOutcome ListDeviceEvents(const Model::ListDeviceEventsRequest& request) const;
+
+        /**
+         * <p>Lists the Device Event history for up to 30 days. If EventType isn't
+         * specified in the request, this returns a list of all device events in reverse
+         * chronological order. If EventType is specified, this returns a list of device
+         * events for that EventType in reverse chronological order. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListDeviceEvents">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListDeviceEventsOutcomeCallable ListDeviceEventsCallable(const Model::ListDeviceEventsRequest& request) const;
+
+        /**
+         * <p>Lists the Device Event history for up to 30 days. If EventType isn't
+         * specified in the request, this returns a list of all device events in reverse
+         * chronological order. If EventType is specified, this returns a list of device
+         * events for that EventType in reverse chronological order. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListDeviceEvents">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListDeviceEventsAsync(const Model::ListDeviceEventsRequest& request, const ListDeviceEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists all enabled skills in a specific skill group.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkills">AWS
@@ -1420,16 +1462,18 @@ namespace Model
         virtual void SendInvitationAsync(const Model::SendInvitationRequest& request, const SendInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Resets a device and its account to the known default settings by clearing all
-         * information and settings set by previous users.</p><p><h3>See Also:</h3>   <a
+         * <p>Resets a device and its account to the known default settings, by clearing
+         * all information and settings set by previous users.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartDeviceSync">AWS
          * API Reference</a></p>
          */
         virtual Model::StartDeviceSyncOutcome StartDeviceSync(const Model::StartDeviceSyncRequest& request) const;
 
         /**
-         * <p>Resets a device and its account to the known default settings by clearing all
-         * information and settings set by previous users.</p><p><h3>See Also:</h3>   <a
+         * <p>Resets a device and its account to the known default settings, by clearing
+         * all information and settings set by previous users.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartDeviceSync">AWS
          * API Reference</a></p>
          *
@@ -1438,8 +1482,9 @@ namespace Model
         virtual Model::StartDeviceSyncOutcomeCallable StartDeviceSyncCallable(const Model::StartDeviceSyncRequest& request) const;
 
         /**
-         * <p>Resets a device and its account to the known default settings by clearing all
-         * information and settings set by previous users.</p><p><h3>See Also:</h3>   <a
+         * <p>Resets a device and its account to the known default settings, by clearing
+         * all information and settings set by previous users.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartDeviceSync">AWS
          * API Reference</a></p>
          *
@@ -1687,6 +1732,7 @@ namespace Model
         void GetRoomAsyncHelper(const Model::GetRoomRequest& request, const GetRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRoomSkillParameterAsyncHelper(const Model::GetRoomSkillParameterRequest& request, const GetRoomSkillParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSkillGroupAsyncHelper(const Model::GetSkillGroupRequest& request, const GetSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListDeviceEventsAsyncHelper(const Model::ListDeviceEventsRequest& request, const ListDeviceEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSkillsAsyncHelper(const Model::ListSkillsRequest& request, const ListSkillsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsAsyncHelper(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRoomSkillParameterAsyncHelper(const Model::PutRoomSkillParameterRequest& request, const PutRoomSkillParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

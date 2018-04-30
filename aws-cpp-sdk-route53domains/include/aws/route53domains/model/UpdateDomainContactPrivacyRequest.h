@@ -86,75 +86,93 @@ namespace Model
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
-     * specify <code>true</code>, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact information
-     * that you enter.</p>
+     * specify <code>true</code>, WHOIS ("who is") queries return contact information
+     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
+     * registrar associate, Gandi (for all other TLDs). If you specify
+     * <code>false</code>, WHOIS queries return the information that you entered for
+     * the admin contact.</p>
      */
     inline bool GetAdminPrivacy() const{ return m_adminPrivacy; }
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
-     * specify <code>true</code>, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact information
-     * that you enter.</p>
+     * specify <code>true</code>, WHOIS ("who is") queries return contact information
+     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
+     * registrar associate, Gandi (for all other TLDs). If you specify
+     * <code>false</code>, WHOIS queries return the information that you entered for
+     * the admin contact.</p>
      */
     inline void SetAdminPrivacy(bool value) { m_adminPrivacyHasBeenSet = true; m_adminPrivacy = value; }
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
-     * specify <code>true</code>, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact information
-     * that you enter.</p>
+     * specify <code>true</code>, WHOIS ("who is") queries return contact information
+     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
+     * registrar associate, Gandi (for all other TLDs). If you specify
+     * <code>false</code>, WHOIS queries return the information that you entered for
+     * the admin contact.</p>
      */
     inline UpdateDomainContactPrivacyRequest& WithAdminPrivacy(bool value) { SetAdminPrivacy(value); return *this;}
 
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
-     * specify <code>true</code>, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact information
-     * that you enter.</p>
+     * specify <code>true</code>, WHOIS ("who is") queries return contact information
+     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
+     * registrar associate, Gandi (for all other TLDs). If you specify
+     * <code>false</code>, WHOIS queries return the information that you entered for
+     * the registrant contact (domain owner).</p>
      */
     inline bool GetRegistrantPrivacy() const{ return m_registrantPrivacy; }
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
-     * specify <code>true</code>, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact information
-     * that you enter.</p>
+     * specify <code>true</code>, WHOIS ("who is") queries return contact information
+     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
+     * registrar associate, Gandi (for all other TLDs). If you specify
+     * <code>false</code>, WHOIS queries return the information that you entered for
+     * the registrant contact (domain owner).</p>
      */
     inline void SetRegistrantPrivacy(bool value) { m_registrantPrivacyHasBeenSet = true; m_registrantPrivacy = value; }
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
-     * specify <code>true</code>, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact information
-     * that you enter.</p>
+     * specify <code>true</code>, WHOIS ("who is") queries return contact information
+     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
+     * registrar associate, Gandi (for all other TLDs). If you specify
+     * <code>false</code>, WHOIS queries return the information that you entered for
+     * the registrant contact (domain owner).</p>
      */
     inline UpdateDomainContactPrivacyRequest& WithRegistrantPrivacy(bool value) { SetRegistrantPrivacy(value); return *this;}
 
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
-     * specify <code>true</code>, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact information
-     * that you enter.</p>
+     * specify <code>true</code>, WHOIS ("who is") queries return contact information
+     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
+     * registrar associate, Gandi (for all other TLDs). If you specify
+     * <code>false</code>, WHOIS queries return the information that you entered for
+     * the technical contact.</p>
      */
     inline bool GetTechPrivacy() const{ return m_techPrivacy; }
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
-     * specify <code>true</code>, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact information
-     * that you enter.</p>
+     * specify <code>true</code>, WHOIS ("who is") queries return contact information
+     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
+     * registrar associate, Gandi (for all other TLDs). If you specify
+     * <code>false</code>, WHOIS queries return the information that you entered for
+     * the technical contact.</p>
      */
     inline void SetTechPrivacy(bool value) { m_techPrivacyHasBeenSet = true; m_techPrivacy = value; }
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
-     * specify <code>true</code>, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact information
-     * that you enter.</p>
+     * specify <code>true</code>, WHOIS ("who is") queries return contact information
+     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
+     * registrar associate, Gandi (for all other TLDs). If you specify
+     * <code>false</code>, WHOIS queries return the information that you entered for
+     * the technical contact.</p>
      */
     inline UpdateDomainContactPrivacyRequest& WithTechPrivacy(bool value) { SetTechPrivacy(value); return *this;}
 

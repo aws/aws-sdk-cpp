@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/alexaforbusiness/AlexaForBusiness_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/alexaforbusiness/model/ConnectionStatus.h>
 #include <aws/alexaforbusiness/model/DeviceStatusDetail.h>
 #include <utility>
 
@@ -82,10 +83,44 @@ namespace Model
      */
     inline DeviceStatusInfo& AddDeviceStatusDetails(DeviceStatusDetail&& value) { m_deviceStatusDetailsHasBeenSet = true; m_deviceStatusDetails.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The latest available information about the connection status of a device.
+     * </p>
+     */
+    inline const ConnectionStatus& GetConnectionStatus() const{ return m_connectionStatus; }
+
+    /**
+     * <p>The latest available information about the connection status of a device.
+     * </p>
+     */
+    inline void SetConnectionStatus(const ConnectionStatus& value) { m_connectionStatusHasBeenSet = true; m_connectionStatus = value; }
+
+    /**
+     * <p>The latest available information about the connection status of a device.
+     * </p>
+     */
+    inline void SetConnectionStatus(ConnectionStatus&& value) { m_connectionStatusHasBeenSet = true; m_connectionStatus = std::move(value); }
+
+    /**
+     * <p>The latest available information about the connection status of a device.
+     * </p>
+     */
+    inline DeviceStatusInfo& WithConnectionStatus(const ConnectionStatus& value) { SetConnectionStatus(value); return *this;}
+
+    /**
+     * <p>The latest available information about the connection status of a device.
+     * </p>
+     */
+    inline DeviceStatusInfo& WithConnectionStatus(ConnectionStatus&& value) { SetConnectionStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<DeviceStatusDetail> m_deviceStatusDetails;
     bool m_deviceStatusDetailsHasBeenSet;
+
+    ConnectionStatus m_connectionStatus;
+    bool m_connectionStatusHasBeenSet;
   };
 
 } // namespace Model

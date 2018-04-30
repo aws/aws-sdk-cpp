@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
 #include <aws/route53domains/Route53DomainsRequest.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -46,6 +47,42 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+
+    /**
+     * <p>An optional parameter that lets you get information about all the operations
+     * that you submitted after a specified date and time. Specify the date and time in
+     * Coordinated Universal time (UTC).</p>
+     */
+    inline const Aws::Utils::DateTime& GetSubmittedSince() const{ return m_submittedSince; }
+
+    /**
+     * <p>An optional parameter that lets you get information about all the operations
+     * that you submitted after a specified date and time. Specify the date and time in
+     * Coordinated Universal time (UTC).</p>
+     */
+    inline void SetSubmittedSince(const Aws::Utils::DateTime& value) { m_submittedSinceHasBeenSet = true; m_submittedSince = value; }
+
+    /**
+     * <p>An optional parameter that lets you get information about all the operations
+     * that you submitted after a specified date and time. Specify the date and time in
+     * Coordinated Universal time (UTC).</p>
+     */
+    inline void SetSubmittedSince(Aws::Utils::DateTime&& value) { m_submittedSinceHasBeenSet = true; m_submittedSince = std::move(value); }
+
+    /**
+     * <p>An optional parameter that lets you get information about all the operations
+     * that you submitted after a specified date and time. Specify the date and time in
+     * Coordinated Universal time (UTC).</p>
+     */
+    inline ListOperationsRequest& WithSubmittedSince(const Aws::Utils::DateTime& value) { SetSubmittedSince(value); return *this;}
+
+    /**
+     * <p>An optional parameter that lets you get information about all the operations
+     * that you submitted after a specified date and time. Specify the date and time in
+     * Coordinated Universal time (UTC).</p>
+     */
+    inline ListOperationsRequest& WithSubmittedSince(Aws::Utils::DateTime&& value) { SetSubmittedSince(std::move(value)); return *this;}
 
 
     /**
@@ -135,6 +172,9 @@ namespace Model
     inline ListOperationsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
   private:
+
+    Aws::Utils::DateTime m_submittedSince;
+    bool m_submittedSinceHasBeenSet;
 
     Aws::String m_marker;
     bool m_markerHasBeenSet;

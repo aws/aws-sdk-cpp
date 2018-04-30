@@ -46,42 +46,42 @@ namespace Model
 
 
     /**
-     * <p>The identifiers of the WorkSpaces.</p>
+     * <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
      */
     inline const Aws::Vector<Aws::String>& GetWorkspaceIds() const{ return m_workspaceIds; }
 
     /**
-     * <p>The identifiers of the WorkSpaces.</p>
+     * <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
      */
     inline void SetWorkspaceIds(const Aws::Vector<Aws::String>& value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds = value; }
 
     /**
-     * <p>The identifiers of the WorkSpaces.</p>
+     * <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
      */
     inline void SetWorkspaceIds(Aws::Vector<Aws::String>&& value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds = std::move(value); }
 
     /**
-     * <p>The identifiers of the WorkSpaces.</p>
+     * <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
      */
     inline DescribeWorkspacesConnectionStatusRequest& WithWorkspaceIds(const Aws::Vector<Aws::String>& value) { SetWorkspaceIds(value); return *this;}
 
     /**
-     * <p>The identifiers of the WorkSpaces.</p>
+     * <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
      */
     inline DescribeWorkspacesConnectionStatusRequest& WithWorkspaceIds(Aws::Vector<Aws::String>&& value) { SetWorkspaceIds(std::move(value)); return *this;}
 
     /**
-     * <p>The identifiers of the WorkSpaces.</p>
+     * <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
      */
     inline DescribeWorkspacesConnectionStatusRequest& AddWorkspaceIds(const Aws::String& value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds.push_back(value); return *this; }
 
     /**
-     * <p>The identifiers of the WorkSpaces.</p>
+     * <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
      */
     inline DescribeWorkspacesConnectionStatusRequest& AddWorkspaceIds(Aws::String&& value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The identifiers of the WorkSpaces.</p>
+     * <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
      */
     inline DescribeWorkspacesConnectionStatusRequest& AddWorkspaceIds(const char* value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds.push_back(value); return *this; }
 

@@ -120,6 +120,12 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("VpcConfig"))
+  {
+    m_vpcConfig = jsonValue.GetObject("VpcConfig");
+
+  }
+
   if(jsonValue.ValueExists("StoppingCondition"))
   {
     m_stoppingCondition = jsonValue.GetObject("StoppingCondition");

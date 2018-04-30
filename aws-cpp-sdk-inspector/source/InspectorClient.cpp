@@ -479,7 +479,7 @@ DescribeCrossAccountAccessRoleOutcome InspectorClient::DescribeCrossAccountAcces
   Aws::StringStream ss;
   ss << m_uri << "/";
 
-  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "{operation.name}");
+  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "DescribeCrossAccountAccessRole");
   if(outcome.IsSuccess())
   {
     return DescribeCrossAccountAccessRoleOutcome(DescribeCrossAccountAccessRoleResult(outcome.GetResult()));

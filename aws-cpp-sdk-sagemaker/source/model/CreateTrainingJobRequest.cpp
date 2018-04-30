@@ -30,6 +30,7 @@ CreateTrainingJobRequest::CreateTrainingJobRequest() :
     m_inputDataConfigHasBeenSet(false),
     m_outputDataConfigHasBeenSet(false),
     m_resourceConfigHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false),
     m_stoppingConditionHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -88,6 +89,12 @@ Aws::String CreateTrainingJobRequest::SerializePayload() const
   if(m_resourceConfigHasBeenSet)
   {
    payload.WithObject("ResourceConfig", m_resourceConfig.Jsonize());
+
+  }
+
+  if(m_vpcConfigHasBeenSet)
+  {
+   payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
 
   }
 

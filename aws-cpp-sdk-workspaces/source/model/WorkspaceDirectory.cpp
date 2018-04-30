@@ -42,7 +42,8 @@ WorkspaceDirectory::WorkspaceDirectory() :
     m_workspaceSecurityGroupIdHasBeenSet(false),
     m_state(WorkspaceDirectoryState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_workspaceCreationPropertiesHasBeenSet(false)
+    m_workspaceCreationPropertiesHasBeenSet(false),
+    m_ipGroupIdsHasBeenSet(false)
 {
 }
 
@@ -60,7 +61,8 @@ WorkspaceDirectory::WorkspaceDirectory(const JsonValue& jsonValue) :
     m_workspaceSecurityGroupIdHasBeenSet(false),
     m_state(WorkspaceDirectoryState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_workspaceCreationPropertiesHasBeenSet(false)
+    m_workspaceCreationPropertiesHasBeenSet(false),
+    m_ipGroupIdsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -157,6 +159,16 @@ WorkspaceDirectory& WorkspaceDirectory::operator =(const JsonValue& jsonValue)
     m_workspaceCreationPropertiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ipGroupIds"))
+  {
+    Array<JsonValue> ipGroupIdsJsonList = jsonValue.GetArray("ipGroupIds");
+    for(unsigned ipGroupIdsIndex = 0; ipGroupIdsIndex < ipGroupIdsJsonList.GetLength(); ++ipGroupIdsIndex)
+    {
+      m_ipGroupIds.push_back(ipGroupIdsJsonList[ipGroupIdsIndex].AsString());
+    }
+    m_ipGroupIdsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -241,6 +253,17 @@ JsonValue WorkspaceDirectory::Jsonize() const
   if(m_workspaceCreationPropertiesHasBeenSet)
   {
    payload.WithObject("WorkspaceCreationProperties", m_workspaceCreationProperties.Jsonize());
+
+  }
+
+  if(m_ipGroupIdsHasBeenSet)
+  {
+   Array<JsonValue> ipGroupIdsJsonList(m_ipGroupIds.size());
+   for(unsigned ipGroupIdsIndex = 0; ipGroupIdsIndex < ipGroupIdsJsonList.GetLength(); ++ipGroupIdsIndex)
+   {
+     ipGroupIdsJsonList[ipGroupIdsIndex].AsString(m_ipGroupIds[ipGroupIdsIndex]);
+   }
+   payload.WithArray("ipGroupIds", std::move(ipGroupIdsJsonList));
 
   }
 

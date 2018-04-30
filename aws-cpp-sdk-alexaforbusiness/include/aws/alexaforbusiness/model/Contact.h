@@ -83,123 +83,109 @@ namespace Model
 
 
     /**
-     * <p>The name of the contact to display on the AWS management console.</p>
+     * <p>The name of the contact to display on the console.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * <p>The name of the contact to display on the AWS management console.</p>
+     * <p>The name of the contact to display on the console.</p>
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
-     * <p>The name of the contact to display on the AWS management console.</p>
+     * <p>The name of the contact to display on the console.</p>
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
-     * <p>The name of the contact to display on the AWS management console.</p>
+     * <p>The name of the contact to display on the console.</p>
      */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
-     * <p>The name of the contact to display on the AWS management console.</p>
+     * <p>The name of the contact to display on the console.</p>
      */
     inline Contact& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>The name of the contact to display on the AWS management console.</p>
+     * <p>The name of the contact to display on the console.</p>
      */
     inline Contact& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the contact to display on the AWS management console.</p>
+     * <p>The name of the contact to display on the console.</p>
      */
     inline Contact& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
 
     /**
-     * <p>The first name of the contact that is used to call the contact on the
-     * device.</p>
+     * <p>The first name of the contact, used to call the contact on the device.</p>
      */
     inline const Aws::String& GetFirstName() const{ return m_firstName; }
 
     /**
-     * <p>The first name of the contact that is used to call the contact on the
-     * device.</p>
+     * <p>The first name of the contact, used to call the contact on the device.</p>
      */
     inline void SetFirstName(const Aws::String& value) { m_firstNameHasBeenSet = true; m_firstName = value; }
 
     /**
-     * <p>The first name of the contact that is used to call the contact on the
-     * device.</p>
+     * <p>The first name of the contact, used to call the contact on the device.</p>
      */
     inline void SetFirstName(Aws::String&& value) { m_firstNameHasBeenSet = true; m_firstName = std::move(value); }
 
     /**
-     * <p>The first name of the contact that is used to call the contact on the
-     * device.</p>
+     * <p>The first name of the contact, used to call the contact on the device.</p>
      */
     inline void SetFirstName(const char* value) { m_firstNameHasBeenSet = true; m_firstName.assign(value); }
 
     /**
-     * <p>The first name of the contact that is used to call the contact on the
-     * device.</p>
+     * <p>The first name of the contact, used to call the contact on the device.</p>
      */
     inline Contact& WithFirstName(const Aws::String& value) { SetFirstName(value); return *this;}
 
     /**
-     * <p>The first name of the contact that is used to call the contact on the
-     * device.</p>
+     * <p>The first name of the contact, used to call the contact on the device.</p>
      */
     inline Contact& WithFirstName(Aws::String&& value) { SetFirstName(std::move(value)); return *this;}
 
     /**
-     * <p>The first name of the contact that is used to call the contact on the
-     * device.</p>
+     * <p>The first name of the contact, used to call the contact on the device.</p>
      */
     inline Contact& WithFirstName(const char* value) { SetFirstName(value); return *this;}
 
 
     /**
-     * <p>The last name of the contact that is used to call the contact on the
-     * device.</p>
+     * <p>The last name of the contact, used to call the contact on the device.</p>
      */
     inline const Aws::String& GetLastName() const{ return m_lastName; }
 
     /**
-     * <p>The last name of the contact that is used to call the contact on the
-     * device.</p>
+     * <p>The last name of the contact, used to call the contact on the device.</p>
      */
     inline void SetLastName(const Aws::String& value) { m_lastNameHasBeenSet = true; m_lastName = value; }
 
     /**
-     * <p>The last name of the contact that is used to call the contact on the
-     * device.</p>
+     * <p>The last name of the contact, used to call the contact on the device.</p>
      */
     inline void SetLastName(Aws::String&& value) { m_lastNameHasBeenSet = true; m_lastName = std::move(value); }
 
     /**
-     * <p>The last name of the contact that is used to call the contact on the
-     * device.</p>
+     * <p>The last name of the contact, used to call the contact on the device.</p>
      */
     inline void SetLastName(const char* value) { m_lastNameHasBeenSet = true; m_lastName.assign(value); }
 
     /**
-     * <p>The last name of the contact that is used to call the contact on the
-     * device.</p>
+     * <p>The last name of the contact, used to call the contact on the device.</p>
      */
     inline Contact& WithLastName(const Aws::String& value) { SetLastName(value); return *this;}
 
     /**
-     * <p>The last name of the contact that is used to call the contact on the
-     * device.</p>
+     * <p>The last name of the contact, used to call the contact on the device.</p>
      */
     inline Contact& WithLastName(Aws::String&& value) { SetLastName(std::move(value)); return *this;}
 
     /**
-     * <p>The last name of the contact that is used to call the contact on the
-     * device.</p>
+     * <p>The last name of the contact, used to call the contact on the device.</p>
      */
     inline Contact& WithLastName(const char* value) { SetLastName(value); return *this;}
 

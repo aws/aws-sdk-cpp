@@ -24,6 +24,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/OutputDataConfig.h>
 #include <aws/sagemaker/model/ResourceConfig.h>
+#include <aws/sagemaker/model/VpcConfig.h>
 #include <aws/sagemaker/model/StoppingCondition.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/Channel.h>
@@ -535,6 +536,37 @@ namespace Model
 
 
     /**
+     * <p>A object that specifies the VPC that this training job has access to. For
+     * more information, see <a>train-vpc</a>.</p>
+     */
+    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+
+    /**
+     * <p>A object that specifies the VPC that this training job has access to. For
+     * more information, see <a>train-vpc</a>.</p>
+     */
+    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfig = value; }
+
+    /**
+     * <p>A object that specifies the VPC that this training job has access to. For
+     * more information, see <a>train-vpc</a>.</p>
+     */
+    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfig = std::move(value); }
+
+    /**
+     * <p>A object that specifies the VPC that this training job has access to. For
+     * more information, see <a>train-vpc</a>.</p>
+     */
+    inline DescribeTrainingJobResult& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
+
+    /**
+     * <p>A object that specifies the VPC that this training job has access to. For
+     * more information, see <a>train-vpc</a>.</p>
+     */
+    inline DescribeTrainingJobResult& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>The condition under which to stop the training job. </p>
      */
     inline const StoppingCondition& GetStoppingCondition() const{ return m_stoppingCondition; }
@@ -693,6 +725,8 @@ namespace Model
     OutputDataConfig m_outputDataConfig;
 
     ResourceConfig m_resourceConfig;
+
+    VpcConfig m_vpcConfig;
 
     StoppingCondition m_stoppingCondition;
 

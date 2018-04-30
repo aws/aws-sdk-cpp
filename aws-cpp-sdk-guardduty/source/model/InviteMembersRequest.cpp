@@ -25,6 +25,8 @@ using namespace Aws::Utils;
 InviteMembersRequest::InviteMembersRequest() : 
     m_accountIdsHasBeenSet(false),
     m_detectorIdHasBeenSet(false),
+    m_disableEmailNotification(false),
+    m_disableEmailNotificationHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
 }
@@ -41,6 +43,12 @@ Aws::String InviteMembersRequest::SerializePayload() const
      accountIdsJsonList[accountIdsIndex].AsString(m_accountIds[accountIdsIndex]);
    }
    payload.WithArray("accountIds", std::move(accountIdsJsonList));
+
+  }
+
+  if(m_disableEmailNotificationHasBeenSet)
+  {
+   payload.WithBool("disableEmailNotification", m_disableEmailNotification);
 
   }
 

@@ -302,31 +302,31 @@ namespace Model
 
     /**
      * <p>The status of a device. If the status is not READY, check the
-     * DeviceStatusInfo for details.</p>
+     * DeviceStatusInfo value for details.</p>
      */
     inline const DeviceStatus& GetDeviceStatus() const{ return m_deviceStatus; }
 
     /**
      * <p>The status of a device. If the status is not READY, check the
-     * DeviceStatusInfo for details.</p>
+     * DeviceStatusInfo value for details.</p>
      */
     inline void SetDeviceStatus(const DeviceStatus& value) { m_deviceStatusHasBeenSet = true; m_deviceStatus = value; }
 
     /**
      * <p>The status of a device. If the status is not READY, check the
-     * DeviceStatusInfo for details.</p>
+     * DeviceStatusInfo value for details.</p>
      */
     inline void SetDeviceStatus(DeviceStatus&& value) { m_deviceStatusHasBeenSet = true; m_deviceStatus = std::move(value); }
 
     /**
      * <p>The status of a device. If the status is not READY, check the
-     * DeviceStatusInfo for details.</p>
+     * DeviceStatusInfo value for details.</p>
      */
     inline Device& WithDeviceStatus(const DeviceStatus& value) { SetDeviceStatus(value); return *this;}
 
     /**
      * <p>The status of a device. If the status is not READY, check the
-     * DeviceStatusInfo for details.</p>
+     * DeviceStatusInfo value for details.</p>
      */
     inline Device& WithDeviceStatus(DeviceStatus&& value) { SetDeviceStatus(std::move(value)); return *this;}
 

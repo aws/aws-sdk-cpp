@@ -22,6 +22,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/OutputDataConfig.h>
 #include <aws/sagemaker/model/ResourceConfig.h>
+#include <aws/sagemaker/model/VpcConfig.h>
 #include <aws/sagemaker/model/StoppingCondition.h>
 #include <aws/sagemaker/model/Channel.h>
 #include <aws/sagemaker/model/Tag.h>
@@ -577,6 +578,42 @@ namespace Model
 
 
     /**
+     * <p>A object that specifies the VPC that you want your training job to connect
+     * to. Control access to and from your training container by configuring the VPC.
+     * For more information, see <a>train-vpc</a> </p>
+     */
+    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+
+    /**
+     * <p>A object that specifies the VPC that you want your training job to connect
+     * to. Control access to and from your training container by configuring the VPC.
+     * For more information, see <a>train-vpc</a> </p>
+     */
+    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
+
+    /**
+     * <p>A object that specifies the VPC that you want your training job to connect
+     * to. Control access to and from your training container by configuring the VPC.
+     * For more information, see <a>train-vpc</a> </p>
+     */
+    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
+
+    /**
+     * <p>A object that specifies the VPC that you want your training job to connect
+     * to. Control access to and from your training container by configuring the VPC.
+     * For more information, see <a>train-vpc</a> </p>
+     */
+    inline CreateTrainingJobRequest& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
+
+    /**
+     * <p>A object that specifies the VPC that you want your training job to connect
+     * to. Control access to and from your training container by configuring the VPC.
+     * For more information, see <a>train-vpc</a> </p>
+     */
+    inline CreateTrainingJobRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>Sets a duration for training. Use this parameter to cap model training costs.
      * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code>
      * signal, which delays job termination for 120 seconds. Algorithms might use this
@@ -715,6 +752,9 @@ namespace Model
 
     ResourceConfig m_resourceConfig;
     bool m_resourceConfigHasBeenSet;
+
+    VpcConfig m_vpcConfig;
+    bool m_vpcConfigHasBeenSet;
 
     StoppingCondition m_stoppingCondition;
     bool m_stoppingConditionHasBeenSet;

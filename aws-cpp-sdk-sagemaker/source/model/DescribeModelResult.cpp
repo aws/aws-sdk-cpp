@@ -56,6 +56,12 @@ DescribeModelResult& DescribeModelResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("VpcConfig"))
+  {
+    m_vpcConfig = jsonValue.GetObject("VpcConfig");
+
+  }
+
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");

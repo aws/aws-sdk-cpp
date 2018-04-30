@@ -396,7 +396,7 @@ namespace Model
          * using the <code>CreateModel</code> API, to deploy and the resources that you
          * want Amazon SageMaker to provision. Then you call the <a
          * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
-         * API. </p> <note> <p> Use this API only if you want to use Amazon SageMaker
+         * API.</p> <note> <p> Use this API only if you want to use Amazon SageMaker
          * hosting services to deploy models into production. </p> </note> <p>In the
          * request, you define one or more <code>ProductionVariant</code>s, each of which
          * identifies a model. Each <code>ProductionVariant</code> parameter also describes
@@ -418,7 +418,7 @@ namespace Model
          * using the <code>CreateModel</code> API, to deploy and the resources that you
          * want Amazon SageMaker to provision. Then you call the <a
          * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
-         * API. </p> <note> <p> Use this API only if you want to use Amazon SageMaker
+         * API.</p> <note> <p> Use this API only if you want to use Amazon SageMaker
          * hosting services to deploy models into production. </p> </note> <p>In the
          * request, you define one or more <code>ProductionVariant</code>s, each of which
          * identifies a model. Each <code>ProductionVariant</code> parameter also describes
@@ -442,7 +442,7 @@ namespace Model
          * using the <code>CreateModel</code> API, to deploy and the resources that you
          * want Amazon SageMaker to provision. Then you call the <a
          * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
-         * API. </p> <note> <p> Use this API only if you want to use Amazon SageMaker
+         * API.</p> <note> <p> Use this API only if you want to use Amazon SageMaker
          * hosting services to deploy models into production. </p> </note> <p>In the
          * request, you define one or more <code>ProductionVariant</code>s, each of which
          * identifies a model. Each <code>ProductionVariant</code> parameter also describes

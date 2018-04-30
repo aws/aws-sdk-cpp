@@ -41,6 +41,7 @@ static const int BACKUP_IN_USE_HASH = HashingUtils::HashString("BackupInUseExcep
 static const int TABLE_IN_USE_HASH = HashingUtils::HashString("TableInUseException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int INVALID_RESTORE_TIME_HASH = HashingUtils::HashString("InvalidRestoreTimeException");
+static const int INDEX_NOT_FOUND_HASH = HashingUtils::HashString("IndexNotFoundException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int REPLICA_ALREADY_EXISTS_HASH = HashingUtils::HashString("ReplicaAlreadyExistsException");
 static const int PROVISIONED_THROUGHPUT_EXCEEDED_HASH = HashingUtils::HashString("ProvisionedThroughputExceededException");
@@ -102,6 +103,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_RESTORE_TIME_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::INVALID_RESTORE_TIME), false);
+  }
+  else if (hashCode == INDEX_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::INDEX_NOT_FOUND), false);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {

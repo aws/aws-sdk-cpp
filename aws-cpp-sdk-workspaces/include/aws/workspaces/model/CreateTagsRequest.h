@@ -47,73 +47,73 @@ namespace Model
 
 
     /**
-     * <p>The ID of the resource.</p>
+     * <p>The ID of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>The ID of the resource.</p>
+     * <p>The ID of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>The ID of the resource.</p>
+     * <p>The ID of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p>The ID of the resource.</p>
+     * <p>The ID of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.</p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>The ID of the resource.</p>
+     * <p>The ID of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.</p>
      */
     inline CreateTagsRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>The ID of the resource.</p>
+     * <p>The ID of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.</p>
      */
     inline CreateTagsRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the resource.</p>
+     * <p>The ID of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.</p>
      */
     inline CreateTagsRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
 
     /**
-     * <p>The tags. Each resource can have a maximum of 50 tags.</p>
+     * <p>The tags. Each WorkSpace can have a maximum of 50 tags.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags. Each resource can have a maximum of 50 tags.</p>
+     * <p>The tags. Each WorkSpace can have a maximum of 50 tags.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags. Each resource can have a maximum of 50 tags.</p>
+     * <p>The tags. Each WorkSpace can have a maximum of 50 tags.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags. Each resource can have a maximum of 50 tags.</p>
+     * <p>The tags. Each WorkSpace can have a maximum of 50 tags.</p>
      */
     inline CreateTagsRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags. Each resource can have a maximum of 50 tags.</p>
+     * <p>The tags. Each WorkSpace can have a maximum of 50 tags.</p>
      */
     inline CreateTagsRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags. Each resource can have a maximum of 50 tags.</p>
+     * <p>The tags. Each WorkSpace can have a maximum of 50 tags.</p>
      */
     inline CreateTagsRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The tags. Each resource can have a maximum of 50 tags.</p>
+     * <p>The tags. Each WorkSpace can have a maximum of 50 tags.</p>
      */
     inline CreateTagsRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

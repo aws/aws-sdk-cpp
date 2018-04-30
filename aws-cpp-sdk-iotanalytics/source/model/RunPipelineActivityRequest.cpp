@@ -15,6 +15,7 @@
 
 #include <aws/iotanalytics/model/RunPipelineActivityRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 #include <utility>
 

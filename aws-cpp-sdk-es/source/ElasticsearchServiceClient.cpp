@@ -215,7 +215,7 @@ DeleteElasticsearchServiceRoleOutcome ElasticsearchServiceClient::DeleteElastics
   Aws::StringStream ss;
   ss << m_uri << "/2015-01-01/es/role";
 
-  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, "{operation.name}");
+  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, "DeleteElasticsearchServiceRole");
   if(outcome.IsSuccess())
   {
     return DeleteElasticsearchServiceRoleOutcome(NoResult());
@@ -395,7 +395,7 @@ ListDomainNamesOutcome ElasticsearchServiceClient::ListDomainNames() const
   Aws::StringStream ss;
   ss << m_uri << "/2015-01-01/domain";
 
-  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, "{operation.name}");
+  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, "ListDomainNames");
   if(outcome.IsSuccess())
   {
     return ListDomainNamesOutcome(ListDomainNamesResult(outcome.GetResult()));

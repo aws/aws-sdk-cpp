@@ -29,6 +29,7 @@ namespace Model
     INITIALIZED,
     PENDING,
     REGISTERED,
+    DISASSOCIATING,
     DEREGISTERING
   };
 

@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/ContainerDefinition.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/VpcConfig.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
 
@@ -246,6 +247,42 @@ namespace Model
      */
     inline CreateModelRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A object that specifies the VPC that you want your model to connect to.
+     * Control access to and from your training container by configuring the VPC. For
+     * more information, see <a>host-vpc</a>.</p>
+     */
+    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+
+    /**
+     * <p>A object that specifies the VPC that you want your model to connect to.
+     * Control access to and from your training container by configuring the VPC. For
+     * more information, see <a>host-vpc</a>.</p>
+     */
+    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
+
+    /**
+     * <p>A object that specifies the VPC that you want your model to connect to.
+     * Control access to and from your training container by configuring the VPC. For
+     * more information, see <a>host-vpc</a>.</p>
+     */
+    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
+
+    /**
+     * <p>A object that specifies the VPC that you want your model to connect to.
+     * Control access to and from your training container by configuring the VPC. For
+     * more information, see <a>host-vpc</a>.</p>
+     */
+    inline CreateModelRequest& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
+
+    /**
+     * <p>A object that specifies the VPC that you want your model to connect to.
+     * Control access to and from your training container by configuring the VPC. For
+     * more information, see <a>host-vpc</a>.</p>
+     */
+    inline CreateModelRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_modelName;
@@ -259,6 +296,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    VpcConfig m_vpcConfig;
+    bool m_vpcConfigHasBeenSet;
   };
 
 } // namespace Model

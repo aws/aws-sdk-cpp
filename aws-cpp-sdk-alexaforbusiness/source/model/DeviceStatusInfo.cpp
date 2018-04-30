@@ -29,12 +29,16 @@ namespace Model
 {
 
 DeviceStatusInfo::DeviceStatusInfo() : 
-    m_deviceStatusDetailsHasBeenSet(false)
+    m_deviceStatusDetailsHasBeenSet(false),
+    m_connectionStatus(ConnectionStatus::NOT_SET),
+    m_connectionStatusHasBeenSet(false)
 {
 }
 
 DeviceStatusInfo::DeviceStatusInfo(const JsonValue& jsonValue) : 
-    m_deviceStatusDetailsHasBeenSet(false)
+    m_deviceStatusDetailsHasBeenSet(false),
+    m_connectionStatus(ConnectionStatus::NOT_SET),
+    m_connectionStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +53,13 @@ DeviceStatusInfo& DeviceStatusInfo::operator =(const JsonValue& jsonValue)
       m_deviceStatusDetails.push_back(deviceStatusDetailsJsonList[deviceStatusDetailsIndex].AsObject());
     }
     m_deviceStatusDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ConnectionStatus"))
+  {
+    m_connectionStatus = ConnectionStatusMapper::GetConnectionStatusForName(jsonValue.GetString("ConnectionStatus"));
+
+    m_connectionStatusHasBeenSet = true;
   }
 
   return *this;
@@ -67,6 +78,11 @@ JsonValue DeviceStatusInfo::Jsonize() const
    }
    payload.WithArray("DeviceStatusDetails", std::move(deviceStatusDetailsJsonList));
 
+  }
+
+  if(m_connectionStatusHasBeenSet)
+  {
+   payload.WithString("ConnectionStatus", ConnectionStatusMapper::GetNameForConnectionStatus(m_connectionStatus));
   }
 
   return payload;

@@ -51,62 +51,72 @@ namespace Model
 
     /**
      * <p>The beginning date and time for the time period for which you want a list of
-     * billing records. Specify the date in Unix time format.</p>
+     * billing records. Specify the date and time in Coordinated Universal time
+     * (UTC).</p>
      */
     inline const Aws::Utils::DateTime& GetStart() const{ return m_start; }
 
     /**
      * <p>The beginning date and time for the time period for which you want a list of
-     * billing records. Specify the date in Unix time format.</p>
+     * billing records. Specify the date and time in Coordinated Universal time
+     * (UTC).</p>
      */
     inline void SetStart(const Aws::Utils::DateTime& value) { m_startHasBeenSet = true; m_start = value; }
 
     /**
      * <p>The beginning date and time for the time period for which you want a list of
-     * billing records. Specify the date in Unix time format.</p>
+     * billing records. Specify the date and time in Coordinated Universal time
+     * (UTC).</p>
      */
     inline void SetStart(Aws::Utils::DateTime&& value) { m_startHasBeenSet = true; m_start = std::move(value); }
 
     /**
      * <p>The beginning date and time for the time period for which you want a list of
-     * billing records. Specify the date in Unix time format.</p>
+     * billing records. Specify the date and time in Coordinated Universal time
+     * (UTC).</p>
      */
     inline ViewBillingRequest& WithStart(const Aws::Utils::DateTime& value) { SetStart(value); return *this;}
 
     /**
      * <p>The beginning date and time for the time period for which you want a list of
-     * billing records. Specify the date in Unix time format.</p>
+     * billing records. Specify the date and time in Coordinated Universal time
+     * (UTC).</p>
      */
     inline ViewBillingRequest& WithStart(Aws::Utils::DateTime&& value) { SetStart(std::move(value)); return *this;}
 
 
     /**
      * <p>The end date and time for the time period for which you want a list of
-     * billing records. Specify the date in Unix time format.</p>
+     * billing records. Specify the date and time in Coordinated Universal time
+     * (UTC).</p>
      */
     inline const Aws::Utils::DateTime& GetEnd() const{ return m_end; }
 
     /**
      * <p>The end date and time for the time period for which you want a list of
-     * billing records. Specify the date in Unix time format.</p>
+     * billing records. Specify the date and time in Coordinated Universal time
+     * (UTC).</p>
      */
     inline void SetEnd(const Aws::Utils::DateTime& value) { m_endHasBeenSet = true; m_end = value; }
 
     /**
      * <p>The end date and time for the time period for which you want a list of
-     * billing records. Specify the date in Unix time format.</p>
+     * billing records. Specify the date and time in Coordinated Universal time
+     * (UTC).</p>
      */
     inline void SetEnd(Aws::Utils::DateTime&& value) { m_endHasBeenSet = true; m_end = std::move(value); }
 
     /**
      * <p>The end date and time for the time period for which you want a list of
-     * billing records. Specify the date in Unix time format.</p>
+     * billing records. Specify the date and time in Coordinated Universal time
+     * (UTC).</p>
      */
     inline ViewBillingRequest& WithEnd(const Aws::Utils::DateTime& value) { SetEnd(value); return *this;}
 
     /**
      * <p>The end date and time for the time period for which you want a list of
-     * billing records. Specify the date in Unix time format.</p>
+     * billing records. Specify the date and time in Coordinated Universal time
+     * (UTC).</p>
      */
     inline ViewBillingRequest& WithEnd(Aws::Utils::DateTime&& value) { SetEnd(std::move(value)); return *this;}
 

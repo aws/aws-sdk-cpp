@@ -1186,7 +1186,7 @@ namespace Model
         /**
          * Disables GuardDuty from monitoring findings of the member accounts specified by
          * the account IDs. After running this command, a master GuardDuty account can run
-         * StartMonitoringMembers to re-enable GuardDuty to monitor these members'
+         * StartMonitoringMembers to re-enable GuardDuty to monitor these members’
          * findings.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StopMonitoringMembers">AWS
          * API Reference</a></p>
@@ -1196,7 +1196,7 @@ namespace Model
         /**
          * Disables GuardDuty from monitoring findings of the member accounts specified by
          * the account IDs. After running this command, a master GuardDuty account can run
-         * StartMonitoringMembers to re-enable GuardDuty to monitor these members'
+         * StartMonitoringMembers to re-enable GuardDuty to monitor these members’
          * findings.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StopMonitoringMembers">AWS
          * API Reference</a></p>
@@ -1208,7 +1208,7 @@ namespace Model
         /**
          * Disables GuardDuty from monitoring findings of the member accounts specified by
          * the account IDs. After running this command, a master GuardDuty account can run
-         * StartMonitoringMembers to re-enable GuardDuty to monitor these members'
+         * StartMonitoringMembers to re-enable GuardDuty to monitor these members’
          * findings.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StopMonitoringMembers">AWS
          * API Reference</a></p>

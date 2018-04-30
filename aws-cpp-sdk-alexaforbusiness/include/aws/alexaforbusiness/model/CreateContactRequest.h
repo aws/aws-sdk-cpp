@@ -46,37 +46,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the contact to display on the AWS management console.</p>
+     * <p>The name of the contact to display on the console.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * <p>The name of the contact to display on the AWS management console.</p>
+     * <p>The name of the contact to display on the console.</p>
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
-     * <p>The name of the contact to display on the AWS management console.</p>
+     * <p>The name of the contact to display on the console.</p>
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
-     * <p>The name of the contact to display on the AWS management console.</p>
+     * <p>The name of the contact to display on the console.</p>
      */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
-     * <p>The name of the contact to display on the AWS management console.</p>
+     * <p>The name of the contact to display on the console.</p>
      */
     inline CreateContactRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>The name of the contact to display on the AWS management console.</p>
+     * <p>The name of the contact to display on the console.</p>
      */
     inline CreateContactRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the contact to display on the AWS management console.</p>
+     * <p>The name of the contact to display on the console.</p>
      */
     inline CreateContactRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
@@ -168,37 +168,37 @@ namespace Model
 
 
     /**
-     * <p>The phone number of the contact in E164 format.</p>
+     * <p>The phone number of the contact in E.164 format.</p>
      */
     inline const Aws::String& GetPhoneNumber() const{ return m_phoneNumber; }
 
     /**
-     * <p>The phone number of the contact in E164 format.</p>
+     * <p>The phone number of the contact in E.164 format.</p>
      */
     inline void SetPhoneNumber(const Aws::String& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = value; }
 
     /**
-     * <p>The phone number of the contact in E164 format.</p>
+     * <p>The phone number of the contact in E.164 format.</p>
      */
     inline void SetPhoneNumber(Aws::String&& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = std::move(value); }
 
     /**
-     * <p>The phone number of the contact in E164 format.</p>
+     * <p>The phone number of the contact in E.164 format.</p>
      */
     inline void SetPhoneNumber(const char* value) { m_phoneNumberHasBeenSet = true; m_phoneNumber.assign(value); }
 
     /**
-     * <p>The phone number of the contact in E164 format.</p>
+     * <p>The phone number of the contact in E.164 format.</p>
      */
     inline CreateContactRequest& WithPhoneNumber(const Aws::String& value) { SetPhoneNumber(value); return *this;}
 
     /**
-     * <p>The phone number of the contact in E164 format.</p>
+     * <p>The phone number of the contact in E.164 format.</p>
      */
     inline CreateContactRequest& WithPhoneNumber(Aws::String&& value) { SetPhoneNumber(std::move(value)); return *this;}
 
     /**
-     * <p>The phone number of the contact in E164 format.</p>
+     * <p>The phone number of the contact in E.164 format.</p>
      */
     inline CreateContactRequest& WithPhoneNumber(const char* value) { SetPhoneNumber(value); return *this;}
 

@@ -46,37 +46,37 @@ namespace Model
 
 
     /**
-     * <p>The WorkSpaces to reboot.</p>
+     * <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
      */
     inline const Aws::Vector<RebootRequest>& GetRebootWorkspaceRequests() const{ return m_rebootWorkspaceRequests; }
 
     /**
-     * <p>The WorkSpaces to reboot.</p>
+     * <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
      */
     inline void SetRebootWorkspaceRequests(const Aws::Vector<RebootRequest>& value) { m_rebootWorkspaceRequestsHasBeenSet = true; m_rebootWorkspaceRequests = value; }
 
     /**
-     * <p>The WorkSpaces to reboot.</p>
+     * <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
      */
     inline void SetRebootWorkspaceRequests(Aws::Vector<RebootRequest>&& value) { m_rebootWorkspaceRequestsHasBeenSet = true; m_rebootWorkspaceRequests = std::move(value); }
 
     /**
-     * <p>The WorkSpaces to reboot.</p>
+     * <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
      */
     inline RebootWorkspacesRequest& WithRebootWorkspaceRequests(const Aws::Vector<RebootRequest>& value) { SetRebootWorkspaceRequests(value); return *this;}
 
     /**
-     * <p>The WorkSpaces to reboot.</p>
+     * <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
      */
     inline RebootWorkspacesRequest& WithRebootWorkspaceRequests(Aws::Vector<RebootRequest>&& value) { SetRebootWorkspaceRequests(std::move(value)); return *this;}
 
     /**
-     * <p>The WorkSpaces to reboot.</p>
+     * <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
      */
     inline RebootWorkspacesRequest& AddRebootWorkspaceRequests(const RebootRequest& value) { m_rebootWorkspaceRequestsHasBeenSet = true; m_rebootWorkspaceRequests.push_back(value); return *this; }
 
     /**
-     * <p>The WorkSpaces to reboot.</p>
+     * <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
      */
     inline RebootWorkspacesRequest& AddRebootWorkspaceRequests(RebootRequest&& value) { m_rebootWorkspaceRequestsHasBeenSet = true; m_rebootWorkspaceRequests.push_back(std::move(value)); return *this; }
 

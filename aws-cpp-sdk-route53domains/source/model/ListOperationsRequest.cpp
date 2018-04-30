@@ -23,6 +23,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListOperationsRequest::ListOperationsRequest() : 
+    m_submittedSinceHasBeenSet(false),
     m_markerHasBeenSet(false),
     m_maxItems(0),
     m_maxItemsHasBeenSet(false)
@@ -32,6 +33,11 @@ ListOperationsRequest::ListOperationsRequest() :
 Aws::String ListOperationsRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_submittedSinceHasBeenSet)
+  {
+   payload.WithDouble("SubmittedSince", m_submittedSince.SecondsWithMSPrecision());
+  }
 
   if(m_markerHasBeenSet)
   {
