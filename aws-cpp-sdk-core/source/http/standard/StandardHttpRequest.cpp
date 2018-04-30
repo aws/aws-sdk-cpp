@@ -24,6 +24,8 @@ using namespace Aws::Http;
 using namespace Aws::Http::Standard;
 using namespace Aws::Utils;
 
+const Aws::String StandardHttpRequest::m_emptyHeader = "";
+
 StandardHttpRequest::StandardHttpRequest(const URI& uri, HttpMethod method) :
     HttpRequest(uri, method), 
     bodyStream(nullptr),
@@ -46,7 +48,13 @@ HeaderValueCollection StandardHttpRequest::GetHeaders() const
 
 const Aws::String& StandardHttpRequest::GetHeaderValue(const char* headerName) const
 {
-    return headerMap.find(headerName)->second;
+    auto iter = headerMap.find(headerName);
+    if (iter == headerMap.end())
+    {
+        return m_emptyHeader;
+    }
+    
+    return iter->second;
 }
 
 void StandardHttpRequest::SetHeaderValue(const char* headerName, const Aws::String& headerValue)

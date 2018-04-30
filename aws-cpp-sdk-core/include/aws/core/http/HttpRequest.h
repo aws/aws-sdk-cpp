@@ -83,7 +83,7 @@ namespace Aws
              */
             virtual HeaderValueCollection GetHeaders() const = 0;
             /**
-             * Get the value for a Header based on its name.
+             * Get the value for a Header based on its name. (in default StandardHttpRequest implementation, an empty string will be returned if headerName dosen't exist)
              */
             virtual const Aws::String& GetHeaderValue(const char* headerName) const = 0;
             /**

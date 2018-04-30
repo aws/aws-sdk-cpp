@@ -87,6 +87,7 @@ namespace Aws
                 HeaderValueCollection headerMap;
                 std::shared_ptr<Aws::IOStream> bodyStream;
                 Aws::IOStreamFactory m_responseStreamFactory;
+                static const Aws::String m_emptyHeader;
             };
 
         } // namespace Standard

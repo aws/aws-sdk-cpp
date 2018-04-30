@@ -247,7 +247,11 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, bool signBody
     //calculate signed headers parameter
     Aws::String signedHeadersValue = signedHeadersStream.str();
     //remove that last semi-colon
-    signedHeadersValue.erase(signedHeadersValue.length() - 1);
+    if (!signedHeadersValue.empty())
+    {
+        signedHeadersValue.pop_back();   
+    }
+
     AWS_LOGSTREAM_DEBUG(v4LogTag, "Signed Headers value:" << signedHeadersValue);
 
     //generate generalized canonicalized request string.
@@ -324,19 +328,34 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, const char
     Aws::String dateQueryValue = now.ToGmtString(LONG_DATE_FORMAT_STR);
     request.AddQueryStringParameter(Http::AWS_DATE_HEADER, dateQueryValue);
 
-    Aws::StringStream ss;
-    ss << Http::HOST_HEADER << ":" << request.GetHeaderValue(Http::HOST_HEADER) << NEWLINE;
-    Aws::String canonicalHeadersString(ss.str());
-    ss.str("");
+    request.SetHeaderValue(Http::HOST_HEADER, request.GetHeaderValue(Http::HOST_HEADER));
 
+    Aws::StringStream headersStream;
+    Aws::StringStream signedHeadersStream;
+    for (const auto& header : CanonicalizeHeaders(request.GetHeaders()))
+    {
+        if(ShouldSignHeader(header.first))
+        {
+            headersStream << header.first.c_str() << ":" << header.second.c_str() << NEWLINE;
+            signedHeadersStream << header.first.c_str() << ";";
+        }
+    }
+
+    Aws::String canonicalHeadersString = headersStream.str();
     AWS_LOGSTREAM_DEBUG(v4LogTag, "Canonical Header String: " << canonicalHeadersString);
 
     //calculate signed headers parameter
-    Aws::String signedHeadersValue(Http::HOST_HEADER);
-    request.AddQueryStringParameter(X_AMZ_SIGNED_HEADERS, signedHeadersValue);
+    Aws::String signedHeadersValue(signedHeadersStream.str());
+    //remove that last semi-colon
+    if (!signedHeadersValue.empty())
+    {
+        signedHeadersValue.pop_back();
+    }
 
+    request.AddQueryStringParameter(X_AMZ_SIGNED_HEADERS, signedHeadersValue);
     AWS_LOGSTREAM_DEBUG(v4LogTag, "Signed Headers value: " << signedHeadersValue);
 
+    Aws::StringStream ss;
     Aws::String simpleDate = now.ToGmtString(SIMPLE_DATE_FORMAT_STR);
     ss << credentials.GetAWSAccessKeyId() << "/" << simpleDate
         << "/" << region << "/" << serviceName << "/" << AWS4_REQUEST;
