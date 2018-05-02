@@ -34,6 +34,7 @@ CommandInvocation::CommandInvocation() :
     m_instanceNameHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_documentNameHasBeenSet(false),
+    m_documentVersionHasBeenSet(false),
     m_requestedDateTimeHasBeenSet(false),
     m_status(CommandInvocationStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -53,6 +54,7 @@ CommandInvocation::CommandInvocation(const JsonValue& jsonValue) :
     m_instanceNameHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_documentNameHasBeenSet(false),
+    m_documentVersionHasBeenSet(false),
     m_requestedDateTimeHasBeenSet(false),
     m_status(CommandInvocationStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -102,6 +104,13 @@ CommandInvocation& CommandInvocation::operator =(const JsonValue& jsonValue)
     m_documentName = jsonValue.GetString("DocumentName");
 
     m_documentNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DocumentVersion"))
+  {
+    m_documentVersion = jsonValue.GetString("DocumentVersion");
+
+    m_documentVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("RequestedDateTime"))
@@ -204,6 +213,12 @@ JsonValue CommandInvocation::Jsonize() const
   if(m_documentNameHasBeenSet)
   {
    payload.WithString("DocumentName", m_documentName);
+
+  }
+
+  if(m_documentVersionHasBeenSet)
+  {
+   payload.WithString("DocumentVersion", m_documentVersion);
 
   }
 

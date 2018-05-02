@@ -110,9 +110,9 @@ namespace Model
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Request Status</a> in the Amazon Elastic Compute Cloud User Guide.</p> </li>
-     * <li> <p> <code>status-code</code> - The short code describing the most recent
-     * evaluation of your Spot Instance request.</p> </li> <li> <p>
+     * Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * </li> <li> <p> <code>status-code</code> - The short code describing the most
+     * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
      * Instance request.</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> -
      * The key/value combination of a tag assigned to the resource. Specify the key of
@@ -192,9 +192,9 @@ namespace Model
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Request Status</a> in the Amazon Elastic Compute Cloud User Guide.</p> </li>
-     * <li> <p> <code>status-code</code> - The short code describing the most recent
-     * evaluation of your Spot Instance request.</p> </li> <li> <p>
+     * Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * </li> <li> <p> <code>status-code</code> - The short code describing the most
+     * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
      * Instance request.</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> -
      * The key/value combination of a tag assigned to the resource. Specify the key of
@@ -274,9 +274,9 @@ namespace Model
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Request Status</a> in the Amazon Elastic Compute Cloud User Guide.</p> </li>
-     * <li> <p> <code>status-code</code> - The short code describing the most recent
-     * evaluation of your Spot Instance request.</p> </li> <li> <p>
+     * Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * </li> <li> <p> <code>status-code</code> - The short code describing the most
+     * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
      * Instance request.</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> -
      * The key/value combination of a tag assigned to the resource. Specify the key of
@@ -356,9 +356,9 @@ namespace Model
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Request Status</a> in the Amazon Elastic Compute Cloud User Guide.</p> </li>
-     * <li> <p> <code>status-code</code> - The short code describing the most recent
-     * evaluation of your Spot Instance request.</p> </li> <li> <p>
+     * Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * </li> <li> <p> <code>status-code</code> - The short code describing the most
+     * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
      * Instance request.</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> -
      * The key/value combination of a tag assigned to the resource. Specify the key of
@@ -438,9 +438,9 @@ namespace Model
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Request Status</a> in the Amazon Elastic Compute Cloud User Guide.</p> </li>
-     * <li> <p> <code>status-code</code> - The short code describing the most recent
-     * evaluation of your Spot Instance request.</p> </li> <li> <p>
+     * Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * </li> <li> <p> <code>status-code</code> - The short code describing the most
+     * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
      * Instance request.</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> -
      * The key/value combination of a tag assigned to the resource. Specify the key of
@@ -520,9 +520,9 @@ namespace Model
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Request Status</a> in the Amazon Elastic Compute Cloud User Guide.</p> </li>
-     * <li> <p> <code>status-code</code> - The short code describing the most recent
-     * evaluation of your Spot Instance request.</p> </li> <li> <p>
+     * Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * </li> <li> <p> <code>status-code</code> - The short code describing the most
+     * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
      * Instance request.</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> -
      * The key/value combination of a tag assigned to the resource. Specify the key of
@@ -602,9 +602,9 @@ namespace Model
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Request Status</a> in the Amazon Elastic Compute Cloud User Guide.</p> </li>
-     * <li> <p> <code>status-code</code> - The short code describing the most recent
-     * evaluation of your Spot Instance request.</p> </li> <li> <p>
+     * Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * </li> <li> <p> <code>status-code</code> - The short code describing the most
+     * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
      * Instance request.</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> -
      * The key/value combination of a tag assigned to the resource. Specify the key of

@@ -168,37 +168,37 @@ namespace Model
 
 
     /**
-     * <p>A string that identifies the action type.</p>
+     * <p>A string that describes the action version.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>A string that identifies the action type.</p>
+     * <p>A string that describes the action version.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>A string that identifies the action type.</p>
+     * <p>A string that describes the action version.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>A string that identifies the action type.</p>
+     * <p>A string that describes the action version.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>A string that identifies the action type.</p>
+     * <p>A string that describes the action version.</p>
      */
     inline ActionTypeId& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>A string that identifies the action type.</p>
+     * <p>A string that describes the action version.</p>
      */
     inline ActionTypeId& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>A string that identifies the action type.</p>
+     * <p>A string that describes the action version.</p>
      */
     inline ActionTypeId& WithVersion(const char* value) { SetVersion(value); return *this;}
 

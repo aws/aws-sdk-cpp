@@ -26,6 +26,7 @@ SendCommandRequest::SendCommandRequest() :
     m_instanceIdsHasBeenSet(false),
     m_targetsHasBeenSet(false),
     m_documentNameHasBeenSet(false),
+    m_documentVersionHasBeenSet(false),
     m_documentHashHasBeenSet(false),
     m_documentHashType(DocumentHashType::NOT_SET),
     m_documentHashTypeHasBeenSet(false),
@@ -72,6 +73,12 @@ Aws::String SendCommandRequest::SerializePayload() const
   if(m_documentNameHasBeenSet)
   {
    payload.WithString("DocumentName", m_documentName);
+
+  }
+
+  if(m_documentVersionHasBeenSet)
+  {
+   payload.WithString("DocumentVersion", m_documentVersion);
 
   }
 

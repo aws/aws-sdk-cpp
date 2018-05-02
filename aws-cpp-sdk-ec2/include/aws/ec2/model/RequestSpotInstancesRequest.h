@@ -201,8 +201,8 @@ namespace Model
      * 360).</p> <p>The duration period starts as soon as your Spot Instance receives
      * its instance ID. At the end of the duration period, Amazon EC2 marks the Spot
      * Instance for termination and provides a Spot Instance termination notice, which
-     * gives the instance a two-minute warning before it terminates.</p> <p>Note that
-     * you can't specify an Availability Zone group or a launch group if you specify a
+     * gives the instance a two-minute warning before it terminates.</p> <p>You can't
+     * specify an Availability Zone group or a launch group if you specify a
      * duration.</p>
      */
     inline int GetBlockDurationMinutes() const{ return m_blockDurationMinutes; }
@@ -213,8 +213,8 @@ namespace Model
      * 360).</p> <p>The duration period starts as soon as your Spot Instance receives
      * its instance ID. At the end of the duration period, Amazon EC2 marks the Spot
      * Instance for termination and provides a Spot Instance termination notice, which
-     * gives the instance a two-minute warning before it terminates.</p> <p>Note that
-     * you can't specify an Availability Zone group or a launch group if you specify a
+     * gives the instance a two-minute warning before it terminates.</p> <p>You can't
+     * specify an Availability Zone group or a launch group if you specify a
      * duration.</p>
      */
     inline void SetBlockDurationMinutes(int value) { m_blockDurationMinutesHasBeenSet = true; m_blockDurationMinutes = value; }
@@ -225,8 +225,8 @@ namespace Model
      * 360).</p> <p>The duration period starts as soon as your Spot Instance receives
      * its instance ID. At the end of the duration period, Amazon EC2 marks the Spot
      * Instance for termination and provides a Spot Instance termination notice, which
-     * gives the instance a two-minute warning before it terminates.</p> <p>Note that
-     * you can't specify an Availability Zone group or a launch group if you specify a
+     * gives the instance a two-minute warning before it terminates.</p> <p>You can't
+     * specify an Availability Zone group or a launch group if you specify a
      * duration.</p>
      */
     inline RequestSpotInstancesRequest& WithBlockDurationMinutes(int value) { SetBlockDurationMinutes(value); return *this;}
@@ -236,8 +236,8 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * to Ensure Idempotency</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
@@ -245,8 +245,8 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * to Ensure Idempotency</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
@@ -254,8 +254,8 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * to Ensure Idempotency</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
@@ -263,8 +263,8 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * to Ensure Idempotency</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
@@ -272,8 +272,8 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * to Ensure Idempotency</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p>
      */
     inline RequestSpotInstancesRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
@@ -281,8 +281,8 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * to Ensure Idempotency</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p>
      */
     inline RequestSpotInstancesRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
@@ -290,8 +290,8 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * to Ensure Idempotency</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p>
      */
     inline RequestSpotInstancesRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

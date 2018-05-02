@@ -209,6 +209,42 @@ namespace Model
 
 
     /**
+     * <p>The SSM document version used in the request.</p>
+     */
+    inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
+
+    /**
+     * <p>The SSM document version used in the request.</p>
+     */
+    inline void SetDocumentVersion(const Aws::String& value) { m_documentVersion = value; }
+
+    /**
+     * <p>The SSM document version used in the request.</p>
+     */
+    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersion = std::move(value); }
+
+    /**
+     * <p>The SSM document version used in the request.</p>
+     */
+    inline void SetDocumentVersion(const char* value) { m_documentVersion.assign(value); }
+
+    /**
+     * <p>The SSM document version used in the request.</p>
+     */
+    inline GetCommandInvocationResult& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
+
+    /**
+     * <p>The SSM document version used in the request.</p>
+     */
+    inline GetCommandInvocationResult& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The SSM document version used in the request.</p>
+     */
+    inline GetCommandInvocationResult& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
+
+
+    /**
      * <p>The name of the plugin for which you want detailed results. For example,
      * aws:RunShellScript is a plugin.</p>
      */
@@ -929,6 +965,8 @@ namespace Model
     Aws::String m_comment;
 
     Aws::String m_documentName;
+
+    Aws::String m_documentVersion;
 
     Aws::String m_pluginName;
 

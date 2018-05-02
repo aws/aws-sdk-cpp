@@ -91,56 +91,63 @@ namespace Model
 
 
     /**
-     * <p>A unique, case-sensitive identifier you provide to ensure idempotency of your
-     * listings. This helps avoid duplicate listings. For more information, see <a
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of your listings. This helps to avoid duplicate listings. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>A unique, case-sensitive identifier you provide to ensure idempotency of your
-     * listings. This helps avoid duplicate listings. For more information, see <a
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of your listings. This helps to avoid duplicate listings. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>A unique, case-sensitive identifier you provide to ensure idempotency of your
-     * listings. This helps avoid duplicate listings. For more information, see <a
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of your listings. This helps to avoid duplicate listings. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>A unique, case-sensitive identifier you provide to ensure idempotency of your
-     * listings. This helps avoid duplicate listings. For more information, see <a
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of your listings. This helps to avoid duplicate listings. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>A unique, case-sensitive identifier you provide to ensure idempotency of your
-     * listings. This helps avoid duplicate listings. For more information, see <a
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of your listings. This helps to avoid duplicate listings. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
     inline SpotFleetRequestConfigData& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>A unique, case-sensitive identifier you provide to ensure idempotency of your
-     * listings. This helps avoid duplicate listings. For more information, see <a
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of your listings. This helps to avoid duplicate listings. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
     inline SpotFleetRequestConfigData& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>A unique, case-sensitive identifier you provide to ensure idempotency of your
-     * listings. This helps avoid duplicate listings. For more information, see <a
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of your listings. This helps to avoid duplicate listings. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
@@ -200,6 +207,25 @@ namespace Model
      * capacity.</p>
      */
     inline SpotFleetRequestConfigData& WithFulfilledCapacity(double value) { SetFulfilledCapacity(value); return *this;}
+
+
+    /**
+     * <p>The number of On-Demand units fulfilled by this request compared to the set
+     * target On-Demand capacity.</p>
+     */
+    inline double GetOnDemandFulfilledCapacity() const{ return m_onDemandFulfilledCapacity; }
+
+    /**
+     * <p>The number of On-Demand units fulfilled by this request compared to the set
+     * target On-Demand capacity.</p>
+     */
+    inline void SetOnDemandFulfilledCapacity(double value) { m_onDemandFulfilledCapacityHasBeenSet = true; m_onDemandFulfilledCapacity = value; }
+
+    /**
+     * <p>The number of On-Demand units fulfilled by this request compared to the set
+     * target On-Demand capacity.</p>
+     */
+    inline SpotFleetRequestConfigData& WithOnDemandFulfilledCapacity(double value) { SetOnDemandFulfilledCapacity(value); return *this;}
 
 
     /**
@@ -403,6 +429,34 @@ namespace Model
 
 
     /**
+     * <p>The number of On-Demand units to request. You can choose to set the target
+     * capacity in terms of instances or a performance characteristic that is important
+     * to your application workload, such as vCPUs, memory, or I/O. If the request type
+     * is <code>maintain</code>, you can specify a target capacity of 0 and add
+     * capacity later.</p>
+     */
+    inline int GetOnDemandTargetCapacity() const{ return m_onDemandTargetCapacity; }
+
+    /**
+     * <p>The number of On-Demand units to request. You can choose to set the target
+     * capacity in terms of instances or a performance characteristic that is important
+     * to your application workload, such as vCPUs, memory, or I/O. If the request type
+     * is <code>maintain</code>, you can specify a target capacity of 0 and add
+     * capacity later.</p>
+     */
+    inline void SetOnDemandTargetCapacity(int value) { m_onDemandTargetCapacityHasBeenSet = true; m_onDemandTargetCapacity = value; }
+
+    /**
+     * <p>The number of On-Demand units to request. You can choose to set the target
+     * capacity in terms of instances or a performance characteristic that is important
+     * to your application workload, such as vCPUs, memory, or I/O. If the request type
+     * is <code>maintain</code>, you can specify a target capacity of 0 and add
+     * capacity later.</p>
+     */
+    inline SpotFleetRequestConfigData& WithOnDemandTargetCapacity(int value) { SetOnDemandTargetCapacity(value); return *this;}
+
+
+    /**
      * <p>Indicates whether running Spot Instances should be terminated when the Spot
      * Fleet request expires.</p>
      */
@@ -422,67 +476,62 @@ namespace Model
 
 
     /**
-     * <p>The type of request. Indicates whether the fleet will only
-     * <code>request</code> the target capacity or also attempt to
-     * <code>maintain</code> it. When you <code>request</code> a certain target
-     * capacity, the fleet will only place the required requests. It will not attempt
-     * to replenish Spot Instances if capacity is diminished, nor will it submit
-     * requests in alternative Spot pools if capacity is not available. When you want
-     * to <code>maintain</code> a certain target capacity, fleet will place the
-     * required requests to meet this target capacity. It will also automatically
-     * replenish any interrupted instances. Default: <code>maintain</code>.</p>
+     * <p>The type of request. Indicates whether the Spot Fleet only requests the
+     * target capacity or also attempts to maintain it. When this value is
+     * <code>request</code>, the Spot Fleet only places the required requests. It does
+     * not attempt to replenish Spot Instances if capacity is diminished, nor does it
+     * submit requests in alternative Spot pools if capacity is not available. To
+     * maintain a certain target capacity, the Spot Fleet places the required requests
+     * to meet capacity and automatically replenishes any interrupted instances.
+     * Default: <code>maintain</code>.</p>
      */
     inline const FleetType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of request. Indicates whether the fleet will only
-     * <code>request</code> the target capacity or also attempt to
-     * <code>maintain</code> it. When you <code>request</code> a certain target
-     * capacity, the fleet will only place the required requests. It will not attempt
-     * to replenish Spot Instances if capacity is diminished, nor will it submit
-     * requests in alternative Spot pools if capacity is not available. When you want
-     * to <code>maintain</code> a certain target capacity, fleet will place the
-     * required requests to meet this target capacity. It will also automatically
-     * replenish any interrupted instances. Default: <code>maintain</code>.</p>
+     * <p>The type of request. Indicates whether the Spot Fleet only requests the
+     * target capacity or also attempts to maintain it. When this value is
+     * <code>request</code>, the Spot Fleet only places the required requests. It does
+     * not attempt to replenish Spot Instances if capacity is diminished, nor does it
+     * submit requests in alternative Spot pools if capacity is not available. To
+     * maintain a certain target capacity, the Spot Fleet places the required requests
+     * to meet capacity and automatically replenishes any interrupted instances.
+     * Default: <code>maintain</code>.</p>
      */
     inline void SetType(const FleetType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of request. Indicates whether the fleet will only
-     * <code>request</code> the target capacity or also attempt to
-     * <code>maintain</code> it. When you <code>request</code> a certain target
-     * capacity, the fleet will only place the required requests. It will not attempt
-     * to replenish Spot Instances if capacity is diminished, nor will it submit
-     * requests in alternative Spot pools if capacity is not available. When you want
-     * to <code>maintain</code> a certain target capacity, fleet will place the
-     * required requests to meet this target capacity. It will also automatically
-     * replenish any interrupted instances. Default: <code>maintain</code>.</p>
+     * <p>The type of request. Indicates whether the Spot Fleet only requests the
+     * target capacity or also attempts to maintain it. When this value is
+     * <code>request</code>, the Spot Fleet only places the required requests. It does
+     * not attempt to replenish Spot Instances if capacity is diminished, nor does it
+     * submit requests in alternative Spot pools if capacity is not available. To
+     * maintain a certain target capacity, the Spot Fleet places the required requests
+     * to meet capacity and automatically replenishes any interrupted instances.
+     * Default: <code>maintain</code>.</p>
      */
     inline void SetType(FleetType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of request. Indicates whether the fleet will only
-     * <code>request</code> the target capacity or also attempt to
-     * <code>maintain</code> it. When you <code>request</code> a certain target
-     * capacity, the fleet will only place the required requests. It will not attempt
-     * to replenish Spot Instances if capacity is diminished, nor will it submit
-     * requests in alternative Spot pools if capacity is not available. When you want
-     * to <code>maintain</code> a certain target capacity, fleet will place the
-     * required requests to meet this target capacity. It will also automatically
-     * replenish any interrupted instances. Default: <code>maintain</code>.</p>
+     * <p>The type of request. Indicates whether the Spot Fleet only requests the
+     * target capacity or also attempts to maintain it. When this value is
+     * <code>request</code>, the Spot Fleet only places the required requests. It does
+     * not attempt to replenish Spot Instances if capacity is diminished, nor does it
+     * submit requests in alternative Spot pools if capacity is not available. To
+     * maintain a certain target capacity, the Spot Fleet places the required requests
+     * to meet capacity and automatically replenishes any interrupted instances.
+     * Default: <code>maintain</code>.</p>
      */
     inline SpotFleetRequestConfigData& WithType(const FleetType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of request. Indicates whether the fleet will only
-     * <code>request</code> the target capacity or also attempt to
-     * <code>maintain</code> it. When you <code>request</code> a certain target
-     * capacity, the fleet will only place the required requests. It will not attempt
-     * to replenish Spot Instances if capacity is diminished, nor will it submit
-     * requests in alternative Spot pools if capacity is not available. When you want
-     * to <code>maintain</code> a certain target capacity, fleet will place the
-     * required requests to meet this target capacity. It will also automatically
-     * replenish any interrupted instances. Default: <code>maintain</code>.</p>
+     * <p>The type of request. Indicates whether the Spot Fleet only requests the
+     * target capacity or also attempts to maintain it. When this value is
+     * <code>request</code>, the Spot Fleet only places the required requests. It does
+     * not attempt to replenish Spot Instances if capacity is diminished, nor does it
+     * submit requests in alternative Spot pools if capacity is not available. To
+     * maintain a certain target capacity, the Spot Fleet places the required requests
+     * to meet capacity and automatically replenishes any interrupted instances.
+     * Default: <code>maintain</code>.</p>
      */
     inline SpotFleetRequestConfigData& WithType(FleetType&& value) { SetType(std::move(value)); return *this;}
 
@@ -675,6 +724,9 @@ namespace Model
     double m_fulfilledCapacity;
     bool m_fulfilledCapacityHasBeenSet;
 
+    double m_onDemandFulfilledCapacity;
+    bool m_onDemandFulfilledCapacityHasBeenSet;
+
     Aws::String m_iamFleetRole;
     bool m_iamFleetRoleHasBeenSet;
 
@@ -689,6 +741,9 @@ namespace Model
 
     int m_targetCapacity;
     bool m_targetCapacityHasBeenSet;
+
+    int m_onDemandTargetCapacity;
+    bool m_onDemandTargetCapacityHasBeenSet;
 
     bool m_terminateInstancesWithExpiration;
     bool m_terminateInstancesWithExpirationHasBeenSet;

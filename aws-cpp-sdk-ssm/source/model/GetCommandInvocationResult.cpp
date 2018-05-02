@@ -66,6 +66,12 @@ GetCommandInvocationResult& GetCommandInvocationResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("DocumentVersion"))
+  {
+    m_documentVersion = jsonValue.GetString("DocumentVersion");
+
+  }
+
   if(jsonValue.ValueExists("PluginName"))
   {
     m_pluginName = jsonValue.GetString("PluginName");

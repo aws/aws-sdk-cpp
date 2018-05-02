@@ -52,6 +52,7 @@
 #include <aws/ec2/model/CreateDefaultVpcResponse.h>
 #include <aws/ec2/model/CreateDhcpOptionsResponse.h>
 #include <aws/ec2/model/CreateEgressOnlyInternetGatewayResponse.h>
+#include <aws/ec2/model/CreateFleetResponse.h>
 #include <aws/ec2/model/CreateFlowLogsResponse.h>
 #include <aws/ec2/model/CreateFpgaImageResponse.h>
 #include <aws/ec2/model/CreateImageResponse.h>
@@ -80,6 +81,7 @@
 #include <aws/ec2/model/CreateVpnConnectionResponse.h>
 #include <aws/ec2/model/CreateVpnGatewayResponse.h>
 #include <aws/ec2/model/DeleteEgressOnlyInternetGatewayResponse.h>
+#include <aws/ec2/model/DeleteFleetsResponse.h>
 #include <aws/ec2/model/DeleteFlowLogsResponse.h>
 #include <aws/ec2/model/DeleteFpgaImageResponse.h>
 #include <aws/ec2/model/DeleteLaunchTemplateResponse.h>
@@ -102,6 +104,9 @@
 #include <aws/ec2/model/DescribeEgressOnlyInternetGatewaysResponse.h>
 #include <aws/ec2/model/DescribeElasticGpusResponse.h>
 #include <aws/ec2/model/DescribeExportTasksResponse.h>
+#include <aws/ec2/model/DescribeFleetHistoryResponse.h>
+#include <aws/ec2/model/DescribeFleetInstancesResponse.h>
+#include <aws/ec2/model/DescribeFleetsResponse.h>
 #include <aws/ec2/model/DescribeFlowLogsResponse.h>
 #include <aws/ec2/model/DescribeFpgaImageAttributeResponse.h>
 #include <aws/ec2/model/DescribeFpgaImagesResponse.h>
@@ -190,6 +195,7 @@
 #include <aws/ec2/model/ImportKeyPairResponse.h>
 #include <aws/ec2/model/ImportSnapshotResponse.h>
 #include <aws/ec2/model/ImportVolumeResponse.h>
+#include <aws/ec2/model/ModifyFleetResponse.h>
 #include <aws/ec2/model/ModifyFpgaImageAttributeResponse.h>
 #include <aws/ec2/model/ModifyHostsResponse.h>
 #include <aws/ec2/model/ModifyInstanceCreditSpecificationResponse.h>
@@ -312,6 +318,7 @@ namespace Model
         class CreateDefaultVpcRequest;
         class CreateDhcpOptionsRequest;
         class CreateEgressOnlyInternetGatewayRequest;
+        class CreateFleetRequest;
         class CreateFlowLogsRequest;
         class CreateFpgaImageRequest;
         class CreateImageRequest;
@@ -346,6 +353,7 @@ namespace Model
         class DeleteCustomerGatewayRequest;
         class DeleteDhcpOptionsRequest;
         class DeleteEgressOnlyInternetGatewayRequest;
+        class DeleteFleetsRequest;
         class DeleteFlowLogsRequest;
         class DeleteFpgaImageRequest;
         class DeleteInternetGatewayRequest;
@@ -387,6 +395,9 @@ namespace Model
         class DescribeEgressOnlyInternetGatewaysRequest;
         class DescribeElasticGpusRequest;
         class DescribeExportTasksRequest;
+        class DescribeFleetHistoryRequest;
+        class DescribeFleetInstancesRequest;
+        class DescribeFleetsRequest;
         class DescribeFlowLogsRequest;
         class DescribeFpgaImageAttributeRequest;
         class DescribeFpgaImagesRequest;
@@ -483,6 +494,7 @@ namespace Model
         class ImportKeyPairRequest;
         class ImportSnapshotRequest;
         class ImportVolumeRequest;
+        class ModifyFleetRequest;
         class ModifyFpgaImageAttributeRequest;
         class ModifyHostsRequest;
         class ModifyIdFormatRequest;
@@ -581,6 +593,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateDefaultVpcResponse, Aws::Client::AWSError<EC2Errors>> CreateDefaultVpcOutcome;
         typedef Aws::Utils::Outcome<CreateDhcpOptionsResponse, Aws::Client::AWSError<EC2Errors>> CreateDhcpOptionsOutcome;
         typedef Aws::Utils::Outcome<CreateEgressOnlyInternetGatewayResponse, Aws::Client::AWSError<EC2Errors>> CreateEgressOnlyInternetGatewayOutcome;
+        typedef Aws::Utils::Outcome<CreateFleetResponse, Aws::Client::AWSError<EC2Errors>> CreateFleetOutcome;
         typedef Aws::Utils::Outcome<CreateFlowLogsResponse, Aws::Client::AWSError<EC2Errors>> CreateFlowLogsOutcome;
         typedef Aws::Utils::Outcome<CreateFpgaImageResponse, Aws::Client::AWSError<EC2Errors>> CreateFpgaImageOutcome;
         typedef Aws::Utils::Outcome<CreateImageResponse, Aws::Client::AWSError<EC2Errors>> CreateImageOutcome;
@@ -615,6 +628,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteCustomerGatewayOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteDhcpOptionsOutcome;
         typedef Aws::Utils::Outcome<DeleteEgressOnlyInternetGatewayResponse, Aws::Client::AWSError<EC2Errors>> DeleteEgressOnlyInternetGatewayOutcome;
+        typedef Aws::Utils::Outcome<DeleteFleetsResponse, Aws::Client::AWSError<EC2Errors>> DeleteFleetsOutcome;
         typedef Aws::Utils::Outcome<DeleteFlowLogsResponse, Aws::Client::AWSError<EC2Errors>> DeleteFlowLogsOutcome;
         typedef Aws::Utils::Outcome<DeleteFpgaImageResponse, Aws::Client::AWSError<EC2Errors>> DeleteFpgaImageOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteInternetGatewayOutcome;
@@ -656,6 +670,9 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeEgressOnlyInternetGatewaysResponse, Aws::Client::AWSError<EC2Errors>> DescribeEgressOnlyInternetGatewaysOutcome;
         typedef Aws::Utils::Outcome<DescribeElasticGpusResponse, Aws::Client::AWSError<EC2Errors>> DescribeElasticGpusOutcome;
         typedef Aws::Utils::Outcome<DescribeExportTasksResponse, Aws::Client::AWSError<EC2Errors>> DescribeExportTasksOutcome;
+        typedef Aws::Utils::Outcome<DescribeFleetHistoryResponse, Aws::Client::AWSError<EC2Errors>> DescribeFleetHistoryOutcome;
+        typedef Aws::Utils::Outcome<DescribeFleetInstancesResponse, Aws::Client::AWSError<EC2Errors>> DescribeFleetInstancesOutcome;
+        typedef Aws::Utils::Outcome<DescribeFleetsResponse, Aws::Client::AWSError<EC2Errors>> DescribeFleetsOutcome;
         typedef Aws::Utils::Outcome<DescribeFlowLogsResponse, Aws::Client::AWSError<EC2Errors>> DescribeFlowLogsOutcome;
         typedef Aws::Utils::Outcome<DescribeFpgaImageAttributeResponse, Aws::Client::AWSError<EC2Errors>> DescribeFpgaImageAttributeOutcome;
         typedef Aws::Utils::Outcome<DescribeFpgaImagesResponse, Aws::Client::AWSError<EC2Errors>> DescribeFpgaImagesOutcome;
@@ -752,6 +769,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ImportKeyPairResponse, Aws::Client::AWSError<EC2Errors>> ImportKeyPairOutcome;
         typedef Aws::Utils::Outcome<ImportSnapshotResponse, Aws::Client::AWSError<EC2Errors>> ImportSnapshotOutcome;
         typedef Aws::Utils::Outcome<ImportVolumeResponse, Aws::Client::AWSError<EC2Errors>> ImportVolumeOutcome;
+        typedef Aws::Utils::Outcome<ModifyFleetResponse, Aws::Client::AWSError<EC2Errors>> ModifyFleetOutcome;
         typedef Aws::Utils::Outcome<ModifyFpgaImageAttributeResponse, Aws::Client::AWSError<EC2Errors>> ModifyFpgaImageAttributeOutcome;
         typedef Aws::Utils::Outcome<ModifyHostsResponse, Aws::Client::AWSError<EC2Errors>> ModifyHostsOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ModifyIdFormatOutcome;
@@ -850,6 +868,7 @@ namespace Model
         typedef std::future<CreateDefaultVpcOutcome> CreateDefaultVpcOutcomeCallable;
         typedef std::future<CreateDhcpOptionsOutcome> CreateDhcpOptionsOutcomeCallable;
         typedef std::future<CreateEgressOnlyInternetGatewayOutcome> CreateEgressOnlyInternetGatewayOutcomeCallable;
+        typedef std::future<CreateFleetOutcome> CreateFleetOutcomeCallable;
         typedef std::future<CreateFlowLogsOutcome> CreateFlowLogsOutcomeCallable;
         typedef std::future<CreateFpgaImageOutcome> CreateFpgaImageOutcomeCallable;
         typedef std::future<CreateImageOutcome> CreateImageOutcomeCallable;
@@ -884,6 +903,7 @@ namespace Model
         typedef std::future<DeleteCustomerGatewayOutcome> DeleteCustomerGatewayOutcomeCallable;
         typedef std::future<DeleteDhcpOptionsOutcome> DeleteDhcpOptionsOutcomeCallable;
         typedef std::future<DeleteEgressOnlyInternetGatewayOutcome> DeleteEgressOnlyInternetGatewayOutcomeCallable;
+        typedef std::future<DeleteFleetsOutcome> DeleteFleetsOutcomeCallable;
         typedef std::future<DeleteFlowLogsOutcome> DeleteFlowLogsOutcomeCallable;
         typedef std::future<DeleteFpgaImageOutcome> DeleteFpgaImageOutcomeCallable;
         typedef std::future<DeleteInternetGatewayOutcome> DeleteInternetGatewayOutcomeCallable;
@@ -925,6 +945,9 @@ namespace Model
         typedef std::future<DescribeEgressOnlyInternetGatewaysOutcome> DescribeEgressOnlyInternetGatewaysOutcomeCallable;
         typedef std::future<DescribeElasticGpusOutcome> DescribeElasticGpusOutcomeCallable;
         typedef std::future<DescribeExportTasksOutcome> DescribeExportTasksOutcomeCallable;
+        typedef std::future<DescribeFleetHistoryOutcome> DescribeFleetHistoryOutcomeCallable;
+        typedef std::future<DescribeFleetInstancesOutcome> DescribeFleetInstancesOutcomeCallable;
+        typedef std::future<DescribeFleetsOutcome> DescribeFleetsOutcomeCallable;
         typedef std::future<DescribeFlowLogsOutcome> DescribeFlowLogsOutcomeCallable;
         typedef std::future<DescribeFpgaImageAttributeOutcome> DescribeFpgaImageAttributeOutcomeCallable;
         typedef std::future<DescribeFpgaImagesOutcome> DescribeFpgaImagesOutcomeCallable;
@@ -1021,6 +1044,7 @@ namespace Model
         typedef std::future<ImportKeyPairOutcome> ImportKeyPairOutcomeCallable;
         typedef std::future<ImportSnapshotOutcome> ImportSnapshotOutcomeCallable;
         typedef std::future<ImportVolumeOutcome> ImportVolumeOutcomeCallable;
+        typedef std::future<ModifyFleetOutcome> ModifyFleetOutcomeCallable;
         typedef std::future<ModifyFpgaImageAttributeOutcome> ModifyFpgaImageAttributeOutcomeCallable;
         typedef std::future<ModifyHostsOutcome> ModifyHostsOutcomeCallable;
         typedef std::future<ModifyIdFormatOutcome> ModifyIdFormatOutcomeCallable;
@@ -1122,6 +1146,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::CreateDefaultVpcRequest&, const Model::CreateDefaultVpcOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDefaultVpcResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateDhcpOptionsRequest&, const Model::CreateDhcpOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDhcpOptionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateEgressOnlyInternetGatewayRequest&, const Model::CreateEgressOnlyInternetGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEgressOnlyInternetGatewayResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateFleetRequest&, const Model::CreateFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFleetResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateFlowLogsRequest&, const Model::CreateFlowLogsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFlowLogsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateFpgaImageRequest&, const Model::CreateFpgaImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFpgaImageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateImageRequest&, const Model::CreateImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImageResponseReceivedHandler;
@@ -1156,6 +1181,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DeleteCustomerGatewayRequest&, const Model::DeleteCustomerGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCustomerGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteDhcpOptionsRequest&, const Model::DeleteDhcpOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDhcpOptionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteEgressOnlyInternetGatewayRequest&, const Model::DeleteEgressOnlyInternetGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEgressOnlyInternetGatewayResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeleteFleetsRequest&, const Model::DeleteFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFleetsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteFlowLogsRequest&, const Model::DeleteFlowLogsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFlowLogsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteFpgaImageRequest&, const Model::DeleteFpgaImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFpgaImageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteInternetGatewayRequest&, const Model::DeleteInternetGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInternetGatewayResponseReceivedHandler;
@@ -1197,6 +1223,9 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DescribeEgressOnlyInternetGatewaysRequest&, const Model::DescribeEgressOnlyInternetGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEgressOnlyInternetGatewaysResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeElasticGpusRequest&, const Model::DescribeElasticGpusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeElasticGpusResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeExportTasksRequest&, const Model::DescribeExportTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExportTasksResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeFleetHistoryRequest&, const Model::DescribeFleetHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetHistoryResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeFleetInstancesRequest&, const Model::DescribeFleetInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetInstancesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeFleetsRequest&, const Model::DescribeFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeFlowLogsRequest&, const Model::DescribeFlowLogsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFlowLogsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeFpgaImageAttributeRequest&, const Model::DescribeFpgaImageAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFpgaImageAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeFpgaImagesRequest&, const Model::DescribeFpgaImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFpgaImagesResponseReceivedHandler;
@@ -1293,6 +1322,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ImportKeyPairRequest&, const Model::ImportKeyPairOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportKeyPairResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ImportSnapshotRequest&, const Model::ImportSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportSnapshotResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ImportVolumeRequest&, const Model::ImportVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportVolumeResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ModifyFleetRequest&, const Model::ModifyFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyFleetResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyFpgaImageAttributeRequest&, const Model::ModifyFpgaImageAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyFpgaImageAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyHostsRequest&, const Model::ModifyHostsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyHostsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyIdFormatRequest&, const Model::ModifyIdFormatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyIdFormatResponseReceivedHandler;
@@ -2624,10 +2654,10 @@ namespace Model
          * Amazon EC2 starts on your behalf when the maximum price that you specify exceeds
          * the current Spot price. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-         * Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <important> <p>Canceling a Spot Instance request does not terminate running Spot
-         * Instances associated with the request.</p> </important><p><h3>See Also:</h3>  
-         * <a
+         * Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instances</i>.</p> <important> <p>Canceling a Spot Instance request does not
+         * terminate running Spot Instances associated with the request.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotInstanceRequests">AWS
          * API Reference</a></p>
          */
@@ -2638,10 +2668,10 @@ namespace Model
          * Amazon EC2 starts on your behalf when the maximum price that you specify exceeds
          * the current Spot price. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-         * Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <important> <p>Canceling a Spot Instance request does not terminate running Spot
-         * Instances associated with the request.</p> </important><p><h3>See Also:</h3>  
-         * <a
+         * Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instances</i>.</p> <important> <p>Canceling a Spot Instance request does not
+         * terminate running Spot Instances associated with the request.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotInstanceRequests">AWS
          * API Reference</a></p>
          *
@@ -2654,10 +2684,10 @@ namespace Model
          * Amazon EC2 starts on your behalf when the maximum price that you specify exceeds
          * the current Spot price. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-         * Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <important> <p>Canceling a Spot Instance request does not terminate running Spot
-         * Instances associated with the request.</p> </important><p><h3>See Also:</h3>  
-         * <a
+         * Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instances</i>.</p> <important> <p>Canceling a Spot Instance request does not
+         * terminate running Spot Instances associated with the request.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotInstanceRequests">AWS
          * API Reference</a></p>
          *
@@ -3204,6 +3234,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateEgressOnlyInternetGatewayAsync(const Model::CreateEgressOnlyInternetGatewayRequest& request, const CreateEgressOnlyInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Launches an EC2 Fleet.</p> <p>You can create a single EC2 Fleet that includes
+         * multiple launch specifications that vary by instance type, AMI, Availability
+         * Zone, or subnet.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-launch-ec2-fleet.html">Launching
+         * an EC2 Fleet</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFleet">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::CreateFleetOutcome CreateFleet(const Model::CreateFleetRequest& request) const;
+
+        /**
+         * <p>Launches an EC2 Fleet.</p> <p>You can create a single EC2 Fleet that includes
+         * multiple launch specifications that vary by instance type, AMI, Availability
+         * Zone, or subnet.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-launch-ec2-fleet.html">Launching
+         * an EC2 Fleet</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFleet">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateFleetOutcomeCallable CreateFleetCallable(const Model::CreateFleetRequest& request) const;
+
+        /**
+         * <p>Launches an EC2 Fleet.</p> <p>You can create a single EC2 Fleet that includes
+         * multiple launch specifications that vary by instance type, AMI, Availability
+         * Zone, or subnet.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-launch-ec2-fleet.html">Launching
+         * an EC2 Fleet</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFleet">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateFleetAsync(const Model::CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates one or more flow logs to capture IP traffic for a specific network
@@ -4225,8 +4295,8 @@ namespace Model
          * usage logs. You can create one data feed per AWS account. For more information,
          * see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-         * Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instance Data Feed</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSpotDatafeedSubscription">AWS
          * API Reference</a></p>
          */
@@ -4237,8 +4307,8 @@ namespace Model
          * usage logs. You can create one data feed per AWS account. For more information,
          * see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-         * Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instance Data Feed</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSpotDatafeedSubscription">AWS
          * API Reference</a></p>
          *
@@ -4251,8 +4321,8 @@ namespace Model
          * usage logs. You can create one data feed per AWS account. For more information,
          * see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-         * Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instance Data Feed</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSpotDatafeedSubscription">AWS
          * API Reference</a></p>
          *
@@ -5023,6 +5093,49 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteEgressOnlyInternetGatewayAsync(const Model::DeleteEgressOnlyInternetGatewayRequest& request, const DeleteEgressOnlyInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the specified EC2 Fleet.</p> <p>After you delete an EC2 Fleet, the
+         * EC2 Fleet launches no new instances. You must specify whether the EC2 Fleet
+         * should also terminate its instances. If you terminate the instances, the EC2
+         * Fleet enters the <code>deleted_terminating</code> state. Otherwise, the EC2
+         * Fleet enters the <code>deleted_running</code> state, and the instances continue
+         * to run until they are interrupted or you terminate them manually. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFleets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteFleetsOutcome DeleteFleets(const Model::DeleteFleetsRequest& request) const;
+
+        /**
+         * <p>Deletes the specified EC2 Fleet.</p> <p>After you delete an EC2 Fleet, the
+         * EC2 Fleet launches no new instances. You must specify whether the EC2 Fleet
+         * should also terminate its instances. If you terminate the instances, the EC2
+         * Fleet enters the <code>deleted_terminating</code> state. Otherwise, the EC2
+         * Fleet enters the <code>deleted_running</code> state, and the instances continue
+         * to run until they are interrupted or you terminate them manually. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFleets">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteFleetsOutcomeCallable DeleteFleetsCallable(const Model::DeleteFleetsRequest& request) const;
+
+        /**
+         * <p>Deletes the specified EC2 Fleet.</p> <p>After you delete an EC2 Fleet, the
+         * EC2 Fleet launches no new instances. You must specify whether the EC2 Fleet
+         * should also terminate its instances. If you terminate the instances, the EC2
+         * Fleet enters the <code>deleted_terminating</code> state. Otherwise, the EC2
+         * Fleet enters the <code>deleted_running</code> state, and the instances continue
+         * to run until they are interrupted or you terminate them manually. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFleets">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteFleetsAsync(const Model::DeleteFleetsRequest& request, const DeleteFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes one or more flow logs.</p><p><h3>See Also:</h3>   <a
@@ -6519,6 +6632,87 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeExportTasksAsync(const Model::DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the events for the specified EC2 Fleet during the specified
+         * time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetHistory">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFleetHistoryOutcome DescribeFleetHistory(const Model::DescribeFleetHistoryRequest& request) const;
+
+        /**
+         * <p>Describes the events for the specified EC2 Fleet during the specified
+         * time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetHistory">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeFleetHistoryOutcomeCallable DescribeFleetHistoryCallable(const Model::DescribeFleetHistoryRequest& request) const;
+
+        /**
+         * <p>Describes the events for the specified EC2 Fleet during the specified
+         * time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetHistory">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeFleetHistoryAsync(const Model::DescribeFleetHistoryRequest& request, const DescribeFleetHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the running instances for the specified EC2 Fleet.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetInstances">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFleetInstancesOutcome DescribeFleetInstances(const Model::DescribeFleetInstancesRequest& request) const;
+
+        /**
+         * <p>Describes the running instances for the specified EC2 Fleet.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetInstances">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeFleetInstancesOutcomeCallable DescribeFleetInstancesCallable(const Model::DescribeFleetInstancesRequest& request) const;
+
+        /**
+         * <p>Describes the running instances for the specified EC2 Fleet.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetInstances">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeFleetInstancesAsync(const Model::DescribeFleetInstancesRequest& request, const DescribeFleetInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the specified EC2 Fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFleetsOutcome DescribeFleets(const Model::DescribeFleetsRequest& request) const;
+
+        /**
+         * <p>Describes the specified EC2 Fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleets">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeFleetsOutcomeCallable DescribeFleetsCallable(const Model::DescribeFleetsRequest& request) const;
+
+        /**
+         * <p>Describes the specified EC2 Fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleets">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeFleetsAsync(const Model::DescribeFleetsRequest& request, const DescribeFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more flow logs. To view the information in your flow logs
@@ -8398,8 +8592,8 @@ namespace Model
         /**
          * <p>Describes the data feed for Spot Instances. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-         * Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instance Data Feed</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotDatafeedSubscription">AWS
          * API Reference</a></p>
          */
@@ -8408,8 +8602,8 @@ namespace Model
         /**
          * <p>Describes the data feed for Spot Instances. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-         * Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instance Data Feed</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotDatafeedSubscription">AWS
          * API Reference</a></p>
          *
@@ -8420,8 +8614,8 @@ namespace Model
         /**
          * <p>Describes the data feed for Spot Instances. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-         * Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instance Data Feed</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotDatafeedSubscription">AWS
          * API Reference</a></p>
          *
@@ -8527,14 +8721,15 @@ namespace Model
          * Instances are instances that Amazon EC2 launches when the Spot price that you
          * specify exceeds the current Spot price. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-         * Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <p>You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot
-         * Instance by examining the response. If the status of the Spot Instance is
-         * <code>fulfilled</code>, the instance ID appears in the response and contains the
-         * identifier of the instance. Alternatively, you can use <a>DescribeInstances</a>
-         * with a filter to look for instances where the instance lifecycle is
-         * <code>spot</code>.</p> <p>Spot Instance requests are deleted 4 hours after they
-         * are canceled and their instances are terminated.</p><p><h3>See Also:</h3>   <a
+         * Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instances</i>.</p> <p>You can use <code>DescribeSpotInstanceRequests</code> to
+         * find a running Spot Instance by examining the response. If the status of the
+         * Spot Instance is <code>fulfilled</code>, the instance ID appears in the response
+         * and contains the identifier of the instance. Alternatively, you can use
+         * <a>DescribeInstances</a> with a filter to look for instances where the instance
+         * lifecycle is <code>spot</code>.</p> <p>Spot Instance requests are deleted four
+         * hours after they are canceled and their instances are terminated.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotInstanceRequests">AWS
          * API Reference</a></p>
          */
@@ -8545,14 +8740,15 @@ namespace Model
          * Instances are instances that Amazon EC2 launches when the Spot price that you
          * specify exceeds the current Spot price. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-         * Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <p>You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot
-         * Instance by examining the response. If the status of the Spot Instance is
-         * <code>fulfilled</code>, the instance ID appears in the response and contains the
-         * identifier of the instance. Alternatively, you can use <a>DescribeInstances</a>
-         * with a filter to look for instances where the instance lifecycle is
-         * <code>spot</code>.</p> <p>Spot Instance requests are deleted 4 hours after they
-         * are canceled and their instances are terminated.</p><p><h3>See Also:</h3>   <a
+         * Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instances</i>.</p> <p>You can use <code>DescribeSpotInstanceRequests</code> to
+         * find a running Spot Instance by examining the response. If the status of the
+         * Spot Instance is <code>fulfilled</code>, the instance ID appears in the response
+         * and contains the identifier of the instance. Alternatively, you can use
+         * <a>DescribeInstances</a> with a filter to look for instances where the instance
+         * lifecycle is <code>spot</code>.</p> <p>Spot Instance requests are deleted four
+         * hours after they are canceled and their instances are terminated.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotInstanceRequests">AWS
          * API Reference</a></p>
          *
@@ -8565,14 +8761,15 @@ namespace Model
          * Instances are instances that Amazon EC2 launches when the Spot price that you
          * specify exceeds the current Spot price. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-         * Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <p>You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot
-         * Instance by examining the response. If the status of the Spot Instance is
-         * <code>fulfilled</code>, the instance ID appears in the response and contains the
-         * identifier of the instance. Alternatively, you can use <a>DescribeInstances</a>
-         * with a filter to look for instances where the instance lifecycle is
-         * <code>spot</code>.</p> <p>Spot Instance requests are deleted 4 hours after they
-         * are canceled and their instances are terminated.</p><p><h3>See Also:</h3>   <a
+         * Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instances</i>.</p> <p>You can use <code>DescribeSpotInstanceRequests</code> to
+         * find a running Spot Instance by examining the response. If the status of the
+         * Spot Instance is <code>fulfilled</code>, the instance ID appears in the response
+         * and contains the identifier of the instance. Alternatively, you can use
+         * <a>DescribeInstances</a> with a filter to look for instances where the instance
+         * lifecycle is <code>spot</code>.</p> <p>Spot Instance requests are deleted four
+         * hours after they are canceled and their instances are terminated.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotInstanceRequests">AWS
          * API Reference</a></p>
          *
@@ -8583,12 +8780,12 @@ namespace Model
         /**
          * <p>Describes the Spot price history. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
-         * Instance Pricing History</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> <p>When you specify a start and end time, this operation returns
-         * the prices of the instance types within the time range that you specified and
-         * the time when the price changed. The price is valid within the time period that
-         * you specified; the response merely indicates the last time that the price
-         * changed.</p><p><h3>See Also:</h3>   <a
+         * Instance Pricing History</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instances</i>.</p> <p>When you specify a start and end time, this operation
+         * returns the prices of the instance types within the time range that you
+         * specified and the time when the price changed. The price is valid within the
+         * time period that you specified; the response merely indicates the last time that
+         * the price changed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotPriceHistory">AWS
          * API Reference</a></p>
          */
@@ -8597,12 +8794,12 @@ namespace Model
         /**
          * <p>Describes the Spot price history. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
-         * Instance Pricing History</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> <p>When you specify a start and end time, this operation returns
-         * the prices of the instance types within the time range that you specified and
-         * the time when the price changed. The price is valid within the time period that
-         * you specified; the response merely indicates the last time that the price
-         * changed.</p><p><h3>See Also:</h3>   <a
+         * Instance Pricing History</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instances</i>.</p> <p>When you specify a start and end time, this operation
+         * returns the prices of the instance types within the time range that you
+         * specified and the time when the price changed. The price is valid within the
+         * time period that you specified; the response merely indicates the last time that
+         * the price changed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotPriceHistory">AWS
          * API Reference</a></p>
          *
@@ -8613,12 +8810,12 @@ namespace Model
         /**
          * <p>Describes the Spot price history. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
-         * Instance Pricing History</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> <p>When you specify a start and end time, this operation returns
-         * the prices of the instance types within the time range that you specified and
-         * the time when the price changed. The price is valid within the time period that
-         * you specified; the response merely indicates the last time that the price
-         * changed.</p><p><h3>See Also:</h3>   <a
+         * Instance Pricing History</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instances</i>.</p> <p>When you specify a start and end time, this operation
+         * returns the prices of the instance types within the time range that you
+         * specified and the time when the price changed. The price is valid within the
+         * time period that you specified; the response merely indicates the last time that
+         * the price changed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotPriceHistory">AWS
          * API Reference</a></p>
          *
@@ -10524,6 +10721,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ImportVolumeAsync(const Model::ImportVolumeRequest& request, const ImportVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Modifies the specified EC2 Fleet.</p> <p>While the EC2 Fleet is being
+         * modified, it is in the <code>modifying</code> state.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyFleet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyFleetOutcome ModifyFleet(const Model::ModifyFleetRequest& request) const;
+
+        /**
+         * <p>Modifies the specified EC2 Fleet.</p> <p>While the EC2 Fleet is being
+         * modified, it is in the <code>modifying</code> state.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyFleet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyFleetOutcomeCallable ModifyFleetCallable(const Model::ModifyFleetRequest& request) const;
+
+        /**
+         * <p>Modifies the specified EC2 Fleet.</p> <p>While the EC2 Fleet is being
+         * modified, it is in the <code>modifying</code> state.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyFleet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyFleetAsync(const Model::ModifyFleetRequest& request, const ModifyFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the specified attribute of the specified Amazon FPGA Image
@@ -12552,7 +12777,10 @@ namespace Model
         virtual void ReportInstanceStatusAsync(const Model::ReportInstanceStatusRequest& request, const ReportInstanceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a Spot Fleet request.</p> <p>You can submit a single request that
+         * <p>Creates a Spot Fleet request.</p> <p>The Spot Fleet request specifies the
+         * total target capacity and the On-Demand target capacity. Amazon EC2 calculates
+         * the difference between the total capacity and On-Demand capacity, and launches
+         * the difference as Spot capacity.</p> <p>You can submit a single request that
          * includes multiple launch specifications that vary by instance type, AMI,
          * Availability Zone, or subnet.</p> <p>By default, the Spot Fleet requests Spot
          * Instances in the Spot pool where the price per unit is the lowest. Each launch
@@ -12562,18 +12790,22 @@ namespace Model
          * included in its launch specifications. By ensuring that the Spot Instances in
          * your Spot Fleet are in different Spot pools, you can improve the availability of
          * your fleet.</p> <p>You can specify tags for the Spot Instances. You cannot tag
-         * other resource types in a Spot Fleet request; only the <code>instance</code>
-         * resource type is supported.</p> <p>For more information, see <a
+         * other resource types in a Spot Fleet request because only the
+         * <code>instance</code> resource type is supported.</p> <p>For more information,
+         * see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
-         * Fleet Requests</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Fleet Requests</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotFleet">AWS
          * API Reference</a></p>
          */
         virtual Model::RequestSpotFleetOutcome RequestSpotFleet(const Model::RequestSpotFleetRequest& request) const;
 
         /**
-         * <p>Creates a Spot Fleet request.</p> <p>You can submit a single request that
+         * <p>Creates a Spot Fleet request.</p> <p>The Spot Fleet request specifies the
+         * total target capacity and the On-Demand target capacity. Amazon EC2 calculates
+         * the difference between the total capacity and On-Demand capacity, and launches
+         * the difference as Spot capacity.</p> <p>You can submit a single request that
          * includes multiple launch specifications that vary by instance type, AMI,
          * Availability Zone, or subnet.</p> <p>By default, the Spot Fleet requests Spot
          * Instances in the Spot pool where the price per unit is the lowest. Each launch
@@ -12583,11 +12815,12 @@ namespace Model
          * included in its launch specifications. By ensuring that the Spot Instances in
          * your Spot Fleet are in different Spot pools, you can improve the availability of
          * your fleet.</p> <p>You can specify tags for the Spot Instances. You cannot tag
-         * other resource types in a Spot Fleet request; only the <code>instance</code>
-         * resource type is supported.</p> <p>For more information, see <a
+         * other resource types in a Spot Fleet request because only the
+         * <code>instance</code> resource type is supported.</p> <p>For more information,
+         * see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
-         * Fleet Requests</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Fleet Requests</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotFleet">AWS
          * API Reference</a></p>
          *
@@ -12596,7 +12829,10 @@ namespace Model
         virtual Model::RequestSpotFleetOutcomeCallable RequestSpotFleetCallable(const Model::RequestSpotFleetRequest& request) const;
 
         /**
-         * <p>Creates a Spot Fleet request.</p> <p>You can submit a single request that
+         * <p>Creates a Spot Fleet request.</p> <p>The Spot Fleet request specifies the
+         * total target capacity and the On-Demand target capacity. Amazon EC2 calculates
+         * the difference between the total capacity and On-Demand capacity, and launches
+         * the difference as Spot capacity.</p> <p>You can submit a single request that
          * includes multiple launch specifications that vary by instance type, AMI,
          * Availability Zone, or subnet.</p> <p>By default, the Spot Fleet requests Spot
          * Instances in the Spot pool where the price per unit is the lowest. Each launch
@@ -12606,11 +12842,12 @@ namespace Model
          * included in its launch specifications. By ensuring that the Spot Instances in
          * your Spot Fleet are in different Spot pools, you can improve the availability of
          * your fleet.</p> <p>You can specify tags for the Spot Instances. You cannot tag
-         * other resource types in a Spot Fleet request; only the <code>instance</code>
-         * resource type is supported.</p> <p>For more information, see <a
+         * other resource types in a Spot Fleet request because only the
+         * <code>instance</code> resource type is supported.</p> <p>For more information,
+         * see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
-         * Fleet Requests</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Fleet Requests</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotFleet">AWS
          * API Reference</a></p>
          *
@@ -12623,8 +12860,8 @@ namespace Model
          * launches when the maximum price that you specify exceeds the current Spot price.
          * For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-         * Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotInstances">AWS
          * API Reference</a></p>
          */
@@ -12635,8 +12872,8 @@ namespace Model
          * launches when the maximum price that you specify exceeds the current Spot price.
          * For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-         * Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotInstances">AWS
          * API Reference</a></p>
          *
@@ -12649,8 +12886,8 @@ namespace Model
          * launches when the maximum price that you specify exceeds the current Spot price.
          * For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-         * Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotInstances">AWS
          * API Reference</a></p>
          *
@@ -13681,6 +13918,7 @@ namespace Model
         void CreateDefaultVpcAsyncHelper(const Model::CreateDefaultVpcRequest& request, const CreateDefaultVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDhcpOptionsAsyncHelper(const Model::CreateDhcpOptionsRequest& request, const CreateDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateEgressOnlyInternetGatewayAsyncHelper(const Model::CreateEgressOnlyInternetGatewayRequest& request, const CreateEgressOnlyInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateFleetAsyncHelper(const Model::CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateFlowLogsAsyncHelper(const Model::CreateFlowLogsRequest& request, const CreateFlowLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateFpgaImageAsyncHelper(const Model::CreateFpgaImageRequest& request, const CreateFpgaImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateImageAsyncHelper(const Model::CreateImageRequest& request, const CreateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -13715,6 +13953,7 @@ namespace Model
         void DeleteCustomerGatewayAsyncHelper(const Model::DeleteCustomerGatewayRequest& request, const DeleteCustomerGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDhcpOptionsAsyncHelper(const Model::DeleteDhcpOptionsRequest& request, const DeleteDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEgressOnlyInternetGatewayAsyncHelper(const Model::DeleteEgressOnlyInternetGatewayRequest& request, const DeleteEgressOnlyInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteFleetsAsyncHelper(const Model::DeleteFleetsRequest& request, const DeleteFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFlowLogsAsyncHelper(const Model::DeleteFlowLogsRequest& request, const DeleteFlowLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFpgaImageAsyncHelper(const Model::DeleteFpgaImageRequest& request, const DeleteFpgaImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteInternetGatewayAsyncHelper(const Model::DeleteInternetGatewayRequest& request, const DeleteInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -13756,6 +13995,9 @@ namespace Model
         void DescribeEgressOnlyInternetGatewaysAsyncHelper(const Model::DescribeEgressOnlyInternetGatewaysRequest& request, const DescribeEgressOnlyInternetGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeElasticGpusAsyncHelper(const Model::DescribeElasticGpusRequest& request, const DescribeElasticGpusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeExportTasksAsyncHelper(const Model::DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeFleetHistoryAsyncHelper(const Model::DescribeFleetHistoryRequest& request, const DescribeFleetHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeFleetInstancesAsyncHelper(const Model::DescribeFleetInstancesRequest& request, const DescribeFleetInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeFleetsAsyncHelper(const Model::DescribeFleetsRequest& request, const DescribeFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFlowLogsAsyncHelper(const Model::DescribeFlowLogsRequest& request, const DescribeFlowLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFpgaImageAttributeAsyncHelper(const Model::DescribeFpgaImageAttributeRequest& request, const DescribeFpgaImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFpgaImagesAsyncHelper(const Model::DescribeFpgaImagesRequest& request, const DescribeFpgaImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -13852,6 +14094,7 @@ namespace Model
         void ImportKeyPairAsyncHelper(const Model::ImportKeyPairRequest& request, const ImportKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportSnapshotAsyncHelper(const Model::ImportSnapshotRequest& request, const ImportSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportVolumeAsyncHelper(const Model::ImportVolumeRequest& request, const ImportVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyFleetAsyncHelper(const Model::ModifyFleetRequest& request, const ModifyFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyFpgaImageAttributeAsyncHelper(const Model::ModifyFpgaImageAttributeRequest& request, const ModifyFpgaImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyHostsAsyncHelper(const Model::ModifyHostsRequest& request, const ModifyHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyIdFormatAsyncHelper(const Model::ModifyIdFormatRequest& request, const ModifyIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

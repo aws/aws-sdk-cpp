@@ -53,87 +53,108 @@ namespace Model
 
 
     /**
-     * <p>The id of the Maintenance Window the task should be added to.</p>
+     * <p>The ID of the Maintenance Window the task should be added to.</p>
      */
     inline const Aws::String& GetWindowId() const{ return m_windowId; }
 
     /**
-     * <p>The id of the Maintenance Window the task should be added to.</p>
+     * <p>The ID of the Maintenance Window the task should be added to.</p>
      */
     inline void SetWindowId(const Aws::String& value) { m_windowIdHasBeenSet = true; m_windowId = value; }
 
     /**
-     * <p>The id of the Maintenance Window the task should be added to.</p>
+     * <p>The ID of the Maintenance Window the task should be added to.</p>
      */
     inline void SetWindowId(Aws::String&& value) { m_windowIdHasBeenSet = true; m_windowId = std::move(value); }
 
     /**
-     * <p>The id of the Maintenance Window the task should be added to.</p>
+     * <p>The ID of the Maintenance Window the task should be added to.</p>
      */
     inline void SetWindowId(const char* value) { m_windowIdHasBeenSet = true; m_windowId.assign(value); }
 
     /**
-     * <p>The id of the Maintenance Window the task should be added to.</p>
+     * <p>The ID of the Maintenance Window the task should be added to.</p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithWindowId(const Aws::String& value) { SetWindowId(value); return *this;}
 
     /**
-     * <p>The id of the Maintenance Window the task should be added to.</p>
+     * <p>The ID of the Maintenance Window the task should be added to.</p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithWindowId(Aws::String&& value) { SetWindowId(std::move(value)); return *this;}
 
     /**
-     * <p>The id of the Maintenance Window the task should be added to.</p>
+     * <p>The ID of the Maintenance Window the task should be added to.</p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithWindowId(const char* value) { SetWindowId(value); return *this;}
 
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <p>The targets (either instances or Maintenance Window targets).</p> <p>Specify
+     * instances using the following format: </p> <p>
+     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     * </p> <p>Specify Maintenance Window targets using the following format:</p> <p>
+     * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
+     * </p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <p>The targets (either instances or Maintenance Window targets).</p> <p>Specify
+     * instances using the following format: </p> <p>
+     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     * </p> <p>Specify Maintenance Window targets using the following format:</p> <p>
+     * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
+     * </p>
      */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <p>The targets (either instances or Maintenance Window targets).</p> <p>Specify
+     * instances using the following format: </p> <p>
+     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     * </p> <p>Specify Maintenance Window targets using the following format:</p> <p>
+     * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
+     * </p>
      */
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <p>The targets (either instances or Maintenance Window targets).</p> <p>Specify
+     * instances using the following format: </p> <p>
+     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     * </p> <p>Specify Maintenance Window targets using the following format:</p> <p>
+     * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
+     * </p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <p>The targets (either instances or Maintenance Window targets).</p> <p>Specify
+     * instances using the following format: </p> <p>
+     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     * </p> <p>Specify Maintenance Window targets using the following format:</p> <p>
+     * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
+     * </p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <p>The targets (either instances or Maintenance Window targets).</p> <p>Specify
+     * instances using the following format: </p> <p>
+     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     * </p> <p>Specify Maintenance Window targets using the following format:</p> <p>
+     * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
+     * </p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <p>The targets (either instances or Maintenance Window targets).</p> <p>Specify
+     * instances using the following format: </p> <p>
+     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     * </p> <p>Specify Maintenance Window targets using the following format:</p> <p>
+     * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
+     * </p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 

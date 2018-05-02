@@ -31,6 +31,7 @@ namespace Model
 Command::Command() : 
     m_commandIdHasBeenSet(false),
     m_documentNameHasBeenSet(false),
+    m_documentVersionHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_expiresAfterHasBeenSet(false),
     m_parametersHasBeenSet(false),
@@ -59,6 +60,7 @@ Command::Command() :
 Command::Command(const JsonValue& jsonValue) : 
     m_commandIdHasBeenSet(false),
     m_documentNameHasBeenSet(false),
+    m_documentVersionHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_expiresAfterHasBeenSet(false),
     m_parametersHasBeenSet(false),
@@ -99,6 +101,13 @@ Command& Command::operator =(const JsonValue& jsonValue)
     m_documentName = jsonValue.GetString("DocumentName");
 
     m_documentNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DocumentVersion"))
+  {
+    m_documentVersion = jsonValue.GetString("DocumentVersion");
+
+    m_documentVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Comment"))
@@ -259,6 +268,12 @@ JsonValue Command::Jsonize() const
   if(m_documentNameHasBeenSet)
   {
    payload.WithString("DocumentName", m_documentName);
+
+  }
+
+  if(m_documentVersionHasBeenSet)
+  {
+   payload.WithString("DocumentVersion", m_documentVersion);
 
   }
 

@@ -46,49 +46,49 @@ namespace Model
 
 
     /**
-     * <p>A userdefined description of the resource that you want to register with
+     * <p>A user-defined description of the resource that you want to register with
      * Amazon EC2. </p> <important> <p>Do not enter personally identifiable information
      * in this field.</p> </important>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A userdefined description of the resource that you want to register with
+     * <p>A user-defined description of the resource that you want to register with
      * Amazon EC2. </p> <important> <p>Do not enter personally identifiable information
      * in this field.</p> </important>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A userdefined description of the resource that you want to register with
+     * <p>A user-defined description of the resource that you want to register with
      * Amazon EC2. </p> <important> <p>Do not enter personally identifiable information
      * in this field.</p> </important>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A userdefined description of the resource that you want to register with
+     * <p>A user-defined description of the resource that you want to register with
      * Amazon EC2. </p> <important> <p>Do not enter personally identifiable information
      * in this field.</p> </important>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A userdefined description of the resource that you want to register with
+     * <p>A user-defined description of the resource that you want to register with
      * Amazon EC2. </p> <important> <p>Do not enter personally identifiable information
      * in this field.</p> </important>
      */
     inline CreateActivationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A userdefined description of the resource that you want to register with
+     * <p>A user-defined description of the resource that you want to register with
      * Amazon EC2. </p> <important> <p>Do not enter personally identifiable information
      * in this field.</p> </important>
      */
     inline CreateActivationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A userdefined description of the resource that you want to register with
+     * <p>A user-defined description of the resource that you want to register with
      * Amazon EC2. </p> <important> <p>Do not enter personally identifiable information
      * in this field.</p> </important>
      */

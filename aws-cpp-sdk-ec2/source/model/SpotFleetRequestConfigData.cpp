@@ -38,12 +38,16 @@ SpotFleetRequestConfigData::SpotFleetRequestConfigData() :
     m_excessCapacityTerminationPolicyHasBeenSet(false),
     m_fulfilledCapacity(0.0),
     m_fulfilledCapacityHasBeenSet(false),
+    m_onDemandFulfilledCapacity(0.0),
+    m_onDemandFulfilledCapacityHasBeenSet(false),
     m_iamFleetRoleHasBeenSet(false),
     m_launchSpecificationsHasBeenSet(false),
     m_launchTemplateConfigsHasBeenSet(false),
     m_spotPriceHasBeenSet(false),
     m_targetCapacity(0),
     m_targetCapacityHasBeenSet(false),
+    m_onDemandTargetCapacity(0),
+    m_onDemandTargetCapacityHasBeenSet(false),
     m_terminateInstancesWithExpiration(false),
     m_terminateInstancesWithExpirationHasBeenSet(false),
     m_type(FleetType::NOT_SET),
@@ -66,12 +70,16 @@ SpotFleetRequestConfigData::SpotFleetRequestConfigData(const XmlNode& xmlNode) :
     m_excessCapacityTerminationPolicyHasBeenSet(false),
     m_fulfilledCapacity(0.0),
     m_fulfilledCapacityHasBeenSet(false),
+    m_onDemandFulfilledCapacity(0.0),
+    m_onDemandFulfilledCapacityHasBeenSet(false),
     m_iamFleetRoleHasBeenSet(false),
     m_launchSpecificationsHasBeenSet(false),
     m_launchTemplateConfigsHasBeenSet(false),
     m_spotPriceHasBeenSet(false),
     m_targetCapacity(0),
     m_targetCapacityHasBeenSet(false),
+    m_onDemandTargetCapacity(0),
+    m_onDemandTargetCapacityHasBeenSet(false),
     m_terminateInstancesWithExpiration(false),
     m_terminateInstancesWithExpirationHasBeenSet(false),
     m_type(FleetType::NOT_SET),
@@ -117,6 +125,12 @@ SpotFleetRequestConfigData& SpotFleetRequestConfigData::operator =(const XmlNode
       m_fulfilledCapacity = StringUtils::ConvertToDouble(StringUtils::Trim(fulfilledCapacityNode.GetText().c_str()).c_str());
       m_fulfilledCapacityHasBeenSet = true;
     }
+    XmlNode onDemandFulfilledCapacityNode = resultNode.FirstChild("onDemandFulfilledCapacity");
+    if(!onDemandFulfilledCapacityNode.IsNull())
+    {
+      m_onDemandFulfilledCapacity = StringUtils::ConvertToDouble(StringUtils::Trim(onDemandFulfilledCapacityNode.GetText().c_str()).c_str());
+      m_onDemandFulfilledCapacityHasBeenSet = true;
+    }
     XmlNode iamFleetRoleNode = resultNode.FirstChild("iamFleetRole");
     if(!iamFleetRoleNode.IsNull())
     {
@@ -158,6 +172,12 @@ SpotFleetRequestConfigData& SpotFleetRequestConfigData::operator =(const XmlNode
     {
       m_targetCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(targetCapacityNode.GetText().c_str()).c_str());
       m_targetCapacityHasBeenSet = true;
+    }
+    XmlNode onDemandTargetCapacityNode = resultNode.FirstChild("onDemandTargetCapacity");
+    if(!onDemandTargetCapacityNode.IsNull())
+    {
+      m_onDemandTargetCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(onDemandTargetCapacityNode.GetText().c_str()).c_str());
+      m_onDemandTargetCapacityHasBeenSet = true;
     }
     XmlNode terminateInstancesWithExpirationNode = resultNode.FirstChild("terminateInstancesWithExpiration");
     if(!terminateInstancesWithExpirationNode.IsNull())
@@ -228,6 +248,11 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
         oStream << location << index << locationValue << ".FulfilledCapacity=" << StringUtils::URLEncode(m_fulfilledCapacity) << "&";
   }
 
+  if(m_onDemandFulfilledCapacityHasBeenSet)
+  {
+        oStream << location << index << locationValue << ".OnDemandFulfilledCapacity=" << StringUtils::URLEncode(m_onDemandFulfilledCapacity) << "&";
+  }
+
   if(m_iamFleetRoleHasBeenSet)
   {
       oStream << location << index << locationValue << ".IamFleetRole=" << StringUtils::URLEncode(m_iamFleetRole.c_str()) << "&";
@@ -263,6 +288,11 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
   if(m_targetCapacityHasBeenSet)
   {
       oStream << location << index << locationValue << ".TargetCapacity=" << m_targetCapacity << "&";
+  }
+
+  if(m_onDemandTargetCapacityHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OnDemandTargetCapacity=" << m_onDemandTargetCapacity << "&";
   }
 
   if(m_terminateInstancesWithExpirationHasBeenSet)
@@ -322,6 +352,10 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
   {
         oStream << location << ".FulfilledCapacity=" << StringUtils::URLEncode(m_fulfilledCapacity) << "&";
   }
+  if(m_onDemandFulfilledCapacityHasBeenSet)
+  {
+        oStream << location << ".OnDemandFulfilledCapacity=" << StringUtils::URLEncode(m_onDemandFulfilledCapacity) << "&";
+  }
   if(m_iamFleetRoleHasBeenSet)
   {
       oStream << location << ".IamFleetRole=" << StringUtils::URLEncode(m_iamFleetRole.c_str()) << "&";
@@ -353,6 +387,10 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
   if(m_targetCapacityHasBeenSet)
   {
       oStream << location << ".TargetCapacity=" << m_targetCapacity << "&";
+  }
+  if(m_onDemandTargetCapacityHasBeenSet)
+  {
+      oStream << location << ".OnDemandTargetCapacity=" << m_onDemandTargetCapacity << "&";
   }
   if(m_terminateInstancesWithExpirationHasBeenSet)
   {

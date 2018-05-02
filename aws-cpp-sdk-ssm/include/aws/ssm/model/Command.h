@@ -125,6 +125,42 @@ namespace Model
 
 
     /**
+     * <p>The SSM document version.</p>
+     */
+    inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
+
+    /**
+     * <p>The SSM document version.</p>
+     */
+    inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
+
+    /**
+     * <p>The SSM document version.</p>
+     */
+    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
+
+    /**
+     * <p>The SSM document version.</p>
+     */
+    inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
+
+    /**
+     * <p>The SSM document version.</p>
+     */
+    inline Command& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
+
+    /**
+     * <p>The SSM document version.</p>
+     */
+    inline Command& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The SSM document version.</p>
+     */
+    inline Command& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
+
+
+    /**
      * <p>User-specified information about the command, such as a brief description of
      * what the command should do.</p>
      */
@@ -1013,6 +1049,9 @@ namespace Model
 
     Aws::String m_documentName;
     bool m_documentNameHasBeenSet;
+
+    Aws::String m_documentVersion;
+    bool m_documentVersionHasBeenSet;
 
     Aws::String m_comment;
     bool m_commentHasBeenSet;

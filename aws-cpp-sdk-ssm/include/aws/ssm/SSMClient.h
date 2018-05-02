@@ -2206,7 +2206,9 @@ namespace Model
         /**
          * <p>Retrieves the default patch baseline. Note that Systems Manager supports
          * creating multiple default patch baselines. For example, you can create a default
-         * patch baseline for each operating system.</p><p><h3>See Also:</h3>   <a
+         * patch baseline for each operating system.</p> <p>If you do not specify an
+         * operating system value, the default patch baseline for Windows is
+         * returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDefaultPatchBaseline">AWS
          * API Reference</a></p>
          */
@@ -2215,7 +2217,9 @@ namespace Model
         /**
          * <p>Retrieves the default patch baseline. Note that Systems Manager supports
          * creating multiple default patch baselines. For example, you can create a default
-         * patch baseline for each operating system.</p><p><h3>See Also:</h3>   <a
+         * patch baseline for each operating system.</p> <p>If you do not specify an
+         * operating system value, the default patch baseline for Windows is
+         * returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDefaultPatchBaseline">AWS
          * API Reference</a></p>
          *
@@ -2226,7 +2230,9 @@ namespace Model
         /**
          * <p>Retrieves the default patch baseline. Note that Systems Manager supports
          * creating multiple default patch baselines. For example, you can create a default
-         * patch baseline for each operating system.</p><p><h3>See Also:</h3>   <a
+         * patch baseline for each operating system.</p> <p>If you do not specify an
+         * operating system value, the default patch baseline for Windows is
+         * returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDefaultPatchBaseline">AWS
          * API Reference</a></p>
          *
@@ -3225,14 +3231,14 @@ namespace Model
         virtual void PutInventoryAsync(const Model::PutInventoryRequest& request, const PutInventoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Add one or more parameters to the system.</p><p><h3>See Also:</h3>   <a
+         * <p>Add a parameter to the system.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutParameter">AWS
          * API Reference</a></p>
          */
         virtual Model::PutParameterOutcome PutParameter(const Model::PutParameterRequest& request) const;
 
         /**
-         * <p>Add one or more parameters to the system.</p><p><h3>See Also:</h3>   <a
+         * <p>Add a parameter to the system.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutParameter">AWS
          * API Reference</a></p>
          *
@@ -3241,7 +3247,7 @@ namespace Model
         virtual Model::PutParameterOutcomeCallable PutParameterCallable(const Model::PutParameterRequest& request) const;
 
         /**
-         * <p>Add one or more parameters to the system.</p><p><h3>See Also:</h3>   <a
+         * <p>Add a parameter to the system.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutParameter">AWS
          * API Reference</a></p>
          *

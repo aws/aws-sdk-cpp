@@ -111,51 +111,79 @@ namespace Model
 
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <p>The targets (either instances or tags). </p> <p>Specify instances using the
+     * following format:</p> <p>
+     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     * </p> <p>Specify tags using either of the following formats:</p> <p>
+     * <code>Key=tag:&lt;tag-key&gt;,Values=&lt;tag-value-1&gt;,&lt;tag-value-2&gt;</code>
+     * </p> <p> <code>Key=tag-key,Values=&lt;tag-key-1&gt;,&lt;tag-key-2&gt;</code>
+     * </p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <p>The targets (either instances or tags). </p> <p>Specify instances using the
+     * following format:</p> <p>
+     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     * </p> <p>Specify tags using either of the following formats:</p> <p>
+     * <code>Key=tag:&lt;tag-key&gt;,Values=&lt;tag-value-1&gt;,&lt;tag-value-2&gt;</code>
+     * </p> <p> <code>Key=tag-key,Values=&lt;tag-key-1&gt;,&lt;tag-key-2&gt;</code>
+     * </p>
      */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <p>The targets (either instances or tags). </p> <p>Specify instances using the
+     * following format:</p> <p>
+     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     * </p> <p>Specify tags using either of the following formats:</p> <p>
+     * <code>Key=tag:&lt;tag-key&gt;,Values=&lt;tag-value-1&gt;,&lt;tag-value-2&gt;</code>
+     * </p> <p> <code>Key=tag-key,Values=&lt;tag-key-1&gt;,&lt;tag-key-2&gt;</code>
+     * </p>
      */
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <p>The targets (either instances or tags). </p> <p>Specify instances using the
+     * following format:</p> <p>
+     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     * </p> <p>Specify tags using either of the following formats:</p> <p>
+     * <code>Key=tag:&lt;tag-key&gt;,Values=&lt;tag-value-1&gt;,&lt;tag-value-2&gt;</code>
+     * </p> <p> <code>Key=tag-key,Values=&lt;tag-key-1&gt;,&lt;tag-key-2&gt;</code>
+     * </p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <p>The targets (either instances or tags). </p> <p>Specify instances using the
+     * following format:</p> <p>
+     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     * </p> <p>Specify tags using either of the following formats:</p> <p>
+     * <code>Key=tag:&lt;tag-key&gt;,Values=&lt;tag-value-1&gt;,&lt;tag-value-2&gt;</code>
+     * </p> <p> <code>Key=tag-key,Values=&lt;tag-key-1&gt;,&lt;tag-key-2&gt;</code>
+     * </p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <p>The targets (either instances or tags). </p> <p>Specify instances using the
+     * following format:</p> <p>
+     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     * </p> <p>Specify tags using either of the following formats:</p> <p>
+     * <code>Key=tag:&lt;tag-key&gt;,Values=&lt;tag-value-1&gt;,&lt;tag-value-2&gt;</code>
+     * </p> <p> <code>Key=tag-key,Values=&lt;tag-key-1&gt;,&lt;tag-key-2&gt;</code>
+     * </p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <p>The targets (either instances or tags). </p> <p>Specify instances using the
+     * following format:</p> <p>
+     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     * </p> <p>Specify tags using either of the following formats:</p> <p>
+     * <code>Key=tag:&lt;tag-key&gt;,Values=&lt;tag-value-1&gt;,&lt;tag-value-2&gt;</code>
+     * </p> <p> <code>Key=tag-key,Values=&lt;tag-key-1&gt;,&lt;tag-key-2&gt;</code>
+     * </p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 

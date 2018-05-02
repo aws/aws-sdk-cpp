@@ -52,44 +52,44 @@ namespace Model
 
 
     /**
-     * <p>The running instances. Note that this list is refreshed periodically and
-     * might be out of date.</p>
+     * <p>The running instances. This list is refreshed periodically and might be out
+     * of date.</p>
      */
     inline const Aws::Vector<ActiveInstance>& GetActiveInstances() const{ return m_activeInstances; }
 
     /**
-     * <p>The running instances. Note that this list is refreshed periodically and
-     * might be out of date.</p>
+     * <p>The running instances. This list is refreshed periodically and might be out
+     * of date.</p>
      */
     inline void SetActiveInstances(const Aws::Vector<ActiveInstance>& value) { m_activeInstances = value; }
 
     /**
-     * <p>The running instances. Note that this list is refreshed periodically and
-     * might be out of date.</p>
+     * <p>The running instances. This list is refreshed periodically and might be out
+     * of date.</p>
      */
     inline void SetActiveInstances(Aws::Vector<ActiveInstance>&& value) { m_activeInstances = std::move(value); }
 
     /**
-     * <p>The running instances. Note that this list is refreshed periodically and
-     * might be out of date.</p>
+     * <p>The running instances. This list is refreshed periodically and might be out
+     * of date.</p>
      */
     inline DescribeSpotFleetInstancesResponse& WithActiveInstances(const Aws::Vector<ActiveInstance>& value) { SetActiveInstances(value); return *this;}
 
     /**
-     * <p>The running instances. Note that this list is refreshed periodically and
-     * might be out of date.</p>
+     * <p>The running instances. This list is refreshed periodically and might be out
+     * of date.</p>
      */
     inline DescribeSpotFleetInstancesResponse& WithActiveInstances(Aws::Vector<ActiveInstance>&& value) { SetActiveInstances(std::move(value)); return *this;}
 
     /**
-     * <p>The running instances. Note that this list is refreshed periodically and
-     * might be out of date.</p>
+     * <p>The running instances. This list is refreshed periodically and might be out
+     * of date.</p>
      */
     inline DescribeSpotFleetInstancesResponse& AddActiveInstances(const ActiveInstance& value) { m_activeInstances.push_back(value); return *this; }
 
     /**
-     * <p>The running instances. Note that this list is refreshed periodically and
-     * might be out of date.</p>
+     * <p>The running instances. This list is refreshed periodically and might be out
+     * of date.</p>
      */
     inline DescribeSpotFleetInstancesResponse& AddActiveInstances(ActiveInstance&& value) { m_activeInstances.push_back(std::move(value)); return *this; }
 

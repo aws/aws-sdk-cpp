@@ -245,6 +245,49 @@ namespace Model
 
 
     /**
+     * <p>The SSM document version to use in the request. You can specify Default,
+     * Latest, or a specific version number. </p>
+     */
+    inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
+
+    /**
+     * <p>The SSM document version to use in the request. You can specify Default,
+     * Latest, or a specific version number. </p>
+     */
+    inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
+
+    /**
+     * <p>The SSM document version to use in the request. You can specify Default,
+     * Latest, or a specific version number. </p>
+     */
+    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
+
+    /**
+     * <p>The SSM document version to use in the request. You can specify Default,
+     * Latest, or a specific version number. </p>
+     */
+    inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
+
+    /**
+     * <p>The SSM document version to use in the request. You can specify Default,
+     * Latest, or a specific version number. </p>
+     */
+    inline SendCommandRequest& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
+
+    /**
+     * <p>The SSM document version to use in the request. You can specify Default,
+     * Latest, or a specific version number. </p>
+     */
+    inline SendCommandRequest& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The SSM document version to use in the request. You can specify Default,
+     * Latest, or a specific version number. </p>
+     */
+    inline SendCommandRequest& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
+
+
+    /**
      * <p>The Sha256 or Sha1 hash created by the system when the document was created.
      * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
      */
@@ -798,6 +841,9 @@ namespace Model
 
     Aws::String m_documentName;
     bool m_documentNameHasBeenSet;
+
+    Aws::String m_documentVersion;
+    bool m_documentVersionHasBeenSet;
 
     Aws::String m_documentHash;
     bool m_documentHashHasBeenSet;
