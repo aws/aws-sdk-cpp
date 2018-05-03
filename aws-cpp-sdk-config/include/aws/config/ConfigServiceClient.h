@@ -284,11 +284,7 @@ namespace Model
    * features and their associated actions or commands, as well as how to work with
    * AWS Management Console, see <a
    * href="http://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html">What
-   * Is AWS Config</a> in the <i>AWS Config Developer Guide</i>.</p> <ul> <li/> <li/>
-   * <li/> <li/> <li/> <li/> <li/> <li/> <li/> <li/> <li/> <li/> <li/> <li/> </ul>
-   * <ul> <li/> <li/> <li/> <li/> <li/> <li/> <li/> <li/> <li/> <li/> <li/> <li/>
-   * <li/> </ul> <ul> <li> </li> <li/> <li/> <li/> <li/> <li/> <li/> <li/> <li/>
-   * <li/> <li/> <li/> </ul>
+   * Is AWS Config</a> in the <i>AWS Config Developer Guide</i>.</p>
    */
   class AWS_CONFIGSERVICE_API ConfigServiceClient : public Aws::Client::AWSJsonClient
   {
@@ -1718,8 +1714,13 @@ namespace Model
 
         /**
          * <p>Creates and updates the configuration aggregator with the selected source
-         * accounts and regions.</p> <note> <p>AWS Config should be enabled in accounts and
-         * regions you want to aggreagate.</p> </note><p><h3>See Also:</h3>   <a
+         * accounts and regions. The source account can be individual account(s) or an
+         * organization.</p> <note> <p>AWS Config should be enabled in source accounts and
+         * regions you want to aggregate.</p> <p>If your source type is an organization,
+         * you must be signed in to the master account and all features must be enabled in
+         * your organization. AWS Config calls <code>EnableAwsServiceAccess</code> API to
+         * enable integration between AWS Config and AWS Organizations. </p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationAggregator">AWS
          * API Reference</a></p>
          */
@@ -1727,8 +1728,13 @@ namespace Model
 
         /**
          * <p>Creates and updates the configuration aggregator with the selected source
-         * accounts and regions.</p> <note> <p>AWS Config should be enabled in accounts and
-         * regions you want to aggreagate.</p> </note><p><h3>See Also:</h3>   <a
+         * accounts and regions. The source account can be individual account(s) or an
+         * organization.</p> <note> <p>AWS Config should be enabled in source accounts and
+         * regions you want to aggregate.</p> <p>If your source type is an organization,
+         * you must be signed in to the master account and all features must be enabled in
+         * your organization. AWS Config calls <code>EnableAwsServiceAccess</code> API to
+         * enable integration between AWS Config and AWS Organizations. </p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationAggregator">AWS
          * API Reference</a></p>
          *
@@ -1738,8 +1744,13 @@ namespace Model
 
         /**
          * <p>Creates and updates the configuration aggregator with the selected source
-         * accounts and regions.</p> <note> <p>AWS Config should be enabled in accounts and
-         * regions you want to aggreagate.</p> </note><p><h3>See Also:</h3>   <a
+         * accounts and regions. The source account can be individual account(s) or an
+         * organization.</p> <note> <p>AWS Config should be enabled in source accounts and
+         * regions you want to aggregate.</p> <p>If your source type is an organization,
+         * you must be signed in to the master account and all features must be enabled in
+         * your organization. AWS Config calls <code>EnableAwsServiceAccess</code> API to
+         * enable integration between AWS Config and AWS Organizations. </p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationAggregator">AWS
          * API Reference</a></p>
          *

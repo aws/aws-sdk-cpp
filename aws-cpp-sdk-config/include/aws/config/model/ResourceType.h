@@ -75,7 +75,14 @@ namespace Model
     AWS_WAFRegional_Rule,
     AWS_WAFRegional_WebACL,
     AWS_CloudFront_Distribution,
-    AWS_CloudFront_StreamingDistribution
+    AWS_CloudFront_StreamingDistribution,
+    AWS_WAF_RuleGroup,
+    AWS_WAFRegional_RuleGroup,
+    AWS_Lambda_Function,
+    AWS_ElasticBeanstalk_Application,
+    AWS_ElasticBeanstalk_ApplicationVersion,
+    AWS_ElasticBeanstalk_Environment,
+    AWS_ElasticLoadBalancing_LoadBalancer
   };
 
 namespace ResourceTypeMapper

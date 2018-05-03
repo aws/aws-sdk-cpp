@@ -23,21 +23,20 @@ namespace AppSync
 {
 namespace Model
 {
-  enum class AuthenticationType
+  enum class FieldLogLevel
   {
     NOT_SET,
-    API_KEY,
-    AWS_IAM,
-    AMAZON_COGNITO_USER_POOLS,
-    OPENID_CONNECT
+    NONE,
+    ERROR_,
+    ALL
   };
 
-namespace AuthenticationTypeMapper
+namespace FieldLogLevelMapper
 {
-AWS_APPSYNC_API AuthenticationType GetAuthenticationTypeForName(const Aws::String& name);
+AWS_APPSYNC_API FieldLogLevel GetFieldLogLevelForName(const Aws::String& name);
 
-AWS_APPSYNC_API Aws::String GetNameForAuthenticationType(AuthenticationType value);
-} // namespace AuthenticationTypeMapper
+AWS_APPSYNC_API Aws::String GetNameForFieldLogLevel(FieldLogLevel value);
+} // namespace FieldLogLevelMapper
 } // namespace Model
 } // namespace AppSync
 } // namespace Aws

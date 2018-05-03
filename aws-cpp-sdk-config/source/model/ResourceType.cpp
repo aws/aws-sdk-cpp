@@ -80,6 +80,13 @@ namespace Aws
         static const int AWS_WAFRegional_WebACL_HASH = HashingUtils::HashString("AWS::WAFRegional::WebACL");
         static const int AWS_CloudFront_Distribution_HASH = HashingUtils::HashString("AWS::CloudFront::Distribution");
         static const int AWS_CloudFront_StreamingDistribution_HASH = HashingUtils::HashString("AWS::CloudFront::StreamingDistribution");
+        static const int AWS_WAF_RuleGroup_HASH = HashingUtils::HashString("AWS::WAF::RuleGroup");
+        static const int AWS_WAFRegional_RuleGroup_HASH = HashingUtils::HashString("AWS::WAFRegional::RuleGroup");
+        static const int AWS_Lambda_Function_HASH = HashingUtils::HashString("AWS::Lambda::Function");
+        static const int AWS_ElasticBeanstalk_Application_HASH = HashingUtils::HashString("AWS::ElasticBeanstalk::Application");
+        static const int AWS_ElasticBeanstalk_ApplicationVersion_HASH = HashingUtils::HashString("AWS::ElasticBeanstalk::ApplicationVersion");
+        static const int AWS_ElasticBeanstalk_Environment_HASH = HashingUtils::HashString("AWS::ElasticBeanstalk::Environment");
+        static const int AWS_ElasticLoadBalancing_LoadBalancer_HASH = HashingUtils::HashString("AWS::ElasticLoadBalancing::LoadBalancer");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -285,6 +292,34 @@ namespace Aws
           {
             return ResourceType::AWS_CloudFront_StreamingDistribution;
           }
+          else if (hashCode == AWS_WAF_RuleGroup_HASH)
+          {
+            return ResourceType::AWS_WAF_RuleGroup;
+          }
+          else if (hashCode == AWS_WAFRegional_RuleGroup_HASH)
+          {
+            return ResourceType::AWS_WAFRegional_RuleGroup;
+          }
+          else if (hashCode == AWS_Lambda_Function_HASH)
+          {
+            return ResourceType::AWS_Lambda_Function;
+          }
+          else if (hashCode == AWS_ElasticBeanstalk_Application_HASH)
+          {
+            return ResourceType::AWS_ElasticBeanstalk_Application;
+          }
+          else if (hashCode == AWS_ElasticBeanstalk_ApplicationVersion_HASH)
+          {
+            return ResourceType::AWS_ElasticBeanstalk_ApplicationVersion;
+          }
+          else if (hashCode == AWS_ElasticBeanstalk_Environment_HASH)
+          {
+            return ResourceType::AWS_ElasticBeanstalk_Environment;
+          }
+          else if (hashCode == AWS_ElasticLoadBalancing_LoadBalancer_HASH)
+          {
+            return ResourceType::AWS_ElasticLoadBalancing_LoadBalancer;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -399,6 +434,20 @@ namespace Aws
             return "AWS::CloudFront::Distribution";
           case ResourceType::AWS_CloudFront_StreamingDistribution:
             return "AWS::CloudFront::StreamingDistribution";
+          case ResourceType::AWS_WAF_RuleGroup:
+            return "AWS::WAF::RuleGroup";
+          case ResourceType::AWS_WAFRegional_RuleGroup:
+            return "AWS::WAFRegional::RuleGroup";
+          case ResourceType::AWS_Lambda_Function:
+            return "AWS::Lambda::Function";
+          case ResourceType::AWS_ElasticBeanstalk_Application:
+            return "AWS::ElasticBeanstalk::Application";
+          case ResourceType::AWS_ElasticBeanstalk_ApplicationVersion:
+            return "AWS::ElasticBeanstalk::ApplicationVersion";
+          case ResourceType::AWS_ElasticBeanstalk_Environment:
+            return "AWS::ElasticBeanstalk::Environment";
+          case ResourceType::AWS_ElasticLoadBalancing_LoadBalancer:
+            return "AWS::ElasticLoadBalancing::LoadBalancer";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

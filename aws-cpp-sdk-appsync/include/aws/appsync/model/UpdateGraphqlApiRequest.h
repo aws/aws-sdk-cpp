@@ -17,8 +17,10 @@
 #include <aws/appsync/AppSync_EXPORTS.h>
 #include <aws/appsync/AppSyncRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/appsync/model/LogConfig.h>
 #include <aws/appsync/model/AuthenticationType.h>
 #include <aws/appsync/model/UserPoolConfig.h>
+#include <aws/appsync/model/OpenIDConnectConfig.h>
 #include <utility>
 
 namespace Aws
@@ -117,6 +119,37 @@ namespace Model
 
 
     /**
+     * <p>The Amazon CloudWatch logs configuration for the <code>GraphqlApi</code>
+     * object.</p>
+     */
+    inline const LogConfig& GetLogConfig() const{ return m_logConfig; }
+
+    /**
+     * <p>The Amazon CloudWatch logs configuration for the <code>GraphqlApi</code>
+     * object.</p>
+     */
+    inline void SetLogConfig(const LogConfig& value) { m_logConfigHasBeenSet = true; m_logConfig = value; }
+
+    /**
+     * <p>The Amazon CloudWatch logs configuration for the <code>GraphqlApi</code>
+     * object.</p>
+     */
+    inline void SetLogConfig(LogConfig&& value) { m_logConfigHasBeenSet = true; m_logConfig = std::move(value); }
+
+    /**
+     * <p>The Amazon CloudWatch logs configuration for the <code>GraphqlApi</code>
+     * object.</p>
+     */
+    inline UpdateGraphqlApiRequest& WithLogConfig(const LogConfig& value) { SetLogConfig(value); return *this;}
+
+    /**
+     * <p>The Amazon CloudWatch logs configuration for the <code>GraphqlApi</code>
+     * object.</p>
+     */
+    inline UpdateGraphqlApiRequest& WithLogConfig(LogConfig&& value) { SetLogConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>The new authentication type for the <code>GraphqlApi</code> object.</p>
      */
     inline const AuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
@@ -172,6 +205,37 @@ namespace Model
      */
     inline UpdateGraphqlApiRequest& WithUserPoolConfig(UserPoolConfig&& value) { SetUserPoolConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Open Id Connect configuration configuration for the
+     * <code>GraphqlApi</code> object.</p>
+     */
+    inline const OpenIDConnectConfig& GetOpenIDConnectConfig() const{ return m_openIDConnectConfig; }
+
+    /**
+     * <p>The Open Id Connect configuration configuration for the
+     * <code>GraphqlApi</code> object.</p>
+     */
+    inline void SetOpenIDConnectConfig(const OpenIDConnectConfig& value) { m_openIDConnectConfigHasBeenSet = true; m_openIDConnectConfig = value; }
+
+    /**
+     * <p>The Open Id Connect configuration configuration for the
+     * <code>GraphqlApi</code> object.</p>
+     */
+    inline void SetOpenIDConnectConfig(OpenIDConnectConfig&& value) { m_openIDConnectConfigHasBeenSet = true; m_openIDConnectConfig = std::move(value); }
+
+    /**
+     * <p>The Open Id Connect configuration configuration for the
+     * <code>GraphqlApi</code> object.</p>
+     */
+    inline UpdateGraphqlApiRequest& WithOpenIDConnectConfig(const OpenIDConnectConfig& value) { SetOpenIDConnectConfig(value); return *this;}
+
+    /**
+     * <p>The Open Id Connect configuration configuration for the
+     * <code>GraphqlApi</code> object.</p>
+     */
+    inline UpdateGraphqlApiRequest& WithOpenIDConnectConfig(OpenIDConnectConfig&& value) { SetOpenIDConnectConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_apiId;
@@ -180,11 +244,17 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet;
 
+    LogConfig m_logConfig;
+    bool m_logConfigHasBeenSet;
+
     AuthenticationType m_authenticationType;
     bool m_authenticationTypeHasBeenSet;
 
     UserPoolConfig m_userPoolConfig;
     bool m_userPoolConfigHasBeenSet;
+
+    OpenIDConnectConfig m_openIDConnectConfig;
+    bool m_openIDConnectConfigHasBeenSet;
   };
 
 } // namespace Model

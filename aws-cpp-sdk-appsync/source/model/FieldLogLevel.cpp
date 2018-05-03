@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/appsync/model/AuthenticationType.h>
+#include <aws/appsync/model/FieldLogLevel.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -27,56 +27,49 @@ namespace Aws
   {
     namespace Model
     {
-      namespace AuthenticationTypeMapper
+      namespace FieldLogLevelMapper
       {
 
-        static const int API_KEY_HASH = HashingUtils::HashString("API_KEY");
-        static const int AWS_IAM_HASH = HashingUtils::HashString("AWS_IAM");
-        static const int AMAZON_COGNITO_USER_POOLS_HASH = HashingUtils::HashString("AMAZON_COGNITO_USER_POOLS");
-        static const int OPENID_CONNECT_HASH = HashingUtils::HashString("OPENID_CONNECT");
+        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static const int ALL_HASH = HashingUtils::HashString("ALL");
 
 
-        AuthenticationType GetAuthenticationTypeForName(const Aws::String& name)
+        FieldLogLevel GetFieldLogLevelForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == API_KEY_HASH)
+          if (hashCode == NONE_HASH)
           {
-            return AuthenticationType::API_KEY;
+            return FieldLogLevel::NONE;
           }
-          else if (hashCode == AWS_IAM_HASH)
+          else if (hashCode == ERROR__HASH)
           {
-            return AuthenticationType::AWS_IAM;
+            return FieldLogLevel::ERROR_;
           }
-          else if (hashCode == AMAZON_COGNITO_USER_POOLS_HASH)
+          else if (hashCode == ALL_HASH)
           {
-            return AuthenticationType::AMAZON_COGNITO_USER_POOLS;
-          }
-          else if (hashCode == OPENID_CONNECT_HASH)
-          {
-            return AuthenticationType::OPENID_CONNECT;
+            return FieldLogLevel::ALL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<AuthenticationType>(hashCode);
+            return static_cast<FieldLogLevel>(hashCode);
           }
 
-          return AuthenticationType::NOT_SET;
+          return FieldLogLevel::NOT_SET;
         }
 
-        Aws::String GetNameForAuthenticationType(AuthenticationType enumValue)
+        Aws::String GetNameForFieldLogLevel(FieldLogLevel enumValue)
         {
           switch(enumValue)
           {
-          case AuthenticationType::API_KEY:
-            return "API_KEY";
-          case AuthenticationType::AWS_IAM:
-            return "AWS_IAM";
-          case AuthenticationType::AMAZON_COGNITO_USER_POOLS:
-            return "AMAZON_COGNITO_USER_POOLS";
-          case AuthenticationType::OPENID_CONNECT:
-            return "OPENID_CONNECT";
+          case FieldLogLevel::NONE:
+            return "NONE";
+          case FieldLogLevel::ERROR_:
+            return "ERROR";
+          case FieldLogLevel::ALL:
+            return "ALL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -88,7 +81,7 @@ namespace Aws
           }
         }
 
-      } // namespace AuthenticationTypeMapper
+      } // namespace FieldLogLevelMapper
     } // namespace Model
   } // namespace AppSync
 } // namespace Aws

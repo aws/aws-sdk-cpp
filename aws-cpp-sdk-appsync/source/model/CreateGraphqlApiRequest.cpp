@@ -24,9 +24,11 @@ using namespace Aws::Utils;
 
 CreateGraphqlApiRequest::CreateGraphqlApiRequest() : 
     m_nameHasBeenSet(false),
+    m_logConfigHasBeenSet(false),
     m_authenticationType(AuthenticationType::NOT_SET),
     m_authenticationTypeHasBeenSet(false),
-    m_userPoolConfigHasBeenSet(false)
+    m_userPoolConfigHasBeenSet(false),
+    m_openIDConnectConfigHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,12 @@ Aws::String CreateGraphqlApiRequest::SerializePayload() const
 
   }
 
+  if(m_logConfigHasBeenSet)
+  {
+   payload.WithObject("logConfig", m_logConfig.Jsonize());
+
+  }
+
   if(m_authenticationTypeHasBeenSet)
   {
    payload.WithString("authenticationType", AuthenticationTypeMapper::GetNameForAuthenticationType(m_authenticationType));
@@ -48,6 +56,12 @@ Aws::String CreateGraphqlApiRequest::SerializePayload() const
   if(m_userPoolConfigHasBeenSet)
   {
    payload.WithObject("userPoolConfig", m_userPoolConfig.Jsonize());
+
+  }
+
+  if(m_openIDConnectConfigHasBeenSet)
+  {
+   payload.WithObject("openIDConnectConfig", m_openIDConnectConfig.Jsonize());
 
   }
 

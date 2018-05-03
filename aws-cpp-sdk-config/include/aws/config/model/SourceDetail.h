@@ -97,8 +97,9 @@ namespace Model
      * <p> <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic
      * evaluation when AWS Config delivers a configuration snapshot.</p> </li> </ul>
      * <p>If you want your custom rule to be triggered by configuration changes,
-     * specify both <code>ConfigurationItemChangeNotification</code> and
-     * <code>OversizedConfigurationItemChangeNotification</code>. </p>
+     * specify two SourceDetail objects, one for
+     * <code>ConfigurationItemChangeNotification</code> and one for
+     * <code>OversizedConfigurationItemChangeNotification</code>.</p>
      */
     inline const MessageType& GetMessageType() const{ return m_messageType; }
 
@@ -116,8 +117,9 @@ namespace Model
      * <p> <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic
      * evaluation when AWS Config delivers a configuration snapshot.</p> </li> </ul>
      * <p>If you want your custom rule to be triggered by configuration changes,
-     * specify both <code>ConfigurationItemChangeNotification</code> and
-     * <code>OversizedConfigurationItemChangeNotification</code>. </p>
+     * specify two SourceDetail objects, one for
+     * <code>ConfigurationItemChangeNotification</code> and one for
+     * <code>OversizedConfigurationItemChangeNotification</code>.</p>
      */
     inline void SetMessageType(const MessageType& value) { m_messageTypeHasBeenSet = true; m_messageType = value; }
 
@@ -135,8 +137,9 @@ namespace Model
      * <p> <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic
      * evaluation when AWS Config delivers a configuration snapshot.</p> </li> </ul>
      * <p>If you want your custom rule to be triggered by configuration changes,
-     * specify both <code>ConfigurationItemChangeNotification</code> and
-     * <code>OversizedConfigurationItemChangeNotification</code>. </p>
+     * specify two SourceDetail objects, one for
+     * <code>ConfigurationItemChangeNotification</code> and one for
+     * <code>OversizedConfigurationItemChangeNotification</code>.</p>
      */
     inline void SetMessageType(MessageType&& value) { m_messageTypeHasBeenSet = true; m_messageType = std::move(value); }
 
@@ -154,8 +157,9 @@ namespace Model
      * <p> <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic
      * evaluation when AWS Config delivers a configuration snapshot.</p> </li> </ul>
      * <p>If you want your custom rule to be triggered by configuration changes,
-     * specify both <code>ConfigurationItemChangeNotification</code> and
-     * <code>OversizedConfigurationItemChangeNotification</code>. </p>
+     * specify two SourceDetail objects, one for
+     * <code>ConfigurationItemChangeNotification</code> and one for
+     * <code>OversizedConfigurationItemChangeNotification</code>.</p>
      */
     inline SourceDetail& WithMessageType(const MessageType& value) { SetMessageType(value); return *this;}
 
@@ -173,8 +177,9 @@ namespace Model
      * <p> <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic
      * evaluation when AWS Config delivers a configuration snapshot.</p> </li> </ul>
      * <p>If you want your custom rule to be triggered by configuration changes,
-     * specify both <code>ConfigurationItemChangeNotification</code> and
-     * <code>OversizedConfigurationItemChangeNotification</code>. </p>
+     * specify two SourceDetail objects, one for
+     * <code>ConfigurationItemChangeNotification</code> and one for
+     * <code>OversizedConfigurationItemChangeNotification</code>.</p>
      */
     inline SourceDetail& WithMessageType(MessageType&& value) { SetMessageType(std::move(value)); return *this;}
 
