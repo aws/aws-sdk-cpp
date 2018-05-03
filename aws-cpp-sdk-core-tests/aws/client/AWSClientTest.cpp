@@ -15,32 +15,20 @@
 
 #define AWS_DISABLE_DEPRECATION
 #include <aws/external/gtest.h>
-#include <aws/core/client/AWSClient.h>
-#include <aws/core/client/AWSError.h>
-#include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/DefaultRetryStrategy.h>
-#include <aws/core/AmazonWebServiceRequest.h>
-#include <aws/core/auth/AWSAuthSigner.h>
-#include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/http/standard/StandardHttpRequest.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
-#include <aws/core/utils/memory/stl/AWSAllocator.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/Globals.h>
 #include <aws/testing/mocks/http/MockHttpClient.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/testing/mocks/aws/client/MockAWSClient.h>
 
-using namespace Aws::Client;
-using namespace Aws::Http::Standard;
-using namespace Aws::Http;
-using namespace Aws;
 using Aws::Utils::DateTime;
 using Aws::Utils::DateFormat;
 
-const char* ALLOCATION_TAG = "AWSClientTest";
+static const char ALLOCATION_TAG[] = "AWSClientTest";
 
 class AccessViolatingAWSClient : public AWSClient
 {
@@ -62,87 +50,6 @@ protected:
     {
         AWS_UNREFERENCED_PARAM(response);
         return AWSError<CoreErrors>(CoreErrors::INVALID_ACTION, false);
-    }
-};
-
- 
-class AmazonWebServiceRequestMock : public AmazonWebServiceRequest
-{
-public:
-    AmazonWebServiceRequestMock() : m_shouldComputeMd5(false) { }
-    std::shared_ptr<Aws::IOStream> GetBody() const override { return m_body; }
-    void SetBody(const std::shared_ptr<Aws::IOStream>& body) { m_body = body; }
-    HeaderValueCollection GetHeaders() const override { return m_headers; }
-    void SetHeaders(const HeaderValueCollection& value) { m_headers = value; }
-    bool ShouldComputeContentMd5() const override { return m_shouldComputeMd5; }
-    void SetComputeContentMd5(bool value) { m_shouldComputeMd5 = value; }
-    virtual const char* GetServiceRequestName() const override { return "AmazonWebServiceRequestMock"; }
-
-private:
-    std::shared_ptr<Aws::IOStream> m_body;
-    HeaderValueCollection m_headers;
-    bool m_shouldComputeMd5;
-};
-
-class CountedRetryStrategy : public DefaultRetryStrategy
-{
-public:
-    CountedRetryStrategy() : m_attemptedRetries(0) {}
-    bool ShouldRetry(const AWSError<CoreErrors>& error, long attemptedRetries) const override
-    {
-        if(DefaultRetryStrategy::ShouldRetry(error, attemptedRetries)) 
-        {
-            m_attemptedRetries = attemptedRetries + 1;
-            return true;
-        }
-        return false;
-    }
-    int GetAttemptedRetriesCount() { return m_attemptedRetries; }
-    void ResetAttemptedRetriesCount() { m_attemptedRetries = 0; }
-private:
-    mutable int m_attemptedRetries;
-};
-
-class MockAWSClient : AWSClient
-{
-    using DateTime = Aws::Utils::DateTime;
-    using DateFormat = Aws::Utils::DateFormat;
-
-public:
-    MockAWSClient(const ClientConfiguration& config) : AWSClient(config, 
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, 
-                Aws::MakeShared<Aws::Auth::SimpleAWSCredentialsProvider>(ALLOCATION_TAG, "AKIDEXAMPLE", 
-                    "wJalrXUtnFEMI/K7MDENG+bPxRfiCYEXAMPLEKEY"), "service", "us-east-1"), nullptr) , 
-        m_countedRetryStrategy(std::static_pointer_cast<CountedRetryStrategy>(config.retryStrategy)) { }
-
-    Aws::Client::HttpResponseOutcome MakeRequest(const AmazonWebServiceRequest& request)
-    {
-        m_countedRetryStrategy->ResetAttemptedRetriesCount();
-        const URI uri("domain.com/something");
-        const auto method = HttpMethod::HTTP_GET;
-        HttpResponseOutcome httpOutcome(AWSClient::AttemptExhaustively(uri, request, method, Aws::Auth::SIGV4_SIGNER));
-        return httpOutcome;
-    }
-
-    int GetRequestAttemptedRetries()
-    {
-        return m_countedRetryStrategy->GetAttemptedRetriesCount();
-    }
-
-protected:
-    std::shared_ptr<CountedRetryStrategy> m_countedRetryStrategy;
-    AWSError<CoreErrors> BuildAWSError(const std::shared_ptr<HttpResponse>& response) const override
-    {
-        if (!response)
-        {
-            auto err = AWSError<CoreErrors>(CoreErrors::NETWORK_CONNECTION, "", "Unable to connect to endpoint", true);
-            err.SetResponseCode(HttpResponseCode::INTERNAL_SERVER_ERROR);
-            return err;
-        }
-        auto err = AWSError<CoreErrors>(CoreErrors::INVALID_ACTION, false);
-        err.SetResponseHeaders(response->GetHeaders());
-        err.SetResponseCode(response->GetResponseCode());
-        return err;
     }
 };
 

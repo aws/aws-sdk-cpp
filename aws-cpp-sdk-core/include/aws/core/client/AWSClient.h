@@ -239,6 +239,11 @@ namespace Aws
             Aws::Client::AWSAuthSigner* GetSignerByName(const char* name) const;
 
         private:
+            /**
+             * Try to adjust signer's clock
+             * return true if signer's clock is adjusted, false otherwise.
+             */
+            bool AdjustClockSkew(HttpResponseOutcome& outcome, const char* signerName) const;
             void AddHeadersToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest, const Http::HeaderValueCollection& headerValues) const;
             void AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest,
                                          const std::shared_ptr<Aws::IOStream>& body, bool needsContentMd5 = false) const;
