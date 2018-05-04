@@ -31,6 +31,7 @@ namespace Model
 InstanceDetails::InstanceDetails() : 
     m_availabilityZoneHasBeenSet(false),
     m_iamInstanceProfileHasBeenSet(false),
+    m_imageDescriptionHasBeenSet(false),
     m_imageIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_instanceStateHasBeenSet(false),
@@ -46,6 +47,7 @@ InstanceDetails::InstanceDetails() :
 InstanceDetails::InstanceDetails(const JsonValue& jsonValue) : 
     m_availabilityZoneHasBeenSet(false),
     m_iamInstanceProfileHasBeenSet(false),
+    m_imageDescriptionHasBeenSet(false),
     m_imageIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_instanceStateHasBeenSet(false),
@@ -73,6 +75,13 @@ InstanceDetails& InstanceDetails::operator =(const JsonValue& jsonValue)
     m_iamInstanceProfile = jsonValue.GetObject("iamInstanceProfile");
 
     m_iamInstanceProfileHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("imageDescription"))
+  {
+    m_imageDescription = jsonValue.GetString("imageDescription");
+
+    m_imageDescriptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("imageId"))
@@ -163,6 +172,12 @@ JsonValue InstanceDetails::Jsonize() const
   if(m_iamInstanceProfileHasBeenSet)
   {
    payload.WithObject("iamInstanceProfile", m_iamInstanceProfile.Jsonize());
+
+  }
+
+  if(m_imageDescriptionHasBeenSet)
+  {
+   payload.WithString("imageDescription", m_imageDescription);
 
   }
 

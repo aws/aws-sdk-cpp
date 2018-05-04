@@ -105,6 +105,42 @@ namespace Model
 
 
     /**
+     * The image description of the EC2 instance.
+     */
+    inline const Aws::String& GetImageDescription() const{ return m_imageDescription; }
+
+    /**
+     * The image description of the EC2 instance.
+     */
+    inline void SetImageDescription(const Aws::String& value) { m_imageDescriptionHasBeenSet = true; m_imageDescription = value; }
+
+    /**
+     * The image description of the EC2 instance.
+     */
+    inline void SetImageDescription(Aws::String&& value) { m_imageDescriptionHasBeenSet = true; m_imageDescription = std::move(value); }
+
+    /**
+     * The image description of the EC2 instance.
+     */
+    inline void SetImageDescription(const char* value) { m_imageDescriptionHasBeenSet = true; m_imageDescription.assign(value); }
+
+    /**
+     * The image description of the EC2 instance.
+     */
+    inline InstanceDetails& WithImageDescription(const Aws::String& value) { SetImageDescription(value); return *this;}
+
+    /**
+     * The image description of the EC2 instance.
+     */
+    inline InstanceDetails& WithImageDescription(Aws::String&& value) { SetImageDescription(std::move(value)); return *this;}
+
+    /**
+     * The image description of the EC2 instance.
+     */
+    inline InstanceDetails& WithImageDescription(const char* value) { SetImageDescription(value); return *this;}
+
+
+    /**
      * The image ID of the EC2 instance.
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
@@ -434,6 +470,9 @@ namespace Model
 
     IamInstanceProfile m_iamInstanceProfile;
     bool m_iamInstanceProfileHasBeenSet;
+
+    Aws::String m_imageDescription;
+    bool m_imageDescriptionHasBeenSet;
 
     Aws::String m_imageId;
     bool m_imageIdHasBeenSet;

@@ -138,13 +138,22 @@ namespace Model
     inline InviteMembersRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
 
-    
+    /**
+     * A boolean value that specifies whether you want to disable email notification to
+     * the accounts that you’re inviting to GuardDuty as members.
+     */
     inline bool GetDisableEmailNotification() const{ return m_disableEmailNotification; }
 
-    
+    /**
+     * A boolean value that specifies whether you want to disable email notification to
+     * the accounts that you’re inviting to GuardDuty as members.
+     */
     inline void SetDisableEmailNotification(bool value) { m_disableEmailNotificationHasBeenSet = true; m_disableEmailNotification = value; }
 
-    
+    /**
+     * A boolean value that specifies whether you want to disable email notification to
+     * the accounts that you’re inviting to GuardDuty as members.
+     */
     inline InviteMembersRequest& WithDisableEmailNotification(bool value) { SetDisableEmailNotification(value); return *this;}
 
 

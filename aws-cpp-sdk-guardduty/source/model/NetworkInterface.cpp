@@ -30,6 +30,7 @@ namespace Model
 
 NetworkInterface::NetworkInterface() : 
     m_ipv6AddressesHasBeenSet(false),
+    m_networkInterfaceIdHasBeenSet(false),
     m_privateDnsNameHasBeenSet(false),
     m_privateIpAddressHasBeenSet(false),
     m_privateIpAddressesHasBeenSet(false),
@@ -43,6 +44,7 @@ NetworkInterface::NetworkInterface() :
 
 NetworkInterface::NetworkInterface(const JsonValue& jsonValue) : 
     m_ipv6AddressesHasBeenSet(false),
+    m_networkInterfaceIdHasBeenSet(false),
     m_privateDnsNameHasBeenSet(false),
     m_privateIpAddressHasBeenSet(false),
     m_privateIpAddressesHasBeenSet(false),
@@ -65,6 +67,13 @@ NetworkInterface& NetworkInterface::operator =(const JsonValue& jsonValue)
       m_ipv6Addresses.push_back(ipv6AddressesJsonList[ipv6AddressesIndex].AsString());
     }
     m_ipv6AddressesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("networkInterfaceId"))
+  {
+    m_networkInterfaceId = jsonValue.GetString("networkInterfaceId");
+
+    m_networkInterfaceIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("privateDnsName"))
@@ -144,6 +153,12 @@ JsonValue NetworkInterface::Jsonize() const
      ipv6AddressesJsonList[ipv6AddressesIndex].AsString(m_ipv6Addresses[ipv6AddressesIndex]);
    }
    payload.WithArray("ipv6Addresses", std::move(ipv6AddressesJsonList));
+
+  }
+
+  if(m_networkInterfaceIdHasBeenSet)
+  {
+   payload.WithString("networkInterfaceId", m_networkInterfaceId);
 
   }
 

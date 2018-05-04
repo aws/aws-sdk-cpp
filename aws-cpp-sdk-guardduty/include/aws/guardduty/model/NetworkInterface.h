@@ -91,6 +91,42 @@ namespace Model
 
 
     /**
+     * The ID of the network interface
+     */
+    inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
+
+    /**
+     * The ID of the network interface
+     */
+    inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
+
+    /**
+     * The ID of the network interface
+     */
+    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
+
+    /**
+     * The ID of the network interface
+     */
+    inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId.assign(value); }
+
+    /**
+     * The ID of the network interface
+     */
+    inline NetworkInterface& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
+
+    /**
+     * The ID of the network interface
+     */
+    inline NetworkInterface& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
+
+    /**
+     * The ID of the network interface
+     */
+    inline NetworkInterface& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
+
+
+    /**
      * Private DNS name of the EC2 instance.
      */
     inline const Aws::String& GetPrivateDnsName() const{ return m_privateDnsName; }
@@ -381,6 +417,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_ipv6Addresses;
     bool m_ipv6AddressesHasBeenSet;
+
+    Aws::String m_networkInterfaceId;
+    bool m_networkInterfaceIdHasBeenSet;
 
     Aws::String m_privateDnsName;
     bool m_privateDnsNameHasBeenSet;
