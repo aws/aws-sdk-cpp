@@ -21,9 +21,9 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/threading/ReaderWriterLock.h>
 #include <aws/core/internal/AWSHttpResourceClient.h>
 #include <memory>
-#include <mutex>
 
 namespace Aws
 {
@@ -36,7 +36,6 @@ namespace Aws
     namespace Auth
     {
         static int REFRESH_THRESHOLD = 1000 * 60 * 15;
-        static int EXPIRATION_GRACE_PERIOD = 5 * 1000;
 
         /**
          * Simple data object around aws credentials
@@ -162,7 +161,8 @@ namespace Aws
              *  to aid your implementation of GetAWSCredentials.
              */
             virtual bool IsTimeToRefresh(long reloadFrequency);
-
+            virtual void Reload();
+            mutable Aws::Utils::Threading::ReaderWriterLock m_reloadLock;
         private:
             long long m_lastLoadedMs;
         };
@@ -273,6 +273,8 @@ namespace Aws
              */
             static Aws::String GetProfileDirectory();
 
+        protected:
+            void Reload() override;
         private:
 
             /**
@@ -283,7 +285,6 @@ namespace Aws
             Aws::String m_profileToUse;
             std::shared_ptr<Aws::Config::AWSProfileConfigLoader> m_configFileLoader;
             std::shared_ptr<Aws::Config::AWSProfileConfigLoader> m_credentialsFileLoader;
-            mutable std::mutex m_reloadMutex;
             long m_loadFrequencyMs;
         };
 
@@ -311,12 +312,14 @@ namespace Aws
             */
             AWSCredentials GetAWSCredentials() override;
 
+        protected:
+            void Reload() override;
+
         private:
             void RefreshIfExpired();
 
             std::shared_ptr<Aws::Config::AWSProfileConfigLoader> m_ec2MetadataConfigLoader;
             long m_loadFrequencyMs;
-            mutable std::mutex m_reloadMutex;
         };
 
         /**
@@ -345,21 +348,15 @@ namespace Aws
             */
             AWSCredentials GetAWSCredentials() override;
 
+        protected:
+            void Reload() override;
         private:
-            /**
-             * See if the Credentials will expire soon, EXPIRATION_GRACE_PERIOD millseconds before expiration, refresh it.
-             */
-            inline bool ExpiresSoon() 
-            {
-                return (m_expirationDate.Millis() - Aws::Utils::DateTime::Now().Millis() < EXPIRATION_GRACE_PERIOD);
-            }
-
+            bool ExpiresSoon() const;
             void RefreshIfExpired();
 
         private:
             std::shared_ptr<Aws::Internal::ECSCredentialsClient> m_ecsCredentialsClient;
             long m_loadFrequencyMs;
-            mutable std::mutex m_reloadMutex;
             Aws::Utils::DateTime m_expirationDate;
             Aws::Auth::AWSCredentials m_credentials;
         };
