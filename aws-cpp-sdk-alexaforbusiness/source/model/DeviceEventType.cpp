@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int CONNECTION_STATUS_HASH = HashingUtils::HashString("CONNECTION_STATUS");
+        static const int DEVICE_STATUS_HASH = HashingUtils::HashString("DEVICE_STATUS");
 
 
         DeviceEventType GetDeviceEventTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           if (hashCode == CONNECTION_STATUS_HASH)
           {
             return DeviceEventType::CONNECTION_STATUS;
+          }
+          else if (hashCode == DEVICE_STATUS_HASH)
+          {
+            return DeviceEventType::DEVICE_STATUS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +61,8 @@ namespace Aws
           {
           case DeviceEventType::CONNECTION_STATUS:
             return "CONNECTION_STATUS";
+          case DeviceEventType::DEVICE_STATUS:
+            return "DEVICE_STATUS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

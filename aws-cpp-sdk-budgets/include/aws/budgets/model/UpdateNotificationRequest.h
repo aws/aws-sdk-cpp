@@ -128,27 +128,27 @@ namespace Model
 
 
     /**
-     * <p>The previous notification associated with a budget.</p>
+     * <p>The previous notification that is associated with a budget.</p>
      */
     inline const Notification& GetOldNotification() const{ return m_oldNotification; }
 
     /**
-     * <p>The previous notification associated with a budget.</p>
+     * <p>The previous notification that is associated with a budget.</p>
      */
     inline void SetOldNotification(const Notification& value) { m_oldNotificationHasBeenSet = true; m_oldNotification = value; }
 
     /**
-     * <p>The previous notification associated with a budget.</p>
+     * <p>The previous notification that is associated with a budget.</p>
      */
     inline void SetOldNotification(Notification&& value) { m_oldNotificationHasBeenSet = true; m_oldNotification = std::move(value); }
 
     /**
-     * <p>The previous notification associated with a budget.</p>
+     * <p>The previous notification that is associated with a budget.</p>
      */
     inline UpdateNotificationRequest& WithOldNotification(const Notification& value) { SetOldNotification(value); return *this;}
 
     /**
-     * <p>The previous notification associated with a budget.</p>
+     * <p>The previous notification that is associated with a budget.</p>
      */
     inline UpdateNotificationRequest& WithOldNotification(Notification&& value) { SetOldNotification(std::move(value)); return *this;}
 

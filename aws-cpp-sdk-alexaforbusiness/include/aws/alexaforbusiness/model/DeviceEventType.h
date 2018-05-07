@@ -26,7 +26,8 @@ namespace Model
   enum class DeviceEventType
   {
     NOT_SET,
-    CONNECTION_STATUS
+    CONNECTION_STATUS,
+    DEVICE_STATUS
   };
 
 namespace DeviceEventTypeMapper
