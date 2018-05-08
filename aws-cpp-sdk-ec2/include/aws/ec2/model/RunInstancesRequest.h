@@ -26,6 +26,7 @@
 #include <aws/ec2/model/LaunchTemplateSpecification.h>
 #include <aws/ec2/model/InstanceMarketOptionsRequest.h>
 #include <aws/ec2/model/CreditSpecificationRequest.h>
+#include <aws/ec2/model/CpuOptionsRequest.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
 #include <aws/ec2/model/InstanceIpv6Address.h>
 #include <aws/ec2/model/InstanceNetworkInterfaceSpecification.h>
@@ -1399,6 +1400,42 @@ namespace Model
      */
     inline RunInstancesRequest& WithCreditSpecification(CreditSpecificationRequest&& value) { SetCreditSpecification(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The CPU options for the instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
+     * CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline const CpuOptionsRequest& GetCpuOptions() const{ return m_cpuOptions; }
+
+    /**
+     * <p>The CPU options for the instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
+     * CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetCpuOptions(const CpuOptionsRequest& value) { m_cpuOptionsHasBeenSet = true; m_cpuOptions = value; }
+
+    /**
+     * <p>The CPU options for the instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
+     * CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetCpuOptions(CpuOptionsRequest&& value) { m_cpuOptionsHasBeenSet = true; m_cpuOptions = std::move(value); }
+
+    /**
+     * <p>The CPU options for the instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
+     * CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline RunInstancesRequest& WithCpuOptions(const CpuOptionsRequest& value) { SetCpuOptions(value); return *this;}
+
+    /**
+     * <p>The CPU options for the instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
+     * CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline RunInstancesRequest& WithCpuOptions(CpuOptionsRequest&& value) { SetCpuOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
@@ -1490,6 +1527,9 @@ namespace Model
 
     CreditSpecificationRequest m_creditSpecification;
     bool m_creditSpecificationHasBeenSet;
+
+    CpuOptionsRequest m_cpuOptions;
+    bool m_cpuOptionsHasBeenSet;
   };
 
 } // namespace Model
