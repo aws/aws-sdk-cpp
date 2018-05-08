@@ -13,6 +13,7 @@
 * permissions and limitations under the License.
 */
 
+#define AWS_DISABLE_DEPRECATION
 #include <aws/external/gtest.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSError.h>

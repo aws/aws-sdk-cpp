@@ -354,7 +354,7 @@ namespace
             intConverter << objectStream->tellp();
             putRequest->SetContentLength(intConverter.str());
             putRequest->SetContentType("text/plain");
-            std::shared_ptr<HttpResponse> putResponse = m_HttpClient->MakeRequest(*putRequest);
+            std::shared_ptr<HttpResponse> putResponse = m_HttpClient->MakeRequest(putRequest);
 
             ASSERT_EQ(HttpResponseCode::OK, putResponse->GetResponseCode());
 
@@ -363,7 +363,7 @@ namespace
             // GetObject with presigned url
             Aws::String presignedUrlGet = Client->GeneratePresignedUrl(bucketName, TEST_OBJ_KEY, HttpMethod::HTTP_GET);
             std::shared_ptr<HttpRequest> getRequest = CreateHttpRequest(presignedUrlGet, HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-            std::shared_ptr<HttpResponse> getResponse = m_HttpClient->MakeRequest(*getRequest);
+            std::shared_ptr<HttpResponse> getResponse = m_HttpClient->MakeRequest(getRequest);
 
             ASSERT_EQ(HttpResponseCode::OK, getResponse->GetResponseCode());
             Aws::StringStream ss;
@@ -385,7 +385,7 @@ namespace
             Aws::String fullBucketName = CalculateBucketName(BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME.c_str());
             Aws::String presignedUrlDelete = Client->GeneratePresignedUrl(fullBucketName, TEST_OBJ_KEY, HttpMethod::HTTP_DELETE);
             std::shared_ptr<HttpRequest> deleteRequest = CreateHttpRequest(presignedUrlDelete, HttpMethod::HTTP_DELETE, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-            std::shared_ptr<HttpResponse> deleteResponse = m_HttpClient->MakeRequest(*deleteRequest);
+            std::shared_ptr<HttpResponse> deleteResponse = m_HttpClient->MakeRequest(deleteRequest);
             ASSERT_EQ(HttpResponseCode::NO_CONTENT, deleteResponse->GetResponseCode());
             WaitForBucketToEmpty(fullBucketName); 
         }
@@ -781,7 +781,7 @@ namespace
         intConverter << objectStream->tellp();
         putRequest->SetContentLength(intConverter.str());
         putRequest->SetContentType("text/plain");
-        std::shared_ptr<HttpResponse> putResponse = m_HttpClient->MakeRequest(*putRequest);
+        std::shared_ptr<HttpResponse> putResponse = m_HttpClient->MakeRequest(putRequest);
 
         ASSERT_EQ(HttpResponseCode::OK, putResponse->GetResponseCode());
 
@@ -795,7 +795,7 @@ namespace
         getRequest->SetHeaderValue(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY, HashingUtils::Base64Encode(sseKey));
         getRequest->SetHeaderValue(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5, HashingUtils::Base64Encode(HashingUtils::CalculateMD5(strBuffer)));
 
-        std::shared_ptr<HttpResponse> getResponse = m_HttpClient->MakeRequest(*getRequest);
+        std::shared_ptr<HttpResponse> getResponse = m_HttpClient->MakeRequest(getRequest);
 
         ASSERT_EQ(HttpResponseCode::OK, getResponse->GetResponseCode());
         Aws::StringStream ss;

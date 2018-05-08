@@ -62,7 +62,7 @@ Aws::String AWSHttpResourceClient::GetResource(const char* endpoint, const char*
             CreateHttpRequest(ss.str(), HttpMethod::HTTP_GET, 
                 Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
 
-    std::shared_ptr<HttpResponse> response(m_httpClient->MakeRequest(*request));
+    std::shared_ptr<HttpResponse> response(m_httpClient->MakeRequest(request));
 
     if (response == nullptr)
     {

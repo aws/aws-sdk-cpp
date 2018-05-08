@@ -14,13 +14,10 @@
   */
 
 #include <aws/external/gtest.h>
-#include <aws/core/utils/crypto/Factories.h>
-#include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/Aws.h>
 #include <aws/testing/TestingEnvironment.h>
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/testing/MemoryTesting.h>
-#include <aws/testing/mocks/http/MockHttpClient.h>
 
 #if !defined(_WIN32) && !defined(ORBIS)
 #include <sys/stat.h>

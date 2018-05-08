@@ -12,7 +12,7 @@
   * express or implied. See the License for the specific language governing
   * permissions and limitations under the License.
   */
-
+#define AWS_DISABLE_DEPRECATION
 #include <aws/core/http/windows/WinHttpSyncHttpClient.h>
 
 #include <aws/core/Http/HttpRequest.h>
@@ -181,7 +181,7 @@ bool WinHttpSyncHttpClient::DoReceiveResponse(void* httpRequest) const
     return (WinHttpReceiveResponse(httpRequest, nullptr) != 0);
 }
 
-bool WinHttpSyncHttpClient::DoQueryHeaders(void* hHttpRequest, std::shared_ptr<StandardHttpResponse>& response, Aws::StringStream& ss, uint64_t& read) const
+bool WinHttpSyncHttpClient::DoQueryHeaders(void* hHttpRequest, std::shared_ptr<HttpResponse>& response, Aws::StringStream& ss, uint64_t& read) const
 {
     wchar_t dwStatusCode[256];
     DWORD dwSize = sizeof(dwStatusCode);

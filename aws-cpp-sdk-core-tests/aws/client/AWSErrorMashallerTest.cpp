@@ -49,9 +49,10 @@ static Aws::UniquePtr<Aws::Http::HttpResponse> BuildHttpResponse(const Aws::Stri
 {
     using namespace Aws::Http;
     using namespace Aws::Http::Standard;
-    StandardHttpRequest fakeRequest("/some/uri", Aws::Http::HttpMethod::HTTP_GET);
+    auto fakeRequest = Aws::MakeShared<StandardHttpRequest>(ERROR_MARSHALLER_TEST_ALLOC_TAG, 
+            "/some/uri", Aws::Http::HttpMethod::HTTP_GET);
     auto ss = Aws::New<Aws::StringStream>(ERROR_MARSHALLER_TEST_ALLOC_TAG);
-    fakeRequest.SetResponseStreamFactory([=] { return ss; });
+    fakeRequest->SetResponseStreamFactory([=] { return ss; });
     if (style & LowerCaseMessage)
     {
         *ss << "{\"" << MESSAGE_LOWER_CASE << "\":\"" << message << "\"";
@@ -80,9 +81,10 @@ static Aws::UniquePtr<Aws::Http::HttpResponse> BuildHttpXmlResponse(const Aws::S
 {
     using namespace Aws::Http;
     using namespace Aws::Http::Standard;
-    StandardHttpRequest fakeRequest("/some/uri", Aws::Http::HttpMethod::HTTP_GET);
+    auto fakeRequest = Aws::MakeShared<StandardHttpRequest>(ERROR_MARSHALLER_TEST_ALLOC_TAG, 
+            "/some/uri", Aws::Http::HttpMethod::HTTP_GET);
     auto ss = Aws::New<Aws::StringStream>(ERROR_MARSHALLER_TEST_ALLOC_TAG);
-    fakeRequest.SetResponseStreamFactory([=] { return ss; });
+    fakeRequest->SetResponseStreamFactory([=] { return ss; });
     auto response = Aws::MakeUnique<StandardHttpResponse>(ERROR_MARSHALLER_TEST_ALLOC_TAG, fakeRequest);
 
     *ss << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";

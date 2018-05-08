@@ -33,11 +33,22 @@ public:
                                                          Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr, 
                                                          Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const override
     {
+        AWS_UNREFERENCED_PARAM(request);
+        AWS_UNREFERENCED_PARAM(readLimiter);
+        AWS_UNREFERENCED_PARAM(writeLimiter);
+        assert(false); // should not use this overload. It's deprecated
+        return nullptr;
+    }
+
+    std::shared_ptr<Aws::Http::HttpResponse> MakeRequest(const std::shared_ptr<Aws::Http::HttpRequest>& request,
+                                                         Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr, 
+                                                         Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const override
+    {
         AWS_UNREFERENCED_PARAM(readLimiter);
         AWS_UNREFERENCED_PARAM(writeLimiter);
 
         //note that the mock client factory logically enforces type safety here.
-        m_requestsMade.push_back((const Aws::Http::Standard::StandardHttpRequest&)request);
+        m_requestsMade.push_back(static_cast<const Aws::Http::Standard::StandardHttpRequest&>(*request));
 
         if (m_responsesToUse.size() > 0)
         {

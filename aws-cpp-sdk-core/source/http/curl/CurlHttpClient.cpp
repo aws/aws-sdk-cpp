@@ -299,8 +299,10 @@ CurlHttpClient::CurlHttpClient(const ClientConfiguration& clientConfig) :
 }
 
 
-std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
-                                                          Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
+void CurlHttpClient::MakeRequestInternal(HttpRequest& request, 
+        std::shared_ptr<StandardHttpResponse>& response,
+        Aws::Utils::RateLimits::RateLimiterInterface* readLimiter, 
+        Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
 {
     URI uri = request.GetUri();
     Aws::String url = uri.GetURIString();
@@ -337,7 +339,6 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
         headers = curl_slist_append(headers, "content-type:");
     }
 
-    std::shared_ptr<HttpResponse> response(nullptr);
     CURL* connectionHandle = m_curlHandleContainer.AcquireCurlHandle();
 
     if (connectionHandle)
@@ -349,7 +350,6 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
             curl_easy_setopt(connectionHandle, CURLOPT_HTTPHEADER, headers);
         }
 
-        response = Aws::MakeShared<StandardHttpResponse>(CURL_HTTP_CLIENT_TAG, request);
         CurlWriteCallbackContext writeContext(this, &request, response.get(), readLimiter);
         CurlReadCallbackContext readContext(this, &request, writeLimiter);
 
@@ -480,10 +480,23 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
     {
         curl_slist_free_all(headers);
     }
-
+}
+std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
+        Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
+        Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
+{
+    auto response = Aws::MakeShared<StandardHttpResponse>(CURL_HTTP_CLIENT_TAG, request);
+    MakeRequestInternal(request, response, readLimiter, writeLimiter);
     return response;
 }
 
+std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<HttpRequest>& request, Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
+                                                          Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
+{
+    auto response = Aws::MakeShared<StandardHttpResponse>(CURL_HTTP_CLIENT_TAG, request);
+    MakeRequestInternal(*request, response, readLimiter, writeLimiter);
+    return response;
+}
 
 size_t CurlHttpClient::WriteData(char* ptr, size_t size, size_t nmemb, void* userdata)
 {

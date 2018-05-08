@@ -12,7 +12,7 @@
   * express or implied. See the License for the specific language governing
   * permissions and limitations under the License.
   */
-
+#define AWS_DISABLE_DEPRECATION
 #include <aws/core/http/windows/WinSyncHttpClient.h>
 #include <aws/core/Http/HttpRequest.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
@@ -35,6 +35,7 @@ using namespace Aws::Utils;
 using namespace Aws::Utils::Logging;
 
 static const uint32_t HTTP_REQUEST_WRITE_BUFFER_LENGTH = 8192;
+static const char CLASS_TAG[] = "WinSyncHttpClient";
 
 WinSyncHttpClient::~WinSyncHttpClient()
 {
@@ -171,9 +172,8 @@ void WinSyncHttpClient::LogRequestInternalFailure() const
 
 }
 
-std::shared_ptr<HttpResponse> WinSyncHttpClient::BuildSuccessResponse(const Aws::Http::HttpRequest& request, void* hHttpRequest, Aws::Utils::RateLimits::RateLimiterInterface* readLimiter) const
+void WinSyncHttpClient::BuildSuccessResponse(const Aws::Http::HttpRequest& request, std::shared_ptr<HttpResponse>& response, void* hHttpRequest, Aws::Utils::RateLimits::RateLimiterInterface* readLimiter) const
 {
-    auto response = Aws::MakeShared<StandardHttpResponse>(GetLogTag(), request);
     Aws::StringStream ss;
     uint64_t read = 0;
 
@@ -249,19 +249,38 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::BuildSuccessResponse(const Aws:
 
         if(!success)
         {
-            return nullptr;
+            return;
         }
     }
 
     //go ahead and flush the response body.
     response->GetResponseBody().flush();
 
-    return response;
+    return;
 }
 
-std::shared_ptr<HttpResponse> WinSyncHttpClient::MakeRequest(HttpRequest& request, 
-                                                                 Aws::Utils::RateLimits::RateLimiterInterface* readLimiter, 
-                                                                 Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
+std::shared_ptr<HttpResponse> WinSyncHttpClient::MakeRequest(HttpRequest& request,
+	Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
+	Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
+{
+	std::shared_ptr<HttpResponse> response = Aws::MakeShared<Standard::StandardHttpResponse>(CLASS_TAG, request); 
+	MakeRequestInternal(request, response, readLimiter, writeLimiter);
+	return response;
+}
+
+std::shared_ptr<HttpResponse> WinSyncHttpClient::MakeRequest(const std::shared_ptr<HttpRequest>& request,
+	Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
+	Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
+{
+	std::shared_ptr<HttpResponse> response = Aws::MakeShared<Standard::StandardHttpResponse>(CLASS_TAG, request);
+	MakeRequestInternal(*request, response, readLimiter, writeLimiter);
+	return response;
+}
+
+void WinSyncHttpClient::MakeRequestInternal(HttpRequest& request,
+        std::shared_ptr<HttpResponse>& response,
+        Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
+        Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
 {
 	//we URL encode right before going over the wire to avoid double encoding problems with the signer.
 	URI& uriRef = request.GetUri();
@@ -296,10 +315,9 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::MakeRequest(HttpRequest& reques
         success = StreamPayloadToRequest(request, hHttpRequest, writeLimiter);
     }
 
-    std::shared_ptr<HttpResponse> response(nullptr);
     if(success)
     {
-        response = BuildSuccessResponse(request, hHttpRequest, readLimiter);
+        BuildSuccessResponse(request, response, hHttpRequest, readLimiter);
     }
     
     if ((!success || response == nullptr) && !IsRequestProcessingEnabled() || !ContinueRequest(request))
@@ -321,6 +339,4 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::MakeRequest(HttpRequest& reques
 
     AWS_LOGSTREAM_DEBUG(GetLogTag(), "Releasing connection handle " << connection);
     GetConnectionPoolManager()->ReleaseConnectionForHost(request.GetUri().GetAuthority(), request.GetUri().GetPort(), connection);
-
-    return response;
 }

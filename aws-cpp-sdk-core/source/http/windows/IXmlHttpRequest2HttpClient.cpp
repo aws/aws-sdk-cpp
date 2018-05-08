@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+#define AWS_DISABLE_DEPRECATION
 
 #include <aws/core/http/windows/IXmlHttpRequest2HttpClient.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
@@ -318,7 +319,27 @@ namespace Aws
         }
 
         std::shared_ptr<HttpResponse> IXmlHttpRequest2HttpClient::MakeRequest(HttpRequest& request,
-                                        Aws::Utils::RateLimits::RateLimiterInterface* readLimiter, Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
+                Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
+                Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
+        {
+            std::shared_ptr<HttpResponse> response = Aws::MakeShared<Standard::StandardHttpResponse>(CLASS_TAG, request);
+            MakeRequestInternal(request, response, readLimiter, writeLimiter);
+            return response;
+        }
+
+        std::shared_ptr<HttpResponse> IXmlHttpRequest2HttpClient::MakeRequest(const std::shared_ptr<HttpRequest>& request,
+                                        Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
+                                        Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
+        {
+            std::shared_ptr<HttpResponse> response = Aws::MakeShared<Standard::StandardHttpResponse>(CLASS_TAG, request);
+            MakeRequestInternal(*request, response, readLimiter, writeLimiter);
+            return response;
+        }
+
+        void IXmlHttpRequest2HttpClient::MakeRequestInternal(HttpRequest& request,
+                                        std::shared_ptr<HttpResponse>& response,
+                                        Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
+                                        Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
         {
             auto uri = request.GetUri();
             auto fullUriString = uri.GetURIString();
@@ -332,7 +353,6 @@ namespace Aws
 
             auto requestHandle = m_resourceManager.Acquire();     
             
-            auto response = Aws::MakeShared<Standard::StandardHttpResponse>(CLASS_TAG, request);
             ComPtr<IXmlHttpRequest2HttpClientCallbacks> callbacks = Make<IXmlHttpRequest2HttpClientCallbacks>(*response, m_followRedirects);
                 
             HRESULT hrResult = requestHandle->Open(methodStr.c_str(), url.c_str(), callbacks.Get(), nullptr, nullptr, proxyUserNameStr.c_str(), proxyPasswordStr.c_str());
@@ -342,7 +362,8 @@ namespace Aws
             {
                 AWS_LOGSTREAM_ERROR(CLASS_TAG, "Error opening http request with status code " << hrResult);
                 AWS_LOGSTREAM_DEBUG(CLASS_TAG, "The http request is: " << uri.GetURIString());
-                return nullptr;
+                response = nullptr;
+                return;
             }
 
             AWS_LOGSTREAM_TRACE(CLASS_TAG, "Setting http headers:");
@@ -356,10 +377,11 @@ namespace Aws
                 {
                     AWS_LOGSTREAM_ERROR(CLASS_TAG, "Error setting http header " << header.first << " With status code: " << hrResult);
                     AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Corresponding header's value is: " << header.second);
-                    return nullptr;
+                    response = nullptr;
+                    return;
                 }
             }
-            
+
             if (writeLimiter)
             {
                 writeLimiter->ApplyAndPayForCost(request.GetSize());
@@ -393,7 +415,6 @@ namespace Aws
             m_resourceManager.Release(handle);
 
             response->GetResponseBody().flush();
-            return response;
         }
 
         void IXmlHttpRequest2HttpClient::FillClientSettings(const HttpRequestComHandle& handle) const

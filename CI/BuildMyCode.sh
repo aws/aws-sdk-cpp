@@ -18,4 +18,4 @@ fi
 json='{ "branch": "'$branch'", "cmakeFlags": "'$cmakeFlags' "}'
 echo $json >BuildSpec.json
 zip -r BuildSpec.zip BuildSpec.json
-aws s3 cp BuildSpec.zip s3://aws-sdk-cpp-pipeline-sdks-team/BuildSpec.zip
+aws s3 cp BuildSpec.zip s3://aws-sdk-cpp-dev-pipeline/BuildSpec.zip

@@ -33,7 +33,7 @@ namespace Aws
     namespace Http
     {
         /**
-         * Enum of Http response Codes. The integer values of the response codes coorespond to the values in the RFC.
+         * Enum of Http response Codes. The integer values of the response codes correspond to the values in the RFC.
          */
         enum class HttpResponseCode
         {
@@ -123,8 +123,18 @@ namespace Aws
             /**
              * Initializes an http response with the originalRequest and the response code.
              */
-            HttpResponse(const HttpRequest&  originatingRequest) :
+            HttpResponse(const HttpRequest& originatingRequest) :
                 httpRequest(originatingRequest),
+                sharedHttpRequest(nullptr),
+                responseCode(HttpResponseCode::REQUEST_NOT_MADE)
+            {}
+
+            /**
+             * Initializes an http response with the shared_ptr typed originalRequest and the response code.
+             */
+            HttpResponse(const std::shared_ptr<const HttpRequest>& originatingRequest) :
+                httpRequest(*originatingRequest),
+                sharedHttpRequest(originatingRequest),
                 responseCode(HttpResponseCode::REQUEST_NOT_MADE)
             {}
 
@@ -133,7 +143,14 @@ namespace Aws
             /**
              * Get the request that originated this response
              */
-            virtual inline const HttpRequest& GetOriginatingRequest() const { return httpRequest; }
+            virtual inline const HttpRequest& GetOriginatingRequest() const
+            {
+                if (sharedHttpRequest == nullptr)
+                {
+                    return httpRequest;
+                }
+                return *sharedHttpRequest;
+            }
 
             /**
              * Get the headers from this response
@@ -182,6 +199,7 @@ namespace Aws
             HttpResponse& operator = (const HttpResponse&);
 
             const HttpRequest& httpRequest;
+            std::shared_ptr<const HttpRequest> sharedHttpRequest;
             HttpResponseCode responseCode;
         };
 
