@@ -109,6 +109,25 @@ namespace Model
      */
     inline GetConsoleOutputRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>When enabled, retrieves the latest console output for the instance.</p>
+     * <p>Default: disabled (<code>false</code>)</p>
+     */
+    inline bool GetLatest() const{ return m_latest; }
+
+    /**
+     * <p>When enabled, retrieves the latest console output for the instance.</p>
+     * <p>Default: disabled (<code>false</code>)</p>
+     */
+    inline void SetLatest(bool value) { m_latestHasBeenSet = true; m_latest = value; }
+
+    /**
+     * <p>When enabled, retrieves the latest console output for the instance.</p>
+     * <p>Default: disabled (<code>false</code>)</p>
+     */
+    inline GetConsoleOutputRequest& WithLatest(bool value) { SetLatest(value); return *this;}
+
   private:
 
     Aws::String m_instanceId;
@@ -116,6 +135,9 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
+    bool m_latest;
+    bool m_latestHasBeenSet;
   };
 
 } // namespace Model

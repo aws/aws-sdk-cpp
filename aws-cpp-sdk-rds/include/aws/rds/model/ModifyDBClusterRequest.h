@@ -707,6 +707,28 @@ namespace Model
 
 
     /**
+     * <p>The target backtrack window, in seconds. To disable backtracking, set this
+     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
+     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     */
+    inline long long GetBacktrackWindow() const{ return m_backtrackWindow; }
+
+    /**
+     * <p>The target backtrack window, in seconds. To disable backtracking, set this
+     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
+     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     */
+    inline void SetBacktrackWindow(long long value) { m_backtrackWindowHasBeenSet = true; m_backtrackWindow = value; }
+
+    /**
+     * <p>The target backtrack window, in seconds. To disable backtracking, set this
+     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
+     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     */
+    inline ModifyDBClusterRequest& WithBacktrackWindow(long long value) { SetBacktrackWindow(value); return *this;}
+
+
+    /**
      * <p>The version number of the database engine to which you want to upgrade.
      * Changing this parameter results in an outage. The change is applied during the
      * next maintenance window unless the ApplyImmediately parameter is set to
@@ -806,6 +828,9 @@ namespace Model
 
     bool m_enableIAMDatabaseAuthentication;
     bool m_enableIAMDatabaseAuthenticationHasBeenSet;
+
+    long long m_backtrackWindow;
+    bool m_backtrackWindowHasBeenSet;
 
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;

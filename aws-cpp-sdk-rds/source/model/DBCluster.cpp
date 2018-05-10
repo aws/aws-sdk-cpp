@@ -71,7 +71,12 @@ DBCluster::DBCluster() :
     m_iAMDatabaseAuthenticationEnabled(false),
     m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
     m_cloneGroupIdHasBeenSet(false),
-    m_clusterCreateTimeHasBeenSet(false)
+    m_clusterCreateTimeHasBeenSet(false),
+    m_earliestBacktrackTimeHasBeenSet(false),
+    m_backtrackWindow(0),
+    m_backtrackWindowHasBeenSet(false),
+    m_backtrackConsumedChangeRecords(0),
+    m_backtrackConsumedChangeRecordsHasBeenSet(false)
 {
 }
 
@@ -116,7 +121,12 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_iAMDatabaseAuthenticationEnabled(false),
     m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
     m_cloneGroupIdHasBeenSet(false),
-    m_clusterCreateTimeHasBeenSet(false)
+    m_clusterCreateTimeHasBeenSet(false),
+    m_earliestBacktrackTimeHasBeenSet(false),
+    m_backtrackWindow(0),
+    m_backtrackWindowHasBeenSet(false),
+    m_backtrackConsumedChangeRecords(0),
+    m_backtrackConsumedChangeRecordsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -373,6 +383,24 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_clusterCreateTime = DateTime(StringUtils::Trim(clusterCreateTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_clusterCreateTimeHasBeenSet = true;
     }
+    XmlNode earliestBacktrackTimeNode = resultNode.FirstChild("EarliestBacktrackTime");
+    if(!earliestBacktrackTimeNode.IsNull())
+    {
+      m_earliestBacktrackTime = DateTime(StringUtils::Trim(earliestBacktrackTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_earliestBacktrackTimeHasBeenSet = true;
+    }
+    XmlNode backtrackWindowNode = resultNode.FirstChild("BacktrackWindow");
+    if(!backtrackWindowNode.IsNull())
+    {
+      m_backtrackWindow = StringUtils::ConvertToInt64(StringUtils::Trim(backtrackWindowNode.GetText().c_str()).c_str());
+      m_backtrackWindowHasBeenSet = true;
+    }
+    XmlNode backtrackConsumedChangeRecordsNode = resultNode.FirstChild("BacktrackConsumedChangeRecords");
+    if(!backtrackConsumedChangeRecordsNode.IsNull())
+    {
+      m_backtrackConsumedChangeRecords = StringUtils::ConvertToInt64(StringUtils::Trim(backtrackConsumedChangeRecordsNode.GetText().c_str()).c_str());
+      m_backtrackConsumedChangeRecordsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -587,6 +615,21 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_earliestBacktrackTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EarliestBacktrackTime=" << StringUtils::URLEncode(m_earliestBacktrackTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if(m_backtrackWindowHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".BacktrackWindow=" << m_backtrackWindow << "&";
+  }
+
+  if(m_backtrackConsumedChangeRecordsHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".BacktrackConsumedChangeRecords=" << m_backtrackConsumedChangeRecords << "&";
+  }
+
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -762,6 +805,18 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_clusterCreateTimeHasBeenSet)
   {
       oStream << location << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_earliestBacktrackTimeHasBeenSet)
+  {
+      oStream << location << ".EarliestBacktrackTime=" << StringUtils::URLEncode(m_earliestBacktrackTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_backtrackWindowHasBeenSet)
+  {
+      oStream << location << ".BacktrackWindow=" << m_backtrackWindow << "&";
+  }
+  if(m_backtrackConsumedChangeRecordsHasBeenSet)
+  {
+      oStream << location << ".BacktrackConsumedChangeRecords=" << m_backtrackConsumedChangeRecords << "&";
   }
 }
 

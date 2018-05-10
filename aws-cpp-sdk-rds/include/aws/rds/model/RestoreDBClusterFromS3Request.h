@@ -1286,6 +1286,28 @@ namespace Model
      */
     inline RestoreDBClusterFromS3Request& WithS3IngestionRoleArn(const char* value) { SetS3IngestionRoleArn(value); return *this;}
 
+
+    /**
+     * <p>The target backtrack window, in seconds. To disable backtracking, set this
+     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
+     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     */
+    inline long long GetBacktrackWindow() const{ return m_backtrackWindow; }
+
+    /**
+     * <p>The target backtrack window, in seconds. To disable backtracking, set this
+     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
+     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     */
+    inline void SetBacktrackWindow(long long value) { m_backtrackWindowHasBeenSet = true; m_backtrackWindow = value; }
+
+    /**
+     * <p>The target backtrack window, in seconds. To disable backtracking, set this
+     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
+     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     */
+    inline RestoreDBClusterFromS3Request& WithBacktrackWindow(long long value) { SetBacktrackWindow(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_availabilityZones;
@@ -1362,6 +1384,9 @@ namespace Model
 
     Aws::String m_s3IngestionRoleArn;
     bool m_s3IngestionRoleArnHasBeenSet;
+
+    long long m_backtrackWindow;
+    bool m_backtrackWindowHasBeenSet;
   };
 
 } // namespace Model

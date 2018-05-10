@@ -37,6 +37,8 @@ ModifyDBClusterRequest::ModifyDBClusterRequest() :
     m_preferredMaintenanceWindowHasBeenSet(false),
     m_enableIAMDatabaseAuthentication(false),
     m_enableIAMDatabaseAuthenticationHasBeenSet(false),
+    m_backtrackWindow(0),
+    m_backtrackWindowHasBeenSet(false),
     m_engineVersionHasBeenSet(false)
 {
 }
@@ -109,6 +111,11 @@ Aws::String ModifyDBClusterRequest::SerializePayload() const
   if(m_enableIAMDatabaseAuthenticationHasBeenSet)
   {
     ss << "EnableIAMDatabaseAuthentication=" << std::boolalpha << m_enableIAMDatabaseAuthentication << "&";
+  }
+
+  if(m_backtrackWindowHasBeenSet)
+  {
+    ss << "BacktrackWindow=" << m_backtrackWindow << "&";
   }
 
   if(m_engineVersionHasBeenSet)

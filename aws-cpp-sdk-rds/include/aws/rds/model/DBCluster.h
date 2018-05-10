@@ -438,32 +438,32 @@ namespace Model
 
 
     /**
-     * <p>Specifies the earliest time to which a database can be restored with
-     * point-in-time restore.</p>
+     * <p>The earliest time to which a database can be restored with point-in-time
+     * restore.</p>
      */
     inline const Aws::Utils::DateTime& GetEarliestRestorableTime() const{ return m_earliestRestorableTime; }
 
     /**
-     * <p>Specifies the earliest time to which a database can be restored with
-     * point-in-time restore.</p>
+     * <p>The earliest time to which a database can be restored with point-in-time
+     * restore.</p>
      */
     inline void SetEarliestRestorableTime(const Aws::Utils::DateTime& value) { m_earliestRestorableTimeHasBeenSet = true; m_earliestRestorableTime = value; }
 
     /**
-     * <p>Specifies the earliest time to which a database can be restored with
-     * point-in-time restore.</p>
+     * <p>The earliest time to which a database can be restored with point-in-time
+     * restore.</p>
      */
     inline void SetEarliestRestorableTime(Aws::Utils::DateTime&& value) { m_earliestRestorableTimeHasBeenSet = true; m_earliestRestorableTime = std::move(value); }
 
     /**
-     * <p>Specifies the earliest time to which a database can be restored with
-     * point-in-time restore.</p>
+     * <p>The earliest time to which a database can be restored with point-in-time
+     * restore.</p>
      */
     inline DBCluster& WithEarliestRestorableTime(const Aws::Utils::DateTime& value) { SetEarliestRestorableTime(value); return *this;}
 
     /**
-     * <p>Specifies the earliest time to which a database can be restored with
-     * point-in-time restore.</p>
+     * <p>The earliest time to which a database can be restored with point-in-time
+     * restore.</p>
      */
     inline DBCluster& WithEarliestRestorableTime(Aws::Utils::DateTime&& value) { SetEarliestRestorableTime(std::move(value)); return *this;}
 
@@ -1400,6 +1400,70 @@ namespace Model
      */
     inline DBCluster& WithClusterCreateTime(Aws::Utils::DateTime&& value) { SetClusterCreateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The earliest time to which a DB cluster can be backtracked.</p>
+     */
+    inline const Aws::Utils::DateTime& GetEarliestBacktrackTime() const{ return m_earliestBacktrackTime; }
+
+    /**
+     * <p>The earliest time to which a DB cluster can be backtracked.</p>
+     */
+    inline void SetEarliestBacktrackTime(const Aws::Utils::DateTime& value) { m_earliestBacktrackTimeHasBeenSet = true; m_earliestBacktrackTime = value; }
+
+    /**
+     * <p>The earliest time to which a DB cluster can be backtracked.</p>
+     */
+    inline void SetEarliestBacktrackTime(Aws::Utils::DateTime&& value) { m_earliestBacktrackTimeHasBeenSet = true; m_earliestBacktrackTime = std::move(value); }
+
+    /**
+     * <p>The earliest time to which a DB cluster can be backtracked.</p>
+     */
+    inline DBCluster& WithEarliestBacktrackTime(const Aws::Utils::DateTime& value) { SetEarliestBacktrackTime(value); return *this;}
+
+    /**
+     * <p>The earliest time to which a DB cluster can be backtracked.</p>
+     */
+    inline DBCluster& WithEarliestBacktrackTime(Aws::Utils::DateTime&& value) { SetEarliestBacktrackTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The target backtrack window, in seconds. If this value is set to 0,
+     * backtracking is disabled for the DB cluster. Otherwise, backtracking is
+     * enabled.</p>
+     */
+    inline long long GetBacktrackWindow() const{ return m_backtrackWindow; }
+
+    /**
+     * <p>The target backtrack window, in seconds. If this value is set to 0,
+     * backtracking is disabled for the DB cluster. Otherwise, backtracking is
+     * enabled.</p>
+     */
+    inline void SetBacktrackWindow(long long value) { m_backtrackWindowHasBeenSet = true; m_backtrackWindow = value; }
+
+    /**
+     * <p>The target backtrack window, in seconds. If this value is set to 0,
+     * backtracking is disabled for the DB cluster. Otherwise, backtracking is
+     * enabled.</p>
+     */
+    inline DBCluster& WithBacktrackWindow(long long value) { SetBacktrackWindow(value); return *this;}
+
+
+    /**
+     * <p>The number of change records stored for Backtrack.</p>
+     */
+    inline long long GetBacktrackConsumedChangeRecords() const{ return m_backtrackConsumedChangeRecords; }
+
+    /**
+     * <p>The number of change records stored for Backtrack.</p>
+     */
+    inline void SetBacktrackConsumedChangeRecords(long long value) { m_backtrackConsumedChangeRecordsHasBeenSet = true; m_backtrackConsumedChangeRecords = value; }
+
+    /**
+     * <p>The number of change records stored for Backtrack.</p>
+     */
+    inline DBCluster& WithBacktrackConsumedChangeRecords(long long value) { SetBacktrackConsumedChangeRecords(value); return *this;}
+
   private:
 
     int m_allocatedStorage;
@@ -1506,6 +1570,15 @@ namespace Model
 
     Aws::Utils::DateTime m_clusterCreateTime;
     bool m_clusterCreateTimeHasBeenSet;
+
+    Aws::Utils::DateTime m_earliestBacktrackTime;
+    bool m_earliestBacktrackTimeHasBeenSet;
+
+    long long m_backtrackWindow;
+    bool m_backtrackWindowHasBeenSet;
+
+    long long m_backtrackConsumedChangeRecords;
+    bool m_backtrackConsumedChangeRecordsHasBeenSet;
   };
 
 } // namespace Model

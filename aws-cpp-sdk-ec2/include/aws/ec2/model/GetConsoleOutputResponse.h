@@ -86,70 +86,70 @@ namespace Model
 
 
     /**
-     * <p>The console output, Base64-encoded. If using a command line tool, the tool
-     * decodes the output for you.</p>
+     * <p>The console output, base64-encoded. If you are using a command line tool, the
+     * tool decodes the output for you.</p>
      */
     inline const Aws::String& GetOutput() const{ return m_output; }
 
     /**
-     * <p>The console output, Base64-encoded. If using a command line tool, the tool
-     * decodes the output for you.</p>
+     * <p>The console output, base64-encoded. If you are using a command line tool, the
+     * tool decodes the output for you.</p>
      */
     inline void SetOutput(const Aws::String& value) { m_output = value; }
 
     /**
-     * <p>The console output, Base64-encoded. If using a command line tool, the tool
-     * decodes the output for you.</p>
+     * <p>The console output, base64-encoded. If you are using a command line tool, the
+     * tool decodes the output for you.</p>
      */
     inline void SetOutput(Aws::String&& value) { m_output = std::move(value); }
 
     /**
-     * <p>The console output, Base64-encoded. If using a command line tool, the tool
-     * decodes the output for you.</p>
+     * <p>The console output, base64-encoded. If you are using a command line tool, the
+     * tool decodes the output for you.</p>
      */
     inline void SetOutput(const char* value) { m_output.assign(value); }
 
     /**
-     * <p>The console output, Base64-encoded. If using a command line tool, the tool
-     * decodes the output for you.</p>
+     * <p>The console output, base64-encoded. If you are using a command line tool, the
+     * tool decodes the output for you.</p>
      */
     inline GetConsoleOutputResponse& WithOutput(const Aws::String& value) { SetOutput(value); return *this;}
 
     /**
-     * <p>The console output, Base64-encoded. If using a command line tool, the tool
-     * decodes the output for you.</p>
+     * <p>The console output, base64-encoded. If you are using a command line tool, the
+     * tool decodes the output for you.</p>
      */
     inline GetConsoleOutputResponse& WithOutput(Aws::String&& value) { SetOutput(std::move(value)); return *this;}
 
     /**
-     * <p>The console output, Base64-encoded. If using a command line tool, the tool
-     * decodes the output for you.</p>
+     * <p>The console output, base64-encoded. If you are using a command line tool, the
+     * tool decodes the output for you.</p>
      */
     inline GetConsoleOutputResponse& WithOutput(const char* value) { SetOutput(value); return *this;}
 
 
     /**
-     * <p>The time the output was last updated.</p>
+     * <p>The time at which the output was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
 
     /**
-     * <p>The time the output was last updated.</p>
+     * <p>The time at which the output was last updated.</p>
      */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestamp = value; }
 
     /**
-     * <p>The time the output was last updated.</p>
+     * <p>The time at which the output was last updated.</p>
      */
     inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestamp = std::move(value); }
 
     /**
-     * <p>The time the output was last updated.</p>
+     * <p>The time at which the output was last updated.</p>
      */
     inline GetConsoleOutputResponse& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
 
     /**
-     * <p>The time the output was last updated.</p>
+     * <p>The time at which the output was last updated.</p>
      */
     inline GetConsoleOutputResponse& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 

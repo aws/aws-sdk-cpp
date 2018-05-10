@@ -3629,10 +3629,11 @@ namespace Model
         virtual void CreateLaunchTemplateVersionAsync(const Model::CreateLaunchTemplateVersionRequest& request, const CreateLaunchTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a NAT gateway in the specified subnet. A NAT gateway can be used to
-         * enable instances in a private subnet to connect to the Internet. This action
-         * creates a network interface in the specified subnet with a private IP address
-         * from the IP address range of the subnet. For more information, see <a
+         * <p>Creates a NAT gateway in the specified public subnet. This action creates a
+         * network interface in the specified subnet with a private IP address from the IP
+         * address range of the subnet. Internet-bound traffic from a private subnet can be
+         * routed to the NAT gateway, therefore enabling instances in the private subnet to
+         * connect to the internet. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">NAT
          * Gateways</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -3642,10 +3643,11 @@ namespace Model
         virtual Model::CreateNatGatewayOutcome CreateNatGateway(const Model::CreateNatGatewayRequest& request) const;
 
         /**
-         * <p>Creates a NAT gateway in the specified subnet. A NAT gateway can be used to
-         * enable instances in a private subnet to connect to the Internet. This action
-         * creates a network interface in the specified subnet with a private IP address
-         * from the IP address range of the subnet. For more information, see <a
+         * <p>Creates a NAT gateway in the specified public subnet. This action creates a
+         * network interface in the specified subnet with a private IP address from the IP
+         * address range of the subnet. Internet-bound traffic from a private subnet can be
+         * routed to the NAT gateway, therefore enabling instances in the private subnet to
+         * connect to the internet. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">NAT
          * Gateways</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -3657,10 +3659,11 @@ namespace Model
         virtual Model::CreateNatGatewayOutcomeCallable CreateNatGatewayCallable(const Model::CreateNatGatewayRequest& request) const;
 
         /**
-         * <p>Creates a NAT gateway in the specified subnet. A NAT gateway can be used to
-         * enable instances in a private subnet to connect to the Internet. This action
-         * creates a network interface in the specified subnet with a private IP address
-         * from the IP address range of the subnet. For more information, see <a
+         * <p>Creates a NAT gateway in the specified public subnet. This action creates a
+         * network interface in the specified subnet with a private IP address from the IP
+         * address range of the subnet. Internet-bound traffic from a private subnet can be
+         * routed to the NAT gateway, therefore enabling instances in the private subnet to
+         * connect to the internet. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">NAT
          * Gateways</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -10253,38 +10256,36 @@ namespace Model
         virtual void EnableVpcClassicLinkDnsSupportAsync(const Model::EnableVpcClassicLinkDnsSupportRequest& request, const EnableVpcClassicLinkDnsSupportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the console output for the specified instance.</p> <p>Instances do not
-         * have a physical monitor through which you can view their console output. They
-         * also lack physical controls that allow you to power up, reboot, or shut them
-         * down. To allow these actions, we provide them through the Amazon EC2 API and
-         * command line interface.</p> <p>Instance console output is buffered and posted
-         * shortly after instance boot, reboot, and termination. Amazon EC2 preserves the
-         * most recent 64 KB output, which is available for at least one hour after the
-         * most recent post.</p> <p>For Linux instances, the instance console output
-         * displays the exact console output that would normally be displayed on a physical
-         * monitor attached to a computer. This output is buffered because the instance
-         * produces it and then posts it to a store where the instance's owner can retrieve
-         * it.</p> <p>For Windows instances, the instance console output includes output
-         * from the EC2Config service.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the console output for the specified instance. For Linux instances, the
+         * instance console output displays the exact console output that would normally be
+         * displayed on a physical monitor attached to a computer. For Windows instances,
+         * the instance console output includes output from the EC2Config service.</p> <p>
+         * <a>GetConsoleOutput</a> returns up to 64 KB of console output shortly after it's
+         * generated by the instance.</p> <p>By default, the console output returns
+         * buffered information that was posted shortly after an instance transition state
+         * (start, stop, reboot, or terminate). This information is available for at least
+         * one hour after the most recent post.</p> <p>You can optionally retrieve the
+         * latest serial console output at any time during the instance lifecycle. This
+         * option is only supported on C5, M5, and <code>i3.metal</code>
+         * instances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleOutput">AWS
          * API Reference</a></p>
          */
         virtual Model::GetConsoleOutputOutcome GetConsoleOutput(const Model::GetConsoleOutputRequest& request) const;
 
         /**
-         * <p>Gets the console output for the specified instance.</p> <p>Instances do not
-         * have a physical monitor through which you can view their console output. They
-         * also lack physical controls that allow you to power up, reboot, or shut them
-         * down. To allow these actions, we provide them through the Amazon EC2 API and
-         * command line interface.</p> <p>Instance console output is buffered and posted
-         * shortly after instance boot, reboot, and termination. Amazon EC2 preserves the
-         * most recent 64 KB output, which is available for at least one hour after the
-         * most recent post.</p> <p>For Linux instances, the instance console output
-         * displays the exact console output that would normally be displayed on a physical
-         * monitor attached to a computer. This output is buffered because the instance
-         * produces it and then posts it to a store where the instance's owner can retrieve
-         * it.</p> <p>For Windows instances, the instance console output includes output
-         * from the EC2Config service.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the console output for the specified instance. For Linux instances, the
+         * instance console output displays the exact console output that would normally be
+         * displayed on a physical monitor attached to a computer. For Windows instances,
+         * the instance console output includes output from the EC2Config service.</p> <p>
+         * <a>GetConsoleOutput</a> returns up to 64 KB of console output shortly after it's
+         * generated by the instance.</p> <p>By default, the console output returns
+         * buffered information that was posted shortly after an instance transition state
+         * (start, stop, reboot, or terminate). This information is available for at least
+         * one hour after the most recent post.</p> <p>You can optionally retrieve the
+         * latest serial console output at any time during the instance lifecycle. This
+         * option is only supported on C5, M5, and <code>i3.metal</code>
+         * instances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleOutput">AWS
          * API Reference</a></p>
          *
@@ -10293,19 +10294,18 @@ namespace Model
         virtual Model::GetConsoleOutputOutcomeCallable GetConsoleOutputCallable(const Model::GetConsoleOutputRequest& request) const;
 
         /**
-         * <p>Gets the console output for the specified instance.</p> <p>Instances do not
-         * have a physical monitor through which you can view their console output. They
-         * also lack physical controls that allow you to power up, reboot, or shut them
-         * down. To allow these actions, we provide them through the Amazon EC2 API and
-         * command line interface.</p> <p>Instance console output is buffered and posted
-         * shortly after instance boot, reboot, and termination. Amazon EC2 preserves the
-         * most recent 64 KB output, which is available for at least one hour after the
-         * most recent post.</p> <p>For Linux instances, the instance console output
-         * displays the exact console output that would normally be displayed on a physical
-         * monitor attached to a computer. This output is buffered because the instance
-         * produces it and then posts it to a store where the instance's owner can retrieve
-         * it.</p> <p>For Windows instances, the instance console output includes output
-         * from the EC2Config service.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the console output for the specified instance. For Linux instances, the
+         * instance console output displays the exact console output that would normally be
+         * displayed on a physical monitor attached to a computer. For Windows instances,
+         * the instance console output includes output from the EC2Config service.</p> <p>
+         * <a>GetConsoleOutput</a> returns up to 64 KB of console output shortly after it's
+         * generated by the instance.</p> <p>By default, the console output returns
+         * buffered information that was posted shortly after an instance transition state
+         * (start, stop, reboot, or terminate). This information is available for at least
+         * one hour after the most recent post.</p> <p>You can optionally retrieve the
+         * latest serial console output at any time during the instance lifecycle. This
+         * option is only supported on C5, M5, and <code>i3.metal</code>
+         * instances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleOutput">AWS
          * API Reference</a></p>
          *

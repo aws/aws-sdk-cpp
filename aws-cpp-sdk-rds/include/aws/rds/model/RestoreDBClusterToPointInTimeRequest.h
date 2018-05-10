@@ -661,6 +661,28 @@ namespace Model
      */
     inline RestoreDBClusterToPointInTimeRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
+
+    /**
+     * <p>The target backtrack window, in seconds. To disable backtracking, set this
+     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
+     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     */
+    inline long long GetBacktrackWindow() const{ return m_backtrackWindow; }
+
+    /**
+     * <p>The target backtrack window, in seconds. To disable backtracking, set this
+     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
+     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     */
+    inline void SetBacktrackWindow(long long value) { m_backtrackWindowHasBeenSet = true; m_backtrackWindow = value; }
+
+    /**
+     * <p>The target backtrack window, in seconds. To disable backtracking, set this
+     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
+     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithBacktrackWindow(long long value) { SetBacktrackWindow(value); return *this;}
+
   private:
 
     Aws::String m_dBClusterIdentifier;
@@ -698,6 +720,9 @@ namespace Model
 
     bool m_enableIAMDatabaseAuthentication;
     bool m_enableIAMDatabaseAuthenticationHasBeenSet;
+
+    long long m_backtrackWindow;
+    bool m_backtrackWindowHasBeenSet;
   };
 
 } // namespace Model
