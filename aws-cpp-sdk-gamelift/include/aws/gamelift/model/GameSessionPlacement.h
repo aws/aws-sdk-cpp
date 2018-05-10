@@ -804,10 +804,10 @@ namespace Model
 
     /**
      * <p>Information on the matchmaking process for this game. Data is in JSON syntax,
-     * formated as a string. It identifies the matchmaking configuration used to create
-     * the match, and contains data on all players assigned to the match, including
-     * player attributes and team assignments. For more details on matchmaker data, see
-     * <a
+     * formatted as a string. It identifies the matchmaking configuration used to
+     * create the match, and contains data on all players assigned to the match,
+     * including player attributes and team assignments. For more details on matchmaker
+     * data, see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
      * Data</a>.</p>
      */
@@ -815,10 +815,10 @@ namespace Model
 
     /**
      * <p>Information on the matchmaking process for this game. Data is in JSON syntax,
-     * formated as a string. It identifies the matchmaking configuration used to create
-     * the match, and contains data on all players assigned to the match, including
-     * player attributes and team assignments. For more details on matchmaker data, see
-     * <a
+     * formatted as a string. It identifies the matchmaking configuration used to
+     * create the match, and contains data on all players assigned to the match,
+     * including player attributes and team assignments. For more details on matchmaker
+     * data, see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
      * Data</a>.</p>
      */
@@ -826,10 +826,10 @@ namespace Model
 
     /**
      * <p>Information on the matchmaking process for this game. Data is in JSON syntax,
-     * formated as a string. It identifies the matchmaking configuration used to create
-     * the match, and contains data on all players assigned to the match, including
-     * player attributes and team assignments. For more details on matchmaker data, see
-     * <a
+     * formatted as a string. It identifies the matchmaking configuration used to
+     * create the match, and contains data on all players assigned to the match,
+     * including player attributes and team assignments. For more details on matchmaker
+     * data, see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
      * Data</a>.</p>
      */
@@ -837,10 +837,10 @@ namespace Model
 
     /**
      * <p>Information on the matchmaking process for this game. Data is in JSON syntax,
-     * formated as a string. It identifies the matchmaking configuration used to create
-     * the match, and contains data on all players assigned to the match, including
-     * player attributes and team assignments. For more details on matchmaker data, see
-     * <a
+     * formatted as a string. It identifies the matchmaking configuration used to
+     * create the match, and contains data on all players assigned to the match,
+     * including player attributes and team assignments. For more details on matchmaker
+     * data, see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
      * Data</a>.</p>
      */
@@ -848,10 +848,10 @@ namespace Model
 
     /**
      * <p>Information on the matchmaking process for this game. Data is in JSON syntax,
-     * formated as a string. It identifies the matchmaking configuration used to create
-     * the match, and contains data on all players assigned to the match, including
-     * player attributes and team assignments. For more details on matchmaker data, see
-     * <a
+     * formatted as a string. It identifies the matchmaking configuration used to
+     * create the match, and contains data on all players assigned to the match,
+     * including player attributes and team assignments. For more details on matchmaker
+     * data, see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
      * Data</a>.</p>
      */
@@ -859,10 +859,10 @@ namespace Model
 
     /**
      * <p>Information on the matchmaking process for this game. Data is in JSON syntax,
-     * formated as a string. It identifies the matchmaking configuration used to create
-     * the match, and contains data on all players assigned to the match, including
-     * player attributes and team assignments. For more details on matchmaker data, see
-     * <a
+     * formatted as a string. It identifies the matchmaking configuration used to
+     * create the match, and contains data on all players assigned to the match,
+     * including player attributes and team assignments. For more details on matchmaker
+     * data, see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
      * Data</a>.</p>
      */
@@ -870,10 +870,10 @@ namespace Model
 
     /**
      * <p>Information on the matchmaking process for this game. Data is in JSON syntax,
-     * formated as a string. It identifies the matchmaking configuration used to create
-     * the match, and contains data on all players assigned to the match, including
-     * player attributes and team assignments. For more details on matchmaker data, see
-     * <a
+     * formatted as a string. It identifies the matchmaking configuration used to
+     * create the match, and contains data on all players assigned to the match,
+     * including player attributes and team assignments. For more details on matchmaker
+     * data, see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
      * Data</a>.</p>
      */

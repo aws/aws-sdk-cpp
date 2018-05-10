@@ -503,10 +503,10 @@ namespace Model
     /**
      * <p>Game session protection policy to apply to all instances in this fleet. If
      * this parameter is not set, instances in this fleet default to no protection. You
-     * can change a fleet's protection policy using UpdateFleetAttributes, but this
-     * change will only affect sessions created after the policy change. You can also
-     * set protection for individual instances using <a>UpdateGameSession</a>.</p> <ul>
-     * <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
+     * can change a fleet's protection policy using <a>UpdateFleetAttributes</a>, but
+     * this change will only affect sessions created after the policy change. You can
+     * also set protection for individual instances using <a>UpdateGameSession</a>.</p>
+     * <ul> <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
      * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game
      * session is in an <code>ACTIVE</code> status, it cannot be terminated during a
      * scale-down event.</p> </li> </ul>
@@ -516,10 +516,10 @@ namespace Model
     /**
      * <p>Game session protection policy to apply to all instances in this fleet. If
      * this parameter is not set, instances in this fleet default to no protection. You
-     * can change a fleet's protection policy using UpdateFleetAttributes, but this
-     * change will only affect sessions created after the policy change. You can also
-     * set protection for individual instances using <a>UpdateGameSession</a>.</p> <ul>
-     * <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
+     * can change a fleet's protection policy using <a>UpdateFleetAttributes</a>, but
+     * this change will only affect sessions created after the policy change. You can
+     * also set protection for individual instances using <a>UpdateGameSession</a>.</p>
+     * <ul> <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
      * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game
      * session is in an <code>ACTIVE</code> status, it cannot be terminated during a
      * scale-down event.</p> </li> </ul>
@@ -529,10 +529,10 @@ namespace Model
     /**
      * <p>Game session protection policy to apply to all instances in this fleet. If
      * this parameter is not set, instances in this fleet default to no protection. You
-     * can change a fleet's protection policy using UpdateFleetAttributes, but this
-     * change will only affect sessions created after the policy change. You can also
-     * set protection for individual instances using <a>UpdateGameSession</a>.</p> <ul>
-     * <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
+     * can change a fleet's protection policy using <a>UpdateFleetAttributes</a>, but
+     * this change will only affect sessions created after the policy change. You can
+     * also set protection for individual instances using <a>UpdateGameSession</a>.</p>
+     * <ul> <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
      * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game
      * session is in an <code>ACTIVE</code> status, it cannot be terminated during a
      * scale-down event.</p> </li> </ul>
@@ -542,10 +542,10 @@ namespace Model
     /**
      * <p>Game session protection policy to apply to all instances in this fleet. If
      * this parameter is not set, instances in this fleet default to no protection. You
-     * can change a fleet's protection policy using UpdateFleetAttributes, but this
-     * change will only affect sessions created after the policy change. You can also
-     * set protection for individual instances using <a>UpdateGameSession</a>.</p> <ul>
-     * <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
+     * can change a fleet's protection policy using <a>UpdateFleetAttributes</a>, but
+     * this change will only affect sessions created after the policy change. You can
+     * also set protection for individual instances using <a>UpdateGameSession</a>.</p>
+     * <ul> <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
      * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game
      * session is in an <code>ACTIVE</code> status, it cannot be terminated during a
      * scale-down event.</p> </li> </ul>
@@ -555,10 +555,10 @@ namespace Model
     /**
      * <p>Game session protection policy to apply to all instances in this fleet. If
      * this parameter is not set, instances in this fleet default to no protection. You
-     * can change a fleet's protection policy using UpdateFleetAttributes, but this
-     * change will only affect sessions created after the policy change. You can also
-     * set protection for individual instances using <a>UpdateGameSession</a>.</p> <ul>
-     * <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
+     * can change a fleet's protection policy using <a>UpdateFleetAttributes</a>, but
+     * this change will only affect sessions created after the policy change. You can
+     * also set protection for individual instances using <a>UpdateGameSession</a>.</p>
+     * <ul> <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
      * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game
      * session is in an <code>ACTIVE</code> status, it cannot be terminated during a
      * scale-down event.</p> </li> </ul>
