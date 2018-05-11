@@ -159,116 +159,110 @@ namespace Model
 
 
         /**
-         * <p>Creates a delivery stream.</p> <p>By default, you can create up to 50
-         * delivery streams per AWS Region.</p> <p>This is an asynchronous operation that
-         * immediately returns. The initial status of the delivery stream is
+         * <p>Creates a Kinesis Data Firehose delivery stream.</p> <p>By default, you can
+         * create up to 50 delivery streams per AWS Region.</p> <p>This is an asynchronous
+         * operation that immediately returns. The initial status of the delivery stream is
          * <code>CREATING</code>. After the delivery stream is created, its status is
          * <code>ACTIVE</code> and it now accepts data. Attempts to send data to a delivery
          * stream that is not in the <code>ACTIVE</code> state cause an exception. To check
          * the state of a delivery stream, use <a>DescribeDeliveryStream</a>.</p> <p>A
          * Kinesis Data Firehose delivery stream can be configured to receive records
          * directly from providers using <a>PutRecord</a> or <a>PutRecordBatch</a>, or it
-         * can be configured to use an existing Kinesis data stream as its source. To
-         * specify a Kinesis data stream as input, set the <code>DeliveryStreamType</code>
-         * parameter to <code>KinesisStreamAsSource</code>, and provide the Kinesis data
-         * stream Amazon Resource Name (ARN) and role ARN in the
+         * can be configured to use an existing Kinesis stream as its source. To specify a
+         * Kinesis data stream as input, set the <code>DeliveryStreamType</code> parameter
+         * to <code>KinesisStreamAsSource</code>, and provide the Kinesis stream Amazon
+         * Resource Name (ARN) and role ARN in the
          * <code>KinesisStreamSourceConfiguration</code> parameter.</p> <p>A delivery
          * stream is configured with a single destination: Amazon S3, Amazon ES, Amazon
-         * Redshift, or Splunk. Specify only one of the following destination configuration
-         * parameters: <code>ExtendedS3DestinationConfiguration</code>,
-         * <code>S3DestinationConfiguration</code>,
-         * <code>ElasticsearchDestinationConfiguration</code>,
-         * <code>RedshiftDestinationConfiguration</code>, or
-         * <code>SplunkDestinationConfiguration</code>.</p> <p>When you specify
-         * <code>S3DestinationConfiguration</code>, you can also provide the following
-         * optional values: <code>BufferingHints</code>,
-         * <code>EncryptionConfiguration</code>, and <code>CompressionFormat</code>. By
-         * default, if no <code>BufferingHints</code> value is provided, Kinesis Data
-         * Firehose buffers data up to 5 MB or for 5 minutes, whichever condition is
-         * satisfied first. <code>BufferingHints</code> is a hint, so there are some cases
-         * where the service cannot adhere to these conditions strictly. For example,
-         * record boundaries are such that the size is a little over or under the
-         * configured buffering size. By default, no encryption is performed. We strongly
-         * recommend that you enable encryption to ensure secure data storage in Amazon
-         * S3.</p> <p>A few notes about Amazon Redshift as a destination:</p> <ul> <li>
-         * <p>An Amazon Redshift destination requires an S3 bucket as intermediate
-         * location. This is because Kinesis Data Firehose first delivers data to Amazon S3
-         * and then uses <code>COPY</code> syntax to load data into an Amazon Redshift
-         * table. This is specified in the
-         * <code>RedshiftDestinationConfiguration.S3Configuration</code> parameter.</p>
-         * </li> <li> <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code>
-         * cannot be specified in
-         * <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon
-         * Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't
-         * support these compression formats.</p> </li> <li> <p>We strongly recommend that
-         * you use the user name and password that you provide exclusively with Kinesis
-         * Data Firehose. In addition, the permissions for the account should be restricted
+         * Redshift, or Splunk. You must specify only one of the following destination
+         * configuration parameters: <b>ExtendedS3DestinationConfiguration</b>,
+         * <b>S3DestinationConfiguration</b>, <b>ElasticsearchDestinationConfiguration</b>,
+         * <b>RedshiftDestinationConfiguration</b>, or
+         * <b>SplunkDestinationConfiguration</b>.</p> <p>When you specify
+         * <b>S3DestinationConfiguration</b>, you can also provide the following optional
+         * values: <b>BufferingHints</b>, <b>EncryptionConfiguration</b>, and
+         * <b>CompressionFormat</b>. By default, if no <b>BufferingHints</b> value is
+         * provided, Kinesis Data Firehose buffers data up to 5 MB or for 5 minutes,
+         * whichever condition is satisfied first. <b>BufferingHints</b> is a hint, so
+         * there are some cases where the service cannot adhere to these conditions
+         * strictly. For example, record boundaries might be such that the size is a little
+         * over or under the configured buffering size. By default, no encryption is
+         * performed. We strongly recommend that you enable encryption to ensure secure
+         * data storage in Amazon S3.</p> <p>A few notes about Amazon Redshift as a
+         * destination:</p> <ul> <li> <p>An Amazon Redshift destination requires an S3
+         * bucket as intermediate location. Kinesis Data Firehose first delivers data to
+         * Amazon S3 and then uses <code>COPY</code> syntax to load data into an Amazon
+         * Redshift table. This is specified in the
+         * <b>RedshiftDestinationConfiguration.S3Configuration</b> parameter.</p> </li>
+         * <li> <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot
+         * be specified in <code>RedshiftDestinationConfiguration.S3Configuration</code>
+         * because the Amazon Redshift <code>COPY</code> operation that reads from the S3
+         * bucket doesn't support these compression formats.</p> </li> <li> <p>We strongly
+         * recommend that you use the user name and password you provide exclusively with
+         * Kinesis Data Firehose, and that the permissions for the account are restricted
          * for Amazon Redshift <code>INSERT</code> permissions.</p> </li> </ul> <p>Kinesis
          * Data Firehose assumes the IAM role that is configured as part of the
          * destination. The role should allow the Kinesis Data Firehose principal to assume
          * the role, and the role should have permissions that allow the service to deliver
          * the data. For more information, see <a
          * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
-         * Kinesis Firehose Access to an Amazon S3 Destination</a> in the <i>Amazon Kinesis
-         * Data Firehose Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Kinesis Data Firehose Access to an Amazon S3 Destination</a> in the <i>Amazon
+         * Kinesis Data Firehose Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CreateDeliveryStream">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateDeliveryStreamOutcome CreateDeliveryStream(const Model::CreateDeliveryStreamRequest& request) const;
 
         /**
-         * <p>Creates a delivery stream.</p> <p>By default, you can create up to 50
-         * delivery streams per AWS Region.</p> <p>This is an asynchronous operation that
-         * immediately returns. The initial status of the delivery stream is
+         * <p>Creates a Kinesis Data Firehose delivery stream.</p> <p>By default, you can
+         * create up to 50 delivery streams per AWS Region.</p> <p>This is an asynchronous
+         * operation that immediately returns. The initial status of the delivery stream is
          * <code>CREATING</code>. After the delivery stream is created, its status is
          * <code>ACTIVE</code> and it now accepts data. Attempts to send data to a delivery
          * stream that is not in the <code>ACTIVE</code> state cause an exception. To check
          * the state of a delivery stream, use <a>DescribeDeliveryStream</a>.</p> <p>A
          * Kinesis Data Firehose delivery stream can be configured to receive records
          * directly from providers using <a>PutRecord</a> or <a>PutRecordBatch</a>, or it
-         * can be configured to use an existing Kinesis data stream as its source. To
-         * specify a Kinesis data stream as input, set the <code>DeliveryStreamType</code>
-         * parameter to <code>KinesisStreamAsSource</code>, and provide the Kinesis data
-         * stream Amazon Resource Name (ARN) and role ARN in the
+         * can be configured to use an existing Kinesis stream as its source. To specify a
+         * Kinesis data stream as input, set the <code>DeliveryStreamType</code> parameter
+         * to <code>KinesisStreamAsSource</code>, and provide the Kinesis stream Amazon
+         * Resource Name (ARN) and role ARN in the
          * <code>KinesisStreamSourceConfiguration</code> parameter.</p> <p>A delivery
          * stream is configured with a single destination: Amazon S3, Amazon ES, Amazon
-         * Redshift, or Splunk. Specify only one of the following destination configuration
-         * parameters: <code>ExtendedS3DestinationConfiguration</code>,
-         * <code>S3DestinationConfiguration</code>,
-         * <code>ElasticsearchDestinationConfiguration</code>,
-         * <code>RedshiftDestinationConfiguration</code>, or
-         * <code>SplunkDestinationConfiguration</code>.</p> <p>When you specify
-         * <code>S3DestinationConfiguration</code>, you can also provide the following
-         * optional values: <code>BufferingHints</code>,
-         * <code>EncryptionConfiguration</code>, and <code>CompressionFormat</code>. By
-         * default, if no <code>BufferingHints</code> value is provided, Kinesis Data
-         * Firehose buffers data up to 5 MB or for 5 minutes, whichever condition is
-         * satisfied first. <code>BufferingHints</code> is a hint, so there are some cases
-         * where the service cannot adhere to these conditions strictly. For example,
-         * record boundaries are such that the size is a little over or under the
-         * configured buffering size. By default, no encryption is performed. We strongly
-         * recommend that you enable encryption to ensure secure data storage in Amazon
-         * S3.</p> <p>A few notes about Amazon Redshift as a destination:</p> <ul> <li>
-         * <p>An Amazon Redshift destination requires an S3 bucket as intermediate
-         * location. This is because Kinesis Data Firehose first delivers data to Amazon S3
-         * and then uses <code>COPY</code> syntax to load data into an Amazon Redshift
-         * table. This is specified in the
-         * <code>RedshiftDestinationConfiguration.S3Configuration</code> parameter.</p>
-         * </li> <li> <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code>
-         * cannot be specified in
-         * <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon
-         * Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't
-         * support these compression formats.</p> </li> <li> <p>We strongly recommend that
-         * you use the user name and password that you provide exclusively with Kinesis
-         * Data Firehose. In addition, the permissions for the account should be restricted
+         * Redshift, or Splunk. You must specify only one of the following destination
+         * configuration parameters: <b>ExtendedS3DestinationConfiguration</b>,
+         * <b>S3DestinationConfiguration</b>, <b>ElasticsearchDestinationConfiguration</b>,
+         * <b>RedshiftDestinationConfiguration</b>, or
+         * <b>SplunkDestinationConfiguration</b>.</p> <p>When you specify
+         * <b>S3DestinationConfiguration</b>, you can also provide the following optional
+         * values: <b>BufferingHints</b>, <b>EncryptionConfiguration</b>, and
+         * <b>CompressionFormat</b>. By default, if no <b>BufferingHints</b> value is
+         * provided, Kinesis Data Firehose buffers data up to 5 MB or for 5 minutes,
+         * whichever condition is satisfied first. <b>BufferingHints</b> is a hint, so
+         * there are some cases where the service cannot adhere to these conditions
+         * strictly. For example, record boundaries might be such that the size is a little
+         * over or under the configured buffering size. By default, no encryption is
+         * performed. We strongly recommend that you enable encryption to ensure secure
+         * data storage in Amazon S3.</p> <p>A few notes about Amazon Redshift as a
+         * destination:</p> <ul> <li> <p>An Amazon Redshift destination requires an S3
+         * bucket as intermediate location. Kinesis Data Firehose first delivers data to
+         * Amazon S3 and then uses <code>COPY</code> syntax to load data into an Amazon
+         * Redshift table. This is specified in the
+         * <b>RedshiftDestinationConfiguration.S3Configuration</b> parameter.</p> </li>
+         * <li> <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot
+         * be specified in <code>RedshiftDestinationConfiguration.S3Configuration</code>
+         * because the Amazon Redshift <code>COPY</code> operation that reads from the S3
+         * bucket doesn't support these compression formats.</p> </li> <li> <p>We strongly
+         * recommend that you use the user name and password you provide exclusively with
+         * Kinesis Data Firehose, and that the permissions for the account are restricted
          * for Amazon Redshift <code>INSERT</code> permissions.</p> </li> </ul> <p>Kinesis
          * Data Firehose assumes the IAM role that is configured as part of the
          * destination. The role should allow the Kinesis Data Firehose principal to assume
          * the role, and the role should have permissions that allow the service to deliver
          * the data. For more information, see <a
          * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
-         * Kinesis Firehose Access to an Amazon S3 Destination</a> in the <i>Amazon Kinesis
-         * Data Firehose Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Kinesis Data Firehose Access to an Amazon S3 Destination</a> in the <i>Amazon
+         * Kinesis Data Firehose Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CreateDeliveryStream">AWS
          * API Reference</a></p>
          *
@@ -277,58 +271,55 @@ namespace Model
         virtual Model::CreateDeliveryStreamOutcomeCallable CreateDeliveryStreamCallable(const Model::CreateDeliveryStreamRequest& request) const;
 
         /**
-         * <p>Creates a delivery stream.</p> <p>By default, you can create up to 50
-         * delivery streams per AWS Region.</p> <p>This is an asynchronous operation that
-         * immediately returns. The initial status of the delivery stream is
+         * <p>Creates a Kinesis Data Firehose delivery stream.</p> <p>By default, you can
+         * create up to 50 delivery streams per AWS Region.</p> <p>This is an asynchronous
+         * operation that immediately returns. The initial status of the delivery stream is
          * <code>CREATING</code>. After the delivery stream is created, its status is
          * <code>ACTIVE</code> and it now accepts data. Attempts to send data to a delivery
          * stream that is not in the <code>ACTIVE</code> state cause an exception. To check
          * the state of a delivery stream, use <a>DescribeDeliveryStream</a>.</p> <p>A
          * Kinesis Data Firehose delivery stream can be configured to receive records
          * directly from providers using <a>PutRecord</a> or <a>PutRecordBatch</a>, or it
-         * can be configured to use an existing Kinesis data stream as its source. To
-         * specify a Kinesis data stream as input, set the <code>DeliveryStreamType</code>
-         * parameter to <code>KinesisStreamAsSource</code>, and provide the Kinesis data
-         * stream Amazon Resource Name (ARN) and role ARN in the
+         * can be configured to use an existing Kinesis stream as its source. To specify a
+         * Kinesis data stream as input, set the <code>DeliveryStreamType</code> parameter
+         * to <code>KinesisStreamAsSource</code>, and provide the Kinesis stream Amazon
+         * Resource Name (ARN) and role ARN in the
          * <code>KinesisStreamSourceConfiguration</code> parameter.</p> <p>A delivery
          * stream is configured with a single destination: Amazon S3, Amazon ES, Amazon
-         * Redshift, or Splunk. Specify only one of the following destination configuration
-         * parameters: <code>ExtendedS3DestinationConfiguration</code>,
-         * <code>S3DestinationConfiguration</code>,
-         * <code>ElasticsearchDestinationConfiguration</code>,
-         * <code>RedshiftDestinationConfiguration</code>, or
-         * <code>SplunkDestinationConfiguration</code>.</p> <p>When you specify
-         * <code>S3DestinationConfiguration</code>, you can also provide the following
-         * optional values: <code>BufferingHints</code>,
-         * <code>EncryptionConfiguration</code>, and <code>CompressionFormat</code>. By
-         * default, if no <code>BufferingHints</code> value is provided, Kinesis Data
-         * Firehose buffers data up to 5 MB or for 5 minutes, whichever condition is
-         * satisfied first. <code>BufferingHints</code> is a hint, so there are some cases
-         * where the service cannot adhere to these conditions strictly. For example,
-         * record boundaries are such that the size is a little over or under the
-         * configured buffering size. By default, no encryption is performed. We strongly
-         * recommend that you enable encryption to ensure secure data storage in Amazon
-         * S3.</p> <p>A few notes about Amazon Redshift as a destination:</p> <ul> <li>
-         * <p>An Amazon Redshift destination requires an S3 bucket as intermediate
-         * location. This is because Kinesis Data Firehose first delivers data to Amazon S3
-         * and then uses <code>COPY</code> syntax to load data into an Amazon Redshift
-         * table. This is specified in the
-         * <code>RedshiftDestinationConfiguration.S3Configuration</code> parameter.</p>
-         * </li> <li> <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code>
-         * cannot be specified in
-         * <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon
-         * Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't
-         * support these compression formats.</p> </li> <li> <p>We strongly recommend that
-         * you use the user name and password that you provide exclusively with Kinesis
-         * Data Firehose. In addition, the permissions for the account should be restricted
+         * Redshift, or Splunk. You must specify only one of the following destination
+         * configuration parameters: <b>ExtendedS3DestinationConfiguration</b>,
+         * <b>S3DestinationConfiguration</b>, <b>ElasticsearchDestinationConfiguration</b>,
+         * <b>RedshiftDestinationConfiguration</b>, or
+         * <b>SplunkDestinationConfiguration</b>.</p> <p>When you specify
+         * <b>S3DestinationConfiguration</b>, you can also provide the following optional
+         * values: <b>BufferingHints</b>, <b>EncryptionConfiguration</b>, and
+         * <b>CompressionFormat</b>. By default, if no <b>BufferingHints</b> value is
+         * provided, Kinesis Data Firehose buffers data up to 5 MB or for 5 minutes,
+         * whichever condition is satisfied first. <b>BufferingHints</b> is a hint, so
+         * there are some cases where the service cannot adhere to these conditions
+         * strictly. For example, record boundaries might be such that the size is a little
+         * over or under the configured buffering size. By default, no encryption is
+         * performed. We strongly recommend that you enable encryption to ensure secure
+         * data storage in Amazon S3.</p> <p>A few notes about Amazon Redshift as a
+         * destination:</p> <ul> <li> <p>An Amazon Redshift destination requires an S3
+         * bucket as intermediate location. Kinesis Data Firehose first delivers data to
+         * Amazon S3 and then uses <code>COPY</code> syntax to load data into an Amazon
+         * Redshift table. This is specified in the
+         * <b>RedshiftDestinationConfiguration.S3Configuration</b> parameter.</p> </li>
+         * <li> <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot
+         * be specified in <code>RedshiftDestinationConfiguration.S3Configuration</code>
+         * because the Amazon Redshift <code>COPY</code> operation that reads from the S3
+         * bucket doesn't support these compression formats.</p> </li> <li> <p>We strongly
+         * recommend that you use the user name and password you provide exclusively with
+         * Kinesis Data Firehose, and that the permissions for the account are restricted
          * for Amazon Redshift <code>INSERT</code> permissions.</p> </li> </ul> <p>Kinesis
          * Data Firehose assumes the IAM role that is configured as part of the
          * destination. The role should allow the Kinesis Data Firehose principal to assume
          * the role, and the role should have permissions that allow the service to deliver
          * the data. For more information, see <a
          * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
-         * Kinesis Firehose Access to an Amazon S3 Destination</a> in the <i>Amazon Kinesis
-         * Data Firehose Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Kinesis Data Firehose Access to an Amazon S3 Destination</a> in the <i>Amazon
+         * Kinesis Data Firehose Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CreateDeliveryStream">AWS
          * API Reference</a></p>
          *
@@ -342,10 +333,10 @@ namespace Model
          * not in the <code>CREATING</code> state. While the deletion request is in
          * process, the delivery stream is in the <code>DELETING</code> state.</p> <p>To
          * check the state of a delivery stream, use <a>DescribeDeliveryStream</a>.</p>
-         * <p>While the delivery stream is <code>DELETING</code> state, the service may
-         * continue to accept the records, but the service doesn't make any guarantees with
-         * respect to delivering the data. Therefore, as a best practice, you should first
-         * stop any applications that are sending records before deleting a delivery
+         * <p>While the delivery stream is <code>DELETING</code> state, the service might
+         * continue to accept the records, but it doesn't make any guarantees with respect
+         * to delivering the data. Therefore, as a best practice, you should first stop any
+         * applications that are sending records before deleting a delivery
          * stream.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream">AWS
          * API Reference</a></p>
@@ -358,10 +349,10 @@ namespace Model
          * not in the <code>CREATING</code> state. While the deletion request is in
          * process, the delivery stream is in the <code>DELETING</code> state.</p> <p>To
          * check the state of a delivery stream, use <a>DescribeDeliveryStream</a>.</p>
-         * <p>While the delivery stream is <code>DELETING</code> state, the service may
-         * continue to accept the records, but the service doesn't make any guarantees with
-         * respect to delivering the data. Therefore, as a best practice, you should first
-         * stop any applications that are sending records before deleting a delivery
+         * <p>While the delivery stream is <code>DELETING</code> state, the service might
+         * continue to accept the records, but it doesn't make any guarantees with respect
+         * to delivering the data. Therefore, as a best practice, you should first stop any
+         * applications that are sending records before deleting a delivery
          * stream.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream">AWS
          * API Reference</a></p>
@@ -376,10 +367,10 @@ namespace Model
          * not in the <code>CREATING</code> state. While the deletion request is in
          * process, the delivery stream is in the <code>DELETING</code> state.</p> <p>To
          * check the state of a delivery stream, use <a>DescribeDeliveryStream</a>.</p>
-         * <p>While the delivery stream is <code>DELETING</code> state, the service may
-         * continue to accept the records, but the service doesn't make any guarantees with
-         * respect to delivering the data. Therefore, as a best practice, you should first
-         * stop any applications that are sending records before deleting a delivery
+         * <p>While the delivery stream is <code>DELETING</code> state, the service might
+         * continue to accept the records, but it doesn't make any guarantees with respect
+         * to delivering the data. Therefore, as a best practice, you should first stop any
+         * applications that are sending records before deleting a delivery
          * stream.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream">AWS
          * API Reference</a></p>
@@ -504,31 +495,30 @@ namespace Model
          * stream. To write multiple data records into a delivery stream, use
          * <a>PutRecordBatch</a>. Applications using these operations are referred to as
          * producers.</p> <p>By default, each delivery stream can take in up to 2,000
-         * transactions per second, 5,000 records per second, or 5 MB per second. Note that
-         * if you use <code>PutRecord</code> and <a>PutRecordBatch</a>, the limits are an
-         * aggregate across these two operations for each delivery stream. For more
-         * information about limits and how to request an increase, see <a
+         * transactions per second, 5,000 records per second, or 5 MB per second. If you
+         * use <a>PutRecord</a> and <a>PutRecordBatch</a>, the limits are an aggregate
+         * across these two operations for each delivery stream. For more information about
+         * limits and how to request an increase, see <a
          * href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis
          * Data Firehose Limits</a>. </p> <p>You must specify the name of the delivery
-         * stream and the data record when using <code>PutRecord</code>. The data record
-         * consists of a data blob that can be up to 1,000 KB in size and any kind of data.
-         * For example, it can be a segment from a log file, geographic location data,
-         * website clickstream data, and so on.</p> <p>Kinesis Data Firehose buffers
-         * records before delivering them to the destination. To disambiguate the data
-         * blobs at the destination, a common solution is to use delimiters in the data,
-         * such as a newline (<code>\n</code>) or some other character unique within the
-         * data. This allows the consumer application to parse individual data items when
-         * reading the data from the destination.</p> <p>The <code>PutRecord</code>
-         * operation returns a <code>RecordId</code>, which is a unique string assigned to
-         * each record. Producer applications can use this ID for purposes such as
-         * auditability and investigation.</p> <p>If the <code>PutRecord</code> operation
-         * throws a <code>ServiceUnavailableException</code>, back off and retry. If the
-         * exception persists, it is possible that the throughput limits have been exceeded
-         * for the delivery stream. </p> <p>Data records sent to Kinesis Data Firehose are
-         * stored for 24 hours from the time they are added to a delivery stream as it
-         * attempts to send the records to the destination. If the destination is
-         * unreachable for more than 24 hours, the data is no longer
-         * available.</p><p><h3>See Also:</h3>   <a
+         * stream and the data record when using <a>PutRecord</a>. The data record consists
+         * of a data blob that can be up to 1,000 KB in size, and any kind of data. For
+         * example, it can be a segment from a log file, geographic location data, website
+         * clickstream data, and so on.</p> <p>Kinesis Data Firehose buffers records before
+         * delivering them to the destination. To disambiguate the data blobs at the
+         * destination, a common solution is to use delimiters in the data, such as a
+         * newline (<code>\n</code>) or some other character unique within the data. This
+         * allows the consumer application to parse individual data items when reading the
+         * data from the destination.</p> <p>The <code>PutRecord</code> operation returns a
+         * <code>RecordId</code>, which is a unique string assigned to each record.
+         * Producer applications can use this ID for purposes such as auditability and
+         * investigation.</p> <p>If the <code>PutRecord</code> operation throws a
+         * <code>ServiceUnavailableException</code>, back off and retry. If the exception
+         * persists, it is possible that the throughput limits have been exceeded for the
+         * delivery stream. </p> <p>Data records sent to Kinesis Data Firehose are stored
+         * for 24 hours from the time they are added to a delivery stream as it tries to
+         * send the records to the destination. If the destination is unreachable for more
+         * than 24 hours, the data is no longer available.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">AWS
          * API Reference</a></p>
          */
@@ -539,31 +529,30 @@ namespace Model
          * stream. To write multiple data records into a delivery stream, use
          * <a>PutRecordBatch</a>. Applications using these operations are referred to as
          * producers.</p> <p>By default, each delivery stream can take in up to 2,000
-         * transactions per second, 5,000 records per second, or 5 MB per second. Note that
-         * if you use <code>PutRecord</code> and <a>PutRecordBatch</a>, the limits are an
-         * aggregate across these two operations for each delivery stream. For more
-         * information about limits and how to request an increase, see <a
+         * transactions per second, 5,000 records per second, or 5 MB per second. If you
+         * use <a>PutRecord</a> and <a>PutRecordBatch</a>, the limits are an aggregate
+         * across these two operations for each delivery stream. For more information about
+         * limits and how to request an increase, see <a
          * href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis
          * Data Firehose Limits</a>. </p> <p>You must specify the name of the delivery
-         * stream and the data record when using <code>PutRecord</code>. The data record
-         * consists of a data blob that can be up to 1,000 KB in size and any kind of data.
-         * For example, it can be a segment from a log file, geographic location data,
-         * website clickstream data, and so on.</p> <p>Kinesis Data Firehose buffers
-         * records before delivering them to the destination. To disambiguate the data
-         * blobs at the destination, a common solution is to use delimiters in the data,
-         * such as a newline (<code>\n</code>) or some other character unique within the
-         * data. This allows the consumer application to parse individual data items when
-         * reading the data from the destination.</p> <p>The <code>PutRecord</code>
-         * operation returns a <code>RecordId</code>, which is a unique string assigned to
-         * each record. Producer applications can use this ID for purposes such as
-         * auditability and investigation.</p> <p>If the <code>PutRecord</code> operation
-         * throws a <code>ServiceUnavailableException</code>, back off and retry. If the
-         * exception persists, it is possible that the throughput limits have been exceeded
-         * for the delivery stream. </p> <p>Data records sent to Kinesis Data Firehose are
-         * stored for 24 hours from the time they are added to a delivery stream as it
-         * attempts to send the records to the destination. If the destination is
-         * unreachable for more than 24 hours, the data is no longer
-         * available.</p><p><h3>See Also:</h3>   <a
+         * stream and the data record when using <a>PutRecord</a>. The data record consists
+         * of a data blob that can be up to 1,000 KB in size, and any kind of data. For
+         * example, it can be a segment from a log file, geographic location data, website
+         * clickstream data, and so on.</p> <p>Kinesis Data Firehose buffers records before
+         * delivering them to the destination. To disambiguate the data blobs at the
+         * destination, a common solution is to use delimiters in the data, such as a
+         * newline (<code>\n</code>) or some other character unique within the data. This
+         * allows the consumer application to parse individual data items when reading the
+         * data from the destination.</p> <p>The <code>PutRecord</code> operation returns a
+         * <code>RecordId</code>, which is a unique string assigned to each record.
+         * Producer applications can use this ID for purposes such as auditability and
+         * investigation.</p> <p>If the <code>PutRecord</code> operation throws a
+         * <code>ServiceUnavailableException</code>, back off and retry. If the exception
+         * persists, it is possible that the throughput limits have been exceeded for the
+         * delivery stream. </p> <p>Data records sent to Kinesis Data Firehose are stored
+         * for 24 hours from the time they are added to a delivery stream as it tries to
+         * send the records to the destination. If the destination is unreachable for more
+         * than 24 hours, the data is no longer available.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">AWS
          * API Reference</a></p>
          *
@@ -576,31 +565,30 @@ namespace Model
          * stream. To write multiple data records into a delivery stream, use
          * <a>PutRecordBatch</a>. Applications using these operations are referred to as
          * producers.</p> <p>By default, each delivery stream can take in up to 2,000
-         * transactions per second, 5,000 records per second, or 5 MB per second. Note that
-         * if you use <code>PutRecord</code> and <a>PutRecordBatch</a>, the limits are an
-         * aggregate across these two operations for each delivery stream. For more
-         * information about limits and how to request an increase, see <a
+         * transactions per second, 5,000 records per second, or 5 MB per second. If you
+         * use <a>PutRecord</a> and <a>PutRecordBatch</a>, the limits are an aggregate
+         * across these two operations for each delivery stream. For more information about
+         * limits and how to request an increase, see <a
          * href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis
          * Data Firehose Limits</a>. </p> <p>You must specify the name of the delivery
-         * stream and the data record when using <code>PutRecord</code>. The data record
-         * consists of a data blob that can be up to 1,000 KB in size and any kind of data.
-         * For example, it can be a segment from a log file, geographic location data,
-         * website clickstream data, and so on.</p> <p>Kinesis Data Firehose buffers
-         * records before delivering them to the destination. To disambiguate the data
-         * blobs at the destination, a common solution is to use delimiters in the data,
-         * such as a newline (<code>\n</code>) or some other character unique within the
-         * data. This allows the consumer application to parse individual data items when
-         * reading the data from the destination.</p> <p>The <code>PutRecord</code>
-         * operation returns a <code>RecordId</code>, which is a unique string assigned to
-         * each record. Producer applications can use this ID for purposes such as
-         * auditability and investigation.</p> <p>If the <code>PutRecord</code> operation
-         * throws a <code>ServiceUnavailableException</code>, back off and retry. If the
-         * exception persists, it is possible that the throughput limits have been exceeded
-         * for the delivery stream. </p> <p>Data records sent to Kinesis Data Firehose are
-         * stored for 24 hours from the time they are added to a delivery stream as it
-         * attempts to send the records to the destination. If the destination is
-         * unreachable for more than 24 hours, the data is no longer
-         * available.</p><p><h3>See Also:</h3>   <a
+         * stream and the data record when using <a>PutRecord</a>. The data record consists
+         * of a data blob that can be up to 1,000 KB in size, and any kind of data. For
+         * example, it can be a segment from a log file, geographic location data, website
+         * clickstream data, and so on.</p> <p>Kinesis Data Firehose buffers records before
+         * delivering them to the destination. To disambiguate the data blobs at the
+         * destination, a common solution is to use delimiters in the data, such as a
+         * newline (<code>\n</code>) or some other character unique within the data. This
+         * allows the consumer application to parse individual data items when reading the
+         * data from the destination.</p> <p>The <code>PutRecord</code> operation returns a
+         * <code>RecordId</code>, which is a unique string assigned to each record.
+         * Producer applications can use this ID for purposes such as auditability and
+         * investigation.</p> <p>If the <code>PutRecord</code> operation throws a
+         * <code>ServiceUnavailableException</code>, back off and retry. If the exception
+         * persists, it is possible that the throughput limits have been exceeded for the
+         * delivery stream. </p> <p>Data records sent to Kinesis Data Firehose are stored
+         * for 24 hours from the time they are added to a delivery stream as it tries to
+         * send the records to the destination. If the destination is unreachable for more
+         * than 24 hours, the data is no longer available.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">AWS
          * API Reference</a></p>
          *
@@ -615,50 +603,49 @@ namespace Model
          * Applications using these operations are referred to as producers.</p> <p>By
          * default, each delivery stream can take in up to 2,000 transactions per second,
          * 5,000 records per second, or 5 MB per second. If you use <a>PutRecord</a> and
-         * <code>PutRecordBatch</code>, the limits are an aggregate across these two
-         * operations for each delivery stream. For more information about limits, see <a
+         * <a>PutRecordBatch</a>, the limits are an aggregate across these two operations
+         * for each delivery stream. For more information about limits, see <a
          * href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis
-         * Data Firehose Limits</a>.</p> <p>Each <code>PutRecordBatch</code> request
-         * supports up to 500 records. Each record in the request can be as large as 1,000
-         * KB (before 64-bit encoding), up to a limit of 4 MB for the entire request. These
-         * limits cannot be changed.</p> <p>You must specify the name of the delivery
-         * stream and the data record when using <a>PutRecord</a>. The data record consists
-         * of a data blob that can be up to 1,000 KB in size and any kind of data. For
-         * example, it could be a segment from a log file, geographic location data,
-         * website clickstream data, and so on.</p> <p>Kinesis Data Firehose buffers
-         * records before delivering them to the destination. To disambiguate the data
-         * blobs at the destination, a common solution is to use delimiters in the data,
-         * such as a newline (<code>\n</code>) or some other character unique within the
-         * data. This allows the consumer application to parse individual data items when
-         * reading the data from the destination.</p> <p>The <code>PutRecordBatch</code>
-         * response includes a count of failed records, <code>FailedPutCount</code>, and an
-         * array of responses, <code>RequestResponses</code>. Each entry in the
-         * <code>RequestResponses</code> array provides additional information about the
-         * processed record. It directly correlates with a record in the request array
-         * using the same ordering, from the top to the bottom. The response array always
-         * includes the same number of records as the request array.
-         * <code>RequestResponses</code> includes both successfully and unsuccessfully
-         * processed records. Kinesis Data Firehose attempts to process all records in each
-         * <code>PutRecordBatch</code> request. A single record failure does not stop the
-         * processing of subsequent records.</p> <p>A successfully processed record
-         * includes a <code>RecordId</code> value, which is unique for the record. An
-         * unsuccessfully processed record includes <code>ErrorCode</code> and
-         * <code>ErrorMessage</code> values. <code>ErrorCode</code> reflects the type of
-         * error, and is one of the following values: <code>ServiceUnavailable</code> or
-         * <code>InternalFailure</code>. <code>ErrorMessage</code> provides more detailed
+         * Data Firehose Limits</a>.</p> <p>Each <a>PutRecordBatch</a> request supports up
+         * to 500 records. Each record in the request can be as large as 1,000 KB (before
+         * 64-bit encoding), up to a limit of 4 MB for the entire request. These limits
+         * cannot be changed.</p> <p>You must specify the name of the delivery stream and
+         * the data record when using <a>PutRecord</a>. The data record consists of a data
+         * blob that can be up to 1,000 KB in size, and any kind of data. For example, it
+         * could be a segment from a log file, geographic location data, website
+         * clickstream data, and so on.</p> <p>Kinesis Data Firehose buffers records before
+         * delivering them to the destination. To disambiguate the data blobs at the
+         * destination, a common solution is to use delimiters in the data, such as a
+         * newline (<code>\n</code>) or some other character unique within the data. This
+         * allows the consumer application to parse individual data items when reading the
+         * data from the destination.</p> <p>The <a>PutRecordBatch</a> response includes a
+         * count of failed records, <b>FailedPutCount</b>, and an array of responses,
+         * <b>RequestResponses</b>. Each entry in the <b>RequestResponses</b> array
+         * provides additional information about the processed record. It directly
+         * correlates with a record in the request array using the same ordering, from the
+         * top to the bottom. The response array always includes the same number of records
+         * as the request array. <b>RequestResponses</b> includes both successfully and
+         * unsuccessfully processed records. Kinesis Data Firehose tries to process all
+         * records in each <a>PutRecordBatch</a> request. A single record failure does not
+         * stop the processing of subsequent records.</p> <p>A successfully processed
+         * record includes a <b>RecordId</b> value, which is unique for the record. An
+         * unsuccessfully processed record includes <b>ErrorCode</b> and
+         * <b>ErrorMessage</b> values. <b>ErrorCode</b> reflects the type of error, and is
+         * one of the following values: <code>ServiceUnavailable</code> or
+         * <code>InternalFailure</code>. <b>ErrorMessage</b> provides more detailed
          * information about the error.</p> <p>If there is an internal server error or a
          * timeout, the write might have completed or it might have failed. If
-         * <code>FailedPutCount</code> is greater than 0, retry the request, resending only
-         * those records that might have failed processing. This minimizes the possible
-         * duplicate records and also reduces the total bytes sent (and corresponding
-         * charges). We recommend that you handle any duplicates at the destination.</p>
-         * <p>If <code>PutRecordBatch</code> throws
-         * <code>ServiceUnavailableException</code>, back off and retry. If the exception
-         * persists, it is possible that the throughput limits have been exceeded for the
-         * delivery stream.</p> <p>Data records sent to Kinesis Data Firehose are stored
-         * for 24 hours from the time they are added to a delivery stream as it attempts to
-         * send the records to the destination. If the destination is unreachable for more
-         * than 24 hours, the data is no longer available.</p><p><h3>See Also:</h3>   <a
+         * <b>FailedPutCount</b> is greater than 0, retry the request, resending only those
+         * records that might have failed processing. This minimizes the possible duplicate
+         * records and also reduces the total bytes sent (and corresponding charges). We
+         * recommend that you handle any duplicates at the destination.</p> <p>If
+         * <a>PutRecordBatch</a> throws <b>ServiceUnavailableException</b>, back off and
+         * retry. If the exception persists, it is possible that the throughput limits have
+         * been exceeded for the delivery stream.</p> <p>Data records sent to Kinesis Data
+         * Firehose are stored for 24 hours from the time they are added to a delivery
+         * stream as it attempts to send the records to the destination. If the destination
+         * is unreachable for more than 24 hours, the data is no longer
+         * available.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">AWS
          * API Reference</a></p>
          */
@@ -671,50 +658,49 @@ namespace Model
          * Applications using these operations are referred to as producers.</p> <p>By
          * default, each delivery stream can take in up to 2,000 transactions per second,
          * 5,000 records per second, or 5 MB per second. If you use <a>PutRecord</a> and
-         * <code>PutRecordBatch</code>, the limits are an aggregate across these two
-         * operations for each delivery stream. For more information about limits, see <a
+         * <a>PutRecordBatch</a>, the limits are an aggregate across these two operations
+         * for each delivery stream. For more information about limits, see <a
          * href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis
-         * Data Firehose Limits</a>.</p> <p>Each <code>PutRecordBatch</code> request
-         * supports up to 500 records. Each record in the request can be as large as 1,000
-         * KB (before 64-bit encoding), up to a limit of 4 MB for the entire request. These
-         * limits cannot be changed.</p> <p>You must specify the name of the delivery
-         * stream and the data record when using <a>PutRecord</a>. The data record consists
-         * of a data blob that can be up to 1,000 KB in size and any kind of data. For
-         * example, it could be a segment from a log file, geographic location data,
-         * website clickstream data, and so on.</p> <p>Kinesis Data Firehose buffers
-         * records before delivering them to the destination. To disambiguate the data
-         * blobs at the destination, a common solution is to use delimiters in the data,
-         * such as a newline (<code>\n</code>) or some other character unique within the
-         * data. This allows the consumer application to parse individual data items when
-         * reading the data from the destination.</p> <p>The <code>PutRecordBatch</code>
-         * response includes a count of failed records, <code>FailedPutCount</code>, and an
-         * array of responses, <code>RequestResponses</code>. Each entry in the
-         * <code>RequestResponses</code> array provides additional information about the
-         * processed record. It directly correlates with a record in the request array
-         * using the same ordering, from the top to the bottom. The response array always
-         * includes the same number of records as the request array.
-         * <code>RequestResponses</code> includes both successfully and unsuccessfully
-         * processed records. Kinesis Data Firehose attempts to process all records in each
-         * <code>PutRecordBatch</code> request. A single record failure does not stop the
-         * processing of subsequent records.</p> <p>A successfully processed record
-         * includes a <code>RecordId</code> value, which is unique for the record. An
-         * unsuccessfully processed record includes <code>ErrorCode</code> and
-         * <code>ErrorMessage</code> values. <code>ErrorCode</code> reflects the type of
-         * error, and is one of the following values: <code>ServiceUnavailable</code> or
-         * <code>InternalFailure</code>. <code>ErrorMessage</code> provides more detailed
+         * Data Firehose Limits</a>.</p> <p>Each <a>PutRecordBatch</a> request supports up
+         * to 500 records. Each record in the request can be as large as 1,000 KB (before
+         * 64-bit encoding), up to a limit of 4 MB for the entire request. These limits
+         * cannot be changed.</p> <p>You must specify the name of the delivery stream and
+         * the data record when using <a>PutRecord</a>. The data record consists of a data
+         * blob that can be up to 1,000 KB in size, and any kind of data. For example, it
+         * could be a segment from a log file, geographic location data, website
+         * clickstream data, and so on.</p> <p>Kinesis Data Firehose buffers records before
+         * delivering them to the destination. To disambiguate the data blobs at the
+         * destination, a common solution is to use delimiters in the data, such as a
+         * newline (<code>\n</code>) or some other character unique within the data. This
+         * allows the consumer application to parse individual data items when reading the
+         * data from the destination.</p> <p>The <a>PutRecordBatch</a> response includes a
+         * count of failed records, <b>FailedPutCount</b>, and an array of responses,
+         * <b>RequestResponses</b>. Each entry in the <b>RequestResponses</b> array
+         * provides additional information about the processed record. It directly
+         * correlates with a record in the request array using the same ordering, from the
+         * top to the bottom. The response array always includes the same number of records
+         * as the request array. <b>RequestResponses</b> includes both successfully and
+         * unsuccessfully processed records. Kinesis Data Firehose tries to process all
+         * records in each <a>PutRecordBatch</a> request. A single record failure does not
+         * stop the processing of subsequent records.</p> <p>A successfully processed
+         * record includes a <b>RecordId</b> value, which is unique for the record. An
+         * unsuccessfully processed record includes <b>ErrorCode</b> and
+         * <b>ErrorMessage</b> values. <b>ErrorCode</b> reflects the type of error, and is
+         * one of the following values: <code>ServiceUnavailable</code> or
+         * <code>InternalFailure</code>. <b>ErrorMessage</b> provides more detailed
          * information about the error.</p> <p>If there is an internal server error or a
          * timeout, the write might have completed or it might have failed. If
-         * <code>FailedPutCount</code> is greater than 0, retry the request, resending only
-         * those records that might have failed processing. This minimizes the possible
-         * duplicate records and also reduces the total bytes sent (and corresponding
-         * charges). We recommend that you handle any duplicates at the destination.</p>
-         * <p>If <code>PutRecordBatch</code> throws
-         * <code>ServiceUnavailableException</code>, back off and retry. If the exception
-         * persists, it is possible that the throughput limits have been exceeded for the
-         * delivery stream.</p> <p>Data records sent to Kinesis Data Firehose are stored
-         * for 24 hours from the time they are added to a delivery stream as it attempts to
-         * send the records to the destination. If the destination is unreachable for more
-         * than 24 hours, the data is no longer available.</p><p><h3>See Also:</h3>   <a
+         * <b>FailedPutCount</b> is greater than 0, retry the request, resending only those
+         * records that might have failed processing. This minimizes the possible duplicate
+         * records and also reduces the total bytes sent (and corresponding charges). We
+         * recommend that you handle any duplicates at the destination.</p> <p>If
+         * <a>PutRecordBatch</a> throws <b>ServiceUnavailableException</b>, back off and
+         * retry. If the exception persists, it is possible that the throughput limits have
+         * been exceeded for the delivery stream.</p> <p>Data records sent to Kinesis Data
+         * Firehose are stored for 24 hours from the time they are added to a delivery
+         * stream as it attempts to send the records to the destination. If the destination
+         * is unreachable for more than 24 hours, the data is no longer
+         * available.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">AWS
          * API Reference</a></p>
          *
@@ -729,50 +715,49 @@ namespace Model
          * Applications using these operations are referred to as producers.</p> <p>By
          * default, each delivery stream can take in up to 2,000 transactions per second,
          * 5,000 records per second, or 5 MB per second. If you use <a>PutRecord</a> and
-         * <code>PutRecordBatch</code>, the limits are an aggregate across these two
-         * operations for each delivery stream. For more information about limits, see <a
+         * <a>PutRecordBatch</a>, the limits are an aggregate across these two operations
+         * for each delivery stream. For more information about limits, see <a
          * href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis
-         * Data Firehose Limits</a>.</p> <p>Each <code>PutRecordBatch</code> request
-         * supports up to 500 records. Each record in the request can be as large as 1,000
-         * KB (before 64-bit encoding), up to a limit of 4 MB for the entire request. These
-         * limits cannot be changed.</p> <p>You must specify the name of the delivery
-         * stream and the data record when using <a>PutRecord</a>. The data record consists
-         * of a data blob that can be up to 1,000 KB in size and any kind of data. For
-         * example, it could be a segment from a log file, geographic location data,
-         * website clickstream data, and so on.</p> <p>Kinesis Data Firehose buffers
-         * records before delivering them to the destination. To disambiguate the data
-         * blobs at the destination, a common solution is to use delimiters in the data,
-         * such as a newline (<code>\n</code>) or some other character unique within the
-         * data. This allows the consumer application to parse individual data items when
-         * reading the data from the destination.</p> <p>The <code>PutRecordBatch</code>
-         * response includes a count of failed records, <code>FailedPutCount</code>, and an
-         * array of responses, <code>RequestResponses</code>. Each entry in the
-         * <code>RequestResponses</code> array provides additional information about the
-         * processed record. It directly correlates with a record in the request array
-         * using the same ordering, from the top to the bottom. The response array always
-         * includes the same number of records as the request array.
-         * <code>RequestResponses</code> includes both successfully and unsuccessfully
-         * processed records. Kinesis Data Firehose attempts to process all records in each
-         * <code>PutRecordBatch</code> request. A single record failure does not stop the
-         * processing of subsequent records.</p> <p>A successfully processed record
-         * includes a <code>RecordId</code> value, which is unique for the record. An
-         * unsuccessfully processed record includes <code>ErrorCode</code> and
-         * <code>ErrorMessage</code> values. <code>ErrorCode</code> reflects the type of
-         * error, and is one of the following values: <code>ServiceUnavailable</code> or
-         * <code>InternalFailure</code>. <code>ErrorMessage</code> provides more detailed
+         * Data Firehose Limits</a>.</p> <p>Each <a>PutRecordBatch</a> request supports up
+         * to 500 records. Each record in the request can be as large as 1,000 KB (before
+         * 64-bit encoding), up to a limit of 4 MB for the entire request. These limits
+         * cannot be changed.</p> <p>You must specify the name of the delivery stream and
+         * the data record when using <a>PutRecord</a>. The data record consists of a data
+         * blob that can be up to 1,000 KB in size, and any kind of data. For example, it
+         * could be a segment from a log file, geographic location data, website
+         * clickstream data, and so on.</p> <p>Kinesis Data Firehose buffers records before
+         * delivering them to the destination. To disambiguate the data blobs at the
+         * destination, a common solution is to use delimiters in the data, such as a
+         * newline (<code>\n</code>) or some other character unique within the data. This
+         * allows the consumer application to parse individual data items when reading the
+         * data from the destination.</p> <p>The <a>PutRecordBatch</a> response includes a
+         * count of failed records, <b>FailedPutCount</b>, and an array of responses,
+         * <b>RequestResponses</b>. Each entry in the <b>RequestResponses</b> array
+         * provides additional information about the processed record. It directly
+         * correlates with a record in the request array using the same ordering, from the
+         * top to the bottom. The response array always includes the same number of records
+         * as the request array. <b>RequestResponses</b> includes both successfully and
+         * unsuccessfully processed records. Kinesis Data Firehose tries to process all
+         * records in each <a>PutRecordBatch</a> request. A single record failure does not
+         * stop the processing of subsequent records.</p> <p>A successfully processed
+         * record includes a <b>RecordId</b> value, which is unique for the record. An
+         * unsuccessfully processed record includes <b>ErrorCode</b> and
+         * <b>ErrorMessage</b> values. <b>ErrorCode</b> reflects the type of error, and is
+         * one of the following values: <code>ServiceUnavailable</code> or
+         * <code>InternalFailure</code>. <b>ErrorMessage</b> provides more detailed
          * information about the error.</p> <p>If there is an internal server error or a
          * timeout, the write might have completed or it might have failed. If
-         * <code>FailedPutCount</code> is greater than 0, retry the request, resending only
-         * those records that might have failed processing. This minimizes the possible
-         * duplicate records and also reduces the total bytes sent (and corresponding
-         * charges). We recommend that you handle any duplicates at the destination.</p>
-         * <p>If <code>PutRecordBatch</code> throws
-         * <code>ServiceUnavailableException</code>, back off and retry. If the exception
-         * persists, it is possible that the throughput limits have been exceeded for the
-         * delivery stream.</p> <p>Data records sent to Kinesis Data Firehose are stored
-         * for 24 hours from the time they are added to a delivery stream as it attempts to
-         * send the records to the destination. If the destination is unreachable for more
-         * than 24 hours, the data is no longer available.</p><p><h3>See Also:</h3>   <a
+         * <b>FailedPutCount</b> is greater than 0, retry the request, resending only those
+         * records that might have failed processing. This minimizes the possible duplicate
+         * records and also reduces the total bytes sent (and corresponding charges). We
+         * recommend that you handle any duplicates at the destination.</p> <p>If
+         * <a>PutRecordBatch</a> throws <b>ServiceUnavailableException</b>, back off and
+         * retry. If the exception persists, it is possible that the throughput limits have
+         * been exceeded for the delivery stream.</p> <p>Data records sent to Kinesis Data
+         * Firehose are stored for 24 hours from the time they are added to a delivery
+         * stream as it attempts to send the records to the destination. If the destination
+         * is unreachable for more than 24 hours, the data is no longer
+         * available.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">AWS
          * API Reference</a></p>
          *
@@ -892,13 +877,13 @@ namespace Model
          * the destination type is not the same, for example, changing the destination from
          * Amazon S3 to Amazon Redshift, Kinesis Data Firehose does not merge any
          * parameters. In this case, all parameters must be specified.</p> <p>Kinesis Data
-         * Firehose uses <code>CurrentDeliveryStreamVersionId</code> to avoid race
-         * conditions and conflicting merges. This is a required field, and the service
-         * updates the configuration only if the existing configuration has a version ID
-         * that matches. After the update is applied successfully, the version ID is
-         * updated, and you can retrieve it using <a>DescribeDeliveryStream</a>. Use the
-         * new version ID to set <code>CurrentDeliveryStreamVersionId</code> in the next
-         * call.</p><p><h3>See Also:</h3>   <a
+         * Firehose uses <b>CurrentDeliveryStreamVersionId</b> to avoid race conditions and
+         * conflicting merges. This is a required field, and the service updates the
+         * configuration only if the existing configuration has a version ID that matches.
+         * After the update is applied successfully, the version ID is updated, and can be
+         * retrieved using <a>DescribeDeliveryStream</a>. Use the new version ID to set
+         * <b>CurrentDeliveryStreamVersionId</b> in the next call.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/UpdateDestination">AWS
          * API Reference</a></p>
          */
@@ -924,13 +909,13 @@ namespace Model
          * the destination type is not the same, for example, changing the destination from
          * Amazon S3 to Amazon Redshift, Kinesis Data Firehose does not merge any
          * parameters. In this case, all parameters must be specified.</p> <p>Kinesis Data
-         * Firehose uses <code>CurrentDeliveryStreamVersionId</code> to avoid race
-         * conditions and conflicting merges. This is a required field, and the service
-         * updates the configuration only if the existing configuration has a version ID
-         * that matches. After the update is applied successfully, the version ID is
-         * updated, and you can retrieve it using <a>DescribeDeliveryStream</a>. Use the
-         * new version ID to set <code>CurrentDeliveryStreamVersionId</code> in the next
-         * call.</p><p><h3>See Also:</h3>   <a
+         * Firehose uses <b>CurrentDeliveryStreamVersionId</b> to avoid race conditions and
+         * conflicting merges. This is a required field, and the service updates the
+         * configuration only if the existing configuration has a version ID that matches.
+         * After the update is applied successfully, the version ID is updated, and can be
+         * retrieved using <a>DescribeDeliveryStream</a>. Use the new version ID to set
+         * <b>CurrentDeliveryStreamVersionId</b> in the next call.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/UpdateDestination">AWS
          * API Reference</a></p>
          *
@@ -958,13 +943,13 @@ namespace Model
          * the destination type is not the same, for example, changing the destination from
          * Amazon S3 to Amazon Redshift, Kinesis Data Firehose does not merge any
          * parameters. In this case, all parameters must be specified.</p> <p>Kinesis Data
-         * Firehose uses <code>CurrentDeliveryStreamVersionId</code> to avoid race
-         * conditions and conflicting merges. This is a required field, and the service
-         * updates the configuration only if the existing configuration has a version ID
-         * that matches. After the update is applied successfully, the version ID is
-         * updated, and you can retrieve it using <a>DescribeDeliveryStream</a>. Use the
-         * new version ID to set <code>CurrentDeliveryStreamVersionId</code> in the next
-         * call.</p><p><h3>See Also:</h3>   <a
+         * Firehose uses <b>CurrentDeliveryStreamVersionId</b> to avoid race conditions and
+         * conflicting merges. This is a required field, and the service updates the
+         * configuration only if the existing configuration has a version ID that matches.
+         * After the update is applied successfully, the version ID is updated, and can be
+         * retrieved using <a>DescribeDeliveryStream</a>. Use the new version ID to set
+         * <b>CurrentDeliveryStreamVersionId</b> in the next call.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/UpdateDestination">AWS
          * API Reference</a></p>
          *

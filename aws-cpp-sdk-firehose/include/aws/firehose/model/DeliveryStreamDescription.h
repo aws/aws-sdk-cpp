@@ -89,37 +89,58 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
+     * <p>The Amazon Resource Name (ARN) of the delivery stream. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline const Aws::String& GetDeliveryStreamARN() const{ return m_deliveryStreamARN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
+     * <p>The Amazon Resource Name (ARN) of the delivery stream. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetDeliveryStreamARN(const Aws::String& value) { m_deliveryStreamARNHasBeenSet = true; m_deliveryStreamARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
+     * <p>The Amazon Resource Name (ARN) of the delivery stream. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetDeliveryStreamARN(Aws::String&& value) { m_deliveryStreamARNHasBeenSet = true; m_deliveryStreamARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
+     * <p>The Amazon Resource Name (ARN) of the delivery stream. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetDeliveryStreamARN(const char* value) { m_deliveryStreamARNHasBeenSet = true; m_deliveryStreamARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
+     * <p>The Amazon Resource Name (ARN) of the delivery stream. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline DeliveryStreamDescription& WithDeliveryStreamARN(const Aws::String& value) { SetDeliveryStreamARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
+     * <p>The Amazon Resource Name (ARN) of the delivery stream. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline DeliveryStreamDescription& WithDeliveryStreamARN(Aws::String&& value) { SetDeliveryStreamARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
+     * <p>The Amazon Resource Name (ARN) of the delivery stream. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline DeliveryStreamDescription& WithDeliveryStreamARN(const char* value) { SetDeliveryStreamARN(value); return *this;}
 

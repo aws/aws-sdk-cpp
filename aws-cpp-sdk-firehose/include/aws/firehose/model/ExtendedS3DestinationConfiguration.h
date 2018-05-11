@@ -23,6 +23,7 @@
 #include <aws/firehose/model/ProcessingConfiguration.h>
 #include <aws/firehose/model/S3BackupMode.h>
 #include <aws/firehose/model/S3DestinationConfiguration.h>
+#include <aws/firehose/model/DataFormatConversionConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -55,73 +56,108 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline ExtendedS3DestinationConfiguration& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline ExtendedS3DestinationConfiguration& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline ExtendedS3DestinationConfiguration& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
 
     /**
-     * <p>The ARN of the S3 bucket.</p>
+     * <p>The ARN of the S3 bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline const Aws::String& GetBucketARN() const{ return m_bucketARN; }
 
     /**
-     * <p>The ARN of the S3 bucket.</p>
+     * <p>The ARN of the S3 bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetBucketARN(const Aws::String& value) { m_bucketARNHasBeenSet = true; m_bucketARN = value; }
 
     /**
-     * <p>The ARN of the S3 bucket.</p>
+     * <p>The ARN of the S3 bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetBucketARN(Aws::String&& value) { m_bucketARNHasBeenSet = true; m_bucketARN = std::move(value); }
 
     /**
-     * <p>The ARN of the S3 bucket.</p>
+     * <p>The ARN of the S3 bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetBucketARN(const char* value) { m_bucketARNHasBeenSet = true; m_bucketARN.assign(value); }
 
     /**
-     * <p>The ARN of the S3 bucket.</p>
+     * <p>The ARN of the S3 bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline ExtendedS3DestinationConfiguration& WithBucketARN(const Aws::String& value) { SetBucketARN(value); return *this;}
 
     /**
-     * <p>The ARN of the S3 bucket.</p>
+     * <p>The ARN of the S3 bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline ExtendedS3DestinationConfiguration& WithBucketARN(Aws::String&& value) { SetBucketARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the S3 bucket.</p>
+     * <p>The ARN of the S3 bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline ExtendedS3DestinationConfiguration& WithBucketARN(const char* value) { SetBucketARN(value); return *this;}
 
@@ -293,27 +329,27 @@ namespace Model
 
 
     /**
-     * <p>The CloudWatch logging options for your delivery stream.</p>
+     * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
      */
     inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const{ return m_cloudWatchLoggingOptions; }
 
     /**
-     * <p>The CloudWatch logging options for your delivery stream.</p>
+     * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
      */
     inline void SetCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
 
     /**
-     * <p>The CloudWatch logging options for your delivery stream.</p>
+     * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
      */
     inline void SetCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = std::move(value); }
 
     /**
-     * <p>The CloudWatch logging options for your delivery stream.</p>
+     * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
      */
     inline ExtendedS3DestinationConfiguration& WithCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { SetCloudWatchLoggingOptions(value); return *this;}
 
     /**
-     * <p>The CloudWatch logging options for your delivery stream.</p>
+     * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
      */
     inline ExtendedS3DestinationConfiguration& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(std::move(value)); return *this;}
 
@@ -395,6 +431,37 @@ namespace Model
      */
     inline ExtendedS3DestinationConfiguration& WithS3BackupConfiguration(S3DestinationConfiguration&& value) { SetS3BackupConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The serializer, deserializer, and schema for converting data from the JSON
+     * format to the Parquet or ORC format before writing it to Amazon S3.</p>
+     */
+    inline const DataFormatConversionConfiguration& GetDataFormatConversionConfiguration() const{ return m_dataFormatConversionConfiguration; }
+
+    /**
+     * <p>The serializer, deserializer, and schema for converting data from the JSON
+     * format to the Parquet or ORC format before writing it to Amazon S3.</p>
+     */
+    inline void SetDataFormatConversionConfiguration(const DataFormatConversionConfiguration& value) { m_dataFormatConversionConfigurationHasBeenSet = true; m_dataFormatConversionConfiguration = value; }
+
+    /**
+     * <p>The serializer, deserializer, and schema for converting data from the JSON
+     * format to the Parquet or ORC format before writing it to Amazon S3.</p>
+     */
+    inline void SetDataFormatConversionConfiguration(DataFormatConversionConfiguration&& value) { m_dataFormatConversionConfigurationHasBeenSet = true; m_dataFormatConversionConfiguration = std::move(value); }
+
+    /**
+     * <p>The serializer, deserializer, and schema for converting data from the JSON
+     * format to the Parquet or ORC format before writing it to Amazon S3.</p>
+     */
+    inline ExtendedS3DestinationConfiguration& WithDataFormatConversionConfiguration(const DataFormatConversionConfiguration& value) { SetDataFormatConversionConfiguration(value); return *this;}
+
+    /**
+     * <p>The serializer, deserializer, and schema for converting data from the JSON
+     * format to the Parquet or ORC format before writing it to Amazon S3.</p>
+     */
+    inline ExtendedS3DestinationConfiguration& WithDataFormatConversionConfiguration(DataFormatConversionConfiguration&& value) { SetDataFormatConversionConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_roleARN;
@@ -426,6 +493,9 @@ namespace Model
 
     S3DestinationConfiguration m_s3BackupConfiguration;
     bool m_s3BackupConfigurationHasBeenSet;
+
+    DataFormatConversionConfiguration m_dataFormatConversionConfiguration;
+    bool m_dataFormatConversionConfigurationHasBeenSet;
   };
 
 } // namespace Model

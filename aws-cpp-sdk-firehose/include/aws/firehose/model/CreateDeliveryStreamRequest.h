@@ -52,50 +52,57 @@ namespace Model
 
     /**
      * <p>The name of the delivery stream. This name must be unique per AWS account in
-     * the same Region. If the delivery streams are in different accounts or different
-     * Regions, you can have multiple delivery streams with the same name.</p>
+     * the same AWS Region. If the delivery streams are in different accounts or
+     * different Regions, you can have multiple delivery streams with the same
+     * name.</p>
      */
     inline const Aws::String& GetDeliveryStreamName() const{ return m_deliveryStreamName; }
 
     /**
      * <p>The name of the delivery stream. This name must be unique per AWS account in
-     * the same Region. If the delivery streams are in different accounts or different
-     * Regions, you can have multiple delivery streams with the same name.</p>
+     * the same AWS Region. If the delivery streams are in different accounts or
+     * different Regions, you can have multiple delivery streams with the same
+     * name.</p>
      */
     inline void SetDeliveryStreamName(const Aws::String& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = value; }
 
     /**
      * <p>The name of the delivery stream. This name must be unique per AWS account in
-     * the same Region. If the delivery streams are in different accounts or different
-     * Regions, you can have multiple delivery streams with the same name.</p>
+     * the same AWS Region. If the delivery streams are in different accounts or
+     * different Regions, you can have multiple delivery streams with the same
+     * name.</p>
      */
     inline void SetDeliveryStreamName(Aws::String&& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = std::move(value); }
 
     /**
      * <p>The name of the delivery stream. This name must be unique per AWS account in
-     * the same Region. If the delivery streams are in different accounts or different
-     * Regions, you can have multiple delivery streams with the same name.</p>
+     * the same AWS Region. If the delivery streams are in different accounts or
+     * different Regions, you can have multiple delivery streams with the same
+     * name.</p>
      */
     inline void SetDeliveryStreamName(const char* value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName.assign(value); }
 
     /**
      * <p>The name of the delivery stream. This name must be unique per AWS account in
-     * the same Region. If the delivery streams are in different accounts or different
-     * Regions, you can have multiple delivery streams with the same name.</p>
+     * the same AWS Region. If the delivery streams are in different accounts or
+     * different Regions, you can have multiple delivery streams with the same
+     * name.</p>
      */
     inline CreateDeliveryStreamRequest& WithDeliveryStreamName(const Aws::String& value) { SetDeliveryStreamName(value); return *this;}
 
     /**
      * <p>The name of the delivery stream. This name must be unique per AWS account in
-     * the same Region. If the delivery streams are in different accounts or different
-     * Regions, you can have multiple delivery streams with the same name.</p>
+     * the same AWS Region. If the delivery streams are in different accounts or
+     * different Regions, you can have multiple delivery streams with the same
+     * name.</p>
      */
     inline CreateDeliveryStreamRequest& WithDeliveryStreamName(Aws::String&& value) { SetDeliveryStreamName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the delivery stream. This name must be unique per AWS account in
-     * the same Region. If the delivery streams are in different accounts or different
-     * Regions, you can have multiple delivery streams with the same name.</p>
+     * the same AWS Region. If the delivery streams are in different accounts or
+     * different Regions, you can have multiple delivery streams with the same
+     * name.</p>
      */
     inline CreateDeliveryStreamRequest& WithDeliveryStreamName(const char* value) { SetDeliveryStreamName(value); return *this;}
 
