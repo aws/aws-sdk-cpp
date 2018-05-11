@@ -67,9 +67,11 @@
 #include <aws/gamelift/model/RequestUploadCredentialsResult.h>
 #include <aws/gamelift/model/ResolveAliasResult.h>
 #include <aws/gamelift/model/SearchGameSessionsResult.h>
+#include <aws/gamelift/model/StartFleetActionsResult.h>
 #include <aws/gamelift/model/StartGameSessionPlacementResult.h>
 #include <aws/gamelift/model/StartMatchBackfillResult.h>
 #include <aws/gamelift/model/StartMatchmakingResult.h>
+#include <aws/gamelift/model/StopFleetActionsResult.h>
 #include <aws/gamelift/model/StopGameSessionPlacementResult.h>
 #include <aws/gamelift/model/StopMatchmakingResult.h>
 #include <aws/gamelift/model/UpdateAliasResult.h>
@@ -178,9 +180,11 @@ namespace Model
         class RequestUploadCredentialsRequest;
         class ResolveAliasRequest;
         class SearchGameSessionsRequest;
+        class StartFleetActionsRequest;
         class StartGameSessionPlacementRequest;
         class StartMatchBackfillRequest;
         class StartMatchmakingRequest;
+        class StopFleetActionsRequest;
         class StopGameSessionPlacementRequest;
         class StopMatchmakingRequest;
         class UpdateAliasRequest;
@@ -244,9 +248,11 @@ namespace Model
         typedef Aws::Utils::Outcome<RequestUploadCredentialsResult, Aws::Client::AWSError<GameLiftErrors>> RequestUploadCredentialsOutcome;
         typedef Aws::Utils::Outcome<ResolveAliasResult, Aws::Client::AWSError<GameLiftErrors>> ResolveAliasOutcome;
         typedef Aws::Utils::Outcome<SearchGameSessionsResult, Aws::Client::AWSError<GameLiftErrors>> SearchGameSessionsOutcome;
+        typedef Aws::Utils::Outcome<StartFleetActionsResult, Aws::Client::AWSError<GameLiftErrors>> StartFleetActionsOutcome;
         typedef Aws::Utils::Outcome<StartGameSessionPlacementResult, Aws::Client::AWSError<GameLiftErrors>> StartGameSessionPlacementOutcome;
         typedef Aws::Utils::Outcome<StartMatchBackfillResult, Aws::Client::AWSError<GameLiftErrors>> StartMatchBackfillOutcome;
         typedef Aws::Utils::Outcome<StartMatchmakingResult, Aws::Client::AWSError<GameLiftErrors>> StartMatchmakingOutcome;
+        typedef Aws::Utils::Outcome<StopFleetActionsResult, Aws::Client::AWSError<GameLiftErrors>> StopFleetActionsOutcome;
         typedef Aws::Utils::Outcome<StopGameSessionPlacementResult, Aws::Client::AWSError<GameLiftErrors>> StopGameSessionPlacementOutcome;
         typedef Aws::Utils::Outcome<StopMatchmakingResult, Aws::Client::AWSError<GameLiftErrors>> StopMatchmakingOutcome;
         typedef Aws::Utils::Outcome<UpdateAliasResult, Aws::Client::AWSError<GameLiftErrors>> UpdateAliasOutcome;
@@ -310,9 +316,11 @@ namespace Model
         typedef std::future<RequestUploadCredentialsOutcome> RequestUploadCredentialsOutcomeCallable;
         typedef std::future<ResolveAliasOutcome> ResolveAliasOutcomeCallable;
         typedef std::future<SearchGameSessionsOutcome> SearchGameSessionsOutcomeCallable;
+        typedef std::future<StartFleetActionsOutcome> StartFleetActionsOutcomeCallable;
         typedef std::future<StartGameSessionPlacementOutcome> StartGameSessionPlacementOutcomeCallable;
         typedef std::future<StartMatchBackfillOutcome> StartMatchBackfillOutcomeCallable;
         typedef std::future<StartMatchmakingOutcome> StartMatchmakingOutcomeCallable;
+        typedef std::future<StopFleetActionsOutcome> StopFleetActionsOutcomeCallable;
         typedef std::future<StopGameSessionPlacementOutcome> StopGameSessionPlacementOutcomeCallable;
         typedef std::future<StopMatchmakingOutcome> StopMatchmakingOutcomeCallable;
         typedef std::future<UpdateAliasOutcome> UpdateAliasOutcomeCallable;
@@ -379,9 +387,11 @@ namespace Model
     typedef std::function<void(const GameLiftClient*, const Model::RequestUploadCredentialsRequest&, const Model::RequestUploadCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RequestUploadCredentialsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::ResolveAliasRequest&, const Model::ResolveAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResolveAliasResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::SearchGameSessionsRequest&, const Model::SearchGameSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchGameSessionsResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::StartFleetActionsRequest&, const Model::StartFleetActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartFleetActionsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::StartGameSessionPlacementRequest&, const Model::StartGameSessionPlacementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartGameSessionPlacementResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::StartMatchBackfillRequest&, const Model::StartMatchBackfillOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMatchBackfillResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::StartMatchmakingRequest&, const Model::StartMatchmakingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMatchmakingResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::StopFleetActionsRequest&, const Model::StopFleetActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopFleetActionsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::StopGameSessionPlacementRequest&, const Model::StopGameSessionPlacementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopGameSessionPlacementResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::StopMatchmakingRequest&, const Model::StopMatchmakingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopMatchmakingResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::UpdateAliasRequest&, const Model::UpdateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAliasResponseReceivedHandler;
@@ -407,7 +417,7 @@ namespace Model
    * -- Retrieve information on available game sessions; create new game sessions;
    * send player requests to join a game session.</p> </li> <li> <p> <b>Configure and
    * manage game server resources</b> -- Manage builds, fleets, queues, and aliases;
-   * set autoscaling policies; retrieve logs and metrics.</p> </li> </ul> <p>This
+   * set auto-scaling policies; retrieve logs and metrics.</p> </li> </ul> <p>This
    * reference guide describes the low-level service API for Amazon GameLift. You can
    * use the API functionality with these tools: </p> <ul> <li> <p>The Amazon Web
    * Services software development kit (<a
@@ -516,62 +526,65 @@ namespace Model
    * level.</p> </li> <li> <p> <a>DescribeFleetCapacity</a> /
    * <a>UpdateFleetCapacity</a> -- Retrieve the capacity settings and the current
    * number of instances in a fleet; adjust fleet capacity settings to scale up or
-   * down.</p> </li> <li> <p>Autoscale -- Manage autoscaling rules and apply them to
-   * a fleet.</p> <ul> <li> <p> <a>PutScalingPolicy</a> -- Create a new autoscaling
+   * down.</p> </li> <li> <p>Autoscale -- Manage auto-scaling rules and apply them to
+   * a fleet.</p> <ul> <li> <p> <a>PutScalingPolicy</a> -- Create a new auto-scaling
    * policy, or update an existing one.</p> </li> <li> <p>
-   * <a>DescribeScalingPolicies</a> -- Retrieve an existing autoscaling policy.</p>
-   * </li> <li> <p> <a>DeleteScalingPolicy</a> -- Delete an autoscaling policy and
-   * stop it from affecting a fleet's capacity.</p> </li> </ul> </li> </ul> </li>
-   * <li> <p> <b>Manage VPC peering connections for fleets</b> </p> <ul> <li> <p>
-   * <a>CreateVpcPeeringAuthorization</a> -- Authorize a peering connection to one of
-   * your VPCs.</p> </li> <li> <p> <a>DescribeVpcPeeringAuthorizations</a> --
-   * Retrieve valid peering connection authorizations. </p> </li> <li> <p>
-   * <a>DeleteVpcPeeringAuthorization</a> -- Delete a peering connection
-   * authorization.</p> </li> <li> <p> <a>CreateVpcPeeringConnection</a> -- Establish
-   * a peering connection between the VPC for a Amazon GameLift fleet and one of your
-   * VPCs.</p> </li> <li> <p> <a>DescribeVpcPeeringConnections</a> -- Retrieve
-   * information on active or pending VPC peering connections with a Amazon GameLift
-   * fleet.</p> </li> <li> <p> <a>DeleteVpcPeeringConnection</a> -- Delete a VPC
-   * peering connection with a Amazon GameLift fleet.</p> </li> </ul> </li> <li> <p>
-   * <b>Access fleet activity statistics</b> </p> <ul> <li> <p>
-   * <a>DescribeFleetUtilization</a> -- Get current data on the number of server
-   * processes, game sessions, and players currently active on a fleet.</p> </li>
-   * <li> <p> <a>DescribeFleetEvents</a> -- Get a fleet's logged events for a
-   * specified time span.</p> </li> <li> <p> <a>DescribeGameSessions</a> -- Retrieve
-   * metadata associated with one or more game sessions, including length of time
-   * active and current player count.</p> </li> </ul> </li> <li> <p> <b>Remotely
-   * access an instance</b> </p> <ul> <li> <p> <a>DescribeInstances</a> -- Get
-   * information on each instance in a fleet, including instance ID, IP address, and
-   * status.</p> </li> <li> <p> <a>GetInstanceAccess</a> -- Request access
-   * credentials needed to remotely connect to a specified instance in a fleet.</p>
-   * </li> </ul> </li> <li> <p> <b>Manage fleet aliases</b> </p> <ul> <li> <p>
-   * <a>CreateAlias</a> -- Define a new alias and optionally assign it to a
-   * fleet.</p> </li> <li> <p> <a>ListAliases</a> -- Get all fleet aliases defined in
-   * a Amazon GameLift region.</p> </li> <li> <p> <a>DescribeAlias</a> -- Retrieve
-   * information on an existing alias.</p> </li> <li> <p> <a>UpdateAlias</a> --
-   * Change settings for a alias, such as redirecting it from one fleet to
-   * another.</p> </li> <li> <p> <a>DeleteAlias</a> -- Remove an alias from the
-   * region.</p> </li> <li> <p> <a>ResolveAlias</a> -- Get the fleet ID that a
-   * specified alias points to.</p> </li> </ul> </li> <li> <p> <b>Manage game session
-   * queues</b> </p> <ul> <li> <p> <a>CreateGameSessionQueue</a> -- Create a queue
-   * for processing requests for new game sessions. </p> </li> <li> <p>
-   * <a>DescribeGameSessionQueues</a> -- Retrieve game session queues defined in a
-   * Amazon GameLift region.</p> </li> <li> <p> <a>UpdateGameSessionQueue</a> --
-   * Change the configuration of a game session queue.</p> </li> <li> <p>
-   * <a>DeleteGameSessionQueue</a> -- Remove a game session queue from the
-   * region.</p> </li> </ul> </li> <li> <p> <b>Manage FlexMatch resources</b> </p>
-   * <ul> <li> <p> <a>CreateMatchmakingConfiguration</a> -- Create a matchmaking
-   * configuration with instructions for building a player group and placing in a new
-   * game session. </p> </li> <li> <p> <a>DescribeMatchmakingConfigurations</a> --
-   * Retrieve matchmaking configurations defined a Amazon GameLift region.</p> </li>
-   * <li> <p> <a>UpdateMatchmakingConfiguration</a> -- Change settings for
-   * matchmaking configuration. queue.</p> </li> <li> <p>
-   * <a>DeleteMatchmakingConfiguration</a> -- Remove a matchmaking configuration from
-   * the region.</p> </li> <li> <p> <a>CreateMatchmakingRuleSet</a> -- Create a set
-   * of rules to use when searching for player matches. </p> </li> <li> <p>
-   * <a>DescribeMatchmakingRuleSets</a> -- Retrieve matchmaking rule sets defined in
-   * a Amazon GameLift region.</p> </li> <li> <p> <a>ValidateMatchmakingRuleSet</a>
-   * -- Verify syntax for a set of matchmaking rules. </p> </li> </ul> </li> </ul>
+   * <a>DescribeScalingPolicies</a> -- Retrieve an existing auto-scaling policy.</p>
+   * </li> <li> <p> <a>DeleteScalingPolicy</a> -- Delete an auto-scaling policy and
+   * stop it from affecting a fleet's capacity.</p> </li> <li> <p>
+   * <a>StartFleetActions</a> -- Restart a fleet's auto-scaling policies.</p> </li>
+   * <li> <p> <a>StopFleetActions</a> -- Suspend a fleet's auto-scaling policies.</p>
+   * </li> </ul> </li> </ul> </li> <li> <p> <b>Manage VPC peering connections for
+   * fleets</b> </p> <ul> <li> <p> <a>CreateVpcPeeringAuthorization</a> -- Authorize
+   * a peering connection to one of your VPCs.</p> </li> <li> <p>
+   * <a>DescribeVpcPeeringAuthorizations</a> -- Retrieve valid peering connection
+   * authorizations. </p> </li> <li> <p> <a>DeleteVpcPeeringAuthorization</a> --
+   * Delete a peering connection authorization.</p> </li> <li> <p>
+   * <a>CreateVpcPeeringConnection</a> -- Establish a peering connection between the
+   * VPC for a Amazon GameLift fleet and one of your VPCs.</p> </li> <li> <p>
+   * <a>DescribeVpcPeeringConnections</a> -- Retrieve information on active or
+   * pending VPC peering connections with a Amazon GameLift fleet.</p> </li> <li> <p>
+   * <a>DeleteVpcPeeringConnection</a> -- Delete a VPC peering connection with a
+   * Amazon GameLift fleet.</p> </li> </ul> </li> <li> <p> <b>Access fleet activity
+   * statistics</b> </p> <ul> <li> <p> <a>DescribeFleetUtilization</a> -- Get current
+   * data on the number of server processes, game sessions, and players currently
+   * active on a fleet.</p> </li> <li> <p> <a>DescribeFleetEvents</a> -- Get a
+   * fleet's logged events for a specified time span.</p> </li> <li> <p>
+   * <a>DescribeGameSessions</a> -- Retrieve metadata associated with one or more
+   * game sessions, including length of time active and current player count.</p>
+   * </li> </ul> </li> <li> <p> <b>Remotely access an instance</b> </p> <ul> <li> <p>
+   * <a>DescribeInstances</a> -- Get information on each instance in a fleet,
+   * including instance ID, IP address, and status.</p> </li> <li> <p>
+   * <a>GetInstanceAccess</a> -- Request access credentials needed to remotely
+   * connect to a specified instance in a fleet.</p> </li> </ul> </li> <li> <p>
+   * <b>Manage fleet aliases</b> </p> <ul> <li> <p> <a>CreateAlias</a> -- Define a
+   * new alias and optionally assign it to a fleet.</p> </li> <li> <p>
+   * <a>ListAliases</a> -- Get all fleet aliases defined in a Amazon GameLift
+   * region.</p> </li> <li> <p> <a>DescribeAlias</a> -- Retrieve information on an
+   * existing alias.</p> </li> <li> <p> <a>UpdateAlias</a> -- Change settings for a
+   * alias, such as redirecting it from one fleet to another.</p> </li> <li> <p>
+   * <a>DeleteAlias</a> -- Remove an alias from the region.</p> </li> <li> <p>
+   * <a>ResolveAlias</a> -- Get the fleet ID that a specified alias points to.</p>
+   * </li> </ul> </li> <li> <p> <b>Manage game session queues</b> </p> <ul> <li> <p>
+   * <a>CreateGameSessionQueue</a> -- Create a queue for processing requests for new
+   * game sessions. </p> </li> <li> <p> <a>DescribeGameSessionQueues</a> -- Retrieve
+   * game session queues defined in a Amazon GameLift region.</p> </li> <li> <p>
+   * <a>UpdateGameSessionQueue</a> -- Change the configuration of a game session
+   * queue.</p> </li> <li> <p> <a>DeleteGameSessionQueue</a> -- Remove a game session
+   * queue from the region.</p> </li> </ul> </li> <li> <p> <b>Manage FlexMatch
+   * resources</b> </p> <ul> <li> <p> <a>CreateMatchmakingConfiguration</a> -- Create
+   * a matchmaking configuration with instructions for building a player group and
+   * placing in a new game session. </p> </li> <li> <p>
+   * <a>DescribeMatchmakingConfigurations</a> -- Retrieve matchmaking configurations
+   * defined a Amazon GameLift region.</p> </li> <li> <p>
+   * <a>UpdateMatchmakingConfiguration</a> -- Change settings for matchmaking
+   * configuration. queue.</p> </li> <li> <p> <a>DeleteMatchmakingConfiguration</a>
+   * -- Remove a matchmaking configuration from the region.</p> </li> <li> <p>
+   * <a>CreateMatchmakingRuleSet</a> -- Create a set of rules to use when searching
+   * for player matches. </p> </li> <li> <p> <a>DescribeMatchmakingRuleSets</a> --
+   * Retrieve matchmaking rule sets defined in a Amazon GameLift region.</p> </li>
+   * <li> <p> <a>ValidateMatchmakingRuleSet</a> -- Verify syntax for a set of
+   * matchmaking rules. </p> </li> </ul> </li> </ul>
    */
   class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSJsonClient
   {
@@ -940,22 +953,19 @@ namespace Model
          * <code>ACTIVATING</code>.</p> </li> <li> <p>Sets the fleet's status to
          * <code>ACTIVE</code> as soon as one server process is ready to host a game
          * session.</p> </li> </ul> <p>Fleet-related operations include:</p> <ul> <li> <p>
-         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li>
-         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
+         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleet">AWS
          * API Reference</a></p>
          */
@@ -996,22 +1006,19 @@ namespace Model
          * <code>ACTIVATING</code>.</p> </li> <li> <p>Sets the fleet's status to
          * <code>ACTIVE</code> as soon as one server process is ready to host a game
          * session.</p> </li> </ul> <p>Fleet-related operations include:</p> <ul> <li> <p>
-         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li>
-         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
+         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleet">AWS
          * API Reference</a></p>
          *
@@ -1054,22 +1061,19 @@ namespace Model
          * <code>ACTIVATING</code>.</p> </li> <li> <p>Sets the fleet's status to
          * <code>ACTIVE</code> as soon as one server process is ready to host a game
          * session.</p> </li> </ul> <p>Fleet-related operations include:</p> <ul> <li> <p>
-         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li>
-         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
+         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleet">AWS
          * API Reference</a></p>
          *
@@ -1984,22 +1988,19 @@ namespace Model
          * <p>This action removes the fleet's resources and the fleet record. Once a fleet
          * is deleted, you can no longer use that fleet.</p> <p>Fleet-related operations
          * include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
+         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleet">AWS
          * API Reference</a></p>
          */
@@ -2011,22 +2012,19 @@ namespace Model
          * <p>This action removes the fleet's resources and the fleet record. Once a fleet
          * is deleted, you can no longer use that fleet.</p> <p>Fleet-related operations
          * include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
+         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleet">AWS
          * API Reference</a></p>
          *
@@ -2040,22 +2038,19 @@ namespace Model
          * <p>This action removes the fleet's resources and the fleet record. Once a fleet
          * is deleted, you can no longer use that fleet.</p> <p>Fleet-related operations
          * include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
+         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleet">AWS
          * API Reference</a></p>
          *
@@ -2165,23 +2160,16 @@ namespace Model
          * <p>Deletes a fleet scaling policy. This action means that the policy is no
          * longer in force and removes all record of it. To delete a scaling policy,
          * specify both the scaling policy name and the fleet ID it is associated with.</p>
-         * <p>Fleet-related operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p>
-         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul>
-         * <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
-         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
-         * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
+         * <p>To temporarily suspend scaling policies, call <a>StopFleetActions</a>. This
+         * operation suspends all policies for the fleet.</p> <p>Operations related to
+         * fleet capacity scaling include:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
          * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage scaling policies:</p>
+         * <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p> </li> <li> <p>
+         * <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p>
+         * <a>DeleteScalingPolicy</a> (auto-scaling)</p> </li> </ul> </li> <li> <p>Manage
+         * fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteScalingPolicy">AWS
          * API Reference</a></p>
          */
@@ -2191,23 +2179,16 @@ namespace Model
          * <p>Deletes a fleet scaling policy. This action means that the policy is no
          * longer in force and removes all record of it. To delete a scaling policy,
          * specify both the scaling policy name and the fleet ID it is associated with.</p>
-         * <p>Fleet-related operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p>
-         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul>
-         * <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
-         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
-         * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
+         * <p>To temporarily suspend scaling policies, call <a>StopFleetActions</a>. This
+         * operation suspends all policies for the fleet.</p> <p>Operations related to
+         * fleet capacity scaling include:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
          * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage scaling policies:</p>
+         * <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p> </li> <li> <p>
+         * <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p>
+         * <a>DeleteScalingPolicy</a> (auto-scaling)</p> </li> </ul> </li> <li> <p>Manage
+         * fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteScalingPolicy">AWS
          * API Reference</a></p>
          *
@@ -2219,23 +2200,16 @@ namespace Model
          * <p>Deletes a fleet scaling policy. This action means that the policy is no
          * longer in force and removes all record of it. To delete a scaling policy,
          * specify both the scaling policy name and the fleet ID it is associated with.</p>
-         * <p>Fleet-related operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p>
-         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul>
-         * <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
-         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
-         * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
+         * <p>To temporarily suspend scaling policies, call <a>StopFleetActions</a>. This
+         * operation suspends all policies for the fleet.</p> <p>Operations related to
+         * fleet capacity scaling include:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
          * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage scaling policies:</p>
+         * <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p> </li> <li> <p>
+         * <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p>
+         * <a>DeleteScalingPolicy</a> (auto-scaling)</p> </li> </ul> </li> <li> <p>Manage
+         * fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteScalingPolicy">AWS
          * API Reference</a></p>
          *
@@ -2456,22 +2430,19 @@ namespace Model
          * GameLift can be found in the AWS Management Console for Amazon GameLift (see the
          * drop-down list in the upper right corner).</p> <p>Fleet-related operations
          * include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
+         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits">AWS
          * API Reference</a></p>
          */
@@ -2485,22 +2456,19 @@ namespace Model
          * GameLift can be found in the AWS Management Console for Amazon GameLift (see the
          * drop-down list in the upper right corner).</p> <p>Fleet-related operations
          * include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
+         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits">AWS
          * API Reference</a></p>
          *
@@ -2516,22 +2484,19 @@ namespace Model
          * GameLift can be found in the AWS Management Console for Amazon GameLift (see the
          * drop-down list in the upper right corner).</p> <p>Fleet-related operations
          * include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
+         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits">AWS
          * API Reference</a></p>
          *
@@ -2550,22 +2515,19 @@ namespace Model
          * number of fleet IDs allowed in one request. If a request exceeds this limit, the
          * request fails and the error message includes the maximum allowed.</p> </note>
          * <p>Fleet-related operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p>
-         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul>
-         * <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p>
+         * </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a>
+         * </p> </li> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributes">AWS
          * API Reference</a></p>
          */
@@ -2582,22 +2544,19 @@ namespace Model
          * number of fleet IDs allowed in one request. If a request exceeds this limit, the
          * request fails and the error message includes the maximum allowed.</p> </note>
          * <p>Fleet-related operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p>
-         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul>
-         * <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p>
+         * </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a>
+         * </p> </li> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributes">AWS
          * API Reference</a></p>
          *
@@ -2616,22 +2575,19 @@ namespace Model
          * number of fleet IDs allowed in one request. If a request exceeds this limit, the
          * request fails and the error message includes the maximum allowed.</p> </note>
          * <p>Fleet-related operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p>
-         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul>
-         * <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p>
+         * </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a>
+         * </p> </li> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributes">AWS
          * API Reference</a></p>
          *
@@ -2651,22 +2607,19 @@ namespace Model
          * number of fleet IDs allowed in one request. If a request exceeds this limit, the
          * request fails and the error message includes the maximum allowed.</p> </note>
          * <p>Fleet-related operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p>
-         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul>
-         * <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p>
+         * </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a>
+         * </p> </li> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity">AWS
          * API Reference</a></p>
          */
@@ -2684,22 +2637,19 @@ namespace Model
          * number of fleet IDs allowed in one request. If a request exceeds this limit, the
          * request fails and the error message includes the maximum allowed.</p> </note>
          * <p>Fleet-related operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p>
-         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul>
-         * <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p>
+         * </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a>
+         * </p> </li> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity">AWS
          * API Reference</a></p>
          *
@@ -2719,22 +2669,19 @@ namespace Model
          * number of fleet IDs allowed in one request. If a request exceeds this limit, the
          * request fails and the error message includes the maximum allowed.</p> </note>
          * <p>Fleet-related operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p>
-         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul>
-         * <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p>
+         * </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a>
+         * </p> </li> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity">AWS
          * API Reference</a></p>
          *
@@ -2748,22 +2695,19 @@ namespace Model
          * results as a set of sequential pages. If successful, a collection of event log
          * entries matching the request are returned.</p> <p>Fleet-related operations
          * include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
+         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetEvents">AWS
          * API Reference</a></p>
          */
@@ -2775,22 +2719,19 @@ namespace Model
          * results as a set of sequential pages. If successful, a collection of event log
          * entries matching the request are returned.</p> <p>Fleet-related operations
          * include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
+         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetEvents">AWS
          * API Reference</a></p>
          *
@@ -2804,22 +2745,19 @@ namespace Model
          * results as a set of sequential pages. If successful, a collection of event log
          * entries matching the request are returned.</p> <p>Fleet-related operations
          * include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
+         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetEvents">AWS
          * API Reference</a></p>
          *
@@ -2835,22 +2773,19 @@ namespace Model
          * of <a>IpPermission</a> objects is returned for the requested fleet ID. If the
          * requested fleet has been deleted, the result set is empty.</p> <p>Fleet-related
          * operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
+         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings">AWS
          * API Reference</a></p>
          */
@@ -2864,22 +2799,19 @@ namespace Model
          * of <a>IpPermission</a> objects is returned for the requested fleet ID. If the
          * requested fleet has been deleted, the result set is empty.</p> <p>Fleet-related
          * operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
+         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings">AWS
          * API Reference</a></p>
          *
@@ -2895,22 +2827,19 @@ namespace Model
          * of <a>IpPermission</a> objects is returned for the requested fleet ID. If the
          * requested fleet has been deleted, the result set is empty.</p> <p>Fleet-related
          * operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
+         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings">AWS
          * API Reference</a></p>
          *
@@ -2929,22 +2858,19 @@ namespace Model
          * request. If a request exceeds this limit, the request fails and the error
          * message includes the maximum allowed.</p> </note> <p>Fleet-related operations
          * include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
+         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetUtilization">AWS
          * API Reference</a></p>
          */
@@ -2961,22 +2887,19 @@ namespace Model
          * request. If a request exceeds this limit, the request fails and the error
          * message includes the maximum allowed.</p> </note> <p>Fleet-related operations
          * include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
+         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetUtilization">AWS
          * API Reference</a></p>
          *
@@ -2995,22 +2918,19 @@ namespace Model
          * request. If a request exceeds this limit, the request fails and the error
          * message includes the maximum allowed.</p> </note> <p>Fleet-related operations
          * include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
+         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetUtilization">AWS
          * API Reference</a></p>
          *
@@ -3592,22 +3512,19 @@ namespace Model
          * <p>Retrieves the current run-time configuration for the specified fleet. The
          * run-time configuration tells Amazon GameLift how to launch server processes on
          * instances in the fleet.</p> <p>Fleet-related operations include:</p> <ul> <li>
-         * <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li>
-         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
+         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeRuntimeConfiguration">AWS
          * API Reference</a></p>
          */
@@ -3617,22 +3534,19 @@ namespace Model
          * <p>Retrieves the current run-time configuration for the specified fleet. The
          * run-time configuration tells Amazon GameLift how to launch server processes on
          * instances in the fleet.</p> <p>Fleet-related operations include:</p> <ul> <li>
-         * <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li>
-         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
+         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeRuntimeConfiguration">AWS
          * API Reference</a></p>
          *
@@ -3644,22 +3558,19 @@ namespace Model
          * <p>Retrieves the current run-time configuration for the specified fleet. The
          * run-time configuration tells Amazon GameLift how to launch server processes on
          * instances in the fleet.</p> <p>Fleet-related operations include:</p> <ul> <li>
-         * <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li>
-         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
+         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeRuntimeConfiguration">AWS
          * API Reference</a></p>
          *
@@ -3672,24 +3583,19 @@ namespace Model
          * scaling policies, specify the fleet ID. You can filter this request by policy
          * status, such as to retrieve only active scaling policies. Use the pagination
          * parameters to retrieve results as a set of sequential pages. If successful, set
-         * of <a>ScalingPolicy</a> objects is returned for the fleet.</p> <p>Fleet-related
-         * operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
-         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
-         * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * of <a>ScalingPolicy</a> objects is returned for the fleet.</p> <p>A fleet may
+         * have all of its scaling policies suspended (<a>StopFleetActions</a>). This
+         * action does not affect the status of the scaling policies, which remains ACTIVE.
+         * To see whether a fleet's scaling policies are in force or suspended, call
+         * <a>DescribeFleetAttributes</a> and check the stopped actions.</p> <p>Operations
+         * related to fleet capacity scaling include:</p> <ul> <li> <p>
+         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage
+         * scaling policies:</p> <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p>
+         * </li> <li> <p> <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p>
+         * <a>DeleteScalingPolicy</a> (auto-scaling)</p> </li> </ul> </li> <li> <p>Manage
+         * fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeScalingPolicies">AWS
          * API Reference</a></p>
          */
@@ -3700,24 +3606,19 @@ namespace Model
          * scaling policies, specify the fleet ID. You can filter this request by policy
          * status, such as to retrieve only active scaling policies. Use the pagination
          * parameters to retrieve results as a set of sequential pages. If successful, set
-         * of <a>ScalingPolicy</a> objects is returned for the fleet.</p> <p>Fleet-related
-         * operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
-         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
-         * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * of <a>ScalingPolicy</a> objects is returned for the fleet.</p> <p>A fleet may
+         * have all of its scaling policies suspended (<a>StopFleetActions</a>). This
+         * action does not affect the status of the scaling policies, which remains ACTIVE.
+         * To see whether a fleet's scaling policies are in force or suspended, call
+         * <a>DescribeFleetAttributes</a> and check the stopped actions.</p> <p>Operations
+         * related to fleet capacity scaling include:</p> <ul> <li> <p>
+         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage
+         * scaling policies:</p> <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p>
+         * </li> <li> <p> <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p>
+         * <a>DeleteScalingPolicy</a> (auto-scaling)</p> </li> </ul> </li> <li> <p>Manage
+         * fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeScalingPolicies">AWS
          * API Reference</a></p>
          *
@@ -3730,24 +3631,19 @@ namespace Model
          * scaling policies, specify the fleet ID. You can filter this request by policy
          * status, such as to retrieve only active scaling policies. Use the pagination
          * parameters to retrieve results as a set of sequential pages. If successful, set
-         * of <a>ScalingPolicy</a> objects is returned for the fleet.</p> <p>Fleet-related
-         * operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
-         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
-         * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * of <a>ScalingPolicy</a> objects is returned for the fleet.</p> <p>A fleet may
+         * have all of its scaling policies suspended (<a>StopFleetActions</a>). This
+         * action does not affect the status of the scaling policies, which remains ACTIVE.
+         * To see whether a fleet's scaling policies are in force or suspended, call
+         * <a>DescribeFleetAttributes</a> and check the stopped actions.</p> <p>Operations
+         * related to fleet capacity scaling include:</p> <ul> <li> <p>
+         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage
+         * scaling policies:</p> <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p>
+         * </li> <li> <p> <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p>
+         * <a>DeleteScalingPolicy</a> (auto-scaling)</p> </li> </ul> </li> <li> <p>Manage
+         * fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeScalingPolicies">AWS
          * API Reference</a></p>
          *
@@ -4108,22 +4004,19 @@ namespace Model
          * the result set by build ID. Use the pagination parameters to retrieve results in
          * sequential pages.</p> <note> <p>Fleet records are not listed in any particular
          * order.</p> </note> <p>Fleet-related operations include:</p> <ul> <li> <p>
-         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li>
-         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
+         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleets">AWS
          * API Reference</a></p>
          */
@@ -4134,22 +4027,19 @@ namespace Model
          * the result set by build ID. Use the pagination parameters to retrieve results in
          * sequential pages.</p> <note> <p>Fleet records are not listed in any particular
          * order.</p> </note> <p>Fleet-related operations include:</p> <ul> <li> <p>
-         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li>
-         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
+         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleets">AWS
          * API Reference</a></p>
          *
@@ -4162,22 +4052,19 @@ namespace Model
          * the result set by build ID. Use the pagination parameters to retrieve results in
          * sequential pages.</p> <note> <p>Fleet records are not listed in any particular
          * order.</p> </note> <p>Fleet-related operations include:</p> <ul> <li> <p>
-         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li>
-         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
+         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleets">AWS
          * API Reference</a></p>
          *
@@ -4186,82 +4073,146 @@ namespace Model
         virtual void ListFleetsAsync(const Model::ListFleetsRequest& request, const ListFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates or updates a scaling policy for a fleet. An active scaling policy
-         * prompts Amazon GameLift to track a certain metric for a fleet and automatically
-         * change the fleet's capacity in specific circumstances. Each scaling policy
-         * contains one rule statement. Fleets can have multiple scaling policies in force
-         * simultaneously.</p> <p>A scaling policy rule statement has the following
-         * structure:</p> <p>If <code>[MetricName]</code> is
+         * <p>Creates or updates a scaling policy for a fleet. Scaling policies are used to
+         * automatically scale a fleet's hosting capacity to meet player demand. An active
+         * scaling policy instructs Amazon GameLift to track a fleet metric and
+         * automatically change the fleet's capacity when a certain threshold is reached.
+         * There are two types of scaling policies: target-based and rule-based. Use a
+         * target-based policy to quickly and efficiently manage fleet scaling; this option
+         * is the most commonly used. Use rule-based policies when you need to exert
+         * fine-grained control over auto-scaling. </p> <p>Fleets can have multiple scaling
+         * policies of each type in force at the same time; you can have one target-based
+         * policy, one or multiple rule-based scaling policies, or both. We recommend
+         * caution, however, because multiple auto-scaling policies can have unintended
+         * consequences.</p> <p>You can temporarily suspend all scaling policies for a
+         * fleet by calling <a>StopFleetActions</a> with the fleet action AUTO_SCALING. To
+         * resume scaling policies, call <a>StartFleetActions</a> with the same fleet
+         * action. To stop just one scaling policy--or to permanently remove it, you must
+         * delete the policy with <a>DeleteScalingPolicy</a>.</p> <p>Learn more about how
+         * to work with auto-scaling in <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-autoscaling.html">Set
+         * Up Fleet Automatic Scaling</a>.</p> <p> <b>Target-based policy</b> </p> <p>A
+         * target-based policy tracks a single metric: PercentAvailableGameSessions. This
+         * metric tells us how much of a fleet's hosting capacity is ready to host game
+         * sessions but is not currently in use. This is the fleet's buffer; it measures
+         * the additional player demand that the fleet could handle at current capacity.
+         * With a target-based policy, you set your ideal buffer size and leave it to
+         * Amazon GameLift to take whatever action is needed to maintain that target. </p>
+         * <p>For example, you might choose to maintain a 10% buffer for a fleet that has
+         * the capacity to host 100 simultaneous game sessions. This policy tells Amazon
+         * GameLift to take action whenever the fleet's available capacity falls below or
+         * rises above 10 game sessions. Amazon GameLift will start new instances or stop
+         * unused instances in order to return to the 10% buffer. </p> <p>To create or
+         * update a target-based policy, specify a fleet ID and name, and set the policy
+         * type to "TargetBased". Specify the metric to track
+         * (PercentAvailableGameSessions) and reference a <a>TargetConfiguration</a> object
+         * with your desired buffer value. Exclude all other parameters. On a successful
+         * request, the policy name is returned. The scaling policy is automatically in
+         * force as soon as it's successfully created. If the fleet's auto-scaling actions
+         * are temporarily suspended, the new policy will be in force once the fleet
+         * actions are restarted.</p> <p> <b>Rule-based policy</b> </p> <p>A rule-based
+         * policy tracks specified fleet metric, sets a threshold value, and specifies the
+         * type of action to initiate when triggered. With a rule-based policy, you can
+         * select from several available fleet metrics. Each policy specifies whether to
+         * scale up or scale down (and by how much), so you need one policy for each type
+         * of action. </p> <p>For example, a policy may make the following statement: "If
+         * the percentage of idle instances is greater than 20% for more than 15 minutes,
+         * then reduce the fleet capacity by 10%."</p> <p>A policy's rule statement has the
+         * following structure:</p> <p>If <code>[MetricName]</code> is
          * <code>[ComparisonOperator]</code> <code>[Threshold]</code> for
          * <code>[EvaluationPeriods]</code> minutes, then
          * <code>[ScalingAdjustmentType]</code> to/by <code>[ScalingAdjustment]</code>.</p>
-         * <p>For example, this policy: "If the number of idle instances exceeds 20 for
-         * more than 15 minutes, then reduce the fleet capacity by 10 instances" could be
-         * implemented as the following rule statement:</p> <p>If [IdleInstances] is
-         * [GreaterThanOrEqualToThreshold] [20] for [15] minutes, then [ChangeInCapacity]
-         * by [-10].</p> <p>To create or update a scaling policy, specify a unique
-         * combination of name and fleet ID, and set the rule values. All parameters for
-         * this action are required. If successful, the policy name is returned. Scaling
-         * policies cannot be suspended or made inactive. To stop enforcing a scaling
-         * policy, call <a>DeleteScalingPolicy</a>.</p> <p>Fleet-related operations
-         * include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
-         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
-         * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>To implement the example, the rule statement would look like this:</p> <p>If
+         * <code>[PercentIdleInstances]</code> is <code>[GreaterThanThreshold]</code>
+         * <code>[20]</code> for <code>[15]</code> minutes, then
+         * <code>[PercentChangeInCapacity]</code> to/by <code>[10]</code>.</p> <p>To create
+         * or update a scaling policy, specify a unique combination of name and fleet ID,
+         * and set the policy type to "RuleBased". Specify the parameter values for a
+         * policy rule statement. On a successful request, the policy name is returned.
+         * Scaling policies are automatically in force as soon as they're successfully
+         * created. If the fleet's auto-scaling actions are temporarily suspended, the new
+         * policy will be in force once the fleet actions are restarted.</p> <p>Operations
+         * related to fleet capacity scaling include:</p> <ul> <li> <p>
+         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage
+         * scaling policies:</p> <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p>
+         * </li> <li> <p> <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p>
+         * <a>DeleteScalingPolicy</a> (auto-scaling)</p> </li> </ul> </li> <li> <p>Manage
+         * fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PutScalingPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::PutScalingPolicyOutcome PutScalingPolicy(const Model::PutScalingPolicyRequest& request) const;
 
         /**
-         * <p>Creates or updates a scaling policy for a fleet. An active scaling policy
-         * prompts Amazon GameLift to track a certain metric for a fleet and automatically
-         * change the fleet's capacity in specific circumstances. Each scaling policy
-         * contains one rule statement. Fleets can have multiple scaling policies in force
-         * simultaneously.</p> <p>A scaling policy rule statement has the following
-         * structure:</p> <p>If <code>[MetricName]</code> is
+         * <p>Creates or updates a scaling policy for a fleet. Scaling policies are used to
+         * automatically scale a fleet's hosting capacity to meet player demand. An active
+         * scaling policy instructs Amazon GameLift to track a fleet metric and
+         * automatically change the fleet's capacity when a certain threshold is reached.
+         * There are two types of scaling policies: target-based and rule-based. Use a
+         * target-based policy to quickly and efficiently manage fleet scaling; this option
+         * is the most commonly used. Use rule-based policies when you need to exert
+         * fine-grained control over auto-scaling. </p> <p>Fleets can have multiple scaling
+         * policies of each type in force at the same time; you can have one target-based
+         * policy, one or multiple rule-based scaling policies, or both. We recommend
+         * caution, however, because multiple auto-scaling policies can have unintended
+         * consequences.</p> <p>You can temporarily suspend all scaling policies for a
+         * fleet by calling <a>StopFleetActions</a> with the fleet action AUTO_SCALING. To
+         * resume scaling policies, call <a>StartFleetActions</a> with the same fleet
+         * action. To stop just one scaling policy--or to permanently remove it, you must
+         * delete the policy with <a>DeleteScalingPolicy</a>.</p> <p>Learn more about how
+         * to work with auto-scaling in <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-autoscaling.html">Set
+         * Up Fleet Automatic Scaling</a>.</p> <p> <b>Target-based policy</b> </p> <p>A
+         * target-based policy tracks a single metric: PercentAvailableGameSessions. This
+         * metric tells us how much of a fleet's hosting capacity is ready to host game
+         * sessions but is not currently in use. This is the fleet's buffer; it measures
+         * the additional player demand that the fleet could handle at current capacity.
+         * With a target-based policy, you set your ideal buffer size and leave it to
+         * Amazon GameLift to take whatever action is needed to maintain that target. </p>
+         * <p>For example, you might choose to maintain a 10% buffer for a fleet that has
+         * the capacity to host 100 simultaneous game sessions. This policy tells Amazon
+         * GameLift to take action whenever the fleet's available capacity falls below or
+         * rises above 10 game sessions. Amazon GameLift will start new instances or stop
+         * unused instances in order to return to the 10% buffer. </p> <p>To create or
+         * update a target-based policy, specify a fleet ID and name, and set the policy
+         * type to "TargetBased". Specify the metric to track
+         * (PercentAvailableGameSessions) and reference a <a>TargetConfiguration</a> object
+         * with your desired buffer value. Exclude all other parameters. On a successful
+         * request, the policy name is returned. The scaling policy is automatically in
+         * force as soon as it's successfully created. If the fleet's auto-scaling actions
+         * are temporarily suspended, the new policy will be in force once the fleet
+         * actions are restarted.</p> <p> <b>Rule-based policy</b> </p> <p>A rule-based
+         * policy tracks specified fleet metric, sets a threshold value, and specifies the
+         * type of action to initiate when triggered. With a rule-based policy, you can
+         * select from several available fleet metrics. Each policy specifies whether to
+         * scale up or scale down (and by how much), so you need one policy for each type
+         * of action. </p> <p>For example, a policy may make the following statement: "If
+         * the percentage of idle instances is greater than 20% for more than 15 minutes,
+         * then reduce the fleet capacity by 10%."</p> <p>A policy's rule statement has the
+         * following structure:</p> <p>If <code>[MetricName]</code> is
          * <code>[ComparisonOperator]</code> <code>[Threshold]</code> for
          * <code>[EvaluationPeriods]</code> minutes, then
          * <code>[ScalingAdjustmentType]</code> to/by <code>[ScalingAdjustment]</code>.</p>
-         * <p>For example, this policy: "If the number of idle instances exceeds 20 for
-         * more than 15 minutes, then reduce the fleet capacity by 10 instances" could be
-         * implemented as the following rule statement:</p> <p>If [IdleInstances] is
-         * [GreaterThanOrEqualToThreshold] [20] for [15] minutes, then [ChangeInCapacity]
-         * by [-10].</p> <p>To create or update a scaling policy, specify a unique
-         * combination of name and fleet ID, and set the rule values. All parameters for
-         * this action are required. If successful, the policy name is returned. Scaling
-         * policies cannot be suspended or made inactive. To stop enforcing a scaling
-         * policy, call <a>DeleteScalingPolicy</a>.</p> <p>Fleet-related operations
-         * include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
-         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
-         * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>To implement the example, the rule statement would look like this:</p> <p>If
+         * <code>[PercentIdleInstances]</code> is <code>[GreaterThanThreshold]</code>
+         * <code>[20]</code> for <code>[15]</code> minutes, then
+         * <code>[PercentChangeInCapacity]</code> to/by <code>[10]</code>.</p> <p>To create
+         * or update a scaling policy, specify a unique combination of name and fleet ID,
+         * and set the policy type to "RuleBased". Specify the parameter values for a
+         * policy rule statement. On a successful request, the policy name is returned.
+         * Scaling policies are automatically in force as soon as they're successfully
+         * created. If the fleet's auto-scaling actions are temporarily suspended, the new
+         * policy will be in force once the fleet actions are restarted.</p> <p>Operations
+         * related to fleet capacity scaling include:</p> <ul> <li> <p>
+         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage
+         * scaling policies:</p> <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p>
+         * </li> <li> <p> <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p>
+         * <a>DeleteScalingPolicy</a> (auto-scaling)</p> </li> </ul> </li> <li> <p>Manage
+         * fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PutScalingPolicy">AWS
          * API Reference</a></p>
          *
@@ -4270,41 +4221,73 @@ namespace Model
         virtual Model::PutScalingPolicyOutcomeCallable PutScalingPolicyCallable(const Model::PutScalingPolicyRequest& request) const;
 
         /**
-         * <p>Creates or updates a scaling policy for a fleet. An active scaling policy
-         * prompts Amazon GameLift to track a certain metric for a fleet and automatically
-         * change the fleet's capacity in specific circumstances. Each scaling policy
-         * contains one rule statement. Fleets can have multiple scaling policies in force
-         * simultaneously.</p> <p>A scaling policy rule statement has the following
-         * structure:</p> <p>If <code>[MetricName]</code> is
+         * <p>Creates or updates a scaling policy for a fleet. Scaling policies are used to
+         * automatically scale a fleet's hosting capacity to meet player demand. An active
+         * scaling policy instructs Amazon GameLift to track a fleet metric and
+         * automatically change the fleet's capacity when a certain threshold is reached.
+         * There are two types of scaling policies: target-based and rule-based. Use a
+         * target-based policy to quickly and efficiently manage fleet scaling; this option
+         * is the most commonly used. Use rule-based policies when you need to exert
+         * fine-grained control over auto-scaling. </p> <p>Fleets can have multiple scaling
+         * policies of each type in force at the same time; you can have one target-based
+         * policy, one or multiple rule-based scaling policies, or both. We recommend
+         * caution, however, because multiple auto-scaling policies can have unintended
+         * consequences.</p> <p>You can temporarily suspend all scaling policies for a
+         * fleet by calling <a>StopFleetActions</a> with the fleet action AUTO_SCALING. To
+         * resume scaling policies, call <a>StartFleetActions</a> with the same fleet
+         * action. To stop just one scaling policy--or to permanently remove it, you must
+         * delete the policy with <a>DeleteScalingPolicy</a>.</p> <p>Learn more about how
+         * to work with auto-scaling in <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-autoscaling.html">Set
+         * Up Fleet Automatic Scaling</a>.</p> <p> <b>Target-based policy</b> </p> <p>A
+         * target-based policy tracks a single metric: PercentAvailableGameSessions. This
+         * metric tells us how much of a fleet's hosting capacity is ready to host game
+         * sessions but is not currently in use. This is the fleet's buffer; it measures
+         * the additional player demand that the fleet could handle at current capacity.
+         * With a target-based policy, you set your ideal buffer size and leave it to
+         * Amazon GameLift to take whatever action is needed to maintain that target. </p>
+         * <p>For example, you might choose to maintain a 10% buffer for a fleet that has
+         * the capacity to host 100 simultaneous game sessions. This policy tells Amazon
+         * GameLift to take action whenever the fleet's available capacity falls below or
+         * rises above 10 game sessions. Amazon GameLift will start new instances or stop
+         * unused instances in order to return to the 10% buffer. </p> <p>To create or
+         * update a target-based policy, specify a fleet ID and name, and set the policy
+         * type to "TargetBased". Specify the metric to track
+         * (PercentAvailableGameSessions) and reference a <a>TargetConfiguration</a> object
+         * with your desired buffer value. Exclude all other parameters. On a successful
+         * request, the policy name is returned. The scaling policy is automatically in
+         * force as soon as it's successfully created. If the fleet's auto-scaling actions
+         * are temporarily suspended, the new policy will be in force once the fleet
+         * actions are restarted.</p> <p> <b>Rule-based policy</b> </p> <p>A rule-based
+         * policy tracks specified fleet metric, sets a threshold value, and specifies the
+         * type of action to initiate when triggered. With a rule-based policy, you can
+         * select from several available fleet metrics. Each policy specifies whether to
+         * scale up or scale down (and by how much), so you need one policy for each type
+         * of action. </p> <p>For example, a policy may make the following statement: "If
+         * the percentage of idle instances is greater than 20% for more than 15 minutes,
+         * then reduce the fleet capacity by 10%."</p> <p>A policy's rule statement has the
+         * following structure:</p> <p>If <code>[MetricName]</code> is
          * <code>[ComparisonOperator]</code> <code>[Threshold]</code> for
          * <code>[EvaluationPeriods]</code> minutes, then
          * <code>[ScalingAdjustmentType]</code> to/by <code>[ScalingAdjustment]</code>.</p>
-         * <p>For example, this policy: "If the number of idle instances exceeds 20 for
-         * more than 15 minutes, then reduce the fleet capacity by 10 instances" could be
-         * implemented as the following rule statement:</p> <p>If [IdleInstances] is
-         * [GreaterThanOrEqualToThreshold] [20] for [15] minutes, then [ChangeInCapacity]
-         * by [-10].</p> <p>To create or update a scaling policy, specify a unique
-         * combination of name and fleet ID, and set the rule values. All parameters for
-         * this action are required. If successful, the policy name is returned. Scaling
-         * policies cannot be suspended or made inactive. To stop enforcing a scaling
-         * policy, call <a>DeleteScalingPolicy</a>.</p> <p>Fleet-related operations
-         * include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
-         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
-         * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>To implement the example, the rule statement would look like this:</p> <p>If
+         * <code>[PercentIdleInstances]</code> is <code>[GreaterThanThreshold]</code>
+         * <code>[20]</code> for <code>[15]</code> minutes, then
+         * <code>[PercentChangeInCapacity]</code> to/by <code>[10]</code>.</p> <p>To create
+         * or update a scaling policy, specify a unique combination of name and fleet ID,
+         * and set the policy type to "RuleBased". Specify the parameter values for a
+         * policy rule statement. On a successful request, the policy name is returned.
+         * Scaling policies are automatically in force as soon as they're successfully
+         * created. If the fleet's auto-scaling actions are temporarily suspended, the new
+         * policy will be in force once the fleet actions are restarted.</p> <p>Operations
+         * related to fleet capacity scaling include:</p> <ul> <li> <p>
+         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage
+         * scaling policies:</p> <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p>
+         * </li> <li> <p> <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p>
+         * <a>DeleteScalingPolicy</a> (auto-scaling)</p> </li> </ul> </li> <li> <p>Manage
+         * fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PutScalingPolicy">AWS
          * API Reference</a></p>
          *
@@ -4403,10 +4386,10 @@ namespace Model
          * as key:value pairs; the filter expression must indicate the key and a string to
          * search the data values for. For example, to search for game sessions with custom
          * data containing the key:value pair "gameMode:brawl", specify the following:
-         * gameSessionProperties.gameMode = "brawl". All custom data values are searched as
-         * strings.</p> </li> <li> <p> <b>maximumSessions</b> -- Maximum number of player
-         * sessions allowed for a game session. This value is set when requesting a new
-         * game session with <a>CreateGameSession</a> or updating with
+         * <code>gameSessionProperties.gameMode = "brawl"</code>. All custom data values
+         * are searched as strings.</p> </li> <li> <p> <b>maximumSessions</b> -- Maximum
+         * number of player sessions allowed for a game session. This value is set when
+         * requesting a new game session with <a>CreateGameSession</a> or updating with
          * <a>UpdateGameSession</a>.</p> </li> <li> <p> <b>creationTimeMillis</b> -- Value
          * indicating when a game session was created. It is expressed in Unix time as
          * milliseconds.</p> </li> <li> <p> <b>playerSessionCount</b> -- Number of players
@@ -4457,10 +4440,10 @@ namespace Model
          * as key:value pairs; the filter expression must indicate the key and a string to
          * search the data values for. For example, to search for game sessions with custom
          * data containing the key:value pair "gameMode:brawl", specify the following:
-         * gameSessionProperties.gameMode = "brawl". All custom data values are searched as
-         * strings.</p> </li> <li> <p> <b>maximumSessions</b> -- Maximum number of player
-         * sessions allowed for a game session. This value is set when requesting a new
-         * game session with <a>CreateGameSession</a> or updating with
+         * <code>gameSessionProperties.gameMode = "brawl"</code>. All custom data values
+         * are searched as strings.</p> </li> <li> <p> <b>maximumSessions</b> -- Maximum
+         * number of player sessions allowed for a game session. This value is set when
+         * requesting a new game session with <a>CreateGameSession</a> or updating with
          * <a>UpdateGameSession</a>.</p> </li> <li> <p> <b>creationTimeMillis</b> -- Value
          * indicating when a game session was created. It is expressed in Unix time as
          * milliseconds.</p> </li> <li> <p> <b>playerSessionCount</b> -- Number of players
@@ -4513,10 +4496,10 @@ namespace Model
          * as key:value pairs; the filter expression must indicate the key and a string to
          * search the data values for. For example, to search for game sessions with custom
          * data containing the key:value pair "gameMode:brawl", specify the following:
-         * gameSessionProperties.gameMode = "brawl". All custom data values are searched as
-         * strings.</p> </li> <li> <p> <b>maximumSessions</b> -- Maximum number of player
-         * sessions allowed for a game session. This value is set when requesting a new
-         * game session with <a>CreateGameSession</a> or updating with
+         * <code>gameSessionProperties.gameMode = "brawl"</code>. All custom data values
+         * are searched as strings.</p> </li> <li> <p> <b>maximumSessions</b> -- Maximum
+         * number of player sessions allowed for a game session. This value is set when
+         * requesting a new game session with <a>CreateGameSession</a> or updating with
          * <a>UpdateGameSession</a>.</p> </li> <li> <p> <b>creationTimeMillis</b> -- Value
          * indicating when a game session was created. It is expressed in Unix time as
          * milliseconds.</p> </li> <li> <p> <b>playerSessionCount</b> -- Number of players
@@ -4554,6 +4537,73 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SearchGameSessionsAsync(const Model::SearchGameSessionsRequest& request, const SearchGameSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Resumes activity on a fleet that was suspended with <a>StopFleetActions</a>.
+         * Currently, this operation is used to restart a fleet's auto-scaling activity.
+         * </p> <p>To start fleet actions, specify the fleet ID and the type of actions to
+         * restart. When auto-scaling fleet actions are restarted, Amazon GameLift once
+         * again initiates scaling events as triggered by the fleet's scaling policies. If
+         * actions on the fleet were never stopped, this operation will have no effect. You
+         * can view a fleet's stopped actions using <a>DescribeFleetAttributes</a>.</p>
+         * <p>Operations related to fleet capacity scaling include:</p> <ul> <li> <p>
+         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage
+         * scaling policies:</p> <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p>
+         * </li> <li> <p> <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p>
+         * <a>DeleteScalingPolicy</a> (auto-scaling)</p> </li> </ul> </li> <li> <p>Manage
+         * fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartFleetActions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartFleetActionsOutcome StartFleetActions(const Model::StartFleetActionsRequest& request) const;
+
+        /**
+         * <p>Resumes activity on a fleet that was suspended with <a>StopFleetActions</a>.
+         * Currently, this operation is used to restart a fleet's auto-scaling activity.
+         * </p> <p>To start fleet actions, specify the fleet ID and the type of actions to
+         * restart. When auto-scaling fleet actions are restarted, Amazon GameLift once
+         * again initiates scaling events as triggered by the fleet's scaling policies. If
+         * actions on the fleet were never stopped, this operation will have no effect. You
+         * can view a fleet's stopped actions using <a>DescribeFleetAttributes</a>.</p>
+         * <p>Operations related to fleet capacity scaling include:</p> <ul> <li> <p>
+         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage
+         * scaling policies:</p> <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p>
+         * </li> <li> <p> <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p>
+         * <a>DeleteScalingPolicy</a> (auto-scaling)</p> </li> </ul> </li> <li> <p>Manage
+         * fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartFleetActions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartFleetActionsOutcomeCallable StartFleetActionsCallable(const Model::StartFleetActionsRequest& request) const;
+
+        /**
+         * <p>Resumes activity on a fleet that was suspended with <a>StopFleetActions</a>.
+         * Currently, this operation is used to restart a fleet's auto-scaling activity.
+         * </p> <p>To start fleet actions, specify the fleet ID and the type of actions to
+         * restart. When auto-scaling fleet actions are restarted, Amazon GameLift once
+         * again initiates scaling events as triggered by the fleet's scaling policies. If
+         * actions on the fleet were never stopped, this operation will have no effect. You
+         * can view a fleet's stopped actions using <a>DescribeFleetAttributes</a>.</p>
+         * <p>Operations related to fleet capacity scaling include:</p> <ul> <li> <p>
+         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage
+         * scaling policies:</p> <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p>
+         * </li> <li> <p> <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p>
+         * <a>DeleteScalingPolicy</a> (auto-scaling)</p> </li> </ul> </li> <li> <p>Manage
+         * fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartFleetActions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartFleetActionsAsync(const Model::StartFleetActionsRequest& request, const StartFleetActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Places a request for a new game session in a queue (see
@@ -4982,6 +5032,58 @@ namespace Model
         virtual void StartMatchmakingAsync(const Model::StartMatchmakingRequest& request, const StartMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Suspends activity on a fleet. Currently, this operation is used to stop a
+         * fleet's auto-scaling activity. It is used to temporarily stop scaling events
+         * triggered by the fleet's scaling policies. The policies can be retained and
+         * auto-scaling activity can be restarted using <a>StartFleetActions</a>. You can
+         * view a fleet's stopped actions using <a>DescribeFleetAttributes</a>.</p> <p>To
+         * stop fleet actions, specify the fleet ID and the type of actions to suspend.
+         * When auto-scaling fleet actions are stopped, Amazon GameLift no longer initiates
+         * scaling events except to maintain the fleet's desired instances setting
+         * (<a>FleetCapacity</a>. Changes to the fleet's capacity must be done manually
+         * using <a>UpdateFleetCapacity</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopFleetActions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopFleetActionsOutcome StopFleetActions(const Model::StopFleetActionsRequest& request) const;
+
+        /**
+         * <p>Suspends activity on a fleet. Currently, this operation is used to stop a
+         * fleet's auto-scaling activity. It is used to temporarily stop scaling events
+         * triggered by the fleet's scaling policies. The policies can be retained and
+         * auto-scaling activity can be restarted using <a>StartFleetActions</a>. You can
+         * view a fleet's stopped actions using <a>DescribeFleetAttributes</a>.</p> <p>To
+         * stop fleet actions, specify the fleet ID and the type of actions to suspend.
+         * When auto-scaling fleet actions are stopped, Amazon GameLift no longer initiates
+         * scaling events except to maintain the fleet's desired instances setting
+         * (<a>FleetCapacity</a>. Changes to the fleet's capacity must be done manually
+         * using <a>UpdateFleetCapacity</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopFleetActions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopFleetActionsOutcomeCallable StopFleetActionsCallable(const Model::StopFleetActionsRequest& request) const;
+
+        /**
+         * <p>Suspends activity on a fleet. Currently, this operation is used to stop a
+         * fleet's auto-scaling activity. It is used to temporarily stop scaling events
+         * triggered by the fleet's scaling policies. The policies can be retained and
+         * auto-scaling activity can be restarted using <a>StartFleetActions</a>. You can
+         * view a fleet's stopped actions using <a>DescribeFleetAttributes</a>.</p> <p>To
+         * stop fleet actions, specify the fleet ID and the type of actions to suspend.
+         * When auto-scaling fleet actions are stopped, Amazon GameLift no longer initiates
+         * scaling events except to maintain the fleet's desired instances setting
+         * (<a>FleetCapacity</a>. Changes to the fleet's capacity must be done manually
+         * using <a>UpdateFleetCapacity</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopFleetActions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopFleetActionsAsync(const Model::StopFleetActionsRequest& request, const StopFleetActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Cancels a game session placement that is in <code>PENDING</code> status. To
          * stop a placement, provide the placement ID values. If successful, the placement
          * is moved to <code>CANCELLED</code> status.</p> <p>Game-session-related
@@ -5179,22 +5281,19 @@ namespace Model
          * update metadata, specify the fleet ID and the property values that you want to
          * change. If successful, the fleet ID for the updated fleet is returned.</p>
          * <p>Fleet-related operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p>
-         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul>
-         * <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p>
+         * </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a>
+         * </p> </li> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetAttributes">AWS
          * API Reference</a></p>
          */
@@ -5205,22 +5304,19 @@ namespace Model
          * update metadata, specify the fleet ID and the property values that you want to
          * change. If successful, the fleet ID for the updated fleet is returned.</p>
          * <p>Fleet-related operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p>
-         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul>
-         * <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p>
+         * </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a>
+         * </p> </li> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetAttributes">AWS
          * API Reference</a></p>
          *
@@ -5233,22 +5329,19 @@ namespace Model
          * update metadata, specify the fleet ID and the property values that you want to
          * change. If successful, the fleet ID for the updated fleet is returned.</p>
          * <p>Fleet-related operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p>
-         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul>
-         * <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p>
+         * </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a>
+         * </p> </li> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetAttributes">AWS
          * API Reference</a></p>
          *
@@ -5260,34 +5353,31 @@ namespace Model
          * <p>Updates capacity settings for a fleet. Use this action to specify the number
          * of EC2 instances (hosts) that you want this fleet to contain. Before calling
          * this action, you may want to call <a>DescribeEC2InstanceLimits</a> to get the
-         * maximum capacity based on the fleet's EC2 instance type.</p> <p>If you're using
-         * autoscaling (see <a>PutScalingPolicy</a>), you may want to specify a minimum
-         * and/or maximum capacity. If you don't provide these, autoscaling can set
-         * capacity anywhere between zero and the <a
-         * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">service
-         * limits</a>.</p> <p>To update fleet capacity, specify the fleet ID and the number
-         * of instances you want the fleet to host. If successful, Amazon GameLift starts
-         * or terminates instances so that the fleet's active instance count matches the
-         * desired instance count. You can view a fleet's current capacity information by
-         * calling <a>DescribeFleetCapacity</a>. If the desired instance count is higher
-         * than the instance type's limit, the "Limit Exceeded" exception occurs.</p>
+         * maximum capacity based on the fleet's EC2 instance type.</p> <p>Specify minimum
+         * and maximum number of instances. Amazon GameLift will not change fleet capacity
+         * to values fall outside of this range. This is particularly important when using
+         * auto-scaling (see <a>PutScalingPolicy</a>) to allow capacity to adjust based on
+         * player demand while imposing limits on automatic adjustments.</p> <p>To update
+         * fleet capacity, specify the fleet ID and the number of instances you want the
+         * fleet to host. If successful, Amazon GameLift starts or terminates instances so
+         * that the fleet's active instance count matches the desired instance count. You
+         * can view a fleet's current capacity information by calling
+         * <a>DescribeFleetCapacity</a>. If the desired instance count is higher than the
+         * instance type's limit, the "Limit Exceeded" exception occurs.</p>
          * <p>Fleet-related operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p>
-         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul>
-         * <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p>
+         * </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a>
+         * </p> </li> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacity">AWS
          * API Reference</a></p>
          */
@@ -5297,34 +5387,31 @@ namespace Model
          * <p>Updates capacity settings for a fleet. Use this action to specify the number
          * of EC2 instances (hosts) that you want this fleet to contain. Before calling
          * this action, you may want to call <a>DescribeEC2InstanceLimits</a> to get the
-         * maximum capacity based on the fleet's EC2 instance type.</p> <p>If you're using
-         * autoscaling (see <a>PutScalingPolicy</a>), you may want to specify a minimum
-         * and/or maximum capacity. If you don't provide these, autoscaling can set
-         * capacity anywhere between zero and the <a
-         * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">service
-         * limits</a>.</p> <p>To update fleet capacity, specify the fleet ID and the number
-         * of instances you want the fleet to host. If successful, Amazon GameLift starts
-         * or terminates instances so that the fleet's active instance count matches the
-         * desired instance count. You can view a fleet's current capacity information by
-         * calling <a>DescribeFleetCapacity</a>. If the desired instance count is higher
-         * than the instance type's limit, the "Limit Exceeded" exception occurs.</p>
+         * maximum capacity based on the fleet's EC2 instance type.</p> <p>Specify minimum
+         * and maximum number of instances. Amazon GameLift will not change fleet capacity
+         * to values fall outside of this range. This is particularly important when using
+         * auto-scaling (see <a>PutScalingPolicy</a>) to allow capacity to adjust based on
+         * player demand while imposing limits on automatic adjustments.</p> <p>To update
+         * fleet capacity, specify the fleet ID and the number of instances you want the
+         * fleet to host. If successful, Amazon GameLift starts or terminates instances so
+         * that the fleet's active instance count matches the desired instance count. You
+         * can view a fleet's current capacity information by calling
+         * <a>DescribeFleetCapacity</a>. If the desired instance count is higher than the
+         * instance type's limit, the "Limit Exceeded" exception occurs.</p>
          * <p>Fleet-related operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p>
-         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul>
-         * <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p>
+         * </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a>
+         * </p> </li> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacity">AWS
          * API Reference</a></p>
          *
@@ -5336,34 +5423,31 @@ namespace Model
          * <p>Updates capacity settings for a fleet. Use this action to specify the number
          * of EC2 instances (hosts) that you want this fleet to contain. Before calling
          * this action, you may want to call <a>DescribeEC2InstanceLimits</a> to get the
-         * maximum capacity based on the fleet's EC2 instance type.</p> <p>If you're using
-         * autoscaling (see <a>PutScalingPolicy</a>), you may want to specify a minimum
-         * and/or maximum capacity. If you don't provide these, autoscaling can set
-         * capacity anywhere between zero and the <a
-         * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">service
-         * limits</a>.</p> <p>To update fleet capacity, specify the fleet ID and the number
-         * of instances you want the fleet to host. If successful, Amazon GameLift starts
-         * or terminates instances so that the fleet's active instance count matches the
-         * desired instance count. You can view a fleet's current capacity information by
-         * calling <a>DescribeFleetCapacity</a>. If the desired instance count is higher
-         * than the instance type's limit, the "Limit Exceeded" exception occurs.</p>
+         * maximum capacity based on the fleet's EC2 instance type.</p> <p>Specify minimum
+         * and maximum number of instances. Amazon GameLift will not change fleet capacity
+         * to values fall outside of this range. This is particularly important when using
+         * auto-scaling (see <a>PutScalingPolicy</a>) to allow capacity to adjust based on
+         * player demand while imposing limits on automatic adjustments.</p> <p>To update
+         * fleet capacity, specify the fleet ID and the number of instances you want the
+         * fleet to host. If successful, Amazon GameLift starts or terminates instances so
+         * that the fleet's active instance count matches the desired instance count. You
+         * can view a fleet's current capacity information by calling
+         * <a>DescribeFleetCapacity</a>. If the desired instance count is higher than the
+         * instance type's limit, the "Limit Exceeded" exception occurs.</p>
          * <p>Fleet-related operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p>
-         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul>
-         * <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p>
+         * </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a>
+         * </p> </li> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacity">AWS
          * API Reference</a></p>
          *
@@ -5379,21 +5463,19 @@ namespace Model
          * be removed must match existing fleet permissions. If successful, the fleet ID
          * for the updated fleet is returned.</p> <p>Fleet-related operations include:</p>
          * <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p>
-         * </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a>
-         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul>
+         * <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
+         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetPortSettings">AWS
          * API Reference</a></p>
          */
@@ -5407,21 +5489,19 @@ namespace Model
          * be removed must match existing fleet permissions. If successful, the fleet ID
          * for the updated fleet is returned.</p> <p>Fleet-related operations include:</p>
          * <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p>
-         * </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a>
-         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul>
+         * <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
+         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetPortSettings">AWS
          * API Reference</a></p>
          *
@@ -5437,21 +5517,19 @@ namespace Model
          * be removed must match existing fleet permissions. If successful, the fleet ID
          * for the updated fleet is returned.</p> <p>Fleet-related operations include:</p>
          * <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p>
-         * </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a>
-         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul>
+         * <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
+         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetPortSettings">AWS
          * API Reference</a></p>
          *
@@ -5640,22 +5718,19 @@ namespace Model
          * gradually as existing processes shut down and new processes are launched in
          * Amazon GameLift's normal process recycling activity.</p> <p>Fleet-related
          * operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
+         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfiguration">AWS
          * API Reference</a></p>
          */
@@ -5677,22 +5752,19 @@ namespace Model
          * gradually as existing processes shut down and new processes are launched in
          * Amazon GameLift's normal process recycling activity.</p> <p>Fleet-related
          * operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
+         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfiguration">AWS
          * API Reference</a></p>
          *
@@ -5716,22 +5788,19 @@ namespace Model
          * gradually as existing processes shut down and new processes are launched in
          * Amazon GameLift's normal process recycling activity.</p> <p>Fleet-related
          * operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
+         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-         * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-         * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-         * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfiguration">AWS
          * API Reference</a></p>
          *
@@ -5849,9 +5918,11 @@ namespace Model
         void RequestUploadCredentialsAsyncHelper(const Model::RequestUploadCredentialsRequest& request, const RequestUploadCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResolveAliasAsyncHelper(const Model::ResolveAliasRequest& request, const ResolveAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchGameSessionsAsyncHelper(const Model::SearchGameSessionsRequest& request, const SearchGameSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartFleetActionsAsyncHelper(const Model::StartFleetActionsRequest& request, const StartFleetActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartGameSessionPlacementAsyncHelper(const Model::StartGameSessionPlacementRequest& request, const StartGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartMatchBackfillAsyncHelper(const Model::StartMatchBackfillRequest& request, const StartMatchBackfillResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartMatchmakingAsyncHelper(const Model::StartMatchmakingRequest& request, const StartMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopFleetActionsAsyncHelper(const Model::StopFleetActionsRequest& request, const StopFleetActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopGameSessionPlacementAsyncHelper(const Model::StopGameSessionPlacementRequest& request, const StopGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopMatchmakingAsyncHelper(const Model::StopMatchmakingRequest& request, const StopMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAliasAsyncHelper(const Model::UpdateAliasRequest& request, const UpdateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

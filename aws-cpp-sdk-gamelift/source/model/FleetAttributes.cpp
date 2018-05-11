@@ -50,7 +50,8 @@ FleetAttributes::FleetAttributes() :
     m_operatingSystem(OperatingSystem::NOT_SET),
     m_operatingSystemHasBeenSet(false),
     m_resourceCreationLimitPolicyHasBeenSet(false),
-    m_metricGroupsHasBeenSet(false)
+    m_metricGroupsHasBeenSet(false),
+    m_stoppedActionsHasBeenSet(false)
 {
 }
 
@@ -76,7 +77,8 @@ FleetAttributes::FleetAttributes(const JsonValue& jsonValue) :
     m_operatingSystem(OperatingSystem::NOT_SET),
     m_operatingSystemHasBeenSet(false),
     m_resourceCreationLimitPolicyHasBeenSet(false),
-    m_metricGroupsHasBeenSet(false)
+    m_metricGroupsHasBeenSet(false),
+    m_stoppedActionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -208,6 +210,16 @@ FleetAttributes& FleetAttributes::operator =(const JsonValue& jsonValue)
     m_metricGroupsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StoppedActions"))
+  {
+    Array<JsonValue> stoppedActionsJsonList = jsonValue.GetArray("StoppedActions");
+    for(unsigned stoppedActionsIndex = 0; stoppedActionsIndex < stoppedActionsJsonList.GetLength(); ++stoppedActionsIndex)
+    {
+      m_stoppedActions.push_back(FleetActionMapper::GetFleetActionForName(stoppedActionsJsonList[stoppedActionsIndex].AsString()));
+    }
+    m_stoppedActionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -317,6 +329,17 @@ JsonValue FleetAttributes::Jsonize() const
      metricGroupsJsonList[metricGroupsIndex].AsString(m_metricGroups[metricGroupsIndex]);
    }
    payload.WithArray("MetricGroups", std::move(metricGroupsJsonList));
+
+  }
+
+  if(m_stoppedActionsHasBeenSet)
+  {
+   Array<JsonValue> stoppedActionsJsonList(m_stoppedActions.size());
+   for(unsigned stoppedActionsIndex = 0; stoppedActionsIndex < stoppedActionsJsonList.GetLength(); ++stoppedActionsIndex)
+   {
+     stoppedActionsJsonList[stoppedActionsIndex].AsString(FleetActionMapper::GetNameForFleetAction(m_stoppedActions[stoppedActionsIndex]));
+   }
+   payload.WithArray("StoppedActions", std::move(stoppedActionsJsonList));
 
   }
 

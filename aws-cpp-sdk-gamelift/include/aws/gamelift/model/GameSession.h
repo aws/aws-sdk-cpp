@@ -643,10 +643,10 @@ namespace Model
 
     /**
      * <p>Information about the matchmaking process that was used to create the game
-     * session. It is in JSON syntax, formated as a string. In addition the matchmaking
-     * configuration used, it contains data on all players assigned to the match,
-     * including player attributes and team assignments. For more details on matchmaker
-     * data, see <a
+     * session. It is in JSON syntax, formatted as a string. In addition the
+     * matchmaking configuration used, it contains data on all players assigned to the
+     * match, including player attributes and team assignments. For more details on
+     * matchmaker data, see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
      * Data</a>. Matchmaker data is useful when requesting match backfills, and is
      * updated whenever new players are added during a successful backfill (see
@@ -656,10 +656,10 @@ namespace Model
 
     /**
      * <p>Information about the matchmaking process that was used to create the game
-     * session. It is in JSON syntax, formated as a string. In addition the matchmaking
-     * configuration used, it contains data on all players assigned to the match,
-     * including player attributes and team assignments. For more details on matchmaker
-     * data, see <a
+     * session. It is in JSON syntax, formatted as a string. In addition the
+     * matchmaking configuration used, it contains data on all players assigned to the
+     * match, including player attributes and team assignments. For more details on
+     * matchmaker data, see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
      * Data</a>. Matchmaker data is useful when requesting match backfills, and is
      * updated whenever new players are added during a successful backfill (see
@@ -669,10 +669,10 @@ namespace Model
 
     /**
      * <p>Information about the matchmaking process that was used to create the game
-     * session. It is in JSON syntax, formated as a string. In addition the matchmaking
-     * configuration used, it contains data on all players assigned to the match,
-     * including player attributes and team assignments. For more details on matchmaker
-     * data, see <a
+     * session. It is in JSON syntax, formatted as a string. In addition the
+     * matchmaking configuration used, it contains data on all players assigned to the
+     * match, including player attributes and team assignments. For more details on
+     * matchmaker data, see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
      * Data</a>. Matchmaker data is useful when requesting match backfills, and is
      * updated whenever new players are added during a successful backfill (see
@@ -682,10 +682,10 @@ namespace Model
 
     /**
      * <p>Information about the matchmaking process that was used to create the game
-     * session. It is in JSON syntax, formated as a string. In addition the matchmaking
-     * configuration used, it contains data on all players assigned to the match,
-     * including player attributes and team assignments. For more details on matchmaker
-     * data, see <a
+     * session. It is in JSON syntax, formatted as a string. In addition the
+     * matchmaking configuration used, it contains data on all players assigned to the
+     * match, including player attributes and team assignments. For more details on
+     * matchmaker data, see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
      * Data</a>. Matchmaker data is useful when requesting match backfills, and is
      * updated whenever new players are added during a successful backfill (see
@@ -695,10 +695,10 @@ namespace Model
 
     /**
      * <p>Information about the matchmaking process that was used to create the game
-     * session. It is in JSON syntax, formated as a string. In addition the matchmaking
-     * configuration used, it contains data on all players assigned to the match,
-     * including player attributes and team assignments. For more details on matchmaker
-     * data, see <a
+     * session. It is in JSON syntax, formatted as a string. In addition the
+     * matchmaking configuration used, it contains data on all players assigned to the
+     * match, including player attributes and team assignments. For more details on
+     * matchmaker data, see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
      * Data</a>. Matchmaker data is useful when requesting match backfills, and is
      * updated whenever new players are added during a successful backfill (see
@@ -708,10 +708,10 @@ namespace Model
 
     /**
      * <p>Information about the matchmaking process that was used to create the game
-     * session. It is in JSON syntax, formated as a string. In addition the matchmaking
-     * configuration used, it contains data on all players assigned to the match,
-     * including player attributes and team assignments. For more details on matchmaker
-     * data, see <a
+     * session. It is in JSON syntax, formatted as a string. In addition the
+     * matchmaking configuration used, it contains data on all players assigned to the
+     * match, including player attributes and team assignments. For more details on
+     * matchmaker data, see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
      * Data</a>. Matchmaker data is useful when requesting match backfills, and is
      * updated whenever new players are added during a successful backfill (see
@@ -721,10 +721,10 @@ namespace Model
 
     /**
      * <p>Information about the matchmaking process that was used to create the game
-     * session. It is in JSON syntax, formated as a string. In addition the matchmaking
-     * configuration used, it contains data on all players assigned to the match,
-     * including player attributes and team assignments. For more details on matchmaker
-     * data, see <a
+     * session. It is in JSON syntax, formatted as a string. In addition the
+     * matchmaking configuration used, it contains data on all players assigned to the
+     * match, including player attributes and team assignments. For more details on
+     * matchmaker data, see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
      * Data</a>. Matchmaker data is useful when requesting match backfills, and is
      * updated whenever new players are added during a successful backfill (see

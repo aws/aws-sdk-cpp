@@ -58,7 +58,9 @@ namespace Model
      * Firehose for calling the Amazon ES Configuration API and for indexing documents.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
-     * Kinesis Data Firehose Access to an Amazon S3 Destination</a>.</p>
+     * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
@@ -67,7 +69,9 @@ namespace Model
      * Firehose for calling the Amazon ES Configuration API and for indexing documents.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
-     * Kinesis Data Firehose Access to an Amazon S3 Destination</a>.</p>
+     * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
@@ -76,7 +80,9 @@ namespace Model
      * Firehose for calling the Amazon ES Configuration API and for indexing documents.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
-     * Kinesis Data Firehose Access to an Amazon S3 Destination</a>.</p>
+     * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
@@ -85,7 +91,9 @@ namespace Model
      * Firehose for calling the Amazon ES Configuration API and for indexing documents.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
-     * Kinesis Data Firehose Access to an Amazon S3 Destination</a>.</p>
+     * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
@@ -94,7 +102,9 @@ namespace Model
      * Firehose for calling the Amazon ES Configuration API and for indexing documents.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
-     * Kinesis Data Firehose Access to an Amazon S3 Destination</a>.</p>
+     * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline ElasticsearchDestinationUpdate& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
@@ -103,7 +113,9 @@ namespace Model
      * Firehose for calling the Amazon ES Configuration API and for indexing documents.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
-     * Kinesis Data Firehose Access to an Amazon S3 Destination</a>.</p>
+     * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline ElasticsearchDestinationUpdate& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
@@ -112,7 +124,9 @@ namespace Model
      * Firehose for calling the Amazon ES Configuration API and for indexing documents.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
-     * Kinesis Data Firehose Access to an Amazon S3 Destination</a>.</p>
+     * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline ElasticsearchDestinationUpdate& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
@@ -122,7 +136,9 @@ namespace Model
      * for <code>DescribeElasticsearchDomain</code>,
      * <code>DescribeElasticsearchDomains</code>, and
      * <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role
-     * specified in <code>RoleARN</code>.</p>
+     * specified in <b>RoleARN</b>. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline const Aws::String& GetDomainARN() const{ return m_domainARN; }
 
@@ -131,7 +147,9 @@ namespace Model
      * for <code>DescribeElasticsearchDomain</code>,
      * <code>DescribeElasticsearchDomains</code>, and
      * <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role
-     * specified in <code>RoleARN</code>.</p>
+     * specified in <b>RoleARN</b>. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetDomainARN(const Aws::String& value) { m_domainARNHasBeenSet = true; m_domainARN = value; }
 
@@ -140,7 +158,9 @@ namespace Model
      * for <code>DescribeElasticsearchDomain</code>,
      * <code>DescribeElasticsearchDomains</code>, and
      * <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role
-     * specified in <code>RoleARN</code>.</p>
+     * specified in <b>RoleARN</b>. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetDomainARN(Aws::String&& value) { m_domainARNHasBeenSet = true; m_domainARN = std::move(value); }
 
@@ -149,7 +169,9 @@ namespace Model
      * for <code>DescribeElasticsearchDomain</code>,
      * <code>DescribeElasticsearchDomains</code>, and
      * <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role
-     * specified in <code>RoleARN</code>.</p>
+     * specified in <b>RoleARN</b>. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetDomainARN(const char* value) { m_domainARNHasBeenSet = true; m_domainARN.assign(value); }
 
@@ -158,7 +180,9 @@ namespace Model
      * for <code>DescribeElasticsearchDomain</code>,
      * <code>DescribeElasticsearchDomains</code>, and
      * <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role
-     * specified in <code>RoleARN</code>.</p>
+     * specified in <b>RoleARN</b>. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline ElasticsearchDestinationUpdate& WithDomainARN(const Aws::String& value) { SetDomainARN(value); return *this;}
 
@@ -167,7 +191,9 @@ namespace Model
      * for <code>DescribeElasticsearchDomain</code>,
      * <code>DescribeElasticsearchDomains</code>, and
      * <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role
-     * specified in <code>RoleARN</code>.</p>
+     * specified in <b>RoleARN</b>. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline ElasticsearchDestinationUpdate& WithDomainARN(Aws::String&& value) { SetDomainARN(std::move(value)); return *this;}
 
@@ -176,7 +202,9 @@ namespace Model
      * for <code>DescribeElasticsearchDomain</code>,
      * <code>DescribeElasticsearchDomains</code>, and
      * <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role
-     * specified in <code>RoleARN</code>.</p>
+     * specified in <b>RoleARN</b>. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline ElasticsearchDestinationUpdate& WithDomainARN(const char* value) { SetDomainARN(value); return *this;}
 
@@ -218,45 +246,66 @@ namespace Model
 
 
     /**
-     * <p>The Elasticsearch type name.</p>
+     * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
+     * type per index. If you try to specify a new type for an existing index that
+     * already has another type, Kinesis Data Firehose returns an error during
+     * runtime.</p>
      */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }
 
     /**
-     * <p>The Elasticsearch type name.</p>
+     * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
+     * type per index. If you try to specify a new type for an existing index that
+     * already has another type, Kinesis Data Firehose returns an error during
+     * runtime.</p>
      */
     inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
 
     /**
-     * <p>The Elasticsearch type name.</p>
+     * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
+     * type per index. If you try to specify a new type for an existing index that
+     * already has another type, Kinesis Data Firehose returns an error during
+     * runtime.</p>
      */
     inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
 
     /**
-     * <p>The Elasticsearch type name.</p>
+     * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
+     * type per index. If you try to specify a new type for an existing index that
+     * already has another type, Kinesis Data Firehose returns an error during
+     * runtime.</p>
      */
     inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
 
     /**
-     * <p>The Elasticsearch type name.</p>
+     * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
+     * type per index. If you try to specify a new type for an existing index that
+     * already has another type, Kinesis Data Firehose returns an error during
+     * runtime.</p>
      */
     inline ElasticsearchDestinationUpdate& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
 
     /**
-     * <p>The Elasticsearch type name.</p>
+     * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
+     * type per index. If you try to specify a new type for an existing index that
+     * already has another type, Kinesis Data Firehose returns an error during
+     * runtime.</p>
      */
     inline ElasticsearchDestinationUpdate& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
 
     /**
-     * <p>The Elasticsearch type name.</p>
+     * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
+     * type per index. If you try to specify a new type for an existing index that
+     * already has another type, Kinesis Data Firehose returns an error during
+     * runtime.</p>
      */
     inline ElasticsearchDestinationUpdate& WithTypeName(const char* value) { SetTypeName(value); return *this;}
 
 
     /**
      * <p>The Elasticsearch index rotation period. Index rotation appends a time stamp
-     * to IndexName to facilitate the expiration of old data. For more information, see
-     * <a
+     * to <code>IndexName</code> to facilitate the expiration of old data. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
      * Rotation for the Amazon ES Destination</a>. Default value
      * is <code>OneDay</code>.</p>
@@ -265,8 +314,8 @@ namespace Model
 
     /**
      * <p>The Elasticsearch index rotation period. Index rotation appends a time stamp
-     * to IndexName to facilitate the expiration of old data. For more information, see
-     * <a
+     * to <code>IndexName</code> to facilitate the expiration of old data. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
      * Rotation for the Amazon ES Destination</a>. Default value
      * is <code>OneDay</code>.</p>
@@ -275,8 +324,8 @@ namespace Model
 
     /**
      * <p>The Elasticsearch index rotation period. Index rotation appends a time stamp
-     * to IndexName to facilitate the expiration of old data. For more information, see
-     * <a
+     * to <code>IndexName</code> to facilitate the expiration of old data. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
      * Rotation for the Amazon ES Destination</a>. Default value
      * is <code>OneDay</code>.</p>
@@ -285,8 +334,8 @@ namespace Model
 
     /**
      * <p>The Elasticsearch index rotation period. Index rotation appends a time stamp
-     * to IndexName to facilitate the expiration of old data. For more information, see
-     * <a
+     * to <code>IndexName</code> to facilitate the expiration of old data. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
      * Rotation for the Amazon ES Destination</a>. Default value
      * is <code>OneDay</code>.</p>
@@ -295,8 +344,8 @@ namespace Model
 
     /**
      * <p>The Elasticsearch index rotation period. Index rotation appends a time stamp
-     * to IndexName to facilitate the expiration of old data. For more information, see
-     * <a
+     * to <code>IndexName</code> to facilitate the expiration of old data. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
      * Rotation for the Amazon ES Destination</a>. Default value
      * is <code>OneDay</code>.</p>
@@ -306,31 +355,31 @@ namespace Model
 
     /**
      * <p>The buffering options. If no value is specified,
-     * <code>ElasticsearchBufferingHints</code> object default values are used. </p>
+     * <b>ElasticsearchBufferingHints</b> object default values are used. </p>
      */
     inline const ElasticsearchBufferingHints& GetBufferingHints() const{ return m_bufferingHints; }
 
     /**
      * <p>The buffering options. If no value is specified,
-     * <code>ElasticsearchBufferingHints</code> object default values are used. </p>
+     * <b>ElasticsearchBufferingHints</b> object default values are used. </p>
      */
     inline void SetBufferingHints(const ElasticsearchBufferingHints& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = value; }
 
     /**
      * <p>The buffering options. If no value is specified,
-     * <code>ElasticsearchBufferingHints</code> object default values are used. </p>
+     * <b>ElasticsearchBufferingHints</b> object default values are used. </p>
      */
     inline void SetBufferingHints(ElasticsearchBufferingHints&& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = std::move(value); }
 
     /**
      * <p>The buffering options. If no value is specified,
-     * <code>ElasticsearchBufferingHints</code> object default values are used. </p>
+     * <b>ElasticsearchBufferingHints</b> object default values are used. </p>
      */
     inline ElasticsearchDestinationUpdate& WithBufferingHints(const ElasticsearchBufferingHints& value) { SetBufferingHints(value); return *this;}
 
     /**
      * <p>The buffering options. If no value is specified,
-     * <code>ElasticsearchBufferingHints</code> object default values are used. </p>
+     * <b>ElasticsearchBufferingHints</b> object default values are used. </p>
      */
     inline ElasticsearchDestinationUpdate& WithBufferingHints(ElasticsearchBufferingHints&& value) { SetBufferingHints(std::move(value)); return *this;}
 

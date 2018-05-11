@@ -325,27 +325,27 @@ namespace Model
 
 
     /**
-     * <p>The CloudWatch logging options for your delivery stream.</p>
+     * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
      */
     inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const{ return m_cloudWatchLoggingOptions; }
 
     /**
-     * <p>The CloudWatch logging options for your delivery stream.</p>
+     * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
      */
     inline void SetCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
 
     /**
-     * <p>The CloudWatch logging options for your delivery stream.</p>
+     * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
      */
     inline void SetCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = std::move(value); }
 
     /**
-     * <p>The CloudWatch logging options for your delivery stream.</p>
+     * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
      */
     inline SplunkDestinationUpdate& WithCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { SetCloudWatchLoggingOptions(value); return *this;}
 
     /**
-     * <p>The CloudWatch logging options for your delivery stream.</p>
+     * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
      */
     inline SplunkDestinationUpdate& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(std::move(value)); return *this;}
 

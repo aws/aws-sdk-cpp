@@ -122,43 +122,43 @@ namespace Model
 
 
     /**
-     * <p>This is a GUID you obtain from your Splunk cluster when you create a new HEC
+     * <p>A GUID you obtain from your Splunk cluster when you create a new HEC
      * endpoint.</p>
      */
     inline const Aws::String& GetHECToken() const{ return m_hECToken; }
 
     /**
-     * <p>This is a GUID you obtain from your Splunk cluster when you create a new HEC
+     * <p>A GUID you obtain from your Splunk cluster when you create a new HEC
      * endpoint.</p>
      */
     inline void SetHECToken(const Aws::String& value) { m_hECTokenHasBeenSet = true; m_hECToken = value; }
 
     /**
-     * <p>This is a GUID you obtain from your Splunk cluster when you create a new HEC
+     * <p>A GUID you obtain from your Splunk cluster when you create a new HEC
      * endpoint.</p>
      */
     inline void SetHECToken(Aws::String&& value) { m_hECTokenHasBeenSet = true; m_hECToken = std::move(value); }
 
     /**
-     * <p>This is a GUID you obtain from your Splunk cluster when you create a new HEC
+     * <p>A GUID you obtain from your Splunk cluster when you create a new HEC
      * endpoint.</p>
      */
     inline void SetHECToken(const char* value) { m_hECTokenHasBeenSet = true; m_hECToken.assign(value); }
 
     /**
-     * <p>This is a GUID you obtain from your Splunk cluster when you create a new HEC
+     * <p>A GUID you obtain from your Splunk cluster when you create a new HEC
      * endpoint.</p>
      */
     inline SplunkDestinationDescription& WithHECToken(const Aws::String& value) { SetHECToken(value); return *this;}
 
     /**
-     * <p>This is a GUID you obtain from your Splunk cluster when you create a new HEC
+     * <p>A GUID you obtain from your Splunk cluster when you create a new HEC
      * endpoint.</p>
      */
     inline SplunkDestinationDescription& WithHECToken(Aws::String&& value) { SetHECToken(std::move(value)); return *this;}
 
     /**
-     * <p>This is a GUID you obtain from your Splunk cluster when you create a new HEC
+     * <p>A GUID you obtain from your Splunk cluster when you create a new HEC
      * endpoint.</p>
      */
     inline SplunkDestinationDescription& WithHECToken(const char* value) { SetHECToken(value); return *this;}
@@ -324,27 +324,27 @@ namespace Model
 
 
     /**
-     * <p>The CloudWatch logging options for your delivery stream.</p>
+     * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
      */
     inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const{ return m_cloudWatchLoggingOptions; }
 
     /**
-     * <p>The CloudWatch logging options for your delivery stream.</p>
+     * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
      */
     inline void SetCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
 
     /**
-     * <p>The CloudWatch logging options for your delivery stream.</p>
+     * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
      */
     inline void SetCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = std::move(value); }
 
     /**
-     * <p>The CloudWatch logging options for your delivery stream.</p>
+     * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
      */
     inline SplunkDestinationDescription& WithCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { SetCloudWatchLoggingOptions(value); return *this;}
 
     /**
-     * <p>The CloudWatch logging options for your delivery stream.</p>
+     * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
      */
     inline SplunkDestinationDescription& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(std::move(value)); return *this;}
 

@@ -40,7 +40,8 @@ ExtendedS3DestinationDescription::ExtendedS3DestinationDescription() :
     m_processingConfigurationHasBeenSet(false),
     m_s3BackupMode(S3BackupMode::NOT_SET),
     m_s3BackupModeHasBeenSet(false),
-    m_s3BackupDescriptionHasBeenSet(false)
+    m_s3BackupDescriptionHasBeenSet(false),
+    m_dataFormatConversionConfigurationHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ ExtendedS3DestinationDescription::ExtendedS3DestinationDescription(const JsonVal
     m_processingConfigurationHasBeenSet(false),
     m_s3BackupMode(S3BackupMode::NOT_SET),
     m_s3BackupModeHasBeenSet(false),
-    m_s3BackupDescriptionHasBeenSet(false)
+    m_s3BackupDescriptionHasBeenSet(false),
+    m_dataFormatConversionConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -133,6 +135,13 @@ ExtendedS3DestinationDescription& ExtendedS3DestinationDescription::operator =(c
     m_s3BackupDescriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DataFormatConversionConfiguration"))
+  {
+    m_dataFormatConversionConfiguration = jsonValue.GetObject("DataFormatConversionConfiguration");
+
+    m_dataFormatConversionConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -195,6 +204,12 @@ JsonValue ExtendedS3DestinationDescription::Jsonize() const
   if(m_s3BackupDescriptionHasBeenSet)
   {
    payload.WithObject("S3BackupDescription", m_s3BackupDescription.Jsonize());
+
+  }
+
+  if(m_dataFormatConversionConfigurationHasBeenSet)
+  {
+   payload.WithObject("DataFormatConversionConfiguration", m_dataFormatConversionConfiguration.Jsonize());
 
   }
 

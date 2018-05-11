@@ -77,9 +77,11 @@
 #include <aws/gamelift/model/RequestUploadCredentialsRequest.h>
 #include <aws/gamelift/model/ResolveAliasRequest.h>
 #include <aws/gamelift/model/SearchGameSessionsRequest.h>
+#include <aws/gamelift/model/StartFleetActionsRequest.h>
 #include <aws/gamelift/model/StartGameSessionPlacementRequest.h>
 #include <aws/gamelift/model/StartMatchBackfillRequest.h>
 #include <aws/gamelift/model/StartMatchmakingRequest.h>
+#include <aws/gamelift/model/StopFleetActionsRequest.h>
 #include <aws/gamelift/model/StopGameSessionPlacementRequest.h>
 #include <aws/gamelift/model/StopMatchmakingRequest.h>
 #include <aws/gamelift/model/UpdateAliasRequest.h>
@@ -1907,6 +1909,41 @@ void GameLiftClient::SearchGameSessionsAsyncHelper(const SearchGameSessionsReque
   handler(this, request, SearchGameSessions(request), context);
 }
 
+StartFleetActionsOutcome GameLiftClient::StartFleetActions(const StartFleetActionsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StartFleetActionsOutcome(StartFleetActionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartFleetActionsOutcome(outcome.GetError());
+  }
+}
+
+StartFleetActionsOutcomeCallable GameLiftClient::StartFleetActionsCallable(const StartFleetActionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartFleetActionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartFleetActions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::StartFleetActionsAsync(const StartFleetActionsRequest& request, const StartFleetActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartFleetActionsAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::StartFleetActionsAsyncHelper(const StartFleetActionsRequest& request, const StartFleetActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartFleetActions(request), context);
+}
+
 StartGameSessionPlacementOutcome GameLiftClient::StartGameSessionPlacement(const StartGameSessionPlacementRequest& request) const
 {
   Aws::StringStream ss;
@@ -2010,6 +2047,41 @@ void GameLiftClient::StartMatchmakingAsync(const StartMatchmakingRequest& reques
 void GameLiftClient::StartMatchmakingAsyncHelper(const StartMatchmakingRequest& request, const StartMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StartMatchmaking(request), context);
+}
+
+StopFleetActionsOutcome GameLiftClient::StopFleetActions(const StopFleetActionsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StopFleetActionsOutcome(StopFleetActionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StopFleetActionsOutcome(outcome.GetError());
+  }
+}
+
+StopFleetActionsOutcomeCallable GameLiftClient::StopFleetActionsCallable(const StopFleetActionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopFleetActionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopFleetActions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::StopFleetActionsAsync(const StopFleetActionsRequest& request, const StopFleetActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopFleetActionsAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::StopFleetActionsAsyncHelper(const StopFleetActionsRequest& request, const StopFleetActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopFleetActions(request), context);
 }
 
 StopGameSessionPlacementOutcome GameLiftClient::StopGameSessionPlacement(const StopGameSessionPlacementRequest& request) const
