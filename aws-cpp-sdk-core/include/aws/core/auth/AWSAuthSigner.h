@@ -207,16 +207,28 @@ namespace Aws
             bool m_includeSha256HashHeader;
 
         private:
-            Aws::String GenerateSignature(const Aws::Auth::AWSCredentials& credentials, const Aws::String& stringToSign, const Aws::String& simpleDate) const;
+            Aws::String GenerateSignature(const Aws::Auth::AWSCredentials& credentials,
+                    const Aws::String& stringToSign, const Aws::String& simpleDate) const;
+
+            Aws::String GenerateSignature(const Aws::Auth::AWSCredentials& credentials,
+                    const Aws::String& stringToSign, const Aws::String& simpleDate, const Aws::String& region, 
+                    const Aws::String& serviceName) const;
+
+            Aws::String GenerateSignature(const Aws::String& stringToSign, const Aws::Utils::ByteBuffer& key) const;
+            bool ServiceRequireUnsignedPayload(const Aws::String& serviceName) const;
             Aws::String ComputePayloadHash(Aws::Http::HttpRequest&) const;
-            Aws::String GenerateStringToSign(const Aws::String& dateValue, const Aws::String& simpleDate, const Aws::String& canonicalRequestHash) const;
-            Aws::Utils::ByteBuffer ComputeLongLivedHash(const Aws::String& secretKey, const Aws::String& simpleDate) const;
+            Aws::String GenerateStringToSign(const Aws::String& dateValue, const Aws::String& simpleDate,
+                    const Aws::String& canonicalRequestHash, const Aws::String& region,
+                    const Aws::String& serviceName) const;
+            Aws::Utils::ByteBuffer ComputeHash(const Aws::String& secretKey, const Aws::String& simpleDate) const;
+            Aws::Utils::ByteBuffer ComputeHash(const Aws::String& secretKey,
+                    const Aws::String& simpleDate, const Aws::String& region, const Aws::String& serviceName) const;
 
             bool ShouldSignHeader(const Aws::String& header) const;
 
             std::shared_ptr<Auth::AWSCredentialsProvider> m_credentialsProvider;
-            Aws::String m_serviceName;
-            Aws::String m_region;
+            const Aws::String m_serviceName;
+            const Aws::String m_region;
             Aws::UniquePtr<Aws::Utils::Crypto::Sha256> m_hash;
             Aws::UniquePtr<Aws::Utils::Crypto::Sha256HMAC> m_HMAC;
 

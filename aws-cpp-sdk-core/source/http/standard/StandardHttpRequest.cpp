@@ -26,12 +26,34 @@ using namespace Aws::Utils;
 
 const Aws::String StandardHttpRequest::m_emptyHeader = "";
 
+static bool IsDefaultPort(const URI& uri)
+{
+    switch(uri.GetPort())
+    {
+        case 80:
+            return uri.GetScheme() == Scheme::HTTP;
+        case 443:
+            return uri.GetScheme() == Scheme::HTTPS;
+        default:
+            return false;
+    }
+}
+
 StandardHttpRequest::StandardHttpRequest(const URI& uri, HttpMethod method) :
     HttpRequest(uri, method), 
     bodyStream(nullptr),
     m_responseStreamFactory()
 {
-    SetHeaderValue(HOST_HEADER, uri.GetAuthority());
+    if(IsDefaultPort(uri))
+    {
+        SetHeaderValue(HOST_HEADER, uri.GetAuthority());
+    }
+    else
+    {
+        Aws::StringStream host;
+        host << uri.GetAuthority() << ":" << uri.GetPort();
+        SetHeaderValue(HOST_HEADER, host.str());
+    }
 }
 
 HeaderValueCollection StandardHttpRequest::GetHeaders() const

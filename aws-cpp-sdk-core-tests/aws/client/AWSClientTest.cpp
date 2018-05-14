@@ -376,3 +376,35 @@ TEST(AWSClientTest, TestBuildHttpRequestWithHeadersAndBody)
     contentLengthExpected << ss->str().length();
     ASSERT_EQ(contentLengthExpected.str(), finalHeaders[Http::CONTENT_LENGTH_HEADER]);  
 }
+
+TEST(AWSClientTest, TestHostHeaderWithNonStandardHttpPort)
+{
+    Standard::StandardHttpRequest r1("http://example.amazonaws.com:8080", HttpMethod::HTTP_GET);
+    auto host = r1.GetHeaderValue(Aws::Http::HOST_HEADER);
+    ASSERT_STREQ("example.amazonaws.com:8080", host.c_str());
+
+    Standard::StandardHttpRequest r2("https://example.amazonaws.com:8888", HttpMethod::HTTP_GET);
+    host = r2.GetHeaderValue(Aws::Http::HOST_HEADER);
+    ASSERT_STREQ("example.amazonaws.com:8888", host.c_str());
+}
+
+TEST(AWSClientTest, TestHostHeaderWithStandardHttpPort)
+{
+    Standard::StandardHttpRequest r1("http://example.amazonaws.com:80", HttpMethod::HTTP_GET);
+    auto host = r1.GetHeaderValue(Aws::Http::HOST_HEADER);
+    ASSERT_STREQ("example.amazonaws.com", host.c_str());
+
+    // 443 without HTTPS
+    Standard::StandardHttpRequest r2("http://example.amazonaws.com:443", HttpMethod::HTTP_GET);
+    host = r2.GetHeaderValue(Aws::Http::HOST_HEADER);
+    ASSERT_STREQ("example.amazonaws.com:443", host.c_str());
+
+    Standard::StandardHttpRequest r3("https://example.amazonaws.com:443", HttpMethod::HTTP_GET);
+    host = r3.GetHeaderValue(Aws::Http::HOST_HEADER);
+    ASSERT_STREQ("example.amazonaws.com", host.c_str());
+
+    // HTTPS with port 80
+    Standard::StandardHttpRequest r4("https://example.amazonaws.com:80", HttpMethod::HTTP_GET);
+    host = r4.GetHeaderValue(Aws::Http::HOST_HEADER);
+    ASSERT_STREQ("example.amazonaws.com:80", host.c_str());
+}
