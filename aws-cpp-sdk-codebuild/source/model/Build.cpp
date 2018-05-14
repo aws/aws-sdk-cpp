@@ -43,6 +43,7 @@ Build::Build() :
     m_artifactsHasBeenSet(false),
     m_cacheHasBeenSet(false),
     m_environmentHasBeenSet(false),
+    m_serviceRoleHasBeenSet(false),
     m_logsHasBeenSet(false),
     m_timeoutInMinutes(0),
     m_timeoutInMinutesHasBeenSet(false),
@@ -69,6 +70,7 @@ Build::Build(const JsonValue& jsonValue) :
     m_artifactsHasBeenSet(false),
     m_cacheHasBeenSet(false),
     m_environmentHasBeenSet(false),
+    m_serviceRoleHasBeenSet(false),
     m_logsHasBeenSet(false),
     m_timeoutInMinutes(0),
     m_timeoutInMinutesHasBeenSet(false),
@@ -175,6 +177,13 @@ Build& Build::operator =(const JsonValue& jsonValue)
     m_environment = jsonValue.GetObject("environment");
 
     m_environmentHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("serviceRole"))
+  {
+    m_serviceRole = jsonValue.GetString("serviceRole");
+
+    m_serviceRoleHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("logs"))
@@ -303,6 +312,12 @@ JsonValue Build::Jsonize() const
   if(m_environmentHasBeenSet)
   {
    payload.WithObject("environment", m_environment.Jsonize());
+
+  }
+
+  if(m_serviceRoleHasBeenSet)
+  {
+   payload.WithString("serviceRole", m_serviceRole);
 
   }
 

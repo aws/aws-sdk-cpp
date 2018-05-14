@@ -488,6 +488,42 @@ namespace Model
 
 
     /**
+     * <p>The name of a service role used for this build.</p>
+     */
+    inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
+
+    /**
+     * <p>The name of a service role used for this build.</p>
+     */
+    inline void SetServiceRole(const Aws::String& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
+
+    /**
+     * <p>The name of a service role used for this build.</p>
+     */
+    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
+
+    /**
+     * <p>The name of a service role used for this build.</p>
+     */
+    inline void SetServiceRole(const char* value) { m_serviceRoleHasBeenSet = true; m_serviceRole.assign(value); }
+
+    /**
+     * <p>The name of a service role used for this build.</p>
+     */
+    inline Build& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
+
+    /**
+     * <p>The name of a service role used for this build.</p>
+     */
+    inline Build& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of a service role used for this build.</p>
+     */
+    inline Build& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
+
+
+    /**
      * <p>Information about the build's logs in Amazon CloudWatch Logs.</p>
      */
     inline const LogsLocation& GetLogs() const{ return m_logs; }
@@ -732,6 +768,9 @@ namespace Model
 
     ProjectEnvironment m_environment;
     bool m_environmentHasBeenSet;
+
+    Aws::String m_serviceRole;
+    bool m_serviceRoleHasBeenSet;
 
     LogsLocation m_logs;
     bool m_logsHasBeenSet;
