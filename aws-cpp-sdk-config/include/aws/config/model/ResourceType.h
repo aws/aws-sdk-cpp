@@ -82,7 +82,8 @@ namespace Model
     AWS_ElasticBeanstalk_Application,
     AWS_ElasticBeanstalk_ApplicationVersion,
     AWS_ElasticBeanstalk_Environment,
-    AWS_ElasticLoadBalancing_LoadBalancer
+    AWS_ElasticLoadBalancing_LoadBalancer,
+    AWS_XRay_EncryptionConfig
   };
 
 namespace ResourceTypeMapper

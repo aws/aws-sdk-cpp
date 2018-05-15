@@ -87,6 +87,7 @@ namespace Aws
         static const int AWS_ElasticBeanstalk_ApplicationVersion_HASH = HashingUtils::HashString("AWS::ElasticBeanstalk::ApplicationVersion");
         static const int AWS_ElasticBeanstalk_Environment_HASH = HashingUtils::HashString("AWS::ElasticBeanstalk::Environment");
         static const int AWS_ElasticLoadBalancing_LoadBalancer_HASH = HashingUtils::HashString("AWS::ElasticLoadBalancing::LoadBalancer");
+        static const int AWS_XRay_EncryptionConfig_HASH = HashingUtils::HashString("AWS::XRay::EncryptionConfig");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -320,6 +321,10 @@ namespace Aws
           {
             return ResourceType::AWS_ElasticLoadBalancing_LoadBalancer;
           }
+          else if (hashCode == AWS_XRay_EncryptionConfig_HASH)
+          {
+            return ResourceType::AWS_XRay_EncryptionConfig;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -448,6 +453,8 @@ namespace Aws
             return "AWS::ElasticBeanstalk::Environment";
           case ResourceType::AWS_ElasticLoadBalancing_LoadBalancer:
             return "AWS::ElasticLoadBalancing::LoadBalancer";
+          case ResourceType::AWS_XRay_EncryptionConfig:
+            return "AWS::XRay::EncryptionConfig";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
