@@ -17,6 +17,7 @@
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/servicecatalog/ServiceCatalogRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/servicecatalog/model/PortfolioShareType.h>
 #include <utility>
 
 namespace Aws
@@ -152,6 +153,47 @@ namespace Model
      */
     inline ListAcceptedPortfolioSharesRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
 
+
+    /**
+     * <p>The type of shared portfolios to list. The default is to list imported
+     * portfolios.</p> <ul> <li> <p> <code>AWS_SERVICECATALOG</code> - List default
+     * portfolios</p> </li> <li> <p> <code>IMPORTED</code> - List imported
+     * portfolios</p> </li> </ul>
+     */
+    inline const PortfolioShareType& GetPortfolioShareType() const{ return m_portfolioShareType; }
+
+    /**
+     * <p>The type of shared portfolios to list. The default is to list imported
+     * portfolios.</p> <ul> <li> <p> <code>AWS_SERVICECATALOG</code> - List default
+     * portfolios</p> </li> <li> <p> <code>IMPORTED</code> - List imported
+     * portfolios</p> </li> </ul>
+     */
+    inline void SetPortfolioShareType(const PortfolioShareType& value) { m_portfolioShareTypeHasBeenSet = true; m_portfolioShareType = value; }
+
+    /**
+     * <p>The type of shared portfolios to list. The default is to list imported
+     * portfolios.</p> <ul> <li> <p> <code>AWS_SERVICECATALOG</code> - List default
+     * portfolios</p> </li> <li> <p> <code>IMPORTED</code> - List imported
+     * portfolios</p> </li> </ul>
+     */
+    inline void SetPortfolioShareType(PortfolioShareType&& value) { m_portfolioShareTypeHasBeenSet = true; m_portfolioShareType = std::move(value); }
+
+    /**
+     * <p>The type of shared portfolios to list. The default is to list imported
+     * portfolios.</p> <ul> <li> <p> <code>AWS_SERVICECATALOG</code> - List default
+     * portfolios</p> </li> <li> <p> <code>IMPORTED</code> - List imported
+     * portfolios</p> </li> </ul>
+     */
+    inline ListAcceptedPortfolioSharesRequest& WithPortfolioShareType(const PortfolioShareType& value) { SetPortfolioShareType(value); return *this;}
+
+    /**
+     * <p>The type of shared portfolios to list. The default is to list imported
+     * portfolios.</p> <ul> <li> <p> <code>AWS_SERVICECATALOG</code> - List default
+     * portfolios</p> </li> <li> <p> <code>IMPORTED</code> - List imported
+     * portfolios</p> </li> </ul>
+     */
+    inline ListAcceptedPortfolioSharesRequest& WithPortfolioShareType(PortfolioShareType&& value) { SetPortfolioShareType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_acceptLanguage;
@@ -162,6 +204,9 @@ namespace Model
 
     int m_pageSize;
     bool m_pageSizeHasBeenSet;
+
+    PortfolioShareType m_portfolioShareType;
+    bool m_portfolioShareTypeHasBeenSet;
   };
 
 } // namespace Model

@@ -504,7 +504,11 @@ namespace Model
      * For information on how to format a JSON parameter for the various command line
      * tool environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
+     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p> <p>
+     * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If your
+     * command-line tool or SDK requires quotation marks around the parameter, you
+     * should use single quotes to avoid confusion with the double quotes required in
+     * the JSON text.</p>
      */
     inline const Aws::String& GetSecretString() const{ return m_secretString; }
 
@@ -521,7 +525,11 @@ namespace Model
      * For information on how to format a JSON parameter for the various command line
      * tool environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
+     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p> <p>
+     * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If your
+     * command-line tool or SDK requires quotation marks around the parameter, you
+     * should use single quotes to avoid confusion with the double quotes required in
+     * the JSON text.</p>
      */
     inline void SetSecretString(const Aws::String& value) { m_secretStringHasBeenSet = true; m_secretString = value; }
 
@@ -538,7 +546,11 @@ namespace Model
      * For information on how to format a JSON parameter for the various command line
      * tool environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
+     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p> <p>
+     * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If your
+     * command-line tool or SDK requires quotation marks around the parameter, you
+     * should use single quotes to avoid confusion with the double quotes required in
+     * the JSON text.</p>
      */
     inline void SetSecretString(Aws::String&& value) { m_secretStringHasBeenSet = true; m_secretString = std::move(value); }
 
@@ -555,7 +567,11 @@ namespace Model
      * For information on how to format a JSON parameter for the various command line
      * tool environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
+     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p> <p>
+     * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If your
+     * command-line tool or SDK requires quotation marks around the parameter, you
+     * should use single quotes to avoid confusion with the double quotes required in
+     * the JSON text.</p>
      */
     inline void SetSecretString(const char* value) { m_secretStringHasBeenSet = true; m_secretString.assign(value); }
 
@@ -572,7 +588,11 @@ namespace Model
      * For information on how to format a JSON parameter for the various command line
      * tool environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
+     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p> <p>
+     * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If your
+     * command-line tool or SDK requires quotation marks around the parameter, you
+     * should use single quotes to avoid confusion with the double quotes required in
+     * the JSON text.</p>
      */
     inline UpdateSecretRequest& WithSecretString(const Aws::String& value) { SetSecretString(value); return *this;}
 
@@ -589,7 +609,11 @@ namespace Model
      * For information on how to format a JSON parameter for the various command line
      * tool environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
+     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p> <p>
+     * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If your
+     * command-line tool or SDK requires quotation marks around the parameter, you
+     * should use single quotes to avoid confusion with the double quotes required in
+     * the JSON text.</p>
      */
     inline UpdateSecretRequest& WithSecretString(Aws::String&& value) { SetSecretString(std::move(value)); return *this;}
 
@@ -606,7 +630,11 @@ namespace Model
      * For information on how to format a JSON parameter for the various command line
      * tool environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
+     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p> <p>
+     * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If your
+     * command-line tool or SDK requires quotation marks around the parameter, you
+     * should use single quotes to avoid confusion with the double quotes required in
+     * the JSON text.</p>
      */
     inline UpdateSecretRequest& WithSecretString(const char* value) { SetSecretString(value); return *this;}
 
