@@ -16,7 +16,7 @@ macro(apply_post_project_platform_settings)
         set(SDK_INSTALL_BINARY_PREFIX "${SDK_INSTALL_BINARY_PREFIX}/ia32")
     endif()    
    
-    set(PLATFORM_DEP_LIBS Userenv version)    
-    set(PLATFORM_DEP_LIBS_ABSTRACT_NAME Userenv version)
+    set(PLATFORM_DEP_LIBS Userenv version ws2_32)    
+    set(PLATFORM_DEP_LIBS_ABSTRACT_NAME Userenv version ws2_32)
 
 endmacro()

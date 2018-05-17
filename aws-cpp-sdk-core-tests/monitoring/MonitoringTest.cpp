@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+#define AWS_DISABLE_DEPRECATION
 
 #include <aws/external/gtest.h>
 #include <aws/testing/mocks/aws/client/MockAWSClient.h>
@@ -49,8 +50,8 @@ public:
     void OnRequestSucceeded(const Aws::String& serviceName, const Aws::String& requestName,
         const Aws::Client::HttpResponseOutcome& outcome, const CoreMetricsCollection& metricsFromCore, void* context) const override
     {
-        // TODO investigate that content of original request is expected after we fix the requeset in response bug.
-        ASSERT_TRUE(outcome.IsSuccess());//GetResult()->GetOriginatingRequest().GetURIString().c_str());
+        ASSERT_TRUE(outcome.IsSuccess());
+        ASSERT_STREQ(URI_STRING, outcome.GetResult()->GetOriginatingRequest().GetURIString().c_str());
         ASSERT_TRUE(metricsFromCore.httpClientMetrics.size() == 0);
         ASSERT_STREQ("MockAWSClient", serviceName.c_str());
         ASSERT_STREQ("AmazonWebServiceRequestMock", requestName.c_str());
@@ -120,7 +121,8 @@ public:
     void OnRequestSucceeded(const Aws::String& serviceName, const Aws::String& requestName,
         const Aws::Client::HttpResponseOutcome& outcome, const CoreMetricsCollection& metricsFromCore, void* context) const override
     {
-        ASSERT_TRUE(outcome.IsSuccess());//GetResult()->GetOriginatingRequest().GetURIString().c_str());
+        ASSERT_TRUE(outcome.IsSuccess());
+        ASSERT_STREQ(URI_STRING, outcome.GetResult()->GetOriginatingRequest().GetURIString().c_str());
         ASSERT_TRUE(metricsFromCore.httpClientMetrics.size() == 0);
         ASSERT_STREQ("MockAWSClient", serviceName.c_str());
         ASSERT_STREQ("AmazonWebServiceRequestMock", requestName.c_str());
@@ -222,7 +224,7 @@ protected:
     {
         auto httpRequest = CreateHttpRequest(URI(URI_STRING),
                 HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        auto httpResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, *httpRequest);
+        auto httpResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, httpRequest);
         httpResponse->SetResponseCode(code);
         httpResponse->GetResponseBody() << "";
         for(auto&& header : headers)

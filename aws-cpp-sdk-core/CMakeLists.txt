@@ -38,6 +38,7 @@ file(GLOB AWS_HEADERS "include/aws/core/*.h")
 file(GLOB AWS_AUTH_HEADERS "include/aws/core/auth/*.h")
 file(GLOB AWS_CLIENT_HEADERS "include/aws/core/client/*.h")
 file(GLOB AWS_INTERNAL_HEADERS "include/aws/core/internal/*.h")
+file(GLOB NET_HEADERS "include/aws/core/net/*.h")
 file(GLOB HTTP_HEADERS "include/aws/core/http/*.h")
 file(GLOB HTTP_STANDARD_HEADERS "include/aws/core/http/standard/*.h")
 file(GLOB CONFIG_HEADERS "include/aws/core/config/*.h")
@@ -110,6 +111,12 @@ elseif(ENABLE_WINDOWS_CLIENT)
     endif()
 endif()
 
+if (PLATFORM_WINDOWS)
+    file(GLOB NET_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/net/windows/*.cpp")
+else()
+    file(GLOB NET_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/net/*.cpp")
+endif()
+
 # encryption implementations
 if(ENABLE_BCRYPT_ENCRYPTION)
     file(GLOB UTILS_CRYPTO_BCRYPT_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/utils/crypto/bcrypt/*.h")
@@ -153,6 +160,7 @@ file(GLOB AWS_NATIVE_SDK_COMMON_HEADERS
   ${AWS_AUTH_HEADERS}
   ${AWS_CLIENT_HEADERS}
   ${AWS_INTERNAL_HEADERS}
+  ${NET_HEADERS}
   ${HTTP_HEADERS}
   ${HTTP_STANDARD_HEADERS}
   ${CONFIG_HEADERS}
@@ -220,6 +228,7 @@ file(GLOB AWS_NATIVE_SDK_NON_UNITY_SRC
     ${AWS_NATIVE_SDK_WINDOWS_SRC}
     ${UTILS_CRYPTO_FACTORY_SOURCE}
     ${UTILS_SOURCE}
+    ${NET_SOURCE}
     ${HTTP_SOURCE}
     ${CJSON_SOURCE}
     ${AWS_NATIVE_SDK_CUSTOM_SRC}
@@ -254,6 +263,7 @@ if(MSVC)
     source_group("Header Files\\aws\\core\\auth" FILES ${AWS_AUTH_HEADERS})
     source_group("Header Files\\aws\\core\\client" FILES ${AWS_CLIENT_HEADERS})
     source_group("Header Files\\aws\\core\\internal" FILES ${AWS_INTERNAL_HEADERS})
+    source_group("Header Files\\aws\\core\\net" FILES ${NET_HEADERS})
     source_group("Header Files\\aws\\core\\http" FILES ${HTTP_HEADERS})
     source_group("Header Files\\aws\\core\\http\\standard" FILES ${HTTP_STANDARD_HEADERS})
     source_group("Header Files\\aws\\core\\config" FILES ${CONFIG_HEADERS})
@@ -296,6 +306,7 @@ if(MSVC)
     source_group("Source Files\\auth" FILES ${AWS_AUTH_SOURCE})
     source_group("Source Files\\client" FILES ${AWS_CLIENT_SOURCE})
     source_group("Source Files\\internal" FILES ${AWS_INTERNAL_SOURCE})
+    source_group("Source Files\\net\\windows" FILES ${NET_SOURCE})
     source_group("Source Files\\http" FILES ${HTTP_SOURCE})
     source_group("Source Files\\http\\standard" FILES ${HTTP_STANDARD_SOURCE})
     source_group("Source Files\\config" FILES ${CONFIG_SOURCE})
@@ -436,6 +447,7 @@ install (FILES ${AWS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core)
 install (FILES ${AWS_AUTH_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/auth)
 install (FILES ${AWS_CLIENT_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/client)
 install (FILES ${AWS_INTERNAL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/internal)
+install (FILES ${NET_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/net)
 install (FILES ${HTTP_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/http)
 install (FILES ${HTTP_STANDARD_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/http/standard)
 install (FILES ${CONFIG_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/config/)
