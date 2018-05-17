@@ -538,20 +538,11 @@ size_t CurlHttpClient::WriteHeader(char* ptr, size_t size, size_t nmemb, void* u
         AWS_LOGSTREAM_TRACE(CURL_HTTP_CLIENT_TAG, ptr);
         HttpResponse* response = (HttpResponse*) userdata;
         Aws::String headerLine(ptr);
-        Aws::Vector<Aws::String> keyValuePair = StringUtils::Split(headerLine, ':');
+        Aws::Vector<Aws::String> keyValuePair = StringUtils::Split(headerLine, ':', 2);
 
-
-        if (keyValuePair.size() > 1)
+        if (keyValuePair.size() == 2)
         {
-            Aws::String headerName = keyValuePair[0];
-            headerName = StringUtils::Trim(headerName.c_str());
-
-
-            Aws::String headerValue = headerLine.substr(headerName.length() + 1).c_str();
-            headerValue = StringUtils::Trim(headerValue.c_str());
-
-
-            response->AddHeader(headerName, headerValue);
+            response->AddHeader(StringUtils::Trim(keyValuePair[0].c_str()), StringUtils::Trim(keyValuePair[1].c_str()));
         }
 
         return size * nmemb;

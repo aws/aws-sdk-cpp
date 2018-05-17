@@ -19,6 +19,7 @@
 #include <algorithm>
 #include <iomanip>
 #include <cstdlib>
+#include <cstdio>
 #include <cstring>
 #include <functional>
 
@@ -82,24 +83,31 @@ bool StringUtils::CaselessCompare(const char* value1, const char* value2)
     return value1Lower == value2Lower;
 }
 
-
 Aws::Vector<Aws::String> StringUtils::Split(const Aws::String& toSplit, char splitOn)
 {
-    Aws::StringStream input(toSplit);
+    return Split(toSplit, splitOn, SIZE_MAX);
+}
+
+Aws::Vector<Aws::String> StringUtils::Split(const Aws::String& toSplit, char splitOn, size_t numOfTargetParts)
+{
     Aws::Vector<Aws::String> returnValues;
+    Aws::StringStream input(toSplit);
     Aws::String item;
 
-    while(std::getline(input, item, splitOn))
+    while(returnValues.size() < numOfTargetParts - 1 && std::getline(input, item, splitOn))
     {
-        if(item.size() > 0)
+        if (item.size())
         {
-            returnValues.push_back(item);
+            returnValues.emplace_back(std::move(item));
         }
     }
 
+    if (std::getline(input, item, static_cast<char>(EOF)) && item.size())
+    {
+        returnValues.emplace_back(std::move(item));
+    }
     return returnValues;
 }
-
 
 Aws::Vector<Aws::String> StringUtils::SplitOnLine(const Aws::String& toSplit)
 {

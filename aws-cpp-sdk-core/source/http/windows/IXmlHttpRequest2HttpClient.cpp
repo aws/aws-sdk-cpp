@@ -215,8 +215,8 @@ namespace Aws
                             auto unparsedHeadersStr = Aws::Utils::StringUtils::FromWString(headers);
                             for (auto& headerPair : Aws::Utils::StringUtils::SplitOnLine(unparsedHeadersStr))
                             {
-                                Aws::Vector<Aws::String>&& keyValue = Aws::Utils::StringUtils::Split(headerPair, ':');
-                                if (keyValue.size() >= 2)
+                                Aws::Vector<Aws::String>&& keyValue = Aws::Utils::StringUtils::Split(headerPair, ':', 2);
+                                if (keyValue.size() == 2)
                                 {
                                     AWS_LOGSTREAM_TRACE(CLASS_TAG, keyValue[0] << ": " << keyValue[1]);
                                     m_response.AddHeader(Aws::Utils::StringUtils::Trim(keyValue[0].c_str()), Aws::Utils::StringUtils::Trim(keyValue[1].c_str()));

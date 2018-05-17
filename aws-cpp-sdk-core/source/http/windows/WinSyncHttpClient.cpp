@@ -188,21 +188,10 @@ void WinSyncHttpClient::BuildSuccessResponse(const Aws::Http::HttpRequest& reque
 
     for (auto& header : rawHeaders)
     {
-        Aws::Vector<Aws::String> keyValuePair = StringUtils::Split(header, ':');
-        if (keyValuePair.size() > 1)
+        Aws::Vector<Aws::String> keyValuePair = StringUtils::Split(header, ':', 2);
+        if (keyValuePair.size() == 2)
         {
-            Aws::String headerName = keyValuePair[0];
-            headerName = StringUtils::Trim(headerName.c_str());
-
-            Aws::String headerValue(keyValuePair[1]);
-
-            for (unsigned i = 2; i < keyValuePair.size(); ++i)
-            {
-                headerValue += ":";
-                headerValue += keyValuePair[i];                 
-            }
-
-            response->AddHeader(headerName, StringUtils::Trim(headerValue.c_str()));
+            response->AddHeader(StringUtils::Trim(keyValuePair[0].c_str()), StringUtils::Trim(keyValuePair[1].c_str()));
         }
     }
 
