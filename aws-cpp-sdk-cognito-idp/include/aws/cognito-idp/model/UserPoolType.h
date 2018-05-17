@@ -163,27 +163,27 @@ namespace Model
 
 
     /**
-     * <p>The AWS Lambda triggers associated with tue user pool.</p>
+     * <p>The AWS Lambda triggers associated with the user pool.</p>
      */
     inline const LambdaConfigType& GetLambdaConfig() const{ return m_lambdaConfig; }
 
     /**
-     * <p>The AWS Lambda triggers associated with tue user pool.</p>
+     * <p>The AWS Lambda triggers associated with the user pool.</p>
      */
     inline void SetLambdaConfig(const LambdaConfigType& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = value; }
 
     /**
-     * <p>The AWS Lambda triggers associated with tue user pool.</p>
+     * <p>The AWS Lambda triggers associated with the user pool.</p>
      */
     inline void SetLambdaConfig(LambdaConfigType&& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = std::move(value); }
 
     /**
-     * <p>The AWS Lambda triggers associated with tue user pool.</p>
+     * <p>The AWS Lambda triggers associated with the user pool.</p>
      */
     inline UserPoolType& WithLambdaConfig(const LambdaConfigType& value) { SetLambdaConfig(value); return *this;}
 
     /**
-     * <p>The AWS Lambda triggers associated with tue user pool.</p>
+     * <p>The AWS Lambda triggers associated with the user pool.</p>
      */
     inline UserPoolType& WithLambdaConfig(LambdaConfigType&& value) { SetLambdaConfig(std::move(value)); return *this;}
 
@@ -990,6 +990,42 @@ namespace Model
      */
     inline UserPoolType& WithUserPoolAddOns(UserPoolAddOnsType&& value) { SetUserPoolAddOns(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the user pool.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the user pool.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the user pool.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the user pool.</p>
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the user pool.</p>
+     */
+    inline UserPoolType& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the user pool.</p>
+     */
+    inline UserPoolType& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the user pool.</p>
+     */
+    inline UserPoolType& WithArn(const char* value) { SetArn(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -1072,6 +1108,9 @@ namespace Model
 
     UserPoolAddOnsType m_userPoolAddOns;
     bool m_userPoolAddOnsHasBeenSet;
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
   };
 
 } // namespace Model

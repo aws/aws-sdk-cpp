@@ -84,17 +84,17 @@ namespace Model
 
 
     /**
-     * <p>The expiration period of the authentication result.</p>
+     * <p>The expiration period of the authentication result in seconds.</p>
      */
     inline int GetExpiresIn() const{ return m_expiresIn; }
 
     /**
-     * <p>The expiration period of the authentication result.</p>
+     * <p>The expiration period of the authentication result in seconds.</p>
      */
     inline void SetExpiresIn(int value) { m_expiresInHasBeenSet = true; m_expiresIn = value; }
 
     /**
-     * <p>The expiration period of the authentication result.</p>
+     * <p>The expiration period of the authentication result in seconds.</p>
      */
     inline AuthenticationResultType& WithExpiresIn(int value) { SetExpiresIn(value); return *this;}
 

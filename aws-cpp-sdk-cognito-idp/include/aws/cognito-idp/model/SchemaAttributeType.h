@@ -129,17 +129,17 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the attribute can be changed once it has been created.</p>
+     * <p>Specifies whether the value of the attribute can be changed.</p>
      */
     inline bool GetMutable() const{ return m_mutable; }
 
     /**
-     * <p>Specifies whether the attribute can be changed once it has been created.</p>
+     * <p>Specifies whether the value of the attribute can be changed.</p>
      */
     inline void SetMutable(bool value) { m_mutableHasBeenSet = true; m_mutable = value; }
 
     /**
-     * <p>Specifies whether the attribute can be changed once it has been created.</p>
+     * <p>Specifies whether the value of the attribute can be changed.</p>
      */
     inline SchemaAttributeType& WithMutable(bool value) { SetMutable(value); return *this;}
 

@@ -85,6 +85,7 @@ namespace Aws
         static const int i3_4xlarge_HASH = HashingUtils::HashString("i3.4xlarge");
         static const int i3_8xlarge_HASH = HashingUtils::HashString("i3.8xlarge");
         static const int i3_16xlarge_HASH = HashingUtils::HashString("i3.16xlarge");
+        static const int i3_metal_HASH = HashingUtils::HashString("i3.metal");
         static const int hi1_4xlarge_HASH = HashingUtils::HashString("hi1.4xlarge");
         static const int hs1_8xlarge_HASH = HashingUtils::HashString("hs1.8xlarge");
         static const int c1_medium_HASH = HashingUtils::HashString("c1.medium");
@@ -105,6 +106,12 @@ namespace Aws
         static const int c5_4xlarge_HASH = HashingUtils::HashString("c5.4xlarge");
         static const int c5_9xlarge_HASH = HashingUtils::HashString("c5.9xlarge");
         static const int c5_18xlarge_HASH = HashingUtils::HashString("c5.18xlarge");
+        static const int c5d_large_HASH = HashingUtils::HashString("c5d.large");
+        static const int c5d_xlarge_HASH = HashingUtils::HashString("c5d.xlarge");
+        static const int c5d_2xlarge_HASH = HashingUtils::HashString("c5d.2xlarge");
+        static const int c5d_4xlarge_HASH = HashingUtils::HashString("c5d.4xlarge");
+        static const int c5d_9xlarge_HASH = HashingUtils::HashString("c5d.9xlarge");
+        static const int c5d_18xlarge_HASH = HashingUtils::HashString("c5d.18xlarge");
         static const int cc1_4xlarge_HASH = HashingUtils::HashString("cc1.4xlarge");
         static const int cc2_8xlarge_HASH = HashingUtils::HashString("cc2.8xlarge");
         static const int g2_2xlarge_HASH = HashingUtils::HashString("g2.2xlarge");
@@ -360,6 +367,10 @@ namespace Aws
           {
             return InstanceType::i3_16xlarge;
           }
+          else if (hashCode == i3_metal_HASH)
+          {
+            return InstanceType::i3_metal;
+          }
           else if (hashCode == hi1_4xlarge_HASH)
           {
             return InstanceType::hi1_4xlarge;
@@ -439,6 +450,30 @@ namespace Aws
           else if (hashCode == c5_18xlarge_HASH)
           {
             return InstanceType::c5_18xlarge;
+          }
+          else if (hashCode == c5d_large_HASH)
+          {
+            return InstanceType::c5d_large;
+          }
+          else if (hashCode == c5d_xlarge_HASH)
+          {
+            return InstanceType::c5d_xlarge;
+          }
+          else if (hashCode == c5d_2xlarge_HASH)
+          {
+            return InstanceType::c5d_2xlarge;
+          }
+          else if (hashCode == c5d_4xlarge_HASH)
+          {
+            return InstanceType::c5d_4xlarge;
+          }
+          else if (hashCode == c5d_9xlarge_HASH)
+          {
+            return InstanceType::c5d_9xlarge;
+          }
+          else if (hashCode == c5d_18xlarge_HASH)
+          {
+            return InstanceType::c5d_18xlarge;
           }
           else if (hashCode == cc1_4xlarge_HASH)
           {
@@ -684,6 +719,8 @@ namespace Aws
             return "i3.8xlarge";
           case InstanceType::i3_16xlarge:
             return "i3.16xlarge";
+          case InstanceType::i3_metal:
+            return "i3.metal";
           case InstanceType::hi1_4xlarge:
             return "hi1.4xlarge";
           case InstanceType::hs1_8xlarge:
@@ -724,6 +761,18 @@ namespace Aws
             return "c5.9xlarge";
           case InstanceType::c5_18xlarge:
             return "c5.18xlarge";
+          case InstanceType::c5d_large:
+            return "c5d.large";
+          case InstanceType::c5d_xlarge:
+            return "c5d.xlarge";
+          case InstanceType::c5d_2xlarge:
+            return "c5d.2xlarge";
+          case InstanceType::c5d_4xlarge:
+            return "c5d.4xlarge";
+          case InstanceType::c5d_9xlarge:
+            return "c5d.9xlarge";
+          case InstanceType::c5d_18xlarge:
+            return "c5d.18xlarge";
           case InstanceType::cc1_4xlarge:
             return "cc1.4xlarge";
           case InstanceType::cc2_8xlarge:

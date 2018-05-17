@@ -3366,8 +3366,8 @@ namespace Model
 
         /**
          * <p>Use this API to register a user's entered TOTP code and mark the user's
-         * software token MFA status as "verified" if successful,</p><p><h3>See Also:</h3> 
-         * <a
+         * software token MFA status as "verified" if successful. The request takes an
+         * access token or a session string, but not both.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifySoftwareToken">AWS
          * API Reference</a></p>
          */
@@ -3375,8 +3375,8 @@ namespace Model
 
         /**
          * <p>Use this API to register a user's entered TOTP code and mark the user's
-         * software token MFA status as "verified" if successful,</p><p><h3>See Also:</h3> 
-         * <a
+         * software token MFA status as "verified" if successful. The request takes an
+         * access token or a session string, but not both.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifySoftwareToken">AWS
          * API Reference</a></p>
          *
@@ -3386,8 +3386,8 @@ namespace Model
 
         /**
          * <p>Use this API to register a user's entered TOTP code and mark the user's
-         * software token MFA status as "verified" if successful,</p><p><h3>See Also:</h3> 
-         * <a
+         * software token MFA status as "verified" if successful. The request takes an
+         * access token or a session string, but not both.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifySoftwareToken">AWS
          * API Reference</a></p>
          *

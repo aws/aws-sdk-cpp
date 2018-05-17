@@ -54,31 +54,36 @@ namespace Model
 
     /**
      * <p>The type of resource to tag. Currently, the resource types that support
-     * tagging on creation are <code>instance</code> and <code>volume</code>. </p>
+     * tagging on creation are <code>instance</code>, <code>snapshot</code>, and
+     * <code>volume</code>. </p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
      * <p>The type of resource to tag. Currently, the resource types that support
-     * tagging on creation are <code>instance</code> and <code>volume</code>. </p>
+     * tagging on creation are <code>instance</code>, <code>snapshot</code>, and
+     * <code>volume</code>. </p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
      * <p>The type of resource to tag. Currently, the resource types that support
-     * tagging on creation are <code>instance</code> and <code>volume</code>. </p>
+     * tagging on creation are <code>instance</code>, <code>snapshot</code>, and
+     * <code>volume</code>. </p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The type of resource to tag. Currently, the resource types that support
-     * tagging on creation are <code>instance</code> and <code>volume</code>. </p>
+     * tagging on creation are <code>instance</code>, <code>snapshot</code>, and
+     * <code>volume</code>. </p>
      */
     inline TagSpecification& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
      * <p>The type of resource to tag. Currently, the resource types that support
-     * tagging on creation are <code>instance</code> and <code>volume</code>. </p>
+     * tagging on creation are <code>instance</code>, <code>snapshot</code>, and
+     * <code>volume</code>. </p>
      */
     inline TagSpecification& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 

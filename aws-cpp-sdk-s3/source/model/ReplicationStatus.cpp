@@ -30,7 +30,7 @@ namespace Aws
       namespace ReplicationStatusMapper
       {
 
-        static const int COMPLETE_HASH = HashingUtils::HashString("COMPLETE");
+        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
         static const int PENDING_HASH = HashingUtils::HashString("PENDING");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
         static const int REPLICA_HASH = HashingUtils::HashString("REPLICA");
@@ -39,9 +39,9 @@ namespace Aws
         ReplicationStatus GetReplicationStatusForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == COMPLETE_HASH)
+          if (hashCode == COMPLETED_HASH)
           {
-            return ReplicationStatus::COMPLETE;
+            return ReplicationStatus::COMPLETED;
           }
           else if (hashCode == PENDING_HASH)
           {
@@ -69,8 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case ReplicationStatus::COMPLETE:
-            return "COMPLETE";
+          case ReplicationStatus::COMPLETED:
+            return "COMPLETED";
           case ReplicationStatus::PENDING:
             return "PENDING";
           case ReplicationStatus::FAILED:

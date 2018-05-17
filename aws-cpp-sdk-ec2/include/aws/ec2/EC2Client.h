@@ -2650,28 +2650,18 @@ namespace Model
         virtual void CancelSpotFleetRequestsAsync(const Model::CancelSpotFleetRequestsRequest& request, const CancelSpotFleetRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Cancels one or more Spot Instance requests. Spot Instances are instances that
-         * Amazon EC2 starts on your behalf when the maximum price that you specify exceeds
-         * the current Spot price. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-         * Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux
-         * Instances</i>.</p> <important> <p>Canceling a Spot Instance request does not
-         * terminate running Spot Instances associated with the request.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p>Cancels one or more Spot Instance requests.</p> <important> <p>Canceling a
+         * Spot Instance request does not terminate running Spot Instances associated with
+         * the request.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotInstanceRequests">AWS
          * API Reference</a></p>
          */
         virtual Model::CancelSpotInstanceRequestsOutcome CancelSpotInstanceRequests(const Model::CancelSpotInstanceRequestsRequest& request) const;
 
         /**
-         * <p>Cancels one or more Spot Instance requests. Spot Instances are instances that
-         * Amazon EC2 starts on your behalf when the maximum price that you specify exceeds
-         * the current Spot price. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-         * Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux
-         * Instances</i>.</p> <important> <p>Canceling a Spot Instance request does not
-         * terminate running Spot Instances associated with the request.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p>Cancels one or more Spot Instance requests.</p> <important> <p>Canceling a
+         * Spot Instance request does not terminate running Spot Instances associated with
+         * the request.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotInstanceRequests">AWS
          * API Reference</a></p>
          *
@@ -2680,14 +2670,9 @@ namespace Model
         virtual Model::CancelSpotInstanceRequestsOutcomeCallable CancelSpotInstanceRequestsCallable(const Model::CancelSpotInstanceRequestsRequest& request) const;
 
         /**
-         * <p>Cancels one or more Spot Instance requests. Spot Instances are instances that
-         * Amazon EC2 starts on your behalf when the maximum price that you specify exceeds
-         * the current Spot price. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-         * Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux
-         * Instances</i>.</p> <important> <p>Canceling a Spot Instance request does not
-         * terminate running Spot Instances associated with the request.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p>Cancels one or more Spot Instance requests.</p> <important> <p>Canceling a
+         * Spot Instance request does not terminate running Spot Instances associated with
+         * the request.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotInstanceRequests">AWS
          * API Reference</a></p>
          *
@@ -3819,20 +3804,20 @@ namespace Model
         virtual void CreateNetworkInterfaceAsync(const Model::CreateNetworkInterfaceRequest& request, const CreateNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Grants an AWS authorized partner account permission to attach the specified
-         * network interface to an instance in their account.</p> <p>You can grant
-         * permission to a single AWS account only, and only one account at a
-         * time.</p><p><h3>See Also:</h3>   <a
+         * <p>Grants an AWS-authorized account permission to attach the specified network
+         * interface to an instance in their account.</p> <p>You can grant permission to a
+         * single AWS account only, and only one account at a time.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterfacePermission">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateNetworkInterfacePermissionOutcome CreateNetworkInterfacePermission(const Model::CreateNetworkInterfacePermissionRequest& request) const;
 
         /**
-         * <p>Grants an AWS authorized partner account permission to attach the specified
-         * network interface to an instance in their account.</p> <p>You can grant
-         * permission to a single AWS account only, and only one account at a
-         * time.</p><p><h3>See Also:</h3>   <a
+         * <p>Grants an AWS-authorized account permission to attach the specified network
+         * interface to an instance in their account.</p> <p>You can grant permission to a
+         * single AWS account only, and only one account at a time.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterfacePermission">AWS
          * API Reference</a></p>
          *
@@ -3841,10 +3826,10 @@ namespace Model
         virtual Model::CreateNetworkInterfacePermissionOutcomeCallable CreateNetworkInterfacePermissionCallable(const Model::CreateNetworkInterfacePermissionRequest& request) const;
 
         /**
-         * <p>Grants an AWS authorized partner account permission to attach the specified
-         * network interface to an instance in their account.</p> <p>You can grant
-         * permission to a single AWS account only, and only one account at a
-         * time.</p><p><h3>See Also:</h3>   <a
+         * <p>Grants an AWS-authorized account permission to attach the specified network
+         * interface to an instance in their account.</p> <p>You can grant permission to a
+         * single AWS account only, and only one account at a time.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterfacePermission">AWS
          * API Reference</a></p>
          *
@@ -8720,38 +8705,30 @@ namespace Model
         virtual void DescribeSpotFleetRequestsAsync(const Model::DescribeSpotFleetRequestsRequest& request, const DescribeSpotFleetRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the Spot Instance requests that belong to your account. Spot
-         * Instances are instances that Amazon EC2 launches when the Spot price that you
-         * specify exceeds the current Spot price. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-         * Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux
-         * Instances</i>.</p> <p>You can use <code>DescribeSpotInstanceRequests</code> to
-         * find a running Spot Instance by examining the response. If the status of the
-         * Spot Instance is <code>fulfilled</code>, the instance ID appears in the response
-         * and contains the identifier of the instance. Alternatively, you can use
-         * <a>DescribeInstances</a> with a filter to look for instances where the instance
-         * lifecycle is <code>spot</code>.</p> <p>Spot Instance requests are deleted four
-         * hours after they are canceled and their instances are terminated.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes the specified Spot Instance requests.</p> <p>You can use
+         * <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance by
+         * examining the response. If the status of the Spot Instance is
+         * <code>fulfilled</code>, the instance ID appears in the response and contains the
+         * identifier of the instance. Alternatively, you can use <a>DescribeInstances</a>
+         * with a filter to look for instances where the instance lifecycle is
+         * <code>spot</code>.</p> <p>Spot Instance requests are deleted four hours after
+         * they are canceled and their instances are terminated.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotInstanceRequests">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeSpotInstanceRequestsOutcome DescribeSpotInstanceRequests(const Model::DescribeSpotInstanceRequestsRequest& request) const;
 
         /**
-         * <p>Describes the Spot Instance requests that belong to your account. Spot
-         * Instances are instances that Amazon EC2 launches when the Spot price that you
-         * specify exceeds the current Spot price. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-         * Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux
-         * Instances</i>.</p> <p>You can use <code>DescribeSpotInstanceRequests</code> to
-         * find a running Spot Instance by examining the response. If the status of the
-         * Spot Instance is <code>fulfilled</code>, the instance ID appears in the response
-         * and contains the identifier of the instance. Alternatively, you can use
-         * <a>DescribeInstances</a> with a filter to look for instances where the instance
-         * lifecycle is <code>spot</code>.</p> <p>Spot Instance requests are deleted four
-         * hours after they are canceled and their instances are terminated.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes the specified Spot Instance requests.</p> <p>You can use
+         * <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance by
+         * examining the response. If the status of the Spot Instance is
+         * <code>fulfilled</code>, the instance ID appears in the response and contains the
+         * identifier of the instance. Alternatively, you can use <a>DescribeInstances</a>
+         * with a filter to look for instances where the instance lifecycle is
+         * <code>spot</code>.</p> <p>Spot Instance requests are deleted four hours after
+         * they are canceled and their instances are terminated.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotInstanceRequests">AWS
          * API Reference</a></p>
          *
@@ -8760,19 +8737,15 @@ namespace Model
         virtual Model::DescribeSpotInstanceRequestsOutcomeCallable DescribeSpotInstanceRequestsCallable(const Model::DescribeSpotInstanceRequestsRequest& request) const;
 
         /**
-         * <p>Describes the Spot Instance requests that belong to your account. Spot
-         * Instances are instances that Amazon EC2 launches when the Spot price that you
-         * specify exceeds the current Spot price. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-         * Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux
-         * Instances</i>.</p> <p>You can use <code>DescribeSpotInstanceRequests</code> to
-         * find a running Spot Instance by examining the response. If the status of the
-         * Spot Instance is <code>fulfilled</code>, the instance ID appears in the response
-         * and contains the identifier of the instance. Alternatively, you can use
-         * <a>DescribeInstances</a> with a filter to look for instances where the instance
-         * lifecycle is <code>spot</code>.</p> <p>Spot Instance requests are deleted four
-         * hours after they are canceled and their instances are terminated.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes the specified Spot Instance requests.</p> <p>You can use
+         * <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance by
+         * examining the response. If the status of the Spot Instance is
+         * <code>fulfilled</code>, the instance ID appears in the response and contains the
+         * identifier of the instance. Alternatively, you can use <a>DescribeInstances</a>
+         * with a filter to look for instances where the instance lifecycle is
+         * <code>spot</code>.</p> <p>Spot Instance requests are deleted four hours after
+         * they are canceled and their instances are terminated.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotInstanceRequests">AWS
          * API Reference</a></p>
          *
@@ -12856,9 +12829,7 @@ namespace Model
         virtual void RequestSpotFleetAsync(const Model::RequestSpotFleetRequest& request, const RequestSpotFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a Spot Instance request. Spot Instances are instances that Amazon EC2
-         * launches when the maximum price that you specify exceeds the current Spot price.
-         * For more information, see <a
+         * <p>Creates a Spot Instance request.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
          * Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
@@ -12868,9 +12839,7 @@ namespace Model
         virtual Model::RequestSpotInstancesOutcome RequestSpotInstances(const Model::RequestSpotInstancesRequest& request) const;
 
         /**
-         * <p>Creates a Spot Instance request. Spot Instances are instances that Amazon EC2
-         * launches when the maximum price that you specify exceeds the current Spot price.
-         * For more information, see <a
+         * <p>Creates a Spot Instance request.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
          * Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
@@ -12882,9 +12851,7 @@ namespace Model
         virtual Model::RequestSpotInstancesOutcomeCallable RequestSpotInstancesCallable(const Model::RequestSpotInstancesRequest& request) const;
 
         /**
-         * <p>Creates a Spot Instance request. Spot Instances are instances that Amazon EC2
-         * launches when the maximum price that you specify exceeds the current Spot price.
-         * For more information, see <a
+         * <p>Creates a Spot Instance request.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
          * Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a

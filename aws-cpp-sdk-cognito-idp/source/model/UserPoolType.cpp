@@ -58,7 +58,8 @@ UserPoolType::UserPoolType() :
     m_emailConfigurationFailureHasBeenSet(false),
     m_domainHasBeenSet(false),
     m_adminCreateUserConfigHasBeenSet(false),
-    m_userPoolAddOnsHasBeenSet(false)
+    m_userPoolAddOnsHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
 }
 
@@ -92,7 +93,8 @@ UserPoolType::UserPoolType(const JsonValue& jsonValue) :
     m_emailConfigurationFailureHasBeenSet(false),
     m_domainHasBeenSet(false),
     m_adminCreateUserConfigHasBeenSet(false),
-    m_userPoolAddOnsHasBeenSet(false)
+    m_userPoolAddOnsHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -303,6 +305,13 @@ UserPoolType& UserPoolType::operator =(const JsonValue& jsonValue)
     m_userPoolAddOnsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Arn"))
+  {
+    m_arn = jsonValue.GetString("Arn");
+
+    m_arnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -490,6 +499,12 @@ JsonValue UserPoolType::Jsonize() const
   if(m_userPoolAddOnsHasBeenSet)
   {
    payload.WithObject("UserPoolAddOns", m_userPoolAddOns.Jsonize());
+
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("Arn", m_arn);
 
   }
 
