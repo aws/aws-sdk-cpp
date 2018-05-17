@@ -96,10 +96,18 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
 
         Shape locationConstraints = serviceModel.getShapes().get("BucketLocationConstraint");
 
-        if(locationConstraints != null) {
+        if (locationConstraints != null) {
             bucketLocationConstraints.stream()
                     .filter(enumEntry -> !locationConstraints.getEnumValues().contains(enumEntry))
                     .forEach(enumEntry -> locationConstraints.getEnumValues().add(enumEntry));
+        }
+
+        // Fix the typo of enum: "COMPLETE" for ReplicationStatus in API description, and "COMPLETED" is expected defined by S3 service.
+        // https://github.com/aws/aws-sdk-cpp/issues/859
+        Shape replicationStatus = serviceModel.getShapes().get("ReplicationStatus");
+        int indexOfComplete = replicationStatus.getEnumValues().indexOf("COMPLETE");
+        if (indexOfComplete != -1) {
+            replicationStatus.getEnumValues().set(indexOfComplete, "COMPLETED");
         }
 
         // Customized Log Information
