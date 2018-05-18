@@ -111,6 +111,11 @@ namespace Aws
                 const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
                 const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller);
 
+            AWSClient(const AWSClient&);
+            AWSClient(AWSClient&&);
+            AWSClient& operator = (const AWSClient&);
+            AWSClient& operator = (AWSClient&&);
+
             virtual ~AWSClient();
 
             /**
@@ -244,7 +249,6 @@ namespace Aws
                                          const std::shared_ptr<Aws::IOStream>& body, bool needsContentMd5 = false) const;
             void AddCommonHeaders(Aws::Http::HttpRequest& httpRequest) const;
             void InitializeGlobalStatics();
-            void CleanupGlobalStatics();
             std::shared_ptr<Aws::Http::HttpRequest> ConvertToRequestForPresigning(const Aws::AmazonWebServiceRequest& request, Aws::Http::URI& uri,
                 Aws::Http::HttpMethod method, const Aws::Http::QueryStringParameterCollection& extraParams) const;
 

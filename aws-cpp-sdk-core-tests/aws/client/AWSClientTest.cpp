@@ -29,6 +29,7 @@
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/Outcome.h>
+#include <aws/core/Globals.h>
 #include <aws/testing/mocks/http/MockHttpClient.h>
 
 using namespace Aws::Client;
@@ -407,4 +408,42 @@ TEST(AWSClientTest, TestHostHeaderWithStandardHttpPort)
     Standard::StandardHttpRequest r4("https://example.amazonaws.com:80", HttpMethod::HTTP_GET);
     host = r4.GetHeaderValue(Aws::Http::HOST_HEADER);
     ASSERT_STREQ("example.amazonaws.com:80", host.c_str());
+}
+
+TEST(AWSClientTest, TestOverflowContainerLife)
+{
+    {
+        ClientConfiguration config;
+        MockAWSClient client(config);
+        auto container = Aws::GetEnumOverflowContainer();
+        ASSERT_NE(container, nullptr);
+    }
+
+    auto container = Aws::GetEnumOverflowContainer();
+    ASSERT_EQ(container, nullptr);
+}
+
+TEST(AWSClientTest, TestCopyingClientExtendsOverflowContainerLife)
+{
+    ClientConfiguration config;
+    auto client1 = Aws::MakeUnique<MockAWSClient>(ALLOCATION_TAG, config);
+    auto container = Aws::GetEnumOverflowContainer();
+    ASSERT_NE(container, nullptr);
+
+    // copy clien1 to client2
+    auto client2 = Aws::MakeUnique<MockAWSClient>(ALLOCATION_TAG, *client1);
+    client1 = nullptr;
+    container = Aws::GetEnumOverflowContainer();
+    ASSERT_NE(container, nullptr);
+
+    // move client2 to client3
+    auto client3 = Aws::MakeUnique<MockAWSClient>(ALLOCATION_TAG, std::move(*client2));
+    client2 = nullptr;
+    container = Aws::GetEnumOverflowContainer();
+    ASSERT_NE(container, nullptr);
+
+    // clear client3
+    client3 = nullptr;
+    container = Aws::GetEnumOverflowContainer();
+    ASSERT_EQ(container, nullptr);
 }

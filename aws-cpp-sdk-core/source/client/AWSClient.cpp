@@ -74,40 +74,11 @@ static CoreErrors GuessBodylessErrorType(Aws::Http::HttpResponseCode responseCod
 
 void AWSClient::InitializeGlobalStatics()
 {
-    int currentRefCount = s_refCount.load();
-    if (!currentRefCount)
-    {      
-        int expectedRefCount = 0;    
-        Utils::EnumParseOverflowContainer* expectedPtrValue = nullptr;
+    if (s_refCount++ == 0)
+    {
         Utils::EnumParseOverflowContainer* container = Aws::New<Utils::EnumParseOverflowContainer>(AWS_CLIENT_LOG_TAG);
-        if (!s_refCount.compare_exchange_strong(expectedRefCount, 1) ||
-             !Aws::CheckAndSwapEnumOverflowContainer(expectedPtrValue, container))
-        {
-            Aws::Delete(container);
-        }        
+        Aws::SetEnumOverflowContainer(container);
     }
-    else
-    {
-        ++s_refCount;
-    }
-}
-
-void AWSClient::CleanupGlobalStatics()
-{
-    int currentRefCount = s_refCount.load(); 
-    Utils::EnumParseOverflowContainer* expectedPtrValue = Aws::GetEnumOverflowContainer();
-
-    if (currentRefCount == 1)
-    {
-        if (s_refCount.compare_exchange_strong(currentRefCount, 0) &&
-            Aws::CheckAndSwapEnumOverflowContainer(expectedPtrValue, nullptr))
-        {
-            Aws::Delete(expectedPtrValue);           
-            return;
-        }        
-    }
-
-    --s_refCount;
 }
 
 AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
@@ -143,9 +114,77 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
 }
 
 
+AWSClient::AWSClient(const AWSClient& other) :
+            m_httpClient(other.m_httpClient),
+            m_signerProvider(other.m_signerProvider),
+            m_errorMarshaller(other.m_errorMarshaller),
+            m_retryStrategy(other.m_retryStrategy),
+            m_writeRateLimiter(other.m_writeRateLimiter),
+            m_readRateLimiter(other.m_readRateLimiter),
+            m_userAgent(other.m_userAgent),
+            m_hash(other.m_hash),
+            m_enableClockSkewAdjustment(other.m_enableClockSkewAdjustment)
+{
+    s_refCount++;
+}
+
+AWSClient::AWSClient(AWSClient&& other) :
+            m_httpClient(std::move(other.m_httpClient)),
+            m_signerProvider(std::move(other.m_signerProvider)),
+            m_errorMarshaller(std::move(other.m_errorMarshaller)),
+            m_retryStrategy(std::move(other.m_retryStrategy)),
+            m_writeRateLimiter(std::move(other.m_writeRateLimiter)),
+            m_readRateLimiter(std::move(other.m_readRateLimiter)),
+            m_userAgent(std::move(other.m_userAgent)),
+            m_hash(std::move(other.m_hash)),
+            m_enableClockSkewAdjustment(other.m_enableClockSkewAdjustment)
+{
+    s_refCount++;
+}
+
+AWSClient& AWSClient::operator = (const AWSClient& other)
+{
+    if(this == &other)
+    {
+        return *this;
+    }
+
+    m_httpClient = other.m_httpClient;
+    m_signerProvider = other.m_signerProvider;
+    m_errorMarshaller = other.m_errorMarshaller;
+    m_retryStrategy = other.m_retryStrategy;
+    m_writeRateLimiter = other.m_writeRateLimiter;
+    m_readRateLimiter = other.m_readRateLimiter;
+    m_userAgent = other.m_userAgent;
+    m_hash = other.m_hash;
+    m_enableClockSkewAdjustment = other.m_enableClockSkewAdjustment;
+    s_refCount++;
+    return *this;
+}
+
+AWSClient& AWSClient::operator = (AWSClient&& other)
+{
+    m_httpClient = std::move(other.m_httpClient);
+    m_signerProvider = std::move(other.m_signerProvider);
+    m_errorMarshaller = std::move(other.m_errorMarshaller);
+    m_retryStrategy = std::move(other.m_retryStrategy);
+    m_writeRateLimiter = std::move(other.m_writeRateLimiter);
+    m_readRateLimiter = std::move(other.m_readRateLimiter);
+    m_userAgent = std::move(other.m_userAgent);
+    m_hash = std::move(other.m_hash);
+    m_enableClockSkewAdjustment = other.m_enableClockSkewAdjustment;
+    s_refCount++;
+    return *this;
+}
+
 AWSClient::~AWSClient()
 {
-    CleanupGlobalStatics();
+    if (--s_refCount == 0)
+    {
+        Utils::EnumParseOverflowContainer* expectedPtrValue = Aws::GetEnumOverflowContainer();
+        Aws::SetEnumOverflowContainer(nullptr);
+        Aws::Delete(expectedPtrValue);
+    }
 }
 
 void AWSClient::DisableRequestProcessing() 
