@@ -190,6 +190,8 @@ namespace Model
         class DeleteAuthorizerRequest;
         class DeleteCACertificateRequest;
         class DeleteCertificateRequest;
+        class DeleteJobRequest;
+        class DeleteJobExecutionRequest;
         class DeleteOTAUpdateRequest;
         class DeletePolicyRequest;
         class DeletePolicyVersionRequest;
@@ -310,6 +312,8 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteAuthorizerResult, Aws::Client::AWSError<IoTErrors>> DeleteAuthorizerOutcome;
         typedef Aws::Utils::Outcome<DeleteCACertificateResult, Aws::Client::AWSError<IoTErrors>> DeleteCACertificateOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTErrors>> DeleteCertificateOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTErrors>> DeleteJobOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTErrors>> DeleteJobExecutionOutcome;
         typedef Aws::Utils::Outcome<DeleteOTAUpdateResult, Aws::Client::AWSError<IoTErrors>> DeleteOTAUpdateOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTErrors>> DeletePolicyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTErrors>> DeletePolicyVersionOutcome;
@@ -430,6 +434,8 @@ namespace Model
         typedef std::future<DeleteAuthorizerOutcome> DeleteAuthorizerOutcomeCallable;
         typedef std::future<DeleteCACertificateOutcome> DeleteCACertificateOutcomeCallable;
         typedef std::future<DeleteCertificateOutcome> DeleteCertificateOutcomeCallable;
+        typedef std::future<DeleteJobOutcome> DeleteJobOutcomeCallable;
+        typedef std::future<DeleteJobExecutionOutcome> DeleteJobExecutionOutcomeCallable;
         typedef std::future<DeleteOTAUpdateOutcome> DeleteOTAUpdateOutcomeCallable;
         typedef std::future<DeletePolicyOutcome> DeletePolicyOutcomeCallable;
         typedef std::future<DeletePolicyVersionOutcome> DeletePolicyVersionOutcomeCallable;
@@ -553,6 +559,8 @@ namespace Model
     typedef std::function<void(const IoTClient*, const Model::DeleteAuthorizerRequest&, const Model::DeleteAuthorizerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAuthorizerResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DeleteCACertificateRequest&, const Model::DeleteCACertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCACertificateResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DeleteCertificateRequest&, const Model::DeleteCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCertificateResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::DeleteJobRequest&, const Model::DeleteJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteJobResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::DeleteJobExecutionRequest&, const Model::DeleteJobExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteJobExecutionResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DeleteOTAUpdateRequest&, const Model::DeleteOTAUpdateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteOTAUpdateResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DeletePolicyRequest&, const Model::DeletePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePolicyResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DeletePolicyVersionRequest&, const Model::DeletePolicyVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePolicyVersionResponseReceivedHandler;
@@ -1490,6 +1498,74 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteCertificateAsync(const Model::DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a job and its related job executions.</p> <p>Deleting a job may take
+         * time, depending on the number of job executions created for the job and various
+         * other factors. While the job is being deleted, the status of the job will be
+         * shown as "DELETION_IN_PROGRESS". Attempting to delete or cancel a job whose
+         * status is already "DELETION_IN_PROGRESS" will result in an error.</p> <p>Only 10
+         * jobs may have status "DELETION_IN_PROGRESS" at the same time, or a
+         * LimitExceededException will occur.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJob">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::DeleteJobOutcome DeleteJob(const Model::DeleteJobRequest& request) const;
+
+        /**
+         * <p>Deletes a job and its related job executions.</p> <p>Deleting a job may take
+         * time, depending on the number of job executions created for the job and various
+         * other factors. While the job is being deleted, the status of the job will be
+         * shown as "DELETION_IN_PROGRESS". Attempting to delete or cancel a job whose
+         * status is already "DELETION_IN_PROGRESS" will result in an error.</p> <p>Only 10
+         * jobs may have status "DELETION_IN_PROGRESS" at the same time, or a
+         * LimitExceededException will occur.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJob">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteJobOutcomeCallable DeleteJobCallable(const Model::DeleteJobRequest& request) const;
+
+        /**
+         * <p>Deletes a job and its related job executions.</p> <p>Deleting a job may take
+         * time, depending on the number of job executions created for the job and various
+         * other factors. While the job is being deleted, the status of the job will be
+         * shown as "DELETION_IN_PROGRESS". Attempting to delete or cancel a job whose
+         * status is already "DELETION_IN_PROGRESS" will result in an error.</p> <p>Only 10
+         * jobs may have status "DELETION_IN_PROGRESS" at the same time, or a
+         * LimitExceededException will occur.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJob">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteJobAsync(const Model::DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a job execution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJobExecution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteJobExecutionOutcome DeleteJobExecution(const Model::DeleteJobExecutionRequest& request) const;
+
+        /**
+         * <p>Deletes a job execution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJobExecution">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteJobExecutionOutcomeCallable DeleteJobExecutionCallable(const Model::DeleteJobExecutionRequest& request) const;
+
+        /**
+         * <p>Deletes a job execution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJobExecution">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteJobExecutionAsync(const Model::DeleteJobExecutionRequest& request, const DeleteJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete an OTA update.</p><p><h3>See Also:</h3>   <a
@@ -4126,6 +4202,8 @@ namespace Model
         void DeleteAuthorizerAsyncHelper(const Model::DeleteAuthorizerRequest& request, const DeleteAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCACertificateAsyncHelper(const Model::DeleteCACertificateRequest& request, const DeleteCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCertificateAsyncHelper(const Model::DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteJobAsyncHelper(const Model::DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteJobExecutionAsyncHelper(const Model::DeleteJobExecutionRequest& request, const DeleteJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteOTAUpdateAsyncHelper(const Model::DeleteOTAUpdateRequest& request, const DeleteOTAUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePolicyAsyncHelper(const Model::DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePolicyVersionAsyncHelper(const Model::DeletePolicyVersionRequest& request, const DeletePolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

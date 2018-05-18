@@ -244,11 +244,11 @@ namespace Model
      * means that you must use the Amazon S3 encryption client to decrypt the email
      * after retrieving it from Amazon S3, as the service has no access to use your AWS
      * KMS keys for decryption. This encryption client is currently available with the
-     * <a href="http://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a
-     * href="http://aws.amazon.com/sdk-for-ruby/">AWS Ruby SDK</a> only. For more
+     * <a href="http://aws.amazon.com/sdk-for-java/">AWS SDK for Java</a> and <a
+     * href="http://aws.amazon.com/sdk-for-ruby/">AWS SDK for Ruby</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
-     * href="AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer
-     * Guide</a>.</p> </important>
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
+     * S3 Developer Guide</a>.</p> </important>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
 
@@ -277,11 +277,11 @@ namespace Model
      * means that you must use the Amazon S3 encryption client to decrypt the email
      * after retrieving it from Amazon S3, as the service has no access to use your AWS
      * KMS keys for decryption. This encryption client is currently available with the
-     * <a href="http://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a
-     * href="http://aws.amazon.com/sdk-for-ruby/">AWS Ruby SDK</a> only. For more
+     * <a href="http://aws.amazon.com/sdk-for-java/">AWS SDK for Java</a> and <a
+     * href="http://aws.amazon.com/sdk-for-ruby/">AWS SDK for Ruby</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
-     * href="AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer
-     * Guide</a>.</p> </important>
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
+     * S3 Developer Guide</a>.</p> </important>
      */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
 
@@ -310,11 +310,11 @@ namespace Model
      * means that you must use the Amazon S3 encryption client to decrypt the email
      * after retrieving it from Amazon S3, as the service has no access to use your AWS
      * KMS keys for decryption. This encryption client is currently available with the
-     * <a href="http://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a
-     * href="http://aws.amazon.com/sdk-for-ruby/">AWS Ruby SDK</a> only. For more
+     * <a href="http://aws.amazon.com/sdk-for-java/">AWS SDK for Java</a> and <a
+     * href="http://aws.amazon.com/sdk-for-ruby/">AWS SDK for Ruby</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
-     * href="AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer
-     * Guide</a>.</p> </important>
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
+     * S3 Developer Guide</a>.</p> </important>
      */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
 
@@ -343,11 +343,11 @@ namespace Model
      * means that you must use the Amazon S3 encryption client to decrypt the email
      * after retrieving it from Amazon S3, as the service has no access to use your AWS
      * KMS keys for decryption. This encryption client is currently available with the
-     * <a href="http://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a
-     * href="http://aws.amazon.com/sdk-for-ruby/">AWS Ruby SDK</a> only. For more
+     * <a href="http://aws.amazon.com/sdk-for-java/">AWS SDK for Java</a> and <a
+     * href="http://aws.amazon.com/sdk-for-ruby/">AWS SDK for Ruby</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
-     * href="AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer
-     * Guide</a>.</p> </important>
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
+     * S3 Developer Guide</a>.</p> </important>
      */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
 
@@ -376,11 +376,11 @@ namespace Model
      * means that you must use the Amazon S3 encryption client to decrypt the email
      * after retrieving it from Amazon S3, as the service has no access to use your AWS
      * KMS keys for decryption. This encryption client is currently available with the
-     * <a href="http://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a
-     * href="http://aws.amazon.com/sdk-for-ruby/">AWS Ruby SDK</a> only. For more
+     * <a href="http://aws.amazon.com/sdk-for-java/">AWS SDK for Java</a> and <a
+     * href="http://aws.amazon.com/sdk-for-ruby/">AWS SDK for Ruby</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
-     * href="AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer
-     * Guide</a>.</p> </important>
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
+     * S3 Developer Guide</a>.</p> </important>
      */
     inline S3Action& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
 
@@ -409,11 +409,11 @@ namespace Model
      * means that you must use the Amazon S3 encryption client to decrypt the email
      * after retrieving it from Amazon S3, as the service has no access to use your AWS
      * KMS keys for decryption. This encryption client is currently available with the
-     * <a href="http://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a
-     * href="http://aws.amazon.com/sdk-for-ruby/">AWS Ruby SDK</a> only. For more
+     * <a href="http://aws.amazon.com/sdk-for-java/">AWS SDK for Java</a> and <a
+     * href="http://aws.amazon.com/sdk-for-ruby/">AWS SDK for Ruby</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
-     * href="AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer
-     * Guide</a>.</p> </important>
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
+     * S3 Developer Guide</a>.</p> </important>
      */
     inline S3Action& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
 
@@ -442,11 +442,11 @@ namespace Model
      * means that you must use the Amazon S3 encryption client to decrypt the email
      * after retrieving it from Amazon S3, as the service has no access to use your AWS
      * KMS keys for decryption. This encryption client is currently available with the
-     * <a href="http://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a
-     * href="http://aws.amazon.com/sdk-for-ruby/">AWS Ruby SDK</a> only. For more
+     * <a href="http://aws.amazon.com/sdk-for-java/">AWS SDK for Java</a> and <a
+     * href="http://aws.amazon.com/sdk-for-ruby/">AWS SDK for Ruby</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
-     * href="AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer
-     * Guide</a>.</p> </important>
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
+     * S3 Developer Guide</a>.</p> </important>
      */
     inline S3Action& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
 

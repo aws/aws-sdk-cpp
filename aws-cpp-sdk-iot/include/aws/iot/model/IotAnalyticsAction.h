@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Sends message data to an AWS IoT Analytics channel.</p><p><h3>See Also:</h3> 
+   * <p>Sends messge data to an AWS IoT Analytics channel.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/IotAnalyticsAction">AWS
    * API Reference</a></p>
@@ -127,44 +127,44 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the role which has a policy that grants IoT permission to send
-     * message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
+     * <p>The ARN of the role which has a policy that grants IoT Analytics permission
+     * to send message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The ARN of the role which has a policy that grants IoT permission to send
-     * message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
+     * <p>The ARN of the role which has a policy that grants IoT Analytics permission
+     * to send message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The ARN of the role which has a policy that grants IoT permission to send
-     * message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
+     * <p>The ARN of the role which has a policy that grants IoT Analytics permission
+     * to send message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the role which has a policy that grants IoT permission to send
-     * message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
+     * <p>The ARN of the role which has a policy that grants IoT Analytics permission
+     * to send message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The ARN of the role which has a policy that grants IoT permission to send
-     * message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
+     * <p>The ARN of the role which has a policy that grants IoT Analytics permission
+     * to send message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
      */
     inline IotAnalyticsAction& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the role which has a policy that grants IoT permission to send
-     * message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
+     * <p>The ARN of the role which has a policy that grants IoT Analytics permission
+     * to send message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
      */
     inline IotAnalyticsAction& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the role which has a policy that grants IoT permission to send
-     * message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
+     * <p>The ARN of the role which has a policy that grants IoT Analytics permission
+     * to send message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
      */
     inline IotAnalyticsAction& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

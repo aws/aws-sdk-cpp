@@ -51,6 +51,8 @@
 #include <aws/iot/model/DeleteAuthorizerRequest.h>
 #include <aws/iot/model/DeleteCACertificateRequest.h>
 #include <aws/iot/model/DeleteCertificateRequest.h>
+#include <aws/iot/model/DeleteJobRequest.h>
+#include <aws/iot/model/DeleteJobExecutionRequest.h>
 #include <aws/iot/model/DeleteOTAUpdateRequest.h>
 #include <aws/iot/model/DeletePolicyRequest.h>
 #include <aws/iot/model/DeletePolicyVersionRequest.h>
@@ -1073,6 +1075,82 @@ void IoTClient::DeleteCertificateAsync(const DeleteCertificateRequest& request, 
 void IoTClient::DeleteCertificateAsyncHelper(const DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteCertificate(request), context);
+}
+
+DeleteJobOutcome IoTClient::DeleteJob(const DeleteJobRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/jobs/";
+  ss << request.GetJobId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteJobOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteJobOutcome(outcome.GetError());
+  }
+}
+
+DeleteJobOutcomeCallable IoTClient::DeleteJobCallable(const DeleteJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DeleteJobAsync(const DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteJobAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DeleteJobAsyncHelper(const DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteJob(request), context);
+}
+
+DeleteJobExecutionOutcome IoTClient::DeleteJobExecution(const DeleteJobExecutionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/things/";
+  ss << request.GetThingName();
+  ss << "/jobs/";
+  ss << request.GetJobId();
+  ss << "/executionNumber/";
+  ss << request.GetExecutionNumber();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteJobExecutionOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteJobExecutionOutcome(outcome.GetError());
+  }
+}
+
+DeleteJobExecutionOutcomeCallable IoTClient::DeleteJobExecutionCallable(const DeleteJobExecutionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteJobExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteJobExecution(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DeleteJobExecutionAsync(const DeleteJobExecutionRequest& request, const DeleteJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteJobExecutionAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DeleteJobExecutionAsyncHelper(const DeleteJobExecutionRequest& request, const DeleteJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteJobExecution(request), context);
 }
 
 DeleteOTAUpdateOutcome IoTClient::DeleteOTAUpdate(const DeleteOTAUpdateRequest& request) const

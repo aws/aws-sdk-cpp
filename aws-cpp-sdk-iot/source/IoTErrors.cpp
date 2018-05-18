@@ -47,6 +47,7 @@ static const int DELETE_CONFLICT_HASH = HashingUtils::HashString("DeleteConflict
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int CERTIFICATE_STATE_HASH = HashingUtils::HashString("CertificateStateException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
+static const int INVALID_STATE_TRANSITION_HASH = HashingUtils::HashString("InvalidStateTransitionException");
 static const int CERTIFICATE_VALIDATION_HASH = HashingUtils::HashString("CertificateValidationException");
 static const int INVALID_RESPONSE_HASH = HashingUtils::HashString("InvalidResponseException");
 static const int INVALID_QUERY_HASH = HashingUtils::HashString("InvalidQueryException");
@@ -131,6 +132,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_REQUEST_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::INVALID_REQUEST), false);
+  }
+  else if (hashCode == INVALID_STATE_TRANSITION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::INVALID_STATE_TRANSITION), false);
   }
   else if (hashCode == CERTIFICATE_VALIDATION_HASH)
   {

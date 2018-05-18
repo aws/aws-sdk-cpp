@@ -36,7 +36,7 @@ namespace Model
 {
   /**
    * <p>Represents a request to return the email sending status for your Amazon SES
-   * account.</p><p><h3>See Also:</h3>   <a
+   * account in the current AWS Region.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetAccountSendingEnabledResponse">AWS
    * API Reference</a></p>
    */
@@ -50,19 +50,19 @@ namespace Model
 
     /**
      * <p>Describes whether email sending is enabled or disabled for your Amazon SES
-     * account.</p>
+     * account in the current AWS Region.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
      * <p>Describes whether email sending is enabled or disabled for your Amazon SES
-     * account.</p>
+     * account in the current AWS Region.</p>
      */
     inline void SetEnabled(bool value) { m_enabled = value; }
 
     /**
      * <p>Describes whether email sending is enabled or disabled for your Amazon SES
-     * account.</p>
+     * account in the current AWS Region.</p>
      */
     inline GetAccountSendingEnabledResult& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
