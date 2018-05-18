@@ -498,13 +498,17 @@ Aws::String AWSAuthV4Signer::GenerateStringToSign(const Aws::String& dateValue, 
 
 ByteBuffer AWSAuthV4Signer::ComputeHash(const Aws::String& secretKey, const Aws::String& simpleDate) const
 {
-    std::lock_guard<std::mutex> locker(m_partialSignatureLock);
+    Utils::Threading::ReaderLockGuard guard(m_partialSignatureLock);
     if (m_currentDateStr != simpleDate || m_currentSecretKey != secretKey)
     {
-        m_currentSecretKey = secretKey;
-        m_currentDateStr = simpleDate;
-
-        m_partialSignature = ComputeHash(m_currentSecretKey, m_currentDateStr, m_region, m_serviceName);
+        guard.UpgradeToWriterLock();
+        // check again to prevent racing writers
+        if (m_currentDateStr != simpleDate || m_currentSecretKey != secretKey)
+        {
+            m_currentSecretKey = secretKey;
+            m_currentDateStr = simpleDate;
+            m_partialSignature = ComputeHash(m_currentSecretKey, m_currentDateStr, m_region, m_serviceName);
+        }
     }
     return m_partialSignature;
 }

@@ -22,10 +22,10 @@
 #include <aws/core/utils/memory/stl/AWSSet.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/Array.h>
+#include <aws/core/utils/threading/ReaderWriterLock.h>
 
 #include <memory>
 #include <atomic>
-#include <mutex>
 #include <chrono>
 
 namespace Aws
@@ -240,7 +240,7 @@ namespace Aws
             mutable Aws::Utils::ByteBuffer m_partialSignature;
             mutable Aws::String m_currentDateStr;
             mutable Aws::String m_currentSecretKey;
-            mutable std::mutex m_partialSignatureLock;
+            mutable Utils::Threading::ReaderWriterLock m_partialSignatureLock;
             PayloadSigningPolicy m_payloadSigningPolicy;
             bool m_urlEscapePath;
         };
