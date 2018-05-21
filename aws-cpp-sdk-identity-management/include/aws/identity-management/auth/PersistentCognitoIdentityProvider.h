@@ -16,7 +16,6 @@
 
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/core/utils/memory/stl/AWSFunction.h>
 #include <aws/identity-management/IdentityManagment_EXPORTS.h>
 #include <mutex>
 
@@ -57,12 +56,12 @@ namespace Aws
 
             inline void SetLoginsUpdatedCallback(const std::function<void(const PersistentCognitoIdentityProvider&)>& callback)
             {
-                m_loginsUpdatedCallback = Aws::BuildFunction<void(const PersistentCognitoIdentityProvider&)>(callback);
+                m_loginsUpdatedCallback = callback;
             }
 
             inline void SetIdentityIdUpdatedCallback(const std::function<void(const PersistentCognitoIdentityProvider&)>& callback)
             {
-                m_identityIdUpdatedCallback = Aws::BuildFunction<void(const PersistentCognitoIdentityProvider&)>(callback);
+                m_identityIdUpdatedCallback = callback;
             }
 
         protected:

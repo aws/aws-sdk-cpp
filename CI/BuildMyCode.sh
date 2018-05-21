@@ -1,8 +1,8 @@
 #!/bin/bash
 if [ $# -eq 0 ]; then
-    echo "Using master as the default branch and using default cmake flags to build."
-    branch="master"
+    branch=`git rev-parse --abbrev-ref HEAD`
     cmakeFlags=""
+    echo "Using '$branch' branch and using default cmake flags to build."
 elif [ $# -eq 1 ]; then
     echo "Using default cmake flags to build."
     branch=$1
