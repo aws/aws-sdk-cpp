@@ -398,6 +398,56 @@ namespace Model
 
 
     /**
+     * <p>The name of the IAM execution role used to create or update the stack
+     * set.</p> <p>Use customized execution roles to control which stack resources
+     * users and groups can include in their stack sets. </p>
+     */
+    inline const Aws::String& GetExecutionRoleName() const{ return m_executionRoleName; }
+
+    /**
+     * <p>The name of the IAM execution role used to create or update the stack
+     * set.</p> <p>Use customized execution roles to control which stack resources
+     * users and groups can include in their stack sets. </p>
+     */
+    inline void SetExecutionRoleName(const Aws::String& value) { m_executionRoleNameHasBeenSet = true; m_executionRoleName = value; }
+
+    /**
+     * <p>The name of the IAM execution role used to create or update the stack
+     * set.</p> <p>Use customized execution roles to control which stack resources
+     * users and groups can include in their stack sets. </p>
+     */
+    inline void SetExecutionRoleName(Aws::String&& value) { m_executionRoleNameHasBeenSet = true; m_executionRoleName = std::move(value); }
+
+    /**
+     * <p>The name of the IAM execution role used to create or update the stack
+     * set.</p> <p>Use customized execution roles to control which stack resources
+     * users and groups can include in their stack sets. </p>
+     */
+    inline void SetExecutionRoleName(const char* value) { m_executionRoleNameHasBeenSet = true; m_executionRoleName.assign(value); }
+
+    /**
+     * <p>The name of the IAM execution role used to create or update the stack
+     * set.</p> <p>Use customized execution roles to control which stack resources
+     * users and groups can include in their stack sets. </p>
+     */
+    inline StackSetOperation& WithExecutionRoleName(const Aws::String& value) { SetExecutionRoleName(value); return *this;}
+
+    /**
+     * <p>The name of the IAM execution role used to create or update the stack
+     * set.</p> <p>Use customized execution roles to control which stack resources
+     * users and groups can include in their stack sets. </p>
+     */
+    inline StackSetOperation& WithExecutionRoleName(Aws::String&& value) { SetExecutionRoleName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the IAM execution role used to create or update the stack
+     * set.</p> <p>Use customized execution roles to control which stack resources
+     * users and groups can include in their stack sets. </p>
+     */
+    inline StackSetOperation& WithExecutionRoleName(const char* value) { SetExecutionRoleName(value); return *this;}
+
+
+    /**
      * <p>The time at which the operation was initiated. Note that the creation times
      * for the stack set operation might differ from the creation time of the
      * individual stacks themselves. This is because AWS CloudFormation needs to
@@ -500,6 +550,9 @@ namespace Model
 
     Aws::String m_administrationRoleARN;
     bool m_administrationRoleARNHasBeenSet;
+
+    Aws::String m_executionRoleName;
+    bool m_executionRoleNameHasBeenSet;
 
     Aws::Utils::DateTime m_creationTimestamp;
     bool m_creationTimestampHasBeenSet;

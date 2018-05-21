@@ -433,9 +433,9 @@ namespace Model
      * stack set.</p> <p>Use customized administrator roles to control which users or
      * groups can manage specific stack sets within the same administrator account. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-     * Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User
-     * Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
+     * Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation
+     * User Guide</i>.</p>
      */
     inline const Aws::String& GetAdministrationRoleARN() const{ return m_administrationRoleARN; }
 
@@ -444,9 +444,9 @@ namespace Model
      * stack set.</p> <p>Use customized administrator roles to control which users or
      * groups can manage specific stack sets within the same administrator account. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-     * Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User
-     * Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
+     * Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation
+     * User Guide</i>.</p>
      */
     inline void SetAdministrationRoleARN(const Aws::String& value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN = value; }
 
@@ -455,9 +455,9 @@ namespace Model
      * stack set.</p> <p>Use customized administrator roles to control which users or
      * groups can manage specific stack sets within the same administrator account. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-     * Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User
-     * Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
+     * Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation
+     * User Guide</i>.</p>
      */
     inline void SetAdministrationRoleARN(Aws::String&& value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN = std::move(value); }
 
@@ -466,9 +466,9 @@ namespace Model
      * stack set.</p> <p>Use customized administrator roles to control which users or
      * groups can manage specific stack sets within the same administrator account. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-     * Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User
-     * Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
+     * Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation
+     * User Guide</i>.</p>
      */
     inline void SetAdministrationRoleARN(const char* value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN.assign(value); }
 
@@ -477,9 +477,9 @@ namespace Model
      * stack set.</p> <p>Use customized administrator roles to control which users or
      * groups can manage specific stack sets within the same administrator account. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-     * Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User
-     * Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
+     * Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation
+     * User Guide</i>.</p>
      */
     inline StackSet& WithAdministrationRoleARN(const Aws::String& value) { SetAdministrationRoleARN(value); return *this;}
 
@@ -488,9 +488,9 @@ namespace Model
      * stack set.</p> <p>Use customized administrator roles to control which users or
      * groups can manage specific stack sets within the same administrator account. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-     * Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User
-     * Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
+     * Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation
+     * User Guide</i>.</p>
      */
     inline StackSet& WithAdministrationRoleARN(Aws::String&& value) { SetAdministrationRoleARN(std::move(value)); return *this;}
 
@@ -499,11 +499,61 @@ namespace Model
      * stack set.</p> <p>Use customized administrator roles to control which users or
      * groups can manage specific stack sets within the same administrator account. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-     * Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User
-     * Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
+     * Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation
+     * User Guide</i>.</p>
      */
     inline StackSet& WithAdministrationRoleARN(const char* value) { SetAdministrationRoleARN(value); return *this;}
+
+
+    /**
+     * <p>The name of the IAM execution role used to create or update the stack set.
+     * </p> <p>Use customized execution roles to control which stack resources users
+     * and groups can include in their stack sets. </p>
+     */
+    inline const Aws::String& GetExecutionRoleName() const{ return m_executionRoleName; }
+
+    /**
+     * <p>The name of the IAM execution role used to create or update the stack set.
+     * </p> <p>Use customized execution roles to control which stack resources users
+     * and groups can include in their stack sets. </p>
+     */
+    inline void SetExecutionRoleName(const Aws::String& value) { m_executionRoleNameHasBeenSet = true; m_executionRoleName = value; }
+
+    /**
+     * <p>The name of the IAM execution role used to create or update the stack set.
+     * </p> <p>Use customized execution roles to control which stack resources users
+     * and groups can include in their stack sets. </p>
+     */
+    inline void SetExecutionRoleName(Aws::String&& value) { m_executionRoleNameHasBeenSet = true; m_executionRoleName = std::move(value); }
+
+    /**
+     * <p>The name of the IAM execution role used to create or update the stack set.
+     * </p> <p>Use customized execution roles to control which stack resources users
+     * and groups can include in their stack sets. </p>
+     */
+    inline void SetExecutionRoleName(const char* value) { m_executionRoleNameHasBeenSet = true; m_executionRoleName.assign(value); }
+
+    /**
+     * <p>The name of the IAM execution role used to create or update the stack set.
+     * </p> <p>Use customized execution roles to control which stack resources users
+     * and groups can include in their stack sets. </p>
+     */
+    inline StackSet& WithExecutionRoleName(const Aws::String& value) { SetExecutionRoleName(value); return *this;}
+
+    /**
+     * <p>The name of the IAM execution role used to create or update the stack set.
+     * </p> <p>Use customized execution roles to control which stack resources users
+     * and groups can include in their stack sets. </p>
+     */
+    inline StackSet& WithExecutionRoleName(Aws::String&& value) { SetExecutionRoleName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the IAM execution role used to create or update the stack set.
+     * </p> <p>Use customized execution roles to control which stack resources users
+     * and groups can include in their stack sets. </p>
+     */
+    inline StackSet& WithExecutionRoleName(const char* value) { SetExecutionRoleName(value); return *this;}
 
   private:
 
@@ -536,6 +586,9 @@ namespace Model
 
     Aws::String m_administrationRoleARN;
     bool m_administrationRoleARNHasBeenSet;
+
+    Aws::String m_executionRoleName;
+    bool m_executionRoleNameHasBeenSet;
   };
 
 } // namespace Model
