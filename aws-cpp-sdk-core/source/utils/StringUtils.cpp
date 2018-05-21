@@ -1,12 +1,12 @@
 /*
   * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  * 
+  *
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
   * A copy of the License is located at
-  * 
+  *
   *  http://aws.amazon.com/apache2.0
-  * 
+  *
   * or in the "license" file accompanying this file. This file is distributed
   * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
   * express or implied. See the License for the specific language governing
@@ -56,7 +56,7 @@ Aws::String StringUtils::ToLower(const char* source)
     Aws::String copy;
     size_t sourceLength = strlen(source);
     copy.resize(sourceLength);
-    //appease the latest whims of the VC++ 2017 gods 
+    //appease the latest whims of the VC++ 2017 gods
     std::transform(source, source + sourceLength, copy.begin(), [](unsigned char c) { return (char)::tolower(c); });
 
     return copy;
@@ -68,7 +68,7 @@ Aws::String StringUtils::ToUpper(const char* source)
     Aws::String copy;
     size_t sourceLength = strlen(source);
     copy.resize(sourceLength);
-    //appease the latest whims of the VC++ 2017 gods 
+    //appease the latest whims of the VC++ 2017 gods
     std::transform(source, source + sourceLength, copy.begin(), [](unsigned char c) { return (char)::toupper(c); });
 
     return copy;
@@ -224,7 +224,7 @@ Aws::String StringUtils::URLDecode(const char* safe)
 Aws::String StringUtils::LTrim(const char* source)
 {
     Aws::String copy(source);
-    copy.erase(copy.begin(), std::find_if(copy.begin(), copy.end(), std::not1(std::ptr_fun<int, int>(::isspace))));
+    copy.erase(copy.begin(), std::find_if(copy.begin(), copy.end(), [](int ch) { return !::isspace(ch); }));
     return copy;
 }
 
@@ -232,7 +232,7 @@ Aws::String StringUtils::LTrim(const char* source)
 Aws::String StringUtils::RTrim(const char* source)
 {
     Aws::String copy(source);
-    copy.erase(std::find_if(copy.rbegin(), copy.rend(), std::not1(std::ptr_fun<int, int>(::isspace))).base(), copy.end());
+    copy.erase(std::find_if(copy.rbegin(), copy.rend(), [](int ch) { return !::isspace(ch); }).base(), copy.end());
     return copy;
 }
 
