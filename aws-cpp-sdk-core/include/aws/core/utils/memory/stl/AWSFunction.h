@@ -54,7 +54,7 @@ namespace Aws
 // gcc does not yet support passing allocators into functions
 
 template<typename F>
-F BuildFunction(F f)
+static F BuildFunction(F f)
 {
     return f;
 }
