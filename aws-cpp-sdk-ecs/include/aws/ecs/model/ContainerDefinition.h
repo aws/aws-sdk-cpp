@@ -1684,7 +1684,9 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--hostname</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>The <code>hostname</code> parameter is not supported if using the
+     * <code>awsvpc</code> networkMode.</p> </note>
      */
     inline const Aws::String& GetHostname() const{ return m_hostname; }
 
@@ -1695,7 +1697,9 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--hostname</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>The <code>hostname</code> parameter is not supported if using the
+     * <code>awsvpc</code> networkMode.</p> </note>
      */
     inline void SetHostname(const Aws::String& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
 
@@ -1706,7 +1710,9 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--hostname</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>The <code>hostname</code> parameter is not supported if using the
+     * <code>awsvpc</code> networkMode.</p> </note>
      */
     inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = std::move(value); }
 
@@ -1717,7 +1723,9 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--hostname</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>The <code>hostname</code> parameter is not supported if using the
+     * <code>awsvpc</code> networkMode.</p> </note>
      */
     inline void SetHostname(const char* value) { m_hostnameHasBeenSet = true; m_hostname.assign(value); }
 
@@ -1728,7 +1736,9 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--hostname</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>The <code>hostname</code> parameter is not supported if using the
+     * <code>awsvpc</code> networkMode.</p> </note>
      */
     inline ContainerDefinition& WithHostname(const Aws::String& value) { SetHostname(value); return *this;}
 
@@ -1739,7 +1749,9 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--hostname</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>The <code>hostname</code> parameter is not supported if using the
+     * <code>awsvpc</code> networkMode.</p> </note>
      */
     inline ContainerDefinition& WithHostname(Aws::String&& value) { SetHostname(std::move(value)); return *this;}
 
@@ -1750,7 +1762,9 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--hostname</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>The <code>hostname</code> parameter is not supported if using the
+     * <code>awsvpc</code> networkMode.</p> </note>
      */
     inline ContainerDefinition& WithHostname(const char* value) { SetHostname(value); return *this;}
 

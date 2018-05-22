@@ -230,7 +230,14 @@ namespace Model
      * ARN, the container name (as it appears in a container definition), and the
      * container port to access from the load balancer. When a task from this service
      * is placed on a container instance, the container instance and port combination
-     * is registered as a target in the target group specified here.</p>
+     * is registered as a target in the target group specified here.</p> <p>Services
+     * with tasks that use the <code>awsvpc</code> network mode (for example, those
+     * with the Fargate launch type) only support Application Load Balancers and
+     * Network Load Balancers; Classic Load Balancers are not supported. Also, when you
+     * create any target groups for these services, you must choose <code>ip</code> as
+     * the target type, not <code>instance</code>, because tasks that use the
+     * <code>awsvpc</code> network mode are associated with an elastic network
+     * interface, not an Amazon EC2 instance.</p>
      */
     inline const Aws::Vector<LoadBalancer>& GetLoadBalancers() const{ return m_loadBalancers; }
 
@@ -248,7 +255,14 @@ namespace Model
      * ARN, the container name (as it appears in a container definition), and the
      * container port to access from the load balancer. When a task from this service
      * is placed on a container instance, the container instance and port combination
-     * is registered as a target in the target group specified here.</p>
+     * is registered as a target in the target group specified here.</p> <p>Services
+     * with tasks that use the <code>awsvpc</code> network mode (for example, those
+     * with the Fargate launch type) only support Application Load Balancers and
+     * Network Load Balancers; Classic Load Balancers are not supported. Also, when you
+     * create any target groups for these services, you must choose <code>ip</code> as
+     * the target type, not <code>instance</code>, because tasks that use the
+     * <code>awsvpc</code> network mode are associated with an elastic network
+     * interface, not an Amazon EC2 instance.</p>
      */
     inline void SetLoadBalancers(const Aws::Vector<LoadBalancer>& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = value; }
 
@@ -266,7 +280,14 @@ namespace Model
      * ARN, the container name (as it appears in a container definition), and the
      * container port to access from the load balancer. When a task from this service
      * is placed on a container instance, the container instance and port combination
-     * is registered as a target in the target group specified here.</p>
+     * is registered as a target in the target group specified here.</p> <p>Services
+     * with tasks that use the <code>awsvpc</code> network mode (for example, those
+     * with the Fargate launch type) only support Application Load Balancers and
+     * Network Load Balancers; Classic Load Balancers are not supported. Also, when you
+     * create any target groups for these services, you must choose <code>ip</code> as
+     * the target type, not <code>instance</code>, because tasks that use the
+     * <code>awsvpc</code> network mode are associated with an elastic network
+     * interface, not an Amazon EC2 instance.</p>
      */
     inline void SetLoadBalancers(Aws::Vector<LoadBalancer>&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = std::move(value); }
 
@@ -284,7 +305,14 @@ namespace Model
      * ARN, the container name (as it appears in a container definition), and the
      * container port to access from the load balancer. When a task from this service
      * is placed on a container instance, the container instance and port combination
-     * is registered as a target in the target group specified here.</p>
+     * is registered as a target in the target group specified here.</p> <p>Services
+     * with tasks that use the <code>awsvpc</code> network mode (for example, those
+     * with the Fargate launch type) only support Application Load Balancers and
+     * Network Load Balancers; Classic Load Balancers are not supported. Also, when you
+     * create any target groups for these services, you must choose <code>ip</code> as
+     * the target type, not <code>instance</code>, because tasks that use the
+     * <code>awsvpc</code> network mode are associated with an elastic network
+     * interface, not an Amazon EC2 instance.</p>
      */
     inline CreateServiceRequest& WithLoadBalancers(const Aws::Vector<LoadBalancer>& value) { SetLoadBalancers(value); return *this;}
 
@@ -302,7 +330,14 @@ namespace Model
      * ARN, the container name (as it appears in a container definition), and the
      * container port to access from the load balancer. When a task from this service
      * is placed on a container instance, the container instance and port combination
-     * is registered as a target in the target group specified here.</p>
+     * is registered as a target in the target group specified here.</p> <p>Services
+     * with tasks that use the <code>awsvpc</code> network mode (for example, those
+     * with the Fargate launch type) only support Application Load Balancers and
+     * Network Load Balancers; Classic Load Balancers are not supported. Also, when you
+     * create any target groups for these services, you must choose <code>ip</code> as
+     * the target type, not <code>instance</code>, because tasks that use the
+     * <code>awsvpc</code> network mode are associated with an elastic network
+     * interface, not an Amazon EC2 instance.</p>
      */
     inline CreateServiceRequest& WithLoadBalancers(Aws::Vector<LoadBalancer>&& value) { SetLoadBalancers(std::move(value)); return *this;}
 
@@ -320,7 +355,14 @@ namespace Model
      * ARN, the container name (as it appears in a container definition), and the
      * container port to access from the load balancer. When a task from this service
      * is placed on a container instance, the container instance and port combination
-     * is registered as a target in the target group specified here.</p>
+     * is registered as a target in the target group specified here.</p> <p>Services
+     * with tasks that use the <code>awsvpc</code> network mode (for example, those
+     * with the Fargate launch type) only support Application Load Balancers and
+     * Network Load Balancers; Classic Load Balancers are not supported. Also, when you
+     * create any target groups for these services, you must choose <code>ip</code> as
+     * the target type, not <code>instance</code>, because tasks that use the
+     * <code>awsvpc</code> network mode are associated with an elastic network
+     * interface, not an Amazon EC2 instance.</p>
      */
     inline CreateServiceRequest& AddLoadBalancers(const LoadBalancer& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(value); return *this; }
 
@@ -338,7 +380,14 @@ namespace Model
      * ARN, the container name (as it appears in a container definition), and the
      * container port to access from the load balancer. When a task from this service
      * is placed on a container instance, the container instance and port combination
-     * is registered as a target in the target group specified here.</p>
+     * is registered as a target in the target group specified here.</p> <p>Services
+     * with tasks that use the <code>awsvpc</code> network mode (for example, those
+     * with the Fargate launch type) only support Application Load Balancers and
+     * Network Load Balancers; Classic Load Balancers are not supported. Also, when you
+     * create any target groups for these services, you must choose <code>ip</code> as
+     * the target type, not <code>instance</code>, because tasks that use the
+     * <code>awsvpc</code> network mode are associated with an elastic network
+     * interface, not an Amazon EC2 instance.</p>
      */
     inline CreateServiceRequest& AddLoadBalancers(LoadBalancer&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(std::move(value)); return *this; }
 
@@ -346,56 +395,77 @@ namespace Model
     /**
      * <p>The details of the service discovery registries you want to assign to this
      * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service
-     * Discovery</a>.</p>
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
+     * using platform version v1.1.0 or later. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a>.</p> </note>
      */
     inline const Aws::Vector<ServiceRegistry>& GetServiceRegistries() const{ return m_serviceRegistries; }
 
     /**
      * <p>The details of the service discovery registries you want to assign to this
      * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service
-     * Discovery</a>.</p>
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
+     * using platform version v1.1.0 or later. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a>.</p> </note>
      */
     inline void SetServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = value; }
 
     /**
      * <p>The details of the service discovery registries you want to assign to this
      * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service
-     * Discovery</a>.</p>
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
+     * using platform version v1.1.0 or later. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a>.</p> </note>
      */
     inline void SetServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = std::move(value); }
 
     /**
      * <p>The details of the service discovery registries you want to assign to this
      * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service
-     * Discovery</a>.</p>
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
+     * using platform version v1.1.0 or later. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a>.</p> </note>
      */
     inline CreateServiceRequest& WithServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { SetServiceRegistries(value); return *this;}
 
     /**
      * <p>The details of the service discovery registries you want to assign to this
      * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service
-     * Discovery</a>.</p>
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
+     * using platform version v1.1.0 or later. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a>.</p> </note>
      */
     inline CreateServiceRequest& WithServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { SetServiceRegistries(std::move(value)); return *this;}
 
     /**
      * <p>The details of the service discovery registries you want to assign to this
      * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service
-     * Discovery</a>.</p>
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
+     * using platform version v1.1.0 or later. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a>.</p> </note>
      */
     inline CreateServiceRequest& AddServiceRegistries(const ServiceRegistry& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(value); return *this; }
 
     /**
      * <p>The details of the service discovery registries you want to assign to this
      * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service
-     * Discovery</a>.</p>
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
+     * using platform version v1.1.0 or later. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a>.</p> </note>
      */
     inline CreateServiceRequest& AddServiceRegistries(ServiceRegistry&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(std::move(value)); return *this; }
 
@@ -420,44 +490,44 @@ namespace Model
 
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. Up to 32 ASCII characters are allowed.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. Up to 32 ASCII characters are allowed.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. Up to 32 ASCII characters are allowed.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. Up to 32 ASCII characters are allowed.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. Up to 32 ASCII characters are allowed.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. Up to 32 ASCII characters are allowed.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. Up to 32 ASCII characters are allowed.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. Up to 32 ASCII characters are allowed.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. Up to 32 ASCII characters are allowed.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. Up to 32 ASCII characters are allowed.</p>
      */
     inline CreateServiceRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. Up to 32 ASCII characters are allowed.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. Up to 32 ASCII characters are allowed.</p>
      */
     inline CreateServiceRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. Up to 32 ASCII characters are allowed.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. Up to 32 ASCII characters are allowed.</p>
      */
     inline CreateServiceRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

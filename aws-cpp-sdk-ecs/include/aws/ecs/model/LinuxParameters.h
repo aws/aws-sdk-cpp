@@ -218,73 +218,93 @@ namespace Model
 
 
     /**
-     * <p>The value for the size of the <code>/dev/shm</code> volume. This parameter
-     * maps to the <code>--shm-size</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * <p>The value for the size (in MiB) of the <code>/dev/shm</code> volume. This
+     * parameter maps to the <code>--shm-size</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>sharedMemorySize</code> parameter is not supported.</p> </note>
      */
     inline int GetSharedMemorySize() const{ return m_sharedMemorySize; }
 
     /**
-     * <p>The value for the size of the <code>/dev/shm</code> volume. This parameter
-     * maps to the <code>--shm-size</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * <p>The value for the size (in MiB) of the <code>/dev/shm</code> volume. This
+     * parameter maps to the <code>--shm-size</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>sharedMemorySize</code> parameter is not supported.</p> </note>
      */
     inline void SetSharedMemorySize(int value) { m_sharedMemorySizeHasBeenSet = true; m_sharedMemorySize = value; }
 
     /**
-     * <p>The value for the size of the <code>/dev/shm</code> volume. This parameter
-     * maps to the <code>--shm-size</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * <p>The value for the size (in MiB) of the <code>/dev/shm</code> volume. This
+     * parameter maps to the <code>--shm-size</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>sharedMemorySize</code> parameter is not supported.</p> </note>
      */
     inline LinuxParameters& WithSharedMemorySize(int value) { SetSharedMemorySize(value); return *this;}
 
 
     /**
-     * <p>The container path, mount options, and size of the tmpfs mount. This
+     * <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This
      * parameter maps to the <code>--tmpfs</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>tmpfs</code> parameter is not supported.</p> </note>
      */
     inline const Aws::Vector<Tmpfs>& GetTmpfs() const{ return m_tmpfs; }
 
     /**
-     * <p>The container path, mount options, and size of the tmpfs mount. This
+     * <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This
      * parameter maps to the <code>--tmpfs</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>tmpfs</code> parameter is not supported.</p> </note>
      */
     inline void SetTmpfs(const Aws::Vector<Tmpfs>& value) { m_tmpfsHasBeenSet = true; m_tmpfs = value; }
 
     /**
-     * <p>The container path, mount options, and size of the tmpfs mount. This
+     * <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This
      * parameter maps to the <code>--tmpfs</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>tmpfs</code> parameter is not supported.</p> </note>
      */
     inline void SetTmpfs(Aws::Vector<Tmpfs>&& value) { m_tmpfsHasBeenSet = true; m_tmpfs = std::move(value); }
 
     /**
-     * <p>The container path, mount options, and size of the tmpfs mount. This
+     * <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This
      * parameter maps to the <code>--tmpfs</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>tmpfs</code> parameter is not supported.</p> </note>
      */
     inline LinuxParameters& WithTmpfs(const Aws::Vector<Tmpfs>& value) { SetTmpfs(value); return *this;}
 
     /**
-     * <p>The container path, mount options, and size of the tmpfs mount. This
+     * <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This
      * parameter maps to the <code>--tmpfs</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>tmpfs</code> parameter is not supported.</p> </note>
      */
     inline LinuxParameters& WithTmpfs(Aws::Vector<Tmpfs>&& value) { SetTmpfs(std::move(value)); return *this;}
 
     /**
-     * <p>The container path, mount options, and size of the tmpfs mount. This
+     * <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This
      * parameter maps to the <code>--tmpfs</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>tmpfs</code> parameter is not supported.</p> </note>
      */
     inline LinuxParameters& AddTmpfs(const Tmpfs& value) { m_tmpfsHasBeenSet = true; m_tmpfs.push_back(value); return *this; }
 
     /**
-     * <p>The container path, mount options, and size of the tmpfs mount. This
+     * <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This
      * parameter maps to the <code>--tmpfs</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>tmpfs</code> parameter is not supported.</p> </note>
      */
     inline LinuxParameters& AddTmpfs(Tmpfs&& value) { m_tmpfsHasBeenSet = true; m_tmpfs.push_back(std::move(value)); return *this; }
 

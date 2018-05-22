@@ -380,14 +380,14 @@ namespace Model
          * scheduler attempts to balance tasks across Availability Zones in this manner
          * (although you can choose a different placement strategy) with the
          * <code>placementStrategy</code> parameter):</p> <ul> <li> <p>Sort the valid
-         * container instances by the fewest number of running tasks for this service in
-         * the same Availability Zone as the instance. For example, if zone A has one
-         * running service task and zones B and C each have zero, valid container instances
-         * in either zone B or C are considered optimal for placement.</p> </li> <li>
-         * <p>Place the new service task on a valid container instance in an optimal
-         * Availability Zone (based on the previous steps), favoring container instances
-         * with the fewest number of running tasks for this service.</p> </li> </ul> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * container instances, giving priority to instances that have the fewest number of
+         * running tasks for this service in their respective Availability Zone. For
+         * example, if zone A has one running service task and zones B and C each have
+         * zero, valid container instances in either zone B or C are considered optimal for
+         * placement.</p> </li> <li> <p>Place the new service task on a valid container
+         * instance in an optimal Availability Zone (based on the previous steps), favoring
+         * container instances with the fewest number of running tasks for this
+         * service.</p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService">AWS
          * API Reference</a></p>
          */
@@ -440,14 +440,14 @@ namespace Model
          * scheduler attempts to balance tasks across Availability Zones in this manner
          * (although you can choose a different placement strategy) with the
          * <code>placementStrategy</code> parameter):</p> <ul> <li> <p>Sort the valid
-         * container instances by the fewest number of running tasks for this service in
-         * the same Availability Zone as the instance. For example, if zone A has one
-         * running service task and zones B and C each have zero, valid container instances
-         * in either zone B or C are considered optimal for placement.</p> </li> <li>
-         * <p>Place the new service task on a valid container instance in an optimal
-         * Availability Zone (based on the previous steps), favoring container instances
-         * with the fewest number of running tasks for this service.</p> </li> </ul> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * container instances, giving priority to instances that have the fewest number of
+         * running tasks for this service in their respective Availability Zone. For
+         * example, if zone A has one running service task and zones B and C each have
+         * zero, valid container instances in either zone B or C are considered optimal for
+         * placement.</p> </li> <li> <p>Place the new service task on a valid container
+         * instance in an optimal Availability Zone (based on the previous steps), favoring
+         * container instances with the fewest number of running tasks for this
+         * service.</p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService">AWS
          * API Reference</a></p>
          *
@@ -502,14 +502,14 @@ namespace Model
          * scheduler attempts to balance tasks across Availability Zones in this manner
          * (although you can choose a different placement strategy) with the
          * <code>placementStrategy</code> parameter):</p> <ul> <li> <p>Sort the valid
-         * container instances by the fewest number of running tasks for this service in
-         * the same Availability Zone as the instance. For example, if zone A has one
-         * running service task and zones B and C each have zero, valid container instances
-         * in either zone B or C are considered optimal for placement.</p> </li> <li>
-         * <p>Place the new service task on a valid container instance in an optimal
-         * Availability Zone (based on the previous steps), favoring container instances
-         * with the fewest number of running tasks for this service.</p> </li> </ul> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * container instances, giving priority to instances that have the fewest number of
+         * running tasks for this service in their respective Availability Zone. For
+         * example, if zone A has one running service task and zones B and C each have
+         * zero, valid container instances in either zone B or C are considered optimal for
+         * placement.</p> </li> <li> <p>Place the new service task on a valid container
+         * instance in an optimal Availability Zone (based on the previous steps), favoring
+         * container instances with the fewest number of running tasks for this
+         * service.</p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService">AWS
          * API Reference</a></p>
          *

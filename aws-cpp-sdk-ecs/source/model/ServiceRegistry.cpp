@@ -31,14 +31,20 @@ namespace Model
 ServiceRegistry::ServiceRegistry() : 
     m_registryArnHasBeenSet(false),
     m_port(0),
-    m_portHasBeenSet(false)
+    m_portHasBeenSet(false),
+    m_containerNameHasBeenSet(false),
+    m_containerPort(0),
+    m_containerPortHasBeenSet(false)
 {
 }
 
 ServiceRegistry::ServiceRegistry(const JsonValue& jsonValue) : 
     m_registryArnHasBeenSet(false),
     m_port(0),
-    m_portHasBeenSet(false)
+    m_portHasBeenSet(false),
+    m_containerNameHasBeenSet(false),
+    m_containerPort(0),
+    m_containerPortHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +65,20 @@ ServiceRegistry& ServiceRegistry::operator =(const JsonValue& jsonValue)
     m_portHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("containerName"))
+  {
+    m_containerName = jsonValue.GetString("containerName");
+
+    m_containerNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("containerPort"))
+  {
+    m_containerPort = jsonValue.GetInteger("containerPort");
+
+    m_containerPortHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -75,6 +95,18 @@ JsonValue ServiceRegistry::Jsonize() const
   if(m_portHasBeenSet)
   {
    payload.WithInteger("port", m_port);
+
+  }
+
+  if(m_containerNameHasBeenSet)
+  {
+   payload.WithString("containerName", m_containerName);
+
+  }
+
+  if(m_containerPortHasBeenSet)
+  {
+   payload.WithInteger("containerPort", m_containerPort);
 
   }
 

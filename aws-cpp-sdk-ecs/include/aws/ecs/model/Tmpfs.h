@@ -85,17 +85,17 @@ namespace Model
 
 
     /**
-     * <p>The size of the tmpfs volume.</p>
+     * <p>The size (in MiB) of the tmpfs volume.</p>
      */
     inline int GetSize() const{ return m_size; }
 
     /**
-     * <p>The size of the tmpfs volume.</p>
+     * <p>The size (in MiB) of the tmpfs volume.</p>
      */
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
-     * <p>The size of the tmpfs volume.</p>
+     * <p>The size (in MiB) of the tmpfs volume.</p>
      */
     inline Tmpfs& WithSize(int value) { SetSize(value); return *this;}
 

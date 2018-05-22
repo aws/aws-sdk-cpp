@@ -224,49 +224,98 @@ namespace Model
     /**
      * <p>A list of Elastic Load Balancing load balancer objects, containing the load
      * balancer name, the container name (as it appears in a container definition), and
-     * the container port to access from the load balancer.</p>
+     * the container port to access from the load balancer.</p> <p>Services with tasks
+     * that use the <code>awsvpc</code> network mode (for example, those with the
+     * Fargate launch type) only support Application Load Balancers and Network Load
+     * Balancers; Classic Load Balancers are not supported. Also, when you create any
+     * target groups for these services, you must choose <code>ip</code> as the target
+     * type, not <code>instance</code>, because tasks that use the <code>awsvpc</code>
+     * network mode are associated with an elastic network interface, not an Amazon EC2
+     * instance.</p>
      */
     inline const Aws::Vector<LoadBalancer>& GetLoadBalancers() const{ return m_loadBalancers; }
 
     /**
      * <p>A list of Elastic Load Balancing load balancer objects, containing the load
      * balancer name, the container name (as it appears in a container definition), and
-     * the container port to access from the load balancer.</p>
+     * the container port to access from the load balancer.</p> <p>Services with tasks
+     * that use the <code>awsvpc</code> network mode (for example, those with the
+     * Fargate launch type) only support Application Load Balancers and Network Load
+     * Balancers; Classic Load Balancers are not supported. Also, when you create any
+     * target groups for these services, you must choose <code>ip</code> as the target
+     * type, not <code>instance</code>, because tasks that use the <code>awsvpc</code>
+     * network mode are associated with an elastic network interface, not an Amazon EC2
+     * instance.</p>
      */
     inline void SetLoadBalancers(const Aws::Vector<LoadBalancer>& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = value; }
 
     /**
      * <p>A list of Elastic Load Balancing load balancer objects, containing the load
      * balancer name, the container name (as it appears in a container definition), and
-     * the container port to access from the load balancer.</p>
+     * the container port to access from the load balancer.</p> <p>Services with tasks
+     * that use the <code>awsvpc</code> network mode (for example, those with the
+     * Fargate launch type) only support Application Load Balancers and Network Load
+     * Balancers; Classic Load Balancers are not supported. Also, when you create any
+     * target groups for these services, you must choose <code>ip</code> as the target
+     * type, not <code>instance</code>, because tasks that use the <code>awsvpc</code>
+     * network mode are associated with an elastic network interface, not an Amazon EC2
+     * instance.</p>
      */
     inline void SetLoadBalancers(Aws::Vector<LoadBalancer>&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = std::move(value); }
 
     /**
      * <p>A list of Elastic Load Balancing load balancer objects, containing the load
      * balancer name, the container name (as it appears in a container definition), and
-     * the container port to access from the load balancer.</p>
+     * the container port to access from the load balancer.</p> <p>Services with tasks
+     * that use the <code>awsvpc</code> network mode (for example, those with the
+     * Fargate launch type) only support Application Load Balancers and Network Load
+     * Balancers; Classic Load Balancers are not supported. Also, when you create any
+     * target groups for these services, you must choose <code>ip</code> as the target
+     * type, not <code>instance</code>, because tasks that use the <code>awsvpc</code>
+     * network mode are associated with an elastic network interface, not an Amazon EC2
+     * instance.</p>
      */
     inline Service& WithLoadBalancers(const Aws::Vector<LoadBalancer>& value) { SetLoadBalancers(value); return *this;}
 
     /**
      * <p>A list of Elastic Load Balancing load balancer objects, containing the load
      * balancer name, the container name (as it appears in a container definition), and
-     * the container port to access from the load balancer.</p>
+     * the container port to access from the load balancer.</p> <p>Services with tasks
+     * that use the <code>awsvpc</code> network mode (for example, those with the
+     * Fargate launch type) only support Application Load Balancers and Network Load
+     * Balancers; Classic Load Balancers are not supported. Also, when you create any
+     * target groups for these services, you must choose <code>ip</code> as the target
+     * type, not <code>instance</code>, because tasks that use the <code>awsvpc</code>
+     * network mode are associated with an elastic network interface, not an Amazon EC2
+     * instance.</p>
      */
     inline Service& WithLoadBalancers(Aws::Vector<LoadBalancer>&& value) { SetLoadBalancers(std::move(value)); return *this;}
 
     /**
      * <p>A list of Elastic Load Balancing load balancer objects, containing the load
      * balancer name, the container name (as it appears in a container definition), and
-     * the container port to access from the load balancer.</p>
+     * the container port to access from the load balancer.</p> <p>Services with tasks
+     * that use the <code>awsvpc</code> network mode (for example, those with the
+     * Fargate launch type) only support Application Load Balancers and Network Load
+     * Balancers; Classic Load Balancers are not supported. Also, when you create any
+     * target groups for these services, you must choose <code>ip</code> as the target
+     * type, not <code>instance</code>, because tasks that use the <code>awsvpc</code>
+     * network mode are associated with an elastic network interface, not an Amazon EC2
+     * instance.</p>
      */
     inline Service& AddLoadBalancers(const LoadBalancer& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(value); return *this; }
 
     /**
      * <p>A list of Elastic Load Balancing load balancer objects, containing the load
      * balancer name, the container name (as it appears in a container definition), and
-     * the container port to access from the load balancer.</p>
+     * the container port to access from the load balancer.</p> <p>Services with tasks
+     * that use the <code>awsvpc</code> network mode (for example, those with the
+     * Fargate launch type) only support Application Load Balancers and Network Load
+     * Balancers; Classic Load Balancers are not supported. Also, when you create any
+     * target groups for these services, you must choose <code>ip</code> as the target
+     * type, not <code>instance</code>, because tasks that use the <code>awsvpc</code>
+     * network mode are associated with an elastic network interface, not an Amazon EC2
+     * instance.</p>
      */
     inline Service& AddLoadBalancers(LoadBalancer&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(std::move(value)); return *this; }
 
