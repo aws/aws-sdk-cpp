@@ -13,7 +13,7 @@
   * permissions and limitations under the License.
   */
 
-#include <aws/core/platform/Time.h>
+#include <aws/core/platform/AWSTime.h>
 
 #include <limits.h>
 #include <time.h>

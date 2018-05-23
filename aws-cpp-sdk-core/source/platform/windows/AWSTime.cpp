@@ -13,7 +13,7 @@
   * permissions and limitations under the License.
   */
 
-#include <aws/core/platform/Time.h>
+#include <aws/core/platform/AWSTime.h>
 
 #include <time.h>
 
@@ -24,17 +24,17 @@ namespace Time
 
 time_t TimeGM(struct tm* const t)
 {
-    return timegm(t);
+    return _mkgmtime(t);
 }
 
 void LocalTime(tm* t, std::time_t time)
 {
-    localtime_r(&time, t);
+    localtime_s(t, &time);
 }
 
 void GMTime(tm* t, std::time_t time)
 {
-    gmtime_r(&time, t);
+    gmtime_s(t, &time);
 }
 
 } // namespace Time

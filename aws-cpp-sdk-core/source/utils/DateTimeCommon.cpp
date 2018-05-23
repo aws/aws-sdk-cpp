@@ -15,7 +15,7 @@
 
 #include <aws/core/utils/DateTime.h>
 
-#include <aws/core/platform/Time.h>
+#include <aws/core/platform/AWSTime.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <time.h>
