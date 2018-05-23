@@ -25,8 +25,8 @@ namespace Aws
         return g_enumOverflow;
     }
 
-    Utils::EnumParseOverflowContainer* SetEnumOverflowContainer(Utils::EnumParseOverflowContainer* newValue)
+    void SetEnumOverflowContainer(Utils::EnumParseOverflowContainer* newValue)
     {
-        return g_enumOverflow.exchange(newValue);
+        g_enumOverflow = newValue;
     }
 }
