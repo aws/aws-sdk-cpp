@@ -18,7 +18,7 @@
 
 namespace Aws
 {
-    static Utils::EnumParseOverflowContainer* g_enumOverflow = nullptr;
+    static std::atomic<Utils::EnumParseOverflowContainer*> g_enumOverflow(nullptr);
 
     Utils::EnumParseOverflowContainer* GetEnumOverflowContainer()
     {

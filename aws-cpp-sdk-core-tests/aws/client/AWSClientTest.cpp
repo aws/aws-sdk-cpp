@@ -410,19 +410,6 @@ TEST(AWSClientTest, TestHostHeaderWithStandardHttpPort)
     ASSERT_STREQ("example.amazonaws.com:80", host.c_str());
 }
 
-TEST(AWSClientTest, TestOverflowContainerLife)
-{
-    {
-        ClientConfiguration config;
-        MockAWSClient client(config);
-        auto container = Aws::GetEnumOverflowContainer();
-        ASSERT_NE(container, nullptr);
-    }
-
-    auto container = Aws::GetEnumOverflowContainer();
-    ASSERT_EQ(container, nullptr);
-}
-
 TEST(AWSClientTest, TestCopyingClientExtendsOverflowContainerLife)
 {
     ClientConfiguration config;
@@ -441,9 +428,4 @@ TEST(AWSClientTest, TestCopyingClientExtendsOverflowContainerLife)
     client2 = nullptr;
     container = Aws::GetEnumOverflowContainer();
     ASSERT_NE(container, nullptr);
-
-    // clear client3
-    client3 = nullptr;
-    container = Aws::GetEnumOverflowContainer();
-    ASSERT_EQ(container, nullptr);
 }
