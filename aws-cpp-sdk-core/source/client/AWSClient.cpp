@@ -76,8 +76,18 @@ void AWSClient::InitializeGlobalStatics()
 {
     if (s_refCount++ == 0)
     {
+        auto oldValue = Aws::SetEnumOverflowContainer(nullptr);
+        Aws::Delete(oldValue);
         Utils::EnumParseOverflowContainer* container = Aws::New<Utils::EnumParseOverflowContainer>(AWS_CLIENT_LOG_TAG);
-        Aws::SetEnumOverflowContainer(container);
+        oldValue = Aws::SetEnumOverflowContainer(container);
+        assert(oldValue == nullptr);
+    }
+
+    // this is ugly, but needed in case the thread that set the refCount to 1 gets pre-empted before initializing the
+    // container.
+    while(!Aws::GetEnumOverflowContainer())
+    {
+        std::this_thread::yield();
     }
 }
 
@@ -181,9 +191,8 @@ AWSClient::~AWSClient()
 {
     if (--s_refCount == 0)
     {
-        Utils::EnumParseOverflowContainer* expectedPtrValue = Aws::GetEnumOverflowContainer();
-        Aws::SetEnumOverflowContainer(nullptr);
-        Aws::Delete(expectedPtrValue);
+        auto oldValue = Aws::SetEnumOverflowContainer(nullptr);
+        Aws::Delete(oldValue);
     }
 }
 

@@ -32,7 +32,7 @@ namespace Aws
     AWS_CORE_API Utils::EnumParseOverflowContainer* GetEnumOverflowContainer();
 
     /**
-     * Sets the underlying container to newValue.
+     * Atomically sets the underlying container to newValue and returns the old value.
      */
-    void SetEnumOverflowContainer(Utils::EnumParseOverflowContainer* newValue);
+    Utils::EnumParseOverflowContainer* SetEnumOverflowContainer(Utils::EnumParseOverflowContainer* newValue);
 }

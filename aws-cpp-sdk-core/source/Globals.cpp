@@ -18,15 +18,15 @@
 
 namespace Aws
 {
-    static Utils::EnumParseOverflowContainer* g_enumOverflow = nullptr;
+    static std::atomic<Utils::EnumParseOverflowContainer*> g_enumOverflow(nullptr);
 
     Utils::EnumParseOverflowContainer* GetEnumOverflowContainer()
     {
         return g_enumOverflow;
     }
 
-    void SetEnumOverflowContainer(Utils::EnumParseOverflowContainer* newValue)
+    Utils::EnumParseOverflowContainer* SetEnumOverflowContainer(Utils::EnumParseOverflowContainer* newValue)
     {
-        g_enumOverflow = newValue;
+        return g_enumOverflow.exchange(newValue);
     }
 }
