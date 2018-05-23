@@ -17,6 +17,7 @@
 #include <aws/core/Aws.h>
 #include <aws/core/utils/logging/AWSLogging.h>
 #include <aws/core/utils/logging/DefaultLogSystem.h>
+#include <aws/core/Globals.h>
 
 namespace Aws
 {
@@ -97,10 +98,12 @@ namespace Aws
         Aws::Http::SetInitCleanupCurlFlag(options.httpOptions.initAndCleanupCurl);
         Aws::Http::SetInstallSigPipeHandlerFlag(options.httpOptions.installSigPipeHandler);
         Aws::Http::InitHttp();
+        Aws::InitializeEnumOverflowContainer();
     }
 
     void ShutdownAPI(const SDKOptions& options)
     {
+        Aws::CleanupEnumOverflowContainer();
         Aws::Http::CleanupHttp();
         Aws::Utils::Crypto::CleanupCrypto();
 

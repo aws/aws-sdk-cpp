@@ -72,15 +72,6 @@ static CoreErrors GuessBodylessErrorType(Aws::Http::HttpResponseCode responseCod
     }    
 }
 
-void AWSClient::InitializeGlobalStatics()
-{
-    if (s_refCount++ == 0)
-    {
-        Utils::EnumParseOverflowContainer* container = Aws::New<Utils::EnumParseOverflowContainer>(AWS_CLIENT_LOG_TAG);
-        Aws::SetEnumOverflowContainer(container);
-    }
-}
-
 AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
@@ -94,7 +85,6 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_hash(Aws::Utils::Crypto::CreateMD5Implementation()),
     m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment)
 {
-    InitializeGlobalStatics();
 }
 
 AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
@@ -110,81 +100,6 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_hash(Aws::Utils::Crypto::CreateMD5Implementation()),
     m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment)
 {
-    InitializeGlobalStatics();
-}
-
-
-AWSClient::AWSClient(const AWSClient& other) :
-            m_httpClient(other.m_httpClient),
-            m_signerProvider(other.m_signerProvider),
-            m_errorMarshaller(other.m_errorMarshaller),
-            m_retryStrategy(other.m_retryStrategy),
-            m_writeRateLimiter(other.m_writeRateLimiter),
-            m_readRateLimiter(other.m_readRateLimiter),
-            m_userAgent(other.m_userAgent),
-            m_hash(other.m_hash),
-            m_enableClockSkewAdjustment(other.m_enableClockSkewAdjustment)
-{
-    s_refCount++;
-}
-
-AWSClient::AWSClient(AWSClient&& other) :
-            m_httpClient(std::move(other.m_httpClient)),
-            m_signerProvider(std::move(other.m_signerProvider)),
-            m_errorMarshaller(std::move(other.m_errorMarshaller)),
-            m_retryStrategy(std::move(other.m_retryStrategy)),
-            m_writeRateLimiter(std::move(other.m_writeRateLimiter)),
-            m_readRateLimiter(std::move(other.m_readRateLimiter)),
-            m_userAgent(std::move(other.m_userAgent)),
-            m_hash(std::move(other.m_hash)),
-            m_enableClockSkewAdjustment(other.m_enableClockSkewAdjustment)
-{
-    s_refCount++;
-}
-
-AWSClient& AWSClient::operator = (const AWSClient& other)
-{
-    if(this == &other)
-    {
-        return *this;
-    }
-
-    m_httpClient = other.m_httpClient;
-    m_signerProvider = other.m_signerProvider;
-    m_errorMarshaller = other.m_errorMarshaller;
-    m_retryStrategy = other.m_retryStrategy;
-    m_writeRateLimiter = other.m_writeRateLimiter;
-    m_readRateLimiter = other.m_readRateLimiter;
-    m_userAgent = other.m_userAgent;
-    m_hash = other.m_hash;
-    m_enableClockSkewAdjustment = other.m_enableClockSkewAdjustment;
-    s_refCount++;
-    return *this;
-}
-
-AWSClient& AWSClient::operator = (AWSClient&& other)
-{
-    m_httpClient = std::move(other.m_httpClient);
-    m_signerProvider = std::move(other.m_signerProvider);
-    m_errorMarshaller = std::move(other.m_errorMarshaller);
-    m_retryStrategy = std::move(other.m_retryStrategy);
-    m_writeRateLimiter = std::move(other.m_writeRateLimiter);
-    m_readRateLimiter = std::move(other.m_readRateLimiter);
-    m_userAgent = std::move(other.m_userAgent);
-    m_hash = std::move(other.m_hash);
-    m_enableClockSkewAdjustment = other.m_enableClockSkewAdjustment;
-    s_refCount++;
-    return *this;
-}
-
-AWSClient::~AWSClient()
-{
-    if (--s_refCount == 0)
-    {
-        Utils::EnumParseOverflowContainer* expectedPtrValue = Aws::GetEnumOverflowContainer();
-        Aws::SetEnumOverflowContainer(nullptr);
-        Aws::Delete(expectedPtrValue);
-    }
 }
 
 void AWSClient::DisableRequestProcessing() 

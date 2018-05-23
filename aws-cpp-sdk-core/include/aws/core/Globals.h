@@ -26,13 +26,20 @@ namespace Aws
     /**
      * This is used to handle the Enum round tripping problem
      * for when a service updates their enumerations, but the user does not
-     * have an up to date client. This member will be initialized the first time a client
-     * is created and will be cleaned up when the last client goes out of scope.
+     * have an up to date client. This container will be initialized during Aws::InitAPI
+     * and will be cleaned on Aws::ShutdownAPI.
      */
     AWS_CORE_API Utils::EnumParseOverflowContainer* GetEnumOverflowContainer();
 
     /**
-     * Sets the underlying container to newValue.
+     * Initializes a global overflow container to a new instance.
+     * This should only be called once from within Aws::InitAPI
      */
-    void SetEnumOverflowContainer(Utils::EnumParseOverflowContainer* newValue);
+    void InitializeEnumOverflowContainer();
+
+    /**
+     * Destroys the global overflow container instance.
+     * This should only be called once from within Aws::ShutdownAPI
+     */
+    void CleanupEnumOverflowContainer();
 }
