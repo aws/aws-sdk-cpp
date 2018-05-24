@@ -15,11 +15,12 @@
 
 #include <aws/core/utils/threading/ReaderWriterLock.h>
 #include <cstdint>
+#include <limits>
 #include <cassert>
 
 using namespace Aws::Utils::Threading;
 
-static const int64_t MaxReaders = INT32_MAX;
+static const int64_t MaxReaders = std::numeric_limits<std::int32_t>::max();
 
 ReaderWriterLock::ReaderWriterLock() :
     m_readers(0),
