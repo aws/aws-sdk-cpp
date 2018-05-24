@@ -33,6 +33,7 @@ namespace Aws
         static const int DEBIAN_HASH = HashingUtils::HashString("DEBIAN");
         static const int AMAZON_LINUX_HASH = HashingUtils::HashString("AMAZON_LINUX");
         static const int UBUNTU_HASH = HashingUtils::HashString("UBUNTU");
+        static const int WINDOWS_SERVER_HASH = HashingUtils::HashString("WINDOWS_SERVER");
 
 
         PlatformType GetPlatformTypeForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == UBUNTU_HASH)
           {
             return PlatformType::UBUNTU;
+          }
+          else if (hashCode == WINDOWS_SERVER_HASH)
+          {
+            return PlatformType::WINDOWS_SERVER;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +75,8 @@ namespace Aws
             return "AMAZON_LINUX";
           case PlatformType::UBUNTU:
             return "UBUNTU";
+          case PlatformType::WINDOWS_SERVER:
+            return "WINDOWS_SERVER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

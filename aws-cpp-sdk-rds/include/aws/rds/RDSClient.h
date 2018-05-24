@@ -1501,7 +1501,8 @@ namespace Aws
 
         /**
          * <p>Creates a new DB security group. DB security groups control access to a DB
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * instance.</p> <note> <p>A DB security group controls access to EC2-Classic DB
+         * instances that are not in a VPC.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSecurityGroup">AWS
          * API Reference</a></p>
          */
@@ -1509,7 +1510,8 @@ namespace Aws
 
         /**
          * <p>Creates a new DB security group. DB security groups control access to a DB
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * instance.</p> <note> <p>A DB security group controls access to EC2-Classic DB
+         * instances that are not in a VPC.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSecurityGroup">AWS
          * API Reference</a></p>
          *
@@ -1519,7 +1521,8 @@ namespace Aws
 
         /**
          * <p>Creates a new DB security group. DB security groups control access to a DB
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * instance.</p> <note> <p>A DB security group controls access to EC2-Classic DB
+         * instances that are not in a VPC.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSecurityGroup">AWS
          * API Reference</a></p>
          *

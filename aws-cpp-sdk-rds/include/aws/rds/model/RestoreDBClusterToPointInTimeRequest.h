@@ -683,6 +683,55 @@ namespace Model
      */
     inline RestoreDBClusterToPointInTimeRequest& WithBacktrackWindow(long long value) { SetBacktrackWindow(value); return *this;}
 
+
+    /**
+     * <p>The list of logs that the restored DB cluster is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
+
+    /**
+     * <p>The list of logs that the restored DB cluster is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline void SetEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = value; }
+
+    /**
+     * <p>The list of logs that the restored DB cluster is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline void SetEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = std::move(value); }
+
+    /**
+     * <p>The list of logs that the restored DB cluster is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnableCloudwatchLogsExports(value); return *this;}
+
+    /**
+     * <p>The list of logs that the restored DB cluster is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnableCloudwatchLogsExports(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of logs that the restored DB cluster is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& AddEnableCloudwatchLogsExports(const Aws::String& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
+
+    /**
+     * <p>The list of logs that the restored DB cluster is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& AddEnableCloudwatchLogsExports(Aws::String&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The list of logs that the restored DB cluster is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& AddEnableCloudwatchLogsExports(const char* value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
+
   private:
 
     Aws::String m_dBClusterIdentifier;
@@ -723,6 +772,9 @@ namespace Model
 
     long long m_backtrackWindow;
     bool m_backtrackWindowHasBeenSet;
+
+    Aws::Vector<Aws::String> m_enableCloudwatchLogsExports;
+    bool m_enableCloudwatchLogsExportsHasBeenSet;
   };
 
 } // namespace Model

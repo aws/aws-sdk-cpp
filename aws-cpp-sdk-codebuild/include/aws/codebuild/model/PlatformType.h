@@ -28,7 +28,8 @@ namespace Model
     NOT_SET,
     DEBIAN,
     AMAZON_LINUX,
-    UBUNTU
+    UBUNTU,
+    WINDOWS_SERVER
   };
 
 namespace PlatformTypeMapper

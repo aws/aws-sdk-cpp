@@ -76,7 +76,8 @@ DBCluster::DBCluster() :
     m_backtrackWindow(0),
     m_backtrackWindowHasBeenSet(false),
     m_backtrackConsumedChangeRecords(0),
-    m_backtrackConsumedChangeRecordsHasBeenSet(false)
+    m_backtrackConsumedChangeRecordsHasBeenSet(false),
+    m_enabledCloudwatchLogsExportsHasBeenSet(false)
 {
 }
 
@@ -126,7 +127,8 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_backtrackWindow(0),
     m_backtrackWindowHasBeenSet(false),
     m_backtrackConsumedChangeRecords(0),
-    m_backtrackConsumedChangeRecordsHasBeenSet(false)
+    m_backtrackConsumedChangeRecordsHasBeenSet(false),
+    m_enabledCloudwatchLogsExportsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -401,6 +403,18 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_backtrackConsumedChangeRecords = StringUtils::ConvertToInt64(StringUtils::Trim(backtrackConsumedChangeRecordsNode.GetText().c_str()).c_str());
       m_backtrackConsumedChangeRecordsHasBeenSet = true;
     }
+    XmlNode enabledCloudwatchLogsExportsNode = resultNode.FirstChild("EnabledCloudwatchLogsExports");
+    if(!enabledCloudwatchLogsExportsNode.IsNull())
+    {
+      XmlNode enabledCloudwatchLogsExportsMember = enabledCloudwatchLogsExportsNode.FirstChild("member");
+      while(!enabledCloudwatchLogsExportsMember.IsNull())
+      {
+        m_enabledCloudwatchLogsExports.push_back(StringUtils::Trim(enabledCloudwatchLogsExportsMember.GetText().c_str()));
+        enabledCloudwatchLogsExportsMember = enabledCloudwatchLogsExportsMember.NextNode("member");
+      }
+
+      m_enabledCloudwatchLogsExportsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -630,6 +644,15 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".BacktrackConsumedChangeRecords=" << m_backtrackConsumedChangeRecords << "&";
   }
 
+  if(m_enabledCloudwatchLogsExportsHasBeenSet)
+  {
+      unsigned enabledCloudwatchLogsExportsIdx = 1;
+      for(auto& item : m_enabledCloudwatchLogsExports)
+      {
+        oStream << location << index << locationValue << ".EnabledCloudwatchLogsExports.member." << enabledCloudwatchLogsExportsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -817,6 +840,14 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_backtrackConsumedChangeRecordsHasBeenSet)
   {
       oStream << location << ".BacktrackConsumedChangeRecords=" << m_backtrackConsumedChangeRecords << "&";
+  }
+  if(m_enabledCloudwatchLogsExportsHasBeenSet)
+  {
+      unsigned enabledCloudwatchLogsExportsIdx = 1;
+      for(auto& item : m_enabledCloudwatchLogsExports)
+      {
+        oStream << location << ".EnabledCloudwatchLogsExports.member." << enabledCloudwatchLogsExportsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
 }
 

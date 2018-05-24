@@ -1464,6 +1464,55 @@ namespace Model
      */
     inline DBCluster& WithBacktrackConsumedChangeRecords(long long value) { SetBacktrackConsumedChangeRecords(value); return *this;}
 
+
+    /**
+     * <p>A list of log types that this DB cluster is configured to export to
+     * CloudWatch Logs.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetEnabledCloudwatchLogsExports() const{ return m_enabledCloudwatchLogsExports; }
+
+    /**
+     * <p>A list of log types that this DB cluster is configured to export to
+     * CloudWatch Logs.</p>
+     */
+    inline void SetEnabledCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports = value; }
+
+    /**
+     * <p>A list of log types that this DB cluster is configured to export to
+     * CloudWatch Logs.</p>
+     */
+    inline void SetEnabledCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports = std::move(value); }
+
+    /**
+     * <p>A list of log types that this DB cluster is configured to export to
+     * CloudWatch Logs.</p>
+     */
+    inline DBCluster& WithEnabledCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnabledCloudwatchLogsExports(value); return *this;}
+
+    /**
+     * <p>A list of log types that this DB cluster is configured to export to
+     * CloudWatch Logs.</p>
+     */
+    inline DBCluster& WithEnabledCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnabledCloudwatchLogsExports(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of log types that this DB cluster is configured to export to
+     * CloudWatch Logs.</p>
+     */
+    inline DBCluster& AddEnabledCloudwatchLogsExports(const Aws::String& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(value); return *this; }
+
+    /**
+     * <p>A list of log types that this DB cluster is configured to export to
+     * CloudWatch Logs.</p>
+     */
+    inline DBCluster& AddEnabledCloudwatchLogsExports(Aws::String&& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of log types that this DB cluster is configured to export to
+     * CloudWatch Logs.</p>
+     */
+    inline DBCluster& AddEnabledCloudwatchLogsExports(const char* value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(value); return *this; }
+
   private:
 
     int m_allocatedStorage;
@@ -1579,6 +1628,9 @@ namespace Model
 
     long long m_backtrackConsumedChangeRecords;
     bool m_backtrackConsumedChangeRecordsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_enabledCloudwatchLogsExports;
+    bool m_enabledCloudwatchLogsExportsHasBeenSet;
   };
 
 } // namespace Model

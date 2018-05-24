@@ -18,6 +18,7 @@
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rds/model/CloudwatchLogsExportConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -729,6 +730,37 @@ namespace Model
 
 
     /**
+     * <p>The configuration setting for the log types to be enabled for export to
+     * CloudWatch Logs for a specific DB cluster.</p>
+     */
+    inline const CloudwatchLogsExportConfiguration& GetCloudwatchLogsExportConfiguration() const{ return m_cloudwatchLogsExportConfiguration; }
+
+    /**
+     * <p>The configuration setting for the log types to be enabled for export to
+     * CloudWatch Logs for a specific DB cluster.</p>
+     */
+    inline void SetCloudwatchLogsExportConfiguration(const CloudwatchLogsExportConfiguration& value) { m_cloudwatchLogsExportConfigurationHasBeenSet = true; m_cloudwatchLogsExportConfiguration = value; }
+
+    /**
+     * <p>The configuration setting for the log types to be enabled for export to
+     * CloudWatch Logs for a specific DB cluster.</p>
+     */
+    inline void SetCloudwatchLogsExportConfiguration(CloudwatchLogsExportConfiguration&& value) { m_cloudwatchLogsExportConfigurationHasBeenSet = true; m_cloudwatchLogsExportConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration setting for the log types to be enabled for export to
+     * CloudWatch Logs for a specific DB cluster.</p>
+     */
+    inline ModifyDBClusterRequest& WithCloudwatchLogsExportConfiguration(const CloudwatchLogsExportConfiguration& value) { SetCloudwatchLogsExportConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration setting for the log types to be enabled for export to
+     * CloudWatch Logs for a specific DB cluster.</p>
+     */
+    inline ModifyDBClusterRequest& WithCloudwatchLogsExportConfiguration(CloudwatchLogsExportConfiguration&& value) { SetCloudwatchLogsExportConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>The version number of the database engine to which you want to upgrade.
      * Changing this parameter results in an outage. The change is applied during the
      * next maintenance window unless the ApplyImmediately parameter is set to
@@ -831,6 +863,9 @@ namespace Model
 
     long long m_backtrackWindow;
     bool m_backtrackWindowHasBeenSet;
+
+    CloudwatchLogsExportConfiguration m_cloudwatchLogsExportConfiguration;
+    bool m_cloudwatchLogsExportConfigurationHasBeenSet;
 
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;

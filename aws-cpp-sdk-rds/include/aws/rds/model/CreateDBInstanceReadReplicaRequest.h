@@ -1308,19 +1308,28 @@ namespace Model
 
     /**
      * <p>True to enable Performance Insights for the read replica, and otherwise
-     * false. </p>
+     * false. </p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
+     * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
+     * User Guide</i>. </p>
      */
     inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
 
     /**
      * <p>True to enable Performance Insights for the read replica, and otherwise
-     * false. </p>
+     * false. </p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
+     * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
+     * User Guide</i>. </p>
      */
     inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
 
     /**
      * <p>True to enable Performance Insights for the read replica, and otherwise
-     * false. </p>
+     * false. </p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
+     * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
+     * User Guide</i>. </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithEnablePerformanceInsights(bool value) { SetEnablePerformanceInsights(value); return *this;}
 

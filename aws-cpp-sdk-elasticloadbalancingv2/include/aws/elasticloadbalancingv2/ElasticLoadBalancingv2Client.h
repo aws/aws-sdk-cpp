@@ -938,7 +938,12 @@ namespace Model
 
         /**
          * <p>Describes the attributes for the specified Application Load Balancer or
-         * Network Load Balancer.</p><p><h3>See Also:</h3>   <a
+         * Network Load Balancer.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#load-balancer-attributes">Load
+         * Balancer Attributes</a> in the <i>Application Load Balancers Guide</i> or <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html#load-balancer-attributes">Load
+         * Balancer Attributes</a> in the <i>Network Load Balancers
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeLoadBalancerAttributes">AWS
          * API Reference</a></p>
          */
@@ -946,7 +951,12 @@ namespace Model
 
         /**
          * <p>Describes the attributes for the specified Application Load Balancer or
-         * Network Load Balancer.</p><p><h3>See Also:</h3>   <a
+         * Network Load Balancer.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#load-balancer-attributes">Load
+         * Balancer Attributes</a> in the <i>Application Load Balancers Guide</i> or <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html#load-balancer-attributes">Load
+         * Balancer Attributes</a> in the <i>Network Load Balancers
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeLoadBalancerAttributes">AWS
          * API Reference</a></p>
          *
@@ -956,7 +966,12 @@ namespace Model
 
         /**
          * <p>Describes the attributes for the specified Application Load Balancer or
-         * Network Load Balancer.</p><p><h3>See Also:</h3>   <a
+         * Network Load Balancer.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#load-balancer-attributes">Load
+         * Balancer Attributes</a> in the <i>Application Load Balancers Guide</i> or <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html#load-balancer-attributes">Load
+         * Balancer Attributes</a> in the <i>Network Load Balancers
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeLoadBalancerAttributes">AWS
          * API Reference</a></p>
          *
@@ -1098,7 +1113,12 @@ namespace Model
         virtual void DescribeTagsAsync(const Model::DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the attributes for the specified target group.</p><p><h3>See
+         * <p>Describes the attributes for the specified target group.</p> <p>For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#target-group-attributes">Target
+         * Group Attributes</a> in the <i>Application Load Balancers Guide</i> or <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes">Target
+         * Group Attributes</a> in the <i>Network Load Balancers Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetGroupAttributes">AWS
          * API Reference</a></p>
@@ -1106,7 +1126,12 @@ namespace Model
         virtual Model::DescribeTargetGroupAttributesOutcome DescribeTargetGroupAttributes(const Model::DescribeTargetGroupAttributesRequest& request) const;
 
         /**
-         * <p>Describes the attributes for the specified target group.</p><p><h3>See
+         * <p>Describes the attributes for the specified target group.</p> <p>For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#target-group-attributes">Target
+         * Group Attributes</a> in the <i>Application Load Balancers Guide</i> or <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes">Target
+         * Group Attributes</a> in the <i>Network Load Balancers Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetGroupAttributes">AWS
          * API Reference</a></p>
@@ -1116,7 +1141,12 @@ namespace Model
         virtual Model::DescribeTargetGroupAttributesOutcomeCallable DescribeTargetGroupAttributesCallable(const Model::DescribeTargetGroupAttributesRequest& request) const;
 
         /**
-         * <p>Describes the attributes for the specified target group.</p><p><h3>See
+         * <p>Describes the attributes for the specified target group.</p> <p>For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#target-group-attributes">Target
+         * Group Attributes</a> in the <i>Application Load Balancers Guide</i> or <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes">Target
+         * Group Attributes</a> in the <i>Network Load Balancers Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetGroupAttributes">AWS
          * API Reference</a></p>

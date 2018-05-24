@@ -39,6 +39,7 @@ ModifyDBClusterRequest::ModifyDBClusterRequest() :
     m_enableIAMDatabaseAuthenticationHasBeenSet(false),
     m_backtrackWindow(0),
     m_backtrackWindowHasBeenSet(false),
+    m_cloudwatchLogsExportConfigurationHasBeenSet(false),
     m_engineVersionHasBeenSet(false)
 {
 }
@@ -116,6 +117,11 @@ Aws::String ModifyDBClusterRequest::SerializePayload() const
   if(m_backtrackWindowHasBeenSet)
   {
     ss << "BacktrackWindow=" << m_backtrackWindow << "&";
+  }
+
+  if(m_cloudwatchLogsExportConfigurationHasBeenSet)
+  {
+    m_cloudwatchLogsExportConfiguration.OutputToStream(ss, "CloudwatchLogsExportConfiguration");
   }
 
   if(m_engineVersionHasBeenSet)

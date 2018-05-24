@@ -2213,19 +2213,28 @@ namespace Model
 
     /**
      * <p>True to enable Performance Insights for the DB instance, and otherwise
-     * false.</p>
+     * false.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
+     * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
+     * User Guide</i>. </p>
      */
     inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
 
     /**
      * <p>True to enable Performance Insights for the DB instance, and otherwise
-     * false.</p>
+     * false.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
+     * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
+     * User Guide</i>. </p>
      */
     inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
 
     /**
      * <p>True to enable Performance Insights for the DB instance, and otherwise
-     * false.</p>
+     * false.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
+     * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
+     * User Guide</i>. </p>
      */
     inline ModifyDBInstanceRequest& WithEnablePerformanceInsights(bool value) { SetEnablePerformanceInsights(value); return *this;}
 
@@ -2282,31 +2291,31 @@ namespace Model
 
     /**
      * <p>The configuration setting for the log types to be enabled for export to
-     * CloudWatch Logs for a specific DB instance or DB cluster.</p>
+     * CloudWatch Logs for a specific DB instance.</p>
      */
     inline const CloudwatchLogsExportConfiguration& GetCloudwatchLogsExportConfiguration() const{ return m_cloudwatchLogsExportConfiguration; }
 
     /**
      * <p>The configuration setting for the log types to be enabled for export to
-     * CloudWatch Logs for a specific DB instance or DB cluster.</p>
+     * CloudWatch Logs for a specific DB instance.</p>
      */
     inline void SetCloudwatchLogsExportConfiguration(const CloudwatchLogsExportConfiguration& value) { m_cloudwatchLogsExportConfigurationHasBeenSet = true; m_cloudwatchLogsExportConfiguration = value; }
 
     /**
      * <p>The configuration setting for the log types to be enabled for export to
-     * CloudWatch Logs for a specific DB instance or DB cluster.</p>
+     * CloudWatch Logs for a specific DB instance.</p>
      */
     inline void SetCloudwatchLogsExportConfiguration(CloudwatchLogsExportConfiguration&& value) { m_cloudwatchLogsExportConfigurationHasBeenSet = true; m_cloudwatchLogsExportConfiguration = std::move(value); }
 
     /**
      * <p>The configuration setting for the log types to be enabled for export to
-     * CloudWatch Logs for a specific DB instance or DB cluster.</p>
+     * CloudWatch Logs for a specific DB instance.</p>
      */
     inline ModifyDBInstanceRequest& WithCloudwatchLogsExportConfiguration(const CloudwatchLogsExportConfiguration& value) { SetCloudwatchLogsExportConfiguration(value); return *this;}
 
     /**
      * <p>The configuration setting for the log types to be enabled for export to
-     * CloudWatch Logs for a specific DB instance or DB cluster.</p>
+     * CloudWatch Logs for a specific DB instance.</p>
      */
     inline ModifyDBInstanceRequest& WithCloudwatchLogsExportConfiguration(CloudwatchLogsExportConfiguration&& value) { SetCloudwatchLogsExportConfiguration(std::move(value)); return *this;}
 

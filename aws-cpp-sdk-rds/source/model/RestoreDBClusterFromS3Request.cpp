@@ -51,7 +51,8 @@ RestoreDBClusterFromS3Request::RestoreDBClusterFromS3Request() :
     m_s3PrefixHasBeenSet(false),
     m_s3IngestionRoleArnHasBeenSet(false),
     m_backtrackWindow(0),
-    m_backtrackWindowHasBeenSet(false)
+    m_backtrackWindowHasBeenSet(false),
+    m_enableCloudwatchLogsExportsHasBeenSet(false)
 {
 }
 
@@ -204,6 +205,17 @@ Aws::String RestoreDBClusterFromS3Request::SerializePayload() const
   if(m_backtrackWindowHasBeenSet)
   {
     ss << "BacktrackWindow=" << m_backtrackWindow << "&";
+  }
+
+  if(m_enableCloudwatchLogsExportsHasBeenSet)
+  {
+    unsigned enableCloudwatchLogsExportsCount = 1;
+    for(auto& item : m_enableCloudwatchLogsExports)
+    {
+      ss << "EnableCloudwatchLogsExports.member." << enableCloudwatchLogsExportsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      enableCloudwatchLogsExportsCount++;
+    }
   }
 
   ss << "Version=2014-10-31";

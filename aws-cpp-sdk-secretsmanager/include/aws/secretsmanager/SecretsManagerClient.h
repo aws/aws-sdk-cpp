@@ -1595,7 +1595,7 @@ namespace Model
          * operations</b> </p> <ul> <li> <p>To get the list of staging labels that are
          * currently associated with a version of a secret, use <code>
          * <a>DescribeSecret</a> </code> and examine the
-         * <code>SecretVersionsToStages</code> response value.</p> </li> </ul><p><h3>See
+         * <code>SecretVersionsToStages</code> response value. </p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UpdateSecretVersionStage">AWS
          * API Reference</a></p>
@@ -1625,7 +1625,7 @@ namespace Model
          * operations</b> </p> <ul> <li> <p>To get the list of staging labels that are
          * currently associated with a version of a secret, use <code>
          * <a>DescribeSecret</a> </code> and examine the
-         * <code>SecretVersionsToStages</code> response value.</p> </li> </ul><p><h3>See
+         * <code>SecretVersionsToStages</code> response value. </p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UpdateSecretVersionStage">AWS
          * API Reference</a></p>
@@ -1657,7 +1657,7 @@ namespace Model
          * operations</b> </p> <ul> <li> <p>To get the list of staging labels that are
          * currently associated with a version of a secret, use <code>
          * <a>DescribeSecret</a> </code> and examine the
-         * <code>SecretVersionsToStages</code> response value.</p> </li> </ul><p><h3>See
+         * <code>SecretVersionsToStages</code> response value. </p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UpdateSecretVersionStage">AWS
          * API Reference</a></p>
