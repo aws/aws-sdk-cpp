@@ -28,23 +28,21 @@ static const char* AllocationTag = "DefaultLogSystem";
 
 static std::shared_ptr<Aws::OFStream> MakeDefaultLogFile(const Aws::String filenamePrefix)
 {
-    Aws::String newFileName = filenamePrefix + DateTime::CalculateLocalTimestampAsString("%Y-%m-%d-%H") + ".log";
+    Aws::String newFileName = filenamePrefix + DateTime::CalculateGmtTimestampAsString("%Y-%m-%d-%H") + ".log";
     return Aws::MakeShared<Aws::OFStream>(AllocationTag, newFileName.c_str(), Aws::OFStream::out | Aws::OFStream::app);
 }
 
 static void LogThread(DefaultLogSystem::LogSynchronizationData* syncData, const std::shared_ptr<Aws::OStream>& logFile, const Aws::String& filenamePrefix, bool rollLog)
 {
     bool done = false;
-    int32_t lastRolledHour = DateTime::CalculateCurrentHour();
+    // localtime requires access to env. variables to get Timezone, which is not thread-safe
+    int32_t lastRolledHour = DateTime::Now().GetHour(false /*localtime*/);
     std::shared_ptr<Aws::OStream> log = logFile;
 
     while(!done)
     {
         std::unique_lock<std::mutex> locker(syncData->m_logQueueMutex);
-        if(syncData->m_stopLogging.load() == false && syncData->m_queuedLogMessages.size() == 0)
-        {
-            syncData->m_queueSignal.wait(locker, [&](){ return syncData->m_stopLogging.load() == true || syncData->m_queuedLogMessages.size() > 0; } );
-        }
+        syncData->m_queueSignal.wait(locker, [&](){ return syncData->m_stopLogging.load() == true || syncData->m_queuedLogMessages.size() > 0; } );
 
         Aws::Vector<Aws::String> messages;
         while(!syncData->m_queuedLogMessages.empty())
@@ -56,11 +54,12 @@ static void LogThread(DefaultLogSystem::LogSynchronizationData* syncData, const 
         done = syncData->m_stopLogging.load() && syncData->m_queuedLogMessages.size() == 0;
         locker.unlock();
 
-        if(messages.size() > 0)
+        if (messages.size() > 0)
         {
             if (rollLog)
             {
-                int32_t currentHour = DateTime::CalculateCurrentHour();
+                // localtime requires access to env. variables to get Timezone, which is not thread-safe
+                int32_t currentHour = DateTime::Now().GetHour(false /*localtime*/); 
                 if (currentHour != lastRolledHour)
                 {
                     log = MakeDefaultLogFile(filenamePrefix);
