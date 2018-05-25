@@ -21,6 +21,7 @@
 #include <aws/glue/model/JobCommand.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/glue/model/ConnectionsList.h>
+#include <aws/glue/model/NotificationProperty.h>
 #include <utility>
 
 namespace Aws
@@ -498,6 +499,32 @@ namespace Model
      */
     inline CreateJobRequest& WithTimeout(int value) { SetTimeout(value); return *this;}
 
+
+    /**
+     * <p>Specifies configuration properties of a job notification.</p>
+     */
+    inline const NotificationProperty& GetNotificationProperty() const{ return m_notificationProperty; }
+
+    /**
+     * <p>Specifies configuration properties of a job notification.</p>
+     */
+    inline void SetNotificationProperty(const NotificationProperty& value) { m_notificationPropertyHasBeenSet = true; m_notificationProperty = value; }
+
+    /**
+     * <p>Specifies configuration properties of a job notification.</p>
+     */
+    inline void SetNotificationProperty(NotificationProperty&& value) { m_notificationPropertyHasBeenSet = true; m_notificationProperty = std::move(value); }
+
+    /**
+     * <p>Specifies configuration properties of a job notification.</p>
+     */
+    inline CreateJobRequest& WithNotificationProperty(const NotificationProperty& value) { SetNotificationProperty(value); return *this;}
+
+    /**
+     * <p>Specifies configuration properties of a job notification.</p>
+     */
+    inline CreateJobRequest& WithNotificationProperty(NotificationProperty&& value) { SetNotificationProperty(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -532,6 +559,9 @@ namespace Model
 
     int m_timeout;
     bool m_timeoutHasBeenSet;
+
+    NotificationProperty m_notificationProperty;
+    bool m_notificationPropertyHasBeenSet;
   };
 
 } // namespace Model

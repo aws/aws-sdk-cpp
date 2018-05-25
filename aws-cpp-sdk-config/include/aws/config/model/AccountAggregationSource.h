@@ -89,17 +89,17 @@ namespace Model
 
 
     /**
-     * <p>If true, aggreagate existing AWS Config regions and future regions.</p>
+     * <p>If true, aggregate existing AWS Config regions and future regions.</p>
      */
     inline bool GetAllAwsRegions() const{ return m_allAwsRegions; }
 
     /**
-     * <p>If true, aggreagate existing AWS Config regions and future regions.</p>
+     * <p>If true, aggregate existing AWS Config regions and future regions.</p>
      */
     inline void SetAllAwsRegions(bool value) { m_allAwsRegionsHasBeenSet = true; m_allAwsRegions = value; }
 
     /**
-     * <p>If true, aggreagate existing AWS Config regions and future regions.</p>
+     * <p>If true, aggregate existing AWS Config regions and future regions.</p>
      */
     inline AccountAggregationSource& WithAllAwsRegions(bool value) { SetAllAwsRegions(value); return *this;}
 

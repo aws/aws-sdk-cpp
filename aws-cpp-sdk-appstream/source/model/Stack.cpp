@@ -37,7 +37,8 @@ Stack::Stack() :
     m_storageConnectorsHasBeenSet(false),
     m_redirectURLHasBeenSet(false),
     m_feedbackURLHasBeenSet(false),
-    m_stackErrorsHasBeenSet(false)
+    m_stackErrorsHasBeenSet(false),
+    m_userSettingsHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ Stack::Stack(const JsonValue& jsonValue) :
     m_storageConnectorsHasBeenSet(false),
     m_redirectURLHasBeenSet(false),
     m_feedbackURLHasBeenSet(false),
-    m_stackErrorsHasBeenSet(false)
+    m_stackErrorsHasBeenSet(false),
+    m_userSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -126,6 +128,16 @@ Stack& Stack::operator =(const JsonValue& jsonValue)
     m_stackErrorsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UserSettings"))
+  {
+    Array<JsonValue> userSettingsJsonList = jsonValue.GetArray("UserSettings");
+    for(unsigned userSettingsIndex = 0; userSettingsIndex < userSettingsJsonList.GetLength(); ++userSettingsIndex)
+    {
+      m_userSettings.push_back(userSettingsJsonList[userSettingsIndex].AsObject());
+    }
+    m_userSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -193,6 +205,17 @@ JsonValue Stack::Jsonize() const
      stackErrorsJsonList[stackErrorsIndex].AsObject(m_stackErrors[stackErrorsIndex].Jsonize());
    }
    payload.WithArray("StackErrors", std::move(stackErrorsJsonList));
+
+  }
+
+  if(m_userSettingsHasBeenSet)
+  {
+   Array<JsonValue> userSettingsJsonList(m_userSettings.size());
+   for(unsigned userSettingsIndex = 0; userSettingsIndex < userSettingsJsonList.GetLength(); ++userSettingsIndex)
+   {
+     userSettingsJsonList[userSettingsIndex].AsObject(m_userSettings[userSettingsIndex].Jsonize());
+   }
+   payload.WithArray("UserSettings", std::move(userSettingsJsonList));
 
   }
 

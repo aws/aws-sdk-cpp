@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>Retuns an AggregatedSourceStatus object. </p>
+     * <p>Returns an AggregatedSourceStatus object. </p>
      */
     inline const Aws::Vector<AggregatedSourceStatus>& GetAggregatedSourceStatusList() const{ return m_aggregatedSourceStatusList; }
 
     /**
-     * <p>Retuns an AggregatedSourceStatus object. </p>
+     * <p>Returns an AggregatedSourceStatus object. </p>
      */
     inline void SetAggregatedSourceStatusList(const Aws::Vector<AggregatedSourceStatus>& value) { m_aggregatedSourceStatusList = value; }
 
     /**
-     * <p>Retuns an AggregatedSourceStatus object. </p>
+     * <p>Returns an AggregatedSourceStatus object. </p>
      */
     inline void SetAggregatedSourceStatusList(Aws::Vector<AggregatedSourceStatus>&& value) { m_aggregatedSourceStatusList = std::move(value); }
 
     /**
-     * <p>Retuns an AggregatedSourceStatus object. </p>
+     * <p>Returns an AggregatedSourceStatus object. </p>
      */
     inline DescribeConfigurationAggregatorSourcesStatusResult& WithAggregatedSourceStatusList(const Aws::Vector<AggregatedSourceStatus>& value) { SetAggregatedSourceStatusList(value); return *this;}
 
     /**
-     * <p>Retuns an AggregatedSourceStatus object. </p>
+     * <p>Returns an AggregatedSourceStatus object. </p>
      */
     inline DescribeConfigurationAggregatorSourcesStatusResult& WithAggregatedSourceStatusList(Aws::Vector<AggregatedSourceStatus>&& value) { SetAggregatedSourceStatusList(std::move(value)); return *this;}
 
     /**
-     * <p>Retuns an AggregatedSourceStatus object. </p>
+     * <p>Returns an AggregatedSourceStatus object. </p>
      */
     inline DescribeConfigurationAggregatorSourcesStatusResult& AddAggregatedSourceStatusList(const AggregatedSourceStatus& value) { m_aggregatedSourceStatusList.push_back(value); return *this; }
 
     /**
-     * <p>Retuns an AggregatedSourceStatus object. </p>
+     * <p>Returns an AggregatedSourceStatus object. </p>
      */
     inline DescribeConfigurationAggregatorSourcesStatusResult& AddAggregatedSourceStatusList(AggregatedSourceStatus&& value) { m_aggregatedSourceStatusList.push_back(std::move(value)); return *this; }
 

@@ -28,7 +28,8 @@ CreateStackRequest::CreateStackRequest() :
     m_displayNameHasBeenSet(false),
     m_storageConnectorsHasBeenSet(false),
     m_redirectURLHasBeenSet(false),
-    m_feedbackURLHasBeenSet(false)
+    m_feedbackURLHasBeenSet(false),
+    m_userSettingsHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,17 @@ Aws::String CreateStackRequest::SerializePayload() const
   if(m_feedbackURLHasBeenSet)
   {
    payload.WithString("FeedbackURL", m_feedbackURL);
+
+  }
+
+  if(m_userSettingsHasBeenSet)
+  {
+   Array<JsonValue> userSettingsJsonList(m_userSettings.size());
+   for(unsigned userSettingsIndex = 0; userSettingsIndex < userSettingsJsonList.GetLength(); ++userSettingsIndex)
+   {
+     userSettingsJsonList[userSettingsIndex].AsObject(m_userSettings[userSettingsIndex].Jsonize());
+   }
+   payload.WithArray("UserSettings", std::move(userSettingsJsonList));
 
   }
 

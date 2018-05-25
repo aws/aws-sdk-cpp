@@ -29,7 +29,8 @@ namespace Model
     STORAGE_CONNECTORS,
     REDIRECT_URL,
     FEEDBACK_URL,
-    THEME_NAME
+    THEME_NAME,
+    USER_SETTINGS
   };
 
 namespace StackAttributeMapper

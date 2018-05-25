@@ -29,7 +29,8 @@ UpdateStackRequest::UpdateStackRequest() :
     m_storageConnectorsHasBeenSet(false),
     m_redirectURLHasBeenSet(false),
     m_feedbackURLHasBeenSet(false),
-    m_attributesToDeleteHasBeenSet(false)
+    m_attributesToDeleteHasBeenSet(false),
+    m_userSettingsHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,17 @@ Aws::String UpdateStackRequest::SerializePayload() const
      attributesToDeleteJsonList[attributesToDeleteIndex].AsString(StackAttributeMapper::GetNameForStackAttribute(m_attributesToDelete[attributesToDeleteIndex]));
    }
    payload.WithArray("AttributesToDelete", std::move(attributesToDeleteJsonList));
+
+  }
+
+  if(m_userSettingsHasBeenSet)
+  {
+   Array<JsonValue> userSettingsJsonList(m_userSettings.size());
+   for(unsigned userSettingsIndex = 0; userSettingsIndex < userSettingsJsonList.GetLength(); ++userSettingsIndex)
+   {
+     userSettingsJsonList[userSettingsIndex].AsObject(m_userSettings[userSettingsIndex].Jsonize());
+   }
+   payload.WithArray("UserSettings", std::move(userSettingsJsonList));
 
   }
 

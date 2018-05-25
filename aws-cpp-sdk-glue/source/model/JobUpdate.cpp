@@ -41,7 +41,8 @@ JobUpdate::JobUpdate() :
     m_allocatedCapacity(0),
     m_allocatedCapacityHasBeenSet(false),
     m_timeout(0),
-    m_timeoutHasBeenSet(false)
+    m_timeoutHasBeenSet(false),
+    m_notificationPropertyHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ JobUpdate::JobUpdate(const JsonValue& jsonValue) :
     m_allocatedCapacity(0),
     m_allocatedCapacityHasBeenSet(false),
     m_timeout(0),
-    m_timeoutHasBeenSet(false)
+    m_timeoutHasBeenSet(false),
+    m_notificationPropertyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -138,6 +140,13 @@ JobUpdate& JobUpdate::operator =(const JsonValue& jsonValue)
     m_timeoutHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NotificationProperty"))
+  {
+    m_notificationProperty = jsonValue.GetObject("NotificationProperty");
+
+    m_notificationPropertyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -207,6 +216,12 @@ JsonValue JobUpdate::Jsonize() const
   if(m_timeoutHasBeenSet)
   {
    payload.WithInteger("Timeout", m_timeout);
+
+  }
+
+  if(m_notificationPropertyHasBeenSet)
+  {
+   payload.WithObject("NotificationProperty", m_notificationProperty.Jsonize());
 
   }
 

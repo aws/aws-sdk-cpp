@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/appstream/model/StorageConnector.h>
 #include <aws/appstream/model/StackError.h>
+#include <aws/appstream/model/UserSetting.h>
 #include <utility>
 
 namespace Aws
@@ -370,6 +371,49 @@ namespace Model
      */
     inline Stack& AddStackErrors(StackError&& value) { m_stackErrorsHasBeenSet = true; m_stackErrors.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The actions that are enabled or disabled for users during their streaming
+     * sessions. By default these actions are enabled.</p>
+     */
+    inline const Aws::Vector<UserSetting>& GetUserSettings() const{ return m_userSettings; }
+
+    /**
+     * <p>The actions that are enabled or disabled for users during their streaming
+     * sessions. By default these actions are enabled.</p>
+     */
+    inline void SetUserSettings(const Aws::Vector<UserSetting>& value) { m_userSettingsHasBeenSet = true; m_userSettings = value; }
+
+    /**
+     * <p>The actions that are enabled or disabled for users during their streaming
+     * sessions. By default these actions are enabled.</p>
+     */
+    inline void SetUserSettings(Aws::Vector<UserSetting>&& value) { m_userSettingsHasBeenSet = true; m_userSettings = std::move(value); }
+
+    /**
+     * <p>The actions that are enabled or disabled for users during their streaming
+     * sessions. By default these actions are enabled.</p>
+     */
+    inline Stack& WithUserSettings(const Aws::Vector<UserSetting>& value) { SetUserSettings(value); return *this;}
+
+    /**
+     * <p>The actions that are enabled or disabled for users during their streaming
+     * sessions. By default these actions are enabled.</p>
+     */
+    inline Stack& WithUserSettings(Aws::Vector<UserSetting>&& value) { SetUserSettings(std::move(value)); return *this;}
+
+    /**
+     * <p>The actions that are enabled or disabled for users during their streaming
+     * sessions. By default these actions are enabled.</p>
+     */
+    inline Stack& AddUserSettings(const UserSetting& value) { m_userSettingsHasBeenSet = true; m_userSettings.push_back(value); return *this; }
+
+    /**
+     * <p>The actions that are enabled or disabled for users during their streaming
+     * sessions. By default these actions are enabled.</p>
+     */
+    inline Stack& AddUserSettings(UserSetting&& value) { m_userSettingsHasBeenSet = true; m_userSettings.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_arn;
@@ -398,6 +442,9 @@ namespace Model
 
     Aws::Vector<StackError> m_stackErrors;
     bool m_stackErrorsHasBeenSet;
+
+    Aws::Vector<UserSetting> m_userSettings;
+    bool m_userSettingsHasBeenSet;
   };
 
 } // namespace Model

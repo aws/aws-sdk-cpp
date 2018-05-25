@@ -36,7 +36,8 @@ CreateJobRequest::CreateJobRequest() :
     m_allocatedCapacity(0),
     m_allocatedCapacityHasBeenSet(false),
     m_timeout(0),
-    m_timeoutHasBeenSet(false)
+    m_timeoutHasBeenSet(false),
+    m_notificationPropertyHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,12 @@ Aws::String CreateJobRequest::SerializePayload() const
   if(m_timeoutHasBeenSet)
   {
    payload.WithInteger("Timeout", m_timeout);
+
+  }
+
+  if(m_notificationPropertyHasBeenSet)
+  {
+   payload.WithObject("NotificationProperty", m_notificationProperty.Jsonize());
 
   }
 
