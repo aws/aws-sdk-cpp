@@ -291,7 +291,8 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, bool signBody
     auto awsAuthString = ss.str();
     AWS_LOGSTREAM_DEBUG(v4LogTag, "Signing request with: " << awsAuthString);
     request.SetAwsAuthorization(awsAuthString);
-
+    request.SetSigningAccessKey(credentials.GetAWSAccessKeyId());
+    request.SetSigningRegion(m_region);
     return true;
 }
 
@@ -329,8 +330,6 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, const char
     Aws::String dateQueryValue = now.ToGmtString(LONG_DATE_FORMAT_STR);
     request.AddQueryStringParameter(Http::AWS_DATE_HEADER, dateQueryValue);
 
-    request.SetHeaderValue(Http::HOST_HEADER, request.GetHeaderValue(Http::HOST_HEADER));
-
     Aws::StringStream headersStream;
     Aws::StringStream signedHeadersStream;
     for (const auto& header : CanonicalizeHeaders(request.GetHeaders()))
@@ -364,6 +363,9 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, const char
     request.AddQueryStringParameter(X_AMZ_ALGORITHM, AWS_HMAC_SHA256);
     request.AddQueryStringParameter(X_AMZ_CREDENTIAL, ss.str());
     ss.str("");
+
+    request.SetSigningAccessKey(credentials.GetAWSAccessKeyId());
+    request.SetSigningRegion(region);
 
     //generate generalized canonicalized request string.
     Aws::String canonicalRequestString = CanonicalizeRequestSigningString(request, m_urlEscapePath);

@@ -13,33 +13,14 @@
 * permissions and limitations under the License.
 */
 
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <arpa/inet.h>
-#include <netinet/in.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <cassert>
+#include <cstddef>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/net/SimpleUDP.h>
 
 namespace Aws
 {
     namespace Net
     {
-        static void BuildLocalAddrInfoIPV4(sockaddr_in* addrinfo, short port)
-        {
-            addrinfo->sin_family = AF_INET;
-            addrinfo->sin_port = htons(port);
-            inet_pton(AF_INET, "127.0.0.1", &addrinfo->sin_addr);
-        }
-
-        static void BuildLocalAddrInfoIPV6(sockaddr_in6* addrinfo, short port)
-        {
-            addrinfo->sin6_family = AF_INET6;
-            addrinfo->sin6_port = htons(port);
-            inet_pton(AF_INET6, "::1", &addrinfo->sin6_addr);
-        }
-
         SimpleUDP::SimpleUDP(int addressFamily, size_t sendBufSize, size_t receiveBufSize, bool nonBlocking):
             m_addressFamily(addressFamily), m_connected(false)
         {
@@ -47,140 +28,87 @@ namespace Aws
         }
 
         SimpleUDP::SimpleUDP(bool IPV4, size_t sendBufSize, size_t receiveBufSize, bool nonBlocking) :
-            m_addressFamily(IPV4 ? AF_INET : AF_INET6), m_connected(false)
+            m_addressFamily(IPV4 ? 2 : 10), m_connected(false)
         {
             CreateSocket(m_addressFamily, sendBufSize, receiveBufSize, nonBlocking);
         }
 
         SimpleUDP::~SimpleUDP()
         {
-            close(GetUnderlyingSocket());
         }
 
         void SimpleUDP::CreateSocket(int addressFamily, size_t sendBufSize, size_t receiveBufSize, bool nonBlocking)
         {
-            int sock = socket(addressFamily, SOCK_DGRAM, IPPROTO_UDP);
-            assert(sock != -1);
-
-            // Try to set sock to nonblocking mode.
-            if (nonBlocking)
-            {
-                int flags = fcntl(sock, F_GETFL, 0);
-                if (flags != -1)
-                {
-                    flags |= O_NONBLOCK;
-                    fcntl(sock, F_SETFL, flags);
-                }
-            }
-
-            // if sendBufSize is not zero, try to set send buffer size
-            if (sendBufSize)
-            {
-                setsockopt(sock, SOL_SOCKET, SO_SNDBUF, &sendBufSize, sizeof(sendBufSize));
-            }
-
-            // if sendBufSize is not zero, try to set receive buffer size
-            if (receiveBufSize)
-            {
-                setsockopt(sock, SOL_SOCKET, SO_SNDBUF, &receiveBufSize, sizeof(receiveBufSize));
-            }
-
-            SetUnderlyingSocket(sock);
+            AWS_UNREFERENCED_PARAM(addressFamily);
+            AWS_UNREFERENCED_PARAM(sendBufSize);
+            AWS_UNREFERENCED_PARAM(receiveBufSize);
+            AWS_UNREFERENCED_PARAM(nonBlocking);
         }
 
         int SimpleUDP::Connect(const sockaddr* address, size_t addressLength)
         {
-            int ret = connect(GetUnderlyingSocket(), address, static_cast<socklen_t>(addressLength));
-            m_connected = ret ? false : true;
-            return ret;
+            AWS_UNREFERENCED_PARAM(address);
+            AWS_UNREFERENCED_PARAM(addressLength);
+            return -1;
         }
 
         int SimpleUDP::ConnectToLocalHost(unsigned short port)
         {
-            int ret;
-            if (m_addressFamily == AF_INET6)
-            {
-                sockaddr_in6 addrinfo;
-                BuildLocalAddrInfoIPV6(&addrinfo, port);
-                ret = connect(GetUnderlyingSocket(), reinterpret_cast<sockaddr*>(&addrinfo), sizeof(sockaddr_in6));
-            }
-            else
-            {
-                sockaddr_in addrinfo;
-                BuildLocalAddrInfoIPV4(&addrinfo, port);
-                ret = connect(GetUnderlyingSocket(), reinterpret_cast<sockaddr*>(&addrinfo), sizeof(sockaddr_in));
-            }
-            m_connected = ret ? false : true;
-            return ret;
+            AWS_UNREFERENCED_PARAM(port);
+            return -1;
         }
 
         int SimpleUDP::Bind(const sockaddr* address, size_t addressLength) const
         {
-            return bind(GetUnderlyingSocket(), address, static_cast<socklen_t>(addressLength));
+            AWS_UNREFERENCED_PARAM(address);
+            AWS_UNREFERENCED_PARAM(addressLength);
+            return -1;
         }
 
         int SimpleUDP::BindToLocalHost(unsigned short port) const
         {
-            if (m_addressFamily == AF_INET6)
-            {
-                sockaddr_in6 addrinfo;
-                BuildLocalAddrInfoIPV6(&addrinfo, port);
-                return bind(GetUnderlyingSocket(), reinterpret_cast<sockaddr*>(&addrinfo), sizeof(sockaddr_in6));
-            }
-            else
-            {
-                sockaddr_in addrinfo;
-                BuildLocalAddrInfoIPV4(&addrinfo, port);
-                return bind(GetUnderlyingSocket(), reinterpret_cast<sockaddr*>(&addrinfo), sizeof(sockaddr_in));
-            }
+            AWS_UNREFERENCED_PARAM(port);
+            return -1;
         }
 
         int SimpleUDP::SendData(const uint8_t* data, size_t dataLen) const
         {
-            return send(GetUnderlyingSocket(), data, dataLen, 0);
+            AWS_UNREFERENCED_PARAM(data);
+            AWS_UNREFERENCED_PARAM(dataLen);
+            return -1;
         }
 
         int SimpleUDP::SendDataTo(const sockaddr* address, size_t addressLength, const uint8_t* data, size_t dataLen) const
         {
-            if (m_connected)
-            {
-                return SendData(data, dataLen);
-            }
-            else
-            {
-                return sendto(GetUnderlyingSocket(), data, dataLen, 0, address, static_cast<socklen_t>(addressLength));
-            }
+            AWS_UNREFERENCED_PARAM(address);
+            AWS_UNREFERENCED_PARAM(addressLength);
+            AWS_UNREFERENCED_PARAM(data);
+            AWS_UNREFERENCED_PARAM(dataLen);
+            return -1;
         }
 
         int SimpleUDP::SendDataToLocalHost(const uint8_t* data, size_t dataLen, unsigned short port) const
         {
-            if (m_connected)
-            {
-                return SendData(data, dataLen);
-            }
-            else if (m_addressFamily == AF_INET6)
-            {
-                sockaddr_in6 addrinfo;
-                BuildLocalAddrInfoIPV6(&addrinfo, port);
-                return sendto(GetUnderlyingSocket(), data, dataLen, 0, reinterpret_cast<sockaddr*>(&addrinfo), sizeof(sockaddr_in6));
-            }
-            else
-            {
-                sockaddr_in addrinfo;
-                BuildLocalAddrInfoIPV4(&addrinfo, port);
-                return sendto(GetUnderlyingSocket(), data, dataLen, 0, reinterpret_cast<sockaddr*>(&addrinfo), sizeof(sockaddr_in));
-            }
+            AWS_UNREFERENCED_PARAM(data);
+            AWS_UNREFERENCED_PARAM(dataLen);
+            AWS_UNREFERENCED_PARAM(port);
+            return -1;
         }
 
         int SimpleUDP::ReceiveData(uint8_t* buffer, size_t bufferLen) const
         {
-            return recv(GetUnderlyingSocket(), buffer, static_cast<int>(bufferLen), 0);
+            AWS_UNREFERENCED_PARAM(buffer);
+            AWS_UNREFERENCED_PARAM(bufferLen);
+            return -1;
         }
-
 
         int SimpleUDP::ReceiveDataFrom(sockaddr* address, size_t* addressLength, uint8_t* buffer, size_t bufferLen) const
         {
-            return recvfrom(GetUnderlyingSocket(), buffer, static_cast<int>(bufferLen), 0, address, reinterpret_cast<socklen_t*>(addressLength));
+            AWS_UNREFERENCED_PARAM(address);
+            AWS_UNREFERENCED_PARAM(addressLength);
+            AWS_UNREFERENCED_PARAM(buffer);
+            AWS_UNREFERENCED_PARAM(bufferLen);
+            return -1;
         }
     }
 }

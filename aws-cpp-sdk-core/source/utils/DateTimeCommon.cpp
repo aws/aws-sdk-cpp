@@ -1110,6 +1110,12 @@ std::chrono::milliseconds DateTime::Diff(const DateTime& a, const DateTime& b)
     return std::chrono::duration_cast<std::chrono::milliseconds>(diff);
 }
 
+std::chrono::milliseconds DateTime::operator-(const DateTime& other)
+{
+    auto diff = this->m_time - other.m_time;
+    return std::chrono::duration_cast<std::chrono::milliseconds>(diff);
+}
+
 void DateTime::ConvertTimestampStringToTimePoint(const char* timestamp, DateFormat format)
 {  
     std::tm timeStruct;

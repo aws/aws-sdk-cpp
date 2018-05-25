@@ -29,29 +29,32 @@ namespace Aws
         /**
          * Wrapper function of OnRequestStarted defined by all monitoring instances
          */
-        Aws::Vector<void*> OnRequestStarted(const Aws::String& serviceName, const Aws::String& requestName);
+        Aws::Vector<void*> OnRequestStarted(const Aws::String& serviceName, const Aws::String& requestName,
+            const std::shared_ptr<const Aws::Http::HttpRequest>& request);
 
         /**
          * Wrapper function of OnRequestSucceeded defined by all monitoring instances
          */
-        void OnRequestSucceeded(const Aws::String& serviceName, const Aws::String& requestName, 
-                const Aws::Client::HttpResponseOutcome& outcome, const CoreMetricsCollection& metricsFromCore, const Aws::Vector<void*>& contexts);
+        void OnRequestSucceeded(const Aws::String& serviceName, const Aws::String& requestName, const std::shared_ptr<const Aws::Http::HttpRequest>& request,
+            const Aws::Client::HttpResponseOutcome& outcome, const CoreMetricsCollection& metricsFromCore, const Aws::Vector<void*>& contexts);
 
         /**
          * Wrapper function of OnRequestFailed defined by all monitoring instances
          */
-        void OnRequestFailed(const Aws::String& serviceName, const Aws::String& requestName, 
-                const Aws::Client::HttpResponseOutcome& outcome, const CoreMetricsCollection& metricsFromCore, const Aws::Vector<void*>& contexts);
+        void OnRequestFailed(const Aws::String& serviceName, const Aws::String& requestName, const std::shared_ptr<const Aws::Http::HttpRequest>& request,
+            const Aws::Client::HttpResponseOutcome& outcome, const CoreMetricsCollection& metricsFromCore, const Aws::Vector<void*>& contexts);
 
         /**
          * Wrapper function of OnRequestRetry defined by all monitoring instances
          */
-        void OnRequestRetry(const Aws::String& serviceName, const Aws::String& requestName, const Aws::Vector<void*>& contexts);
+        void OnRequestRetry(const Aws::String& serviceName, const Aws::String& requestName, 
+            const std::shared_ptr<const Aws::Http::HttpRequest>& request, const Aws::Vector<void*>& contexts);
 
         /**
          * Wrapper function of OnFinish defined by all monitoring instances
          */
-        void OnFinish(const Aws::String& serviceName, const Aws::String& requestName, const Aws::Vector<void*>& contexts);
+        void OnFinish(const Aws::String& serviceName, const Aws::String& requestName, 
+            const std::shared_ptr<const Aws::Http::HttpRequest>& request, const Aws::Vector<void*>& contexts);
 
         typedef std::function<Aws::UniquePtr<MonitoringFactory>()> MonitoringFactoryCreateFunction;
 

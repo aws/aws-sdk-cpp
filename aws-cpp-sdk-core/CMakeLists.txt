@@ -113,6 +113,8 @@ endif()
 
 if (PLATFORM_WINDOWS)
     file(GLOB NET_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/net/windows/*.cpp")
+elseif(PLATFORM_LINUX OR PLATFORM_APPLE OR PLATFORM_ANDROID)
+    file(GLOB NET_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/net/linux-shared/*.cpp")
 else()
     file(GLOB NET_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/net/*.cpp")
 endif()

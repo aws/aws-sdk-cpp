@@ -74,8 +74,8 @@ class MockAWSClient : AWSClient
 public:
     MockAWSClient(const ClientConfiguration& config) : AWSClient(config, 
             Aws::MakeShared<AWSAuthV4Signer>("MockAWSClient", 
-                Aws::MakeShared<Aws::Auth::SimpleAWSCredentialsProvider>("MockAWSClient", "AKIDEXAMPLE", 
-                    "wJalrXUtnFEMI/K7MDENG+bPxRfiCYEXAMPLEKEY"), "service", "us-east-1"), nullptr) , 
+                Aws::MakeShared<Aws::Auth::SimpleAWSCredentialsProvider>("MockAWSClient", GetMockAccessKey(), 
+                    GetMockSecretAccessKey()), "service", config.region.empty() ? Aws::Region::US_EAST_1 : config.region), nullptr) ,
         m_countedRetryStrategy(std::static_pointer_cast<CountedRetryStrategy>(config.retryStrategy)) { }
 
     Aws::Client::HttpResponseOutcome MakeRequest(const AmazonWebServiceRequest& request)
@@ -86,6 +86,9 @@ public:
         HttpResponseOutcome httpOutcome(AWSClient::AttemptExhaustively(uri, request, method, Aws::Auth::SIGV4_SIGNER));
         return httpOutcome;
     }
+
+    inline static const char* GetMockAccessKey() { return "AKIDEXAMPLE"; }
+    inline static const char* GetMockSecretAccessKey() { return "wJalrXUtnFEMI/K7MDENG+bPxRfiCYEXAMPLEKEY"; }
 
     int GetRequestAttemptedRetries()
     {

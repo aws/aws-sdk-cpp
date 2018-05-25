@@ -25,6 +25,7 @@
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/http/HttpResponse.h>
+#include <aws/core/http/standard/StandardHttpResponse.h>
 #include <aws/core/utils/stream/ResponseStream.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/Outcome.h>
@@ -169,22 +170,23 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     HttpMethod method,
     const char* signerName) const
 {
+    std::shared_ptr<HttpRequest> httpRequest(CreateHttpRequest(uri, method, request.GetResponseStreamFactory()));
     HttpResponseOutcome outcome;
-    //TODO collect metrics from core.
     Aws::Monitoring::CoreMetricsCollection coreMetrics;
-    auto contexts = Aws::Monitoring::OnRequestStarted(this->GetServiceClientName(), request.GetServiceRequestName());
+    auto contexts = Aws::Monitoring::OnRequestStarted(this->GetServiceClientName(), request.GetServiceRequestName(), httpRequest);
 
     for (long retries = 0;; retries++)
     {
-        outcome = AttemptOneRequest(uri, request, method, signerName);
+        outcome = AttemptOneRequest(httpRequest, request, signerName);
+        coreMetrics.httpClientMetrics = httpRequest->GetRequestMetrics();
         if (outcome.IsSuccess())
         {
-            Aws::Monitoring::OnRequestSucceeded(this->GetServiceClientName(), request.GetServiceRequestName(), outcome, coreMetrics, contexts);
+            Aws::Monitoring::OnRequestSucceeded(this->GetServiceClientName(), request.GetServiceRequestName(), httpRequest, outcome, coreMetrics, contexts);
             AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Request successful returning.");
             break;
         }
 
-        Aws::Monitoring::OnRequestFailed(this->GetServiceClientName(), request.GetServiceRequestName(), outcome, coreMetrics, contexts);
+        Aws::Monitoring::OnRequestFailed(this->GetServiceClientName(), request.GetServiceRequestName(), httpRequest, outcome, coreMetrics, contexts);
 
         if (!m_httpClient->IsRequestProcessingEnabled())
         {
@@ -218,30 +220,32 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
         {
             m_httpClient->RetryRequestSleep(std::chrono::milliseconds(sleepMillis));
         }
-        Aws::Monitoring::OnRequestRetry(this->GetServiceClientName(), request.GetServiceRequestName(), contexts);    
+        httpRequest = CreateHttpRequest(uri, method, request.GetResponseStreamFactory());
+        Aws::Monitoring::OnRequestRetry(this->GetServiceClientName(), request.GetServiceRequestName(), httpRequest, contexts);
     }
-    Aws::Monitoring::OnFinish(this->GetServiceClientName(), request.GetServiceRequestName(), contexts);
+    Aws::Monitoring::OnFinish(this->GetServiceClientName(), request.GetServiceRequestName(), httpRequest, contexts);
     return outcome;
 }
 
 HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri, HttpMethod method, const char* signerName, const char* requestName) const
 {
+    std::shared_ptr<HttpRequest> httpRequest(CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
     HttpResponseOutcome outcome;
-    //TODO collect metrics from core.
     Aws::Monitoring::CoreMetricsCollection coreMetrics;
-    auto contexts = Aws::Monitoring::OnRequestStarted(this->GetServiceClientName(),requestName);
+    auto contexts = Aws::Monitoring::OnRequestStarted(this->GetServiceClientName(), requestName, httpRequest);
 
     for (long retries = 0;; retries++)
     {
-        outcome = AttemptOneRequest(uri, method, signerName);
+        outcome = AttemptOneRequest(httpRequest, signerName);
+        coreMetrics.httpClientMetrics = httpRequest->GetRequestMetrics();
         if (outcome.IsSuccess())
         {
-            Aws::Monitoring::OnRequestSucceeded(this->GetServiceClientName(), requestName, outcome, coreMetrics, contexts);
+            Aws::Monitoring::OnRequestSucceeded(this->GetServiceClientName(), requestName, httpRequest, outcome, coreMetrics, contexts);
             AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Request successful returning.");
             break;
         }
 
-        Aws::Monitoring::OnRequestFailed(this->GetServiceClientName(), requestName, outcome, coreMetrics, contexts);
+        Aws::Monitoring::OnRequestFailed(this->GetServiceClientName(), requestName, httpRequest, outcome, coreMetrics, contexts);
 
         if (!m_httpClient->IsRequestProcessingEnabled())
         {
@@ -265,9 +269,10 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri, Ht
         {
             m_httpClient->RetryRequestSleep(std::chrono::milliseconds(sleepMillis));
         }
-        Aws::Monitoring::OnRequestRetry(this->GetServiceClientName(), requestName, contexts);
+        httpRequest = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+        Aws::Monitoring::OnRequestRetry(this->GetServiceClientName(), requestName, httpRequest, contexts);
     }
-    Aws::Monitoring::OnFinish(this->GetServiceClientName(), requestName, contexts);
+    Aws::Monitoring::OnFinish(this->GetServiceClientName(), requestName, httpRequest, contexts);
     return outcome;
 }
 
@@ -276,22 +281,19 @@ static bool DoesResponseGenerateError(const std::shared_ptr<HttpResponse>& respo
     if (!response) return true;
 
     int responseCode = static_cast<int>(response->GetResponseCode());
-    return response == nullptr || responseCode < SUCCESS_RESPONSE_MIN || responseCode > SUCCESS_RESPONSE_MAX;
+    return responseCode < SUCCESS_RESPONSE_MIN || responseCode > SUCCESS_RESPONSE_MAX;
 
 }
 
-HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::Http::URI& uri,
-    const Aws::AmazonWebServiceRequest& request,
-    HttpMethod method,
-    const char* signerName) const
+HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<HttpRequest>& httpRequest,
+    const Aws::AmazonWebServiceRequest& request, const char* signerName) const
 {
-    std::shared_ptr<HttpRequest> httpRequest(CreateHttpRequest(uri, method, request.GetResponseStreamFactory()));
     BuildHttpRequest(request, httpRequest);
     auto signer = GetSignerByName(signerName);
     if (!signer->SignRequest(*httpRequest, request.SignBody()))
     {
         AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, "Request signing failed. Returning error.");
-        return HttpResponseOutcome(); // TODO: make a real error when error revamp reaches branch (SIGNING_ERROR)
+        return HttpResponseOutcome(AWSError<CoreErrors>(CoreErrors::CLIENT_SIGNING_FAILURE, "", "SDK failed to sign the request", false/*retryable*/));
     }
 
     AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request Successfully signed");
@@ -309,16 +311,15 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::Http::URI& uri,
     return HttpResponseOutcome(httpResponse);
 }
 
-HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::Http::URI& uri, HttpMethod method, const char* signerName, const char* requestName) const
+HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<HttpRequest>& httpRequest, const char* signerName, const char* requestName) const
 {
     AWS_UNREFERENCED_PARAM(requestName);
 
-    std::shared_ptr<HttpRequest> httpRequest(CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
     auto signer = GetSignerByName(signerName);
     if (!signer->SignRequest(*httpRequest))
     {
         AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, "Request signing failed. Returning error.");
-        return HttpResponseOutcome(); // TODO: make a real error when error revamp reaches branch (SIGNING_ERROR)
+        return HttpResponseOutcome(AWSError<CoreErrors>(CoreErrors::CLIENT_SIGNING_FAILURE, "", "SDK failed to sign the request", false/*retryable*/));
     }
 
     //user agent and headers like that shouldn't be signed for the sake of compatibility with proxies which MAY mutate that header.
@@ -638,7 +639,6 @@ AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
         AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, error);
         return error;
     }
-    
     else if (!httpResponse->GetResponseBody() || httpResponse->GetResponseBody().tellp() < 1)
     {
         auto responseCode = httpResponse->GetResponseCode();
@@ -734,6 +734,7 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
         AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, error);
         return error;
     }
+
 
 
     if (httpResponse->GetResponseBody().tellp() < 1)

@@ -90,7 +90,7 @@ protected:
     {
         auto httpRequest = CreateHttpRequest(URI("http://www.uri.com/path/to/res"), 
                 HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        auto httpResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, *httpRequest);
+        auto httpResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, httpRequest);
         httpResponse->SetResponseCode(code);
         httpResponse->GetResponseBody() << "";
         for(auto&& header : headers)

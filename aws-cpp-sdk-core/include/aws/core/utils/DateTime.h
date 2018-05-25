@@ -238,6 +238,7 @@ namespace Aws
              */
             static std::chrono::milliseconds Diff(const DateTime& a, const DateTime& b);
 
+            std::chrono::milliseconds operator - (const DateTime& other);
         private:
             std::chrono::system_clock::time_point m_time;
             bool m_valid;

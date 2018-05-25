@@ -38,4 +38,4 @@
 #end
         virtual ~${className}();
 
-        inline virtual const char* GetServiceClientName() const override { return "${metadata.signingName}"; }
+        inline virtual const char* GetServiceClientName() const override { return "${metadata.serviceId}"; }

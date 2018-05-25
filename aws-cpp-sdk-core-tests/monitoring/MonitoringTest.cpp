@@ -25,7 +25,7 @@
 using namespace Aws::Monitoring;
 
 static const char ALLOCATION_TAG[] = "MonitoringTest";
-static const char URI_STRING[] = "http://www.uri.com/path/to/res";
+static const char URI_STRING[] = "http://domain.com/something";
 
 static int MonitorOneAPICalledFlag = 0x0;
 static int MonitorTwoAPICalledFlag = 0x0;
@@ -37,8 +37,9 @@ static std::vector<int> MonitorTwoAPICalledCounter(MonitorAPIsNum);
 class MockMonitoringOne : public MonitoringInterface
 {
 public:
-    void* OnRequestStarted(const Aws::String& serviceName, const Aws::String& requestName) const override
+    void* OnRequestStarted(const Aws::String& serviceName, const Aws::String& requestName, const std::shared_ptr<const Aws::Http::HttpRequest>& request) const override
     {
+        EXPECT_STREQ(URI_STRING, request->GetURIString().c_str());
         EXPECT_STREQ("MockAWSClient", serviceName.c_str());
         EXPECT_STREQ("AmazonWebServiceRequestMock", requestName.c_str());
         MonitorOneAPICalledFlag |= 0x1;
@@ -47,10 +48,11 @@ public:
     }
 
 
-    void OnRequestSucceeded(const Aws::String& serviceName, const Aws::String& requestName,
+    void OnRequestSucceeded(const Aws::String& serviceName, const Aws::String& requestName, const std::shared_ptr<const Aws::Http::HttpRequest>& request,
         const Aws::Client::HttpResponseOutcome& outcome, const CoreMetricsCollection& metricsFromCore, void* context) const override
     {
         ASSERT_TRUE(outcome.IsSuccess());
+        ASSERT_STREQ(URI_STRING, request->GetURIString().c_str());
         ASSERT_STREQ(URI_STRING, outcome.GetResult()->GetOriginatingRequest().GetURIString().c_str());
         ASSERT_TRUE(metricsFromCore.httpClientMetrics.size() == 0);
         ASSERT_STREQ("MockAWSClient", serviceName.c_str());
@@ -60,10 +62,11 @@ public:
         MonitorOneAPICalledCounter[1] ++;
     }
 
-    void OnRequestFailed(const Aws::String& serviceName, const Aws::String& requestName,
+    void OnRequestFailed(const Aws::String& serviceName, const Aws::String& requestName, const std::shared_ptr<const Aws::Http::HttpRequest>& request,
         const Aws::Client::HttpResponseOutcome& outcome, const CoreMetricsCollection& metricsFromCore, void* context) const override
     {
         ASSERT_FALSE(outcome.IsSuccess());
+        ASSERT_STREQ(URI_STRING, request->GetURIString().c_str());
         ASSERT_TRUE(metricsFromCore.httpClientMetrics.size() == 0);
         ASSERT_STREQ("MockAWSClient", serviceName.c_str());
         ASSERT_STREQ("AmazonWebServiceRequestMock", requestName.c_str());
@@ -72,19 +75,23 @@ public:
         MonitorOneAPICalledCounter[2] ++;
     }
 
-    void OnRequestRetry(const Aws::String& serviceName, const Aws::String& requestName, void* context) const override
+    void OnRequestRetry(const Aws::String& serviceName, const Aws::String& requestName,
+        const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const override
     {
         ASSERT_STREQ("MockAWSClient", serviceName.c_str());
         ASSERT_STREQ("AmazonWebServiceRequestMock", requestName.c_str());
+        ASSERT_STREQ(URI_STRING, request->GetURIString().c_str());
         ASSERT_EQ(1u, reinterpret_cast<size_t>(context));
         MonitorOneAPICalledFlag |= 0x8;
         MonitorOneAPICalledCounter[3] ++;
     }
 
-    void OnFinish(const Aws::String& serviceName, const Aws::String& requestName, void* context) const override
+    void OnFinish(const Aws::String& serviceName, const Aws::String& requestName, 
+        const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const override
     {
         ASSERT_STREQ("MockAWSClient", serviceName.c_str());
         ASSERT_STREQ("AmazonWebServiceRequestMock", requestName.c_str());
+        ASSERT_STREQ(URI_STRING, request->GetURIString().c_str());
         ASSERT_EQ(1u, reinterpret_cast<size_t>(context));
         MonitorOneAPICalledFlag |= 0x10;
         MonitorOneAPICalledCounter[4] ++;
@@ -108,20 +115,22 @@ Aws::UniquePtr<MonitoringFactory> CreateMonitoringFactoryOne()
 class MockMonitoringTwo : public MonitoringInterface
 {
 public:
-    void* OnRequestStarted(const Aws::String& serviceName, const Aws::String& requestName) const override
+    void* OnRequestStarted(const Aws::String& serviceName, const Aws::String& requestName, const std::shared_ptr<const Aws::Http::HttpRequest>& request) const override
     {
         EXPECT_STREQ("MockAWSClient", serviceName.c_str());
         EXPECT_STREQ("AmazonWebServiceRequestMock", requestName.c_str());
+        EXPECT_STREQ(URI_STRING, request->GetURIString().c_str());
         MonitorTwoAPICalledFlag |= 0x1;
         MonitorTwoAPICalledCounter[0] ++;
         return reinterpret_cast<void*>(2);
     }
 
 
-    void OnRequestSucceeded(const Aws::String& serviceName, const Aws::String& requestName,
+    void OnRequestSucceeded(const Aws::String& serviceName, const Aws::String& requestName, const std::shared_ptr<const Aws::Http::HttpRequest>& request,
         const Aws::Client::HttpResponseOutcome& outcome, const CoreMetricsCollection& metricsFromCore, void* context) const override
     {
         ASSERT_TRUE(outcome.IsSuccess());
+        ASSERT_STREQ(URI_STRING, request->GetURIString().c_str());
         ASSERT_STREQ(URI_STRING, outcome.GetResult()->GetOriginatingRequest().GetURIString().c_str());
         ASSERT_TRUE(metricsFromCore.httpClientMetrics.size() == 0);
         ASSERT_STREQ("MockAWSClient", serviceName.c_str());
@@ -131,31 +140,36 @@ public:
         MonitorTwoAPICalledFlag |= 0x2;
     }
 
-    void OnRequestFailed(const Aws::String& serviceName, const Aws::String& requestName,
+    void OnRequestFailed(const Aws::String& serviceName, const Aws::String& requestName, const std::shared_ptr<const Aws::Http::HttpRequest>& request,
         const Aws::Client::HttpResponseOutcome& outcome, const CoreMetricsCollection& metricsFromCore, void* context) const override
     {
         ASSERT_FALSE(outcome.IsSuccess());
         ASSERT_TRUE(metricsFromCore.httpClientMetrics.size() == 0);
         ASSERT_STREQ("MockAWSClient", serviceName.c_str());
         ASSERT_STREQ("AmazonWebServiceRequestMock", requestName.c_str());
+        ASSERT_STREQ(URI_STRING, request->GetURIString().c_str());
         ASSERT_EQ(2u, reinterpret_cast<size_t>(context));
         MonitorTwoAPICalledFlag |= 0x4;
         MonitorTwoAPICalledCounter[2] ++;
     }
 
-    void OnRequestRetry(const Aws::String& serviceName, const Aws::String& requestName, void* context) const override
+    void OnRequestRetry(const Aws::String& serviceName, const Aws::String& requestName, 
+        const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const override
     {
         ASSERT_STREQ("MockAWSClient", serviceName.c_str());
         ASSERT_STREQ("AmazonWebServiceRequestMock", requestName.c_str());
+        ASSERT_STREQ(URI_STRING, request->GetURIString().c_str());
         ASSERT_EQ(2u, reinterpret_cast<size_t>(context));
         MonitorTwoAPICalledFlag |= 0x8;
         MonitorTwoAPICalledCounter[3] ++;
     }
 
-    void OnFinish(const Aws::String& serviceName, const Aws::String& requestName, void* context) const override
+    void OnFinish(const Aws::String& serviceName, const Aws::String& requestName, 
+        const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const override
     {
         ASSERT_STREQ("MockAWSClient", serviceName.c_str());
         ASSERT_STREQ("AmazonWebServiceRequestMock", requestName.c_str());
+        ASSERT_STREQ(URI_STRING, request->GetURIString().c_str());
         ASSERT_EQ(2u, reinterpret_cast<size_t>(context));
         MonitorTwoAPICalledFlag |= 0x10;
         MonitorTwoAPICalledCounter[4] ++;

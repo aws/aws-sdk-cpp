@@ -59,6 +59,7 @@ namespace Aws
 
             // These are needed for logical reasons
             UNKNOWN = 100, // Unknown to the SDK
+            CLIENT_SIGNING_FAILURE = 101, // Client failed to sign the request
             SERVICE_EXTENSION_START_RANGE = 128
         };
 

@@ -54,6 +54,10 @@ public:
         {
             std::shared_ptr<Aws::Http::HttpResponse> responseToUse = m_responsesToUse.front();
             m_responsesToUse.pop();
+            if (responseToUse)
+            {
+                responseToUse->SetOriginatingRequest(request);
+            }
             return responseToUse;
         }
         return nullptr;

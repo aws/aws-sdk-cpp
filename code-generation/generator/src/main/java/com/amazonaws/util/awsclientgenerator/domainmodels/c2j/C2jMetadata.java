@@ -33,4 +33,5 @@ public class C2jMetadata {
     private String clientClassNamePrefix;
     private String uid;
     private String timestampFormat;
+    private String serviceId;
 }

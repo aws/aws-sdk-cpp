@@ -25,7 +25,7 @@ namespace Aws
         /**
          * Metrics definitions optional from HttpClient module inside AWS Sdk core.
          */
-        enum class AWS_CORE_API HttpClientMetricsType
+        enum class HttpClientMetricsType
         {
             /* 
              * Requires a successful DNS lookup, contains the (IPv4 or IPv6 as appropriate) numeric address of the connection endpoint to which the attempt was sent.

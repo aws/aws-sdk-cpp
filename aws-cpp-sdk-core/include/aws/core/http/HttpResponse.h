@@ -144,18 +144,22 @@ namespace Aws
              * Initializes an http response with the originalRequest and the response code.
              */
             HttpResponse(const HttpRequest& originatingRequest) :
-                httpRequest(originatingRequest),
-                sharedHttpRequest(nullptr),
-                responseCode(HttpResponseCode::REQUEST_NOT_MADE)
+                m_httpRequest(originatingRequest),
+                m_sharedHttpRequest(nullptr),
+                m_responseCode(HttpResponseCode::REQUEST_NOT_MADE),
+                m_hasClientSigningError(false),
+                m_hasNetworkConnectionError(false)
             {}
 
             /**
              * Initializes an http response with the shared_ptr typed originalRequest and the response code.
              */
             HttpResponse(const std::shared_ptr<const HttpRequest>& originatingRequest) :
-                httpRequest(*originatingRequest),
-                sharedHttpRequest(originatingRequest),
-                responseCode(HttpResponseCode::REQUEST_NOT_MADE)
+                m_httpRequest(*originatingRequest),
+                m_sharedHttpRequest(originatingRequest),
+                m_responseCode(HttpResponseCode::REQUEST_NOT_MADE),
+                m_hasClientSigningError(false),
+                m_hasNetworkConnectionError(false)
             {}
 
             virtual ~HttpResponse() = default;
@@ -165,11 +169,19 @@ namespace Aws
              */
             virtual inline const HttpRequest& GetOriginatingRequest() const
             {
-                if (sharedHttpRequest == nullptr)
+                if (m_sharedHttpRequest == nullptr)
                 {
-                    return httpRequest;
+                    return m_httpRequest;
                 }
-                return *sharedHttpRequest;
+                return *m_sharedHttpRequest;
+            }
+
+            /**
+            * Get the request that originated this response
+            */
+            virtual inline void SetOriginatingRequest(const std::shared_ptr<const HttpRequest>& httpRequest)
+            {
+                m_sharedHttpRequest = httpRequest;
             }
 
             /**
@@ -187,15 +199,15 @@ namespace Aws
             /**
              * Gets response code for this http response.
              */
-            virtual inline HttpResponseCode GetResponseCode() const { return responseCode; }
+            virtual inline HttpResponseCode GetResponseCode() const { return m_responseCode; }
             /**
              * Sets the response code for this http response.
              */
-            virtual inline void SetResponseCode(HttpResponseCode httpResponseCode) { responseCode = httpResponseCode; }
+            virtual inline void SetResponseCode(HttpResponseCode httpResponseCode) { m_responseCode = httpResponseCode; }
             /**
              * Gets the content-type of the response body
              */
-            virtual const Aws::String& GetContentType() const { return GetHeader(Http::CONTENT_TYPE_HEADER); };
+            virtual const Aws::String& GetContentType() const { return GetHeader(Http::CONTENT_TYPE_HEADER); }
             /**
              * Gets the response body of the response.
              */
@@ -212,15 +224,17 @@ namespace Aws
             /**
              * Sets the content type header on the http response object.
              */
-            virtual void SetContentType(const Aws::String& contentType) { AddHeader("content-type", contentType); };
+            virtual void SetContentType(const Aws::String& contentType) { AddHeader("content-type", contentType); }
 
         private:
             HttpResponse(const HttpResponse&);
             HttpResponse& operator = (const HttpResponse&);
 
-            const HttpRequest& httpRequest;
-            std::shared_ptr<const HttpRequest> sharedHttpRequest;
-            HttpResponseCode responseCode;
+            const HttpRequest& m_httpRequest;
+            std::shared_ptr<const HttpRequest> m_sharedHttpRequest;
+            HttpResponseCode m_responseCode;
+            bool m_hasClientSigningError;
+            bool m_hasNetworkConnectionError;
         };
 
 

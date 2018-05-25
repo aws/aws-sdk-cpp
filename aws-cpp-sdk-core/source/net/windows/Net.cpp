@@ -15,6 +15,7 @@
 
 #include <WinSock2.h>
 #include <cassert>
+#include <aws/core/utils/logging/LogMacros.h>
 
 namespace Aws
 {
@@ -37,7 +38,15 @@ namespace Aws
             WSADATA wsaData;
             int result = WSAStartup(MAKEWORD(2, 2), &wsaData);
             assert(result == NO_ERROR);
-            s_globalNetworkInitiated = true;
+            if (result != NO_ERROR)
+            {
+                AWS_LOGSTREAM_ERROR("WinSock2", "Failed to Initate WinSock2.2");
+                s_globalNetworkInitiated = false;
+            }
+            else
+            {
+                s_globalNetworkInitiated = true;
+            }
         }
 
         void CleanupNetwork()
