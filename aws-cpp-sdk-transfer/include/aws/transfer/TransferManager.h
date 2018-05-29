@@ -46,7 +46,7 @@ namespace Aws
          */
         struct TransferManagerConfiguration
         {
-            TransferManagerConfiguration(Aws::Utils::Threading::Executor* executor) : s3Client(nullptr), transferExecutor(executor), transferBufferMaxHeapSize(10 * MB5), bufferSize(MB5)
+            TransferManagerConfiguration(Aws::Utils::Threading::Executor* executor) : s3Client(nullptr), transferExecutor(executor), needsComputeContentMd5(false), transferBufferMaxHeapSize(10 * MB5), bufferSize(MB5)
             {
             }
 
@@ -60,6 +60,10 @@ namespace Aws
              * It is not a bug to use the same executor, but at least be aware that this is how the manager will be used.
              */
             Aws::Utils::Threading::Executor* transferExecutor;
+            /**
+             * If this is set to true, calculate content-md5 and set it to upload part request.
+             */
+            bool needsComputeContentMd5;
             /**
              * If you have special arguments you want passed to our put object calls, put them here. We will copy the template for each put object call
              * overriding the body stream, bucket, and key. If object metadata is passed through, we will override that as well.

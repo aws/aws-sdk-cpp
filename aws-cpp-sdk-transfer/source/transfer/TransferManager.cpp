@@ -359,6 +359,9 @@ namespace Aws
 
                     uploadPartRequest.SetBody(preallocatedStreamReader);
                     uploadPartRequest.SetContentType(handle->GetContentType());
+                    if (m_transferConfig.needsComputeContentMd5) {
+                        uploadPartRequest.SetContentMD5(Aws::Utils::HashingUtils::Base64Encode(Aws::Utils::HashingUtils::CalculateMD5(*preallocatedStreamReader)));
+                    }
                     auto asyncContext = Aws::MakeShared<TransferHandleAsyncContext>(CLASS_TAG);
                     asyncContext->handle = handle;
                     asyncContext->partState = partsIter->second;
@@ -432,6 +435,9 @@ namespace Aws
             auto preallocatedStreamReader = Aws::MakeShared<Aws::IOStream>(CLASS_TAG, streamBuf);
 
             putObjectRequest.SetBody(preallocatedStreamReader);
+            if (m_transferConfig.needsComputeContentMd5) {
+                putObjectRequest.SetContentMD5(Aws::Utils::HashingUtils::Base64Encode(Aws::Utils::HashingUtils::CalculateMD5(*preallocatedStreamReader)));
+            }
 
             auto self = shared_from_this(); // keep transfer manager alive until all callbacks are finished.
             auto uploadProgressCallback = [self, partState, handle](const Aws::Http::HttpRequest*, long long progress)
