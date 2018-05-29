@@ -25,6 +25,7 @@ using namespace Aws::Utils;
 using namespace Aws::Utils::Logging;
 
 static const char* AllocationTag = "DefaultLogSystem";
+static const int BUFFERED_MSG_COUNT = 100;
 
 static std::shared_ptr<Aws::OFStream> MakeDefaultLogFile(const Aws::String filenamePrefix)
 {
@@ -34,24 +35,23 @@ static std::shared_ptr<Aws::OFStream> MakeDefaultLogFile(const Aws::String filen
 
 static void LogThread(DefaultLogSystem::LogSynchronizationData* syncData, const std::shared_ptr<Aws::OStream>& logFile, const Aws::String& filenamePrefix, bool rollLog)
 {
-    bool done = false;
     // localtime requires access to env. variables to get Timezone, which is not thread-safe
     int32_t lastRolledHour = DateTime::Now().GetHour(false /*localtime*/);
     std::shared_ptr<Aws::OStream> log = logFile;
 
-    while(!done)
+    for(;;)
     {
         std::unique_lock<std::mutex> locker(syncData->m_logQueueMutex);
         syncData->m_queueSignal.wait(locker, [&](){ return syncData->m_stopLogging.load() == true || syncData->m_queuedLogMessages.size() > 0; } );
 
-        Aws::Vector<Aws::String> messages;
-        while(!syncData->m_queuedLogMessages.empty())
+        if (syncData->m_stopLogging && syncData->m_queuedLogMessages.size() == 0)
         {
-            messages.push_back(syncData->m_queuedLogMessages.front());
-            syncData->m_queuedLogMessages.pop();
+            break;
         }
 
-        done = syncData->m_stopLogging.load() && syncData->m_queuedLogMessages.size() == 0;
+        Aws::Vector<Aws::String> messages(std::move(syncData->m_queuedLogMessages));
+        syncData->m_queuedLogMessages.reserve(BUFFERED_MSG_COUNT);
+
         locker.unlock();
 
         if (messages.size() > 0)
@@ -67,10 +67,11 @@ static void LogThread(DefaultLogSystem::LogSynchronizationData* syncData, const 
                 }
             }
 
-            for (uint32_t i = 0; i < messages.size(); ++i)
+            for (const auto& msg : messages)
             {
-                (*log) << messages[i];
+                (*log) << msg;
             }
+
             log->flush();
         }
     }
@@ -106,11 +107,16 @@ DefaultLogSystem::~DefaultLogSystem()
 
 void DefaultLogSystem::ProcessFormattedStatement(Aws::String&& statement)
 {
+    std::unique_lock<std::mutex> locker(m_syncData.m_logQueueMutex);
+    m_syncData.m_queuedLogMessages.emplace_back(std::move(statement));
+    if(m_syncData.m_queuedLogMessages.size() >= BUFFERED_MSG_COUNT)
     {
-        std::lock_guard<std::mutex> locker(m_syncData.m_logQueueMutex);
-        m_syncData.m_queuedLogMessages.push(std::move(statement));
+        locker.unlock();
+        m_syncData.m_queueSignal.notify_one();
     }
-
-    m_syncData.m_queueSignal.notify_one();
+    else
+    {
+        locker.unlock();
+    }
 }
 

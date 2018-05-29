@@ -19,7 +19,7 @@
 
 #include <aws/core/utils/logging/FormattedLogSystem.h>
 #include <aws/core/utils/logging/LogLevel.h>
-#include <aws/core/utils/memory/stl/AWSQueue.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 
@@ -65,7 +65,7 @@ namespace Aws
 
                     std::mutex m_logQueueMutex;
                     std::condition_variable m_queueSignal;
-                    Aws::Queue<Aws::String> m_queuedLogMessages;
+                    Aws::Vector<Aws::String> m_queuedLogMessages;
                     std::atomic<bool> m_stopLogging;
 
                 private:

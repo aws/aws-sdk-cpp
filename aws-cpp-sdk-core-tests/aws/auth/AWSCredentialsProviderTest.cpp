@@ -38,9 +38,16 @@ using namespace Aws::Utils;
 
 TEST(ProfileConfigFileAWSCredentialsProviderTest, TestDefaultConfig)
 {
-    
+    struct ReloadableProfileConfigProvider : ProfileConfigFileAWSCredentialsProvider
+    {
+        void ReloadNow() 
+        {
+            Reload();
+        }
+    };
+
     auto profileDirectory = ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
- 
+
     Aws::FileSystem::CreateDirectoryIfNotExists(profileDirectory.c_str());
 
     Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename();
@@ -68,12 +75,12 @@ TEST(ProfileConfigFileAWSCredentialsProviderTest, TestDefaultConfig)
     configFile.close();
 
 
-    ProfileConfigFileAWSCredentialsProvider provider(10);
+    ReloadableProfileConfigProvider provider;
     EXPECT_STREQ("DefaultAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
     EXPECT_STREQ("DefaultSecretKey", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
 
     Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
-    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+    provider.ReloadNow();
 
     EXPECT_STREQ("", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
     EXPECT_STREQ("", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
