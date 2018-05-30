@@ -35,14 +35,28 @@ static const char* EC2_REGION_RESOURCE = "/latest/meta-data/placement/availabili
 static const char* EC2_METADATA_CLIENT_LOG_TAG = "EC2MetadataClient";
 static const char* ECS_CREDENTIALS_CLIENT_LOG_TAG = "ECSCredentialsClient";
 
-AWSHttpResourceClient::AWSHttpResourceClient(const char* logtag) 
+AWSHttpResourceClient::AWSHttpResourceClient(const char* logtag)
     : m_logtag(logtag), m_httpClient(nullptr)
 {
-    AWS_LOGSTREAM_INFO(m_logtag.c_str(), 
+    AWS_LOGSTREAM_INFO(m_logtag.c_str(),
             "Creating HttpClient with max connections" << 2 << " and scheme " << "http");
     ClientConfiguration clientConfiguration;
     clientConfiguration.maxConnections = 2;
     clientConfiguration.scheme = Scheme::HTTP;
+
+#ifdef WIN32
+    // For security reasons, we must bypass any proxy settings when fetching sensitive information, for example
+    // user credentials. On Windows, IXMLHttpRequest2 does not support bypasing proxy settings, therefore,
+    // we force using WinHTTP client. On POSIX systems, CURL is set to bypass proxy settings by default.
+    clientConfiguration.httpLibOverride = TransferLibType::WIN_HTTP_CLIENT;
+    AWS_LOGSTREAM_INFO(logtag, "Overriding the current HTTP client to WinHTTP to bypass proxy settings.");
+#endif
+    // Explicitly set the proxy settings to empty/zero to avoid relying on defaults that could potentially change
+    // in the future.
+    clientConfiguration.proxyHost = "";
+    clientConfiguration.proxyUserName = "";
+    clientConfiguration.proxyPassword = "";
+    clientConfiguration.proxyPort = 0;
 
     m_httpClient = CreateHttpClient(clientConfiguration);
 }
@@ -166,7 +180,7 @@ Aws::String EC2MetadataClient::GetCurrentRegion() const
 }
 
 ECSCredentialsClient::ECSCredentialsClient(const char* resourcePath, const char* endpoint)
-    : AWSHttpResourceClient(ECS_CREDENTIALS_CLIENT_LOG_TAG), 
+    : AWSHttpResourceClient(ECS_CREDENTIALS_CLIENT_LOG_TAG),
     m_resourcePath(resourcePath), m_endpoint(endpoint)
 {
 

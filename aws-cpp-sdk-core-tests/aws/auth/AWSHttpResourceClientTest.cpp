@@ -40,12 +40,6 @@ namespace
 
         void SetUp()
         {
-            // Create a client
-            ClientConfiguration config;
-            config.scheme = Scheme::HTTP;
-            config.connectTimeoutMs = 30000;
-            config.requestTimeoutMs = 30000;           
-
             mockHttpClient = Aws::MakeShared<MockHttpClient>(ALLOCATION_TAG);
             mockHttpClientFactory = Aws::MakeShared<MockHttpClientFactory>(ALLOCATION_TAG);
             mockHttpClientFactory->SetClient(mockHttpClient);

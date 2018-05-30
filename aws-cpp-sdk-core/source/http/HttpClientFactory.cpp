@@ -23,6 +23,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #if ENABLE_WINDOWS_IXML_HTTP_REQUEST_2_CLIENT
 #include <aws/core/http/windows/IXmlHttpRequest2HttpClient.h>
+#include <aws/core/http/windows/WinHttpSyncHttpClient.h>
 #else
 #include <aws/core/http/windows/WinINetSyncHttpClient.h>
 #include <aws/core/http/windows/WinHttpSyncHttpClient.h>
@@ -70,7 +71,18 @@ namespace Aws
                 // Other clients: Curl is your default
 #if ENABLE_WINDOWS_CLIENT
 #if ENABLE_WINDOWS_IXML_HTTP_REQUEST_2_CLIENT
-                return Aws::MakeShared<IXmlHttpRequest2HttpClient>(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, clientConfiguration);
+                switch (clientConfiguration.httpLibOverride)
+                {
+                    case TransferLibType::WIN_HTTP_CLIENT:
+                        AWS_LOGSTREAM_INFO(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, "Creating WinHTTP http client.");
+                        return Aws::MakeShared<WinHttpSyncHttpClient>(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, clientConfiguration);
+                    case TransferLibType::WIN_INET_CLIENT:
+                        AWS_LOGSTREAM_WARN(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, "WinINet http client is not supported with the current build configuration.");
+                        // fall-through
+                    default:
+                        AWS_LOGSTREAM_INFO(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, "Creating IXMLHttpRequest http client.");
+                        return Aws::MakeShared<IXmlHttpRequest2HttpClient>(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, clientConfiguration);
+                }
 #else
                 switch (clientConfiguration.httpLibOverride)
                 {

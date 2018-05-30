@@ -86,8 +86,18 @@ if(ENABLE_CURL_CLIENT)
     file(GLOB HTTP_CURL_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/curl/*.cpp")
 elseif(ENABLE_WINDOWS_CLIENT)
     if(USE_IXML_HTTP_REQUEST_2)
-        file(GLOB HTTP_WINDOWS_CLIENT_HEADERS "include/aws/core/http/windows/IXmlHttpRequest2HttpClient.h")
-        file(GLOB HTTP_WINDOWS_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/windows/IXmlHttpRequest2HttpClient.cpp")
+        file(GLOB HTTP_WINDOWS_CLIENT_HEADERS 
+            "include/aws/core/http/windows/WinSyncHttpClient.h"
+            "include/aws/core/http/windows/WinHttpSyncHttpClient.h"
+            "include/aws/core/http/windows/WinConnectionPoolMgr.h"
+            "include/aws/core/http/windows/WinHttpConnectionPoolMgr.h"
+            "include/aws/core/http/windows/IXmlHttpRequest2HttpClient.h")
+        file(GLOB HTTP_WINDOWS_CLIENT_SOURCE 
+            "${CMAKE_CURRENT_SOURCE_DIR}/source/http/windows/WinSyncHttpClient.cpp"
+            "${CMAKE_CURRENT_SOURCE_DIR}/source/http/windows/WinHttpSyncHttpClient.cpp"
+            "${CMAKE_CURRENT_SOURCE_DIR}/source/http/windows/WinConnectionPoolMgr.cpp"
+            "${CMAKE_CURRENT_SOURCE_DIR}/source/http/windows/WinHttpConnectionPoolMgr.cpp"
+            "${CMAKE_CURRENT_SOURCE_DIR}/source/http/windows/IXmlHttpRequest2HttpClient.cpp")
     else()
         file(GLOB HTTP_WINDOWS_CLIENT_HEADERS "include/aws/core/http/windows/Win*.h")
         file(GLOB HTTP_WINDOWS_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/windows/Win*.cpp")
