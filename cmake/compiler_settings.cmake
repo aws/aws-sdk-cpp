@@ -49,7 +49,7 @@ macro(set_gcc_flags)
 endmacro()
 
 macro(set_gcc_warnings)
-    list(APPEND AWS_COMPILER_WARNINGS "-Wall" "-Werror" "-pedantic" "-Wextra")
+    list(APPEND AWS_COMPILER_WARNINGS "-Wall" "-Werror" "-pedantic" "-Wextra" "-Wno-noexcept-type")
     if(COMPILER_CLANG)
         if(PLATFORM_ANDROID)
             # when using clang with libc and API lower than 21 we need to include Android support headers and ignore the gnu-include-next warning.
