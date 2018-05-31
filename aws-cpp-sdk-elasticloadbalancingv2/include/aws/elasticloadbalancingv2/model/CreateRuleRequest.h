@@ -213,63 +213,98 @@ namespace Model
 
 
     /**
-     * <p>The priority for the rule. A listener can't have multiple rules with the same
+     * <p>The rule priority. A listener can't have multiple rules with the same
      * priority.</p>
      */
     inline int GetPriority() const{ return m_priority; }
 
     /**
-     * <p>The priority for the rule. A listener can't have multiple rules with the same
+     * <p>The rule priority. A listener can't have multiple rules with the same
      * priority.</p>
      */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
-     * <p>The priority for the rule. A listener can't have multiple rules with the same
+     * <p>The rule priority. A listener can't have multiple rules with the same
      * priority.</p>
      */
     inline CreateRuleRequest& WithPriority(int value) { SetPriority(value); return *this;}
 
 
     /**
-     * <p>An action. Each action has the type <code>forward</code> and specifies a
-     * target group.</p>
+     * <p>The actions. Each rule must include one forward action.</p> <p>If the action
+     * type is <code>forward</code>, you can specify a single target group.</p> <p>If
+     * the action type is <code>authenticate-oidc</code>, you can use an identity
+     * provider that is OpenID Connect (OIDC) compliant to authenticate users as they
+     * access your application.</p> <p>If the action type is
+     * <code>authenticate-cognito</code>, you can use Amazon Cognito to authenticate
+     * users as they access your application.</p>
      */
     inline const Aws::Vector<Action>& GetActions() const{ return m_actions; }
 
     /**
-     * <p>An action. Each action has the type <code>forward</code> and specifies a
-     * target group.</p>
+     * <p>The actions. Each rule must include one forward action.</p> <p>If the action
+     * type is <code>forward</code>, you can specify a single target group.</p> <p>If
+     * the action type is <code>authenticate-oidc</code>, you can use an identity
+     * provider that is OpenID Connect (OIDC) compliant to authenticate users as they
+     * access your application.</p> <p>If the action type is
+     * <code>authenticate-cognito</code>, you can use Amazon Cognito to authenticate
+     * users as they access your application.</p>
      */
     inline void SetActions(const Aws::Vector<Action>& value) { m_actionsHasBeenSet = true; m_actions = value; }
 
     /**
-     * <p>An action. Each action has the type <code>forward</code> and specifies a
-     * target group.</p>
+     * <p>The actions. Each rule must include one forward action.</p> <p>If the action
+     * type is <code>forward</code>, you can specify a single target group.</p> <p>If
+     * the action type is <code>authenticate-oidc</code>, you can use an identity
+     * provider that is OpenID Connect (OIDC) compliant to authenticate users as they
+     * access your application.</p> <p>If the action type is
+     * <code>authenticate-cognito</code>, you can use Amazon Cognito to authenticate
+     * users as they access your application.</p>
      */
     inline void SetActions(Aws::Vector<Action>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
 
     /**
-     * <p>An action. Each action has the type <code>forward</code> and specifies a
-     * target group.</p>
+     * <p>The actions. Each rule must include one forward action.</p> <p>If the action
+     * type is <code>forward</code>, you can specify a single target group.</p> <p>If
+     * the action type is <code>authenticate-oidc</code>, you can use an identity
+     * provider that is OpenID Connect (OIDC) compliant to authenticate users as they
+     * access your application.</p> <p>If the action type is
+     * <code>authenticate-cognito</code>, you can use Amazon Cognito to authenticate
+     * users as they access your application.</p>
      */
     inline CreateRuleRequest& WithActions(const Aws::Vector<Action>& value) { SetActions(value); return *this;}
 
     /**
-     * <p>An action. Each action has the type <code>forward</code> and specifies a
-     * target group.</p>
+     * <p>The actions. Each rule must include one forward action.</p> <p>If the action
+     * type is <code>forward</code>, you can specify a single target group.</p> <p>If
+     * the action type is <code>authenticate-oidc</code>, you can use an identity
+     * provider that is OpenID Connect (OIDC) compliant to authenticate users as they
+     * access your application.</p> <p>If the action type is
+     * <code>authenticate-cognito</code>, you can use Amazon Cognito to authenticate
+     * users as they access your application.</p>
      */
     inline CreateRuleRequest& WithActions(Aws::Vector<Action>&& value) { SetActions(std::move(value)); return *this;}
 
     /**
-     * <p>An action. Each action has the type <code>forward</code> and specifies a
-     * target group.</p>
+     * <p>The actions. Each rule must include one forward action.</p> <p>If the action
+     * type is <code>forward</code>, you can specify a single target group.</p> <p>If
+     * the action type is <code>authenticate-oidc</code>, you can use an identity
+     * provider that is OpenID Connect (OIDC) compliant to authenticate users as they
+     * access your application.</p> <p>If the action type is
+     * <code>authenticate-cognito</code>, you can use Amazon Cognito to authenticate
+     * users as they access your application.</p>
      */
     inline CreateRuleRequest& AddActions(const Action& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 
     /**
-     * <p>An action. Each action has the type <code>forward</code> and specifies a
-     * target group.</p>
+     * <p>The actions. Each rule must include one forward action.</p> <p>If the action
+     * type is <code>forward</code>, you can specify a single target group.</p> <p>If
+     * the action type is <code>authenticate-oidc</code>, you can use an identity
+     * provider that is OpenID Connect (OIDC) compliant to authenticate users as they
+     * access your application.</p> <p>If the action type is
+     * <code>authenticate-cognito</code>, you can use Amazon Cognito to authenticate
+     * users as they access your application.</p>
      */
     inline CreateRuleRequest& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 

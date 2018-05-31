@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>Information about the target group.</p>
+     * <p>Information about the modified target group.</p>
      */
     inline const Aws::Vector<TargetGroup>& GetTargetGroups() const{ return m_targetGroups; }
 
     /**
-     * <p>Information about the target group.</p>
+     * <p>Information about the modified target group.</p>
      */
     inline void SetTargetGroups(const Aws::Vector<TargetGroup>& value) { m_targetGroups = value; }
 
     /**
-     * <p>Information about the target group.</p>
+     * <p>Information about the modified target group.</p>
      */
     inline void SetTargetGroups(Aws::Vector<TargetGroup>&& value) { m_targetGroups = std::move(value); }
 
     /**
-     * <p>Information about the target group.</p>
+     * <p>Information about the modified target group.</p>
      */
     inline ModifyTargetGroupResult& WithTargetGroups(const Aws::Vector<TargetGroup>& value) { SetTargetGroups(value); return *this;}
 
     /**
-     * <p>Information about the target group.</p>
+     * <p>Information about the modified target group.</p>
      */
     inline ModifyTargetGroupResult& WithTargetGroups(Aws::Vector<TargetGroup>&& value) { SetTargetGroups(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the target group.</p>
+     * <p>Information about the modified target group.</p>
      */
     inline ModifyTargetGroupResult& AddTargetGroups(const TargetGroup& value) { m_targetGroups.push_back(value); return *this; }
 
     /**
-     * <p>Information about the target group.</p>
+     * <p>Information about the modified target group.</p>
      */
     inline ModifyTargetGroupResult& AddTargetGroups(TargetGroup&& value) { m_targetGroups.push_back(std::move(value)); return *this; }
 

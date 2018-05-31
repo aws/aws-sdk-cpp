@@ -26,7 +26,9 @@ namespace Model
   enum class ActionTypeEnum
   {
     NOT_SET,
-    forward
+    forward,
+    authenticate_oidc,
+    authenticate_cognito
   };
 
 namespace ActionTypeEnumMapper
