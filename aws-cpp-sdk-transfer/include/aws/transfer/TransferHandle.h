@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSSet.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/UUID.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/s3/S3Errors.h>
@@ -39,6 +40,8 @@ namespace Aws
         class TransferHandle;
 
         typedef std::function<Aws::IOStream*(void)> CreateDownloadStreamCallback;
+
+        static const char CLASS_TAG[] = "TransferManager";
 
         struct DownloadConfiguration
         {
@@ -216,12 +219,12 @@ namespace Aws
             /**
              * Get the parts transactionally, mostly for internal purposes.
              */
-             void GetAllPartsTransactional(PartStateMap& queuedParts, PartStateMap& pendingParts,
-                 PartStateMap& failedParts, PartStateMap& completedParts);
-             /**
-              * Returns true or false if any parts have been created for this transfer
-              */
-             bool HasParts() const;
+            void GetAllPartsTransactional(PartStateMap& queuedParts, PartStateMap& pendingParts,
+                    PartStateMap& failedParts, PartStateMap& completedParts);
+            /**
+             * Returns true or false if any parts have been created for this transfer
+             */
+            bool HasParts() const;
             /**
              * Returns false if Cancel has been called. Largely for internal use.
              */
@@ -354,6 +357,11 @@ namespace Aws
                 return m_lastPart.compare_exchange_strong(expected, true/*desired*/);
             }
 
+            /*
+             * Returns a unique identifier tied to this particular transfer handle.
+             */
+            Aws::String GetId() const;
+
         private:
 
             void CleanupDownloadStream();
@@ -378,6 +386,7 @@ namespace Aws
             Aws::Client::AWSError<Aws::S3::S3Errors> m_lastError;
             std::atomic<bool> m_cancel;
             std::shared_ptr<const Aws::Client::AsyncCallerContext> m_context;
+            const Utils::UUID m_handleId;
 
             CreateDownloadStreamCallback m_createDownloadStreamFn;
             Aws::IOStream* m_downloadStream;
@@ -388,5 +397,7 @@ namespace Aws
             mutable std::condition_variable m_waitUntilFinishedSignal;
             mutable std::mutex m_getterSetterLock;
         };
+
+        AWS_TRANSFER_API Aws::OStream& operator << (Aws::OStream& s, TransferStatus status);
     }
 }

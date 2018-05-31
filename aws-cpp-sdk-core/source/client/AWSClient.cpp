@@ -592,6 +592,7 @@ AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
     if (!httpResponse)
     {
         error = AWSError<CoreErrors>(CoreErrors::NETWORK_CONNECTION, "", "Unable to connect to endpoint", true);
+        AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, error);
         return error;
     }
     
@@ -601,8 +602,7 @@ AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
         auto errorCode = GuessBodylessErrorType(responseCode);
 
         Aws::StringStream ss;
-        ss << "No response body. Response code: " << static_cast< uint32_t >(responseCode);
-        AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, ss.str().c_str());
+        ss << "No response body.";
         error = AWSError<CoreErrors>(errorCode, "", ss.str(),
             isRetryableHttpResponseCode(responseCode));
     }
@@ -614,7 +614,7 @@ AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
 
     error.SetResponseHeaders(httpResponse->GetHeaders());
     error.SetResponseCode(httpResponse->GetResponseCode());
-
+    AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, error);
     return error;
 }
 
@@ -683,13 +683,15 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
 }
 
 AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::HttpResponse>& httpResponse) const
-{    
+{
+    AWSError<CoreErrors> error;
     if (!httpResponse)
     {
-        return AWSError<CoreErrors>(CoreErrors::NETWORK_CONNECTION, "", "Unable to connect to endpoint", true);
+        error = AWSError<CoreErrors>(CoreErrors::NETWORK_CONNECTION, "", "Unable to connect to endpoint", true);
+        AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, error);
+        return error;
     }
 
-    AWSError<CoreErrors> error;
 
     if (httpResponse->GetResponseBody().tellp() < 1)
     {
@@ -697,10 +699,8 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
         auto errorCode = GuessBodylessErrorType(responseCode);
 
         Aws::StringStream ss;
-        ss << "No response body. Response code: " << static_cast< uint32_t >(responseCode);
-        AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, ss.str().c_str());
-        error = AWSError<CoreErrors>(errorCode, "", ss.str(),
-            isRetryableHttpResponseCode(responseCode));
+        ss << "No response body.";
+        error = AWSError<CoreErrors>(errorCode, "", ss.str(), isRetryableHttpResponseCode(responseCode));
     }
     else
     {
@@ -719,5 +719,6 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
 
     error.SetResponseHeaders(httpResponse->GetHeaders());
     error.SetResponseCode(httpResponse->GetResponseCode());
+    AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, error);
     return error;
 }

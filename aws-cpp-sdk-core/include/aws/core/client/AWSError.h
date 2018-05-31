@@ -109,5 +109,20 @@ namespace Aws
             bool m_isRetryable;
         };
 
+        template<typename T>
+        Aws::OStream& operator << (Aws::OStream& s, const AWSError<T>& e)
+        {
+            s << "HTTP response code: " << static_cast<int>(e.GetResponseCode()) << "\n"
+              << "Exception name: " << e.GetExceptionName() << "\n"
+              << "Error message: " << e.GetMessage() << "\n"
+              << e.GetResponseHeaders().size() << " response headers:";
+
+            for (auto&& header : e.GetResponseHeaders())
+            {
+                s << "\n" << header.first << " : " << header.second;
+            }
+            return s;
+        }
+
     } // namespace Client
 } // namespace Aws
