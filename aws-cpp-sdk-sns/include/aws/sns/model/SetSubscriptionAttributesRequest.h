@@ -88,49 +88,49 @@ namespace Model
     /**
      * <p>The name of the attribute you want to set. Only a subset of the subscriptions
      * attributes are mutable.</p> <p>Valid values: <code>DeliveryPolicy</code> |
-     * <code>RawMessageDelivery</code> </p>
+     * <code>FilterPolicy</code> | <code>RawMessageDelivery</code> </p>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
 
     /**
      * <p>The name of the attribute you want to set. Only a subset of the subscriptions
      * attributes are mutable.</p> <p>Valid values: <code>DeliveryPolicy</code> |
-     * <code>RawMessageDelivery</code> </p>
+     * <code>FilterPolicy</code> | <code>RawMessageDelivery</code> </p>
      */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
      * <p>The name of the attribute you want to set. Only a subset of the subscriptions
      * attributes are mutable.</p> <p>Valid values: <code>DeliveryPolicy</code> |
-     * <code>RawMessageDelivery</code> </p>
+     * <code>FilterPolicy</code> | <code>RawMessageDelivery</code> </p>
      */
     inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
     /**
      * <p>The name of the attribute you want to set. Only a subset of the subscriptions
      * attributes are mutable.</p> <p>Valid values: <code>DeliveryPolicy</code> |
-     * <code>RawMessageDelivery</code> </p>
+     * <code>FilterPolicy</code> | <code>RawMessageDelivery</code> </p>
      */
     inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
 
     /**
      * <p>The name of the attribute you want to set. Only a subset of the subscriptions
      * attributes are mutable.</p> <p>Valid values: <code>DeliveryPolicy</code> |
-     * <code>RawMessageDelivery</code> </p>
+     * <code>FilterPolicy</code> | <code>RawMessageDelivery</code> </p>
      */
     inline SetSubscriptionAttributesRequest& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
 
     /**
      * <p>The name of the attribute you want to set. Only a subset of the subscriptions
      * attributes are mutable.</p> <p>Valid values: <code>DeliveryPolicy</code> |
-     * <code>RawMessageDelivery</code> </p>
+     * <code>FilterPolicy</code> | <code>RawMessageDelivery</code> </p>
      */
     inline SetSubscriptionAttributesRequest& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the attribute you want to set. Only a subset of the subscriptions
      * attributes are mutable.</p> <p>Valid values: <code>DeliveryPolicy</code> |
-     * <code>RawMessageDelivery</code> </p>
+     * <code>FilterPolicy</code> | <code>RawMessageDelivery</code> </p>
      */
     inline SetSubscriptionAttributesRequest& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 

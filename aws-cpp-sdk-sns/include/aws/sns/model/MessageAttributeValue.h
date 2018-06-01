@@ -60,56 +60,56 @@ namespace Model
 
 
     /**
-     * <p>Amazon SNS supports the following logical data types: String, Number, and
-     * Binary. For more information, see <a
+     * <p>Amazon SNS supports the following logical data types: String, String.Array,
+     * Number, and Binary. For more information, see <a
      * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message
      * Attribute Data Types</a>.</p>
      */
     inline const Aws::String& GetDataType() const{ return m_dataType; }
 
     /**
-     * <p>Amazon SNS supports the following logical data types: String, Number, and
-     * Binary. For more information, see <a
+     * <p>Amazon SNS supports the following logical data types: String, String.Array,
+     * Number, and Binary. For more information, see <a
      * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message
      * Attribute Data Types</a>.</p>
      */
     inline void SetDataType(const Aws::String& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
 
     /**
-     * <p>Amazon SNS supports the following logical data types: String, Number, and
-     * Binary. For more information, see <a
+     * <p>Amazon SNS supports the following logical data types: String, String.Array,
+     * Number, and Binary. For more information, see <a
      * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message
      * Attribute Data Types</a>.</p>
      */
     inline void SetDataType(Aws::String&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::move(value); }
 
     /**
-     * <p>Amazon SNS supports the following logical data types: String, Number, and
-     * Binary. For more information, see <a
+     * <p>Amazon SNS supports the following logical data types: String, String.Array,
+     * Number, and Binary. For more information, see <a
      * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message
      * Attribute Data Types</a>.</p>
      */
     inline void SetDataType(const char* value) { m_dataTypeHasBeenSet = true; m_dataType.assign(value); }
 
     /**
-     * <p>Amazon SNS supports the following logical data types: String, Number, and
-     * Binary. For more information, see <a
+     * <p>Amazon SNS supports the following logical data types: String, String.Array,
+     * Number, and Binary. For more information, see <a
      * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message
      * Attribute Data Types</a>.</p>
      */
     inline MessageAttributeValue& WithDataType(const Aws::String& value) { SetDataType(value); return *this;}
 
     /**
-     * <p>Amazon SNS supports the following logical data types: String, Number, and
-     * Binary. For more information, see <a
+     * <p>Amazon SNS supports the following logical data types: String, String.Array,
+     * Number, and Binary. For more information, see <a
      * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message
      * Attribute Data Types</a>.</p>
      */
     inline MessageAttributeValue& WithDataType(Aws::String&& value) { SetDataType(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon SNS supports the following logical data types: String, Number, and
-     * Binary. For more information, see <a
+     * <p>Amazon SNS supports the following logical data types: String, String.Array,
+     * Number, and Binary. For more information, see <a
      * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message
      * Attribute Data Types</a>.</p>
      */

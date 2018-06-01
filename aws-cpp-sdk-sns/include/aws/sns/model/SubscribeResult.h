@@ -49,44 +49,58 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the subscription, if the service was able to create a subscription
-     * immediately (without requiring endpoint owner confirmation).</p>
+     * <p>The ARN of the subscription if it is confirmed, or the string "pending
+     * confirmation" if the subscription requires confirmation. However, if the API
+     * request parameter <code>ReturnSubscriptionArn</code> is true, then the value is
+     * always the subscription ARN, even if the subscription requires confirmation.</p>
      */
     inline const Aws::String& GetSubscriptionArn() const{ return m_subscriptionArn; }
 
     /**
-     * <p>The ARN of the subscription, if the service was able to create a subscription
-     * immediately (without requiring endpoint owner confirmation).</p>
+     * <p>The ARN of the subscription if it is confirmed, or the string "pending
+     * confirmation" if the subscription requires confirmation. However, if the API
+     * request parameter <code>ReturnSubscriptionArn</code> is true, then the value is
+     * always the subscription ARN, even if the subscription requires confirmation.</p>
      */
     inline void SetSubscriptionArn(const Aws::String& value) { m_subscriptionArn = value; }
 
     /**
-     * <p>The ARN of the subscription, if the service was able to create a subscription
-     * immediately (without requiring endpoint owner confirmation).</p>
+     * <p>The ARN of the subscription if it is confirmed, or the string "pending
+     * confirmation" if the subscription requires confirmation. However, if the API
+     * request parameter <code>ReturnSubscriptionArn</code> is true, then the value is
+     * always the subscription ARN, even if the subscription requires confirmation.</p>
      */
     inline void SetSubscriptionArn(Aws::String&& value) { m_subscriptionArn = std::move(value); }
 
     /**
-     * <p>The ARN of the subscription, if the service was able to create a subscription
-     * immediately (without requiring endpoint owner confirmation).</p>
+     * <p>The ARN of the subscription if it is confirmed, or the string "pending
+     * confirmation" if the subscription requires confirmation. However, if the API
+     * request parameter <code>ReturnSubscriptionArn</code> is true, then the value is
+     * always the subscription ARN, even if the subscription requires confirmation.</p>
      */
     inline void SetSubscriptionArn(const char* value) { m_subscriptionArn.assign(value); }
 
     /**
-     * <p>The ARN of the subscription, if the service was able to create a subscription
-     * immediately (without requiring endpoint owner confirmation).</p>
+     * <p>The ARN of the subscription if it is confirmed, or the string "pending
+     * confirmation" if the subscription requires confirmation. However, if the API
+     * request parameter <code>ReturnSubscriptionArn</code> is true, then the value is
+     * always the subscription ARN, even if the subscription requires confirmation.</p>
      */
     inline SubscribeResult& WithSubscriptionArn(const Aws::String& value) { SetSubscriptionArn(value); return *this;}
 
     /**
-     * <p>The ARN of the subscription, if the service was able to create a subscription
-     * immediately (without requiring endpoint owner confirmation).</p>
+     * <p>The ARN of the subscription if it is confirmed, or the string "pending
+     * confirmation" if the subscription requires confirmation. However, if the API
+     * request parameter <code>ReturnSubscriptionArn</code> is true, then the value is
+     * always the subscription ARN, even if the subscription requires confirmation.</p>
      */
     inline SubscribeResult& WithSubscriptionArn(Aws::String&& value) { SetSubscriptionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the subscription, if the service was able to create a subscription
-     * immediately (without requiring endpoint owner confirmation).</p>
+     * <p>The ARN of the subscription if it is confirmed, or the string "pending
+     * confirmation" if the subscription requires confirmation. However, if the API
+     * request parameter <code>ReturnSubscriptionArn</code> is true, then the value is
+     * always the subscription ARN, even if the subscription requires confirmation.</p>
      */
     inline SubscribeResult& WithSubscriptionArn(const char* value) { SetSubscriptionArn(value); return *this;}
 

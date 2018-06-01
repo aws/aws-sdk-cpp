@@ -35,6 +35,8 @@ Job::Job() :
     m_targetSelectionHasBeenSet(false),
     m_status(JobStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_forceCanceled(false),
+    m_forceCanceledHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_targetsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -55,6 +57,8 @@ Job::Job(const JsonValue& jsonValue) :
     m_targetSelectionHasBeenSet(false),
     m_status(JobStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_forceCanceled(false),
+    m_forceCanceledHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_targetsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -97,6 +101,13 @@ Job& Job::operator =(const JsonValue& jsonValue)
     m_status = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("status"));
 
     m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("forceCanceled"))
+  {
+    m_forceCanceled = jsonValue.GetBool("forceCanceled");
+
+    m_forceCanceledHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("comment"))
@@ -202,6 +213,12 @@ JsonValue Job::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", JobStatusMapper::GetNameForJobStatus(m_status));
+  }
+
+  if(m_forceCanceledHasBeenSet)
+  {
+   payload.WithBool("forceCanceled", m_forceCanceled);
+
   }
 
   if(m_commentHasBeenSet)

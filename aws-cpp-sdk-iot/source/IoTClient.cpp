@@ -34,6 +34,7 @@
 #include <aws/iot/model/AttachThingPrincipalRequest.h>
 #include <aws/iot/model/CancelCertificateTransferRequest.h>
 #include <aws/iot/model/CancelJobRequest.h>
+#include <aws/iot/model/CancelJobExecutionRequest.h>
 #include <aws/iot/model/ClearDefaultAuthorizerRequest.h>
 #include <aws/iot/model/CreateAuthorizerRequest.h>
 #include <aws/iot/model/CreateCertificateFromCsrRequest.h>
@@ -465,6 +466,45 @@ void IoTClient::CancelJobAsync(const CancelJobRequest& request, const CancelJobR
 void IoTClient::CancelJobAsyncHelper(const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CancelJob(request), context);
+}
+
+CancelJobExecutionOutcome IoTClient::CancelJobExecution(const CancelJobExecutionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/things/";
+  ss << request.GetThingName();
+  ss << "/jobs/";
+  ss << request.GetJobId();
+  ss << "/cancel";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CancelJobExecutionOutcome(NoResult());
+  }
+  else
+  {
+    return CancelJobExecutionOutcome(outcome.GetError());
+  }
+}
+
+CancelJobExecutionOutcomeCallable IoTClient::CancelJobExecutionCallable(const CancelJobExecutionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CancelJobExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelJobExecution(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::CancelJobExecutionAsync(const CancelJobExecutionRequest& request, const CancelJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CancelJobExecutionAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::CancelJobExecutionAsyncHelper(const CancelJobExecutionRequest& request, const CancelJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CancelJobExecution(request), context);
 }
 
 ClearDefaultAuthorizerOutcome IoTClient::ClearDefaultAuthorizer(const ClearDefaultAuthorizerRequest& request) const

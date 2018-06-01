@@ -217,6 +217,25 @@ namespace Model
 
 
     /**
+     * <p>Will be <code>true</code> if the job was canceled with the optional
+     * <code>force</code> parameter set to <code>true</code>.</p>
+     */
+    inline bool GetForceCanceled() const{ return m_forceCanceled; }
+
+    /**
+     * <p>Will be <code>true</code> if the job was canceled with the optional
+     * <code>force</code> parameter set to <code>true</code>.</p>
+     */
+    inline void SetForceCanceled(bool value) { m_forceCanceledHasBeenSet = true; m_forceCanceled = value; }
+
+    /**
+     * <p>Will be <code>true</code> if the job was canceled with the optional
+     * <code>force</code> parameter set to <code>true</code>.</p>
+     */
+    inline Job& WithForceCanceled(bool value) { SetForceCanceled(value); return *this;}
+
+
+    /**
      * <p>If the job was updated, describes the reason for the update.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
@@ -558,6 +577,9 @@ namespace Model
 
     JobStatus m_status;
     bool m_statusHasBeenSet;
+
+    bool m_forceCanceled;
+    bool m_forceCanceledHasBeenSet;
 
     Aws::String m_comment;
     bool m_commentHasBeenSet;

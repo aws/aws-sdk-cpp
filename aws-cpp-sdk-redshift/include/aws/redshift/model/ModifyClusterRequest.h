@@ -408,49 +408,49 @@ namespace Model
 
     /**
      * <p>A list of virtual private cloud (VPC) security groups to be associated with
-     * the cluster.</p>
+     * the cluster. This change is asynchronously applied as soon as possible.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
 
     /**
      * <p>A list of virtual private cloud (VPC) security groups to be associated with
-     * the cluster.</p>
+     * the cluster. This change is asynchronously applied as soon as possible.</p>
      */
     inline void SetVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
 
     /**
      * <p>A list of virtual private cloud (VPC) security groups to be associated with
-     * the cluster.</p>
+     * the cluster. This change is asynchronously applied as soon as possible.</p>
      */
     inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::move(value); }
 
     /**
      * <p>A list of virtual private cloud (VPC) security groups to be associated with
-     * the cluster.</p>
+     * the cluster. This change is asynchronously applied as soon as possible.</p>
      */
     inline ModifyClusterRequest& WithVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetVpcSecurityGroupIds(value); return *this;}
 
     /**
      * <p>A list of virtual private cloud (VPC) security groups to be associated with
-     * the cluster.</p>
+     * the cluster. This change is asynchronously applied as soon as possible.</p>
      */
     inline ModifyClusterRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>A list of virtual private cloud (VPC) security groups to be associated with
-     * the cluster.</p>
+     * the cluster. This change is asynchronously applied as soon as possible.</p>
      */
     inline ModifyClusterRequest& AddVpcSecurityGroupIds(const Aws::String& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
     /**
      * <p>A list of virtual private cloud (VPC) security groups to be associated with
-     * the cluster.</p>
+     * the cluster. This change is asynchronously applied as soon as possible.</p>
      */
     inline ModifyClusterRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of virtual private cloud (VPC) security groups to be associated with
-     * the cluster.</p>
+     * the cluster. This change is asynchronously applied as soon as possible.</p>
      */
     inline ModifyClusterRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 

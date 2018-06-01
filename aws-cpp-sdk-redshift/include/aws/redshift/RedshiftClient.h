@@ -1057,7 +1057,7 @@ namespace Model
 
         /**
          * <p>Adds one or more tags to a specified resource.</p> <p>A resource can have up
-         * to 10 tags. If you try to create more than 10 tags for a resource, you will
+         * to 50 tags. If you try to create more than 50 tags for a resource, you will
          * receive an error and the attempt will fail.</p> <p>If you specify a key that
          * already exists for the resource, the value for that key will be updated with the
          * new value.</p><p><h3>See Also:</h3>   <a
@@ -1068,7 +1068,7 @@ namespace Model
 
         /**
          * <p>Adds one or more tags to a specified resource.</p> <p>A resource can have up
-         * to 10 tags. If you try to create more than 10 tags for a resource, you will
+         * to 50 tags. If you try to create more than 50 tags for a resource, you will
          * receive an error and the attempt will fail.</p> <p>If you specify a key that
          * already exists for the resource, the value for that key will be updated with the
          * new value.</p><p><h3>See Also:</h3>   <a
@@ -1081,7 +1081,7 @@ namespace Model
 
         /**
          * <p>Adds one or more tags to a specified resource.</p> <p>A resource can have up
-         * to 10 tags. If you try to create more than 10 tags for a resource, you will
+         * to 50 tags. If you try to create more than 50 tags for a resource, you will
          * receive an error and the attempt will fail.</p> <p>If you specify a key that
          * already exists for the resource, the value for that key will be updated with the
          * new value.</p><p><h3>See Also:</h3>   <a

@@ -17,6 +17,7 @@
 #include <aws/sns/SNS_EXPORTS.h>
 #include <aws/sns/SNSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -303,6 +304,131 @@ namespace Model
      */
     inline SubscribeRequest& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
 
+
+    /**
+     * <p>Assigns attributes to the subscription as a map of key-value pairs. You can
+     * assign any attribute that is supported by the
+     * <code>SetSubscriptionAttributes</code> action.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * <p>Assigns attributes to the subscription as a map of key-value pairs. You can
+     * assign any attribute that is supported by the
+     * <code>SetSubscriptionAttributes</code> action.</p>
+     */
+    inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+
+    /**
+     * <p>Assigns attributes to the subscription as a map of key-value pairs. You can
+     * assign any attribute that is supported by the
+     * <code>SetSubscriptionAttributes</code> action.</p>
+     */
+    inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
+
+    /**
+     * <p>Assigns attributes to the subscription as a map of key-value pairs. You can
+     * assign any attribute that is supported by the
+     * <code>SetSubscriptionAttributes</code> action.</p>
+     */
+    inline SubscribeRequest& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
+
+    /**
+     * <p>Assigns attributes to the subscription as a map of key-value pairs. You can
+     * assign any attribute that is supported by the
+     * <code>SetSubscriptionAttributes</code> action.</p>
+     */
+    inline SubscribeRequest& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
+
+    /**
+     * <p>Assigns attributes to the subscription as a map of key-value pairs. You can
+     * assign any attribute that is supported by the
+     * <code>SetSubscriptionAttributes</code> action.</p>
+     */
+    inline SubscribeRequest& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+
+    /**
+     * <p>Assigns attributes to the subscription as a map of key-value pairs. You can
+     * assign any attribute that is supported by the
+     * <code>SetSubscriptionAttributes</code> action.</p>
+     */
+    inline SubscribeRequest& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Assigns attributes to the subscription as a map of key-value pairs. You can
+     * assign any attribute that is supported by the
+     * <code>SetSubscriptionAttributes</code> action.</p>
+     */
+    inline SubscribeRequest& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Assigns attributes to the subscription as a map of key-value pairs. You can
+     * assign any attribute that is supported by the
+     * <code>SetSubscriptionAttributes</code> action.</p>
+     */
+    inline SubscribeRequest& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Assigns attributes to the subscription as a map of key-value pairs. You can
+     * assign any attribute that is supported by the
+     * <code>SetSubscriptionAttributes</code> action.</p>
+     */
+    inline SubscribeRequest& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Assigns attributes to the subscription as a map of key-value pairs. You can
+     * assign any attribute that is supported by the
+     * <code>SetSubscriptionAttributes</code> action.</p>
+     */
+    inline SubscribeRequest& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Assigns attributes to the subscription as a map of key-value pairs. You can
+     * assign any attribute that is supported by the
+     * <code>SetSubscriptionAttributes</code> action.</p>
+     */
+    inline SubscribeRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>Sets whether the response from the <code>Subscribe</code> request includes
+     * the subscription ARN, even if the subscription is not yet confirmed.</p> <p>If
+     * you set this parameter to <code>false</code>, the response includes the ARN for
+     * confirmed subscriptions, but it includes an ARN value of "pending subscription"
+     * for subscriptions that are not yet confirmed. A subscription becomes confirmed
+     * when the subscriber calls the <code>ConfirmSubscription</code> action with a
+     * confirmation token.</p> <p>If you set this parameter to <code>true</code>, the
+     * response includes the ARN in all cases, even if the subscription is not yet
+     * confirmed.</p> <p>The default value is <code>false</code>.</p>
+     */
+    inline bool GetReturnSubscriptionArn() const{ return m_returnSubscriptionArn; }
+
+    /**
+     * <p>Sets whether the response from the <code>Subscribe</code> request includes
+     * the subscription ARN, even if the subscription is not yet confirmed.</p> <p>If
+     * you set this parameter to <code>false</code>, the response includes the ARN for
+     * confirmed subscriptions, but it includes an ARN value of "pending subscription"
+     * for subscriptions that are not yet confirmed. A subscription becomes confirmed
+     * when the subscriber calls the <code>ConfirmSubscription</code> action with a
+     * confirmation token.</p> <p>If you set this parameter to <code>true</code>, the
+     * response includes the ARN in all cases, even if the subscription is not yet
+     * confirmed.</p> <p>The default value is <code>false</code>.</p>
+     */
+    inline void SetReturnSubscriptionArn(bool value) { m_returnSubscriptionArnHasBeenSet = true; m_returnSubscriptionArn = value; }
+
+    /**
+     * <p>Sets whether the response from the <code>Subscribe</code> request includes
+     * the subscription ARN, even if the subscription is not yet confirmed.</p> <p>If
+     * you set this parameter to <code>false</code>, the response includes the ARN for
+     * confirmed subscriptions, but it includes an ARN value of "pending subscription"
+     * for subscriptions that are not yet confirmed. A subscription becomes confirmed
+     * when the subscriber calls the <code>ConfirmSubscription</code> action with a
+     * confirmation token.</p> <p>If you set this parameter to <code>true</code>, the
+     * response includes the ARN in all cases, even if the subscription is not yet
+     * confirmed.</p> <p>The default value is <code>false</code>.</p>
+     */
+    inline SubscribeRequest& WithReturnSubscriptionArn(bool value) { SetReturnSubscriptionArn(value); return *this;}
+
   private:
 
     Aws::String m_topicArn;
@@ -313,6 +439,12 @@ namespace Model
 
     Aws::String m_endpoint;
     bool m_endpointHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_attributes;
+    bool m_attributesHasBeenSet;
+
+    bool m_returnSubscriptionArn;
+    bool m_returnSubscriptionArnHasBeenSet;
   };
 
 } // namespace Model

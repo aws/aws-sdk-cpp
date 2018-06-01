@@ -121,7 +121,7 @@ namespace Model
 
 
     /**
-     * <p>The message format of the message to publish. Optional. Accepted values are
+     * <p>(Optional) The message format of the message to publish. Accepted values are
      * "JSON" and "RAW". The default value of the attribute is "RAW". SNS uses this
      * setting to determine if the payload should be parsed and relevant
      * platform-specific bits of the payload should be extracted. To read more about
@@ -132,7 +132,7 @@ namespace Model
     inline const MessageFormat& GetMessageFormat() const{ return m_messageFormat; }
 
     /**
-     * <p>The message format of the message to publish. Optional. Accepted values are
+     * <p>(Optional) The message format of the message to publish. Accepted values are
      * "JSON" and "RAW". The default value of the attribute is "RAW". SNS uses this
      * setting to determine if the payload should be parsed and relevant
      * platform-specific bits of the payload should be extracted. To read more about
@@ -143,7 +143,7 @@ namespace Model
     inline void SetMessageFormat(const MessageFormat& value) { m_messageFormatHasBeenSet = true; m_messageFormat = value; }
 
     /**
-     * <p>The message format of the message to publish. Optional. Accepted values are
+     * <p>(Optional) The message format of the message to publish. Accepted values are
      * "JSON" and "RAW". The default value of the attribute is "RAW". SNS uses this
      * setting to determine if the payload should be parsed and relevant
      * platform-specific bits of the payload should be extracted. To read more about
@@ -154,7 +154,7 @@ namespace Model
     inline void SetMessageFormat(MessageFormat&& value) { m_messageFormatHasBeenSet = true; m_messageFormat = std::move(value); }
 
     /**
-     * <p>The message format of the message to publish. Optional. Accepted values are
+     * <p>(Optional) The message format of the message to publish. Accepted values are
      * "JSON" and "RAW". The default value of the attribute is "RAW". SNS uses this
      * setting to determine if the payload should be parsed and relevant
      * platform-specific bits of the payload should be extracted. To read more about
@@ -165,7 +165,7 @@ namespace Model
     inline SnsAction& WithMessageFormat(const MessageFormat& value) { SetMessageFormat(value); return *this;}
 
     /**
-     * <p>The message format of the message to publish. Optional. Accepted values are
+     * <p>(Optional) The message format of the message to publish. Accepted values are
      * "JSON" and "RAW". The default value of the attribute is "RAW". SNS uses this
      * setting to determine if the payload should be parsed and relevant
      * platform-specific bits of the payload should be extracted. To read more about

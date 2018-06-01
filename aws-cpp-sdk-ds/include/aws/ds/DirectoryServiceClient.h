@@ -55,6 +55,7 @@
 #include <aws/ds/model/RegisterEventTopicResult.h>
 #include <aws/ds/model/RemoveIpRoutesResult.h>
 #include <aws/ds/model/RemoveTagsFromResourceResult.h>
+#include <aws/ds/model/ResetUserPasswordResult.h>
 #include <aws/ds/model/RestoreFromSnapshotResult.h>
 #include <aws/ds/model/StartSchemaExtensionResult.h>
 #include <aws/ds/model/UpdateConditionalForwarderResult.h>
@@ -140,6 +141,7 @@ namespace Model
         class RegisterEventTopicRequest;
         class RemoveIpRoutesRequest;
         class RemoveTagsFromResourceRequest;
+        class ResetUserPasswordRequest;
         class RestoreFromSnapshotRequest;
         class StartSchemaExtensionRequest;
         class UpdateConditionalForwarderRequest;
@@ -181,6 +183,7 @@ namespace Model
         typedef Aws::Utils::Outcome<RegisterEventTopicResult, Aws::Client::AWSError<DirectoryServiceErrors>> RegisterEventTopicOutcome;
         typedef Aws::Utils::Outcome<RemoveIpRoutesResult, Aws::Client::AWSError<DirectoryServiceErrors>> RemoveIpRoutesOutcome;
         typedef Aws::Utils::Outcome<RemoveTagsFromResourceResult, Aws::Client::AWSError<DirectoryServiceErrors>> RemoveTagsFromResourceOutcome;
+        typedef Aws::Utils::Outcome<ResetUserPasswordResult, Aws::Client::AWSError<DirectoryServiceErrors>> ResetUserPasswordOutcome;
         typedef Aws::Utils::Outcome<RestoreFromSnapshotResult, Aws::Client::AWSError<DirectoryServiceErrors>> RestoreFromSnapshotOutcome;
         typedef Aws::Utils::Outcome<StartSchemaExtensionResult, Aws::Client::AWSError<DirectoryServiceErrors>> StartSchemaExtensionOutcome;
         typedef Aws::Utils::Outcome<UpdateConditionalForwarderResult, Aws::Client::AWSError<DirectoryServiceErrors>> UpdateConditionalForwarderOutcome;
@@ -222,6 +225,7 @@ namespace Model
         typedef std::future<RegisterEventTopicOutcome> RegisterEventTopicOutcomeCallable;
         typedef std::future<RemoveIpRoutesOutcome> RemoveIpRoutesOutcomeCallable;
         typedef std::future<RemoveTagsFromResourceOutcome> RemoveTagsFromResourceOutcomeCallable;
+        typedef std::future<ResetUserPasswordOutcome> ResetUserPasswordOutcomeCallable;
         typedef std::future<RestoreFromSnapshotOutcome> RestoreFromSnapshotOutcomeCallable;
         typedef std::future<StartSchemaExtensionOutcome> StartSchemaExtensionOutcomeCallable;
         typedef std::future<UpdateConditionalForwarderOutcome> UpdateConditionalForwarderOutcomeCallable;
@@ -266,6 +270,7 @@ namespace Model
     typedef std::function<void(const DirectoryServiceClient*, const Model::RegisterEventTopicRequest&, const Model::RegisterEventTopicOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterEventTopicResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::RemoveIpRoutesRequest&, const Model::RemoveIpRoutesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveIpRoutesResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::RemoveTagsFromResourceRequest&, const Model::RemoveTagsFromResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsFromResourceResponseReceivedHandler;
+    typedef std::function<void(const DirectoryServiceClient*, const Model::ResetUserPasswordRequest&, const Model::ResetUserPasswordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetUserPasswordResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::RestoreFromSnapshotRequest&, const Model::RestoreFromSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreFromSnapshotResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::StartSchemaExtensionRequest&, const Model::StartSchemaExtensionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSchemaExtensionResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::UpdateConditionalForwarderRequest&, const Model::UpdateConditionalForwarderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConditionalForwarderResponseReceivedHandler;
@@ -1462,6 +1467,34 @@ namespace Model
         virtual void RemoveTagsFromResourceAsync(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Resets the password for any user in your AWS Managed Microsoft AD or Simple
+         * AD directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ResetUserPassword">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ResetUserPasswordOutcome ResetUserPassword(const Model::ResetUserPasswordRequest& request) const;
+
+        /**
+         * <p>Resets the password for any user in your AWS Managed Microsoft AD or Simple
+         * AD directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ResetUserPassword">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ResetUserPasswordOutcomeCallable ResetUserPasswordCallable(const Model::ResetUserPasswordRequest& request) const;
+
+        /**
+         * <p>Resets the password for any user in your AWS Managed Microsoft AD or Simple
+         * AD directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ResetUserPassword">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ResetUserPasswordAsync(const Model::ResetUserPasswordRequest& request, const ResetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Restores a directory using an existing directory snapshot.</p> <p>When you
          * restore a directory from a snapshot, any changes made to the directory after the
          * snapshot date are overwritten.</p> <p>This action returns as soon as the restore
@@ -1701,6 +1734,7 @@ namespace Model
         void RegisterEventTopicAsyncHelper(const Model::RegisterEventTopicRequest& request, const RegisterEventTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveIpRoutesAsyncHelper(const Model::RemoveIpRoutesRequest& request, const RemoveIpRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveTagsFromResourceAsyncHelper(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ResetUserPasswordAsyncHelper(const Model::ResetUserPasswordRequest& request, const ResetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreFromSnapshotAsyncHelper(const Model::RestoreFromSnapshotRequest& request, const RestoreFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartSchemaExtensionAsyncHelper(const Model::StartSchemaExtensionRequest& request, const StartSchemaExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateConditionalForwarderAsyncHelper(const Model::UpdateConditionalForwarderRequest& request, const UpdateConditionalForwarderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -173,6 +173,7 @@ namespace Model
         class AttachThingPrincipalRequest;
         class CancelCertificateTransferRequest;
         class CancelJobRequest;
+        class CancelJobExecutionRequest;
         class ClearDefaultAuthorizerRequest;
         class CreateAuthorizerRequest;
         class CreateCertificateFromCsrRequest;
@@ -295,6 +296,7 @@ namespace Model
         typedef Aws::Utils::Outcome<AttachThingPrincipalResult, Aws::Client::AWSError<IoTErrors>> AttachThingPrincipalOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTErrors>> CancelCertificateTransferOutcome;
         typedef Aws::Utils::Outcome<CancelJobResult, Aws::Client::AWSError<IoTErrors>> CancelJobOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTErrors>> CancelJobExecutionOutcome;
         typedef Aws::Utils::Outcome<ClearDefaultAuthorizerResult, Aws::Client::AWSError<IoTErrors>> ClearDefaultAuthorizerOutcome;
         typedef Aws::Utils::Outcome<CreateAuthorizerResult, Aws::Client::AWSError<IoTErrors>> CreateAuthorizerOutcome;
         typedef Aws::Utils::Outcome<CreateCertificateFromCsrResult, Aws::Client::AWSError<IoTErrors>> CreateCertificateFromCsrOutcome;
@@ -417,6 +419,7 @@ namespace Model
         typedef std::future<AttachThingPrincipalOutcome> AttachThingPrincipalOutcomeCallable;
         typedef std::future<CancelCertificateTransferOutcome> CancelCertificateTransferOutcomeCallable;
         typedef std::future<CancelJobOutcome> CancelJobOutcomeCallable;
+        typedef std::future<CancelJobExecutionOutcome> CancelJobExecutionOutcomeCallable;
         typedef std::future<ClearDefaultAuthorizerOutcome> ClearDefaultAuthorizerOutcomeCallable;
         typedef std::future<CreateAuthorizerOutcome> CreateAuthorizerOutcomeCallable;
         typedef std::future<CreateCertificateFromCsrOutcome> CreateCertificateFromCsrOutcomeCallable;
@@ -542,6 +545,7 @@ namespace Model
     typedef std::function<void(const IoTClient*, const Model::AttachThingPrincipalRequest&, const Model::AttachThingPrincipalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachThingPrincipalResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::CancelCertificateTransferRequest&, const Model::CancelCertificateTransferOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelCertificateTransferResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::CancelJobRequest&, const Model::CancelJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelJobResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::CancelJobExecutionRequest&, const Model::CancelJobExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelJobExecutionResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ClearDefaultAuthorizerRequest&, const Model::ClearDefaultAuthorizerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ClearDefaultAuthorizerResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::CreateAuthorizerRequest&, const Model::CreateAuthorizerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAuthorizerResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::CreateCertificateFromCsrRequest&, const Model::CreateCertificateFromCsrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCertificateFromCsrResponseReceivedHandler;
@@ -920,6 +924,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CancelJobAsync(const Model::CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Cancels the execution of a job for a given thing.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelJobExecution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelJobExecutionOutcome CancelJobExecution(const Model::CancelJobExecutionRequest& request) const;
+
+        /**
+         * <p>Cancels the execution of a job for a given thing.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelJobExecution">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CancelJobExecutionOutcomeCallable CancelJobExecutionCallable(const Model::CancelJobExecutionRequest& request) const;
+
+        /**
+         * <p>Cancels the execution of a job for a given thing.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelJobExecution">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CancelJobExecutionAsync(const Model::CancelJobExecutionRequest& request, const CancelJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Clears the default authorizer.</p><p><h3>See Also:</h3>   <a
@@ -2400,14 +2432,18 @@ namespace Model
         virtual void EnableTopicRuleAsync(const Model::EnableTopicRuleRequest& request, const EnableTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets effective policies.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a list of the policies that have an effect on the authorization behavior
+         * of the specified device when it connects to the AWS IoT device
+         * gateway.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetEffectivePolicies">AWS
          * API Reference</a></p>
          */
         virtual Model::GetEffectivePoliciesOutcome GetEffectivePolicies(const Model::GetEffectivePoliciesRequest& request) const;
 
         /**
-         * <p>Gets effective policies.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a list of the policies that have an effect on the authorization behavior
+         * of the specified device when it connects to the AWS IoT device
+         * gateway.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetEffectivePolicies">AWS
          * API Reference</a></p>
          *
@@ -2416,7 +2452,9 @@ namespace Model
         virtual Model::GetEffectivePoliciesOutcomeCallable GetEffectivePoliciesCallable(const Model::GetEffectivePoliciesRequest& request) const;
 
         /**
-         * <p>Gets effective policies.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a list of the policies that have an effect on the authorization behavior
+         * of the specified device when it connects to the AWS IoT device
+         * gateway.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetEffectivePolicies">AWS
          * API Reference</a></p>
          *
@@ -3810,14 +3848,20 @@ namespace Model
         virtual void StopThingRegistrationTaskAsync(const Model::StopThingRegistrationTaskRequest& request, const StopThingRegistrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Test custom authorization.</p><p><h3>See Also:</h3>   <a
+         * <p>Tests if a specified principal is authorized to perform an AWS IoT action on
+         * a specified resource. Use this to test and debug the authorization behavior of
+         * devices that connect to the AWS IoT device gateway.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TestAuthorization">AWS
          * API Reference</a></p>
          */
         virtual Model::TestAuthorizationOutcome TestAuthorization(const Model::TestAuthorizationRequest& request) const;
 
         /**
-         * <p>Test custom authorization.</p><p><h3>See Also:</h3>   <a
+         * <p>Tests if a specified principal is authorized to perform an AWS IoT action on
+         * a specified resource. Use this to test and debug the authorization behavior of
+         * devices that connect to the AWS IoT device gateway.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TestAuthorization">AWS
          * API Reference</a></p>
          *
@@ -3826,7 +3870,10 @@ namespace Model
         virtual Model::TestAuthorizationOutcomeCallable TestAuthorizationCallable(const Model::TestAuthorizationRequest& request) const;
 
         /**
-         * <p>Test custom authorization.</p><p><h3>See Also:</h3>   <a
+         * <p>Tests if a specified principal is authorized to perform an AWS IoT action on
+         * a specified resource. Use this to test and debug the authorization behavior of
+         * devices that connect to the AWS IoT device gateway.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TestAuthorization">AWS
          * API Reference</a></p>
          *
@@ -3835,16 +3882,20 @@ namespace Model
         virtual void TestAuthorizationAsync(const Model::TestAuthorizationRequest& request, const TestAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Invoke the specified custom authorizer for testing purposes.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Tests a custom authorization behavior by invoking a specified custom
+         * authorizer. Use this to test and debug the custom authorization behavior of
+         * devices that connect to the AWS IoT device gateway.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TestInvokeAuthorizer">AWS
          * API Reference</a></p>
          */
         virtual Model::TestInvokeAuthorizerOutcome TestInvokeAuthorizer(const Model::TestInvokeAuthorizerRequest& request) const;
 
         /**
-         * <p>Invoke the specified custom authorizer for testing purposes.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Tests a custom authorization behavior by invoking a specified custom
+         * authorizer. Use this to test and debug the custom authorization behavior of
+         * devices that connect to the AWS IoT device gateway.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TestInvokeAuthorizer">AWS
          * API Reference</a></p>
          *
@@ -3853,8 +3904,10 @@ namespace Model
         virtual Model::TestInvokeAuthorizerOutcomeCallable TestInvokeAuthorizerCallable(const Model::TestInvokeAuthorizerRequest& request) const;
 
         /**
-         * <p>Invoke the specified custom authorizer for testing purposes.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Tests a custom authorization behavior by invoking a specified custom
+         * authorizer. Use this to test and debug the custom authorization behavior of
+         * devices that connect to the AWS IoT device gateway.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TestInvokeAuthorizer">AWS
          * API Reference</a></p>
          *
@@ -4185,6 +4238,7 @@ namespace Model
         void AttachThingPrincipalAsyncHelper(const Model::AttachThingPrincipalRequest& request, const AttachThingPrincipalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelCertificateTransferAsyncHelper(const Model::CancelCertificateTransferRequest& request, const CancelCertificateTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelJobAsyncHelper(const Model::CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CancelJobExecutionAsyncHelper(const Model::CancelJobExecutionRequest& request, const CancelJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ClearDefaultAuthorizerAsyncHelper(const Model::ClearDefaultAuthorizerRequest& request, const ClearDefaultAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAuthorizerAsyncHelper(const Model::CreateAuthorizerRequest& request, const CreateAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCertificateFromCsrAsyncHelper(const Model::CreateCertificateFromCsrRequest& request, const CreateCertificateFromCsrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

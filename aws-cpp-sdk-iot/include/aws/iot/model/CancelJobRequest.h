@@ -21,6 +21,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace IoT
 {
 namespace Model
@@ -40,6 +44,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "CancelJob"; }
 
     Aws::String SerializePayload() const override;
+
+    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -113,6 +119,37 @@ namespace Model
      */
     inline CancelJobRequest& WithComment(const char* value) { SetComment(value); return *this;}
 
+
+    /**
+     * <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and
+     * "QUEUED" are canceled, otherwise only job executions with status "QUEUED" are
+     * canceled. The default is <code>false</code>.</p> <p>Canceling a job which is
+     * "IN_PROGRESS", will cause a device which is executing the job to be unable to
+     * update the job execution status. Use caution and ensure that each device
+     * executing a job which is canceled is able to recover to a valid state.</p>
+     */
+    inline bool GetForce() const{ return m_force; }
+
+    /**
+     * <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and
+     * "QUEUED" are canceled, otherwise only job executions with status "QUEUED" are
+     * canceled. The default is <code>false</code>.</p> <p>Canceling a job which is
+     * "IN_PROGRESS", will cause a device which is executing the job to be unable to
+     * update the job execution status. Use caution and ensure that each device
+     * executing a job which is canceled is able to recover to a valid state.</p>
+     */
+    inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
+
+    /**
+     * <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and
+     * "QUEUED" are canceled, otherwise only job executions with status "QUEUED" are
+     * canceled. The default is <code>false</code>.</p> <p>Canceling a job which is
+     * "IN_PROGRESS", will cause a device which is executing the job to be unable to
+     * update the job execution status. Use caution and ensure that each device
+     * executing a job which is canceled is able to recover to a valid state.</p>
+     */
+    inline CancelJobRequest& WithForce(bool value) { SetForce(value); return *this;}
+
   private:
 
     Aws::String m_jobId;
@@ -120,6 +157,9 @@ namespace Model
 
     Aws::String m_comment;
     bool m_commentHasBeenSet;
+
+    bool m_force;
+    bool m_forceHasBeenSet;
   };
 
 } // namespace Model
