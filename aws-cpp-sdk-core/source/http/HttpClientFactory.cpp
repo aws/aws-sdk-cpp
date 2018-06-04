@@ -23,7 +23,9 @@
 #include <aws/core/client/ClientConfiguration.h>
 #if ENABLE_WINDOWS_IXML_HTTP_REQUEST_2_CLIENT
 #include <aws/core/http/windows/IXmlHttpRequest2HttpClient.h>
+#if BYPASS_DEFAULT_PROXY
 #include <aws/core/http/windows/WinHttpSyncHttpClient.h>
+#endif
 #else
 #include <aws/core/http/windows/WinINetSyncHttpClient.h>
 #include <aws/core/http/windows/WinHttpSyncHttpClient.h>
@@ -71,6 +73,7 @@ namespace Aws
                 // Other clients: Curl is your default
 #if ENABLE_WINDOWS_CLIENT
 #if ENABLE_WINDOWS_IXML_HTTP_REQUEST_2_CLIENT
+#if BYPASS_DEFAULT_PROXY
                 switch (clientConfiguration.httpLibOverride)
                 {
                     case TransferLibType::WIN_HTTP_CLIENT:
@@ -83,6 +86,9 @@ namespace Aws
                         AWS_LOGSTREAM_INFO(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, "Creating IXMLHttpRequest http client.");
                         return Aws::MakeShared<IXmlHttpRequest2HttpClient>(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, clientConfiguration);
                 }
+#else
+                return Aws::MakeShared<IXmlHttpRequest2HttpClient>(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, clientConfiguration);
+#endif // BYPASS_DEFAULT_PROXY
 #else
                 switch (clientConfiguration.httpLibOverride)
                 {

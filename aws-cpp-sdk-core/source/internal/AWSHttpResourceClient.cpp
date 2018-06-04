@@ -45,7 +45,7 @@ AWSHttpResourceClient::AWSHttpResourceClient(const char* logtag)
     clientConfiguration.maxConnections = 2;
     clientConfiguration.scheme = Scheme::HTTP;
 
-#ifdef WIN32
+#if defined(WIN32) && defined(BYPASS_DEFAULT_PROXY)
     // For security reasons, we must bypass any proxy settings when fetching sensitive information, for example
     // user credentials. On Windows, IXMLHttpRequest2 does not support bypasing proxy settings, therefore,
     // we force using WinHTTP client. On POSIX systems, CURL is set to bypass proxy settings by default.
