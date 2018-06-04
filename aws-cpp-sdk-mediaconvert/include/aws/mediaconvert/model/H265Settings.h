@@ -37,6 +37,7 @@
 #include <aws/mediaconvert/model/H265TemporalIds.h>
 #include <aws/mediaconvert/model/H265Tiles.h>
 #include <aws/mediaconvert/model/H265UnregisteredSeiTimecode.h>
+#include <aws/mediaconvert/model/H265WriteMp4PackagingType.h>
 #include <utility>
 
 namespace Aws
@@ -100,26 +101,20 @@ namespace Model
 
 
     /**
-     * Average bitrate in bits/second. Required for VBR, CBR, and ABR. Five megabits
-     * can be entered as 5000000 or 5m. Five hundred kilobits can be entered as 500000
-     * or 0.5m. For MS Smooth outputs, bitrates must be unique when rounded down to the
-     * nearest multiple of 1000.
+     * Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs,
+     * bitrates must be unique when rounded down to the nearest multiple of 1000.
      */
     inline int GetBitrate() const{ return m_bitrate; }
 
     /**
-     * Average bitrate in bits/second. Required for VBR, CBR, and ABR. Five megabits
-     * can be entered as 5000000 or 5m. Five hundred kilobits can be entered as 500000
-     * or 0.5m. For MS Smooth outputs, bitrates must be unique when rounded down to the
-     * nearest multiple of 1000.
+     * Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs,
+     * bitrates must be unique when rounded down to the nearest multiple of 1000.
      */
     inline void SetBitrate(int value) { m_bitrateHasBeenSet = true; m_bitrate = value; }
 
     /**
-     * Average bitrate in bits/second. Required for VBR, CBR, and ABR. Five megabits
-     * can be entered as 5000000 or 5m. Five hundred kilobits can be entered as 500000
-     * or 0.5m. For MS Smooth outputs, bitrates must be unique when rounded down to the
-     * nearest multiple of 1000.
+     * Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs,
+     * bitrates must be unique when rounded down to the nearest multiple of 1000.
      */
     inline H265Settings& WithBitrate(int value) { SetBitrate(value); return *this;}
 
@@ -323,20 +318,20 @@ namespace Model
 
 
     /**
-     * Size of buffer (HRD buffer model). Five megabits can be entered as 5000000 or
-     * 5m. Five hundred kilobits can be entered as 500000 or 0.5m.
+     * Size of buffer (HRD buffer model) in bits. For example, enter five megabits as
+     * 5000000.
      */
     inline int GetHrdBufferSize() const{ return m_hrdBufferSize; }
 
     /**
-     * Size of buffer (HRD buffer model). Five megabits can be entered as 5000000 or
-     * 5m. Five hundred kilobits can be entered as 500000 or 0.5m.
+     * Size of buffer (HRD buffer model) in bits. For example, enter five megabits as
+     * 5000000.
      */
     inline void SetHrdBufferSize(int value) { m_hrdBufferSizeHasBeenSet = true; m_hrdBufferSize = value; }
 
     /**
-     * Size of buffer (HRD buffer model). Five megabits can be entered as 5000000 or
-     * 5m. Five hundred kilobits can be entered as 500000 or 0.5m.
+     * Size of buffer (HRD buffer model) in bits. For example, enter five megabits as
+     * 5000000.
      */
     inline H265Settings& WithHrdBufferSize(int value) { SetHrdBufferSize(value); return *this;}
 
@@ -358,20 +353,17 @@ namespace Model
 
 
     /**
-     * Maximum bitrate in bits/second (for VBR mode only). Five megabits can be entered
-     * as 5000000 or 5m. Five hundred kilobits can be entered as 500000 or 0.5m.
+     * Maximum bitrate in bits/second.
      */
     inline int GetMaxBitrate() const{ return m_maxBitrate; }
 
     /**
-     * Maximum bitrate in bits/second (for VBR mode only). Five megabits can be entered
-     * as 5000000 or 5m. Five hundred kilobits can be entered as 500000 or 0.5m.
+     * Maximum bitrate in bits/second.
      */
     inline void SetMaxBitrate(int value) { m_maxBitrateHasBeenSet = true; m_maxBitrate = value; }
 
     /**
-     * Maximum bitrate in bits/second (for VBR mode only). Five megabits can be entered
-     * as 5000000 or 5m. Five hundred kilobits can be entered as 500000 or 0.5m.
+     * Maximum bitrate in bits/second.
      */
     inline H265Settings& WithMaxBitrate(int value) { SetMaxBitrate(value); return *this;}
 
@@ -690,6 +682,22 @@ namespace Model
     
     inline H265Settings& WithUnregisteredSeiTimecode(H265UnregisteredSeiTimecode&& value) { SetUnregisteredSeiTimecode(std::move(value)); return *this;}
 
+
+    
+    inline const H265WriteMp4PackagingType& GetWriteMp4PackagingType() const{ return m_writeMp4PackagingType; }
+
+    
+    inline void SetWriteMp4PackagingType(const H265WriteMp4PackagingType& value) { m_writeMp4PackagingTypeHasBeenSet = true; m_writeMp4PackagingType = value; }
+
+    
+    inline void SetWriteMp4PackagingType(H265WriteMp4PackagingType&& value) { m_writeMp4PackagingTypeHasBeenSet = true; m_writeMp4PackagingType = std::move(value); }
+
+    
+    inline H265Settings& WithWriteMp4PackagingType(const H265WriteMp4PackagingType& value) { SetWriteMp4PackagingType(value); return *this;}
+
+    
+    inline H265Settings& WithWriteMp4PackagingType(H265WriteMp4PackagingType&& value) { SetWriteMp4PackagingType(std::move(value)); return *this;}
+
   private:
 
     H265AdaptiveQuantization m_adaptiveQuantization;
@@ -799,6 +807,9 @@ namespace Model
 
     H265UnregisteredSeiTimecode m_unregisteredSeiTimecode;
     bool m_unregisteredSeiTimecodeHasBeenSet;
+
+    H265WriteMp4PackagingType m_writeMp4PackagingType;
+    bool m_writeMp4PackagingTypeHasBeenSet;
   };
 
 } // namespace Model

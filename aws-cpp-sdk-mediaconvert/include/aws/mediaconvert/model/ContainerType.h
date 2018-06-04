@@ -30,6 +30,7 @@ namespace Model
     ISMV,
     M2TS,
     M3U8,
+    CMFC,
     MOV,
     MP4,
     MPD,

@@ -100,7 +100,9 @@ H265Settings::H265Settings() :
     m_tiles(H265Tiles::NOT_SET),
     m_tilesHasBeenSet(false),
     m_unregisteredSeiTimecode(H265UnregisteredSeiTimecode::NOT_SET),
-    m_unregisteredSeiTimecodeHasBeenSet(false)
+    m_unregisteredSeiTimecodeHasBeenSet(false),
+    m_writeMp4PackagingType(H265WriteMp4PackagingType::NOT_SET),
+    m_writeMp4PackagingTypeHasBeenSet(false)
 {
 }
 
@@ -176,7 +178,9 @@ H265Settings::H265Settings(const JsonValue& jsonValue) :
     m_tiles(H265Tiles::NOT_SET),
     m_tilesHasBeenSet(false),
     m_unregisteredSeiTimecode(H265UnregisteredSeiTimecode::NOT_SET),
-    m_unregisteredSeiTimecodeHasBeenSet(false)
+    m_unregisteredSeiTimecodeHasBeenSet(false),
+    m_writeMp4PackagingType(H265WriteMp4PackagingType::NOT_SET),
+    m_writeMp4PackagingTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -435,6 +439,13 @@ H265Settings& H265Settings::operator =(const JsonValue& jsonValue)
     m_unregisteredSeiTimecodeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("writeMp4PackagingType"))
+  {
+    m_writeMp4PackagingType = H265WriteMp4PackagingTypeMapper::GetH265WriteMp4PackagingTypeForName(jsonValue.GetString("writeMp4PackagingType"));
+
+    m_writeMp4PackagingTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -634,6 +645,11 @@ JsonValue H265Settings::Jsonize() const
   if(m_unregisteredSeiTimecodeHasBeenSet)
   {
    payload.WithString("unregisteredSeiTimecode", H265UnregisteredSeiTimecodeMapper::GetNameForH265UnregisteredSeiTimecode(m_unregisteredSeiTimecode));
+  }
+
+  if(m_writeMp4PackagingTypeHasBeenSet)
+  {
+   payload.WithString("writeMp4PackagingType", H265WriteMp4PackagingTypeMapper::GetNameForH265WriteMp4PackagingType(m_writeMp4PackagingType));
   }
 
   return payload;

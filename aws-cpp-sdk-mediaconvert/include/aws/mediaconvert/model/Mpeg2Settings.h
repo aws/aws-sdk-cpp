@@ -80,26 +80,20 @@ namespace Model
 
 
     /**
-     * Average bitrate in bits/second. Required for VBR, CBR, and ABR. Five megabits
-     * can be entered as 5000000 or 5m. Five hundred kilobits can be entered as 500000
-     * or 0.5m. For MS Smooth outputs, bitrates must be unique when rounded down to the
-     * nearest multiple of 1000.
+     * Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs,
+     * bitrates must be unique when rounded down to the nearest multiple of 1000.
      */
     inline int GetBitrate() const{ return m_bitrate; }
 
     /**
-     * Average bitrate in bits/second. Required for VBR, CBR, and ABR. Five megabits
-     * can be entered as 5000000 or 5m. Five hundred kilobits can be entered as 500000
-     * or 0.5m. For MS Smooth outputs, bitrates must be unique when rounded down to the
-     * nearest multiple of 1000.
+     * Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs,
+     * bitrates must be unique when rounded down to the nearest multiple of 1000.
      */
     inline void SetBitrate(int value) { m_bitrateHasBeenSet = true; m_bitrate = value; }
 
     /**
-     * Average bitrate in bits/second. Required for VBR, CBR, and ABR. Five megabits
-     * can be entered as 5000000 or 5m. Five hundred kilobits can be entered as 500000
-     * or 0.5m. For MS Smooth outputs, bitrates must be unique when rounded down to the
-     * nearest multiple of 1000.
+     * Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs,
+     * bitrates must be unique when rounded down to the nearest multiple of 1000.
      */
     inline Mpeg2Settings& WithBitrate(int value) { SetBitrate(value); return *this;}
 
@@ -271,20 +265,20 @@ namespace Model
 
 
     /**
-     * Size of buffer (HRD buffer model). Five megabits can be entered as 5000000 or
-     * 5m. Five hundred kilobits can be entered as 500000 or 0.5m.
+     * Size of buffer (HRD buffer model) in bits. For example, enter five megabits as
+     * 5000000.
      */
     inline int GetHrdBufferSize() const{ return m_hrdBufferSize; }
 
     /**
-     * Size of buffer (HRD buffer model). Five megabits can be entered as 5000000 or
-     * 5m. Five hundred kilobits can be entered as 500000 or 0.5m.
+     * Size of buffer (HRD buffer model) in bits. For example, enter five megabits as
+     * 5000000.
      */
     inline void SetHrdBufferSize(int value) { m_hrdBufferSizeHasBeenSet = true; m_hrdBufferSize = value; }
 
     /**
-     * Size of buffer (HRD buffer model). Five megabits can be entered as 5000000 or
-     * 5m. Five hundred kilobits can be entered as 500000 or 0.5m.
+     * Size of buffer (HRD buffer model) in bits. For example, enter five megabits as
+     * 5000000.
      */
     inline Mpeg2Settings& WithHrdBufferSize(int value) { SetHrdBufferSize(value); return *this;}
 
@@ -322,20 +316,20 @@ namespace Model
 
 
     /**
-     * Maximum bitrate in bits/second (for VBR mode only). Five megabits can be entered
-     * as 5000000 or 5m. Five hundred kilobits can be entered as 500000 or 0.5m.
+     * Maximum bitrate in bits/second. For example, enter five megabits per second as
+     * 5000000.
      */
     inline int GetMaxBitrate() const{ return m_maxBitrate; }
 
     /**
-     * Maximum bitrate in bits/second (for VBR mode only). Five megabits can be entered
-     * as 5000000 or 5m. Five hundred kilobits can be entered as 500000 or 0.5m.
+     * Maximum bitrate in bits/second. For example, enter five megabits per second as
+     * 5000000.
      */
     inline void SetMaxBitrate(int value) { m_maxBitrateHasBeenSet = true; m_maxBitrate = value; }
 
     /**
-     * Maximum bitrate in bits/second (for VBR mode only). Five megabits can be entered
-     * as 5000000 or 5m. Five hundred kilobits can be entered as 500000 or 0.5m.
+     * Maximum bitrate in bits/second. For example, enter five megabits per second as
+     * 5000000.
      */
     inline Mpeg2Settings& WithMaxBitrate(int value) { SetMaxBitrate(value); return *this;}
 

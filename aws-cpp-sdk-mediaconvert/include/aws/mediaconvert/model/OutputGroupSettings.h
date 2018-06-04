@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/mediaconvert/model/CmafGroupSettings.h>
 #include <aws/mediaconvert/model/DashIsoGroupSettings.h>
 #include <aws/mediaconvert/model/FileGroupSettings.h>
 #include <aws/mediaconvert/model/HlsGroupSettings.h>
@@ -48,6 +49,22 @@ namespace Model
     OutputGroupSettings(const Aws::Utils::Json::JsonValue& jsonValue);
     OutputGroupSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    
+    inline const CmafGroupSettings& GetCmafGroupSettings() const{ return m_cmafGroupSettings; }
+
+    
+    inline void SetCmafGroupSettings(const CmafGroupSettings& value) { m_cmafGroupSettingsHasBeenSet = true; m_cmafGroupSettings = value; }
+
+    
+    inline void SetCmafGroupSettings(CmafGroupSettings&& value) { m_cmafGroupSettingsHasBeenSet = true; m_cmafGroupSettings = std::move(value); }
+
+    
+    inline OutputGroupSettings& WithCmafGroupSettings(const CmafGroupSettings& value) { SetCmafGroupSettings(value); return *this;}
+
+    
+    inline OutputGroupSettings& WithCmafGroupSettings(CmafGroupSettings&& value) { SetCmafGroupSettings(std::move(value)); return *this;}
 
 
     
@@ -130,6 +147,9 @@ namespace Model
     inline OutputGroupSettings& WithType(OutputGroupType&& value) { SetType(std::move(value)); return *this;}
 
   private:
+
+    CmafGroupSettings m_cmafGroupSettings;
+    bool m_cmafGroupSettingsHasBeenSet;
 
     DashIsoGroupSettings m_dashIsoGroupSettings;
     bool m_dashIsoGroupSettingsHasBeenSet;

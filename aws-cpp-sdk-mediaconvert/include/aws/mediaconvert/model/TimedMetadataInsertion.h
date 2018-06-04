@@ -50,39 +50,25 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    /**
-     * Id3Insertions contains the array of Id3Insertion instances.
-     */
+    
     inline const Aws::Vector<Id3Insertion>& GetId3Insertions() const{ return m_id3Insertions; }
 
-    /**
-     * Id3Insertions contains the array of Id3Insertion instances.
-     */
+    
     inline void SetId3Insertions(const Aws::Vector<Id3Insertion>& value) { m_id3InsertionsHasBeenSet = true; m_id3Insertions = value; }
 
-    /**
-     * Id3Insertions contains the array of Id3Insertion instances.
-     */
+    
     inline void SetId3Insertions(Aws::Vector<Id3Insertion>&& value) { m_id3InsertionsHasBeenSet = true; m_id3Insertions = std::move(value); }
 
-    /**
-     * Id3Insertions contains the array of Id3Insertion instances.
-     */
+    
     inline TimedMetadataInsertion& WithId3Insertions(const Aws::Vector<Id3Insertion>& value) { SetId3Insertions(value); return *this;}
 
-    /**
-     * Id3Insertions contains the array of Id3Insertion instances.
-     */
+    
     inline TimedMetadataInsertion& WithId3Insertions(Aws::Vector<Id3Insertion>&& value) { SetId3Insertions(std::move(value)); return *this;}
 
-    /**
-     * Id3Insertions contains the array of Id3Insertion instances.
-     */
+    
     inline TimedMetadataInsertion& AddId3Insertions(const Id3Insertion& value) { m_id3InsertionsHasBeenSet = true; m_id3Insertions.push_back(value); return *this; }
 
-    /**
-     * Id3Insertions contains the array of Id3Insertion instances.
-     */
+    
     inline TimedMetadataInsertion& AddId3Insertions(Id3Insertion&& value) { m_id3InsertionsHasBeenSet = true; m_id3Insertions.push_back(std::move(value)); return *this; }
 
   private:

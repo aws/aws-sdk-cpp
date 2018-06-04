@@ -138,6 +138,12 @@ namespace Aws
         static const int m5_4xlarge_HASH = HashingUtils::HashString("m5.4xlarge");
         static const int m5_12xlarge_HASH = HashingUtils::HashString("m5.12xlarge");
         static const int m5_24xlarge_HASH = HashingUtils::HashString("m5.24xlarge");
+        static const int m5d_large_HASH = HashingUtils::HashString("m5d.large");
+        static const int m5d_xlarge_HASH = HashingUtils::HashString("m5d.xlarge");
+        static const int m5d_2xlarge_HASH = HashingUtils::HashString("m5d.2xlarge");
+        static const int m5d_4xlarge_HASH = HashingUtils::HashString("m5d.4xlarge");
+        static const int m5d_12xlarge_HASH = HashingUtils::HashString("m5d.12xlarge");
+        static const int m5d_24xlarge_HASH = HashingUtils::HashString("m5d.24xlarge");
         static const int h1_2xlarge_HASH = HashingUtils::HashString("h1.2xlarge");
         static const int h1_4xlarge_HASH = HashingUtils::HashString("h1.4xlarge");
         static const int h1_8xlarge_HASH = HashingUtils::HashString("h1.8xlarge");
@@ -579,6 +585,30 @@ namespace Aws
           {
             return InstanceType::m5_24xlarge;
           }
+          else if (hashCode == m5d_large_HASH)
+          {
+            return InstanceType::m5d_large;
+          }
+          else if (hashCode == m5d_xlarge_HASH)
+          {
+            return InstanceType::m5d_xlarge;
+          }
+          else if (hashCode == m5d_2xlarge_HASH)
+          {
+            return InstanceType::m5d_2xlarge;
+          }
+          else if (hashCode == m5d_4xlarge_HASH)
+          {
+            return InstanceType::m5d_4xlarge;
+          }
+          else if (hashCode == m5d_12xlarge_HASH)
+          {
+            return InstanceType::m5d_12xlarge;
+          }
+          else if (hashCode == m5d_24xlarge_HASH)
+          {
+            return InstanceType::m5d_24xlarge;
+          }
           else if (hashCode == h1_2xlarge_HASH)
           {
             return InstanceType::h1_2xlarge;
@@ -825,6 +855,18 @@ namespace Aws
             return "m5.12xlarge";
           case InstanceType::m5_24xlarge:
             return "m5.24xlarge";
+          case InstanceType::m5d_large:
+            return "m5d.large";
+          case InstanceType::m5d_xlarge:
+            return "m5d.xlarge";
+          case InstanceType::m5d_2xlarge:
+            return "m5d.2xlarge";
+          case InstanceType::m5d_4xlarge:
+            return "m5d.4xlarge";
+          case InstanceType::m5d_12xlarge:
+            return "m5d.12xlarge";
+          case InstanceType::m5d_24xlarge:
+            return "m5d.24xlarge";
           case InstanceType::h1_2xlarge:
             return "h1.2xlarge";
           case InstanceType::h1_4xlarge:

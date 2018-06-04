@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * Caption inputs to be mapped to caption outputs.<p><h3>See Also:</h3>   <a
+   * Set up captions in your outputs by first selecting them from your input
+   * here.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CaptionSelector">AWS
    * API Reference</a></p>
    */

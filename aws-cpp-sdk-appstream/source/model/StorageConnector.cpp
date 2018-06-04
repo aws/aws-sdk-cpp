@@ -31,14 +31,16 @@ namespace Model
 StorageConnector::StorageConnector() : 
     m_connectorType(StorageConnectorType::NOT_SET),
     m_connectorTypeHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false)
+    m_resourceIdentifierHasBeenSet(false),
+    m_domainsHasBeenSet(false)
 {
 }
 
 StorageConnector::StorageConnector(const JsonValue& jsonValue) : 
     m_connectorType(StorageConnectorType::NOT_SET),
     m_connectorTypeHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false)
+    m_resourceIdentifierHasBeenSet(false),
+    m_domainsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +61,16 @@ StorageConnector& StorageConnector::operator =(const JsonValue& jsonValue)
     m_resourceIdentifierHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Domains"))
+  {
+    Array<JsonValue> domainsJsonList = jsonValue.GetArray("Domains");
+    for(unsigned domainsIndex = 0; domainsIndex < domainsJsonList.GetLength(); ++domainsIndex)
+    {
+      m_domains.push_back(domainsJsonList[domainsIndex].AsString());
+    }
+    m_domainsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -74,6 +86,17 @@ JsonValue StorageConnector::Jsonize() const
   if(m_resourceIdentifierHasBeenSet)
   {
    payload.WithString("ResourceIdentifier", m_resourceIdentifier);
+
+  }
+
+  if(m_domainsHasBeenSet)
+  {
+   Array<JsonValue> domainsJsonList(m_domains.size());
+   for(unsigned domainsIndex = 0; domainsIndex < domainsJsonList.GetLength(); ++domainsIndex)
+   {
+     domainsJsonList[domainsIndex].AsString(m_domains[domainsIndex]);
+   }
+   payload.WithArray("Domains", std::move(domainsJsonList));
 
   }
 

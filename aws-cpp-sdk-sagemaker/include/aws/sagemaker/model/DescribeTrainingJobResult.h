@@ -127,6 +127,49 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if
+     * the training job was launched by a hyperparameter tuning job.</p>
+     */
+    inline const Aws::String& GetTuningJobArn() const{ return m_tuningJobArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if
+     * the training job was launched by a hyperparameter tuning job.</p>
+     */
+    inline void SetTuningJobArn(const Aws::String& value) { m_tuningJobArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if
+     * the training job was launched by a hyperparameter tuning job.</p>
+     */
+    inline void SetTuningJobArn(Aws::String&& value) { m_tuningJobArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if
+     * the training job was launched by a hyperparameter tuning job.</p>
+     */
+    inline void SetTuningJobArn(const char* value) { m_tuningJobArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if
+     * the training job was launched by a hyperparameter tuning job.</p>
+     */
+    inline DescribeTrainingJobResult& WithTuningJobArn(const Aws::String& value) { SetTuningJobArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if
+     * the training job was launched by a hyperparameter tuning job.</p>
+     */
+    inline DescribeTrainingJobResult& WithTuningJobArn(Aws::String&& value) { SetTuningJobArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if
+     * the training job was launched by a hyperparameter tuning job.</p>
+     */
+    inline DescribeTrainingJobResult& WithTuningJobArn(const char* value) { SetTuningJobArn(value); return *this;}
+
+
+    /**
      * <p>Information about the Amazon S3 location that is configured for storing model
      * artifacts. </p>
      */
@@ -619,53 +662,93 @@ namespace Model
 
 
     /**
-     * <p>A timestamp that indicates when training started.</p>
+     * <p>Indicates the time when the training job starts on training instances. You
+     * are billed for the time interval between this time and the value of
+     * <code>TrainingEndTime</code>. The start time in CloudWatch Logs might be later
+     * than this time. The difference is due to the time it takes to download the
+     * training data and to the size of the training container.</p>
      */
     inline const Aws::Utils::DateTime& GetTrainingStartTime() const{ return m_trainingStartTime; }
 
     /**
-     * <p>A timestamp that indicates when training started.</p>
+     * <p>Indicates the time when the training job starts on training instances. You
+     * are billed for the time interval between this time and the value of
+     * <code>TrainingEndTime</code>. The start time in CloudWatch Logs might be later
+     * than this time. The difference is due to the time it takes to download the
+     * training data and to the size of the training container.</p>
      */
     inline void SetTrainingStartTime(const Aws::Utils::DateTime& value) { m_trainingStartTime = value; }
 
     /**
-     * <p>A timestamp that indicates when training started.</p>
+     * <p>Indicates the time when the training job starts on training instances. You
+     * are billed for the time interval between this time and the value of
+     * <code>TrainingEndTime</code>. The start time in CloudWatch Logs might be later
+     * than this time. The difference is due to the time it takes to download the
+     * training data and to the size of the training container.</p>
      */
     inline void SetTrainingStartTime(Aws::Utils::DateTime&& value) { m_trainingStartTime = std::move(value); }
 
     /**
-     * <p>A timestamp that indicates when training started.</p>
+     * <p>Indicates the time when the training job starts on training instances. You
+     * are billed for the time interval between this time and the value of
+     * <code>TrainingEndTime</code>. The start time in CloudWatch Logs might be later
+     * than this time. The difference is due to the time it takes to download the
+     * training data and to the size of the training container.</p>
      */
     inline DescribeTrainingJobResult& WithTrainingStartTime(const Aws::Utils::DateTime& value) { SetTrainingStartTime(value); return *this;}
 
     /**
-     * <p>A timestamp that indicates when training started.</p>
+     * <p>Indicates the time when the training job starts on training instances. You
+     * are billed for the time interval between this time and the value of
+     * <code>TrainingEndTime</code>. The start time in CloudWatch Logs might be later
+     * than this time. The difference is due to the time it takes to download the
+     * training data and to the size of the training container.</p>
      */
     inline DescribeTrainingJobResult& WithTrainingStartTime(Aws::Utils::DateTime&& value) { SetTrainingStartTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>A timestamp that indicates when model training ended.</p>
+     * <p>Indicates the time when the training job ends on training instances. You are
+     * billed for the time interval between the value of <code>TrainingStartTime</code>
+     * and this time. For successful jobs and stopped jobs, this is the time after
+     * model artifacts are uploaded. For failed jobs, this is the time when Amazon
+     * SageMaker detects a job failure.</p>
      */
     inline const Aws::Utils::DateTime& GetTrainingEndTime() const{ return m_trainingEndTime; }
 
     /**
-     * <p>A timestamp that indicates when model training ended.</p>
+     * <p>Indicates the time when the training job ends on training instances. You are
+     * billed for the time interval between the value of <code>TrainingStartTime</code>
+     * and this time. For successful jobs and stopped jobs, this is the time after
+     * model artifacts are uploaded. For failed jobs, this is the time when Amazon
+     * SageMaker detects a job failure.</p>
      */
     inline void SetTrainingEndTime(const Aws::Utils::DateTime& value) { m_trainingEndTime = value; }
 
     /**
-     * <p>A timestamp that indicates when model training ended.</p>
+     * <p>Indicates the time when the training job ends on training instances. You are
+     * billed for the time interval between the value of <code>TrainingStartTime</code>
+     * and this time. For successful jobs and stopped jobs, this is the time after
+     * model artifacts are uploaded. For failed jobs, this is the time when Amazon
+     * SageMaker detects a job failure.</p>
      */
     inline void SetTrainingEndTime(Aws::Utils::DateTime&& value) { m_trainingEndTime = std::move(value); }
 
     /**
-     * <p>A timestamp that indicates when model training ended.</p>
+     * <p>Indicates the time when the training job ends on training instances. You are
+     * billed for the time interval between the value of <code>TrainingStartTime</code>
+     * and this time. For successful jobs and stopped jobs, this is the time after
+     * model artifacts are uploaded. For failed jobs, this is the time when Amazon
+     * SageMaker detects a job failure.</p>
      */
     inline DescribeTrainingJobResult& WithTrainingEndTime(const Aws::Utils::DateTime& value) { SetTrainingEndTime(value); return *this;}
 
     /**
-     * <p>A timestamp that indicates when model training ended.</p>
+     * <p>Indicates the time when the training job ends on training instances. You are
+     * billed for the time interval between the value of <code>TrainingStartTime</code>
+     * and this time. For successful jobs and stopped jobs, this is the time after
+     * model artifacts are uploaded. For failed jobs, this is the time when Amazon
+     * SageMaker detects a job failure.</p>
      */
     inline DescribeTrainingJobResult& WithTrainingEndTime(Aws::Utils::DateTime&& value) { SetTrainingEndTime(std::move(value)); return *this;}
 
@@ -705,6 +788,8 @@ namespace Model
     Aws::String m_trainingJobName;
 
     Aws::String m_trainingJobArn;
+
+    Aws::String m_tuningJobArn;
 
     ModelArtifacts m_modelArtifacts;
 

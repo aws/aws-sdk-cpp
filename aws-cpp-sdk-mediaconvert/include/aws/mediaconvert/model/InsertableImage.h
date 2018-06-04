@@ -259,43 +259,50 @@ namespace Model
 
     /**
      * Use Start time (StartTime) to specify the video timecode when the image is
-     * inserted in the output. This must be in timecode format (HH:MM:SS:FF)
+     * inserted in the output. This must be in timecode (HH:MM:SS:FF or HH:MM:SS;FF)
+     * format.
      */
     inline const Aws::String& GetStartTime() const{ return m_startTime; }
 
     /**
      * Use Start time (StartTime) to specify the video timecode when the image is
-     * inserted in the output. This must be in timecode format (HH:MM:SS:FF)
+     * inserted in the output. This must be in timecode (HH:MM:SS:FF or HH:MM:SS;FF)
+     * format.
      */
     inline void SetStartTime(const Aws::String& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * Use Start time (StartTime) to specify the video timecode when the image is
-     * inserted in the output. This must be in timecode format (HH:MM:SS:FF)
+     * inserted in the output. This must be in timecode (HH:MM:SS:FF or HH:MM:SS;FF)
+     * format.
      */
     inline void SetStartTime(Aws::String&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
      * Use Start time (StartTime) to specify the video timecode when the image is
-     * inserted in the output. This must be in timecode format (HH:MM:SS:FF)
+     * inserted in the output. This must be in timecode (HH:MM:SS:FF or HH:MM:SS;FF)
+     * format.
      */
     inline void SetStartTime(const char* value) { m_startTimeHasBeenSet = true; m_startTime.assign(value); }
 
     /**
      * Use Start time (StartTime) to specify the video timecode when the image is
-     * inserted in the output. This must be in timecode format (HH:MM:SS:FF)
+     * inserted in the output. This must be in timecode (HH:MM:SS:FF or HH:MM:SS;FF)
+     * format.
      */
     inline InsertableImage& WithStartTime(const Aws::String& value) { SetStartTime(value); return *this;}
 
     /**
      * Use Start time (StartTime) to specify the video timecode when the image is
-     * inserted in the output. This must be in timecode format (HH:MM:SS:FF)
+     * inserted in the output. This must be in timecode (HH:MM:SS:FF or HH:MM:SS;FF)
+     * format.
      */
     inline InsertableImage& WithStartTime(Aws::String&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
      * Use Start time (StartTime) to specify the video timecode when the image is
-     * inserted in the output. This must be in timecode format (HH:MM:SS:FF)
+     * inserted in the output. This must be in timecode (HH:MM:SS:FF or HH:MM:SS;FF)
+     * format.
      */
     inline InsertableImage& WithStartTime(const char* value) { SetStartTime(value); return *this;}
 

@@ -34,6 +34,7 @@ namespace Aws
         static const int ISMV_HASH = HashingUtils::HashString("ISMV");
         static const int M2TS_HASH = HashingUtils::HashString("M2TS");
         static const int M3U8_HASH = HashingUtils::HashString("M3U8");
+        static const int CMFC_HASH = HashingUtils::HashString("CMFC");
         static const int MOV_HASH = HashingUtils::HashString("MOV");
         static const int MP4_HASH = HashingUtils::HashString("MP4");
         static const int MPD_HASH = HashingUtils::HashString("MPD");
@@ -59,6 +60,10 @@ namespace Aws
           else if (hashCode == M3U8_HASH)
           {
             return ContainerType::M3U8;
+          }
+          else if (hashCode == CMFC_HASH)
+          {
+            return ContainerType::CMFC;
           }
           else if (hashCode == MOV_HASH)
           {
@@ -102,6 +107,8 @@ namespace Aws
             return "M2TS";
           case ContainerType::M3U8:
             return "M3U8";
+          case ContainerType::CMFC:
+            return "CMFC";
           case ContainerType::MOV:
             return "MOV";
           case ContainerType::MP4:

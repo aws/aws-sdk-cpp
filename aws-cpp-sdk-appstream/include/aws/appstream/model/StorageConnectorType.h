@@ -26,7 +26,8 @@ namespace Model
   enum class StorageConnectorType
   {
     NOT_SET,
-    HOMEFOLDERS
+    HOMEFOLDERS,
+    GOOGLE_DRIVE
   };
 
 namespace StorageConnectorTypeMapper

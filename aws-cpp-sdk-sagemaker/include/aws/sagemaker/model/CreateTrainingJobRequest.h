@@ -97,10 +97,9 @@ namespace Model
 
 
     /**
-     * <p>Algorithm-specific parameters. You set hyperparameters before you start the
-     * learning process. Hyperparameters influence the quality of the model. For a list
-     * of hyperparameters for each training algorithm provided by Amazon SageMaker, see
-     * <a
+     * <p>Algorithm-specific parameters that influence the quality of the model. You
+     * set hyperparameters before you start the learning process. For a list of
+     * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
@@ -109,10 +108,9 @@ namespace Model
     inline const Aws::Map<Aws::String, Aws::String>& GetHyperParameters() const{ return m_hyperParameters; }
 
     /**
-     * <p>Algorithm-specific parameters. You set hyperparameters before you start the
-     * learning process. Hyperparameters influence the quality of the model. For a list
-     * of hyperparameters for each training algorithm provided by Amazon SageMaker, see
-     * <a
+     * <p>Algorithm-specific parameters that influence the quality of the model. You
+     * set hyperparameters before you start the learning process. For a list of
+     * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
@@ -121,10 +119,9 @@ namespace Model
     inline void SetHyperParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters = value; }
 
     /**
-     * <p>Algorithm-specific parameters. You set hyperparameters before you start the
-     * learning process. Hyperparameters influence the quality of the model. For a list
-     * of hyperparameters for each training algorithm provided by Amazon SageMaker, see
-     * <a
+     * <p>Algorithm-specific parameters that influence the quality of the model. You
+     * set hyperparameters before you start the learning process. For a list of
+     * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
@@ -133,10 +130,9 @@ namespace Model
     inline void SetHyperParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters = std::move(value); }
 
     /**
-     * <p>Algorithm-specific parameters. You set hyperparameters before you start the
-     * learning process. Hyperparameters influence the quality of the model. For a list
-     * of hyperparameters for each training algorithm provided by Amazon SageMaker, see
-     * <a
+     * <p>Algorithm-specific parameters that influence the quality of the model. You
+     * set hyperparameters before you start the learning process. For a list of
+     * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
@@ -145,10 +141,9 @@ namespace Model
     inline CreateTrainingJobRequest& WithHyperParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetHyperParameters(value); return *this;}
 
     /**
-     * <p>Algorithm-specific parameters. You set hyperparameters before you start the
-     * learning process. Hyperparameters influence the quality of the model. For a list
-     * of hyperparameters for each training algorithm provided by Amazon SageMaker, see
-     * <a
+     * <p>Algorithm-specific parameters that influence the quality of the model. You
+     * set hyperparameters before you start the learning process. For a list of
+     * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
@@ -157,10 +152,9 @@ namespace Model
     inline CreateTrainingJobRequest& WithHyperParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetHyperParameters(std::move(value)); return *this;}
 
     /**
-     * <p>Algorithm-specific parameters. You set hyperparameters before you start the
-     * learning process. Hyperparameters influence the quality of the model. For a list
-     * of hyperparameters for each training algorithm provided by Amazon SageMaker, see
-     * <a
+     * <p>Algorithm-specific parameters that influence the quality of the model. You
+     * set hyperparameters before you start the learning process. For a list of
+     * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
@@ -169,10 +163,9 @@ namespace Model
     inline CreateTrainingJobRequest& AddHyperParameters(const Aws::String& key, const Aws::String& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(key, value); return *this; }
 
     /**
-     * <p>Algorithm-specific parameters. You set hyperparameters before you start the
-     * learning process. Hyperparameters influence the quality of the model. For a list
-     * of hyperparameters for each training algorithm provided by Amazon SageMaker, see
-     * <a
+     * <p>Algorithm-specific parameters that influence the quality of the model. You
+     * set hyperparameters before you start the learning process. For a list of
+     * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
@@ -181,10 +174,9 @@ namespace Model
     inline CreateTrainingJobRequest& AddHyperParameters(Aws::String&& key, const Aws::String& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Algorithm-specific parameters. You set hyperparameters before you start the
-     * learning process. Hyperparameters influence the quality of the model. For a list
-     * of hyperparameters for each training algorithm provided by Amazon SageMaker, see
-     * <a
+     * <p>Algorithm-specific parameters that influence the quality of the model. You
+     * set hyperparameters before you start the learning process. For a list of
+     * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
@@ -193,10 +185,9 @@ namespace Model
     inline CreateTrainingJobRequest& AddHyperParameters(const Aws::String& key, Aws::String&& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Algorithm-specific parameters. You set hyperparameters before you start the
-     * learning process. Hyperparameters influence the quality of the model. For a list
-     * of hyperparameters for each training algorithm provided by Amazon SageMaker, see
-     * <a
+     * <p>Algorithm-specific parameters that influence the quality of the model. You
+     * set hyperparameters before you start the learning process. For a list of
+     * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
@@ -205,10 +196,9 @@ namespace Model
     inline CreateTrainingJobRequest& AddHyperParameters(Aws::String&& key, Aws::String&& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Algorithm-specific parameters. You set hyperparameters before you start the
-     * learning process. Hyperparameters influence the quality of the model. For a list
-     * of hyperparameters for each training algorithm provided by Amazon SageMaker, see
-     * <a
+     * <p>Algorithm-specific parameters that influence the quality of the model. You
+     * set hyperparameters before you start the learning process. For a list of
+     * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
@@ -217,10 +207,9 @@ namespace Model
     inline CreateTrainingJobRequest& AddHyperParameters(const char* key, Aws::String&& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Algorithm-specific parameters. You set hyperparameters before you start the
-     * learning process. Hyperparameters influence the quality of the model. For a list
-     * of hyperparameters for each training algorithm provided by Amazon SageMaker, see
-     * <a
+     * <p>Algorithm-specific parameters that influence the quality of the model. You
+     * set hyperparameters before you start the learning process. For a list of
+     * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
@@ -229,10 +218,9 @@ namespace Model
     inline CreateTrainingJobRequest& AddHyperParameters(Aws::String&& key, const char* value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Algorithm-specific parameters. You set hyperparameters before you start the
-     * learning process. Hyperparameters influence the quality of the model. For a list
-     * of hyperparameters for each training algorithm provided by Amazon SageMaker, see
-     * <a
+     * <p>Algorithm-specific parameters that influence the quality of the model. You
+     * set hyperparameters before you start the learning process. For a list of
+     * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
@@ -301,7 +289,9 @@ namespace Model
      * You grant permissions for all of these tasks to an IAM role. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
@@ -314,7 +304,9 @@ namespace Model
      * You grant permissions for all of these tasks to an IAM role. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
@@ -327,7 +319,9 @@ namespace Model
      * You grant permissions for all of these tasks to an IAM role. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
@@ -340,7 +334,9 @@ namespace Model
      * You grant permissions for all of these tasks to an IAM role. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
@@ -353,7 +349,9 @@ namespace Model
      * You grant permissions for all of these tasks to an IAM role. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline CreateTrainingJobRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
@@ -366,7 +364,9 @@ namespace Model
      * You grant permissions for all of these tasks to an IAM role. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline CreateTrainingJobRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
@@ -379,7 +379,9 @@ namespace Model
      * You grant permissions for all of these tasks to an IAM role. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline CreateTrainingJobRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

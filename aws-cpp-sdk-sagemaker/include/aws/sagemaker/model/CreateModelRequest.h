@@ -126,7 +126,9 @@ namespace Model
      * instances. Deploying on ML compute instances is part of model hosting. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
 
@@ -136,7 +138,9 @@ namespace Model
      * instances. Deploying on ML compute instances is part of model hosting. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
 
@@ -146,7 +150,9 @@ namespace Model
      * instances. Deploying on ML compute instances is part of model hosting. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
 
@@ -156,7 +162,9 @@ namespace Model
      * instances. Deploying on ML compute instances is part of model hosting. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
 
@@ -166,7 +174,9 @@ namespace Model
      * instances. Deploying on ML compute instances is part of model hosting. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline CreateModelRequest& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
 
@@ -176,7 +186,9 @@ namespace Model
      * instances. Deploying on ML compute instances is part of model hosting. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline CreateModelRequest& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
 
@@ -186,7 +198,9 @@ namespace Model
      * instances. Deploying on ML compute instances is part of model hosting. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline CreateModelRequest& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
 
@@ -250,36 +264,36 @@ namespace Model
 
     /**
      * <p>A object that specifies the VPC that you want your model to connect to.
-     * Control access to and from your training container by configuring the VPC. For
-     * more information, see <a>host-vpc</a>.</p>
+     * Control access to and from your model container by configuring the VPC. For more
+     * information, see <a>host-vpc</a>.</p>
      */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
 
     /**
      * <p>A object that specifies the VPC that you want your model to connect to.
-     * Control access to and from your training container by configuring the VPC. For
-     * more information, see <a>host-vpc</a>.</p>
+     * Control access to and from your model container by configuring the VPC. For more
+     * information, see <a>host-vpc</a>.</p>
      */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
 
     /**
      * <p>A object that specifies the VPC that you want your model to connect to.
-     * Control access to and from your training container by configuring the VPC. For
-     * more information, see <a>host-vpc</a>.</p>
+     * Control access to and from your model container by configuring the VPC. For more
+     * information, see <a>host-vpc</a>.</p>
      */
     inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
 
     /**
      * <p>A object that specifies the VPC that you want your model to connect to.
-     * Control access to and from your training container by configuring the VPC. For
-     * more information, see <a>host-vpc</a>.</p>
+     * Control access to and from your model container by configuring the VPC. For more
+     * information, see <a>host-vpc</a>.</p>
      */
     inline CreateModelRequest& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
 
     /**
      * <p>A object that specifies the VPC that you want your model to connect to.
-     * Control access to and from your training container by configuring the VPC. For
-     * more information, see <a>host-vpc</a>.</p>
+     * Control access to and from your model container by configuring the VPC. For more
+     * information, see <a>host-vpc</a>.</p>
      */
     inline CreateModelRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 

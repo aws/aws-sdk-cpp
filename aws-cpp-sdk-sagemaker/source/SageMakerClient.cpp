@@ -30,6 +30,7 @@
 #include <aws/sagemaker/model/AddTagsRequest.h>
 #include <aws/sagemaker/model/CreateEndpointRequest.h>
 #include <aws/sagemaker/model/CreateEndpointConfigRequest.h>
+#include <aws/sagemaker/model/CreateHyperParameterTuningJobRequest.h>
 #include <aws/sagemaker/model/CreateModelRequest.h>
 #include <aws/sagemaker/model/CreateNotebookInstanceRequest.h>
 #include <aws/sagemaker/model/CreateNotebookInstanceLifecycleConfigRequest.h>
@@ -43,18 +44,22 @@
 #include <aws/sagemaker/model/DeleteTagsRequest.h>
 #include <aws/sagemaker/model/DescribeEndpointRequest.h>
 #include <aws/sagemaker/model/DescribeEndpointConfigRequest.h>
+#include <aws/sagemaker/model/DescribeHyperParameterTuningJobRequest.h>
 #include <aws/sagemaker/model/DescribeModelRequest.h>
 #include <aws/sagemaker/model/DescribeNotebookInstanceRequest.h>
 #include <aws/sagemaker/model/DescribeNotebookInstanceLifecycleConfigRequest.h>
 #include <aws/sagemaker/model/DescribeTrainingJobRequest.h>
 #include <aws/sagemaker/model/ListEndpointConfigsRequest.h>
 #include <aws/sagemaker/model/ListEndpointsRequest.h>
+#include <aws/sagemaker/model/ListHyperParameterTuningJobsRequest.h>
 #include <aws/sagemaker/model/ListModelsRequest.h>
 #include <aws/sagemaker/model/ListNotebookInstanceLifecycleConfigsRequest.h>
 #include <aws/sagemaker/model/ListNotebookInstancesRequest.h>
 #include <aws/sagemaker/model/ListTagsRequest.h>
 #include <aws/sagemaker/model/ListTrainingJobsRequest.h>
+#include <aws/sagemaker/model/ListTrainingJobsForHyperParameterTuningJobRequest.h>
 #include <aws/sagemaker/model/StartNotebookInstanceRequest.h>
+#include <aws/sagemaker/model/StopHyperParameterTuningJobRequest.h>
 #include <aws/sagemaker/model/StopNotebookInstanceRequest.h>
 #include <aws/sagemaker/model/StopTrainingJobRequest.h>
 #include <aws/sagemaker/model/UpdateEndpointRequest.h>
@@ -229,6 +234,41 @@ void SageMakerClient::CreateEndpointConfigAsync(const CreateEndpointConfigReques
 void SageMakerClient::CreateEndpointConfigAsyncHelper(const CreateEndpointConfigRequest& request, const CreateEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateEndpointConfig(request), context);
+}
+
+CreateHyperParameterTuningJobOutcome SageMakerClient::CreateHyperParameterTuningJob(const CreateHyperParameterTuningJobRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateHyperParameterTuningJobOutcome(CreateHyperParameterTuningJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateHyperParameterTuningJobOutcome(outcome.GetError());
+  }
+}
+
+CreateHyperParameterTuningJobOutcomeCallable SageMakerClient::CreateHyperParameterTuningJobCallable(const CreateHyperParameterTuningJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateHyperParameterTuningJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateHyperParameterTuningJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::CreateHyperParameterTuningJobAsync(const CreateHyperParameterTuningJobRequest& request, const CreateHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateHyperParameterTuningJobAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::CreateHyperParameterTuningJobAsyncHelper(const CreateHyperParameterTuningJobRequest& request, const CreateHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateHyperParameterTuningJob(request), context);
 }
 
 CreateModelOutcome SageMakerClient::CreateModel(const CreateModelRequest& request) const
@@ -686,6 +726,41 @@ void SageMakerClient::DescribeEndpointConfigAsyncHelper(const DescribeEndpointCo
   handler(this, request, DescribeEndpointConfig(request), context);
 }
 
+DescribeHyperParameterTuningJobOutcome SageMakerClient::DescribeHyperParameterTuningJob(const DescribeHyperParameterTuningJobRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeHyperParameterTuningJobOutcome(DescribeHyperParameterTuningJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeHyperParameterTuningJobOutcome(outcome.GetError());
+  }
+}
+
+DescribeHyperParameterTuningJobOutcomeCallable SageMakerClient::DescribeHyperParameterTuningJobCallable(const DescribeHyperParameterTuningJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeHyperParameterTuningJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeHyperParameterTuningJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DescribeHyperParameterTuningJobAsync(const DescribeHyperParameterTuningJobRequest& request, const DescribeHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeHyperParameterTuningJobAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::DescribeHyperParameterTuningJobAsyncHelper(const DescribeHyperParameterTuningJobRequest& request, const DescribeHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeHyperParameterTuningJob(request), context);
+}
+
 DescribeModelOutcome SageMakerClient::DescribeModel(const DescribeModelRequest& request) const
 {
   Aws::StringStream ss;
@@ -896,6 +971,41 @@ void SageMakerClient::ListEndpointsAsyncHelper(const ListEndpointsRequest& reque
   handler(this, request, ListEndpoints(request), context);
 }
 
+ListHyperParameterTuningJobsOutcome SageMakerClient::ListHyperParameterTuningJobs(const ListHyperParameterTuningJobsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListHyperParameterTuningJobsOutcome(ListHyperParameterTuningJobsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListHyperParameterTuningJobsOutcome(outcome.GetError());
+  }
+}
+
+ListHyperParameterTuningJobsOutcomeCallable SageMakerClient::ListHyperParameterTuningJobsCallable(const ListHyperParameterTuningJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListHyperParameterTuningJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListHyperParameterTuningJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::ListHyperParameterTuningJobsAsync(const ListHyperParameterTuningJobsRequest& request, const ListHyperParameterTuningJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListHyperParameterTuningJobsAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::ListHyperParameterTuningJobsAsyncHelper(const ListHyperParameterTuningJobsRequest& request, const ListHyperParameterTuningJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListHyperParameterTuningJobs(request), context);
+}
+
 ListModelsOutcome SageMakerClient::ListModels(const ListModelsRequest& request) const
 {
   Aws::StringStream ss;
@@ -1071,6 +1181,41 @@ void SageMakerClient::ListTrainingJobsAsyncHelper(const ListTrainingJobsRequest&
   handler(this, request, ListTrainingJobs(request), context);
 }
 
+ListTrainingJobsForHyperParameterTuningJobOutcome SageMakerClient::ListTrainingJobsForHyperParameterTuningJob(const ListTrainingJobsForHyperParameterTuningJobRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListTrainingJobsForHyperParameterTuningJobOutcome(ListTrainingJobsForHyperParameterTuningJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTrainingJobsForHyperParameterTuningJobOutcome(outcome.GetError());
+  }
+}
+
+ListTrainingJobsForHyperParameterTuningJobOutcomeCallable SageMakerClient::ListTrainingJobsForHyperParameterTuningJobCallable(const ListTrainingJobsForHyperParameterTuningJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTrainingJobsForHyperParameterTuningJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTrainingJobsForHyperParameterTuningJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::ListTrainingJobsForHyperParameterTuningJobAsync(const ListTrainingJobsForHyperParameterTuningJobRequest& request, const ListTrainingJobsForHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTrainingJobsForHyperParameterTuningJobAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::ListTrainingJobsForHyperParameterTuningJobAsyncHelper(const ListTrainingJobsForHyperParameterTuningJobRequest& request, const ListTrainingJobsForHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTrainingJobsForHyperParameterTuningJob(request), context);
+}
+
 StartNotebookInstanceOutcome SageMakerClient::StartNotebookInstance(const StartNotebookInstanceRequest& request) const
 {
   Aws::StringStream ss;
@@ -1104,6 +1249,41 @@ void SageMakerClient::StartNotebookInstanceAsync(const StartNotebookInstanceRequ
 void SageMakerClient::StartNotebookInstanceAsyncHelper(const StartNotebookInstanceRequest& request, const StartNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StartNotebookInstance(request), context);
+}
+
+StopHyperParameterTuningJobOutcome SageMakerClient::StopHyperParameterTuningJob(const StopHyperParameterTuningJobRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StopHyperParameterTuningJobOutcome(NoResult());
+  }
+  else
+  {
+    return StopHyperParameterTuningJobOutcome(outcome.GetError());
+  }
+}
+
+StopHyperParameterTuningJobOutcomeCallable SageMakerClient::StopHyperParameterTuningJobCallable(const StopHyperParameterTuningJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopHyperParameterTuningJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopHyperParameterTuningJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::StopHyperParameterTuningJobAsync(const StopHyperParameterTuningJobRequest& request, const StopHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopHyperParameterTuningJobAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::StopHyperParameterTuningJobAsyncHelper(const StopHyperParameterTuningJobRequest& request, const StopHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopHyperParameterTuningJob(request), context);
 }
 
 StopNotebookInstanceOutcome SageMakerClient::StopNotebookInstance(const StopNotebookInstanceRequest& request) const

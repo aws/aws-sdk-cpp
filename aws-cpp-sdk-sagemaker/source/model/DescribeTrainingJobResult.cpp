@@ -54,6 +54,12 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("TuningJobArn"))
+  {
+    m_tuningJobArn = jsonValue.GetString("TuningJobArn");
+
+  }
+
   if(jsonValue.ValueExists("ModelArtifacts"))
   {
     m_modelArtifacts = jsonValue.GetObject("ModelArtifacts");

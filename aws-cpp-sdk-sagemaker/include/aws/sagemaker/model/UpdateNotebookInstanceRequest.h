@@ -108,44 +108,72 @@ namespace Model
 
 
     /**
-     * <p>Amazon Resource Name (ARN) of the IAM role to associate with the
-     * instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
+     * assume to access the notebook instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the IAM role to associate with the
-     * instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
+     * assume to access the notebook instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the IAM role to associate with the
-     * instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
+     * assume to access the notebook instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the IAM role to associate with the
-     * instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
+     * assume to access the notebook instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the IAM role to associate with the
-     * instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
+     * assume to access the notebook instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline UpdateNotebookInstanceRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>Amazon Resource Name (ARN) of the IAM role to associate with the
-     * instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
+     * assume to access the notebook instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline UpdateNotebookInstanceRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon Resource Name (ARN) of the IAM role to associate with the
-     * instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
+     * assume to access the notebook instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline UpdateNotebookInstanceRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

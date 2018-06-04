@@ -40,7 +40,12 @@ namespace Model
 
   /**
    * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the
-   * value AAC.<p><h3>See Also:</h3>   <a
+   * value AAC. The service accepts one of two mutually exclusive groups of AAC
+   * settings--VBR and CBR. To select one of these modes, set the value of Bitrate
+   * control mode (rateControlMode) to "VBR" or "CBR".  In VBR mode, you control the
+   * audio quality with the setting VBR quality (vbrQuality). In CBR mode, you use
+   * the setting Bitrate (bitrate). Defaults and valid values depend on the rate
+   * control mode.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AacSettings">AWS
    * API Reference</a></p>
    */
@@ -70,20 +75,20 @@ namespace Model
 
 
     /**
-     * Average bitrate in bits/second. Valid values depend on rate control mode and
-     * profile.
+     * Average bitrate in bits/second. Defaults and valid values depend on rate control
+     * mode and profile.
      */
     inline int GetBitrate() const{ return m_bitrate; }
 
     /**
-     * Average bitrate in bits/second. Valid values depend on rate control mode and
-     * profile.
+     * Average bitrate in bits/second. Defaults and valid values depend on rate control
+     * mode and profile.
      */
     inline void SetBitrate(int value) { m_bitrateHasBeenSet = true; m_bitrate = value; }
 
     /**
-     * Average bitrate in bits/second. Valid values depend on rate control mode and
-     * profile.
+     * Average bitrate in bits/second. Defaults and valid values depend on rate control
+     * mode and profile.
      */
     inline AacSettings& WithBitrate(int value) { SetBitrate(value); return *this;}
 

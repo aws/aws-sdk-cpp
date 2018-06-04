@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>Specifies the training algorithm to use in a <a
    * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateTrainingJob.html">CreateTrainingJob</a>
-   * request. </p> <p>For more information about algorithms provided by Amazon
+   * request.</p> <p>For more information about algorithms provided by Amazon
    * SageMaker, see <a
    * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
    * For information about using your own algorithms, see <a>your-algorithms</a>.
