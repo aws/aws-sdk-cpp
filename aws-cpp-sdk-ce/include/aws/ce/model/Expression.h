@@ -53,8 +53,8 @@ namespace Model
    * INSTANCE_TYPE == m3.large) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
    * DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p>
    * <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "INSTANCE_TYPE", "Values":
-   * [ "m4.x.large", "c4.large" ] }}, {"Tag": { "Key": "TagName", "Values":
-   * ["Value1"] } } ]}, {"Not": {"dimensions": { "Key": "USAGE_TYPE", "Values":
+   * [ "m4.x.large", "c4.large" ] }}, {"Tags": { "Key": "TagName", "Values":
+   * ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
    * ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each
    * <code>Expression</code> can have only one operator, the service returns an error
    * if more than one is specified. The following example shows an

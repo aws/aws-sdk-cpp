@@ -75,7 +75,8 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_enablePerformanceInsights(false),
     m_enablePerformanceInsightsHasBeenSet(false),
     m_performanceInsightsKMSKeyIdHasBeenSet(false),
-    m_enableCloudwatchLogsExportsHasBeenSet(false)
+    m_enableCloudwatchLogsExportsHasBeenSet(false),
+    m_processorFeaturesHasBeenSet(false)
 {
 }
 
@@ -313,6 +314,16 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
       ss << "EnableCloudwatchLogsExports.member." << enableCloudwatchLogsExportsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       enableCloudwatchLogsExportsCount++;
+    }
+  }
+
+  if(m_processorFeaturesHasBeenSet)
+  {
+    unsigned processorFeaturesCount = 1;
+    for(auto& item : m_processorFeatures)
+    {
+      item.OutputToStream(ss, "ProcessorFeatures.member.", processorFeaturesCount, "");
+      processorFeaturesCount++;
     }
   }
 

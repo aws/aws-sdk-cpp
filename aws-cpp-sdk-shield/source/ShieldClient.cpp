@@ -27,16 +27,23 @@
 #include <aws/shield/ShieldClient.h>
 #include <aws/shield/ShieldEndpoint.h>
 #include <aws/shield/ShieldErrorMarshaller.h>
+#include <aws/shield/model/AssociateDRTLogBucketRequest.h>
+#include <aws/shield/model/AssociateDRTRoleRequest.h>
 #include <aws/shield/model/CreateProtectionRequest.h>
 #include <aws/shield/model/CreateSubscriptionRequest.h>
 #include <aws/shield/model/DeleteProtectionRequest.h>
-#include <aws/shield/model/DeleteSubscriptionRequest.h>
 #include <aws/shield/model/DescribeAttackRequest.h>
+#include <aws/shield/model/DescribeDRTAccessRequest.h>
+#include <aws/shield/model/DescribeEmergencyContactSettingsRequest.h>
 #include <aws/shield/model/DescribeProtectionRequest.h>
 #include <aws/shield/model/DescribeSubscriptionRequest.h>
+#include <aws/shield/model/DisassociateDRTLogBucketRequest.h>
+#include <aws/shield/model/DisassociateDRTRoleRequest.h>
 #include <aws/shield/model/GetSubscriptionStateRequest.h>
 #include <aws/shield/model/ListAttacksRequest.h>
 #include <aws/shield/model/ListProtectionsRequest.h>
+#include <aws/shield/model/UpdateEmergencyContactSettingsRequest.h>
+#include <aws/shield/model/UpdateSubscriptionRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -100,6 +107,76 @@ void ShieldClient::init(const ClientConfiguration& config)
   }
 
   m_uri = ss.str();
+}
+
+AssociateDRTLogBucketOutcome ShieldClient::AssociateDRTLogBucket(const AssociateDRTLogBucketRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return AssociateDRTLogBucketOutcome(AssociateDRTLogBucketResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AssociateDRTLogBucketOutcome(outcome.GetError());
+  }
+}
+
+AssociateDRTLogBucketOutcomeCallable ShieldClient::AssociateDRTLogBucketCallable(const AssociateDRTLogBucketRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateDRTLogBucketOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateDRTLogBucket(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ShieldClient::AssociateDRTLogBucketAsync(const AssociateDRTLogBucketRequest& request, const AssociateDRTLogBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateDRTLogBucketAsyncHelper( request, handler, context ); } );
+}
+
+void ShieldClient::AssociateDRTLogBucketAsyncHelper(const AssociateDRTLogBucketRequest& request, const AssociateDRTLogBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateDRTLogBucket(request), context);
+}
+
+AssociateDRTRoleOutcome ShieldClient::AssociateDRTRole(const AssociateDRTRoleRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return AssociateDRTRoleOutcome(AssociateDRTRoleResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AssociateDRTRoleOutcome(outcome.GetError());
+  }
+}
+
+AssociateDRTRoleOutcomeCallable ShieldClient::AssociateDRTRoleCallable(const AssociateDRTRoleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateDRTRoleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateDRTRole(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ShieldClient::AssociateDRTRoleAsync(const AssociateDRTRoleRequest& request, const AssociateDRTRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateDRTRoleAsyncHelper( request, handler, context ); } );
+}
+
+void ShieldClient::AssociateDRTRoleAsyncHelper(const AssociateDRTRoleRequest& request, const AssociateDRTRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateDRTRole(request), context);
 }
 
 CreateProtectionOutcome ShieldClient::CreateProtection(const CreateProtectionRequest& request) const
@@ -207,41 +284,6 @@ void ShieldClient::DeleteProtectionAsyncHelper(const DeleteProtectionRequest& re
   handler(this, request, DeleteProtection(request), context);
 }
 
-DeleteSubscriptionOutcome ShieldClient::DeleteSubscription(const DeleteSubscriptionRequest& request) const
-{
-  Aws::StringStream ss;
-  Aws::Http::URI uri = m_uri;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteSubscriptionOutcome(DeleteSubscriptionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteSubscriptionOutcome(outcome.GetError());
-  }
-}
-
-DeleteSubscriptionOutcomeCallable ShieldClient::DeleteSubscriptionCallable(const DeleteSubscriptionRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< DeleteSubscriptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSubscription(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void ShieldClient::DeleteSubscriptionAsync(const DeleteSubscriptionRequest& request, const DeleteSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSubscriptionAsyncHelper( request, handler, context ); } );
-}
-
-void ShieldClient::DeleteSubscriptionAsyncHelper(const DeleteSubscriptionRequest& request, const DeleteSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteSubscription(request), context);
-}
-
 DescribeAttackOutcome ShieldClient::DescribeAttack(const DescribeAttackRequest& request) const
 {
   Aws::StringStream ss;
@@ -275,6 +317,76 @@ void ShieldClient::DescribeAttackAsync(const DescribeAttackRequest& request, con
 void ShieldClient::DescribeAttackAsyncHelper(const DescribeAttackRequest& request, const DescribeAttackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeAttack(request), context);
+}
+
+DescribeDRTAccessOutcome ShieldClient::DescribeDRTAccess(const DescribeDRTAccessRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeDRTAccessOutcome(DescribeDRTAccessResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeDRTAccessOutcome(outcome.GetError());
+  }
+}
+
+DescribeDRTAccessOutcomeCallable ShieldClient::DescribeDRTAccessCallable(const DescribeDRTAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDRTAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDRTAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ShieldClient::DescribeDRTAccessAsync(const DescribeDRTAccessRequest& request, const DescribeDRTAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDRTAccessAsyncHelper( request, handler, context ); } );
+}
+
+void ShieldClient::DescribeDRTAccessAsyncHelper(const DescribeDRTAccessRequest& request, const DescribeDRTAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeDRTAccess(request), context);
+}
+
+DescribeEmergencyContactSettingsOutcome ShieldClient::DescribeEmergencyContactSettings(const DescribeEmergencyContactSettingsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeEmergencyContactSettingsOutcome(DescribeEmergencyContactSettingsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeEmergencyContactSettingsOutcome(outcome.GetError());
+  }
+}
+
+DescribeEmergencyContactSettingsOutcomeCallable ShieldClient::DescribeEmergencyContactSettingsCallable(const DescribeEmergencyContactSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeEmergencyContactSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEmergencyContactSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ShieldClient::DescribeEmergencyContactSettingsAsync(const DescribeEmergencyContactSettingsRequest& request, const DescribeEmergencyContactSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeEmergencyContactSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void ShieldClient::DescribeEmergencyContactSettingsAsyncHelper(const DescribeEmergencyContactSettingsRequest& request, const DescribeEmergencyContactSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeEmergencyContactSettings(request), context);
 }
 
 DescribeProtectionOutcome ShieldClient::DescribeProtection(const DescribeProtectionRequest& request) const
@@ -345,6 +457,76 @@ void ShieldClient::DescribeSubscriptionAsync(const DescribeSubscriptionRequest& 
 void ShieldClient::DescribeSubscriptionAsyncHelper(const DescribeSubscriptionRequest& request, const DescribeSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeSubscription(request), context);
+}
+
+DisassociateDRTLogBucketOutcome ShieldClient::DisassociateDRTLogBucket(const DisassociateDRTLogBucketRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DisassociateDRTLogBucketOutcome(DisassociateDRTLogBucketResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DisassociateDRTLogBucketOutcome(outcome.GetError());
+  }
+}
+
+DisassociateDRTLogBucketOutcomeCallable ShieldClient::DisassociateDRTLogBucketCallable(const DisassociateDRTLogBucketRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateDRTLogBucketOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateDRTLogBucket(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ShieldClient::DisassociateDRTLogBucketAsync(const DisassociateDRTLogBucketRequest& request, const DisassociateDRTLogBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateDRTLogBucketAsyncHelper( request, handler, context ); } );
+}
+
+void ShieldClient::DisassociateDRTLogBucketAsyncHelper(const DisassociateDRTLogBucketRequest& request, const DisassociateDRTLogBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateDRTLogBucket(request), context);
+}
+
+DisassociateDRTRoleOutcome ShieldClient::DisassociateDRTRole(const DisassociateDRTRoleRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DisassociateDRTRoleOutcome(DisassociateDRTRoleResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DisassociateDRTRoleOutcome(outcome.GetError());
+  }
+}
+
+DisassociateDRTRoleOutcomeCallable ShieldClient::DisassociateDRTRoleCallable(const DisassociateDRTRoleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateDRTRoleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateDRTRole(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ShieldClient::DisassociateDRTRoleAsync(const DisassociateDRTRoleRequest& request, const DisassociateDRTRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateDRTRoleAsyncHelper( request, handler, context ); } );
+}
+
+void ShieldClient::DisassociateDRTRoleAsyncHelper(const DisassociateDRTRoleRequest& request, const DisassociateDRTRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateDRTRole(request), context);
 }
 
 GetSubscriptionStateOutcome ShieldClient::GetSubscriptionState(const GetSubscriptionStateRequest& request) const
@@ -450,5 +632,75 @@ void ShieldClient::ListProtectionsAsync(const ListProtectionsRequest& request, c
 void ShieldClient::ListProtectionsAsyncHelper(const ListProtectionsRequest& request, const ListProtectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListProtections(request), context);
+}
+
+UpdateEmergencyContactSettingsOutcome ShieldClient::UpdateEmergencyContactSettings(const UpdateEmergencyContactSettingsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateEmergencyContactSettingsOutcome(UpdateEmergencyContactSettingsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateEmergencyContactSettingsOutcome(outcome.GetError());
+  }
+}
+
+UpdateEmergencyContactSettingsOutcomeCallable ShieldClient::UpdateEmergencyContactSettingsCallable(const UpdateEmergencyContactSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateEmergencyContactSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateEmergencyContactSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ShieldClient::UpdateEmergencyContactSettingsAsync(const UpdateEmergencyContactSettingsRequest& request, const UpdateEmergencyContactSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateEmergencyContactSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void ShieldClient::UpdateEmergencyContactSettingsAsyncHelper(const UpdateEmergencyContactSettingsRequest& request, const UpdateEmergencyContactSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateEmergencyContactSettings(request), context);
+}
+
+UpdateSubscriptionOutcome ShieldClient::UpdateSubscription(const UpdateSubscriptionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateSubscriptionOutcome(UpdateSubscriptionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateSubscriptionOutcome(outcome.GetError());
+  }
+}
+
+UpdateSubscriptionOutcomeCallable ShieldClient::UpdateSubscriptionCallable(const UpdateSubscriptionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateSubscriptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSubscription(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ShieldClient::UpdateSubscriptionAsync(const UpdateSubscriptionRequest& request, const UpdateSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateSubscriptionAsyncHelper( request, handler, context ); } );
+}
+
+void ShieldClient::UpdateSubscriptionAsyncHelper(const UpdateSubscriptionRequest& request, const UpdateSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateSubscription(request), context);
 }
 

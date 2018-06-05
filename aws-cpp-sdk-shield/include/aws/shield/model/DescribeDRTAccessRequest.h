@@ -15,29 +15,31 @@
 
 #pragma once
 #include <aws/shield/Shield_EXPORTS.h>
+#include <aws/shield/ShieldRequest.h>
 
 namespace Aws
 {
-template<typename RESULT_TYPE>
-class AmazonWebServiceResult;
-
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
 namespace Shield
 {
 namespace Model
 {
-  class AWS_SHIELD_API DeleteSubscriptionResult
+
+  /**
+   */
+  class AWS_SHIELD_API DescribeDRTAccessRequest : public ShieldRequest
   {
   public:
-    DeleteSubscriptionResult();
-    DeleteSubscriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeDRTAccessRequest();
+    
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "DescribeDRTAccess"; }
+
+    Aws::String SerializePayload() const override;
+
+    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
   };
 

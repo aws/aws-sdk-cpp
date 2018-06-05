@@ -13,32 +13,32 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/shield/model/DeleteSubscriptionRequest.h>
+#include <aws/shield/model/UpdateEmergencyContactSettingsResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 
 #include <utility>
 
 using namespace Aws::Shield::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+using namespace Aws;
 
-DeleteSubscriptionRequest::DeleteSubscriptionRequest()
+UpdateEmergencyContactSettingsResult::UpdateEmergencyContactSettingsResult()
 {
 }
 
-Aws::String DeleteSubscriptionRequest::SerializePayload() const
+UpdateEmergencyContactSettingsResult::UpdateEmergencyContactSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  return "";
+  *this = result;
 }
 
-Aws::Http::HeaderValueCollection DeleteSubscriptionRequest::GetRequestSpecificHeaders() const
+UpdateEmergencyContactSettingsResult& UpdateEmergencyContactSettingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSShield_20160616.DeleteSubscription"));
-  return headers;
+  AWS_UNREFERENCED_PARAM(result);
 
+
+  return *this;
 }
-
-
-
-

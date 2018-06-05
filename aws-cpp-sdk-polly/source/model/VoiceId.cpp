@@ -56,6 +56,7 @@ namespace Aws
         static const int Penelope_HASH = HashingUtils::HashString("Penelope");
         static const int Chantal_HASH = HashingUtils::HashString("Chantal");
         static const int Celine_HASH = HashingUtils::HashString("Celine");
+        static const int Lea_HASH = HashingUtils::HashString("Lea");
         static const int Mathieu_HASH = HashingUtils::HashString("Mathieu");
         static const int Dora_HASH = HashingUtils::HashString("Dora");
         static const int Karl_HASH = HashingUtils::HashString("Karl");
@@ -190,6 +191,10 @@ namespace Aws
           else if (hashCode == Celine_HASH)
           {
             return VoiceId::Celine;
+          }
+          else if (hashCode == Lea_HASH)
+          {
+            return VoiceId::Lea;
           }
           else if (hashCode == Mathieu_HASH)
           {
@@ -361,6 +366,8 @@ namespace Aws
             return "Chantal";
           case VoiceId::Celine:
             return "Celine";
+          case VoiceId::Lea:
+            return "Lea";
           case VoiceId::Mathieu:
             return "Mathieu";
           case VoiceId::Dora:

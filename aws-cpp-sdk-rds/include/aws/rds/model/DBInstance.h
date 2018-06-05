@@ -28,6 +28,7 @@
 #include <aws/rds/model/OptionGroupMembership.h>
 #include <aws/rds/model/DBInstanceStatusInfo.h>
 #include <aws/rds/model/DomainMembership.h>
+#include <aws/rds/model/ProcessorFeature.h>
 #include <utility>
 
 namespace Aws
@@ -1998,6 +1999,49 @@ namespace Model
      */
     inline DBInstance& AddEnabledCloudwatchLogsExports(const char* value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(value); return *this; }
 
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
+    inline const Aws::Vector<ProcessorFeature>& GetProcessorFeatures() const{ return m_processorFeatures; }
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
+    inline void SetProcessorFeatures(const Aws::Vector<ProcessorFeature>& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures = value; }
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
+    inline void SetProcessorFeatures(Aws::Vector<ProcessorFeature>&& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures = std::move(value); }
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
+    inline DBInstance& WithProcessorFeatures(const Aws::Vector<ProcessorFeature>& value) { SetProcessorFeatures(value); return *this;}
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
+    inline DBInstance& WithProcessorFeatures(Aws::Vector<ProcessorFeature>&& value) { SetProcessorFeatures(std::move(value)); return *this;}
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
+    inline DBInstance& AddProcessorFeatures(const ProcessorFeature& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures.push_back(value); return *this; }
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
+    inline DBInstance& AddProcessorFeatures(ProcessorFeature&& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -2155,6 +2199,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_enabledCloudwatchLogsExports;
     bool m_enabledCloudwatchLogsExportsHasBeenSet;
+
+    Aws::Vector<ProcessorFeature> m_processorFeatures;
+    bool m_processorFeaturesHasBeenSet;
   };
 
 } // namespace Model

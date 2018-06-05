@@ -97,9 +97,9 @@ namespace Model
      * secret, and this parameter specifies a unique identifier for the new version.
      * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
-     * random UUID for you and includes as the value for this parameter in the request.
-     * If you don't use the SDK and instead generate a raw HTTP request to the Secrets
-     * Manager service endpoint, then you must generate a
+     * random UUID for you and includes it as the value for this parameter in the
+     * request. If you don't use the SDK and instead generate a raw HTTP request to the
+     * Secrets Manager service endpoint, then you must generate a
      * <code>ClientRequestToken</code> yourself for the new version and include that
      * value in the request.</p> </note> <p>This value helps ensure idempotency.
      * Secrets Manager uses this value to prevent the accidental creation of duplicate
@@ -127,9 +127,9 @@ namespace Model
      * secret, and this parameter specifies a unique identifier for the new version.
      * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
-     * random UUID for you and includes as the value for this parameter in the request.
-     * If you don't use the SDK and instead generate a raw HTTP request to the Secrets
-     * Manager service endpoint, then you must generate a
+     * random UUID for you and includes it as the value for this parameter in the
+     * request. If you don't use the SDK and instead generate a raw HTTP request to the
+     * Secrets Manager service endpoint, then you must generate a
      * <code>ClientRequestToken</code> yourself for the new version and include that
      * value in the request.</p> </note> <p>This value helps ensure idempotency.
      * Secrets Manager uses this value to prevent the accidental creation of duplicate
@@ -157,9 +157,9 @@ namespace Model
      * secret, and this parameter specifies a unique identifier for the new version.
      * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
-     * random UUID for you and includes as the value for this parameter in the request.
-     * If you don't use the SDK and instead generate a raw HTTP request to the Secrets
-     * Manager service endpoint, then you must generate a
+     * random UUID for you and includes it as the value for this parameter in the
+     * request. If you don't use the SDK and instead generate a raw HTTP request to the
+     * Secrets Manager service endpoint, then you must generate a
      * <code>ClientRequestToken</code> yourself for the new version and include that
      * value in the request.</p> </note> <p>This value helps ensure idempotency.
      * Secrets Manager uses this value to prevent the accidental creation of duplicate
@@ -187,9 +187,9 @@ namespace Model
      * secret, and this parameter specifies a unique identifier for the new version.
      * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
-     * random UUID for you and includes as the value for this parameter in the request.
-     * If you don't use the SDK and instead generate a raw HTTP request to the Secrets
-     * Manager service endpoint, then you must generate a
+     * random UUID for you and includes it as the value for this parameter in the
+     * request. If you don't use the SDK and instead generate a raw HTTP request to the
+     * Secrets Manager service endpoint, then you must generate a
      * <code>ClientRequestToken</code> yourself for the new version and include that
      * value in the request.</p> </note> <p>This value helps ensure idempotency.
      * Secrets Manager uses this value to prevent the accidental creation of duplicate
@@ -217,9 +217,9 @@ namespace Model
      * secret, and this parameter specifies a unique identifier for the new version.
      * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
-     * random UUID for you and includes as the value for this parameter in the request.
-     * If you don't use the SDK and instead generate a raw HTTP request to the Secrets
-     * Manager service endpoint, then you must generate a
+     * random UUID for you and includes it as the value for this parameter in the
+     * request. If you don't use the SDK and instead generate a raw HTTP request to the
+     * Secrets Manager service endpoint, then you must generate a
      * <code>ClientRequestToken</code> yourself for the new version and include that
      * value in the request.</p> </note> <p>This value helps ensure idempotency.
      * Secrets Manager uses this value to prevent the accidental creation of duplicate
@@ -247,9 +247,9 @@ namespace Model
      * secret, and this parameter specifies a unique identifier for the new version.
      * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
-     * random UUID for you and includes as the value for this parameter in the request.
-     * If you don't use the SDK and instead generate a raw HTTP request to the Secrets
-     * Manager service endpoint, then you must generate a
+     * random UUID for you and includes it as the value for this parameter in the
+     * request. If you don't use the SDK and instead generate a raw HTTP request to the
+     * Secrets Manager service endpoint, then you must generate a
      * <code>ClientRequestToken</code> yourself for the new version and include that
      * value in the request.</p> </note> <p>This value helps ensure idempotency.
      * Secrets Manager uses this value to prevent the accidental creation of duplicate
@@ -277,9 +277,9 @@ namespace Model
      * secret, and this parameter specifies a unique identifier for the new version.
      * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
-     * random UUID for you and includes as the value for this parameter in the request.
-     * If you don't use the SDK and instead generate a raw HTTP request to the Secrets
-     * Manager service endpoint, then you must generate a
+     * random UUID for you and includes it as the value for this parameter in the
+     * request. If you don't use the SDK and instead generate a raw HTTP request to the
+     * Secrets Manager service endpoint, then you must generate a
      * <code>ClientRequestToken</code> yourself for the new version and include that
      * value in the request.</p> </note> <p>This value helps ensure idempotency.
      * Secrets Manager uses this value to prevent the accidental creation of duplicate
@@ -339,114 +339,135 @@ namespace Model
 
 
     /**
-     * <p>(Optional) Specifies the ARN or alias of the AWS KMS customer master key
-     * (CMK) to be used to encrypt the <code>SecretString</code> or
+     * <p>(Optional) Specifies the ARN, Key ID, or alias of the AWS KMS customer master
+     * key (CMK) to be used to encrypt the <code>SecretString</code> or
      * <code>SecretBinary</code> values in the versions stored in this secret.</p>
-     * <p>If you don't specify this value, then Secrets Manager defaults to using the
-     * AWS account's default CMK (the one named <code>aws/secretsmanager</code>). If a
-     * KMS CMK with that name doesn't yet exist, then Secrets Manager creates it for
-     * you automatically the first time it needs to encrypt a version's
-     * <code>SecretString</code> or <code>SecretBinary</code> fields.</p> <important>
-     * <p>You can use the account's default CMK to encrypt and decrypt only if you call
-     * this operation using credentials from the same account that owns the secret. If
-     * the secret is in a different account, then you must create a custom CMK and
-     * specify the ARN in this field. </p> </important>
+     * <p>You can specify any of the supported ways to identify a AWS KMS key ID. If
+     * you need to reference a CMK in a different account, you can use only the key ARN
+     * or the alias ARN.</p> <p>If you don't specify this value, then Secrets Manager
+     * defaults to using the AWS account's default CMK (the one named
+     * <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't yet
+     * exist, then Secrets Manager creates it for you automatically the first time it
+     * needs to encrypt a version's <code>SecretString</code> or
+     * <code>SecretBinary</code> fields.</p> <important> <p>You can use the account's
+     * default CMK to encrypt and decrypt only if you call this operation using
+     * credentials from the same account that owns the secret. If the secret is in a
+     * different account, then you must create a custom CMK and specify the ARN in this
+     * field. </p> </important>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>(Optional) Specifies the ARN or alias of the AWS KMS customer master key
-     * (CMK) to be used to encrypt the <code>SecretString</code> or
+     * <p>(Optional) Specifies the ARN, Key ID, or alias of the AWS KMS customer master
+     * key (CMK) to be used to encrypt the <code>SecretString</code> or
      * <code>SecretBinary</code> values in the versions stored in this secret.</p>
-     * <p>If you don't specify this value, then Secrets Manager defaults to using the
-     * AWS account's default CMK (the one named <code>aws/secretsmanager</code>). If a
-     * KMS CMK with that name doesn't yet exist, then Secrets Manager creates it for
-     * you automatically the first time it needs to encrypt a version's
-     * <code>SecretString</code> or <code>SecretBinary</code> fields.</p> <important>
-     * <p>You can use the account's default CMK to encrypt and decrypt only if you call
-     * this operation using credentials from the same account that owns the secret. If
-     * the secret is in a different account, then you must create a custom CMK and
-     * specify the ARN in this field. </p> </important>
+     * <p>You can specify any of the supported ways to identify a AWS KMS key ID. If
+     * you need to reference a CMK in a different account, you can use only the key ARN
+     * or the alias ARN.</p> <p>If you don't specify this value, then Secrets Manager
+     * defaults to using the AWS account's default CMK (the one named
+     * <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't yet
+     * exist, then Secrets Manager creates it for you automatically the first time it
+     * needs to encrypt a version's <code>SecretString</code> or
+     * <code>SecretBinary</code> fields.</p> <important> <p>You can use the account's
+     * default CMK to encrypt and decrypt only if you call this operation using
+     * credentials from the same account that owns the secret. If the secret is in a
+     * different account, then you must create a custom CMK and specify the ARN in this
+     * field. </p> </important>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>(Optional) Specifies the ARN or alias of the AWS KMS customer master key
-     * (CMK) to be used to encrypt the <code>SecretString</code> or
+     * <p>(Optional) Specifies the ARN, Key ID, or alias of the AWS KMS customer master
+     * key (CMK) to be used to encrypt the <code>SecretString</code> or
      * <code>SecretBinary</code> values in the versions stored in this secret.</p>
-     * <p>If you don't specify this value, then Secrets Manager defaults to using the
-     * AWS account's default CMK (the one named <code>aws/secretsmanager</code>). If a
-     * KMS CMK with that name doesn't yet exist, then Secrets Manager creates it for
-     * you automatically the first time it needs to encrypt a version's
-     * <code>SecretString</code> or <code>SecretBinary</code> fields.</p> <important>
-     * <p>You can use the account's default CMK to encrypt and decrypt only if you call
-     * this operation using credentials from the same account that owns the secret. If
-     * the secret is in a different account, then you must create a custom CMK and
-     * specify the ARN in this field. </p> </important>
+     * <p>You can specify any of the supported ways to identify a AWS KMS key ID. If
+     * you need to reference a CMK in a different account, you can use only the key ARN
+     * or the alias ARN.</p> <p>If you don't specify this value, then Secrets Manager
+     * defaults to using the AWS account's default CMK (the one named
+     * <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't yet
+     * exist, then Secrets Manager creates it for you automatically the first time it
+     * needs to encrypt a version's <code>SecretString</code> or
+     * <code>SecretBinary</code> fields.</p> <important> <p>You can use the account's
+     * default CMK to encrypt and decrypt only if you call this operation using
+     * credentials from the same account that owns the secret. If the secret is in a
+     * different account, then you must create a custom CMK and specify the ARN in this
+     * field. </p> </important>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>(Optional) Specifies the ARN or alias of the AWS KMS customer master key
-     * (CMK) to be used to encrypt the <code>SecretString</code> or
+     * <p>(Optional) Specifies the ARN, Key ID, or alias of the AWS KMS customer master
+     * key (CMK) to be used to encrypt the <code>SecretString</code> or
      * <code>SecretBinary</code> values in the versions stored in this secret.</p>
-     * <p>If you don't specify this value, then Secrets Manager defaults to using the
-     * AWS account's default CMK (the one named <code>aws/secretsmanager</code>). If a
-     * KMS CMK with that name doesn't yet exist, then Secrets Manager creates it for
-     * you automatically the first time it needs to encrypt a version's
-     * <code>SecretString</code> or <code>SecretBinary</code> fields.</p> <important>
-     * <p>You can use the account's default CMK to encrypt and decrypt only if you call
-     * this operation using credentials from the same account that owns the secret. If
-     * the secret is in a different account, then you must create a custom CMK and
-     * specify the ARN in this field. </p> </important>
+     * <p>You can specify any of the supported ways to identify a AWS KMS key ID. If
+     * you need to reference a CMK in a different account, you can use only the key ARN
+     * or the alias ARN.</p> <p>If you don't specify this value, then Secrets Manager
+     * defaults to using the AWS account's default CMK (the one named
+     * <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't yet
+     * exist, then Secrets Manager creates it for you automatically the first time it
+     * needs to encrypt a version's <code>SecretString</code> or
+     * <code>SecretBinary</code> fields.</p> <important> <p>You can use the account's
+     * default CMK to encrypt and decrypt only if you call this operation using
+     * credentials from the same account that owns the secret. If the secret is in a
+     * different account, then you must create a custom CMK and specify the ARN in this
+     * field. </p> </important>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>(Optional) Specifies the ARN or alias of the AWS KMS customer master key
-     * (CMK) to be used to encrypt the <code>SecretString</code> or
+     * <p>(Optional) Specifies the ARN, Key ID, or alias of the AWS KMS customer master
+     * key (CMK) to be used to encrypt the <code>SecretString</code> or
      * <code>SecretBinary</code> values in the versions stored in this secret.</p>
-     * <p>If you don't specify this value, then Secrets Manager defaults to using the
-     * AWS account's default CMK (the one named <code>aws/secretsmanager</code>). If a
-     * KMS CMK with that name doesn't yet exist, then Secrets Manager creates it for
-     * you automatically the first time it needs to encrypt a version's
-     * <code>SecretString</code> or <code>SecretBinary</code> fields.</p> <important>
-     * <p>You can use the account's default CMK to encrypt and decrypt only if you call
-     * this operation using credentials from the same account that owns the secret. If
-     * the secret is in a different account, then you must create a custom CMK and
-     * specify the ARN in this field. </p> </important>
+     * <p>You can specify any of the supported ways to identify a AWS KMS key ID. If
+     * you need to reference a CMK in a different account, you can use only the key ARN
+     * or the alias ARN.</p> <p>If you don't specify this value, then Secrets Manager
+     * defaults to using the AWS account's default CMK (the one named
+     * <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't yet
+     * exist, then Secrets Manager creates it for you automatically the first time it
+     * needs to encrypt a version's <code>SecretString</code> or
+     * <code>SecretBinary</code> fields.</p> <important> <p>You can use the account's
+     * default CMK to encrypt and decrypt only if you call this operation using
+     * credentials from the same account that owns the secret. If the secret is in a
+     * different account, then you must create a custom CMK and specify the ARN in this
+     * field. </p> </important>
      */
     inline CreateSecretRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>(Optional) Specifies the ARN or alias of the AWS KMS customer master key
-     * (CMK) to be used to encrypt the <code>SecretString</code> or
+     * <p>(Optional) Specifies the ARN, Key ID, or alias of the AWS KMS customer master
+     * key (CMK) to be used to encrypt the <code>SecretString</code> or
      * <code>SecretBinary</code> values in the versions stored in this secret.</p>
-     * <p>If you don't specify this value, then Secrets Manager defaults to using the
-     * AWS account's default CMK (the one named <code>aws/secretsmanager</code>). If a
-     * KMS CMK with that name doesn't yet exist, then Secrets Manager creates it for
-     * you automatically the first time it needs to encrypt a version's
-     * <code>SecretString</code> or <code>SecretBinary</code> fields.</p> <important>
-     * <p>You can use the account's default CMK to encrypt and decrypt only if you call
-     * this operation using credentials from the same account that owns the secret. If
-     * the secret is in a different account, then you must create a custom CMK and
-     * specify the ARN in this field. </p> </important>
+     * <p>You can specify any of the supported ways to identify a AWS KMS key ID. If
+     * you need to reference a CMK in a different account, you can use only the key ARN
+     * or the alias ARN.</p> <p>If you don't specify this value, then Secrets Manager
+     * defaults to using the AWS account's default CMK (the one named
+     * <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't yet
+     * exist, then Secrets Manager creates it for you automatically the first time it
+     * needs to encrypt a version's <code>SecretString</code> or
+     * <code>SecretBinary</code> fields.</p> <important> <p>You can use the account's
+     * default CMK to encrypt and decrypt only if you call this operation using
+     * credentials from the same account that owns the secret. If the secret is in a
+     * different account, then you must create a custom CMK and specify the ARN in this
+     * field. </p> </important>
      */
     inline CreateSecretRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) Specifies the ARN or alias of the AWS KMS customer master key
-     * (CMK) to be used to encrypt the <code>SecretString</code> or
+     * <p>(Optional) Specifies the ARN, Key ID, or alias of the AWS KMS customer master
+     * key (CMK) to be used to encrypt the <code>SecretString</code> or
      * <code>SecretBinary</code> values in the versions stored in this secret.</p>
-     * <p>If you don't specify this value, then Secrets Manager defaults to using the
-     * AWS account's default CMK (the one named <code>aws/secretsmanager</code>). If a
-     * KMS CMK with that name doesn't yet exist, then Secrets Manager creates it for
-     * you automatically the first time it needs to encrypt a version's
-     * <code>SecretString</code> or <code>SecretBinary</code> fields.</p> <important>
-     * <p>You can use the account's default CMK to encrypt and decrypt only if you call
-     * this operation using credentials from the same account that owns the secret. If
-     * the secret is in a different account, then you must create a custom CMK and
-     * specify the ARN in this field. </p> </important>
+     * <p>You can specify any of the supported ways to identify a AWS KMS key ID. If
+     * you need to reference a CMK in a different account, you can use only the key ARN
+     * or the alias ARN.</p> <p>If you don't specify this value, then Secrets Manager
+     * defaults to using the AWS account's default CMK (the one named
+     * <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't yet
+     * exist, then Secrets Manager creates it for you automatically the first time it
+     * needs to encrypt a version's <code>SecretString</code> or
+     * <code>SecretBinary</code> fields.</p> <important> <p>You can use the account's
+     * default CMK to encrypt and decrypt only if you call this operation using
+     * credentials from the same account that owns the secret. If the secret is in a
+     * different account, then you must create a custom CMK and specify the ARN in this
+     * field. </p> </important>
      */
     inline CreateSecretRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

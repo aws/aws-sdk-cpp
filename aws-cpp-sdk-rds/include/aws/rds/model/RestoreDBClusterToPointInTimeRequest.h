@@ -337,22 +337,22 @@ namespace Model
 
     /**
      * <p>The port number on which the new DB cluster accepts connections.</p>
-     * <p>Constraints: Value must be <code>1150-65535</code> </p> <p>Default: The same
-     * port as the original DB cluster.</p>
+     * <p>Constraints: A value from <code>1150-65535</code>. </p> <p>Default: The
+     * default port for the engine.</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
      * <p>The port number on which the new DB cluster accepts connections.</p>
-     * <p>Constraints: Value must be <code>1150-65535</code> </p> <p>Default: The same
-     * port as the original DB cluster.</p>
+     * <p>Constraints: A value from <code>1150-65535</code>. </p> <p>Default: The
+     * default port for the engine.</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>The port number on which the new DB cluster accepts connections.</p>
-     * <p>Constraints: Value must be <code>1150-65535</code> </p> <p>Default: The same
-     * port as the original DB cluster.</p>
+     * <p>Constraints: A value from <code>1150-65535</code>. </p> <p>Default: The
+     * default port for the engine.</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithPort(int value) { SetPort(value); return *this;}
 

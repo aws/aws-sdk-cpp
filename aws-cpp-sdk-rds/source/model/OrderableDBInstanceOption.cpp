@@ -64,7 +64,8 @@ OrderableDBInstanceOption::OrderableDBInstanceOption() :
     m_minIopsPerGib(0.0),
     m_minIopsPerGibHasBeenSet(false),
     m_maxIopsPerGib(0.0),
-    m_maxIopsPerGibHasBeenSet(false)
+    m_maxIopsPerGibHasBeenSet(false),
+    m_availableProcessorFeaturesHasBeenSet(false)
 {
 }
 
@@ -102,7 +103,8 @@ OrderableDBInstanceOption::OrderableDBInstanceOption(const XmlNode& xmlNode) :
     m_minIopsPerGib(0.0),
     m_minIopsPerGibHasBeenSet(false),
     m_maxIopsPerGib(0.0),
-    m_maxIopsPerGibHasBeenSet(false)
+    m_maxIopsPerGibHasBeenSet(false),
+    m_availableProcessorFeaturesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -239,6 +241,18 @@ OrderableDBInstanceOption& OrderableDBInstanceOption::operator =(const XmlNode& 
       m_maxIopsPerGib = StringUtils::ConvertToDouble(StringUtils::Trim(maxIopsPerGibNode.GetText().c_str()).c_str());
       m_maxIopsPerGibHasBeenSet = true;
     }
+    XmlNode availableProcessorFeaturesNode = resultNode.FirstChild("AvailableProcessorFeatures");
+    if(!availableProcessorFeaturesNode.IsNull())
+    {
+      XmlNode availableProcessorFeaturesMember = availableProcessorFeaturesNode.FirstChild("AvailableProcessorFeature");
+      while(!availableProcessorFeaturesMember.IsNull())
+      {
+        m_availableProcessorFeatures.push_back(availableProcessorFeaturesMember);
+        availableProcessorFeaturesMember = availableProcessorFeaturesMember.NextNode("AvailableProcessorFeature");
+      }
+
+      m_availableProcessorFeaturesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -352,6 +366,17 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
         oStream << location << index << locationValue << ".MaxIopsPerGib=" << StringUtils::URLEncode(m_maxIopsPerGib) << "&";
   }
 
+  if(m_availableProcessorFeaturesHasBeenSet)
+  {
+      unsigned availableProcessorFeaturesIdx = 1;
+      for(auto& item : m_availableProcessorFeatures)
+      {
+        Aws::StringStream availableProcessorFeaturesSs;
+        availableProcessorFeaturesSs << location << index << locationValue << ".AvailableProcessorFeature." << availableProcessorFeaturesIdx++;
+        item.OutputToStream(oStream, availableProcessorFeaturesSs.str().c_str());
+      }
+  }
+
 }
 
 void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -441,6 +466,16 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   if(m_maxIopsPerGibHasBeenSet)
   {
         oStream << location << ".MaxIopsPerGib=" << StringUtils::URLEncode(m_maxIopsPerGib) << "&";
+  }
+  if(m_availableProcessorFeaturesHasBeenSet)
+  {
+      unsigned availableProcessorFeaturesIdx = 1;
+      for(auto& item : m_availableProcessorFeatures)
+      {
+        Aws::StringStream availableProcessorFeaturesSs;
+        availableProcessorFeaturesSs << location <<  ".AvailableProcessorFeature." << availableProcessorFeaturesIdx++;
+        item.OutputToStream(oStream, availableProcessorFeaturesSs.str().c_str());
+      }
   }
 }
 

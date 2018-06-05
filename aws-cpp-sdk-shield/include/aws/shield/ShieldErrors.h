@@ -55,12 +55,15 @@ enum class ShieldErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL_ERROR= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACCESS_DENIED_FOR_DEPENDENCY= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INTERNAL_ERROR,
   INVALID_OPERATION,
+  INVALID_PAGINATION_TOKEN,
   INVALID_PARAMETER,
   INVALID_RESOURCE,
   LIMITS_EXCEEDED,
   LOCKED_SUBSCRIPTION,
+  NO_ASSOCIATED_ROLE,
   OPTIMISTIC_LOCK,
   RESOURCE_ALREADY_EXISTS
 };

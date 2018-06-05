@@ -159,8 +159,8 @@ namespace Model
      * <p>The ARN or alias of the AWS KMS customer master key (CMK) that's used to
      * encrypt the <code>SecretString</code> or <code>SecretBinary</code> fields in
      * each version of the secret. If you don't provide a key, then Secrets Manager
-     * defaults to encrypting the secret fields with the default KMS CMK (the one named
-     * <code>awssecretsmanager</code>) for this account.</p>
+     * defaults to encrypting the secret fields with the default AWS KMS CMK (the one
+     * named <code>awssecretsmanager</code>) for this account.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
@@ -168,8 +168,8 @@ namespace Model
      * <p>The ARN or alias of the AWS KMS customer master key (CMK) that's used to
      * encrypt the <code>SecretString</code> or <code>SecretBinary</code> fields in
      * each version of the secret. If you don't provide a key, then Secrets Manager
-     * defaults to encrypting the secret fields with the default KMS CMK (the one named
-     * <code>awssecretsmanager</code>) for this account.</p>
+     * defaults to encrypting the secret fields with the default AWS KMS CMK (the one
+     * named <code>awssecretsmanager</code>) for this account.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
 
@@ -177,8 +177,8 @@ namespace Model
      * <p>The ARN or alias of the AWS KMS customer master key (CMK) that's used to
      * encrypt the <code>SecretString</code> or <code>SecretBinary</code> fields in
      * each version of the secret. If you don't provide a key, then Secrets Manager
-     * defaults to encrypting the secret fields with the default KMS CMK (the one named
-     * <code>awssecretsmanager</code>) for this account.</p>
+     * defaults to encrypting the secret fields with the default AWS KMS CMK (the one
+     * named <code>awssecretsmanager</code>) for this account.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
 
@@ -186,8 +186,8 @@ namespace Model
      * <p>The ARN or alias of the AWS KMS customer master key (CMK) that's used to
      * encrypt the <code>SecretString</code> or <code>SecretBinary</code> fields in
      * each version of the secret. If you don't provide a key, then Secrets Manager
-     * defaults to encrypting the secret fields with the default KMS CMK (the one named
-     * <code>awssecretsmanager</code>) for this account.</p>
+     * defaults to encrypting the secret fields with the default AWS KMS CMK (the one
+     * named <code>awssecretsmanager</code>) for this account.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
 
@@ -195,8 +195,8 @@ namespace Model
      * <p>The ARN or alias of the AWS KMS customer master key (CMK) that's used to
      * encrypt the <code>SecretString</code> or <code>SecretBinary</code> fields in
      * each version of the secret. If you don't provide a key, then Secrets Manager
-     * defaults to encrypting the secret fields with the default KMS CMK (the one named
-     * <code>awssecretsmanager</code>) for this account.</p>
+     * defaults to encrypting the secret fields with the default AWS KMS CMK (the one
+     * named <code>awssecretsmanager</code>) for this account.</p>
      */
     inline DescribeSecretResult& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
@@ -204,8 +204,8 @@ namespace Model
      * <p>The ARN or alias of the AWS KMS customer master key (CMK) that's used to
      * encrypt the <code>SecretString</code> or <code>SecretBinary</code> fields in
      * each version of the secret. If you don't provide a key, then Secrets Manager
-     * defaults to encrypting the secret fields with the default KMS CMK (the one named
-     * <code>awssecretsmanager</code>) for this account.</p>
+     * defaults to encrypting the secret fields with the default AWS KMS CMK (the one
+     * named <code>awssecretsmanager</code>) for this account.</p>
      */
     inline DescribeSecretResult& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
@@ -213,8 +213,8 @@ namespace Model
      * <p>The ARN or alias of the AWS KMS customer master key (CMK) that's used to
      * encrypt the <code>SecretString</code> or <code>SecretBinary</code> fields in
      * each version of the secret. If you don't provide a key, then Secrets Manager
-     * defaults to encrypting the secret fields with the default KMS CMK (the one named
-     * <code>awssecretsmanager</code>) for this account.</p>
+     * defaults to encrypting the secret fields with the default AWS KMS CMK (the one
+     * named <code>awssecretsmanager</code>) for this account.</p>
      */
     inline DescribeSecretResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

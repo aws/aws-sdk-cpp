@@ -95,7 +95,8 @@ DBInstance::DBInstance() :
     m_performanceInsightsEnabled(false),
     m_performanceInsightsEnabledHasBeenSet(false),
     m_performanceInsightsKMSKeyIdHasBeenSet(false),
-    m_enabledCloudwatchLogsExportsHasBeenSet(false)
+    m_enabledCloudwatchLogsExportsHasBeenSet(false),
+    m_processorFeaturesHasBeenSet(false)
 {
 }
 
@@ -164,7 +165,8 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_performanceInsightsEnabled(false),
     m_performanceInsightsEnabledHasBeenSet(false),
     m_performanceInsightsKMSKeyIdHasBeenSet(false),
-    m_enabledCloudwatchLogsExportsHasBeenSet(false)
+    m_enabledCloudwatchLogsExportsHasBeenSet(false),
+    m_processorFeaturesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -541,6 +543,18 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
 
       m_enabledCloudwatchLogsExportsHasBeenSet = true;
     }
+    XmlNode processorFeaturesNode = resultNode.FirstChild("ProcessorFeatures");
+    if(!processorFeaturesNode.IsNull())
+    {
+      XmlNode processorFeaturesMember = processorFeaturesNode.FirstChild("ProcessorFeature");
+      while(!processorFeaturesMember.IsNull())
+      {
+        m_processorFeatures.push_back(processorFeaturesMember);
+        processorFeaturesMember = processorFeaturesMember.NextNode("ProcessorFeature");
+      }
+
+      m_processorFeaturesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -862,6 +876,17 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       }
   }
 
+  if(m_processorFeaturesHasBeenSet)
+  {
+      unsigned processorFeaturesIdx = 1;
+      for(auto& item : m_processorFeatures)
+      {
+        Aws::StringStream processorFeaturesSs;
+        processorFeaturesSs << location << index << locationValue << ".ProcessorFeature." << processorFeaturesIdx++;
+        item.OutputToStream(oStream, processorFeaturesSs.str().c_str());
+      }
+  }
+
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1126,6 +1151,16 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_enabledCloudwatchLogsExports)
       {
         oStream << location << ".EnabledCloudwatchLogsExports.member." << enabledCloudwatchLogsExportsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+  if(m_processorFeaturesHasBeenSet)
+  {
+      unsigned processorFeaturesIdx = 1;
+      for(auto& item : m_processorFeatures)
+      {
+        Aws::StringStream processorFeaturesSs;
+        processorFeaturesSs << location <<  ".ProcessorFeature." << processorFeaturesIdx++;
+        item.OutputToStream(oStream, processorFeaturesSs.str().c_str());
       }
   }
 }

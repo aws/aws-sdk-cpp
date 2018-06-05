@@ -26,16 +26,16 @@ namespace Model
 
   /**
    */
-  class AWS_SHIELD_API DeleteSubscriptionRequest : public ShieldRequest
+  class AWS_SHIELD_API DescribeEmergencyContactSettingsRequest : public ShieldRequest
   {
   public:
-    DeleteSubscriptionRequest();
+    DescribeEmergencyContactSettingsRequest();
     
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
     // Note: this is not true for response, multiple operations may have the same response name,
     // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteSubscription"; }
+    inline virtual const char* GetServiceRequestName() const override { return "DescribeEmergencyContactSettings"; }
 
     Aws::String SerializePayload() const override;
 

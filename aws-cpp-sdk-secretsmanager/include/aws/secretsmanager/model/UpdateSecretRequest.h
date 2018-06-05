@@ -330,107 +330,107 @@ namespace Model
 
 
     /**
-     * <p>(Optional) Specifies the ARN or alias of the KMS customer master key (CMK) to
-     * be used to encrypt the protected text in the versions of this secret.</p> <p>If
-     * you don't specify this value, then Secrets Manager defaults to using the default
-     * CMK in the account (the one named <code>aws/secretsmanager</code>). If a KMS CMK
-     * with that name doesn't exist, then Secrets Manager creates it for you
-     * automatically the first time it needs to encrypt a version's
-     * <code>Plaintext</code> or <code>PlaintextString</code> fields.</p> <important>
-     * <p>You can only use the account's default CMK to encrypt and decrypt if you call
-     * this operation using credentials from the same account that owns the secret. If
-     * the secret is in a different account, then you must create a custom CMK and
-     * provide the ARN in this field. </p> </important>
+     * <p>(Optional) Specifies the ARN or alias of the AWS KMS customer master key
+     * (CMK) to be used to encrypt the protected text in the versions of this
+     * secret.</p> <p>If you don't specify this value, then Secrets Manager defaults to
+     * using the default CMK in the account (the one named
+     * <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't exist,
+     * then Secrets Manager creates it for you automatically the first time it needs to
+     * encrypt a version's <code>Plaintext</code> or <code>PlaintextString</code>
+     * fields.</p> <important> <p>You can only use the account's default CMK to encrypt
+     * and decrypt if you call this operation using credentials from the same account
+     * that owns the secret. If the secret is in a different account, then you must
+     * create a custom CMK and provide the ARN in this field. </p> </important>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>(Optional) Specifies the ARN or alias of the KMS customer master key (CMK) to
-     * be used to encrypt the protected text in the versions of this secret.</p> <p>If
-     * you don't specify this value, then Secrets Manager defaults to using the default
-     * CMK in the account (the one named <code>aws/secretsmanager</code>). If a KMS CMK
-     * with that name doesn't exist, then Secrets Manager creates it for you
-     * automatically the first time it needs to encrypt a version's
-     * <code>Plaintext</code> or <code>PlaintextString</code> fields.</p> <important>
-     * <p>You can only use the account's default CMK to encrypt and decrypt if you call
-     * this operation using credentials from the same account that owns the secret. If
-     * the secret is in a different account, then you must create a custom CMK and
-     * provide the ARN in this field. </p> </important>
+     * <p>(Optional) Specifies the ARN or alias of the AWS KMS customer master key
+     * (CMK) to be used to encrypt the protected text in the versions of this
+     * secret.</p> <p>If you don't specify this value, then Secrets Manager defaults to
+     * using the default CMK in the account (the one named
+     * <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't exist,
+     * then Secrets Manager creates it for you automatically the first time it needs to
+     * encrypt a version's <code>Plaintext</code> or <code>PlaintextString</code>
+     * fields.</p> <important> <p>You can only use the account's default CMK to encrypt
+     * and decrypt if you call this operation using credentials from the same account
+     * that owns the secret. If the secret is in a different account, then you must
+     * create a custom CMK and provide the ARN in this field. </p> </important>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>(Optional) Specifies the ARN or alias of the KMS customer master key (CMK) to
-     * be used to encrypt the protected text in the versions of this secret.</p> <p>If
-     * you don't specify this value, then Secrets Manager defaults to using the default
-     * CMK in the account (the one named <code>aws/secretsmanager</code>). If a KMS CMK
-     * with that name doesn't exist, then Secrets Manager creates it for you
-     * automatically the first time it needs to encrypt a version's
-     * <code>Plaintext</code> or <code>PlaintextString</code> fields.</p> <important>
-     * <p>You can only use the account's default CMK to encrypt and decrypt if you call
-     * this operation using credentials from the same account that owns the secret. If
-     * the secret is in a different account, then you must create a custom CMK and
-     * provide the ARN in this field. </p> </important>
+     * <p>(Optional) Specifies the ARN or alias of the AWS KMS customer master key
+     * (CMK) to be used to encrypt the protected text in the versions of this
+     * secret.</p> <p>If you don't specify this value, then Secrets Manager defaults to
+     * using the default CMK in the account (the one named
+     * <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't exist,
+     * then Secrets Manager creates it for you automatically the first time it needs to
+     * encrypt a version's <code>Plaintext</code> or <code>PlaintextString</code>
+     * fields.</p> <important> <p>You can only use the account's default CMK to encrypt
+     * and decrypt if you call this operation using credentials from the same account
+     * that owns the secret. If the secret is in a different account, then you must
+     * create a custom CMK and provide the ARN in this field. </p> </important>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>(Optional) Specifies the ARN or alias of the KMS customer master key (CMK) to
-     * be used to encrypt the protected text in the versions of this secret.</p> <p>If
-     * you don't specify this value, then Secrets Manager defaults to using the default
-     * CMK in the account (the one named <code>aws/secretsmanager</code>). If a KMS CMK
-     * with that name doesn't exist, then Secrets Manager creates it for you
-     * automatically the first time it needs to encrypt a version's
-     * <code>Plaintext</code> or <code>PlaintextString</code> fields.</p> <important>
-     * <p>You can only use the account's default CMK to encrypt and decrypt if you call
-     * this operation using credentials from the same account that owns the secret. If
-     * the secret is in a different account, then you must create a custom CMK and
-     * provide the ARN in this field. </p> </important>
+     * <p>(Optional) Specifies the ARN or alias of the AWS KMS customer master key
+     * (CMK) to be used to encrypt the protected text in the versions of this
+     * secret.</p> <p>If you don't specify this value, then Secrets Manager defaults to
+     * using the default CMK in the account (the one named
+     * <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't exist,
+     * then Secrets Manager creates it for you automatically the first time it needs to
+     * encrypt a version's <code>Plaintext</code> or <code>PlaintextString</code>
+     * fields.</p> <important> <p>You can only use the account's default CMK to encrypt
+     * and decrypt if you call this operation using credentials from the same account
+     * that owns the secret. If the secret is in a different account, then you must
+     * create a custom CMK and provide the ARN in this field. </p> </important>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>(Optional) Specifies the ARN or alias of the KMS customer master key (CMK) to
-     * be used to encrypt the protected text in the versions of this secret.</p> <p>If
-     * you don't specify this value, then Secrets Manager defaults to using the default
-     * CMK in the account (the one named <code>aws/secretsmanager</code>). If a KMS CMK
-     * with that name doesn't exist, then Secrets Manager creates it for you
-     * automatically the first time it needs to encrypt a version's
-     * <code>Plaintext</code> or <code>PlaintextString</code> fields.</p> <important>
-     * <p>You can only use the account's default CMK to encrypt and decrypt if you call
-     * this operation using credentials from the same account that owns the secret. If
-     * the secret is in a different account, then you must create a custom CMK and
-     * provide the ARN in this field. </p> </important>
+     * <p>(Optional) Specifies the ARN or alias of the AWS KMS customer master key
+     * (CMK) to be used to encrypt the protected text in the versions of this
+     * secret.</p> <p>If you don't specify this value, then Secrets Manager defaults to
+     * using the default CMK in the account (the one named
+     * <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't exist,
+     * then Secrets Manager creates it for you automatically the first time it needs to
+     * encrypt a version's <code>Plaintext</code> or <code>PlaintextString</code>
+     * fields.</p> <important> <p>You can only use the account's default CMK to encrypt
+     * and decrypt if you call this operation using credentials from the same account
+     * that owns the secret. If the secret is in a different account, then you must
+     * create a custom CMK and provide the ARN in this field. </p> </important>
      */
     inline UpdateSecretRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>(Optional) Specifies the ARN or alias of the KMS customer master key (CMK) to
-     * be used to encrypt the protected text in the versions of this secret.</p> <p>If
-     * you don't specify this value, then Secrets Manager defaults to using the default
-     * CMK in the account (the one named <code>aws/secretsmanager</code>). If a KMS CMK
-     * with that name doesn't exist, then Secrets Manager creates it for you
-     * automatically the first time it needs to encrypt a version's
-     * <code>Plaintext</code> or <code>PlaintextString</code> fields.</p> <important>
-     * <p>You can only use the account's default CMK to encrypt and decrypt if you call
-     * this operation using credentials from the same account that owns the secret. If
-     * the secret is in a different account, then you must create a custom CMK and
-     * provide the ARN in this field. </p> </important>
+     * <p>(Optional) Specifies the ARN or alias of the AWS KMS customer master key
+     * (CMK) to be used to encrypt the protected text in the versions of this
+     * secret.</p> <p>If you don't specify this value, then Secrets Manager defaults to
+     * using the default CMK in the account (the one named
+     * <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't exist,
+     * then Secrets Manager creates it for you automatically the first time it needs to
+     * encrypt a version's <code>Plaintext</code> or <code>PlaintextString</code>
+     * fields.</p> <important> <p>You can only use the account's default CMK to encrypt
+     * and decrypt if you call this operation using credentials from the same account
+     * that owns the secret. If the secret is in a different account, then you must
+     * create a custom CMK and provide the ARN in this field. </p> </important>
      */
     inline UpdateSecretRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) Specifies the ARN or alias of the KMS customer master key (CMK) to
-     * be used to encrypt the protected text in the versions of this secret.</p> <p>If
-     * you don't specify this value, then Secrets Manager defaults to using the default
-     * CMK in the account (the one named <code>aws/secretsmanager</code>). If a KMS CMK
-     * with that name doesn't exist, then Secrets Manager creates it for you
-     * automatically the first time it needs to encrypt a version's
-     * <code>Plaintext</code> or <code>PlaintextString</code> fields.</p> <important>
-     * <p>You can only use the account's default CMK to encrypt and decrypt if you call
-     * this operation using credentials from the same account that owns the secret. If
-     * the secret is in a different account, then you must create a custom CMK and
-     * provide the ARN in this field. </p> </important>
+     * <p>(Optional) Specifies the ARN or alias of the AWS KMS customer master key
+     * (CMK) to be used to encrypt the protected text in the versions of this
+     * secret.</p> <p>If you don't specify this value, then Secrets Manager defaults to
+     * using the default CMK in the account (the one named
+     * <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't exist,
+     * then Secrets Manager creates it for you automatically the first time it needs to
+     * encrypt a version's <code>Plaintext</code> or <code>PlaintextString</code>
+     * fields.</p> <important> <p>You can only use the account's default CMK to encrypt
+     * and decrypt if you call this operation using credentials from the same account
+     * that owns the secret. If the secret is in a different account, then you must
+     * create a custom CMK and provide the ARN in this field. </p> </important>
      */
     inline UpdateSecretRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

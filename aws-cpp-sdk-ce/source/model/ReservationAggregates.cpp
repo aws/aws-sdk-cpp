@@ -32,7 +32,13 @@ ReservationAggregates::ReservationAggregates() :
     m_utilizationPercentageHasBeenSet(false),
     m_purchasedHoursHasBeenSet(false),
     m_totalActualHoursHasBeenSet(false),
-    m_unusedHoursHasBeenSet(false)
+    m_unusedHoursHasBeenSet(false),
+    m_onDemandCostOfRIHoursUsedHasBeenSet(false),
+    m_netRISavingsHasBeenSet(false),
+    m_totalPotentialRISavingsHasBeenSet(false),
+    m_amortizedUpfrontFeeHasBeenSet(false),
+    m_amortizedRecurringFeeHasBeenSet(false),
+    m_totalAmortizedFeeHasBeenSet(false)
 {
 }
 
@@ -40,7 +46,13 @@ ReservationAggregates::ReservationAggregates(const JsonValue& jsonValue) :
     m_utilizationPercentageHasBeenSet(false),
     m_purchasedHoursHasBeenSet(false),
     m_totalActualHoursHasBeenSet(false),
-    m_unusedHoursHasBeenSet(false)
+    m_unusedHoursHasBeenSet(false),
+    m_onDemandCostOfRIHoursUsedHasBeenSet(false),
+    m_netRISavingsHasBeenSet(false),
+    m_totalPotentialRISavingsHasBeenSet(false),
+    m_amortizedUpfrontFeeHasBeenSet(false),
+    m_amortizedRecurringFeeHasBeenSet(false),
+    m_totalAmortizedFeeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -75,6 +87,48 @@ ReservationAggregates& ReservationAggregates::operator =(const JsonValue& jsonVa
     m_unusedHoursHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OnDemandCostOfRIHoursUsed"))
+  {
+    m_onDemandCostOfRIHoursUsed = jsonValue.GetString("OnDemandCostOfRIHoursUsed");
+
+    m_onDemandCostOfRIHoursUsedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NetRISavings"))
+  {
+    m_netRISavings = jsonValue.GetString("NetRISavings");
+
+    m_netRISavingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TotalPotentialRISavings"))
+  {
+    m_totalPotentialRISavings = jsonValue.GetString("TotalPotentialRISavings");
+
+    m_totalPotentialRISavingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AmortizedUpfrontFee"))
+  {
+    m_amortizedUpfrontFee = jsonValue.GetString("AmortizedUpfrontFee");
+
+    m_amortizedUpfrontFeeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AmortizedRecurringFee"))
+  {
+    m_amortizedRecurringFee = jsonValue.GetString("AmortizedRecurringFee");
+
+    m_amortizedRecurringFeeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TotalAmortizedFee"))
+  {
+    m_totalAmortizedFee = jsonValue.GetString("TotalAmortizedFee");
+
+    m_totalAmortizedFeeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -103,6 +157,42 @@ JsonValue ReservationAggregates::Jsonize() const
   if(m_unusedHoursHasBeenSet)
   {
    payload.WithString("UnusedHours", m_unusedHours);
+
+  }
+
+  if(m_onDemandCostOfRIHoursUsedHasBeenSet)
+  {
+   payload.WithString("OnDemandCostOfRIHoursUsed", m_onDemandCostOfRIHoursUsed);
+
+  }
+
+  if(m_netRISavingsHasBeenSet)
+  {
+   payload.WithString("NetRISavings", m_netRISavings);
+
+  }
+
+  if(m_totalPotentialRISavingsHasBeenSet)
+  {
+   payload.WithString("TotalPotentialRISavings", m_totalPotentialRISavings);
+
+  }
+
+  if(m_amortizedUpfrontFeeHasBeenSet)
+  {
+   payload.WithString("AmortizedUpfrontFee", m_amortizedUpfrontFee);
+
+  }
+
+  if(m_amortizedRecurringFeeHasBeenSet)
+  {
+   payload.WithString("AmortizedRecurringFee", m_amortizedRecurringFee);
+
+  }
+
+  if(m_totalAmortizedFeeHasBeenSet)
+  {
+   payload.WithString("TotalAmortizedFee", m_totalAmortizedFee);
 
   }
 

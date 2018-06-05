@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/shield/model/DeleteSubscriptionResult.h>
+#include <aws/shield/model/DisassociateDRTLogBucketResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
@@ -26,16 +26,16 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteSubscriptionResult::DeleteSubscriptionResult()
+DisassociateDRTLogBucketResult::DisassociateDRTLogBucketResult()
 {
 }
 
-DeleteSubscriptionResult::DeleteSubscriptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DisassociateDRTLogBucketResult::DisassociateDRTLogBucketResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteSubscriptionResult& DeleteSubscriptionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DisassociateDRTLogBucketResult& DisassociateDRTLogBucketResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 
