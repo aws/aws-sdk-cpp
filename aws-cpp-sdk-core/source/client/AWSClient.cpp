@@ -56,8 +56,6 @@ static const std::chrono::milliseconds TIME_DIFF_MAX = std::chrono::minutes(4);
 //-4 Minutes
 static const std::chrono::milliseconds TIME_DIFF_MIN = std::chrono::minutes(-4);
 
-std::atomic<int> AWSClient::s_refCount(0);
-
 static CoreErrors GuessBodylessErrorType(Aws::Http::HttpResponseCode responseCode)
 {
     switch (responseCode)

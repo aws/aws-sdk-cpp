@@ -33,3 +33,18 @@ TEST(VersionTest, TestMajorMinorPatch)
     auto versionString = GetVersionString();
     ASSERT_STREQ(versionString, version.c_str());
 }
+
+TEST(VersionTest, TestCompilerVersionString)
+{
+    Aws::String compiler = GetCompilerVersionString();
+#if defined(_MSC_VER)
+    const auto expected = "MSVC";
+#elif defined(__clang__)
+    const auto expected = "Clang";
+#elif defined(__GNUC__)
+    const auto expected = "GCC";
+#else
+    const auto expected = "Unknown";
+#endif
+    ASSERT_EQ(0u, compiler.find(expected));
+}
