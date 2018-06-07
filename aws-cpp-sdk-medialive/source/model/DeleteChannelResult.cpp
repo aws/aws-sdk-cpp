@@ -27,12 +27,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DeleteChannelResult::DeleteChannelResult() : 
+    m_logLevel(LogLevel::NOT_SET),
     m_pipelinesRunningCount(0),
     m_state(ChannelState::NOT_SET)
 {
 }
 
 DeleteChannelResult::DeleteChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_logLevel(LogLevel::NOT_SET),
     m_pipelinesRunningCount(0),
     m_state(ChannelState::NOT_SET)
 {
@@ -90,6 +92,12 @@ DeleteChannelResult& DeleteChannelResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("inputSpecification"))
   {
     m_inputSpecification = jsonValue.GetObject("inputSpecification");
+
+  }
+
+  if(jsonValue.ValueExists("logLevel"))
+  {
+    m_logLevel = LogLevelMapper::GetLogLevelForName(jsonValue.GetString("logLevel"));
 
   }
 

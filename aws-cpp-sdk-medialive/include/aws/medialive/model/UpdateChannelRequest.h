@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/medialive/model/EncoderSettings.h>
 #include <aws/medialive/model/InputSpecification.h>
+#include <aws/medialive/model/LogLevel.h>
 #include <aws/medialive/model/OutputDestination.h>
 #include <aws/medialive/model/InputAttachment.h>
 #include <utility>
@@ -197,6 +198,32 @@ namespace Model
 
 
     /**
+     * The log level to write to CloudWatch Logs.
+     */
+    inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
+
+    /**
+     * The log level to write to CloudWatch Logs.
+     */
+    inline void SetLogLevel(const LogLevel& value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
+
+    /**
+     * The log level to write to CloudWatch Logs.
+     */
+    inline void SetLogLevel(LogLevel&& value) { m_logLevelHasBeenSet = true; m_logLevel = std::move(value); }
+
+    /**
+     * The log level to write to CloudWatch Logs.
+     */
+    inline UpdateChannelRequest& WithLogLevel(const LogLevel& value) { SetLogLevel(value); return *this;}
+
+    /**
+     * The log level to write to CloudWatch Logs.
+     */
+    inline UpdateChannelRequest& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
+
+
+    /**
      * The name of the channel.
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -297,6 +324,9 @@ namespace Model
 
     InputSpecification m_inputSpecification;
     bool m_inputSpecificationHasBeenSet;
+
+    LogLevel m_logLevel;
+    bool m_logLevelHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

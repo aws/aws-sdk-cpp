@@ -27,6 +27,8 @@ CreateChannelRequest::CreateChannelRequest() :
     m_encoderSettingsHasBeenSet(false),
     m_inputAttachmentsHasBeenSet(false),
     m_inputSpecificationHasBeenSet(false),
+    m_logLevel(LogLevel::NOT_SET),
+    m_logLevelHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_requestId(Aws::Utils::UUID::RandomUUID()),
     m_requestIdHasBeenSet(true),
@@ -70,6 +72,11 @@ Aws::String CreateChannelRequest::SerializePayload() const
   {
    payload.WithObject("inputSpecification", m_inputSpecification.Jsonize());
 
+  }
+
+  if(m_logLevelHasBeenSet)
+  {
+   payload.WithString("logLevel", LogLevelMapper::GetNameForLogLevel(m_logLevel));
   }
 
   if(m_nameHasBeenSet)

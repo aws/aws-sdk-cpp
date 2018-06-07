@@ -28,6 +28,8 @@ UpdateChannelRequest::UpdateChannelRequest() :
     m_encoderSettingsHasBeenSet(false),
     m_inputAttachmentsHasBeenSet(false),
     m_inputSpecificationHasBeenSet(false),
+    m_logLevel(LogLevel::NOT_SET),
+    m_logLevelHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_roleArnHasBeenSet(false)
 {
@@ -69,6 +71,11 @@ Aws::String UpdateChannelRequest::SerializePayload() const
   {
    payload.WithObject("inputSpecification", m_inputSpecification.Jsonize());
 
+  }
+
+  if(m_logLevelHasBeenSet)
+  {
+   payload.WithString("logLevel", LogLevelMapper::GetNameForLogLevel(m_logLevel));
   }
 
   if(m_nameHasBeenSet)

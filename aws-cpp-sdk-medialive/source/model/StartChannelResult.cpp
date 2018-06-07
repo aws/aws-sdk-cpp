@@ -27,12 +27,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 StartChannelResult::StartChannelResult() : 
+    m_logLevel(LogLevel::NOT_SET),
     m_pipelinesRunningCount(0),
     m_state(ChannelState::NOT_SET)
 {
 }
 
 StartChannelResult::StartChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_logLevel(LogLevel::NOT_SET),
     m_pipelinesRunningCount(0),
     m_state(ChannelState::NOT_SET)
 {
@@ -90,6 +92,12 @@ StartChannelResult& StartChannelResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("inputSpecification"))
   {
     m_inputSpecification = jsonValue.GetObject("inputSpecification");
+
+  }
+
+  if(jsonValue.ValueExists("logLevel"))
+  {
+    m_logLevel = LogLevelMapper::GetLogLevelForName(jsonValue.GetString("logLevel"));
 
   }
 

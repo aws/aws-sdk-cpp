@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/medialive/model/EncoderSettings.h>
 #include <aws/medialive/model/InputSpecification.h>
+#include <aws/medialive/model/LogLevel.h>
 #include <aws/medialive/model/ChannelState.h>
 #include <aws/medialive/model/OutputDestination.h>
 #include <aws/medialive/model/ChannelEgressEndpoint.h>
@@ -302,6 +303,32 @@ one destination per
 
 
     /**
+     * The log level being written to CloudWatch Logs.
+     */
+    inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
+
+    /**
+     * The log level being written to CloudWatch Logs.
+     */
+    inline void SetLogLevel(const LogLevel& value) { m_logLevel = value; }
+
+    /**
+     * The log level being written to CloudWatch Logs.
+     */
+    inline void SetLogLevel(LogLevel&& value) { m_logLevel = std::move(value); }
+
+    /**
+     * The log level being written to CloudWatch Logs.
+     */
+    inline DeleteChannelResult& WithLogLevel(const LogLevel& value) { SetLogLevel(value); return *this;}
+
+    /**
+     * The log level being written to CloudWatch Logs.
+     */
+    inline DeleteChannelResult& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
+
+
+    /**
      * The name of the channel. (user-mutable)
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -419,6 +446,8 @@ one destination per
     Aws::Vector<InputAttachment> m_inputAttachments;
 
     InputSpecification m_inputSpecification;
+
+    LogLevel m_logLevel;
 
     Aws::String m_name;
 

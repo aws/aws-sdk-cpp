@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/medialive/model/InputSpecification.h>
+#include <aws/medialive/model/LogLevel.h>
 #include <aws/medialive/model/ChannelState.h>
 #include <aws/medialive/model/OutputDestination.h>
 #include <aws/medialive/model/ChannelEgressEndpoint.h>
@@ -284,6 +285,32 @@ one destination per
 
 
     /**
+     * The log level being written to CloudWatch Logs.
+     */
+    inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
+
+    /**
+     * The log level being written to CloudWatch Logs.
+     */
+    inline void SetLogLevel(const LogLevel& value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
+
+    /**
+     * The log level being written to CloudWatch Logs.
+     */
+    inline void SetLogLevel(LogLevel&& value) { m_logLevelHasBeenSet = true; m_logLevel = std::move(value); }
+
+    /**
+     * The log level being written to CloudWatch Logs.
+     */
+    inline ChannelSummary& WithLogLevel(const LogLevel& value) { SetLogLevel(value); return *this;}
+
+    /**
+     * The log level being written to CloudWatch Logs.
+     */
+    inline ChannelSummary& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
+
+
+    /**
      * The name of the channel. (user-mutable)
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -405,6 +432,9 @@ one destination per
 
     InputSpecification m_inputSpecification;
     bool m_inputSpecificationHasBeenSet;
+
+    LogLevel m_logLevel;
+    bool m_logLevelHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

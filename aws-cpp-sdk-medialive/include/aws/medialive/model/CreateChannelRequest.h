@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/medialive/model/EncoderSettings.h>
 #include <aws/medialive/model/InputSpecification.h>
+#include <aws/medialive/model/LogLevel.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medialive/model/OutputDestination.h>
 #include <aws/medialive/model/InputAttachment.h>
@@ -149,6 +150,32 @@ namespace Model
      * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
      */
     inline CreateChannelRequest& WithInputSpecification(InputSpecification&& value) { SetInputSpecification(std::move(value)); return *this;}
+
+
+    /**
+     * The log level to write to CloudWatch Logs.
+     */
+    inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
+
+    /**
+     * The log level to write to CloudWatch Logs.
+     */
+    inline void SetLogLevel(const LogLevel& value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
+
+    /**
+     * The log level to write to CloudWatch Logs.
+     */
+    inline void SetLogLevel(LogLevel&& value) { m_logLevelHasBeenSet = true; m_logLevel = std::move(value); }
+
+    /**
+     * The log level to write to CloudWatch Logs.
+     */
+    inline CreateChannelRequest& WithLogLevel(const LogLevel& value) { SetLogLevel(value); return *this;}
+
+    /**
+     * The log level to write to CloudWatch Logs.
+     */
+    inline CreateChannelRequest& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
 
 
     /**
@@ -299,6 +326,9 @@ creating multiple resources.
 
     InputSpecification m_inputSpecification;
     bool m_inputSpecificationHasBeenSet;
+
+    LogLevel m_logLevel;
+    bool m_logLevelHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
