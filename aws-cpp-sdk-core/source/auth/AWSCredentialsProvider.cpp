@@ -285,10 +285,20 @@ void InstanceProfileCredentialsProvider::RefreshIfExpired()
     Reload();
 }
 
-static const char* TASK_ROLE_LOG_TAG = "TaskRoleCredentialsProvider";
+static const char TASK_ROLE_LOG_TAG[] = "TaskRoleCredentialsProvider";
 
 TaskRoleCredentialsProvider::TaskRoleCredentialsProvider(const char* URI, long refreshRateMs) :
     m_ecsCredentialsClient(Aws::MakeShared<Aws::Internal::ECSCredentialsClient>(TASK_ROLE_LOG_TAG, URI)),
+    m_loadFrequencyMs(refreshRateMs),
+    m_expirationDate(DateTime::Now()),
+    m_credentials(Aws::Auth::AWSCredentials())
+{
+    AWS_LOGSTREAM_INFO(TASK_ROLE_LOG_TAG, "Creating TaskRole with default ECSCredentialsClient and refresh rate " << refreshRateMs);
+}
+
+TaskRoleCredentialsProvider::TaskRoleCredentialsProvider(const char* endpoint, const char* token, long refreshRateMs) :
+    m_ecsCredentialsClient(Aws::MakeShared<Aws::Internal::ECSCredentialsClient>(TASK_ROLE_LOG_TAG, ""/*resourcePath*/,
+                endpoint, token)),
     m_loadFrequencyMs(refreshRateMs),
     m_expirationDate(DateTime::Now()),
     m_credentials(Aws::Auth::AWSCredentials())

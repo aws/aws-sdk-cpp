@@ -20,6 +20,7 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/platform/Environment.h>
 
 #include <sstream>
 
@@ -65,27 +66,30 @@ AWSHttpResourceClient::~AWSHttpResourceClient()
 {
 }
 
-Aws::String AWSHttpResourceClient::GetResource(const char* endpoint, const char* resource) const
+Aws::String AWSHttpResourceClient::GetResource(const char* endpoint, const char* resource, const char* authToken) const
 {
     Aws::StringStream ss;
     ss << endpoint << resource;
-    AWS_LOGSTREAM_TRACE(m_logtag.c_str(), 
-            "Calling Ec2MetadataService at " << ss.str().c_str());
+    AWS_LOGSTREAM_TRACE(m_logtag.c_str(), "Retrieving credentials from " << ss.str().c_str());
 
-    std::shared_ptr<HttpRequest> request(
-            CreateHttpRequest(ss.str(), HttpMethod::HTTP_GET, 
+    std::shared_ptr<HttpRequest> request(CreateHttpRequest(ss.str(), HttpMethod::HTTP_GET,
                 Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
+
+    if(authToken)
+    {
+        request->SetHeaderValue(Aws::Http::AWS_AUTHORIZATION_HEADER, authToken);
+    }
 
     std::shared_ptr<HttpResponse> response(m_httpClient->MakeRequest(request));
 
     if (response == nullptr)
     {
-        AWS_LOGSTREAM_ERROR(m_logtag.c_str(), "Http request to Ec2MetadataService failed.");
+        AWS_LOGSTREAM_ERROR(m_logtag.c_str(), "Http request to retrieve credentials failed.");
     }
     else if (response->GetResponseCode() != HttpResponseCode::OK)
     {
-        AWS_LOGSTREAM_ERROR(m_logtag.c_str(), "Http request failed with error code " <<
-                      (int) response->GetResponseCode());
+        AWS_LOGSTREAM_ERROR(m_logtag.c_str(), "Http request to retrieve credentials failed with error code "
+                << static_cast<int>(response->GetResponseCode()));
     }
     else
     {
@@ -109,7 +113,7 @@ EC2MetadataClient::~EC2MetadataClient()
 
 Aws::String EC2MetadataClient::GetResource(const char* resourcePath) const
 {
-    return GetResource(m_endpoint.c_str(), resourcePath);
+    return GetResource(m_endpoint.c_str(), resourcePath, ""/*authToken*/);
 }
 
 Aws::String EC2MetadataClient::GetDefaultCredentials() const
@@ -179,15 +183,9 @@ Aws::String EC2MetadataClient::GetCurrentRegion() const
     return region;
 }
 
-ECSCredentialsClient::ECSCredentialsClient(const char* resourcePath, const char* endpoint)
+ECSCredentialsClient::ECSCredentialsClient(const char* resourcePath, const char* endpoint, const char* token)
     : AWSHttpResourceClient(ECS_CREDENTIALS_CLIENT_LOG_TAG),
-    m_resourcePath(resourcePath), m_endpoint(endpoint)
+    m_resourcePath(resourcePath), m_endpoint(endpoint), m_token(token)
 {
-
-}
-
-ECSCredentialsClient::~ECSCredentialsClient()
-{
-
 }
 

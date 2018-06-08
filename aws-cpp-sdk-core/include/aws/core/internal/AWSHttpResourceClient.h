@@ -49,19 +49,23 @@ namespace Aws
             virtual ~AWSHttpResourceClient();
 
             /**
-             * Connects to the metadata service to read the specified resource and
-             * returns the text contents. The resource URI = endpoint + resourcePath. 
-             * (e.g:http://domain/path/to/res)
+             * Connects to an HTTP endpoint to read the specified resource and returns the text contents.
+             * The resource URI = endpoint + resourcePath (e.g:http://domain/path/to/res)
+             * @param endpoint The HTTP resource to connect to.
+             * @param resourcePath A path appended to the endpoint to form the final URI.
+             * @param authToken An optional authorization token that will be passed as the value of the HTTP
+             * header 'Authorization'.
+             * @return The response from the HTTP endpoint as a string.
              */
-            virtual Aws::String GetResource(const char* endpoint, const char* resourcePath) const;
+            virtual Aws::String GetResource(const char* endpoint, const char* resourcePath, const char* authToken) const;
 
         protected:
             Aws::String m_logtag;
 
-        private:         
+        private:
             std::shared_ptr<Http::HttpClient> m_httpClient;
         };
-        
+
         /**
          * Derived class to support retrieving of EC2 Metadata
          */
@@ -112,27 +116,28 @@ namespace Aws
         public:
             /**
              * Build an instance with default ECS service endpoint
+             * @param resourcePath The path part of the metadata URL
+             * @param endpoint The URL authority to hit. Default is the IP address of the Task metadata service endpoint.
              */
-            ECSCredentialsClient(const char* resourcePath, const char* endpoint = "http://169.254.170.2");
+            ECSCredentialsClient(const char* resourcePath, const char* endpoint = "http://169.254.170.2",
+                    const char* authToken = "");
             ECSCredentialsClient& operator =(ECSCredentialsClient& rhs) = delete;
             ECSCredentialsClient(const ECSCredentialsClient& rhs) = delete;
             ECSCredentialsClient& operator =(ECSCredentialsClient&& rhs) = delete;
             ECSCredentialsClient(const ECSCredentialsClient&& rhs) = delete;
 
-            virtual ~ECSCredentialsClient();
-            
             /**
              * Connects to the Amazon ECS service to retrieve the credential
              */
-            virtual Aws::String GetECSCredentials() const 
+            virtual Aws::String GetECSCredentials() const
             {
-                return this->GetResource(m_endpoint.c_str(), m_resourcePath.c_str());
+                return GetResource(m_endpoint.c_str(), m_resourcePath.c_str(), m_token.c_str());
             }
 
         private:
             Aws::String m_resourcePath;
             Aws::String m_endpoint;
+            Aws::String m_token;
         };
-
     } // namespace Internal
 } // namespace Aws

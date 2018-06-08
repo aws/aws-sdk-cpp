@@ -59,8 +59,8 @@ namespace
     TEST_F(AWSHttpResourceClientTest, TestAWSHttpResourceClientWithNullResponse)
     {
         auto awsHttpResourceClient = Aws::MakeShared<Aws::Internal::AWSHttpResourceClient>(ALLOCATION_TAG, ALLOCATION_TAG);
-        Aws::String result = awsHttpResourceClient->GetResource("http://www.uri.com", "/path/to/res");
-        
+        Aws::String result = awsHttpResourceClient->GetResource("http://www.uri.com", "/path/to/res", ""/*authToken*/);
+
         auto mockRequest = mockHttpClient->GetMostRecentHttpRequest();
         ASSERT_EQ("http://www.uri.com/path/to/res", mockRequest.GetURIString());
         ASSERT_EQ(Aws::Http::Scheme::HTTP, mockRequest.GetUri().GetScheme());
@@ -81,8 +81,8 @@ namespace
         mockHttpClient->AddResponseToReturn(response);
 
         auto awsHttpResourceClient = Aws::MakeShared<Aws::Internal::AWSHttpResourceClient>(ALLOCATION_TAG, ALLOCATION_TAG);
-        Aws::String result = awsHttpResourceClient->GetResource("http://www.uri.com", "/path/to/res");
-        
+        Aws::String result = awsHttpResourceClient->GetResource("http://www.uri.com", "/path/to/res", ""/*authToken*/);
+
         auto mockRequest = mockHttpClient->GetMostRecentHttpRequest();
         ASSERT_EQ("http://www.uri.com/path/to/res", mockRequest.GetURIString());
         ASSERT_EQ(Aws::Http::Scheme::HTTP, mockRequest.GetUri().GetScheme());
@@ -103,7 +103,7 @@ namespace
         mockHttpClient->AddResponseToReturn(response);
 
         auto awsHttpResourceClient = Aws::MakeShared<Aws::Internal::AWSHttpResourceClient>(ALLOCATION_TAG, ALLOCATION_TAG);
-        Aws::String result = awsHttpResourceClient->GetResource("http://www.uri.com", "/path/to/res");
+        Aws::String result = awsHttpResourceClient->GetResource("http://www.uri.com", "/path/to/res", ""/*authToken*/);
 
         auto mockRequest = mockHttpClient->GetMostRecentHttpRequest();
         ASSERT_EQ("http://www.uri.com/path/to/res", mockRequest.GetURIString());
@@ -125,8 +125,8 @@ namespace
         mockHttpClient->AddResponseToReturn(response);
 
         auto awsHttpResourceClient = Aws::MakeShared<Aws::Internal::AWSHttpResourceClient>(ALLOCATION_TAG, ALLOCATION_TAG);
-        Aws::String result = awsHttpResourceClient->GetResource("http://www.uri.com", "/path/to/res");
-        
+        Aws::String result = awsHttpResourceClient->GetResource("http://www.uri.com", "/path/to/res", ""/*authToken*/);
+
         auto mockRequest = mockHttpClient->GetMostRecentHttpRequest();
         ASSERT_EQ("http://www.uri.com/path/to/res", mockRequest.GetURIString());
         ASSERT_EQ(Aws::Http::Scheme::HTTP, mockRequest.GetUri().GetScheme());
@@ -470,6 +470,22 @@ namespace
         ASSERT_EQ("169.254.170.2", mockRequest.GetUri().GetAuthority());
         ASSERT_EQ("/path/to/res", mockRequest.GetUri().GetPath());
         ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());
+        ASSERT_EQ("", cred);
+    }
+
+    TEST_F(AWSHttpResourceClientTest, TestECSCredentialsClientUsingFullUriAndAuthToken)
+    {
+        auto ecsCredentialsClient = Aws::MakeShared<Aws::Internal::ECSCredentialsClient>(ALLOCATION_TAG,
+                ""/*resource*/, "http://10.1.1.1/super/secret"/*endpoint*/, "TrustMeItIsMe"/*authToken*/);
+
+        auto cred = ecsCredentialsClient->GetECSCredentials();
+        auto mockRequest = mockHttpClient->GetMostRecentHttpRequest();
+        ASSERT_EQ(Aws::Http::Scheme::HTTP, mockRequest.GetUri().GetScheme());
+        ASSERT_STREQ("http://10.1.1.1/super/secret", mockRequest.GetURIString().c_str());
+        ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());
+        ASSERT_EQ("10.1.1.1", mockRequest.GetUri().GetAuthority());
+        ASSERT_EQ("/super/secret", mockRequest.GetUri().GetPath());
+        ASSERT_STREQ("TrustMeItIsMe", mockRequest.GetHeaderValue(Aws::Http::AWS_AUTHORIZATION_HEADER).c_str());
         ASSERT_EQ("", cred);
     }
 
