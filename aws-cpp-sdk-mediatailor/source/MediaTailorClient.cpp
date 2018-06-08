@@ -100,7 +100,7 @@ DeletePlaybackConfigurationOutcome MediaTailorClient::DeletePlaybackConfiguratio
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/prod/playbackConfiguration/";
+  ss << "/playbackConfiguration/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
@@ -136,7 +136,7 @@ GetPlaybackConfigurationOutcome MediaTailorClient::GetPlaybackConfiguration(cons
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/prod/playbackConfiguration/";
+  ss << "/playbackConfiguration/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -172,7 +172,7 @@ ListPlaybackConfigurationsOutcome MediaTailorClient::ListPlaybackConfigurations(
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/prod/playbackConfigurations";
+  ss << "/playbackConfigurations";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -207,7 +207,7 @@ PutPlaybackConfigurationOutcome MediaTailorClient::PutPlaybackConfiguration(cons
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/prod/playbackConfiguration";
+  ss << "/playbackConfiguration";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
