@@ -139,10 +139,10 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>If you modify the DB
-     * instance class, an outage occurs during the change. The change is applied during
-     * the next maintenance window, unless <code>ApplyImmediately</code> is specified
-     * as <code>true</code> for this request. </p> <p>Default: Uses existing
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>If you modify
+     * the DB instance class, an outage occurs during the change. The change is applied
+     * during the next maintenance window, unless <code>ApplyImmediately</code> is
+     * specified as <code>true</code> for this request. </p> <p>Default: Uses existing
      * setting</p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
@@ -153,10 +153,10 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>If you modify the DB
-     * instance class, an outage occurs during the change. The change is applied during
-     * the next maintenance window, unless <code>ApplyImmediately</code> is specified
-     * as <code>true</code> for this request. </p> <p>Default: Uses existing
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>If you modify
+     * the DB instance class, an outage occurs during the change. The change is applied
+     * during the next maintenance window, unless <code>ApplyImmediately</code> is
+     * specified as <code>true</code> for this request. </p> <p>Default: Uses existing
      * setting</p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
@@ -167,10 +167,10 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>If you modify the DB
-     * instance class, an outage occurs during the change. The change is applied during
-     * the next maintenance window, unless <code>ApplyImmediately</code> is specified
-     * as <code>true</code> for this request. </p> <p>Default: Uses existing
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>If you modify
+     * the DB instance class, an outage occurs during the change. The change is applied
+     * during the next maintenance window, unless <code>ApplyImmediately</code> is
+     * specified as <code>true</code> for this request. </p> <p>Default: Uses existing
      * setting</p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
@@ -181,10 +181,10 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>If you modify the DB
-     * instance class, an outage occurs during the change. The change is applied during
-     * the next maintenance window, unless <code>ApplyImmediately</code> is specified
-     * as <code>true</code> for this request. </p> <p>Default: Uses existing
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>If you modify
+     * the DB instance class, an outage occurs during the change. The change is applied
+     * during the next maintenance window, unless <code>ApplyImmediately</code> is
+     * specified as <code>true</code> for this request. </p> <p>Default: Uses existing
      * setting</p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
@@ -195,10 +195,10 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>If you modify the DB
-     * instance class, an outage occurs during the change. The change is applied during
-     * the next maintenance window, unless <code>ApplyImmediately</code> is specified
-     * as <code>true</code> for this request. </p> <p>Default: Uses existing
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>If you modify
+     * the DB instance class, an outage occurs during the change. The change is applied
+     * during the next maintenance window, unless <code>ApplyImmediately</code> is
+     * specified as <code>true</code> for this request. </p> <p>Default: Uses existing
      * setting</p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
@@ -209,10 +209,10 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>If you modify the DB
-     * instance class, an outage occurs during the change. The change is applied during
-     * the next maintenance window, unless <code>ApplyImmediately</code> is specified
-     * as <code>true</code> for this request. </p> <p>Default: Uses existing
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>If you modify
+     * the DB instance class, an outage occurs during the change. The change is applied
+     * during the next maintenance window, unless <code>ApplyImmediately</code> is
+     * specified as <code>true</code> for this request. </p> <p>Default: Uses existing
      * setting</p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
@@ -223,10 +223,10 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>If you modify the DB
-     * instance class, an outage occurs during the change. The change is applied during
-     * the next maintenance window, unless <code>ApplyImmediately</code> is specified
-     * as <code>true</code> for this request. </p> <p>Default: Uses existing
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>If you modify
+     * the DB instance class, an outage occurs during the change. The change is applied
+     * during the next maintenance window, unless <code>ApplyImmediately</code> is
+     * specified as <code>true</code> for this request. </p> <p>Default: Uses existing
      * setting</p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
@@ -1072,8 +1072,8 @@ namespace Model
      * nondefault DB parameter group is currently in use, a new DB parameter group in
      * the DB parameter group family for the new engine version must be specified. The
      * new DB parameter group can be the default for that DB parameter group
-     * family.</p> <p>For a list of valid engine versions, see
-     * <a>CreateDBInstance</a>.</p>
+     * family.</p> <p>For information about valid engine versions, see
+     * <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
@@ -1085,8 +1085,8 @@ namespace Model
      * nondefault DB parameter group is currently in use, a new DB parameter group in
      * the DB parameter group family for the new engine version must be specified. The
      * new DB parameter group can be the default for that DB parameter group
-     * family.</p> <p>For a list of valid engine versions, see
-     * <a>CreateDBInstance</a>.</p>
+     * family.</p> <p>For information about valid engine versions, see
+     * <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
@@ -1098,8 +1098,8 @@ namespace Model
      * nondefault DB parameter group is currently in use, a new DB parameter group in
      * the DB parameter group family for the new engine version must be specified. The
      * new DB parameter group can be the default for that DB parameter group
-     * family.</p> <p>For a list of valid engine versions, see
-     * <a>CreateDBInstance</a>.</p>
+     * family.</p> <p>For information about valid engine versions, see
+     * <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
@@ -1111,8 +1111,8 @@ namespace Model
      * nondefault DB parameter group is currently in use, a new DB parameter group in
      * the DB parameter group family for the new engine version must be specified. The
      * new DB parameter group can be the default for that DB parameter group
-     * family.</p> <p>For a list of valid engine versions, see
-     * <a>CreateDBInstance</a>.</p>
+     * family.</p> <p>For information about valid engine versions, see
+     * <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
@@ -1124,8 +1124,8 @@ namespace Model
      * nondefault DB parameter group is currently in use, a new DB parameter group in
      * the DB parameter group family for the new engine version must be specified. The
      * new DB parameter group can be the default for that DB parameter group
-     * family.</p> <p>For a list of valid engine versions, see
-     * <a>CreateDBInstance</a>.</p>
+     * family.</p> <p>For information about valid engine versions, see
+     * <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.</p>
      */
     inline ModifyDBInstanceRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
@@ -1137,8 +1137,8 @@ namespace Model
      * nondefault DB parameter group is currently in use, a new DB parameter group in
      * the DB parameter group family for the new engine version must be specified. The
      * new DB parameter group can be the default for that DB parameter group
-     * family.</p> <p>For a list of valid engine versions, see
-     * <a>CreateDBInstance</a>.</p>
+     * family.</p> <p>For information about valid engine versions, see
+     * <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.</p>
      */
     inline ModifyDBInstanceRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
@@ -1150,8 +1150,8 @@ namespace Model
      * nondefault DB parameter group is currently in use, a new DB parameter group in
      * the DB parameter group family for the new engine version must be specified. The
      * new DB parameter group can be the default for that DB parameter group
-     * family.</p> <p>For a list of valid engine versions, see
-     * <a>CreateDBInstance</a>.</p>
+     * family.</p> <p>For information about valid engine versions, see
+     * <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.</p>
      */
     inline ModifyDBInstanceRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 

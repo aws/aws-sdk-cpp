@@ -264,50 +264,57 @@ namespace Model
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by file
-     * gateway. Possible values are S3_STANDARD or S3_STANDARD_IA. If this field is not
-     * populated, the default value S3_STANDARD is used. Optional.</p>
+     * gateway. Possible values are S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If
+     * this field is not populated, the default value S3_STANDARD is used.
+     * Optional.</p>
      */
     inline const Aws::String& GetDefaultStorageClass() const{ return m_defaultStorageClass; }
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by file
-     * gateway. Possible values are S3_STANDARD or S3_STANDARD_IA. If this field is not
-     * populated, the default value S3_STANDARD is used. Optional.</p>
+     * gateway. Possible values are S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If
+     * this field is not populated, the default value S3_STANDARD is used.
+     * Optional.</p>
      */
     inline void SetDefaultStorageClass(const Aws::String& value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass = value; }
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by file
-     * gateway. Possible values are S3_STANDARD or S3_STANDARD_IA. If this field is not
-     * populated, the default value S3_STANDARD is used. Optional.</p>
+     * gateway. Possible values are S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If
+     * this field is not populated, the default value S3_STANDARD is used.
+     * Optional.</p>
      */
     inline void SetDefaultStorageClass(Aws::String&& value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass = std::move(value); }
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by file
-     * gateway. Possible values are S3_STANDARD or S3_STANDARD_IA. If this field is not
-     * populated, the default value S3_STANDARD is used. Optional.</p>
+     * gateway. Possible values are S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If
+     * this field is not populated, the default value S3_STANDARD is used.
+     * Optional.</p>
      */
     inline void SetDefaultStorageClass(const char* value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass.assign(value); }
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by file
-     * gateway. Possible values are S3_STANDARD or S3_STANDARD_IA. If this field is not
-     * populated, the default value S3_STANDARD is used. Optional.</p>
+     * gateway. Possible values are S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If
+     * this field is not populated, the default value S3_STANDARD is used.
+     * Optional.</p>
      */
     inline NFSFileShareInfo& WithDefaultStorageClass(const Aws::String& value) { SetDefaultStorageClass(value); return *this;}
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by file
-     * gateway. Possible values are S3_STANDARD or S3_STANDARD_IA. If this field is not
-     * populated, the default value S3_STANDARD is used. Optional.</p>
+     * gateway. Possible values are S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If
+     * this field is not populated, the default value S3_STANDARD is used.
+     * Optional.</p>
      */
     inline NFSFileShareInfo& WithDefaultStorageClass(Aws::String&& value) { SetDefaultStorageClass(std::move(value)); return *this;}
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by file
-     * gateway. Possible values are S3_STANDARD or S3_STANDARD_IA. If this field is not
-     * populated, the default value S3_STANDARD is used. Optional.</p>
+     * gateway. Possible values are S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If
+     * this field is not populated, the default value S3_STANDARD is used.
+     * Optional.</p>
      */
     inline NFSFileShareInfo& WithDefaultStorageClass(const char* value) { SetDefaultStorageClass(value); return *this;}
 

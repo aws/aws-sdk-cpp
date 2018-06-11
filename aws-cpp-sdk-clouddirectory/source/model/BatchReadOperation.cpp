@@ -40,7 +40,8 @@ BatchReadOperation::BatchReadOperation() :
     m_lookupPolicyHasBeenSet(false),
     m_listIndexHasBeenSet(false),
     m_listOutgoingTypedLinksHasBeenSet(false),
-    m_listIncomingTypedLinksHasBeenSet(false)
+    m_listIncomingTypedLinksHasBeenSet(false),
+    m_getLinkAttributesHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ BatchReadOperation::BatchReadOperation(const JsonValue& jsonValue) :
     m_lookupPolicyHasBeenSet(false),
     m_listIndexHasBeenSet(false),
     m_listOutgoingTypedLinksHasBeenSet(false),
-    m_listIncomingTypedLinksHasBeenSet(false)
+    m_listIncomingTypedLinksHasBeenSet(false),
+    m_getLinkAttributesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -147,6 +149,13 @@ BatchReadOperation& BatchReadOperation::operator =(const JsonValue& jsonValue)
     m_listIncomingTypedLinksHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("GetLinkAttributes"))
+  {
+    m_getLinkAttributes = jsonValue.GetObject("GetLinkAttributes");
+
+    m_getLinkAttributesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -223,6 +232,12 @@ JsonValue BatchReadOperation::Jsonize() const
   if(m_listIncomingTypedLinksHasBeenSet)
   {
    payload.WithObject("ListIncomingTypedLinks", m_listIncomingTypedLinks.Jsonize());
+
+  }
+
+  if(m_getLinkAttributesHasBeenSet)
+  {
+   payload.WithObject("GetLinkAttributes", m_getLinkAttributes.Jsonize());
 
   }
 

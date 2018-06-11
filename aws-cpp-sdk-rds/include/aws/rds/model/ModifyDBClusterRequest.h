@@ -764,8 +764,8 @@ namespace Model
      * <p>The version number of the database engine to which you want to upgrade.
      * Changing this parameter results in an outage. The change is applied during the
      * next maintenance window unless the ApplyImmediately parameter is set to
-     * true.</p> <p>For a list of valid engine versions, see <a>CreateDBInstance</a>,
-     * or call <a>DescribeDBEngineVersions</a>.</p>
+     * true.</p> <p>For a list of valid engine versions, see <a>CreateDBCluster</a>, or
+     * call <a>DescribeDBEngineVersions</a>.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
@@ -773,8 +773,8 @@ namespace Model
      * <p>The version number of the database engine to which you want to upgrade.
      * Changing this parameter results in an outage. The change is applied during the
      * next maintenance window unless the ApplyImmediately parameter is set to
-     * true.</p> <p>For a list of valid engine versions, see <a>CreateDBInstance</a>,
-     * or call <a>DescribeDBEngineVersions</a>.</p>
+     * true.</p> <p>For a list of valid engine versions, see <a>CreateDBCluster</a>, or
+     * call <a>DescribeDBEngineVersions</a>.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
@@ -782,8 +782,8 @@ namespace Model
      * <p>The version number of the database engine to which you want to upgrade.
      * Changing this parameter results in an outage. The change is applied during the
      * next maintenance window unless the ApplyImmediately parameter is set to
-     * true.</p> <p>For a list of valid engine versions, see <a>CreateDBInstance</a>,
-     * or call <a>DescribeDBEngineVersions</a>.</p>
+     * true.</p> <p>For a list of valid engine versions, see <a>CreateDBCluster</a>, or
+     * call <a>DescribeDBEngineVersions</a>.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
@@ -791,8 +791,8 @@ namespace Model
      * <p>The version number of the database engine to which you want to upgrade.
      * Changing this parameter results in an outage. The change is applied during the
      * next maintenance window unless the ApplyImmediately parameter is set to
-     * true.</p> <p>For a list of valid engine versions, see <a>CreateDBInstance</a>,
-     * or call <a>DescribeDBEngineVersions</a>.</p>
+     * true.</p> <p>For a list of valid engine versions, see <a>CreateDBCluster</a>, or
+     * call <a>DescribeDBEngineVersions</a>.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
@@ -800,8 +800,8 @@ namespace Model
      * <p>The version number of the database engine to which you want to upgrade.
      * Changing this parameter results in an outage. The change is applied during the
      * next maintenance window unless the ApplyImmediately parameter is set to
-     * true.</p> <p>For a list of valid engine versions, see <a>CreateDBInstance</a>,
-     * or call <a>DescribeDBEngineVersions</a>.</p>
+     * true.</p> <p>For a list of valid engine versions, see <a>CreateDBCluster</a>, or
+     * call <a>DescribeDBEngineVersions</a>.</p>
      */
     inline ModifyDBClusterRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
@@ -809,8 +809,8 @@ namespace Model
      * <p>The version number of the database engine to which you want to upgrade.
      * Changing this parameter results in an outage. The change is applied during the
      * next maintenance window unless the ApplyImmediately parameter is set to
-     * true.</p> <p>For a list of valid engine versions, see <a>CreateDBInstance</a>,
-     * or call <a>DescribeDBEngineVersions</a>.</p>
+     * true.</p> <p>For a list of valid engine versions, see <a>CreateDBCluster</a>, or
+     * call <a>DescribeDBEngineVersions</a>.</p>
      */
     inline ModifyDBClusterRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
@@ -818,8 +818,8 @@ namespace Model
      * <p>The version number of the database engine to which you want to upgrade.
      * Changing this parameter results in an outage. The change is applied during the
      * next maintenance window unless the ApplyImmediately parameter is set to
-     * true.</p> <p>For a list of valid engine versions, see <a>CreateDBInstance</a>,
-     * or call <a>DescribeDBEngineVersions</a>.</p>
+     * true.</p> <p>For a list of valid engine versions, see <a>CreateDBCluster</a>, or
+     * call <a>DescribeDBEngineVersions</a>.</p>
      */
     inline ModifyDBClusterRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 

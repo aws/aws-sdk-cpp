@@ -190,8 +190,8 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Importing from Amazon
-     * S3 is not supported on the db.t2.micro DB instance class. </p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
+     * Amazon S3 is not supported on the db.t2.micro DB instance class. </p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
@@ -201,8 +201,8 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Importing from Amazon
-     * S3 is not supported on the db.t2.micro DB instance class. </p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
+     * Amazon S3 is not supported on the db.t2.micro DB instance class. </p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
@@ -212,8 +212,8 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Importing from Amazon
-     * S3 is not supported on the db.t2.micro DB instance class. </p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
+     * Amazon S3 is not supported on the db.t2.micro DB instance class. </p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
@@ -223,8 +223,8 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Importing from Amazon
-     * S3 is not supported on the db.t2.micro DB instance class. </p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
+     * Amazon S3 is not supported on the db.t2.micro DB instance class. </p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
@@ -234,8 +234,8 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Importing from Amazon
-     * S3 is not supported on the db.t2.micro DB instance class. </p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
+     * Amazon S3 is not supported on the db.t2.micro DB instance class. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
@@ -245,8 +245,8 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Importing from Amazon
-     * S3 is not supported on the db.t2.micro DB instance class. </p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
+     * Amazon S3 is not supported on the db.t2.micro DB instance class. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
@@ -256,8 +256,8 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Importing from Amazon
-     * S3 is not supported on the db.t2.micro DB instance class. </p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
+     * Amazon S3 is not supported on the db.t2.micro DB instance class. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
@@ -901,43 +901,50 @@ namespace Model
 
     /**
      * <p>The version number of the database engine to use. Choose the latest minor
-     * version of your database engine as specified in <a>CreateDBInstance</a>. </p>
+     * version of your database engine. For information about engine versions, see
+     * <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>. </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
      * <p>The version number of the database engine to use. Choose the latest minor
-     * version of your database engine as specified in <a>CreateDBInstance</a>. </p>
+     * version of your database engine. For information about engine versions, see
+     * <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>. </p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
      * <p>The version number of the database engine to use. Choose the latest minor
-     * version of your database engine as specified in <a>CreateDBInstance</a>. </p>
+     * version of your database engine. For information about engine versions, see
+     * <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>. </p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
      * <p>The version number of the database engine to use. Choose the latest minor
-     * version of your database engine as specified in <a>CreateDBInstance</a>. </p>
+     * version of your database engine. For information about engine versions, see
+     * <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>. </p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
      * <p>The version number of the database engine to use. Choose the latest minor
-     * version of your database engine as specified in <a>CreateDBInstance</a>. </p>
+     * version of your database engine. For information about engine versions, see
+     * <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
      * <p>The version number of the database engine to use. Choose the latest minor
-     * version of your database engine as specified in <a>CreateDBInstance</a>. </p>
+     * version of your database engine. For information about engine versions, see
+     * <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version number of the database engine to use. Choose the latest minor
-     * version of your database engine as specified in <a>CreateDBInstance</a>. </p>
+     * version of your database engine. For information about engine versions, see
+     * <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 

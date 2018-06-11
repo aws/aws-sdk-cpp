@@ -239,8 +239,8 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: Inherits from
-     * the source DB instance.</p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default:
+     * Inherits from the source DB instance.</p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
@@ -250,8 +250,8 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: Inherits from
-     * the source DB instance.</p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default:
+     * Inherits from the source DB instance.</p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
@@ -261,8 +261,8 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: Inherits from
-     * the source DB instance.</p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default:
+     * Inherits from the source DB instance.</p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
@@ -272,8 +272,8 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: Inherits from
-     * the source DB instance.</p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default:
+     * Inherits from the source DB instance.</p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
@@ -283,8 +283,8 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: Inherits from
-     * the source DB instance.</p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default:
+     * Inherits from the source DB instance.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
@@ -294,8 +294,8 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: Inherits from
-     * the source DB instance.</p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default:
+     * Inherits from the source DB instance.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
@@ -305,8 +305,8 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: Inherits from
-     * the source DB instance.</p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default:
+     * Inherits from the source DB instance.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 

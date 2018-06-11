@@ -42,7 +42,8 @@ BatchWriteOperationResponse::BatchWriteOperationResponse() :
     m_attachToIndexHasBeenSet(false),
     m_detachFromIndexHasBeenSet(false),
     m_attachTypedLinkHasBeenSet(false),
-    m_detachTypedLinkHasBeenSet(false)
+    m_detachTypedLinkHasBeenSet(false),
+    m_updateLinkAttributesHasBeenSet(false)
 {
 }
 
@@ -60,7 +61,8 @@ BatchWriteOperationResponse::BatchWriteOperationResponse(const JsonValue& jsonVa
     m_attachToIndexHasBeenSet(false),
     m_detachFromIndexHasBeenSet(false),
     m_attachTypedLinkHasBeenSet(false),
-    m_detachTypedLinkHasBeenSet(false)
+    m_detachTypedLinkHasBeenSet(false),
+    m_updateLinkAttributesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -165,6 +167,13 @@ BatchWriteOperationResponse& BatchWriteOperationResponse::operator =(const JsonV
     m_detachTypedLinkHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UpdateLinkAttributes"))
+  {
+    m_updateLinkAttributes = jsonValue.GetObject("UpdateLinkAttributes");
+
+    m_updateLinkAttributesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -253,6 +262,12 @@ JsonValue BatchWriteOperationResponse::Jsonize() const
   if(m_detachTypedLinkHasBeenSet)
   {
    payload.WithObject("DetachTypedLink", m_detachTypedLink.Jsonize());
+
+  }
+
+  if(m_updateLinkAttributesHasBeenSet)
+  {
+   payload.WithObject("UpdateLinkAttributes", m_updateLinkAttributes.Jsonize());
 
   }
 

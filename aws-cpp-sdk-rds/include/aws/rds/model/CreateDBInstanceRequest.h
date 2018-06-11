@@ -465,7 +465,7 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
@@ -475,7 +475,7 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
@@ -485,7 +485,7 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
@@ -495,7 +495,7 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
@@ -505,7 +505,7 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
@@ -515,7 +515,7 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
@@ -525,7 +525,7 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
@@ -1560,723 +1560,184 @@ namespace Model
 
 
     /**
-     * <p>The version number of the database engine to use.</p> <p>The following are
-     * the database engines and major and minor versions that are available with Amazon
-     * RDS. Not every database engine is available for every AWS Region.</p> <p>
-     * <b>Amazon Aurora</b> </p> <p>Not applicable. The version number of the database
-     * engine to be used by the DB instance is managed by the DB cluster. For more
-     * information, see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <ul> <li>
-     * <p> <code>10.2.12</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.2.11</code> (supported in all AWS Regions)</p> </li> </ul> <p/> <ul>
-     * <li> <p> <code>10.1.31</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.1.26</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.1.23</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.1.19</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.1.14</code> (supported in all AWS Regions except us-east-2)</p> </li>
-     * </ul> <p/> <ul> <li> <p> <code>10.0.34</code> (supported in all AWS Regions)</p>
-     * </li> <li> <p> <code>10.0.32</code> (supported in all AWS Regions)</p> </li>
-     * <li> <p> <code>10.0.31</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.0.28</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.0.24</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.0.17</code> (supported in all AWS Regions except us-east-2,
-     * ca-central-1, eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2017</b>
-     * </p> <ul> <li> <p> <code>14.00.1000.169.v1</code> (supported for all editions,
-     * and all AWS Regions)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b> </p>
-     * <ul> <li> <p> <code>13.00.4451.0.v1</code> (supported for all editions, and all
-     * AWS Regions)</p> </li> <li> <p> <code>13.00.4422.0.v1</code> (supported for all
-     * editions, and all AWS Regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code>
-     * (supported for all editions, and all AWS Regions)</p> </li> </ul> <p>
-     * <b>Microsoft SQL Server 2014</b> </p> <ul> <li> <p> <code>12.00.5546.0.v1</code>
-     * (supported for all editions, and all AWS Regions)</p> </li> <li> <p>
-     * <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS
-     * Regions)</p> </li> <li> <p> <code>12.00.4422.0.v1</code> (supported for all
-     * editions except Enterprise Edition, and all AWS Regions except ca-central-1 and
-     * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2012</b> </p> <ul> <li>
-     * <p> <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS
-     * Regions)</p> </li> <li> <p> <code>11.00.6020.0.v1</code> (supported for all
-     * editions, and all AWS Regions)</p> </li> <li> <p> <code>11.00.5058.0.v1</code>
-     * (supported for all editions, and all AWS Regions except us-east-2, ca-central-1,
-     * and eu-west-2)</p> </li> <li> <p> <code>11.00.2100.60.v1</code> (supported for
-     * all editions, and all AWS Regions except us-east-2, ca-central-1, and
-     * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2008 R2</b> </p> <ul>
-     * <li> <p> <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS
-     * Regions except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
-     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS Regions
-     * except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
-     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS Regions
-     * except us-east-2, ca-central-1, and eu-west-2)</p> </li> </ul> <p> <b>MySQL</b>
-     * </p> <ul> <li> <p> <code>5.7.21</code> (supported in all AWS regions)</p> </li>
-     * <li> <p> <code>5.7.19</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.7.17</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.7.16</code> (supported in all AWS regions)</p> </li> </ul> <p/> <ul>
-     * <li> <p> <code>5.6.39</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.37</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.35</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.34</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.29</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.27</code> (supported in all AWS Regions except us-east-2,
-     * ca-central-1, eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.59</code>
-     * (supported in all AWS Regions)</p> </li> <li> <p> <code>5.5.57</code> (supported
-     * in all AWS Regions)</p> </li> <li> <p> <code>5.5.54</code> (supported in all AWS
-     * Regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
-     * Regions)</p> </li> <li> <p> <code>5.5.46</code> (supported in all AWS
-     * Regions)</p> </li> </ul> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
-     * <code>12.1.0.2.v9</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v8</code>
-     * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v7</code> (supported for EE in
-     * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in
-     * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
-     * <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v4</code>
-     * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v3</code> (supported for EE in
-     * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v2</code> (supported for EE in all AWS regions, and SE2 in
-     * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
-     * <code>12.1.0.2.v1</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> </ul> <p> <b>Oracle 11g</b> </p>
-     * <ul> <li> <p> <code>11.2.0.4.v13</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v12</code> (supported for EE,
-     * SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v11</code>
-     * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v10</code> (supported for EE, SE1, and SE, in all AWS
-     * regions)</p> </li> <li> <p> <code>11.2.0.4.v9</code> (supported for EE, SE1, and
-     * SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v8</code> (supported
-     * for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v7</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
-     * </li> <li> <p> <code>11.2.0.4.v6</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v5</code> (supported for EE, SE1,
-     * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v4</code>
-     * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v3</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
-     * </li> <li> <p> <code>11.2.0.4.v1</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version
-     * 10.1</b> </p> </li> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3
-     * | 9.6.2 | 9.6.1</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code> 9.5.9 |
-     * 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4.x:</b>
-     * <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 | 9.4.7</code> </p> </li> <li> <p>
-     * <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 | 9.3.16 | 9.3.14 | 9.3.12</code>
-     * </p> </li> </ul>
+     * <p>The version number of the database engine to use.</p> <p>For a list of valid
+     * engine versions, call <a>DescribeDBEngineVersions</a>.</p> <p>The following are
+     * the database engines and links to information about the major and minor versions
+     * that are available with Amazon RDS. Not every database engine is available for
+     * every AWS Region.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
+     * version number of the database engine to be used by the DB instance is managed
+     * by the DB cluster. For more information, see <a>CreateDBCluster</a>.</p> <p>
+     * <b>MariaDB</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * <b>Microsoft SQL Server</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
+     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * <p> <b>MySQL</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * <b>Oracle</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
+     * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * <b>PostgreSQL</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
+     * PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p>The version number of the database engine to use.</p> <p>The following are
-     * the database engines and major and minor versions that are available with Amazon
-     * RDS. Not every database engine is available for every AWS Region.</p> <p>
-     * <b>Amazon Aurora</b> </p> <p>Not applicable. The version number of the database
-     * engine to be used by the DB instance is managed by the DB cluster. For more
-     * information, see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <ul> <li>
-     * <p> <code>10.2.12</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.2.11</code> (supported in all AWS Regions)</p> </li> </ul> <p/> <ul>
-     * <li> <p> <code>10.1.31</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.1.26</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.1.23</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.1.19</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.1.14</code> (supported in all AWS Regions except us-east-2)</p> </li>
-     * </ul> <p/> <ul> <li> <p> <code>10.0.34</code> (supported in all AWS Regions)</p>
-     * </li> <li> <p> <code>10.0.32</code> (supported in all AWS Regions)</p> </li>
-     * <li> <p> <code>10.0.31</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.0.28</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.0.24</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.0.17</code> (supported in all AWS Regions except us-east-2,
-     * ca-central-1, eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2017</b>
-     * </p> <ul> <li> <p> <code>14.00.1000.169.v1</code> (supported for all editions,
-     * and all AWS Regions)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b> </p>
-     * <ul> <li> <p> <code>13.00.4451.0.v1</code> (supported for all editions, and all
-     * AWS Regions)</p> </li> <li> <p> <code>13.00.4422.0.v1</code> (supported for all
-     * editions, and all AWS Regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code>
-     * (supported for all editions, and all AWS Regions)</p> </li> </ul> <p>
-     * <b>Microsoft SQL Server 2014</b> </p> <ul> <li> <p> <code>12.00.5546.0.v1</code>
-     * (supported for all editions, and all AWS Regions)</p> </li> <li> <p>
-     * <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS
-     * Regions)</p> </li> <li> <p> <code>12.00.4422.0.v1</code> (supported for all
-     * editions except Enterprise Edition, and all AWS Regions except ca-central-1 and
-     * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2012</b> </p> <ul> <li>
-     * <p> <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS
-     * Regions)</p> </li> <li> <p> <code>11.00.6020.0.v1</code> (supported for all
-     * editions, and all AWS Regions)</p> </li> <li> <p> <code>11.00.5058.0.v1</code>
-     * (supported for all editions, and all AWS Regions except us-east-2, ca-central-1,
-     * and eu-west-2)</p> </li> <li> <p> <code>11.00.2100.60.v1</code> (supported for
-     * all editions, and all AWS Regions except us-east-2, ca-central-1, and
-     * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2008 R2</b> </p> <ul>
-     * <li> <p> <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS
-     * Regions except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
-     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS Regions
-     * except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
-     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS Regions
-     * except us-east-2, ca-central-1, and eu-west-2)</p> </li> </ul> <p> <b>MySQL</b>
-     * </p> <ul> <li> <p> <code>5.7.21</code> (supported in all AWS regions)</p> </li>
-     * <li> <p> <code>5.7.19</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.7.17</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.7.16</code> (supported in all AWS regions)</p> </li> </ul> <p/> <ul>
-     * <li> <p> <code>5.6.39</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.37</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.35</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.34</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.29</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.27</code> (supported in all AWS Regions except us-east-2,
-     * ca-central-1, eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.59</code>
-     * (supported in all AWS Regions)</p> </li> <li> <p> <code>5.5.57</code> (supported
-     * in all AWS Regions)</p> </li> <li> <p> <code>5.5.54</code> (supported in all AWS
-     * Regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
-     * Regions)</p> </li> <li> <p> <code>5.5.46</code> (supported in all AWS
-     * Regions)</p> </li> </ul> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
-     * <code>12.1.0.2.v9</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v8</code>
-     * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v7</code> (supported for EE in
-     * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in
-     * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
-     * <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v4</code>
-     * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v3</code> (supported for EE in
-     * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v2</code> (supported for EE in all AWS regions, and SE2 in
-     * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
-     * <code>12.1.0.2.v1</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> </ul> <p> <b>Oracle 11g</b> </p>
-     * <ul> <li> <p> <code>11.2.0.4.v13</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v12</code> (supported for EE,
-     * SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v11</code>
-     * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v10</code> (supported for EE, SE1, and SE, in all AWS
-     * regions)</p> </li> <li> <p> <code>11.2.0.4.v9</code> (supported for EE, SE1, and
-     * SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v8</code> (supported
-     * for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v7</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
-     * </li> <li> <p> <code>11.2.0.4.v6</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v5</code> (supported for EE, SE1,
-     * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v4</code>
-     * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v3</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
-     * </li> <li> <p> <code>11.2.0.4.v1</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version
-     * 10.1</b> </p> </li> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3
-     * | 9.6.2 | 9.6.1</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code> 9.5.9 |
-     * 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4.x:</b>
-     * <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 | 9.4.7</code> </p> </li> <li> <p>
-     * <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 | 9.3.16 | 9.3.14 | 9.3.12</code>
-     * </p> </li> </ul>
+     * <p>The version number of the database engine to use.</p> <p>For a list of valid
+     * engine versions, call <a>DescribeDBEngineVersions</a>.</p> <p>The following are
+     * the database engines and links to information about the major and minor versions
+     * that are available with Amazon RDS. Not every database engine is available for
+     * every AWS Region.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
+     * version number of the database engine to be used by the DB instance is managed
+     * by the DB cluster. For more information, see <a>CreateDBCluster</a>.</p> <p>
+     * <b>MariaDB</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * <b>Microsoft SQL Server</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
+     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * <p> <b>MySQL</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * <b>Oracle</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
+     * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * <b>PostgreSQL</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
+     * PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p>The version number of the database engine to use.</p> <p>The following are
-     * the database engines and major and minor versions that are available with Amazon
-     * RDS. Not every database engine is available for every AWS Region.</p> <p>
-     * <b>Amazon Aurora</b> </p> <p>Not applicable. The version number of the database
-     * engine to be used by the DB instance is managed by the DB cluster. For more
-     * information, see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <ul> <li>
-     * <p> <code>10.2.12</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.2.11</code> (supported in all AWS Regions)</p> </li> </ul> <p/> <ul>
-     * <li> <p> <code>10.1.31</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.1.26</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.1.23</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.1.19</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.1.14</code> (supported in all AWS Regions except us-east-2)</p> </li>
-     * </ul> <p/> <ul> <li> <p> <code>10.0.34</code> (supported in all AWS Regions)</p>
-     * </li> <li> <p> <code>10.0.32</code> (supported in all AWS Regions)</p> </li>
-     * <li> <p> <code>10.0.31</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.0.28</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.0.24</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.0.17</code> (supported in all AWS Regions except us-east-2,
-     * ca-central-1, eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2017</b>
-     * </p> <ul> <li> <p> <code>14.00.1000.169.v1</code> (supported for all editions,
-     * and all AWS Regions)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b> </p>
-     * <ul> <li> <p> <code>13.00.4451.0.v1</code> (supported for all editions, and all
-     * AWS Regions)</p> </li> <li> <p> <code>13.00.4422.0.v1</code> (supported for all
-     * editions, and all AWS Regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code>
-     * (supported for all editions, and all AWS Regions)</p> </li> </ul> <p>
-     * <b>Microsoft SQL Server 2014</b> </p> <ul> <li> <p> <code>12.00.5546.0.v1</code>
-     * (supported for all editions, and all AWS Regions)</p> </li> <li> <p>
-     * <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS
-     * Regions)</p> </li> <li> <p> <code>12.00.4422.0.v1</code> (supported for all
-     * editions except Enterprise Edition, and all AWS Regions except ca-central-1 and
-     * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2012</b> </p> <ul> <li>
-     * <p> <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS
-     * Regions)</p> </li> <li> <p> <code>11.00.6020.0.v1</code> (supported for all
-     * editions, and all AWS Regions)</p> </li> <li> <p> <code>11.00.5058.0.v1</code>
-     * (supported for all editions, and all AWS Regions except us-east-2, ca-central-1,
-     * and eu-west-2)</p> </li> <li> <p> <code>11.00.2100.60.v1</code> (supported for
-     * all editions, and all AWS Regions except us-east-2, ca-central-1, and
-     * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2008 R2</b> </p> <ul>
-     * <li> <p> <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS
-     * Regions except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
-     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS Regions
-     * except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
-     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS Regions
-     * except us-east-2, ca-central-1, and eu-west-2)</p> </li> </ul> <p> <b>MySQL</b>
-     * </p> <ul> <li> <p> <code>5.7.21</code> (supported in all AWS regions)</p> </li>
-     * <li> <p> <code>5.7.19</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.7.17</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.7.16</code> (supported in all AWS regions)</p> </li> </ul> <p/> <ul>
-     * <li> <p> <code>5.6.39</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.37</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.35</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.34</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.29</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.27</code> (supported in all AWS Regions except us-east-2,
-     * ca-central-1, eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.59</code>
-     * (supported in all AWS Regions)</p> </li> <li> <p> <code>5.5.57</code> (supported
-     * in all AWS Regions)</p> </li> <li> <p> <code>5.5.54</code> (supported in all AWS
-     * Regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
-     * Regions)</p> </li> <li> <p> <code>5.5.46</code> (supported in all AWS
-     * Regions)</p> </li> </ul> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
-     * <code>12.1.0.2.v9</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v8</code>
-     * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v7</code> (supported for EE in
-     * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in
-     * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
-     * <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v4</code>
-     * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v3</code> (supported for EE in
-     * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v2</code> (supported for EE in all AWS regions, and SE2 in
-     * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
-     * <code>12.1.0.2.v1</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> </ul> <p> <b>Oracle 11g</b> </p>
-     * <ul> <li> <p> <code>11.2.0.4.v13</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v12</code> (supported for EE,
-     * SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v11</code>
-     * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v10</code> (supported for EE, SE1, and SE, in all AWS
-     * regions)</p> </li> <li> <p> <code>11.2.0.4.v9</code> (supported for EE, SE1, and
-     * SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v8</code> (supported
-     * for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v7</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
-     * </li> <li> <p> <code>11.2.0.4.v6</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v5</code> (supported for EE, SE1,
-     * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v4</code>
-     * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v3</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
-     * </li> <li> <p> <code>11.2.0.4.v1</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version
-     * 10.1</b> </p> </li> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3
-     * | 9.6.2 | 9.6.1</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code> 9.5.9 |
-     * 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4.x:</b>
-     * <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 | 9.4.7</code> </p> </li> <li> <p>
-     * <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 | 9.3.16 | 9.3.14 | 9.3.12</code>
-     * </p> </li> </ul>
+     * <p>The version number of the database engine to use.</p> <p>For a list of valid
+     * engine versions, call <a>DescribeDBEngineVersions</a>.</p> <p>The following are
+     * the database engines and links to information about the major and minor versions
+     * that are available with Amazon RDS. Not every database engine is available for
+     * every AWS Region.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
+     * version number of the database engine to be used by the DB instance is managed
+     * by the DB cluster. For more information, see <a>CreateDBCluster</a>.</p> <p>
+     * <b>MariaDB</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * <b>Microsoft SQL Server</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
+     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * <p> <b>MySQL</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * <b>Oracle</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
+     * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * <b>PostgreSQL</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
+     * PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
-     * <p>The version number of the database engine to use.</p> <p>The following are
-     * the database engines and major and minor versions that are available with Amazon
-     * RDS. Not every database engine is available for every AWS Region.</p> <p>
-     * <b>Amazon Aurora</b> </p> <p>Not applicable. The version number of the database
-     * engine to be used by the DB instance is managed by the DB cluster. For more
-     * information, see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <ul> <li>
-     * <p> <code>10.2.12</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.2.11</code> (supported in all AWS Regions)</p> </li> </ul> <p/> <ul>
-     * <li> <p> <code>10.1.31</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.1.26</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.1.23</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.1.19</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.1.14</code> (supported in all AWS Regions except us-east-2)</p> </li>
-     * </ul> <p/> <ul> <li> <p> <code>10.0.34</code> (supported in all AWS Regions)</p>
-     * </li> <li> <p> <code>10.0.32</code> (supported in all AWS Regions)</p> </li>
-     * <li> <p> <code>10.0.31</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.0.28</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.0.24</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.0.17</code> (supported in all AWS Regions except us-east-2,
-     * ca-central-1, eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2017</b>
-     * </p> <ul> <li> <p> <code>14.00.1000.169.v1</code> (supported for all editions,
-     * and all AWS Regions)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b> </p>
-     * <ul> <li> <p> <code>13.00.4451.0.v1</code> (supported for all editions, and all
-     * AWS Regions)</p> </li> <li> <p> <code>13.00.4422.0.v1</code> (supported for all
-     * editions, and all AWS Regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code>
-     * (supported for all editions, and all AWS Regions)</p> </li> </ul> <p>
-     * <b>Microsoft SQL Server 2014</b> </p> <ul> <li> <p> <code>12.00.5546.0.v1</code>
-     * (supported for all editions, and all AWS Regions)</p> </li> <li> <p>
-     * <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS
-     * Regions)</p> </li> <li> <p> <code>12.00.4422.0.v1</code> (supported for all
-     * editions except Enterprise Edition, and all AWS Regions except ca-central-1 and
-     * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2012</b> </p> <ul> <li>
-     * <p> <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS
-     * Regions)</p> </li> <li> <p> <code>11.00.6020.0.v1</code> (supported for all
-     * editions, and all AWS Regions)</p> </li> <li> <p> <code>11.00.5058.0.v1</code>
-     * (supported for all editions, and all AWS Regions except us-east-2, ca-central-1,
-     * and eu-west-2)</p> </li> <li> <p> <code>11.00.2100.60.v1</code> (supported for
-     * all editions, and all AWS Regions except us-east-2, ca-central-1, and
-     * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2008 R2</b> </p> <ul>
-     * <li> <p> <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS
-     * Regions except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
-     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS Regions
-     * except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
-     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS Regions
-     * except us-east-2, ca-central-1, and eu-west-2)</p> </li> </ul> <p> <b>MySQL</b>
-     * </p> <ul> <li> <p> <code>5.7.21</code> (supported in all AWS regions)</p> </li>
-     * <li> <p> <code>5.7.19</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.7.17</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.7.16</code> (supported in all AWS regions)</p> </li> </ul> <p/> <ul>
-     * <li> <p> <code>5.6.39</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.37</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.35</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.34</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.29</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.27</code> (supported in all AWS Regions except us-east-2,
-     * ca-central-1, eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.59</code>
-     * (supported in all AWS Regions)</p> </li> <li> <p> <code>5.5.57</code> (supported
-     * in all AWS Regions)</p> </li> <li> <p> <code>5.5.54</code> (supported in all AWS
-     * Regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
-     * Regions)</p> </li> <li> <p> <code>5.5.46</code> (supported in all AWS
-     * Regions)</p> </li> </ul> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
-     * <code>12.1.0.2.v9</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v8</code>
-     * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v7</code> (supported for EE in
-     * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in
-     * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
-     * <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v4</code>
-     * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v3</code> (supported for EE in
-     * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v2</code> (supported for EE in all AWS regions, and SE2 in
-     * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
-     * <code>12.1.0.2.v1</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> </ul> <p> <b>Oracle 11g</b> </p>
-     * <ul> <li> <p> <code>11.2.0.4.v13</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v12</code> (supported for EE,
-     * SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v11</code>
-     * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v10</code> (supported for EE, SE1, and SE, in all AWS
-     * regions)</p> </li> <li> <p> <code>11.2.0.4.v9</code> (supported for EE, SE1, and
-     * SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v8</code> (supported
-     * for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v7</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
-     * </li> <li> <p> <code>11.2.0.4.v6</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v5</code> (supported for EE, SE1,
-     * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v4</code>
-     * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v3</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
-     * </li> <li> <p> <code>11.2.0.4.v1</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version
-     * 10.1</b> </p> </li> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3
-     * | 9.6.2 | 9.6.1</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code> 9.5.9 |
-     * 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4.x:</b>
-     * <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 | 9.4.7</code> </p> </li> <li> <p>
-     * <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 | 9.3.16 | 9.3.14 | 9.3.12</code>
-     * </p> </li> </ul>
+     * <p>The version number of the database engine to use.</p> <p>For a list of valid
+     * engine versions, call <a>DescribeDBEngineVersions</a>.</p> <p>The following are
+     * the database engines and links to information about the major and minor versions
+     * that are available with Amazon RDS. Not every database engine is available for
+     * every AWS Region.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
+     * version number of the database engine to be used by the DB instance is managed
+     * by the DB cluster. For more information, see <a>CreateDBCluster</a>.</p> <p>
+     * <b>MariaDB</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * <b>Microsoft SQL Server</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
+     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * <p> <b>MySQL</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * <b>Oracle</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
+     * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * <b>PostgreSQL</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
+     * PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p>The version number of the database engine to use.</p> <p>The following are
-     * the database engines and major and minor versions that are available with Amazon
-     * RDS. Not every database engine is available for every AWS Region.</p> <p>
-     * <b>Amazon Aurora</b> </p> <p>Not applicable. The version number of the database
-     * engine to be used by the DB instance is managed by the DB cluster. For more
-     * information, see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <ul> <li>
-     * <p> <code>10.2.12</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.2.11</code> (supported in all AWS Regions)</p> </li> </ul> <p/> <ul>
-     * <li> <p> <code>10.1.31</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.1.26</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.1.23</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.1.19</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.1.14</code> (supported in all AWS Regions except us-east-2)</p> </li>
-     * </ul> <p/> <ul> <li> <p> <code>10.0.34</code> (supported in all AWS Regions)</p>
-     * </li> <li> <p> <code>10.0.32</code> (supported in all AWS Regions)</p> </li>
-     * <li> <p> <code>10.0.31</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.0.28</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.0.24</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.0.17</code> (supported in all AWS Regions except us-east-2,
-     * ca-central-1, eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2017</b>
-     * </p> <ul> <li> <p> <code>14.00.1000.169.v1</code> (supported for all editions,
-     * and all AWS Regions)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b> </p>
-     * <ul> <li> <p> <code>13.00.4451.0.v1</code> (supported for all editions, and all
-     * AWS Regions)</p> </li> <li> <p> <code>13.00.4422.0.v1</code> (supported for all
-     * editions, and all AWS Regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code>
-     * (supported for all editions, and all AWS Regions)</p> </li> </ul> <p>
-     * <b>Microsoft SQL Server 2014</b> </p> <ul> <li> <p> <code>12.00.5546.0.v1</code>
-     * (supported for all editions, and all AWS Regions)</p> </li> <li> <p>
-     * <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS
-     * Regions)</p> </li> <li> <p> <code>12.00.4422.0.v1</code> (supported for all
-     * editions except Enterprise Edition, and all AWS Regions except ca-central-1 and
-     * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2012</b> </p> <ul> <li>
-     * <p> <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS
-     * Regions)</p> </li> <li> <p> <code>11.00.6020.0.v1</code> (supported for all
-     * editions, and all AWS Regions)</p> </li> <li> <p> <code>11.00.5058.0.v1</code>
-     * (supported for all editions, and all AWS Regions except us-east-2, ca-central-1,
-     * and eu-west-2)</p> </li> <li> <p> <code>11.00.2100.60.v1</code> (supported for
-     * all editions, and all AWS Regions except us-east-2, ca-central-1, and
-     * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2008 R2</b> </p> <ul>
-     * <li> <p> <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS
-     * Regions except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
-     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS Regions
-     * except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
-     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS Regions
-     * except us-east-2, ca-central-1, and eu-west-2)</p> </li> </ul> <p> <b>MySQL</b>
-     * </p> <ul> <li> <p> <code>5.7.21</code> (supported in all AWS regions)</p> </li>
-     * <li> <p> <code>5.7.19</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.7.17</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.7.16</code> (supported in all AWS regions)</p> </li> </ul> <p/> <ul>
-     * <li> <p> <code>5.6.39</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.37</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.35</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.34</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.29</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.27</code> (supported in all AWS Regions except us-east-2,
-     * ca-central-1, eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.59</code>
-     * (supported in all AWS Regions)</p> </li> <li> <p> <code>5.5.57</code> (supported
-     * in all AWS Regions)</p> </li> <li> <p> <code>5.5.54</code> (supported in all AWS
-     * Regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
-     * Regions)</p> </li> <li> <p> <code>5.5.46</code> (supported in all AWS
-     * Regions)</p> </li> </ul> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
-     * <code>12.1.0.2.v9</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v8</code>
-     * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v7</code> (supported for EE in
-     * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in
-     * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
-     * <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v4</code>
-     * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v3</code> (supported for EE in
-     * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v2</code> (supported for EE in all AWS regions, and SE2 in
-     * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
-     * <code>12.1.0.2.v1</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> </ul> <p> <b>Oracle 11g</b> </p>
-     * <ul> <li> <p> <code>11.2.0.4.v13</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v12</code> (supported for EE,
-     * SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v11</code>
-     * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v10</code> (supported for EE, SE1, and SE, in all AWS
-     * regions)</p> </li> <li> <p> <code>11.2.0.4.v9</code> (supported for EE, SE1, and
-     * SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v8</code> (supported
-     * for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v7</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
-     * </li> <li> <p> <code>11.2.0.4.v6</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v5</code> (supported for EE, SE1,
-     * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v4</code>
-     * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v3</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
-     * </li> <li> <p> <code>11.2.0.4.v1</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version
-     * 10.1</b> </p> </li> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3
-     * | 9.6.2 | 9.6.1</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code> 9.5.9 |
-     * 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4.x:</b>
-     * <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 | 9.4.7</code> </p> </li> <li> <p>
-     * <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 | 9.3.16 | 9.3.14 | 9.3.12</code>
-     * </p> </li> </ul>
+     * <p>The version number of the database engine to use.</p> <p>For a list of valid
+     * engine versions, call <a>DescribeDBEngineVersions</a>.</p> <p>The following are
+     * the database engines and links to information about the major and minor versions
+     * that are available with Amazon RDS. Not every database engine is available for
+     * every AWS Region.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
+     * version number of the database engine to be used by the DB instance is managed
+     * by the DB cluster. For more information, see <a>CreateDBCluster</a>.</p> <p>
+     * <b>MariaDB</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * <b>Microsoft SQL Server</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
+     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * <p> <b>MySQL</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * <b>Oracle</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
+     * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * <b>PostgreSQL</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
+     * PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline CreateDBInstanceRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The version number of the database engine to use.</p> <p>The following are
-     * the database engines and major and minor versions that are available with Amazon
-     * RDS. Not every database engine is available for every AWS Region.</p> <p>
-     * <b>Amazon Aurora</b> </p> <p>Not applicable. The version number of the database
-     * engine to be used by the DB instance is managed by the DB cluster. For more
-     * information, see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <ul> <li>
-     * <p> <code>10.2.12</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.2.11</code> (supported in all AWS Regions)</p> </li> </ul> <p/> <ul>
-     * <li> <p> <code>10.1.31</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.1.26</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.1.23</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.1.19</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.1.14</code> (supported in all AWS Regions except us-east-2)</p> </li>
-     * </ul> <p/> <ul> <li> <p> <code>10.0.34</code> (supported in all AWS Regions)</p>
-     * </li> <li> <p> <code>10.0.32</code> (supported in all AWS Regions)</p> </li>
-     * <li> <p> <code>10.0.31</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.0.28</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.0.24</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.0.17</code> (supported in all AWS Regions except us-east-2,
-     * ca-central-1, eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2017</b>
-     * </p> <ul> <li> <p> <code>14.00.1000.169.v1</code> (supported for all editions,
-     * and all AWS Regions)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b> </p>
-     * <ul> <li> <p> <code>13.00.4451.0.v1</code> (supported for all editions, and all
-     * AWS Regions)</p> </li> <li> <p> <code>13.00.4422.0.v1</code> (supported for all
-     * editions, and all AWS Regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code>
-     * (supported for all editions, and all AWS Regions)</p> </li> </ul> <p>
-     * <b>Microsoft SQL Server 2014</b> </p> <ul> <li> <p> <code>12.00.5546.0.v1</code>
-     * (supported for all editions, and all AWS Regions)</p> </li> <li> <p>
-     * <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS
-     * Regions)</p> </li> <li> <p> <code>12.00.4422.0.v1</code> (supported for all
-     * editions except Enterprise Edition, and all AWS Regions except ca-central-1 and
-     * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2012</b> </p> <ul> <li>
-     * <p> <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS
-     * Regions)</p> </li> <li> <p> <code>11.00.6020.0.v1</code> (supported for all
-     * editions, and all AWS Regions)</p> </li> <li> <p> <code>11.00.5058.0.v1</code>
-     * (supported for all editions, and all AWS Regions except us-east-2, ca-central-1,
-     * and eu-west-2)</p> </li> <li> <p> <code>11.00.2100.60.v1</code> (supported for
-     * all editions, and all AWS Regions except us-east-2, ca-central-1, and
-     * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2008 R2</b> </p> <ul>
-     * <li> <p> <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS
-     * Regions except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
-     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS Regions
-     * except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
-     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS Regions
-     * except us-east-2, ca-central-1, and eu-west-2)</p> </li> </ul> <p> <b>MySQL</b>
-     * </p> <ul> <li> <p> <code>5.7.21</code> (supported in all AWS regions)</p> </li>
-     * <li> <p> <code>5.7.19</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.7.17</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.7.16</code> (supported in all AWS regions)</p> </li> </ul> <p/> <ul>
-     * <li> <p> <code>5.6.39</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.37</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.35</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.34</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.29</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.27</code> (supported in all AWS Regions except us-east-2,
-     * ca-central-1, eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.59</code>
-     * (supported in all AWS Regions)</p> </li> <li> <p> <code>5.5.57</code> (supported
-     * in all AWS Regions)</p> </li> <li> <p> <code>5.5.54</code> (supported in all AWS
-     * Regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
-     * Regions)</p> </li> <li> <p> <code>5.5.46</code> (supported in all AWS
-     * Regions)</p> </li> </ul> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
-     * <code>12.1.0.2.v9</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v8</code>
-     * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v7</code> (supported for EE in
-     * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in
-     * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
-     * <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v4</code>
-     * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v3</code> (supported for EE in
-     * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v2</code> (supported for EE in all AWS regions, and SE2 in
-     * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
-     * <code>12.1.0.2.v1</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> </ul> <p> <b>Oracle 11g</b> </p>
-     * <ul> <li> <p> <code>11.2.0.4.v13</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v12</code> (supported for EE,
-     * SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v11</code>
-     * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v10</code> (supported for EE, SE1, and SE, in all AWS
-     * regions)</p> </li> <li> <p> <code>11.2.0.4.v9</code> (supported for EE, SE1, and
-     * SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v8</code> (supported
-     * for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v7</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
-     * </li> <li> <p> <code>11.2.0.4.v6</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v5</code> (supported for EE, SE1,
-     * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v4</code>
-     * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v3</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
-     * </li> <li> <p> <code>11.2.0.4.v1</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version
-     * 10.1</b> </p> </li> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3
-     * | 9.6.2 | 9.6.1</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code> 9.5.9 |
-     * 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4.x:</b>
-     * <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 | 9.4.7</code> </p> </li> <li> <p>
-     * <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 | 9.3.16 | 9.3.14 | 9.3.12</code>
-     * </p> </li> </ul>
+     * <p>The version number of the database engine to use.</p> <p>For a list of valid
+     * engine versions, call <a>DescribeDBEngineVersions</a>.</p> <p>The following are
+     * the database engines and links to information about the major and minor versions
+     * that are available with Amazon RDS. Not every database engine is available for
+     * every AWS Region.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
+     * version number of the database engine to be used by the DB instance is managed
+     * by the DB cluster. For more information, see <a>CreateDBCluster</a>.</p> <p>
+     * <b>MariaDB</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * <b>Microsoft SQL Server</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
+     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * <p> <b>MySQL</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * <b>Oracle</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
+     * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * <b>PostgreSQL</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
+     * PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline CreateDBInstanceRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version number of the database engine to use.</p> <p>The following are
-     * the database engines and major and minor versions that are available with Amazon
-     * RDS. Not every database engine is available for every AWS Region.</p> <p>
-     * <b>Amazon Aurora</b> </p> <p>Not applicable. The version number of the database
-     * engine to be used by the DB instance is managed by the DB cluster. For more
-     * information, see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <ul> <li>
-     * <p> <code>10.2.12</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.2.11</code> (supported in all AWS Regions)</p> </li> </ul> <p/> <ul>
-     * <li> <p> <code>10.1.31</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.1.26</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.1.23</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.1.19</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.1.14</code> (supported in all AWS Regions except us-east-2)</p> </li>
-     * </ul> <p/> <ul> <li> <p> <code>10.0.34</code> (supported in all AWS Regions)</p>
-     * </li> <li> <p> <code>10.0.32</code> (supported in all AWS Regions)</p> </li>
-     * <li> <p> <code>10.0.31</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.0.28</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.0.24</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>10.0.17</code> (supported in all AWS Regions except us-east-2,
-     * ca-central-1, eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2017</b>
-     * </p> <ul> <li> <p> <code>14.00.1000.169.v1</code> (supported for all editions,
-     * and all AWS Regions)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b> </p>
-     * <ul> <li> <p> <code>13.00.4451.0.v1</code> (supported for all editions, and all
-     * AWS Regions)</p> </li> <li> <p> <code>13.00.4422.0.v1</code> (supported for all
-     * editions, and all AWS Regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code>
-     * (supported for all editions, and all AWS Regions)</p> </li> </ul> <p>
-     * <b>Microsoft SQL Server 2014</b> </p> <ul> <li> <p> <code>12.00.5546.0.v1</code>
-     * (supported for all editions, and all AWS Regions)</p> </li> <li> <p>
-     * <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS
-     * Regions)</p> </li> <li> <p> <code>12.00.4422.0.v1</code> (supported for all
-     * editions except Enterprise Edition, and all AWS Regions except ca-central-1 and
-     * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2012</b> </p> <ul> <li>
-     * <p> <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS
-     * Regions)</p> </li> <li> <p> <code>11.00.6020.0.v1</code> (supported for all
-     * editions, and all AWS Regions)</p> </li> <li> <p> <code>11.00.5058.0.v1</code>
-     * (supported for all editions, and all AWS Regions except us-east-2, ca-central-1,
-     * and eu-west-2)</p> </li> <li> <p> <code>11.00.2100.60.v1</code> (supported for
-     * all editions, and all AWS Regions except us-east-2, ca-central-1, and
-     * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2008 R2</b> </p> <ul>
-     * <li> <p> <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS
-     * Regions except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
-     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS Regions
-     * except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
-     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS Regions
-     * except us-east-2, ca-central-1, and eu-west-2)</p> </li> </ul> <p> <b>MySQL</b>
-     * </p> <ul> <li> <p> <code>5.7.21</code> (supported in all AWS regions)</p> </li>
-     * <li> <p> <code>5.7.19</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.7.17</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.7.16</code> (supported in all AWS regions)</p> </li> </ul> <p/> <ul>
-     * <li> <p> <code>5.6.39</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.37</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.35</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.34</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.29</code> (supported in all AWS Regions)</p> </li> <li> <p>
-     * <code>5.6.27</code> (supported in all AWS Regions except us-east-2,
-     * ca-central-1, eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.59</code>
-     * (supported in all AWS Regions)</p> </li> <li> <p> <code>5.5.57</code> (supported
-     * in all AWS Regions)</p> </li> <li> <p> <code>5.5.54</code> (supported in all AWS
-     * Regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
-     * Regions)</p> </li> <li> <p> <code>5.5.46</code> (supported in all AWS
-     * Regions)</p> </li> </ul> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
-     * <code>12.1.0.2.v9</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v8</code>
-     * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v7</code> (supported for EE in
-     * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in
-     * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
-     * <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v4</code>
-     * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v3</code> (supported for EE in
-     * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v2</code> (supported for EE in all AWS regions, and SE2 in
-     * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
-     * <code>12.1.0.2.v1</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> </ul> <p> <b>Oracle 11g</b> </p>
-     * <ul> <li> <p> <code>11.2.0.4.v13</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v12</code> (supported for EE,
-     * SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v11</code>
-     * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v10</code> (supported for EE, SE1, and SE, in all AWS
-     * regions)</p> </li> <li> <p> <code>11.2.0.4.v9</code> (supported for EE, SE1, and
-     * SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v8</code> (supported
-     * for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v7</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
-     * </li> <li> <p> <code>11.2.0.4.v6</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v5</code> (supported for EE, SE1,
-     * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v4</code>
-     * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v3</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
-     * </li> <li> <p> <code>11.2.0.4.v1</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version
-     * 10.1</b> </p> </li> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3
-     * | 9.6.2 | 9.6.1</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code> 9.5.9 |
-     * 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4.x:</b>
-     * <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 | 9.4.7</code> </p> </li> <li> <p>
-     * <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 | 9.3.16 | 9.3.14 | 9.3.12</code>
-     * </p> </li> </ul>
+     * <p>The version number of the database engine to use.</p> <p>For a list of valid
+     * engine versions, call <a>DescribeDBEngineVersions</a>.</p> <p>The following are
+     * the database engines and links to information about the major and minor versions
+     * that are available with Amazon RDS. Not every database engine is available for
+     * every AWS Region.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
+     * version number of the database engine to be used by the DB instance is managed
+     * by the DB cluster. For more information, see <a>CreateDBCluster</a>.</p> <p>
+     * <b>MariaDB</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * <b>Microsoft SQL Server</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
+     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * <p> <b>MySQL</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * <b>Oracle</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
+     * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * <b>PostgreSQL</b> </p> <p>See <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
+     * PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline CreateDBInstanceRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 

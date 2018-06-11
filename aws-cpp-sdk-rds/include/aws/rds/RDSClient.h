@@ -920,8 +920,8 @@ namespace Aws
          * another, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBClusterSnapshot.CrossRegion">
          * Copying a DB Cluster Snapshot in the Same Account, Either in the Same Region or
-         * Across Regions</a> in the Amazon RDS User Guide.</p> <p>For more information on
-         * Amazon Aurora, see <a
+         * Across Regions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>For more
+         * information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
          * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
          * <a
@@ -982,8 +982,8 @@ namespace Aws
          * another, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBClusterSnapshot.CrossRegion">
          * Copying a DB Cluster Snapshot in the Same Account, Either in the Same Region or
-         * Across Regions</a> in the Amazon RDS User Guide.</p> <p>For more information on
-         * Amazon Aurora, see <a
+         * Across Regions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>For more
+         * information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
          * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
          * <a
@@ -1046,8 +1046,8 @@ namespace Aws
          * another, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBClusterSnapshot.CrossRegion">
          * Copying a DB Cluster Snapshot in the Same Account, Either in the Same Region or
-         * Across Regions</a> in the Amazon RDS User Guide.</p> <p>For more information on
-         * Amazon Aurora, see <a
+         * Across Regions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>For more
+         * information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
          * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
          * <a
@@ -1090,7 +1090,8 @@ namespace Aws
          * <code>CopyDBSnapshot</code> action is the destination AWS Region for the DB
          * snapshot copy. </p> <p>For more information about copying snapshots, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopyDBSnapshot.html">Copying
-         * a DB Snapshot</a> in the Amazon RDS User Guide. </p><p><h3>See Also:</h3>   <a
+         * a DB Snapshot</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBSnapshot">AWS
          * API Reference</a></p>
          */
@@ -1103,7 +1104,8 @@ namespace Aws
          * <code>CopyDBSnapshot</code> action is the destination AWS Region for the DB
          * snapshot copy. </p> <p>For more information about copying snapshots, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopyDBSnapshot.html">Copying
-         * a DB Snapshot</a> in the Amazon RDS User Guide. </p><p><h3>See Also:</h3>   <a
+         * a DB Snapshot</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBSnapshot">AWS
          * API Reference</a></p>
          *
@@ -1118,7 +1120,8 @@ namespace Aws
          * <code>CopyDBSnapshot</code> action is the destination AWS Region for the DB
          * snapshot copy. </p> <p>For more information about copying snapshots, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopyDBSnapshot.html">Copying
-         * a DB Snapshot</a> in the Amazon RDS User Guide. </p><p><h3>See Also:</h3>   <a
+         * a DB Snapshot</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBSnapshot">AWS
          * API Reference</a></p>
          *

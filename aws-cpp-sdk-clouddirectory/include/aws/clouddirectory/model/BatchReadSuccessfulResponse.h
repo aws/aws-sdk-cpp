@@ -27,6 +27,7 @@
 #include <aws/clouddirectory/model/BatchListIndexResponse.h>
 #include <aws/clouddirectory/model/BatchListOutgoingTypedLinksResponse.h>
 #include <aws/clouddirectory/model/BatchListIncomingTypedLinksResponse.h>
+#include <aws/clouddirectory/model/BatchGetLinkAttributesResponse.h>
 #include <utility>
 
 namespace Aws
@@ -474,6 +475,32 @@ namespace Model
      */
     inline BatchReadSuccessfulResponse& WithListIncomingTypedLinks(BatchListIncomingTypedLinksResponse&& value) { SetListIncomingTypedLinks(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The list of attributes to retrieve from the typed link.</p>
+     */
+    inline const BatchGetLinkAttributesResponse& GetGetLinkAttributes() const{ return m_getLinkAttributes; }
+
+    /**
+     * <p>The list of attributes to retrieve from the typed link.</p>
+     */
+    inline void SetGetLinkAttributes(const BatchGetLinkAttributesResponse& value) { m_getLinkAttributesHasBeenSet = true; m_getLinkAttributes = value; }
+
+    /**
+     * <p>The list of attributes to retrieve from the typed link.</p>
+     */
+    inline void SetGetLinkAttributes(BatchGetLinkAttributesResponse&& value) { m_getLinkAttributesHasBeenSet = true; m_getLinkAttributes = std::move(value); }
+
+    /**
+     * <p>The list of attributes to retrieve from the typed link.</p>
+     */
+    inline BatchReadSuccessfulResponse& WithGetLinkAttributes(const BatchGetLinkAttributesResponse& value) { SetGetLinkAttributes(value); return *this;}
+
+    /**
+     * <p>The list of attributes to retrieve from the typed link.</p>
+     */
+    inline BatchReadSuccessfulResponse& WithGetLinkAttributes(BatchGetLinkAttributesResponse&& value) { SetGetLinkAttributes(std::move(value)); return *this;}
+
   private:
 
     BatchListObjectAttributesResponse m_listObjectAttributes;
@@ -511,6 +538,9 @@ namespace Model
 
     BatchListIncomingTypedLinksResponse m_listIncomingTypedLinks;
     bool m_listIncomingTypedLinksHasBeenSet;
+
+    BatchGetLinkAttributesResponse m_getLinkAttributes;
+    bool m_getLinkAttributesHasBeenSet;
   };
 
 } // namespace Model

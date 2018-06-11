@@ -30,7 +30,10 @@ CreateCachediSCSIVolumeRequest::CreateCachediSCSIVolumeRequest() :
     m_targetNameHasBeenSet(false),
     m_sourceVolumeARNHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_clientTokenHasBeenSet(false),
+    m_kMSEncrypted(false),
+    m_kMSEncryptedHasBeenSet(false),
+    m_kMSKeyHasBeenSet(false)
 {
 }
 
@@ -77,6 +80,18 @@ Aws::String CreateCachediSCSIVolumeRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("ClientToken", m_clientToken);
+
+  }
+
+  if(m_kMSEncryptedHasBeenSet)
+  {
+   payload.WithBool("KMSEncrypted", m_kMSEncrypted);
+
+  }
+
+  if(m_kMSKeyHasBeenSet)
+  {
+   payload.WithString("KMSKey", m_kMSKey);
 
   }
 

@@ -29,7 +29,10 @@ CreateTapesRequest::CreateTapesRequest() :
     m_clientTokenHasBeenSet(false),
     m_numTapesToCreate(0),
     m_numTapesToCreateHasBeenSet(false),
-    m_tapeBarcodePrefixHasBeenSet(false)
+    m_tapeBarcodePrefixHasBeenSet(false),
+    m_kMSEncrypted(false),
+    m_kMSEncryptedHasBeenSet(false),
+    m_kMSKeyHasBeenSet(false)
 {
 }
 
@@ -64,6 +67,18 @@ Aws::String CreateTapesRequest::SerializePayload() const
   if(m_tapeBarcodePrefixHasBeenSet)
   {
    payload.WithString("TapeBarcodePrefix", m_tapeBarcodePrefix);
+
+  }
+
+  if(m_kMSEncryptedHasBeenSet)
+  {
+   payload.WithBool("KMSEncrypted", m_kMSEncrypted);
+
+  }
+
+  if(m_kMSKeyHasBeenSet)
+  {
+   payload.WithString("KMSKey", m_kMSKey);
 
   }
 

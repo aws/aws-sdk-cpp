@@ -27,6 +27,7 @@
 #include <aws/clouddirectory/model/BatchListIndex.h>
 #include <aws/clouddirectory/model/BatchListOutgoingTypedLinks.h>
 #include <aws/clouddirectory/model/BatchListIncomingTypedLinks.h>
+#include <aws/clouddirectory/model/BatchGetLinkAttributes.h>
 #include <utility>
 
 namespace Aws
@@ -474,6 +475,32 @@ namespace Model
      */
     inline BatchReadOperation& WithListIncomingTypedLinks(BatchListIncomingTypedLinks&& value) { SetListIncomingTypedLinks(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Retrieves attributes that are associated with a typed link.</p>
+     */
+    inline const BatchGetLinkAttributes& GetGetLinkAttributes() const{ return m_getLinkAttributes; }
+
+    /**
+     * <p>Retrieves attributes that are associated with a typed link.</p>
+     */
+    inline void SetGetLinkAttributes(const BatchGetLinkAttributes& value) { m_getLinkAttributesHasBeenSet = true; m_getLinkAttributes = value; }
+
+    /**
+     * <p>Retrieves attributes that are associated with a typed link.</p>
+     */
+    inline void SetGetLinkAttributes(BatchGetLinkAttributes&& value) { m_getLinkAttributesHasBeenSet = true; m_getLinkAttributes = std::move(value); }
+
+    /**
+     * <p>Retrieves attributes that are associated with a typed link.</p>
+     */
+    inline BatchReadOperation& WithGetLinkAttributes(const BatchGetLinkAttributes& value) { SetGetLinkAttributes(value); return *this;}
+
+    /**
+     * <p>Retrieves attributes that are associated with a typed link.</p>
+     */
+    inline BatchReadOperation& WithGetLinkAttributes(BatchGetLinkAttributes&& value) { SetGetLinkAttributes(std::move(value)); return *this;}
+
   private:
 
     BatchListObjectAttributes m_listObjectAttributes;
@@ -511,6 +538,9 @@ namespace Model
 
     BatchListIncomingTypedLinks m_listIncomingTypedLinks;
     bool m_listIncomingTypedLinksHasBeenSet;
+
+    BatchGetLinkAttributes m_getLinkAttributes;
+    bool m_getLinkAttributesHasBeenSet;
   };
 
 } // namespace Model
