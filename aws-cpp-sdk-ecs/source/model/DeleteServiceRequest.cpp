@@ -24,7 +24,9 @@ using namespace Aws::Utils;
 
 DeleteServiceRequest::DeleteServiceRequest() : 
     m_clusterHasBeenSet(false),
-    m_serviceHasBeenSet(false)
+    m_serviceHasBeenSet(false),
+    m_force(false),
+    m_forceHasBeenSet(false)
 {
 }
 
@@ -41,6 +43,12 @@ Aws::String DeleteServiceRequest::SerializePayload() const
   if(m_serviceHasBeenSet)
   {
    payload.WithString("service", m_service);
+
+  }
+
+  if(m_forceHasBeenSet)
+  {
+   payload.WithBool("force", m_force);
 
   }
 

@@ -30,13 +30,15 @@ namespace Model
 
 CreateRemoteAccessSessionConfiguration::CreateRemoteAccessSessionConfiguration() : 
     m_billingMethod(BillingMethod::NOT_SET),
-    m_billingMethodHasBeenSet(false)
+    m_billingMethodHasBeenSet(false),
+    m_vpceConfigurationArnsHasBeenSet(false)
 {
 }
 
 CreateRemoteAccessSessionConfiguration::CreateRemoteAccessSessionConfiguration(const JsonValue& jsonValue) : 
     m_billingMethod(BillingMethod::NOT_SET),
-    m_billingMethodHasBeenSet(false)
+    m_billingMethodHasBeenSet(false),
+    m_vpceConfigurationArnsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +52,16 @@ CreateRemoteAccessSessionConfiguration& CreateRemoteAccessSessionConfiguration::
     m_billingMethodHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("vpceConfigurationArns"))
+  {
+    Array<JsonValue> vpceConfigurationArnsJsonList = jsonValue.GetArray("vpceConfigurationArns");
+    for(unsigned vpceConfigurationArnsIndex = 0; vpceConfigurationArnsIndex < vpceConfigurationArnsJsonList.GetLength(); ++vpceConfigurationArnsIndex)
+    {
+      m_vpceConfigurationArns.push_back(vpceConfigurationArnsJsonList[vpceConfigurationArnsIndex].AsString());
+    }
+    m_vpceConfigurationArnsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -60,6 +72,17 @@ JsonValue CreateRemoteAccessSessionConfiguration::Jsonize() const
   if(m_billingMethodHasBeenSet)
   {
    payload.WithString("billingMethod", BillingMethodMapper::GetNameForBillingMethod(m_billingMethod));
+  }
+
+  if(m_vpceConfigurationArnsHasBeenSet)
+  {
+   Array<JsonValue> vpceConfigurationArnsJsonList(m_vpceConfigurationArns.size());
+   for(unsigned vpceConfigurationArnsIndex = 0; vpceConfigurationArnsIndex < vpceConfigurationArnsJsonList.GetLength(); ++vpceConfigurationArnsIndex)
+   {
+     vpceConfigurationArnsJsonList[vpceConfigurationArnsIndex].AsString(m_vpceConfigurationArns[vpceConfigurationArnsIndex]);
+   }
+   payload.WithArray("vpceConfigurationArns", std::move(vpceConfigurationArnsJsonList));
+
   }
 
   return payload;

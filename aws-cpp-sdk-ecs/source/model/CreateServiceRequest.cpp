@@ -40,7 +40,9 @@ CreateServiceRequest::CreateServiceRequest() :
     m_placementStrategyHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_healthCheckGracePeriodSeconds(0),
-    m_healthCheckGracePeriodSecondsHasBeenSet(false)
+    m_healthCheckGracePeriodSecondsHasBeenSet(false),
+    m_schedulingStrategy(SchedulingStrategy::NOT_SET),
+    m_schedulingStrategyHasBeenSet(false)
 {
 }
 
@@ -155,6 +157,11 @@ Aws::String CreateServiceRequest::SerializePayload() const
   {
    payload.WithInteger("healthCheckGracePeriodSeconds", m_healthCheckGracePeriodSeconds);
 
+  }
+
+  if(m_schedulingStrategyHasBeenSet)
+  {
+   payload.WithString("schedulingStrategy", SchedulingStrategyMapper::GetNameForSchedulingStrategy(m_schedulingStrategy));
   }
 
   return payload.WriteReadable();

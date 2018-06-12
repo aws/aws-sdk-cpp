@@ -54,7 +54,9 @@ Service::Service() :
     m_placementStrategyHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_healthCheckGracePeriodSeconds(0),
-    m_healthCheckGracePeriodSecondsHasBeenSet(false)
+    m_healthCheckGracePeriodSecondsHasBeenSet(false),
+    m_schedulingStrategy(SchedulingStrategy::NOT_SET),
+    m_schedulingStrategyHasBeenSet(false)
 {
 }
 
@@ -84,7 +86,9 @@ Service::Service(const JsonValue& jsonValue) :
     m_placementStrategyHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_healthCheckGracePeriodSeconds(0),
-    m_healthCheckGracePeriodSecondsHasBeenSet(false)
+    m_healthCheckGracePeriodSecondsHasBeenSet(false),
+    m_schedulingStrategy(SchedulingStrategy::NOT_SET),
+    m_schedulingStrategyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -256,6 +260,13 @@ Service& Service::operator =(const JsonValue& jsonValue)
     m_healthCheckGracePeriodSecondsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("schedulingStrategy"))
+  {
+    m_schedulingStrategy = SchedulingStrategyMapper::GetSchedulingStrategyForName(jsonValue.GetString("schedulingStrategy"));
+
+    m_schedulingStrategyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -415,6 +426,11 @@ JsonValue Service::Jsonize() const
   {
    payload.WithInteger("healthCheckGracePeriodSeconds", m_healthCheckGracePeriodSeconds);
 
+  }
+
+  if(m_schedulingStrategyHasBeenSet)
+  {
+   payload.WithString("schedulingStrategy", SchedulingStrategyMapper::GetNameForSchedulingStrategy(m_schedulingStrategy));
   }
 
   return payload;

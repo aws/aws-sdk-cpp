@@ -21,6 +21,7 @@
 #include <aws/ecs/model/LaunchType.h>
 #include <aws/ecs/model/DeploymentConfiguration.h>
 #include <aws/ecs/model/NetworkConfiguration.h>
+#include <aws/ecs/model/SchedulingStrategy.h>
 #include <aws/ecs/model/LoadBalancer.h>
 #include <aws/ecs/model/ServiceRegistry.h>
 #include <aws/ecs/model/PlacementConstraint.h>
@@ -986,6 +987,92 @@ namespace Model
      */
     inline CreateServiceRequest& WithHealthCheckGracePeriodSeconds(int value) { SetHealthCheckGracePeriodSeconds(value); return *this;}
 
+
+    /**
+     * <p>The scheduling strategy to use for the service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
+     * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
+     * desired number of tasks across your cluster. By default, the service scheduler
+     * spreads tasks across Availability Zones. You can use task placement strategies
+     * and constraints to customize task placement decisions.</p> </li> <li> <p>
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
+     * each active container instance that meets all of the task placement constraints
+     * that you specify in your cluster. When using this strategy, there is no need to
+     * specify a desired number of tasks, a task placement strategy, or use Service
+     * Auto Scaling policies.</p> <note> <p>Fargate tasks do not support the
+     * <code>DAEMON</code> scheduling strategy.</p> </note> </li> </ul>
+     */
+    inline const SchedulingStrategy& GetSchedulingStrategy() const{ return m_schedulingStrategy; }
+
+    /**
+     * <p>The scheduling strategy to use for the service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
+     * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
+     * desired number of tasks across your cluster. By default, the service scheduler
+     * spreads tasks across Availability Zones. You can use task placement strategies
+     * and constraints to customize task placement decisions.</p> </li> <li> <p>
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
+     * each active container instance that meets all of the task placement constraints
+     * that you specify in your cluster. When using this strategy, there is no need to
+     * specify a desired number of tasks, a task placement strategy, or use Service
+     * Auto Scaling policies.</p> <note> <p>Fargate tasks do not support the
+     * <code>DAEMON</code> scheduling strategy.</p> </note> </li> </ul>
+     */
+    inline void SetSchedulingStrategy(const SchedulingStrategy& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = value; }
+
+    /**
+     * <p>The scheduling strategy to use for the service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
+     * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
+     * desired number of tasks across your cluster. By default, the service scheduler
+     * spreads tasks across Availability Zones. You can use task placement strategies
+     * and constraints to customize task placement decisions.</p> </li> <li> <p>
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
+     * each active container instance that meets all of the task placement constraints
+     * that you specify in your cluster. When using this strategy, there is no need to
+     * specify a desired number of tasks, a task placement strategy, or use Service
+     * Auto Scaling policies.</p> <note> <p>Fargate tasks do not support the
+     * <code>DAEMON</code> scheduling strategy.</p> </note> </li> </ul>
+     */
+    inline void SetSchedulingStrategy(SchedulingStrategy&& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = std::move(value); }
+
+    /**
+     * <p>The scheduling strategy to use for the service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
+     * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
+     * desired number of tasks across your cluster. By default, the service scheduler
+     * spreads tasks across Availability Zones. You can use task placement strategies
+     * and constraints to customize task placement decisions.</p> </li> <li> <p>
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
+     * each active container instance that meets all of the task placement constraints
+     * that you specify in your cluster. When using this strategy, there is no need to
+     * specify a desired number of tasks, a task placement strategy, or use Service
+     * Auto Scaling policies.</p> <note> <p>Fargate tasks do not support the
+     * <code>DAEMON</code> scheduling strategy.</p> </note> </li> </ul>
+     */
+    inline CreateServiceRequest& WithSchedulingStrategy(const SchedulingStrategy& value) { SetSchedulingStrategy(value); return *this;}
+
+    /**
+     * <p>The scheduling strategy to use for the service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
+     * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
+     * desired number of tasks across your cluster. By default, the service scheduler
+     * spreads tasks across Availability Zones. You can use task placement strategies
+     * and constraints to customize task placement decisions.</p> </li> <li> <p>
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
+     * each active container instance that meets all of the task placement constraints
+     * that you specify in your cluster. When using this strategy, there is no need to
+     * specify a desired number of tasks, a task placement strategy, or use Service
+     * Auto Scaling policies.</p> <note> <p>Fargate tasks do not support the
+     * <code>DAEMON</code> scheduling strategy.</p> </note> </li> </ul>
+     */
+    inline CreateServiceRequest& WithSchedulingStrategy(SchedulingStrategy&& value) { SetSchedulingStrategy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_cluster;
@@ -1032,6 +1119,9 @@ namespace Model
 
     int m_healthCheckGracePeriodSeconds;
     bool m_healthCheckGracePeriodSecondsHasBeenSet;
+
+    SchedulingStrategy m_schedulingStrategy;
+    bool m_schedulingStrategyHasBeenSet;
   };
 
 } // namespace Model
