@@ -140,7 +140,8 @@ namespace Model
      * <p>A summary of the delete operation. For more information about this summary,
      * see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-delete.html#sysman-inventory-delete-summary">Understanding
-     * the Delete Inventory Summary</a>.</p>
+     * the Delete Inventory Summary</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p>
      */
     inline const InventoryDeletionSummary& GetDeletionSummary() const{ return m_deletionSummary; }
 
@@ -148,7 +149,8 @@ namespace Model
      * <p>A summary of the delete operation. For more information about this summary,
      * see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-delete.html#sysman-inventory-delete-summary">Understanding
-     * the Delete Inventory Summary</a>.</p>
+     * the Delete Inventory Summary</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p>
      */
     inline void SetDeletionSummary(const InventoryDeletionSummary& value) { m_deletionSummary = value; }
 
@@ -156,7 +158,8 @@ namespace Model
      * <p>A summary of the delete operation. For more information about this summary,
      * see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-delete.html#sysman-inventory-delete-summary">Understanding
-     * the Delete Inventory Summary</a>.</p>
+     * the Delete Inventory Summary</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p>
      */
     inline void SetDeletionSummary(InventoryDeletionSummary&& value) { m_deletionSummary = std::move(value); }
 
@@ -164,7 +167,8 @@ namespace Model
      * <p>A summary of the delete operation. For more information about this summary,
      * see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-delete.html#sysman-inventory-delete-summary">Understanding
-     * the Delete Inventory Summary</a>.</p>
+     * the Delete Inventory Summary</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p>
      */
     inline DeleteInventoryResult& WithDeletionSummary(const InventoryDeletionSummary& value) { SetDeletionSummary(value); return *this;}
 
@@ -172,7 +176,8 @@ namespace Model
      * <p>A summary of the delete operation. For more information about this summary,
      * see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-delete.html#sysman-inventory-delete-summary">Understanding
-     * the Delete Inventory Summary</a>.</p>
+     * the Delete Inventory Summary</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p>
      */
     inline DeleteInventoryResult& WithDeletionSummary(InventoryDeletionSummary&& value) { SetDeletionSummary(std::move(value)); return *this;}
 

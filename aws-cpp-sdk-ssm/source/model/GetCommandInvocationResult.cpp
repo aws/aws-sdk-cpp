@@ -138,6 +138,12 @@ GetCommandInvocationResult& GetCommandInvocationResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("CloudWatchOutputConfig"))
+  {
+    m_cloudWatchOutputConfig = jsonValue.GetObject("CloudWatchOutputConfig");
+
+  }
+
 
 
   return *this;

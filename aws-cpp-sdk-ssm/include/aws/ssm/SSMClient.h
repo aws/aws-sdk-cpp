@@ -582,8 +582,9 @@ namespace Model
    * Manager User Guide</a>.</p> <p>To get started, verify prerequisites and
    * configure managed instances. For more information, see <a
    * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Systems
-   * Manager Prerequisites</a>.</p> <p>For information about other API actions you
-   * can perform on Amazon EC2 instances, see the <a
+   * Manager Prerequisites</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+   * <p>For information about other API actions you can perform on Amazon EC2
+   * instances, see the <a
    * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API
    * Reference</a>. For information about how to use a Query API, see <a
    * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/making-api-requests.html">Making
@@ -954,8 +955,9 @@ namespace Model
          * secure data storage. We also recommend that you secure access to the Amazon S3
          * bucket by creating a restrictive bucket policy. To view an example of a
          * restrictive Amazon S3 bucket policy for Resource Data Sync, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html#sysman-inventory-datasync">Configuring
-         * Resource Data Sync for Inventory</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync-create.html">Create
+         * a Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">AWS
          * API Reference</a></p>
          */
@@ -971,8 +973,9 @@ namespace Model
          * secure data storage. We also recommend that you secure access to the Amazon S3
          * bucket by creating a restrictive bucket policy. To view an example of a
          * restrictive Amazon S3 bucket policy for Resource Data Sync, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html#sysman-inventory-datasync">Configuring
-         * Resource Data Sync for Inventory</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync-create.html">Create
+         * a Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">AWS
          * API Reference</a></p>
          *
@@ -990,8 +993,9 @@ namespace Model
          * secure data storage. We also recommend that you secure access to the Amazon S3
          * bucket by creating a restrictive bucket policy. To view an example of a
          * restrictive Amazon S3 bucket policy for Resource Data Sync, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html#sysman-inventory-datasync">Configuring
-         * Resource Data Sync for Inventory</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync-create.html">Create
+         * a Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">AWS
          * API Reference</a></p>
          *
@@ -1278,8 +1282,8 @@ namespace Model
         /**
          * <p>Removes the server or virtual machine from the list of registered servers.
          * You can reregister the instance again at any time. If you don't plan to use Run
-         * Command on the server, we suggest uninstalling the SSM Agent
-         * first.</p><p><h3>See Also:</h3>   <a
+         * Command on the server, we suggest uninstalling SSM Agent first.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance">AWS
          * API Reference</a></p>
          */
@@ -1288,8 +1292,8 @@ namespace Model
         /**
          * <p>Removes the server or virtual machine from the list of registered servers.
          * You can reregister the instance again at any time. If you don't plan to use Run
-         * Command on the server, we suggest uninstalling the SSM Agent
-         * first.</p><p><h3>See Also:</h3>   <a
+         * Command on the server, we suggest uninstalling SSM Agent first.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance">AWS
          * API Reference</a></p>
          *
@@ -1300,8 +1304,8 @@ namespace Model
         /**
          * <p>Removes the server or virtual machine from the list of registered servers.
          * You can reregister the instance again at any time. If you don't plan to use Run
-         * Command on the server, we suggest uninstalling the SSM Agent
-         * first.</p><p><h3>See Also:</h3>   <a
+         * Command on the server, we suggest uninstalling SSM Agent first.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance">AWS
          * API Reference</a></p>
          *
@@ -2493,7 +2497,8 @@ namespace Model
         virtual void GetMaintenanceWindowTaskAsync(const Model::GetMaintenanceWindowTaskRequest& request, const GetMaintenanceWindowTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Get information about a parameter by using the parameter name. </p><p><h3>See
+         * <p>Get information about a parameter by using the parameter name. Don't confuse
+         * this API action with the <a>GetParameters</a> API action.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameter">AWS
          * API Reference</a></p>
@@ -2501,7 +2506,8 @@ namespace Model
         virtual Model::GetParameterOutcome GetParameter(const Model::GetParameterRequest& request) const;
 
         /**
-         * <p>Get information about a parameter by using the parameter name. </p><p><h3>See
+         * <p>Get information about a parameter by using the parameter name. Don't confuse
+         * this API action with the <a>GetParameters</a> API action.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameter">AWS
          * API Reference</a></p>
@@ -2511,7 +2517,8 @@ namespace Model
         virtual Model::GetParameterOutcomeCallable GetParameterCallable(const Model::GetParameterRequest& request) const;
 
         /**
-         * <p>Get information about a parameter by using the parameter name. </p><p><h3>See
+         * <p>Get information about a parameter by using the parameter name. Don't confuse
+         * this API action with the <a>GetParameters</a> API action.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameter">AWS
          * API Reference</a></p>
@@ -2549,14 +2556,16 @@ namespace Model
         virtual void GetParameterHistoryAsync(const Model::GetParameterHistoryRequest& request, const GetParameterHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Get details of a parameter.</p><p><h3>See Also:</h3>   <a
+         * <p>Get details of a parameter. Don't confuse this API action with the
+         * <a>GetParameter</a> API action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters">AWS
          * API Reference</a></p>
          */
         virtual Model::GetParametersOutcome GetParameters(const Model::GetParametersRequest& request) const;
 
         /**
-         * <p>Get details of a parameter.</p><p><h3>See Also:</h3>   <a
+         * <p>Get details of a parameter. Don't confuse this API action with the
+         * <a>GetParameter</a> API action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters">AWS
          * API Reference</a></p>
          *
@@ -2565,7 +2574,8 @@ namespace Model
         virtual Model::GetParametersOutcomeCallable GetParametersCallable(const Model::GetParametersRequest& request) const;
 
         /**
-         * <p>Get details of a parameter.</p><p><h3>See Also:</h3>   <a
+         * <p>Get details of a parameter. Don't confuse this API action with the
+         * <a>GetParameter</a> API action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters">AWS
          * API Reference</a></p>
          *
@@ -2576,15 +2586,16 @@ namespace Model
         /**
          * <p>Retrieve parameters in a specific hierarchy. For more information, see <a
          * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working
-         * with Systems Manager Parameters</a>. </p> <p>Request results are returned on a
-         * best-effort basis. If you specify <code>MaxResults</code> in the request, the
-         * response includes information up to the limit specified. The number of items
-         * returned, however, can be between zero and the value of <code>MaxResults</code>.
-         * If the service reaches an internal limit while processing the results, it stops
-         * the operation and returns the matching values up to that point and a
-         * <code>NextToken</code>. You can specify the <code>NextToken</code> in a
-         * subsequent call to get the next set of results.</p> <note> <p>This API action
-         * doesn't support filtering by tags. </p> </note><p><h3>See Also:</h3>   <a
+         * with Systems Manager Parameters</a> in the <i>AWS Systems Manager User
+         * Guide</i>. </p> <p>Request results are returned on a best-effort basis. If you
+         * specify <code>MaxResults</code> in the request, the response includes
+         * information up to the limit specified. The number of items returned, however,
+         * can be between zero and the value of <code>MaxResults</code>. If the service
+         * reaches an internal limit while processing the results, it stops the operation
+         * and returns the matching values up to that point and a <code>NextToken</code>.
+         * You can specify the <code>NextToken</code> in a subsequent call to get the next
+         * set of results.</p> <note> <p>This API action doesn't support filtering by tags.
+         * </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">AWS
          * API Reference</a></p>
          */
@@ -2593,15 +2604,16 @@ namespace Model
         /**
          * <p>Retrieve parameters in a specific hierarchy. For more information, see <a
          * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working
-         * with Systems Manager Parameters</a>. </p> <p>Request results are returned on a
-         * best-effort basis. If you specify <code>MaxResults</code> in the request, the
-         * response includes information up to the limit specified. The number of items
-         * returned, however, can be between zero and the value of <code>MaxResults</code>.
-         * If the service reaches an internal limit while processing the results, it stops
-         * the operation and returns the matching values up to that point and a
-         * <code>NextToken</code>. You can specify the <code>NextToken</code> in a
-         * subsequent call to get the next set of results.</p> <note> <p>This API action
-         * doesn't support filtering by tags. </p> </note><p><h3>See Also:</h3>   <a
+         * with Systems Manager Parameters</a> in the <i>AWS Systems Manager User
+         * Guide</i>. </p> <p>Request results are returned on a best-effort basis. If you
+         * specify <code>MaxResults</code> in the request, the response includes
+         * information up to the limit specified. The number of items returned, however,
+         * can be between zero and the value of <code>MaxResults</code>. If the service
+         * reaches an internal limit while processing the results, it stops the operation
+         * and returns the matching values up to that point and a <code>NextToken</code>.
+         * You can specify the <code>NextToken</code> in a subsequent call to get the next
+         * set of results.</p> <note> <p>This API action doesn't support filtering by tags.
+         * </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">AWS
          * API Reference</a></p>
          *
@@ -2612,15 +2624,16 @@ namespace Model
         /**
          * <p>Retrieve parameters in a specific hierarchy. For more information, see <a
          * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working
-         * with Systems Manager Parameters</a>. </p> <p>Request results are returned on a
-         * best-effort basis. If you specify <code>MaxResults</code> in the request, the
-         * response includes information up to the limit specified. The number of items
-         * returned, however, can be between zero and the value of <code>MaxResults</code>.
-         * If the service reaches an internal limit while processing the results, it stops
-         * the operation and returns the matching values up to that point and a
-         * <code>NextToken</code>. You can specify the <code>NextToken</code> in a
-         * subsequent call to get the next set of results.</p> <note> <p>This API action
-         * doesn't support filtering by tags. </p> </note><p><h3>See Also:</h3>   <a
+         * with Systems Manager Parameters</a> in the <i>AWS Systems Manager User
+         * Guide</i>. </p> <p>Request results are returned on a best-effort basis. If you
+         * specify <code>MaxResults</code> in the request, the response includes
+         * information up to the limit specified. The number of items returned, however,
+         * can be between zero and the value of <code>MaxResults</code>. If the service
+         * reaches an internal limit while processing the results, it stops the operation
+         * and returns the matching values up to that point and a <code>NextToken</code>.
+         * You can specify the <code>NextToken</code> in a subsequent call to get the next
+         * set of results.</p> <note> <p>This API action doesn't support filtering by tags.
+         * </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">AWS
          * API Reference</a></p>
          *

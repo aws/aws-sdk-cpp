@@ -54,7 +54,9 @@ namespace Model
    * </p> </li> <li> <p> <code>WindowsServer2008R2</code> </p> </li> <li> <p>
    * <code>WindowsServer2012</code> </p> </li> <li> <p>
    * <code>WindowsServer2012R2</code> </p> </li> <li> <p>
-   * <code>WindowsServer2016</code> </p> </li> </ul> <p> <i>Supported key:</i>
+   * <code>WindowsServer2016</code> </p> </li> <li> <p> <code>*</code> </p> <p>
+   * <i>Use a wildcard character (*) to target all supported operating system
+   * versions.</i> </p> </li> </ul> <p> <i>Supported key:</i>
    * <code>CLASSIFICATION</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p>
    * <code>CriticalUpdates</code> </p> </li> <li> <p> <code>DefinitionUpdates</code>
    * </p> </li> <li> <p> <code>Drivers</code> </p> </li> <li> <p>
@@ -71,18 +73,20 @@ namespace Model
    * <code>SECTION</code>. See the following lists for valid values for each of these
    * keys.</p> <p> <i>Supported key:</i> <code>PRODUCT</code> </p> <p> <i>Supported
    * values:</i> </p> <ul> <li> <p> <code>Ubuntu14.04</code> </p> </li> <li> <p>
-   * <code>Ubuntu16.04</code> </p> </li> </ul> <p> <i>Supported key:</i>
-   * <code>PRIORITY</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p>
-   * <code>Required</code> </p> </li> <li> <p> <code>Important</code> </p> </li> <li>
-   * <p> <code>Standard</code> </p> </li> <li> <p> <code>Optional</code> </p> </li>
-   * <li> <p> <code>Extra</code> </p> </li> </ul> <p> <i>Supported key:</i>
-   * <code>SECTION</code> </p> <p>Only the length of the key value is validated.
-   * Minimum length is 1. Maximum length is 64.</p> <p> <b>Amazon Linux Operating
-   * Systems</b> </p> <p>The supported keys for Amazon Linux operating systems are
-   * <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>SEVERITY</code>.
-   * See the following lists for valid values for each of these keys.</p> <p>
-   * <i>Supported key:</i> <code>PRODUCT</code> </p> <p> <i>Supported values:</i>
-   * </p> <ul> <li> <p> <code>AmazonLinux2012.03</code> </p> </li> <li> <p>
+   * <code>Ubuntu16.04</code> </p> </li> <li> <p> <code>*</code> </p> <p> <i>Use a
+   * wildcard character (*) to target all supported operating system versions.</i>
+   * </p> </li> </ul> <p> <i>Supported key:</i> <code>PRIORITY</code> </p> <p>
+   * <i>Supported values:</i> </p> <ul> <li> <p> <code>Required</code> </p> </li>
+   * <li> <p> <code>Important</code> </p> </li> <li> <p> <code>Standard</code> </p>
+   * </li> <li> <p> <code>Optional</code> </p> </li> <li> <p> <code>Extra</code> </p>
+   * </li> </ul> <p> <i>Supported key:</i> <code>SECTION</code> </p> <p>Only the
+   * length of the key value is validated. Minimum length is 1. Maximum length is
+   * 64.</p> <p> <b>Amazon Linux Operating Systems</b> </p> <p>The supported keys for
+   * Amazon Linux operating systems are <code>PRODUCT</code>,
+   * <code>CLASSIFICATION</code>, and <code>SEVERITY</code>. See the following lists
+   * for valid values for each of these keys.</p> <p> <i>Supported key:</i>
+   * <code>PRODUCT</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p>
+   * <code>AmazonLinux2012.03</code> </p> </li> <li> <p>
    * <code>AmazonLinux2012.09</code> </p> </li> <li> <p>
    * <code>AmazonLinux2013.03</code> </p> </li> <li> <p>
    * <code>AmazonLinux2013.09</code> </p> </li> <li> <p>
@@ -93,7 +97,9 @@ namespace Model
    * <code>AmazonLinux2016.03</code> </p> </li> <li> <p>
    * <code>AmazonLinux2016.09</code> </p> </li> <li> <p>
    * <code>AmazonLinux2017.03</code> </p> </li> <li> <p>
-   * <code>AmazonLinux2017.09</code> </p> </li> </ul> <p> <i>Supported key:</i>
+   * <code>AmazonLinux2017.09</code> </p> </li> <li> <p> <code>*</code> </p> <p>
+   * <i>Use a wildcard character (*) to target all supported operating system
+   * versions.</i> </p> </li> </ul> <p> <i>Supported key:</i>
    * <code>CLASSIFICATION</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p>
    * <code>Security</code> </p> </li> <li> <p> <code>Bugfix</code> </p> </li> <li>
    * <p> <code>Enhancement</code> </p> </li> <li> <p> <code>Recommended</code> </p>
@@ -115,7 +121,9 @@ namespace Model
    * <code>RedhatEnterpriseLinux7.1</code> </p> </li> <li> <p>
    * <code>RedhatEnterpriseLinux7.2</code> </p> </li> <li> <p>
    * <code>RedhatEnterpriseLinux7.3</code> </p> </li> <li> <p>
-   * <code>RedhatEnterpriseLinux7.4</code> </p> </li> </ul> <p> <i>Supported key:</i>
+   * <code>RedhatEnterpriseLinux7.4</code> </p> </li> <li> <p> <code>*</code> </p>
+   * <p> <i>Use a wildcard character (*) to target all supported operating system
+   * versions.</i> </p> </li> </ul> <p> <i>Supported key:</i>
    * <code>CLASSIFICATION</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p>
    * <code>Security</code> </p> </li> <li> <p> <code>Bugfix</code> </p> </li> <li>
    * <p> <code>Enhancement</code> </p> </li> <li> <p> <code>Recommended</code> </p>
@@ -133,34 +141,36 @@ namespace Model
    * <li> <p> <code>Suse12.4</code> </p> </li> <li> <p> <code>Suse12.5</code> </p>
    * </li> <li> <p> <code>Suse12.6</code> </p> </li> <li> <p> <code>Suse12.7</code>
    * </p> </li> <li> <p> <code>Suse12.8</code> </p> </li> <li> <p>
-   * <code>Suse12.9</code> </p> </li> </ul> <p> <i>Supported key:</i>
-   * <code>CLASSIFICATION</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p>
-   * <code>Security</code> </p> </li> <li> <p> <code>Recommended</code> </p> </li>
-   * <li> <p> <code>Optional</code> </p> </li> <li> <p> <code>Feature</code> </p>
-   * </li> <li> <p> <code>Document</code> </p> </li> <li> <p> <code>Yast</code> </p>
-   * </li> </ul> <p> <i>Supported key:</i> <code>SEVERITY</code> </p> <p>
-   * <i>Supported values:</i> </p> <ul> <li> <p> <code>Critical</code> </p> </li>
-   * <li> <p> <code>Important</code> </p> </li> <li> <p> <code>Moderate</code> </p>
-   * </li> <li> <p> <code>Low</code> </p> </li> </ul> <p> <b>CentOS Operating
-   * Systems</b> </p> <p>The supported keys for CentOS operating systems are
-   * <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>SEVERITY</code>.
-   * See the following lists for valid values for each of these keys.</p> <p>
-   * <i>Supported key:</i> <code>PRODUCT</code> </p> <p> <i>Supported values:</i>
-   * </p> <ul> <li> <p> <code>CentOS6.5</code> </p> </li> <li> <p>
-   * <code>CentOS6.6</code> </p> </li> <li> <p> <code>CentOS6.7</code> </p> </li>
-   * <li> <p> <code>CentOS6.8</code> </p> </li> <li> <p> <code>CentOS6.9</code> </p>
-   * </li> <li> <p> <code>CentOS7.0</code> </p> </li> <li> <p> <code>CentOS7.1</code>
-   * </p> </li> <li> <p> <code>CentOS7.2</code> </p> </li> <li> <p>
-   * <code>CentOS7.3</code> </p> </li> <li> <p> <code>CentOS7.4</code> </p> </li>
-   * </ul> <p> <i>Supported key:</i> <code>CLASSIFICATION</code> </p> <p>
+   * <code>Suse12.9</code> </p> </li> <li> <p> <code>*</code> </p> <p> <i>Use a
+   * wildcard character (*) to target all supported operating system versions.</i>
+   * </p> </li> </ul> <p> <i>Supported key:</i> <code>CLASSIFICATION</code> </p> <p>
    * <i>Supported values:</i> </p> <ul> <li> <p> <code>Security</code> </p> </li>
-   * <li> <p> <code>Bugfix</code> </p> </li> <li> <p> <code>Enhancement</code> </p>
-   * </li> <li> <p> <code>Recommended</code> </p> </li> <li> <p>
-   * <code>Newpackage</code> </p> </li> </ul> <p> <i>Supported key:</i>
+   * <li> <p> <code>Recommended</code> </p> </li> <li> <p> <code>Optional</code> </p>
+   * </li> <li> <p> <code>Feature</code> </p> </li> <li> <p> <code>Document</code>
+   * </p> </li> <li> <p> <code>Yast</code> </p> </li> </ul> <p> <i>Supported key:</i>
    * <code>SEVERITY</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p>
    * <code>Critical</code> </p> </li> <li> <p> <code>Important</code> </p> </li> <li>
-   * <p> <code>Medium</code> </p> </li> <li> <p> <code>Low</code> </p> </li>
-   * </ul><p><h3>See Also:</h3>   <a
+   * <p> <code>Moderate</code> </p> </li> <li> <p> <code>Low</code> </p> </li> </ul>
+   * <p> <b>CentOS Operating Systems</b> </p> <p>The supported keys for CentOS
+   * operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and
+   * <code>SEVERITY</code>. See the following lists for valid values for each of
+   * these keys.</p> <p> <i>Supported key:</i> <code>PRODUCT</code> </p> <p>
+   * <i>Supported values:</i> </p> <ul> <li> <p> <code>CentOS6.5</code> </p> </li>
+   * <li> <p> <code>CentOS6.6</code> </p> </li> <li> <p> <code>CentOS6.7</code> </p>
+   * </li> <li> <p> <code>CentOS6.8</code> </p> </li> <li> <p> <code>CentOS6.9</code>
+   * </p> </li> <li> <p> <code>CentOS7.0</code> </p> </li> <li> <p>
+   * <code>CentOS7.1</code> </p> </li> <li> <p> <code>CentOS7.2</code> </p> </li>
+   * <li> <p> <code>CentOS7.3</code> </p> </li> <li> <p> <code>CentOS7.4</code> </p>
+   * </li> <li> <p> <code>*</code> </p> <p> <i>Use a wildcard character (*) to target
+   * all supported operating system versions.</i> </p> </li> </ul> <p> <i>Supported
+   * key:</i> <code>CLASSIFICATION</code> </p> <p> <i>Supported values:</i> </p> <ul>
+   * <li> <p> <code>Security</code> </p> </li> <li> <p> <code>Bugfix</code> </p>
+   * </li> <li> <p> <code>Enhancement</code> </p> </li> <li> <p>
+   * <code>Recommended</code> </p> </li> <li> <p> <code>Newpackage</code> </p> </li>
+   * </ul> <p> <i>Supported key:</i> <code>SEVERITY</code> </p> <p> <i>Supported
+   * values:</i> </p> <ul> <li> <p> <code>Critical</code> </p> </li> <li> <p>
+   * <code>Important</code> </p> </li> <li> <p> <code>Medium</code> </p> </li> <li>
+   * <p> <code>Low</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PatchFilter">AWS API
    * Reference</a></p>
    */

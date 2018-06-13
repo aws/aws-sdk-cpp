@@ -35,7 +35,8 @@ namespace Model
 
   /**
    * <p>One or more filters. Use a filter to return a more specific list of
-   * results.</p><p><h3>See Also:</h3>   <a
+   * results.</p> <note> <p>The <code>Name</code> field can't be used with the
+   * <a>GetParametersByPath</a> API action.</p> </note><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ParameterStringFilter">AWS
    * API Reference</a></p>
    */

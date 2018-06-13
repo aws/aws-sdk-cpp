@@ -44,7 +44,8 @@ CommandInvocation::CommandInvocation() :
     m_standardErrorUrlHasBeenSet(false),
     m_commandPluginsHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
-    m_notificationConfigHasBeenSet(false)
+    m_notificationConfigHasBeenSet(false),
+    m_cloudWatchOutputConfigHasBeenSet(false)
 {
 }
 
@@ -64,7 +65,8 @@ CommandInvocation::CommandInvocation(const JsonValue& jsonValue) :
     m_standardErrorUrlHasBeenSet(false),
     m_commandPluginsHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
-    m_notificationConfigHasBeenSet(false)
+    m_notificationConfigHasBeenSet(false),
+    m_cloudWatchOutputConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -179,6 +181,13 @@ CommandInvocation& CommandInvocation::operator =(const JsonValue& jsonValue)
     m_notificationConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CloudWatchOutputConfig"))
+  {
+    m_cloudWatchOutputConfig = jsonValue.GetObject("CloudWatchOutputConfig");
+
+    m_cloudWatchOutputConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -276,6 +285,12 @@ JsonValue CommandInvocation::Jsonize() const
   if(m_notificationConfigHasBeenSet)
   {
    payload.WithObject("NotificationConfig", m_notificationConfig.Jsonize());
+
+  }
+
+  if(m_cloudWatchOutputConfigHasBeenSet)
+  {
+   payload.WithObject("CloudWatchOutputConfig", m_cloudWatchOutputConfig.Jsonize());
 
   }
 

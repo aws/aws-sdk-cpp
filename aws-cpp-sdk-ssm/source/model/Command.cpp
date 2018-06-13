@@ -52,8 +52,11 @@ Command::Command() :
     m_completedCountHasBeenSet(false),
     m_errorCount(0),
     m_errorCountHasBeenSet(false),
+    m_deliveryTimedOutCount(0),
+    m_deliveryTimedOutCountHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
-    m_notificationConfigHasBeenSet(false)
+    m_notificationConfigHasBeenSet(false),
+    m_cloudWatchOutputConfigHasBeenSet(false)
 {
 }
 
@@ -81,8 +84,11 @@ Command::Command(const JsonValue& jsonValue) :
     m_completedCountHasBeenSet(false),
     m_errorCount(0),
     m_errorCountHasBeenSet(false),
+    m_deliveryTimedOutCount(0),
+    m_deliveryTimedOutCountHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
-    m_notificationConfigHasBeenSet(false)
+    m_notificationConfigHasBeenSet(false),
+    m_cloudWatchOutputConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -238,6 +244,13 @@ Command& Command::operator =(const JsonValue& jsonValue)
     m_errorCountHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DeliveryTimedOutCount"))
+  {
+    m_deliveryTimedOutCount = jsonValue.GetInteger("DeliveryTimedOutCount");
+
+    m_deliveryTimedOutCountHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ServiceRole"))
   {
     m_serviceRole = jsonValue.GetString("ServiceRole");
@@ -250,6 +263,13 @@ Command& Command::operator =(const JsonValue& jsonValue)
     m_notificationConfig = jsonValue.GetObject("NotificationConfig");
 
     m_notificationConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CloudWatchOutputConfig"))
+  {
+    m_cloudWatchOutputConfig = jsonValue.GetObject("CloudWatchOutputConfig");
+
+    m_cloudWatchOutputConfigHasBeenSet = true;
   }
 
   return *this;
@@ -390,6 +410,12 @@ JsonValue Command::Jsonize() const
 
   }
 
+  if(m_deliveryTimedOutCountHasBeenSet)
+  {
+   payload.WithInteger("DeliveryTimedOutCount", m_deliveryTimedOutCount);
+
+  }
+
   if(m_serviceRoleHasBeenSet)
   {
    payload.WithString("ServiceRole", m_serviceRole);
@@ -399,6 +425,12 @@ JsonValue Command::Jsonize() const
   if(m_notificationConfigHasBeenSet)
   {
    payload.WithObject("NotificationConfig", m_notificationConfig.Jsonize());
+
+  }
+
+  if(m_cloudWatchOutputConfigHasBeenSet)
+  {
+   payload.WithObject("CloudWatchOutputConfig", m_cloudWatchOutputConfig.Jsonize());
 
   }
 
