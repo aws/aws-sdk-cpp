@@ -109,7 +109,7 @@ endif()
 target_include_directories(${PROJECT_NAME} PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:include>)
-target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
+target_link_libraries(${PROJECT_NAME} ${PLATFORM_DEP_LIBS} ${PROJECT_LIBS})
 
 if(COMMAND add_custom_testing_link_libraries)
     add_custom_testing_link_libraries()
