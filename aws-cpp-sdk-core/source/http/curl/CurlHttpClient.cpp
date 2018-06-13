@@ -422,6 +422,8 @@ void CurlHttpClient::MakeRequestInternal(HttpRequest& request,
         {
             curl_easy_setopt(connectionHandle, CURLOPT_READFUNCTION, &CurlHttpClient::ReadBody);
             curl_easy_setopt(connectionHandle, CURLOPT_READDATA, &readContext);
+            curl_easy_setopt(connectionHandle, CURLOPT_SEEKFUNCTION, &CurlHttpClient::SeekBody);
+            curl_easy_setopt(connectionHandle, CURLOPT_SEEKDATA, &readContext);
         }
 
         CURLcode curlResponseCode = curl_easy_perform(connectionHandle);
@@ -590,3 +592,41 @@ size_t CurlHttpClient::ReadBody(char* ptr, size_t size, size_t nmemb, void* user
     return 0;
 }
 
+size_t CurlHttpClient::SeekBody(void* userdata, curl_off_t offset, int origin)
+{
+    CurlReadCallbackContext* context = reinterpret_cast<CurlReadCallbackContext*>(userdata);
+    if(context == nullptr)
+    {
+        return CURL_SEEKFUNC_FAIL;
+    }
+
+    const CurlHttpClient* client = context->m_client;
+    if(!client->ContinueRequest(*context->m_request) || !client->IsRequestProcessingEnabled())
+    {
+        return CURL_SEEKFUNC_FAIL;
+    }
+
+    HttpRequest* request = context->m_request;
+    std::shared_ptr<Aws::IOStream> ioStream = request->GetContentBody();
+
+    std::ios_base::seekdir dir;
+    switch(origin)
+    {
+        case SEEK_SET:
+            dir = std::ios_base::beg;
+            break;
+        case SEEK_CUR:
+            dir = std::ios_base::cur;
+            break;
+        case SEEK_END:
+            dir = std::ios_base::end;
+            break;
+        default:
+            return CURL_SEEKFUNC_FAIL;
+    }
+
+    ioStream->clear();
+    ioStream->seekg(offset, dir);
+
+    return CURL_SEEKFUNC_OK;
+}
