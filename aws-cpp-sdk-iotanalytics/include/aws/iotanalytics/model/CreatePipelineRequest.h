@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iotanalytics/model/PipelineActivity.h>
+#include <aws/iotanalytics/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -150,6 +151,42 @@ namespace Model
      */
     inline CreatePipelineRequest& AddPipelineActivities(PipelineActivity&& value) { m_pipelineActivitiesHasBeenSet = true; m_pipelineActivities.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Metadata which can be used to manage the pipeline.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Metadata which can be used to manage the pipeline.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Metadata which can be used to manage the pipeline.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Metadata which can be used to manage the pipeline.</p>
+     */
+    inline CreatePipelineRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Metadata which can be used to manage the pipeline.</p>
+     */
+    inline CreatePipelineRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Metadata which can be used to manage the pipeline.</p>
+     */
+    inline CreatePipelineRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Metadata which can be used to manage the pipeline.</p>
+     */
+    inline CreatePipelineRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_pipelineName;
@@ -157,6 +194,9 @@ namespace Model
 
     Aws::Vector<PipelineActivity> m_pipelineActivities;
     bool m_pipelineActivitiesHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

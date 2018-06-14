@@ -37,9 +37,12 @@
 #include <aws/iotanalytics/model/ListDatasetsResult.h>
 #include <aws/iotanalytics/model/ListDatastoresResult.h>
 #include <aws/iotanalytics/model/ListPipelinesResult.h>
+#include <aws/iotanalytics/model/ListTagsForResourceResult.h>
 #include <aws/iotanalytics/model/RunPipelineActivityResult.h>
 #include <aws/iotanalytics/model/SampleChannelDataResult.h>
 #include <aws/iotanalytics/model/StartPipelineReprocessingResult.h>
+#include <aws/iotanalytics/model/TagResourceResult.h>
+#include <aws/iotanalytics/model/UntagResourceResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -108,10 +111,13 @@ namespace Model
         class ListDatasetsRequest;
         class ListDatastoresRequest;
         class ListPipelinesRequest;
+        class ListTagsForResourceRequest;
         class PutLoggingOptionsRequest;
         class RunPipelineActivityRequest;
         class SampleChannelDataRequest;
         class StartPipelineReprocessingRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UpdateChannelRequest;
         class UpdateDatasetRequest;
         class UpdateDatastoreRequest;
@@ -139,10 +145,13 @@ namespace Model
         typedef Aws::Utils::Outcome<ListDatasetsResult, Aws::Client::AWSError<IoTAnalyticsErrors>> ListDatasetsOutcome;
         typedef Aws::Utils::Outcome<ListDatastoresResult, Aws::Client::AWSError<IoTAnalyticsErrors>> ListDatastoresOutcome;
         typedef Aws::Utils::Outcome<ListPipelinesResult, Aws::Client::AWSError<IoTAnalyticsErrors>> ListPipelinesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<IoTAnalyticsErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTAnalyticsErrors>> PutLoggingOptionsOutcome;
         typedef Aws::Utils::Outcome<RunPipelineActivityResult, Aws::Client::AWSError<IoTAnalyticsErrors>> RunPipelineActivityOutcome;
         typedef Aws::Utils::Outcome<SampleChannelDataResult, Aws::Client::AWSError<IoTAnalyticsErrors>> SampleChannelDataOutcome;
         typedef Aws::Utils::Outcome<StartPipelineReprocessingResult, Aws::Client::AWSError<IoTAnalyticsErrors>> StartPipelineReprocessingOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<IoTAnalyticsErrors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<IoTAnalyticsErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTAnalyticsErrors>> UpdateChannelOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTAnalyticsErrors>> UpdateDatasetOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTAnalyticsErrors>> UpdateDatastoreOutcome;
@@ -170,10 +179,13 @@ namespace Model
         typedef std::future<ListDatasetsOutcome> ListDatasetsOutcomeCallable;
         typedef std::future<ListDatastoresOutcome> ListDatastoresOutcomeCallable;
         typedef std::future<ListPipelinesOutcome> ListPipelinesOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutLoggingOptionsOutcome> PutLoggingOptionsOutcomeCallable;
         typedef std::future<RunPipelineActivityOutcome> RunPipelineActivityOutcomeCallable;
         typedef std::future<SampleChannelDataOutcome> SampleChannelDataOutcomeCallable;
         typedef std::future<StartPipelineReprocessingOutcome> StartPipelineReprocessingOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateChannelOutcome> UpdateChannelOutcomeCallable;
         typedef std::future<UpdateDatasetOutcome> UpdateDatasetOutcomeCallable;
         typedef std::future<UpdateDatastoreOutcome> UpdateDatastoreOutcomeCallable;
@@ -204,38 +216,40 @@ namespace Model
     typedef std::function<void(const IoTAnalyticsClient*, const Model::ListDatasetsRequest&, const Model::ListDatasetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetsResponseReceivedHandler;
     typedef std::function<void(const IoTAnalyticsClient*, const Model::ListDatastoresRequest&, const Model::ListDatastoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatastoresResponseReceivedHandler;
     typedef std::function<void(const IoTAnalyticsClient*, const Model::ListPipelinesRequest&, const Model::ListPipelinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPipelinesResponseReceivedHandler;
+    typedef std::function<void(const IoTAnalyticsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const IoTAnalyticsClient*, const Model::PutLoggingOptionsRequest&, const Model::PutLoggingOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLoggingOptionsResponseReceivedHandler;
     typedef std::function<void(const IoTAnalyticsClient*, const Model::RunPipelineActivityRequest&, const Model::RunPipelineActivityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RunPipelineActivityResponseReceivedHandler;
     typedef std::function<void(const IoTAnalyticsClient*, const Model::SampleChannelDataRequest&, const Model::SampleChannelDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SampleChannelDataResponseReceivedHandler;
     typedef std::function<void(const IoTAnalyticsClient*, const Model::StartPipelineReprocessingRequest&, const Model::StartPipelineReprocessingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartPipelineReprocessingResponseReceivedHandler;
+    typedef std::function<void(const IoTAnalyticsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const IoTAnalyticsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const IoTAnalyticsClient*, const Model::UpdateChannelRequest&, const Model::UpdateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateChannelResponseReceivedHandler;
     typedef std::function<void(const IoTAnalyticsClient*, const Model::UpdateDatasetRequest&, const Model::UpdateDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDatasetResponseReceivedHandler;
     typedef std::function<void(const IoTAnalyticsClient*, const Model::UpdateDatastoreRequest&, const Model::UpdateDatastoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDatastoreResponseReceivedHandler;
     typedef std::function<void(const IoTAnalyticsClient*, const Model::UpdatePipelineRequest&, const Model::UpdatePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePipelineResponseReceivedHandler;
 
   /**
-   * <p>AWS IoT Analytics provides advanced data analysis for AWS IoT. It allows you
-   * to collect large amounts of device data, process messages, store them, and then
-   * query the data and run sophisticated analytics to make accurate decisions in
-   * your IoT applications and machine learning use cases. AWS IoT Analytics enables
-   * advanced data exploration through integration with Jupyter Notebooks and data
-   * visualization through integration with Amazon QuickSight.</p> <p>Traditional
-   * analytics and business intelligence tools are designed to process structured
-   * data. IoT data often comes from devices that record noisy processes (such as
-   * temperature, motion, or sound). As a result, the data from these devices can
-   * have significant gaps, corrupted messages, and false readings that must be
-   * cleaned up before analysis can occur. Also, IoT data is often only meaningful in
-   * the context of other data from external sources. </p> <p>AWS IoT Analytics
-   * automates each of the steps required to analyze data from IoT devices. AWS IoT
-   * Analytics filters, transforms, and enriches IoT data before storing it in a
-   * time-series data store for analysis. You can set up the service to collect only
-   * the data you need from your devices, apply mathematical transforms to process
-   * the data, and enrich the data with device-specific metadata such as device type
-   * and location before storing it. Then, you can analyze your data by running
-   * queries using the built-in SQL query engine, or perform more complex analytics
-   * and machine learning inference. AWS IoT Analytics includes models for common IoT
-   * use cases so you can answer questions like which devices are about to fail or
-   * which customers are at risk of abandoning their wearable devices.</p>
+   * <p>AWS IoT Analytics allows you to collect large amounts of device data, process
+   * messages, and store them. You can then query the data and run sophisticated
+   * analytics on it. AWS IoT Analytics enables advanced data exploration through
+   * integration with Jupyter Notebooks and data visualization through integration
+   * with Amazon QuickSight.</p> <p>Traditional analytics and business intelligence
+   * tools are designed to process structured data. IoT data often comes from devices
+   * that record noisy processes (such as temperature, motion, or sound). As a result
+   * the data from these devices can have significant gaps, corrupted messages, and
+   * false readings that must be cleaned up before analysis can occur. Also, IoT data
+   * is often only meaningful in the context of other data from external sources.
+   * </p> <p>AWS IoT Analytics automates the steps required to analyze data from IoT
+   * devices. AWS IoT Analytics filters, transforms, and enriches IoT data before
+   * storing it in a time-series data store for analysis. You can set up the service
+   * to collect only the data you need from your devices, apply mathematical
+   * transforms to process the data, and enrich the data with device-specific
+   * metadata such as device type and location before storing it. Then, you can
+   * analyze your data by running queries using the built-in SQL query engine, or
+   * perform more complex analytics and machine learning inference. AWS IoT Analytics
+   * includes pre-built models for common IoT use cases so you can answer questions
+   * like which devices are about to fail or which customers are at risk of
+   * abandoning their wearable devices.</p>
    */
   class AWS_IOTANALYTICS_API IoTAnalyticsClient : public Aws::Client::AWSJsonClient
   {
@@ -856,16 +870,52 @@ namespace Model
         virtual void ListPipelinesAsync(const Model::ListPipelinesRequest& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sets or updates the AWS IoT Analytics logging options.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the tags (metadata) which you have assigned to the
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Lists the tags (metadata) which you have assigned to the
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Lists the tags (metadata) which you have assigned to the
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Sets or updates the AWS IoT Analytics logging options.</p> <p>Note that if
+         * you update the value of any <code>loggingOptions</code> field, it takes up to
+         * one minute for the change to take effect. Also, if you change the policy
+         * attached to the role you specified in the roleArn field (for example, to correct
+         * an invalid policy) it takes up to 5 minutes for that change to take effect.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/PutLoggingOptions">AWS
          * API Reference</a></p>
          */
         virtual Model::PutLoggingOptionsOutcome PutLoggingOptions(const Model::PutLoggingOptionsRequest& request) const;
 
         /**
-         * <p>Sets or updates the AWS IoT Analytics logging options.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Sets or updates the AWS IoT Analytics logging options.</p> <p>Note that if
+         * you update the value of any <code>loggingOptions</code> field, it takes up to
+         * one minute for the change to take effect. Also, if you change the policy
+         * attached to the role you specified in the roleArn field (for example, to correct
+         * an invalid policy) it takes up to 5 minutes for that change to take effect.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/PutLoggingOptions">AWS
          * API Reference</a></p>
          *
@@ -874,8 +924,12 @@ namespace Model
         virtual Model::PutLoggingOptionsOutcomeCallable PutLoggingOptionsCallable(const Model::PutLoggingOptionsRequest& request) const;
 
         /**
-         * <p>Sets or updates the AWS IoT Analytics logging options.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Sets or updates the AWS IoT Analytics logging options.</p> <p>Note that if
+         * you update the value of any <code>loggingOptions</code> field, it takes up to
+         * one minute for the change to take effect. Also, if you change the policy
+         * attached to the role you specified in the roleArn field (for example, to correct
+         * an invalid policy) it takes up to 5 minutes for that change to take effect.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/PutLoggingOptions">AWS
          * API Reference</a></p>
          *
@@ -969,6 +1023,62 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartPipelineReprocessingAsync(const Model::StartPipelineReprocessingRequest& request, const StartPipelineReprocessingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds to or modifies the tags of the given resource. Tags are metadata which
+         * can be used to manage a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds to or modifies the tags of the given resource. Tags are metadata which
+         * can be used to manage a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds to or modifies the tags of the given resource. Tags are metadata which
+         * can be used to manage a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes the given tags (metadata) from the resource.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes the given tags (metadata) from the resource.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes the given tags (metadata) from the resource.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the settings of a channel.</p><p><h3>See Also:</h3>   <a
@@ -1097,10 +1207,13 @@ namespace Model
         void ListDatasetsAsyncHelper(const Model::ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDatastoresAsyncHelper(const Model::ListDatastoresRequest& request, const ListDatastoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPipelinesAsyncHelper(const Model::ListPipelinesRequest& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutLoggingOptionsAsyncHelper(const Model::PutLoggingOptionsRequest& request, const PutLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RunPipelineActivityAsyncHelper(const Model::RunPipelineActivityRequest& request, const RunPipelineActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SampleChannelDataAsyncHelper(const Model::SampleChannelDataRequest& request, const SampleChannelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartPipelineReprocessingAsyncHelper(const Model::StartPipelineReprocessingRequest& request, const StartPipelineReprocessingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateChannelAsyncHelper(const Model::UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDatasetAsyncHelper(const Model::UpdateDatasetRequest& request, const UpdateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDatastoreAsyncHelper(const Model::UpdateDatastoreRequest& request, const UpdateDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

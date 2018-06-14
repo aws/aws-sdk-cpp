@@ -25,7 +25,8 @@ using namespace Aws::Utils;
 CreateDatasetRequest::CreateDatasetRequest() : 
     m_datasetNameHasBeenSet(false),
     m_actionsHasBeenSet(false),
-    m_triggersHasBeenSet(false)
+    m_triggersHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,17 @@ Aws::String CreateDatasetRequest::SerializePayload() const
      triggersJsonList[triggersIndex].AsObject(m_triggers[triggersIndex].Jsonize());
    }
    payload.WithArray("triggers", std::move(triggersJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

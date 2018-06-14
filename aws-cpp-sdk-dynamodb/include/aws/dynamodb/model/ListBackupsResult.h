@@ -81,37 +81,100 @@ namespace Model
 
 
     /**
-     * <p>Last evaluated BackupARN.</p>
+     * <p> The ARN of the backup last evaluated when the current page of results was
+     * returned, inclusive of the current page of results. This value may be specified
+     * as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code>
+     * operation in order to fetch the next page of results. </p> <p> If
+     * <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has
+     * been processed and there are no more results to be retrieved. </p> <p> If
+     * <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate
+     * there is more data to be returned. All results are guaranteed to have been
+     * returned if and only if no value for <code>LastEvaluatedBackupArn</code> is
+     * returned. </p>
      */
     inline const Aws::String& GetLastEvaluatedBackupArn() const{ return m_lastEvaluatedBackupArn; }
 
     /**
-     * <p>Last evaluated BackupARN.</p>
+     * <p> The ARN of the backup last evaluated when the current page of results was
+     * returned, inclusive of the current page of results. This value may be specified
+     * as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code>
+     * operation in order to fetch the next page of results. </p> <p> If
+     * <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has
+     * been processed and there are no more results to be retrieved. </p> <p> If
+     * <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate
+     * there is more data to be returned. All results are guaranteed to have been
+     * returned if and only if no value for <code>LastEvaluatedBackupArn</code> is
+     * returned. </p>
      */
     inline void SetLastEvaluatedBackupArn(const Aws::String& value) { m_lastEvaluatedBackupArn = value; }
 
     /**
-     * <p>Last evaluated BackupARN.</p>
+     * <p> The ARN of the backup last evaluated when the current page of results was
+     * returned, inclusive of the current page of results. This value may be specified
+     * as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code>
+     * operation in order to fetch the next page of results. </p> <p> If
+     * <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has
+     * been processed and there are no more results to be retrieved. </p> <p> If
+     * <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate
+     * there is more data to be returned. All results are guaranteed to have been
+     * returned if and only if no value for <code>LastEvaluatedBackupArn</code> is
+     * returned. </p>
      */
     inline void SetLastEvaluatedBackupArn(Aws::String&& value) { m_lastEvaluatedBackupArn = std::move(value); }
 
     /**
-     * <p>Last evaluated BackupARN.</p>
+     * <p> The ARN of the backup last evaluated when the current page of results was
+     * returned, inclusive of the current page of results. This value may be specified
+     * as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code>
+     * operation in order to fetch the next page of results. </p> <p> If
+     * <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has
+     * been processed and there are no more results to be retrieved. </p> <p> If
+     * <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate
+     * there is more data to be returned. All results are guaranteed to have been
+     * returned if and only if no value for <code>LastEvaluatedBackupArn</code> is
+     * returned. </p>
      */
     inline void SetLastEvaluatedBackupArn(const char* value) { m_lastEvaluatedBackupArn.assign(value); }
 
     /**
-     * <p>Last evaluated BackupARN.</p>
+     * <p> The ARN of the backup last evaluated when the current page of results was
+     * returned, inclusive of the current page of results. This value may be specified
+     * as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code>
+     * operation in order to fetch the next page of results. </p> <p> If
+     * <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has
+     * been processed and there are no more results to be retrieved. </p> <p> If
+     * <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate
+     * there is more data to be returned. All results are guaranteed to have been
+     * returned if and only if no value for <code>LastEvaluatedBackupArn</code> is
+     * returned. </p>
      */
     inline ListBackupsResult& WithLastEvaluatedBackupArn(const Aws::String& value) { SetLastEvaluatedBackupArn(value); return *this;}
 
     /**
-     * <p>Last evaluated BackupARN.</p>
+     * <p> The ARN of the backup last evaluated when the current page of results was
+     * returned, inclusive of the current page of results. This value may be specified
+     * as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code>
+     * operation in order to fetch the next page of results. </p> <p> If
+     * <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has
+     * been processed and there are no more results to be retrieved. </p> <p> If
+     * <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate
+     * there is more data to be returned. All results are guaranteed to have been
+     * returned if and only if no value for <code>LastEvaluatedBackupArn</code> is
+     * returned. </p>
      */
     inline ListBackupsResult& WithLastEvaluatedBackupArn(Aws::String&& value) { SetLastEvaluatedBackupArn(std::move(value)); return *this;}
 
     /**
-     * <p>Last evaluated BackupARN.</p>
+     * <p> The ARN of the backup last evaluated when the current page of results was
+     * returned, inclusive of the current page of results. This value may be specified
+     * as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code>
+     * operation in order to fetch the next page of results. </p> <p> If
+     * <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has
+     * been processed and there are no more results to be retrieved. </p> <p> If
+     * <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate
+     * there is more data to be returned. All results are guaranteed to have been
+     * returned if and only if no value for <code>LastEvaluatedBackupArn</code> is
+     * returned. </p>
      */
     inline ListBackupsResult& WithLastEvaluatedBackupArn(const char* value) { SetLastEvaluatedBackupArn(value); return *this;}
 

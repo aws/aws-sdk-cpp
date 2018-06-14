@@ -16,6 +16,8 @@
 #pragma once
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/dynamodb/model/SSEStatus.h>
+#include <aws/dynamodb/model/SSEType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -97,10 +99,93 @@ namespace Model
      */
     inline SSEDescription& WithStatus(SSEStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Server-side encryption type:</p> <ul> <li> <p> <code>AES256</code> -
+     * Server-side encryption which uses the AES256 algorithm.</p> </li> <li> <p>
+     * <code>KMS</code> - Server-side encryption which uses AWS Key Management
+     * Service.</p> </li> </ul>
+     */
+    inline const SSEType& GetSSEType() const{ return m_sSEType; }
+
+    /**
+     * <p>Server-side encryption type:</p> <ul> <li> <p> <code>AES256</code> -
+     * Server-side encryption which uses the AES256 algorithm.</p> </li> <li> <p>
+     * <code>KMS</code> - Server-side encryption which uses AWS Key Management
+     * Service.</p> </li> </ul>
+     */
+    inline void SetSSEType(const SSEType& value) { m_sSETypeHasBeenSet = true; m_sSEType = value; }
+
+    /**
+     * <p>Server-side encryption type:</p> <ul> <li> <p> <code>AES256</code> -
+     * Server-side encryption which uses the AES256 algorithm.</p> </li> <li> <p>
+     * <code>KMS</code> - Server-side encryption which uses AWS Key Management
+     * Service.</p> </li> </ul>
+     */
+    inline void SetSSEType(SSEType&& value) { m_sSETypeHasBeenSet = true; m_sSEType = std::move(value); }
+
+    /**
+     * <p>Server-side encryption type:</p> <ul> <li> <p> <code>AES256</code> -
+     * Server-side encryption which uses the AES256 algorithm.</p> </li> <li> <p>
+     * <code>KMS</code> - Server-side encryption which uses AWS Key Management
+     * Service.</p> </li> </ul>
+     */
+    inline SSEDescription& WithSSEType(const SSEType& value) { SetSSEType(value); return *this;}
+
+    /**
+     * <p>Server-side encryption type:</p> <ul> <li> <p> <code>AES256</code> -
+     * Server-side encryption which uses the AES256 algorithm.</p> </li> <li> <p>
+     * <code>KMS</code> - Server-side encryption which uses AWS Key Management
+     * Service.</p> </li> </ul>
+     */
+    inline SSEDescription& WithSSEType(SSEType&& value) { SetSSEType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The KMS master key ARN used for the KMS encryption.</p>
+     */
+    inline const Aws::String& GetKMSMasterKeyArn() const{ return m_kMSMasterKeyArn; }
+
+    /**
+     * <p>The KMS master key ARN used for the KMS encryption.</p>
+     */
+    inline void SetKMSMasterKeyArn(const Aws::String& value) { m_kMSMasterKeyArnHasBeenSet = true; m_kMSMasterKeyArn = value; }
+
+    /**
+     * <p>The KMS master key ARN used for the KMS encryption.</p>
+     */
+    inline void SetKMSMasterKeyArn(Aws::String&& value) { m_kMSMasterKeyArnHasBeenSet = true; m_kMSMasterKeyArn = std::move(value); }
+
+    /**
+     * <p>The KMS master key ARN used for the KMS encryption.</p>
+     */
+    inline void SetKMSMasterKeyArn(const char* value) { m_kMSMasterKeyArnHasBeenSet = true; m_kMSMasterKeyArn.assign(value); }
+
+    /**
+     * <p>The KMS master key ARN used for the KMS encryption.</p>
+     */
+    inline SSEDescription& WithKMSMasterKeyArn(const Aws::String& value) { SetKMSMasterKeyArn(value); return *this;}
+
+    /**
+     * <p>The KMS master key ARN used for the KMS encryption.</p>
+     */
+    inline SSEDescription& WithKMSMasterKeyArn(Aws::String&& value) { SetKMSMasterKeyArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The KMS master key ARN used for the KMS encryption.</p>
+     */
+    inline SSEDescription& WithKMSMasterKeyArn(const char* value) { SetKMSMasterKeyArn(value); return *this;}
+
   private:
 
     SSEStatus m_status;
     bool m_statusHasBeenSet;
+
+    SSEType m_sSEType;
+    bool m_sSETypeHasBeenSet;
+
+    Aws::String m_kMSMasterKeyArn;
+    bool m_kMSMasterKeyArnHasBeenSet;
   };
 
 } // namespace Model

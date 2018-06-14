@@ -30,13 +30,19 @@ namespace Model
 
 SSEDescription::SSEDescription() : 
     m_status(SSEStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_sSEType(SSEType::NOT_SET),
+    m_sSETypeHasBeenSet(false),
+    m_kMSMasterKeyArnHasBeenSet(false)
 {
 }
 
 SSEDescription::SSEDescription(const JsonValue& jsonValue) : 
     m_status(SSEStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_sSEType(SSEType::NOT_SET),
+    m_sSETypeHasBeenSet(false),
+    m_kMSMasterKeyArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +56,20 @@ SSEDescription& SSEDescription::operator =(const JsonValue& jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SSEType"))
+  {
+    m_sSEType = SSETypeMapper::GetSSETypeForName(jsonValue.GetString("SSEType"));
+
+    m_sSETypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("KMSMasterKeyArn"))
+  {
+    m_kMSMasterKeyArn = jsonValue.GetString("KMSMasterKeyArn");
+
+    m_kMSMasterKeyArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -60,6 +80,17 @@ JsonValue SSEDescription::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("Status", SSEStatusMapper::GetNameForSSEStatus(m_status));
+  }
+
+  if(m_sSETypeHasBeenSet)
+  {
+   payload.WithString("SSEType", SSETypeMapper::GetNameForSSEType(m_sSEType));
+  }
+
+  if(m_kMSMasterKeyArnHasBeenSet)
+  {
+   payload.WithString("KMSMasterKeyArn", m_kMSMasterKeyArn);
+
   }
 
   return payload;

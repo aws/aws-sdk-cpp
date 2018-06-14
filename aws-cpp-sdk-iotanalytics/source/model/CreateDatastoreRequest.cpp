@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 
 CreateDatastoreRequest::CreateDatastoreRequest() : 
     m_datastoreNameHasBeenSet(false),
-    m_retentionPeriodHasBeenSet(false)
+    m_retentionPeriodHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,17 @@ Aws::String CreateDatastoreRequest::SerializePayload() const
   if(m_retentionPeriodHasBeenSet)
   {
    payload.WithObject("retentionPeriod", m_retentionPeriod.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

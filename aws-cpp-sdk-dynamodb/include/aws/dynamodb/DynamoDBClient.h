@@ -716,18 +716,24 @@ namespace Model
         /**
          * <p>Creates a global table from an existing table. A global table creates a
          * replication relationship between two or more DynamoDB tables with the same table
-         * name in the provided regions. </p> <p> Tables can only be added as the replicas
-         * of a global table group under the following conditions: </p> <ul> <li> <p> The
-         * tables must have the same name. </p> </li> <li> <p> The tables must contain no
-         * items. </p> </li> <li> <p> The tables must have the same hash key and sort key
-         * (if present). </p> </li> <li> <p> The tables must have DynamoDB Streams enabled
-         * (NEW_AND_OLD_IMAGES). </p> </li> <li> <p> The tables must have same provisioned
-         * and maximum write capacity units. </p> </li> </ul> <p> If global secondary
-         * indexes are specified, then the following conditions must also be met: </p> <ul>
-         * <li> <p> The global secondary indexes must have the same name. </p> </li> <li>
-         * <p> The global secondary indexes must have the same hash key and sort key (if
-         * present). </p> </li> <li> <p> The global secondary indexes must have the same
-         * provisioned and maximum write capacity units. </p> </li> </ul><p><h3>See
+         * name in the provided regions. </p> <p>If you want to add a new replica table to
+         * a global table, each of the following conditions must be true:</p> <ul> <li>
+         * <p>The table must have the same primary key as all of the other replicas.</p>
+         * </li> <li> <p>The table must have the same name as all of the other
+         * replicas.</p> </li> <li> <p>The table must have DynamoDB Streams enabled, with
+         * the stream containing both the new and the old images of the item.</p> </li>
+         * <li> <p>None of the replica tables in the global table can contain any data.</p>
+         * </li> </ul> <p> If global secondary indexes are specified, then the following
+         * conditions must also be met: </p> <ul> <li> <p> The global secondary indexes
+         * must have the same name. </p> </li> <li> <p> The global secondary indexes must
+         * have the same hash key and sort key (if present). </p> </li> </ul> <important>
+         * <p> Write capacity settings should be set consistently across your replica
+         * tables and secondary indexes. DynamoDB strongly recommends enabling auto scaling
+         * to manage the write capacity settings for all of your global tables replicas and
+         * indexes. </p> <p> If you prefer to manage write capacity settings manually, you
+         * should provision equal replicated write capacity units to your replica tables.
+         * You should also provision equal replicated write capacity units to matching
+         * secondary indexes across your global table. </p> </important><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable">AWS
          * API Reference</a></p>
@@ -737,18 +743,24 @@ namespace Model
         /**
          * <p>Creates a global table from an existing table. A global table creates a
          * replication relationship between two or more DynamoDB tables with the same table
-         * name in the provided regions. </p> <p> Tables can only be added as the replicas
-         * of a global table group under the following conditions: </p> <ul> <li> <p> The
-         * tables must have the same name. </p> </li> <li> <p> The tables must contain no
-         * items. </p> </li> <li> <p> The tables must have the same hash key and sort key
-         * (if present). </p> </li> <li> <p> The tables must have DynamoDB Streams enabled
-         * (NEW_AND_OLD_IMAGES). </p> </li> <li> <p> The tables must have same provisioned
-         * and maximum write capacity units. </p> </li> </ul> <p> If global secondary
-         * indexes are specified, then the following conditions must also be met: </p> <ul>
-         * <li> <p> The global secondary indexes must have the same name. </p> </li> <li>
-         * <p> The global secondary indexes must have the same hash key and sort key (if
-         * present). </p> </li> <li> <p> The global secondary indexes must have the same
-         * provisioned and maximum write capacity units. </p> </li> </ul><p><h3>See
+         * name in the provided regions. </p> <p>If you want to add a new replica table to
+         * a global table, each of the following conditions must be true:</p> <ul> <li>
+         * <p>The table must have the same primary key as all of the other replicas.</p>
+         * </li> <li> <p>The table must have the same name as all of the other
+         * replicas.</p> </li> <li> <p>The table must have DynamoDB Streams enabled, with
+         * the stream containing both the new and the old images of the item.</p> </li>
+         * <li> <p>None of the replica tables in the global table can contain any data.</p>
+         * </li> </ul> <p> If global secondary indexes are specified, then the following
+         * conditions must also be met: </p> <ul> <li> <p> The global secondary indexes
+         * must have the same name. </p> </li> <li> <p> The global secondary indexes must
+         * have the same hash key and sort key (if present). </p> </li> </ul> <important>
+         * <p> Write capacity settings should be set consistently across your replica
+         * tables and secondary indexes. DynamoDB strongly recommends enabling auto scaling
+         * to manage the write capacity settings for all of your global tables replicas and
+         * indexes. </p> <p> If you prefer to manage write capacity settings manually, you
+         * should provision equal replicated write capacity units to your replica tables.
+         * You should also provision equal replicated write capacity units to matching
+         * secondary indexes across your global table. </p> </important><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable">AWS
          * API Reference</a></p>
@@ -760,18 +772,24 @@ namespace Model
         /**
          * <p>Creates a global table from an existing table. A global table creates a
          * replication relationship between two or more DynamoDB tables with the same table
-         * name in the provided regions. </p> <p> Tables can only be added as the replicas
-         * of a global table group under the following conditions: </p> <ul> <li> <p> The
-         * tables must have the same name. </p> </li> <li> <p> The tables must contain no
-         * items. </p> </li> <li> <p> The tables must have the same hash key and sort key
-         * (if present). </p> </li> <li> <p> The tables must have DynamoDB Streams enabled
-         * (NEW_AND_OLD_IMAGES). </p> </li> <li> <p> The tables must have same provisioned
-         * and maximum write capacity units. </p> </li> </ul> <p> If global secondary
-         * indexes are specified, then the following conditions must also be met: </p> <ul>
-         * <li> <p> The global secondary indexes must have the same name. </p> </li> <li>
-         * <p> The global secondary indexes must have the same hash key and sort key (if
-         * present). </p> </li> <li> <p> The global secondary indexes must have the same
-         * provisioned and maximum write capacity units. </p> </li> </ul><p><h3>See
+         * name in the provided regions. </p> <p>If you want to add a new replica table to
+         * a global table, each of the following conditions must be true:</p> <ul> <li>
+         * <p>The table must have the same primary key as all of the other replicas.</p>
+         * </li> <li> <p>The table must have the same name as all of the other
+         * replicas.</p> </li> <li> <p>The table must have DynamoDB Streams enabled, with
+         * the stream containing both the new and the old images of the item.</p> </li>
+         * <li> <p>None of the replica tables in the global table can contain any data.</p>
+         * </li> </ul> <p> If global secondary indexes are specified, then the following
+         * conditions must also be met: </p> <ul> <li> <p> The global secondary indexes
+         * must have the same name. </p> </li> <li> <p> The global secondary indexes must
+         * have the same hash key and sort key (if present). </p> </li> </ul> <important>
+         * <p> Write capacity settings should be set consistently across your replica
+         * tables and secondary indexes. DynamoDB strongly recommends enabling auto scaling
+         * to manage the write capacity settings for all of your global tables replicas and
+         * indexes. </p> <p> If you prefer to manage write capacity settings manually, you
+         * should provision equal replicated write capacity units to your replica tables.
+         * You should also provision equal replicated write capacity units to matching
+         * secondary indexes across your global table. </p> </important><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable">AWS
          * API Reference</a></p>

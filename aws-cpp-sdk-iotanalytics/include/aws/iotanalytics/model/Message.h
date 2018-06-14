@@ -48,37 +48,44 @@ namespace Model
 
 
     /**
-     * <p>The ID you wish to assign to the message.</p>
+     * <p>The ID you wish to assign to the message. Each "messageId" must be unique
+     * within each batch sent.</p>
      */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
 
     /**
-     * <p>The ID you wish to assign to the message.</p>
+     * <p>The ID you wish to assign to the message. Each "messageId" must be unique
+     * within each batch sent.</p>
      */
     inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
 
     /**
-     * <p>The ID you wish to assign to the message.</p>
+     * <p>The ID you wish to assign to the message. Each "messageId" must be unique
+     * within each batch sent.</p>
      */
     inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = std::move(value); }
 
     /**
-     * <p>The ID you wish to assign to the message.</p>
+     * <p>The ID you wish to assign to the message. Each "messageId" must be unique
+     * within each batch sent.</p>
      */
     inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
 
     /**
-     * <p>The ID you wish to assign to the message.</p>
+     * <p>The ID you wish to assign to the message. Each "messageId" must be unique
+     * within each batch sent.</p>
      */
     inline Message& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
 
     /**
-     * <p>The ID you wish to assign to the message.</p>
+     * <p>The ID you wish to assign to the message. Each "messageId" must be unique
+     * within each batch sent.</p>
      */
     inline Message& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID you wish to assign to the message.</p>
+     * <p>The ID you wish to assign to the message. Each "messageId" must be unique
+     * within each batch sent.</p>
      */
     inline Message& WithMessageId(const char* value) { SetMessageId(value); return *this;}
 

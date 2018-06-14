@@ -18,6 +18,8 @@
 #include <aws/iotanalytics/IoTAnalyticsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotanalytics/model/RetentionPeriod.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iotanalytics/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -104,6 +106,42 @@ namespace Model
      */
     inline CreateDatastoreRequest& WithRetentionPeriod(RetentionPeriod&& value) { SetRetentionPeriod(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Metadata which can be used to manage the data store.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Metadata which can be used to manage the data store.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Metadata which can be used to manage the data store.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Metadata which can be used to manage the data store.</p>
+     */
+    inline CreateDatastoreRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Metadata which can be used to manage the data store.</p>
+     */
+    inline CreateDatastoreRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Metadata which can be used to manage the data store.</p>
+     */
+    inline CreateDatastoreRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Metadata which can be used to manage the data store.</p>
+     */
+    inline CreateDatastoreRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_datastoreName;
@@ -111,6 +149,9 @@ namespace Model
 
     RetentionPeriod m_retentionPeriod;
     bool m_retentionPeriodHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model
