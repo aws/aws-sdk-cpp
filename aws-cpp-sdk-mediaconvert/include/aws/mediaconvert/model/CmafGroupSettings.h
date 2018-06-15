@@ -43,7 +43,8 @@ namespace Model
 
   /**
    * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
-   * CMAF_GROUP_SETTINGS.<p><h3>See Also:</h3>   <a
+   * CMAF_GROUP_SETTINGS. Each output in a CMAF Output Group may only contain a
+   * single video, audio, or caption output.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CmafGroupSettings">AWS
    * API Reference</a></p>
    */

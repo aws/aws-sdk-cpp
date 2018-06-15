@@ -15,9 +15,9 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/CaptionDestinationSettings.h>
 #include <aws/mediaconvert/model/LanguageCode.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -46,6 +46,49 @@ namespace Model
     CaptionDescriptionPreset(const Aws::Utils::Json::JsonValue& jsonValue);
     CaptionDescriptionPreset& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * Indicates the language of the caption output track, using the ISO 639-2 or ISO
+     * 639-3 three-letter language code
+     */
+    inline const Aws::String& GetCustomLanguageCode() const{ return m_customLanguageCode; }
+
+    /**
+     * Indicates the language of the caption output track, using the ISO 639-2 or ISO
+     * 639-3 three-letter language code
+     */
+    inline void SetCustomLanguageCode(const Aws::String& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = value; }
+
+    /**
+     * Indicates the language of the caption output track, using the ISO 639-2 or ISO
+     * 639-3 three-letter language code
+     */
+    inline void SetCustomLanguageCode(Aws::String&& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = std::move(value); }
+
+    /**
+     * Indicates the language of the caption output track, using the ISO 639-2 or ISO
+     * 639-3 three-letter language code
+     */
+    inline void SetCustomLanguageCode(const char* value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode.assign(value); }
+
+    /**
+     * Indicates the language of the caption output track, using the ISO 639-2 or ISO
+     * 639-3 three-letter language code
+     */
+    inline CaptionDescriptionPreset& WithCustomLanguageCode(const Aws::String& value) { SetCustomLanguageCode(value); return *this;}
+
+    /**
+     * Indicates the language of the caption output track, using the ISO 639-2 or ISO
+     * 639-3 three-letter language code
+     */
+    inline CaptionDescriptionPreset& WithCustomLanguageCode(Aws::String&& value) { SetCustomLanguageCode(std::move(value)); return *this;}
+
+    /**
+     * Indicates the language of the caption output track, using the ISO 639-2 or ISO
+     * 639-3 three-letter language code
+     */
+    inline CaptionDescriptionPreset& WithCustomLanguageCode(const char* value) { SetCustomLanguageCode(value); return *this;}
 
 
     
@@ -133,6 +176,9 @@ namespace Model
     inline CaptionDescriptionPreset& WithLanguageDescription(const char* value) { SetLanguageDescription(value); return *this;}
 
   private:
+
+    Aws::String m_customLanguageCode;
+    bool m_customLanguageCodeHasBeenSet;
 
     CaptionDestinationSettings m_destinationSettings;
     bool m_destinationSettingsHasBeenSet;

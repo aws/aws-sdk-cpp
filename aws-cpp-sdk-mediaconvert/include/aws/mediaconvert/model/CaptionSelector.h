@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/LanguageCode.h>
 #include <aws/mediaconvert/model/CaptionSourceSettings.h>
 #include <utility>
@@ -46,6 +47,84 @@ namespace Model
     CaptionSelector(const Aws::Utils::Json::JsonValue& jsonValue);
     CaptionSelector& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * The specific language to extract from source, using the ISO 639-2 or ISO 639-3
+     * three-letter language code. If input is SCTE-27, complete this field and/or PID
+     * to select the caption language to extract. If input is DVB-Sub and output is
+     * Burn-in or SMPTE-TT, complete this field and/or PID to select the caption
+     * language to extract. If input is DVB-Sub that is being passed through, omit this
+     * field (and PID field); there is no way to extract a specific language with
+     * pass-through captions.
+     */
+    inline const Aws::String& GetCustomLanguageCode() const{ return m_customLanguageCode; }
+
+    /**
+     * The specific language to extract from source, using the ISO 639-2 or ISO 639-3
+     * three-letter language code. If input is SCTE-27, complete this field and/or PID
+     * to select the caption language to extract. If input is DVB-Sub and output is
+     * Burn-in or SMPTE-TT, complete this field and/or PID to select the caption
+     * language to extract. If input is DVB-Sub that is being passed through, omit this
+     * field (and PID field); there is no way to extract a specific language with
+     * pass-through captions.
+     */
+    inline void SetCustomLanguageCode(const Aws::String& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = value; }
+
+    /**
+     * The specific language to extract from source, using the ISO 639-2 or ISO 639-3
+     * three-letter language code. If input is SCTE-27, complete this field and/or PID
+     * to select the caption language to extract. If input is DVB-Sub and output is
+     * Burn-in or SMPTE-TT, complete this field and/or PID to select the caption
+     * language to extract. If input is DVB-Sub that is being passed through, omit this
+     * field (and PID field); there is no way to extract a specific language with
+     * pass-through captions.
+     */
+    inline void SetCustomLanguageCode(Aws::String&& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = std::move(value); }
+
+    /**
+     * The specific language to extract from source, using the ISO 639-2 or ISO 639-3
+     * three-letter language code. If input is SCTE-27, complete this field and/or PID
+     * to select the caption language to extract. If input is DVB-Sub and output is
+     * Burn-in or SMPTE-TT, complete this field and/or PID to select the caption
+     * language to extract. If input is DVB-Sub that is being passed through, omit this
+     * field (and PID field); there is no way to extract a specific language with
+     * pass-through captions.
+     */
+    inline void SetCustomLanguageCode(const char* value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode.assign(value); }
+
+    /**
+     * The specific language to extract from source, using the ISO 639-2 or ISO 639-3
+     * three-letter language code. If input is SCTE-27, complete this field and/or PID
+     * to select the caption language to extract. If input is DVB-Sub and output is
+     * Burn-in or SMPTE-TT, complete this field and/or PID to select the caption
+     * language to extract. If input is DVB-Sub that is being passed through, omit this
+     * field (and PID field); there is no way to extract a specific language with
+     * pass-through captions.
+     */
+    inline CaptionSelector& WithCustomLanguageCode(const Aws::String& value) { SetCustomLanguageCode(value); return *this;}
+
+    /**
+     * The specific language to extract from source, using the ISO 639-2 or ISO 639-3
+     * three-letter language code. If input is SCTE-27, complete this field and/or PID
+     * to select the caption language to extract. If input is DVB-Sub and output is
+     * Burn-in or SMPTE-TT, complete this field and/or PID to select the caption
+     * language to extract. If input is DVB-Sub that is being passed through, omit this
+     * field (and PID field); there is no way to extract a specific language with
+     * pass-through captions.
+     */
+    inline CaptionSelector& WithCustomLanguageCode(Aws::String&& value) { SetCustomLanguageCode(std::move(value)); return *this;}
+
+    /**
+     * The specific language to extract from source, using the ISO 639-2 or ISO 639-3
+     * three-letter language code. If input is SCTE-27, complete this field and/or PID
+     * to select the caption language to extract. If input is DVB-Sub and output is
+     * Burn-in or SMPTE-TT, complete this field and/or PID to select the caption
+     * language to extract. If input is DVB-Sub that is being passed through, omit this
+     * field (and PID field); there is no way to extract a specific language with
+     * pass-through captions.
+     */
+    inline CaptionSelector& WithCustomLanguageCode(const char* value) { SetCustomLanguageCode(value); return *this;}
 
 
     /**
@@ -115,6 +194,9 @@ namespace Model
     inline CaptionSelector& WithSourceSettings(CaptionSourceSettings&& value) { SetSourceSettings(std::move(value)); return *this;}
 
   private:
+
+    Aws::String m_customLanguageCode;
+    bool m_customLanguageCodeHasBeenSet;
 
     LanguageCode m_languageCode;
     bool m_languageCodeHasBeenSet;

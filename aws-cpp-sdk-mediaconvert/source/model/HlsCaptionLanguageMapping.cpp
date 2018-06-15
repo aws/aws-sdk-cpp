@@ -31,6 +31,7 @@ namespace Model
 HlsCaptionLanguageMapping::HlsCaptionLanguageMapping() : 
     m_captionChannel(0),
     m_captionChannelHasBeenSet(false),
+    m_customLanguageCodeHasBeenSet(false),
     m_languageCode(LanguageCode::NOT_SET),
     m_languageCodeHasBeenSet(false),
     m_languageDescriptionHasBeenSet(false)
@@ -40,6 +41,7 @@ HlsCaptionLanguageMapping::HlsCaptionLanguageMapping() :
 HlsCaptionLanguageMapping::HlsCaptionLanguageMapping(const JsonValue& jsonValue) : 
     m_captionChannel(0),
     m_captionChannelHasBeenSet(false),
+    m_customLanguageCodeHasBeenSet(false),
     m_languageCode(LanguageCode::NOT_SET),
     m_languageCodeHasBeenSet(false),
     m_languageDescriptionHasBeenSet(false)
@@ -54,6 +56,13 @@ HlsCaptionLanguageMapping& HlsCaptionLanguageMapping::operator =(const JsonValue
     m_captionChannel = jsonValue.GetInteger("captionChannel");
 
     m_captionChannelHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("customLanguageCode"))
+  {
+    m_customLanguageCode = jsonValue.GetString("customLanguageCode");
+
+    m_customLanguageCodeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("languageCode"))
@@ -80,6 +89,12 @@ JsonValue HlsCaptionLanguageMapping::Jsonize() const
   if(m_captionChannelHasBeenSet)
   {
    payload.WithInteger("captionChannel", m_captionChannel);
+
+  }
+
+  if(m_customLanguageCodeHasBeenSet)
+  {
+   payload.WithString("customLanguageCode", m_customLanguageCode);
 
   }
 

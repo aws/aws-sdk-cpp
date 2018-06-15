@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-MediaTailor;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.4.20180423.68;
+        version : 1.4.20180423.69;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS MediaTailor);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.4.68
+            AWSSDKCPP-Core/1.4.69
        }
     }
 

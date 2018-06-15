@@ -105,6 +105,49 @@ namespace Model
     inline CaptionDescription& WithCaptionSelectorName(const char* value) { SetCaptionSelectorName(value); return *this;}
 
 
+    /**
+     * Indicates the language of the caption output track, using the ISO 639-2 or ISO
+     * 639-3 three-letter language code
+     */
+    inline const Aws::String& GetCustomLanguageCode() const{ return m_customLanguageCode; }
+
+    /**
+     * Indicates the language of the caption output track, using the ISO 639-2 or ISO
+     * 639-3 three-letter language code
+     */
+    inline void SetCustomLanguageCode(const Aws::String& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = value; }
+
+    /**
+     * Indicates the language of the caption output track, using the ISO 639-2 or ISO
+     * 639-3 three-letter language code
+     */
+    inline void SetCustomLanguageCode(Aws::String&& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = std::move(value); }
+
+    /**
+     * Indicates the language of the caption output track, using the ISO 639-2 or ISO
+     * 639-3 three-letter language code
+     */
+    inline void SetCustomLanguageCode(const char* value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode.assign(value); }
+
+    /**
+     * Indicates the language of the caption output track, using the ISO 639-2 or ISO
+     * 639-3 three-letter language code
+     */
+    inline CaptionDescription& WithCustomLanguageCode(const Aws::String& value) { SetCustomLanguageCode(value); return *this;}
+
+    /**
+     * Indicates the language of the caption output track, using the ISO 639-2 or ISO
+     * 639-3 three-letter language code
+     */
+    inline CaptionDescription& WithCustomLanguageCode(Aws::String&& value) { SetCustomLanguageCode(std::move(value)); return *this;}
+
+    /**
+     * Indicates the language of the caption output track, using the ISO 639-2 or ISO
+     * 639-3 three-letter language code
+     */
+    inline CaptionDescription& WithCustomLanguageCode(const char* value) { SetCustomLanguageCode(value); return *this;}
+
+
     
     inline const CaptionDestinationSettings& GetDestinationSettings() const{ return m_destinationSettings; }
 
@@ -193,6 +236,9 @@ namespace Model
 
     Aws::String m_captionSelectorName;
     bool m_captionSelectorNameHasBeenSet;
+
+    Aws::String m_customLanguageCode;
+    bool m_customLanguageCodeHasBeenSet;
 
     CaptionDestinationSettings m_destinationSettings;
     bool m_destinationSettingsHasBeenSet;

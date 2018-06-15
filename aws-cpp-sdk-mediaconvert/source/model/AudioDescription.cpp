@@ -36,6 +36,7 @@ AudioDescription::AudioDescription() :
     m_audioTypeControl(AudioTypeControl::NOT_SET),
     m_audioTypeControlHasBeenSet(false),
     m_codecSettingsHasBeenSet(false),
+    m_customLanguageCodeHasBeenSet(false),
     m_languageCode(LanguageCode::NOT_SET),
     m_languageCodeHasBeenSet(false),
     m_languageCodeControl(AudioLanguageCodeControl::NOT_SET),
@@ -53,6 +54,7 @@ AudioDescription::AudioDescription(const JsonValue& jsonValue) :
     m_audioTypeControl(AudioTypeControl::NOT_SET),
     m_audioTypeControlHasBeenSet(false),
     m_codecSettingsHasBeenSet(false),
+    m_customLanguageCodeHasBeenSet(false),
     m_languageCode(LanguageCode::NOT_SET),
     m_languageCodeHasBeenSet(false),
     m_languageCodeControl(AudioLanguageCodeControl::NOT_SET),
@@ -98,6 +100,13 @@ AudioDescription& AudioDescription::operator =(const JsonValue& jsonValue)
     m_codecSettings = jsonValue.GetObject("codecSettings");
 
     m_codecSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("customLanguageCode"))
+  {
+    m_customLanguageCode = jsonValue.GetString("customLanguageCode");
+
+    m_customLanguageCodeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("languageCode"))
@@ -161,6 +170,12 @@ JsonValue AudioDescription::Jsonize() const
   if(m_codecSettingsHasBeenSet)
   {
    payload.WithObject("codecSettings", m_codecSettings.Jsonize());
+
+  }
+
+  if(m_customLanguageCodeHasBeenSet)
+  {
+   payload.WithString("customLanguageCode", m_customLanguageCode);
 
   }
 

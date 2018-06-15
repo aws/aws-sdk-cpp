@@ -29,6 +29,7 @@ namespace Model
 {
 
 AudioSelector::AudioSelector() : 
+    m_customLanguageCodeHasBeenSet(false),
     m_defaultSelection(AudioDefaultSelection::NOT_SET),
     m_defaultSelectionHasBeenSet(false),
     m_externalAudioFileInputHasBeenSet(false),
@@ -47,6 +48,7 @@ AudioSelector::AudioSelector() :
 }
 
 AudioSelector::AudioSelector(const JsonValue& jsonValue) : 
+    m_customLanguageCodeHasBeenSet(false),
     m_defaultSelection(AudioDefaultSelection::NOT_SET),
     m_defaultSelectionHasBeenSet(false),
     m_externalAudioFileInputHasBeenSet(false),
@@ -67,6 +69,13 @@ AudioSelector::AudioSelector(const JsonValue& jsonValue) :
 
 AudioSelector& AudioSelector::operator =(const JsonValue& jsonValue)
 {
+  if(jsonValue.ValueExists("customLanguageCode"))
+  {
+    m_customLanguageCode = jsonValue.GetString("customLanguageCode");
+
+    m_customLanguageCodeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("defaultSelection"))
   {
     m_defaultSelection = AudioDefaultSelectionMapper::GetAudioDefaultSelectionForName(jsonValue.GetString("defaultSelection"));
@@ -142,6 +151,12 @@ AudioSelector& AudioSelector::operator =(const JsonValue& jsonValue)
 JsonValue AudioSelector::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_customLanguageCodeHasBeenSet)
+  {
+   payload.WithString("customLanguageCode", m_customLanguageCode);
+
+  }
 
   if(m_defaultSelectionHasBeenSet)
   {

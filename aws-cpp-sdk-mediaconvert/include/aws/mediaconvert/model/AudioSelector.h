@@ -15,8 +15,8 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
-#include <aws/mediaconvert/model/AudioDefaultSelection.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/model/AudioDefaultSelection.h>
 #include <aws/mediaconvert/model/LanguageCode.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconvert/model/RemixSettings.h>
@@ -49,6 +49,49 @@ namespace Model
     AudioSelector(const Aws::Utils::Json::JsonValue& jsonValue);
     AudioSelector& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * Selects a specific language code from within an audio source, using the ISO
+     * 639-2 or ISO 639-3 three-letter language code
+     */
+    inline const Aws::String& GetCustomLanguageCode() const{ return m_customLanguageCode; }
+
+    /**
+     * Selects a specific language code from within an audio source, using the ISO
+     * 639-2 or ISO 639-3 three-letter language code
+     */
+    inline void SetCustomLanguageCode(const Aws::String& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = value; }
+
+    /**
+     * Selects a specific language code from within an audio source, using the ISO
+     * 639-2 or ISO 639-3 three-letter language code
+     */
+    inline void SetCustomLanguageCode(Aws::String&& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = std::move(value); }
+
+    /**
+     * Selects a specific language code from within an audio source, using the ISO
+     * 639-2 or ISO 639-3 three-letter language code
+     */
+    inline void SetCustomLanguageCode(const char* value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode.assign(value); }
+
+    /**
+     * Selects a specific language code from within an audio source, using the ISO
+     * 639-2 or ISO 639-3 three-letter language code
+     */
+    inline AudioSelector& WithCustomLanguageCode(const Aws::String& value) { SetCustomLanguageCode(value); return *this;}
+
+    /**
+     * Selects a specific language code from within an audio source, using the ISO
+     * 639-2 or ISO 639-3 three-letter language code
+     */
+    inline AudioSelector& WithCustomLanguageCode(Aws::String&& value) { SetCustomLanguageCode(std::move(value)); return *this;}
+
+    /**
+     * Selects a specific language code from within an audio source, using the ISO
+     * 639-2 or ISO 639-3 three-letter language code
+     */
+    inline AudioSelector& WithCustomLanguageCode(const char* value) { SetCustomLanguageCode(value); return *this;}
 
 
     
@@ -329,6 +372,9 @@ namespace Model
     inline AudioSelector& AddTracks(int value) { m_tracksHasBeenSet = true; m_tracks.push_back(value); return *this; }
 
   private:
+
+    Aws::String m_customLanguageCode;
+    bool m_customLanguageCodeHasBeenSet;
 
     AudioDefaultSelection m_defaultSelection;
     bool m_defaultSelectionHasBeenSet;
