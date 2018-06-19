@@ -190,31 +190,31 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the Amazon SNS topic to which you want Rekognition Video to
+     * <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to
      * publish the completion status of the search. </p>
      */
     inline const NotificationChannel& GetNotificationChannel() const{ return m_notificationChannel; }
 
     /**
-     * <p>The ARN of the Amazon SNS topic to which you want Rekognition Video to
+     * <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to
      * publish the completion status of the search. </p>
      */
     inline void SetNotificationChannel(const NotificationChannel& value) { m_notificationChannelHasBeenSet = true; m_notificationChannel = value; }
 
     /**
-     * <p>The ARN of the Amazon SNS topic to which you want Rekognition Video to
+     * <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to
      * publish the completion status of the search. </p>
      */
     inline void SetNotificationChannel(NotificationChannel&& value) { m_notificationChannelHasBeenSet = true; m_notificationChannel = std::move(value); }
 
     /**
-     * <p>The ARN of the Amazon SNS topic to which you want Rekognition Video to
+     * <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to
      * publish the completion status of the search. </p>
      */
     inline StartFaceSearchRequest& WithNotificationChannel(const NotificationChannel& value) { SetNotificationChannel(value); return *this;}
 
     /**
-     * <p>The ARN of the Amazon SNS topic to which you want Rekognition Video to
+     * <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to
      * publish the completion status of the search. </p>
      */
     inline StartFaceSearchRequest& WithNotificationChannel(NotificationChannel&& value) { SetNotificationChannel(std::move(value)); return *this;}

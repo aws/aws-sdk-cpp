@@ -116,35 +116,35 @@ namespace Model
 
 
     /**
-     * <p>Information about a video that Rekognition Video analyzed.
+     * <p>Information about a video that Amazon Rekognition Video analyzed.
      * <code>Videometadata</code> is returned in every page of paginated responses from
      * a Amazon Rekognition video operation.</p>
      */
     inline const VideoMetadata& GetVideoMetadata() const{ return m_videoMetadata; }
 
     /**
-     * <p>Information about a video that Rekognition Video analyzed.
+     * <p>Information about a video that Amazon Rekognition Video analyzed.
      * <code>Videometadata</code> is returned in every page of paginated responses from
      * a Amazon Rekognition video operation.</p>
      */
     inline void SetVideoMetadata(const VideoMetadata& value) { m_videoMetadata = value; }
 
     /**
-     * <p>Information about a video that Rekognition Video analyzed.
+     * <p>Information about a video that Amazon Rekognition Video analyzed.
      * <code>Videometadata</code> is returned in every page of paginated responses from
      * a Amazon Rekognition video operation.</p>
      */
     inline void SetVideoMetadata(VideoMetadata&& value) { m_videoMetadata = std::move(value); }
 
     /**
-     * <p>Information about a video that Rekognition Video analyzed.
+     * <p>Information about a video that Amazon Rekognition Video analyzed.
      * <code>Videometadata</code> is returned in every page of paginated responses from
      * a Amazon Rekognition video operation.</p>
      */
     inline GetFaceDetectionResult& WithVideoMetadata(const VideoMetadata& value) { SetVideoMetadata(value); return *this;}
 
     /**
-     * <p>Information about a video that Rekognition Video analyzed.
+     * <p>Information about a video that Amazon Rekognition Video analyzed.
      * <code>Videometadata</code> is returned in every page of paginated responses from
      * a Amazon Rekognition video operation.</p>
      */

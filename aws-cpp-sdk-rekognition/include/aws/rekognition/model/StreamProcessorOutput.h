@@ -33,9 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>Information about the Amazon Kinesis Data Streams stream to which a
+   * <p>Information about the Amazon Kinesis Data Streams stream to which a Amazon
    * Rekognition Video stream processor streams the results of a video analysis. For
-   * more information, see .</p><p><h3>See Also:</h3>   <a
+   * more information, see CreateStreamProcessor in the Amazon Rekognition Developer
+   * Guide.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StreamProcessorOutput">AWS
    * API Reference</a></p>
    */

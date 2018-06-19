@@ -135,66 +135,66 @@ namespace Model
 
 
     /**
-     * <p>Specifies the minimum confidence that Rekognition Video must have in order to
-     * return a detected label. Confidence represents how certain Amazon Rekognition is
-     * that a label is correctly identified.0 is the lowest confidence. 100 is the
-     * highest confidence. Rekognition Video doesn't return any labels with a
-     * confidence level lower than this specified value.</p> <p>If you don't specify
-     * <code>MinConfidence</code>, the operation returns labels with confidence values
-     * greater than or equal to 50 percent.</p>
+     * <p>Specifies the minimum confidence that Amazon Rekognition Video must have in
+     * order to return a detected label. Confidence represents how certain Amazon
+     * Rekognition is that a label is correctly identified.0 is the lowest confidence.
+     * 100 is the highest confidence. Amazon Rekognition Video doesn't return any
+     * labels with a confidence level lower than this specified value.</p> <p>If you
+     * don't specify <code>MinConfidence</code>, the operation returns labels with
+     * confidence values greater than or equal to 50 percent.</p>
      */
     inline double GetMinConfidence() const{ return m_minConfidence; }
 
     /**
-     * <p>Specifies the minimum confidence that Rekognition Video must have in order to
-     * return a detected label. Confidence represents how certain Amazon Rekognition is
-     * that a label is correctly identified.0 is the lowest confidence. 100 is the
-     * highest confidence. Rekognition Video doesn't return any labels with a
-     * confidence level lower than this specified value.</p> <p>If you don't specify
-     * <code>MinConfidence</code>, the operation returns labels with confidence values
-     * greater than or equal to 50 percent.</p>
+     * <p>Specifies the minimum confidence that Amazon Rekognition Video must have in
+     * order to return a detected label. Confidence represents how certain Amazon
+     * Rekognition is that a label is correctly identified.0 is the lowest confidence.
+     * 100 is the highest confidence. Amazon Rekognition Video doesn't return any
+     * labels with a confidence level lower than this specified value.</p> <p>If you
+     * don't specify <code>MinConfidence</code>, the operation returns labels with
+     * confidence values greater than or equal to 50 percent.</p>
      */
     inline void SetMinConfidence(double value) { m_minConfidenceHasBeenSet = true; m_minConfidence = value; }
 
     /**
-     * <p>Specifies the minimum confidence that Rekognition Video must have in order to
-     * return a detected label. Confidence represents how certain Amazon Rekognition is
-     * that a label is correctly identified.0 is the lowest confidence. 100 is the
-     * highest confidence. Rekognition Video doesn't return any labels with a
-     * confidence level lower than this specified value.</p> <p>If you don't specify
-     * <code>MinConfidence</code>, the operation returns labels with confidence values
-     * greater than or equal to 50 percent.</p>
+     * <p>Specifies the minimum confidence that Amazon Rekognition Video must have in
+     * order to return a detected label. Confidence represents how certain Amazon
+     * Rekognition is that a label is correctly identified.0 is the lowest confidence.
+     * 100 is the highest confidence. Amazon Rekognition Video doesn't return any
+     * labels with a confidence level lower than this specified value.</p> <p>If you
+     * don't specify <code>MinConfidence</code>, the operation returns labels with
+     * confidence values greater than or equal to 50 percent.</p>
      */
     inline StartLabelDetectionRequest& WithMinConfidence(double value) { SetMinConfidence(value); return *this;}
 
 
     /**
-     * <p>The Amazon SNS topic ARN you want Rekognition Video to publish the completion
-     * status of the label detection operation to. </p>
+     * <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the
+     * completion status of the label detection operation to. </p>
      */
     inline const NotificationChannel& GetNotificationChannel() const{ return m_notificationChannel; }
 
     /**
-     * <p>The Amazon SNS topic ARN you want Rekognition Video to publish the completion
-     * status of the label detection operation to. </p>
+     * <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the
+     * completion status of the label detection operation to. </p>
      */
     inline void SetNotificationChannel(const NotificationChannel& value) { m_notificationChannelHasBeenSet = true; m_notificationChannel = value; }
 
     /**
-     * <p>The Amazon SNS topic ARN you want Rekognition Video to publish the completion
-     * status of the label detection operation to. </p>
+     * <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the
+     * completion status of the label detection operation to. </p>
      */
     inline void SetNotificationChannel(NotificationChannel&& value) { m_notificationChannelHasBeenSet = true; m_notificationChannel = std::move(value); }
 
     /**
-     * <p>The Amazon SNS topic ARN you want Rekognition Video to publish the completion
-     * status of the label detection operation to. </p>
+     * <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the
+     * completion status of the label detection operation to. </p>
      */
     inline StartLabelDetectionRequest& WithNotificationChannel(const NotificationChannel& value) { SetNotificationChannel(value); return *this;}
 
     /**
-     * <p>The Amazon SNS topic ARN you want Rekognition Video to publish the completion
-     * status of the label detection operation to. </p>
+     * <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the
+     * completion status of the label detection operation to. </p>
      */
     inline StartLabelDetectionRequest& WithNotificationChannel(NotificationChannel&& value) { SetNotificationChannel(std::move(value)); return *this;}
 

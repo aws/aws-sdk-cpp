@@ -35,8 +35,8 @@ namespace Model
   /**
    * <p>Provides information about a single type of moderated content found in an
    * image or video. Each type of moderated content has a label within a hierarchical
-   * taxonomy. For more information, see <a>moderation</a>.</p><p><h3>See Also:</h3> 
-   * <a
+   * taxonomy. For more information, see Detecting Unsafe Content in the Amazon
+   * Rekognition Developer Guide.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ModerationLabel">AWS
    * API Reference</a></p>
    */

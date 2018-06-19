@@ -34,7 +34,8 @@ namespace Model
 
   /**
    * <p>Kinesis video stream stream that provides the source streaming video for a
-   * Rekognition Video stream processor. For more information, see .</p><p><h3>See
+   * Amazon Rekognition Video stream processor. For more information, see
+   * CreateStreamProcessor in the Amazon Rekognition Developer Guide.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/KinesisVideoStream">AWS
    * API Reference</a></p>

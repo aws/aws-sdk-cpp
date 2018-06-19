@@ -112,50 +112,57 @@ namespace Model
 
     /**
      * <p>If the previous response was incomplete (because there is more search results
-     * to retrieve), Rekognition Video returns a pagination token in the response. You
-     * can use this pagination token to retrieve the next set of search results. </p>
+     * to retrieve), Amazon Rekognition Video returns a pagination token in the
+     * response. You can use this pagination token to retrieve the next set of search
+     * results. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>If the previous response was incomplete (because there is more search results
-     * to retrieve), Rekognition Video returns a pagination token in the response. You
-     * can use this pagination token to retrieve the next set of search results. </p>
+     * to retrieve), Amazon Rekognition Video returns a pagination token in the
+     * response. You can use this pagination token to retrieve the next set of search
+     * results. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
      * <p>If the previous response was incomplete (because there is more search results
-     * to retrieve), Rekognition Video returns a pagination token in the response. You
-     * can use this pagination token to retrieve the next set of search results. </p>
+     * to retrieve), Amazon Rekognition Video returns a pagination token in the
+     * response. You can use this pagination token to retrieve the next set of search
+     * results. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>If the previous response was incomplete (because there is more search results
-     * to retrieve), Rekognition Video returns a pagination token in the response. You
-     * can use this pagination token to retrieve the next set of search results. </p>
+     * to retrieve), Amazon Rekognition Video returns a pagination token in the
+     * response. You can use this pagination token to retrieve the next set of search
+     * results. </p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
      * <p>If the previous response was incomplete (because there is more search results
-     * to retrieve), Rekognition Video returns a pagination token in the response. You
-     * can use this pagination token to retrieve the next set of search results. </p>
+     * to retrieve), Amazon Rekognition Video returns a pagination token in the
+     * response. You can use this pagination token to retrieve the next set of search
+     * results. </p>
      */
     inline GetFaceSearchRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>If the previous response was incomplete (because there is more search results
-     * to retrieve), Rekognition Video returns a pagination token in the response. You
-     * can use this pagination token to retrieve the next set of search results. </p>
+     * to retrieve), Amazon Rekognition Video returns a pagination token in the
+     * response. You can use this pagination token to retrieve the next set of search
+     * results. </p>
      */
     inline GetFaceSearchRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If the previous response was incomplete (because there is more search results
-     * to retrieve), Rekognition Video returns a pagination token in the response. You
-     * can use this pagination token to retrieve the next set of search results. </p>
+     * to retrieve), Amazon Rekognition Video returns a pagination token in the
+     * response. You can use this pagination token to retrieve the next set of search
+     * results. </p>
      */
     inline GetFaceSearchRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

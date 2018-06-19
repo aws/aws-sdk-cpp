@@ -47,43 +47,50 @@ namespace Model
 
     /**
      * <p>An array of faces detected and added to the collection. For more information,
-     * see <a>collections-index-faces</a>. </p>
+     * see Searching Faces in a Collection in the Amazon Rekognition Developer Guide.
+     * </p>
      */
     inline const Aws::Vector<FaceRecord>& GetFaceRecords() const{ return m_faceRecords; }
 
     /**
      * <p>An array of faces detected and added to the collection. For more information,
-     * see <a>collections-index-faces</a>. </p>
+     * see Searching Faces in a Collection in the Amazon Rekognition Developer Guide.
+     * </p>
      */
     inline void SetFaceRecords(const Aws::Vector<FaceRecord>& value) { m_faceRecords = value; }
 
     /**
      * <p>An array of faces detected and added to the collection. For more information,
-     * see <a>collections-index-faces</a>. </p>
+     * see Searching Faces in a Collection in the Amazon Rekognition Developer Guide.
+     * </p>
      */
     inline void SetFaceRecords(Aws::Vector<FaceRecord>&& value) { m_faceRecords = std::move(value); }
 
     /**
      * <p>An array of faces detected and added to the collection. For more information,
-     * see <a>collections-index-faces</a>. </p>
+     * see Searching Faces in a Collection in the Amazon Rekognition Developer Guide.
+     * </p>
      */
     inline IndexFacesResult& WithFaceRecords(const Aws::Vector<FaceRecord>& value) { SetFaceRecords(value); return *this;}
 
     /**
      * <p>An array of faces detected and added to the collection. For more information,
-     * see <a>collections-index-faces</a>. </p>
+     * see Searching Faces in a Collection in the Amazon Rekognition Developer Guide.
+     * </p>
      */
     inline IndexFacesResult& WithFaceRecords(Aws::Vector<FaceRecord>&& value) { SetFaceRecords(std::move(value)); return *this;}
 
     /**
      * <p>An array of faces detected and added to the collection. For more information,
-     * see <a>collections-index-faces</a>. </p>
+     * see Searching Faces in a Collection in the Amazon Rekognition Developer Guide.
+     * </p>
      */
     inline IndexFacesResult& AddFaceRecords(const FaceRecord& value) { m_faceRecords.push_back(value); return *this; }
 
     /**
      * <p>An array of faces detected and added to the collection. For more information,
-     * see <a>collections-index-faces</a>. </p>
+     * see Searching Faces in a Collection in the Amazon Rekognition Developer Guide.
+     * </p>
      */
     inline IndexFacesResult& AddFaceRecords(FaceRecord&& value) { m_faceRecords.push_back(std::move(value)); return *this; }
 

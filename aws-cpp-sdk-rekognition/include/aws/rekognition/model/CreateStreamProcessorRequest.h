@@ -84,36 +84,36 @@ namespace Model
 
 
     /**
-     * <p>Kinesis data stream stream to which Rekognition Video puts the analysis
-     * results. If you are using the AWS CLI, the parameter name is
+     * <p>Kinesis data stream stream to which Amazon Rekognition Video puts the
+     * analysis results. If you are using the AWS CLI, the parameter name is
      * <code>StreamProcessorOutput</code>.</p>
      */
     inline const StreamProcessorOutput& GetOutput() const{ return m_output; }
 
     /**
-     * <p>Kinesis data stream stream to which Rekognition Video puts the analysis
-     * results. If you are using the AWS CLI, the parameter name is
+     * <p>Kinesis data stream stream to which Amazon Rekognition Video puts the
+     * analysis results. If you are using the AWS CLI, the parameter name is
      * <code>StreamProcessorOutput</code>.</p>
      */
     inline void SetOutput(const StreamProcessorOutput& value) { m_outputHasBeenSet = true; m_output = value; }
 
     /**
-     * <p>Kinesis data stream stream to which Rekognition Video puts the analysis
-     * results. If you are using the AWS CLI, the parameter name is
+     * <p>Kinesis data stream stream to which Amazon Rekognition Video puts the
+     * analysis results. If you are using the AWS CLI, the parameter name is
      * <code>StreamProcessorOutput</code>.</p>
      */
     inline void SetOutput(StreamProcessorOutput&& value) { m_outputHasBeenSet = true; m_output = std::move(value); }
 
     /**
-     * <p>Kinesis data stream stream to which Rekognition Video puts the analysis
-     * results. If you are using the AWS CLI, the parameter name is
+     * <p>Kinesis data stream stream to which Amazon Rekognition Video puts the
+     * analysis results. If you are using the AWS CLI, the parameter name is
      * <code>StreamProcessorOutput</code>.</p>
      */
     inline CreateStreamProcessorRequest& WithOutput(const StreamProcessorOutput& value) { SetOutput(value); return *this;}
 
     /**
-     * <p>Kinesis data stream stream to which Rekognition Video puts the analysis
-     * results. If you are using the AWS CLI, the parameter name is
+     * <p>Kinesis data stream stream to which Amazon Rekognition Video puts the
+     * analysis results. If you are using the AWS CLI, the parameter name is
      * <code>StreamProcessorOutput</code>.</p>
      */
     inline CreateStreamProcessorRequest& WithOutput(StreamProcessorOutput&& value) { SetOutput(std::move(value)); return *this;}
