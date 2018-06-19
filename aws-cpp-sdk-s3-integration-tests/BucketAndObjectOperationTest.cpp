@@ -86,7 +86,7 @@ namespace
     static const char* URLENCODED_UNICODE_KEY = "TestUnicode%E4%B8%AD%E5%9B%BDKey";
     static const char* URIESCAPE_KEY = "Esc ape+Me$";
 
-    static const int TIMEOUT_MAX = 10;
+    static const int TIMEOUT_MAX = 20;
 
     void AppendUUID(std::string& bucketName)
     {
