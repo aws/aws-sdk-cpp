@@ -43,11 +43,11 @@ namespace Model
    * private CA can issue and revoke X.509 digital certificates. Digital certificates
    * verify that the entity named in the certificate <b>Subject</b> field owns or
    * controls the public key contained in the <b>Subject Public Key Info</b> field.
-   * Call the <a>CreateCertificateAuthority</a> function to create your private CA.
-   * You must then call the <a>GetCertificateAuthorityCertificate</a> function to
+   * Call the <a>CreateCertificateAuthority</a> operation to create your private CA.
+   * You must then call the <a>GetCertificateAuthorityCertificate</a> operation to
    * retrieve a private CA certificate signing request (CSR). Take the CSR to your
    * on-premises CA and sign it with the root CA certificate or a subordinate
-   * certificate. Call the <a>ImportCertificateAuthorityCertificate</a> function to
+   * certificate. Call the <a>ImportCertificateAuthorityCertificate</a> operation to
    * import the signed certificate into AWS Certificate Manager (ACM). </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CertificateAuthority">AWS
@@ -379,6 +379,42 @@ namespace Model
      */
     inline CertificateAuthority& WithRevocationConfiguration(RevocationConfiguration&& value) { SetRevocationConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The period during which a deleted CA can be restored. For more information,
+     * see the <code>PermanentDeletionTimeInDays</code> parameter of the
+     * <a>DeleteCertificateAuthorityRequest</a> operation. </p>
+     */
+    inline const Aws::Utils::DateTime& GetRestorableUntil() const{ return m_restorableUntil; }
+
+    /**
+     * <p>The period during which a deleted CA can be restored. For more information,
+     * see the <code>PermanentDeletionTimeInDays</code> parameter of the
+     * <a>DeleteCertificateAuthorityRequest</a> operation. </p>
+     */
+    inline void SetRestorableUntil(const Aws::Utils::DateTime& value) { m_restorableUntilHasBeenSet = true; m_restorableUntil = value; }
+
+    /**
+     * <p>The period during which a deleted CA can be restored. For more information,
+     * see the <code>PermanentDeletionTimeInDays</code> parameter of the
+     * <a>DeleteCertificateAuthorityRequest</a> operation. </p>
+     */
+    inline void SetRestorableUntil(Aws::Utils::DateTime&& value) { m_restorableUntilHasBeenSet = true; m_restorableUntil = std::move(value); }
+
+    /**
+     * <p>The period during which a deleted CA can be restored. For more information,
+     * see the <code>PermanentDeletionTimeInDays</code> parameter of the
+     * <a>DeleteCertificateAuthorityRequest</a> operation. </p>
+     */
+    inline CertificateAuthority& WithRestorableUntil(const Aws::Utils::DateTime& value) { SetRestorableUntil(value); return *this;}
+
+    /**
+     * <p>The period during which a deleted CA can be restored. For more information,
+     * see the <code>PermanentDeletionTimeInDays</code> parameter of the
+     * <a>DeleteCertificateAuthorityRequest</a> operation. </p>
+     */
+    inline CertificateAuthority& WithRestorableUntil(Aws::Utils::DateTime&& value) { SetRestorableUntil(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -413,6 +449,9 @@ namespace Model
 
     RevocationConfiguration m_revocationConfiguration;
     bool m_revocationConfigurationHasBeenSet;
+
+    Aws::Utils::DateTime m_restorableUntil;
+    bool m_restorableUntilHasBeenSet;
   };
 
 } // namespace Model

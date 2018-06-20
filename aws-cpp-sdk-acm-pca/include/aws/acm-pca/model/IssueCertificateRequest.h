@@ -50,7 +50,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that was returned when you called
      * <a>CreateCertificateAuthority</a>. This must be of the form:</p> <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code> </p>
      */
     inline const Aws::String& GetCertificateAuthorityArn() const{ return m_certificateAuthorityArn; }
@@ -58,7 +58,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that was returned when you called
      * <a>CreateCertificateAuthority</a>. This must be of the form:</p> <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code> </p>
      */
     inline void SetCertificateAuthorityArn(const Aws::String& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = value; }
@@ -66,7 +66,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that was returned when you called
      * <a>CreateCertificateAuthority</a>. This must be of the form:</p> <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code> </p>
      */
     inline void SetCertificateAuthorityArn(Aws::String&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::move(value); }
@@ -74,7 +74,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that was returned when you called
      * <a>CreateCertificateAuthority</a>. This must be of the form:</p> <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code> </p>
      */
     inline void SetCertificateAuthorityArn(const char* value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn.assign(value); }
@@ -82,7 +82,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that was returned when you called
      * <a>CreateCertificateAuthority</a>. This must be of the form:</p> <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code> </p>
      */
     inline IssueCertificateRequest& WithCertificateAuthorityArn(const Aws::String& value) { SetCertificateAuthorityArn(value); return *this;}
@@ -90,7 +90,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that was returned when you called
      * <a>CreateCertificateAuthority</a>. This must be of the form:</p> <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code> </p>
      */
     inline IssueCertificateRequest& WithCertificateAuthorityArn(Aws::String&& value) { SetCertificateAuthorityArn(std::move(value)); return *this;}
@@ -98,7 +98,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that was returned when you called
      * <a>CreateCertificateAuthority</a>. This must be of the form:</p> <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code> </p>
      */
     inline IssueCertificateRequest& WithCertificateAuthorityArn(const char* value) { SetCertificateAuthorityArn(value); return *this;}
@@ -229,7 +229,7 @@ namespace Model
 
     /**
      * <p>Custom string that can be used to distinguish between calls to the
-     * <b>IssueCertificate</b> function. Idempotency tokens time out after one hour.
+     * <b>IssueCertificate</b> operation. Idempotency tokens time out after one hour.
      * Therefore, if you call <b>IssueCertificate</b> multiple times with the same
      * idempotency token within 5 minutes, ACM PCA recognizes that you are requesting
      * only one certificate and will issue only one. If you change the idempotency
@@ -240,7 +240,7 @@ namespace Model
 
     /**
      * <p>Custom string that can be used to distinguish between calls to the
-     * <b>IssueCertificate</b> function. Idempotency tokens time out after one hour.
+     * <b>IssueCertificate</b> operation. Idempotency tokens time out after one hour.
      * Therefore, if you call <b>IssueCertificate</b> multiple times with the same
      * idempotency token within 5 minutes, ACM PCA recognizes that you are requesting
      * only one certificate and will issue only one. If you change the idempotency
@@ -251,7 +251,7 @@ namespace Model
 
     /**
      * <p>Custom string that can be used to distinguish between calls to the
-     * <b>IssueCertificate</b> function. Idempotency tokens time out after one hour.
+     * <b>IssueCertificate</b> operation. Idempotency tokens time out after one hour.
      * Therefore, if you call <b>IssueCertificate</b> multiple times with the same
      * idempotency token within 5 minutes, ACM PCA recognizes that you are requesting
      * only one certificate and will issue only one. If you change the idempotency
@@ -262,7 +262,7 @@ namespace Model
 
     /**
      * <p>Custom string that can be used to distinguish between calls to the
-     * <b>IssueCertificate</b> function. Idempotency tokens time out after one hour.
+     * <b>IssueCertificate</b> operation. Idempotency tokens time out after one hour.
      * Therefore, if you call <b>IssueCertificate</b> multiple times with the same
      * idempotency token within 5 minutes, ACM PCA recognizes that you are requesting
      * only one certificate and will issue only one. If you change the idempotency
@@ -273,7 +273,7 @@ namespace Model
 
     /**
      * <p>Custom string that can be used to distinguish between calls to the
-     * <b>IssueCertificate</b> function. Idempotency tokens time out after one hour.
+     * <b>IssueCertificate</b> operation. Idempotency tokens time out after one hour.
      * Therefore, if you call <b>IssueCertificate</b> multiple times with the same
      * idempotency token within 5 minutes, ACM PCA recognizes that you are requesting
      * only one certificate and will issue only one. If you change the idempotency
@@ -284,7 +284,7 @@ namespace Model
 
     /**
      * <p>Custom string that can be used to distinguish between calls to the
-     * <b>IssueCertificate</b> function. Idempotency tokens time out after one hour.
+     * <b>IssueCertificate</b> operation. Idempotency tokens time out after one hour.
      * Therefore, if you call <b>IssueCertificate</b> multiple times with the same
      * idempotency token within 5 minutes, ACM PCA recognizes that you are requesting
      * only one certificate and will issue only one. If you change the idempotency
@@ -295,7 +295,7 @@ namespace Model
 
     /**
      * <p>Custom string that can be used to distinguish between calls to the
-     * <b>IssueCertificate</b> function. Idempotency tokens time out after one hour.
+     * <b>IssueCertificate</b> operation. Idempotency tokens time out after one hour.
      * Therefore, if you call <b>IssueCertificate</b> multiple times with the same
      * idempotency token within 5 minutes, ACM PCA recognizes that you are requesting
      * only one certificate and will issue only one. If you change the idempotency

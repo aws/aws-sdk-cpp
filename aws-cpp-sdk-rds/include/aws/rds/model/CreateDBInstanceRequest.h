@@ -2782,6 +2782,25 @@ namespace Model
 
 
     /**
+     * <p>The amount of time, in days, to retain Performance Insights data. Valid
+     * values are 7 or 731 (2 years). </p>
+     */
+    inline int GetPerformanceInsightsRetentionPeriod() const{ return m_performanceInsightsRetentionPeriod; }
+
+    /**
+     * <p>The amount of time, in days, to retain Performance Insights data. Valid
+     * values are 7 or 731 (2 years). </p>
+     */
+    inline void SetPerformanceInsightsRetentionPeriod(int value) { m_performanceInsightsRetentionPeriodHasBeenSet = true; m_performanceInsightsRetentionPeriod = value; }
+
+    /**
+     * <p>The amount of time, in days, to retain Performance Insights data. Valid
+     * values are 7 or 731 (2 years). </p>
+     */
+    inline CreateDBInstanceRequest& WithPerformanceInsightsRetentionPeriod(int value) { SetPerformanceInsightsRetentionPeriod(value); return *this;}
+
+
+    /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
      * Logs.</p>
      */
@@ -2996,6 +3015,9 @@ namespace Model
 
     Aws::String m_performanceInsightsKMSKeyId;
     bool m_performanceInsightsKMSKeyIdHasBeenSet;
+
+    int m_performanceInsightsRetentionPeriod;
+    bool m_performanceInsightsRetentionPeriodHasBeenSet;
 
     Aws::Vector<Aws::String> m_enableCloudwatchLogsExports;
     bool m_enableCloudwatchLogsExportsHasBeenSet;

@@ -47,7 +47,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the private CA. This must be of the
      * form:</p> <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code>. </p>
      */
     inline const Aws::String& GetCertificateAuthorityArn() const{ return m_certificateAuthorityArn; }
@@ -55,7 +55,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the private CA. This must be of the
      * form:</p> <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code>. </p>
      */
     inline void SetCertificateAuthorityArn(const Aws::String& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = value; }
@@ -63,7 +63,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the private CA. This must be of the
      * form:</p> <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code>. </p>
      */
     inline void SetCertificateAuthorityArn(Aws::String&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::move(value); }
@@ -71,7 +71,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the private CA. This must be of the
      * form:</p> <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code>. </p>
      */
     inline void SetCertificateAuthorityArn(const char* value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn.assign(value); }
@@ -79,7 +79,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the private CA. This must be of the
      * form:</p> <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code>. </p>
      */
     inline DescribeCertificateAuthorityAuditReportRequest& WithCertificateAuthorityArn(const Aws::String& value) { SetCertificateAuthorityArn(value); return *this;}
@@ -87,7 +87,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the private CA. This must be of the
      * form:</p> <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code>. </p>
      */
     inline DescribeCertificateAuthorityAuditReportRequest& WithCertificateAuthorityArn(Aws::String&& value) { SetCertificateAuthorityArn(std::move(value)); return *this;}
@@ -95,7 +95,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the private CA. This must be of the
      * form:</p> <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code>. </p>
      */
     inline DescribeCertificateAuthorityAuditReportRequest& WithCertificateAuthorityArn(const char* value) { SetCertificateAuthorityArn(value); return *this;}
@@ -103,43 +103,43 @@ namespace Model
 
     /**
      * <p>The report ID returned by calling the
-     * <a>CreateCertificateAuthorityAuditReport</a> function.</p>
+     * <a>CreateCertificateAuthorityAuditReport</a> operation.</p>
      */
     inline const Aws::String& GetAuditReportId() const{ return m_auditReportId; }
 
     /**
      * <p>The report ID returned by calling the
-     * <a>CreateCertificateAuthorityAuditReport</a> function.</p>
+     * <a>CreateCertificateAuthorityAuditReport</a> operation.</p>
      */
     inline void SetAuditReportId(const Aws::String& value) { m_auditReportIdHasBeenSet = true; m_auditReportId = value; }
 
     /**
      * <p>The report ID returned by calling the
-     * <a>CreateCertificateAuthorityAuditReport</a> function.</p>
+     * <a>CreateCertificateAuthorityAuditReport</a> operation.</p>
      */
     inline void SetAuditReportId(Aws::String&& value) { m_auditReportIdHasBeenSet = true; m_auditReportId = std::move(value); }
 
     /**
      * <p>The report ID returned by calling the
-     * <a>CreateCertificateAuthorityAuditReport</a> function.</p>
+     * <a>CreateCertificateAuthorityAuditReport</a> operation.</p>
      */
     inline void SetAuditReportId(const char* value) { m_auditReportIdHasBeenSet = true; m_auditReportId.assign(value); }
 
     /**
      * <p>The report ID returned by calling the
-     * <a>CreateCertificateAuthorityAuditReport</a> function.</p>
+     * <a>CreateCertificateAuthorityAuditReport</a> operation.</p>
      */
     inline DescribeCertificateAuthorityAuditReportRequest& WithAuditReportId(const Aws::String& value) { SetAuditReportId(value); return *this;}
 
     /**
      * <p>The report ID returned by calling the
-     * <a>CreateCertificateAuthorityAuditReport</a> function.</p>
+     * <a>CreateCertificateAuthorityAuditReport</a> operation.</p>
      */
     inline DescribeCertificateAuthorityAuditReportRequest& WithAuditReportId(Aws::String&& value) { SetAuditReportId(std::move(value)); return *this;}
 
     /**
      * <p>The report ID returned by calling the
-     * <a>CreateCertificateAuthorityAuditReport</a> function.</p>
+     * <a>CreateCertificateAuthorityAuditReport</a> operation.</p>
      */
     inline DescribeCertificateAuthorityAuditReportRequest& WithAuditReportId(const char* value) { SetAuditReportId(value); return *this;}
 

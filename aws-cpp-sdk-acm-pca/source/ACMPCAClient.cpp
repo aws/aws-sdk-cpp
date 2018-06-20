@@ -39,6 +39,7 @@
 #include <aws/acm-pca/model/IssueCertificateRequest.h>
 #include <aws/acm-pca/model/ListCertificateAuthoritiesRequest.h>
 #include <aws/acm-pca/model/ListTagsRequest.h>
+#include <aws/acm-pca/model/RestoreCertificateAuthorityRequest.h>
 #include <aws/acm-pca/model/RevokeCertificateRequest.h>
 #include <aws/acm-pca/model/TagCertificateAuthorityRequest.h>
 #include <aws/acm-pca/model/UntagCertificateAuthorityRequest.h>
@@ -526,6 +527,41 @@ void ACMPCAClient::ListTagsAsync(const ListTagsRequest& request, const ListTagsR
 void ACMPCAClient::ListTagsAsyncHelper(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTags(request), context);
+}
+
+RestoreCertificateAuthorityOutcome ACMPCAClient::RestoreCertificateAuthority(const RestoreCertificateAuthorityRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return RestoreCertificateAuthorityOutcome(NoResult());
+  }
+  else
+  {
+    return RestoreCertificateAuthorityOutcome(outcome.GetError());
+  }
+}
+
+RestoreCertificateAuthorityOutcomeCallable ACMPCAClient::RestoreCertificateAuthorityCallable(const RestoreCertificateAuthorityRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RestoreCertificateAuthorityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RestoreCertificateAuthority(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ACMPCAClient::RestoreCertificateAuthorityAsync(const RestoreCertificateAuthorityRequest& request, const RestoreCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RestoreCertificateAuthorityAsyncHelper( request, handler, context ); } );
+}
+
+void ACMPCAClient::RestoreCertificateAuthorityAsyncHelper(const RestoreCertificateAuthorityRequest& request, const RestoreCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RestoreCertificateAuthority(request), context);
 }
 
 RevokeCertificateOutcome ACMPCAClient::RevokeCertificate(const RevokeCertificateRequest& request) const

@@ -95,6 +95,8 @@ DBInstance::DBInstance() :
     m_performanceInsightsEnabled(false),
     m_performanceInsightsEnabledHasBeenSet(false),
     m_performanceInsightsKMSKeyIdHasBeenSet(false),
+    m_performanceInsightsRetentionPeriod(0),
+    m_performanceInsightsRetentionPeriodHasBeenSet(false),
     m_enabledCloudwatchLogsExportsHasBeenSet(false),
     m_processorFeaturesHasBeenSet(false)
 {
@@ -165,6 +167,8 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_performanceInsightsEnabled(false),
     m_performanceInsightsEnabledHasBeenSet(false),
     m_performanceInsightsKMSKeyIdHasBeenSet(false),
+    m_performanceInsightsRetentionPeriod(0),
+    m_performanceInsightsRetentionPeriodHasBeenSet(false),
     m_enabledCloudwatchLogsExportsHasBeenSet(false),
     m_processorFeaturesHasBeenSet(false)
 {
@@ -531,6 +535,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_performanceInsightsKMSKeyId = StringUtils::Trim(performanceInsightsKMSKeyIdNode.GetText().c_str());
       m_performanceInsightsKMSKeyIdHasBeenSet = true;
     }
+    XmlNode performanceInsightsRetentionPeriodNode = resultNode.FirstChild("PerformanceInsightsRetentionPeriod");
+    if(!performanceInsightsRetentionPeriodNode.IsNull())
+    {
+      m_performanceInsightsRetentionPeriod = StringUtils::ConvertToInt32(StringUtils::Trim(performanceInsightsRetentionPeriodNode.GetText().c_str()).c_str());
+      m_performanceInsightsRetentionPeriodHasBeenSet = true;
+    }
     XmlNode enabledCloudwatchLogsExportsNode = resultNode.FirstChild("EnabledCloudwatchLogsExports");
     if(!enabledCloudwatchLogsExportsNode.IsNull())
     {
@@ -867,6 +877,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".PerformanceInsightsKMSKeyId=" << StringUtils::URLEncode(m_performanceInsightsKMSKeyId.c_str()) << "&";
   }
 
+  if(m_performanceInsightsRetentionPeriodHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PerformanceInsightsRetentionPeriod=" << m_performanceInsightsRetentionPeriod << "&";
+  }
+
   if(m_enabledCloudwatchLogsExportsHasBeenSet)
   {
       unsigned enabledCloudwatchLogsExportsIdx = 1;
@@ -1144,6 +1159,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_performanceInsightsKMSKeyIdHasBeenSet)
   {
       oStream << location << ".PerformanceInsightsKMSKeyId=" << StringUtils::URLEncode(m_performanceInsightsKMSKeyId.c_str()) << "&";
+  }
+  if(m_performanceInsightsRetentionPeriodHasBeenSet)
+  {
+      oStream << location << ".PerformanceInsightsRetentionPeriod=" << m_performanceInsightsRetentionPeriod << "&";
   }
   if(m_enabledCloudwatchLogsExportsHasBeenSet)
   {

@@ -29,6 +29,7 @@ namespace Model
     CREATING,
     PENDING_CERTIFICATE,
     ACTIVE,
+    DELETED,
     DISABLED,
     EXPIRED,
     FAILED

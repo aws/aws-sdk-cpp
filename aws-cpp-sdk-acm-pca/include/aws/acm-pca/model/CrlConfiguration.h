@@ -86,24 +86,24 @@ namespace Model
     /**
      * <p>Boolean value that specifies whether certificate revocation lists (CRLs) are
      * enabled. You can use this value to enable certificate revocation for a new CA
-     * when you call the <a>CreateCertificateAuthority</a> function or for an existing
-     * CA when you call the <a>UpdateCertificateAuthority</a> function. </p>
+     * when you call the <a>CreateCertificateAuthority</a> operation or for an existing
+     * CA when you call the <a>UpdateCertificateAuthority</a> operation. </p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
      * <p>Boolean value that specifies whether certificate revocation lists (CRLs) are
      * enabled. You can use this value to enable certificate revocation for a new CA
-     * when you call the <a>CreateCertificateAuthority</a> function or for an existing
-     * CA when you call the <a>UpdateCertificateAuthority</a> function. </p>
+     * when you call the <a>CreateCertificateAuthority</a> operation or for an existing
+     * CA when you call the <a>UpdateCertificateAuthority</a> operation. </p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
      * <p>Boolean value that specifies whether certificate revocation lists (CRLs) are
      * enabled. You can use this value to enable certificate revocation for a new CA
-     * when you call the <a>CreateCertificateAuthority</a> function or for an existing
-     * CA when you call the <a>UpdateCertificateAuthority</a> function. </p>
+     * when you call the <a>CreateCertificateAuthority</a> operation or for an existing
+     * CA when you call the <a>UpdateCertificateAuthority</a> operation. </p>
      */
     inline CrlConfiguration& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
@@ -179,7 +179,7 @@ namespace Model
      * for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into
      * the <b>CRL Distribution Points</b> extension of the issued certificate. You can
      * change the name of your bucket by calling the <a>UpdateCertificateAuthority</a>
-     * function. You must specify a bucket policy that allows ACM PCA to write the CRL
+     * operation. You must specify a bucket policy that allows ACM PCA to write the CRL
      * to your bucket.</p>
      */
     inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
@@ -189,7 +189,7 @@ namespace Model
      * for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into
      * the <b>CRL Distribution Points</b> extension of the issued certificate. You can
      * change the name of your bucket by calling the <a>UpdateCertificateAuthority</a>
-     * function. You must specify a bucket policy that allows ACM PCA to write the CRL
+     * operation. You must specify a bucket policy that allows ACM PCA to write the CRL
      * to your bucket.</p>
      */
     inline void SetS3BucketName(const Aws::String& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
@@ -199,7 +199,7 @@ namespace Model
      * for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into
      * the <b>CRL Distribution Points</b> extension of the issued certificate. You can
      * change the name of your bucket by calling the <a>UpdateCertificateAuthority</a>
-     * function. You must specify a bucket policy that allows ACM PCA to write the CRL
+     * operation. You must specify a bucket policy that allows ACM PCA to write the CRL
      * to your bucket.</p>
      */
     inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::move(value); }
@@ -209,7 +209,7 @@ namespace Model
      * for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into
      * the <b>CRL Distribution Points</b> extension of the issued certificate. You can
      * change the name of your bucket by calling the <a>UpdateCertificateAuthority</a>
-     * function. You must specify a bucket policy that allows ACM PCA to write the CRL
+     * operation. You must specify a bucket policy that allows ACM PCA to write the CRL
      * to your bucket.</p>
      */
     inline void SetS3BucketName(const char* value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName.assign(value); }
@@ -219,7 +219,7 @@ namespace Model
      * for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into
      * the <b>CRL Distribution Points</b> extension of the issued certificate. You can
      * change the name of your bucket by calling the <a>UpdateCertificateAuthority</a>
-     * function. You must specify a bucket policy that allows ACM PCA to write the CRL
+     * operation. You must specify a bucket policy that allows ACM PCA to write the CRL
      * to your bucket.</p>
      */
     inline CrlConfiguration& WithS3BucketName(const Aws::String& value) { SetS3BucketName(value); return *this;}
@@ -229,7 +229,7 @@ namespace Model
      * for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into
      * the <b>CRL Distribution Points</b> extension of the issued certificate. You can
      * change the name of your bucket by calling the <a>UpdateCertificateAuthority</a>
-     * function. You must specify a bucket policy that allows ACM PCA to write the CRL
+     * operation. You must specify a bucket policy that allows ACM PCA to write the CRL
      * to your bucket.</p>
      */
     inline CrlConfiguration& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
@@ -239,7 +239,7 @@ namespace Model
      * for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into
      * the <b>CRL Distribution Points</b> extension of the issued certificate. You can
      * change the name of your bucket by calling the <a>UpdateCertificateAuthority</a>
-     * function. You must specify a bucket policy that allows ACM PCA to write the CRL
+     * operation. You must specify a bucket policy that allows ACM PCA to write the CRL
      * to your bucket.</p>
      */
     inline CrlConfiguration& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}

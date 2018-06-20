@@ -33,6 +33,7 @@ namespace Aws
         static const int CREATING_HASH = HashingUtils::HashString("CREATING");
         static const int PENDING_CERTIFICATE_HASH = HashingUtils::HashString("PENDING_CERTIFICATE");
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
+        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
         static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
         static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
@@ -52,6 +53,10 @@ namespace Aws
           else if (hashCode == ACTIVE_HASH)
           {
             return CertificateAuthorityStatus::ACTIVE;
+          }
+          else if (hashCode == DELETED_HASH)
+          {
+            return CertificateAuthorityStatus::DELETED;
           }
           else if (hashCode == DISABLED_HASH)
           {
@@ -85,6 +90,8 @@ namespace Aws
             return "PENDING_CERTIFICATE";
           case CertificateAuthorityStatus::ACTIVE:
             return "ACTIVE";
+          case CertificateAuthorityStatus::DELETED:
+            return "DELETED";
           case CertificateAuthorityStatus::DISABLED:
             return "DISABLED";
           case CertificateAuthorityStatus::EXPIRED:

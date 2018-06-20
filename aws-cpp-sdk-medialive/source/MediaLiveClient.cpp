@@ -33,12 +33,18 @@
 #include <aws/medialive/model/DeleteChannelRequest.h>
 #include <aws/medialive/model/DeleteInputRequest.h>
 #include <aws/medialive/model/DeleteInputSecurityGroupRequest.h>
+#include <aws/medialive/model/DeleteReservationRequest.h>
 #include <aws/medialive/model/DescribeChannelRequest.h>
 #include <aws/medialive/model/DescribeInputRequest.h>
 #include <aws/medialive/model/DescribeInputSecurityGroupRequest.h>
+#include <aws/medialive/model/DescribeOfferingRequest.h>
+#include <aws/medialive/model/DescribeReservationRequest.h>
 #include <aws/medialive/model/ListChannelsRequest.h>
 #include <aws/medialive/model/ListInputSecurityGroupsRequest.h>
 #include <aws/medialive/model/ListInputsRequest.h>
+#include <aws/medialive/model/ListOfferingsRequest.h>
+#include <aws/medialive/model/ListReservationsRequest.h>
+#include <aws/medialive/model/PurchaseOfferingRequest.h>
 #include <aws/medialive/model/StartChannelRequest.h>
 #include <aws/medialive/model/StopChannelRequest.h>
 #include <aws/medialive/model/UpdateChannelRequest.h>
@@ -322,6 +328,42 @@ void MediaLiveClient::DeleteInputSecurityGroupAsyncHelper(const DeleteInputSecur
   handler(this, request, DeleteInputSecurityGroup(request), context);
 }
 
+DeleteReservationOutcome MediaLiveClient::DeleteReservation(const DeleteReservationRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/prod/reservations/";
+  ss << request.GetReservationId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteReservationOutcome(DeleteReservationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteReservationOutcome(outcome.GetError());
+  }
+}
+
+DeleteReservationOutcomeCallable MediaLiveClient::DeleteReservationCallable(const DeleteReservationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteReservationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteReservation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaLiveClient::DeleteReservationAsync(const DeleteReservationRequest& request, const DeleteReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteReservationAsyncHelper( request, handler, context ); } );
+}
+
+void MediaLiveClient::DeleteReservationAsyncHelper(const DeleteReservationRequest& request, const DeleteReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteReservation(request), context);
+}
+
 DescribeChannelOutcome MediaLiveClient::DescribeChannel(const DescribeChannelRequest& request) const
 {
   Aws::StringStream ss;
@@ -430,6 +472,78 @@ void MediaLiveClient::DescribeInputSecurityGroupAsyncHelper(const DescribeInputS
   handler(this, request, DescribeInputSecurityGroup(request), context);
 }
 
+DescribeOfferingOutcome MediaLiveClient::DescribeOffering(const DescribeOfferingRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/prod/offerings/";
+  ss << request.GetOfferingId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeOfferingOutcome(DescribeOfferingResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeOfferingOutcome(outcome.GetError());
+  }
+}
+
+DescribeOfferingOutcomeCallable MediaLiveClient::DescribeOfferingCallable(const DescribeOfferingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeOfferingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeOffering(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaLiveClient::DescribeOfferingAsync(const DescribeOfferingRequest& request, const DescribeOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeOfferingAsyncHelper( request, handler, context ); } );
+}
+
+void MediaLiveClient::DescribeOfferingAsyncHelper(const DescribeOfferingRequest& request, const DescribeOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeOffering(request), context);
+}
+
+DescribeReservationOutcome MediaLiveClient::DescribeReservation(const DescribeReservationRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/prod/reservations/";
+  ss << request.GetReservationId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeReservationOutcome(DescribeReservationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeReservationOutcome(outcome.GetError());
+  }
+}
+
+DescribeReservationOutcomeCallable MediaLiveClient::DescribeReservationCallable(const DescribeReservationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeReservationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeReservation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaLiveClient::DescribeReservationAsync(const DescribeReservationRequest& request, const DescribeReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeReservationAsyncHelper( request, handler, context ); } );
+}
+
+void MediaLiveClient::DescribeReservationAsyncHelper(const DescribeReservationRequest& request, const DescribeReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeReservation(request), context);
+}
+
 ListChannelsOutcome MediaLiveClient::ListChannels(const ListChannelsRequest& request) const
 {
   Aws::StringStream ss;
@@ -533,6 +647,113 @@ void MediaLiveClient::ListInputsAsync(const ListInputsRequest& request, const Li
 void MediaLiveClient::ListInputsAsyncHelper(const ListInputsRequest& request, const ListInputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListInputs(request), context);
+}
+
+ListOfferingsOutcome MediaLiveClient::ListOfferings(const ListOfferingsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/prod/offerings";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListOfferingsOutcome(ListOfferingsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListOfferingsOutcome(outcome.GetError());
+  }
+}
+
+ListOfferingsOutcomeCallable MediaLiveClient::ListOfferingsCallable(const ListOfferingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListOfferingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListOfferings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaLiveClient::ListOfferingsAsync(const ListOfferingsRequest& request, const ListOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListOfferingsAsyncHelper( request, handler, context ); } );
+}
+
+void MediaLiveClient::ListOfferingsAsyncHelper(const ListOfferingsRequest& request, const ListOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListOfferings(request), context);
+}
+
+ListReservationsOutcome MediaLiveClient::ListReservations(const ListReservationsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/prod/reservations";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListReservationsOutcome(ListReservationsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListReservationsOutcome(outcome.GetError());
+  }
+}
+
+ListReservationsOutcomeCallable MediaLiveClient::ListReservationsCallable(const ListReservationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListReservationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListReservations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaLiveClient::ListReservationsAsync(const ListReservationsRequest& request, const ListReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListReservationsAsyncHelper( request, handler, context ); } );
+}
+
+void MediaLiveClient::ListReservationsAsyncHelper(const ListReservationsRequest& request, const ListReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListReservations(request), context);
+}
+
+PurchaseOfferingOutcome MediaLiveClient::PurchaseOffering(const PurchaseOfferingRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/prod/offerings/";
+  ss << request.GetOfferingId();
+  ss << "/purchase";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PurchaseOfferingOutcome(PurchaseOfferingResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PurchaseOfferingOutcome(outcome.GetError());
+  }
+}
+
+PurchaseOfferingOutcomeCallable MediaLiveClient::PurchaseOfferingCallable(const PurchaseOfferingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PurchaseOfferingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PurchaseOffering(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaLiveClient::PurchaseOfferingAsync(const PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PurchaseOfferingAsyncHelper( request, handler, context ); } );
+}
+
+void MediaLiveClient::PurchaseOfferingAsyncHelper(const PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PurchaseOffering(request), context);
 }
 
 StartChannelOutcome MediaLiveClient::StartChannel(const StartChannelRequest& request) const

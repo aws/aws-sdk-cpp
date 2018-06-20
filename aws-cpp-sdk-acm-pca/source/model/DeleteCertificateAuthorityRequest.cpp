@@ -23,7 +23,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeleteCertificateAuthorityRequest::DeleteCertificateAuthorityRequest() : 
-    m_certificateAuthorityArnHasBeenSet(false)
+    m_certificateAuthorityArnHasBeenSet(false),
+    m_permanentDeletionTimeInDays(0),
+    m_permanentDeletionTimeInDaysHasBeenSet(false)
 {
 }
 
@@ -34,6 +36,12 @@ Aws::String DeleteCertificateAuthorityRequest::SerializePayload() const
   if(m_certificateAuthorityArnHasBeenSet)
   {
    payload.WithString("CertificateAuthorityArn", m_certificateAuthorityArn);
+
+  }
+
+  if(m_permanentDeletionTimeInDaysHasBeenSet)
+  {
+   payload.WithInteger("PermanentDeletionTimeInDays", m_permanentDeletionTimeInDays);
 
   }
 

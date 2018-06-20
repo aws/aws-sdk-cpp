@@ -40,7 +40,7 @@ namespace Model
    * key pair that your private CA creates when it issues a certificate, the
    * signature algorithm it uses used when issuing certificates, and its X.500
    * distinguished name. You must specify this information when you call the
-   * <a>CreateCertificateAuthority</a> function. </p><p><h3>See Also:</h3>   <a
+   * <a>CreateCertificateAuthority</a> operation. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CertificateAuthorityConfiguration">AWS
    * API Reference</a></p>
    */

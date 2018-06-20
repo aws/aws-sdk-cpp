@@ -165,9 +165,9 @@ namespace Model
      * <b>CreateCertificateAuthority</b>. Idempotency tokens time out after five
      * minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times
      * with the same idempotency token within a five minute period, ACM PCA recognizes
-     * that you are requesting only one certificate and will issue only one. If you
-     * change the idempotency token for each call, however, ACM PCA recognizes that you
-     * are requesting multiple certificates.</p>
+     * that you are requesting only one certificate. As a result, ACM PCA issues only
+     * one. If you change the idempotency token for each call, however, ACM PCA
+     * recognizes that you are requesting multiple certificates.</p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
 
@@ -176,9 +176,9 @@ namespace Model
      * <b>CreateCertificateAuthority</b>. Idempotency tokens time out after five
      * minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times
      * with the same idempotency token within a five minute period, ACM PCA recognizes
-     * that you are requesting only one certificate and will issue only one. If you
-     * change the idempotency token for each call, however, ACM PCA recognizes that you
-     * are requesting multiple certificates.</p>
+     * that you are requesting only one certificate. As a result, ACM PCA issues only
+     * one. If you change the idempotency token for each call, however, ACM PCA
+     * recognizes that you are requesting multiple certificates.</p>
      */
     inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
 
@@ -187,9 +187,9 @@ namespace Model
      * <b>CreateCertificateAuthority</b>. Idempotency tokens time out after five
      * minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times
      * with the same idempotency token within a five minute period, ACM PCA recognizes
-     * that you are requesting only one certificate and will issue only one. If you
-     * change the idempotency token for each call, however, ACM PCA recognizes that you
-     * are requesting multiple certificates.</p>
+     * that you are requesting only one certificate. As a result, ACM PCA issues only
+     * one. If you change the idempotency token for each call, however, ACM PCA
+     * recognizes that you are requesting multiple certificates.</p>
      */
     inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
 
@@ -198,9 +198,9 @@ namespace Model
      * <b>CreateCertificateAuthority</b>. Idempotency tokens time out after five
      * minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times
      * with the same idempotency token within a five minute period, ACM PCA recognizes
-     * that you are requesting only one certificate and will issue only one. If you
-     * change the idempotency token for each call, however, ACM PCA recognizes that you
-     * are requesting multiple certificates.</p>
+     * that you are requesting only one certificate. As a result, ACM PCA issues only
+     * one. If you change the idempotency token for each call, however, ACM PCA
+     * recognizes that you are requesting multiple certificates.</p>
      */
     inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
 
@@ -209,9 +209,9 @@ namespace Model
      * <b>CreateCertificateAuthority</b>. Idempotency tokens time out after five
      * minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times
      * with the same idempotency token within a five minute period, ACM PCA recognizes
-     * that you are requesting only one certificate and will issue only one. If you
-     * change the idempotency token for each call, however, ACM PCA recognizes that you
-     * are requesting multiple certificates.</p>
+     * that you are requesting only one certificate. As a result, ACM PCA issues only
+     * one. If you change the idempotency token for each call, however, ACM PCA
+     * recognizes that you are requesting multiple certificates.</p>
      */
     inline CreateCertificateAuthorityRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
 
@@ -220,9 +220,9 @@ namespace Model
      * <b>CreateCertificateAuthority</b>. Idempotency tokens time out after five
      * minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times
      * with the same idempotency token within a five minute period, ACM PCA recognizes
-     * that you are requesting only one certificate and will issue only one. If you
-     * change the idempotency token for each call, however, ACM PCA recognizes that you
-     * are requesting multiple certificates.</p>
+     * that you are requesting only one certificate. As a result, ACM PCA issues only
+     * one. If you change the idempotency token for each call, however, ACM PCA
+     * recognizes that you are requesting multiple certificates.</p>
      */
     inline CreateCertificateAuthorityRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
 
@@ -231,9 +231,9 @@ namespace Model
      * <b>CreateCertificateAuthority</b>. Idempotency tokens time out after five
      * minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times
      * with the same idempotency token within a five minute period, ACM PCA recognizes
-     * that you are requesting only one certificate and will issue only one. If you
-     * change the idempotency token for each call, however, ACM PCA recognizes that you
-     * are requesting multiple certificates.</p>
+     * that you are requesting only one certificate. As a result, ACM PCA issues only
+     * one. If you change the idempotency token for each call, however, ACM PCA
+     * recognizes that you are requesting multiple certificates.</p>
      */
     inline CreateCertificateAuthorityRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 

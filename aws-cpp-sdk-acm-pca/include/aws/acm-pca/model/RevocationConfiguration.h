@@ -35,7 +35,7 @@ namespace Model
   /**
    * <p>Certificate revocation information used by the
    * <a>CreateCertificateAuthority</a> and <a>UpdateCertificateAuthority</a>
-   * functions. Your private certificate authority (CA) can create and maintain a
+   * operations. Your private certificate authority (CA) can create and maintain a
    * certificate revocation list (CRL). A CRL contains information about certificates
    * revoked by your CA. For more information, see
    * <a>RevokeCertificate</a>.</p><p><h3>See Also:</h3>   <a

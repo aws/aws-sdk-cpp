@@ -42,7 +42,8 @@ CertificateAuthority::CertificateAuthority() :
     m_failureReason(FailureReason::NOT_SET),
     m_failureReasonHasBeenSet(false),
     m_certificateAuthorityConfigurationHasBeenSet(false),
-    m_revocationConfigurationHasBeenSet(false)
+    m_revocationConfigurationHasBeenSet(false),
+    m_restorableUntilHasBeenSet(false)
 {
 }
 
@@ -60,7 +61,8 @@ CertificateAuthority::CertificateAuthority(const JsonValue& jsonValue) :
     m_failureReason(FailureReason::NOT_SET),
     m_failureReasonHasBeenSet(false),
     m_certificateAuthorityConfigurationHasBeenSet(false),
-    m_revocationConfigurationHasBeenSet(false)
+    m_revocationConfigurationHasBeenSet(false),
+    m_restorableUntilHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -144,6 +146,13 @@ CertificateAuthority& CertificateAuthority::operator =(const JsonValue& jsonValu
     m_revocationConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RestorableUntil"))
+  {
+    m_restorableUntil = jsonValue.GetDouble("RestorableUntil");
+
+    m_restorableUntilHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -208,6 +217,11 @@ JsonValue CertificateAuthority::Jsonize() const
   {
    payload.WithObject("RevocationConfiguration", m_revocationConfiguration.Jsonize());
 
+  }
+
+  if(m_restorableUntilHasBeenSet)
+  {
+   payload.WithDouble("RestorableUntil", m_restorableUntil.SecondsWithMSPrecision());
   }
 
   return payload;

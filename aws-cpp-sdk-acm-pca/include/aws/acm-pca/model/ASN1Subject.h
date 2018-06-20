@@ -40,7 +40,7 @@ namespace Model
    * be a user, computer, device, or service. The <b>Subject</b> must contain an
    * X.500 distinguished name (DN). A DN is a sequence of relative distinguished
    * names (RDNs). The RDNs are separated by commas in the certificate. The DN must
-   * be unique for each for each entity, but your private CA can issue more than one
+   * be unique for each entity, but your private CA can issue more than one
    * certificate with the same DN to the same entity. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ASN1Subject">AWS
    * API Reference</a></p>
@@ -55,43 +55,43 @@ namespace Model
 
 
     /**
-     * <p>Two digit code that specifies the country in which the certificate subject
+     * <p>Two-digit code that specifies the country in which the certificate subject
      * located.</p>
      */
     inline const Aws::String& GetCountry() const{ return m_country; }
 
     /**
-     * <p>Two digit code that specifies the country in which the certificate subject
+     * <p>Two-digit code that specifies the country in which the certificate subject
      * located.</p>
      */
     inline void SetCountry(const Aws::String& value) { m_countryHasBeenSet = true; m_country = value; }
 
     /**
-     * <p>Two digit code that specifies the country in which the certificate subject
+     * <p>Two-digit code that specifies the country in which the certificate subject
      * located.</p>
      */
     inline void SetCountry(Aws::String&& value) { m_countryHasBeenSet = true; m_country = std::move(value); }
 
     /**
-     * <p>Two digit code that specifies the country in which the certificate subject
+     * <p>Two-digit code that specifies the country in which the certificate subject
      * located.</p>
      */
     inline void SetCountry(const char* value) { m_countryHasBeenSet = true; m_country.assign(value); }
 
     /**
-     * <p>Two digit code that specifies the country in which the certificate subject
+     * <p>Two-digit code that specifies the country in which the certificate subject
      * located.</p>
      */
     inline ASN1Subject& WithCountry(const Aws::String& value) { SetCountry(value); return *this;}
 
     /**
-     * <p>Two digit code that specifies the country in which the certificate subject
+     * <p>Two-digit code that specifies the country in which the certificate subject
      * located.</p>
      */
     inline ASN1Subject& WithCountry(Aws::String&& value) { SetCountry(std::move(value)); return *this;}
 
     /**
-     * <p>Two digit code that specifies the country in which the certificate subject
+     * <p>Two-digit code that specifies the country in which the certificate subject
      * located.</p>
      */
     inline ASN1Subject& WithCountry(const char* value) { SetCountry(value); return *this;}
@@ -378,86 +378,86 @@ namespace Model
 
 
     /**
-     * <p>A title such as Mr. or Ms. which is pre-pended to the name to refer formally
+     * <p>A title such as Mr. or Ms., which is pre-pended to the name to refer formally
      * to the certificate subject.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
 
     /**
-     * <p>A title such as Mr. or Ms. which is pre-pended to the name to refer formally
+     * <p>A title such as Mr. or Ms., which is pre-pended to the name to refer formally
      * to the certificate subject.</p>
      */
     inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
 
     /**
-     * <p>A title such as Mr. or Ms. which is pre-pended to the name to refer formally
+     * <p>A title such as Mr. or Ms., which is pre-pended to the name to refer formally
      * to the certificate subject.</p>
      */
     inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
 
     /**
-     * <p>A title such as Mr. or Ms. which is pre-pended to the name to refer formally
+     * <p>A title such as Mr. or Ms., which is pre-pended to the name to refer formally
      * to the certificate subject.</p>
      */
     inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
 
     /**
-     * <p>A title such as Mr. or Ms. which is pre-pended to the name to refer formally
+     * <p>A title such as Mr. or Ms., which is pre-pended to the name to refer formally
      * to the certificate subject.</p>
      */
     inline ASN1Subject& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
 
     /**
-     * <p>A title such as Mr. or Ms. which is pre-pended to the name to refer formally
+     * <p>A title such as Mr. or Ms., which is pre-pended to the name to refer formally
      * to the certificate subject.</p>
      */
     inline ASN1Subject& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
 
     /**
-     * <p>A title such as Mr. or Ms. which is pre-pended to the name to refer formally
+     * <p>A title such as Mr. or Ms., which is pre-pended to the name to refer formally
      * to the certificate subject.</p>
      */
     inline ASN1Subject& WithTitle(const char* value) { SetTitle(value); return *this;}
 
 
     /**
-     * <p>Family name. In the US and the UK for example, the surname of an individual
+     * <p>Family name. In the US and the UK, for example, the surname of an individual
      * is ordered last. In Asian cultures the surname is typically ordered first.</p>
      */
     inline const Aws::String& GetSurname() const{ return m_surname; }
 
     /**
-     * <p>Family name. In the US and the UK for example, the surname of an individual
+     * <p>Family name. In the US and the UK, for example, the surname of an individual
      * is ordered last. In Asian cultures the surname is typically ordered first.</p>
      */
     inline void SetSurname(const Aws::String& value) { m_surnameHasBeenSet = true; m_surname = value; }
 
     /**
-     * <p>Family name. In the US and the UK for example, the surname of an individual
+     * <p>Family name. In the US and the UK, for example, the surname of an individual
      * is ordered last. In Asian cultures the surname is typically ordered first.</p>
      */
     inline void SetSurname(Aws::String&& value) { m_surnameHasBeenSet = true; m_surname = std::move(value); }
 
     /**
-     * <p>Family name. In the US and the UK for example, the surname of an individual
+     * <p>Family name. In the US and the UK, for example, the surname of an individual
      * is ordered last. In Asian cultures the surname is typically ordered first.</p>
      */
     inline void SetSurname(const char* value) { m_surnameHasBeenSet = true; m_surname.assign(value); }
 
     /**
-     * <p>Family name. In the US and the UK for example, the surname of an individual
+     * <p>Family name. In the US and the UK, for example, the surname of an individual
      * is ordered last. In Asian cultures the surname is typically ordered first.</p>
      */
     inline ASN1Subject& WithSurname(const Aws::String& value) { SetSurname(value); return *this;}
 
     /**
-     * <p>Family name. In the US and the UK for example, the surname of an individual
+     * <p>Family name. In the US and the UK, for example, the surname of an individual
      * is ordered last. In Asian cultures the surname is typically ordered first.</p>
      */
     inline ASN1Subject& WithSurname(Aws::String&& value) { SetSurname(std::move(value)); return *this;}
 
     /**
-     * <p>Family name. In the US and the UK for example, the surname of an individual
+     * <p>Family name. In the US and the UK, for example, the surname of an individual
      * is ordered last. In Asian cultures the surname is typically ordered first.</p>
      */
     inline ASN1Subject& WithSurname(const char* value) { SetSurname(value); return *this;}

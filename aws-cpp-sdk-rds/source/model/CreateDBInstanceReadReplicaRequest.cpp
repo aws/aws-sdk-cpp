@@ -51,6 +51,8 @@ CreateDBInstanceReadReplicaRequest::CreateDBInstanceReadReplicaRequest() :
     m_enablePerformanceInsights(false),
     m_enablePerformanceInsightsHasBeenSet(false),
     m_performanceInsightsKMSKeyIdHasBeenSet(false),
+    m_performanceInsightsRetentionPeriod(0),
+    m_performanceInsightsRetentionPeriodHasBeenSet(false),
     m_enableCloudwatchLogsExportsHasBeenSet(false),
     m_processorFeaturesHasBeenSet(false),
     m_useDefaultProcessorFeatures(false),
@@ -170,6 +172,11 @@ Aws::String CreateDBInstanceReadReplicaRequest::SerializePayload() const
   if(m_performanceInsightsKMSKeyIdHasBeenSet)
   {
     ss << "PerformanceInsightsKMSKeyId=" << StringUtils::URLEncode(m_performanceInsightsKMSKeyId.c_str()) << "&";
+  }
+
+  if(m_performanceInsightsRetentionPeriodHasBeenSet)
+  {
+    ss << "PerformanceInsightsRetentionPeriod=" << m_performanceInsightsRetentionPeriod << "&";
   }
 
   if(m_enableCloudwatchLogsExportsHasBeenSet)

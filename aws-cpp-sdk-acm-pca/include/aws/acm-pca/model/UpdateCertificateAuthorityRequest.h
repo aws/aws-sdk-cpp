@@ -49,7 +49,7 @@ namespace Model
     /**
      * <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to
      * be revoked. This must be of the form:</p> <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code> </p>
      */
     inline const Aws::String& GetCertificateAuthorityArn() const{ return m_certificateAuthorityArn; }
@@ -57,7 +57,7 @@ namespace Model
     /**
      * <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to
      * be revoked. This must be of the form:</p> <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code> </p>
      */
     inline void SetCertificateAuthorityArn(const Aws::String& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = value; }
@@ -65,7 +65,7 @@ namespace Model
     /**
      * <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to
      * be revoked. This must be of the form:</p> <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code> </p>
      */
     inline void SetCertificateAuthorityArn(Aws::String&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::move(value); }
@@ -73,7 +73,7 @@ namespace Model
     /**
      * <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to
      * be revoked. This must be of the form:</p> <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code> </p>
      */
     inline void SetCertificateAuthorityArn(const char* value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn.assign(value); }
@@ -81,7 +81,7 @@ namespace Model
     /**
      * <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to
      * be revoked. This must be of the form:</p> <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code> </p>
      */
     inline UpdateCertificateAuthorityRequest& WithCertificateAuthorityArn(const Aws::String& value) { SetCertificateAuthorityArn(value); return *this;}
@@ -89,7 +89,7 @@ namespace Model
     /**
      * <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to
      * be revoked. This must be of the form:</p> <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code> </p>
      */
     inline UpdateCertificateAuthorityRequest& WithCertificateAuthorityArn(Aws::String&& value) { SetCertificateAuthorityArn(std::move(value)); return *this;}
@@ -97,7 +97,7 @@ namespace Model
     /**
      * <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to
      * be revoked. This must be of the form:</p> <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code> </p>
      */
     inline UpdateCertificateAuthorityRequest& WithCertificateAuthorityArn(const char* value) { SetCertificateAuthorityArn(value); return *this;}
