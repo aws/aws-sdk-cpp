@@ -1611,49 +1611,6 @@ namespace Model
 
 
     /**
-     * <p>Boolean value that indicates if the DB instance has a publicly resolvable DNS
-     * name. Set to <code>True</code> to make the DB instance Internet-facing with a
-     * publicly resolvable DNS name, which resolves to a public IP address. Set to
-     * <code>False</code> to make the DB instance internal with a DNS name that
-     * resolves to a private IP address. </p> <p> The DB instance must be part of a
-     * public subnet and <code>PubliclyAccessible</code> must be true in order for it
-     * to be publicly accessible. </p> <p>Changes to the
-     * <code>PubliclyAccessible</code> parameter are applied immediately regardless of
-     * the value of the <code>ApplyImmediately</code> parameter.</p> <p>Default:
-     * false</p>
-     */
-    inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
-
-    /**
-     * <p>Boolean value that indicates if the DB instance has a publicly resolvable DNS
-     * name. Set to <code>True</code> to make the DB instance Internet-facing with a
-     * publicly resolvable DNS name, which resolves to a public IP address. Set to
-     * <code>False</code> to make the DB instance internal with a DNS name that
-     * resolves to a private IP address. </p> <p> The DB instance must be part of a
-     * public subnet and <code>PubliclyAccessible</code> must be true in order for it
-     * to be publicly accessible. </p> <p>Changes to the
-     * <code>PubliclyAccessible</code> parameter are applied immediately regardless of
-     * the value of the <code>ApplyImmediately</code> parameter.</p> <p>Default:
-     * false</p>
-     */
-    inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
-
-    /**
-     * <p>Boolean value that indicates if the DB instance has a publicly resolvable DNS
-     * name. Set to <code>True</code> to make the DB instance Internet-facing with a
-     * publicly resolvable DNS name, which resolves to a public IP address. Set to
-     * <code>False</code> to make the DB instance internal with a DNS name that
-     * resolves to a private IP address. </p> <p> The DB instance must be part of a
-     * public subnet and <code>PubliclyAccessible</code> must be true in order for it
-     * to be publicly accessible. </p> <p>Changes to the
-     * <code>PubliclyAccessible</code> parameter are applied immediately regardless of
-     * the value of the <code>ApplyImmediately</code> parameter.</p> <p>Default:
-     * false</p>
-     */
-    inline ModifyDBInstanceRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
-
-
-    /**
      * <p>The ARN for the IAM role that permits Neptune to send enhanced monitoring
      * metrics to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. </p> <p>If
@@ -1987,9 +1944,6 @@ namespace Model
 
     int m_dBPortNumber;
     bool m_dBPortNumberHasBeenSet;
-
-    bool m_publiclyAccessible;
-    bool m_publiclyAccessibleHasBeenSet;
 
     Aws::String m_monitoringRoleArn;
     bool m_monitoringRoleArnHasBeenSet;

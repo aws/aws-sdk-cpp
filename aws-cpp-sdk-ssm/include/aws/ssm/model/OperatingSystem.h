@@ -28,6 +28,7 @@ namespace Model
     NOT_SET,
     WINDOWS,
     AMAZON_LINUX,
+    AMAZON_LINUX_2,
     UBUNTU,
     REDHAT_ENTERPRISE_LINUX,
     SUSE,

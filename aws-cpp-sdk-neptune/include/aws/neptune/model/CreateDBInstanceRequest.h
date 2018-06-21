@@ -1075,55 +1075,6 @@ namespace Model
     inline CreateDBInstanceRequest& WithCharacterSetName(const char* value) { SetCharacterSetName(value); return *this;}
 
 
-    /**
-     * <p>Specifies the accessibility options for the DB instance. A value of true
-     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
-     * resolves to a public IP address. A value of false specifies an internal instance
-     * with a DNS name that resolves to a private IP address.</p> <p>Default: The
-     * default behavior varies depending on whether a VPC has been requested or not.
-     * The following list shows the default behavior in each case.</p> <ul> <li> <p>
-     * <b>Default VPC:</b> true</p> </li> <li> <p> <b>VPC:</b> false</p> </li> </ul>
-     * <p>If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance is publicly
-     * accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is
-     * private.</p>
-     */
-    inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
-
-    /**
-     * <p>Specifies the accessibility options for the DB instance. A value of true
-     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
-     * resolves to a public IP address. A value of false specifies an internal instance
-     * with a DNS name that resolves to a private IP address.</p> <p>Default: The
-     * default behavior varies depending on whether a VPC has been requested or not.
-     * The following list shows the default behavior in each case.</p> <ul> <li> <p>
-     * <b>Default VPC:</b> true</p> </li> <li> <p> <b>VPC:</b> false</p> </li> </ul>
-     * <p>If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance is publicly
-     * accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is
-     * private.</p>
-     */
-    inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
-
-    /**
-     * <p>Specifies the accessibility options for the DB instance. A value of true
-     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
-     * resolves to a public IP address. A value of false specifies an internal instance
-     * with a DNS name that resolves to a private IP address.</p> <p>Default: The
-     * default behavior varies depending on whether a VPC has been requested or not.
-     * The following list shows the default behavior in each case.</p> <ul> <li> <p>
-     * <b>Default VPC:</b> true</p> </li> <li> <p> <b>VPC:</b> false</p> </li> </ul>
-     * <p>If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance is publicly
-     * accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is
-     * private.</p>
-     */
-    inline CreateDBInstanceRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
-
-
     
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -1907,9 +1858,6 @@ namespace Model
 
     Aws::String m_characterSetName;
     bool m_characterSetNameHasBeenSet;
-
-    bool m_publiclyAccessible;
-    bool m_publiclyAccessibleHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

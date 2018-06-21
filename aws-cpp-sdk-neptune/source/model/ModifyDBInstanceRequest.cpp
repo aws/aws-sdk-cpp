@@ -59,8 +59,6 @@ ModifyDBInstanceRequest::ModifyDBInstanceRequest() :
     m_monitoringIntervalHasBeenSet(false),
     m_dBPortNumber(0),
     m_dBPortNumberHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
     m_monitoringRoleArnHasBeenSet(false),
     m_domainIAMRoleNameHasBeenSet(false),
     m_promotionTier(0),
@@ -228,11 +226,6 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
   if(m_dBPortNumberHasBeenSet)
   {
     ss << "DBPortNumber=" << m_dBPortNumber << "&";
-  }
-
-  if(m_publiclyAccessibleHasBeenSet)
-  {
-    ss << "PubliclyAccessible=" << std::boolalpha << m_publiclyAccessible << "&";
   }
 
   if(m_monitoringRoleArnHasBeenSet)

@@ -50,8 +50,6 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_iopsHasBeenSet(false),
     m_optionGroupNameHasBeenSet(false),
     m_characterSetNameHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_dBClusterIdentifierHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
@@ -208,11 +206,6 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
   if(m_characterSetNameHasBeenSet)
   {
     ss << "CharacterSetName=" << StringUtils::URLEncode(m_characterSetName.c_str()) << "&";
-  }
-
-  if(m_publiclyAccessibleHasBeenSet)
-  {
-    ss << "PubliclyAccessible=" << std::boolalpha << m_publiclyAccessible << "&";
   }
 
   if(m_tagsHasBeenSet)

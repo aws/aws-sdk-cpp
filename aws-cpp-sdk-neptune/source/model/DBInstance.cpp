@@ -66,8 +66,6 @@ DBInstance::DBInstance() :
     m_optionGroupMembershipsHasBeenSet(false),
     m_characterSetNameHasBeenSet(false),
     m_secondaryAvailabilityZoneHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
     m_statusInfosHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
     m_tdeCredentialArnHasBeenSet(false),
@@ -135,8 +133,6 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_optionGroupMembershipsHasBeenSet(false),
     m_characterSetNameHasBeenSet(false),
     m_secondaryAvailabilityZoneHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
     m_statusInfosHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
     m_tdeCredentialArnHasBeenSet(false),
@@ -390,12 +386,6 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
     {
       m_secondaryAvailabilityZone = StringUtils::Trim(secondaryAvailabilityZoneNode.GetText().c_str());
       m_secondaryAvailabilityZoneHasBeenSet = true;
-    }
-    XmlNode publiclyAccessibleNode = resultNode.FirstChild("PubliclyAccessible");
-    if(!publiclyAccessibleNode.IsNull())
-    {
-      m_publiclyAccessible = StringUtils::ConvertToBool(StringUtils::Trim(publiclyAccessibleNode.GetText().c_str()).c_str());
-      m_publiclyAccessibleHasBeenSet = true;
     }
     XmlNode statusInfosNode = resultNode.FirstChild("StatusInfos");
     if(!statusInfosNode.IsNull())
@@ -736,11 +726,6 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".SecondaryAvailabilityZone=" << StringUtils::URLEncode(m_secondaryAvailabilityZone.c_str()) << "&";
   }
 
-  if(m_publiclyAccessibleHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".PubliclyAccessible=" << std::boolalpha << m_publiclyAccessible << "&";
-  }
-
   if(m_statusInfosHasBeenSet)
   {
       unsigned statusInfosIdx = 1;
@@ -1023,10 +1008,6 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_secondaryAvailabilityZoneHasBeenSet)
   {
       oStream << location << ".SecondaryAvailabilityZone=" << StringUtils::URLEncode(m_secondaryAvailabilityZone.c_str()) << "&";
-  }
-  if(m_publiclyAccessibleHasBeenSet)
-  {
-      oStream << location << ".PubliclyAccessible=" << std::boolalpha << m_publiclyAccessible << "&";
   }
   if(m_statusInfosHasBeenSet)
   {

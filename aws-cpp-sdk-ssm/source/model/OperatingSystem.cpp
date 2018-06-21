@@ -32,6 +32,7 @@ namespace Aws
 
         static const int WINDOWS_HASH = HashingUtils::HashString("WINDOWS");
         static const int AMAZON_LINUX_HASH = HashingUtils::HashString("AMAZON_LINUX");
+        static const int AMAZON_LINUX_2_HASH = HashingUtils::HashString("AMAZON_LINUX_2");
         static const int UBUNTU_HASH = HashingUtils::HashString("UBUNTU");
         static const int REDHAT_ENTERPRISE_LINUX_HASH = HashingUtils::HashString("REDHAT_ENTERPRISE_LINUX");
         static const int SUSE_HASH = HashingUtils::HashString("SUSE");
@@ -48,6 +49,10 @@ namespace Aws
           else if (hashCode == AMAZON_LINUX_HASH)
           {
             return OperatingSystem::AMAZON_LINUX;
+          }
+          else if (hashCode == AMAZON_LINUX_2_HASH)
+          {
+            return OperatingSystem::AMAZON_LINUX_2;
           }
           else if (hashCode == UBUNTU_HASH)
           {
@@ -83,6 +88,8 @@ namespace Aws
             return "WINDOWS";
           case OperatingSystem::AMAZON_LINUX:
             return "AMAZON_LINUX";
+          case OperatingSystem::AMAZON_LINUX_2:
+            return "AMAZON_LINUX_2";
           case OperatingSystem::UBUNTU:
             return "UBUNTU";
           case OperatingSystem::REDHAT_ENTERPRISE_LINUX:
