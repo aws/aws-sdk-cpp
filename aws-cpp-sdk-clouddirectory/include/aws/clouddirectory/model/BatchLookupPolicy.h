@@ -38,7 +38,7 @@ namespace Model
    * inside a <a>BatchRead</a> operation. For more information, see
    * <a>LookupPolicy</a> and <a>BatchReadRequest$Operations</a>.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchLookupPolicy">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchLookupPolicy">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API BatchLookupPolicy

@@ -35,7 +35,7 @@ namespace Model
   /**
    * <p>The tag structure that contains a tag key and value.</p><p><h3>See Also:</h3>
    * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/Tag">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/Tag">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API Tag

@@ -36,7 +36,7 @@ namespace Model
    * <p>Attaches the specified object to the specified index inside a
    * <a>BatchRead</a> operation. For more information, see <a>AttachToIndex</a> and
    * <a>BatchReadRequest$Operations</a>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchAttachToIndex">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchAttachToIndex">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API BatchAttachToIndex

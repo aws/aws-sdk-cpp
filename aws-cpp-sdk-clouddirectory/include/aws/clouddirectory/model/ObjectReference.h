@@ -34,7 +34,7 @@ namespace Model
 
   /**
    * <p>The reference that identifies an object.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ObjectReference">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ObjectReference">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API ObjectReference

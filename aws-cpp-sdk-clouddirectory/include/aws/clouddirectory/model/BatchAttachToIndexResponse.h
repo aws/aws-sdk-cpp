@@ -35,7 +35,7 @@ namespace Model
   /**
    * <p>Represents the output of a <a>AttachToIndex</a> response
    * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchAttachToIndexResponse">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchAttachToIndexResponse">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API BatchAttachToIndexResponse

@@ -31,14 +31,18 @@ namespace Model
 Facet::Facet() : 
     m_nameHasBeenSet(false),
     m_objectType(ObjectType::NOT_SET),
-    m_objectTypeHasBeenSet(false)
+    m_objectTypeHasBeenSet(false),
+    m_facetStyle(FacetStyle::NOT_SET),
+    m_facetStyleHasBeenSet(false)
 {
 }
 
 Facet::Facet(const JsonValue& jsonValue) : 
     m_nameHasBeenSet(false),
     m_objectType(ObjectType::NOT_SET),
-    m_objectTypeHasBeenSet(false)
+    m_objectTypeHasBeenSet(false),
+    m_facetStyle(FacetStyle::NOT_SET),
+    m_facetStyleHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +63,13 @@ Facet& Facet::operator =(const JsonValue& jsonValue)
     m_objectTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FacetStyle"))
+  {
+    m_facetStyle = FacetStyleMapper::GetFacetStyleForName(jsonValue.GetString("FacetStyle"));
+
+    m_facetStyleHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -75,6 +86,11 @@ JsonValue Facet::Jsonize() const
   if(m_objectTypeHasBeenSet)
   {
    payload.WithString("ObjectType", ObjectTypeMapper::GetNameForObjectType(m_objectType));
+  }
+
+  if(m_facetStyleHasBeenSet)
+  {
+   payload.WithString("FacetStyle", FacetStyleMapper::GetNameForFacetStyle(m_facetStyle));
   }
 
   return payload;

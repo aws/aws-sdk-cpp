@@ -35,7 +35,7 @@ namespace Model
 
   /**
    * <p>A typed link facet attribute update.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TypedLinkFacetAttributeUpdate">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/TypedLinkFacetAttributeUpdate">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API TypedLinkFacetAttributeUpdate

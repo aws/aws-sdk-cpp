@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>Identifies the range of attributes that are used by a specified
    * filter.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TypedLinkAttributeRange">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/TypedLinkAttributeRange">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API TypedLinkAttributeRange

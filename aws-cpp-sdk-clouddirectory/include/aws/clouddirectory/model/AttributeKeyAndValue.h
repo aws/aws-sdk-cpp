@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>The combination of an attribute key and an attribute value.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttributeKeyAndValue">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttributeKeyAndValue">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API AttributeKeyAndValue

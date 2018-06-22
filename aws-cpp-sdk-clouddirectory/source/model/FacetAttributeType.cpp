@@ -35,6 +35,7 @@ namespace Aws
         static const int BOOLEAN_HASH = HashingUtils::HashString("BOOLEAN");
         static const int NUMBER_HASH = HashingUtils::HashString("NUMBER");
         static const int DATETIME_HASH = HashingUtils::HashString("DATETIME");
+        static const int VARIANT_HASH = HashingUtils::HashString("VARIANT");
 
 
         FacetAttributeType GetFacetAttributeTypeForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return FacetAttributeType::DATETIME;
           }
+          else if (hashCode == VARIANT_HASH)
+          {
+            return FacetAttributeType::VARIANT;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -84,6 +89,8 @@ namespace Aws
             return "NUMBER";
           case FacetAttributeType::DATETIME:
             return "DATETIME";
+          case FacetAttributeType::VARIANT:
+            return "VARIANT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

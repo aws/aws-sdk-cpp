@@ -37,7 +37,7 @@ namespace Model
    * <p>Returns policies attached to an object in pagination fashion inside a
    * <a>BatchRead</a> operation. For more information, see <a>ListObjectPolicies</a>
    * and <a>BatchReadRequest$Operations</a>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchListObjectPolicies">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchListObjectPolicies">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API BatchListObjectPolicies

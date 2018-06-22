@@ -35,7 +35,7 @@ namespace Model
   /**
    * <p>Identifies the schema Amazon Resource Name (ARN) and facet name for the typed
    * link.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TypedLinkSchemaAndFacetName">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/TypedLinkSchemaAndFacetName">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API TypedLinkSchemaAndFacetName

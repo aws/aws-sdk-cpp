@@ -38,7 +38,7 @@ namespace Model
    * <p>Represents the data for a typed attribute. You can set one, and only one, of
    * the elements. Each attribute in an item is a name-value pair. Attributes have a
    * single value.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TypedAttributeValue">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/TypedAttributeValue">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API TypedAttributeValue

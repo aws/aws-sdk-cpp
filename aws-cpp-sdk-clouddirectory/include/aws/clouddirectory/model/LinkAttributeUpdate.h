@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>Structure that contains attribute update information.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/LinkAttributeUpdate">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/LinkAttributeUpdate">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API LinkAttributeUpdate

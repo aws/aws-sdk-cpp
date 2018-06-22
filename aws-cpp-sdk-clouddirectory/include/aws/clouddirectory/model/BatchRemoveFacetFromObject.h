@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>A batch operation to remove a facet from an object.</p><p><h3>See Also:</h3> 
    * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchRemoveFacetFromObject">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchRemoveFacetFromObject">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API BatchRemoveFacetFromObject

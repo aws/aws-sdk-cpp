@@ -37,7 +37,7 @@ namespace Model
   /**
    * <p>Directory structure that includes the directory name and directory
    * ARN.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/Directory">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/Directory">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API Directory

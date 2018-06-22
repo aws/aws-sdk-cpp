@@ -49,7 +49,7 @@ namespace Model
   /**
    * <p>Represents the output of a <code>BatchWrite</code> operation. </p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchWriteOperation">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchWriteOperation">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API BatchWriteOperation

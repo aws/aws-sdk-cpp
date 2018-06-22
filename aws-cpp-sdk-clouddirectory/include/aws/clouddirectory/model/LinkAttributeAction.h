@@ -37,7 +37,7 @@ namespace Model
    * <p>The action to take on a typed link attribute value. Updates are only
    * supported for attributes which don’t contribute to link identity.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/LinkAttributeAction">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/LinkAttributeAction">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API LinkAttributeAction

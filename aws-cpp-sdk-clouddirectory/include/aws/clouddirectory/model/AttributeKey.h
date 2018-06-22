@@ -34,7 +34,7 @@ namespace Model
 
   /**
    * <p>A unique identifier for an attribute.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttributeKey">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttributeKey">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API AttributeKey

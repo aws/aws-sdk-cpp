@@ -40,7 +40,7 @@ namespace Model
    * defined by its <code>IdentityAttributeOrder</code>. For more information, see
    * <a>UpdateLinkAttributes</a> and
    * <a>BatchReadRequest$Operations</a>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchUpdateLinkAttributes">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchUpdateLinkAttributes">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API BatchUpdateLinkAttributes

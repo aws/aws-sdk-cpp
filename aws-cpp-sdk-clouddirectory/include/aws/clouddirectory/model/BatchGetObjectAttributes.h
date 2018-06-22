@@ -40,7 +40,7 @@ namespace Model
    * an <a>BatchRead</a> operation. For more information, see
    * <a>GetObjectAttributes</a> and <a>BatchReadRequest$Operations</a>.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchGetObjectAttributes">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchGetObjectAttributes">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API BatchGetObjectAttributes

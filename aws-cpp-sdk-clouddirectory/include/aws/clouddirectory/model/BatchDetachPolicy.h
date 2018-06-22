@@ -36,7 +36,7 @@ namespace Model
    * <p>Detaches the specified policy from the specified directory inside a
    * <a>BatchWrite</a> operation. For more information, see <a>DetachPolicy</a> and
    * <a>BatchWriteRequest$Operations</a>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchDetachPolicy">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchDetachPolicy">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API BatchDetachPolicy

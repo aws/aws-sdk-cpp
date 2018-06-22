@@ -33,7 +33,7 @@ namespace Model
   /**
    * <p>Represents the output of a <a>UpdateLinkAttributes</a> response
    * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchUpdateLinkAttributesResponse">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchUpdateLinkAttributesResponse">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API BatchUpdateLinkAttributesResponse

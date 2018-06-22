@@ -47,7 +47,7 @@ namespace Model
   /**
    * <p>Represents the output of a <code>BatchRead</code> success response
    * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchReadSuccessfulResponse">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchReadSuccessfulResponse">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API BatchReadSuccessfulResponse

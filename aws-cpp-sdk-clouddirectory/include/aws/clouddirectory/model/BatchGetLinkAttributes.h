@@ -38,7 +38,7 @@ namespace Model
    * <p>Retrieves attributes that are associated with a typed link inside a
    * <a>BatchRead</a> operation. For more information, see <a>GetLinkAttributes</a>
    * and <a>BatchReadRequest$Operations</a>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchGetLinkAttributes">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchGetLinkAttributes">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API BatchGetLinkAttributes

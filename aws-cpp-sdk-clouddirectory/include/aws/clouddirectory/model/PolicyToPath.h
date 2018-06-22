@@ -38,7 +38,7 @@ namespace Model
    * <p>Used when a regular object exists in a <a>Directory</a> and you want to find
    * all of the policies that are associated with that object and the parent to that
    * object.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PolicyToPath">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/PolicyToPath">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API PolicyToPath

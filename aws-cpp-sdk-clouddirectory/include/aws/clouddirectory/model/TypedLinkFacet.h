@@ -37,7 +37,7 @@ namespace Model
   /**
    * <p>Defines the typed links structure and its attributes. To create a typed link
    * facet, use the <a>CreateTypedLinkFacet</a> API.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TypedLinkFacet">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/TypedLinkFacet">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API TypedLinkFacet

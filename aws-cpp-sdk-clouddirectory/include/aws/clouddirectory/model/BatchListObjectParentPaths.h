@@ -38,7 +38,7 @@ namespace Model
    * node, policy node, and index node objects inside a <a>BatchRead</a> operation.
    * For more information, see <a>ListObjectParentPaths</a> and
    * <a>BatchReadRequest$Operations</a>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchListObjectParentPaths">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchListObjectParentPaths">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API BatchListObjectParentPaths

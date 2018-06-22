@@ -36,7 +36,7 @@ namespace Model
    * <p>Retrieves metadata about an object inside a <a>BatchRead</a> operation. For
    * more information, see <a>GetObjectInformation</a> and
    * <a>BatchReadRequest$Operations</a>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchGetObjectInformation">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchGetObjectInformation">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API BatchGetObjectInformation

@@ -35,7 +35,7 @@ namespace Model
   /**
    * <p>Represents the output of a <a>DetachFromIndex</a> response
    * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchDetachFromIndexResponse">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchDetachFromIndexResponse">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API BatchDetachFromIndexResponse

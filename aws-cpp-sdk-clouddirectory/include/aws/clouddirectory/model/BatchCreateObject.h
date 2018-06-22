@@ -39,7 +39,7 @@ namespace Model
   /**
    * <p>Represents the output of a <a>CreateObject</a> operation.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchCreateObject">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchCreateObject">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API BatchCreateObject

@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>Returns the path to the <code>ObjectIdentifiers</code> that is associated
    * with the directory.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PathToObjectIdentifiers">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/PathToObjectIdentifiers">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API PathToObjectIdentifiers

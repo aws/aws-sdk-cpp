@@ -68,6 +68,7 @@
 #include <aws/clouddirectory/model/ListFacetNamesRequest.h>
 #include <aws/clouddirectory/model/ListIncomingTypedLinksRequest.h>
 #include <aws/clouddirectory/model/ListIndexRequest.h>
+#include <aws/clouddirectory/model/ListManagedSchemaArnsRequest.h>
 #include <aws/clouddirectory/model/ListObjectAttributesRequest.h>
 #include <aws/clouddirectory/model/ListObjectChildrenRequest.h>
 #include <aws/clouddirectory/model/ListObjectParentPathsRequest.h>
@@ -1590,6 +1591,41 @@ void CloudDirectoryClient::ListIndexAsync(const ListIndexRequest& request, const
 void CloudDirectoryClient::ListIndexAsyncHelper(const ListIndexRequest& request, const ListIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListIndex(request), context);
+}
+
+ListManagedSchemaArnsOutcome CloudDirectoryClient::ListManagedSchemaArns(const ListManagedSchemaArnsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/schema/managed";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListManagedSchemaArnsOutcome(ListManagedSchemaArnsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListManagedSchemaArnsOutcome(outcome.GetError());
+  }
+}
+
+ListManagedSchemaArnsOutcomeCallable CloudDirectoryClient::ListManagedSchemaArnsCallable(const ListManagedSchemaArnsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListManagedSchemaArnsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListManagedSchemaArns(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudDirectoryClient::ListManagedSchemaArnsAsync(const ListManagedSchemaArnsRequest& request, const ListManagedSchemaArnsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListManagedSchemaArnsAsyncHelper( request, handler, context ); } );
+}
+
+void CloudDirectoryClient::ListManagedSchemaArnsAsyncHelper(const ListManagedSchemaArnsRequest& request, const ListManagedSchemaArnsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListManagedSchemaArns(request), context);
 }
 
 ListObjectAttributesOutcome CloudDirectoryClient::ListObjectAttributes(const ListObjectAttributesRequest& request) const

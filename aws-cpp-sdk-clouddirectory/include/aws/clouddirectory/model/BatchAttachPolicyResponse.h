@@ -33,7 +33,7 @@ namespace Model
   /**
    * <p>Represents the output of an <a>AttachPolicy</a> response
    * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchAttachPolicyResponse">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchAttachPolicyResponse">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API BatchAttachPolicyResponse

@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/clouddirectory/model/ObjectType.h>
+#include <aws/clouddirectory/model/FacetStyle.h>
 #include <aws/clouddirectory/model/FacetAttribute.h>
 #include <utility>
 
@@ -222,6 +223,47 @@ namespace Model
      */
     inline CreateFacetRequest& WithObjectType(ObjectType&& value) { SetObjectType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>There are two different styles that you can define on any given facet,
+     * <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes
+     * must be defined in the schema. For dynamic facets, attributes can be defined
+     * during data plane operations.</p>
+     */
+    inline const FacetStyle& GetFacetStyle() const{ return m_facetStyle; }
+
+    /**
+     * <p>There are two different styles that you can define on any given facet,
+     * <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes
+     * must be defined in the schema. For dynamic facets, attributes can be defined
+     * during data plane operations.</p>
+     */
+    inline void SetFacetStyle(const FacetStyle& value) { m_facetStyleHasBeenSet = true; m_facetStyle = value; }
+
+    /**
+     * <p>There are two different styles that you can define on any given facet,
+     * <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes
+     * must be defined in the schema. For dynamic facets, attributes can be defined
+     * during data plane operations.</p>
+     */
+    inline void SetFacetStyle(FacetStyle&& value) { m_facetStyleHasBeenSet = true; m_facetStyle = std::move(value); }
+
+    /**
+     * <p>There are two different styles that you can define on any given facet,
+     * <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes
+     * must be defined in the schema. For dynamic facets, attributes can be defined
+     * during data plane operations.</p>
+     */
+    inline CreateFacetRequest& WithFacetStyle(const FacetStyle& value) { SetFacetStyle(value); return *this;}
+
+    /**
+     * <p>There are two different styles that you can define on any given facet,
+     * <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes
+     * must be defined in the schema. For dynamic facets, attributes can be defined
+     * during data plane operations.</p>
+     */
+    inline CreateFacetRequest& WithFacetStyle(FacetStyle&& value) { SetFacetStyle(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_schemaArn;
@@ -235,6 +277,9 @@ namespace Model
 
     ObjectType m_objectType;
     bool m_objectTypeHasBeenSet;
+
+    FacetStyle m_facetStyle;
+    bool m_facetStyleHasBeenSet;
   };
 
 } // namespace Model

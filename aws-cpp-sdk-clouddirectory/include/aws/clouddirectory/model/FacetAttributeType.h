@@ -30,7 +30,8 @@ namespace Model
     BINARY,
     BOOLEAN,
     NUMBER,
-    DATETIME
+    DATETIME,
+    VARIANT
   };
 
 namespace FacetAttributeTypeMapper

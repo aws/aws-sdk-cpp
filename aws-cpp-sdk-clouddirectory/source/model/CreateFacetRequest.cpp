@@ -28,7 +28,9 @@ CreateFacetRequest::CreateFacetRequest() :
     m_nameHasBeenSet(false),
     m_attributesHasBeenSet(false),
     m_objectType(ObjectType::NOT_SET),
-    m_objectTypeHasBeenSet(false)
+    m_objectTypeHasBeenSet(false),
+    m_facetStyle(FacetStyle::NOT_SET),
+    m_facetStyleHasBeenSet(false)
 {
 }
 
@@ -56,6 +58,11 @@ Aws::String CreateFacetRequest::SerializePayload() const
   if(m_objectTypeHasBeenSet)
   {
    payload.WithString("ObjectType", ObjectTypeMapper::GetNameForObjectType(m_objectType));
+  }
+
+  if(m_facetStyleHasBeenSet)
+  {
+   payload.WithString("FacetStyle", FacetStyleMapper::GetNameForFacetStyle(m_facetStyle));
   }
 
   return payload.WriteReadable();
