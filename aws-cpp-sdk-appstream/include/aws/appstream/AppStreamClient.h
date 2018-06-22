@@ -332,14 +332,18 @@ namespace Model
         virtual void CopyImageAsync(const Model::CopyImageRequest& request, const CopyImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a directory configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a Directory Config object in AppStream 2.0. This object includes the
+         * information required to join streaming instances to an Active Directory
+         * domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateDirectoryConfig">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateDirectoryConfigOutcome CreateDirectoryConfig(const Model::CreateDirectoryConfigRequest& request) const;
 
         /**
-         * <p>Creates a directory configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a Directory Config object in AppStream 2.0. This object includes the
+         * information required to join streaming instances to an Active Directory
+         * domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateDirectoryConfig">AWS
          * API Reference</a></p>
          *
@@ -348,7 +352,9 @@ namespace Model
         virtual Model::CreateDirectoryConfigOutcomeCallable CreateDirectoryConfigCallable(const Model::CreateDirectoryConfigRequest& request) const;
 
         /**
-         * <p>Creates a directory configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a Directory Config object in AppStream 2.0. This object includes the
+         * information required to join streaming instances to an Active Directory
+         * domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateDirectoryConfig">AWS
          * API Reference</a></p>
          *
@@ -357,14 +363,16 @@ namespace Model
         virtual void CreateDirectoryConfigAsync(const Model::CreateDirectoryConfigRequest& request, const CreateDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a fleet.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a fleet. A fleet consists of streaming instances that run a specified
+         * image.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateFleetOutcome CreateFleet(const Model::CreateFleetRequest& request) const;
 
         /**
-         * <p>Creates a fleet.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a fleet. A fleet consists of streaming instances that run a specified
+         * image.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet">AWS
          * API Reference</a></p>
          *
@@ -373,7 +381,8 @@ namespace Model
         virtual Model::CreateFleetOutcomeCallable CreateFleetCallable(const Model::CreateFleetRequest& request) const;
 
         /**
-         * <p>Creates a fleet.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a fleet. A fleet consists of streaming instances that run a specified
+         * image.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet">AWS
          * API Reference</a></p>
          *
@@ -382,7 +391,8 @@ namespace Model
         virtual void CreateFleetAsync(const Model::CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an image builder.</p> <p>The initial state of the builder is
+         * <p>Creates an image builder. An image builder is a virtual machine that is used
+         * to create an image.</p> <p>The initial state of the builder is
          * <code>PENDING</code>. When it is ready, the state is
          * <code>RUNNING</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilder">AWS
@@ -391,7 +401,8 @@ namespace Model
         virtual Model::CreateImageBuilderOutcome CreateImageBuilder(const Model::CreateImageBuilderRequest& request) const;
 
         /**
-         * <p>Creates an image builder.</p> <p>The initial state of the builder is
+         * <p>Creates an image builder. An image builder is a virtual machine that is used
+         * to create an image.</p> <p>The initial state of the builder is
          * <code>PENDING</code>. When it is ready, the state is
          * <code>RUNNING</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilder">AWS
@@ -402,7 +413,8 @@ namespace Model
         virtual Model::CreateImageBuilderOutcomeCallable CreateImageBuilderCallable(const Model::CreateImageBuilderRequest& request) const;
 
         /**
-         * <p>Creates an image builder.</p> <p>The initial state of the builder is
+         * <p>Creates an image builder. An image builder is a virtual machine that is used
+         * to create an image.</p> <p>The initial state of the builder is
          * <code>PENDING</code>. When it is ready, the state is
          * <code>RUNNING</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilder">AWS
@@ -441,14 +453,18 @@ namespace Model
         virtual void CreateImageBuilderStreamingURLAsync(const Model::CreateImageBuilderStreamingURLRequest& request, const CreateImageBuilderStreamingURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a stack.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a stack to start streaming applications to users. A stack consists of
+         * an associated fleet, user access policies, and storage configurations.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateStackOutcome CreateStack(const Model::CreateStackRequest& request) const;
 
         /**
-         * <p>Creates a stack.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a stack to start streaming applications to users. A stack consists of
+         * an associated fleet, user access policies, and storage configurations.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack">AWS
          * API Reference</a></p>
          *
@@ -457,7 +473,9 @@ namespace Model
         virtual Model::CreateStackOutcomeCallable CreateStackCallable(const Model::CreateStackRequest& request) const;
 
         /**
-         * <p>Creates a stack.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a stack to start streaming applications to users. A stack consists of
+         * an associated fleet, user access policies, and storage configurations.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack">AWS
          * API Reference</a></p>
          *
@@ -466,16 +484,18 @@ namespace Model
         virtual void CreateStackAsync(const Model::CreateStackRequest& request, const CreateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a URL to start a streaming session for the specified
-         * user.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a temporary URL to start an AppStream 2.0 streaming session for the
+         * specified user. A streaming URL enables application streaming to be tested
+         * without user setup. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateStreamingURLOutcome CreateStreamingURL(const Model::CreateStreamingURLRequest& request) const;
 
         /**
-         * <p>Creates a URL to start a streaming session for the specified
-         * user.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a temporary URL to start an AppStream 2.0 streaming session for the
+         * specified user. A streaming URL enables application streaming to be tested
+         * without user setup. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL">AWS
          * API Reference</a></p>
          *
@@ -484,8 +504,9 @@ namespace Model
         virtual Model::CreateStreamingURLOutcomeCallable CreateStreamingURLCallable(const Model::CreateStreamingURLRequest& request) const;
 
         /**
-         * <p>Creates a URL to start a streaming session for the specified
-         * user.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a temporary URL to start an AppStream 2.0 streaming session for the
+         * specified user. A streaming URL enables application streaming to be tested
+         * without user setup. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL">AWS
          * API Reference</a></p>
          *
@@ -494,14 +515,18 @@ namespace Model
         virtual void CreateStreamingURLAsync(const Model::CreateStreamingURLRequest& request, const CreateStreamingURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified directory configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified Directory Config object from AppStream 2.0. This object
+         * includes the information required to join streaming instances to an Active
+         * Directory domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteDirectoryConfig">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteDirectoryConfigOutcome DeleteDirectoryConfig(const Model::DeleteDirectoryConfigRequest& request) const;
 
         /**
-         * <p>Deletes the specified directory configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified Directory Config object from AppStream 2.0. This object
+         * includes the information required to join streaming instances to an Active
+         * Directory domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteDirectoryConfig">AWS
          * API Reference</a></p>
          *
@@ -510,7 +535,9 @@ namespace Model
         virtual Model::DeleteDirectoryConfigOutcomeCallable DeleteDirectoryConfigCallable(const Model::DeleteDirectoryConfigRequest& request) const;
 
         /**
-         * <p>Deletes the specified directory configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified Directory Config object from AppStream 2.0. This object
+         * includes the information required to join streaming instances to an Active
+         * Directory domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteDirectoryConfig">AWS
          * API Reference</a></p>
          *
@@ -544,8 +571,8 @@ namespace Model
         virtual void DeleteFleetAsync(const Model::DeleteFleetRequest& request, const DeleteFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified image. You cannot delete an image that is currently in
-         * use. After you delete an image, you cannot provision new capacity using the
+         * <p>Deletes the specified image. You cannot delete an image when it is in use.
+         * After you delete an image, you cannot provision new capacity using the
          * image.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImage">AWS
          * API Reference</a></p>
@@ -553,8 +580,8 @@ namespace Model
         virtual Model::DeleteImageOutcome DeleteImage(const Model::DeleteImageRequest& request) const;
 
         /**
-         * <p>Deletes the specified image. You cannot delete an image that is currently in
-         * use. After you delete an image, you cannot provision new capacity using the
+         * <p>Deletes the specified image. You cannot delete an image when it is in use.
+         * After you delete an image, you cannot provision new capacity using the
          * image.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImage">AWS
          * API Reference</a></p>
@@ -564,8 +591,8 @@ namespace Model
         virtual Model::DeleteImageOutcomeCallable DeleteImageCallable(const Model::DeleteImageRequest& request) const;
 
         /**
-         * <p>Deletes the specified image. You cannot delete an image that is currently in
-         * use. After you delete an image, you cannot provision new capacity using the
+         * <p>Deletes the specified image. You cannot delete an image when it is in use.
+         * After you delete an image, you cannot provision new capacity using the
          * image.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImage">AWS
          * API Reference</a></p>
@@ -603,8 +630,9 @@ namespace Model
         virtual void DeleteImageBuilderAsync(const Model::DeleteImageBuilderRequest& request, const DeleteImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified stack. After this operation completes, the environment
-         * can no longer be activated and any reservations made for the stack are
+         * <p>Deletes the specified stack. After the stack is deleted, the application
+         * streaming environment provided by the stack is no longer available to users.
+         * Also, any reservations made for application streaming sessions for the stack are
          * released.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack">AWS
          * API Reference</a></p>
@@ -612,8 +640,9 @@ namespace Model
         virtual Model::DeleteStackOutcome DeleteStack(const Model::DeleteStackRequest& request) const;
 
         /**
-         * <p>Deletes the specified stack. After this operation completes, the environment
-         * can no longer be activated and any reservations made for the stack are
+         * <p>Deletes the specified stack. After the stack is deleted, the application
+         * streaming environment provided by the stack is no longer available to users.
+         * Also, any reservations made for application streaming sessions for the stack are
          * released.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack">AWS
          * API Reference</a></p>
@@ -623,8 +652,9 @@ namespace Model
         virtual Model::DeleteStackOutcomeCallable DeleteStackCallable(const Model::DeleteStackRequest& request) const;
 
         /**
-         * <p>Deletes the specified stack. After this operation completes, the environment
-         * can no longer be activated and any reservations made for the stack are
+         * <p>Deletes the specified stack. After the stack is deleted, the application
+         * streaming environment provided by the stack is no longer available to users.
+         * Also, any reservations made for application streaming sessions for the stack are
          * released.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack">AWS
          * API Reference</a></p>
@@ -634,18 +664,26 @@ namespace Model
         virtual void DeleteStackAsync(const Model::DeleteStackRequest& request, const DeleteStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the specified directory configurations. Note that although the
-         * response syntax in this topic includes the account password, this password is
-         * not returned in the actual response. </p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list that describes one or more specified Directory Config
+         * objects for AppStream 2.0, if the names for these objects are provided.
+         * Otherwise, all Directory Config objects in the account are described. These
+         * objects include the information required to join streaming instances to an
+         * Active Directory domain. </p> <p>Although the response syntax in this topic
+         * includes the account password, this password is not returned in the actual
+         * response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeDirectoryConfigs">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeDirectoryConfigsOutcome DescribeDirectoryConfigs(const Model::DescribeDirectoryConfigsRequest& request) const;
 
         /**
-         * <p>Describes the specified directory configurations. Note that although the
-         * response syntax in this topic includes the account password, this password is
-         * not returned in the actual response. </p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list that describes one or more specified Directory Config
+         * objects for AppStream 2.0, if the names for these objects are provided.
+         * Otherwise, all Directory Config objects in the account are described. These
+         * objects include the information required to join streaming instances to an
+         * Active Directory domain. </p> <p>Although the response syntax in this topic
+         * includes the account password, this password is not returned in the actual
+         * response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeDirectoryConfigs">AWS
          * API Reference</a></p>
          *
@@ -654,9 +692,13 @@ namespace Model
         virtual Model::DescribeDirectoryConfigsOutcomeCallable DescribeDirectoryConfigsCallable(const Model::DescribeDirectoryConfigsRequest& request) const;
 
         /**
-         * <p>Describes the specified directory configurations. Note that although the
-         * response syntax in this topic includes the account password, this password is
-         * not returned in the actual response. </p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list that describes one or more specified Directory Config
+         * objects for AppStream 2.0, if the names for these objects are provided.
+         * Otherwise, all Directory Config objects in the account are described. These
+         * objects include the information required to join streaming instances to an
+         * Active Directory domain. </p> <p>Although the response syntax in this topic
+         * includes the account password, this password is not returned in the actual
+         * response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeDirectoryConfigs">AWS
          * API Reference</a></p>
          *
@@ -665,16 +707,18 @@ namespace Model
         virtual void DescribeDirectoryConfigsAsync(const Model::DescribeDirectoryConfigsRequest& request, const DescribeDirectoryConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the specified fleets or all fleets in the account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves a list that describes one or more specified fleets, if the fleet
+         * names are provided. Otherwise, all fleets in the account are
+         * described.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeFleetsOutcome DescribeFleets(const Model::DescribeFleetsRequest& request) const;
 
         /**
-         * <p>Describes the specified fleets or all fleets in the account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves a list that describes one or more specified fleets, if the fleet
+         * names are provided. Otherwise, all fleets in the account are
+         * described.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets">AWS
          * API Reference</a></p>
          *
@@ -683,8 +727,9 @@ namespace Model
         virtual Model::DescribeFleetsOutcomeCallable DescribeFleetsCallable(const Model::DescribeFleetsRequest& request) const;
 
         /**
-         * <p>Describes the specified fleets or all fleets in the account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves a list that describes one or more specified fleets, if the fleet
+         * names are provided. Otherwise, all fleets in the account are
+         * described.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets">AWS
          * API Reference</a></p>
          *
@@ -693,16 +738,18 @@ namespace Model
         virtual void DescribeFleetsAsync(const Model::DescribeFleetsRequest& request, const DescribeFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the specified image builders or all image builders in the
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list that describes one or more specified image builders, if the
+         * image builder names are provided. Otherwise, all image builders in the account
+         * are described.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImageBuilders">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeImageBuildersOutcome DescribeImageBuilders(const Model::DescribeImageBuildersRequest& request) const;
 
         /**
-         * <p>Describes the specified image builders or all image builders in the
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list that describes one or more specified image builders, if the
+         * image builder names are provided. Otherwise, all image builders in the account
+         * are described.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImageBuilders">AWS
          * API Reference</a></p>
          *
@@ -711,8 +758,9 @@ namespace Model
         virtual Model::DescribeImageBuildersOutcomeCallable DescribeImageBuildersCallable(const Model::DescribeImageBuildersRequest& request) const;
 
         /**
-         * <p>Describes the specified image builders or all image builders in the
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list that describes one or more specified image builders, if the
+         * image builder names are provided. Otherwise, all image builders in the account
+         * are described.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImageBuilders">AWS
          * API Reference</a></p>
          *
@@ -721,16 +769,18 @@ namespace Model
         virtual void DescribeImageBuildersAsync(const Model::DescribeImageBuildersRequest& request, const DescribeImageBuildersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the specified images or all images in the account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves a list that describes one or more specified images, if the image
+         * names are provided. Otherwise, all images in the account are
+         * described.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeImagesOutcome DescribeImages(const Model::DescribeImagesRequest& request) const;
 
         /**
-         * <p>Describes the specified images or all images in the account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves a list that describes one or more specified images, if the image
+         * names are provided. Otherwise, all images in the account are
+         * described.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages">AWS
          * API Reference</a></p>
          *
@@ -739,8 +789,9 @@ namespace Model
         virtual Model::DescribeImagesOutcomeCallable DescribeImagesCallable(const Model::DescribeImagesRequest& request) const;
 
         /**
-         * <p>Describes the specified images or all images in the account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves a list that describes one or more specified images, if the image
+         * names are provided. Otherwise, all images in the account are
+         * described.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages">AWS
          * API Reference</a></p>
          *
@@ -749,20 +800,22 @@ namespace Model
         virtual void DescribeImagesAsync(const Model::DescribeImagesRequest& request, const DescribeImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the streaming sessions for the specified stack and fleet. If a user
-         * ID is provided, only the streaming sessions for only that user are returned. If
-         * an authentication type is not provided, the default is to authenticate users
-         * using a streaming URL.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list that describes the streaming sessions for a specified stack
+         * and fleet. If a user ID is provided for the stack and fleet, only streaming
+         * sessions for that user are described. If an authentication type is not provided,
+         * the default is to authenticate users using a streaming URL.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeSessionsOutcome DescribeSessions(const Model::DescribeSessionsRequest& request) const;
 
         /**
-         * <p>Describes the streaming sessions for the specified stack and fleet. If a user
-         * ID is provided, only the streaming sessions for only that user are returned. If
-         * an authentication type is not provided, the default is to authenticate users
-         * using a streaming URL.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list that describes the streaming sessions for a specified stack
+         * and fleet. If a user ID is provided for the stack and fleet, only streaming
+         * sessions for that user are described. If an authentication type is not provided,
+         * the default is to authenticate users using a streaming URL.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions">AWS
          * API Reference</a></p>
          *
@@ -771,10 +824,11 @@ namespace Model
         virtual Model::DescribeSessionsOutcomeCallable DescribeSessionsCallable(const Model::DescribeSessionsRequest& request) const;
 
         /**
-         * <p>Describes the streaming sessions for the specified stack and fleet. If a user
-         * ID is provided, only the streaming sessions for only that user are returned. If
-         * an authentication type is not provided, the default is to authenticate users
-         * using a streaming URL.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list that describes the streaming sessions for a specified stack
+         * and fleet. If a user ID is provided for the stack and fleet, only streaming
+         * sessions for that user are described. If an authentication type is not provided,
+         * the default is to authenticate users using a streaming URL.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions">AWS
          * API Reference</a></p>
          *
@@ -783,16 +837,18 @@ namespace Model
         virtual void DescribeSessionsAsync(const Model::DescribeSessionsRequest& request, const DescribeSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the specified stacks or all stacks in the account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves a list that describes one or more specified stacks, if the stack
+         * names are provided. Otherwise, all stacks in the account are
+         * described.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeStacksOutcome DescribeStacks(const Model::DescribeStacksRequest& request) const;
 
         /**
-         * <p>Describes the specified stacks or all stacks in the account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves a list that describes one or more specified stacks, if the stack
+         * names are provided. Otherwise, all stacks in the account are
+         * described.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks">AWS
          * API Reference</a></p>
          *
@@ -801,8 +857,9 @@ namespace Model
         virtual Model::DescribeStacksOutcomeCallable DescribeStacksCallable(const Model::DescribeStacksRequest& request) const;
 
         /**
-         * <p>Describes the specified stacks or all stacks in the account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves a list that describes one or more specified stacks, if the stack
+         * names are provided. Otherwise, all stacks in the account are
+         * described.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks">AWS
          * API Reference</a></p>
          *
@@ -839,14 +896,16 @@ namespace Model
         virtual void DisassociateFleetAsync(const Model::DisassociateFleetRequest& request, const DisassociateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stops the specified streaming session.</p><p><h3>See Also:</h3>   <a
+         * <p>Immediately stops the specified streaming session.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ExpireSession">AWS
          * API Reference</a></p>
          */
         virtual Model::ExpireSessionOutcome ExpireSession(const Model::ExpireSessionRequest& request) const;
 
         /**
-         * <p>Stops the specified streaming session.</p><p><h3>See Also:</h3>   <a
+         * <p>Immediately stops the specified streaming session.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ExpireSession">AWS
          * API Reference</a></p>
          *
@@ -855,7 +914,8 @@ namespace Model
         virtual Model::ExpireSessionOutcomeCallable ExpireSessionCallable(const Model::ExpireSessionRequest& request) const;
 
         /**
-         * <p>Stops the specified streaming session.</p><p><h3>See Also:</h3>   <a
+         * <p>Immediately stops the specified streaming session.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ExpireSession">AWS
          * API Reference</a></p>
          *
@@ -864,16 +924,16 @@ namespace Model
         virtual void ExpireSessionAsync(const Model::ExpireSessionRequest& request, const ExpireSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the fleets associated with the specified stack.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the name of the fleet that is associated with the specified
+         * stack.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedFleets">AWS
          * API Reference</a></p>
          */
         virtual Model::ListAssociatedFleetsOutcome ListAssociatedFleets(const Model::ListAssociatedFleetsRequest& request) const;
 
         /**
-         * <p>Lists the fleets associated with the specified stack.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the name of the fleet that is associated with the specified
+         * stack.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedFleets">AWS
          * API Reference</a></p>
          *
@@ -882,8 +942,8 @@ namespace Model
         virtual Model::ListAssociatedFleetsOutcomeCallable ListAssociatedFleetsCallable(const Model::ListAssociatedFleetsRequest& request) const;
 
         /**
-         * <p>Lists the fleets associated with the specified stack.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the name of the fleet that is associated with the specified
+         * stack.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedFleets">AWS
          * API Reference</a></p>
          *
@@ -892,16 +952,16 @@ namespace Model
         virtual void ListAssociatedFleetsAsync(const Model::ListAssociatedFleetsRequest& request, const ListAssociatedFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the stacks associated with the specified fleet.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the name of the stack with which the specified fleet is
+         * associated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacks">AWS
          * API Reference</a></p>
          */
         virtual Model::ListAssociatedStacksOutcome ListAssociatedStacks(const Model::ListAssociatedStacksRequest& request) const;
 
         /**
-         * <p>Lists the stacks associated with the specified fleet.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the name of the stack with which the specified fleet is
+         * associated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacks">AWS
          * API Reference</a></p>
          *
@@ -910,8 +970,8 @@ namespace Model
         virtual Model::ListAssociatedStacksOutcomeCallable ListAssociatedStacksCallable(const Model::ListAssociatedStacksRequest& request) const;
 
         /**
-         * <p>Lists the stacks associated with the specified fleet.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the name of the stack with which the specified fleet is
+         * associated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacks">AWS
          * API Reference</a></p>
          *
@@ -920,9 +980,9 @@ namespace Model
         virtual void ListAssociatedStacksAsync(const Model::ListAssociatedStacksRequest& request, const ListAssociatedStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the tags for the specified AppStream 2.0 resource. You can tag
-         * AppStream 2.0 image builders, images, fleets, and stacks.</p> <p>For more
-         * information about tags, see <a
+         * <p>Retrieves a list of all tags for the specified AppStream 2.0 resource. You
+         * can tag AppStream 2.0 image builders, images, fleets, and stacks.</p> <p>For
+         * more information about tags, see <a
          * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
          * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -932,9 +992,9 @@ namespace Model
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists the tags for the specified AppStream 2.0 resource. You can tag
-         * AppStream 2.0 image builders, images, fleets, and stacks.</p> <p>For more
-         * information about tags, see <a
+         * <p>Retrieves a list of all tags for the specified AppStream 2.0 resource. You
+         * can tag AppStream 2.0 image builders, images, fleets, and stacks.</p> <p>For
+         * more information about tags, see <a
          * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
          * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -946,9 +1006,9 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists the tags for the specified AppStream 2.0 resource. You can tag
-         * AppStream 2.0 image builders, images, fleets, and stacks.</p> <p>For more
-         * information about tags, see <a
+         * <p>Retrieves a list of all tags for the specified AppStream 2.0 resource. You
+         * can tag AppStream 2.0 image builders, images, fleets, and stacks.</p> <p>For
+         * more information about tags, see <a
          * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
          * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1112,7 +1172,7 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disassociates the specified tags from the specified AppStream 2.0
+         * <p>Disassociates one or more specified tags from the specified AppStream 2.0
          * resource.</p> <p>To list the current tags for your resources, use
          * <a>ListTagsForResource</a>.</p> <p>For more information about tags, see <a
          * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
@@ -1124,7 +1184,7 @@ namespace Model
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Disassociates the specified tags from the specified AppStream 2.0
+         * <p>Disassociates one or more specified tags from the specified AppStream 2.0
          * resource.</p> <p>To list the current tags for your resources, use
          * <a>ListTagsForResource</a>.</p> <p>For more information about tags, see <a
          * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
@@ -1138,7 +1198,7 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Disassociates the specified tags from the specified AppStream 2.0
+         * <p>Disassociates one or more specified tags from the specified AppStream 2.0
          * resource.</p> <p>To list the current tags for your resources, use
          * <a>ListTagsForResource</a>.</p> <p>For more information about tags, see <a
          * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
@@ -1152,14 +1212,18 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the specified directory configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified Directory Config object in AppStream 2.0. This object
+         * includes the information required to join streaming instances to an Active
+         * Directory domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateDirectoryConfig">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateDirectoryConfigOutcome UpdateDirectoryConfig(const Model::UpdateDirectoryConfigRequest& request) const;
 
         /**
-         * <p>Updates the specified directory configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified Directory Config object in AppStream 2.0. This object
+         * includes the information required to join streaming instances to an Active
+         * Directory domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateDirectoryConfig">AWS
          * API Reference</a></p>
          *
@@ -1168,7 +1232,9 @@ namespace Model
         virtual Model::UpdateDirectoryConfigOutcomeCallable UpdateDirectoryConfigCallable(const Model::UpdateDirectoryConfigRequest& request) const;
 
         /**
-         * <p>Updates the specified directory configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified Directory Config object in AppStream 2.0. This object
+         * includes the information required to join streaming instances to an Active
+         * Directory domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateDirectoryConfig">AWS
          * API Reference</a></p>
          *
@@ -1217,14 +1283,16 @@ namespace Model
         virtual void UpdateFleetAsync(const Model::UpdateFleetRequest& request, const UpdateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the specified stack.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified fields for the specified stack.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateStackOutcome UpdateStack(const Model::UpdateStackRequest& request) const;
 
         /**
-         * <p>Updates the specified stack.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified fields for the specified stack.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack">AWS
          * API Reference</a></p>
          *
@@ -1233,7 +1301,8 @@ namespace Model
         virtual Model::UpdateStackOutcomeCallable UpdateStackCallable(const Model::UpdateStackRequest& request) const;
 
         /**
-         * <p>Updates the specified stack.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified fields for the specified stack.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack">AWS
          * API Reference</a></p>
          *

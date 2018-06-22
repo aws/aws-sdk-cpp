@@ -44,42 +44,42 @@ namespace Model
 
 
     /**
-     * <p>The names of the fleets.</p>
+     * <p>The name of the fleet.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNames() const{ return m_names; }
 
     /**
-     * <p>The names of the fleets.</p>
+     * <p>The name of the fleet.</p>
      */
     inline void SetNames(const Aws::Vector<Aws::String>& value) { m_names = value; }
 
     /**
-     * <p>The names of the fleets.</p>
+     * <p>The name of the fleet.</p>
      */
     inline void SetNames(Aws::Vector<Aws::String>&& value) { m_names = std::move(value); }
 
     /**
-     * <p>The names of the fleets.</p>
+     * <p>The name of the fleet.</p>
      */
     inline ListAssociatedFleetsResult& WithNames(const Aws::Vector<Aws::String>& value) { SetNames(value); return *this;}
 
     /**
-     * <p>The names of the fleets.</p>
+     * <p>The name of the fleet.</p>
      */
     inline ListAssociatedFleetsResult& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(std::move(value)); return *this;}
 
     /**
-     * <p>The names of the fleets.</p>
+     * <p>The name of the fleet.</p>
      */
     inline ListAssociatedFleetsResult& AddNames(const Aws::String& value) { m_names.push_back(value); return *this; }
 
     /**
-     * <p>The names of the fleets.</p>
+     * <p>The name of the fleet.</p>
      */
     inline ListAssociatedFleetsResult& AddNames(Aws::String&& value) { m_names.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The names of the fleets.</p>
+     * <p>The name of the fleet.</p>
      */
     inline ListAssociatedFleetsResult& AddNames(const char* value) { m_names.push_back(value); return *this; }
 

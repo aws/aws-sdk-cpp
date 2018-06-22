@@ -36,7 +36,8 @@ Session::Session() :
     m_state(SessionState::NOT_SET),
     m_stateHasBeenSet(false),
     m_authenticationType(AuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false)
+    m_authenticationTypeHasBeenSet(false),
+    m_networkAccessConfigurationHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ Session::Session(const JsonValue& jsonValue) :
     m_state(SessionState::NOT_SET),
     m_stateHasBeenSet(false),
     m_authenticationType(AuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false)
+    m_authenticationTypeHasBeenSet(false),
+    m_networkAccessConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -97,6 +99,13 @@ Session& Session::operator =(const JsonValue& jsonValue)
     m_authenticationTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NetworkAccessConfiguration"))
+  {
+    m_networkAccessConfiguration = jsonValue.GetObject("NetworkAccessConfiguration");
+
+    m_networkAccessConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -136,6 +145,12 @@ JsonValue Session::Jsonize() const
   if(m_authenticationTypeHasBeenSet)
   {
    payload.WithString("AuthenticationType", AuthenticationTypeMapper::GetNameForAuthenticationType(m_authenticationType));
+  }
+
+  if(m_networkAccessConfigurationHasBeenSet)
+  {
+   payload.WithObject("NetworkAccessConfiguration", m_networkAccessConfiguration.Jsonize());
+
   }
 
   return payload;

@@ -56,6 +56,7 @@ enum class AlexaForBusinessErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   ALREADY_EXISTS= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  DEVICE_NOT_REGISTERED,
   INVALID_USER_STATUS,
   LIMIT_EXCEEDED,
   NAME_IN_USE,
