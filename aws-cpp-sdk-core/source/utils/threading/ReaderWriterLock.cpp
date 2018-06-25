@@ -25,7 +25,7 @@ static const int64_t MaxReaders = std::numeric_limits<std::int32_t>::max();
 ReaderWriterLock::ReaderWriterLock() :
     m_readers(0),
     m_holdouts(0),
-    m_readerSem(0, MaxReaders),
+    m_readerSem(0, static_cast<size_t>(MaxReaders)),
     m_writerSem(0, 1)
 {
 }
