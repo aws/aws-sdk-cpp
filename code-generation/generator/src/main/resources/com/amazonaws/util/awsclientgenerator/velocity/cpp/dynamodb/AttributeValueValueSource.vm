@@ -7,13 +7,6 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils;
 using namespace Aws::Utils::Json;
 
-const Aws::String AttributeValueValue::DEFAULT_STRING;
-const Aws::Utils::ByteBuffer AttributeValueValue::DEFAULT_BYTEBUFFER;
-const Aws::Vector<Aws::String> AttributeValueValue::DEFAULT_STRING_SET;
-const Aws::Vector<Aws::Utils::ByteBuffer> AttributeValueValue::DEFAULT_BYTEBUFFER_SET;
-const Aws::Map<Aws::String, const std::shared_ptr<AttributeValue>> AttributeValueValue::DEFAULT_ATTRIBUTE_MAP;
-const Aws::Vector<std::shared_ptr<AttributeValue>> AttributeValueValue::DEFAULT_ATTRIBUTE_LIST;
-
 //
 // Strings
 //
