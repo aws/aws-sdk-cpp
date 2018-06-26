@@ -24,21 +24,25 @@
 #include <aws/inspector/model/AddAttributesToFindingsResult.h>
 #include <aws/inspector/model/CreateAssessmentTargetResult.h>
 #include <aws/inspector/model/CreateAssessmentTemplateResult.h>
+#include <aws/inspector/model/CreateExclusionsPreviewResult.h>
 #include <aws/inspector/model/CreateResourceGroupResult.h>
 #include <aws/inspector/model/DescribeAssessmentRunsResult.h>
 #include <aws/inspector/model/DescribeAssessmentTargetsResult.h>
 #include <aws/inspector/model/DescribeAssessmentTemplatesResult.h>
 #include <aws/inspector/model/DescribeCrossAccountAccessRoleResult.h>
+#include <aws/inspector/model/DescribeExclusionsResult.h>
 #include <aws/inspector/model/DescribeFindingsResult.h>
 #include <aws/inspector/model/DescribeResourceGroupsResult.h>
 #include <aws/inspector/model/DescribeRulesPackagesResult.h>
 #include <aws/inspector/model/GetAssessmentReportResult.h>
+#include <aws/inspector/model/GetExclusionsPreviewResult.h>
 #include <aws/inspector/model/GetTelemetryMetadataResult.h>
 #include <aws/inspector/model/ListAssessmentRunAgentsResult.h>
 #include <aws/inspector/model/ListAssessmentRunsResult.h>
 #include <aws/inspector/model/ListAssessmentTargetsResult.h>
 #include <aws/inspector/model/ListAssessmentTemplatesResult.h>
 #include <aws/inspector/model/ListEventSubscriptionsResult.h>
+#include <aws/inspector/model/ListExclusionsResult.h>
 #include <aws/inspector/model/ListFindingsResult.h>
 #include <aws/inspector/model/ListRulesPackagesResult.h>
 #include <aws/inspector/model/ListTagsForResourceResult.h>
@@ -94,6 +98,7 @@ namespace Model
         class AddAttributesToFindingsRequest;
         class CreateAssessmentTargetRequest;
         class CreateAssessmentTemplateRequest;
+        class CreateExclusionsPreviewRequest;
         class CreateResourceGroupRequest;
         class DeleteAssessmentRunRequest;
         class DeleteAssessmentTargetRequest;
@@ -101,16 +106,19 @@ namespace Model
         class DescribeAssessmentRunsRequest;
         class DescribeAssessmentTargetsRequest;
         class DescribeAssessmentTemplatesRequest;
+        class DescribeExclusionsRequest;
         class DescribeFindingsRequest;
         class DescribeResourceGroupsRequest;
         class DescribeRulesPackagesRequest;
         class GetAssessmentReportRequest;
+        class GetExclusionsPreviewRequest;
         class GetTelemetryMetadataRequest;
         class ListAssessmentRunAgentsRequest;
         class ListAssessmentRunsRequest;
         class ListAssessmentTargetsRequest;
         class ListAssessmentTemplatesRequest;
         class ListEventSubscriptionsRequest;
+        class ListExclusionsRequest;
         class ListFindingsRequest;
         class ListRulesPackagesRequest;
         class ListTagsForResourceRequest;
@@ -127,6 +135,7 @@ namespace Model
         typedef Aws::Utils::Outcome<AddAttributesToFindingsResult, Aws::Client::AWSError<InspectorErrors>> AddAttributesToFindingsOutcome;
         typedef Aws::Utils::Outcome<CreateAssessmentTargetResult, Aws::Client::AWSError<InspectorErrors>> CreateAssessmentTargetOutcome;
         typedef Aws::Utils::Outcome<CreateAssessmentTemplateResult, Aws::Client::AWSError<InspectorErrors>> CreateAssessmentTemplateOutcome;
+        typedef Aws::Utils::Outcome<CreateExclusionsPreviewResult, Aws::Client::AWSError<InspectorErrors>> CreateExclusionsPreviewOutcome;
         typedef Aws::Utils::Outcome<CreateResourceGroupResult, Aws::Client::AWSError<InspectorErrors>> CreateResourceGroupOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<InspectorErrors>> DeleteAssessmentRunOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<InspectorErrors>> DeleteAssessmentTargetOutcome;
@@ -135,16 +144,19 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeAssessmentTargetsResult, Aws::Client::AWSError<InspectorErrors>> DescribeAssessmentTargetsOutcome;
         typedef Aws::Utils::Outcome<DescribeAssessmentTemplatesResult, Aws::Client::AWSError<InspectorErrors>> DescribeAssessmentTemplatesOutcome;
         typedef Aws::Utils::Outcome<DescribeCrossAccountAccessRoleResult, Aws::Client::AWSError<InspectorErrors>> DescribeCrossAccountAccessRoleOutcome;
+        typedef Aws::Utils::Outcome<DescribeExclusionsResult, Aws::Client::AWSError<InspectorErrors>> DescribeExclusionsOutcome;
         typedef Aws::Utils::Outcome<DescribeFindingsResult, Aws::Client::AWSError<InspectorErrors>> DescribeFindingsOutcome;
         typedef Aws::Utils::Outcome<DescribeResourceGroupsResult, Aws::Client::AWSError<InspectorErrors>> DescribeResourceGroupsOutcome;
         typedef Aws::Utils::Outcome<DescribeRulesPackagesResult, Aws::Client::AWSError<InspectorErrors>> DescribeRulesPackagesOutcome;
         typedef Aws::Utils::Outcome<GetAssessmentReportResult, Aws::Client::AWSError<InspectorErrors>> GetAssessmentReportOutcome;
+        typedef Aws::Utils::Outcome<GetExclusionsPreviewResult, Aws::Client::AWSError<InspectorErrors>> GetExclusionsPreviewOutcome;
         typedef Aws::Utils::Outcome<GetTelemetryMetadataResult, Aws::Client::AWSError<InspectorErrors>> GetTelemetryMetadataOutcome;
         typedef Aws::Utils::Outcome<ListAssessmentRunAgentsResult, Aws::Client::AWSError<InspectorErrors>> ListAssessmentRunAgentsOutcome;
         typedef Aws::Utils::Outcome<ListAssessmentRunsResult, Aws::Client::AWSError<InspectorErrors>> ListAssessmentRunsOutcome;
         typedef Aws::Utils::Outcome<ListAssessmentTargetsResult, Aws::Client::AWSError<InspectorErrors>> ListAssessmentTargetsOutcome;
         typedef Aws::Utils::Outcome<ListAssessmentTemplatesResult, Aws::Client::AWSError<InspectorErrors>> ListAssessmentTemplatesOutcome;
         typedef Aws::Utils::Outcome<ListEventSubscriptionsResult, Aws::Client::AWSError<InspectorErrors>> ListEventSubscriptionsOutcome;
+        typedef Aws::Utils::Outcome<ListExclusionsResult, Aws::Client::AWSError<InspectorErrors>> ListExclusionsOutcome;
         typedef Aws::Utils::Outcome<ListFindingsResult, Aws::Client::AWSError<InspectorErrors>> ListFindingsOutcome;
         typedef Aws::Utils::Outcome<ListRulesPackagesResult, Aws::Client::AWSError<InspectorErrors>> ListRulesPackagesOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<InspectorErrors>> ListTagsForResourceOutcome;
@@ -161,6 +173,7 @@ namespace Model
         typedef std::future<AddAttributesToFindingsOutcome> AddAttributesToFindingsOutcomeCallable;
         typedef std::future<CreateAssessmentTargetOutcome> CreateAssessmentTargetOutcomeCallable;
         typedef std::future<CreateAssessmentTemplateOutcome> CreateAssessmentTemplateOutcomeCallable;
+        typedef std::future<CreateExclusionsPreviewOutcome> CreateExclusionsPreviewOutcomeCallable;
         typedef std::future<CreateResourceGroupOutcome> CreateResourceGroupOutcomeCallable;
         typedef std::future<DeleteAssessmentRunOutcome> DeleteAssessmentRunOutcomeCallable;
         typedef std::future<DeleteAssessmentTargetOutcome> DeleteAssessmentTargetOutcomeCallable;
@@ -169,16 +182,19 @@ namespace Model
         typedef std::future<DescribeAssessmentTargetsOutcome> DescribeAssessmentTargetsOutcomeCallable;
         typedef std::future<DescribeAssessmentTemplatesOutcome> DescribeAssessmentTemplatesOutcomeCallable;
         typedef std::future<DescribeCrossAccountAccessRoleOutcome> DescribeCrossAccountAccessRoleOutcomeCallable;
+        typedef std::future<DescribeExclusionsOutcome> DescribeExclusionsOutcomeCallable;
         typedef std::future<DescribeFindingsOutcome> DescribeFindingsOutcomeCallable;
         typedef std::future<DescribeResourceGroupsOutcome> DescribeResourceGroupsOutcomeCallable;
         typedef std::future<DescribeRulesPackagesOutcome> DescribeRulesPackagesOutcomeCallable;
         typedef std::future<GetAssessmentReportOutcome> GetAssessmentReportOutcomeCallable;
+        typedef std::future<GetExclusionsPreviewOutcome> GetExclusionsPreviewOutcomeCallable;
         typedef std::future<GetTelemetryMetadataOutcome> GetTelemetryMetadataOutcomeCallable;
         typedef std::future<ListAssessmentRunAgentsOutcome> ListAssessmentRunAgentsOutcomeCallable;
         typedef std::future<ListAssessmentRunsOutcome> ListAssessmentRunsOutcomeCallable;
         typedef std::future<ListAssessmentTargetsOutcome> ListAssessmentTargetsOutcomeCallable;
         typedef std::future<ListAssessmentTemplatesOutcome> ListAssessmentTemplatesOutcomeCallable;
         typedef std::future<ListEventSubscriptionsOutcome> ListEventSubscriptionsOutcomeCallable;
+        typedef std::future<ListExclusionsOutcome> ListExclusionsOutcomeCallable;
         typedef std::future<ListFindingsOutcome> ListFindingsOutcomeCallable;
         typedef std::future<ListRulesPackagesOutcome> ListRulesPackagesOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -198,6 +214,7 @@ namespace Model
     typedef std::function<void(const InspectorClient*, const Model::AddAttributesToFindingsRequest&, const Model::AddAttributesToFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddAttributesToFindingsResponseReceivedHandler;
     typedef std::function<void(const InspectorClient*, const Model::CreateAssessmentTargetRequest&, const Model::CreateAssessmentTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAssessmentTargetResponseReceivedHandler;
     typedef std::function<void(const InspectorClient*, const Model::CreateAssessmentTemplateRequest&, const Model::CreateAssessmentTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAssessmentTemplateResponseReceivedHandler;
+    typedef std::function<void(const InspectorClient*, const Model::CreateExclusionsPreviewRequest&, const Model::CreateExclusionsPreviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateExclusionsPreviewResponseReceivedHandler;
     typedef std::function<void(const InspectorClient*, const Model::CreateResourceGroupRequest&, const Model::CreateResourceGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateResourceGroupResponseReceivedHandler;
     typedef std::function<void(const InspectorClient*, const Model::DeleteAssessmentRunRequest&, const Model::DeleteAssessmentRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAssessmentRunResponseReceivedHandler;
     typedef std::function<void(const InspectorClient*, const Model::DeleteAssessmentTargetRequest&, const Model::DeleteAssessmentTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAssessmentTargetResponseReceivedHandler;
@@ -206,16 +223,19 @@ namespace Model
     typedef std::function<void(const InspectorClient*, const Model::DescribeAssessmentTargetsRequest&, const Model::DescribeAssessmentTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAssessmentTargetsResponseReceivedHandler;
     typedef std::function<void(const InspectorClient*, const Model::DescribeAssessmentTemplatesRequest&, const Model::DescribeAssessmentTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAssessmentTemplatesResponseReceivedHandler;
     typedef std::function<void(const InspectorClient*, const Model::DescribeCrossAccountAccessRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCrossAccountAccessRoleResponseReceivedHandler;
+    typedef std::function<void(const InspectorClient*, const Model::DescribeExclusionsRequest&, const Model::DescribeExclusionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExclusionsResponseReceivedHandler;
     typedef std::function<void(const InspectorClient*, const Model::DescribeFindingsRequest&, const Model::DescribeFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFindingsResponseReceivedHandler;
     typedef std::function<void(const InspectorClient*, const Model::DescribeResourceGroupsRequest&, const Model::DescribeResourceGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeResourceGroupsResponseReceivedHandler;
     typedef std::function<void(const InspectorClient*, const Model::DescribeRulesPackagesRequest&, const Model::DescribeRulesPackagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRulesPackagesResponseReceivedHandler;
     typedef std::function<void(const InspectorClient*, const Model::GetAssessmentReportRequest&, const Model::GetAssessmentReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssessmentReportResponseReceivedHandler;
+    typedef std::function<void(const InspectorClient*, const Model::GetExclusionsPreviewRequest&, const Model::GetExclusionsPreviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetExclusionsPreviewResponseReceivedHandler;
     typedef std::function<void(const InspectorClient*, const Model::GetTelemetryMetadataRequest&, const Model::GetTelemetryMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTelemetryMetadataResponseReceivedHandler;
     typedef std::function<void(const InspectorClient*, const Model::ListAssessmentRunAgentsRequest&, const Model::ListAssessmentRunAgentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssessmentRunAgentsResponseReceivedHandler;
     typedef std::function<void(const InspectorClient*, const Model::ListAssessmentRunsRequest&, const Model::ListAssessmentRunsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssessmentRunsResponseReceivedHandler;
     typedef std::function<void(const InspectorClient*, const Model::ListAssessmentTargetsRequest&, const Model::ListAssessmentTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssessmentTargetsResponseReceivedHandler;
     typedef std::function<void(const InspectorClient*, const Model::ListAssessmentTemplatesRequest&, const Model::ListAssessmentTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssessmentTemplatesResponseReceivedHandler;
     typedef std::function<void(const InspectorClient*, const Model::ListEventSubscriptionsRequest&, const Model::ListEventSubscriptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventSubscriptionsResponseReceivedHandler;
+    typedef std::function<void(const InspectorClient*, const Model::ListExclusionsRequest&, const Model::ListExclusionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExclusionsResponseReceivedHandler;
     typedef std::function<void(const InspectorClient*, const Model::ListFindingsRequest&, const Model::ListFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFindingsResponseReceivedHandler;
     typedef std::function<void(const InspectorClient*, const Model::ListRulesPackagesRequest&, const Model::ListRulesPackagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRulesPackagesResponseReceivedHandler;
     typedef std::function<void(const InspectorClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
@@ -381,6 +401,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateAssessmentTemplateAsync(const Model::CreateAssessmentTemplateRequest& request, const CreateAssessmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Starts the generation of an exclusions preview for the specified assessment
+         * template. The exclusions preview lists the potential exclusions
+         * (ExclusionPreview) that Inspector can detect before it runs the assessment.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateExclusionsPreview">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateExclusionsPreviewOutcome CreateExclusionsPreview(const Model::CreateExclusionsPreviewRequest& request) const;
+
+        /**
+         * <p>Starts the generation of an exclusions preview for the specified assessment
+         * template. The exclusions preview lists the potential exclusions
+         * (ExclusionPreview) that Inspector can detect before it runs the assessment.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateExclusionsPreview">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateExclusionsPreviewOutcomeCallable CreateExclusionsPreviewCallable(const Model::CreateExclusionsPreviewRequest& request) const;
+
+        /**
+         * <p>Starts the generation of an exclusions preview for the specified assessment
+         * template. The exclusions preview lists the potential exclusions
+         * (ExclusionPreview) that Inspector can detect before it runs the assessment.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateExclusionsPreview">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateExclusionsPreviewAsync(const Model::CreateExclusionsPreviewRequest& request, const CreateExclusionsPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a resource group using the specified set of tags (key and value
@@ -615,6 +669,34 @@ namespace Model
          */
         virtual void DescribeCrossAccountAccessRoleAsync(const DescribeCrossAccountAccessRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
         /**
+         * <p>Describes the exclusions that are specified by the exclusions'
+         * ARNs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeExclusions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeExclusionsOutcome DescribeExclusions(const Model::DescribeExclusionsRequest& request) const;
+
+        /**
+         * <p>Describes the exclusions that are specified by the exclusions'
+         * ARNs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeExclusions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeExclusionsOutcomeCallable DescribeExclusionsCallable(const Model::DescribeExclusionsRequest& request) const;
+
+        /**
+         * <p>Describes the exclusions that are specified by the exclusions'
+         * ARNs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeExclusions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeExclusionsAsync(const Model::DescribeExclusionsRequest& request, const DescribeExclusionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes the findings that are specified by the ARNs of the
          * findings.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeFindings">AWS
@@ -725,6 +807,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetAssessmentReportAsync(const Model::GetAssessmentReportRequest& request, const GetAssessmentReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the exclusions preview (a list of ExclusionPreview objects)
+         * specified by the preview token. You can obtain the preview token by running the
+         * CreateExclusionsPreview API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetExclusionsPreview">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetExclusionsPreviewOutcome GetExclusionsPreview(const Model::GetExclusionsPreviewRequest& request) const;
+
+        /**
+         * <p>Retrieves the exclusions preview (a list of ExclusionPreview objects)
+         * specified by the preview token. You can obtain the preview token by running the
+         * CreateExclusionsPreview API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetExclusionsPreview">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetExclusionsPreviewOutcomeCallable GetExclusionsPreviewCallable(const Model::GetExclusionsPreviewRequest& request) const;
+
+        /**
+         * <p>Retrieves the exclusions preview (a list of ExclusionPreview objects)
+         * specified by the preview token. You can obtain the preview token by running the
+         * CreateExclusionsPreview API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetExclusionsPreview">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetExclusionsPreviewAsync(const Model::GetExclusionsPreviewRequest& request, const GetExclusionsPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Information about the data that is collected for the specified assessment
@@ -911,6 +1024,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListEventSubscriptionsAsync(const Model::ListEventSubscriptionsRequest& request, const ListEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>List exclusions that are generated by the assessment run.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListExclusions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListExclusionsOutcome ListExclusions(const Model::ListExclusionsRequest& request) const;
+
+        /**
+         * <p>List exclusions that are generated by the assessment run.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListExclusions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListExclusionsOutcomeCallable ListExclusionsCallable(const Model::ListExclusionsRequest& request) const;
+
+        /**
+         * <p>List exclusions that are generated by the assessment run.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListExclusions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListExclusionsAsync(const Model::ListExclusionsRequest& request, const ListExclusionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists findings that are generated by the assessment runs that are specified
@@ -1268,6 +1409,7 @@ namespace Model
         void AddAttributesToFindingsAsyncHelper(const Model::AddAttributesToFindingsRequest& request, const AddAttributesToFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAssessmentTargetAsyncHelper(const Model::CreateAssessmentTargetRequest& request, const CreateAssessmentTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAssessmentTemplateAsyncHelper(const Model::CreateAssessmentTemplateRequest& request, const CreateAssessmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateExclusionsPreviewAsyncHelper(const Model::CreateExclusionsPreviewRequest& request, const CreateExclusionsPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateResourceGroupAsyncHelper(const Model::CreateResourceGroupRequest& request, const CreateResourceGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAssessmentRunAsyncHelper(const Model::DeleteAssessmentRunRequest& request, const DeleteAssessmentRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAssessmentTargetAsyncHelper(const Model::DeleteAssessmentTargetRequest& request, const DeleteAssessmentTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1276,16 +1418,19 @@ namespace Model
         void DescribeAssessmentTargetsAsyncHelper(const Model::DescribeAssessmentTargetsRequest& request, const DescribeAssessmentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAssessmentTemplatesAsyncHelper(const Model::DescribeAssessmentTemplatesRequest& request, const DescribeAssessmentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCrossAccountAccessRoleAsyncHelper(const DescribeCrossAccountAccessRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeExclusionsAsyncHelper(const Model::DescribeExclusionsRequest& request, const DescribeExclusionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFindingsAsyncHelper(const Model::DescribeFindingsRequest& request, const DescribeFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeResourceGroupsAsyncHelper(const Model::DescribeResourceGroupsRequest& request, const DescribeResourceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRulesPackagesAsyncHelper(const Model::DescribeRulesPackagesRequest& request, const DescribeRulesPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAssessmentReportAsyncHelper(const Model::GetAssessmentReportRequest& request, const GetAssessmentReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetExclusionsPreviewAsyncHelper(const Model::GetExclusionsPreviewRequest& request, const GetExclusionsPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTelemetryMetadataAsyncHelper(const Model::GetTelemetryMetadataRequest& request, const GetTelemetryMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAssessmentRunAgentsAsyncHelper(const Model::ListAssessmentRunAgentsRequest& request, const ListAssessmentRunAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAssessmentRunsAsyncHelper(const Model::ListAssessmentRunsRequest& request, const ListAssessmentRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAssessmentTargetsAsyncHelper(const Model::ListAssessmentTargetsRequest& request, const ListAssessmentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAssessmentTemplatesAsyncHelper(const Model::ListAssessmentTemplatesRequest& request, const ListAssessmentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEventSubscriptionsAsyncHelper(const Model::ListEventSubscriptionsRequest& request, const ListEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListExclusionsAsyncHelper(const Model::ListExclusionsRequest& request, const ListExclusionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFindingsAsyncHelper(const Model::ListFindingsRequest& request, const ListFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRulesPackagesAsyncHelper(const Model::ListRulesPackagesRequest& request, const ListRulesPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

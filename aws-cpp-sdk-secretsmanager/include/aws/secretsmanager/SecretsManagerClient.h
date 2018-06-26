@@ -23,12 +23,15 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/secretsmanager/model/CancelRotateSecretResult.h>
 #include <aws/secretsmanager/model/CreateSecretResult.h>
+#include <aws/secretsmanager/model/DeleteResourcePolicyResult.h>
 #include <aws/secretsmanager/model/DeleteSecretResult.h>
 #include <aws/secretsmanager/model/DescribeSecretResult.h>
 #include <aws/secretsmanager/model/GetRandomPasswordResult.h>
+#include <aws/secretsmanager/model/GetResourcePolicyResult.h>
 #include <aws/secretsmanager/model/GetSecretValueResult.h>
 #include <aws/secretsmanager/model/ListSecretVersionIdsResult.h>
 #include <aws/secretsmanager/model/ListSecretsResult.h>
+#include <aws/secretsmanager/model/PutResourcePolicyResult.h>
 #include <aws/secretsmanager/model/PutSecretValueResult.h>
 #include <aws/secretsmanager/model/RestoreSecretResult.h>
 #include <aws/secretsmanager/model/RotateSecretResult.h>
@@ -82,12 +85,15 @@ namespace Model
 {
         class CancelRotateSecretRequest;
         class CreateSecretRequest;
+        class DeleteResourcePolicyRequest;
         class DeleteSecretRequest;
         class DescribeSecretRequest;
         class GetRandomPasswordRequest;
+        class GetResourcePolicyRequest;
         class GetSecretValueRequest;
         class ListSecretVersionIdsRequest;
         class ListSecretsRequest;
+        class PutResourcePolicyRequest;
         class PutSecretValueRequest;
         class RestoreSecretRequest;
         class RotateSecretRequest;
@@ -98,12 +104,15 @@ namespace Model
 
         typedef Aws::Utils::Outcome<CancelRotateSecretResult, Aws::Client::AWSError<SecretsManagerErrors>> CancelRotateSecretOutcome;
         typedef Aws::Utils::Outcome<CreateSecretResult, Aws::Client::AWSError<SecretsManagerErrors>> CreateSecretOutcome;
+        typedef Aws::Utils::Outcome<DeleteResourcePolicyResult, Aws::Client::AWSError<SecretsManagerErrors>> DeleteResourcePolicyOutcome;
         typedef Aws::Utils::Outcome<DeleteSecretResult, Aws::Client::AWSError<SecretsManagerErrors>> DeleteSecretOutcome;
         typedef Aws::Utils::Outcome<DescribeSecretResult, Aws::Client::AWSError<SecretsManagerErrors>> DescribeSecretOutcome;
         typedef Aws::Utils::Outcome<GetRandomPasswordResult, Aws::Client::AWSError<SecretsManagerErrors>> GetRandomPasswordOutcome;
+        typedef Aws::Utils::Outcome<GetResourcePolicyResult, Aws::Client::AWSError<SecretsManagerErrors>> GetResourcePolicyOutcome;
         typedef Aws::Utils::Outcome<GetSecretValueResult, Aws::Client::AWSError<SecretsManagerErrors>> GetSecretValueOutcome;
         typedef Aws::Utils::Outcome<ListSecretVersionIdsResult, Aws::Client::AWSError<SecretsManagerErrors>> ListSecretVersionIdsOutcome;
         typedef Aws::Utils::Outcome<ListSecretsResult, Aws::Client::AWSError<SecretsManagerErrors>> ListSecretsOutcome;
+        typedef Aws::Utils::Outcome<PutResourcePolicyResult, Aws::Client::AWSError<SecretsManagerErrors>> PutResourcePolicyOutcome;
         typedef Aws::Utils::Outcome<PutSecretValueResult, Aws::Client::AWSError<SecretsManagerErrors>> PutSecretValueOutcome;
         typedef Aws::Utils::Outcome<RestoreSecretResult, Aws::Client::AWSError<SecretsManagerErrors>> RestoreSecretOutcome;
         typedef Aws::Utils::Outcome<RotateSecretResult, Aws::Client::AWSError<SecretsManagerErrors>> RotateSecretOutcome;
@@ -114,12 +123,15 @@ namespace Model
 
         typedef std::future<CancelRotateSecretOutcome> CancelRotateSecretOutcomeCallable;
         typedef std::future<CreateSecretOutcome> CreateSecretOutcomeCallable;
+        typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
         typedef std::future<DeleteSecretOutcome> DeleteSecretOutcomeCallable;
         typedef std::future<DescribeSecretOutcome> DescribeSecretOutcomeCallable;
         typedef std::future<GetRandomPasswordOutcome> GetRandomPasswordOutcomeCallable;
+        typedef std::future<GetResourcePolicyOutcome> GetResourcePolicyOutcomeCallable;
         typedef std::future<GetSecretValueOutcome> GetSecretValueOutcomeCallable;
         typedef std::future<ListSecretVersionIdsOutcome> ListSecretVersionIdsOutcomeCallable;
         typedef std::future<ListSecretsOutcome> ListSecretsOutcomeCallable;
+        typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
         typedef std::future<PutSecretValueOutcome> PutSecretValueOutcomeCallable;
         typedef std::future<RestoreSecretOutcome> RestoreSecretOutcomeCallable;
         typedef std::future<RotateSecretOutcome> RotateSecretOutcomeCallable;
@@ -133,12 +145,15 @@ namespace Model
 
     typedef std::function<void(const SecretsManagerClient*, const Model::CancelRotateSecretRequest&, const Model::CancelRotateSecretOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelRotateSecretResponseReceivedHandler;
     typedef std::function<void(const SecretsManagerClient*, const Model::CreateSecretRequest&, const Model::CreateSecretOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSecretResponseReceivedHandler;
+    typedef std::function<void(const SecretsManagerClient*, const Model::DeleteResourcePolicyRequest&, const Model::DeleteResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const SecretsManagerClient*, const Model::DeleteSecretRequest&, const Model::DeleteSecretOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSecretResponseReceivedHandler;
     typedef std::function<void(const SecretsManagerClient*, const Model::DescribeSecretRequest&, const Model::DescribeSecretOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSecretResponseReceivedHandler;
     typedef std::function<void(const SecretsManagerClient*, const Model::GetRandomPasswordRequest&, const Model::GetRandomPasswordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRandomPasswordResponseReceivedHandler;
+    typedef std::function<void(const SecretsManagerClient*, const Model::GetResourcePolicyRequest&, const Model::GetResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const SecretsManagerClient*, const Model::GetSecretValueRequest&, const Model::GetSecretValueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSecretValueResponseReceivedHandler;
     typedef std::function<void(const SecretsManagerClient*, const Model::ListSecretVersionIdsRequest&, const Model::ListSecretVersionIdsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSecretVersionIdsResponseReceivedHandler;
     typedef std::function<void(const SecretsManagerClient*, const Model::ListSecretsRequest&, const Model::ListSecretsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSecretsResponseReceivedHandler;
+    typedef std::function<void(const SecretsManagerClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const SecretsManagerClient*, const Model::PutSecretValueRequest&, const Model::PutSecretValueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSecretValueResponseReceivedHandler;
     typedef std::function<void(const SecretsManagerClient*, const Model::RestoreSecretRequest&, const Model::RestoreSecretOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreSecretResponseReceivedHandler;
     typedef std::function<void(const SecretsManagerClient*, const Model::RotateSecretRequest&, const Model::RotateSecretOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RotateSecretResponseReceivedHandler;
@@ -511,6 +526,55 @@ namespace Model
         virtual void CreateSecretAsync(const Model::CreateSecretRequest& request, const CreateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes the resource-based policy currently attached to the secret.</p> <p>
+         * <b>Minimum permissions</b> </p> <p>To run this command, you must have the
+         * following permissions:</p> <ul> <li> <p>secretsmanager:DeleteResourcePolicy</p>
+         * </li> </ul> <p> <b>Related operations</b> </p> <ul> <li> <p>To attach a resource
+         * policy to a secret, use <a>PutResourcePolicy</a>.</p> </li> <li> <p>To retrieve
+         * the current resource-based policy that is attached to a secret, use
+         * <a>GetResourcePolicy</a>.</p> </li> <li> <p>To list all of the currently
+         * available secrets, use <a>ListSecrets</a>.</p> </li> </ul><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
+
+        /**
+         * <p>Deletes the resource-based policy currently attached to the secret.</p> <p>
+         * <b>Minimum permissions</b> </p> <p>To run this command, you must have the
+         * following permissions:</p> <ul> <li> <p>secretsmanager:DeleteResourcePolicy</p>
+         * </li> </ul> <p> <b>Related operations</b> </p> <ul> <li> <p>To attach a resource
+         * policy to a secret, use <a>PutResourcePolicy</a>.</p> </li> <li> <p>To retrieve
+         * the current resource-based policy that is attached to a secret, use
+         * <a>GetResourcePolicy</a>.</p> </li> <li> <p>To list all of the currently
+         * available secrets, use <a>ListSecrets</a>.</p> </li> </ul><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteResourcePolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const Model::DeleteResourcePolicyRequest& request) const;
+
+        /**
+         * <p>Deletes the resource-based policy currently attached to the secret.</p> <p>
+         * <b>Minimum permissions</b> </p> <p>To run this command, you must have the
+         * following permissions:</p> <ul> <li> <p>secretsmanager:DeleteResourcePolicy</p>
+         * </li> </ul> <p> <b>Related operations</b> </p> <ul> <li> <p>To attach a resource
+         * policy to a secret, use <a>PutResourcePolicy</a>.</p> </li> <li> <p>To retrieve
+         * the current resource-based policy that is attached to a secret, use
+         * <a>GetResourcePolicy</a>.</p> </li> <li> <p>To list all of the currently
+         * available secrets, use <a>ListSecrets</a>.</p> </li> </ul><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteResourcePolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteResourcePolicyAsync(const Model::DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes an entire secret and all of its versions. You can optionally include
          * a recovery window during which you can restore the secret. If you don't specify
          * a recovery window value, the operation defaults to 30 days. Secrets Manager
@@ -703,6 +767,61 @@ namespace Model
         virtual void GetRandomPasswordAsync(const Model::GetRandomPasswordRequest& request, const GetRandomPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves the JSON text of the resource-based policy attached to the
+         * specified secret. The JSON request string input and response output are shown
+         * formatted with whitespace and line breaks for better readability. Submit your
+         * input as a single line JSON string.</p> <p> <b>Minimum permissions</b> </p>
+         * <p>To run this command, you must have the following permissions:</p> <ul> <li>
+         * <p>secretsmanager:GetResourcePolicy</p> </li> </ul> <p> <b>Related
+         * operations</b> </p> <ul> <li> <p>To attach a resource policy to a secret, use
+         * <a>PutResourcePolicy</a>.</p> </li> <li> <p>To delete the resource-based policy
+         * that is attached to a secret, use <a>DeleteResourcePolicy</a>.</p> </li> <li>
+         * <p>To list all of the currently available secrets, use <a>ListSecrets</a>.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResourcePolicyOutcome GetResourcePolicy(const Model::GetResourcePolicyRequest& request) const;
+
+        /**
+         * <p>Retrieves the JSON text of the resource-based policy attached to the
+         * specified secret. The JSON request string input and response output are shown
+         * formatted with whitespace and line breaks for better readability. Submit your
+         * input as a single line JSON string.</p> <p> <b>Minimum permissions</b> </p>
+         * <p>To run this command, you must have the following permissions:</p> <ul> <li>
+         * <p>secretsmanager:GetResourcePolicy</p> </li> </ul> <p> <b>Related
+         * operations</b> </p> <ul> <li> <p>To attach a resource policy to a secret, use
+         * <a>PutResourcePolicy</a>.</p> </li> <li> <p>To delete the resource-based policy
+         * that is attached to a secret, use <a>DeleteResourcePolicy</a>.</p> </li> <li>
+         * <p>To list all of the currently available secrets, use <a>ListSecrets</a>.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetResourcePolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetResourcePolicyOutcomeCallable GetResourcePolicyCallable(const Model::GetResourcePolicyRequest& request) const;
+
+        /**
+         * <p>Retrieves the JSON text of the resource-based policy attached to the
+         * specified secret. The JSON request string input and response output are shown
+         * formatted with whitespace and line breaks for better readability. Submit your
+         * input as a single line JSON string.</p> <p> <b>Minimum permissions</b> </p>
+         * <p>To run this command, you must have the following permissions:</p> <ul> <li>
+         * <p>secretsmanager:GetResourcePolicy</p> </li> </ul> <p> <b>Related
+         * operations</b> </p> <ul> <li> <p>To attach a resource policy to a secret, use
+         * <a>PutResourcePolicy</a>.</p> </li> <li> <p>To delete the resource-based policy
+         * that is attached to a secret, use <a>DeleteResourcePolicy</a>.</p> </li> <li>
+         * <p>To list all of the currently available secrets, use <a>ListSecrets</a>.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetResourcePolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetResourcePolicyAsync(const Model::GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves the contents of the encrypted fields <code>SecretString</code> or
          * <code>SecretBinary</code> from the specified version of a secret, whichever
          * contains content.</p> <p> <b>Minimum permissions</b> </p> <p>To run this
@@ -890,6 +1009,85 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListSecretsAsync(const Model::ListSecretsRequest& request, const ListSecretsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Attaches the contents of the specified resource-based policy to a secret. A
+         * resource-based policy is optional. Alternatively, you can use IAM user-based
+         * policies that specify the secret's ARN in the policy statement's
+         * <code>Resources</code> element. You can also use a combination of both identity-
+         * an resource-based policies. The affected users and roles receive the permissions
+         * permitted by all of the relevant policies. For more information, see <a
+         * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html">Using
+         * Resource-Based Policies for AWS Secrets Manager</a>. For the complete
+         * description of the AWS policy syntax and grammar, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+         * JSON Policy Reference</a> in the <i>IAM User Guide</i>.</p> <p> <b>Minimum
+         * permissions</b> </p> <p>To run this command, you must have the following
+         * permissions:</p> <ul> <li> <p>secretsmanager:PutResourcePolicy</p> </li> </ul>
+         * <p> <b>Related operations</b> </p> <ul> <li> <p>To retrieve the resource policy
+         * attached to a secret, use <a>GetResourcePolicy</a>.</p> </li> <li> <p>To delete
+         * the resource-based policy that is attached to a secret, use
+         * <a>DeleteResourcePolicy</a>.</p> </li> <li> <p>To list all of the currently
+         * available secrets, use <a>ListSecrets</a>.</p> </li> </ul><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
+
+        /**
+         * <p>Attaches the contents of the specified resource-based policy to a secret. A
+         * resource-based policy is optional. Alternatively, you can use IAM user-based
+         * policies that specify the secret's ARN in the policy statement's
+         * <code>Resources</code> element. You can also use a combination of both identity-
+         * an resource-based policies. The affected users and roles receive the permissions
+         * permitted by all of the relevant policies. For more information, see <a
+         * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html">Using
+         * Resource-Based Policies for AWS Secrets Manager</a>. For the complete
+         * description of the AWS policy syntax and grammar, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+         * JSON Policy Reference</a> in the <i>IAM User Guide</i>.</p> <p> <b>Minimum
+         * permissions</b> </p> <p>To run this command, you must have the following
+         * permissions:</p> <ul> <li> <p>secretsmanager:PutResourcePolicy</p> </li> </ul>
+         * <p> <b>Related operations</b> </p> <ul> <li> <p>To retrieve the resource policy
+         * attached to a secret, use <a>GetResourcePolicy</a>.</p> </li> <li> <p>To delete
+         * the resource-based policy that is attached to a secret, use
+         * <a>DeleteResourcePolicy</a>.</p> </li> <li> <p>To list all of the currently
+         * available secrets, use <a>ListSecrets</a>.</p> </li> </ul><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutResourcePolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const Model::PutResourcePolicyRequest& request) const;
+
+        /**
+         * <p>Attaches the contents of the specified resource-based policy to a secret. A
+         * resource-based policy is optional. Alternatively, you can use IAM user-based
+         * policies that specify the secret's ARN in the policy statement's
+         * <code>Resources</code> element. You can also use a combination of both identity-
+         * an resource-based policies. The affected users and roles receive the permissions
+         * permitted by all of the relevant policies. For more information, see <a
+         * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html">Using
+         * Resource-Based Policies for AWS Secrets Manager</a>. For the complete
+         * description of the AWS policy syntax and grammar, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+         * JSON Policy Reference</a> in the <i>IAM User Guide</i>.</p> <p> <b>Minimum
+         * permissions</b> </p> <p>To run this command, you must have the following
+         * permissions:</p> <ul> <li> <p>secretsmanager:PutResourcePolicy</p> </li> </ul>
+         * <p> <b>Related operations</b> </p> <ul> <li> <p>To retrieve the resource policy
+         * attached to a secret, use <a>GetResourcePolicy</a>.</p> </li> <li> <p>To delete
+         * the resource-based policy that is attached to a secret, use
+         * <a>DeleteResourcePolicy</a>.</p> </li> <li> <p>To list all of the currently
+         * available secrets, use <a>ListSecrets</a>.</p> </li> </ul><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutResourcePolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutResourcePolicyAsync(const Model::PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stores a new encrypted secret value in the specified secret. To do this, the
@@ -1667,12 +1865,15 @@ namespace Model
         /**Async helpers**/
         void CancelRotateSecretAsyncHelper(const Model::CancelRotateSecretRequest& request, const CancelRotateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSecretAsyncHelper(const Model::CreateSecretRequest& request, const CreateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteResourcePolicyAsyncHelper(const Model::DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSecretAsyncHelper(const Model::DeleteSecretRequest& request, const DeleteSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSecretAsyncHelper(const Model::DescribeSecretRequest& request, const DescribeSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRandomPasswordAsyncHelper(const Model::GetRandomPasswordRequest& request, const GetRandomPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetResourcePolicyAsyncHelper(const Model::GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSecretValueAsyncHelper(const Model::GetSecretValueRequest& request, const GetSecretValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSecretVersionIdsAsyncHelper(const Model::ListSecretVersionIdsRequest& request, const ListSecretVersionIdsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSecretsAsyncHelper(const Model::ListSecretsRequest& request, const ListSecretsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutResourcePolicyAsyncHelper(const Model::PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutSecretValueAsyncHelper(const Model::PutSecretValueRequest& request, const PutSecretValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreSecretAsyncHelper(const Model::RestoreSecretRequest& request, const RestoreSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RotateSecretAsyncHelper(const Model::RotateSecretRequest& request, const RotateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

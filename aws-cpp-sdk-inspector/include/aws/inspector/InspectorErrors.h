@@ -62,6 +62,7 @@ enum class InspectorErrors
   INVALID_INPUT,
   LIMIT_EXCEEDED,
   NO_SUCH_ENTITY,
+  PREVIEW_GENERATION_IN_PROGRESS,
   UNSUPPORTED_FEATURE
 };
 namespace InspectorErrorMapper

@@ -37,6 +37,7 @@ static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequest
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int ENCRYPTION_FAILURE_HASH = HashingUtils::HashString("EncryptionFailure");
 static const int DECRYPTION_FAILURE_HASH = HashingUtils::HashString("DecryptionFailure");
+static const int PRECONDITION_NOT_MET_HASH = HashingUtils::HashString("PreconditionNotMetException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -78,6 +79,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == DECRYPTION_FAILURE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SecretsManagerErrors::DECRYPTION_FAILURE), false);
+  }
+  else if (hashCode == PRECONDITION_NOT_MET_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SecretsManagerErrors::PRECONDITION_NOT_MET), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

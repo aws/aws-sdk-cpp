@@ -267,6 +267,28 @@ namespace Model
      */
     inline CSVInput& WithQuoteCharacter(const char* value) { SetQuoteCharacter(value); return *this;}
 
+
+    /**
+     * Specifies that CSV field values may contain quoted record delimiters and such
+     * records should be allowed. Default value is FALSE. Setting this value to TRUE
+     * may lower performance.
+     */
+    inline bool GetAllowQuotedRecordDelimiter() const{ return m_allowQuotedRecordDelimiter; }
+
+    /**
+     * Specifies that CSV field values may contain quoted record delimiters and such
+     * records should be allowed. Default value is FALSE. Setting this value to TRUE
+     * may lower performance.
+     */
+    inline void SetAllowQuotedRecordDelimiter(bool value) { m_allowQuotedRecordDelimiterHasBeenSet = true; m_allowQuotedRecordDelimiter = value; }
+
+    /**
+     * Specifies that CSV field values may contain quoted record delimiters and such
+     * records should be allowed. Default value is FALSE. Setting this value to TRUE
+     * may lower performance.
+     */
+    inline CSVInput& WithAllowQuotedRecordDelimiter(bool value) { SetAllowQuotedRecordDelimiter(value); return *this;}
+
   private:
 
     FileHeaderInfo m_fileHeaderInfo;
@@ -286,6 +308,9 @@ namespace Model
 
     Aws::String m_quoteCharacter;
     bool m_quoteCharacterHasBeenSet;
+
+    bool m_allowQuotedRecordDelimiter;
+    bool m_allowQuotedRecordDelimiterHasBeenSet;
   };
 
 } // namespace Model

@@ -63,6 +63,7 @@ enum class SecretsManagerErrors
   INVALID_REQUEST,
   LIMIT_EXCEEDED,
   MALFORMED_POLICY_DOCUMENT,
+  PRECONDITION_NOT_MET,
   RESOURCE_EXISTS
 };
 namespace SecretsManagerErrorMapper
