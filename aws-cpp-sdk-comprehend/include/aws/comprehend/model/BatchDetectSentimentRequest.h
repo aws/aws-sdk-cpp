@@ -17,6 +17,7 @@
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/comprehend/ComprehendRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/comprehend/model/LanguageCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -103,53 +104,41 @@ namespace Model
 
 
     /**
-     * <p>The language of the input documents. All documents must be in the same
-     * language.</p>
+     * <p>The language of the input documents. You can specify English ("en") or
+     * Spanish ("es"). All documents must be in the same language.</p>
      */
-    inline const Aws::String& GetLanguageCode() const{ return m_languageCode; }
+    inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
-     * <p>The language of the input documents. All documents must be in the same
-     * language.</p>
+     * <p>The language of the input documents. You can specify English ("en") or
+     * Spanish ("es"). All documents must be in the same language.</p>
      */
-    inline void SetLanguageCode(const Aws::String& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
-     * <p>The language of the input documents. All documents must be in the same
-     * language.</p>
+     * <p>The language of the input documents. You can specify English ("en") or
+     * Spanish ("es"). All documents must be in the same language.</p>
      */
-    inline void SetLanguageCode(Aws::String&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
+    inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
-     * <p>The language of the input documents. All documents must be in the same
-     * language.</p>
+     * <p>The language of the input documents. You can specify English ("en") or
+     * Spanish ("es"). All documents must be in the same language.</p>
      */
-    inline void SetLanguageCode(const char* value) { m_languageCodeHasBeenSet = true; m_languageCode.assign(value); }
+    inline BatchDetectSentimentRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
-     * <p>The language of the input documents. All documents must be in the same
-     * language.</p>
+     * <p>The language of the input documents. You can specify English ("en") or
+     * Spanish ("es"). All documents must be in the same language.</p>
      */
-    inline BatchDetectSentimentRequest& WithLanguageCode(const Aws::String& value) { SetLanguageCode(value); return *this;}
-
-    /**
-     * <p>The language of the input documents. All documents must be in the same
-     * language.</p>
-     */
-    inline BatchDetectSentimentRequest& WithLanguageCode(Aws::String&& value) { SetLanguageCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The language of the input documents. All documents must be in the same
-     * language.</p>
-     */
-    inline BatchDetectSentimentRequest& WithLanguageCode(const char* value) { SetLanguageCode(value); return *this;}
+    inline BatchDetectSentimentRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 
   private:
 
     Aws::Vector<Aws::String> m_textList;
     bool m_textListHasBeenSet;
 
-    Aws::String m_languageCode;
+    LanguageCode m_languageCode;
     bool m_languageCodeHasBeenSet;
   };
 

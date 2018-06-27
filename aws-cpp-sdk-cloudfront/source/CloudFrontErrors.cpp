@@ -100,7 +100,6 @@ static const int TOO_MANY_LAMBDA_FUNCTION_ASSOCIATIONS_HASH = HashingUtils::Hash
 static const int INVALID_MINIMUM_PROTOCOL_VERSION_HASH = HashingUtils::HashString("InvalidMinimumProtocolVersion");
 static const int INVALID_TAGGING_HASH = HashingUtils::HashString("InvalidTagging");
 static const int TOO_MANY_FIELD_LEVEL_ENCRYPTION_PROFILES_HASH = HashingUtils::HashString("TooManyFieldLevelEncryptionProfiles");
-static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUse");
 static const int ILLEGAL_UPDATE_HASH = HashingUtils::HashString("IllegalUpdate");
 static const int INVALID_ORIGIN_ACCESS_IDENTITY_HASH = HashingUtils::HashString("InvalidOriginAccessIdentity");
 static const int INVALID_QUERY_STRING_PARAMETERS_HASH = HashingUtils::HashString("InvalidQueryStringParameters");
@@ -401,10 +400,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == TOO_MANY_FIELD_LEVEL_ENCRYPTION_PROFILES_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_MANY_FIELD_LEVEL_ENCRYPTION_PROFILES), false);
-  }
-  else if (hashCode == RESOURCE_IN_USE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::RESOURCE_IN_USE), false);
   }
   else if (hashCode == ILLEGAL_UPDATE_HASH)
   {

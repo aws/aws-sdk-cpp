@@ -74,27 +74,42 @@ namespace Model
 
 
     /**
-     * <p>Specifies where to send the output files.</p>
+     * <p>Specifies where to send the output files. The output is a compressed archive
+     * with two files, <code>topic-terms.csv</code> that lists the terms associated
+     * with each topic, and <code>doc-topics.csv</code> that lists the documents
+     * associated with each topic</p>
      */
     inline const OutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
 
     /**
-     * <p>Specifies where to send the output files.</p>
+     * <p>Specifies where to send the output files. The output is a compressed archive
+     * with two files, <code>topic-terms.csv</code> that lists the terms associated
+     * with each topic, and <code>doc-topics.csv</code> that lists the documents
+     * associated with each topic</p>
      */
     inline void SetOutputDataConfig(const OutputDataConfig& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = value; }
 
     /**
-     * <p>Specifies where to send the output files.</p>
+     * <p>Specifies where to send the output files. The output is a compressed archive
+     * with two files, <code>topic-terms.csv</code> that lists the terms associated
+     * with each topic, and <code>doc-topics.csv</code> that lists the documents
+     * associated with each topic</p>
      */
     inline void SetOutputDataConfig(OutputDataConfig&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::move(value); }
 
     /**
-     * <p>Specifies where to send the output files.</p>
+     * <p>Specifies where to send the output files. The output is a compressed archive
+     * with two files, <code>topic-terms.csv</code> that lists the terms associated
+     * with each topic, and <code>doc-topics.csv</code> that lists the documents
+     * associated with each topic</p>
      */
     inline StartTopicsDetectionJobRequest& WithOutputDataConfig(const OutputDataConfig& value) { SetOutputDataConfig(value); return *this;}
 
     /**
-     * <p>Specifies where to send the output files.</p>
+     * <p>Specifies where to send the output files. The output is a compressed archive
+     * with two files, <code>topic-terms.csv</code> that lists the terms associated
+     * with each topic, and <code>doc-topics.csv</code> that lists the documents
+     * associated with each topic</p>
      */
     inline StartTopicsDetectionJobRequest& WithOutputDataConfig(OutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}
 

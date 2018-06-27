@@ -30,7 +30,7 @@ const Aws::String& AttributeValue::GetS() const
     }
     else
     {
-        return AttributeValueValue::DEFAULT_STRING;
+        return m_value->DEFAULT_STRING;
     }
 }
 
@@ -48,7 +48,7 @@ const Aws::String& AttributeValue::GetN() const
     }
     else
     {
-        return AttributeValueValue::DEFAULT_STRING;
+        return m_value->DEFAULT_STRING;
     }
 }
 
@@ -66,7 +66,7 @@ const ByteBuffer& AttributeValue::GetB() const
     }
     else
     {
-        return AttributeValueValue::DEFAULT_BYTEBUFFER;
+        return m_value->DEFAULT_BYTEBUFFER;
     }
 }
 
@@ -84,7 +84,7 @@ const Aws::Vector<Aws::String>& AttributeValue::GetSS() const
     }
     else
     {
-        return AttributeValueValue::DEFAULT_STRING_SET;
+        return m_value->DEFAULT_STRING_SET;
     }
 }
 
@@ -117,7 +117,7 @@ const Aws::Vector<Aws::String>& AttributeValue::GetNS() const
     }
     else
     {
-        return AttributeValueValue::DEFAULT_STRING_SET;
+        return m_value->DEFAULT_STRING_SET;
     }
 }
 
@@ -150,7 +150,7 @@ const Aws::Vector<ByteBuffer>& AttributeValue::GetBS() const
     }
     else
     {
-        return AttributeValueValue::DEFAULT_BYTEBUFFER_SET;
+        return m_value->DEFAULT_BYTEBUFFER_SET;
     }
 }
 
@@ -188,7 +188,7 @@ const Aws::Map<Aws::String, const std::shared_ptr<AttributeValue>>& AttributeVal
     }
     else
     {
-        return AttributeValueValue::DEFAULT_ATTRIBUTE_MAP;
+        return m_value->DEFAULT_ATTRIBUTE_MAP;
     }
 }
 
@@ -223,7 +223,7 @@ const Aws::Vector<std::shared_ptr<AttributeValue>>& AttributeValue::GetL() const
     }
     else
     {
-        return AttributeValueValue::DEFAULT_ATTRIBUTE_LIST;
+        return m_value->DEFAULT_ATTRIBUTE_LIST;
     }
 }
 

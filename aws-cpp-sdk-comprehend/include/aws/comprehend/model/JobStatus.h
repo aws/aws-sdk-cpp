@@ -29,7 +29,9 @@ namespace Model
     SUBMITTED,
     IN_PROGRESS,
     COMPLETED,
-    FAILED
+    FAILED,
+    STOP_REQUESTED,
+    STOPPED
   };
 
 namespace JobStatusMapper

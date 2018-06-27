@@ -526,12 +526,13 @@ namespace Model
         virtual void CreateSecretAsync(const Model::CreateSecretRequest& request, const CreateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the resource-based policy currently attached to the secret.</p> <p>
-         * <b>Minimum permissions</b> </p> <p>To run this command, you must have the
-         * following permissions:</p> <ul> <li> <p>secretsmanager:DeleteResourcePolicy</p>
-         * </li> </ul> <p> <b>Related operations</b> </p> <ul> <li> <p>To attach a resource
-         * policy to a secret, use <a>PutResourcePolicy</a>.</p> </li> <li> <p>To retrieve
-         * the current resource-based policy that is attached to a secret, use
+         * <p>Deletes the resource-based permission policy that's attached to the
+         * secret.</p> <p> <b>Minimum permissions</b> </p> <p>To run this command, you must
+         * have the following permissions:</p> <ul> <li>
+         * <p>secretsmanager:DeleteResourcePolicy</p> </li> </ul> <p> <b>Related
+         * operations</b> </p> <ul> <li> <p>To attach a resource policy to a secret, use
+         * <a>PutResourcePolicy</a>.</p> </li> <li> <p>To retrieve the current
+         * resource-based policy that's attached to a secret, use
          * <a>GetResourcePolicy</a>.</p> </li> <li> <p>To list all of the currently
          * available secrets, use <a>ListSecrets</a>.</p> </li> </ul><p><h3>See Also:</h3> 
          * <a
@@ -541,12 +542,13 @@ namespace Model
         virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
 
         /**
-         * <p>Deletes the resource-based policy currently attached to the secret.</p> <p>
-         * <b>Minimum permissions</b> </p> <p>To run this command, you must have the
-         * following permissions:</p> <ul> <li> <p>secretsmanager:DeleteResourcePolicy</p>
-         * </li> </ul> <p> <b>Related operations</b> </p> <ul> <li> <p>To attach a resource
-         * policy to a secret, use <a>PutResourcePolicy</a>.</p> </li> <li> <p>To retrieve
-         * the current resource-based policy that is attached to a secret, use
+         * <p>Deletes the resource-based permission policy that's attached to the
+         * secret.</p> <p> <b>Minimum permissions</b> </p> <p>To run this command, you must
+         * have the following permissions:</p> <ul> <li>
+         * <p>secretsmanager:DeleteResourcePolicy</p> </li> </ul> <p> <b>Related
+         * operations</b> </p> <ul> <li> <p>To attach a resource policy to a secret, use
+         * <a>PutResourcePolicy</a>.</p> </li> <li> <p>To retrieve the current
+         * resource-based policy that's attached to a secret, use
          * <a>GetResourcePolicy</a>.</p> </li> <li> <p>To list all of the currently
          * available secrets, use <a>ListSecrets</a>.</p> </li> </ul><p><h3>See Also:</h3> 
          * <a
@@ -558,12 +560,13 @@ namespace Model
         virtual Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const Model::DeleteResourcePolicyRequest& request) const;
 
         /**
-         * <p>Deletes the resource-based policy currently attached to the secret.</p> <p>
-         * <b>Minimum permissions</b> </p> <p>To run this command, you must have the
-         * following permissions:</p> <ul> <li> <p>secretsmanager:DeleteResourcePolicy</p>
-         * </li> </ul> <p> <b>Related operations</b> </p> <ul> <li> <p>To attach a resource
-         * policy to a secret, use <a>PutResourcePolicy</a>.</p> </li> <li> <p>To retrieve
-         * the current resource-based policy that is attached to a secret, use
+         * <p>Deletes the resource-based permission policy that's attached to the
+         * secret.</p> <p> <b>Minimum permissions</b> </p> <p>To run this command, you must
+         * have the following permissions:</p> <ul> <li>
+         * <p>secretsmanager:DeleteResourcePolicy</p> </li> </ul> <p> <b>Related
+         * operations</b> </p> <ul> <li> <p>To attach a resource policy to a secret, use
+         * <a>PutResourcePolicy</a>.</p> </li> <li> <p>To retrieve the current
+         * resource-based policy that's attached to a secret, use
          * <a>GetResourcePolicy</a>.</p> </li> <li> <p>To list all of the currently
          * available secrets, use <a>ListSecrets</a>.</p> </li> </ul><p><h3>See Also:</h3> 
          * <a
@@ -767,15 +770,15 @@ namespace Model
         virtual void GetRandomPasswordAsync(const Model::GetRandomPasswordRequest& request, const GetRandomPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the JSON text of the resource-based policy attached to the
-         * specified secret. The JSON request string input and response output are shown
-         * formatted with whitespace and line breaks for better readability. Submit your
-         * input as a single line JSON string.</p> <p> <b>Minimum permissions</b> </p>
+         * <p>Retrieves the JSON text of the resource-based policy document that's attached
+         * to the specified secret. The JSON request string input and response output are
+         * shown formatted with white space and line breaks for better readability. Submit
+         * your input as a single line JSON string.</p> <p> <b>Minimum permissions</b> </p>
          * <p>To run this command, you must have the following permissions:</p> <ul> <li>
          * <p>secretsmanager:GetResourcePolicy</p> </li> </ul> <p> <b>Related
          * operations</b> </p> <ul> <li> <p>To attach a resource policy to a secret, use
          * <a>PutResourcePolicy</a>.</p> </li> <li> <p>To delete the resource-based policy
-         * that is attached to a secret, use <a>DeleteResourcePolicy</a>.</p> </li> <li>
+         * that's attached to a secret, use <a>DeleteResourcePolicy</a>.</p> </li> <li>
          * <p>To list all of the currently available secrets, use <a>ListSecrets</a>.</p>
          * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetResourcePolicy">AWS
@@ -784,15 +787,15 @@ namespace Model
         virtual Model::GetResourcePolicyOutcome GetResourcePolicy(const Model::GetResourcePolicyRequest& request) const;
 
         /**
-         * <p>Retrieves the JSON text of the resource-based policy attached to the
-         * specified secret. The JSON request string input and response output are shown
-         * formatted with whitespace and line breaks for better readability. Submit your
-         * input as a single line JSON string.</p> <p> <b>Minimum permissions</b> </p>
+         * <p>Retrieves the JSON text of the resource-based policy document that's attached
+         * to the specified secret. The JSON request string input and response output are
+         * shown formatted with white space and line breaks for better readability. Submit
+         * your input as a single line JSON string.</p> <p> <b>Minimum permissions</b> </p>
          * <p>To run this command, you must have the following permissions:</p> <ul> <li>
          * <p>secretsmanager:GetResourcePolicy</p> </li> </ul> <p> <b>Related
          * operations</b> </p> <ul> <li> <p>To attach a resource policy to a secret, use
          * <a>PutResourcePolicy</a>.</p> </li> <li> <p>To delete the resource-based policy
-         * that is attached to a secret, use <a>DeleteResourcePolicy</a>.</p> </li> <li>
+         * that's attached to a secret, use <a>DeleteResourcePolicy</a>.</p> </li> <li>
          * <p>To list all of the currently available secrets, use <a>ListSecrets</a>.</p>
          * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetResourcePolicy">AWS
@@ -803,15 +806,15 @@ namespace Model
         virtual Model::GetResourcePolicyOutcomeCallable GetResourcePolicyCallable(const Model::GetResourcePolicyRequest& request) const;
 
         /**
-         * <p>Retrieves the JSON text of the resource-based policy attached to the
-         * specified secret. The JSON request string input and response output are shown
-         * formatted with whitespace and line breaks for better readability. Submit your
-         * input as a single line JSON string.</p> <p> <b>Minimum permissions</b> </p>
+         * <p>Retrieves the JSON text of the resource-based policy document that's attached
+         * to the specified secret. The JSON request string input and response output are
+         * shown formatted with white space and line breaks for better readability. Submit
+         * your input as a single line JSON string.</p> <p> <b>Minimum permissions</b> </p>
          * <p>To run this command, you must have the following permissions:</p> <ul> <li>
          * <p>secretsmanager:GetResourcePolicy</p> </li> </ul> <p> <b>Related
          * operations</b> </p> <ul> <li> <p>To attach a resource policy to a secret, use
          * <a>PutResourcePolicy</a>.</p> </li> <li> <p>To delete the resource-based policy
-         * that is attached to a secret, use <a>DeleteResourcePolicy</a>.</p> </li> <li>
+         * that's attached to a secret, use <a>DeleteResourcePolicy</a>.</p> </li> <li>
          * <p>To list all of the currently available secrets, use <a>ListSecrets</a>.</p>
          * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetResourcePolicy">AWS
@@ -1011,12 +1014,13 @@ namespace Model
         virtual void ListSecretsAsync(const Model::ListSecretsRequest& request, const ListSecretsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Attaches the contents of the specified resource-based policy to a secret. A
-         * resource-based policy is optional. Alternatively, you can use IAM user-based
-         * policies that specify the secret's ARN in the policy statement's
-         * <code>Resources</code> element. You can also use a combination of both identity-
-         * an resource-based policies. The affected users and roles receive the permissions
-         * permitted by all of the relevant policies. For more information, see <a
+         * <p>Attaches the contents of the specified resource-based permission policy to a
+         * secret. A resource-based policy is optional. Alternatively, you can use IAM
+         * identity-based policies that specify the secret's Amazon Resource Name (ARN) in
+         * the policy statement's <code>Resources</code> element. You can also use a
+         * combination of both identity-based and resource-based policies. The affected
+         * users and roles receive the permissions that are permitted by all of the
+         * relevant policies. For more information, see <a
          * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html">Using
          * Resource-Based Policies for AWS Secrets Manager</a>. For the complete
          * description of the AWS policy syntax and grammar, see <a
@@ -1025,8 +1029,8 @@ namespace Model
          * permissions</b> </p> <p>To run this command, you must have the following
          * permissions:</p> <ul> <li> <p>secretsmanager:PutResourcePolicy</p> </li> </ul>
          * <p> <b>Related operations</b> </p> <ul> <li> <p>To retrieve the resource policy
-         * attached to a secret, use <a>GetResourcePolicy</a>.</p> </li> <li> <p>To delete
-         * the resource-based policy that is attached to a secret, use
+         * that's attached to a secret, use <a>GetResourcePolicy</a>.</p> </li> <li> <p>To
+         * delete the resource-based policy that's attached to a secret, use
          * <a>DeleteResourcePolicy</a>.</p> </li> <li> <p>To list all of the currently
          * available secrets, use <a>ListSecrets</a>.</p> </li> </ul><p><h3>See Also:</h3> 
          * <a
@@ -1036,12 +1040,13 @@ namespace Model
         virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
 
         /**
-         * <p>Attaches the contents of the specified resource-based policy to a secret. A
-         * resource-based policy is optional. Alternatively, you can use IAM user-based
-         * policies that specify the secret's ARN in the policy statement's
-         * <code>Resources</code> element. You can also use a combination of both identity-
-         * an resource-based policies. The affected users and roles receive the permissions
-         * permitted by all of the relevant policies. For more information, see <a
+         * <p>Attaches the contents of the specified resource-based permission policy to a
+         * secret. A resource-based policy is optional. Alternatively, you can use IAM
+         * identity-based policies that specify the secret's Amazon Resource Name (ARN) in
+         * the policy statement's <code>Resources</code> element. You can also use a
+         * combination of both identity-based and resource-based policies. The affected
+         * users and roles receive the permissions that are permitted by all of the
+         * relevant policies. For more information, see <a
          * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html">Using
          * Resource-Based Policies for AWS Secrets Manager</a>. For the complete
          * description of the AWS policy syntax and grammar, see <a
@@ -1050,8 +1055,8 @@ namespace Model
          * permissions</b> </p> <p>To run this command, you must have the following
          * permissions:</p> <ul> <li> <p>secretsmanager:PutResourcePolicy</p> </li> </ul>
          * <p> <b>Related operations</b> </p> <ul> <li> <p>To retrieve the resource policy
-         * attached to a secret, use <a>GetResourcePolicy</a>.</p> </li> <li> <p>To delete
-         * the resource-based policy that is attached to a secret, use
+         * that's attached to a secret, use <a>GetResourcePolicy</a>.</p> </li> <li> <p>To
+         * delete the resource-based policy that's attached to a secret, use
          * <a>DeleteResourcePolicy</a>.</p> </li> <li> <p>To list all of the currently
          * available secrets, use <a>ListSecrets</a>.</p> </li> </ul><p><h3>See Also:</h3> 
          * <a
@@ -1063,12 +1068,13 @@ namespace Model
         virtual Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const Model::PutResourcePolicyRequest& request) const;
 
         /**
-         * <p>Attaches the contents of the specified resource-based policy to a secret. A
-         * resource-based policy is optional. Alternatively, you can use IAM user-based
-         * policies that specify the secret's ARN in the policy statement's
-         * <code>Resources</code> element. You can also use a combination of both identity-
-         * an resource-based policies. The affected users and roles receive the permissions
-         * permitted by all of the relevant policies. For more information, see <a
+         * <p>Attaches the contents of the specified resource-based permission policy to a
+         * secret. A resource-based policy is optional. Alternatively, you can use IAM
+         * identity-based policies that specify the secret's Amazon Resource Name (ARN) in
+         * the policy statement's <code>Resources</code> element. You can also use a
+         * combination of both identity-based and resource-based policies. The affected
+         * users and roles receive the permissions that are permitted by all of the
+         * relevant policies. For more information, see <a
          * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html">Using
          * Resource-Based Policies for AWS Secrets Manager</a>. For the complete
          * description of the AWS policy syntax and grammar, see <a
@@ -1077,8 +1083,8 @@ namespace Model
          * permissions</b> </p> <p>To run this command, you must have the following
          * permissions:</p> <ul> <li> <p>secretsmanager:PutResourcePolicy</p> </li> </ul>
          * <p> <b>Related operations</b> </p> <ul> <li> <p>To retrieve the resource policy
-         * attached to a secret, use <a>GetResourcePolicy</a>.</p> </li> <li> <p>To delete
-         * the resource-based policy that is attached to a secret, use
+         * that's attached to a secret, use <a>GetResourcePolicy</a>.</p> </li> <li> <p>To
+         * delete the resource-based policy that's attached to a secret, use
          * <a>DeleteResourcePolicy</a>.</p> </li> <li> <p>To list all of the currently
          * available secrets, use <a>ListSecrets</a>.</p> </li> </ul><p><h3>See Also:</h3> 
          * <a

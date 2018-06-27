@@ -41,7 +41,6 @@
 #include <aws/cloudfront/model/DeleteFieldLevelEncryptionConfig2017_10_30Request.h>
 #include <aws/cloudfront/model/DeleteFieldLevelEncryptionProfile2017_10_30Request.h>
 #include <aws/cloudfront/model/DeletePublicKey2017_10_30Request.h>
-#include <aws/cloudfront/model/DeleteServiceLinkedRole2017_10_30Request.h>
 #include <aws/cloudfront/model/DeleteStreamingDistribution2017_10_30Request.h>
 #include <aws/cloudfront/model/GetCloudFrontOriginAccessIdentity2017_10_30Request.h>
 #include <aws/cloudfront/model/GetCloudFrontOriginAccessIdentityConfig2017_10_30Request.h>
@@ -638,42 +637,6 @@ void CloudFrontClient::DeletePublicKey2017_10_30Async(const DeletePublicKey2017_
 void CloudFrontClient::DeletePublicKey2017_10_30AsyncHelper(const DeletePublicKey2017_10_30Request& request, const DeletePublicKey2017_10_30ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeletePublicKey2017_10_30(request), context);
-}
-
-DeleteServiceLinkedRole2017_10_30Outcome CloudFrontClient::DeleteServiceLinkedRole2017_10_30(const DeleteServiceLinkedRole2017_10_30Request& request) const
-{
-  Aws::StringStream ss;
-  Aws::Http::URI uri = m_uri;
-  ss << "/2017-10-30/service-linked-role/";
-  ss << request.GetRoleName();
-  uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
-  if(outcome.IsSuccess())
-  {
-    return DeleteServiceLinkedRole2017_10_30Outcome(NoResult());
-  }
-  else
-  {
-    return DeleteServiceLinkedRole2017_10_30Outcome(outcome.GetError());
-  }
-}
-
-DeleteServiceLinkedRole2017_10_30OutcomeCallable CloudFrontClient::DeleteServiceLinkedRole2017_10_30Callable(const DeleteServiceLinkedRole2017_10_30Request& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< DeleteServiceLinkedRole2017_10_30Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteServiceLinkedRole2017_10_30(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void CloudFrontClient::DeleteServiceLinkedRole2017_10_30Async(const DeleteServiceLinkedRole2017_10_30Request& request, const DeleteServiceLinkedRole2017_10_30ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteServiceLinkedRole2017_10_30AsyncHelper( request, handler, context ); } );
-}
-
-void CloudFrontClient::DeleteServiceLinkedRole2017_10_30AsyncHelper(const DeleteServiceLinkedRole2017_10_30Request& request, const DeleteServiceLinkedRole2017_10_30ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteServiceLinkedRole2017_10_30(request), context);
 }
 
 DeleteStreamingDistribution2017_10_30Outcome CloudFrontClient::DeleteStreamingDistribution2017_10_30(const DeleteStreamingDistribution2017_10_30Request& request) const
