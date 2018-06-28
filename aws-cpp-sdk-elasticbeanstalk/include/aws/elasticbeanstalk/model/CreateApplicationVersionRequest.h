@@ -328,38 +328,44 @@ namespace Model
 
 
     /**
-     * <p>Preprocesses and validates the environment manifest (<code>env.yaml</code>)
+     * <p>Pre-processes and validates the environment manifest (<code>env.yaml</code>)
      * and configuration files (<code>*.config</code> files in the
      * <code>.ebextensions</code> folder) in the source bundle. Validating
      * configuration files can identify issues prior to deploying the application
-     * version to an environment.</p> <note> <p>The <code>Process</code> option
-     * validates Elastic Beanstalk configuration files. It doesn't validate your
-     * application's configuration files, like proxy server or Docker
-     * configuration.</p> </note>
+     * version to an environment.</p> <p>You must turn processing on for application
+     * versions that you create using AWS CodeBuild or AWS CodeCommit. For application
+     * versions built from a source bundle in Amazon S3, processing is optional.</p>
+     * <note> <p>The <code>Process</code> option validates Elastic Beanstalk
+     * configuration files. It doesn't validate your application's configuration files,
+     * like proxy server or Docker configuration.</p> </note>
      */
     inline bool GetProcess() const{ return m_process; }
 
     /**
-     * <p>Preprocesses and validates the environment manifest (<code>env.yaml</code>)
+     * <p>Pre-processes and validates the environment manifest (<code>env.yaml</code>)
      * and configuration files (<code>*.config</code> files in the
      * <code>.ebextensions</code> folder) in the source bundle. Validating
      * configuration files can identify issues prior to deploying the application
-     * version to an environment.</p> <note> <p>The <code>Process</code> option
-     * validates Elastic Beanstalk configuration files. It doesn't validate your
-     * application's configuration files, like proxy server or Docker
-     * configuration.</p> </note>
+     * version to an environment.</p> <p>You must turn processing on for application
+     * versions that you create using AWS CodeBuild or AWS CodeCommit. For application
+     * versions built from a source bundle in Amazon S3, processing is optional.</p>
+     * <note> <p>The <code>Process</code> option validates Elastic Beanstalk
+     * configuration files. It doesn't validate your application's configuration files,
+     * like proxy server or Docker configuration.</p> </note>
      */
     inline void SetProcess(bool value) { m_processHasBeenSet = true; m_process = value; }
 
     /**
-     * <p>Preprocesses and validates the environment manifest (<code>env.yaml</code>)
+     * <p>Pre-processes and validates the environment manifest (<code>env.yaml</code>)
      * and configuration files (<code>*.config</code> files in the
      * <code>.ebextensions</code> folder) in the source bundle. Validating
      * configuration files can identify issues prior to deploying the application
-     * version to an environment.</p> <note> <p>The <code>Process</code> option
-     * validates Elastic Beanstalk configuration files. It doesn't validate your
-     * application's configuration files, like proxy server or Docker
-     * configuration.</p> </note>
+     * version to an environment.</p> <p>You must turn processing on for application
+     * versions that you create using AWS CodeBuild or AWS CodeCommit. For application
+     * versions built from a source bundle in Amazon S3, processing is optional.</p>
+     * <note> <p>The <code>Process</code> option validates Elastic Beanstalk
+     * configuration files. It doesn't validate your application's configuration files,
+     * like proxy server or Docker configuration.</p> </note>
      */
     inline CreateApplicationVersionRequest& WithProcess(bool value) { SetProcess(value); return *this;}
 

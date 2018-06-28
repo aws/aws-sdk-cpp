@@ -52,44 +52,44 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis stream. (This parameter
-     * is optional.)</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream, or
+     * an SQS queue. (This parameter is optional.)</p>
      */
     inline const Aws::String& GetEventSourceArn() const{ return m_eventSourceArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis stream. (This parameter
-     * is optional.)</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream, or
+     * an SQS queue. (This parameter is optional.)</p>
      */
     inline void SetEventSourceArn(const Aws::String& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis stream. (This parameter
-     * is optional.)</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream, or
+     * an SQS queue. (This parameter is optional.)</p>
      */
     inline void SetEventSourceArn(Aws::String&& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis stream. (This parameter
-     * is optional.)</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream, or
+     * an SQS queue. (This parameter is optional.)</p>
      */
     inline void SetEventSourceArn(const char* value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis stream. (This parameter
-     * is optional.)</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream, or
+     * an SQS queue. (This parameter is optional.)</p>
      */
     inline ListEventSourceMappingsRequest& WithEventSourceArn(const Aws::String& value) { SetEventSourceArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis stream. (This parameter
-     * is optional.)</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream, or
+     * an SQS queue. (This parameter is optional.)</p>
      */
     inline ListEventSourceMappingsRequest& WithEventSourceArn(Aws::String&& value) { SetEventSourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis stream. (This parameter
-     * is optional.)</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream, or
+     * an SQS queue. (This parameter is optional.)</p>
      */
     inline ListEventSourceMappingsRequest& WithEventSourceArn(const char* value) { SetEventSourceArn(value); return *this;}
 

@@ -1200,7 +1200,7 @@ namespace Model
         virtual void DescribeEventsAsync(const Model::DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrives detailed information about the health of instances in your AWS
+         * <p>Retrieves detailed information about the health of instances in your AWS
          * Elastic Beanstalk. This operation requires <a
          * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced
          * health reporting</a>.</p><p><h3>See Also:</h3>   <a
@@ -1210,7 +1210,7 @@ namespace Model
         virtual Model::DescribeInstancesHealthOutcome DescribeInstancesHealth(const Model::DescribeInstancesHealthRequest& request) const;
 
         /**
-         * <p>Retrives detailed information about the health of instances in your AWS
+         * <p>Retrieves detailed information about the health of instances in your AWS
          * Elastic Beanstalk. This operation requires <a
          * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced
          * health reporting</a>.</p><p><h3>See Also:</h3>   <a
@@ -1222,7 +1222,7 @@ namespace Model
         virtual Model::DescribeInstancesHealthOutcomeCallable DescribeInstancesHealthCallable(const Model::DescribeInstancesHealthRequest& request) const;
 
         /**
-         * <p>Retrives detailed information about the health of instances in your AWS
+         * <p>Retrieves detailed information about the health of instances in your AWS
          * Elastic Beanstalk. This operation requires <a
          * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced
          * health reporting</a>.</p><p><h3>See Also:</h3>   <a

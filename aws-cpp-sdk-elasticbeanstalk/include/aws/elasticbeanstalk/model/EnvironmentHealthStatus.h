@@ -33,7 +33,8 @@ namespace Model
     Info,
     Warning,
     Degraded,
-    Severe
+    Severe,
+    Suspended
   };
 
 namespace EnvironmentHealthStatusMapper

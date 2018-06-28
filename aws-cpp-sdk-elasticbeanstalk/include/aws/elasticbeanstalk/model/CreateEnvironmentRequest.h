@@ -518,49 +518,70 @@ namespace Model
     /**
      * <p>This is an alternative to specifying a template name. If specified, AWS
      * Elastic Beanstalk sets the configuration values to the default values associated
-     * with the specified solution stack.</p>
+     * with the specified solution stack.</p> <p>For a list of current solution stacks,
+     * see <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic
+     * Beanstalk Supported Platforms</a>.</p>
      */
     inline const Aws::String& GetSolutionStackName() const{ return m_solutionStackName; }
 
     /**
      * <p>This is an alternative to specifying a template name. If specified, AWS
      * Elastic Beanstalk sets the configuration values to the default values associated
-     * with the specified solution stack.</p>
+     * with the specified solution stack.</p> <p>For a list of current solution stacks,
+     * see <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic
+     * Beanstalk Supported Platforms</a>.</p>
      */
     inline void SetSolutionStackName(const Aws::String& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = value; }
 
     /**
      * <p>This is an alternative to specifying a template name. If specified, AWS
      * Elastic Beanstalk sets the configuration values to the default values associated
-     * with the specified solution stack.</p>
+     * with the specified solution stack.</p> <p>For a list of current solution stacks,
+     * see <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic
+     * Beanstalk Supported Platforms</a>.</p>
      */
     inline void SetSolutionStackName(Aws::String&& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = std::move(value); }
 
     /**
      * <p>This is an alternative to specifying a template name. If specified, AWS
      * Elastic Beanstalk sets the configuration values to the default values associated
-     * with the specified solution stack.</p>
+     * with the specified solution stack.</p> <p>For a list of current solution stacks,
+     * see <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic
+     * Beanstalk Supported Platforms</a>.</p>
      */
     inline void SetSolutionStackName(const char* value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName.assign(value); }
 
     /**
      * <p>This is an alternative to specifying a template name. If specified, AWS
      * Elastic Beanstalk sets the configuration values to the default values associated
-     * with the specified solution stack.</p>
+     * with the specified solution stack.</p> <p>For a list of current solution stacks,
+     * see <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic
+     * Beanstalk Supported Platforms</a>.</p>
      */
     inline CreateEnvironmentRequest& WithSolutionStackName(const Aws::String& value) { SetSolutionStackName(value); return *this;}
 
     /**
      * <p>This is an alternative to specifying a template name. If specified, AWS
      * Elastic Beanstalk sets the configuration values to the default values associated
-     * with the specified solution stack.</p>
+     * with the specified solution stack.</p> <p>For a list of current solution stacks,
+     * see <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic
+     * Beanstalk Supported Platforms</a>.</p>
      */
     inline CreateEnvironmentRequest& WithSolutionStackName(Aws::String&& value) { SetSolutionStackName(std::move(value)); return *this;}
 
     /**
      * <p>This is an alternative to specifying a template name. If specified, AWS
      * Elastic Beanstalk sets the configuration values to the default values associated
-     * with the specified solution stack.</p>
+     * with the specified solution stack.</p> <p>For a list of current solution stacks,
+     * see <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic
+     * Beanstalk Supported Platforms</a>.</p>
      */
     inline CreateEnvironmentRequest& WithSolutionStackName(const char* value) { SetSolutionStackName(value); return *this;}
 

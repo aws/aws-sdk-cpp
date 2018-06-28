@@ -48,64 +48,57 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon DynamoDB
-     * stream that is the event source. Any record added to this stream could cause AWS
-     * Lambda to invoke your Lambda function, it depends on the <code>BatchSize</code>.
-     * AWS Lambda POSTs the Amazon Kinesis event, containing records, to your Lambda
+     * <p>The Amazon Resource Name (ARN) of the event source. Any record added to this
+     * source could cause AWS Lambda to invoke your Lambda function, it depends on the
+     * <code>BatchSize</code>. AWS Lambda POSTs the event's records to your Lambda
      * function as JSON.</p>
      */
     inline const Aws::String& GetEventSourceArn() const{ return m_eventSourceArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon DynamoDB
-     * stream that is the event source. Any record added to this stream could cause AWS
-     * Lambda to invoke your Lambda function, it depends on the <code>BatchSize</code>.
-     * AWS Lambda POSTs the Amazon Kinesis event, containing records, to your Lambda
+     * <p>The Amazon Resource Name (ARN) of the event source. Any record added to this
+     * source could cause AWS Lambda to invoke your Lambda function, it depends on the
+     * <code>BatchSize</code>. AWS Lambda POSTs the event's records to your Lambda
      * function as JSON.</p>
      */
     inline void SetEventSourceArn(const Aws::String& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon DynamoDB
-     * stream that is the event source. Any record added to this stream could cause AWS
-     * Lambda to invoke your Lambda function, it depends on the <code>BatchSize</code>.
-     * AWS Lambda POSTs the Amazon Kinesis event, containing records, to your Lambda
+     * <p>The Amazon Resource Name (ARN) of the event source. Any record added to this
+     * source could cause AWS Lambda to invoke your Lambda function, it depends on the
+     * <code>BatchSize</code>. AWS Lambda POSTs the event's records to your Lambda
      * function as JSON.</p>
      */
     inline void SetEventSourceArn(Aws::String&& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon DynamoDB
-     * stream that is the event source. Any record added to this stream could cause AWS
-     * Lambda to invoke your Lambda function, it depends on the <code>BatchSize</code>.
-     * AWS Lambda POSTs the Amazon Kinesis event, containing records, to your Lambda
+     * <p>The Amazon Resource Name (ARN) of the event source. Any record added to this
+     * source could cause AWS Lambda to invoke your Lambda function, it depends on the
+     * <code>BatchSize</code>. AWS Lambda POSTs the event's records to your Lambda
      * function as JSON.</p>
      */
     inline void SetEventSourceArn(const char* value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon DynamoDB
-     * stream that is the event source. Any record added to this stream could cause AWS
-     * Lambda to invoke your Lambda function, it depends on the <code>BatchSize</code>.
-     * AWS Lambda POSTs the Amazon Kinesis event, containing records, to your Lambda
+     * <p>The Amazon Resource Name (ARN) of the event source. Any record added to this
+     * source could cause AWS Lambda to invoke your Lambda function, it depends on the
+     * <code>BatchSize</code>. AWS Lambda POSTs the event's records to your Lambda
      * function as JSON.</p>
      */
     inline CreateEventSourceMappingRequest& WithEventSourceArn(const Aws::String& value) { SetEventSourceArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon DynamoDB
-     * stream that is the event source. Any record added to this stream could cause AWS
-     * Lambda to invoke your Lambda function, it depends on the <code>BatchSize</code>.
-     * AWS Lambda POSTs the Amazon Kinesis event, containing records, to your Lambda
+     * <p>The Amazon Resource Name (ARN) of the event source. Any record added to this
+     * source could cause AWS Lambda to invoke your Lambda function, it depends on the
+     * <code>BatchSize</code>. AWS Lambda POSTs the event's records to your Lambda
      * function as JSON.</p>
      */
     inline CreateEventSourceMappingRequest& WithEventSourceArn(Aws::String&& value) { SetEventSourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon DynamoDB
-     * stream that is the event source. Any record added to this stream could cause AWS
-     * Lambda to invoke your Lambda function, it depends on the <code>BatchSize</code>.
-     * AWS Lambda POSTs the Amazon Kinesis event, containing records, to your Lambda
+     * <p>The Amazon Resource Name (ARN) of the event source. Any record added to this
+     * source could cause AWS Lambda to invoke your Lambda function, it depends on the
+     * <code>BatchSize</code>. AWS Lambda POSTs the event's records to your Lambda
      * function as JSON.</p>
      */
     inline CreateEventSourceMappingRequest& WithEventSourceArn(const char* value) { SetEventSourceArn(value); return *this;}
@@ -260,21 +253,24 @@ namespace Model
     /**
      * <p>The largest number of records that AWS Lambda will retrieve from your event
      * source at the time of invoking your function. Your function receives an event
-     * with all the retrieved records. The default is 100 records.</p>
+     * with all the retrieved records. The default for Amazon Kinesis and Amazon
+     * DynamoDB is 100 records. For SQS, the default is 1.</p>
      */
     inline int GetBatchSize() const{ return m_batchSize; }
 
     /**
      * <p>The largest number of records that AWS Lambda will retrieve from your event
      * source at the time of invoking your function. Your function receives an event
-     * with all the retrieved records. The default is 100 records.</p>
+     * with all the retrieved records. The default for Amazon Kinesis and Amazon
+     * DynamoDB is 100 records. For SQS, the default is 1.</p>
      */
     inline void SetBatchSize(int value) { m_batchSizeHasBeenSet = true; m_batchSize = value; }
 
     /**
      * <p>The largest number of records that AWS Lambda will retrieve from your event
      * source at the time of invoking your function. Your function receives an event
-     * with all the retrieved records. The default is 100 records.</p>
+     * with all the retrieved records. The default for Amazon Kinesis and Amazon
+     * DynamoDB is 100 records. For SQS, the default is 1.</p>
      */
     inline CreateEventSourceMappingRequest& WithBatchSize(int value) { SetBatchSize(value); return *this;}
 

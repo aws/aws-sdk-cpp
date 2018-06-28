@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
+#include <aws/storagegateway/model/FileShareType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -44,6 +45,22 @@ namespace Model
     FileShareInfo(const Aws::Utils::Json::JsonValue& jsonValue);
     FileShareInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    
+    inline const FileShareType& GetFileShareType() const{ return m_fileShareType; }
+
+    
+    inline void SetFileShareType(const FileShareType& value) { m_fileShareTypeHasBeenSet = true; m_fileShareType = value; }
+
+    
+    inline void SetFileShareType(FileShareType&& value) { m_fileShareTypeHasBeenSet = true; m_fileShareType = std::move(value); }
+
+    
+    inline FileShareInfo& WithFileShareType(const FileShareType& value) { SetFileShareType(value); return *this;}
+
+    
+    inline FileShareInfo& WithFileShareType(FileShareType&& value) { SetFileShareType(std::move(value)); return *this;}
 
 
     
@@ -134,6 +151,9 @@ namespace Model
     inline FileShareInfo& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
   private:
+
+    FileShareType m_fileShareType;
+    bool m_fileShareTypeHasBeenSet;
 
     Aws::String m_fileShareARN;
     bool m_fileShareARNHasBeenSet;

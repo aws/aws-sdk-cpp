@@ -36,6 +36,7 @@
 #include <aws/storagegateway/model/CancelRetrievalRequest.h>
 #include <aws/storagegateway/model/CreateCachediSCSIVolumeRequest.h>
 #include <aws/storagegateway/model/CreateNFSFileShareRequest.h>
+#include <aws/storagegateway/model/CreateSMBFileShareRequest.h>
 #include <aws/storagegateway/model/CreateSnapshotRequest.h>
 #include <aws/storagegateway/model/CreateSnapshotFromVolumeRecoveryPointRequest.h>
 #include <aws/storagegateway/model/CreateStorediSCSIVolumeRequest.h>
@@ -56,6 +57,8 @@
 #include <aws/storagegateway/model/DescribeGatewayInformationRequest.h>
 #include <aws/storagegateway/model/DescribeMaintenanceStartTimeRequest.h>
 #include <aws/storagegateway/model/DescribeNFSFileSharesRequest.h>
+#include <aws/storagegateway/model/DescribeSMBFileSharesRequest.h>
+#include <aws/storagegateway/model/DescribeSMBSettingsRequest.h>
 #include <aws/storagegateway/model/DescribeSnapshotScheduleRequest.h>
 #include <aws/storagegateway/model/DescribeStorediSCSIVolumesRequest.h>
 #include <aws/storagegateway/model/DescribeTapeArchivesRequest.h>
@@ -65,6 +68,7 @@
 #include <aws/storagegateway/model/DescribeVTLDevicesRequest.h>
 #include <aws/storagegateway/model/DescribeWorkingStorageRequest.h>
 #include <aws/storagegateway/model/DisableGatewayRequest.h>
+#include <aws/storagegateway/model/JoinDomainRequest.h>
 #include <aws/storagegateway/model/ListFileSharesRequest.h>
 #include <aws/storagegateway/model/ListGatewaysRequest.h>
 #include <aws/storagegateway/model/ListLocalDisksRequest.h>
@@ -80,6 +84,7 @@
 #include <aws/storagegateway/model/RetrieveTapeArchiveRequest.h>
 #include <aws/storagegateway/model/RetrieveTapeRecoveryPointRequest.h>
 #include <aws/storagegateway/model/SetLocalConsolePasswordRequest.h>
+#include <aws/storagegateway/model/SetSMBGuestPasswordRequest.h>
 #include <aws/storagegateway/model/ShutdownGatewayRequest.h>
 #include <aws/storagegateway/model/StartGatewayRequest.h>
 #include <aws/storagegateway/model/UpdateBandwidthRateLimitRequest.h>
@@ -88,6 +93,7 @@
 #include <aws/storagegateway/model/UpdateGatewaySoftwareNowRequest.h>
 #include <aws/storagegateway/model/UpdateMaintenanceStartTimeRequest.h>
 #include <aws/storagegateway/model/UpdateNFSFileShareRequest.h>
+#include <aws/storagegateway/model/UpdateSMBFileShareRequest.h>
 #include <aws/storagegateway/model/UpdateSnapshotScheduleRequest.h>
 #include <aws/storagegateway/model/UpdateVTLDeviceTypeRequest.h>
 
@@ -468,6 +474,41 @@ void StorageGatewayClient::CreateNFSFileShareAsync(const CreateNFSFileShareReque
 void StorageGatewayClient::CreateNFSFileShareAsyncHelper(const CreateNFSFileShareRequest& request, const CreateNFSFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateNFSFileShare(request), context);
+}
+
+CreateSMBFileShareOutcome StorageGatewayClient::CreateSMBFileShare(const CreateSMBFileShareRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateSMBFileShareOutcome(CreateSMBFileShareResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateSMBFileShareOutcome(outcome.GetError());
+  }
+}
+
+CreateSMBFileShareOutcomeCallable StorageGatewayClient::CreateSMBFileShareCallable(const CreateSMBFileShareRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateSMBFileShareOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSMBFileShare(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void StorageGatewayClient::CreateSMBFileShareAsync(const CreateSMBFileShareRequest& request, const CreateSMBFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateSMBFileShareAsyncHelper( request, handler, context ); } );
+}
+
+void StorageGatewayClient::CreateSMBFileShareAsyncHelper(const CreateSMBFileShareRequest& request, const CreateSMBFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateSMBFileShare(request), context);
 }
 
 CreateSnapshotOutcome StorageGatewayClient::CreateSnapshot(const CreateSnapshotRequest& request) const
@@ -1170,6 +1211,76 @@ void StorageGatewayClient::DescribeNFSFileSharesAsyncHelper(const DescribeNFSFil
   handler(this, request, DescribeNFSFileShares(request), context);
 }
 
+DescribeSMBFileSharesOutcome StorageGatewayClient::DescribeSMBFileShares(const DescribeSMBFileSharesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeSMBFileSharesOutcome(DescribeSMBFileSharesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeSMBFileSharesOutcome(outcome.GetError());
+  }
+}
+
+DescribeSMBFileSharesOutcomeCallable StorageGatewayClient::DescribeSMBFileSharesCallable(const DescribeSMBFileSharesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeSMBFileSharesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSMBFileShares(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void StorageGatewayClient::DescribeSMBFileSharesAsync(const DescribeSMBFileSharesRequest& request, const DescribeSMBFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeSMBFileSharesAsyncHelper( request, handler, context ); } );
+}
+
+void StorageGatewayClient::DescribeSMBFileSharesAsyncHelper(const DescribeSMBFileSharesRequest& request, const DescribeSMBFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeSMBFileShares(request), context);
+}
+
+DescribeSMBSettingsOutcome StorageGatewayClient::DescribeSMBSettings(const DescribeSMBSettingsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeSMBSettingsOutcome(DescribeSMBSettingsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeSMBSettingsOutcome(outcome.GetError());
+  }
+}
+
+DescribeSMBSettingsOutcomeCallable StorageGatewayClient::DescribeSMBSettingsCallable(const DescribeSMBSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeSMBSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSMBSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void StorageGatewayClient::DescribeSMBSettingsAsync(const DescribeSMBSettingsRequest& request, const DescribeSMBSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeSMBSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void StorageGatewayClient::DescribeSMBSettingsAsyncHelper(const DescribeSMBSettingsRequest& request, const DescribeSMBSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeSMBSettings(request), context);
+}
+
 DescribeSnapshotScheduleOutcome StorageGatewayClient::DescribeSnapshotSchedule(const DescribeSnapshotScheduleRequest& request) const
 {
   Aws::StringStream ss;
@@ -1483,6 +1594,41 @@ void StorageGatewayClient::DisableGatewayAsync(const DisableGatewayRequest& requ
 void StorageGatewayClient::DisableGatewayAsyncHelper(const DisableGatewayRequest& request, const DisableGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DisableGateway(request), context);
+}
+
+JoinDomainOutcome StorageGatewayClient::JoinDomain(const JoinDomainRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return JoinDomainOutcome(JoinDomainResult(outcome.GetResult()));
+  }
+  else
+  {
+    return JoinDomainOutcome(outcome.GetError());
+  }
+}
+
+JoinDomainOutcomeCallable StorageGatewayClient::JoinDomainCallable(const JoinDomainRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< JoinDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->JoinDomain(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void StorageGatewayClient::JoinDomainAsync(const JoinDomainRequest& request, const JoinDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->JoinDomainAsyncHelper( request, handler, context ); } );
+}
+
+void StorageGatewayClient::JoinDomainAsyncHelper(const JoinDomainRequest& request, const JoinDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, JoinDomain(request), context);
 }
 
 ListFileSharesOutcome StorageGatewayClient::ListFileShares(const ListFileSharesRequest& request) const
@@ -2010,6 +2156,41 @@ void StorageGatewayClient::SetLocalConsolePasswordAsyncHelper(const SetLocalCons
   handler(this, request, SetLocalConsolePassword(request), context);
 }
 
+SetSMBGuestPasswordOutcome StorageGatewayClient::SetSMBGuestPassword(const SetSMBGuestPasswordRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return SetSMBGuestPasswordOutcome(SetSMBGuestPasswordResult(outcome.GetResult()));
+  }
+  else
+  {
+    return SetSMBGuestPasswordOutcome(outcome.GetError());
+  }
+}
+
+SetSMBGuestPasswordOutcomeCallable StorageGatewayClient::SetSMBGuestPasswordCallable(const SetSMBGuestPasswordRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SetSMBGuestPasswordOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetSMBGuestPassword(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void StorageGatewayClient::SetSMBGuestPasswordAsync(const SetSMBGuestPasswordRequest& request, const SetSMBGuestPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SetSMBGuestPasswordAsyncHelper( request, handler, context ); } );
+}
+
+void StorageGatewayClient::SetSMBGuestPasswordAsyncHelper(const SetSMBGuestPasswordRequest& request, const SetSMBGuestPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SetSMBGuestPassword(request), context);
+}
+
 ShutdownGatewayOutcome StorageGatewayClient::ShutdownGateway(const ShutdownGatewayRequest& request) const
 {
   Aws::StringStream ss;
@@ -2288,6 +2469,41 @@ void StorageGatewayClient::UpdateNFSFileShareAsync(const UpdateNFSFileShareReque
 void StorageGatewayClient::UpdateNFSFileShareAsyncHelper(const UpdateNFSFileShareRequest& request, const UpdateNFSFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateNFSFileShare(request), context);
+}
+
+UpdateSMBFileShareOutcome StorageGatewayClient::UpdateSMBFileShare(const UpdateSMBFileShareRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateSMBFileShareOutcome(UpdateSMBFileShareResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateSMBFileShareOutcome(outcome.GetError());
+  }
+}
+
+UpdateSMBFileShareOutcomeCallable StorageGatewayClient::UpdateSMBFileShareCallable(const UpdateSMBFileShareRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateSMBFileShareOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSMBFileShare(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void StorageGatewayClient::UpdateSMBFileShareAsync(const UpdateSMBFileShareRequest& request, const UpdateSMBFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateSMBFileShareAsyncHelper( request, handler, context ); } );
+}
+
+void StorageGatewayClient::UpdateSMBFileShareAsyncHelper(const UpdateSMBFileShareRequest& request, const UpdateSMBFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateSMBFileShare(request), context);
 }
 
 UpdateSnapshotScheduleOutcome StorageGatewayClient::UpdateSnapshotSchedule(const UpdateSnapshotScheduleRequest& request) const

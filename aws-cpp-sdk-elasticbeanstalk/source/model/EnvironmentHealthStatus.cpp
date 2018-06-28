@@ -38,6 +38,7 @@ namespace Aws
         static const int Warning_HASH = HashingUtils::HashString("Warning");
         static const int Degraded_HASH = HashingUtils::HashString("Degraded");
         static const int Severe_HASH = HashingUtils::HashString("Severe");
+        static const int Suspended_HASH = HashingUtils::HashString("Suspended");
 
 
         EnvironmentHealthStatus GetEnvironmentHealthStatusForName(const Aws::String& name)
@@ -75,6 +76,10 @@ namespace Aws
           {
             return EnvironmentHealthStatus::Severe;
           }
+          else if (hashCode == Suspended_HASH)
+          {
+            return EnvironmentHealthStatus::Suspended;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -105,6 +110,8 @@ namespace Aws
             return "Degraded";
           case EnvironmentHealthStatus::Severe:
             return "Severe";
+          case EnvironmentHealthStatus::Suspended:
+            return "Suspended";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
