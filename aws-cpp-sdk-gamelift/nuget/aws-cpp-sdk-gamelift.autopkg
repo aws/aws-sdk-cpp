@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-GameLift;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.4.20151001.77;
+        version : 1.4.20151001.78;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon GameLift);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.4.77
+            AWSSDKCPP-Core/1.4.78
        }
     }
 

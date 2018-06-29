@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-ServiceDiscovery;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.4.20170314.77;
+        version : 1.4.20170314.78;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Route 53 Auto Naming);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.4.77
+            AWSSDKCPP-Core/1.4.78
        }
     }
 
