@@ -43,6 +43,7 @@ static const int MAX_DOCUMENT_SIZE_EXCEEDED_HASH = HashingUtils::HashString("Max
 static const int TOTAL_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TotalSizeLimitExceededException");
 static const int INVALID_RESOURCE_TYPE_HASH = HashingUtils::HashString("InvalidResourceType");
 static const int INVALID_ROLE_HASH = HashingUtils::HashString("InvalidRole");
+static const int INVALID_ASSOCIATION_HASH = HashingUtils::HashString("InvalidAssociation");
 static const int RESOURCE_DATA_SYNC_NOT_FOUND_HASH = HashingUtils::HashString("ResourceDataSyncNotFoundException");
 static const int INVALID_DOCUMENT_OPERATION_HASH = HashingUtils::HashString("InvalidDocumentOperation");
 static const int INVALID_TARGET_HASH = HashingUtils::HashString("InvalidTarget");
@@ -52,6 +53,7 @@ static const int INVALID_FILTER_VALUE_HASH = HashingUtils::HashString("InvalidFi
 static const int INVALID_INVENTORY_REQUEST_HASH = HashingUtils::HashString("InvalidInventoryRequestException");
 static const int RESOURCE_DATA_SYNC_COUNT_EXCEEDED_HASH = HashingUtils::HashString("ResourceDataSyncCountExceededException");
 static const int DUPLICATE_DOCUMENT_CONTENT_HASH = HashingUtils::HashString("DuplicateDocumentContent");
+static const int ASSOCIATION_EXECUTION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("AssociationExecutionDoesNotExist");
 static const int INVALID_DELETE_INVENTORY_PARAMETERS_HASH = HashingUtils::HashString("InvalidDeleteInventoryParametersException");
 static const int AUTOMATION_STEP_NOT_FOUND_HASH = HashingUtils::HashString("AutomationStepNotFoundException");
 static const int INVALID_PARAMETERS_HASH = HashingUtils::HashString("InvalidParameters");
@@ -186,6 +188,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ROLE), false);
   }
+  else if (hashCode == INVALID_ASSOCIATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ASSOCIATION), false);
+  }
   else if (hashCode == RESOURCE_DATA_SYNC_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_DATA_SYNC_NOT_FOUND), false);
@@ -221,6 +227,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == DUPLICATE_DOCUMENT_CONTENT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DUPLICATE_DOCUMENT_CONTENT), false);
+  }
+  else if (hashCode == ASSOCIATION_EXECUTION_DOES_NOT_EXIST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_EXECUTION_DOES_NOT_EXIST), false);
   }
   else if (hashCode == INVALID_DELETE_INVENTORY_PARAMETERS_HASH)
   {

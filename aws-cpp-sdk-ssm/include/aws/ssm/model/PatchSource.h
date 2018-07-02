@@ -146,7 +146,7 @@ namespace Model
      * <p>The value of the yum repo configuration. For example:</p> <p>
      * <code>cachedir=/var/cache/yum/$basesearch</code> </p> <p>
      * <code>$releasever</code> </p> <p> <code>keepcache=0</code> </p> <p>
-     * <code>debualevel=2</code> </p>
+     * <code>debuglevel=2</code> </p>
      */
     inline const Aws::String& GetConfiguration() const{ return m_configuration; }
 
@@ -154,7 +154,7 @@ namespace Model
      * <p>The value of the yum repo configuration. For example:</p> <p>
      * <code>cachedir=/var/cache/yum/$basesearch</code> </p> <p>
      * <code>$releasever</code> </p> <p> <code>keepcache=0</code> </p> <p>
-     * <code>debualevel=2</code> </p>
+     * <code>debuglevel=2</code> </p>
      */
     inline void SetConfiguration(const Aws::String& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
@@ -162,7 +162,7 @@ namespace Model
      * <p>The value of the yum repo configuration. For example:</p> <p>
      * <code>cachedir=/var/cache/yum/$basesearch</code> </p> <p>
      * <code>$releasever</code> </p> <p> <code>keepcache=0</code> </p> <p>
-     * <code>debualevel=2</code> </p>
+     * <code>debuglevel=2</code> </p>
      */
     inline void SetConfiguration(Aws::String&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
@@ -170,7 +170,7 @@ namespace Model
      * <p>The value of the yum repo configuration. For example:</p> <p>
      * <code>cachedir=/var/cache/yum/$basesearch</code> </p> <p>
      * <code>$releasever</code> </p> <p> <code>keepcache=0</code> </p> <p>
-     * <code>debualevel=2</code> </p>
+     * <code>debuglevel=2</code> </p>
      */
     inline void SetConfiguration(const char* value) { m_configurationHasBeenSet = true; m_configuration.assign(value); }
 
@@ -178,7 +178,7 @@ namespace Model
      * <p>The value of the yum repo configuration. For example:</p> <p>
      * <code>cachedir=/var/cache/yum/$basesearch</code> </p> <p>
      * <code>$releasever</code> </p> <p> <code>keepcache=0</code> </p> <p>
-     * <code>debualevel=2</code> </p>
+     * <code>debuglevel=2</code> </p>
      */
     inline PatchSource& WithConfiguration(const Aws::String& value) { SetConfiguration(value); return *this;}
 
@@ -186,7 +186,7 @@ namespace Model
      * <p>The value of the yum repo configuration. For example:</p> <p>
      * <code>cachedir=/var/cache/yum/$basesearch</code> </p> <p>
      * <code>$releasever</code> </p> <p> <code>keepcache=0</code> </p> <p>
-     * <code>debualevel=2</code> </p>
+     * <code>debuglevel=2</code> </p>
      */
     inline PatchSource& WithConfiguration(Aws::String&& value) { SetConfiguration(std::move(value)); return *this;}
 
@@ -194,7 +194,7 @@ namespace Model
      * <p>The value of the yum repo configuration. For example:</p> <p>
      * <code>cachedir=/var/cache/yum/$basesearch</code> </p> <p>
      * <code>$releasever</code> </p> <p> <code>keepcache=0</code> </p> <p>
-     * <code>debualevel=2</code> </p>
+     * <code>debuglevel=2</code> </p>
      */
     inline PatchSource& WithConfiguration(const char* value) { SetConfiguration(value); return *this;}
 
