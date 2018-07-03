@@ -627,6 +627,9 @@ size_t CurlHttpClient::SeekBody(void* userdata, curl_off_t offset, int origin)
 
     ioStream->clear();
     ioStream->seekg(offset, dir);
+    if (ioStream->fail()) {
+        return CURL_SEEKFUNC_CANTSEEK;
+    }
 
     return CURL_SEEKFUNC_OK;
 }
