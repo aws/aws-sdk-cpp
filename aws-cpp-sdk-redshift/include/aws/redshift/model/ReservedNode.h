@@ -300,7 +300,9 @@ namespace Model
      * has been approved, but payment has not yet been confirmed.</p> </li> <li>
      * <p>active-This reserved node is owned by the caller and is available for
      * use.</p> </li> <li> <p>payment-failed-Payment failed for the purchase
-     * attempt.</p> </li> </ul>
+     * attempt.</p> </li> <li> <p>retired-The reserved node is no longer available.
+     * </p> </li> <li> <p>exchanging-The owner is exchanging the reserved node for
+     * another reserved node.</p> </li> </ul>
      */
     inline const Aws::String& GetState() const{ return m_state; }
 
@@ -310,7 +312,9 @@ namespace Model
      * has been approved, but payment has not yet been confirmed.</p> </li> <li>
      * <p>active-This reserved node is owned by the caller and is available for
      * use.</p> </li> <li> <p>payment-failed-Payment failed for the purchase
-     * attempt.</p> </li> </ul>
+     * attempt.</p> </li> <li> <p>retired-The reserved node is no longer available.
+     * </p> </li> <li> <p>exchanging-The owner is exchanging the reserved node for
+     * another reserved node.</p> </li> </ul>
      */
     inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
 
@@ -320,7 +324,9 @@ namespace Model
      * has been approved, but payment has not yet been confirmed.</p> </li> <li>
      * <p>active-This reserved node is owned by the caller and is available for
      * use.</p> </li> <li> <p>payment-failed-Payment failed for the purchase
-     * attempt.</p> </li> </ul>
+     * attempt.</p> </li> <li> <p>retired-The reserved node is no longer available.
+     * </p> </li> <li> <p>exchanging-The owner is exchanging the reserved node for
+     * another reserved node.</p> </li> </ul>
      */
     inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
@@ -330,7 +336,9 @@ namespace Model
      * has been approved, but payment has not yet been confirmed.</p> </li> <li>
      * <p>active-This reserved node is owned by the caller and is available for
      * use.</p> </li> <li> <p>payment-failed-Payment failed for the purchase
-     * attempt.</p> </li> </ul>
+     * attempt.</p> </li> <li> <p>retired-The reserved node is no longer available.
+     * </p> </li> <li> <p>exchanging-The owner is exchanging the reserved node for
+     * another reserved node.</p> </li> </ul>
      */
     inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
 
@@ -340,7 +348,9 @@ namespace Model
      * has been approved, but payment has not yet been confirmed.</p> </li> <li>
      * <p>active-This reserved node is owned by the caller and is available for
      * use.</p> </li> <li> <p>payment-failed-Payment failed for the purchase
-     * attempt.</p> </li> </ul>
+     * attempt.</p> </li> <li> <p>retired-The reserved node is no longer available.
+     * </p> </li> <li> <p>exchanging-The owner is exchanging the reserved node for
+     * another reserved node.</p> </li> </ul>
      */
     inline ReservedNode& WithState(const Aws::String& value) { SetState(value); return *this;}
 
@@ -350,7 +360,9 @@ namespace Model
      * has been approved, but payment has not yet been confirmed.</p> </li> <li>
      * <p>active-This reserved node is owned by the caller and is available for
      * use.</p> </li> <li> <p>payment-failed-Payment failed for the purchase
-     * attempt.</p> </li> </ul>
+     * attempt.</p> </li> <li> <p>retired-The reserved node is no longer available.
+     * </p> </li> <li> <p>exchanging-The owner is exchanging the reserved node for
+     * another reserved node.</p> </li> </ul>
      */
     inline ReservedNode& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
 
@@ -360,7 +372,9 @@ namespace Model
      * has been approved, but payment has not yet been confirmed.</p> </li> <li>
      * <p>active-This reserved node is owned by the caller and is available for
      * use.</p> </li> <li> <p>payment-failed-Payment failed for the purchase
-     * attempt.</p> </li> </ul>
+     * attempt.</p> </li> <li> <p>retired-The reserved node is no longer available.
+     * </p> </li> <li> <p>exchanging-The owner is exchanging the reserved node for
+     * another reserved node.</p> </li> </ul>
      */
     inline ReservedNode& WithState(const char* value) { SetState(value); return *this;}
 

@@ -27,6 +27,7 @@
 #include <aws/redshift/RedshiftClient.h>
 #include <aws/redshift/RedshiftEndpoint.h>
 #include <aws/redshift/RedshiftErrorMarshaller.h>
+#include <aws/redshift/model/AcceptReservedNodeExchangeRequest.h>
 #include <aws/redshift/model/AuthorizeClusterSecurityGroupIngressRequest.h>
 #include <aws/redshift/model/AuthorizeSnapshotAccessRequest.h>
 #include <aws/redshift/model/CopyClusterSnapshotRequest.h>
@@ -50,6 +51,7 @@
 #include <aws/redshift/model/DeleteHsmConfigurationRequest.h>
 #include <aws/redshift/model/DeleteSnapshotCopyGrantRequest.h>
 #include <aws/redshift/model/DeleteTagsRequest.h>
+#include <aws/redshift/model/DescribeClusterDbRevisionsRequest.h>
 #include <aws/redshift/model/DescribeClusterParameterGroupsRequest.h>
 #include <aws/redshift/model/DescribeClusterParametersRequest.h>
 #include <aws/redshift/model/DescribeClusterSecurityGroupsRequest.h>
@@ -76,7 +78,9 @@
 #include <aws/redshift/model/EnableLoggingRequest.h>
 #include <aws/redshift/model/EnableSnapshotCopyRequest.h>
 #include <aws/redshift/model/GetClusterCredentialsRequest.h>
+#include <aws/redshift/model/GetReservedNodeExchangeOfferingsRequest.h>
 #include <aws/redshift/model/ModifyClusterRequest.h>
+#include <aws/redshift/model/ModifyClusterDbRevisionRequest.h>
 #include <aws/redshift/model/ModifyClusterIamRolesRequest.h>
 #include <aws/redshift/model/ModifyClusterParameterGroupRequest.h>
 #include <aws/redshift/model/ModifyClusterSubnetGroupRequest.h>
@@ -164,6 +168,41 @@ Aws::String RedshiftClient::ConvertRequestToPresignedUrl(const AmazonSerializabl
 
   URI uri(ss.str());
   return GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, region, 3600);
+}
+
+AcceptReservedNodeExchangeOutcome RedshiftClient::AcceptReservedNodeExchange(const AcceptReservedNodeExchangeRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AcceptReservedNodeExchangeOutcome(AcceptReservedNodeExchangeResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AcceptReservedNodeExchangeOutcome(outcome.GetError());
+  }
+}
+
+AcceptReservedNodeExchangeOutcomeCallable RedshiftClient::AcceptReservedNodeExchangeCallable(const AcceptReservedNodeExchangeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AcceptReservedNodeExchangeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AcceptReservedNodeExchange(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::AcceptReservedNodeExchangeAsync(const AcceptReservedNodeExchangeRequest& request, const AcceptReservedNodeExchangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AcceptReservedNodeExchangeAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::AcceptReservedNodeExchangeAsyncHelper(const AcceptReservedNodeExchangeRequest& request, const AcceptReservedNodeExchangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AcceptReservedNodeExchange(request), context);
 }
 
 AuthorizeClusterSecurityGroupIngressOutcome RedshiftClient::AuthorizeClusterSecurityGroupIngress(const AuthorizeClusterSecurityGroupIngressRequest& request) const
@@ -969,6 +1008,41 @@ void RedshiftClient::DeleteTagsAsync(const DeleteTagsRequest& request, const Del
 void RedshiftClient::DeleteTagsAsyncHelper(const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteTags(request), context);
+}
+
+DescribeClusterDbRevisionsOutcome RedshiftClient::DescribeClusterDbRevisions(const DescribeClusterDbRevisionsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeClusterDbRevisionsOutcome(DescribeClusterDbRevisionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeClusterDbRevisionsOutcome(outcome.GetError());
+  }
+}
+
+DescribeClusterDbRevisionsOutcomeCallable RedshiftClient::DescribeClusterDbRevisionsCallable(const DescribeClusterDbRevisionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeClusterDbRevisionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeClusterDbRevisions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::DescribeClusterDbRevisionsAsync(const DescribeClusterDbRevisionsRequest& request, const DescribeClusterDbRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeClusterDbRevisionsAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::DescribeClusterDbRevisionsAsyncHelper(const DescribeClusterDbRevisionsRequest& request, const DescribeClusterDbRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeClusterDbRevisions(request), context);
 }
 
 DescribeClusterParameterGroupsOutcome RedshiftClient::DescribeClusterParameterGroups(const DescribeClusterParameterGroupsRequest& request) const
@@ -1881,6 +1955,41 @@ void RedshiftClient::GetClusterCredentialsAsyncHelper(const GetClusterCredential
   handler(this, request, GetClusterCredentials(request), context);
 }
 
+GetReservedNodeExchangeOfferingsOutcome RedshiftClient::GetReservedNodeExchangeOfferings(const GetReservedNodeExchangeOfferingsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetReservedNodeExchangeOfferingsOutcome(GetReservedNodeExchangeOfferingsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetReservedNodeExchangeOfferingsOutcome(outcome.GetError());
+  }
+}
+
+GetReservedNodeExchangeOfferingsOutcomeCallable RedshiftClient::GetReservedNodeExchangeOfferingsCallable(const GetReservedNodeExchangeOfferingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetReservedNodeExchangeOfferingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetReservedNodeExchangeOfferings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::GetReservedNodeExchangeOfferingsAsync(const GetReservedNodeExchangeOfferingsRequest& request, const GetReservedNodeExchangeOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetReservedNodeExchangeOfferingsAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::GetReservedNodeExchangeOfferingsAsyncHelper(const GetReservedNodeExchangeOfferingsRequest& request, const GetReservedNodeExchangeOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetReservedNodeExchangeOfferings(request), context);
+}
+
 ModifyClusterOutcome RedshiftClient::ModifyCluster(const ModifyClusterRequest& request) const
 {
   Aws::StringStream ss;
@@ -1914,6 +2023,41 @@ void RedshiftClient::ModifyClusterAsync(const ModifyClusterRequest& request, con
 void RedshiftClient::ModifyClusterAsyncHelper(const ModifyClusterRequest& request, const ModifyClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ModifyCluster(request), context);
+}
+
+ModifyClusterDbRevisionOutcome RedshiftClient::ModifyClusterDbRevision(const ModifyClusterDbRevisionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ModifyClusterDbRevisionOutcome(ModifyClusterDbRevisionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ModifyClusterDbRevisionOutcome(outcome.GetError());
+  }
+}
+
+ModifyClusterDbRevisionOutcomeCallable RedshiftClient::ModifyClusterDbRevisionCallable(const ModifyClusterDbRevisionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyClusterDbRevisionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyClusterDbRevision(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::ModifyClusterDbRevisionAsync(const ModifyClusterDbRevisionRequest& request, const ModifyClusterDbRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyClusterDbRevisionAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::ModifyClusterDbRevisionAsyncHelper(const ModifyClusterDbRevisionRequest& request, const ModifyClusterDbRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyClusterDbRevision(request), context);
 }
 
 ModifyClusterIamRolesOutcome RedshiftClient::ModifyClusterIamRoles(const ModifyClusterIamRolesRequest& request) const

@@ -69,7 +69,8 @@ Cluster::Cluster() :
     m_kmsKeyIdHasBeenSet(false),
     m_enhancedVpcRouting(false),
     m_enhancedVpcRoutingHasBeenSet(false),
-    m_iamRolesHasBeenSet(false)
+    m_iamRolesHasBeenSet(false),
+    m_pendingActionsHasBeenSet(false)
 {
 }
 
@@ -112,7 +113,8 @@ Cluster::Cluster(const XmlNode& xmlNode) :
     m_kmsKeyIdHasBeenSet(false),
     m_enhancedVpcRouting(false),
     m_enhancedVpcRoutingHasBeenSet(false),
-    m_iamRolesHasBeenSet(false)
+    m_iamRolesHasBeenSet(false),
+    m_pendingActionsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -357,6 +359,18 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
 
       m_iamRolesHasBeenSet = true;
     }
+    XmlNode pendingActionsNode = resultNode.FirstChild("PendingActions");
+    if(!pendingActionsNode.IsNull())
+    {
+      XmlNode pendingActionsMember = pendingActionsNode.FirstChild("member");
+      while(!pendingActionsMember.IsNull())
+      {
+        m_pendingActions.push_back(StringUtils::Trim(pendingActionsMember.GetText().c_str()));
+        pendingActionsMember = pendingActionsMember.NextNode("member");
+      }
+
+      m_pendingActionsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -577,6 +591,15 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       }
   }
 
+  if(m_pendingActionsHasBeenSet)
+  {
+      unsigned pendingActionsIdx = 1;
+      for(auto& item : m_pendingActions)
+      {
+        oStream << location << index << locationValue << ".PendingActions.member." << pendingActionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
 }
 
 void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -759,6 +782,14 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
         Aws::StringStream iamRolesSs;
         iamRolesSs << location <<  ".ClusterIamRole." << iamRolesIdx++;
         item.OutputToStream(oStream, iamRolesSs.str().c_str());
+      }
+  }
+  if(m_pendingActionsHasBeenSet)
+  {
+      unsigned pendingActionsIdx = 1;
+      for(auto& item : m_pendingActions)
+      {
+        oStream << location << ".PendingActions.member." << pendingActionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

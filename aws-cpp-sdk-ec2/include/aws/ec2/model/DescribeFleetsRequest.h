@@ -173,37 +173,135 @@ namespace Model
 
 
     /**
-     * <p>One or more filters.</p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>activity-status</code> - The
+     * progress of the EC2 Fleet ( <code>error</code> |
+     * <code>pending-fulfillment</code> | <code>pending-termination</code> |
+     * <code>fulfilled</code>).</p> </li> <li> <p>
+     * <code>excess-capacity-termination-policy</code> - Indicates whether to terminate
+     * running instances if the target capacity is decreased below the current EC2
+     * Fleet size (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
+     * <code>fleet-state</code> - The state of the EC2 Fleet (<code>submitted</code> |
+     * <code>active</code> | <code>deleted</code> | <code>failed</code> |
+     * <code>deleted-running</code> | <code>deleted-terminating</code> |
+     * <code>modifying</code>).</p> </li> <li> <p>
+     * <code>replace-unhealthy-instances</code> - Indicates whether EC2 Fleet should
+     * replace unhealthy instances (<code>true</code> | <code>false</code>).</p> </li>
+     * <li> <p> <code>type</code> - The type of request (<code>request</code> |
+     * <code>maintain</code>).</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>activity-status</code> - The
+     * progress of the EC2 Fleet ( <code>error</code> |
+     * <code>pending-fulfillment</code> | <code>pending-termination</code> |
+     * <code>fulfilled</code>).</p> </li> <li> <p>
+     * <code>excess-capacity-termination-policy</code> - Indicates whether to terminate
+     * running instances if the target capacity is decreased below the current EC2
+     * Fleet size (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
+     * <code>fleet-state</code> - The state of the EC2 Fleet (<code>submitted</code> |
+     * <code>active</code> | <code>deleted</code> | <code>failed</code> |
+     * <code>deleted-running</code> | <code>deleted-terminating</code> |
+     * <code>modifying</code>).</p> </li> <li> <p>
+     * <code>replace-unhealthy-instances</code> - Indicates whether EC2 Fleet should
+     * replace unhealthy instances (<code>true</code> | <code>false</code>).</p> </li>
+     * <li> <p> <code>type</code> - The type of request (<code>request</code> |
+     * <code>maintain</code>).</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>activity-status</code> - The
+     * progress of the EC2 Fleet ( <code>error</code> |
+     * <code>pending-fulfillment</code> | <code>pending-termination</code> |
+     * <code>fulfilled</code>).</p> </li> <li> <p>
+     * <code>excess-capacity-termination-policy</code> - Indicates whether to terminate
+     * running instances if the target capacity is decreased below the current EC2
+     * Fleet size (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
+     * <code>fleet-state</code> - The state of the EC2 Fleet (<code>submitted</code> |
+     * <code>active</code> | <code>deleted</code> | <code>failed</code> |
+     * <code>deleted-running</code> | <code>deleted-terminating</code> |
+     * <code>modifying</code>).</p> </li> <li> <p>
+     * <code>replace-unhealthy-instances</code> - Indicates whether EC2 Fleet should
+     * replace unhealthy instances (<code>true</code> | <code>false</code>).</p> </li>
+     * <li> <p> <code>type</code> - The type of request (<code>request</code> |
+     * <code>maintain</code>).</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>activity-status</code> - The
+     * progress of the EC2 Fleet ( <code>error</code> |
+     * <code>pending-fulfillment</code> | <code>pending-termination</code> |
+     * <code>fulfilled</code>).</p> </li> <li> <p>
+     * <code>excess-capacity-termination-policy</code> - Indicates whether to terminate
+     * running instances if the target capacity is decreased below the current EC2
+     * Fleet size (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
+     * <code>fleet-state</code> - The state of the EC2 Fleet (<code>submitted</code> |
+     * <code>active</code> | <code>deleted</code> | <code>failed</code> |
+     * <code>deleted-running</code> | <code>deleted-terminating</code> |
+     * <code>modifying</code>).</p> </li> <li> <p>
+     * <code>replace-unhealthy-instances</code> - Indicates whether EC2 Fleet should
+     * replace unhealthy instances (<code>true</code> | <code>false</code>).</p> </li>
+     * <li> <p> <code>type</code> - The type of request (<code>request</code> |
+     * <code>maintain</code>).</p> </li> </ul>
      */
     inline DescribeFleetsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>activity-status</code> - The
+     * progress of the EC2 Fleet ( <code>error</code> |
+     * <code>pending-fulfillment</code> | <code>pending-termination</code> |
+     * <code>fulfilled</code>).</p> </li> <li> <p>
+     * <code>excess-capacity-termination-policy</code> - Indicates whether to terminate
+     * running instances if the target capacity is decreased below the current EC2
+     * Fleet size (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
+     * <code>fleet-state</code> - The state of the EC2 Fleet (<code>submitted</code> |
+     * <code>active</code> | <code>deleted</code> | <code>failed</code> |
+     * <code>deleted-running</code> | <code>deleted-terminating</code> |
+     * <code>modifying</code>).</p> </li> <li> <p>
+     * <code>replace-unhealthy-instances</code> - Indicates whether EC2 Fleet should
+     * replace unhealthy instances (<code>true</code> | <code>false</code>).</p> </li>
+     * <li> <p> <code>type</code> - The type of request (<code>request</code> |
+     * <code>maintain</code>).</p> </li> </ul>
      */
     inline DescribeFleetsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>activity-status</code> - The
+     * progress of the EC2 Fleet ( <code>error</code> |
+     * <code>pending-fulfillment</code> | <code>pending-termination</code> |
+     * <code>fulfilled</code>).</p> </li> <li> <p>
+     * <code>excess-capacity-termination-policy</code> - Indicates whether to terminate
+     * running instances if the target capacity is decreased below the current EC2
+     * Fleet size (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
+     * <code>fleet-state</code> - The state of the EC2 Fleet (<code>submitted</code> |
+     * <code>active</code> | <code>deleted</code> | <code>failed</code> |
+     * <code>deleted-running</code> | <code>deleted-terminating</code> |
+     * <code>modifying</code>).</p> </li> <li> <p>
+     * <code>replace-unhealthy-instances</code> - Indicates whether EC2 Fleet should
+     * replace unhealthy instances (<code>true</code> | <code>false</code>).</p> </li>
+     * <li> <p> <code>type</code> - The type of request (<code>request</code> |
+     * <code>maintain</code>).</p> </li> </ul>
      */
     inline DescribeFleetsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>activity-status</code> - The
+     * progress of the EC2 Fleet ( <code>error</code> |
+     * <code>pending-fulfillment</code> | <code>pending-termination</code> |
+     * <code>fulfilled</code>).</p> </li> <li> <p>
+     * <code>excess-capacity-termination-policy</code> - Indicates whether to terminate
+     * running instances if the target capacity is decreased below the current EC2
+     * Fleet size (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
+     * <code>fleet-state</code> - The state of the EC2 Fleet (<code>submitted</code> |
+     * <code>active</code> | <code>deleted</code> | <code>failed</code> |
+     * <code>deleted-running</code> | <code>deleted-terminating</code> |
+     * <code>modifying</code>).</p> </li> <li> <p>
+     * <code>replace-unhealthy-instances</code> - Indicates whether EC2 Fleet should
+     * replace unhealthy instances (<code>true</code> | <code>false</code>).</p> </li>
+     * <li> <p> <code>type</code> - The type of request (<code>request</code> |
+     * <code>maintain</code>).</p> </li> </ul>
      */
     inline DescribeFleetsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

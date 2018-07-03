@@ -87,16 +87,10 @@ namespace Model
      * value of the tag in the filter value. For example, for the tag Purpose=X,
      * specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
      * filter value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag
-     * assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter
-     * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
-     * both the tag key Purpose (regardless of what the tag's value is), and the tag
-     * value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>usage-price</code> - The usage price of the
-     * Reserved Instance, per hour (for example, 0.84).</p> </li> </ul>
+     * assigned to the resource. Use this filter to find all resources assigned a tag
+     * with a specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>usage-price</code> - The usage price of the Reserved Instance, per hour
+     * (for example, 0.84).</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -133,16 +127,10 @@ namespace Model
      * value of the tag in the filter value. For example, for the tag Purpose=X,
      * specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
      * filter value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag
-     * assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter
-     * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
-     * both the tag key Purpose (regardless of what the tag's value is), and the tag
-     * value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>usage-price</code> - The usage price of the
-     * Reserved Instance, per hour (for example, 0.84).</p> </li> </ul>
+     * assigned to the resource. Use this filter to find all resources assigned a tag
+     * with a specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>usage-price</code> - The usage price of the Reserved Instance, per hour
+     * (for example, 0.84).</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -179,16 +167,10 @@ namespace Model
      * value of the tag in the filter value. For example, for the tag Purpose=X,
      * specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
      * filter value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag
-     * assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter
-     * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
-     * both the tag key Purpose (regardless of what the tag's value is), and the tag
-     * value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>usage-price</code> - The usage price of the
-     * Reserved Instance, per hour (for example, 0.84).</p> </li> </ul>
+     * assigned to the resource. Use this filter to find all resources assigned a tag
+     * with a specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>usage-price</code> - The usage price of the Reserved Instance, per hour
+     * (for example, 0.84).</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -225,16 +207,10 @@ namespace Model
      * value of the tag in the filter value. For example, for the tag Purpose=X,
      * specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
      * filter value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag
-     * assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter
-     * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
-     * both the tag key Purpose (regardless of what the tag's value is), and the tag
-     * value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>usage-price</code> - The usage price of the
-     * Reserved Instance, per hour (for example, 0.84).</p> </li> </ul>
+     * assigned to the resource. Use this filter to find all resources assigned a tag
+     * with a specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>usage-price</code> - The usage price of the Reserved Instance, per hour
+     * (for example, 0.84).</p> </li> </ul>
      */
     inline DescribeReservedInstancesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -271,16 +247,10 @@ namespace Model
      * value of the tag in the filter value. For example, for the tag Purpose=X,
      * specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
      * filter value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag
-     * assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter
-     * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
-     * both the tag key Purpose (regardless of what the tag's value is), and the tag
-     * value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>usage-price</code> - The usage price of the
-     * Reserved Instance, per hour (for example, 0.84).</p> </li> </ul>
+     * assigned to the resource. Use this filter to find all resources assigned a tag
+     * with a specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>usage-price</code> - The usage price of the Reserved Instance, per hour
+     * (for example, 0.84).</p> </li> </ul>
      */
     inline DescribeReservedInstancesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -317,16 +287,10 @@ namespace Model
      * value of the tag in the filter value. For example, for the tag Purpose=X,
      * specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
      * filter value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag
-     * assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter
-     * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
-     * both the tag key Purpose (regardless of what the tag's value is), and the tag
-     * value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>usage-price</code> - The usage price of the
-     * Reserved Instance, per hour (for example, 0.84).</p> </li> </ul>
+     * assigned to the resource. Use this filter to find all resources assigned a tag
+     * with a specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>usage-price</code> - The usage price of the Reserved Instance, per hour
+     * (for example, 0.84).</p> </li> </ul>
      */
     inline DescribeReservedInstancesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -363,16 +327,10 @@ namespace Model
      * value of the tag in the filter value. For example, for the tag Purpose=X,
      * specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
      * filter value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag
-     * assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter
-     * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
-     * both the tag key Purpose (regardless of what the tag's value is), and the tag
-     * value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>usage-price</code> - The usage price of the
-     * Reserved Instance, per hour (for example, 0.84).</p> </li> </ul>
+     * assigned to the resource. Use this filter to find all resources assigned a tag
+     * with a specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>usage-price</code> - The usage price of the Reserved Instance, per hour
+     * (for example, 0.84).</p> </li> </ul>
      */
     inline DescribeReservedInstancesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

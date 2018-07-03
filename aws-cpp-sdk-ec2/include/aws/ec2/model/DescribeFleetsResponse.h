@@ -82,37 +82,37 @@ namespace Model
 
 
     /**
-     * <p>The EC2 Fleets.</p>
+     * <p>Information about the EC2 Fleets.</p>
      */
     inline const Aws::Vector<FleetData>& GetFleets() const{ return m_fleets; }
 
     /**
-     * <p>The EC2 Fleets.</p>
+     * <p>Information about the EC2 Fleets.</p>
      */
     inline void SetFleets(const Aws::Vector<FleetData>& value) { m_fleets = value; }
 
     /**
-     * <p>The EC2 Fleets.</p>
+     * <p>Information about the EC2 Fleets.</p>
      */
     inline void SetFleets(Aws::Vector<FleetData>&& value) { m_fleets = std::move(value); }
 
     /**
-     * <p>The EC2 Fleets.</p>
+     * <p>Information about the EC2 Fleets.</p>
      */
     inline DescribeFleetsResponse& WithFleets(const Aws::Vector<FleetData>& value) { SetFleets(value); return *this;}
 
     /**
-     * <p>The EC2 Fleets.</p>
+     * <p>Information about the EC2 Fleets.</p>
      */
     inline DescribeFleetsResponse& WithFleets(Aws::Vector<FleetData>&& value) { SetFleets(std::move(value)); return *this;}
 
     /**
-     * <p>The EC2 Fleets.</p>
+     * <p>Information about the EC2 Fleets.</p>
      */
     inline DescribeFleetsResponse& AddFleets(const FleetData& value) { m_fleets.push_back(value); return *this; }
 
     /**
-     * <p>The EC2 Fleets.</p>
+     * <p>Information about the EC2 Fleets.</p>
      */
     inline DescribeFleetsResponse& AddFleets(FleetData&& value) { m_fleets.push_back(std::move(value)); return *this; }
 

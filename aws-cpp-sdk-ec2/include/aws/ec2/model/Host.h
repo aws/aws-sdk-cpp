@@ -24,6 +24,7 @@
 #include <aws/ec2/model/AllocationState.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/HostInstance.h>
+#include <aws/ec2/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -433,6 +434,42 @@ namespace Model
      */
     inline Host& WithReleaseTime(Aws::Utils::DateTime&& value) { SetReleaseTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Any tags assigned to the Dedicated Host.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags assigned to the Dedicated Host.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Any tags assigned to the Dedicated Host.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Any tags assigned to the Dedicated Host.</p>
+     */
+    inline Host& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Any tags assigned to the Dedicated Host.</p>
+     */
+    inline Host& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Any tags assigned to the Dedicated Host.</p>
+     */
+    inline Host& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Any tags assigned to the Dedicated Host.</p>
+     */
+    inline Host& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     AutoPlacement m_autoPlacement;
@@ -467,6 +504,9 @@ namespace Model
 
     Aws::Utils::DateTime m_releaseTime;
     bool m_releaseTimeHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

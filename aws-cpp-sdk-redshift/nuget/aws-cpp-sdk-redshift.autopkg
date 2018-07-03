@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-Redshift;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.4.20121201.79;
+        version : 1.4.20121201.80;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Redshift);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.4.79
+            AWSSDKCPP-Core/1.4.80
        }
     }
 

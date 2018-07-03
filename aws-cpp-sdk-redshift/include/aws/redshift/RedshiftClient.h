@@ -22,6 +22,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/redshift/model/AcceptReservedNodeExchangeResult.h>
 #include <aws/redshift/model/AuthorizeClusterSecurityGroupIngressResult.h>
 #include <aws/redshift/model/AuthorizeSnapshotAccessResult.h>
 #include <aws/redshift/model/CopyClusterSnapshotResult.h>
@@ -36,6 +37,7 @@
 #include <aws/redshift/model/CreateSnapshotCopyGrantResult.h>
 #include <aws/redshift/model/DeleteClusterResult.h>
 #include <aws/redshift/model/DeleteClusterSnapshotResult.h>
+#include <aws/redshift/model/DescribeClusterDbRevisionsResult.h>
 #include <aws/redshift/model/DescribeClusterParameterGroupsResult.h>
 #include <aws/redshift/model/DescribeClusterParametersResult.h>
 #include <aws/redshift/model/DescribeClusterSecurityGroupsResult.h>
@@ -62,7 +64,9 @@
 #include <aws/redshift/model/EnableLoggingResult.h>
 #include <aws/redshift/model/EnableSnapshotCopyResult.h>
 #include <aws/redshift/model/GetClusterCredentialsResult.h>
+#include <aws/redshift/model/GetReservedNodeExchangeOfferingsResult.h>
 #include <aws/redshift/model/ModifyClusterResult.h>
+#include <aws/redshift/model/ModifyClusterDbRevisionResult.h>
 #include <aws/redshift/model/ModifyClusterIamRolesResult.h>
 #include <aws/redshift/model/ModifyClusterParameterGroupResult.h>
 #include <aws/redshift/model/ModifyClusterSubnetGroupResult.h>
@@ -122,6 +126,7 @@ namespace Redshift
 
 namespace Model
 {
+        class AcceptReservedNodeExchangeRequest;
         class AuthorizeClusterSecurityGroupIngressRequest;
         class AuthorizeSnapshotAccessRequest;
         class CopyClusterSnapshotRequest;
@@ -145,6 +150,7 @@ namespace Model
         class DeleteHsmConfigurationRequest;
         class DeleteSnapshotCopyGrantRequest;
         class DeleteTagsRequest;
+        class DescribeClusterDbRevisionsRequest;
         class DescribeClusterParameterGroupsRequest;
         class DescribeClusterParametersRequest;
         class DescribeClusterSecurityGroupsRequest;
@@ -171,7 +177,9 @@ namespace Model
         class EnableLoggingRequest;
         class EnableSnapshotCopyRequest;
         class GetClusterCredentialsRequest;
+        class GetReservedNodeExchangeOfferingsRequest;
         class ModifyClusterRequest;
+        class ModifyClusterDbRevisionRequest;
         class ModifyClusterIamRolesRequest;
         class ModifyClusterParameterGroupRequest;
         class ModifyClusterSubnetGroupRequest;
@@ -186,6 +194,7 @@ namespace Model
         class RevokeSnapshotAccessRequest;
         class RotateEncryptionKeyRequest;
 
+        typedef Aws::Utils::Outcome<AcceptReservedNodeExchangeResult, Aws::Client::AWSError<RedshiftErrors>> AcceptReservedNodeExchangeOutcome;
         typedef Aws::Utils::Outcome<AuthorizeClusterSecurityGroupIngressResult, Aws::Client::AWSError<RedshiftErrors>> AuthorizeClusterSecurityGroupIngressOutcome;
         typedef Aws::Utils::Outcome<AuthorizeSnapshotAccessResult, Aws::Client::AWSError<RedshiftErrors>> AuthorizeSnapshotAccessOutcome;
         typedef Aws::Utils::Outcome<CopyClusterSnapshotResult, Aws::Client::AWSError<RedshiftErrors>> CopyClusterSnapshotOutcome;
@@ -209,6 +218,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RedshiftErrors>> DeleteHsmConfigurationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RedshiftErrors>> DeleteSnapshotCopyGrantOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RedshiftErrors>> DeleteTagsOutcome;
+        typedef Aws::Utils::Outcome<DescribeClusterDbRevisionsResult, Aws::Client::AWSError<RedshiftErrors>> DescribeClusterDbRevisionsOutcome;
         typedef Aws::Utils::Outcome<DescribeClusterParameterGroupsResult, Aws::Client::AWSError<RedshiftErrors>> DescribeClusterParameterGroupsOutcome;
         typedef Aws::Utils::Outcome<DescribeClusterParametersResult, Aws::Client::AWSError<RedshiftErrors>> DescribeClusterParametersOutcome;
         typedef Aws::Utils::Outcome<DescribeClusterSecurityGroupsResult, Aws::Client::AWSError<RedshiftErrors>> DescribeClusterSecurityGroupsOutcome;
@@ -235,7 +245,9 @@ namespace Model
         typedef Aws::Utils::Outcome<EnableLoggingResult, Aws::Client::AWSError<RedshiftErrors>> EnableLoggingOutcome;
         typedef Aws::Utils::Outcome<EnableSnapshotCopyResult, Aws::Client::AWSError<RedshiftErrors>> EnableSnapshotCopyOutcome;
         typedef Aws::Utils::Outcome<GetClusterCredentialsResult, Aws::Client::AWSError<RedshiftErrors>> GetClusterCredentialsOutcome;
+        typedef Aws::Utils::Outcome<GetReservedNodeExchangeOfferingsResult, Aws::Client::AWSError<RedshiftErrors>> GetReservedNodeExchangeOfferingsOutcome;
         typedef Aws::Utils::Outcome<ModifyClusterResult, Aws::Client::AWSError<RedshiftErrors>> ModifyClusterOutcome;
+        typedef Aws::Utils::Outcome<ModifyClusterDbRevisionResult, Aws::Client::AWSError<RedshiftErrors>> ModifyClusterDbRevisionOutcome;
         typedef Aws::Utils::Outcome<ModifyClusterIamRolesResult, Aws::Client::AWSError<RedshiftErrors>> ModifyClusterIamRolesOutcome;
         typedef Aws::Utils::Outcome<ModifyClusterParameterGroupResult, Aws::Client::AWSError<RedshiftErrors>> ModifyClusterParameterGroupOutcome;
         typedef Aws::Utils::Outcome<ModifyClusterSubnetGroupResult, Aws::Client::AWSError<RedshiftErrors>> ModifyClusterSubnetGroupOutcome;
@@ -250,6 +262,7 @@ namespace Model
         typedef Aws::Utils::Outcome<RevokeSnapshotAccessResult, Aws::Client::AWSError<RedshiftErrors>> RevokeSnapshotAccessOutcome;
         typedef Aws::Utils::Outcome<RotateEncryptionKeyResult, Aws::Client::AWSError<RedshiftErrors>> RotateEncryptionKeyOutcome;
 
+        typedef std::future<AcceptReservedNodeExchangeOutcome> AcceptReservedNodeExchangeOutcomeCallable;
         typedef std::future<AuthorizeClusterSecurityGroupIngressOutcome> AuthorizeClusterSecurityGroupIngressOutcomeCallable;
         typedef std::future<AuthorizeSnapshotAccessOutcome> AuthorizeSnapshotAccessOutcomeCallable;
         typedef std::future<CopyClusterSnapshotOutcome> CopyClusterSnapshotOutcomeCallable;
@@ -273,6 +286,7 @@ namespace Model
         typedef std::future<DeleteHsmConfigurationOutcome> DeleteHsmConfigurationOutcomeCallable;
         typedef std::future<DeleteSnapshotCopyGrantOutcome> DeleteSnapshotCopyGrantOutcomeCallable;
         typedef std::future<DeleteTagsOutcome> DeleteTagsOutcomeCallable;
+        typedef std::future<DescribeClusterDbRevisionsOutcome> DescribeClusterDbRevisionsOutcomeCallable;
         typedef std::future<DescribeClusterParameterGroupsOutcome> DescribeClusterParameterGroupsOutcomeCallable;
         typedef std::future<DescribeClusterParametersOutcome> DescribeClusterParametersOutcomeCallable;
         typedef std::future<DescribeClusterSecurityGroupsOutcome> DescribeClusterSecurityGroupsOutcomeCallable;
@@ -299,7 +313,9 @@ namespace Model
         typedef std::future<EnableLoggingOutcome> EnableLoggingOutcomeCallable;
         typedef std::future<EnableSnapshotCopyOutcome> EnableSnapshotCopyOutcomeCallable;
         typedef std::future<GetClusterCredentialsOutcome> GetClusterCredentialsOutcomeCallable;
+        typedef std::future<GetReservedNodeExchangeOfferingsOutcome> GetReservedNodeExchangeOfferingsOutcomeCallable;
         typedef std::future<ModifyClusterOutcome> ModifyClusterOutcomeCallable;
+        typedef std::future<ModifyClusterDbRevisionOutcome> ModifyClusterDbRevisionOutcomeCallable;
         typedef std::future<ModifyClusterIamRolesOutcome> ModifyClusterIamRolesOutcomeCallable;
         typedef std::future<ModifyClusterParameterGroupOutcome> ModifyClusterParameterGroupOutcomeCallable;
         typedef std::future<ModifyClusterSubnetGroupOutcome> ModifyClusterSubnetGroupOutcomeCallable;
@@ -317,6 +333,7 @@ namespace Model
 
   class RedshiftClient;
 
+    typedef std::function<void(const RedshiftClient*, const Model::AcceptReservedNodeExchangeRequest&, const Model::AcceptReservedNodeExchangeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptReservedNodeExchangeResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::AuthorizeClusterSecurityGroupIngressRequest&, const Model::AuthorizeClusterSecurityGroupIngressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AuthorizeClusterSecurityGroupIngressResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::AuthorizeSnapshotAccessRequest&, const Model::AuthorizeSnapshotAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AuthorizeSnapshotAccessResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::CopyClusterSnapshotRequest&, const Model::CopyClusterSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyClusterSnapshotResponseReceivedHandler;
@@ -340,6 +357,7 @@ namespace Model
     typedef std::function<void(const RedshiftClient*, const Model::DeleteHsmConfigurationRequest&, const Model::DeleteHsmConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHsmConfigurationResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DeleteSnapshotCopyGrantRequest&, const Model::DeleteSnapshotCopyGrantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSnapshotCopyGrantResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DeleteTagsRequest&, const Model::DeleteTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTagsResponseReceivedHandler;
+    typedef std::function<void(const RedshiftClient*, const Model::DescribeClusterDbRevisionsRequest&, const Model::DescribeClusterDbRevisionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterDbRevisionsResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DescribeClusterParameterGroupsRequest&, const Model::DescribeClusterParameterGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterParameterGroupsResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DescribeClusterParametersRequest&, const Model::DescribeClusterParametersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterParametersResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DescribeClusterSecurityGroupsRequest&, const Model::DescribeClusterSecurityGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterSecurityGroupsResponseReceivedHandler;
@@ -366,7 +384,9 @@ namespace Model
     typedef std::function<void(const RedshiftClient*, const Model::EnableLoggingRequest&, const Model::EnableLoggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableLoggingResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::EnableSnapshotCopyRequest&, const Model::EnableSnapshotCopyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableSnapshotCopyResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::GetClusterCredentialsRequest&, const Model::GetClusterCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetClusterCredentialsResponseReceivedHandler;
+    typedef std::function<void(const RedshiftClient*, const Model::GetReservedNodeExchangeOfferingsRequest&, const Model::GetReservedNodeExchangeOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReservedNodeExchangeOfferingsResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::ModifyClusterRequest&, const Model::ModifyClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClusterResponseReceivedHandler;
+    typedef std::function<void(const RedshiftClient*, const Model::ModifyClusterDbRevisionRequest&, const Model::ModifyClusterDbRevisionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClusterDbRevisionResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::ModifyClusterIamRolesRequest&, const Model::ModifyClusterIamRolesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClusterIamRolesResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::ModifyClusterParameterGroupRequest&, const Model::ModifyClusterParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClusterParameterGroupResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::ModifyClusterSubnetGroupRequest&, const Model::ModifyClusterSubnetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClusterSubnetGroupResponseReceivedHandler;
@@ -439,6 +459,37 @@ namespace Model
         */
         Aws::String ConvertRequestToPresignedUrl(const Aws::AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
 
+
+        /**
+         * <p>Exchanges a DC1 Reserved Node for a DC2 Reserved Node with no changes to the
+         * configuration (term, payment type, or number of nodes) and no additional costs.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AcceptReservedNodeExchange">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AcceptReservedNodeExchangeOutcome AcceptReservedNodeExchange(const Model::AcceptReservedNodeExchangeRequest& request) const;
+
+        /**
+         * <p>Exchanges a DC1 Reserved Node for a DC2 Reserved Node with no changes to the
+         * configuration (term, payment type, or number of nodes) and no additional costs.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AcceptReservedNodeExchange">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AcceptReservedNodeExchangeOutcomeCallable AcceptReservedNodeExchangeCallable(const Model::AcceptReservedNodeExchangeRequest& request) const;
+
+        /**
+         * <p>Exchanges a DC1 Reserved Node for a DC2 Reserved Node with no changes to the
+         * configuration (term, payment type, or number of nodes) and no additional costs.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AcceptReservedNodeExchange">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AcceptReservedNodeExchangeAsync(const Model::AcceptReservedNodeExchangeRequest& request, const AcceptReservedNodeExchangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds an inbound (ingress) rule to an Amazon Redshift security group.
@@ -612,7 +663,7 @@ namespace Model
         virtual void CopyClusterSnapshotAsync(const Model::CopyClusterSnapshotRequest& request, const CopyClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new cluster.</p> <p>To create the cluster in Virtual Private Cloud
+         * <p>Creates a new cluster.</p> <p>To create a cluster in Virtual Private Cloud
          * (VPC), you must provide a cluster subnet group name. The cluster subnet group
          * identifies the subnets of your VPC that Amazon Redshift uses when creating the
          * cluster. For more information about managing clusters, go to <a
@@ -625,7 +676,7 @@ namespace Model
         virtual Model::CreateClusterOutcome CreateCluster(const Model::CreateClusterRequest& request) const;
 
         /**
-         * <p>Creates a new cluster.</p> <p>To create the cluster in Virtual Private Cloud
+         * <p>Creates a new cluster.</p> <p>To create a cluster in Virtual Private Cloud
          * (VPC), you must provide a cluster subnet group name. The cluster subnet group
          * identifies the subnets of your VPC that Amazon Redshift uses when creating the
          * cluster. For more information about managing clusters, go to <a
@@ -640,7 +691,7 @@ namespace Model
         virtual Model::CreateClusterOutcomeCallable CreateClusterCallable(const Model::CreateClusterRequest& request) const;
 
         /**
-         * <p>Creates a new cluster.</p> <p>To create the cluster in Virtual Private Cloud
+         * <p>Creates a new cluster.</p> <p>To create a cluster in Virtual Private Cloud
          * (VPC), you must provide a cluster subnet group name. The cluster subnet group
          * identifies the subnets of your VPC that Amazon Redshift uses when creating the
          * cluster. For more information about managing clusters, go to <a
@@ -1446,6 +1497,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteTagsAsync(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns an array of <code>ClusterDbRevision</code> objects.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterDbRevisions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeClusterDbRevisionsOutcome DescribeClusterDbRevisions(const Model::DescribeClusterDbRevisionsRequest& request) const;
+
+        /**
+         * <p>Returns an array of <code>ClusterDbRevision</code> objects.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterDbRevisions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeClusterDbRevisionsOutcomeCallable DescribeClusterDbRevisionsCallable(const Model::DescribeClusterDbRevisionsRequest& request) const;
+
+        /**
+         * <p>Returns an array of <code>ClusterDbRevision</code> objects.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterDbRevisions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeClusterDbRevisionsAsync(const Model::DescribeClusterDbRevisionsRequest& request, const DescribeClusterDbRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of Amazon Redshift parameter groups, including parameter
@@ -2725,6 +2804,34 @@ namespace Model
         virtual void GetClusterCredentialsAsync(const Model::GetClusterCredentialsRequest& request, const GetClusterCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns an array of ReservedNodeOfferings which is filtered by payment type,
+         * term, and instance type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetReservedNodeExchangeOfferings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetReservedNodeExchangeOfferingsOutcome GetReservedNodeExchangeOfferings(const Model::GetReservedNodeExchangeOfferingsRequest& request) const;
+
+        /**
+         * <p>Returns an array of ReservedNodeOfferings which is filtered by payment type,
+         * term, and instance type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetReservedNodeExchangeOfferings">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetReservedNodeExchangeOfferingsOutcomeCallable GetReservedNodeExchangeOfferingsCallable(const Model::GetReservedNodeExchangeOfferingsRequest& request) const;
+
+        /**
+         * <p>Returns an array of ReservedNodeOfferings which is filtered by payment type,
+         * term, and instance type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetReservedNodeExchangeOfferings">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetReservedNodeExchangeOfferingsAsync(const Model::GetReservedNodeExchangeOfferingsRequest& request, const GetReservedNodeExchangeOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Modifies the settings for a cluster. For example, you can add another
          * security or parameter group, update the preferred maintenance window, or change
          * the master user password. Resetting a cluster password or modifying the security
@@ -2781,6 +2888,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ModifyClusterAsync(const Model::ModifyClusterRequest& request, const ModifyClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Modifies the database revision of a cluster. The database revision is a
+         * unique revision of the database running in a cluster.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterDbRevision">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyClusterDbRevisionOutcome ModifyClusterDbRevision(const Model::ModifyClusterDbRevisionRequest& request) const;
+
+        /**
+         * <p>Modifies the database revision of a cluster. The database revision is a
+         * unique revision of the database running in a cluster.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterDbRevision">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyClusterDbRevisionOutcomeCallable ModifyClusterDbRevisionCallable(const Model::ModifyClusterDbRevisionRequest& request) const;
+
+        /**
+         * <p>Modifies the database revision of a cluster. The database revision is a
+         * unique revision of the database running in a cluster.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterDbRevision">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyClusterDbRevisionAsync(const Model::ModifyClusterDbRevisionRequest& request, const ModifyClusterDbRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the list of AWS Identity and Access Management (IAM) roles that can
@@ -3310,6 +3448,7 @@ namespace Model
     void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
+        void AcceptReservedNodeExchangeAsyncHelper(const Model::AcceptReservedNodeExchangeRequest& request, const AcceptReservedNodeExchangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AuthorizeClusterSecurityGroupIngressAsyncHelper(const Model::AuthorizeClusterSecurityGroupIngressRequest& request, const AuthorizeClusterSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AuthorizeSnapshotAccessAsyncHelper(const Model::AuthorizeSnapshotAccessRequest& request, const AuthorizeSnapshotAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CopyClusterSnapshotAsyncHelper(const Model::CopyClusterSnapshotRequest& request, const CopyClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3333,6 +3472,7 @@ namespace Model
         void DeleteHsmConfigurationAsyncHelper(const Model::DeleteHsmConfigurationRequest& request, const DeleteHsmConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSnapshotCopyGrantAsyncHelper(const Model::DeleteSnapshotCopyGrantRequest& request, const DeleteSnapshotCopyGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTagsAsyncHelper(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeClusterDbRevisionsAsyncHelper(const Model::DescribeClusterDbRevisionsRequest& request, const DescribeClusterDbRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeClusterParameterGroupsAsyncHelper(const Model::DescribeClusterParameterGroupsRequest& request, const DescribeClusterParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeClusterParametersAsyncHelper(const Model::DescribeClusterParametersRequest& request, const DescribeClusterParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeClusterSecurityGroupsAsyncHelper(const Model::DescribeClusterSecurityGroupsRequest& request, const DescribeClusterSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3359,7 +3499,9 @@ namespace Model
         void EnableLoggingAsyncHelper(const Model::EnableLoggingRequest& request, const EnableLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableSnapshotCopyAsyncHelper(const Model::EnableSnapshotCopyRequest& request, const EnableSnapshotCopyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetClusterCredentialsAsyncHelper(const Model::GetClusterCredentialsRequest& request, const GetClusterCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetReservedNodeExchangeOfferingsAsyncHelper(const Model::GetReservedNodeExchangeOfferingsRequest& request, const GetReservedNodeExchangeOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyClusterAsyncHelper(const Model::ModifyClusterRequest& request, const ModifyClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyClusterDbRevisionAsyncHelper(const Model::ModifyClusterDbRevisionRequest& request, const ModifyClusterDbRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyClusterIamRolesAsyncHelper(const Model::ModifyClusterIamRolesRequest& request, const ModifyClusterIamRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyClusterParameterGroupAsyncHelper(const Model::ModifyClusterParameterGroupRequest& request, const ModifyClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyClusterSubnetGroupAsyncHelper(const Model::ModifyClusterSubnetGroupRequest& request, const ModifyClusterSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

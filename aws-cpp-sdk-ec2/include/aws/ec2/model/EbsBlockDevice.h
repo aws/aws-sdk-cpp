@@ -145,8 +145,8 @@ namespace Model
 
     /**
      * <p>Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK
-     * under which the EBS volume is encrypted.</p> <p>Note: This parameter is only
-     * supported on <code>BlockDeviceMapping</code> objects called by <a
+     * under which the EBS volume is encrypted.</p> <p>This parameter is only supported
+     * on <code>BlockDeviceMapping</code> objects called by <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
      * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
@@ -157,8 +157,8 @@ namespace Model
 
     /**
      * <p>Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK
-     * under which the EBS volume is encrypted.</p> <p>Note: This parameter is only
-     * supported on <code>BlockDeviceMapping</code> objects called by <a
+     * under which the EBS volume is encrypted.</p> <p>This parameter is only supported
+     * on <code>BlockDeviceMapping</code> objects called by <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
      * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
@@ -169,8 +169,8 @@ namespace Model
 
     /**
      * <p>Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK
-     * under which the EBS volume is encrypted.</p> <p>Note: This parameter is only
-     * supported on <code>BlockDeviceMapping</code> objects called by <a
+     * under which the EBS volume is encrypted.</p> <p>This parameter is only supported
+     * on <code>BlockDeviceMapping</code> objects called by <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
      * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
@@ -181,8 +181,8 @@ namespace Model
 
     /**
      * <p>Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK
-     * under which the EBS volume is encrypted.</p> <p>Note: This parameter is only
-     * supported on <code>BlockDeviceMapping</code> objects called by <a
+     * under which the EBS volume is encrypted.</p> <p>This parameter is only supported
+     * on <code>BlockDeviceMapping</code> objects called by <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
      * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
@@ -193,8 +193,8 @@ namespace Model
 
     /**
      * <p>Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK
-     * under which the EBS volume is encrypted.</p> <p>Note: This parameter is only
-     * supported on <code>BlockDeviceMapping</code> objects called by <a
+     * under which the EBS volume is encrypted.</p> <p>This parameter is only supported
+     * on <code>BlockDeviceMapping</code> objects called by <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
      * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
@@ -205,8 +205,8 @@ namespace Model
 
     /**
      * <p>Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK
-     * under which the EBS volume is encrypted.</p> <p>Note: This parameter is only
-     * supported on <code>BlockDeviceMapping</code> objects called by <a
+     * under which the EBS volume is encrypted.</p> <p>This parameter is only supported
+     * on <code>BlockDeviceMapping</code> objects called by <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
      * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
@@ -217,8 +217,8 @@ namespace Model
 
     /**
      * <p>Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK
-     * under which the EBS volume is encrypted.</p> <p>Note: This parameter is only
-     * supported on <code>BlockDeviceMapping</code> objects called by <a
+     * under which the EBS volume is encrypted.</p> <p>This parameter is only supported
+     * on <code>BlockDeviceMapping</code> objects called by <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
      * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,

@@ -1229,51 +1229,58 @@ namespace Model
 
 
     /**
-     * <p>The tags to apply to the resources during launch. You can tag instances and
-     * volumes. The specified tags are applied to all instances or volumes that are
-     * created during launch.</p>
+     * <p>The tags to apply to the resources during launch. You can only tag instances
+     * and volumes on launch. The specified tags are applied to all instances or
+     * volumes that are created during launch. To tag a resource after it has been
+     * created, see <a>CreateTags</a>.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
 
     /**
-     * <p>The tags to apply to the resources during launch. You can tag instances and
-     * volumes. The specified tags are applied to all instances or volumes that are
-     * created during launch.</p>
+     * <p>The tags to apply to the resources during launch. You can only tag instances
+     * and volumes on launch. The specified tags are applied to all instances or
+     * volumes that are created during launch. To tag a resource after it has been
+     * created, see <a>CreateTags</a>.</p>
      */
     inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
 
     /**
-     * <p>The tags to apply to the resources during launch. You can tag instances and
-     * volumes. The specified tags are applied to all instances or volumes that are
-     * created during launch.</p>
+     * <p>The tags to apply to the resources during launch. You can only tag instances
+     * and volumes on launch. The specified tags are applied to all instances or
+     * volumes that are created during launch. To tag a resource after it has been
+     * created, see <a>CreateTags</a>.</p>
      */
     inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
 
     /**
-     * <p>The tags to apply to the resources during launch. You can tag instances and
-     * volumes. The specified tags are applied to all instances or volumes that are
-     * created during launch.</p>
+     * <p>The tags to apply to the resources during launch. You can only tag instances
+     * and volumes on launch. The specified tags are applied to all instances or
+     * volumes that are created during launch. To tag a resource after it has been
+     * created, see <a>CreateTags</a>.</p>
      */
     inline RunInstancesRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
 
     /**
-     * <p>The tags to apply to the resources during launch. You can tag instances and
-     * volumes. The specified tags are applied to all instances or volumes that are
-     * created during launch.</p>
+     * <p>The tags to apply to the resources during launch. You can only tag instances
+     * and volumes on launch. The specified tags are applied to all instances or
+     * volumes that are created during launch. To tag a resource after it has been
+     * created, see <a>CreateTags</a>.</p>
      */
     inline RunInstancesRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
 
     /**
-     * <p>The tags to apply to the resources during launch. You can tag instances and
-     * volumes. The specified tags are applied to all instances or volumes that are
-     * created during launch.</p>
+     * <p>The tags to apply to the resources during launch. You can only tag instances
+     * and volumes on launch. The specified tags are applied to all instances or
+     * volumes that are created during launch. To tag a resource after it has been
+     * created, see <a>CreateTags</a>.</p>
      */
     inline RunInstancesRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
 
     /**
-     * <p>The tags to apply to the resources during launch. You can tag instances and
-     * volumes. The specified tags are applied to all instances or volumes that are
-     * created during launch.</p>
+     * <p>The tags to apply to the resources during launch. You can only tag instances
+     * and volumes on launch. The specified tags are applied to all instances or
+     * volumes that are created during launch. To tag a resource after it has been
+     * created, see <a>CreateTags</a>.</p>
      */
     inline RunInstancesRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 

@@ -119,16 +119,10 @@ namespace Model
      * the tag in the filter name and the value of the tag in the filter value. For
      * example, for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter
      * name and <code>X</code> for the filter value.</p> </li> <li> <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
-     * independent of the <code>tag-value</code> filter. For example, if you use both
-     * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
-     * assigned both the tag key Purpose (regardless of what the tag's value is), and
-     * the tag value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>type</code> - The type of Spot Instance request
-     * (<code>one-time</code> | <code>persistent</code>).</p> </li> <li> <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this
+     * filter to find all resources assigned a tag with a specific key, regardless of
+     * the tag value.</p> </li> <li> <p> <code>type</code> - The type of Spot Instance
+     * request (<code>one-time</code> | <code>persistent</code>).</p> </li> <li> <p>
      * <code>valid-from</code> - The start date of the request.</p> </li> <li> <p>
      * <code>valid-until</code> - The end date of the request.</p> </li> </ul>
      */
@@ -201,16 +195,10 @@ namespace Model
      * the tag in the filter name and the value of the tag in the filter value. For
      * example, for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter
      * name and <code>X</code> for the filter value.</p> </li> <li> <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
-     * independent of the <code>tag-value</code> filter. For example, if you use both
-     * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
-     * assigned both the tag key Purpose (regardless of what the tag's value is), and
-     * the tag value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>type</code> - The type of Spot Instance request
-     * (<code>one-time</code> | <code>persistent</code>).</p> </li> <li> <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this
+     * filter to find all resources assigned a tag with a specific key, regardless of
+     * the tag value.</p> </li> <li> <p> <code>type</code> - The type of Spot Instance
+     * request (<code>one-time</code> | <code>persistent</code>).</p> </li> <li> <p>
      * <code>valid-from</code> - The start date of the request.</p> </li> <li> <p>
      * <code>valid-until</code> - The end date of the request.</p> </li> </ul>
      */
@@ -283,16 +271,10 @@ namespace Model
      * the tag in the filter name and the value of the tag in the filter value. For
      * example, for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter
      * name and <code>X</code> for the filter value.</p> </li> <li> <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
-     * independent of the <code>tag-value</code> filter. For example, if you use both
-     * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
-     * assigned both the tag key Purpose (regardless of what the tag's value is), and
-     * the tag value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>type</code> - The type of Spot Instance request
-     * (<code>one-time</code> | <code>persistent</code>).</p> </li> <li> <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this
+     * filter to find all resources assigned a tag with a specific key, regardless of
+     * the tag value.</p> </li> <li> <p> <code>type</code> - The type of Spot Instance
+     * request (<code>one-time</code> | <code>persistent</code>).</p> </li> <li> <p>
      * <code>valid-from</code> - The start date of the request.</p> </li> <li> <p>
      * <code>valid-until</code> - The end date of the request.</p> </li> </ul>
      */
@@ -365,16 +347,10 @@ namespace Model
      * the tag in the filter name and the value of the tag in the filter value. For
      * example, for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter
      * name and <code>X</code> for the filter value.</p> </li> <li> <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
-     * independent of the <code>tag-value</code> filter. For example, if you use both
-     * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
-     * assigned both the tag key Purpose (regardless of what the tag's value is), and
-     * the tag value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>type</code> - The type of Spot Instance request
-     * (<code>one-time</code> | <code>persistent</code>).</p> </li> <li> <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this
+     * filter to find all resources assigned a tag with a specific key, regardless of
+     * the tag value.</p> </li> <li> <p> <code>type</code> - The type of Spot Instance
+     * request (<code>one-time</code> | <code>persistent</code>).</p> </li> <li> <p>
      * <code>valid-from</code> - The start date of the request.</p> </li> <li> <p>
      * <code>valid-until</code> - The end date of the request.</p> </li> </ul>
      */
@@ -447,16 +423,10 @@ namespace Model
      * the tag in the filter name and the value of the tag in the filter value. For
      * example, for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter
      * name and <code>X</code> for the filter value.</p> </li> <li> <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
-     * independent of the <code>tag-value</code> filter. For example, if you use both
-     * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
-     * assigned both the tag key Purpose (regardless of what the tag's value is), and
-     * the tag value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>type</code> - The type of Spot Instance request
-     * (<code>one-time</code> | <code>persistent</code>).</p> </li> <li> <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this
+     * filter to find all resources assigned a tag with a specific key, regardless of
+     * the tag value.</p> </li> <li> <p> <code>type</code> - The type of Spot Instance
+     * request (<code>one-time</code> | <code>persistent</code>).</p> </li> <li> <p>
      * <code>valid-from</code> - The start date of the request.</p> </li> <li> <p>
      * <code>valid-until</code> - The end date of the request.</p> </li> </ul>
      */
@@ -529,16 +499,10 @@ namespace Model
      * the tag in the filter name and the value of the tag in the filter value. For
      * example, for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter
      * name and <code>X</code> for the filter value.</p> </li> <li> <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
-     * independent of the <code>tag-value</code> filter. For example, if you use both
-     * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
-     * assigned both the tag key Purpose (regardless of what the tag's value is), and
-     * the tag value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>type</code> - The type of Spot Instance request
-     * (<code>one-time</code> | <code>persistent</code>).</p> </li> <li> <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this
+     * filter to find all resources assigned a tag with a specific key, regardless of
+     * the tag value.</p> </li> <li> <p> <code>type</code> - The type of Spot Instance
+     * request (<code>one-time</code> | <code>persistent</code>).</p> </li> <li> <p>
      * <code>valid-from</code> - The start date of the request.</p> </li> <li> <p>
      * <code>valid-until</code> - The end date of the request.</p> </li> </ul>
      */
@@ -611,16 +575,10 @@ namespace Model
      * the tag in the filter name and the value of the tag in the filter value. For
      * example, for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter
      * name and <code>X</code> for the filter value.</p> </li> <li> <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
-     * independent of the <code>tag-value</code> filter. For example, if you use both
-     * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
-     * assigned both the tag key Purpose (regardless of what the tag's value is), and
-     * the tag value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>type</code> - The type of Spot Instance request
-     * (<code>one-time</code> | <code>persistent</code>).</p> </li> <li> <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this
+     * filter to find all resources assigned a tag with a specific key, regardless of
+     * the tag value.</p> </li> <li> <p> <code>type</code> - The type of Spot Instance
+     * request (<code>one-time</code> | <code>persistent</code>).</p> </li> <li> <p>
      * <code>valid-from</code> - The start date of the request.</p> </li> <li> <p>
      * <code>valid-until</code> - The end date of the request.</p> </li> </ul>
      */

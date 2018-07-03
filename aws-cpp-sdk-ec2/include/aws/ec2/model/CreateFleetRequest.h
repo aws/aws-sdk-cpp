@@ -454,37 +454,79 @@ namespace Model
 
 
     /**
-     * <p>The tags for an EC2 Fleet resource.</p>
+     * <p>The key-value pair for tagging the EC2 Fleet request on creation. The value
+     * for <code>ResourceType</code> must be <code>fleet</code>, otherwise the fleet
+     * request fails. To tag instances at launch, specify the tags in the <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * template</a>. For information about tagging after launch, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
+     * Your Resources</a>. </p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
 
     /**
-     * <p>The tags for an EC2 Fleet resource.</p>
+     * <p>The key-value pair for tagging the EC2 Fleet request on creation. The value
+     * for <code>ResourceType</code> must be <code>fleet</code>, otherwise the fleet
+     * request fails. To tag instances at launch, specify the tags in the <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * template</a>. For information about tagging after launch, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
+     * Your Resources</a>. </p>
      */
     inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
 
     /**
-     * <p>The tags for an EC2 Fleet resource.</p>
+     * <p>The key-value pair for tagging the EC2 Fleet request on creation. The value
+     * for <code>ResourceType</code> must be <code>fleet</code>, otherwise the fleet
+     * request fails. To tag instances at launch, specify the tags in the <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * template</a>. For information about tagging after launch, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
+     * Your Resources</a>. </p>
      */
     inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
 
     /**
-     * <p>The tags for an EC2 Fleet resource.</p>
+     * <p>The key-value pair for tagging the EC2 Fleet request on creation. The value
+     * for <code>ResourceType</code> must be <code>fleet</code>, otherwise the fleet
+     * request fails. To tag instances at launch, specify the tags in the <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * template</a>. For information about tagging after launch, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
+     * Your Resources</a>. </p>
      */
     inline CreateFleetRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
 
     /**
-     * <p>The tags for an EC2 Fleet resource.</p>
+     * <p>The key-value pair for tagging the EC2 Fleet request on creation. The value
+     * for <code>ResourceType</code> must be <code>fleet</code>, otherwise the fleet
+     * request fails. To tag instances at launch, specify the tags in the <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * template</a>. For information about tagging after launch, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
+     * Your Resources</a>. </p>
      */
     inline CreateFleetRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
 
     /**
-     * <p>The tags for an EC2 Fleet resource.</p>
+     * <p>The key-value pair for tagging the EC2 Fleet request on creation. The value
+     * for <code>ResourceType</code> must be <code>fleet</code>, otherwise the fleet
+     * request fails. To tag instances at launch, specify the tags in the <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * template</a>. For information about tagging after launch, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
+     * Your Resources</a>. </p>
      */
     inline CreateFleetRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
 
     /**
-     * <p>The tags for an EC2 Fleet resource.</p>
+     * <p>The key-value pair for tagging the EC2 Fleet request on creation. The value
+     * for <code>ResourceType</code> must be <code>fleet</code>, otherwise the fleet
+     * request fails. To tag instances at launch, specify the tags in the <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * template</a>. For information about tagging after launch, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
+     * Your Resources</a>. </p>
      */
     inline CreateFleetRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 

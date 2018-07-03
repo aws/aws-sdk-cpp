@@ -36,7 +36,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes an event in the history of the EC2 Fleet.</p><p><h3>See Also:</h3> 
+   * <p>Describes an event in the history of an EC2 Fleet.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/HistoryRecordEntry">AWS
    * API Reference</a></p>

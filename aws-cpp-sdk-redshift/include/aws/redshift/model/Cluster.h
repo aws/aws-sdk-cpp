@@ -1318,6 +1318,47 @@ namespace Model
      */
     inline Cluster& AddIamRoles(ClusterIamRole&& value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Cluster operations that are waiting to be started.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetPendingActions() const{ return m_pendingActions; }
+
+    /**
+     * <p>Cluster operations that are waiting to be started.</p>
+     */
+    inline void SetPendingActions(const Aws::Vector<Aws::String>& value) { m_pendingActionsHasBeenSet = true; m_pendingActions = value; }
+
+    /**
+     * <p>Cluster operations that are waiting to be started.</p>
+     */
+    inline void SetPendingActions(Aws::Vector<Aws::String>&& value) { m_pendingActionsHasBeenSet = true; m_pendingActions = std::move(value); }
+
+    /**
+     * <p>Cluster operations that are waiting to be started.</p>
+     */
+    inline Cluster& WithPendingActions(const Aws::Vector<Aws::String>& value) { SetPendingActions(value); return *this;}
+
+    /**
+     * <p>Cluster operations that are waiting to be started.</p>
+     */
+    inline Cluster& WithPendingActions(Aws::Vector<Aws::String>&& value) { SetPendingActions(std::move(value)); return *this;}
+
+    /**
+     * <p>Cluster operations that are waiting to be started.</p>
+     */
+    inline Cluster& AddPendingActions(const Aws::String& value) { m_pendingActionsHasBeenSet = true; m_pendingActions.push_back(value); return *this; }
+
+    /**
+     * <p>Cluster operations that are waiting to be started.</p>
+     */
+    inline Cluster& AddPendingActions(Aws::String&& value) { m_pendingActionsHasBeenSet = true; m_pendingActions.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Cluster operations that are waiting to be started.</p>
+     */
+    inline Cluster& AddPendingActions(const char* value) { m_pendingActionsHasBeenSet = true; m_pendingActions.push_back(value); return *this; }
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -1418,6 +1459,9 @@ namespace Model
 
     Aws::Vector<ClusterIamRole> m_iamRoles;
     bool m_iamRolesHasBeenSet;
+
+    Aws::Vector<Aws::String> m_pendingActions;
+    bool m_pendingActionsHasBeenSet;
   };
 
 } // namespace Model

@@ -97,9 +97,10 @@ namespace Model
      * account that has been referenced in an inbound security group rule.</p> </li>
      * <li> <p> <code>owner-id</code> - The AWS account ID of the owner of the security
      * group.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
-     * the security group.</p> </li> <li> <p> <code>tag-value</code> - The value of a
-     * tag assigned to the security group.</p> </li> <li> <p> <code>vpc-id</code> - The
-     * ID of the VPC specified when the security group was created.</p> </li> </ul>
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>vpc-id</code> - The ID of the VPC specified when the security group was
+     * created.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -148,9 +149,10 @@ namespace Model
      * account that has been referenced in an inbound security group rule.</p> </li>
      * <li> <p> <code>owner-id</code> - The AWS account ID of the owner of the security
      * group.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
-     * the security group.</p> </li> <li> <p> <code>tag-value</code> - The value of a
-     * tag assigned to the security group.</p> </li> <li> <p> <code>vpc-id</code> - The
-     * ID of the VPC specified when the security group was created.</p> </li> </ul>
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>vpc-id</code> - The ID of the VPC specified when the security group was
+     * created.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -199,9 +201,10 @@ namespace Model
      * account that has been referenced in an inbound security group rule.</p> </li>
      * <li> <p> <code>owner-id</code> - The AWS account ID of the owner of the security
      * group.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
-     * the security group.</p> </li> <li> <p> <code>tag-value</code> - The value of a
-     * tag assigned to the security group.</p> </li> <li> <p> <code>vpc-id</code> - The
-     * ID of the VPC specified when the security group was created.</p> </li> </ul>
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>vpc-id</code> - The ID of the VPC specified when the security group was
+     * created.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -250,9 +253,10 @@ namespace Model
      * account that has been referenced in an inbound security group rule.</p> </li>
      * <li> <p> <code>owner-id</code> - The AWS account ID of the owner of the security
      * group.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
-     * the security group.</p> </li> <li> <p> <code>tag-value</code> - The value of a
-     * tag assigned to the security group.</p> </li> <li> <p> <code>vpc-id</code> - The
-     * ID of the VPC specified when the security group was created.</p> </li> </ul>
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>vpc-id</code> - The ID of the VPC specified when the security group was
+     * created.</p> </li> </ul>
      */
     inline DescribeSecurityGroupsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -301,9 +305,10 @@ namespace Model
      * account that has been referenced in an inbound security group rule.</p> </li>
      * <li> <p> <code>owner-id</code> - The AWS account ID of the owner of the security
      * group.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
-     * the security group.</p> </li> <li> <p> <code>tag-value</code> - The value of a
-     * tag assigned to the security group.</p> </li> <li> <p> <code>vpc-id</code> - The
-     * ID of the VPC specified when the security group was created.</p> </li> </ul>
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>vpc-id</code> - The ID of the VPC specified when the security group was
+     * created.</p> </li> </ul>
      */
     inline DescribeSecurityGroupsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -352,9 +357,10 @@ namespace Model
      * account that has been referenced in an inbound security group rule.</p> </li>
      * <li> <p> <code>owner-id</code> - The AWS account ID of the owner of the security
      * group.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
-     * the security group.</p> </li> <li> <p> <code>tag-value</code> - The value of a
-     * tag assigned to the security group.</p> </li> <li> <p> <code>vpc-id</code> - The
-     * ID of the VPC specified when the security group was created.</p> </li> </ul>
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>vpc-id</code> - The ID of the VPC specified when the security group was
+     * created.</p> </li> </ul>
      */
     inline DescribeSecurityGroupsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -403,9 +409,10 @@ namespace Model
      * account that has been referenced in an inbound security group rule.</p> </li>
      * <li> <p> <code>owner-id</code> - The AWS account ID of the owner of the security
      * group.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
-     * the security group.</p> </li> <li> <p> <code>tag-value</code> - The value of a
-     * tag assigned to the security group.</p> </li> <li> <p> <code>vpc-id</code> - The
-     * ID of the VPC specified when the security group was created.</p> </li> </ul>
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>vpc-id</code> - The ID of the VPC specified when the security group was
+     * created.</p> </li> </ul>
      */
     inline DescribeSecurityGroupsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

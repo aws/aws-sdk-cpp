@@ -1571,8 +1571,8 @@ namespace Model
         virtual void AllocateAddressAsync(const Model::AllocateAddressRequest& request, const AllocateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Allocates a Dedicated Host to your account. At minimum you need to specify
-         * the instance size type, Availability Zone, and quantity of hosts you want to
+         * <p>Allocates a Dedicated Host to your account. At a minimum, specify the
+         * instance size type, Availability Zone, and quantity of hosts to
          * allocate.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateHosts">AWS
          * API Reference</a></p>
@@ -1580,8 +1580,8 @@ namespace Model
         virtual Model::AllocateHostsOutcome AllocateHosts(const Model::AllocateHostsRequest& request) const;
 
         /**
-         * <p>Allocates a Dedicated Host to your account. At minimum you need to specify
-         * the instance size type, Availability Zone, and quantity of hosts you want to
+         * <p>Allocates a Dedicated Host to your account. At a minimum, specify the
+         * instance size type, Availability Zone, and quantity of hosts to
          * allocate.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateHosts">AWS
          * API Reference</a></p>
@@ -1591,8 +1591,8 @@ namespace Model
         virtual Model::AllocateHostsOutcomeCallable AllocateHostsCallable(const Model::AllocateHostsRequest& request) const;
 
         /**
-         * <p>Allocates a Dedicated Host to your account. At minimum you need to specify
-         * the instance size type, Availability Zone, and quantity of hosts you want to
+         * <p>Allocates a Dedicated Host to your account. At a minimum, specify the
+         * instance size type, Availability Zone, and quantity of hosts to
          * allocate.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateHosts">AWS
          * API Reference</a></p>
@@ -2138,9 +2138,7 @@ namespace Model
          * <li> <p>You must be subscribed to the product.</p> </li> <li> <p>The instance
          * type and operating system of the instance must support the product. For example,
          * you can't detach a volume from a Windows instance and attach it to a Linux
-         * instance.</p> </li> </ul> <p>For an overview of the AWS Marketplace, see <a
-         * href="https://aws.amazon.com/marketplace/help/200900000">Introducing AWS
-         * Marketplace</a>.</p> <p>For more information about EBS volumes, see <a
+         * instance.</p> </li> </ul> <p>For more information about EBS volumes, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
          * Amazon EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2168,9 +2166,7 @@ namespace Model
          * <li> <p>You must be subscribed to the product.</p> </li> <li> <p>The instance
          * type and operating system of the instance must support the product. For example,
          * you can't detach a volume from a Windows instance and attach it to a Linux
-         * instance.</p> </li> </ul> <p>For an overview of the AWS Marketplace, see <a
-         * href="https://aws.amazon.com/marketplace/help/200900000">Introducing AWS
-         * Marketplace</a>.</p> <p>For more information about EBS volumes, see <a
+         * instance.</p> </li> </ul> <p>For more information about EBS volumes, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
          * Amazon EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2200,9 +2196,7 @@ namespace Model
          * <li> <p>You must be subscribed to the product.</p> </li> <li> <p>The instance
          * type and operating system of the instance must support the product. For example,
          * you can't detach a volume from a Windows instance and attach it to a Linux
-         * instance.</p> </li> </ul> <p>For an overview of the AWS Marketplace, see <a
-         * href="https://aws.amazon.com/marketplace/help/200900000">Introducing AWS
-         * Marketplace</a>.</p> <p>For more information about EBS volumes, see <a
+         * instance.</p> </li> </ul> <p>For more information about EBS volumes, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
          * Amazon EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -5083,26 +5077,24 @@ namespace Model
         virtual void DeleteEgressOnlyInternetGatewayAsync(const Model::DeleteEgressOnlyInternetGatewayRequest& request, const DeleteEgressOnlyInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified EC2 Fleet.</p> <p>After you delete an EC2 Fleet, the
-         * EC2 Fleet launches no new instances. You must specify whether the EC2 Fleet
-         * should also terminate its instances. If you terminate the instances, the EC2
-         * Fleet enters the <code>deleted_terminating</code> state. Otherwise, the EC2
-         * Fleet enters the <code>deleted_running</code> state, and the instances continue
-         * to run until they are interrupted or you terminate them manually. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the specified EC2 Fleet.</p> <p>After you delete an EC2 Fleet, it
+         * launches no new instances. You must specify whether an EC2 Fleet should also
+         * terminate its instances. If you terminate the instances, the EC2 Fleet enters
+         * the <code>deleted_terminating</code> state. Otherwise, the EC2 Fleet enters the
+         * <code>deleted_running</code> state, and the instances continue to run until they
+         * are interrupted or you terminate them manually. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFleets">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteFleetsOutcome DeleteFleets(const Model::DeleteFleetsRequest& request) const;
 
         /**
-         * <p>Deletes the specified EC2 Fleet.</p> <p>After you delete an EC2 Fleet, the
-         * EC2 Fleet launches no new instances. You must specify whether the EC2 Fleet
-         * should also terminate its instances. If you terminate the instances, the EC2
-         * Fleet enters the <code>deleted_terminating</code> state. Otherwise, the EC2
-         * Fleet enters the <code>deleted_running</code> state, and the instances continue
-         * to run until they are interrupted or you terminate them manually. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the specified EC2 Fleet.</p> <p>After you delete an EC2 Fleet, it
+         * launches no new instances. You must specify whether an EC2 Fleet should also
+         * terminate its instances. If you terminate the instances, the EC2 Fleet enters
+         * the <code>deleted_terminating</code> state. Otherwise, the EC2 Fleet enters the
+         * <code>deleted_running</code> state, and the instances continue to run until they
+         * are interrupted or you terminate them manually. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFleets">AWS
          * API Reference</a></p>
          *
@@ -5111,13 +5103,12 @@ namespace Model
         virtual Model::DeleteFleetsOutcomeCallable DeleteFleetsCallable(const Model::DeleteFleetsRequest& request) const;
 
         /**
-         * <p>Deletes the specified EC2 Fleet.</p> <p>After you delete an EC2 Fleet, the
-         * EC2 Fleet launches no new instances. You must specify whether the EC2 Fleet
-         * should also terminate its instances. If you terminate the instances, the EC2
-         * Fleet enters the <code>deleted_terminating</code> state. Otherwise, the EC2
-         * Fleet enters the <code>deleted_running</code> state, and the instances continue
-         * to run until they are interrupted or you terminate them manually. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the specified EC2 Fleet.</p> <p>After you delete an EC2 Fleet, it
+         * launches no new instances. You must specify whether an EC2 Fleet should also
+         * terminate its instances. If you terminate the instances, the EC2 Fleet enters
+         * the <code>deleted_terminating</code> state. Otherwise, the EC2 Fleet enters the
+         * <code>deleted_running</code> state, and the instances continue to run until they
+         * are interrupted or you terminate them manually. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFleets">AWS
          * API Reference</a></p>
          *
@@ -6678,14 +6669,14 @@ namespace Model
         virtual void DescribeFleetInstancesAsync(const Model::DescribeFleetInstancesRequest& request, const DescribeFleetInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the specified EC2 Fleet.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes one or more of your EC2 Fleet.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleets">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeFleetsOutcome DescribeFleets(const Model::DescribeFleetsRequest& request) const;
 
         /**
-         * <p>Describes the specified EC2 Fleet.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes one or more of your EC2 Fleet.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleets">AWS
          * API Reference</a></p>
          *
@@ -6694,7 +6685,7 @@ namespace Model
         virtual Model::DescribeFleetsOutcomeCallable DescribeFleetsCallable(const Model::DescribeFleetsRequest& request) const;
 
         /**
-         * <p>Describes the specified EC2 Fleet.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes one or more of your EC2 Fleet.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleets">AWS
          * API Reference</a></p>
          *
@@ -7851,7 +7842,8 @@ namespace Model
          * prefix list name and prefix list ID of the service and the IP address range for
          * the service. A prefix list ID is required for creating an outbound security
          * group rule that allows traffic from a VPC to access an AWS service through a
-         * gateway VPC endpoint.</p><p><h3>See Also:</h3>   <a
+         * gateway VPC endpoint. Currently, the services that support this action are
+         * Amazon S3 and Amazon DynamoDB.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrefixLists">AWS
          * API Reference</a></p>
          */
@@ -7862,7 +7854,8 @@ namespace Model
          * prefix list name and prefix list ID of the service and the IP address range for
          * the service. A prefix list ID is required for creating an outbound security
          * group rule that allows traffic from a VPC to access an AWS service through a
-         * gateway VPC endpoint.</p><p><h3>See Also:</h3>   <a
+         * gateway VPC endpoint. Currently, the services that support this action are
+         * Amazon S3 and Amazon DynamoDB.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrefixLists">AWS
          * API Reference</a></p>
          *
@@ -7875,7 +7868,8 @@ namespace Model
          * prefix list name and prefix list ID of the service and the IP address range for
          * the service. A prefix list ID is required for creating an outbound security
          * group rule that allows traffic from a VPC to access an AWS service through a
-         * gateway VPC endpoint.</p><p><h3>See Also:</h3>   <a
+         * gateway VPC endpoint. Currently, the services that support this action are
+         * Amazon S3 and Amazon DynamoDB.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrefixLists">AWS
          * API Reference</a></p>
          *
