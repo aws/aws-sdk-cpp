@@ -19,8 +19,6 @@
 #include <aws/core/utils/crypto/EncryptionMaterials.h>
 #include <aws/s3-encryption/s3Encryption_EXPORTS.h>
 #include <aws/s3-encryption/CryptoConfiguration.h>
-#include <aws/s3-encryption/modules/CryptoModule.h>
-
 
 namespace Aws
 {
@@ -28,6 +26,7 @@ namespace Aws
     {
         namespace Modules
         {
+            class CryptoModule;
             /*
             * This class is an abstract class for the crypto module factories.
             */

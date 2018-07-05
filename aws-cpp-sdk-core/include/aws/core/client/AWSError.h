@@ -25,7 +25,6 @@ namespace Aws
     namespace Client
     {
         enum class CoreErrors;
-
         /**
          * Container for Error enumerations with additional exception information. Name, message, retryable etc....
          */
@@ -53,7 +52,7 @@ namespace Aws
                 m_errorType(static_cast<ERROR_TYPE>(rhs.GetErrorType())), m_exceptionName(rhs.GetExceptionName()), 
                 m_message(rhs.GetMessage()), m_responseHeaders(rhs.GetResponseHeaders()), 
                 m_responseCode(rhs.GetResponseCode()), m_isRetryable(rhs.ShouldRetry())
-            {}          
+            {}
 
             /**
              * Gets underlying errorType.

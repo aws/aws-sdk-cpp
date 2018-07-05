@@ -17,10 +17,13 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/crypto/CryptoStream.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/client/AWSError.h>
+#include <aws/s3-encryption/S3EncryptionClient.h>
 
 using namespace Aws::S3::Model;
 using namespace Aws::Utils;
 using namespace Aws::Utils::Crypto;
+using namespace Aws::Client;
 
 namespace Aws
 {
@@ -41,14 +44,18 @@ namespace Aws
             {
             }
 
-            Aws::S3::Model::PutObjectOutcome CryptoModule::PutObjectSecurely(const Aws::S3::Model::PutObjectRequest& request, const PutObjectFunction& putObjectFunction)
+            S3EncryptionPutObjectOutcome CryptoModule::PutObjectSecurely(const Aws::S3::Model::PutObjectRequest& request, const PutObjectFunction& putObjectFunction)
             {
                 PutObjectRequest copyRequest(request);
                 PopulateCryptoContentMaterial();
                 InitEncryptionCipher();
                 SetContentLength(copyRequest);
-                m_encryptionMaterials->EncryptCEK(m_contentCryptoMaterial);
-
+                auto encryptOutcome = m_encryptionMaterials->EncryptCEK(m_contentCryptoMaterial);
+                if (!encryptOutcome.IsSuccess())
+                {
+                    return S3EncryptionPutObjectOutcome(BuildS3EncryptionError(encryptOutcome.GetError()));
+                }
+                
                 if (m_cryptoConfig.GetStorageMethod() == StorageMethod::INSTRUCTION_FILE)
                 {
                     Handlers::InstructionFileHandler handler;
@@ -62,7 +69,7 @@ namespace Aws
                         AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Instruction file put operation not successful: "
                             << instructionOutcome.GetError().GetExceptionName() << " : "
                             << instructionOutcome.GetError().GetMessage());
-                        return instructionOutcome;
+                        return S3EncryptionPutObjectOutcome(BuildS3EncryptionError(instructionOutcome.GetError()));
                     }
                 }
                 else
@@ -73,15 +80,17 @@ namespace Aws
                 return WrapAndMakeRequestWithCipher(copyRequest, putObjectFunction);
             }
 
-            Aws::S3::Model::GetObjectOutcome CryptoModule::GetObjectSecurely(const Aws::S3::Model::GetObjectRequest& request,
+            S3EncryptionGetObjectOutcome CryptoModule::GetObjectSecurely(const Aws::S3::Model::GetObjectRequest& request,
                 const Aws::S3::Model::HeadObjectResult& headObjectResult, const ContentCryptoMaterial& contentCryptoMaterial, const GetObjectFunction& getObjectFunction)
             {
                 GetObjectRequest copyRequest(request);
-
                 m_contentCryptoMaterial = contentCryptoMaterial;
-
                 DecryptionConditionCheck(copyRequest.GetRange());
-                m_encryptionMaterials->DecryptCEK(m_contentCryptoMaterial);
+                auto decryptOutcome = m_encryptionMaterials->DecryptCEK(m_contentCryptoMaterial);
+                if (!decryptOutcome.IsSuccess())
+                {
+                    return S3EncryptionGetObjectOutcome(BuildS3EncryptionError(decryptOutcome.GetError()));
+                }
 
                 CryptoBuffer tagFromBody = GetTag(copyRequest, getObjectFunction);
                 int64_t rangeStart = 0;
@@ -108,7 +117,7 @@ namespace Aws
                 return UnwrapAndMakeRequestWithCipher(copyRequest, getObjectFunction, firstBlockAdjustment);
             }
 
-            Aws::S3::Model::PutObjectOutcome CryptoModule::WrapAndMakeRequestWithCipher(Aws::S3::Model::PutObjectRequest & request, const PutObjectFunction& putObjectFunction)
+            S3EncryptionPutObjectOutcome CryptoModule::WrapAndMakeRequestWithCipher(Aws::S3::Model::PutObjectRequest & request, const PutObjectFunction& putObjectFunction)
             {
                 std::shared_ptr<Aws::IOStream> iostream = request.GetBody();
                 request.SetBody(Aws::MakeShared<Aws::Utils::Crypto::SymmetricCryptoStream>(ALLOCATION_TAG, (Aws::IStream&)*iostream, CipherMode::Encrypt, (*m_cipher)));
@@ -121,11 +130,12 @@ namespace Aws
                     AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "S3 put object operation not successful: "
                         << outcome.GetError().GetExceptionName() << " : "
                         << outcome.GetError().GetMessage());
+                    return S3EncryptionPutObjectOutcome(BuildS3EncryptionError(outcome.GetError()));
                 }
-                return outcome;
+                return S3EncryptionPutObjectOutcome(outcome.GetResultWithOwnership());
             }
 
-            Aws::S3::Model::GetObjectOutcome CryptoModule::UnwrapAndMakeRequestWithCipher(Aws::S3::Model::GetObjectRequest& request, const GetObjectFunction& getObjectFunction, int16_t firstBlockOffset)
+            S3EncryptionGetObjectOutcome CryptoModule::UnwrapAndMakeRequestWithCipher(Aws::S3::Model::GetObjectRequest& request, const GetObjectFunction& getObjectFunction, int16_t firstBlockOffset)
             {
                 assert(static_cast<size_t>(firstBlockOffset) < AES_BLOCK_SIZE && firstBlockOffset >= 0);
                 auto userSuppliedStreamFactory = request.GetResponseStreamFactory();
@@ -140,7 +150,7 @@ namespace Aws
                     AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "S3 get operation not successful: "
                         << outcome.GetError().GetExceptionName() << " : "
                         << outcome.GetError().GetMessage());
-                    return outcome;
+                    return S3EncryptionGetObjectOutcome(BuildS3EncryptionError(outcome.GetError()));
                 }
 
                 GetObjectResult&& result = outcome.GetResultWithOwnership();
@@ -150,7 +160,7 @@ namespace Aws
                 userSuppliedStream->seekg(0, std::ios_base::beg);
                 result.ReplaceBody(userSuppliedStream);
 
-                return outcome;
+                return S3EncryptionGetObjectOutcome(outcome.GetResultWithOwnership());
             }
 
             std::pair<int64_t, int64_t> CryptoModule::ParseGetObjectRequestRange(const Aws::String& range, int64_t contentLength)

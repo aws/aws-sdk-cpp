@@ -19,6 +19,8 @@
 #include <aws/kms/KMSClient.h>
 #include <aws/s3-encryption/s3Encryption_EXPORTS.h>
 
+using namespace Aws::Utils::Crypto;
+
 namespace Aws
 {
     namespace S3Encryption
@@ -55,7 +57,7 @@ namespace Aws
                 * description.
                 * A invalid customer master key ID will result in an empty content encryption key.
                 */
-                void EncryptCEK(Aws::Utils::Crypto::ContentCryptoMaterial& contentCryptoMaterial) override;
+                CryptoOutcome EncryptCEK(Aws::Utils::Crypto::ContentCryptoMaterial& contentCryptoMaterial) override;
 
                 /*
                 * This will decrypt the cek by calling to KMS. This will occur in place.
@@ -63,7 +65,7 @@ namespace Aws
                 * the identifier + customer master key ID. It will then decrypt.
                 * A invalid customer master key ID will result in an empty content encryption key.
                 */
-                void DecryptCEK(Aws::Utils::Crypto::ContentCryptoMaterial& contentCryptoMaterial) override;
+                CryptoOutcome DecryptCEK(Aws::Utils::Crypto::ContentCryptoMaterial& contentCryptoMaterial) override;
 
             private:
                 Aws::String m_customerMasterKeyID;

@@ -24,6 +24,7 @@
 #include <aws/s3-encryption/handlers/MetadataHandler.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/s3/S3Client.h>
+#include <aws/s3-encryption/S3EncryptionClient.h>
 #include <aws/s3/model/PutObjectRequest.h>
 #include <aws/s3/model/PutObjectResult.h>
 #include <aws/s3/model/GetObjectResult.h>
@@ -50,12 +51,12 @@ namespace Aws
                 /*
                 * Function to put an encrypted object to S3.
                 */
-                Aws::S3::Model::PutObjectOutcome PutObjectSecurely(const Aws::S3::Model::PutObjectRequest& request, const PutObjectFunction& putObjectFunction);
+                S3EncryptionPutObjectOutcome PutObjectSecurely(const Aws::S3::Model::PutObjectRequest& request, const PutObjectFunction& putObjectFunction);
 
                 /*
                 * Function to get an encrypted object from S3. This function takes a headObjectResult as well to collect metadata.
                 */
-                Aws::S3::Model::GetObjectOutcome GetObjectSecurely(const Aws::S3::Model::GetObjectRequest& request, const Aws::S3::Model::HeadObjectResult& headObjectResult,
+                S3EncryptionGetObjectOutcome GetObjectSecurely(const Aws::S3::Model::GetObjectRequest& request, const Aws::S3::Model::HeadObjectResult& headObjectResult,
                     const Aws::Utils::Crypto::ContentCryptoMaterial& contentCryptoMaterial, const GetObjectFunction& getObjectFunction);
 
                 /*
@@ -67,12 +68,12 @@ namespace Aws
                 /*
                 * This function is used to encrypt the given S3 PutObjectRequest.
                 */
-                Aws::S3::Model::PutObjectOutcome WrapAndMakeRequestWithCipher(Aws::S3::Model::PutObjectRequest& request, const PutObjectFunction& putObjectFunction);
+                S3EncryptionPutObjectOutcome WrapAndMakeRequestWithCipher(Aws::S3::Model::PutObjectRequest& request, const PutObjectFunction& putObjectFunction);
 
                 /*
                 * This function is used to decrypt the given S3 GetObjectResult.
                 */
-                Aws::S3::Model::GetObjectOutcome UnwrapAndMakeRequestWithCipher(Aws::S3::Model::GetObjectRequest& request, const GetObjectFunction& getObjectFunction, int16_t firstBlockOffset = 0);
+                S3EncryptionGetObjectOutcome UnwrapAndMakeRequestWithCipher(Aws::S3::Model::GetObjectRequest& request, const GetObjectFunction& getObjectFunction, int16_t firstBlockOffset = 0);
 
             protected:
                 /*

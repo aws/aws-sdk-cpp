@@ -17,6 +17,8 @@
 #include <aws/s3-encryption/S3EncryptionClient.h>
 #include <aws/s3/S3Client.h>
 #include <aws/s3-encryption/materials/SimpleEncryptionMaterials.h>
+#include <aws/s3-encryption/materials/KMSEncryptionMaterials.h>
+#include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/s3/model/CreateBucketRequest.h>
 #include <aws/s3/model/PutObjectRequest.h>
 #include <aws/s3/model/GetObjectRequest.h>
@@ -33,6 +35,7 @@
 
 using namespace Aws::S3;
 using namespace Aws::S3Encryption;
+using namespace Aws::S3Encryption::Materials;
 using namespace Aws::Utils;
 using namespace Aws::Client;
 using namespace Aws::Utils::Crypto;
@@ -144,12 +147,12 @@ TEST_F(LiveClientTest, TestEOMode)
 
     Model::GetObjectRequest getUnencryptedObjectRequest;
     getUnencryptedObjectRequest.WithBucket(BucketName.c_str()).WithKey(objectKey);
-    getObjectResult = StandardClient->GetObject(getUnencryptedObjectRequest);
+    auto standardGetObjectResult = StandardClient->GetObject(getUnencryptedObjectRequest);
 
-    EXPECT_TRUE(getObjectResult.IsSuccess());
-    ByteBuffer rawData(static_cast< size_t >(getObjectResult.GetResult().GetContentLength()));
+    EXPECT_TRUE(standardGetObjectResult.IsSuccess());
+    ByteBuffer rawData(static_cast< size_t >(standardGetObjectResult.GetResult().GetContentLength()));
     memset(rawData.GetUnderlyingData(), 0, rawData.GetLength());
-    getObjectResult.GetResult().GetBody().read((char*)rawData.GetUnderlyingData(), rawData.GetLength());
+    standardGetObjectResult.GetResult().GetBody().read((char*)rawData.GetUnderlyingData(), rawData.GetLength());
 
     cryptoStream << TEST_STRING;
     cryptoStream.Finalize();
@@ -160,7 +163,7 @@ TEST_F(LiveClientTest, TestEOMode)
     Model::DeleteObjectRequest deleteObject;
     deleteObject.WithBucket(BucketName.c_str()).WithKey(objectKey);
 
-    auto deleteResult = client.DeleteObject(deleteObject);
+    auto deleteResult = StandardClient->DeleteObject(deleteObject);
     EXPECT_TRUE(deleteResult.IsSuccess());
 }
 
@@ -225,14 +228,14 @@ TEST_F(LiveClientTest, TestAEMode)
 
     Model::GetObjectRequest getUnencryptedObjectRequest;
     getUnencryptedObjectRequest.WithBucket(BucketName.c_str()).WithKey(objectKey);
-    getObjectResult = StandardClient->GetObject(getUnencryptedObjectRequest);
+    auto standardGetObjectResult = StandardClient->GetObject(getUnencryptedObjectRequest);
 
-    EXPECT_TRUE(getObjectResult.IsSuccess());
-    EXPECT_EQ((cryptoMaterial.GetCryptoTagLength() / 8) + sizeof(TEST_STRING) - 1, static_cast<size_t>(getObjectResult.GetResult().GetContentLength()));
+    EXPECT_TRUE(standardGetObjectResult.IsSuccess());
+    EXPECT_EQ((cryptoMaterial.GetCryptoTagLength() / 8) + sizeof(TEST_STRING) - 1, static_cast<size_t>(standardGetObjectResult.GetResult().GetContentLength()));
 
-    ByteBuffer rawData(static_cast< size_t >(getObjectResult.GetResult().GetContentLength()) - (cryptoMaterial.GetCryptoTagLength() / 8));
+    ByteBuffer rawData(static_cast< size_t >(standardGetObjectResult.GetResult().GetContentLength()) - (cryptoMaterial.GetCryptoTagLength() / 8));
     memset(rawData.GetUnderlyingData(), 0, rawData.GetLength());
-    getObjectResult.GetResult().GetBody().read((char*)rawData.GetUnderlyingData(), rawData.GetLength());
+    standardGetObjectResult.GetResult().GetBody().read((char*)rawData.GetUnderlyingData(), rawData.GetLength());
 
     cryptoStream << TEST_STRING;
     cryptoStream.Finalize();
@@ -243,7 +246,7 @@ TEST_F(LiveClientTest, TestAEMode)
     Model::DeleteObjectRequest deleteObject;
     deleteObject.WithBucket(BucketName.c_str()).WithKey(objectKey);
 
-    auto deleteResult = client.DeleteObject(deleteObject);
+    auto deleteResult = StandardClient->DeleteObject(deleteObject);
     EXPECT_TRUE(deleteResult.IsSuccess());
 }
 
@@ -306,14 +309,14 @@ TEST_F(LiveClientTest, TestAEModeRangeGet)
 
     Model::GetObjectRequest getUnencryptedObjectRequest;
     getUnencryptedObjectRequest.WithBucket(BucketName.c_str()).WithKey(objectKey).WithRange(RANGE_GET_STR);
-    getObjectResult = StandardClient->GetObject(getUnencryptedObjectRequest);
+    auto standardGetObjectResult = StandardClient->GetObject(getUnencryptedObjectRequest);
 
-    EXPECT_TRUE(getObjectResult.IsSuccess());
-    EXPECT_EQ(sizeof(RANGE_GET_TEST_STRING) - 1, static_cast<size_t>(getObjectResult.GetResult().GetContentLength()));
+    EXPECT_TRUE(standardGetObjectResult.IsSuccess());
+    EXPECT_EQ(sizeof(RANGE_GET_TEST_STRING) - 1, static_cast<size_t>(standardGetObjectResult.GetResult().GetContentLength()));
 
-    ByteBuffer rawData(static_cast< size_t >(getObjectResult.GetResult().GetContentLength()));
+    ByteBuffer rawData(static_cast< size_t >(standardGetObjectResult.GetResult().GetContentLength()));
     memset(rawData.GetUnderlyingData(), 0, rawData.GetLength());
-    getObjectResult.GetResult().GetBody().read((char*)rawData.GetUnderlyingData(), rawData.GetLength());
+    standardGetObjectResult.GetResult().GetBody().read((char*)rawData.GetUnderlyingData(), rawData.GetLength());
 
     cryptoStream << TEST_STRING;
     cryptoStream.Finalize();
@@ -325,8 +328,38 @@ TEST_F(LiveClientTest, TestAEModeRangeGet)
     Model::DeleteObjectRequest deleteObject;
     deleteObject.WithBucket(BucketName.c_str()).WithKey(objectKey);
 
-    auto deleteResult = client.DeleteObject(deleteObject);
+    auto deleteResult = StandardClient->DeleteObject(deleteObject);
     EXPECT_TRUE(deleteResult.IsSuccess());
 }
 #endif
 
+TEST_F(LiveClientTest, TestS3EncryptionError)
+{
+    auto kmsMaterials = Aws::MakeShared<Aws::S3Encryption::Materials::KMSEncryptionMaterials>("s3Encryption", "badKey");
+    Aws::S3Encryption::CryptoConfiguration cryptoConfiguration(Aws::S3Encryption::StorageMethod::METADATA, Aws::S3Encryption::CryptoMode::ENCRYPTION_ONLY);
+    auto credentials = Aws::MakeShared<Aws::Auth::DefaultAWSCredentialsProviderChain>("s3Encryption");
+    Aws::S3Encryption::S3EncryptionClient encryptionClient(kmsMaterials, cryptoConfiguration, credentials);
+
+    Model::PutObjectRequest putObjectRequest;
+    putObjectRequest.WithBucket("badBucket").WithKey("badKey");
+
+    auto ss = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
+    *ss << TEST_STRING;
+    ss->flush();
+
+    putObjectRequest.SetBody(ss);
+
+    auto putObjectOutcome = encryptionClient.PutObject(putObjectRequest);
+    ASSERT_FALSE(putObjectOutcome.IsSuccess());
+    ASSERT_TRUE(putObjectOutcome.GetError().GetErrorType().IsCryptoError());
+    ASSERT_FALSE(putObjectOutcome.GetError().GetErrorType().IsS3Error());
+    ASSERT_EQ(CryptoErrors::ENCRYPT_CONTENT_ENCRYPTION_KEY_FAILED, putObjectOutcome.GetError().GetErrorType().cryptoError);
+
+    Model::GetObjectRequest getObjectRequest;
+    getObjectRequest.WithBucket("badBucket").WithKey("badKey");
+    auto getObjectOutcome = encryptionClient.GetObject(getObjectRequest);
+    ASSERT_FALSE(getObjectOutcome.IsSuccess());
+    ASSERT_FALSE(getObjectOutcome.GetError().GetErrorType().IsCryptoError());
+    ASSERT_TRUE(getObjectOutcome.GetError().GetErrorType().IsS3Error());
+    ASSERT_EQ(Aws::Http::HttpResponseCode::NOT_FOUND, getObjectOutcome.GetError().GetResponseCode());
+}
