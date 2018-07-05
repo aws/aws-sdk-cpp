@@ -21,6 +21,7 @@
 #include <aws/pinpoint/model/SegmentLocation.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pinpoint/model/AttributeDimension.h>
+#include <aws/pinpoint/model/MetricDimension.h>
 #include <utility>
 
 namespace Aws
@@ -186,6 +187,62 @@ namespace Model
 
 
     /**
+     * Custom segment metrics.
+     */
+    inline const Aws::Map<Aws::String, MetricDimension>& GetMetrics() const{ return m_metrics; }
+
+    /**
+     * Custom segment metrics.
+     */
+    inline void SetMetrics(const Aws::Map<Aws::String, MetricDimension>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
+
+    /**
+     * Custom segment metrics.
+     */
+    inline void SetMetrics(Aws::Map<Aws::String, MetricDimension>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
+
+    /**
+     * Custom segment metrics.
+     */
+    inline SegmentDimensions& WithMetrics(const Aws::Map<Aws::String, MetricDimension>& value) { SetMetrics(value); return *this;}
+
+    /**
+     * Custom segment metrics.
+     */
+    inline SegmentDimensions& WithMetrics(Aws::Map<Aws::String, MetricDimension>&& value) { SetMetrics(std::move(value)); return *this;}
+
+    /**
+     * Custom segment metrics.
+     */
+    inline SegmentDimensions& AddMetrics(const Aws::String& key, const MetricDimension& value) { m_metricsHasBeenSet = true; m_metrics.emplace(key, value); return *this; }
+
+    /**
+     * Custom segment metrics.
+     */
+    inline SegmentDimensions& AddMetrics(Aws::String&& key, const MetricDimension& value) { m_metricsHasBeenSet = true; m_metrics.emplace(std::move(key), value); return *this; }
+
+    /**
+     * Custom segment metrics.
+     */
+    inline SegmentDimensions& AddMetrics(const Aws::String& key, MetricDimension&& value) { m_metricsHasBeenSet = true; m_metrics.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * Custom segment metrics.
+     */
+    inline SegmentDimensions& AddMetrics(Aws::String&& key, MetricDimension&& value) { m_metricsHasBeenSet = true; m_metrics.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * Custom segment metrics.
+     */
+    inline SegmentDimensions& AddMetrics(const char* key, MetricDimension&& value) { m_metricsHasBeenSet = true; m_metrics.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * Custom segment metrics.
+     */
+    inline SegmentDimensions& AddMetrics(const char* key, const MetricDimension& value) { m_metricsHasBeenSet = true; m_metrics.emplace(key, value); return *this; }
+
+
+    /**
      * Custom segment user attributes.
      */
     inline const Aws::Map<Aws::String, AttributeDimension>& GetUserAttributes() const{ return m_userAttributes; }
@@ -253,6 +310,9 @@ namespace Model
 
     SegmentLocation m_location;
     bool m_locationHasBeenSet;
+
+    Aws::Map<Aws::String, MetricDimension> m_metrics;
+    bool m_metricsHasBeenSet;
 
     Aws::Map<Aws::String, AttributeDimension> m_userAttributes;
     bool m_userAttributesHasBeenSet;

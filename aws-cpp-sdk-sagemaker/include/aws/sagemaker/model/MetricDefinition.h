@@ -89,49 +89,49 @@ namespace Model
     /**
      * <p>A regular expression that searches the output of a training job and gets the
      * value of the metric. For more information about using regular expressions to
-     * define metrics, see <a>hpo-define-metrics</a>.</p>
+     * define metrics, see <a>automatic-model-tuning-define-metrics</a>.</p>
      */
     inline const Aws::String& GetRegex() const{ return m_regex; }
 
     /**
      * <p>A regular expression that searches the output of a training job and gets the
      * value of the metric. For more information about using regular expressions to
-     * define metrics, see <a>hpo-define-metrics</a>.</p>
+     * define metrics, see <a>automatic-model-tuning-define-metrics</a>.</p>
      */
     inline void SetRegex(const Aws::String& value) { m_regexHasBeenSet = true; m_regex = value; }
 
     /**
      * <p>A regular expression that searches the output of a training job and gets the
      * value of the metric. For more information about using regular expressions to
-     * define metrics, see <a>hpo-define-metrics</a>.</p>
+     * define metrics, see <a>automatic-model-tuning-define-metrics</a>.</p>
      */
     inline void SetRegex(Aws::String&& value) { m_regexHasBeenSet = true; m_regex = std::move(value); }
 
     /**
      * <p>A regular expression that searches the output of a training job and gets the
      * value of the metric. For more information about using regular expressions to
-     * define metrics, see <a>hpo-define-metrics</a>.</p>
+     * define metrics, see <a>automatic-model-tuning-define-metrics</a>.</p>
      */
     inline void SetRegex(const char* value) { m_regexHasBeenSet = true; m_regex.assign(value); }
 
     /**
      * <p>A regular expression that searches the output of a training job and gets the
      * value of the metric. For more information about using regular expressions to
-     * define metrics, see <a>hpo-define-metrics</a>.</p>
+     * define metrics, see <a>automatic-model-tuning-define-metrics</a>.</p>
      */
     inline MetricDefinition& WithRegex(const Aws::String& value) { SetRegex(value); return *this;}
 
     /**
      * <p>A regular expression that searches the output of a training job and gets the
      * value of the metric. For more information about using regular expressions to
-     * define metrics, see <a>hpo-define-metrics</a>.</p>
+     * define metrics, see <a>automatic-model-tuning-define-metrics</a>.</p>
      */
     inline MetricDefinition& WithRegex(Aws::String&& value) { SetRegex(std::move(value)); return *this;}
 
     /**
      * <p>A regular expression that searches the output of a training job and gets the
      * value of the metric. For more information about using regular expressions to
-     * define metrics, see <a>hpo-define-metrics</a>.</p>
+     * define metrics, see <a>automatic-model-tuning-define-metrics</a>.</p>
      */
     inline MetricDefinition& WithRegex(const char* value) { SetRegex(value); return *this;}
 

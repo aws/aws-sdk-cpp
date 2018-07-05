@@ -32,6 +32,7 @@ EndpointMessageResult::EndpointMessageResult() :
     m_addressHasBeenSet(false),
     m_deliveryStatus(DeliveryStatus::NOT_SET),
     m_deliveryStatusHasBeenSet(false),
+    m_messageIdHasBeenSet(false),
     m_statusCode(0),
     m_statusCodeHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
@@ -43,6 +44,7 @@ EndpointMessageResult::EndpointMessageResult(const JsonValue& jsonValue) :
     m_addressHasBeenSet(false),
     m_deliveryStatus(DeliveryStatus::NOT_SET),
     m_deliveryStatusHasBeenSet(false),
+    m_messageIdHasBeenSet(false),
     m_statusCode(0),
     m_statusCodeHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
@@ -65,6 +67,13 @@ EndpointMessageResult& EndpointMessageResult::operator =(const JsonValue& jsonVa
     m_deliveryStatus = DeliveryStatusMapper::GetDeliveryStatusForName(jsonValue.GetString("DeliveryStatus"));
 
     m_deliveryStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MessageId"))
+  {
+    m_messageId = jsonValue.GetString("MessageId");
+
+    m_messageIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("StatusCode"))
@@ -104,6 +113,12 @@ JsonValue EndpointMessageResult::Jsonize() const
   if(m_deliveryStatusHasBeenSet)
   {
    payload.WithString("DeliveryStatus", DeliveryStatusMapper::GetNameForDeliveryStatus(m_deliveryStatus));
+  }
+
+  if(m_messageIdHasBeenSet)
+  {
+   payload.WithString("MessageId", m_messageId);
+
   }
 
   if(m_statusCodeHasBeenSet)

@@ -99,17 +99,17 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of tuning jobs to return.</p>
+     * <p>The maximum number of tuning jobs to return. The default value is 10.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of tuning jobs to return.</p>
+     * <p>The maximum number of tuning jobs to return. The default value is 10.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of tuning jobs to return.</p>
+     * <p>The maximum number of tuning jobs to return. The default value is 10.</p>
      */
     inline ListHyperParameterTuningJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

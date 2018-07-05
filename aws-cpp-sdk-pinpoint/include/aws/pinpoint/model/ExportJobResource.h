@@ -32,6 +32,11 @@ namespace Pinpoint
 namespace Model
 {
 
+  /**
+   * Export job resource.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ExportJobResource">AWS
+   * API Reference</a></p>
+   */
   class AWS_PINPOINT_API ExportJobResource
   {
   public:
@@ -87,6 +92,7 @@ namespace Model
     /**
      * A URL that points to the location within an Amazon S3 bucket that will receive
      * the export. The location is typically a folder with multiple files.
+
 The URL
      * should follow this format: s3://bucket-name/folder-name/
 
@@ -98,6 +104,7 @@ Amazon Pinpoint will
     /**
      * A URL that points to the location within an Amazon S3 bucket that will receive
      * the export. The location is typically a folder with multiple files.
+
 The URL
      * should follow this format: s3://bucket-name/folder-name/
 
@@ -109,6 +116,7 @@ Amazon Pinpoint will
     /**
      * A URL that points to the location within an Amazon S3 bucket that will receive
      * the export. The location is typically a folder with multiple files.
+
 The URL
      * should follow this format: s3://bucket-name/folder-name/
 
@@ -120,6 +128,7 @@ Amazon Pinpoint will
     /**
      * A URL that points to the location within an Amazon S3 bucket that will receive
      * the export. The location is typically a folder with multiple files.
+
 The URL
      * should follow this format: s3://bucket-name/folder-name/
 
@@ -131,6 +140,7 @@ Amazon Pinpoint will
     /**
      * A URL that points to the location within an Amazon S3 bucket that will receive
      * the export. The location is typically a folder with multiple files.
+
 The URL
      * should follow this format: s3://bucket-name/folder-name/
 
@@ -142,6 +152,7 @@ Amazon Pinpoint will
     /**
      * A URL that points to the location within an Amazon S3 bucket that will receive
      * the export. The location is typically a folder with multiple files.
+
 The URL
      * should follow this format: s3://bucket-name/folder-name/
 
@@ -153,6 +164,7 @@ Amazon Pinpoint will
     /**
      * A URL that points to the location within an Amazon S3 bucket that will receive
      * the export. The location is typically a folder with multiple files.
+
 The URL
      * should follow this format: s3://bucket-name/folder-name/
 
@@ -163,46 +175,62 @@ Amazon Pinpoint will
 
 
     /**
-     * The ID of the segment to export endpoints from. If not present, all endpoints
-     * are exported.
+     * The ID of the segment to export endpoints from. If not present, Amazon Pinpoint
+     * exports all of the endpoints that belong to the application.
      */
     inline const Aws::String& GetSegmentId() const{ return m_segmentId; }
 
     /**
-     * The ID of the segment to export endpoints from. If not present, all endpoints
-     * are exported.
+     * The ID of the segment to export endpoints from. If not present, Amazon Pinpoint
+     * exports all of the endpoints that belong to the application.
      */
     inline void SetSegmentId(const Aws::String& value) { m_segmentIdHasBeenSet = true; m_segmentId = value; }
 
     /**
-     * The ID of the segment to export endpoints from. If not present, all endpoints
-     * are exported.
+     * The ID of the segment to export endpoints from. If not present, Amazon Pinpoint
+     * exports all of the endpoints that belong to the application.
      */
     inline void SetSegmentId(Aws::String&& value) { m_segmentIdHasBeenSet = true; m_segmentId = std::move(value); }
 
     /**
-     * The ID of the segment to export endpoints from. If not present, all endpoints
-     * are exported.
+     * The ID of the segment to export endpoints from. If not present, Amazon Pinpoint
+     * exports all of the endpoints that belong to the application.
      */
     inline void SetSegmentId(const char* value) { m_segmentIdHasBeenSet = true; m_segmentId.assign(value); }
 
     /**
-     * The ID of the segment to export endpoints from. If not present, all endpoints
-     * are exported.
+     * The ID of the segment to export endpoints from. If not present, Amazon Pinpoint
+     * exports all of the endpoints that belong to the application.
      */
     inline ExportJobResource& WithSegmentId(const Aws::String& value) { SetSegmentId(value); return *this;}
 
     /**
-     * The ID of the segment to export endpoints from. If not present, all endpoints
-     * are exported.
+     * The ID of the segment to export endpoints from. If not present, Amazon Pinpoint
+     * exports all of the endpoints that belong to the application.
      */
     inline ExportJobResource& WithSegmentId(Aws::String&& value) { SetSegmentId(std::move(value)); return *this;}
 
     /**
-     * The ID of the segment to export endpoints from. If not present, all endpoints
-     * are exported.
+     * The ID of the segment to export endpoints from. If not present, Amazon Pinpoint
+     * exports all of the endpoints that belong to the application.
      */
     inline ExportJobResource& WithSegmentId(const char* value) { SetSegmentId(value); return *this;}
+
+
+    /**
+     * The version of the segment to export if specified.
+     */
+    inline int GetSegmentVersion() const{ return m_segmentVersion; }
+
+    /**
+     * The version of the segment to export if specified.
+     */
+    inline void SetSegmentVersion(int value) { m_segmentVersionHasBeenSet = true; m_segmentVersion = value; }
+
+    /**
+     * The version of the segment to export if specified.
+     */
+    inline ExportJobResource& WithSegmentVersion(int value) { SetSegmentVersion(value); return *this;}
 
   private:
 
@@ -214,6 +242,9 @@ Amazon Pinpoint will
 
     Aws::String m_segmentId;
     bool m_segmentIdHasBeenSet;
+
+    int m_segmentVersion;
+    bool m_segmentVersionHasBeenSet;
   };
 
 } // namespace Model

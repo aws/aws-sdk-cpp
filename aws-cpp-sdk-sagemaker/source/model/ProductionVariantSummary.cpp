@@ -30,6 +30,7 @@ namespace Model
 
 ProductionVariantSummary::ProductionVariantSummary() : 
     m_variantNameHasBeenSet(false),
+    m_deployedImagesHasBeenSet(false),
     m_currentWeight(0.0),
     m_currentWeightHasBeenSet(false),
     m_desiredWeight(0.0),
@@ -43,6 +44,7 @@ ProductionVariantSummary::ProductionVariantSummary() :
 
 ProductionVariantSummary::ProductionVariantSummary(const JsonValue& jsonValue) : 
     m_variantNameHasBeenSet(false),
+    m_deployedImagesHasBeenSet(false),
     m_currentWeight(0.0),
     m_currentWeightHasBeenSet(false),
     m_desiredWeight(0.0),
@@ -62,6 +64,16 @@ ProductionVariantSummary& ProductionVariantSummary::operator =(const JsonValue& 
     m_variantName = jsonValue.GetString("VariantName");
 
     m_variantNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DeployedImages"))
+  {
+    Array<JsonValue> deployedImagesJsonList = jsonValue.GetArray("DeployedImages");
+    for(unsigned deployedImagesIndex = 0; deployedImagesIndex < deployedImagesJsonList.GetLength(); ++deployedImagesIndex)
+    {
+      m_deployedImages.push_back(deployedImagesJsonList[deployedImagesIndex].AsObject());
+    }
+    m_deployedImagesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CurrentWeight"))
@@ -102,6 +114,17 @@ JsonValue ProductionVariantSummary::Jsonize() const
   if(m_variantNameHasBeenSet)
   {
    payload.WithString("VariantName", m_variantName);
+
+  }
+
+  if(m_deployedImagesHasBeenSet)
+  {
+   Array<JsonValue> deployedImagesJsonList(m_deployedImages.size());
+   for(unsigned deployedImagesIndex = 0; deployedImagesIndex < deployedImagesJsonList.GetLength(); ++deployedImagesIndex)
+   {
+     deployedImagesJsonList[deployedImagesIndex].AsObject(m_deployedImages[deployedImagesIndex].Jsonize());
+   }
+   payload.WithArray("DeployedImages", std::move(deployedImagesJsonList));
 
   }
 

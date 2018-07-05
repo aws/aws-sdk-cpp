@@ -42,6 +42,8 @@ BaiduMessage::BaiduMessage() :
     m_smallImageIconUrlHasBeenSet(false),
     m_soundHasBeenSet(false),
     m_substitutionsHasBeenSet(false),
+    m_timeToLive(0),
+    m_timeToLiveHasBeenSet(false),
     m_titleHasBeenSet(false),
     m_urlHasBeenSet(false)
 {
@@ -61,6 +63,8 @@ BaiduMessage::BaiduMessage(const JsonValue& jsonValue) :
     m_smallImageIconUrlHasBeenSet(false),
     m_soundHasBeenSet(false),
     m_substitutionsHasBeenSet(false),
+    m_timeToLive(0),
+    m_timeToLiveHasBeenSet(false),
     m_titleHasBeenSet(false),
     m_urlHasBeenSet(false)
 {
@@ -157,6 +161,13 @@ BaiduMessage& BaiduMessage::operator =(const JsonValue& jsonValue)
       m_substitutions[substitutionsItem.first] = std::move(listOf__stringList);
     }
     m_substitutionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TimeToLive"))
+  {
+    m_timeToLive = jsonValue.GetInteger("TimeToLive");
+
+    m_timeToLiveHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Title"))
@@ -257,6 +268,12 @@ JsonValue BaiduMessage::Jsonize() const
      substitutionsJsonMap.WithArray(substitutionsItem.first, std::move(listOf__stringJsonList));
    }
    payload.WithObject("Substitutions", std::move(substitutionsJsonMap));
+
+  }
+
+  if(m_timeToLiveHasBeenSet)
+  {
+   payload.WithInteger("TimeToLive", m_timeToLive);
 
   }
 

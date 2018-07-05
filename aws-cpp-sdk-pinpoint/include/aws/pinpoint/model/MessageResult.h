@@ -74,6 +74,42 @@ namespace Model
 
 
     /**
+     * Unique message identifier associated with the message that was sent.
+     */
+    inline const Aws::String& GetMessageId() const{ return m_messageId; }
+
+    /**
+     * Unique message identifier associated with the message that was sent.
+     */
+    inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
+
+    /**
+     * Unique message identifier associated with the message that was sent.
+     */
+    inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = std::move(value); }
+
+    /**
+     * Unique message identifier associated with the message that was sent.
+     */
+    inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
+
+    /**
+     * Unique message identifier associated with the message that was sent.
+     */
+    inline MessageResult& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
+
+    /**
+     * Unique message identifier associated with the message that was sent.
+     */
+    inline MessageResult& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
+
+    /**
+     * Unique message identifier associated with the message that was sent.
+     */
+    inline MessageResult& WithMessageId(const char* value) { SetMessageId(value); return *this;}
+
+
+    /**
      * Downstream service status code.
      */
     inline int GetStatusCode() const{ return m_statusCode; }
@@ -164,6 +200,9 @@ namespace Model
 
     DeliveryStatus m_deliveryStatus;
     bool m_deliveryStatusHasBeenSet;
+
+    Aws::String m_messageId;
+    bool m_messageIdHasBeenSet;
 
     int m_statusCode;
     bool m_statusCodeHasBeenSet;

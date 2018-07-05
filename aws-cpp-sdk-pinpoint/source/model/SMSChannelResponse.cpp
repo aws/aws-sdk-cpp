@@ -41,8 +41,12 @@ SMSChannelResponse::SMSChannelResponse() :
     m_lastModifiedByHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
     m_platformHasBeenSet(false),
+    m_promotionalMessagesPerSecond(0),
+    m_promotionalMessagesPerSecondHasBeenSet(false),
     m_senderIdHasBeenSet(false),
     m_shortCodeHasBeenSet(false),
+    m_transactionalMessagesPerSecond(0),
+    m_transactionalMessagesPerSecondHasBeenSet(false),
     m_version(0),
     m_versionHasBeenSet(false)
 {
@@ -61,8 +65,12 @@ SMSChannelResponse::SMSChannelResponse(const JsonValue& jsonValue) :
     m_lastModifiedByHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
     m_platformHasBeenSet(false),
+    m_promotionalMessagesPerSecond(0),
+    m_promotionalMessagesPerSecondHasBeenSet(false),
     m_senderIdHasBeenSet(false),
     m_shortCodeHasBeenSet(false),
+    m_transactionalMessagesPerSecond(0),
+    m_transactionalMessagesPerSecondHasBeenSet(false),
     m_version(0),
     m_versionHasBeenSet(false)
 {
@@ -134,6 +142,13 @@ SMSChannelResponse& SMSChannelResponse::operator =(const JsonValue& jsonValue)
     m_platformHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PromotionalMessagesPerSecond"))
+  {
+    m_promotionalMessagesPerSecond = jsonValue.GetInteger("PromotionalMessagesPerSecond");
+
+    m_promotionalMessagesPerSecondHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("SenderId"))
   {
     m_senderId = jsonValue.GetString("SenderId");
@@ -146,6 +161,13 @@ SMSChannelResponse& SMSChannelResponse::operator =(const JsonValue& jsonValue)
     m_shortCode = jsonValue.GetString("ShortCode");
 
     m_shortCodeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TransactionalMessagesPerSecond"))
+  {
+    m_transactionalMessagesPerSecond = jsonValue.GetInteger("TransactionalMessagesPerSecond");
+
+    m_transactionalMessagesPerSecondHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Version"))
@@ -216,6 +238,12 @@ JsonValue SMSChannelResponse::Jsonize() const
 
   }
 
+  if(m_promotionalMessagesPerSecondHasBeenSet)
+  {
+   payload.WithInteger("PromotionalMessagesPerSecond", m_promotionalMessagesPerSecond);
+
+  }
+
   if(m_senderIdHasBeenSet)
   {
    payload.WithString("SenderId", m_senderId);
@@ -225,6 +253,12 @@ JsonValue SMSChannelResponse::Jsonize() const
   if(m_shortCodeHasBeenSet)
   {
    payload.WithString("ShortCode", m_shortCode);
+
+  }
+
+  if(m_transactionalMessagesPerSecondHasBeenSet)
+  {
+   payload.WithInteger("TransactionalMessagesPerSecond", m_transactionalMessagesPerSecond);
 
   }
 

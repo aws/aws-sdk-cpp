@@ -17,6 +17,7 @@
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
 #include <aws/pinpoint/model/SegmentDimensions.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pinpoint/model/SegmentGroupList.h>
 #include <utility>
 
 namespace Aws
@@ -108,6 +109,37 @@ namespace Model
      */
     inline WriteSegmentRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * Segment definition groups. We currently only support one. If specified
+     * Dimensions must be empty.
+     */
+    inline const SegmentGroupList& GetSegmentGroups() const{ return m_segmentGroups; }
+
+    /**
+     * Segment definition groups. We currently only support one. If specified
+     * Dimensions must be empty.
+     */
+    inline void SetSegmentGroups(const SegmentGroupList& value) { m_segmentGroupsHasBeenSet = true; m_segmentGroups = value; }
+
+    /**
+     * Segment definition groups. We currently only support one. If specified
+     * Dimensions must be empty.
+     */
+    inline void SetSegmentGroups(SegmentGroupList&& value) { m_segmentGroupsHasBeenSet = true; m_segmentGroups = std::move(value); }
+
+    /**
+     * Segment definition groups. We currently only support one. If specified
+     * Dimensions must be empty.
+     */
+    inline WriteSegmentRequest& WithSegmentGroups(const SegmentGroupList& value) { SetSegmentGroups(value); return *this;}
+
+    /**
+     * Segment definition groups. We currently only support one. If specified
+     * Dimensions must be empty.
+     */
+    inline WriteSegmentRequest& WithSegmentGroups(SegmentGroupList&& value) { SetSegmentGroups(std::move(value)); return *this;}
+
   private:
 
     SegmentDimensions m_dimensions;
@@ -115,6 +147,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    SegmentGroupList m_segmentGroups;
+    bool m_segmentGroupsHasBeenSet;
   };
 
 } // namespace Model

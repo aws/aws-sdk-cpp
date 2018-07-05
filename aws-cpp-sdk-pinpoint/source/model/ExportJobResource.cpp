@@ -31,14 +31,18 @@ namespace Model
 ExportJobResource::ExportJobResource() : 
     m_roleArnHasBeenSet(false),
     m_s3UrlPrefixHasBeenSet(false),
-    m_segmentIdHasBeenSet(false)
+    m_segmentIdHasBeenSet(false),
+    m_segmentVersion(0),
+    m_segmentVersionHasBeenSet(false)
 {
 }
 
 ExportJobResource::ExportJobResource(const JsonValue& jsonValue) : 
     m_roleArnHasBeenSet(false),
     m_s3UrlPrefixHasBeenSet(false),
-    m_segmentIdHasBeenSet(false)
+    m_segmentIdHasBeenSet(false),
+    m_segmentVersion(0),
+    m_segmentVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -66,6 +70,13 @@ ExportJobResource& ExportJobResource::operator =(const JsonValue& jsonValue)
     m_segmentIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SegmentVersion"))
+  {
+    m_segmentVersion = jsonValue.GetInteger("SegmentVersion");
+
+    m_segmentVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -88,6 +99,12 @@ JsonValue ExportJobResource::Jsonize() const
   if(m_segmentIdHasBeenSet)
   {
    payload.WithString("SegmentId", m_segmentId);
+
+  }
+
+  if(m_segmentVersionHasBeenSet)
+  {
+   payload.WithInteger("SegmentVersion", m_segmentVersion);
 
   }
 

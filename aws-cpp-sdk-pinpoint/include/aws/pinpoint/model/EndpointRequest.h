@@ -53,44 +53,65 @@ namespace Model
 
 
     /**
-     * The address or token of the endpoint as provided by your push provider (e.g.
-     * DeviceToken or RegistrationId).
+     * The destination for messages that you send to this endpoint. The address varies
+     * by channel. For mobile push channels, use the token provided by the push
+     * notification service, such as the APNs device token or the FCM registration
+     * token. For the SMS channel, use a phone number in E.164 format, such as
+     * +1206XXX5550100. For the email channel, use an email address.
      */
     inline const Aws::String& GetAddress() const{ return m_address; }
 
     /**
-     * The address or token of the endpoint as provided by your push provider (e.g.
-     * DeviceToken or RegistrationId).
+     * The destination for messages that you send to this endpoint. The address varies
+     * by channel. For mobile push channels, use the token provided by the push
+     * notification service, such as the APNs device token or the FCM registration
+     * token. For the SMS channel, use a phone number in E.164 format, such as
+     * +1206XXX5550100. For the email channel, use an email address.
      */
     inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
 
     /**
-     * The address or token of the endpoint as provided by your push provider (e.g.
-     * DeviceToken or RegistrationId).
+     * The destination for messages that you send to this endpoint. The address varies
+     * by channel. For mobile push channels, use the token provided by the push
+     * notification service, such as the APNs device token or the FCM registration
+     * token. For the SMS channel, use a phone number in E.164 format, such as
+     * +1206XXX5550100. For the email channel, use an email address.
      */
     inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
 
     /**
-     * The address or token of the endpoint as provided by your push provider (e.g.
-     * DeviceToken or RegistrationId).
+     * The destination for messages that you send to this endpoint. The address varies
+     * by channel. For mobile push channels, use the token provided by the push
+     * notification service, such as the APNs device token or the FCM registration
+     * token. For the SMS channel, use a phone number in E.164 format, such as
+     * +1206XXX5550100. For the email channel, use an email address.
      */
     inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
 
     /**
-     * The address or token of the endpoint as provided by your push provider (e.g.
-     * DeviceToken or RegistrationId).
+     * The destination for messages that you send to this endpoint. The address varies
+     * by channel. For mobile push channels, use the token provided by the push
+     * notification service, such as the APNs device token or the FCM registration
+     * token. For the SMS channel, use a phone number in E.164 format, such as
+     * +1206XXX5550100. For the email channel, use an email address.
      */
     inline EndpointRequest& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
 
     /**
-     * The address or token of the endpoint as provided by your push provider (e.g.
-     * DeviceToken or RegistrationId).
+     * The destination for messages that you send to this endpoint. The address varies
+     * by channel. For mobile push channels, use the token provided by the push
+     * notification service, such as the APNs device token or the FCM registration
+     * token. For the SMS channel, use a phone number in E.164 format, such as
+     * +1206XXX5550100. For the email channel, use an email address.
      */
     inline EndpointRequest& WithAddress(Aws::String&& value) { SetAddress(std::move(value)); return *this;}
 
     /**
-     * The address or token of the endpoint as provided by your push provider (e.g.
-     * DeviceToken or RegistrationId).
+     * The destination for messages that you send to this endpoint. The address varies
+     * by channel. For mobile push channels, use the token provided by the push
+     * notification service, such as the APNs device token or the FCM registration
+     * token. For the SMS channel, use a phone number in E.164 format, such as
+     * +1206XXX5550100. For the email channel, use an email address.
      */
     inline EndpointRequest& WithAddress(const char* value) { SetAddress(value); return *this;}
 
@@ -354,44 +375,37 @@ Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP |
 
 
     /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE
-     * if a delivery fails. Will be set to ACTIVE if the address is updated.
+     * Unused.
      */
     inline const Aws::String& GetEndpointStatus() const{ return m_endpointStatus; }
 
     /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE
-     * if a delivery fails. Will be set to ACTIVE if the address is updated.
+     * Unused.
      */
     inline void SetEndpointStatus(const Aws::String& value) { m_endpointStatusHasBeenSet = true; m_endpointStatus = value; }
 
     /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE
-     * if a delivery fails. Will be set to ACTIVE if the address is updated.
+     * Unused.
      */
     inline void SetEndpointStatus(Aws::String&& value) { m_endpointStatusHasBeenSet = true; m_endpointStatus = std::move(value); }
 
     /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE
-     * if a delivery fails. Will be set to ACTIVE if the address is updated.
+     * Unused.
      */
     inline void SetEndpointStatus(const char* value) { m_endpointStatusHasBeenSet = true; m_endpointStatus.assign(value); }
 
     /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE
-     * if a delivery fails. Will be set to ACTIVE if the address is updated.
+     * Unused.
      */
     inline EndpointRequest& WithEndpointStatus(const Aws::String& value) { SetEndpointStatus(value); return *this;}
 
     /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE
-     * if a delivery fails. Will be set to ACTIVE if the address is updated.
+     * Unused.
      */
     inline EndpointRequest& WithEndpointStatus(Aws::String&& value) { SetEndpointStatus(std::move(value)); return *this;}
 
     /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE
-     * if a delivery fails. Will be set to ACTIVE if the address is updated.
+     * Unused.
      */
     inline EndpointRequest& WithEndpointStatus(const char* value) { SetEndpointStatus(value); return *this;}
 

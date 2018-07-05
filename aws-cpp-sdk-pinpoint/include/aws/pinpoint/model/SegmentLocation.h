@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
 #include <aws/pinpoint/model/SetDimension.h>
+#include <aws/pinpoint/model/GPSPointDimension.h>
 #include <utility>
 
 namespace Aws
@@ -71,10 +72,39 @@ namespace Model
      */
     inline SegmentLocation& WithCountry(SetDimension&& value) { SetCountry(std::move(value)); return *this;}
 
+
+    /**
+     * The GPS Point dimension.
+     */
+    inline const GPSPointDimension& GetGPSPoint() const{ return m_gPSPoint; }
+
+    /**
+     * The GPS Point dimension.
+     */
+    inline void SetGPSPoint(const GPSPointDimension& value) { m_gPSPointHasBeenSet = true; m_gPSPoint = value; }
+
+    /**
+     * The GPS Point dimension.
+     */
+    inline void SetGPSPoint(GPSPointDimension&& value) { m_gPSPointHasBeenSet = true; m_gPSPoint = std::move(value); }
+
+    /**
+     * The GPS Point dimension.
+     */
+    inline SegmentLocation& WithGPSPoint(const GPSPointDimension& value) { SetGPSPoint(value); return *this;}
+
+    /**
+     * The GPS Point dimension.
+     */
+    inline SegmentLocation& WithGPSPoint(GPSPointDimension&& value) { SetGPSPoint(std::move(value)); return *this;}
+
   private:
 
     SetDimension m_country;
     bool m_countryHasBeenSet;
+
+    GPSPointDimension m_gPSPoint;
+    bool m_gPSPointHasBeenSet;
   };
 
 } // namespace Model

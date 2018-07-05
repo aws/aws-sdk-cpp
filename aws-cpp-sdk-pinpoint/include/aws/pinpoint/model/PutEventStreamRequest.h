@@ -44,64 +44,54 @@ namespace Model
 
 
     /**
-     * ApplicationId
+     * The unique ID of your Amazon Pinpoint application.
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * ApplicationId
+     * The unique ID of your Amazon Pinpoint application.
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * ApplicationId
+     * The unique ID of your Amazon Pinpoint application.
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * ApplicationId
+     * The unique ID of your Amazon Pinpoint application.
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * ApplicationId
+     * The unique ID of your Amazon Pinpoint application.
      */
     inline PutEventStreamRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * ApplicationId
+     * The unique ID of your Amazon Pinpoint application.
      */
     inline PutEventStreamRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * ApplicationId
+     * The unique ID of your Amazon Pinpoint application.
      */
     inline PutEventStreamRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
-    /**
-     * EventStream to write.
-     */
+    
     inline const WriteEventStream& GetWriteEventStream() const{ return m_writeEventStream; }
 
-    /**
-     * EventStream to write.
-     */
+    
     inline void SetWriteEventStream(const WriteEventStream& value) { m_writeEventStreamHasBeenSet = true; m_writeEventStream = value; }
 
-    /**
-     * EventStream to write.
-     */
+    
     inline void SetWriteEventStream(WriteEventStream&& value) { m_writeEventStreamHasBeenSet = true; m_writeEventStream = std::move(value); }
 
-    /**
-     * EventStream to write.
-     */
+    
     inline PutEventStreamRequest& WithWriteEventStream(const WriteEventStream& value) { SetWriteEventStream(value); return *this;}
 
-    /**
-     * EventStream to write.
-     */
+    
     inline PutEventStreamRequest& WithWriteEventStream(WriteEventStream&& value) { SetWriteEventStream(std::move(value)); return *this;}
 
   private:

@@ -579,32 +579,32 @@ namespace Model
 
 
     /**
-     * <p>A object that specifies the VPC that this training job has access to. For
-     * more information, see <a>train-vpc</a>.</p>
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
+     * access to. For more information, see <a>train-vpc</a>.</p>
      */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
 
     /**
-     * <p>A object that specifies the VPC that this training job has access to. For
-     * more information, see <a>train-vpc</a>.</p>
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
+     * access to. For more information, see <a>train-vpc</a>.</p>
      */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfig = value; }
 
     /**
-     * <p>A object that specifies the VPC that this training job has access to. For
-     * more information, see <a>train-vpc</a>.</p>
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
+     * access to. For more information, see <a>train-vpc</a>.</p>
      */
     inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfig = std::move(value); }
 
     /**
-     * <p>A object that specifies the VPC that this training job has access to. For
-     * more information, see <a>train-vpc</a>.</p>
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
+     * access to. For more information, see <a>train-vpc</a>.</p>
      */
     inline DescribeTrainingJobResult& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
 
     /**
-     * <p>A object that specifies the VPC that this training job has access to. For
-     * more information, see <a>train-vpc</a>.</p>
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
+     * access to. For more information, see <a>train-vpc</a>.</p>
      */
     inline DescribeTrainingJobResult& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 

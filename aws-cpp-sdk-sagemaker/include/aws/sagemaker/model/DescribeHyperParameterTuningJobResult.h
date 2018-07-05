@@ -122,58 +122,63 @@ namespace Model
 
 
     /**
-     * <p>The object that specifies the configuration of the tuning job.</p>
+     * <p>The <a>HyperParameterTuningJobConfig</a> object that specifies the
+     * configuration of the tuning job.</p>
      */
     inline const HyperParameterTuningJobConfig& GetHyperParameterTuningJobConfig() const{ return m_hyperParameterTuningJobConfig; }
 
     /**
-     * <p>The object that specifies the configuration of the tuning job.</p>
+     * <p>The <a>HyperParameterTuningJobConfig</a> object that specifies the
+     * configuration of the tuning job.</p>
      */
     inline void SetHyperParameterTuningJobConfig(const HyperParameterTuningJobConfig& value) { m_hyperParameterTuningJobConfig = value; }
 
     /**
-     * <p>The object that specifies the configuration of the tuning job.</p>
+     * <p>The <a>HyperParameterTuningJobConfig</a> object that specifies the
+     * configuration of the tuning job.</p>
      */
     inline void SetHyperParameterTuningJobConfig(HyperParameterTuningJobConfig&& value) { m_hyperParameterTuningJobConfig = std::move(value); }
 
     /**
-     * <p>The object that specifies the configuration of the tuning job.</p>
+     * <p>The <a>HyperParameterTuningJobConfig</a> object that specifies the
+     * configuration of the tuning job.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithHyperParameterTuningJobConfig(const HyperParameterTuningJobConfig& value) { SetHyperParameterTuningJobConfig(value); return *this;}
 
     /**
-     * <p>The object that specifies the configuration of the tuning job.</p>
+     * <p>The <a>HyperParameterTuningJobConfig</a> object that specifies the
+     * configuration of the tuning job.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithHyperParameterTuningJobConfig(HyperParameterTuningJobConfig&& value) { SetHyperParameterTuningJobConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>The object that specifies the definition of the training jobs that this
-     * tuning job launches.</p>
+     * <p>The <a>HyperParameterTrainingJobDefinition</a> object that specifies the
+     * definition of the training jobs that this tuning job launches.</p>
      */
     inline const HyperParameterTrainingJobDefinition& GetTrainingJobDefinition() const{ return m_trainingJobDefinition; }
 
     /**
-     * <p>The object that specifies the definition of the training jobs that this
-     * tuning job launches.</p>
+     * <p>The <a>HyperParameterTrainingJobDefinition</a> object that specifies the
+     * definition of the training jobs that this tuning job launches.</p>
      */
     inline void SetTrainingJobDefinition(const HyperParameterTrainingJobDefinition& value) { m_trainingJobDefinition = value; }
 
     /**
-     * <p>The object that specifies the definition of the training jobs that this
-     * tuning job launches.</p>
+     * <p>The <a>HyperParameterTrainingJobDefinition</a> object that specifies the
+     * definition of the training jobs that this tuning job launches.</p>
      */
     inline void SetTrainingJobDefinition(HyperParameterTrainingJobDefinition&& value) { m_trainingJobDefinition = std::move(value); }
 
     /**
-     * <p>The object that specifies the definition of the training jobs that this
-     * tuning job launches.</p>
+     * <p>The <a>HyperParameterTrainingJobDefinition</a> object that specifies the
+     * definition of the training jobs that this tuning job launches.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithTrainingJobDefinition(const HyperParameterTrainingJobDefinition& value) { SetTrainingJobDefinition(value); return *this;}
 
     /**
-     * <p>The object that specifies the definition of the training jobs that this
-     * tuning job launches.</p>
+     * <p>The <a>HyperParameterTrainingJobDefinition</a> object that specifies the
+     * definition of the training jobs that this tuning job launches.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithTrainingJobDefinition(HyperParameterTrainingJobDefinition&& value) { SetTrainingJobDefinition(std::move(value)); return *this;}
 
@@ -288,94 +293,99 @@ namespace Model
 
 
     /**
-     * <p>The object that specifies the number of training jobs, categorized by status,
-     * that this tuning job launched.</p>
+     * <p>The <a>TrainingJobStatusCounters</a> object that specifies the number of
+     * training jobs, categorized by status, that this tuning job launched.</p>
      */
     inline const TrainingJobStatusCounters& GetTrainingJobStatusCounters() const{ return m_trainingJobStatusCounters; }
 
     /**
-     * <p>The object that specifies the number of training jobs, categorized by status,
-     * that this tuning job launched.</p>
+     * <p>The <a>TrainingJobStatusCounters</a> object that specifies the number of
+     * training jobs, categorized by status, that this tuning job launched.</p>
      */
     inline void SetTrainingJobStatusCounters(const TrainingJobStatusCounters& value) { m_trainingJobStatusCounters = value; }
 
     /**
-     * <p>The object that specifies the number of training jobs, categorized by status,
-     * that this tuning job launched.</p>
+     * <p>The <a>TrainingJobStatusCounters</a> object that specifies the number of
+     * training jobs, categorized by status, that this tuning job launched.</p>
      */
     inline void SetTrainingJobStatusCounters(TrainingJobStatusCounters&& value) { m_trainingJobStatusCounters = std::move(value); }
 
     /**
-     * <p>The object that specifies the number of training jobs, categorized by status,
-     * that this tuning job launched.</p>
+     * <p>The <a>TrainingJobStatusCounters</a> object that specifies the number of
+     * training jobs, categorized by status, that this tuning job launched.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithTrainingJobStatusCounters(const TrainingJobStatusCounters& value) { SetTrainingJobStatusCounters(value); return *this;}
 
     /**
-     * <p>The object that specifies the number of training jobs, categorized by status,
-     * that this tuning job launched.</p>
+     * <p>The <a>TrainingJobStatusCounters</a> object that specifies the number of
+     * training jobs, categorized by status, that this tuning job launched.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithTrainingJobStatusCounters(TrainingJobStatusCounters&& value) { SetTrainingJobStatusCounters(std::move(value)); return *this;}
 
 
     /**
-     * <p>The object that specifies the number of training jobs, categorized by the
-     * status of their final objective metric, that this tuning job launched.</p>
+     * <p>The <a>ObjectiveStatusCounters</a> object that specifies the number of
+     * training jobs, categorized by the status of their final objective metric, that
+     * this tuning job launched.</p>
      */
     inline const ObjectiveStatusCounters& GetObjectiveStatusCounters() const{ return m_objectiveStatusCounters; }
 
     /**
-     * <p>The object that specifies the number of training jobs, categorized by the
-     * status of their final objective metric, that this tuning job launched.</p>
+     * <p>The <a>ObjectiveStatusCounters</a> object that specifies the number of
+     * training jobs, categorized by the status of their final objective metric, that
+     * this tuning job launched.</p>
      */
     inline void SetObjectiveStatusCounters(const ObjectiveStatusCounters& value) { m_objectiveStatusCounters = value; }
 
     /**
-     * <p>The object that specifies the number of training jobs, categorized by the
-     * status of their final objective metric, that this tuning job launched.</p>
+     * <p>The <a>ObjectiveStatusCounters</a> object that specifies the number of
+     * training jobs, categorized by the status of their final objective metric, that
+     * this tuning job launched.</p>
      */
     inline void SetObjectiveStatusCounters(ObjectiveStatusCounters&& value) { m_objectiveStatusCounters = std::move(value); }
 
     /**
-     * <p>The object that specifies the number of training jobs, categorized by the
-     * status of their final objective metric, that this tuning job launched.</p>
+     * <p>The <a>ObjectiveStatusCounters</a> object that specifies the number of
+     * training jobs, categorized by the status of their final objective metric, that
+     * this tuning job launched.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithObjectiveStatusCounters(const ObjectiveStatusCounters& value) { SetObjectiveStatusCounters(value); return *this;}
 
     /**
-     * <p>The object that specifies the number of training jobs, categorized by the
-     * status of their final objective metric, that this tuning job launched.</p>
+     * <p>The <a>ObjectiveStatusCounters</a> object that specifies the number of
+     * training jobs, categorized by the status of their final objective metric, that
+     * this tuning job launched.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithObjectiveStatusCounters(ObjectiveStatusCounters&& value) { SetObjectiveStatusCounters(std::move(value)); return *this;}
 
 
     /**
-     * <p>A object that describes the training job that completed with the best current
-     * .</p>
+     * <p>A <a>TrainingJobSummary</a> object that describes the training job that
+     * completed with the best current <a>HyperParameterTuningJobObjective</a>.</p>
      */
     inline const HyperParameterTrainingJobSummary& GetBestTrainingJob() const{ return m_bestTrainingJob; }
 
     /**
-     * <p>A object that describes the training job that completed with the best current
-     * .</p>
+     * <p>A <a>TrainingJobSummary</a> object that describes the training job that
+     * completed with the best current <a>HyperParameterTuningJobObjective</a>.</p>
      */
     inline void SetBestTrainingJob(const HyperParameterTrainingJobSummary& value) { m_bestTrainingJob = value; }
 
     /**
-     * <p>A object that describes the training job that completed with the best current
-     * .</p>
+     * <p>A <a>TrainingJobSummary</a> object that describes the training job that
+     * completed with the best current <a>HyperParameterTuningJobObjective</a>.</p>
      */
     inline void SetBestTrainingJob(HyperParameterTrainingJobSummary&& value) { m_bestTrainingJob = std::move(value); }
 
     /**
-     * <p>A object that describes the training job that completed with the best current
-     * .</p>
+     * <p>A <a>TrainingJobSummary</a> object that describes the training job that
+     * completed with the best current <a>HyperParameterTuningJobObjective</a>.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithBestTrainingJob(const HyperParameterTrainingJobSummary& value) { SetBestTrainingJob(value); return *this;}
 
     /**
-     * <p>A object that describes the training job that completed with the best current
-     * .</p>
+     * <p>A <a>TrainingJobSummary</a> object that describes the training job that
+     * completed with the best current <a>HyperParameterTuningJobObjective</a>.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithBestTrainingJob(HyperParameterTrainingJobSummary&& value) { SetBestTrainingJob(std::move(value)); return *this;}
 

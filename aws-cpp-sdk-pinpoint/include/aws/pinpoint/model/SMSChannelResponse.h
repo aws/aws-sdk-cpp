@@ -135,17 +135,17 @@ namespace Model
 
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Not used. Retained for backwards compatibility.
      */
     inline bool GetHasCredential() const{ return m_hasCredential; }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Not used. Retained for backwards compatibility.
      */
     inline void SetHasCredential(bool value) { m_hasCredentialHasBeenSet = true; m_hasCredential = value; }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Not used. Retained for backwards compatibility.
      */
     inline SMSChannelResponse& WithHasCredential(bool value) { SetHasCredential(value); return *this;}
 
@@ -311,6 +311,22 @@ namespace Model
 
 
     /**
+     * Promotional messages per second that can be sent
+     */
+    inline int GetPromotionalMessagesPerSecond() const{ return m_promotionalMessagesPerSecond; }
+
+    /**
+     * Promotional messages per second that can be sent
+     */
+    inline void SetPromotionalMessagesPerSecond(int value) { m_promotionalMessagesPerSecondHasBeenSet = true; m_promotionalMessagesPerSecond = value; }
+
+    /**
+     * Promotional messages per second that can be sent
+     */
+    inline SMSChannelResponse& WithPromotionalMessagesPerSecond(int value) { SetPromotionalMessagesPerSecond(value); return *this;}
+
+
+    /**
      * Sender identifier of your messages.
      */
     inline const Aws::String& GetSenderId() const{ return m_senderId; }
@@ -383,6 +399,22 @@ namespace Model
 
 
     /**
+     * Transactional messages per second that can be sent
+     */
+    inline int GetTransactionalMessagesPerSecond() const{ return m_transactionalMessagesPerSecond; }
+
+    /**
+     * Transactional messages per second that can be sent
+     */
+    inline void SetTransactionalMessagesPerSecond(int value) { m_transactionalMessagesPerSecondHasBeenSet = true; m_transactionalMessagesPerSecond = value; }
+
+    /**
+     * Transactional messages per second that can be sent
+     */
+    inline SMSChannelResponse& WithTransactionalMessagesPerSecond(int value) { SetTransactionalMessagesPerSecond(value); return *this;}
+
+
+    /**
      * Version of channel
      */
     inline int GetVersion() const{ return m_version; }
@@ -426,11 +458,17 @@ namespace Model
     Aws::String m_platform;
     bool m_platformHasBeenSet;
 
+    int m_promotionalMessagesPerSecond;
+    bool m_promotionalMessagesPerSecondHasBeenSet;
+
     Aws::String m_senderId;
     bool m_senderIdHasBeenSet;
 
     Aws::String m_shortCode;
     bool m_shortCodeHasBeenSet;
+
+    int m_transactionalMessagesPerSecond;
+    bool m_transactionalMessagesPerSecondHasBeenSet;
 
     int m_version;
     bool m_versionHasBeenSet;

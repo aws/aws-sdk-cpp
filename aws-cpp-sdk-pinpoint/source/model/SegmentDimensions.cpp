@@ -33,6 +33,7 @@ SegmentDimensions::SegmentDimensions() :
     m_behaviorHasBeenSet(false),
     m_demographicHasBeenSet(false),
     m_locationHasBeenSet(false),
+    m_metricsHasBeenSet(false),
     m_userAttributesHasBeenSet(false)
 {
 }
@@ -42,6 +43,7 @@ SegmentDimensions::SegmentDimensions(const JsonValue& jsonValue) :
     m_behaviorHasBeenSet(false),
     m_demographicHasBeenSet(false),
     m_locationHasBeenSet(false),
+    m_metricsHasBeenSet(false),
     m_userAttributesHasBeenSet(false)
 {
   *this = jsonValue;
@@ -78,6 +80,16 @@ SegmentDimensions& SegmentDimensions::operator =(const JsonValue& jsonValue)
     m_location = jsonValue.GetObject("Location");
 
     m_locationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Metrics"))
+  {
+    Aws::Map<Aws::String, JsonValue> metricsJsonMap = jsonValue.GetObject("Metrics").GetAllObjects();
+    for(auto& metricsItem : metricsJsonMap)
+    {
+      m_metrics[metricsItem.first] = metricsItem.second.AsObject();
+    }
+    m_metricsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("UserAttributes"))
@@ -123,6 +135,17 @@ JsonValue SegmentDimensions::Jsonize() const
   if(m_locationHasBeenSet)
   {
    payload.WithObject("Location", m_location.Jsonize());
+
+  }
+
+  if(m_metricsHasBeenSet)
+  {
+   JsonValue metricsJsonMap;
+   for(auto& metricsItem : m_metrics)
+   {
+     metricsJsonMap.WithObject(metricsItem.first, metricsItem.second.Jsonize());
+   }
+   payload.WithObject("Metrics", std::move(metricsJsonMap));
 
   }
 

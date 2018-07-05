@@ -16,6 +16,8 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/DeployedImage.h>
 #include <utility>
 
 namespace Aws
@@ -84,6 +86,56 @@ namespace Model
      * <p>The name of the variant.</p>
      */
     inline ProductionVariantSummary& WithVariantName(const char* value) { SetVariantName(value); return *this;}
+
+
+    /**
+     * <p>An array of <code>DeployedImage</code> objects that specify the Amazon EC2
+     * Container Registry paths of the inference images deployed on instances of this
+     * <code>ProductionVariant</code>.</p>
+     */
+    inline const Aws::Vector<DeployedImage>& GetDeployedImages() const{ return m_deployedImages; }
+
+    /**
+     * <p>An array of <code>DeployedImage</code> objects that specify the Amazon EC2
+     * Container Registry paths of the inference images deployed on instances of this
+     * <code>ProductionVariant</code>.</p>
+     */
+    inline void SetDeployedImages(const Aws::Vector<DeployedImage>& value) { m_deployedImagesHasBeenSet = true; m_deployedImages = value; }
+
+    /**
+     * <p>An array of <code>DeployedImage</code> objects that specify the Amazon EC2
+     * Container Registry paths of the inference images deployed on instances of this
+     * <code>ProductionVariant</code>.</p>
+     */
+    inline void SetDeployedImages(Aws::Vector<DeployedImage>&& value) { m_deployedImagesHasBeenSet = true; m_deployedImages = std::move(value); }
+
+    /**
+     * <p>An array of <code>DeployedImage</code> objects that specify the Amazon EC2
+     * Container Registry paths of the inference images deployed on instances of this
+     * <code>ProductionVariant</code>.</p>
+     */
+    inline ProductionVariantSummary& WithDeployedImages(const Aws::Vector<DeployedImage>& value) { SetDeployedImages(value); return *this;}
+
+    /**
+     * <p>An array of <code>DeployedImage</code> objects that specify the Amazon EC2
+     * Container Registry paths of the inference images deployed on instances of this
+     * <code>ProductionVariant</code>.</p>
+     */
+    inline ProductionVariantSummary& WithDeployedImages(Aws::Vector<DeployedImage>&& value) { SetDeployedImages(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of <code>DeployedImage</code> objects that specify the Amazon EC2
+     * Container Registry paths of the inference images deployed on instances of this
+     * <code>ProductionVariant</code>.</p>
+     */
+    inline ProductionVariantSummary& AddDeployedImages(const DeployedImage& value) { m_deployedImagesHasBeenSet = true; m_deployedImages.push_back(value); return *this; }
+
+    /**
+     * <p>An array of <code>DeployedImage</code> objects that specify the Amazon EC2
+     * Container Registry paths of the inference images deployed on instances of this
+     * <code>ProductionVariant</code>.</p>
+     */
+    inline ProductionVariantSummary& AddDeployedImages(DeployedImage&& value) { m_deployedImagesHasBeenSet = true; m_deployedImages.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -159,6 +211,9 @@ namespace Model
 
     Aws::String m_variantName;
     bool m_variantNameHasBeenSet;
+
+    Aws::Vector<DeployedImage> m_deployedImages;
+    bool m_deployedImagesHasBeenSet;
 
     double m_currentWeight;
     bool m_currentWeightHasBeenSet;

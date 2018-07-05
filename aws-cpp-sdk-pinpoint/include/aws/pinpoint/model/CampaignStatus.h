@@ -30,7 +30,8 @@ namespace Model
     EXECUTING,
     PENDING_NEXT_RUN,
     COMPLETED,
-    PAUSED
+    PAUSED,
+    DELETED
   };
 
 namespace CampaignStatusMapper

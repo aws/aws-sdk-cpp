@@ -290,68 +290,73 @@ namespace Model
 
 
     /**
-     * <p>The reason that the </p>
+     * <p>The reason that the training job failed. </p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
 
     /**
-     * <p>The reason that the </p>
+     * <p>The reason that the training job failed. </p>
      */
     inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
 
     /**
-     * <p>The reason that the </p>
+     * <p>The reason that the training job failed. </p>
      */
     inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
 
     /**
-     * <p>The reason that the </p>
+     * <p>The reason that the training job failed. </p>
      */
     inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
 
     /**
-     * <p>The reason that the </p>
+     * <p>The reason that the training job failed. </p>
      */
     inline HyperParameterTrainingJobSummary& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
 
     /**
-     * <p>The reason that the </p>
+     * <p>The reason that the training job failed. </p>
      */
     inline HyperParameterTrainingJobSummary& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
 
     /**
-     * <p>The reason that the </p>
+     * <p>The reason that the training job failed. </p>
      */
     inline HyperParameterTrainingJobSummary& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 
 
     /**
-     * <p>The object that specifies the value of the objective metric of the tuning job
-     * that launched this training job.</p>
+     * <p>The <a>FinalHyperParameterTuningJobObjectiveMetric</a> object that specifies
+     * the value of the objective metric of the tuning job that launched this training
+     * job.</p>
      */
     inline const FinalHyperParameterTuningJobObjectiveMetric& GetFinalHyperParameterTuningJobObjectiveMetric() const{ return m_finalHyperParameterTuningJobObjectiveMetric; }
 
     /**
-     * <p>The object that specifies the value of the objective metric of the tuning job
-     * that launched this training job.</p>
+     * <p>The <a>FinalHyperParameterTuningJobObjectiveMetric</a> object that specifies
+     * the value of the objective metric of the tuning job that launched this training
+     * job.</p>
      */
     inline void SetFinalHyperParameterTuningJobObjectiveMetric(const FinalHyperParameterTuningJobObjectiveMetric& value) { m_finalHyperParameterTuningJobObjectiveMetricHasBeenSet = true; m_finalHyperParameterTuningJobObjectiveMetric = value; }
 
     /**
-     * <p>The object that specifies the value of the objective metric of the tuning job
-     * that launched this training job.</p>
+     * <p>The <a>FinalHyperParameterTuningJobObjectiveMetric</a> object that specifies
+     * the value of the objective metric of the tuning job that launched this training
+     * job.</p>
      */
     inline void SetFinalHyperParameterTuningJobObjectiveMetric(FinalHyperParameterTuningJobObjectiveMetric&& value) { m_finalHyperParameterTuningJobObjectiveMetricHasBeenSet = true; m_finalHyperParameterTuningJobObjectiveMetric = std::move(value); }
 
     /**
-     * <p>The object that specifies the value of the objective metric of the tuning job
-     * that launched this training job.</p>
+     * <p>The <a>FinalHyperParameterTuningJobObjectiveMetric</a> object that specifies
+     * the value of the objective metric of the tuning job that launched this training
+     * job.</p>
      */
     inline HyperParameterTrainingJobSummary& WithFinalHyperParameterTuningJobObjectiveMetric(const FinalHyperParameterTuningJobObjectiveMetric& value) { SetFinalHyperParameterTuningJobObjectiveMetric(value); return *this;}
 
     /**
-     * <p>The object that specifies the value of the objective metric of the tuning job
-     * that launched this training job.</p>
+     * <p>The <a>FinalHyperParameterTuningJobObjectiveMetric</a> object that specifies
+     * the value of the objective metric of the tuning job that launched this training
+     * job.</p>
      */
     inline HyperParameterTrainingJobSummary& WithFinalHyperParameterTuningJobObjectiveMetric(FinalHyperParameterTuningJobObjectiveMetric&& value) { SetFinalHyperParameterTuningJobObjectiveMetric(std::move(value)); return *this;}
 

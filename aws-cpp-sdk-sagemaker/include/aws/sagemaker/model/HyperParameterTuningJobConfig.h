@@ -81,89 +81,94 @@ namespace Model
 
 
     /**
-     * <p>The object that specifies the objective metric for this tuning job.</p>
+     * <p>The <a>HyperParameterTuningJobObjective</a> object that specifies the
+     * objective metric for this tuning job.</p>
      */
     inline const HyperParameterTuningJobObjective& GetHyperParameterTuningJobObjective() const{ return m_hyperParameterTuningJobObjective; }
 
     /**
-     * <p>The object that specifies the objective metric for this tuning job.</p>
+     * <p>The <a>HyperParameterTuningJobObjective</a> object that specifies the
+     * objective metric for this tuning job.</p>
      */
     inline void SetHyperParameterTuningJobObjective(const HyperParameterTuningJobObjective& value) { m_hyperParameterTuningJobObjectiveHasBeenSet = true; m_hyperParameterTuningJobObjective = value; }
 
     /**
-     * <p>The object that specifies the objective metric for this tuning job.</p>
+     * <p>The <a>HyperParameterTuningJobObjective</a> object that specifies the
+     * objective metric for this tuning job.</p>
      */
     inline void SetHyperParameterTuningJobObjective(HyperParameterTuningJobObjective&& value) { m_hyperParameterTuningJobObjectiveHasBeenSet = true; m_hyperParameterTuningJobObjective = std::move(value); }
 
     /**
-     * <p>The object that specifies the objective metric for this tuning job.</p>
+     * <p>The <a>HyperParameterTuningJobObjective</a> object that specifies the
+     * objective metric for this tuning job.</p>
      */
     inline HyperParameterTuningJobConfig& WithHyperParameterTuningJobObjective(const HyperParameterTuningJobObjective& value) { SetHyperParameterTuningJobObjective(value); return *this;}
 
     /**
-     * <p>The object that specifies the objective metric for this tuning job.</p>
+     * <p>The <a>HyperParameterTuningJobObjective</a> object that specifies the
+     * objective metric for this tuning job.</p>
      */
     inline HyperParameterTuningJobConfig& WithHyperParameterTuningJobObjective(HyperParameterTuningJobObjective&& value) { SetHyperParameterTuningJobObjective(std::move(value)); return *this;}
 
 
     /**
-     * <p>The object that specifies the maximum number of training jobs and parallel
-     * training jobs for this tuning job.</p>
+     * <p>The <a>ResourceLimits</a> object that specifies the maximum number of
+     * training jobs and parallel training jobs for this tuning job.</p>
      */
     inline const ResourceLimits& GetResourceLimits() const{ return m_resourceLimits; }
 
     /**
-     * <p>The object that specifies the maximum number of training jobs and parallel
-     * training jobs for this tuning job.</p>
+     * <p>The <a>ResourceLimits</a> object that specifies the maximum number of
+     * training jobs and parallel training jobs for this tuning job.</p>
      */
     inline void SetResourceLimits(const ResourceLimits& value) { m_resourceLimitsHasBeenSet = true; m_resourceLimits = value; }
 
     /**
-     * <p>The object that specifies the maximum number of training jobs and parallel
-     * training jobs for this tuning job.</p>
+     * <p>The <a>ResourceLimits</a> object that specifies the maximum number of
+     * training jobs and parallel training jobs for this tuning job.</p>
      */
     inline void SetResourceLimits(ResourceLimits&& value) { m_resourceLimitsHasBeenSet = true; m_resourceLimits = std::move(value); }
 
     /**
-     * <p>The object that specifies the maximum number of training jobs and parallel
-     * training jobs for this tuning job.</p>
+     * <p>The <a>ResourceLimits</a> object that specifies the maximum number of
+     * training jobs and parallel training jobs for this tuning job.</p>
      */
     inline HyperParameterTuningJobConfig& WithResourceLimits(const ResourceLimits& value) { SetResourceLimits(value); return *this;}
 
     /**
-     * <p>The object that specifies the maximum number of training jobs and parallel
-     * training jobs for this tuning job.</p>
+     * <p>The <a>ResourceLimits</a> object that specifies the maximum number of
+     * training jobs and parallel training jobs for this tuning job.</p>
      */
     inline HyperParameterTuningJobConfig& WithResourceLimits(ResourceLimits&& value) { SetResourceLimits(std::move(value)); return *this;}
 
 
     /**
-     * <p>The object that specifies the ranges of hyperparameters that this tuning job
-     * searches.</p>
+     * <p>The <a>ParameterRanges</a> object that specifies the ranges of
+     * hyperparameters that this tuning job searches.</p>
      */
     inline const ParameterRanges& GetParameterRanges() const{ return m_parameterRanges; }
 
     /**
-     * <p>The object that specifies the ranges of hyperparameters that this tuning job
-     * searches.</p>
+     * <p>The <a>ParameterRanges</a> object that specifies the ranges of
+     * hyperparameters that this tuning job searches.</p>
      */
     inline void SetParameterRanges(const ParameterRanges& value) { m_parameterRangesHasBeenSet = true; m_parameterRanges = value; }
 
     /**
-     * <p>The object that specifies the ranges of hyperparameters that this tuning job
-     * searches.</p>
+     * <p>The <a>ParameterRanges</a> object that specifies the ranges of
+     * hyperparameters that this tuning job searches.</p>
      */
     inline void SetParameterRanges(ParameterRanges&& value) { m_parameterRangesHasBeenSet = true; m_parameterRanges = std::move(value); }
 
     /**
-     * <p>The object that specifies the ranges of hyperparameters that this tuning job
-     * searches.</p>
+     * <p>The <a>ParameterRanges</a> object that specifies the ranges of
+     * hyperparameters that this tuning job searches.</p>
      */
     inline HyperParameterTuningJobConfig& WithParameterRanges(const ParameterRanges& value) { SetParameterRanges(value); return *this;}
 
     /**
-     * <p>The object that specifies the ranges of hyperparameters that this tuning job
-     * searches.</p>
+     * <p>The <a>ParameterRanges</a> object that specifies the ranges of
+     * hyperparameters that this tuning job searches.</p>
      */
     inline HyperParameterTuningJobConfig& WithParameterRanges(ParameterRanges&& value) { SetParameterRanges(std::move(value)); return *this;}
 

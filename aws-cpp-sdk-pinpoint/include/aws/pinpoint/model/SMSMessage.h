@@ -50,39 +50,82 @@ namespace Model
 
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The body of the SMS message.
      */
     inline const Aws::String& GetBody() const{ return m_body; }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The body of the SMS message.
      */
     inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The body of the SMS message.
      */
     inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The body of the SMS message.
      */
     inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The body of the SMS message.
      */
     inline SMSMessage& WithBody(const Aws::String& value) { SetBody(value); return *this;}
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The body of the SMS message.
      */
     inline SMSMessage& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The body of the SMS message.
      */
     inline SMSMessage& WithBody(const char* value) { SetBody(value); return *this;}
+
+
+    /**
+     * The SMS program name that you provided to AWS Support when you requested your
+     * dedicated number.
+     */
+    inline const Aws::String& GetKeyword() const{ return m_keyword; }
+
+    /**
+     * The SMS program name that you provided to AWS Support when you requested your
+     * dedicated number.
+     */
+    inline void SetKeyword(const Aws::String& value) { m_keywordHasBeenSet = true; m_keyword = value; }
+
+    /**
+     * The SMS program name that you provided to AWS Support when you requested your
+     * dedicated number.
+     */
+    inline void SetKeyword(Aws::String&& value) { m_keywordHasBeenSet = true; m_keyword = std::move(value); }
+
+    /**
+     * The SMS program name that you provided to AWS Support when you requested your
+     * dedicated number.
+     */
+    inline void SetKeyword(const char* value) { m_keywordHasBeenSet = true; m_keyword.assign(value); }
+
+    /**
+     * The SMS program name that you provided to AWS Support when you requested your
+     * dedicated number.
+     */
+    inline SMSMessage& WithKeyword(const Aws::String& value) { SetKeyword(value); return *this;}
+
+    /**
+     * The SMS program name that you provided to AWS Support when you requested your
+     * dedicated number.
+     */
+    inline SMSMessage& WithKeyword(Aws::String&& value) { SetKeyword(std::move(value)); return *this;}
+
+    /**
+     * The SMS program name that you provided to AWS Support when you requested your
+     * dedicated number.
+     */
+    inline SMSMessage& WithKeyword(const char* value) { SetKeyword(value); return *this;}
 
 
     /**
@@ -281,6 +324,9 @@ namespace Model
 
     Aws::String m_body;
     bool m_bodyHasBeenSet;
+
+    Aws::String m_keyword;
+    bool m_keywordHasBeenSet;
 
     MessageType m_messageType;
     bool m_messageTypeHasBeenSet;

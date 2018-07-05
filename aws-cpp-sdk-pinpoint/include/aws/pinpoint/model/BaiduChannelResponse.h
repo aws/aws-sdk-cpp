@@ -171,26 +171,17 @@ namespace Model
 
 
     /**
-     * Indicates whether the channel is configured with Baidu Cloud Push credentials.
-     * Amazon Pinpoint uses your credentials to authenticate push notifications with
-     * Baidu Cloud Push. Provide your credentials by setting the ApiKey and SecretKey
-     * attributes.
+     * Not used. Retained for backwards compatibility.
      */
     inline bool GetHasCredential() const{ return m_hasCredential; }
 
     /**
-     * Indicates whether the channel is configured with Baidu Cloud Push credentials.
-     * Amazon Pinpoint uses your credentials to authenticate push notifications with
-     * Baidu Cloud Push. Provide your credentials by setting the ApiKey and SecretKey
-     * attributes.
+     * Not used. Retained for backwards compatibility.
      */
     inline void SetHasCredential(bool value) { m_hasCredentialHasBeenSet = true; m_hasCredential = value; }
 
     /**
-     * Indicates whether the channel is configured with Baidu Cloud Push credentials.
-     * Amazon Pinpoint uses your credentials to authenticate push notifications with
-     * Baidu Cloud Push. Provide your credentials by setting the ApiKey and SecretKey
-     * attributes.
+     * Not used. Retained for backwards compatibility.
      */
     inline BaiduChannelResponse& WithHasCredential(bool value) { SetHasCredential(value); return *this;}
 

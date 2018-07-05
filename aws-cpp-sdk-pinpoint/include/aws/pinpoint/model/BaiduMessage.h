@@ -559,6 +559,28 @@ namespace Model
 
 
     /**
+     * This parameter specifies how long (in seconds) the message should be kept in
+     * Baidu storage if the device is offline. The and the default value and the
+     * maximum time to live supported is 7 days (604800 seconds)
+     */
+    inline int GetTimeToLive() const{ return m_timeToLive; }
+
+    /**
+     * This parameter specifies how long (in seconds) the message should be kept in
+     * Baidu storage if the device is offline. The and the default value and the
+     * maximum time to live supported is 7 days (604800 seconds)
+     */
+    inline void SetTimeToLive(int value) { m_timeToLiveHasBeenSet = true; m_timeToLive = value; }
+
+    /**
+     * This parameter specifies how long (in seconds) the message should be kept in
+     * Baidu storage if the device is offline. The and the default value and the
+     * maximum time to live supported is 7 days (604800 seconds)
+     */
+    inline BaiduMessage& WithTimeToLive(int value) { SetTimeToLive(value); return *this;}
+
+
+    /**
      * The message title that displays above the message on the user's device.
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
@@ -670,6 +692,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_substitutions;
     bool m_substitutionsHasBeenSet;
+
+    int m_timeToLive;
+    bool m_timeToLiveHasBeenSet;
 
     Aws::String m_title;
     bool m_titleHasBeenSet;

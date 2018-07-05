@@ -75,6 +75,22 @@ namespace Model
 
 
     /**
+     * The CloudWatchMetrics settings for the app.
+     */
+    inline bool GetCloudWatchMetricsEnabled() const{ return m_cloudWatchMetricsEnabled; }
+
+    /**
+     * The CloudWatchMetrics settings for the app.
+     */
+    inline void SetCloudWatchMetricsEnabled(bool value) { m_cloudWatchMetricsEnabledHasBeenSet = true; m_cloudWatchMetricsEnabled = value; }
+
+    /**
+     * The CloudWatchMetrics settings for the app.
+     */
+    inline WriteApplicationSettingsRequest& WithCloudWatchMetricsEnabled(bool value) { SetCloudWatchMetricsEnabled(value); return *this;}
+
+
+    /**
      * The default campaign limits for the app. These limits apply to each campaign for
      * the app, unless the campaign overrides the default with limits of its own.
      */
@@ -144,6 +160,9 @@ namespace Model
 
     CampaignHook m_campaignHook;
     bool m_campaignHookHasBeenSet;
+
+    bool m_cloudWatchMetricsEnabled;
+    bool m_cloudWatchMetricsEnabledHasBeenSet;
 
     CampaignLimits m_limits;
     bool m_limitsHasBeenSet;

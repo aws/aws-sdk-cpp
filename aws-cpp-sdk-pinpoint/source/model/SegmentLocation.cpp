@@ -29,12 +29,14 @@ namespace Model
 {
 
 SegmentLocation::SegmentLocation() : 
-    m_countryHasBeenSet(false)
+    m_countryHasBeenSet(false),
+    m_gPSPointHasBeenSet(false)
 {
 }
 
 SegmentLocation::SegmentLocation(const JsonValue& jsonValue) : 
-    m_countryHasBeenSet(false)
+    m_countryHasBeenSet(false),
+    m_gPSPointHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,13 @@ SegmentLocation& SegmentLocation::operator =(const JsonValue& jsonValue)
     m_countryHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("GPSPoint"))
+  {
+    m_gPSPoint = jsonValue.GetObject("GPSPoint");
+
+    m_gPSPointHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +67,12 @@ JsonValue SegmentLocation::Jsonize() const
   if(m_countryHasBeenSet)
   {
    payload.WithObject("Country", m_country.Jsonize());
+
+  }
+
+  if(m_gPSPointHasBeenSet)
+  {
+   payload.WithObject("GPSPoint", m_gPSPoint.Jsonize());
 
   }
 

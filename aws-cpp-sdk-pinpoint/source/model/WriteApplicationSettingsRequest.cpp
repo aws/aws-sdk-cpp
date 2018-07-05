@@ -30,6 +30,8 @@ namespace Model
 
 WriteApplicationSettingsRequest::WriteApplicationSettingsRequest() : 
     m_campaignHookHasBeenSet(false),
+    m_cloudWatchMetricsEnabled(false),
+    m_cloudWatchMetricsEnabledHasBeenSet(false),
     m_limitsHasBeenSet(false),
     m_quietTimeHasBeenSet(false)
 {
@@ -37,6 +39,8 @@ WriteApplicationSettingsRequest::WriteApplicationSettingsRequest() :
 
 WriteApplicationSettingsRequest::WriteApplicationSettingsRequest(const JsonValue& jsonValue) : 
     m_campaignHookHasBeenSet(false),
+    m_cloudWatchMetricsEnabled(false),
+    m_cloudWatchMetricsEnabledHasBeenSet(false),
     m_limitsHasBeenSet(false),
     m_quietTimeHasBeenSet(false)
 {
@@ -50,6 +54,13 @@ WriteApplicationSettingsRequest& WriteApplicationSettingsRequest::operator =(con
     m_campaignHook = jsonValue.GetObject("CampaignHook");
 
     m_campaignHookHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CloudWatchMetricsEnabled"))
+  {
+    m_cloudWatchMetricsEnabled = jsonValue.GetBool("CloudWatchMetricsEnabled");
+
+    m_cloudWatchMetricsEnabledHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Limits"))
@@ -76,6 +87,12 @@ JsonValue WriteApplicationSettingsRequest::Jsonize() const
   if(m_campaignHookHasBeenSet)
   {
    payload.WithObject("CampaignHook", m_campaignHook.Jsonize());
+
+  }
+
+  if(m_cloudWatchMetricsEnabledHasBeenSet)
+  {
+   payload.WithBool("CloudWatchMetricsEnabled", m_cloudWatchMetricsEnabled);
 
   }
 

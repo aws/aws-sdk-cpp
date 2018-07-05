@@ -172,17 +172,17 @@ namespace Model
 
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Not used. Retained for backwards compatibility.
      */
     inline bool GetHasCredential() const{ return m_hasCredential; }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Not used. Retained for backwards compatibility.
      */
     inline void SetHasCredential(bool value) { m_hasCredentialHasBeenSet = true; m_hasCredential = value; }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Not used. Retained for backwards compatibility.
      */
     inline APNSVoipSandboxChannelResponse& WithHasCredential(bool value) { SetHasCredential(value); return *this;}
 

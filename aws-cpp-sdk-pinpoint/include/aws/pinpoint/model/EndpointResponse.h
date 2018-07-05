@@ -483,44 +483,37 @@ Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP |
 
 
     /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE
-     * if a delivery fails. Will be set to ACTIVE if the address is updated.
+     * Unused.
      */
     inline const Aws::String& GetEndpointStatus() const{ return m_endpointStatus; }
 
     /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE
-     * if a delivery fails. Will be set to ACTIVE if the address is updated.
+     * Unused.
      */
     inline void SetEndpointStatus(const Aws::String& value) { m_endpointStatusHasBeenSet = true; m_endpointStatus = value; }
 
     /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE
-     * if a delivery fails. Will be set to ACTIVE if the address is updated.
+     * Unused.
      */
     inline void SetEndpointStatus(Aws::String&& value) { m_endpointStatusHasBeenSet = true; m_endpointStatus = std::move(value); }
 
     /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE
-     * if a delivery fails. Will be set to ACTIVE if the address is updated.
+     * Unused.
      */
     inline void SetEndpointStatus(const char* value) { m_endpointStatusHasBeenSet = true; m_endpointStatus.assign(value); }
 
     /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE
-     * if a delivery fails. Will be set to ACTIVE if the address is updated.
+     * Unused.
      */
     inline EndpointResponse& WithEndpointStatus(const Aws::String& value) { SetEndpointStatus(value); return *this;}
 
     /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE
-     * if a delivery fails. Will be set to ACTIVE if the address is updated.
+     * Unused.
      */
     inline EndpointResponse& WithEndpointStatus(Aws::String&& value) { SetEndpointStatus(std::move(value)); return *this;}
 
     /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE
-     * if a delivery fails. Will be set to ACTIVE if the address is updated.
+     * Unused.
      */
     inline EndpointResponse& WithEndpointStatus(const char* value) { SetEndpointStatus(value); return *this;}
 

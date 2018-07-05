@@ -33,6 +33,11 @@ namespace Pinpoint
 namespace Model
 {
 
+  /**
+   * Import job request.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ImportJobRequest">AWS
+   * API Reference</a></p>
+   */
   class AWS_PINPOINT_API ImportJobRequest
   {
   public:

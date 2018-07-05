@@ -47,37 +47,37 @@ namespace Model
 
 
     /**
-     * The error message returned from the API.
+     * The error message that's returned from the API.
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * The error message returned from the API.
+     * The error message that's returned from the API.
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * The error message returned from the API.
+     * The error message that's returned from the API.
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
-     * The error message returned from the API.
+     * The error message that's returned from the API.
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * The error message returned from the API.
+     * The error message that's returned from the API.
      */
     inline MessageBody& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * The error message returned from the API.
+     * The error message that's returned from the API.
      */
     inline MessageBody& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * The error message returned from the API.
+     * The error message that's returned from the API.
      */
     inline MessageBody& WithMessage(const char* value) { SetMessage(value); return *this;}
 

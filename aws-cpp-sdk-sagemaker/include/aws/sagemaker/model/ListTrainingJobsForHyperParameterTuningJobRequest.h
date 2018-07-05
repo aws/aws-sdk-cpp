@@ -141,17 +141,17 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of training jobs to return.</p>
+     * <p>The maximum number of training jobs to return. The default value is 10.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of training jobs to return.</p>
+     * <p>The maximum number of training jobs to return. The default value is 10.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of training jobs to return.</p>
+     * <p>The maximum number of training jobs to return. The default value is 10.</p>
      */
     inline ListTrainingJobsForHyperParameterTuningJobRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -183,27 +183,37 @@ namespace Model
 
 
     /**
-     * <p>The field to sort results by. The default is <code>Name</code>.</p>
+     * <p>The field to sort results by. The default is <code>Name</code>.</p> <p>If the
+     * value of this field is <code>FinalObjectiveMetricValue</code>, any training jobs
+     * that did not return an objective metric are not listed.</p>
      */
     inline const TrainingJobSortByOptions& GetSortBy() const{ return m_sortBy; }
 
     /**
-     * <p>The field to sort results by. The default is <code>Name</code>.</p>
+     * <p>The field to sort results by. The default is <code>Name</code>.</p> <p>If the
+     * value of this field is <code>FinalObjectiveMetricValue</code>, any training jobs
+     * that did not return an objective metric are not listed.</p>
      */
     inline void SetSortBy(const TrainingJobSortByOptions& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
 
     /**
-     * <p>The field to sort results by. The default is <code>Name</code>.</p>
+     * <p>The field to sort results by. The default is <code>Name</code>.</p> <p>If the
+     * value of this field is <code>FinalObjectiveMetricValue</code>, any training jobs
+     * that did not return an objective metric are not listed.</p>
      */
     inline void SetSortBy(TrainingJobSortByOptions&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
 
     /**
-     * <p>The field to sort results by. The default is <code>Name</code>.</p>
+     * <p>The field to sort results by. The default is <code>Name</code>.</p> <p>If the
+     * value of this field is <code>FinalObjectiveMetricValue</code>, any training jobs
+     * that did not return an objective metric are not listed.</p>
      */
     inline ListTrainingJobsForHyperParameterTuningJobRequest& WithSortBy(const TrainingJobSortByOptions& value) { SetSortBy(value); return *this;}
 
     /**
-     * <p>The field to sort results by. The default is <code>Name</code>.</p>
+     * <p>The field to sort results by. The default is <code>Name</code>.</p> <p>If the
+     * value of this field is <code>FinalObjectiveMetricValue</code>, any training jobs
+     * that did not return an objective metric are not listed.</p>
      */
     inline ListTrainingJobsForHyperParameterTuningJobRequest& WithSortBy(TrainingJobSortByOptions&& value) { SetSortBy(std::move(value)); return *this;}
 

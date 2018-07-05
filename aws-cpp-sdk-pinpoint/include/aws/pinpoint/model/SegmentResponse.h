@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pinpoint/model/SegmentDimensions.h>
 #include <aws/pinpoint/model/SegmentImportResource.h>
+#include <aws/pinpoint/model/SegmentGroupList.h>
 #include <aws/pinpoint/model/SegmentType.h>
 #include <utility>
 
@@ -282,6 +283,37 @@ namespace Model
 
 
     /**
+     * Segment definition groups. We currently only support one. If specified
+     * Dimensions must be empty.
+     */
+    inline const SegmentGroupList& GetSegmentGroups() const{ return m_segmentGroups; }
+
+    /**
+     * Segment definition groups. We currently only support one. If specified
+     * Dimensions must be empty.
+     */
+    inline void SetSegmentGroups(const SegmentGroupList& value) { m_segmentGroupsHasBeenSet = true; m_segmentGroups = value; }
+
+    /**
+     * Segment definition groups. We currently only support one. If specified
+     * Dimensions must be empty.
+     */
+    inline void SetSegmentGroups(SegmentGroupList&& value) { m_segmentGroupsHasBeenSet = true; m_segmentGroups = std::move(value); }
+
+    /**
+     * Segment definition groups. We currently only support one. If specified
+     * Dimensions must be empty.
+     */
+    inline SegmentResponse& WithSegmentGroups(const SegmentGroupList& value) { SetSegmentGroups(value); return *this;}
+
+    /**
+     * Segment definition groups. We currently only support one. If specified
+     * Dimensions must be empty.
+     */
+    inline SegmentResponse& WithSegmentGroups(SegmentGroupList&& value) { SetSegmentGroups(std::move(value)); return *this;}
+
+
+    /**
      * The segment type:
 DIMENSIONAL - A dynamic segment built from selection criteria
      * based on endpoint data reported by your app. You create this type of segment by
@@ -384,6 +416,9 @@ IMPORT - A static segment built from an
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    SegmentGroupList m_segmentGroups;
+    bool m_segmentGroupsHasBeenSet;
 
     SegmentType m_segmentType;
     bool m_segmentTypeHasBeenSet;

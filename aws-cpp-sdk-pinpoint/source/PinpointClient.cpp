@@ -46,6 +46,7 @@
 #include <aws/pinpoint/model/DeleteGcmChannelRequest.h>
 #include <aws/pinpoint/model/DeleteSegmentRequest.h>
 #include <aws/pinpoint/model/DeleteSmsChannelRequest.h>
+#include <aws/pinpoint/model/DeleteUserEndpointsRequest.h>
 #include <aws/pinpoint/model/GetAdmChannelRequest.h>
 #include <aws/pinpoint/model/GetApnsChannelRequest.h>
 #include <aws/pinpoint/model/GetApnsSandboxChannelRequest.h>
@@ -60,6 +61,7 @@
 #include <aws/pinpoint/model/GetCampaignVersionRequest.h>
 #include <aws/pinpoint/model/GetCampaignVersionsRequest.h>
 #include <aws/pinpoint/model/GetCampaignsRequest.h>
+#include <aws/pinpoint/model/GetChannelsRequest.h>
 #include <aws/pinpoint/model/GetEmailChannelRequest.h>
 #include <aws/pinpoint/model/GetEndpointRequest.h>
 #include <aws/pinpoint/model/GetEventStreamRequest.h>
@@ -75,7 +77,10 @@
 #include <aws/pinpoint/model/GetSegmentVersionsRequest.h>
 #include <aws/pinpoint/model/GetSegmentsRequest.h>
 #include <aws/pinpoint/model/GetSmsChannelRequest.h>
+#include <aws/pinpoint/model/GetUserEndpointsRequest.h>
+#include <aws/pinpoint/model/PhoneNumberValidateRequest.h>
 #include <aws/pinpoint/model/PutEventStreamRequest.h>
+#include <aws/pinpoint/model/RemoveAttributesRequest.h>
 #include <aws/pinpoint/model/SendMessagesRequest.h>
 #include <aws/pinpoint/model/SendUsersMessagesRequest.h>
 #include <aws/pinpoint/model/UpdateAdmChannelRequest.h>
@@ -822,6 +827,41 @@ void PinpointClient::DeleteSmsChannelAsyncHelper(const DeleteSmsChannelRequest& 
   handler(this, request, DeleteSmsChannel(request), context);
 }
 
+DeleteUserEndpointsOutcome PinpointClient::DeleteUserEndpoints(const DeleteUserEndpointsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/users/{user-id}";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteUserEndpointsOutcome(DeleteUserEndpointsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteUserEndpointsOutcome(outcome.GetError());
+  }
+}
+
+DeleteUserEndpointsOutcomeCallable PinpointClient::DeleteUserEndpointsCallable(const DeleteUserEndpointsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteUserEndpointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteUserEndpoints(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::DeleteUserEndpointsAsync(const DeleteUserEndpointsRequest& request, const DeleteUserEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteUserEndpointsAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::DeleteUserEndpointsAsyncHelper(const DeleteUserEndpointsRequest& request, const DeleteUserEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteUserEndpoints(request), context);
+}
+
 GetAdmChannelOutcome PinpointClient::GetAdmChannel(const GetAdmChannelRequest& request) const
 {
   Aws::StringStream ss;
@@ -1311,6 +1351,41 @@ void PinpointClient::GetCampaignsAsync(const GetCampaignsRequest& request, const
 void PinpointClient::GetCampaignsAsyncHelper(const GetCampaignsRequest& request, const GetCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetCampaigns(request), context);
+}
+
+GetChannelsOutcome PinpointClient::GetChannels(const GetChannelsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/channels";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetChannelsOutcome(GetChannelsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetChannelsOutcome(outcome.GetError());
+  }
+}
+
+GetChannelsOutcomeCallable PinpointClient::GetChannelsCallable(const GetChannelsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetChannelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetChannels(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::GetChannelsAsync(const GetChannelsRequest& request, const GetChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetChannelsAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::GetChannelsAsyncHelper(const GetChannelsRequest& request, const GetChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetChannels(request), context);
 }
 
 GetEmailChannelOutcome PinpointClient::GetEmailChannel(const GetEmailChannelRequest& request) const
@@ -1839,6 +1914,76 @@ void PinpointClient::GetSmsChannelAsyncHelper(const GetSmsChannelRequest& reques
   handler(this, request, GetSmsChannel(request), context);
 }
 
+GetUserEndpointsOutcome PinpointClient::GetUserEndpoints(const GetUserEndpointsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/users/{user-id}";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetUserEndpointsOutcome(GetUserEndpointsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetUserEndpointsOutcome(outcome.GetError());
+  }
+}
+
+GetUserEndpointsOutcomeCallable PinpointClient::GetUserEndpointsCallable(const GetUserEndpointsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetUserEndpointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUserEndpoints(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::GetUserEndpointsAsync(const GetUserEndpointsRequest& request, const GetUserEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetUserEndpointsAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::GetUserEndpointsAsyncHelper(const GetUserEndpointsRequest& request, const GetUserEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetUserEndpoints(request), context);
+}
+
+PhoneNumberValidateOutcome PinpointClient::PhoneNumberValidate(const PhoneNumberValidateRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/phone/number/validate";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PhoneNumberValidateOutcome(PhoneNumberValidateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PhoneNumberValidateOutcome(outcome.GetError());
+  }
+}
+
+PhoneNumberValidateOutcomeCallable PinpointClient::PhoneNumberValidateCallable(const PhoneNumberValidateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PhoneNumberValidateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PhoneNumberValidate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::PhoneNumberValidateAsync(const PhoneNumberValidateRequest& request, const PhoneNumberValidateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PhoneNumberValidateAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::PhoneNumberValidateAsyncHelper(const PhoneNumberValidateRequest& request, const PhoneNumberValidateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PhoneNumberValidate(request), context);
+}
+
 PutEventStreamOutcome PinpointClient::PutEventStream(const PutEventStreamRequest& request) const
 {
   Aws::StringStream ss;
@@ -1872,6 +2017,41 @@ void PinpointClient::PutEventStreamAsync(const PutEventStreamRequest& request, c
 void PinpointClient::PutEventStreamAsyncHelper(const PutEventStreamRequest& request, const PutEventStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutEventStream(request), context);
+}
+
+RemoveAttributesOutcome PinpointClient::RemoveAttributes(const RemoveAttributesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/attributes/{attribute-type}";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return RemoveAttributesOutcome(RemoveAttributesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RemoveAttributesOutcome(outcome.GetError());
+  }
+}
+
+RemoveAttributesOutcomeCallable PinpointClient::RemoveAttributesCallable(const RemoveAttributesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RemoveAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveAttributes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::RemoveAttributesAsync(const RemoveAttributesRequest& request, const RemoveAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RemoveAttributesAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::RemoveAttributesAsyncHelper(const RemoveAttributesRequest& request, const RemoveAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RemoveAttributes(request), context);
 }
 
 SendMessagesOutcome PinpointClient::SendMessages(const SendMessagesRequest& request) const

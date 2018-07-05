@@ -355,8 +355,15 @@ namespace Model
          * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
          * API.</p> <p>For an example, see <a
          * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ex1.html">Exercise 1: Using
-         * the K-Means Algorithm Provided by Amazon SageMaker</a>. </p><p><h3>See
-         * Also:</h3>   <a
+         * the K-Means Algorithm Provided by Amazon SageMaker</a>. </p> <p>If any of the
+         * models hosted at this endpoint get model data from an Amazon S3 location, Amazon
+         * SageMaker uses AWS Security Token Service to download model artifacts from the
+         * S3 path you provided. AWS STS is activated in your IAM user account by default.
+         * If you previously deactivated AWS STS for a region, you need to reactivate AWS
+         * STS for that region. For more information, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+         * and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access
+         * Management User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEndpoint">AWS
          * API Reference</a></p>
          */
@@ -379,8 +386,15 @@ namespace Model
          * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
          * API.</p> <p>For an example, see <a
          * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ex1.html">Exercise 1: Using
-         * the K-Means Algorithm Provided by Amazon SageMaker</a>. </p><p><h3>See
-         * Also:</h3>   <a
+         * the K-Means Algorithm Provided by Amazon SageMaker</a>. </p> <p>If any of the
+         * models hosted at this endpoint get model data from an Amazon S3 location, Amazon
+         * SageMaker uses AWS Security Token Service to download model artifacts from the
+         * S3 path you provided. AWS STS is activated in your IAM user account by default.
+         * If you previously deactivated AWS STS for a region, you need to reactivate AWS
+         * STS for that region. For more information, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+         * and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access
+         * Management User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEndpoint">AWS
          * API Reference</a></p>
          *
@@ -405,8 +419,15 @@ namespace Model
          * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
          * API.</p> <p>For an example, see <a
          * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ex1.html">Exercise 1: Using
-         * the K-Means Algorithm Provided by Amazon SageMaker</a>. </p><p><h3>See
-         * Also:</h3>   <a
+         * the K-Means Algorithm Provided by Amazon SageMaker</a>. </p> <p>If any of the
+         * models hosted at this endpoint get model data from an Amazon S3 location, Amazon
+         * SageMaker uses AWS Security Token Service to download model artifacts from the
+         * S3 path you provided. AWS STS is activated in your IAM user account by default.
+         * If you previously deactivated AWS STS for a region, you need to reactivate AWS
+         * STS for that region. For more information, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+         * and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access
+         * Management User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEndpoint">AWS
          * API Reference</a></p>
          *
@@ -1325,16 +1346,18 @@ namespace Model
         virtual void ListEndpointsAsync(const Model::ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a list of objects that describe the hyperparameter tuning jobs launched
-         * in your account.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a list of <a>HyperParameterTuningJobSummary</a> objects that describe
+         * the hyperparameter tuning jobs launched in your account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHyperParameterTuningJobs">AWS
          * API Reference</a></p>
          */
         virtual Model::ListHyperParameterTuningJobsOutcome ListHyperParameterTuningJobs(const Model::ListHyperParameterTuningJobsRequest& request) const;
 
         /**
-         * <p>Gets a list of objects that describe the hyperparameter tuning jobs launched
-         * in your account.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a list of <a>HyperParameterTuningJobSummary</a> objects that describe
+         * the hyperparameter tuning jobs launched in your account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHyperParameterTuningJobs">AWS
          * API Reference</a></p>
          *
@@ -1343,8 +1366,9 @@ namespace Model
         virtual Model::ListHyperParameterTuningJobsOutcomeCallable ListHyperParameterTuningJobsCallable(const Model::ListHyperParameterTuningJobsRequest& request) const;
 
         /**
-         * <p>Gets a list of objects that describe the hyperparameter tuning jobs launched
-         * in your account.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a list of <a>HyperParameterTuningJobSummary</a> objects that describe
+         * the hyperparameter tuning jobs launched in your account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHyperParameterTuningJobs">AWS
          * API Reference</a></p>
          *
@@ -1385,7 +1409,7 @@ namespace Model
 
         /**
          * <p>Lists notebook instance lifestyle configurations created with the
-         * API.</p><p><h3>See Also:</h3>   <a
+         * <a>CreateNotebookInstanceLifecycleConfig</a> API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListNotebookInstanceLifecycleConfigs">AWS
          * API Reference</a></p>
          */
@@ -1393,7 +1417,7 @@ namespace Model
 
         /**
          * <p>Lists notebook instance lifestyle configurations created with the
-         * API.</p><p><h3>See Also:</h3>   <a
+         * <a>CreateNotebookInstanceLifecycleConfig</a> API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListNotebookInstanceLifecycleConfigs">AWS
          * API Reference</a></p>
          *
@@ -1403,7 +1427,7 @@ namespace Model
 
         /**
          * <p>Lists notebook instance lifestyle configurations created with the
-         * API.</p><p><h3>See Also:</h3>   <a
+         * <a>CreateNotebookInstanceLifecycleConfig</a> API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListNotebookInstanceLifecycleConfigs">AWS
          * API Reference</a></p>
          *
@@ -1493,16 +1517,16 @@ namespace Model
         virtual void ListTrainingJobsAsync(const Model::ListTrainingJobsRequest& request, const ListTrainingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a list of objects that describe the training jobs that a hyperparameter
-         * tuning job launched.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a list of <a>TrainingJobSummary</a> objects that describe the training
+         * jobs that a hyperparameter tuning job launched.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobsForHyperParameterTuningJob">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTrainingJobsForHyperParameterTuningJobOutcome ListTrainingJobsForHyperParameterTuningJob(const Model::ListTrainingJobsForHyperParameterTuningJobRequest& request) const;
 
         /**
-         * <p>Gets a list of objects that describe the training jobs that a hyperparameter
-         * tuning job launched.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a list of <a>TrainingJobSummary</a> objects that describe the training
+         * jobs that a hyperparameter tuning job launched.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobsForHyperParameterTuningJob">AWS
          * API Reference</a></p>
          *
@@ -1511,8 +1535,8 @@ namespace Model
         virtual Model::ListTrainingJobsForHyperParameterTuningJobOutcomeCallable ListTrainingJobsForHyperParameterTuningJobCallable(const Model::ListTrainingJobsForHyperParameterTuningJobRequest& request) const;
 
         /**
-         * <p>Gets a list of objects that describe the training jobs that a hyperparameter
-         * tuning job launched.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a list of <a>TrainingJobSummary</a> objects that describe the training
+         * jobs that a hyperparameter tuning job launched.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobsForHyperParameterTuningJob">AWS
          * API Reference</a></p>
          *
@@ -1704,7 +1728,9 @@ namespace Model
          * sets the status to <code>InService</code>. To check the status of an endpoint,
          * use the <a
          * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
-         * API. </p><p><h3>See Also:</h3>   <a
+         * API. </p> <note> <p>You cannot update an endpoint with the current
+         * <code>EndpointConfig</code>. To update an endpoint, you must create a new
+         * <code>EndpointConfig</code>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpoint">AWS
          * API Reference</a></p>
          */
@@ -1719,7 +1745,9 @@ namespace Model
          * sets the status to <code>InService</code>. To check the status of an endpoint,
          * use the <a
          * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
-         * API. </p><p><h3>See Also:</h3>   <a
+         * API. </p> <note> <p>You cannot update an endpoint with the current
+         * <code>EndpointConfig</code>. To update an endpoint, you must create a new
+         * <code>EndpointConfig</code>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpoint">AWS
          * API Reference</a></p>
          *
@@ -1736,7 +1764,9 @@ namespace Model
          * sets the status to <code>InService</code>. To check the status of an endpoint,
          * use the <a
          * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
-         * API. </p><p><h3>See Also:</h3>   <a
+         * API. </p> <note> <p>You cannot update an endpoint with the current
+         * <code>EndpointConfig</code>. To update an endpoint, you must create a new
+         * <code>EndpointConfig</code>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpoint">AWS
          * API Reference</a></p>
          *
@@ -1823,7 +1853,7 @@ namespace Model
 
         /**
          * <p>Updates a notebook instance lifecycle configuration created with the
-         * API.</p><p><h3>See Also:</h3>   <a
+         * <a>CreateNotebookInstanceLifecycleConfig</a> API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstanceLifecycleConfig">AWS
          * API Reference</a></p>
          */
@@ -1831,7 +1861,7 @@ namespace Model
 
         /**
          * <p>Updates a notebook instance lifecycle configuration created with the
-         * API.</p><p><h3>See Also:</h3>   <a
+         * <a>CreateNotebookInstanceLifecycleConfig</a> API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstanceLifecycleConfig">AWS
          * API Reference</a></p>
          *
@@ -1841,7 +1871,7 @@ namespace Model
 
         /**
          * <p>Updates a notebook instance lifecycle configuration created with the
-         * API.</p><p><h3>See Also:</h3>   <a
+         * <a>CreateNotebookInstanceLifecycleConfig</a> API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstanceLifecycleConfig">AWS
          * API Reference</a></p>
          *

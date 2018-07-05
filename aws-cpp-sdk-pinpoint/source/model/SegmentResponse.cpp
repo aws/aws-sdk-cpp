@@ -36,6 +36,7 @@ SegmentResponse::SegmentResponse() :
     m_importDefinitionHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_segmentGroupsHasBeenSet(false),
     m_segmentType(SegmentType::NOT_SET),
     m_segmentTypeHasBeenSet(false),
     m_version(0),
@@ -51,6 +52,7 @@ SegmentResponse::SegmentResponse(const JsonValue& jsonValue) :
     m_importDefinitionHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_segmentGroupsHasBeenSet(false),
     m_segmentType(SegmentType::NOT_SET),
     m_segmentTypeHasBeenSet(false),
     m_version(0),
@@ -108,6 +110,13 @@ SegmentResponse& SegmentResponse::operator =(const JsonValue& jsonValue)
     m_name = jsonValue.GetString("Name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SegmentGroups"))
+  {
+    m_segmentGroups = jsonValue.GetObject("SegmentGroups");
+
+    m_segmentGroupsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SegmentType"))
@@ -170,6 +179,12 @@ JsonValue SegmentResponse::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_segmentGroupsHasBeenSet)
+  {
+   payload.WithObject("SegmentGroups", m_segmentGroups.Jsonize());
 
   }
 

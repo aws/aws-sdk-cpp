@@ -172,29 +172,17 @@ namespace Model
 
 
     /**
-     * Indicates whether the channel is configured with APNs credentials. Amazon
-     * Pinpoint uses your credentials to authenticate push notifications with APNs. To
-     * use APNs token authentication, set the BundleId, TeamId, TokenKey, and
-     * TokenKeyId attributes. To use certificate authentication, set the Certificate
-     * and PrivateKey attributes.
+     * Not used. Retained for backwards compatibility.
      */
     inline bool GetHasCredential() const{ return m_hasCredential; }
 
     /**
-     * Indicates whether the channel is configured with APNs credentials. Amazon
-     * Pinpoint uses your credentials to authenticate push notifications with APNs. To
-     * use APNs token authentication, set the BundleId, TeamId, TokenKey, and
-     * TokenKeyId attributes. To use certificate authentication, set the Certificate
-     * and PrivateKey attributes.
+     * Not used. Retained for backwards compatibility.
      */
     inline void SetHasCredential(bool value) { m_hasCredentialHasBeenSet = true; m_hasCredential = value; }
 
     /**
-     * Indicates whether the channel is configured with APNs credentials. Amazon
-     * Pinpoint uses your credentials to authenticate push notifications with APNs. To
-     * use APNs token authentication, set the BundleId, TeamId, TokenKey, and
-     * TokenKeyId attributes. To use certificate authentication, set the Certificate
-     * and PrivateKey attributes.
+     * Not used. Retained for backwards compatibility.
      */
     inline APNSChannelResponse& WithHasCredential(bool value) { SetHasCredential(value); return *this;}
 

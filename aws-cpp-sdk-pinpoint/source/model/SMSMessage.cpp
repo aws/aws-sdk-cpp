@@ -30,6 +30,7 @@ namespace Model
 
 SMSMessage::SMSMessage() : 
     m_bodyHasBeenSet(false),
+    m_keywordHasBeenSet(false),
     m_messageType(MessageType::NOT_SET),
     m_messageTypeHasBeenSet(false),
     m_originationNumberHasBeenSet(false),
@@ -40,6 +41,7 @@ SMSMessage::SMSMessage() :
 
 SMSMessage::SMSMessage(const JsonValue& jsonValue) : 
     m_bodyHasBeenSet(false),
+    m_keywordHasBeenSet(false),
     m_messageType(MessageType::NOT_SET),
     m_messageTypeHasBeenSet(false),
     m_originationNumberHasBeenSet(false),
@@ -56,6 +58,13 @@ SMSMessage& SMSMessage::operator =(const JsonValue& jsonValue)
     m_body = jsonValue.GetString("Body");
 
     m_bodyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Keyword"))
+  {
+    m_keyword = jsonValue.GetString("Keyword");
+
+    m_keywordHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("MessageType"))
@@ -106,6 +115,12 @@ JsonValue SMSMessage::Jsonize() const
   if(m_bodyHasBeenSet)
   {
    payload.WithString("Body", m_body);
+
+  }
+
+  if(m_keywordHasBeenSet)
+  {
+   payload.WithString("Keyword", m_keyword);
 
   }
 

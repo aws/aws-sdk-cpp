@@ -40,6 +40,7 @@
 #include <aws/pinpoint/model/DeleteGcmChannelResult.h>
 #include <aws/pinpoint/model/DeleteSegmentResult.h>
 #include <aws/pinpoint/model/DeleteSmsChannelResult.h>
+#include <aws/pinpoint/model/DeleteUserEndpointsResult.h>
 #include <aws/pinpoint/model/GetAdmChannelResult.h>
 #include <aws/pinpoint/model/GetApnsChannelResult.h>
 #include <aws/pinpoint/model/GetApnsSandboxChannelResult.h>
@@ -54,6 +55,7 @@
 #include <aws/pinpoint/model/GetCampaignVersionResult.h>
 #include <aws/pinpoint/model/GetCampaignVersionsResult.h>
 #include <aws/pinpoint/model/GetCampaignsResult.h>
+#include <aws/pinpoint/model/GetChannelsResult.h>
 #include <aws/pinpoint/model/GetEmailChannelResult.h>
 #include <aws/pinpoint/model/GetEndpointResult.h>
 #include <aws/pinpoint/model/GetEventStreamResult.h>
@@ -69,7 +71,10 @@
 #include <aws/pinpoint/model/GetSegmentVersionsResult.h>
 #include <aws/pinpoint/model/GetSegmentsResult.h>
 #include <aws/pinpoint/model/GetSmsChannelResult.h>
+#include <aws/pinpoint/model/GetUserEndpointsResult.h>
+#include <aws/pinpoint/model/PhoneNumberValidateResult.h>
 #include <aws/pinpoint/model/PutEventStreamResult.h>
+#include <aws/pinpoint/model/RemoveAttributesResult.h>
 #include <aws/pinpoint/model/SendMessagesResult.h>
 #include <aws/pinpoint/model/SendUsersMessagesResult.h>
 #include <aws/pinpoint/model/UpdateAdmChannelResult.h>
@@ -150,6 +155,7 @@ namespace Model
         class DeleteGcmChannelRequest;
         class DeleteSegmentRequest;
         class DeleteSmsChannelRequest;
+        class DeleteUserEndpointsRequest;
         class GetAdmChannelRequest;
         class GetApnsChannelRequest;
         class GetApnsSandboxChannelRequest;
@@ -164,6 +170,7 @@ namespace Model
         class GetCampaignVersionRequest;
         class GetCampaignVersionsRequest;
         class GetCampaignsRequest;
+        class GetChannelsRequest;
         class GetEmailChannelRequest;
         class GetEndpointRequest;
         class GetEventStreamRequest;
@@ -179,7 +186,10 @@ namespace Model
         class GetSegmentVersionsRequest;
         class GetSegmentsRequest;
         class GetSmsChannelRequest;
+        class GetUserEndpointsRequest;
+        class PhoneNumberValidateRequest;
         class PutEventStreamRequest;
+        class RemoveAttributesRequest;
         class SendMessagesRequest;
         class SendUsersMessagesRequest;
         class UpdateAdmChannelRequest;
@@ -216,6 +226,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteGcmChannelResult, Aws::Client::AWSError<PinpointErrors>> DeleteGcmChannelOutcome;
         typedef Aws::Utils::Outcome<DeleteSegmentResult, Aws::Client::AWSError<PinpointErrors>> DeleteSegmentOutcome;
         typedef Aws::Utils::Outcome<DeleteSmsChannelResult, Aws::Client::AWSError<PinpointErrors>> DeleteSmsChannelOutcome;
+        typedef Aws::Utils::Outcome<DeleteUserEndpointsResult, Aws::Client::AWSError<PinpointErrors>> DeleteUserEndpointsOutcome;
         typedef Aws::Utils::Outcome<GetAdmChannelResult, Aws::Client::AWSError<PinpointErrors>> GetAdmChannelOutcome;
         typedef Aws::Utils::Outcome<GetApnsChannelResult, Aws::Client::AWSError<PinpointErrors>> GetApnsChannelOutcome;
         typedef Aws::Utils::Outcome<GetApnsSandboxChannelResult, Aws::Client::AWSError<PinpointErrors>> GetApnsSandboxChannelOutcome;
@@ -230,6 +241,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetCampaignVersionResult, Aws::Client::AWSError<PinpointErrors>> GetCampaignVersionOutcome;
         typedef Aws::Utils::Outcome<GetCampaignVersionsResult, Aws::Client::AWSError<PinpointErrors>> GetCampaignVersionsOutcome;
         typedef Aws::Utils::Outcome<GetCampaignsResult, Aws::Client::AWSError<PinpointErrors>> GetCampaignsOutcome;
+        typedef Aws::Utils::Outcome<GetChannelsResult, Aws::Client::AWSError<PinpointErrors>> GetChannelsOutcome;
         typedef Aws::Utils::Outcome<GetEmailChannelResult, Aws::Client::AWSError<PinpointErrors>> GetEmailChannelOutcome;
         typedef Aws::Utils::Outcome<GetEndpointResult, Aws::Client::AWSError<PinpointErrors>> GetEndpointOutcome;
         typedef Aws::Utils::Outcome<GetEventStreamResult, Aws::Client::AWSError<PinpointErrors>> GetEventStreamOutcome;
@@ -245,7 +257,10 @@ namespace Model
         typedef Aws::Utils::Outcome<GetSegmentVersionsResult, Aws::Client::AWSError<PinpointErrors>> GetSegmentVersionsOutcome;
         typedef Aws::Utils::Outcome<GetSegmentsResult, Aws::Client::AWSError<PinpointErrors>> GetSegmentsOutcome;
         typedef Aws::Utils::Outcome<GetSmsChannelResult, Aws::Client::AWSError<PinpointErrors>> GetSmsChannelOutcome;
+        typedef Aws::Utils::Outcome<GetUserEndpointsResult, Aws::Client::AWSError<PinpointErrors>> GetUserEndpointsOutcome;
+        typedef Aws::Utils::Outcome<PhoneNumberValidateResult, Aws::Client::AWSError<PinpointErrors>> PhoneNumberValidateOutcome;
         typedef Aws::Utils::Outcome<PutEventStreamResult, Aws::Client::AWSError<PinpointErrors>> PutEventStreamOutcome;
+        typedef Aws::Utils::Outcome<RemoveAttributesResult, Aws::Client::AWSError<PinpointErrors>> RemoveAttributesOutcome;
         typedef Aws::Utils::Outcome<SendMessagesResult, Aws::Client::AWSError<PinpointErrors>> SendMessagesOutcome;
         typedef Aws::Utils::Outcome<SendUsersMessagesResult, Aws::Client::AWSError<PinpointErrors>> SendUsersMessagesOutcome;
         typedef Aws::Utils::Outcome<UpdateAdmChannelResult, Aws::Client::AWSError<PinpointErrors>> UpdateAdmChannelOutcome;
@@ -282,6 +297,7 @@ namespace Model
         typedef std::future<DeleteGcmChannelOutcome> DeleteGcmChannelOutcomeCallable;
         typedef std::future<DeleteSegmentOutcome> DeleteSegmentOutcomeCallable;
         typedef std::future<DeleteSmsChannelOutcome> DeleteSmsChannelOutcomeCallable;
+        typedef std::future<DeleteUserEndpointsOutcome> DeleteUserEndpointsOutcomeCallable;
         typedef std::future<GetAdmChannelOutcome> GetAdmChannelOutcomeCallable;
         typedef std::future<GetApnsChannelOutcome> GetApnsChannelOutcomeCallable;
         typedef std::future<GetApnsSandboxChannelOutcome> GetApnsSandboxChannelOutcomeCallable;
@@ -296,6 +312,7 @@ namespace Model
         typedef std::future<GetCampaignVersionOutcome> GetCampaignVersionOutcomeCallable;
         typedef std::future<GetCampaignVersionsOutcome> GetCampaignVersionsOutcomeCallable;
         typedef std::future<GetCampaignsOutcome> GetCampaignsOutcomeCallable;
+        typedef std::future<GetChannelsOutcome> GetChannelsOutcomeCallable;
         typedef std::future<GetEmailChannelOutcome> GetEmailChannelOutcomeCallable;
         typedef std::future<GetEndpointOutcome> GetEndpointOutcomeCallable;
         typedef std::future<GetEventStreamOutcome> GetEventStreamOutcomeCallable;
@@ -311,7 +328,10 @@ namespace Model
         typedef std::future<GetSegmentVersionsOutcome> GetSegmentVersionsOutcomeCallable;
         typedef std::future<GetSegmentsOutcome> GetSegmentsOutcomeCallable;
         typedef std::future<GetSmsChannelOutcome> GetSmsChannelOutcomeCallable;
+        typedef std::future<GetUserEndpointsOutcome> GetUserEndpointsOutcomeCallable;
+        typedef std::future<PhoneNumberValidateOutcome> PhoneNumberValidateOutcomeCallable;
         typedef std::future<PutEventStreamOutcome> PutEventStreamOutcomeCallable;
+        typedef std::future<RemoveAttributesOutcome> RemoveAttributesOutcomeCallable;
         typedef std::future<SendMessagesOutcome> SendMessagesOutcomeCallable;
         typedef std::future<SendUsersMessagesOutcome> SendUsersMessagesOutcomeCallable;
         typedef std::future<UpdateAdmChannelOutcome> UpdateAdmChannelOutcomeCallable;
@@ -351,6 +371,7 @@ namespace Model
     typedef std::function<void(const PinpointClient*, const Model::DeleteGcmChannelRequest&, const Model::DeleteGcmChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGcmChannelResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::DeleteSegmentRequest&, const Model::DeleteSegmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSegmentResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::DeleteSmsChannelRequest&, const Model::DeleteSmsChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSmsChannelResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::DeleteUserEndpointsRequest&, const Model::DeleteUserEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserEndpointsResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetAdmChannelRequest&, const Model::GetAdmChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAdmChannelResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetApnsChannelRequest&, const Model::GetApnsChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApnsChannelResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetApnsSandboxChannelRequest&, const Model::GetApnsSandboxChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApnsSandboxChannelResponseReceivedHandler;
@@ -365,6 +386,7 @@ namespace Model
     typedef std::function<void(const PinpointClient*, const Model::GetCampaignVersionRequest&, const Model::GetCampaignVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCampaignVersionResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetCampaignVersionsRequest&, const Model::GetCampaignVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCampaignVersionsResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetCampaignsRequest&, const Model::GetCampaignsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCampaignsResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::GetChannelsRequest&, const Model::GetChannelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChannelsResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetEmailChannelRequest&, const Model::GetEmailChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEmailChannelResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetEndpointRequest&, const Model::GetEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEndpointResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetEventStreamRequest&, const Model::GetEventStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventStreamResponseReceivedHandler;
@@ -380,7 +402,10 @@ namespace Model
     typedef std::function<void(const PinpointClient*, const Model::GetSegmentVersionsRequest&, const Model::GetSegmentVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSegmentVersionsResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetSegmentsRequest&, const Model::GetSegmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSegmentsResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetSmsChannelRequest&, const Model::GetSmsChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSmsChannelResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::GetUserEndpointsRequest&, const Model::GetUserEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserEndpointsResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::PhoneNumberValidateRequest&, const Model::PhoneNumberValidateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PhoneNumberValidateResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::PutEventStreamRequest&, const Model::PutEventStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEventStreamResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::RemoveAttributesRequest&, const Model::RemoveAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveAttributesResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::SendMessagesRequest&, const Model::SendMessagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendMessagesResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::SendUsersMessagesRequest&, const Model::SendUsersMessagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendUsersMessagesResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::UpdateAdmChannelRequest&, const Model::UpdateAdmChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAdmChannelResponseReceivedHandler;
@@ -398,6 +423,9 @@ namespace Model
     typedef std::function<void(const PinpointClient*, const Model::UpdateSegmentRequest&, const Model::UpdateSegmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSegmentResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::UpdateSmsChannelRequest&, const Model::UpdateSmsChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSmsChannelResponseReceivedHandler;
 
+  /**
+   * Amazon Pinpoint
+   */
   class AWS_PINPOINT_API PinpointClient : public Aws::Client::AWSJsonClient
   {
     public:
@@ -553,14 +581,14 @@ namespace Model
         virtual void CreateSegmentAsync(const Model::CreateSegmentRequest& request, const CreateSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Delete an ADM channel<p><h3>See Also:</h3>   <a
+         * Delete an ADM channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteAdmChannel">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteAdmChannelOutcome DeleteAdmChannel(const Model::DeleteAdmChannelRequest& request) const;
 
         /**
-         * Delete an ADM channel<p><h3>See Also:</h3>   <a
+         * Delete an ADM channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteAdmChannel">AWS
          * API Reference</a></p>
          *
@@ -569,7 +597,7 @@ namespace Model
         virtual Model::DeleteAdmChannelOutcomeCallable DeleteAdmChannelCallable(const Model::DeleteAdmChannelRequest& request) const;
 
         /**
-         * Delete an ADM channel<p><h3>See Also:</h3>   <a
+         * Delete an ADM channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteAdmChannel">AWS
          * API Reference</a></p>
          *
@@ -603,14 +631,14 @@ namespace Model
         virtual void DeleteApnsChannelAsync(const Model::DeleteApnsChannelRequest& request, const DeleteApnsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Delete an APNS sandbox channel<p><h3>See Also:</h3>   <a
+         * Delete an APNS sandbox channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsSandboxChannel">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteApnsSandboxChannelOutcome DeleteApnsSandboxChannel(const Model::DeleteApnsSandboxChannelRequest& request) const;
 
         /**
-         * Delete an APNS sandbox channel<p><h3>See Also:</h3>   <a
+         * Delete an APNS sandbox channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsSandboxChannel">AWS
          * API Reference</a></p>
          *
@@ -619,7 +647,7 @@ namespace Model
         virtual Model::DeleteApnsSandboxChannelOutcomeCallable DeleteApnsSandboxChannelCallable(const Model::DeleteApnsSandboxChannelRequest& request) const;
 
         /**
-         * Delete an APNS sandbox channel<p><h3>See Also:</h3>   <a
+         * Delete an APNS sandbox channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsSandboxChannel">AWS
          * API Reference</a></p>
          *
@@ -753,14 +781,14 @@ namespace Model
         virtual void DeleteCampaignAsync(const Model::DeleteCampaignRequest& request, const DeleteCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Delete an email channel<p><h3>See Also:</h3>   <a
+         * Delete an email channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEmailChannel">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteEmailChannelOutcome DeleteEmailChannel(const Model::DeleteEmailChannelRequest& request) const;
 
         /**
-         * Delete an email channel<p><h3>See Also:</h3>   <a
+         * Delete an email channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEmailChannel">AWS
          * API Reference</a></p>
          *
@@ -769,7 +797,7 @@ namespace Model
         virtual Model::DeleteEmailChannelOutcomeCallable DeleteEmailChannelCallable(const Model::DeleteEmailChannelRequest& request) const;
 
         /**
-         * Delete an email channel<p><h3>See Also:</h3>   <a
+         * Delete an email channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEmailChannel">AWS
          * API Reference</a></p>
          *
@@ -878,14 +906,14 @@ namespace Model
         virtual void DeleteSegmentAsync(const Model::DeleteSegmentRequest& request, const DeleteSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Delete an SMS channel<p><h3>See Also:</h3>   <a
+         * Delete an SMS channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSmsChannel">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteSmsChannelOutcome DeleteSmsChannel(const Model::DeleteSmsChannelRequest& request) const;
 
         /**
-         * Delete an SMS channel<p><h3>See Also:</h3>   <a
+         * Delete an SMS channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSmsChannel">AWS
          * API Reference</a></p>
          *
@@ -894,7 +922,7 @@ namespace Model
         virtual Model::DeleteSmsChannelOutcomeCallable DeleteSmsChannelCallable(const Model::DeleteSmsChannelRequest& request) const;
 
         /**
-         * Delete an SMS channel<p><h3>See Also:</h3>   <a
+         * Delete an SMS channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSmsChannel">AWS
          * API Reference</a></p>
          *
@@ -903,14 +931,39 @@ namespace Model
         virtual void DeleteSmsChannelAsync(const Model::DeleteSmsChannelRequest& request, const DeleteSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Get an ADM channel<p><h3>See Also:</h3>   <a
+         * Deletes endpoints associated with an user id.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteUserEndpoints">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteUserEndpointsOutcome DeleteUserEndpoints(const Model::DeleteUserEndpointsRequest& request) const;
+
+        /**
+         * Deletes endpoints associated with an user id.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteUserEndpoints">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteUserEndpointsOutcomeCallable DeleteUserEndpointsCallable(const Model::DeleteUserEndpointsRequest& request) const;
+
+        /**
+         * Deletes endpoints associated with an user id.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteUserEndpoints">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteUserEndpointsAsync(const Model::DeleteUserEndpointsRequest& request, const DeleteUserEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Get an ADM channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetAdmChannel">AWS
          * API Reference</a></p>
          */
         virtual Model::GetAdmChannelOutcome GetAdmChannel(const Model::GetAdmChannelRequest& request) const;
 
         /**
-         * Get an ADM channel<p><h3>See Also:</h3>   <a
+         * Get an ADM channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetAdmChannel">AWS
          * API Reference</a></p>
          *
@@ -919,7 +972,7 @@ namespace Model
         virtual Model::GetAdmChannelOutcomeCallable GetAdmChannelCallable(const Model::GetAdmChannelRequest& request) const;
 
         /**
-         * Get an ADM channel<p><h3>See Also:</h3>   <a
+         * Get an ADM channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetAdmChannel">AWS
          * API Reference</a></p>
          *
@@ -953,14 +1006,14 @@ namespace Model
         virtual void GetApnsChannelAsync(const Model::GetApnsChannelRequest& request, const GetApnsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Get an APNS sandbox channel<p><h3>See Also:</h3>   <a
+         * Get an APNS sandbox channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsSandboxChannel">AWS
          * API Reference</a></p>
          */
         virtual Model::GetApnsSandboxChannelOutcome GetApnsSandboxChannel(const Model::GetApnsSandboxChannelRequest& request) const;
 
         /**
-         * Get an APNS sandbox channel<p><h3>See Also:</h3>   <a
+         * Get an APNS sandbox channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsSandboxChannel">AWS
          * API Reference</a></p>
          *
@@ -969,7 +1022,7 @@ namespace Model
         virtual Model::GetApnsSandboxChannelOutcomeCallable GetApnsSandboxChannelCallable(const Model::GetApnsSandboxChannelRequest& request) const;
 
         /**
-         * Get an APNS sandbox channel<p><h3>See Also:</h3>   <a
+         * Get an APNS sandbox channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsSandboxChannel">AWS
          * API Reference</a></p>
          *
@@ -1259,14 +1312,39 @@ namespace Model
         virtual void GetCampaignsAsync(const Model::GetCampaignsRequest& request, const GetCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Get an email channel<p><h3>See Also:</h3>   <a
+         * Get all channels.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetChannels">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetChannelsOutcome GetChannels(const Model::GetChannelsRequest& request) const;
+
+        /**
+         * Get all channels.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetChannels">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetChannelsOutcomeCallable GetChannelsCallable(const Model::GetChannelsRequest& request) const;
+
+        /**
+         * Get all channels.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetChannels">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetChannelsAsync(const Model::GetChannelsRequest& request, const GetChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Get an email channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEmailChannel">AWS
          * API Reference</a></p>
          */
         virtual Model::GetEmailChannelOutcome GetEmailChannel(const Model::GetEmailChannelRequest& request) const;
 
         /**
-         * Get an email channel<p><h3>See Also:</h3>   <a
+         * Get an email channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEmailChannel">AWS
          * API Reference</a></p>
          *
@@ -1275,7 +1353,7 @@ namespace Model
         virtual Model::GetEmailChannelOutcomeCallable GetEmailChannelCallable(const Model::GetEmailChannelRequest& request) const;
 
         /**
-         * Get an email channel<p><h3>See Also:</h3>   <a
+         * Get an email channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEmailChannel">AWS
          * API Reference</a></p>
          *
@@ -1609,14 +1687,14 @@ namespace Model
         virtual void GetSegmentsAsync(const Model::GetSegmentsRequest& request, const GetSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Get an SMS channel<p><h3>See Also:</h3>   <a
+         * Get an SMS channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSmsChannel">AWS
          * API Reference</a></p>
          */
         virtual Model::GetSmsChannelOutcome GetSmsChannel(const Model::GetSmsChannelRequest& request) const;
 
         /**
-         * Get an SMS channel<p><h3>See Also:</h3>   <a
+         * Get an SMS channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSmsChannel">AWS
          * API Reference</a></p>
          *
@@ -1625,13 +1703,66 @@ namespace Model
         virtual Model::GetSmsChannelOutcomeCallable GetSmsChannelCallable(const Model::GetSmsChannelRequest& request) const;
 
         /**
-         * Get an SMS channel<p><h3>See Also:</h3>   <a
+         * Get an SMS channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSmsChannel">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetSmsChannelAsync(const Model::GetSmsChannelRequest& request, const GetSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Returns information about the endpoints associated with an user id.<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetUserEndpoints">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetUserEndpointsOutcome GetUserEndpoints(const Model::GetUserEndpointsRequest& request) const;
+
+        /**
+         * Returns information about the endpoints associated with an user id.<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetUserEndpoints">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetUserEndpointsOutcomeCallable GetUserEndpointsCallable(const Model::GetUserEndpointsRequest& request) const;
+
+        /**
+         * Returns information about the endpoints associated with an user id.<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetUserEndpoints">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetUserEndpointsAsync(const Model::GetUserEndpointsRequest& request, const GetUserEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Returns information about the specified phone number.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PhoneNumberValidate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PhoneNumberValidateOutcome PhoneNumberValidate(const Model::PhoneNumberValidateRequest& request) const;
+
+        /**
+         * Returns information about the specified phone number.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PhoneNumberValidate">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PhoneNumberValidateOutcomeCallable PhoneNumberValidateCallable(const Model::PhoneNumberValidateRequest& request) const;
+
+        /**
+         * Returns information about the specified phone number.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PhoneNumberValidate">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PhoneNumberValidateAsync(const Model::PhoneNumberValidateRequest& request, const PhoneNumberValidateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Use to create or update the event stream for an app.<p><h3>See Also:</h3>   <a
@@ -1659,14 +1790,61 @@ namespace Model
         virtual void PutEventStreamAsync(const Model::PutEventStreamRequest& request, const PutEventStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Send a batch of messages<p><h3>See Also:</h3>   <a
+         * Used to remove the attributes for an app<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/RemoveAttributes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RemoveAttributesOutcome RemoveAttributes(const Model::RemoveAttributesRequest& request) const;
+
+        /**
+         * Used to remove the attributes for an app<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/RemoveAttributes">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RemoveAttributesOutcomeCallable RemoveAttributesCallable(const Model::RemoveAttributesRequest& request) const;
+
+        /**
+         * Used to remove the attributes for an app<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/RemoveAttributes">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RemoveAttributesAsync(const Model::RemoveAttributesRequest& request, const RemoveAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Use this resource to send a direct message, which is a one time message that you
+         * send to a limited audience without creating a campaign. 
+
+You can send the
+         * message to up to 100 recipients. You cannot use the message to engage a segment.
+         * When you send the message, Amazon Pinpoint delivers it immediately, and you
+         * cannot schedule the delivery. To engage a user segment, and to schedule the
+         * message delivery, create a campaign instead of sending a direct message.
+
+You
+         * can send a direct message as a push notification to your mobile app or as an SMS
+         * message to SMS-enabled devices.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendMessages">AWS
          * API Reference</a></p>
          */
         virtual Model::SendMessagesOutcome SendMessages(const Model::SendMessagesRequest& request) const;
 
         /**
-         * Send a batch of messages<p><h3>See Also:</h3>   <a
+         * Use this resource to send a direct message, which is a one time message that you
+         * send to a limited audience without creating a campaign. 
+
+You can send the
+         * message to up to 100 recipients. You cannot use the message to engage a segment.
+         * When you send the message, Amazon Pinpoint delivers it immediately, and you
+         * cannot schedule the delivery. To engage a user segment, and to schedule the
+         * message delivery, create a campaign instead of sending a direct message.
+
+You
+         * can send a direct message as a push notification to your mobile app or as an SMS
+         * message to SMS-enabled devices.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendMessages">AWS
          * API Reference</a></p>
          *
@@ -1675,7 +1853,18 @@ namespace Model
         virtual Model::SendMessagesOutcomeCallable SendMessagesCallable(const Model::SendMessagesRequest& request) const;
 
         /**
-         * Send a batch of messages<p><h3>See Also:</h3>   <a
+         * Use this resource to send a direct message, which is a one time message that you
+         * send to a limited audience without creating a campaign. 
+
+You can send the
+         * message to up to 100 recipients. You cannot use the message to engage a segment.
+         * When you send the message, Amazon Pinpoint delivers it immediately, and you
+         * cannot schedule the delivery. To engage a user segment, and to schedule the
+         * message delivery, create a campaign instead of sending a direct message.
+
+You
+         * can send a direct message as a push notification to your mobile app or as an SMS
+         * message to SMS-enabled devices.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendMessages">AWS
          * API Reference</a></p>
          *
@@ -1684,14 +1873,56 @@ namespace Model
         virtual void SendMessagesAsync(const Model::SendMessagesRequest& request, const SendMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Send a batch of messages to users<p><h3>See Also:</h3>   <a
+         * Use this resource to message a list of users. Amazon Pinpoint sends the message
+         * to all of the endpoints that are associated with each user.
+
+A user represents
+         * an individual who is assigned a unique user ID, and this ID is assigned to one
+         * or more endpoints. For example, if an individual uses your app on multiple
+         * devices, your app could assign that person's user ID to the endpoint for each
+         * device.
+
+With the users-messages resource, you specify the message recipients as
+         * user IDs. For each user ID, Amazon Pinpoint delivers the message to all of the
+         * user's endpoints. Within the body of your request, you can specify a default
+         * message, and you can tailor your message for different channels, including those
+         * for mobile push and SMS.
+
+With this resource, you send a direct message, which
+         * is a one time message that you send to a limited audience without creating a
+         * campaign. You can send the message to up to 100 users per request. You cannot
+         * use the message to engage a segment. When you send the message, Amazon Pinpoint
+         * delivers it immediately, and you cannot schedule the delivery. To engage a user
+         * segment, and to schedule the message delivery, create a campaign instead of
+         * using the users-messages resource.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendUsersMessages">AWS
          * API Reference</a></p>
          */
         virtual Model::SendUsersMessagesOutcome SendUsersMessages(const Model::SendUsersMessagesRequest& request) const;
 
         /**
-         * Send a batch of messages to users<p><h3>See Also:</h3>   <a
+         * Use this resource to message a list of users. Amazon Pinpoint sends the message
+         * to all of the endpoints that are associated with each user.
+
+A user represents
+         * an individual who is assigned a unique user ID, and this ID is assigned to one
+         * or more endpoints. For example, if an individual uses your app on multiple
+         * devices, your app could assign that person's user ID to the endpoint for each
+         * device.
+
+With the users-messages resource, you specify the message recipients as
+         * user IDs. For each user ID, Amazon Pinpoint delivers the message to all of the
+         * user's endpoints. Within the body of your request, you can specify a default
+         * message, and you can tailor your message for different channels, including those
+         * for mobile push and SMS.
+
+With this resource, you send a direct message, which
+         * is a one time message that you send to a limited audience without creating a
+         * campaign. You can send the message to up to 100 users per request. You cannot
+         * use the message to engage a segment. When you send the message, Amazon Pinpoint
+         * delivers it immediately, and you cannot schedule the delivery. To engage a user
+         * segment, and to schedule the message delivery, create a campaign instead of
+         * using the users-messages resource.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendUsersMessages">AWS
          * API Reference</a></p>
          *
@@ -1700,7 +1931,28 @@ namespace Model
         virtual Model::SendUsersMessagesOutcomeCallable SendUsersMessagesCallable(const Model::SendUsersMessagesRequest& request) const;
 
         /**
-         * Send a batch of messages to users<p><h3>See Also:</h3>   <a
+         * Use this resource to message a list of users. Amazon Pinpoint sends the message
+         * to all of the endpoints that are associated with each user.
+
+A user represents
+         * an individual who is assigned a unique user ID, and this ID is assigned to one
+         * or more endpoints. For example, if an individual uses your app on multiple
+         * devices, your app could assign that person's user ID to the endpoint for each
+         * device.
+
+With the users-messages resource, you specify the message recipients as
+         * user IDs. For each user ID, Amazon Pinpoint delivers the message to all of the
+         * user's endpoints. Within the body of your request, you can specify a default
+         * message, and you can tailor your message for different channels, including those
+         * for mobile push and SMS.
+
+With this resource, you send a direct message, which
+         * is a one time message that you send to a limited audience without creating a
+         * campaign. You can send the message to up to 100 users per request. You cannot
+         * use the message to engage a segment. When you send the message, Amazon Pinpoint
+         * delivers it immediately, and you cannot schedule the delivery. To engage a user
+         * segment, and to schedule the message delivery, create a campaign instead of
+         * using the users-messages resource.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendUsersMessages">AWS
          * API Reference</a></p>
          *
@@ -1709,14 +1961,14 @@ namespace Model
         virtual void SendUsersMessagesAsync(const Model::SendUsersMessagesRequest& request, const SendUsersMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Update an ADM channel<p><h3>See Also:</h3>   <a
+         * Update an ADM channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateAdmChannel">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateAdmChannelOutcome UpdateAdmChannel(const Model::UpdateAdmChannelRequest& request) const;
 
         /**
-         * Update an ADM channel<p><h3>See Also:</h3>   <a
+         * Update an ADM channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateAdmChannel">AWS
          * API Reference</a></p>
          *
@@ -1725,7 +1977,7 @@ namespace Model
         virtual Model::UpdateAdmChannelOutcomeCallable UpdateAdmChannelCallable(const Model::UpdateAdmChannelRequest& request) const;
 
         /**
-         * Update an ADM channel<p><h3>See Also:</h3>   <a
+         * Update an ADM channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateAdmChannel">AWS
          * API Reference</a></p>
          *
@@ -1759,14 +2011,14 @@ namespace Model
         virtual void UpdateApnsChannelAsync(const Model::UpdateApnsChannelRequest& request, const UpdateApnsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Update an APNS sandbox channel<p><h3>See Also:</h3>   <a
+         * Update an APNS sandbox channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsSandboxChannel">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateApnsSandboxChannelOutcome UpdateApnsSandboxChannel(const Model::UpdateApnsSandboxChannelRequest& request) const;
 
         /**
-         * Update an APNS sandbox channel<p><h3>See Also:</h3>   <a
+         * Update an APNS sandbox channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsSandboxChannel">AWS
          * API Reference</a></p>
          *
@@ -1775,7 +2027,7 @@ namespace Model
         virtual Model::UpdateApnsSandboxChannelOutcomeCallable UpdateApnsSandboxChannelCallable(const Model::UpdateApnsSandboxChannelRequest& request) const;
 
         /**
-         * Update an APNS sandbox channel<p><h3>See Also:</h3>   <a
+         * Update an APNS sandbox channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsSandboxChannel">AWS
          * API Reference</a></p>
          *
@@ -1909,14 +2161,14 @@ namespace Model
         virtual void UpdateCampaignAsync(const Model::UpdateCampaignRequest& request, const UpdateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Update an email channel<p><h3>See Also:</h3>   <a
+         * Update an email channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEmailChannel">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateEmailChannelOutcome UpdateEmailChannel(const Model::UpdateEmailChannelRequest& request) const;
 
         /**
-         * Update an email channel<p><h3>See Also:</h3>   <a
+         * Update an email channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEmailChannel">AWS
          * API Reference</a></p>
          *
@@ -1925,7 +2177,7 @@ namespace Model
         virtual Model::UpdateEmailChannelOutcomeCallable UpdateEmailChannelCallable(const Model::UpdateEmailChannelRequest& request) const;
 
         /**
-         * Update an email channel<p><h3>See Also:</h3>   <a
+         * Update an email channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEmailChannel">AWS
          * API Reference</a></p>
          *
@@ -1934,14 +2186,14 @@ namespace Model
         virtual void UpdateEmailChannelAsync(const Model::UpdateEmailChannelRequest& request, const UpdateEmailChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Use to update an endpoint.<p><h3>See Also:</h3>   <a
+         * Creates or updates an endpoint.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEndpoint">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateEndpointOutcome UpdateEndpoint(const Model::UpdateEndpointRequest& request) const;
 
         /**
-         * Use to update an endpoint.<p><h3>See Also:</h3>   <a
+         * Creates or updates an endpoint.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEndpoint">AWS
          * API Reference</a></p>
          *
@@ -1950,7 +2202,7 @@ namespace Model
         virtual Model::UpdateEndpointOutcomeCallable UpdateEndpointCallable(const Model::UpdateEndpointRequest& request) const;
 
         /**
-         * Use to update an endpoint.<p><h3>See Also:</h3>   <a
+         * Creates or updates an endpoint.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEndpoint">AWS
          * API Reference</a></p>
          *
@@ -2034,14 +2286,14 @@ namespace Model
         virtual void UpdateSegmentAsync(const Model::UpdateSegmentRequest& request, const UpdateSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Update an SMS channel<p><h3>See Also:</h3>   <a
+         * Update an SMS channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSmsChannel">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateSmsChannelOutcome UpdateSmsChannel(const Model::UpdateSmsChannelRequest& request) const;
 
         /**
-         * Update an SMS channel<p><h3>See Also:</h3>   <a
+         * Update an SMS channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSmsChannel">AWS
          * API Reference</a></p>
          *
@@ -2050,7 +2302,7 @@ namespace Model
         virtual Model::UpdateSmsChannelOutcomeCallable UpdateSmsChannelCallable(const Model::UpdateSmsChannelRequest& request) const;
 
         /**
-         * Update an SMS channel<p><h3>See Also:</h3>   <a
+         * Update an SMS channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSmsChannel">AWS
          * API Reference</a></p>
          *
@@ -2082,6 +2334,7 @@ namespace Model
         void DeleteGcmChannelAsyncHelper(const Model::DeleteGcmChannelRequest& request, const DeleteGcmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSegmentAsyncHelper(const Model::DeleteSegmentRequest& request, const DeleteSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSmsChannelAsyncHelper(const Model::DeleteSmsChannelRequest& request, const DeleteSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteUserEndpointsAsyncHelper(const Model::DeleteUserEndpointsRequest& request, const DeleteUserEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAdmChannelAsyncHelper(const Model::GetAdmChannelRequest& request, const GetAdmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetApnsChannelAsyncHelper(const Model::GetApnsChannelRequest& request, const GetApnsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetApnsSandboxChannelAsyncHelper(const Model::GetApnsSandboxChannelRequest& request, const GetApnsSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2096,6 +2349,7 @@ namespace Model
         void GetCampaignVersionAsyncHelper(const Model::GetCampaignVersionRequest& request, const GetCampaignVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCampaignVersionsAsyncHelper(const Model::GetCampaignVersionsRequest& request, const GetCampaignVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCampaignsAsyncHelper(const Model::GetCampaignsRequest& request, const GetCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetChannelsAsyncHelper(const Model::GetChannelsRequest& request, const GetChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEmailChannelAsyncHelper(const Model::GetEmailChannelRequest& request, const GetEmailChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEndpointAsyncHelper(const Model::GetEndpointRequest& request, const GetEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEventStreamAsyncHelper(const Model::GetEventStreamRequest& request, const GetEventStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2111,7 +2365,10 @@ namespace Model
         void GetSegmentVersionsAsyncHelper(const Model::GetSegmentVersionsRequest& request, const GetSegmentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSegmentsAsyncHelper(const Model::GetSegmentsRequest& request, const GetSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSmsChannelAsyncHelper(const Model::GetSmsChannelRequest& request, const GetSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetUserEndpointsAsyncHelper(const Model::GetUserEndpointsRequest& request, const GetUserEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PhoneNumberValidateAsyncHelper(const Model::PhoneNumberValidateRequest& request, const PhoneNumberValidateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutEventStreamAsyncHelper(const Model::PutEventStreamRequest& request, const PutEventStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RemoveAttributesAsyncHelper(const Model::RemoveAttributesRequest& request, const RemoveAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendMessagesAsyncHelper(const Model::SendMessagesRequest& request, const SendMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendUsersMessagesAsyncHelper(const Model::SendUsersMessagesRequest& request, const SendUsersMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAdmChannelAsyncHelper(const Model::UpdateAdmChannelRequest& request, const UpdateAdmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -27,9 +27,6 @@ namespace Model
 {
 
   /**
-   * GetEventStreamRequest<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEventStreamRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_PINPOINT_API GetEventStreamRequest : public PinpointRequest
   {
@@ -46,37 +43,37 @@ namespace Model
 
 
     /**
-     * ApplicationId
+     * The unique ID of your Amazon Pinpoint application.
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * ApplicationId
+     * The unique ID of your Amazon Pinpoint application.
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * ApplicationId
+     * The unique ID of your Amazon Pinpoint application.
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * ApplicationId
+     * The unique ID of your Amazon Pinpoint application.
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * ApplicationId
+     * The unique ID of your Amazon Pinpoint application.
      */
     inline GetEventStreamRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * ApplicationId
+     * The unique ID of your Amazon Pinpoint application.
      */
     inline GetEventStreamRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * ApplicationId
+     * The unique ID of your Amazon Pinpoint application.
      */
     inline GetEventStreamRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 

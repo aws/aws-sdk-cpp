@@ -171,17 +171,17 @@ namespace Model
 
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Not used. Retained for backwards compatibility.
      */
     inline bool GetHasCredential() const{ return m_hasCredential; }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Not used. Retained for backwards compatibility.
      */
     inline void SetHasCredential(bool value) { m_hasCredentialHasBeenSet = true; m_hasCredential = value; }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Not used. Retained for backwards compatibility.
      */
     inline EmailChannelResponse& WithHasCredential(bool value) { SetHasCredential(value); return *this;}
 
@@ -347,6 +347,22 @@ namespace Model
 
 
     /**
+     * Messages per second that can be sent
+     */
+    inline int GetMessagesPerSecond() const{ return m_messagesPerSecond; }
+
+    /**
+     * Messages per second that can be sent
+     */
+    inline void SetMessagesPerSecond(int value) { m_messagesPerSecondHasBeenSet = true; m_messagesPerSecond = value; }
+
+    /**
+     * Messages per second that can be sent
+     */
+    inline EmailChannelResponse& WithMessagesPerSecond(int value) { SetMessagesPerSecond(value); return *this;}
+
+
+    /**
      * Platform type. Will be "EMAIL"
      */
     inline const Aws::String& GetPlatform() const{ return m_platform; }
@@ -471,6 +487,9 @@ namespace Model
 
     Aws::String m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
+
+    int m_messagesPerSecond;
+    bool m_messagesPerSecondHasBeenSet;
 
     Aws::String m_platform;
     bool m_platformHasBeenSet;

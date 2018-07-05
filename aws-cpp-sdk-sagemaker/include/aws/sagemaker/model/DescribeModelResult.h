@@ -161,32 +161,32 @@ namespace Model
 
 
     /**
-     * <p>A object that specifies the VPC that this model has access to. For more
-     * information, see <a>host-vpc</a> </p>
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that this model has access
+     * to. For more information, see <a>host-vpc</a> </p>
      */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
 
     /**
-     * <p>A object that specifies the VPC that this model has access to. For more
-     * information, see <a>host-vpc</a> </p>
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that this model has access
+     * to. For more information, see <a>host-vpc</a> </p>
      */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfig = value; }
 
     /**
-     * <p>A object that specifies the VPC that this model has access to. For more
-     * information, see <a>host-vpc</a> </p>
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that this model has access
+     * to. For more information, see <a>host-vpc</a> </p>
      */
     inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfig = std::move(value); }
 
     /**
-     * <p>A object that specifies the VPC that this model has access to. For more
-     * information, see <a>host-vpc</a> </p>
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that this model has access
+     * to. For more information, see <a>host-vpc</a> </p>
      */
     inline DescribeModelResult& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
 
     /**
-     * <p>A object that specifies the VPC that this model has access to. For more
-     * information, see <a>host-vpc</a> </p>
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that this model has access
+     * to. For more information, see <a>host-vpc</a> </p>
      */
     inline DescribeModelResult& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 
