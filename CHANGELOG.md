@@ -1,5 +1,15 @@
 # Breaking changes in AWS SDK for C++
 
+## [1.5.0](https://github.com/aws/aws-sdk-cpp/tree/1.5.0) (2018-07-25)
+
+### aws-cpp-sdk-core
+
+`cJSON` is now the underlying JSON parser, replacing JsonCpp.
+
+`JsonValue` is now strictly a DOM manipulation class. All reads and serialization must be done through the new
+`JsonView` class. The `JsonView` is lightweight and follows the `string_view` concept from C++17 such that, it does not
+extend the lifetime of its underlying DOM (the `JsonValue`).
+
 ## [1.4.0](https://github.com/aws/aws-sdk-cpp/tree/1.4.0) (2018-02-19)
 
 ### aws-cpp-sdk-s3

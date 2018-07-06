@@ -322,12 +322,13 @@ namespace Aws
             const char* secretAccessKey = "SecretAccessKey";
             Aws::String accessKey, secretKey, token;
 
-            accessKey = credentialsDoc.GetString(accessKeyId);
+            auto credentialsView = credentialsDoc.View();
+            accessKey = credentialsView.GetString(accessKeyId);
             AWS_LOGSTREAM_INFO(EC2_INSTANCE_PROFILE_LOG_TAG, 
                     "Successfully pulled credentials from metadata service with access key " << accessKey);
 
-            secretKey = credentialsDoc.GetString(secretAccessKey);
-            token = credentialsDoc.GetString("Token");
+            secretKey = credentialsView.GetString(secretAccessKey);
+            token = credentialsView.GetString("Token");
 
             auto region = m_ec2metadataClient->GetCurrentRegion();
 

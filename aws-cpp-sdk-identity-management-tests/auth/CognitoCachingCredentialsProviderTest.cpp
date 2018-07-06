@@ -284,7 +284,7 @@ namespace
 
         mockHttpClient->GetAllRequestsMade()[0].GetContentBody()->seekg(0, mockHttpClient->GetAllRequestsMade()[0].GetContentBody()->beg);
         JsonValue jsonValue(*mockHttpClient->GetAllRequestsMade()[0].GetContentBody());
-        ASSERT_EQ(LOGIN_ID, jsonValue.GetObject("Logins").GetAllObjects()[LOGIN_KEY].AsString());
+        ASSERT_EQ(LOGIN_ID, jsonValue.View().GetObject("Logins").GetAllObjects()[LOGIN_KEY].AsString());
 
         //now make sure the caching worked;
         credentials = cognitoCachingAuthenticatedCredentialsProvider.GetAWSCredentials();
@@ -331,7 +331,7 @@ namespace
 
         mockHttpClient->GetAllRequestsMade()[0].GetContentBody()->seekg(0, mockHttpClient->GetAllRequestsMade()[0].GetContentBody()->beg);
         JsonValue jsonValue(*mockHttpClient->GetAllRequestsMade()[0].GetContentBody());
-        ASSERT_EQ(0u, jsonValue.GetObject("Logins").GetAllObjects().size());
+        ASSERT_EQ(0u, jsonValue.View().GetObject("Logins").GetAllObjects().size());
 
         //make sure the caching worked;
         credentials = cognitoCachingAuthenticatedCredentialsProvider.GetAWSCredentials();
@@ -378,7 +378,7 @@ namespace
 
         mockHttpClient->GetAllRequestsMade()[0].GetContentBody()->seekg(0, mockHttpClient->GetAllRequestsMade()[0].GetContentBody()->beg);
         jsonValue = JsonValue(*mockHttpClient->GetAllRequestsMade()[0].GetContentBody());
-        ASSERT_EQ(LOGIN_ID, jsonValue.GetObject("Logins").GetAllObjects()[LOGIN_KEY].AsString());
+        ASSERT_EQ(LOGIN_ID, jsonValue.View().GetObject("Logins").GetAllObjects()[LOGIN_KEY].AsString());
 
         //now make sure the caching worked;
         credentials = cognitoCachingAuthenticatedCredentialsProvider.GetAWSCredentials();

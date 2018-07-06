@@ -54,12 +54,12 @@ file(GLOB UTILS_STL_HEADERS "include/aws/core/utils/memory/stl/*.h")
 file(GLOB UTILS_LOGGING_HEADERS "include/aws/core/utils/logging/*.h")
 file(GLOB UTILS_RATE_LIMITER_HEADERS "include/aws/core/utils/ratelimiter/*.h")
 file(GLOB UTILS_STREAM_HEADERS "include/aws/core/utils/stream/*.h")
-file(GLOB JSONCPP_HEADERS "include/aws/core/external/json-cpp/*.h")
+file(GLOB CJSON_HEADERS "include/aws/core/external/cjson/*.h")
 file(GLOB TINYXML2_HEADERS "include/aws/core/external/tinyxml2/tinyxml2.h")
 
 file(GLOB AWS_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/*.cpp")
 file(GLOB AWS_TINYXML2_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/external/tinyxml2/*.cpp")
-file(GLOB AWS_JSONCPP_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/external/json-cpp/*.cpp")
+file(GLOB CJSON_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/external/cjson/*.cpp")
 file(GLOB AWS_AUTH_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/auth/*.cpp")
 file(GLOB AWS_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/client/*.cpp")
 file(GLOB AWS_INTERNAL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/internal/*.cpp")
@@ -168,7 +168,7 @@ file(GLOB AWS_NATIVE_SDK_COMMON_HEADERS
   ${UTILS_STL_HEADERS}
   ${UTILS_STREAM_HEADERS}
   ${UTILS_RATE_LIMITER_HEADERS}
-  ${JSONCPP_HEADERS}
+  ${CJSON_HEADERS}
   ${TINYXML2_HEADERS}
   ${HTTP_CURL_CLIENT_HEADERS}
   ${HTTP_WINDOWS_CLIENT_HEADERS}
@@ -217,7 +217,7 @@ file(GLOB AWS_NATIVE_SDK_NON_UNITY_SRC
     ${UTILS_CRYPTO_FACTORY_SOURCE}
     ${UTILS_SOURCE}
     ${HTTP_SOURCE}
-    ${AWS_JSONCPP_SOURCE}
+    ${CJSON_SOURCE}
     ${AWS_NATIVE_SDK_CUSTOM_SRC}
 )
 
@@ -266,7 +266,7 @@ if(MSVC)
     source_group("Header Files\\aws\\core\\utils\\memory\\stl" FILES ${UTILS_STL_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\stream" FILES ${UTILS_STREAM_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\ratelimiter" FILES ${UTILS_RATE_LIMITER_HEADERS})
-    source_group("Header Files\\aws\\core\\external\\json-cpp" FILES ${JSONCPP_HEADERS})
+    source_group("Header Files\\aws\\core\\external\\cjson" FILES ${CJSON_HEADERS})
     source_group("Header Files\\aws\\core\\external\\tinyxml2" FILES ${TINYXML2_HEADERS})
 
     # http client conditional headers
@@ -286,7 +286,7 @@ if(MSVC)
     endif()
 
     source_group("Source Files" FILES ${AWS_SOURCE})
-    source_group("Source Files\\external\\json-cpp" FILES ${AWS_JSONCPP_SOURCE})
+    source_group("Source Files\\external\\cjson" FILES ${CJSON_SOURCE})
     source_group("Source Files\\external\\tinyxml2" FILES ${AWS_TINYXML2_SOURCE})
     source_group("Source Files\\auth" FILES ${AWS_AUTH_SOURCE})
     source_group("Source Files\\client" FILES ${AWS_CLIENT_SOURCE})
@@ -447,7 +447,7 @@ install (FILES ${UTILS_STL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/ut
 install (FILES ${UTILS_RATE_LIMITER_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/ratelimiter)
 install (FILES ${UTILS_STREAM_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/stream)
 install (FILES ${UTILS_THREADING_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/threading)
-install (FILES ${JSONCPP_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/external/json-cpp)
+install (FILES ${CJSON_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/external/cjson)
 install (FILES ${TINYXML2_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/external/tinyxml2)
 
 # http client headers

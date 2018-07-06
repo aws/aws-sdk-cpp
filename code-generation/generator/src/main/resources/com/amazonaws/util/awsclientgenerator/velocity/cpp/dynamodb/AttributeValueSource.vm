@@ -272,7 +272,7 @@ AttributeValue& AttributeValue::SetNull(bool value)
     return *this;
 }
 
-AttributeValue& AttributeValue::operator =(const JsonValue& jsonValue)
+AttributeValue& AttributeValue::operator =(JsonView jsonValue)
 {
     if (jsonValue.ValueExists("S"))
     {
@@ -376,5 +376,5 @@ JsonValue AttributeValue::Jsonize() const
 Aws::String AttributeValue::SerializeAttribute() const
 {
     JsonValue value = Jsonize();
-    return value.WriteReadable();
+    return value.View().WriteReadable();
 }

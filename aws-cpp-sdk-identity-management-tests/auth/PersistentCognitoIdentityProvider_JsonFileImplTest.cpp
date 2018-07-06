@@ -81,7 +81,7 @@ TEST_F(PersistentCognitoIdentityProvider_JsonImpl_Test, TestConstructorWhenFileI
 
     Aws::String filePath = tempFile;
     std::ofstream identityFile(filePath.c_str());
-    identityFile << identityDoc.WriteReadable();
+    identityFile << identityDoc.View().WriteReadable();
     identityFile.flush();
     identityFile.close();
 
@@ -89,7 +89,7 @@ TEST_F(PersistentCognitoIdentityProvider_JsonImpl_Test, TestConstructorWhenFileI
     Aws::FileSystem::RemoveFileIfExists(filePath.c_str());
 
     ASSERT_TRUE(identityProvider.HasIdentityId());
-    ASSERT_EQ(theIdentityPoolWeWant.GetString("IdentityId"), identityProvider.GetIdentityId());
+    ASSERT_EQ(theIdentityPoolWeWant.View().GetString("IdentityId"), identityProvider.GetIdentityId());
     ASSERT_TRUE(identityProvider.HasLogins());
     ASSERT_EQ(1u, identityProvider.GetLogins().size());
     ASSERT_EQ("TestLoginName", identityProvider.GetLogins().begin()->first);
@@ -107,7 +107,7 @@ TEST_F(PersistentCognitoIdentityProvider_JsonImpl_Test, TestPersistance)
     Aws::String filePath = tempFile;
     Aws::FileSystem::RemoveFileIfExists(filePath.c_str());
     std::ofstream identityFile(filePath.c_str());
-    identityFile << identityDoc.WriteReadable();
+    identityFile << identityDoc.View().WriteReadable();
     identityFile.close();
 
     Aws::Map<Aws::String, LoginAccessTokens> loginsMap;
@@ -145,13 +145,14 @@ TEST_F(PersistentCognitoIdentityProvider_JsonImpl_Test, TestPersistance)
     EXPECT_EQ(loginAccessTokens.longTermTokenExpiry, identityProvider.GetLogins().begin()->second.longTermTokenExpiry);
 
     std::ifstream identityFileInput(filePath.c_str());
-    JsonValue finalIdentityDoc(identityFileInput);
+    JsonValue finalIdentityDocJson(identityFileInput);
+    auto finalIdentityDoc = finalIdentityDocJson.View();
     identityFileInput.close();
     Aws::FileSystem::RemoveFileIfExists(filePath.c_str());
 
     ASSERT_TRUE(finalIdentityDoc.ValueExists("SomeOtherIdentityPool"));
     ASSERT_TRUE(finalIdentityDoc.ValueExists("IdentityPoolWeWant"));
-    JsonValue ourIdentityPool = finalIdentityDoc.GetObject("IdentityPoolWeWant");
+    auto ourIdentityPool = finalIdentityDoc.GetObject("IdentityPoolWeWant");
     ASSERT_EQ("IdentityWeWant", ourIdentityPool.GetString("IdentityId"));
     ASSERT_EQ("LoginName", ourIdentityPool.GetObject("Logins").GetAllObjects().begin()->first);
     ASSERT_EQ(loginAccessTokens.accessToken, ourIdentityPool.GetObject("Logins").GetAllObjects().begin()->second.GetString("AccessToken"));

@@ -486,7 +486,7 @@ TEST_F(FunctionTest, TestInvokeSync)
     std::shared_ptr<Aws::IOStream> payload = Aws::MakeShared<Aws::StringStream>("FunctionTest");
     Aws::Utils::Json::JsonValue jsonPayload;
     jsonPayload.WithString("input", "ThePayload");
-    *payload << jsonPayload.WriteReadable();
+    *payload << jsonPayload.View().WriteReadable();
     invokeRequest.SetBody(payload);
 
 
@@ -512,7 +512,7 @@ TEST_F(FunctionTest, TestInvokeSync)
     //Our 'happy case' script simply echos the input to the output, so we should get the same thing here that we
     //sent above
     auto jsonResponse = Aws::Utils::Json::JsonValue(result.GetPayload());
-    EXPECT_EQ("ThePayload", jsonResponse.GetString("input"));
+    EXPECT_EQ("ThePayload", jsonResponse.View().GetString("input"));
 }
 
 
@@ -526,7 +526,7 @@ TEST_F(FunctionTest, TestInvokeSyncHandledFunctionError)
     std::shared_ptr<Aws::IOStream> payload = Aws::MakeShared<Aws::StringStream>("FunctionTest");
     Aws::Utils::Json::JsonValue jsonPayload;
     jsonPayload.WithString("input", "ThePayload");
-    *payload << jsonPayload.WriteReadable();
+    *payload << jsonPayload.View().WriteReadable();
     invokeRequest.SetBody(payload);
 
 
@@ -556,8 +556,8 @@ TEST_F(FunctionTest, TestPermissions)
     AddPermissionResult result = outcome.GetResult();
     auto statement = Aws::Utils::Json::JsonValue(result.GetStatement());
 
-    EXPECT_EQ("12345",statement.GetString("Sid"));
-    EXPECT_NE(std::string::npos, statement.GetString("Resource").find(simpleFunctionName));
+    EXPECT_EQ("12345",statement.View().GetString("Sid"));
+    EXPECT_NE(std::string::npos, statement.View().GetString("Resource").find(simpleFunctionName));
 
 
     GetPolicyRequest getPolicyRequest;
@@ -568,8 +568,8 @@ TEST_F(FunctionTest, TestPermissions)
     GetPolicyResult getPolicyResult = getPolicyOutcome.GetResult();
     auto getPolicyStatement = Aws::Utils::Json::JsonValue(getPolicyResult.GetPolicy());
 
-    EXPECT_EQ("12345", getPolicyStatement.GetArray("Statement").GetItem(0).GetString("Sid"));
-    EXPECT_EQ("lambda:Invoke", getPolicyStatement.GetArray("Statement").GetItem(0).GetString("Action"));
+    EXPECT_EQ("12345", getPolicyStatement.View().GetArray("Statement").GetItem(0).GetString("Sid"));
+    EXPECT_EQ("lambda:Invoke", getPolicyStatement.View().GetArray("Statement").GetItem(0).GetString("Action"));
 
     RemovePermissionRequest removePermissionRequest;
     removePermissionRequest.SetFunctionName(simpleFunctionName);
@@ -590,7 +590,7 @@ TEST_F(FunctionTest, TestPermissions)
     {
         GetPolicyResult getRemovedPolicyResult = getRemovedPolicyOutcome.GetResult();
         auto getNewPolicy = Aws::Utils::Json::JsonValue(getRemovedPolicyResult.GetPolicy());
-        EXPECT_EQ(0uL, getNewPolicy.GetArray("Statement").GetLength());
+        EXPECT_EQ(0uL, getNewPolicy.View().GetArray("Statement").GetLength());
     }
 }
 

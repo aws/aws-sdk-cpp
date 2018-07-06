@@ -25,6 +25,7 @@ namespace Aws
     {
         namespace Json
         {
+            class JsonView;
             class JsonValue;
         }
     }
@@ -89,7 +90,7 @@ namespace Aws
             void PersistChangesToFile(const Utils::Json::JsonValue&) const;
             void LoadAndParseDoc();
 
-            static void BuildLoginsMap(Aws::Map<Aws::String, Aws::Utils::Json::JsonValue>, Aws::Map<Aws::String, LoginAccessTokens>& logins);
+            static void BuildLoginsMap(Aws::Map<Aws::String, Aws::Utils::Json::JsonView>, Aws::Map<Aws::String, LoginAccessTokens>& logins);
 
             std::mutex m_docMutex;
             Aws::String m_identityPoolId;

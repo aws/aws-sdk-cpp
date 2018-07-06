@@ -29,7 +29,8 @@ TEST(JsonSerializerTest, TestParseSimpleJsonString)
     if (value.WasParseSuccessful())
     {
         ASSERT_TRUE(value.GetErrorMessage().empty());
-        ASSERT_STREQ("testStringValue", value.GetString("testStringKey").c_str());
+        auto view = value.View();
+        ASSERT_STREQ("testStringValue", view.GetString("testStringKey").c_str());
     }
     else
     {
@@ -45,7 +46,8 @@ TEST(JsonSerializerTest, TestParseSimpleJsonString2)
     if (value.WasParseSuccessful())
     {
         ASSERT_TRUE(value.GetErrorMessage().empty());
-        ASSERT_EQ(10, value.GetInteger("testIntKey"));
+        auto view = value.View();
+        ASSERT_EQ(10, view.GetInteger("testIntKey"));
     }
     else
     {
@@ -61,7 +63,8 @@ TEST(JsonSerializerTest, TestParseSimpleJsonString3)
     if (value.WasParseSuccessful())
     {
         ASSERT_TRUE(value.GetErrorMessage().empty());
-        ASSERT_FALSE(value.GetBool("testBoolKey"));
+        auto view = value.View();
+        ASSERT_FALSE(view.GetBool("testBoolKey"));
     }
     else
     {
@@ -78,8 +81,9 @@ TEST(JsonSerializerTest, TestParseJsonArrayString)
     if (value.WasParseSuccessful())
     {
         ASSERT_TRUE(value.GetErrorMessage().empty());
-        ASSERT_STREQ("stringArrayEntry1", value.GetArray("array")[0].AsString().c_str());
-        ASSERT_STREQ("stringArrayEntry2", value.GetArray("array")[1].AsString().c_str());
+        auto view = value.View();
+        ASSERT_STREQ("stringArrayEntry1", view.GetArray("array")[0].AsString().c_str());
+        ASSERT_STREQ("stringArrayEntry2", view.GetArray("array")[1].AsString().c_str());
     }
     else
     {
@@ -97,13 +101,14 @@ TEST(JsonSerializerTest, TestParseJsonString)
     JsonValue value(jsonValue);
     if (value.WasParseSuccessful())
     {
+        auto view = value.View();
         ASSERT_TRUE(value.GetErrorMessage().empty());
-        ASSERT_STREQ("testStringValue", value.GetString("testStringKey").c_str());
-        ASSERT_EQ(10, value.GetInteger("testIntKey"));
-        ASSERT_FALSE(value.GetBool("testBoolKey"));
-        ASSERT_STREQ("stringArrayEntry1", value.GetArray("array")[0].AsString().c_str());
-        ASSERT_STREQ("stringArrayEntry2", value.GetArray("array")[1].AsString().c_str());
-        ASSERT_STREQ("testObjectStringValue", value.GetObject("object").GetString("testObjectStringKey").c_str());
+        ASSERT_STREQ("testStringValue", view.GetString("testStringKey").c_str());
+        ASSERT_EQ(10, view.GetInteger("testIntKey"));
+        ASSERT_FALSE(view.GetBool("testBoolKey"));
+        ASSERT_STREQ("stringArrayEntry1", view.GetArray("array")[0].AsString().c_str());
+        ASSERT_STREQ("stringArrayEntry2", view.GetArray("array")[1].AsString().c_str());
+        ASSERT_STREQ("testObjectStringValue", view.GetObject("object").GetString("testObjectStringKey").c_str());
     }
     else
     {
@@ -118,13 +123,14 @@ TEST(JsonSerializerTest, TestParseJsonStream)
 
     if (value.WasParseSuccessful())
     {
+        auto view = value.View();
         ASSERT_TRUE(value.GetErrorMessage().empty());
-        ASSERT_STREQ("testStringValue", value.GetString("testStringKey").c_str());
-        ASSERT_EQ(10, value.GetInteger("testIntKey"));
-        ASSERT_FALSE(value.GetBool("testBoolKey"));
-        ASSERT_STREQ("stringArrayEntry1", value.GetArray("array")[0].AsString().c_str());
-        ASSERT_STREQ("stringArrayEntry2", value.GetArray("array")[1].AsString().c_str());
-        ASSERT_STREQ("testObjectStringValue", value.GetObject("object").GetString("testObjectStringKey").c_str());
+        ASSERT_STREQ("testStringValue", view.GetString("testStringKey").c_str());
+        ASSERT_EQ(10, view.GetInteger("testIntKey"));
+        ASSERT_FALSE(view.GetBool("testBoolKey"));
+        ASSERT_STREQ("stringArrayEntry1", view.GetArray("array")[0].AsString().c_str());
+        ASSERT_STREQ("stringArrayEntry2", view.GetArray("array")[1].AsString().c_str());
+        ASSERT_STREQ("testObjectStringValue", view.GetObject("object").GetString("testObjectStringKey").c_str());
     }
     else
     {
@@ -134,48 +140,48 @@ TEST(JsonSerializerTest, TestParseJsonStream)
 
 TEST(JsonSerializerTest, TestParseJsonStringFailed)
 {
-	JsonValue value(Aws::String("blah blah blah"));
-	ASSERT_FALSE(value.WasParseSuccessful());
-	ASSERT_FALSE(value.GetErrorMessage().empty());
+    JsonValue value(Aws::String("blah blah blah"));
+    ASSERT_FALSE(value.WasParseSuccessful());
+    ASSERT_FALSE(value.GetErrorMessage().empty());
 }
 
 TEST(JsonSerializerTest, TestParseJsonStreamFailed)
 {
     Aws::StringStream ss;
-    ss << "blah blah blah";
+    ss << "{\"bla\" : blah blah";
     JsonValue value(ss);
     ASSERT_FALSE(value.WasParseSuccessful());
-    ASSERT_FALSE(value.GetErrorMessage().empty());
+    ASSERT_STREQ("Failed to parse JSON. Invalid input at: blah blah", value.GetErrorMessage().c_str());
 }
 
 TEST(JsonSerializerTest, TestJsonStringValue)
 {
     JsonValue value;
     value.WithString("testKey", "testValue");
-    ASSERT_STREQ("testValue", value.GetString("testKey").c_str());
+    ASSERT_STREQ("testValue", value.View().GetString("testKey").c_str());
 
     value.AsString("anotherTestValue");
-    ASSERT_STREQ("anotherTestValue", value.AsString().c_str());
+    ASSERT_STREQ("anotherTestValue", value.View().AsString().c_str());
 }
 
 TEST(JsonSerializerTest, TestJsonIntegerValue)
 {
     JsonValue value;
     value.WithInteger("testKey", 10);
-    ASSERT_EQ(10, value.GetInteger("testKey"));
+    ASSERT_EQ(10, value.View().GetInteger("testKey"));
 
     value.AsInteger(15);
-    ASSERT_EQ(15, value.AsInteger());
+    ASSERT_EQ(15, value.View().AsInteger());
 }
 
 TEST(JsonSerializerTest, TestJsonBoolValue)
 {
     JsonValue value;
     value.WithBool("testKey", false);
-    ASSERT_FALSE(value.GetBool("testKey"));
+    ASSERT_FALSE(value.View().GetBool("testKey"));
 
     value.AsBool(true);
-    ASSERT_TRUE(value.AsBool());
+    ASSERT_TRUE(value.View().AsBool());
 }
 
 TEST(JsonSerializerTest, TestJsonArrayValue)
@@ -188,7 +194,7 @@ TEST(JsonSerializerTest, TestJsonArrayValue)
     arrayValue[1] = value2.AsString("testValue2");
 
     value.WithArray("testArray", arrayValue);
-    Array<JsonValue> returnedValues = value.GetArray("testArray");
+    Array<JsonView> returnedValues = value.View().GetArray("testArray");
 
     ASSERT_EQ(2uL, returnedValues.GetLength());
     ASSERT_EQ("testValue1", returnedValues[0].AsString());
@@ -198,7 +204,7 @@ TEST(JsonSerializerTest, TestJsonArrayValue)
     arrayValue[1] = value2.AsString("testValue4");
 
     value.AsArray(arrayValue);
-    returnedValues = value.AsArray();
+    returnedValues = value.View().AsArray();
 
     ASSERT_EQ(2uL, returnedValues.GetLength());
     ASSERT_EQ("testValue3", returnedValues[0].AsString());
@@ -221,60 +227,61 @@ TEST(JsonSerializerTest, TestJsonObjectValue)
 
     JsonValue object;
     object.WithObject("testObjectKey", value);
+    auto objectView = object.View();
 
-    ASSERT_EQ(2uL, object.GetObject("testObjectKey").GetArray("testArray").GetLength());
-    ASSERT_EQ("testValue1", object.GetObject("testObjectKey").GetArray("testArray")[0].AsString());
-    ASSERT_EQ("testValue2", object.GetObject("testObjectKey").GetArray("testArray")[1].AsString());
-    ASSERT_EQ(10, object.GetObject("testObjectKey").GetInteger("testIntegerKey"));
-    ASSERT_FALSE(object.GetObject("testObjectKey").GetBool("testBoolKey"));
+    ASSERT_EQ(2uL, objectView.GetObject("testObjectKey").GetArray("testArray").GetLength());
+    ASSERT_EQ("testValue1", objectView.GetObject("testObjectKey").GetArray("testArray")[0].AsString());
+    ASSERT_EQ("testValue2", objectView.GetObject("testObjectKey").GetArray("testArray")[1].AsString());
+    ASSERT_EQ(10, objectView.GetObject("testObjectKey").GetInteger("testIntegerKey"));
+    ASSERT_FALSE(objectView.GetObject("testObjectKey").GetBool("testBoolKey"));
 
     object.AsObject(value);
-    ASSERT_EQ(2uL, object.AsObject().GetArray("testArray").GetLength());
-    ASSERT_EQ("testValue1", object.AsObject().GetArray("testArray")[0].AsString());
-    ASSERT_EQ("testValue2", object.AsObject().GetArray("testArray")[1].AsString());
-    ASSERT_EQ(10, object.AsObject().GetInteger("testIntegerKey"));
-    ASSERT_FALSE(object.AsObject().GetBool("testBoolKey"));    
+    objectView = object.View();
+    ASSERT_EQ(2uL, objectView.AsObject().GetArray("testArray").GetLength());
+    ASSERT_EQ("testValue1", objectView.AsObject().GetArray("testArray")[0].AsString());
+    ASSERT_EQ("testValue2", objectView.AsObject().GetArray("testArray")[1].AsString());
+    ASSERT_EQ(10, objectView.AsObject().GetInteger("testIntegerKey"));
+    ASSERT_FALSE(objectView.AsObject().GetBool("testBoolKey"));
 }
 
 TEST(JsonSerializerTest, TestJsonCompactSerializeObject)
 {
     JsonValue value(jsonValue);
-
-    Aws::String outputString = value.WriteCompact();
-
+    Aws::String outputString = value.View().WriteCompact();
     JsonValue reparsedValue(outputString);
-
     if (reparsedValue.WasParseSuccessful())
     {
-        ASSERT_EQ("testStringValue", reparsedValue.GetString("testStringKey"));
-        ASSERT_EQ(10, reparsedValue.GetInteger("testIntKey"));
-        ASSERT_FALSE(reparsedValue.GetBool("testBoolKey"));
-        ASSERT_EQ("stringArrayEntry1", reparsedValue.GetArray("array")[0].AsString());
-        ASSERT_EQ("stringArrayEntry2", reparsedValue.GetArray("array")[1].AsString());
-        ASSERT_EQ("testObjectStringValue", reparsedValue.GetObject("object").GetString("testObjectStringKey"));
+        auto view = reparsedValue.View();
+        ASSERT_EQ("testStringValue", view.GetString("testStringKey"));
+        ASSERT_EQ(10, view.GetInteger("testIntKey"));
+        ASSERT_FALSE(view.GetBool("testBoolKey"));
+        ASSERT_EQ("stringArrayEntry1", view.GetArray("array")[0].AsString());
+        ASSERT_EQ("stringArrayEntry2", view.GetArray("array")[1].AsString());
+        ASSERT_EQ("testObjectStringValue", view.GetObject("object").GetString("testObjectStringKey"));
     }
     else
     {
         GTEST_NONFATAL_FAILURE_(reparsedValue.GetErrorMessage().c_str());
-    }    
+    }
 }
 
 TEST(JsonSerializerTest, TestJsonStyledSerializeObject)
 {
     JsonValue value(jsonValue);
 
-    Aws::String outputString = value.WriteReadable();
+    Aws::String outputString = value.View().WriteReadable();
 
     JsonValue reparsedValue(outputString);
 
     if (reparsedValue.WasParseSuccessful())
     {
-        ASSERT_EQ("testStringValue", reparsedValue.GetString("testStringKey"));
-        ASSERT_EQ(10, reparsedValue.GetInteger("testIntKey"));
-        ASSERT_FALSE(reparsedValue.GetBool("testBoolKey"));
-        ASSERT_EQ("stringArrayEntry1", reparsedValue.GetArray("array")[0].AsString());
-        ASSERT_EQ("stringArrayEntry2", reparsedValue.GetArray("array")[1].AsString());
-        ASSERT_EQ("testObjectStringValue", reparsedValue.GetObject("object").GetString("testObjectStringKey"));
+        auto view = reparsedValue.View();
+        ASSERT_EQ("testStringValue", view.GetString("testStringKey"));
+        ASSERT_EQ(10, view.GetInteger("testIntKey"));
+        ASSERT_FALSE(view.GetBool("testBoolKey"));
+        ASSERT_EQ("stringArrayEntry1", view.GetArray("array")[0].AsString());
+        ASSERT_EQ("stringArrayEntry2", view.GetArray("array")[1].AsString());
+        ASSERT_EQ("testObjectStringValue", view.GetObject("object").GetString("testObjectStringKey"));
     }
     else
     {
@@ -285,13 +292,12 @@ TEST(JsonSerializerTest, TestJsonStyledSerializeObject)
 TEST(JsonSerializerTest, TestNullSanity)
 {
     JsonValue value;
-    Aws::String nullStrValue = value.WriteReadable(false);
-    ASSERT_EQ("null\n", nullStrValue);
-    ASSERT_TRUE(value.AsString().empty());
-    ASSERT_EQ(0, value.AsInteger());
-    ASSERT_EQ(0uL, value.AsArray().GetLength());
-    Aws::String emptyObjValue = value.AsObject().WriteReadable();
-    ASSERT_EQ("{\n}\n", emptyObjValue);
+    JsonView view = value.View();
+    Aws::String nullStrValue = view.WriteReadable(false);
+    ASSERT_STREQ("", nullStrValue.c_str());
+    auto map = view.GetAllObjects();
+    ASSERT_TRUE(map.empty());
+    ASSERT_FALSE(view.ValueExists("null"));
 }
 
 TEST(JsonSerializerTest, TestCopy)
@@ -307,6 +313,55 @@ TEST(JsonSerializerTest, TestCopy)
     ASSERT_FALSE(bad.WasParseSuccessful());
     copiedValue = bad;
     ASSERT_FALSE(copiedValue.WasParseSuccessful());
-    
 }
 
+TEST(JsonSerializer, TestBuilderPatternReplacesKeys)
+{
+    auto input = R"({"AWS" : {
+    "Key1" : "value1",
+    "Key2" : 42
+    }})";
+
+    JsonValue doc(input);
+    auto modified = doc.View().GetObject("AWS")
+        .Materialize()
+        .WithString("Key1", "another")
+        .WithInteger("Key2", 43);
+    const auto output = doc.WithObject("AWS", modified).View().WriteCompact();
+    const auto expected = R"({"AWS":{"Key1":"another","Key2":43}})";
+    ASSERT_STREQ(expected, output.c_str());
+}
+
+TEST(JsonSerializer, TestGetAllObjects)
+{
+    auto input = R"({"AWS" : {
+    "Key1" : "value1",
+    "Key2" : 42
+    }})";
+
+    JsonValue doc(input);
+    auto docView = doc.View();
+    ASSERT_EQ(1u, docView.GetAllObjects().size());
+    auto all = docView.GetObject("AWS").GetAllObjects();
+    ASSERT_EQ(2u, all.size());
+    ASSERT_STREQ("value1", all["Key1"].AsString().c_str());
+    ASSERT_EQ(42, all["Key2"].AsInteger());
+}
+
+TEST(JsonSerializer, TestEquality)
+{
+    auto input = R"({"AWS" : {
+    "Key1" : "value1",
+    "Key2" : 42
+    }})";
+
+    JsonValue parsed(input);
+    JsonValue keys;
+    keys.WithString("Key1", "value1").WithInteger("Key2", 42);
+
+    JsonValue built;
+    built.WithObject("AWS", keys);
+    ASSERT_EQ(parsed, built);
+    built.WithString("AWS", "Amazon Web Services");
+    ASSERT_NE(parsed, built);
+}

@@ -37,7 +37,7 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 
 #set($useRequiredField = true)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/ModelClassMembersJsonizeSource.vm")
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 #else
   return "";
 #end
