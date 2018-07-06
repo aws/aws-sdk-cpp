@@ -91,42 +91,42 @@ namespace Model
 
 
     /**
-     * <p>Array containing the list of values allowed for the parameter.</p>
+     * <p>An array containing the list of values allowed for the parameter.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAllowedValues() const{ return m_allowedValues; }
 
     /**
-     * <p>Array containing the list of values allowed for the parameter.</p>
+     * <p>An array containing the list of values allowed for the parameter.</p>
      */
     inline void SetAllowedValues(const Aws::Vector<Aws::String>& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = value; }
 
     /**
-     * <p>Array containing the list of values allowed for the parameter.</p>
+     * <p>An array containing the list of values allowed for the parameter.</p>
      */
     inline void SetAllowedValues(Aws::Vector<Aws::String>&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = std::move(value); }
 
     /**
-     * <p>Array containing the list of values allowed for the parameter.</p>
+     * <p>An array containing the list of values allowed for the parameter.</p>
      */
     inline ParameterDefinition& WithAllowedValues(const Aws::Vector<Aws::String>& value) { SetAllowedValues(value); return *this;}
 
     /**
-     * <p>Array containing the list of values allowed for the parameter.</p>
+     * <p>An array containing the list of values allowed for the parameter.</p>
      */
     inline ParameterDefinition& WithAllowedValues(Aws::Vector<Aws::String>&& value) { SetAllowedValues(std::move(value)); return *this;}
 
     /**
-     * <p>Array containing the list of values allowed for the parameter.</p>
+     * <p>An array containing the list of values allowed for the parameter.</p>
      */
     inline ParameterDefinition& AddAllowedValues(const Aws::String& value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(value); return *this; }
 
     /**
-     * <p>Array containing the list of values allowed for the parameter.</p>
+     * <p>An array containing the list of values allowed for the parameter.</p>
      */
     inline ParameterDefinition& AddAllowedValues(Aws::String&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Array containing the list of values allowed for the parameter.</p>
+     * <p>An array containing the list of values allowed for the parameter.</p>
      */
     inline ParameterDefinition& AddAllowedValues(const char* value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(value); return *this; }
 
@@ -141,7 +141,7 @@ namespace Model
  Malformed input-Parameter MyParameter must
      * match pattern [A-Za-z0-9]+
  </p><p>By adding a constraint description, such as
-     * "must contain only uppercase and lowercase letters, and numbers," you can
+     * "must contain only uppercase and lowercase letters and numbers," you can
      * display
  the following customized error message:</p><p>
  Malformed
@@ -161,7 +161,7 @@ namespace Model
  Malformed input-Parameter MyParameter must
      * match pattern [A-Za-z0-9]+
  </p><p>By adding a constraint description, such as
-     * "must contain only uppercase and lowercase letters, and numbers," you can
+     * "must contain only uppercase and lowercase letters and numbers," you can
      * display
  the following customized error message:</p><p>
  Malformed
@@ -181,7 +181,7 @@ namespace Model
  Malformed input-Parameter MyParameter must
      * match pattern [A-Za-z0-9]+
  </p><p>By adding a constraint description, such as
-     * "must contain only uppercase and lowercase letters, and numbers," you can
+     * "must contain only uppercase and lowercase letters and numbers," you can
      * display
  the following customized error message:</p><p>
  Malformed
@@ -201,7 +201,7 @@ namespace Model
  Malformed input-Parameter MyParameter must
      * match pattern [A-Za-z0-9]+
  </p><p>By adding a constraint description, such as
-     * "must contain only uppercase and lowercase letters, and numbers," you can
+     * "must contain only uppercase and lowercase letters and numbers," you can
      * display
  the following customized error message:</p><p>
  Malformed
@@ -221,7 +221,7 @@ namespace Model
  Malformed input-Parameter MyParameter must
      * match pattern [A-Za-z0-9]+
  </p><p>By adding a constraint description, such as
-     * "must contain only uppercase and lowercase letters, and numbers," you can
+     * "must contain only uppercase and lowercase letters and numbers," you can
      * display
  the following customized error message:</p><p>
  Malformed
@@ -241,7 +241,7 @@ namespace Model
  Malformed input-Parameter MyParameter must
      * match pattern [A-Za-z0-9]+
  </p><p>By adding a constraint description, such as
-     * "must contain only uppercase and lowercase letters, and numbers," you can
+     * "must contain only uppercase and lowercase letters and numbers," you can
      * display
  the following customized error message:</p><p>
  Malformed
@@ -261,7 +261,7 @@ namespace Model
  Malformed input-Parameter MyParameter must
      * match pattern [A-Za-z0-9]+
  </p><p>By adding a constraint description, such as
-     * "must contain only uppercase and lowercase letters, and numbers," you can
+     * "must contain only uppercase and lowercase letters and numbers," you can
      * display
  the following customized error message:</p><p>
  Malformed
@@ -366,77 +366,77 @@ namespace Model
 
 
     /**
-     * <p>An integer value that determines the largest number of characters you want to
-     * allow for String types.</p>
+     * <p>An integer value that determines the largest number of characters that you
+     * want to allow for String types.</p>
      */
     inline int GetMaxLength() const{ return m_maxLength; }
 
     /**
-     * <p>An integer value that determines the largest number of characters you want to
-     * allow for String types.</p>
+     * <p>An integer value that determines the largest number of characters that you
+     * want to allow for String types.</p>
      */
     inline void SetMaxLength(int value) { m_maxLengthHasBeenSet = true; m_maxLength = value; }
 
     /**
-     * <p>An integer value that determines the largest number of characters you want to
-     * allow for String types.</p>
+     * <p>An integer value that determines the largest number of characters that you
+     * want to allow for String types.</p>
      */
     inline ParameterDefinition& WithMaxLength(int value) { SetMaxLength(value); return *this;}
 
 
     /**
-     * <p>A numeric value that determines the largest numeric value you want to allow
-     * for Number types.</p>
+     * <p>A numeric value that determines the largest numeric value that you want to
+     * allow for Number types.</p>
      */
     inline int GetMaxValue() const{ return m_maxValue; }
 
     /**
-     * <p>A numeric value that determines the largest numeric value you want to allow
-     * for Number types.</p>
+     * <p>A numeric value that determines the largest numeric value that you want to
+     * allow for Number types.</p>
      */
     inline void SetMaxValue(int value) { m_maxValueHasBeenSet = true; m_maxValue = value; }
 
     /**
-     * <p>A numeric value that determines the largest numeric value you want to allow
-     * for Number types.</p>
+     * <p>A numeric value that determines the largest numeric value that you want to
+     * allow for Number types.</p>
      */
     inline ParameterDefinition& WithMaxValue(int value) { SetMaxValue(value); return *this;}
 
 
     /**
-     * <p>An integer value that determines the smallest number of characters you want
-     * to allow for String types.</p>
+     * <p>An integer value that determines the smallest number of characters that you
+     * want to allow for String types.</p>
      */
     inline int GetMinLength() const{ return m_minLength; }
 
     /**
-     * <p>An integer value that determines the smallest number of characters you want
-     * to allow for String types.</p>
+     * <p>An integer value that determines the smallest number of characters that you
+     * want to allow for String types.</p>
      */
     inline void SetMinLength(int value) { m_minLengthHasBeenSet = true; m_minLength = value; }
 
     /**
-     * <p>An integer value that determines the smallest number of characters you want
-     * to allow for String types.</p>
+     * <p>An integer value that determines the smallest number of characters that you
+     * want to allow for String types.</p>
      */
     inline ParameterDefinition& WithMinLength(int value) { SetMinLength(value); return *this;}
 
 
     /**
-     * <p>A numeric value that determines the smallest numeric value you want to allow
-     * for Number types.</p>
+     * <p>A numeric value that determines the smallest numeric value that you want to
+     * allow for Number types.</p>
      */
     inline int GetMinValue() const{ return m_minValue; }
 
     /**
-     * <p>A numeric value that determines the smallest numeric value you want to allow
-     * for Number types.</p>
+     * <p>A numeric value that determines the smallest numeric value that you want to
+     * allow for Number types.</p>
      */
     inline void SetMinValue(int value) { m_minValueHasBeenSet = true; m_minValue = value; }
 
     /**
-     * <p>A numeric value that determines the smallest numeric value you want to allow
-     * for Number types.</p>
+     * <p>A numeric value that determines the smallest numeric value that you want to
+     * allow for Number types.</p>
      */
     inline ParameterDefinition& WithMinValue(int value) { SetMinValue(value); return *this;}
 
@@ -548,26 +548,26 @@ namespace Model
      * List&lt;Number> | CommaDelimitedList
  </p><p>
  String: A literal
-     * string.</p><p>For example, users could specify "MyUserName".</p><p>
+     * string.</p><p>For example, users can specify "MyUserName".</p><p>
  Number: An
-     * integer or float. AWS CloudFormation validates the parameter value as a number;
-     * however, when you use the
+     * integer or float. AWS CloudFormation validates the parameter value as a number.
+     * However, when you use the
  parameter elsewhere in your template (for example, by
      * using the Ref intrinsic function), the parameter value becomes a
-     * string.</p><p>For example, users could specify "8888".</p><p>
+     * string.</p><p>For example, users might specify "8888".</p><p>
  List&lt;Number>:
      * An array of integers or floats that are separated by commas. AWS CloudFormation
-     * validates the parameter value as numbers; however, when
+     * validates the parameter value as numbers. However, when
  you use the parameter
      * elsewhere in your template (for example, by using the Ref intrinsic function),
-     * the parameter value becomes a list of strings.</p><p>For example, users could
-     * specify "80,20", and a Ref results in ["80","20"].</p><p>
- CommaDelimitedList:
-     * An array of literal strings that are separated by commas. The total number of
-     * strings should be one more than the total number of commas.
- Also, each member
-     * string is space-trimmed.</p><p>For example, users could specify "test,dev,prod",
-     * and a Ref results in ["test","dev","prod"].</p>
+     * the parameter value becomes a list of strings.</p><p>For example, users might
+     * specify "80,20", and then Ref results in ["80","20"].</p><p>
+
+     * CommaDelimitedList: An array of literal strings that are separated by commas.
+     * The total number of strings should be one more than the total number of commas.
+
+     * Also, each member string is space-trimmed.</p><p>For example, users might
+     * specify "test,dev,prod", and then Ref results in ["test","dev","prod"].</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
@@ -576,26 +576,26 @@ namespace Model
      * List&lt;Number> | CommaDelimitedList
  </p><p>
  String: A literal
-     * string.</p><p>For example, users could specify "MyUserName".</p><p>
+     * string.</p><p>For example, users can specify "MyUserName".</p><p>
  Number: An
-     * integer or float. AWS CloudFormation validates the parameter value as a number;
-     * however, when you use the
+     * integer or float. AWS CloudFormation validates the parameter value as a number.
+     * However, when you use the
  parameter elsewhere in your template (for example, by
      * using the Ref intrinsic function), the parameter value becomes a
-     * string.</p><p>For example, users could specify "8888".</p><p>
+     * string.</p><p>For example, users might specify "8888".</p><p>
  List&lt;Number>:
      * An array of integers or floats that are separated by commas. AWS CloudFormation
-     * validates the parameter value as numbers; however, when
+     * validates the parameter value as numbers. However, when
  you use the parameter
      * elsewhere in your template (for example, by using the Ref intrinsic function),
-     * the parameter value becomes a list of strings.</p><p>For example, users could
-     * specify "80,20", and a Ref results in ["80","20"].</p><p>
- CommaDelimitedList:
-     * An array of literal strings that are separated by commas. The total number of
-     * strings should be one more than the total number of commas.
- Also, each member
-     * string is space-trimmed.</p><p>For example, users could specify "test,dev,prod",
-     * and a Ref results in ["test","dev","prod"].</p>
+     * the parameter value becomes a list of strings.</p><p>For example, users might
+     * specify "80,20", and then Ref results in ["80","20"].</p><p>
+
+     * CommaDelimitedList: An array of literal strings that are separated by commas.
+     * The total number of strings should be one more than the total number of commas.
+
+     * Also, each member string is space-trimmed.</p><p>For example, users might
+     * specify "test,dev,prod", and then Ref results in ["test","dev","prod"].</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -604,26 +604,26 @@ namespace Model
      * List&lt;Number> | CommaDelimitedList
  </p><p>
  String: A literal
-     * string.</p><p>For example, users could specify "MyUserName".</p><p>
+     * string.</p><p>For example, users can specify "MyUserName".</p><p>
  Number: An
-     * integer or float. AWS CloudFormation validates the parameter value as a number;
-     * however, when you use the
+     * integer or float. AWS CloudFormation validates the parameter value as a number.
+     * However, when you use the
  parameter elsewhere in your template (for example, by
      * using the Ref intrinsic function), the parameter value becomes a
-     * string.</p><p>For example, users could specify "8888".</p><p>
+     * string.</p><p>For example, users might specify "8888".</p><p>
  List&lt;Number>:
      * An array of integers or floats that are separated by commas. AWS CloudFormation
-     * validates the parameter value as numbers; however, when
+     * validates the parameter value as numbers. However, when
  you use the parameter
      * elsewhere in your template (for example, by using the Ref intrinsic function),
-     * the parameter value becomes a list of strings.</p><p>For example, users could
-     * specify "80,20", and a Ref results in ["80","20"].</p><p>
- CommaDelimitedList:
-     * An array of literal strings that are separated by commas. The total number of
-     * strings should be one more than the total number of commas.
- Also, each member
-     * string is space-trimmed.</p><p>For example, users could specify "test,dev,prod",
-     * and a Ref results in ["test","dev","prod"].</p>
+     * the parameter value becomes a list of strings.</p><p>For example, users might
+     * specify "80,20", and then Ref results in ["80","20"].</p><p>
+
+     * CommaDelimitedList: An array of literal strings that are separated by commas.
+     * The total number of strings should be one more than the total number of commas.
+
+     * Also, each member string is space-trimmed.</p><p>For example, users might
+     * specify "test,dev,prod", and then Ref results in ["test","dev","prod"].</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -632,26 +632,26 @@ namespace Model
      * List&lt;Number> | CommaDelimitedList
  </p><p>
  String: A literal
-     * string.</p><p>For example, users could specify "MyUserName".</p><p>
+     * string.</p><p>For example, users can specify "MyUserName".</p><p>
  Number: An
-     * integer or float. AWS CloudFormation validates the parameter value as a number;
-     * however, when you use the
+     * integer or float. AWS CloudFormation validates the parameter value as a number.
+     * However, when you use the
  parameter elsewhere in your template (for example, by
      * using the Ref intrinsic function), the parameter value becomes a
-     * string.</p><p>For example, users could specify "8888".</p><p>
+     * string.</p><p>For example, users might specify "8888".</p><p>
  List&lt;Number>:
      * An array of integers or floats that are separated by commas. AWS CloudFormation
-     * validates the parameter value as numbers; however, when
+     * validates the parameter value as numbers. However, when
  you use the parameter
      * elsewhere in your template (for example, by using the Ref intrinsic function),
-     * the parameter value becomes a list of strings.</p><p>For example, users could
-     * specify "80,20", and a Ref results in ["80","20"].</p><p>
- CommaDelimitedList:
-     * An array of literal strings that are separated by commas. The total number of
-     * strings should be one more than the total number of commas.
- Also, each member
-     * string is space-trimmed.</p><p>For example, users could specify "test,dev,prod",
-     * and a Ref results in ["test","dev","prod"].</p>
+     * the parameter value becomes a list of strings.</p><p>For example, users might
+     * specify "80,20", and then Ref results in ["80","20"].</p><p>
+
+     * CommaDelimitedList: An array of literal strings that are separated by commas.
+     * The total number of strings should be one more than the total number of commas.
+
+     * Also, each member string is space-trimmed.</p><p>For example, users might
+     * specify "test,dev,prod", and then Ref results in ["test","dev","prod"].</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
@@ -660,26 +660,26 @@ namespace Model
      * List&lt;Number> | CommaDelimitedList
  </p><p>
  String: A literal
-     * string.</p><p>For example, users could specify "MyUserName".</p><p>
+     * string.</p><p>For example, users can specify "MyUserName".</p><p>
  Number: An
-     * integer or float. AWS CloudFormation validates the parameter value as a number;
-     * however, when you use the
+     * integer or float. AWS CloudFormation validates the parameter value as a number.
+     * However, when you use the
  parameter elsewhere in your template (for example, by
      * using the Ref intrinsic function), the parameter value becomes a
-     * string.</p><p>For example, users could specify "8888".</p><p>
+     * string.</p><p>For example, users might specify "8888".</p><p>
  List&lt;Number>:
      * An array of integers or floats that are separated by commas. AWS CloudFormation
-     * validates the parameter value as numbers; however, when
+     * validates the parameter value as numbers. However, when
  you use the parameter
      * elsewhere in your template (for example, by using the Ref intrinsic function),
-     * the parameter value becomes a list of strings.</p><p>For example, users could
-     * specify "80,20", and a Ref results in ["80","20"].</p><p>
- CommaDelimitedList:
-     * An array of literal strings that are separated by commas. The total number of
-     * strings should be one more than the total number of commas.
- Also, each member
-     * string is space-trimmed.</p><p>For example, users could specify "test,dev,prod",
-     * and a Ref results in ["test","dev","prod"].</p>
+     * the parameter value becomes a list of strings.</p><p>For example, users might
+     * specify "80,20", and then Ref results in ["80","20"].</p><p>
+
+     * CommaDelimitedList: An array of literal strings that are separated by commas.
+     * The total number of strings should be one more than the total number of commas.
+
+     * Also, each member string is space-trimmed.</p><p>For example, users might
+     * specify "test,dev,prod", and then Ref results in ["test","dev","prod"].</p>
      */
     inline ParameterDefinition& WithType(const Aws::String& value) { SetType(value); return *this;}
 
@@ -688,26 +688,26 @@ namespace Model
      * List&lt;Number> | CommaDelimitedList
  </p><p>
  String: A literal
-     * string.</p><p>For example, users could specify "MyUserName".</p><p>
+     * string.</p><p>For example, users can specify "MyUserName".</p><p>
  Number: An
-     * integer or float. AWS CloudFormation validates the parameter value as a number;
-     * however, when you use the
+     * integer or float. AWS CloudFormation validates the parameter value as a number.
+     * However, when you use the
  parameter elsewhere in your template (for example, by
      * using the Ref intrinsic function), the parameter value becomes a
-     * string.</p><p>For example, users could specify "8888".</p><p>
+     * string.</p><p>For example, users might specify "8888".</p><p>
  List&lt;Number>:
      * An array of integers or floats that are separated by commas. AWS CloudFormation
-     * validates the parameter value as numbers; however, when
+     * validates the parameter value as numbers. However, when
  you use the parameter
      * elsewhere in your template (for example, by using the Ref intrinsic function),
-     * the parameter value becomes a list of strings.</p><p>For example, users could
-     * specify "80,20", and a Ref results in ["80","20"].</p><p>
- CommaDelimitedList:
-     * An array of literal strings that are separated by commas. The total number of
-     * strings should be one more than the total number of commas.
- Also, each member
-     * string is space-trimmed.</p><p>For example, users could specify "test,dev,prod",
-     * and a Ref results in ["test","dev","prod"].</p>
+     * the parameter value becomes a list of strings.</p><p>For example, users might
+     * specify "80,20", and then Ref results in ["80","20"].</p><p>
+
+     * CommaDelimitedList: An array of literal strings that are separated by commas.
+     * The total number of strings should be one more than the total number of commas.
+
+     * Also, each member string is space-trimmed.</p><p>For example, users might
+     * specify "test,dev,prod", and then Ref results in ["test","dev","prod"].</p>
      */
     inline ParameterDefinition& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
@@ -716,26 +716,26 @@ namespace Model
      * List&lt;Number> | CommaDelimitedList
  </p><p>
  String: A literal
-     * string.</p><p>For example, users could specify "MyUserName".</p><p>
+     * string.</p><p>For example, users can specify "MyUserName".</p><p>
  Number: An
-     * integer or float. AWS CloudFormation validates the parameter value as a number;
-     * however, when you use the
+     * integer or float. AWS CloudFormation validates the parameter value as a number.
+     * However, when you use the
  parameter elsewhere in your template (for example, by
      * using the Ref intrinsic function), the parameter value becomes a
-     * string.</p><p>For example, users could specify "8888".</p><p>
+     * string.</p><p>For example, users might specify "8888".</p><p>
  List&lt;Number>:
      * An array of integers or floats that are separated by commas. AWS CloudFormation
-     * validates the parameter value as numbers; however, when
+     * validates the parameter value as numbers. However, when
  you use the parameter
      * elsewhere in your template (for example, by using the Ref intrinsic function),
-     * the parameter value becomes a list of strings.</p><p>For example, users could
-     * specify "80,20", and a Ref results in ["80","20"].</p><p>
- CommaDelimitedList:
-     * An array of literal strings that are separated by commas. The total number of
-     * strings should be one more than the total number of commas.
- Also, each member
-     * string is space-trimmed.</p><p>For example, users could specify "test,dev,prod",
-     * and a Ref results in ["test","dev","prod"].</p>
+     * the parameter value becomes a list of strings.</p><p>For example, users might
+     * specify "80,20", and then Ref results in ["80","20"].</p><p>
+
+     * CommaDelimitedList: An array of literal strings that are separated by commas.
+     * The total number of strings should be one more than the total number of commas.
+
+     * Also, each member string is space-trimmed.</p><p>For example, users might
+     * specify "test,dev,prod", and then Ref results in ["test","dev","prod"].</p>
      */
     inline ParameterDefinition& WithType(const char* value) { SetType(value); return *this;}
 

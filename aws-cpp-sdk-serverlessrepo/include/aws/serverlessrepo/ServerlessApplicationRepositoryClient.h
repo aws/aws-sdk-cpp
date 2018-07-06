@@ -253,7 +253,7 @@ namespace Model
         virtual void CreateApplicationVersionAsync(const Model::CreateApplicationVersionRequest& request, const CreateApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an AWS CloudFormation ChangeSet for the given
+         * <p>Creates an AWS CloudFormation change set for the given
          * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet">AWS
          * API Reference</a></p>
@@ -261,7 +261,7 @@ namespace Model
         virtual Model::CreateCloudFormationChangeSetOutcome CreateCloudFormationChangeSet(const Model::CreateCloudFormationChangeSetRequest& request) const;
 
         /**
-         * <p>Creates an AWS CloudFormation ChangeSet for the given
+         * <p>Creates an AWS CloudFormation change set for the given
          * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet">AWS
          * API Reference</a></p>
@@ -271,7 +271,7 @@ namespace Model
         virtual Model::CreateCloudFormationChangeSetOutcomeCallable CreateCloudFormationChangeSetCallable(const Model::CreateCloudFormationChangeSetRequest& request) const;
 
         /**
-         * <p>Creates an AWS CloudFormation ChangeSet for the given
+         * <p>Creates an AWS CloudFormation change set for the given
          * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet">AWS
          * API Reference</a></p>
@@ -331,14 +331,14 @@ namespace Model
         virtual void GetApplicationAsync(const Model::GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the policy for the specified application.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the policy for the application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/GetApplicationPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::GetApplicationPolicyOutcome GetApplicationPolicy(const Model::GetApplicationPolicyRequest& request) const;
 
         /**
-         * <p>Gets the policy for the specified application.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the policy for the application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/GetApplicationPolicy">AWS
          * API Reference</a></p>
          *
@@ -347,7 +347,7 @@ namespace Model
         virtual Model::GetApplicationPolicyOutcomeCallable GetApplicationPolicyCallable(const Model::GetApplicationPolicyRequest& request) const;
 
         /**
-         * <p>Gets the policy for the specified application.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the policy for the application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/GetApplicationPolicy">AWS
          * API Reference</a></p>
          *
@@ -406,14 +406,24 @@ namespace Model
         virtual void ListApplicationsAsync(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Puts the policy for the specified application.</p><p><h3>See Also:</h3>   <a
+         * <p>Sets the permission policy for an application. See
+ <a
+         * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
+         * Permissions</a>
+ for the list of supported actions that can be used with this
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/PutApplicationPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::PutApplicationPolicyOutcome PutApplicationPolicy(const Model::PutApplicationPolicyRequest& request) const;
 
         /**
-         * <p>Puts the policy for the specified application.</p><p><h3>See Also:</h3>   <a
+         * <p>Sets the permission policy for an application. See
+ <a
+         * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
+         * Permissions</a>
+ for the list of supported actions that can be used with this
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/PutApplicationPolicy">AWS
          * API Reference</a></p>
          *
@@ -422,7 +432,12 @@ namespace Model
         virtual Model::PutApplicationPolicyOutcomeCallable PutApplicationPolicyCallable(const Model::PutApplicationPolicyRequest& request) const;
 
         /**
-         * <p>Puts the policy for the specified application.</p><p><h3>See Also:</h3>   <a
+         * <p>Sets the permission policy for an application. See
+ <a
+         * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
+         * Permissions</a>
+ for the list of supported actions that can be used with this
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/PutApplicationPolicy">AWS
          * API Reference</a></p>
          *

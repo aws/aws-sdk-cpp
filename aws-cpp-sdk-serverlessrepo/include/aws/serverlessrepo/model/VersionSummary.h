@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Application version summary.</p><p><h3>See Also:</h3>   <a
+   * <p>An application version summary.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/VersionSummary">AWS
    * API Reference</a></p>
    */
@@ -83,37 +83,37 @@ namespace Model
 
 
     /**
-     * <p>The date/time this resource was created.</p>
+     * <p>The date and time this resource was created.</p>
      */
     inline const Aws::String& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>The date/time this resource was created.</p>
+     * <p>The date and time this resource was created.</p>
      */
     inline void SetCreationTime(const Aws::String& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>The date/time this resource was created.</p>
+     * <p>The date and time this resource was created.</p>
      */
     inline void SetCreationTime(Aws::String&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
-     * <p>The date/time this resource was created.</p>
+     * <p>The date and time this resource was created.</p>
      */
     inline void SetCreationTime(const char* value) { m_creationTimeHasBeenSet = true; m_creationTime.assign(value); }
 
     /**
-     * <p>The date/time this resource was created.</p>
+     * <p>The date and time this resource was created.</p>
      */
     inline VersionSummary& WithCreationTime(const Aws::String& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>The date/time this resource was created.</p>
+     * <p>The date and time this resource was created.</p>
      */
     inline VersionSummary& WithCreationTime(Aws::String&& value) { SetCreationTime(std::move(value)); return *this;}
 
     /**
-     * <p>The date/time this resource was created.</p>
+     * <p>The date and time this resource was created.</p>
      */
     inline VersionSummary& WithCreationTime(const char* value) { SetCreationTime(value); return *this;}
 

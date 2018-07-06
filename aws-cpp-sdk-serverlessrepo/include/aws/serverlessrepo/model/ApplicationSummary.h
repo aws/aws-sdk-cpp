@@ -48,152 +48,159 @@ namespace Model
 
 
     /**
-     * <p>The application ARN.</p>
+     * <p>The application Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * <p>The application ARN.</p>
+     * <p>The application Amazon Resource Name (ARN).</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * <p>The application ARN.</p>
+     * <p>The application Amazon Resource Name (ARN).</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * <p>The application ARN.</p>
+     * <p>The application Amazon Resource Name (ARN).</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * <p>The application ARN.</p>
+     * <p>The application Amazon Resource Name (ARN).</p>
      */
     inline ApplicationSummary& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * <p>The application ARN.</p>
+     * <p>The application Amazon Resource Name (ARN).</p>
      */
     inline ApplicationSummary& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * <p>The application ARN.</p>
+     * <p>The application Amazon Resource Name (ARN).</p>
      */
     inline ApplicationSummary& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
     /**
-     * <p>The name of the author publishing the app.</p><p>Min Length=1. Max
-     * Length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+     * <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum
+     * length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
      */
     inline const Aws::String& GetAuthor() const{ return m_author; }
 
     /**
-     * <p>The name of the author publishing the app.</p><p>Min Length=1. Max
-     * Length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+     * <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum
+     * length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
      */
     inline void SetAuthor(const Aws::String& value) { m_authorHasBeenSet = true; m_author = value; }
 
     /**
-     * <p>The name of the author publishing the app.</p><p>Min Length=1. Max
-     * Length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+     * <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum
+     * length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
      */
     inline void SetAuthor(Aws::String&& value) { m_authorHasBeenSet = true; m_author = std::move(value); }
 
     /**
-     * <p>The name of the author publishing the app.</p><p>Min Length=1. Max
-     * Length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+     * <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum
+     * length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
      */
     inline void SetAuthor(const char* value) { m_authorHasBeenSet = true; m_author.assign(value); }
 
     /**
-     * <p>The name of the author publishing the app.</p><p>Min Length=1. Max
-     * Length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+     * <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum
+     * length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
      */
     inline ApplicationSummary& WithAuthor(const Aws::String& value) { SetAuthor(value); return *this;}
 
     /**
-     * <p>The name of the author publishing the app.</p><p>Min Length=1. Max
-     * Length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+     * <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum
+     * length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
      */
     inline ApplicationSummary& WithAuthor(Aws::String&& value) { SetAuthor(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the author publishing the app.</p><p>Min Length=1. Max
-     * Length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+     * <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum
+     * length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
      */
     inline ApplicationSummary& WithAuthor(const char* value) { SetAuthor(value); return *this;}
 
 
     /**
-     * <p>The date/time this resource was created.</p>
+     * <p>The date and time this resource was created.</p>
      */
     inline const Aws::String& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>The date/time this resource was created.</p>
+     * <p>The date and time this resource was created.</p>
      */
     inline void SetCreationTime(const Aws::String& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>The date/time this resource was created.</p>
+     * <p>The date and time this resource was created.</p>
      */
     inline void SetCreationTime(Aws::String&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
-     * <p>The date/time this resource was created.</p>
+     * <p>The date and time this resource was created.</p>
      */
     inline void SetCreationTime(const char* value) { m_creationTimeHasBeenSet = true; m_creationTime.assign(value); }
 
     /**
-     * <p>The date/time this resource was created.</p>
+     * <p>The date and time this resource was created.</p>
      */
     inline ApplicationSummary& WithCreationTime(const Aws::String& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>The date/time this resource was created.</p>
+     * <p>The date and time this resource was created.</p>
      */
     inline ApplicationSummary& WithCreationTime(Aws::String&& value) { SetCreationTime(std::move(value)); return *this;}
 
     /**
-     * <p>The date/time this resource was created.</p>
+     * <p>The date and time this resource was created.</p>
      */
     inline ApplicationSummary& WithCreationTime(const char* value) { SetCreationTime(value); return *this;}
 
 
     /**
-     * <p>The description of the application.</p><p>Min Length=1. Max Length=256</p>
+     * <p>The description of the application.</p><p>Minimum length=1. Maximum
+     * length=256</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description of the application.</p><p>Min Length=1. Max Length=256</p>
+     * <p>The description of the application.</p><p>Minimum length=1. Maximum
+     * length=256</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description of the application.</p><p>Min Length=1. Max Length=256</p>
+     * <p>The description of the application.</p><p>Minimum length=1. Maximum
+     * length=256</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description of the application.</p><p>Min Length=1. Max Length=256</p>
+     * <p>The description of the application.</p><p>Minimum length=1. Maximum
+     * length=256</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description of the application.</p><p>Min Length=1. Max Length=256</p>
+     * <p>The description of the application.</p><p>Minimum length=1. Maximum
+     * length=256</p>
      */
     inline ApplicationSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description of the application.</p><p>Min Length=1. Max Length=256</p>
+     * <p>The description of the application.</p><p>Minimum length=1. Maximum
+     * length=256</p>
      */
     inline ApplicationSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description of the application.</p><p>Min Length=1. Max Length=256</p>
+     * <p>The description of the application.</p><p>Minimum length=1. Maximum
+     * length=256</p>
      */
     inline ApplicationSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -249,101 +256,101 @@ namespace Model
 
 
     /**
-     * <p>Labels to improve discovery of apps in search results.</p><p>Min Length=1.
-     * Max Length=127. Maximum number of labels: 10</p><p>Pattern:
+     * <p>Labels to improve discovery of apps in search results.</p><p>Minimum
+     * length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern:
      * "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
      */
     inline const Aws::Vector<Aws::String>& GetLabels() const{ return m_labels; }
 
     /**
-     * <p>Labels to improve discovery of apps in search results.</p><p>Min Length=1.
-     * Max Length=127. Maximum number of labels: 10</p><p>Pattern:
+     * <p>Labels to improve discovery of apps in search results.</p><p>Minimum
+     * length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern:
      * "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
      */
     inline void SetLabels(const Aws::Vector<Aws::String>& value) { m_labelsHasBeenSet = true; m_labels = value; }
 
     /**
-     * <p>Labels to improve discovery of apps in search results.</p><p>Min Length=1.
-     * Max Length=127. Maximum number of labels: 10</p><p>Pattern:
+     * <p>Labels to improve discovery of apps in search results.</p><p>Minimum
+     * length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern:
      * "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
      */
     inline void SetLabels(Aws::Vector<Aws::String>&& value) { m_labelsHasBeenSet = true; m_labels = std::move(value); }
 
     /**
-     * <p>Labels to improve discovery of apps in search results.</p><p>Min Length=1.
-     * Max Length=127. Maximum number of labels: 10</p><p>Pattern:
+     * <p>Labels to improve discovery of apps in search results.</p><p>Minimum
+     * length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern:
      * "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
      */
     inline ApplicationSummary& WithLabels(const Aws::Vector<Aws::String>& value) { SetLabels(value); return *this;}
 
     /**
-     * <p>Labels to improve discovery of apps in search results.</p><p>Min Length=1.
-     * Max Length=127. Maximum number of labels: 10</p><p>Pattern:
+     * <p>Labels to improve discovery of apps in search results.</p><p>Minimum
+     * length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern:
      * "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
      */
     inline ApplicationSummary& WithLabels(Aws::Vector<Aws::String>&& value) { SetLabels(std::move(value)); return *this;}
 
     /**
-     * <p>Labels to improve discovery of apps in search results.</p><p>Min Length=1.
-     * Max Length=127. Maximum number of labels: 10</p><p>Pattern:
+     * <p>Labels to improve discovery of apps in search results.</p><p>Minimum
+     * length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern:
      * "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
      */
     inline ApplicationSummary& AddLabels(const Aws::String& value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
 
     /**
-     * <p>Labels to improve discovery of apps in search results.</p><p>Min Length=1.
-     * Max Length=127. Maximum number of labels: 10</p><p>Pattern:
+     * <p>Labels to improve discovery of apps in search results.</p><p>Minimum
+     * length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern:
      * "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
      */
     inline ApplicationSummary& AddLabels(Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Labels to improve discovery of apps in search results.</p><p>Min Length=1.
-     * Max Length=127. Maximum number of labels: 10</p><p>Pattern:
+     * <p>Labels to improve discovery of apps in search results.</p><p>Minimum
+     * length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern:
      * "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
      */
     inline ApplicationSummary& AddLabels(const char* value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
 
 
     /**
-     * <p>The name of the application.</p><p>Min Length=1. Max
-     * Length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+     * <p>The name of the application.</p><p>Minimum length=1. Maximum
+     * length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the application.</p><p>Min Length=1. Max
-     * Length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+     * <p>The name of the application.</p><p>Minimum length=1. Maximum
+     * length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the application.</p><p>Min Length=1. Max
-     * Length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+     * <p>The name of the application.</p><p>Minimum length=1. Maximum
+     * length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the application.</p><p>Min Length=1. Max
-     * Length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+     * <p>The name of the application.</p><p>Minimum length=1. Maximum
+     * length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the application.</p><p>Min Length=1. Max
-     * Length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+     * <p>The name of the application.</p><p>Minimum length=1. Maximum
+     * length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
      */
     inline ApplicationSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the application.</p><p>Min Length=1. Max
-     * Length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+     * <p>The name of the application.</p><p>Minimum length=1. Maximum
+     * length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
      */
     inline ApplicationSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the application.</p><p>Min Length=1. Max
-     * Length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+     * <p>The name of the application.</p><p>Minimum length=1. Maximum
+     * length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
      */
     inline ApplicationSummary& WithName(const char* value) { SetName(value); return *this;}
 

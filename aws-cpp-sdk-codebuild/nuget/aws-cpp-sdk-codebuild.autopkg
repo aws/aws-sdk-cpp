@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-CodeBuild;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.4.20161006.81;
+        version : 1.4.20161006.82;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS CodeBuild);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.4.81
+            AWSSDKCPP-Core/1.4.82
        }
     }
 

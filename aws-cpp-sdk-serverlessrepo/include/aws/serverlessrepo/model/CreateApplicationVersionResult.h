@@ -81,73 +81,73 @@ namespace Model
 
 
     /**
-     * <p>The date/time this resource was created.</p>
+     * <p>The date and time this resource was created.</p>
      */
     inline const Aws::String& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>The date/time this resource was created.</p>
+     * <p>The date and time this resource was created.</p>
      */
     inline void SetCreationTime(const Aws::String& value) { m_creationTime = value; }
 
     /**
-     * <p>The date/time this resource was created.</p>
+     * <p>The date and time this resource was created.</p>
      */
     inline void SetCreationTime(Aws::String&& value) { m_creationTime = std::move(value); }
 
     /**
-     * <p>The date/time this resource was created.</p>
+     * <p>The date and time this resource was created.</p>
      */
     inline void SetCreationTime(const char* value) { m_creationTime.assign(value); }
 
     /**
-     * <p>The date/time this resource was created.</p>
+     * <p>The date and time this resource was created.</p>
      */
     inline CreateApplicationVersionResult& WithCreationTime(const Aws::String& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>The date/time this resource was created.</p>
+     * <p>The date and time this resource was created.</p>
      */
     inline CreateApplicationVersionResult& WithCreationTime(Aws::String&& value) { SetCreationTime(std::move(value)); return *this;}
 
     /**
-     * <p>The date/time this resource was created.</p>
+     * <p>The date and time this resource was created.</p>
      */
     inline CreateApplicationVersionResult& WithCreationTime(const char* value) { SetCreationTime(value); return *this;}
 
 
     /**
-     * <p>Array of parameter types supported by the application.</p>
+     * <p>An array of parameter types supported by the application.</p>
      */
     inline const Aws::Vector<ParameterDefinition>& GetParameterDefinitions() const{ return m_parameterDefinitions; }
 
     /**
-     * <p>Array of parameter types supported by the application.</p>
+     * <p>An array of parameter types supported by the application.</p>
      */
     inline void SetParameterDefinitions(const Aws::Vector<ParameterDefinition>& value) { m_parameterDefinitions = value; }
 
     /**
-     * <p>Array of parameter types supported by the application.</p>
+     * <p>An array of parameter types supported by the application.</p>
      */
     inline void SetParameterDefinitions(Aws::Vector<ParameterDefinition>&& value) { m_parameterDefinitions = std::move(value); }
 
     /**
-     * <p>Array of parameter types supported by the application.</p>
+     * <p>An array of parameter types supported by the application.</p>
      */
     inline CreateApplicationVersionResult& WithParameterDefinitions(const Aws::Vector<ParameterDefinition>& value) { SetParameterDefinitions(value); return *this;}
 
     /**
-     * <p>Array of parameter types supported by the application.</p>
+     * <p>An array of parameter types supported by the application.</p>
      */
     inline CreateApplicationVersionResult& WithParameterDefinitions(Aws::Vector<ParameterDefinition>&& value) { SetParameterDefinitions(std::move(value)); return *this;}
 
     /**
-     * <p>Array of parameter types supported by the application.</p>
+     * <p>An array of parameter types supported by the application.</p>
      */
     inline CreateApplicationVersionResult& AddParameterDefinitions(const ParameterDefinition& value) { m_parameterDefinitions.push_back(value); return *this; }
 
     /**
-     * <p>Array of parameter types supported by the application.</p>
+     * <p>An array of parameter types supported by the application.</p>
      */
     inline CreateApplicationVersionResult& AddParameterDefinitions(ParameterDefinition&& value) { m_parameterDefinitions.push_back(std::move(value)); return *this; }
 

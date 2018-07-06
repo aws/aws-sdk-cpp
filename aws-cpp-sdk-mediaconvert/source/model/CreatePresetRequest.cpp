@@ -26,7 +26,8 @@ CreatePresetRequest::CreatePresetRequest() :
     m_categoryHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_settingsHasBeenSet(false)
+    m_settingsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,17 @@ Aws::String CreatePresetRequest::SerializePayload() const
   if(m_settingsHasBeenSet)
   {
    payload.WithObject("settings", m_settings.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

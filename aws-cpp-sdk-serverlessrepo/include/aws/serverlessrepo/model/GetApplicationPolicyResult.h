@@ -44,37 +44,37 @@ namespace Model
 
 
     /**
-     * <p>Array of policy statements applied to the application.</p>
+     * <p>An array of policy statements applied to the application.</p>
      */
     inline const Aws::Vector<ApplicationPolicyStatement>& GetStatements() const{ return m_statements; }
 
     /**
-     * <p>Array of policy statements applied to the application.</p>
+     * <p>An array of policy statements applied to the application.</p>
      */
     inline void SetStatements(const Aws::Vector<ApplicationPolicyStatement>& value) { m_statements = value; }
 
     /**
-     * <p>Array of policy statements applied to the application.</p>
+     * <p>An array of policy statements applied to the application.</p>
      */
     inline void SetStatements(Aws::Vector<ApplicationPolicyStatement>&& value) { m_statements = std::move(value); }
 
     /**
-     * <p>Array of policy statements applied to the application.</p>
+     * <p>An array of policy statements applied to the application.</p>
      */
     inline GetApplicationPolicyResult& WithStatements(const Aws::Vector<ApplicationPolicyStatement>& value) { SetStatements(value); return *this;}
 
     /**
-     * <p>Array of policy statements applied to the application.</p>
+     * <p>An array of policy statements applied to the application.</p>
      */
     inline GetApplicationPolicyResult& WithStatements(Aws::Vector<ApplicationPolicyStatement>&& value) { SetStatements(std::move(value)); return *this;}
 
     /**
-     * <p>Array of policy statements applied to the application.</p>
+     * <p>An array of policy statements applied to the application.</p>
      */
     inline GetApplicationPolicyResult& AddStatements(const ApplicationPolicyStatement& value) { m_statements.push_back(value); return *this; }
 
     /**
-     * <p>Array of policy statements applied to the application.</p>
+     * <p>An array of policy statements applied to the application.</p>
      */
     inline GetApplicationPolicyResult& AddStatements(ApplicationPolicyStatement&& value) { m_statements.push_back(std::move(value)); return *this; }
 

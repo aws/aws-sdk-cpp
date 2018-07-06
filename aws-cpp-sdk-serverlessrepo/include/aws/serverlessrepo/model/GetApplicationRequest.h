@@ -49,37 +49,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the application to get.</p>
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * <p>The ID of the application to get.</p>
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * <p>The ID of the application to get.</p>
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * <p>The ID of the application to get.</p>
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * <p>The ID of the application to get.</p>
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline GetApplicationRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * <p>The ID of the application to get.</p>
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline GetApplicationRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the application to get.</p>
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline GetApplicationRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 

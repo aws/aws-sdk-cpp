@@ -81,37 +81,37 @@ namespace Model
 
 
     /**
-     * <p>Array of version summaries for the application.</p>
+     * <p>An array of version summaries for the application.</p>
      */
     inline const Aws::Vector<VersionSummary>& GetVersions() const{ return m_versions; }
 
     /**
-     * <p>Array of version summaries for the application.</p>
+     * <p>An array of version summaries for the application.</p>
      */
     inline void SetVersions(const Aws::Vector<VersionSummary>& value) { m_versions = value; }
 
     /**
-     * <p>Array of version summaries for the application.</p>
+     * <p>An array of version summaries for the application.</p>
      */
     inline void SetVersions(Aws::Vector<VersionSummary>&& value) { m_versions = std::move(value); }
 
     /**
-     * <p>Array of version summaries for the application.</p>
+     * <p>An array of version summaries for the application.</p>
      */
     inline ListApplicationVersionsResult& WithVersions(const Aws::Vector<VersionSummary>& value) { SetVersions(value); return *this;}
 
     /**
-     * <p>Array of version summaries for the application.</p>
+     * <p>An array of version summaries for the application.</p>
      */
     inline ListApplicationVersionsResult& WithVersions(Aws::Vector<VersionSummary>&& value) { SetVersions(std::move(value)); return *this;}
 
     /**
-     * <p>Array of version summaries for the application.</p>
+     * <p>An array of version summaries for the application.</p>
      */
     inline ListApplicationVersionsResult& AddVersions(const VersionSummary& value) { m_versions.push_back(value); return *this; }
 
     /**
-     * <p>Array of version summaries for the application.</p>
+     * <p>An array of version summaries for the application.</p>
      */
     inline ListApplicationVersionsResult& AddVersions(VersionSummary&& value) { m_versions.push_back(std::move(value)); return *this; }
 

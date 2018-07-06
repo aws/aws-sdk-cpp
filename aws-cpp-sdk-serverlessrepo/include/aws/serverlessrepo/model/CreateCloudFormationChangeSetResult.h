@@ -79,44 +79,44 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the change set.</p><p>Length Constraints: Minimum length of
-     * 1.</p><p>Pattern: Amazon Resource Name (ARN):[-a-zA-Z0-9:/]*</p>
+     * <p>The Amazon Resource Name (ARN) of the change set.</p><p>Length constraints:
+     * Minimum length of 1.</p><p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
      */
     inline const Aws::String& GetChangeSetId() const{ return m_changeSetId; }
 
     /**
-     * <p>The ARN of the change set.</p><p>Length Constraints: Minimum length of
-     * 1.</p><p>Pattern: Amazon Resource Name (ARN):[-a-zA-Z0-9:/]*</p>
+     * <p>The Amazon Resource Name (ARN) of the change set.</p><p>Length constraints:
+     * Minimum length of 1.</p><p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
      */
     inline void SetChangeSetId(const Aws::String& value) { m_changeSetId = value; }
 
     /**
-     * <p>The ARN of the change set.</p><p>Length Constraints: Minimum length of
-     * 1.</p><p>Pattern: Amazon Resource Name (ARN):[-a-zA-Z0-9:/]*</p>
+     * <p>The Amazon Resource Name (ARN) of the change set.</p><p>Length constraints:
+     * Minimum length of 1.</p><p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
      */
     inline void SetChangeSetId(Aws::String&& value) { m_changeSetId = std::move(value); }
 
     /**
-     * <p>The ARN of the change set.</p><p>Length Constraints: Minimum length of
-     * 1.</p><p>Pattern: Amazon Resource Name (ARN):[-a-zA-Z0-9:/]*</p>
+     * <p>The Amazon Resource Name (ARN) of the change set.</p><p>Length constraints:
+     * Minimum length of 1.</p><p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
      */
     inline void SetChangeSetId(const char* value) { m_changeSetId.assign(value); }
 
     /**
-     * <p>The ARN of the change set.</p><p>Length Constraints: Minimum length of
-     * 1.</p><p>Pattern: Amazon Resource Name (ARN):[-a-zA-Z0-9:/]*</p>
+     * <p>The Amazon Resource Name (ARN) of the change set.</p><p>Length constraints:
+     * Minimum length of 1.</p><p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
      */
     inline CreateCloudFormationChangeSetResult& WithChangeSetId(const Aws::String& value) { SetChangeSetId(value); return *this;}
 
     /**
-     * <p>The ARN of the change set.</p><p>Length Constraints: Minimum length of
-     * 1.</p><p>Pattern: Amazon Resource Name (ARN):[-a-zA-Z0-9:/]*</p>
+     * <p>The Amazon Resource Name (ARN) of the change set.</p><p>Length constraints:
+     * Minimum length of 1.</p><p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
      */
     inline CreateCloudFormationChangeSetResult& WithChangeSetId(Aws::String&& value) { SetChangeSetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the change set.</p><p>Length Constraints: Minimum length of
-     * 1.</p><p>Pattern: Amazon Resource Name (ARN):[-a-zA-Z0-9:/]*</p>
+     * <p>The Amazon Resource Name (ARN) of the change set.</p><p>Length constraints:
+     * Minimum length of 1.</p><p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
      */
     inline CreateCloudFormationChangeSetResult& WithChangeSetId(const char* value) { SetChangeSetId(value); return *this;}
 

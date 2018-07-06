@@ -211,6 +211,22 @@ namespace Model
     inline Queue& WithName(const char* value) { SetName(value); return *this;}
 
 
+    /**
+     * Estimated number of jobs in PROGRESSING status.
+     */
+    inline int GetProgressingJobsCount() const{ return m_progressingJobsCount; }
+
+    /**
+     * Estimated number of jobs in PROGRESSING status.
+     */
+    inline void SetProgressingJobsCount(int value) { m_progressingJobsCountHasBeenSet = true; m_progressingJobsCount = value; }
+
+    /**
+     * Estimated number of jobs in PROGRESSING status.
+     */
+    inline Queue& WithProgressingJobsCount(int value) { SetProgressingJobsCount(value); return *this;}
+
+
     
     inline const QueueStatus& GetStatus() const{ return m_status; }
 
@@ -225,6 +241,22 @@ namespace Model
 
     
     inline Queue& WithStatus(QueueStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
+     * Estimated number of jobs in SUBMITTED status.
+     */
+    inline int GetSubmittedJobsCount() const{ return m_submittedJobsCount; }
+
+    /**
+     * Estimated number of jobs in SUBMITTED status.
+     */
+    inline void SetSubmittedJobsCount(int value) { m_submittedJobsCountHasBeenSet = true; m_submittedJobsCount = value; }
+
+    /**
+     * Estimated number of jobs in SUBMITTED status.
+     */
+    inline Queue& WithSubmittedJobsCount(int value) { SetSubmittedJobsCount(value); return *this;}
 
 
     /**
@@ -274,8 +306,14 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet;
 
+    int m_progressingJobsCount;
+    bool m_progressingJobsCountHasBeenSet;
+
     QueueStatus m_status;
     bool m_statusHasBeenSet;
+
+    int m_submittedJobsCount;
+    bool m_submittedJobsCountHasBeenSet;
 
     Type m_type;
     bool m_typeHasBeenSet;

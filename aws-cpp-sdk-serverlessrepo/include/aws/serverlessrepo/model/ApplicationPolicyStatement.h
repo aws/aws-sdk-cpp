@@ -48,138 +48,58 @@ namespace Model
 
 
     /**
-     * <p>A list of supported actions:</p><p>
- GetApplication
- </p><p>
-
-     * CreateCloudFormationChangeSet
- </p><p>
- ListApplicationVersions
- </p><p>
-
-     * SearchApplications
- </p><p>
- Deploy (Note: This action enables all other actions
-     * above.)</p>
+     * <p>See <a
+     * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
+     * Permissions</a> for the list of supported actions.</p>
      */
     inline const Aws::Vector<Aws::String>& GetActions() const{ return m_actions; }
 
     /**
-     * <p>A list of supported actions:</p><p>
- GetApplication
- </p><p>
-
-     * CreateCloudFormationChangeSet
- </p><p>
- ListApplicationVersions
- </p><p>
-
-     * SearchApplications
- </p><p>
- Deploy (Note: This action enables all other actions
-     * above.)</p>
+     * <p>See <a
+     * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
+     * Permissions</a> for the list of supported actions.</p>
      */
     inline void SetActions(const Aws::Vector<Aws::String>& value) { m_actionsHasBeenSet = true; m_actions = value; }
 
     /**
-     * <p>A list of supported actions:</p><p>
- GetApplication
- </p><p>
-
-     * CreateCloudFormationChangeSet
- </p><p>
- ListApplicationVersions
- </p><p>
-
-     * SearchApplications
- </p><p>
- Deploy (Note: This action enables all other actions
-     * above.)</p>
+     * <p>See <a
+     * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
+     * Permissions</a> for the list of supported actions.</p>
      */
     inline void SetActions(Aws::Vector<Aws::String>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
 
     /**
-     * <p>A list of supported actions:</p><p>
- GetApplication
- </p><p>
-
-     * CreateCloudFormationChangeSet
- </p><p>
- ListApplicationVersions
- </p><p>
-
-     * SearchApplications
- </p><p>
- Deploy (Note: This action enables all other actions
-     * above.)</p>
+     * <p>See <a
+     * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
+     * Permissions</a> for the list of supported actions.</p>
      */
     inline ApplicationPolicyStatement& WithActions(const Aws::Vector<Aws::String>& value) { SetActions(value); return *this;}
 
     /**
-     * <p>A list of supported actions:</p><p>
- GetApplication
- </p><p>
-
-     * CreateCloudFormationChangeSet
- </p><p>
- ListApplicationVersions
- </p><p>
-
-     * SearchApplications
- </p><p>
- Deploy (Note: This action enables all other actions
-     * above.)</p>
+     * <p>See <a
+     * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
+     * Permissions</a> for the list of supported actions.</p>
      */
     inline ApplicationPolicyStatement& WithActions(Aws::Vector<Aws::String>&& value) { SetActions(std::move(value)); return *this;}
 
     /**
-     * <p>A list of supported actions:</p><p>
- GetApplication
- </p><p>
-
-     * CreateCloudFormationChangeSet
- </p><p>
- ListApplicationVersions
- </p><p>
-
-     * SearchApplications
- </p><p>
- Deploy (Note: This action enables all other actions
-     * above.)</p>
+     * <p>See <a
+     * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
+     * Permissions</a> for the list of supported actions.</p>
      */
     inline ApplicationPolicyStatement& AddActions(const Aws::String& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 
     /**
-     * <p>A list of supported actions:</p><p>
- GetApplication
- </p><p>
-
-     * CreateCloudFormationChangeSet
- </p><p>
- ListApplicationVersions
- </p><p>
-
-     * SearchApplications
- </p><p>
- Deploy (Note: This action enables all other actions
-     * above.)</p>
+     * <p>See <a
+     * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
+     * Permissions</a> for the list of supported actions.</p>
      */
     inline ApplicationPolicyStatement& AddActions(Aws::String&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of supported actions:</p><p>
- GetApplication
- </p><p>
-
-     * CreateCloudFormationChangeSet
- </p><p>
- ListApplicationVersions
- </p><p>
-
-     * SearchApplications
- </p><p>
- Deploy (Note: This action enables all other actions
-     * above.)</p>
+     * <p>See <a
+     * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
+     * Permissions</a> for the list of supported actions.</p>
      */
     inline ApplicationPolicyStatement& AddActions(const char* value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 
