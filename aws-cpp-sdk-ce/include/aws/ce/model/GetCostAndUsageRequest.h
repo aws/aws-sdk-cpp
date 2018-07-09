@@ -197,10 +197,10 @@ namespace Model
      * and unblended rates, see <a
      * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
      * does the "blended" annotation appear on some line items in my bill?</a>. </p>
-     * <p>Valid values are <code>BlendedCost</code>, <code>UnblendedCost</code>, and
-     * <code>UsageQuantity</code>.</p> <note> <p>If you return the
-     * <code>UsageQuantity</code> metric, the service aggregates all usage numbers
-     * without taking into account the units. For example, if you aggregate
+     * <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>,
+     * <code>UnblendedCost</code>, and <code>UsageQuantity</code>.</p> <note> <p>If you
+     * return the <code>UsageQuantity</code> metric, the service aggregates all usage
+     * numbers without taking into account the units. For example, if you aggregate
      * <code>usageQuantity</code> across all of EC2, the results aren't meaningful
      * because EC2 compute hours and data transfer are measured in different units (for
      * example, hours vs. GB). To get more meaningful <code>UsageQuantity</code>
@@ -215,10 +215,10 @@ namespace Model
      * and unblended rates, see <a
      * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
      * does the "blended" annotation appear on some line items in my bill?</a>. </p>
-     * <p>Valid values are <code>BlendedCost</code>, <code>UnblendedCost</code>, and
-     * <code>UsageQuantity</code>.</p> <note> <p>If you return the
-     * <code>UsageQuantity</code> metric, the service aggregates all usage numbers
-     * without taking into account the units. For example, if you aggregate
+     * <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>,
+     * <code>UnblendedCost</code>, and <code>UsageQuantity</code>.</p> <note> <p>If you
+     * return the <code>UsageQuantity</code> metric, the service aggregates all usage
+     * numbers without taking into account the units. For example, if you aggregate
      * <code>usageQuantity</code> across all of EC2, the results aren't meaningful
      * because EC2 compute hours and data transfer are measured in different units (for
      * example, hours vs. GB). To get more meaningful <code>UsageQuantity</code>
@@ -233,10 +233,10 @@ namespace Model
      * and unblended rates, see <a
      * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
      * does the "blended" annotation appear on some line items in my bill?</a>. </p>
-     * <p>Valid values are <code>BlendedCost</code>, <code>UnblendedCost</code>, and
-     * <code>UsageQuantity</code>.</p> <note> <p>If you return the
-     * <code>UsageQuantity</code> metric, the service aggregates all usage numbers
-     * without taking into account the units. For example, if you aggregate
+     * <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>,
+     * <code>UnblendedCost</code>, and <code>UsageQuantity</code>.</p> <note> <p>If you
+     * return the <code>UsageQuantity</code> metric, the service aggregates all usage
+     * numbers without taking into account the units. For example, if you aggregate
      * <code>usageQuantity</code> across all of EC2, the results aren't meaningful
      * because EC2 compute hours and data transfer are measured in different units (for
      * example, hours vs. GB). To get more meaningful <code>UsageQuantity</code>
@@ -251,10 +251,10 @@ namespace Model
      * and unblended rates, see <a
      * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
      * does the "blended" annotation appear on some line items in my bill?</a>. </p>
-     * <p>Valid values are <code>BlendedCost</code>, <code>UnblendedCost</code>, and
-     * <code>UsageQuantity</code>.</p> <note> <p>If you return the
-     * <code>UsageQuantity</code> metric, the service aggregates all usage numbers
-     * without taking into account the units. For example, if you aggregate
+     * <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>,
+     * <code>UnblendedCost</code>, and <code>UsageQuantity</code>.</p> <note> <p>If you
+     * return the <code>UsageQuantity</code> metric, the service aggregates all usage
+     * numbers without taking into account the units. For example, if you aggregate
      * <code>usageQuantity</code> across all of EC2, the results aren't meaningful
      * because EC2 compute hours and data transfer are measured in different units (for
      * example, hours vs. GB). To get more meaningful <code>UsageQuantity</code>
@@ -269,10 +269,10 @@ namespace Model
      * and unblended rates, see <a
      * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
      * does the "blended" annotation appear on some line items in my bill?</a>. </p>
-     * <p>Valid values are <code>BlendedCost</code>, <code>UnblendedCost</code>, and
-     * <code>UsageQuantity</code>.</p> <note> <p>If you return the
-     * <code>UsageQuantity</code> metric, the service aggregates all usage numbers
-     * without taking into account the units. For example, if you aggregate
+     * <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>,
+     * <code>UnblendedCost</code>, and <code>UsageQuantity</code>.</p> <note> <p>If you
+     * return the <code>UsageQuantity</code> metric, the service aggregates all usage
+     * numbers without taking into account the units. For example, if you aggregate
      * <code>usageQuantity</code> across all of EC2, the results aren't meaningful
      * because EC2 compute hours and data transfer are measured in different units (for
      * example, hours vs. GB). To get more meaningful <code>UsageQuantity</code>
@@ -287,10 +287,10 @@ namespace Model
      * and unblended rates, see <a
      * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
      * does the "blended" annotation appear on some line items in my bill?</a>. </p>
-     * <p>Valid values are <code>BlendedCost</code>, <code>UnblendedCost</code>, and
-     * <code>UsageQuantity</code>.</p> <note> <p>If you return the
-     * <code>UsageQuantity</code> metric, the service aggregates all usage numbers
-     * without taking into account the units. For example, if you aggregate
+     * <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>,
+     * <code>UnblendedCost</code>, and <code>UsageQuantity</code>.</p> <note> <p>If you
+     * return the <code>UsageQuantity</code> metric, the service aggregates all usage
+     * numbers without taking into account the units. For example, if you aggregate
      * <code>usageQuantity</code> across all of EC2, the results aren't meaningful
      * because EC2 compute hours and data transfer are measured in different units (for
      * example, hours vs. GB). To get more meaningful <code>UsageQuantity</code>
@@ -305,10 +305,10 @@ namespace Model
      * and unblended rates, see <a
      * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
      * does the "blended" annotation appear on some line items in my bill?</a>. </p>
-     * <p>Valid values are <code>BlendedCost</code>, <code>UnblendedCost</code>, and
-     * <code>UsageQuantity</code>.</p> <note> <p>If you return the
-     * <code>UsageQuantity</code> metric, the service aggregates all usage numbers
-     * without taking into account the units. For example, if you aggregate
+     * <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>,
+     * <code>UnblendedCost</code>, and <code>UsageQuantity</code>.</p> <note> <p>If you
+     * return the <code>UsageQuantity</code> metric, the service aggregates all usage
+     * numbers without taking into account the units. For example, if you aggregate
      * <code>usageQuantity</code> across all of EC2, the results aren't meaningful
      * because EC2 compute hours and data transfer are measured in different units (for
      * example, hours vs. GB). To get more meaningful <code>UsageQuantity</code>
@@ -323,10 +323,10 @@ namespace Model
      * and unblended rates, see <a
      * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
      * does the "blended" annotation appear on some line items in my bill?</a>. </p>
-     * <p>Valid values are <code>BlendedCost</code>, <code>UnblendedCost</code>, and
-     * <code>UsageQuantity</code>.</p> <note> <p>If you return the
-     * <code>UsageQuantity</code> metric, the service aggregates all usage numbers
-     * without taking into account the units. For example, if you aggregate
+     * <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>,
+     * <code>UnblendedCost</code>, and <code>UsageQuantity</code>.</p> <note> <p>If you
+     * return the <code>UsageQuantity</code> metric, the service aggregates all usage
+     * numbers without taking into account the units. For example, if you aggregate
      * <code>usageQuantity</code> across all of EC2, the results aren't meaningful
      * because EC2 compute hours and data transfer are measured in different units (for
      * example, hours vs. GB). To get more meaningful <code>UsageQuantity</code>

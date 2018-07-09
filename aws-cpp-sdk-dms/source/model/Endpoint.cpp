@@ -51,6 +51,7 @@ Endpoint::Endpoint() :
     m_externalIdHasBeenSet(false),
     m_dynamoDbSettingsHasBeenSet(false),
     m_s3SettingsHasBeenSet(false),
+    m_dmsTransferSettingsHasBeenSet(false),
     m_mongoDbSettingsHasBeenSet(false)
 {
 }
@@ -78,6 +79,7 @@ Endpoint::Endpoint(const JsonValue& jsonValue) :
     m_externalIdHasBeenSet(false),
     m_dynamoDbSettingsHasBeenSet(false),
     m_s3SettingsHasBeenSet(false),
+    m_dmsTransferSettingsHasBeenSet(false),
     m_mongoDbSettingsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -218,6 +220,13 @@ Endpoint& Endpoint::operator =(const JsonValue& jsonValue)
     m_s3SettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DmsTransferSettings"))
+  {
+    m_dmsTransferSettings = jsonValue.GetObject("DmsTransferSettings");
+
+    m_dmsTransferSettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("MongoDbSettings"))
   {
     m_mongoDbSettings = jsonValue.GetObject("MongoDbSettings");
@@ -341,6 +350,12 @@ JsonValue Endpoint::Jsonize() const
   if(m_s3SettingsHasBeenSet)
   {
    payload.WithObject("S3Settings", m_s3Settings.Jsonize());
+
+  }
+
+  if(m_dmsTransferSettingsHasBeenSet)
+  {
+   payload.WithObject("DmsTransferSettings", m_dmsTransferSettings.Jsonize());
 
   }
 

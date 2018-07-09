@@ -24,7 +24,9 @@ using namespace Aws::Utils;
 
 ReloadTablesRequest::ReloadTablesRequest() : 
     m_replicationTaskArnHasBeenSet(false),
-    m_tablesToReloadHasBeenSet(false)
+    m_tablesToReloadHasBeenSet(false),
+    m_reloadOption(ReloadOptionValue::NOT_SET),
+    m_reloadOptionHasBeenSet(false)
 {
 }
 
@@ -47,6 +49,11 @@ Aws::String ReloadTablesRequest::SerializePayload() const
    }
    payload.WithArray("TablesToReload", std::move(tablesToReloadJsonList));
 
+  }
+
+  if(m_reloadOptionHasBeenSet)
+  {
+   payload.WithString("ReloadOption", ReloadOptionValueMapper::GetNameForReloadOptionValue(m_reloadOption));
   }
 
   return payload.WriteReadable();

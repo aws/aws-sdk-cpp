@@ -91,32 +91,32 @@ namespace Model
 
 
     /**
-     * <p>How many days of previous usage that AWS takes into consideration when making
-     * this recommendation.</p>
+     * <p>How many days of previous usage that AWS considers when making this
+     * recommendation.</p>
      */
     inline const LookbackPeriodInDays& GetLookbackPeriodInDays() const{ return m_lookbackPeriodInDays; }
 
     /**
-     * <p>How many days of previous usage that AWS takes into consideration when making
-     * this recommendation.</p>
+     * <p>How many days of previous usage that AWS considers when making this
+     * recommendation.</p>
      */
     inline void SetLookbackPeriodInDays(const LookbackPeriodInDays& value) { m_lookbackPeriodInDaysHasBeenSet = true; m_lookbackPeriodInDays = value; }
 
     /**
-     * <p>How many days of previous usage that AWS takes into consideration when making
-     * this recommendation.</p>
+     * <p>How many days of previous usage that AWS considers when making this
+     * recommendation.</p>
      */
     inline void SetLookbackPeriodInDays(LookbackPeriodInDays&& value) { m_lookbackPeriodInDaysHasBeenSet = true; m_lookbackPeriodInDays = std::move(value); }
 
     /**
-     * <p>How many days of previous usage that AWS takes into consideration when making
-     * this recommendation.</p>
+     * <p>How many days of previous usage that AWS considers when making this
+     * recommendation.</p>
      */
     inline ReservationPurchaseRecommendation& WithLookbackPeriodInDays(const LookbackPeriodInDays& value) { SetLookbackPeriodInDays(value); return *this;}
 
     /**
-     * <p>How many days of previous usage that AWS takes into consideration when making
-     * this recommendation.</p>
+     * <p>How many days of previous usage that AWS considers when making this
+     * recommendation.</p>
      */
     inline ReservationPurchaseRecommendation& WithLookbackPeriodInDays(LookbackPeriodInDays&& value) { SetLookbackPeriodInDays(std::move(value)); return *this;}
 

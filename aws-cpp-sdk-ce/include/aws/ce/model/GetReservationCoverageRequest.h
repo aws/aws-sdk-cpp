@@ -242,7 +242,8 @@ namespace Model
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * </code> object as the other operations, but only <code>AND</code> is supported
      * among each dimension. You can nest only one level deep. If there are multiple
-     * values for a dimension, they are OR'd together.</p>
+     * values for a dimension, they are OR'd together.</p> <p>If you don't provide a
+     * <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p>
      */
     inline const Expression& GetFilter() const{ return m_filter; }
 
@@ -257,7 +258,8 @@ namespace Model
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * </code> object as the other operations, but only <code>AND</code> is supported
      * among each dimension. You can nest only one level deep. If there are multiple
-     * values for a dimension, they are OR'd together.</p>
+     * values for a dimension, they are OR'd together.</p> <p>If you don't provide a
+     * <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p>
      */
     inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
 
@@ -272,7 +274,8 @@ namespace Model
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * </code> object as the other operations, but only <code>AND</code> is supported
      * among each dimension. You can nest only one level deep. If there are multiple
-     * values for a dimension, they are OR'd together.</p>
+     * values for a dimension, they are OR'd together.</p> <p>If you don't provide a
+     * <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p>
      */
     inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
@@ -287,7 +290,8 @@ namespace Model
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * </code> object as the other operations, but only <code>AND</code> is supported
      * among each dimension. You can nest only one level deep. If there are multiple
-     * values for a dimension, they are OR'd together.</p>
+     * values for a dimension, they are OR'd together.</p> <p>If you don't provide a
+     * <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p>
      */
     inline GetReservationCoverageRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
 
@@ -302,7 +306,8 @@ namespace Model
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * </code> object as the other operations, but only <code>AND</code> is supported
      * among each dimension. You can nest only one level deep. If there are multiple
-     * values for a dimension, they are OR'd together.</p>
+     * values for a dimension, they are OR'd together.</p> <p>If you don't provide a
+     * <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p>
      */
     inline GetReservationCoverageRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
 

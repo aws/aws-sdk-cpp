@@ -26,7 +26,8 @@ namespace Model
   enum class AccountScope
   {
     NOT_SET,
-    PAYER
+    PAYER,
+    LINKED
   };
 
 namespace AccountScopeMapper

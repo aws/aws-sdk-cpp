@@ -19,6 +19,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/transcribe/model/LanguageCode.h>
 #include <aws/transcribe/model/TranscriptionJobStatus.h>
+#include <aws/transcribe/model/OutputLocationType.h>
 #include <utility>
 
 namespace Aws
@@ -51,89 +52,89 @@ namespace Model
 
 
     /**
-     * <p>The name assigned to the transcription job when it was created.</p>
+     * <p>The name of the transcription job.</p>
      */
     inline const Aws::String& GetTranscriptionJobName() const{ return m_transcriptionJobName; }
 
     /**
-     * <p>The name assigned to the transcription job when it was created.</p>
+     * <p>The name of the transcription job.</p>
      */
     inline void SetTranscriptionJobName(const Aws::String& value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName = value; }
 
     /**
-     * <p>The name assigned to the transcription job when it was created.</p>
+     * <p>The name of the transcription job.</p>
      */
     inline void SetTranscriptionJobName(Aws::String&& value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName = std::move(value); }
 
     /**
-     * <p>The name assigned to the transcription job when it was created.</p>
+     * <p>The name of the transcription job.</p>
      */
     inline void SetTranscriptionJobName(const char* value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName.assign(value); }
 
     /**
-     * <p>The name assigned to the transcription job when it was created.</p>
+     * <p>The name of the transcription job.</p>
      */
     inline TranscriptionJobSummary& WithTranscriptionJobName(const Aws::String& value) { SetTranscriptionJobName(value); return *this;}
 
     /**
-     * <p>The name assigned to the transcription job when it was created.</p>
+     * <p>The name of the transcription job.</p>
      */
     inline TranscriptionJobSummary& WithTranscriptionJobName(Aws::String&& value) { SetTranscriptionJobName(std::move(value)); return *this;}
 
     /**
-     * <p>The name assigned to the transcription job when it was created.</p>
+     * <p>The name of the transcription job.</p>
      */
     inline TranscriptionJobSummary& WithTranscriptionJobName(const char* value) { SetTranscriptionJobName(value); return *this;}
 
 
     /**
-     * <p>Timestamp of the date and time that the job was created.</p>
+     * <p>A timestamp that shows when the job was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>Timestamp of the date and time that the job was created.</p>
+     * <p>A timestamp that shows when the job was created.</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>Timestamp of the date and time that the job was created.</p>
+     * <p>A timestamp that shows when the job was created.</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
-     * <p>Timestamp of the date and time that the job was created.</p>
+     * <p>A timestamp that shows when the job was created.</p>
      */
     inline TranscriptionJobSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>Timestamp of the date and time that the job was created.</p>
+     * <p>A timestamp that shows when the job was created.</p>
      */
     inline TranscriptionJobSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>Timestamp of the date and time that the job completed.</p>
+     * <p>A timestamp that shows when the job was completed.</p>
      */
     inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
 
     /**
-     * <p>Timestamp of the date and time that the job completed.</p>
+     * <p>A timestamp that shows when the job was completed.</p>
      */
     inline void SetCompletionTime(const Aws::Utils::DateTime& value) { m_completionTimeHasBeenSet = true; m_completionTime = value; }
 
     /**
-     * <p>Timestamp of the date and time that the job completed.</p>
+     * <p>A timestamp that shows when the job was completed.</p>
      */
     inline void SetCompletionTime(Aws::Utils::DateTime&& value) { m_completionTimeHasBeenSet = true; m_completionTime = std::move(value); }
 
     /**
-     * <p>Timestamp of the date and time that the job completed.</p>
+     * <p>A timestamp that shows when the job was completed.</p>
      */
     inline TranscriptionJobSummary& WithCompletionTime(const Aws::Utils::DateTime& value) { SetCompletionTime(value); return *this;}
 
     /**
-     * <p>Timestamp of the date and time that the job completed.</p>
+     * <p>A timestamp that shows when the job was completed.</p>
      */
     inline TranscriptionJobSummary& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(std::move(value)); return *this;}
 
@@ -201,46 +202,107 @@ namespace Model
 
 
     /**
-     * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this
-     * field contains a description of the error.</p>
+     * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a
+     * description of the error.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
 
     /**
-     * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this
-     * field contains a description of the error.</p>
+     * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a
+     * description of the error.</p>
      */
     inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
 
     /**
-     * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this
-     * field contains a description of the error.</p>
+     * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a
+     * description of the error.</p>
      */
     inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
 
     /**
-     * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this
-     * field contains a description of the error.</p>
+     * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a
+     * description of the error.</p>
      */
     inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
 
     /**
-     * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this
-     * field contains a description of the error.</p>
+     * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a
+     * description of the error.</p>
      */
     inline TranscriptionJobSummary& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
 
     /**
-     * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this
-     * field contains a description of the error.</p>
+     * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a
+     * description of the error.</p>
      */
     inline TranscriptionJobSummary& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
 
     /**
-     * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this
-     * field contains a description of the error.</p>
+     * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a
+     * description of the error.</p>
      */
     inline TranscriptionJobSummary& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+
+
+    /**
+     * <p>Indicates the location of the output of the transcription job.</p> <p>If the
+     * value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket
+     * specified in the <code>outputBucketName</code> field when the transcription job
+     * was started with the <code>StartTranscriptionJob</code> operation.</p> <p>If the
+     * value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon
+     * Transcribe and can be retrieved using the URI in the
+     * <code>GetTranscriptionJob</code> response's <code>TranscriptFileUri</code>
+     * field.</p>
+     */
+    inline const OutputLocationType& GetOutputLocationType() const{ return m_outputLocationType; }
+
+    /**
+     * <p>Indicates the location of the output of the transcription job.</p> <p>If the
+     * value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket
+     * specified in the <code>outputBucketName</code> field when the transcription job
+     * was started with the <code>StartTranscriptionJob</code> operation.</p> <p>If the
+     * value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon
+     * Transcribe and can be retrieved using the URI in the
+     * <code>GetTranscriptionJob</code> response's <code>TranscriptFileUri</code>
+     * field.</p>
+     */
+    inline void SetOutputLocationType(const OutputLocationType& value) { m_outputLocationTypeHasBeenSet = true; m_outputLocationType = value; }
+
+    /**
+     * <p>Indicates the location of the output of the transcription job.</p> <p>If the
+     * value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket
+     * specified in the <code>outputBucketName</code> field when the transcription job
+     * was started with the <code>StartTranscriptionJob</code> operation.</p> <p>If the
+     * value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon
+     * Transcribe and can be retrieved using the URI in the
+     * <code>GetTranscriptionJob</code> response's <code>TranscriptFileUri</code>
+     * field.</p>
+     */
+    inline void SetOutputLocationType(OutputLocationType&& value) { m_outputLocationTypeHasBeenSet = true; m_outputLocationType = std::move(value); }
+
+    /**
+     * <p>Indicates the location of the output of the transcription job.</p> <p>If the
+     * value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket
+     * specified in the <code>outputBucketName</code> field when the transcription job
+     * was started with the <code>StartTranscriptionJob</code> operation.</p> <p>If the
+     * value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon
+     * Transcribe and can be retrieved using the URI in the
+     * <code>GetTranscriptionJob</code> response's <code>TranscriptFileUri</code>
+     * field.</p>
+     */
+    inline TranscriptionJobSummary& WithOutputLocationType(const OutputLocationType& value) { SetOutputLocationType(value); return *this;}
+
+    /**
+     * <p>Indicates the location of the output of the transcription job.</p> <p>If the
+     * value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket
+     * specified in the <code>outputBucketName</code> field when the transcription job
+     * was started with the <code>StartTranscriptionJob</code> operation.</p> <p>If the
+     * value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon
+     * Transcribe and can be retrieved using the URI in the
+     * <code>GetTranscriptionJob</code> response's <code>TranscriptFileUri</code>
+     * field.</p>
+     */
+    inline TranscriptionJobSummary& WithOutputLocationType(OutputLocationType&& value) { SetOutputLocationType(std::move(value)); return *this;}
 
   private:
 
@@ -261,6 +323,9 @@ namespace Model
 
     Aws::String m_failureReason;
     bool m_failureReasonHasBeenSet;
+
+    OutputLocationType m_outputLocationType;
+    bool m_outputLocationTypeHasBeenSet;
   };
 
 } // namespace Model

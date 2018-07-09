@@ -33,6 +33,7 @@ RDSInstanceDetails::RDSInstanceDetails() :
     m_instanceTypeHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_databaseEngineHasBeenSet(false),
+    m_databaseEditionHasBeenSet(false),
     m_deploymentOptionHasBeenSet(false),
     m_licenseModelHasBeenSet(false),
     m_currentGeneration(false),
@@ -47,6 +48,7 @@ RDSInstanceDetails::RDSInstanceDetails(const JsonValue& jsonValue) :
     m_instanceTypeHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_databaseEngineHasBeenSet(false),
+    m_databaseEditionHasBeenSet(false),
     m_deploymentOptionHasBeenSet(false),
     m_licenseModelHasBeenSet(false),
     m_currentGeneration(false),
@@ -85,6 +87,13 @@ RDSInstanceDetails& RDSInstanceDetails::operator =(const JsonValue& jsonValue)
     m_databaseEngine = jsonValue.GetString("DatabaseEngine");
 
     m_databaseEngineHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DatabaseEdition"))
+  {
+    m_databaseEdition = jsonValue.GetString("DatabaseEdition");
+
+    m_databaseEditionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DeploymentOption"))
@@ -143,6 +152,12 @@ JsonValue RDSInstanceDetails::Jsonize() const
   if(m_databaseEngineHasBeenSet)
   {
    payload.WithString("DatabaseEngine", m_databaseEngine);
+
+  }
+
+  if(m_databaseEditionHasBeenSet)
+  {
+   payload.WithString("DatabaseEdition", m_databaseEdition);
 
   }
 

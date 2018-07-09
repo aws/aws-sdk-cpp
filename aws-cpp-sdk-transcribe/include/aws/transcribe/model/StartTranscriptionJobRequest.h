@@ -49,37 +49,44 @@ namespace Model
 
 
     /**
-     * <p>The name of the job. The name must be unique within an AWS account.</p>
+     * <p>The name of the job. You can't use the strings "." or ".." in the job name.
+     * The name must be unique within an AWS account.</p>
      */
     inline const Aws::String& GetTranscriptionJobName() const{ return m_transcriptionJobName; }
 
     /**
-     * <p>The name of the job. The name must be unique within an AWS account.</p>
+     * <p>The name of the job. You can't use the strings "." or ".." in the job name.
+     * The name must be unique within an AWS account.</p>
      */
     inline void SetTranscriptionJobName(const Aws::String& value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName = value; }
 
     /**
-     * <p>The name of the job. The name must be unique within an AWS account.</p>
+     * <p>The name of the job. You can't use the strings "." or ".." in the job name.
+     * The name must be unique within an AWS account.</p>
      */
     inline void SetTranscriptionJobName(Aws::String&& value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName = std::move(value); }
 
     /**
-     * <p>The name of the job. The name must be unique within an AWS account.</p>
+     * <p>The name of the job. You can't use the strings "." or ".." in the job name.
+     * The name must be unique within an AWS account.</p>
      */
     inline void SetTranscriptionJobName(const char* value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName.assign(value); }
 
     /**
-     * <p>The name of the job. The name must be unique within an AWS account.</p>
+     * <p>The name of the job. You can't use the strings "." or ".." in the job name.
+     * The name must be unique within an AWS account.</p>
      */
     inline StartTranscriptionJobRequest& WithTranscriptionJobName(const Aws::String& value) { SetTranscriptionJobName(value); return *this;}
 
     /**
-     * <p>The name of the job. The name must be unique within an AWS account.</p>
+     * <p>The name of the job. You can't use the strings "." or ".." in the job name.
+     * The name must be unique within an AWS account.</p>
      */
     inline StartTranscriptionJobRequest& WithTranscriptionJobName(Aws::String&& value) { SetTranscriptionJobName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the job. The name must be unique within an AWS account.</p>
+     * <p>The name of the job. You can't use the strings "." or ".." in the job name.
+     * The name must be unique within an AWS account.</p>
      */
     inline StartTranscriptionJobRequest& WithTranscriptionJobName(const char* value) { SetTranscriptionJobName(value); return *this;}
 
@@ -179,6 +186,119 @@ namespace Model
 
 
     /**
+     * <p>The location where the transcription is stored.</p> <p>If you set the
+     * <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the
+     * specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the
+     * operation returns this location in the <code>TranscriptFileUri</code> field. The
+     * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
+     * bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user">Permissions
+     * Required for IAM User Roles</a>.</p> <p>If you don't set the
+     * <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a
+     * shareable URL that provides secure access to your transcription, and returns it
+     * in the <code>TranscriptFileUri</code> field. Use this URL to download the
+     * transcription.</p>
+     */
+    inline const Aws::String& GetOutputBucketName() const{ return m_outputBucketName; }
+
+    /**
+     * <p>The location where the transcription is stored.</p> <p>If you set the
+     * <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the
+     * specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the
+     * operation returns this location in the <code>TranscriptFileUri</code> field. The
+     * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
+     * bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user">Permissions
+     * Required for IAM User Roles</a>.</p> <p>If you don't set the
+     * <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a
+     * shareable URL that provides secure access to your transcription, and returns it
+     * in the <code>TranscriptFileUri</code> field. Use this URL to download the
+     * transcription.</p>
+     */
+    inline void SetOutputBucketName(const Aws::String& value) { m_outputBucketNameHasBeenSet = true; m_outputBucketName = value; }
+
+    /**
+     * <p>The location where the transcription is stored.</p> <p>If you set the
+     * <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the
+     * specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the
+     * operation returns this location in the <code>TranscriptFileUri</code> field. The
+     * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
+     * bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user">Permissions
+     * Required for IAM User Roles</a>.</p> <p>If you don't set the
+     * <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a
+     * shareable URL that provides secure access to your transcription, and returns it
+     * in the <code>TranscriptFileUri</code> field. Use this URL to download the
+     * transcription.</p>
+     */
+    inline void SetOutputBucketName(Aws::String&& value) { m_outputBucketNameHasBeenSet = true; m_outputBucketName = std::move(value); }
+
+    /**
+     * <p>The location where the transcription is stored.</p> <p>If you set the
+     * <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the
+     * specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the
+     * operation returns this location in the <code>TranscriptFileUri</code> field. The
+     * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
+     * bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user">Permissions
+     * Required for IAM User Roles</a>.</p> <p>If you don't set the
+     * <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a
+     * shareable URL that provides secure access to your transcription, and returns it
+     * in the <code>TranscriptFileUri</code> field. Use this URL to download the
+     * transcription.</p>
+     */
+    inline void SetOutputBucketName(const char* value) { m_outputBucketNameHasBeenSet = true; m_outputBucketName.assign(value); }
+
+    /**
+     * <p>The location where the transcription is stored.</p> <p>If you set the
+     * <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the
+     * specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the
+     * operation returns this location in the <code>TranscriptFileUri</code> field. The
+     * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
+     * bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user">Permissions
+     * Required for IAM User Roles</a>.</p> <p>If you don't set the
+     * <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a
+     * shareable URL that provides secure access to your transcription, and returns it
+     * in the <code>TranscriptFileUri</code> field. Use this URL to download the
+     * transcription.</p>
+     */
+    inline StartTranscriptionJobRequest& WithOutputBucketName(const Aws::String& value) { SetOutputBucketName(value); return *this;}
+
+    /**
+     * <p>The location where the transcription is stored.</p> <p>If you set the
+     * <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the
+     * specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the
+     * operation returns this location in the <code>TranscriptFileUri</code> field. The
+     * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
+     * bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user">Permissions
+     * Required for IAM User Roles</a>.</p> <p>If you don't set the
+     * <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a
+     * shareable URL that provides secure access to your transcription, and returns it
+     * in the <code>TranscriptFileUri</code> field. Use this URL to download the
+     * transcription.</p>
+     */
+    inline StartTranscriptionJobRequest& WithOutputBucketName(Aws::String&& value) { SetOutputBucketName(std::move(value)); return *this;}
+
+    /**
+     * <p>The location where the transcription is stored.</p> <p>If you set the
+     * <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the
+     * specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the
+     * operation returns this location in the <code>TranscriptFileUri</code> field. The
+     * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
+     * bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user">Permissions
+     * Required for IAM User Roles</a>.</p> <p>If you don't set the
+     * <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a
+     * shareable URL that provides secure access to your transcription, and returns it
+     * in the <code>TranscriptFileUri</code> field. Use this URL to download the
+     * transcription.</p>
+     */
+    inline StartTranscriptionJobRequest& WithOutputBucketName(const char* value) { SetOutputBucketName(value); return *this;}
+
+
+    /**
      * <p>A <code>Settings</code> object that provides optional settings for a
      * transcription job.</p>
      */
@@ -224,6 +344,9 @@ namespace Model
 
     Media m_media;
     bool m_mediaHasBeenSet;
+
+    Aws::String m_outputBucketName;
+    bool m_outputBucketNameHasBeenSet;
 
     Settings m_settings;
     bool m_settingsHasBeenSet;

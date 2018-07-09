@@ -32,7 +32,8 @@ namespace Model
     appstream,
     dynamodb,
     rds,
-    sagemaker
+    sagemaker,
+    custom_resource
   };
 
 namespace ServiceNamespaceMapper

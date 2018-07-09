@@ -192,44 +192,80 @@ namespace Model
 
 
     /**
-     * <p>Whether the recommendation is for a reservation in a single availability zone
-     * or a reservation with a backup in a second availability zone.</p>
+     * <p>The database edition that the recommended reservation supports.</p>
+     */
+    inline const Aws::String& GetDatabaseEdition() const{ return m_databaseEdition; }
+
+    /**
+     * <p>The database edition that the recommended reservation supports.</p>
+     */
+    inline void SetDatabaseEdition(const Aws::String& value) { m_databaseEditionHasBeenSet = true; m_databaseEdition = value; }
+
+    /**
+     * <p>The database edition that the recommended reservation supports.</p>
+     */
+    inline void SetDatabaseEdition(Aws::String&& value) { m_databaseEditionHasBeenSet = true; m_databaseEdition = std::move(value); }
+
+    /**
+     * <p>The database edition that the recommended reservation supports.</p>
+     */
+    inline void SetDatabaseEdition(const char* value) { m_databaseEditionHasBeenSet = true; m_databaseEdition.assign(value); }
+
+    /**
+     * <p>The database edition that the recommended reservation supports.</p>
+     */
+    inline RDSInstanceDetails& WithDatabaseEdition(const Aws::String& value) { SetDatabaseEdition(value); return *this;}
+
+    /**
+     * <p>The database edition that the recommended reservation supports.</p>
+     */
+    inline RDSInstanceDetails& WithDatabaseEdition(Aws::String&& value) { SetDatabaseEdition(std::move(value)); return *this;}
+
+    /**
+     * <p>The database edition that the recommended reservation supports.</p>
+     */
+    inline RDSInstanceDetails& WithDatabaseEdition(const char* value) { SetDatabaseEdition(value); return *this;}
+
+
+    /**
+     * <p>Whether the recommendation is for a reservation in a single Availability Zone
+     * or a reservation with a backup in a second Availability Zone.</p>
      */
     inline const Aws::String& GetDeploymentOption() const{ return m_deploymentOption; }
 
     /**
-     * <p>Whether the recommendation is for a reservation in a single availability zone
-     * or a reservation with a backup in a second availability zone.</p>
+     * <p>Whether the recommendation is for a reservation in a single Availability Zone
+     * or a reservation with a backup in a second Availability Zone.</p>
      */
     inline void SetDeploymentOption(const Aws::String& value) { m_deploymentOptionHasBeenSet = true; m_deploymentOption = value; }
 
     /**
-     * <p>Whether the recommendation is for a reservation in a single availability zone
-     * or a reservation with a backup in a second availability zone.</p>
+     * <p>Whether the recommendation is for a reservation in a single Availability Zone
+     * or a reservation with a backup in a second Availability Zone.</p>
      */
     inline void SetDeploymentOption(Aws::String&& value) { m_deploymentOptionHasBeenSet = true; m_deploymentOption = std::move(value); }
 
     /**
-     * <p>Whether the recommendation is for a reservation in a single availability zone
-     * or a reservation with a backup in a second availability zone.</p>
+     * <p>Whether the recommendation is for a reservation in a single Availability Zone
+     * or a reservation with a backup in a second Availability Zone.</p>
      */
     inline void SetDeploymentOption(const char* value) { m_deploymentOptionHasBeenSet = true; m_deploymentOption.assign(value); }
 
     /**
-     * <p>Whether the recommendation is for a reservation in a single availability zone
-     * or a reservation with a backup in a second availability zone.</p>
+     * <p>Whether the recommendation is for a reservation in a single Availability Zone
+     * or a reservation with a backup in a second Availability Zone.</p>
      */
     inline RDSInstanceDetails& WithDeploymentOption(const Aws::String& value) { SetDeploymentOption(value); return *this;}
 
     /**
-     * <p>Whether the recommendation is for a reservation in a single availability zone
-     * or a reservation with a backup in a second availability zone.</p>
+     * <p>Whether the recommendation is for a reservation in a single Availability Zone
+     * or a reservation with a backup in a second Availability Zone.</p>
      */
     inline RDSInstanceDetails& WithDeploymentOption(Aws::String&& value) { SetDeploymentOption(std::move(value)); return *this;}
 
     /**
-     * <p>Whether the recommendation is for a reservation in a single availability zone
-     * or a reservation with a backup in a second availability zone.</p>
+     * <p>Whether the recommendation is for a reservation in a single Availability Zone
+     * or a reservation with a backup in a second Availability Zone.</p>
      */
     inline RDSInstanceDetails& WithDeploymentOption(const char* value) { SetDeploymentOption(value); return *this;}
 
@@ -314,6 +350,9 @@ namespace Model
 
     Aws::String m_databaseEngine;
     bool m_databaseEngineHasBeenSet;
+
+    Aws::String m_databaseEdition;
+    bool m_databaseEditionHasBeenSet;
 
     Aws::String m_deploymentOption;
     bool m_deploymentOptionHasBeenSet;

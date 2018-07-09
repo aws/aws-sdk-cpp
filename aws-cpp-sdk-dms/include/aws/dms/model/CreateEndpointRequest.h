@@ -22,6 +22,7 @@
 #include <aws/dms/model/DmsSslModeValue.h>
 #include <aws/dms/model/DynamoDbSettings.h>
 #include <aws/dms/model/S3Settings.h>
+#include <aws/dms/model/DmsTransferSettings.h>
 #include <aws/dms/model/MongoDbSettings.h>
 #include <aws/dms/model/Tag.h>
 #include <utility>
@@ -732,11 +733,82 @@ namespace Model
 
 
     /**
+     * <p> The settings in JSON format for the DMS Transfer type source endpoint. </p>
+     * <p>Attributes include:</p> <ul> <li> <p>serviceAccessRoleArn - The IAM role that
+     * has permission to access the Amazon S3 bucket.</p> </li> <li> <p>bucketName -
+     * The name of the S3 bucket to use.</p> </li> <li> <p>compressionType - An
+     * optional parameter to use GZIP to compress the target files. Set to NONE (the
+     * default) or do not use to leave the files uncompressed.</p> </li> </ul>
+     * <p>Shorthand syntax: ServiceAccessRoleArn=string
+     * ,BucketName=string,CompressionType=string</p> <p>JSON syntax:</p> <p> {
+     * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
+     * "none"|"gzip" } </p>
+     */
+    inline const DmsTransferSettings& GetDmsTransferSettings() const{ return m_dmsTransferSettings; }
+
+    /**
+     * <p> The settings in JSON format for the DMS Transfer type source endpoint. </p>
+     * <p>Attributes include:</p> <ul> <li> <p>serviceAccessRoleArn - The IAM role that
+     * has permission to access the Amazon S3 bucket.</p> </li> <li> <p>bucketName -
+     * The name of the S3 bucket to use.</p> </li> <li> <p>compressionType - An
+     * optional parameter to use GZIP to compress the target files. Set to NONE (the
+     * default) or do not use to leave the files uncompressed.</p> </li> </ul>
+     * <p>Shorthand syntax: ServiceAccessRoleArn=string
+     * ,BucketName=string,CompressionType=string</p> <p>JSON syntax:</p> <p> {
+     * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
+     * "none"|"gzip" } </p>
+     */
+    inline void SetDmsTransferSettings(const DmsTransferSettings& value) { m_dmsTransferSettingsHasBeenSet = true; m_dmsTransferSettings = value; }
+
+    /**
+     * <p> The settings in JSON format for the DMS Transfer type source endpoint. </p>
+     * <p>Attributes include:</p> <ul> <li> <p>serviceAccessRoleArn - The IAM role that
+     * has permission to access the Amazon S3 bucket.</p> </li> <li> <p>bucketName -
+     * The name of the S3 bucket to use.</p> </li> <li> <p>compressionType - An
+     * optional parameter to use GZIP to compress the target files. Set to NONE (the
+     * default) or do not use to leave the files uncompressed.</p> </li> </ul>
+     * <p>Shorthand syntax: ServiceAccessRoleArn=string
+     * ,BucketName=string,CompressionType=string</p> <p>JSON syntax:</p> <p> {
+     * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
+     * "none"|"gzip" } </p>
+     */
+    inline void SetDmsTransferSettings(DmsTransferSettings&& value) { m_dmsTransferSettingsHasBeenSet = true; m_dmsTransferSettings = std::move(value); }
+
+    /**
+     * <p> The settings in JSON format for the DMS Transfer type source endpoint. </p>
+     * <p>Attributes include:</p> <ul> <li> <p>serviceAccessRoleArn - The IAM role that
+     * has permission to access the Amazon S3 bucket.</p> </li> <li> <p>bucketName -
+     * The name of the S3 bucket to use.</p> </li> <li> <p>compressionType - An
+     * optional parameter to use GZIP to compress the target files. Set to NONE (the
+     * default) or do not use to leave the files uncompressed.</p> </li> </ul>
+     * <p>Shorthand syntax: ServiceAccessRoleArn=string
+     * ,BucketName=string,CompressionType=string</p> <p>JSON syntax:</p> <p> {
+     * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
+     * "none"|"gzip" } </p>
+     */
+    inline CreateEndpointRequest& WithDmsTransferSettings(const DmsTransferSettings& value) { SetDmsTransferSettings(value); return *this;}
+
+    /**
+     * <p> The settings in JSON format for the DMS Transfer type source endpoint. </p>
+     * <p>Attributes include:</p> <ul> <li> <p>serviceAccessRoleArn - The IAM role that
+     * has permission to access the Amazon S3 bucket.</p> </li> <li> <p>bucketName -
+     * The name of the S3 bucket to use.</p> </li> <li> <p>compressionType - An
+     * optional parameter to use GZIP to compress the target files. Set to NONE (the
+     * default) or do not use to leave the files uncompressed.</p> </li> </ul>
+     * <p>Shorthand syntax: ServiceAccessRoleArn=string
+     * ,BucketName=string,CompressionType=string</p> <p>JSON syntax:</p> <p> {
+     * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
+     * "none"|"gzip" } </p>
+     */
+    inline CreateEndpointRequest& WithDmsTransferSettings(DmsTransferSettings&& value) { SetDmsTransferSettings(std::move(value)); return *this;}
+
+
+    /**
      * <p>Settings in JSON format for the source MongoDB endpoint. For more information
      * about the available settings, see the <b>Configuration Properties When Using
      * MongoDB as a Source for AWS Database Migration Service</b> section at <a
      * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
-     * Using Amazon S3 as a Target for AWS Database Migration Service</a>. </p>
+     * Using MongoDB as a Target for AWS Database Migration Service</a>. </p>
      */
     inline const MongoDbSettings& GetMongoDbSettings() const{ return m_mongoDbSettings; }
 
@@ -745,7 +817,7 @@ namespace Model
      * about the available settings, see the <b>Configuration Properties When Using
      * MongoDB as a Source for AWS Database Migration Service</b> section at <a
      * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
-     * Using Amazon S3 as a Target for AWS Database Migration Service</a>. </p>
+     * Using MongoDB as a Target for AWS Database Migration Service</a>. </p>
      */
     inline void SetMongoDbSettings(const MongoDbSettings& value) { m_mongoDbSettingsHasBeenSet = true; m_mongoDbSettings = value; }
 
@@ -754,7 +826,7 @@ namespace Model
      * about the available settings, see the <b>Configuration Properties When Using
      * MongoDB as a Source for AWS Database Migration Service</b> section at <a
      * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
-     * Using Amazon S3 as a Target for AWS Database Migration Service</a>. </p>
+     * Using MongoDB as a Target for AWS Database Migration Service</a>. </p>
      */
     inline void SetMongoDbSettings(MongoDbSettings&& value) { m_mongoDbSettingsHasBeenSet = true; m_mongoDbSettings = std::move(value); }
 
@@ -763,7 +835,7 @@ namespace Model
      * about the available settings, see the <b>Configuration Properties When Using
      * MongoDB as a Source for AWS Database Migration Service</b> section at <a
      * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
-     * Using Amazon S3 as a Target for AWS Database Migration Service</a>. </p>
+     * Using MongoDB as a Target for AWS Database Migration Service</a>. </p>
      */
     inline CreateEndpointRequest& WithMongoDbSettings(const MongoDbSettings& value) { SetMongoDbSettings(value); return *this;}
 
@@ -772,7 +844,7 @@ namespace Model
      * about the available settings, see the <b>Configuration Properties When Using
      * MongoDB as a Source for AWS Database Migration Service</b> section at <a
      * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
-     * Using Amazon S3 as a Target for AWS Database Migration Service</a>. </p>
+     * Using MongoDB as a Target for AWS Database Migration Service</a>. </p>
      */
     inline CreateEndpointRequest& WithMongoDbSettings(MongoDbSettings&& value) { SetMongoDbSettings(std::move(value)); return *this;}
 
@@ -828,6 +900,9 @@ namespace Model
 
     S3Settings m_s3Settings;
     bool m_s3SettingsHasBeenSet;
+
+    DmsTransferSettings m_dmsTransferSettings;
+    bool m_dmsTransferSettingsHasBeenSet;
 
     MongoDbSettings m_mongoDbSettings;
     bool m_mongoDbSettingsHasBeenSet;

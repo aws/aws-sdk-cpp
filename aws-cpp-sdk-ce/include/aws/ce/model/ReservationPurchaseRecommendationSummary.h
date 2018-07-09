@@ -34,7 +34,7 @@ namespace Model
 
   /**
    * <p>A summary about this recommendation, such as the currency code, the amount
-   * that AWS estimates you could save, and the total amount of reservation to
+   * that AWS estimates that you could save, and the total amount of reservation to
    * purchase.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ReservationPurchaseRecommendationSummary">AWS
    * API Reference</a></p>

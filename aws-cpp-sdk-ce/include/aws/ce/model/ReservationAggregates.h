@@ -33,7 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>The aggregated numbers for your RI usage.</p><p><h3>See Also:</h3>   <a
+   * <p>The aggregated numbers for your Reserved Instance (RI) usage.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ReservationAggregates">AWS
    * API Reference</a></p>
    */
@@ -227,50 +228,50 @@ namespace Model
 
 
     /**
-     * <p>How much you saved due to purchasing and utilizing RIs. This is calculated by
-     * subtracting the <code>TotalAmortizedFee</code> from the
+     * <p>How much you saved due to purchasing and utilizing RIs. AWS calculates this
+     * by subtracting <code>TotalAmortizedFee</code> from
      * <code>OnDemandCostOfRIHoursUsed</code>.</p>
      */
     inline const Aws::String& GetNetRISavings() const{ return m_netRISavings; }
 
     /**
-     * <p>How much you saved due to purchasing and utilizing RIs. This is calculated by
-     * subtracting the <code>TotalAmortizedFee</code> from the
+     * <p>How much you saved due to purchasing and utilizing RIs. AWS calculates this
+     * by subtracting <code>TotalAmortizedFee</code> from
      * <code>OnDemandCostOfRIHoursUsed</code>.</p>
      */
     inline void SetNetRISavings(const Aws::String& value) { m_netRISavingsHasBeenSet = true; m_netRISavings = value; }
 
     /**
-     * <p>How much you saved due to purchasing and utilizing RIs. This is calculated by
-     * subtracting the <code>TotalAmortizedFee</code> from the
+     * <p>How much you saved due to purchasing and utilizing RIs. AWS calculates this
+     * by subtracting <code>TotalAmortizedFee</code> from
      * <code>OnDemandCostOfRIHoursUsed</code>.</p>
      */
     inline void SetNetRISavings(Aws::String&& value) { m_netRISavingsHasBeenSet = true; m_netRISavings = std::move(value); }
 
     /**
-     * <p>How much you saved due to purchasing and utilizing RIs. This is calculated by
-     * subtracting the <code>TotalAmortizedFee</code> from the
+     * <p>How much you saved due to purchasing and utilizing RIs. AWS calculates this
+     * by subtracting <code>TotalAmortizedFee</code> from
      * <code>OnDemandCostOfRIHoursUsed</code>.</p>
      */
     inline void SetNetRISavings(const char* value) { m_netRISavingsHasBeenSet = true; m_netRISavings.assign(value); }
 
     /**
-     * <p>How much you saved due to purchasing and utilizing RIs. This is calculated by
-     * subtracting the <code>TotalAmortizedFee</code> from the
+     * <p>How much you saved due to purchasing and utilizing RIs. AWS calculates this
+     * by subtracting <code>TotalAmortizedFee</code> from
      * <code>OnDemandCostOfRIHoursUsed</code>.</p>
      */
     inline ReservationAggregates& WithNetRISavings(const Aws::String& value) { SetNetRISavings(value); return *this;}
 
     /**
-     * <p>How much you saved due to purchasing and utilizing RIs. This is calculated by
-     * subtracting the <code>TotalAmortizedFee</code> from the
+     * <p>How much you saved due to purchasing and utilizing RIs. AWS calculates this
+     * by subtracting <code>TotalAmortizedFee</code> from
      * <code>OnDemandCostOfRIHoursUsed</code>.</p>
      */
     inline ReservationAggregates& WithNetRISavings(Aws::String&& value) { SetNetRISavings(std::move(value)); return *this;}
 
     /**
-     * <p>How much you saved due to purchasing and utilizing RIs. This is calculated by
-     * subtracting the <code>TotalAmortizedFee</code> from the
+     * <p>How much you saved due to purchasing and utilizing RIs. AWS calculates this
+     * by subtracting <code>TotalAmortizedFee</code> from
      * <code>OnDemandCostOfRIHoursUsed</code>.</p>
      */
     inline ReservationAggregates& WithNetRISavings(const char* value) { SetNetRISavings(value); return *this;}

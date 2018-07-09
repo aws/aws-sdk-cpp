@@ -18,6 +18,7 @@
 #include <aws/dms/DatabaseMigrationServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/dms/model/ReloadOptionValue.h>
 #include <aws/dms/model/TableToReload.h>
 #include <utility>
 
@@ -47,37 +48,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the replication instance. </p>
+     * <p>The Amazon Resource Name (ARN) of the replication task. </p>
      */
     inline const Aws::String& GetReplicationTaskArn() const{ return m_replicationTaskArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the replication instance. </p>
+     * <p>The Amazon Resource Name (ARN) of the replication task. </p>
      */
     inline void SetReplicationTaskArn(const Aws::String& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the replication instance. </p>
+     * <p>The Amazon Resource Name (ARN) of the replication task. </p>
      */
     inline void SetReplicationTaskArn(Aws::String&& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the replication instance. </p>
+     * <p>The Amazon Resource Name (ARN) of the replication task. </p>
      */
     inline void SetReplicationTaskArn(const char* value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the replication instance. </p>
+     * <p>The Amazon Resource Name (ARN) of the replication task. </p>
      */
     inline ReloadTablesRequest& WithReplicationTaskArn(const Aws::String& value) { SetReplicationTaskArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the replication instance. </p>
+     * <p>The Amazon Resource Name (ARN) of the replication task. </p>
      */
     inline ReloadTablesRequest& WithReplicationTaskArn(Aws::String&& value) { SetReplicationTaskArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the replication instance. </p>
+     * <p>The Amazon Resource Name (ARN) of the replication task. </p>
      */
     inline ReloadTablesRequest& WithReplicationTaskArn(const char* value) { SetReplicationTaskArn(value); return *this;}
 
@@ -117,6 +118,52 @@ namespace Model
      */
     inline ReloadTablesRequest& AddTablesToReload(TableToReload&& value) { m_tablesToReloadHasBeenSet = true; m_tablesToReload.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Options for reload. Specify <code>data-reload</code> to reload the data and
+     * re-validate it if validation is enabled. Specify <code>validate-only</code> to
+     * re-validate the table. This option applies only when validation is enabled for
+     * the task. </p> <p>Valid values: data-reload, validate-only</p> <p>Default value
+     * is data-reload.</p>
+     */
+    inline const ReloadOptionValue& GetReloadOption() const{ return m_reloadOption; }
+
+    /**
+     * <p>Options for reload. Specify <code>data-reload</code> to reload the data and
+     * re-validate it if validation is enabled. Specify <code>validate-only</code> to
+     * re-validate the table. This option applies only when validation is enabled for
+     * the task. </p> <p>Valid values: data-reload, validate-only</p> <p>Default value
+     * is data-reload.</p>
+     */
+    inline void SetReloadOption(const ReloadOptionValue& value) { m_reloadOptionHasBeenSet = true; m_reloadOption = value; }
+
+    /**
+     * <p>Options for reload. Specify <code>data-reload</code> to reload the data and
+     * re-validate it if validation is enabled. Specify <code>validate-only</code> to
+     * re-validate the table. This option applies only when validation is enabled for
+     * the task. </p> <p>Valid values: data-reload, validate-only</p> <p>Default value
+     * is data-reload.</p>
+     */
+    inline void SetReloadOption(ReloadOptionValue&& value) { m_reloadOptionHasBeenSet = true; m_reloadOption = std::move(value); }
+
+    /**
+     * <p>Options for reload. Specify <code>data-reload</code> to reload the data and
+     * re-validate it if validation is enabled. Specify <code>validate-only</code> to
+     * re-validate the table. This option applies only when validation is enabled for
+     * the task. </p> <p>Valid values: data-reload, validate-only</p> <p>Default value
+     * is data-reload.</p>
+     */
+    inline ReloadTablesRequest& WithReloadOption(const ReloadOptionValue& value) { SetReloadOption(value); return *this;}
+
+    /**
+     * <p>Options for reload. Specify <code>data-reload</code> to reload the data and
+     * re-validate it if validation is enabled. Specify <code>validate-only</code> to
+     * re-validate the table. This option applies only when validation is enabled for
+     * the task. </p> <p>Valid values: data-reload, validate-only</p> <p>Default value
+     * is data-reload.</p>
+     */
+    inline ReloadTablesRequest& WithReloadOption(ReloadOptionValue&& value) { SetReloadOption(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_replicationTaskArn;
@@ -124,6 +171,9 @@ namespace Model
 
     Aws::Vector<TableToReload> m_tablesToReload;
     bool m_tablesToReloadHasBeenSet;
+
+    ReloadOptionValue m_reloadOption;
+    bool m_reloadOptionHasBeenSet;
   };
 
 } // namespace Model

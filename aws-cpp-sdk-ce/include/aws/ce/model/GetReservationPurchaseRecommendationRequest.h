@@ -122,37 +122,47 @@ namespace Model
 
 
     /**
-     * <p>The account scope that you want recommendations for. The only valid value is
-     * <code>Payer</code>. This means that AWS includes the master account and any
-     * member accounts when it calculates its recommendations.</p>
+     * <p>The account scope that you want recommendations for. <code>PAYER</code> means
+     * that AWS includes the master account and any member accounts when it calculates
+     * its recommendations. <code>LINKED</code> means that AWS includes only member
+     * accounts when it calculates its recommendations.</p> <p>Valid values are
+     * <code>PAYER</code> and <code>LINKED</code>.</p>
      */
     inline const AccountScope& GetAccountScope() const{ return m_accountScope; }
 
     /**
-     * <p>The account scope that you want recommendations for. The only valid value is
-     * <code>Payer</code>. This means that AWS includes the master account and any
-     * member accounts when it calculates its recommendations.</p>
+     * <p>The account scope that you want recommendations for. <code>PAYER</code> means
+     * that AWS includes the master account and any member accounts when it calculates
+     * its recommendations. <code>LINKED</code> means that AWS includes only member
+     * accounts when it calculates its recommendations.</p> <p>Valid values are
+     * <code>PAYER</code> and <code>LINKED</code>.</p>
      */
     inline void SetAccountScope(const AccountScope& value) { m_accountScopeHasBeenSet = true; m_accountScope = value; }
 
     /**
-     * <p>The account scope that you want recommendations for. The only valid value is
-     * <code>Payer</code>. This means that AWS includes the master account and any
-     * member accounts when it calculates its recommendations.</p>
+     * <p>The account scope that you want recommendations for. <code>PAYER</code> means
+     * that AWS includes the master account and any member accounts when it calculates
+     * its recommendations. <code>LINKED</code> means that AWS includes only member
+     * accounts when it calculates its recommendations.</p> <p>Valid values are
+     * <code>PAYER</code> and <code>LINKED</code>.</p>
      */
     inline void SetAccountScope(AccountScope&& value) { m_accountScopeHasBeenSet = true; m_accountScope = std::move(value); }
 
     /**
-     * <p>The account scope that you want recommendations for. The only valid value is
-     * <code>Payer</code>. This means that AWS includes the master account and any
-     * member accounts when it calculates its recommendations.</p>
+     * <p>The account scope that you want recommendations for. <code>PAYER</code> means
+     * that AWS includes the master account and any member accounts when it calculates
+     * its recommendations. <code>LINKED</code> means that AWS includes only member
+     * accounts when it calculates its recommendations.</p> <p>Valid values are
+     * <code>PAYER</code> and <code>LINKED</code>.</p>
      */
     inline GetReservationPurchaseRecommendationRequest& WithAccountScope(const AccountScope& value) { SetAccountScope(value); return *this;}
 
     /**
-     * <p>The account scope that you want recommendations for. The only valid value is
-     * <code>Payer</code>. This means that AWS includes the master account and any
-     * member accounts when it calculates its recommendations.</p>
+     * <p>The account scope that you want recommendations for. <code>PAYER</code> means
+     * that AWS includes the master account and any member accounts when it calculates
+     * its recommendations. <code>LINKED</code> means that AWS includes only member
+     * accounts when it calculates its recommendations.</p> <p>Valid values are
+     * <code>PAYER</code> and <code>LINKED</code>.</p>
      */
     inline GetReservationPurchaseRecommendationRequest& WithAccountScope(AccountScope&& value) { SetAccountScope(std::move(value)); return *this;}
 

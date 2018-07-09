@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int PAYER_HASH = HashingUtils::HashString("PAYER");
+        static const int LINKED_HASH = HashingUtils::HashString("LINKED");
 
 
         AccountScope GetAccountScopeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           if (hashCode == PAYER_HASH)
           {
             return AccountScope::PAYER;
+          }
+          else if (hashCode == LINKED_HASH)
+          {
+            return AccountScope::LINKED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +61,8 @@ namespace Aws
           {
           case AccountScope::PAYER:
             return "PAYER";
+          case AccountScope::LINKED:
+            return "LINKED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

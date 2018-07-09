@@ -37,6 +37,7 @@ namespace Aws
         static const int dynamodb_HASH = HashingUtils::HashString("dynamodb");
         static const int rds_HASH = HashingUtils::HashString("rds");
         static const int sagemaker_HASH = HashingUtils::HashString("sagemaker");
+        static const int custom_resource_HASH = HashingUtils::HashString("custom-resource");
 
 
         ServiceNamespace GetServiceNamespaceForName(const Aws::String& name)
@@ -70,6 +71,10 @@ namespace Aws
           {
             return ServiceNamespace::sagemaker;
           }
+          else if (hashCode == custom_resource_HASH)
+          {
+            return ServiceNamespace::custom_resource;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -98,6 +103,8 @@ namespace Aws
             return "rds";
           case ServiceNamespace::sagemaker:
             return "sagemaker";
+          case ServiceNamespace::custom_resource:
+            return "custom-resource";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

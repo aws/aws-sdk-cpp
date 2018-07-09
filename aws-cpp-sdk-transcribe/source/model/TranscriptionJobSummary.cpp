@@ -36,7 +36,9 @@ TranscriptionJobSummary::TranscriptionJobSummary() :
     m_languageCodeHasBeenSet(false),
     m_transcriptionJobStatus(TranscriptionJobStatus::NOT_SET),
     m_transcriptionJobStatusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+    m_failureReasonHasBeenSet(false),
+    m_outputLocationType(OutputLocationType::NOT_SET),
+    m_outputLocationTypeHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ TranscriptionJobSummary::TranscriptionJobSummary(const JsonValue& jsonValue) :
     m_languageCodeHasBeenSet(false),
     m_transcriptionJobStatus(TranscriptionJobStatus::NOT_SET),
     m_transcriptionJobStatusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+    m_failureReasonHasBeenSet(false),
+    m_outputLocationType(OutputLocationType::NOT_SET),
+    m_outputLocationTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -97,6 +101,13 @@ TranscriptionJobSummary& TranscriptionJobSummary::operator =(const JsonValue& js
     m_failureReasonHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OutputLocationType"))
+  {
+    m_outputLocationType = OutputLocationTypeMapper::GetOutputLocationTypeForName(jsonValue.GetString("OutputLocationType"));
+
+    m_outputLocationTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -134,6 +145,11 @@ JsonValue TranscriptionJobSummary::Jsonize() const
   {
    payload.WithString("FailureReason", m_failureReason);
 
+  }
+
+  if(m_outputLocationTypeHasBeenSet)
+  {
+   payload.WithString("OutputLocationType", OutputLocationTypeMapper::GetNameForOutputLocationType(m_outputLocationType));
   }
 
   return payload;

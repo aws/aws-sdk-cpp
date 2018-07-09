@@ -35,7 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>A group of RIs that share a set of attributes.</p><p><h3>See Also:</h3>   <a
+   * <p>A group of Reserved Instances (RIs) that share a set of
+   * attributes.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ReservationUtilizationGroup">AWS
    * API Reference</a></p>
    */

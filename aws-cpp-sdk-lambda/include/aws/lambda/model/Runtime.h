@@ -35,6 +35,7 @@ namespace Model
     python3_6,
     dotnetcore1_0,
     dotnetcore2_0,
+    dotnetcore2_1,
     nodejs4_3_edge,
     go1_x
   };

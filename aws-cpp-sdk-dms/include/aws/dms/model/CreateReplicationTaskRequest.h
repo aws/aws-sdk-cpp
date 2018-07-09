@@ -373,35 +373,40 @@ namespace Model
     /**
      * <p>Indicates the start time for a change data capture (CDC) operation. Use
      * either CdcStartTime or CdcStartPosition to specify when you want a CDC operation
-     * to start. Specifying both values results in an error.</p>
+     * to start. Specifying both values results in an error.</p> <p>Timestamp Example:
+     * --cdc-start-time “2018-03-08T12:12:12”</p>
      */
     inline const Aws::Utils::DateTime& GetCdcStartTime() const{ return m_cdcStartTime; }
 
     /**
      * <p>Indicates the start time for a change data capture (CDC) operation. Use
      * either CdcStartTime or CdcStartPosition to specify when you want a CDC operation
-     * to start. Specifying both values results in an error.</p>
+     * to start. Specifying both values results in an error.</p> <p>Timestamp Example:
+     * --cdc-start-time “2018-03-08T12:12:12”</p>
      */
     inline void SetCdcStartTime(const Aws::Utils::DateTime& value) { m_cdcStartTimeHasBeenSet = true; m_cdcStartTime = value; }
 
     /**
      * <p>Indicates the start time for a change data capture (CDC) operation. Use
      * either CdcStartTime or CdcStartPosition to specify when you want a CDC operation
-     * to start. Specifying both values results in an error.</p>
+     * to start. Specifying both values results in an error.</p> <p>Timestamp Example:
+     * --cdc-start-time “2018-03-08T12:12:12”</p>
      */
     inline void SetCdcStartTime(Aws::Utils::DateTime&& value) { m_cdcStartTimeHasBeenSet = true; m_cdcStartTime = std::move(value); }
 
     /**
      * <p>Indicates the start time for a change data capture (CDC) operation. Use
      * either CdcStartTime or CdcStartPosition to specify when you want a CDC operation
-     * to start. Specifying both values results in an error.</p>
+     * to start. Specifying both values results in an error.</p> <p>Timestamp Example:
+     * --cdc-start-time “2018-03-08T12:12:12”</p>
      */
     inline CreateReplicationTaskRequest& WithCdcStartTime(const Aws::Utils::DateTime& value) { SetCdcStartTime(value); return *this;}
 
     /**
      * <p>Indicates the start time for a change data capture (CDC) operation. Use
      * either CdcStartTime or CdcStartPosition to specify when you want a CDC operation
-     * to start. Specifying both values results in an error.</p>
+     * to start. Specifying both values results in an error.</p> <p>Timestamp Example:
+     * --cdc-start-time “2018-03-08T12:12:12”</p>
      */
     inline CreateReplicationTaskRequest& WithCdcStartTime(Aws::Utils::DateTime&& value) { SetCdcStartTime(std::move(value)); return *this;}
 

@@ -42,6 +42,7 @@ ModifyEndpointRequest::ModifyEndpointRequest() :
     m_externalTableDefinitionHasBeenSet(false),
     m_dynamoDbSettingsHasBeenSet(false),
     m_s3SettingsHasBeenSet(false),
+    m_dmsTransferSettingsHasBeenSet(false),
     m_mongoDbSettingsHasBeenSet(false)
 {
 }
@@ -141,6 +142,12 @@ Aws::String ModifyEndpointRequest::SerializePayload() const
   if(m_s3SettingsHasBeenSet)
   {
    payload.WithObject("S3Settings", m_s3Settings.Jsonize());
+
+  }
+
+  if(m_dmsTransferSettingsHasBeenSet)
+  {
+   payload.WithObject("DmsTransferSettings", m_dmsTransferSettings.Jsonize());
 
   }
 
