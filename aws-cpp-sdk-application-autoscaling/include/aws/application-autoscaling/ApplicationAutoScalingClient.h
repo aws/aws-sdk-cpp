@@ -125,13 +125,13 @@ namespace Model
 
   /**
    * <p>With Application Auto Scaling, you can configure automatic scaling for your
-   * scalable AWS resources. You can use Application Auto Scaling to accomplish the
+   * scalable resources. You can use Application Auto Scaling to accomplish the
    * following tasks:</p> <ul> <li> <p>Define scaling policies to automatically scale
-   * your AWS resources</p> </li> <li> <p>Scale your resources in response to
-   * CloudWatch alarms</p> </li> <li> <p>Schedule one-time or recurring scaling
+   * your AWS or custom resources</p> </li> <li> <p>Scale your resources in response
+   * to CloudWatch alarms</p> </li> <li> <p>Schedule one-time or recurring scaling
    * actions</p> </li> <li> <p>View the history of your scaling events</p> </li>
-   * </ul> <p>Application Auto Scaling can scale the following AWS resources:</p>
-   * <ul> <li> <p>Amazon ECS services. For more information, see <a
+   * </ul> <p>Application Auto Scaling can scale the following resources:</p> <ul>
+   * <li> <p>Amazon ECS services. For more information, see <a
    * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html">Service
    * Auto Scaling</a> in the <i>Amazon Elastic Container Service Developer
    * Guide</i>.</p> </li> <li> <p>Amazon EC2 Spot fleets. For more information, see
@@ -153,16 +153,19 @@ namespace Model
    * Replicas. For more information, see <a
    * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Integrating.AutoScaling.html">Using
    * Amazon Aurora Auto Scaling with Aurora Replicas</a>.</p> </li> <li> <p>Amazon
-   * SageMaker endpoints. For more information, see <a
+   * SageMaker endpoint variants. For more information, see <a
    * href="http://docs.aws.amazon.com/sagemaker/latest/dg/endpoint-auto-scaling.html">Automatically
-   * Scaling Amazon SageMaker Models</a>.</p> </li> </ul> <p>To configure automatic
-   * scaling for multiple resources across multiple services, use AWS Auto Scaling to
-   * create a scaling plan for your application. For more information, see <a
-   * href="http://aws.amazon.com/autoscaling">AWS Auto Scaling</a>.</p> <p>For a list
-   * of supported regions, see <a
-   * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#as-app_region">AWS
-   * Regions and Endpoints: Application Auto Scaling</a> in the <i>AWS General
-   * Reference</i>.</p>
+   * Scaling Amazon SageMaker Models</a>.</p> </li> <li> <p>Custom resources provided
+   * by your own applications or services. More information is available in our <a
+   * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub
+   * repository</a>. </p> </li> </ul> <p>To learn more about Application Auto
+   * Scaling, see the <a
+   * href="http://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html">Application
+   * Auto Scaling User Guide</a>.</p> <p>To configure automatic scaling for multiple
+   * resources across multiple services, use AWS Auto Scaling to create a scaling
+   * plan for your application. For more information, see the <a
+   * href="http://docs.aws.amazon.com/autoscaling/plans/userguide/what-is-aws-auto-scaling.html">AWS
+   * Auto Scaling User Guide</a>.</p>
    */
   class AWS_APPLICATIONAUTOSCALING_API ApplicationAutoScalingClient : public Aws::Client::AWSJsonClient
   {
