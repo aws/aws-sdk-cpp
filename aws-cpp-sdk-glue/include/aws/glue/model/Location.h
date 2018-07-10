@@ -118,6 +118,42 @@ namespace Model
      */
     inline Location& AddS3(CodeGenNodeArg&& value) { m_s3HasBeenSet = true; m_s3.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A DynamoDB Table location.</p>
+     */
+    inline const Aws::Vector<CodeGenNodeArg>& GetDynamoDB() const{ return m_dynamoDB; }
+
+    /**
+     * <p>A DynamoDB Table location.</p>
+     */
+    inline void SetDynamoDB(const Aws::Vector<CodeGenNodeArg>& value) { m_dynamoDBHasBeenSet = true; m_dynamoDB = value; }
+
+    /**
+     * <p>A DynamoDB Table location.</p>
+     */
+    inline void SetDynamoDB(Aws::Vector<CodeGenNodeArg>&& value) { m_dynamoDBHasBeenSet = true; m_dynamoDB = std::move(value); }
+
+    /**
+     * <p>A DynamoDB Table location.</p>
+     */
+    inline Location& WithDynamoDB(const Aws::Vector<CodeGenNodeArg>& value) { SetDynamoDB(value); return *this;}
+
+    /**
+     * <p>A DynamoDB Table location.</p>
+     */
+    inline Location& WithDynamoDB(Aws::Vector<CodeGenNodeArg>&& value) { SetDynamoDB(std::move(value)); return *this;}
+
+    /**
+     * <p>A DynamoDB Table location.</p>
+     */
+    inline Location& AddDynamoDB(const CodeGenNodeArg& value) { m_dynamoDBHasBeenSet = true; m_dynamoDB.push_back(value); return *this; }
+
+    /**
+     * <p>A DynamoDB Table location.</p>
+     */
+    inline Location& AddDynamoDB(CodeGenNodeArg&& value) { m_dynamoDBHasBeenSet = true; m_dynamoDB.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<CodeGenNodeArg> m_jdbc;
@@ -125,6 +161,9 @@ namespace Model
 
     Aws::Vector<CodeGenNodeArg> m_s3;
     bool m_s3HasBeenSet;
+
+    Aws::Vector<CodeGenNodeArg> m_dynamoDB;
+    bool m_dynamoDBHasBeenSet;
   };
 
 } // namespace Model

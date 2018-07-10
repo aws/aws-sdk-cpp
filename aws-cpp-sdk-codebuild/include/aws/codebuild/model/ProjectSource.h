@@ -502,6 +502,31 @@ namespace Model
 
 
     /**
+     * <p> Set to true to report the status of a build's start and finish to your
+     * source provider. This option is only valid when your source provider is GitHub.
+     * If this is set and you use a different source provider, an invalidInputException
+     * is thrown. </p>
+     */
+    inline bool GetReportBuildStatus() const{ return m_reportBuildStatus; }
+
+    /**
+     * <p> Set to true to report the status of a build's start and finish to your
+     * source provider. This option is only valid when your source provider is GitHub.
+     * If this is set and you use a different source provider, an invalidInputException
+     * is thrown. </p>
+     */
+    inline void SetReportBuildStatus(bool value) { m_reportBuildStatusHasBeenSet = true; m_reportBuildStatus = value; }
+
+    /**
+     * <p> Set to true to report the status of a build's start and finish to your
+     * source provider. This option is only valid when your source provider is GitHub.
+     * If this is set and you use a different source provider, an invalidInputException
+     * is thrown. </p>
+     */
+    inline ProjectSource& WithReportBuildStatus(bool value) { SetReportBuildStatus(value); return *this;}
+
+
+    /**
      * <p>Enable this flag to ignore SSL warnings while connecting to the project
      * source code.</p>
      */
@@ -535,6 +560,9 @@ namespace Model
 
     SourceAuth m_auth;
     bool m_authHasBeenSet;
+
+    bool m_reportBuildStatus;
+    bool m_reportBuildStatusHasBeenSet;
 
     bool m_insecureSsl;
     bool m_insecureSslHasBeenSet;

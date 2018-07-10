@@ -36,6 +36,8 @@ StartBuildRequest::StartBuildRequest() :
     m_buildspecOverrideHasBeenSet(false),
     m_insecureSslOverride(false),
     m_insecureSslOverrideHasBeenSet(false),
+    m_reportBuildStatusOverride(false),
+    m_reportBuildStatusOverrideHasBeenSet(false),
     m_environmentTypeOverride(EnvironmentType::NOT_SET),
     m_environmentTypeOverrideHasBeenSet(false),
     m_imageOverrideHasBeenSet(false),
@@ -117,6 +119,12 @@ Aws::String StartBuildRequest::SerializePayload() const
   if(m_insecureSslOverrideHasBeenSet)
   {
    payload.WithBool("insecureSslOverride", m_insecureSslOverride);
+
+  }
+
+  if(m_reportBuildStatusOverrideHasBeenSet)
+  {
+   payload.WithBool("reportBuildStatusOverride", m_reportBuildStatusOverride);
 
   }
 

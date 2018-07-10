@@ -44,27 +44,27 @@ namespace Model
 
 
     /**
-     * <p>A <a>VolumeModification</a> object.</p>
+     * <p>Information about the volume modification.</p>
      */
     inline const VolumeModification& GetVolumeModification() const{ return m_volumeModification; }
 
     /**
-     * <p>A <a>VolumeModification</a> object.</p>
+     * <p>Information about the volume modification.</p>
      */
     inline void SetVolumeModification(const VolumeModification& value) { m_volumeModification = value; }
 
     /**
-     * <p>A <a>VolumeModification</a> object.</p>
+     * <p>Information about the volume modification.</p>
      */
     inline void SetVolumeModification(VolumeModification&& value) { m_volumeModification = std::move(value); }
 
     /**
-     * <p>A <a>VolumeModification</a> object.</p>
+     * <p>Information about the volume modification.</p>
      */
     inline ModifyVolumeResponse& WithVolumeModification(const VolumeModification& value) { SetVolumeModification(value); return *this;}
 
     /**
-     * <p>A <a>VolumeModification</a> object.</p>
+     * <p>Information about the volume modification.</p>
      */
     inline ModifyVolumeResponse& WithVolumeModification(VolumeModification&& value) { SetVolumeModification(std::move(value)); return *this;}
 

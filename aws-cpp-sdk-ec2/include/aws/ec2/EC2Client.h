@@ -2789,11 +2789,11 @@ namespace Model
          * is specified during the snapshot copy operation. By default, encrypted snapshot
          * copies use the default AWS Key Management Service (AWS KMS) customer master key
          * (CMK); however, you can specify a non-default CMK with the <code>KmsKeyId</code>
-         * parameter. </p> <note> <p>To copy an encrypted snapshot that has been shared
-         * from another account, you must have permissions for the CMK used to encrypt the
-         * snapshot.</p> </note> <note> <p>Snapshots created by the CopySnapshot action
-         * have an arbitrary volume ID that should not be used for any purpose.</p> </note>
-         * <p>For more information, see <a
+         * parameter. </p> <p>To copy an encrypted snapshot that has been shared from
+         * another account, you must have permissions for the CMK used to encrypt the
+         * snapshot.</p> <p>Snapshots created by copying another snapshot have an arbitrary
+         * volume ID that should not be used for any purpose.</p> <p>For more information,
+         * see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
          * an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2812,11 +2812,11 @@ namespace Model
          * is specified during the snapshot copy operation. By default, encrypted snapshot
          * copies use the default AWS Key Management Service (AWS KMS) customer master key
          * (CMK); however, you can specify a non-default CMK with the <code>KmsKeyId</code>
-         * parameter. </p> <note> <p>To copy an encrypted snapshot that has been shared
-         * from another account, you must have permissions for the CMK used to encrypt the
-         * snapshot.</p> </note> <note> <p>Snapshots created by the CopySnapshot action
-         * have an arbitrary volume ID that should not be used for any purpose.</p> </note>
-         * <p>For more information, see <a
+         * parameter. </p> <p>To copy an encrypted snapshot that has been shared from
+         * another account, you must have permissions for the CMK used to encrypt the
+         * snapshot.</p> <p>Snapshots created by copying another snapshot have an arbitrary
+         * volume ID that should not be used for any purpose.</p> <p>For more information,
+         * see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
          * an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2837,11 +2837,11 @@ namespace Model
          * is specified during the snapshot copy operation. By default, encrypted snapshot
          * copies use the default AWS Key Management Service (AWS KMS) customer master key
          * (CMK); however, you can specify a non-default CMK with the <code>KmsKeyId</code>
-         * parameter. </p> <note> <p>To copy an encrypted snapshot that has been shared
-         * from another account, you must have permissions for the CMK used to encrypt the
-         * snapshot.</p> </note> <note> <p>Snapshots created by the CopySnapshot action
-         * have an arbitrary volume ID that should not be used for any purpose.</p> </note>
-         * <p>For more information, see <a
+         * parameter. </p> <p>To copy an encrypted snapshot that has been shared from
+         * another account, you must have permissions for the CMK used to encrypt the
+         * snapshot.</p> <p>Snapshots created by copying another snapshot have an arbitrary
+         * volume ID that should not be used for any purpose.</p> <p>For more information,
+         * see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
          * an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -4191,7 +4191,8 @@ namespace Model
          * protected.</p> <p>You can tag your snapshots during creation. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-         * Your Amazon EC2 Resources</a>.</p> <p>For more information, see <a
+         * Your Amazon EC2 Resources</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon
          * Elastic Block Store</a> and <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
@@ -4224,7 +4225,8 @@ namespace Model
          * protected.</p> <p>You can tag your snapshots during creation. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-         * Your Amazon EC2 Resources</a>.</p> <p>For more information, see <a
+         * Your Amazon EC2 Resources</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon
          * Elastic Block Store</a> and <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
@@ -4259,7 +4261,8 @@ namespace Model
          * protected.</p> <p>You can tag your snapshots during creation. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-         * Your Amazon EC2 Resources</a>.</p> <p>For more information, see <a
+         * Your Amazon EC2 Resources</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon
          * Elastic Block Store</a> and <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
@@ -4468,7 +4471,8 @@ namespace Model
          * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>You can tag your volumes during creation. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-         * Your Amazon EC2 Resources</a>.</p> <p>For more information, see <a
+         * Your Amazon EC2 Resources</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Creating
          * an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -4493,7 +4497,8 @@ namespace Model
          * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>You can tag your volumes during creation. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-         * Your Amazon EC2 Resources</a>.</p> <p>For more information, see <a
+         * Your Amazon EC2 Resources</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Creating
          * an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -4520,7 +4525,8 @@ namespace Model
          * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>You can tag your volumes during creation. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-         * Your Amazon EC2 Resources</a>.</p> <p>For more information, see <a
+         * Your Amazon EC2 Resources</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Creating
          * an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -5728,9 +5734,9 @@ namespace Model
 
         /**
          * <p>Deletes the specified EBS volume. The volume must be in the
-         * <code>available</code> state (not attached to an instance).</p> <note> <p>The
-         * volume may remain in the <code>deleting</code> state for several minutes.</p>
-         * </note> <p>For more information, see <a
+         * <code>available</code> state (not attached to an instance).</p> <p>The volume
+         * can remain in the <code>deleting</code> state for several minutes.</p> <p>For
+         * more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Deleting
          * an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -5741,9 +5747,9 @@ namespace Model
 
         /**
          * <p>Deletes the specified EBS volume. The volume must be in the
-         * <code>available</code> state (not attached to an instance).</p> <note> <p>The
-         * volume may remain in the <code>deleting</code> state for several minutes.</p>
-         * </note> <p>For more information, see <a
+         * <code>available</code> state (not attached to an instance).</p> <p>The volume
+         * can remain in the <code>deleting</code> state for several minutes.</p> <p>For
+         * more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Deleting
          * an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -5756,9 +5762,9 @@ namespace Model
 
         /**
          * <p>Deletes the specified EBS volume. The volume must be in the
-         * <code>available</code> state (not attached to an instance).</p> <note> <p>The
-         * volume may remain in the <code>deleting</code> state for several minutes.</p>
-         * </note> <p>For more information, see <a
+         * <code>available</code> state (not attached to an instance).</p> <p>The volume
+         * can remain in the <code>deleting</code> state for several minutes.</p> <p>For
+         * more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Deleting
          * an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -8957,11 +8963,12 @@ namespace Model
          * volume is <code>ok</code>. If the check fails, the overall status is
          * <code>impaired</code>. If the status is <code>insufficient-data</code>, then the
          * checks may still be taking place on your volume at the time. We recommend that
-         * you retry the request. For more information on volume status, see <a
+         * you retry the request. For more information about volume status, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring
-         * the Status of Your Volumes</a>.</p> <p> <i>Events</i>: Reflect the cause of a
-         * volume status and may require you to take action. For example, if your volume
-         * returns an <code>impaired</code> status, then the volume event might be
+         * the Status of Your Volumes</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p> <i>Events</i>: Reflect the cause of a volume status and may
+         * require you to take action. For example, if your volume returns an
+         * <code>impaired</code> status, then the volume event might be
          * <code>potential-data-inconsistency</code>. This means that your volume has been
          * affected by an issue with the underlying host, has all I/O operations disabled,
          * and may have inconsistent data.</p> <p> <i>Actions</i>: Reflect the actions you
@@ -8970,11 +8977,10 @@ namespace Model
          * <code>potential-data-inconsistency</code>, then the action shows
          * <code>enable-volume-io</code>. This means that you may want to enable the I/O
          * operations for the volume by calling the <a>EnableVolumeIO</a> action and then
-         * check the volume for data consistency.</p> <note> <p>Volume status is based on
-         * the volume status checks, and does not reflect the volume state. Therefore,
-         * volume status does not indicate volumes in the <code>error</code> state (for
-         * example, when a volume is incapable of accepting I/O.)</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * check the volume for data consistency.</p> <p>Volume status is based on the
+         * volume status checks, and does not reflect the volume state. Therefore, volume
+         * status does not indicate volumes in the <code>error</code> state (for example,
+         * when a volume is incapable of accepting I/O.)</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeStatus">AWS
          * API Reference</a></p>
          */
@@ -8996,11 +9002,12 @@ namespace Model
          * volume is <code>ok</code>. If the check fails, the overall status is
          * <code>impaired</code>. If the status is <code>insufficient-data</code>, then the
          * checks may still be taking place on your volume at the time. We recommend that
-         * you retry the request. For more information on volume status, see <a
+         * you retry the request. For more information about volume status, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring
-         * the Status of Your Volumes</a>.</p> <p> <i>Events</i>: Reflect the cause of a
-         * volume status and may require you to take action. For example, if your volume
-         * returns an <code>impaired</code> status, then the volume event might be
+         * the Status of Your Volumes</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p> <i>Events</i>: Reflect the cause of a volume status and may
+         * require you to take action. For example, if your volume returns an
+         * <code>impaired</code> status, then the volume event might be
          * <code>potential-data-inconsistency</code>. This means that your volume has been
          * affected by an issue with the underlying host, has all I/O operations disabled,
          * and may have inconsistent data.</p> <p> <i>Actions</i>: Reflect the actions you
@@ -9009,11 +9016,10 @@ namespace Model
          * <code>potential-data-inconsistency</code>, then the action shows
          * <code>enable-volume-io</code>. This means that you may want to enable the I/O
          * operations for the volume by calling the <a>EnableVolumeIO</a> action and then
-         * check the volume for data consistency.</p> <note> <p>Volume status is based on
-         * the volume status checks, and does not reflect the volume state. Therefore,
-         * volume status does not indicate volumes in the <code>error</code> state (for
-         * example, when a volume is incapable of accepting I/O.)</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * check the volume for data consistency.</p> <p>Volume status is based on the
+         * volume status checks, and does not reflect the volume state. Therefore, volume
+         * status does not indicate volumes in the <code>error</code> state (for example,
+         * when a volume is incapable of accepting I/O.)</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeStatus">AWS
          * API Reference</a></p>
          *
@@ -9037,11 +9043,12 @@ namespace Model
          * volume is <code>ok</code>. If the check fails, the overall status is
          * <code>impaired</code>. If the status is <code>insufficient-data</code>, then the
          * checks may still be taking place on your volume at the time. We recommend that
-         * you retry the request. For more information on volume status, see <a
+         * you retry the request. For more information about volume status, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring
-         * the Status of Your Volumes</a>.</p> <p> <i>Events</i>: Reflect the cause of a
-         * volume status and may require you to take action. For example, if your volume
-         * returns an <code>impaired</code> status, then the volume event might be
+         * the Status of Your Volumes</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p> <i>Events</i>: Reflect the cause of a volume status and may
+         * require you to take action. For example, if your volume returns an
+         * <code>impaired</code> status, then the volume event might be
          * <code>potential-data-inconsistency</code>. This means that your volume has been
          * affected by an issue with the underlying host, has all I/O operations disabled,
          * and may have inconsistent data.</p> <p> <i>Actions</i>: Reflect the actions you
@@ -9050,11 +9057,10 @@ namespace Model
          * <code>potential-data-inconsistency</code>, then the action shows
          * <code>enable-volume-io</code>. This means that you may want to enable the I/O
          * operations for the volume by calling the <a>EnableVolumeIO</a> action and then
-         * check the volume for data consistency.</p> <note> <p>Volume status is based on
-         * the volume status checks, and does not reflect the volume state. Therefore,
-         * volume status does not indicate volumes in the <code>error</code> state (for
-         * example, when a volume is incapable of accepting I/O.)</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * check the volume for data consistency.</p> <p>Volume status is based on the
+         * volume status checks, and does not reflect the volume state. Therefore, volume
+         * status does not indicate volumes in the <code>error</code> state (for example,
+         * when a volume is incapable of accepting I/O.)</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeStatus">AWS
          * API Reference</a></p>
          *
@@ -9131,7 +9137,8 @@ namespace Model
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
          * CloudWatch Events User Guide</a>. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
-         * Volume Modifications"</a>. </p><p><h3>See Also:</h3>   <a
+         * Volume Modifications"</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumesModifications">AWS
          * API Reference</a></p>
          */
@@ -9151,7 +9158,8 @@ namespace Model
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
          * CloudWatch Events User Guide</a>. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
-         * Volume Modifications"</a>. </p><p><h3>See Also:</h3>   <a
+         * Volume Modifications"</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumesModifications">AWS
          * API Reference</a></p>
          *
@@ -9173,7 +9181,8 @@ namespace Model
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
          * CloudWatch Events User Guide</a>. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
-         * Volume Modifications"</a>. </p><p><h3>See Also:</h3>   <a
+         * Volume Modifications"</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumesModifications">AWS
          * API Reference</a></p>
          *
@@ -11327,10 +11336,10 @@ namespace Model
          * or remove specified AWS account IDs from a snapshot's list of create volume
          * permissions, but you cannot do both in a single API call. If you need to both
          * add and remove account IDs for a snapshot, you must use multiple API calls.</p>
-         * <note> <p>Encrypted snapshots and snapshots with AWS Marketplace product codes
-         * cannot be made public. Snapshots encrypted with your default CMK cannot be
-         * shared with other accounts.</p> </note> <p>For more information on modifying
-         * snapshot permissions, see <a
+         * <p>Encrypted snapshots and snapshots with AWS Marketplace product codes cannot
+         * be made public. Snapshots encrypted with your default CMK cannot be shared with
+         * other accounts.</p> <p>For more information about modifying snapshot
+         * permissions, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
          * Snapshots</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -11344,10 +11353,10 @@ namespace Model
          * or remove specified AWS account IDs from a snapshot's list of create volume
          * permissions, but you cannot do both in a single API call. If you need to both
          * add and remove account IDs for a snapshot, you must use multiple API calls.</p>
-         * <note> <p>Encrypted snapshots and snapshots with AWS Marketplace product codes
-         * cannot be made public. Snapshots encrypted with your default CMK cannot be
-         * shared with other accounts.</p> </note> <p>For more information on modifying
-         * snapshot permissions, see <a
+         * <p>Encrypted snapshots and snapshots with AWS Marketplace product codes cannot
+         * be made public. Snapshots encrypted with your default CMK cannot be shared with
+         * other accounts.</p> <p>For more information about modifying snapshot
+         * permissions, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
          * Snapshots</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -11363,10 +11372,10 @@ namespace Model
          * or remove specified AWS account IDs from a snapshot's list of create volume
          * permissions, but you cannot do both in a single API call. If you need to both
          * add and remove account IDs for a snapshot, you must use multiple API calls.</p>
-         * <note> <p>Encrypted snapshots and snapshots with AWS Marketplace product codes
-         * cannot be made public. Snapshots encrypted with your default CMK cannot be
-         * shared with other accounts.</p> </note> <p>For more information on modifying
-         * snapshot permissions, see <a
+         * <p>Encrypted snapshots and snapshots with AWS Marketplace product codes cannot
+         * be made public. Snapshots encrypted with your default CMK cannot be shared with
+         * other accounts.</p> <p>For more information about modifying snapshot
+         * permissions, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
          * Snapshots</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -11510,18 +11519,16 @@ namespace Model
          * modification using the <a>DescribeVolumesModifications</a> API. For information
          * about tracking status changes using either method, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
-         * Volume Modifications</a>. </p> <note> <p>With previous-generation instance
-         * types, resizing an EBS volume may require detaching and reattaching the volume
-         * or stopping and restarting the instance. For more information about modifying an
-         * EBS volume running Linux, see <a
+         * Volume Modifications</a>. </p> <p>With previous-generation instance types,
+         * resizing an EBS volume may require detaching and reattaching the volume or
+         * stopping and restarting the instance. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
-         * the Size, IOPS, or Type of an EBS Volume on Linux</a>. For more information
-         * about modifying an EBS volume running Windows, see <a
+         * the Size, IOPS, or Type of an EBS Volume on Linux</a> and <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
-         * the Size, IOPS, or Type of an EBS Volume on Windows</a>.</p> </note> <note>
-         * <p>If you reach the maximum volume modification rate per volume limit, you will
-         * need to wait at least six hours before applying further modifications to the
-         * affected EBS volume.</p> </note><p><h3>See Also:</h3>   <a
+         * the Size, IOPS, or Type of an EBS Volume on Windows</a>.</p> <p>If you reach the
+         * maximum volume modification rate per volume limit, you will need to wait at
+         * least six hours before applying further modifications to the affected EBS
+         * volume.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVolume">AWS
          * API Reference</a></p>
          */
@@ -11553,18 +11560,16 @@ namespace Model
          * modification using the <a>DescribeVolumesModifications</a> API. For information
          * about tracking status changes using either method, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
-         * Volume Modifications</a>. </p> <note> <p>With previous-generation instance
-         * types, resizing an EBS volume may require detaching and reattaching the volume
-         * or stopping and restarting the instance. For more information about modifying an
-         * EBS volume running Linux, see <a
+         * Volume Modifications</a>. </p> <p>With previous-generation instance types,
+         * resizing an EBS volume may require detaching and reattaching the volume or
+         * stopping and restarting the instance. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
-         * the Size, IOPS, or Type of an EBS Volume on Linux</a>. For more information
-         * about modifying an EBS volume running Windows, see <a
+         * the Size, IOPS, or Type of an EBS Volume on Linux</a> and <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
-         * the Size, IOPS, or Type of an EBS Volume on Windows</a>.</p> </note> <note>
-         * <p>If you reach the maximum volume modification rate per volume limit, you will
-         * need to wait at least six hours before applying further modifications to the
-         * affected EBS volume.</p> </note><p><h3>See Also:</h3>   <a
+         * the Size, IOPS, or Type of an EBS Volume on Windows</a>.</p> <p>If you reach the
+         * maximum volume modification rate per volume limit, you will need to wait at
+         * least six hours before applying further modifications to the affected EBS
+         * volume.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVolume">AWS
          * API Reference</a></p>
          *
@@ -11598,18 +11603,16 @@ namespace Model
          * modification using the <a>DescribeVolumesModifications</a> API. For information
          * about tracking status changes using either method, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
-         * Volume Modifications</a>. </p> <note> <p>With previous-generation instance
-         * types, resizing an EBS volume may require detaching and reattaching the volume
-         * or stopping and restarting the instance. For more information about modifying an
-         * EBS volume running Linux, see <a
+         * Volume Modifications</a>. </p> <p>With previous-generation instance types,
+         * resizing an EBS volume may require detaching and reattaching the volume or
+         * stopping and restarting the instance. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
-         * the Size, IOPS, or Type of an EBS Volume on Linux</a>. For more information
-         * about modifying an EBS volume running Windows, see <a
+         * the Size, IOPS, or Type of an EBS Volume on Linux</a> and <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
-         * the Size, IOPS, or Type of an EBS Volume on Windows</a>.</p> </note> <note>
-         * <p>If you reach the maximum volume modification rate per volume limit, you will
-         * need to wait at least six hours before applying further modifications to the
-         * affected EBS volume.</p> </note><p><h3>See Also:</h3>   <a
+         * the Size, IOPS, or Type of an EBS Volume on Windows</a>.</p> <p>If you reach the
+         * maximum volume modification rate per volume limit, you will need to wait at
+         * least six hours before applying further modifications to the affected EBS
+         * volume.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVolume">AWS
          * API Reference</a></p>
          *
@@ -13000,7 +13003,7 @@ namespace Model
 
         /**
          * <p>Resets permission settings for the specified snapshot.</p> <p>For more
-         * information on modifying snapshot permissions, see <a
+         * information about modifying snapshot permissions, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
          * Snapshots</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -13011,7 +13014,7 @@ namespace Model
 
         /**
          * <p>Resets permission settings for the specified snapshot.</p> <p>For more
-         * information on modifying snapshot permissions, see <a
+         * information about modifying snapshot permissions, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
          * Snapshots</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -13024,7 +13027,7 @@ namespace Model
 
         /**
          * <p>Resets permission settings for the specified snapshot.</p> <p>For more
-         * information on modifying snapshot permissions, see <a
+         * information about modifying snapshot permissions, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
          * Snapshots</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a

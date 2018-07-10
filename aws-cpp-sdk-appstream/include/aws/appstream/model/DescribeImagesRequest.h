@@ -85,10 +85,75 @@ namespace Model
      */
     inline DescribeImagesRequest& AddNames(const char* value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
 
+
+    /**
+     * <p>The pagination token to use to retrieve the next page of results. If this
+     * value is empty, only the first page is retrieved.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The pagination token to use to retrieve the next page of results. If this
+     * value is empty, only the first page is retrieved.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /**
+     * <p>The pagination token to use to retrieve the next page of results. If this
+     * value is empty, only the first page is retrieved.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
+
+    /**
+     * <p>The pagination token to use to retrieve the next page of results. If this
+     * value is empty, only the first page is retrieved.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
+
+    /**
+     * <p>The pagination token to use to retrieve the next page of results. If this
+     * value is empty, only the first page is retrieved.</p>
+     */
+    inline DescribeImagesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>The pagination token to use to retrieve the next page of results. If this
+     * value is empty, only the first page is retrieved.</p>
+     */
+    inline DescribeImagesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>The pagination token to use to retrieve the next page of results. If this
+     * value is empty, only the first page is retrieved.</p>
+     */
+    inline DescribeImagesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
+
+    /**
+     * <p>The maximum size of each results page.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum size of each results page.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>The maximum size of each results page.</p>
+     */
+    inline DescribeImagesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_names;
     bool m_namesHasBeenSet;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet;
   };
 
 } // namespace Model

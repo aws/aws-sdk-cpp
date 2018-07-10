@@ -109,98 +109,91 @@ namespace Model
 
 
     /**
-     * <p>Target size in GiB of the volume to be modified. Target volume size must be
-     * greater than or equal to than the existing size of the volume. For information
-     * about available EBS volume sizes, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html</a>.</p>
-     * <p>Default: If no size is specified, the existing size is retained. </p>
+     * <p>The target size of the volume, in GiB. The target volume size must be greater
+     * than or equal to than the existing size of the volume. For information about
+     * available EBS volume sizes, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     * EBS Volume Types</a>.</p> <p>Default: If no size is specified, the existing size
+     * is retained.</p>
      */
     inline int GetSize() const{ return m_size; }
 
     /**
-     * <p>Target size in GiB of the volume to be modified. Target volume size must be
-     * greater than or equal to than the existing size of the volume. For information
-     * about available EBS volume sizes, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html</a>.</p>
-     * <p>Default: If no size is specified, the existing size is retained. </p>
+     * <p>The target size of the volume, in GiB. The target volume size must be greater
+     * than or equal to than the existing size of the volume. For information about
+     * available EBS volume sizes, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     * EBS Volume Types</a>.</p> <p>Default: If no size is specified, the existing size
+     * is retained.</p>
      */
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
-     * <p>Target size in GiB of the volume to be modified. Target volume size must be
-     * greater than or equal to than the existing size of the volume. For information
-     * about available EBS volume sizes, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html</a>.</p>
-     * <p>Default: If no size is specified, the existing size is retained. </p>
+     * <p>The target size of the volume, in GiB. The target volume size must be greater
+     * than or equal to than the existing size of the volume. For information about
+     * available EBS volume sizes, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     * EBS Volume Types</a>.</p> <p>Default: If no size is specified, the existing size
+     * is retained.</p>
      */
     inline ModifyVolumeRequest& WithSize(int value) { SetSize(value); return *this;}
 
 
     /**
-     * <p>Target EBS volume type of the volume to be modified</p> <p> The API does not
-     * support modifications for volume type <code>standard</code>. You also cannot
-     * change the type of a volume to <code>standard</code>. </p> <p>Default: If no
-     * type is specified, the existing type is retained. </p>
+     * <p>The target EBS volume type of the volume.</p> <p>Default: If no type is
+     * specified, the existing type is retained.</p>
      */
     inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
 
     /**
-     * <p>Target EBS volume type of the volume to be modified</p> <p> The API does not
-     * support modifications for volume type <code>standard</code>. You also cannot
-     * change the type of a volume to <code>standard</code>. </p> <p>Default: If no
-     * type is specified, the existing type is retained. </p>
+     * <p>The target EBS volume type of the volume.</p> <p>Default: If no type is
+     * specified, the existing type is retained.</p>
      */
     inline void SetVolumeType(const VolumeType& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
     /**
-     * <p>Target EBS volume type of the volume to be modified</p> <p> The API does not
-     * support modifications for volume type <code>standard</code>. You also cannot
-     * change the type of a volume to <code>standard</code>. </p> <p>Default: If no
-     * type is specified, the existing type is retained. </p>
+     * <p>The target EBS volume type of the volume.</p> <p>Default: If no type is
+     * specified, the existing type is retained.</p>
      */
     inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
     /**
-     * <p>Target EBS volume type of the volume to be modified</p> <p> The API does not
-     * support modifications for volume type <code>standard</code>. You also cannot
-     * change the type of a volume to <code>standard</code>. </p> <p>Default: If no
-     * type is specified, the existing type is retained. </p>
+     * <p>The target EBS volume type of the volume.</p> <p>Default: If no type is
+     * specified, the existing type is retained.</p>
      */
     inline ModifyVolumeRequest& WithVolumeType(const VolumeType& value) { SetVolumeType(value); return *this;}
 
     /**
-     * <p>Target EBS volume type of the volume to be modified</p> <p> The API does not
-     * support modifications for volume type <code>standard</code>. You also cannot
-     * change the type of a volume to <code>standard</code>. </p> <p>Default: If no
-     * type is specified, the existing type is retained. </p>
+     * <p>The target EBS volume type of the volume.</p> <p>Default: If no type is
+     * specified, the existing type is retained.</p>
      */
     inline ModifyVolumeRequest& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Target IOPS rate of the volume to be modified.</p> <p>Only valid for
-     * Provisioned IOPS SSD (<code>io1</code>) volumes. For more information about
-     * <code>io1</code> IOPS configuration, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops</a>.</p>
-     * <p>Default: If no IOPS value is specified, the existing value is retained. </p>
+     * <p>The target IOPS rate of the volume.</p> <p>This is only valid for Provisioned
+     * IOPS SSD (<code>io1</code>) volumes. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">Provisioned
+     * IOPS SSD (io1) Volumes</a>.</p> <p>Default: If no IOPS value is specified, the
+     * existing value is retained.</p>
      */
     inline int GetIops() const{ return m_iops; }
 
     /**
-     * <p>Target IOPS rate of the volume to be modified.</p> <p>Only valid for
-     * Provisioned IOPS SSD (<code>io1</code>) volumes. For more information about
-     * <code>io1</code> IOPS configuration, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops</a>.</p>
-     * <p>Default: If no IOPS value is specified, the existing value is retained. </p>
+     * <p>The target IOPS rate of the volume.</p> <p>This is only valid for Provisioned
+     * IOPS SSD (<code>io1</code>) volumes. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">Provisioned
+     * IOPS SSD (io1) Volumes</a>.</p> <p>Default: If no IOPS value is specified, the
+     * existing value is retained.</p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
-     * <p>Target IOPS rate of the volume to be modified.</p> <p>Only valid for
-     * Provisioned IOPS SSD (<code>io1</code>) volumes. For more information about
-     * <code>io1</code> IOPS configuration, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops</a>.</p>
-     * <p>Default: If no IOPS value is specified, the existing value is retained. </p>
+     * <p>The target IOPS rate of the volume.</p> <p>This is only valid for Provisioned
+     * IOPS SSD (<code>io1</code>) volumes. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">Provisioned
+     * IOPS SSD (io1) Volumes</a>.</p> <p>Default: If no IOPS value is specified, the
+     * existing value is retained.</p>
      */
     inline ModifyVolumeRequest& WithIops(int value) { SetIops(value); return *this;}
 

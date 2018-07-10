@@ -33,6 +33,7 @@ namespace Aws
         static const int STORAGE_CONNECTORS_HASH = HashingUtils::HashString("STORAGE_CONNECTORS");
         static const int STORAGE_CONNECTOR_HOMEFOLDERS_HASH = HashingUtils::HashString("STORAGE_CONNECTOR_HOMEFOLDERS");
         static const int STORAGE_CONNECTOR_GOOGLE_DRIVE_HASH = HashingUtils::HashString("STORAGE_CONNECTOR_GOOGLE_DRIVE");
+        static const int STORAGE_CONNECTOR_ONE_DRIVE_HASH = HashingUtils::HashString("STORAGE_CONNECTOR_ONE_DRIVE");
         static const int REDIRECT_URL_HASH = HashingUtils::HashString("REDIRECT_URL");
         static const int FEEDBACK_URL_HASH = HashingUtils::HashString("FEEDBACK_URL");
         static const int THEME_NAME_HASH = HashingUtils::HashString("THEME_NAME");
@@ -53,6 +54,10 @@ namespace Aws
           else if (hashCode == STORAGE_CONNECTOR_GOOGLE_DRIVE_HASH)
           {
             return StackAttribute::STORAGE_CONNECTOR_GOOGLE_DRIVE;
+          }
+          else if (hashCode == STORAGE_CONNECTOR_ONE_DRIVE_HASH)
+          {
+            return StackAttribute::STORAGE_CONNECTOR_ONE_DRIVE;
           }
           else if (hashCode == REDIRECT_URL_HASH)
           {
@@ -90,6 +95,8 @@ namespace Aws
             return "STORAGE_CONNECTOR_HOMEFOLDERS";
           case StackAttribute::STORAGE_CONNECTOR_GOOGLE_DRIVE:
             return "STORAGE_CONNECTOR_GOOGLE_DRIVE";
+          case StackAttribute::STORAGE_CONNECTOR_ONE_DRIVE:
+            return "STORAGE_CONNECTOR_ONE_DRIVE";
           case StackAttribute::REDIRECT_URL:
             return "REDIRECT_URL";
           case StackAttribute::FEEDBACK_URL:

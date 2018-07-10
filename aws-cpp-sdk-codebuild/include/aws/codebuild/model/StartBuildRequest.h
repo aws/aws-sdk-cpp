@@ -490,6 +490,28 @@ namespace Model
 
 
     /**
+     * <p> Set to true to report to your source provider the status of a build's start
+     * and completion. If you use this option with a source provider other than GitHub,
+     * an invalidInputException is thrown. </p>
+     */
+    inline bool GetReportBuildStatusOverride() const{ return m_reportBuildStatusOverride; }
+
+    /**
+     * <p> Set to true to report to your source provider the status of a build's start
+     * and completion. If you use this option with a source provider other than GitHub,
+     * an invalidInputException is thrown. </p>
+     */
+    inline void SetReportBuildStatusOverride(bool value) { m_reportBuildStatusOverrideHasBeenSet = true; m_reportBuildStatusOverride = value; }
+
+    /**
+     * <p> Set to true to report to your source provider the status of a build's start
+     * and completion. If you use this option with a source provider other than GitHub,
+     * an invalidInputException is thrown. </p>
+     */
+    inline StartBuildRequest& WithReportBuildStatusOverride(bool value) { SetReportBuildStatusOverride(value); return *this;}
+
+
+    /**
      * <p>A container type for this build that overrides the one specified in the build
      * project.</p>
      */
@@ -836,6 +858,9 @@ namespace Model
 
     bool m_insecureSslOverride;
     bool m_insecureSslOverrideHasBeenSet;
+
+    bool m_reportBuildStatusOverride;
+    bool m_reportBuildStatusOverrideHasBeenSet;
 
     EnvironmentType m_environmentTypeOverride;
     bool m_environmentTypeOverrideHasBeenSet;

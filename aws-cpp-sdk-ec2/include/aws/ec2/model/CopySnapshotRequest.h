@@ -89,11 +89,11 @@ namespace Model
      * <p>The destination region to use in the <code>PresignedUrl</code> parameter of a
      * snapshot copy operation. This parameter is only valid for specifying the
      * destination region in a <code>PresignedUrl</code> parameter, where it is
-     * required.</p> <note> <p> <code>CopySnapshot</code> sends the snapshot copy to
-     * the regional endpoint that you send the HTTP request to, such as
-     * <code>ec2.us-east-1.amazonaws.com</code> (in the AWS CLI, this is specified with
-     * the <code>--region</code> parameter or the default region in your AWS
-     * configuration file).</p> </note>
+     * required.</p> <p>The snapshot copy is sent to the regional endpoint that you
+     * sent the HTTP request to (for example,
+     * <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this is specified
+     * using the <code>--region</code> parameter or the default region in your AWS
+     * configuration file.</p>
      */
     inline const Aws::String& GetDestinationRegion() const{ return m_destinationRegion; }
 
@@ -101,11 +101,11 @@ namespace Model
      * <p>The destination region to use in the <code>PresignedUrl</code> parameter of a
      * snapshot copy operation. This parameter is only valid for specifying the
      * destination region in a <code>PresignedUrl</code> parameter, where it is
-     * required.</p> <note> <p> <code>CopySnapshot</code> sends the snapshot copy to
-     * the regional endpoint that you send the HTTP request to, such as
-     * <code>ec2.us-east-1.amazonaws.com</code> (in the AWS CLI, this is specified with
-     * the <code>--region</code> parameter or the default region in your AWS
-     * configuration file).</p> </note>
+     * required.</p> <p>The snapshot copy is sent to the regional endpoint that you
+     * sent the HTTP request to (for example,
+     * <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this is specified
+     * using the <code>--region</code> parameter or the default region in your AWS
+     * configuration file.</p>
      */
     inline void SetDestinationRegion(const Aws::String& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = value; }
 
@@ -113,11 +113,11 @@ namespace Model
      * <p>The destination region to use in the <code>PresignedUrl</code> parameter of a
      * snapshot copy operation. This parameter is only valid for specifying the
      * destination region in a <code>PresignedUrl</code> parameter, where it is
-     * required.</p> <note> <p> <code>CopySnapshot</code> sends the snapshot copy to
-     * the regional endpoint that you send the HTTP request to, such as
-     * <code>ec2.us-east-1.amazonaws.com</code> (in the AWS CLI, this is specified with
-     * the <code>--region</code> parameter or the default region in your AWS
-     * configuration file).</p> </note>
+     * required.</p> <p>The snapshot copy is sent to the regional endpoint that you
+     * sent the HTTP request to (for example,
+     * <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this is specified
+     * using the <code>--region</code> parameter or the default region in your AWS
+     * configuration file.</p>
      */
     inline void SetDestinationRegion(Aws::String&& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = std::move(value); }
 
@@ -125,11 +125,11 @@ namespace Model
      * <p>The destination region to use in the <code>PresignedUrl</code> parameter of a
      * snapshot copy operation. This parameter is only valid for specifying the
      * destination region in a <code>PresignedUrl</code> parameter, where it is
-     * required.</p> <note> <p> <code>CopySnapshot</code> sends the snapshot copy to
-     * the regional endpoint that you send the HTTP request to, such as
-     * <code>ec2.us-east-1.amazonaws.com</code> (in the AWS CLI, this is specified with
-     * the <code>--region</code> parameter or the default region in your AWS
-     * configuration file).</p> </note>
+     * required.</p> <p>The snapshot copy is sent to the regional endpoint that you
+     * sent the HTTP request to (for example,
+     * <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this is specified
+     * using the <code>--region</code> parameter or the default region in your AWS
+     * configuration file.</p>
      */
     inline void SetDestinationRegion(const char* value) { m_destinationRegionHasBeenSet = true; m_destinationRegion.assign(value); }
 
@@ -137,11 +137,11 @@ namespace Model
      * <p>The destination region to use in the <code>PresignedUrl</code> parameter of a
      * snapshot copy operation. This parameter is only valid for specifying the
      * destination region in a <code>PresignedUrl</code> parameter, where it is
-     * required.</p> <note> <p> <code>CopySnapshot</code> sends the snapshot copy to
-     * the regional endpoint that you send the HTTP request to, such as
-     * <code>ec2.us-east-1.amazonaws.com</code> (in the AWS CLI, this is specified with
-     * the <code>--region</code> parameter or the default region in your AWS
-     * configuration file).</p> </note>
+     * required.</p> <p>The snapshot copy is sent to the regional endpoint that you
+     * sent the HTTP request to (for example,
+     * <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this is specified
+     * using the <code>--region</code> parameter or the default region in your AWS
+     * configuration file.</p>
      */
     inline CopySnapshotRequest& WithDestinationRegion(const Aws::String& value) { SetDestinationRegion(value); return *this;}
 
@@ -149,11 +149,11 @@ namespace Model
      * <p>The destination region to use in the <code>PresignedUrl</code> parameter of a
      * snapshot copy operation. This parameter is only valid for specifying the
      * destination region in a <code>PresignedUrl</code> parameter, where it is
-     * required.</p> <note> <p> <code>CopySnapshot</code> sends the snapshot copy to
-     * the regional endpoint that you send the HTTP request to, such as
-     * <code>ec2.us-east-1.amazonaws.com</code> (in the AWS CLI, this is specified with
-     * the <code>--region</code> parameter or the default region in your AWS
-     * configuration file).</p> </note>
+     * required.</p> <p>The snapshot copy is sent to the regional endpoint that you
+     * sent the HTTP request to (for example,
+     * <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this is specified
+     * using the <code>--region</code> parameter or the default region in your AWS
+     * configuration file.</p>
      */
     inline CopySnapshotRequest& WithDestinationRegion(Aws::String&& value) { SetDestinationRegion(std::move(value)); return *this;}
 
@@ -161,11 +161,11 @@ namespace Model
      * <p>The destination region to use in the <code>PresignedUrl</code> parameter of a
      * snapshot copy operation. This parameter is only valid for specifying the
      * destination region in a <code>PresignedUrl</code> parameter, where it is
-     * required.</p> <note> <p> <code>CopySnapshot</code> sends the snapshot copy to
-     * the regional endpoint that you send the HTTP request to, such as
-     * <code>ec2.us-east-1.amazonaws.com</code> (in the AWS CLI, this is specified with
-     * the <code>--region</code> parameter or the default region in your AWS
-     * configuration file).</p> </note>
+     * required.</p> <p>The snapshot copy is sent to the regional endpoint that you
+     * sent the HTTP request to (for example,
+     * <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this is specified
+     * using the <code>--region</code> parameter or the default region in your AWS
+     * configuration file.</p>
      */
     inline CopySnapshotRequest& WithDestinationRegion(const char* value) { SetDestinationRegion(value); return *this;}
 

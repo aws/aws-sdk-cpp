@@ -23,7 +23,10 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DescribeImagesRequest::DescribeImagesRequest() : 
-    m_namesHasBeenSet(false)
+    m_namesHasBeenSet(false),
+    m_nextTokenHasBeenSet(false),
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false)
 {
 }
 
@@ -39,6 +42,18 @@ Aws::String DescribeImagesRequest::SerializePayload() const
      namesJsonList[namesIndex].AsString(m_names[namesIndex]);
    }
    payload.WithArray("Names", std::move(namesJsonList));
+
+  }
+
+  if(m_nextTokenHasBeenSet)
+  {
+   payload.WithString("NextToken", m_nextToken);
+
+  }
+
+  if(m_maxResultsHasBeenSet)
+  {
+   payload.WithInteger("MaxResults", m_maxResults);
 
   }
 

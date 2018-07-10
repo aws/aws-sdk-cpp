@@ -81,44 +81,44 @@ namespace Model
 
 
     /**
-     * <p>The ID of the layer that the Elastic Load Balancing instance is to be
-     * attached to.</p>
+     * <p>The ID of the layer to which the Elastic Load Balancing instance is to be
+     * attached.</p>
      */
     inline const Aws::String& GetLayerId() const{ return m_layerId; }
 
     /**
-     * <p>The ID of the layer that the Elastic Load Balancing instance is to be
-     * attached to.</p>
+     * <p>The ID of the layer to which the Elastic Load Balancing instance is to be
+     * attached.</p>
      */
     inline void SetLayerId(const Aws::String& value) { m_layerIdHasBeenSet = true; m_layerId = value; }
 
     /**
-     * <p>The ID of the layer that the Elastic Load Balancing instance is to be
-     * attached to.</p>
+     * <p>The ID of the layer to which the Elastic Load Balancing instance is to be
+     * attached.</p>
      */
     inline void SetLayerId(Aws::String&& value) { m_layerIdHasBeenSet = true; m_layerId = std::move(value); }
 
     /**
-     * <p>The ID of the layer that the Elastic Load Balancing instance is to be
-     * attached to.</p>
+     * <p>The ID of the layer to which the Elastic Load Balancing instance is to be
+     * attached.</p>
      */
     inline void SetLayerId(const char* value) { m_layerIdHasBeenSet = true; m_layerId.assign(value); }
 
     /**
-     * <p>The ID of the layer that the Elastic Load Balancing instance is to be
-     * attached to.</p>
+     * <p>The ID of the layer to which the Elastic Load Balancing instance is to be
+     * attached.</p>
      */
     inline AttachElasticLoadBalancerRequest& WithLayerId(const Aws::String& value) { SetLayerId(value); return *this;}
 
     /**
-     * <p>The ID of the layer that the Elastic Load Balancing instance is to be
-     * attached to.</p>
+     * <p>The ID of the layer to which the Elastic Load Balancing instance is to be
+     * attached.</p>
      */
     inline AttachElasticLoadBalancerRequest& WithLayerId(Aws::String&& value) { SetLayerId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the layer that the Elastic Load Balancing instance is to be
-     * attached to.</p>
+     * <p>The ID of the layer to which the Elastic Load Balancing instance is to be
+     * attached.</p>
      */
     inline AttachElasticLoadBalancerRequest& WithLayerId(const char* value) { SetLayerId(value); return *this;}
 

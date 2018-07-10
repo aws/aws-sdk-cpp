@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/model/S3Target.h>
 #include <aws/glue/model/JdbcTarget.h>
+#include <aws/glue/model/DynamoDBTarget.h>
 #include <utility>
 
 namespace Aws
@@ -119,6 +120,42 @@ namespace Model
      */
     inline CrawlerTargets& AddJdbcTargets(JdbcTarget&& value) { m_jdbcTargetsHasBeenSet = true; m_jdbcTargets.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Specifies DynamoDB targets.</p>
+     */
+    inline const Aws::Vector<DynamoDBTarget>& GetDynamoDBTargets() const{ return m_dynamoDBTargets; }
+
+    /**
+     * <p>Specifies DynamoDB targets.</p>
+     */
+    inline void SetDynamoDBTargets(const Aws::Vector<DynamoDBTarget>& value) { m_dynamoDBTargetsHasBeenSet = true; m_dynamoDBTargets = value; }
+
+    /**
+     * <p>Specifies DynamoDB targets.</p>
+     */
+    inline void SetDynamoDBTargets(Aws::Vector<DynamoDBTarget>&& value) { m_dynamoDBTargetsHasBeenSet = true; m_dynamoDBTargets = std::move(value); }
+
+    /**
+     * <p>Specifies DynamoDB targets.</p>
+     */
+    inline CrawlerTargets& WithDynamoDBTargets(const Aws::Vector<DynamoDBTarget>& value) { SetDynamoDBTargets(value); return *this;}
+
+    /**
+     * <p>Specifies DynamoDB targets.</p>
+     */
+    inline CrawlerTargets& WithDynamoDBTargets(Aws::Vector<DynamoDBTarget>&& value) { SetDynamoDBTargets(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies DynamoDB targets.</p>
+     */
+    inline CrawlerTargets& AddDynamoDBTargets(const DynamoDBTarget& value) { m_dynamoDBTargetsHasBeenSet = true; m_dynamoDBTargets.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies DynamoDB targets.</p>
+     */
+    inline CrawlerTargets& AddDynamoDBTargets(DynamoDBTarget&& value) { m_dynamoDBTargetsHasBeenSet = true; m_dynamoDBTargets.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<S3Target> m_s3Targets;
@@ -126,6 +163,9 @@ namespace Model
 
     Aws::Vector<JdbcTarget> m_jdbcTargets;
     bool m_jdbcTargetsHasBeenSet;
+
+    Aws::Vector<DynamoDBTarget> m_dynamoDBTargets;
+    bool m_dynamoDBTargetsHasBeenSet;
   };
 
 } // namespace Model

@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/appstream/model/Image.h>
 #include <utility>
 
@@ -78,9 +79,54 @@ namespace Model
      */
     inline DescribeImagesResult& AddImages(Image&& value) { m_images.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The pagination token used to retrieve the next page of results. If this value
+     * is empty, only the first page is retrieved.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The pagination token used to retrieve the next page of results. If this value
+     * is empty, only the first page is retrieved.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /**
+     * <p>The pagination token used to retrieve the next page of results. If this value
+     * is empty, only the first page is retrieved.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
+
+    /**
+     * <p>The pagination token used to retrieve the next page of results. If this value
+     * is empty, only the first page is retrieved.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
+
+    /**
+     * <p>The pagination token used to retrieve the next page of results. If this value
+     * is empty, only the first page is retrieved.</p>
+     */
+    inline DescribeImagesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>The pagination token used to retrieve the next page of results. If this value
+     * is empty, only the first page is retrieved.</p>
+     */
+    inline DescribeImagesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>The pagination token used to retrieve the next page of results. If this value
+     * is empty, only the first page is retrieved.</p>
+     */
+    inline DescribeImagesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
   private:
 
     Aws::Vector<Image> m_images;
+
+    Aws::String m_nextToken;
   };
 
 } // namespace Model

@@ -750,8 +750,9 @@ namespace Model
 
         /**
          * <p>Creates a new crawler with specified targets, role, configuration, and
-         * optional schedule. At least one crawl target must be specified, in either the
-         * <i>s3Targets</i> or the <i>jdbcTargets</i> field.</p><p><h3>See Also:</h3>   <a
+         * optional schedule. At least one crawl target must be specified, in the
+         * <i>s3Targets</i> field, the <i>jdbcTargets</i> field, or the
+         * <i>DynamoDBTargets</i> field.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateCrawler">AWS
          * API Reference</a></p>
          */
@@ -759,8 +760,9 @@ namespace Model
 
         /**
          * <p>Creates a new crawler with specified targets, role, configuration, and
-         * optional schedule. At least one crawl target must be specified, in either the
-         * <i>s3Targets</i> or the <i>jdbcTargets</i> field.</p><p><h3>See Also:</h3>   <a
+         * optional schedule. At least one crawl target must be specified, in the
+         * <i>s3Targets</i> field, the <i>jdbcTargets</i> field, or the
+         * <i>DynamoDBTargets</i> field.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateCrawler">AWS
          * API Reference</a></p>
          *
@@ -770,8 +772,9 @@ namespace Model
 
         /**
          * <p>Creates a new crawler with specified targets, role, configuration, and
-         * optional schedule. At least one crawl target must be specified, in either the
-         * <i>s3Targets</i> or the <i>jdbcTargets</i> field.</p><p><h3>See Also:</h3>   <a
+         * optional schedule. At least one crawl target must be specified, in the
+         * <i>s3Targets</i> field, the <i>jdbcTargets</i> field, or the
+         * <i>DynamoDBTargets</i> field.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateCrawler">AWS
          * API Reference</a></p>
          *
@@ -2103,7 +2106,9 @@ namespace Model
 
         /**
          * <p>Starts a crawl using the specified crawler, regardless of what is scheduled.
-         * If the crawler is already running, does nothing.</p><p><h3>See Also:</h3>   <a
+         * If the crawler is already running, returns a <a
+         * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-exceptions.html#aws-glue-api-exceptions-CrawlerRunningException">CrawlerRunningException</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartCrawler">AWS
          * API Reference</a></p>
          */
@@ -2111,7 +2116,9 @@ namespace Model
 
         /**
          * <p>Starts a crawl using the specified crawler, regardless of what is scheduled.
-         * If the crawler is already running, does nothing.</p><p><h3>See Also:</h3>   <a
+         * If the crawler is already running, returns a <a
+         * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-exceptions.html#aws-glue-api-exceptions-CrawlerRunningException">CrawlerRunningException</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartCrawler">AWS
          * API Reference</a></p>
          *
@@ -2121,7 +2128,9 @@ namespace Model
 
         /**
          * <p>Starts a crawl using the specified crawler, regardless of what is scheduled.
-         * If the crawler is already running, does nothing.</p><p><h3>See Also:</h3>   <a
+         * If the crawler is already running, returns a <a
+         * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-exceptions.html#aws-glue-api-exceptions-CrawlerRunningException">CrawlerRunningException</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartCrawler">AWS
          * API Reference</a></p>
          *

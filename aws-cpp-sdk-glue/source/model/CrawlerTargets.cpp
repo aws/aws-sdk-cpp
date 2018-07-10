@@ -30,13 +30,15 @@ namespace Model
 
 CrawlerTargets::CrawlerTargets() : 
     m_s3TargetsHasBeenSet(false),
-    m_jdbcTargetsHasBeenSet(false)
+    m_jdbcTargetsHasBeenSet(false),
+    m_dynamoDBTargetsHasBeenSet(false)
 {
 }
 
 CrawlerTargets::CrawlerTargets(const JsonValue& jsonValue) : 
     m_s3TargetsHasBeenSet(false),
-    m_jdbcTargetsHasBeenSet(false)
+    m_jdbcTargetsHasBeenSet(false),
+    m_dynamoDBTargetsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -61,6 +63,16 @@ CrawlerTargets& CrawlerTargets::operator =(const JsonValue& jsonValue)
       m_jdbcTargets.push_back(jdbcTargetsJsonList[jdbcTargetsIndex].AsObject());
     }
     m_jdbcTargetsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DynamoDBTargets"))
+  {
+    Array<JsonValue> dynamoDBTargetsJsonList = jsonValue.GetArray("DynamoDBTargets");
+    for(unsigned dynamoDBTargetsIndex = 0; dynamoDBTargetsIndex < dynamoDBTargetsJsonList.GetLength(); ++dynamoDBTargetsIndex)
+    {
+      m_dynamoDBTargets.push_back(dynamoDBTargetsJsonList[dynamoDBTargetsIndex].AsObject());
+    }
+    m_dynamoDBTargetsHasBeenSet = true;
   }
 
   return *this;
@@ -89,6 +101,17 @@ JsonValue CrawlerTargets::Jsonize() const
      jdbcTargetsJsonList[jdbcTargetsIndex].AsObject(m_jdbcTargets[jdbcTargetsIndex].Jsonize());
    }
    payload.WithArray("JdbcTargets", std::move(jdbcTargetsJsonList));
+
+  }
+
+  if(m_dynamoDBTargetsHasBeenSet)
+  {
+   Array<JsonValue> dynamoDBTargetsJsonList(m_dynamoDBTargets.size());
+   for(unsigned dynamoDBTargetsIndex = 0; dynamoDBTargetsIndex < dynamoDBTargetsJsonList.GetLength(); ++dynamoDBTargetsIndex)
+   {
+     dynamoDBTargetsJsonList[dynamoDBTargetsIndex].AsObject(m_dynamoDBTargets[dynamoDBTargetsIndex].Jsonize());
+   }
+   payload.WithArray("DynamoDBTargets", std::move(dynamoDBTargetsJsonList));
 
   }
 

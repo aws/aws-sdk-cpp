@@ -47,6 +47,12 @@ DescribeImagesResult& DescribeImagesResult::operator =(const Aws::AmazonWebServi
     }
   }
 
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+
+  }
+
 
 
   return *this;

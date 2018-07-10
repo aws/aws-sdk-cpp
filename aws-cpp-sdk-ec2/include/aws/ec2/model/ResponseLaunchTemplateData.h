@@ -25,6 +25,7 @@
 #include <aws/ec2/model/ShutdownBehavior.h>
 #include <aws/ec2/model/LaunchTemplateInstanceMarketOptions.h>
 #include <aws/ec2/model/CreditSpecification.h>
+#include <aws/ec2/model/LaunchTemplateCpuOptions.h>
 #include <aws/ec2/model/LaunchTemplateBlockDeviceMapping.h>
 #include <aws/ec2/model/LaunchTemplateInstanceNetworkInterfaceSpecification.h>
 #include <aws/ec2/model/LaunchTemplateTagSpecification.h>
@@ -688,6 +689,42 @@ namespace Model
      */
     inline ResponseLaunchTemplateData& WithCreditSpecification(CreditSpecification&& value) { SetCreditSpecification(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The CPU options for the instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
+     * CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline const LaunchTemplateCpuOptions& GetCpuOptions() const{ return m_cpuOptions; }
+
+    /**
+     * <p>The CPU options for the instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
+     * CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetCpuOptions(const LaunchTemplateCpuOptions& value) { m_cpuOptionsHasBeenSet = true; m_cpuOptions = value; }
+
+    /**
+     * <p>The CPU options for the instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
+     * CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetCpuOptions(LaunchTemplateCpuOptions&& value) { m_cpuOptionsHasBeenSet = true; m_cpuOptions = std::move(value); }
+
+    /**
+     * <p>The CPU options for the instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
+     * CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline ResponseLaunchTemplateData& WithCpuOptions(const LaunchTemplateCpuOptions& value) { SetCpuOptions(value); return *this;}
+
+    /**
+     * <p>The CPU options for the instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
+     * CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline ResponseLaunchTemplateData& WithCpuOptions(LaunchTemplateCpuOptions&& value) { SetCpuOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_kernelId;
@@ -749,6 +786,9 @@ namespace Model
 
     CreditSpecification m_creditSpecification;
     bool m_creditSpecificationHasBeenSet;
+
+    LaunchTemplateCpuOptions m_cpuOptions;
+    bool m_cpuOptionsHasBeenSet;
   };
 
 } // namespace Model

@@ -290,57 +290,57 @@ namespace Model
 
     /**
      * <p>A list of custom classifiers that the user has registered. By default, all
-     * AWS classifiers are included in a crawl, but these custom classifiers always
-     * override the default classifiers for a given classification.</p>
+     * built-in classifiers are included in a crawl, but these custom classifiers
+     * always override the default classifiers for a given classification.</p>
      */
     inline const Aws::Vector<Aws::String>& GetClassifiers() const{ return m_classifiers; }
 
     /**
      * <p>A list of custom classifiers that the user has registered. By default, all
-     * AWS classifiers are included in a crawl, but these custom classifiers always
-     * override the default classifiers for a given classification.</p>
+     * built-in classifiers are included in a crawl, but these custom classifiers
+     * always override the default classifiers for a given classification.</p>
      */
     inline void SetClassifiers(const Aws::Vector<Aws::String>& value) { m_classifiersHasBeenSet = true; m_classifiers = value; }
 
     /**
      * <p>A list of custom classifiers that the user has registered. By default, all
-     * AWS classifiers are included in a crawl, but these custom classifiers always
-     * override the default classifiers for a given classification.</p>
+     * built-in classifiers are included in a crawl, but these custom classifiers
+     * always override the default classifiers for a given classification.</p>
      */
     inline void SetClassifiers(Aws::Vector<Aws::String>&& value) { m_classifiersHasBeenSet = true; m_classifiers = std::move(value); }
 
     /**
      * <p>A list of custom classifiers that the user has registered. By default, all
-     * AWS classifiers are included in a crawl, but these custom classifiers always
-     * override the default classifiers for a given classification.</p>
+     * built-in classifiers are included in a crawl, but these custom classifiers
+     * always override the default classifiers for a given classification.</p>
      */
     inline CreateCrawlerRequest& WithClassifiers(const Aws::Vector<Aws::String>& value) { SetClassifiers(value); return *this;}
 
     /**
      * <p>A list of custom classifiers that the user has registered. By default, all
-     * AWS classifiers are included in a crawl, but these custom classifiers always
-     * override the default classifiers for a given classification.</p>
+     * built-in classifiers are included in a crawl, but these custom classifiers
+     * always override the default classifiers for a given classification.</p>
      */
     inline CreateCrawlerRequest& WithClassifiers(Aws::Vector<Aws::String>&& value) { SetClassifiers(std::move(value)); return *this;}
 
     /**
      * <p>A list of custom classifiers that the user has registered. By default, all
-     * AWS classifiers are included in a crawl, but these custom classifiers always
-     * override the default classifiers for a given classification.</p>
+     * built-in classifiers are included in a crawl, but these custom classifiers
+     * always override the default classifiers for a given classification.</p>
      */
     inline CreateCrawlerRequest& AddClassifiers(const Aws::String& value) { m_classifiersHasBeenSet = true; m_classifiers.push_back(value); return *this; }
 
     /**
      * <p>A list of custom classifiers that the user has registered. By default, all
-     * AWS classifiers are included in a crawl, but these custom classifiers always
-     * override the default classifiers for a given classification.</p>
+     * built-in classifiers are included in a crawl, but these custom classifiers
+     * always override the default classifiers for a given classification.</p>
      */
     inline CreateCrawlerRequest& AddClassifiers(Aws::String&& value) { m_classifiersHasBeenSet = true; m_classifiers.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of custom classifiers that the user has registered. By default, all
-     * AWS classifiers are included in a crawl, but these custom classifiers always
-     * override the default classifiers for a given classification.</p>
+     * built-in classifiers are included in a crawl, but these custom classifiers
+     * always override the default classifiers for a given classification.</p>
      */
     inline CreateCrawlerRequest& AddClassifiers(const char* value) { m_classifiersHasBeenSet = true; m_classifiers.push_back(value); return *this; }
 
@@ -409,85 +409,57 @@ namespace Model
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
-     * specify aspects of a Crawler's behavior.</p> <p>You can use this field to force
-     * partitions to inherit metadata such as classification, input format, output
-     * format, serde information, and schema from their parent table, rather than
-     * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
-     * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
-     * }'</code> </p>
+     * specify aspects of a crawler's behavior. For more information, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
+     * a Crawler</a>.</p>
      */
     inline const Aws::String& GetConfiguration() const{ return m_configuration; }
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
-     * specify aspects of a Crawler's behavior.</p> <p>You can use this field to force
-     * partitions to inherit metadata such as classification, input format, output
-     * format, serde information, and schema from their parent table, rather than
-     * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
-     * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
-     * }'</code> </p>
+     * specify aspects of a crawler's behavior. For more information, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
+     * a Crawler</a>.</p>
      */
     inline void SetConfiguration(const Aws::String& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
-     * specify aspects of a Crawler's behavior.</p> <p>You can use this field to force
-     * partitions to inherit metadata such as classification, input format, output
-     * format, serde information, and schema from their parent table, rather than
-     * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
-     * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
-     * }'</code> </p>
+     * specify aspects of a crawler's behavior. For more information, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
+     * a Crawler</a>.</p>
      */
     inline void SetConfiguration(Aws::String&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
-     * specify aspects of a Crawler's behavior.</p> <p>You can use this field to force
-     * partitions to inherit metadata such as classification, input format, output
-     * format, serde information, and schema from their parent table, rather than
-     * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
-     * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
-     * }'</code> </p>
+     * specify aspects of a crawler's behavior. For more information, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
+     * a Crawler</a>.</p>
      */
     inline void SetConfiguration(const char* value) { m_configurationHasBeenSet = true; m_configuration.assign(value); }
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
-     * specify aspects of a Crawler's behavior.</p> <p>You can use this field to force
-     * partitions to inherit metadata such as classification, input format, output
-     * format, serde information, and schema from their parent table, rather than
-     * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
-     * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
-     * }'</code> </p>
+     * specify aspects of a crawler's behavior. For more information, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
+     * a Crawler</a>.</p>
      */
     inline CreateCrawlerRequest& WithConfiguration(const Aws::String& value) { SetConfiguration(value); return *this;}
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
-     * specify aspects of a Crawler's behavior.</p> <p>You can use this field to force
-     * partitions to inherit metadata such as classification, input format, output
-     * format, serde information, and schema from their parent table, rather than
-     * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
-     * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
-     * }'</code> </p>
+     * specify aspects of a crawler's behavior. For more information, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
+     * a Crawler</a>.</p>
      */
     inline CreateCrawlerRequest& WithConfiguration(Aws::String&& value) { SetConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
-     * specify aspects of a Crawler's behavior.</p> <p>You can use this field to force
-     * partitions to inherit metadata such as classification, input format, output
-     * format, serde information, and schema from their parent table, rather than
-     * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
-     * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
-     * }'</code> </p>
+     * specify aspects of a crawler's behavior. For more information, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
+     * a Crawler</a>.</p>
      */
     inline CreateCrawlerRequest& WithConfiguration(const char* value) { SetConfiguration(value); return *this;}
 

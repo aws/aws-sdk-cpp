@@ -269,13 +269,19 @@ namespace Model
     inline InstancesCount& WithStartFailed(int value) { SetStartFailed(value); return *this;}
 
 
-    
+    /**
+     * <p>The number of instances with <code>stop_failed</code> status.</p>
+     */
     inline int GetStopFailed() const{ return m_stopFailed; }
 
-    
+    /**
+     * <p>The number of instances with <code>stop_failed</code> status.</p>
+     */
     inline void SetStopFailed(int value) { m_stopFailedHasBeenSet = true; m_stopFailed = value; }
 
-    
+    /**
+     * <p>The number of instances with <code>stop_failed</code> status.</p>
+     */
     inline InstancesCount& WithStopFailed(int value) { SetStopFailed(value); return *this;}
 
 

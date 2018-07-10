@@ -144,8 +144,8 @@ namespace Model
      * with a maximum ratio of 50 IOPS/GiB. Range is 100 to 32000 IOPS for volumes in
      * most regions. For exceptions, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a>.</p> <p>This parameter is valid only for Provisioned IOPS
-     * SSD (io1) volumes.</p>
+     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>This parameter is valid only for Provisioned IOPS SSD (io1) volumes.</p>
      */
     inline int GetIops() const{ return m_iops; }
 
@@ -154,8 +154,8 @@ namespace Model
      * with a maximum ratio of 50 IOPS/GiB. Range is 100 to 32000 IOPS for volumes in
      * most regions. For exceptions, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a>.</p> <p>This parameter is valid only for Provisioned IOPS
-     * SSD (io1) volumes.</p>
+     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>This parameter is valid only for Provisioned IOPS SSD (io1) volumes.</p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
@@ -164,8 +164,8 @@ namespace Model
      * with a maximum ratio of 50 IOPS/GiB. Range is 100 to 32000 IOPS for volumes in
      * most regions. For exceptions, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a>.</p> <p>This parameter is valid only for Provisioned IOPS
-     * SSD (io1) volumes.</p>
+     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>This parameter is valid only for Provisioned IOPS SSD (io1) volumes.</p>
      */
     inline CreateVolumeRequest& WithIops(int value) { SetIops(value); return *this;}
 

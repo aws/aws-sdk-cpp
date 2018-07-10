@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     HOMEFOLDERS,
-    GOOGLE_DRIVE
+    GOOGLE_DRIVE,
+    ONE_DRIVE
   };
 
 namespace StorageConnectorTypeMapper

@@ -36,6 +36,8 @@ ProjectSource::ProjectSource() :
     m_gitCloneDepthHasBeenSet(false),
     m_buildspecHasBeenSet(false),
     m_authHasBeenSet(false),
+    m_reportBuildStatus(false),
+    m_reportBuildStatusHasBeenSet(false),
     m_insecureSsl(false),
     m_insecureSslHasBeenSet(false)
 {
@@ -49,6 +51,8 @@ ProjectSource::ProjectSource(const JsonValue& jsonValue) :
     m_gitCloneDepthHasBeenSet(false),
     m_buildspecHasBeenSet(false),
     m_authHasBeenSet(false),
+    m_reportBuildStatus(false),
+    m_reportBuildStatusHasBeenSet(false),
     m_insecureSsl(false),
     m_insecureSslHasBeenSet(false)
 {
@@ -92,6 +96,13 @@ ProjectSource& ProjectSource::operator =(const JsonValue& jsonValue)
     m_authHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("reportBuildStatus"))
+  {
+    m_reportBuildStatus = jsonValue.GetBool("reportBuildStatus");
+
+    m_reportBuildStatusHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("insecureSsl"))
   {
     m_insecureSsl = jsonValue.GetBool("insecureSsl");
@@ -132,6 +143,12 @@ JsonValue ProjectSource::Jsonize() const
   if(m_authHasBeenSet)
   {
    payload.WithObject("auth", m_auth.Jsonize());
+
+  }
+
+  if(m_reportBuildStatusHasBeenSet)
+  {
+   payload.WithBool("reportBuildStatus", m_reportBuildStatus);
 
   }
 

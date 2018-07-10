@@ -290,16 +290,16 @@ namespace Model
      * <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows
      * Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server
      * 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012
-     * R2 with SQL Server Web</code>.</p> </li> </ul> <p>For more information on the
+     * R2 with SQL Server Web</code>.</p> </li> </ul> <p>For more information about
      * supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Stacks Operating Systems</a>.</p> <p>The default option is the current
      * Amazon Linux version. If you set this parameter to <code>Custom</code>, you must
      * use the AmiId parameter to specify the custom AMI that you want to use. For more
-     * information on the supported operating systems, see <a
+     * information about supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     * Systems</a>. For more information on how to use custom AMIs with OpsWorks, see
-     * <a
+     * Systems</a>. For more information about how to use custom AMIs with OpsWorks,
+     * see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</p> <note> <p>You can specify a different Linux operating
      * system for the updated stack, but you cannot change from Linux to Windows or
@@ -321,16 +321,16 @@ namespace Model
      * <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows
      * Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server
      * 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012
-     * R2 with SQL Server Web</code>.</p> </li> </ul> <p>For more information on the
+     * R2 with SQL Server Web</code>.</p> </li> </ul> <p>For more information about
      * supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Stacks Operating Systems</a>.</p> <p>The default option is the current
      * Amazon Linux version. If you set this parameter to <code>Custom</code>, you must
      * use the AmiId parameter to specify the custom AMI that you want to use. For more
-     * information on the supported operating systems, see <a
+     * information about supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     * Systems</a>. For more information on how to use custom AMIs with OpsWorks, see
-     * <a
+     * Systems</a>. For more information about how to use custom AMIs with OpsWorks,
+     * see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</p> <note> <p>You can specify a different Linux operating
      * system for the updated stack, but you cannot change from Linux to Windows or
@@ -352,16 +352,16 @@ namespace Model
      * <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows
      * Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server
      * 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012
-     * R2 with SQL Server Web</code>.</p> </li> </ul> <p>For more information on the
+     * R2 with SQL Server Web</code>.</p> </li> </ul> <p>For more information about
      * supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Stacks Operating Systems</a>.</p> <p>The default option is the current
      * Amazon Linux version. If you set this parameter to <code>Custom</code>, you must
      * use the AmiId parameter to specify the custom AMI that you want to use. For more
-     * information on the supported operating systems, see <a
+     * information about supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     * Systems</a>. For more information on how to use custom AMIs with OpsWorks, see
-     * <a
+     * Systems</a>. For more information about how to use custom AMIs with OpsWorks,
+     * see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</p> <note> <p>You can specify a different Linux operating
      * system for the updated stack, but you cannot change from Linux to Windows or
@@ -383,16 +383,16 @@ namespace Model
      * <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows
      * Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server
      * 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012
-     * R2 with SQL Server Web</code>.</p> </li> </ul> <p>For more information on the
+     * R2 with SQL Server Web</code>.</p> </li> </ul> <p>For more information about
      * supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Stacks Operating Systems</a>.</p> <p>The default option is the current
      * Amazon Linux version. If you set this parameter to <code>Custom</code>, you must
      * use the AmiId parameter to specify the custom AMI that you want to use. For more
-     * information on the supported operating systems, see <a
+     * information about supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     * Systems</a>. For more information on how to use custom AMIs with OpsWorks, see
-     * <a
+     * Systems</a>. For more information about how to use custom AMIs with OpsWorks,
+     * see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</p> <note> <p>You can specify a different Linux operating
      * system for the updated stack, but you cannot change from Linux to Windows or
@@ -414,16 +414,16 @@ namespace Model
      * <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows
      * Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server
      * 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012
-     * R2 with SQL Server Web</code>.</p> </li> </ul> <p>For more information on the
+     * R2 with SQL Server Web</code>.</p> </li> </ul> <p>For more information about
      * supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Stacks Operating Systems</a>.</p> <p>The default option is the current
      * Amazon Linux version. If you set this parameter to <code>Custom</code>, you must
      * use the AmiId parameter to specify the custom AMI that you want to use. For more
-     * information on the supported operating systems, see <a
+     * information about supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     * Systems</a>. For more information on how to use custom AMIs with OpsWorks, see
-     * <a
+     * Systems</a>. For more information about how to use custom AMIs with OpsWorks,
+     * see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</p> <note> <p>You can specify a different Linux operating
      * system for the updated stack, but you cannot change from Linux to Windows or
@@ -445,16 +445,16 @@ namespace Model
      * <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows
      * Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server
      * 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012
-     * R2 with SQL Server Web</code>.</p> </li> </ul> <p>For more information on the
+     * R2 with SQL Server Web</code>.</p> </li> </ul> <p>For more information about
      * supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Stacks Operating Systems</a>.</p> <p>The default option is the current
      * Amazon Linux version. If you set this parameter to <code>Custom</code>, you must
      * use the AmiId parameter to specify the custom AMI that you want to use. For more
-     * information on the supported operating systems, see <a
+     * information about supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     * Systems</a>. For more information on how to use custom AMIs with OpsWorks, see
-     * <a
+     * Systems</a>. For more information about how to use custom AMIs with OpsWorks,
+     * see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</p> <note> <p>You can specify a different Linux operating
      * system for the updated stack, but you cannot change from Linux to Windows or
@@ -476,16 +476,16 @@ namespace Model
      * <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows
      * Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server
      * 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012
-     * R2 with SQL Server Web</code>.</p> </li> </ul> <p>For more information on the
+     * R2 with SQL Server Web</code>.</p> </li> </ul> <p>For more information about
      * supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Stacks Operating Systems</a>.</p> <p>The default option is the current
      * Amazon Linux version. If you set this parameter to <code>Custom</code>, you must
      * use the AmiId parameter to specify the custom AMI that you want to use. For more
-     * information on the supported operating systems, see <a
+     * information about supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     * Systems</a>. For more information on how to use custom AMIs with OpsWorks, see
-     * <a
+     * Systems</a>. For more information about how to use custom AMIs with OpsWorks,
+     * see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</p> <note> <p>You can specify a different Linux operating
      * system for the updated stack, but you cannot change from Linux to Windows or
