@@ -116,27 +116,27 @@ namespace Model
 
 
     /**
-     * The class of storage used to store the object.
+     * <p>The class of storage used to store the object.</p>
      */
     inline const ObjectStorageClass& GetStorageClass() const{ return m_storageClass; }
 
     /**
-     * The class of storage used to store the object.
+     * <p>The class of storage used to store the object.</p>
      */
     inline void SetStorageClass(const ObjectStorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
 
     /**
-     * The class of storage used to store the object.
+     * <p>The class of storage used to store the object.</p>
      */
     inline void SetStorageClass(ObjectStorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
 
     /**
-     * The class of storage used to store the object.
+     * <p>The class of storage used to store the object.</p>
      */
     inline Object& WithStorageClass(const ObjectStorageClass& value) { SetStorageClass(value); return *this;}
 
     /**
-     * The class of storage used to store the object.
+     * <p>The class of storage used to store the object.</p>
      */
     inline Object& WithStorageClass(ObjectStorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 

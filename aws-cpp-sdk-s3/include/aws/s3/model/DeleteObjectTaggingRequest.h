@@ -94,37 +94,37 @@ namespace Model
 
 
     /**
-     * The versionId of the object that the tag-set will be removed from.
+     * <p>The versionId of the object that the tag-set will be removed from.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
     /**
-     * The versionId of the object that the tag-set will be removed from.
+     * <p>The versionId of the object that the tag-set will be removed from.</p>
      */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /**
-     * The versionId of the object that the tag-set will be removed from.
+     * <p>The versionId of the object that the tag-set will be removed from.</p>
      */
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
 
     /**
-     * The versionId of the object that the tag-set will be removed from.
+     * <p>The versionId of the object that the tag-set will be removed from.</p>
      */
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
 
     /**
-     * The versionId of the object that the tag-set will be removed from.
+     * <p>The versionId of the object that the tag-set will be removed from.</p>
      */
     inline DeleteObjectTaggingRequest& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     /**
-     * The versionId of the object that the tag-set will be removed from.
+     * <p>The versionId of the object that the tag-set will be removed from.</p>
      */
     inline DeleteObjectTaggingRequest& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
-     * The versionId of the object that the tag-set will be removed from.
+     * <p>The versionId of the object that the tag-set will be removed from.</p>
      */
     inline DeleteObjectTaggingRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 

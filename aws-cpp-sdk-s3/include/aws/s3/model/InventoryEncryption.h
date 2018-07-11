@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * Contains the type of server-side encryption used to encrypt the inventory
-   * results.<p><h3>See Also:</h3>   <a
+   * <p>Contains the type of server-side encryption used to encrypt the inventory
+   * results.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/InventoryEncryption">AWS
    * API Reference</a></p>
    */
@@ -50,53 +50,53 @@ namespace Model
 
 
     /**
-     * Specifies the use of SSE-S3 to encrypt delievered Inventory reports.
+     * <p>Specifies the use of SSE-S3 to encrypt delievered Inventory reports.</p>
      */
     inline const SSES3& GetSSES3() const{ return m_sSES3; }
 
     /**
-     * Specifies the use of SSE-S3 to encrypt delievered Inventory reports.
+     * <p>Specifies the use of SSE-S3 to encrypt delievered Inventory reports.</p>
      */
     inline void SetSSES3(const SSES3& value) { m_sSES3HasBeenSet = true; m_sSES3 = value; }
 
     /**
-     * Specifies the use of SSE-S3 to encrypt delievered Inventory reports.
+     * <p>Specifies the use of SSE-S3 to encrypt delievered Inventory reports.</p>
      */
     inline void SetSSES3(SSES3&& value) { m_sSES3HasBeenSet = true; m_sSES3 = std::move(value); }
 
     /**
-     * Specifies the use of SSE-S3 to encrypt delievered Inventory reports.
+     * <p>Specifies the use of SSE-S3 to encrypt delievered Inventory reports.</p>
      */
     inline InventoryEncryption& WithSSES3(const SSES3& value) { SetSSES3(value); return *this;}
 
     /**
-     * Specifies the use of SSE-S3 to encrypt delievered Inventory reports.
+     * <p>Specifies the use of SSE-S3 to encrypt delievered Inventory reports.</p>
      */
     inline InventoryEncryption& WithSSES3(SSES3&& value) { SetSSES3(std::move(value)); return *this;}
 
 
     /**
-     * Specifies the use of SSE-KMS to encrypt delievered Inventory reports.
+     * <p>Specifies the use of SSE-KMS to encrypt delievered Inventory reports.</p>
      */
     inline const SSEKMS& GetSSEKMS() const{ return m_sSEKMS; }
 
     /**
-     * Specifies the use of SSE-KMS to encrypt delievered Inventory reports.
+     * <p>Specifies the use of SSE-KMS to encrypt delievered Inventory reports.</p>
      */
     inline void SetSSEKMS(const SSEKMS& value) { m_sSEKMSHasBeenSet = true; m_sSEKMS = value; }
 
     /**
-     * Specifies the use of SSE-KMS to encrypt delievered Inventory reports.
+     * <p>Specifies the use of SSE-KMS to encrypt delievered Inventory reports.</p>
      */
     inline void SetSSEKMS(SSEKMS&& value) { m_sSEKMSHasBeenSet = true; m_sSEKMS = std::move(value); }
 
     /**
-     * Specifies the use of SSE-KMS to encrypt delievered Inventory reports.
+     * <p>Specifies the use of SSE-KMS to encrypt delievered Inventory reports.</p>
      */
     inline InventoryEncryption& WithSSEKMS(const SSEKMS& value) { SetSSEKMS(value); return *this;}
 
     /**
-     * Specifies the use of SSE-KMS to encrypt delievered Inventory reports.
+     * <p>Specifies the use of SSE-KMS to encrypt delievered Inventory reports.</p>
      */
     inline InventoryEncryption& WithSSEKMS(SSEKMS&& value) { SetSSEKMS(std::move(value)); return *this;}
 

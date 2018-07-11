@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     NONE,
-    GZIP
+    GZIP,
+    BZIP2
   };
 
 namespace CompressionTypeMapper

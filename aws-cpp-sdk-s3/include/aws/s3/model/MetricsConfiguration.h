@@ -44,73 +44,73 @@ namespace Model
 
 
     /**
-     * The ID used to identify the metrics configuration.
+     * <p>The ID used to identify the metrics configuration.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * The ID used to identify the metrics configuration.
+     * <p>The ID used to identify the metrics configuration.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * The ID used to identify the metrics configuration.
+     * <p>The ID used to identify the metrics configuration.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * The ID used to identify the metrics configuration.
+     * <p>The ID used to identify the metrics configuration.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * The ID used to identify the metrics configuration.
+     * <p>The ID used to identify the metrics configuration.</p>
      */
     inline MetricsConfiguration& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * The ID used to identify the metrics configuration.
+     * <p>The ID used to identify the metrics configuration.</p>
      */
     inline MetricsConfiguration& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * The ID used to identify the metrics configuration.
+     * <p>The ID used to identify the metrics configuration.</p>
      */
     inline MetricsConfiguration& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * Specifies a metrics configuration filter. The metrics configuration will only
+     * <p>Specifies a metrics configuration filter. The metrics configuration will only
      * include objects that meet the filter's criteria. A filter must be a prefix, a
-     * tag, or a conjunction (MetricsAndOperator).
+     * tag, or a conjunction (MetricsAndOperator).</p>
      */
     inline const MetricsFilter& GetFilter() const{ return m_filter; }
 
     /**
-     * Specifies a metrics configuration filter. The metrics configuration will only
+     * <p>Specifies a metrics configuration filter. The metrics configuration will only
      * include objects that meet the filter's criteria. A filter must be a prefix, a
-     * tag, or a conjunction (MetricsAndOperator).
+     * tag, or a conjunction (MetricsAndOperator).</p>
      */
     inline void SetFilter(const MetricsFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
-     * Specifies a metrics configuration filter. The metrics configuration will only
+     * <p>Specifies a metrics configuration filter. The metrics configuration will only
      * include objects that meet the filter's criteria. A filter must be a prefix, a
-     * tag, or a conjunction (MetricsAndOperator).
+     * tag, or a conjunction (MetricsAndOperator).</p>
      */
     inline void SetFilter(MetricsFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
-     * Specifies a metrics configuration filter. The metrics configuration will only
+     * <p>Specifies a metrics configuration filter. The metrics configuration will only
      * include objects that meet the filter's criteria. A filter must be a prefix, a
-     * tag, or a conjunction (MetricsAndOperator).
+     * tag, or a conjunction (MetricsAndOperator).</p>
      */
     inline MetricsConfiguration& WithFilter(const MetricsFilter& value) { SetFilter(value); return *this;}
 
     /**
-     * Specifies a metrics configuration filter. The metrics configuration will only
+     * <p>Specifies a metrics configuration filter. The metrics configuration will only
      * include objects that meet the filter's criteria. A filter must be a prefix, a
-     * tag, or a conjunction (MetricsAndOperator).
+     * tag, or a conjunction (MetricsAndOperator).</p>
      */
     inline MetricsConfiguration& WithFilter(MetricsFilter&& value) { SetFilter(std::move(value)); return *this;}
 

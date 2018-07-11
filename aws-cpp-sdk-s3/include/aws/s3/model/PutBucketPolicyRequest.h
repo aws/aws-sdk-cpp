@@ -96,20 +96,20 @@ namespace Model
 
 
     /**
-     * Set this parameter to true to confirm that you want to remove your permissions
-     * to change this bucket policy in the future.
+     * <p>Set this parameter to true to confirm that you want to remove your
+     * permissions to change this bucket policy in the future.</p>
      */
     inline bool GetConfirmRemoveSelfBucketAccess() const{ return m_confirmRemoveSelfBucketAccess; }
 
     /**
-     * Set this parameter to true to confirm that you want to remove your permissions
-     * to change this bucket policy in the future.
+     * <p>Set this parameter to true to confirm that you want to remove your
+     * permissions to change this bucket policy in the future.</p>
      */
     inline void SetConfirmRemoveSelfBucketAccess(bool value) { m_confirmRemoveSelfBucketAccessHasBeenSet = true; m_confirmRemoveSelfBucketAccess = value; }
 
     /**
-     * Set this parameter to true to confirm that you want to remove your permissions
-     * to change this bucket policy in the future.
+     * <p>Set this parameter to true to confirm that you want to remove your
+     * permissions to change this bucket policy in the future.</p>
      */
     inline PutBucketPolicyRequest& WithConfirmRemoveSelfBucketAccess(bool value) { SetConfirmRemoveSelfBucketAccess(value); return *this;}
 

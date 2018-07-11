@@ -111,190 +111,190 @@ namespace Model
 
 
     /**
-     * If the object expiration is configured, this will contain the expiration date
-     * (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.
+     * <p>If the object expiration is configured, this will contain the expiration date
+     * (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.</p>
      */
     inline const Aws::String& GetExpiration() const{ return m_expiration; }
 
     /**
-     * If the object expiration is configured, this will contain the expiration date
-     * (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.
+     * <p>If the object expiration is configured, this will contain the expiration date
+     * (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.</p>
      */
     inline void SetExpiration(const Aws::String& value) { m_expiration = value; }
 
     /**
-     * If the object expiration is configured, this will contain the expiration date
-     * (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.
+     * <p>If the object expiration is configured, this will contain the expiration date
+     * (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.</p>
      */
     inline void SetExpiration(Aws::String&& value) { m_expiration = std::move(value); }
 
     /**
-     * If the object expiration is configured, this will contain the expiration date
-     * (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.
+     * <p>If the object expiration is configured, this will contain the expiration date
+     * (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.</p>
      */
     inline void SetExpiration(const char* value) { m_expiration.assign(value); }
 
     /**
-     * If the object expiration is configured, this will contain the expiration date
-     * (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.
+     * <p>If the object expiration is configured, this will contain the expiration date
+     * (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.</p>
      */
     inline CompleteMultipartUploadResult& WithExpiration(const Aws::String& value) { SetExpiration(value); return *this;}
 
     /**
-     * If the object expiration is configured, this will contain the expiration date
-     * (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.
+     * <p>If the object expiration is configured, this will contain the expiration date
+     * (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.</p>
      */
     inline CompleteMultipartUploadResult& WithExpiration(Aws::String&& value) { SetExpiration(std::move(value)); return *this;}
 
     /**
-     * If the object expiration is configured, this will contain the expiration date
-     * (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.
+     * <p>If the object expiration is configured, this will contain the expiration date
+     * (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.</p>
      */
     inline CompleteMultipartUploadResult& WithExpiration(const char* value) { SetExpiration(value); return *this;}
 
 
     /**
-     * Entity tag of the object.
+     * <p>Entity tag of the object.</p>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
 
     /**
-     * Entity tag of the object.
+     * <p>Entity tag of the object.</p>
      */
     inline void SetETag(const Aws::String& value) { m_eTag = value; }
 
     /**
-     * Entity tag of the object.
+     * <p>Entity tag of the object.</p>
      */
     inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
 
     /**
-     * Entity tag of the object.
+     * <p>Entity tag of the object.</p>
      */
     inline void SetETag(const char* value) { m_eTag.assign(value); }
 
     /**
-     * Entity tag of the object.
+     * <p>Entity tag of the object.</p>
      */
     inline CompleteMultipartUploadResult& WithETag(const Aws::String& value) { SetETag(value); return *this;}
 
     /**
-     * Entity tag of the object.
+     * <p>Entity tag of the object.</p>
      */
     inline CompleteMultipartUploadResult& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
 
     /**
-     * Entity tag of the object.
+     * <p>Entity tag of the object.</p>
      */
     inline CompleteMultipartUploadResult& WithETag(const char* value) { SetETag(value); return *this;}
 
 
     /**
-     * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
-     * AES256, aws:kms).
+     * <p>The Server-side encryption algorithm used when storing this object in S3
+     * (e.g., AES256, aws:kms).</p>
      */
     inline const ServerSideEncryption& GetServerSideEncryption() const{ return m_serverSideEncryption; }
 
     /**
-     * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
-     * AES256, aws:kms).
+     * <p>The Server-side encryption algorithm used when storing this object in S3
+     * (e.g., AES256, aws:kms).</p>
      */
     inline void SetServerSideEncryption(const ServerSideEncryption& value) { m_serverSideEncryption = value; }
 
     /**
-     * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
-     * AES256, aws:kms).
+     * <p>The Server-side encryption algorithm used when storing this object in S3
+     * (e.g., AES256, aws:kms).</p>
      */
     inline void SetServerSideEncryption(ServerSideEncryption&& value) { m_serverSideEncryption = std::move(value); }
 
     /**
-     * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
-     * AES256, aws:kms).
+     * <p>The Server-side encryption algorithm used when storing this object in S3
+     * (e.g., AES256, aws:kms).</p>
      */
     inline CompleteMultipartUploadResult& WithServerSideEncryption(const ServerSideEncryption& value) { SetServerSideEncryption(value); return *this;}
 
     /**
-     * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
-     * AES256, aws:kms).
+     * <p>The Server-side encryption algorithm used when storing this object in S3
+     * (e.g., AES256, aws:kms).</p>
      */
     inline CompleteMultipartUploadResult& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
 
 
     /**
-     * Version of the object.
+     * <p>Version of the object.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
     /**
-     * Version of the object.
+     * <p>Version of the object.</p>
      */
     inline void SetVersionId(const Aws::String& value) { m_versionId = value; }
 
     /**
-     * Version of the object.
+     * <p>Version of the object.</p>
      */
     inline void SetVersionId(Aws::String&& value) { m_versionId = std::move(value); }
 
     /**
-     * Version of the object.
+     * <p>Version of the object.</p>
      */
     inline void SetVersionId(const char* value) { m_versionId.assign(value); }
 
     /**
-     * Version of the object.
+     * <p>Version of the object.</p>
      */
     inline CompleteMultipartUploadResult& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     /**
-     * Version of the object.
+     * <p>Version of the object.</p>
      */
     inline CompleteMultipartUploadResult& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
-     * Version of the object.
+     * <p>Version of the object.</p>
      */
     inline CompleteMultipartUploadResult& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
 
     /**
-     * If present, specifies the ID of the AWS Key Management Service (KMS) master
-     * encryption key that was used for the object.
+     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) master
+     * encryption key that was used for the object.</p>
      */
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
     /**
-     * If present, specifies the ID of the AWS Key Management Service (KMS) master
-     * encryption key that was used for the object.
+     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) master
+     * encryption key that was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyId = value; }
 
     /**
-     * If present, specifies the ID of the AWS Key Management Service (KMS) master
-     * encryption key that was used for the object.
+     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) master
+     * encryption key that was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyId = std::move(value); }
 
     /**
-     * If present, specifies the ID of the AWS Key Management Service (KMS) master
-     * encryption key that was used for the object.
+     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) master
+     * encryption key that was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyId.assign(value); }
 
     /**
-     * If present, specifies the ID of the AWS Key Management Service (KMS) master
-     * encryption key that was used for the object.
+     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) master
+     * encryption key that was used for the object.</p>
      */
     inline CompleteMultipartUploadResult& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
     /**
-     * If present, specifies the ID of the AWS Key Management Service (KMS) master
-     * encryption key that was used for the object.
+     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) master
+     * encryption key that was used for the object.</p>
      */
     inline CompleteMultipartUploadResult& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * If present, specifies the ID of the AWS Key Management Service (KMS) master
-     * encryption key that was used for the object.
+     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) master
+     * encryption key that was used for the object.</p>
      */
     inline CompleteMultipartUploadResult& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 

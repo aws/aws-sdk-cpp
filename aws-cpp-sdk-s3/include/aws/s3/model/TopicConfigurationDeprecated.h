@@ -89,44 +89,44 @@ namespace Model
 
 
     /**
-     * Amazon SNS topic to which Amazon S3 will publish a message to report the
-     * specified events for the bucket.
+     * <p>Amazon SNS topic to which Amazon S3 will publish a message to report the
+     * specified events for the bucket.</p>
      */
     inline const Aws::String& GetTopic() const{ return m_topic; }
 
     /**
-     * Amazon SNS topic to which Amazon S3 will publish a message to report the
-     * specified events for the bucket.
+     * <p>Amazon SNS topic to which Amazon S3 will publish a message to report the
+     * specified events for the bucket.</p>
      */
     inline void SetTopic(const Aws::String& value) { m_topicHasBeenSet = true; m_topic = value; }
 
     /**
-     * Amazon SNS topic to which Amazon S3 will publish a message to report the
-     * specified events for the bucket.
+     * <p>Amazon SNS topic to which Amazon S3 will publish a message to report the
+     * specified events for the bucket.</p>
      */
     inline void SetTopic(Aws::String&& value) { m_topicHasBeenSet = true; m_topic = std::move(value); }
 
     /**
-     * Amazon SNS topic to which Amazon S3 will publish a message to report the
-     * specified events for the bucket.
+     * <p>Amazon SNS topic to which Amazon S3 will publish a message to report the
+     * specified events for the bucket.</p>
      */
     inline void SetTopic(const char* value) { m_topicHasBeenSet = true; m_topic.assign(value); }
 
     /**
-     * Amazon SNS topic to which Amazon S3 will publish a message to report the
-     * specified events for the bucket.
+     * <p>Amazon SNS topic to which Amazon S3 will publish a message to report the
+     * specified events for the bucket.</p>
      */
     inline TopicConfigurationDeprecated& WithTopic(const Aws::String& value) { SetTopic(value); return *this;}
 
     /**
-     * Amazon SNS topic to which Amazon S3 will publish a message to report the
-     * specified events for the bucket.
+     * <p>Amazon SNS topic to which Amazon S3 will publish a message to report the
+     * specified events for the bucket.</p>
      */
     inline TopicConfigurationDeprecated& WithTopic(Aws::String&& value) { SetTopic(std::move(value)); return *this;}
 
     /**
-     * Amazon SNS topic to which Amazon S3 will publish a message to report the
-     * specified events for the bucket.
+     * <p>Amazon SNS topic to which Amazon S3 will publish a message to report the
+     * specified events for the bucket.</p>
      */
     inline TopicConfigurationDeprecated& WithTopic(const char* value) { SetTopic(value); return *this;}
 

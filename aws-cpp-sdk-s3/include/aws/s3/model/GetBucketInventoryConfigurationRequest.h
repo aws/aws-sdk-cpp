@@ -50,73 +50,80 @@ namespace Model
 
 
     /**
-     * The name of the bucket containing the inventory configuration to retrieve.
+     * <p>The name of the bucket containing the inventory configuration to
+     * retrieve.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * The name of the bucket containing the inventory configuration to retrieve.
+     * <p>The name of the bucket containing the inventory configuration to
+     * retrieve.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * The name of the bucket containing the inventory configuration to retrieve.
+     * <p>The name of the bucket containing the inventory configuration to
+     * retrieve.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * The name of the bucket containing the inventory configuration to retrieve.
+     * <p>The name of the bucket containing the inventory configuration to
+     * retrieve.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * The name of the bucket containing the inventory configuration to retrieve.
+     * <p>The name of the bucket containing the inventory configuration to
+     * retrieve.</p>
      */
     inline GetBucketInventoryConfigurationRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * The name of the bucket containing the inventory configuration to retrieve.
+     * <p>The name of the bucket containing the inventory configuration to
+     * retrieve.</p>
      */
     inline GetBucketInventoryConfigurationRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * The name of the bucket containing the inventory configuration to retrieve.
+     * <p>The name of the bucket containing the inventory configuration to
+     * retrieve.</p>
      */
     inline GetBucketInventoryConfigurationRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
     /**
-     * The ID used to identify the inventory configuration.
+     * <p>The ID used to identify the inventory configuration.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * The ID used to identify the inventory configuration.
+     * <p>The ID used to identify the inventory configuration.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * The ID used to identify the inventory configuration.
+     * <p>The ID used to identify the inventory configuration.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * The ID used to identify the inventory configuration.
+     * <p>The ID used to identify the inventory configuration.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * The ID used to identify the inventory configuration.
+     * <p>The ID used to identify the inventory configuration.</p>
      */
     inline GetBucketInventoryConfigurationRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * The ID used to identify the inventory configuration.
+     * <p>The ID used to identify the inventory configuration.</p>
      */
     inline GetBucketInventoryConfigurationRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * The ID used to identify the inventory configuration.
+     * <p>The ID used to identify the inventory configuration.</p>
      */
     inline GetBucketInventoryConfigurationRequest& WithId(const char* value) { SetId(value); return *this;}
 

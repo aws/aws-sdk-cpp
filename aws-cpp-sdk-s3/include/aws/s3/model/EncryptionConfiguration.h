@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * Container for information regarding encryption based configuration for
-   * replicas.<p><h3>See Also:</h3>   <a
+   * <p>Container for information regarding encryption based configuration for
+   * replicas.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/EncryptionConfiguration">AWS
    * API Reference</a></p>
    */
@@ -49,37 +49,37 @@ namespace Model
 
 
     /**
-     * The id of the KMS key used to encrypt the replica object.
+     * <p>The id of the KMS key used to encrypt the replica object.</p>
      */
     inline const Aws::String& GetReplicaKmsKeyID() const{ return m_replicaKmsKeyID; }
 
     /**
-     * The id of the KMS key used to encrypt the replica object.
+     * <p>The id of the KMS key used to encrypt the replica object.</p>
      */
     inline void SetReplicaKmsKeyID(const Aws::String& value) { m_replicaKmsKeyIDHasBeenSet = true; m_replicaKmsKeyID = value; }
 
     /**
-     * The id of the KMS key used to encrypt the replica object.
+     * <p>The id of the KMS key used to encrypt the replica object.</p>
      */
     inline void SetReplicaKmsKeyID(Aws::String&& value) { m_replicaKmsKeyIDHasBeenSet = true; m_replicaKmsKeyID = std::move(value); }
 
     /**
-     * The id of the KMS key used to encrypt the replica object.
+     * <p>The id of the KMS key used to encrypt the replica object.</p>
      */
     inline void SetReplicaKmsKeyID(const char* value) { m_replicaKmsKeyIDHasBeenSet = true; m_replicaKmsKeyID.assign(value); }
 
     /**
-     * The id of the KMS key used to encrypt the replica object.
+     * <p>The id of the KMS key used to encrypt the replica object.</p>
      */
     inline EncryptionConfiguration& WithReplicaKmsKeyID(const Aws::String& value) { SetReplicaKmsKeyID(value); return *this;}
 
     /**
-     * The id of the KMS key used to encrypt the replica object.
+     * <p>The id of the KMS key used to encrypt the replica object.</p>
      */
     inline EncryptionConfiguration& WithReplicaKmsKeyID(Aws::String&& value) { SetReplicaKmsKeyID(std::move(value)); return *this;}
 
     /**
-     * The id of the KMS key used to encrypt the replica object.
+     * <p>The id of the KMS key used to encrypt the replica object.</p>
      */
     inline EncryptionConfiguration& WithReplicaKmsKeyID(const char* value) { SetReplicaKmsKeyID(value); return *this;}
 

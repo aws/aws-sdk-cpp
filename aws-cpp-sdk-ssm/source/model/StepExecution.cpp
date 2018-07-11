@@ -47,7 +47,13 @@ StepExecution::StepExecution() :
     m_failureMessageHasBeenSet(false),
     m_failureDetailsHasBeenSet(false),
     m_stepExecutionIdHasBeenSet(false),
-    m_overriddenParametersHasBeenSet(false)
+    m_overriddenParametersHasBeenSet(false),
+    m_isEnd(false),
+    m_isEndHasBeenSet(false),
+    m_nextStepHasBeenSet(false),
+    m_isCritical(false),
+    m_isCriticalHasBeenSet(false),
+    m_validNextStepsHasBeenSet(false)
 {
 }
 
@@ -70,7 +76,13 @@ StepExecution::StepExecution(const JsonValue& jsonValue) :
     m_failureMessageHasBeenSet(false),
     m_failureDetailsHasBeenSet(false),
     m_stepExecutionIdHasBeenSet(false),
-    m_overriddenParametersHasBeenSet(false)
+    m_overriddenParametersHasBeenSet(false),
+    m_isEnd(false),
+    m_isEndHasBeenSet(false),
+    m_nextStepHasBeenSet(false),
+    m_isCritical(false),
+    m_isCriticalHasBeenSet(false),
+    m_validNextStepsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -212,6 +224,37 @@ StepExecution& StepExecution::operator =(const JsonValue& jsonValue)
     m_overriddenParametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IsEnd"))
+  {
+    m_isEnd = jsonValue.GetBool("IsEnd");
+
+    m_isEndHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NextStep"))
+  {
+    m_nextStep = jsonValue.GetString("NextStep");
+
+    m_nextStepHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IsCritical"))
+  {
+    m_isCritical = jsonValue.GetBool("IsCritical");
+
+    m_isCriticalHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ValidNextSteps"))
+  {
+    Array<JsonValue> validNextStepsJsonList = jsonValue.GetArray("ValidNextSteps");
+    for(unsigned validNextStepsIndex = 0; validNextStepsIndex < validNextStepsJsonList.GetLength(); ++validNextStepsIndex)
+    {
+      m_validNextSteps.push_back(validNextStepsJsonList[validNextStepsIndex].AsString());
+    }
+    m_validNextStepsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -334,6 +377,35 @@ JsonValue StepExecution::Jsonize() const
      overriddenParametersJsonMap.WithArray(overriddenParametersItem.first, std::move(automationParameterValueListJsonList));
    }
    payload.WithObject("OverriddenParameters", std::move(overriddenParametersJsonMap));
+
+  }
+
+  if(m_isEndHasBeenSet)
+  {
+   payload.WithBool("IsEnd", m_isEnd);
+
+  }
+
+  if(m_nextStepHasBeenSet)
+  {
+   payload.WithString("NextStep", m_nextStep);
+
+  }
+
+  if(m_isCriticalHasBeenSet)
+  {
+   payload.WithBool("IsCritical", m_isCritical);
+
+  }
+
+  if(m_validNextStepsHasBeenSet)
+  {
+   Array<JsonValue> validNextStepsJsonList(m_validNextSteps.size());
+   for(unsigned validNextStepsIndex = 0; validNextStepsIndex < validNextStepsJsonList.GetLength(); ++validNextStepsIndex)
+   {
+     validNextStepsJsonList[validNextStepsIndex].AsString(m_validNextSteps[validNextStepsIndex]);
+   }
+   payload.WithArray("ValidNextSteps", std::move(validNextStepsJsonList));
 
   }
 

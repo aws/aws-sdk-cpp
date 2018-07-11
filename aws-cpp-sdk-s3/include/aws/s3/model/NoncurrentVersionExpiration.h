@@ -31,11 +31,11 @@ namespace Model
 {
 
   /**
-   * Specifies when noncurrent object versions expire. Upon expiration, Amazon S3
+   * <p>Specifies when noncurrent object versions expire. Upon expiration, Amazon S3
    * permanently deletes the noncurrent object versions. You set this lifecycle
    * configuration action on a bucket that has versioning enabled (or suspended) to
    * request that Amazon S3 delete noncurrent object versions at a specific period in
-   * the object's lifetime.<p><h3>See Also:</h3>   <a
+   * the object's lifetime.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/NoncurrentVersionExpiration">AWS
    * API Reference</a></p>
    */
@@ -50,32 +50,32 @@ namespace Model
 
 
     /**
-     * Specifies the number of days an object is noncurrent before Amazon S3 can
+     * <p>Specifies the number of days an object is noncurrent before Amazon S3 can
      * perform the associated action. For information about the noncurrent days
      * calculations, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">How
      * Amazon S3 Calculates When an Object Became Noncurrent</a> in the Amazon Simple
-     * Storage Service Developer Guide.
+     * Storage Service Developer Guide.</p>
      */
     inline int GetNoncurrentDays() const{ return m_noncurrentDays; }
 
     /**
-     * Specifies the number of days an object is noncurrent before Amazon S3 can
+     * <p>Specifies the number of days an object is noncurrent before Amazon S3 can
      * perform the associated action. For information about the noncurrent days
      * calculations, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">How
      * Amazon S3 Calculates When an Object Became Noncurrent</a> in the Amazon Simple
-     * Storage Service Developer Guide.
+     * Storage Service Developer Guide.</p>
      */
     inline void SetNoncurrentDays(int value) { m_noncurrentDaysHasBeenSet = true; m_noncurrentDays = value; }
 
     /**
-     * Specifies the number of days an object is noncurrent before Amazon S3 can
+     * <p>Specifies the number of days an object is noncurrent before Amazon S3 can
      * perform the associated action. For information about the noncurrent days
      * calculations, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">How
      * Amazon S3 Calculates When an Object Became Noncurrent</a> in the Amazon Simple
-     * Storage Service Developer Guide.
+     * Storage Service Developer Guide.</p>
      */
     inline NoncurrentVersionExpiration& WithNoncurrentDays(int value) { SetNoncurrentDays(value); return *this;}
 

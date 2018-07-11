@@ -44,78 +44,78 @@ namespace Model
 
 
     /**
-     * A container for describing a condition that must be met for the specified
+     * <p>A container for describing a condition that must be met for the specified
      * redirect to apply. For example, 1. If request is for pages in the /docs folder,
      * redirect to the /documents folder. 2. If request results in HTTP error 4xx,
-     * redirect request to another host where you might process the error.
+     * redirect request to another host where you might process the error.</p>
      */
     inline const Condition& GetCondition() const{ return m_condition; }
 
     /**
-     * A container for describing a condition that must be met for the specified
+     * <p>A container for describing a condition that must be met for the specified
      * redirect to apply. For example, 1. If request is for pages in the /docs folder,
      * redirect to the /documents folder. 2. If request results in HTTP error 4xx,
-     * redirect request to another host where you might process the error.
+     * redirect request to another host where you might process the error.</p>
      */
     inline void SetCondition(const Condition& value) { m_conditionHasBeenSet = true; m_condition = value; }
 
     /**
-     * A container for describing a condition that must be met for the specified
+     * <p>A container for describing a condition that must be met for the specified
      * redirect to apply. For example, 1. If request is for pages in the /docs folder,
      * redirect to the /documents folder. 2. If request results in HTTP error 4xx,
-     * redirect request to another host where you might process the error.
+     * redirect request to another host where you might process the error.</p>
      */
     inline void SetCondition(Condition&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
 
     /**
-     * A container for describing a condition that must be met for the specified
+     * <p>A container for describing a condition that must be met for the specified
      * redirect to apply. For example, 1. If request is for pages in the /docs folder,
      * redirect to the /documents folder. 2. If request results in HTTP error 4xx,
-     * redirect request to another host where you might process the error.
+     * redirect request to another host where you might process the error.</p>
      */
     inline RoutingRule& WithCondition(const Condition& value) { SetCondition(value); return *this;}
 
     /**
-     * A container for describing a condition that must be met for the specified
+     * <p>A container for describing a condition that must be met for the specified
      * redirect to apply. For example, 1. If request is for pages in the /docs folder,
      * redirect to the /documents folder. 2. If request results in HTTP error 4xx,
-     * redirect request to another host where you might process the error.
+     * redirect request to another host where you might process the error.</p>
      */
     inline RoutingRule& WithCondition(Condition&& value) { SetCondition(std::move(value)); return *this;}
 
 
     /**
-     * Container for redirect information. You can redirect requests to another host,
-     * to another page, or with another protocol. In the event of an error, you can can
-     * specify a different error code to return.
+     * <p>Container for redirect information. You can redirect requests to another
+     * host, to another page, or with another protocol. In the event of an error, you
+     * can can specify a different error code to return.</p>
      */
     inline const Redirect& GetRedirect() const{ return m_redirect; }
 
     /**
-     * Container for redirect information. You can redirect requests to another host,
-     * to another page, or with another protocol. In the event of an error, you can can
-     * specify a different error code to return.
+     * <p>Container for redirect information. You can redirect requests to another
+     * host, to another page, or with another protocol. In the event of an error, you
+     * can can specify a different error code to return.</p>
      */
     inline void SetRedirect(const Redirect& value) { m_redirectHasBeenSet = true; m_redirect = value; }
 
     /**
-     * Container for redirect information. You can redirect requests to another host,
-     * to another page, or with another protocol. In the event of an error, you can can
-     * specify a different error code to return.
+     * <p>Container for redirect information. You can redirect requests to another
+     * host, to another page, or with another protocol. In the event of an error, you
+     * can can specify a different error code to return.</p>
      */
     inline void SetRedirect(Redirect&& value) { m_redirectHasBeenSet = true; m_redirect = std::move(value); }
 
     /**
-     * Container for redirect information. You can redirect requests to another host,
-     * to another page, or with another protocol. In the event of an error, you can can
-     * specify a different error code to return.
+     * <p>Container for redirect information. You can redirect requests to another
+     * host, to another page, or with another protocol. In the event of an error, you
+     * can can specify a different error code to return.</p>
      */
     inline RoutingRule& WithRedirect(const Redirect& value) { SetRedirect(value); return *this;}
 
     /**
-     * Container for redirect information. You can redirect requests to another host,
-     * to another page, or with another protocol. In the event of an error, you can can
-     * specify a different error code to return.
+     * <p>Container for redirect information. You can redirect requests to another
+     * host, to another page, or with another protocol. In the event of an error, you
+     * can can specify a different error code to return.</p>
      */
     inline RoutingRule& WithRedirect(Redirect&& value) { SetRedirect(std::move(value)); return *this;}
 

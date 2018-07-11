@@ -637,6 +637,198 @@ namespace Model
      */
     inline StepExecution& AddOverriddenParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_overriddenParametersHasBeenSet = true; m_overriddenParameters.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Enable this option to stop an Automation execution at the end of a specific
+     * step. The Automation execution stops if the step execution failed or
+     * succeeded.</p>
+     */
+    inline bool GetIsEnd() const{ return m_isEnd; }
+
+    /**
+     * <p>Enable this option to stop an Automation execution at the end of a specific
+     * step. The Automation execution stops if the step execution failed or
+     * succeeded.</p>
+     */
+    inline void SetIsEnd(bool value) { m_isEndHasBeenSet = true; m_isEnd = value; }
+
+    /**
+     * <p>Enable this option to stop an Automation execution at the end of a specific
+     * step. The Automation execution stops if the step execution failed or
+     * succeeded.</p>
+     */
+    inline StepExecution& WithIsEnd(bool value) { SetIsEnd(value); return *this;}
+
+
+    /**
+     * <p>Specifies which step in an Automation to process next after successfully
+     * completing a step. </p>
+     */
+    inline const Aws::String& GetNextStep() const{ return m_nextStep; }
+
+    /**
+     * <p>Specifies which step in an Automation to process next after successfully
+     * completing a step. </p>
+     */
+    inline void SetNextStep(const Aws::String& value) { m_nextStepHasBeenSet = true; m_nextStep = value; }
+
+    /**
+     * <p>Specifies which step in an Automation to process next after successfully
+     * completing a step. </p>
+     */
+    inline void SetNextStep(Aws::String&& value) { m_nextStepHasBeenSet = true; m_nextStep = std::move(value); }
+
+    /**
+     * <p>Specifies which step in an Automation to process next after successfully
+     * completing a step. </p>
+     */
+    inline void SetNextStep(const char* value) { m_nextStepHasBeenSet = true; m_nextStep.assign(value); }
+
+    /**
+     * <p>Specifies which step in an Automation to process next after successfully
+     * completing a step. </p>
+     */
+    inline StepExecution& WithNextStep(const Aws::String& value) { SetNextStep(value); return *this;}
+
+    /**
+     * <p>Specifies which step in an Automation to process next after successfully
+     * completing a step. </p>
+     */
+    inline StepExecution& WithNextStep(Aws::String&& value) { SetNextStep(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies which step in an Automation to process next after successfully
+     * completing a step. </p>
+     */
+    inline StepExecution& WithNextStep(const char* value) { SetNextStep(value); return *this;}
+
+
+    /**
+     * <p>Enable this option to designate a step as critical for the successful
+     * completion of the Automation. If a step with this designation fails, then
+     * Automation reports the final status of the Automation as Failed. </p>
+     */
+    inline bool GetIsCritical() const{ return m_isCritical; }
+
+    /**
+     * <p>Enable this option to designate a step as critical for the successful
+     * completion of the Automation. If a step with this designation fails, then
+     * Automation reports the final status of the Automation as Failed. </p>
+     */
+    inline void SetIsCritical(bool value) { m_isCriticalHasBeenSet = true; m_isCritical = value; }
+
+    /**
+     * <p>Enable this option to designate a step as critical for the successful
+     * completion of the Automation. If a step with this designation fails, then
+     * Automation reports the final status of the Automation as Failed. </p>
+     */
+    inline StepExecution& WithIsCritical(bool value) { SetIsCritical(value); return *this;}
+
+
+    /**
+     * <p>ValidNextSteps offer different strategies for managing an Automation workflow
+     * when a step finishes. Automation dynamically processes ValidNextSteps when a
+     * step is completed. For example, you can specify <code>Abort</code> to stop the
+     * Automation when a step fails or <code>Continue</code> to ignore the failure of
+     * the current step and allow Automation to continue processing the next step. You
+     * can also specify <code>step:<i>step_name</i> </code> to jump to a designated
+     * step after a step succeeds. The result of the current step dynamically
+     * determines the ValidNextSteps. If a step finishes and no ValidNextStep is
+     * designated, then the Automation stops.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetValidNextSteps() const{ return m_validNextSteps; }
+
+    /**
+     * <p>ValidNextSteps offer different strategies for managing an Automation workflow
+     * when a step finishes. Automation dynamically processes ValidNextSteps when a
+     * step is completed. For example, you can specify <code>Abort</code> to stop the
+     * Automation when a step fails or <code>Continue</code> to ignore the failure of
+     * the current step and allow Automation to continue processing the next step. You
+     * can also specify <code>step:<i>step_name</i> </code> to jump to a designated
+     * step after a step succeeds. The result of the current step dynamically
+     * determines the ValidNextSteps. If a step finishes and no ValidNextStep is
+     * designated, then the Automation stops.</p>
+     */
+    inline void SetValidNextSteps(const Aws::Vector<Aws::String>& value) { m_validNextStepsHasBeenSet = true; m_validNextSteps = value; }
+
+    /**
+     * <p>ValidNextSteps offer different strategies for managing an Automation workflow
+     * when a step finishes. Automation dynamically processes ValidNextSteps when a
+     * step is completed. For example, you can specify <code>Abort</code> to stop the
+     * Automation when a step fails or <code>Continue</code> to ignore the failure of
+     * the current step and allow Automation to continue processing the next step. You
+     * can also specify <code>step:<i>step_name</i> </code> to jump to a designated
+     * step after a step succeeds. The result of the current step dynamically
+     * determines the ValidNextSteps. If a step finishes and no ValidNextStep is
+     * designated, then the Automation stops.</p>
+     */
+    inline void SetValidNextSteps(Aws::Vector<Aws::String>&& value) { m_validNextStepsHasBeenSet = true; m_validNextSteps = std::move(value); }
+
+    /**
+     * <p>ValidNextSteps offer different strategies for managing an Automation workflow
+     * when a step finishes. Automation dynamically processes ValidNextSteps when a
+     * step is completed. For example, you can specify <code>Abort</code> to stop the
+     * Automation when a step fails or <code>Continue</code> to ignore the failure of
+     * the current step and allow Automation to continue processing the next step. You
+     * can also specify <code>step:<i>step_name</i> </code> to jump to a designated
+     * step after a step succeeds. The result of the current step dynamically
+     * determines the ValidNextSteps. If a step finishes and no ValidNextStep is
+     * designated, then the Automation stops.</p>
+     */
+    inline StepExecution& WithValidNextSteps(const Aws::Vector<Aws::String>& value) { SetValidNextSteps(value); return *this;}
+
+    /**
+     * <p>ValidNextSteps offer different strategies for managing an Automation workflow
+     * when a step finishes. Automation dynamically processes ValidNextSteps when a
+     * step is completed. For example, you can specify <code>Abort</code> to stop the
+     * Automation when a step fails or <code>Continue</code> to ignore the failure of
+     * the current step and allow Automation to continue processing the next step. You
+     * can also specify <code>step:<i>step_name</i> </code> to jump to a designated
+     * step after a step succeeds. The result of the current step dynamically
+     * determines the ValidNextSteps. If a step finishes and no ValidNextStep is
+     * designated, then the Automation stops.</p>
+     */
+    inline StepExecution& WithValidNextSteps(Aws::Vector<Aws::String>&& value) { SetValidNextSteps(std::move(value)); return *this;}
+
+    /**
+     * <p>ValidNextSteps offer different strategies for managing an Automation workflow
+     * when a step finishes. Automation dynamically processes ValidNextSteps when a
+     * step is completed. For example, you can specify <code>Abort</code> to stop the
+     * Automation when a step fails or <code>Continue</code> to ignore the failure of
+     * the current step and allow Automation to continue processing the next step. You
+     * can also specify <code>step:<i>step_name</i> </code> to jump to a designated
+     * step after a step succeeds. The result of the current step dynamically
+     * determines the ValidNextSteps. If a step finishes and no ValidNextStep is
+     * designated, then the Automation stops.</p>
+     */
+    inline StepExecution& AddValidNextSteps(const Aws::String& value) { m_validNextStepsHasBeenSet = true; m_validNextSteps.push_back(value); return *this; }
+
+    /**
+     * <p>ValidNextSteps offer different strategies for managing an Automation workflow
+     * when a step finishes. Automation dynamically processes ValidNextSteps when a
+     * step is completed. For example, you can specify <code>Abort</code> to stop the
+     * Automation when a step fails or <code>Continue</code> to ignore the failure of
+     * the current step and allow Automation to continue processing the next step. You
+     * can also specify <code>step:<i>step_name</i> </code> to jump to a designated
+     * step after a step succeeds. The result of the current step dynamically
+     * determines the ValidNextSteps. If a step finishes and no ValidNextStep is
+     * designated, then the Automation stops.</p>
+     */
+    inline StepExecution& AddValidNextSteps(Aws::String&& value) { m_validNextStepsHasBeenSet = true; m_validNextSteps.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>ValidNextSteps offer different strategies for managing an Automation workflow
+     * when a step finishes. Automation dynamically processes ValidNextSteps when a
+     * step is completed. For example, you can specify <code>Abort</code> to stop the
+     * Automation when a step fails or <code>Continue</code> to ignore the failure of
+     * the current step and allow Automation to continue processing the next step. You
+     * can also specify <code>step:<i>step_name</i> </code> to jump to a designated
+     * step after a step succeeds. The result of the current step dynamically
+     * determines the ValidNextSteps. If a step finishes and no ValidNextStep is
+     * designated, then the Automation stops.</p>
+     */
+    inline StepExecution& AddValidNextSteps(const char* value) { m_validNextStepsHasBeenSet = true; m_validNextSteps.push_back(value); return *this; }
+
   private:
 
     Aws::String m_stepName;
@@ -686,6 +878,18 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_overriddenParameters;
     bool m_overriddenParametersHasBeenSet;
+
+    bool m_isEnd;
+    bool m_isEndHasBeenSet;
+
+    Aws::String m_nextStep;
+    bool m_nextStepHasBeenSet;
+
+    bool m_isCritical;
+    bool m_isCriticalHasBeenSet;
+
+    Aws::Vector<Aws::String> m_validNextSteps;
+    bool m_validNextStepsHasBeenSet;
   };
 
 } // namespace Model

@@ -43,27 +43,27 @@ namespace Model
 
 
     /**
-     * Specifies who pays for the download and request fees.
+     * <p>Specifies who pays for the download and request fees.</p>
      */
     inline const Payer& GetPayer() const{ return m_payer; }
 
     /**
-     * Specifies who pays for the download and request fees.
+     * <p>Specifies who pays for the download and request fees.</p>
      */
     inline void SetPayer(const Payer& value) { m_payer = value; }
 
     /**
-     * Specifies who pays for the download and request fees.
+     * <p>Specifies who pays for the download and request fees.</p>
      */
     inline void SetPayer(Payer&& value) { m_payer = std::move(value); }
 
     /**
-     * Specifies who pays for the download and request fees.
+     * <p>Specifies who pays for the download and request fees.</p>
      */
     inline GetBucketRequestPaymentResult& WithPayer(const Payer& value) { SetPayer(value); return *this;}
 
     /**
-     * Specifies who pays for the download and request fees.
+     * <p>Specifies who pays for the download and request fees.</p>
      */
     inline GetBucketRequestPaymentResult& WithPayer(Payer&& value) { SetPayer(std::move(value)); return *this;}
 

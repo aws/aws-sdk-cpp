@@ -43,27 +43,27 @@ namespace Model
 
 
     /**
-     * Specifies the metrics configuration.
+     * <p>Specifies the metrics configuration.</p>
      */
     inline const MetricsConfiguration& GetMetricsConfiguration() const{ return m_metricsConfiguration; }
 
     /**
-     * Specifies the metrics configuration.
+     * <p>Specifies the metrics configuration.</p>
      */
     inline void SetMetricsConfiguration(const MetricsConfiguration& value) { m_metricsConfiguration = value; }
 
     /**
-     * Specifies the metrics configuration.
+     * <p>Specifies the metrics configuration.</p>
      */
     inline void SetMetricsConfiguration(MetricsConfiguration&& value) { m_metricsConfiguration = std::move(value); }
 
     /**
-     * Specifies the metrics configuration.
+     * <p>Specifies the metrics configuration.</p>
      */
     inline GetBucketMetricsConfigurationResult& WithMetricsConfiguration(const MetricsConfiguration& value) { SetMetricsConfiguration(value); return *this;}
 
     /**
-     * Specifies the metrics configuration.
+     * <p>Specifies the metrics configuration.</p>
      */
     inline GetBucketMetricsConfigurationResult& WithMetricsConfiguration(MetricsConfiguration&& value) { SetMetricsConfiguration(std::move(value)); return *this;}
 

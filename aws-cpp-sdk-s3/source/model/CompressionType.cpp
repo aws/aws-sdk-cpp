@@ -32,6 +32,7 @@ namespace Aws
 
         static const int NONE_HASH = HashingUtils::HashString("NONE");
         static const int GZIP_HASH = HashingUtils::HashString("GZIP");
+        static const int BZIP2_HASH = HashingUtils::HashString("BZIP2");
 
 
         CompressionType GetCompressionTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == GZIP_HASH)
           {
             return CompressionType::GZIP;
+          }
+          else if (hashCode == BZIP2_HASH)
+          {
+            return CompressionType::BZIP2;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "NONE";
           case CompressionType::GZIP:
             return "GZIP";
+          case CompressionType::BZIP2:
+            return "BZIP2";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

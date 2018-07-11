@@ -43,27 +43,27 @@ namespace Model
 
 
     /**
-     * The type of JSON. Valid values: Document, Lines.
+     * <p>The type of JSON. Valid values: Document, Lines.</p>
      */
     inline const JSONType& GetType() const{ return m_type; }
 
     /**
-     * The type of JSON. Valid values: Document, Lines.
+     * <p>The type of JSON. Valid values: Document, Lines.</p>
      */
     inline void SetType(const JSONType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * The type of JSON. Valid values: Document, Lines.
+     * <p>The type of JSON. Valid values: Document, Lines.</p>
      */
     inline void SetType(JSONType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * The type of JSON. Valid values: Document, Lines.
+     * <p>The type of JSON. Valid values: Document, Lines.</p>
      */
     inline JSONInput& WithType(const JSONType& value) { SetType(value); return *this;}
 
     /**
-     * The type of JSON. Valid values: Document, Lines.
+     * <p>The type of JSON. Valid values: Document, Lines.</p>
      */
     inline JSONInput& WithType(JSONType&& value) { SetType(std::move(value)); return *this;}
 

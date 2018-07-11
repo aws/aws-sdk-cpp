@@ -36,7 +36,7 @@ namespace Model
 {
 
   /**
-   * Container for information about a particular replication rule.<p><h3>See
+   * <p>Container for information about a particular replication rule.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ReplicationRule">AWS
    * API Reference</a></p>
@@ -52,165 +52,177 @@ namespace Model
 
 
     /**
-     * Unique identifier for the rule. The value cannot be longer than 255 characters.
+     * <p>Unique identifier for the rule. The value cannot be longer than 255
+     * characters.</p>
      */
     inline const Aws::String& GetID() const{ return m_iD; }
 
     /**
-     * Unique identifier for the rule. The value cannot be longer than 255 characters.
+     * <p>Unique identifier for the rule. The value cannot be longer than 255
+     * characters.</p>
      */
     inline void SetID(const Aws::String& value) { m_iDHasBeenSet = true; m_iD = value; }
 
     /**
-     * Unique identifier for the rule. The value cannot be longer than 255 characters.
+     * <p>Unique identifier for the rule. The value cannot be longer than 255
+     * characters.</p>
      */
     inline void SetID(Aws::String&& value) { m_iDHasBeenSet = true; m_iD = std::move(value); }
 
     /**
-     * Unique identifier for the rule. The value cannot be longer than 255 characters.
+     * <p>Unique identifier for the rule. The value cannot be longer than 255
+     * characters.</p>
      */
     inline void SetID(const char* value) { m_iDHasBeenSet = true; m_iD.assign(value); }
 
     /**
-     * Unique identifier for the rule. The value cannot be longer than 255 characters.
+     * <p>Unique identifier for the rule. The value cannot be longer than 255
+     * characters.</p>
      */
     inline ReplicationRule& WithID(const Aws::String& value) { SetID(value); return *this;}
 
     /**
-     * Unique identifier for the rule. The value cannot be longer than 255 characters.
+     * <p>Unique identifier for the rule. The value cannot be longer than 255
+     * characters.</p>
      */
     inline ReplicationRule& WithID(Aws::String&& value) { SetID(std::move(value)); return *this;}
 
     /**
-     * Unique identifier for the rule. The value cannot be longer than 255 characters.
+     * <p>Unique identifier for the rule. The value cannot be longer than 255
+     * characters.</p>
      */
     inline ReplicationRule& WithID(const char* value) { SetID(value); return *this;}
 
 
     /**
-     * Object keyname prefix identifying one or more objects to which the rule applies.
-     * Maximum prefix length can be up to 1,024 characters. Overlapping prefixes are
-     * not supported.
+     * <p>Object keyname prefix identifying one or more objects to which the rule
+     * applies. Maximum prefix length can be up to 1,024 characters. Overlapping
+     * prefixes are not supported.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
-     * Object keyname prefix identifying one or more objects to which the rule applies.
-     * Maximum prefix length can be up to 1,024 characters. Overlapping prefixes are
-     * not supported.
+     * <p>Object keyname prefix identifying one or more objects to which the rule
+     * applies. Maximum prefix length can be up to 1,024 characters. Overlapping
+     * prefixes are not supported.</p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
-     * Object keyname prefix identifying one or more objects to which the rule applies.
-     * Maximum prefix length can be up to 1,024 characters. Overlapping prefixes are
-     * not supported.
+     * <p>Object keyname prefix identifying one or more objects to which the rule
+     * applies. Maximum prefix length can be up to 1,024 characters. Overlapping
+     * prefixes are not supported.</p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
-     * Object keyname prefix identifying one or more objects to which the rule applies.
-     * Maximum prefix length can be up to 1,024 characters. Overlapping prefixes are
-     * not supported.
+     * <p>Object keyname prefix identifying one or more objects to which the rule
+     * applies. Maximum prefix length can be up to 1,024 characters. Overlapping
+     * prefixes are not supported.</p>
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
     /**
-     * Object keyname prefix identifying one or more objects to which the rule applies.
-     * Maximum prefix length can be up to 1,024 characters. Overlapping prefixes are
-     * not supported.
+     * <p>Object keyname prefix identifying one or more objects to which the rule
+     * applies. Maximum prefix length can be up to 1,024 characters. Overlapping
+     * prefixes are not supported.</p>
      */
     inline ReplicationRule& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
-     * Object keyname prefix identifying one or more objects to which the rule applies.
-     * Maximum prefix length can be up to 1,024 characters. Overlapping prefixes are
-     * not supported.
+     * <p>Object keyname prefix identifying one or more objects to which the rule
+     * applies. Maximum prefix length can be up to 1,024 characters. Overlapping
+     * prefixes are not supported.</p>
      */
     inline ReplicationRule& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
-     * Object keyname prefix identifying one or more objects to which the rule applies.
-     * Maximum prefix length can be up to 1,024 characters. Overlapping prefixes are
-     * not supported.
+     * <p>Object keyname prefix identifying one or more objects to which the rule
+     * applies. Maximum prefix length can be up to 1,024 characters. Overlapping
+     * prefixes are not supported.</p>
      */
     inline ReplicationRule& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
 
     /**
-     * The rule is ignored if status is not Enabled.
+     * <p>The rule is ignored if status is not Enabled.</p>
      */
     inline const ReplicationRuleStatus& GetStatus() const{ return m_status; }
 
     /**
-     * The rule is ignored if status is not Enabled.
+     * <p>The rule is ignored if status is not Enabled.</p>
      */
     inline void SetStatus(const ReplicationRuleStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * The rule is ignored if status is not Enabled.
+     * <p>The rule is ignored if status is not Enabled.</p>
      */
     inline void SetStatus(ReplicationRuleStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * The rule is ignored if status is not Enabled.
+     * <p>The rule is ignored if status is not Enabled.</p>
      */
     inline ReplicationRule& WithStatus(const ReplicationRuleStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * The rule is ignored if status is not Enabled.
+     * <p>The rule is ignored if status is not Enabled.</p>
      */
     inline ReplicationRule& WithStatus(ReplicationRuleStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
-     * Container for filters that define which source objects should be replicated.
+     * <p>Container for filters that define which source objects should be
+     * replicated.</p>
      */
     inline const SourceSelectionCriteria& GetSourceSelectionCriteria() const{ return m_sourceSelectionCriteria; }
 
     /**
-     * Container for filters that define which source objects should be replicated.
+     * <p>Container for filters that define which source objects should be
+     * replicated.</p>
      */
     inline void SetSourceSelectionCriteria(const SourceSelectionCriteria& value) { m_sourceSelectionCriteriaHasBeenSet = true; m_sourceSelectionCriteria = value; }
 
     /**
-     * Container for filters that define which source objects should be replicated.
+     * <p>Container for filters that define which source objects should be
+     * replicated.</p>
      */
     inline void SetSourceSelectionCriteria(SourceSelectionCriteria&& value) { m_sourceSelectionCriteriaHasBeenSet = true; m_sourceSelectionCriteria = std::move(value); }
 
     /**
-     * Container for filters that define which source objects should be replicated.
+     * <p>Container for filters that define which source objects should be
+     * replicated.</p>
      */
     inline ReplicationRule& WithSourceSelectionCriteria(const SourceSelectionCriteria& value) { SetSourceSelectionCriteria(value); return *this;}
 
     /**
-     * Container for filters that define which source objects should be replicated.
+     * <p>Container for filters that define which source objects should be
+     * replicated.</p>
      */
     inline ReplicationRule& WithSourceSelectionCriteria(SourceSelectionCriteria&& value) { SetSourceSelectionCriteria(std::move(value)); return *this;}
 
 
     /**
-     * Container for replication destination information.
+     * <p>Container for replication destination information.</p>
      */
     inline const Destination& GetDestination() const{ return m_destination; }
 
     /**
-     * Container for replication destination information.
+     * <p>Container for replication destination information.</p>
      */
     inline void SetDestination(const Destination& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
-     * Container for replication destination information.
+     * <p>Container for replication destination information.</p>
      */
     inline void SetDestination(Destination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
     /**
-     * Container for replication destination information.
+     * <p>Container for replication destination information.</p>
      */
     inline ReplicationRule& WithDestination(const Destination& value) { SetDestination(value); return *this;}
 
     /**
-     * Container for replication destination information.
+     * <p>Container for replication destination information.</p>
      */
     inline ReplicationRule& WithDestination(Destination&& value) { SetDestination(std::move(value)); return *this;}
 

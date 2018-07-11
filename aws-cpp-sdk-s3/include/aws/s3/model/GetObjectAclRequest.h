@@ -97,37 +97,37 @@ namespace Model
 
 
     /**
-     * VersionId used to reference a specific version of the object.
+     * <p>VersionId used to reference a specific version of the object.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
     /**
-     * VersionId used to reference a specific version of the object.
+     * <p>VersionId used to reference a specific version of the object.</p>
      */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /**
-     * VersionId used to reference a specific version of the object.
+     * <p>VersionId used to reference a specific version of the object.</p>
      */
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
 
     /**
-     * VersionId used to reference a specific version of the object.
+     * <p>VersionId used to reference a specific version of the object.</p>
      */
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
 
     /**
-     * VersionId used to reference a specific version of the object.
+     * <p>VersionId used to reference a specific version of the object.</p>
      */
     inline GetObjectAclRequest& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     /**
-     * VersionId used to reference a specific version of the object.
+     * <p>VersionId used to reference a specific version of the object.</p>
      */
     inline GetObjectAclRequest& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
-     * VersionId used to reference a specific version of the object.
+     * <p>VersionId used to reference a specific version of the object.</p>
      */
     inline GetObjectAclRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 

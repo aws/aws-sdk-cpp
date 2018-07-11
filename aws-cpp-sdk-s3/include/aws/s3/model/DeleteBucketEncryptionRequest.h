@@ -50,44 +50,44 @@ namespace Model
 
 
     /**
-     * The name of the bucket containing the server-side encryption configuration to
-     * delete.
+     * <p>The name of the bucket containing the server-side encryption configuration to
+     * delete.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * The name of the bucket containing the server-side encryption configuration to
-     * delete.
+     * <p>The name of the bucket containing the server-side encryption configuration to
+     * delete.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * The name of the bucket containing the server-side encryption configuration to
-     * delete.
+     * <p>The name of the bucket containing the server-side encryption configuration to
+     * delete.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * The name of the bucket containing the server-side encryption configuration to
-     * delete.
+     * <p>The name of the bucket containing the server-side encryption configuration to
+     * delete.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * The name of the bucket containing the server-side encryption configuration to
-     * delete.
+     * <p>The name of the bucket containing the server-side encryption configuration to
+     * delete.</p>
      */
     inline DeleteBucketEncryptionRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * The name of the bucket containing the server-side encryption configuration to
-     * delete.
+     * <p>The name of the bucket containing the server-side encryption configuration to
+     * delete.</p>
      */
     inline DeleteBucketEncryptionRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * The name of the bucket containing the server-side encryption configuration to
-     * delete.
+     * <p>The name of the bucket containing the server-side encryption configuration to
+     * delete.</p>
      */
     inline DeleteBucketEncryptionRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 

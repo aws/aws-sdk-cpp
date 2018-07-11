@@ -50,73 +50,80 @@ namespace Model
 
 
     /**
-     * The name of the bucket from which an analytics configuration is retrieved.
+     * <p>The name of the bucket from which an analytics configuration is
+     * retrieved.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * The name of the bucket from which an analytics configuration is retrieved.
+     * <p>The name of the bucket from which an analytics configuration is
+     * retrieved.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * The name of the bucket from which an analytics configuration is retrieved.
+     * <p>The name of the bucket from which an analytics configuration is
+     * retrieved.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * The name of the bucket from which an analytics configuration is retrieved.
+     * <p>The name of the bucket from which an analytics configuration is
+     * retrieved.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * The name of the bucket from which an analytics configuration is retrieved.
+     * <p>The name of the bucket from which an analytics configuration is
+     * retrieved.</p>
      */
     inline GetBucketAnalyticsConfigurationRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * The name of the bucket from which an analytics configuration is retrieved.
+     * <p>The name of the bucket from which an analytics configuration is
+     * retrieved.</p>
      */
     inline GetBucketAnalyticsConfigurationRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * The name of the bucket from which an analytics configuration is retrieved.
+     * <p>The name of the bucket from which an analytics configuration is
+     * retrieved.</p>
      */
     inline GetBucketAnalyticsConfigurationRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
     /**
-     * The identifier used to represent an analytics configuration.
+     * <p>The identifier used to represent an analytics configuration.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * The identifier used to represent an analytics configuration.
+     * <p>The identifier used to represent an analytics configuration.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * The identifier used to represent an analytics configuration.
+     * <p>The identifier used to represent an analytics configuration.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * The identifier used to represent an analytics configuration.
+     * <p>The identifier used to represent an analytics configuration.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * The identifier used to represent an analytics configuration.
+     * <p>The identifier used to represent an analytics configuration.</p>
      */
     inline GetBucketAnalyticsConfigurationRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * The identifier used to represent an analytics configuration.
+     * <p>The identifier used to represent an analytics configuration.</p>
      */
     inline GetBucketAnalyticsConfigurationRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * The identifier used to represent an analytics configuration.
+     * <p>The identifier used to represent an analytics configuration.</p>
      */
     inline GetBucketAnalyticsConfigurationRequest& WithId(const char* value) { SetId(value); return *this;}
 

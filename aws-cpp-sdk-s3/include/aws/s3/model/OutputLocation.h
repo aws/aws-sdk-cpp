@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * Describes the location where the restore job's output is stored.<p><h3>See
-   * Also:</h3>   <a
+   * <p>Describes the location where the restore job's output is
+   * stored.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/OutputLocation">AWS
    * API Reference</a></p>
    */
@@ -49,27 +49,32 @@ namespace Model
 
 
     /**
-     * Describes an S3 location that will receive the results of the restore request.
+     * <p>Describes an S3 location that will receive the results of the restore
+     * request.</p>
      */
     inline const S3Location& GetS3() const{ return m_s3; }
 
     /**
-     * Describes an S3 location that will receive the results of the restore request.
+     * <p>Describes an S3 location that will receive the results of the restore
+     * request.</p>
      */
     inline void SetS3(const S3Location& value) { m_s3HasBeenSet = true; m_s3 = value; }
 
     /**
-     * Describes an S3 location that will receive the results of the restore request.
+     * <p>Describes an S3 location that will receive the results of the restore
+     * request.</p>
      */
     inline void SetS3(S3Location&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
 
     /**
-     * Describes an S3 location that will receive the results of the restore request.
+     * <p>Describes an S3 location that will receive the results of the restore
+     * request.</p>
      */
     inline OutputLocation& WithS3(const S3Location& value) { SetS3(value); return *this;}
 
     /**
-     * Describes an S3 location that will receive the results of the restore request.
+     * <p>Describes an S3 location that will receive the results of the restore
+     * request.</p>
      */
     inline OutputLocation& WithS3(S3Location&& value) { SetS3(std::move(value)); return *this;}
 

@@ -44,77 +44,77 @@ namespace Model
 
 
     /**
-     * Indicates at what date the object is to be moved or deleted. Should be in GMT
-     * ISO 8601 Format.
+     * <p>Indicates at what date the object is to be moved or deleted. Should be in GMT
+     * ISO 8601 Format.</p>
      */
     inline const Aws::Utils::DateTime& GetDate() const{ return m_date; }
 
     /**
-     * Indicates at what date the object is to be moved or deleted. Should be in GMT
-     * ISO 8601 Format.
+     * <p>Indicates at what date the object is to be moved or deleted. Should be in GMT
+     * ISO 8601 Format.</p>
      */
     inline void SetDate(const Aws::Utils::DateTime& value) { m_dateHasBeenSet = true; m_date = value; }
 
     /**
-     * Indicates at what date the object is to be moved or deleted. Should be in GMT
-     * ISO 8601 Format.
+     * <p>Indicates at what date the object is to be moved or deleted. Should be in GMT
+     * ISO 8601 Format.</p>
      */
     inline void SetDate(Aws::Utils::DateTime&& value) { m_dateHasBeenSet = true; m_date = std::move(value); }
 
     /**
-     * Indicates at what date the object is to be moved or deleted. Should be in GMT
-     * ISO 8601 Format.
+     * <p>Indicates at what date the object is to be moved or deleted. Should be in GMT
+     * ISO 8601 Format.</p>
      */
     inline Transition& WithDate(const Aws::Utils::DateTime& value) { SetDate(value); return *this;}
 
     /**
-     * Indicates at what date the object is to be moved or deleted. Should be in GMT
-     * ISO 8601 Format.
+     * <p>Indicates at what date the object is to be moved or deleted. Should be in GMT
+     * ISO 8601 Format.</p>
      */
     inline Transition& WithDate(Aws::Utils::DateTime&& value) { SetDate(std::move(value)); return *this;}
 
 
     /**
-     * Indicates the lifetime, in days, of the objects that are subject to the rule.
-     * The value must be a non-zero positive integer.
+     * <p>Indicates the lifetime, in days, of the objects that are subject to the rule.
+     * The value must be a non-zero positive integer.</p>
      */
     inline int GetDays() const{ return m_days; }
 
     /**
-     * Indicates the lifetime, in days, of the objects that are subject to the rule.
-     * The value must be a non-zero positive integer.
+     * <p>Indicates the lifetime, in days, of the objects that are subject to the rule.
+     * The value must be a non-zero positive integer.</p>
      */
     inline void SetDays(int value) { m_daysHasBeenSet = true; m_days = value; }
 
     /**
-     * Indicates the lifetime, in days, of the objects that are subject to the rule.
-     * The value must be a non-zero positive integer.
+     * <p>Indicates the lifetime, in days, of the objects that are subject to the rule.
+     * The value must be a non-zero positive integer.</p>
      */
     inline Transition& WithDays(int value) { SetDays(value); return *this;}
 
 
     /**
-     * The class of storage used to store the object.
+     * <p>The class of storage used to store the object.</p>
      */
     inline const TransitionStorageClass& GetStorageClass() const{ return m_storageClass; }
 
     /**
-     * The class of storage used to store the object.
+     * <p>The class of storage used to store the object.</p>
      */
     inline void SetStorageClass(const TransitionStorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
 
     /**
-     * The class of storage used to store the object.
+     * <p>The class of storage used to store the object.</p>
      */
     inline void SetStorageClass(TransitionStorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
 
     /**
-     * The class of storage used to store the object.
+     * <p>The class of storage used to store the object.</p>
      */
     inline Transition& WithStorageClass(const TransitionStorageClass& value) { SetStorageClass(value); return *this;}
 
     /**
-     * The class of storage used to store the object.
+     * <p>The class of storage used to store the object.</p>
      */
     inline Transition& WithStorageClass(TransitionStorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 

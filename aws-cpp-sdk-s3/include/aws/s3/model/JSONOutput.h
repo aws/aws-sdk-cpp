@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * The value used to separate individual records in the output.
+     * <p>The value used to separate individual records in the output.</p>
      */
     inline const Aws::String& GetRecordDelimiter() const{ return m_recordDelimiter; }
 
     /**
-     * The value used to separate individual records in the output.
+     * <p>The value used to separate individual records in the output.</p>
      */
     inline void SetRecordDelimiter(const Aws::String& value) { m_recordDelimiterHasBeenSet = true; m_recordDelimiter = value; }
 
     /**
-     * The value used to separate individual records in the output.
+     * <p>The value used to separate individual records in the output.</p>
      */
     inline void SetRecordDelimiter(Aws::String&& value) { m_recordDelimiterHasBeenSet = true; m_recordDelimiter = std::move(value); }
 
     /**
-     * The value used to separate individual records in the output.
+     * <p>The value used to separate individual records in the output.</p>
      */
     inline void SetRecordDelimiter(const char* value) { m_recordDelimiterHasBeenSet = true; m_recordDelimiter.assign(value); }
 
     /**
-     * The value used to separate individual records in the output.
+     * <p>The value used to separate individual records in the output.</p>
      */
     inline JSONOutput& WithRecordDelimiter(const Aws::String& value) { SetRecordDelimiter(value); return *this;}
 
     /**
-     * The value used to separate individual records in the output.
+     * <p>The value used to separate individual records in the output.</p>
      */
     inline JSONOutput& WithRecordDelimiter(Aws::String&& value) { SetRecordDelimiter(std::move(value)); return *this;}
 
     /**
-     * The value used to separate individual records in the output.
+     * <p>The value used to separate individual records in the output.</p>
      */
     inline JSONOutput& WithRecordDelimiter(const char* value) { SetRecordDelimiter(value); return *this;}
 

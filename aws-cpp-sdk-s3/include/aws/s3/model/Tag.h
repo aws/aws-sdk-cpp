@@ -43,73 +43,73 @@ namespace Model
 
 
     /**
-     * Name of the tag.
+     * <p>Name of the tag.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * Name of the tag.
+     * <p>Name of the tag.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * Name of the tag.
+     * <p>Name of the tag.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * Name of the tag.
+     * <p>Name of the tag.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * Name of the tag.
+     * <p>Name of the tag.</p>
      */
     inline Tag& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * Name of the tag.
+     * <p>Name of the tag.</p>
      */
     inline Tag& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * Name of the tag.
+     * <p>Name of the tag.</p>
      */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
 
 
     /**
-     * Value of the tag.
+     * <p>Value of the tag.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * Value of the tag.
+     * <p>Value of the tag.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * Value of the tag.
+     * <p>Value of the tag.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * Value of the tag.
+     * <p>Value of the tag.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * Value of the tag.
+     * <p>Value of the tag.</p>
      */
     inline Tag& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * Value of the tag.
+     * <p>Value of the tag.</p>
      */
     inline Tag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * Value of the tag.
+     * <p>Value of the tag.</p>
      */
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
 

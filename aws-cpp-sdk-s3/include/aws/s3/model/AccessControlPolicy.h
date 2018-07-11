@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * A list of grants.
+     * <p>A list of grants.</p>
      */
     inline const Aws::Vector<Grant>& GetGrants() const{ return m_grants; }
 
     /**
-     * A list of grants.
+     * <p>A list of grants.</p>
      */
     inline void SetGrants(const Aws::Vector<Grant>& value) { m_grantsHasBeenSet = true; m_grants = value; }
 
     /**
-     * A list of grants.
+     * <p>A list of grants.</p>
      */
     inline void SetGrants(Aws::Vector<Grant>&& value) { m_grantsHasBeenSet = true; m_grants = std::move(value); }
 
     /**
-     * A list of grants.
+     * <p>A list of grants.</p>
      */
     inline AccessControlPolicy& WithGrants(const Aws::Vector<Grant>& value) { SetGrants(value); return *this;}
 
     /**
-     * A list of grants.
+     * <p>A list of grants.</p>
      */
     inline AccessControlPolicy& WithGrants(Aws::Vector<Grant>&& value) { SetGrants(std::move(value)); return *this;}
 
     /**
-     * A list of grants.
+     * <p>A list of grants.</p>
      */
     inline AccessControlPolicy& AddGrants(const Grant& value) { m_grantsHasBeenSet = true; m_grants.push_back(value); return *this; }
 
     /**
-     * A list of grants.
+     * <p>A list of grants.</p>
      */
     inline AccessControlPolicy& AddGrants(Grant&& value) { m_grantsHasBeenSet = true; m_grants.push_back(std::move(value)); return *this; }
 

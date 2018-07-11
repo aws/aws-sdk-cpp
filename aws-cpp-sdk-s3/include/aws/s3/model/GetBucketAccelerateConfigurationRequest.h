@@ -50,37 +50,37 @@ namespace Model
 
 
     /**
-     * Name of the bucket for which the accelerate configuration is retrieved.
+     * <p>Name of the bucket for which the accelerate configuration is retrieved.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * Name of the bucket for which the accelerate configuration is retrieved.
+     * <p>Name of the bucket for which the accelerate configuration is retrieved.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * Name of the bucket for which the accelerate configuration is retrieved.
+     * <p>Name of the bucket for which the accelerate configuration is retrieved.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * Name of the bucket for which the accelerate configuration is retrieved.
+     * <p>Name of the bucket for which the accelerate configuration is retrieved.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * Name of the bucket for which the accelerate configuration is retrieved.
+     * <p>Name of the bucket for which the accelerate configuration is retrieved.</p>
      */
     inline GetBucketAccelerateConfigurationRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * Name of the bucket for which the accelerate configuration is retrieved.
+     * <p>Name of the bucket for which the accelerate configuration is retrieved.</p>
      */
     inline GetBucketAccelerateConfigurationRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * Name of the bucket for which the accelerate configuration is retrieved.
+     * <p>Name of the bucket for which the accelerate configuration is retrieved.</p>
      */
     inline GetBucketAccelerateConfigurationRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 

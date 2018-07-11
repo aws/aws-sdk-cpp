@@ -16,6 +16,8 @@
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/apigateway/model/ThrottleSettings.h>
 #include <utility>
 
 namespace Aws
@@ -118,6 +120,73 @@ namespace Model
      */
     inline ApiStage& WithStage(const char* value) { SetStage(value); return *this;}
 
+
+    /**
+     * <p>Map containing method level throttling information for API stage in a usage
+     * plan.</p>
+     */
+    inline const Aws::Map<Aws::String, ThrottleSettings>& GetThrottle() const{ return m_throttle; }
+
+    /**
+     * <p>Map containing method level throttling information for API stage in a usage
+     * plan.</p>
+     */
+    inline void SetThrottle(const Aws::Map<Aws::String, ThrottleSettings>& value) { m_throttleHasBeenSet = true; m_throttle = value; }
+
+    /**
+     * <p>Map containing method level throttling information for API stage in a usage
+     * plan.</p>
+     */
+    inline void SetThrottle(Aws::Map<Aws::String, ThrottleSettings>&& value) { m_throttleHasBeenSet = true; m_throttle = std::move(value); }
+
+    /**
+     * <p>Map containing method level throttling information for API stage in a usage
+     * plan.</p>
+     */
+    inline ApiStage& WithThrottle(const Aws::Map<Aws::String, ThrottleSettings>& value) { SetThrottle(value); return *this;}
+
+    /**
+     * <p>Map containing method level throttling information for API stage in a usage
+     * plan.</p>
+     */
+    inline ApiStage& WithThrottle(Aws::Map<Aws::String, ThrottleSettings>&& value) { SetThrottle(std::move(value)); return *this;}
+
+    /**
+     * <p>Map containing method level throttling information for API stage in a usage
+     * plan.</p>
+     */
+    inline ApiStage& AddThrottle(const Aws::String& key, const ThrottleSettings& value) { m_throttleHasBeenSet = true; m_throttle.emplace(key, value); return *this; }
+
+    /**
+     * <p>Map containing method level throttling information for API stage in a usage
+     * plan.</p>
+     */
+    inline ApiStage& AddThrottle(Aws::String&& key, const ThrottleSettings& value) { m_throttleHasBeenSet = true; m_throttle.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Map containing method level throttling information for API stage in a usage
+     * plan.</p>
+     */
+    inline ApiStage& AddThrottle(const Aws::String& key, ThrottleSettings&& value) { m_throttleHasBeenSet = true; m_throttle.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Map containing method level throttling information for API stage in a usage
+     * plan.</p>
+     */
+    inline ApiStage& AddThrottle(Aws::String&& key, ThrottleSettings&& value) { m_throttleHasBeenSet = true; m_throttle.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Map containing method level throttling information for API stage in a usage
+     * plan.</p>
+     */
+    inline ApiStage& AddThrottle(const char* key, ThrottleSettings&& value) { m_throttleHasBeenSet = true; m_throttle.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Map containing method level throttling information for API stage in a usage
+     * plan.</p>
+     */
+    inline ApiStage& AddThrottle(const char* key, const ThrottleSettings& value) { m_throttleHasBeenSet = true; m_throttle.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_apiId;
@@ -125,6 +194,9 @@ namespace Model
 
     Aws::String m_stage;
     bool m_stageHasBeenSet;
+
+    Aws::Map<Aws::String, ThrottleSettings> m_throttle;
+    bool m_throttleHasBeenSet;
   };
 
 } // namespace Model

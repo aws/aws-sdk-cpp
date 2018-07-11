@@ -35,7 +35,8 @@ namespace Model
 {
 
   /**
-   * Describes the serialization format of the object.<p><h3>See Also:</h3>   <a
+   * <p>Describes the serialization format of the object.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/InputSerialization">AWS
    * API Reference</a></p>
    */
@@ -50,84 +51,84 @@ namespace Model
 
 
     /**
-     * Describes the serialization of a CSV-encoded object.
+     * <p>Describes the serialization of a CSV-encoded object.</p>
      */
     inline const CSVInput& GetCSV() const{ return m_cSV; }
 
     /**
-     * Describes the serialization of a CSV-encoded object.
+     * <p>Describes the serialization of a CSV-encoded object.</p>
      */
     inline void SetCSV(const CSVInput& value) { m_cSVHasBeenSet = true; m_cSV = value; }
 
     /**
-     * Describes the serialization of a CSV-encoded object.
+     * <p>Describes the serialization of a CSV-encoded object.</p>
      */
     inline void SetCSV(CSVInput&& value) { m_cSVHasBeenSet = true; m_cSV = std::move(value); }
 
     /**
-     * Describes the serialization of a CSV-encoded object.
+     * <p>Describes the serialization of a CSV-encoded object.</p>
      */
     inline InputSerialization& WithCSV(const CSVInput& value) { SetCSV(value); return *this;}
 
     /**
-     * Describes the serialization of a CSV-encoded object.
+     * <p>Describes the serialization of a CSV-encoded object.</p>
      */
     inline InputSerialization& WithCSV(CSVInput&& value) { SetCSV(std::move(value)); return *this;}
 
 
     /**
-     * Specifies object's compression format. Valid values: NONE, GZIP. Default Value:
-     * NONE.
+     * <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2.
+     * Default Value: NONE.</p>
      */
     inline const CompressionType& GetCompressionType() const{ return m_compressionType; }
 
     /**
-     * Specifies object's compression format. Valid values: NONE, GZIP. Default Value:
-     * NONE.
+     * <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2.
+     * Default Value: NONE.</p>
      */
     inline void SetCompressionType(const CompressionType& value) { m_compressionTypeHasBeenSet = true; m_compressionType = value; }
 
     /**
-     * Specifies object's compression format. Valid values: NONE, GZIP. Default Value:
-     * NONE.
+     * <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2.
+     * Default Value: NONE.</p>
      */
     inline void SetCompressionType(CompressionType&& value) { m_compressionTypeHasBeenSet = true; m_compressionType = std::move(value); }
 
     /**
-     * Specifies object's compression format. Valid values: NONE, GZIP. Default Value:
-     * NONE.
+     * <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2.
+     * Default Value: NONE.</p>
      */
     inline InputSerialization& WithCompressionType(const CompressionType& value) { SetCompressionType(value); return *this;}
 
     /**
-     * Specifies object's compression format. Valid values: NONE, GZIP. Default Value:
-     * NONE.
+     * <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2.
+     * Default Value: NONE.</p>
      */
     inline InputSerialization& WithCompressionType(CompressionType&& value) { SetCompressionType(std::move(value)); return *this;}
 
 
     /**
-     * Specifies JSON as object's input serialization format.
+     * <p>Specifies JSON as object's input serialization format.</p>
      */
     inline const JSONInput& GetJSON() const{ return m_jSON; }
 
     /**
-     * Specifies JSON as object's input serialization format.
+     * <p>Specifies JSON as object's input serialization format.</p>
      */
     inline void SetJSON(const JSONInput& value) { m_jSONHasBeenSet = true; m_jSON = value; }
 
     /**
-     * Specifies JSON as object's input serialization format.
+     * <p>Specifies JSON as object's input serialization format.</p>
      */
     inline void SetJSON(JSONInput&& value) { m_jSONHasBeenSet = true; m_jSON = std::move(value); }
 
     /**
-     * Specifies JSON as object's input serialization format.
+     * <p>Specifies JSON as object's input serialization format.</p>
      */
     inline InputSerialization& WithJSON(const JSONInput& value) { SetJSON(value); return *this;}
 
     /**
-     * Specifies JSON as object's input serialization format.
+     * <p>Specifies JSON as object's input serialization format.</p>
      */
     inline InputSerialization& WithJSON(JSONInput&& value) { SetJSON(std::move(value)); return *this;}
 

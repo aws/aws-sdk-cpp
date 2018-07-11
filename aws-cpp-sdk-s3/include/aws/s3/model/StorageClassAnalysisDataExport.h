@@ -44,53 +44,53 @@ namespace Model
 
 
     /**
-     * The version of the output schema to use when exporting data. Must be V_1.
+     * <p>The version of the output schema to use when exporting data. Must be V_1.</p>
      */
     inline const StorageClassAnalysisSchemaVersion& GetOutputSchemaVersion() const{ return m_outputSchemaVersion; }
 
     /**
-     * The version of the output schema to use when exporting data. Must be V_1.
+     * <p>The version of the output schema to use when exporting data. Must be V_1.</p>
      */
     inline void SetOutputSchemaVersion(const StorageClassAnalysisSchemaVersion& value) { m_outputSchemaVersionHasBeenSet = true; m_outputSchemaVersion = value; }
 
     /**
-     * The version of the output schema to use when exporting data. Must be V_1.
+     * <p>The version of the output schema to use when exporting data. Must be V_1.</p>
      */
     inline void SetOutputSchemaVersion(StorageClassAnalysisSchemaVersion&& value) { m_outputSchemaVersionHasBeenSet = true; m_outputSchemaVersion = std::move(value); }
 
     /**
-     * The version of the output schema to use when exporting data. Must be V_1.
+     * <p>The version of the output schema to use when exporting data. Must be V_1.</p>
      */
     inline StorageClassAnalysisDataExport& WithOutputSchemaVersion(const StorageClassAnalysisSchemaVersion& value) { SetOutputSchemaVersion(value); return *this;}
 
     /**
-     * The version of the output schema to use when exporting data. Must be V_1.
+     * <p>The version of the output schema to use when exporting data. Must be V_1.</p>
      */
     inline StorageClassAnalysisDataExport& WithOutputSchemaVersion(StorageClassAnalysisSchemaVersion&& value) { SetOutputSchemaVersion(std::move(value)); return *this;}
 
 
     /**
-     * The place to store the data for an analysis.
+     * <p>The place to store the data for an analysis.</p>
      */
     inline const AnalyticsExportDestination& GetDestination() const{ return m_destination; }
 
     /**
-     * The place to store the data for an analysis.
+     * <p>The place to store the data for an analysis.</p>
      */
     inline void SetDestination(const AnalyticsExportDestination& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
-     * The place to store the data for an analysis.
+     * <p>The place to store the data for an analysis.</p>
      */
     inline void SetDestination(AnalyticsExportDestination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
     /**
-     * The place to store the data for an analysis.
+     * <p>The place to store the data for an analysis.</p>
      */
     inline StorageClassAnalysisDataExport& WithDestination(const AnalyticsExportDestination& value) { SetDestination(value); return *this;}
 
     /**
-     * The place to store the data for an analysis.
+     * <p>The place to store the data for an analysis.</p>
      */
     inline StorageClassAnalysisDataExport& WithDestination(AnalyticsExportDestination&& value) { SetDestination(std::move(value)); return *this;}
 

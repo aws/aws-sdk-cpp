@@ -31,9 +31,9 @@ namespace Model
 {
 
   /**
-   * Specifies the days since the initiation of an Incomplete Multipart Upload that
-   * Lifecycle will wait before permanently removing all parts of the
-   * upload.<p><h3>See Also:</h3>   <a
+   * <p>Specifies the days since the initiation of an Incomplete Multipart Upload
+   * that Lifecycle will wait before permanently removing all parts of the
+   * upload.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AbortIncompleteMultipartUpload">AWS
    * API Reference</a></p>
    */
@@ -48,20 +48,20 @@ namespace Model
 
 
     /**
-     * Indicates the number of days that must pass since initiation for Lifecycle to
-     * abort an Incomplete Multipart Upload.
+     * <p>Indicates the number of days that must pass since initiation for Lifecycle to
+     * abort an Incomplete Multipart Upload.</p>
      */
     inline int GetDaysAfterInitiation() const{ return m_daysAfterInitiation; }
 
     /**
-     * Indicates the number of days that must pass since initiation for Lifecycle to
-     * abort an Incomplete Multipart Upload.
+     * <p>Indicates the number of days that must pass since initiation for Lifecycle to
+     * abort an Incomplete Multipart Upload.</p>
      */
     inline void SetDaysAfterInitiation(int value) { m_daysAfterInitiationHasBeenSet = true; m_daysAfterInitiation = value; }
 
     /**
-     * Indicates the number of days that must pass since initiation for Lifecycle to
-     * abort an Incomplete Multipart Upload.
+     * <p>Indicates the number of days that must pass since initiation for Lifecycle to
+     * abort an Incomplete Multipart Upload.</p>
      */
     inline AbortIncompleteMultipartUpload& WithDaysAfterInitiation(int value) { SetDaysAfterInitiation(value); return *this;}
 

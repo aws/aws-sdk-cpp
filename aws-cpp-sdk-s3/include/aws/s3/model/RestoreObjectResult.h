@@ -60,44 +60,44 @@ namespace Model
 
 
     /**
-     * Indicates the path in the provided S3 output location where Select results will
-     * be restored to.
+     * <p>Indicates the path in the provided S3 output location where Select results
+     * will be restored to.</p>
      */
     inline const Aws::String& GetRestoreOutputPath() const{ return m_restoreOutputPath; }
 
     /**
-     * Indicates the path in the provided S3 output location where Select results will
-     * be restored to.
+     * <p>Indicates the path in the provided S3 output location where Select results
+     * will be restored to.</p>
      */
     inline void SetRestoreOutputPath(const Aws::String& value) { m_restoreOutputPath = value; }
 
     /**
-     * Indicates the path in the provided S3 output location where Select results will
-     * be restored to.
+     * <p>Indicates the path in the provided S3 output location where Select results
+     * will be restored to.</p>
      */
     inline void SetRestoreOutputPath(Aws::String&& value) { m_restoreOutputPath = std::move(value); }
 
     /**
-     * Indicates the path in the provided S3 output location where Select results will
-     * be restored to.
+     * <p>Indicates the path in the provided S3 output location where Select results
+     * will be restored to.</p>
      */
     inline void SetRestoreOutputPath(const char* value) { m_restoreOutputPath.assign(value); }
 
     /**
-     * Indicates the path in the provided S3 output location where Select results will
-     * be restored to.
+     * <p>Indicates the path in the provided S3 output location where Select results
+     * will be restored to.</p>
      */
     inline RestoreObjectResult& WithRestoreOutputPath(const Aws::String& value) { SetRestoreOutputPath(value); return *this;}
 
     /**
-     * Indicates the path in the provided S3 output location where Select results will
-     * be restored to.
+     * <p>Indicates the path in the provided S3 output location where Select results
+     * will be restored to.</p>
      */
     inline RestoreObjectResult& WithRestoreOutputPath(Aws::String&& value) { SetRestoreOutputPath(std::move(value)); return *this;}
 
     /**
-     * Indicates the path in the provided S3 output location where Select results will
-     * be restored to.
+     * <p>Indicates the path in the provided S3 output location where Select results
+     * will be restored to.</p>
      */
     inline RestoreObjectResult& WithRestoreOutputPath(const char* value) { SetRestoreOutputPath(value); return *this;}
 

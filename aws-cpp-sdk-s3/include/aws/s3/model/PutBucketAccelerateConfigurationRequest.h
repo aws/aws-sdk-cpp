@@ -51,63 +51,63 @@ namespace Model
 
 
     /**
-     * Name of the bucket for which the accelerate configuration is set.
+     * <p>Name of the bucket for which the accelerate configuration is set.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * Name of the bucket for which the accelerate configuration is set.
+     * <p>Name of the bucket for which the accelerate configuration is set.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * Name of the bucket for which the accelerate configuration is set.
+     * <p>Name of the bucket for which the accelerate configuration is set.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * Name of the bucket for which the accelerate configuration is set.
+     * <p>Name of the bucket for which the accelerate configuration is set.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * Name of the bucket for which the accelerate configuration is set.
+     * <p>Name of the bucket for which the accelerate configuration is set.</p>
      */
     inline PutBucketAccelerateConfigurationRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * Name of the bucket for which the accelerate configuration is set.
+     * <p>Name of the bucket for which the accelerate configuration is set.</p>
      */
     inline PutBucketAccelerateConfigurationRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * Name of the bucket for which the accelerate configuration is set.
+     * <p>Name of the bucket for which the accelerate configuration is set.</p>
      */
     inline PutBucketAccelerateConfigurationRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
     /**
-     * Specifies the Accelerate Configuration you want to set for the bucket.
+     * <p>Specifies the Accelerate Configuration you want to set for the bucket.</p>
      */
     inline const AccelerateConfiguration& GetAccelerateConfiguration() const{ return m_accelerateConfiguration; }
 
     /**
-     * Specifies the Accelerate Configuration you want to set for the bucket.
+     * <p>Specifies the Accelerate Configuration you want to set for the bucket.</p>
      */
     inline void SetAccelerateConfiguration(const AccelerateConfiguration& value) { m_accelerateConfigurationHasBeenSet = true; m_accelerateConfiguration = value; }
 
     /**
-     * Specifies the Accelerate Configuration you want to set for the bucket.
+     * <p>Specifies the Accelerate Configuration you want to set for the bucket.</p>
      */
     inline void SetAccelerateConfiguration(AccelerateConfiguration&& value) { m_accelerateConfigurationHasBeenSet = true; m_accelerateConfiguration = std::move(value); }
 
     /**
-     * Specifies the Accelerate Configuration you want to set for the bucket.
+     * <p>Specifies the Accelerate Configuration you want to set for the bucket.</p>
      */
     inline PutBucketAccelerateConfigurationRequest& WithAccelerateConfiguration(const AccelerateConfiguration& value) { SetAccelerateConfiguration(value); return *this;}
 
     /**
-     * Specifies the Accelerate Configuration you want to set for the bucket.
+     * <p>Specifies the Accelerate Configuration you want to set for the bucket.</p>
      */
     inline PutBucketAccelerateConfigurationRequest& WithAccelerateConfiguration(AccelerateConfiguration&& value) { SetAccelerateConfiguration(std::move(value)); return *this;}
 

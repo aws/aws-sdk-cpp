@@ -50,94 +50,101 @@ namespace Model
 
 
     /**
-     * The name of the bucket containing the inventory configurations to retrieve.
+     * <p>The name of the bucket containing the inventory configurations to
+     * retrieve.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * The name of the bucket containing the inventory configurations to retrieve.
+     * <p>The name of the bucket containing the inventory configurations to
+     * retrieve.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * The name of the bucket containing the inventory configurations to retrieve.
+     * <p>The name of the bucket containing the inventory configurations to
+     * retrieve.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * The name of the bucket containing the inventory configurations to retrieve.
+     * <p>The name of the bucket containing the inventory configurations to
+     * retrieve.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * The name of the bucket containing the inventory configurations to retrieve.
+     * <p>The name of the bucket containing the inventory configurations to
+     * retrieve.</p>
      */
     inline ListBucketInventoryConfigurationsRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * The name of the bucket containing the inventory configurations to retrieve.
+     * <p>The name of the bucket containing the inventory configurations to
+     * retrieve.</p>
      */
     inline ListBucketInventoryConfigurationsRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * The name of the bucket containing the inventory configurations to retrieve.
+     * <p>The name of the bucket containing the inventory configurations to
+     * retrieve.</p>
      */
     inline ListBucketInventoryConfigurationsRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
     /**
-     * The marker used to continue an inventory configuration listing that has been
+     * <p>The marker used to continue an inventory configuration listing that has been
      * truncated. Use the NextContinuationToken from a previously truncated list
      * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.
+     * Amazon S3 understands.</p>
      */
     inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
 
     /**
-     * The marker used to continue an inventory configuration listing that has been
+     * <p>The marker used to continue an inventory configuration listing that has been
      * truncated. Use the NextContinuationToken from a previously truncated list
      * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.
+     * Amazon S3 understands.</p>
      */
     inline void SetContinuationToken(const Aws::String& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = value; }
 
     /**
-     * The marker used to continue an inventory configuration listing that has been
+     * <p>The marker used to continue an inventory configuration listing that has been
      * truncated. Use the NextContinuationToken from a previously truncated list
      * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.
+     * Amazon S3 understands.</p>
      */
     inline void SetContinuationToken(Aws::String&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::move(value); }
 
     /**
-     * The marker used to continue an inventory configuration listing that has been
+     * <p>The marker used to continue an inventory configuration listing that has been
      * truncated. Use the NextContinuationToken from a previously truncated list
      * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.
+     * Amazon S3 understands.</p>
      */
     inline void SetContinuationToken(const char* value) { m_continuationTokenHasBeenSet = true; m_continuationToken.assign(value); }
 
     /**
-     * The marker used to continue an inventory configuration listing that has been
+     * <p>The marker used to continue an inventory configuration listing that has been
      * truncated. Use the NextContinuationToken from a previously truncated list
      * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.
+     * Amazon S3 understands.</p>
      */
     inline ListBucketInventoryConfigurationsRequest& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
 
     /**
-     * The marker used to continue an inventory configuration listing that has been
+     * <p>The marker used to continue an inventory configuration listing that has been
      * truncated. Use the NextContinuationToken from a previously truncated list
      * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.
+     * Amazon S3 understands.</p>
      */
     inline ListBucketInventoryConfigurationsRequest& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
 
     /**
-     * The marker used to continue an inventory configuration listing that has been
+     * <p>The marker used to continue an inventory configuration listing that has been
      * truncated. Use the NextContinuationToken from a previously truncated list
      * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.
+     * Amazon S3 understands.</p>
      */
     inline ListBucketInventoryConfigurationsRequest& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
 

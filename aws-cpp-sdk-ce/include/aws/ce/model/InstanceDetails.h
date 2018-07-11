@@ -17,6 +17,9 @@
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/ce/model/EC2InstanceDetails.h>
 #include <aws/ce/model/RDSInstanceDetails.h>
+#include <aws/ce/model/RedshiftInstanceDetails.h>
+#include <aws/ce/model/ElastiCacheInstanceDetails.h>
+#include <aws/ce/model/ESInstanceDetails.h>
 #include <utility>
 
 namespace Aws
@@ -99,6 +102,84 @@ namespace Model
      */
     inline InstanceDetails& WithRDSInstanceDetails(RDSInstanceDetails&& value) { SetRDSInstanceDetails(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Redshift instances that AWS recommends that you purchase.</p>
+     */
+    inline const RedshiftInstanceDetails& GetRedshiftInstanceDetails() const{ return m_redshiftInstanceDetails; }
+
+    /**
+     * <p>The Amazon Redshift instances that AWS recommends that you purchase.</p>
+     */
+    inline void SetRedshiftInstanceDetails(const RedshiftInstanceDetails& value) { m_redshiftInstanceDetailsHasBeenSet = true; m_redshiftInstanceDetails = value; }
+
+    /**
+     * <p>The Amazon Redshift instances that AWS recommends that you purchase.</p>
+     */
+    inline void SetRedshiftInstanceDetails(RedshiftInstanceDetails&& value) { m_redshiftInstanceDetailsHasBeenSet = true; m_redshiftInstanceDetails = std::move(value); }
+
+    /**
+     * <p>The Amazon Redshift instances that AWS recommends that you purchase.</p>
+     */
+    inline InstanceDetails& WithRedshiftInstanceDetails(const RedshiftInstanceDetails& value) { SetRedshiftInstanceDetails(value); return *this;}
+
+    /**
+     * <p>The Amazon Redshift instances that AWS recommends that you purchase.</p>
+     */
+    inline InstanceDetails& WithRedshiftInstanceDetails(RedshiftInstanceDetails&& value) { SetRedshiftInstanceDetails(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The ElastiCache instances that AWS recommends that you purchase.</p>
+     */
+    inline const ElastiCacheInstanceDetails& GetElastiCacheInstanceDetails() const{ return m_elastiCacheInstanceDetails; }
+
+    /**
+     * <p>The ElastiCache instances that AWS recommends that you purchase.</p>
+     */
+    inline void SetElastiCacheInstanceDetails(const ElastiCacheInstanceDetails& value) { m_elastiCacheInstanceDetailsHasBeenSet = true; m_elastiCacheInstanceDetails = value; }
+
+    /**
+     * <p>The ElastiCache instances that AWS recommends that you purchase.</p>
+     */
+    inline void SetElastiCacheInstanceDetails(ElastiCacheInstanceDetails&& value) { m_elastiCacheInstanceDetailsHasBeenSet = true; m_elastiCacheInstanceDetails = std::move(value); }
+
+    /**
+     * <p>The ElastiCache instances that AWS recommends that you purchase.</p>
+     */
+    inline InstanceDetails& WithElastiCacheInstanceDetails(const ElastiCacheInstanceDetails& value) { SetElastiCacheInstanceDetails(value); return *this;}
+
+    /**
+     * <p>The ElastiCache instances that AWS recommends that you purchase.</p>
+     */
+    inline InstanceDetails& WithElastiCacheInstanceDetails(ElastiCacheInstanceDetails&& value) { SetElastiCacheInstanceDetails(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon ES instances that AWS recommends that you purchase.</p>
+     */
+    inline const ESInstanceDetails& GetESInstanceDetails() const{ return m_eSInstanceDetails; }
+
+    /**
+     * <p>The Amazon ES instances that AWS recommends that you purchase.</p>
+     */
+    inline void SetESInstanceDetails(const ESInstanceDetails& value) { m_eSInstanceDetailsHasBeenSet = true; m_eSInstanceDetails = value; }
+
+    /**
+     * <p>The Amazon ES instances that AWS recommends that you purchase.</p>
+     */
+    inline void SetESInstanceDetails(ESInstanceDetails&& value) { m_eSInstanceDetailsHasBeenSet = true; m_eSInstanceDetails = std::move(value); }
+
+    /**
+     * <p>The Amazon ES instances that AWS recommends that you purchase.</p>
+     */
+    inline InstanceDetails& WithESInstanceDetails(const ESInstanceDetails& value) { SetESInstanceDetails(value); return *this;}
+
+    /**
+     * <p>The Amazon ES instances that AWS recommends that you purchase.</p>
+     */
+    inline InstanceDetails& WithESInstanceDetails(ESInstanceDetails&& value) { SetESInstanceDetails(std::move(value)); return *this;}
+
   private:
 
     EC2InstanceDetails m_eC2InstanceDetails;
@@ -106,6 +187,15 @@ namespace Model
 
     RDSInstanceDetails m_rDSInstanceDetails;
     bool m_rDSInstanceDetailsHasBeenSet;
+
+    RedshiftInstanceDetails m_redshiftInstanceDetails;
+    bool m_redshiftInstanceDetailsHasBeenSet;
+
+    ElastiCacheInstanceDetails m_elastiCacheInstanceDetails;
+    bool m_elastiCacheInstanceDetailsHasBeenSet;
+
+    ESInstanceDetails m_eSInstanceDetails;
+    bool m_eSInstanceDetailsHasBeenSet;
   };
 
 } // namespace Model

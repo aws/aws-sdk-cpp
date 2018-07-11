@@ -51,99 +51,99 @@ namespace Model
 
 
     /**
-     * The name of the bucket for which the metrics configuration is set.
+     * <p>The name of the bucket for which the metrics configuration is set.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * The name of the bucket for which the metrics configuration is set.
+     * <p>The name of the bucket for which the metrics configuration is set.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * The name of the bucket for which the metrics configuration is set.
+     * <p>The name of the bucket for which the metrics configuration is set.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * The name of the bucket for which the metrics configuration is set.
+     * <p>The name of the bucket for which the metrics configuration is set.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * The name of the bucket for which the metrics configuration is set.
+     * <p>The name of the bucket for which the metrics configuration is set.</p>
      */
     inline PutBucketMetricsConfigurationRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * The name of the bucket for which the metrics configuration is set.
+     * <p>The name of the bucket for which the metrics configuration is set.</p>
      */
     inline PutBucketMetricsConfigurationRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * The name of the bucket for which the metrics configuration is set.
+     * <p>The name of the bucket for which the metrics configuration is set.</p>
      */
     inline PutBucketMetricsConfigurationRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
     /**
-     * The ID used to identify the metrics configuration.
+     * <p>The ID used to identify the metrics configuration.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * The ID used to identify the metrics configuration.
+     * <p>The ID used to identify the metrics configuration.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * The ID used to identify the metrics configuration.
+     * <p>The ID used to identify the metrics configuration.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * The ID used to identify the metrics configuration.
+     * <p>The ID used to identify the metrics configuration.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * The ID used to identify the metrics configuration.
+     * <p>The ID used to identify the metrics configuration.</p>
      */
     inline PutBucketMetricsConfigurationRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * The ID used to identify the metrics configuration.
+     * <p>The ID used to identify the metrics configuration.</p>
      */
     inline PutBucketMetricsConfigurationRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * The ID used to identify the metrics configuration.
+     * <p>The ID used to identify the metrics configuration.</p>
      */
     inline PutBucketMetricsConfigurationRequest& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * Specifies the metrics configuration.
+     * <p>Specifies the metrics configuration.</p>
      */
     inline const MetricsConfiguration& GetMetricsConfiguration() const{ return m_metricsConfiguration; }
 
     /**
-     * Specifies the metrics configuration.
+     * <p>Specifies the metrics configuration.</p>
      */
     inline void SetMetricsConfiguration(const MetricsConfiguration& value) { m_metricsConfigurationHasBeenSet = true; m_metricsConfiguration = value; }
 
     /**
-     * Specifies the metrics configuration.
+     * <p>Specifies the metrics configuration.</p>
      */
     inline void SetMetricsConfiguration(MetricsConfiguration&& value) { m_metricsConfigurationHasBeenSet = true; m_metricsConfiguration = std::move(value); }
 
     /**
-     * Specifies the metrics configuration.
+     * <p>Specifies the metrics configuration.</p>
      */
     inline PutBucketMetricsConfigurationRequest& WithMetricsConfiguration(const MetricsConfiguration& value) { SetMetricsConfiguration(value); return *this;}
 
     /**
-     * Specifies the metrics configuration.
+     * <p>Specifies the metrics configuration.</p>
      */
     inline PutBucketMetricsConfigurationRequest& WithMetricsConfiguration(MetricsConfiguration&& value) { SetMetricsConfiguration(std::move(value)); return *this;}
 

@@ -46,37 +46,44 @@ namespace Model
 
 
     /**
-     * If the object expiration is configured, the response includes this header.
+     * <p>If the object expiration is configured, the response includes this
+     * header.</p>
      */
     inline const Aws::String& GetExpiration() const{ return m_expiration; }
 
     /**
-     * If the object expiration is configured, the response includes this header.
+     * <p>If the object expiration is configured, the response includes this
+     * header.</p>
      */
     inline void SetExpiration(const Aws::String& value) { m_expiration = value; }
 
     /**
-     * If the object expiration is configured, the response includes this header.
+     * <p>If the object expiration is configured, the response includes this
+     * header.</p>
      */
     inline void SetExpiration(Aws::String&& value) { m_expiration = std::move(value); }
 
     /**
-     * If the object expiration is configured, the response includes this header.
+     * <p>If the object expiration is configured, the response includes this
+     * header.</p>
      */
     inline void SetExpiration(const char* value) { m_expiration.assign(value); }
 
     /**
-     * If the object expiration is configured, the response includes this header.
+     * <p>If the object expiration is configured, the response includes this
+     * header.</p>
      */
     inline CopyObjectResult& WithExpiration(const Aws::String& value) { SetExpiration(value); return *this;}
 
     /**
-     * If the object expiration is configured, the response includes this header.
+     * <p>If the object expiration is configured, the response includes this
+     * header.</p>
      */
     inline CopyObjectResult& WithExpiration(Aws::String&& value) { SetExpiration(std::move(value)); return *this;}
 
     /**
-     * If the object expiration is configured, the response includes this header.
+     * <p>If the object expiration is configured, the response includes this
+     * header.</p>
      */
     inline CopyObjectResult& WithExpiration(const char* value) { SetExpiration(value); return *this;}
 
@@ -104,204 +111,211 @@ namespace Model
 
 
     /**
-     * Version ID of the newly created copy.
+     * <p>Version ID of the newly created copy.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
     /**
-     * Version ID of the newly created copy.
+     * <p>Version ID of the newly created copy.</p>
      */
     inline void SetVersionId(const Aws::String& value) { m_versionId = value; }
 
     /**
-     * Version ID of the newly created copy.
+     * <p>Version ID of the newly created copy.</p>
      */
     inline void SetVersionId(Aws::String&& value) { m_versionId = std::move(value); }
 
     /**
-     * Version ID of the newly created copy.
+     * <p>Version ID of the newly created copy.</p>
      */
     inline void SetVersionId(const char* value) { m_versionId.assign(value); }
 
     /**
-     * Version ID of the newly created copy.
+     * <p>Version ID of the newly created copy.</p>
      */
     inline CopyObjectResult& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     /**
-     * Version ID of the newly created copy.
+     * <p>Version ID of the newly created copy.</p>
      */
     inline CopyObjectResult& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
-     * Version ID of the newly created copy.
+     * <p>Version ID of the newly created copy.</p>
      */
     inline CopyObjectResult& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
 
     /**
-     * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
-     * AES256, aws:kms).
+     * <p>The Server-side encryption algorithm used when storing this object in S3
+     * (e.g., AES256, aws:kms).</p>
      */
     inline const ServerSideEncryption& GetServerSideEncryption() const{ return m_serverSideEncryption; }
 
     /**
-     * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
-     * AES256, aws:kms).
+     * <p>The Server-side encryption algorithm used when storing this object in S3
+     * (e.g., AES256, aws:kms).</p>
      */
     inline void SetServerSideEncryption(const ServerSideEncryption& value) { m_serverSideEncryption = value; }
 
     /**
-     * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
-     * AES256, aws:kms).
+     * <p>The Server-side encryption algorithm used when storing this object in S3
+     * (e.g., AES256, aws:kms).</p>
      */
     inline void SetServerSideEncryption(ServerSideEncryption&& value) { m_serverSideEncryption = std::move(value); }
 
     /**
-     * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
-     * AES256, aws:kms).
+     * <p>The Server-side encryption algorithm used when storing this object in S3
+     * (e.g., AES256, aws:kms).</p>
      */
     inline CopyObjectResult& WithServerSideEncryption(const ServerSideEncryption& value) { SetServerSideEncryption(value); return *this;}
 
     /**
-     * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
-     * AES256, aws:kms).
+     * <p>The Server-side encryption algorithm used when storing this object in S3
+     * (e.g., AES256, aws:kms).</p>
      */
     inline CopyObjectResult& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
 
 
     /**
-     * If server-side encryption with a customer-provided encryption key was requested,
-     * the response will include this header confirming the encryption algorithm used.
+     * <p>If server-side encryption with a customer-provided encryption key was
+     * requested, the response will include this header confirming the encryption
+     * algorithm used.</p>
      */
     inline const Aws::String& GetSSECustomerAlgorithm() const{ return m_sSECustomerAlgorithm; }
 
     /**
-     * If server-side encryption with a customer-provided encryption key was requested,
-     * the response will include this header confirming the encryption algorithm used.
+     * <p>If server-side encryption with a customer-provided encryption key was
+     * requested, the response will include this header confirming the encryption
+     * algorithm used.</p>
      */
     inline void SetSSECustomerAlgorithm(const Aws::String& value) { m_sSECustomerAlgorithm = value; }
 
     /**
-     * If server-side encryption with a customer-provided encryption key was requested,
-     * the response will include this header confirming the encryption algorithm used.
+     * <p>If server-side encryption with a customer-provided encryption key was
+     * requested, the response will include this header confirming the encryption
+     * algorithm used.</p>
      */
     inline void SetSSECustomerAlgorithm(Aws::String&& value) { m_sSECustomerAlgorithm = std::move(value); }
 
     /**
-     * If server-side encryption with a customer-provided encryption key was requested,
-     * the response will include this header confirming the encryption algorithm used.
+     * <p>If server-side encryption with a customer-provided encryption key was
+     * requested, the response will include this header confirming the encryption
+     * algorithm used.</p>
      */
     inline void SetSSECustomerAlgorithm(const char* value) { m_sSECustomerAlgorithm.assign(value); }
 
     /**
-     * If server-side encryption with a customer-provided encryption key was requested,
-     * the response will include this header confirming the encryption algorithm used.
+     * <p>If server-side encryption with a customer-provided encryption key was
+     * requested, the response will include this header confirming the encryption
+     * algorithm used.</p>
      */
     inline CopyObjectResult& WithSSECustomerAlgorithm(const Aws::String& value) { SetSSECustomerAlgorithm(value); return *this;}
 
     /**
-     * If server-side encryption with a customer-provided encryption key was requested,
-     * the response will include this header confirming the encryption algorithm used.
+     * <p>If server-side encryption with a customer-provided encryption key was
+     * requested, the response will include this header confirming the encryption
+     * algorithm used.</p>
      */
     inline CopyObjectResult& WithSSECustomerAlgorithm(Aws::String&& value) { SetSSECustomerAlgorithm(std::move(value)); return *this;}
 
     /**
-     * If server-side encryption with a customer-provided encryption key was requested,
-     * the response will include this header confirming the encryption algorithm used.
+     * <p>If server-side encryption with a customer-provided encryption key was
+     * requested, the response will include this header confirming the encryption
+     * algorithm used.</p>
      */
     inline CopyObjectResult& WithSSECustomerAlgorithm(const char* value) { SetSSECustomerAlgorithm(value); return *this;}
 
 
     /**
-     * If server-side encryption with a customer-provided encryption key was requested,
-     * the response will include this header to provide round trip message integrity
-     * verification of the customer-provided encryption key.
+     * <p>If server-side encryption with a customer-provided encryption key was
+     * requested, the response will include this header to provide round trip message
+     * integrity verification of the customer-provided encryption key.</p>
      */
     inline const Aws::String& GetSSECustomerKeyMD5() const{ return m_sSECustomerKeyMD5; }
 
     /**
-     * If server-side encryption with a customer-provided encryption key was requested,
-     * the response will include this header to provide round trip message integrity
-     * verification of the customer-provided encryption key.
+     * <p>If server-side encryption with a customer-provided encryption key was
+     * requested, the response will include this header to provide round trip message
+     * integrity verification of the customer-provided encryption key.</p>
      */
     inline void SetSSECustomerKeyMD5(const Aws::String& value) { m_sSECustomerKeyMD5 = value; }
 
     /**
-     * If server-side encryption with a customer-provided encryption key was requested,
-     * the response will include this header to provide round trip message integrity
-     * verification of the customer-provided encryption key.
+     * <p>If server-side encryption with a customer-provided encryption key was
+     * requested, the response will include this header to provide round trip message
+     * integrity verification of the customer-provided encryption key.</p>
      */
     inline void SetSSECustomerKeyMD5(Aws::String&& value) { m_sSECustomerKeyMD5 = std::move(value); }
 
     /**
-     * If server-side encryption with a customer-provided encryption key was requested,
-     * the response will include this header to provide round trip message integrity
-     * verification of the customer-provided encryption key.
+     * <p>If server-side encryption with a customer-provided encryption key was
+     * requested, the response will include this header to provide round trip message
+     * integrity verification of the customer-provided encryption key.</p>
      */
     inline void SetSSECustomerKeyMD5(const char* value) { m_sSECustomerKeyMD5.assign(value); }
 
     /**
-     * If server-side encryption with a customer-provided encryption key was requested,
-     * the response will include this header to provide round trip message integrity
-     * verification of the customer-provided encryption key.
+     * <p>If server-side encryption with a customer-provided encryption key was
+     * requested, the response will include this header to provide round trip message
+     * integrity verification of the customer-provided encryption key.</p>
      */
     inline CopyObjectResult& WithSSECustomerKeyMD5(const Aws::String& value) { SetSSECustomerKeyMD5(value); return *this;}
 
     /**
-     * If server-side encryption with a customer-provided encryption key was requested,
-     * the response will include this header to provide round trip message integrity
-     * verification of the customer-provided encryption key.
+     * <p>If server-side encryption with a customer-provided encryption key was
+     * requested, the response will include this header to provide round trip message
+     * integrity verification of the customer-provided encryption key.</p>
      */
     inline CopyObjectResult& WithSSECustomerKeyMD5(Aws::String&& value) { SetSSECustomerKeyMD5(std::move(value)); return *this;}
 
     /**
-     * If server-side encryption with a customer-provided encryption key was requested,
-     * the response will include this header to provide round trip message integrity
-     * verification of the customer-provided encryption key.
+     * <p>If server-side encryption with a customer-provided encryption key was
+     * requested, the response will include this header to provide round trip message
+     * integrity verification of the customer-provided encryption key.</p>
      */
     inline CopyObjectResult& WithSSECustomerKeyMD5(const char* value) { SetSSECustomerKeyMD5(value); return *this;}
 
 
     /**
-     * If present, specifies the ID of the AWS Key Management Service (KMS) master
-     * encryption key that was used for the object.
+     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) master
+     * encryption key that was used for the object.</p>
      */
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
     /**
-     * If present, specifies the ID of the AWS Key Management Service (KMS) master
-     * encryption key that was used for the object.
+     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) master
+     * encryption key that was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyId = value; }
 
     /**
-     * If present, specifies the ID of the AWS Key Management Service (KMS) master
-     * encryption key that was used for the object.
+     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) master
+     * encryption key that was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyId = std::move(value); }
 
     /**
-     * If present, specifies the ID of the AWS Key Management Service (KMS) master
-     * encryption key that was used for the object.
+     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) master
+     * encryption key that was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyId.assign(value); }
 
     /**
-     * If present, specifies the ID of the AWS Key Management Service (KMS) master
-     * encryption key that was used for the object.
+     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) master
+     * encryption key that was used for the object.</p>
      */
     inline CopyObjectResult& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
     /**
-     * If present, specifies the ID of the AWS Key Management Service (KMS) master
-     * encryption key that was used for the object.
+     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) master
+     * encryption key that was used for the object.</p>
      */
     inline CopyObjectResult& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * If present, specifies the ID of the AWS Key Management Service (KMS) master
-     * encryption key that was used for the object.
+     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) master
+     * encryption key that was used for the object.</p>
      */
     inline CopyObjectResult& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 

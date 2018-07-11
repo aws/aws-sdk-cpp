@@ -452,7 +452,7 @@ namespace Aws
 
 
         /**
-         * <p>Aborts a multipart upload.</p><p>To verify that all parts have been removed,
+         * <p>Aborts a multipart upload.</p> <p>To verify that all parts have been removed,
          * so you don't get charged for the part storage, you should call the List Parts
          * operation and ensure the parts list is empty.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AbortMultipartUpload">AWS
@@ -461,7 +461,7 @@ namespace Aws
         virtual Model::AbortMultipartUploadOutcome AbortMultipartUpload(const Model::AbortMultipartUploadRequest& request) const;
 
         /**
-         * <p>Aborts a multipart upload.</p><p>To verify that all parts have been removed,
+         * <p>Aborts a multipart upload.</p> <p>To verify that all parts have been removed,
          * so you don't get charged for the part storage, you should call the List Parts
          * operation and ensure the parts list is empty.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AbortMultipartUpload">AWS
@@ -472,7 +472,7 @@ namespace Aws
         virtual Model::AbortMultipartUploadOutcomeCallable AbortMultipartUploadCallable(const Model::AbortMultipartUploadRequest& request) const;
 
         /**
-         * <p>Aborts a multipart upload.</p><p>To verify that all parts have been removed,
+         * <p>Aborts a multipart upload.</p> <p>To verify that all parts have been removed,
          * so you don't get charged for the part storage, you should call the List Parts
          * operation and ensure the parts list is empty.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AbortMultipartUpload">AWS
@@ -483,16 +483,16 @@ namespace Aws
         virtual void AbortMultipartUploadAsync(const Model::AbortMultipartUploadRequest& request, const AbortMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Completes a multipart upload by assembling previously uploaded parts.<p><h3>See
-         * Also:</h3>   <a
+         * <p>Completes a multipart upload by assembling previously uploaded
+         * parts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CompleteMultipartUpload">AWS
          * API Reference</a></p>
          */
         virtual Model::CompleteMultipartUploadOutcome CompleteMultipartUpload(const Model::CompleteMultipartUploadRequest& request) const;
 
         /**
-         * Completes a multipart upload by assembling previously uploaded parts.<p><h3>See
-         * Also:</h3>   <a
+         * <p>Completes a multipart upload by assembling previously uploaded
+         * parts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CompleteMultipartUpload">AWS
          * API Reference</a></p>
          *
@@ -501,8 +501,8 @@ namespace Aws
         virtual Model::CompleteMultipartUploadOutcomeCallable CompleteMultipartUploadCallable(const Model::CompleteMultipartUploadRequest& request) const;
 
         /**
-         * Completes a multipart upload by assembling previously uploaded parts.<p><h3>See
-         * Also:</h3>   <a
+         * <p>Completes a multipart upload by assembling previously uploaded
+         * parts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CompleteMultipartUpload">AWS
          * API Reference</a></p>
          *
@@ -511,16 +511,16 @@ namespace Aws
         virtual void CompleteMultipartUploadAsync(const Model::CompleteMultipartUploadRequest& request, const CompleteMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Creates a copy of an object that is already stored in Amazon S3.<p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a copy of an object that is already stored in Amazon
+         * S3.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CopyObject">AWS API
          * Reference</a></p>
          */
         virtual Model::CopyObjectOutcome CopyObject(const Model::CopyObjectRequest& request) const;
 
         /**
-         * Creates a copy of an object that is already stored in Amazon S3.<p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a copy of an object that is already stored in Amazon
+         * S3.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CopyObject">AWS API
          * Reference</a></p>
          *
@@ -529,8 +529,8 @@ namespace Aws
         virtual Model::CopyObjectOutcomeCallable CopyObjectCallable(const Model::CopyObjectRequest& request) const;
 
         /**
-         * Creates a copy of an object that is already stored in Amazon S3.<p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a copy of an object that is already stored in Amazon
+         * S3.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CopyObject">AWS API
          * Reference</a></p>
          *
@@ -539,14 +539,14 @@ namespace Aws
         virtual void CopyObjectAsync(const Model::CopyObjectRequest& request, const CopyObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Creates a new bucket.<p><h3>See Also:</h3>   <a
+         * <p>Creates a new bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucket">AWS API
          * Reference</a></p>
          */
         virtual Model::CreateBucketOutcome CreateBucket(const Model::CreateBucketRequest& request) const;
 
         /**
-         * Creates a new bucket.<p><h3>See Also:</h3>   <a
+         * <p>Creates a new bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucket">AWS API
          * Reference</a></p>
          *
@@ -555,7 +555,7 @@ namespace Aws
         virtual Model::CreateBucketOutcomeCallable CreateBucketCallable(const Model::CreateBucketRequest& request) const;
 
         /**
-         * Creates a new bucket.<p><h3>See Also:</h3>   <a
+         * <p>Creates a new bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucket">AWS API
          * Reference</a></p>
          *
@@ -564,7 +564,7 @@ namespace Aws
         virtual void CreateBucketAsync(const Model::CreateBucketRequest& request, const CreateBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Initiates a multipart upload and returns an upload ID.</p><p><b>Note:</b>
+         * <p>Initiates a multipart upload and returns an upload ID.</p> <p> <b>Note:</b>
          * After you initiate multipart upload and upload one or more parts, you must
          * either complete or abort multipart upload in order to stop getting charged for
          * storage of the uploaded parts. Only after you either complete or abort multipart
@@ -576,7 +576,7 @@ namespace Aws
         virtual Model::CreateMultipartUploadOutcome CreateMultipartUpload(const Model::CreateMultipartUploadRequest& request) const;
 
         /**
-         * <p>Initiates a multipart upload and returns an upload ID.</p><p><b>Note:</b>
+         * <p>Initiates a multipart upload and returns an upload ID.</p> <p> <b>Note:</b>
          * After you initiate multipart upload and upload one or more parts, you must
          * either complete or abort multipart upload in order to stop getting charged for
          * storage of the uploaded parts. Only after you either complete or abort multipart
@@ -590,7 +590,7 @@ namespace Aws
         virtual Model::CreateMultipartUploadOutcomeCallable CreateMultipartUploadCallable(const Model::CreateMultipartUploadRequest& request) const;
 
         /**
-         * <p>Initiates a multipart upload and returns an upload ID.</p><p><b>Note:</b>
+         * <p>Initiates a multipart upload and returns an upload ID.</p> <p> <b>Note:</b>
          * After you initiate multipart upload and upload one or more parts, you must
          * either complete or abort multipart upload in order to stop getting charged for
          * storage of the uploaded parts. Only after you either complete or abort multipart
@@ -604,18 +604,18 @@ namespace Aws
         virtual void CreateMultipartUploadAsync(const Model::CreateMultipartUploadRequest& request, const CreateMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Deletes the bucket. All objects (including all object versions and Delete
+         * <p>Deletes the bucket. All objects (including all object versions and Delete
          * Markers) in the bucket must be deleted before the bucket itself can be
-         * deleted.<p><h3>See Also:</h3>   <a
+         * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucket">AWS API
          * Reference</a></p>
          */
         virtual Model::DeleteBucketOutcome DeleteBucket(const Model::DeleteBucketRequest& request) const;
 
         /**
-         * Deletes the bucket. All objects (including all object versions and Delete
+         * <p>Deletes the bucket. All objects (including all object versions and Delete
          * Markers) in the bucket must be deleted before the bucket itself can be
-         * deleted.<p><h3>See Also:</h3>   <a
+         * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucket">AWS API
          * Reference</a></p>
          *
@@ -624,9 +624,9 @@ namespace Aws
         virtual Model::DeleteBucketOutcomeCallable DeleteBucketCallable(const Model::DeleteBucketRequest& request) const;
 
         /**
-         * Deletes the bucket. All objects (including all object versions and Delete
+         * <p>Deletes the bucket. All objects (including all object versions and Delete
          * Markers) in the bucket must be deleted before the bucket itself can be
-         * deleted.<p><h3>See Also:</h3>   <a
+         * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucket">AWS API
          * Reference</a></p>
          *
@@ -635,16 +635,16 @@ namespace Aws
         virtual void DeleteBucketAsync(const Model::DeleteBucketRequest& request, const DeleteBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Deletes an analytics configuration for the bucket (specified by the analytics
-         * configuration ID).<p><h3>See Also:</h3>   <a
+         * <p>Deletes an analytics configuration for the bucket (specified by the analytics
+         * configuration ID).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketAnalyticsConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteBucketAnalyticsConfigurationOutcome DeleteBucketAnalyticsConfiguration(const Model::DeleteBucketAnalyticsConfigurationRequest& request) const;
 
         /**
-         * Deletes an analytics configuration for the bucket (specified by the analytics
-         * configuration ID).<p><h3>See Also:</h3>   <a
+         * <p>Deletes an analytics configuration for the bucket (specified by the analytics
+         * configuration ID).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketAnalyticsConfiguration">AWS
          * API Reference</a></p>
          *
@@ -653,8 +653,8 @@ namespace Aws
         virtual Model::DeleteBucketAnalyticsConfigurationOutcomeCallable DeleteBucketAnalyticsConfigurationCallable(const Model::DeleteBucketAnalyticsConfigurationRequest& request) const;
 
         /**
-         * Deletes an analytics configuration for the bucket (specified by the analytics
-         * configuration ID).<p><h3>See Also:</h3>   <a
+         * <p>Deletes an analytics configuration for the bucket (specified by the analytics
+         * configuration ID).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketAnalyticsConfiguration">AWS
          * API Reference</a></p>
          *
@@ -663,7 +663,7 @@ namespace Aws
         virtual void DeleteBucketAnalyticsConfigurationAsync(const Model::DeleteBucketAnalyticsConfigurationRequest& request, const DeleteBucketAnalyticsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Deletes the cors configuration information set for the bucket.<p><h3>See
+         * <p>Deletes the cors configuration information set for the bucket.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketCors">AWS
          * API Reference</a></p>
@@ -671,7 +671,7 @@ namespace Aws
         virtual Model::DeleteBucketCorsOutcome DeleteBucketCors(const Model::DeleteBucketCorsRequest& request) const;
 
         /**
-         * Deletes the cors configuration information set for the bucket.<p><h3>See
+         * <p>Deletes the cors configuration information set for the bucket.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketCors">AWS
          * API Reference</a></p>
@@ -681,7 +681,7 @@ namespace Aws
         virtual Model::DeleteBucketCorsOutcomeCallable DeleteBucketCorsCallable(const Model::DeleteBucketCorsRequest& request) const;
 
         /**
-         * Deletes the cors configuration information set for the bucket.<p><h3>See
+         * <p>Deletes the cors configuration information set for the bucket.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketCors">AWS
          * API Reference</a></p>
@@ -691,16 +691,16 @@ namespace Aws
         virtual void DeleteBucketCorsAsync(const Model::DeleteBucketCorsRequest& request, const DeleteBucketCorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Deletes the server-side encryption configuration from the bucket.<p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the server-side encryption configuration from the
+         * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketEncryption">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteBucketEncryptionOutcome DeleteBucketEncryption(const Model::DeleteBucketEncryptionRequest& request) const;
 
         /**
-         * Deletes the server-side encryption configuration from the bucket.<p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the server-side encryption configuration from the
+         * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketEncryption">AWS
          * API Reference</a></p>
          *
@@ -709,8 +709,8 @@ namespace Aws
         virtual Model::DeleteBucketEncryptionOutcomeCallable DeleteBucketEncryptionCallable(const Model::DeleteBucketEncryptionRequest& request) const;
 
         /**
-         * Deletes the server-side encryption configuration from the bucket.<p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the server-side encryption configuration from the
+         * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketEncryption">AWS
          * API Reference</a></p>
          *
@@ -719,16 +719,16 @@ namespace Aws
         virtual void DeleteBucketEncryptionAsync(const Model::DeleteBucketEncryptionRequest& request, const DeleteBucketEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Deletes an inventory configuration (identified by the inventory ID) from the
-         * bucket.<p><h3>See Also:</h3>   <a
+         * <p>Deletes an inventory configuration (identified by the inventory ID) from the
+         * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketInventoryConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteBucketInventoryConfigurationOutcome DeleteBucketInventoryConfiguration(const Model::DeleteBucketInventoryConfigurationRequest& request) const;
 
         /**
-         * Deletes an inventory configuration (identified by the inventory ID) from the
-         * bucket.<p><h3>See Also:</h3>   <a
+         * <p>Deletes an inventory configuration (identified by the inventory ID) from the
+         * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketInventoryConfiguration">AWS
          * API Reference</a></p>
          *
@@ -737,8 +737,8 @@ namespace Aws
         virtual Model::DeleteBucketInventoryConfigurationOutcomeCallable DeleteBucketInventoryConfigurationCallable(const Model::DeleteBucketInventoryConfigurationRequest& request) const;
 
         /**
-         * Deletes an inventory configuration (identified by the inventory ID) from the
-         * bucket.<p><h3>See Also:</h3>   <a
+         * <p>Deletes an inventory configuration (identified by the inventory ID) from the
+         * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketInventoryConfiguration">AWS
          * API Reference</a></p>
          *
@@ -747,14 +747,16 @@ namespace Aws
         virtual void DeleteBucketInventoryConfigurationAsync(const Model::DeleteBucketInventoryConfigurationRequest& request, const DeleteBucketInventoryConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Deletes the lifecycle configuration from the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Deletes the lifecycle configuration from the bucket.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketLifecycle">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteBucketLifecycleOutcome DeleteBucketLifecycle(const Model::DeleteBucketLifecycleRequest& request) const;
 
         /**
-         * Deletes the lifecycle configuration from the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Deletes the lifecycle configuration from the bucket.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketLifecycle">AWS
          * API Reference</a></p>
          *
@@ -763,7 +765,8 @@ namespace Aws
         virtual Model::DeleteBucketLifecycleOutcomeCallable DeleteBucketLifecycleCallable(const Model::DeleteBucketLifecycleRequest& request) const;
 
         /**
-         * Deletes the lifecycle configuration from the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Deletes the lifecycle configuration from the bucket.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketLifecycle">AWS
          * API Reference</a></p>
          *
@@ -772,16 +775,16 @@ namespace Aws
         virtual void DeleteBucketLifecycleAsync(const Model::DeleteBucketLifecycleRequest& request, const DeleteBucketLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Deletes a metrics configuration (specified by the metrics configuration ID) from
-         * the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Deletes a metrics configuration (specified by the metrics configuration ID)
+         * from the bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetricsConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteBucketMetricsConfigurationOutcome DeleteBucketMetricsConfiguration(const Model::DeleteBucketMetricsConfigurationRequest& request) const;
 
         /**
-         * Deletes a metrics configuration (specified by the metrics configuration ID) from
-         * the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Deletes a metrics configuration (specified by the metrics configuration ID)
+         * from the bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetricsConfiguration">AWS
          * API Reference</a></p>
          *
@@ -790,8 +793,8 @@ namespace Aws
         virtual Model::DeleteBucketMetricsConfigurationOutcomeCallable DeleteBucketMetricsConfigurationCallable(const Model::DeleteBucketMetricsConfigurationRequest& request) const;
 
         /**
-         * Deletes a metrics configuration (specified by the metrics configuration ID) from
-         * the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Deletes a metrics configuration (specified by the metrics configuration ID)
+         * from the bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetricsConfiguration">AWS
          * API Reference</a></p>
          *
@@ -800,14 +803,14 @@ namespace Aws
         virtual void DeleteBucketMetricsConfigurationAsync(const Model::DeleteBucketMetricsConfigurationRequest& request, const DeleteBucketMetricsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Deletes the policy from the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Deletes the policy from the bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteBucketPolicyOutcome DeleteBucketPolicy(const Model::DeleteBucketPolicyRequest& request) const;
 
         /**
-         * Deletes the policy from the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Deletes the policy from the bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketPolicy">AWS
          * API Reference</a></p>
          *
@@ -816,7 +819,7 @@ namespace Aws
         virtual Model::DeleteBucketPolicyOutcomeCallable DeleteBucketPolicyCallable(const Model::DeleteBucketPolicyRequest& request) const;
 
         /**
-         * Deletes the policy from the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Deletes the policy from the bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketPolicy">AWS
          * API Reference</a></p>
          *
@@ -825,14 +828,16 @@ namespace Aws
         virtual void DeleteBucketPolicyAsync(const Model::DeleteBucketPolicyRequest& request, const DeleteBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Deletes the replication configuration from the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Deletes the replication configuration from the bucket.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketReplication">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteBucketReplicationOutcome DeleteBucketReplication(const Model::DeleteBucketReplicationRequest& request) const;
 
         /**
-         * Deletes the replication configuration from the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Deletes the replication configuration from the bucket.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketReplication">AWS
          * API Reference</a></p>
          *
@@ -841,7 +846,8 @@ namespace Aws
         virtual Model::DeleteBucketReplicationOutcomeCallable DeleteBucketReplicationCallable(const Model::DeleteBucketReplicationRequest& request) const;
 
         /**
-         * Deletes the replication configuration from the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Deletes the replication configuration from the bucket.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketReplication">AWS
          * API Reference</a></p>
          *
@@ -850,14 +856,14 @@ namespace Aws
         virtual void DeleteBucketReplicationAsync(const Model::DeleteBucketReplicationRequest& request, const DeleteBucketReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Deletes the tags from the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Deletes the tags from the bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketTagging">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteBucketTaggingOutcome DeleteBucketTagging(const Model::DeleteBucketTaggingRequest& request) const;
 
         /**
-         * Deletes the tags from the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Deletes the tags from the bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketTagging">AWS
          * API Reference</a></p>
          *
@@ -866,7 +872,7 @@ namespace Aws
         virtual Model::DeleteBucketTaggingOutcomeCallable DeleteBucketTaggingCallable(const Model::DeleteBucketTaggingRequest& request) const;
 
         /**
-         * Deletes the tags from the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Deletes the tags from the bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketTagging">AWS
          * API Reference</a></p>
          *
@@ -875,16 +881,16 @@ namespace Aws
         virtual void DeleteBucketTaggingAsync(const Model::DeleteBucketTaggingRequest& request, const DeleteBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * This operation removes the website configuration from the bucket.<p><h3>See
-         * Also:</h3>   <a
+         * <p>This operation removes the website configuration from the
+         * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketWebsite">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteBucketWebsiteOutcome DeleteBucketWebsite(const Model::DeleteBucketWebsiteRequest& request) const;
 
         /**
-         * This operation removes the website configuration from the bucket.<p><h3>See
-         * Also:</h3>   <a
+         * <p>This operation removes the website configuration from the
+         * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketWebsite">AWS
          * API Reference</a></p>
          *
@@ -893,8 +899,8 @@ namespace Aws
         virtual Model::DeleteBucketWebsiteOutcomeCallable DeleteBucketWebsiteCallable(const Model::DeleteBucketWebsiteRequest& request) const;
 
         /**
-         * This operation removes the website configuration from the bucket.<p><h3>See
-         * Also:</h3>   <a
+         * <p>This operation removes the website configuration from the
+         * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketWebsite">AWS
          * API Reference</a></p>
          *
@@ -903,18 +909,18 @@ namespace Aws
         virtual void DeleteBucketWebsiteAsync(const Model::DeleteBucketWebsiteRequest& request, const DeleteBucketWebsiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Removes the null version (if there is one) of an object and inserts a delete
+         * <p>Removes the null version (if there is one) of an object and inserts a delete
          * marker, which becomes the latest version of the object. If there isn't a null
-         * version, Amazon S3 does not remove any objects.<p><h3>See Also:</h3>   <a
+         * version, Amazon S3 does not remove any objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObject">AWS API
          * Reference</a></p>
          */
         virtual Model::DeleteObjectOutcome DeleteObject(const Model::DeleteObjectRequest& request) const;
 
         /**
-         * Removes the null version (if there is one) of an object and inserts a delete
+         * <p>Removes the null version (if there is one) of an object and inserts a delete
          * marker, which becomes the latest version of the object. If there isn't a null
-         * version, Amazon S3 does not remove any objects.<p><h3>See Also:</h3>   <a
+         * version, Amazon S3 does not remove any objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObject">AWS API
          * Reference</a></p>
          *
@@ -923,9 +929,9 @@ namespace Aws
         virtual Model::DeleteObjectOutcomeCallable DeleteObjectCallable(const Model::DeleteObjectRequest& request) const;
 
         /**
-         * Removes the null version (if there is one) of an object and inserts a delete
+         * <p>Removes the null version (if there is one) of an object and inserts a delete
          * marker, which becomes the latest version of the object. If there isn't a null
-         * version, Amazon S3 does not remove any objects.<p><h3>See Also:</h3>   <a
+         * version, Amazon S3 does not remove any objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObject">AWS API
          * Reference</a></p>
          *
@@ -934,14 +940,14 @@ namespace Aws
         virtual void DeleteObjectAsync(const Model::DeleteObjectRequest& request, const DeleteObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Removes the tag-set from an existing object.<p><h3>See Also:</h3>   <a
+         * <p>Removes the tag-set from an existing object.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjectTagging">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteObjectTaggingOutcome DeleteObjectTagging(const Model::DeleteObjectTaggingRequest& request) const;
 
         /**
-         * Removes the tag-set from an existing object.<p><h3>See Also:</h3>   <a
+         * <p>Removes the tag-set from an existing object.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjectTagging">AWS
          * API Reference</a></p>
          *
@@ -950,7 +956,7 @@ namespace Aws
         virtual Model::DeleteObjectTaggingOutcomeCallable DeleteObjectTaggingCallable(const Model::DeleteObjectTaggingRequest& request) const;
 
         /**
-         * Removes the tag-set from an existing object.<p><h3>See Also:</h3>   <a
+         * <p>Removes the tag-set from an existing object.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjectTagging">AWS
          * API Reference</a></p>
          *
@@ -959,17 +965,17 @@ namespace Aws
         virtual void DeleteObjectTaggingAsync(const Model::DeleteObjectTaggingRequest& request, const DeleteObjectTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * This operation enables you to delete multiple objects from a bucket using a
-         * single HTTP request. You may specify up to 1000 keys.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjects">AWS
+         * <p>This operation enables you to delete multiple objects from a bucket using a
+         * single HTTP request. You may specify up to 1000 keys.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjects">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteObjectsOutcome DeleteObjects(const Model::DeleteObjectsRequest& request) const;
 
         /**
-         * This operation enables you to delete multiple objects from a bucket using a
-         * single HTTP request. You may specify up to 1000 keys.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjects">AWS
+         * <p>This operation enables you to delete multiple objects from a bucket using a
+         * single HTTP request. You may specify up to 1000 keys.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjects">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -977,9 +983,9 @@ namespace Aws
         virtual Model::DeleteObjectsOutcomeCallable DeleteObjectsCallable(const Model::DeleteObjectsRequest& request) const;
 
         /**
-         * This operation enables you to delete multiple objects from a bucket using a
-         * single HTTP request. You may specify up to 1000 keys.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjects">AWS
+         * <p>This operation enables you to delete multiple objects from a bucket using a
+         * single HTTP request. You may specify up to 1000 keys.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjects">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -987,14 +993,16 @@ namespace Aws
         virtual void DeleteObjectsAsync(const Model::DeleteObjectsRequest& request, const DeleteObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns the accelerate configuration of a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Returns the accelerate configuration of a bucket.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAccelerateConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::GetBucketAccelerateConfigurationOutcome GetBucketAccelerateConfiguration(const Model::GetBucketAccelerateConfigurationRequest& request) const;
 
         /**
-         * Returns the accelerate configuration of a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Returns the accelerate configuration of a bucket.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAccelerateConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1003,7 +1011,8 @@ namespace Aws
         virtual Model::GetBucketAccelerateConfigurationOutcomeCallable GetBucketAccelerateConfigurationCallable(const Model::GetBucketAccelerateConfigurationRequest& request) const;
 
         /**
-         * Returns the accelerate configuration of a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Returns the accelerate configuration of a bucket.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAccelerateConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1012,14 +1021,14 @@ namespace Aws
         virtual void GetBucketAccelerateConfigurationAsync(const Model::GetBucketAccelerateConfigurationRequest& request, const GetBucketAccelerateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Gets the access control policy for the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Gets the access control policy for the bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAcl">AWS API
          * Reference</a></p>
          */
         virtual Model::GetBucketAclOutcome GetBucketAcl(const Model::GetBucketAclRequest& request) const;
 
         /**
-         * Gets the access control policy for the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Gets the access control policy for the bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAcl">AWS API
          * Reference</a></p>
          *
@@ -1028,7 +1037,7 @@ namespace Aws
         virtual Model::GetBucketAclOutcomeCallable GetBucketAclCallable(const Model::GetBucketAclRequest& request) const;
 
         /**
-         * Gets the access control policy for the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Gets the access control policy for the bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAcl">AWS API
          * Reference</a></p>
          *
@@ -1037,16 +1046,16 @@ namespace Aws
         virtual void GetBucketAclAsync(const Model::GetBucketAclRequest& request, const GetBucketAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Gets an analytics configuration for the bucket (specified by the analytics
-         * configuration ID).<p><h3>See Also:</h3>   <a
+         * <p>Gets an analytics configuration for the bucket (specified by the analytics
+         * configuration ID).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAnalyticsConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::GetBucketAnalyticsConfigurationOutcome GetBucketAnalyticsConfiguration(const Model::GetBucketAnalyticsConfigurationRequest& request) const;
 
         /**
-         * Gets an analytics configuration for the bucket (specified by the analytics
-         * configuration ID).<p><h3>See Also:</h3>   <a
+         * <p>Gets an analytics configuration for the bucket (specified by the analytics
+         * configuration ID).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAnalyticsConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1055,8 +1064,8 @@ namespace Aws
         virtual Model::GetBucketAnalyticsConfigurationOutcomeCallable GetBucketAnalyticsConfigurationCallable(const Model::GetBucketAnalyticsConfigurationRequest& request) const;
 
         /**
-         * Gets an analytics configuration for the bucket (specified by the analytics
-         * configuration ID).<p><h3>See Also:</h3>   <a
+         * <p>Gets an analytics configuration for the bucket (specified by the analytics
+         * configuration ID).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAnalyticsConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1065,14 +1074,14 @@ namespace Aws
         virtual void GetBucketAnalyticsConfigurationAsync(const Model::GetBucketAnalyticsConfigurationRequest& request, const GetBucketAnalyticsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns the cors configuration for the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Returns the cors configuration for the bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketCors">AWS
          * API Reference</a></p>
          */
         virtual Model::GetBucketCorsOutcome GetBucketCors(const Model::GetBucketCorsRequest& request) const;
 
         /**
-         * Returns the cors configuration for the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Returns the cors configuration for the bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketCors">AWS
          * API Reference</a></p>
          *
@@ -1081,7 +1090,7 @@ namespace Aws
         virtual Model::GetBucketCorsOutcomeCallable GetBucketCorsCallable(const Model::GetBucketCorsRequest& request) const;
 
         /**
-         * Returns the cors configuration for the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Returns the cors configuration for the bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketCors">AWS
          * API Reference</a></p>
          *
@@ -1090,7 +1099,7 @@ namespace Aws
         virtual void GetBucketCorsAsync(const Model::GetBucketCorsRequest& request, const GetBucketCorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns the server-side encryption configuration of a bucket.<p><h3>See
+         * <p>Returns the server-side encryption configuration of a bucket.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketEncryption">AWS
          * API Reference</a></p>
@@ -1098,7 +1107,7 @@ namespace Aws
         virtual Model::GetBucketEncryptionOutcome GetBucketEncryption(const Model::GetBucketEncryptionRequest& request) const;
 
         /**
-         * Returns the server-side encryption configuration of a bucket.<p><h3>See
+         * <p>Returns the server-side encryption configuration of a bucket.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketEncryption">AWS
          * API Reference</a></p>
@@ -1108,7 +1117,7 @@ namespace Aws
         virtual Model::GetBucketEncryptionOutcomeCallable GetBucketEncryptionCallable(const Model::GetBucketEncryptionRequest& request) const;
 
         /**
-         * Returns the server-side encryption configuration of a bucket.<p><h3>See
+         * <p>Returns the server-side encryption configuration of a bucket.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketEncryption">AWS
          * API Reference</a></p>
@@ -1118,16 +1127,16 @@ namespace Aws
         virtual void GetBucketEncryptionAsync(const Model::GetBucketEncryptionRequest& request, const GetBucketEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns an inventory configuration (identified by the inventory ID) from the
-         * bucket.<p><h3>See Also:</h3>   <a
+         * <p>Returns an inventory configuration (identified by the inventory ID) from the
+         * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketInventoryConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::GetBucketInventoryConfigurationOutcome GetBucketInventoryConfiguration(const Model::GetBucketInventoryConfigurationRequest& request) const;
 
         /**
-         * Returns an inventory configuration (identified by the inventory ID) from the
-         * bucket.<p><h3>See Also:</h3>   <a
+         * <p>Returns an inventory configuration (identified by the inventory ID) from the
+         * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketInventoryConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1136,8 +1145,8 @@ namespace Aws
         virtual Model::GetBucketInventoryConfigurationOutcomeCallable GetBucketInventoryConfigurationCallable(const Model::GetBucketInventoryConfigurationRequest& request) const;
 
         /**
-         * Returns an inventory configuration (identified by the inventory ID) from the
-         * bucket.<p><h3>See Also:</h3>   <a
+         * <p>Returns an inventory configuration (identified by the inventory ID) from the
+         * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketInventoryConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1146,16 +1155,16 @@ namespace Aws
         virtual void GetBucketInventoryConfigurationAsync(const Model::GetBucketInventoryConfigurationRequest& request, const GetBucketInventoryConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns the lifecycle configuration information set on the bucket.<p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the lifecycle configuration information set on the
+         * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLifecycleConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::GetBucketLifecycleConfigurationOutcome GetBucketLifecycleConfiguration(const Model::GetBucketLifecycleConfigurationRequest& request) const;
 
         /**
-         * Returns the lifecycle configuration information set on the bucket.<p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the lifecycle configuration information set on the
+         * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLifecycleConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1164,8 +1173,8 @@ namespace Aws
         virtual Model::GetBucketLifecycleConfigurationOutcomeCallable GetBucketLifecycleConfigurationCallable(const Model::GetBucketLifecycleConfigurationRequest& request) const;
 
         /**
-         * Returns the lifecycle configuration information set on the bucket.<p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the lifecycle configuration information set on the
+         * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLifecycleConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1174,14 +1183,14 @@ namespace Aws
         virtual void GetBucketLifecycleConfigurationAsync(const Model::GetBucketLifecycleConfigurationRequest& request, const GetBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns the region the bucket resides in.<p><h3>See Also:</h3>   <a
+         * <p>Returns the region the bucket resides in.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLocation">AWS
          * API Reference</a></p>
          */
         virtual Model::GetBucketLocationOutcome GetBucketLocation(const Model::GetBucketLocationRequest& request) const;
 
         /**
-         * Returns the region the bucket resides in.<p><h3>See Also:</h3>   <a
+         * <p>Returns the region the bucket resides in.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLocation">AWS
          * API Reference</a></p>
          *
@@ -1190,7 +1199,7 @@ namespace Aws
         virtual Model::GetBucketLocationOutcomeCallable GetBucketLocationCallable(const Model::GetBucketLocationRequest& request) const;
 
         /**
-         * Returns the region the bucket resides in.<p><h3>See Also:</h3>   <a
+         * <p>Returns the region the bucket resides in.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLocation">AWS
          * API Reference</a></p>
          *
@@ -1199,8 +1208,8 @@ namespace Aws
         virtual void GetBucketLocationAsync(const Model::GetBucketLocationRequest& request, const GetBucketLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns the logging status of a bucket and the permissions users have to view
-         * and modify that status. To use GET, you must be the bucket owner.<p><h3>See
+         * <p>Returns the logging status of a bucket and the permissions users have to view
+         * and modify that status. To use GET, you must be the bucket owner.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLogging">AWS
          * API Reference</a></p>
@@ -1208,8 +1217,8 @@ namespace Aws
         virtual Model::GetBucketLoggingOutcome GetBucketLogging(const Model::GetBucketLoggingRequest& request) const;
 
         /**
-         * Returns the logging status of a bucket and the permissions users have to view
-         * and modify that status. To use GET, you must be the bucket owner.<p><h3>See
+         * <p>Returns the logging status of a bucket and the permissions users have to view
+         * and modify that status. To use GET, you must be the bucket owner.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLogging">AWS
          * API Reference</a></p>
@@ -1219,8 +1228,8 @@ namespace Aws
         virtual Model::GetBucketLoggingOutcomeCallable GetBucketLoggingCallable(const Model::GetBucketLoggingRequest& request) const;
 
         /**
-         * Returns the logging status of a bucket and the permissions users have to view
-         * and modify that status. To use GET, you must be the bucket owner.<p><h3>See
+         * <p>Returns the logging status of a bucket and the permissions users have to view
+         * and modify that status. To use GET, you must be the bucket owner.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLogging">AWS
          * API Reference</a></p>
@@ -1230,16 +1239,16 @@ namespace Aws
         virtual void GetBucketLoggingAsync(const Model::GetBucketLoggingRequest& request, const GetBucketLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Gets a metrics configuration (specified by the metrics configuration ID) from
-         * the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Gets a metrics configuration (specified by the metrics configuration ID) from
+         * the bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetricsConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::GetBucketMetricsConfigurationOutcome GetBucketMetricsConfiguration(const Model::GetBucketMetricsConfigurationRequest& request) const;
 
         /**
-         * Gets a metrics configuration (specified by the metrics configuration ID) from
-         * the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Gets a metrics configuration (specified by the metrics configuration ID) from
+         * the bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetricsConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1248,8 +1257,8 @@ namespace Aws
         virtual Model::GetBucketMetricsConfigurationOutcomeCallable GetBucketMetricsConfigurationCallable(const Model::GetBucketMetricsConfigurationRequest& request) const;
 
         /**
-         * Gets a metrics configuration (specified by the metrics configuration ID) from
-         * the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Gets a metrics configuration (specified by the metrics configuration ID) from
+         * the bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetricsConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1258,14 +1267,16 @@ namespace Aws
         virtual void GetBucketMetricsConfigurationAsync(const Model::GetBucketMetricsConfigurationRequest& request, const GetBucketMetricsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns the notification configuration of a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Returns the notification configuration of a bucket.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketNotificationConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::GetBucketNotificationConfigurationOutcome GetBucketNotificationConfiguration(const Model::GetBucketNotificationConfigurationRequest& request) const;
 
         /**
-         * Returns the notification configuration of a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Returns the notification configuration of a bucket.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketNotificationConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1274,7 +1285,8 @@ namespace Aws
         virtual Model::GetBucketNotificationConfigurationOutcomeCallable GetBucketNotificationConfigurationCallable(const Model::GetBucketNotificationConfigurationRequest& request) const;
 
         /**
-         * Returns the notification configuration of a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Returns the notification configuration of a bucket.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketNotificationConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1283,14 +1295,14 @@ namespace Aws
         virtual void GetBucketNotificationConfigurationAsync(const Model::GetBucketNotificationConfigurationRequest& request, const GetBucketNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns the policy of a specified bucket.<p><h3>See Also:</h3>   <a
+         * <p>Returns the policy of a specified bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::GetBucketPolicyOutcome GetBucketPolicy(const Model::GetBucketPolicyRequest& request) const;
 
         /**
-         * Returns the policy of a specified bucket.<p><h3>See Also:</h3>   <a
+         * <p>Returns the policy of a specified bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicy">AWS
          * API Reference</a></p>
          *
@@ -1299,7 +1311,7 @@ namespace Aws
         virtual Model::GetBucketPolicyOutcomeCallable GetBucketPolicyCallable(const Model::GetBucketPolicyRequest& request) const;
 
         /**
-         * Returns the policy of a specified bucket.<p><h3>See Also:</h3>   <a
+         * <p>Returns the policy of a specified bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicy">AWS
          * API Reference</a></p>
          *
@@ -1308,14 +1320,16 @@ namespace Aws
         virtual void GetBucketPolicyAsync(const Model::GetBucketPolicyRequest& request, const GetBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns the replication configuration of a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Returns the replication configuration of a bucket.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketReplication">AWS
          * API Reference</a></p>
          */
         virtual Model::GetBucketReplicationOutcome GetBucketReplication(const Model::GetBucketReplicationRequest& request) const;
 
         /**
-         * Returns the replication configuration of a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Returns the replication configuration of a bucket.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketReplication">AWS
          * API Reference</a></p>
          *
@@ -1324,7 +1338,8 @@ namespace Aws
         virtual Model::GetBucketReplicationOutcomeCallable GetBucketReplicationCallable(const Model::GetBucketReplicationRequest& request) const;
 
         /**
-         * Returns the replication configuration of a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Returns the replication configuration of a bucket.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketReplication">AWS
          * API Reference</a></p>
          *
@@ -1333,14 +1348,16 @@ namespace Aws
         virtual void GetBucketReplicationAsync(const Model::GetBucketReplicationRequest& request, const GetBucketReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns the request payment configuration of a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Returns the request payment configuration of a bucket.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketRequestPayment">AWS
          * API Reference</a></p>
          */
         virtual Model::GetBucketRequestPaymentOutcome GetBucketRequestPayment(const Model::GetBucketRequestPaymentRequest& request) const;
 
         /**
-         * Returns the request payment configuration of a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Returns the request payment configuration of a bucket.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketRequestPayment">AWS
          * API Reference</a></p>
          *
@@ -1349,7 +1366,8 @@ namespace Aws
         virtual Model::GetBucketRequestPaymentOutcomeCallable GetBucketRequestPaymentCallable(const Model::GetBucketRequestPaymentRequest& request) const;
 
         /**
-         * Returns the request payment configuration of a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Returns the request payment configuration of a bucket.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketRequestPayment">AWS
          * API Reference</a></p>
          *
@@ -1358,14 +1376,14 @@ namespace Aws
         virtual void GetBucketRequestPaymentAsync(const Model::GetBucketRequestPaymentRequest& request, const GetBucketRequestPaymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns the tag set associated with the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Returns the tag set associated with the bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketTagging">AWS
          * API Reference</a></p>
          */
         virtual Model::GetBucketTaggingOutcome GetBucketTagging(const Model::GetBucketTaggingRequest& request) const;
 
         /**
-         * Returns the tag set associated with the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Returns the tag set associated with the bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketTagging">AWS
          * API Reference</a></p>
          *
@@ -1374,7 +1392,7 @@ namespace Aws
         virtual Model::GetBucketTaggingOutcomeCallable GetBucketTaggingCallable(const Model::GetBucketTaggingRequest& request) const;
 
         /**
-         * Returns the tag set associated with the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Returns the tag set associated with the bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketTagging">AWS
          * API Reference</a></p>
          *
@@ -1383,14 +1401,14 @@ namespace Aws
         virtual void GetBucketTaggingAsync(const Model::GetBucketTaggingRequest& request, const GetBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns the versioning state of a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Returns the versioning state of a bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketVersioning">AWS
          * API Reference</a></p>
          */
         virtual Model::GetBucketVersioningOutcome GetBucketVersioning(const Model::GetBucketVersioningRequest& request) const;
 
         /**
-         * Returns the versioning state of a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Returns the versioning state of a bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketVersioning">AWS
          * API Reference</a></p>
          *
@@ -1399,7 +1417,7 @@ namespace Aws
         virtual Model::GetBucketVersioningOutcomeCallable GetBucketVersioningCallable(const Model::GetBucketVersioningRequest& request) const;
 
         /**
-         * Returns the versioning state of a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Returns the versioning state of a bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketVersioning">AWS
          * API Reference</a></p>
          *
@@ -1408,14 +1426,14 @@ namespace Aws
         virtual void GetBucketVersioningAsync(const Model::GetBucketVersioningRequest& request, const GetBucketVersioningResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns the website configuration for a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Returns the website configuration for a bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketWebsite">AWS
          * API Reference</a></p>
          */
         virtual Model::GetBucketWebsiteOutcome GetBucketWebsite(const Model::GetBucketWebsiteRequest& request) const;
 
         /**
-         * Returns the website configuration for a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Returns the website configuration for a bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketWebsite">AWS
          * API Reference</a></p>
          *
@@ -1424,7 +1442,7 @@ namespace Aws
         virtual Model::GetBucketWebsiteOutcomeCallable GetBucketWebsiteCallable(const Model::GetBucketWebsiteRequest& request) const;
 
         /**
-         * Returns the website configuration for a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Returns the website configuration for a bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketWebsite">AWS
          * API Reference</a></p>
          *
@@ -1433,14 +1451,14 @@ namespace Aws
         virtual void GetBucketWebsiteAsync(const Model::GetBucketWebsiteRequest& request, const GetBucketWebsiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Retrieves objects from Amazon S3.<p><h3>See Also:</h3>   <a
+         * <p>Retrieves objects from Amazon S3.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObject">AWS API
          * Reference</a></p>
          */
         virtual Model::GetObjectOutcome GetObject(const Model::GetObjectRequest& request) const;
 
         /**
-         * Retrieves objects from Amazon S3.<p><h3>See Also:</h3>   <a
+         * <p>Retrieves objects from Amazon S3.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObject">AWS API
          * Reference</a></p>
          *
@@ -1449,7 +1467,7 @@ namespace Aws
         virtual Model::GetObjectOutcomeCallable GetObjectCallable(const Model::GetObjectRequest& request) const;
 
         /**
-         * Retrieves objects from Amazon S3.<p><h3>See Also:</h3>   <a
+         * <p>Retrieves objects from Amazon S3.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObject">AWS API
          * Reference</a></p>
          *
@@ -1458,39 +1476,39 @@ namespace Aws
         virtual void GetObjectAsync(const Model::GetObjectRequest& request, const GetObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns the access control list (ACL) of an object.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectAcl">AWS API
-         * Reference</a></p>
+         * <p>Returns the access control list (ACL) of an object.</p><p><h3>See Also:</h3> 
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectAcl">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetObjectAclOutcome GetObjectAcl(const Model::GetObjectAclRequest& request) const;
 
         /**
-         * Returns the access control list (ACL) of an object.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectAcl">AWS API
-         * Reference</a></p>
+         * <p>Returns the access control list (ACL) of an object.</p><p><h3>See Also:</h3> 
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectAcl">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetObjectAclOutcomeCallable GetObjectAclCallable(const Model::GetObjectAclRequest& request) const;
 
         /**
-         * Returns the access control list (ACL) of an object.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectAcl">AWS API
-         * Reference</a></p>
+         * <p>Returns the access control list (ACL) of an object.</p><p><h3>See Also:</h3> 
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectAcl">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetObjectAclAsync(const Model::GetObjectAclRequest& request, const GetObjectAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns the tag-set of an object.<p><h3>See Also:</h3>   <a
+         * <p>Returns the tag-set of an object.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTagging">AWS
          * API Reference</a></p>
          */
         virtual Model::GetObjectTaggingOutcome GetObjectTagging(const Model::GetObjectTaggingRequest& request) const;
 
         /**
-         * Returns the tag-set of an object.<p><h3>See Also:</h3>   <a
+         * <p>Returns the tag-set of an object.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTagging">AWS
          * API Reference</a></p>
          *
@@ -1499,7 +1517,7 @@ namespace Aws
         virtual Model::GetObjectTaggingOutcomeCallable GetObjectTaggingCallable(const Model::GetObjectTaggingRequest& request) const;
 
         /**
-         * Returns the tag-set of an object.<p><h3>See Also:</h3>   <a
+         * <p>Returns the tag-set of an object.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTagging">AWS
          * API Reference</a></p>
          *
@@ -1508,14 +1526,14 @@ namespace Aws
         virtual void GetObjectTaggingAsync(const Model::GetObjectTaggingRequest& request, const GetObjectTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Return torrent files from a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Return torrent files from a bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTorrent">AWS
          * API Reference</a></p>
          */
         virtual Model::GetObjectTorrentOutcome GetObjectTorrent(const Model::GetObjectTorrentRequest& request) const;
 
         /**
-         * Return torrent files from a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Return torrent files from a bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTorrent">AWS
          * API Reference</a></p>
          *
@@ -1524,7 +1542,7 @@ namespace Aws
         virtual Model::GetObjectTorrentOutcomeCallable GetObjectTorrentCallable(const Model::GetObjectTorrentRequest& request) const;
 
         /**
-         * Return torrent files from a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Return torrent files from a bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTorrent">AWS
          * API Reference</a></p>
          *
@@ -1533,16 +1551,16 @@ namespace Aws
         virtual void GetObjectTorrentAsync(const Model::GetObjectTorrentRequest& request, const GetObjectTorrentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * This operation is useful to determine if a bucket exists and you have permission
-         * to access it.<p><h3>See Also:</h3>   <a
+         * <p>This operation is useful to determine if a bucket exists and you have
+         * permission to access it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadBucket">AWS API
          * Reference</a></p>
          */
         virtual Model::HeadBucketOutcome HeadBucket(const Model::HeadBucketRequest& request) const;
 
         /**
-         * This operation is useful to determine if a bucket exists and you have permission
-         * to access it.<p><h3>See Also:</h3>   <a
+         * <p>This operation is useful to determine if a bucket exists and you have
+         * permission to access it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadBucket">AWS API
          * Reference</a></p>
          *
@@ -1551,8 +1569,8 @@ namespace Aws
         virtual Model::HeadBucketOutcomeCallable HeadBucketCallable(const Model::HeadBucketRequest& request) const;
 
         /**
-         * This operation is useful to determine if a bucket exists and you have permission
-         * to access it.<p><h3>See Also:</h3>   <a
+         * <p>This operation is useful to determine if a bucket exists and you have
+         * permission to access it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadBucket">AWS API
          * Reference</a></p>
          *
@@ -1561,9 +1579,9 @@ namespace Aws
         virtual void HeadBucketAsync(const Model::HeadBucketRequest& request, const HeadBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * The HEAD operation retrieves metadata from an object without returning the
+         * <p>The HEAD operation retrieves metadata from an object without returning the
          * object itself. This operation is useful if you're only interested in an object's
-         * metadata. To use HEAD, you must have READ access to the object.<p><h3>See
+         * metadata. To use HEAD, you must have READ access to the object.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadObject">AWS API
          * Reference</a></p>
@@ -1571,9 +1589,9 @@ namespace Aws
         virtual Model::HeadObjectOutcome HeadObject(const Model::HeadObjectRequest& request) const;
 
         /**
-         * The HEAD operation retrieves metadata from an object without returning the
+         * <p>The HEAD operation retrieves metadata from an object without returning the
          * object itself. This operation is useful if you're only interested in an object's
-         * metadata. To use HEAD, you must have READ access to the object.<p><h3>See
+         * metadata. To use HEAD, you must have READ access to the object.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadObject">AWS API
          * Reference</a></p>
@@ -1583,9 +1601,9 @@ namespace Aws
         virtual Model::HeadObjectOutcomeCallable HeadObjectCallable(const Model::HeadObjectRequest& request) const;
 
         /**
-         * The HEAD operation retrieves metadata from an object without returning the
+         * <p>The HEAD operation retrieves metadata from an object without returning the
          * object itself. This operation is useful if you're only interested in an object's
-         * metadata. To use HEAD, you must have READ access to the object.<p><h3>See
+         * metadata. To use HEAD, you must have READ access to the object.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadObject">AWS API
          * Reference</a></p>
@@ -1595,14 +1613,16 @@ namespace Aws
         virtual void HeadObjectAsync(const Model::HeadObjectRequest& request, const HeadObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Lists the analytics configurations for the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Lists the analytics configurations for the bucket.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketAnalyticsConfigurations">AWS
          * API Reference</a></p>
          */
         virtual Model::ListBucketAnalyticsConfigurationsOutcome ListBucketAnalyticsConfigurations(const Model::ListBucketAnalyticsConfigurationsRequest& request) const;
 
         /**
-         * Lists the analytics configurations for the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Lists the analytics configurations for the bucket.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketAnalyticsConfigurations">AWS
          * API Reference</a></p>
          *
@@ -1611,7 +1631,8 @@ namespace Aws
         virtual Model::ListBucketAnalyticsConfigurationsOutcomeCallable ListBucketAnalyticsConfigurationsCallable(const Model::ListBucketAnalyticsConfigurationsRequest& request) const;
 
         /**
-         * Lists the analytics configurations for the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Lists the analytics configurations for the bucket.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketAnalyticsConfigurations">AWS
          * API Reference</a></p>
          *
@@ -1620,16 +1641,16 @@ namespace Aws
         virtual void ListBucketAnalyticsConfigurationsAsync(const Model::ListBucketAnalyticsConfigurationsRequest& request, const ListBucketAnalyticsConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns a list of inventory configurations for the bucket.<p><h3>See Also:</h3> 
-         * <a
+         * <p>Returns a list of inventory configurations for the bucket.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketInventoryConfigurations">AWS
          * API Reference</a></p>
          */
         virtual Model::ListBucketInventoryConfigurationsOutcome ListBucketInventoryConfigurations(const Model::ListBucketInventoryConfigurationsRequest& request) const;
 
         /**
-         * Returns a list of inventory configurations for the bucket.<p><h3>See Also:</h3> 
-         * <a
+         * <p>Returns a list of inventory configurations for the bucket.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketInventoryConfigurations">AWS
          * API Reference</a></p>
          *
@@ -1638,8 +1659,8 @@ namespace Aws
         virtual Model::ListBucketInventoryConfigurationsOutcomeCallable ListBucketInventoryConfigurationsCallable(const Model::ListBucketInventoryConfigurationsRequest& request) const;
 
         /**
-         * Returns a list of inventory configurations for the bucket.<p><h3>See Also:</h3> 
-         * <a
+         * <p>Returns a list of inventory configurations for the bucket.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketInventoryConfigurations">AWS
          * API Reference</a></p>
          *
@@ -1648,14 +1669,16 @@ namespace Aws
         virtual void ListBucketInventoryConfigurationsAsync(const Model::ListBucketInventoryConfigurationsRequest& request, const ListBucketInventoryConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Lists the metrics configurations for the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Lists the metrics configurations for the bucket.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketMetricsConfigurations">AWS
          * API Reference</a></p>
          */
         virtual Model::ListBucketMetricsConfigurationsOutcome ListBucketMetricsConfigurations(const Model::ListBucketMetricsConfigurationsRequest& request) const;
 
         /**
-         * Lists the metrics configurations for the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Lists the metrics configurations for the bucket.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketMetricsConfigurations">AWS
          * API Reference</a></p>
          *
@@ -1664,7 +1687,8 @@ namespace Aws
         virtual Model::ListBucketMetricsConfigurationsOutcomeCallable ListBucketMetricsConfigurationsCallable(const Model::ListBucketMetricsConfigurationsRequest& request) const;
 
         /**
-         * Lists the metrics configurations for the bucket.<p><h3>See Also:</h3>   <a
+         * <p>Lists the metrics configurations for the bucket.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketMetricsConfigurations">AWS
          * API Reference</a></p>
          *
@@ -1673,16 +1697,16 @@ namespace Aws
         virtual void ListBucketMetricsConfigurationsAsync(const Model::ListBucketMetricsConfigurationsRequest& request, const ListBucketMetricsConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns a list of all buckets owned by the authenticated sender of the
-         * request.<p><h3>See Also:</h3>   <a
+         * <p>Returns a list of all buckets owned by the authenticated sender of the
+         * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBuckets">AWS API
          * Reference</a></p>
          */
         virtual Model::ListBucketsOutcome ListBuckets() const;
 
         /**
-         * Returns a list of all buckets owned by the authenticated sender of the
-         * request.<p><h3>See Also:</h3>   <a
+         * <p>Returns a list of all buckets owned by the authenticated sender of the
+         * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBuckets">AWS API
          * Reference</a></p>
          *
@@ -1691,8 +1715,8 @@ namespace Aws
         virtual Model::ListBucketsOutcomeCallable ListBucketsCallable() const;
 
         /**
-         * Returns a list of all buckets owned by the authenticated sender of the
-         * request.<p><h3>See Also:</h3>   <a
+         * <p>Returns a list of all buckets owned by the authenticated sender of the
+         * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBuckets">AWS API
          * Reference</a></p>
          *
@@ -1700,14 +1724,16 @@ namespace Aws
          */
         virtual void ListBucketsAsync(const ListBucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
         /**
-         * This operation lists in-progress multipart uploads.<p><h3>See Also:</h3>   <a
+         * <p>This operation lists in-progress multipart uploads.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListMultipartUploads">AWS
          * API Reference</a></p>
          */
         virtual Model::ListMultipartUploadsOutcome ListMultipartUploads(const Model::ListMultipartUploadsRequest& request) const;
 
         /**
-         * This operation lists in-progress multipart uploads.<p><h3>See Also:</h3>   <a
+         * <p>This operation lists in-progress multipart uploads.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListMultipartUploads">AWS
          * API Reference</a></p>
          *
@@ -1716,7 +1742,8 @@ namespace Aws
         virtual Model::ListMultipartUploadsOutcomeCallable ListMultipartUploadsCallable(const Model::ListMultipartUploadsRequest& request) const;
 
         /**
-         * This operation lists in-progress multipart uploads.<p><h3>See Also:</h3>   <a
+         * <p>This operation lists in-progress multipart uploads.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListMultipartUploads">AWS
          * API Reference</a></p>
          *
@@ -1725,16 +1752,16 @@ namespace Aws
         virtual void ListMultipartUploadsAsync(const Model::ListMultipartUploadsRequest& request, const ListMultipartUploadsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns metadata about all of the versions of objects in a bucket.<p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns metadata about all of the versions of objects in a
+         * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectVersions">AWS
          * API Reference</a></p>
          */
         virtual Model::ListObjectVersionsOutcome ListObjectVersions(const Model::ListObjectVersionsRequest& request) const;
 
         /**
-         * Returns metadata about all of the versions of objects in a bucket.<p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns metadata about all of the versions of objects in a
+         * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectVersions">AWS
          * API Reference</a></p>
          *
@@ -1743,8 +1770,8 @@ namespace Aws
         virtual Model::ListObjectVersionsOutcomeCallable ListObjectVersionsCallable(const Model::ListObjectVersionsRequest& request) const;
 
         /**
-         * Returns metadata about all of the versions of objects in a bucket.<p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns metadata about all of the versions of objects in a
+         * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectVersions">AWS
          * API Reference</a></p>
          *
@@ -1753,18 +1780,18 @@ namespace Aws
         virtual void ListObjectVersionsAsync(const Model::ListObjectVersionsRequest& request, const ListObjectVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns some or all (up to 1000) of the objects in a bucket. You can use the
+         * <p>Returns some or all (up to 1000) of the objects in a bucket. You can use the
          * request parameters as selection criteria to return a subset of the objects in a
-         * bucket.<p><h3>See Also:</h3>   <a
+         * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjects">AWS API
          * Reference</a></p>
          */
         virtual Model::ListObjectsOutcome ListObjects(const Model::ListObjectsRequest& request) const;
 
         /**
-         * Returns some or all (up to 1000) of the objects in a bucket. You can use the
+         * <p>Returns some or all (up to 1000) of the objects in a bucket. You can use the
          * request parameters as selection criteria to return a subset of the objects in a
-         * bucket.<p><h3>See Also:</h3>   <a
+         * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjects">AWS API
          * Reference</a></p>
          *
@@ -1773,9 +1800,9 @@ namespace Aws
         virtual Model::ListObjectsOutcomeCallable ListObjectsCallable(const Model::ListObjectsRequest& request) const;
 
         /**
-         * Returns some or all (up to 1000) of the objects in a bucket. You can use the
+         * <p>Returns some or all (up to 1000) of the objects in a bucket. You can use the
          * request parameters as selection criteria to return a subset of the objects in a
-         * bucket.<p><h3>See Also:</h3>   <a
+         * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjects">AWS API
          * Reference</a></p>
          *
@@ -1784,21 +1811,21 @@ namespace Aws
         virtual void ListObjectsAsync(const Model::ListObjectsRequest& request, const ListObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns some or all (up to 1000) of the objects in a bucket. You can use the
+         * <p>Returns some or all (up to 1000) of the objects in a bucket. You can use the
          * request parameters as selection criteria to return a subset of the objects in a
          * bucket. Note: ListObjectsV2 is the revised List Objects API and we recommend you
-         * use this revised API for new application development.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectsV2">AWS
+         * use this revised API for new application development.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectsV2">AWS
          * API Reference</a></p>
          */
         virtual Model::ListObjectsV2Outcome ListObjectsV2(const Model::ListObjectsV2Request& request) const;
 
         /**
-         * Returns some or all (up to 1000) of the objects in a bucket. You can use the
+         * <p>Returns some or all (up to 1000) of the objects in a bucket. You can use the
          * request parameters as selection criteria to return a subset of the objects in a
          * bucket. Note: ListObjectsV2 is the revised List Objects API and we recommend you
-         * use this revised API for new application development.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectsV2">AWS
+         * use this revised API for new application development.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectsV2">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1806,11 +1833,11 @@ namespace Aws
         virtual Model::ListObjectsV2OutcomeCallable ListObjectsV2Callable(const Model::ListObjectsV2Request& request) const;
 
         /**
-         * Returns some or all (up to 1000) of the objects in a bucket. You can use the
+         * <p>Returns some or all (up to 1000) of the objects in a bucket. You can use the
          * request parameters as selection criteria to return a subset of the objects in a
          * bucket. Note: ListObjectsV2 is the revised List Objects API and we recommend you
-         * use this revised API for new application development.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectsV2">AWS
+         * use this revised API for new application development.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectsV2">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1818,16 +1845,16 @@ namespace Aws
         virtual void ListObjectsV2Async(const Model::ListObjectsV2Request& request, const ListObjectsV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Lists the parts that have been uploaded for a specific multipart
-         * upload.<p><h3>See Also:</h3>   <a
+         * <p>Lists the parts that have been uploaded for a specific multipart
+         * upload.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListParts">AWS API
          * Reference</a></p>
          */
         virtual Model::ListPartsOutcome ListParts(const Model::ListPartsRequest& request) const;
 
         /**
-         * Lists the parts that have been uploaded for a specific multipart
-         * upload.<p><h3>See Also:</h3>   <a
+         * <p>Lists the parts that have been uploaded for a specific multipart
+         * upload.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListParts">AWS API
          * Reference</a></p>
          *
@@ -1836,8 +1863,8 @@ namespace Aws
         virtual Model::ListPartsOutcomeCallable ListPartsCallable(const Model::ListPartsRequest& request) const;
 
         /**
-         * Lists the parts that have been uploaded for a specific multipart
-         * upload.<p><h3>See Also:</h3>   <a
+         * <p>Lists the parts that have been uploaded for a specific multipart
+         * upload.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListParts">AWS API
          * Reference</a></p>
          *
@@ -1846,16 +1873,16 @@ namespace Aws
         virtual void ListPartsAsync(const Model::ListPartsRequest& request, const ListPartsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Sets the accelerate configuration of an existing bucket.<p><h3>See Also:</h3>  
-         * <a
+         * <p>Sets the accelerate configuration of an existing bucket.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAccelerateConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::PutBucketAccelerateConfigurationOutcome PutBucketAccelerateConfiguration(const Model::PutBucketAccelerateConfigurationRequest& request) const;
 
         /**
-         * Sets the accelerate configuration of an existing bucket.<p><h3>See Also:</h3>  
-         * <a
+         * <p>Sets the accelerate configuration of an existing bucket.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAccelerateConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1864,8 +1891,8 @@ namespace Aws
         virtual Model::PutBucketAccelerateConfigurationOutcomeCallable PutBucketAccelerateConfigurationCallable(const Model::PutBucketAccelerateConfigurationRequest& request) const;
 
         /**
-         * Sets the accelerate configuration of an existing bucket.<p><h3>See Also:</h3>  
-         * <a
+         * <p>Sets the accelerate configuration of an existing bucket.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAccelerateConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1874,16 +1901,16 @@ namespace Aws
         virtual void PutBucketAccelerateConfigurationAsync(const Model::PutBucketAccelerateConfigurationRequest& request, const PutBucketAccelerateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Sets the permissions on a bucket using access control lists (ACL).<p><h3>See
-         * Also:</h3>   <a
+         * <p>Sets the permissions on a bucket using access control lists
+         * (ACL).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAcl">AWS API
          * Reference</a></p>
          */
         virtual Model::PutBucketAclOutcome PutBucketAcl(const Model::PutBucketAclRequest& request) const;
 
         /**
-         * Sets the permissions on a bucket using access control lists (ACL).<p><h3>See
-         * Also:</h3>   <a
+         * <p>Sets the permissions on a bucket using access control lists
+         * (ACL).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAcl">AWS API
          * Reference</a></p>
          *
@@ -1892,8 +1919,8 @@ namespace Aws
         virtual Model::PutBucketAclOutcomeCallable PutBucketAclCallable(const Model::PutBucketAclRequest& request) const;
 
         /**
-         * Sets the permissions on a bucket using access control lists (ACL).<p><h3>See
-         * Also:</h3>   <a
+         * <p>Sets the permissions on a bucket using access control lists
+         * (ACL).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAcl">AWS API
          * Reference</a></p>
          *
@@ -1902,16 +1929,16 @@ namespace Aws
         virtual void PutBucketAclAsync(const Model::PutBucketAclRequest& request, const PutBucketAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Sets an analytics configuration for the bucket (specified by the analytics
-         * configuration ID).<p><h3>See Also:</h3>   <a
+         * <p>Sets an analytics configuration for the bucket (specified by the analytics
+         * configuration ID).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAnalyticsConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::PutBucketAnalyticsConfigurationOutcome PutBucketAnalyticsConfiguration(const Model::PutBucketAnalyticsConfigurationRequest& request) const;
 
         /**
-         * Sets an analytics configuration for the bucket (specified by the analytics
-         * configuration ID).<p><h3>See Also:</h3>   <a
+         * <p>Sets an analytics configuration for the bucket (specified by the analytics
+         * configuration ID).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAnalyticsConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1920,8 +1947,8 @@ namespace Aws
         virtual Model::PutBucketAnalyticsConfigurationOutcomeCallable PutBucketAnalyticsConfigurationCallable(const Model::PutBucketAnalyticsConfigurationRequest& request) const;
 
         /**
-         * Sets an analytics configuration for the bucket (specified by the analytics
-         * configuration ID).<p><h3>See Also:</h3>   <a
+         * <p>Sets an analytics configuration for the bucket (specified by the analytics
+         * configuration ID).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAnalyticsConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1930,14 +1957,14 @@ namespace Aws
         virtual void PutBucketAnalyticsConfigurationAsync(const Model::PutBucketAnalyticsConfigurationRequest& request, const PutBucketAnalyticsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Sets the cors configuration for a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Sets the cors configuration for a bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketCors">AWS
          * API Reference</a></p>
          */
         virtual Model::PutBucketCorsOutcome PutBucketCors(const Model::PutBucketCorsRequest& request) const;
 
         /**
-         * Sets the cors configuration for a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Sets the cors configuration for a bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketCors">AWS
          * API Reference</a></p>
          *
@@ -1946,7 +1973,7 @@ namespace Aws
         virtual Model::PutBucketCorsOutcomeCallable PutBucketCorsCallable(const Model::PutBucketCorsRequest& request) const;
 
         /**
-         * Sets the cors configuration for a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Sets the cors configuration for a bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketCors">AWS
          * API Reference</a></p>
          *
@@ -1955,16 +1982,16 @@ namespace Aws
         virtual void PutBucketCorsAsync(const Model::PutBucketCorsRequest& request, const PutBucketCorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Creates a new server-side encryption configuration (or replaces an existing one,
-         * if present).<p><h3>See Also:</h3>   <a
+         * <p>Creates a new server-side encryption configuration (or replaces an existing
+         * one, if present).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketEncryption">AWS
          * API Reference</a></p>
          */
         virtual Model::PutBucketEncryptionOutcome PutBucketEncryption(const Model::PutBucketEncryptionRequest& request) const;
 
         /**
-         * Creates a new server-side encryption configuration (or replaces an existing one,
-         * if present).<p><h3>See Also:</h3>   <a
+         * <p>Creates a new server-side encryption configuration (or replaces an existing
+         * one, if present).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketEncryption">AWS
          * API Reference</a></p>
          *
@@ -1973,8 +2000,8 @@ namespace Aws
         virtual Model::PutBucketEncryptionOutcomeCallable PutBucketEncryptionCallable(const Model::PutBucketEncryptionRequest& request) const;
 
         /**
-         * Creates a new server-side encryption configuration (or replaces an existing one,
-         * if present).<p><h3>See Also:</h3>   <a
+         * <p>Creates a new server-side encryption configuration (or replaces an existing
+         * one, if present).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketEncryption">AWS
          * API Reference</a></p>
          *
@@ -1983,16 +2010,16 @@ namespace Aws
         virtual void PutBucketEncryptionAsync(const Model::PutBucketEncryptionRequest& request, const PutBucketEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Adds an inventory configuration (identified by the inventory ID) from the
-         * bucket.<p><h3>See Also:</h3>   <a
+         * <p>Adds an inventory configuration (identified by the inventory ID) from the
+         * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketInventoryConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::PutBucketInventoryConfigurationOutcome PutBucketInventoryConfiguration(const Model::PutBucketInventoryConfigurationRequest& request) const;
 
         /**
-         * Adds an inventory configuration (identified by the inventory ID) from the
-         * bucket.<p><h3>See Also:</h3>   <a
+         * <p>Adds an inventory configuration (identified by the inventory ID) from the
+         * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketInventoryConfiguration">AWS
          * API Reference</a></p>
          *
@@ -2001,8 +2028,8 @@ namespace Aws
         virtual Model::PutBucketInventoryConfigurationOutcomeCallable PutBucketInventoryConfigurationCallable(const Model::PutBucketInventoryConfigurationRequest& request) const;
 
         /**
-         * Adds an inventory configuration (identified by the inventory ID) from the
-         * bucket.<p><h3>See Also:</h3>   <a
+         * <p>Adds an inventory configuration (identified by the inventory ID) from the
+         * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketInventoryConfiguration">AWS
          * API Reference</a></p>
          *
@@ -2011,16 +2038,16 @@ namespace Aws
         virtual void PutBucketInventoryConfigurationAsync(const Model::PutBucketInventoryConfigurationRequest& request, const PutBucketInventoryConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Sets lifecycle configuration for your bucket. If a lifecycle configuration
-         * exists, it replaces it.<p><h3>See Also:</h3>   <a
+         * <p>Sets lifecycle configuration for your bucket. If a lifecycle configuration
+         * exists, it replaces it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLifecycleConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::PutBucketLifecycleConfigurationOutcome PutBucketLifecycleConfiguration(const Model::PutBucketLifecycleConfigurationRequest& request) const;
 
         /**
-         * Sets lifecycle configuration for your bucket. If a lifecycle configuration
-         * exists, it replaces it.<p><h3>See Also:</h3>   <a
+         * <p>Sets lifecycle configuration for your bucket. If a lifecycle configuration
+         * exists, it replaces it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLifecycleConfiguration">AWS
          * API Reference</a></p>
          *
@@ -2029,8 +2056,8 @@ namespace Aws
         virtual Model::PutBucketLifecycleConfigurationOutcomeCallable PutBucketLifecycleConfigurationCallable(const Model::PutBucketLifecycleConfigurationRequest& request) const;
 
         /**
-         * Sets lifecycle configuration for your bucket. If a lifecycle configuration
-         * exists, it replaces it.<p><h3>See Also:</h3>   <a
+         * <p>Sets lifecycle configuration for your bucket. If a lifecycle configuration
+         * exists, it replaces it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLifecycleConfiguration">AWS
          * API Reference</a></p>
          *
@@ -2039,18 +2066,18 @@ namespace Aws
         virtual void PutBucketLifecycleConfigurationAsync(const Model::PutBucketLifecycleConfigurationRequest& request, const PutBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Set the logging parameters for a bucket and to specify permissions for who can
-         * view and modify the logging parameters. To set the logging status of a bucket,
-         * you must be the bucket owner.<p><h3>See Also:</h3>   <a
+         * <p>Set the logging parameters for a bucket and to specify permissions for who
+         * can view and modify the logging parameters. To set the logging status of a
+         * bucket, you must be the bucket owner.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLogging">AWS
          * API Reference</a></p>
          */
         virtual Model::PutBucketLoggingOutcome PutBucketLogging(const Model::PutBucketLoggingRequest& request) const;
 
         /**
-         * Set the logging parameters for a bucket and to specify permissions for who can
-         * view and modify the logging parameters. To set the logging status of a bucket,
-         * you must be the bucket owner.<p><h3>See Also:</h3>   <a
+         * <p>Set the logging parameters for a bucket and to specify permissions for who
+         * can view and modify the logging parameters. To set the logging status of a
+         * bucket, you must be the bucket owner.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLogging">AWS
          * API Reference</a></p>
          *
@@ -2059,9 +2086,9 @@ namespace Aws
         virtual Model::PutBucketLoggingOutcomeCallable PutBucketLoggingCallable(const Model::PutBucketLoggingRequest& request) const;
 
         /**
-         * Set the logging parameters for a bucket and to specify permissions for who can
-         * view and modify the logging parameters. To set the logging status of a bucket,
-         * you must be the bucket owner.<p><h3>See Also:</h3>   <a
+         * <p>Set the logging parameters for a bucket and to specify permissions for who
+         * can view and modify the logging parameters. To set the logging status of a
+         * bucket, you must be the bucket owner.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLogging">AWS
          * API Reference</a></p>
          *
@@ -2070,16 +2097,16 @@ namespace Aws
         virtual void PutBucketLoggingAsync(const Model::PutBucketLoggingRequest& request, const PutBucketLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Sets a metrics configuration (specified by the metrics configuration ID) for the
-         * bucket.<p><h3>See Also:</h3>   <a
+         * <p>Sets a metrics configuration (specified by the metrics configuration ID) for
+         * the bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketMetricsConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::PutBucketMetricsConfigurationOutcome PutBucketMetricsConfiguration(const Model::PutBucketMetricsConfigurationRequest& request) const;
 
         /**
-         * Sets a metrics configuration (specified by the metrics configuration ID) for the
-         * bucket.<p><h3>See Also:</h3>   <a
+         * <p>Sets a metrics configuration (specified by the metrics configuration ID) for
+         * the bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketMetricsConfiguration">AWS
          * API Reference</a></p>
          *
@@ -2088,8 +2115,8 @@ namespace Aws
         virtual Model::PutBucketMetricsConfigurationOutcomeCallable PutBucketMetricsConfigurationCallable(const Model::PutBucketMetricsConfigurationRequest& request) const;
 
         /**
-         * Sets a metrics configuration (specified by the metrics configuration ID) for the
-         * bucket.<p><h3>See Also:</h3>   <a
+         * <p>Sets a metrics configuration (specified by the metrics configuration ID) for
+         * the bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketMetricsConfiguration">AWS
          * API Reference</a></p>
          *
@@ -2098,16 +2125,16 @@ namespace Aws
         virtual void PutBucketMetricsConfigurationAsync(const Model::PutBucketMetricsConfigurationRequest& request, const PutBucketMetricsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Enables notifications of specified events for a bucket.<p><h3>See Also:</h3>  
-         * <a
+         * <p>Enables notifications of specified events for a bucket.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketNotificationConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::PutBucketNotificationConfigurationOutcome PutBucketNotificationConfiguration(const Model::PutBucketNotificationConfigurationRequest& request) const;
 
         /**
-         * Enables notifications of specified events for a bucket.<p><h3>See Also:</h3>  
-         * <a
+         * <p>Enables notifications of specified events for a bucket.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketNotificationConfiguration">AWS
          * API Reference</a></p>
          *
@@ -2116,8 +2143,8 @@ namespace Aws
         virtual Model::PutBucketNotificationConfigurationOutcomeCallable PutBucketNotificationConfigurationCallable(const Model::PutBucketNotificationConfigurationRequest& request) const;
 
         /**
-         * Enables notifications of specified events for a bucket.<p><h3>See Also:</h3>  
-         * <a
+         * <p>Enables notifications of specified events for a bucket.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketNotificationConfiguration">AWS
          * API Reference</a></p>
          *
@@ -2126,16 +2153,16 @@ namespace Aws
         virtual void PutBucketNotificationConfigurationAsync(const Model::PutBucketNotificationConfigurationRequest& request, const PutBucketNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Replaces a policy on a bucket. If the bucket already has a policy, the one in
-         * this request completely replaces it.<p><h3>See Also:</h3>   <a
+         * <p>Replaces a policy on a bucket. If the bucket already has a policy, the one in
+         * this request completely replaces it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::PutBucketPolicyOutcome PutBucketPolicy(const Model::PutBucketPolicyRequest& request) const;
 
         /**
-         * Replaces a policy on a bucket. If the bucket already has a policy, the one in
-         * this request completely replaces it.<p><h3>See Also:</h3>   <a
+         * <p>Replaces a policy on a bucket. If the bucket already has a policy, the one in
+         * this request completely replaces it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketPolicy">AWS
          * API Reference</a></p>
          *
@@ -2144,8 +2171,8 @@ namespace Aws
         virtual Model::PutBucketPolicyOutcomeCallable PutBucketPolicyCallable(const Model::PutBucketPolicyRequest& request) const;
 
         /**
-         * Replaces a policy on a bucket. If the bucket already has a policy, the one in
-         * this request completely replaces it.<p><h3>See Also:</h3>   <a
+         * <p>Replaces a policy on a bucket. If the bucket already has a policy, the one in
+         * this request completely replaces it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketPolicy">AWS
          * API Reference</a></p>
          *
@@ -2154,16 +2181,16 @@ namespace Aws
         virtual void PutBucketPolicyAsync(const Model::PutBucketPolicyRequest& request, const PutBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Creates a new replication configuration (or replaces an existing one, if
-         * present).<p><h3>See Also:</h3>   <a
+         * <p>Creates a new replication configuration (or replaces an existing one, if
+         * present).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketReplication">AWS
          * API Reference</a></p>
          */
         virtual Model::PutBucketReplicationOutcome PutBucketReplication(const Model::PutBucketReplicationRequest& request) const;
 
         /**
-         * Creates a new replication configuration (or replaces an existing one, if
-         * present).<p><h3>See Also:</h3>   <a
+         * <p>Creates a new replication configuration (or replaces an existing one, if
+         * present).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketReplication">AWS
          * API Reference</a></p>
          *
@@ -2172,8 +2199,8 @@ namespace Aws
         virtual Model::PutBucketReplicationOutcomeCallable PutBucketReplicationCallable(const Model::PutBucketReplicationRequest& request) const;
 
         /**
-         * Creates a new replication configuration (or replaces an existing one, if
-         * present).<p><h3>See Also:</h3>   <a
+         * <p>Creates a new replication configuration (or replaces an existing one, if
+         * present).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketReplication">AWS
          * API Reference</a></p>
          *
@@ -2182,12 +2209,12 @@ namespace Aws
         virtual void PutBucketReplicationAsync(const Model::PutBucketReplicationRequest& request, const PutBucketReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Sets the request payment configuration for a bucket. By default, the bucket
+         * <p>Sets the request payment configuration for a bucket. By default, the bucket
          * owner pays for downloads from the bucket. This configuration parameter enables
          * the bucket owner (only) to specify that the person requesting the download will
          * be charged for the download. Documentation on requester pays buckets can be
          * found at
-         * http://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html<p><h3>See
+         * http://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketRequestPayment">AWS
          * API Reference</a></p>
@@ -2195,12 +2222,12 @@ namespace Aws
         virtual Model::PutBucketRequestPaymentOutcome PutBucketRequestPayment(const Model::PutBucketRequestPaymentRequest& request) const;
 
         /**
-         * Sets the request payment configuration for a bucket. By default, the bucket
+         * <p>Sets the request payment configuration for a bucket. By default, the bucket
          * owner pays for downloads from the bucket. This configuration parameter enables
          * the bucket owner (only) to specify that the person requesting the download will
          * be charged for the download. Documentation on requester pays buckets can be
          * found at
-         * http://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html<p><h3>See
+         * http://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketRequestPayment">AWS
          * API Reference</a></p>
@@ -2210,12 +2237,12 @@ namespace Aws
         virtual Model::PutBucketRequestPaymentOutcomeCallable PutBucketRequestPaymentCallable(const Model::PutBucketRequestPaymentRequest& request) const;
 
         /**
-         * Sets the request payment configuration for a bucket. By default, the bucket
+         * <p>Sets the request payment configuration for a bucket. By default, the bucket
          * owner pays for downloads from the bucket. This configuration parameter enables
          * the bucket owner (only) to specify that the person requesting the download will
          * be charged for the download. Documentation on requester pays buckets can be
          * found at
-         * http://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html<p><h3>See
+         * http://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketRequestPayment">AWS
          * API Reference</a></p>
@@ -2225,14 +2252,14 @@ namespace Aws
         virtual void PutBucketRequestPaymentAsync(const Model::PutBucketRequestPaymentRequest& request, const PutBucketRequestPaymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Sets the tags for a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Sets the tags for a bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketTagging">AWS
          * API Reference</a></p>
          */
         virtual Model::PutBucketTaggingOutcome PutBucketTagging(const Model::PutBucketTaggingRequest& request) const;
 
         /**
-         * Sets the tags for a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Sets the tags for a bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketTagging">AWS
          * API Reference</a></p>
          *
@@ -2241,7 +2268,7 @@ namespace Aws
         virtual Model::PutBucketTaggingOutcomeCallable PutBucketTaggingCallable(const Model::PutBucketTaggingRequest& request) const;
 
         /**
-         * Sets the tags for a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Sets the tags for a bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketTagging">AWS
          * API Reference</a></p>
          *
@@ -2250,16 +2277,16 @@ namespace Aws
         virtual void PutBucketTaggingAsync(const Model::PutBucketTaggingRequest& request, const PutBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Sets the versioning state of an existing bucket. To set the versioning state,
-         * you must be the bucket owner.<p><h3>See Also:</h3>   <a
+         * <p>Sets the versioning state of an existing bucket. To set the versioning state,
+         * you must be the bucket owner.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketVersioning">AWS
          * API Reference</a></p>
          */
         virtual Model::PutBucketVersioningOutcome PutBucketVersioning(const Model::PutBucketVersioningRequest& request) const;
 
         /**
-         * Sets the versioning state of an existing bucket. To set the versioning state,
-         * you must be the bucket owner.<p><h3>See Also:</h3>   <a
+         * <p>Sets the versioning state of an existing bucket. To set the versioning state,
+         * you must be the bucket owner.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketVersioning">AWS
          * API Reference</a></p>
          *
@@ -2268,8 +2295,8 @@ namespace Aws
         virtual Model::PutBucketVersioningOutcomeCallable PutBucketVersioningCallable(const Model::PutBucketVersioningRequest& request) const;
 
         /**
-         * Sets the versioning state of an existing bucket. To set the versioning state,
-         * you must be the bucket owner.<p><h3>See Also:</h3>   <a
+         * <p>Sets the versioning state of an existing bucket. To set the versioning state,
+         * you must be the bucket owner.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketVersioning">AWS
          * API Reference</a></p>
          *
@@ -2278,14 +2305,14 @@ namespace Aws
         virtual void PutBucketVersioningAsync(const Model::PutBucketVersioningRequest& request, const PutBucketVersioningResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Set the website configuration for a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Set the website configuration for a bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketWebsite">AWS
          * API Reference</a></p>
          */
         virtual Model::PutBucketWebsiteOutcome PutBucketWebsite(const Model::PutBucketWebsiteRequest& request) const;
 
         /**
-         * Set the website configuration for a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Set the website configuration for a bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketWebsite">AWS
          * API Reference</a></p>
          *
@@ -2294,7 +2321,7 @@ namespace Aws
         virtual Model::PutBucketWebsiteOutcomeCallable PutBucketWebsiteCallable(const Model::PutBucketWebsiteRequest& request) const;
 
         /**
-         * Set the website configuration for a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Set the website configuration for a bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketWebsite">AWS
          * API Reference</a></p>
          *
@@ -2303,14 +2330,14 @@ namespace Aws
         virtual void PutBucketWebsiteAsync(const Model::PutBucketWebsiteRequest& request, const PutBucketWebsiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Adds an object to a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Adds an object to a bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObject">AWS API
          * Reference</a></p>
          */
         virtual Model::PutObjectOutcome PutObject(const Model::PutObjectRequest& request) const;
 
         /**
-         * Adds an object to a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Adds an object to a bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObject">AWS API
          * Reference</a></p>
          *
@@ -2319,7 +2346,7 @@ namespace Aws
         virtual Model::PutObjectOutcomeCallable PutObjectCallable(const Model::PutObjectRequest& request) const;
 
         /**
-         * Adds an object to a bucket.<p><h3>See Also:</h3>   <a
+         * <p>Adds an object to a bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObject">AWS API
          * Reference</a></p>
          *
@@ -2328,16 +2355,16 @@ namespace Aws
         virtual void PutObjectAsync(const Model::PutObjectRequest& request, const PutObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * uses the acl subresource to set the access control list (ACL) permissions for an
-         * object that already exists in a bucket<p><h3>See Also:</h3>   <a
+         * <p>uses the acl subresource to set the access control list (ACL) permissions for
+         * an object that already exists in a bucket</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectAcl">AWS API
          * Reference</a></p>
          */
         virtual Model::PutObjectAclOutcome PutObjectAcl(const Model::PutObjectAclRequest& request) const;
 
         /**
-         * uses the acl subresource to set the access control list (ACL) permissions for an
-         * object that already exists in a bucket<p><h3>See Also:</h3>   <a
+         * <p>uses the acl subresource to set the access control list (ACL) permissions for
+         * an object that already exists in a bucket</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectAcl">AWS API
          * Reference</a></p>
          *
@@ -2346,8 +2373,8 @@ namespace Aws
         virtual Model::PutObjectAclOutcomeCallable PutObjectAclCallable(const Model::PutObjectAclRequest& request) const;
 
         /**
-         * uses the acl subresource to set the access control list (ACL) permissions for an
-         * object that already exists in a bucket<p><h3>See Also:</h3>   <a
+         * <p>uses the acl subresource to set the access control list (ACL) permissions for
+         * an object that already exists in a bucket</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectAcl">AWS API
          * Reference</a></p>
          *
@@ -2356,16 +2383,16 @@ namespace Aws
         virtual void PutObjectAclAsync(const Model::PutObjectAclRequest& request, const PutObjectAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Sets the supplied tag-set to an object that already exists in a bucket<p><h3>See
-         * Also:</h3>   <a
+         * <p>Sets the supplied tag-set to an object that already exists in a
+         * bucket</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectTagging">AWS
          * API Reference</a></p>
          */
         virtual Model::PutObjectTaggingOutcome PutObjectTagging(const Model::PutObjectTaggingRequest& request) const;
 
         /**
-         * Sets the supplied tag-set to an object that already exists in a bucket<p><h3>See
-         * Also:</h3>   <a
+         * <p>Sets the supplied tag-set to an object that already exists in a
+         * bucket</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectTagging">AWS
          * API Reference</a></p>
          *
@@ -2374,8 +2401,8 @@ namespace Aws
         virtual Model::PutObjectTaggingOutcomeCallable PutObjectTaggingCallable(const Model::PutObjectTaggingRequest& request) const;
 
         /**
-         * Sets the supplied tag-set to an object that already exists in a bucket<p><h3>See
-         * Also:</h3>   <a
+         * <p>Sets the supplied tag-set to an object that already exists in a
+         * bucket</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectTagging">AWS
          * API Reference</a></p>
          *
@@ -2384,15 +2411,17 @@ namespace Aws
         virtual void PutObjectTaggingAsync(const Model::PutObjectTaggingRequest& request, const PutObjectTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Restores an archived copy of an object back into Amazon S3<p><h3>See Also:</h3> 
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">AWS
+         * <p>Restores an archived copy of an object back into Amazon S3</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">AWS
          * API Reference</a></p>
          */
         virtual Model::RestoreObjectOutcome RestoreObject(const Model::RestoreObjectRequest& request) const;
 
         /**
-         * Restores an archived copy of an object back into Amazon S3<p><h3>See Also:</h3> 
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">AWS
+         * <p>Restores an archived copy of an object back into Amazon S3</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -2400,8 +2429,9 @@ namespace Aws
         virtual Model::RestoreObjectOutcomeCallable RestoreObjectCallable(const Model::RestoreObjectRequest& request) const;
 
         /**
-         * Restores an archived copy of an object back into Amazon S3<p><h3>See Also:</h3> 
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">AWS
+         * <p>Restores an archived copy of an object back into Amazon S3</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -2409,7 +2439,7 @@ namespace Aws
         virtual void RestoreObjectAsync(const Model::RestoreObjectRequest& request, const RestoreObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Uploads a part in a multipart upload.</p><p><b>Note:</b> After you initiate
+         * <p>Uploads a part in a multipart upload.</p> <p> <b>Note:</b> After you initiate
          * multipart upload and upload one or more parts, you must either complete or abort
          * multipart upload in order to stop getting charged for storage of the uploaded
          * parts. Only after you either complete or abort multipart upload, Amazon S3 frees
@@ -2421,7 +2451,7 @@ namespace Aws
         virtual Model::UploadPartOutcome UploadPart(const Model::UploadPartRequest& request) const;
 
         /**
-         * <p>Uploads a part in a multipart upload.</p><p><b>Note:</b> After you initiate
+         * <p>Uploads a part in a multipart upload.</p> <p> <b>Note:</b> After you initiate
          * multipart upload and upload one or more parts, you must either complete or abort
          * multipart upload in order to stop getting charged for storage of the uploaded
          * parts. Only after you either complete or abort multipart upload, Amazon S3 frees
@@ -2435,7 +2465,7 @@ namespace Aws
         virtual Model::UploadPartOutcomeCallable UploadPartCallable(const Model::UploadPartRequest& request) const;
 
         /**
-         * <p>Uploads a part in a multipart upload.</p><p><b>Note:</b> After you initiate
+         * <p>Uploads a part in a multipart upload.</p> <p> <b>Note:</b> After you initiate
          * multipart upload and upload one or more parts, you must either complete or abort
          * multipart upload in order to stop getting charged for storage of the uploaded
          * parts. Only after you either complete or abort multipart upload, Amazon S3 frees
@@ -2449,16 +2479,16 @@ namespace Aws
         virtual void UploadPartAsync(const Model::UploadPartRequest& request, const UploadPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Uploads a part by copying data from an existing object as data source.<p><h3>See
-         * Also:</h3>   <a
+         * <p>Uploads a part by copying data from an existing object as data
+         * source.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPartCopy">AWS
          * API Reference</a></p>
          */
         virtual Model::UploadPartCopyOutcome UploadPartCopy(const Model::UploadPartCopyRequest& request) const;
 
         /**
-         * Uploads a part by copying data from an existing object as data source.<p><h3>See
-         * Also:</h3>   <a
+         * <p>Uploads a part by copying data from an existing object as data
+         * source.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPartCopy">AWS
          * API Reference</a></p>
          *
@@ -2467,8 +2497,8 @@ namespace Aws
         virtual Model::UploadPartCopyOutcomeCallable UploadPartCopyCallable(const Model::UploadPartCopyRequest& request) const;
 
         /**
-         * Uploads a part by copying data from an existing object as data source.<p><h3>See
-         * Also:</h3>   <a
+         * <p>Uploads a part by copying data from an existing object as data
+         * source.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPartCopy">AWS
          * API Reference</a></p>
          *

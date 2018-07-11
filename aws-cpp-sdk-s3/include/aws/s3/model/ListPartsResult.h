@@ -50,253 +50,253 @@ namespace Model
 
 
     /**
-     * Date when multipart upload will become eligible for abort operation by
-     * lifecycle.
+     * <p>Date when multipart upload will become eligible for abort operation by
+     * lifecycle.</p>
      */
     inline const Aws::Utils::DateTime& GetAbortDate() const{ return m_abortDate; }
 
     /**
-     * Date when multipart upload will become eligible for abort operation by
-     * lifecycle.
+     * <p>Date when multipart upload will become eligible for abort operation by
+     * lifecycle.</p>
      */
     inline void SetAbortDate(const Aws::Utils::DateTime& value) { m_abortDate = value; }
 
     /**
-     * Date when multipart upload will become eligible for abort operation by
-     * lifecycle.
+     * <p>Date when multipart upload will become eligible for abort operation by
+     * lifecycle.</p>
      */
     inline void SetAbortDate(Aws::Utils::DateTime&& value) { m_abortDate = std::move(value); }
 
     /**
-     * Date when multipart upload will become eligible for abort operation by
-     * lifecycle.
+     * <p>Date when multipart upload will become eligible for abort operation by
+     * lifecycle.</p>
      */
     inline ListPartsResult& WithAbortDate(const Aws::Utils::DateTime& value) { SetAbortDate(value); return *this;}
 
     /**
-     * Date when multipart upload will become eligible for abort operation by
-     * lifecycle.
+     * <p>Date when multipart upload will become eligible for abort operation by
+     * lifecycle.</p>
      */
     inline ListPartsResult& WithAbortDate(Aws::Utils::DateTime&& value) { SetAbortDate(std::move(value)); return *this;}
 
 
     /**
-     * Id of the lifecycle rule that makes a multipart upload eligible for abort
-     * operation.
+     * <p>Id of the lifecycle rule that makes a multipart upload eligible for abort
+     * operation.</p>
      */
     inline const Aws::String& GetAbortRuleId() const{ return m_abortRuleId; }
 
     /**
-     * Id of the lifecycle rule that makes a multipart upload eligible for abort
-     * operation.
+     * <p>Id of the lifecycle rule that makes a multipart upload eligible for abort
+     * operation.</p>
      */
     inline void SetAbortRuleId(const Aws::String& value) { m_abortRuleId = value; }
 
     /**
-     * Id of the lifecycle rule that makes a multipart upload eligible for abort
-     * operation.
+     * <p>Id of the lifecycle rule that makes a multipart upload eligible for abort
+     * operation.</p>
      */
     inline void SetAbortRuleId(Aws::String&& value) { m_abortRuleId = std::move(value); }
 
     /**
-     * Id of the lifecycle rule that makes a multipart upload eligible for abort
-     * operation.
+     * <p>Id of the lifecycle rule that makes a multipart upload eligible for abort
+     * operation.</p>
      */
     inline void SetAbortRuleId(const char* value) { m_abortRuleId.assign(value); }
 
     /**
-     * Id of the lifecycle rule that makes a multipart upload eligible for abort
-     * operation.
+     * <p>Id of the lifecycle rule that makes a multipart upload eligible for abort
+     * operation.</p>
      */
     inline ListPartsResult& WithAbortRuleId(const Aws::String& value) { SetAbortRuleId(value); return *this;}
 
     /**
-     * Id of the lifecycle rule that makes a multipart upload eligible for abort
-     * operation.
+     * <p>Id of the lifecycle rule that makes a multipart upload eligible for abort
+     * operation.</p>
      */
     inline ListPartsResult& WithAbortRuleId(Aws::String&& value) { SetAbortRuleId(std::move(value)); return *this;}
 
     /**
-     * Id of the lifecycle rule that makes a multipart upload eligible for abort
-     * operation.
+     * <p>Id of the lifecycle rule that makes a multipart upload eligible for abort
+     * operation.</p>
      */
     inline ListPartsResult& WithAbortRuleId(const char* value) { SetAbortRuleId(value); return *this;}
 
 
     /**
-     * Name of the bucket to which the multipart upload was initiated.
+     * <p>Name of the bucket to which the multipart upload was initiated.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * Name of the bucket to which the multipart upload was initiated.
+     * <p>Name of the bucket to which the multipart upload was initiated.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucket = value; }
 
     /**
-     * Name of the bucket to which the multipart upload was initiated.
+     * <p>Name of the bucket to which the multipart upload was initiated.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucket = std::move(value); }
 
     /**
-     * Name of the bucket to which the multipart upload was initiated.
+     * <p>Name of the bucket to which the multipart upload was initiated.</p>
      */
     inline void SetBucket(const char* value) { m_bucket.assign(value); }
 
     /**
-     * Name of the bucket to which the multipart upload was initiated.
+     * <p>Name of the bucket to which the multipart upload was initiated.</p>
      */
     inline ListPartsResult& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * Name of the bucket to which the multipart upload was initiated.
+     * <p>Name of the bucket to which the multipart upload was initiated.</p>
      */
     inline ListPartsResult& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * Name of the bucket to which the multipart upload was initiated.
+     * <p>Name of the bucket to which the multipart upload was initiated.</p>
      */
     inline ListPartsResult& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
     /**
-     * Object key for which the multipart upload was initiated.
+     * <p>Object key for which the multipart upload was initiated.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * Object key for which the multipart upload was initiated.
+     * <p>Object key for which the multipart upload was initiated.</p>
      */
     inline void SetKey(const Aws::String& value) { m_key = value; }
 
     /**
-     * Object key for which the multipart upload was initiated.
+     * <p>Object key for which the multipart upload was initiated.</p>
      */
     inline void SetKey(Aws::String&& value) { m_key = std::move(value); }
 
     /**
-     * Object key for which the multipart upload was initiated.
+     * <p>Object key for which the multipart upload was initiated.</p>
      */
     inline void SetKey(const char* value) { m_key.assign(value); }
 
     /**
-     * Object key for which the multipart upload was initiated.
+     * <p>Object key for which the multipart upload was initiated.</p>
      */
     inline ListPartsResult& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * Object key for which the multipart upload was initiated.
+     * <p>Object key for which the multipart upload was initiated.</p>
      */
     inline ListPartsResult& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * Object key for which the multipart upload was initiated.
+     * <p>Object key for which the multipart upload was initiated.</p>
      */
     inline ListPartsResult& WithKey(const char* value) { SetKey(value); return *this;}
 
 
     /**
-     * Upload ID identifying the multipart upload whose parts are being listed.
+     * <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
      */
     inline const Aws::String& GetUploadId() const{ return m_uploadId; }
 
     /**
-     * Upload ID identifying the multipart upload whose parts are being listed.
+     * <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
      */
     inline void SetUploadId(const Aws::String& value) { m_uploadId = value; }
 
     /**
-     * Upload ID identifying the multipart upload whose parts are being listed.
+     * <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
      */
     inline void SetUploadId(Aws::String&& value) { m_uploadId = std::move(value); }
 
     /**
-     * Upload ID identifying the multipart upload whose parts are being listed.
+     * <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
      */
     inline void SetUploadId(const char* value) { m_uploadId.assign(value); }
 
     /**
-     * Upload ID identifying the multipart upload whose parts are being listed.
+     * <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
      */
     inline ListPartsResult& WithUploadId(const Aws::String& value) { SetUploadId(value); return *this;}
 
     /**
-     * Upload ID identifying the multipart upload whose parts are being listed.
+     * <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
      */
     inline ListPartsResult& WithUploadId(Aws::String&& value) { SetUploadId(std::move(value)); return *this;}
 
     /**
-     * Upload ID identifying the multipart upload whose parts are being listed.
+     * <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
      */
     inline ListPartsResult& WithUploadId(const char* value) { SetUploadId(value); return *this;}
 
 
     /**
-     * Part number after which listing begins.
+     * <p>Part number after which listing begins.</p>
      */
     inline int GetPartNumberMarker() const{ return m_partNumberMarker; }
 
     /**
-     * Part number after which listing begins.
+     * <p>Part number after which listing begins.</p>
      */
     inline void SetPartNumberMarker(int value) { m_partNumberMarker = value; }
 
     /**
-     * Part number after which listing begins.
+     * <p>Part number after which listing begins.</p>
      */
     inline ListPartsResult& WithPartNumberMarker(int value) { SetPartNumberMarker(value); return *this;}
 
 
     /**
-     * When a list is truncated, this element specifies the last part in the list, as
-     * well as the value to use for the part-number-marker request parameter in a
-     * subsequent request.
+     * <p>When a list is truncated, this element specifies the last part in the list,
+     * as well as the value to use for the part-number-marker request parameter in a
+     * subsequent request.</p>
      */
     inline int GetNextPartNumberMarker() const{ return m_nextPartNumberMarker; }
 
     /**
-     * When a list is truncated, this element specifies the last part in the list, as
-     * well as the value to use for the part-number-marker request parameter in a
-     * subsequent request.
+     * <p>When a list is truncated, this element specifies the last part in the list,
+     * as well as the value to use for the part-number-marker request parameter in a
+     * subsequent request.</p>
      */
     inline void SetNextPartNumberMarker(int value) { m_nextPartNumberMarker = value; }
 
     /**
-     * When a list is truncated, this element specifies the last part in the list, as
-     * well as the value to use for the part-number-marker request parameter in a
-     * subsequent request.
+     * <p>When a list is truncated, this element specifies the last part in the list,
+     * as well as the value to use for the part-number-marker request parameter in a
+     * subsequent request.</p>
      */
     inline ListPartsResult& WithNextPartNumberMarker(int value) { SetNextPartNumberMarker(value); return *this;}
 
 
     /**
-     * Maximum number of parts that were allowed in the response.
+     * <p>Maximum number of parts that were allowed in the response.</p>
      */
     inline int GetMaxParts() const{ return m_maxParts; }
 
     /**
-     * Maximum number of parts that were allowed in the response.
+     * <p>Maximum number of parts that were allowed in the response.</p>
      */
     inline void SetMaxParts(int value) { m_maxParts = value; }
 
     /**
-     * Maximum number of parts that were allowed in the response.
+     * <p>Maximum number of parts that were allowed in the response.</p>
      */
     inline ListPartsResult& WithMaxParts(int value) { SetMaxParts(value); return *this;}
 
 
     /**
-     * Indicates whether the returned list of parts is truncated.
+     * <p>Indicates whether the returned list of parts is truncated.</p>
      */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
 
     /**
-     * Indicates whether the returned list of parts is truncated.
+     * <p>Indicates whether the returned list of parts is truncated.</p>
      */
     inline void SetIsTruncated(bool value) { m_isTruncated = value; }
 
     /**
-     * Indicates whether the returned list of parts is truncated.
+     * <p>Indicates whether the returned list of parts is truncated.</p>
      */
     inline ListPartsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
@@ -324,27 +324,27 @@ namespace Model
 
 
     /**
-     * Identifies who initiated the multipart upload.
+     * <p>Identifies who initiated the multipart upload.</p>
      */
     inline const Initiator& GetInitiator() const{ return m_initiator; }
 
     /**
-     * Identifies who initiated the multipart upload.
+     * <p>Identifies who initiated the multipart upload.</p>
      */
     inline void SetInitiator(const Initiator& value) { m_initiator = value; }
 
     /**
-     * Identifies who initiated the multipart upload.
+     * <p>Identifies who initiated the multipart upload.</p>
      */
     inline void SetInitiator(Initiator&& value) { m_initiator = std::move(value); }
 
     /**
-     * Identifies who initiated the multipart upload.
+     * <p>Identifies who initiated the multipart upload.</p>
      */
     inline ListPartsResult& WithInitiator(const Initiator& value) { SetInitiator(value); return *this;}
 
     /**
-     * Identifies who initiated the multipart upload.
+     * <p>Identifies who initiated the multipart upload.</p>
      */
     inline ListPartsResult& WithInitiator(Initiator&& value) { SetInitiator(std::move(value)); return *this;}
 
@@ -366,27 +366,27 @@ namespace Model
 
 
     /**
-     * The class of storage used to store the object.
+     * <p>The class of storage used to store the object.</p>
      */
     inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
 
     /**
-     * The class of storage used to store the object.
+     * <p>The class of storage used to store the object.</p>
      */
     inline void SetStorageClass(const StorageClass& value) { m_storageClass = value; }
 
     /**
-     * The class of storage used to store the object.
+     * <p>The class of storage used to store the object.</p>
      */
     inline void SetStorageClass(StorageClass&& value) { m_storageClass = std::move(value); }
 
     /**
-     * The class of storage used to store the object.
+     * <p>The class of storage used to store the object.</p>
      */
     inline ListPartsResult& WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
 
     /**
-     * The class of storage used to store the object.
+     * <p>The class of storage used to store the object.</p>
      */
     inline ListPartsResult& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 

@@ -50,80 +50,80 @@ namespace Model
 
 
     /**
-     * The name of the bucket from which analytics configurations are retrieved.
+     * <p>The name of the bucket from which analytics configurations are retrieved.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * The name of the bucket from which analytics configurations are retrieved.
+     * <p>The name of the bucket from which analytics configurations are retrieved.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * The name of the bucket from which analytics configurations are retrieved.
+     * <p>The name of the bucket from which analytics configurations are retrieved.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * The name of the bucket from which analytics configurations are retrieved.
+     * <p>The name of the bucket from which analytics configurations are retrieved.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * The name of the bucket from which analytics configurations are retrieved.
+     * <p>The name of the bucket from which analytics configurations are retrieved.</p>
      */
     inline ListBucketAnalyticsConfigurationsRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * The name of the bucket from which analytics configurations are retrieved.
+     * <p>The name of the bucket from which analytics configurations are retrieved.</p>
      */
     inline ListBucketAnalyticsConfigurationsRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * The name of the bucket from which analytics configurations are retrieved.
+     * <p>The name of the bucket from which analytics configurations are retrieved.</p>
      */
     inline ListBucketAnalyticsConfigurationsRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
     /**
-     * The ContinuationToken that represents a placeholder from where this request
-     * should begin.
+     * <p>The ContinuationToken that represents a placeholder from where this request
+     * should begin.</p>
      */
     inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
 
     /**
-     * The ContinuationToken that represents a placeholder from where this request
-     * should begin.
+     * <p>The ContinuationToken that represents a placeholder from where this request
+     * should begin.</p>
      */
     inline void SetContinuationToken(const Aws::String& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = value; }
 
     /**
-     * The ContinuationToken that represents a placeholder from where this request
-     * should begin.
+     * <p>The ContinuationToken that represents a placeholder from where this request
+     * should begin.</p>
      */
     inline void SetContinuationToken(Aws::String&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::move(value); }
 
     /**
-     * The ContinuationToken that represents a placeholder from where this request
-     * should begin.
+     * <p>The ContinuationToken that represents a placeholder from where this request
+     * should begin.</p>
      */
     inline void SetContinuationToken(const char* value) { m_continuationTokenHasBeenSet = true; m_continuationToken.assign(value); }
 
     /**
-     * The ContinuationToken that represents a placeholder from where this request
-     * should begin.
+     * <p>The ContinuationToken that represents a placeholder from where this request
+     * should begin.</p>
      */
     inline ListBucketAnalyticsConfigurationsRequest& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
 
     /**
-     * The ContinuationToken that represents a placeholder from where this request
-     * should begin.
+     * <p>The ContinuationToken that represents a placeholder from where this request
+     * should begin.</p>
      */
     inline ListBucketAnalyticsConfigurationsRequest& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
 
     /**
-     * The ContinuationToken that represents a placeholder from where this request
-     * should begin.
+     * <p>The ContinuationToken that represents a placeholder from where this request
+     * should begin.</p>
      */
     inline ListBucketAnalyticsConfigurationsRequest& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
 

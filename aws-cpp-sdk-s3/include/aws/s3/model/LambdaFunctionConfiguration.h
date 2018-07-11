@@ -36,8 +36,8 @@ namespace Model
 {
 
   /**
-   * Container for specifying the AWS Lambda notification configuration.<p><h3>See
-   * Also:</h3>   <a
+   * <p>Container for specifying the AWS Lambda notification
+   * configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/LambdaFunctionConfiguration">AWS
    * API Reference</a></p>
    */
@@ -74,44 +74,44 @@ namespace Model
 
 
     /**
-     * Lambda cloud function ARN that Amazon S3 can invoke when it detects events of
-     * the specified type.
+     * <p>Lambda cloud function ARN that Amazon S3 can invoke when it detects events of
+     * the specified type.</p>
      */
     inline const Aws::String& GetLambdaFunctionArn() const{ return m_lambdaFunctionArn; }
 
     /**
-     * Lambda cloud function ARN that Amazon S3 can invoke when it detects events of
-     * the specified type.
+     * <p>Lambda cloud function ARN that Amazon S3 can invoke when it detects events of
+     * the specified type.</p>
      */
     inline void SetLambdaFunctionArn(const Aws::String& value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn = value; }
 
     /**
-     * Lambda cloud function ARN that Amazon S3 can invoke when it detects events of
-     * the specified type.
+     * <p>Lambda cloud function ARN that Amazon S3 can invoke when it detects events of
+     * the specified type.</p>
      */
     inline void SetLambdaFunctionArn(Aws::String&& value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn = std::move(value); }
 
     /**
-     * Lambda cloud function ARN that Amazon S3 can invoke when it detects events of
-     * the specified type.
+     * <p>Lambda cloud function ARN that Amazon S3 can invoke when it detects events of
+     * the specified type.</p>
      */
     inline void SetLambdaFunctionArn(const char* value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn.assign(value); }
 
     /**
-     * Lambda cloud function ARN that Amazon S3 can invoke when it detects events of
-     * the specified type.
+     * <p>Lambda cloud function ARN that Amazon S3 can invoke when it detects events of
+     * the specified type.</p>
      */
     inline LambdaFunctionConfiguration& WithLambdaFunctionArn(const Aws::String& value) { SetLambdaFunctionArn(value); return *this;}
 
     /**
-     * Lambda cloud function ARN that Amazon S3 can invoke when it detects events of
-     * the specified type.
+     * <p>Lambda cloud function ARN that Amazon S3 can invoke when it detects events of
+     * the specified type.</p>
      */
     inline LambdaFunctionConfiguration& WithLambdaFunctionArn(Aws::String&& value) { SetLambdaFunctionArn(std::move(value)); return *this;}
 
     /**
-     * Lambda cloud function ARN that Amazon S3 can invoke when it detects events of
-     * the specified type.
+     * <p>Lambda cloud function ARN that Amazon S3 can invoke when it detects events of
+     * the specified type.</p>
      */
     inline LambdaFunctionConfiguration& WithLambdaFunctionArn(const char* value) { SetLambdaFunctionArn(value); return *this;}
 

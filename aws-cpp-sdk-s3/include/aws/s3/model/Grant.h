@@ -60,27 +60,27 @@ namespace Model
 
 
     /**
-     * Specifies the permission given to the grantee.
+     * <p>Specifies the permission given to the grantee.</p>
      */
     inline const Permission& GetPermission() const{ return m_permission; }
 
     /**
-     * Specifies the permission given to the grantee.
+     * <p>Specifies the permission given to the grantee.</p>
      */
     inline void SetPermission(const Permission& value) { m_permissionHasBeenSet = true; m_permission = value; }
 
     /**
-     * Specifies the permission given to the grantee.
+     * <p>Specifies the permission given to the grantee.</p>
      */
     inline void SetPermission(Permission&& value) { m_permissionHasBeenSet = true; m_permission = std::move(value); }
 
     /**
-     * Specifies the permission given to the grantee.
+     * <p>Specifies the permission given to the grantee.</p>
      */
     inline Grant& WithPermission(const Permission& value) { SetPermission(value); return *this;}
 
     /**
-     * Specifies the permission given to the grantee.
+     * <p>Specifies the permission given to the grantee.</p>
      */
     inline Grant& WithPermission(Permission&& value) { SetPermission(std::move(value)); return *this;}
 

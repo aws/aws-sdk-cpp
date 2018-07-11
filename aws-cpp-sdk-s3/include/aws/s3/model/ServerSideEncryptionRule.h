@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * Container for information about a particular server-side encryption
-   * configuration rule.<p><h3>See Also:</h3>   <a
+   * <p>Container for information about a particular server-side encryption
+   * configuration rule.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ServerSideEncryptionRule">AWS
    * API Reference</a></p>
    */
@@ -49,37 +49,37 @@ namespace Model
 
 
     /**
-     * Describes the default server-side encryption to apply to new objects in the
+     * <p>Describes the default server-side encryption to apply to new objects in the
      * bucket. If Put Object request does not specify any server-side encryption, this
-     * default encryption will be applied.
+     * default encryption will be applied.</p>
      */
     inline const ServerSideEncryptionByDefault& GetApplyServerSideEncryptionByDefault() const{ return m_applyServerSideEncryptionByDefault; }
 
     /**
-     * Describes the default server-side encryption to apply to new objects in the
+     * <p>Describes the default server-side encryption to apply to new objects in the
      * bucket. If Put Object request does not specify any server-side encryption, this
-     * default encryption will be applied.
+     * default encryption will be applied.</p>
      */
     inline void SetApplyServerSideEncryptionByDefault(const ServerSideEncryptionByDefault& value) { m_applyServerSideEncryptionByDefaultHasBeenSet = true; m_applyServerSideEncryptionByDefault = value; }
 
     /**
-     * Describes the default server-side encryption to apply to new objects in the
+     * <p>Describes the default server-side encryption to apply to new objects in the
      * bucket. If Put Object request does not specify any server-side encryption, this
-     * default encryption will be applied.
+     * default encryption will be applied.</p>
      */
     inline void SetApplyServerSideEncryptionByDefault(ServerSideEncryptionByDefault&& value) { m_applyServerSideEncryptionByDefaultHasBeenSet = true; m_applyServerSideEncryptionByDefault = std::move(value); }
 
     /**
-     * Describes the default server-side encryption to apply to new objects in the
+     * <p>Describes the default server-side encryption to apply to new objects in the
      * bucket. If Put Object request does not specify any server-side encryption, this
-     * default encryption will be applied.
+     * default encryption will be applied.</p>
      */
     inline ServerSideEncryptionRule& WithApplyServerSideEncryptionByDefault(const ServerSideEncryptionByDefault& value) { SetApplyServerSideEncryptionByDefault(value); return *this;}
 
     /**
-     * Describes the default server-side encryption to apply to new objects in the
+     * <p>Describes the default server-side encryption to apply to new objects in the
      * bucket. If Put Object request does not specify any server-side encryption, this
-     * default encryption will be applied.
+     * default encryption will be applied.</p>
      */
     inline ServerSideEncryptionRule& WithApplyServerSideEncryptionByDefault(ServerSideEncryptionByDefault&& value) { SetApplyServerSideEncryptionByDefault(std::move(value)); return *this;}
 

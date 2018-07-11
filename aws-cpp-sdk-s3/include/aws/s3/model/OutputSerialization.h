@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * Describes how results of the Select job are serialized.<p><h3>See Also:</h3>  
-   * <a
+   * <p>Describes how results of the Select job are serialized.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/OutputSerialization">AWS
    * API Reference</a></p>
    */
@@ -50,53 +50,53 @@ namespace Model
 
 
     /**
-     * Describes the serialization of CSV-encoded Select results.
+     * <p>Describes the serialization of CSV-encoded Select results.</p>
      */
     inline const CSVOutput& GetCSV() const{ return m_cSV; }
 
     /**
-     * Describes the serialization of CSV-encoded Select results.
+     * <p>Describes the serialization of CSV-encoded Select results.</p>
      */
     inline void SetCSV(const CSVOutput& value) { m_cSVHasBeenSet = true; m_cSV = value; }
 
     /**
-     * Describes the serialization of CSV-encoded Select results.
+     * <p>Describes the serialization of CSV-encoded Select results.</p>
      */
     inline void SetCSV(CSVOutput&& value) { m_cSVHasBeenSet = true; m_cSV = std::move(value); }
 
     /**
-     * Describes the serialization of CSV-encoded Select results.
+     * <p>Describes the serialization of CSV-encoded Select results.</p>
      */
     inline OutputSerialization& WithCSV(const CSVOutput& value) { SetCSV(value); return *this;}
 
     /**
-     * Describes the serialization of CSV-encoded Select results.
+     * <p>Describes the serialization of CSV-encoded Select results.</p>
      */
     inline OutputSerialization& WithCSV(CSVOutput&& value) { SetCSV(std::move(value)); return *this;}
 
 
     /**
-     * Specifies JSON as request's output serialization format.
+     * <p>Specifies JSON as request's output serialization format.</p>
      */
     inline const JSONOutput& GetJSON() const{ return m_jSON; }
 
     /**
-     * Specifies JSON as request's output serialization format.
+     * <p>Specifies JSON as request's output serialization format.</p>
      */
     inline void SetJSON(const JSONOutput& value) { m_jSONHasBeenSet = true; m_jSON = value; }
 
     /**
-     * Specifies JSON as request's output serialization format.
+     * <p>Specifies JSON as request's output serialization format.</p>
      */
     inline void SetJSON(JSONOutput&& value) { m_jSONHasBeenSet = true; m_jSON = std::move(value); }
 
     /**
-     * Specifies JSON as request's output serialization format.
+     * <p>Specifies JSON as request's output serialization format.</p>
      */
     inline OutputSerialization& WithJSON(const JSONOutput& value) { SetJSON(value); return *this;}
 
     /**
-     * Specifies JSON as request's output serialization format.
+     * <p>Specifies JSON as request's output serialization format.</p>
      */
     inline OutputSerialization& WithJSON(JSONOutput&& value) { SetJSON(std::move(value)); return *this;}
 

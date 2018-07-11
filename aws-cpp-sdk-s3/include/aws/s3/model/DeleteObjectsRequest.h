@@ -94,44 +94,44 @@ namespace Model
 
 
     /**
-     * The concatenation of the authentication device's serial number, a space, and the
-     * value that is displayed on your authentication device.
+     * <p>The concatenation of the authentication device's serial number, a space, and
+     * the value that is displayed on your authentication device.</p>
      */
     inline const Aws::String& GetMFA() const{ return m_mFA; }
 
     /**
-     * The concatenation of the authentication device's serial number, a space, and the
-     * value that is displayed on your authentication device.
+     * <p>The concatenation of the authentication device's serial number, a space, and
+     * the value that is displayed on your authentication device.</p>
      */
     inline void SetMFA(const Aws::String& value) { m_mFAHasBeenSet = true; m_mFA = value; }
 
     /**
-     * The concatenation of the authentication device's serial number, a space, and the
-     * value that is displayed on your authentication device.
+     * <p>The concatenation of the authentication device's serial number, a space, and
+     * the value that is displayed on your authentication device.</p>
      */
     inline void SetMFA(Aws::String&& value) { m_mFAHasBeenSet = true; m_mFA = std::move(value); }
 
     /**
-     * The concatenation of the authentication device's serial number, a space, and the
-     * value that is displayed on your authentication device.
+     * <p>The concatenation of the authentication device's serial number, a space, and
+     * the value that is displayed on your authentication device.</p>
      */
     inline void SetMFA(const char* value) { m_mFAHasBeenSet = true; m_mFA.assign(value); }
 
     /**
-     * The concatenation of the authentication device's serial number, a space, and the
-     * value that is displayed on your authentication device.
+     * <p>The concatenation of the authentication device's serial number, a space, and
+     * the value that is displayed on your authentication device.</p>
      */
     inline DeleteObjectsRequest& WithMFA(const Aws::String& value) { SetMFA(value); return *this;}
 
     /**
-     * The concatenation of the authentication device's serial number, a space, and the
-     * value that is displayed on your authentication device.
+     * <p>The concatenation of the authentication device's serial number, a space, and
+     * the value that is displayed on your authentication device.</p>
      */
     inline DeleteObjectsRequest& WithMFA(Aws::String&& value) { SetMFA(std::move(value)); return *this;}
 
     /**
-     * The concatenation of the authentication device's serial number, a space, and the
-     * value that is displayed on your authentication device.
+     * <p>The concatenation of the authentication device's serial number, a space, and
+     * the value that is displayed on your authentication device.</p>
      */
     inline DeleteObjectsRequest& WithMFA(const char* value) { SetMFA(value); return *this;}
 

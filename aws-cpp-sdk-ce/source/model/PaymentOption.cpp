@@ -33,6 +33,9 @@ namespace Aws
         static const int NO_UPFRONT_HASH = HashingUtils::HashString("NO_UPFRONT");
         static const int PARTIAL_UPFRONT_HASH = HashingUtils::HashString("PARTIAL_UPFRONT");
         static const int ALL_UPFRONT_HASH = HashingUtils::HashString("ALL_UPFRONT");
+        static const int LIGHT_UTILIZATION_HASH = HashingUtils::HashString("LIGHT_UTILIZATION");
+        static const int MEDIUM_UTILIZATION_HASH = HashingUtils::HashString("MEDIUM_UTILIZATION");
+        static const int HEAVY_UTILIZATION_HASH = HashingUtils::HashString("HEAVY_UTILIZATION");
 
 
         PaymentOption GetPaymentOptionForName(const Aws::String& name)
@@ -49,6 +52,18 @@ namespace Aws
           else if (hashCode == ALL_UPFRONT_HASH)
           {
             return PaymentOption::ALL_UPFRONT;
+          }
+          else if (hashCode == LIGHT_UTILIZATION_HASH)
+          {
+            return PaymentOption::LIGHT_UTILIZATION;
+          }
+          else if (hashCode == MEDIUM_UTILIZATION_HASH)
+          {
+            return PaymentOption::MEDIUM_UTILIZATION;
+          }
+          else if (hashCode == HEAVY_UTILIZATION_HASH)
+          {
+            return PaymentOption::HEAVY_UTILIZATION;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +85,12 @@ namespace Aws
             return "PARTIAL_UPFRONT";
           case PaymentOption::ALL_UPFRONT:
             return "ALL_UPFRONT";
+          case PaymentOption::LIGHT_UTILIZATION:
+            return "LIGHT_UTILIZATION";
+          case PaymentOption::MEDIUM_UTILIZATION:
+            return "MEDIUM_UTILIZATION";
+          case PaymentOption::HEAVY_UTILIZATION:
+            return "HEAVY_UTILIZATION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

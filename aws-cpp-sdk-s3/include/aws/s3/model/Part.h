@@ -44,98 +44,98 @@ namespace Model
 
 
     /**
-     * Part number identifying the part. This is a positive integer between 1 and
-     * 10,000.
+     * <p>Part number identifying the part. This is a positive integer between 1 and
+     * 10,000.</p>
      */
     inline int GetPartNumber() const{ return m_partNumber; }
 
     /**
-     * Part number identifying the part. This is a positive integer between 1 and
-     * 10,000.
+     * <p>Part number identifying the part. This is a positive integer between 1 and
+     * 10,000.</p>
      */
     inline void SetPartNumber(int value) { m_partNumberHasBeenSet = true; m_partNumber = value; }
 
     /**
-     * Part number identifying the part. This is a positive integer between 1 and
-     * 10,000.
+     * <p>Part number identifying the part. This is a positive integer between 1 and
+     * 10,000.</p>
      */
     inline Part& WithPartNumber(int value) { SetPartNumber(value); return *this;}
 
 
     /**
-     * Date and time at which the part was uploaded.
+     * <p>Date and time at which the part was uploaded.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
 
     /**
-     * Date and time at which the part was uploaded.
+     * <p>Date and time at which the part was uploaded.</p>
      */
     inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
 
     /**
-     * Date and time at which the part was uploaded.
+     * <p>Date and time at which the part was uploaded.</p>
      */
     inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::move(value); }
 
     /**
-     * Date and time at which the part was uploaded.
+     * <p>Date and time at which the part was uploaded.</p>
      */
     inline Part& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
 
     /**
-     * Date and time at which the part was uploaded.
+     * <p>Date and time at which the part was uploaded.</p>
      */
     inline Part& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
 
 
     /**
-     * Entity tag returned when the part was uploaded.
+     * <p>Entity tag returned when the part was uploaded.</p>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
 
     /**
-     * Entity tag returned when the part was uploaded.
+     * <p>Entity tag returned when the part was uploaded.</p>
      */
     inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
 
     /**
-     * Entity tag returned when the part was uploaded.
+     * <p>Entity tag returned when the part was uploaded.</p>
      */
     inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = std::move(value); }
 
     /**
-     * Entity tag returned when the part was uploaded.
+     * <p>Entity tag returned when the part was uploaded.</p>
      */
     inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
 
     /**
-     * Entity tag returned when the part was uploaded.
+     * <p>Entity tag returned when the part was uploaded.</p>
      */
     inline Part& WithETag(const Aws::String& value) { SetETag(value); return *this;}
 
     /**
-     * Entity tag returned when the part was uploaded.
+     * <p>Entity tag returned when the part was uploaded.</p>
      */
     inline Part& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
 
     /**
-     * Entity tag returned when the part was uploaded.
+     * <p>Entity tag returned when the part was uploaded.</p>
      */
     inline Part& WithETag(const char* value) { SetETag(value); return *this;}
 
 
     /**
-     * Size of the uploaded part data.
+     * <p>Size of the uploaded part data.</p>
      */
     inline long long GetSize() const{ return m_size; }
 
     /**
-     * Size of the uploaded part data.
+     * <p>Size of the uploaded part data.</p>
      */
     inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
-     * Size of the uploaded part data.
+     * <p>Size of the uploaded part data.</p>
      */
     inline Part& WithSize(long long value) { SetSize(value); return *this;}
 

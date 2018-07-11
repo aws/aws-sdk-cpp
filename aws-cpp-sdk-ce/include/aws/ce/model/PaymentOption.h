@@ -28,7 +28,10 @@ namespace Model
     NOT_SET,
     NO_UPFRONT,
     PARTIAL_UPFRONT,
-    ALL_UPFRONT
+    ALL_UPFRONT,
+    LIGHT_UTILIZATION,
+    MEDIUM_UTILIZATION,
+    HEAVY_UTILIZATION
   };
 
 namespace PaymentOptionMapper

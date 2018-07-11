@@ -43,27 +43,27 @@ namespace Model
 
 
     /**
-     * Glacier retrieval tier at which the restore will be processed.
+     * <p>Glacier retrieval tier at which the restore will be processed.</p>
      */
     inline const Tier& GetTier() const{ return m_tier; }
 
     /**
-     * Glacier retrieval tier at which the restore will be processed.
+     * <p>Glacier retrieval tier at which the restore will be processed.</p>
      */
     inline void SetTier(const Tier& value) { m_tierHasBeenSet = true; m_tier = value; }
 
     /**
-     * Glacier retrieval tier at which the restore will be processed.
+     * <p>Glacier retrieval tier at which the restore will be processed.</p>
      */
     inline void SetTier(Tier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
 
     /**
-     * Glacier retrieval tier at which the restore will be processed.
+     * <p>Glacier retrieval tier at which the restore will be processed.</p>
      */
     inline GlacierJobParameters& WithTier(const Tier& value) { SetTier(value); return *this;}
 
     /**
-     * Glacier retrieval tier at which the restore will be processed.
+     * <p>Glacier retrieval tier at which the restore will be processed.</p>
      */
     inline GlacierJobParameters& WithTier(Tier&& value) { SetTier(std::move(value)); return *this;}
 

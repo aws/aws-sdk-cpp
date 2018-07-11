@@ -47,125 +47,125 @@ namespace Model
 
 
     /**
-     * Upload ID that identifies the multipart upload.
+     * <p>Upload ID that identifies the multipart upload.</p>
      */
     inline const Aws::String& GetUploadId() const{ return m_uploadId; }
 
     /**
-     * Upload ID that identifies the multipart upload.
+     * <p>Upload ID that identifies the multipart upload.</p>
      */
     inline void SetUploadId(const Aws::String& value) { m_uploadIdHasBeenSet = true; m_uploadId = value; }
 
     /**
-     * Upload ID that identifies the multipart upload.
+     * <p>Upload ID that identifies the multipart upload.</p>
      */
     inline void SetUploadId(Aws::String&& value) { m_uploadIdHasBeenSet = true; m_uploadId = std::move(value); }
 
     /**
-     * Upload ID that identifies the multipart upload.
+     * <p>Upload ID that identifies the multipart upload.</p>
      */
     inline void SetUploadId(const char* value) { m_uploadIdHasBeenSet = true; m_uploadId.assign(value); }
 
     /**
-     * Upload ID that identifies the multipart upload.
+     * <p>Upload ID that identifies the multipart upload.</p>
      */
     inline MultipartUpload& WithUploadId(const Aws::String& value) { SetUploadId(value); return *this;}
 
     /**
-     * Upload ID that identifies the multipart upload.
+     * <p>Upload ID that identifies the multipart upload.</p>
      */
     inline MultipartUpload& WithUploadId(Aws::String&& value) { SetUploadId(std::move(value)); return *this;}
 
     /**
-     * Upload ID that identifies the multipart upload.
+     * <p>Upload ID that identifies the multipart upload.</p>
      */
     inline MultipartUpload& WithUploadId(const char* value) { SetUploadId(value); return *this;}
 
 
     /**
-     * Key of the object for which the multipart upload was initiated.
+     * <p>Key of the object for which the multipart upload was initiated.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * Key of the object for which the multipart upload was initiated.
+     * <p>Key of the object for which the multipart upload was initiated.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * Key of the object for which the multipart upload was initiated.
+     * <p>Key of the object for which the multipart upload was initiated.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * Key of the object for which the multipart upload was initiated.
+     * <p>Key of the object for which the multipart upload was initiated.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * Key of the object for which the multipart upload was initiated.
+     * <p>Key of the object for which the multipart upload was initiated.</p>
      */
     inline MultipartUpload& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * Key of the object for which the multipart upload was initiated.
+     * <p>Key of the object for which the multipart upload was initiated.</p>
      */
     inline MultipartUpload& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * Key of the object for which the multipart upload was initiated.
+     * <p>Key of the object for which the multipart upload was initiated.</p>
      */
     inline MultipartUpload& WithKey(const char* value) { SetKey(value); return *this;}
 
 
     /**
-     * Date and time at which the multipart upload was initiated.
+     * <p>Date and time at which the multipart upload was initiated.</p>
      */
     inline const Aws::Utils::DateTime& GetInitiated() const{ return m_initiated; }
 
     /**
-     * Date and time at which the multipart upload was initiated.
+     * <p>Date and time at which the multipart upload was initiated.</p>
      */
     inline void SetInitiated(const Aws::Utils::DateTime& value) { m_initiatedHasBeenSet = true; m_initiated = value; }
 
     /**
-     * Date and time at which the multipart upload was initiated.
+     * <p>Date and time at which the multipart upload was initiated.</p>
      */
     inline void SetInitiated(Aws::Utils::DateTime&& value) { m_initiatedHasBeenSet = true; m_initiated = std::move(value); }
 
     /**
-     * Date and time at which the multipart upload was initiated.
+     * <p>Date and time at which the multipart upload was initiated.</p>
      */
     inline MultipartUpload& WithInitiated(const Aws::Utils::DateTime& value) { SetInitiated(value); return *this;}
 
     /**
-     * Date and time at which the multipart upload was initiated.
+     * <p>Date and time at which the multipart upload was initiated.</p>
      */
     inline MultipartUpload& WithInitiated(Aws::Utils::DateTime&& value) { SetInitiated(std::move(value)); return *this;}
 
 
     /**
-     * The class of storage used to store the object.
+     * <p>The class of storage used to store the object.</p>
      */
     inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
 
     /**
-     * The class of storage used to store the object.
+     * <p>The class of storage used to store the object.</p>
      */
     inline void SetStorageClass(const StorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
 
     /**
-     * The class of storage used to store the object.
+     * <p>The class of storage used to store the object.</p>
      */
     inline void SetStorageClass(StorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
 
     /**
-     * The class of storage used to store the object.
+     * <p>The class of storage used to store the object.</p>
      */
     inline MultipartUpload& WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
 
     /**
-     * The class of storage used to store the object.
+     * <p>The class of storage used to store the object.</p>
      */
     inline MultipartUpload& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
@@ -187,27 +187,27 @@ namespace Model
 
 
     /**
-     * Identifies who initiated the multipart upload.
+     * <p>Identifies who initiated the multipart upload.</p>
      */
     inline const Initiator& GetInitiator() const{ return m_initiator; }
 
     /**
-     * Identifies who initiated the multipart upload.
+     * <p>Identifies who initiated the multipart upload.</p>
      */
     inline void SetInitiator(const Initiator& value) { m_initiatorHasBeenSet = true; m_initiator = value; }
 
     /**
-     * Identifies who initiated the multipart upload.
+     * <p>Identifies who initiated the multipart upload.</p>
      */
     inline void SetInitiator(Initiator&& value) { m_initiatorHasBeenSet = true; m_initiator = std::move(value); }
 
     /**
-     * Identifies who initiated the multipart upload.
+     * <p>Identifies who initiated the multipart upload.</p>
      */
     inline MultipartUpload& WithInitiator(const Initiator& value) { SetInitiator(value); return *this;}
 
     /**
-     * Identifies who initiated the multipart upload.
+     * <p>Identifies who initiated the multipart upload.</p>
      */
     inline MultipartUpload& WithInitiator(Initiator&& value) { SetInitiator(std::move(value)); return *this;}
 

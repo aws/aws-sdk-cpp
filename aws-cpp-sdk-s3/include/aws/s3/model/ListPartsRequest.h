@@ -97,72 +97,72 @@ namespace Model
 
 
     /**
-     * Sets the maximum number of parts to return.
+     * <p>Sets the maximum number of parts to return.</p>
      */
     inline int GetMaxParts() const{ return m_maxParts; }
 
     /**
-     * Sets the maximum number of parts to return.
+     * <p>Sets the maximum number of parts to return.</p>
      */
     inline void SetMaxParts(int value) { m_maxPartsHasBeenSet = true; m_maxParts = value; }
 
     /**
-     * Sets the maximum number of parts to return.
+     * <p>Sets the maximum number of parts to return.</p>
      */
     inline ListPartsRequest& WithMaxParts(int value) { SetMaxParts(value); return *this;}
 
 
     /**
-     * Specifies the part after which listing should begin. Only parts with higher part
-     * numbers will be listed.
+     * <p>Specifies the part after which listing should begin. Only parts with higher
+     * part numbers will be listed.</p>
      */
     inline int GetPartNumberMarker() const{ return m_partNumberMarker; }
 
     /**
-     * Specifies the part after which listing should begin. Only parts with higher part
-     * numbers will be listed.
+     * <p>Specifies the part after which listing should begin. Only parts with higher
+     * part numbers will be listed.</p>
      */
     inline void SetPartNumberMarker(int value) { m_partNumberMarkerHasBeenSet = true; m_partNumberMarker = value; }
 
     /**
-     * Specifies the part after which listing should begin. Only parts with higher part
-     * numbers will be listed.
+     * <p>Specifies the part after which listing should begin. Only parts with higher
+     * part numbers will be listed.</p>
      */
     inline ListPartsRequest& WithPartNumberMarker(int value) { SetPartNumberMarker(value); return *this;}
 
 
     /**
-     * Upload ID identifying the multipart upload whose parts are being listed.
+     * <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
      */
     inline const Aws::String& GetUploadId() const{ return m_uploadId; }
 
     /**
-     * Upload ID identifying the multipart upload whose parts are being listed.
+     * <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
      */
     inline void SetUploadId(const Aws::String& value) { m_uploadIdHasBeenSet = true; m_uploadId = value; }
 
     /**
-     * Upload ID identifying the multipart upload whose parts are being listed.
+     * <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
      */
     inline void SetUploadId(Aws::String&& value) { m_uploadIdHasBeenSet = true; m_uploadId = std::move(value); }
 
     /**
-     * Upload ID identifying the multipart upload whose parts are being listed.
+     * <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
      */
     inline void SetUploadId(const char* value) { m_uploadIdHasBeenSet = true; m_uploadId.assign(value); }
 
     /**
-     * Upload ID identifying the multipart upload whose parts are being listed.
+     * <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
      */
     inline ListPartsRequest& WithUploadId(const Aws::String& value) { SetUploadId(value); return *this;}
 
     /**
-     * Upload ID identifying the multipart upload whose parts are being listed.
+     * <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
      */
     inline ListPartsRequest& WithUploadId(Aws::String&& value) { SetUploadId(std::move(value)); return *this;}
 
     /**
-     * Upload ID identifying the multipart upload whose parts are being listed.
+     * <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
      */
     inline ListPartsRequest& WithUploadId(const char* value) { SetUploadId(value); return *this;}
 

@@ -66,20 +66,20 @@ namespace Model
 
 
     /**
-     * Element to enable quiet mode for the request. When you add this element, you
-     * must set its value to true.
+     * <p>Element to enable quiet mode for the request. When you add this element, you
+     * must set its value to true.</p>
      */
     inline bool GetQuiet() const{ return m_quiet; }
 
     /**
-     * Element to enable quiet mode for the request. When you add this element, you
-     * must set its value to true.
+     * <p>Element to enable quiet mode for the request. When you add this element, you
+     * must set its value to true.</p>
      */
     inline void SetQuiet(bool value) { m_quietHasBeenSet = true; m_quiet = value; }
 
     /**
-     * Element to enable quiet mode for the request. When you add this element, you
-     * must set its value to true.
+     * <p>Element to enable quiet mode for the request. When you add this element, you
+     * must set its value to true.</p>
      */
     inline Delete& WithQuiet(bool value) { SetQuiet(value); return *this;}
 
