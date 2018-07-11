@@ -96,13 +96,14 @@ public class C2jModelToGeneratorModelTransformer {
         metadata.setStandalone(standalone);
         metadata.setApiVersion(c2jMetadata.getApiVersion());
         metadata.setConcatAPIVersion(c2jMetadata.getApiVersion().replace("-", ""));
-        metadata.setEndpointPrefix(c2jMetadata.getEndpointPrefix());
         metadata.setSigningName(c2jMetadata.getSigningName() != null ? c2jMetadata.getSigningName() : c2jMetadata.getEndpointPrefix());
         metadata.setJsonVersion(c2jMetadata.getJsonVersion());
         if("api-gateway".equalsIgnoreCase(c2jMetadata.getProtocol())) {
+            metadata.setEndpointPrefix(c2jMetadata.getEndpointPrefix() + ".execute-api");
             metadata.setProtocol("application-json");
             metadata.setStandalone(true);
         } else {
+            metadata.setEndpointPrefix(c2jMetadata.getEndpointPrefix());
             metadata.setProtocol(c2jMetadata.getProtocol());
         }
         metadata.setNamespace(c2jMetadata.getServiceAbbreviation());

@@ -49,6 +49,17 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
   init(clientConfiguration);
 }
 
+#if($metadata.standalone)
+${className}::${className}(const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
+  const Client::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}) :
+  BASECLASS(clientConfiguration, signerProvider,
+    Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor)${virtualAddressingInit}
+{
+  init(clientConfiguration);
+}
+
+#end
 ${className}::~${className}()
 {
 }

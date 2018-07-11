@@ -31,6 +31,7 @@ public class ServiceModel {
     String namespace;
     Metadata metadata;
     String documentation;
+    String licenseText;
     Map<String, Shape> shapes;
     Map<String, Operation> operations;
     Collection<Error> serviceErrors;

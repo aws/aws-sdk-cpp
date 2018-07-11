@@ -31,6 +31,7 @@ public class main {
     static final String LANGUAGE_BINDING_OPTION = "language-binding";
     static final String SERVICE_OPTION = "service";
     static final String NAMESPACE = "namespace";
+    static final String LICENSE_TEXT = "license-text";
     static final String STANDALONE_OPTION = "standlone";
 
     public static void main(String[] args) throws IOException {
@@ -61,7 +62,10 @@ public class main {
             if (argPairs.containsKey(NAMESPACE) && !argPairs.get(NAMESPACE).isEmpty()) {
                 namespace = argPairs.get(NAMESPACE);
             }
-
+            String licenseText = "";
+            if (argPairs.containsKey(LICENSE_TEXT) && !argPairs.get(LICENSE_TEXT).isEmpty()) {
+                licenseText = argPairs.get(LICENSE_TEXT);
+            }
             boolean generateStandalonePakckage = argPairs.containsKey(STANDALONE_OPTION);
             String languageBinding = argPairs.get(LANGUAGE_BINDING_OPTION);
             String serviceName = argPairs.get(SERVICE_OPTION);
@@ -85,6 +89,7 @@ public class main {
                             languageBinding,
                             serviceName,
                             namespace,
+                            licenseText,
                             generateStandalonePakckage);
                     System.out.println(outputLib.getAbsolutePath());
                 } catch (GeneratorNotImplementedException e) {
