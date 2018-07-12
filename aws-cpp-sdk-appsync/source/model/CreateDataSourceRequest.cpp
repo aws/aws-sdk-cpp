@@ -31,7 +31,8 @@ CreateDataSourceRequest::CreateDataSourceRequest() :
     m_serviceRoleArnHasBeenSet(false),
     m_dynamodbConfigHasBeenSet(false),
     m_lambdaConfigHasBeenSet(false),
-    m_elasticsearchConfigHasBeenSet(false)
+    m_elasticsearchConfigHasBeenSet(false),
+    m_httpConfigHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,12 @@ Aws::String CreateDataSourceRequest::SerializePayload() const
   if(m_elasticsearchConfigHasBeenSet)
   {
    payload.WithObject("elasticsearchConfig", m_elasticsearchConfig.Jsonize());
+
+  }
+
+  if(m_httpConfigHasBeenSet)
+  {
+   payload.WithObject("httpConfig", m_httpConfig.Jsonize());
 
   }
 

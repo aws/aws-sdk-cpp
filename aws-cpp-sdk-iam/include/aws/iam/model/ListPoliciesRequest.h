@@ -18,6 +18,7 @@
 #include <aws/iam/IAMRequest.h>
 #include <aws/iam/model/PolicyScopeType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iam/model/PolicyUsageType.h>
 #include <utility>
 
 namespace Aws
@@ -207,6 +208,57 @@ namespace Model
 
 
     /**
+     * <p>The policy usage method to use for filtering the results.</p> <p>To list only
+     * permissions policies,
+     * set <code>PolicyUsageFilter</code> to <code>PermissionsPolicy</code>. To list
+     * only the policies used to set permissions boundaries, set the value
+     * to <code>PermissionsBoundary</code>.</p> <p>This parameter is optional. If it is
+     * not included, all policies are returned. </p>
+     */
+    inline const PolicyUsageType& GetPolicyUsageFilter() const{ return m_policyUsageFilter; }
+
+    /**
+     * <p>The policy usage method to use for filtering the results.</p> <p>To list only
+     * permissions policies,
+     * set <code>PolicyUsageFilter</code> to <code>PermissionsPolicy</code>. To list
+     * only the policies used to set permissions boundaries, set the value
+     * to <code>PermissionsBoundary</code>.</p> <p>This parameter is optional. If it is
+     * not included, all policies are returned. </p>
+     */
+    inline void SetPolicyUsageFilter(const PolicyUsageType& value) { m_policyUsageFilterHasBeenSet = true; m_policyUsageFilter = value; }
+
+    /**
+     * <p>The policy usage method to use for filtering the results.</p> <p>To list only
+     * permissions policies,
+     * set <code>PolicyUsageFilter</code> to <code>PermissionsPolicy</code>. To list
+     * only the policies used to set permissions boundaries, set the value
+     * to <code>PermissionsBoundary</code>.</p> <p>This parameter is optional. If it is
+     * not included, all policies are returned. </p>
+     */
+    inline void SetPolicyUsageFilter(PolicyUsageType&& value) { m_policyUsageFilterHasBeenSet = true; m_policyUsageFilter = std::move(value); }
+
+    /**
+     * <p>The policy usage method to use for filtering the results.</p> <p>To list only
+     * permissions policies,
+     * set <code>PolicyUsageFilter</code> to <code>PermissionsPolicy</code>. To list
+     * only the policies used to set permissions boundaries, set the value
+     * to <code>PermissionsBoundary</code>.</p> <p>This parameter is optional. If it is
+     * not included, all policies are returned. </p>
+     */
+    inline ListPoliciesRequest& WithPolicyUsageFilter(const PolicyUsageType& value) { SetPolicyUsageFilter(value); return *this;}
+
+    /**
+     * <p>The policy usage method to use for filtering the results.</p> <p>To list only
+     * permissions policies,
+     * set <code>PolicyUsageFilter</code> to <code>PermissionsPolicy</code>. To list
+     * only the policies used to set permissions boundaries, set the value
+     * to <code>PermissionsBoundary</code>.</p> <p>This parameter is optional. If it is
+     * not included, all policies are returned. </p>
+     */
+    inline ListPoliciesRequest& WithPolicyUsageFilter(PolicyUsageType&& value) { SetPolicyUsageFilter(std::move(value)); return *this;}
+
+
+    /**
      * <p>Use this parameter only when paginating results and only after you receive a
      * response indicating that the results are truncated. Set it to the value of the
      * <code>Marker</code> element in the response that you received to indicate where
@@ -309,6 +361,9 @@ namespace Model
 
     Aws::String m_pathPrefix;
     bool m_pathPrefixHasBeenSet;
+
+    PolicyUsageType m_policyUsageFilter;
+    bool m_policyUsageFilterHasBeenSet;
 
     Aws::String m_marker;
     bool m_markerHasBeenSet;

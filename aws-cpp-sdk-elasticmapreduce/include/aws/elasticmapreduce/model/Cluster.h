@@ -347,37 +347,86 @@ namespace Model
 
 
     /**
-     * <p>The release label for the Amazon EMR release.</p>
+     * <p>The Amazon EMR release label, which determines the version of open-source
+     * application packages installed on the cluster. Release labels are in the form
+     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
+     * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
+     * versions and included application versions and features, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * The release label applies only to Amazon EMR releases versions 4.x and later.
+     * Earlier versions use <code>AmiVersion</code>.</p>
      */
     inline const Aws::String& GetReleaseLabel() const{ return m_releaseLabel; }
 
     /**
-     * <p>The release label for the Amazon EMR release.</p>
+     * <p>The Amazon EMR release label, which determines the version of open-source
+     * application packages installed on the cluster. Release labels are in the form
+     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
+     * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
+     * versions and included application versions and features, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * The release label applies only to Amazon EMR releases versions 4.x and later.
+     * Earlier versions use <code>AmiVersion</code>.</p>
      */
     inline void SetReleaseLabel(const Aws::String& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = value; }
 
     /**
-     * <p>The release label for the Amazon EMR release.</p>
+     * <p>The Amazon EMR release label, which determines the version of open-source
+     * application packages installed on the cluster. Release labels are in the form
+     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
+     * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
+     * versions and included application versions and features, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * The release label applies only to Amazon EMR releases versions 4.x and later.
+     * Earlier versions use <code>AmiVersion</code>.</p>
      */
     inline void SetReleaseLabel(Aws::String&& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = std::move(value); }
 
     /**
-     * <p>The release label for the Amazon EMR release.</p>
+     * <p>The Amazon EMR release label, which determines the version of open-source
+     * application packages installed on the cluster. Release labels are in the form
+     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
+     * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
+     * versions and included application versions and features, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * The release label applies only to Amazon EMR releases versions 4.x and later.
+     * Earlier versions use <code>AmiVersion</code>.</p>
      */
     inline void SetReleaseLabel(const char* value) { m_releaseLabelHasBeenSet = true; m_releaseLabel.assign(value); }
 
     /**
-     * <p>The release label for the Amazon EMR release.</p>
+     * <p>The Amazon EMR release label, which determines the version of open-source
+     * application packages installed on the cluster. Release labels are in the form
+     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
+     * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
+     * versions and included application versions and features, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * The release label applies only to Amazon EMR releases versions 4.x and later.
+     * Earlier versions use <code>AmiVersion</code>.</p>
      */
     inline Cluster& WithReleaseLabel(const Aws::String& value) { SetReleaseLabel(value); return *this;}
 
     /**
-     * <p>The release label for the Amazon EMR release.</p>
+     * <p>The Amazon EMR release label, which determines the version of open-source
+     * application packages installed on the cluster. Release labels are in the form
+     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
+     * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
+     * versions and included application versions and features, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * The release label applies only to Amazon EMR releases versions 4.x and later.
+     * Earlier versions use <code>AmiVersion</code>.</p>
      */
     inline Cluster& WithReleaseLabel(Aws::String&& value) { SetReleaseLabel(std::move(value)); return *this;}
 
     /**
-     * <p>The release label for the Amazon EMR release.</p>
+     * <p>The Amazon EMR release label, which determines the version of open-source
+     * application packages installed on the cluster. Release labels are in the form
+     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
+     * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
+     * versions and included application versions and features, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * The release label applies only to Amazon EMR releases versions 4.x and later.
+     * Earlier versions use <code>AmiVersion</code>.</p>
      */
     inline Cluster& WithReleaseLabel(const char* value) { SetReleaseLabel(value); return *this;}
 

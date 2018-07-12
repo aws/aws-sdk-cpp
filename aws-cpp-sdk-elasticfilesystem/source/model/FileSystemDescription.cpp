@@ -43,7 +43,11 @@ FileSystemDescription::FileSystemDescription() :
     m_performanceModeHasBeenSet(false),
     m_encrypted(false),
     m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_throughputMode(ThroughputMode::NOT_SET),
+    m_throughputModeHasBeenSet(false),
+    m_provisionedThroughputInMibps(0.0),
+    m_provisionedThroughputInMibpsHasBeenSet(false)
 {
 }
 
@@ -62,7 +66,11 @@ FileSystemDescription::FileSystemDescription(const JsonValue& jsonValue) :
     m_performanceModeHasBeenSet(false),
     m_encrypted(false),
     m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_throughputMode(ThroughputMode::NOT_SET),
+    m_throughputModeHasBeenSet(false),
+    m_provisionedThroughputInMibps(0.0),
+    m_provisionedThroughputInMibpsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -146,6 +154,20 @@ FileSystemDescription& FileSystemDescription::operator =(const JsonValue& jsonVa
     m_kmsKeyIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ThroughputMode"))
+  {
+    m_throughputMode = ThroughputModeMapper::GetThroughputModeForName(jsonValue.GetString("ThroughputMode"));
+
+    m_throughputModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ProvisionedThroughputInMibps"))
+  {
+    m_provisionedThroughputInMibps = jsonValue.GetDouble("ProvisionedThroughputInMibps");
+
+    m_provisionedThroughputInMibpsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -213,6 +235,17 @@ JsonValue FileSystemDescription::Jsonize() const
   if(m_kmsKeyIdHasBeenSet)
   {
    payload.WithString("KmsKeyId", m_kmsKeyId);
+
+  }
+
+  if(m_throughputModeHasBeenSet)
+  {
+   payload.WithString("ThroughputMode", ThroughputModeMapper::GetNameForThroughputMode(m_throughputMode));
+  }
+
+  if(m_provisionedThroughputInMibpsHasBeenSet)
+  {
+   payload.WithDouble("ProvisionedThroughputInMibps", m_provisionedThroughputInMibps);
 
   }
 

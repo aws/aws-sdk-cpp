@@ -172,6 +172,7 @@ namespace Model
         class DeletePolicyRequest;
         class DeletePolicyVersionRequest;
         class DeleteRoleRequest;
+        class DeleteRolePermissionsBoundaryRequest;
         class DeleteRolePolicyRequest;
         class DeleteSAMLProviderRequest;
         class DeleteSSHPublicKeyRequest;
@@ -180,6 +181,7 @@ namespace Model
         class DeleteServiceSpecificCredentialRequest;
         class DeleteSigningCertificateRequest;
         class DeleteUserRequest;
+        class DeleteUserPermissionsBoundaryRequest;
         class DeleteUserPolicyRequest;
         class DeleteVirtualMFADeviceRequest;
         class DetachGroupPolicyRequest;
@@ -235,7 +237,9 @@ namespace Model
         class ListUsersRequest;
         class ListVirtualMFADevicesRequest;
         class PutGroupPolicyRequest;
+        class PutRolePermissionsBoundaryRequest;
         class PutRolePolicyRequest;
+        class PutUserPermissionsBoundaryRequest;
         class PutUserPolicyRequest;
         class RemoveClientIDFromOpenIDConnectProviderRequest;
         class RemoveRoleFromInstanceProfileRequest;
@@ -296,6 +300,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> DeletePolicyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> DeletePolicyVersionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> DeleteRoleOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> DeleteRolePermissionsBoundaryOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> DeleteRolePolicyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> DeleteSAMLProviderOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> DeleteSSHPublicKeyOutcome;
@@ -304,6 +309,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> DeleteServiceSpecificCredentialOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> DeleteSigningCertificateOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> DeleteUserOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> DeleteUserPermissionsBoundaryOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> DeleteUserPolicyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> DeleteVirtualMFADeviceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> DetachGroupPolicyOutcome;
@@ -359,7 +365,9 @@ namespace Model
         typedef Aws::Utils::Outcome<ListUsersResult, Aws::Client::AWSError<IAMErrors>> ListUsersOutcome;
         typedef Aws::Utils::Outcome<ListVirtualMFADevicesResult, Aws::Client::AWSError<IAMErrors>> ListVirtualMFADevicesOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> PutGroupPolicyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> PutRolePermissionsBoundaryOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> PutRolePolicyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> PutUserPermissionsBoundaryOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> PutUserPolicyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> RemoveClientIDFromOpenIDConnectProviderOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> RemoveRoleFromInstanceProfileOutcome;
@@ -420,6 +428,7 @@ namespace Model
         typedef std::future<DeletePolicyOutcome> DeletePolicyOutcomeCallable;
         typedef std::future<DeletePolicyVersionOutcome> DeletePolicyVersionOutcomeCallable;
         typedef std::future<DeleteRoleOutcome> DeleteRoleOutcomeCallable;
+        typedef std::future<DeleteRolePermissionsBoundaryOutcome> DeleteRolePermissionsBoundaryOutcomeCallable;
         typedef std::future<DeleteRolePolicyOutcome> DeleteRolePolicyOutcomeCallable;
         typedef std::future<DeleteSAMLProviderOutcome> DeleteSAMLProviderOutcomeCallable;
         typedef std::future<DeleteSSHPublicKeyOutcome> DeleteSSHPublicKeyOutcomeCallable;
@@ -428,6 +437,7 @@ namespace Model
         typedef std::future<DeleteServiceSpecificCredentialOutcome> DeleteServiceSpecificCredentialOutcomeCallable;
         typedef std::future<DeleteSigningCertificateOutcome> DeleteSigningCertificateOutcomeCallable;
         typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
+        typedef std::future<DeleteUserPermissionsBoundaryOutcome> DeleteUserPermissionsBoundaryOutcomeCallable;
         typedef std::future<DeleteUserPolicyOutcome> DeleteUserPolicyOutcomeCallable;
         typedef std::future<DeleteVirtualMFADeviceOutcome> DeleteVirtualMFADeviceOutcomeCallable;
         typedef std::future<DetachGroupPolicyOutcome> DetachGroupPolicyOutcomeCallable;
@@ -483,7 +493,9 @@ namespace Model
         typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
         typedef std::future<ListVirtualMFADevicesOutcome> ListVirtualMFADevicesOutcomeCallable;
         typedef std::future<PutGroupPolicyOutcome> PutGroupPolicyOutcomeCallable;
+        typedef std::future<PutRolePermissionsBoundaryOutcome> PutRolePermissionsBoundaryOutcomeCallable;
         typedef std::future<PutRolePolicyOutcome> PutRolePolicyOutcomeCallable;
+        typedef std::future<PutUserPermissionsBoundaryOutcome> PutUserPermissionsBoundaryOutcomeCallable;
         typedef std::future<PutUserPolicyOutcome> PutUserPolicyOutcomeCallable;
         typedef std::future<RemoveClientIDFromOpenIDConnectProviderOutcome> RemoveClientIDFromOpenIDConnectProviderOutcomeCallable;
         typedef std::future<RemoveRoleFromInstanceProfileOutcome> RemoveRoleFromInstanceProfileOutcomeCallable;
@@ -547,6 +559,7 @@ namespace Model
     typedef std::function<void(const IAMClient*, const Model::DeletePolicyRequest&, const Model::DeletePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePolicyResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::DeletePolicyVersionRequest&, const Model::DeletePolicyVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePolicyVersionResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::DeleteRoleRequest&, const Model::DeleteRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRoleResponseReceivedHandler;
+    typedef std::function<void(const IAMClient*, const Model::DeleteRolePermissionsBoundaryRequest&, const Model::DeleteRolePermissionsBoundaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRolePermissionsBoundaryResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::DeleteRolePolicyRequest&, const Model::DeleteRolePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRolePolicyResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::DeleteSAMLProviderRequest&, const Model::DeleteSAMLProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSAMLProviderResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::DeleteSSHPublicKeyRequest&, const Model::DeleteSSHPublicKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSSHPublicKeyResponseReceivedHandler;
@@ -555,6 +568,7 @@ namespace Model
     typedef std::function<void(const IAMClient*, const Model::DeleteServiceSpecificCredentialRequest&, const Model::DeleteServiceSpecificCredentialOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServiceSpecificCredentialResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::DeleteSigningCertificateRequest&, const Model::DeleteSigningCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSigningCertificateResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::DeleteUserRequest&, const Model::DeleteUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserResponseReceivedHandler;
+    typedef std::function<void(const IAMClient*, const Model::DeleteUserPermissionsBoundaryRequest&, const Model::DeleteUserPermissionsBoundaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserPermissionsBoundaryResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::DeleteUserPolicyRequest&, const Model::DeleteUserPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserPolicyResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::DeleteVirtualMFADeviceRequest&, const Model::DeleteVirtualMFADeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVirtualMFADeviceResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::DetachGroupPolicyRequest&, const Model::DetachGroupPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachGroupPolicyResponseReceivedHandler;
@@ -610,7 +624,9 @@ namespace Model
     typedef std::function<void(const IAMClient*, const Model::ListUsersRequest&, const Model::ListUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::ListVirtualMFADevicesRequest&, const Model::ListVirtualMFADevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVirtualMFADevicesResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::PutGroupPolicyRequest&, const Model::PutGroupPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutGroupPolicyResponseReceivedHandler;
+    typedef std::function<void(const IAMClient*, const Model::PutRolePermissionsBoundaryRequest&, const Model::PutRolePermissionsBoundaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRolePermissionsBoundaryResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::PutRolePolicyRequest&, const Model::PutRolePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRolePolicyResponseReceivedHandler;
+    typedef std::function<void(const IAMClient*, const Model::PutUserPermissionsBoundaryRequest&, const Model::PutUserPermissionsBoundaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutUserPermissionsBoundaryResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::PutUserPolicyRequest&, const Model::PutUserPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutUserPolicyResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::RemoveClientIDFromOpenIDConnectProviderRequest&, const Model::RemoveClientIDFromOpenIDConnectProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveClientIDFromOpenIDConnectProviderResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::RemoveRoleFromInstanceProfileRequest&, const Model::RemoveRoleFromInstanceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveRoleFromInstanceProfileResponseReceivedHandler;
@@ -2279,6 +2295,40 @@ namespace Model
         virtual void DeleteRoleAsync(const Model::DeleteRoleRequest& request, const DeleteRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes the permissions boundary for the specified IAM role. </p> <important>
+         * <p>Deleting the permissions boundary for a role might increase its permissions
+         * by allowing anyone who assumes the role to perform all the actions granted in
+         * its permissions policies. </p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRolePermissionsBoundary">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRolePermissionsBoundaryOutcome DeleteRolePermissionsBoundary(const Model::DeleteRolePermissionsBoundaryRequest& request) const;
+
+        /**
+         * <p>Deletes the permissions boundary for the specified IAM role. </p> <important>
+         * <p>Deleting the permissions boundary for a role might increase its permissions
+         * by allowing anyone who assumes the role to perform all the actions granted in
+         * its permissions policies. </p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRolePermissionsBoundary">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteRolePermissionsBoundaryOutcomeCallable DeleteRolePermissionsBoundaryCallable(const Model::DeleteRolePermissionsBoundaryRequest& request) const;
+
+        /**
+         * <p>Deletes the permissions boundary for the specified IAM role. </p> <important>
+         * <p>Deleting the permissions boundary for a role might increase its permissions
+         * by allowing anyone who assumes the role to perform all the actions granted in
+         * its permissions policies. </p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRolePermissionsBoundary">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteRolePermissionsBoundaryAsync(const Model::DeleteRolePermissionsBoundaryRequest& request, const DeleteRolePermissionsBoundaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the specified inline policy that is embedded in the specified IAM
          * role.</p> <p>A role can also have managed policies attached to it. To detach a
          * managed policy from a role, use <a>DetachRolePolicy</a>. For more information
@@ -2654,6 +2704,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the permissions boundary for the specified IAM user.</p> <important>
+         * <p>Deleting the permissions boundary for a user might increase its permissions
+         * by allowing the user to perform all the actions granted in its permissions
+         * policies. </p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUserPermissionsBoundary">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteUserPermissionsBoundaryOutcome DeleteUserPermissionsBoundary(const Model::DeleteUserPermissionsBoundaryRequest& request) const;
+
+        /**
+         * <p>Deletes the permissions boundary for the specified IAM user.</p> <important>
+         * <p>Deleting the permissions boundary for a user might increase its permissions
+         * by allowing the user to perform all the actions granted in its permissions
+         * policies. </p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUserPermissionsBoundary">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteUserPermissionsBoundaryOutcomeCallable DeleteUserPermissionsBoundaryCallable(const Model::DeleteUserPermissionsBoundaryRequest& request) const;
+
+        /**
+         * <p>Deletes the permissions boundary for the specified IAM user.</p> <important>
+         * <p>Deleting the permissions boundary for a user might increase its permissions
+         * by allowing the user to perform all the actions granted in its permissions
+         * policies. </p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUserPermissionsBoundary">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteUserPermissionsBoundaryAsync(const Model::DeleteUserPermissionsBoundaryRequest& request, const DeleteUserPermissionsBoundaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified inline policy that is embedded in the specified IAM
@@ -5156,6 +5240,64 @@ namespace Model
         virtual void PutGroupPolicyAsync(const Model::PutGroupPolicyRequest& request, const PutGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Adds or updates the policy that is specified as the IAM role's permissions
+         * boundary. You can use an AWS managed policy or a customer managed policy to set
+         * the boundary for a role. Use the boundary to control the maximum permissions
+         * that the role can have. Setting a permissions boundary is an advanced feature
+         * that can affect the permissions for the role.</p> <p>You cannot set the boundary
+         * for a service-linked role. </p> <important> <p>Policies used as permissions
+         * boundaries do not provide permissions. You must also attach a permissions policy
+         * to the role. To learn how the effective permissions for a role are evaluated,
+         * see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM
+         * JSON Policy Evaluation Logic</a> in the IAM User Guide. </p>
+         * </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutRolePermissionsBoundary">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutRolePermissionsBoundaryOutcome PutRolePermissionsBoundary(const Model::PutRolePermissionsBoundaryRequest& request) const;
+
+        /**
+         * <p>Adds or updates the policy that is specified as the IAM role's permissions
+         * boundary. You can use an AWS managed policy or a customer managed policy to set
+         * the boundary for a role. Use the boundary to control the maximum permissions
+         * that the role can have. Setting a permissions boundary is an advanced feature
+         * that can affect the permissions for the role.</p> <p>You cannot set the boundary
+         * for a service-linked role. </p> <important> <p>Policies used as permissions
+         * boundaries do not provide permissions. You must also attach a permissions policy
+         * to the role. To learn how the effective permissions for a role are evaluated,
+         * see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM
+         * JSON Policy Evaluation Logic</a> in the IAM User Guide. </p>
+         * </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutRolePermissionsBoundary">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutRolePermissionsBoundaryOutcomeCallable PutRolePermissionsBoundaryCallable(const Model::PutRolePermissionsBoundaryRequest& request) const;
+
+        /**
+         * <p>Adds or updates the policy that is specified as the IAM role's permissions
+         * boundary. You can use an AWS managed policy or a customer managed policy to set
+         * the boundary for a role. Use the boundary to control the maximum permissions
+         * that the role can have. Setting a permissions boundary is an advanced feature
+         * that can affect the permissions for the role.</p> <p>You cannot set the boundary
+         * for a service-linked role. </p> <important> <p>Policies used as permissions
+         * boundaries do not provide permissions. You must also attach a permissions policy
+         * to the role. To learn how the effective permissions for a role are evaluated,
+         * see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM
+         * JSON Policy Evaluation Logic</a> in the IAM User Guide. </p>
+         * </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutRolePermissionsBoundary">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutRolePermissionsBoundaryAsync(const Model::PutRolePermissionsBoundaryRequest& request, const PutRolePermissionsBoundaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Adds or updates an inline policy document that is embedded in the specified
          * IAM role.</p> <p>When you embed an inline policy in a role, the inline policy is
          * used as part of the role's access (permissions) policy. The role's trust policy
@@ -5245,6 +5387,61 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutRolePolicyAsync(const Model::PutRolePolicyRequest& request, const PutRolePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds or updates the policy that is specified as the IAM user's permissions
+         * boundary. You can use an AWS managed policy or a customer managed policy to set
+         * the boundary for a user. Use the boundary to control the maximum permissions
+         * that the user can have. Setting a permissions boundary is an advanced feature
+         * that can affect the permissions for the user.</p> <important> <p>Policies that
+         * are used as permissions boundaries do not provide permissions. You must also
+         * attach a permissions policy to the user. To learn how the effective permissions
+         * for a user are evaluated, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM
+         * JSON Policy Evaluation Logic</a> in the IAM User Guide. </p>
+         * </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutUserPermissionsBoundary">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutUserPermissionsBoundaryOutcome PutUserPermissionsBoundary(const Model::PutUserPermissionsBoundaryRequest& request) const;
+
+        /**
+         * <p>Adds or updates the policy that is specified as the IAM user's permissions
+         * boundary. You can use an AWS managed policy or a customer managed policy to set
+         * the boundary for a user. Use the boundary to control the maximum permissions
+         * that the user can have. Setting a permissions boundary is an advanced feature
+         * that can affect the permissions for the user.</p> <important> <p>Policies that
+         * are used as permissions boundaries do not provide permissions. You must also
+         * attach a permissions policy to the user. To learn how the effective permissions
+         * for a user are evaluated, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM
+         * JSON Policy Evaluation Logic</a> in the IAM User Guide. </p>
+         * </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutUserPermissionsBoundary">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutUserPermissionsBoundaryOutcomeCallable PutUserPermissionsBoundaryCallable(const Model::PutUserPermissionsBoundaryRequest& request) const;
+
+        /**
+         * <p>Adds or updates the policy that is specified as the IAM user's permissions
+         * boundary. You can use an AWS managed policy or a customer managed policy to set
+         * the boundary for a user. Use the boundary to control the maximum permissions
+         * that the user can have. Setting a permissions boundary is an advanced feature
+         * that can affect the permissions for the user.</p> <important> <p>Policies that
+         * are used as permissions boundaries do not provide permissions. You must also
+         * attach a permissions policy to the user. To learn how the effective permissions
+         * for a user are evaluated, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM
+         * JSON Policy Evaluation Logic</a> in the IAM User Guide. </p>
+         * </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutUserPermissionsBoundary">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutUserPermissionsBoundaryAsync(const Model::PutUserPermissionsBoundaryRequest& request, const PutUserPermissionsBoundaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or updates an inline policy document that is embedded in the specified
@@ -6239,7 +6436,7 @@ namespace Model
          * <p>Sets the status of a service-specific credential to <code>Active</code> or
          * <code>Inactive</code>. Service-specific credentials that are inactive cannot be
          * used for authentication to the service. This operation can be used to disable a
-         * user’s service-specific credential as part of a credential rotation work
+         * user's service-specific credential as part of a credential rotation work
          * flow.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateServiceSpecificCredential">AWS
          * API Reference</a></p>
@@ -6250,7 +6447,7 @@ namespace Model
          * <p>Sets the status of a service-specific credential to <code>Active</code> or
          * <code>Inactive</code>. Service-specific credentials that are inactive cannot be
          * used for authentication to the service. This operation can be used to disable a
-         * user’s service-specific credential as part of a credential rotation work
+         * user's service-specific credential as part of a credential rotation work
          * flow.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateServiceSpecificCredential">AWS
          * API Reference</a></p>
@@ -6263,7 +6460,7 @@ namespace Model
          * <p>Sets the status of a service-specific credential to <code>Active</code> or
          * <code>Inactive</code>. Service-specific credentials that are inactive cannot be
          * used for authentication to the service. This operation can be used to disable a
-         * user’s service-specific credential as part of a credential rotation work
+         * user's service-specific credential as part of a credential rotation work
          * flow.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateServiceSpecificCredential">AWS
          * API Reference</a></p>
@@ -6645,6 +6842,7 @@ namespace Model
         void DeletePolicyAsyncHelper(const Model::DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePolicyVersionAsyncHelper(const Model::DeletePolicyVersionRequest& request, const DeletePolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRoleAsyncHelper(const Model::DeleteRoleRequest& request, const DeleteRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteRolePermissionsBoundaryAsyncHelper(const Model::DeleteRolePermissionsBoundaryRequest& request, const DeleteRolePermissionsBoundaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRolePolicyAsyncHelper(const Model::DeleteRolePolicyRequest& request, const DeleteRolePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSAMLProviderAsyncHelper(const Model::DeleteSAMLProviderRequest& request, const DeleteSAMLProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSSHPublicKeyAsyncHelper(const Model::DeleteSSHPublicKeyRequest& request, const DeleteSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6653,6 +6851,7 @@ namespace Model
         void DeleteServiceSpecificCredentialAsyncHelper(const Model::DeleteServiceSpecificCredentialRequest& request, const DeleteServiceSpecificCredentialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSigningCertificateAsyncHelper(const Model::DeleteSigningCertificateRequest& request, const DeleteSigningCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUserAsyncHelper(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteUserPermissionsBoundaryAsyncHelper(const Model::DeleteUserPermissionsBoundaryRequest& request, const DeleteUserPermissionsBoundaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUserPolicyAsyncHelper(const Model::DeleteUserPolicyRequest& request, const DeleteUserPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVirtualMFADeviceAsyncHelper(const Model::DeleteVirtualMFADeviceRequest& request, const DeleteVirtualMFADeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetachGroupPolicyAsyncHelper(const Model::DetachGroupPolicyRequest& request, const DetachGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6708,7 +6907,9 @@ namespace Model
         void ListUsersAsyncHelper(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListVirtualMFADevicesAsyncHelper(const Model::ListVirtualMFADevicesRequest& request, const ListVirtualMFADevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutGroupPolicyAsyncHelper(const Model::PutGroupPolicyRequest& request, const PutGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutRolePermissionsBoundaryAsyncHelper(const Model::PutRolePermissionsBoundaryRequest& request, const PutRolePermissionsBoundaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRolePolicyAsyncHelper(const Model::PutRolePolicyRequest& request, const PutRolePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutUserPermissionsBoundaryAsyncHelper(const Model::PutUserPermissionsBoundaryRequest& request, const PutUserPermissionsBoundaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutUserPolicyAsyncHelper(const Model::PutUserPolicyRequest& request, const PutUserPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveClientIDFromOpenIDConnectProviderAsyncHelper(const Model::RemoveClientIDFromOpenIDConnectProviderRequest& request, const RemoveClientIDFromOpenIDConnectProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveRoleFromInstanceProfileAsyncHelper(const Model::RemoveRoleFromInstanceProfileRequest& request, const RemoveRoleFromInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

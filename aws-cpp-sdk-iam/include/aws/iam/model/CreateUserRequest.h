@@ -215,6 +215,49 @@ namespace Model
      */
     inline CreateUserRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
+
+    /**
+     * <p>The ARN of the policy that is used to set the permissions boundary for the
+     * user.</p>
+     */
+    inline const Aws::String& GetPermissionsBoundary() const{ return m_permissionsBoundary; }
+
+    /**
+     * <p>The ARN of the policy that is used to set the permissions boundary for the
+     * user.</p>
+     */
+    inline void SetPermissionsBoundary(const Aws::String& value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary = value; }
+
+    /**
+     * <p>The ARN of the policy that is used to set the permissions boundary for the
+     * user.</p>
+     */
+    inline void SetPermissionsBoundary(Aws::String&& value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary = std::move(value); }
+
+    /**
+     * <p>The ARN of the policy that is used to set the permissions boundary for the
+     * user.</p>
+     */
+    inline void SetPermissionsBoundary(const char* value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary.assign(value); }
+
+    /**
+     * <p>The ARN of the policy that is used to set the permissions boundary for the
+     * user.</p>
+     */
+    inline CreateUserRequest& WithPermissionsBoundary(const Aws::String& value) { SetPermissionsBoundary(value); return *this;}
+
+    /**
+     * <p>The ARN of the policy that is used to set the permissions boundary for the
+     * user.</p>
+     */
+    inline CreateUserRequest& WithPermissionsBoundary(Aws::String&& value) { SetPermissionsBoundary(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the policy that is used to set the permissions boundary for the
+     * user.</p>
+     */
+    inline CreateUserRequest& WithPermissionsBoundary(const char* value) { SetPermissionsBoundary(value); return *this;}
+
   private:
 
     Aws::String m_path;
@@ -222,6 +265,9 @@ namespace Model
 
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
+    Aws::String m_permissionsBoundary;
+    bool m_permissionsBoundaryHasBeenSet;
   };
 
 } // namespace Model

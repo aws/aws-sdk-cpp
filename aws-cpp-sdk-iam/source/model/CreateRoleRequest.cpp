@@ -26,7 +26,8 @@ CreateRoleRequest::CreateRoleRequest() :
     m_assumeRolePolicyDocumentHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_maxSessionDuration(0),
-    m_maxSessionDurationHasBeenSet(false)
+    m_maxSessionDurationHasBeenSet(false),
+    m_permissionsBoundaryHasBeenSet(false)
 {
 }
 
@@ -57,6 +58,11 @@ Aws::String CreateRoleRequest::SerializePayload() const
   if(m_maxSessionDurationHasBeenSet)
   {
     ss << "MaxSessionDuration=" << m_maxSessionDuration << "&";
+  }
+
+  if(m_permissionsBoundaryHasBeenSet)
+  {
+    ss << "PermissionsBoundary=" << StringUtils::URLEncode(m_permissionsBoundary.c_str()) << "&";
   }
 
   ss << "Version=2010-05-08";

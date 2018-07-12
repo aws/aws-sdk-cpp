@@ -301,6 +301,34 @@ namespace Model
 
 
     /**
+     * <p>The number of entities (users and roles) for which the policy is used as the
+     * permissions boundary. </p> <p>For more information about permissions boundaries,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline int GetPermissionsBoundaryUsageCount() const{ return m_permissionsBoundaryUsageCount; }
+
+    /**
+     * <p>The number of entities (users and roles) for which the policy is used as the
+     * permissions boundary. </p> <p>For more information about permissions boundaries,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline void SetPermissionsBoundaryUsageCount(int value) { m_permissionsBoundaryUsageCountHasBeenSet = true; m_permissionsBoundaryUsageCount = value; }
+
+    /**
+     * <p>The number of entities (users and roles) for which the policy is used as the
+     * permissions boundary. </p> <p>For more information about permissions boundaries,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline ManagedPolicyDetail& WithPermissionsBoundaryUsageCount(int value) { SetPermissionsBoundaryUsageCount(value); return *this;}
+
+
+    /**
      * <p>Specifies whether the policy can be attached to an IAM user, group, or
      * role.</p>
      */
@@ -486,6 +514,9 @@ namespace Model
 
     int m_attachmentCount;
     bool m_attachmentCountHasBeenSet;
+
+    int m_permissionsBoundaryUsageCount;
+    bool m_permissionsBoundaryUsageCountHasBeenSet;
 
     bool m_isAttachable;
     bool m_isAttachableHasBeenSet;

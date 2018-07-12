@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-IoT1ClickDevicesService;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.4.20180514.86;
+        version : 1.4.20180514.87;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS IoT 1-Click Devices Service);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.4.86
+            AWSSDKCPP-Core/1.4.87
        }
     }
 

@@ -112,8 +112,10 @@ namespace Model
 
     /**
      * <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM
-     * format.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * used to validate this parameter is a string of characters consisting of the
+     * format. The miminum bit-length of the public key is 2048 bits. For example, you
+     * can generate a 2048-bit key, and the resulting PEM file is 1679 bytes long.</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
+     * validate this parameter is a string of characters consisting of the
      * following:</p> <ul> <li> <p>Any printable ASCII character ranging from the space
      * character (\u0020) through the end of the ASCII character range</p> </li> <li>
      * <p>The printable characters in the Basic Latin and Latin-1 Supplement character
@@ -124,8 +126,10 @@ namespace Model
 
     /**
      * <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM
-     * format.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * used to validate this parameter is a string of characters consisting of the
+     * format. The miminum bit-length of the public key is 2048 bits. For example, you
+     * can generate a 2048-bit key, and the resulting PEM file is 1679 bytes long.</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
+     * validate this parameter is a string of characters consisting of the
      * following:</p> <ul> <li> <p>Any printable ASCII character ranging from the space
      * character (\u0020) through the end of the ASCII character range</p> </li> <li>
      * <p>The printable characters in the Basic Latin and Latin-1 Supplement character
@@ -136,8 +140,10 @@ namespace Model
 
     /**
      * <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM
-     * format.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * used to validate this parameter is a string of characters consisting of the
+     * format. The miminum bit-length of the public key is 2048 bits. For example, you
+     * can generate a 2048-bit key, and the resulting PEM file is 1679 bytes long.</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
+     * validate this parameter is a string of characters consisting of the
      * following:</p> <ul> <li> <p>Any printable ASCII character ranging from the space
      * character (\u0020) through the end of the ASCII character range</p> </li> <li>
      * <p>The printable characters in the Basic Latin and Latin-1 Supplement character
@@ -148,8 +154,10 @@ namespace Model
 
     /**
      * <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM
-     * format.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * used to validate this parameter is a string of characters consisting of the
+     * format. The miminum bit-length of the public key is 2048 bits. For example, you
+     * can generate a 2048-bit key, and the resulting PEM file is 1679 bytes long.</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
+     * validate this parameter is a string of characters consisting of the
      * following:</p> <ul> <li> <p>Any printable ASCII character ranging from the space
      * character (\u0020) through the end of the ASCII character range</p> </li> <li>
      * <p>The printable characters in the Basic Latin and Latin-1 Supplement character
@@ -160,8 +168,10 @@ namespace Model
 
     /**
      * <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM
-     * format.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * used to validate this parameter is a string of characters consisting of the
+     * format. The miminum bit-length of the public key is 2048 bits. For example, you
+     * can generate a 2048-bit key, and the resulting PEM file is 1679 bytes long.</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
+     * validate this parameter is a string of characters consisting of the
      * following:</p> <ul> <li> <p>Any printable ASCII character ranging from the space
      * character (\u0020) through the end of the ASCII character range</p> </li> <li>
      * <p>The printable characters in the Basic Latin and Latin-1 Supplement character
@@ -172,8 +182,10 @@ namespace Model
 
     /**
      * <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM
-     * format.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * used to validate this parameter is a string of characters consisting of the
+     * format. The miminum bit-length of the public key is 2048 bits. For example, you
+     * can generate a 2048-bit key, and the resulting PEM file is 1679 bytes long.</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
+     * validate this parameter is a string of characters consisting of the
      * following:</p> <ul> <li> <p>Any printable ASCII character ranging from the space
      * character (\u0020) through the end of the ASCII character range</p> </li> <li>
      * <p>The printable characters in the Basic Latin and Latin-1 Supplement character
@@ -184,8 +196,10 @@ namespace Model
 
     /**
      * <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM
-     * format.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * used to validate this parameter is a string of characters consisting of the
+     * format. The miminum bit-length of the public key is 2048 bits. For example, you
+     * can generate a 2048-bit key, and the resulting PEM file is 1679 bytes long.</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
+     * validate this parameter is a string of characters consisting of the
      * following:</p> <ul> <li> <p>Any printable ASCII character ranging from the space
      * character (\u0020) through the end of the ASCII character range</p> </li> <li>
      * <p>The printable characters in the Basic Latin and Latin-1 Supplement character

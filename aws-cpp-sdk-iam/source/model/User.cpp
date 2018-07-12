@@ -36,7 +36,8 @@ User::User() :
     m_userIdHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_createDateHasBeenSet(false),
-    m_passwordLastUsedHasBeenSet(false)
+    m_passwordLastUsedHasBeenSet(false),
+    m_permissionsBoundaryHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ User::User(const XmlNode& xmlNode) :
     m_userIdHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_createDateHasBeenSet(false),
-    m_passwordLastUsedHasBeenSet(false)
+    m_passwordLastUsedHasBeenSet(false),
+    m_permissionsBoundaryHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -93,6 +95,12 @@ User& User::operator =(const XmlNode& xmlNode)
       m_passwordLastUsed = DateTime(StringUtils::Trim(passwordLastUsedNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_passwordLastUsedHasBeenSet = true;
     }
+    XmlNode permissionsBoundaryNode = resultNode.FirstChild("PermissionsBoundary");
+    if(!permissionsBoundaryNode.IsNull())
+    {
+      m_permissionsBoundary = permissionsBoundaryNode;
+      m_permissionsBoundaryHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -130,6 +138,13 @@ void User::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
       oStream << location << index << locationValue << ".PasswordLastUsed=" << StringUtils::URLEncode(m_passwordLastUsed.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_permissionsBoundaryHasBeenSet)
+  {
+      Aws::StringStream permissionsBoundaryLocationAndMemberSs;
+      permissionsBoundaryLocationAndMemberSs << location << index << locationValue << ".PermissionsBoundary";
+      m_permissionsBoundary.OutputToStream(oStream, permissionsBoundaryLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void User::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -157,6 +172,12 @@ void User::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_passwordLastUsedHasBeenSet)
   {
       oStream << location << ".PasswordLastUsed=" << StringUtils::URLEncode(m_passwordLastUsed.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_permissionsBoundaryHasBeenSet)
+  {
+      Aws::String permissionsBoundaryLocationAndMember(location);
+      permissionsBoundaryLocationAndMember += ".PermissionsBoundary";
+      m_permissionsBoundary.OutputToStream(oStream, permissionsBoundaryLocationAndMember.c_str());
   }
 }
 

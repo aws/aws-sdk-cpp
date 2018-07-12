@@ -25,6 +25,8 @@ ListEntitiesForPolicyRequest::ListEntitiesForPolicyRequest() :
     m_entityFilter(EntityType::NOT_SET),
     m_entityFilterHasBeenSet(false),
     m_pathPrefixHasBeenSet(false),
+    m_policyUsageFilter(PolicyUsageType::NOT_SET),
+    m_policyUsageFilterHasBeenSet(false),
     m_markerHasBeenSet(false),
     m_maxItems(0),
     m_maxItemsHasBeenSet(false)
@@ -48,6 +50,11 @@ Aws::String ListEntitiesForPolicyRequest::SerializePayload() const
   if(m_pathPrefixHasBeenSet)
   {
     ss << "PathPrefix=" << StringUtils::URLEncode(m_pathPrefix.c_str()) << "&";
+  }
+
+  if(m_policyUsageFilterHasBeenSet)
+  {
+    ss << "PolicyUsageFilter=" << PolicyUsageTypeMapper::GetNameForPolicyUsageType(m_policyUsageFilter) << "&";
   }
 
   if(m_markerHasBeenSet)

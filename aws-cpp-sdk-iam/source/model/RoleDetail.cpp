@@ -39,7 +39,8 @@ RoleDetail::RoleDetail() :
     m_assumeRolePolicyDocumentHasBeenSet(false),
     m_instanceProfileListHasBeenSet(false),
     m_rolePolicyListHasBeenSet(false),
-    m_attachedManagedPoliciesHasBeenSet(false)
+    m_attachedManagedPoliciesHasBeenSet(false),
+    m_permissionsBoundaryHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ RoleDetail::RoleDetail(const XmlNode& xmlNode) :
     m_assumeRolePolicyDocumentHasBeenSet(false),
     m_instanceProfileListHasBeenSet(false),
     m_rolePolicyListHasBeenSet(false),
-    m_attachedManagedPoliciesHasBeenSet(false)
+    m_attachedManagedPoliciesHasBeenSet(false),
+    m_permissionsBoundaryHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -135,6 +137,12 @@ RoleDetail& RoleDetail::operator =(const XmlNode& xmlNode)
 
       m_attachedManagedPoliciesHasBeenSet = true;
     }
+    XmlNode permissionsBoundaryNode = resultNode.FirstChild("PermissionsBoundary");
+    if(!permissionsBoundaryNode.IsNull())
+    {
+      m_permissionsBoundary = permissionsBoundaryNode;
+      m_permissionsBoundaryHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -205,6 +213,13 @@ void RoleDetail::OutputToStream(Aws::OStream& oStream, const char* location, uns
       }
   }
 
+  if(m_permissionsBoundaryHasBeenSet)
+  {
+      Aws::StringStream permissionsBoundaryLocationAndMemberSs;
+      permissionsBoundaryLocationAndMemberSs << location << index << locationValue << ".PermissionsBoundary";
+      m_permissionsBoundary.OutputToStream(oStream, permissionsBoundaryLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void RoleDetail::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -262,6 +277,12 @@ void RoleDetail::OutputToStream(Aws::OStream& oStream, const char* location) con
         attachedManagedPoliciesSs << location <<  ".AttachedManagedPolicies.member." << attachedManagedPoliciesIdx++;
         item.OutputToStream(oStream, attachedManagedPoliciesSs.str().c_str());
       }
+  }
+  if(m_permissionsBoundaryHasBeenSet)
+  {
+      Aws::String permissionsBoundaryLocationAndMember(location);
+      permissionsBoundaryLocationAndMember += ".PermissionsBoundary";
+      m_permissionsBoundary.OutputToStream(oStream, permissionsBoundaryLocationAndMember.c_str());
   }
 }
 

@@ -29,7 +29,8 @@ namespace Model
     AWS_LAMBDA,
     AMAZON_DYNAMODB,
     AMAZON_ELASTICSEARCH,
-    NONE
+    NONE,
+    HTTP
   };
 
 namespace DataSourceTypeMapper

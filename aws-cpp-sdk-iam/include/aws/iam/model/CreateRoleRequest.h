@@ -394,6 +394,49 @@ namespace Model
      */
     inline CreateRoleRequest& WithMaxSessionDuration(int value) { SetMaxSessionDuration(value); return *this;}
 
+
+    /**
+     * <p>The ARN of the policy that is used to set the permissions boundary for the
+     * role.</p>
+     */
+    inline const Aws::String& GetPermissionsBoundary() const{ return m_permissionsBoundary; }
+
+    /**
+     * <p>The ARN of the policy that is used to set the permissions boundary for the
+     * role.</p>
+     */
+    inline void SetPermissionsBoundary(const Aws::String& value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary = value; }
+
+    /**
+     * <p>The ARN of the policy that is used to set the permissions boundary for the
+     * role.</p>
+     */
+    inline void SetPermissionsBoundary(Aws::String&& value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary = std::move(value); }
+
+    /**
+     * <p>The ARN of the policy that is used to set the permissions boundary for the
+     * role.</p>
+     */
+    inline void SetPermissionsBoundary(const char* value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary.assign(value); }
+
+    /**
+     * <p>The ARN of the policy that is used to set the permissions boundary for the
+     * role.</p>
+     */
+    inline CreateRoleRequest& WithPermissionsBoundary(const Aws::String& value) { SetPermissionsBoundary(value); return *this;}
+
+    /**
+     * <p>The ARN of the policy that is used to set the permissions boundary for the
+     * role.</p>
+     */
+    inline CreateRoleRequest& WithPermissionsBoundary(Aws::String&& value) { SetPermissionsBoundary(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the policy that is used to set the permissions boundary for the
+     * role.</p>
+     */
+    inline CreateRoleRequest& WithPermissionsBoundary(const char* value) { SetPermissionsBoundary(value); return *this;}
+
   private:
 
     Aws::String m_path;
@@ -410,6 +453,9 @@ namespace Model
 
     int m_maxSessionDuration;
     bool m_maxSessionDurationHasBeenSet;
+
+    Aws::String m_permissionsBoundary;
+    bool m_permissionsBoundaryHasBeenSet;
   };
 
 } // namespace Model

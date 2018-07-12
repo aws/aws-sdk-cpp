@@ -504,8 +504,7 @@ namespace Model
 
         /**
          * <p>Provides cluster-level details including status, hardware and software
-         * configuration, VPC settings, and so on. For information about the cluster steps,
-         * see <a>ListSteps</a>.</p><p><h3>See Also:</h3>   <a
+         * configuration, VPC settings, and so on. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeCluster">AWS
          * API Reference</a></p>
          */
@@ -513,8 +512,7 @@ namespace Model
 
         /**
          * <p>Provides cluster-level details including status, hardware and software
-         * configuration, VPC settings, and so on. For information about the cluster steps,
-         * see <a>ListSteps</a>.</p><p><h3>See Also:</h3>   <a
+         * configuration, VPC settings, and so on. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeCluster">AWS
          * API Reference</a></p>
          *
@@ -524,8 +522,7 @@ namespace Model
 
         /**
          * <p>Provides cluster-level details including status, hardware and software
-         * configuration, VPC settings, and so on. For information about the cluster steps,
-         * see <a>ListSteps</a>.</p><p><h3>See Also:</h3>   <a
+         * configuration, VPC settings, and so on. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeCluster">AWS
          * API Reference</a></p>
          *

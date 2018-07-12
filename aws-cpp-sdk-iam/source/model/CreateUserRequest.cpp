@@ -22,7 +22,8 @@ using namespace Aws::Utils;
 
 CreateUserRequest::CreateUserRequest() : 
     m_pathHasBeenSet(false),
-    m_userNameHasBeenSet(false)
+    m_userNameHasBeenSet(false),
+    m_permissionsBoundaryHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,11 @@ Aws::String CreateUserRequest::SerializePayload() const
   if(m_userNameHasBeenSet)
   {
     ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
+  }
+
+  if(m_permissionsBoundaryHasBeenSet)
+  {
+    ss << "PermissionsBoundary=" << StringUtils::URLEncode(m_permissionsBoundary.c_str()) << "&";
   }
 
   ss << "Version=2010-05-08";
