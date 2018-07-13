@@ -40,7 +40,7 @@ nuget {
         description: "SQS Queue API for AWS SDK for C++. AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
 
         // Copyright notice.
-        copyright: Copyright 2016;
+        copyright: Copyright 2018;
 
         // Tags of arbitrary text for categorizing and filtering.
         tags: { AWS, Amazon, cloud, aws-sdk-cpp, native, aws-cpp-sdk-sqs };
@@ -206,6 +206,8 @@ nuget {
         // the consuming project in order to correctly link to the libraries in this
         // package.  Such defines may be set either globally or only set under specific
         // conditions.
+        [dynamic]
+        Defines += USE_WINDOWS_DLL_SEMANTICS;
         [dynamic]
         Defines += USE_IMPORT_EXPORT;
     }

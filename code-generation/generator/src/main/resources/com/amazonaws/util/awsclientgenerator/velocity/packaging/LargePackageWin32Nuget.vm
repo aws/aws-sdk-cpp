@@ -16,13 +16,13 @@ nuget {
     nuspec {
 
         // Unique package identifier
-        id = AWSSDKCPP-${metadata.classNamePrefix};
+        id = AWSSDKCPP-${metadata.classNamePrefix}.Win32;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
         version : ${serviceModel.runtimeMajorVersion}.${metadata.concatAPIVersion}.${serviceModel.runtimeMinorVersion};
 
         // Display name for package.
-        title: AWS SDK for C++ (${metadata.serviceFullName});
+        title: AWS SDK for C++ (${metadata.serviceFullName}) for Win32;
 
         // List of package authors.  Braces may be ommited if only one author.
         authors: Amazon Web Services;
@@ -70,72 +70,6 @@ nuget {
 
         // Include these specific files in the libpath and "copy to output" path only
         // under these pivot conditions.
-        [x64,release,v141,dynamic] {  // x64, dll (dynamic linking)
-            lib+= { ..\bin\windows\intel64\vs2017\release\aws-cpp-sdk-${metadata.projectName}.lib };
-            bin+= { ..\bin\windows\intel64\vs2017\release\aws-cpp-sdk-${metadata.projectName}.dll };
-
-            symbols+= { ..\bin\windows\intel64\vs2017\release\aws-cpp-sdk-${metadata.projectName}.pdb };
-        }
-
-        [x64,release,v140,dynamic] {  // x64, dll (dynamic linking)
-            lib+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-${metadata.projectName}.lib };
-            bin+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-${metadata.projectName}.dll };
-
-            symbols+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-${metadata.projectName}.pdb };
-        }
-
-        [x64,release,v120,dynamic] {  // x64, dll (dynamic linking)
-            lib+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-${metadata.projectName}.lib };
-            bin+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-${metadata.projectName}.dll };
-
-            symbols+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-${metadata.projectName}.pdb };
-        }
-
-        [x64,debug,v141,dynamic] {  // x64, dll (dynamic linking)
-            lib+= { ..\bin\windows\intel64\vs2017\debug\aws-cpp-sdk-${metadata.projectName}.lib };
-            bin+= { ..\bin\windows\intel64\vs2017\debug\aws-cpp-sdk-${metadata.projectName}.dll };
-
-            symbols+= { ..\bin\windows\intel64\vs2017\debug\aws-cpp-sdk-${metadata.projectName}.pdb };
-        }
-
-        [x64,debug,v140,dynamic] {  // x64, dll (dynamic linking)
-            lib+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-${metadata.projectName}.lib };
-            bin+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-${metadata.projectName}.dll };
-
-            symbols+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-${metadata.projectName}.pdb };
-        }
-
-        [x64,debug,v120,dynamic] {  // x64, dll (dynamic linking)
-            lib+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-${metadata.projectName}.lib };
-            bin+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-${metadata.projectName}.dll };
-
-            symbols+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-${metadata.projectName}.pdb };
-        }
-
-        [x64,release,v141,static] {  // x64, static linking
-            lib+= { ..\lib\windows\intel64\vs2017\release\aws-cpp-sdk-${metadata.projectName}.lib };
-        }
-
-        [x64,release,v140,static] {  // x64, static linking
-            lib+= { ..\lib\windows\intel64\vs2015\release\aws-cpp-sdk-${metadata.projectName}.lib };
-        }
-
-        [x64,release,v120,static] {  // x64, static linking
-            lib+= { ..\lib\windows\intel64\vs2013\release\aws-cpp-sdk-${metadata.projectName}.lib };
-        }
-
-        [x64,debug,v141,static] {  // x64, static linking
-            lib+= { ..\lib\windows\intel64\vs2017\debug\aws-cpp-sdk-${metadata.projectName}.lib };
-        }
-
-        [x64,debug,v140,static] {  // x64, static linking
-            lib+= { ..\lib\windows\intel64\vs2015\debug\aws-cpp-sdk-${metadata.projectName}.lib };
-        }
-
-        [x64,debug,v120,static] {  // x64, static linking
-            lib+= { ..\lib\windows\intel64\vs2013\debug\aws-cpp-sdk-${metadata.projectName}.lib };
-        }
-
         [x86,release,v141,dynamic] {  // x86, dll (dynamic linking)
             lib+= { ..\bin\windows\ia32\vs2017\release\aws-cpp-sdk-${metadata.projectName}.lib };
             bin+= { ..\bin\windows\ia32\vs2017\release\aws-cpp-sdk-${metadata.projectName}.dll };

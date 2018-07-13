@@ -16,13 +16,13 @@ nuget {
     nuspec {
 
         // Unique package identifier
-        id = AWSSDKCPP-${metadata.classNamePrefix};
+        id = AWSSDKCPP-${metadata.classNamePrefix}.x64;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
         version : ${serviceModel.runtimeMajorVersion}.${metadata.concatAPIVersion}.${serviceModel.runtimeMinorVersion};
 
         // Display name for package.
-        title: AWS SDK for C++ (${metadata.serviceFullName});
+        title: AWS SDK for C++ (${metadata.serviceFullName}) for x64;
 
         // List of package authors.  Braces may be ommited if only one author.
         authors: Amazon Web Services;
@@ -136,73 +136,6 @@ nuget {
             lib+= { ..\lib\windows\intel64\vs2013\debug\aws-cpp-sdk-${metadata.projectName}.lib };
         }
 
-        [x86,release,v141,dynamic] {  // x86, dll (dynamic linking)
-            lib+= { ..\bin\windows\ia32\vs2017\release\aws-cpp-sdk-${metadata.projectName}.lib };
-            bin+= { ..\bin\windows\ia32\vs2017\release\aws-cpp-sdk-${metadata.projectName}.dll };
-
-            symbols+= { ..\bin\windows\ia32\vs2017\release\aws-cpp-sdk-${metadata.projectName}.pdb };
-
-        }
-
-        [x86,release,v140,dynamic] {  // x86, dll (dynamic linking)
-            lib+= { ..\bin\windows\ia32\vs2015\release\aws-cpp-sdk-${metadata.projectName}.lib };
-            bin+= { ..\bin\windows\ia32\vs2015\release\aws-cpp-sdk-${metadata.projectName}.dll };
-
-            symbols+= { ..\bin\windows\ia32\vs2015\release\aws-cpp-sdk-${metadata.projectName}.pdb };
-
-        }
-
-        [x86,release,v120,dynamic] {  // x86, dll (dynamic linking)
-            lib+= { ..\bin\windows\ia32\vs2013\release\aws-cpp-sdk-${metadata.projectName}.lib };
-            bin+= { ..\bin\windows\ia32\vs2013\release\aws-cpp-sdk-${metadata.projectName}.dll };
-
-            symbols+= { ..\bin\windows\ia32\vs2013\release\aws-cpp-sdk-${metadata.projectName}.pdb };
-        }
-
-        [x86,debug,v141,dynamic] {  // x86, dll (dynamic linking)
-            lib+= { ..\bin\windows\ia32\vs2017\debug\aws-cpp-sdk-${metadata.projectName}.lib };
-            bin+= { ..\bin\windows\ia32\vs2017\debug\aws-cpp-sdk-${metadata.projectName}.dll };
-
-            symbols+= { ..\bin\windows\ia32\vs2017\debug\aws-cpp-sdk-${metadata.projectName}.pdb };
-        }
-
-        [x86,debug,v140,dynamic] {  // x86, dll (dynamic linking)
-            lib+= { ..\bin\windows\ia32\vs2015\debug\aws-cpp-sdk-${metadata.projectName}.lib };
-            bin+= { ..\bin\windows\ia32\vs2015\debug\aws-cpp-sdk-${metadata.projectName}.dll };
-
-            symbols+= { ..\bin\windows\ia32\vs2015\debug\aws-cpp-sdk-${metadata.projectName}.pdb };
-        }
-
-        [x86,debug,v120,dynamic] {  // x86, dll (dynamic linking)
-            lib+= { ..\bin\windows\ia32\vs2013\debug\aws-cpp-sdk-${metadata.projectName}.lib };
-            bin+= { ..\bin\windows\ia32\vs2013\debug\aws-cpp-sdk-${metadata.projectName}.dll };
-
-            symbols+= { ..\bin\windows\ia32\vs2013\debug\aws-cpp-sdk-${metadata.projectName}.pdb };
-        }
-
-        [x86,release,v141,static] {  // x86, static linking
-            lib+= { ..\lib\windows\ia32\vs2017\release\aws-cpp-sdk-${metadata.projectName}.lib };
-        }
-
-        [x86,release,v140,static] {  // x86, static linking
-            lib+= { ..\lib\windows\ia32\vs2015\release\aws-cpp-sdk-${metadata.projectName}.lib };
-        }
-
-        [x86,release,v120,static] {  // x86, static linking
-            lib+= { ..\lib\windows\ia32\vs2013\release\aws-cpp-sdk-${metadata.projectName}.lib };
-        }
-
-        [x86,debug,v141,static] {  // x86, static linking
-            lib+= { ..\lib\windows\ia32\vs2017\debug\aws-cpp-sdk-${metadata.projectName}.lib };
-        }
-
-        [x86,debug,v140,static] {  // x86, static linking
-            lib+= { ..\lib\windows\ia32\vs2015\debug\aws-cpp-sdk-${metadata.projectName}.lib };
-        }
-
-        [x86,debug,v120,static] {  // x86, static linking
-            lib+= { ..\lib\windows\ia32\vs2013\debug\aws-cpp-sdk-${metadata.projectName}.lib };
-        }
     };
 
     targets {
