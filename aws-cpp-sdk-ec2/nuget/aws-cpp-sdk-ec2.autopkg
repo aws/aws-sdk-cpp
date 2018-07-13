@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-EC2;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.4.20161115.87;
+        version : 1.4.20161115.88;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Elastic Compute Cloud);
@@ -40,7 +40,7 @@ nuget {
         description: "Amazon Elastic Compute Cloud Client for the AWS SDK for C++. AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
 
         // Copyright notice.
-        copyright: Copyright 2016;
+        copyright: Copyright 2018;
 
         // Tags of arbitrary text for categorizing and filtering.
         tags: { AWS, Amazon, cloud, aws-sdk-cpp, native, ec2 };
@@ -48,154 +48,10 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.4.87
+            AWSSDKCPP-EC2.x64/1.4.88,
+            AWSSDKCPP-EC2.Win32/1.4.88
        }
     }
-
-    files {
-        // All .h and .hpp  files in <src_root>\include, but not in subdirectories.
-        // Included for all conditions.
-        nestedInclude: {
-            #destination = ${d_include}\aws\ec2;
-            "..\include\aws\ec2\**\*.h"
-        };
-
-        // Include these specific files in the libpath and "copy to output" path only
-        // under these pivot conditions.
-        [x64,release,v141,dynamic] {  // x64, dll (dynamic linking)
-            lib+= { ..\bin\windows\intel64\vs2017\release\aws-cpp-sdk-ec2.lib };
-            bin+= { ..\bin\windows\intel64\vs2017\release\aws-cpp-sdk-ec2.dll };
-
-            symbols+= { ..\bin\windows\intel64\vs2017\release\aws-cpp-sdk-ec2.pdb };
-        }
-
-        [x64,release,v140,dynamic] {  // x64, dll (dynamic linking)
-            lib+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-ec2.lib };
-            bin+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-ec2.dll };
-
-            symbols+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-ec2.pdb };
-        }
-
-        [x64,release,v120,dynamic] {  // x64, dll (dynamic linking)
-            lib+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-ec2.lib };
-            bin+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-ec2.dll };
-
-            symbols+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-ec2.pdb };
-        }
-
-        [x64,debug,v141,dynamic] {  // x64, dll (dynamic linking)
-            lib+= { ..\bin\windows\intel64\vs2017\debug\aws-cpp-sdk-ec2.lib };
-            bin+= { ..\bin\windows\intel64\vs2017\debug\aws-cpp-sdk-ec2.dll };
-
-            symbols+= { ..\bin\windows\intel64\vs2017\debug\aws-cpp-sdk-ec2.pdb };
-        }
-
-        [x64,debug,v140,dynamic] {  // x64, dll (dynamic linking)
-            lib+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-ec2.lib };
-            bin+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-ec2.dll };
-
-            symbols+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-ec2.pdb };
-        }
-
-        [x64,debug,v120,dynamic] {  // x64, dll (dynamic linking)
-            lib+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-ec2.lib };
-            bin+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-ec2.dll };
-
-            symbols+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-ec2.pdb };
-        }
-
-        [x64,release,v141,static] {  // x64, static linking
-            lib+= { ..\lib\windows\intel64\vs2017\release\aws-cpp-sdk-ec2.lib };
-        }
-
-        [x64,release,v140,static] {  // x64, static linking
-            lib+= { ..\lib\windows\intel64\vs2015\release\aws-cpp-sdk-ec2.lib };
-        }
-
-        [x64,release,v120,static] {  // x64, static linking
-            lib+= { ..\lib\windows\intel64\vs2013\release\aws-cpp-sdk-ec2.lib };
-        }
-
-        [x64,debug,v141,static] {  // x64, static linking
-            lib+= { ..\lib\windows\intel64\vs2017\debug\aws-cpp-sdk-ec2.lib };
-        }
-
-        [x64,debug,v140,static] {  // x64, static linking
-            lib+= { ..\lib\windows\intel64\vs2015\debug\aws-cpp-sdk-ec2.lib };
-        }
-
-        [x64,debug,v120,static] {  // x64, static linking
-            lib+= { ..\lib\windows\intel64\vs2013\debug\aws-cpp-sdk-ec2.lib };
-        }
-
-        [x86,release,v141,dynamic] {  // x86, dll (dynamic linking)
-            lib+= { ..\bin\windows\ia32\vs2017\release\aws-cpp-sdk-ec2.lib };
-            bin+= { ..\bin\windows\ia32\vs2017\release\aws-cpp-sdk-ec2.dll };
-
-            symbols+= { ..\bin\windows\ia32\vs2017\release\aws-cpp-sdk-ec2.pdb };
-
-        }
-
-        [x86,release,v140,dynamic] {  // x86, dll (dynamic linking)
-            lib+= { ..\bin\windows\ia32\vs2015\release\aws-cpp-sdk-ec2.lib };
-            bin+= { ..\bin\windows\ia32\vs2015\release\aws-cpp-sdk-ec2.dll };
-
-            symbols+= { ..\bin\windows\ia32\vs2015\release\aws-cpp-sdk-ec2.pdb };
-
-        }
-
-        [x86,release,v120,dynamic] {  // x86, dll (dynamic linking)
-            lib+= { ..\bin\windows\ia32\vs2013\release\aws-cpp-sdk-ec2.lib };
-            bin+= { ..\bin\windows\ia32\vs2013\release\aws-cpp-sdk-ec2.dll };
-
-            symbols+= { ..\bin\windows\ia32\vs2013\release\aws-cpp-sdk-ec2.pdb };
-        }
-
-        [x86,debug,v141,dynamic] {  // x86, dll (dynamic linking)
-            lib+= { ..\bin\windows\ia32\vs2017\debug\aws-cpp-sdk-ec2.lib };
-            bin+= { ..\bin\windows\ia32\vs2017\debug\aws-cpp-sdk-ec2.dll };
-
-            symbols+= { ..\bin\windows\ia32\vs2017\debug\aws-cpp-sdk-ec2.pdb };
-        }
-
-        [x86,debug,v140,dynamic] {  // x86, dll (dynamic linking)
-            lib+= { ..\bin\windows\ia32\vs2015\debug\aws-cpp-sdk-ec2.lib };
-            bin+= { ..\bin\windows\ia32\vs2015\debug\aws-cpp-sdk-ec2.dll };
-
-            symbols+= { ..\bin\windows\ia32\vs2015\debug\aws-cpp-sdk-ec2.pdb };
-        }
-
-        [x86,debug,v120,dynamic] {  // x86, dll (dynamic linking)
-            lib+= { ..\bin\windows\ia32\vs2013\debug\aws-cpp-sdk-ec2.lib };
-            bin+= { ..\bin\windows\ia32\vs2013\debug\aws-cpp-sdk-ec2.dll };
-
-            symbols+= { ..\bin\windows\ia32\vs2013\debug\aws-cpp-sdk-ec2.pdb };
-        }
-
-        [x86,release,v141,static] {  // x86, static linking
-            lib+= { ..\lib\windows\ia32\vs2017\release\aws-cpp-sdk-ec2.lib };
-        }
-
-        [x86,release,v140,static] {  // x86, static linking
-            lib+= { ..\lib\windows\ia32\vs2015\release\aws-cpp-sdk-ec2.lib };
-        }
-
-        [x86,release,v120,static] {  // x86, static linking
-            lib+= { ..\lib\windows\ia32\vs2013\release\aws-cpp-sdk-ec2.lib };
-        }
-
-        [x86,debug,v141,static] {  // x86, static linking
-            lib+= { ..\lib\windows\ia32\vs2017\debug\aws-cpp-sdk-ec2.lib };
-        }
-
-        [x86,debug,v140,static] {  // x86, static linking
-            lib+= { ..\lib\windows\ia32\vs2015\debug\aws-cpp-sdk-ec2.lib };
-        }
-
-        [x86,debug,v120,static] {  // x86, static linking
-            lib+= { ..\lib\windows\ia32\vs2013\debug\aws-cpp-sdk-ec2.lib };
-        }
-    };
 
     targets {
         // Additional declarations to insert into consuming projects after most of the
@@ -205,6 +61,8 @@ nuget {
         // the consuming project in order to correctly link to the libraries in this
         // package.  Such defines may be set either globally or only set under specific
         // conditions.
+        [dynamic]
+        Defines += USE_WINDOWS_DLL_SEMANTICS;
         [dynamic]
         Defines += USE_IMPORT_EXPORT;
     }

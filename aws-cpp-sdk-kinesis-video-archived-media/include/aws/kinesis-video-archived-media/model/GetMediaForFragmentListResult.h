@@ -86,7 +86,7 @@ namespace Model
     /**
      * <p>The payload that Kinesis Video Streams returns is a sequence of chunks from
      * the specified stream. For information about the chunks, see <a
-     * href="docs.aws.amazon.com/acuity/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>.
+     * href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>.
      * The chunks that Kinesis Video Streams returns in the
      * <code>GetMediaForFragmentList</code> call also include the following additional
      * Matroska (MKV) tags: </p> <ul> <li> <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER -
@@ -105,7 +105,7 @@ namespace Model
     /**
      * <p>The payload that Kinesis Video Streams returns is a sequence of chunks from
      * the specified stream. For information about the chunks, see <a
-     * href="docs.aws.amazon.com/acuity/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>.
+     * href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>.
      * The chunks that Kinesis Video Streams returns in the
      * <code>GetMediaForFragmentList</code> call also include the following additional
      * Matroska (MKV) tags: </p> <ul> <li> <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER -

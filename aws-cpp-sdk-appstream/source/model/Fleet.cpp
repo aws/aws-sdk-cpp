@@ -34,6 +34,7 @@ Fleet::Fleet() :
     m_displayNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_imageNameHasBeenSet(false),
+    m_imageArnHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_fleetType(FleetType::NOT_SET),
     m_fleetTypeHasBeenSet(false),
@@ -59,6 +60,7 @@ Fleet::Fleet(const JsonValue& jsonValue) :
     m_displayNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_imageNameHasBeenSet(false),
+    m_imageArnHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_fleetType(FleetType::NOT_SET),
     m_fleetTypeHasBeenSet(false),
@@ -114,6 +116,13 @@ Fleet& Fleet::operator =(const JsonValue& jsonValue)
     m_imageName = jsonValue.GetString("ImageName");
 
     m_imageNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ImageArn"))
+  {
+    m_imageArn = jsonValue.GetString("ImageArn");
+
+    m_imageArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("InstanceType"))
@@ -230,6 +239,12 @@ JsonValue Fleet::Jsonize() const
   if(m_imageNameHasBeenSet)
   {
    payload.WithString("ImageName", m_imageName);
+
+  }
+
+  if(m_imageArnHasBeenSet)
+  {
+   payload.WithString("ImageArn", m_imageArn);
 
   }
 

@@ -220,7 +220,7 @@ namespace Model
      * information about media types, see <a
      * href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
      * Types</a>. If you choose to specify the <code>MediaType</code>, see <a
-     * href="https://tools.sietf.org/html/rfc6838#section-4.2">Naming
+     * href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming
      * Requirements</a>.</p> <p>To play video on the console, you must specify the
      * correct video type. For example, if the video in the stream is H.264, specify
      * <code>video/h264</code> as the <code>MediaType</code>.</p>
@@ -233,7 +233,7 @@ namespace Model
      * information about media types, see <a
      * href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
      * Types</a>. If you choose to specify the <code>MediaType</code>, see <a
-     * href="https://tools.sietf.org/html/rfc6838#section-4.2">Naming
+     * href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming
      * Requirements</a>.</p> <p>To play video on the console, you must specify the
      * correct video type. For example, if the video in the stream is H.264, specify
      * <code>video/h264</code> as the <code>MediaType</code>.</p>
@@ -246,7 +246,7 @@ namespace Model
      * information about media types, see <a
      * href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
      * Types</a>. If you choose to specify the <code>MediaType</code>, see <a
-     * href="https://tools.sietf.org/html/rfc6838#section-4.2">Naming
+     * href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming
      * Requirements</a>.</p> <p>To play video on the console, you must specify the
      * correct video type. For example, if the video in the stream is H.264, specify
      * <code>video/h264</code> as the <code>MediaType</code>.</p>
@@ -259,7 +259,7 @@ namespace Model
      * information about media types, see <a
      * href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
      * Types</a>. If you choose to specify the <code>MediaType</code>, see <a
-     * href="https://tools.sietf.org/html/rfc6838#section-4.2">Naming
+     * href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming
      * Requirements</a>.</p> <p>To play video on the console, you must specify the
      * correct video type. For example, if the video in the stream is H.264, specify
      * <code>video/h264</code> as the <code>MediaType</code>.</p>
@@ -272,7 +272,7 @@ namespace Model
      * information about media types, see <a
      * href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
      * Types</a>. If you choose to specify the <code>MediaType</code>, see <a
-     * href="https://tools.sietf.org/html/rfc6838#section-4.2">Naming
+     * href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming
      * Requirements</a>.</p> <p>To play video on the console, you must specify the
      * correct video type. For example, if the video in the stream is H.264, specify
      * <code>video/h264</code> as the <code>MediaType</code>.</p>
@@ -285,7 +285,7 @@ namespace Model
      * information about media types, see <a
      * href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
      * Types</a>. If you choose to specify the <code>MediaType</code>, see <a
-     * href="https://tools.sietf.org/html/rfc6838#section-4.2">Naming
+     * href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming
      * Requirements</a>.</p> <p>To play video on the console, you must specify the
      * correct video type. For example, if the video in the stream is H.264, specify
      * <code>video/h264</code> as the <code>MediaType</code>.</p>
@@ -298,7 +298,7 @@ namespace Model
      * information about media types, see <a
      * href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
      * Types</a>. If you choose to specify the <code>MediaType</code>, see <a
-     * href="https://tools.sietf.org/html/rfc6838#section-4.2">Naming
+     * href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming
      * Requirements</a>.</p> <p>To play video on the console, you must specify the
      * correct video type. For example, if the video in the stream is H.264, specify
      * <code>video/h264</code> as the <code>MediaType</code>.</p>

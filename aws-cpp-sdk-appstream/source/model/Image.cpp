@@ -46,7 +46,8 @@ Image::Image() :
     m_applicationsHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_publicBaseImageReleasedDateHasBeenSet(false),
-    m_appstreamAgentVersionHasBeenSet(false)
+    m_appstreamAgentVersionHasBeenSet(false),
+    m_imagePermissionsHasBeenSet(false)
 {
 }
 
@@ -68,7 +69,8 @@ Image::Image(const JsonValue& jsonValue) :
     m_applicationsHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_publicBaseImageReleasedDateHasBeenSet(false),
-    m_appstreamAgentVersionHasBeenSet(false)
+    m_appstreamAgentVersionHasBeenSet(false),
+    m_imagePermissionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -176,6 +178,13 @@ Image& Image::operator =(const JsonValue& jsonValue)
     m_appstreamAgentVersionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ImagePermissions"))
+  {
+    m_imagePermissions = jsonValue.GetObject("ImagePermissions");
+
+    m_imagePermissionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -264,6 +273,12 @@ JsonValue Image::Jsonize() const
   if(m_appstreamAgentVersionHasBeenSet)
   {
    payload.WithString("AppstreamAgentVersion", m_appstreamAgentVersion);
+
+  }
+
+  if(m_imagePermissionsHasBeenSet)
+  {
+   payload.WithObject("ImagePermissions", m_imagePermissions.Jsonize());
 
   }
 

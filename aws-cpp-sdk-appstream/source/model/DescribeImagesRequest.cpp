@@ -24,6 +24,9 @@ using namespace Aws::Utils;
 
 DescribeImagesRequest::DescribeImagesRequest() : 
     m_namesHasBeenSet(false),
+    m_arnsHasBeenSet(false),
+    m_type(VisibilityType::NOT_SET),
+    m_typeHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false)
@@ -43,6 +46,22 @@ Aws::String DescribeImagesRequest::SerializePayload() const
    }
    payload.WithArray("Names", std::move(namesJsonList));
 
+  }
+
+  if(m_arnsHasBeenSet)
+  {
+   Array<JsonValue> arnsJsonList(m_arns.size());
+   for(unsigned arnsIndex = 0; arnsIndex < arnsJsonList.GetLength(); ++arnsIndex)
+   {
+     arnsJsonList[arnsIndex].AsString(m_arns[arnsIndex]);
+   }
+   payload.WithArray("Arns", std::move(arnsJsonList));
+
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("Type", VisibilityTypeMapper::GetNameForVisibilityType(m_type));
   }
 
   if(m_nextTokenHasBeenSet)

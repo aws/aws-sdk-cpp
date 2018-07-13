@@ -57,7 +57,11 @@ enum class KinesisVideoArchivedMediaErrors
 
   CLIENT_LIMIT_EXCEEDED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_ARGUMENT,
-  NOT_AUTHORIZED
+  INVALID_CODEC_PRIVATE_DATA,
+  MISSING_CODEC_PRIVATE_DATA,
+  NOT_AUTHORIZED,
+  NO_DATA_RETENTION,
+  UNSUPPORTED_STREAM_MEDIA_TYPE
 };
 namespace KinesisVideoArchivedMediaErrorMapper
 {

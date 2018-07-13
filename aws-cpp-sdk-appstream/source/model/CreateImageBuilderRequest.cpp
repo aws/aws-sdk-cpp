@@ -25,6 +25,7 @@ using namespace Aws::Utils;
 CreateImageBuilderRequest::CreateImageBuilderRequest() : 
     m_nameHasBeenSet(false),
     m_imageNameHasBeenSet(false),
+    m_imageArnHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_displayNameHasBeenSet(false),
@@ -49,6 +50,12 @@ Aws::String CreateImageBuilderRequest::SerializePayload() const
   if(m_imageNameHasBeenSet)
   {
    payload.WithString("ImageName", m_imageName);
+
+  }
+
+  if(m_imageArnHasBeenSet)
+  {
+   payload.WithString("ImageArn", m_imageArn);
 
   }
 
