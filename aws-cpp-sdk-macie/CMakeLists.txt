@@ -72,7 +72,8 @@ install (FILES ${AWS_MACIE_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/macie)
 install (FILES ${AWS_MACIE_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/macie/model)
 
 if(PLATFORM_WINDOWS AND MSVC)
-    install (FILES nuget/${PROJECT_NAME}.autopkg DESTINATION nuget)
+    file(GLOB NUGET_FILES "nuget/${PROJECT_NAME}.*.autopkg")
+    install (FILES ${NUGET_FILES} DESTINATION nuget)
 endif()
 
 do_packaging()

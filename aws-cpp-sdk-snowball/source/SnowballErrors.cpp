@@ -29,6 +29,7 @@ namespace SnowballErrorMapper
 {
 
 static const int INVALID_RESOURCE_HASH = HashingUtils::HashString("InvalidResourceException");
+static const int EC2_REQUEST_FAILED_HASH = HashingUtils::HashString("Ec2RequestFailedException");
 static const int INVALID_INPUT_COMBINATION_HASH = HashingUtils::HashString("InvalidInputCombinationException");
 static const int INVALID_JOB_STATE_HASH = HashingUtils::HashString("InvalidJobStateException");
 static const int UNSUPPORTED_ADDRESS_HASH = HashingUtils::HashString("UnsupportedAddressException");
@@ -45,6 +46,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == INVALID_RESOURCE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::INVALID_RESOURCE), false);
+  }
+  else if (hashCode == EC2_REQUEST_FAILED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::EC2_REQUEST_FAILED), false);
   }
   else if (hashCode == INVALID_INPUT_COMBINATION_HASH)
   {

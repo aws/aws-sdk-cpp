@@ -175,37 +175,32 @@ namespace Model
 
 
     /**
-     * <p>The updated <a>S3Resource</a> object (for a single Amazon S3 bucket or key
-     * range), or the updated <a>JobResource</a> object (for multiple buckets or key
-     * ranges). </p>
+     * <p>The updated <code>JobResource</code> object, or the updated
+     * <a>JobResource</a> object. </p>
      */
     inline const JobResource& GetResources() const{ return m_resources; }
 
     /**
-     * <p>The updated <a>S3Resource</a> object (for a single Amazon S3 bucket or key
-     * range), or the updated <a>JobResource</a> object (for multiple buckets or key
-     * ranges). </p>
+     * <p>The updated <code>JobResource</code> object, or the updated
+     * <a>JobResource</a> object. </p>
      */
     inline void SetResources(const JobResource& value) { m_resourcesHasBeenSet = true; m_resources = value; }
 
     /**
-     * <p>The updated <a>S3Resource</a> object (for a single Amazon S3 bucket or key
-     * range), or the updated <a>JobResource</a> object (for multiple buckets or key
-     * ranges). </p>
+     * <p>The updated <code>JobResource</code> object, or the updated
+     * <a>JobResource</a> object. </p>
      */
     inline void SetResources(JobResource&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
 
     /**
-     * <p>The updated <a>S3Resource</a> object (for a single Amazon S3 bucket or key
-     * range), or the updated <a>JobResource</a> object (for multiple buckets or key
-     * ranges). </p>
+     * <p>The updated <code>JobResource</code> object, or the updated
+     * <a>JobResource</a> object. </p>
      */
     inline UpdateJobRequest& WithResources(const JobResource& value) { SetResources(value); return *this;}
 
     /**
-     * <p>The updated <a>S3Resource</a> object (for a single Amazon S3 bucket or key
-     * range), or the updated <a>JobResource</a> object (for multiple buckets or key
-     * ranges). </p>
+     * <p>The updated <code>JobResource</code> object, or the updated
+     * <a>JobResource</a> object. </p>
      */
     inline UpdateJobRequest& WithResources(JobResource&& value) { SetResources(std::move(value)); return *this;}
 

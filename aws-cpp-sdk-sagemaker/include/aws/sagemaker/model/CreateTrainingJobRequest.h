@@ -55,43 +55,43 @@ namespace Model
 
     /**
      * <p>The name of the training job. The name must be unique within an AWS Region in
-     * an AWS account. It appears in the Amazon SageMaker console. </p>
+     * an AWS account. </p>
      */
     inline const Aws::String& GetTrainingJobName() const{ return m_trainingJobName; }
 
     /**
      * <p>The name of the training job. The name must be unique within an AWS Region in
-     * an AWS account. It appears in the Amazon SageMaker console. </p>
+     * an AWS account. </p>
      */
     inline void SetTrainingJobName(const Aws::String& value) { m_trainingJobNameHasBeenSet = true; m_trainingJobName = value; }
 
     /**
      * <p>The name of the training job. The name must be unique within an AWS Region in
-     * an AWS account. It appears in the Amazon SageMaker console. </p>
+     * an AWS account. </p>
      */
     inline void SetTrainingJobName(Aws::String&& value) { m_trainingJobNameHasBeenSet = true; m_trainingJobName = std::move(value); }
 
     /**
      * <p>The name of the training job. The name must be unique within an AWS Region in
-     * an AWS account. It appears in the Amazon SageMaker console. </p>
+     * an AWS account. </p>
      */
     inline void SetTrainingJobName(const char* value) { m_trainingJobNameHasBeenSet = true; m_trainingJobName.assign(value); }
 
     /**
      * <p>The name of the training job. The name must be unique within an AWS Region in
-     * an AWS account. It appears in the Amazon SageMaker console. </p>
+     * an AWS account. </p>
      */
     inline CreateTrainingJobRequest& WithTrainingJobName(const Aws::String& value) { SetTrainingJobName(value); return *this;}
 
     /**
      * <p>The name of the training job. The name must be unique within an AWS Region in
-     * an AWS account. It appears in the Amazon SageMaker console. </p>
+     * an AWS account. </p>
      */
     inline CreateTrainingJobRequest& WithTrainingJobName(Aws::String&& value) { SetTrainingJobName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the training job. The name must be unique within an AWS Region in
-     * an AWS account. It appears in the Amazon SageMaker console. </p>
+     * an AWS account. </p>
      */
     inline CreateTrainingJobRequest& WithTrainingJobName(const char* value) { SetTrainingJobName(value); return *this;}
 

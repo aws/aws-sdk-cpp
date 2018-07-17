@@ -115,31 +115,31 @@ namespace Model
 
 
     /**
-     * <p>A filter that only training jobs created after the specified time
+     * <p>A filter that returns only training jobs created after the specified time
      * (timestamp).</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTimeAfter() const{ return m_creationTimeAfter; }
 
     /**
-     * <p>A filter that only training jobs created after the specified time
+     * <p>A filter that returns only training jobs created after the specified time
      * (timestamp).</p>
      */
     inline void SetCreationTimeAfter(const Aws::Utils::DateTime& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = value; }
 
     /**
-     * <p>A filter that only training jobs created after the specified time
+     * <p>A filter that returns only training jobs created after the specified time
      * (timestamp).</p>
      */
     inline void SetCreationTimeAfter(Aws::Utils::DateTime&& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = std::move(value); }
 
     /**
-     * <p>A filter that only training jobs created after the specified time
+     * <p>A filter that returns only training jobs created after the specified time
      * (timestamp).</p>
      */
     inline ListTrainingJobsRequest& WithCreationTimeAfter(const Aws::Utils::DateTime& value) { SetCreationTimeAfter(value); return *this;}
 
     /**
-     * <p>A filter that only training jobs created after the specified time
+     * <p>A filter that returns only training jobs created after the specified time
      * (timestamp).</p>
      */
     inline ListTrainingJobsRequest& WithCreationTimeAfter(Aws::Utils::DateTime&& value) { SetCreationTimeAfter(std::move(value)); return *this;}

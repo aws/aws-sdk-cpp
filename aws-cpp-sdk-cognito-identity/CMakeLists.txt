@@ -72,7 +72,8 @@ install (FILES ${AWS_COGNITO-IDENTITY_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/
 install (FILES ${AWS_COGNITO-IDENTITY_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/cognito-identity/model)
 
 if(PLATFORM_WINDOWS AND MSVC)
-    install (FILES nuget/${PROJECT_NAME}.autopkg DESTINATION nuget)
+    file(GLOB NUGET_FILES "nuget/${PROJECT_NAME}.*.autopkg")
+    install (FILES ${NUGET_FILES} DESTINATION nuget)
 endif()
 
 do_packaging()

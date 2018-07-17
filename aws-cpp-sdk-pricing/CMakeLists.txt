@@ -72,7 +72,8 @@ install (FILES ${AWS_PRICING_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/prici
 install (FILES ${AWS_PRICING_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/pricing/model)
 
 if(PLATFORM_WINDOWS AND MSVC)
-    install (FILES nuget/${PROJECT_NAME}.autopkg DESTINATION nuget)
+    file(GLOB NUGET_FILES "nuget/${PROJECT_NAME}.*.autopkg")
+    install (FILES ${NUGET_FILES} DESTINATION nuget)
 endif()
 
 do_packaging()

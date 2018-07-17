@@ -72,7 +72,8 @@ install (FILES ${AWS_SWF_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/swf)
 install (FILES ${AWS_SWF_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/swf/model)
 
 if(PLATFORM_WINDOWS AND MSVC)
-    install (FILES nuget/${PROJECT_NAME}.autopkg DESTINATION nuget)
+    file(GLOB NUGET_FILES "nuget/${PROJECT_NAME}.*.autopkg")
+    install (FILES ${NUGET_FILES} DESTINATION nuget)
 endif()
 
 do_packaging()

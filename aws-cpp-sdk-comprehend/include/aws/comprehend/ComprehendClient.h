@@ -25,6 +25,7 @@
 #include <aws/comprehend/model/BatchDetectEntitiesResult.h>
 #include <aws/comprehend/model/BatchDetectKeyPhrasesResult.h>
 #include <aws/comprehend/model/BatchDetectSentimentResult.h>
+#include <aws/comprehend/model/BatchDetectSyntaxResult.h>
 #include <aws/comprehend/model/DescribeDominantLanguageDetectionJobResult.h>
 #include <aws/comprehend/model/DescribeEntitiesDetectionJobResult.h>
 #include <aws/comprehend/model/DescribeKeyPhrasesDetectionJobResult.h>
@@ -34,6 +35,7 @@
 #include <aws/comprehend/model/DetectEntitiesResult.h>
 #include <aws/comprehend/model/DetectKeyPhrasesResult.h>
 #include <aws/comprehend/model/DetectSentimentResult.h>
+#include <aws/comprehend/model/DetectSyntaxResult.h>
 #include <aws/comprehend/model/ListDominantLanguageDetectionJobsResult.h>
 #include <aws/comprehend/model/ListEntitiesDetectionJobsResult.h>
 #include <aws/comprehend/model/ListKeyPhrasesDetectionJobsResult.h>
@@ -97,6 +99,7 @@ namespace Model
         class BatchDetectEntitiesRequest;
         class BatchDetectKeyPhrasesRequest;
         class BatchDetectSentimentRequest;
+        class BatchDetectSyntaxRequest;
         class DescribeDominantLanguageDetectionJobRequest;
         class DescribeEntitiesDetectionJobRequest;
         class DescribeKeyPhrasesDetectionJobRequest;
@@ -106,6 +109,7 @@ namespace Model
         class DetectEntitiesRequest;
         class DetectKeyPhrasesRequest;
         class DetectSentimentRequest;
+        class DetectSyntaxRequest;
         class ListDominantLanguageDetectionJobsRequest;
         class ListEntitiesDetectionJobsRequest;
         class ListKeyPhrasesDetectionJobsRequest;
@@ -125,6 +129,7 @@ namespace Model
         typedef Aws::Utils::Outcome<BatchDetectEntitiesResult, Aws::Client::AWSError<ComprehendErrors>> BatchDetectEntitiesOutcome;
         typedef Aws::Utils::Outcome<BatchDetectKeyPhrasesResult, Aws::Client::AWSError<ComprehendErrors>> BatchDetectKeyPhrasesOutcome;
         typedef Aws::Utils::Outcome<BatchDetectSentimentResult, Aws::Client::AWSError<ComprehendErrors>> BatchDetectSentimentOutcome;
+        typedef Aws::Utils::Outcome<BatchDetectSyntaxResult, Aws::Client::AWSError<ComprehendErrors>> BatchDetectSyntaxOutcome;
         typedef Aws::Utils::Outcome<DescribeDominantLanguageDetectionJobResult, Aws::Client::AWSError<ComprehendErrors>> DescribeDominantLanguageDetectionJobOutcome;
         typedef Aws::Utils::Outcome<DescribeEntitiesDetectionJobResult, Aws::Client::AWSError<ComprehendErrors>> DescribeEntitiesDetectionJobOutcome;
         typedef Aws::Utils::Outcome<DescribeKeyPhrasesDetectionJobResult, Aws::Client::AWSError<ComprehendErrors>> DescribeKeyPhrasesDetectionJobOutcome;
@@ -134,6 +139,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DetectEntitiesResult, Aws::Client::AWSError<ComprehendErrors>> DetectEntitiesOutcome;
         typedef Aws::Utils::Outcome<DetectKeyPhrasesResult, Aws::Client::AWSError<ComprehendErrors>> DetectKeyPhrasesOutcome;
         typedef Aws::Utils::Outcome<DetectSentimentResult, Aws::Client::AWSError<ComprehendErrors>> DetectSentimentOutcome;
+        typedef Aws::Utils::Outcome<DetectSyntaxResult, Aws::Client::AWSError<ComprehendErrors>> DetectSyntaxOutcome;
         typedef Aws::Utils::Outcome<ListDominantLanguageDetectionJobsResult, Aws::Client::AWSError<ComprehendErrors>> ListDominantLanguageDetectionJobsOutcome;
         typedef Aws::Utils::Outcome<ListEntitiesDetectionJobsResult, Aws::Client::AWSError<ComprehendErrors>> ListEntitiesDetectionJobsOutcome;
         typedef Aws::Utils::Outcome<ListKeyPhrasesDetectionJobsResult, Aws::Client::AWSError<ComprehendErrors>> ListKeyPhrasesDetectionJobsOutcome;
@@ -153,6 +159,7 @@ namespace Model
         typedef std::future<BatchDetectEntitiesOutcome> BatchDetectEntitiesOutcomeCallable;
         typedef std::future<BatchDetectKeyPhrasesOutcome> BatchDetectKeyPhrasesOutcomeCallable;
         typedef std::future<BatchDetectSentimentOutcome> BatchDetectSentimentOutcomeCallable;
+        typedef std::future<BatchDetectSyntaxOutcome> BatchDetectSyntaxOutcomeCallable;
         typedef std::future<DescribeDominantLanguageDetectionJobOutcome> DescribeDominantLanguageDetectionJobOutcomeCallable;
         typedef std::future<DescribeEntitiesDetectionJobOutcome> DescribeEntitiesDetectionJobOutcomeCallable;
         typedef std::future<DescribeKeyPhrasesDetectionJobOutcome> DescribeKeyPhrasesDetectionJobOutcomeCallable;
@@ -162,6 +169,7 @@ namespace Model
         typedef std::future<DetectEntitiesOutcome> DetectEntitiesOutcomeCallable;
         typedef std::future<DetectKeyPhrasesOutcome> DetectKeyPhrasesOutcomeCallable;
         typedef std::future<DetectSentimentOutcome> DetectSentimentOutcomeCallable;
+        typedef std::future<DetectSyntaxOutcome> DetectSyntaxOutcomeCallable;
         typedef std::future<ListDominantLanguageDetectionJobsOutcome> ListDominantLanguageDetectionJobsOutcomeCallable;
         typedef std::future<ListEntitiesDetectionJobsOutcome> ListEntitiesDetectionJobsOutcomeCallable;
         typedef std::future<ListKeyPhrasesDetectionJobsOutcome> ListKeyPhrasesDetectionJobsOutcomeCallable;
@@ -184,6 +192,7 @@ namespace Model
     typedef std::function<void(const ComprehendClient*, const Model::BatchDetectEntitiesRequest&, const Model::BatchDetectEntitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDetectEntitiesResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::BatchDetectKeyPhrasesRequest&, const Model::BatchDetectKeyPhrasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDetectKeyPhrasesResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::BatchDetectSentimentRequest&, const Model::BatchDetectSentimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDetectSentimentResponseReceivedHandler;
+    typedef std::function<void(const ComprehendClient*, const Model::BatchDetectSyntaxRequest&, const Model::BatchDetectSyntaxOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDetectSyntaxResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::DescribeDominantLanguageDetectionJobRequest&, const Model::DescribeDominantLanguageDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDominantLanguageDetectionJobResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::DescribeEntitiesDetectionJobRequest&, const Model::DescribeEntitiesDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEntitiesDetectionJobResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::DescribeKeyPhrasesDetectionJobRequest&, const Model::DescribeKeyPhrasesDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeKeyPhrasesDetectionJobResponseReceivedHandler;
@@ -193,6 +202,7 @@ namespace Model
     typedef std::function<void(const ComprehendClient*, const Model::DetectEntitiesRequest&, const Model::DetectEntitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectEntitiesResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::DetectKeyPhrasesRequest&, const Model::DetectKeyPhrasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectKeyPhrasesResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::DetectSentimentRequest&, const Model::DetectSentimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectSentimentResponseReceivedHandler;
+    typedef std::function<void(const ComprehendClient*, const Model::DetectSyntaxRequest&, const Model::DetectSyntaxOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectSyntaxResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::ListDominantLanguageDetectionJobsRequest&, const Model::ListDominantLanguageDetectionJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDominantLanguageDetectionJobsResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::ListEntitiesDetectionJobsRequest&, const Model::ListEntitiesDetectionJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEntitiesDetectionJobsResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::ListKeyPhrasesDetectionJobsRequest&, const Model::ListKeyPhrasesDetectionJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListKeyPhrasesDetectionJobsResponseReceivedHandler;
@@ -366,6 +376,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchDetectSentimentAsync(const Model::BatchDetectSentimentRequest& request, const BatchDetectSentimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Inspects the text of a batch of documents for the syntax and part of speech
+         * of the words in the document and returns information about them. For more
+         * information, see <a>how-syntax</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSyntax">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchDetectSyntaxOutcome BatchDetectSyntax(const Model::BatchDetectSyntaxRequest& request) const;
+
+        /**
+         * <p>Inspects the text of a batch of documents for the syntax and part of speech
+         * of the words in the document and returns information about them. For more
+         * information, see <a>how-syntax</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSyntax">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchDetectSyntaxOutcomeCallable BatchDetectSyntaxCallable(const Model::BatchDetectSyntaxRequest& request) const;
+
+        /**
+         * <p>Inspects the text of a batch of documents for the syntax and part of speech
+         * of the words in the document and returns information about them. For more
+         * information, see <a>how-syntax</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSyntax">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchDetectSyntaxAsync(const Model::BatchDetectSyntaxRequest& request, const BatchDetectSyntaxResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the properties associated with a dominant language detection job. Use
@@ -633,6 +674,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DetectSentimentAsync(const Model::DetectSentimentRequest& request, const DetectSentimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Inspects text for syntax and the part of speech of words in the document. For
+         * more information, <a>how-syntax</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSyntax">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DetectSyntaxOutcome DetectSyntax(const Model::DetectSyntaxRequest& request) const;
+
+        /**
+         * <p>Inspects text for syntax and the part of speech of words in the document. For
+         * more information, <a>how-syntax</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSyntax">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DetectSyntaxOutcomeCallable DetectSyntaxCallable(const Model::DetectSyntaxRequest& request) const;
+
+        /**
+         * <p>Inspects text for syntax and the part of speech of words in the document. For
+         * more information, <a>how-syntax</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSyntax">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DetectSyntaxAsync(const Model::DetectSyntaxRequest& request, const DetectSyntaxResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of the dominant language detection jobs that you have
@@ -925,13 +994,15 @@ namespace Model
 
         /**
          * <p>Stops a dominant language detection job in progress.</p> <p>If the job state
-         * is <code>IN_PROGRESS</code> the job will be marked for termination and put into
-         * the <code>STOPPING</code> state.</p> <p>If the job is in the
+         * is <code>IN_PROGRESS</code> the job is marked for termination and put into the
+         * <code>STOP_REQUESTED</code> state. If the job completes before it can be
+         * stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
+         * stopped and put into the <code>STOPPED</code> state.</p> <p>If the job is in the
          * <code>COMPLETED</code> or <code>FAILED</code> state when you call the
-         * <code>StopDominantLanguageDetectionJob</code> operation, the operation will
-         * return a 400 Internal Request Exception. </p> <p>When a job is stopped, any
-         * document that has already been processed will be written to the output
-         * location.</p><p><h3>See Also:</h3>   <a
+         * <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a
+         * 400 Internal Request Exception. </p> <p>When a job is stopped, any documents
+         * already processed are written to the output location.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopDominantLanguageDetectionJob">AWS
          * API Reference</a></p>
          */
@@ -939,13 +1010,15 @@ namespace Model
 
         /**
          * <p>Stops a dominant language detection job in progress.</p> <p>If the job state
-         * is <code>IN_PROGRESS</code> the job will be marked for termination and put into
-         * the <code>STOPPING</code> state.</p> <p>If the job is in the
+         * is <code>IN_PROGRESS</code> the job is marked for termination and put into the
+         * <code>STOP_REQUESTED</code> state. If the job completes before it can be
+         * stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
+         * stopped and put into the <code>STOPPED</code> state.</p> <p>If the job is in the
          * <code>COMPLETED</code> or <code>FAILED</code> state when you call the
-         * <code>StopDominantLanguageDetectionJob</code> operation, the operation will
-         * return a 400 Internal Request Exception. </p> <p>When a job is stopped, any
-         * document that has already been processed will be written to the output
-         * location.</p><p><h3>See Also:</h3>   <a
+         * <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a
+         * 400 Internal Request Exception. </p> <p>When a job is stopped, any documents
+         * already processed are written to the output location.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopDominantLanguageDetectionJob">AWS
          * API Reference</a></p>
          *
@@ -955,13 +1028,15 @@ namespace Model
 
         /**
          * <p>Stops a dominant language detection job in progress.</p> <p>If the job state
-         * is <code>IN_PROGRESS</code> the job will be marked for termination and put into
-         * the <code>STOPPING</code> state.</p> <p>If the job is in the
+         * is <code>IN_PROGRESS</code> the job is marked for termination and put into the
+         * <code>STOP_REQUESTED</code> state. If the job completes before it can be
+         * stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
+         * stopped and put into the <code>STOPPED</code> state.</p> <p>If the job is in the
          * <code>COMPLETED</code> or <code>FAILED</code> state when you call the
-         * <code>StopDominantLanguageDetectionJob</code> operation, the operation will
-         * return a 400 Internal Request Exception. </p> <p>When a job is stopped, any
-         * document that has already been processed will be written to the output
-         * location.</p><p><h3>See Also:</h3>   <a
+         * <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a
+         * 400 Internal Request Exception. </p> <p>When a job is stopped, any documents
+         * already processed are written to the output location.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopDominantLanguageDetectionJob">AWS
          * API Reference</a></p>
          *
@@ -971,13 +1046,15 @@ namespace Model
 
         /**
          * <p>Stops an entities detection job in progress.</p> <p>If the job state is
-         * <code>IN_PROGRESS</code> the job will be marked for termination and put into the
-         * <code>STOPPING</code> state.</p> <p>If the job is in the <code>COMPLETED</code>
-         * or <code>FAILED</code> state when you call the
-         * <code>StopDominantLanguageDetectionJob</code> operation, the operation will
-         * return a 400 Internal Request Exception. </p> <p>When a job is stopped, any
-         * document that has already been processed will be written to the output
-         * location.</p><p><h3>See Also:</h3>   <a
+         * <code>IN_PROGRESS</code> the job is marked for termination and put into the
+         * <code>STOP_REQUESTED</code> state. If the job completes before it can be
+         * stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
+         * stopped and put into the <code>STOPPED</code> state.</p> <p>If the job is in the
+         * <code>COMPLETED</code> or <code>FAILED</code> state when you call the
+         * <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a
+         * 400 Internal Request Exception. </p> <p>When a job is stopped, any documents
+         * already processed are written to the output location.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopEntitiesDetectionJob">AWS
          * API Reference</a></p>
          */
@@ -985,13 +1062,15 @@ namespace Model
 
         /**
          * <p>Stops an entities detection job in progress.</p> <p>If the job state is
-         * <code>IN_PROGRESS</code> the job will be marked for termination and put into the
-         * <code>STOPPING</code> state.</p> <p>If the job is in the <code>COMPLETED</code>
-         * or <code>FAILED</code> state when you call the
-         * <code>StopDominantLanguageDetectionJob</code> operation, the operation will
-         * return a 400 Internal Request Exception. </p> <p>When a job is stopped, any
-         * document that has already been processed will be written to the output
-         * location.</p><p><h3>See Also:</h3>   <a
+         * <code>IN_PROGRESS</code> the job is marked for termination and put into the
+         * <code>STOP_REQUESTED</code> state. If the job completes before it can be
+         * stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
+         * stopped and put into the <code>STOPPED</code> state.</p> <p>If the job is in the
+         * <code>COMPLETED</code> or <code>FAILED</code> state when you call the
+         * <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a
+         * 400 Internal Request Exception. </p> <p>When a job is stopped, any documents
+         * already processed are written to the output location.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopEntitiesDetectionJob">AWS
          * API Reference</a></p>
          *
@@ -1001,13 +1080,15 @@ namespace Model
 
         /**
          * <p>Stops an entities detection job in progress.</p> <p>If the job state is
-         * <code>IN_PROGRESS</code> the job will be marked for termination and put into the
-         * <code>STOPPING</code> state.</p> <p>If the job is in the <code>COMPLETED</code>
-         * or <code>FAILED</code> state when you call the
-         * <code>StopDominantLanguageDetectionJob</code> operation, the operation will
-         * return a 400 Internal Request Exception. </p> <p>When a job is stopped, any
-         * document that has already been processed will be written to the output
-         * location.</p><p><h3>See Also:</h3>   <a
+         * <code>IN_PROGRESS</code> the job is marked for termination and put into the
+         * <code>STOP_REQUESTED</code> state. If the job completes before it can be
+         * stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
+         * stopped and put into the <code>STOPPED</code> state.</p> <p>If the job is in the
+         * <code>COMPLETED</code> or <code>FAILED</code> state when you call the
+         * <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a
+         * 400 Internal Request Exception. </p> <p>When a job is stopped, any documents
+         * already processed are written to the output location.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopEntitiesDetectionJob">AWS
          * API Reference</a></p>
          *
@@ -1017,13 +1098,15 @@ namespace Model
 
         /**
          * <p>Stops a key phrases detection job in progress.</p> <p>If the job state is
-         * <code>IN_PROGRESS</code> the job will be marked for termination and put into the
-         * <code>STOPPING</code> state.</p> <p>If the job is in the <code>COMPLETED</code>
-         * or <code>FAILED</code> state when you call the
-         * <code>StopDominantLanguageDetectionJob</code> operation, the operation will
-         * return a 400 Internal Request Exception. </p> <p>When a job is stopped, any
-         * document that has already been processed will be written to the output
-         * location.</p><p><h3>See Also:</h3>   <a
+         * <code>IN_PROGRESS</code> the job is marked for termination and put into the
+         * <code>STOP_REQUESTED</code> state. If the job completes before it can be
+         * stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
+         * stopped and put into the <code>STOPPED</code> state.</p> <p>If the job is in the
+         * <code>COMPLETED</code> or <code>FAILED</code> state when you call the
+         * <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a
+         * 400 Internal Request Exception. </p> <p>When a job is stopped, any documents
+         * already processed are written to the output location.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopKeyPhrasesDetectionJob">AWS
          * API Reference</a></p>
          */
@@ -1031,13 +1114,15 @@ namespace Model
 
         /**
          * <p>Stops a key phrases detection job in progress.</p> <p>If the job state is
-         * <code>IN_PROGRESS</code> the job will be marked for termination and put into the
-         * <code>STOPPING</code> state.</p> <p>If the job is in the <code>COMPLETED</code>
-         * or <code>FAILED</code> state when you call the
-         * <code>StopDominantLanguageDetectionJob</code> operation, the operation will
-         * return a 400 Internal Request Exception. </p> <p>When a job is stopped, any
-         * document that has already been processed will be written to the output
-         * location.</p><p><h3>See Also:</h3>   <a
+         * <code>IN_PROGRESS</code> the job is marked for termination and put into the
+         * <code>STOP_REQUESTED</code> state. If the job completes before it can be
+         * stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
+         * stopped and put into the <code>STOPPED</code> state.</p> <p>If the job is in the
+         * <code>COMPLETED</code> or <code>FAILED</code> state when you call the
+         * <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a
+         * 400 Internal Request Exception. </p> <p>When a job is stopped, any documents
+         * already processed are written to the output location.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopKeyPhrasesDetectionJob">AWS
          * API Reference</a></p>
          *
@@ -1047,13 +1132,15 @@ namespace Model
 
         /**
          * <p>Stops a key phrases detection job in progress.</p> <p>If the job state is
-         * <code>IN_PROGRESS</code> the job will be marked for termination and put into the
-         * <code>STOPPING</code> state.</p> <p>If the job is in the <code>COMPLETED</code>
-         * or <code>FAILED</code> state when you call the
-         * <code>StopDominantLanguageDetectionJob</code> operation, the operation will
-         * return a 400 Internal Request Exception. </p> <p>When a job is stopped, any
-         * document that has already been processed will be written to the output
-         * location.</p><p><h3>See Also:</h3>   <a
+         * <code>IN_PROGRESS</code> the job is marked for termination and put into the
+         * <code>STOP_REQUESTED</code> state. If the job completes before it can be
+         * stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
+         * stopped and put into the <code>STOPPED</code> state.</p> <p>If the job is in the
+         * <code>COMPLETED</code> or <code>FAILED</code> state when you call the
+         * <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a
+         * 400 Internal Request Exception. </p> <p>When a job is stopped, any documents
+         * already processed are written to the output location.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopKeyPhrasesDetectionJob">AWS
          * API Reference</a></p>
          *
@@ -1063,13 +1150,15 @@ namespace Model
 
         /**
          * <p>Stops a sentiment detection job in progress.</p> <p>If the job state is
-         * <code>IN_PROGRESS</code> the job will be marked for termination and put into the
-         * <code>STOPPING</code> state.</p> <p>If the job is in the <code>COMPLETED</code>
-         * or <code>FAILED</code> state when you call the
-         * <code>StopDominantLanguageDetectionJob</code> operation, the operation will
-         * return a 400 Internal Request Exception. </p> <p>When a job is stopped, any
-         * document that has already been processed will be written to the output
-         * location.</p><p><h3>See Also:</h3>   <a
+         * <code>IN_PROGRESS</code> the job is marked for termination and put into the
+         * <code>STOP_REQUESTED</code> state. If the job completes before it can be
+         * stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
+         * be stopped and put into the <code>STOPPED</code> state.</p> <p>If the job is in
+         * the <code>COMPLETED</code> or <code>FAILED</code> state when you call the
+         * <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a
+         * 400 Internal Request Exception. </p> <p>When a job is stopped, any documents
+         * already processed are written to the output location.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopSentimentDetectionJob">AWS
          * API Reference</a></p>
          */
@@ -1077,13 +1166,15 @@ namespace Model
 
         /**
          * <p>Stops a sentiment detection job in progress.</p> <p>If the job state is
-         * <code>IN_PROGRESS</code> the job will be marked for termination and put into the
-         * <code>STOPPING</code> state.</p> <p>If the job is in the <code>COMPLETED</code>
-         * or <code>FAILED</code> state when you call the
-         * <code>StopDominantLanguageDetectionJob</code> operation, the operation will
-         * return a 400 Internal Request Exception. </p> <p>When a job is stopped, any
-         * document that has already been processed will be written to the output
-         * location.</p><p><h3>See Also:</h3>   <a
+         * <code>IN_PROGRESS</code> the job is marked for termination and put into the
+         * <code>STOP_REQUESTED</code> state. If the job completes before it can be
+         * stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
+         * be stopped and put into the <code>STOPPED</code> state.</p> <p>If the job is in
+         * the <code>COMPLETED</code> or <code>FAILED</code> state when you call the
+         * <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a
+         * 400 Internal Request Exception. </p> <p>When a job is stopped, any documents
+         * already processed are written to the output location.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopSentimentDetectionJob">AWS
          * API Reference</a></p>
          *
@@ -1093,13 +1184,15 @@ namespace Model
 
         /**
          * <p>Stops a sentiment detection job in progress.</p> <p>If the job state is
-         * <code>IN_PROGRESS</code> the job will be marked for termination and put into the
-         * <code>STOPPING</code> state.</p> <p>If the job is in the <code>COMPLETED</code>
-         * or <code>FAILED</code> state when you call the
-         * <code>StopDominantLanguageDetectionJob</code> operation, the operation will
-         * return a 400 Internal Request Exception. </p> <p>When a job is stopped, any
-         * document that has already been processed will be written to the output
-         * location.</p><p><h3>See Also:</h3>   <a
+         * <code>IN_PROGRESS</code> the job is marked for termination and put into the
+         * <code>STOP_REQUESTED</code> state. If the job completes before it can be
+         * stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
+         * be stopped and put into the <code>STOPPED</code> state.</p> <p>If the job is in
+         * the <code>COMPLETED</code> or <code>FAILED</code> state when you call the
+         * <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a
+         * 400 Internal Request Exception. </p> <p>When a job is stopped, any documents
+         * already processed are written to the output location.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopSentimentDetectionJob">AWS
          * API Reference</a></p>
          *
@@ -1116,6 +1209,7 @@ namespace Model
         void BatchDetectEntitiesAsyncHelper(const Model::BatchDetectEntitiesRequest& request, const BatchDetectEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchDetectKeyPhrasesAsyncHelper(const Model::BatchDetectKeyPhrasesRequest& request, const BatchDetectKeyPhrasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchDetectSentimentAsyncHelper(const Model::BatchDetectSentimentRequest& request, const BatchDetectSentimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchDetectSyntaxAsyncHelper(const Model::BatchDetectSyntaxRequest& request, const BatchDetectSyntaxResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDominantLanguageDetectionJobAsyncHelper(const Model::DescribeDominantLanguageDetectionJobRequest& request, const DescribeDominantLanguageDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEntitiesDetectionJobAsyncHelper(const Model::DescribeEntitiesDetectionJobRequest& request, const DescribeEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeKeyPhrasesDetectionJobAsyncHelper(const Model::DescribeKeyPhrasesDetectionJobRequest& request, const DescribeKeyPhrasesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1125,6 +1219,7 @@ namespace Model
         void DetectEntitiesAsyncHelper(const Model::DetectEntitiesRequest& request, const DetectEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetectKeyPhrasesAsyncHelper(const Model::DetectKeyPhrasesRequest& request, const DetectKeyPhrasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetectSentimentAsyncHelper(const Model::DetectSentimentRequest& request, const DetectSentimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DetectSyntaxAsyncHelper(const Model::DetectSyntaxRequest& request, const DetectSyntaxResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDominantLanguageDetectionJobsAsyncHelper(const Model::ListDominantLanguageDetectionJobsRequest& request, const ListDominantLanguageDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEntitiesDetectionJobsAsyncHelper(const Model::ListEntitiesDetectionJobsRequest& request, const ListEntitiesDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListKeyPhrasesDetectionJobsAsyncHelper(const Model::ListKeyPhrasesDetectionJobsRequest& request, const ListKeyPhrasesDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

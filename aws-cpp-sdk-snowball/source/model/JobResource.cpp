@@ -30,13 +30,15 @@ namespace Model
 
 JobResource::JobResource() : 
     m_s3ResourcesHasBeenSet(false),
-    m_lambdaResourcesHasBeenSet(false)
+    m_lambdaResourcesHasBeenSet(false),
+    m_ec2AmiResourcesHasBeenSet(false)
 {
 }
 
 JobResource::JobResource(const JsonValue& jsonValue) : 
     m_s3ResourcesHasBeenSet(false),
-    m_lambdaResourcesHasBeenSet(false)
+    m_lambdaResourcesHasBeenSet(false),
+    m_ec2AmiResourcesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -61,6 +63,16 @@ JobResource& JobResource::operator =(const JsonValue& jsonValue)
       m_lambdaResources.push_back(lambdaResourcesJsonList[lambdaResourcesIndex].AsObject());
     }
     m_lambdaResourcesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Ec2AmiResources"))
+  {
+    Array<JsonValue> ec2AmiResourcesJsonList = jsonValue.GetArray("Ec2AmiResources");
+    for(unsigned ec2AmiResourcesIndex = 0; ec2AmiResourcesIndex < ec2AmiResourcesJsonList.GetLength(); ++ec2AmiResourcesIndex)
+    {
+      m_ec2AmiResources.push_back(ec2AmiResourcesJsonList[ec2AmiResourcesIndex].AsObject());
+    }
+    m_ec2AmiResourcesHasBeenSet = true;
   }
 
   return *this;
@@ -89,6 +101,17 @@ JsonValue JobResource::Jsonize() const
      lambdaResourcesJsonList[lambdaResourcesIndex].AsObject(m_lambdaResources[lambdaResourcesIndex].Jsonize());
    }
    payload.WithArray("LambdaResources", std::move(lambdaResourcesJsonList));
+
+  }
+
+  if(m_ec2AmiResourcesHasBeenSet)
+  {
+   Array<JsonValue> ec2AmiResourcesJsonList(m_ec2AmiResources.size());
+   for(unsigned ec2AmiResourcesIndex = 0; ec2AmiResourcesIndex < ec2AmiResourcesJsonList.GetLength(); ++ec2AmiResourcesIndex)
+   {
+     ec2AmiResourcesJsonList[ec2AmiResourcesIndex].AsObject(m_ec2AmiResources[ec2AmiResourcesIndex].Jsonize());
+   }
+   payload.WithArray("Ec2AmiResources", std::move(ec2AmiResourcesJsonList));
 
   }
 

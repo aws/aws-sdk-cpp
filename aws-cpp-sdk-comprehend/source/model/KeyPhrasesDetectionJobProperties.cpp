@@ -39,7 +39,8 @@ KeyPhrasesDetectionJobProperties::KeyPhrasesDetectionJobProperties() :
     m_inputDataConfigHasBeenSet(false),
     m_outputDataConfigHasBeenSet(false),
     m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false)
+    m_languageCodeHasBeenSet(false),
+    m_dataAccessRoleArnHasBeenSet(false)
 {
 }
 
@@ -54,7 +55,8 @@ KeyPhrasesDetectionJobProperties::KeyPhrasesDetectionJobProperties(const JsonVal
     m_inputDataConfigHasBeenSet(false),
     m_outputDataConfigHasBeenSet(false),
     m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false)
+    m_languageCodeHasBeenSet(false),
+    m_dataAccessRoleArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -124,6 +126,13 @@ KeyPhrasesDetectionJobProperties& KeyPhrasesDetectionJobProperties::operator =(c
     m_languageCodeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DataAccessRoleArn"))
+  {
+    m_dataAccessRoleArn = jsonValue.GetString("DataAccessRoleArn");
+
+    m_dataAccessRoleArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -179,6 +188,12 @@ JsonValue KeyPhrasesDetectionJobProperties::Jsonize() const
   if(m_languageCodeHasBeenSet)
   {
    payload.WithString("LanguageCode", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
+  }
+
+  if(m_dataAccessRoleArnHasBeenSet)
+  {
+   payload.WithString("DataAccessRoleArn", m_dataAccessRoleArn);
+
   }
 
   return payload;

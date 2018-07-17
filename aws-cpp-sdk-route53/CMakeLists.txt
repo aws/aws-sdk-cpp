@@ -72,7 +72,8 @@ install (FILES ${AWS_ROUTE53_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/route
 install (FILES ${AWS_ROUTE53_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/route53/model)
 
 if(PLATFORM_WINDOWS AND MSVC)
-    install (FILES nuget/${PROJECT_NAME}.autopkg DESTINATION nuget)
+    file(GLOB NUGET_FILES "nuget/${PROJECT_NAME}.*.autopkg")
+    install (FILES ${NUGET_FILES} DESTINATION nuget)
 endif()
 
 do_packaging()

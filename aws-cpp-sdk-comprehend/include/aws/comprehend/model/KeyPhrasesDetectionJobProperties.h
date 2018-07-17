@@ -335,6 +335,49 @@ namespace Model
      */
     inline KeyPhrasesDetectionJobProperties& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to
+     * your input data.</p>
+     */
+    inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to
+     * your input data.</p>
+     */
+    inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to
+     * your input data.</p>
+     */
+    inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to
+     * your input data.</p>
+     */
+    inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to
+     * your input data.</p>
+     */
+    inline KeyPhrasesDetectionJobProperties& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to
+     * your input data.</p>
+     */
+    inline KeyPhrasesDetectionJobProperties& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to
+     * your input data.</p>
+     */
+    inline KeyPhrasesDetectionJobProperties& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
+
   private:
 
     Aws::String m_jobId;
@@ -363,6 +406,9 @@ namespace Model
 
     LanguageCode m_languageCode;
     bool m_languageCodeHasBeenSet;
+
+    Aws::String m_dataAccessRoleArn;
+    bool m_dataAccessRoleArnHasBeenSet;
   };
 
 } // namespace Model

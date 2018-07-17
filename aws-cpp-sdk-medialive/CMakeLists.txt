@@ -72,7 +72,8 @@ install (FILES ${AWS_MEDIALIVE_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/med
 install (FILES ${AWS_MEDIALIVE_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/medialive/model)
 
 if(PLATFORM_WINDOWS AND MSVC)
-    install (FILES nuget/${PROJECT_NAME}.autopkg DESTINATION nuget)
+    file(GLOB NUGET_FILES "nuget/${PROJECT_NAME}.*.autopkg")
+    install (FILES ${NUGET_FILES} DESTINATION nuget)
 endif()
 
 do_packaging()

@@ -37,7 +37,8 @@ DominantLanguageDetectionJobProperties::DominantLanguageDetectionJobProperties()
     m_submitTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_inputDataConfigHasBeenSet(false),
-    m_outputDataConfigHasBeenSet(false)
+    m_outputDataConfigHasBeenSet(false),
+    m_dataAccessRoleArnHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ DominantLanguageDetectionJobProperties::DominantLanguageDetectionJobProperties(c
     m_submitTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_inputDataConfigHasBeenSet(false),
-    m_outputDataConfigHasBeenSet(false)
+    m_outputDataConfigHasBeenSet(false),
+    m_dataAccessRoleArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -113,6 +115,13 @@ DominantLanguageDetectionJobProperties& DominantLanguageDetectionJobProperties::
     m_outputDataConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DataAccessRoleArn"))
+  {
+    m_dataAccessRoleArn = jsonValue.GetString("DataAccessRoleArn");
+
+    m_dataAccessRoleArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -162,6 +171,12 @@ JsonValue DominantLanguageDetectionJobProperties::Jsonize() const
   if(m_outputDataConfigHasBeenSet)
   {
    payload.WithObject("OutputDataConfig", m_outputDataConfig.Jsonize());
+
+  }
+
+  if(m_dataAccessRoleArnHasBeenSet)
+  {
+   payload.WithString("DataAccessRoleArn", m_dataAccessRoleArn);
 
   }
 

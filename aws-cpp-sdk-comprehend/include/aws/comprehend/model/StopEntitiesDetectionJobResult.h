@@ -80,35 +80,35 @@ namespace Model
 
 
     /**
-     * <p>Either <code>STOPPING</code> if the job is currently running, or
+     * <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or
      * <code>STOPPED</code> if the job was previously stopped with the
      * <code>StopEntitiesDetectionJob</code> operation.</p>
      */
     inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
 
     /**
-     * <p>Either <code>STOPPING</code> if the job is currently running, or
+     * <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or
      * <code>STOPPED</code> if the job was previously stopped with the
      * <code>StopEntitiesDetectionJob</code> operation.</p>
      */
     inline void SetJobStatus(const JobStatus& value) { m_jobStatus = value; }
 
     /**
-     * <p>Either <code>STOPPING</code> if the job is currently running, or
+     * <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or
      * <code>STOPPED</code> if the job was previously stopped with the
      * <code>StopEntitiesDetectionJob</code> operation.</p>
      */
     inline void SetJobStatus(JobStatus&& value) { m_jobStatus = std::move(value); }
 
     /**
-     * <p>Either <code>STOPPING</code> if the job is currently running, or
+     * <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or
      * <code>STOPPED</code> if the job was previously stopped with the
      * <code>StopEntitiesDetectionJob</code> operation.</p>
      */
     inline StopEntitiesDetectionJobResult& WithJobStatus(const JobStatus& value) { SetJobStatus(value); return *this;}
 
     /**
-     * <p>Either <code>STOPPING</code> if the job is currently running, or
+     * <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or
      * <code>STOPPED</code> if the job was previously stopped with the
      * <code>StopEntitiesDetectionJob</code> operation.</p>
      */

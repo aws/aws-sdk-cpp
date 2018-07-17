@@ -72,7 +72,8 @@ install (FILES ${AWS_SAGEMAKER_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/sag
 install (FILES ${AWS_SAGEMAKER_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/sagemaker/model)
 
 if(PLATFORM_WINDOWS AND MSVC)
-    install (FILES nuget/${PROJECT_NAME}.autopkg DESTINATION nuget)
+    file(GLOB NUGET_FILES "nuget/${PROJECT_NAME}.*.autopkg")
+    install (FILES ${NUGET_FILES} DESTINATION nuget)
 endif()
 
 do_packaging()
