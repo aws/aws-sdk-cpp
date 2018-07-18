@@ -91,27 +91,37 @@ namespace Model
 
 
     /**
-     * <p>The payload of the message.</p>
+     * <p>The payload of the message. This may be a JSON string or a Base64-encoded
+     * string representing binary data (in which case you must decode it by means of a
+     * pipeline activity).</p>
      */
     inline const Aws::Utils::ByteBuffer& GetPayload() const{ return m_payload; }
 
     /**
-     * <p>The payload of the message.</p>
+     * <p>The payload of the message. This may be a JSON string or a Base64-encoded
+     * string representing binary data (in which case you must decode it by means of a
+     * pipeline activity).</p>
      */
     inline void SetPayload(const Aws::Utils::ByteBuffer& value) { m_payloadHasBeenSet = true; m_payload = value; }
 
     /**
-     * <p>The payload of the message.</p>
+     * <p>The payload of the message. This may be a JSON string or a Base64-encoded
+     * string representing binary data (in which case you must decode it by means of a
+     * pipeline activity).</p>
      */
     inline void SetPayload(Aws::Utils::ByteBuffer&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
 
     /**
-     * <p>The payload of the message.</p>
+     * <p>The payload of the message. This may be a JSON string or a Base64-encoded
+     * string representing binary data (in which case you must decode it by means of a
+     * pipeline activity).</p>
      */
     inline Message& WithPayload(const Aws::Utils::ByteBuffer& value) { SetPayload(value); return *this;}
 
     /**
-     * <p>The payload of the message.</p>
+     * <p>The payload of the message. This may be a JSON string or a Base64-encoded
+     * string representing binary data (in which case you must decode it by means of a
+     * pipeline activity).</p>
      */
     inline Message& WithPayload(Aws::Utils::ByteBuffer&& value) { SetPayload(std::move(value)); return *this;}
 

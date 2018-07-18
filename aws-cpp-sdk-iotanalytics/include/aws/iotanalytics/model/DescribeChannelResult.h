@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
 #include <aws/iotanalytics/model/Channel.h>
+#include <aws/iotanalytics/model/ChannelStatistics.h>
 #include <utility>
 
 namespace Aws
@@ -67,9 +68,42 @@ namespace Model
      */
     inline DescribeChannelResult& WithChannel(Channel&& value) { SetChannel(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Statistics about the channel. Included if the 'includeStatistics' parameter
+     * is set to true in the request.</p>
+     */
+    inline const ChannelStatistics& GetStatistics() const{ return m_statistics; }
+
+    /**
+     * <p>Statistics about the channel. Included if the 'includeStatistics' parameter
+     * is set to true in the request.</p>
+     */
+    inline void SetStatistics(const ChannelStatistics& value) { m_statistics = value; }
+
+    /**
+     * <p>Statistics about the channel. Included if the 'includeStatistics' parameter
+     * is set to true in the request.</p>
+     */
+    inline void SetStatistics(ChannelStatistics&& value) { m_statistics = std::move(value); }
+
+    /**
+     * <p>Statistics about the channel. Included if the 'includeStatistics' parameter
+     * is set to true in the request.</p>
+     */
+    inline DescribeChannelResult& WithStatistics(const ChannelStatistics& value) { SetStatistics(value); return *this;}
+
+    /**
+     * <p>Statistics about the channel. Included if the 'includeStatistics' parameter
+     * is set to true in the request.</p>
+     */
+    inline DescribeChannelResult& WithStatistics(ChannelStatistics&& value) { SetStatistics(std::move(value)); return *this;}
+
   private:
 
     Channel m_channel;
+
+    ChannelStatistics m_statistics;
   };
 
 } // namespace Model

@@ -44,6 +44,12 @@ DescribeDatastoreResult& DescribeDatastoreResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("statistics"))
+  {
+    m_statistics = jsonValue.GetObject("statistics");
+
+  }
+
 
 
   return *this;

@@ -44,6 +44,12 @@ DescribeChannelResult& DescribeChannelResult::operator =(const Aws::AmazonWebSer
 
   }
 
+  if(jsonValue.ValueExists("statistics"))
+  {
+    m_statistics = jsonValue.GetObject("statistics");
+
+  }
+
 
 
   return *this;

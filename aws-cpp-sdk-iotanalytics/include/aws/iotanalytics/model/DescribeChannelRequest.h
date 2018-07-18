@@ -21,6 +21,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace IoTAnalytics
 {
 namespace Model
@@ -40,6 +44,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "DescribeChannel"; }
 
     Aws::String SerializePayload() const override;
+
+    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -77,10 +83,29 @@ namespace Model
      */
     inline DescribeChannelRequest& WithChannelName(const char* value) { SetChannelName(value); return *this;}
 
+
+    /**
+     * <p>If true, include statistics about the channel in the response.</p>
+     */
+    inline bool GetIncludeStatistics() const{ return m_includeStatistics; }
+
+    /**
+     * <p>If true, include statistics about the channel in the response.</p>
+     */
+    inline void SetIncludeStatistics(bool value) { m_includeStatisticsHasBeenSet = true; m_includeStatistics = value; }
+
+    /**
+     * <p>If true, include statistics about the channel in the response.</p>
+     */
+    inline DescribeChannelRequest& WithIncludeStatistics(bool value) { SetIncludeStatistics(value); return *this;}
+
   private:
 
     Aws::String m_channelName;
     bool m_channelNameHasBeenSet;
+
+    bool m_includeStatistics;
+    bool m_includeStatisticsHasBeenSet;
   };
 
 } // namespace Model

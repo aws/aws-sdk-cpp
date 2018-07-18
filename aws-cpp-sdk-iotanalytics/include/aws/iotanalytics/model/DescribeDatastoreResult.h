@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
 #include <aws/iotanalytics/model/Datastore.h>
+#include <aws/iotanalytics/model/DatastoreStatistics.h>
 #include <utility>
 
 namespace Aws
@@ -67,9 +68,42 @@ namespace Model
      */
     inline DescribeDatastoreResult& WithDatastore(Datastore&& value) { SetDatastore(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Statistics about the data store. Included if the 'includeStatistics'
+     * parameter is set to true in the request.</p>
+     */
+    inline const DatastoreStatistics& GetStatistics() const{ return m_statistics; }
+
+    /**
+     * <p>Statistics about the data store. Included if the 'includeStatistics'
+     * parameter is set to true in the request.</p>
+     */
+    inline void SetStatistics(const DatastoreStatistics& value) { m_statistics = value; }
+
+    /**
+     * <p>Statistics about the data store. Included if the 'includeStatistics'
+     * parameter is set to true in the request.</p>
+     */
+    inline void SetStatistics(DatastoreStatistics&& value) { m_statistics = std::move(value); }
+
+    /**
+     * <p>Statistics about the data store. Included if the 'includeStatistics'
+     * parameter is set to true in the request.</p>
+     */
+    inline DescribeDatastoreResult& WithStatistics(const DatastoreStatistics& value) { SetStatistics(value); return *this;}
+
+    /**
+     * <p>Statistics about the data store. Included if the 'includeStatistics'
+     * parameter is set to true in the request.</p>
+     */
+    inline DescribeDatastoreResult& WithStatistics(DatastoreStatistics&& value) { SetStatistics(std::move(value)); return *this;}
+
   private:
 
     Datastore m_datastore;
+
+    DatastoreStatistics m_statistics;
   };
 
 } // namespace Model
