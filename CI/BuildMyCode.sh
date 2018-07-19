@@ -19,3 +19,5 @@ json='{ "branch": "'$branch'", "cmakeFlags": "'$cmakeFlags' "}'
 echo $json >BuildSpec.json
 zip -r BuildSpec.zip BuildSpec.json
 aws s3 cp BuildSpec.zip s3://aws-sdk-cpp-dev-pipeline/BuildSpec.zip
+S3VERSION=`aws s3api head-object --bucket aws-sdk-cpp-dev-pipeline --key BuildSpec.zip | awk '/VersionId/{gsub(/[",]/, ""); print $2}'`
+echo -e "\033[30;42mYour build version ID is ${S3VERSION}\033[0m"
