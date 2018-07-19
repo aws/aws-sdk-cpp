@@ -894,6 +894,12 @@ DateTime::DateTime() : m_valid(true)
     //init time_point to default by doing nothing.
 }
 
+DateTime& DateTime::operator=(const Aws::String& timestamp)
+{
+    *this = DateTime(timestamp, DateFormat::AutoDetect);
+    return *this;
+}
+
 DateTime& DateTime::operator=(double secondsMillis)
 {
     *this = DateTime(secondsMillis);
