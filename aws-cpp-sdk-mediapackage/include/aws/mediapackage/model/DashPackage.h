@@ -16,8 +16,10 @@
 #pragma once
 #include <aws/mediapackage/MediaPackage_EXPORTS.h>
 #include <aws/mediapackage/model/DashEncryption.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediapackage/model/Profile.h>
 #include <aws/mediapackage/model/StreamSelection.h>
+#include <aws/mediapackage/model/__PeriodTriggersElement.h>
 #include <utility>
 
 namespace Aws
@@ -120,6 +122,98 @@ namespace Model
 
 
     /**
+     * A list of triggers that controls when the outgoing Dynamic Adaptive Streaming
+     * over HTTP (DASH)
+Media Presentation Description (MPD) will be partitioned into
+     * multiple periods. If empty, the content will not
+be partitioned into more than
+     * one period. If the list contains "ADS", new periods will be created where
+the
+     * Channel source contains SCTE-35 ad markers.
+
+     */
+    inline const Aws::Vector<__PeriodTriggersElement>& GetPeriodTriggers() const{ return m_periodTriggers; }
+
+    /**
+     * A list of triggers that controls when the outgoing Dynamic Adaptive Streaming
+     * over HTTP (DASH)
+Media Presentation Description (MPD) will be partitioned into
+     * multiple periods. If empty, the content will not
+be partitioned into more than
+     * one period. If the list contains "ADS", new periods will be created where
+the
+     * Channel source contains SCTE-35 ad markers.
+
+     */
+    inline void SetPeriodTriggers(const Aws::Vector<__PeriodTriggersElement>& value) { m_periodTriggersHasBeenSet = true; m_periodTriggers = value; }
+
+    /**
+     * A list of triggers that controls when the outgoing Dynamic Adaptive Streaming
+     * over HTTP (DASH)
+Media Presentation Description (MPD) will be partitioned into
+     * multiple periods. If empty, the content will not
+be partitioned into more than
+     * one period. If the list contains "ADS", new periods will be created where
+the
+     * Channel source contains SCTE-35 ad markers.
+
+     */
+    inline void SetPeriodTriggers(Aws::Vector<__PeriodTriggersElement>&& value) { m_periodTriggersHasBeenSet = true; m_periodTriggers = std::move(value); }
+
+    /**
+     * A list of triggers that controls when the outgoing Dynamic Adaptive Streaming
+     * over HTTP (DASH)
+Media Presentation Description (MPD) will be partitioned into
+     * multiple periods. If empty, the content will not
+be partitioned into more than
+     * one period. If the list contains "ADS", new periods will be created where
+the
+     * Channel source contains SCTE-35 ad markers.
+
+     */
+    inline DashPackage& WithPeriodTriggers(const Aws::Vector<__PeriodTriggersElement>& value) { SetPeriodTriggers(value); return *this;}
+
+    /**
+     * A list of triggers that controls when the outgoing Dynamic Adaptive Streaming
+     * over HTTP (DASH)
+Media Presentation Description (MPD) will be partitioned into
+     * multiple periods. If empty, the content will not
+be partitioned into more than
+     * one period. If the list contains "ADS", new periods will be created where
+the
+     * Channel source contains SCTE-35 ad markers.
+
+     */
+    inline DashPackage& WithPeriodTriggers(Aws::Vector<__PeriodTriggersElement>&& value) { SetPeriodTriggers(std::move(value)); return *this;}
+
+    /**
+     * A list of triggers that controls when the outgoing Dynamic Adaptive Streaming
+     * over HTTP (DASH)
+Media Presentation Description (MPD) will be partitioned into
+     * multiple periods. If empty, the content will not
+be partitioned into more than
+     * one period. If the list contains "ADS", new periods will be created where
+the
+     * Channel source contains SCTE-35 ad markers.
+
+     */
+    inline DashPackage& AddPeriodTriggers(const __PeriodTriggersElement& value) { m_periodTriggersHasBeenSet = true; m_periodTriggers.push_back(value); return *this; }
+
+    /**
+     * A list of triggers that controls when the outgoing Dynamic Adaptive Streaming
+     * over HTTP (DASH)
+Media Presentation Description (MPD) will be partitioned into
+     * multiple periods. If empty, the content will not
+be partitioned into more than
+     * one period. If the list contains "ADS", new periods will be created where
+the
+     * Channel source contains SCTE-35 ad markers.
+
+     */
+    inline DashPackage& AddPeriodTriggers(__PeriodTriggersElement&& value) { m_periodTriggersHasBeenSet = true; m_periodTriggers.push_back(std::move(value)); return *this; }
+
+
+    /**
      * The Dynamic Adaptive Streaming over HTTP (DASH) profile type.  When set to
      * "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
      */
@@ -219,6 +313,9 @@ rounded to the
 
     int m_minUpdatePeriodSeconds;
     bool m_minUpdatePeriodSecondsHasBeenSet;
+
+    Aws::Vector<__PeriodTriggersElement> m_periodTriggers;
+    bool m_periodTriggersHasBeenSet;
 
     Profile m_profile;
     bool m_profileHasBeenSet;
