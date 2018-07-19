@@ -155,7 +155,7 @@ public class CppViewHelper {
     }
 
     public static String computeJsonCppType(Shape shape) {
-        if("timestamp" == shape.getType() && shape.getTimestampFormat() != null) {
+        if("timestamp".equalsIgnoreCase(shape.getType()) && shape.getTimestampFormat() != null) {
             return CORAL_TO_JSON_CPP_TYPE_MAPPING.get(shape.getTimestampFormat().toLowerCase());
         }
         return CORAL_TO_JSON_CPP_TYPE_MAPPING.get(shape.getType());
