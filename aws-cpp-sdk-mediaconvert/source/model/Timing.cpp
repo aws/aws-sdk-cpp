@@ -47,21 +47,21 @@ Timing& Timing::operator =(const JsonValue& jsonValue)
 {
   if(jsonValue.ValueExists("finishTime"))
   {
-    m_finishTime = jsonValue.GetDouble("finishTime");
+    m_finishTime = jsonValue.GetString("finishTime");
 
     m_finishTimeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("startTime"))
   {
-    m_startTime = jsonValue.GetDouble("startTime");
+    m_startTime = jsonValue.GetString("startTime");
 
     m_startTimeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("submitTime"))
   {
-    m_submitTime = jsonValue.GetDouble("submitTime");
+    m_submitTime = jsonValue.GetString("submitTime");
 
     m_submitTimeHasBeenSet = true;
   }

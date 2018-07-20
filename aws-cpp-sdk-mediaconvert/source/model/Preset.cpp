@@ -73,7 +73,7 @@ Preset& Preset::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("createdAt"))
   {
-    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAt = jsonValue.GetString("createdAt");
 
     m_createdAtHasBeenSet = true;
   }
@@ -87,7 +87,7 @@ Preset& Preset::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("lastUpdated"))
   {
-    m_lastUpdated = jsonValue.GetDouble("lastUpdated");
+    m_lastUpdated = jsonValue.GetString("lastUpdated");
 
     m_lastUpdatedHasBeenSet = true;
   }

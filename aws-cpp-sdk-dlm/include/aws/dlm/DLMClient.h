@@ -99,14 +99,13 @@ namespace Model
     typedef std::function<void(const DLMClient*, const Model::UpdateLifecyclePolicyRequest&, const Model::UpdateLifecyclePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLifecyclePolicyResponseReceivedHandler;
 
   /**
-   * <fullname>Amazon Data Lifecyle Manager</fullname> <p>With Amazon Data Lifecyle
+   * <fullname>Amazon Data Lifecycle Manager</fullname> <p>With Amazon Data Lifecycle
    * Manager, you can manage the lifecycle of your AWS resources. You create
    * lifecycle policies, which are used to automate operations on the specified
-   * resources.</p> <p>Data Lifecycle Manager supports Amazon EBS volumes and
-   * snapshots. For information about using Data Lifecycle Manager with Amazon EBS,
-   * see <a
-   * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-lifecycle.html">Amazon
-   * Data Lifecyle Manager for Amazon EBS Snapshots</a>.</p>
+   * resources.</p> <p>Amazon DLM supports Amazon EBS volumes and snapshots. For
+   * information about using Amazon DLM with Amazon EBS, see <a
+   * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-lifecycle.html">Automating
+   * the Amazon EBS Snapshot Lifecycle</a> in the <i>Amazon EC2 User Guide</i>.</p>
    */
   class AWS_DLM_API DLMClient : public Aws::Client::AWSJsonClient
   {
