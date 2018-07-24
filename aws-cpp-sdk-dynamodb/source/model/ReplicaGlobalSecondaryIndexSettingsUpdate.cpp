@@ -31,14 +31,16 @@ namespace Model
 ReplicaGlobalSecondaryIndexSettingsUpdate::ReplicaGlobalSecondaryIndexSettingsUpdate() : 
     m_indexNameHasBeenSet(false),
     m_provisionedReadCapacityUnits(0),
-    m_provisionedReadCapacityUnitsHasBeenSet(false)
+    m_provisionedReadCapacityUnitsHasBeenSet(false),
+    m_provisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet(false)
 {
 }
 
 ReplicaGlobalSecondaryIndexSettingsUpdate::ReplicaGlobalSecondaryIndexSettingsUpdate(const JsonValue& jsonValue) : 
     m_indexNameHasBeenSet(false),
     m_provisionedReadCapacityUnits(0),
-    m_provisionedReadCapacityUnitsHasBeenSet(false)
+    m_provisionedReadCapacityUnitsHasBeenSet(false),
+    m_provisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +61,13 @@ ReplicaGlobalSecondaryIndexSettingsUpdate& ReplicaGlobalSecondaryIndexSettingsUp
     m_provisionedReadCapacityUnitsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ProvisionedReadCapacityAutoScalingSettingsUpdate"))
+  {
+    m_provisionedReadCapacityAutoScalingSettingsUpdate = jsonValue.GetObject("ProvisionedReadCapacityAutoScalingSettingsUpdate");
+
+    m_provisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -75,6 +84,12 @@ JsonValue ReplicaGlobalSecondaryIndexSettingsUpdate::Jsonize() const
   if(m_provisionedReadCapacityUnitsHasBeenSet)
   {
    payload.WithInt64("ProvisionedReadCapacityUnits", m_provisionedReadCapacityUnits);
+
+  }
+
+  if(m_provisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet)
+  {
+   payload.WithObject("ProvisionedReadCapacityAutoScalingSettingsUpdate", m_provisionedReadCapacityAutoScalingSettingsUpdate.Jsonize());
 
   }
 

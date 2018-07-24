@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodb/model/AutoScalingSettingsUpdate.h>
 #include <utility>
 
 namespace Aws
@@ -108,6 +109,37 @@ namespace Model
      */
     inline ReplicaGlobalSecondaryIndexSettingsUpdate& WithProvisionedReadCapacityUnits(long long value) { SetProvisionedReadCapacityUnits(value); return *this;}
 
+
+    /**
+     * <p>Autoscaling settings for managing a global secondary index replica's read
+     * capacity units.</p>
+     */
+    inline const AutoScalingSettingsUpdate& GetProvisionedReadCapacityAutoScalingSettingsUpdate() const{ return m_provisionedReadCapacityAutoScalingSettingsUpdate; }
+
+    /**
+     * <p>Autoscaling settings for managing a global secondary index replica's read
+     * capacity units.</p>
+     */
+    inline void SetProvisionedReadCapacityAutoScalingSettingsUpdate(const AutoScalingSettingsUpdate& value) { m_provisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet = true; m_provisionedReadCapacityAutoScalingSettingsUpdate = value; }
+
+    /**
+     * <p>Autoscaling settings for managing a global secondary index replica's read
+     * capacity units.</p>
+     */
+    inline void SetProvisionedReadCapacityAutoScalingSettingsUpdate(AutoScalingSettingsUpdate&& value) { m_provisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet = true; m_provisionedReadCapacityAutoScalingSettingsUpdate = std::move(value); }
+
+    /**
+     * <p>Autoscaling settings for managing a global secondary index replica's read
+     * capacity units.</p>
+     */
+    inline ReplicaGlobalSecondaryIndexSettingsUpdate& WithProvisionedReadCapacityAutoScalingSettingsUpdate(const AutoScalingSettingsUpdate& value) { SetProvisionedReadCapacityAutoScalingSettingsUpdate(value); return *this;}
+
+    /**
+     * <p>Autoscaling settings for managing a global secondary index replica's read
+     * capacity units.</p>
+     */
+    inline ReplicaGlobalSecondaryIndexSettingsUpdate& WithProvisionedReadCapacityAutoScalingSettingsUpdate(AutoScalingSettingsUpdate&& value) { SetProvisionedReadCapacityAutoScalingSettingsUpdate(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_indexName;
@@ -115,6 +147,9 @@ namespace Model
 
     long long m_provisionedReadCapacityUnits;
     bool m_provisionedReadCapacityUnitsHasBeenSet;
+
+    AutoScalingSettingsUpdate m_provisionedReadCapacityAutoScalingSettingsUpdate;
+    bool m_provisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet;
   };
 
 } // namespace Model

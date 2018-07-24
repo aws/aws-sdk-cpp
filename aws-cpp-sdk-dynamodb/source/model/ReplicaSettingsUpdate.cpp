@@ -32,6 +32,7 @@ ReplicaSettingsUpdate::ReplicaSettingsUpdate() :
     m_regionNameHasBeenSet(false),
     m_replicaProvisionedReadCapacityUnits(0),
     m_replicaProvisionedReadCapacityUnitsHasBeenSet(false),
+    m_replicaProvisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet(false),
     m_replicaGlobalSecondaryIndexSettingsUpdateHasBeenSet(false)
 {
 }
@@ -40,6 +41,7 @@ ReplicaSettingsUpdate::ReplicaSettingsUpdate(const JsonValue& jsonValue) :
     m_regionNameHasBeenSet(false),
     m_replicaProvisionedReadCapacityUnits(0),
     m_replicaProvisionedReadCapacityUnitsHasBeenSet(false),
+    m_replicaProvisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet(false),
     m_replicaGlobalSecondaryIndexSettingsUpdateHasBeenSet(false)
 {
   *this = jsonValue;
@@ -59,6 +61,13 @@ ReplicaSettingsUpdate& ReplicaSettingsUpdate::operator =(const JsonValue& jsonVa
     m_replicaProvisionedReadCapacityUnits = jsonValue.GetInt64("ReplicaProvisionedReadCapacityUnits");
 
     m_replicaProvisionedReadCapacityUnitsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate"))
+  {
+    m_replicaProvisionedReadCapacityAutoScalingSettingsUpdate = jsonValue.GetObject("ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate");
+
+    m_replicaProvisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ReplicaGlobalSecondaryIndexSettingsUpdate"))
@@ -87,6 +96,12 @@ JsonValue ReplicaSettingsUpdate::Jsonize() const
   if(m_replicaProvisionedReadCapacityUnitsHasBeenSet)
   {
    payload.WithInt64("ReplicaProvisionedReadCapacityUnits", m_replicaProvisionedReadCapacityUnits);
+
+  }
+
+  if(m_replicaProvisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet)
+  {
+   payload.WithObject("ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate", m_replicaProvisionedReadCapacityAutoScalingSettingsUpdate.Jsonize());
 
   }
 

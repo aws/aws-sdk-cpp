@@ -34,8 +34,10 @@ ReplicaGlobalSecondaryIndexSettingsDescription::ReplicaGlobalSecondaryIndexSetti
     m_indexStatusHasBeenSet(false),
     m_provisionedReadCapacityUnits(0),
     m_provisionedReadCapacityUnitsHasBeenSet(false),
+    m_provisionedReadCapacityAutoScalingSettingsHasBeenSet(false),
     m_provisionedWriteCapacityUnits(0),
-    m_provisionedWriteCapacityUnitsHasBeenSet(false)
+    m_provisionedWriteCapacityUnitsHasBeenSet(false),
+    m_provisionedWriteCapacityAutoScalingSettingsHasBeenSet(false)
 {
 }
 
@@ -45,8 +47,10 @@ ReplicaGlobalSecondaryIndexSettingsDescription::ReplicaGlobalSecondaryIndexSetti
     m_indexStatusHasBeenSet(false),
     m_provisionedReadCapacityUnits(0),
     m_provisionedReadCapacityUnitsHasBeenSet(false),
+    m_provisionedReadCapacityAutoScalingSettingsHasBeenSet(false),
     m_provisionedWriteCapacityUnits(0),
-    m_provisionedWriteCapacityUnitsHasBeenSet(false)
+    m_provisionedWriteCapacityUnitsHasBeenSet(false),
+    m_provisionedWriteCapacityAutoScalingSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -74,11 +78,25 @@ ReplicaGlobalSecondaryIndexSettingsDescription& ReplicaGlobalSecondaryIndexSetti
     m_provisionedReadCapacityUnitsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ProvisionedReadCapacityAutoScalingSettings"))
+  {
+    m_provisionedReadCapacityAutoScalingSettings = jsonValue.GetObject("ProvisionedReadCapacityAutoScalingSettings");
+
+    m_provisionedReadCapacityAutoScalingSettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ProvisionedWriteCapacityUnits"))
   {
     m_provisionedWriteCapacityUnits = jsonValue.GetInt64("ProvisionedWriteCapacityUnits");
 
     m_provisionedWriteCapacityUnitsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ProvisionedWriteCapacityAutoScalingSettings"))
+  {
+    m_provisionedWriteCapacityAutoScalingSettings = jsonValue.GetObject("ProvisionedWriteCapacityAutoScalingSettings");
+
+    m_provisionedWriteCapacityAutoScalingSettingsHasBeenSet = true;
   }
 
   return *this;
@@ -105,9 +123,21 @@ JsonValue ReplicaGlobalSecondaryIndexSettingsDescription::Jsonize() const
 
   }
 
+  if(m_provisionedReadCapacityAutoScalingSettingsHasBeenSet)
+  {
+   payload.WithObject("ProvisionedReadCapacityAutoScalingSettings", m_provisionedReadCapacityAutoScalingSettings.Jsonize());
+
+  }
+
   if(m_provisionedWriteCapacityUnitsHasBeenSet)
   {
    payload.WithInt64("ProvisionedWriteCapacityUnits", m_provisionedWriteCapacityUnits);
+
+  }
+
+  if(m_provisionedWriteCapacityAutoScalingSettingsHasBeenSet)
+  {
+   payload.WithObject("ProvisionedWriteCapacityAutoScalingSettings", m_provisionedWriteCapacityAutoScalingSettings.Jsonize());
 
   }
 

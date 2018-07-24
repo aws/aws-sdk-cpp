@@ -26,6 +26,7 @@ UpdateGlobalTableSettingsRequest::UpdateGlobalTableSettingsRequest() :
     m_globalTableNameHasBeenSet(false),
     m_globalTableProvisionedWriteCapacityUnits(0),
     m_globalTableProvisionedWriteCapacityUnitsHasBeenSet(false),
+    m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet(false),
     m_globalTableGlobalSecondaryIndexSettingsUpdateHasBeenSet(false),
     m_replicaSettingsUpdateHasBeenSet(false)
 {
@@ -44,6 +45,12 @@ Aws::String UpdateGlobalTableSettingsRequest::SerializePayload() const
   if(m_globalTableProvisionedWriteCapacityUnitsHasBeenSet)
   {
    payload.WithInt64("GlobalTableProvisionedWriteCapacityUnits", m_globalTableProvisionedWriteCapacityUnits);
+
+  }
+
+  if(m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet)
+  {
+   payload.WithObject("GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate", m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate.Jsonize());
 
   }
 

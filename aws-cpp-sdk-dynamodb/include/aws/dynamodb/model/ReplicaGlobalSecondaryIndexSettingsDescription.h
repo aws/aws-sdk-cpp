@@ -17,6 +17,7 @@
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/model/IndexStatus.h>
+#include <aws/dynamodb/model/AutoScalingSettingsDescription.h>
 #include <utility>
 
 namespace Aws
@@ -162,6 +163,37 @@ namespace Model
 
 
     /**
+     * <p>Autoscaling settings for a global secondary index replica's read capacity
+     * units.</p>
+     */
+    inline const AutoScalingSettingsDescription& GetProvisionedReadCapacityAutoScalingSettings() const{ return m_provisionedReadCapacityAutoScalingSettings; }
+
+    /**
+     * <p>Autoscaling settings for a global secondary index replica's read capacity
+     * units.</p>
+     */
+    inline void SetProvisionedReadCapacityAutoScalingSettings(const AutoScalingSettingsDescription& value) { m_provisionedReadCapacityAutoScalingSettingsHasBeenSet = true; m_provisionedReadCapacityAutoScalingSettings = value; }
+
+    /**
+     * <p>Autoscaling settings for a global secondary index replica's read capacity
+     * units.</p>
+     */
+    inline void SetProvisionedReadCapacityAutoScalingSettings(AutoScalingSettingsDescription&& value) { m_provisionedReadCapacityAutoScalingSettingsHasBeenSet = true; m_provisionedReadCapacityAutoScalingSettings = std::move(value); }
+
+    /**
+     * <p>Autoscaling settings for a global secondary index replica's read capacity
+     * units.</p>
+     */
+    inline ReplicaGlobalSecondaryIndexSettingsDescription& WithProvisionedReadCapacityAutoScalingSettings(const AutoScalingSettingsDescription& value) { SetProvisionedReadCapacityAutoScalingSettings(value); return *this;}
+
+    /**
+     * <p>Autoscaling settings for a global secondary index replica's read capacity
+     * units.</p>
+     */
+    inline ReplicaGlobalSecondaryIndexSettingsDescription& WithProvisionedReadCapacityAutoScalingSettings(AutoScalingSettingsDescription&& value) { SetProvisionedReadCapacityAutoScalingSettings(std::move(value)); return *this;}
+
+
+    /**
      * <p>The maximum number of writes consumed per second before DynamoDB returns a
      * <code>ThrottlingException</code>.</p>
      */
@@ -179,6 +211,37 @@ namespace Model
      */
     inline ReplicaGlobalSecondaryIndexSettingsDescription& WithProvisionedWriteCapacityUnits(long long value) { SetProvisionedWriteCapacityUnits(value); return *this;}
 
+
+    /**
+     * <p>AutoScaling settings for a global secondary index replica's write capacity
+     * units.</p>
+     */
+    inline const AutoScalingSettingsDescription& GetProvisionedWriteCapacityAutoScalingSettings() const{ return m_provisionedWriteCapacityAutoScalingSettings; }
+
+    /**
+     * <p>AutoScaling settings for a global secondary index replica's write capacity
+     * units.</p>
+     */
+    inline void SetProvisionedWriteCapacityAutoScalingSettings(const AutoScalingSettingsDescription& value) { m_provisionedWriteCapacityAutoScalingSettingsHasBeenSet = true; m_provisionedWriteCapacityAutoScalingSettings = value; }
+
+    /**
+     * <p>AutoScaling settings for a global secondary index replica's write capacity
+     * units.</p>
+     */
+    inline void SetProvisionedWriteCapacityAutoScalingSettings(AutoScalingSettingsDescription&& value) { m_provisionedWriteCapacityAutoScalingSettingsHasBeenSet = true; m_provisionedWriteCapacityAutoScalingSettings = std::move(value); }
+
+    /**
+     * <p>AutoScaling settings for a global secondary index replica's write capacity
+     * units.</p>
+     */
+    inline ReplicaGlobalSecondaryIndexSettingsDescription& WithProvisionedWriteCapacityAutoScalingSettings(const AutoScalingSettingsDescription& value) { SetProvisionedWriteCapacityAutoScalingSettings(value); return *this;}
+
+    /**
+     * <p>AutoScaling settings for a global secondary index replica's write capacity
+     * units.</p>
+     */
+    inline ReplicaGlobalSecondaryIndexSettingsDescription& WithProvisionedWriteCapacityAutoScalingSettings(AutoScalingSettingsDescription&& value) { SetProvisionedWriteCapacityAutoScalingSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_indexName;
@@ -190,8 +253,14 @@ namespace Model
     long long m_provisionedReadCapacityUnits;
     bool m_provisionedReadCapacityUnitsHasBeenSet;
 
+    AutoScalingSettingsDescription m_provisionedReadCapacityAutoScalingSettings;
+    bool m_provisionedReadCapacityAutoScalingSettingsHasBeenSet;
+
     long long m_provisionedWriteCapacityUnits;
     bool m_provisionedWriteCapacityUnitsHasBeenSet;
+
+    AutoScalingSettingsDescription m_provisionedWriteCapacityAutoScalingSettings;
+    bool m_provisionedWriteCapacityAutoScalingSettingsHasBeenSet;
   };
 
 } // namespace Model

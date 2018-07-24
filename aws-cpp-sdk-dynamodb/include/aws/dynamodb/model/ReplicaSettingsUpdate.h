@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodb/model/AutoScalingSettingsUpdate.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dynamodb/model/ReplicaGlobalSecondaryIndexSettingsUpdate.h>
 #include <utility>
@@ -117,6 +118,37 @@ namespace Model
 
 
     /**
+     * <p>Autoscaling settings for managing a global table replica's read capacity
+     * units.</p>
+     */
+    inline const AutoScalingSettingsUpdate& GetReplicaProvisionedReadCapacityAutoScalingSettingsUpdate() const{ return m_replicaProvisionedReadCapacityAutoScalingSettingsUpdate; }
+
+    /**
+     * <p>Autoscaling settings for managing a global table replica's read capacity
+     * units.</p>
+     */
+    inline void SetReplicaProvisionedReadCapacityAutoScalingSettingsUpdate(const AutoScalingSettingsUpdate& value) { m_replicaProvisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet = true; m_replicaProvisionedReadCapacityAutoScalingSettingsUpdate = value; }
+
+    /**
+     * <p>Autoscaling settings for managing a global table replica's read capacity
+     * units.</p>
+     */
+    inline void SetReplicaProvisionedReadCapacityAutoScalingSettingsUpdate(AutoScalingSettingsUpdate&& value) { m_replicaProvisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet = true; m_replicaProvisionedReadCapacityAutoScalingSettingsUpdate = std::move(value); }
+
+    /**
+     * <p>Autoscaling settings for managing a global table replica's read capacity
+     * units.</p>
+     */
+    inline ReplicaSettingsUpdate& WithReplicaProvisionedReadCapacityAutoScalingSettingsUpdate(const AutoScalingSettingsUpdate& value) { SetReplicaProvisionedReadCapacityAutoScalingSettingsUpdate(value); return *this;}
+
+    /**
+     * <p>Autoscaling settings for managing a global table replica's read capacity
+     * units.</p>
+     */
+    inline ReplicaSettingsUpdate& WithReplicaProvisionedReadCapacityAutoScalingSettingsUpdate(AutoScalingSettingsUpdate&& value) { SetReplicaProvisionedReadCapacityAutoScalingSettingsUpdate(std::move(value)); return *this;}
+
+
+    /**
      * <p>Represents the settings of a global secondary index for a global table that
      * will be modified.</p>
      */
@@ -165,6 +197,9 @@ namespace Model
 
     long long m_replicaProvisionedReadCapacityUnits;
     bool m_replicaProvisionedReadCapacityUnitsHasBeenSet;
+
+    AutoScalingSettingsUpdate m_replicaProvisionedReadCapacityAutoScalingSettingsUpdate;
+    bool m_replicaProvisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet;
 
     Aws::Vector<ReplicaGlobalSecondaryIndexSettingsUpdate> m_replicaGlobalSecondaryIndexSettingsUpdate;
     bool m_replicaGlobalSecondaryIndexSettingsUpdateHasBeenSet;

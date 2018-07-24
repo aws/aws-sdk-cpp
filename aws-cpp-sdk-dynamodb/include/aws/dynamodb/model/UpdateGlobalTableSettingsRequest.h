@@ -17,6 +17,7 @@
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/dynamodb/DynamoDBRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodb/model/AutoScalingSettingsUpdate.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dynamodb/model/GlobalTableGlobalSecondaryIndexSettingsUpdate.h>
 #include <aws/dynamodb/model/ReplicaSettingsUpdate.h>
@@ -100,6 +101,37 @@ namespace Model
      * <code>ThrottlingException.</code> </p>
      */
     inline UpdateGlobalTableSettingsRequest& WithGlobalTableProvisionedWriteCapacityUnits(long long value) { SetGlobalTableProvisionedWriteCapacityUnits(value); return *this;}
+
+
+    /**
+     * <p>AutoScaling settings for managing provisioned write capacity for the global
+     * table.</p>
+     */
+    inline const AutoScalingSettingsUpdate& GetGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate() const{ return m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate; }
+
+    /**
+     * <p>AutoScaling settings for managing provisioned write capacity for the global
+     * table.</p>
+     */
+    inline void SetGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate(const AutoScalingSettingsUpdate& value) { m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet = true; m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate = value; }
+
+    /**
+     * <p>AutoScaling settings for managing provisioned write capacity for the global
+     * table.</p>
+     */
+    inline void SetGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate(AutoScalingSettingsUpdate&& value) { m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet = true; m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate = std::move(value); }
+
+    /**
+     * <p>AutoScaling settings for managing provisioned write capacity for the global
+     * table.</p>
+     */
+    inline UpdateGlobalTableSettingsRequest& WithGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate(const AutoScalingSettingsUpdate& value) { SetGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate(value); return *this;}
+
+    /**
+     * <p>AutoScaling settings for managing provisioned write capacity for the global
+     * table.</p>
+     */
+    inline UpdateGlobalTableSettingsRequest& WithGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate(AutoScalingSettingsUpdate&& value) { SetGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate(std::move(value)); return *this;}
 
 
     /**
@@ -194,6 +226,9 @@ namespace Model
 
     long long m_globalTableProvisionedWriteCapacityUnits;
     bool m_globalTableProvisionedWriteCapacityUnitsHasBeenSet;
+
+    AutoScalingSettingsUpdate m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate;
+    bool m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet;
 
     Aws::Vector<GlobalTableGlobalSecondaryIndexSettingsUpdate> m_globalTableGlobalSecondaryIndexSettingsUpdate;
     bool m_globalTableGlobalSecondaryIndexSettingsUpdateHasBeenSet;

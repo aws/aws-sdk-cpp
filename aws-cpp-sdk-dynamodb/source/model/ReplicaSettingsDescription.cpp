@@ -34,8 +34,10 @@ ReplicaSettingsDescription::ReplicaSettingsDescription() :
     m_replicaStatusHasBeenSet(false),
     m_replicaProvisionedReadCapacityUnits(0),
     m_replicaProvisionedReadCapacityUnitsHasBeenSet(false),
+    m_replicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet(false),
     m_replicaProvisionedWriteCapacityUnits(0),
     m_replicaProvisionedWriteCapacityUnitsHasBeenSet(false),
+    m_replicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet(false),
     m_replicaGlobalSecondaryIndexSettingsHasBeenSet(false)
 {
 }
@@ -46,8 +48,10 @@ ReplicaSettingsDescription::ReplicaSettingsDescription(const JsonValue& jsonValu
     m_replicaStatusHasBeenSet(false),
     m_replicaProvisionedReadCapacityUnits(0),
     m_replicaProvisionedReadCapacityUnitsHasBeenSet(false),
+    m_replicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet(false),
     m_replicaProvisionedWriteCapacityUnits(0),
     m_replicaProvisionedWriteCapacityUnitsHasBeenSet(false),
+    m_replicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet(false),
     m_replicaGlobalSecondaryIndexSettingsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -76,11 +80,25 @@ ReplicaSettingsDescription& ReplicaSettingsDescription::operator =(const JsonVal
     m_replicaProvisionedReadCapacityUnitsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ReplicaProvisionedReadCapacityAutoScalingSettings"))
+  {
+    m_replicaProvisionedReadCapacityAutoScalingSettings = jsonValue.GetObject("ReplicaProvisionedReadCapacityAutoScalingSettings");
+
+    m_replicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ReplicaProvisionedWriteCapacityUnits"))
   {
     m_replicaProvisionedWriteCapacityUnits = jsonValue.GetInt64("ReplicaProvisionedWriteCapacityUnits");
 
     m_replicaProvisionedWriteCapacityUnitsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReplicaProvisionedWriteCapacityAutoScalingSettings"))
+  {
+    m_replicaProvisionedWriteCapacityAutoScalingSettings = jsonValue.GetObject("ReplicaProvisionedWriteCapacityAutoScalingSettings");
+
+    m_replicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ReplicaGlobalSecondaryIndexSettings"))
@@ -117,9 +135,21 @@ JsonValue ReplicaSettingsDescription::Jsonize() const
 
   }
 
+  if(m_replicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet)
+  {
+   payload.WithObject("ReplicaProvisionedReadCapacityAutoScalingSettings", m_replicaProvisionedReadCapacityAutoScalingSettings.Jsonize());
+
+  }
+
   if(m_replicaProvisionedWriteCapacityUnitsHasBeenSet)
   {
    payload.WithInt64("ReplicaProvisionedWriteCapacityUnits", m_replicaProvisionedWriteCapacityUnits);
+
+  }
+
+  if(m_replicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet)
+  {
+   payload.WithObject("ReplicaProvisionedWriteCapacityAutoScalingSettings", m_replicaProvisionedWriteCapacityAutoScalingSettings.Jsonize());
 
   }
 

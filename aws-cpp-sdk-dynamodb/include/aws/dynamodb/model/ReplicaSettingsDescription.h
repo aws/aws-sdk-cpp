@@ -17,6 +17,7 @@
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/model/ReplicaStatus.h>
+#include <aws/dynamodb/model/AutoScalingSettingsDescription.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dynamodb/model/ReplicaGlobalSecondaryIndexSettingsDescription.h>
 #include <utility>
@@ -163,6 +164,32 @@ namespace Model
 
 
     /**
+     * <p>Autoscaling settings for a global table replica's read capacity units.</p>
+     */
+    inline const AutoScalingSettingsDescription& GetReplicaProvisionedReadCapacityAutoScalingSettings() const{ return m_replicaProvisionedReadCapacityAutoScalingSettings; }
+
+    /**
+     * <p>Autoscaling settings for a global table replica's read capacity units.</p>
+     */
+    inline void SetReplicaProvisionedReadCapacityAutoScalingSettings(const AutoScalingSettingsDescription& value) { m_replicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet = true; m_replicaProvisionedReadCapacityAutoScalingSettings = value; }
+
+    /**
+     * <p>Autoscaling settings for a global table replica's read capacity units.</p>
+     */
+    inline void SetReplicaProvisionedReadCapacityAutoScalingSettings(AutoScalingSettingsDescription&& value) { m_replicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet = true; m_replicaProvisionedReadCapacityAutoScalingSettings = std::move(value); }
+
+    /**
+     * <p>Autoscaling settings for a global table replica's read capacity units.</p>
+     */
+    inline ReplicaSettingsDescription& WithReplicaProvisionedReadCapacityAutoScalingSettings(const AutoScalingSettingsDescription& value) { SetReplicaProvisionedReadCapacityAutoScalingSettings(value); return *this;}
+
+    /**
+     * <p>Autoscaling settings for a global table replica's read capacity units.</p>
+     */
+    inline ReplicaSettingsDescription& WithReplicaProvisionedReadCapacityAutoScalingSettings(AutoScalingSettingsDescription&& value) { SetReplicaProvisionedReadCapacityAutoScalingSettings(std::move(value)); return *this;}
+
+
+    /**
      * <p>The maximum number of writes consumed per second before DynamoDB returns a
      * <code>ThrottlingException</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
@@ -188,6 +215,32 @@ namespace Model
      * Guide</i>.</p>
      */
     inline ReplicaSettingsDescription& WithReplicaProvisionedWriteCapacityUnits(long long value) { SetReplicaProvisionedWriteCapacityUnits(value); return *this;}
+
+
+    /**
+     * <p>AutoScaling settings for a global table replica's write capacity units.</p>
+     */
+    inline const AutoScalingSettingsDescription& GetReplicaProvisionedWriteCapacityAutoScalingSettings() const{ return m_replicaProvisionedWriteCapacityAutoScalingSettings; }
+
+    /**
+     * <p>AutoScaling settings for a global table replica's write capacity units.</p>
+     */
+    inline void SetReplicaProvisionedWriteCapacityAutoScalingSettings(const AutoScalingSettingsDescription& value) { m_replicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet = true; m_replicaProvisionedWriteCapacityAutoScalingSettings = value; }
+
+    /**
+     * <p>AutoScaling settings for a global table replica's write capacity units.</p>
+     */
+    inline void SetReplicaProvisionedWriteCapacityAutoScalingSettings(AutoScalingSettingsDescription&& value) { m_replicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet = true; m_replicaProvisionedWriteCapacityAutoScalingSettings = std::move(value); }
+
+    /**
+     * <p>AutoScaling settings for a global table replica's write capacity units.</p>
+     */
+    inline ReplicaSettingsDescription& WithReplicaProvisionedWriteCapacityAutoScalingSettings(const AutoScalingSettingsDescription& value) { SetReplicaProvisionedWriteCapacityAutoScalingSettings(value); return *this;}
+
+    /**
+     * <p>AutoScaling settings for a global table replica's write capacity units.</p>
+     */
+    inline ReplicaSettingsDescription& WithReplicaProvisionedWriteCapacityAutoScalingSettings(AutoScalingSettingsDescription&& value) { SetReplicaProvisionedWriteCapacityAutoScalingSettings(std::move(value)); return *this;}
 
 
     /**
@@ -236,8 +289,14 @@ namespace Model
     long long m_replicaProvisionedReadCapacityUnits;
     bool m_replicaProvisionedReadCapacityUnitsHasBeenSet;
 
+    AutoScalingSettingsDescription m_replicaProvisionedReadCapacityAutoScalingSettings;
+    bool m_replicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet;
+
     long long m_replicaProvisionedWriteCapacityUnits;
     bool m_replicaProvisionedWriteCapacityUnitsHasBeenSet;
+
+    AutoScalingSettingsDescription m_replicaProvisionedWriteCapacityAutoScalingSettings;
+    bool m_replicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet;
 
     Aws::Vector<ReplicaGlobalSecondaryIndexSettingsDescription> m_replicaGlobalSecondaryIndexSettings;
     bool m_replicaGlobalSecondaryIndexSettingsHasBeenSet;
