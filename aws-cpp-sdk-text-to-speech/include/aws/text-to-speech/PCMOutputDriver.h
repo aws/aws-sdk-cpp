@@ -96,6 +96,8 @@ namespace Aws
         class AWS_TEXT_TO_SPEECH_API PCMOutputDriverFactory
         {
         public:
+            virtual ~PCMOutputDriverFactory() = default;
+
             /**
              * Return a list of drivers that you want supported for the application.
              */
